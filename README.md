@@ -2,7 +2,13 @@
 
 **THE QUIET GAME** — original animated mini-stories about the quiet social games people play: rumours, status, jealousy, conformity, exclusion. Story first, psychology second.
 
-**#1 — *The Rumour*** → [`releases/qg001-the-rumour.mp4`](releases/qg001-the-rumour.mp4) (45 s, 1080×1920). *"By lunch, everyone hated him. Nobody had actually spoken to him."* Script: [`releases/qg001-the-rumour.script.md`](releases/qg001-the-rumour.script.md) · sources & fact check: [`episodes/qg001-the-rumour/research.md`](episodes/qg001-the-rumour/research.md)
+**#1 — *The Rumour*** → [`releases/qg001-the-rumour.mp4`](releases/qg001-the-rumour.mp4) (38 s, 1080×1920). *"By lunch, everyone hated him. Nobody had actually spoken to him."* Script: [`releases/qg001-the-rumour.script.md`](releases/qg001-the-rumour.script.md) · sources & fact check: [`episodes/qg001-the-rumour/research.md`](episodes/qg001-the-rumour/research.md)
+
+Built to be easy to follow (ADHD-friendly), all driven from `episode.json`:
+- **Word-by-word captions:** 1–3 words on screen, the spoken word lit in the speaker's colour. Force a break with `|` in a line's `caption`.
+- **Rumour meter** (`rumour: {level 1-5, text, at_line}`): a top bar that fills as the rumour grows. `truth: {text, at}` drains it and flips it to THE TRUTH.
+- **Name tags** (`tags`) the first time a character matters. **Time-jump cards** (`jump: {dir, label, text}`) for flashbacks.
+- Quick punch-in zooms on key moments; tight pacing (no pause longer than about 0.9 s).
 
 How a story episode is built (same pipeline as below):
 - `episodes/<id>/episode.json` with a `cast` (name, Piper voice, speaker id, caption colour) and scenes made of dialogue `lines` (`{who, text, pause?, speed?}`) plus an `action` note. Each line is voiced separately; its timing and a loudness envelope (for lip sync) go into the timeline.

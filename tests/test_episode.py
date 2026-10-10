@@ -294,3 +294,16 @@ class QuietGame001(unittest.TestCase):
         for s in tl:
             for l in s["lines"]:
                 self.assertTrue(s["start"] <= l["start"] < l["end"] <= s["end"], s["id"])
+
+    def test_rumour_meter_escalates_then_truth(self):
+        levels = [s["rumour"]["level"] for s in self.ep["scenes"] if "rumour" in s]
+        self.assertEqual(levels, sorted(levels)); self.assertEqual(levels[-1], 5)
+        reveal = next(s for s in self.ep["scenes"] if "truth" in s)
+        self.assertIn("never about Theo", reveal["truth"]["text"])
+        for s in self.ep["scenes"]:
+            if "rumour" in s:
+                self.assertLess(s["rumour"].get("at_line", 0), len(s["lines"]), s["id"])
+
+    def test_time_jumps_are_labelled(self):
+        jumps = [s["jump"]["dir"] for s in self.ep["scenes"] if "jump" in s]
+        self.assertEqual(jumps, [-1, 1])

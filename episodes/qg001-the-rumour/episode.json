@@ -8,8 +8,8 @@
   "narrator_voice": "en_GB-alba-medium",
   "narration_speed": 1.0,
   "target_duration_seconds": [
-    35,
-    47
+    32,
+    42
   ],
   "visual_mode": "svg",
   "paper": false,
@@ -24,14 +24,14 @@
     "narrator": {
       "name": "Narrator",
       "voice": "en_GB-alba-medium",
-      "speed": 1.04,
+      "speed": 1.1,
       "color": "#f3e6c8"
     },
     "theo": {
       "name": "Theo",
       "voice": "en_GB-aru-medium",
       "speaker": 2,
-      "speed": 1.05,
+      "speed": 1.12,
       "color": "#f2b544",
       "role": "the new hire"
     },
@@ -39,7 +39,7 @@
       "name": "Rosa",
       "voice": "en_GB-aru-medium",
       "speaker": 6,
-      "speed": 1.08,
+      "speed": 1.12,
       "color": "#ef6f5e",
       "role": "team manager"
     },
@@ -47,7 +47,7 @@
       "name": "Ben",
       "voice": "en_GB-aru-medium",
       "speaker": 9,
-      "speed": 1.12,
+      "speed": 1.18,
       "color": "#5cc2b4",
       "role": "desk neighbour"
     },
@@ -55,7 +55,7 @@
       "name": "Kemi",
       "voice": "en_GB-aru-medium",
       "speaker": 5,
-      "speed": 1.08,
+      "speed": 1.12,
       "color": "#c39bf0",
       "role": "colleague"
     }
@@ -71,9 +71,9 @@
       "scene": "hook_lunch",
       "clock": "12:31 PM",
       "action": "Theo stands holding a lunch tray at the team table. Kemi slides her bag onto the only empty chair. Nobody looks up. Slow push in on Theo's face.",
-      "min_duration": 5.0,
-      "lead": 0.35,
-      "pad_after": 0.45,
+      "min_duration": 4.2,
+      "lead": 0.2,
+      "pad_after": 0.3,
       "lines": [
         {
           "who": "narrator",
@@ -82,7 +82,7 @@
         {
           "who": "narrator",
           "text": "Nobody had actually spoken to him.",
-          "pause": 0.35
+          "pause": 0.25
         }
       ],
       "music_cue": "silence",
@@ -95,30 +95,47 @@
       "claims": [
         "C1"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "hud": false,
+      "tags": [
+        {
+          "who": "theo",
+          "role": "the new guy",
+          "x": 790,
+          "y": 470,
+          "at": 0.4
+        }
+      ]
     },
     {
       "id": "s02_origin",
       "scene": "origin_phone",
       "clock": "9:02 AM",
       "action": "Rosa's phone buzzes. She reads only the cut-off preview, looks up over her glasses just as Theo walks in waving, and mutters to Ben.",
-      "min_duration": 5.4,
-      "lead": 2.7,
-      "pad_after": 0.55,
+      "min_duration": 4.4,
+      "lead": 2.5,
+      "pad_after": 0.4,
       "lines": [
         {
           "who": "rosa",
-          "text": "Careful with the new guy."
+          "text": "Careful with the new guy.",
+          "caption": "Careful with | the new guy."
         }
       ],
       "music_cue": "silence",
       "sfx": [
         {
-          "at": 0.2,
+          "at": 0.0,
+          "name": "whoosh"
+        },
+        {
+          "at": 0.5,
           "name": "buzz"
         },
         {
-          "at": 1.9,
+          "line": 0,
+          "from": "start",
+          "at": -0.65,
           "name": "door"
         }
       ],
@@ -126,16 +143,35 @@
         "C1"
       ],
       "transition": "cut",
-      "clock_note": "THAT MORNING"
+      "clock_note": "THAT MORNING",
+      "jump": {
+        "dir": -1,
+        "label": "REWIND",
+        "text": "9:02 AM · THAT MORNING"
+      },
+      "rumour": {
+        "level": 1,
+        "text": "Careful with the new guy.",
+        "at_line": 0
+      },
+      "tags": [
+        {
+          "who": "rosa",
+          "role": "the manager",
+          "x": 560,
+          "y": 610,
+          "at": 1.95
+        }
+      ]
     },
     {
       "id": "s03_coffee",
       "scene": "coffee_whisper",
       "clock": "10:15 AM",
       "action": "At the coffee machine Ben passes it on, adding his own guess. Kemi's eyes slide towards Theo.",
-      "min_duration": 4.6,
-      "lead": 0.3,
-      "pad_after": 0.55,
+      "min_duration": 3.6,
+      "lead": 0.2,
+      "pad_after": 0.35,
       "lines": [
         {
           "who": "ben",
@@ -144,7 +180,7 @@
         {
           "who": "ben",
           "text": "Something happened at his last job.",
-          "pause": 0.2
+          "pause": 0.1
         }
       ],
       "music_cue": "tension-rise",
@@ -153,16 +189,37 @@
         "C1",
         "C2"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "rumour": {
+        "level": 2,
+        "text": "Something happened at his last job.",
+        "at_line": 1
+      },
+      "tags": [
+        {
+          "who": "ben",
+          "role": "sits next to Rosa",
+          "x": 330,
+          "y": 640,
+          "at": 0.1
+        },
+        {
+          "who": "kemi",
+          "role": "Ben's friend",
+          "x": 770,
+          "y": 660,
+          "at": 0.5
+        }
+      ]
     },
     {
       "id": "s04_spread",
       "scene": "kemi_spreads",
       "clock": "11:20 AM",
       "action": "Kemi leans over a partition and the guess becomes a fact. Heads turn. Theo, oblivious, takes a pen from the shared pot and every eye follows it.",
-      "min_duration": 4.6,
-      "lead": 0.25,
-      "pad_after": 1.7,
+      "min_duration": 3.8,
+      "lead": 0.2,
+      "pad_after": 1.25,
       "lines": [
         {
           "who": "kemi",
@@ -171,7 +228,7 @@
         {
           "who": "kemi",
           "text": "For stealing.",
-          "pause": 0.25
+          "pause": 0.15
         }
       ],
       "music_cue": "tension-rise",
@@ -180,26 +237,32 @@
         "C1",
         "C2"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "rumour": {
+        "level": 3,
+        "text": "He got FIRED. For STEALING.",
+        "at_line": 1
+      }
     },
     {
       "id": "s05_wallet",
       "scene": "wallet",
       "clock": "11:48 AM",
       "action": "Kemi's wallet slips from her bag. Theo picks it up and opens it to find a name. Ben sees only the open wallet.",
-      "min_duration": 4.4,
-      "lead": 2.0,
-      "pad_after": 0.45,
+      "min_duration": 3.6,
+      "lead": 1.8,
+      "pad_after": 0.35,
       "lines": [
         {
           "who": "ben",
-          "text": "Is he going through Kemi's wallet?"
+          "text": "Is he going through Kemi's wallet?",
+          "caption": "Is he going | through Kemi's wallet?"
         }
       ],
       "music_cue": "tension",
       "sfx": [
         {
-          "at": 0.45,
+          "at": 0.5,
           "name": "thud"
         }
       ],
@@ -207,15 +270,20 @@
         "C1",
         "C3"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "rumour": {
+        "level": 4,
+        "text": "He's going through Kemi's wallet!",
+        "at_line": 0
+      }
     },
     {
       "id": "s06_return",
       "scene": "return_wallet",
       "action": "Theo hands it back with a smile. Kemi snatches it and counts the cash in front of him. His smile falters.",
-      "min_duration": 4.2,
-      "lead": 0.25,
-      "pad_after": 0.6,
+      "min_duration": 3.6,
+      "lead": 0.2,
+      "pad_after": 0.45,
       "lines": [
         {
           "who": "theo",
@@ -224,14 +292,15 @@
         {
           "who": "theo",
           "text": "You're welcome?",
-          "pause": 1.25,
+          "pause": 0.85,
           "speed": 0.95
         }
       ],
       "music_cue": "tension",
       "sfx": [
         {
-          "at": 1.55,
+          "line": 0,
+          "at": 0.08,
           "name": "paper"
         }
       ],
@@ -245,9 +314,9 @@
       "scene": "lunch_snap",
       "clock": "12:31 PM",
       "action": "Back to the opening. The bag on the chair. Theo finally snaps and drops his tray. Silence. Kemi leans to Ben: proof.",
-      "min_duration": 5.2,
-      "lead": 0.55,
-      "pad_after": 0.7,
+      "min_duration": 4.2,
+      "lead": 0.5,
+      "pad_after": 0.5,
       "lines": [
         {
           "who": "theo",
@@ -257,34 +326,49 @@
         {
           "who": "kemi",
           "text": "See? Told you.",
-          "pause": 1.15,
+          "pause": 0.75,
           "speed": 0.95
         }
       ],
       "music_cue": "tension-peak",
       "sfx": [
         {
-          "at": 0.2,
+          "at": 0.0,
+          "name": "whoosh"
+        },
+        {
+          "at": 0.3,
           "name": "steps"
         },
         {
-          "at": 2.42,
+          "line": 0,
+          "at": 0.06,
           "name": "tray"
         }
       ],
       "claims": [
         "C3"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "jump": {
+        "dir": 1,
+        "label": "BACK TO",
+        "text": "12:31 PM · LUNCH"
+      },
+      "rumour": {
+        "level": 5,
+        "text": "He snapped. So it MUST be true.",
+        "at_line": 1
+      }
     },
     {
       "id": "s08_reveal",
       "scene": "reveal_phone",
       "clock": "12:33 PM",
       "action": "Rosa's phone buzzes again. This time she opens the whole message. It was never about Theo. Her face falls.",
-      "min_duration": 5.6,
-      "lead": 3.1,
-      "pad_after": 0.9,
+      "min_duration": 4.4,
+      "lead": 2.5,
+      "pad_after": 0.8,
       "lines": [
         {
           "who": "rosa",
@@ -299,22 +383,26 @@
           "name": "buzz"
         },
         {
-          "at": 1.55,
+          "at": 1.3,
           "name": "sting"
         }
       ],
       "claims": [
         "C1"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "truth": {
+        "text": "Mia meant a guy at HER work. It was never about Theo.",
+        "at": 1.6
+      }
     },
     {
       "id": "s09_end",
       "scene": "end_alone",
       "action": "Wide: Theo eats alone in the middle of the room while the others talk around him. Camera slowly pulls away.",
-      "min_duration": 5.0,
-      "lead": 0.5,
-      "pad_after": 1.9,
+      "min_duration": 4.2,
+      "lead": 0.4,
+      "pad_after": 1.6,
       "lines": [
         {
           "who": "narrator",
@@ -323,7 +411,7 @@
         {
           "who": "narrator",
           "text": "Everyone just filled in the gaps.",
-          "pause": 0.3
+          "pause": 0.25
         }
       ],
       "music_cue": "tension",
@@ -333,7 +421,8 @@
         "C2",
         "C3"
       ],
-      "transition": "fade"
+      "transition": "fade",
+      "hud": false
     }
   ],
   "claims": [

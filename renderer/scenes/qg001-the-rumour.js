@@ -345,7 +345,7 @@
     p += `<ellipse cx="0" cy="0" rx="420" ry="600" fill="url(#qgGlow)" opacity="0.35"/>`;
     if (o.mode === 'preview') {
       p += `<text x="0" y="-330" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="150" fill="#e9f1ff" opacity="0.9">9:02</text><text x="0" y="-262" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="34" fill="#b9c8dc">Monday</text>`;
-      const k = ease.back(seg(t, 0.2, 0.55));
+      const k = ease.back(seg(t, 0.4, 0.7));
       p += `<g transform="translate(0 ${f1(lerp(-120, 0, k))})" opacity="${f1(clamp(k, 0, 1))}"><rect x="-252" y="-180" width="504" height="290" rx="34" fill="#eef2f7"/>
         <circle cx="-196" cy="-122" r="30" fill="#4caf72"/><path d="M-210 -132 h28 v18 h-18 l-10 8z" fill="#fff"/><text x="-150" y="-110" font-family="Nunito" font-weight="800" font-size="40" fill="#1c2430">Mia</text><text x="222" y="-112" text-anchor="end" font-family="Nunito" font-weight="700" font-size="28" fill="#7d8796">now</text>
         <text x="-222" y="-40" font-family="Nunito" font-weight="800" font-size="35" fill="#1c2430">Careful with the new guy.</text><text x="-222" y="12" font-family="Nunito" font-weight="800" font-size="35" fill="#1c2430">He got caught stealing at…</text>
@@ -367,46 +367,129 @@
     return s + p;
   }
 
-  // ---------------------------------------------------------------- screen-space text
-  function subtitles(ctx, opts = {}) {
-    let s = '';
-    const cast = ctx.ep.cast;
+  // ---------------------------------------------------------------- screen-space text (built for easy following)
+  // Captions: 1-3 words at a time, big, the spoken word lit in the speaker's colour.
+  const PUNCT = /[.,!?…]$/;
+  function chunkWords(words) {
+    const out = []; let cur = [];
+    // break at punctuation or ~3 words, but never right after a little word like "the" / "with" (keeps phrases whole)
+    const GLUE = /^(the|a|an|at|with|to|of|his|her|my|is|in|on|through|going|had|just)$/i;
+    words.forEach((w, i) => { cur.push(i); const len = cur.map(j => words[j]).join(' ').length;
+      let brk = PUNCT.test(w) || ((len >= 13 || cur.length >= 3) && !GLUE.test(w)) || len >= 20;
+      if (brk && !PUNCT.test(w) && PUNCT.test(words[i + 1] || '') && len + words[i + 1].length < 24) brk = false;  // no one-word orphans
+      if (brk) { out.push(cur); cur = []; } });
+    if (cur.length) out.push(cur);
+    return out;
+  }
+  function wordTimes(l) {   // no forced alignment available: spread the line by word length, with a beat after punctuation
+    const words = l.caption.split(/\s+/).filter(w => w && w !== '|');
+    const wts = words.map(w => w.replace(/[^A-Za-z0-9']/g, '').length + 1.6 + (PUNCT.test(w) ? 2.2 : 0));
+    const tot = wts.reduce((x, y) => x + y, 0); let acc = l.start;
+    return { words, times: words.map((w, i) => { const d = (l.end - l.start) * wts[i] / tot; const r = [acc, acc + d]; acc += d; return r; }) };
+  }
+  function captions(ctx, opts = {}) {
+    let s = ''; const cast = ctx.ep.cast, t = ctx.t;
     for (const l of ctx.lines) {
-      const a = l.start - 0.06, b = l.end + 0.35, t = ctx.t;
+      const a = l.start - 0.05, b = l.end + 0.3;
       if (t < a || t > b) continue;
-      const op = Math.min(seg(t, a, a + 0.12), 1 - seg(t, b - 0.15, b));
-      const nar = l.who === 'narrator';
-      const fs = nar ? (opts.narSize || 66) : 58, lines = E.wrap(l.caption, nar ? 22 : 24), lh = fs * 1.16;
-      const y0 = (opts.y || 1360) - (lines.length - 1) * lh / 2;
-      s += `<g opacity="${f1(op)}">`;
-      if (!nar) s += `<text x="${W / 2}" y="${f1(y0 - fs * 1.05)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="32" letter-spacing="5" fill="${cast[l.who].color}" stroke="#0b0b0e" stroke-width="7" paint-order="stroke">${esc(cast[l.who].name.toUpperCase())}</text>`;
-      lines.forEach((ln, i) => {
-        s += `<text x="${W / 2}" y="${f1(y0 + i * lh)}" text-anchor="middle" font-family="${nar ? 'Fraunces' : 'Nunito'}" font-weight="${nar ? 600 : 800}" ${nar ? 'font-style="italic"' : ''} font-size="${fs}" fill="${nar ? '#fbf1da' : '#ffffff'}" stroke="#0b0b0e" stroke-width="${nar ? 9 : 11}" stroke-linejoin="round" paint-order="stroke">${esc(ln)}</text>`;
-      });
-      s += `</g>`;
+      const { words, times } = wordTimes(l);
+      let groups;
+      if (l.caption.includes('|')) {   // explicit breaks written in the episode data: "Is he going | through Kemi's wallet?"
+        groups = []; let i = 0;
+        for (const part of l.caption.split('|')) { const n = part.split(/\s+/).filter(Boolean).length; if (n) groups.push([...Array(n).keys()].map(k => k + i)); i += n; }
+      } else groups = chunkWords(words);
+      let wi = 0; times.forEach((tm, i) => { if (t >= tm[0]) wi = i; });
+      const g = groups.find(gr => gr.includes(wi)) || groups[0];
+      const gStart = times[g[0]][0], pop = ease.back(seg(t, gStart - 0.02, gStart + 0.1));
+      const op = 1 - seg(t, b - 0.12, b);
+      const nar = l.who === 'narrator', col = nar ? '#ffd36b' : cast[l.who].color;
+      const y = opts.y || 1380, fs = 80;
+      s += `<g opacity="${f1(op)}" transform="translate(${W / 2} ${y}) scale(${f1(0.86 + 0.14 * pop)})">`;
+      if (!nar) s += `<text x="0" y="-96" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="34" letter-spacing="6" fill="${col}" stroke="#0b0b0e" stroke-width="8" paint-order="stroke">${esc(cast[l.who].name.toUpperCase())}</text>`;
+      s += `<text x="0" y="0" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" stroke="#0b0b0e" stroke-width="14" stroke-linejoin="round" paint-order="stroke">` +
+        g.map((i, k) => `<tspan fill="${i === wi && t <= l.end + 0.05 ? col : '#ffffff'}">${k ? ' ' : ''}${esc(words[i])}</tspan>`).join('') + `</text></g>`;
     }
     return s;
   }
   function clockChip(ctx, opts = {}) {
     const txt = ctx.scene.clock; if (!txt) return '';
     const k = ease.out(seg(ctx.t, 0.05, 0.4)), fade = opts.hold ? 1 : 1 - 0.55 * seg(ctx.t, 2.2, 2.8);
-    const note = ctx.scene.clock_note || '';
-    const w = 52 + txt.length * 24 + (note ? note.length * 15 + 30 : 0);
+    const w = 52 + txt.length * 24;
     return `<g transform="translate(${f1(64 - (1 - k) * 40)} 196)" opacity="${f1(k * fade)}"><rect x="0" y="-40" width="${f1(w)}" height="60" rx="30" fill="#0d0f12" opacity="0.72"/><circle cx="30" cy="-10" r="9" fill="#ff5a4a"/>
-      <text x="50" y="2" font-family="Nunito" font-weight="800" font-size="34" fill="#f4efe4" letter-spacing="1">${esc(txt)}</text>${note ? `<text x="${f1(64 + txt.length * 22)}" y="0" font-family="Nunito" font-weight="700" font-size="26" letter-spacing="3" fill="#c9c2b3">${esc(note)}</text>` : ''}</g>`;
+      <text x="50" y="2" font-family="Nunito" font-weight="800" font-size="34" fill="#f4efe4" letter-spacing="1">${esc(txt)}</text></g>`;
+  }
+  // Rumour meter: what everyone *thinks* right now, and how big it has got (5 steps). Flips to THE TRUTH at the reveal.
+  function rumourAt(ctx) {
+    const scenes = ctx.ep.scenes; let cur = null, prev = null;
+    for (let i = 0; i <= ctx.idx; i++) if (scenes[i].rumour) { prev = cur; cur = scenes[i].rumour; if (i === ctx.idx) break; }
+    const own = ctx.scene.rumour;
+    if (own) { const ln = ctx.lines[own.at_line || 0]; const at = ln ? ln.start + 0.15 : 0.2; return { r: ctx.t >= at ? own : prev, at, fresh: ctx.t >= at }; }
+    return { r: cur, at: -9, fresh: false };
+  }
+  function rumourMeter(ctx) {
+    if (ctx.scene.hud === false) return '';
+    const { r, at, fresh } = rumourAt(ctx); const tr = ctx.scene.truth, t = ctx.t;
+    const truthK = tr ? seg(t, tr.at, tr.at + 0.6) : 0;
+    if (!r && !truthK) return '';
+    const showTruth = truthK >= 0.5;
+    const level = r ? r.level * (1 - truthK) : 0;
+    const text = showTruth ? tr.text : r.text;
+    const flash = fresh ? 1 - seg(t, at, at + 0.7) : 0;
+    const lines = E.wrap(showTruth ? text : `“${text}”`, 28), fs = 44, h = 92 + lines.length * fs * 1.15;
+    const col = showTruth ? '#6fe0a0' : '#ff6b5a';
+    let s = `<g transform="translate(70 238)"><rect width="940" height="${f1(h)}" rx="26" fill="#0d0f12" opacity="0.8"/>`;
+    s += `<rect width="940" height="${f1(h)}" rx="26" fill="none" stroke="${col}" stroke-width="${f1(3 + 6 * flash)}" opacity="${f1(0.5 + 0.5 * flash)}"/>`;
+    s += `<text x="30" y="52" font-family="Nunito" font-weight="800" font-size="30" letter-spacing="6" fill="${col}">${showTruth ? 'THE TRUTH' : 'THE RUMOUR'}</text>`;
+    for (let i = 0; i < 5; i++) {
+      const fill = clamp(level - i, 0, 1), isNew = fresh && r && i === r.level - 1;
+      const sc = isNew ? 1 + 0.35 * flash : 1, x = 330 + i * 120;
+      s += `<g transform="translate(${x + 50} 40) scale(${f1(sc)})"><rect x="-50" y="-12" width="100" height="24" rx="12" fill="#2b2f36"/>${fill > 0 ? `<rect x="-50" y="-12" width="${f1(100 * fill)}" height="24" rx="12" fill="${['#ffb347', '#ff9447', '#ff7a47', '#ff5c47', '#ff3b3b'][i]}"/>` : ''}${isNew && flash > 0.3 ? `<rect x="-50" y="-12" width="100" height="24" rx="12" fill="#fff" opacity="${f1(flash - 0.3)}"/>` : ''}</g>`;
+    }
+    const textOp = showTruth ? seg(t, tr.at + 0.3, tr.at + 0.6) : 1;
+    lines.forEach((ln, i) => { s += `<text x="30" y="${f1(110 + i * fs * 1.15)}" font-family="Nunito" font-weight="800" font-size="${fs}" fill="#ffffff" opacity="${f1(textOp)}">${esc(ln)}</text>`; });
+    return s + '</g>';
+  }
+  // Who's who: a name tag the first time someone matters
+  function nameTags(ctx) {
+    let s = ''; const cast = ctx.ep.cast;
+    for (const g of ctx.scene.tags || []) {
+      const k = ease.back(seg(ctx.t, g.at, g.at + 0.25)), out = seg(ctx.t, g.at + 1.9, g.at + 2.2);
+      if (k <= 0 || out >= 1) continue;
+      const name = cast[g.who].name.toUpperCase(), role = g.role, w = 60 + name.length * 24 + role.length * 17;
+      s += `<g transform="translate(${g.x} ${g.y}) scale(${f1(k)})" opacity="${f1(1 - out)}"><rect x="${f1(-w / 2)}" y="-36" width="${f1(w)}" height="64" rx="32" fill="#0d0f12" opacity="0.88"/>
+        <rect x="${f1(-w / 2)}" y="-36" width="${f1(w)}" height="64" rx="32" fill="none" stroke="${cast[g.who].color}" stroke-width="4"/><path d="M-12 28 L0 44 L12 28Z" fill="#0d0f12" opacity="0.88"/>
+        <text x="0" y="8" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="34"><tspan fill="${cast[g.who].color}">${esc(name)}</tspan><tspan fill="#ffffff" font-weight="700" font-size="28"> · ${esc(role)}</tspan></text></g>`;
+    }
+    return s;
+  }
+  // Time jumps are spelled out, not implied
+  function jumpCard(ctx) {
+    const j = ctx.scene.jump; if (!j) return '';
+    const t = ctx.t, op = 1 - seg(t, 0.38, 0.55); if (op <= 0) return '';
+    let s = `<rect width="${W}" height="${H}" fill="#08090c" opacity="${f1(0.72 * op)}"/>`;
+    for (let i = 0; i < 9; i++) { const y = ((i * 230 + t * 2600 * -j.dir) % H + H) % H; s += `<rect x="0" y="${f1(y)}" width="${W}" height="10" fill="#ffffff" opacity="${f1(0.12 * op)}"/>`; }
+    const tri = x => j.dir < 0 ? `M${x} -40 L${x - 60} 0 L${x} 40Z` : `M${x} -40 L${x + 60} 0 L${x} 40Z`;
+    s += `<g transform="translate(${W / 2} 820)" opacity="${f1(op)}"><path d="${tri(j.dir < 0 ? -10 : -110)} ${tri(j.dir < 0 ? 60 : -40)}" fill="#ffd36b"/>
+      <text x="0" y="140" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="56" letter-spacing="10" fill="#ffd36b">${esc(j.label)}</text>
+      <text x="0" y="230" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="70" fill="#ffffff">${esc(j.text)}</text></g>`;
+    return s;
+  }
+  function punch(t, at, amt = 0.07) {   // quick snap zoom on a key moment
+    if (t < at) return 0; const k = t - at;
+    return amt * ease.out(clamp(k / 0.12, 0, 1)) * (1 - 0.6 * clamp((k - 0.12) / 1.0, 0, 1));
   }
   function frame(ctx, body, grade, opts = {}) {
-    UID = 0;
-    return `<rect width="${W}" height="${H}" fill="#0c0d10"/>${defs()}${body}${finish(grade)}${opts.noClock ? '' : clockChip(ctx, opts)}${subtitles(ctx, opts)}`;
+    return `<rect width="${W}" height="${H}" fill="#0c0d10"/>${defs()}${body}${finish(grade)}${opts.noClock ? '' : clockChip(ctx, opts)}${rumourMeter(ctx)}${nameTags(ctx)}${captions(ctx, opts)}${jumpCard(ctx)}`;
   }
 
-  window.QG = { CAST, EX, ex, talk, blink, person, item, alive, setCam, layer, officeSet, breakSet, kitchenSet, phoneInsert, desk, partition, frame, sm, mix, LINE };
+  window.QG = { CAST, EX, ex, talk, blink, person, item, alive, setCam, layer, officeSet, breakSet, kitchenSet, phoneInsert, desk, partition, frame, sm, mix, punch, LINE };
 })();
 
 /* ---------------------------------------------------------------- Part 2: storyboard scenes */
 (function () {
   const E = window.HW, Q = window.QG; const { W, H, ease, seg, clamp, lerp, f1 } = E;
-  const { person, item, alive, setCam, layer, ex, talk, sm, mix } = Q;
+  const { person, item, alive, setCam, layer, ex, talk, sm, mix, punch } = Q;
+  const LS = (ctx, i) => ctx.lines[i].start, LE = (ctx, i) => ctx.lines[i].end;
   const GRADE = {
     noon: { color: '#7fd6c0', op: 0.22 }, morning: { color: '#ffbf6a', op: 0.32 }, day: { color: '#a8c4d0', op: 0.18 },
     cold: { color: '#5d8fd6', op: 0.32 }, dusk: { color: '#3d5f8a', op: 0.42 },
@@ -424,10 +507,10 @@
     // 1 — HOOK: the bag on the chair
     hook_lunch(ctx) {
       const { t } = ctx; const gt = ctx.gt;
-      setCam(lerp(1.22, 1.4, sm(t, 0, 5.2)), 540, lerp(960, 880, sm(t, 0, 5.2)), gt);
+      setCam(lerp(1.22, 1.4, sm(t, 0, 4.5)) + punch(t, 0.8, 0.09), 540, lerp(960, 880, sm(t, 0, 4.5)), gt);
       const fall = sm(t, 0.55, 1.3);
       let s = Q.breakSet(t);
-      const thE = ex(ex('hopeful', 'unsure', fall), 'hurt', sm(t, 2.3, 3.3));
+      const thE = ex(ex('hopeful', 'unsure', fall), 'hurt', sm(t, LS(ctx, 1) - 0.2, LS(ctx, 1) + 0.6));
       s += layer(1, person('theo', { x: 540, y: 1080, s: 1.5, ...alive(t, 0.3), ex: thE, look: [lerp(0.15, -0.55, fall), lerp(0.55, 0.3, fall)], turn: lerp(0, -0.15, fall), arms: { l: [-15, 60], r: [-15, 60] }, armsFront: true, hold: { both: { kind: 'tray', dy: 10 } }, lit: 1 }) + lunchTable(1110));
       // foreground: Kemi (back), empty chair, Ben (back)
       const reach = Math.sin(Math.PI * seg(t, 0.25, 1.0));
@@ -443,25 +526,26 @@
     // 2 — ORIGIN: the preview, the look, the comment
     origin_phone(ctx) {
       const { t } = ctx; const gt = ctx.gt;
-      if (t < 1.9) {
-        setCam(lerp(1.0, 1.1, sm(t, 0, 1.9)), 540, 820, gt);
-        const buzz = (t > 0.2 && t < 0.55) || (t > 0.7 && t < 1.05) ? 1 : 0;
+      const cut = LS(ctx, 0) - 0.65;
+      if (t < cut) {
+        setCam(lerp(1.0, 1.1, sm(t, 0, cut)), 540, 820, gt);
+        const buzz = (t > 0.5 && t < 0.85) || (t > 1.0 && t < 1.35) ? 1 : 0;
         return Q.frame(ctx, layer(1, Q.phoneInsert(ctx, t, { mode: 'preview', buzz })), GRADE.morning, { hold: true });
       }
-      const tt = t - 1.9;
-      setCam(lerp(1.02, 1.12, sm(tt, 0, 3.5)), 600, 960, gt);
+      const tt = t - cut;
+      setCam(lerp(1.02, 1.12, sm(tt, 0, 2.6)), 600, 960, gt);
       let s = Q.officeSet(t, { warm: 1 });
       // Theo arrives through the glass door, waving
       const wk = seg(tt, 0, 1.4), tx = lerp(1180, 900, ease.out(wk));
       s += layer(0.62, `<rect x="760" y="420" width="16" height="760" fill="#9fb5b8" opacity="0.6"/><rect x="1060" y="420" width="16" height="760" fill="#9fb5b8" opacity="0.6"/>` +
         person('theo', { x: tx, y: 1040, s: 0.78, legs: true, walk: wk < 1 ? tt * 9 : null, ...alive(t, 0.3), ex: 'warm', look: [-0.3, 0], turn: -0.3, arms: { l: [6, 4], r: [-150 + Math.sin(tt * 9) * 12, 25] }, lit: -1 }) +
         `<rect x="700" y="400" width="420" height="800" fill="#cfe3e6" opacity="0.10"/>`);
-      const look = tt < 0.45 ? [0, 0.9] : [0.85, -0.55];
-      const rosaE = ex('neutral', 'suspicious', sm(tt, 0.4, 0.8));
-      const lean = -4 * sm(tt, 0.7, 0.9);
-      s += layer(1, person('rosa', { x: 560, y: 1560, s: 2.15, ...alive(t, 0.7), ex: rosaE, look, turn: lerp(0.1, -0.3, sm(tt, 0.7, 1.0)), lean, glassesDown: 8 * sm(tt, 0.4, 0.8), mouth: talk(ctx, 'rosa'), arms: { l: [8, 4], r: [-6, 108] }, hold: { r: { kind: 'phone', lit: true, s: 1.1, rot: -25, dy: 20 } }, lit: -1 }));
-      const benLook = tt > 2.3 ? [0.9, -0.3] : tt > 0.9 ? [0.9, 0] : [-0.6, 0.3];
-      s += layer(1.05, person('ben', { x: 105, y: 1640, s: 2.15, ...alive(t, 2.0), ex: tt > 1.0 ? ex('neutral', 'curious', sm(tt, 1.0, 1.4)) : 'neutral', look: benLook, turn: lerp(-0.2, 0.75, sm(tt, 0.8, 1.1)), lit: -1 }));
+      const look = tt < 0.3 ? [0, 0.9] : [0.85, -0.55];
+      const rosaE = ex('neutral', 'suspicious', sm(tt, 0.25, 0.55));
+      const lean = -4 * sm(tt, 0.5, 0.7);
+      s += layer(1, person('rosa', { x: 560, y: 1560, s: 2.15, ...alive(t, 0.7), ex: rosaE, look, turn: lerp(0.1, -0.3, sm(tt, 0.5, 0.75)), lean, glassesDown: 8 * sm(tt, 0.25, 0.55), mouth: talk(ctx, 'rosa'), arms: { l: [8, 4], r: [-6, 108] }, hold: { r: { kind: 'phone', lit: true, s: 1.1, rot: -25, dy: 20 } }, lit: -1 }));
+      const benLook = tt > 2.0 ? [0.9, -0.3] : tt > 0.7 ? [0.9, 0] : [-0.6, 0.3];
+      s += layer(1.05, person('ben', { x: 105, y: 1640, s: 2.15, ...alive(t, 2.0), ex: tt > 0.8 ? ex('neutral', 'curious', sm(tt, 0.8, 1.2)) : 'neutral', look: benLook, turn: lerp(-0.2, 0.75, sm(tt, 0.5, 0.8)), lit: -1 }));
       s += layer(1.2, `<rect x="-100" y="1510" width="1300" height="500" fill="#4e3a2c" stroke="${Q.LINE}" stroke-width="4"/><rect x="-100" y="1510" width="1300" height="26" fill="#8a6a4a"/>` + `<g filter="url(#qgBlur2)"><rect x="700" y="1230" width="420" height="280" rx="12" fill="#1a1d22"/><rect x="716" y="1246" width="388" height="248" fill="#8fc4e0" opacity="0.8"/></g>`);
       return Q.frame(ctx, s, GRADE.morning, { hold: true });
     },
@@ -469,9 +553,9 @@
     // 3 — the coffee machine: a guess gets added
     coffee_whisper(ctx) {
       const { t } = ctx; const gt = ctx.gt;
-      setCam(lerp(1.0, 1.15, sm(t, 0, 4.6)), lerp(540, 640, sm(t, 0, 4.6)), 960, gt);
+      setCam(lerp(1.0, 1.15, sm(t, 0, 3.9)) + punch(t, LS(ctx, 1), 0.06), lerp(540, 640, sm(t, 0, 3.9)), 960, gt);
       let s = Q.kitchenSet(t);
-      const second = sm(t, 2.0, 2.5);
+      const second = sm(t, LS(ctx, 1) - 0.1, LS(ctx, 1) + 0.4);
       s += layer(1, person('ben', { x: 330, y: 1540, s: 2.0, ...alive(t, 0.4), ex: ex('neutral', 'smug', 0.4), look: [0.8, 0.05], turn: 0.55, lean: 5, mouth: talk(ctx, 'ben'), arms: { l: [6, 4], r: [8, 128] }, hold: { r: { kind: 'mug', s: 0.9, dy: -16, color: '#3f7fb5' } }, lit: -1 }));
       s += layer(1, person('kemi', { x: 770, y: 1540, s: 1.95, ...alive(t, 1.7), ex: ex('curious', 'suspicious', second), look: second > 0.5 ? [1, -0.05] : [-0.8, 0.05], turn: lerp(-0.45, 0.05, second), arms: { l: [10, 125], r: [6, 4] }, hold: { l: { kind: 'mug', s: 0.9, dy: -16 } }, lit: -1 }));
       // steam
@@ -485,17 +569,17 @@
     // 4 — the guess becomes a fact; the pen
     kemi_spreads(ctx) {
       const { t } = ctx; const gt = ctx.gt;
-      const pan = sm(t, 2.2, 3.0);
-      setCam(lerp(1.05, 1.14, pan), lerp(520, 760, pan), lerp(1020, 980, pan), gt);
+      const p0 = LE(ctx, 1) + 0.05, pan = sm(t, p0, p0 + 0.6);
+      setCam(lerp(1.05, 1.14, pan) + punch(t, LS(ctx, 1), 0.08) * (1 - pan), lerp(520, 760, pan), lerp(1020, 980, pan), gt);
       let s = Q.officeSet(t, { warm: 0.7 });
       // Theo in the background, happily taking a pen from the shared pot
-      const take = seg(t, 2.6, 3.1), has = t > 2.95;
+      const take = seg(t, p0 + 0.3, p0 + 0.75), has = t > p0 + 0.62;
       s += layer(0.8, person('theo', { x: 1010, y: 1030, s: 0.85, ...alive(t, 0.3), ex: 'warm', look: has ? [-0.3, 0.6] : [0.5, 0.3], turn: 0.25, arms: { l: [10, 80], r: has ? [6, 120] : [mix(10, -45, Math.sin(Math.PI * take)), mix(80, 20, Math.sin(Math.PI * take))] }, hold: has ? { r: { kind: 'pen', rot: 30 } } : {}, lit: -1 }) +
         Q.desk(860, 960, 400, { h: 400, mx: 280, mw: 160, pot: 110, monitor: true }));
-      const turnTo = sm(t, 2.5, 2.9);
+      const turnTo = sm(t, p0 + 0.2, p0 + 0.55);
       s += layer(1, person('kemi', { x: 430, y: 1400, s: 1.75, ...alive(t, 1.2), ex: turnTo > 0.5 ? 'suspicious' : ex('smug', 'suspicious', sm(t, 1.2, 1.6)), look: turnTo > 0.4 ? [1, 0] : [-0.3, 0.5], turn: lerp(-0.15, 0.6, turnTo), lean: lerp(8, 2, turnTo), mouth: talk(ctx, 'kemi'), arms: { l: [-5, 85], r: [-5, 85] }, armsFront: true, lit: -1 }));
       s += layer(1.05, Q.partition(-60, 1250, 1200, 700));
-      const react = sm(t, 1.5, 1.9);
+      const react = sm(t, LS(ctx, 1), LS(ctx, 1) + 0.35);
       s += layer(1.2, person('jo', { x: 170, y: 1890, s: 2.1, back: true, ...alive(t, 0.1), tilt: lerp(-4, 9, turnTo) - 4 * react, blur: 1 }) + person('sam', { x: 905, y: 1910, s: 2.1, back: true, ...alive(t, 0.9), tilt: lerp(5, 12, turnTo) + 3 * react, blur: 1 }));
       return Q.frame(ctx, s, GRADE.day);
     },
@@ -503,8 +587,8 @@
     // 5 — the wallet
     wallet(ctx) {
       const { t } = ctx; const gt = ctx.gt;
-      if (t < 1.15) {
-        setCam(1.08, 560, 1080, gt);
+      if (t < 0.9) {
+        setCam(1.08 + punch(t, 0.52, 0.06), 560, 1080, gt);
         let s = Q.officeSet(t, { warm: 0.6 });
         const down = t > 0.6;
         s += layer(1, person('theo', { x: 640, y: 1400, s: 1.75, ...alive(t, 0.3), ex: down ? 'curious' : 'neutral', look: down ? [-0.5, 1] : [0.2, 0.4], turn: down ? -0.2 : 0.1, arms: { l: [-8, 70 + Math.sin(t * 20) * 4], r: [-8, 70 + Math.cos(t * 23) * 4] }, armsFront: true, lit: -1 }) + Q.desk(260, 1300, 760, { h: 340, mx: 560, mw: 220 }));
@@ -514,15 +598,15 @@
           person('kemi', { x: kx, y: 2000, s: 2.6, walk: t * 8, legs: true, back: true, arms: { l: [-8, 6], r: [6, 4] }, hold: { l: { kind: 'bag', s: 0.9, dy: 40 } }, blur: 2 }));
         return Q.frame(ctx, s, GRADE.day);
       }
-      if (t < 2.0) {
-        const tt = t - 1.15;
+      if (t < LS(ctx, 0)) {
+        const tt = t - 0.9;
         setCam(lerp(1.0, 1.06, tt), 540, 900, gt);
         let s = blurSet(2, Q.officeSet(t, { warm: 0.6 }));
         s += layer(1, person('theo', { x: 540, y: 1560, s: 2.5, ...alive(t, 0.3), ex: { b: [0.6, 0.4], smile: -0.1, lid: 0.25, squint: 0 }, look: [0.2, 0.85], turn: 0.1, nod: 3, arms: { l: [-15, 108], r: [-15, 108] }, armsFront: true, hold: { both: { kind: 'wallet', open: true, notes: true, s: 1.5, dy: 30 } }, lit: -1 }));
         return Q.frame(ctx, s, GRADE.day);
       }
-      const tt = t - 2.0;
-      setCam(lerp(1.0, 1.1, sm(tt, 0, 2.4)), 560, 960, gt);
+      const tt = t - LS(ctx, 0);
+      setCam(lerp(1.0, 1.1, sm(tt, 0, 2.0)) + punch(tt, 0, 0.08), 560, 960, gt);
       let s = blurSet(1, Q.officeSet(t, { warm: 0.5 }) + layer(0.7, person('theo', { x: 300, y: 1090, s: 0.95, ...alive(t, 0.3), ex: 'curious', look: [0.2, 0.9], turn: 0.1, nod: 3, arms: { l: [-15, 108], r: [-15, 108] }, armsFront: true, hold: { both: { kind: 'wallet', open: true, notes: true, s: 1.4, dy: 30 } } })));
       s += layer(1, person('ben', { x: 600, y: 1590, s: 2.3, ...alive(t, 2.0), ex: ex('curious', 'suspicious', sm(tt, 0, 0.6)), look: [-0.95, 0.15], turn: -0.3, mouth: talk(ctx, 'ben'), lit: 1 }));
       s += layer(1.1, `<rect x="120" y="1110" width="960" height="900" rx="24" fill="#202328" stroke="${Q.LINE}" stroke-width="6"/><rect x="560" y="1250" width="80" height="30" rx="6" fill="#33373e"/><circle cx="1040" cy="1150" r="6" fill="#59e08a"/>`);
@@ -532,42 +616,44 @@
     // 6 — handing it back
     return_wallet(ctx) {
       const { t } = ctx; const gt = ctx.gt;
-      setCam(lerp(1.0, 1.12, sm(t, 0, 4.2)), 560, lerp(1060, 980, sm(t, 0, 4.2)), gt);
+      const g = LE(ctx, 0) + 0.05;
+      setCam(lerp(1.0, 1.12, sm(t, 0, 3.6)) + punch(t, g + 0.45, 0.06), 560, lerp(1060, 980, sm(t, 0, 3.6)), gt);
       let s = Q.officeSet(t, { warm: 0.45, wall: '#30424a' });
       s += layer(0.85, Q.desk(760, 1150, 520, { h: 500, mx: 360, mw: 200, plant: 80 }));
-      const give = t < 1.5, grab = sm(t, 1.4, 1.6), back = sm(t, 1.6, 1.95);
-      const theoArmR = give ? [mix(6, -48, sm(t, 0, 0.35)), mix(4, -6, sm(t, 0, 0.35))] : [mix(-48, 6, sm(t, 1.5, 1.9)), mix(-6, 4, sm(t, 1.5, 1.9))];
-      const theoE = t < 1.8 ? 'warm' : t < 3.3 ? ex('warm', 'unsure', sm(t, 1.8, 2.5)) : ex('unsure', 'hurt', sm(t, 3.3, 3.9));
-      const shrug = Math.sin(Math.PI * seg(t, 2.65, 3.4));
-      const counting = t > 1.95;
+      const give = t < g, grab = sm(t, g - 0.1, g + 0.1), back = sm(t, g + 0.1, g + 0.45);
+      const theoArmR = give ? [mix(6, -48, sm(t, 0, 0.35)), mix(4, -6, sm(t, 0, 0.35))] : [mix(-48, 6, sm(t, g, g + 0.4)), mix(-6, 4, sm(t, g, g + 0.4))];
+      const theoE = t < g + 0.3 ? 'warm' : t < LS(ctx, 1) + 0.3 ? ex('warm', 'unsure', sm(t, g + 0.3, g + 0.9)) : ex('unsure', 'hurt', sm(t, LS(ctx, 1) + 0.3, LS(ctx, 1) + 0.8));
+      const shrug = Math.sin(Math.PI * seg(t, LS(ctx, 1) - 0.1, LE(ctx, 1) + 0.1));
+      const counting = t > g + 0.45;
       const kArms = counting ? { l: [-20, 100], r: [-20, 100] } : { l: [mix(6, -40, grab) * (1 - back) + 6 * back, mix(4, -8, grab) * (1 - back) + 4 * back], r: [6, 4] };
-      const hold = counting ? { both: { kind: 'wallet', open: true, notes: true, fan: Math.abs(Math.sin(t * 7)), s: 1.15, dy: 10 } } : (t > 1.55 ? { l: { kind: 'wallet', s: 1.1 } } : {});
-      s += layer(1, person('kemi', { x: 800, y: 1330, s: 1.85, legs: true, ...alive(t, 1.2), ex: t < 1.4 ? ex('neutral', 'suspicious', sm(t, 0.4, 1.0)) : 'suspicious', look: counting && Math.sin(t * 3) > 0.6 ? [-0.2, 0.7] : [-0.85, 0.05], turn: -0.5, arms: kArms, armsFront: counting, hold, lit: -1 }));
-      s += layer(1, person('theo', { x: 290, y: 1330, s: 1.85, legs: true, ...alive(t, 0.3), ex: theoE, look: t > 3.5 ? [-0.5, 0.5] : [0.8, 0.05], turn: t > 3.5 ? lerp(0.5, -0.2, sm(t, 3.5, 3.9)) : 0.5, mouth: talk(ctx, 'theo'), shrug, arms: { l: [6, 4], r: theoArmR }, hold: t < 1.55 ? { r: { kind: 'wallet', s: 1.1, dy: 4 } } : {}, lit: -1 }));
+      const hold = counting ? { both: { kind: 'wallet', open: true, notes: true, fan: Math.abs(Math.sin(t * 7)), s: 1.15, dy: 10 } } : (t > g ? { l: { kind: 'wallet', s: 1.1 } } : {});
+      s += layer(1, person('kemi', { x: 800, y: 1330, s: 1.85, legs: true, ...alive(t, 1.2), ex: t < g - 0.1 ? ex('neutral', 'suspicious', sm(t, 0.3, 0.9)) : 'suspicious', look: counting && Math.sin(t * 3) > 0.6 ? [-0.2, 0.7] : [-0.85, 0.05], turn: -0.5, arms: kArms, armsFront: counting, hold, lit: -1 }));
+      s += layer(1, person('theo', { x: 290, y: 1330, s: 1.85, legs: true, ...alive(t, 0.3), ex: theoE, look: t > LE(ctx, 1) + 0.15 ? [-0.5, 0.5] : [0.8, 0.05], turn: t > LE(ctx, 1) + 0.15 ? lerp(0.5, -0.2, sm(t, LE(ctx, 1) + 0.15, LE(ctx, 1) + 0.5)) : 0.5, mouth: talk(ctx, 'theo'), shrug, arms: { l: [6, 4], r: theoArmR }, hold: t < g ? { r: { kind: 'wallet', s: 1.1, dy: 4 } } : {}, lit: -1 }));
       return Q.frame(ctx, s, GRADE.day);
     },
 
     // 7 — he snaps, and that becomes the proof
     lunch_snap(ctx) {
       const { t } = ctx; const gt = ctx.gt;
-      if (t < 2.75) {
-        const shake = t > 2.42 && t < 2.75 ? 9 * (1 - seg(t, 2.42, 2.75)) : 0;
-        setCam(lerp(1.22, 1.34, sm(t, 0, 2.4)), 540, 820, gt, shake);
+      const slam = LE(ctx, 0) + 0.06, rev = slam + 0.33;
+      if (t < rev) {
+        const shake = t > slam ? 11 * (1 - seg(t, slam, rev)) : 0;
+        setCam(lerp(1.22, 1.34, sm(t, 0, slam)) + punch(t, slam, 0.1), 540, 820, gt, shake);
         let s = Q.breakSet(t);
-        const dropped = t > 2.42; const dk = ease.in(seg(t, 2.38, 2.48));
+        const dropped = t > slam; const dk = ease.in(seg(t, slam - 0.04, slam + 0.06));
         const angry = { b: [-0.7, 0.5], smile: -0.6, lid: 0.05, squint: 0.15 };
         const thE = t < 0.5 ? 'hurt' : ex('hurt', angry, sm(t, 0.5, 0.9));
-        s += layer(1, person('theo', { x: 540, y: 1080, s: 1.5, ...alive(t, 0.3), ex: thE, look: t < 0.45 ? [0.2, 0.8] : [-0.35, 0.35], turn: -0.12, mouth: talk(ctx, 'theo'), lean: dropped ? 0 : -2, arms: dropped ? { l: [mix(-15, 6, seg(t, 2.42, 2.7)), mix(60, 4, seg(t, 2.42, 2.7))], r: [mix(-15, 6, seg(t, 2.42, 2.7)), mix(60, 4, seg(t, 2.42, 2.7))] } : { l: [-15, 60], r: [-15, 60] }, armsFront: true, hold: dropped ? {} : { both: { kind: 'tray', dy: 10 + dk * 40 } }, lit: 1 }) +
+        s += layer(1, person('theo', { x: 540, y: 1080, s: 1.5, ...alive(t, 0.3), ex: thE, look: t < 0.45 ? [0.2, 0.8] : [-0.35, 0.35], turn: -0.12, mouth: talk(ctx, 'theo'), lean: dropped ? 0 : -2, arms: dropped ? { l: [mix(-15, 6, seg(t, slam, slam + 0.28)), mix(60, 4, seg(t, slam, slam + 0.28))], r: [mix(-15, 6, seg(t, slam, slam + 0.28)), mix(60, 4, seg(t, slam, slam + 0.28))] } : { l: [-15, 60], r: [-15, 60] }, armsFront: true, hold: dropped ? {} : { both: { kind: 'tray', dy: 10 + dk * 40 } }, lit: 1 }) +
           lunchTable(1110, { items: dropped ? item('tray', 540, 1135, { s: 1.5, rot: 4 }) : '' }));
         s += layer(1.15, Q.chairBack(540, 1270) + item('bag', 540, 1215, { s: 1.5, rot: 4 }) + person('kemi', { x: 165, y: 1720, s: 2.0, back: true, ...alive(t, 1.1), blur: 1, tilt: dropped ? 6 : -3 }) + person('ben', { x: 935, y: 1740, s: 2.05, back: true, ...alive(t, 2.2), blur: 1, tilt: dropped ? -6 : 2 }));
         return Q.frame(ctx, s, GRADE.noon, { noClock: false, y: 1430 });
       }
-      const tt = t - 2.75;
-      setCam(lerp(1.05, 1.13, sm(tt, 0, 2.6)), 700, 930, gt);
+      const tt = t - rev, k0 = LS(ctx, 1) - rev;
+      setCam(lerp(1.05, 1.13, sm(tt, 0, 2.0)) + punch(tt, k0, 0.06), 700, 930, gt);
       let s = Q.breakSet(t);
-      const lean = sm(tt, 0.45, 0.75);
-      s += layer(1, person('kemi', { x: 570, y: 1400, s: 1.7, ...alive(t, 1.1), ex: ex('suspicious', 'smug', lean), look: tt < 0.7 ? [-0.8, 0] : [0.7, 0.05], turn: lerp(-0.2, 0.55, lean), lean: 8 * lean, mouth: talk(ctx, 'kemi'), lit: -1 }));
-      const nod = Math.max(0, Math.sin((tt - 1.3) * 7)) * sm(tt, 1.3, 1.5) * (1 - sm(tt, 2.4, 2.7));
+      const lean = sm(tt, k0 - 0.3, k0 - 0.05);
+      s += layer(1, person('kemi', { x: 570, y: 1400, s: 1.7, ...alive(t, 1.1), ex: ex('suspicious', 'smug', lean), look: tt < k0 - 0.05 ? [-0.8, 0] : [0.7, 0.05], turn: lerp(-0.2, 0.55, lean), lean: 8 * lean, mouth: talk(ctx, 'kemi'), lit: -1 }));
+      const n0 = k0 + 0.6; const nod = Math.max(0, Math.sin((tt - n0) * 7)) * sm(tt, n0, n0 + 0.2) * (1 - sm(tt, n0 + 1.0, n0 + 1.3));
       s += layer(1, person('ben', { x: 860, y: 1410, s: 1.75, ...alive(t, 2.2), ex: 'suspicious', look: [-0.85, 0], turn: -0.35, nod: nod * 2.5, lit: -1 }));
       s += layer(1.05, `<rect x="-200" y="1360" width="${W + 400}" height="700" fill="#8a6644" stroke="${Q.LINE}" stroke-width="4"/>` + item('tray', 600, 1430, { s: 1.4, rot: -3 }) + item('mug', 880, 1430, { s: 1.4, color: '#3f7fb5' }));
       s += layer(1.3, person('theo', { x: 80, y: 2120, s: 2.7, back: true, ...alive(t, 0.3), blur: 2 }));
@@ -577,7 +663,8 @@
     // 8 — the reveal
     reveal_phone(ctx) {
       const { t } = ctx; const gt = ctx.gt;
-      if (t < 1.0) {
+      const ins = LS(ctx, 0) - 0.1;
+      if (t < 0.8) {
         setCam(1.05, 540, 980, gt);
         let s = Q.breakSet(t);
         s += layer(0.8, `<rect x="270" y="380" width="540" height="1600" fill="#1c2a2c" stroke="#222" stroke-width="10"/><rect x="250" y="360" width="580" height="30" fill="#5a6a66"/>`);
@@ -585,15 +672,15 @@
         s += layer(1, person('rosa', { x: 540, y: 1520, s: 2.0, ...alive(t, 0.7), ex: 'neutral', look: lift > 0.5 ? [0, 0.9] : [0.3, 0], arms: { l: [6, 4], r: [mix(6, -6, lift), mix(4, 108, lift)] }, hold: { r: { kind: 'phone', lit: true, s: 1.1, rot: -25, dy: 20 } }, lit: 1 }));
         return Q.frame(ctx, s, GRADE.cold);
       }
-      if (t < 3.0) {
-        setCam(lerp(1.0, 1.12, sm(t, 1.0, 3.0)), 540, 780, gt);
-        return Q.frame(ctx, layer(1, Q.phoneInsert(ctx, t, { mode: 'full', revealAt: 1.3, desk: '#26303a' })), GRADE.cold, { noClock: true });
+      if (t < ins) {
+        setCam(lerp(1.0, 1.12, sm(t, 0.8, ins)) + punch(t, 1.55, 0.07), 540, 780, gt);
+        return Q.frame(ctx, layer(1, Q.phoneInsert(ctx, t, { mode: 'full', revealAt: 1.05, desk: '#26303a' })), GRADE.cold, { noClock: true });
       }
-      const tt = t - 3.0;
+      const tt = t - ins;
       setCam(lerp(1.0, 1.12, sm(tt, 0, 2.6)), 540, 960, gt);
       let s = blurSet(2, Q.breakSet(t));
-      const rE = tt < 0.15 ? 'neutral' : tt < 1.5 ? 'shocked' : ex('shocked', 'guilty', sm(tt, 1.5, 2.1));
-      s += layer(1, person('rosa', { x: 540, y: 1840, s: 2.9, ...alive(t, 0.7), blink: 0, ex: rE, look: tt > 1.3 ? [0.9, 0.15] : [0, 0.6], turn: lerp(0, 0.15, sm(tt, 1.3, 1.8)), mouth: talk(ctx, 'rosa'), glare: 0.5, lit: 1 }));
+      const rE = tt < 0.1 ? 'neutral' : tt < 0.9 ? 'shocked' : ex('shocked', 'guilty', sm(tt, 0.9, 1.4));
+      s += layer(1, person('rosa', { x: 540, y: 1840, s: 2.9, ...alive(t, 0.7), blink: 0, ex: rE, look: tt > 1.0 ? [0.9, 0.15] : [0, 0.6], turn: lerp(0, 0.15, sm(tt, 1.0, 1.4)), mouth: talk(ctx, 'rosa'), glare: 0.5, lit: 1 }));
       s += layer(1, `<ellipse cx="540" cy="1250" rx="420" ry="300" fill="url(#qgGlow)" style="mix-blend-mode:screen"/>`);
       return Q.frame(ctx, s, GRADE.cold, { noClock: true });
     },
@@ -614,7 +701,7 @@
         person('theo', { x: 560, y: 1290, s: 1.05, ...alive(t, 0.3), ex: { b: [0.9, -0.4], smile: -0.35, lid: 0.5, squint: 0 }, look: [0, 0.9], nod: 4, arms: { l: [-12, 70], r: [-12, 70] }, armsFront: true, lit: 1 }) +
         `<ellipse cx="560" cy="1310" rx="250" ry="52" fill="#a77d55" stroke="${Q.LINE}" stroke-width="4"/><rect x="545" y="1350" width="30" height="230" fill="#4a3a2c"/>` + item('tray', 560, 1290, { s: 0.95 }));
       // series mark after the last line
-      const k = sm(t, 3.9, 4.5);
+      const k = sm(t, LE(ctx, 1) + 0.1, LE(ctx, 1) + 0.6);
       s += `<g opacity="${f1(k)}"><text x="${W / 2}" y="420" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="60" letter-spacing="14" fill="#f4ead2" stroke="#0b0b0e" stroke-width="8" paint-order="stroke">THE QUIET GAME</text></g>`;
       return Q.frame(ctx, s, GRADE.dusk, { noClock: true, y: 1500, narSize: 68 });
     },

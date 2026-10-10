@@ -81,7 +81,7 @@ def validate(ep: dict, folder: Path | None = None) -> None:
         for fx in s.get("sfx", []):
             if fx.get("name") not in SFX_NAMES:
                 errs.append(f"scene {s.get('id')}: unknown sfx '{fx.get('name')}'")
-            if not isinstance(fx.get("at"), (int, float)) or fx["at"] < 0:
+            if not isinstance(fx.get("at"), (int, float)) or (fx["at"] < 0 and "line" not in fx):
                 errs.append(f"scene {s.get('id')}: sfx 'at' must be a non-negative number")
         for c in s.get("claims", []):
             if c not in claim_ids:

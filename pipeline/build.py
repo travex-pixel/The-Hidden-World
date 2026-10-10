@@ -109,7 +109,12 @@ def main(argv=None) -> int:
     mus_cfg = ep.get("music", {})
     music = audio.compose(tl, total, seed, bpm=mus_cfg.get("bpm", 96), key_semi=decisions["music_key_offset"])
     clips = [(s["narration_at"], *read_wav(Path(n["path"]))) for s, n in zip(tl, narr) if n["path"]]
-    sfx_events = [(s["start"] + fx["at"], fx["name"]) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] + fx["at"] < s["end"]]
+    def sfx_time(s, fx):  # "line": i anchors the cue to that dialogue line's end (or start, with "from": "start")
+        if "line" in fx and s.get("lines"):
+            ln = s["lines"][fx["line"]]
+            return ln["start" if fx.get("from") == "start" else "end"] + fx["at"]
+        return s["start"] + fx["at"]
+    sfx_events = [(sfx_time(s, fx), fx["name"]) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if sfx_time(s, fx) < s["end"]]
     mixed = audio.mix(total, clips, music, sfx_events, seed, music_db=mus_cfg.get("level_db", -10.0),
                       ambience=audio.ambience(ep["ambience"], total, seed) if ep.get("ambience") else None)
     audio.write_wav(out_dir / "mix.wav", mixed)
