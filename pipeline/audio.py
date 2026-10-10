@@ -21,6 +21,8 @@ CUES = {
     "revelation":   {"chords": [[0, 4, 7, 11], [5, 9, 12, 16], [9, 12, 16], [7, 11, 14, 17]], "density": 0.6, "bright": 0.9, "tense": 0.0},
     "warm":         {"chords": [[0, 4, 7], [5, 9, 12], [0, 4, 7], [7, 11, 14]], "density": 0.75, "bright": 0.85, "tense": 0.0},
     "outro":        {"chords": [[5, 9, 12, 16], [7, 11, 14], [0, 4, 7, 11], [0, 4, 7, 11]], "density": 0.45, "bright": 0.7, "tense": 0.0},
+    # drama cues: sparse, low, mostly pad + texture (story-first episodes)
+    "silence":      {"silent": True},
 }
 PENTA = [0, 2, 4, 7, 9]
 
@@ -96,6 +98,8 @@ def compose(timeline: list[dict], total: float, seed: int, bpm: int = 96, key_se
     while t < total:
         seg = next((s for s in timeline if s["start"] <= t < s["end"]), timeline[-1])
         cue = CUES[seg["music_cue"]]
+        if cue.get("silent"):
+            t += beat; continue
         chord = cue["chords"][bar_i % len(cue["chords"])]
         bar_len = min(bar, total - t + 0.5)
         # pad
@@ -210,7 +214,67 @@ def sfx(name: str, seed: int = 0) -> np.ndarray:
     if name == "whoosh":
         t = tt(0.5)
         return (lowpass_fast(noise(0.5), 1500) * env(len(t), 0.15, 0.1, 0.5, 0.2) * 0.3).astype(np.float32)
+    if name == "keys":  # keyboard typing burst
+        out = np.zeros(int(1.3 * SR), np.float32); at = 0.0
+        while at < 1.15:
+            m = int(0.03 * SR); c = noise(0.03) * np.exp(-np.arange(m) / SR * 220)
+            c = lowpass_fast(c, 5200) - lowpass_fast(c, 900)
+            add(out, (c * rng.uniform(0.25, 0.5)).astype(np.float32), at); at += rng.uniform(0.06, 0.16)
+        return out
+    if name == "buzz":  # phone vibrating on a desk: two pulses with rattle
+        out = np.zeros(int(1.0 * SR), np.float32)
+        for k in (0.0, 0.5):
+            t = tt(0.32); x = np.sign(np.sin(2 * np.pi * 165 * t)) * 0.5 + np.sin(2 * np.pi * 330 * t) * 0.3
+            add(out, (lowpass_fast(x.astype(np.float32), 900) * env(len(t), 0.01, 0.05, 0.9, 0.04) * 0.35).astype(np.float32), k)
+        return out
+    if name == "steps":  # four soft footsteps on carpet
+        out = np.zeros(int(2.0 * SR), np.float32)
+        for i in range(4):
+            t = tt(0.18)
+            x = np.sin(2 * np.pi * (90 + 30 * np.exp(-t * 40)) * t) * np.exp(-t * 28) * 0.6 + lowpass_fast(noise(0.18), 1400) * np.exp(-t * 45) * 0.35
+            add(out, x.astype(np.float32) * (0.8 + 0.2 * (i % 2)), i * 0.46)
+        return out
+    if name == "tray":  # plastic tray slammed on a table, cutlery rattle
+        t = tt(1.0)
+        body = np.sin(2 * np.pi * (110 + 60 * np.exp(-t * 30)) * t) * np.exp(-t * 14) * 0.8
+        clack = lowpass_fast(noise(1.0), 3800) * np.exp(-t * 35) * 0.6
+        out = (body + clack).astype(np.float32)
+        for i in range(6):
+            add(out, tone(rng.uniform(2200, 4200), 0.25, "bell", 0.06), 0.03 + i * 0.045 + rng.uniform(0, 0.02))
+        return out * (0.9 / max(0.9, float(np.abs(out).max())))
+    if name == "scrape":  # bag/chair dragged across a seat
+        t = tt(0.55); x = noise(0.55)
+        x = (lowpass_fast(x, 2600) - lowpass_fast(x, 500)) * (0.6 + 0.4 * np.sin(2 * np.pi * 23 * t))
+        return (x * env(len(t), 0.05, 0.1, 0.8, 0.15) * 0.45).astype(np.float32)
+    if name == "door":  # glass office door: soft push + latch click
+        t = tt(0.7)
+        x = lowpass_fast(noise(0.7), 600) * env(len(t), 0.1, 0.2, 0.5, 0.3) * 0.35
+        add(x, (lowpass_fast(noise(0.05), 6000) * np.exp(-np.arange(int(0.05 * SR)) / SR * 150) * 0.5).astype(np.float32), 0.5)
+        return x.astype(np.float32)
+    if name == "heart":  # single low double heartbeat
+        out = np.zeros(int(0.9 * SR), np.float32)
+        for k, a in ((0.0, 0.9), (0.22, 0.6)):
+            t = tt(0.25); add(out, (np.sin(2 * np.pi * (48 + 20 * np.exp(-t * 30)) * t) * np.exp(-t * 18) * a).astype(np.float32), k)
+        return out
     raise KeyError(name)
+
+
+def ambience(kind: str, total: float, seed: int) -> np.ndarray:
+    """Quiet room tone so silences feel like a real place instead of dead air."""
+    rng = np.random.default_rng(seed + 77)
+    n = int(total * SR); t = np.arange(n) / SR
+    hvac = lowpass_fast(rng.standard_normal(n).astype(np.float32), 220) * 0.5
+    hum = 0.04 * np.sin(2 * np.pi * 50 * t) + 0.02 * np.sin(2 * np.pi * 100 * t)
+    x = (hvac + hum).astype(np.float32)
+    if kind == "office":  # far-off murmur: band-limited noise with syllable-rate wobble, plus the odd distant keyboard
+        mur = rng.standard_normal(n).astype(np.float32)
+        mur = lowpass_fast(mur, 900) - lowpass_fast(mur, 250)
+        wob = 0.5 + 0.5 * np.sin(2 * np.pi * 3.7 * t + 2 * np.sin(2 * np.pi * 0.31 * t))
+        x += (mur * wob * 0.35).astype(np.float32)
+        for at in np.arange(rng.uniform(1, 3), total - 1.5, rng.uniform(5, 8)):
+            add(x, sfx("keys", int(at * 10)) * 0.25, float(at))
+    peak = float(np.max(np.abs(x))) or 1.0
+    return (x / peak * 0.045).astype(np.float32)
 
 
 # ---------------------------------------------------------------- mix
@@ -242,7 +306,7 @@ def envelope_follower(x: np.ndarray, attack: float = 0.01, release: float = 0.35
 
 
 def mix(total: float, narration_clips: list[tuple[float, np.ndarray, int]], music: np.ndarray, sfx_events: list[tuple[float, str]],
-        seed: int, music_db: float = -10.0, sfx_db: float = -9.0, duck_db: float = -7.0) -> np.ndarray:
+        seed: int, music_db: float = -10.0, sfx_db: float = -9.0, duck_db: float = -7.0, ambience: np.ndarray | None = None) -> np.ndarray:
     n = int(total * SR)
     nar = np.zeros(n, np.float32)
     for at, x, sr in narration_clips:
@@ -258,6 +322,9 @@ def mix(total: float, narration_clips: list[tuple[float, np.ndarray, int]], musi
     mus = mus * gain * 10 ** (music_db / 20)
     fx = fx * 10 ** (sfx_db / 20) * (0.6 + 0.4 * gain)
     out = nar * 0.95 + mus + fx
+    if ambience is not None:
+        amb = np.zeros(n, np.float32); add(amb, ambience, 0)
+        out = out + amb * (0.75 + 0.25 * gain)
     # soft limiter
     out = np.tanh(out * 1.15) / np.tanh(1.15)
     peak = float(np.max(np.abs(out))) or 1.0

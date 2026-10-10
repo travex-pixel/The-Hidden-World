@@ -1,4 +1,19 @@
-# THE HIDDEN WORLD
+# THE QUIET GAME  ·  (formerly THE HIDDEN WORLD)
+
+**THE QUIET GAME** — original animated mini-stories about the quiet social games people play: rumours, status, jealousy, conformity, exclusion. Story first, psychology second.
+
+**#1 — *The Rumour*** → [`releases/qg001-the-rumour.mp4`](releases/qg001-the-rumour.mp4) (45 s, 1080×1920). *"By lunch, everyone hated him. Nobody had actually spoken to him."* Script: [`releases/qg001-the-rumour.script.md`](releases/qg001-the-rumour.script.md) · sources & fact check: [`episodes/qg001-the-rumour/research.md`](episodes/qg001-the-rumour/research.md)
+
+How a story episode is built (same pipeline as below):
+- `episodes/<id>/episode.json` with a `cast` (name, Piper voice, speaker id, caption colour) and scenes made of dialogue `lines` (`{who, text, pause?, speed?}`) plus an `action` note. Each line is voiced separately; its timing and a loudness envelope (for lip sync) go into the timeline.
+- `renderer/scenes/qg001-the-rumour.js` — part 1 is the reusable look (cast designs Theo, Rosa, Ben, Kemi + two extras; expression presets; rig with lip sync, blinks, arms, props; office / break room / kitchen sets; parallax camera; colour grades; speaker-coloured subtitles kept clear of platform UI). Part 2 is one function per storyboard scene. A new episode copies the file and rewrites part 2.
+- Office room tone and synthesised foley (`keys`, `buzz`, `steps`, `tray`, `scrape`, `door`, `heart`), and a `silence` music cue, in `pipeline/audio.py`.
+
+Render it: `python -m pipeline.build qg001-the-rumour --seed 1 --quality final` (≈9 min locally) or from the phone via Actions (see docs/ANDROID.md).
+
+---
+
+## The original channel: THE HIDDEN WORLD
 
 *Everything has a secret. Let's find it.*
 

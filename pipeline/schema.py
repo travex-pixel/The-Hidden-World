@@ -7,11 +7,13 @@ ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_TOP = ["id", "number", "title", "central_question", "template", "narrator_voice",
                 "target_duration_seconds", "scenes", "claims", "sources"]
 REQUIRED_SCENE = ["id", "scene", "min_duration", "pad_after", "narration", "caption", "music_cue", "sfx", "claims", "transition"]
-TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth"}
+# dialogue scenes carry spoken `lines` (each {who, text}) instead of a single narration + caption
+REQUIRED_DIALOGUE_SCENE = ["id", "scene", "min_duration", "pad_after", "lines", "music_cue", "sfx", "claims", "transition"]
+TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "story"}
 TRANSITIONS = {"cut", "wipe", "iris", "fade"}
 CLAIM_TYPES = {"established", "plausible", "illustrative", "estimate", "disputed", "metaphor"}
-MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro"}
-SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static"}
+MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "silence"}
+SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "keys", "buzz", "steps", "tray", "scrape", "door", "heart"}
 URL_RE = re.compile(r"^https://[\w.-]+(/[^\s]*)?$")
 
 
@@ -45,17 +47,31 @@ def validate(ep: dict, folder: Path | None = None) -> None:
     claim_ids = {c["id"] for c in ep["claims"]}
     source_ids = {s["id"] for s in ep["sources"]}
     seen = set()
+    cast = ep.get("cast", {})
+    for who, c in cast.items():
+        if not c.get("name") or not c.get("voice"):
+            errs.append(f"cast '{who}': needs name and voice")
     for i, s in enumerate(ep["scenes"]):
-        for k in REQUIRED_SCENE:
+        dialogue = "lines" in s
+        for k in (REQUIRED_DIALOGUE_SCENE if dialogue else REQUIRED_SCENE):
             if k not in s:
                 errs.append(f"scene {i} ({s.get('id','?')}): missing '{k}'")
         if s.get("id") in seen:
             errs.append(f"duplicate scene id {s.get('id')}")
         seen.add(s.get("id"))
-        if not s.get("narration", "").strip():
-            errs.append(f"scene {s.get('id')}: narration is empty")
-        if not s.get("caption", "").strip():
-            errs.append(f"scene {s.get('id')}: caption is empty")
+        if dialogue:
+            for ln in s["lines"]:
+                if ln.get("who") not in cast:
+                    errs.append(f"scene {s.get('id')}: line speaker {ln.get('who')!r} is not in cast")
+                if not str(ln.get("text", "")).strip():
+                    errs.append(f"scene {s.get('id')}: a line has empty text")
+                if len(ln.get("caption", ln.get("text", ""))) > 70:
+                    errs.append(f"scene {s.get('id')}: line caption longer than 70 chars (phone readability)")
+        else:
+            if not s.get("narration", "").strip():
+                errs.append(f"scene {s.get('id')}: narration is empty")
+            if not s.get("caption", "").strip():
+                errs.append(f"scene {s.get('id')}: caption is empty")
         if len(s.get("caption", "")) > 90:
             errs.append(f"scene {s.get('id')}: caption longer than 90 chars (phone readability)")
         if s.get("transition") not in TRANSITIONS:

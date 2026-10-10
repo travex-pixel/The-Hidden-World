@@ -1,0 +1,395 @@
+{
+  "id": "qg001-the-rumour",
+  "number": 1,
+  "series": "THE QUIET GAME",
+  "title": "The Rumour",
+  "central_question": "How does a whole office turn against someone nobody has spoken to?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    35,
+    47
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 72,
+    "level_db": -17.0
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.04,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.05,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.08,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.12,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.08,
+      "color": "#c39bf0",
+      "role": "colleague"
+    }
+  },
+  "phone": {
+    "sender": "Mia",
+    "preview": "Careful with the new guy. He got caught stealing at…",
+    "full": "Careful with the new guy. He got caught stealing at MY work. Fired on day one! Hope yours is nicer x"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "hook_lunch",
+      "clock": "12:31 PM",
+      "action": "Theo stands holding a lunch tray at the team table. Kemi slides her bag onto the only empty chair. Nobody looks up. Slow push in on Theo's face.",
+      "min_duration": 5.0,
+      "lead": 0.35,
+      "pad_after": 0.45,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "By lunch, everyone hated him."
+        },
+        {
+          "who": "narrator",
+          "text": "Nobody had actually spoken to him.",
+          "pause": 0.35
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.55,
+          "name": "scrape"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s02_origin",
+      "scene": "origin_phone",
+      "clock": "9:02 AM",
+      "action": "Rosa's phone buzzes. She reads only the cut-off preview, looks up over her glasses just as Theo walks in waving, and mutters to Ben.",
+      "min_duration": 5.4,
+      "lead": 2.7,
+      "pad_after": 0.55,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "Careful with the new guy."
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "buzz"
+        },
+        {
+          "at": 1.9,
+          "name": "door"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock_note": "THAT MORNING"
+    },
+    {
+      "id": "s03_coffee",
+      "scene": "coffee_whisper",
+      "clock": "10:15 AM",
+      "action": "At the coffee machine Ben passes it on, adding his own guess. Kemi's eyes slide towards Theo.",
+      "min_duration": 4.6,
+      "lead": 0.3,
+      "pad_after": 0.55,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Rosa says watch the new guy."
+        },
+        {
+          "who": "ben",
+          "text": "Something happened at his last job.",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [],
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s04_spread",
+      "scene": "kemi_spreads",
+      "clock": "11:20 AM",
+      "action": "Kemi leans over a partition and the guess becomes a fact. Heads turn. Theo, oblivious, takes a pen from the shared pot and every eye follows it.",
+      "min_duration": 4.6,
+      "lead": 0.25,
+      "pad_after": 1.7,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "He got fired."
+        },
+        {
+          "who": "kemi",
+          "text": "For stealing.",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [],
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s05_wallet",
+      "scene": "wallet",
+      "clock": "11:48 AM",
+      "action": "Kemi's wallet slips from her bag. Theo picks it up and opens it to find a name. Ben sees only the open wallet.",
+      "min_duration": 4.4,
+      "lead": 2.0,
+      "pad_after": 0.45,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Is he going through Kemi's wallet?"
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 0.45,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C1",
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s06_return",
+      "scene": "return_wallet",
+      "action": "Theo hands it back with a smile. Kemi snatches it and counts the cash in front of him. His smile falters.",
+      "min_duration": 4.2,
+      "lead": 0.25,
+      "pad_after": 0.6,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Hey. You dropped this."
+        },
+        {
+          "who": "theo",
+          "text": "You're welcome?",
+          "pause": 1.25,
+          "speed": 0.95
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 1.55,
+          "name": "paper"
+        }
+      ],
+      "claims": [
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s07_snap",
+      "scene": "lunch_snap",
+      "clock": "12:31 PM",
+      "action": "Back to the opening. The bag on the chair. Theo finally snaps and drops his tray. Silence. Kemi leans to Ben: proof.",
+      "min_duration": 5.2,
+      "lead": 0.55,
+      "pad_after": 0.7,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Okay. What is everyone's problem?",
+          "speed": 1.12
+        },
+        {
+          "who": "kemi",
+          "text": "See? Told you.",
+          "pause": 1.15,
+          "speed": 0.95
+        }
+      ],
+      "music_cue": "tension-peak",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "steps"
+        },
+        {
+          "at": 2.42,
+          "name": "tray"
+        }
+      ],
+      "claims": [
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s08_reveal",
+      "scene": "reveal_phone",
+      "clock": "12:33 PM",
+      "action": "Rosa's phone buzzes again. This time she opens the whole message. It was never about Theo. Her face falls.",
+      "min_duration": 5.6,
+      "lead": 3.1,
+      "pad_after": 0.9,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "Oh no.",
+          "speed": 0.85
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.15,
+          "name": "buzz"
+        },
+        {
+          "at": 1.55,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s09_end",
+      "scene": "end_alone",
+      "action": "Wide: Theo eats alone in the middle of the room while the others talk around him. Camera slowly pulls away.",
+      "min_duration": 5.0,
+      "lead": 0.5,
+      "pad_after": 1.9,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Nobody lied."
+        },
+        {
+          "who": "narrator",
+          "text": "Everyone just filled in the gaps.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "transition": "fade"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story, characters and office are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "plausible",
+      "text": "Retold stories tend to lose detail and get bent toward what listeners expect (classic serial-reproduction rumour studies). The original lab setting differs from real rumour spreading, and some field studies found rumours could become more accurate, so this is a tendency, not a law.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "People tend to search for, interpret and remember information in ways that fit what they already believe (confirmation bias), and a perceiver's expectations can draw out behaviour from the other person that seems to confirm them (behavioural confirmation).",
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "The Psychology of Rumor (Allport & Postman, 1947) — summary of serial-reproduction findings: levelling, sharpening, assimilation, and later criticism",
+      "publisher": "Wikipedia, 'Rumor' (secondary summary)",
+      "url": "https://en.wikipedia.org/wiki/Rumor",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "S2",
+      "title": "Levelling and sharpening (overview)",
+      "publisher": "The Decision Lab",
+      "url": "https://thedecisionlab.com/bias/leveling-and-sharpening",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "S3",
+      "title": "Confirmation bias: A ubiquitous phenomenon in many guises. Nickerson, R. S. (1998). Review of General Psychology, 2(2), 175-220",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/1089-2680.2.2.175",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "S4",
+      "title": "Social perception and interpersonal behavior: On the self-fulfilling nature of social stereotypes. Snyder, M., Tanke, E. D., & Berscheid, E. (1977). Journal of Personality and Social Psychology, 35(9)",
+      "publisher": "University of Minnesota research portal (catalogue record)",
+      "url": "https://experts.umn.edu/en/publications/social-perception-and-interpersonal-behavior-on-the-self-fulfilli-2/",
+      "accessed": "2026-10-10"
+    }
+  ]
+}

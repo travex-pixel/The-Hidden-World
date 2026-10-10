@@ -181,7 +181,7 @@ class RenderedOutput(unittest.TestCase):
             self.assertEqual(kinds, ["audio", "video"], c)
             v = next(s for s in p["streams"] if s["codec_type"] == "video")
             self.assertEqual(v["width"] * 16, v["height"] * 9, "must be 9:16")
-            self.assertGreater(float(p["format"]["duration"]), 50)
+            self.assertGreater(float(p["format"]["duration"]), 30)
 
 
 if __name__ == "__main__":
@@ -244,3 +244,53 @@ class PanelGrid(unittest.TestCase):
             auto = [c * cw + 4, r * ch + 4, (c + 1) * cw - 4, (r + 1) * ch - 4]
             for a, b in zip(auto, p["box"]):
                 self.assertLess(abs(a - b), 12)
+
+
+class QuietGame001(unittest.TestCase):
+    """Dialogue-driven story episode (THE QUIET GAME)."""
+    def setUp(self):
+        self.ep = load_episode("qg001-the-rumour")
+
+    def test_every_line_has_a_cast_voice_from_the_approved_list(self):
+        from pipeline.voices import APPROVED
+        for who, c in self.ep["cast"].items():
+            self.assertIn(c["voice"], APPROVED, who)
+        speakers = [c.get("speaker") for c in self.ep["cast"].values() if c.get("speaker") is not None]
+        self.assertEqual(len(speakers), len(set(speakers)), "each character needs a distinct voice")
+
+    def test_unknown_speaker_rejected(self):
+        bad = json.loads(json.dumps(self.ep)); bad["scenes"][0]["lines"][0]["who"] = "nobody"
+        with self.assertRaises(EpisodeError): validate(bad)
+
+    def test_story_opens_on_the_hook_not_an_intro(self):
+        first = self.ep["scenes"][0]["lines"][0]["text"]
+        self.assertTrue(first.startswith("By lunch"), first)
+        self.assertNotIn("welcome", first.lower())
+
+    def test_twist_is_set_up_and_paid_off(self):
+        ph = self.ep["phone"]
+        self.assertTrue(ph["preview"].endswith("…"), "the preview must be cut off before 'at MY work'")
+        self.assertTrue(ph["full"].startswith(ph["preview"].rstrip("…")), "full message must extend the same preview")
+        self.assertIn("MY work", ph["full"])
+        js = (ROOT / "renderer" / "scenes" / "qg001-the-rumour.js").read_text()
+        self.assertIn("He got caught stealing at…", js)   # on-screen preview matches the data
+        self.assertIn("at MY work.", js)
+
+    def test_spoken_words_and_length_targets(self):
+        words = sum(len(l["text"].split()) for s in self.ep["scenes"] for l in s["lines"])
+        self.assertLess(words, 110)
+        lo, hi = self.ep["target_duration_seconds"]
+        self.assertLessEqual(hi, 47)
+
+    def test_no_diagnostic_labels(self):
+        text = " ".join(l["text"] for s in self.ep["scenes"] for l in s["lines"]).lower()
+        for w in ("narciss", "gaslight", "psychopath", "sociopath", "toxic"):
+            self.assertNotIn(w, text)
+
+    def test_timeline_carries_line_timings(self):
+        narr = [{"scene_id": s["id"], "path": None, "duration": 2.0,
+                 "lines": [{"who": l["who"], "text": l["text"], "caption": l["text"], "start": 0.0, "end": 1.0, "mouth": [0.5]} for l in s["lines"]]} for s in self.ep["scenes"]]
+        tl = build_timeline(self.ep, narr, None)
+        for s in tl:
+            for l in s["lines"]:
+                self.assertTrue(s["start"] <= l["start"] < l["end"] <= s["end"], s["id"])

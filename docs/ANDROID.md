@@ -12,7 +12,7 @@ Everything runs on GitHub. No computer, no paid services.
 3. Choose **Render episode** in the workflow list.
 4. Tap **Run workflow**.
 5. Fill the inputs:
-   - **episode**: a folder name under `episodes/`, e.g. `ep001-cash-vs-profit`
+   - **episode**: a folder name under `episodes/`, e.g. `qg001-the-rumour` (or `ep001-cash-vs-profit`)
    - **seed**: a number (same number = same creative choices) or `random`
    - **quality**: `final` (1080×1920, 30 fps) or `preview` (540×960, 15 fps, about 3× faster)
    - **target_duration**: leave blank unless you want the narration nudged faster/slower
@@ -27,6 +27,9 @@ Everything runs on GitHub. No computer, no paid services.
 - Validation errors list exactly which field in `episode.json` is wrong.
 - A `debug-<episode>` artifact contains all intermediate files (mix.wav, silent video, plan).
 - Nothing is uploaded on failure except the debug bundle; there is no half-finished MP4.
+
+## Just watching / posting the finished episode
+Open `releases/qg001-the-rumour.mp4` in the repo on GitHub (mobile site or app) → **⋯ / Download raw file**. It saves to your phone's Downloads; upload it from there to YouTube Shorts, TikTok or Reels. Paste the description from `episodes/qg001-the-rumour/research.md` ("Suggested video description").
 
 ## Adding a new episode from the phone
 1. In the GitHub web UI, open `episodes/ep001-cash-vs-profit/episode.json`, tap the pencil, copy its contents.

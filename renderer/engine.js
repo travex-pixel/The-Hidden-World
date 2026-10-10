@@ -292,7 +292,7 @@
     registerScenes(map) { Object.assign(this.scenes, map); },
     async setup(ep, timeline, seed, visual, art) {
       this.state = { ep, timeline, seed, total: timeline[timeline.length - 1].end, visual: visual || 'svg', art: art || { panels: {} } };
-      document.getElementById('paper').innerHTML = paperOverlay(seed);
+      document.getElementById('paper').innerHTML = ep.paper === false ? '' : paperOverlay(seed);
       // preload artwork so frames never capture a half-loaded image
       this._imgs = await Promise.all(Object.values(this.state.art.panels).map(p => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('cannot load ' + p.src)); im.src = '../' + p.src; })));
     },
@@ -305,7 +305,8 @@
       const s = this.state.timeline[i]; const sc = this.state.ep.scenes[i];
       const local = clamp(t - s.start, 0, s.end - s.start); const T = s.end - s.start;
       const rng = mulberry32(hashStr(sc.id) ^ this.state.seed);
-      return { t: local, T, p: local / T, rng, scene: sc, ep: this.state.ep, fin: this.state.ep.financials || {}, decisions: s.decisions || {}, narrEnd: s.narration_end - s.start };
+      const lines = (s.lines || []).map(l => ({ ...l, start: l.start - s.start, end: l.end - s.start }));
+      return { t: local, T, p: local / T, rng, scene: sc, ep: this.state.ep, fin: this.state.ep.financials || {}, decisions: s.decisions || {}, narrEnd: s.narration_end - s.start, lines, gt: t, idx: i };
     },
     renderScene(i, t) {
       const ctx = this.sceneCtx(i, t); const useArt = this.state.visual === 'art' && ctx.scene.art;
@@ -313,7 +314,7 @@
       if (!useArt && !fn) throw new Error('No scene renderer for "' + ctx.scene.scene + '"');
       const body = useArt ? artScene(ctx, this.state.art) : fn(ctx, this);
       const capY = useArt ? (ctx.scene.art.caption_y || 1650) : (ctx.scene.caption_y || 1560);
-      const cap = (useArt ? (ctx.scene.art.caption === false || (ctx.scene.caption_mode === 'card' && ctx.scene.art.caption !== true)) : ctx.scene.caption_mode === 'card') ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
+      const cap = (useArt ? (ctx.scene.art.caption === false || (ctx.scene.caption_mode === 'card' && ctx.scene.art.caption !== true)) : (ctx.scene.caption_mode === 'card' || !ctx.scene.caption)) ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
       return body + cap;
     },
     frame(t) {
@@ -327,7 +328,7 @@
       } else inner = this.renderScene(i, t);
       let fade = '';
       if (sc.transition === 'fade' && i === tl.length - 1) { const k = seg(t, st.total - 1.0, st.total - 0.05); if (k > 0) fade = `<rect width="${W}" height="${H}" fill="${PAL.ink}" opacity="${f1(k)}"/>`; }
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}<rect width="${W}" height="${H}" fill="url(#vig)"/>${fade}</svg>`;
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}${st.ep.paper === false ? '' : `<rect width="${W}" height="${H}" fill="url(#vig)"/>`}${fade}</svg>`;
       const stage = document.getElementById('stage'); stage.innerHTML = svg;
       // place moving coins along pipes (exact per-frame positions via getPointAtLength)
       stage.querySelectorAll('g[data-coins]').forEach(g => {

@@ -39,10 +39,13 @@ def make_decisions(ep: dict, seed: int) -> dict:
 def build_timeline(ep: dict, narr: list[dict], target: float | None) -> list[dict]:
     tl, t = [], 0.0
     for s, n in zip(ep["scenes"], narr):
-        lead = 0.25  # small breath before narration starts in each scene
+        lead = float(s.get("lead", 0.25))  # small breath before narration starts in each scene
         dur = max(float(s["min_duration"]), lead + n["duration"] + float(s["pad_after"]))
-        tl.append({"id": s["id"], "start": round(t, 3), "end": round(t + dur, 3), "narration_at": round(t + lead, 3),
-                   "narration_end": round(t + lead + n["duration"], 3), "music_cue": s["music_cue"]})
+        e = {"id": s["id"], "start": round(t, 3), "end": round(t + dur, 3), "narration_at": round(t + lead, 3),
+             "narration_end": round(t + lead + n["duration"], 3), "music_cue": s["music_cue"]}
+        if "lines" in n:  # dialogue: absolute line timings + lip-sync envelopes for the renderer
+            e["lines"] = [{**ln, "start": round(t + lead + ln["start"], 3), "end": round(t + lead + ln["end"], 3)} for ln in n["lines"]]
+        tl.append(e)
         t += dur
     if target:
         lo, hi = ep["target_duration_seconds"]
@@ -93,16 +96,22 @@ def main(argv=None) -> int:
         log(f"ERROR: total duration {total:.2f}s outside target range {lo}-{hi}s. Edit narration/min_duration or pass --target-duration.")
         return 3
     (out_dir / "timeline.json").write_text(json.dumps(tl, indent=2))
-    script_lines = ["# Narration script\n"] + [f"[{s['start']:6.2f}s – {s['end']:6.2f}s] {s['id']}\n  VO: {sc['narration']}\n  CAPTION: {sc['caption']}\n" for s, sc in zip(tl, ep["scenes"])]
+    def script_entry(s, sc):
+        if "lines" in s:
+            body = "".join(f"  {ln['start']:6.2f}s {ep.get('cast', {}).get(ln['who'], {}).get('name', ln['who']).upper()}: {ln['text']}\n" for ln in s["lines"]) or "  (no dialogue)\n"
+            return f"[{s['start']:6.2f}s – {s['end']:6.2f}s] {s['id']}\n{body}  ACTION: {sc.get('action', '')}\n"
+        return f"[{s['start']:6.2f}s – {s['end']:6.2f}s] {s['id']}\n  VO: {sc['narration']}\n  CAPTION: {sc['caption']}\n"
+    script_lines = ["# Script\n"] + [script_entry(s, sc) for s, sc in zip(tl, ep["scenes"])]
     (out_dir / "script.md").write_text("\n".join(script_lines))
 
     # 2. music + sfx + mix
     log("audio: composing soundtrack and effects")
-    music = audio.compose(tl, total, seed, bpm=ep.get("music", {}).get("bpm", 96), key_semi=decisions["music_key_offset"])
-    clips = [(s["narration_at"], *read_wav(Path(n["path"]))) for s, n in zip(tl, narr)]
-    clips = [(at, x, sr) for at, (x, sr) in [(c[0], (c[1], c[2])) for c in clips]]
+    mus_cfg = ep.get("music", {})
+    music = audio.compose(tl, total, seed, bpm=mus_cfg.get("bpm", 96), key_semi=decisions["music_key_offset"])
+    clips = [(s["narration_at"], *read_wav(Path(n["path"]))) for s, n in zip(tl, narr) if n["path"]]
     sfx_events = [(s["start"] + fx["at"], fx["name"]) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] + fx["at"] < s["end"]]
-    mixed = audio.mix(total, clips, music, sfx_events, seed)
+    mixed = audio.mix(total, clips, music, sfx_events, seed, music_db=mus_cfg.get("level_db", -10.0),
+                      ambience=audio.ambience(ep["ambience"], total, seed) if ep.get("ambience") else None)
     audio.write_wav(out_dir / "mix.wav", mixed)
     audio.write_wav(out_dir / "music_only.wav", music)
 
