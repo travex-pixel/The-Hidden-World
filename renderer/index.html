@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>The Hidden World renderer</title>
+<style>
+  @font-face{font-family:'Fraunces';font-weight:600;src:url('../assets/fonts/Fraunces-SemiBold.ttf')}
+  @font-face{font-family:'Fraunces';font-weight:800;src:url('../assets/fonts/Fraunces-ExtraBold.ttf')}
+  @font-face{font-family:'Fraunces';font-weight:600;font-style:italic;src:url('../assets/fonts/Fraunces-SemiBoldItalic.ttf')}
+  @font-face{font-family:'Nunito';font-weight:500;src:url('../assets/fonts/Nunito-Medium.ttf')}
+  @font-face{font-family:'Nunito';font-weight:700;src:url('../assets/fonts/Nunito-Bold.ttf')}
+  @font-face{font-family:'Nunito';font-weight:800;src:url('../assets/fonts/Nunito-ExtraBold.ttf')}
+  html,body{margin:0;padding:0;background:#f4e8d0;overflow:hidden}
+  #wrap{position:relative;width:100vw;height:100vh}
+  #stage,#paper{position:absolute;inset:0;width:100%;height:100%}
+  #paper{pointer-events:none}
+  #stage svg,#paper svg{display:block;width:100%;height:100%}
+  .warm{font-family:Fraunces;font-weight:800}.warm2{font-family:Fraunces;font-weight:600;font-style:italic}.warm3{font-family:Nunito;font-weight:800}.warm4{font-family:Nunito;font-weight:700}.warm5{font-family:Nunito;font-weight:500}
+</style></head>
+<body><div id="wrap"><div id="stage"></div><div id="paper"></div></div>
+<div style="position:absolute;left:-9999px"><span class="warm">a</span><span class="warm2">a</span><span class="warm3">a</span><span class="warm4">a</span><span class="warm5">a</span></div>
+<script src="engine.js"></script>
+</body></html>

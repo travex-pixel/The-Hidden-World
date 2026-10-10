@@ -1,0 +1,401 @@
+{
+  "id": "ep001-cash-vs-profit",
+  "number": 1,
+  "title": "Why a Billion-Dollar Company Can Run Out of Cash",
+  "central_question": "How can a business look wealthy and profitable yet fail to pay a bill that is due today?",
+  "template": "counterintuitive-truth",
+  "narrator_voice": "en_GB-alba-medium",
+  "target_duration_seconds": [
+    55,
+    72
+  ],
+  "fiction_notice": "Marigold and her company are fictional. Figures are illustrative and internally consistent, not taken from any real business.",
+  "music": {
+    "style": "curious-to-warm",
+    "bpm": 96
+  },
+  "financials": {
+    "currency": "$",
+    "period": "this quarter",
+    "revenue": 2400000,
+    "expenses": 1900000,
+    "profit": 500000,
+    "collected_from_customers": 1800000,
+    "receivables": 600000,
+    "starting_cash": 440000,
+    "cash_paid_out": 2200000,
+    "cash_now": 40000,
+    "bill_due_today": 120000,
+    "payroll_friday": 150000,
+    "big_customer_payment": 350000,
+    "new_invoice": 400000,
+    "note": "cash_paid_out = expenses paid in cash (1,900,000) + extra stock bought for next quarter (300,000). Stock is an asset until sold, so it reduces cash but not profit."
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "hook_hq",
+      "min_duration": 4.0,
+      "pad_after": 0.35,
+      "narration": "Meet Marigold. Her company is worth millions on paper. So why can't it pay one bill that's due today?",
+      "caption": "Worth millions. Can't pay one bill.",
+      "subcaption": "A fictional company",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 0.15,
+          "name": "sparkle"
+        },
+        {
+          "at": 2.6,
+          "name": "flutter"
+        },
+        {
+          "at": 3.4,
+          "name": "paper"
+        }
+      ],
+      "claims": [
+        "C5"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s02_success",
+      "scene": "success_chart",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "narration": "Customers are buying everything. Sales are up, orders are stacking up, and the profit report says: best year ever.",
+      "caption": "Sales up. Orders up. Profit up.",
+      "music_cue": "playful",
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "thud"
+        },
+        {
+          "at": 1.3,
+          "name": "thud"
+        },
+        {
+          "at": 2.2,
+          "name": "thud"
+        },
+        {
+          "at": 4.6,
+          "name": "sparkle"
+        }
+      ],
+      "claims": [
+        "C5"
+      ],
+      "transition": "wipe"
+    },
+    {
+      "id": "s03_catch",
+      "scene": "credit_sale",
+      "min_duration": 5.0,
+      "pad_after": 0.4,
+      "narration": "Here's the catch. Sell on credit, and the sale counts straight away. The actual cash arrives later. Sometimes months later.",
+      "caption": "Sale recorded today. Cash arrives later.",
+      "music_cue": "playful",
+      "sfx": [
+        {
+          "at": 1.6,
+          "name": "stamp"
+        },
+        {
+          "at": 3.2,
+          "name": "coins"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s04_drains",
+      "scene": "outflows",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "narration": "Meanwhile, money going out won't wait. Wages are due Friday. Suppliers want paying on delivery. Stock is bought before it's sold.",
+      "caption": "Wages. Suppliers. Stock. Paid now.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 1.4,
+          "name": "drain"
+        },
+        {
+          "at": 2.7,
+          "name": "drain"
+        },
+        {
+          "at": 4.0,
+          "name": "drain"
+        }
+      ],
+      "claims": [
+        "C3",
+        "C5"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s05_reservoir",
+      "scene": "reservoir_pipeline",
+      "min_duration": 6.0,
+      "pad_after": 0.4,
+      "narration": "Picture a reservoir of cash you can spend today, and a long pipeline of money customers still owe you. Today's bill waits at a gate that only takes cash.",
+      "caption": "Cash you have now is not the same as money you are owed.",
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "water"
+        },
+        {
+          "at": 3.0,
+          "name": "coins"
+        },
+        {
+          "at": 5.0,
+          "name": "gate"
+        }
+      ],
+      "claims": [
+        "C6",
+        "C2"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s06_pressure",
+      "scene": "pressure_split",
+      "min_duration": 5.5,
+      "pad_after": 0.5,
+      "narration": "More invoices land. A supplier pauses deliveries. The profit report says five hundred thousand. The bank says forty.",
+      "caption": "Profit: $500k. Cash: $40k. Bill due: $120k.",
+      "music_cue": "tension-peak",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "paper"
+        },
+        {
+          "at": 0.8,
+          "name": "paper"
+        },
+        {
+          "at": 1.3,
+          "name": "paper"
+        },
+        {
+          "at": 2.6,
+          "name": "brake"
+        },
+        {
+          "at": 4.6,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C5"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s07_revelation",
+      "scene": "two_meters",
+      "min_duration": 8.0,
+      "pad_after": 0.4,
+      "narration": "Profit measures what a business earned over a period. Cash flow tracks money actually moving in and out. When the timing slips, even a profitable business can hit trouble. It's not the only way companies fail, but Australian liquidators name cash-flow problems more than any other single cause.",
+      "caption": "Profit = earned over a period. Cash flow = money moving in and out.",
+      "subcaption": "ASIC 2022-23: cash-flow problems cited in 52% of liquidator reports",
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "chime"
+        },
+        {
+          "at": 3.6,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "transition": "iris"
+    },
+    {
+      "id": "s08_payoff",
+      "scene": "payoff_party",
+      "min_duration": 5.5,
+      "pad_after": 0.9,
+      "narration": "Then: ping. A big customer finally pays. The reservoir fills, the supplier's back, and Marigold celebrates. Briefly.",
+      "caption": "A big customer finally pays: $350,000",
+      "music_cue": "warm",
+      "sfx": [
+        {
+          "at": 0.5,
+          "name": "ping"
+        },
+        {
+          "at": 1.6,
+          "name": "water"
+        },
+        {
+          "at": 3.6,
+          "name": "sparkle"
+        },
+        {
+          "at": 5.3,
+          "name": "rumble"
+        },
+        {
+          "at": 6.1,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C5"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s09_lesson",
+      "scene": "lesson_card",
+      "min_duration": 5.0,
+      "pad_after": 0.8,
+      "narration": "Lesson learned: being rich on paper is lovely. Paying people in actual money is even better.",
+      "caption": "Rich on paper is lovely. Paying people in actual money is better.",
+      "subcaption": "THE HIDDEN WORLD. Everything has a secret.",
+      "music_cue": "outro",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "paper"
+        },
+        {
+          "at": 3.4,
+          "name": "sparkle"
+        }
+      ],
+      "claims": [],
+      "transition": "fade",
+      "caption_mode": "card"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "Under accrual accounting, a credit sale is recorded as income when it is earned/invoiced, even though the cash is received later.",
+      "sources": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Profit measures what a business earned over a period; cash flow tracks the actual movement of cash in and out. A statement of cash flows exists precisely because profit alone does not show an entity's ability to generate cash and meet obligations.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "Businesses need cash to pay suppliers and employees on time (operating cash outflows), and a profitable business can run into trouble if cash inflows and outflows are mistimed. This is one mechanism of failure, not the only one.",
+      "sources": [
+        "S1",
+        "S2",
+        "S6"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "In ASIC's 2022-23 insolvency statistics, 'inadequate cash flow or high cash use' was the most frequently nominated cause of company failure, cited in 52% of registered liquidators' reports.",
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "illustrative",
+      "text": "Marigold's company and all its figures are fictional and internally consistent: revenue 2.4M, expenses 1.9M, profit 0.5M, receivables 0.6M, cash 40k, bill due 120k.",
+      "sources": []
+    },
+    {
+      "id": "C6",
+      "type": "metaphor",
+      "text": "Reservoir (cash available now) versus pipeline (receivables still flowing in) is a visual metaphor, not an accounting definition.",
+      "sources": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "IAS 7 Statement of Cash Flows (Objective; paragraphs 4, 13, 14)",
+      "publisher": "IFRS Foundation",
+      "url": "https://www.ifrs.org/content/dam/ifrs/publications/html-standards/english/2026/issued/ias7.html",
+      "date": "2026 issued edition",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S2",
+      "title": "IFRS for SMEs Education Module 7: Statement of Cash Flows",
+      "publisher": "IFRS Foundation",
+      "url": "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/smes/2025-modules/module-7.pdf",
+      "date": "2025",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S3",
+      "title": "Accounting methods for business income (cash vs accruals)",
+      "publisher": "Australian Taxation Office",
+      "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/assessable-income/accounting-methods",
+      "date": "n.d. (current ATO guidance)",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S4",
+      "title": "Debtor and creditor records",
+      "publisher": "Australian Taxation Office",
+      "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/setting-up-and-managing-records/debtor-and-creditor-records",
+      "date": "n.d. (current ATO guidance)",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S5",
+      "title": "Publication 538, Accounting Periods and Methods",
+      "publisher": "US Internal Revenue Service",
+      "url": "https://www.irs.gov/publications/p538",
+      "date": "January 2022",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S6",
+      "title": "23-346MR ASIC's annual corporate insolvency statistics shows COVID-19 impact on small business",
+      "publisher": "Australian Securities and Investments Commission",
+      "url": "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2023-releases/23-346mr-asic-s-annual-corporate-insolvency-statistics-shows-covid-19-impact-on-small-business",
+      "date": "December 2023",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    }
+  ],
+  "narration_speed": 1.3
+}

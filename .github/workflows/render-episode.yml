@@ -1,0 +1,107 @@
+name: Render episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Episode id (folder name under episodes/)"
+        required: true
+        default: "ep001-cash-vs-profit"
+        type: string
+      seed:
+        description: "Seed: a number for reproducible creative choices, or 'random'"
+        required: true
+        default: "1"
+        type: string
+      quality:
+        description: "preview = 540x960 @15fps (fast); final = 1080x1920 @30fps"
+        required: true
+        default: "final"
+        type: choice
+        options: [final, preview]
+      target_duration:
+        description: "Optional target length in seconds (blank = follow the story)"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright Chromium
+        run: npm install --no-fund --no-audit && npx playwright install --with-deps chromium
+
+      - name: Cache narrator voice and narration
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: hw-cache-${{ hashFiles('episodes/**/episode.json', 'pipeline/narrate.py', 'pipeline/voices.py') }}
+          restore-keys: hw-cache-
+
+      - name: Validate episode
+        run: python -m pipeline.schema "${{ inputs.episode }}"
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Build video
+        run: |
+          EXTRA=""
+          if [ -n "${{ inputs.target_duration }}" ]; then EXTRA="--target-duration ${{ inputs.target_duration }}"; fi
+          python -m pipeline.build "${{ inputs.episode }}" --seed "${{ inputs.seed }}" --quality "${{ inputs.quality }}" $EXTRA
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## THE HIDDEN WORLD — ${{ inputs.episode }}" >> $GITHUB_STEP_SUMMARY
+          if [ -f "out/${{ inputs.episode }}/verify.json" ]; then
+            echo '```json' >> $GITHUB_STEP_SUMMARY; cat "out/${{ inputs.episode }}/verify.json" >> $GITHUB_STEP_SUMMARY; echo '```' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Build failed before verification. Open the 'Build video' step log for the first line starting with ERROR." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Upload MP4 artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.episode }}-seed${{ inputs.seed }}-${{ inputs.quality }}
+          path: |
+            out/${{ inputs.episode }}/${{ inputs.episode }}.mp4
+            out/${{ inputs.episode }}/contact_sheet.png
+            out/${{ inputs.episode }}/verify.json
+            out/${{ inputs.episode }}/script.md
+            out/${{ inputs.episode }}/timeline.json
+            out/${{ inputs.episode }}/decisions.json
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Upload debug intermediates on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-${{ inputs.episode }}
+          path: out/
+          retention-days: 7
+          if-no-files-found: ignore
