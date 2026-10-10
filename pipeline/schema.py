@@ -6,12 +6,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_TOP = ["id", "number", "title", "central_question", "template", "narrator_voice",
                 "target_duration_seconds", "scenes", "claims", "sources"]
-REQUIRED_SCENE = ["id", "scene", "min_duration", "pad_after", "narration", "caption", "music_cue", "sfx", "claims", "transition"]
-TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth"}
+REQUIRED_SCENE = ["id", "scene", "min_duration", "pad_after", "music_cue", "sfx", "claims", "transition"]
+TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "thriller"}
 TRANSITIONS = {"cut", "wipe", "iris", "fade"}
 CLAIM_TYPES = {"established", "plausible", "illustrative", "estimate", "disputed", "metaphor"}
-MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro"}
-SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick"}
+MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath"}
+SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell"}
 URL_RE = re.compile(r"^https://[\w.-]+(/[^\s]*)?$")
 
 
@@ -52,10 +52,30 @@ def validate(ep: dict, folder: Path | None = None) -> None:
         if s.get("id") in seen:
             errs.append(f"duplicate scene id {s.get('id')}")
         seen.add(s.get("id"))
-        if not s.get("narration", "").strip():
-            errs.append(f"scene {s.get('id')}: narration is empty")
-        if not s.get("caption", "").strip():
-            errs.append(f"scene {s.get('id')}: caption is empty")
+        if s.get("silent"):
+            s.setdefault("narration", "")
+            if not s.get("caption", "").strip():
+                errs.append(f"scene {s.get('id')}: a silent scene needs an on-screen caption")
+        elif s.get("lines"):
+            for j, ln in enumerate(s["lines"]):
+                if not ln.get("text", "").strip():
+                    errs.append(f"scene {s.get('id')} line {j}: text is empty")
+                if not (ROOT / "characters" / f"{ln.get('who')}.json").exists():
+                    errs.append(f"scene {s.get('id')} line {j}: unknown character '{ln.get('who')}' (add characters/{ln.get('who')}.json)")
+                if len(ln.get("text", "")) > 90:
+                    errs.append(f"scene {s.get('id')} line {j}: line longer than 90 chars; split it so captions stay readable")
+            if not s.get("caption"):
+                s["caption"] = " ".join(ln["text"] for ln in s["lines"])[:90]
+            s.setdefault("narration", " ".join(ln["text"] for ln in s["lines"]))
+        else:
+            if not s.get("narration", "").strip():
+                errs.append(f"scene {s.get('id')}: narration is empty")
+            if not s.get("caption", "").strip():
+                errs.append(f"scene {s.get('id')}: caption is empty")
+        for k in ("cast",):
+            for cid in s.get(k, []):
+                if not (ROOT / "characters" / f"{cid}.json").exists():
+                    errs.append(f"scene {s.get('id')}: cast member '{cid}' has no characters/{cid}.json")
         if len(s.get("caption", "")) > 90:
             errs.append(f"scene {s.get('id')}: caption longer than 90 chars (phone readability)")
         if s.get("transition") not in TRANSITIONS:

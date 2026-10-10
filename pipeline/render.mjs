@@ -21,7 +21,7 @@ page.on('pageerror', e => { console.error('[page error]', e.message); process.ex
 await page.goto(pathToFileURL(resolve(here, '../renderer/index.html')).href);
 await page.addScriptTag({ path: resolve(here, '..', scenes_js) });
 await page.evaluate(() => document.fonts.ready);
-await page.evaluate(({ episode, timeline, seed, visual, art }) => window.HW.setup(episode, timeline, seed, visual, art), { episode, timeline, seed, visual: plan.visual, art: plan.art });
+await page.evaluate(({ episode, timeline, seed, visual, art, cast }) => window.HW.setup(episode, timeline, seed, visual, art, cast), { episode, timeline, seed, visual: plan.visual, art: plan.art, cast: plan.cast });
 
 const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-framerate', String(fps), '-i', '-', '-an',
   '-c:v', 'libx264', '-preset', plan.preset || 'medium', '-crf', String(plan.crf ?? 20), '-pix_fmt', 'yuv420p', '-r', String(fps), outPath], { stdio: ['pipe', 'inherit', 'inherit'] });

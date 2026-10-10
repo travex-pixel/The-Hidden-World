@@ -21,6 +21,13 @@ CUES = {
     "revelation":   {"chords": [[0, 4, 7, 11], [5, 9, 12, 16], [9, 12, 16], [7, 11, 14, 17]], "density": 0.6, "bright": 0.9, "tense": 0.0},
     "warm":         {"chords": [[0, 4, 7], [5, 9, 12], [0, 4, 7], [7, 11, 14]], "density": 0.75, "bright": 0.85, "tense": 0.0},
     "outro":        {"chords": [[5, 9, 12, 16], [7, 11, 14], [0, 4, 7, 11], [0, 4, 7, 11]], "density": 0.45, "bright": 0.7, "tense": 0.0},
+    # psychological-thriller palette: sparse electric-piano bells, minor colour, optional heartbeat pulse
+    "intimate":     {"chords": [[0, 3, 7, 10, 14], [5, 8, 12, 15], [-2, 2, 5, 9], [3, 7, 10, 14]], "density": 0.28, "bright": 0.55, "tense": 0.0, "inst": "bell"},
+    "unease":       {"chords": [[0, 3, 7], [1, 4, 8], [0, 3, 7], [-1, 3, 6]], "density": 0.14, "bright": 0.35, "tense": 0.35, "inst": "bell", "pulse": True},
+    "cold":         {"chords": [[0, 3, 6], [0, 3, 6, 9], [-1, 2, 6], [0, 3, 6]], "density": 0.08, "bright": 0.2, "tense": 0.7, "inst": "bell", "pulse": True},
+    "hush":         {"chords": [[0, 7], [0, 7], [-1, 6], [0, 7]], "density": 0.0, "bright": 0.2, "tense": 0.15, "inst": "none"},
+    "power":        {"chords": [[0, 4, 7, 11], [5, 9, 12, 16], [7, 11, 14, 17], [9, 12, 16, 19]], "density": 0.32, "bright": 0.8, "tense": 0.0, "inst": "bell", "pulse": True},
+    "aftermath":    {"chords": [[0, 3, 7, 10], [5, 8, 12], [3, 7, 10], [-2, 2, 5, 9]], "density": 0.18, "bright": 0.4, "tense": 0.1, "inst": "bell"},
 }
 PENTA = [0, 2, 4, 7, 9]
 
@@ -105,8 +112,12 @@ def compose(timeline: list[dict], total: float, seed: int, bpm: int = 96, key_se
         add(bass, tone(note(chord[0] - 24, root), bar_len * 0.95, "bass", 0.16), t)
         if cue["density"] > 0.7:
             add(bass, tone(note(chord[0] - 24 + 7, root), beat * 0.9, "bass", 0.10), t + beat * 2.5)
+        if cue.get("pulse"):   # heartbeat-like low pulse: lub-dub on beat 1
+            for off, a in ((0.0, 0.22), (0.28, 0.14)):
+                add(bass, tone(55, 0.35, "bass", a), t + off)
+        inst = cue.get("inst", "pluck")
         # melody: seeded steps on the pentatonic scale, 8th-note grid, density-controlled
-        for step in range(8):
+        for step in range(8 if inst != "none" else 0):
             if rng.random() < cue["density"] * (1.0 if step % 2 == 0 else 0.55):
                 move = int(rng.integers(-2, 3))
                 last_mel = int(np.clip(last_mel + move, 0, len(PENTA) * 2 - 1))
@@ -114,7 +125,10 @@ def compose(timeline: list[dict], total: float, seed: int, bpm: int = 96, key_se
                 if cue["tense"] > 0.5 and semi % 12 == 4:
                     semi -= 1  # flatten the third in tense cues
                 amp = 0.12 * (0.7 + 0.6 * cue["bright"]) * (1.0 if step % 4 == 0 else 0.75)
-                add(mel, tone(note(semi, root), beat * 1.6, "pluck", amp), t + step * beat / 2)
+                if inst == "bell":
+                    add(mel, tone(note(semi, root), beat * 2.2, "bell", amp * 0.55), t + step * beat / 2)
+                else:
+                    add(mel, tone(note(semi, root), beat * 1.6, "pluck", amp), t + step * beat / 2)
         # tension texture: slow tremolo noise swell
         if cue["tense"] > 0:
             m = int(bar_len * SR)
@@ -136,7 +150,14 @@ def compose(timeline: list[dict], total: float, seed: int, bpm: int = 96, key_se
 
 # ---------------------------------------------------------------- sfx
 def sfx(name: str, seed: int = 0) -> np.ndarray:
-    rng = np.random.default_rng(seed + hash(name) % 1000)
+    x = _sfx(name, seed)
+    peak = float(np.max(np.abs(x))) if len(x) else 0.0
+    return (x * (0.95 / peak) if peak > 0.95 else x).astype(np.float32)
+
+
+def _sfx(name: str, seed: int = 0) -> np.ndarray:
+    import zlib
+    rng = np.random.default_rng(seed + zlib.crc32(name.encode()) % 1000)  # stable across processes (str hash is randomised)
     def noise(d): return rng.standard_normal(int(d * SR)).astype(np.float32)
     def tt(d): return np.arange(int(d * SR)) / SR
     if name == "sparkle":
@@ -195,6 +216,40 @@ def sfx(name: str, seed: int = 0) -> np.ndarray:
         t = tt(1.3)
         x = lowpass_fast(noise(1.3), 160) * (1 + 0.5 * np.sin(2 * np.pi * 7 * t))
         return (x * env(len(x), 0.3, 0.2, 0.8, 0.4) * 0.9).astype(np.float32)
+    if name == "buzz":   # phone vibrating on a desk: two pulses
+        out = np.zeros(int(0.9 * SR), np.float32)
+        for k in (0.0, 0.45):
+            t = tt(0.3)
+            x = np.sign(np.sin(2 * np.pi * 175 * t)) * 0.5 + np.sin(2 * np.pi * 350 * t) * 0.3
+            x = lowpass_fast(x.astype(np.float32), 900) * env(len(t), 0.01, 0.05, 0.9, 0.05)
+            add(out, (x * 0.35).astype(np.float32), k)
+        return out
+    if name == "thump":  # heartbeat
+        out = np.zeros(int(0.8 * SR), np.float32)
+        for k, a in ((0.0, 0.9), (0.24, 0.6)):
+            t = tt(0.25)
+            add(out, (np.sin(2 * np.pi * (48 + 30 * np.exp(-t * 40)) * t) * np.exp(-t * 16) * a).astype(np.float32), k)
+        return out
+    if name == "step":   # one footstep on a hard floor
+        t = tt(0.25)
+        x = np.sin(2 * np.pi * 90 * t) * np.exp(-t * 35) * 0.6 + lowpass_fast(noise(0.25), 3000) * np.exp(-t * 60) * 0.4
+        return x.astype(np.float32)
+    if name == "pen":    # ballpoint click-click
+        out = np.zeros(int(0.3 * SR), np.float32)
+        for k in (0.0, 0.11):
+            t = tt(0.03); add(out, (lowpass_fast(noise(0.03), 7000) * np.exp(-t * 400) * 0.5).astype(np.float32), k)
+        return out
+    if name == "door":   # glass door closing: soft thud then latch click
+        t = tt(0.6)
+        x = np.sin(2 * np.pi * 70 * t) * np.exp(-t * 14) * 0.6
+        c = np.zeros_like(x); i = int(0.18 * SR); m = int(0.03 * SR)
+        c[i:i + m] = lowpass_fast(noise(0.03), 6000)[:m] * np.exp(-np.arange(m) / SR * 300) * 0.5
+        return (x + c).astype(np.float32)
+    if name == "swell":  # rising air before a reveal
+        t = tt(1.4)
+        x = lowpass_fast(noise(1.4), 2500) * (t / 1.4) ** 2.2
+        x[-int(0.04 * SR):] *= np.linspace(1, 0, int(0.04 * SR))
+        return (x * 0.5).astype(np.float32)
     if name == "tick":
         t = tt(0.06)
         x = np.sin(2 * np.pi * 2300 * t) * np.exp(-t * 120) + 0.6 * np.sin(2 * np.pi * 1150 * t) * np.exp(-t * 90)

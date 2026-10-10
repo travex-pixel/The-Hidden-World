@@ -144,6 +144,12 @@ class AudioSynthesis(unittest.TestCase):
         m = audio.compose([{"start": 0, "end": 6, "music_cue": "curious"}, {"start": 6, "end": 12, "music_cue": "revelation"}], 12, 3)
         self.assertEqual(len(m), 12 * audio.SR); self.assertTrue(np.isfinite(m).all()); self.assertGreater(float(np.abs(m).max()), 0.05)
 
+    def test_sfx_reproducible_across_processes(self):
+        import subprocess, numpy as np
+        code = "from pipeline import audio; import sys; sys.stdout.write(str(round(float(abs(audio.sfx('tick',1)).sum()),4)))"
+        outs = {subprocess.run([sys.executable, "-c", code], cwd=ROOT, capture_output=True, text=True, env={"PYTHONHASHSEED": str(i), "PATH": "/usr/bin:/bin"}).stdout for i in (1, 2, 3)}
+        self.assertEqual(len(outs), 1, f"sound effects differ between runs: {outs}")
+
     def test_music_reproducible_for_seed(self):
         import numpy as np
         from pipeline import audio
@@ -196,7 +202,7 @@ class AllEpisodes(unittest.TestCase):
         self.assertGreaterEqual(len(self.episodes()), 2)
         for eid in self.episodes():
             ep = load_episode(eid)
-            js = (ROOT / "renderer" / "scenes" / f"{eid}.js").read_text()
+            js = (ROOT / "renderer" / "scenes" / f"{eid}.js").read_text() + (ROOT / "renderer" / "cast.js").read_text()
             for s in ep["scenes"]:
                 self.assertIn(s["scene"] + "(", js, f"{eid}: no renderer for {s['scene']}")
             self.assertTrue((ROOT / "episodes" / eid / "research.md").exists())
@@ -277,3 +283,76 @@ class Episode003(unittest.TestCase):
         self.assertGreater(len(early), 20, "ticks should be scattered before sync")
         self.assertLessEqual(len(late), 5, "after sync all metronomes tick together")
         self.assertEqual(metronome_model(self.ep["metronomes"])["phases"], m["phases"], "phases are reproducible")
+
+
+class ThrillerCast(unittest.TestCase):
+    """Character continuity and the attractive-cast standard: every thriller episode draws from characters/*.json."""
+    REQUIRED = ["id", "name", "age", "personality", "signature", "look", "voice", "expressions"]
+
+    def cast_files(self):
+        return [p for p in (ROOT / "characters").glob("*.json") if p.stem != "narrator"]
+
+    def test_character_specs_complete_and_adult(self):
+        self.assertGreaterEqual(len(self.cast_files()), 2)
+        for p in self.cast_files():
+            c = json.loads(p.read_text())
+            for k in self.REQUIRED:
+                self.assertIn(k, c, f"{p.name}: missing {k}")
+            self.assertGreaterEqual(c["age"], 21, f"{p.name}: cast must be adults")
+            for k in ("skin", "skin_shadow", "skin_light", "hair", "hair_light", "hair_style", "eyes", "brows", "lips", "build", "outfit"):
+                self.assertIn(k, c["look"], f"{p.name}: look.{k}")
+            self.assertIn("colour", c["signature"])
+
+    def test_expressions_used_exist_in_rig(self):
+        import re
+        rig = (ROOT / "renderer" / "cast.js").read_text()
+        known = set(re.findall(r"^\s{4}(\w+):\s+\{ smile", rig, re.M))
+        self.assertIn("charm", known)
+        for c in self.cast_files():
+            for e in json.loads(c.read_text())["expressions"]:
+                self.assertIn(e, known, f"{c.name}: expression {e} not implemented in renderer/cast.js")
+        ep = load_episode("ep004-compliment-deadline")
+        for sc in ep["scenes"]:
+            for a in sc.get("shot", {}).get("actors", []):
+                for k in a.get("acting", []):
+                    if "expr" in k:
+                        self.assertIn(k["expr"], known, f"{sc['id']}: unknown expression {k['expr']}")
+
+    def test_captions_never_cover_a_face(self):
+        ep = load_episode("ep004-compliment-deadline")
+        for sc in ep["scenes"]:
+            cy = sc.get("caption_y", 1640)
+            cap = (cy - 130, cy + 90)
+            for a in sc.get("shot", {}).get("actors", []):
+                if a["view"] != "front":
+                    continue
+                ys = [k.get("y", a["y"]) for k in a.get("acting", [])] + [a["y"]]
+                for y in ys:
+                    face = (y - 190 * a["scale"], y + 160 * a["scale"])
+                    self.assertTrue(face[1] < cap[0] or face[0] > cap[1], f"{sc['id']}: caption overlaps {a['who']}'s face {face} vs {cap}")
+
+    def test_dialogue_only_uses_cast_with_voices(self):
+        ep = load_episode("ep004-compliment-deadline")
+        for sc in ep["scenes"]:
+            for ln in sc.get("lines", []):
+                c = json.loads((ROOT / "characters" / f"{ln['who']}.json").read_text())
+                self.assertIn("model", c["voice"])
+                self.assertLessEqual(len(ln["text"]), 90)
+
+    def test_runtime_in_shorts_range(self):
+        ep = load_episode("ep004-compliment-deadline")
+        lo, hi = ep["target_duration_seconds"]
+        self.assertTrue(30 <= lo and hi <= 60)
+
+    def test_lip_sync_and_line_timing(self):
+        try:
+            import piper  # noqa: F401
+        except ImportError:
+            self.skipTest("piper not installed (render workflow installs it)")
+        from pipeline.narrate import narrate_episode
+        ep = load_episode("ep004-compliment-deadline")
+        for sc, n in zip(ep["scenes"], narrate_episode(ep)):
+            for ln in n.get("lines", []):
+                self.assertGreater(len(ln["env"]), 5, f"{sc['id']}: no lip-sync envelope")
+                self.assertGreater(max(ln["env"]), 0.5, f"{sc['id']}: mouth never opens")
+                self.assertLessEqual(ln["end"], n["duration"] + 1e-6)

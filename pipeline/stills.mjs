@@ -13,6 +13,6 @@ page.on('pageerror', e => { console.error('[page error]', e.message); process.ex
 await page.goto(pathToFileURL(resolve(here, '../renderer/index.html')).href);
 await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
 await page.evaluate(() => document.fonts.ready);
-await page.evaluate(({ episode, timeline, seed, visual, art }) => window.HW.setup(episode, timeline, seed, visual, art), plan);
+await page.evaluate(({ episode, timeline, seed, visual, art, cast }) => window.HW.setup(episode, timeline, seed, visual, art, cast), plan);
 for (const ts of times) { const t = parseFloat(ts); await page.evaluate(async t => { window.HW.frame(t); await window.HW.ready(); }, t); await page.screenshot({ path: resolve(outDir, `t${t.toFixed(2)}.png`) }); console.log('still', t); }
 await browser.close();

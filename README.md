@@ -10,6 +10,9 @@ An original animated educational-mystery channel and the $0 production factory t
 
 **Episode 003 — *The Viral Metronome Trick That Shut a London Bridge*** → [`releases/ep003-metronome-bridge.mp4`](releases/ep003-metronome-bridge.mp4)
 
+### Dark Psychology series (animated thrillers)
+**Episode 004 — *The Compliment With a Deadline*** → render it with the workflow (artifact `ep004-compliment-deadline-seed1-final`). Recurring cast in [`characters/`](characters/), rig in [`renderer/cast.js`](renderer/cast.js), design system in [docs/THRILLER_STYLE.md](docs/THRILLER_STYLE.md).
+
 ## How it works
 
 ```

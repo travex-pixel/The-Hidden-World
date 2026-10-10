@@ -285,13 +285,34 @@
     return '';
   }
 
+  // ---------- thriller captions: speaker name in their colour, words revealed in time with speech
+  function thrillerCaption(text, name, colour, t, progress, y) {
+    const words = text.split(' '); const shown = Math.max(1, Math.ceil(words.length * clamp(progress, 0, 1)));
+    const lines = wrap(text, 26); const fs = 54, lh = 66; let wi = 0; const op = ease.out(seg(t, 0, 0.18));
+    let s = `<g opacity="${f1(op)}">`;
+    if (name) s += `<text x="${W / 2}" y="${f1(y - lines.length * lh / 2 - 34)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="30" letter-spacing="5" fill="${colour}" stroke="#05040a" stroke-width="6" paint-order="stroke">${esc(name.toUpperCase())}</text>`;
+    lines.forEach((l, i) => {
+      const ws = l.split(' '); const yy = f1(y - (lines.length - 1) * lh / 2 + i * lh + 18);
+      s += `<text x="${W / 2}" y="${yy}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" stroke="#05040a" stroke-width="12" stroke-linejoin="round" paint-order="stroke">` +
+        ws.map(w => { const vis = wi++ < shown; return `<tspan fill="${vis ? '#ffffff' : '#ffffff'}" fill-opacity="${vis ? 1 : 0.28}" stroke-opacity="${vis ? 1 : 0.2}">${esc(w)} </tspan>`; }).join('') + `</text>`;
+    });
+    return s + '</g>';
+  }
+  function dialogueCaption(ctx, cast) {
+    const t = ctx.t; const ln = ctx.lines.find(l => t >= l.start - 0.12 && t <= l.end + 0.35);
+    if (!ln) return '';
+    const sp = cast[ln.who] || {}; const narr = ln.who === 'narrator';
+    const progress = (t - ln.start) / Math.max(0.3, ln.end - ln.start) * 1.15;
+    return thrillerCaption(ln.text, narr ? null : sp.name.split(' ')[0], narr ? '#cfd6e6' : (sp.signature || {}).colour || '#fff', t - ln.start + 0.12, progress, ctx.scene.caption_y || 1640);
+  }
+
   const HW = {
     W, H, PAL, mulberry32, hashStr, clamp, lerp, ease, seg, esc, f1, blob, inkPath, shadowEllipse, coin, coinPile, invoice, label, sparkles, confetti, cloud,
     marigold, pip, bird, artScene, truck, reservoir, pipe, coinsAlong, chart, wrap, textBlock, captionBox, brandMark, sky, paperOverlay, defs,
     scenes: {}, state: null,
     registerScenes(map) { Object.assign(this.scenes, map); },
-    async setup(ep, timeline, seed, visual, art) {
-      this.state = { ep, timeline, seed, total: timeline[timeline.length - 1].end, visual: visual || 'svg', art: art || { panels: {} } };
+    async setup(ep, timeline, seed, visual, art, cast) {
+      this.state = { ep, timeline, seed, total: timeline[timeline.length - 1].end, visual: visual || 'svg', art: art || { panels: {} }, cast: cast || {} };
       document.getElementById('paper').innerHTML = paperOverlay(seed);
       // preload artwork so frames never capture a half-loaded image
       this._imgs = await Promise.all(Object.values(this.state.art.panels).map(p => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('cannot load ' + p.src)); im.src = '../' + p.src; })));
@@ -305,7 +326,15 @@
       const s = this.state.timeline[i]; const sc = this.state.ep.scenes[i];
       const local = clamp(t - s.start, 0, s.end - s.start); const T = s.end - s.start;
       const rng = mulberry32(hashStr(sc.id) ^ this.state.seed);
-      return { t: local, T, p: local / T, rng, scene: sc, ep: this.state.ep, fin: this.state.ep.financials || {}, decisions: s.decisions || {}, narrEnd: s.narration_end - s.start };
+      const lines = (s.lines || []).map(l => ({ ...l, start: l.start - s.start, end: l.end - s.start }));
+      return { t: local, T, p: local / T, rng, scene: sc, ep: this.state.ep, fin: this.state.ep.financials || {}, decisions: s.decisions || {}, narrEnd: s.narration_end - s.start, sceneStart: s.start, lines };
+    },
+    mouth(who, t) {
+      const tl = this.state.timeline; let v = 0;
+      for (const s of tl) for (const l of (s.lines || [])) if (l.who === who && t >= l.start && t < l.end && l.env) {
+        const k = (t - l.start) * 30, i0 = Math.floor(k), fr = k - i0; const a = l.env[i0] || 0, b = l.env[i0 + 1] || 0; v = Math.max(v, a + (b - a) * fr);
+      }
+      return Math.min(1, v * 0.95);
     },
     renderScene(i, t) {
       const ctx = this.sceneCtx(i, t); const useArt = this.state.visual === 'art' && ctx.scene.art;
@@ -313,6 +342,8 @@
       if (!useArt && !fn) throw new Error('No scene renderer for "' + ctx.scene.scene + '"');
       const body = useArt ? artScene(ctx, this.state.art) : fn(ctx, this);
       const capY = useArt ? (ctx.scene.art.caption_y || 1650) : (ctx.scene.caption_y || 1560);
+      if (ctx.lines.length && this.state.ep.caption_style === 'thriller') return body + dialogueCaption(ctx, this.state.cast);
+      if (this.state.ep.caption_style === 'thriller') return body + (ctx.scene.caption_mode === 'card' ? '' : thrillerCaption(ctx.scene.caption, null, null, ctx.t, 1, ctx.scene.caption_y || 1640));
       const cap = (useArt ? (ctx.scene.art.caption === false || (ctx.scene.caption_mode === 'card' && ctx.scene.art.caption !== true)) : ctx.scene.caption_mode === 'card') ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
       return body + cap;
     },

@@ -119,8 +119,20 @@ def main(argv=None) -> int:
     if not (lo <= total <= hi):
         log(f"ERROR: total duration {total:.2f}s outside target range {lo}-{hi}s. Edit narration/min_duration or pass --target-duration.")
         return 3
-    (out_dir / "timeline.json").write_text(json.dumps(tl, indent=2))
-    script_lines = ["# Narration script\n"] + [f"[{s['start']:6.2f}s – {s['end']:6.2f}s] {s['id']}\n  VO: {sc['narration']}\n  CAPTION: {sc['caption']}\n" for s, sc in zip(tl, ep["scenes"])]
+    # dialogue: absolute line timings (captions + lip sync) and the cast's character specs
+    for s_, n_ in zip(tl, narr):
+        if n_.get("lines") is not None:
+            s_["lines"] = [{**l, "start": round(s_["narration_at"] + l["start"], 3), "end": round(s_["narration_at"] + l["end"], 3)} for l in n_["lines"]]
+    cast_ids = sorted({l["who"] for s_ in tl for l in s_.get("lines", [])} | set(ep.get("cast", [])))
+    from pipeline.narrate import load_character
+    cast = {cid: load_character(cid) for cid in cast_ids}
+    (out_dir / "timeline.json").write_text(json.dumps([{k: v for k, v in s_.items() if k != "lines"} | ({"lines": [{k: v for k, v in l.items() if k != "env"} for l in s_["lines"]]} if s_.get("lines") else {}) for s_ in tl], indent=2))
+    def _script(s, sc):
+        if s.get("lines"):
+            body = "\n".join(f"  {l['who'].upper()} [{l['start']:.2f}s]: {l['text']}" for l in s["lines"])
+            return f"[{s['start']:6.2f}s – {s['end']:6.2f}s] {s['id']}\n{body}\n"
+        return f"[{s['start']:6.2f}s – {s['end']:6.2f}s] {s['id']}\n  VO: {sc.get('narration') or '(silent)'}\n  CAPTION: {sc['caption']}\n"
+    script_lines = ["# Script\n"] + [_script(s, sc) for s, sc in zip(tl, ep["scenes"])]
     (out_dir / "script.md").write_text("\n".join(script_lines))
 
     # 2. music + sfx + mix
@@ -164,7 +176,7 @@ def main(argv=None) -> int:
         if missing:
             log(f"ERROR: missing art files {missing}"); return 4
     log(f"visual mode: {visual}")
-    plan = {"visual": visual, "art": art, "width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed,
+    plan = {"visual": visual, "art": art, "cast": cast, "width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed,
             "timeline": [{**s, "decisions": decisions["scenes"][s["id"]]} for s in tl], "episode": ep,
             "scenes_js": f"renderer/scenes/{ep['id']}.js"}
     if not (ROOT / plan["scenes_js"]).exists():
