@@ -2,7 +2,16 @@
 
 **THE QUIET GAME** — original animated mini-stories about the quiet social games people play: rumours, status, jealousy, conformity, exclusion. Story first, psychology second.
 
-**#1 — *The Rumour*** → [`releases/qg001-the-rumour.mp4`](releases/qg001-the-rumour.mp4) (38 s, 1080×1920). *"By lunch, everyone hated him. Nobody had actually spoken to him."* Script: [`releases/qg001-the-rumour.script.md`](releases/qg001-the-rumour.script.md) · sources & fact check: [`episodes/qg001-the-rumour/research.md`](episodes/qg001-the-rumour/research.md)
+| # | Episode | Hook | What it's about |
+|---|---|---|---|
+| 1 | [`qg001-the-rumour.mp4`](releases/qg001-the-rumour.mp4) (38 s) | "By lunch, everyone hated him. Nobody had actually spoken to him." | rumours, confirmation bias |
+| 2 | [`qg002-the-meeting.mp4`](releases/qg002-the-meeting.mp4) (41 s) | "Six people agreed to a plan. Not one of them wanted it." | the Abilene paradox, pluralistic ignorance |
+| 3 | [`qg003-the-favour.mp4`](releases/qg003-the-favour.mp4) (35 s) | "He never asked for anything. That was the trick." | reciprocity, unasked-for favours |
+| 4 | [`qg004-the-credit.mp4`](releases/qg004-the-credit.mp4) (33 s) | "It was Theo's idea. Nobody heard him say it first." | being talked over, "amplification" |
+
+Each episode has a script (`releases/<id>.script.md`), a source note with a suggested video description (`episodes/<id>/research.md`), and a verification report. Recurring cast: Theo (the new guy), Rosa (the boss), Ben, Kemi, Jo, Sam.
+
+**Make the next episode:** copy `episodes/qg004-the-credit/` to `episodes/qg005-<name>/` and rewrite `episode.json` (cast, lines, meter steps, truth). Then copy `renderer/scenes/qg004-the-credit.js` to `renderer/scenes/qg005-<name>.js` and rewrite its scene functions. The shared look comes from `renderer/scenes/qg-kit.js`.
 
 Built to be easy to follow (ADHD-friendly), all driven from `episode.json`:
 - **Word-by-word captions:** 1–3 words on screen, the spoken word lit in the speaker's colour. Force a break with `|` in a line's `caption`.
@@ -12,7 +21,7 @@ Built to be easy to follow (ADHD-friendly), all driven from `episode.json`:
 
 How a story episode is built (same pipeline as below):
 - `episodes/<id>/episode.json` with a `cast` (name, Piper voice, speaker id, caption colour) and scenes made of dialogue `lines` (`{who, text, pause?, speed?}`) plus an `action` note. Each line is voiced separately; its timing and a loudness envelope (for lip sync) go into the timeline.
-- `renderer/scenes/qg001-the-rumour.js` — part 1 is the reusable look (cast designs Theo, Rosa, Ben, Kemi + two extras; expression presets; rig with lip sync, blinks, arms, props; office / break room / kitchen sets; parallax camera; colour grades; speaker-coloured subtitles kept clear of platform UI). Part 2 is one function per storyboard scene. A new episode copies the file and rewrites part 2.
+- `renderer/scenes/qg-kit.js` is the reusable look (cast designs Theo, Rosa, Ben, Kemi + two extras; expression presets; rig with lip sync, blinks, arms, props; office / break room / kitchen sets; parallax camera; colour grades; speaker-coloured subtitles kept clear of platform UI). Each episode's `renderer/scenes/<id>.js` has one function per storyboard scene and loads the kit through `renderer_includes`. The kit also has thought bubbles, a meeting room, a rainy night, a configurable meter (`hud: {label, truth_label, meter, quotes}`) and props.
 - Office room tone and synthesised foley (`keys`, `buzz`, `steps`, `tray`, `scrape`, `door`, `heart`), and a `silence` music cue, in `pipeline/audio.py`.
 
 Render it: `python -m pipeline.build qg001-the-rumour --seed 1 --quality final` (≈9 min locally) or from the phone via Actions (see docs/ANDROID.md).

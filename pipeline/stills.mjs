@@ -11,6 +11,7 @@ const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
 const page = await browser.newPage({ viewport: { width: plan.width, height: plan.height } });
 page.on('pageerror', e => { console.error('[page error]', e.message); process.exitCode = 1; });
 await page.goto(pathToFileURL(resolve(here, '../renderer/index.html')).href);
+for (const js of plan.includes || []) await page.addScriptTag({ path: resolve(here, '..', js) });
 await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
 await page.evaluate(() => document.fonts.ready);
 await page.evaluate(({ episode, timeline, seed, visual, art }) => window.HW.setup(episode, timeline, seed, visual, art), plan);

@@ -136,9 +136,10 @@ def main(argv=None) -> int:
     log(f"visual mode: {visual}")
     plan = {"visual": visual, "art": art, "width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed,
             "timeline": [{**s, "decisions": decisions["scenes"][s["id"]]} for s in tl], "episode": ep,
-            "scenes_js": f"renderer/scenes/{ep['id']}.js"}
-    if not (ROOT / plan["scenes_js"]).exists():
-        log(f"ERROR: scene renderer {plan['scenes_js']} not found"); return 4
+            "scenes_js": f"renderer/scenes/{ep['id']}.js", "includes": ep.get("renderer_includes", [])}
+    for js in [*plan["includes"], plan["scenes_js"]]:
+        if not (ROOT / js).exists():
+            log(f"ERROR: scene renderer {js} not found"); return 4
     (out_dir / "plan.json").write_text(json.dumps(plan))
     if args.plan_only:
         log(f"plan written: {out_dir / 'plan.json'}"); return 0

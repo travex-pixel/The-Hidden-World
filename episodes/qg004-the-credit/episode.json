@@ -1,0 +1,387 @@
+{
+  "id": "qg004-the-credit",
+  "number": 4,
+  "series": "THE QUIET GAME",
+  "title": "The Credit",
+  "central_question": "Why does the same idea get ignored from one person and praised from another?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    32,
+    46
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 72,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "WHOSE IDEA?",
+    "truth_label": "WHOSE IDEA?",
+    "quotes": false,
+    "meter": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.1,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.12,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.12,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.18,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.12,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.12,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.12,
+      "color": "#e0b07a",
+      "role": "colleague"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "cr_hook",
+      "min_duration": 5.0,
+      "lead": 0.2,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "It was Theo's idea."
+        },
+        {
+          "who": "rosa",
+          "text": "Ben, that's brilliant!",
+          "pause": 0.3
+        },
+        {
+          "who": "narrator",
+          "text": "Nobody heard him say it first.",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "line": 1,
+          "from": "start",
+          "at": 0.0,
+          "name": "clap"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "10:20 AM",
+      "hud": false,
+      "action": "Rosa applauds Ben. Everyone claps. Theo, in the middle of it, frozen."
+    },
+    {
+      "id": "s02_ask",
+      "scene": "cr_ask",
+      "min_duration": 3.0,
+      "lead": 0.6,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "We need more bookings. Ideas?"
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "10:10 AM",
+      "hud": false,
+      "jump": {
+        "dir": -1,
+        "label": "REWIND",
+        "text": "TEN MINUTES EARLIER"
+      },
+      "tags": [
+        {
+          "who": "rosa",
+          "role": "the boss",
+          "x": 780,
+          "y": 780,
+          "at": 0.55
+        }
+      ],
+      "action": "Rosa at the whiteboard. A falling arrow."
+    },
+    {
+      "id": "s03_theo",
+      "scene": "cr_theo",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 1.1,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "What if customers could book onl—",
+          "caption": "What if customers | could book onl—"
+        },
+        {
+          "who": "ben",
+          "text": "Can we fix the projector?",
+          "pause": 0.0,
+          "speed": 1.1
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "line": 1,
+          "at": 0.2,
+          "name": "beep"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 0,
+          "text": "Theo's. Nobody noticed.",
+          "at_line": 1
+        }
+      ],
+      "tags": [
+        {
+          "who": "theo",
+          "role": "the new guy",
+          "x": 300,
+          "y": 1180,
+          "at": 0.1
+        }
+      ],
+      "action": "Theo, quietly, hand half up. Ben talks right over him. Every head turns to the projector. Theo's hand sinks."
+    },
+    {
+      "id": "s04_ben",
+      "scene": "cr_ben",
+      "min_duration": 3.0,
+      "lead": 0.5,
+      "pad_after": 0.7,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "What if customers could book... online?",
+          "caption": "What if customers | could book… online?",
+          "speed": 1.0
+        },
+        {
+          "who": "rosa",
+          "text": "Ben, that's brilliant!",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "line": 1,
+          "at": 0.0,
+          "name": "clap"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "10:20 AM",
+      "rumour": [
+        {
+          "level": 0,
+          "text": "Ben's?!",
+          "at_line": 1
+        }
+      ],
+      "action": "Ten minutes later. Ben, loud, leaning back. The same idea. Rosa lights up. Theo's jaw drops."
+    },
+    {
+      "id": "s05_kemi",
+      "scene": "cr_kemi",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.5,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "That's what Theo said."
+        },
+        {
+          "who": "kemi",
+          "text": "Ten minutes ago.",
+          "pause": 0.3
+        },
+        {
+          "who": "kemi",
+          "text": "Theo, go on.",
+          "pause": 0.8
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "line": 1,
+          "at": 0.15,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "label": "WHOSE IDEA?",
+        "text": "Theo's. And Kemi made sure.",
+        "at_line": 1,
+        "after": 0.1
+      },
+      "tags": [
+        {
+          "who": "kemi",
+          "role": "sits by Theo",
+          "x": 540,
+          "y": 640,
+          "at": 0.1
+        }
+      ],
+      "action": "Kemi (yes, the one from the rumour) says it calmly. The room turns. Ben shrinks."
+    },
+    {
+      "id": "s06_go",
+      "scene": "cr_go",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.6,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Right. So: online booking."
+        },
+        {
+          "who": "rosa",
+          "text": "Theo, write it up.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Theo sits up. Rosa writes THEO next to the idea on the board. Theo and Kemi share a nod."
+    },
+    {
+      "id": "s07_end",
+      "scene": "cr_end",
+      "min_duration": 3.0,
+      "lead": 0.4,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Being right wasn't enough."
+        },
+        {
+          "who": "narrator",
+          "text": "Someone had to say his name.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "action": "Wide: the board says ONLINE BOOKING – THEO. Theo and Kemi, side by side."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "plausible",
+      "text": "Repeating a colleague's point and naming them ('amplification') is a meeting tactic reported by women staffers in the Obama White House (Washington Post, Sept 2016). It is a reported workplace practice, not an experimental finding.",
+      "sources": [
+        "S1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "How Obama's female staff members hatched a plan to make their voices heard in the White House (summary of the Washington Post report by Juliet Eilperin, Sept 2016)",
+      "publisher": "Marie Claire UK (secondary report)",
+      "url": "https://www.marieclaire.co.uk/life/work/obama-s-female-staffers-top-tips-for-making-your-voice-heard-295875",
+      "accessed": "2026-10-10"
+    }
+  ]
+}

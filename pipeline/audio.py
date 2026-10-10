@@ -256,6 +256,26 @@ def sfx(name: str, seed: int = 0) -> np.ndarray:
         for k, a in ((0.0, 0.9), (0.22, 0.6)):
             t = tt(0.25); add(out, (np.sin(2 * np.pi * (48 + 20 * np.exp(-t * 30)) * t) * np.exp(-t * 18) * a).astype(np.float32), k)
         return out
+    if name == "clap":  # a small room applauding (~1.4 s)
+        out = np.zeros(int(1.5 * SR), np.float32)
+        for at in np.sort(rng.uniform(0, 1.3, 26)):
+            m = int(0.04 * SR); c = noise(0.04) * np.exp(-np.arange(m) / SR * 120)
+            add(out, (lowpass_fast(c, 3500) - lowpass_fast(c, 700)).astype(np.float32) * rng.uniform(0.25, 0.45), float(at))
+        return out * env(len(out), 0.05, 0.2, 0.8, 0.4)
+    if name == "tick":  # clock tick (awkward silence)
+        out = np.zeros(int(1.0 * SR), np.float32)
+        for k in range(2):
+            m = int(0.03 * SR); c = noise(0.03) * np.exp(-np.arange(m) / SR * 300)
+            add(out, (lowpass_fast(c, 6000) - lowpass_fast(c, 1500)).astype(np.float32) * (0.5 if k == 0 else 0.35), k * 0.5)
+        return out
+    if name == "pop":  # soft bubble pop for thought bubbles
+        t = tt(0.16)
+        return (np.sin(2 * np.pi * (500 + 900 * t / 0.16) * t) * np.exp(-t * 30) * 0.35).astype(np.float32)
+    if name == "rain":  # 3 s of steady rain with droplets
+        x = noise(3.0); x = (lowpass_fast(x, 6000) - lowpass_fast(x, 900)) * 0.22
+        for at in rng.uniform(0, 2.9, 40):
+            add(x, (lowpass_fast(noise(0.02), 4000) * 0.25).astype(np.float32), float(at))
+        return (x * env(len(x), 0.2, 0.1, 1.0, 0.3)).astype(np.float32)
     raise KeyError(name)
 
 

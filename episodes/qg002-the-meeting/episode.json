@@ -1,0 +1,568 @@
+{
+  "id": "qg002-the-meeting",
+  "number": 2,
+  "series": "THE QUIET GAME",
+  "title": "The Meeting",
+  "central_question": "How does a whole team agree to something none of them want?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    32,
+    46
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 72,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "SAID YES",
+    "truth_label": "REALLY WANTED IT",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.1,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.12,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.12,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.18,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.12,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.12,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.12,
+      "color": "#e0b07a",
+      "role": "colleague"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "mt_hook",
+      "min_duration": 4.4,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Six people agreed to a plan."
+        },
+        {
+          "who": "narrator",
+          "text": "Not one of them wanted it.",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 1.0,
+          "name": "pop"
+        },
+        {
+          "at": 1.25,
+          "name": "pop"
+        },
+        {
+          "at": 1.5,
+          "name": "pop"
+        },
+        {
+          "at": 1.75,
+          "name": "pop"
+        },
+        {
+          "at": 2.0,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "4:57 PM",
+      "hud": false,
+      "action": "Five hands go up around the meeting table. Five thought bubbles: No. Ugh. Nope. Why?! Help."
+    },
+    {
+      "id": "s02_pitch",
+      "scene": "mt_pitch",
+      "min_duration": 3.0,
+      "lead": 0.6,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "Team camping weekend!"
+        },
+        {
+          "who": "rosa",
+          "text": "Who's in?",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "4:55 PM",
+      "jump": {
+        "dir": -1,
+        "label": "REWIND",
+        "text": "TWO MINUTES EARLIER"
+      },
+      "hud": false,
+      "tags": [
+        {
+          "who": "rosa",
+          "role": "the boss",
+          "x": 760,
+          "y": 780,
+          "at": 0.55
+        }
+      ],
+      "action": "Rosa beams beside the whiteboard: TEAM CAMPING WEEKEND."
+    },
+    {
+      "id": "s03_silence",
+      "scene": "mt_silence",
+      "min_duration": 3.3,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "tick"
+        },
+        {
+          "at": 1.1,
+          "name": "tick"
+        },
+        {
+          "at": 2.1,
+          "name": "tick"
+        },
+        {
+          "at": 0.45,
+          "name": "pop"
+        },
+        {
+          "at": 1.15,
+          "name": "pop"
+        },
+        {
+          "at": 1.85,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "hud": false,
+      "tags": [
+        {
+          "who": "theo",
+          "role": "the new guy",
+          "x": 200,
+          "y": 1200,
+          "at": 0.15
+        },
+        {
+          "who": "kemi",
+          "role": "sits by Theo",
+          "x": 540,
+          "y": 1200,
+          "at": 0.85
+        },
+        {
+          "who": "ben",
+          "role": "the joker",
+          "x": 860,
+          "y": 1200,
+          "at": 1.55
+        }
+      ],
+      "action": "Silence. Clock ticks. Thought bubbles: Theo 'I have plans.' Kemi 'I hate camping.' Ben 'It's OCTOBER.'"
+    },
+    {
+      "id": "s04_ben",
+      "scene": "mt_ben",
+      "min_duration": 3.0,
+      "lead": 1.25,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "...Sounds fun?",
+          "speed": 1.0
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.25,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 1,
+          "text": "1 of 5. Ben cracked first.",
+          "at_line": 0
+        }
+      ],
+      "action": "Ben glances left, right. Someone has to say something. He does."
+    },
+    {
+      "id": "s05_cascade",
+      "scene": "mt_cascade",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.7,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "Yeah! Love that."
+        },
+        {
+          "who": "jo",
+          "text": "Sure!",
+          "pause": 0.25
+        },
+        {
+          "who": "sam",
+          "text": "Count me in!",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "line": 0,
+          "at": 0.05,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 2,
+          "text": "2 of 5. Kemi too.",
+          "at_line": 0
+        },
+        {
+          "level": 3,
+          "text": "3 of 5. Jo too.",
+          "at_line": 1
+        },
+        {
+          "level": 4,
+          "text": "4 of 5. Sam too.",
+          "at_line": 2
+        }
+      ],
+      "tags": [
+        {
+          "who": "jo",
+          "role": "IT",
+          "x": 540,
+          "y": 680,
+          "at_line": 1,
+          "dur": 1.2
+        },
+        {
+          "who": "sam",
+          "role": "design",
+          "x": 540,
+          "y": 680,
+          "at_line": 2,
+          "dur": 1.2
+        }
+      ],
+      "action": "Quick cuts. Each one agrees because the last one did. Kemi's bubble: 'WHY did I say that?!'"
+    },
+    {
+      "id": "s06_theo",
+      "scene": "mt_theo",
+      "min_duration": 3.0,
+      "lead": 1.5,
+      "pad_after": 0.5,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "...Great idea.",
+          "speed": 0.95
+        },
+        {
+          "who": "rosa",
+          "text": "Wonderful! It's settled.",
+          "pause": 0.35
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 0.6,
+          "name": "pop"
+        },
+        {
+          "line": 1,
+          "at": -0.3,
+          "name": "paper"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 5,
+          "text": "5 of 5. Unanimous.",
+          "at_line": 0
+        }
+      ],
+      "action": "Every head turns to Theo. He sweats. He folds. Rosa ticks the board."
+    },
+    {
+      "id": "s07_after",
+      "scene": "mt_after",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.3,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "I hate camping."
+        },
+        {
+          "who": "theo",
+          "text": "Me too!",
+          "pause": 0.2
+        },
+        {
+          "who": "ben",
+          "text": "Same.",
+          "pause": 0.2
+        },
+        {
+          "who": "jo",
+          "text": "Same.",
+          "pause": 0.15
+        },
+        {
+          "who": "sam",
+          "text": "Honestly? Same.",
+          "pause": 0.15
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "5:10 PM",
+      "action": "The kitchen, ten minutes later. One by one, the truth comes out."
+    },
+    {
+      "id": "s08_rosa",
+      "scene": "mt_rosa",
+      "min_duration": 3.0,
+      "lead": 0.6,
+      "pad_after": 1.9,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "Oh good, you're all keen!"
+        },
+        {
+          "who": "rosa",
+          "text": "I only suggested it because I thought you'd want it.",
+          "pause": 0.25,
+          "caption": "I only suggested it | because I thought | you'd want it."
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "line": 1,
+          "at": 0.15,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "text": "0 of 6. Not even Rosa.",
+        "at_line": 1,
+        "after": 0.1
+      },
+      "action": "Rosa breezes in, delighted. Then the line that freezes the room."
+    },
+    {
+      "id": "s09_tent",
+      "scene": "mt_tent",
+      "min_duration": 3.0,
+      "lead": 0.5,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Everyone agreed. Nobody wanted it."
+        },
+        {
+          "who": "narrator",
+          "text": "They all thought everyone else did.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "rain"
+        },
+        {
+          "at": 2.8,
+          "name": "rain"
+        },
+        {
+          "at": 5.6,
+          "name": "rain"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "clock": "SAT 11:40 PM",
+      "hud": false,
+      "action": "Saturday night. Rain. Six miserable people in one small tent."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "plausible",
+      "text": "Groups can agree to an action most members privately oppose because each assumes the others want it (Harvey's 'Abilene paradox', a management essay rather than an experiment).",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "People often misjudge what their peers privately think, believing they are alone in their discomfort (pluralistic ignorance), shown in survey studies such as Prentice & Miller (1993).",
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "The Abilene Paradox: The Management of Agreement. Harvey, J. B. (1974). Organizational Dynamics, Summer 1974",
+      "publisher": "Wikipedia, 'Abilene paradox' (secondary summary)",
+      "url": "https://en.wikipedia.org/wiki/Abilene_paradox",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "S2",
+      "title": "The Abilene Paradox (reprint of Harvey's 1974 article with commentaries)",
+      "publisher": "Palouse Mindfulness (hosted PDF)",
+      "url": "https://palousemindfulness.com/docs/Abilene-Paradox.pdf",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "S3",
+      "title": "Pluralistic ignorance and alcohol use on campus: Some consequences of misperceiving the social norm. Prentice, D. A., & Miller, D. T. (1993). JPSP, 64(2), 243-256",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/0022-3514.64.2.243",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "S4",
+      "title": "Pluralistic ignorance (overview)",
+      "publisher": "Wikipedia (secondary summary)",
+      "url": "https://en.wikipedia.org/wiki/Pluralistic_ignorance",
+      "accessed": "2026-10-10"
+    }
+  ]
+}

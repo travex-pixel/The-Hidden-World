@@ -272,7 +272,7 @@ class QuietGame001(unittest.TestCase):
         self.assertTrue(ph["preview"].endswith("…"), "the preview must be cut off before 'at MY work'")
         self.assertTrue(ph["full"].startswith(ph["preview"].rstrip("…")), "full message must extend the same preview")
         self.assertIn("MY work", ph["full"])
-        js = (ROOT / "renderer" / "scenes" / "qg001-the-rumour.js").read_text()
+        js = "".join((ROOT / f).read_text() for f in [*self.ep["renderer_includes"], "renderer/scenes/qg001-the-rumour.js"])
         self.assertIn("He got caught stealing at…", js)   # on-screen preview matches the data
         self.assertIn("at MY work.", js)
 
@@ -307,3 +307,52 @@ class QuietGame001(unittest.TestCase):
     def test_time_jumps_are_labelled(self):
         jumps = [s["jump"]["dir"] for s in self.ep["scenes"] if "jump" in s]
         self.assertEqual(jumps, [-1, 1])
+
+
+class QuietGameSeries(unittest.TestCase):
+    """Checks every THE QUIET GAME episode (qg*) for the series rules."""
+    def episodes(self):
+        return [load_episode(p.name) for p in sorted((ROOT / "episodes").glob("qg*")) if (p / "episode.json").exists()]
+
+    def test_at_least_four_episodes(self):
+        self.assertGreaterEqual(len(self.episodes()), 4)
+
+    def test_series_rules(self):
+        from pipeline.voices import APPROVED
+        for ep in self.episodes():
+            with self.subTest(ep=ep["id"]):
+                for js in ep.get("renderer_includes", []):
+                    self.assertTrue((ROOT / js).exists(), js)
+                for who, c in ep["cast"].items():
+                    self.assertIn(c["voice"], APPROVED, who)
+                spk = [c["speaker"] for c in ep["cast"].values() if "speaker" in c]
+                self.assertEqual(len(spk), len(set(spk)), "distinct voice per character")
+                first = ep["scenes"][0]
+                self.assertTrue(first["lines"], "the hook must speak")
+                self.assertFalse(first.get("jump"), "never open on a time jump")
+                self.assertLessEqual(ep["target_duration_seconds"][1], 47)
+                text = " ".join(l["text"] for s in ep["scenes"] for l in s["lines"]).lower()
+                for w in ("narciss", "gaslight", "psychopath", "sociopath", "toxic", "welcome to", "did you know"):
+                    self.assertNotIn(w, text)
+                self.assertLess(len(text.split()), 120)
+
+    def test_meter_steps_climb_until_the_truth(self):
+        for ep in self.episodes():
+            with self.subTest(ep=ep["id"]):
+                last = 0
+                for s in ep["scenes"]:
+                    for st in ([s["rumour"]] if isinstance(s.get("rumour"), dict) else s.get("rumour", [])):
+                        self.assertLess(st.get("at_line", 0), len(s["lines"]), s["id"])
+                        self.assertGreaterEqual(st["level"], last, f"{s['id']}: meter went down before the truth")
+                        last = st["level"]
+                    if "truth" in s:
+                        self.assertLess(s["truth"].get("at_line", 0), len(s["lines"]), s["id"])
+                        last = 0
+                    for g in s.get("tags", []):
+                        self.assertIn(g["who"], ep["cast"])
+                        if "at_line" in g:
+                            self.assertLess(g["at_line"], len(s["lines"]), s["id"])
+
+    def test_every_episode_has_a_twist_or_truth_beat(self):
+        for ep in self.episodes():
+            self.assertTrue(any("truth" in s for s in ep["scenes"]), ep["id"])
