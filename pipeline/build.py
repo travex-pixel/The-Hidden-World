@@ -22,6 +22,33 @@ def log(msg: str) -> None:
     print(f"[build {time.strftime('%H:%M:%S')}] {msg}", flush=True)
 
 
+def metronome_model(m: dict) -> dict:
+    """Deterministic metronome phases shared by the animation (via plan.json) and the tick soundtrack."""
+    rng = random.Random(m.get("seed", 7))
+    m = dict(m)
+    m["phases"] = [round(rng.uniform(0, 2 * np.pi), 4) for _ in range(m["n"])]
+    return m
+
+
+def metronome_ticks(m: dict, start: float, dur: float, mode: str, gain: float) -> list:
+    """Tick whenever a pendulum passes centre. Phase_i(t) = w*t + phi_i*(1 - s(t)); s eases 0->1 between sync_start and sync_end."""
+    w = np.pi / m["tick_period"]
+    t = np.arange(0, dur, 0.002)
+    if mode == "sync":
+        sync = np.ones_like(t)
+    else:
+        u = np.clip((t - m["sync_start"]) / (m["sync_end"] - m["sync_start"]), 0, 1)
+        sync = u * u * (3 - 2 * u)
+    events = []
+    per = gain / np.sqrt(m["n"]) * 1.4
+    for phi in m["phases"]:
+        ph = w * t + phi * (1 - sync)
+        k = np.floor(ph / np.pi)
+        for i in np.nonzero(np.diff(k) > 0)[0]:
+            events.append((round(start + t[i + 1], 4), "tick", per))
+    return events
+
+
 def make_decisions(ep: dict, seed: int) -> dict:
     """Seed-controlled creative choices. Never touches facts, numbers, sources or narration text."""
     rng = random.Random(seed)
@@ -102,6 +129,23 @@ def main(argv=None) -> int:
     clips = [(s["narration_at"], *read_wav(Path(n["path"]))) for s, n in zip(tl, narr)]
     clips = [(at, x, sr) for at, (x, sr) in [(c[0], (c[1], c[2])) for c in clips]]
     sfx_events = [(s["start"] + fx["at"], fx["name"]) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] + fx["at"] < s["end"]]
+    if "metronomes" in ep:
+        ep["metronomes"] = metronome_model(ep["metronomes"])
+        for s, sc in zip(tl, ep["scenes"]):
+            if sc.get("tick_track"):
+                ticks = metronome_ticks(ep["metronomes"], s["start"], s["end"] - s["start"], sc["tick_track"], sc.get("tick_gain", 1.0))
+                # keep the voice clearly on top: ticks drop 6 dB while the narrator is speaking
+                sfx_events += [(at, n, g * (0.5 if s["narration_at"] - 0.1 <= at <= s["narration_end"] + 0.1 else 1.0)) for at, n, g in ticks]
+        log(f"metronome ticks: {sum(1 for e in sfx_events if e[1] == 'tick')}")
+    # per-scene music level (e.g. duck the score so a sound effect can carry a scene)
+    if any("music_gain_db" in sc for sc in ep["scenes"]):
+        env = np.ones(len(music), np.float32); fade = int(0.4 * audio.SR)
+        for s, sc in zip(tl, ep["scenes"]):
+            g = 10 ** (sc.get("music_gain_db", 0) / 20)
+            a, b = int(s["start"] * audio.SR), min(len(music), int(s["end"] * audio.SR))
+            env[a:b] = g
+        k = np.ones(fade, np.float32) / fade
+        music = (music * np.convolve(env, k, mode="same")).astype(np.float32)
     mixed = audio.mix(total, clips, music, sfx_events, seed)
     audio.write_wav(out_dir / "mix.wav", mixed)
     audio.write_wav(out_dir / "music_only.wav", music)

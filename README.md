@@ -8,6 +8,8 @@ An original animated educational-mystery channel and the $0 production factory t
 
 **Episode 002 — *The Homework Mistake That Lost a Mars Spacecraft*** → [`releases/ep002-mars-units.mp4`](releases/ep002-mars-units.mp4). Optional painted art: [prompts](episodes/ep002-mars-units/art_prompts.md).
 
+**Episode 003 — *The Viral Metronome Trick That Shut a London Bridge*** → [`releases/ep003-metronome-bridge.mp4`](releases/ep003-metronome-bridge.mp4)
+
 ## How it works
 
 ```

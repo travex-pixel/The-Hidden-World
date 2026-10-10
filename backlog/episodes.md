@@ -44,6 +44,10 @@ Priority = sum. Ties broken by evidence quality.
 - Episode 001 felt slow: an abstract concept (accounting) with a fictional company has low stakes. Episode 002 uses a **real event with a vanishing act, a culprit and a twist**. Prefer topics where something real happened, went wrong or surprised experts.
 - Lead with the event, not the concept. Name the stakes in the first sentence.
 
+| 21 | The Viral Metronome Trick That Shut a London Bridge | Science / infrastructure | Hidden mechanism | 5 | 5 | 5 | 4 | 5 | 3 | 4 | 5 | 36 | **DONE — Episode 003.** Viral-video hook (32 metronomes, 2012) → Millennium Bridge. Pantaleone 2002, Strogatz 2005, Dallard 2001, Macdonald 2009 |
+
+**Viral-video format (Episode 003):** open on a famous clip recreated in animation, explain it, then reveal where the same physics shows up in the real world. More candidates: Mentos and Diet Coke (physical nucleation, Coffey 2008), Yanny/Laurel (audio frequency perception), the slinky drop (Veritasium), cornstarch you can run on (shear thickening).
+
 ## Suggested next three
 1. **#7 Ponzi scheme** (37) — strong hook, excellent primary sources, reuses the reservoir/pipeline kit.
 2. **#12 Tacoma Narrows** (36) — satisfying myth-correction; FHWA footage is public domain for reference, our artwork is original.

@@ -195,6 +195,11 @@ def sfx(name: str, seed: int = 0) -> np.ndarray:
         t = tt(1.3)
         x = lowpass_fast(noise(1.3), 160) * (1 + 0.5 * np.sin(2 * np.pi * 7 * t))
         return (x * env(len(x), 0.3, 0.2, 0.8, 0.4) * 0.9).astype(np.float32)
+    if name == "tick":
+        t = tt(0.06)
+        x = np.sin(2 * np.pi * 2300 * t) * np.exp(-t * 120) + 0.6 * np.sin(2 * np.pi * 1150 * t) * np.exp(-t * 90)
+        x += lowpass_fast(noise(0.06), 6000) * np.exp(-t * 300) * 0.5
+        return (x * 0.6).astype(np.float32)
     if name == "puff":
         t = tt(0.45)
         x = lowpass_fast(noise(0.45), 2600) * np.exp(-t * 9) * (1 - np.exp(-t * 300))
@@ -248,8 +253,12 @@ def mix(total: float, narration_clips: list[tuple[float, np.ndarray, int]], musi
     for at, x, sr in narration_clips:
         add(nar, resample(x, sr), at)
     fx = np.zeros(n, np.float32)
-    for at, name in sfx_events:
-        add(fx, sfx(name, seed), at)
+    cache = {}
+    for ev in sfx_events:
+        at, name = ev[0], ev[1]; gain = ev[2] if len(ev) > 2 else 1.0
+        if name not in cache:
+            cache[name] = sfx(name, seed)
+        add(fx, cache[name] * gain, at)
     mus = np.zeros(n, np.float32); add(mus, music, 0)
     # duck music under narration
     e = envelope_follower(nar)

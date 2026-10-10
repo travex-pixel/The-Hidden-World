@@ -244,3 +244,36 @@ class PanelGrid(unittest.TestCase):
             auto = [c * cw + 4, r * ch + 4, (c + 1) * cw - 4, (r + 1) * ch - 4]
             for a, b in zip(auto, p["box"]):
                 self.assertLess(abs(a - b), 12)
+
+
+class Episode003(unittest.TestCase):
+    def setUp(self):
+        self.ep = load_episode("ep003-metronome-bridge")
+
+    def test_bridge_facts_on_screen_match_data(self):
+        b = self.ep["bridge"]; caps = " ".join(s["caption"] + " " + s.get("subcaption", "") for s in self.ep["scenes"])
+        self.assertIn(f"about {b['critical_walkers']}", caps)
+        self.assertIn("10 June 2000", caps)
+        self.assertIn("80,000", caps)
+        total = b["viscous_dampers"] + b["tuned_mass_dampers"]
+        self.assertTrue(85 <= total <= 95, "narration says 'around ninety' dampers")
+        from datetime import date
+        days = (date.fromisoformat(b["closed"]) - date.fromisoformat(b["opened"])).days
+        self.assertEqual(days, 2, "narration says 'two days after opening'")
+        months = (date.fromisoformat(b["reopened"]) - date.fromisoformat(b["closed"])).days / 30.4
+        self.assertTrue(18 <= months < 24, "narration says 'almost two years'")
+
+    def test_debate_is_flagged_as_disputed(self):
+        c8 = next(c for c in self.ep["claims"] if c["id"] == "C8")
+        self.assertEqual(c8["type"], "disputed")
+        self.assertGreaterEqual(len(c8["sources"]), 2)
+
+    def test_metronomes_actually_synchronise_in_the_soundtrack(self):
+        from pipeline.build import metronome_model, metronome_ticks
+        m = metronome_model(self.ep["metronomes"])
+        ev = metronome_ticks(m, 0, 8.0, "chaos_to_sync", 1.0)
+        early = {round(e[0], 2) for e in ev if e[0] < 1.0}
+        late = {round(e[0], 2) for e in ev if e[0] > m["sync_end"] + 0.2}
+        self.assertGreater(len(early), 20, "ticks should be scattered before sync")
+        self.assertLessEqual(len(late), 5, "after sync all metronomes tick together")
+        self.assertEqual(metronome_model(self.ep["metronomes"])["phases"], m["phases"], "phases are reproducible")

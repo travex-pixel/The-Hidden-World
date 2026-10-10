@@ -1,0 +1,404 @@
+{
+  "id": "ep003-metronome-bridge",
+  "number": 3,
+  "title": "The Viral Metronome Trick That Shut a London Bridge",
+  "central_question": "Why do 32 metronomes started at random end up ticking together, and what does that have to do with a bridge that had to close two days after opening?",
+  "template": "hidden-mechanism",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.25,
+  "target_duration_seconds": [
+    55,
+    75
+  ],
+  "visual_mode": "svg",
+  "fiction_notice": "Metronome sequence recreated in animation and sped up; the original 2012 video takes about two minutes to synchronise.",
+  "music": {
+    "style": "clockwork-to-warm",
+    "bpm": 84
+  },
+  "metronomes": {
+    "n": 32,
+    "tick_period": 0.36,
+    "seed": 7,
+    "sync_start": 1.6,
+    "sync_end": 6.4,
+    "amp_deg": 28
+  },
+  "bridge": {
+    "opened": "2000-06-10",
+    "closed": "2000-06-12",
+    "reopened": "2002-02-22",
+    "critical_walkers": 160,
+    "opening_day_crowd": 80000,
+    "viscous_dampers": 37,
+    "tuned_mass_dampers": 52
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "metronomes_hook",
+      "min_duration": 7.5,
+      "pad_after": 0.6,
+      "music_gain_db": -14,
+      "narration": "Thirty-two metronomes, started at random. Total chaos. Give them a couple of minutes, and they're all ticking together. Nobody touched them.",
+      "caption": "32 metronomes. Started at random. Then this.",
+      "subcaption": "Recreated from a famous 2012 video. Sped up.",
+      "music_cue": "curious",
+      "sfx": [],
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "transition": "cut",
+      "tick_track": "chaos_to_sync",
+      "tick_gain": 1.0
+    },
+    {
+      "id": "s02_board",
+      "scene": "board_secret",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "music_gain_db": -6,
+      "narration": "The secret is underneath. They aren't on a solid table. They sit on a board that can roll. Every tick nudges the board, and the board nudges every other metronome.",
+      "caption": "Each tick nudges the board. The board nudges everyone.",
+      "music_cue": "playful",
+      "sfx": [
+        {
+          "at": 1.2,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C3"
+      ],
+      "transition": "wipe",
+      "tick_track": "sync",
+      "tick_gain": 0.45
+    },
+    {
+      "id": "s03_table",
+      "scene": "table_vs_board",
+      "min_duration": 5.0,
+      "pad_after": 0.4,
+      "narration": "Put them on a solid table and they never fall in step. The wobble is the messenger.",
+      "caption": "Solid table: no sync. The wobble is the messenger.",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 3.4,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s04_bridge",
+      "scene": "bridge_opening",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "narration": "Now swap the metronomes for people, and the board for a bridge. London, June 2000. The brand-new Millennium Bridge opens, and the crowds pour across.",
+      "caption": "London, 10 June 2000. Opening day.",
+      "subcaption": "Around 80,000 people crossed that day",
+      "music_cue": "warm",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "whoosh"
+        },
+        {
+          "at": 4.0,
+          "name": "sparkle"
+        }
+      ],
+      "claims": [
+        "C4"
+      ],
+      "transition": "iris"
+    },
+    {
+      "id": "s05_sway",
+      "scene": "sway",
+      "min_duration": 6.0,
+      "pad_after": 0.4,
+      "narration": "Then it starts to sway. Side to side. People widen their stride to keep their balance, and every step pushes the bridge a little further.",
+      "caption": "Every balancing step pushes the sway further.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.5,
+          "name": "rumble"
+        },
+        {
+          "at": 3.0,
+          "name": "rumble"
+        }
+      ],
+      "claims": [
+        "C5"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s06_threshold",
+      "scene": "tipping_point",
+      "min_duration": 6.0,
+      "pad_after": 0.6,
+      "narration": "Tests and models found a tipping point. Below about a hundred and sixty walkers, nothing much. Above it, the wobble suddenly takes off.",
+      "caption": "A tipping point: about 160 walkers.",
+      "music_cue": "tension-peak",
+      "sfx": [
+        {
+          "at": 4.2,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C6"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s07_fix",
+      "scene": "closed_fixed",
+      "min_duration": 6.5,
+      "pad_after": 0.4,
+      "narration": "Two days after opening, the bridge closed. It took almost two years, and around ninety shock absorbers, to calm it down.",
+      "caption": "Closed after two days. Reopened in 2002 with about 90 dampers.",
+      "music_cue": "warm",
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "gate"
+        },
+        {
+          "at": 3.0,
+          "name": "stamp"
+        },
+        {
+          "at": 3.4,
+          "name": "stamp"
+        },
+        {
+          "at": 3.8,
+          "name": "stamp"
+        },
+        {
+          "at": 5.6,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C7"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s08_twist",
+      "scene": "debate",
+      "min_duration": 8.0,
+      "pad_after": 0.5,
+      "narration": "Here's the twist. The famous explanation says the crowd fell into step, just like the metronomes. But later research suggests nobody needed to march in sync. Simply keeping their balance could do it.",
+      "caption": "Did the crowd fall into step? Scientists still debate it.",
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "chime"
+        },
+        {
+          "at": 4.6,
+          "name": "paper"
+        }
+      ],
+      "claims": [
+        "C6",
+        "C8"
+      ],
+      "transition": "iris"
+    },
+    {
+      "id": "s09_lesson",
+      "scene": "lesson",
+      "min_duration": 6.0,
+      "pad_after": 1.2,
+      "caption_mode": "card",
+      "narration": "Tiny pushes, all leaning the same way, can move something enormous. So if a bridge ever starts dancing, maybe don't join in.",
+      "caption": "Tiny pushes, all leaning the same way, can move something enormous.",
+      "subcaption": "THE HIDDEN WORLD. Everything has a secret.",
+      "music_cue": "outro",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "paper"
+        },
+        {
+          "at": 5.0,
+          "name": "sparkle"
+        }
+      ],
+      "claims": [],
+      "transition": "fade"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "A 2012 video from Saitama University's Ikeguchi Laboratory shows 32 metronomes, started at different times on a shared movable platform, falling into synchrony after roughly two minutes.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "illustrative",
+      "text": "The animation recreates the effect and compresses it to a few seconds; it is not the original footage.",
+      "sources": []
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "Metronomes synchronise when their common base can move: each swing pushes the base, coupling every pendulum to the others. On a rigid base this coupling is absent and they do not synchronise.",
+      "sources": [
+        "S3",
+        "S2"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "London's Millennium Footbridge opened on 10 June 2000; an estimated 80,000 people crossed on opening day.",
+      "sources": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "established",
+      "text": "The bridge swayed laterally; pedestrians adjusted their gait to keep balance, and their lateral forces fed energy into the sway (synchronous lateral excitation / negative damping).",
+      "sources": [
+        "S6",
+        "S4",
+        "S8"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "established",
+      "text": "There is a critical crowd size above which lateral wobble grows abruptly; Strogatz et al. (2005) model and press coverage put it around 160 pedestrians for this bridge, and Arup's analysis also found a critical number.",
+      "sources": [
+        "S5",
+        "S7",
+        "S4"
+      ]
+    },
+    {
+      "id": "C7",
+      "type": "established",
+      "text": "The bridge was closed on 12 June 2000, two days after opening, and reopened on 22 February 2002 after 37 viscous dampers and 52 tuned mass dampers (about 90 in total) were fitted, at a cost of about £5 million.",
+      "sources": [
+        "S6",
+        "S4"
+      ]
+    },
+    {
+      "id": "C8",
+      "type": "disputed",
+      "text": "Whether crowd synchrony is necessary is debated: Strogatz et al. (2005) treat wobble and synchrony as two sides of one instability, while Macdonald (2009) and others show that pedestrians simply maintaining balance can produce negative damping without synchronising. The narration presents this as unresolved.",
+      "sources": [
+        "S5",
+        "S8",
+        "S9"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "From chaos to order: 32 metronomes magically come together in sync",
+      "publisher": "SoraNews24",
+      "url": "https://soranews24.com/2012/09/27/from-chaos-to-order-32-metronomes-magically-come-together-in-sync-before-your-very-eyes/",
+      "date": "27 September 2012",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S2",
+      "title": "You are getting sleeeeeeepy (metronome synchronisation explained)",
+      "publisher": "Discover Magazine",
+      "url": "https://www.discovermagazine.com/the-sciences/you-are-getting-sleeeeeeepy",
+      "date": "2012",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S3",
+      "title": "Synchronization of metronomes (Am. J. Phys. 70, 992-1000)",
+      "publisher": "James Pantaleone, University of Alaska Anchorage",
+      "url": "https://www.uaa.alaska.edu/academics/college-of-arts-and-sciences/departments/physics-and-astronomy/_documents/metro.pdf",
+      "date": "October 2002",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S4",
+      "title": "The London Millennium Footbridge (Dallard, Fitzpatrick, Flint et al.), The Structural Engineer 79(22)",
+      "publisher": "Institution of Structural Engineers",
+      "url": "https://www.istructe.org/journal/volumes/volume-79-(published-in-2001)/issue-22/the-london-millennium-footbridge/",
+      "date": "20 November 2001",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S5",
+      "title": "Crowd synchrony on the Millennium Bridge (Strogatz, Abrams, McRobie, Eckhardt, Ott), Nature 438, 43-44",
+      "publisher": "Nature",
+      "url": "https://dmabrams.esam.northwestern.edu/pubs/Strogatz%20Abrams%20McRobie%20Eckhardt%20Ott%20-%20Crowd%20synchrony%20on%20the%20Millennium%20Bridge%20-%20Nature%202005.pdf",
+      "date": "3 November 2005",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S6",
+      "title": "Damper retrofit of the London Millennium Footbridge",
+      "publisher": "Taylor Devices",
+      "url": "https://www.taylordevices.com/wp-content/uploads/66-Damper-Retrofit-of-London.pdf",
+      "date": "c. 2002",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S7",
+      "title": "Cornell expert in group behavior shows why London's Millennium pedestrian bridge was not built for people",
+      "publisher": "Cornell Chronicle",
+      "url": "https://news.cornell.edu/node/281741",
+      "date": "November 2005",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S8",
+      "title": "Biomechanically inspired modelling of pedestrian-induced forces on laterally oscillating structures (Macdonald)",
+      "publisher": "University of Bristol / Proc. R. Soc. A",
+      "url": "https://research-information.bris.ac.uk/en/publications/biomechanically-inspired-modelling-of-pedestrian-induced-forces-o/",
+      "date": "2009",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S9",
+      "title": "Foot force models of crowd dynamics on a wobbly bridge (Belykh, Jeter, Belykh), Science Advances",
+      "publisher": "Science Advances / arXiv 1610.05366",
+      "url": "https://arxiv.org/abs/1610.05366",
+      "date": "November 2017",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    }
+  ]
+}
