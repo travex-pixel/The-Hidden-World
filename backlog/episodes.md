@@ -31,7 +31,7 @@ Priority = sum. Ties broken by evidence quality.
 | 10 | When Incentives Produce Unexpected Results | Money | Counterintuitive truth | 5 | 3 | 4 | 4 | 5 | 3 | 4 | 5 | 33 | "Cobra effect" is poorly sourced — prefer documented cases (e.g. Hanoi rat bounty, Vann 2003) |
 | 11 | Why Material Strength Depends on Conditions | Science | Hidden mechanism | 3 | 5 | 3 | 3 | 4 | 3 | 3 | 4 | 28 | Liberty ships brittle fracture (NIST/ASM); temperature & strain rate |
 | 12 | What Actually Happened to the Tacoma Narrows Bridge? | Science | Counterintuitive truth | 5 | 5 | 5 | 4 | 5 | 3 | 4 | 5 | 36 | Billah & Scanlan (1991) — it was aeroelastic flutter, *not* simple resonance; FHWA |
-| 13 | How a Small Technical Error Can Affect a Space Mission | Science | Cascade | 5 | 5 | 4 | 4 | 5 | 3 | 4 | 4 | 34 | NASA Mars Climate Orbiter Mishap Investigation Board report (1999) |
+| 13 | How a Small Technical Error Can Affect a Space Mission | Science | Cascade | 5 | 5 | 4 | 4 | 5 | 3 | 4 | 4 | 34 | **DONE — Episode 002** (*The Homework Mistake That Lost a Mars Spacecraft*). NASA MCO board report, JPL releases, NIST |
 | 14 | Why GPS Needs Relativity Corrections | Science | Hidden mechanism | 5 | 5 | 4 | 3 | 5 | 3 | 4 | 5 | 34 | Ashby, "Relativity in the Global Positioning System", Living Rev. Relativity (2003); GPS.gov |
 | 15 | How Undersea Cables Are Protected and Repaired | Infrastructure | Hidden mechanism | 4 | 4 | 5 | 4 | 4 | 4 | 4 | **3** | 32 | Pair with #2 as a sequel; ICPC |
 | 16 | How Parasites Can Change Host Behaviour | Science | Hidden mechanism | 5 | 5 | 4 | 4 | 5 | 3 | 3 | 5 | 34 | Toxoplasma/rodent studies (Berdoy 2000, Proc R Soc B); Ophiocordyceps (Hughes) |
@@ -39,6 +39,10 @@ Priority = sum. Ties broken by evidence quality.
 | 18 | How Animal Mimicry Works | Science | Hidden mechanism | 4 | 5 | 5 | 4 | 4 | 4 | 3 | 4 | 33 | Batesian vs Müllerian mimicry; primary papers |
 | 19 | Why Queues Become Unstable Near Capacity | Infrastructure | Counterintuitive truth | 4 | 5 | 5 | 4 | 5 | 3 | 5 | 5 | 36 | M/M/1 queue theory (Kleinrock); Little's law; airport/hospital data |
 | 20 | How Solving One Problem Can Create Another | Any | Cascade | 4 | 3 | 4 | 3 | 4 | 3 | 4 | 3 | 28 | Too generic — needs a specific documented case to proceed |
+
+## Lessons from episodes 001–002
+- Episode 001 felt slow: an abstract concept (accounting) with a fictional company has low stakes. Episode 002 uses a **real event with a vanishing act, a culprit and a twist**. Prefer topics where something real happened, went wrong or surprised experts.
+- Lead with the event, not the concept. Name the stakes in the first sentence.
 
 ## Suggested next three
 1. **#7 Ponzi scheme** (37) — strong hook, excellent primary sources, reuses the reservoir/pipeline kit.

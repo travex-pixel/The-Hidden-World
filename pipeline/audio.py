@@ -195,6 +195,18 @@ def sfx(name: str, seed: int = 0) -> np.ndarray:
         t = tt(1.3)
         x = lowpass_fast(noise(1.3), 160) * (1 + 0.5 * np.sin(2 * np.pi * 7 * t))
         return (x * env(len(x), 0.3, 0.2, 0.8, 0.4) * 0.9).astype(np.float32)
+    if name == "puff":
+        t = tt(0.45)
+        x = lowpass_fast(noise(0.45), 2600) * np.exp(-t * 9) * (1 - np.exp(-t * 300))
+        return (x * 0.45).astype(np.float32)
+    if name == "beep":
+        t = tt(0.22)
+        return (np.sin(2 * np.pi * 1320 * t) * env(len(t), 0.005, 0.05, 0.6, 0.08) * 0.22).astype(np.float32)
+    if name == "static":
+        t = tt(1.4)
+        x = noise(1.4) * (0.5 + 0.5 * (rng.random(len(t)) > 0.97))
+        x = lowpass_fast(x, 5000) - lowpass_fast(x, 600)
+        return (x * env(len(t), 0.05, 0.2, 0.7, 0.6) * 0.32).astype(np.float32)
     if name == "whoosh":
         t = tt(0.5)
         return (lowpass_fast(noise(0.5), 1500) * env(len(t), 0.15, 0.1, 0.5, 0.2) * 0.3).astype(np.float32)

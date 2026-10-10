@@ -6,6 +6,9 @@ Lanczos + light sharpening, and writes art JPGs plus a manifest the renderer rea
 background colours are sampled from the image so text corrections blend in.
 
 usage: python -m pipeline.import_panels ep001
+A spec may give "grid": {"cols": 4, "rows": 3, "inset": 4} instead of per-panel boxes; panels are
+then cut from an evenly divided sheet in reading order. If the sheet has not been uploaded yet the
+import is skipped and the episode renders with its code-drawn visuals.
 To use full-resolution art later, add "file": "path/to/p01.png" to a panel (box is then ignored)
 and re-run; nothing else changes.
 """
@@ -35,7 +38,18 @@ def main(ep_short: str) -> None:
     spec = json.loads((base / "panels.json").read_text())
     up = spec.get("upscale", 4)
     out = base / "art"; out.mkdir(exist_ok=True)
-    sheet = Image.open(ROOT / spec["source"]).convert("RGB") if spec.get("source") else None
+    src = ROOT / spec["source"] if spec.get("source") else None
+    if src is not None and not src.exists() and not all(p.get("file") for p in spec["panels"].values()):
+        print(f"[panels] {spec['source']} not uploaded yet; skipping (episode keeps its code-drawn visuals)")
+        return
+    sheet = Image.open(src).convert("RGB") if src is not None and src.exists() else None
+    if sheet is not None and spec.get("grid"):
+        g = spec["grid"]; cols, rows, inset = g["cols"], g["rows"], g.get("inset", 4)
+        cw, ch = sheet.width / cols, sheet.height / rows
+        for i, (pid, p) in enumerate(spec["panels"].items()):
+            if "box" not in p and not p.get("file"):
+                c, r = i % cols, i // cols
+                p["box"] = [round(c * cw + inset), round(r * ch + inset), round((c + 1) * cw - inset), round((r + 1) * ch - inset)]
     manifest = {"panels": {}}
     for pid, p in spec["panels"].items():
         raw = Image.open(ROOT / p["file"]).convert("RGB") if p.get("file") else sheet.crop(tuple(p["box"]))

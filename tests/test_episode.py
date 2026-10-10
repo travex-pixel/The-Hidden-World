@@ -186,3 +186,61 @@ class RenderedOutput(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class AllEpisodes(unittest.TestCase):
+    def episodes(self):
+        return sorted(p.name for p in (ROOT / "episodes").iterdir() if (p / "episode.json").exists())
+
+    def test_every_episode_validates_and_has_renderers(self):
+        self.assertGreaterEqual(len(self.episodes()), 2)
+        for eid in self.episodes():
+            ep = load_episode(eid)
+            js = (ROOT / "renderer" / "scenes" / f"{eid}.js").read_text()
+            for s in ep["scenes"]:
+                self.assertIn(s["scene"] + "(", js, f"{eid}: no renderer for {s['scene']}")
+            self.assertTrue((ROOT / "episodes" / eid / "research.md").exists())
+
+
+class Episode002(unittest.TestCase):
+    def setUp(self):
+        self.ep = load_episode("ep002-mars-units")
+
+    def test_conversion_maths(self):
+        ph = self.ep["physics"]
+        self.assertAlmostEqual(ph["newtons_per_pound_force"], 4.448, places=3)   # NIST: 4.448 222
+        self.assertAlmostEqual(ph["undercount_fraction"], 1 / 4.448222, places=3)
+        self.assertLess(ph["undercount_fraction"], 0.25)   # "less than a quarter"
+
+    def test_on_screen_numbers_match_research(self):
+        ph = self.ep["physics"]; caps = " ".join(s["caption"] + " " + s.get("subcaption", "") for s in self.ep["scenes"])
+        self.assertIn(f"{ph['planned_altitude_km'][0]} km", caps)
+        self.assertIn(f"{ph['actual_altitude_km']} km", caps)
+        self.assertIn("4.45", caps)
+        self.assertIn("23 September 1999", caps)
+
+    def test_quote_is_verbatim_and_attributed(self):
+        c8 = next(c for c in self.ep["claims"] if c["id"] == "C8")
+        twist = next(s for s in self.ep["scenes"] if s["id"] == "s08_twist")
+        quote = twist["caption"].strip("“”\"")
+        self.assertIn(quote.rstrip("."), c8["text"])
+        self.assertIn("Weiler", twist["subcaption"])
+
+    def test_auto_mode_falls_back_to_code_art_without_sheet(self):
+        self.assertEqual(self.ep["visual_mode"], "auto")
+        for s in self.ep["scenes"]:
+            self.assertTrue(s["art"]["shots"], s["id"])
+
+
+class PanelGrid(unittest.TestCase):
+    def test_even_grid_matches_hand_measured_boxes(self):
+        # the 4x3 auto-grid should land within a few pixels of the boxes measured by hand for episode 001
+        spec = json.loads((ROOT / "assets/episodes/ep001/panels.json").read_text())
+        from PIL import Image
+        sheet = Image.open(ROOT / spec["source"])
+        cw, ch = sheet.width / 4, sheet.height / 3
+        for i, p in enumerate(spec["panels"].values()):
+            c, r = i % 4, i // 4
+            auto = [c * cw + 4, r * ch + 4, (c + 1) * cw - 4, (r + 1) * ch - 4]
+            for a, b in zip(auto, p["box"]):
+                self.assertLess(abs(a - b), 12)

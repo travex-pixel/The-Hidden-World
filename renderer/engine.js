@@ -313,7 +313,7 @@
       if (!useArt && !fn) throw new Error('No scene renderer for "' + ctx.scene.scene + '"');
       const body = useArt ? artScene(ctx, this.state.art) : fn(ctx, this);
       const capY = useArt ? (ctx.scene.art.caption_y || 1650) : (ctx.scene.caption_y || 1560);
-      const cap = ctx.scene.caption_mode === 'card' || (useArt && ctx.scene.art.caption === false) ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
+      const cap = (useArt ? (ctx.scene.art.caption === false || (ctx.scene.caption_mode === 'card' && ctx.scene.art.caption !== true)) : ctx.scene.caption_mode === 'card') ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
       return body + cap;
     },
     frame(t) {

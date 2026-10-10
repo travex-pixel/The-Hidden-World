@@ -1,0 +1,611 @@
+{
+  "id": "ep002-mars-units",
+  "number": 2,
+  "title": "The Homework Mistake That Lost a Mars Spacecraft",
+  "central_question": "How did NASA lose a working spacecraft at Mars without anything on board breaking?",
+  "template": "cascade",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.25,
+  "target_duration_seconds": [
+    55,
+    72
+  ],
+  "visual_mode": "auto",
+  "fiction_notice": "A true story. Push sizes shown on screen are illustrative; the 4.45 conversion factor, dates and altitudes are real.",
+  "music": {
+    "style": "space-mystery",
+    "bpm": 88
+  },
+  "physics": {
+    "newtons_per_pound_force": 4.448,
+    "undercount_fraction": 0.2248,
+    "planned_altitude_km": [
+      140,
+      150
+    ],
+    "actual_altitude_km": 57,
+    "launch": "1998-12-11",
+    "lost": "1999-09-23",
+    "cruise_days": 286
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "hook_mars",
+      "min_duration": 5.0,
+      "pad_after": 0.35,
+      "narration": "In 1999, NASA flew a spacecraft all the way to Mars, and lost it at the very last moment. The cause? A mistake you could make in your maths homework.",
+      "caption": "Lost at Mars. By a homework mistake?",
+      "subcaption": "Mars Climate Orbiter, 1999. A true story.",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "whoosh"
+        },
+        {
+          "at": 6.1,
+          "name": "paper"
+        },
+        {
+          "at": 8.75,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p01",
+            "start": 0,
+            "zoom": [
+              1.15,
+              1.0
+            ]
+          }
+        ],
+        "overlays": [
+          {
+            "type": "sparkles",
+            "x": 540,
+            "y": 700,
+            "r": 300,
+            "n": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "s02_vanish",
+      "scene": "vanish",
+      "min_duration": 6.0,
+      "pad_after": 0.8,
+      "narration": "After nine months in space, the orbiter fires its engine, swings behind Mars, and is never heard from again.",
+      "caption": "23 September 1999. Signal lost. For good.",
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "beep"
+        },
+        {
+          "at": 1.3,
+          "name": "beep"
+        },
+        {
+          "at": 2.3,
+          "name": "beep"
+        },
+        {
+          "at": 3.3,
+          "name": "rumble"
+        },
+        {
+          "at": 5.2,
+          "name": "static"
+        },
+        {
+          "at": 6.0,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C2"
+      ],
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p02",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.15
+            ]
+          },
+          {
+            "panel": "p03",
+            "start": 0.55,
+            "zoom": [
+              1.12,
+              1.0
+            ]
+          }
+        ],
+        "overlays": []
+      }
+    },
+    {
+      "id": "s03_puffs",
+      "scene": "puffs",
+      "min_duration": 5.5,
+      "pad_after": 0.3,
+      "narration": "On the way there, tiny thruster puffs kept it steady. Each puff nudged its path a little, so every one was logged and sent to the navigators.",
+      "caption": "Every tiny thruster puff was logged.",
+      "music_cue": "playful",
+      "sfx": [
+        {
+          "at": 1.0,
+          "name": "puff"
+        },
+        {
+          "at": 2.2,
+          "name": "puff"
+        },
+        {
+          "at": 3.4,
+          "name": "puff"
+        },
+        {
+          "at": 4.6,
+          "name": "puff"
+        },
+        {
+          "at": 5.8,
+          "name": "paper"
+        }
+      ],
+      "claims": [
+        "C3"
+      ],
+      "transition": "wipe",
+      "art": {
+        "shots": [
+          {
+            "panel": "p04",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.18
+            ]
+          }
+        ],
+        "overlays": []
+      }
+    },
+    {
+      "id": "s04_teams",
+      "scene": "two_teams",
+      "min_duration": 6.0,
+      "pad_after": 0.4,
+      "narration": "The spacecraft team in Colorado logged those pushes in pound-force seconds. The navigators in California read them as newton-seconds.",
+      "caption": "Colorado wrote pounds. California read newtons.",
+      "music_cue": "playful",
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "paper"
+        },
+        {
+          "at": 2.4,
+          "name": "whoosh"
+        },
+        {
+          "at": 4.6,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C4"
+      ],
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p05",
+            "start": 0,
+            "zoom": [
+              1.1,
+              1.0
+            ]
+          }
+        ],
+        "overlays": []
+      }
+    },
+    {
+      "id": "s05_factor",
+      "scene": "scale",
+      "min_duration": 6.0,
+      "pad_after": 0.5,
+      "narration": "One pound-force is about four point four five newtons. So every push was counted at less than a quarter of its real size.",
+      "caption": "Every push counted at under a quarter of its size.",
+      "subcaption": "1 pound-force ≈ 4.45 newtons",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 0.8,
+          "name": "thud"
+        },
+        {
+          "at": 1.4,
+          "name": "thud"
+        },
+        {
+          "at": 2.0,
+          "name": "thud"
+        },
+        {
+          "at": 2.6,
+          "name": "thud"
+        },
+        {
+          "at": 3.2,
+          "name": "chime"
+        },
+        {
+          "at": 5.0,
+          "name": "drain"
+        }
+      ],
+      "claims": [
+        "C5"
+      ],
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p06",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.15
+            ]
+          }
+        ],
+        "overlays": []
+      }
+    },
+    {
+      "id": "s06_drift",
+      "scene": "drift",
+      "min_duration": 6.0,
+      "pad_after": 0.4,
+      "narration": "One tiny miss at a time, for nine months. And the thrusters fired far more often than anyone had planned.",
+      "caption": "Tiny misses. Nine months. Far more puffs than planned.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.6,
+          "name": "puff"
+        },
+        {
+          "at": 1.6,
+          "name": "puff"
+        },
+        {
+          "at": 2.4,
+          "name": "puff"
+        },
+        {
+          "at": 3.0,
+          "name": "puff"
+        },
+        {
+          "at": 3.5,
+          "name": "puff"
+        },
+        {
+          "at": 3.9,
+          "name": "puff"
+        },
+        {
+          "at": 4.3,
+          "name": "puff"
+        }
+      ],
+      "claims": [
+        "C6"
+      ],
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p07",
+            "start": 0,
+            "zoom": [
+              1.15,
+              1.0
+            ]
+          }
+        ],
+        "overlays": []
+      }
+    },
+    {
+      "id": "s07_arrival",
+      "scene": "altitude",
+      "min_duration": 6.0,
+      "pad_after": 0.9,
+      "narration": "It was meant to pass about a hundred and forty kilometres above Mars. It came in at roughly fifty-seven. Far too low to survive.",
+      "caption": "Planned: about 140 km up. Actual: about 57 km.",
+      "music_cue": "tension-peak",
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "whoosh"
+        },
+        {
+          "at": 3.6,
+          "name": "rumble"
+        },
+        {
+          "at": 5.4,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C7"
+      ],
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p08",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.2
+            ]
+          }
+        ],
+        "overlays": []
+      }
+    },
+    {
+      "id": "s08_twist",
+      "scene": "twist",
+      "min_duration": 7.0,
+      "pad_after": 0.5,
+      "narration": "And here's the uncomfortable part. Nobody caught it. NASA's science chief put it bluntly: the problem wasn't the error. It was failing to catch it.",
+      "caption": "“The problem here was not the error.”",
+      "subcaption": "Ed Weiler, NASA, 30 September 1999",
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "chime"
+        },
+        {
+          "at": 3.0,
+          "name": "paper"
+        }
+      ],
+      "claims": [
+        "C8"
+      ],
+      "transition": "iris",
+      "art": {
+        "shots": [
+          {
+            "panel": "p09",
+            "start": 0,
+            "zoom": [
+              1.1,
+              1.0
+            ]
+          },
+          {
+            "panel": "p10",
+            "start": 0.5,
+            "zoom": [
+              1.0,
+              1.12
+            ]
+          }
+        ],
+        "overlays": []
+      }
+    },
+    {
+      "id": "s09_lesson",
+      "scene": "lesson",
+      "min_duration": 6.0,
+      "pad_after": 1.2,
+      "caption_mode": "card",
+      "narration": "So the lesson isn't just: use metric. A number without its unit isn't information. It's a guess in a lab coat.",
+      "caption": "A number without its unit is a guess in a lab coat.",
+      "subcaption": "THE HIDDEN WORLD. Everything has a secret.",
+      "music_cue": "outro",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "paper"
+        },
+        {
+          "at": 4.4,
+          "name": "sparkle"
+        },
+        {
+          "at": 5.2,
+          "name": "stamp"
+        }
+      ],
+      "claims": [],
+      "transition": "fade",
+      "art": {
+        "shots": [
+          {
+            "panel": "p11",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.1
+            ]
+          },
+          {
+            "panel": "p12",
+            "start": 0.6,
+            "zoom": [
+              1.1,
+              1.0
+            ]
+          }
+        ],
+        "overlays": [],
+        "caption": true
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "NASA's Mars Climate Orbiter was launched on 11 December 1998 and lost on arrival at Mars on 23 September 1999.",
+      "sources": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Contact was lost when the orbiter passed behind Mars during orbit insertion and was never re-established; NASA concluded it was destroyed or lost because its trajectory took it far too low.",
+      "sources": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "During cruise, small thruster firings (angular momentum desaturation) kept the reaction wheels in range; each firing slightly changed the trajectory, and the impulse data was supplied in a ground file to the navigation team for trajectory modelling.",
+      "sources": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "The spacecraft team (Lockheed Martin Astronautics, Colorado) supplied thruster impulse data in English units (pound-force seconds); the navigation team (JPL, California) used it as if it were metric (newton-seconds), as the interface specification required.",
+      "sources": [
+        "S2",
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "established",
+      "text": "1 pound-force = 4.448 newtons, so values in pound-force seconds read as newton-seconds understate each impulse by a factor of about 4.45 (counted at ~22% of true size).",
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "established",
+      "text": "The error accumulated over the roughly nine-month cruise, and desaturation events occurred 10 to 14 times more often than the navigation team expected, because of the asymmetric solar array.",
+      "sources": [
+        "S5"
+      ]
+    },
+    {
+      "id": "C7",
+      "type": "established",
+      "text": "The orbiter was intended to pass about 140–150 km above Mars at orbit insertion but instead came in at about 57 km, too low to survive.",
+      "sources": [
+        "S5",
+        "S1"
+      ]
+    },
+    {
+      "id": "C8",
+      "type": "established",
+      "text": "Ed Weiler, NASA Associate Administrator for Space Science, said on 30 September 1999: 'The problem here was not the error, it was the failure of NASA's systems engineering, and the checks and balances in our processes to detect the error.' Narration paraphrases this; the caption quotes it verbatim.",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "C9",
+      "type": "illustrative",
+      "text": "Push sizes shown on screen (e.g. '10 lbf·s') are illustrative examples, not values from the actual mission file.",
+      "sources": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Mars Climate Orbiter (mission page)",
+      "publisher": "NASA Jet Propulsion Laboratory",
+      "url": "https://www.jpl.nasa.gov/missions/mars-climate-orbiter/",
+      "date": "n.d.",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S2",
+      "title": "Mars Climate Orbiter Team Finds Likely Cause of Loss (JPL release 99-113)",
+      "publisher": "NASA Jet Propulsion Laboratory",
+      "url": "https://www.jpl.nasa.gov/news/mars-climate-orbiter-team-finds-likely-cause-of-loss/",
+      "date": "30 September 1999",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S3",
+      "title": "1998 Mars Missions Press Kit",
+      "publisher": "NASA",
+      "url": "https://mars.nasa.gov/internal_resources/818/",
+      "date": "December 1998",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S4",
+      "title": "Mars Climate Orbiter Mishap Investigation Board Phase I Report",
+      "publisher": "NASA",
+      "url": "https://llis.nasa.gov/llis_lib/pdf/1009464main1_0641-mr.pdf",
+      "date": "10 November 1999",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt and NASA release 99-134 summary"
+    },
+    {
+      "id": "S5",
+      "title": "System Failure Case Study: The Mars Climate Orbiter Mishap",
+      "publisher": "NASA Office of Safety and Mission Assurance",
+      "url": "https://sma.nasa.gov/docs/default-source/safety-messages/safetymessage-2009-08-01-themarsclimateorbitermishap.pdf",
+      "date": "August 2009",
+      "accessed": "2026-10-10",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S6",
+      "title": "NIST Guide to the SI, Appendix B.8: Factors for Units Listed Alphabetically",
+      "publisher": "US National Institute of Standards and Technology",
+      "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+      "date": "current",
+      "accessed": "2026-10-10",
+      "access_method": "standard reference value 1 lbf = 4.448 222 N"
+    }
+  ],
+  "art_manifest": "assets/episodes/ep002/art/manifest.json"
+}

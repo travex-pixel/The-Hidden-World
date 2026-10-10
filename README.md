@@ -6,6 +6,8 @@ An original animated educational-mystery channel and the $0 production factory t
 
 **Episode 001 — *Why a Billion-Dollar Company Can Run Out of Cash*** → [`releases/ep001-cash-vs-profit.mp4`](releases/ep001-cash-vs-profit.mp4)
 
+**Episode 002 — *The Homework Mistake That Lost a Mars Spacecraft*** → [`releases/ep002-mars-units.mp4`](releases/ep002-mars-units.mp4). Optional painted art: [prompts](episodes/ep002-mars-units/art_prompts.md).
+
 ## How it works
 
 ```

@@ -108,6 +108,8 @@ def main(argv=None) -> int:
 
     # 3. render frames
     visual = args.visual or ep.get("visual_mode", "svg")
+    if visual == "auto":
+        visual = "art" if ep.get("art_manifest") and (ROOT / ep["art_manifest"]).exists() else "svg"
     art = {"panels": {}}
     if visual == "art":
         man = ROOT / ep.get("art_manifest", "")
