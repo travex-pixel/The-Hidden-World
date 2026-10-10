@@ -33,7 +33,7 @@ episodes/<id>/research.md               │
 | Music & SFX | `pipeline/audio.py` — composed cue system (curious → playful → tension → revelation → warm) and synthesised effects; side-chain ducking; soft limiter. |
 | Render | `pipeline/render.mjs` — Playwright/Chromium screenshots every frame into ffmpeg. |
 | Verify | `pipeline/verify.py` — streams, codec, 1080×1920, 30 fps, duration, full decode, loudness, silence gaps, contact sheet. |
-| Factory | `.github/workflows/render-episode.yml` — manual run from a phone, MP4 as a downloadable artifact. |
+| Factory | `.github/workflows/render-episode.yml` — manual run from a phone, MP4 as a downloadable artifact (verified: preview run succeeded on GitHub Actions in under 2 minutes). |
 
 ## Make a video (from Android)
 See **[docs/ANDROID.md](docs/ANDROID.md)**. Short version: *Actions → Render episode → Run workflow → pick episode, seed, quality → download the artifact ZIP.*
