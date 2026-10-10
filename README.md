@@ -28,7 +28,7 @@ episodes/<id>/research.md               │
 |------|----------------|
 | Episode format | `episodes/<id>/episode.json` — scenes, narration, captions, SFX cues, claims ↔ sources, illustrative financials. Validated by `pipeline/schema.py`. |
 | Research | `episodes/<id>/research.md` — sources actually consulted, claim-level fact check, uncertainties, licences. |
-| Art | `renderer/engine.js` (palette, paper grain, watercolour blobs, ink filters, character rigs *Marigold*, *Pip*, the messenger bird, reservoirs, pipes, coins, charts, captions, transitions) + `renderer/scenes/<id>.js` (one function per scene, deterministic in `t` and seed). |
+| Art | **Illustrated mode (Episode 001 default):** supplied panels are imported by `pipeline/import_panels.py`, then framed, animated with camera moves and crossfades, text-corrected and captioned (see [docs/ART.md](docs/ART.md)). **Code-drawn mode (`--visual svg`):** `renderer/engine.js` (palette, paper grain, watercolour blobs, ink filters, character rigs *Marigold*, *Pip*, the messenger bird, reservoirs, pipes, coins, charts, captions, transitions) + `renderer/scenes/<id>.js` (one function per scene, deterministic in `t` and seed). |
 | Narration | Piper TTS, `en_GB-alba-medium` (MIT engine, CC BY 4.0 dataset). Voice fetched from the GitHub release mirror, cached. |
 | Music & SFX | `pipeline/audio.py` — composed cue system (curious → playful → tension → revelation → warm) and synthesised effects; side-chain ducking; soft limiter. |
 | Render | `pipeline/render.mjs` — Playwright/Chromium screenshots every frame into ffmpeg. |

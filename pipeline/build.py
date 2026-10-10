@@ -58,6 +58,8 @@ def main(argv=None) -> int:
     ap.add_argument("--quality", choices=QUALITY, default="final")
     ap.add_argument("--target-duration", type=float, default=None, help="optional; narration speed is nudged toward it")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--visual", choices=["art", "svg"], default=None, help="art = illustrated panels (episode default); svg = code-drawn scenes")
+    ap.add_argument("--plan-only", action="store_true", help="stop after writing plan.json (for quick stills with pipeline/stills.mjs)")
     ap.add_argument("--reuse-video", action="store_true", help="skip frame rendering and reuse out/<id>/video_silent.mp4 (audio-only iteration)")
     args = ap.parse_args(argv)
 
@@ -105,12 +107,25 @@ def main(argv=None) -> int:
     audio.write_wav(out_dir / "music_only.wav", music)
 
     # 3. render frames
-    plan = {"width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed,
+    visual = args.visual or ep.get("visual_mode", "svg")
+    art = {"panels": {}}
+    if visual == "art":
+        man = ROOT / ep.get("art_manifest", "")
+        if not ep.get("art_manifest") or not man.exists():
+            log(f"ERROR: visual mode 'art' needs {ep.get('art_manifest')}. Run: python -m pipeline.import_panels <ep>"); return 4
+        art = json.loads(man.read_text())
+        missing = [p["src"] for p in art["panels"].values() if not (ROOT / p["src"]).exists()]
+        if missing:
+            log(f"ERROR: missing art files {missing}"); return 4
+    log(f"visual mode: {visual}")
+    plan = {"visual": visual, "art": art, "width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed,
             "timeline": [{**s, "decisions": decisions["scenes"][s["id"]]} for s in tl], "episode": ep,
             "scenes_js": f"renderer/scenes/{ep['id']}.js"}
     if not (ROOT / plan["scenes_js"]).exists():
         log(f"ERROR: scene renderer {plan['scenes_js']} not found"); return 4
     (out_dir / "plan.json").write_text(json.dumps(plan))
+    if args.plan_only:
+        log(f"plan written: {out_dir / 'plan.json'}"); return 0
     silent = out_dir / "video_silent.mp4"
     if args.reuse_video and silent.exists():
         log("render: skipped (--reuse-video)")

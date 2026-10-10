@@ -9,7 +9,7 @@
     55,
     72
   ],
-  "fiction_notice": "Marigold and her company are fictional. Figures are illustrative and internally consistent, not taken from any real business.",
+  "fiction_notice": "The company and all its figures are fictional and illustrative, not taken from any real business.",
   "music": {
     "style": "curious-to-warm",
     "bpm": 96
@@ -37,7 +37,7 @@
       "scene": "hook_hq",
       "min_duration": 4.0,
       "pad_after": 0.35,
-      "narration": "Meet Marigold. Her company is worth millions on paper. So why can't it pay one bill that's due today?",
+      "narration": "This company is worth millions on paper. So why can't it pay one bill that's due today?",
       "caption": "Worth millions. Can't pay one bill.",
       "subcaption": "A fictional company",
       "music_cue": "curious",
@@ -58,7 +58,50 @@
       "claims": [
         "C5"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p01",
+            "start": 0,
+            "zoom": [
+              1.18,
+              1.0
+            ],
+            "focus": [
+              [
+                95,
+                95
+              ],
+              [
+                109,
+                150
+              ]
+            ]
+          }
+        ],
+        "overlays": [
+          {
+            "type": "sparkles",
+            "x": 560,
+            "y": 1150,
+            "r": 330,
+            "n": 12
+          },
+          {
+            "type": "invoice_drop",
+            "at": 3.2,
+            "x": 640,
+            "y": 1010,
+            "w": 170,
+            "h": 210,
+            "rot": 8,
+            "title": "INVOICE",
+            "amount": "DUE TODAY",
+            "fs": 26
+          }
+        ]
+      }
     },
     {
       "id": "s02_success",
@@ -89,7 +132,39 @@
       "claims": [
         "C5"
       ],
-      "transition": "wipe"
+      "transition": "wipe",
+      "art": {
+        "shots": [
+          {
+            "panel": "p02",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.2
+            ],
+            "focus": [
+              [
+                108,
+                143
+              ],
+              [
+                150,
+                150
+              ]
+            ]
+          }
+        ],
+        "overlays": [
+          {
+            "type": "sparkles",
+            "x": 540,
+            "y": 500,
+            "r": 260,
+            "n": 8,
+            "from": 4.4
+          }
+        ]
+      }
     },
     {
       "id": "s03_catch",
@@ -112,7 +187,30 @@
       "claims": [
         "C1"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p03",
+            "start": 0,
+            "zoom": [
+              1.05,
+              1.3
+            ],
+            "focus": [
+              [
+                108,
+                150
+              ],
+              [
+                100,
+                100
+              ]
+            ]
+          }
+        ],
+        "overlays": []
+      }
     },
     {
       "id": "s04_drains",
@@ -140,27 +238,68 @@
         "C3",
         "C5"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p04",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.15
+            ],
+            "focus": [
+              [
+                110,
+                140
+              ],
+              [
+                150,
+                130
+              ]
+            ]
+          },
+          {
+            "panel": "p05",
+            "start": 0.45,
+            "zoom": [
+              1.2,
+              1.0
+            ],
+            "focus": [
+              [
+                100,
+                210
+              ],
+              [
+                109,
+                147
+              ]
+            ]
+          }
+        ],
+        "overlays": []
+      }
     },
     {
       "id": "s05_reservoir",
       "scene": "reservoir_pipeline",
       "min_duration": 6.0,
       "pad_after": 0.4,
-      "narration": "Picture a reservoir of cash you can spend today, and a long pipeline of money customers still owe you. Today's bill waits at a gate that only takes cash.",
+      "narration": "Picture the cash you can spend today, sitting in a little safe. And the money customers still owe you, winding its way down a long road. Today's bill can only be paid from the safe.",
       "caption": "Cash you have now is not the same as money you are owed.",
       "music_cue": "tension",
       "sfx": [
         {
           "at": 0.3,
-          "name": "water"
+          "name": "whoosh"
         },
         {
-          "at": 3.0,
+          "at": 3.2,
           "name": "coins"
         },
         {
-          "at": 5.0,
+          "at": 6.0,
           "name": "gate"
         }
       ],
@@ -168,7 +307,30 @@
         "C6",
         "C2"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p06",
+            "start": 0,
+            "zoom": [
+              1.45,
+              1.0
+            ],
+            "focus": [
+              [
+                160,
+                230
+              ],
+              [
+                107,
+                147
+              ]
+            ]
+          }
+        ],
+        "overlays": []
+      }
     },
     {
       "id": "s06_pressure",
@@ -203,7 +365,47 @@
       "claims": [
         "C5"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p07",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.18
+            ],
+            "focus": [
+              [
+                107,
+                150
+              ],
+              [
+                107,
+                125
+              ]
+            ],
+            "overlays": [
+              {
+                "type": "gauge",
+                "cx": 106,
+                "cy": 96,
+                "r": 56,
+                "value": 0.08,
+                "readout": "$40,000",
+                "face": "#ebe2cb"
+              }
+            ]
+          }
+        ],
+        "overlays": [
+          {
+            "type": "darken",
+            "at": 4.5,
+            "amount": 0.22
+          }
+        ]
+      }
     },
     {
       "id": "s07_revelation",
@@ -229,14 +431,73 @@
         "C3",
         "C4"
       ],
-      "transition": "iris"
+      "transition": "iris",
+      "art": {
+        "shots": [
+          {
+            "panel": "p08",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.12
+            ],
+            "focus": [
+              [
+                109,
+                80
+              ],
+              [
+                109,
+                150
+              ]
+            ]
+          },
+          {
+            "panel": "p09",
+            "start": 0.3,
+            "zoom": [
+              1.1,
+              1.0
+            ],
+            "focus": [
+              [
+                100,
+                150
+              ],
+              [
+                109,
+                147
+              ]
+            ]
+          },
+          {
+            "panel": "p10",
+            "start": 0.5,
+            "zoom": [
+              1.0,
+              1.14
+            ],
+            "focus": [
+              [
+                107,
+                140
+              ],
+              [
+                90,
+                230
+              ]
+            ]
+          }
+        ],
+        "overlays": []
+      }
     },
     {
       "id": "s08_payoff",
       "scene": "payoff_party",
       "min_duration": 5.5,
       "pad_after": 0.9,
-      "narration": "Then: ping. A big customer finally pays. The reservoir fills, the supplier's back, and Marigold celebrates. Briefly.",
+      "narration": "Then: ping. A big customer finally pays. The vault fills, the supplier's back, and the owner celebrates. Briefly.",
       "caption": "A big customer finally pays: $350,000",
       "music_cue": "warm",
       "sfx": [
@@ -246,7 +507,7 @@
         },
         {
           "at": 1.6,
-          "name": "water"
+          "name": "coins"
         },
         {
           "at": 3.6,
@@ -264,7 +525,55 @@
       "claims": [
         "C5"
       ],
-      "transition": "cut"
+      "transition": "cut",
+      "art": {
+        "shots": [
+          {
+            "panel": "p11",
+            "start": 0,
+            "zoom": [
+              1.2,
+              1.0
+            ],
+            "focus": [
+              [
+                90,
+                110
+              ],
+              [
+                107,
+                150
+              ]
+            ]
+          }
+        ],
+        "overlays": [
+          {
+            "type": "flash",
+            "at": 0.45
+          },
+          {
+            "type": "sparkles",
+            "x": 560,
+            "y": 1050,
+            "r": 340,
+            "n": 14,
+            "from": 1.0,
+            "to": 5.4
+          },
+          {
+            "type": "invoice_roll",
+            "at": 5.3,
+            "x": 640,
+            "y": 940,
+            "w": 440,
+            "h": 540,
+            "title": "INVOICE",
+            "amount": "fin.new_invoice",
+            "fs": 52
+          }
+        ]
+      }
     },
     {
       "id": "s09_lesson",
@@ -287,7 +596,32 @@
       ],
       "claims": [],
       "transition": "fade",
-      "caption_mode": "card"
+      "caption_mode": "card",
+      "art": {
+        "layout": "full",
+        "caption": false,
+        "shots": [
+          {
+            "panel": "p12",
+            "start": 0,
+            "zoom": [
+              1.0,
+              1.06
+            ],
+            "focus": [
+              [
+                109,
+                199
+              ],
+              [
+                109,
+                215
+              ]
+            ]
+          }
+        ],
+        "overlays": []
+      }
     }
   ],
   "claims": [
@@ -331,13 +665,13 @@
     {
       "id": "C5",
       "type": "illustrative",
-      "text": "Marigold's company and all its figures are fictional and internally consistent: revenue 2.4M, expenses 1.9M, profit 0.5M, receivables 0.6M, cash 40k, bill due 120k.",
+      "text": "The company and all its figures are fictional and internally consistent: revenue 2.4M, expenses 1.9M, profit 0.5M, receivables 0.6M, cash 40k, bill due 120k.",
       "sources": []
     },
     {
       "id": "C6",
       "type": "metaphor",
-      "text": "Reservoir (cash available now) versus pipeline (receivables still flowing in) is a visual metaphor, not an accounting definition.",
+      "text": "Safe and vault (cash available now) versus a long road and pipes (money still owed or flowing out) are visual metaphors, not accounting definitions.",
       "sources": []
     }
   ],
@@ -397,5 +731,7 @@
       "access_method": "search-index excerpt"
     }
   ],
-  "narration_speed": 1.3
+  "narration_speed": 1.3,
+  "visual_mode": "art",
+  "art_manifest": "assets/episodes/ep001/art/manifest.json"
 }

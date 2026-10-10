@@ -93,9 +93,37 @@ class EpisodeConfig(unittest.TestCase):
             self.assertEqual(a["end"], b["start"])
 
     def test_scene_renderer_exists_for_every_scene(self):
+        # the code-drawn fallback must stay renderable even when the episode defaults to illustrated art
         js = (ROOT / "renderer" / "scenes" / f"{EP}.js").read_text()
         for s in self.ep["scenes"]:
             self.assertIn(s["scene"] + "(", js, f"no renderer for scene type {s['scene']}")
+
+    def test_art_panels_exist_and_cover_every_scene(self):
+        self.assertEqual(self.ep.get("visual_mode"), "art")
+        man = json.loads((ROOT / self.ep["art_manifest"]).read_text())
+        for sc in self.ep["scenes"]:
+            for sh in sc["art"]["shots"]:
+                pan = man["panels"][sh["panel"]]
+                self.assertTrue((ROOT / pan["src"]).exists(), pan["src"])
+                self.assertGreaterEqual(min(sh["zoom"]), 1.0)
+                for f in sh.get("focus", []):
+                    self.assertTrue(0 <= f[0] <= pan["w"] and 0 <= f[1] <= pan["h"], f"{sc['id']}: focus outside panel")
+
+    def test_art_text_corrections_match_episode_numbers(self):
+        # garbled text in the supplied art is patched; patched numbers must agree with the episode data
+        f = self.ep["financials"]
+        man = json.loads((ROOT / self.ep["art_manifest"]).read_text())
+        texts = " ".join(pt["text"] for p in man["panels"].values() for pt in p["patches"])
+        self.assertIn(f"${f['cash_now']//1000}k", texts)
+        self.assertIn(f"${f['receivables']//1000}k", texts)
+        self.assertIn(f"${f['profit']:,}", texts)
+        self.assertIn("52%", texts)
+
+    def test_art_mode_rejects_bad_shots(self):
+        bad = json.loads(json.dumps(self.ep)); bad["scenes"][0]["art"]["shots"][0]["zoom"] = [0.8, 1.0]
+        with self.assertRaises(EpisodeError): validate(bad)
+        bad = json.loads(json.dumps(self.ep)); bad["scenes"][0]["art"]["shots"][0]["panel"] = "p99"
+        with self.assertRaises(EpisodeError): validate(bad)
 
     def test_assets_present(self):
         for f in ["Fraunces-ExtraBold.ttf", "Nunito-ExtraBold.ttf", "LICENSE.md"]:

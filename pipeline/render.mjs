@@ -21,7 +21,7 @@ page.on('pageerror', e => { console.error('[page error]', e.message); process.ex
 await page.goto(pathToFileURL(resolve(here, '../renderer/index.html')).href);
 await page.addScriptTag({ path: resolve(here, '..', scenes_js) });
 await page.evaluate(() => document.fonts.ready);
-await page.evaluate(({ episode, timeline, seed }) => window.HW.setup(episode, timeline, seed), { episode, timeline, seed });
+await page.evaluate(({ episode, timeline, seed, visual, art }) => window.HW.setup(episode, timeline, seed, visual, art), { episode, timeline, seed, visual: plan.visual, art: plan.art });
 
 const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-framerate', String(fps), '-i', '-', '-an',
   '-c:v', 'libx264', '-preset', plan.preset || 'medium', '-crf', String(plan.crf ?? 20), '-pix_fmt', 'yuv420p', '-r', String(fps), outPath], { stdio: ['pipe', 'inherit', 'inherit'] });
@@ -30,7 +30,7 @@ const ffDone = new Promise((res, rej) => ff.on('close', c => c === 0 ? res() : r
 const t0 = Date.now(); let lastScene = -1;
 for (let i = 0; i < nFrames; i++) {
   const t = i / fps;
-  const sceneIdx = await page.evaluate(t => window.HW.frame(t), t);
+  const sceneIdx = await page.evaluate(async t => { const i = window.HW.frame(t); await window.HW.ready(); return i; }, t);
   if (sceneIdx !== lastScene) { console.log(`[render] scene ${sceneIdx + 1}/${timeline.length} (${timeline[sceneIdx].id}) at ${t.toFixed(2)}s`); lastScene = sceneIdx; }
   const png = await page.screenshot({ type: 'jpeg', quality: 95, animations: 'disabled', caret: 'hide' }); // JPEG: ~6x faster than PNG in Chromium for grainy frames
   if (!ff.stdin.write(png)) await new Promise(r => ff.stdin.once('drain', r));

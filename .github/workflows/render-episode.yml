@@ -60,6 +60,12 @@ jobs:
           key: hw-cache-${{ hashFiles('episodes/**/episode.json', 'pipeline/narrate.py', 'pipeline/voices.py') }}
           restore-keys: hw-cache-
 
+      - name: Import illustration panels
+        run: |
+          for spec in assets/episodes/*/panels.json; do
+            [ -f "$spec" ] && python -m pipeline.import_panels "$(basename "$(dirname "$spec")")"
+          done
+
       - name: Validate episode
         run: python -m pipeline.schema "${{ inputs.episode }}"
 

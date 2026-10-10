@@ -60,7 +60,7 @@
   }
   function invoice(x, y, w, h, rot, title, amount, opts = {}) {
     const fs = Math.min(opts.fs || Math.min(w * 0.12, 40), w * 1.5 / Math.max(4, String(title).length));
-    const fsA = Math.min((opts.fs || Math.min(w * 0.12, 40)) * 1.35, w * 1.55 / Math.max(4, String(amount).length));
+    const fsA = Math.min((opts.fs || Math.min(w * 0.12, 40)) * 1.35, w * 1.35 / Math.max(4, String(amount).length));
     return `<g transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(rot)})">${shadowEllipse(w / 2, h + 6, w * 0.55, 10, 0.15)}<rect width="${w}" height="${h}" rx="6" fill="${PAL.cream}" stroke="${PAL.ink}" stroke-width="4" filter="url(#ink)"/>
     <rect x="${w * 0.1}" y="${h * 0.12}" width="${w * 0.8}" height="${h * 0.07}" fill="${opts.color || PAL.rust}" opacity="0.85"/>
     <text x="${w / 2}" y="${h * 0.19}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${PAL.cream}" dy="-${h * 0.005}">${esc(title)}</text>
@@ -204,6 +204,80 @@
       ${cloud(140 + Math.sin(t * 0.2) * 20, 300, 1.1, rng)}${cloud(880 + Math.sin(t * 0.17 + 1) * 24, 420, 0.9, rng)}`;
   }
 
+
+  // ---------- illustrated-panel scenes (user-supplied artwork)
+  const ART = { x: 40, y: 56, w: 1000, h: 1330 };
+  function artTransform(panel, cam, t, T, win) {
+    const k0 = Math.max(win.w / panel.w, win.h / panel.h);
+    const p = ease.inOut(clamp(t / T, 0, 1));
+    const z = lerp(cam.zoom[0], cam.zoom[1], p), k = k0 * z;
+    const f0 = cam.focus ? cam.focus[0] : [panel.w / 2, panel.h / 2], f1_ = cam.focus ? cam.focus[1] : f0;
+    const fx = lerp(f0[0], f1_[0], p), fy = lerp(f0[1], f1_[1], p);
+    let tx = win.x + win.w / 2 - fx * k, ty = win.y + win.h / 2 - fy * k;
+    tx = clamp(tx, win.x + win.w - panel.w * k, win.x); ty = clamp(ty, win.y + win.h - panel.h * k, win.y);
+    return { k, tx, ty };
+  }
+  function patchSvg(pt) {
+    const lines = String(pt.text).split('|'); const lh = pt.size * 1.15; const anchor = pt.anchor || 'middle';
+    const tx = anchor === 'start' ? pt.x + 1.5 : pt.x + pt.w / 2; const ty0 = pt.y + pt.h / 2 - (lines.length - 1) * lh / 2 + pt.size * 0.36;
+    const cx = pt.x + pt.w / 2, cy = pt.y + pt.h / 2;
+    return `<g ${pt.rot ? `transform="rotate(${pt.rot} ${cx} ${cy})"` : ''}><rect x="${pt.x}" y="${pt.y}" width="${pt.w}" height="${pt.h}" rx="${pt.r || 0}" fill="${pt.bg}" ${pt.border ? `stroke="${pt.border}" stroke-width="0.8"` : ''}/>
+      ${pt.hole ? `<circle cx="${cx}" cy="${pt.y + 7}" r="3" fill="#3a3128" stroke="${pt.border || '#8a7a5c'}" stroke-width="0.8"/>` : ''}
+      ${lines.map((l, i) => `<text x="${tx}" y="${f1(ty0 + i * lh + (pt.hole ? 4 : 0))}" text-anchor="${anchor}" font-family="${pt.font || 'Nunito'}" font-weight="${pt.weight || 800}" font-size="${pt.size}" fill="${pt.fg}">${esc(l)}</text>`).join('')}</g>`;
+  }
+  function gaugeSvg(o, t) {
+    // clean dial face drawn over a painted gauge, in panel pixel space
+    const { cx, cy, r } = o; const a0 = Math.PI * 0.75, a1 = Math.PI * 2.25;
+    const v = clamp(o.value + Math.sin(t * 7) * 0.008, 0, 1); const ang = lerp(a0, a1, v);
+    let ticks = '';
+    for (let i = 0; i <= 20; i++) { const a = lerp(a0, a1, i / 20), r1 = r * (i % 5 ? 0.86 : 0.8); ticks += `<line x1="${f1(cx + Math.cos(a) * r1)}" y1="${f1(cy + Math.sin(a) * r1)}" x2="${f1(cx + Math.cos(a) * r * 0.93)}" y2="${f1(cy + Math.sin(a) * r * 0.93)}" stroke="#2a2017" stroke-width="${i % 5 ? 0.8 : 1.6}"/>`; }
+    const arc = (b0, b1, col, w) => `<path d="M${f1(cx + Math.cos(b0) * r * 0.9)} ${f1(cy + Math.sin(b0) * r * 0.9)} A${r * 0.9} ${r * 0.9} 0 ${b1 - b0 > Math.PI ? 1 : 0} 1 ${f1(cx + Math.cos(b1) * r * 0.9)} ${f1(cy + Math.sin(b1) * r * 0.9)}" stroke="${col}" stroke-width="${w}" fill="none"/>`;
+    const lbl = (vv, txt) => { const a = lerp(a0, a1, vv); return `<text x="${f1(cx + Math.cos(a) * r * 0.62)}" y="${f1(cy + Math.sin(a) * r * 0.62 + 2.5)}" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="${f1(r * 0.13)}" fill="#2a2017">${txt}</text>`; };
+    return `<g><circle cx="${cx}" cy="${cy}" r="${r}" fill="${o.face || '#e9dfc6'}"/>${arc(a0, lerp(a0, a1, 0.25), '#b8372b', 4)}${ticks}
+      ${lbl(0.5, '$250k')}
+      <text x="${cx}" y="${f1(cy - r * 0.28)}" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="${f1(r * 0.17)}" fill="#2a2017">CASH</text>
+      <rect x="${f1(cx - r * 0.36)}" y="${f1(cy + r * 0.34)}" width="${f1(r * 0.72)}" height="${f1(r * 0.26)}" rx="2" fill="#1d2a22"/><text x="${cx}" y="${f1(cy + r * 0.53)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${f1(r * 0.16)}" fill="#ff8a7a">${esc(o.readout || '')}</text>
+      <line x1="${cx}" y1="${cy}" x2="${f1(cx + Math.cos(ang) * r * 0.78)}" y2="${f1(cy + Math.sin(ang) * r * 0.78)}" stroke="#b8372b" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="${cx}" cy="${cy}" r="${f1(r * 0.08)}" fill="#2a2017"/></g>`;
+  }
+  function motes(t, rng, n = 26, win = ART) {
+    let s = '';
+    for (let i = 0; i < n; i++) { const x0 = win.x + rng() * win.w, y0 = win.y + rng() * win.h, ph = rng() * 6, sp = 8 + rng() * 14; const x = x0 + Math.sin(t * 0.6 + ph) * 18, y = win.y + ((y0 - win.y - t * sp) % win.h + win.h) % win.h; s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(1.5 + rng() * 2.5)}" fill="#fff2c8" opacity="${f1(0.25 + 0.3 * Math.sin(t * 1.3 + ph) ** 2)}"/>`; }
+    return s;
+  }
+  function screenOverlay(o, ctx) {
+    const t = ctx.t, fin = ctx.fin; const money = n => '$' + Math.round(n).toLocaleString('en-US');
+    const txt = v => typeof v === 'string' && v.startsWith('fin.') ? money(fin[v.slice(4)]) : v;
+    if (o.type === 'invoice_drop') { const k = seg(t, o.at, o.at + 0.6); if (k <= 0) return ''; const y = lerp(o.y - 700, o.y, ease.in(k)); const rot = lerp(-25, o.rot || 6, k); return invoice(o.x, y, o.w, o.h, rot, o.title, txt(o.amount), { fs: o.fs || 30, color: PAL.rust }); }
+    if (o.type === 'invoice_roll') { const k = seg(t, o.at, o.at + 0.8); if (k <= 0) return ''; const x = lerp(W + o.w, o.x, ease.out(k)); const rot = lerp(720, -4, ease.out(k)); return `<g transform="translate(${f1(x)} ${o.y}) rotate(${f1(rot)})">${invoice(-o.w / 2, -o.h / 2, o.w, o.h, 0, o.title, txt(o.amount), { color: PAL.rust, fs: o.fs || 50 })}</g>`; }
+    if (o.type === 'sparkles') { const r = mulberry32(hashStr(ctx.scene.id + 'sp')); return t >= (o.from || 0) && t <= (o.to ?? 1e9) ? sparkles(o.x, o.y, o.r, t, r, o.n || 10) : ''; }
+    if (o.type === 'flash') { const k = seg(t, o.at, o.at + 0.5); return k > 0 && k < 1 ? `<rect width="${W}" height="${H}" fill="${o.color || '#fff6d8'}" opacity="${f1(0.35 * Math.sin(k * Math.PI))}"/>` : ''; }
+    if (o.type === 'darken') { const k = seg(t, o.at, o.at + 0.4); return k > 0 ? `<rect width="${W}" height="${H}" fill="${PAL.ink}" opacity="${f1((o.amount || 0.2) * k)}"/>` : ''; }
+    return '';
+  }
+  function artScene(ctx, man) {
+    const { t, T, scene, rng } = ctx; const art = scene.art;
+    const full = art.layout === 'full'; const win = full ? { x: 0, y: 0, w: W, h: H } : ART;
+    let s = `<rect width="${W}" height="${H}" fill="#efe2c4"/>` + blob(W / 2, H / 2, 760, 1100, '#f5ead0', rng, { n: 18, jitter: 0.08, noRim: true, opacity: 0.8 });
+    if (!full) s += `<rect x="${win.x - 14}" y="${win.y - 14}" width="${win.w + 28}" height="${win.h + 28}" rx="10" fill="none" stroke="${PAL.inkSoft}" stroke-width="3" opacity="0.7"/><rect x="${win.x - 5}" y="${win.y - 5}" width="${win.w + 10}" height="${win.h + 10}" rx="6" fill="${PAL.ink}"/>`;
+    const cid = "win_" + scene.id; s += `<clipPath id="${cid}"><rect x="${win.x}" y="${win.y}" width="${win.w}" height="${win.h}" rx="${full ? 0 : 4}"/></clipPath><g clip-path="url(#${cid})">`;
+    const shots = art.shots; const XF = 0.6;
+    shots.forEach((sh, i) => {
+      const st = sh.start * T, en = i + 1 < shots.length ? shots[i + 1].start * T : T;
+      if (t < st - 0.001 || t > en + XF) return;
+      const op = i + 1 < shots.length ? 1 - seg(t, en, en + XF) : 1;
+      if (op <= 0) return;
+      const pan = man.panels[sh.panel]; if (!pan) throw new Error('missing art panel ' + sh.panel);
+      const tr = artTransform(pan, sh, t - st, Math.max(0.5, en + XF - st), win);
+      s += `<g opacity="${f1(op)}" transform="translate(${f1(tr.tx)} ${f1(tr.ty)}) scale(${tr.k.toFixed(4)})"><image href="../${pan.src}" x="0" y="0" width="${pan.w}" height="${pan.h}" preserveAspectRatio="none" image-rendering="optimizeQuality"/>
+        ${pan.patches.map(patchSvg).join('')}${(sh.overlays || []).map(o => o.type === 'gauge' ? gaugeSvg(o, t) : '').join('')}</g>`;
+    });
+    s += motes(t, mulberry32(hashStr(scene.id + 'motes')), 22, win) + '</g>';
+    if (!full) s += `<rect x="${win.x}" y="${win.y}" width="${win.w}" height="${win.h}" rx="4" fill="none" stroke="#000" stroke-opacity="0.25" stroke-width="10"/>`;
+    s += (art.overlays || []).map(o => screenOverlay(o, ctx)).join('');
+    return s;
+  }
+
   // ---------- transitions + engine
   function transitionMask(kind, p) {
     if (kind === 'wipe') { const x = -200 + (W + 400) * ease.inOut(p); return `<clipPath id="tr"><polygon points="${x - 260},0 ${x},0 ${x - 200},${H} ${x - 460},${H}"/><rect x="${x - 460 - W * 2}" y="0" width="${W * 2}" height="${H}"/></clipPath>`; }
@@ -213,12 +287,19 @@
 
   const HW = {
     W, H, PAL, mulberry32, hashStr, clamp, lerp, ease, seg, esc, f1, blob, inkPath, shadowEllipse, coin, coinPile, invoice, label, sparkles, confetti, cloud,
-    marigold, pip, bird, truck, reservoir, pipe, coinsAlong, chart, wrap, textBlock, captionBox, brandMark, sky, paperOverlay, defs,
+    marigold, pip, bird, artScene, truck, reservoir, pipe, coinsAlong, chart, wrap, textBlock, captionBox, brandMark, sky, paperOverlay, defs,
     scenes: {}, state: null,
     registerScenes(map) { Object.assign(this.scenes, map); },
-    setup(ep, timeline, seed) {
-      this.state = { ep, timeline, seed, total: timeline[timeline.length - 1].end };
+    async setup(ep, timeline, seed, visual, art) {
+      this.state = { ep, timeline, seed, total: timeline[timeline.length - 1].end, visual: visual || 'svg', art: art || { panels: {} } };
       document.getElementById('paper').innerHTML = paperOverlay(seed);
+      // preload artwork so frames never capture a half-loaded image
+      this._imgs = await Promise.all(Object.values(this.state.art.panels).map(p => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('cannot load ' + p.src)); im.src = '../' + p.src; })));
+    },
+    async ready() {
+      const imgs = [...document.querySelectorAll('#stage image')];
+      await Promise.all(imgs.map(im => im.decode ? im.decode().catch(() => new Promise(r => { im.addEventListener('load', r, { once: true }); setTimeout(r, 2000); })) : null));
+      await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
     },
     sceneCtx(i, t) {
       const s = this.state.timeline[i]; const sc = this.state.ep.scenes[i];
@@ -227,10 +308,12 @@
       return { t: local, T, p: local / T, rng, scene: sc, ep: this.state.ep, fin: this.state.ep.financials || {}, decisions: s.decisions || {}, narrEnd: s.narration_end - s.start };
     },
     renderScene(i, t) {
-      const ctx = this.sceneCtx(i, t); const fn = this.scenes[ctx.scene.scene];
-      if (!fn) throw new Error('No scene renderer for "' + ctx.scene.scene + '"');
-      const body = fn(ctx, this);
-      const cap = ctx.scene.caption_mode === 'card' ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: ctx.scene.caption_y || 1560 });
+      const ctx = this.sceneCtx(i, t); const useArt = this.state.visual === 'art' && ctx.scene.art;
+      const fn = useArt ? null : this.scenes[ctx.scene.scene];
+      if (!useArt && !fn) throw new Error('No scene renderer for "' + ctx.scene.scene + '"');
+      const body = useArt ? artScene(ctx, this.state.art) : fn(ctx, this);
+      const capY = useArt ? (ctx.scene.art.caption_y || 1650) : (ctx.scene.caption_y || 1560);
+      const cap = ctx.scene.caption_mode === 'card' || (useArt && ctx.scene.art.caption === false) ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
       return body + cap;
     },
     frame(t) {

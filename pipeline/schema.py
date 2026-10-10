@@ -86,6 +86,24 @@ def validate(ep: dict, folder: Path | None = None) -> None:
         for k in ("title", "publisher", "accessed"):
             if not s.get(k):
                 errs.append(f"source {s.get('id')}: missing '{k}'")
+    if ep.get("visual_mode") == "art":
+        man_path = ROOT / ep.get("art_manifest", "")
+        panels = json.loads(man_path.read_text())["panels"] if ep.get("art_manifest") and man_path.exists() else None
+        if panels is None:
+            errs.append(f"visual_mode 'art' but art_manifest {ep.get('art_manifest')!r} not found (run python -m pipeline.import_panels)")
+        for sc in ep["scenes"]:
+            a = sc.get("art")
+            if not a or not a.get("shots"):
+                errs.append(f"scene {sc.get('id')}: visual_mode 'art' requires art.shots"); continue
+            starts = [sh.get("start", -1) for sh in a["shots"]]
+            if starts[0] != 0 or starts != sorted(starts) or starts[-1] >= 1:
+                errs.append(f"scene {sc.get('id')}: art shot starts must begin at 0, increase, and be < 1")
+            for sh in a["shots"]:
+                if panels is not None and sh.get("panel") not in panels:
+                    errs.append(f"scene {sc.get('id')}: unknown art panel {sh.get('panel')!r}")
+                z = sh.get("zoom", [])
+                if len(z) != 2 or min(z) < 1.0:
+                    errs.append(f"scene {sc.get('id')}: zoom must be [from, to] with both >= 1.0 (art must always fill the frame)")
     if folder is not None and not (folder / "research.md").exists():
         errs.append("research.md is missing from the episode folder")
     if "financials" in ep:
