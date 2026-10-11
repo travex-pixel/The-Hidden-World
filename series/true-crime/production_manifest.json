@@ -146,9 +146,82 @@
           "'Between 1978 and 1995' (TTS read '1978 to' ambiguously)"
         ]
       }
+    },
+    "03": {
+      "id": "tc03-btk-floppy",
+      "title": "He Asked Police One Question. Their Answer Was a Trap. #Shorts",
+      "file": "true_crime_03.mp4",
+      "status": "verified",
+      "next_task": "none; ready for upload",
+      "media": {
+        "duration": 77.4,
+        "width": 1080,
+        "height": 1920,
+        "fps": 60.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 42102108,
+        "mean_volume_db": -17.3,
+        "max_volume_db": -0.9
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 4644,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -17.7,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "true_peak_dbtp": -0.9
+      },
+      "asr_word_error_rate": 0.097,
+      "frames_sampled": 13,
+      "qa_dir": "series/true-crime/qa/true_crime_03",
+      "sha256": "c13b6c9c821e15de848b11ebe0ca91b7da141e1a30f0a9399fbfc1ad6405190c",
+      "output": "series/true-crime/output/true_crime_03.mp4",
+      "verified": "2026-10-11T06:29:14",
+      "editorial_review": {
+        "status": "passed",
+        "reviewed": "2026-10-11",
+        "A_investigative_editor": "Every line maps to an established claim (research_case_03.md). Fixed in review: identical DNA profiles (implied a direct match) -> partial shared bands labelled FAMILIAL / CLOSE-RELATIVE MATCH; note wording marked 'as reported'; no victim details, no likeness of Rader, daughter not named.",
+        "B_retention": "Twist complete by 9 s (question, answer, 'They lied' + TRAP); 16 shots averaging 4.8 s; beat-synced cuts; word-synced punch captions.",
+        "C_director": "Sodium/police/CRT palette; motion-blur push, flash and zoom transitions; strategic hush on the reveal; candles as a memorial (not a tally).",
+        "D_first_time_viewer": "Who (BTK, Wichita), what (10 murders, 31 years), how (question, ad, disk, metadata, DNA), outcome (plea, 10 life terms).",
+        "E_software_qa": "60 fps 1080x1920, all media checks pass, no black frames, -14.2 LUFS, ASR WER 0.097 (tiny) / 0.062 (base, pre-final mix); caption layout measured with SVG text so words never collide; frames inspected every 3 s and at key moments.",
+        "fixes_made": [
+          "hook line unmasked (sfx moved)",
+          "'TV'->'television', 'undone'->'ended', 'Thirty-one'->'31'",
+          "caption spacing",
+          "TRAP stamp clear of ad",
+          "DNA partial match",
+          "CRT glow"
+        ]
+      }
     }
   },
-  "updated": "2026-10-11T04:22:50",
+  "updated": "2026-10-11T06:29:14",
   "project": "Two partner-level true-crime YouTube Shorts rendered with the existing THE HIDDEN WORLD engine",
   "research_limitations": "Live web search worked; direct page fetching (WebFetch/curl) was blocked by the environment's network policy, so claims rest on search-result extracts cross-checked across independent outlets. Key primary URLs to open before publishing are listed at the top of research_case_0N.md.",
   "next_task": "none; both videos verified. Optional before publishing: open the primary URLs listed in research_case_0N.md to confirm wording.",

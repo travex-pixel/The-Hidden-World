@@ -1,6 +1,6 @@
 # Scripts and storyboards — THE HIDDEN WORLD: Case Files
 
-Both videos share one design system: night-desk backgrounds, Courier Prime case-file typography, Fraunces headlines, Nunito word-by-word captions at y = 1420 (above the Shorts title overlay) with key words in amber, red reserved for evidence, ILLUSTRATION tags on every reconstruction, one documentary narrator (Piper LibriTTS-R speaker 666) and -14 LUFS loudness. Case 01 is graded warm (desert and amber); Case 02 is graded cold (blue newsprint).
+Both videos share one design system: night-desk backgrounds, Courier Prime case-file typography, Fraunces headlines, Nunito word-by-word captions at y = 1420 (above the Shorts title overlay) with key words in amber, red reserved for evidence, ILLUSTRATION tags on every reconstruction, one documentary narrator (Piper LibriTTS-R speaker 666) and -14 LUFS loudness. Case 01 is graded warm (desert and amber); Case 02 is graded cold (blue newsprint). Case 03 (v2 engine) adds word-synced punch captions, beat-snapped cuts at 100 BPM, push/flash/zoom transitions, a driving music cue and 60 fps; its palette is sodium orange, police blue, CRT green.
 
 Timings below come from the final render (`out/<id>/timeline.json`).
 
@@ -186,3 +186,104 @@ Caption emphasis (amber): s01_hook: words., brother.; s02_map: sixteen, three; s
 - **U_cabin**: Agents found a live bomb in the cabin, wrapped and ready to mail, plus bomb components and tens of thousands of pages of writing. — fbi_history, spokesman_1996, history_arrest
 - **U_plea**: He pleaded guilty on 22 January 1998 in exchange for life without possibility of release; on 4 May 1998 he was sentenced to four life terms plus 30 years. — history_plea, deseret_1998, npr_1998
 - **U_reward**: David Kaczynski received the $1 million reward in August 1998 and pledged most of it to victims' families (roughly $630k-$680k reached them after taxes and legal costs). — wapo_1998, crimelibrary_reward
+
+---
+
+## Video 03 — The Question That Caught BTK  (`true_crime_03.mp4`)
+
+**YouTube title:** He Asked Police One Question. Their Answer Was a Trap. #Shorts  
+**Runtime:** 77.4 s  
+**Central question:** How did one question to the police, and one deleted file, end a 31-year hunt for the BTK killer?
+
+### Opening hooks considered
+
+1. "A serial killer asked the police one question. Could a floppy disk be traced? They told him it was safe. They lied."  
+   *SELECTED. A verified twist inside 9 seconds; three short beats (question, answer, lie) that each change what the viewer knows, and a curiosity gap (how did the lie catch him?).*
+2. "One deleted file ended a 31-year manhunt."  
+   *Strong, but abstract without context, and it gives away the payoff mechanism first.*
+3. "Police answered a serial killer's question in the newspaper classifieds."  
+   *Intriguing, but slower; it lacks the stakes of the lie.*
+
+### Case timeline (verified)
+- Jan 1974 - 1991: BTK kills ten people in and around Wichita, Kansas; letters to police and media in the 1970s, then silence.
+- Mar 2004: BTK resumes communication with a letter to The Wichita Eagle.
+- Jan 2005: a postcard to KAKE-TV leads to a cereal box containing a note asking if a floppy disk could be traced.
+- Late Jan/early Feb 2005: police run the classified ad 'Rex, it will be OK'.
+- 16 Feb 2005 (per AP): a floppy disk arrives at KSAS-TV; a deleted Word file's metadata names Christ Lutheran Church and 'Dennis'.
+- Feb 2005: Dennis Rader, church council president, is linked by a familial DNA test.
+- 25 Feb 2005: arrest.
+- 27 Jun 2005: guilty plea to ten counts of first-degree murder. 18 Aug 2005: ten consecutive life terms.
+
+### Full narration
+
+> A serial killer asked the police one question.
+> Could a floppy disk be traced?
+> They told him it was safe.
+> They lied.
+> From 1974, a killer who called himself BTK
+> murdered ten people in and around Wichita, Kansas.
+> He taunted police and the press with letters.
+> Then, for years, silence.
+> In 2004, he started writing again.
+> In January 2005, he left a note inside a cereal box.
+> "Can I communicate with Floppy and not be traced to a computer?"
+> If it was safe, he said, answer with an ad in the newspaper.
+> Police ran the ad:
+> "Rex, it will be OK."
+> Weeks later, a television station received a floppy disk from BTK.
+> Examiners found one deleted file.
+> Hidden in its data:
+> "Christ Lutheran Church."
+> And the name: "Dennis."
+> The president of that church's council was Dennis Rader.
+> A DNA test confirmed the link.
+> On February 25th, 2005, he was arrested.
+> He pleaded guilty to all ten murders.
+> Ten consecutive life sentences.
+> 31 years of hiding,
+> ended by one question, one lie, and one deleted file.
+
+*175 words, spoken in 77.4 s including pauses and holds.*
+
+### Shot-by-shot storyboard, captions and sound
+
+| Time | Scene | Visual (on-screen text in quotes) | Narration and caption timing | Sound | Claims |
+|---|---|---|---|---|---|
+| 0.0-3.0s | s01_question | Cold open, no fade-in: a floppy disk tilts into a sodium street-light cone, with drifting dust and a lens flare. A red '?' slams in on the word 'question' (camera shake). | 0.2-2.6s: A serial killer asked the police one question. | Sub-drop on frame 1; driving 100 BPM cue (saw-bass ostinato, ticking hats). Music cue: `drive`. | B_question |
+| 3.0-5.4s | s02_traced | Flash cut. Macro: the metal shutter slides open; a cold scan line sweeps down; glowing 'TRACEABLE?'. | 3.2-4.6s: Could a floppy disk be traced? | Digital glitch under the flash (kept quiet so the line lands). Music cue: `drive`. | B_question |
+| 5.4-9.0s | s03_lie | Motion-blur push to a classifieds page; one ad, 'REX, IT WILL BE OK'. On 'lied' the frame shakes, the ad outline turns red and a TRAP stamp slams across it. | 5.7-6.7s: They told him it was safe.<br>7.3-8.0s: They lied. | Whoosh; impact on 'lied'. Music cue: `drive`. | B_ad, B_deception |
+| 9.0-16.2s | s04_map | Zoom transition. Natural Earth map of the USA zooms to Kansas (state lines). 'KANSAS' label; pin WICHITA; header 'WICHITA, KANSAS · 1974 - 1991 · 10 VICTIMS'. | 9.2-12.4s: From 1974, a killer who called himself BTK<br>12.7-15.7s: murdered ten people in and around Wichita, Kansas. | Whoosh; one heartbeat thump. Music cue: `drive`. | B_ten, B_name |
+| 16.2-21.0s | s05_silence | Push. Envelopes fall one by one onto a lamp-lit desk ('THE 1970s'). On 'silence' the lamp dims and 'THEN: SILENCE' types in grey. | 16.4-18.6s: He taunted police and the press with letters.<br>19.1-20.4s: Then, for years, silence. | Paper; music drops 3 dB. Music cue: `drive`. | B_letters |
+| 21.0-24.6s | s06_back | Flash. A new envelope slams onto the desk with a red '2004' stamp ('A NEW LETTER'). | 21.2-23.9s: In 2004, he started writing again. | Impact; typewriter. Music cue: `drive`. | B_2004 |
+| 24.6-29.4s | s07_cereal | Push. A generic cereal box under cold light; a folded note slides out of the top ('JANUARY 2005'). Tag: NOT THE ACTUAL BOX. | 24.9-28.8s: In January 2005, he left a note inside a cereal box. | Paper. Music cue: `drive`. | B_cereal |
+| 29.4-37.2s | s08_note | Zoom. A typed card ('BTK'S NOTE · WORDING AS REPORTED'); words appear exactly as narrated, FLOPPY and TRACED in red. Card lifts; 'NEWSPAPER AD?' pops in on the word 'ad'. | 29.6-32.8s: "Can I communicate with Floppy and not be traced to a computer?"<br>33.4-36.5s: If it was safe, he said, answer with an ad in the newspaper. | Typewriter. Music cue: `drive`. | B_question, B_ad_request |
+| 37.2-40.8s | s09_ad | Push. 'THE WICHITA EAGLE · CLASSIFIEDS'; the ad prints word by word in sync: REX, / IT / WILL / BE / OK. Tag: AD TEXT AS REPORTED. | 37.5-38.6s: Police ran the ad:<br>39.1-40.4s: "Rex, it will be OK." | Paper; soft stamp. Music cue: `drive`. | B_ad, B_deception |
+| 40.8-45.0s | s10_disk | Flash. A padded envelope on a desk; the disk slides out toward camera on 'floppy disk' (shake). 'FEBRUARY 2005 · KSAS-TV, WICHITA'. | 41.0-44.7s: Weeks later, a television station received a floppy disk from BTK. | Sub-drop; mechanical click. Music steps up to the peak cue (kick on 1 and 3). Music cue: `drive-peak`. | B_disk |
+| 45.0-49.2s | s11_file | Zoom. A beige CRT: '> SCANNING DISK', '> 1 DELETED FILE FOUND', a progress bar, '> READING HIDDEN DATA'; scanlines; glitch bands. Tag: ILLUSTRATION · SIMPLIFIED. | 45.2-47.2s: Examiners found one deleted file.<br>47.7-48.7s: Hidden in its data: | Typing; glitch; riser into the reveal. Music cue: `drive-peak`. | B_deleted |
+| 49.2-54.0s | s12_reveal | Flash to near-black CRT glow: 'IN THE DELETED FILE'S HIDDEN DATA', then 'CHRIST LUTHERAN CHURCH' (glow) and a huge red '"DENNIS"', each landing on the spoken word with shake. | 50.0-51.1s: "Christ Lutheran Church."<br>51.9-53.2s: And the name: "Dennis." | Sub and impact at the cut, then the narration in near-silence (music -6 dB, hush cue). Music cue: `hush`. | B_metadata |
+| 54.0-57.6s | s13_church | Push. A moonlit, rim-lit generic church; one window lights up; a name card slides in on 'Dennis': 'DENNIS RADER · CHURCH COUNCIL PRESIDENT'. Tag: NOT THE ACTUAL BUILDING. | 54.2-56.7s: The president of that church's council was Dennis Rader. | Whoosh; impact. Music cue: `drive-peak`. | B_rader |
+| 57.6-64.2s | s14_arrest | Flash. Two abstract DNA band profiles slide together: 'FAMILIAL DNA: LINK CONFIRMED'. Cross-fade to a night road under sodium street lights with a red/blue light wash; '25 FEB 2005', then 'ARRESTED' on the word. | 57.9-59.4s: A DNA test confirmed the link.<br>59.9-63.4s: On February 25th, 2005, he was arrested. | Glitch; impact on 'arrested'. Music cue: `drive-peak`. | B_dna, B_arrest |
+| 64.2-69.6s | s15_sentence | Push. Ten candle lights appear one by one (in memory, not a tally of violence). 'PLEADED GUILTY · JUNE 2005', then '10 × LIFE · CONSECUTIVE · AUGUST 2005'. | 64.5-66.4s: He pleaded guilty to all ten murders.<br>67.0-68.8s: Ten consecutive life sentences. | Gavel and stamp; aftermath bells. Music cue: `aftermath`. | B_plea, B_sentence |
+| 69.6-77.4s | s16_end | Zoom. The disk alone in a cold spotlight, slowly turning. Three icons light on the spoken words: '?' (question), 'AD' (lie), 'FILE'. The frame darkens to 'In memory of the ten people he killed.', then fades to black. | 69.8-71.2s: 31 years of hiding,<br>71.6-74.8s: ended by one question, one lie, and one deleted file. | Sub; aftermath; fade. Music cue: `aftermath`. | B_31, B_question, B_deception, B_deleted |
+
+Caption emphasis (amber): s01_question: question.; s02_traced: traced?; s03_lie: safe., lied.; s04_map: btk, ten; s05_silence: letters., silence.; s06_back: again.; s07_cereal: note, cereal; s08_note: floppy, traced, ad; s09_ad: rex,, ok."; s10_disk: floppy, disk; s11_file: deleted, hidden; s12_reveal: church.", dennis."; s13_church: dennis, rader.; s14_arrest: dna, arrested.; s15_sentence: guilty, life; s16_end: question,, lie,, file.
+
+### Source references for factual claims
+- **B_question**: In a note left in a cereal box (location given by a postcard to KAKE-TV, 25 Jan 2005), BTK asked whether he could communicate by floppy disk without being traced: 'Can I communicate with Floppy and not be traced to a computer.' (wording as reported; minor variants exist) — oxygen_floppy, refinery29, biography_timeline, history_jan25
+- **B_ad_request**: He asked police to answer through a classified ad in The Wichita Eagle. — refinery29, oxygen_floppy, aba
+- **B_ad**: Police ran the ad 'Rex, it will be OK', signalling (falsely) that a disk could not be traced. — refinery29, oxygen_floppy, aba, biography_timeline
+- **B_deception**: The reply was a deliberate deception by investigators; Rader later expressed shock that police had deceived him. — oxygen_floppy, refinery29, aba
+- **B_ten**: Between 1974 and 1991 BTK killed ten people in and around Wichita, Kansas (Rader pleaded guilty to ten counts of first-degree murder). — ljworld_plea, cnn_plea, britannica
+- **B_name**: The killer used the name 'BTK' for himself in his communications. — britannica, biography_timeline
+- **B_letters**: In the 1970s BTK sent letters to police and the media; communications then stopped for decades until 2004. — nbc_resurfaces, britannica, ksn_ap
+- **B_2004**: In March 2004 BTK resumed communication with a letter to The Wichita Eagle, followed by further messages and packages. — nbc_resurfaces, ksn_ap, crimelibrary_returns
+- **B_cereal**: In January 2005 a note from BTK was left inside a cereal box; a postcard to KAKE-TV gave its location. — biography_timeline, history_jan25, oxygen_floppy
+- **B_disk**: Weeks later (16 Feb 2005 per AP) a floppy disk from BTK arrived at Wichita TV station KSAS. — ljworld_disk, nbc_disk, refinery29
+- **B_deleted**: Forensic examination found a deleted Microsoft Word document on the disk. — oxygen_floppy, aba, refinery29
+- **B_metadata**: The deleted file's metadata named 'Christ Lutheran Church' and a user 'Dennis'. — oxygen_floppy, aba, refinery29, ljworld_disk
+- **B_rader**: Dennis Rader was president of the Christ Lutheran Church council. — ljworld_disk, britannica, nbc_disk
+- **B_dna**: Before the arrest, a familial DNA test (using a medical sample of his daughter's, obtained with court authorisation) linked him to crime-scene DNA. — abc_daughter, rd_daughter, seattle_times
+- **B_arrest**: Rader was arrested on 25 February 2005. — ljworld_disk, nbc_disk, britannica
+- **B_plea**: On 27 June 2005 Rader pleaded guilty to ten counts of first-degree murder. — ljworld_plea, cnn_plea, nbc_plea
+- **B_sentence**: On 18 August 2005 he was sentenced to ten consecutive life terms (minimum 175 years). — nbc_sentence, deseret_sentence, britannica
+- **B_31**: From the first killings (January 1974) to the arrest (February 2005) is 31 years. — ap_victims, ljworld_disk

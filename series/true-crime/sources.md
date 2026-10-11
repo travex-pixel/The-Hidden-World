@@ -146,3 +146,68 @@ Illustrated documentary reconstruction. Scenes are labelled illustrations; no re
 ```
 **Hashtags:** #Shorts #TrueCrime #Documentary #Unabomber #FBI
 
+
+## Video 03 — The Question That Caught BTK
+
+- **[oxygen_floppy]** How A Floppy Disk Exposed Dennis Rader As The BTK Killer. *Oxygen*. https://www.oxygen.com/snapped/crime-time/floppy-disk-exposed-dennis-rader-btk-killer  
+  Supports: B_question, B_ad_request, B_ad, B_deception, B_cereal, B_deleted, B_metadata
+- **[refinery29]** How A Floppy Disk Brought The BTK Killer Down. *Refinery29*, 2019-08. https://www.refinery29.com/en-us/2019/08/240899/btk-killer-caught-when-how-floppy-disk-dennis-rader  
+  Supports: B_question, B_ad_request, B_ad, B_deception, B_disk, B_deleted, B_metadata
+- **[aba]** How the Cops Caught BTK. *ABA Journal*. https://www.abajournal.com/magazine/article/how_the_cops_caught_btk  
+  Supports: B_ad_request, B_ad, B_deception, B_deleted, B_metadata
+- **[biography_timeline]** BTK Killer criminal timeline. *Biography.com*. https://www.biography.com/crime/a63496187/btk-killer-criminal-timeline  
+  Supports: B_question, B_ad, B_name, B_cereal
+- **[history_jan25]** BTK killer sends message. *History.com*. https://www.history.com/this-day-in-history/january-25/btk-killer-sends-message  
+  Supports: B_question, B_cereal
+- **[ljworld_disk]** Computer disk, DNA and messages helped lead police to BTK suspect. *Lawrence Journal-World (AP)*, 2005-03-04. https://www2.ljworld.com/news/2005/mar/04/computer_disk_dna/  
+  Supports: B_disk, B_metadata, B_rader, B_arrest, B_31
+- **[nbc_disk]** Computer disk may have cracked BTK case. *NBC News (AP)*, 2005-03. https://www.nbcnews.com/id/wbna6988048  
+  Supports: B_disk, B_rader, B_arrest
+- **[ljworld_plea]** Rader pleads guilty to BTK killings. *Lawrence Journal-World*, 2005-06-27. https://www2.ljworld.com/news/2005/jun/27/btk/  
+  Supports: B_ten, B_plea
+- **[cnn_plea]** Rader details how he killed 10 people. *CNN*, 2005-06-28. https://www.cnn.com/2005/LAW/06/27/btk/index.html  
+  Supports: B_ten, B_plea
+- **[nbc_plea]** BTK killer waives trial, admits 10 slayings. *NBC News*, 2005-06. https://www.nbcnews.com/id/wbna8367581  
+  Supports: B_plea
+- **[nbc_sentence]** BTK killer gets maximum life sentence. *NBC News*, 2005-08. https://www.nbcnews.com/id/wbna8996967  
+  Supports: B_sentence
+- **[deseret_sentence]** BTK killer is sentenced to consecutive life terms. *Deseret News (AP)*, 2005-08-19. https://www.deseret.com/2005/8/19/19907875/btk-killer-is-sentenced-to-consecutive-life-terms/  
+  Supports: B_sentence
+- **[britannica]** Dennis Rader. *Encyclopaedia Britannica*. https://www.britannica.com/biography/Dennis-Rader  
+  Supports: B_ten, B_name, B_letters, B_rader, B_arrest, B_sentence
+- **[nbc_resurfaces]** Kan. serial killer resurfaces two decades later. *NBC News*, 2004-03. https://www.nbcnews.com/news/amp/wbna4615264  
+  Supports: B_letters, B_2004
+- **[ksn_ap]** BTK serial killer is in the news again: background on his case. *KSN (AP)*. https://www.ksn.com/news/local/ap-btk-serial-killer-is-in-the-news-again-heres-why-and-some-background-about-his-case/  
+  Supports: B_letters, B_2004
+- **[crimelibrary_returns]** BTK returns. *Crime Library*. https://crimelibrary.org/serial_killers/unsolved/btk/returns_11.html  
+  Supports: B_2004
+- **[abc_daughter]** BTK serial killer's daughter: 'We were living our normal life...'. *ABC News*, 2019. https://abcnews.com/US/btk-serial-killers-daughter-living-normal-life-upended/story?id=60428529  
+  Supports: B_dna
+- **[rd_daughter]** My Father Was the BTK Killer. *Reader's Digest*. https://www.rd.com/article/my-father-was-the-btk-killer/  
+  Supports: B_dna
+- **[seattle_times]** Daughter of a serial killer helps link her father to cold cases. *The Seattle Times*. https://www.seattletimes.com/nation-world/nation/her-father-is-the-btk-killer-shes-helping-to-close-more-cases/  
+  Supports: B_dna
+- **[ap_victims]** BTK victims (AP list). *Crime Library (AP)*. https://crimelibrary.org/news/ap/06052/2807_btk_victims.html  
+  Supports: B_31
+
+### YouTube upload metadata — Video 03
+**Title:** He Asked Police One Question. Their Answer Was a Trap. #Shorts
+
+**Description (paste as is):**
+```
+How did one question to the police, and one deleted file, end a 31-year hunt for the BTK killer?
+
+Sources:
+- Oxygen: https://www.oxygen.com/snapped/crime-time/floppy-disk-exposed-dennis-rader-btk-killer
+- Refinery29: https://www.refinery29.com/en-us/2019/08/240899/btk-killer-caught-when-how-floppy-disk-dennis-rader
+- ABA Journal: https://www.abajournal.com/magazine/article/how_the_cops_caught_btk
+- Biography.com: https://www.biography.com/crime/a63496187/btk-killer-criminal-timeline
+- History.com: https://www.history.com/this-day-in-history/january-25/btk-killer-sends-message
+- Lawrence Journal-World (AP): https://www2.ljworld.com/news/2005/mar/04/computer_disk_dna/
+- NBC News (AP): https://www.nbcnews.com/id/wbna6988048
+- Lawrence Journal-World: https://www2.ljworld.com/news/2005/jun/27/btk/
+
+Illustrated documentary reconstruction. Scenes are labelled illustrations; no real footage, photographs or documents are shown. Narration is synthetic (Piper TTS). Music and sound effects are original and generated in code.
+```
+**Hashtags:** #Shorts #TrueCrime #Documentary #BTK #ColdCase #Wichita
+
