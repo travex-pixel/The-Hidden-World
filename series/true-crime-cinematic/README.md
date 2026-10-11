@@ -43,23 +43,44 @@ A **dark graphic-novel look with a watercolour wash**: ink outlines, two-tone ce
 
 Older episodes render exactly as before. Their scene files never call the new code.
 
-## Build and verify (any machine)
+## Produce a video: one command (resumable)
 ```bash
-pip install -r requirements.txt onnx && npm install && npx playwright install chromium
-python series/true-crime-cinematic/make_episodes.py           # episode.json from the reviewed script
-python series/true-crime/qa.py 1 --render --series series/true-crime-cinematic
-python series/true-crime/qa.py 2 --render --series series/true-crime-cinematic
-python -m unittest discover -s tests
+pip install -r requirements.txt && npm install && npx playwright install chromium   # once
+python series/true-crime-cinematic/produce.py 1        # or 2, or all
 ```
-Each render takes about 12 minutes on 4 CPU cores. A file is copied to `output/` **only** if every check passes:
-- codec, size, frame rate and duration;
-- a full decode with no errors;
-- no black frames, no clipping and no silence gaps;
-- captions inside their scenes, and narration at least 8 dB above the music;
-- loudness of −14 ± 1.5 LUFS and true peak at or below −0.5 dBTP;
-- an offline speech-recognition round trip with word error rate ≤ 0.25.
+`produce.py` runs four steps:
+1. It regenerates `episode.json` from the reviewed script (`make_episodes.py`).
+2. It narrates with Piper. Narration is cached, so unchanged lines are never re-synthesised.
+3. It renders, but skips the render when every input (shot code, engine, rig, sets, characters, audio code, quality, seed) hashes the same as the last successful render.
+4. It runs the full QA gate.
 
-Frames every 6 s go to `qa/true_crime_0N/`.
+A file reaches `output/` **only if every check passes**. Every stage is appended to `production_log.md`, and `production_manifest.json` is updated after each step, so an interrupted run resumes where it stopped. A render takes about 12–14 minutes on 4 CPU cores.
+
+**QA gate** (`series/true-crime/qa.py --series series/true-crime-cinematic`):
+- **Media:** H.264/AAC, 1080×1920, 30 fps, duration matches the timeline, and a full decode with no errors. No black frames, no clipping and no silence gaps.
+- **Audio:** loudness of −14 ± 1.5 LUFS, true peak at or below −0.5 dBTP, and narration at least 8 dB above the music. An offline speech-recognition round trip must reach a word error rate of 0.25 or less.
+- **Captions:** timed inside their scenes, and **inside the YouTube Shorts safe area**, measured with the real font (`pipeline/caption_safe.py`).
+- **Picture:** no frozen or static stretches (`pipeline/motion_qa.py`).
+- **Shots:** **every shot probed in the renderer** (`pipeline/shot_probe.mjs`) and written to `episodes/<id>/shot_manifest.json` (`pipeline/shot_manifest.py`). The gate requires:
+  - every claim sourced, and every reconstruction tagged ILLUSTRATION;
+  - every character shot has a character performing an action;
+  - shot variety: at least 4 sets, no set in more than 50 % of shots, and no shot size in more than 60 % of shots.
+- **Frames:** one every 6 s is saved to `qa/true_crime_0N/` for review.
+
+**Per-shot manifest** (`episodes/<id>/shot_manifest.json`) records, for every shot:
+- duration, narration and caption word timings;
+- a visual description, shot size, set, grade and camera;
+- the characters and their timed actions, and the overlays;
+- claim texts with source URLs;
+- music cue and sound effects with absolute times;
+- asset paths and validation flags.
+
+## Make the next episode
+1. **Research:** copy `docs/RESEARCH_TEMPLATE.md` to `series/true-crime/research_case_0N.md`. Only "established" claims with two or more independent sources may be narrated.
+2. **Script:** add a builder in `series/true-crime/make_episodes.py` (narration lines, claims, sources). Then add a cinematic builder in `series/true-crime-cinematic/make_episodes.py`, using `S(...)` per shot, `fw(line, word, ...)` for sound effects on spoken words, and a `figures` list.
+3. **Shots:** write `renderer/scenes/tcv0N-<slug>.js`, one `E.cine.shot` per scene type. Pick a set from `renderer/sets.js` and characters from `characters/figures/` (add a JSON for a new person: generic, or *"illustrated representation, not a likeness"*). Key actions to words with `WT(ctx, line, word)`.
+4. **Register:** add the episode to `series.json`, then run `python series/true-crime-cinematic/produce.py N`.
+5. **Preview without rendering:** run `python -m pipeline.build <id> --quality preview --plan-only` and then `node pipeline/stills.mjs out/<id>/plan.json /tmp/stills 3 10 20`.
 
 ## Watch or upload on Android
 1. On your phone, open the repository on github.com in Chrome. Switch to branch `ccr-67645e21-nwgkaq`, open `series/true-crime-cinematic/output/`, tap the MP4, then use **⋯ → Download** (or "View raw" and save). If the files were sent to you in chat, save them from there. They play in Google Photos, Files or VLC.
