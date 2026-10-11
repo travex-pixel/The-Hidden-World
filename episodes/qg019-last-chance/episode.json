@@ -1,0 +1,342 @@
+{
+  "id": "qg019-last-chance",
+  "number": 19,
+  "series": "THE QUIET GAME",
+  "round": 3,
+  "counter_move": 5,
+  "title": "Last Chance",
+  "yt_title": "'Only 2 spots left!' (there weren't)",
+  "central_question": "Why do deadlines make us stop thinking?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    20,
+    42
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js",
+    "renderer/scenes/qg-round2.js",
+    "renderer/scenes/qg-round3.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 80,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "PRESSURE",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.12,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.15,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.15,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.15,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.15,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.15,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.15,
+      "color": "#e0b07a",
+      "role": "colleague"
+    },
+    "max": {
+      "name": "Max",
+      "voice": "en_GB-aru-medium",
+      "speaker": 1,
+      "speed": 1.15,
+      "color": "#7fb2ff",
+      "role": "the next new hire"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "lc_hook",
+      "min_duration": 3.0,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Only two spots left."
+        },
+        {
+          "who": "narrator",
+          "text": "There were never two spots.",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "11:20 AM",
+      "hud": false,
+      "action": "Sam with a clipboard: LISBON TRIP · 2 SPOTS LEFT!"
+    },
+    {
+      "id": "s02_pitch",
+      "scene": "lc_pitch",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "sam",
+          "text": "Team trip to Lisbon. Only two spots left!"
+        },
+        {
+          "who": "sam",
+          "text": "Three hundred deposit. Decide by five!",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "tick"
+        },
+        {
+          "at": 1.6,
+          "name": "tick"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 2,
+          "text": "Only 2 spots left!",
+          "at_line": 0
+        },
+        {
+          "level": 4,
+          "text": "Decide by 5 PM!",
+          "at_line": 1
+        }
+      ],
+      "action": "The pitch, at speed."
+    },
+    {
+      "id": "s03_almost",
+      "scene": "lc_almost",
+      "min_duration": 2.4,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 5,
+          "text": "£300. Right now. Before it's gone.",
+          "at": 0.3
+        }
+      ],
+      "action": "Max opens his banking app. Bubble: 'Quick, before it's gone!'"
+    },
+    {
+      "id": "s04_theo",
+      "scene": "lc_theo",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "If it's a good deal today, it's a good deal tomorrow."
+        },
+        {
+          "who": "max",
+          "text": "I'll decide tomorrow.",
+          "pause": 0.3
+        },
+        {
+          "who": "sam",
+          "text": "Spots might go!",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Theo leans in. Max puts the phone away. Sam, flustered."
+    },
+    {
+      "id": "s05_next",
+      "scene": "lc_next",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "whoosh"
+        },
+        {
+          "at": 0.9,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "NEXT DAY",
+      "jump": {
+        "dir": 1,
+        "label": "ONE DAY LATER",
+        "text": "THE SIGN-UP SHEET"
+      },
+      "truth": {
+        "text": "There were always spots. The rush was the sales pitch.",
+        "at": 1.0
+      },
+      "action": "The clipboard: 9 SPOTS LEFT."
+    },
+    {
+      "id": "s06_twist",
+      "scene": "lc_twist",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.9,
+      "lines": [
+        {
+          "who": "sam",
+          "text": "Jo! Only TWO spots left!"
+        },
+        {
+          "who": "jo",
+          "text": "Ooh!",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Sam, same pitch, new target. Max and Theo exchange a look."
+    },
+    {
+      "id": "s99_lesson",
+      "scene": "lc_lesson",
+      "min_duration": 2.6,
+      "lead": 0.9,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "If they rush you, slow down."
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "lesson": {
+        "n": 5,
+        "move": "Make you hurry, so you don't think.",
+        "counter": "A rush is a reason to slow down."
+      },
+      "action": "Lesson card. THE MOVE: Make you hurry, so you don't think. THE COUNTER: A rush is a reason to slow down."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Scarce items are rated as more valuable, especially when supply suddenly drops (Worchel, Lee & Adewole, 1975, the 'cookie jar' study). The study rated cookies; the deadline pressure in this story is an illustration.",
+      "sources": [
+        "S1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Effects of supply and demand on ratings of object value. Worchel, S., Lee, J., & Adewole, A. (1975). JPSP, 32(5), 906-914",
+      "publisher": "Loma Linda University research portal (catalogue record)",
+      "url": "https://experts.llu.edu/en/publications/effects-of-supply-and-demand-on-ratings-of-object-value-2/",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

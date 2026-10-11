@@ -1,0 +1,310 @@
+{
+  "id": "qg020-everyones-in",
+  "number": 20,
+  "series": "THE QUIET GAME",
+  "round": 3,
+  "counter_move": 6,
+  "title": "Everyone's In",
+  "yt_title": "'Everyone's chipping in.' Who's everyone?",
+  "central_question": "Why does 'everyone's doing it' work so well?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    20,
+    42
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js",
+    "renderer/scenes/qg-round2.js",
+    "renderer/scenes/qg-round3.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 80,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "EVERYONE'S IN?",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.12,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.15,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.15,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.15,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.15,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.15,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.15,
+      "color": "#e0b07a",
+      "role": "colleague"
+    },
+    "max": {
+      "name": "Max",
+      "voice": "en_GB-aru-medium",
+      "speaker": 1,
+      "speed": 1.15,
+      "color": "#7fb2ff",
+      "role": "the next new hire"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "ev_hook",
+      "min_duration": 3.0,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Everyone was chipping in."
+        },
+        {
+          "who": "narrator",
+          "text": "Everyone was one person.",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "2:40 PM",
+      "hud": false,
+      "action": "Ben with an envelope: JO'S BIRTHDAY."
+    },
+    {
+      "id": "s02_pitch",
+      "scene": "ev_pitch",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Everyone's chipping in twenty for Jo's birthday."
+        },
+        {
+          "who": "kemi",
+          "text": "Oh! Everyone?",
+          "pause": 0.2
+        },
+        {
+          "who": "ben",
+          "text": "Everyone.",
+          "pause": 0.15
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 3,
+          "text": "Everyone's chipping in.",
+          "at_line": 0
+        }
+      ],
+      "action": "Ben at Kemi's desk."
+    },
+    {
+      "id": "s03_almost",
+      "scene": "ev_almost",
+      "min_duration": 2.4,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 5,
+          "text": "£20. Like everyone.",
+          "at": 0.3
+        }
+      ],
+      "action": "Kemi reaches for a £20 note. Bubble: 'Can't be the only one who doesn't…'"
+    },
+    {
+      "id": "s04_counter",
+      "scene": "ev_counter",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.5,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "Who's everyone?"
+        },
+        {
+          "who": "ben",
+          "text": "…Me.",
+          "pause": 0.5,
+          "speed": 0.95
+        },
+        {
+          "who": "ben",
+          "text": "And Sam's thinking about it.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "text": "'Everyone' was Ben.",
+        "at_line": 1,
+        "after": 0.2
+      },
+      "action": "The question. The answer."
+    },
+    {
+      "id": "s05_twist",
+      "scene": "ev_twist",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.9,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "Fine. Ten from me."
+        },
+        {
+          "who": "ben",
+          "text": "Max! Everyone's chipping in. Me AND Kemi!",
+          "pause": 0.3
+        },
+        {
+          "who": "max",
+          "text": "Oh, then I'm in!",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Kemi pays a fair £10. Ben immediately turns to Max. Kemi laughs."
+    },
+    {
+      "id": "s99_lesson",
+      "scene": "ev_lesson",
+      "min_duration": 2.6,
+      "lead": 0.9,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "When it's 'everyone', ask for names."
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "lesson": {
+        "n": 6,
+        "move": "'Everyone's doing it.'",
+        "counter": "Ask: who's everyone?"
+      },
+      "action": "Lesson card. THE MOVE: 'Everyone's doing it.' THE COUNTER: Ask: who's everyone?"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Telling people what most others do changes their behaviour: hotel signs saying most guests reused towels raised towel reuse (Goldstein, Cialdini & Griskevicius, 2008).",
+      "sources": [
+        "S1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "A room with a viewpoint: Using social norms to motivate environmental conservation in hotels. Goldstein, N. J., Cialdini, R. B., & Griskevicius, V. (2008). Journal of Consumer Research, 35(3), 472-482",
+      "publisher": "Oxford University Press",
+      "url": "https://doi.org/10.1086/586910",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

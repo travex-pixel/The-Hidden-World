@@ -21,7 +21,7 @@
     s += layer(1, person(sitter, { x: 400, y: 1530, s: 2.0, ...alive(t, R.PH[sitter]), lit: -1, mouth: talk(ctx, sitter), ...(o.me || {}) }));
     if (o.visitor) s += layer(1, person(o.visitor, { x: o.vx || 850, y: 1610, s: 2.05, ...alive(t, R.PH[o.visitor]), lit: -1, mouth: talk(ctx, o.visitor), ...(o.them || {}) }));
     if (o.noDesk) return s;
-    return s + layer(1.05, Q.desk(-120, 1420, 1320, { h: 600, monitor: false }) + (o.chairGone ? '' : '') + R.monitor(860, 1380, 1.05, o.note === true) + (o.items || ''));
+    return s + layer(1.05, Q.desk(-120, 1420, 1320, { h: 600, monitor: false }) + (o.chairGone ? '' : '') + (o.noMonitor ? '' : R.monitor(860, 1380, 1.05, o.note === true)) + (o.items || ''));
   };
   // full-frame close-up of the note on the monitor; o.second = 0..1 slides the other half in underneath
   R.noteShot = (ctx, o = {}) => {

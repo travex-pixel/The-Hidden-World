@@ -600,8 +600,26 @@
       <rect x="-400" y="-120" width="800" height="240" rx="34" fill="#ff5a4a"/><text x="0" y="-18" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="92" fill="#ffffff">PART ${n.part} →</text>
       <text x="0" y="62" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="46" letter-spacing="6" fill="#ffe9e6">${esc(n.title)}</text></g>`;
   }
+  // the shareable lesson card: THE MOVE / THE COUNTER (scene.lesson)
+  function lessonCard(ctx) {
+    const L = ctx.lesson || ctx.scene.lesson; if (!L) return '';
+    const t = ctx.t, k1 = ease.back(seg(t, 0.05, 0.4));
+    const ln = ctx.lines[L.counter_at_line ?? 0], k2at = ln ? ln.start - 0.05 : 0.9, k2 = ease.back(seg(t, k2at, k2at + 0.35));
+    const block = (y, k, label, text, col) => {
+      if (k <= 0) return '';
+      const lines = E.wrap(text, 20);
+      return `<g transform="translate(${W / 2} ${y}) scale(${f1(k)})" opacity="${f1(clamp(k, 0, 1))}"><rect x="-460" y="-70" width="920" height="${f1(120 + lines.length * 74)}" rx="30" fill="#ffffff"/>
+        <rect x="-460" y="-70" width="920" height="64" rx="30" fill="${col}"/><rect x="-460" y="-36" width="920" height="30" fill="${col}"/>
+        <text x="0" y="-26" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="34" letter-spacing="8" fill="#ffffff">${esc(label)}</text>
+        ${lines.map((l, i) => `<text x="0" y="${f1(56 + i * 74)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="64" fill="#1c2430">${esc(l)}</text>`).join('')}</g>`;
+    };
+    let s = `<rect width="${W}" height="${H}" fill="#08090c" opacity="${f1(0.72 * clamp(k1, 0, 1))}"/>`;
+    s += `<text x="${W / 2}" y="470" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="46" letter-spacing="10" fill="#ffd36b" opacity="${f1(clamp(k1, 0, 1))}">COUNTER-MOVE #${L.n}</text>`;
+    s += block(640, k1, L.move_label || 'THE MOVE', L.move, '#d0544a') + block(1010, k2, L.counter_label || 'THE COUNTER', L.counter, '#2e9a5c');
+    return s;
+  }
   function frame(ctx, body, grade, opts = {}) {
-    return `<rect width="${W}" height="${H}" fill="#0c0d10"/>${defs()}${body}${finish(grade)}${opts.noClock ? '' : clockChip(ctx, opts)}${countdownPill(ctx)}${rumourMeter(ctx)}${nameTags(ctx)}${captions(ctx, opts)}${jumpCard(ctx)}${nextCard(ctx)}`;
+    return `<rect width="${W}" height="${H}" fill="#0c0d10"/>${defs()}${body}${finish(grade)}${opts.noClock ? '' : clockChip(ctx, opts)}${countdownPill(ctx)}${rumourMeter(ctx)}${nameTags(ctx)}${lessonCard(ctx)}${captions(ctx, ctx.scene.lesson ? { ...opts, y: 1520 } : opts)}${jumpCard(ctx)}${nextCard(ctx)}`;
   }
 
   window.QG = { CAST, EX, ex, talk, blink, person, item, alive, setCam, layer, officeSet, breakSet, kitchenSet, phoneInsert, desk, partition, frame, sm, mix, punch, LINE, thought, meetingSet, meetingTable, rainNight, rainDrops, chatScreen, memory };

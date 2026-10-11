@@ -58,7 +58,7 @@ When it goes green, the run summary shows the link, and `releases/youtube.json` 
 
 ## Step 7 (optional) — One a day, automatically
 **Settings → Secrets and variables → Actions → Variables tab → New variable:** name `YT_AUTO_UPLOAD`, value `true`.
-Every day at 16:47 UTC it uploads the next episode (private), and stops once all eight are up. Delete the variable to switch it off.
+Every day at 16:47 UTC it uploads the next episode (private), and stops once every released episode is up. Delete the variable to switch it off.
 
 ---
 

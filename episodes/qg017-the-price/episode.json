@@ -1,0 +1,315 @@
+{
+  "id": "qg017-the-price",
+  "number": 17,
+  "series": "THE QUIET GAME",
+  "round": 3,
+  "counter_move": 3,
+  "title": "The Price",
+  "yt_title": "Never accept the first number",
+  "central_question": "Why does half price feel like a bargain?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    20,
+    42
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js",
+    "renderer/scenes/qg-round2.js",
+    "renderer/scenes/qg-round3.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 80,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "SOUNDS LIKE A DEAL?",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.12,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.15,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.15,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.15,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.15,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.15,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.15,
+      "color": "#e0b07a",
+      "role": "colleague"
+    },
+    "max": {
+      "name": "Max",
+      "voice": "en_GB-aru-medium",
+      "speaker": 1,
+      "speed": 1.15,
+      "color": "#7fb2ff",
+      "role": "the next new hire"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "pr_hook",
+      "min_duration": 3.0,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "The first number wasn't the price."
+        },
+        {
+          "who": "narrator",
+          "text": "It was the hook.",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "1:10 PM",
+      "hud": false,
+      "tags": [
+        {
+          "who": "jo",
+          "role": "selling his old monitor",
+          "x": 860,
+          "y": 640,
+          "at": 0.3
+        }
+      ],
+      "action": "Jo holds up his old monitor. Price tag: £400."
+    },
+    {
+      "id": "s02_pitch",
+      "scene": "pr_pitch",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "jo",
+          "text": "These are four hundred quid new."
+        },
+        {
+          "who": "jo",
+          "text": "Two hundred. Just for you.",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "line": 1,
+          "at": 0.1,
+          "name": "ping"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 1,
+          "text": "£400 new.",
+          "at_line": 0
+        },
+        {
+          "level": 4,
+          "text": "£200! Half price!",
+          "at_line": 1
+        }
+      ],
+      "action": "The anchor, then the 'discount'. The £400 gets crossed out."
+    },
+    {
+      "id": "s03_almost",
+      "scene": "pr_almost",
+      "min_duration": 2.4,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 5,
+          "text": "Half price! Grab it!",
+          "at": 0.3
+        }
+      ],
+      "action": "Kemi reaches for her purse. Bubble: 'Half price! That's…'"
+    },
+    {
+      "id": "s04_check",
+      "scene": "pr_check",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.6,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "Same one's ninety online."
+        },
+        {
+          "who": "jo",
+          "text": "…Ninety it is.",
+          "pause": 0.35,
+          "speed": 1.0
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "text": "£400 was never the price. It was the anchor.",
+        "at_line": 0,
+        "after": 0.2
+      },
+      "action": "Kemi checks her phone. Marketplace: same model, used, £90."
+    },
+    {
+      "id": "s05_twist",
+      "scene": "pr_twist",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.9,
+      "lines": [
+        {
+          "who": "jo",
+          "text": "Max! Four hundred new. Yours for two hundred!"
+        },
+        {
+          "who": "max",
+          "text": "Ooh, bargain!",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Jo turns to Max. Max is delighted. Kemi facepalms."
+    },
+    {
+      "id": "s99_lesson",
+      "scene": "pr_lesson",
+      "min_duration": 2.6,
+      "lead": 0.9,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Ignore the first number. Find the real one."
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "lesson": {
+        "n": 3,
+        "move": "Say a big number first.",
+        "counter": "Check what it's really worth."
+      },
+      "action": "Lesson card. THE MOVE: Say a big number first. THE COUNTER: Check what it's really worth."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Estimates are pulled toward an initial number, even an arbitrary one (anchoring; Tversky & Kahneman, 1974).",
+      "sources": [
+        "S1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Judgment under uncertainty: Heuristics and biases. Tversky, A., & Kahneman, D. (1974). Science, 185(4157), 1124-1131",
+      "publisher": "Science (AAAS)",
+      "url": "https://doi.org/10.1126/science.185.4157.1124",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

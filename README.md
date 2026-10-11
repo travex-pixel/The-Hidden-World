@@ -39,11 +39,25 @@ How Round 2 is built for retention:
 
 Shared Round 2 helpers live in `renderer/scenes/qg-round2.js`. YouTube titles come from `yt_title` in each `episode.json`.
 
+### ROUND 3 · "Counter-Moves" (6 standalone lessons)
+Built on the formula of #3 *The Favour*, the best performer so far: one everyday trick someone pulls on you, shown as a short story, then how to spot it. Each episode stands alone and ends on a screenshot-able **COUNTER-MOVE #n** card: *THE MOVE* (what they did) and *THE COUNTER* (what to do).
+
+| # | Video | YouTube title | The move → the counter | Idea (source in `research.md`) |
+|---|---|---|---|---|
+| 1 | [`qg015-the-pen.mp4`](releases/qg015-the-pen.mp4) (24 s) | He only asked for a pen… (watch what he asks next) | Start tiny, then ask big → every ask is a new question | foot-in-the-door |
+| 2 | [`qg016-the-big-ask.mp4`](releases/qg016-the-big-ask.mp4) (27 s) | The first ask was never meant to work | Ask huge, then "settle" → would I say yes if it came first? | door-in-the-face |
+| 3 | [`qg017-the-price.mp4`](releases/qg017-the-price.mp4) (24 s) | Never accept the first number | Say a big number first → check what it's really worth | anchoring |
+| 4 | [`qg018-the-smoke.mp4`](releases/qg018-the-smoke.mp4) (20 s) | 5 people saw the smoke. Nobody moved. | Everyone waits for someone else → point, say a name, give a job | bystander effect |
+| 5 | [`qg019-last-chance.mp4`](releases/qg019-last-chance.mp4) (27 s) | 'Only 2 spots left!' (there weren't) | Rush you so you don't think → a rush is a reason to slow down | scarcity |
+| 6 | [`qg020-everyones-in.mp4`](releases/qg020-everyones-in.mp4) (27 s) | 'Everyone's chipping in.' Who's everyone? | "Everyone's doing it" → ask: who's everyone? | social proof |
+
+What carries over from *The Favour*: an object-led hook in the first second, a trick most viewers have fallen for, the meter tracking the pressure, a quick "oh, *that's* what happened" beat, and a takeaway you could use tomorrow. The lesson card sits in the final scene (`lesson: {n, move, counter, counter_at_line?, move_label?}`); shared Round 3 props are in `renderer/scenes/qg-round3.js`.
+
 Each episode has a script (`releases/<id>.script.md`), a source note with a suggested video description (`episodes/<id>/research.md`), and a verification report. Recurring cast: Theo (the new guy), Rosa (the boss), Ben, Kemi, Jo, Sam, and from the finale, Max.
 
 **Upload to YouTube automatically:** *Actions → Upload to YouTube* (one tap, or one a day on autopilot). One-time setup from your phone: **[docs/YOUTUBE.md](docs/YOUTUBE.md)**.
 
-**Make the next episode:** copy `episodes/qg007-the-joke/` to `episodes/qg009-<name>/` and rewrite `episode.json` (cast, lines, meter steps, truth). Then copy `renderer/scenes/qg007-the-joke.js` to `renderer/scenes/qg009-<name>.js` and rewrite its scene functions. The shared look comes from `renderer/scenes/qg-kit.js`.
+**Make the next episode:** copy `episodes/qg020-everyones-in/` to `episodes/qg021-<name>/` and rewrite `episode.json` (cast, lines, meter steps, truth, lesson). Then copy `renderer/scenes/qg020-everyones-in.js` to `renderer/scenes/qg021-<name>.js` and rewrite its scene functions. The shared look comes from `renderer/scenes/qg-kit.js`.
 
 Built to be easy to follow (ADHD-friendly), all driven from `episode.json`:
 - **Word-by-word captions:** 1–3 words on screen, the spoken word lit in the speaker's colour. Force a break with `|` in a line's `caption`.

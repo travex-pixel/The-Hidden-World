@@ -1,0 +1,316 @@
+{
+  "id": "qg018-the-smoke",
+  "number": 18,
+  "series": "THE QUIET GAME",
+  "round": 3,
+  "counter_move": 4,
+  "title": "The Smoke",
+  "yt_title": "5 people saw the smoke. Nobody moved.",
+  "central_question": "Why does nobody act when everybody notices?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    20,
+    42
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js",
+    "renderer/scenes/qg-round2.js",
+    "renderer/scenes/qg-round3.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 80,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "SAW THE SMOKE",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.12,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.15,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.15,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.15,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.15,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.15,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.15,
+      "color": "#e0b07a",
+      "role": "colleague"
+    },
+    "max": {
+      "name": "Max",
+      "voice": "en_GB-aru-medium",
+      "speaker": 1,
+      "speed": 1.15,
+      "color": "#7fb2ff",
+      "role": "the next new hire"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "sm_hook",
+      "min_duration": 3.2,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Five people saw the smoke."
+        },
+        {
+          "who": "narrator",
+          "text": "Nobody moved.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "heart"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "8:50 AM",
+      "hud": false,
+      "action": "The kitchen. A toaster smoking. Five people sipping coffee, calm."
+    },
+    {
+      "id": "s02_glance",
+      "scene": "sm_glance",
+      "min_duration": 3.4,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.6,
+          "name": "pop"
+        },
+        {
+          "at": 1.6,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 1,
+          "text": "1 noticed. 0 moved.",
+          "at": 0.2
+        },
+        {
+          "level": 3,
+          "text": "3 noticed. 0 moved.",
+          "at": 1.0
+        },
+        {
+          "level": 5,
+          "text": "5 noticed. 0 moved.",
+          "at": 1.8
+        }
+      ],
+      "action": "Each glances at the smoke, then at the others. Everyone's calm, so everyone stays calm. Bubbles: 'Someone's probably on it.' 'If it was bad, someone would move.'"
+    },
+    {
+      "id": "s03_worse",
+      "scene": "sm_worse",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Is that… normal?"
+        },
+        {
+          "who": "sam",
+          "text": "Probably?",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Thicker smoke. Still nobody moves."
+    },
+    {
+      "id": "s04_max",
+      "scene": "sm_max",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.6,
+      "lines": [
+        {
+          "who": "max",
+          "text": "Ben, unplug it."
+        },
+        {
+          "who": "max",
+          "text": "Kemi, window."
+        },
+        {
+          "who": "max",
+          "text": "Jo, tell facilities."
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.05,
+          "name": "door"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "text": "'Someone' is no one. A name gets it done.",
+        "at_line": 2,
+        "after": 0.2
+      },
+      "action": "Max walks in and points. Everyone moves instantly."
+    },
+    {
+      "id": "s05_twist",
+      "scene": "sm_twist",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.8,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "Whose toast was that?"
+        },
+        {
+          "who": "max",
+          "text": "…Mine.",
+          "pause": 0.45,
+          "speed": 0.9
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Rosa in the doorway. Max, sheepish."
+    },
+    {
+      "id": "s99_lesson",
+      "scene": "sm_lesson",
+      "min_duration": 2.6,
+      "lead": 0.9,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "In a crowd, say a name."
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "lesson": {
+        "n": 4,
+        "move": "Everyone waits for someone else.",
+        "counter": "Point. Say a name. Give a job.",
+        "move_label": "THE TRAP"
+      },
+      "action": "Lesson card. THE MOVE: Everyone waits for someone else. THE COUNTER: Point. Say a name. Give a job."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "People were less likely to report smoke filling a room when others nearby stayed passive (Latané & Darley, 1968). Later research debates how often this happens in real emergencies.",
+      "sources": [
+        "S1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Group inhibition of bystander intervention in emergencies. Latané, B., & Darley, J. M. (1968). JPSP, 10(3), 215-221",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/h0026570",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "id": "qg016-the-big-ask",
+  "number": 16,
+  "series": "THE QUIET GAME",
+  "round": 3,
+  "counter_move": 2,
+  "title": "The Big Ask",
+  "yt_title": "The first ask was never meant to work",
+  "central_question": "Why does the second ask always sound so reasonable?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    20,
+    42
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js",
+    "renderer/scenes/qg-round2.js",
+    "renderer/scenes/qg-round3.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 80,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "SOUNDS REASONABLE?",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.12,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.15,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.15,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.15,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.15,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.15,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.15,
+      "color": "#e0b07a",
+      "role": "colleague"
+    },
+    "max": {
+      "name": "Max",
+      "voice": "en_GB-aru-medium",
+      "speaker": 1,
+      "speed": 1.15,
+      "color": "#7fb2ff",
+      "role": "the next new hire"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "ba_hook",
+      "min_duration": 2.8,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "The first ask was never meant to work."
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "4:30 PM",
+      "hud": false,
+      "tags": [
+        {
+          "who": "ben",
+          "role": "remember him?",
+          "x": 850,
+          "y": 640,
+          "at": 0.3
+        }
+      ],
+      "action": "Ben perches on Theo's desk. Puppy eyes. (Ben and Theo: Round 1, #3.)"
+    },
+    {
+      "id": "s02_big",
+      "scene": "ba_big",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Mate. Could you cover my whole week?"
+        },
+        {
+          "who": "theo",
+          "text": "Your whole week? No way.",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 1,
+          "text": "Cover his WHOLE week? No.",
+          "at_line": 1
+        }
+      ],
+      "action": "The huge ask. Easy no."
+    },
+    {
+      "id": "s03_small",
+      "scene": "ba_small",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 1.4,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Fair. Just Friday afternoon, then?"
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "line": 0,
+          "at": 0.25,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 4,
+          "text": "Just Friday? …Compared to a week, sure?",
+          "at_line": 0,
+          "delay": 0.6
+        }
+      ],
+      "action": "The small ask. Theo's bubble: 'Well… compared to a week…'"
+    },
+    {
+      "id": "s04_notice",
+      "scene": "ba_notice",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.35,
+      "lines": [],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Theo pauses. Bubble: 'Wait. Would I say yes if he'd asked that FIRST?'"
+    },
+    {
+      "id": "s05_counter",
+      "scene": "ba_counter",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Next time, just ask the small one first."
+        },
+        {
+          "who": "ben",
+          "text": "…You saw that, huh?",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "text": "The big ask was there to make the small one look tiny.",
+        "at_line": 0,
+        "after": 0.2
+      },
+      "action": "Theo, smiling. Ben, caught."
+    },
+    {
+      "id": "s06_twist",
+      "scene": "ba_twist",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.9,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Friday's fine, by the way."
+        },
+        {
+          "who": "theo",
+          "text": "Got you a coffee. No big deal.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "line": 1,
+          "at": 0.05,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Theo puts a coffee on Ben's desk. Ben stares at it, suspicious. (The Favour, reversed.)"
+    },
+    {
+      "id": "s99_lesson",
+      "scene": "ba_lesson",
+      "min_duration": 2.6,
+      "lead": 0.9,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Judge the second ask on its own."
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "lesson": {
+        "n": 2,
+        "move": "Ask huge. Then 'settle' for what you wanted.",
+        "counter": "Would I say yes if it came first?"
+      },
+      "action": "Lesson card. THE MOVE: Ask huge. Then 'settle' for what you wanted. THE COUNTER: Would I say yes if it came first?"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "A smaller request is more likely to be accepted right after a larger one is refused (door-in-the-face; Cialdini et al., 1975). A 2021 direct replication reported similar results.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Reciprocal concessions procedure for inducing compliance: The door-in-the-face technique. Cialdini, R. B., et al. (1975). JPSP, 31(2), 206-215",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/h0076284",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "S2",
+      "title": "Door-in-the-face: replication record (Genschow et al., 2021)",
+      "publisher": "FORRT Replication Atlas",
+      "url": "https://forrt.org/flora-replication-atlas/doi/10.1037/h0076284/",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

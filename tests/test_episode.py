@@ -366,7 +366,8 @@ class QuietGameSeries(unittest.TestCase):
                         self.assertGreaterEqual(st["level"], last, f"{s['id']}: meter went down before the truth")
                         last = st["level"]
                     if "truth" in s:
-                        self.assertLess(s["truth"].get("at_line", 0), len(s["lines"]), s["id"])
+                        if "at" not in s["truth"]:
+                            self.assertLess(s["truth"].get("at_line", 0), len(s["lines"]), s["id"])
                         last = 0
                     for g in s.get("tags", []):
                         self.assertIn(g["who"], ep["cast"])
@@ -398,6 +399,21 @@ class QuietGameSeries(unittest.TestCase):
                 else:
                     self.assertTrue(any("truth" in s for s in ep["scenes"]), "the finale pays off")
         self.assertEqual(last_day, 6)
+
+    def test_round_three_episodes_each_end_on_a_lesson(self):
+        r3 = [e for e in self.episodes() if e.get("round") == 3]
+        self.assertEqual([e["counter_move"] for e in r3], [1, 2, 3, 4, 5, 6])
+        for ep in r3:
+            with self.subTest(ep=ep["id"]):
+                self.assertLessEqual(len(ep["yt_title"]), 100)
+                self.assertTrue(any("truth" in s for s in ep["scenes"]), "standalone: every episode pays off")
+                last = ep["scenes"][-1]
+                self.assertNotIn("next", last, "standalone episodes end on the lesson, not a cliffhanger")
+                lesson = last["lesson"]
+                self.assertEqual(lesson["n"], ep["counter_move"])
+                for k in ("move", "counter"):
+                    self.assertLessEqual(len(lesson[k].split()), 9, f"{k} card must read at a glance")
+                self.assertLess(lesson.get("counter_at_line", 0), len(last["lines"]))
 
 
 class YouTubeUpload(unittest.TestCase):
