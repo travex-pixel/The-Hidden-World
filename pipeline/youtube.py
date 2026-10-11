@@ -54,13 +54,13 @@ def hook_line(ep: dict) -> str:
 
 def build_metadata(ep: dict, privacy: str = "private", publish_at: str | None = None, synthetic: bool = False) -> dict:
     n, title = ep["number"], ep["title"]
-    full_title = f"{hook_line(ep)} | The Quiet Game #{n}"
+    full_title = ep.get("yt_title") or f"{hook_line(ep)} | The Quiet Game #{n}"   # episode.json can set a clickier title
     if len(full_title) > 100:                       # YouTube's title limit
         full_title = f"{title} | The Quiet Game #{n}"
     desc = description_from_research(ep["id"])
     if "Piper TTS" not in desc:   # the licence requires the voice credit; add it if the note lacks one
         desc += "\n" + CREDIT
-    desc += f"\n\nTHE QUIET GAME · Season {ep.get('season', 1)} · Episode {n}: {title}\n{ep.get('fiction_notice', '')}\n#Shorts"
+    desc += f"\n\nTHE QUIET GAME · Round {ep.get('round', 1)} · Episode {n}: {title}\n{ep.get('fiction_notice', '')}\n#Shorts"
     body = {
         "snippet": {
             "title": full_title, "description": desc[:5000], "categoryId": CATEGORY_ENTERTAINMENT,

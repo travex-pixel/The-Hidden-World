@@ -29,4 +29,4 @@
 [ 24.56s –  31.23s] s06_lunch
    25.16s NARRATOR: By lunch, nobody hated him.
    27.10s NARRATOR: Somebody actually spoke to him.
-  ACTION: The #1 break room, mirrored. Theo and Max with trays. Kemi lifts her bag OFF the chair. Ben pulls out another. THE QUIET GAME · SEASON 1 · THE END.
+  ACTION: The #1 break room, mirrored. Theo and Max with trays. Kemi lifts her bag OFF the chair. Ben pulls out another. THE QUIET GAME · ROUND 1 · THE END.

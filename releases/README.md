@@ -13,4 +13,10 @@ Final rendered episodes, committed so they can be downloaded directly from GitHu
 | QG #5 — The Group Chat | `qg005-the-group-chat.mp4` (1080×1920, 30 fps, 30.7 s, H.264 + AAC, 8 MB) | 1 | 2026-10-11, local pipeline run | `qg005-the-group-chat.verify.json` — all 12 checks pass |
 | QG #6 — The Compliment | `qg006-the-compliment.mp4` (1080×1920, 30 fps, 32.2 s, H.264 + AAC, 9 MB) | 1 | 2026-10-11, local pipeline run | `qg006-the-compliment.verify.json` — all 12 checks pass |
 | QG #7 — The Joke | `qg007-the-joke.mp4` (1080×1920, 30 fps, 32.9 s, H.264 + AAC, 9 MB) | 1 | 2026-10-11, local pipeline run | `qg007-the-joke.verify.json` — all 12 checks pass |
-| QG #8 — The New Guy (Season 1 finale) | `qg008-the-new-guy.mp4` (1080×1920, 30 fps, 31.2 s, H.264 + AAC, 8 MB) | 1 | 2026-10-11, local pipeline run | `qg008-the-new-guy.verify.json` — all 12 checks pass |
+| QG #8 — The New Guy (Round 1 finale) | `qg008-the-new-guy.mp4` (1080×1920, 30 fps, 31.2 s, H.264 + AAC, 8 MB) | 1 | 2026-10-11, local pipeline run | `qg008-the-new-guy.verify.json` — all 12 checks pass |
+| Round 2 · Part 1/6 — The Note | `qg009-the-note.mp4` (1080×1920, 30 fps, 23.5 s, H.264 + AAC, 7 MB) | 1 | 2026-10-11, local pipeline run | `qg009-the-note.verify.json` — all 12 checks pass |
+| Round 2 · Part 2/6 — The Whisper | `qg010-the-whisper.mp4` (1080×1920, 30 fps, 22.2 s, H.264 + AAC, 6 MB) | 1 | 2026-10-11, local pipeline run | `qg010-the-whisper.verify.json` — all 12 checks pass |
+| Round 2 · Part 3/6 — The Chair | `qg011-the-chair.mp4` (1080×1920, 30 fps, 21.0 s, H.264 + AAC, 5 MB) | 1 | 2026-10-11, local pipeline run | `qg011-the-chair.verify.json` — all 12 checks pass |
+| Round 2 · Part 4/6 — The Secret | `qg012-the-secret.mp4` (1080×1920, 30 fps, 21.4 s, H.264 + AAC, 6 MB) | 1 | 2026-10-11, local pipeline run | `qg012-the-secret.verify.json` — all 12 checks pass |
+| Round 2 · Part 5/6 — The Review | `qg013-the-review.mp4` (1080×1920, 30 fps, 20.9 s, H.264 + AAC, 6 MB) | 1 | 2026-10-11, local pipeline run | `qg013-the-review.verify.json` — all 12 checks pass |
+| Round 2 · Part 6/6 — The Other Half | `qg014-the-other-half.mp4` (1080×1920, 30 fps, 25.1 s, H.264 + AAC, 8 MB) | 1 | 2026-10-11, local pipeline run | `qg014-the-other-half.verify.json` — all 12 checks pass |

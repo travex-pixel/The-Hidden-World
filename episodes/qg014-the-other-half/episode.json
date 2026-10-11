@@ -1,0 +1,331 @@
+{
+  "id": "qg014-the-other-half",
+  "number": 14,
+  "series": "THE QUIET GAME",
+  "round": 2,
+  "part": 6,
+  "title": "The Other Half",
+  "yt_title": "He only read HALF the note (Part 6/6)",
+  "central_question": "What was on the other half?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    18,
+    42
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js",
+    "renderer/scenes/qg-round2.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 80,
+    "level_db": -18.0
+  },
+  "countdown": {
+    "label": "PROBATION",
+    "days": 6
+  },
+  "hud": {
+    "label": "MAX SUSPECTS",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.12,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.15,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.15,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.15,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.15,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.15,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.15,
+      "color": "#e0b07a",
+      "role": "colleague"
+    },
+    "max": {
+      "name": "Max",
+      "voice": "en_GB-aru-medium",
+      "speaker": 1,
+      "speed": 1.15,
+      "color": "#7fb2ff",
+      "role": "the next new hire"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "r6_hook",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.3,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Six days. One note. Here's the truth."
+        },
+        {
+          "who": "max",
+          "text": "Why did you write this?",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "PART 6/6 · REVIEW DAY",
+      "day": 6,
+      "rumour": [
+        {
+          "level": 5,
+          "text": "Kemi.",
+          "at": 0.2
+        }
+      ],
+      "action": "Max storms to Kemi's desk, note held up. The whole office turns."
+    },
+    {
+      "id": "s02_half",
+      "scene": "r6_half",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.3,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "That's only half of it."
+        },
+        {
+          "who": "max",
+          "text": "What?",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "day": 6,
+      "action": "Kemi looks at the note. Then at Max."
+    },
+    {
+      "id": "s03_under",
+      "scene": "r6_under",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 2.4,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "It must have fallen off."
+        }
+      ],
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "line": 0,
+          "at": 0.25,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "day": 6,
+      "truth": {
+        "text": "Nobody wanted him gone. It was a welcome note.",
+        "at_line": 0,
+        "after": 1.0
+      },
+      "action": "Under Max's desk, stuck since day one: the other half. YOU WON'T LAST THE WEEK… WITHOUT A FREE COFFEE! Welcome, Max! – the team"
+    },
+    {
+      "id": "s04_card",
+      "scene": "r6_card",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.3,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "We've been hiding the card all week."
+        },
+        {
+          "who": "max",
+          "text": "I thought you all hated me.",
+          "pause": 0.25,
+          "speed": 1.0
+        },
+        {
+          "who": "ben",
+          "text": "Quiz team still needs a fourth.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "warm",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "day": 6,
+      "action": "Theo and Kemi hold out the welcome card and a coffee card. Max, mortified. Ben, grinning."
+    },
+    {
+      "id": "s05_pass",
+      "scene": "r6_pass",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.8,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "Probation: passed."
+        }
+      ],
+      "music_cue": "warm",
+      "sfx": [
+        {
+          "line": 0,
+          "at": 0.0,
+          "name": "clap"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "day": 6,
+      "action": "Rosa. Applause. Max laughs."
+    },
+    {
+      "id": "s06_end",
+      "scene": "r6_end",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "He read half a note."
+        },
+        {
+          "who": "narrator",
+          "text": "And fought the other half for a week.",
+          "pause": 0.25
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "day": 6,
+      "hud": false,
+      "action": "Max with a coffee, at a desk covered in welcome notes. ROUND 2 · COMPLETE"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "People who anxiously expect rejection tend to read rejection into ambiguous behaviour (Downey & Feldman, 1996), and can behave in ways that draw out the rejection they feared (Downey et al., 1998). Those studies were about romantic partners; the office story is an illustration.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "Hostile attribution bias: reading hostile intent into ambiguous actions (meta-analysis in children: Orobio de Castro et al., 2002).",
+      "sources": [
+        "S3"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Implications of rejection sensitivity for intimate relationships. Downey, G., & Feldman, S. I. (1996). JPSP, 70(6), 1327-1343",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/0022-3514.70.6.1327",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "S2",
+      "title": "The self-fulfilling prophecy in close relationships: Rejection sensitivity and rejection by romantic partners. Downey, G., Freitas, A. L., Michaelis, B., & Khouri, H. (1998). JPSP, 75(2), 545-560",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/0022-3514.75.2.545",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "S3",
+      "title": "Hostile attribution of intent and aggressive behavior: a meta-analysis. Orobio de Castro, B., et al. (2002). Child Development, 73, 916-934",
+      "publisher": "Utrecht University repository",
+      "url": "https://dspace.library.uu.nl/handle/1874/10733",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

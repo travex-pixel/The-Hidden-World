@@ -11,15 +11,39 @@
 | 5 | [`qg005-the-group-chat.mp4`](releases/qg005-the-group-chat.mp4) (31 s) | "Five people saw his message. Nobody replied." | being left out (even by accident) |
 | 6 | [`qg006-the-compliment.mp4`](releases/qg006-the-compliment.mp4) (32 s) | "It sounded like a compliment. It wasn't." | backhanded digs, envy |
 | 7 | [`qg007-the-joke.mp4`](releases/qg007-the-joke.mp4) (33 s) | "Everyone laughed. Including the person it was about." | laughing along |
-| 8 | [`qg008-the-new-guy.mp4`](releases/qg008-the-new-guy.mp4) (31 s) — **Season 1 finale** | "It started with a text. Again." | Theo gets the rumour, and stops it |
+| 8 | [`qg008-the-new-guy.mp4`](releases/qg008-the-new-guy.mp4) (31 s) — **Round 1 finale** | "It started with a text. Again." | Theo gets the rumour, and stops it |
 
-**Season 1 arc:** Theo arrives as the target of a rumour (#1), learns how groups, favours, credit, chats, digs and jokes work (#2–#7), and in the finale is the one holding the rumour about the next new guy (#8). The finale replays real frames from #1–#4 as memory flashes and mirrors #1's lunch scene.
+**Round 1 arc:** Theo arrives as the target of a rumour (#1), learns how groups, favours, credit, chats, digs and jokes work (#2–#7), and in the finale is the one holding the rumour about the next new guy (#8). The finale replays real frames from #1–#4 as memory flashes and mirrors #1's lunch scene.
+
+### ROUND 2 · "The Note" (6 parts, Max is the lead)
+Day 1: Max finds a sticky note on his monitor, *YOU WON'T LAST THE WEEK.* His probation review is in 6 days. Each part is one day, one suspect and one cliffhanger. Part 6 reveals he only ever read half the note.
+
+| Part | Video | YouTube title | Cliffhanger |
+|---|---|---|---|
+| 1 | [`qg009-the-note.mp4`](releases/qg009-the-note.mp4) (24 s) | Someone left the new guy THIS note | "By day six, that note would nearly cost him his job." |
+| 2 | [`qg010-the-whisper.mp4`](releases/qg010-the-whisper.mp4) (22 s) | He thought they were laughing at him | "…his chair disappeared." |
+| 3 | [`qg011-the-chair.mp4`](releases/qg011-the-chair.mp4) (21 s) | Why did she take his chair? | "Don't tell Max… what?" |
+| 4 | [`qg012-the-secret.mp4`](releases/qg012-the-secret.mp4) (21 s) | His only friend lied to him | "Two days left." |
+| 5 | [`qg013-the-review.mp4`](releases/qg013-the-review.mp4) (21 s) | One note almost got him fired | "That's Kemi's handwriting." |
+| 6 | [`qg014-the-other-half.mp4`](releases/qg014-the-other-half.mp4) (25 s) | He only read HALF the note | — (payoff) |
+
+How Round 2 is built for retention:
+- **First second = the title's promise:** the note, the empty chair, the boss's office.
+- **A visible timer:** "PROBATION · N DAYS LEFT" with pips (`countdown` + per-scene `day`).
+- **Escalation:** a glance, a whisper, a chair, a lie, the boss, the confrontation.
+- **A change every 2–3 s:** cuts, punch-ins, stamps, bubbles.
+- **Every part stands alone:** its first line re-states the premise.
+- **The viewer knows more than Max:** bubbles, the haircut photo, "only YOU can see this".
+- **A "PART N →" cliffhanger card** ends every part (`next`).
+- **The finale pays off fast and ends.**
+
+Shared Round 2 helpers live in `renderer/scenes/qg-round2.js`. YouTube titles come from `yt_title` in each `episode.json`.
 
 Each episode has a script (`releases/<id>.script.md`), a source note with a suggested video description (`episodes/<id>/research.md`), and a verification report. Recurring cast: Theo (the new guy), Rosa (the boss), Ben, Kemi, Jo, Sam, and from the finale, Max.
 
 **Upload to YouTube automatically:** *Actions → Upload to YouTube* (one tap, or one a day on autopilot). One-time setup from your phone: **[docs/YOUTUBE.md](docs/YOUTUBE.md)**.
 
-**Make the next episode (Season 2):** copy `episodes/qg007-the-joke/` to `episodes/qg009-<name>/` and rewrite `episode.json` (cast, lines, meter steps, truth). Then copy `renderer/scenes/qg007-the-joke.js` to `renderer/scenes/qg009-<name>.js` and rewrite its scene functions. The shared look comes from `renderer/scenes/qg-kit.js`.
+**Make the next episode:** copy `episodes/qg007-the-joke/` to `episodes/qg009-<name>/` and rewrite `episode.json` (cast, lines, meter steps, truth). Then copy `renderer/scenes/qg007-the-joke.js` to `renderer/scenes/qg009-<name>.js` and rewrite its scene functions. The shared look comes from `renderer/scenes/qg-kit.js`.
 
 Built to be easy to follow (ADHD-friendly), all driven from `episode.json`:
 - **Word-by-word captions:** 1–3 words on screen, the spoken word lit in the speaker's colour. Force a break with `|` in a line's `caption`.

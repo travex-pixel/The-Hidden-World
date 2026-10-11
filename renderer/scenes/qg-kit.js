@@ -206,6 +206,15 @@
     if (kind === 'cupcake') return g(`<path d="M-28 0 L28 0 L20 36 L-20 36Z" fill="#d9a05b" stroke="${LINE}" stroke-width="3.5"/><path d="M-34 2 Q-36 -30 -10 -34 Q0 -56 12 -34 Q38 -30 34 2Z" fill="#f4b6c8" stroke="${LINE}" stroke-width="3.5"/><circle cx="2" cy="-46" r="8" fill="#d6363c" stroke="${LINE}" stroke-width="2.5"/>`);
     if (kind === 'deskphone') return g(`<rect x="-60" y="-30" width="120" height="60" rx="12" fill="#2c2f35" stroke="${LINE}" stroke-width="3.5"/><path d="M-62 -30 Q-70 -60 -40 -62 L40 -62 Q70 -60 62 -30" fill="#3a3e45" stroke="${LINE}" stroke-width="3.5"/>${[0, 1, 2].map(i => [0, 1, 2].map(j => `<rect x="${-30 + j * 22}" y="${-20 + i * 14}" width="14" height="9" rx="2" fill="#9aa3ad"/>`).join('')).join('')}`);
     if (kind === 'certificate') return g(`<rect x="-90" y="-64" width="180" height="128" fill="#efe6c8" stroke="#8a6a2a" stroke-width="7"/><rect x="-76" y="-50" width="152" height="100" fill="none" stroke="#c9a85a" stroke-width="2"/><text x="0" y="-18" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="17" fill="#5a4318">EMPLOYEE</text><text x="0" y="4" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="17" fill="#5a4318">OF THE MONTH</text><text x="0" y="32" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="16" fill="#8a6a2a">${esc(o.text || 'MARCH 2023')}</text><circle cx="60" cy="38" r="12" fill="#c9a85a"/>`);
+    if (kind === 'sticky') {   // handwritten sticky note; o.text = array of lines; o.torn = ragged top edge
+      const col = o.color || '#ffe36b', lines = o.text || [], fs = o.fs || 30, w = o.w || 240, h = o.h || 240;
+      const top = o.torn ? `M${-w / 2} ${-h / 2 + 8} ${[...Array(12).keys()].map(i => `L${f1(-w / 2 + (i + 1) * w / 12)} ${f1(-h / 2 + (i % 2 ? 0 : 10))}`).join(' ')}` : `M${-w / 2} ${-h / 2} L${w / 2} ${-h / 2}`;
+      return g(`<rect x="${-w / 2 + 8}" y="${-h / 2 + 12}" width="${w}" height="${h}" fill="#000" opacity="0.22"/>
+        <path d="${top} L${w / 2} ${h / 2 - 34} L${w / 2 - 34} ${h / 2} L${-w / 2} ${h / 2}Z" fill="${col}" stroke="${LINE}" stroke-width="3"/>
+        <path d="M${w / 2} ${h / 2 - 34} L${w / 2 - 30} ${h / 2 - 30} L${w / 2 - 34} ${h / 2}Z" fill="#e6c44a" stroke="${LINE}" stroke-width="2.5"/>
+        ${lines.map((l, i) => `<text x="0" y="${f1((i - (lines.length - 1) / 2) * fs * 1.2 + fs * 0.35)}" text-anchor="middle" font-family="Fraunces" font-style="italic" font-weight="800" font-size="${fs}" fill="${o.ink || '#1d2a6b'}">${esc(l)}</text>`).join('')}`);
+    }
+    if (kind === 'envelope') return g(`<rect x="-80" y="-52" width="160" height="104" rx="6" fill="#f3e9d2" stroke="${LINE}" stroke-width="4"/><path d="M-80 -52 L0 8 L80 -52" fill="none" stroke="${LINE}" stroke-width="3.5"/><circle cx="0" cy="10" r="12" fill="#d0544a"/>`);
     if (kind === 'pen') return g(`<rect x="-4" y="-34" width="8" height="58" rx="3" fill="#2a63c4" stroke="${LINE}" stroke-width="2"/><path d="M-4 24 L0 34 L4 24Z" fill="#ddd"/>`);
     if (kind === 'bag') return g(`<path d="M-40 -60 Q0 -110 40 -60" stroke="#7a5432" stroke-width="9" fill="none"/><path d="M-62 -60 L62 -60 L72 70 L-72 70Z" fill="#c99a5e" stroke="${LINE}" stroke-width="4" stroke-linejoin="round"/><path d="M-62 -38 L62 -38" stroke="#a87a42" stroke-width="4"/><rect x="-14" y="-46" width="28" height="18" rx="3" fill="#7a5432"/>`);
     return '';
@@ -574,8 +583,25 @@
     if (t < at) return 0; const k = t - at;
     return amt * ease.out(clamp(k / 0.12, 0, 1)) * (1 - 0.6 * clamp((k - 0.12) / 1.0, 0, 1));
   }
+  // a countdown that stays on screen (stakes + timer): ep.countdown = {label, days}; scene.day = 1..days
+  function countdownPill(ctx) {
+    const c = ctx.ep.countdown, d = ctx.scene.day; if (!c || !d) return '';
+    const k = ease.out(seg(ctx.t, 0.05, 0.35)), last = d >= c.days;
+    const txt = last ? `${c.label} · TODAY` : `${c.label} · ${c.days - d + 1} DAYS LEFT`, w = 70 + txt.length * 19;
+    let pips = ''; for (let i = 0; i < c.days; i++) pips += `<rect x="${f1(-w + 34 + i * 26)}" y="18" width="20" height="10" rx="5" fill="${i < d ? '#ff5a4a' : '#3a3f47'}"/>`;
+    return `<g transform="translate(${f1(1016 + (1 - k) * 60)} 196)" opacity="${f1(k)}"><rect x="${-w}" y="-40" width="${w}" height="78" rx="26" fill="#0d0f12" opacity="0.82"/><rect x="${-w}" y="-40" width="${w}" height="78" rx="26" fill="none" stroke="#ff5a4a" stroke-width="${last ? 4 : 2}"/>
+      <text x="${-w + 30}" y="2" font-family="Nunito" font-weight="800" font-size="30" letter-spacing="1" fill="#ffffff">${esc(txt)}</text>${pips}</g>`;
+  }
+  // cliffhanger card in the last ~1.2 s of a part: scene.next = {part, title}
+  function nextCard(ctx) {
+    const n = ctx.scene.next; if (!n) return '';
+    const k = ease.back(seg(ctx.t, ctx.T - 1.25, ctx.T - 0.95)); if (k <= 0) return '';
+    return `<rect width="${W}" height="${H}" fill="#08090c" opacity="${f1(0.55 * clamp(k, 0, 1))}"/><g transform="translate(${W / 2} 900) scale(${f1(k)})">
+      <rect x="-400" y="-120" width="800" height="240" rx="34" fill="#ff5a4a"/><text x="0" y="-18" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="92" fill="#ffffff">PART ${n.part} →</text>
+      <text x="0" y="62" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="46" letter-spacing="6" fill="#ffe9e6">${esc(n.title)}</text></g>`;
+  }
   function frame(ctx, body, grade, opts = {}) {
-    return `<rect width="${W}" height="${H}" fill="#0c0d10"/>${defs()}${body}${finish(grade)}${opts.noClock ? '' : clockChip(ctx, opts)}${rumourMeter(ctx)}${nameTags(ctx)}${captions(ctx, opts)}${jumpCard(ctx)}`;
+    return `<rect width="${W}" height="${H}" fill="#0c0d10"/>${defs()}${body}${finish(grade)}${opts.noClock ? '' : clockChip(ctx, opts)}${countdownPill(ctx)}${rumourMeter(ctx)}${nameTags(ctx)}${captions(ctx, opts)}${jumpCard(ctx)}${nextCard(ctx)}`;
   }
 
   window.QG = { CAST, EX, ex, talk, blink, person, item, alive, setCam, layer, officeSet, breakSet, kitchenSet, phoneInsert, desk, partition, frame, sm, mix, punch, LINE, thought, meetingSet, meetingTable, rainNight, rainDrops, chatScreen, memory };

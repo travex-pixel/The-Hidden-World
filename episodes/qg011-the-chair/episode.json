@@ -1,0 +1,362 @@
+{
+  "id": "qg011-the-chair",
+  "number": 11,
+  "series": "THE QUIET GAME",
+  "round": 2,
+  "part": 3,
+  "title": "The Chair",
+  "yt_title": "Why did she take his chair? (Part 3/6)",
+  "central_question": "When does a borrowed chair become proof?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    18,
+    42
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js",
+    "renderer/scenes/qg-round2.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 80,
+    "level_db": -18.0
+  },
+  "countdown": {
+    "label": "PROBATION",
+    "days": 6
+  },
+  "hud": {
+    "label": "MAX SUSPECTS",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.12,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.15,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.15,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.15,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.15,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.15,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.15,
+      "color": "#e0b07a",
+      "role": "colleague"
+    },
+    "max": {
+      "name": "Max",
+      "voice": "en_GB-aru-medium",
+      "speaker": 1,
+      "speed": 1.15,
+      "color": "#7fb2ff",
+      "role": "the next new hire"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "r3_hook",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.3,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Someone wants the new guy gone."
+        },
+        {
+          "who": "narrator",
+          "text": "Day three: his chair vanished.",
+          "pause": 0.15
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "PART 3/6 · WED",
+      "day": 3,
+      "rumour": [
+        {
+          "level": 3,
+          "text": "Who took my chair?",
+          "at_line": 1
+        }
+      ],
+      "action": "Max at his desk, standing, no chair."
+    },
+    {
+      "id": "s02_found",
+      "scene": "r3_found",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.3,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "Oh! Mine broke."
+        },
+        {
+          "who": "kemi",
+          "text": "Hope that's okay?",
+          "pause": 0.15
+        },
+        {
+          "who": "max",
+          "text": "Sure. Of course.",
+          "pause": 0.3,
+          "speed": 1.0
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "day": 3,
+      "rumour": [
+        {
+          "level": 4,
+          "text": "Kemi. She took my chair.",
+          "at_line": 2
+        }
+      ],
+      "tags": [
+        {
+          "who": "kemi",
+          "role": "sits by Theo",
+          "x": 850,
+          "y": 640,
+          "at": 0.1
+        }
+      ],
+      "action": "His chair, at Kemi's desk, with Kemi on it. Max's smile is a wall."
+    },
+    {
+      "id": "s03_hide",
+      "scene": "r3_hide",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 0.3,
+      "lines": [
+        {
+          "who": "max",
+          "text": "What's that?"
+        },
+        {
+          "who": "kemi",
+          "text": "Nothing!",
+          "pause": 0.1
+        },
+        {
+          "who": "kemi",
+          "text": "Just… nothing.",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.25,
+          "name": "paper"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "day": 3,
+      "rumour": [
+        {
+          "level": 5,
+          "text": "Kemi. Hiding something.",
+          "at_line": 1
+        }
+      ],
+      "action": "Kemi slides an envelope under her keyboard. Too fast."
+    },
+    {
+      "id": "s04_broken",
+      "scene": "r3_broken",
+      "min_duration": 2.6,
+      "lead": 1.0,
+      "pad_after": 0.5,
+      "lines": [
+        {
+          "who": "max",
+          "text": "Perfect.",
+          "speed": 0.9
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.55,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "day": 3,
+      "action": "Back at his desk, Max sits on Kemi's broken chair. It sinks to the floor."
+    },
+    {
+      "id": "s04_whisper",
+      "scene": "r3_whisper",
+      "min_duration": 2.6,
+      "lead": 0.9,
+      "pad_after": 0.7,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "Don't tell Max.",
+          "speed": 0.95
+        },
+        {
+          "who": "theo",
+          "text": "My lips are sealed.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "day": 3,
+      "action": "Walking away, Max hears Kemi whisper to Theo, and Theo agree. His eyes go wide."
+    },
+    {
+      "id": "s05_cliff",
+      "scene": "r3_cliff",
+      "min_duration": 2.6,
+      "lead": 0.15,
+      "pad_after": 1.45,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Don't tell Max… what?"
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "next": {
+        "part": 4,
+        "title": "THE SECRET"
+      },
+      "day": 3,
+      "action": "Close on Max. PART 4 →"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "People who anxiously expect rejection tend to read rejection into ambiguous behaviour (Downey & Feldman, 1996), and can behave in ways that draw out the rejection they feared (Downey et al., 1998). Those studies were about romantic partners; the office story is an illustration.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "Hostile attribution bias: reading hostile intent into ambiguous actions (meta-analysis in children: Orobio de Castro et al., 2002).",
+      "sources": [
+        "S3"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Implications of rejection sensitivity for intimate relationships. Downey, G., & Feldman, S. I. (1996). JPSP, 70(6), 1327-1343",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/0022-3514.70.6.1327",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "S2",
+      "title": "The self-fulfilling prophecy in close relationships: Rejection sensitivity and rejection by romantic partners. Downey, G., Freitas, A. L., Michaelis, B., & Khouri, H. (1998). JPSP, 75(2), 545-560",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/0022-3514.75.2.545",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "S3",
+      "title": "Hostile attribution of intent and aggressive behavior: a meta-analysis. Orobio de Castro, B., et al. (2002). Child Development, 73, 916-934",
+      "publisher": "Utrecht University repository",
+      "url": "https://dspace.library.uu.nl/handle/1874/10733",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

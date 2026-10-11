@@ -1,4 +1,4 @@
-/* THE QUIET GAME #8 — The New Guy (Season 1 finale). Loads episodes 1-4 for the memory flashes. */
+/* THE QUIET GAME #8 — The New Guy (Round 1 finale). Loads episodes 1-4 for the memory flashes. */
 (function () {
   const E = window.HW, Q = window.QG; const { W, H, ease, seg, clamp, lerp, f1 } = E;
   const { person, item, alive, setCam, layer, ex, talk, sm, mix, punch, thought, LS, LE, GRADE, blurSet } = Q;
@@ -78,7 +78,7 @@
       const k = sm(t, endT, endT + 0.7);
       const card = k <= 0 ? '' : `<rect width="${W}" height="${H}" fill="#0b0d10" opacity="${f1(0.78 * k)}"/><g opacity="${f1(k)}">
         <text x="${W / 2}" y="820" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="84" letter-spacing="16" fill="#f4ead2">THE QUIET GAME</text>
-        <text x="${W / 2}" y="910" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="40" letter-spacing="12" fill="#ffd36b">SEASON 1</text>
+        <text x="${W / 2}" y="910" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="40" letter-spacing="12" fill="#ffd36b">ROUND 1</text>
         <text x="${W / 2}" y="1060" text-anchor="middle" font-family="Fraunces" font-style="italic" font-weight="600" font-size="64" fill="#ffffff">The End.</text></g>`;
       return Q.frame(ctx, s, GRADE.noon, { y: 1440, narSize: 70 }) + card;
     },

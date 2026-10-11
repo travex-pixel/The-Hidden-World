@@ -314,7 +314,7 @@ class QuietGameSeries(unittest.TestCase):
     def episodes(self):
         return [load_episode(p.name) for p in sorted((ROOT / "episodes").glob("qg*")) if (p / "episode.json").exists()]
 
-    def test_season_one_is_complete(self):
+    def test_round_one_is_complete(self):
         eps = self.episodes()
         self.assertGreaterEqual(len(eps), 8)
         self.assertEqual([e["number"] for e in eps[:8]], list(range(1, 9)))
@@ -366,9 +366,31 @@ class QuietGameSeries(unittest.TestCase):
                         if "at_line" in g:
                             self.assertLess(g["at_line"], len(s["lines"]), s["id"])
 
-    def test_every_episode_has_a_twist_or_truth_beat(self):
+    def test_every_episode_has_a_truth_beat_or_a_cliffhanger(self):
         for ep in self.episodes():
-            self.assertTrue(any("truth" in s for s in ep["scenes"]), ep["id"])
+            has_truth = any("truth" in s for s in ep["scenes"])
+            cliff = "next" in ep["scenes"][-1]
+            self.assertTrue(has_truth or cliff, ep["id"])
+
+    def test_round_two_is_a_six_part_serial(self):
+        r2 = [e for e in self.episodes() if e.get("round") == 2]
+        self.assertEqual([e["part"] for e in r2], [1, 2, 3, 4, 5, 6])
+        last_day = 0
+        for i, ep in enumerate(r2):
+            with self.subTest(ep=ep["id"]):
+                self.assertIn(f"Part {ep['part']}/6", ep["yt_title"])
+                self.assertLessEqual(len(ep["yt_title"]), 100)
+                self.assertEqual(ep["countdown"]["days"], 6)
+                days = [s["day"] for s in ep["scenes"]]
+                self.assertEqual(days, sorted(days)); self.assertGreaterEqual(days[0], last_day); last_day = days[-1]
+                self.assertTrue(ep["scenes"][0]["lines"], "hook must speak in the first seconds")
+                if ep["part"] < 6:   # every part but the last ends on a cliffhanger card that names the next part
+                    nxt = ep["scenes"][-1]["next"]
+                    self.assertEqual(nxt["part"], ep["part"] + 1)
+                    self.assertEqual(nxt["title"].lower(), r2[i + 1]["title"].lower())
+                else:
+                    self.assertTrue(any("truth" in s for s in ep["scenes"]), "the finale pays off")
+        self.assertEqual(last_day, 6)
 
 
 class YouTubeUpload(unittest.TestCase):

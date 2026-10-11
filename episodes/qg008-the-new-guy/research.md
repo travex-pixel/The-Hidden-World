@@ -1,4 +1,4 @@
-# THE QUIET GAME — The New Guy — Season 1 finale: research and fact check
+# THE QUIET GAME — The New Guy — Round 1 finale: research and fact check
 
 **Status:** fiction. On screen the video makes no scientific claims; its closing lines describe the story.
 
@@ -13,7 +13,7 @@
 
 ## Suggested video description
 > It started with a text. Again.
-> Season 1 finale. Theo gets the text that started it all. Does he pass it on?
+> Round 1 finale. Theo gets the text that started it all. Does he pass it on?
 > Voices: Piper TTS — Alba (Univ. of Edinburgh) and ARU (Univ. of Liverpool), CC BY 4.0.
 > #psychology #office #story #animation
 
