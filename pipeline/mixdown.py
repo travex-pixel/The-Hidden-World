@@ -83,6 +83,8 @@ def mixdown(total: float, clips: list, stems: dict, sfx_events: list, tl: list, 
     fxg = fx * 10 ** (-9 / 20) * (1 - 0.35 * sp); L += fxg; R += fxg
     out = np.stack([L, R], axis=1)
     out = np.tanh(out * 1.1) / np.tanh(1.1)                       # gentle soft clip; loudness stage sets the final level
+    fl = int(min(1.5, total * 0.05) * SR); out[-fl:] *= (np.linspace(1, 0, fl) ** 1.5)[:, None]   # everything (score, effects) ends with the picture
+    dc = int(0.01 * SR); out[:dc] *= np.linspace(0, 1, dc)[:, None]                                # 10 ms de-click only
     if out_dir is not None:                                          # stems for QA and future remixes
         d = out_dir / "stems"; d.mkdir(parents=True, exist_ok=True)
         from .audio import write_wav

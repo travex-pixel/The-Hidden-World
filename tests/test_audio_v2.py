@@ -91,6 +91,21 @@ class OpeningAudio(unittest.TestCase):
             r = audio_qa.analyse(d / "dry.wav", d, ep)
             self.assertFalse(r["opening_no_holes"], r)
 
+    def test_audio_qa_flags_a_chopped_ending_and_mixdown_fades_out(self):
+        ep, tl, clips = short_scene_episode()
+        r = np.random.default_rng(5); n = int(16 * SR)
+        rain = (score.bandpass(r.standard_normal(n).astype(np.float32), 800, 6000) * 0.05).astype(np.float32)   # an effect bed running to the last sample
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d); (d / "timeline.json").write_text(json.dumps(tl))
+            nar = np.zeros(n, np.float32)
+            for at, c, _ in clips:
+                audio.add(nar, c, at)
+            audio.write_wav(d / "chopped.wav", nar + rain)
+            self.assertFalse(audio_qa.analyse(d / "chopped.wav", d, ep)["ending_intentional"])
+            sc = score.compose_score(ep, tl, 16.0, 1)
+            mixed, _ = mixdown.mixdown(16.0, clips, sc["stems"], [], tl, ep, 1)
+            self.assertLess(float(np.max(np.abs(mixed[-int(0.05 * SR):]))), 10 ** (-48 / 20))
+
 
 if __name__ == "__main__":
     unittest.main()

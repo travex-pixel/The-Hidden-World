@@ -183,7 +183,7 @@
       for (let i = 0; i < 20; i++) back += `<rect x="${-300 + i * 90}" y="-300" width="44" height="${H + 600}" fill="#16203a" opacity="0.7"/>`;
       back += wash(540, 600, 520, 420, '#3a5aa0', 0.25);
       const emblem = `<g transform="translate(540 1040)"><circle r="78" fill="#1c2742" stroke="#c9a356" stroke-width="6"/><path d="M0 -44 L0 40 M-40 -20 L40 -20 M-40 -20 L-56 18 L-24 18 Z M40 -20 L24 18 L56 18 Z" stroke="#c9a356" stroke-width="5" fill="none"/></g>`;
-      const podium = `<path d="M340 940 L740 940 L700 1500 L380 1500 Z" fill="#2a2f3a" stroke="${INK}" stroke-width="6"/><rect x="320" y="920" width="440" height="34" rx="6" fill="#3a404c" stroke="${INK}" stroke-width="5"/>` + emblem +
+      const podium = `<path d="M340 940 L740 940 L700 1800 L380 1800 Z" fill="#2a2f3a" stroke="${INK}" stroke-width="6"/><rect x="-300" y="1760" width="${W + 600}" height="400" fill="#0a0e1a"/><rect x="320" y="920" width="440" height="34" rx="6" fill="#3a404c" stroke="${INK}" stroke-width="5"/>` + emblem +
         [470, 510, 560, 600].map((x, i) => `<path d="M${x} 925 L${540 + (x - 540) * 0.3} ${860 - i % 2 * 20}" stroke="#111" stroke-width="5"/><ellipse cx="${540 + (x - 540) * 0.3}" cy="${852 - i % 2 * 20}" rx="12" ry="18" fill="#1a1a1a"/>`).join('');
       let flash = ''; const r = R(23);
       for (let i = 0; i < 9; i++) { const ft = r() * 6, fx = r() * W; const k = Math.max(0, 1 - Math.abs(((t - ft) % 6 + 6) % 6) / 0.12); if (k > 0) flash += `<circle cx="${f1(fx)}" cy="${f1(1500 + r() * 200)}" r="${f1(160 * k)}" fill="#fff" opacity="${f1(0.5 * k)}" filter="url(#cineSoft)"/>`; }

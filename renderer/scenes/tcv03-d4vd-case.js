@@ -73,15 +73,15 @@
     tcv3_charges(ctx) {
       const l2 = LS(ctx, 1, 3.4), l3 = LS(ctx, 2, 6.7), e3 = LE(ctx, 2, 9.1);
       return E.cine.shot(ctx, {
-        set: 'press_room', grade: 'cold', cam: { from: { x: 0, y: 60, z: 1.0 }, to: { x: 0, y: 90, z: 1.08 } },
+        set: 'press_room', grade: 'cold', cam: { keys: [{ at: 0, x: 0, y: 200, z: 0.92 }, { at: LS(ctx, 1, 3.4) - 0.4, x: -40, y: 110, z: 1.06, dur: 1.4 }, { at: LS(ctx, 2, 6.7) - 0.4, x: 30, y: 80, z: 1.16, dur: 1.4 }], handheld: 2 },
         figures: [{ id: 'agent_a', x: 540, y: 1640, scale: 1.0, dir: 1, turn: 0.1, pose: 'stand', expr: 'neutral', silhouette: 'cool',
           keys: [{ at: 0.3, pose: 'present', dur: 0.6 }, { at: l2, pose: 'hands_together', dur: 0.6 }, { at: l3, pose: 'present', dur: 0.6 }] }],
         overlays: [{ type: 'card', at: 0.2, x: 70, y: 290, w: 940, h: 360, rows: [
           { text: 'CHARGED · 20 APRIL 2026', fs: 28, colour: '#6b665c' },
           { text: 'MURDER + SPECIAL CIRCUMSTANCES', fs: 36, colour: '#8e1f18', at: WT(ctx, 0, 4, 1.0) - 0.1 },
-          { text: 'CONTINUOUS SEXUAL ABUSE OF A CHILD UNDER 14', fs: 29, at: l2 },
+          { text: 'CONTINUOUS SEXUAL ABUSE OF A CHILD UNDER 14', fs: 31, at: l2 },
           { text: 'UNLAWFUL MUTILATION OF HUMAN REMAINS', fs: 33, at: l3 },
-          { text: 'ALLEGATIONS · HE HAS PLEADED NOT GUILTY', fs: 26, colour: '#6b665c', at: e3 - 0.4 }] }],
+          { text: 'ALLEGATIONS · HE HAS PLEADED NOT GUILTY', fs: 29, colour: '#6b665c', at: e3 - 0.4 }] }],
         tag: 'ILLUSTRATION · ANONYMOUS FIGURE'
       });
     },
@@ -99,7 +99,7 @@
         return s;
       };
       return E.cine.shot(ctx, {
-        set: 'hills_rain', setOpts: { houseX: 660, houseY: 800, houseScale: 1.6, houseLit: 0.75 }, grade: 'night', rain: RAIN, cam: { from: { x: -20, y: 40, z: 1.0 }, to: { x: 110, y: -60, z: 1.32 } },
+        set: 'hills_rain', setOpts: { houseX: 660, houseY: 800, houseScale: 1.6, houseLit: 0.75 }, grade: 'night', rain: RAIN, cam: { from: { x: -260, y: 120, z: 0.96 }, to: { x: 150, y: -40, z: 1.5 }, handheld: 2 },
         overlays: [{ type: 'svg', at: 0.2, svg: timeline }],
         tag: 'ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME'
       });
@@ -117,7 +117,7 @@
         ],
         overlays: [
           { type: 'label', at: ng - 0.2, until: l2 - 0.1, x: 60, y: 380, text: 'PLEA: NOT GUILTY', fs: 44, sub: 'Arraignments: 20 Apr and 31 Aug 2026' },
-          { type: 'card', at: l2 + 0.15, x: 90, y: 330, w: 900, rows: [{ text: 'DEFENCE · APRIL 2026', fs: 28, colour: '#6b665c' }, { text: 'THE EVIDENCE WILL SHOW HE', fs: 36 }, { text: "'DID NOT MURDER CELESTE", fs: 40, colour: '#2f4f6b' }, { text: "RIVAS HERNANDEZ'", fs: 40, colour: '#2f4f6b' }] }
+          { type: 'card', at: l2 + 0.15, x: 90, y: 330, w: 900, rows: [{ text: 'DEFENCE (FORMER COUNSEL) · APRIL 2026', fs: 28, colour: '#6b665c' }, { text: 'THE EVIDENCE WILL SHOW HE', fs: 36 }, { text: "'DID NOT MURDER CELESTE", fs: 40, colour: '#2f4f6b' }, { text: "RIVAS HERNANDEZ'", fs: 40, colour: '#2f4f6b' }] }
         ],
         tag: 'ILLUSTRATION · ANONYMOUS FIGURES'
       });

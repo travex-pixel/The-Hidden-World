@@ -99,8 +99,9 @@ def analyse(mp4: Path, out_dir: Path, ep: dict | None = None) -> dict:
     for v in full[::-1]:
         if v < -60: tail += 1
         else: break
-    res.update(end_last_db=round(end_last, 1), end_before_db=round(end_before, 1), silent_tail_s=round(tail * 0.1, 1))
-    res["ending_intentional"] = end_last < -35 and end_before - end_last >= 12 and tail * 0.1 <= 1.0
+    end_50ms = float(levels(mono[-int(0.05 * SR):], 0.05)[0])   # the very end must be (near) silent: no chopped effect or note
+    res.update(end_last_db=round(end_last, 1), end_before_db=round(end_before, 1), end_last_50ms_db=round(end_50ms, 1), silent_tail_s=round(tail * 0.1, 1))
+    res["ending_intentional"] = end_last < -35 and end_50ms < -48 and end_before - end_last >= 12 and tail * 0.1 <= 1.0
     d = durations(mp4); res["durations"] = d
     res["av_duration_match"] = "audio" in d and "video" in d and abs(d["audio"] - d["video"]) <= 0.1
     checks = ["opening_speech_steady", "opening_no_holes", "narration_on_time", "music_never_masks", "music_audible", "no_clipping",
