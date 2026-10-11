@@ -1,5 +1,7 @@
 # Title options
 
+> **Revised 11 Oct 2026 after the evidence and legal-risk audit.** The original is in `audit/superseded/` and git commit f422b30. Release status: **DRAFT — NOT CLEARED FOR PUBLICATION** (see `audit/release-decision.md`). Do not upload until the open items in `audit/human-review-items.md` are resolved.
+
 Constraints for every option:
 - Titles must stay readable before truncation on mobile; aim for 60 characters or fewer.
 - No title may imply that Pam Hupp was convicted of Betsy Faria's murder. She is charged, not convicted.
@@ -16,9 +18,9 @@ Constraints for every option:
 ## Recommended: **The Murder That Sent the Wrong Man to Prison**
 
 - **Clear.** It is short and readable at any size.
-- **Curious.** It raises the question of who the right man or woman is, and the film handles that question fairly.
+- **Curious.** It asks how a man with an alibi was convicted. That question is answered by the court record, not by pointing at anyone else.
 - **Credible.** The claim rests on court outcomes: a conviction in 2013 and an acquittal in 2015.
 - **Fair.** It accuses no one who has not been convicted.
 - **Pairs with the thumbnail.** The chosen thumbnail ("GUILTY 2013 → NOT GUILTY 2015") shows the reversal visually instead of repeating the title's words.
 
-**For YouTube "Test & Compare":** use option 2 as the alternate title, paired with thumbnail B (the policy concept).
+**Test & Compare (revised):** do NOT use thumbnail B (policy) or alternate titles 3 and 5. They pair a person who is only charged with the killing and a motive (findings LR-08 / FC-07). If you want an A/B test, test option 4 against the recommended title, both with thumbnail A. The title itself is flagged for legal review (LR-01): an acquittal is not a finding of innocence, and "wrong man" is a characterisation.

@@ -1,0 +1,1372 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR)",
+ "lines": 71,
+ "corpus_wer": 0.09,
+ "lines_over_20pct": [
+  {
+   "line": 9,
+   "t": 40.459,
+   "script": "December 27th, 2011. Troy, Missouri, a small town about an hour northwest of St. Louis.",
+   "asr": "December twenty seven, twenty eleven, Troy, Missouri, a small town about an hour northwest of St. Louis.",
+   "wer": 0.267,
+   "diffs": [
+    [
+     "∅",
+     "twenty"
+    ],
+    [
+     "∅",
+     "seven"
+    ],
+    [
+     "27th",
+     "twenty"
+    ],
+    [
+     "2011",
+     "eleven"
+    ]
+   ]
+  },
+  {
+   "line": 10,
+   "t": 47.881,
+   "script": "Betsy Faria was 42, a mother of two daughters.",
+   "asr": "Betsy Furya was forty-two, a mother of two daughters.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "faria",
+     "furya"
+    ],
+    [
+     "∅",
+     "forty"
+    ],
+    [
+     "42",
+     "two"
+    ]
+   ]
+  },
+  {
+   "line": 16,
+   "t": 79.723,
+   "script": "At 9:40 that night, Russ called 911.",
+   "asr": "At 9:40 at night, Russ called 9:11.",
+   "wer": 0.375,
+   "diffs": [
+    [
+     "that",
+     "at"
+    ],
+    [
+     "∅",
+     "9"
+    ],
+    [
+     "911",
+     "11"
+    ]
+   ]
+  },
+  {
+   "line": 18,
+   "t": 86.78,
+   "script": "She had been stabbed 55 times.",
+   "asr": "She had been stared fifty-five times.",
+   "wer": 0.5,
+   "diffs": [
+    [
+     "∅",
+     "stared"
+    ],
+    [
+     "stabbed",
+     "fifty"
+    ],
+    [
+     "55",
+     "five"
+    ]
+   ]
+  },
+  {
+   "line": 33,
+   "t": 172.422,
+   "script": "On November 21st, 2013, the jury found Russ Faria guilty.",
+   "asr": "On November 21, 2013, the jury found Russ for a guilty.",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "21st",
+     "21"
+    ],
+    [
+     "∅",
+     "for"
+    ],
+    [
+     "faria",
+     "a"
+    ]
+   ]
+  },
+  {
+   "line": 42,
+   "t": 215.432,
+   "script": "His ruling centered on the evidence about Pam Hupp.",
+   "asr": "His ruling center on the evidence about Pam Hop",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "centered",
+     "center"
+    ],
+    [
+     "hupp",
+     "hop"
+    ]
+   ]
+  },
+  {
+   "line": 46,
+   "t": 235.844,
+   "script": "On November 6th, 2015, Judge Ohmer found Russ Faria not guilty.",
+   "asr": "On November 6, 2015, Judge Omafound Russ Free of Not Guilty.",
+   "wer": 0.455,
+   "diffs": [
+    [
+     "6th",
+     "6"
+    ],
+    [
+     "ohmer",
+     "omafound"
+    ],
+    [
+     "found",
+     "russ"
+    ],
+    [
+     "russ",
+     "free"
+    ],
+    [
+     "faria",
+     "of"
+    ]
+   ]
+  },
+  {
+   "line": 49,
+   "t": 248.394,
+   "script": "Nine months later, in August 2016, Pam Hupp called 911 from her home in O'Fallon, Missouri.",
+   "asr": "Nine months later, in August 2016, Pam Hup called Nine One One from her home in O'Fallon, Missouri.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "hupp",
+     "hup"
+    ],
+    [
+     "∅",
+     "nine"
+    ],
+    [
+     "∅",
+     "one"
+    ],
+    [
+     "911",
+     "one"
+    ]
+   ]
+  },
+  {
+   "line": 52,
+   "t": 267.121,
+   "script": "In his pocket, police found $900 in cash and a note: apparent instructions to kidnap Hupp and get \"Russ's money.\"",
+   "asr": "In his pocket, police found nine hundred dollars in cash and a note of parent instructions to kidnap, hop and get Russ's money.",
+   "wer": 0.238,
+   "diffs": [
+    [
+     "∅",
+     "nine"
+    ],
+    [
+     "900",
+     "hundred"
+    ],
+    [
+     "∅",
+     "of"
+    ],
+    [
+     "apparent",
+     "parent"
+    ],
+    [
+     "hupp",
+     "hop"
+    ]
+   ]
+  },
+  {
+   "line": 73,
+   "t": 399.312,
+   "script": "A judge is scheduled to hear the case in January 2028.",
+   "asr": "A judge is scheduled to hear the case in January, twenty twenty eight.",
+   "wer": 0.273,
+   "diffs": [
+    [
+     "∅",
+     "twenty"
+    ],
+    [
+     "∅",
+     "twenty"
+    ],
+    [
+     "2028",
+     "eight"
+    ]
+   ]
+  }
+ ],
+ "name_mismatches": [
+  {
+   "line": 2,
+   "script": "His name is Russ Faria.",
+   "asr": "His name is Russ Freer"
+  },
+  {
+   "line": 10,
+   "script": "Betsy Faria was 42, a mother of two daughters.",
+   "asr": "Betsy Furya was forty-two, a mother of two daughters."
+  },
+  {
+   "line": 12,
+   "script": "That evening, her friend Pam Hupp drove her home.",
+   "asr": "That evening, her friend Pam helped drove her home."
+  },
+  {
+   "line": 13,
+   "script": "According to later reporting, Hupp had insisted on giving her the ride.",
+   "asr": "According to later reporting, Hop had insisted on giving her the ride,"
+  },
+  {
+   "line": 22,
+   "script": "Pam Hupp testified at that trial, as a witness for the prosecution.",
+   "asr": "Pam helped testify at that trial as a witness for the prosecution."
+  },
+  {
+   "line": 26,
+   "script": "Days before she died, Betsy had changed the beneficiary of her $150,000 life insurance policy, from Russ to Pam Hupp.",
+   "asr": "Days before she died, Betsy had changed the beneficiary of her $150,000 life insurance policy from Russ to Pamhop."
+  },
+  {
+   "line": 27,
+   "script": "Hupp said Betsy wanted the money to go to her daughters one day.",
+   "asr": "Hup said Betsy wanted the money to go to her daughter's one day."
+  },
+  {
+   "line": 30,
+   "script": "Phone records showed her making a call at 7:04 p.m. from near the Faria home, and those records would become a key point of dispute.",
+   "asr": "Phone records showed her making a call at 7:04 pm from near the furry home and those records would become a key point of dispute."
+  },
+  {
+   "line": 31,
+   "script": "But at Russ's first trial, the judge did not allow the defense to argue that Hupp could be the killer.",
+   "asr": "But at Russ's first trial, the judge did not allow the defense to argue that Hup could be the killer."
+  },
+  {
+   "line": 33,
+   "script": "On November 21st, 2013, the jury found Russ Faria guilty.",
+   "asr": "On November 21, 2013, the jury found Russ for a guilty."
+  },
+  {
+   "line": 36,
+   "script": "The insurance payout went to Pam Hupp.",
+   "asr": "The insurance payout went to Pam Hut."
+  },
+  {
+   "line": 38,
+   "script": "An appeals court said the form named Hupp, and that Betsy's intentions beyond that could not be determined from the evidence.",
+   "asr": "An appeals court said the form named hop, and that Betsy's intentions beyond that could not be determined from the evidence."
+  },
+  {
+   "line": 41,
+   "script": "In 2015, the case went back to the trial court, and on June 5th, Judge Steven Ohmer, a St. Louis judge assigned to the case, ordered a new trial.",
+   "asr": "In 2015, the case went back to the trial court. And on June 5, Judge Stephen Omer, a Saint Louis judge assigned to the case, ordered a new trial."
+  },
+  {
+   "line": 42,
+   "script": "His ruling centered on the evidence about Pam Hupp.",
+   "asr": "His ruling center on the evidence about Pam Hop"
+  },
+  {
+   "line": 45,
+   "script": "And this time, the defense could point to Pam Hupp.",
+   "asr": "And this time, the defence could point to Pam Hutt."
+  },
+  {
+   "line": 46,
+   "script": "On November 6th, 2015, Judge Ohmer found Russ Faria not guilty.",
+   "asr": "On November 6, 2015, Judge Omafound Russ Free of Not Guilty."
+  },
+  {
+   "line": 49,
+   "script": "Nine months later, in August 2016, Pam Hupp called 911 from her home in O'Fallon, Missouri.",
+   "asr": "Nine months later, in August 2016, Pam Hup called Nine One One from her home in O'Fallon, Missouri."
+  },
+  {
+   "line": 50,
+   "script": "She had shot and killed a man: Louis Gumpenberger, 33, who lived with a disability.",
+   "asr": "She had shot and killed a man, Louis Gompenberger, 33, who lived with a disability."
+  },
+  {
+   "line": 52,
+   "script": "In his pocket, police found $900 in cash and a note: apparent instructions to kidnap Hupp and get \"Russ's money.\"",
+   "asr": "In his pocket, police found nine hundred dollars in cash and a note of parent instructions to kidnap, hop and get Russ's money."
+  },
+  {
+   "line": 57,
+   "script": "In 2019, Hupp entered an Alford plea to first-degree murder: not admitting guilt, but conceding the state had enough evidence to convict her.",
+   "asr": "In 2019, HUB entered an award plea to first-degree murder, not admitting guilt but conceding the state had enough evidence to convict her."
+  },
+  {
+   "line": 60,
+   "script": "Hupp's mother, Shirley Neumann, had died after falling from her balcony at a senior living facility.",
+   "asr": "Pup's mother, Shirley Newman, had died after falling from her balcony at a senior living facility."
+  },
+  {
+   "line": 64,
+   "script": "In 2020, Russ Faria settled his civil rights lawsuit for $2 million, with no admission of wrongdoing.",
+   "asr": "In 2020, Russ Fourier settled his civil rights lawsuit for $2 million, with no admission of Rom Duet."
+  },
+  {
+   "line": 65,
+   "script": "Then, in July 2021, Lincoln County Prosecutor Mike Wood charged Pam Hupp with first-degree murder in Betsy Faria's death.",
+   "asr": "Then, in July 2021, Lincoln County Prosecutor Mike Wood charged Pam Hup with first-degree murder in Betsy for re-est death."
+  },
+  {
+   "line": 67,
+   "script": "Wood also opened an investigation into how the original case was handled.",
+   "asr": "Would also opened an investigation into how the original case was handled."
+  },
+  {
+   "line": 68,
+   "script": "In 2025, a former sheriff's captain on the case, Mike Merkel, was charged with perjury over his testimony in the Faria case. He is presumed innocent, and that case is pending.",
+   "asr": "In 2025, a former sheriff's captain on the case, Mike Merkel, was charged with perjury over his testimony in the Fourier case. He is presumed innocent, and that case is pending."
+  },
+  {
+   "line": 72,
+   "script": "In April 2026, Hupp waived her right to a jury, and the state dropped its pursuit of the death penalty.",
+   "asr": "In April 2026, Hup waved her right to a jury and the state dropped its pursuit of the death penalty."
+  },
+  {
+   "line": 75,
+   "script": "Russ Faria spent about three and a half years locked up for a murder he was ultimately acquitted of.",
+   "asr": "Russ Freer spent about three and a half years locked up for a murder he was ultimately acquitted of."
+  },
+  {
+   "line": 76,
+   "script": "Pam Hupp is serving life for killing Louis Gumpenberger. In Betsy's case, she is charged, not convicted, and presumed innocent.",
+   "asr": "Pam Hup is serving life for killing Louis dumpinberger in Betsy's case. She discharged, not convicted and presumed innocent."
+  },
+  {
+   "line": 77,
+   "script": "Betsy Faria was 42 years old.",
+   "asr": "Betsy Ferrier was 42 years old."
+  }
+ ],
+ "rows": [
+  {
+   "line": 0,
+   "t": 0.5,
+   "script": "Life without parole, for murdering his wife.",
+   "asr": "Life without parole from murdering his wife.",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "for",
+     "from"
+    ]
+   ]
+  },
+  {
+   "line": 1,
+   "t": 3.576,
+   "script": "Two years later: not guilty.",
+   "asr": "Two years later not guilty",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 2,
+   "t": 6.464,
+   "script": "His name is Russ Faria.",
+   "asr": "His name is Russ Freer",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "faria",
+     "freer"
+    ]
+   ]
+  },
+  {
+   "line": 3,
+   "t": 8.308,
+   "script": "And today, prosecutors have charged someone else with his wife's murder: the friend who drove her home that night.",
+   "asr": "And today, prosecutors have charged someone else with his wife's murder, the friend who drove her home that night.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 4,
+   "t": 15.31,
+   "script": "Days before the killing, that friend had been made the sole beneficiary of the victim's $150,000 life insurance policy.",
+   "asr": "Days before the killing, that friend had been made the sole beneficiary of the victims, $150,000 life insurance policy.",
+   "wer": 0.05,
+   "diffs": [
+    [
+     "victim's",
+     "victims"
+    ]
+   ]
+  },
+  {
+   "line": 6,
+   "t": 25.723,
+   "script": "So how did a man with four alibi witnesses, a receipt and a phone trail end up with a life sentence?",
+   "asr": "So how did a man with four alibi witnesses, a receipt and a phone trail, end up with a life sentence?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 7,
+   "t": 32.281,
+   "script": "And why did it take nearly ten years to charge the last person known to have seen her alive?",
+   "asr": "And why did it take nearly ten years to charge the last person known to have seen her alive?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 9,
+   "t": 40.459,
+   "script": "December 27th, 2011. Troy, Missouri, a small town about an hour northwest of St. Louis.",
+   "asr": "December twenty seven, twenty eleven, Troy, Missouri, a small town about an hour northwest of St. Louis.",
+   "wer": 0.267,
+   "diffs": [
+    [
+     "∅",
+     "twenty"
+    ],
+    [
+     "∅",
+     "seven"
+    ],
+    [
+     "27th",
+     "twenty"
+    ],
+    [
+     "2011",
+     "eleven"
+    ]
+   ]
+  },
+  {
+   "line": 10,
+   "t": 47.881,
+   "script": "Betsy Faria was 42, a mother of two daughters.",
+   "asr": "Betsy Furya was forty-two, a mother of two daughters.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "faria",
+     "furya"
+    ],
+    [
+     "∅",
+     "forty"
+    ],
+    [
+     "42",
+     "two"
+    ]
+   ]
+  },
+  {
+   "line": 11,
+   "t": 52.122,
+   "script": "She was also fighting cancer that had spread to her liver. That day, she'd had chemotherapy.",
+   "asr": "She was also fighting cancer that had spread to her liver. That day she had chemotherapy.",
+   "wer": 0.062,
+   "diffs": [
+    [
+     "she'd",
+     "she"
+    ]
+   ]
+  },
+  {
+   "line": 12,
+   "t": 57.616,
+   "script": "That evening, her friend Pam Hupp drove her home.",
+   "asr": "That evening, her friend Pam helped drove her home.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "hupp",
+     "helped"
+    ]
+   ]
+  },
+  {
+   "line": 13,
+   "t": 60.903,
+   "script": "According to later reporting, Hupp had insisted on giving her the ride.",
+   "asr": "According to later reporting, Hop had insisted on giving her the ride,",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "hupp",
+     "hop"
+    ]
+   ]
+  },
+  {
+   "line": 14,
+   "t": 65.319,
+   "script": "Betsy's husband, Russ, was somewhere else entirely: at his regular Tuesday game night with four friends, more than 20 miles away.",
+   "asr": "Betsy's husband, Russ, was somewhere else entirely at his regular Tuesday game night with four friends more than twenty miles away.",
+   "wer": 0.048,
+   "diffs": [
+    [
+     "20",
+     "twenty"
+    ]
+   ]
+  },
+  {
+   "line": 15,
+   "t": 73.973,
+   "script": "On his way home, he stopped at an Arby's. There was a receipt, and surveillance video.",
+   "asr": "On his way home, he stopped at an Arby's, there was a receipt and surveillance video.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 16,
+   "t": 79.723,
+   "script": "At 9:40 that night, Russ called 911.",
+   "asr": "At 9:40 at night, Russ called 9:11.",
+   "wer": 0.375,
+   "diffs": [
+    [
+     "that",
+     "at"
+    ],
+    [
+     "∅",
+     "9"
+    ],
+    [
+     "911",
+     "11"
+    ]
+   ]
+  },
+  {
+   "line": 17,
+   "t": 83.828,
+   "script": "He had found Betsy dead inside their home.",
+   "asr": "He had found Betsy dead inside their home.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 18,
+   "t": 86.78,
+   "script": "She had been stabbed 55 times.",
+   "asr": "She had been stared fifty-five times.",
+   "wer": 0.5,
+   "diffs": [
+    [
+     "∅",
+     "stared"
+    ],
+    [
+     "stabbed",
+     "fifty"
+    ],
+    [
+     "55",
+     "five"
+    ]
+   ]
+  },
+  {
+   "line": 19,
+   "t": 90.285,
+   "script": "Days later, after Betsy's funeral, Russ was arrested and charged with first-degree murder.",
+   "asr": "Days later, after Betsy's funeral, Russ was arrested and charged with first-degree murder.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 21,
+   "t": 98.773,
+   "script": "Prosecutors built their case around the husband.",
+   "asr": "Prosecutors built their case around the husband.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 22,
+   "t": 101.946,
+   "script": "Pam Hupp testified at that trial, as a witness for the prosecution.",
+   "asr": "Pam helped testify at that trial as a witness for the prosecution.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "hupp",
+     "helped"
+    ],
+    [
+     "testified",
+     "testify"
+    ]
+   ]
+  },
+  {
+   "line": 23,
+   "t": 106.698,
+   "script": "They pointed to a pair of slippers they said were stained with blood.",
+   "asr": "They pointed to a pair of slippers they said were stained with blood",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 24,
+   "t": 111.171,
+   "script": "They told jurors his friends were covering for him, and that his frantic 911 call was an act.",
+   "asr": "They told jurors his friends were covering for him and that his frantic 911 call was an act.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 25,
+   "t": 117.228,
+   "script": "But the jury never heard the defense's case about someone else.",
+   "asr": "But the jury never heard the defense's case about someone else.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 26,
+   "t": 121.659,
+   "script": "Days before she died, Betsy had changed the beneficiary of her $150,000 life insurance policy, from Russ to Pam Hupp.",
+   "asr": "Days before she died, Betsy had changed the beneficiary of her $150,000 life insurance policy from Russ to Pamhop.",
+   "wer": 0.095,
+   "diffs": [
+    [
+     "pam",
+     "∅"
+    ],
+    [
+     "hupp",
+     "pamhop"
+    ]
+   ]
+  },
+  {
+   "line": 27,
+   "t": 130.837,
+   "script": "Hupp said Betsy wanted the money to go to her daughters one day.",
+   "asr": "Hup said Betsy wanted the money to go to her daughter's one day.",
+   "wer": 0.154,
+   "diffs": [
+    [
+     "hupp",
+     "hup"
+    ],
+    [
+     "daughters",
+     "daughter's"
+    ]
+   ]
+  },
+  {
+   "line": 28,
+   "t": 134.708,
+   "script": "And according to the Post-Dispatch, Hupp's own account of that evening kept changing.",
+   "asr": "And according to the Post-Dispatch, hubs own account of that evening-kept changing.",
+   "wer": 0.071,
+   "diffs": [
+    [
+     "hupp's",
+     "hubs"
+    ]
+   ]
+  },
+  {
+   "line": 29,
+   "t": 139.512,
+   "script": "She first told investigators she hadn't gone inside the house. Later, that she'd gone as far as the living room. Later still, that she'd been in the bedroom.",
+   "asr": "She first told investigators she hadn't gone inside the house later that she'd gone as far as the living room later still that she'd been in the bedroom",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 30,
+   "t": 149.453,
+   "script": "Phone records showed her making a call at 7:04 p.m. from near the Faria home, and those records would become a key point of dispute.",
+   "asr": "Phone records showed her making a call at 7:04 pm from near the furry home and those records would become a key point of dispute.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "p",
+     "∅"
+    ],
+    [
+     "m",
+     "pm"
+    ],
+    [
+     "faria",
+     "furry"
+    ]
+   ]
+  },
+  {
+   "line": 31,
+   "t": 157.885,
+   "script": "But at Russ's first trial, the judge did not allow the defense to argue that Hupp could be the killer.",
+   "asr": "But at Russ's first trial, the judge did not allow the defense to argue that Hup could be the killer.",
+   "wer": 0.05,
+   "diffs": [
+    [
+     "hupp",
+     "hup"
+    ]
+   ]
+  },
+  {
+   "line": 32,
+   "t": 164.16,
+   "script": "Missouri law required evidence directly connecting another suspect to the crime, and the judge ruled that standard had not been met.",
+   "asr": "Missouri law required evidence directly connecting another suspect to the crime and the judge ruled that standard had not been met.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 33,
+   "t": 172.422,
+   "script": "On November 21st, 2013, the jury found Russ Faria guilty.",
+   "asr": "On November 21, 2013, the jury found Russ for a guilty.",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "21st",
+     "21"
+    ],
+    [
+     "∅",
+     "for"
+    ],
+    [
+     "faria",
+     "a"
+    ]
+   ]
+  },
+  {
+   "line": 34,
+   "t": 178.116,
+   "script": "The sentence: life in prison without parole, plus 30 years.",
+   "asr": "The sentence \"life in prison without parole\" plus 30 years.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 36,
+   "t": 185.732,
+   "script": "The insurance payout went to Pam Hupp.",
+   "asr": "The insurance payout went to Pam Hut.",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "hupp",
+     "hut"
+    ]
+   ]
+  },
+  {
+   "line": 37,
+   "t": 188.301,
+   "script": "Betsy's daughters sued for it. They lost.",
+   "asr": "Betsy's daughters sued for it. they lost.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 38,
+   "t": 191.483,
+   "script": "An appeals court said the form named Hupp, and that Betsy's intentions beyond that could not be determined from the evidence.",
+   "asr": "An appeals court said the form named hop, and that Betsy's intentions beyond that could not be determined from the evidence.",
+   "wer": 0.048,
+   "diffs": [
+    [
+     "hupp",
+     "hop"
+    ]
+   ]
+  },
+  {
+   "line": 40,
+   "t": 200.675,
+   "script": "Russ's lawyer, Joel Schwartz, kept fighting.",
+   "asr": "Russ's lawyer, Joel Schwartz, kept fighting.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 41,
+   "t": 203.869,
+   "script": "In 2015, the case went back to the trial court, and on June 5th, Judge Steven Ohmer, a St. Louis judge assigned to the case, ordered a new trial.",
+   "asr": "In 2015, the case went back to the trial court. And on June 5, Judge Stephen Omer, a Saint Louis judge assigned to the case, ordered a new trial.",
+   "wer": 0.138,
+   "diffs": [
+    [
+     "5th",
+     "5"
+    ],
+    [
+     "steven",
+     "stephen"
+    ],
+    [
+     "ohmer",
+     "omer"
+    ],
+    [
+     "st",
+     "saint"
+    ]
+   ]
+  },
+  {
+   "line": 42,
+   "t": 215.432,
+   "script": "His ruling centered on the evidence about Pam Hupp.",
+   "asr": "His ruling center on the evidence about Pam Hop",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "centered",
+     "center"
+    ],
+    [
+     "hupp",
+     "hop"
+    ]
+   ]
+  },
+  {
+   "line": 43,
+   "t": 218.396,
+   "script": "Days later, Russ walked out of jail on bond, after about three and a half years behind bars.",
+   "asr": "Days later, Russ walked out of jail unbound, after about three and a half years behind bars.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "on",
+     "∅"
+    ],
+    [
+     "bond",
+     "unbound"
+    ]
+   ]
+  },
+  {
+   "line": 44,
+   "t": 225.261,
+   "script": "In November 2015, he was tried again. This time, he chose to have a judge decide, not a jury.",
+   "asr": "In November 2015, he was tried again, this time he chose to have a judge decide not a jury.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 45,
+   "t": 232.532,
+   "script": "And this time, the defense could point to Pam Hupp.",
+   "asr": "And this time, the defence could point to Pam Hutt.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "defense",
+     "defence"
+    ],
+    [
+     "hupp",
+     "hutt"
+    ]
+   ]
+  },
+  {
+   "line": 46,
+   "t": 235.844,
+   "script": "On November 6th, 2015, Judge Ohmer found Russ Faria not guilty.",
+   "asr": "On November 6, 2015, Judge Omafound Russ Free of Not Guilty.",
+   "wer": 0.455,
+   "diffs": [
+    [
+     "6th",
+     "6"
+    ],
+    [
+     "ohmer",
+     "omafound"
+    ],
+    [
+     "found",
+     "russ"
+    ],
+    [
+     "russ",
+     "free"
+    ],
+    [
+     "faria",
+     "of"
+    ]
+   ]
+  },
+  {
+   "line": 47,
+   "t": 241.708,
+   "script": "And the judge openly criticized the investigation that had put him in prison.",
+   "asr": "And the judge openly criticized the investigation that had put him in prison.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 49,
+   "t": 248.394,
+   "script": "Nine months later, in August 2016, Pam Hupp called 911 from her home in O'Fallon, Missouri.",
+   "asr": "Nine months later, in August 2016, Pam Hup called Nine One One from her home in O'Fallon, Missouri.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "hupp",
+     "hup"
+    ],
+    [
+     "∅",
+     "nine"
+    ],
+    [
+     "∅",
+     "one"
+    ],
+    [
+     "911",
+     "one"
+    ]
+   ]
+  },
+  {
+   "line": 50,
+   "t": 256.178,
+   "script": "She had shot and killed a man: Louis Gumpenberger, 33, who lived with a disability.",
+   "asr": "She had shot and killed a man, Louis Gompenberger, 33, who lived with a disability.",
+   "wer": 0.067,
+   "diffs": [
+    [
+     "gumpenberger",
+     "gompenberger"
+    ]
+   ]
+  },
+  {
+   "line": 51,
+   "t": 262.833,
+   "script": "She told police he was an intruder, and that he'd demanded \"Russ's money.\"",
+   "asr": "She told police he was an intruder and that he demanded Russ's money.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "he'd",
+     "he"
+    ]
+   ]
+  },
+  {
+   "line": 52,
+   "t": 267.121,
+   "script": "In his pocket, police found $900 in cash and a note: apparent instructions to kidnap Hupp and get \"Russ's money.\"",
+   "asr": "In his pocket, police found nine hundred dollars in cash and a note of parent instructions to kidnap, hop and get Russ's money.",
+   "wer": 0.238,
+   "diffs": [
+    [
+     "∅",
+     "nine"
+    ],
+    [
+     "900",
+     "hundred"
+    ],
+    [
+     "∅",
+     "of"
+    ],
+    [
+     "apparent",
+     "parent"
+    ],
+    [
+     "hupp",
+     "hop"
+    ]
+   ]
+  },
+  {
+   "line": 53,
+   "t": 275.802,
+   "script": "Prosecutors said the cash and the note had been planted, and that the serial numbers ran in sequence with bills found in Hupp's home.",
+   "asr": "Prosecutors said the cash and the note had been planted and that the serial numbers ran in sequence with bills found in Huxholm.",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "hupp's",
+     "∅"
+    ],
+    [
+     "home",
+     "huxholm"
+    ]
+   ]
+  },
+  {
+   "line": 54,
+   "t": 283.2,
+   "script": "They said she had lured him by posing as a producer for NBC's Dateline, offering $1,000 to help reenact a 911 call.",
+   "asr": "They said she had lured him by posing as a producer for NBC's date line, offering $1,000 to help reenact a 911 call.",
+   "wer": 0.087,
+   "diffs": [
+    [
+     "∅",
+     "date"
+    ],
+    [
+     "dateline",
+     "line"
+    ]
+   ]
+  },
+  {
+   "line": 55,
+   "t": 292.4,
+   "script": "Days earlier, another woman had reported the same kind of approach.",
+   "asr": "Days earlier, another woman had reported the same kind of approach.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 56,
+   "t": 297.105,
+   "script": "Prosecutors alleged it was an attempt to frame Russ Faria all over again.",
+   "asr": "Prosecutors alleged it was an attempt to frame Russ Faria all over again.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 57,
+   "t": 302.823,
+   "script": "In 2019, Hupp entered an Alford plea to first-degree murder: not admitting guilt, but conceding the state had enough evidence to convict her.",
+   "asr": "In 2019, HUB entered an award plea to first-degree murder, not admitting guilt but conceding the state had enough evidence to convict her.",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "hupp",
+     "hub"
+    ],
+    [
+     "alford",
+     "award"
+    ]
+   ]
+  },
+  {
+   "line": 58,
+   "t": 312.117,
+   "script": "She was sentenced to life without parole.",
+   "asr": "She was sentenced to life without parole.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 59,
+   "t": 314.988,
+   "script": "Investigators also took another look at a death from 2013.",
+   "asr": "Investigators also took another look at a death from 2013.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 60,
+   "t": 319.76,
+   "script": "Hupp's mother, Shirley Neumann, had died after falling from her balcony at a senior living facility.",
+   "asr": "Pup's mother, Shirley Newman, had died after falling from her balcony at a senior living facility.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "hupp's",
+     "pup's"
+    ],
+    [
+     "neumann",
+     "newman"
+    ]
+   ]
+  },
+  {
+   "line": 61,
+   "t": 325.767,
+   "script": "Her death was ruled an accident. In 2017, the medical examiner changed the manner of death to \"undetermined.\"",
+   "asr": "Her death was ruled an accident. In 2017, the medical examiner changed the manner of death to undetermined.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 62,
+   "t": 334.05,
+   "script": "No one has been charged in her death.",
+   "asr": "No one has been charged in her death,",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 64,
+   "t": 339.151,
+   "script": "In 2020, Russ Faria settled his civil rights lawsuit for $2 million, with no admission of wrongdoing.",
+   "asr": "In 2020, Russ Fourier settled his civil rights lawsuit for $2 million, with no admission of Rom Duet.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "faria",
+     "fourier"
+    ],
+    [
+     "∅",
+     "rom"
+    ],
+    [
+     "wrongdoing",
+     "duet"
+    ]
+   ]
+  },
+  {
+   "line": 65,
+   "t": 346.587,
+   "script": "Then, in July 2021, Lincoln County Prosecutor Mike Wood charged Pam Hupp with first-degree murder in Betsy Faria's death.",
+   "asr": "Then, in July 2021, Lincoln County Prosecutor Mike Wood charged Pam Hup with first-degree murder in Betsy for re-est death.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "hupp",
+     "hup"
+    ],
+    [
+     "∅",
+     "for"
+    ],
+    [
+     "∅",
+     "re"
+    ],
+    [
+     "faria's",
+     "est"
+    ]
+   ]
+  },
+  {
+   "line": 66,
+   "t": 355.599,
+   "script": "She pleaded not guilty.",
+   "asr": "She pleaded not guilty.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 67,
+   "t": 357.453,
+   "script": "Wood also opened an investigation into how the original case was handled.",
+   "asr": "Would also opened an investigation into how the original case was handled.",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "wood",
+     "would"
+    ]
+   ]
+  },
+  {
+   "line": 68,
+   "t": 362.12,
+   "script": "In 2025, a former sheriff's captain on the case, Mike Merkel, was charged with perjury over his testimony in the Faria case. He is presumed innocent, and that case is pending.",
+   "asr": "In 2025, a former sheriff's captain on the case, Mike Merkel, was charged with perjury over his testimony in the Fourier case. He is presumed innocent, and that case is pending.",
+   "wer": 0.032,
+   "diffs": [
+    [
+     "faria",
+     "fourier"
+    ]
+   ]
+  },
+  {
+   "line": 69,
+   "t": 374.576,
+   "script": "The original prosecutor, Leah Askey, has denied any wrongdoing.",
+   "asr": "The original prosecutor, Lee Askey, has denied any wrongdoing.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "leah",
+     "lee"
+    ]
+   ]
+  },
+  {
+   "line": 70,
+   "t": 379.379,
+   "script": "Hupp's trial has been moved and delayed again and again.",
+   "asr": "Ups trial has been moved and delayed again and again.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "hupp's",
+     "ups"
+    ]
+   ]
+  },
+  {
+   "line": 71,
+   "t": 383.142,
+   "script": "Her lawyers have pointed to DNA from an unidentified man on evidence, including the knife handle. Prosecutors dispute that it clears her.",
+   "asr": "Her lawyers have pointed to DNA from an unidentified man on evidence, including the knife handle prosecutors dispute that it clears her.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 72,
+   "t": 392.13,
+   "script": "In April 2026, Hupp waived her right to a jury, and the state dropped its pursuit of the death penalty.",
+   "asr": "In April 2026, Hup waved her right to a jury and the state dropped its pursuit of the death penalty.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "hupp",
+     "hup"
+    ],
+    [
+     "waived",
+     "waved"
+    ]
+   ]
+  },
+  {
+   "line": 73,
+   "t": 399.312,
+   "script": "A judge is scheduled to hear the case in January 2028.",
+   "asr": "A judge is scheduled to hear the case in January, twenty twenty eight.",
+   "wer": 0.273,
+   "diffs": [
+    [
+     "∅",
+     "twenty"
+    ],
+    [
+     "∅",
+     "twenty"
+    ],
+    [
+     "2028",
+     "eight"
+    ]
+   ]
+  },
+  {
+   "line": 75,
+   "t": 406.929,
+   "script": "Russ Faria spent about three and a half years locked up for a murder he was ultimately acquitted of.",
+   "asr": "Russ Freer spent about three and a half years locked up for a murder he was ultimately acquitted of.",
+   "wer": 0.053,
+   "diffs": [
+    [
+     "faria",
+     "freer"
+    ]
+   ]
+  },
+  {
+   "line": 76,
+   "t": 413.655,
+   "script": "Pam Hupp is serving life for killing Louis Gumpenberger. In Betsy's case, she is charged, not convicted, and presumed innocent.",
+   "asr": "Pam Hup is serving life for killing Louis dumpinberger in Betsy's case. She discharged, not convicted and presumed innocent.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "hupp",
+     "hup"
+    ],
+    [
+     "gumpenberger",
+     "dumpinberger"
+    ],
+    [
+     "is",
+     "∅"
+    ],
+    [
+     "charged",
+     "discharged"
+    ]
+   ]
+  },
+  {
+   "line": 77,
+   "t": 422.526,
+   "script": "Betsy Faria was 42 years old.",
+   "asr": "Betsy Ferrier was 42 years old.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "faria",
+     "ferrier"
+    ]
+   ]
+  },
+  {
+   "line": 78,
+   "t": 426.03,
+   "script": "Nearly fifteen years after her death, no court has decided who killed her.",
+   "asr": "Nearly 15 years after her death, no court has decided who killed her.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "fifteen",
+     "15"
+    ]
+   ]
+  }
+ ],
+ "note": "ASR errors are expected on proper names and numbers; mismatches are leads for a human listen, not proof of a narration defect."
+}

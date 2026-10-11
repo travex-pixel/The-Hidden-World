@@ -39,7 +39,7 @@ async function renderRange(f0, f1, out, k) {
   const done = new Promise((res, rej) => ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg exit ' + c))));
   const t0 = Date.now();
   for (let i = f0; i < f1; i++) {
-    const url = await page.evaluate(t => { window.DOC.frame(t); return window.DOC.jpeg(0.93); }, i / fps);
+    const url = await page.evaluate(async t => { await window.DOC.prepare(t); window.DOC.frame(t); return window.DOC.jpeg(0.93); }, i / fps);
     if (!ff.stdin.write(decode(url))) await new Promise(r => ff.stdin.once('drain', r));
     if ((i - f0) % 600 === 0 && i > f0) console.log(`[render w${k}] ${i - f0}/${f1 - f0} frames, ${((Date.now() - t0) / 1000).toFixed(0)}s`);
   }
@@ -53,7 +53,7 @@ if (opt('--stills')) {
   const browser = await chromium.launch({ args: ['--font-render-hinting=none', '--disable-gpu'] });
   const page = await openPage(browser);
   for (const t of times) {
-    const url = await page.evaluate(t => { window.DOC.frame(t); return document.getElementById('c').toDataURL('image/png'); }, t);
+    const url = await page.evaluate(async t => { await window.DOC.prepare(t); window.DOC.frame(t); return document.getElementById('c').toDataURL('image/png'); }, t);
     writeFileSync(join(dir, `still_${t.toFixed(2).padStart(7, '0')}.png`), decode(url));
   }
   await browser.close(); console.log(`[stills] ${times.length} -> ${dir}`);

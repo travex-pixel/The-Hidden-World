@@ -1,0 +1,227 @@
+{
+ "film": "betsy-faria",
+ "run": "output/true-crime-documentary/betsy-faria-20261011-run2",
+ "summary": "No third-party photographs, footage, recordings, news material or documents were used. Every visual is original procedural illustration, typography or public-domain map data; people appear only as featureless silhouettes.",
+ "templates": [
+  {
+   "template": "board",
+   "shots": 4,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "clock",
+   "shots": 2,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "date",
+   "shots": 7,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "doc",
+   "shots": 11,
+   "kind": "typography",
+   "origin": "original typography summarising a record (doc.js)",
+   "label": "ILLUSTRATIVE SUMMARY · NOT THE ORIGINAL DOCUMENT",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "endcard",
+   "shots": 1,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "kinetic",
+   "shots": 25,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "list",
+   "shots": 10,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "map",
+   "shots": 3,
+   "kind": "data",
+   "origin": "U.S. Census county boundaries (public domain) rendered by doc.js",
+   "label": "LOCATIONS APPROXIMATE",
+   "licence": "public domain data + original graphics",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "profile",
+   "shots": 10,
+   "kind": "procedural",
+   "origin": "generic featureless silhouette (doc.js)",
+   "label": "SILHOUETTE · NOT A LIKENESS",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "question",
+   "shots": 3,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "scene",
+   "shots": 27,
+   "kind": "procedural",
+   "origin": "original vector illustration drawn by documentary/renderer/doc.js",
+   "label": "RECONSTRUCTION · ILLUSTRATION",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "split",
+   "shots": 6,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "stat",
+   "shots": 6,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "timeline",
+   "shots": 6,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "title",
+   "shots": 8,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  },
+  {
+   "template": "verdict",
+   "shots": 6,
+   "kind": "typography",
+   "origin": "original typography / motion graphics (doc.js)",
+   "label": "",
+   "licence": "original work of this repository",
+   "authentic_material": false,
+   "ai_generated": false,
+   "rights": "cleared (original)"
+  }
+ ],
+ "other_assets": [
+  {
+   "asset": "Map geometry",
+   "source": "https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json",
+   "licence": "U.S. Census Bureau data, public domain",
+   "rights": "cleared"
+  },
+  {
+   "asset": "Narration voice en_US-ljspeech-high",
+   "source": "https://github.com/k2-fsa/sherpa-onnx/releases (Piper voice mirror)",
+   "licence": "Piper engine MIT; LJ Speech dataset public domain",
+   "rights": "cleared"
+  },
+  {
+   "asset": "Music and sound effects",
+   "source": "pipeline/audio.py (procedural NumPy synthesis)",
+   "licence": "original work",
+   "rights": "cleared"
+  },
+  {
+   "asset": "Fonts: Inter, Inter Display",
+   "source": "system fonts (rsms/inter)",
+   "licence": "SIL OFL 1.1",
+   "rights": "cleared"
+  },
+  {
+   "asset": "Font: Fraunces",
+   "source": "assets/fonts (see assets/fonts/LICENSE.md)",
+   "licence": "SIL OFL 1.1",
+   "rights": "cleared"
+  },
+  {
+   "asset": "Font: Courier 10 Pitch",
+   "source": "system font (Bitstream)",
+   "licence": "Bitstream/X11 free licence",
+   "rights": "cleared — confirm before commercial use"
+  },
+  {
+   "asset": "Thumbnails (3 concepts)",
+   "source": "documentary/renderer/thumb.html (original)",
+   "licence": "original work",
+   "rights": "cleared; thumbnail B withdrawn for legal-risk reasons (LR-08)"
+  }
+ ]
+}

@@ -1,0 +1,703 @@
+{
+ "film": "betsy-faria",
+ "findings": [
+  {
+   "id": "AUD-01",
+   "stage": "F",
+   "severity": "HIGH",
+   "claims": [
+    "C47",
+    "C11",
+    "C12",
+    "C13"
+   ],
+   "lines": [
+    76
+   ],
+   "problem": "In the rendered MP4 the pause between 'Pam Hupp is serving life for killing Louis Gumpenberger.' and 'In Betsy's case, she is charged…' is ~120 ms. Offline ASR fused them ('…killing Louis Gumpenberger in Betsy's case. She discharged, not convicted…'). In the film's most legally sensitive line, a listener could mishear it as a life sentence 'in Betsy's case'.",
+   "evidence": "audit/asr-audit.json row L76; measured pause 0.12 s at the sentence boundary (isolated TTS clip and final mix).",
+   "recommendation": "Re-voice L76 as two clearly separated sentences with a ≥0.4 s pause, Betsy's case first: 'In Betsy Faria's death, Pam Hupp is charged, not convicted, and presumed innocent. Separately, she is serving life for killing Louis Gumpenberger.' Engine fix (sentence_gap) added for future renders.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "AUD-02",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "ASR corpus WER 9% against the approved script; most errors are proper names (Hupp→Hup/Hut, Faria→Fourier/'for a') and number formatting. 'stabbed'→'stared' at L18.",
+   "evidence": "audit/asr-audit.json",
+   "recommendation": "Human listen to L18, L33, L46, L64 and L65 to confirm the names are intelligible at normal volume.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-01",
+   "stage": "D",
+   "severity": "MEDIUM",
+   "claims": [
+    "C60",
+    "C09"
+   ],
+   "lines": [
+    5
+   ],
+   "problem": "The title and title card call Russ Faria 'the wrong man'. That characterisation is favourable to him and supported by the acquittal and the National Registry of Exonerations listing, but an acquittal is not a judicial finding of innocence, and the phrase invites viewers to infer that another person is the 'right' one.",
+   "evidence": "C09 (acquitted 6 Nov 2015); C60; NRE listing.",
+   "recommendation": "Keep only if the film states the legal outcome precisely (it does: L75 'ultimately acquitted'). Have a lawyer confirm the title. Lower-risk alternative: 'Convicted, Then Acquitted: The Betsy Faria Case'.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-02",
+   "stage": "D",
+   "severity": "HIGH",
+   "claims": [
+    "C11",
+    "C14",
+    "C15",
+    "C18"
+   ],
+   "lines": [
+    3,
+    4
+   ],
+   "problem": "Cold open, 0:08–0:23: narration names the friend who drove Betsy home, says she is charged, then states she became the $150,000 beneficiary 'days before the killing'. Each statement is accurate, but together they read as motive and opportunity for a person who is presumed innocent. 'Pleaded not guilty' is shown on screen (profile card, 0:11–0:15) but is not narrated until 6:02.",
+   "evidence": "C11/C12 (charged, pleaded not guilty); C14 (beneficiary change established); people.json status CHARGED_PENDING.",
+   "recommendation": "Add to the cold-open narration: 'She has pleaded not guilty, and has not been tried.' Keep the on-screen status card. Legal review recommended (ongoing prosecution).",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-03",
+   "stage": "D",
+   "severity": "MEDIUM",
+   "claims": [
+    "C01",
+    "C02",
+    "C09"
+   ],
+   "lines": [
+    0
+   ],
+   "problem": "L00 'Life without parole, for murdering his wife.' states the sentence as being 'for murdering' without 'convicted of'. The acquittal follows 3 s later, but as a standalone clip (Short 01) or caption frame it asserts the act.",
+   "evidence": "C01 (historical conviction), C09 (acquittal).",
+   "recommendation": "Revise to: 'Convicted of his wife's murder. Sentenced to life without parole.' or 'Life without parole, for his wife's murder.'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-04",
+   "stage": "D",
+   "severity": "HIGH",
+   "claims": [
+    "C48",
+    "C49",
+    "C50"
+   ],
+   "lines": [
+    59,
+    60,
+    61,
+    62
+   ],
+   "problem": "The Shirley Neumann segment places Hupp's mother's death inside a film about killings. No one has been charged; the manner is 'undetermined'; the ME's office said the change 'is not to say it's intentional', and the film omits that. The segment is not needed for the Faria story and carries a high implication risk about a person who has not been charged in that death.",
+   "evidence": "C49 passage (NBC: 'That's not to say it's intentional'); people.json: Neumann matter NOT_CHARGED.",
+   "recommendation": "Preferred: remove L59–L62 in a revised cut. Minimum: add the ME's clarification and 'Hupp has not been charged in her mother's death.' Requires legal review.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-05",
+   "stage": "D",
+   "severity": "MEDIUM",
+   "claims": [
+    "C32"
+   ],
+   "lines": [
+    23,
+    24
+   ],
+   "problem": "The prosecution's slippers, friends-covering and play-acting claims against Russ and his (unnamed) friends are stated, attributed, but without the rebuttal: the retrial CSI said the slippers looked dipped, not stepped in, and saw no sign of a cleanup; no blood was found on Russ; the alibi witnesses were never charged and denied complicity.",
+   "evidence": "C32 contradictions (FOX 2 retrial day 1; Post-Dispatch 2014).",
+   "recommendation": "Add one line: 'At the retrial, the state's own crime-scene investigator said the slippers looked dipped in blood, not stepped in it — and his friends were never charged.'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-06",
+   "stage": "D",
+   "severity": "MEDIUM",
+   "claims": [
+    "C54"
+   ],
+   "lines": [
+    69
+   ],
+   "problem": "'The original prosecutor, Leah Askey, has denied any wrongdoing' names her and implies an accusation without saying what it is, or that a federal judge granted her summary judgment in Russ's civil suit (2019).",
+   "evidence": "C54 (KSDK interview); S-SJ2019 docket excerpt.",
+   "recommendation": "Either add context ('She was dismissed from Russ's civil lawsuit and has defended her prosecution as above board') or remove the line.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-07",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C56"
+   ],
+   "lines": [
+    71
+   ],
+   "problem": "'Prosecutors dispute that it clears her' paraphrases sources that say prosecutors 'denied that' — i.e. denied the defense's unidentified-male/person-of-interest characterisation.",
+   "evidence": "C56 (Missourinet 7 Sep 2024; FOX 2).",
+   "recommendation": "Revise to 'Prosecutors dispute the defense's account.'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-08",
+   "stage": "D",
+   "severity": "HIGH",
+   "claims": [
+    "C14"
+   ],
+   "lines": [],
+   "problem": "Packaging: title-options.md recommends thumbnail B ('$150,000 · DAYS BEFORE HER MURDER · Husband → Her friend') and alt title 2 for YouTube Test & Compare. Thumbnail B and the alt title 'The Friend Who Drove Her Home' imply Hupp's guilt in a pending case; viewers see thumbnails without context.",
+   "evidence": "G9-implied-accusation; people.json CHARGED_PENDING.",
+   "recommendation": "Withdraw thumbnail B and the 'Friend Who Drove Her Home' title from use. Use the selected verdict thumbnail (A) only.",
+   "needs_new_render": false,
+   "state": "resolved",
+   "raised": "2026-10-11",
+   "resolution": "title-options.md revised: thumbnail B and alt titles 3/5 withdrawn, 'right man or woman' rationale removed; title still flagged for legal review under LR-01."
+  },
+  {
+   "id": "LR-09",
+   "stage": "D",
+   "severity": "HIGH",
+   "claims": [
+    "C11",
+    "C34",
+    "C35",
+    "C36",
+    "C38"
+   ],
+   "lines": [],
+   "problem": "Standalone Shorts 02 (and 04) present the alternative-suspect case against Hupp without ever stating that she is charged only, pleaded not guilty and is presumed innocent (the full film states it at 6:02 and 7:02). Short 03 shows prosecution allegations in the Gumpenberger case without the plea/sentence outcome.",
+   "evidence": "Gate rules G9-short-without-status, G9-short-missing-outcome.",
+   "recommendation": "Do not publish Shorts 02, 03 and 04 as rendered. Re-cut with a closing status card (Hupp: charged in Betsy's death, pleaded not guilty, presumed innocent; Gumpenberger: Alford plea, life without parole) — Shorts are cheap ffmpeg re-cuts, no documentary re-render.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-10",
+   "stage": "D",
+   "severity": "MEDIUM",
+   "claims": [
+    "C11",
+    "C13"
+   ],
+   "lines": [],
+   "problem": "Ongoing criminal proceeding (bench trial set for January 2028). Coverage of a pending case carries contempt/prejudice and defamation considerations that vary by jurisdiction; this screen cannot assess them.",
+   "evidence": "C13.",
+   "recommendation": "Qualified legal review before publication; re-check case status the day you publish.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "AUD-03",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [
+    "C08"
+   ],
+   "lines": [
+    44
+   ],
+   "problem": "On-screen '12 jurors decide' is general legal knowledge with no source in the ledger.",
+   "evidence": "—",
+   "recommendation": "Add a source or drop the figure in a revision.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "AUD-04",
+   "stage": "F",
+   "severity": "MEDIUM",
+   "claims": [
+    "C35"
+   ],
+   "lines": [
+    28,
+    29
+   ],
+   "problem": "On-screen source tags credit 'St. Louis Post-Dispatch' for Hupp's changing accounts, but the ledger only holds that reporting second-hand (NRE and Oxygen relaying a Post-Dispatch report); the specific Post-Dispatch article was not identified.",
+   "evidence": "G6-source-tag.",
+   "recommendation": "Identify and read the Post-Dispatch article, or credit the sources actually held.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-01",
+   "stage": "C",
+   "severity": "CRITICAL",
+   "claims": [
+    "C33",
+    "C34",
+    "C35",
+    "C14"
+   ],
+   "lines": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+   ],
+   "problem": "Shorts plan suggests the title 'Why the first jury never heard about Pam Hupp' — false: Hupp testified at the 2013 trial (C33). Short 02 also states no legal status for an untried defendant.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Retitle ('Why the first jury never heard the defense's theory'), burn in a status card for the whole clip, or drop Short 02.",
+   "needs_new_render": false,
+   "state": "resolved",
+   "raised": "2026-10-11",
+   "duplicates": "LR-09",
+   "resolution": "2026-10-11: false Short title corrected in shorts-cutdowns.md; Short 02 video remains blocked under LR-09 (no status card)."
+  },
+  {
+   "id": "FC-02",
+   "stage": "C",
+   "severity": "HIGH",
+   "claims": [
+    "C01",
+    "C09"
+   ],
+   "lines": [
+    0
+   ],
+   "problem": "Opening line asserts he murdered his wife ('for murdering his wife') — also opens Short 01.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'Convicted of murdering his wife. Sentenced to life without parole.'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11",
+   "duplicates": "LR-03"
+  },
+  {
+   "id": "FC-03",
+   "stage": "C",
+   "severity": "HIGH",
+   "claims": [
+    "C11",
+    "C14",
+    "C20",
+    "C57"
+   ],
+   "lines": [
+    3,
+    4,
+    7
+   ],
+   "problem": "Cold open juxtaposes the charged friend with the beneficiary change, then asks why it took ten years 'to charge the last person known to have seen her alive' — presupposes she should have been charged; question two is never answered; not-guilty plea first narrated at 6:02.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Add 'She has pleaded not guilty' to L3; reword L7 ('why did it take nearly ten years for anyone else to be charged?') and answer it in Part 6, or cut it.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11",
+   "duplicates": "LR-02"
+  },
+  {
+   "id": "FC-04",
+   "stage": "C",
+   "severity": "HIGH",
+   "claims": [
+    "C19"
+   ],
+   "lines": [
+    13
+   ],
+   "problem": "'Hupp had insisted on giving her the ride' is contested: Betsy's contemporaneous text (St. Louis Magazine) says 'she offered and I accepted'; Hupp says Betsy asked.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Cut L13, or replace with the text-message account plus Hupp's account.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-05",
+   "stage": "C",
+   "severity": "HIGH",
+   "claims": [
+    "C32"
+   ],
+   "lines": [
+    23,
+    24
+   ],
+   "problem": "Prosecution theories from a trial ending in acquittal given without the retrial rebuttal; private alibi witnesses accused of lying without their denial.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Add the CSI rebuttal and that the friends denied it and were never charged.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11",
+   "duplicates": "LR-05"
+  },
+  {
+   "id": "FC-06",
+   "stage": "C",
+   "severity": "HIGH",
+   "claims": [
+    "C48",
+    "C49",
+    "C50"
+   ],
+   "lines": [
+    59,
+    60,
+    61,
+    62
+   ],
+   "problem": "Neumann segment placed right after the frame-up allegation implies involvement; ME's 'not to say it's intentional' omitted; reported court order barring mention of Neumann's death at a Hupp trial omitted.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Add the ME's clarification and 'No one has been charged', or cut the segment.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11",
+   "duplicates": "LR-04"
+  },
+  {
+   "id": "FC-07",
+   "stage": "C",
+   "severity": "HIGH",
+   "claims": [
+    "C14",
+    "C29"
+   ],
+   "lines": [],
+   "problem": "Test & Compare plan pairs alt title 2 with thumbnail B ('$150,000 / DAYS BEFORE HER MURDER', 'Her friend' circled) — reads as an accusation; thumbnail B's stylised form could be taken for the real document; risky alt titles still listed.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Withdraw thumbnail B and the risky alt titles; never pair title 2 with B.",
+   "needs_new_render": false,
+   "state": "resolved",
+   "raised": "2026-10-11",
+   "duplicates": "LR-08",
+   "resolution": "title-options.md revised: thumbnail B and alt titles 3/5 withdrawn, 'right man or woman' rationale removed; title still flagged for legal review under LR-01."
+  },
+  {
+   "id": "FC-08",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C36"
+   ],
+   "lines": [
+    30
+   ],
+   "problem": "The 7:04 p.m. call is consistent with Hupp's own account; the actual dispute (defense: near the house up to ~30 min after) is hinted at, not stated.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "State the defense's claim and that the jury never heard it.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-09",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C14",
+    "C34"
+   ],
+   "lines": [
+    25,
+    26
+   ],
+   "problem": "L25 followed by L26 implies the 2013 jury never heard of the beneficiary change; sources conflict (NRE: Hupp testified about it; KSDK: jury never saw it).",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Separate the lines or say exactly what was excluded.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-10",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C14",
+    "C15"
+   ],
+   "lines": [
+    4
+   ],
+   "problem": "Passive 'that friend had been made the sole beneficiary' obscures that Betsy made the change; 'persuaded' is only the prosecution's allegation.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'Betsy had named that friend the sole beneficiary…'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-11",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C43"
+   ],
+   "lines": [
+    53
+   ],
+   "problem": "Serial-number detail unverified (single secondary source says 'a bill' in her bedroom; narration says 'bills').",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Cut, or 'police said some bills ran in sequence with a bill found in her home'.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-12",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C54"
+   ],
+   "lines": [
+    69
+   ],
+   "problem": "Askey's denial lacks context (what she was accused of; dismissed from the civil suit, reportedly on immunity grounds).",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'Russ's lawsuit accused her of misconduct; a judge dismissed her from it on immunity grounds; she denies wrongdoing.'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11",
+   "duplicates": "LR-06"
+  },
+  {
+   "id": "FC-13",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C56"
+   ],
+   "lines": [
+    71
+   ],
+   "problem": "DNA wording ('dispute that it clears her') not supported as phrased; on-screen 'St. Louis Post-Dispatch (2024)' credit not in C56 evidence.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'Prosecutors dispute the defense's account'; credit Missourinet / FOX 2.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11",
+   "duplicates": "LR-07"
+  },
+  {
+   "id": "FC-14",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C13",
+    "C61"
+   ],
+   "lines": [
+    72,
+    73
+   ],
+   "problem": "Status out of date: Sept 2026 defense motion in limine (to be argued Oct 2026) not mentioned; ledger note had the dates backwards.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Mention the pending motion in the description now; in any revised cut; re-check for a ruling before publishing.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-15",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C43",
+    "C44",
+    "C46",
+    "C47"
+   ],
+   "lines": [],
+   "problem": "Short 03 ends on the frame-up allegation without the outcome.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Extend to 5:15 or add an outcome card.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11",
+   "duplicates": "LR-09"
+  },
+  {
+   "id": "FC-16",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "C60"
+   ],
+   "lines": [
+    5
+   ],
+   "problem": "title-options.md rationale ('who the right man or woman is') invites the inference that Hupp is the killer.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Remove that rationale; keep the title only with FC-03 fixed.",
+   "needs_new_render": false,
+   "state": "resolved",
+   "raised": "2026-10-11",
+   "duplicates": "LR-01",
+   "resolution": "title-options.md revised: thumbnail B and alt titles 3/5 withdrawn, 'right man or woman' rationale removed; title still flagged for legal review under LR-01."
+  },
+  {
+   "id": "FC-17",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [
+    "C34"
+   ],
+   "lines": [],
+   "problem": "Pinned comment states a guess about the jury's reasoning as fact.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'The defense argues one reason was…'",
+   "needs_new_render": false,
+   "state": "resolved",
+   "raised": "2026-10-11",
+   "resolution": "Pinned comment reworded in youtube-description.md."
+  },
+  {
+   "id": "FC-18",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [],
+   "lines": [
+    79
+   ],
+   "problem": "End card says 'Sources for every claim are listed in the description' — false for the current description (KMOV, FOX 2, Biography, Bustle, Linden, KBIA missing); some on-screen credits do not match the evidence.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "List every ledger source in the description (text-only fix makes the end card true); align on-screen credits in any revised cut.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-19",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [
+    "C45"
+   ],
+   "lines": [
+    55
+   ],
+   "problem": "'had reported' days earlier compresses the timing: the second woman came forward after the killing.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'Prosecutors said another woman had been approached the same way days earlier.'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-20",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [
+    "C17"
+   ],
+   "lines": [
+    37
+   ],
+   "problem": "On-screen 'the verdict was upheld on appeal' asserts a jury verdict that the ledger cannot confirm.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'The ruling was upheld on appeal.'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-21",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [
+    "C51"
+   ],
+   "lines": [
+    64
+   ],
+   "problem": "Settlement was with the sheriff's investigators/department (prosecutor and county already dismissed); some reports say $2.05M.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'…settled his civil-rights suit against sheriff's investigators…'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-22",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [
+    "C47"
+   ],
+   "lines": [
+    57
+   ],
+   "problem": "Plea also covered armed criminal action; her self-defense claim and later motion to vacate omitted.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Optional: 'She has said the shooting was self-defense.'",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-23",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [
+    "C53"
+   ],
+   "lines": [
+    68
+   ],
+   "problem": "Merkel's side missing (his attorney called the case 'laughable').",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "Add one clause with his response.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-24",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [
+    "C57",
+    "C23"
+   ],
+   "lines": [
+    7,
+    11
+   ],
+   "problem": "'Nearly ten years' = 9 years 6.5 months; 'Terminal cancer.' on screen rests on Wikipedia only.",
+   "evidence": "Independent adversarial review (separate context, search excerpts only).",
+   "recommendation": "'Nine and a half years'; 'Cancer that had spread'.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-11"
+  }
+ ]
+}

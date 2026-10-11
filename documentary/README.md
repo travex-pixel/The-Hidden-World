@@ -61,3 +61,30 @@ A full 7.5-minute render takes about 13 minutes with 4 workers on 4 vCPUs (rough
 - `profile` shots use a featureless silhouette labelled **"SILHOUETTE · NOT A LIKENESS"**.
 - Maps use public-domain U.S. Census county boundaries (`assets/mo_region_counties.json`) and are labelled "locations approximate".
 - `tests/test_documentary.py` fails if the Betsy Faria script ever claims or implies that Pam Hupp was convicted of Betsy's murder. It also fails if the presumption of innocence is missing, or if the prosecution's allegations are not attributed.
+
+## Release stages (A–G) and the publication gate
+
+| Stage | What | Where |
+|---|---|---|
+| A Research | sources with access records, chronology, claim ledger, legal status per person | `films/<id>/evidence/{sources,claims,people}.json` |
+| B Script | narration lines and on-screen shots reference claim IDs (`claims`) | `films/<id>/film.json` |
+| C Independent fact-check | separate-context adversarial review; findings recorded with claim/line IDs | `evidence/review-findings.json` (stage C) |
+| D Legal-risk review | per-person status, implication/juxtaposition review, packaging and Shorts | `evidence/review-findings.json` (stage D), gate rules G7–G9, G14 |
+| E Production | narration (per-sentence pauses), visuals, captions, audio, render | `python -m documentary.build` |
+| F Post-production audit | ASR transcript vs script, captions vs script, render vs approved shots, technical QA | `documentary.audit_asr`, `documentary.qa`, gate G12 |
+| G Release decision | technical / factual / legal-risk tracks reported separately; CLEARED only with no open CRITICAL/HIGH and recorded human sign-offs | `python -m documentary.gate <film> --run <run>` → `audit/release-decision.md` |
+
+A draft can always render. It is labelled **DRAFT — NOT CLEARED FOR PUBLICATION** until every blocking finding is resolved and a human fact-checker and a qualified legal reviewer have signed off in `evidence/approvals.json` (`signoffs: [{"stage": "factual", "human": true, ...}, {"stage": "legal", "human": true, ...}]`). Nothing in this pipeline uploads or publishes.
+
+Statuses: `VERIFIED` and `DIRECTLY SUPPORTED` need a source that was read in full (`access.level = full_text`). Excerpt-only evidence tops out at `CORROBORATED` (two independent outlets) or `REQUIRES REVIEW` (one). Repeats of one wire story or outlet share an `independence_group` and count once. Each claim's review fingerprint covers its narration text, so any script change invalidates its verification (G10).
+
+Change impact: `python -m documentary.claims impact <film> <run> C14` lists every line, shot, caption cue, timeline event, thumbnail, description mention and Short that depends on a claim.
+
+## Visual policy (all true-crime documentaries)
+
+Cinematic cartoon identity:
+- **People** are stylised characters from the series rig (`character` template) or featureless silhouettes. Real people are never photorealistic, and their characters are labelled "NOT A LIKENESS".
+- **Authentic photos** appear only as framed, attributed archival inserts, and only once their rights are cleared.
+- **AI or procedural imagery** is for environments and atmosphere only, and is labelled.
+
+The asset rules live in `documentary/assets.py`: provenance records, rights decisions (news, editorial, unknown and "fair use" material always goes to human review), quality checks, a style check and segment-aware selection.

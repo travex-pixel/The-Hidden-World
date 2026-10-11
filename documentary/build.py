@@ -67,6 +67,52 @@ def tts_text(film: dict, ln: dict) -> str:
     return t
 
 
+# ------------------------------------------------------------------ narration
+ABBREV = ("St.", "Mr.", "Mrs.", "Ms.", "Dr.", "Jr.", "Sr.", "No.", "U.S.", "p.m.", "a.m.", "vs.", "Mo.")
+
+
+def split_sentences(text: str) -> list[str]:
+    """Sentence split that leaves abbreviations ('St. Louis', '7:04 p.m. from') intact."""
+    protected = text
+    for k, ab in enumerate(ABBREV):
+        protected = protected.replace(ab, f"\x00{k}\x00")
+    parts = re.split(r'(?<=[.!?…"”])\s+(?=[A-Z0-9“"])', protected)
+    out = []
+    for p_ in parts:
+        for k, ab in enumerate(ABBREV):
+            p_ = p_.replace(f"\x00{k}\x00", ab)
+        if p_.strip():
+            out.append(p_.strip())
+    return out
+
+
+def narrate_line(film: dict, ln: dict, length_scale: float) -> tuple[Path, float, list[dict]]:
+    """Synthesise one narration line. With sentence_gap > 0 every sentence is voiced separately and joined with a
+    real pause (Piper otherwise runs sentences together, ~0.1 s), and exact per-sentence spans are returned for
+    captions. sentence_gap = 0 reproduces the single-clip behaviour used for the first Betsy Faria renders."""
+    voice, gap = film["voice"], float(ln.get("sentence_gap", film.get("sentence_gap", 0.38)))
+    sents = split_sentences(ln["say"])
+    if gap <= 0 or len(sents) < 2 or ln.get("tts"):
+        p = narrate_scene(voice, tts_text(film, ln), length_scale)
+        x, sr = read_wav(p)
+        return p, len(x) / sr, [{"text": ln["say"], "start": 0.0, "end": round(len(x) / sr, 3)}]
+    clips, spans, t, sr = [], [], 0.0, None
+    for k, sent in enumerate(sents):
+        x, sr_ = read_wav(narrate_scene(voice, tts_text(film, {"say": sent}), length_scale)); sr = sr or sr_
+        if k:
+            clips.append(np.zeros(int(gap * sr), np.float32)); t += gap
+        spans.append({"text": sent, "start": round(t, 3), "end": round(t + len(x) / sr, 3)})
+        clips.append(x.astype(np.float32)); t += len(x) / sr
+    import hashlib, wave
+    from pipeline.narrate import CACHE
+    out = CACHE / f"sent_{hashlib.sha1((voice + str(length_scale) + str(gap) + '|'.join(tts_text(film, {'say': s_}) for s_ in sents)).encode()).hexdigest()[:16]}.wav"
+    if not out.exists():
+        y = np.concatenate(clips)
+        with wave.open(str(out), "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes((np.clip(y, -1, 1) * 32767).astype(np.int16).tobytes())
+    return out, t, spans
+
+
 # ------------------------------------------------------------------ captions
 def chunk_caption(text: str, max_chars: int = 42, max_lines: int = 2) -> list[str]:
     """Split a sentence into caption cues of <= max_lines lines of <= max_chars, preferring punctuation breaks."""
@@ -125,14 +171,16 @@ def build_captions(timeline: list[dict]) -> list[dict]:
     for ln in timeline:
         if not ln.get("say"):
             continue
-        parts = chunk_caption(ln["say"])
-        a, b = ln["narration_at"], ln["narration_end"]
-        weights = [len(p.replace("\n", " ")) + 6 for p in parts]
-        tot = sum(weights); t = a
-        for p, w in zip(parts, weights):
-            d = (b - a) * w / tot
-            cues.append({"start": round(t, 3), "end": round(t + d, 3), "text": p})
-            t += d
+        spans = ln.get("sentences") or [{"text": ln["say"], "start": ln["narration_at"], "end": ln["narration_end"]}]
+        for sp in spans:
+            parts = chunk_caption(sp["text"])
+            a, b = sp["start"], sp["end"]
+            weights = [len(p.replace("\n", " ")) + 6 for p in parts]
+            tot = sum(weights); t = a
+            for p, w in zip(parts, weights):
+                d = (b - a) * w / tot
+                cues.append({"start": round(t, 3), "end": round(t + d, 3), "text": p})
+                t += d
     # never let a cue flash: extend short cues into following silence where possible
     for i, c in enumerate(cues):
         nxt = cues[i + 1]["start"] if i + 1 < len(cues) else c["end"] + 2
@@ -207,12 +255,13 @@ def main(argv=None) -> int:
     log(f"narration: {sum(1 for l in film['lines'] if l.get('say'))} lines with {voice}")
     for i, ln in enumerate(film["lines"]):
         if ln.get("say"):
-            p = narrate_scene(voice, tts_text(film, ln), ls * float(ln.get("speed", 1.0)))
-            x, sr = read_wav(p); nd = len(x) / sr
+            p, nd, spans = narrate_line(film, ln, ls * float(ln.get("speed", 1.0)))
             pre = float(ln.get("pre", 0.0))
             dur = max(float(ln.get("min", 0)), pre + nd + float(ln.get("pause", film.get("pause", 0.32))))
             timeline.append({"i": i, "start": round(t, 3), "end": round(t + dur, 3), "narration_at": round(t + pre, 3),
-                             "narration_end": round(t + pre + nd, 3), "say": ln["say"], "wav": str(p)})
+                             "narration_end": round(t + pre + nd, 3), "say": ln["say"], "wav": str(p),
+                             "sentences": ([{"text": ln["say"], "start": round(t + pre, 3), "end": round(t + pre + nd, 3)}] if len(spans) == 1 else
+                                           [{**sp, "start": round(t + pre + sp["start"], 3), "end": round(t + pre + sp["end"], 3)} for sp in spans])})
         else:
             dur = float(ln["silence"])
             timeline.append({"i": i, "start": round(t, 3), "end": round(t + dur, 3)})
@@ -265,7 +314,8 @@ def main(argv=None) -> int:
     audio.write_wav(out / "mix.wav", mixed)
 
     # 5. plan + edit manifest
-    plan = {"fps": FPS, "width": W, "height": H, "crf": int(film.get("crf", 20)), "preset": film.get("preset", "medium"), "shots": shots, "timeline": film.get("timeline", [])}
+    plan = {"fps": FPS, "width": W, "height": H, "crf": int(film.get("crf", 20)), "preset": film.get("preset", "medium"), "shots": shots, "timeline": film.get("timeline", []),
+            "cast": {cid: json.loads((ROOT / path).read_text()) for cid, path in film.get("cast", {}).items()}, "seed": int(film.get("seed", 1))}
     (out / "plan.json").write_text(json.dumps(plan))
     manifest = {"film": film["id"], "title": film["title"], "duration_s": total, "fps": FPS, "resolution": [W, H],
                 "visual_beats": len(shots), "chapters": chapters,
@@ -302,6 +352,19 @@ def main(argv=None) -> int:
     for k, v in rep["checks"].items():
         log(f"  {'PASS' if v else 'FAIL'} {k}")
     log(f"{'OK' if rep['all_passed'] else 'FAILED CHECKS'}: {final} ({rep['size_bytes'] / 1e6:.1f} MB, {rep['duration']}s)")
+
+    # 9. Stage G release decision (only when the film has an evidence ledger). A technically valid render is a DRAFT
+    #    until the claim ledger, legal-risk screen and human sign-offs say otherwise.
+    if (film_dir / "evidence" / "claims.json").exists():
+        import datetime as _dt
+        from documentary.gate import load_bundle, run_gate, to_markdown
+        g = run_gate(load_bundle(film_dir, out), _dt.date.today())
+        (out / "audit").mkdir(exist_ok=True)
+        (out / "audit" / "gate-report.json").write_text(json.dumps(g, indent=1, ensure_ascii=False))
+        (out / "audit" / "release-decision.md").write_text(to_markdown(g, film["title"]))
+        log(f"release gate: {g['decision']} ({', '.join(f'{k} {v}' for k, v in g['counts'].items() if v)})")
+    else:
+        log("release gate: no evidence ledger for this film -> DRAFT — NOT CLEARED FOR PUBLICATION")
     return 0 if rep["all_passed"] else 6
 
 

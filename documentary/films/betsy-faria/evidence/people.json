@@ -1,0 +1,338 @@
+{
+ "as_of": "2026-10-11",
+ "status_vocabulary": [
+  "SUSPECTED",
+  "INVESTIGATED",
+  "ARRESTED",
+  "CHARGED_PENDING",
+  "CONVICTED",
+  "CONVICTION_VACATED",
+  "ACQUITTED",
+  "NOT_CHARGED",
+  "VICTIM",
+  "OFFICIAL",
+  "CIVIL_ONLY"
+ ],
+ "people": [
+  {
+   "name": "Russ Faria",
+   "aliases": [
+    "Russ Faria",
+    "Russell Faria",
+    "Russ",
+    "the husband",
+    "her husband",
+    "Betsy's husband"
+   ],
+   "role": "husband of Betsy Faria",
+   "matters": [
+    {
+     "matter": "death of Betsy Faria",
+     "status": "ACQUITTED",
+     "checked": "2026-10-11",
+     "claims": [
+      "C01",
+      "C03",
+      "C09"
+     ],
+     "history": [
+      {
+       "date": "2012-01-04",
+       "event": "ARRESTED",
+       "detail": "charged with first-degree murder and armed criminal action"
+      },
+      {
+       "date": "2013-11-21",
+       "event": "CONVICTED",
+       "detail": "jury verdict"
+      },
+      {
+       "date": "2013-12",
+       "event": "SENTENCED",
+       "detail": "life without parole + 30 years"
+      },
+      {
+       "date": "2015-06-05",
+       "event": "CONVICTION_VACATED",
+       "detail": "new trial granted (Judge Ohmer)"
+      },
+      {
+       "date": "2015-11-06",
+       "event": "ACQUITTED",
+       "detail": "bench retrial, all charges"
+      }
+     ],
+     "notes": "Acquittal = not proven guilty. The National Registry of Exonerations lists him as exonerated; no court finding of factual innocence is recorded in the ledger."
+    },
+    {
+     "matter": "civil rights suit v. Lincoln County investigators",
+     "status": "CIVIL_ONLY",
+     "checked": "2026-10-11",
+     "claims": [
+      "C51"
+     ],
+     "history": [
+      {
+       "date": "2016-07",
+       "event": "FILED"
+      },
+      {
+       "date": "2020-03",
+       "event": "SETTLED",
+       "detail": "$2M (or $2.05M), no admission of wrongdoing"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Pam Hupp",
+   "aliases": [
+    "Pam Hupp",
+    "Pamela Hupp",
+    "Hupp",
+    "the friend",
+    "that friend",
+    "her friend",
+    "his wife's friend",
+    "the last person known to have seen her alive"
+   ],
+   "role": "friend of Betsy Faria; beneficiary of her life insurance",
+   "matters": [
+    {
+     "matter": "death of Betsy Faria",
+     "status": "CHARGED_PENDING",
+     "checked": "2026-10-11",
+     "claims": [
+      "C11",
+      "C12",
+      "C13"
+     ],
+     "history": [
+      {
+       "date": "2021-07-12",
+       "event": "CHARGED",
+       "detail": "first-degree murder, armed criminal action"
+      },
+      {
+       "date": "2021-07-27",
+       "event": "PLEADED_NOT_GUILTY"
+      },
+      {
+       "date": "2026-04-28",
+       "event": "JURY_WAIVED",
+       "detail": "death penalty withdrawn; bench trial set for January 2028"
+      },
+      {
+       "date": "2026-09",
+       "event": "MOTION_FILED",
+       "detail": "defense motion in limine to exclude Gumpenberger evidence; argument set for October 2026"
+      }
+     ],
+     "notes": "Presumed innocent. Has denied involvement."
+    },
+    {
+     "matter": "death of Louis Gumpenberger",
+     "status": "CONVICTED",
+     "checked": "2026-10-11",
+     "claims": [
+      "C39",
+      "C47"
+     ],
+     "history": [
+      {
+       "date": "2016-08",
+       "event": "CHARGED",
+       "detail": "first-degree murder"
+      },
+      {
+       "date": "2019-06",
+       "event": "ALFORD_PLEA",
+       "detail": "first-degree murder"
+      },
+      {
+       "date": "2019-08-12",
+       "event": "SENTENCED",
+       "detail": "life without parole"
+      }
+     ],
+     "notes": "Convicted by Alford plea: not an admission of guilt, but a conviction."
+    },
+    {
+     "matter": "death of Shirley Neumann",
+     "status": "NOT_CHARGED",
+     "checked": "2026-10-11",
+     "claims": [
+      "C48",
+      "C49",
+      "C50"
+     ],
+     "notes": "Manner of death 'undetermined' (2017). No charges reported. Any implication of responsibility is prohibited."
+    },
+    {
+     "matter": "daughters' insurance lawsuit",
+     "status": "CIVIL_ONLY",
+     "checked": "2026-10-11",
+     "claims": [
+      "C17"
+     ],
+     "notes": "Hupp prevailed; upheld on appeal."
+    }
+   ]
+  },
+  {
+   "name": "Mike Merkel",
+   "aliases": [
+    "Mike Merkel",
+    "Michael Merkel",
+    "Merkel"
+   ],
+   "role": "former Lincoln County sheriff's captain/investigator",
+   "matters": [
+    {
+     "matter": "perjury (Faria trial testimony)",
+     "status": "CHARGED_PENDING",
+     "checked": "2026-10-11",
+     "claims": [
+      "C53"
+     ],
+     "history": [
+      {
+       "date": "2025-06",
+       "event": "CHARGED",
+       "detail": "two felony counts of perjury"
+      }
+     ],
+     "notes": "Presumed innocent; trial reportedly set for 2027."
+    }
+   ]
+  },
+  {
+   "name": "Leah Askey",
+   "aliases": [
+    "Leah Askey",
+    "Leah Chaney",
+    "Askey",
+    "Chaney",
+    "the original prosecutor"
+   ],
+   "role": "former Lincoln County prosecuting attorney",
+   "matters": [
+    {
+     "matter": "civil rights suit (Faria v. McCarrick)",
+     "status": "CIVIL_ONLY",
+     "checked": "2026-10-11",
+     "claims": [
+      "C54"
+     ],
+     "history": [
+      {
+       "date": "2019-09-26",
+       "event": "SUMMARY_JUDGMENT_GRANTED",
+       "detail": "claims against her dismissed"
+      }
+     ],
+     "notes": "No criminal charge found in reporting (absence, not proof). Denies wrongdoing."
+    }
+   ]
+  },
+  {
+   "name": "Betsy Faria",
+   "aliases": [
+    "Betsy Faria",
+    "Betsy",
+    "Elizabeth Faria"
+   ],
+   "role": "victim",
+   "matters": [
+    {
+     "matter": "death of Betsy Faria",
+     "status": "VICTIM",
+     "checked": "2026-10-11"
+    }
+   ]
+  },
+  {
+   "name": "Louis Gumpenberger",
+   "aliases": [
+    "Louis Gumpenberger",
+    "Gumpenberger"
+   ],
+   "role": "victim",
+   "matters": [
+    {
+     "matter": "death of Louis Gumpenberger",
+     "status": "VICTIM",
+     "checked": "2026-10-11"
+    }
+   ]
+  },
+  {
+   "name": "Shirley Neumann",
+   "aliases": [
+    "Shirley Neumann",
+    "Neumann",
+    "Hupp's mother"
+   ],
+   "role": "Pam Hupp's mother (deceased)",
+   "matters": [
+    {
+     "matter": "death of Shirley Neumann",
+     "status": "VICTIM",
+     "checked": "2026-10-11"
+    }
+   ]
+  },
+  {
+   "name": "Russ's alibi witnesses",
+   "aliases": [
+    "his friends",
+    "four friends",
+    "four alibi witnesses"
+   ],
+   "role": "private individuals (not named)",
+   "matters": [
+    {
+     "matter": "death of Betsy Faria",
+     "status": "NOT_CHARGED",
+     "checked": "2026-10-11",
+     "claims": [
+      "C32"
+     ],
+     "notes": "Accused by the prosecution of lying; never charged; denied complicity."
+    }
+   ]
+  }
+ ],
+ "matters": {
+  "death of Betsy Faria": [
+   "Betsy",
+   "his wife",
+   "wife's murder",
+   "her murder",
+   "the murder",
+   "the killing",
+   "Betsy's case",
+   "Betsy Faria's death",
+   "Faria murder"
+  ],
+  "death of Louis Gumpenberger": [
+   "Gumpenberger",
+   "Louis",
+   "O'Fallon",
+   "$900",
+   "the note",
+   "intruder"
+  ],
+  "death of Shirley Neumann": [
+   "Neumann",
+   "her mother",
+   "Hupp's mother",
+   "balcony"
+  ],
+  "perjury (Faria trial testimony)": [
+   "perjury",
+   "testimony"
+  ]
+ }
+}

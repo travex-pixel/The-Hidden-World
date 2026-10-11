@@ -1,0 +1,136 @@
+Test run: 2026-10-11T13:06:44Z  base commit: f422b30 + working-tree changes
+Command: python3 -m unittest discover -s tests -v
+
+test_parse_and_decide (test_assets.Commons.test_parse_and_decide) ... ok
+test_attribution_required_but_missing (test_assets.Rights.test_attribution_required_but_missing) ... ok
+test_free_licence_with_attribution_clears (test_assets.Rights.test_free_licence_with_attribution_clears) ... ok
+test_missing_source_is_rejected (test_assets.Rights.test_missing_source_is_rejected) ... ok
+test_news_and_fair_use_never_auto_clear (test_assets.Rights.test_news_and_fair_use_never_auto_clear) ... ok
+test_photo_found_online_without_licence_is_not_assumed_free (test_assets.Rights.test_photo_found_online_without_licence_is_not_assumed_free) ... ok
+test_cleared_archival_insert_preferred (test_assets.Selection.test_cleared_archival_insert_preferred) ... ok
+test_no_character_falls_back_to_silhouette (test_assets.Selection.test_no_character_falls_back_to_silhouette) ... ok
+test_place_without_cleared_asset_uses_labelled_illustration (test_assets.Selection.test_place_without_cleared_asset_uses_labelled_illustration) ... ok
+test_unclear_rights_fall_back_to_stylised_character (test_assets.Selection.test_unclear_rights_fall_back_to_stylised_character) ... ok
+test_split_keeps_abbreviations (test_assets.Sentences.test_split_keeps_abbreviations) ... ok
+test_ai_environment_must_be_labelled (test_assets.Style.test_ai_environment_must_be_labelled) ... ok
+test_ai_image_cannot_pose_as_evidence (test_assets.Style.test_ai_image_cannot_pose_as_evidence) ... ok
+test_ai_image_of_real_person_rejected (test_assets.Style.test_ai_image_of_real_person_rejected) ... ok
+test_low_resolution_flagged (test_assets.Style.test_low_resolution_flagged) ... ok
+test_real_photo_only_as_framed_insert (test_assets.Style.test_real_photo_only_as_framed_insert) ... ok
+test_caption_text_reassembles_to_narration (test_documentary.Captions.test_caption_text_reassembles_to_narration) ... ok
+test_chunks_respect_line_limits (test_documentary.Captions.test_chunks_respect_line_limits) ... ok
+test_cues_are_ordered_and_inside_their_line (test_documentary.Captions.test_cues_are_ordered_and_inside_their_line) ... ok
+test_allegations_are_attributed (test_documentary.EditorialGuardrails.test_allegations_are_attributed) ... ok
+test_every_illustrated_scene_and_document_is_labelled (test_documentary.EditorialGuardrails.test_every_illustrated_scene_and_document_is_labelled) ... ok
+test_no_claim_of_conviction_for_betsys_murder (test_documentary.EditorialGuardrails.test_no_claim_of_conviction_for_betsys_murder) ... ok
+test_presumption_of_innocence_stated (test_documentary.EditorialGuardrails.test_presumption_of_innocence_stated) ... ok
+test_beat_density_supports_target (test_documentary.FilmData.test_beat_density_supports_target) ... ok
+test_every_shot_uses_a_known_template (test_documentary.FilmData.test_every_shot_uses_a_known_template) ... ok
+test_pronunciation_override_applied (test_documentary.FilmData.test_pronunciation_override_applied) ... ok
+test_spoken_text_has_no_symbols_the_voice_would_misread (test_documentary.FilmData.test_spoken_text_has_no_symbols_the_voice_would_misread) ... ok
+test_every_episode_validates_and_has_renderers (test_episode.AllEpisodes.test_every_episode_validates_and_has_renderers) ... ok
+test_mix_ducks_music_under_narration (test_episode.AudioSynthesis.test_mix_ducks_music_under_narration) ... ok
+test_music_reproducible_for_seed (test_episode.AudioSynthesis.test_music_reproducible_for_seed) ... ok
+test_sfx_and_music_are_finite_and_bounded (test_episode.AudioSynthesis.test_sfx_and_music_are_finite_and_bounded) ... ok
+test_sfx_reproducible_across_processes (test_episode.AudioSynthesis.test_sfx_reproducible_across_processes) ... ok
+test_auto_mode_falls_back_to_code_art_without_sheet (test_episode.Episode002.test_auto_mode_falls_back_to_code_art_without_sheet) ... ok
+test_conversion_maths (test_episode.Episode002.test_conversion_maths) ... ok
+test_on_screen_numbers_match_research (test_episode.Episode002.test_on_screen_numbers_match_research) ... ok
+test_quote_is_verbatim_and_attributed (test_episode.Episode002.test_quote_is_verbatim_and_attributed) ... ok
+test_bridge_facts_on_screen_match_data (test_episode.Episode003.test_bridge_facts_on_screen_match_data) ... ok
+test_debate_is_flagged_as_disputed (test_episode.Episode003.test_debate_is_flagged_as_disputed) ... ok
+test_metronomes_actually_synchronise_in_the_soundtrack (test_episode.Episode003.test_metronomes_actually_synchronise_in_the_soundtrack) ... ok
+test_art_mode_rejects_bad_shots (test_episode.EpisodeConfig.test_art_mode_rejects_bad_shots) ... ok
+test_art_panels_exist_and_cover_every_scene (test_episode.EpisodeConfig.test_art_panels_exist_and_cover_every_scene) ... ok
+test_art_text_corrections_match_episode_numbers (test_episode.EpisodeConfig.test_art_text_corrections_match_episode_numbers) ... ok
+test_assets_present (test_episode.EpisodeConfig.test_assets_present) ... ok
+test_caption_matches_narration_vocabulary (test_episode.EpisodeConfig.test_caption_matches_narration_vocabulary) ... ok
+test_captions_readable_on_phone (test_episode.EpisodeConfig.test_captions_readable_on_phone) ... ok
+test_established_claims_cite_real_sources (test_episode.EpisodeConfig.test_established_claims_cite_real_sources) ... ok
+test_every_scene_with_a_factual_claim_is_covered (test_episode.EpisodeConfig.test_every_scene_with_a_factual_claim_is_covered) ... ok
+test_financial_caption_numbers_match_data (test_episode.EpisodeConfig.test_financial_caption_numbers_match_data) ... ok
+test_financials_internally_consistent (test_episode.EpisodeConfig.test_financials_internally_consistent) ... ok
+test_fixed_seed_reproducible_decisions (test_episode.EpisodeConfig.test_fixed_seed_reproducible_decisions) ... ok
+test_minimum_three_sources_with_valid_urls (test_episode.EpisodeConfig.test_minimum_three_sources_with_valid_urls) ... ok
+test_missing_episode_gives_clear_error (test_episode.EpisodeConfig.test_missing_episode_gives_clear_error) ... ok
+test_required_scene_fields_enforced (test_episode.EpisodeConfig.test_required_scene_fields_enforced) ... ok
+test_scene_renderer_exists_for_every_scene (test_episode.EpisodeConfig.test_scene_renderer_exists_for_every_scene) ... ok
+test_seed_never_touches_facts (test_episode.EpisodeConfig.test_seed_never_touches_facts) ... ok
+test_timeline_duration_logic (test_episode.EpisodeConfig.test_timeline_duration_logic) ... ok
+test_unknown_claim_reference_rejected (test_episode.EpisodeConfig.test_unknown_claim_reference_rejected) ... ok
+test_valid (test_episode.EpisodeConfig.test_valid) ... ok
+test_even_grid_matches_hand_measured_boxes (test_episode.PanelGrid.test_even_grid_matches_hand_measured_boxes) ... /usr/lib/python3.13/unittest/case.py:606: ResourceWarning: unclosed file <_io.BufferedReader name='/home/user/The-Hidden-World/assets/episodes/ep001/source/panels_sheet.jpg'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_mp4_if_present (test_episode.RenderedOutput.test_mp4_if_present) ... ok
+test_captions_never_cover_a_face (test_episode.ThrillerCast.test_captions_never_cover_a_face) ... ok
+test_character_specs_complete_and_adult (test_episode.ThrillerCast.test_character_specs_complete_and_adult) ... ok
+test_dialogue_only_uses_cast_with_voices (test_episode.ThrillerCast.test_dialogue_only_uses_cast_with_voices) ... ok
+test_expressions_used_exist_in_rig (test_episode.ThrillerCast.test_expressions_used_exist_in_rig) ... ok
+test_lip_sync_and_line_timing (test_episode.ThrillerCast.test_lip_sync_and_line_timing) ... ok
+test_runtime_in_shorts_range (test_episode.ThrillerCast.test_runtime_in_shorts_range) ... ok
+test_conflicting_sources_warn_and_contradicted_facts_become_disputed (test_gate.EvidenceRules.test_conflicting_sources_warn_and_contradicted_facts_become_disputed) ... ok
+test_fabricated_citation_is_critical (test_gate.EvidenceRules.test_fabricated_citation_is_critical) ... ok
+test_inaccessible_source_cannot_be_verified (test_gate.EvidenceRules.test_inaccessible_source_cannot_be_verified) ... ok
+test_material_claim_without_evidence_record_blocks (test_gate.EvidenceRules.test_material_claim_without_evidence_record_blocks) ... ok
+test_material_script_change_invalidates_verification (test_gate.EvidenceRules.test_material_script_change_invalidates_verification) ... ok
+test_outdated_time_sensitive_status (test_gate.EvidenceRules.test_outdated_time_sensitive_status) ... ok
+test_passage_must_contain_the_claims_figures (test_gate.EvidenceRules.test_passage_must_contain_the_claims_figures) ... ok
+test_unsupported_source_to_claim_relationship_triggers_review (test_gate.EvidenceRules.test_unsupported_source_to_claim_relationship_triggers_review) ... ok
+test_accusation_in_uncharged_matter (test_gate.LegalLanguage.test_accusation_in_uncharged_matter) ... ok
+test_acquittal_not_turned_into_conviction (test_gate.LegalLanguage.test_acquittal_not_turned_into_conviction) ... ok
+test_disputed_allegation_cannot_silently_become_fact (test_gate.LegalLanguage.test_disputed_allegation_cannot_silently_become_fact) ... ok
+test_false_accusation_against_charged_person (test_gate.LegalLanguage.test_false_accusation_against_charged_person) ... ok
+test_overturned_conviction_not_presented_as_current (test_gate.LegalLanguage.test_overturned_conviction_not_presented_as_current) ... ok
+test_pending_charge_described_as_conviction (test_gate.LegalLanguage.test_pending_charge_described_as_conviction) ... ok
+test_precise_legal_status_passes (test_gate.LegalLanguage.test_precise_legal_status_passes) ... ok
+test_undated_past_conviction_is_flagged (test_gate.LegalLanguage.test_undated_past_conviction_is_flagged) ... ok
+test_accusatory_title_is_flagged (test_gate.OutputsAndPackaging.test_accusatory_title_is_flagged) ... ok
+test_captions_must_match_approved_script (test_gate.OutputsAndPackaging.test_captions_must_match_approved_script) ... ok
+test_every_finding_is_actionable (test_gate.OutputsAndPackaging.test_every_finding_is_actionable) ... ok
+test_misleading_thumbnail_is_flagged (test_gate.OutputsAndPackaging.test_misleading_thumbnail_is_flagged) ... ok
+test_onscreen_source_credit_must_match_cited_publisher (test_gate.OutputsAndPackaging.test_onscreen_source_credit_must_match_cited_publisher) ... ok
+test_open_critical_review_finding_blocks_clearance (test_gate.OutputsAndPackaging.test_open_critical_review_finding_blocks_clearance) ... ok
+test_short_without_legal_status_context (test_gate.OutputsAndPackaging.test_short_without_legal_status_context) ... ok
+test_unproven_depicted_act_is_critical (test_gate.OutputsAndPackaging.test_unproven_depicted_act_is_critical) ... ok
+test_unsupported_onscreen_fact (test_gate.OutputsAndPackaging.test_unsupported_onscreen_fact) ... ok
+test_clean_film_has_no_blocking_findings (test_gate.PositiveControl.test_clean_film_has_no_blocking_findings) ... ok
+test_clean_film_with_technical_pass_and_human_signoff_is_cleared (test_gate.PositiveControl.test_clean_film_with_technical_pass_and_human_signoff_is_cleared) ... ok
+test_without_human_signoff_it_is_never_cleared (test_gate.PositiveControl.test_without_human_signoff_it_is_never_cleared) ... ok
+test_every_narration_line_is_evidenced (test_gate.RealLedger.test_every_narration_line_is_evidenced) ... ok
+test_hupp_status_is_charged_pending_in_betsy_matter (test_gate.RealLedger.test_hupp_status_is_charged_pending_in_betsy_matter) ... ok
+test_no_claim_marked_verified_without_full_text (test_gate.RealLedger.test_no_claim_marked_verified_without_full_text) ... ok
+test_no_critical_legal_language_and_not_cleared (test_gate.RealLedger.test_no_critical_legal_language_and_not_cleared) ... ok
+test_open_review_findings_are_reported (test_gate.RealLedger.test_open_review_findings_are_reported) ... ok
+test_fair_play_clue (test_series.Continuity.test_fair_play_clue) ... ok
+test_nine_fifteen (test_series.Continuity.test_nine_fifteen) ... ok
+test_reveals_are_not_spoiled_early (test_series.Continuity.test_reveals_are_not_spoiled_early) ... ok
+test_the_linden (test_series.Continuity.test_the_linden) ... ok
+test_the_ring (test_series.Continuity.test_the_ring) ... ok
+test_theo_wardrobe (test_series.Continuity.test_theo_wardrobe) ... ok
+test_unknown_sender_styling (test_series.Continuity.test_unknown_sender_styling) ... ok
+test_verified_entries_are_complete (test_series.Manifest.test_verified_entries_are_complete) ... ok
+test_cast_is_the_shared_cast (test_series.SeriesStructure.test_cast_is_the_shared_cast) ... ok
+test_every_episode_ends_with_a_card (test_series.SeriesStructure.test_every_episode_ends_with_a_card) ... ok
+test_every_episode_hooks_immediately (test_series.SeriesStructure.test_every_episode_hooks_immediately) ... ok
+test_five_episodes_named_correctly (test_series.SeriesStructure.test_five_episodes_named_correctly) ... ok
+test_metadata (test_series.Uploader.test_metadata) ... ok
+test_missing_secrets_fail_cleanly_without_echoing (test_series.Uploader.test_missing_secrets_fail_cleanly_without_echoing) ... ok
+test_public_requires_confirmation (test_series.Uploader.test_public_requires_confirmation) ... ok
+
+----------------------------------------------------------------------
+Ran 114 tests in 1.980s
+
+OK
+
+Shorts episode schemas:
+  schema OK ep001-cash-vs-profit
+  schema OK ep002-mars-units
+  schema OK ep003-metronome-bridge
+  schema OK ep004-compliment-deadline
+  schema OK s1e01-you-didnt-win
+  schema OK s1e02-the-lie
+  schema OK s1e03-the-window-table
+  schema OK s1e04-the-sender
+  schema OK s1e05-the-fifth-message

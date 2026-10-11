@@ -1,5 +1,17 @@
 # Shorts repurposing package
 
+> **Revised 11 Oct 2026 after the evidence and legal-risk audit.** The original is in `audit/superseded/` and git commit f422b30. Release status: **DRAFT — NOT CLEARED FOR PUBLICATION** (see `audit/release-decision.md`). Do not upload until the open items in `audit/human-review-items.md` are resolved.
+
+**Audit result: none of the five rendered Shorts is cleared.** Re-cutting them is a cheap ffmpeg job (no documentary re-render), but it waits for your approval.
+
+| Short | Blocking issue | Needed |
+|---|---|---|
+| 01 | Opens on "Life without parole, for murdering his wife" without "convicted" (FC-02 / LR-03); cold-open juxtaposition (LR-02) | Revised opening line requires a new voice line; or start the clip at 0:03.6 and add a status card |
+| 02 | Lays out the case against an untried defendant with no legal-status statement (FC-01 / LR-09, gate G9) | Burned-in card for the whole clip: "Pam Hupp has pleaded not guilty in Betsy Faria's death and is presumed innocent"; corrected title |
+| 03 | Prosecution allegations with no outcome (FC-15 / gate G9) | Extend to 5:15.0 (Alford plea + sentence) or add an outcome card |
+| 04 | Mentions Hupp with no legal-status context (gate G9) | Status card |
+| 05 | Contains L76, where the short pause can be misheard (AUD-01) | Needs the re-voiced line (new render) |
+
 All timestamps refer to `documentary.mp4` (7:17, v2). Each cut-down is a self-contained clip with its own payoff, and each ends on the same note so the long-form link can carry it.
 
 **Vertical 9:16 reframing plan (all five).** The documentary's graphics are composed for 16:9, and a centre crop would cut off headline text. So each Short is framed like this:
@@ -34,7 +46,7 @@ This keeps every evidence graphic legible and puts nothing over the source tags 
 - **Opening line:** "But the jury never heard the defense's case about someone else."
 - **Payoff:** It escalates through the beneficiary change, the changing account and the phone records. It lands on the judge barring the defense from arguing another suspect under the "direct connection" rule.
 - **Fairness note:** The on-screen "as reported" labels stay visible. Hupp is presumed innocent in this case.
-- **Suggested Short title:** "Why the first jury never heard about Pam Hupp"
+- **Suggested Short title (corrected):** "Why the first jury never heard the defense's theory". The earlier title was false: Hupp testified at that trial (FC-01).
 
 ### 3. "The $900 note"
 - **Range:** 4:08.4 → 5:02.8 (Part 5, from the 911 call to "frame Russ Faria all over again")

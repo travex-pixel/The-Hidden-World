@@ -692,6 +692,24 @@ SCENES.gavel = (s, lt, d, p) => {
   if (lt > hit && lt < hit + 0.12) { ctx.fillStyle = 'rgba(255,255,255,0.12)'; ctx.fillRect(0, 0, W, H); }
 };
 
+// ---- stylised characters from the series rig (renderer/cast.js), rasterised per frame in DOC.prepare()
+const CHAR_DEFS = `<defs><filter id="dof" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+  <filter id="silhouette"><feColorMatrix type="matrix" values="0 0 0 0 0.05  0 0 0 0 0.04  0 0 0 0 0.06  0 0 0 1 0"/></filter>
+  <linearGradient id="phoneglow" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#7fd8ff" stop-opacity="0.35"/><stop offset="0.5" stop-color="#7fd8ff" stop-opacity="0.08"/><stop offset="1" stop-color="#7fd8ff" stop-opacity="0"/></linearGradient></defs>`;
+function characterSVG(s, lt) {
+  const HW = window.HW; if (!HW || !HW.cast) throw new Error('character template needs renderer/engine.js + cast.js');
+  HW.state = HW.state && HW.state.__doc ? HW.state : { __doc: true, cast: PLAN.cast || {}, seed: PLAN.seed || 1, timeline: [], ep: {} };
+  const actors = (s.actors || []).map(a => HW.cast.actor({ scale: 1, x: 0, y: 0, ...a }, { t: lt, sceneStart: s.start, lines: [] }, { rim: a.rim || s.rim || '#7fb3e6' })).join('');
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-960 -560 1920 1080" width="1920" height="1080">${CHAR_DEFS}${actors}</svg>`;
+}
+T.character = (s, lt, d) => {
+  const env = SCENES[s.env || 'courtroom']; ctx.save(); cam(lt, d, { z0: s.z0 ?? 1.0, z1: s.z1 ?? 1.06, fy: H * 0.45 });
+  if (env) env(s, lt, d, clamp(lt / d)); if (s.dim) { ctx.fillStyle = `rgba(0,0,0,${s.dim})`; ctx.fillRect(-100, -100, W + 200, H + 200); }
+  const img = cache.charFrame; if (img) ctx.drawImage(img, 0, 0, W, H);
+  ctx.restore();
+  if (s.caption) { ctx.save(); setText(60, 900, 'display', C.ink, 'left', 'alphabetic', -1); ctx.shadowColor = 'rgba(0,0,0,0.8)'; ctx.shadowBlur = 20; ctx.fillText(s.caption, 120, H - 170); ctx.restore(); }
+};
+
 T.endcard = (s, lt, d) => {
   bgBase(lt, d, { fogA: 0.5 });
   ctx.save(); cam(lt, d, { z0: 1.0, z1: 1.03 });
@@ -715,7 +733,8 @@ function overlays(s, lt, d, t) {
     setText(20, 800, 'sans', 'rgba(243,240,232,0.8)', 'left', 'middle', 4); ctx.fillText(s.chapterTag.toUpperCase(), 96, 69); ctx.restore();
   }
   const lbl = s.label ?? (s.type === 'scene' ? 'RECONSTRUCTION · ILLUSTRATION' : s.type === 'doc' ? 'ILLUSTRATIVE SUMMARY · NOT THE ORIGINAL DOCUMENT' : null);
-  if (lbl) cornerLabel(lbl);
+  const lbl2 = s.type === 'character' ? (s.label ?? 'ILLUSTRATION · STYLISED CHARACTER · NOT A LIKENESS') : lbl;
+  if (lbl2) cornerLabel(lbl2);
   if (s.source) sourceTag(s.source);
 }
 function transitions(s, lt, d) {
@@ -750,6 +769,13 @@ const DOC = {
     return s.i;
   },
   jpeg(q = 0.92) { return cv.toDataURL('image/jpeg', q); },
+  // Async work a frame needs before drawing (only the character template uses it; other shots: no-op).
+  async prepare(t) {
+    const s = findShot(t); cache.charFrame = null;
+    if (s.type !== 'character') return;
+    const svg = characterSVG(s, t - s.start); const img = new Image();
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); await img.decode(); cache.charFrame = img;
+  },
 };
 window.DOC = DOC;
 })();
