@@ -18,7 +18,10 @@
   "max_shot_size_share": 0.33,
   "ok": true
  },
- "production_status": {},
+ "production_status": {
+  "series_manifest": "series/true-crime-cinematic/production_manifest.json",
+  "video": "true_crime_04_louvre_heist.mp4"
+ },
  "shots": [
   {
    "id": "s01_hook",
@@ -2841,91 +2844,96 @@
    "start": 66.75,
    "duration": 5.25,
    "narration": [
-    "One year on, the seven other pieces are still missing.",
+    "Almost a year on, the seven other pieces are still missing.",
     "So where are they?"
    ],
    "caption_timings": [
     {
      "line": 0,
      "start": 67.0,
-     "end": 69.937,
+     "end": 70.1,
      "words": [
       {
-       "w": "One",
-       "start": 67.046,
-       "end": 67.232
-      },
-      {
-       "w": "year",
-       "start": 67.255,
+       "w": "Almost",
+       "start": 67.035,
        "end": 67.383
       },
       {
+       "w": "a",
+       "start": 67.418,
+       "end": 67.453
+      },
+      {
+       "w": "year",
+       "start": 67.488,
+       "end": 67.627
+      },
+      {
        "w": "on,",
-       "start": 67.453,
-       "end": 67.697
+       "start": 67.697,
+       "end": 67.894
       },
       {
        "w": "the",
-       "start": 68.033,
-       "end": 68.115
+       "start": 68.254,
+       "end": 68.335
       },
       {
        "w": "seven",
-       "start": 68.173,
-       "end": 68.428
+       "start": 68.393,
+       "end": 68.637
       },
       {
        "w": "other",
-       "start": 68.463,
-       "end": 68.614
+       "start": 68.66,
+       "end": 68.823
       },
       {
        "w": "pieces",
-       "start": 68.672,
-       "end": 69.09
+       "start": 68.869,
+       "end": 69.252
       },
       {
        "w": "are",
-       "start": 69.136,
-       "end": 69.218
+       "start": 69.276,
+       "end": 69.368
       },
       {
        "w": "still",
-       "start": 69.252,
-       "end": 69.438
+       "start": 69.392,
+       "end": 69.647
       },
       {
        "w": "missing.",
-       "start": 69.485,
-       "end": 69.856
+       "start": 69.67,
+       "end": 70.042
       }
      ]
     },
     {
      "line": 1,
-     "start": 70.487,
-     "end": 71.265,
+     "start": 70.65,
+     "end": 71.428,
      "words": [
       {
        "w": "So",
-       "start": 70.533,
-       "end": 70.684
+       "start": 70.696,
+       "end": 70.847
       },
       {
        "w": "where",
-       "start": 70.708,
-       "end": 70.835
+       "start": 70.871,
+       "end": 70.998
       },
       {
        "w": "are",
-       "start": 70.859,
-       "end": 70.94
+       "start": 71.022,
+       "end": 71.103
       },
       {
        "w": "they?",
-       "start": 70.975,
-       "end": 71.149
+       "start": 71.138,
+       "end": 71.312
       }
      ]
     }
@@ -2951,7 +2959,7 @@
      "start_expr": "neutral",
      "actions": [
       {
-       "at": 3.96,
+       "at": 4.12,
        "pose": "point_up"
       }
      ],
@@ -2959,7 +2967,7 @@
       "from": 1180,
       "to": 860,
       "at": 0.1,
-      "dur": 3.436999999999995
+      "dur": 3.600000000000006
      },
      "silhouette": "cool"
     }
@@ -3010,7 +3018,7 @@
      },
      {
       "name": "sub",
-      "at": 70.975,
+      "at": 71.138,
       "gain": 0.6,
       "word": [
        1,

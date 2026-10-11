@@ -171,7 +171,7 @@ def build(h):
                 "How did thieves take the French crown jewels from the Louvre in minutes, and where are they now?",
                 figures, scenes, claims, sources, "THE LOUVRE HEIST · 2025-2026", bpm=80)
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0,
-                                  pronounce={"Eugénie's": "Yoozhaynee's", "des": "day", "Cars": "Car", "$200,000": "two hundred thousand dollars"})
+                                  pronounce={"Eugénie's": "Yoozhaynee's", "des": "day", "Cars": "Car", "$200,000": "two hundred thousand dollars", "CCTV": "C C T V"})
     ep["score"] = {"root_hz": 146.83, "bpm": 80,
                    "hits": [{"scene": "s04_haul", "word": [1, 2], "at": -0.05, "gain": 0.45},
                             {"scene": "s08_password", "word": [1, 10], "at": -0.05, "gain": 0.4}],

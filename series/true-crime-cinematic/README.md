@@ -5,6 +5,19 @@
 | 01 | [`output/true_crime_01.mp4`](output/true_crime_01.mp4) | Azaria Chamberlain, Uluru, Australia (1980–2012) | verified: 84.3 s, 31.0 MB, all checks (re-mixed Oct 2026) |
 | 02 | [`output/true_crime_02.mp4`](output/true_crime_02.mp4) | The Unabomber, USA (1978–1998) | verified: 87.6 s, 31.0 MB, all checks (re-mixed Oct 2026) |
 | 03 | [`output/true_crime_d4vd_case.mp4`](output/true_crime_d4vd_case.mp4) | The D4vd case, Los Angeles (2025–2026, **ongoing**) | see `production_manifest.json` |
+| 04 | [`output/true_crime_04_louvre_heist.mp4`](output/true_crime_04_louvre_heist.mp4) | The Louvre crown-jewels heist, Paris (2025–2026, **ongoing**: anonymous figures) | see `production_manifest.json` |
+| 05 | [`output/true_crime_05_db_cooper.mp4`](output/true_crime_05_db_cooper.mp4) | D.B. Cooper, the hijacking of Flight 305 (1971, unsolved) | see `production_manifest.json` |
+| 06 | [`output/true_crime_06_whitey_bulger.mp4`](output/true_crime_06_whitey_bulger.mp4) | Whitey Bulger and the stray-cat tip (1994–2011) | see `production_manifest.json` |
+| 07 | [`output/true_crime_07_gilgo_beach.mp4`](output/true_crime_07_gilgo_beach.mp4) | Gilgo Beach and the pizza crust (2010–2026) | see `production_manifest.json` |
+| 08 | [`output/true_crime_08_lizzie_borden.mp4`](output/true_crime_08_lizzie_borden.mp4) | Lizzie Borden and the burned dress (1892–1893) | see `production_manifest.json` |
+| 09 | [`output/true_crime_09_agatha_christie.mp4`](output/true_crime_09_agatha_christie.mp4) | Agatha Christie's 11-day disappearance (1926) | see `production_manifest.json` |
+
+Episodes 04–09 are a "retention" batch. Each has the following:
+- A hook as its first line, with a new reveal every few seconds.
+- At least two verified **FUN FACT** cards (overlay `funfact`, each fact backed by two sources).
+- An end-of-video **NEXT CASE** card (overlay `nextcase`) that teases the following episode.
+
+Instagram captions and the posting order are in [`INSTAGRAM_CAPTIONS.md`](INSTAGRAM_CAPTIONS.md).
 
 These are re-made versions of Case Files 01 and 02. The narration, claims and sources are the same reviewed, sourced script as `series/true-crime/`; a test enforces this word for word. The difference is the picture. Every shot is now staged with **illustrated characters acting out the narration** in layered, lit environments, instead of object and text cards. The original files in `series/true-crime/output/` are untouched.
 
@@ -84,7 +97,10 @@ A file reaches `output/` **only if every check passes**. Every stage is appended
 2. **Script:** add a builder in `series/true-crime/make_episodes.py` (narration lines, claims, sources). Then add a cinematic builder in `series/true-crime-cinematic/make_episodes.py`, using `S(...)` per shot, `fw(line, word, ...)` for sound effects on spoken words, and a `figures` list.
 3. **Shots:** write `renderer/scenes/tcv0N-<slug>.js`, one `E.cine.shot` per scene type. Pick a set from `renderer/sets.js` and characters from `characters/figures/` (add a JSON for a new person: generic, or *"illustrated representation, not a likeness"*). Key actions to words with `WT(ctx, line, word)`.
 4. **Register:** add the episode to `series.json`, then run `python series/true-crime-cinematic/produce.py N`.
-5. **Preview without rendering:** run `python -m pipeline.build <id> --quality preview --plan-only` and then `node pipeline/stills.mjs out/<id>/plan.json /tmp/stills 3 10 20`.
+5. **Episodes from 04 on:** put the builder in its own file, `slate/<episode-id>.py` (`def build(h)`, using the helpers in `make_episodes.H`). Put any new environments in the episode's scene file with `E.registerSets({...})`.
+6. **Catch shot-code errors in seconds:** run `node pipeline/dryrun.mjs out/<id>/plan.json`, which evaluates every frame without rendering.
+7. **Spoken numbers:** Piper reads "$200,000" as "dollar two, hundred thousand" and swallows "CCTV". Give every amount and acronym a spoken form in `narrator_profile.pronounce`; a test checks dollar amounts.
+8. **Preview without rendering:** run `python -m pipeline.build <id> --quality preview --plan-only` and then `node pipeline/stills.mjs out/<id>/plan.json /tmp/stills 3 10 20`.
 
 ## Watch or upload on Android
 1. On your phone, open the repository on github.com in Chrome. Switch to branch `ccr-67645e21-nwgkaq`, open `series/true-crime-cinematic/output/`, tap the MP4, then use **⋯ → Download** (or "View raw" and save). If the files were sent to you in chat, save them from there. They play in Google Photos, Files or VLC.
