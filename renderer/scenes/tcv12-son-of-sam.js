@@ -24,7 +24,7 @@
   const wash = (cx, cy, rx, ry, col, op) => E.cine.wash(cx, cy, rx, ry, col, op);
   const shade = (c, k) => E.fig.shade(c, k);
   const LIKENESS = 'ILLUSTRATION · NOT A LIKENESS';
-  const STREET_TAG = 'ILLUSTRATION · GENERIC STREET, NOT THE CRIME SCENE';
+  const STREET_TAG = 'ILLUSTRATION · NOT THE REAL STREET';
   const CREAM = '#e6d9b0';
 
   // ---------- the hero object: a generic parking ticket (our own design, no agency name, seal or real form layout)
@@ -78,15 +78,19 @@
       `<circle cx="0" cy="-196" r="36" fill="${cap}" stroke="#000" stroke-width="6"/><rect x="-72" y="-322" width="144" height="28" rx="8" fill="${cap}" stroke="#000" stroke-width="6"/>` +
       `<path d="M-58 -322 Q -58 -396 0 -400 Q 58 -396 58 -322 Z" fill="${cap}" stroke="#000" stroke-width="6"/><rect x="-15" y="-428" width="30" height="32" rx="4" fill="${shade(cap, 0.7)}" stroke="#000" stroke-width="5"/></g>`;
   }
-  // a walking dog (dark silhouette); feet at (x, y); dir 1 = facing right
+  // a walking dog (dark silhouette, ~340 tall at s = 1); feet at (x, y); dir 1 = facing right
   function dog(x, y, s, t, dir = 1, walking = true) {
-    const ph = walking ? t * 10 : 0, bob = walking ? -Math.abs(Math.sin(ph)) * 6 : 0;
-    const leg = (x0, a) => { const an = (walking ? Math.sin(ph + a) * 26 : 0) * Math.PI / 180; return `<path d="M${x0} -150 L${f1(x0 + Math.sin(an) * 150)} ${f1(-150 + Math.cos(an) * 150)}" stroke="#16120f" stroke-width="20" stroke-linecap="round"/>`; };
-    return `<g transform="translate(${f1(x)} ${f1(y + bob)}) scale(${f1(dir * s * 1000) / 1000} ${f1(s * 1000) / 1000})"><ellipse cx="0" cy="${f1(4 - bob)}" rx="140" ry="16" fill="#000" opacity="0.45"/>` +
-      leg(-70, 0) + leg(70, Math.PI) + leg(-56, Math.PI) + leg(84, 0) +
-      `<ellipse cx="6" cy="-178" rx="112" ry="48" fill="#1c1814" stroke="#000" stroke-width="5"/><path d="M84 -196 L128 -262" stroke="#1c1814" stroke-width="40" stroke-linecap="round"/>` +
-      `<ellipse cx="146" cy="-272" rx="46" ry="34" fill="#1c1814" stroke="#000" stroke-width="5"/><path d="M176 -276 L214 -262 L180 -250 Z" fill="#1c1814"/><path d="M126 -296 L118 -340 L146 -302 Z" fill="#0e0b09"/>` +
-      `<path d="M-100 -190 Q -150 -236 ${f1(-160 + 10 * Math.sin(t * 14))} -268" stroke="#1c1814" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M110 -230 L120 -214" stroke="#c8312b" stroke-width="10"/></g>`;
+    const ph = walking ? t * 10 : 0, bob = walking ? -Math.abs(Math.sin(ph)) * 5 : 0, C = '#1c1814', CF = '#0e0b09';
+    const leg = (x0, a, col) => { const an = (walking ? Math.sin(ph + a) * 24 : 0) * Math.PI / 180, kx = x0 + Math.sin(an) * 80, ky = -175 + Math.cos(an) * 80, fx = kx + Math.sin(an * 0.4) * 90, fy = 0;
+      return `<path d="M${x0} -175 L${f1(kx)} ${f1(ky)} L${f1(fx)} ${fy}" stroke="${col}" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"/><ellipse cx="${f1(fx + 10)}" cy="-4" rx="18" ry="8" fill="${col}"/>`; };
+    return `<g transform="translate(${f1(x)} ${f1(y + bob)}) scale(${f1(dir * s * 1000) / 1000} ${f1(s * 1000) / 1000})"><ellipse cx="0" cy="${f1(4 - bob)}" rx="150" ry="16" fill="#000" opacity="0.45"/>` +
+      leg(-62, Math.PI, CF) + leg(92, 0, CF) +
+      `<path d="M-118 -205 Q -130 -258 -66 -262 L 74 -262 Q 128 -262 132 -216 Q 136 -176 96 -168 L -78 -166 Q -116 -170 -118 -205 Z" fill="${C}" stroke="#000" stroke-width="5"/>` +
+      leg(-82, 0, C) + leg(72, Math.PI, C) +
+      `<path d="M96 -236 L150 -300" stroke="${C}" stroke-width="50" stroke-linecap="round"/><path d="M104 -246 L118 -228" stroke="#c8312b" stroke-width="12"/>` +
+      `<ellipse cx="164" cy="-312" rx="48" ry="40" fill="${C}" stroke="#000" stroke-width="5"/><path d="M190 -326 Q 238 -318 240 -296 Q 236 -282 196 -284 Z" fill="${C}" stroke="#000" stroke-width="5"/><circle cx="238" cy="-300" r="8" fill="#000"/>` +
+      `<path d="M140 -338 Q 112 -330 112 -282 Q 124 -276 136 -296 Z" fill="${CF}" stroke="#000" stroke-width="4"/>` +
+      `<path d="M-116 -224 Q -160 -262 ${f1(-170 + 12 * Math.sin(t * 14))} -306" stroke="${C}" stroke-width="16" fill="none" stroke-linecap="round"/></g>`;
   }
   const envelope = (x, y, s, rot) => `<g transform="translate(${f1(x)} ${f1(y)}) rotate(${rot}) scale(${s})"><rect x="-150" y="-95" width="300" height="190" rx="6" fill="#ece4d0" stroke="${INK}" stroke-width="5"/><path d="M-150 -95 L0 15 L150 -95" stroke="#a89c84" stroke-width="5" fill="none"/><rect x="60" y="-80" width="60" height="44" fill="none" stroke="#a89c84" stroke-width="3"/></g>`;
   const tag = (x, y, text, fs = 30) => `<g><rect x="${f1(x - text.length * fs * 0.32 - 18)}" y="${y - fs - 6}" width="${f1(text.length * fs * 0.64 + 36)}" height="${fs + 22}" rx="6" fill="#0b0b0d" opacity="0.88" stroke="#ffd23f" stroke-width="3"/><text x="${x}" y="${y + 4}" text-anchor="middle" ${TYPE} font-weight="700" font-size="${fs}" fill="#f4efe4">${text}</text></g>`;
@@ -148,25 +152,25 @@
     // o.interview = a darker interview corner (one hanging lamp, blinds shadow, no filing wall); o.slot = [col, row] glows.
     ss12_precinct(ctx, o = {}) {
       const t = ctx.t, r = R(1301), iv = !!o.interview;
-      let back = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="${iv ? '#2e2e26' : '#a69e84'}"/><rect x="-300" y="820" width="${W + 600}" height="${H}" fill="${iv ? '#1e281c' : '#3e5446'}"/><rect x="-300" y="810" width="${W + 600}" height="16" fill="#26342a"/>`;
+      let back = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="${iv ? '#2e2e26' : '#6c6650'}"/><rect x="-300" y="820" width="${W + 600}" height="${H}" fill="${iv ? '#1e281c' : '#3e5446'}"/><rect x="-300" y="810" width="${W + 600}" height="16" fill="#26342a"/>`;
       back += `<rect x="-220" y="200" width="380" height="440" fill="#0b1224" stroke="${INK}" stroke-width="12"/>`;
       for (let i = 0; i < 70; i++) back += `<rect x="${f1(-210 + r() * 360)}" y="${f1(420 + r() * 200)}" width="6" height="8" fill="#ffd38a" opacity="${f1(0.3 + 0.5 * r())}"/>`;
-      for (let i = 0; i < 15; i++) back += `<rect x="-220" y="${206 + i * 29}" width="380" height="15" fill="${iv ? '#3a3a30' : '#9a927a'}" opacity="0.92"/>`;
+      for (let i = 0; i < 15; i++) back += `<rect x="-220" y="${206 + i * 29}" width="380" height="15" fill="${iv ? '#3a3a30' : '#6a6450'}" opacity="0.92"/>`;
       if (!iv) {
-        back += `<g transform="translate(300 300)"><circle r="56" fill="#efe9da" stroke="${INK}" stroke-width="8"/><path d="M0 0 L0 -36 M0 0 L26 12" stroke="${INK}" stroke-width="6" stroke-linecap="round"/></g>`;
+        back += `<g transform="translate(300 700)"><circle r="52" fill="#efe9da" stroke="${INK}" stroke-width="8"/><path d="M0 0 L0 -36 M0 0 L26 12" stroke="${INK}" stroke-width="6" stroke-linecap="round"/></g>`;
         back += `<rect x="1080" y="300" width="300" height="300" fill="#7a5a3a" stroke="${INK}" stroke-width="6"/>` + [0, 1, 2, 3].map(i => `<rect x="${1100 + (i % 2) * 130}" y="${320 + Math.floor(i / 2) * 130}" width="100" height="110" fill="#e9e3d4" transform="rotate(${(i % 3) - 1} ${1150 + (i % 2) * 130} ${375 + Math.floor(i / 2) * 130})"/>`).join('');
       } else {
         for (let i = 0; i < 9; i++) back += `<path d="M300 ${200 + i * 70} L1400 ${380 + i * 70} L1400 ${405 + i * 70} L300 ${225 + i * 70} Z" fill="#000" opacity="0.18"/>`;
       }
       const flick = 0.85 + 0.15 * (Math.sin(t * 41) > 0.97 ? -1 : 0);
       const tubes = iv ? `<path d="M540 -300 L540 360" stroke="#0a0a0a" stroke-width="6"/><path d="M440 360 L640 360 L590 300 L490 300 Z" fill="#2a2a24" stroke="${INK}" stroke-width="5"/><path d="M440 360 L640 360 L1000 1300 L80 1300 Z" fill="#fff2cc" opacity="0.09"/>` + wash(540, 1200, 460, 120, '#fff2cc', 0.28)
-        : [140, 760].map(x => `<rect x="${x}" y="40" width="340" height="26" rx="8" fill="#eef4e0" opacity="${f1(flick)}"/>` + wash(x + 170, 80, 320, 110, '#eef4e0', f1(0.35 * flick))).join('');
+        : [140, 760].map(x => `<rect x="${x}" y="40" width="340" height="20" rx="8" fill="#d8dece" opacity="${f1(0.7 * flick)}"/>` + wash(x + 170, 70, 300, 80, '#eef4e0', f1(0.2 * flick))).join('');
       let wall = '';
       if (!iv && o.wall !== false) {
-        wall += `<rect x="400" y="230" width="660" height="980" fill="#5a4630" stroke="${INK}" stroke-width="8"/><rect x="560" y="246" width="340" height="40" rx="4" fill="#c9a356" stroke="${INK}" stroke-width="4"/><text x="730" y="276" text-anchor="middle" ${TYPE} font-weight="700" font-size="24" fill="#2a1e10">PARKING TICKETS</text>`;
+        wall += `<rect x="400" y="340" width="660" height="880" fill="#5a4630" stroke="${INK}" stroke-width="8"/><rect x="560" y="356" width="340" height="40" rx="4" fill="#c9a356" stroke="${INK}" stroke-width="4"/><text x="730" y="386" text-anchor="middle" ${TYPE} font-weight="700" font-size="24" fill="#2a1e10">PARKING TICKETS</text>`;
         const [sc, sr] = o.slot || [-1, -1], gk = o.glow || 0;
-        for (let rr = 0; rr < 11; rr++) for (let c = 0; c < 9; c++) {
-          const x = 422 + c * 70, y = 304 + rr * 80, hit = c === sc && rr === sr;
+        for (let rr = 0; rr < 10; rr++) for (let c = 0; c < 9; c++) {
+          const x = 422 + c * 70, y = 412 + rr * 80, hit = c === sc && rr === sr;
           wall += `<rect x="${x}" y="${y}" width="62" height="72" fill="#1e160e" stroke="#3a2c1c" stroke-width="3"/>`;
           const n = 1 + ((c * 7 + rr * 3) % 3);
           for (let k = 0; k < n; k++) wall += `<rect x="${x + 6 + k * 6}" y="${y + 18 - k * 4}" width="44" height="50" fill="${hit ? '#fff4cf' : '#e9e0c6'}" opacity="${hit ? 1 : 0.85}" stroke="#8a7a5a" stroke-width="2"/><rect x="${x + 6 + k * 6}" y="${y + 18 - k * 4}" width="44" height="9" fill="#e0a92a" opacity="0.9"/>`;
@@ -214,7 +218,7 @@
     // 1 - hook: the hero ticket fills the first frame; on "parked" it flies onto the windshield of a car by a hydrant
     ss12_hook(ctx) {
       const t = ctx.t, fear = WT(ctx, 0, 9, 2.3), l2 = LS(ctx, 1, 4.06), prk = WT(ctx, 1, 2, 4.4), hyd = WT(ctx, 1, 6, 5.1);
-      const CAR = { x: 100, s: 0.62 }, land = prk + 0.6;
+      const CAR = { x: 120, s: 0.7 }, land = prk + 0.6;
       const WS = [CAR.x + 318 * CAR.s, 1494 - 482 * CAR.s];   // the wiper-ticket point (world, depth 1)
       const hero = (tt, c) => {
         if (tt > land + 0.05) return '';
@@ -223,14 +227,14 @@
         return `<rect x="0" y="0" width="${W}" height="${H}" fill="#05060a" opacity="${f1(dim)}"/>` + ticketCard(lerp(540, px, u), lerp(960, py, u), lerp(1.2 * wob, 0.16, u), lerp(-3, -40, u));
       };
       return E.cine.shot(ctx, {
-        set: 'ss12_street', setOpts: { car: { x: CAR.x, s: CAR.s, ticket: seg(t, land - 0.05, land + 0.1) }, hydrant: { x: 930, y: 1560, s: 0.62 }, lampX: 780, haze: 0.9 }, grade: 'night',
-        cam: { keys: [{ at: 0, x: 0, y: 0, z: 1.0 }, { at: l2 - 0.3, x: 40, y: 120, z: 1.12, dur: 1.2 }], handheld: 2 },
-        figures: [{ id: 'ss12_officer', x: 560, y: 1650, scale: 0.86, dir: -1, turn: 0.55, pose: 'read', expr: 'focused', gaze: [0.4, 0.6],
-          keys: [{ at: fear, gaze: [0.6, 0.2], dur: 0.3 }, { at: prk + 0.1, pose: 'present', expr: 'neutral', gaze: [0.8, -0.1], dur: 0.45 }, { at: hyd - 0.1, pose: 'stand', headTurn: 0.6, gaze: [-0.6, 0.4], expr: 'stern', dur: 0.5 }] }],
+        set: 'ss12_street', setOpts: { car: { x: CAR.x, s: CAR.s, ticket: seg(t, land - 0.05, land + 0.1) }, hydrant: { x: 1000, y: 1560, s: 0.64 }, lampX: 820, haze: 0.9 }, grade: 'night',
+        cam: { keys: [{ at: 0, x: 0, y: 0, z: 1.0 }, { at: l2 - 0.3, x: 80, y: 110, z: 1.08, dur: 1.2 }], handheld: 2 },
+        figures: [{ id: 'ss12_officer', x: 580, y: 1610, scale: 0.78, dir: -1, turn: 0.55, pose: 'read', expr: 'focused', gaze: [0.4, 0.6],
+          keys: [{ at: fear, gaze: [0.6, 0.2], dur: 0.3 }, { at: prk + 0.1, pose: 'present', expr: 'neutral', gaze: [0.8, -0.1], dur: 0.45 }, { at: hyd - 0.1, pose: 'read', expr: 'stern', gaze: [0.5, 0.6], dur: 0.5 }] }],
         overlays: [
           { type: 'svg', at: -0.1, dur: 0.05, svg: hero },
           { type: 'label', at: land + 0.1, x: 60, y: 430, text: 'BROOKLYN · 31 JULY 1977', fs: 40, sub: 'The night of his last attack' },
-          { type: 'callout', at: hyd - 0.1, target: [930, 1560 - 230 * 0.62], depth: 1, r: 70, label: [600, 780], w: 400, text: 'FIRE HYDRANT', colour: '#ffd23f' }
+          { type: 'callout', at: hyd - 0.1, target: [1000, 1560 - 230 * 0.64], depth: 1, r: 70, label: [560, 760], w: 400, text: 'FIRE HYDRANT', colour: '#ffd23f' }
         ],
         tag: STREET_TAG
       });
@@ -253,8 +257,8 @@
       const t = ctx.t, lt = WT(ctx, 0, 2, 0.6), pol = WT(ctx, 0, 4, 1.05), prs = WT(ctx, 0, 7, 1.7), l2 = LS(ctx, 1, 2.82), son = WT(ctx, 1, 4, 3.7);
       const env = () => {
         const a = ease.back(seg(t, pol - 0.15, pol + 0.3)), b = ease.back(seg(t, prs - 0.15, prs + 0.3)); let s = '';
-        if (a > 0) s += `<g transform="translate(300 620) scale(${f1(a * 100) / 100}) translate(-300 -620)">${envelope(300, 600, 1.0, -6)}${tag(300, 760, 'TO POLICE')}</g>`;
-        if (b > 0) s += `<g transform="translate(780 620) scale(${f1(b * 100) / 100}) translate(-780 -620)">${envelope(780, 600, 1.0, 5)}${tag(780, 760, 'TO THE PRESS')}</g>`;
+        if (a > 0) s += `<g transform="translate(300 700) scale(${f1(a * 100) / 100}) translate(-300 -700)">${envelope(300, 680, 1.0, -6)}${tag(300, 840, 'TO POLICE')}</g>`;
+        if (b > 0) s += `<g transform="translate(780 700) scale(${f1(b * 100) / 100}) translate(-780 -700)">${envelope(780, 680, 1.0, 5)}${tag(780, 840, 'TO THE PRESS')}</g>`;
         return s;
       };
       return E.cine.shot(ctx, {
@@ -300,7 +304,7 @@
         set: 'ss12_street', setOpts: { car: { x: 1150, s: 0.5 }, cars: [{ x: -480, s: 0.5, col: '#2a3240' }], hydrant: { x: 1500, y: 1560, s: 0.5 }, lampX: 120, haze: 1 }, grade: 'night',
         cam: { from: { x: 0, y: -60, z: 1.0 }, to: { x: 60, y: 0, z: 1.08 }, handheld: 1.2 },
         figures: [{ id: 'ss12_witness', x: wk.from, y: 1700, scale: 0.6, dir: 1, turn: 0.55, pose: 'stand', silhouette: 'warm', walk: { ...wk, cadence: 5.2 }, keys: [{ at: last, headTurn: -0.3, dur: 0.6 }, { at: bk + 0.3, headTurn: 0, dur: 0.6 }] }],
-        props: [{ depth: 1.0, svg: tt => { const x = wx(tt), dx = x + 170, walking = tt > wk.at && tt < wk.at + wk.dur; return `<path d="M${f1(x + 40)} ${f1(1700 - 260)} Q ${f1(x + 110)} ${f1(1700 - 150)} ${f1(dx + 50)} ${f1(1700 - 125)}" stroke="#0e0b09" stroke-width="4" fill="none"/>` + dog(dx, 1700, 0.42, tt, 1, walking); } }],
+        props: [{ depth: 1.0, svg: tt => { const x = wx(tt), dx = x + 170, walking = tt > wk.at && tt < wk.at + wk.dur; return `<path d="M${f1(x + 40)} ${f1(1700 - 260)} Q ${f1(x + 110)} ${f1(1700 - 140)} ${f1(dx + 44)} ${f1(1700 - 100)}" stroke="#0e0b09" stroke-width="4" fill="none"/>` + dog(dx, 1700, 0.4, tt, 1, walking); } }],
         overlays: [{ type: 'label', at: 0.15, x: 60, y: 420, text: 'BROOKLYN · 31 JULY 1977', fs: 42, sub: 'His last attack. Generic street, not the scene' }],
         tag: STREET_TAG
       });
@@ -309,21 +313,21 @@
     // 6 - the witness walks her dog past an officer ticketing a cream sedan parked by a hydrant
     ss12_witness(ctx) {
       const t = ctx.t, saw = WT(ctx, 0, 4, 1.5), tk = WT(ctx, 0, 6, 2.0), l2 = LS(ctx, 1, 3.81), hyd = WT(ctx, 1, 6, 4.9);
-      const CAR = { x: 60, s: 0.62 }, wk = { from: -260, to: 330, at: 0.0, dur: saw + 0.1 };
+      const CAR = { x: 140, s: 0.66 }, wk = { from: -320, to: 150, at: 0.0, dur: saw + 0.1 };
       const wx = tt => lerp(wk.from, wk.to, clamp((tt - wk.at) / wk.dur, 0, 1));
       return E.cine.shot(ctx, {
-        set: 'ss12_street', setOpts: { car: { x: CAR.x, s: CAR.s, ticket: seg(t, tk + 0.4, tk + 0.6) }, hydrant: { x: 880, y: 1556, s: 0.62 }, lampX: 1000, haze: 0.8 }, grade: 'night',
-        cam: { keys: [{ at: 0, x: -40, y: 40, z: 1.04 }, { at: l2 - 0.3, x: 120, y: 120, z: 1.14, dur: 1.2 }], handheld: 2.5 },
+        set: 'ss12_street', setOpts: { car: { x: CAR.x, s: CAR.s, ticket: seg(t, tk + 0.4, tk + 0.6) }, hydrant: { x: 960, y: 1556, s: 0.64 }, lampX: 1040, haze: 0.8 }, grade: 'night',
+        cam: { keys: [{ at: 0, x: -20, y: 40, z: 1.02 }, { at: l2 - 0.3, x: 30, y: 90, z: 1.08, dur: 1.2 }], handheld: 2.5 },
         figures: [
-          { id: 'ss12_officer', x: 520, y: 1640, scale: 0.84, dir: -1, turn: 0.5, pose: 'read', expr: 'focused', gaze: [0.5, 0.6],
-            keys: [{ at: tk - 0.2, pose: 'present', gaze: [0.8, -0.1], dur: 0.45 }, { at: tk + 0.8, pose: 'read', dur: 0.4 }, { at: hyd - 0.2, headTurn: 0.6, gaze: [-0.6, 0.3], dur: 0.5 }] },
-          { id: 'ss12_witness', x: wk.from, y: 1820, scale: 0.92, dir: 1, turn: 0.5, pose: 'stand', silhouette: 'warm', walk: { ...wk, cadence: 5.2 },
+          { id: 'ss12_officer', x: 560, y: 1610, scale: 0.76, dir: -1, turn: 0.5, pose: 'read', expr: 'focused', gaze: [0.5, 0.6],
+            keys: [{ at: tk - 0.2, pose: 'present', gaze: [0.8, -0.1], dur: 0.45 }, { at: tk + 0.8, pose: 'read', dur: 0.4 }, { at: hyd - 0.2, expr: 'stern', gaze: [0.6, 0.7], dur: 0.5 }] },
+          { id: 'ss12_witness', x: wk.from, y: 1800, scale: 0.86, dir: 1, turn: 0.5, pose: 'stand', silhouette: 'warm', walk: { ...wk, cadence: 5.2 },
             keys: [{ at: saw, headTurn: -0.35, pose: 'stand_tense', dur: 0.4 }, { at: hyd - 0.3, pose: 'hand_to_face', dur: 0.5 }] }
         ],
-        props: [{ depth: 1.01, svg: tt => { const x = wx(tt), dx = x + 230, walking = tt > wk.at && tt < wk.at + wk.dur; return `<path d="M${f1(x + 60)} ${f1(1820 - 380)} Q ${f1(x + 160)} ${f1(1820 - 220)} ${f1(dx + 70)} ${f1(1820 - 190)}" stroke="#0e0b09" stroke-width="5" fill="none"/>` + dog(dx, 1820, 0.75, tt, 1, walking); } }],
+        props: [{ depth: 1.01, svg: tt => { const x = wx(tt), dx = x + 190, walking = tt > wk.at && tt < wk.at + wk.dur; return `<path d="M${f1(x + 56)} ${f1(1800 - 370)} Q ${f1(x + 140)} ${f1(1800 - 200)} ${f1(dx + 62)} ${f1(1800 - 140)}" stroke="#0e0b09" stroke-width="5" fill="none"/>` + dog(dx, 1800, 0.58, tt, 1, walking); } }],
         overlays: [
           { type: 'label', at: 0.15, until: l2 - 0.2, x: 60, y: 420, text: 'A WOMAN WALKING HER DOG', fs: 40, sub: 'A local witness (not named here)' },
-          { type: 'callout', at: hyd - 0.1, target: [880, 1556 - 230 * 0.62], depth: 1, r: 70, label: [600, 770], w: 400, text: 'FIRE HYDRANT', colour: '#ffd23f' }
+          { type: 'callout', at: hyd - 0.1, target: [880, 1556 - 230 * 0.62], depth: 1, r: 70, label: [580, 760], w: 400, text: 'FIRE HYDRANT', colour: '#ffd23f' }
         ],
         tag: STREET_TAG
       });
@@ -378,17 +382,17 @@
     ss12_stakeout(ctx) {
       const aug = WT(ctx, 0, 1, 0.5), wt = WT(ctx, 0, 4, 1.75), car = WT(ctx, 0, 7, 2.35);
       return E.cine.shot(ctx, {
-        set: 'ss12_yonkers', setOpts: { dusk: 0.35, car: { x: 560, s: 0.6 }, cars: [{ x: -900, s: 0.6, col: '#2e3440' }], lampX: 1020 }, grade: 'dawn',
+        set: 'ss12_yonkers', setOpts: { dusk: 0.35, car: { x: 200, s: 0.62 }, cars: [{ x: -1500, s: 0.62, col: '#2e3440' }], lampX: 1040 }, grade: 'dawn',
         cam: { from: { x: -40, y: 30, z: 1.02 }, to: { x: 30, y: 10, z: 1.1 }, handheld: 2.5 },
         figures: [
-          { id: 'detective', x: -200, y: 1700, scale: 0.8, dir: 1, turn: 0.5, pose: 'stand', expr: 'determined', walk: { from: -200, to: 200, at: 0.1, dur: 1.4, cadence: 6.2 },
+          { id: 'detective', x: 1300, y: 1690, scale: 0.76, dir: -1, turn: 0.5, pose: 'stand', expr: 'determined', walk: { from: 1300, to: 900, at: 0.1, dur: 1.4, cadence: 6.2 },
             keys: [{ at: wt, pose: 'arms_crossed', expr: 'focused', dur: 0.5 }] },
-          { id: 'agent_a', x: -420, y: 1720, scale: 0.82, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', walk: { from: -420, to: 20, at: 0.3, dur: 1.4, cadence: 6.2 },
+          { id: 'agent_a', x: 1500, y: 1730, scale: 0.8, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused', walk: { from: 1500, to: 720, at: 0.3, dur: 1.5, cadence: 6.2 },
             keys: [{ at: car - 0.2, pose: 'point', gaze: [0.8, -0.2], dur: 0.4 }] }
         ],
         overlays: [
           { type: 'label', at: aug - 0.1, x: 60, y: 420, text: 'YONKERS · 10 AUGUST 1977', fs: 40, sub: 'Detectives wait by the car' },
-          { type: 'callout', at: car - 0.1, target: [560, 1494 - 300], depth: 1, r: 80, label: [560, 760], w: 440, text: 'THE TICKETED CAR', colour: '#ffd23f' }
+          { type: 'callout', at: car - 0.1, target: [200, 1494 - 300], depth: 1, r: 80, label: [120, 760], w: 440, text: 'THE TICKETED CAR', colour: '#ffd23f' }
         ],
         tag: 'ILLUSTRATION · ANONYMOUS FIGURES'
       });
@@ -417,7 +421,7 @@
       const pin = () => { const k = seg(t, son - 0.1, son + 0.3); if (k <= 0) return ''; return `<g opacity="${f1(k)}" transform="rotate(-3 700 330)"><rect x="590" y="250" width="220" height="150" fill="#ebe3cf" stroke="#b9ad90" stroke-width="3"/><text x="700" y="318" text-anchor="middle" ${TYPE} font-weight="700" font-size="26" fill="#8e1f18">SON OF SAM</text><text x="700" y="356" text-anchor="middle" ${TYPE} font-weight="700" font-size="20" fill="#1a1915">IDENTIFIED</text><circle cx="700" cy="262" r="10" fill="#c8312b"/></g>`; };
       return E.cine.shot(ctx, {
         set: 'task_force', grade: 'cold',
-        cam: { keys: [{ at: 0, x: 20, y: -40, z: 1.04 }, { at: dav - 0.2, x: 40, y: -70, z: 1.14, dur: 1.4 }], handheld: 1 },
+        cam: { keys: [{ at: 0, x: 20, y: -120, z: 1.0 }, { at: dav - 0.2, x: 40, y: -140, z: 1.05, dur: 1.4 }], handheld: 1 },
         figures: [
           { id: 'analyst', x: 200, y: 1560, scale: 0.9, dir: 1, turn: 0.55, pose: 'sit_type', expr: 'focused', keys: [...typing(0.1, dav - 0.2), { at: dav - 0.1, pose: 'sit', expr: 'realise', gaze: [0.7, -0.3], dur: 0.4 }] },
           { id: 'detective', x: 780, y: 1720, scale: 1.0, dir: -1, turn: 0.6, pose: 'stand', expr: 'determined', gaze: [0.3, -0.6],
@@ -434,16 +438,16 @@
       const pl = WT(ctx, 0, 3, 1.6), gu = WT(ctx, 0, 4, 2.0), six = WT(ctx, 0, 7, 2.7), l2 = LS(ctx, 1, 4.1), life = WT(ctx, 1, 3, 5.1);
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { dock: { x: 640, y: 1900, s: 1.05 }, table: false }, grade: 'warm',
-        cam: { from: { x: 0, y: 20, z: 1.0 }, to: { x: 30, y: 50, z: 1.08 } },
+        cam: { from: { x: 0, y: -230, z: 1.0 }, to: { x: 20, y: -210, z: 1.05 } },
         figures: [
-          { id: 'judge', x: 540, y: 790, scale: 0.5, dir: 1, turn: 0.05, pose: 'sit', noChair: true, expr: 'stern', depth: 0.34,
+          { id: 'judge', x: 720, y: 790, scale: 0.5, dir: -1, turn: 0.05, pose: 'sit', noChair: true, expr: 'stern', depth: 0.34,
             keys: [{ at: gu, pose: 'sit_read', dur: 0.5 }, { at: life - 0.4, pose: 'gavel', dur: 0.35 }, { at: life + 0.05, pose: 'sit', dur: 0.12 }] },
           { id: 'ss12_berk', x: 640, y: 1900, scale: 1.05, dir: -1, turn: 0.3, pose: 'stand', silhouette: 'cool',
             keys: [{ at: pl - 0.3, pose: 'hands_together', dur: 0.5 }, { at: life + 0.2, pose: 'bowed', dur: 0.6 }] }
         ],
         overlays: [
-          { type: 'card', at: 0.2, until: l2 - 0.15, x: 80, y: 390, w: 920, rows: [{ text: '8 MAY 1978', fs: 28, colour: '#6b665c' }, { text: 'PLEADED GUILTY', fs: 56, colour: '#8e1f18', at: gu - 0.1 }, { text: 'TO ALL SIX MURDERS', fs: 40, at: six - 0.1 }] },
-          { type: 'card', at: l2 - 0.05, x: 80, y: 390, w: 920, rows: [{ text: 'SENTENCED · 12 JUNE 1978', fs: 28, colour: '#6b665c' }, { text: '25 YEARS TO LIFE', fs: 56, colour: '#8e1f18', at: l2 + 0.1 }, { text: 'FOR EACH MURDER', fs: 38, at: life - 0.1 }, { text: 'STILL IN PRISON · SKIPPED HIS 2026 PAROLE HEARING', fs: 22, colour: '#6b665c', at: life + 0.5 }] }
+          { type: 'card', at: 0.2, until: l2 - 0.15, x: 80, y: 700, w: 920, rows: [{ text: '8 MAY 1978', fs: 28, colour: '#6b665c' }, { text: 'PLEADED GUILTY', fs: 56, colour: '#8e1f18', at: gu - 0.1 }, { text: 'TO ALL SIX MURDERS', fs: 40, at: six - 0.1 }] },
+          { type: 'card', at: l2 - 0.05, x: 80, y: 680, w: 920, rows: [{ text: 'SENTENCED · 12 JUNE 1978', fs: 28, colour: '#6b665c' }, { text: '25 YEARS TO LIFE', fs: 56, colour: '#8e1f18', at: l2 + 0.1 }, { text: 'FOR EACH MURDER', fs: 38, at: life - 0.1 }, { text: 'STILL IN PRISON · SKIPPED HIS 2026 PAROLE HEARING', fs: 22, colour: '#6b665c', at: life + 0.2 }] }
         ],
         tag: LIKENESS
       });
@@ -451,17 +455,17 @@
 
     // 13 - FUN FACT: the "Son of Sam law", and the 1991 Supreme Court ruling that struck that version down
     ss12_law(ctx) {
-      const pas = WT(ctx, 0, 2, 0.65), law = WT(ctx, 0, 7, 1.8), l2 = LS(ctx, 1, 4.69), stk = WT(ctx, 1, 5, 6.9);
+      const pas = WT(ctx, 0, 2, 0.65), law = WT(ctx, 0, 7, 1.8), l2 = LS(ctx, 1, 4.69), sup = WT(ctx, 1, 3, 6.2), stk = WT(ctx, 1, 5, 6.9);
       return E.cine.shot(ctx, {
         set: 'office_day', grade: 'cold', cam: { from: { x: 0, y: 0, z: 1.04 }, to: { x: 40, y: 20, z: 1.1 } },
         figures: [
-          { id: 'official', x: 760, y: 1840, scale: 1.0, dir: -1, turn: 0.45, pose: 'read', expr: 'focused', gaze: [0.4, 0.6],
+          { id: 'official', x: 770, y: 1590, scale: 0.86, dir: -1, turn: 0.45, pose: 'read', expr: 'focused', gaze: [0.4, 0.6],
             keys: [{ at: pas - 0.1, pose: 'present', expr: 'determined', gaze: [0.8, -0.1], dur: 0.5 }, { at: law + 0.8, pose: 'read', dur: 0.5 }, { at: stk - 0.1, pose: 'stand', expr: 'realise', gaze: [-0.4, -0.2], dur: 0.4 }] },
-          { id: 'analyst', x: 250, y: 1880, scale: 0.98, dir: 1, turn: 0.5, pose: 'sit_type', expr: 'focused', keys: [...typing(0.2, l2), { at: l2, pose: 'sit_read', dur: 0.4 }, { at: stk, pose: 'sit', expr: 'realise', gaze: [0.6, -0.3], dur: 0.4 }] }
+          { id: 'analyst', x: 260, y: 1720, scale: 0.95, dir: 1, turn: 0.5, pose: 'sit_type', expr: 'focused', keys: [...typing(0.2, l2), { at: l2, pose: 'sit_read', dur: 0.4 }, { at: stk, pose: 'sit', expr: 'realise', gaze: [0.6, -0.3], dur: 0.4 }] }
         ],
         overlays: [
           { type: 'funfact', at: pas - 0.12, until: l2 - 0.1, y: 400, w: 920, fs: 40, rows: [{ text: "New York passed a 'Son of" }, { text: "Sam law' against criminals" }, { text: 'profiting from their stories.', colour: '#ffd23f' }] },
-          { type: 'card', at: l2 + 0.05, x: 80, y: 400, w: 920, rows: [{ text: '1991 · US SUPREME COURT', fs: 30, colour: '#6b665c' }, { text: 'STRUCK IT DOWN', fs: 60, colour: '#8e1f18', at: stk - 0.1 }, { text: 'A REVISED LAW FOLLOWED', fs: 30, at: stk + 0.5 }] }
+          { type: 'card', at: l2 + 0.05, x: 80, y: 400, w: 920, rows: [{ text: '1991 · US SUPREME COURT', fs: 30, colour: '#6b665c' }, { text: 'STRUCK IT DOWN', fs: 60, colour: '#8e1f18', at: sup - 0.1 }, { text: 'A REVISED LAW FOLLOWED', fs: 30, at: stk }] }
         ],
         tag: 'ILLUSTRATION · ANONYMOUS FIGURES'
       });

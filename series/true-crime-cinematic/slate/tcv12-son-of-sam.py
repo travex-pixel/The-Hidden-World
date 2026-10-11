@@ -48,7 +48,7 @@ def build(h):
         S("s09_stakeout", "ss12_stakeout", [N("On August 10th, police waited by that car.")],
           "tension-rise", ["S_arrest"], sfx=[fx(0.0, "wind", 0.4), fw(0, 4, "tick", 0.4), fw(0, 7, "thump", 0.4)],
           emph=["waited", "car."], min_d=3.0, pad=0.3, tr="push"),
-        S("s10_arrest", "ss12_arrest", [N("When its owner walked out, they arrested him.")],
+        S("s10_arrest", "ss12_arrest", [N("When its owner walked out, police arrested him.")],
           "tension-peak", ["S_arrest"], sfx=[fw(0, 3, "step", 0.4), fw(0, 4, "step", 0.4, 0.1), fw(0, 6, "hit", 0.7, -0.05), fw(0, 7, "door", 0.5, 0.1)],
           emph=["owner", "arrested"], min_d=3.0, pad=0.3, tr="zoom"),
         S("s11_name", "ss12_name", [N("The Son of Sam was David Berkowitz, a 24-year-old postal worker.", pause_before=0.2)],
@@ -74,7 +74,8 @@ def build(h):
         sc["section"] = sec
     scenes[10]["music_drop"] = True   # "The Son of Sam was David Berkowitz..."
     scenes[13]["music_drop"] = True   # "A year of terror, ended by a parking ticket."
-    scenes[-1]["fade_out"] = True
+    # No visual fade-out: the producer asked for the hero ticket in the LAST frame so the video loops (the score still
+    # fades with the picture, so the audio ending stays intentional).
 
     src = h.src
     sources = [
