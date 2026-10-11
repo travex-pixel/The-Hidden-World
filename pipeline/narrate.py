@@ -79,13 +79,13 @@ def lip_envelope(x: np.ndarray, sr: int, fps: int = 30) -> list:
     return [round(float(v), 3) for v in np.clip(r / ref, 0, 1)]
 
 
-def narrate_dialogue(scene: dict) -> dict:
+def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
     """Synthesise each line with its character's voice, join them with pauses into one scene clip,
-    and return per-line timing plus a 30 fps mouth-openness envelope for lip sync."""
+    and return per-line timing plus a 30 fps mouth-openness envelope for lip sync.
+    narrator_voice (episode field 'narrator_profile') replaces the default voice for lines spoken by 'narrator'."""
     parts, lines, t, sr = [], [], 0.0, None
     for ln in scene["lines"]:
-        ch = load_character(ln["who"])
-        v = ch["voice"]
+        v = narrator_voice if (narrator_voice and ln["who"] == "narrator") else load_character(ln["who"])["voice"]
         p = narrate_scene(v["model"], ln["text"], v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"))
         x, sr_ = read_wav(p); sr = sr or sr_
         if ln.get("fx") == "phone":   # small phone speaker: band-limited and slightly crunchy
@@ -102,7 +102,7 @@ def narrate_dialogue(scene: dict) -> dict:
         gap = int(ln.get("pause_after", 0.3) * sr)
         parts.append(np.zeros(gap, np.float32)); t += gap / sr
     clip = np.concatenate(parts[:-1]) if len(parts) > 1 else parts[0]
-    key = hashlib.sha1(repr([(l["who"], l["text"]) for l in scene["lines"]] + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]] + [ln.get("fx", "") for ln in scene["lines"]]).encode()).hexdigest()[:16]
+    key = hashlib.sha1(repr([(l["who"], l["text"]) for l in scene["lines"]] + ([sorted(narrator_voice.items())] if narrator_voice else []) + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]] + [ln.get("fx", "") for ln in scene["lines"]]).encode()).hexdigest()[:16]
     out = CACHE / f"dlg_{key}.wav"
     with wave.open(str(out), "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
@@ -123,7 +123,7 @@ def narrate_episode(ep: dict, length_scale: float = 1.0) -> list[dict]:
             res.append({"scene_id": s["id"], "path": str(out), "duration": 0.0, "lines": []})
             continue
         if s.get("lines"):
-            d = narrate_dialogue(s)
+            d = narrate_dialogue(s, ep.get("narrator_profile"))
             res.append({"scene_id": s["id"], **d})
             continue
         p = narrate_scene(ep["narrator_voice"], s["narration"], length_scale)
