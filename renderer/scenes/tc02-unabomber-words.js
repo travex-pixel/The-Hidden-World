@@ -73,7 +73,7 @@
       // press rollers and a running paper web
       for (let i = 0; i < 4; i++) { const y = 470 + i * 150; w += `<rect x="-10" y="${y}" width="${W + 20}" height="100" rx="50" fill="#2b3036"/><rect x="-10" y="${y + 10}" width="${W + 20}" height="22" rx="11" fill="#4a5058" opacity="0.7"/>`; for (let k = 0; k < 9; k++) { const xx = ((k * 140 + t * 900 * (i % 2 ? -1 : 1)) % 1260 + 1260) % 1260 - 90; w += `<rect x="${f1(xx)}" y="${y + 8}" width="8" height="84" fill="#1a1e22" opacity="0.6"/>`; } }
       const off = (t * 700) % 120;
-      w += `<g><rect x="190" y="400" width="700" height="760" fill="${NEWS}" opacity="0.92"/>`;
+      w += `<defs><clipPath id="web"><rect x="190" y="400" width="700" height="760"/></clipPath></defs><g clip-path="url(#web)"><rect x="190" y="400" width="700" height="760" fill="${NEWS}" opacity="0.92"/>`;
       for (let rr = -1; rr < 8; rr++) w += `<g transform="translate(0 ${f1(rr * 120 + off)})">` + textLines(220, 410, 640, 4, 300 + ((rr + 10) % 5), { lh: 24, th: 8 }) + `</g>`;
       w += `</g><rect x="0" y="380" width="${W}" height="30" fill="#101418"/><rect x="0" y="1160" width="${W}" height="60" fill="#101418"/>`;
       let s = D.defs + D.camera(ctx, { zoom: [1.05, 1.0] }, w);
@@ -90,8 +90,8 @@
         // lamp
         `<path d="M820 360 L960 360 L1010 520 L770 520 Z" fill="#3a2f22"/><rect x="880" y="520" width="16" height="420" fill="#2a2420"/><ellipse cx="888" cy="950" rx="90" ry="16" fill="#1c1813"/>` +
         `<path d="M770 520 L1010 520 L1160 1100 L620 1100 Z" fill="#ffd9a0" opacity="0.09"/>`;
-      w += newspaper(470, 1040, 0.9, -78, 41, { highlight: { x: -300, y: -100, w: 300, p: seg(t, l2 + 0.3, l2 + 1.2) } });
-      w += `<g transform="translate(910 1140)"><ellipse cx="0" cy="40" rx="70" ry="18" fill="#000" opacity="0.4"/><rect x="-50" y="-60" width="100" height="100" rx="12" fill="#cfc6b6"/><path d="M50 -40 q 40 10 0 50" stroke="#cfc6b6" stroke-width="12" fill="none"/></g>`;
+      w += newspaper(470, 900, 0.8, -78, 41, { highlight: { x: -300, y: -100, w: 300, p: seg(t, l2 + 0.3, l2 + 1.2) } });
+      w += `<g transform="translate(910 1020)"><ellipse cx="0" cy="40" rx="70" ry="18" fill="#000" opacity="0.4"/><rect x="-50" y="-60" width="100" height="100" rx="12" fill="#cfc6b6"/><path d="M50 -40 q 40 10 0 50" stroke="#cfc6b6" stroke-width="12" fill="none"/></g>`;
       let s = D.defs + D.camera(ctx, { zoom: [1.0, 1.12], y: [0, -30] }, w);
       s += D.typed(60, 380, 'LATE 1995', seg(t, 0.1, 0.8), { fs: 46, color: C.amber });
       return s + D.tag() + D.film(t) + D.bug(ctx.ep);
@@ -131,7 +131,8 @@
         // slot 1 (line 1) and slot 2 (line 2); "have" starts in slot 1 (usual saying), "eat" in slot 2, then they trade places
         const P1 = [600, y1], P2 = [520, y2];
         const pHave = [lerp(P1[0], P2[0], sw) + arc, lerp(P1[1], P2[1], sw)], pEat = [lerp(P2[0], P1[0], sw) - arc, lerp(P2[1], P1[1], sw)];
-        s += `<g opacity="${f1(seg(t, l2 + 1.0, l2 + 1.5))}"><text x="540" y="860" text-anchor="middle" ${TYPE} font-weight="700" font-size="30" letter-spacing="3" fill="${C.red}">IN BOTH TEXTS</text>`;
+        s += `<text x="540" y="860" text-anchor="middle" ${TYPE} font-weight="700" font-size="30" letter-spacing="3" fill="${C.red}" opacity="${f1(seg(t, l3 + 0.6, l3 + 1.0))}">IN BOTH TEXTS</text>`;
+        s += `<g opacity="${f1(seg(t, l3 - 0.9, l3 - 0.6))}">`;
         s += `<text x="520" y="${y1}" text-anchor="end" font-family="Fraunces" font-weight="800" font-size="64" fill="${C.text}">"You can't</text><text x="690" y="${y1}" font-family="Fraunces" font-weight="800" font-size="64" fill="${C.text}">your cake</text>`;
         s += `<text x="440" y="${y2}" text-anchor="end" font-family="Fraunces" font-weight="800" font-size="64" fill="${C.text}">and</text><text x="610" y="${y2}" font-family="Fraunces" font-weight="800" font-size="64" fill="${C.text}">it too."</text>`;
         s += `<text x="${f1(pHave[0])}" y="${f1(pHave[1])}" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="64" fill="${C.amber}">have</text>`;
@@ -180,9 +181,9 @@
       const t = ctx.t; const l2 = LS(ctx, 1, 2.6), l3 = LS(ctx, 2, 6.4);
       let s = D.defs + coldBg(t);
       const out = seg(t, l3 - 0.2, l3 + 0.6);
-      const amt = Math.round(1000000 * ease.out(seg(t, 0.2, 1.6)));
+      const amtIn = ease.out(seg(t, 0.2, 0.9));   // fade/scale in; never show intermediate amounts
       s += `<g opacity="${f1(1 - out)}"><text x="540" y="720" text-anchor="middle" ${TYPE} font-weight="700" font-size="34" letter-spacing="4" fill="${C.muted}">REWARD PAID TO DAVID KACZYNSKI, 1998</text>` +
-        `<text x="540" y="840" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="130" fill="${C.text}">$${amt.toLocaleString('en-US')}</text>` +
+        `<g opacity="${f1(amtIn)}" transform="translate(540 800) scale(${f1((0.85 + 0.15 * amtIn) * 100) / 100}) translate(-540 -800)"><text x="540" y="840" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="130" fill="${C.text}">$1,000,000</text></g>` +
         `<g opacity="${f1(seg(t, l2 + 0.3, l2 + 0.8))}"><text x="540" y="960" text-anchor="middle" ${TYPE} font-weight="700" font-size="40" fill="${C.amber}">MOST OF IT PLEDGED TO</text><text x="540" y="1016" text-anchor="middle" ${TYPE} font-weight="700" font-size="40" fill="${C.amber}">THE VICTIMS' FAMILIES</text></g></g>`;
       // remembrance + the closing image: a newspaper with one highlighted line
       s += `<g opacity="${f1(out * (1 - seg(t, ctx.T - 0.8, ctx.T - 0.05)))}">` + newspaper(540, 760, 0.82, -2, 51, { highlight: { x: -300, y: -40, w: 290, p: seg(t, l3 + 0.6, l3 + 1.8) } }) +
