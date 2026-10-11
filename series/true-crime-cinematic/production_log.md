@@ -75,3 +75,5 @@
 - 2026-10-11 15:49:28 tcv14-litvinenko: rendering (final, seed 1)
 - 2026-10-11 15:52:12 tcv12-son-of-sam: rendered in 1022s
 - 2026-10-11 15:53:19 tcv12-son-of-sam: VERIFIED -> series/true-crime-cinematic/output/true_crime_12_son_of_sam.mp4 (75.8s, 31.5 MB, sha256 ef1ca847cc5c)
+- 2026-10-11 15:53:37 produce 11: regenerating episode data
+- 2026-10-11 15:53:37 tcv11-great-train-robbery: rendering (final, seed 1)
