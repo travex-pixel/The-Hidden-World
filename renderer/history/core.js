@@ -46,5 +46,30 @@
     }
     return keys[keys.length - 1].v;
   }
-  root.HX = Object.assign(root.HX || {}, { W, H, mulberry32, hashStr, clamp, lerp, seg, smooth, smoother, ease, noise1, fbm1, noise2, fbm2, gauss, hex2rgb, rgb2hex, mix, shade, rgba, track });
+  // monotone cubic (Fritsch–Carlson) through keys: velocity is continuous through moving keys, a repeated value is a
+  // true hold (zero velocity), it never overshoots, and the first/last keys start and end at rest.
+  // A key with ease: 'linear' makes its incoming segment linear.
+  function spline(keys, t) {
+    const n = keys.length; if (!n) return 0; if (t <= keys[0].t) return keys[0].v; if (t >= keys[n - 1].t) return keys[n - 1].v;
+    const d = [], m = new Array(n).fill(0);
+    for (let i = 0; i < n - 1; i++) d.push((keys[i + 1].v - keys[i].v) / Math.max(1e-6, keys[i + 1].t - keys[i].t));
+    for (let i = 1; i < n - 1; i++) {
+      if (d[i - 1] * d[i] <= 0) { m[i] = 0; continue; }
+      const h0 = keys[i].t - keys[i - 1].t, h1 = keys[i + 1].t - keys[i].t, w1 = 2 * h1 + h0, w2 = h1 + 2 * h0;
+      m[i] = (w1 + w2) / (w1 / d[i - 1] + w2 / d[i]);   // weighted harmonic mean: monotone, no overshoot
+    }
+    let i = 0; while (t >= keys[i + 1].t) i++;
+    const a = keys[i], b = keys[i + 1], h = Math.max(1e-6, b.t - a.t), u = (t - a.t) / h;
+    if (b.ease === 'linear') return lerp(a.v, b.v, u);
+    const h00 = 2 * u ** 3 - 3 * u ** 2 + 1, h10 = u ** 3 - 2 * u ** 2 + u, h01 = -2 * u ** 3 + 3 * u ** 2, h11 = u ** 3 - u ** 2;
+    return h00 * a.v + h10 * h * m[i] + h01 * b.v + h11 * h * m[i + 1];
+  }
+  // spring-like overshoot for gestures: slight wind-up (anticipation) then a soft overshoot and settle (follow-through)
+  function anticipate(u, k = 1) {
+    // 0..1 progress with a small wind-up below 0 (anticipation) and a soft overshoot above 1 (follow-through)
+    u = clamp(u, 0, 1); const a = 0.18, A = 0.07 * k, s = 1.25 * k;
+    if (u < a) return -A * Math.sin(Math.PI * u / a);
+    const x = (u - a) / (1 - a); return 1 + (s + 1) * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2);
+  }
+  root.HX = Object.assign(root.HX || {}, { W, H, mulberry32, hashStr, clamp, lerp, seg, smooth, smoother, ease, noise1, fbm1, noise2, fbm2, gauss, hex2rgb, rgb2hex, mix, shade, rgba, track, spline, anticipate });
 })(typeof window !== 'undefined' ? window : globalThis);

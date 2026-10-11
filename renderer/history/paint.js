@@ -115,6 +115,22 @@
     const p = paper(seed); ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.globalAlpha = alpha; ctx.fillStyle = ctx.createPattern(p, 'repeat'); ctx.fillRect(0, 0, w, h); ctx.restore();
   }
 
+  // watercolour textures for characters: dark pigment pooling and lighter lifted spots (alpha only where they act)
+  function wcTextures(seed) {
+    if (TEX.wcDark) return { dark: TEX.wcDark, light: TEX.wcLight };
+    const mk = (sd, col, scale, thr, amax) => {
+      const w = 384, c = canvas(w, w), g = c.getContext('2d'), img = g.createImageData(w, w);
+      for (let y = 0; y < w; y++) for (let x = 0; x < w; x++) {
+        const n = X.fbm2(x / scale, y / scale, sd, 4) * 0.75 + X.noise2(x / 2.2, y / 2.2, sd + 3) * 0.25;
+        const a = clamp((n - thr) / (1 - thr), 0, 1) * amax; const i = (y * w + x) * 4;
+        img.data[i] = col[0]; img.data[i + 1] = col[1]; img.data[i + 2] = col[2]; img.data[i + 3] = a * 255;
+      }
+      g.putImageData(img, 0, 0); return c;
+    };
+    TEX.wcDark = mk(seed % 89 + 1, [70, 40, 30], 22, 0.0, 0.45);
+    TEX.wcLight = mk(seed % 89 + 7, [255, 248, 232], 30, 0.15, 0.5);
+    return { dark: TEX.wcDark, light: TEX.wcLight };
+  }
   // foliage: clustered dabs with light from one side (anime-background tree crowns)
   function foliage(ctx, cx, cy, rx, ry, palette, rng, o = {}) {
     const [dark, mid, light] = palette; const n = o.n ?? Math.round(rx * ry / 260);
@@ -129,5 +145,5 @@
     for (let i = 0; i < n * 0.08; i++) { const x = cx + (rng() - 0.6) * rx * 1.2, y = cy - ry * 0.3 + (rng() - 0.7) * ry; bloom(ctx, x, y, 14 + rng() * 22, light, 0.35); }
   }
 
-  root.HX = Object.assign(root.HX, { P: { canvas, deform, polyPath, rect, ellipse, wash, edge, flat, bbox, mottle, bloom, gradient, stroke, line, seg2, paper, granulate, paperOverlay, foliage, TEX } });
+  root.HX = Object.assign(root.HX, { P: { canvas, deform, polyPath, rect, ellipse, wash, edge, flat, bbox, mottle, bloom, gradient, stroke, line, seg2, paper, granulate, paperOverlay, foliage, wcTextures, TEX } });
 })(window);

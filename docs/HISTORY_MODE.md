@@ -75,13 +75,61 @@ foreground) at a fraction of the complexity.
 (software rendering, `--disable-gpu`); ffmpeg. No GPU, no network at render time once the Piper voice is cached.
 Measured: the 95.6 s episode at 1920×1080/30 fps builds in 7.3 minutes on 4 CPU cores (frames 397 s with 3 worker pages, audio 22 s); the 960×540/15 fps preview in about 2 minutes. Re-rendering the existing explainer and thriller episodes after these changes gave frame-for-frame and byte-for-byte identical output.
 
+
+## 2b. Engine update for Episode 2 (motion, watercolour characters, packaging)
+
+**Motion**
+* **Camera keys are monotone cubic splines** (Fritsch–Carlson): velocity carries through moving keys, a repeated value is a
+  true hold, and nothing overshoots. Before, every key eased to a stop, which caused stop-start moves and the QA's
+  camera-acceleration warnings.
+* **Anticipation and follow-through on gestures:** a small wind-up, then a soft overshoot and settle.
+* **Getting up:** the body leans forward over the feet while standing up, and back while sitting down.
+* **Stopping:** the weight settles into the knees after a walk ends.
+* **Idle:** a slow weight shift and torso drift, so standing characters are never frozen.
+* **Walking:** arms swing with a slight lag and the elbow bends on the forward swing; the torso counter-rotates
+  slightly with each stride; the head nods while talking.
+* **Secondary motion:** hair, cowlick and tunic hem respond through a damped spring to the hip's acceleration
+  (impulse response e^-4τ·sin(2π·1.6τ)), so they trail, overshoot and settle.
+* **Pose changes that move the feet are real steps:** near foot first, then far foot, each lifted on an arc. A walk
+  starts from the pose's actual feet (stooping, kneeling…), not from a standing stance.
+* **Looping work actions:** `reap`, `grind`, `knock`, `bind`, `eat`, `shake_fist`, `cheer`. New poses: `stoop`,
+  `kneel`, `slump`.
+* **Adaptive motion blur:** 2–3 sub-frames across a 180° shutter, only when the image moves fast (chosen from camera
+  screen speed, a pure function of t). It switches on during cranes, whip moves and impact shakes.
+* **True perspective sizing:** a character's height is authored at the acting plane and drawn smaller further back (h/z).
+
+**Bug found and fixed.** In H01, feet were planted in world pixels but drawn in character units, so drawn feet drifted
+at about (1 − scale) × walking speed: visible foot slide. The QA missed it because it measured the gait model. The
+gait now converts world ↔ character units explicitly, and `qa_history` measures **the feet as drawn**. The result is
+0.0 px over 8,876 planted samples in H02, with a unit test (`test_drawn_feet_never_slide`) guarding it.
+
+**Watercolour / film-animation character style** (`"character_style": "watercolour"` per episode; H01's original
+render used the older crisp anime style):
+* **Own layer:** each figure is drawn on its own layer.
+* **Lines:** thin coloured lines (a dark tone of each fill) instead of uniform ink.
+* **Shading:** soft-edged shadow terminators plus a lifted-light wash.
+* **Paint texture:** pigment granulation and lifted-pigment blotches, and a soft colour bleed past the edges.
+* **Faces:** simpler, with smaller dark eyes, one catch-light and a thin lid line; rounder cheeks and chin; a soft nose.
+* **Hair:** three heavy rounded locks and a light wash on the crown instead of an "angel ring".
+* **Clothing:** creases inside the elbows.
+* **Performance:** distant figures skip the soft-shadow blur (invisible at that size), and the defocused foreground
+  is drawn at 1/6 resolution and scaled up. Together these made field frames about 3× faster.
+
+**New sets:** `field` (open-field strips, a reaping line of villagers, a windmill turning on the ridge, the oak for the
+harvest meal, a strip of standing wheat that falls as you reap), `cottage_dusk` (fire lit), `abbey_floor` (top-down
+flagstones with hand-mill stones that are laid, cracked, broken into wedges and carried off). **World props** placed
+per scene: `quern` (turns while worked, flour sifting out), `meal`, `stook`, `sheaf`, `jug`.
+
+**Packaging:** `renderer/history/thumbnail.js` draws thumbnails with the episode's own rig and artwork; rules and
+evidence are in [PACKAGING.md](PACKAGING.md).
+
 ## 3. Writing an episode
 
 Scenes keep the existing fields (`id, scene, min_duration, pad_after, music_cue, sfx, claims, transition`) and add:
 
 | Field | Meaning |
 |---|---|
-| `set` | `cottage`, `village`, `coin` (register more in `renderer/history/sets/*.js`) |
+| `set` | `cottage`, `cottage_dusk`, `village`, `field`, `coin`, `abbey_floor` (register more in `renderer/history/sets/*.js`) |
 | `lines` | narrator / character lines (≤ 90 chars each). Timing, subtitles and lip sync come from these |
 | `ambience` | `interior`, `village`, `market`, `none` |
 | `shot.camera` | keys `{t, x, y, dolly, zoom, roll, ease}`; `shot.follow` `{t, w, actor, dx, dy, axes}`; `shot.shake`; `shot.preset` |
@@ -90,6 +138,7 @@ Scenes keep the existing fields (`id, scene, min_duration, pad_after, music_cue,
 | `beats` | named moments for set animation (`door_open`, `blanket_off`, `flip`, `cut1`, …) |
 | `badges` | on-screen evidence: `documented` (needs an *established* claim), `estimate`, `disputed`, `reconstruction` (plausible/illustrative), `dramatised` |
 | `cards` | `title`, `location`, `fact`, `next` |
+| `props` | world props `{type, x, z, scale, from, to, turn}` (quern, meal, stook, sheaf, jug); they fade in and out |
 | `chapter` | YouTube chapter name starting at this scene |
 
 **Time anchors** (acts, keys, SFX, badges, beats): seconds from scene start, `"p0.4"` (fraction of the scene),

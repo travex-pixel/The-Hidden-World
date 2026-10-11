@@ -1,7 +1,8 @@
 # THE HIDDEN WORLD · History — first five episodes
 
-Status: Episode 1 is a rendered 95-second proof of concept awaiting review. **Episodes 2–5 are plans only.** Per the
-brief, none are rendered until the visual system and Episode 1 are approved.
+Status: **Episode 1** (95 s; v2 re-render in the watercolour style) and **Episode 2** (119 s, watercolour character style, engine v2)
+are rendered and waiting for your review. Episodes 3–5
+are plans only. Packaging (titles and thumbnails) follows [docs/PACKAGING.md](../../docs/PACKAGING.md).
 
 Shared engine: `renderer/history` (camera, rig, effects, director) and the recurring point-of-view character
 **You** (`characters/pov.json`, same face in every era, new costume each time). Each episode needs a new set
@@ -19,7 +20,7 @@ module (`renderer/history/sets/<era>.js`), costume colours in a character file, 
 | # | Episode | Premise and stakes | World and visual identity | Emotional arc | Thumbnail concept | Shorts |
 |---|---|---|---|---|---|---|
 | 1 | **You Wake Up in a Medieval Village** *(rendered POC)* | One silver penny, a loaf costing a quarter of it, and no change: the baker cuts your money | Smoky one-room cruck house → sunlit lane → market with pillory; morning gold | Bewildered → curious → stuck → delighted → uneasy tease | You holding up a penny + the penny cut in four: "CUT YOUR MONEY?" | Yes: "Why medieval people cut coins", "The law that put bakers in the pillory" |
-| 2 | **A Day in the Life of a Medieval Peasant** | Picks up the tease: dawn at the lord's demesne for week-work, while your own strip of land needs ploughing before the rain | Open fields in strips, plough team of oxen, reeve with tally stick, manor house, harvest-time light | Resentment → teamwork → small victory (the boon-work meal) → exhaustion | You dragging a plough beside the reeve's tally stick: "WORK FOR FREE?" | Yes: tally sticks; open-field strips; the harvest meal |
+| 2 | **A Day in the Life of a Medieval Peasant** *(rendered)* | Cold open on a floor made of confiscated hand mills; then the reeve hammers on your door for a harvest boon-day, the lord's free lunch ('ale' vs 'dry' boons), and at dusk you're caught grinding your own flour. Payoff: St Albans 1331 and the 1381 smash | Dawn cottage → golden harvest field with a windmill → dusk cottage by firelight → abbey floor from above | Groggy → sweaty → delighted → busted → vindicated | You hugging a hand mill stamped BANNED: "HIDE IT" (A/B/C packages in the episode) | Yes: 'ale' vs 'dry' boons; the abbot's floor; tally sticks |
 | 3 | **You Become a Roman Gladiator** | Sold to a gladiator school (ludus); you must survive training and one fight, and learn why most bouts did *not* end in death | Ludus courtyard, sand arena, crowds; hot Mediterranean palette, hard shadows | Fear → discipline → the fight → surprising mercy (missio) | You in heavy armour facing a net-fighter: "WHY DIDN'T HE DIE?" | Yes: gladiator types; diet ("barley men"); thumbs myth (flag as disputed) |
 | 4 | **You Wake Up in Ancient Rome** | Morning in an insula apartment; find water, food and a toilet in a city of a million, then a fire breaks out | Multi-storey insulae, street food bars (thermopolia), aqueduct fountains, public latrines; ochre and terracotta | Overwhelm → hustle → disgust/comedy → danger → relief | You holding a sponge-on-a-stick in a crowded latrine: "WAIT, WHAT?" | Yes: latrines, fast food, fire brigades (vigiles) |
 | 5 | **A Day in the Life of a Viking** | Not a raid: a winter farm in Norway; fix the longhouse roof, go to the Thing (assembly) to settle a dispute | Turf-roofed longhouse, fjord, snow, central hearth, assembly mound; cold blues with firelight | Isolation → community → justice → spring sailing tease | You in a turf longhouse with a raging fire and snow outside: "NOT A RAIDER?" | Yes: the Thing; what Vikings actually wore (no horned helmets — documented myth) |

@@ -80,12 +80,14 @@
   }
   // flame: layered flickering tongues (candle, hearth, forge)
   function flame(g, t, o) {
-    const s = o.size ?? 1; g.save(); g.translate(o.x, o.y); g.scale(s, s); g.globalCompositeOperation = 'lighter';
-    const glow = g.createRadialGradient(0, -20, 0, 0, -20, 120); glow.addColorStop(0, rgba('#ffb54a', 0.35 + 0.1 * noise1(t * 6, 3))); glow.addColorStop(1, rgba('#ff8a2a', 0)); g.fillStyle = glow; g.fillRect(-120, -140, 240, 240);
+    // warm layered tongues; screen-blended so the core stays golden instead of clipping to white
+    const s = o.size ?? 1; g.save(); g.translate(o.x, o.y); g.scale(s, s); g.globalCompositeOperation = 'screen';
+    const glow = g.createRadialGradient(0, -20, 0, 0, -20, 130); glow.addColorStop(0, rgba('#ff9a40', 0.32 + 0.08 * noise1(t * 6, 3))); glow.addColorStop(1, rgba('#ff7a2a', 0)); g.fillStyle = glow; g.fillRect(-130, -150, 260, 260);
+    const cols = ['#c8401a', '#e86a24', '#f59a34', '#ffc25a', '#ffdc8a'];
     for (let i = 0; i < 5; i++) {
-      const h = 60 + 30 * noise1(t * 5 + i * 3, i) + i * 4, w = 18 - i * 2, sway = noise1(t * 3 + i, i + 9) * 12;
-      g.fillStyle = rgba(['#ff7b2a', '#ff9a36', '#ffc04f', '#ffe08a', '#fff4c8'][i], 0.55);
-      g.beginPath(); g.moveTo(-w + i * 2 - 8, 0); g.quadraticCurveTo(-w + sway, -h * 0.6, sway * 1.5, -h); g.quadraticCurveTo(w + sway, -h * 0.6, w - i * 2 + 8, 0); g.closePath(); g.fill();
+      const h = 64 + 30 * noise1(t * 5 + i * 3, i) - i * 7, w = 22 - i * 3.2, sway = noise1(t * 3 + i, i + 9) * 12;
+      g.fillStyle = rgba(cols[i], 0.5 - i * 0.04);
+      g.beginPath(); g.moveTo(-w - 6, 0); g.bezierCurveTo(-w - 4, -h * 0.45, sway - w * 0.3, -h * 0.75, sway * 1.4, -h); g.bezierCurveTo(sway + w * 0.3, -h * 0.75, w + 4, -h * 0.45, w + 6, 0); g.closePath(); g.fill();
     }
     g.restore();
   }

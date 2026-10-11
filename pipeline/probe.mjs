@@ -12,7 +12,7 @@ const page = await browser.newPage({ viewport: { width: 320, height: 180 } });
 page.on('pageerror', e => { console.error('[page error]', e.message); process.exitCode = 1; });
 await page.goto(pathToFileURL(resolve(here, '..', plan.page)).href + '?w=320&h=180');
 await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
-await page.evaluate(({ episode, timeline, seed, visual, art, cast }) => window.HW.setup(episode, timeline, seed, visual, art, cast), plan);
+await page.evaluate(({ episode, timeline, seed, visual, art, cast, fps }) => window.HW.setup(episode, timeline, seed, visual, art, cast, fps), plan);
 const total = plan.timeline[plan.timeline.length - 1].end;
 const samples = await page.evaluate(({ total, rate }) => {
   const out = []; for (let i = 0; i < Math.round(total * rate); i++) { const t = i / rate; out.push({ t, cam: window.HW.cameraAt(t), actors: window.HW.probe(t) }); } return out;

@@ -15,7 +15,7 @@ MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "
 SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain",
              "hen", "creak", "chink", "chop", "churchbell", "anvil", "rustle", "mudstep", "gasp"}
 # history profile: painted 2.5D sets (renderer/history/sets) and on-screen evidence labels
-HISTORY_SETS = {"cottage", "village", "coin"}
+HISTORY_SETS = {"cottage", "village", "coin", "field", "cottage_dusk", "abbey_floor", "abbey_parlour"}
 AMBIENCE = {"interior", "village", "market", "none"}
 BADGE_CLAIM_TYPES = {"documented": {"established"}, "estimate": {"estimate"}, "disputed": {"disputed"},
                      "reconstruction": {"plausible", "illustrative"}, "dramatised": None}

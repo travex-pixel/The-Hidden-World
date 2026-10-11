@@ -28,7 +28,7 @@
   function keyed(keys, t) {
     if (!keys.length) return { x: 0, y: 0, dolly: 0, zoom: 1, roll: 0 };
     const r = {};
-    for (const f of ['x', 'y', 'dolly', 'zoom', 'roll']) r[f] = track(keys.map(k => ({ t: k.t, v: k.v[f], ease: k.ease })), t, keys[0].v[f]);
+    for (const f of ['x', 'y', 'dolly', 'zoom', 'roll']) r[f] = X.spline(keys.map(k => ({ t: k.t, v: k.v[f], ease: k.ease })), t);
     return r;
   }
 

@@ -59,11 +59,15 @@ def run(out_dir: Path) -> dict:
         A = {x["id"]: x for x in a["actors"]}
         for y in b["actors"]:
             x = A.get(y["id"])
-            if not x or not x["feet"] or not y["feet"]: continue
+            if not x: continue
+            # measure the feet as DRAWN (hip + local offset x scale), not the gait model; skip 2D turn frames
+            if x.get("facing") != y.get("facing") or x.get("squash", 1) != 1 or y.get("squash", 1) != 1: continue
+            fx, fy = x.get("drawn") or x["feet"], y.get("drawn") or y["feet"]
+            if not fx or not fy: continue
             for i in (0, 1):
                 if x["lift"][i] == 0 and y["lift"][i] == 0:
-                    n_planted += 1; slip = max(slip, abs(y["feet"][i] - x["feet"][i]) * (y["h"] or 420) / 1000 * (1000 / 1000))
-    res.append(check("foot_slip_planted_px", "PASS" if slip < 0.5 else "FAIL", round(slip, 3), f"max displacement of a planted foot between frames over {n_planted} samples (screen px at rest)"))
+                    n_planted += 1; slip = max(slip, abs(fy[i] - fx[i]))
+    res.append(check("foot_slip_planted_px", "PASS" if slip < 0.5 else "FAIL", round(slip, 3), f"max movement of a planted foot as drawn, between frames, over {n_planted} samples (rest px); turns excluded"))
     # camera acceleration in screen pixels per frame^2 (pan + dolly), excluding sequence cuts and intentional shakes
     shake_windows = []
     for s, sc in zip(tl, ep["scenes"]):
@@ -91,6 +95,10 @@ def run(out_dir: Path) -> dict:
     F = frames_gray(mp4); n = len(F); t_f = np.arange(n) / fps
     mean = F.mean(axis=(1, 2)); mad = np.abs(np.diff(F, axis=0)).mean(axis=(1, 2))
     fade = (t_f < 0.7) | (t_f > total - 1.3)
+    for q in seqs:   # planned dips to black between sequences are intentional
+        first = next(sc for sc in ep["scenes"] if sc["id"] == q["scenes"][0])
+        if first.get("transition") == "dip":
+            fade |= (t_f > q["start"] - 0.1) & (t_f < q["start"] + float(first.get("transition_dur", 0.8)) + 0.1)
     black = int(((mean < 16) & ~fade).sum())
     res.append(check("black_frames", "PASS" if black == 0 else "FAIL", black, "frames with mean luma < 16 outside the opening/closing fades"))
     # frozen stretches

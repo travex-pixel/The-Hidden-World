@@ -1,0 +1,1910 @@
+{
+  "id": "hist002-peasant-day",
+  "number": 2,
+  "series": "history",
+  "profile": "history",
+  "title": "A Day in the Life of a Medieval Peasant",
+  "central_question": "You owe the lord your harvest days and your flour. How much of your own life is actually yours?",
+  "template": "history-pov",
+  "narrator_voice": "en_GB-aru-medium",
+  "target_duration_seconds": [
+    95,
+    120
+  ],
+  "setting": "The same Midlands manor, c. 1260, at harvest (late August). Flash-forward to St Albans, 1331 and 1381.",
+  "cast": [
+    "pov",
+    "reeve_walter",
+    "villager_agnes",
+    "villager_tom",
+    "abbot",
+    "narrator_history"
+  ],
+  "character_style": "watercolour",
+  "music": {
+    "bpm": 84
+  },
+  "render_workers": 3,
+  "scenes": [
+    {
+      "id": "s00_cold",
+      "scene": "history",
+      "set": "abbey_floor",
+      "ambience": "none",
+      "min_duration": 7,
+      "pad_after": 0.5,
+      "music_cue": "reveal",
+      "transition": "cut",
+      "chapter": "The floor made of mills",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "In 1331, an abbot set his town's hand mills into his floor.",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "How does a hand mill end up underfoot? Start your day at dawn."
+        }
+      ],
+      "claims": [
+        "P8",
+        "P9"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "P8",
+          "text": "St Albans, c.1331 (Thomas Walsingham)",
+          "at": {
+            "line": 0,
+            "off": 0.6
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "lay": 0.0,
+        "monk": {
+          "line": 1,
+          "off": -0.5
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 0.4
+          },
+          "name": "thud"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 0.8
+          },
+          "name": "thud"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": -0.3
+          },
+          "name": "step"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.3
+          },
+          "name": "step"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -300,
+            "y": -60,
+            "dolly": 260
+          },
+          {
+            "t": "end",
+            "x": 200,
+            "y": 40,
+            "dolly": 120
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "s01_knock",
+      "scene": "history",
+      "set": "cottage",
+      "ambience": "interior",
+      "min_duration": 9,
+      "pad_after": 0.45,
+      "music_cue": "tension",
+      "transition": "dip",
+      "chapter": "Bang bang bang",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Dawn. Somebody is hammering on your door.",
+          "pause_before": 1.1
+        },
+        {
+          "who": "reeve_walter",
+          "text": "Up! It's a boon day. The whole household, in the lord's field!",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "Today you work for the lord. For free."
+        }
+      ],
+      "claims": [
+        "P12"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "You, Walter the reeve and this day are fictional",
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "dur": 3.2
+        }
+      ],
+      "beats": {
+        "door_open": {
+          "line": 1,
+          "off": -0.6
+        }
+      },
+      "sfx": [
+        {
+          "at": 0.35,
+          "name": "thump"
+        },
+        {
+          "at": 0.65,
+          "name": "thump"
+        },
+        {
+          "at": 0.95,
+          "name": "thump"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": -0.6
+          },
+          "name": "creak"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "rustle"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -480,
+            "y": 330,
+            "dolly": 560
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": -0.7
+            },
+            "x": -470,
+            "y": 320,
+            "dolly": 520
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 1.5
+            },
+            "x": 120,
+            "y": 80,
+            "dolly": 140
+          },
+          {
+            "t": "end",
+            "x": 160,
+            "y": 70,
+            "dolly": 180
+          }
+        ],
+        "shake": [
+          {
+            "t": 0.35,
+            "dur": 0.25,
+            "amp": 0.18
+          },
+          {
+            "t": 0.65,
+            "dur": 0.25,
+            "amp": 0.18
+          },
+          {
+            "t": 0.95,
+            "dur": 0.3,
+            "amp": 0.22
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 640,
+          "h": 450,
+          "facing": 1,
+          "pose0": "lie",
+          "expr0": "asleep",
+          "acts": [
+            {
+              "t": 0.4,
+              "expr": "surprised",
+              "dur": 0.15
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "pose": "sit",
+              "dur": 0.5
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "shocked",
+              "dur": 0.15,
+              "look": [
+                1,
+                -0.2
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.2
+              },
+              "expr": "wince"
+            }
+          ]
+        },
+        {
+          "id": "reeve",
+          "char": "reeve_walter",
+          "x": 1585,
+          "z": 1.62,
+          "h": 480,
+          "facing": -1,
+          "expr0": "stern",
+          "acts": [
+            {
+              "t": 0,
+              "gesture": "knock",
+              "dur": 0.1,
+              "hold": 1.0
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "prop": "tally"
+            }
+          ]
+        }
+      ],
+      "transition_dur": 0.6,
+      "cards": [
+        {
+          "kind": "title",
+          "title": "A Day in the Life of a Medieval Peasant",
+          "sub": "THE HIDDEN WORLD · HISTORY",
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "dur": 3.0,
+          "y": 330
+        }
+      ]
+    },
+    {
+      "id": "s02_reap",
+      "scene": "history",
+      "set": "field",
+      "ambience": "village",
+      "min_duration": 12,
+      "pad_after": 0.45,
+      "music_cue": "village",
+      "transition": "light",
+      "transition_dur": 0.7,
+      "chapter": "Boon-work",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "At harvest, every household owed the lord extra days of reaping.",
+          "pause_before": 0.8
+        },
+        {
+          "who": "narrator_history",
+          "text": "Sickle in one hand, stalks in the other. Cut. Bind. Stack. All day."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Walter the reeve, a neighbour the village chose, notches it on his tally."
+        }
+      ],
+      "claims": [
+        "P1",
+        "P2"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "P1",
+          "text": "Boon-works at harvest",
+          "at": {
+            "line": 0,
+            "off": 0.4
+          },
+          "dur": 4.0
+        },
+        {
+          "kind": "documented",
+          "claim": "P2",
+          "text": "Reeves kept accounts with tally sticks",
+          "at": {
+            "line": 2,
+            "off": 0.3
+          },
+          "dur": 3.6
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "The lord's field",
+          "sub": "Harvest · late August",
+          "at": 0.9,
+          "dur": 3.4
+        }
+      ],
+      "beats": {
+        "strip_x0": 700,
+        "strip_x1": 1150,
+        "reap_from": {
+          "line": 1,
+          "off": 0.0
+        },
+        "reap_to": "end"
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "name": "rustle"
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.6
+          },
+          "name": "stamp"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 300,
+            "y": -420,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 2.5
+            },
+            "x": -140,
+            "y": -20,
+            "dolly": 120
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0
+            },
+            "x": 30,
+            "y": -10,
+            "dolly": 220
+          },
+          {
+            "t": "end",
+            "x": 80,
+            "y": -20,
+            "dolly": 260
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 640,
+          "h": 440,
+          "facing": 1,
+          "pose0": "stoop",
+          "expr0": "determined",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "sickle"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "reap",
+              "dur": 0.2,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.2
+              },
+              "walk": 1060,
+              "until": "end",
+              "speed": 60,
+              "ramp": 0.2
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "wince",
+              "look": [
+                -1,
+                -0.3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reeve",
+          "char": "reeve_walter",
+          "x": 250,
+          "z": 1.15,
+          "h": 470,
+          "facing": 1,
+          "expr0": "stern",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "tally"
+            },
+            {
+              "t": 0,
+              "gesture": "tally",
+              "dur": 0.3,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "walk": 520,
+              "dur": 2.6
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.6
+              },
+              "expr": "smug"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03_meal",
+      "scene": "history",
+      "set": "field",
+      "ambience": "village",
+      "min_duration": 13,
+      "pad_after": 0.45,
+      "music_cue": "market",
+      "transition": "dissolve",
+      "chapter": "The lord's free lunch",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "The good news? On boon days, the lord had to feed you.",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "Bread. Cheese. Bacon, if you were lucky. And ale."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Manor records literally sorted the days into 'ale' boons..."
+        },
+        {
+          "who": "narrator_history",
+          "text": "...and 'dry' boons.",
+          "pause_before": 0.15
+        }
+      ],
+      "claims": [
+        "P3",
+        "P4"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "P3",
+          "text": "Harvest meals at the lord's cost",
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "dur": 3.6
+        },
+        {
+          "kind": "documented",
+          "claim": "P4",
+          "text": "'Ale' and 'dry' boon-days in the records",
+          "at": {
+            "line": 2,
+            "off": 0.4
+          },
+          "dur": 4.4
+        }
+      ],
+      "props": [
+        {
+          "type": "meal",
+          "x": 2930,
+          "z": 1.2,
+          "scale": 0.9
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 2.4
+          },
+          "name": "chink"
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 0.9
+          },
+          "name": "thud"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 2150,
+            "y": -60,
+            "dolly": 120
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0
+            },
+            "x": 2340,
+            "y": -20,
+            "dolly": 220
+          },
+          {
+            "t": "end",
+            "x": 2380,
+            "y": -10,
+            "dolly": 300
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "agnes",
+          "char": "villager_agnes",
+          "x": 2700,
+          "z": 1.2,
+          "h": 430,
+          "facing": 1,
+          "pose0": "sit",
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "gesture": "eat",
+              "dur": 0.3,
+              "hold": -1,
+              "prop": "bread"
+            }
+          ]
+        },
+        {
+          "id": "tom",
+          "char": "villager_tom",
+          "x": 3180,
+          "z": 1.2,
+          "h": 440,
+          "facing": -1,
+          "pose0": "sit",
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0.5,
+              "gesture": "eat",
+              "dur": 0.3,
+              "hold": -1,
+              "prop": "bread"
+            }
+          ]
+        },
+        {
+          "id": "you2",
+          "char": "pov",
+          "x": 3330,
+          "z": 1.0,
+          "h": 440,
+          "facing": -1,
+          "pose0": "sit",
+          "expr0": "curious",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 2.0
+              },
+              "gesture": "drink",
+              "dur": 0.4,
+              "hold": 2.0,
+              "prop": "jug"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.2
+              },
+              "expr": "delighted"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.5
+              },
+              "expr": "wince"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.5
+              },
+              "gesture": "facepalm",
+              "dur": 0.3,
+              "hold": 1.5
+            }
+          ]
+        }
+      ],
+      "new_shot": true,
+      "transition_dur": 0.7
+    },
+    {
+      "id": "s04_grind",
+      "scene": "history",
+      "set": "cottage_dusk",
+      "ambience": "interior",
+      "min_duration": 10,
+      "pad_after": 0.45,
+      "music_cue": "dawn",
+      "transition": "dissolve",
+      "transition_dur": 0.8,
+      "chapter": "Your own flour",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Sunset. You've gleaned some grain of your own.",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "So you grind it at home on your hand mill, the quern. What could go wrong?"
+        }
+      ],
+      "claims": [
+        "P5"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "P5",
+          "text": "Querns: hand mills for grain",
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "dur": 3.6
+        }
+      ],
+      "props": [
+        {
+          "type": "quern",
+          "x": 930,
+          "z": 1.0,
+          "scale": 1.25,
+          "turn": "grind_on",
+          "turn_end": "grind_off"
+        }
+      ],
+      "beats": {
+        "grind_on": {
+          "line": 1,
+          "off": 0.3
+        },
+        "grind_off": "end+10"
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "name": "rumble",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -300,
+            "y": 60,
+            "dolly": 120
+          },
+          {
+            "t": "end",
+            "x": -160,
+            "y": 120,
+            "dolly": 330
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 760,
+          "h": 440,
+          "facing": 1,
+          "pose0": "kneel",
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 0.3
+              },
+              "gesture": "grind",
+              "dur": 0.3,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 3.0
+              },
+              "expr": "smug"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05_busted",
+      "scene": "history",
+      "set": "cottage_dusk",
+      "ambience": "interior",
+      "min_duration": 12,
+      "pad_after": 0.45,
+      "music_cue": "problem",
+      "transition": "cut",
+      "chapter": "Busted",
+      "lines": [
+        {
+          "who": "reeve_walter",
+          "text": "Is that a hand mill? In this house?",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "On many manors, you had to grind at the lord's mill, and hand him a cut of your grain."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Home grinding dodged his fee. So lords banned hand mills."
+        }
+      ],
+      "claims": [
+        "P6",
+        "P7"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "P6",
+          "text": "Suit of mill: his cut was often ~1/16",
+          "at": {
+            "line": 1,
+            "off": 0.3
+          },
+          "dur": 4.4
+        },
+        {
+          "kind": "documented",
+          "claim": "P7",
+          "text": "Hand mills banned or licensed",
+          "at": {
+            "line": 2,
+            "off": 0.2
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "door_open": -3.0
+      },
+      "sfx": [
+        {
+          "at": 0.25,
+          "name": "sting"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -160,
+            "y": 120,
+            "dolly": 330
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 0.4
+            },
+            "x": 260,
+            "y": 40,
+            "dolly": 150
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.2
+            },
+            "x": -60,
+            "y": 80,
+            "dolly": 300
+          },
+          {
+            "t": "end",
+            "x": -80,
+            "y": 90,
+            "dolly": 380
+          }
+        ],
+        "shake": [
+          {
+            "t": 0.3,
+            "dur": 0.45,
+            "amp": 0.3
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": 0.2,
+              "expr": "shocked",
+              "look": [
+                1,
+                -0.4
+              ]
+            },
+            {
+              "t": 0.3,
+              "gesture": "hands_up",
+              "dur": 0.25,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.5
+              },
+              "expr": "worried"
+            }
+          ]
+        },
+        {
+          "id": "reeve",
+          "char": "reeve_walter",
+          "x": 1585,
+          "z": 1.62,
+          "h": 480,
+          "facing": -1,
+          "expr0": "stern",
+          "acts": [
+            {
+              "t": 0.1,
+              "gesture": "point",
+              "dur": 0.25,
+              "hold": 2.2
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0
+              },
+              "gesture": "shake_fist",
+              "dur": 0.3,
+              "hold": 1.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06_abbey",
+      "scene": "history",
+      "set": "abbey_floor",
+      "ambience": "none",
+      "min_duration": 8,
+      "pad_after": 0.3,
+      "music_cue": "reveal",
+      "transition": "dissolve",
+      "transition_dur": 0.7,
+      "chapter": "The floor",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "In 1331, the abbot of St Albans seized the town's hand mills...",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "...and set the millstones into the floor of his parlour. As a 'memorial'."
+        }
+      ],
+      "claims": [
+        "P8"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "P8",
+          "text": "St Albans, c.1331 (Thomas Walsingham)",
+          "at": {
+            "line": 0,
+            "off": 0.5
+          },
+          "dur": 5.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "St Albans Abbey, 1331",
+          "sub": "Seventy years after your day in the field",
+          "at": 0.6,
+          "dur": 3.0
+        }
+      ],
+      "beats": {
+        "lay": {
+          "line": 1,
+          "off": 0.0
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "name": "thud"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.7
+          },
+          "name": "thud"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 1.2
+          },
+          "name": "thud"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -600,
+            "y": -120,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0
+            },
+            "x": -200,
+            "y": 0,
+            "dolly": 80
+          },
+          {
+            "t": "end",
+            "x": 100,
+            "y": 40,
+            "dolly": 140
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "s06b_parlour",
+      "scene": "history",
+      "set": "abbey_parlour",
+      "ambience": "none",
+      "min_duration": 6,
+      "pad_after": 0.5,
+      "music_cue": "reveal",
+      "transition": "dissolve",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So the abbey walked on the town's querns. Every day.",
+          "pause_before": 0.4
+        }
+      ],
+      "claims": [
+        "P9"
+      ],
+      "badges": [
+        {
+          "kind": "reconstruction",
+          "claim": "P9",
+          "text": "The abbot's look and the room are our reconstruction",
+          "at": {
+            "line": 0,
+            "off": 0.1
+          },
+          "dur": 3.6
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 0.0
+          },
+          "name": "step"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 0.6
+          },
+          "name": "step"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 1.2
+          },
+          "name": "step"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 1.8
+          },
+          "name": "step"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 2.4
+          },
+          "name": "step"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -120,
+            "y": 60,
+            "dolly": 120
+          },
+          {
+            "t": "end",
+            "x": 220,
+            "y": 40,
+            "dolly": 240
+          }
+        ],
+        "follow": [
+          {
+            "t": 0,
+            "w": 0.5,
+            "actor": "abbot",
+            "dx": 0,
+            "axes": "x"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "abbot",
+          "char": "abbot",
+          "x": 300,
+          "h": 480,
+          "facing": 1,
+          "expr0": "smug",
+          "acts": [
+            {
+              "t": 0,
+              "gesture": "fold",
+              "dur": 0.4,
+              "hold": -1
+            },
+            {
+              "t": 0.2,
+              "walk": 1250,
+              "until": "end-0.4",
+              "speed": 120
+            },
+            {
+              "t": "end-1.2",
+              "look": [
+                0.3,
+                -0.4
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07_revolt",
+      "scene": "history",
+      "set": "abbey_floor",
+      "ambience": "none",
+      "min_duration": 8,
+      "pad_after": 0.45,
+      "music_cue": "tension-peak",
+      "transition": "dissolve",
+      "chapter": "1381",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Fifty years later came the revolt of 1381...",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "...the townsfolk prised up those stones and smashed them."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Then they handed out the pieces like blessed bread at church.",
+          "pause_before": 0.2
+        }
+      ],
+      "claims": [
+        "P10"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "P10",
+          "text": "St Albans, 15 June 1381 (Walsingham)",
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "dur": 5.4
+        }
+      ],
+      "beats": {
+        "crack": {
+          "line": 1,
+          "off": 0.5
+        },
+        "lift": {
+          "line": 1,
+          "off": 1.8
+        },
+        "lay": -10
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.5
+          },
+          "name": "chop"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.9
+          },
+          "name": "chop"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 1.8
+          },
+          "name": "rumble"
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.6
+          },
+          "name": "gasp"
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 1.4
+          },
+          "name": "churchbell",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 100,
+            "y": 40,
+            "dolly": 140
+          },
+          {
+            "t": "end",
+            "x": 0,
+            "y": 0,
+            "dolly": 40
+          }
+        ],
+        "shake": [
+          {
+            "t": {
+              "line": 1,
+              "off": 0.6
+            },
+            "dur": 0.4,
+            "amp": 0.5
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 1.0
+            },
+            "dur": 0.4,
+            "amp": 0.5
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 2.2
+            },
+            "dur": 0.8,
+            "amp": 0.6
+          }
+        ]
+      },
+      "actors": [],
+      "new_shot": true,
+      "transition_dur": 0.5
+    },
+    {
+      "id": "s08_hide",
+      "scene": "history",
+      "set": "cottage_dusk",
+      "ambience": "interior",
+      "min_duration": 11,
+      "pad_after": 1.3,
+      "music_cue": "tease",
+      "transition": "dissolve",
+      "transition_dur": 0.7,
+      "new_shot": true,
+      "chapter": "Next time",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Back home, you hide the quern under the straw.",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "Your field. Your flour. Your rules. For tonight."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Next time: you become a Roman gladiator.",
+          "pause_before": 0.3
+        }
+      ],
+      "claims": [
+        "P12"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "Hiding the quern: our story, not a record",
+          "at": {
+            "line": 0,
+            "off": 0.5
+          },
+          "dur": 3.2
+        }
+      ],
+      "cards": [
+        {
+          "kind": "next",
+          "title": "You Become a Roman Gladiator",
+          "at": "end-3.2",
+          "dur": 3.1
+        }
+      ],
+      "props": [
+        {
+          "type": "quern",
+          "x": 930,
+          "z": 1.0,
+          "scale": 1.25,
+          "to": {
+            "line": 0,
+            "off": 2.6
+          }
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -80,
+            "y": 90,
+            "dolly": 300
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0
+            },
+            "x": -200,
+            "y": 60,
+            "dolly": 200
+          },
+          {
+            "t": "end",
+            "x": -300,
+            "y": -260,
+            "dolly": 60
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 760,
+          "h": 440,
+          "facing": 1,
+          "pose0": "kneel",
+          "expr0": "nervous",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 1.6
+              },
+              "gesture": "carry",
+              "dur": 0.4,
+              "hold": 1.0
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.8
+              },
+              "pose": "stand",
+              "dur": 0.7
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0
+              },
+              "expr": "smug"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "gesture": "hips",
+              "dur": 0.4,
+              "hold": -1
+            }
+          ]
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 1.8
+          },
+          "name": "rustle"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "name": "hen"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "P1",
+      "type": "established",
+      "text": "Boon-works (precariae, 'bedrips'): extra harvest days owed by the whole household (custumals often exempted the wife), on top of week-work; the lord fed the workers.",
+      "sources": [
+        "S27",
+        "S25",
+        "S28"
+      ]
+    },
+    {
+      "id": "P2",
+      "type": "established",
+      "text": "The reeve was usually a villein, often elected by the township for a year (Seneschaucy, c.1270s), sometimes appointed; works were counted on tally sticks alongside written accounts.",
+      "sources": [
+        "S31",
+        "S32",
+        "S35"
+      ]
+    },
+    {
+      "id": "P3",
+      "type": "established",
+      "text": "Boon-work meals at the lord's cost: bread, cheese, sometimes bacon, and ale (Birrell 2015; Dyer).",
+      "sources": [
+        "S24",
+        "S25",
+        "S53"
+      ]
+    },
+    {
+      "id": "P4",
+      "type": "established",
+      "text": "Records distinguish boon-days with ale from 'dry' ones: Anglo-Norman 'ale' and 'sec' bederep ('ale bedereps', 1298); Latin precariae siccae; the Ruislip custumal (by 1248) has 'water' vs 'ale' days. 'Wet boon' itself is NOT attested and is not used.",
+      "sources": [
+        "S19",
+        "S20",
+        "S22"
+      ]
+    },
+    {
+      "id": "P5",
+      "type": "established",
+      "text": "Querns (hand mills) were used to grind grain at home and persisted alongside lords' mills.",
+      "sources": [
+        "S38",
+        "S37"
+      ]
+    },
+    {
+      "id": "P6",
+      "type": "established",
+      "text": "Suit of mill: tenants owed grinding at the lord's mill and paid multure, often reckoned around 1/16 (1/13 for unfree tenants in some northern manors).",
+      "sources": [
+        "S36",
+        "S37",
+        "S20"
+      ]
+    },
+    {
+      "id": "P7",
+      "type": "established",
+      "text": "Lords tried to suppress hand mills; St Albans Abbey banned them on its manors or required licences.",
+      "sources": [
+        "S11",
+        "S6"
+      ]
+    },
+    {
+      "id": "P8",
+      "type": "established",
+      "text": "c.1331 Abbot Richard of Wallingford forced St Albans townspeople to surrender their hand mills and set the stones into the floor of the parlour (its doorway) 'as a record and memorial' (Thomas Walsingham).",
+      "sources": [
+        "S1",
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "id": "P9",
+      "type": "plausible",
+      "text": "The top-down layout of the floor, the number of stones shown and people walking over them are our reconstruction.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "P10",
+      "type": "established",
+      "text": "On 15 June 1381 rebels prised up the millstones, broke them and distributed the pieces 'as the bread that has been blessed is distributed... in the parochial churches' (Walsingham). Accounts of the aftermath vary.",
+      "sources": [
+        "S1",
+        "S3",
+        "S17"
+      ]
+    },
+    {
+      "id": "P12",
+      "type": "illustrative",
+      "text": "You, Walter the reeve, Agnes, Tom, the dialogue and this day are fictional; the hidden quern is our story.",
+      "sources": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Memory, materiality, and trauma: revisiting the parlour floor, St. Albans, 1381 (R. M. Gammie)",
+      "publisher": "Rethinking History 29:2 (2025), Taylor & Francis",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/13642529.2025.2473858",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S3",
+      "title": "Introduction: people, places and possessions in late medieval England",
+      "publisher": "Journal of Medieval History (2019), Taylor & Francis",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/03044181.2019.1593607",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S4",
+      "title": "Richard of Wallingford, 1327",
+      "publisher": "St Albans Cathedral",
+      "url": "https://issuu.com/stalbanscathedral/docs/final_1323_brochure/s/29505633",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S6",
+      "title": "Causes cards: St Albans and the people of 1381",
+      "publisher": "1381.online",
+      "url": "https://www.1381.online/for_teachers/classroom_resources/st_albans_a_case_study/Causes%20cards_St%20Albans%20and%20the%20people%20of%201381.pdf",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S11",
+      "title": "IMC 2016 session 514 (St Albans hand mills)",
+      "publisher": "International Medieval Congress, University of Leeds",
+      "url": "https://www.imc.leeds.ac.uk/imcarchive/2016/sessions/514",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S17",
+      "title": "Divided by a Common Auditory Landscape: Sound and Rebellion in Fourteenth-Century St. Albans",
+      "publisher": "Viator, Brepols",
+      "url": "https://www.brepolsonline.net/content/journals/10.1484/J.VIATOR.5.152145",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S19",
+      "title": "bederep",
+      "publisher": "Anglo-Norman Dictionary",
+      "url": "https://anglo-norman.net/entry/bederep",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S20",
+      "title": "Manorial Language (glossary)",
+      "publisher": "University of Mississippi",
+      "url": "https://home.olemiss.edu/~tjray/medieval/manorial.htm",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S22",
+      "title": "Journal 2021 (Ruislip custumal)",
+      "publisher": "Ruislip, Northwood & Eastcote Local History Society",
+      "url": "https://btckstorage.blob.core.windows.net/site8867/Journals/2021/J21.pdf",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S24",
+      "title": "Peasants eating and drinking (J. Birrell)",
+      "publisher": "Agricultural History Review 63:1 (2015)",
+      "url": "https://www.ingentaconnect.com/content/bahs/agrev/2015/00000063/00000001/art00003",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S25",
+      "title": "Agricultural History Review vol. 63",
+      "publisher": "British Agricultural History Society",
+      "url": "https://www.bahs.org.uk/AGHR/VOLUMES/AGHR63.pdf",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S27",
+      "title": "Medieval agriculture (VCH Wiltshire vol. 4)",
+      "publisher": "British History Online",
+      "url": "https://www.british-history.ac.uk/vch/wilts/vol4/pp7-42",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S28",
+      "title": "The Custumal c. 1225",
+      "publisher": "Merton Historical Society",
+      "url": "https://mertonhistoricalsociety.org.uk/the-custumal-c-1225/",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S31",
+      "title": "Seneschaucy / manorial texts",
+      "publisher": "Fordham University Internet History Sourcebooks",
+      "url": "https://sourcebooks.fordham.edu/source/1275manors1.asp",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S32",
+      "title": "The Organization of a Medieval Manor",
+      "publisher": "Medievalists.net",
+      "url": "https://www.medievalists.net/2024/05/organization-medieval-manor/",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S35",
+      "title": "Tally sticks as media of knowledge (T. Skambraks)",
+      "publisher": "OAPEN",
+      "url": "https://library.oapen.org/bitstream/id/2dbab332-64c8-4a91-9763-c99a16adfb37/9791221500929-09.pdf",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S36",
+      "title": "Review of Langdon, Mills in the Medieval Economy",
+      "publisher": "The Medieval Review",
+      "url": "https://scholarworks.iu.edu/journals/index.php/tmr/article/view/15972",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S37",
+      "title": "Lordship and peasant consumerism in the milling industry (J. Langdon)",
+      "publisher": "Past & Present 145 (1994), OUP",
+      "url": "https://academic.oup.com/past/issue-pdf/145/1/4208311",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S38",
+      "title": "Becoming Through Milling (B. Jervis)",
+      "publisher": "Cambridge Archaeological Journal 32:2 (2022)",
+      "url": "https://www.cambridge.org/core/journals/cambridge-archaeological-journal/article/becoming-through-milling-challenging-linear-economic-narratives-in-medieval-england/683486CAAC84B321FC678E2C9AB18B09",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S53",
+      "title": "Changes in Diet in the Late Middle Ages (C. Dyer)",
+      "publisher": "Medievalists.net",
+      "url": "https://www.medievalists.net/2010/10/changes-in-diet-in-the-late-middle-ages-the-case-of-harvest-workers/",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    }
+  ],
+  "publishing": {
+    "titles": [
+      "Why Grinding Your Own Flour Was Banned",
+      "The Abbot Who Paved His Floor With Hand Mills",
+      "Medieval Workdays Came in Two Types: Ale or Dry"
+    ],
+    "description": "Your day starts with a reeve hammering on the door and ends with a hand mill you're not allowed to own. In between: free work for the lord, a lunch the lord had to pay for (with or without ale, and the records say which), and the abbot of St Albans, who set his town's confiscated hand mills into his floor.",
+    "packages": [
+      {
+        "title": "Why Grinding Your Own Flour Was Banned",
+        "thumbnail": "A",
+        "promise": "Owning a hand mill could get you in trouble.",
+        "proof": "0:00 the floor made of confiscated hand mills; 0:52 you grind your own flour; 1:02 the reeve catches you; 1:10 narrator: lords banned hand mills (DOCUMENTED badge)."
+      },
+      {
+        "title": "The Abbot Who Paved His Floor With Hand Mills",
+        "thumbnail": "B",
+        "promise": "A real abbot set confiscated hand mills into his floor.",
+        "proof": "0:00 the floor on screen + 'In 1331, an abbot set his town's hand mills into his floor'; 1:16 the full story; 1:28 the abbot walks on the stones; 1:34 the 1381 smash."
+      },
+      {
+        "title": "Medieval Workdays Came in Two Types: Ale or Dry",
+        "thumbnail": "C",
+        "promise": "Records really sorted workdays by whether ale was served.",
+        "proof": "0:38 the lord's harvest meal; 0:45 narrator: 'ale' boons and 'dry' boons (DOCUMENTED badge)."
+      }
+    ],
+    "thumbnails": [
+      {
+        "id": "A",
+        "layout": "L2",
+        "bg": "#6B3A7A",
+        "text": "HIDE IT",
+        "character": {
+          "char": "pov",
+          "expr": "nervous",
+          "look": [
+            1,
+            -0.2
+          ],
+          "gesture": "carry",
+          "face_h": 0.26,
+          "face_c": [
+            0.17,
+            0.62
+          ],
+          "mouth": 0
+        },
+        "object": {
+          "type": "quern",
+          "r": 270,
+          "c": [
+            0.62,
+            0.6
+          ]
+        },
+        "stamp": {
+          "text": "BANNED",
+          "c": [
+            0.7,
+            0.27
+          ],
+          "size": 58,
+          "rot": -0.16
+        }
+      },
+      {
+        "id": "B",
+        "layout": "L1",
+        "bg": "#3E5C8A",
+        "text": "UNDERFOOT?",
+        "character": {
+          "char": "pov",
+          "expr": "worried",
+          "look": [
+            1,
+            0.3
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.24,
+            0.4
+          ],
+          "mouth": 0
+        },
+        "object": {
+          "type": "floor",
+          "r": 205,
+          "c": [
+            0.72,
+            0.6
+          ]
+        }
+      },
+      {
+        "id": "C",
+        "layout": "L1",
+        "bg": "#5E8C3A",
+        "text": "ALE DAY",
+        "text_fill": "#FFF8E7",
+        "character": {
+          "char": "pov",
+          "expr": "delighted",
+          "gesture": "hold_up",
+          "prop": "jug",
+          "face_h": 0.46,
+          "face_c": [
+            0.26,
+            0.42
+          ],
+          "look": [
+            0.4,
+            -0.1
+          ]
+        },
+        "object": {
+          "type": "loaf",
+          "r": 140,
+          "c": [
+            0.8,
+            0.66
+          ]
+        }
+      }
+    ]
+  }
+}

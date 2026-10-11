@@ -1701,9 +1701,9 @@
   ],
   "publishing": {
     "titles": [
-      "You Wake Up in a Medieval Village With One Penny",
       "Why Medieval People Cut Their Money in Half",
-      "It's 1260. You Have One Penny. Can You Buy Bread?"
+      "You Have One Penny. Bread Costs a Quarter.",
+      "You Wake Up in a Medieval Village With One Penny"
     ],
     "description": "You wake up in an English village around 1260 with one silver penny, and you need a loaf that costs a quarter of it. The baker has no change. What happens next was completely normal, and it explains where the word 'farthing' comes from.",
     "thumbnail": {
@@ -1717,6 +1717,86 @@
         440,
         580
       ]
-    }
-  }
+    },
+    "packages": [
+      {
+        "title": "Why Medieval People Cut Their Money in Half",
+        "thumbnail": "A",
+        "promise": "Real people really cut coins to make change.",
+        "proof": "0:04 penny in your fist; 1:05 the baker cuts it; 1:12 narrator: cut halfpennies and farthings were everyday change (documented badge)."
+      },
+      {
+        "title": "You Have One Penny. Bread Costs a Quarter.",
+        "thumbnail": "B",
+        "promise": "A puzzle: how do you pay a quarter of your only coin?",
+        "proof": "0:04 the penny; 0:52 the price problem is stated; 1:05 the answer."
+      },
+      {
+        "title": "You Wake Up in a Medieval Village With One Penny",
+        "thumbnail": "A",
+        "promise": "POV survival story in a medieval village.",
+        "proof": "0:00 you wake up; 0:20 the village; the whole video stays in POV."
+      }
+    ],
+    "thumbnails": [
+      {
+        "id": "A",
+        "layout": "L1",
+        "bg": "#2E4BB0",
+        "text": "NO CHANGE?",
+        "character": {
+          "char": "pov",
+          "expr": "worried",
+          "look": [
+            1,
+            0
+          ],
+          "gesture": "hold_up",
+          "prop": "coin",
+          "face_h": 0.44,
+          "face_c": [
+            0.24,
+            0.4
+          ],
+          "mouth": 0
+        },
+        "object": {
+          "type": "penny_quarters",
+          "r": 170,
+          "sep": 20,
+          "c": [
+            0.73,
+            0.58
+          ]
+        }
+      },
+      {
+        "id": "B",
+        "layout": "L2",
+        "bg": "#2A7F8F",
+        "text": "CUT IT UP",
+        "character": {
+          "char": "pov",
+          "expr": "delighted",
+          "gesture": "carry",
+          "prop": "loaf",
+          "face_h": 0.22,
+          "face_c": [
+            0.16,
+            0.64
+          ]
+        },
+        "object": {
+          "type": "penny_quarters",
+          "r": 250,
+          "sep": 24,
+          "c": [
+            0.64,
+            0.52
+          ]
+        }
+      }
+    ]
+  },
+  "character_style": "watercolour"
 }

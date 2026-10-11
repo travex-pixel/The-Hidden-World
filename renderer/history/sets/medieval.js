@@ -155,13 +155,13 @@
     return defs.map((d, i) => {
       const acts = []; let t = d.t0 || 0; const xs = d.path;
       for (let k = 1; k < 40; k++) { const to = xs[k % xs.length]; acts.push({ t, walk: to, dur: Math.abs(to - xs[(k - 1) % xs.length]) / d.speed + 0.8 }); t += Math.abs(to - xs[(k - 1) % xs.length]) / d.speed + 0.8 + (d.pause ?? 1.5); }
-      const A = X.Rig.compileActor({ id: 'v' + i + d.char, char: d.char, x: xs[0], h: d.h, z: d.z, acts, spec: cast[d.char] || { rig: d.rig }, seed: i * 31, stride: d.stride || 560 });
+      const A = X.Rig.compileActor({ id: 'v' + i + d.char, char: d.char, x: xs[0], h: d.h, z: d.z, acts, spec: cast[d.char] || { rig: d.rig }, seed: i * 31 });
       A.z = d.z; return A;
     });
   }
   function drawVillager(g, A, t, light) {
-    const st = X.Rig.evaluate(A, t, null); const gy = groundY(A.z); const k = A.h / 1000;
-    g.save(); g.translate(st.x, gy); g.scale(k, k); X.Rig.drawCharacter(g, A, st, light, { lw: 7 }); g.restore();
+    const st = X.Rig.evaluate(A, t, null); const gy = groundY(A.z); const k = A.h / A.z / 1000;
+    g.save(); g.translate(st.x, gy); g.scale(k, k); root.HW.drawStyled(g, A, st, light, { lw: 7 }); g.restore();
   }
   // generic crowd costumes (period-plausible undyed and plant-dyed wools)
   const CROWD = [
@@ -457,4 +457,259 @@
     // impact dust
     for (const tc of [cut1, cut2]) { const u = (t - tc) / 0.8; if (u < 0 || u > 1) continue; for (let i = 0; i < 14; i++) { const a = i / 14 * Math.PI * 2; g.fillStyle = rgba('#efe2c4', 0.5 * (1 - u)); g.beginPath(); g.arc(cx + Math.cos(a) * (R + u * 120), cy + Math.sin(a) * (R * 0.6 + u * 80), 6 + u * 10, 0, 7); g.fill(); } }
   }
+
+  // ================================================================== Episode 2 additions: harvest, mill, abbey floor
+  const WHEAT = { ripe: '#d9b45a', ripeL: '#f0d488', ripeD: '#a8823a', stubble: '#c9a868', stubbleD: '#9c7c44' };
+  // hand props
+  Object.assign(X.PROPS, {
+    sickle: (g, t, lw) => { g.save(); g.rotate(-0.4); g.strokeStyle = '#5a3a22'; g.lineWidth = 16; g.lineCap = 'round'; g.beginPath(); g.moveTo(0, -10); g.lineTo(0, 60); g.stroke(); g.strokeStyle = INK; g.lineWidth = 4; g.stroke();
+      const b = new Path2D(); b.moveTo(0, -10); b.bezierCurveTo(70, -40, 120, 20, 90, 90); b.bezierCurveTo(100, 30, 60, -12, 6, 4); b.closePath(); g.fillStyle = '#c9c6bc'; g.fill(b); g.strokeStyle = INK; g.lineWidth = 3.5; g.stroke(b); g.restore(); },
+    sheaf: (g, t, lw) => { g.save(); g.rotate(-0.2); for (let i = 0; i < 14; i++) { const a = (i - 7) * 0.05; g.strokeStyle = i % 2 ? WHEAT.ripe : WHEAT.ripeD; g.lineWidth = 7; g.beginPath(); g.moveTo(Math.sin(a) * 40, 90); g.lineTo(Math.sin(a) * 120, -110); g.stroke(); g.fillStyle = WHEAT.ripeL; g.beginPath(); g.ellipse(Math.sin(a) * 125, -125, 8, 22, a, 0, 7); g.fill(); }
+      g.strokeStyle = '#7a5a2a'; g.lineWidth = 12; g.beginPath(); g.moveTo(-34, 10); g.lineTo(34, 10); g.stroke(); g.restore(); },
+    tally: (g, t, lw) => { g.save(); g.rotate(-0.9); g.fillStyle = '#c9a874'; g.fillRect(-10, -20, 20, 150); g.strokeStyle = INK; g.lineWidth = 3.5; g.strokeRect(-10, -20, 20, 150); for (let i = 0; i < 9; i++) { g.beginPath(); g.moveTo(-10, i * 14); g.lineTo(2, i * 14 + 4); g.stroke(); } g.restore(); },
+    jug: (g, t, lw) => { g.save(); const p = new Path2D(); p.moveTo(-26, -40); p.lineTo(26, -40); p.quadraticCurveTo(46, 10, 30, 50); p.lineTo(-30, 50); p.quadraticCurveTo(-46, 10, -26, -40); p.closePath(); g.fillStyle = '#a0623a'; g.fill(p); g.strokeStyle = INK; g.lineWidth = 4; g.stroke(p); g.fillStyle = '#c8803e'; g.fillRect(-26, -40, 52, 10); g.restore(); },
+    bread: (g, t, lw) => { g.save(); const p = new Path2D(); p.ellipse(0, 0, 44, 30, 0, 0, 7); g.fillStyle = '#8a5a30'; g.fill(p); g.strokeStyle = INK; g.lineWidth = 4; g.stroke(p); g.restore(); }
+  });
+  // world props (drawn at ground position of their depth): quern, stook, sheaf on the ground, ale jug, millstone
+  function stook(g, s, rng) {
+    for (let i = 0; i < 9; i++) { const a = (i - 4) * 0.12; g.save(); g.rotate(a); g.strokeStyle = i % 2 ? WHEAT.ripe : WHEAT.ripeD; g.lineWidth = 9 * s; g.beginPath(); g.moveTo(0, 0); g.lineTo(0, -150 * s); g.stroke(); g.fillStyle = WHEAT.ripeL; g.beginPath(); g.ellipse(0, -160 * s, 9 * s, 26 * s, 0, 0, 7); g.fill(); g.restore(); }
+    g.strokeStyle = '#7a5a2a'; g.lineWidth = 8 * s; g.beginPath(); g.moveTo(-26 * s, -70 * s); g.lineTo(26 * s, -70 * s); g.stroke();
+  }
+  X.WORLD_PROPS = Object.assign(X.WORLD_PROPS || {}, {
+    quern: (g, t, pr, D, q) => {
+      // two-stone hand mill: the upper stone turns by its wooden handle while it is being worked
+      const k = pr.scale || 1; g.scale(k, k);
+      const on = pr.turn ? (t >= D.beat(q, pr.turn, 1e9) && t <= D.beat(q, pr.turn_end || '__', 1e9)) : false;
+      const ang = on ? (t - D.beat(q, pr.turn, 0)) * 2 * Math.PI / 1.4 : 0.6;
+      const r = mulberry32(11);
+      P.flat(g, P.ellipse(0, -16, 90, 24, 18), '#6e665c', r, { mottle: 0.5 }); P.flat(g, [[-90, -16], [90, -16], [90, -48], [-90, -48]], '#7c7468', r, { mottle: 0.5 });
+      P.flat(g, P.ellipse(0, -48, 90, 24, 18), '#948c7e', r, { mottle: 0.5 });
+      g.fillStyle = '#4a4440'; g.beginPath(); g.ellipse(0, -46, 14, 5, 0, 0, 7); g.fill();
+      const hx = Math.cos(ang) * 70, hy = -44 + Math.sin(ang) * 18; g.strokeStyle = '#5a3a22'; g.lineWidth = 12; g.lineCap = 'round'; g.beginPath(); g.moveTo(hx, hy); g.lineTo(hx, hy - 60); g.stroke(); g.strokeStyle = INK; g.lineWidth = 3; g.stroke();
+      if (on) for (let i = 0; i < 8; i++) { const a = ((t * 0.7 + i / 8) % 1); g.fillStyle = rgba('#efe6d0', 0.6 * (1 - a)); g.beginPath(); g.arc(-80 - a * 40 + (i % 3) * 8, -24 + a * 22, 3 + a * 4, 0, 7); g.fill(); }   // flour sifting out
+    },
+    stook: (g, t, pr) => { stook(g, pr.scale || 1, mulberry32(3)); },
+    sheaf: (g, t, pr) => { g.rotate(-1.45); X.PROPS.sheaf(g, t, 4); },
+    jug: (g, t, pr) => { g.translate(0, -50 * (pr.scale || 1)); g.scale(pr.scale || 1, pr.scale || 1); X.PROPS.jug(g, t, 4); },
+    meal: (g, t, pr) => {   // a cloth on the ground with loaves, cheese, herring and an ale jug (the lord's harvest meal)
+      const r = mulberry32(21); const k = pr.scale || 1; g.scale(k, k);
+      P.flat(g, [[-220, 0], [220, 0], [200, -40], [-200, -40]], '#e6dcc0', r, { mottle: 0.5 });
+      for (const [x, y] of [[-140, -40], [-70, -44], [10, -40]]) loafShape(g, x, y, 0.8, r, '#8a5a30');
+      P.flat(g, P.ellipse(90, -36, 40, 14, 12), '#e8d080', r, {}); for (let i = 0; i < 3; i++) P.flat(g, P.ellipse(150 + i * 6, -30 - i * 8, 34, 8, 10), '#a8b4b8', r, {});
+      g.save(); g.translate(-200, -40); X.PROPS.jug(g, t, 4); g.restore(); g.save(); g.translate(200, -44); g.scale(0.8, 0.8); X.PROPS.jug(g, t, 4); g.restore();
+    }
+  });
+
+  // ================================================================== SET: harvest field (the lord's demesne)
+  X.SETS.field = {
+    build(rng, seed) {
+      const set = { name: 'field', seed, camX: [-500, 3300], camY: [-460, 120] };
+      const L = [];
+      L.push(makeLayer(set, 40, (g, r, b) => { sky(g, r, b); P.bloom(g, 1600, 120, 600, '#fff0c8', 0.35); }, { padY: 200 }));
+      L.push(makeLayer(set, 14, (g, r, b) => {
+        hills(g, r, b, HZ - 40, 110, C.hillFar, { seed: 9 });
+        // the village on its rise: church tower and roofs; the lord's windmill (post mill) on the ridge
+        const cx = 700, cy = HZ - 90; P.flat(g, P.rect(cx, cy - 160, 64, 160), '#b9b2a2', r, { mottle: 0.6 }); P.flat(g, [[cx - 6, cy - 160], [cx + 70, cy - 160], [cx + 64, cy - 176], [cx, cy - 176]], '#9a9282', r, {});
+        for (let i = 0; i < 7; i++) thatchRoof(g, 300 + i * 120 + r() * 30, cy + 10 + r() * 14, 90, 46, r, { overhang: 10 });
+        const mx = 1900, my = HZ - 120; P.stroke(g, P.seg2(mx, my + 90, mx, my, 3), '#5a4030', 10, r, { alpha: 1 }); P.stroke(g, [[mx - 40, my + 90], [mx, my + 30], [mx + 40, my + 90]], '#5a4030', 6, r, { alpha: 1 });
+        P.flat(g, [[mx - 30, my - 60], [mx + 30, my - 60], [mx + 30, my + 10], [mx - 30, my + 10]], '#8a6a48', r, {}); P.flat(g, [[mx - 34, my - 60], [mx + 34, my - 60], [mx, my - 84]], '#6a4a30', r, {});
+      }, { haze: 0.32, hazeColour: '#d8dcd0' }));
+      L.push(makeLayer(set, 6, (g, r, b) => {
+        hills(g, r, b, HZ + 6, 50, C.hillMid, { seed: 4 });
+        // open-field strips: ripe, reaped (stubble with stooks), and green fallow
+        let x = b.x0, i = 0; const y0 = HZ + 16, y1 = groundY(6) + 60;
+        while (x < b.x1) { const w = 70 + r() * 80; const kind = i++ % 3; const col = kind === 0 ? WHEAT.ripe : kind === 1 ? WHEAT.stubble : '#8fa060';
+          P.wash(g, [[x, y0 + r() * 4], [x + w, y0 + r() * 4], [x + w * 1.7, y1], [x + w * 0.3, y1]], col, r, { layers: 5, alpha: 0.2, spread: 0.02, edge: false, depth: 2 });
+          if (kind === 1) for (let k = 0; k < 3; k++) { g.save(); g.translate(x + w * (0.4 + k * 0.4), y0 + 20 + k * 14); stook(g, 0.14, r); g.restore(); }
+          x += w; }
+        for (let xx = b.x0; xx < b.x1; xx += 260 + r() * 300) tree(g, xx, HZ + 14, 0.32 + r() * 0.14, r, { pal: ['#56704a', '#6e8a54', '#8ea468'] });
+        P.flat(g, P.rect(2600, groundY(6) - 70, 200, 70), '#c8b490', r, {}); thatchRoof(g, 2600, groundY(6) - 70, 200, 70, r, { overhang: 16 });   // the manor barn
+      }, { haze: 0.18, hazeColour: '#e0e2d0' }));
+      // far edge of the demesne: a band of standing wheat
+      L.push(makeLayer(set, 2.4, (g, r, b) => {
+        const gy = groundY(2.4);
+        P.gradient(g, b.x0, gy - 90, b.x1 - b.x0, 120, [[0, WHEAT.ripeL], [1, WHEAT.ripe]]);
+        for (let i = 0; i < (b.x1 - b.x0) / 3; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = gy - 80 + r() * 90; P.stroke(g, [[x, y + 20], [x + gauss(r) * 2, y]], r() < 0.5 ? WHEAT.ripeD : WHEAT.ripeL, 2.5, r, { alpha: 0.6, bristles: 1 }); }
+        P.gradient(g, b.x0, gy + 10, b.x1 - b.x0, b.y1 - gy, [[0, WHEAT.stubble], [1, WHEAT.stubbleD]]);
+        hurdle(g, -300, gy - 70, 160, 40, r);
+      }, { haze: 0.08, hazeColour: '#f0e4c0' }));
+      // the reaped ground we stand on, the great oak and the carts
+      L.push(makeLayer(set, 1.45, (g, r, b) => {
+        const gy = groundY(1.45);
+        P.gradient(g, b.x0, gy - 50, b.x1 - b.x0, b.y1 - gy + 50, [[0, WHEAT.stubble], [0.5, '#bf9c5c'], [1, WHEAT.stubbleD]]);
+        P.mottle(g, { x: b.x0, y: gy - 50, w: b.x1 - b.x0, h: b.y1 - gy }, WHEAT.stubble, r, 1.0);
+        for (let i = 0; i < (b.x1 - b.x0) * 1.2; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = gy - 40 + r() * (b.y1 - gy + 40); P.stroke(g, [[x, y], [x + gauss(r) * 2, y - 8 - r() * 8]], r() < 0.5 ? WHEAT.stubbleD : WHEAT.ripeL, 2.5, r, { alpha: 0.5, bristles: 1 }); }
+        P.granulate(g, b.x0, gy - 50, b.x1 - b.x0, b.y1, 0.25);
+        // the oak where the harvest meal is eaten
+        const ox = 2700; P.flat(g, [[ox - 40, gy], [ox - 26, gy - 300], [ox + 30, gy - 300], [ox + 46, gy]], '#5b4430', r, { mottle: 0.6 });
+        P.stroke(g, [[ox, gy - 280], [ox - 160, gy - 420]], '#5b4430', 30, r, { alpha: 1 }); P.stroke(g, [[ox + 10, gy - 280], [ox + 170, gy - 400]], '#5b4430', 26, r, { alpha: 1 });
+        for (const [dx, dy, rx, ry] of [[0, -480, 330, 170], [-210, -400, 200, 120], [220, -400, 210, 120], [0, -360, 260, 110]]) P.foliage(g, ox + dx, gy + dy, rx, ry, ['#4f6a40', '#6e8a4c', '#9cb062'], r, { dab: 22, n: Math.round(rx * ry / 140) });
+        // a hay wain loaded with sheaves
+        const wx = 1250; P.flat(g, [[wx, gy - 70], [wx + 320, gy - 70], [wx + 330, gy - 110], [wx - 10, gy - 110]], '#7a5636', r, {});
+        for (let i = 0; i < 16; i++) { g.save(); g.translate(wx + 20 + (i % 8) * 38, gy - 110 - Math.floor(i / 8) * 60); g.rotate(-1.4 + (i % 3) * 0.1); X.PROPS.sheaf(g, 0, 4); g.restore(); }
+        for (const cxw of [wx + 60, wx + 260]) { g.save(); g.translate(cxw, gy - 40); g.strokeStyle = '#4a3222'; g.lineWidth = 10; g.beginPath(); g.arc(0, 0, 40, 0, 7); g.stroke(); for (let k = 0; k < 6; k++) { g.rotate(Math.PI / 3); g.beginPath(); g.moveTo(0, 0); g.lineTo(0, 40); g.stroke(); } g.restore(); }
+        for (const x of [300, 520, 1900, 2150, 3200]) { g.save(); g.translate(x, gy + 6); stook(g, 0.9, r); g.restore(); }
+      }, {}));
+      // acting plane: loose straws and dropped ears, so feet lock to visible detail
+      L.push(makeLayer(set, 1.0, (g, r, b) => {
+        for (let i = 0; i < 700; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = groundY(1.3) + r() * (b.y1 - groundY(1.3)); P.stroke(g, [[x, y], [x + gauss(r) * 18, y + gauss(r) * 4]], r() < 0.5 ? WHEAT.stubbleD : WHEAT.ripeL, 3, r, { alpha: 0.5, bristles: 1 }); }
+      }, { o: -1 }));
+      set.layers = L; set.bg = C.skyLow; set.groundY = groundY; set.light = [-0.7, -0.7];
+      set.finish = { bloom: 0.34, grade: ['#8ab4c8', '#ffcc78'], gradeMode: 'soft-light', gradeAlpha: 0.24, vignette: 0.32, paper: 0.08, saturate: 1.16 };
+      set.drift = 1;
+      // other villagers reaping in a line across the field (same rig, looping reap action)
+      const reapers = [[400, 1.9], [760, 2.05], [1130, 1.85], [1700, 2.1], [2050, 1.95], [2400, 2.0]].map(([x, z], i) => {
+        const A = X.Rig.compileActor({ id: 'reaper' + i, char: 'c' + (i % 4), x, h: 410, z, facing: i % 2 ? 1 : -1, pose0: 'stoop', acts: [{ t: -1, gesture: 'reap', dur: 0.1, hold: -1, period: 1.0 + (i % 3) * 0.13 }, { t: -1, prop: 'sickle' }], spec: { rig: CROWD[i % 4].rig }, seed: i * 17 });
+        A.z = z; return A;
+      });
+      const wheatStrip = (g, t, D, q) => {
+        // the strip being reaped: stalks fall as the cut line advances from beat reap_from to reap_to
+        const x0 = D.beat(q, 'strip_x0', 700), x1 = D.beat(q, 'strip_x1', 1500);
+        const ta = D.beat(q, 'reap_from', 1e9), tb = D.beat(q, 'reap_to', 1e9); const cut = lerp(x0, x1, clamp((t - ta) / Math.max(0.1, tb - ta), 0, 1));
+        const gy = groundY(1.06); const r = mulberry32(77);
+        for (let i = 0; i < 260; i++) {
+          const x = x0 + r() * (x1 - x0 + 500), h = 210 + r() * 70, ph = r() * 6; if (x < cut) continue;
+          const sway = Math.sin(t * 1.3 + x * 0.006 + ph) * 10 + X.fbm1(t * 0.4 + x * 0.002, 3) * 14;
+          g.strokeStyle = r() < 0.5 ? WHEAT.ripeD : WHEAT.ripe; g.lineWidth = 4; g.beginPath(); g.moveTo(x, gy + r() * 14); g.quadraticCurveTo(x + sway * 0.3, gy - h * 0.6, x + sway, gy - h); g.stroke();
+          g.fillStyle = r() < 0.5 ? WHEAT.ripeL : WHEAT.ripe; g.beginPath(); g.ellipse(x + sway, gy - h - 16, 8, 22, sway * 0.02, 0, 7); g.fill();
+        }
+        // cut stalks lying where the sickle passed
+        for (let i = 0; i < 40; i++) { const x = x0 + r() * (cut - x0); if (cut <= x0) break; g.strokeStyle = WHEAT.ripeD; g.lineWidth = 4; g.beginPath(); g.moveTo(x, gy + 8); g.lineTo(x - 90 - r() * 50, gy + 2 - r() * 10); g.stroke(); }
+      };
+      set.dynamic = [
+        { z: 39, draw: (g, t) => FX.birds(g, t, { x: 200, y: 180, n: 7, speed: 30 }) },
+        { z: 13.9, draw: (g, t) => { // windmill sails turning slowly on the ridge
+          const mx = 1900, my = HZ - 150; g.save(); g.translate(mx, my); g.rotate(t * 0.6);
+          for (let k = 0; k < 4; k++) { g.rotate(Math.PI / 2); g.fillStyle = 'rgba(232,222,196,0.9)'; g.fillRect(4, -9, 92, 18); g.strokeStyle = '#5a4030'; g.lineWidth = 3; g.strokeRect(4, -9, 92, 18); g.beginPath(); g.moveTo(0, 0); g.lineTo(96, 0); g.stroke(); }
+          g.restore(); } },
+        { z: 6.1, draw: (g, t) => FX.mist(g, t, { x: 1400, y: HZ + 30, w: 2400, h: 40, n: 5, alpha: 0.18, speed: 8 }) },
+        ...reapers.map(A => ({ z: A.z, draw: (g, t) => { const st = X.Rig.evaluate(A, t, null); const gy = groundY(A.z); const k = A.h / A.z / 1000; g.save(); g.translate(st.x, gy); g.scale(k, k); root.HW.drawStyled(g, A, st, set.light, { lw: 7, propDraw: (gg, prop) => X.PROPS[prop] && X.PROPS[prop](gg, t, 4) }); g.restore(); } })),
+        { z: 1.06, draw: (g, t, ta, D, q) => wheatStrip(g, t, D, q) },
+        { z: 1.2, draw: (g, t) => FX.motes(g, t, { x: -400, y: 200, w: 3600, h: 700, n: 70, alpha: 0.6, colour: '#fff0c0', key: 'chaff' }) },
+        { z: 0.62, draw: (g, t) => { // defocused foreground wheat: drawn at 1/6 resolution and scaled up (a cheap, natural blur)
+          const f = 6, w = Math.ceil(5400 / f), h = Math.ceil(600 / f); const c = set._fg || (set._fg = P.canvas(w, h)); const cg = c.getContext('2d');
+          cg.setTransform(1, 0, 0, 1, 0, 0); cg.clearRect(0, 0, w, h); cg.scale(1 / f, 1 / f); cg.translate(800, -(H - 600));
+          const r = mulberry32(5); for (let i = 0; i < 46; i++) { const x = -800 + r() * 5200, hh = 240 + r() * 160, sway = Math.sin(t * 1.1 + x * 0.004) * 16;
+            cg.strokeStyle = rgba(WHEAT.ripeD, 0.85); cg.lineWidth = 9; cg.beginPath(); cg.moveTo(x, H + 60); cg.quadraticCurveTo(x + sway * 0.3, H - hh * 0.5, x + sway, H - hh); cg.stroke(); cg.fillStyle = rgba(WHEAT.ripe, 0.9); cg.beginPath(); cg.ellipse(x + sway, H - hh - 26, 15, 38, 0.05, 0, 7); cg.fill(); }
+          g.save(); g.imageSmoothingQuality = 'high'; g.drawImage(c, -800, H - 600, w * f, h * f); g.restore(); } }
+      ];
+      return set;
+    }
+  };
+
+  // ================================================================== SET: the cottage at dusk (fire lit)
+  X.SETS.cottage_dusk = {
+    build(rng, seed) {
+      const set = X.SETS.cottage.build(rng, seed); set.name = 'cottage_dusk';
+      set.finish = { bloom: 0.5, grade: ['#3a3a6a', '#ff9a50'], gradeMode: 'soft-light', gradeAlpha: 0.38, vignette: 0.62, paper: 0.08, saturate: 1.1, exposure: -0.18 };
+      set.dynamic = set.dynamic.filter(d => !String(d.draw).includes('FX.rays'));
+      set.dynamic.push({ z: 1.295, draw: (g, t) => { FX.flame(g, t, { x: 1180, y: groundY(1.3) + 6, size: 1.1 }); } });
+      set.dynamic.push({ z: 1.29, draw: (g, t) => { g.save(); g.globalCompositeOperation = 'screen'; P.bloom(g, 1180, groundY(1.3) - 60, 700 + Math.sin(t * 7) * 18 + X.noise1(t * 5, 2) * 20, '#ff9a40', 0.35); g.restore(); } });
+      return set;
+    }
+  };
+
+  // ================================================================== SET: abbey parlour floor, seen from above (insert)
+  X.SETS.abbey_floor = {
+    build(rng, seed) {
+      const set = { name: 'abbey_floor', seed, camX: [-700, 700], camY: [-200, 200] };
+      const stones = [[-520, -60], [-160, 120], [200, -80], [560, 100], [880, -40], [-880, 90]];
+      set.stones = stones;
+      set.layers = [makeLayer(set, 1.0, (g, r, b) => {
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#5a5650'], [1, '#3e3a36']]);
+        // flagstones
+        for (let y = b.y0; y < b.y1; y += 150) for (let x = b.x0 + ((y / 150) % 2) * 90; x < b.x1; x += 180) P.flat(g, [[x + 4, y + 4], [x + 176, y + 6], [x + 174, y + 146], [x + 6, y + 144]], shade('#8a857a', (r() - 0.5) * 0.25), r, { mottle: 0.6, edgeAlpha: 0.5 });
+        P.granulate(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, 0.35);
+      })];
+      set.bg = '#2e2a26'; set.groundY = groundY; set.light = [-0.6, -0.8];
+      set.finish = { bloom: 0.4, grade: ['#3a3a5a', '#ffb060'], gradeMode: 'soft-light', gradeAlpha: 0.3, vignette: 0.7, paper: 0.08, saturate: 1.05 };
+      set.drift = 0.7;
+      set.dynamic = [{ z: 0.999, draw: (g, t, ta, D, q) => drawAbbeyFloor(g, t, D, q, stones) }];
+      return set;
+    }
+  };
+  function millstone(g, x, y, R, rng, crack, lift) {
+    // a hand-mill stone set into the floor: rim, central eye, radial dressing grooves.
+    // crack 0..1: fractures spread from the eye; lift 0..1: the stone breaks into wedges that are carried away.
+    const r2 = mulberry32(Math.round(x * 7 + y));
+    const face = (gg) => { const gr = gg.createRadialGradient(-R * 0.3, -R * 0.4, R * 0.1, 0, 0, R); gr.addColorStop(0, '#c4bcaa'); gr.addColorStop(1, '#847c6e'); gg.fillStyle = gr; gg.beginPath(); gg.arc(0, 0, R, 0, 7); gg.fill();
+      gg.strokeStyle = 'rgba(60,54,48,0.6)'; gg.lineWidth = 3; for (let k = 0; k < 10; k++) { const a = k / 10 * Math.PI * 2; gg.beginPath(); gg.moveTo(Math.cos(a) * R * 0.25, Math.sin(a) * R * 0.25); gg.lineTo(Math.cos(a + 0.3) * R * 0.9, Math.sin(a + 0.3) * R * 0.9); gg.stroke(); }
+      gg.fillStyle = '#2a2420'; gg.beginPath(); gg.arc(0, 0, R * 0.16, 0, 7); gg.fill(); };
+    g.save(); g.translate(x, y);
+    if (lift <= 0) {
+      g.fillStyle = 'rgba(20,12,8,0.35)'; g.beginPath(); g.arc(4, 6, R + 4, 0, 7); g.fill();
+      face(g); g.strokeStyle = INK; g.lineWidth = 4; g.beginPath(); g.arc(0, 0, R, 0, 7); g.stroke();
+      if (crack > 0) { g.strokeStyle = '#140c08'; g.lineWidth = 6; g.lineCap = 'round';
+        for (let c = 0; c < 4; c++) { const a0 = c * Math.PI / 2 + 0.4 + r2() * 0.4; g.beginPath(); g.moveTo(Math.cos(a0) * R * 0.16, Math.sin(a0) * R * 0.16); let a = a0, rr = R * 0.16; while (rr < R * crack) { rr += R * 0.14; a += (r2() - 0.5) * 0.4; g.lineTo(Math.cos(a) * rr, Math.sin(a) * rr); } g.stroke(); } }
+    } else {
+      g.fillStyle = 'rgba(14,8,6,0.75)'; g.beginPath(); g.arc(0, 0, R, 0, 7); g.fill();   // the empty socket left in the floor
+      for (let w = 0; w < 4; w++) {
+        const a0 = w * Math.PI / 2 + 0.4, mid = a0 + Math.PI / 4, k = X.ease.in(lift);
+        const dx = Math.cos(mid) * (R * 0.4 + k * 900), dy = Math.sin(mid) * (R * 0.4 + k * 900) - k * 120;
+        g.save(); g.globalAlpha = 1 - clamp((lift - 0.7) / 0.3, 0, 1); g.translate(dx * k, dy * k); g.rotate(k * (w % 2 ? 1.2 : -1.4)); g.scale(1 + k * 0.4, 1 + k * 0.4);
+        g.beginPath(); g.moveTo(0, 0); g.arc(0, 0, R, a0, a0 + Math.PI / 2); g.closePath(); g.save(); g.clip(); face(g); g.restore();
+        g.strokeStyle = INK; g.lineWidth = 4; g.stroke(); g.restore();
+      }
+    }
+    g.restore();
+  }
+  function drawAbbeyFloor(g, t, D, q, stones) {
+    const r = mulberry32(31); const crackT = D.beat(q, 'crack', 1e9), liftT = D.beat(q, 'lift', 1e9), layT = D.beat(q, 'lay', -1);
+    stones.forEach(([x, y], i) => {
+      const appear = clamp((t - layT - i * 0.25) / 0.5, 0, 1); if (appear <= 0) return;
+      g.save(); g.globalAlpha = appear; g.translate(0, (1 - X.ease.out3(appear)) * -40);
+      millstone(g, x + W / 2, y + H / 2, 130, r, clamp((t - crackT - i * 0.12) / 0.6, 0, 1), X.ease.out3(clamp((t - liftT - i * 0.2) / 0.8, 0, 1)));
+      g.restore();
+    });
+    // candlelight pool that breathes
+    g.save(); g.globalCompositeOperation = 'screen'; P.bloom(g, W * 0.3, H * 0.3, 700 + Math.sin(t * 6) * 15, '#ffb060', 0.28); g.restore();
+    // a hem of a black Benedictine habit and a sandalled foot crossing the floor
+    const walkT = D.beat(q, 'monk', 1e9); const u = (t - walkT) / 4.5;
+    if (u > 0 && u < 1) {
+      const x = lerp(-300, 2250, u), stepPh = Math.sin(u * 28);
+      g.save(); g.translate(x, H * 0.16);
+      g.fillStyle = '#1e1a1c'; g.beginPath(); g.ellipse(0, 0, 260, 120, 0, 0, 7); g.fill();
+      for (const [dx, ph] of [[-80, 0], [90, Math.PI]]) { const s = Math.sin(u * 28 + ph); g.fillStyle = '#d8a888'; g.beginPath(); g.ellipse(dx + s * 30, 120 + Math.max(0, s) * -10, 34, 70, 0, 0, 7); g.fill(); g.strokeStyle = '#5a3a22'; g.lineWidth = 8; g.beginPath(); g.moveTo(dx + s * 30 - 34, 130); g.lineTo(dx + s * 30 + 34, 130); g.stroke(); }
+      g.restore();
+    }
+  }
+  // ================================================================== SET: abbey parlour, side view (the abbot on his floor)
+  X.SETS.abbey_parlour = {
+    build(rng, seed) {
+      const set = { name: 'abbey_parlour', seed, camX: [-400, 600], camY: [-200, 160] };
+      const L = [];
+      // back wall: ashlar stone, a round Romanesque arch with a glimpse of cloister garth, candle sconces
+      L.push(makeLayer(set, 1.8, (g, r, b) => {
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#4a4440'], [0.6, '#6e665c'], [1, '#3a3430']]);
+        const wy1 = groundY(1.8);
+        for (let y = b.y0; y < wy1; y += 64) for (let x = b.x0 + ((y / 64) % 2) * 60; x < b.x1; x += 120) P.flat(g, [[x + 3, y + 3], [x + 117, y + 4], [x + 116, y + 61], [x + 4, y + 60]], shade('#a39a88', (r() - 0.5) * 0.2), r, { mottle: 0.5, edgeAlpha: 0.4 });
+        const ax = 980, aw = 360, ah = 520; P.flat(g, [[ax - aw / 2, wy1], [ax - aw / 2, wy1 - ah + aw / 2], [ax + aw / 2, wy1 - ah + aw / 2], [ax + aw / 2, wy1]], '#cfe0c0', r, { texture: false, edge: false });
+        g.save(); g.beginPath(); g.arc(ax, wy1 - ah + aw / 2, aw / 2, Math.PI, 0); g.fillStyle = '#d8e6c8'; g.fill(); g.restore();
+        P.gradient(g, ax - aw / 2, wy1 - 200, aw, 200, [[0, '#9ab070', 0], [1, '#7a9858', 0.8]]);
+        for (let k = 0; k < 13; k++) { const a = Math.PI + k / 12 * Math.PI; const r0 = aw / 2 + 4, r1 = aw / 2 + 56; const cy = wy1 - ah + aw / 2; P.flat(g, [[ax + Math.cos(a) * r0, cy + Math.sin(a) * r0], [ax + Math.cos(a + 0.24) * r0, cy + Math.sin(a + 0.24) * r0], [ax + Math.cos(a + 0.24) * r1, cy + Math.sin(a + 0.24) * r1], [ax + Math.cos(a) * r1, cy + Math.sin(a) * r1]], shade('#b8ae98', (k % 2) * 0.08), r, {}); }
+        for (const sx of [380, 1580]) { P.flat(g, P.rect(sx - 14, wy1 - 380, 28, 70), '#5a4030', r, {}); P.flat(g, P.rect(sx - 10, wy1 - 440, 20, 60), '#efe6d0', r, {}); }
+        P.gradient(g, b.x0, wy1, b.x1 - b.x0, b.y1 - wy1, [[0, '#5a544c'], [1, '#3a3632']]);
+      }, { haze: 0.06, hazeColour: '#2a1c14' }));
+      // the floor in perspective, with the confiscated hand-mill stones set into it
+      L.push(makeLayer(set, 1.0, (g, r, b) => {
+        const y0 = groundY(1.8);
+        for (let row = 0; row < 9; row++) { const yA = y0 + Math.pow(row / 9, 1.6) * (b.y1 - y0), yB = y0 + Math.pow((row + 1) / 9, 1.6) * (b.y1 - y0); const w = 110 + row * 30;
+          for (let x = b.x0 + (row % 2) * w / 2; x < b.x1; x += w) P.flat(g, [[x + 2, yA + 2], [x + w - 2, yA + 2], [x + w - 2, yB - 2], [x + 2, yB - 2]], shade('#8f887c', (r() - 0.5) * 0.22), r, { mottle: 0.4, edgeAlpha: 0.45 }); }
+        for (const [x, y, rx] of [[560, 860, 120], [880, 905, 130], [1220, 870, 125], [1500, 930, 135], [300, 940, 130], [1050, 1010, 150]]) {
+          g.save(); g.translate(x, y); g.scale(1, 0.3); X.ART.millstone(g, 0, 0, rx, r, 0, 0); g.restore(); }
+        P.granulate(g, b.x0, y0, b.x1 - b.x0, b.y1 - y0, 0.3);
+      }, { o: -1 }));
+      set.layers = L; set.bg = '#2a2420'; set.groundY = groundY; set.light = [0.6, -0.7];
+      set.finish = { bloom: 0.45, grade: ['#3a3a5a', '#ffb060'], gradeMode: 'soft-light', gradeAlpha: 0.3, vignette: 0.6, paper: 0.08, saturate: 1.1 };
+      set.drift = 0.8;
+      set.dynamic = [
+        { z: 1.79, draw: (g, t) => { for (const sx of [380, 1580]) FX.flame(g, t, { x: sx, y: groundY(1.8) - 440, size: 0.5 }); g.save(); g.globalCompositeOperation = 'screen'; P.bloom(g, 380, groundY(1.8) - 470, 300, '#ffb060', 0.3); P.bloom(g, 1580, groundY(1.8) - 470, 300, '#ffb060', 0.3); g.restore(); } },
+        { z: 1.5, draw: (g, t) => FX.motes(g, t, { x: 700, y: 300, w: 560, h: 500, n: 40, alpha: 0.6, key: 'arch' }) },
+        { z: 1.79, draw: (g, t) => FX.rays(g, t, { x: 980, y: groundY(1.8) - 360, angle: 1.9, n: 4, spread: 0.08, width: 0.04, len: 900, alpha: 0.12, colour: '#f0f4d8', key: 'arch' }) }
+      ];
+      return set;
+    }
+  };
+  // artwork reused by the thumbnail compositor
+  X.ART = Object.assign(X.ART || {}, { penny, millstone, bigHand, loafShape, stook, WHEAT, groundY });
 })(window);

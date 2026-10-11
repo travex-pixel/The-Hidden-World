@@ -83,14 +83,28 @@
     sit:    { hip: 66, lean: 6, neck: 4, rot: 0, ik: 0, feet: [0, 0], armN: [28, 18], armF: [-16, 30], thighN: 86, kneeN: -6, thighF: 84, kneeF: -4 },
     rise:   { hip: 330, lean: 30, neck: -6, rot: 0, ik: 1, feet: [90, -30], armN: [40, 40], armF: [20, 30], thighN: 0, kneeN: 0, thighF: 0, kneeF: 0 },
     crouch: { hip: 300, lean: 30, neck: 6, rot: 0, ik: 1, feet: [80, -40], armN: [55, 30], armF: [35, 25], thighN: 0, kneeN: 0, thighF: 0, kneeF: 0 },
-    lean_in:{ hip: 484, lean: 14, neck: 6, rot: 0, ik: 1, feet: [10, -40], armN: [30, 50], armF: [20, 40], thighN: 0, kneeN: 0, thighF: 0, kneeF: 0 }
+    lean_in:{ hip: 484, lean: 14, neck: 6, rot: 0, ik: 1, feet: [10, -40], armN: [30, 50], armF: [20, 40], thighN: 0, kneeN: 0, thighF: 0, kneeF: 0 },
+    // work poses
+    stoop:  { hip: 400, lean: 50, neck: -18, rot: 0, ik: 1, feet: [120, -70], armN: [70, 30], armF: [60, 20], thighN: 0, kneeN: 0, thighF: 0, kneeF: 0 },
+    kneel:  { hip: 210, lean: 18, neck: 10, rot: 0, ik: 1, feet: [60, -150], armN: [50, 50], armF: [40, 40], thighN: 0, kneeN: 0, thighF: 0, kneeF: 0 },
+    slump:  { hip: 470, lean: 16, neck: 14, rot: 0, ik: 1, feet: [20, -24], armN: [2, 6], armF: [-2, 6], thighN: 0, kneeN: 0, thighF: 0, kneeF: 0 }
   };
   // arm gestures override arm angles (blend in/out)
   const GESTURES = {
     reach:   { armN: [78, 8] }, offer: { armN: [62, 34] }, point: { armN: [96, 2] }, hold_up: { armN: [62, 92] },
     stretch: { armN: [172, 6], armF: [165, 10] }, shrug: { armN: [24, 112], armF: [18, 110] }, chin: { armN: [32, 150] },
     hands_up: { armN: [130, 40], armF: [118, 50] }, wave: { armN: [150, 30] }, cut: { armN: [55, 70], armF: [40, 55] },
-    carry: { armN: [30, 100] }, hips: { armN: [-30, 120], armF: [-28, 118] }, scratch: { armN: [150, 140] }, rub: { armN: [55, 75], armF: [45, 70] }
+    carry: { armN: [30, 100] }, hips: { armN: [-30, 120], armF: [-28, 118] }, scratch: { armN: [150, 140] }, rub: { armN: [55, 75], armF: [45, 70] },
+    fold: { armN: [24, 104], armF: [20, 100] },
+    drink: { armN: [36, 142] }, tally: { armN: [48, 62] }, fist: { armN: [120, 70] }, facepalm: { armN: [40, 150] },
+    // looping work actions: phase 0..1 per `period` seconds (fast stroke, slower recovery)
+    reap:  { period: 1.1, loop: p => { const s = p < 0.35 ? X.smoother(p / 0.35) : 1 - X.smoother((p - 0.35) / 0.65); return { armN: [lerp(20, 112, s), lerp(70, 8, s)], armF: [72 + 8 * Math.sin(2 * Math.PI * p), 24], lean: 4 * s }; } },
+    grind: { period: 1.4, loop: p => ({ armN: [56 + 16 * Math.cos(2 * Math.PI * p), 72 + 26 * Math.sin(2 * Math.PI * p)], armF: [52 + 6 * Math.sin(2 * Math.PI * p), 46], lean: 3 * Math.sin(2 * Math.PI * p) }) },
+    knock: { period: 0.42, loop: p => { const k = Math.max(0, Math.sin(2 * Math.PI * p)) ** 3; return { armN: [74 - 6 * k, 96 - 30 * k] }; } },
+    bind:  { period: 0.9, loop: p => ({ armN: [62 + 10 * Math.sin(2 * Math.PI * p), 84 + 20 * Math.cos(2 * Math.PI * p)], armF: [56 - 10 * Math.sin(2 * Math.PI * p), 74] }) },
+    eat:   { period: 1.6, loop: p => { const k = X.smoother(Math.min(1, Math.max(0, Math.sin(2 * Math.PI * p)) * 1.4)); return { armN: [lerp(30, 38, k), lerp(70, 146, k)] }; } },
+    shake_fist: { period: 0.5, loop: p => ({ armN: [118 + 8 * Math.sin(2 * Math.PI * p), 72 + 14 * Math.sin(2 * Math.PI * p)] }) },
+    cheer: { period: 0.6, loop: p => ({ armN: [150 + 10 * Math.sin(2 * Math.PI * p), 20], armF: [140 - 10 * Math.sin(2 * Math.PI * p), 26] }) }
   };
   const EXPR = {
     neutral:   { open: 1, brow: 0, browIn: 0, smile: 0.05, mouth: 0, blush: 0.15, sweat: 0, wide: 0 },
@@ -112,18 +126,38 @@
 
   // ------------------------------------------------------------------ actor state from an action list
   // acts are pre-resolved to absolute sequence time: {t, pose?, dur?, expr?, walk?: targetX, face?, gesture?, look?, prop?}
+  // where the feet are (character units, facing frame) after the pose changes up to time t. A small adjustment
+  // (≤12 u) leaves a foot planted; a real repositioning is a step (near foot first, then far), lifted on an arc.
+  function restFeet(acts, pose0, t) {
+    let cur = (POSES[pose0 || 'stand'] || POSES.stand).feet.slice(), lift = [0, 0];
+    for (const ac of acts) {
+      if (ac.pose === undefined || ac.t > t) continue; const PP = POSES[ac.pose || 'stand']; if (!PP) continue;
+      const tgt = PP.feet, moves = [0, 1].map(i => Math.abs(tgt[i] - cur[i]) > 12);
+      const u = (t - ac.t) / Math.max(0.05, ac.dur ?? 0.35);
+      if (u >= 1 || PP.ik <= 0.5) { cur = [0, 1].map(i => moves[i] ? tgt[i] : cur[i]); lift = [0, 0]; continue; }
+      const us = [clamp(u * 2, 0, 1), clamp(u * 2 - 1, 0, 1)];
+      lift = [0, 1].map(i => moves[i] ? Math.sin(Math.PI * us[i]) * 0.45 : 0);
+      cur = [0, 1].map(i => moves[i] ? lerp(cur[i], tgt[i], smooth(us[i])) : cur[i]);
+    }
+    return { cur, lift };
+  }
   function compileActor(a) {
     const acts = (a.acts || []).slice().sort((p, q) => p.t - q.t);
+    // K = rest pixels per character unit (1000 u = height). Gait lives in rest pixels (world), drawing in units.
+    const K = a.K ?? ((a.h || 420) / (a.z || 1) / 1000);
     // walks: compute from-x chain and facing changes
-    let x = a.x, facing = a.facing ?? 1, feetAbs = null; const walks = [], faces = [{ t: -1e9, f: facing }];
+    let x = a.x, facing = a.facing ?? 1, feetAbs = null, pose = a.pose0 || 'stand'; const walks = [], faces = [{ t: -1e9, f: facing }];
     for (const ac of acts) {
+      if (ac.pose !== undefined) pose = ac.pose || 'stand';
       if (ac.face !== undefined) { faces.push({ t: ac.t, f: ac.face }); facing = ac.face; }
       if (ac.walk !== undefined) {
         const D = ac.walk - x; const dir = Math.sign(D) || facing;
         if (dir !== facing) { faces.push({ t: ac.t - 0.32, f: dir }); facing = dir; }
-        const { S, k } = fitStride(D, (a.stride || 600) * (ac.stride || 1));
+        const { S, k } = fitStride(D, (a.stride || 560) * (ac.stride || 1) * K);
         // starting stance: where the feet actually are (idle pose, or the end of the previous walk)
-        const rel = feetAbs ? feetAbs.map(f => (f - x) * dir) : [a.stanceN ?? 16, a.stanceF ?? -20];
+        // (no previous walk: the feet are where the current pose puts them, in its facing frame)
+        const pf = restFeet(acts, a.pose0, ac.t - 1e-6).cur;
+        const rel = feetAbs ? feetAbs.map(f => (f - x) * dir) : [pf[0] * K * facing * dir, pf[1] * K * facing * dir];
         const swap = rel[0] > rel[1]; const st0 = swap ? [rel[1], rel[0]] : rel;   // the rear foot takes the first step
         const w = { swap, t0: ac.t, dur: ac.dur || Math.abs(D) / (ac.speed || a.speed || 180) + 0.6, x0: x, x1: ac.walk, D: Math.abs(D), dir, S, k, ramp: ac.ramp ?? 0.28, st0 };
         walks.push(w);
@@ -132,7 +166,7 @@
       }
     }
     faces.sort((p, q) => p.t - q.t);
-    return { ...a, acts, walks, faces };
+    return { ...a, acts, walks, faces, K };
   }
   function blendKeys(acts, field, table, t, def) {
     // returns blended object of numeric params from a sequence of named states
@@ -146,16 +180,20 @@
     return cur;
   }
   function gestureAt(acts, t) {
-    // a gesture blends in over `dur`, holds for `hold` seconds (-1 = until the next gesture), then releases
-    let armN = null, armF = null, wN = 0, wF = 0;
+    // a gesture winds up slightly, overshoots and settles (anticipation + follow-through), holds for `hold` seconds
+    // (-1 = until the next gesture), then releases smoothly. Looping gestures animate while held.
+    let armN = null, armF = null, wN = 0, wF = 0, lean = 0;
     for (const ac of acts) {
-      if (!ac.gesture || ac.t > t) continue; const g = GESTURES[ac.gesture]; if (!g) continue;
+      if (!ac.gesture || ac.t > t) continue; const g0 = GESTURES[ac.gesture]; if (!g0) continue;
       const din = ac.dur ?? 0.4, hold = ac.hold ?? 1.2, end = hold < 0 ? 1e9 : ac.t + din + hold;
-      const w = smoother((t - ac.t) / din) * (1 - smoother((t - end) / 0.45));
-      if (g.armN) { armN = armN ? armN.map((v, j) => lerp(v, g.armN[j], w)) : g.armN; wN = armN === g.armN ? w : Math.max(wN, w); }
-      if (g.armF) { armF = armF ? armF.map((v, j) => lerp(v, g.armF[j], w)) : g.armF; wF = armF === g.armF ? w : Math.max(wF, w); }
+      const g = g0.loop ? g0.loop((((t - ac.t) / (ac.period || g0.period)) % 1 + 1) % 1) : g0;
+      const win = g0.loop ? smoother((t - ac.t) / din) : X.anticipate((t - ac.t) / din, ac.snap ?? 1);
+      const w = win * (1 - smoother((t - end) / 0.45));
+      if (g.armN) { armN = armN ? armN.map((v, j) => lerp(v, g.armN[j], clamp(w, 0, 1))) : g.armN; wN = armN === g.armN ? w : Math.max(wN, w); }
+      if (g.armF) { armF = armF ? armF.map((v, j) => lerp(v, g.armF[j], clamp(w, 0, 1))) : g.armF; wF = armF === g.armF ? w : Math.max(wF, w); }
+      if (g.lean) lean = g.lean * clamp(w, 0, 1);
     }
-    return { armN, armF, wN, wF };
+    return { armN, armF, wN, wF, lean };
   }
   function walkAt(A, t) {
     // returns {x, s info, moving} — x is the hip x; feet absolute x
@@ -201,40 +239,54 @@
     const G = gestureAt(A.acts, t);
     const wk = walkAt(A, t); const fc = facingAt(A, t);
     const dirF = fc.f; // local +x = facing direction
-    // feet in local coordinates (relative to hip x, in facing frame)
-    let fN, fF, liftN = 0, liftF = 0, hipX = wk.x;
-    if (wk.feet) {
-      // near foot = foot0 when facing matches walk dir
-      const a = (wk.feet[0] - hipX) * dirF, b = (wk.feet[1] - hipX) * dirF;
-      fN = a; fF = b; liftN = wk.lift[0]; liftF = wk.lift[1];
-      if (wk.settled) { const mid = (a + b) / 2; hipX += mid * dirF * 0.0; }
-    } else { fN = P.feet[0]; fF = P.feet[1]; }
-    if (!wk.walking && !wk.feet) { fN = P.feet[0]; fF = P.feet[1]; }
+    // feet live in world space (rest px) so they stay planted; the hip may move over them (walks, idle weight shift)
+    const seedPh = ((A.seed || 0) % 97) * 0.37;
+    let liftN = 0, liftF = 0, hipX = wk.x; let feetW;
+    if (wk.feet) { feetW = wk.feet; liftN = wk.lift[0]; liftF = wk.lift[1]; }
+    else { const rf = restFeet(A.acts, A.pose0, t); feetW = [wk.x + rf.cur[0] * A.K * dirF, wk.x + rf.cur[1] * A.K * dirF]; liftN = rf.lift[0]; liftF = rf.lift[1]; }
+    if (!wk.walking && P.ik > 0.5) hipX += 7 * A.K * Math.sin(2 * Math.PI * t / 4.7 + seedPh) * dirF;   // idle weight shift
+    const fN = (feetW[0] - hipX) * dirF / A.K, fF = (feetW[1] - hipX) * dirF / A.K;   // world -> character units
     // hip height: pose height, limited by leg reach to the planted feet (natural dip)
     const reachH = dx => ANKLE + Math.sqrt(Math.max(0, (LEG * 0.985) ** 2 - dx * dx));
     let hip = P.hip;
     if (P.ik > 0.5) hip = Math.min(hip, reachH(fN), reachH(fF));
     const speed = Math.abs(wk.vel);
-    const bob = wk.walking ? -Math.abs(Math.sin((wk.feet[0] - wk.feet[1]) / 600 * Math.PI)) * 0 : 0;
-    // torso lean into walking speed; small breathing
-    const breath = Math.sin(t * 2 * Math.PI / 3.6 + (A.seed || 0)) * 1.0;
-    const lean = P.lean + clamp(speed / 220, 0, 1.3) * 6 + (A.leanBias || 0);
-    // secondary motion drivers: velocity and acceleration of the hip
-    const v0 = hipVelocity(A, t), v1 = hipVelocity(A, t - 0.12);
-    const accel = (v0 - v1) / 0.12;
-    const sway = clamp(-v0 / 300, -1.2, 1.2) * dirF;   // hair & hem trail behind motion
-    const jolt = clamp(-accel / 900, -1, 1) * dirF;
-    // arms: pose arms + walk swing (opposite to legs) + gesture override
-    const sw = wk.walking ? clamp((fF - fN) / 300, -1, 1) * 22 * clamp(speed / 120, 0, 1) : 0;
-    let armN = [P.armN[0] + sw, P.armN[1] + Math.abs(sw) * 0.4], armF = [P.armF[0] - sw, P.armF[1] + Math.abs(sw) * 0.4];
+    // pose changes: lean forward while getting up (and back while sitting down) — weight goes over the feet first
+    let lean = P.lean + clamp(speed / 220, 0, 1.3) * 6 + (A.leanBias || 0) + G.lean;
+    let lastPose = null; for (const ac of A.acts) if (ac.pose !== undefined && ac.t <= t) lastPose = ac;
+    if (lastPose && POSES[lastPose.pose]) {
+      const u = (t - lastPose.t) / Math.max(0.05, lastPose.dur ?? 0.35);
+      if (u > 0 && u < 1) { const prevHip = blendKeys(A.acts, 'pose', POSES, lastPose.t - 1e-4, A.pose0 || 'stand').hip; lean += Math.sin(Math.PI * u) * clamp((POSES[lastPose.pose].hip - prevHip) / 250, -1, 1) * 16; }
+    }
+    // weight settles into the knees for a moment after a walk ends
+    const lw = A.walks.filter(w => w.t0 + w.dur <= t).pop();
+    if (lw && P.ik > 0.5) { const tau = t - lw.t0 - lw.dur; if (tau < 1.2) hip -= 16 * Math.exp(-4 * tau) * Math.sin(Math.min(tau * 7, Math.PI)); }
+    // idle: slow weight shift between the feet and a little torso drift, so a standing character is never frozen
+    if (!wk.walking && P.ik > 0.5) lean += 0.9 * Math.sin(2 * Math.PI * t / 4.7 + seedPh + 1.1);
+    const breath = Math.sin(t * 2 * Math.PI / 3.6 + seedPh) * 1.0;
+    // secondary motion: hair, cowlick and hem respond to hip acceleration through a damped spring
+    // (impulse response e^-4τ·sin(2π·1.6τ)), so they trail, overshoot and settle after starts and stops.
+    const dt = 1 / 30, xs = []; for (let k = 0; k < 28; k++) xs.push(walkAt(A, t - k * dt).x);
+    const v = xs.slice(0, -1).map((x, k) => (x - xs[k + 1]) / dt);
+    let resp = 0; for (let k = 0; k < v.length - 1; k++) { const a = (v[k] - v[k + 1]) / dt, tau = k * dt; resp += a * Math.exp(-4 * tau) * Math.sin(2 * Math.PI * 1.6 * tau) * dt; }
+    const sway = clamp(-v[0] / 300, -1.2, 1.2) * dirF;
+    const jolt = clamp(-resp / 60, -1.5, 1.5) * dirF;
+    // arms: swing opposite the legs with a slight lag; the elbow bends more on the forward swing
+    const wkLag = walkAt(A, t - 0.07); const lagF = wkLag.feet ? ((wkLag.feet[1] - wkLag.feet[0]) * dirF) : 0;
+    const sw = wk.walking ? clamp(lagF / 300, -1, 1) * 24 * clamp(speed / 120, 0, 1) : 0;
+    let armN = [P.armN[0] + sw, P.armN[1] + Math.max(0, sw) * 0.9 + 4], armF = [P.armF[0] - sw, P.armF[1] + Math.max(0, -sw) * 0.9 + 4];
     if (G.armN) armN = armN.map((v, j) => lerp(v, G.armN[j], G.wN));
     if (G.armF) armF = armF.map((v, j) => lerp(v, G.armF[j], G.wF));
+    // torso counter-rotates a touch with each stride; the head stays level
+    const strideTwist = wk.walking ? clamp(lagF / 300, -1, 1) * 1.6 : 0; lean += strideTwist;
+    const bob = 0;
     // look target & head
     let look = [0, 0]; for (const ac of A.acts) if (ac.look && ac.t <= t) { const u = ease.out3((t - ac.t) / 0.3); look = [lerp(look[0], ac.look[0], u), lerp(look[1], ac.look[1], u)]; }
     const talk = mouthFn ? mouthFn(A.char, t) : 0;
     const blink = blinkAt(A.id, t, A.seed || 1);
     let prop = null; for (const ac of A.acts) if (ac.prop !== undefined && ac.t <= t) prop = ac.prop;
-    return { P, E, x: hipX, hip: hip + bob, lean, neck: P.neck + look[1] * 6, rot: P.rot, ik: P.ik, fN, fF, liftN, liftF, armN, armF, look, talk, blink, facing: dirF, squash: fc.squash, sway, jolt, t, prop, breath, speed };
+    const nod = talk * 3 * Math.sin(t * 9.5);
+    return { P, E, x: hipX, hip: hip + bob, lean, neck: P.neck + look[1] * 6 - strideTwist + nod, rot: P.rot, ik: P.ik, fN, fF, liftN, liftF, armN, armF, look, talk, blink, facing: dirF, squash: fc.squash, sway, jolt, t, prop, breath, speed };
   }
   function blinkAt(who, t, seed) {
     const r = X.mulberry32(X.hashStr(who) ^ seed); let tb = 0.6 + r() * 1.8;
@@ -244,12 +296,20 @@
 
   // ------------------------------------------------------------------ drawing
   let CUR_L = [-0.8, -0.6];   // direction towards the key light, in the drawing frame
+  // drawing style: 'anime' (crisp cel + uniform ink) or 'watercolour' (soft terminators, thin coloured lines;
+  // the director adds pigment texture and edge bleed on the character's own layer)
+  let STYLE = 'anime', SOFT = 0;
   function celPath(g, path, base, shadow, light, lw, ink, o = {}) {
-    // flat base; shadow on the side away from the light (base re-filled shifted towards the light); ink line
-    const Lv = light || CUR_L; const off = o.off ?? 18;
+    const Lv = light || CUR_L; const off = o.off ?? 18; const wc = STYLE === 'watercolour';
     g.fillStyle = base; g.fill(path);
-    if (shadow) { g.save(); g.clip(path); g.fillStyle = shadow; g.fill(path); g.translate(Lv[0] * off, Lv[1] * off); g.fillStyle = base; g.fill(path); g.restore(); }
-    if (lw) { g.strokeStyle = ink; g.lineWidth = lw; g.lineJoin = 'round'; g.lineCap = 'round'; g.stroke(path); }
+    if (shadow) {
+      g.save(); g.clip(path); g.fillStyle = shadow; g.fill(path); g.translate(Lv[0] * off, Lv[1] * off);
+      if (wc && SOFT > 0.4) g.filter = `blur(${SOFT.toFixed(2)}px)`;
+      g.fillStyle = base; g.fill(path); g.filter = 'none';
+      if (wc) { g.translate(Lv[0] * off * 0.8, Lv[1] * off * 0.8); g.globalAlpha = 0.35; g.fillStyle = shade(base, 0.22); if (SOFT > 0.4) g.filter = `blur(${(SOFT * 1.6).toFixed(2)}px)`; g.fill(path); g.filter = 'none'; g.globalAlpha = 1; }
+      g.restore();
+    }
+    if (lw) { g.strokeStyle = wc && !o.keepInk ? mix(base, '#2e1a10', 0.58) : ink; g.lineWidth = wc ? lw * 0.62 : lw; g.lineJoin = 'round'; g.lineCap = 'round'; g.stroke(path); }
   }
   function P2(pts, closed = true) { const p = new Path2D(); pts.forEach(([x, y], i) => i ? p.lineTo(x, y) : p.moveTo(x, y)); if (closed) p.closePath(); return p; }
   function limb(x0, y0, x1, y1, w0, w1) {
@@ -277,7 +337,13 @@
     const S = A._spec || (A._spec = specOf(A.spec || {}));
     const ink = S.ink; const lw = opts.lw ?? 6.5; const L = light || [-1, 0];
     const Lf = [L[0] * st.facing, L[1]];   // light in facing frame
-    CUR_L = Lf;
+    CUR_L = Lf; STYLE = opts.style || 'anime'; SOFT = opts.softPx || 0;
+    if (STYLE === 'watercolour' && !A._wcSpec) A._wcSpec = { ...S, eyeStyle: 'ghibli' };
+    if (STYLE === 'watercolour') { return drawCharacterBody(g, A, st, A._wcSpec, L, Lf, opts); }
+    return drawCharacterBody(g, A, st, S, L, Lf, opts);
+  }
+  function drawCharacterBody(g, A, st, S, L, Lf, opts) {
+    const ink = S.ink; const lw = opts.lw ?? 6.5;
     g.save();
     g.scale(st.facing * st.squash, 1);
     // contact shadow (stays on the ground, follows the feet)
@@ -330,6 +396,10 @@
     if (S.sleeves === 'short') { celPath(g, fo, skin, skinS, null, lw, ink, { off: 9 }); celPath(g, up, sleeve, sleeveS, null, lw, ink, { off: 12 }); }
     else { celPath(g, up, sleeve, sleeveS, null, lw, ink, { off: 12 }); celPath(g, fo, sleeve, sleeveS, null, lw, ink, { off: 10 }); g.fillStyle = sleeve; g.fill(elbow);
       // cuff
+      if (STYLE === 'watercolour') {   // fabric creases gather inside the elbow
+        const ua = Math.atan2(a.el[1] - a.sh[1], a.el[0] - a.sh[0]); g.strokeStyle = rgba(sleeveS, 0.9); g.lineWidth = lw * 0.55; g.lineCap = 'round';
+        for (const d of [-26, -12]) { const ex = a.el[0] + Math.cos(ua) * d, ey = a.el[1] + Math.sin(ua) * d; g.beginPath(); g.moveTo(ex + Math.cos(ua + 1.57) * 22, ey + Math.sin(ua + 1.57) * 22); g.quadraticCurveTo(ex + Math.cos(ua) * 8, ey + Math.sin(ua) * 8, ex - Math.cos(ua + 1.57) * 6, ey - Math.sin(ua + 1.57) * 6); g.stroke(); }
+      }
       const ca = Math.atan2(a.hd[1] - a.el[1], a.hd[0] - a.el[0]); const cx = a.hd[0] - Math.cos(ca) * 14, cy = a.hd[1] - Math.sin(ca) * 14;
       g.strokeStyle = ink; g.lineWidth = lw * 0.8; g.beginPath(); g.moveTo(cx + Math.cos(ca + Math.PI / 2) * 26, cy + Math.sin(ca + Math.PI / 2) * 26); g.lineTo(cx - Math.cos(ca + Math.PI / 2) * 26, cy - Math.sin(ca + Math.PI / 2) * 26); g.stroke(); }
     g.save(); g.translate(a.hd[0], a.hd[1]); g.rotate(-a.a2);
@@ -410,13 +480,19 @@
     const hairSway = st.sway * 0.05 + Math.sin(t * 1.7) * 0.006, hairJolt = st.jolt * 0.04;
     if (S.headwear !== 'coif') drawHairBack(g, S, ink, lw, hairSway, hairJolt);
     else drawCoifBack(g, S, ink, lw);
-    const face = new Path2D();
+    const face = new Path2D(); const gh = S.eyeStyle === 'ghibli';
     face.moveTo(-0.27, 0.12);
     face.bezierCurveTo(-0.52, -0.05, -0.46, -0.53, -0.02, -0.54);
     face.bezierCurveTo(0.28, -0.54, 0.43, -0.36, 0.42, -0.12);
-    face.bezierCurveTo(0.45, 0.02, 0.44, 0.13, 0.39, 0.23);
-    face.bezierCurveTo(0.34, 0.35, 0.27, 0.44, 0.17, 0.46);
-    face.bezierCurveTo(0.08, 0.47, -0.04, 0.41, -0.12, 0.33);
+    if (gh) {   // rounder cheek and a soft, less pointed chin
+      face.bezierCurveTo(0.46, 0.03, 0.46, 0.16, 0.41, 0.26);
+      face.bezierCurveTo(0.36, 0.38, 0.27, 0.45, 0.16, 0.46);
+      face.bezierCurveTo(0.05, 0.47, -0.06, 0.41, -0.13, 0.32);
+    } else {
+      face.bezierCurveTo(0.45, 0.02, 0.44, 0.13, 0.39, 0.23);
+      face.bezierCurveTo(0.34, 0.35, 0.27, 0.44, 0.17, 0.46);
+      face.bezierCurveTo(0.08, 0.47, -0.04, 0.41, -0.12, 0.33);
+    }
     face.closePath();
     celPath(g, face, S.skin, S.skinS, null, lw, ink, { off: 0.07 });
     g.save(); g.clip(face);
@@ -432,16 +508,20 @@
     const blink = Math.max(st.blink, 0); const open = clamp(E.open * (1 - blink), 0, 1.25);
     const lx = clamp(st.look[0], -1, 1) * 0.022, ly = clamp(st.look[1], -1, 1) * 0.02;
     const big = S.eyeStyle === 'big' ? 1 : 0.7;
-    drawEye(g, 0.08, 0.04, 0.105 * big, 0.125 * big, open, E, S, ink, lw, lx, ly, 1.0);
-    drawEye(g, 0.33, 0.04, 0.062 * big, 0.118 * big, open, E, S, ink, lw, lx * 0.6, ly, 0.85);
-    const by = -0.11 - E.brow * 0.045 + (S.eyeStyle === 'big' ? 0 : 0.03);
-    g.strokeStyle = S.brows; g.lineCap = 'round'; g.lineWidth = lw * (S.eyeStyle === 'big' ? 2.0 : 3.0);
+    if (gh) { drawEyeGhibli(g, 0.09, 0.05, 0.068, 0.082, open, E, S, ink, lw, lx, ly, 1.0); drawEyeGhibli(g, 0.33, 0.05, 0.042, 0.078, open, E, S, ink, lw, lx * 0.6, ly, 0.85); }
+    else {
+      drawEye(g, 0.08, 0.04, 0.105 * big, 0.125 * big, open, E, S, ink, lw, lx, ly, 1.0);
+      drawEye(g, 0.33, 0.04, 0.062 * big, 0.118 * big, open, E, S, ink, lw, lx * 0.6, ly, 0.85);
+    }
+    const by = -0.11 - E.brow * 0.045 + (S.eyeStyle === 'big' ? 0 : 0.03) + (gh ? 0.0 : 0);
+    g.strokeStyle = gh ? mix(S.brows, S.skin, 0.15) : S.brows; g.lineCap = 'round'; g.lineWidth = lw * (gh ? 1.25 : S.eyeStyle === 'big' ? 2.0 : 3.0);
     g.beginPath(); g.moveTo(-0.02, by + 0.012); g.quadraticCurveTo(0.07, by - 0.03 + E.browIn * 0.012, 0.16, by + E.browIn * 0.04); g.stroke();
     g.beginPath(); g.moveTo(0.28, by + E.browIn * 0.04); g.quadraticCurveTo(0.34, by - 0.025 + E.browIn * 0.012, 0.39, by + 0.016); g.stroke();
-    g.strokeStyle = rgba(ink, 0.75); g.lineWidth = lw * 0.8; g.beginPath(); g.moveTo(0.41, 0.11); g.lineTo(0.435, 0.175); g.lineTo(0.405, 0.185); g.stroke();
-    const mo = clamp(E.mouth + st.talk * 0.6, 0, 1); const sm = E.smile; const mx = 0.28, my = 0.31;
+    if (gh) { g.strokeStyle = rgba(S.skinS, 0.9); g.lineWidth = lw * 0.7; g.beginPath(); g.moveTo(0.425, 0.15); g.quadraticCurveTo(0.44, 0.175, 0.415, 0.18); g.stroke(); }   // a soft hint of a nose
+    else { g.strokeStyle = rgba(ink, 0.75); g.lineWidth = lw * 0.8; g.beginPath(); g.moveTo(0.41, 0.11); g.lineTo(0.435, 0.175); g.lineTo(0.405, 0.185); g.stroke(); }
+    const mo = clamp(E.mouth + st.talk * 0.6, 0, 1); const sm = E.smile; const mx = 0.28, my = gh ? 0.32 : 0.31;
     if (mo > 0.08) {
-      const mw = 0.065 + sm * 0.02, mh = 0.02 + mo * 0.075;
+      const mw = (gh ? 0.05 : 0.065) + sm * 0.02, mh = 0.02 + mo * (gh ? 0.065 : 0.075);
       const m = new Path2D(); m.moveTo(mx - mw, my - sm * 0.012); m.quadraticCurveTo(mx, my - 0.012 - sm * 0.02, mx + mw * 0.8, my - sm * 0.012); m.quadraticCurveTo(mx + mw * 0.2, my + mh * 1.6, mx - mw, my - sm * 0.012); m.closePath();
       g.fillStyle = '#7a2d2a'; g.fill(m); g.save(); g.clip(m); g.fillStyle = '#d0706a'; g.beginPath(); g.ellipse(mx - 0.005, my + mh * 1.25, mw * 0.6, mh * 0.6, 0, 0, 7); g.fill(); g.fillStyle = '#fff'; g.fillRect(mx - mw, my - 0.03, mw * 1.8, 0.022 + sm * 0.005); g.restore();
       g.strokeStyle = ink; g.lineWidth = lw * 0.8; g.stroke(m);
@@ -482,8 +562,36 @@
   }
   function lock(g, x0, y0, x1, y1, w, bend, fill, ink, lw, shadow) {
     const mx = (x0 + x1) / 2 + bend, my = (y0 + y1) / 2; const p = new Path2D();
-    p.moveTo(x0 - w, y0); p.quadraticCurveTo(mx - w * 0.6, my, x1, y1); p.quadraticCurveTo(mx + w * 0.7, my, x0 + w, y0); p.closePath();
+    if (STYLE === 'watercolour') {   // softer, rounded tips; the root edge (hidden under the crown) gets no outline
+      p.moveTo(x0 - w, y0); p.quadraticCurveTo(mx - w * 0.7, my, x1 - w * 0.28, y1 - w * 0.25); p.quadraticCurveTo(x1, y1 + w * 0.3, x1 + w * 0.3, y1 - w * 0.3); p.quadraticCurveTo(mx + w * 0.8, my, x0 + w, y0);
+      const closed = new Path2D(p); closed.closePath(); celPath(g, closed, fill, shadow, null, 0, ink, { off: 0.02 });
+      g.strokeStyle = mix(fill, '#2e1a10', 0.58); g.lineWidth = lw * 0.62; g.lineCap = 'round'; g.stroke(p); return;
+    } else { p.moveTo(x0 - w, y0); p.quadraticCurveTo(mx - w * 0.6, my, x1, y1); p.quadraticCurveTo(mx + w * 0.7, my, x0 + w, y0); p.closePath(); }
     celPath(g, p, fill, shadow, null, lw, ink, { off: 0.02 });
+  }
+  // a simpler, film-animation eye: small white, a tall dark iris, one catch-light; thin lid line
+  function drawEyeGhibli(g, cx, cy, rx, ry, open, E, S, ink, lw, lx, ly, k) {
+    const wide = 1 + E.wide * 0.12; rx *= wide; ry *= wide;
+    const lid = mix(S.hair, '#1e120c', 0.5);
+    if (open < 0.08) {
+      g.strokeStyle = lid; g.lineWidth = lw * 1.4; g.lineCap = 'round'; g.beginPath();
+      if (E.smile > 0.5) { g.moveTo(cx - rx, cy + ry * 0.25); g.quadraticCurveTo(cx, cy - ry * 0.55, cx + rx, cy + ry * 0.25); }
+      else { g.moveTo(cx - rx, cy + ry * 0.15); g.quadraticCurveTo(cx, cy + ry * 0.55, cx + rx, cy + ry * 0.1); }
+      g.stroke(); return;
+    }
+    const top = cy - ry * (0.2 + 0.8 * Math.min(open, 1)) - (open > 1 ? (open - 1) * ry * 0.35 : 0), bot = cy + ry * 0.85;
+    const white = new Path2D(); white.moveTo(cx - rx, cy + ry * 0.05); white.bezierCurveTo(cx - rx * 0.8, top, cx + rx * 0.7, top, cx + rx, cy - ry * 0.05); white.bezierCurveTo(cx + rx * 0.8, bot, cx - rx * 0.7, bot, cx - rx, cy + ry * 0.05); white.closePath();
+    g.fillStyle = '#fbf6ee'; g.fill(white);
+    g.save(); g.clip(white);
+    const ix = cx + lx * 1.2 + rx * 0.06, iy = cy + ly + ry * 0.12, ir = rx * 0.66, iry = ry * 0.92;
+    const gr = g.createLinearGradient(0, iy - iry, 0, iy + iry); gr.addColorStop(0, shade(S.eye, -0.7)); gr.addColorStop(0.7, shade(S.eye, -0.45)); gr.addColorStop(1, shade(S.eye, -0.1));
+    g.fillStyle = gr; g.beginPath(); g.ellipse(ix, iy, ir, iry, 0, 0, 7); g.fill();
+    g.fillStyle = 'rgba(80,40,30,0.18)'; g.fillRect(cx - rx * 1.2, top - ry, rx * 2.4, ry * 1.2);
+    g.fillStyle = '#ffffff'; g.beginPath(); g.ellipse(ix - ir * 0.3, iy - iry * 0.38, ir * 0.3, iry * 0.22, -0.3, 0, 7); g.fill();
+    g.restore();
+    g.strokeStyle = lid; g.lineCap = 'round'; g.lineWidth = lw * 1.5;
+    g.beginPath(); g.moveTo(cx - rx * 1.05, cy + ry * 0.08); g.bezierCurveTo(cx - rx * 0.8, top - ry * 0.04, cx + rx * 0.7, top - ry * 0.04, cx + rx * 1.12, cy - ry * 0.12 * k); g.stroke();
+    g.strokeStyle = rgba(lid, 0.35); g.lineWidth = lw * 0.6; g.beginPath(); g.moveTo(cx - rx * 0.5, bot + ry * 0.02); g.quadraticCurveTo(cx, bot + ry * 0.08, cx + rx * 0.6, bot - ry * 0.05); g.stroke();
   }
   function drawHairBack(g, S, ink, lw, sway, jolt) {
     const p = new Path2D(); const s = sway + jolt;
@@ -493,6 +601,11 @@
       celPath(g, p, S.hair, S.hairS, null, lw, ink, { off: 0.04 });
       for (let i = 0; i < 6; i++) { const y = 0.45 + i * 0.13; const x = -0.32 - i * 0.02 - s * i * 0.3; g.beginPath(); g.ellipse(x, y, 0.075, 0.085, 0.3, 0, 7); g.fillStyle = i % 2 ? S.hair : S.hairS; g.fill(); g.strokeStyle = ink; g.lineWidth = lw; g.stroke(); }
       return;
+    }
+    if (STYLE === 'watercolour') {   // soft rounded mass with a few loose tufts at the nape
+      p.moveTo(0.44, -0.2); p.bezierCurveTo(0.5, -0.7, -0.44, -0.8, -0.56, -0.24);
+      p.quadraticCurveTo(-0.66 - s * 0.6, -0.02, -0.52, 0.04); p.quadraticCurveTo(-0.6 - s * 0.7, 0.18, -0.42, 0.16); p.quadraticCurveTo(-0.44 - s * 0.5, 0.3, -0.27, 0.2); p.lineTo(-0.2, 0.05); p.closePath();
+      celPath(g, p, S.hair, S.hairS, null, lw, ink, { off: 0.05 }); return;
     }
     p.moveTo(0.44, -0.2);
     p.bezierCurveTo(0.5, -0.68, -0.42, -0.78, -0.55, -0.22);
@@ -508,12 +621,22 @@
     cap.quadraticCurveTo(0.3, -0.24, 0.12, -0.26); cap.quadraticCurveTo(-0.04, -0.26, -0.12, -0.18); cap.quadraticCurveTo(-0.17, -0.06, -0.2, 0.04); cap.closePath();
     celPath(g, cap, H, HS, null, lw, ink, { off: 0.045 });
     // bangs: pointed locks falling over the forehead to the brows; tips trail with motion
+    if (STYLE === 'watercolour' && S.hairStyle !== 'long_braid') {
+      // three soft, heavy locks over the brow and one at the temple; light falls on the crown as a wash
+      [[-0.06, -0.4, -0.06, -0.06, 0.1], [0.12, -0.44, 0.15, -0.1, 0.11], [0.3, -0.4, 0.38, -0.1, 0.09]].forEach(([x0, y0, x1, y1, w], i) => lock(g, x0, y0, x1 - s * (0.2 + i * 0.04), y1 + Math.abs(s) * 0.02, w, 0.02 - s * 0.1, H, ink, lw, HS));
+      lock(g, -0.13, -0.3, -0.11 - s * 0.4, 0.22, 0.06, -0.04, H, ink, lw, HS);
+      g.save(); g.clip(cap); const gl = g.createRadialGradient(-0.05, -0.55, 0.02, -0.05, -0.55, 0.42); gl.addColorStop(0, rgba(S.hairL, 0.75)); gl.addColorStop(1, rgba(S.hairL, 0)); g.fillStyle = gl; g.fillRect(-0.6, -0.9, 1.2, 0.9);
+      g.strokeStyle = rgba(S.hairS, 0.55); g.lineWidth = lw * 0.5; for (const [a0, b0, a1, b1] of [[-0.32, -0.28, 0.0, -0.62], [0.02, -0.34, 0.3, -0.56]]) { g.beginPath(); g.moveTo(a0, b0); g.quadraticCurveTo((a0 + a1) / 2 - 0.04, (b0 + b1) / 2 - 0.06, a1, b1); g.stroke(); } g.restore();
+      if (S.ahoge) { const a = Math.sin(t * 2.3) * 0.03 - s * 0.25; const p = new Path2D(); p.moveTo(-0.04, -0.6); p.bezierCurveTo(-0.02 + a, -0.8, 0.14 + a * 1.5, -0.8, 0.12 + a * 1.6, -0.71); p.bezierCurveTo(0.1 + a, -0.75, 0.04 + a, -0.74, 0.02, -0.58); p.closePath(); celPath(g, p, H, HS, null, lw, ink, { off: 0.02 }); }
+      return;
+    }
     const locks = S.hairStyle === 'long_braid' ? [[-0.1, -0.36, -0.08, -0.06, 0.07], [0.06, -0.4, 0.1, -0.1, 0.08], [0.22, -0.38, 0.27, -0.12, 0.07], [0.35, -0.33, 0.43, -0.09, 0.05]]
       : [[-0.08, -0.38, -0.1, -0.02, 0.075], [0.06, -0.42, 0.06, -0.07, 0.085], [0.19, -0.42, 0.22, -0.1, 0.08], [0.31, -0.38, 0.37, -0.1, 0.07], [0.4, -0.3, 0.47, -0.05, 0.05]];
     locks.forEach(([x0, y0, x1, y1, w], i) => lock(g, x0, y0, x1 - s * (0.2 + i * 0.03), y1 + Math.abs(s) * 0.02, w, 0.03 - s * 0.1, H, ink, lw, HS));
     lock(g, -0.13, -0.3, -0.11 - s * 0.4, 0.24, 0.055, -0.04, H, ink, lw, HS);
-    // highlight band ("angel ring")
-    g.save(); g.clip(cap); g.strokeStyle = rgba(S.hairL, 0.85); g.lineWidth = 0.035; g.beginPath(); g.ellipse(0.0, -0.36, 0.34, 0.14, -0.1, Math.PI * 1.08, Math.PI * 1.72); g.stroke(); g.restore();
+    // highlight band ("angel ring"); in watercolour style a soft wash instead
+    if (STYLE === 'watercolour') { g.save(); g.clip(cap); const gl = g.createRadialGradient(-0.05, -0.55, 0.02, -0.05, -0.55, 0.42); gl.addColorStop(0, rgba(S.hairL, 0.7)); gl.addColorStop(1, rgba(S.hairL, 0)); g.fillStyle = gl; g.fillRect(-0.6, -0.9, 1.2, 0.9); g.restore(); }
+    else { g.save(); g.clip(cap); g.strokeStyle = rgba(S.hairL, 0.85); g.lineWidth = 0.035; g.beginPath(); g.ellipse(0.0, -0.36, 0.34, 0.14, -0.1, Math.PI * 1.08, Math.PI * 1.72); g.stroke(); g.restore(); }
     if (S.ahoge) {
       const a = Math.sin(t * 2.3) * 0.03 - s * 0.25; const p = new Path2D(); p.moveTo(-0.04, -0.6); p.bezierCurveTo(-0.02 + a, -0.84, 0.18 + a * 1.5, -0.82, 0.14 + a * 1.6, -0.72); p.bezierCurveTo(0.12 + a, -0.78, 0.04 + a, -0.78, 0.02, -0.58); p.closePath(); celPath(g, p, H, HS, null, lw, ink, { off: 0.02 });
     }

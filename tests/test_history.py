@@ -69,6 +69,36 @@ class HistorySchema(unittest.TestCase):
         self.assertGreaterEqual(len(ch), 3); self.assertEqual(ch[0][0], 0.0)
 
 
+class Packaging(unittest.TestCase):
+    """Mechanical rules from docs/PACKAGING.md, checked on every history episode that has packages."""
+    def episodes(self):
+        out = []
+        for p in sorted((ROOT / "episodes").iterdir()):
+            f = p / "episode.json"
+            if f.exists():
+                ep = json.loads(f.read_text())
+                if ep.get("profile") == "history" and ep.get("publishing", {}).get("packages"):
+                    out.append(ep)
+        return out
+
+    def test_packages_follow_the_rules(self):
+        eps = self.episodes(); self.assertGreaterEqual(len(eps), 2)
+        for ep in eps:
+            pub = ep["publishing"]; thumbs = {t["id"]: t for t in pub["thumbnails"]}
+            self.assertLessEqual(len(pub["packages"]), 3, "YouTube Test & Compare takes up to 3")
+            for pk in pub["packages"]:
+                t = pk["title"]
+                self.assertTrue(28 <= len(t) <= 50, f"{ep['id']}: title length {len(t)}: {t}")
+                caps = [w for w in t.replace("'", " ").split() if len(w) > 2 and w.isupper()]
+                self.assertFalse(caps, f"{ep['id']}: ALL-CAPS words in title {caps}")
+                self.assertIn(pk["thumbnail"], thumbs)
+                text = thumbs[pk["thumbnail"]]["text"].replace("|", " ")
+                self.assertLessEqual(len(text.split()), 3, f"{ep['id']}: thumbnail text too long: {text}")
+                tw = {w.strip("?!.,").lower() for w in text.split()}; ttl = {w.strip("?!.,:").lower() for w in t.split()}
+                self.assertFalse((tw - {"it", "a", "the", "up"}) <= ttl and len(tw) > 1, f"{ep['id']}: thumbnail text repeats the title")
+                self.assertTrue(pk.get("promise") and pk.get("proof"), "every package records its promise and where it is paid off")
+
+
 class Timing(unittest.TestCase):
     def test_anchor_grammar(self):
         s = {"id": "x", "start": 10.0, "end": 20.0, "lines": [{"start": 11.0, "end": 12.0}, {"start": 13.5, "end": 15.0}]}
@@ -135,6 +165,19 @@ const R = c.HX.Rig, X = c.HX; const out = (()=>{ %s })(); console.log(JSON.strin
             prev = { feet: w.feet.slice(), lift: w.lift.slice() }; }
           return { slip, planted, end: R.walkAt(A, 20).x };""")
         self.assertLess(res["slip"], 1e-6); self.assertGreater(res["planted"], 1000); self.assertAlmostEqual(res["end"], 905, places=6)
+
+    def test_drawn_feet_never_slide(self):
+        # the feet as drawn (hip + local offset x character scale) must stay put while planted, including idle sway
+        res = self.node("""
+          let worst = 0, n = 0;
+          for (const [h, z] of [[430, 1], [420, 1.35], [455, 1.04]]) {
+            const A = R.compileActor({ id: 'd' + h, x: 100, h, z, acts: [{ t: 1, walk: 1300, dur: 5 }, { t: 8, walk: 700, dur: 3 }] });
+            let prev = null;
+            for (let t = 0; t < 14; t += 1 / 60) { const s = R.evaluate(A, t, null); const d = [s.x + s.fN * A.K * s.facing, s.x + s.fF * A.K * s.facing], l = [s.liftN, s.liftF];
+              if (prev && s.squash === 1 && prev.sq === 1 && s.facing === prev.f) for (const i of [0, 1]) if (l[i] === 0 && prev.l[i] === 0) { n++; worst = Math.max(worst, Math.abs(d[i] - prev.d[i])); }
+              prev = { d, l, sq: s.squash, f: s.facing }; } }
+          return { worst, n };""")
+        self.assertLess(res["worst"], 1e-6); self.assertGreater(res["n"], 2000)
 
     def test_walk_speed_ramps_smoothly(self):
         res = self.node("""

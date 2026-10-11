@@ -11,9 +11,9 @@
 
   const HW = {
     state: null,
-    async setup(ep, timeline, seed, visual, art, cast) {
+    async setup(ep, timeline, seed, visual, art, cast, fps) {
       const cv = document.getElementById('c'); const scale = cv.width / W;
-      const st = this.state = { ep, timeline, seed, cast: cast || {}, total: timeline[timeline.length - 1].end, cv, g: cv.getContext('2d'), scale, built: {} };
+      const st = this.state = { ep, timeline, seed, fps: fps || 30, cast: cast || {}, total: timeline[timeline.length - 1].end, cv, g: cv.getContext('2d'), scale, built: {} };
       st.tmp = { bloom: X.P.canvas(W / 8, H / 8), prev: X.P.canvas(cv.width, cv.height) };
       X.P.paper(seed);
       // sequences
@@ -39,13 +39,14 @@
       const def = SETS[q.set]; if (!def) throw new Error('unknown set "' + q.set + '" (register it in renderer/history/sets)');
       if (!st.built[q.set]) st.built[q.set] = def.build(mulberry32(hashStr(q.set) ^ st.seed), st.seed);
       q.world = st.built[q.set];
-      const camKeys = [], follow = [], shakes = [], actors = {};
+      const camKeys = [], follow = [], shakes = [], actors = {}; q.props = [];
       for (const i of q.scenes) {
         const sc = ep.scenes[i]; const shot = sc.shot || {};
         for (const k of (shot.camera || [])) camKeys.push({ ...k, t: this.at(q, i, k.t) });
         if (shot.preset) { const p = shot.preset; const a = this.at(q, i, p.t ?? 0), b = this.at(q, i, p.to ?? 'end'); X.PRESETS[p.name](a, b - a, p).forEach(k => camKeys.push(k)); }
         for (const f of (shot.follow || [])) follow.push({ ...f, t: this.at(q, i, f.t) });
         for (const s of (shot.shake || [])) shakes.push({ ...s, t: this.at(q, i, s.t) });
+        for (const pr of (sc.props || [])) q.props.push({ ...pr, from: pr.from !== undefined ? this.at(q, i, pr.from) : -1e9, to: pr.to !== undefined ? this.at(q, i, pr.to) : 1e9, scene: i });
         for (const a of (sc.actors || [])) {
           const acts = (a.acts || []).map(ac => { const t = this.at(q, i, ac.t); const o = { ...ac, t }; if (ac.until !== undefined) o.dur = Math.max(0.3, this.at(q, i, ac.until) - t); return o; });
           if (actors[a.id]) actors[a.id].acts.push(...acts); else actors[a.id] = { ...a, acts };
@@ -92,6 +93,11 @@
       const items = [];
       for (const L of wd.layers) items.push({ z: L.z, o: L.o ?? 0, draw: () => g.drawImage(L.canvas, L.x0, L.y0, L.w, L.h) });
       for (const d of (wd.dynamic || [])) items.push({ z: d.z, o: d.o ?? 0.5, draw: () => d.draw(g, tq, tAbs, this, q) });
+      for (const pr of q.props) {
+        if (tq < pr.from || tq > pr.to) continue; const fn = X.WORLD_PROPS && X.WORLD_PROPS[pr.type]; if (!fn) throw new Error('unknown world prop ' + pr.type);
+        const fadeA = Math.min(1, (tq - pr.from) / 0.35, (pr.to - tq) / 0.35);   // props fade in and out rather than pop
+        items.push({ z: pr.z || 1, o: pr.o ?? 0.8, draw: () => { const gy = pr.y ?? wd.groundY(pr.z || 1); g.save(); if (fadeA < 1) g.globalAlpha *= Math.max(0, fadeA); g.translate(pr.x, gy); fn(g, tq, pr, this, q); g.restore(); } });
+      }
       for (const a of q.actors) {
         const z = a.z || 1;
         if (a.hide && a.hide.some(([s, e]) => tq >= this.at(q, q.scenes[0], 0) + s && tq < e)) continue;
@@ -115,15 +121,43 @@
     drawActor(g, q, a, tq, tAbs) {
       const wd = q.world; const z = a.z || 1; const gy = a.y ?? wd.groundY(z);
       if (a._animal) {
-        const s = this.animalAt(a, tq); g.save(); g.translate(s.x, gy); g.scale((a.h || 120) / 120, (a.h || 120) / 120);
+        const s = this.animalAt(a, tq); g.save(); g.translate(s.x, gy); g.scale((a.h || 120) / 120 / z, (a.h || 120) / 120 / z);
         X.Rig[a.kind](g, tq, { ...a, walking: s.walking, facing: s.facing, peck: a.peck && !s.walking }); g.restore(); return;
       }
       const stt = X.Rig.evaluate(a, tq, (who, tt) => this.mouth(who, tt + q.start));
-      g.save(); g.translate(stt.x, gy); const k = (a.h || 420) / 1000; g.scale(k, k);
+      // h is the character's true height at the acting plane; further away (z > 1) it is drawn smaller
+      g.save(); g.translate(stt.x, gy); const k = (a.h || 420) / z / 1000; g.scale(k, k);
       const lw = clamp(6.5, 2.2 / (k * 1), 7.5);
-      X.Rig.drawCharacter(g, a, stt, q.light, { lw, propDraw: (gg, prop, l) => (wd.props && wd.props[prop] ? wd.props[prop](gg, tq, l) : X.PROPS[prop] && X.PROPS[prop](gg, tq, l)) });
+      this.drawStyled(g, a, stt, q.light, { lw, propDraw: (gg, prop, l) => (wd.props && wd.props[prop] ? wd.props[prop](gg, tq, l) : X.PROPS[prop] && X.PROPS[prop](gg, tq, l)) });
       g.restore();
       if (wd.afterActor) wd.afterActor(g, a, stt, tq, gy);
+    },
+    // draw a rigged character in the episode's style. Watercolour: render the figure on its own layer, then add
+    // pigment granulation, lifted-pigment blotches and a soft colour bleed past the edges, and composite it back.
+    drawStyled(g, A, stt, light, opts) {
+      const style = this.state.ep.character_style || 'anime';
+      if (style !== 'watercolour') return X.Rig.drawCharacter(g, A, stt, light, opts);
+      const M = g.getTransform(); const scale = Math.hypot(M.a, M.b);
+      const cv = this.state.cv; const corners = [[-1150, -1300], [1150, -1300], [-1150, 200], [1150, 200]].map(([x, y]) => [M.a * x + M.c * y + M.e, M.b * x + M.d * y + M.f]);
+      let x0 = Math.floor(Math.max(0, Math.min(...corners.map(c => c[0])))), y0 = Math.floor(Math.max(0, Math.min(...corners.map(c => c[1]))));
+      let x1 = Math.ceil(Math.min(cv.width, Math.max(...corners.map(c => c[0])))), y1 = Math.ceil(Math.min(cv.height, Math.max(...corners.map(c => c[1]))));
+      if (x1 - x0 < 2 || y1 - y0 < 2) return;
+      const P = this.state.tmp; if (!P.char || P.char.width < x1 - x0 || P.char.height < y1 - y0) { P.char = X.P.canvas(Math.max(x1 - x0, P.char ? P.char.width : 0), Math.max(y1 - y0, P.char ? P.char.height : 0)); P.charB = X.P.canvas(P.char.width, P.char.height); }
+      const off = P.char, og = off.getContext('2d'); og.setTransform(1, 0, 0, 1, 0, 0); og.clearRect(0, 0, x1 - x0, y1 - y0);
+      og.setTransform(M.a, M.b, M.c, M.d, M.e - x0, M.f - y0);
+      const heightPx = 1000 * scale; const softPx = heightPx < 520 ? 0 : clamp(heightPx * 0.004, 0.5, 3.5);   // no soft-shadow blur on distant figures
+      X.Rig.drawCharacter(og, A, stt, light, { ...opts, style: 'watercolour', softPx, lw: opts.lw });
+      og.setTransform(1, 0, 0, 1, 0, 0);
+      const w = x1 - x0, h = y1 - y0; const T = X.P.wcTextures(this.state.seed);
+      og.save(); og.globalCompositeOperation = 'source-atop';
+      og.globalAlpha = 0.5; og.fillStyle = og.createPattern(T.dark, 'repeat'); og.fillRect(0, 0, w, h);
+      og.globalAlpha = 0.45; og.fillStyle = og.createPattern(T.light, 'repeat'); og.fillRect(0, 0, w, h);
+      og.restore();
+      g.save(); g.setTransform(1, 0, 0, 1, 0, 0);
+      const bleed = clamp(heightPx * 0.006, 1, 5);
+      g.globalAlpha = 0.32; g.filter = `blur(${bleed.toFixed(1)}px)`; g.drawImage(off, 0, 0, w, h, x0, y0, w, h); g.filter = 'none'; g.globalAlpha = 1;
+      g.drawImage(off, 0, 0, w, h, x0, y0, w, h);
+      g.restore();
     },
     // ---------------------------------------------------------------- overlays (screen space)
     subtitle(g, t) {
@@ -201,7 +235,15 @@
       let i = tl.findIndex(s => t < s.end); if (i < 0) i = tl.length - 1;
       const qi = st.seqs.findIndex(q => t < q.end) < 0 ? st.seqs.length - 1 : st.seqs.findIndex(q => t < q.end); const q = st.seqs[qi];
       const sc = st.ep.scenes[q.scenes[0]]; const tq = t - q.start;
-      this.drawSeq(g, qi, tq);
+      const nSub = this.subframes(qi, tq);
+      if (nSub <= 1) this.drawSeq(g, qi, tq);
+      else {   // motion blur: average sub-frames across a 180° shutter (only when the image moves fast)
+        const sub = st.tmp.sub || (st.tmp.sub = X.P.canvas(st.cv.width, st.cv.height)); const sg = sub.getContext('2d');
+        for (let j = 0; j < nSub; j++) {
+          const tj = tq + (j / (nSub - 1) - 0.5) * 0.5 / (st.fps || 30);
+          if (j === 0) this.drawSeq(g, qi, tj); else { this.drawSeq(sg, qi, tj); g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1 / (j + 1); g.drawImage(sub, 0, 0); g.restore(); }
+        }
+      }
       // sequence transitions (screen space): dissolve from the previous sequence, light bloom or dip
       const TR = sc.transition_dur ?? 0.8;
       if (qi > 0 && tq < TR) {
@@ -225,6 +267,15 @@
       g.restore();
       return i;
     },
+    // how many motion-blur sub-frames this frame needs: a pure function of t (camera speed in screen pixels)
+    subframes(qi, tq) {
+      const st = this.state; if (st.ep.motion_blur === false) return 1;
+      const q = st.seqs[qi]; const dt = 0.5 / (st.fps || 30);
+      const a = q.camera.at(Math.max(0, tq - dt / 2)), b = q.camera.at(tq + dt / 2);
+      const ka = 1000 / Math.max(200, 1000 - a.dolly), kb = 1000 / Math.max(200, 1000 - b.dolly);
+      const px = Math.hypot(b.x * kb - a.x * ka, b.y * kb - a.y * ka) + Math.abs(kb - ka) * 900 + Math.abs(b.roll - a.roll) * 18;
+      return px > 9 ? 3 : px > 3.5 ? 2 : 1;
+    },
     // exposure flashes: the "light" transition burns to white across a cut; scenes may add flashes
     flashAt(t) {
       const st = this.state; let e = 0;
@@ -238,7 +289,10 @@
     // diagnostics for automated QA: actor skeleton facts at time t (bone lengths, feet)
     probe(t) {
       const st = this.state; const qi = Math.max(0, st.seqs.findIndex(q => t < q.end)); const q = st.seqs[qi]; const tq = t - q.start;
-      return q.actors.filter(a => !a._animal).map(a => { const s = X.Rig.evaluate(a, tq, () => 0); const w = X.Rig.walkAt(a, tq); return { id: a.id, char: a.char, h: a.h, x: s.x, hip: s.hip, feet: w.feet, lift: w.lift, facing: s.facing }; });
+      return q.actors.filter(a => !a._animal).map(a => { const s = X.Rig.evaluate(a, tq, () => 0); const w = X.Rig.walkAt(a, tq);
+        // drawn: where the feet actually land on screen (rest px), i.e. hip + local offset × scale — what a viewer sees
+        const drawn = [s.x + s.fN * a.K * s.facing, s.x + s.fF * a.K * s.facing];
+        return { id: a.id, char: a.char, h: a.h, x: s.x, hip: s.hip, feet: w.feet, drawn, lift: [s.liftN, s.liftF], facing: s.facing, squash: s.squash, walking: !!(w.walking || w.settled) }; });
     }
   };
   X.PROPS = X.PROPS || {};

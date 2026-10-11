@@ -28,7 +28,7 @@ async function openPage() {
   await page.goto(pageUrl);
   await page.addScriptTag({ path: resolve(here, '..', scenes_js) });
   await page.evaluate(() => document.fonts.ready);
-  await page.evaluate(({ episode, timeline, seed, visual, art, cast }) => window.HW.setup(episode, timeline, seed, visual, art, cast), { episode, timeline, seed, visual: plan.visual, art: plan.art, cast: plan.cast });
+  await page.evaluate(({ episode, timeline, seed, visual, art, cast, fps }) => window.HW.setup(episode, timeline, seed, visual, art, cast, fps), { episode, timeline, seed, visual: plan.visual, art: plan.art, cast: plan.cast, fps: plan.fps });
   return page;
 }
 

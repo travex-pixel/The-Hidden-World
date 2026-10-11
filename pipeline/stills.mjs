@@ -14,7 +14,7 @@ const url = pathToFileURL(resolve(here, '..', plan.page || 'renderer/index.html'
 await page.goto(url);
 await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
 await page.evaluate(() => document.fonts.ready);
-await page.evaluate(({ episode, timeline, seed, visual, art, cast }) => window.HW.setup(episode, timeline, seed, visual, art, cast), plan);
+await page.evaluate(({ episode, timeline, seed, visual, art, cast, fps }) => window.HW.setup(episode, timeline, seed, visual, art, cast, fps), plan);
 if (process.env.CLEAN) await page.evaluate(() => { window.HW.clean = true; });
 const probes = {};
 for (const ts of times) {

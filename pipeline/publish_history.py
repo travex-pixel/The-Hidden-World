@@ -73,6 +73,28 @@ def thumbnail(out_dir: Path, plan: dict, spec: dict, dest: Path):
     shutil.rmtree(st, ignore_errors=True)
 
 
+def feed_mockup(dest: Path, pub: dict):
+    """The research's feed test: thumbnails at real feed sizes, on YouTube's light and dark backgrounds."""
+    thumbs = sorted(dest.glob("thumbnail_*.jpg"))
+    if not thumbs:
+        return
+    font = ImageFont.truetype(str(FONTS / "Nunito-Bold.ttf"), 22); small = ImageFont.truetype(str(FONTS / "Nunito-Bold.ttf"), 13)
+    titles = {pk["thumbnail"]: pk["title"] for pk in pub.get("packages", [])}
+    W = 60 + len(thumbs) * 420
+    img = Image.new("RGB", (W, 820), (255, 255, 255)); d = ImageDraw.Draw(img)
+    d.rectangle([0, 410, W, 820], fill=(15, 15, 15))
+    for row, (bg, fg) in enumerate([((255, 255, 255), (15, 15, 15)), ((15, 15, 15), (241, 241, 241))]):
+        y0 = 20 + row * 410
+        d.text((20, y0), ["Light mode", "Dark mode"][row] + " · desktop (360 px) and phone (168 px)", font=font, fill=fg)
+        for i, tp in enumerate(thumbs):
+            tid = tp.stem.split("_")[-1]; x = 30 + i * 420
+            t = Image.open(tp).convert("RGB")
+            big = t.resize((360, 202)); img.paste(big, (x, y0 + 40))
+            d.text((x, y0 + 250), titles.get(tid, ""), font=small, fill=fg)
+            sm = t.resize((168, 94)); img.paste(sm, (x, y0 + 275))
+    img.save(dest / "feed_test.png")
+
+
 def run(out_dir: Path) -> Path:
     plan = json.loads((out_dir / "plan.json").read_text()); ep = plan["episode"]; tl = plan["timeline"]; pub = ep.get("publishing", {})
     dest = out_dir / "publish"; dest.mkdir(exist_ok=True)
@@ -90,9 +112,21 @@ def run(out_dir: Path) -> Path:
     shutil.copy(out_dir / f"{ep['id']}.srt", dest / f"{ep['id']}.en.srt")
     if (out_dir / "qa" / "qa_report.md").exists():
         shutil.copy(out_dir / "qa" / "qa_report.md", dest / "qa_report.md")
-    if pub.get("thumbnail"):
+    if pub.get("thumbnails"):
+        # drawn by the renderer itself (renderer/history/thumbnail.js): same rig, props and palette as the episode
+        subprocess.run(["node", str(ROOT / "pipeline" / "thumbnail.mjs"), str(out_dir / "plan.json"), str(dest)], check=True, cwd=ROOT)
+        feed_mockup(dest, pub)
+    elif pub.get("thumbnail"):
         thumbnail(out_dir, plan, pub["thumbnail"], dest / "thumbnail.jpg")
         (dest / "thumbnail_concept.md").write_text(pub["thumbnail"].get("concept", ""))
+    if pub.get("packages"):
+        lines = ["# Title + thumbnail packages (for YouTube Test & Compare: up to 3)\n",
+                 "Rules applied (docs/PACKAGING.md): titles 30–50 characters, specific nouns first, no ALL-CAPS words; thumbnail text ≤3 words and never repeats the title; every promise is paid off on screen, early.\n"]
+        for i, pk in enumerate(pub["packages"], 1):
+            t = next((x for x in pub.get("thumbnails", []) if x["id"] == pk["thumbnail"]), {})
+            lines += [f"## {i}. {pk['title']}  ({len(pk['title'])} chars)", f"- Thumbnail: `thumbnail_{pk['thumbnail']}.jpg` — text \"{t.get('text', '')}\"",
+                      f"- Promise: {pk['promise']}", f"- Where the video pays it off: {pk['proof']}", ""]
+        (dest / "packages.md").write_text("\n".join(lines))
     timings = json.loads((out_dir / "timings.json").read_text()) if (out_dir / "timings.json").exists() else {}
     prod = ["# Production log\n", f"- Duration: {total:.1f} s, {plan['width']}x{plan['height']} @ {plan['fps']} fps, seed {plan['seed']}",
             f"- Wall-clock build: {timings.get('total_s', '?')} s (render {timings.get('render_s', '?')} s with {plan.get('workers', 1)} parallel pages; narration {timings.get('narration_s', '?')} s; audio {timings.get('audio_s', '?')} s)",
