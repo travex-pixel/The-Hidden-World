@@ -10,6 +10,9 @@ An original animated educational-mystery channel and the $0 production factory t
 
 **Episode 003 — *The Viral Metronome Trick That Shut a London Bridge*** → [`releases/ep003-metronome-bridge.mp4`](releases/ep003-metronome-bridge.mp4)
 
+### FIVE MESSAGES (five-part animated thriller, Season 1)
+Five verified episodes, 27–32 s each. Story bible, scripts, QA and render instructions: [series/five-messages/](series/five-messages/README.md). Get the MP4s from the draft release `five-messages-s1` (Releases) or run **Actions → Render series**.
+
 ### Dark Psychology series (animated thrillers)
 **Episode 004 — *The Compliment With a Deadline*** → render it with the workflow (artifact `ep004-compliment-deadline-seed1-final`). Recurring cast in [`characters/`](characters/), rig in [`renderer/cast.js`](renderer/cast.js), design system in [docs/THRILLER_STYLE.md](docs/THRILLER_STYLE.md).
 
