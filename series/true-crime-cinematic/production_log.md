@@ -21,3 +21,5 @@
 - 2026-10-11 09:32:24 tcv03-d4vd-case: VERIFIED -> series/true-crime-cinematic/output/true_crime_d4vd_case.mp4 (79.1s, 34.0 MB, sha256 65eec5eee0fe)
 - 2026-10-11 11:07:31 produce 8: regenerating episode data
 - 2026-10-11 11:07:32 tcv08-lizzie-borden: rendering (final, seed 1)
+- 2026-10-11 11:08:57 produce 7: regenerating episode data
+- 2026-10-11 11:08:57 tcv07-gilgo-beach: rendering (final, seed 1)
