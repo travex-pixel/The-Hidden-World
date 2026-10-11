@@ -317,7 +317,7 @@
       };
       return E.cine.shot(ctx, {
         set: 'task_force', setOpts: { rain: true }, grade: 'cold', cam: { from: { x: 30, y: -40, z: 1.02 }, to: { x: -20, y: -60, z: 1.08 }, handheld: 1.2 },
-        figures: [{ id: 'analyst', x: 250, y: 2050, scale: 1.36, dir: 1, turn: 0.4, pose: 'sit_type', expr: 'focused', gaze: [0.6, -0.4],
+        figures: [{ id: 'analyst', x: 440, y: 2050, scale: 1.36, dir: 1, turn: 0.4, pose: 'sit_type', expr: 'focused', gaze: [0.6, -0.4],
           keys: [...typing(0.1, kil - 0.1), { at: kil - 0.05, pose: 'sit', expr: 'worried', gaze: [0.5, -0.6], dur: 0.35 }, { at: cou - 0.15, pose: 'sit_slumped', expr: 'realise', gaze: [0.4, -0.8], dur: 0.4 }] }],
         overlays: [{ type: 'svg', at: 0, svg: panel }]
       });
@@ -386,7 +386,7 @@
 
     // 7 - the twist (FUN FACT): he had been a police officer. Silhouette in a generic cap beside an unmarked patrol car, dusk.
     gs10_cop(ctx) {
-      const tw = WT(ctx, 0, 1, 0.5), pol = WT(ctx, 0, 5, 1.2), l2 = LS(ctx, 1, 2.6), fired = WT(ctx, 1, 2, 3.0), shop = WT(ctx, 1, 7, 4.0), ham = WT(ctx, 1, 9, 4.6);
+      const tw = WT(ctx, 0, 1, 0.5), pol = WT(ctx, 0, 5, 1.2), l2 = LS(ctx, 1, 2.6), fired = WT(ctx, 1, 2, 3.0), ham = WT(ctx, 1, 9, 4.6);
       const cap = { style: 'cap', color: '#1a2030', band: '#3a4258' };
       return E.cine.shot(ctx, {
         set: 'gs10_suburb', setOpts: { dusk: true, patrol: true, carX: 300, lampX: 760 }, grade: 'dawn', tag: LIKENESS,
@@ -395,11 +395,12 @@
           { id: 'gs10_man', hat: cap, x: 640, y: 1590, scale: 0.8, dir: -1, turn: 0.5, pose: 'stand', silhouette: 'cool', show: [-1, fired + 0.2],
             keys: [{ at: tw, pose: 'stand_tense', dur: 0.4 }, { at: pol, pose: 'hands_behind', dur: 0.5 }] },
           { id: 'gs10_man', x: 640, y: 1590, scale: 0.8, dir: 1, turn: 0.5, pose: 'bowed', silhouette: 'cool', show: [fired],
-            walk: { from: 640, to: 1120, at: fired + 0.45, dur: 4.4, cadence: 5.6 } }
+            keys: [{ at: fired + 0.35, pose: 'stand', dur: 0.4 }], walk: { from: 640, to: 1120, at: fired + 0.5, dur: 4.4, cadence: 5.6 } }
         ],
         overlays: [
-          { type: 'funfact', at: pol - 0.12, until: fired + 0.15, y: 400, w: 920, fs: 44, rows: [{ text: 'He was still a police officer' }, { text: 'when the crimes began.' }, { text: '(1973-1979)', colour: '#ffd23f' }] },
-          { type: 'card', at: fired + 0.2, x: 80, y: 390, w: 920, h: 260, rows: [{ text: 'FIRED · 1979', fs: 50, colour: '#8e1f18' }, { text: 'ACCUSED OF SHOPLIFTING', fs: 36, at: shop - 0.1 }, { text: 'A HAMMER + DOG REPELLENT', fs: 36, at: ham - 0.1 }] }
+          { type: 'funfact', at: pol - 0.12, y: 420, w: 920, fs: 44, rows: [{ text: 'He was still a police officer' }, { text: 'when the crimes began.' }, { text: '(1973-1979)', colour: '#ffd23f' }] },
+          { type: 'stamp', at: fired - 0.05, x: 300, y: 870, text: 'FIRED · 1979', scale: 1.0, rot: -8, colour: '#e5372b' },
+          { type: 'label', at: ham - 0.15, x: 60, y: 1010, text: 'ACCUSED OF SHOPLIFTING', fs: 32, sub: 'a hammer and dog repellent' }
         ]
       });
     },
@@ -488,7 +489,7 @@
         props: [{ depth: 0.22, svg: room }, { depth: 0.6, svg: seats }],
         overlays: [
           { type: 'card', at: 0.2, until: l2 - 0.05, x: 80, y: 390, w: 920, h: 300, rows: [{ text: '29 JUNE 2020 · GUILTY PLEA', fs: 28, colour: '#6b665c' }, { text: '13 MURDERS', fs: 52, colour: '#8e1f18', at: thir - 0.1 }, { text: '13 KIDNAPPINGS', fs: 40, at: thir + 0.45 }, { text: '+ ADMITTED 161 UNCHARGED CRIMES', fs: 30, colour: '#6b665c', at: thir + 0.9 }] },
-          { type: 'funfact', at: l2 - 0.1, y: 400, w: 920, fs: 44, rows: [{ text: 'The plea hearing was held' }, { text: 'in a university ballroom,' }, { text: 'for COVID distancing.', colour: '#ffd23f' }] }
+          { type: 'funfact', at: l2 - 0.1, y: 420, w: 920, fs: 44, rows: [{ text: 'The plea hearing was held' }, { text: 'in a university ballroom,' }, { text: 'for COVID distancing.', colour: '#ffd23f' }] }
         ]
       });
     },
@@ -509,7 +510,7 @@
 
     // 13 - the callback on the hero object (vial + tissue), then the next case. The vial stays big and centred to the end.
     gs10_end(ctx) {
-      const t = ctx.t, dec = WT(ctx, 0, 0, 0.25), l2 = LS(ctx, 1, 1.5), fam = WT(ctx, 1, 3, 2.0), tis = WT(ctx, 1, 7, 2.9), l3 = LS(ctx, 2, 4.9), mono = WT(ctx, 2, 7, 6.4);
+      const t = ctx.t, dec = WT(ctx, 0, 0, 0.25), fam = WT(ctx, 0, 7, 1.8), tis = WT(ctx, 0, 11, 2.7), l3 = LS(ctx, 1, 4.9);
       const NODES = [[860, 520], [975, 700], [215, 520], [110, 710]];
       const objs = tt => {
         const m = ease.inOut(seg(tt, l3 - 0.5, l3 + 0.4));   // make room for the NEXT CASE card

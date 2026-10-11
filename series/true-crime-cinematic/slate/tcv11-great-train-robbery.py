@@ -19,7 +19,7 @@ def build(h):
           "cold", ["GT_haul", "GT_payoff"], sfx=[fx(0.0, "hit", 0.7), fw(0, 7, "thud", 0.4, -0.05), fw(1, 2, "click", 0.5, -0.05)],
           emph=["£2.6", "million.", "board", "game"], min_d=4.2, pad=0.2),
         # the chain of objects: the signal, the train, the mailbags, the farm, the board
-        S("s02_signal", "gt11_signal", [N("August 1963. The night mail, Glasgow to London."),
+        S("s02_signal", "gt11_signal", [N("August 1963. The overnight mail train from Glasgow to London."),
                                         N("A signal turned red. It was a fake.", pause_before=0.2)],
           "unease", ["GT_train", "GT_signal"], sfx=[fx(0.0, "rumble", 0.5), fw(1, 3, "click", 0.6, -0.05), fw(1, 7, "hit", 0.5, -0.05)],
           emph=["glasgow", "red.", "fake."], tr="fade", pad=0.15),
@@ -29,9 +29,9 @@ def build(h):
         S("s04_bags", "gt11_bags", [N("At a bridge down the line, they unloaded the mailbags.")],
           "tension", ["GT_bridge"], sfx=[fw(0, 7, "thud", 0.5, -0.05), fw(0, 9, "thud", 0.45, 0.1)],
           emph=["bridge", "mailbags."], pad=0.15, tr="push"),
-        S("s05_farm", "gt11_farm", [N("They vanished to a hideout: Leatherslade Farm.")],
-          "unease", ["GT_farm"], sfx=[fx(0.0, "wind", 0.5), fw(0, 1, "step", 0.3), fw(0, 2, "step", 0.3, 0.1), fw(0, 6, "door", 0.4, -0.05)],
-          emph=["hideout:", "leatherslade"], pad=0.15, tr="fade"),
+        S("s05_farm", "gt11_farm", [N("They vanished to a hideout called Leatherslade Farm.")],
+          "unease", ["GT_farm"], sfx=[fx(0.0, "wind", 0.5), fw(0, 1, "step", 0.3), fw(0, 2, "step", 0.3, 0.1), fw(0, 7, "door", 0.4, -0.05)],
+          emph=["hideout", "leatherslade"], pad=0.15, tr="fade"),
         S("s06_game", "gt11_game", [N("There, they passed the time playing Monopoly."),
                                     N("Legend says they used real cash. Never proven.", pause_before=0.25)],
           "unease", ["GT_played", "GT_legend"], sfx=[fw(0, 6, "click", 0.45), fw(1, 5, "flutter", 0.4, -0.1), fw(1, 7, "stamp", 0.6, 0.05)],
@@ -47,7 +47,7 @@ def build(h):
           emph=["fled", "never", "recovered.", "board", "game."], tr="push", pad=0.2),
         S("s09_prints", "gt11_prints", [N("Then came the fingerprints."),
                                         N("On the Monopoly board.", pause_before=0.35),
-                                        N("And on a ketchup bottle.", pause_before=0.3)],
+                                        N("And on the ketchup bottle.", pause_before=0.3)],
           "revelation", ["GT_prints"], sfx=[fx(0.0, "swell", 0.4), fw(0, 3, "puff", 0.4), fw(1, 3, "hit", 0.5, -0.05), fw(2, 4, "hit", 0.45, -0.05)],
           emph=["fingerprints.", "monopoly", "ketchup"], tr="flash", pad=0.35),
         S("s10_match", "gt11_match", [N("Some belonged to Ronnie Biggs.")],
@@ -67,8 +67,8 @@ def build(h):
         S("s14_callback", "gt11_callback", [N("Britain's biggest train robbery, given away by a board game.", pause_before=0.2)],
           "aftermath", ["GT_payoff", "GT_haul"], sfx=[fx(0.0, "wind", 0.3), fw(0, 8, "thud", 0.45, -0.05)],
           emph=["biggest", "board", "game."], min_d=4.2, tr="fade", pad=0.6),
-        S("s15_next", "gt11_next", [N("Next: the parking ticket that led to the Son of Sam.", pause_before=0.1)],
-          "outro", ["GT_next"], sfx=[fx(0.0, "whoosh", 0.6), fw(0, 3, "ping", 0.5, -0.05)],
+        S("s15_next", "gt11_next", [N("Next: how a parking ticket led police to the Son of Sam.", pause_before=0.1)],
+          "outro", ["GT_next"], sfx=[fx(0.0, "whoosh", 0.6), fw(0, 4, "ping", 0.5, -0.05)],
           emph=["parking", "ticket", "sam."], min_d=3.0, pad=1.5, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_signal": "A", "s03_driver": "B", "s04_bags": "B", "s05_farm": "B", "s06_game": "B", "s07_tip": "B",
@@ -171,7 +171,7 @@ def build(h):
                 figures, scenes, claims, sources, "GREAT TRAIN ROBBERY · 1963", bpm=78)
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={
         "£2.6": "two point six", "million": "million pounds",       # "£2.6 million" -> "two point six million pounds" (pronounce() is per word)
-        "Leatherslade": "Leatherslaid", "Wandsworth": "Wandzwurth"})
+        "Leatherslade": "Leatherslaid"})
     ep["score"] = {"root_hz": 146.83, "bpm": 78,
                    "hits": [{"scene": "s02_signal", "word": [1, 7], "at": -0.05, "gain": 0.4}],
                    "cliff": {"scene": "s13_return", "word": [0, 12], "at": -0.08}}

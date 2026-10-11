@@ -2,7 +2,8 @@
 
 Structure follows the BTK "floppy disk" lessons (docs/STYLE_GUIDE_TRUE_CRIME.md): the hook is the setup and the mystery,
 one hero object (the crime-scene DNA vial) opens and closes the video, a chain of object micro-reveals (upload, cousins,
-family tree, car door handle, tissue), the payoff (the tissue) at about 70% of the runtime, and a callback ending.
+family tree, car door handle, tissue), the payoff (the tissue's conclusive match) about two-thirds of the way in, and a
+callback ending on the same vial, then the NEXT CASE card.
 
 CLOSED case: he pleaded guilty on 29 Jun 2020 (13 counts of first-degree murder, 13 of kidnapping to commit robbery, and
 admitted 161 uncharged crimes) and was sentenced on 21 Aug 2020 (11 consecutive life terms without parole, plus further
@@ -67,11 +68,10 @@ def build(h):
           "aftermath", ["GS_sentence"], sfx=[fw(0, 2, "gavel", 1.0, -0.08), fw(0, 5, "stamp", 0.5, 0.1)],
           emph=["life", "eleven"], pad=0.4, tr="push"),
         # E - the callback on the hero object, then the next case
-        S("s13_end", "gs10_end", [N("Decades of hiding,"),
-                                  N("ended by a family tree and a tissue in the trash.", pause_before=0.2),
+        S("s13_end", "gs10_end", [N("Decades without a name, ended by a family tree and a tissue in the trash."),
                                   N("Next: the Great Train Robbery, and a Monopoly board.", pause_before=0.6)],
-          "aftermath", ["GS_trees", "GS_tissue", "GS_next"], sfx=[fx(0.0, "wind", 0.4), fw(1, 7, "chime", 0.5, -0.05), fw(2, 0, "whoosh", 0.6, -0.15), fw(2, 7, "hit", 0.5, -0.05)],
-          emph=["decades", "family", "tissue", "monopoly"], min_d=3.0, pad=1.7, tr="fade"),
+          "aftermath", ["GS_trees", "GS_tissue", "GS_next"], sfx=[fx(0.0, "wind", 0.4), fw(0, 11, "chime", 0.5, -0.05), fw(1, 0, "whoosh", 0.6, -0.15), fw(1, 7, "hit", 0.5, -0.05)],
+          emph=["decades", "name,", "family", "tissue", "monopoly"], min_d=3.0, pad=1.35, tr="zoom"),
     ]
     sections = ["A", "A", "B", "B", "B", "C", "C", "C", "C", "D", "D", "D", "E"]
     for sc, sec in zip(scenes, sections):

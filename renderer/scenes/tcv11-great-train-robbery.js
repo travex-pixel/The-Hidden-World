@@ -370,7 +370,7 @@
       const slide = 1 - ease.out(clamp(t / (stp + 0.35), 0, 1));
       return E.cine.shot(ctx, {
         set: 'gt11_railway', setOpts: { view: 'bridge', trainX: 380 * slide, cab: 0.6 - 0.35 * seg(t, jack, jack + 2.4) }, grade: 'night',
-        cam: { from: { x: -40, y: -40, z: 1.2 }, to: { x: -10, y: -60, z: 1.28 } },
+        cam: { from: { x: -270, y: -40, z: 1.16 }, to: { x: -230, y: -60, z: 1.24 } },
         overlays: [{ type: 'label', at: jack - 0.1, x: 60, y: 430, text: 'JACK MILLS', fs: 44, sub: 'The driver of the mail train' }],
         tag: 'ILLUSTRATION · GENERIC TRAIN'
       });
@@ -389,7 +389,7 @@
 
     // 5 - the hideout: two anonymous silhouettes walk to the farmhouse door
     gt11_farm(ctx) {
-      const t = ctx.t, hid = WT(ctx, 0, 4, 1.0), lea = WT(ctx, 0, 5, 1.79);
+      const t = ctx.t, hid = WT(ctx, 0, 4, 1.0), lea = WT(ctx, 0, 6, 1.9);
       return E.cine.shot(ctx, {
         set: 'gt11_farmhouse', setOpts: { view: 'exterior', door: seg(t, hid - 0.3, hid + 0.2) }, grade: 'night',
         cam: { from: { x: -20, y: 60, z: 1.0 }, to: { x: 30, y: 30, z: 1.1 }, handheld: 1.5 },
@@ -559,7 +559,7 @@
     gt11_callback(ctx) {
       const t = ctx.t, big = WT(ctx, 0, 1, 0.8), giv = WT(ctx, 0, 4, 2.28), brd = WT(ctx, 0, 8, 3.06);
       const evidence = tt => `<path d="M-120 1110 L1200 1110 L1340 1390 L-260 1390 Z" fill="#9aa4ac" stroke="${INK}" stroke-width="6"/><rect x="-260" y="1390" width="1600" height="50" fill="#5a646c" stroke="${INK}" stroke-width="5"/>` +
-        boardGame(540, 1235, 1.3, { t: tt, prints: 0.25 + 0.75 * seg(tt, brd - 0.3, brd + 0.3) }) + bottle(950, 1220, 0.62, { prints: 0.8 });
+        boardGame(540, 1235, 1.3, { t: tt, prints: 0.25 + 0.75 * seg(tt, brd - 0.3, brd + 0.3) }) + bottle(878, 1215, 0.6, { prints: 0.8 });
       return E.cine.shot(ctx, {
         set: 'task_force', grade: 'cold',
         cam: { from: { x: 0, y: 260, z: 1.14 }, to: { x: 0, y: 320, z: 1.26 } },
@@ -572,12 +572,12 @@
 
     // 15 - NEXT CASE (Son of Sam); the last frame is the board game again, big and centred, so the video loops
     gt11_next(ctx) {
-      const t = ctx.t, tk = WT(ctx, 0, 3, 1.65), sam = WT(ctx, 0, 10, 2.82);
+      const t = ctx.t, tk = WT(ctx, 0, 4, 1.65), sam = WT(ctx, 0, 11, 2.82);
       const B = { x: 540, y: 1185, s: 1.35 };
       return E.cine.shot(ctx, {
         set: 'gt11_farmhouse', setOpts: { board: B, bottle: { x: 862, y: 1150, s: 0.6 }, slips: true, bags: 4, lamp: 0.9 }, grade: 'warm',
         cam: { from: { x: 0, y: 140, z: 1.14 }, to: { x: 0, y: 110, z: 1.12 }, handheld: 1 },
-        figures: [{ id: 'gt11_detective', x: 985, y: 1530, scale: 0.7, dir: -1, turn: 0.45, pose: 'stand', expr: 'focused', gaze: [0.4, 0.8],
+        figures: [{ id: 'gt11_detective', x: 940, y: 1530, scale: 0.68, dir: -1, turn: 0.45, pose: 'stand', expr: 'focused', gaze: [0.4, 0.8],
           keys: [{ at: 0.4, pose: 'examine', dur: 0.5 }, { at: tk, pose: 'hand_to_face', expr: 'realise', dur: 0.5 }, { at: sam + 0.6, pose: 'stand', expr: 'determined', dur: 0.5 }] }],
         overlays: [{ type: 'nextcase', at: 0.3, y: 372, fs: 50, rows: [{ text: 'A parking ticket' }, { text: 'led to the Son of Sam', colour: '#ffd23f' }], sub: 'FOLLOW FOR THE NEXT CASE' }],
         tag: 'ILLUSTRATION · GENERIC BOARD GAME'

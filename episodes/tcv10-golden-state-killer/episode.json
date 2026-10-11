@@ -708,7 +708,7 @@
    "id": "s13_end",
    "scene": "gs10_end",
    "min_duration": 3.0,
-   "pad_after": 1.7,
+   "pad_after": 1.35,
    "music_cue": "aftermath",
    "sfx": [
     {
@@ -719,8 +719,8 @@
     {
      "at": -0.05,
      "word": [
-      1,
-      7
+      0,
+      11
      ],
      "name": "chime",
      "gain": 0.5
@@ -728,7 +728,7 @@
     {
      "at": -0.15,
      "word": [
-      2,
+      1,
       0
      ],
      "name": "whoosh",
@@ -737,7 +737,7 @@
     {
      "at": -0.05,
      "word": [
-      2,
+      1,
       7
      ],
      "name": "hit",
@@ -749,17 +749,12 @@
     "GS_tissue",
     "GS_next"
    ],
-   "transition": "fade",
+   "transition": "zoom",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "Decades of hiding,"
-    },
-    {
-     "who": "narrator",
-     "text": "ended by a family tree and a tissue in the trash.",
-     "pause_before": 0.2
+     "text": "Decades without a name, ended by a family tree and a tissue in the trash."
     },
     {
      "who": "narrator",
@@ -770,6 +765,7 @@
    "shot": {},
    "emphasis": [
     "decades",
+    "name,",
     "family",
     "tissue",
     "monopoly"
