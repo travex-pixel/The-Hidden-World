@@ -1,0 +1,3227 @@
+{
+ "episode": "tcv04-louvre-heist",
+ "title": "They Stole France's Crown Jewels in About Seven Minutes",
+ "duration": 79.5,
+ "slideshow_risk": {
+  "shots": 15,
+  "composed_shots": 15,
+  "shots_with_characters": 15,
+  "character_shot_share": 1.0,
+  "distinct_sets": 9,
+  "max_set_share": 0.2,
+  "shot_sizes": {
+   "wide": 5,
+   "medium": 4,
+   "close-up": 2,
+   "medium-wide": 4
+  },
+  "max_shot_size_share": 0.33,
+  "ok": true
+ },
+ "production_status": {},
+ "shots": [
+  {
+   "id": "s01_hook",
+   "scene_type": "lv4_hook",
+   "start": 0.0,
+   "duration": 6.75,
+   "narration": [
+    "Thieves stole France's crown jewels from the Louvre in about seven minutes.",
+    "Their way in? A furniture lift on a truck."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.25,
+     "end": 3.64,
+     "words": [
+      {
+       "w": "Thieves",
+       "start": 0.285,
+       "end": 0.638
+      },
+      {
+       "w": "stole",
+       "start": 0.638,
+       "end": 0.89
+      },
+      {
+       "w": "France's",
+       "start": 0.89,
+       "end": 1.293
+      },
+      {
+       "w": "crown",
+       "start": 1.293,
+       "end": 1.546
+      },
+      {
+       "w": "jewels",
+       "start": 1.546,
+       "end": 1.848
+      },
+      {
+       "w": "from",
+       "start": 1.848,
+       "end": 2.05
+      },
+      {
+       "w": "the",
+       "start": 2.05,
+       "end": 2.201
+      },
+      {
+       "w": "Louvre",
+       "start": 2.201,
+       "end": 2.504
+      },
+      {
+       "w": "in",
+       "start": 2.504,
+       "end": 2.604
+      },
+      {
+       "w": "about",
+       "start": 2.604,
+       "end": 2.857
+      },
+      {
+       "w": "seven",
+       "start": 2.857,
+       "end": 3.109
+      },
+      {
+       "w": "minutes.",
+       "start": 3.109,
+       "end": 3.512
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 4.04,
+     "end": 6.13,
+     "words": [
+      {
+       "w": "Their",
+       "start": 4.075,
+       "end": 4.179
+      },
+      {
+       "w": "way",
+       "start": 4.214,
+       "end": 4.377
+      },
+      {
+       "w": "in?",
+       "start": 4.412,
+       "end": 4.574
+      },
+      {
+       "w": "A",
+       "start": 4.725,
+       "end": 4.76
+      },
+      {
+       "w": "furniture",
+       "start": 4.818,
+       "end": 5.236
+      },
+      {
+       "w": "lift",
+       "start": 5.271,
+       "end": 5.491
+      },
+      {
+       "w": "on",
+       "start": 5.549,
+       "end": 5.642
+      },
+      {
+       "w": "a",
+       "start": 5.665,
+       "end": 5.689
+      },
+      {
+       "w": "truck.",
+       "start": 5.758,
+       "end": 6.083
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 facade (warm grade); lv4_crew_a (silhouette): hands_together -> stand_tense -> point; lv4_crew_b (silhouette): stand_tense; lv4_crew_c (silhouette): sit -> sit_type -> sit; lv4_crew_d (silhouette): sit_type -> sit; keyed camera moves, handheld; overlays: svg, svg, callout 'FURNITURE LIFT'.",
+   "shot_size": "wide",
+   "set": "lv4_facade",
+   "grade": "warm",
+   "camera": {
+    "keys": 2,
+    "handheld": 3
+   },
+   "characters": [
+    "lv4_crew_a",
+    "lv4_crew_b",
+    "lv4_crew_c",
+    "lv4_crew_d"
+   ],
+   "character_actions": [
+    {
+     "id": "lv4_crew_a",
+     "outfit": "default",
+     "depth": 0.9,
+     "scale": 0.19,
+     "start_pose": "hands_together",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.86,
+       "pose": "stand_tense"
+      },
+      {
+       "at": 5.27,
+       "pose": "point"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "lv4_crew_b",
+     "outfit": "default",
+     "depth": 0.9,
+     "scale": 0.19,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 4.04,
+       "turn_head": true
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "lv4_crew_c",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.3,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.75,
+       "pose": "sit_type"
+      },
+      {
+       "at": 5.27,
+       "pose": "sit",
+       "turn_head": true
+      }
+     ],
+     "silhouette": "warm"
+    },
+    {
+     "id": "lv4_crew_d",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.3,
+     "start_pose": "sit_type",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.86,
+       "pose": "sit",
+       "turn_head": true
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "svg",
+     "at": 2.51
+    },
+    {
+     "type": "callout",
+     "at": 5.12,
+     "text": "FURNITURE LIFT"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "L_minutes",
+     "type": "established",
+     "claim_text": "The raid lasted minutes: 'about seven by most accounts'. Reported figures vary (under four minutes inside per the culture minister; six to seven, under seven or under eight minutes in other reports). The script never says 'exactly'.",
+     "urls": [
+      "https://www.yahoo.com/news/world/article/louvre-robbery-how-thieves-pulled-off-daring-daytime-heist-in-7-minutes-stealing-french-crown-jewels-worth-102-million-163641467.html",
+      "https://www.aol.com/news/louvre-heist-timeline-thieves-stole-161619631.html",
+      "https://www.pbs.org/newshour/world/crown-jewels-stolen-from-louvre-in-4-minute-operation-by-thieves-in-broad-daylight",
+      "https://www.bostonglobe.com/2025/10/22/world/louvre-heist-timeline/"
+     ]
+    },
+    {
+     "claim": "L_haul",
+     "type": "established",
+     "claim_text": "Eight items of the French crown jewels were taken, valued at about EUR 88 million (about $102 million), the official estimate.",
+     "urls": [
+      "https://www.npr.org/2025/11/01/nx-s1-5594194/suspects-charged-louvre-jewel-heist-paris",
+      "https://www.aljazeera.com/amp/news/2025/10/19/priceless-jewels-stolen-from-frances-louvre-museum-in-four-minute-heist",
+      "https://www.euronews.com/2026/07/22/louvres-apollo-gallery-reopens-after-crown-jewels-theft-scandal",
+      "https://www.pbs.org/newshour/world/louvre-promises-to-restore-imperial-crown-dropped-by-thieves-during-museum-heist"
+     ]
+    },
+    {
+     "claim": "L_lift",
+     "type": "established",
+     "claim_text": "The thieves reached the gallery with a truck-mounted furniture (basket) lift. The Paris prosecutor said the lift truck was obtained on 10 Oct 2025 under a false pretext.",
+     "urls": [
+      "https://www.npr.org/2025/11/01/nx-s1-5594194/suspects-charged-louvre-jewel-heist-paris",
+      "https://www.bostonglobe.com/2025/10/22/world/louvre-heist-timeline/",
+      "https://www.euronews.com/2026/07/22/louvres-apollo-gallery-reopens-after-crown-jewels-theft-scandal"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "drive",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "hit",
+      "at": 0.0,
+      "gain": 0.7
+     },
+     {
+      "name": "whoosh",
+      "at": 0.05,
+      "gain": 0.5
+     },
+     {
+      "name": "tick",
+      "at": 2.807,
+      "gain": 0.5,
+      "word": [
+       0,
+       10
+      ]
+     },
+     {
+      "name": "rumble",
+      "at": 5.171,
+      "gain": 0.55,
+      "word": [
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_hook",
+    "set_code": "renderer/sets.js#lv4_facade",
+    "characters": [
+     "characters/figures/lv4_crew_a.json",
+     "characters/figures/lv4_crew_b.json",
+     "characters/figures/lv4_crew_c.json",
+     "characters/figures/lv4_crew_d.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_balcony",
+   "scene_type": "lv4_balcony",
+   "start": 6.75,
+   "duration": 3.75,
+   "narration": [
+    "In broad daylight, two of them rode it up and cut open a window."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 7.0,
+     "end": 10.355,
+     "words": [
+      {
+       "w": "In",
+       "start": 7.058,
+       "end": 7.151
+      },
+      {
+       "w": "broad",
+       "start": 7.197,
+       "end": 7.406
+      },
+      {
+       "w": "daylight,",
+       "start": 7.441,
+       "end": 7.929
+      },
+      {
+       "w": "two",
+       "start": 8.382,
+       "end": 8.498
+      },
+      {
+       "w": "of",
+       "start": 8.521,
+       "end": 8.567
+      },
+      {
+       "w": "them",
+       "start": 8.591,
+       "end": 8.718
+      },
+      {
+       "w": "rode",
+       "start": 8.765,
+       "end": 8.95
+      },
+      {
+       "w": "it",
+       "start": 8.974,
+       "end": 9.02
+      },
+      {
+       "w": "up",
+       "start": 9.067,
+       "end": 9.206
+      },
+      {
+       "w": "and",
+       "start": 9.252,
+       "end": 9.322
+      },
+      {
+       "w": "cut",
+       "start": 9.368,
+       "end": 9.531
+      },
+      {
+       "w": "open",
+       "start": 9.577,
+       "end": 9.833
+      },
+      {
+       "w": "a",
+       "start": 9.868,
+       "end": 9.914
+      },
+      {
+       "w": "window.",
+       "start": 9.949,
+       "end": 10.274
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 facade (warm grade); lv4_crew_a (silhouette): stand_tense -> present (walks); lv4_crew_b (silhouette): stand -> stand_tense -> point; camera push/pull, handheld; overlays: svg, label 'SUNDAY 19 OCT 2025'.",
+   "shot_size": "wide",
+   "set": "lv4_facade",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 20,
+     "z": 1
+    },
+    "to": {
+     "x": -30,
+     "y": 0,
+     "z": 1.1
+    },
+    "handheld": 4
+   },
+   "characters": [
+    "lv4_crew_a",
+    "lv4_crew_b"
+   ],
+   "character_actions": [
+    {
+     "id": "lv4_crew_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.41800000000000004,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.42,
+       "pose": "present"
+      }
+     ],
+     "walk": {
+      "from": 751.2,
+      "to": 619.2,
+      "at": 1.53,
+      "dur": 0.9
+     },
+     "silhouette": "cool"
+    },
+    {
+     "id": "lv4_crew_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.41800000000000004,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.69,
+       "pose": "stand_tense",
+       "turn_head": true
+      },
+      {
+       "at": 2.92,
+       "pose": "point",
+       "turn_head": true
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "label",
+     "at": 0.25,
+     "text": "SUNDAY 19 OCT 2025"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "L_date",
+     "type": "established",
+     "claim_text": "The theft took place on the morning of Sunday 19 October 2025 (about 9:30 a.m.), in broad daylight, at the Louvre's Apollo Gallery (Galerie d'Apollon), Paris.",
+     "urls": [
+      "https://www.aljazeera.com/amp/news/2025/10/19/priceless-jewels-stolen-from-frances-louvre-museum-in-four-minute-heist",
+      "https://www.bostonglobe.com/2025/10/22/world/louvre-heist-timeline/",
+      "https://www.euronews.com/2026/07/22/louvres-apollo-gallery-reopens-after-crown-jewels-theft-scandal"
+     ]
+    },
+    {
+     "claim": "L_entry",
+     "type": "established",
+     "claim_text": "Per the AP timeline and the prosecutor: two people went up to a balcony and opened a window with a disc cutter; inside the Apollo Gallery they used disc cutters on two display cases; two others waited on two scooters.",
+     "urls": [
+      "https://www.bostonglobe.com/2025/10/22/world/louvre-heist-timeline/",
+      "https://www.yahoo.com/news/articles/timeline-jewel-heist-louvre-paris-152635303.html",
+      "https://www.foxla.com/news/louvre-heist-suspects-mugshots-arrests-commando-team"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "drive",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 6.85,
+      "gain": 0.4
+     },
+     {
+      "name": "buzz",
+      "at": 9.318,
+      "gain": 0.6,
+      "word": [
+       0,
+       10
+      ]
+     },
+     {
+      "name": "glitch",
+      "at": 9.949,
+      "gain": 0.3,
+      "word": [
+       0,
+       13
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_balcony",
+    "set_code": "renderer/sets.js#lv4_facade",
+    "characters": [
+     "characters/figures/lv4_crew_a.json",
+     "characters/figures/lv4_crew_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_cases",
+   "scene_type": "lv4_cases",
+   "start": 10.5,
+   "duration": 4.5,
+   "narration": [
+    "Inside the Apollo Gallery, they took disc cutters to two display cases."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 10.75,
+     "end": 14.651,
+     "words": [
+      {
+       "w": "Inside",
+       "start": 10.808,
+       "end": 11.156
+      },
+      {
+       "w": "the",
+       "start": 11.191,
+       "end": 11.284
+      },
+      {
+       "w": "Apollo",
+       "start": 11.307,
+       "end": 11.656
+      },
+      {
+       "w": "Gallery,",
+       "start": 11.69,
+       "end": 12.166
+      },
+      {
+       "w": "they",
+       "start": 12.503,
+       "end": 12.619
+      },
+      {
+       "w": "took",
+       "start": 12.666,
+       "end": 12.793
+      },
+      {
+       "w": "disc",
+       "start": 12.828,
+       "end": 13.037
+      },
+      {
+       "w": "cutters",
+       "start": 13.095,
+       "end": 13.397
+      },
+      {
+       "w": "to",
+       "start": 13.444,
+       "end": 13.513
+      },
+      {
+       "w": "two",
+       "start": 13.56,
+       "end": 13.676
+      },
+      {
+       "w": "display",
+       "start": 13.711,
+       "end": 14.012
+      },
+      {
+       "w": "cases.",
+       "start": 14.059,
+       "end": 14.57
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 gallery (warm grade); lv4_crew_a (silhouette): stand_tense -> examine; lv4_crew_b (silhouette): stand -> examine; camera push/pull, handheld; overlays: svg, label 'THE APOLLO GALLERY'.",
+   "shot_size": "medium",
+   "set": "lv4_gallery",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -30,
+     "z": 1.06
+    },
+    "to": {
+     "x": 0,
+     "y": -10,
+     "z": 1.14
+    },
+    "handheld": 3
+   },
+   "characters": [
+    "lv4_crew_a",
+    "lv4_crew_b"
+   ],
+   "character_actions": [
+    {
+     "id": "lv4_crew_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.84,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.93,
+       "pose": "examine"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "lv4_crew_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.84,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.55,
+       "turn_head": true
+      },
+      {
+       "at": 2.71,
+       "pose": "examine",
+       "turn_head": true
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "label",
+     "at": 0.25,
+     "text": "THE APOLLO GALLERY"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "L_entry",
+     "type": "established",
+     "claim_text": "Per the AP timeline and the prosecutor: two people went up to a balcony and opened a window with a disc cutter; inside the Apollo Gallery they used disc cutters on two display cases; two others waited on two scooters.",
+     "urls": [
+      "https://www.bostonglobe.com/2025/10/22/world/louvre-heist-timeline/",
+      "https://www.yahoo.com/news/articles/timeline-jewel-heist-louvre-paris-152635303.html",
+      "https://www.foxla.com/news/louvre-heist-suspects-mugshots-arrests-commando-team"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "buzz",
+      "at": 12.778,
+      "gain": 0.6,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "glitch",
+      "at": 13.711,
+      "gain": 0.35,
+      "word": [
+       0,
+       10
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_cases",
+    "set_code": "renderer/sets.js#lv4_gallery",
+    "characters": [
+     "characters/figures/lv4_crew_a.json",
+     "characters/figures/lv4_crew_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_haul",
+   "scene_type": "lv4_haul",
+   "start": 15.0,
+   "duration": 5.25,
+   "narration": [
+    "They took eight pieces of the crown jewels,",
+    "worth about 88 million euros."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 15.25,
+     "end": 17.27,
+     "words": [
+      {
+       "w": "They",
+       "start": 15.273,
+       "end": 15.479
+      },
+      {
+       "w": "took",
+       "start": 15.479,
+       "end": 15.686
+      },
+      {
+       "w": "eight",
+       "start": 15.686,
+       "end": 15.944
+      },
+      {
+       "w": "pieces",
+       "start": 15.944,
+       "end": 16.254
+      },
+      {
+       "w": "of",
+       "start": 16.254,
+       "end": 16.357
+      },
+      {
+       "w": "the",
+       "start": 16.357,
+       "end": 16.512
+      },
+      {
+       "w": "crown",
+       "start": 16.512,
+       "end": 16.77
+      },
+      {
+       "w": "jewels,",
+       "start": 16.77,
+       "end": 17.131
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 17.62,
+     "end": 19.536,
+     "words": [
+      {
+       "w": "worth",
+       "start": 17.655,
+       "end": 17.864
+      },
+      {
+       "w": "about",
+       "start": 17.91,
+       "end": 18.166
+      },
+      {
+       "w": "88",
+       "start": 18.224,
+       "end": 18.653
+      },
+      {
+       "w": "million",
+       "start": 18.688,
+       "end": 18.978
+      },
+      {
+       "w": "euros.",
+       "start": 19.013,
+       "end": 19.431
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 gallery (warm grade); lv4_crew_b (silhouette): stand_tense -> present -> examine -> present -> stand_tense; keyed camera moves, handheld; overlays: svg, card '8 PIECES OF THE CROWN JEWELS / ≈ €88 MILLION / OFFICIAL ESTIMATE · ABOUT $102M'.",
+   "shot_size": "close-up",
+   "set": "lv4_gallery",
+   "grade": "warm",
+   "camera": {
+    "keys": 2,
+    "handheld": 2
+   },
+   "characters": [
+    "lv4_crew_b"
+   ],
+   "character_actions": [
+    {
+     "id": "lv4_crew_b",
+     "outfit": "default",
+     "depth": 1.06,
+     "scale": 1.22,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.39,
+       "pose": "present"
+      },
+      {
+       "at": 2.31,
+       "pose": "examine"
+      },
+      {
+       "at": 3.94,
+       "pose": "present"
+      },
+      {
+       "at": 4.64,
+       "pose": "stand_tense",
+       "turn_head": true
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "card",
+     "at": 0.59,
+     "text": "8 PIECES OF THE CROWN JEWELS / ≈ €88 MILLION / OFFICIAL ESTIMATE · ABOUT $102M"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "L_haul",
+     "type": "established",
+     "claim_text": "Eight items of the French crown jewels were taken, valued at about EUR 88 million (about $102 million), the official estimate.",
+     "urls": [
+      "https://www.npr.org/2025/11/01/nx-s1-5594194/suspects-charged-louvre-jewel-heist-paris",
+      "https://www.aljazeera.com/amp/news/2025/10/19/priceless-jewels-stolen-from-frances-louvre-museum-in-four-minute-heist",
+      "https://www.euronews.com/2026/07/22/louvres-apollo-gallery-reopens-after-crown-jewels-theft-scandal",
+      "https://www.pbs.org/newshour/world/louvre-promises-to-restore-imperial-crown-dropped-by-thieves-during-museum-heist"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "click",
+      "at": 15.686,
+      "gain": 0.4,
+      "word": [
+       0,
+       2
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 18.174,
+      "gain": 0.6,
+      "word": [
+       1,
+       2
+      ]
+     },
+     {
+      "name": "coins",
+      "at": 19.013,
+      "gain": 0.3,
+      "word": [
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_haul",
+    "set_code": "renderer/sets.js#lv4_gallery",
+    "characters": [
+     "characters/figures/lv4_crew_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_drop",
+   "scene_type": "lv4_drop",
+   "start": 20.25,
+   "duration": 6.0,
+   "narration": [
+    "Then it got stranger. Fleeing, they dropped Empress Eugénie's crown.",
+    "It was found, badly damaged."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 20.5,
+     "end": 23.762,
+     "words": [
+      {
+       "w": "Then",
+       "start": 20.523,
+       "end": 20.651
+      },
+      {
+       "w": "it",
+       "start": 20.674,
+       "end": 20.721
+      },
+      {
+       "w": "got",
+       "start": 20.755,
+       "end": 20.906
+      },
+      {
+       "w": "stranger.",
+       "start": 20.964,
+       "end": 21.371
+      },
+      {
+       "w": "Fleeing,",
+       "start": 21.533,
+       "end": 21.928
+      },
+      {
+       "w": "they",
+       "start": 22.021,
+       "end": 22.137
+      },
+      {
+       "w": "dropped",
+       "start": 22.172,
+       "end": 22.45
+      },
+      {
+       "w": "Empress",
+       "start": 22.52,
+       "end": 22.88
+      },
+      {
+       "w": "Eugénie's",
+       "start": 22.915,
+       "end": 23.321
+      },
+      {
+       "w": "crown.",
+       "start": 23.344,
+       "end": 23.716
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 24.112,
+     "end": 25.552,
+     "words": [
+      {
+       "w": "It",
+       "start": 24.158,
+       "end": 24.228
+      },
+      {
+       "w": "was",
+       "start": 24.251,
+       "end": 24.379
+      },
+      {
+       "w": "found,",
+       "start": 24.425,
+       "end": 24.634
+      },
+      {
+       "w": "badly",
+       "start": 24.681,
+       "end": 24.96
+      },
+      {
+       "w": "damaged.",
+       "start": 25.018,
+       "end": 25.505
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 street (warm grade); lv4_crew_a (silhouette): stand_tense (walks); lv4_crew_b (silhouette): stand_tense (walks); detective (silhouette): stand -> examine (walks); keyed camera moves, handheld; overlays: svg, label 'EMPRESS EUGÉNIE'S CROWN', label 'FOUND · BADLY DAMAGED'.",
+   "shot_size": "medium-wide",
+   "set": "lv4_street",
+   "grade": "warm",
+   "camera": {
+    "keys": 2,
+    "handheld": 4
+   },
+   "characters": [
+    "detective",
+    "lv4_crew_a",
+    "lv4_crew_b"
+   ],
+   "character_actions": [
+    {
+     "id": "lv4_crew_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.62,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [],
+     "walk": {
+      "from": -120,
+      "to": 1300,
+      "at": 0,
+      "dur": 2.7
+     },
+     "silhouette": "cool"
+    },
+    {
+     "id": "lv4_crew_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.64,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.82,
+       "turn_head": true
+      }
+     ],
+     "walk": {
+      "from": -300,
+      "to": 1300,
+      "at": 0.1,
+      "dur": 3
+     },
+     "silhouette": "cool"
+    },
+    {
+     "id": "detective",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.52,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 4.41,
+       "pose": "examine"
+      },
+      {
+       "at": 4.63,
+       "turn_head": true
+      }
+     ],
+     "walk": {
+      "from": 1300,
+      "to": 1031.7333333333331,
+      "at": 3.46,
+      "dur": 0.9
+     },
+     "silhouette": "warm",
+     "visible": [
+      3.46
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "label",
+     "at": 2.17,
+     "text": "EMPRESS EUGÉNIE'S CROWN"
+    },
+    {
+     "type": "label",
+     "at": 3.96,
+     "text": "FOUND · BADLY DAMAGED"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "flash",
+   "sources": [
+    {
+     "claim": "L_crown",
+     "type": "established",
+     "claim_text": "Empress Eugenie's crown was dropped during the escape and recovered, badly damaged ('badly deformed' but 'nearly intact', per the Louvre).",
+     "urls": [
+      "https://www.pbs.org/newshour/world/louvre-promises-to-restore-imperial-crown-dropped-by-thieves-during-museum-heist",
+      "https://www.france24.com/en/france/20260205-empress-crown-dropped-louvre-heist-thieves-fully-restored",
+      "https://gulfnews.com/world/europe/crushed-but-not-lost-imperial-crown-damaged-in-louvre-heist-set-for-full-restoration-1.500434343"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 20.864,
+      "gain": 0.5,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 22.222,
+      "gain": 0.6,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "ping",
+      "at": 22.292,
+      "gain": 0.35,
+      "word": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_drop",
+    "set_code": "renderer/sets.js#lv4_street",
+    "characters": [
+     "characters/figures/detective.json",
+     "characters/figures/lv4_crew_a.json",
+     "characters/figures/lv4_crew_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_ff_crown",
+   "scene_type": "lv4_ff_crown",
+   "start": 26.25,
+   "duration": 6.75,
+   "narration": [
+    "Fun fact: that crown has 1,354 diamonds.",
+    "It lost only ten."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 26.5,
+     "end": 30.877,
+     "words": [
+      {
+       "w": "Fun",
+       "start": 26.523,
+       "end": 26.674
+      },
+      {
+       "w": "fact:",
+       "start": 26.697,
+       "end": 27.127
+      },
+      {
+       "w": "that",
+       "start": 27.498,
+       "end": 27.649
+      },
+      {
+       "w": "crown",
+       "start": 27.696,
+       "end": 27.998
+      },
+      {
+       "w": "has",
+       "start": 28.033,
+       "end": 28.16
+      },
+      {
+       "w": "1,354",
+       "start": 28.183,
+       "end": 30.215
+      },
+      {
+       "w": "diamonds.",
+       "start": 30.262,
+       "end": 30.772
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 31.227,
+     "end": 32.318,
+     "words": [
+      {
+       "w": "It",
+       "start": 31.297,
+       "end": 31.39
+      },
+      {
+       "w": "lost",
+       "start": 31.424,
+       "end": 31.68
+      },
+      {
+       "w": "only",
+       "start": 31.715,
+       "end": 31.912
+      },
+      {
+       "w": "ten.",
+       "start": 31.982,
+       "end": 32.249
+      }
+     ]
+    }
+   ],
+   "visual_description": "lab (warm grade); examiner (silhouette): stand -> examine -> point -> examine; camera push/pull, handheld; overlays: svg, funfact 'Eugénie's crown has 1,354 / diamonds and 56 emeralds. / The heist cost it only 10 diamonds.'.",
+   "shot_size": "medium",
+   "set": "lab",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 30,
+     "y": 60,
+     "z": 1.06
+    },
+    "to": {
+     "x": 60,
+     "y": 80,
+     "z": 1.16
+    },
+    "handheld": 2
+   },
+   "characters": [
+    "examiner"
+   ],
+   "character_actions": [
+    {
+     "id": "examiner",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.05,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.47,
+       "pose": "examine"
+      },
+      {
+       "at": 4.98,
+       "pose": "point"
+      },
+      {
+       "at": 6.03,
+       "pose": "examine"
+      }
+     ],
+     "silhouette": "cool",
+     "prop": "magnifier"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "funfact",
+     "at": 0.22,
+     "text": "Eugénie's crown has 1,354 / diamonds and 56 emeralds. / The heist cost it only 10 diamonds."
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "L_ff_crown",
+     "type": "established",
+     "claim_text": "FUN FACT. Empress Eugenie's crown has 1,354 diamonds and 56 emeralds; after the heist it kept all its emeralds and all but 10 of its diamonds, and the Louvre says it can be restored without reconstruction.",
+     "urls": [
+      "https://www.pbs.org/newshour/world/louvre-promises-to-restore-imperial-crown-dropped-by-thieves-during-museum-heist",
+      "https://gulfnews.com/world/europe/crushed-but-not-lost-imperial-crown-damaged-in-louvre-heist-set-for-full-restoration-1.500434343",
+      "https://www.expressandstar.com/world-news/2025/11/07/crown-damaged-in-louvre-heist-to-be-restored-in-renaissance"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "sparkle",
+      "at": 26.473,
+      "gain": 0.9,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "chime",
+      "at": 31.982,
+      "gain": 0.35,
+      "word": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_ff_crown",
+    "set_code": "renderer/sets.js#lab",
+    "characters": [
+     "characters/figures/examiner.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_escape",
+   "scene_type": "lv4_escape",
+   "start": 33.0,
+   "duration": 5.25,
+   "narration": [
+    "They escaped on scooters, with about 30 seconds to spare, one inquiry found."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 33.25,
+     "end": 37.418,
+     "words": [
+      {
+       "w": "They",
+       "start": 33.273,
+       "end": 33.378
+      },
+      {
+       "w": "escaped",
+       "start": 33.424,
+       "end": 33.772
+      },
+      {
+       "w": "on",
+       "start": 33.819,
+       "end": 33.912
+      },
+      {
+       "w": "scooters,",
+       "start": 33.981,
+       "end": 34.388
+      },
+      {
+       "w": "with",
+       "start": 34.713,
+       "end": 34.841
+      },
+      {
+       "w": "about",
+       "start": 34.875,
+       "end": 35.119
+      },
+      {
+       "w": "30",
+       "start": 35.166,
+       "end": 35.409
+      },
+      {
+       "w": "seconds",
+       "start": 35.468,
+       "end": 35.816
+      },
+      {
+       "w": "to",
+       "start": 35.862,
+       "end": 35.92
+      },
+      {
+       "w": "spare,",
+       "start": 35.967,
+       "end": 36.269
+      },
+      {
+       "w": "one",
+       "start": 36.408,
+       "end": 36.594
+      },
+      {
+       "w": "inquiry",
+       "start": 36.617,
+       "end": 36.954
+      },
+      {
+       "w": "found.",
+       "start": 37.0,
+       "end": 37.372
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 street (warm grade); lv4_crew_b (silhouette): sit -> sit_slumped; lv4_crew_d (silhouette): sit -> sit_type; lv4_crew_a (silhouette): sit -> sit_slumped; lv4_crew_c (silhouette): sit -> sit_type; agent_b (silhouette): stand_tense -> point -> stand_tense (walks); camera push/pull, handheld; overlays: svg, label '≈30 SECONDS TO SPARE'.",
+   "shot_size": "wide",
+   "set": "lv4_street",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": -40,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": 50,
+     "y": 10,
+     "z": 1.05
+    },
+    "handheld": 5
+   },
+   "characters": [
+    "agent_b",
+    "lv4_crew_a",
+    "lv4_crew_b",
+    "lv4_crew_c",
+    "lv4_crew_d"
+   ],
+   "character_actions": [
+    {
+     "id": "lv4_crew_b",
+     "outfit": "default",
+     "depth": 0.99,
+     "scale": 0.46,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.22,
+       "pose": "sit_slumped"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "lv4_crew_d",
+     "outfit": "default",
+     "depth": 0.99,
+     "scale": 0.46,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.12,
+       "pose": "sit_type"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "lv4_crew_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.5,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.12,
+       "pose": "sit_slumped"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "lv4_crew_c",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.5,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.02,
+       "pose": "sit_type"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "agent_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.55,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.97,
+       "pose": "point"
+      },
+      {
+       "at": 3.61,
+       "pose": "stand_tense",
+       "turn_head": true
+      }
+     ],
+     "walk": {
+      "from": -200,
+      "to": 520,
+      "at": 1.67,
+      "dur": 1.3
+     },
+     "silhouette": "warm",
+     "visible": [
+      1.57
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "label",
+     "at": 2.07,
+     "text": "≈30 SECONDS TO SPARE"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "L_escape30",
+     "type": "established",
+     "claim_text": "The thieves escaped on scooters. Official inquiry findings reported in Dec 2025 say they got away about 30 seconds before police and guards arrived ('would have been foiled if police had been alerted 30 seconds earlier').",
+     "urls": [
+      "https://abcnews.com/International/french-watchdog-details-uncertainty-louvre-security-cameras-heist/story?id=128277660",
+      "https://www.smithsonianmag.com/smart-news/louvre-robbers-escaped-with-less-than-a-minute-to-spare-due-to-major-security-fumbles-180987870/",
+      "https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2025/december/Avoidable-Security-Failures-Enabled-Louvre-Heist/",
+      "https://www.bostonglobe.com/2025/10/22/world/louvre-heist-timeline/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rumble",
+      "at": 33.0,
+      "gain": 0.5
+     },
+     {
+      "name": "whoosh",
+      "at": 33.981,
+      "gain": 0.6,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "tick",
+      "at": 35.166,
+      "gain": 0.5,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "tick",
+      "at": 35.468,
+      "gain": 0.45,
+      "word": [
+       0,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_escape",
+    "set_code": "renderer/sets.js#lv4_street",
+    "characters": [
+     "characters/figures/agent_b.json",
+     "characters/figures/lv4_crew_a.json",
+     "characters/figures/lv4_crew_b.json",
+     "characters/figures/lv4_crew_c.json",
+     "characters/figures/lv4_crew_d.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s10_charged",
+   "scene_type": "lv4_charged",
+   "start": 38.25,
+   "duration": 3.75,
+   "narration": [
+    "Ten days later, two men were charged. More followed."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 38.5,
+     "end": 41.275,
+     "words": [
+      {
+       "w": "Ten",
+       "start": 38.535,
+       "end": 38.697
+      },
+      {
+       "w": "days",
+       "start": 38.721,
+       "end": 38.941
+      },
+      {
+       "w": "later,",
+       "start": 38.976,
+       "end": 39.278
+      },
+      {
+       "w": "two",
+       "start": 39.545,
+       "end": 39.696
+      },
+      {
+       "w": "men",
+       "start": 39.742,
+       "end": 39.882
+      },
+      {
+       "w": "were",
+       "start": 39.905,
+       "end": 39.998
+      },
+      {
+       "w": "charged.",
+       "start": 40.033,
+       "end": 40.509
+      },
+      {
+       "w": "More",
+       "start": 40.613,
+       "end": 40.776
+      },
+      {
+       "w": "followed.",
+       "start": 40.81,
+       "end": 41.217
+      }
+     ]
+    }
+   ],
+   "visual_description": "task force (cold grade); detective (silhouette): arms_crossed -> point_up -> stand; camera push/pull, handheld; overlays: svg.",
+   "shot_size": "medium",
+   "set": "task_force",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -40,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": -60,
+     "z": 1.07
+    },
+    "handheld": 2
+   },
+   "characters": [
+    "detective"
+   ],
+   "character_actions": [
+    {
+     "id": "detective",
+     "outfit": "default",
+     "depth": 1.1,
+     "scale": 1.02,
+     "start_pose": "arms_crossed",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.09,
+       "pose": "point_up"
+      },
+      {
+       "at": 2.96,
+       "pose": "stand"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "L_charged",
+     "type": "established",
+     "claim_text": "On 29 Oct 2025, ten days after the theft, two men (34 and 39) were charged with organised theft and criminal conspiracy; further people were charged on 1 Nov and 28 Nov 2025. Charges are allegations.",
+     "urls": [
+      "https://www.aljazeera.com/news/2025/10/29/two-suspects-in-louvre-heist-partially-admit-involvement-paris-prosecutor",
+      "https://abc7news.com/post/louvre-heist-suspects-charged-jewels-not-recovered-paris-prosecutor/18086590/",
+      "https://abc7news.com/post/louvre-jewels-heist-new-suspects-handed-preliminary-charges-paris-prosecutor-laure-beccuau-says/18100044/",
+      "https://www.france24.com/en/france/20251128-french-prosecutors-charge-fourth-suspected-member-louvre-jewel-heist-gang"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 38.45,
+      "gain": 0.5
+     },
+     {
+      "name": "stamp",
+      "at": 39.983,
+      "gain": 0.5,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "paper",
+      "at": 40.613,
+      "gain": 0.4,
+      "word": [
+       0,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_charged",
+    "set_code": "renderer/sets.js#task_force",
+    "characters": [
+     "characters/figures/detective.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s11_untried",
+   "scene_type": "lv4_untried",
+   "start": 42.0,
+   "duration": 3.0,
+   "narration": [
+    "But none has been tried. All are presumed innocent."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 42.25,
+     "end": 44.549,
+     "words": [
+      {
+       "w": "But",
+       "start": 42.273,
+       "end": 42.429
+      },
+      {
+       "w": "none",
+       "start": 42.429,
+       "end": 42.638
+      },
+      {
+       "w": "has",
+       "start": 42.638,
+       "end": 42.794
+      },
+      {
+       "w": "been",
+       "start": 42.794,
+       "end": 43.003
+      },
+      {
+       "w": "tried.",
+       "start": 43.003,
+       "end": 43.315
+      },
+      {
+       "w": "All",
+       "start": 43.315,
+       "end": 43.472
+      },
+      {
+       "w": "are",
+       "start": 43.472,
+       "end": 43.628
+      },
+      {
+       "w": "presumed",
+       "start": 43.628,
+       "end": 44.045
+      },
+      {
+       "w": "innocent.",
+       "start": 44.045,
+       "end": 44.514
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (cold grade); press_operator (silhouette): stand -> hands_together -> bowed (walks); camera push/pull; overlays: svg, card 'TRIALS HELD SO FAR: NONE / CHARGED, NOT CONVICTED / ALL PRESUMED INNOCENT'.",
+   "shot_size": "wide",
+   "set": "courtroom",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -40,
+     "z": 1.02
+    },
+    "to": {
+     "x": -20,
+     "y": -20,
+     "z": 1.1
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "press_operator"
+   ],
+   "character_actions": [
+    {
+     "id": "press_operator",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.52,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.1,
+       "pose": "hands_together"
+      },
+      {
+       "at": 1.63,
+       "pose": "bowed"
+      }
+     ],
+     "walk": {
+      "from": 1120,
+      "to": 640,
+      "at": 0.05,
+      "dur": 1.0030000000000001
+     },
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "card",
+     "at": 0.35,
+     "text": "TRIALS HELD SO FAR: NONE / CHARGED, NOT CONVICTED / ALL PRESUMED INNOCENT"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "L_untried",
+     "type": "established",
+     "claim_text": "Several people have been charged (counts differ by outlet); none has been tried or convicted, and all are presumed innocent. No trial date was found in any report up to 2026-10-11.",
+     "urls": [
+      "https://www.france24.com/en/live-news/20260119-louvre-heist-probe-what-we-know",
+      "https://abcnews.com/International/louvre-gallery-reopens-public-after-brazen-heist-year/story?id=134979910",
+      "https://news.artnet.com/art-world/louvre-heist-investigation-belgium-suspects-2778384"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "step",
+      "at": 42.2,
+      "gain": 0.35
+     },
+     {
+      "name": "chime",
+      "at": 43.628,
+      "gain": 0.25,
+      "word": [
+       0,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_untried",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/press_operator.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s08_password",
+   "scene_type": "lv4_password",
+   "start": 45.0,
+   "duration": 9.75,
+   "narration": [
+    "Then it got embarrassing.",
+    "A 2014 audit reportedly found the museum's CCTV password was... LOUVRE.",
+    "Still in use in 2025? Unconfirmed."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 45.25,
+     "end": 46.365,
+     "words": [
+      {
+       "w": "Then",
+       "start": 45.285,
+       "end": 45.389
+      },
+      {
+       "w": "it",
+       "start": 45.413,
+       "end": 45.471
+      },
+      {
+       "w": "got",
+       "start": 45.505,
+       "end": 45.656
+      },
+      {
+       "w": "embarrassing.",
+       "start": 45.703,
+       "end": 46.283
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 46.765,
+     "end": 50.689,
+     "words": [
+      {
+       "w": "A",
+       "start": 46.823,
+       "end": 46.885
+      },
+      {
+       "w": "2014",
+       "start": 46.885,
+       "end": 47.134
+      },
+      {
+       "w": "audit",
+       "start": 47.134,
+       "end": 47.445
+      },
+      {
+       "w": "reportedly",
+       "start": 47.445,
+       "end": 48.068
+      },
+      {
+       "w": "found",
+       "start": 48.068,
+       "end": 48.379
+      },
+      {
+       "w": "the",
+       "start": 48.379,
+       "end": 48.566
+      },
+      {
+       "w": "museum's",
+       "start": 48.566,
+       "end": 49.064
+      },
+      {
+       "w": "CCTV",
+       "start": 49.064,
+       "end": 49.313
+      },
+      {
+       "w": "password",
+       "start": 49.313,
+       "end": 49.811
+      },
+      {
+       "w": "was...",
+       "start": 49.811,
+       "end": 50.184
+      },
+      {
+       "w": "LOUVRE.",
+       "start": 50.184,
+       "end": 50.62
+      }
+     ]
+    },
+    {
+     "line": 2,
+     "start": 51.239,
+     "end": 53.886,
+     "words": [
+      {
+       "w": "Still",
+       "start": 51.297,
+       "end": 51.552
+      },
+      {
+       "w": "in",
+       "start": 51.576,
+       "end": 51.657
+      },
+      {
+       "w": "use",
+       "start": 51.692,
+       "end": 51.854
+      },
+      {
+       "w": "in",
+       "start": 51.878,
+       "end": 51.947
+      },
+      {
+       "w": "2025?",
+       "start": 51.994,
+       "end": 52.957
+      },
+      {
+       "w": "Unconfirmed.",
+       "start": 53.097,
+       "end": 53.816
+      }
+     ]
+    }
+   ],
+   "visual_description": "task force (cold grade); analyst (silhouette): read -> hand_to_face -> arms_crossed; keyed camera moves, handheld; overlays: svg, card '2014 AUDIT, AS REPORTED / BY LIBÉRATION · CCTV SERVER / PASSWORD: / LOUVRE / IN USE IN 2025? NOT CONFIRMED'.",
+   "shot_size": "close-up",
+   "set": "task_force",
+   "grade": "cold",
+   "camera": {
+    "keys": 2,
+    "handheld": 2
+   },
+   "characters": [
+    "analyst"
+   ],
+   "character_actions": [
+    {
+     "id": "analyst",
+     "outfit": "default",
+     "depth": 1.1,
+     "scale": 1.25,
+     "start_pose": "read",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.7,
+       "turn_head": true
+      },
+      {
+       "at": 2.13,
+       "turn_head": true
+      },
+      {
+       "at": 5.18,
+       "pose": "hand_to_face"
+      },
+      {
+       "at": 6.44,
+       "pose": "arms_crossed"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "card",
+     "at": 2.03,
+     "text": "2014 AUDIT, AS REPORTED / BY LIBÉRATION · CCTV SERVER / PASSWORD: / LOUVRE / IN USE IN 2025? NOT CONFIRMED"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "L_password",
+     "type": "established",
+     "claim_text": "As reported by Liberation and relayed by CNN (6 Nov 2025) and others, a 2014 audit by France's cybersecurity agency (ANSSI) found the password for the server running the Louvre's CCTV network was 'LOUVRE'. ANSSI said the audit cannot be considered representative of current security. Whether it was still in use in Oct 2025 has not been confirmed.",
+     "urls": [
+      "https://www.cnn.com/2025/11/06/europe/louvre-password-cctv-security-intl",
+      "https://www.lbc.co.uk/article/louvres-video-surveillance-password-security-5HjdGRf_2/",
+      "https://www.techradar.com/pro/security/no-wonder-it-got-hit-report-claims-password-for-the-louvres-video-surveillance-system-was-louvre",
+      "https://www.tomshardware.com/tech-industry/cyber-security/louvre-heist-reveals-glaring-security-weaknesses-previous-reports-say-museum-used-louvre-as-password-for-its-video-surveillance-still-has-workstations-with-windows-2000"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "unease",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "typing",
+      "at": 45.1,
+      "gain": 0.35
+     },
+     {
+      "name": "glitch",
+      "at": 50.034,
+      "gain": 0.5,
+      "word": [
+       1,
+       10
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 50.134,
+      "gain": 0.5,
+      "word": [
+       1,
+       10
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_password",
+    "set_code": "renderer/sets.js#task_force",
+    "characters": [
+     "characters/figures/analyst.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s09_ff_mona",
+   "scene_type": "lv4_ff_mona",
+   "start": 54.75,
+   "duration": 4.5,
+   "narration": [
+    "Fun fact: the Mona Lisa was stolen from the Louvre too, in 1911."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 55.0,
+     "end": 58.622,
+     "words": [
+      {
+       "w": "Fun",
+       "start": 55.023,
+       "end": 55.227
+      },
+      {
+       "w": "fact:",
+       "start": 55.227,
+       "end": 55.568
+      },
+      {
+       "w": "the",
+       "start": 55.568,
+       "end": 55.772
+      },
+      {
+       "w": "Mona",
+       "start": 55.772,
+       "end": 56.044
+      },
+      {
+       "w": "Lisa",
+       "start": 56.044,
+       "end": 56.317
+      },
+      {
+       "w": "was",
+       "start": 56.317,
+       "end": 56.521
+      },
+      {
+       "w": "stolen",
+       "start": 56.521,
+       "end": 56.93
+      },
+      {
+       "w": "from",
+       "start": 56.93,
+       "end": 57.202
+      },
+      {
+       "w": "the",
+       "start": 57.202,
+       "end": 57.406
+      },
+      {
+       "w": "Louvre",
+       "start": 57.406,
+       "end": 57.815
+      },
+      {
+       "w": "too,",
+       "start": 57.815,
+       "end": 58.087
+      },
+      {
+       "w": "in",
+       "start": 58.087,
+       "end": 58.224
+      },
+      {
+       "w": "1911.",
+       "start": 58.224,
+       "end": 58.564
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 salon (sepia grade); lv4_visitor (silhouette): stand -> point_up -> hand_to_face; analyst (silhouette): hands_behind -> hand_to_face (walks); camera push/pull, handheld; overlays: svg, funfact 'The Mona Lisa was stolen / from the Louvre in 1911. / It was missing for over 2 years.'.",
+   "shot_size": "medium-wide",
+   "set": "lv4_salon",
+   "grade": "sepia",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 40,
+     "z": 1.04
+    },
+    "to": {
+     "x": 0,
+     "y": 20,
+     "z": 1.1
+    },
+    "handheld": 2
+   },
+   "characters": [
+    "analyst",
+    "lv4_visitor"
+   ],
+   "character_actions": [
+    {
+     "id": "lv4_visitor",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.74,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.82,
+       "pose": "point_up"
+      },
+      {
+       "at": 3.67,
+       "pose": "hand_to_face"
+      }
+     ],
+     "silhouette": "warm"
+    },
+    {
+     "id": "analyst",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.76,
+     "start_pose": "hands_behind",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.77,
+       "pose": "hand_to_face"
+      }
+     ],
+     "walk": {
+      "from": 1180,
+      "to": 860,
+      "at": 0.05,
+      "dur": 1
+     },
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "funfact",
+     "at": 0.22,
+     "text": "The Mona Lisa was stolen / from the Louvre in 1911. / It was missing for over 2 years."
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · 1911 · ANONYMOUS FIGURES",
+   "transition_in": "flash",
+   "sources": [
+    {
+     "claim": "L_ff_mona",
+     "type": "established",
+     "claim_text": "FUN FACT. The Mona Lisa was stolen from the Louvre on 21 Aug 1911 (discovered 22 Aug) and recovered in Florence in Dec 1913, more than two years later.",
+     "urls": [
+      "https://www.history.com/this-day-in-history/august-22/theft-of-mona-lisa-is-discovered",
+      "https://www.britannica.com/today-in-history/August-21-The-Mona-Lisa-Theft",
+      "https://www.npr.org/2025/10/20/nx-s1-5580221/louvre-museum-robbery-history"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "sparkle",
+      "at": 54.973,
+      "gain": 0.9,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "swell",
+      "at": 55.844,
+      "gain": 0.4,
+      "word": [
+       0,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_ff_mona",
+    "set_code": "renderer/sets.js#lv4_salon",
+    "characters": [
+     "characters/figures/analyst.json",
+     "characters/figures/lv4_visitor.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s12_resign",
+   "scene_type": "lv4_resign",
+   "start": 59.25,
+   "duration": 3.75,
+   "narration": [
+    "In February, the director, Laurence des Cars, resigned."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 59.5,
+     "end": 62.182,
+     "words": [
+      {
+       "w": "In",
+       "start": 59.558,
+       "end": 59.639
+      },
+      {
+       "w": "February,",
+       "start": 59.697,
+       "end": 60.197
+      },
+      {
+       "w": "the",
+       "start": 60.324,
+       "end": 60.417
+      },
+      {
+       "w": "director,",
+       "start": 60.464,
+       "end": 60.824
+      },
+      {
+       "w": "Laurence",
+       "start": 60.905,
+       "end": 61.218
+      },
+      {
+       "w": "des",
+       "start": 61.253,
+       "end": 61.392
+      },
+      {
+       "w": "Cars,",
+       "start": 61.45,
+       "end": 61.636
+      },
+      {
+       "w": "resigned.",
+       "start": 61.706,
+       "end": 62.147
+      }
+     ]
+    }
+   ],
+   "visual_description": "office day (cold grade); examiner (silhouette): read -> hands_together (walks); camera push/pull; overlays: svg, label '24 FEBRUARY 2026'.",
+   "shot_size": "medium",
+   "set": "office_day",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1.06
+    },
+    "to": {
+     "x": -40,
+     "y": 0,
+     "z": 1.12
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "examiner"
+   ],
+   "character_actions": [
+    {
+     "id": "examiner",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.05,
+     "start_pose": "read",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.21,
+       "pose": "hands_together"
+      }
+     ],
+     "walk": {
+      "from": 700,
+      "to": -320,
+      "at": 2.36,
+      "dur": 2.2
+     },
+     "silhouette": "cool",
+     "prop": "folder"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "label",
+     "at": 0.25,
+     "text": "24 FEBRUARY 2026"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "L_resign",
+     "type": "established",
+     "claim_text": "Louvre president-director Laurence des Cars resigned on 24 Feb 2026, citing the heist among other problems.",
+     "urls": [
+      "https://www.cnn.com/2026/02/24/europe/louvre-museum-chief-resignation-jewel-theft-intl",
+      "https://www.npr.org/2026/02/24/g-s1-111343/france-paris-louvre-museum-heist-director-resigns",
+      "https://www.theartnewspaper.com/2026/02/24/louvre-director-laurence-des-cars-resigns-heist-strikes-ticket-scandal"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 59.55,
+      "gain": 0.4
+     },
+     {
+      "name": "door",
+      "at": 61.806,
+      "gain": 0.6,
+      "word": [
+       0,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_resign",
+    "set_code": "renderer/sets.js#office_day",
+    "characters": [
+     "characters/figures/examiner.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s13_reopen",
+   "scene_type": "lv4_reopen",
+   "start": 63.0,
+   "duration": 3.75,
+   "narration": [
+    "In July, the gallery reopened, with no jewels on display."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 63.25,
+     "end": 66.594,
+     "words": [
+      {
+       "w": "In",
+       "start": 63.32,
+       "end": 63.401
+      },
+      {
+       "w": "July,",
+       "start": 63.424,
+       "end": 63.819
+      },
+      {
+       "w": "the",
+       "start": 63.877,
+       "end": 63.97
+      },
+      {
+       "w": "gallery",
+       "start": 64.028,
+       "end": 64.376
+      },
+      {
+       "w": "reopened,",
+       "start": 64.411,
+       "end": 64.91
+      },
+      {
+       "w": "with",
+       "start": 65.259,
+       "end": 65.386
+      },
+      {
+       "w": "no",
+       "start": 65.421,
+       "end": 65.549
+      },
+      {
+       "w": "jewels",
+       "start": 65.584,
+       "end": 65.874
+      },
+      {
+       "w": "on",
+       "start": 65.92,
+       "end": 66.025
+      },
+      {
+       "w": "display.",
+       "start": 66.048,
+       "end": 66.489
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 gallery (warm grade); lv4_visitor (silhouette): stand -> point_up (walks); analyst (silhouette): stand -> hands_behind (walks); camera push/pull; overlays: svg, label '22 JULY 2026 · REOPENED'.",
+   "shot_size": "medium-wide",
+   "set": "lv4_gallery",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -40,
+     "z": 1
+    },
+    "to": {
+     "x": 0,
+     "y": -80,
+     "z": 1.06
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "analyst",
+    "lv4_visitor"
+   ],
+   "character_actions": [
+    {
+     "id": "lv4_visitor",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.62,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.51,
+       "pose": "point_up"
+      }
+     ],
+     "walk": {
+      "from": -120,
+      "to": 360,
+      "at": 0.05,
+      "dur": 1.411
+     },
+     "silhouette": "warm"
+    },
+    {
+     "id": "analyst",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.64,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.52,
+       "pose": "hands_behind",
+       "turn_head": true
+      }
+     ],
+     "walk": {
+      "from": 1220,
+      "to": 760,
+      "at": 0.3,
+      "dur": 2.121
+     },
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "label",
+     "at": 0.25,
+     "text": "22 JULY 2026 · REOPENED"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "L_reopen",
+     "type": "established",
+     "claim_text": "The Apollo Gallery reopened on 22 Jul 2026 with no jewels on display.",
+     "urls": [
+      "https://courthousenews.com/louvre-reopens-apollo-gallery-after-a-brazen-heist-but-no-jewels-are-on-display/",
+      "https://www.euronews.com/2026/07/22/louvres-apollo-gallery-reopens-after-crown-jewels-theft-scandal",
+      "https://gulfnews.com/amp/story/world%2Fthe-louvre-museums-apollo-gallery-reopens-to-public-following-october-2025-burglary-1.500616644"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "step",
+      "at": 63.2,
+      "gain": 0.35
+     },
+     {
+      "name": "step",
+      "at": 63.75,
+      "gain": 0.3
+     },
+     {
+      "name": "swell",
+      "at": 65.221,
+      "gain": 0.35,
+      "word": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_reopen",
+    "set_code": "renderer/sets.js#lv4_gallery",
+    "characters": [
+     "characters/figures/analyst.json",
+     "characters/figures/lv4_visitor.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s14_missing",
+   "scene_type": "lv4_missing",
+   "start": 66.75,
+   "duration": 5.25,
+   "narration": [
+    "One year on, the seven other pieces are still missing.",
+    "So where are they?"
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 67.0,
+     "end": 69.937,
+     "words": [
+      {
+       "w": "One",
+       "start": 67.046,
+       "end": 67.232
+      },
+      {
+       "w": "year",
+       "start": 67.255,
+       "end": 67.383
+      },
+      {
+       "w": "on,",
+       "start": 67.453,
+       "end": 67.697
+      },
+      {
+       "w": "the",
+       "start": 68.033,
+       "end": 68.115
+      },
+      {
+       "w": "seven",
+       "start": 68.173,
+       "end": 68.428
+      },
+      {
+       "w": "other",
+       "start": 68.463,
+       "end": 68.614
+      },
+      {
+       "w": "pieces",
+       "start": 68.672,
+       "end": 69.09
+      },
+      {
+       "w": "are",
+       "start": 69.136,
+       "end": 69.218
+      },
+      {
+       "w": "still",
+       "start": 69.252,
+       "end": 69.438
+      },
+      {
+       "w": "missing.",
+       "start": 69.485,
+       "end": 69.856
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 70.487,
+     "end": 71.265,
+     "words": [
+      {
+       "w": "So",
+       "start": 70.533,
+       "end": 70.684
+      },
+      {
+       "w": "where",
+       "start": 70.708,
+       "end": 70.835
+      },
+      {
+       "w": "are",
+       "start": 70.859,
+       "end": 70.94
+      },
+      {
+       "w": "they?",
+       "start": 70.975,
+       "end": 71.149
+      }
+     ]
+    }
+   ],
+   "visual_description": "lv4 facade (night grade); searcher_b (silhouette): stand -> point_up (walks); keyed camera moves; overlays: svg, svg.",
+   "shot_size": "wide",
+   "set": "lv4_facade",
+   "grade": "night",
+   "camera": {
+    "keys": 2,
+    "handheld": 0
+   },
+   "characters": [
+    "searcher_b"
+   ],
+   "character_actions": [
+    {
+     "id": "searcher_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.32,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 3.96,
+       "pose": "point_up"
+      }
+     ],
+     "walk": {
+      "from": 1180,
+      "to": 860,
+      "at": 0.1,
+      "dur": 3.436999999999995
+     },
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "svg",
+     "at": 0.25
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "L_missing",
+     "type": "established",
+     "claim_text": "Apart from Eugenie's crown, the seven other items had not been recovered in any report found up to 2026-10-11 (latest dated reports: June-July 2026).",
+     "urls": [
+      "https://courthousenews.com/louvre-reopens-apollo-gallery-after-a-brazen-heist-but-no-jewels-are-on-display/",
+      "https://news.artnet.com/art-world/louvre-heist-investigation-belgium-suspects-2778384",
+      "https://www.euronews.com/culture/2026/06/02/louvre-theft-belgian-lead-revives-investigation",
+      "https://abcnews.com/International/louvre-gallery-reopens-public-after-brazen-heist-year/story?id=134979910"
+     ]
+    },
+    {
+     "claim": "L_untried",
+     "type": "established",
+     "claim_text": "Several people have been charged (counts differ by outlet); none has been tried or convicted, and all are presumed innocent. No trial date was found in any report up to 2026-10-11.",
+     "urls": [
+      "https://www.france24.com/en/live-news/20260119-louvre-heist-probe-what-we-know",
+      "https://abcnews.com/International/louvre-gallery-reopens-public-after-brazen-heist-year/story?id=134979910",
+      "https://news.artnet.com/art-world/louvre-heist-investigation-belgium-suspects-2778384"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 66.85,
+      "gain": 0.45
+     },
+     {
+      "name": "sub",
+      "at": 70.975,
+      "gain": 0.6,
+      "word": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_missing",
+    "set_code": "renderer/sets.js#lv4_facade",
+    "characters": [
+     "characters/figures/searcher_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s15_next",
+   "scene_type": "lv4_next",
+   "start": 72.0,
+   "duration": 7.5,
+   "narration": [
+    "Next: a man hijacked a plane, jumped out with $200,000, and was never found."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 72.35,
+     "end": 77.795,
+     "words": [
+      {
+       "w": "Next:",
+       "start": 72.408,
+       "end": 72.826
+      },
+      {
+       "w": "a",
+       "start": 73.198,
+       "end": 73.232
+      },
+      {
+       "w": "man",
+       "start": 73.314,
+       "end": 73.511
+      },
+      {
+       "w": "hijacked",
+       "start": 73.557,
+       "end": 73.952
+      },
+      {
+       "w": "a",
+       "start": 73.987,
+       "end": 74.01
+      },
+      {
+       "w": "plane,",
+       "start": 74.068,
+       "end": 74.451
+      },
+      {
+       "w": "jumped",
+       "start": 74.869,
+       "end": 75.113
+      },
+      {
+       "w": "out",
+       "start": 75.16,
+       "end": 75.299
+      },
+      {
+       "w": "with",
+       "start": 75.322,
+       "end": 75.427
+      },
+      {
+       "w": "$200,000,",
+       "start": 75.496,
+       "end": 76.739
+      },
+      {
+       "w": "and",
+       "start": 76.808,
+       "end": 76.913
+      },
+      {
+       "w": "was",
+       "start": 76.936,
+       "end": 77.052
+      },
+      {
+       "w": "never",
+       "start": 77.087,
+       "end": 77.296
+      },
+      {
+       "w": "found.",
+       "start": 77.366,
+       "end": 77.737
+      }
+     ]
+    }
+   ],
+   "visual_description": "cabin woods (night grade); searcher_b (silhouette): torch -> point_up; camera push/pull; overlays: svg, nextcase 'He jumped from a plane / with $200,000… / and was never found. /  '.",
+   "shot_size": "medium-wide",
+   "set": "cabin_woods",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -20,
+     "z": 1
+    },
+    "to": {
+     "x": 0,
+     "y": -50,
+     "z": 1.06
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "searcher_b"
+   ],
+   "character_actions": [
+    {
+     "id": "searcher_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.75,
+     "start_pose": "torch",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.87,
+       "turn_head": true
+      },
+      {
+       "at": 2.87,
+       "pose": "point_up"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": -1
+    },
+    {
+     "type": "nextcase",
+     "at": 0.45,
+     "text": "He jumped from a plane / with $200,000… / and was never found. /  "
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "L_next",
+     "type": "established",
+     "claim_text": "NEXT-CASE TEASE. On 24 Nov 1971 a man calling himself Dan Cooper hijacked a Northwest Orient flight, received $200,000 in ransom, jumped from the plane and was never found or identified.",
+     "urls": [
+      "https://www.fbi.gov/history/famous-cases/db-cooper-hijacking",
+      "https://www.npr.org/sections/thetwo-way/2016/07/13/485839902/fbi-is-giving-up-on-solving-the-mystery-of-d-b-cooper",
+      "https://www.cnn.com/2016/07/12/world/d-b-cooper-fbi-closes-case"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 72.05,
+      "gain": 0.6
+     },
+     {
+      "name": "wind",
+      "at": 72.4,
+      "gain": 0.4
+     },
+     {
+      "name": "swell",
+      "at": 74.669,
+      "gain": 0.4,
+      "word": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv04-louvre-heist.js#lv4_next",
+    "set_code": "renderer/sets.js#cabin_woods",
+    "characters": [
+     "characters/figures/searcher_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}

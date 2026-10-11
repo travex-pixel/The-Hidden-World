@@ -30,7 +30,8 @@
 
 Wording choices:
 - "Stopped actively investigating", not "closed". The FBI says it "redirected resources", and some headlines that say "closed" overstate it.
-- "Clearing sand for a campfire" follows HistoryLink's "smoothing sand for a campfire".
+- The narration says the boy "uncovered" the bundles. The on-screen label "clearing sand for a campfire" follows HistoryLink's "smoothing sand for a campfire". The loop line "a kid went digging" reflects the common description of digging a campfire pit (dossier, FBI 2009).
+- "He lowered the rear stairs": the FBI says he jumped from the back of the plane. HistoryLink and the Wikipedia "Cooper vane" extract (pointer) say he deployed the aft airstair.
 - "Rotting" bills follows "deteriorating" (HistoryLink, KIRO 7) and "decaying" (dossier, FBI).
 - "Thanksgiving eve" is a calendar fact (Thursday 25 Nov 1971).
 

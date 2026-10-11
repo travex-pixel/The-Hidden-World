@@ -246,8 +246,8 @@
             keys: [{ at: eve, headTurn: 0.2, gaze: [0.9, 0], expr: 'focused', dur: 0.5 }, { at: dan, pose: 'stand', expr: 'neutral', dur: 0.5 }] }
         ],
         overlays: [
-          { type: 'label', at: 0.3, until: dan - 0.35, x: 60, y: 430, text: 'PORTLAND, OREGON', fs: 44, sub: '24 Nov 1971 · Flight 305 to Seattle' },
-          { type: 'card', at: dan - 0.25, x: 140, y: 380, w: 800, rows: [{ text: 'NAME ON THE TICKET:', fs: 30, colour: '#6b665c' }, { text: 'DAN COOPER', fs: 64, colour: '#8e1f18', at: dan }] }
+          { type: 'label', at: 0.2, until: dan - 0.55, x: 60, y: 430, text: 'PORTLAND, OREGON', fs: 44, sub: '24 Nov 1971 · Flight 305 to Seattle' },
+          { type: 'card', at: dan - 0.45, x: 140, y: 380, w: 800, rows: [{ text: 'NAME ON THE TICKET:', fs: 30, colour: '#6b665c' }, { text: 'DAN COOPER', fs: 64, colour: '#8e1f18', at: dan - 0.3 }] }
         ],
         tag: COOPER_TAG
       });
@@ -368,7 +368,7 @@
       const t = ctx.t, mh = WT(ctx, 0, 2, 0.66), no = WT(ctx, 0, 4, 1.33), l2 = LS(ctx, 1, 2.72), y80 = WT(ctx, 1, 2, 3.09), dig = WT(ctx, 1, 6, 4.55);
       const cards = [
         { x: 90, y: 340, w: 400, h: 150, rot: -2, k: seg(t, 0.1, 0.5), lines: [['24 NOV 1971', 38], ['FLIGHT 305', 28, '#6b665c']] },
-        { x: 590, y: 340, w: 400, h: 150, rot: 2, k: seg(t, mh - 0.1, mh + 0.3), lines: [['MANHUNT', 40], ['WOODS AND RIVERS', 26, '#6b665c']] },
+        { x: 590, y: 340, w: 400, h: 150, rot: 2, k: seg(t, mh - 0.1, mh + 0.3), lines: [['MANHUNT', 46, '#1a1915', 92]] },
         { x: 90, y: 560, w: 400, h: 150, rot: 1, k: seg(t, no - 0.1, no + 0.3), lines: [['NO TRACE', 46, '#8e1f18']] },
         { x: 590, y: 560, w: 400, h: 150, rot: -1, k: seg(t, y80 - 0.1, y80 + 0.3), lines: [['1980', 50], ['?', 40, '#8e1f18']] }
       ];

@@ -21,7 +21,7 @@ def build(h):
           emph=["$200,000,", "jumped", "never", "found."], min_d=5.0, pad=0.25),
         S("s02_board", "db5_board", [N("Thanksgiving eve, 1971. His plane ticket said: Dan Cooper.")],
           "unease", ["K_ticket"], sfx=[fx(0.2, "step", 0.35), fx(0.75, "step", 0.35), fx(1.3, "step", 0.35), fw(0, 7, "paper", 0.6, -0.1)],
-          emph=["dan", "cooper."], tr="push", pad=0.15),
+          emph=["dan", "cooper."], tr="push", pad=0.1),
         # B: the hijacking
         S("s03_name", "db5_name", [N("Fun fact: he never called himself D.B."),
                                    N("That came from a media mix-up.", pause_before=0.15)],
@@ -29,7 +29,7 @@ def build(h):
           emph=["d.b.", "mix-up."], tr="flash", pad=0.15),
         S("s04_note", "db5_note", [N("After takeoff, he handed a flight attendant a note."),
                                    N("It said he had a bomb.", pause_before=0.25)],
-          "tension", ["K_note"], sfx=[fw(0, 4, "paper", 0.7, -0.1), fw(1, 5, "hit", 0.6, -0.05)],
+          "tension", ["K_note"], sfx=[fw(0, 3, "paper", 0.7, -0.1), fw(1, 5, "hit", 0.6, -0.05)],
           emph=["note.", "bomb."], tr="push", pad=0.15),
         S("s05_demand", "db5_demand", [N("He demanded $200,000."),
                                        N("And four parachutes.", pause_before=0.2)],
@@ -64,14 +64,14 @@ def build(h):
         # D: where it stands now
         S("s13_fbi", "db5_fbi", [N("In 2016, the FBI stopped actively investigating."),
                                  N("It still wants evidence of the parachutes or the money.", pause_before=0.2)],
-          "tension-peak", ["K_2016"], sfx=[fw(0, 4, "thud", 0.6, -0.05), fw(1, 4, "paper", 0.4, -0.1)],
+          "tension-peak", ["K_2016"], sfx=[fw(0, 4, "thud", 0.6, -0.05), fw(1, 6, "paper", 0.4, -0.1)],
           emph=["stopped", "parachutes", "money."], tr="push", pad=0.2),
         # E: payoff and the open loop
         S("s14_end", "db5_end", [N("Over 50 years later, no one knows who he was.", pause_before=0.2),
                                  N("Next: a most-wanted fugitive hid for 16 years.", pause_before=0.35),
                                  N("A stray cat helped give him away.", pause_before=0.1)],
           "aftermath", ["K_unsolved", "K_next"], sfx=rain(0.22, 12) + [fw(1, 0, "whoosh", 0.6, -0.15), fw(2, 2, "chime", 0.35, 0.0)],
-          emph=["no", "knows", "16", "cat"], tr="fade", min_d=3.0, pad=1.8),
+          emph=["no", "knows", "16", "cat"], tr="fade", min_d=3.0, pad=1.6),
     ]
     sections = {"s01_hook": "A", "s02_board": "A", "s03_name": "B", "s04_note": "B", "s05_demand": "B", "s06_seattle": "B",
                 "s07_jump": "C", "s08_vane": "C", "s09_manhunt": "C", "s10_sandbar": "C", "s11_serials": "C", "s12_rest": "C",

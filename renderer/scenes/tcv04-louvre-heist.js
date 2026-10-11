@@ -275,7 +275,7 @@
   const TAGS = 'ILLUSTRATION · ANONYMOUS FIGURES', TAG1 = 'ILLUSTRATION · ANONYMOUS FIGURE';
   // a soft dark band behind the series header so it reads over bright skies and ceilings (not content; screen space)
   const SCRIM = { type: 'svg', at: -1, svg: `<defs><linearGradient id="lv4scrim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.62"/><stop offset="0.7" stop-color="#000" stop-opacity="0.3"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient></defs><rect x="0" y="0" width="${W}" height="360" fill="url(#lv4scrim)"/>` };
-  const shot = (ctx, spec) => E.cine.shot(ctx, { ...spec, overlays: [SCRIM, ...(spec.overlays || [])] });
+  const scrim = spec => ({ ...spec, overlays: [SCRIM, ...(spec.overlays || [])] });
   E.registerScenes({
     // 1 - hook: a lift rises to a palace balcony; the stopwatch sweeps to about seven minutes
     lv4_hook(ctx) {
@@ -283,7 +283,7 @@
       const o = { tod: 'day', lift: ease.inOut(seg(t, 0.0, l2 + 0.6)) };
       const ra = rider(o, -24), rb = rider(o, 26);
       const scooters = () => scooter(150, 1660, 0.3, 1, '#262a30') + scooter(400, 1690, 0.3, 1, '#1e2228');
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'lv4_facade', setOpts: o, grade: 'warm',
         cam: { keys: [{ at: 0, x: 40, y: -150, z: 1.3 }, { at: l2 - 0.5, x: 0, y: 0, z: 1.0, dur: 1.5 }], handheld: 3 },
         figures: [
@@ -298,7 +298,7 @@
           { type: 'callout', at: lift - 0.15, depth: 0.9, target: [720, 1080], r: 48, label: [80, 1200], text: 'FURNITURE LIFT', fs: 36, w: 380 }
         ],
         tag: TAGS
-      });
+      }));
     },
 
     // 2 - up to the balcony, in broad daylight; a window is cut open
@@ -306,7 +306,7 @@
       const t = ctx.t, l0 = LS(ctx, 0, 0.25), day = WT(ctx, 0, 2, 0.6), two = WT(ctx, 0, 3, 1.4), cut = WT(ctx, 0, 10, 2.4), end = LE(ctx, 0, 3.4);
       const o = { tod: 'day', lift: 1, s: 2.2, ax: 470, ay: 760, wx: 474, wy: 900, fd: 1.0, cut: seg(t, cut, cut + 1.1), trees: false };
       const ra = rider(o, -10), rb = rider(o, 30), wx = toW(o, BAL.win[1] - 4, 706);
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'lv4_facade', setOpts: o, grade: 'warm', cam: { from: { x: 0, y: 20, z: 1.0 }, to: { x: -30, y: 0, z: 1.1 }, handheld: 4 },
         figures: [
           { id: 'lv4_crew_a', x: ra.x, y: ra.y, scale: ra.scale, dir: -1, turn: 0.5, pose: 'stand_tense', silhouette: 'cool', walk: { from: ra.x, to: toW(o, 536, 0)[0], at: two - 0.1, dur: 0.9, cadence: 8 }, keys: [{ at: cut - 0.2, pose: 'present', dur: 0.3 }] },
@@ -315,7 +315,7 @@
         props: [{ depth: 1.0005, svg: () => sparks(wx[0], wx[1], t, seg(t, cut - 0.05, cut + 0.1) * (1 - seg(t, end + 0.1, end + 0.4)), 1, 5) }],
         overlays: [{ type: 'label', at: l0, x: 60, y: 1150, text: 'SUNDAY 19 OCT 2025', fs: 42, sub: 'About 9:30 a.m. · in broad daylight' }],
         tag: TAGS
-      });
+      }));
     },
 
     // 3 - inside the gallery: disc cutters on two display cases
@@ -328,7 +328,7 @@
       const FA = [690, 1600, 0.84], FB = [390, 1610, 0.84];
       const props = () => vit(185, 0, seg(t, two, two + 0.8)) + vit(905, 1, seg(t, disc, disc + 0.8)) +
         sparks(FA[0] + 172 * FA[2] / 0.9, FA[1] - 510 * FA[2] / 0.9, t, seg(t, disc - 0.05, disc + 0.1) * (1 - seg(t, end + 0.2, end + 0.5)), -1, 7) + sparks(FB[0] - 172 * FB[2] / 0.9, FB[1] - 510 * FB[2] / 0.9, t + 0.3, seg(t, two - 0.05, two + 0.1) * (1 - seg(t, end + 0.2, end + 0.5)), 1, 11);
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'lv4_gallery', setOpts: { cases: true }, grade: 'warm', cam: { from: { x: 0, y: -30, z: 1.06 }, to: { x: 0, y: -10, z: 1.14 }, handheld: 3 },
         figures: [
           { id: 'lv4_crew_a', x: FA[0], y: FA[1], scale: FA[2], dir: 1, turn: 0.55, pose: 'stand_tense', silhouette: 'cool', keys: [{ at: disc - 0.4, pose: 'examine', dur: 0.4 }] },
@@ -337,7 +337,7 @@
         props: [{ depth: 1.0, svg: props }],
         overlays: [{ type: 'label', at: l0, x: 60, y: 400, text: 'THE APOLLO GALLERY', fs: 44, sub: 'Two display cases cut open' }],
         tag: TAGS
-      });
+      }));
     },
 
     // 4 - the haul: pieces vanish from the case through a cut in the glass; about EUR 88 million (official estimate)
@@ -353,7 +353,7 @@
         s += `<path d="M160 1230 L360 900" stroke="#fff" stroke-width="16" opacity="0.16"/><path d="M640 1140 l70 -6 l20 36 l-14 60 l-76 4 Z" fill="#05070a" opacity="0.55" stroke="#fff2c0" stroke-width="3"/>`;
         return s;
       };
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'lv4_gallery', setOpts: { cases: true, glow: 0.8 }, grade: 'warm', cam: { keys: [{ at: 0, x: 0, y: 70, z: 1.08 }, { at: l2 - 0.3, x: 20, y: 40, z: 1.16, dur: 1.0 }], handheld: 2 },
         figures: [{ id: 'lv4_crew_b', x: 930, y: 1990, scale: 1.22, dir: -1, turn: 0.55, pose: 'stand_tense', silhouette: 'cool', depth: 1.06,
           keys: [{ at: eight - 0.3, pose: 'present', dur: 0.4 }, { at: eight + span * 0.5, pose: 'examine', dur: 0.4 }, { at: eight + span, pose: 'present', dur: 0.4 }, { at: end + 0.1, pose: 'stand_tense', headTurn: 0.5, dur: 0.5 }] }],
@@ -363,43 +363,43 @@
           { text: '≈ €88 MILLION', fs: 60, colour: '#8e1f18', at: e88 - 0.1 },
           { text: 'OFFICIAL ESTIMATE · ABOUT $102M', fs: 28, colour: '#6b665c', at: e88 + 0.4 }] }],
         tag: TAG1
-      });
+      }));
     },
 
     // 5 - fleeing, they drop a crown in the street; it is found, badly damaged
     lv4_drop(ctx) {
       const t = ctx.t, l0 = LS(ctx, 0, 0.25), str = WT(ctx, 0, 3, 0.7), dr = WT(ctx, 0, 6, 1.7), emp = WT(ctx, 0, 7, 2.0), l2 = LS(ctx, 1, 3.6), bad = WT(ctx, 1, 3, 4.2);
-      const runA = { from: -200, to: 1300, at: str - 0.2, dur: 2.6, cadence: 11, stride: 34 }, runB = { from: -380, to: 1300, at: str - 0.1, dur: 2.9, cadence: 11, stride: 34 };
+      const runA = { from: -120, to: 1300, at: 0.0, dur: 2.7, cadence: 11, stride: 34 }, runB = { from: -300, to: 1300, at: 0.1, dur: 3.0, cadence: 11, stride: 34 };
       const bx = lerp(runB.from, runB.to, clamp((dr - runB.at) / runB.dur, 0, 1)), cx = bx + 60;
       const fall = seg(t, dr, dr + 0.45), bounce = Math.abs(Math.sin(seg(t, dr + 0.45, dr + 0.9) * Math.PI)) * 30 * (1 - seg(t, dr + 0.45, dr + 0.9));
       const cy = lerp(1250, 1600, ease.in(fall)) - bounce;
       const crownP = () => (t < dr ? '' : crown(cx + 40 * seg(t, dr + 0.45, dr + 1.2), cy, 0.6, t, { damaged: t > dr + 0.45, rot: lerp(-30, -12, seg(t, dr, dr + 1.2)) }));
-      const zc = 1.55, camC = { x: (cx + 40 - 540) * zc, y: 864 - 1040 + (1540 - 864) * zc };
-      return shot(ctx, {
+      const zc = 1.4, camC = { x: (cx + 40 - 540) * zc, y: 864 - 1040 + (1540 - 864) * zc };
+      return E.cine.shot(ctx, scrim({
         set: 'lv4_street', grade: 'warm', cam: { keys: [{ at: 0, x: -20, y: 0, z: 1.05 }, { at: l2 - 0.5, x: camC.x, y: camC.y, z: zc, dur: 1.3 }], handheld: 4 },
         figures: [
           { id: 'lv4_crew_a', x: runA.from, y: 1600, scale: 0.62, dir: 1, turn: 0.75, pose: 'stand_tense', silhouette: 'cool', walk: runA },
           { id: 'lv4_crew_b', x: runB.from, y: 1590, scale: 0.64, dir: 1, turn: 0.75, pose: 'stand_tense', silhouette: 'cool', walk: runB, keys: [{ at: dr - 0.1, headTurn: -0.6, dur: 0.3 }] },
-          { id: 'detective', x: 1300, y: 1630, scale: 0.6, dir: -1, turn: 0.6, pose: 'stand', silhouette: 'warm', propOverride: null, show: [l2 - 0.4], walk: { from: 1300, to: cx + 330, at: l2 - 0.4, dur: 0.9, cadence: 7 }, keys: [{ at: l2 + 0.55, pose: 'kneel', y: 1630 + 0.6 * 86, dur: 0.5 }, { at: bad + 0.2, headTurn: 0.25, dur: 0.4 }] }
+          { id: 'detective', x: 1300, y: 1620, scale: 0.52, dir: -1, turn: 0.6, pose: 'stand', silhouette: 'warm', show: [l2 - 0.4], walk: { from: 1300, to: cx + 300, at: l2 - 0.4, dur: 0.9, cadence: 7 }, keys: [{ at: l2 + 0.55, pose: 'examine', dur: 0.5 }, { at: bad + 0.2, headTurn: 0.25, dur: 0.4 }] }
         ],
         props: [{ depth: 1.0, svg: crownP }],
         overlays: [{ type: 'label', at: emp - 0.1, until: l2 - 0.3, x: 60, y: 400, text: "EMPRESS EUGÉNIE'S CROWN", fs: 40, sub: 'Dropped as the thieves fled' },
                    { type: 'label', at: l2 + 0.1, x: 60, y: 400, text: 'FOUND · BADLY DAMAGED', fs: 42, colour: '#ff6b5a' }],
         tag: TAGS
-      });
+      }));
     },
 
     // 6 - FUN FACT: the crown's stones (restoration bench; generic crown)
     lv4_ff_crown(ctx) {
       const t = ctx.t, fun = WT(ctx, 0, 0, 0.25), dia = WT(ctx, 0, 6, 2.2), l2 = LS(ctx, 1, 4.6), ten = WT(ctx, 1, 3, 5.4);
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'lab', setOpts: { microX: 180 }, grade: 'warm', cam: { from: { x: 30, y: 60, z: 1.06 }, to: { x: 60, y: 80, z: 1.16 }, handheld: 2 },
-        figures: [{ id: 'examiner', x: 920, y: 1700, scale: 1.05, dir: -1, turn: 0.55, pose: 'stand', silhouette: 'cool', propOverride: 'magnifier', depth: 1.0,
+        figures: [{ id: 'examiner', x: 920, y: 1760, scale: 1.05, dir: -1, turn: 0.55, pose: 'stand', silhouette: 'cool', propOverride: 'magnifier', depth: 1.0,
           keys: [{ at: fun + 0.2, pose: 'examine', dur: 0.6 }, { at: l2, pose: 'point', dur: 0.4 }, { at: ten + 0.3, pose: 'examine', dur: 0.5 }] }],
         props: [{ depth: 0.9, svg: () => wash(690, 1080, 360, 260, '#ffd9a0', 0.4) + wash(690, 1200, 300, 60, '#fff0c8', 0.5) }, { depth: 1.06, svg: () => crown(690, 1214, 0.95, t * (1 + seg(t, dia - 0.2, dia) * 1.5), { damaged: true, rot: -4 }) + [0, 1, 2, 3, 4, 5].map(i => star(600 + i * 34, 1090 - (i % 3) * 40, 22, seg(t, dia - 0.1, dia + 0.3) * twinkle(t * 2, i, 3))).join('') }],
         overlays: [{ type: 'funfact', at: fun - 0.05, y: 420, rows: [{ text: "Eugénie's crown has 1,354", fs: 46 }, { text: 'diamonds and 56 emeralds.', fs: 46 }, { text: 'The heist cost it only 10 diamonds.', fs: 36, colour: '#ffd23f' }] }],
         tag: TAG1
-      });
+      }));
     },
 
     // 7 - the escape on scooters; police arrive about 30 seconds too late (inquiry findings)
@@ -409,7 +409,7 @@
       const s1 = 250 + go(1500), s2 = 700 + go(1250);
       const trail = (x, k) => k <= 0.05 ? '' : [0, 1, 2].map(i => `<line x1="${f1(x - 160 - i * 40)}" y1="${1480 - i * 40}" x2="${f1(x - 160 - i * 40 - 200 * k)}" y2="${1480 - i * 40}" stroke="#fff6dc" stroke-width="5" opacity="${f1(0.5 * k)}"/>`).join('');
       const props = () => trail(s1, go(1)) + scooter(s1, 1640, 0.5, 1, '#262a30') + trail(s2, go(1)) + scooter(s2, 1560, 0.46, 1, '#1e2228');
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'lv4_street', grade: 'warm', police: t > sec - 0.1 ? 0.35 * seg(t, sec - 0.1, sec + 0.4) : 0, cam: { from: { x: -40, y: 0, z: 1.0 }, to: { x: 50, y: 10, z: 1.05 }, handheld: 5 },
         figures: [
           { id: 'lv4_crew_b', x: s2 - 120 * 0.46, y: 1560, scale: 0.46, dir: 1, turn: 0.92, pose: 'sit', noChair: true, silhouette: 'cool', depth: 0.99, keys: [{ at: esc_ - 0.2, pose: 'sit_slumped', dur: 0.3 }] },
@@ -421,7 +421,7 @@
         props: [{ depth: 0.995, svg: props }],
         overlays: [{ type: 'label', at: sec - 0.1, x: 60, y: 400, text: '≈30 SECONDS TO SPARE', fs: 44, sub: 'Inquiry findings reported Dec 2025' }],
         tag: TAGS
-      });
+      }));
     },
 
     // 10 - the charges (allegations): cards pinned as the narration states them
@@ -436,19 +436,19 @@
         if (t > more + 0.3) s += `<path d="M290 364 Q 540 310 790 364" stroke="#c8312b" stroke-width="4" fill="none" opacity="${f1(seg(t, more + 0.3, more + 0.7) * 0.85)}"/>`;
         return s;
       };
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'task_force', setOpts: { rain: false }, grade: 'cold', cam: { from: { x: 0, y: -40, z: 1.0 }, to: { x: 20, y: -60, z: 1.07 }, handheld: 2 },
         figures: [{ id: 'detective', x: 840, y: 1900, scale: 1.02, dir: -1, turn: 0.4, pose: 'arms_crossed', silhouette: 'cool', depth: 1.1,
           keys: [{ at: two - 0.2, pose: 'point_up', dur: 0.5 }, { at: more + 0.6, pose: 'stand', dur: 0.5 }] }],
         props: [{ depth: 0.46, svg: board }],
         tag: TAG1
-      });
+      }));
     },
 
     // 11 - none has been tried: an empty courtroom (generic), presumption of innocence
     lv4_untried(ctx) {
       const t = ctx.t, l0 = LS(ctx, 0, 0.25), tried = WT(ctx, 0, 4, 0.9), pres = WT(ctx, 0, 7, 1.6);
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'courtroom', setOpts: { modern: true, dock: false }, grade: 'cold', cam: { from: { x: 0, y: -40, z: 1.02 }, to: { x: -20, y: -20, z: 1.1 } },
         figures: [{ id: 'press_operator', x: 1120, y: 1500, scale: 0.52, dir: -1, turn: 0.6, pose: 'stand', silhouette: 'cool', walk: { from: 1120, to: 640, at: 0.05, dur: tried, cadence: 6 },
           keys: [{ at: tried + 0.1, turn: 0.15, pose: 'hands_together', dur: 0.5 }, { at: pres, pose: 'bowed', dur: 0.6 }] }],
@@ -457,13 +457,13 @@
           { text: 'CHARGED, NOT CONVICTED', fs: 34, colour: '#6b665c', at: tried + 0.1 },
           { text: 'ALL PRESUMED INNOCENT', fs: 42, colour: '#2f4f6b', at: pres - 0.1 }] }],
         tag: TAG1
-      });
+      }));
     },
 
     // 8 - the security audit (attributed and dated): the password, as reported
     lv4_password(ctx) {
       const t = ctx.t, emb = WT(ctx, 0, 3, 0.5), l2 = LS(ctx, 1, 1.5), aud = WT(ctx, 1, 2, 1.8), pw = WT(ctx, 1, 8, 3.6), lv = WT(ctx, 1, 10, 4.9), l3 = LS(ctx, 2, 6.0);
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'task_force', setOpts: { rain: false }, grade: 'cold', cam: { keys: [{ at: 0, x: 20, y: -20, z: 1.1 }, { at: lv - 0.1, x: 30, y: -40, z: 1.2, dur: 0.35 }], handheld: 2 },
         figures: [{ id: 'analyst', x: 880, y: 1990, scale: 1.25, dir: -1, turn: 0.45, pose: 'read', silhouette: 'cool', depth: 1.1,
           keys: [{ at: emb, headTurn: 0.4, dur: 0.4 }, { at: aud, headTurn: 0, dur: 0.4 }, { at: lv, pose: 'hand_to_face', dur: 0.3 }, { at: l3 + 0.2, pose: 'arms_crossed', dur: 0.5 }] }],
@@ -475,13 +475,13 @@
           { text: 'IN USE IN 2025? NOT CONFIRMED', fs: 28, colour: '#2f4f6b', at: l3 }] }],
         shake: t > lv && t < lv + 0.3 ? 0.4 : 0,
         tag: TAG1
-      });
+      }));
     },
 
     // 9 - FUN FACT: 1911, an empty space on a gallery wall (generic room, anonymous visitors in period hats)
     lv4_ff_mona(ctx) {
       const t = ctx.t, fun = WT(ctx, 0, 0, 0.25), mona = WT(ctx, 0, 3, 0.9), stolen = WT(ctx, 0, 6, 1.5), yr = WT(ctx, 0, 12, 3.2);
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'lv4_salon', grade: 'sepia', cam: { from: { x: 0, y: 40, z: 1.04 }, to: { x: 0, y: 20, z: 1.1 }, handheld: 2 },
         figures: [
           { id: 'lv4_visitor', x: 250, y: 1800, scale: 0.74, dir: 1, turn: 0.5, pose: 'stand', silhouette: 'warm', hat: { style: 'cloche', color: '#5a3a4a', band: '#2a1a22', flower: '#c8a0a0' },
@@ -491,25 +491,25 @@
         ],
         overlays: [{ type: 'funfact', at: fun - 0.05, y: 420, rows: [{ text: 'The Mona Lisa was stolen', fs: 48 }, { text: 'from the Louvre in 1911.', fs: 48 }, { text: 'It was missing for over 2 years.', fs: 36, colour: '#ffd23f' }] }],
         tag: 'ILLUSTRATION · 1911 · ANONYMOUS FIGURES'
-      });
+      }));
     },
 
     // 12 - the director resigns (an anonymous silhouette leaves a generic office)
     lv4_resign(ctx) {
       const t = ctx.t, l0 = LS(ctx, 0, 0.25), dirW = WT(ctx, 0, 3, 1.0), res = WT(ctx, 0, 7, 2.2);
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'office_day', grade: 'cold', cam: { from: { x: 0, y: 0, z: 1.06 }, to: { x: -40, y: 0, z: 1.12 } },
-        figures: [{ id: 'examiner', x: 700, y: 1880, scale: 1.0, dir: -1, turn: 0.45, pose: 'read', silhouette: 'cool', propOverride: 'folder',
+        figures: [{ id: 'examiner', x: 700, y: 1700, scale: 1.05, dir: -1, turn: 0.45, pose: 'read', silhouette: 'cool', propOverride: 'folder',
           keys: [{ at: dirW, pose: 'hands_together', dur: 0.5 }, { at: res - 0.4, turn: 0.75, dur: 0.4 }], walk: { from: 700, to: -320, at: res - 0.1, dur: 2.2, cadence: 6 } }],
         overlays: [{ type: 'label', at: l0, x: 60, y: 400, text: '24 FEBRUARY 2026', fs: 44, sub: 'Louvre director Laurence des Cars resigns' }],
         tag: TAG1
-      });
+      }));
     },
 
     // 13 - the gallery reopens, with no jewels on display
     lv4_reopen(ctx) {
       const t = ctx.t, l0 = LS(ctx, 0, 0.25), reo = WT(ctx, 0, 4, 1.2), no = WT(ctx, 0, 6, 2.0);
-      return shot(ctx, {
+      return E.cine.shot(ctx, scrim({
         set: 'lv4_gallery', setOpts: { cases: false }, grade: 'warm', cam: { from: { x: 0, y: -40, z: 1.0 }, to: { x: 0, y: -80, z: 1.06 } },
         figures: [
           { id: 'lv4_visitor', x: -120, y: 1560, scale: 0.62, dir: 1, turn: 0.5, pose: 'stand', silhouette: 'warm', walk: { from: -120, to: 360, at: 0.05, dur: reo, cadence: 6 }, keys: [{ at: reo + 0.1, pose: 'point_up', dur: 0.5 }] },
@@ -517,44 +517,44 @@
         ],
         overlays: [{ type: 'label', at: l0, x: 60, y: 400, text: '22 JULY 2026 · REOPENED', fs: 42, sub: 'No jewels on display' }],
         tag: TAGS
-      });
+      }));
     },
 
     // 14 - one year on: seven pieces still missing (cliffhanger)
     lv4_missing(ctx) {
-      const t = ctx.t, l0 = LS(ctx, 0, 0.25), sev = WT(ctx, 0, 4, 1.2), mis = WT(ctx, 0, 9, 2.5), l2 = LS(ctx, 1, 3.5), wh = WT(ctx, 1, 1, 3.7);
+      const t = ctx.t, l0 = LS(ctx, 0, 0.25), sev = WT(ctx, 0, 5, 1.2), mis = WT(ctx, 0, 10, 2.5), l2 = LS(ctx, 1, 3.5), wh = WT(ctx, 1, 1, 3.7);
       const slots = () => {
         let s = `<rect x="70" y="380" width="940" height="380" rx="10" fill="#000" opacity="0.55"/><text x="540" y="430" text-anchor="middle" ${TYPE} font-weight="700" font-size="30" fill="#c9c2b4">THE 8 STOLEN PIECES · ${esc('OCT 2026')}</text>`;
         for (let i = 0; i < 8; i++) {
           const x = 100 + (i % 4) * 225, y = 456 + Math.floor(i / 4) * 150, k = seg(t, (i ? sev : l0) + i * 0.08, (i ? sev : l0) + 0.3 + i * 0.08);
           if (k <= 0) continue;
           s += `<g opacity="${f1(k)}"><rect x="${x}" y="${y}" width="200" height="132" rx="8" fill="${i ? '#1a1416' : '#16201a'}" stroke="${i ? '#8e1f18' : '#6a9a6a'}" stroke-width="4"/>`;
-          if (!i) s += crown(x + 100, y + 92, 0.36, t, { damaged: true, shadow: false }) + `<text x="${x + 100}" y="${y + 122}" text-anchor="middle" ${TYPE} font-weight="700" font-size="19" fill="#bfe0bf">RECOVERED, DAMAGED</text>`;
+          if (!i) s += crown(x + 100, y + 92, 0.36, t, { damaged: true, shadow: false }) + `<text x="${x + 100}" y="${y + 122}" text-anchor="middle" ${TYPE} font-weight="700" font-size="20" fill="#bfe0bf">RECOVERED</text>`;
           else { const q = 1 + 0.12 * Math.max(0, Math.sin((t - wh) * 6)) * seg(t, wh - 0.1, wh + 0.2); s += `<text x="${x + 100}" y="${y + 84}" text-anchor="middle" ${NUN} font-size="${f1(64 * q)}" fill="#f4efe4">?</text><text x="${x + 100}" y="${y + 120}" text-anchor="middle" ${TYPE} font-weight="700" font-size="22" fill="#ff6b5a" opacity="${f1(seg(t, mis - 0.1, mis + 0.3))}">MISSING</text>`; }
           s += '</g>';
         }
         return s;
       };
-      return shot(ctx, {
-        set: 'lv4_facade', setOpts: { tod: 'night', truck: false }, grade: 'night', cam: { keys: [{ at: 0, x: 0, y: 60, z: 1.0 }, { at: l2 - 0.8, x: 40, y: -60, z: 1.2, dur: 2.0 }] },
-        figures: [{ id: 'searcher_b', x: -60, y: 1560, scale: 0.34, dir: 1, turn: 0.5, pose: 'stand', silhouette: 'cool', walk: { from: -60, to: 560, at: 0.1, dur: l2 - 0.3, cadence: 6 },
+      return E.cine.shot(ctx, scrim({
+        set: 'lv4_facade', setOpts: { tod: 'night', truck: false }, grade: 'night', cam: { keys: [{ at: 0, x: 0, y: 60, z: 1.0 }, { at: l2 - 0.8, x: 30, y: -20, z: 1.12, dur: 2.0 }] },
+        figures: [{ id: 'searcher_b', x: 1180, y: 1530, scale: 0.32, dir: -1, turn: 0.5, pose: 'stand', silhouette: 'cool', walk: { from: 1180, to: 860, at: 0.1, dur: l2 - 0.3, cadence: 6 },
           keys: [{ at: l2 - 0.1, turn: 0.2, dur: 0.4 }, { at: wh, pose: 'point_up', dur: 0.5 }] }],
         overlays: [{ type: 'svg', at: l0, svg: slots }],
         tag: TAG1
-      });
+      }));
     },
 
     // 15 - exit: the next case (an open loop)
     lv4_next(ctx) {
       const t = ctx.t, l0 = LS(ctx, 0, 0.25), plane = WT(ctx, 0, 5, 1.6), jmp = WT(ctx, 0, 6, 2.4);
-      return shot(ctx, {
-        set: 'cabin_woods', grade: 'night', cam: { from: { x: 0, y: -20, z: 1.0 }, to: { x: 0, y: -50, z: 1.06 } },
+      return E.cine.shot(ctx, scrim({
+        set: 'cabin_woods', setOpts: { cabinX: 2400 }, grade: 'night', cam: { from: { x: 0, y: -20, z: 1.0 }, to: { x: 0, y: -50, z: 1.06 } },
         figures: [{ id: 'searcher_b', x: 780, y: 1810, scale: 0.75, dir: -1, turn: 0.4, pose: 'torch', propOpts: { aim: 150, beamLen: 700 }, silhouette: 'cool',
           keys: [{ at: plane - 0.2, headTurn: 0.3, dur: 0.5 }, { at: jmp, pose: 'point_up', dur: 0.5 }] }],
-        props: [{ depth: 0.2, svg: () => jet(1250 - (t / ctx.T) * 1500, 930 - 40 * (t / ctx.T), 1.3, t) }],
-        overlays: [{ type: 'nextcase', at: l0 + 0.1, y: 420, rows: [{ text: 'He jumped from a plane', fs: 58 }, { text: 'with $200,000…', fs: 58, colour: '#ffd23f' }, { text: 'and was never found.', fs: 48 }], sub: 'FOLLOW FOR THE NEXT CASE' }],
+        props: [{ depth: 0.32, svg: () => jet(1250 - (t / ctx.T) * 1500, 900 - 40 * (t / ctx.T), 1.4, t) }],
+        overlays: [{ type: 'nextcase', at: l0 + 0.1, y: 420, rows: [{ text: 'He jumped from a plane', fs: 58 }, { text: 'with $200,000…', fs: 58, colour: '#ffd23f' }, { text: 'and was never found.', fs: 48 }, { text: ' ', fs: 18 }], sub: 'FOLLOW FOR THE NEXT CASE' }],
         tag: TAG1
-      });
+      }));
     }
   });
 })();

@@ -62,7 +62,7 @@ def build(h):
           "aftermath", ["L_reopen"], sfx=[fx(0.2, "step", 0.35), fx(0.75, "step", 0.3), fw(0, 6, "swell", 0.35, -0.2)],
           emph=["no", "jewels"], tr="fade"),
         # D - cliffhanger: where things stand, and the open question
-        S("s14_missing", "lv4_missing", [N("One year on, the seven other pieces are still missing."),
+        S("s14_missing", "lv4_missing", [N("Almost a year on, the seven other pieces are still missing."),
                                          N("So where are they?", pause_before=0.25)],
           "tension-peak", ["L_missing", "L_untried"], sfx=[fx(0.1, "wind", 0.45), fw(1, 3, "sub", 0.6)],
           emph=["seven", "missing.", "where"], tr="fade"),

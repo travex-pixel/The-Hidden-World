@@ -5,7 +5,7 @@ This case is ongoing. Several people have been charged (*mis en examen*) in Fran
 
 ## Method and limits
 - **Research date:** 2026-10-11, the production day. Starting point: `series/true-crime/research_next_slate/international_and_landmark_status.md`, section 1 (dossier dated 2026-10-11).
-- **Searches:** 14 web searches this session, with a cap of 15. Two used extended mode, both for the Aug–Oct 2026 status check. One further call was refused by the tool because of a domain filter.
+- **Searches:** 13 web searches this session, plus one call the tool refused because of a domain filter (cap: 15). Two used extended mode, both for the Aug–Oct 2026 status check.
 - **Search extracts only.** WebFetch and curl are blocked in this environment, so every fact rests on search-result extracts. No full article, primary court document, prosecutor's release, audit report or museum page was read. Each source's `accessed` field in `episode.json` says so.
 - **Dates.** A date is given only where the URL or the extract states it. Otherwise the source says "date not shown in extract", or gives the month implied by the story.
 - **Absence of evidence.** "No report found" means these extracts held nothing newer. It does not mean nothing happened.
@@ -48,7 +48,7 @@ Each narrated claim maps to a claim id in `episode.json`, with at least two inde
   - The script avoids a number: "two men were charged. More followed."
 - **Trial.** **None has been tried.** No trial date or referral to trial was found in any extract up to 2026-10-11.
 - **The jewels.** **Seven items are still missing**; only Eugénie's crown has been recovered. Its restoration was announced in Feb 2026, and no report of completion was found.
-- **Aug–Oct 2026 re-check (this session).** Four searches were run, two of them in extended mode, one of which was in French. They found **no new arrest, charge, trial date, prosecutor statement or recovery after July 2026**, and no first-anniversary coverage yet (the anniversary falls on 19 Oct 2026).
+- **Aug–Oct 2026 re-check (this session).** Five searches were run, two of them in extended mode, one of which was in French. They found **no new arrest, charge, trial date, prosecutor statement or recovery after July 2026**, and no first-anniversary coverage yet (the anniversary falls on 19 Oct 2026).
   - One search summary mentioned an AP item: "loot ... estimated to be worth 12 million euros ($13.9 million) has been recovered, Nuñez said on X", with no date. A follow-up search found nothing linking it to the Louvre. The figure does not match the €88m Louvre haul, and every dated Louvre report through July 2026 says the jewels are missing. It is treated as **a different case and not used**.
   - **Re-check on 18–19 Oct before any repost.**
 - **Leadership.**
