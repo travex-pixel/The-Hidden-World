@@ -1,0 +1,1229 @@
+{
+ "id": "tcv12-son-of-sam",
+ "number": 12,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Parking Ticket Caught the Son of Sam",
+ "central_question": "How did a parking ticket end the hunt for New York's most feared killer?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {}
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "12",
+  "label": "NEW YORK CITY · 1976-1977"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 80,
+  "hits": [
+   {
+    "scene": "s06_tickets",
+    "word": [
+     1,
+     4
+    ],
+    "at": -0.05,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s11_law",
+   "word": [
+    1,
+    7
+   ],
+   "at": -0.06
+  }
+ },
+ "figures": [
+  "ss12_officer",
+  "ss12_witness",
+  "ss12_berk",
+  "ss12_resident",
+  "detective",
+  "agent_a",
+  "analyst",
+  "press_operator",
+  "judge",
+  "official"
+ ],
+ "content_notes": "Closed case: Berkowitz pleaded guilty on 8 May 1978 and was sentenced on 12 June 1978. He is alive, so he appears only as an anonymous rim-lit silhouette with no face or likeness (tag 'ILLUSTRATION · NOT A LIKENESS'). The shootings, the victims, any weapon and any crime scene are never depicted; the street is a generic Brooklyn street, not the scene. Victims and survivors are not named; the witness is a generic, unnamed silhouette; police are generic 1970s figures with no badges, patches or logos. His letters are mentioned but never quoted or shown. The 'demon dog' claim is presented only as a story he later admitted was a hoax. Ticket amount, street and car colour conflict between sources and are left out. No real photograph, newspaper, ticket, police or court material is imitated. No dialogue is invented. Legal status verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ss12_hook",
+   "min_duration": 3.75,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      9
+     ],
+     "name": "paper",
+     "gain": 0.6
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      10
+     ],
+     "name": "thud",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_ticket",
+    "S_span"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "New York's most feared killer was caught by a parking ticket."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "feared",
+    "parking",
+    "ticket."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_fear",
+   "scene": "ss12_fear",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      5
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thump",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_span"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "For a year, a gunman terrorised New York City."
+    },
+    {
+     "who": "narrator",
+     "text": "Six people were killed, seven wounded.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "year,",
+    "gunman",
+    "six",
+    "seven"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_hair",
+   "scene": "ss12_hair",
+   "min_duration": 3.0,
+   "pad_after": 0.2,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sting",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "S_hair"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Some women even dyed their dark hair blonde."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dyed",
+    "blonde."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s04_letters",
+   "scene": "ss12_letters",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "S_letters"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he wrote letters to police and a newspaper columnist."
+    },
+    {
+     "who": "narrator",
+     "text": "He called himself the Son of Sam.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "letters",
+    "son",
+    "sam."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_witness",
+   "scene": "ss12_witness",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      8
+     ],
+     "name": "pen",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      14
+     ],
+     "name": "click",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "S_last",
+    "S_witness"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "July 31st, 1977: his last attack, in Brooklyn."
+    },
+    {
+     "who": "narrator",
+     "text": "Nearby, a woman walking her dog saw police ticketing a car by a fire hydrant.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "last",
+    "ticketing",
+    "hydrant."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_tickets",
+   "scene": "ss12_tickets",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "S_ticket"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Detectives checked the tickets written there that night."
+    },
+    {
+     "who": "narrator",
+     "text": "One led to David Berkowitz, a 24-year-old postal worker from Yonkers.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tickets",
+    "berkowitz,",
+    "yonkers."
+   ],
+   "section": "B",
+   "music_drop": true
+  },
+  {
+   "id": "s07_stakeout",
+   "scene": "ss12_stakeout",
+   "min_duration": 4.2,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      10
+     ],
+     "name": "tick",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "S_arrest"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On August 10th, detectives found his car in Yonkers, and waited."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "found",
+    "car",
+    "waited."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_arrest",
+   "scene": "ss12_arrest",
+   "min_duration": 2.0,
+   "pad_after": 0.4,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "door",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_arrest",
+    "S_span"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When he walked out to it, they arrested him."
+    },
+    {
+     "who": "narrator",
+     "text": "A year of terror was over.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "arrested",
+    "over."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s09_demon",
+   "scene": "ss12_demon",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      2
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_demon"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He blamed a demon speaking through a neighbour's dog."
+    },
+    {
+     "who": "narrator",
+     "text": "He later admitted it was a hoax.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "demon",
+    "hoax."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s10_plea",
+   "scene": "ss12_plea",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": -0.08,
+     "word": [
+      1,
+      5
+     ],
+     "name": "gavel",
+     "gain": 1.0
+    }
+   ],
+   "claims": [
+    "S_plea"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 1978, he pleaded guilty to all six murders."
+    },
+    {
+     "who": "narrator",
+     "text": "He got 25 years to life for each.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty",
+    "six",
+    "life"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s11_law",
+   "scene": "ss12_law",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "stamp",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "S_law"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "New York even passed a 'Son of Sam law' to stop criminals profiting from their stories."
+    },
+    {
+     "who": "narrator",
+     "text": "In 1991, the Supreme Court struck it down.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "son",
+    "sam",
+    "law'",
+    "struck",
+    "down."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s12_today",
+   "scene": "ss12_today",
+   "min_duration": 4.6,
+   "pad_after": 0.4,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "chime",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "S_today",
+    "S_span"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He's still in prison. In 2026, he skipped his parole hearing."
+    },
+    {
+     "who": "narrator",
+     "text": "Six lives were taken. Remember them, not him.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "prison.",
+    "skipped",
+    "remember",
+    "them,"
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s13_next",
+   "scene": "ss12_next",
+   "min_duration": 3.0,
+   "pad_after": 1.5,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "rumble",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      11
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_next"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next: a gang of pensioners drilled into a London vault, then bragged about it in the pub."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pensioners",
+    "vault,",
+    "bragged"
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "S_ticket",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police identified David Berkowitz through a parking ticket. After the last shooting (Brooklyn, 31 July 1977) detectives checked the parking tickets issued in the area that night; one, for a car parked too close to a fire hydrant, was for a 1970 Ford Galaxie registered to David Berkowitz of Yonkers, a 24-year-old postal employee. (The ticket amount, the street and the car's colour differ between sources and are not used.)",
+   "sources": [
+    "history_arrest",
+    "bio_timeline",
+    "cbs_speaks",
+    "aetv_berk",
+    "wnyc_40"
+   ]
+  },
+  {
+   "id": "S_span",
+   "type": "established",
+   "nature": "fact",
+   "text": "Between July 1976 and July 1977 a gunman shot people in the Bronx, Queens and Brooklyn: six people were killed and seven wounded. He was arrested on 10 August 1977.",
+   "sources": [
+    "history_arrest",
+    "aetv_alone",
+    "sage_enc",
+    "cbs_story"
+   ]
+  },
+  {
+   "id": "S_hair",
+   "type": "established",
+   "nature": "fact",
+   "text": "Reports said many of those attacked had long, dark hair; that summer some New York women cut their hair short or dyed it blonde.",
+   "sources": [
+    "cbsny_back",
+    "history_arrest",
+    "jezebel_1977"
+   ]
+  },
+  {
+   "id": "S_letters",
+   "type": "established",
+   "nature": "fact",
+   "text": "In April 1977 a handwritten letter addressed to NYPD Captain Joseph Borrelli was left near a Bronx shooting, the first in which the killer called himself the 'Son of Sam'. On 30 May 1977 Daily News columnist Jimmy Breslin received a letter from him, which the paper published. (Letters not quoted in the episode.)",
+   "sources": [
+    "liherald",
+    "oxygen_berk",
+    "time_letters"
+   ]
+  },
+  {
+   "id": "S_last",
+   "type": "established",
+   "nature": "fact",
+   "text": "The shooting on 31 July 1977 in Brooklyn was the last attack (and the first in Brooklyn).",
+   "sources": [
+    "cbs_story",
+    "history_arrest",
+    "liherald"
+   ]
+  },
+  {
+   "id": "S_witness",
+   "type": "established",
+   "nature": "fact",
+   "text": "A local woman walking her dog near the scene saw police ticketing a car parked by a fire hydrant, and reported it to police a few days later. Her name is spelled differently in different sources; she is not named in the episode.",
+   "sources": [
+    "aetv_berk",
+    "bio_timeline",
+    "cbs_speaks",
+    "time_crimes"
+   ]
+  },
+  {
+   "id": "S_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 10 August 1977 police found his car parked outside his apartment building in Yonkers, waited, and arrested him as he came out to it (reports say as he left his home / got into the car).",
+   "sources": [
+    "history_arrest",
+    "bio_timeline",
+    "wnyc_40",
+    "cbsny_40"
+   ]
+  },
+  {
+   "id": "S_demon",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: after his arrest Berkowitz claimed that a demon, speaking through his neighbour's dog, had ordered the killings. He later retracted it: a 1979 letter to his psychiatrist called it a hoax, and in 1980 interview tapes (used in the 2025 Netflix series) he said he made up the dog story.",
+   "sources": [
+    "bio_facts",
+    "netflix_tudum",
+    "fox_tapes",
+    "time_tapes",
+    "oxygen_berk"
+   ]
+  },
+  {
+   "id": "S_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 8 May 1978 he withdrew an insanity defence and pleaded guilty to the six murders; on 12 June 1978 he was sentenced to 25 years to life for each murder, to run consecutively (the maximum then allowed).",
+   "sources": [
+    "history_arrest",
+    "bio_facts",
+    "enc_trial"
+   ]
+  },
+  {
+   "id": "S_law",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: in 1977 New York passed the 'Son of Sam law', which sent money a criminal earned from telling the story of the crime to the victims. In 1991 (Simon & Schuster v. Members of the New York State Crime Victims Board) the US Supreme Court held that version unconstitutional under the First Amendment; New York later enacted a revised law.",
+   "sources": [
+    "mtsu_sos",
+    "csm_1991",
+    "rcfp_2002"
+   ]
+  },
+  {
+   "id": "S_today",
+   "type": "established",
+   "nature": "fact",
+   "text": "Berkowitz remains in a New York state prison. He was denied parole at every earlier hearing (the 12th denial was in May 2024); in May 2026 he declined to attend his parole hearing, saying he was not seeking release.",
+   "sources": [
+    "aetv_skip",
+    "hoodline_skip",
+    "fox_2026",
+    "christianpost_2026",
+    "corrections1_2024",
+    "komo_2024"
+   ]
+  },
+  {
+   "id": "S_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "Next case tease: over the Easter weekend of April 2015 a gang that included men in their 60s and 70s drilled through the wall of a safe-deposit vault in Hatton Garden, London; police recorded them boasting in a pub in Islington, and they were convicted in 2016.",
+   "sources": [
+    "npr_hatton",
+    "newdaily_hatton",
+    "malaymail_hatton",
+    "naharnet_hatton"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "history_arrest",
+   "publisher": "HISTORY.com (This Day in History)",
+   "title": "Son of Sam serial killer is arrested",
+   "url": "https://www.history.com/this-day-in-history/august-10/son-of-sam-arrested",
+   "date": "n.d. (event 10 Aug 1977)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_timeline",
+   "publisher": "Biography.com",
+   "title": "The Son of Sam struck fear into New York City. A parking ticket led to his capture",
+   "url": "https://www.biography.com/crime/a65529737/son-of-sam-murder-case-timeline",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_facts",
+   "publisher": "Biography.com",
+   "title": "Son of Sam: David Berkowitz biography facts",
+   "url": "https://www.biography.com/crime/son-of-sam-david-berkowitz-biography-facts",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aetv_berk",
+   "publisher": "A&E (aetv.com)",
+   "title": "Son of Sam",
+   "url": "https://www.aetv.com/articles/david-berkowitz",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_speaks",
+   "publisher": "CBS News",
+   "title": "Serial killer \"Son of Sam\": \"They wouldn't understand what it was to walk in darkness\"",
+   "url": "https://www.cbsnews.com/news/son-of-sam-serial-killer-david-berkowitz-speaks-out-40-years-after-new-york-city-murder-spree/",
+   "date": "2017",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_story",
+   "publisher": "CBS News",
+   "title": "The Son of Sam story",
+   "url": "https://www.cbsnews.com/news/the-son-of-sam-story/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbsny_40",
+   "publisher": "CBS New York",
+   "title": "Remembering the 'Son of Sam' case 40 years after serial killer's arrest",
+   "url": "https://www.cbsnews.com/newyork/news/son-of-sam-arrest-40th-anniversary/",
+   "date": "2017-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbsny_back",
+   "publisher": "CBS New York",
+   "title": "Back Stories: 'Son of Sam' sparks 'a very fearful time'",
+   "url": "https://www.cbsnews.com/newyork/news/back-stories-summer-of-sam/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wnyc_40",
+   "publisher": "WNYC (AP)",
+   "title": "'Son of Sam' killer was arrested 40 years ago this week",
+   "url": "https://wnyc.org/story/son-sam-killer-was-arrested-40-years-ago-week/",
+   "date": "2017-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "time_crimes",
+   "publisher": "TIME",
+   "title": "The Son of Sam, 1977 (Crimes of the Century)",
+   "url": "https://content.time.com/time/specials/packages/article/0,28804,1937349_1937350_1937438,00.html",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "time_letters",
+   "publisher": "TIME",
+   "title": "Son of Sam 40th anniversary: the letters that terrorized NYC",
+   "url": "https://time.com/4886540/son-of-sam-letters-anniversary/",
+   "date": "2017-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "liherald",
+   "publisher": "Long Island Herald",
+   "title": "40 years later: 'We got him' (former NYPD detective recalls the year-long hunt)",
+   "url": "https://liherald.com/stories/former-nypd-detective-and-lynbrook-resident-recalls-tense-year-long-hunt-for-son-of,95552",
+   "date": "2017",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "oxygen_berk",
+   "publisher": "Oxygen",
+   "title": "Who is David Berkowitz, the 'Son of Sam'?",
+   "url": "https://www.oxygen.com/martinis-murder/david-berkowitz-terrorized-new-york-city-1977-son-of-sam",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aetv_alone",
+   "publisher": "A&E (aetv.com)",
+   "title": "Did Son of Sam David Berkowitz act alone?",
+   "url": "https://www.aetv.com/articles/did-son-of-sam-david-berkowitz-act-alone",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "sage_enc",
+   "publisher": "SAGE Encyclopedia of Violent Crime",
+   "title": "David Richard Berkowitz (Son of Sam)",
+   "url": "https://sk.sagepub.com/ency/edvol/embed/violentcrime/chpt/david-richard-berkowitz-son-sam",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_victims",
+   "publisher": "CBS News",
+   "title": "Survivors of the \"Son of Sam\" serial killer in their own words",
+   "url": "https://www.cbsnews.com/amp/news/son-of-sam-victims-in-their-own-words/",
+   "date": "2017",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "jezebel_1977",
+   "publisher": "Jezebel",
+   "title": "Eerie 1977 footage shows a reporter polling dark-haired women during the 'Summer of Sam'",
+   "url": "https://jezebel.com/eerie-1977-footage-shows-a-reporter-polling-dark-haired-1797273659",
+   "date": "2017",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "enc_trial",
+   "publisher": "Encyclopedia.com (Great American Trials)",
+   "title": "The \"Son of Sam\" trial: 1978",
+   "url": "https://www.encyclopedia.com/law/law-magazines/son-sam-trial-1978",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "netflix_tudum",
+   "publisher": "Netflix Tudum",
+   "title": "Conversations with a Killer: The Son of Sam Tapes",
+   "url": "https://www.netflix.com/tudum/articles/conversations-with-a-killer-the-son-of-sam-tapes-release-date-news",
+   "date": "2025",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_tapes",
+   "publisher": "Fox News",
+   "title": "Unearthed Son of Sam prison tapes reveal chilling details of serial killer David Berkowitz",
+   "url": "https://www.foxnews.com/us/unearthed-son-sam-prison-tapes-reveal-chilling-details-serial-killer-david-berkowitz",
+   "date": "2025",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "time_tapes",
+   "publisher": "TIME",
+   "title": "The true story behind Conversations with a Killer: The Son of Sam Tapes",
+   "url": "https://time.com/7306481/son-of-sam-tapes-netflix/",
+   "date": "2025",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mtsu_sos",
+   "publisher": "Free Speech Center, Middle Tennessee State University",
+   "title": "Son of Sam laws",
+   "url": "https://firstamendment.mtsu.edu/article/son-of-sam-laws/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "csm_1991",
+   "publisher": "The Christian Science Monitor",
+   "title": "'Son of Sam' ruling",
+   "url": "https://www.csmonitor.com/1991/1216/16204.html",
+   "date": "1991-12-16",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "rcfp_2002",
+   "publisher": "Reporters Committee for Freedom of the Press",
+   "title": "California, Massachusetts courts nix Son of Sam laws",
+   "url": "https://www.rcfp.org/journals/the-news-media-and-the-law-spring-2002/california-massachusetts-co/",
+   "date": "2002 (spring)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aetv_skip",
+   "publisher": "A&E (aetv.com)",
+   "title": "Why 'Son of Sam' David Berkowitz skipped last parole hearing",
+   "url": "https://www.aetv.com/articles/son-of-sam-david-berkowitz-skips-parole",
+   "date": "2026-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "hoodline_skip",
+   "publisher": "Hoodline",
+   "title": "Son of Sam skips parole hearing, says heaven is next stop",
+   "url": "https://hoodline.com/2026/05/son-of-sam-skips-parole-hearing-says-heaven-is-next-stop/",
+   "date": "2026-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_2026",
+   "publisher": "Fox News",
+   "title": "Son of Sam Berkowitz doesn't trust media 50 years after terrorizing city",
+   "url": "https://www.foxnews.com/us/son-of-sam-berkowitz-doesnt-trust-media-50-years-after-terrorizing-city-letters-newspaper.print",
+   "date": "2026",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "christianpost_2026",
+   "publisher": "The Christian Post",
+   "title": "Son of Sam serial killer David Berkowitz declines parole hearing",
+   "url": "https://www.christianpost.com/news/son-of-sam-serial-killer-david-berkowitz-declines-parole-hearing-saying-jesus-has-already-freed-him.html",
+   "date": "2026-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "corrections1_2024",
+   "publisher": "Corrections1",
+   "title": "Son of Sam serial killer denied parole in 12th attempt",
+   "url": "https://www.corrections1.com/serial-killer/son-of-sam-serial-killer-denied-parole-in-12th-attempt",
+   "date": "2024-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "komo_2024",
+   "publisher": "KOMO News (Sinclair)",
+   "title": "Serial killer 'Son of Sam' David Berkowitz denied parole for 12th time",
+   "url": "https://komonews.com/news/nation-world/serial-killer-parole-denied-son-of-sam-david-berkowitz-killer-12th-attempt-shawangunk-correctional-facility-new-york-bronx-killing-spree-true-crime",
+   "date": "2024-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_hatton",
+   "publisher": "NPR",
+   "title": "7 British men guilty of massive Easter gem heist",
+   "url": "https://www.npr.org/sections/thetwo-way/2016/01/14/463081162/seven-british-men-guilty-of-massive-easter-gem-heist",
+   "date": "2016-01-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "newdaily_hatton",
+   "publisher": "The New Daily",
+   "title": "Pensioners behind Britain's biggest heist",
+   "url": "https://www.thenewdaily.com.au/news/2016/03/13/pensioners-behind-britains-biggest-heist/",
+   "date": "2016-03-13",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "malaymail_hatton",
+   "publisher": "Malay Mail (AFP)",
+   "title": "'Grandpa gang' guilty of biggest burglary in English history",
+   "url": "https://www.malaymail.com/news/world/2016/01/15/grandpa-gang-guilty-of-biggest-burglary-in-english-history/1041113",
+   "date": "2016-01-15",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "naharnet_hatton",
+   "publisher": "Naharnet (AFP)",
+   "title": "5 jailed over 'biggest burglary in English history'",
+   "url": "https://naharnet.com/stories/en/204159-5-jailed-over-biggest-burglary-in-english-history",
+   "date": "2016-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "legal_status_verified": "2026-10-11"
+}

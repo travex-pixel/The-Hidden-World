@@ -1,0 +1,1348 @@
+{
+ "id": "tcv10-golden-state-killer",
+ "number": 10,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Golden State Killer Was Caught by His Cousins' DNA",
+ "central_question": "How did a genealogy website help identify the Golden State Killer decades after his crimes?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "DeAngelo": "Dee Angelo",
+   "GEDmatch": "G E D match"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "10",
+  "label": "GOLDEN STATE KILLER · 1975-2020"
+ },
+ "music": {
+  "bpm": 76,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 76,
+  "hits": [
+   {
+    "scene": "s07_name",
+    "word": [
+     0,
+     9
+    ],
+    "at": -0.05,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s13_sentence",
+   "word": [
+    0,
+    2
+   ],
+   "at": -0.08
+  }
+ },
+ "figures": [
+  "gs10_man",
+  "detective",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "examiner",
+  "scientist",
+  "judge",
+  "official"
+ ],
+ "content_notes": "Closed case: DeAngelo pleaded guilty on 29 Jun 2020 and was sentenced on 21 Aug 2020. The crimes are referred to only in summary ('dozens of crimes, including 13 murders'); they are never described or depicted, and no victim, survivor or family member is named, shown or implied. DeAngelo appears only as an anonymous rim-lit silhouette with no face or likeness. Investigators and genealogists are generic figures and are not named. The Oregon man wrongly pointed to in 2017 is not named or shown. Streets, the store car park, the house and the hearing room are generic illustrations, not the real places; no store brand, police badge, court document, warrant or website logo is imitated. The privacy debate is stated neutrally. No dialogue is invented. Legal status verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "gs10_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.15,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "chime",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GS_relatives",
+    "GS_identified"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The Golden State Killer never put his DNA on a genealogy site."
+    },
+    {
+     "who": "narrator",
+     "text": "His distant cousins did. And that caught him.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "never",
+    "cousins",
+    "caught"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_crimes",
+   "scene": "gs10_crimes",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "paper",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      11
+     ],
+     "name": "thump",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GS_crimes"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "From 1975 to 1986, he committed dozens of crimes, including 13 murders."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dozens",
+    "13",
+    "murders."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_nomatch",
+   "scene": "gs10_nomatch",
+   "min_duration": 2.0,
+   "pad_after": 0.4,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "buzz",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GS_nomatch"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police had his DNA. But for years, it matched no one."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no",
+    "one."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_upload",
+   "scene": "gs10_upload",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "ping",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GS_upload"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So they uploaded crime-scene DNA to a free genealogy site, GEDmatch."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "uploaded",
+    "gedmatch."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_tree",
+   "scene": "gs10_tree",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "ping",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "pen",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      8
+     ],
+     "name": "paper",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GS_cousins",
+    "GS_trees"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It found distant cousins."
+    },
+    {
+     "who": "narrator",
+     "text": "So they built family trees, and narrowed them by age and location.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "cousins.",
+    "trees,",
+    "narrowed"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_wrong",
+   "scene": "gs10_wrong",
+   "min_duration": 2.0,
+   "pad_after": 0.6,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "GS_oregon"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A year earlier, a DNA lead had pointed to the wrong man, in Oregon."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "wrong",
+    "man,"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_name",
+   "scene": "gs10_name",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "hit",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GS_trees",
+    "GS_name"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This time, the trees led to one man: Joseph James DeAngelo."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "one",
+    "man:",
+    "deangelo."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_cop",
+   "scene": "gs10_cop",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GS_cop",
+    "GS_fired"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The twist? He was a former police officer,"
+    },
+    {
+     "who": "narrator",
+     "text": "fired in 1979, accused of shoplifting a hammer and dog repellent.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "officer,",
+    "hammer"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_door",
+   "scene": "gs10_door",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.45,
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GS_door"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They followed him to a store, and swabbed his car's door handle."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "followed",
+    "door",
+    "handle."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s10_tissue",
+   "scene": "gs10_tissue",
+   "min_duration": 4.0,
+   "pad_after": 0.6,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      7
+     ],
+     "name": "swell",
+     "gain": 0.6
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "hit",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GS_tissue"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then a tissue from his trash gave the conclusive DNA match.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tissue",
+    "conclusive",
+    "match."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s11_arrest",
+   "scene": "gs10_arrest",
+   "min_duration": 2.0,
+   "pad_after": 0.6,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.35,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.5
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GS_arrest"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In April 2018, police arrested him outside his home."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "arrested",
+    "home."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s12_plea",
+   "scene": "gs10_plea",
+   "min_duration": 2.0,
+   "pad_after": 0.7,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.6
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "GS_plea",
+    "GS_ballroom"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2020, he pleaded guilty to 13 murders,"
+    },
+    {
+     "who": "narrator",
+     "text": "at a hearing held in a university ballroom.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty",
+    "13",
+    "ballroom."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s13_sentence",
+   "scene": "gs10_sentence",
+   "min_duration": 2.0,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 1.0
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GS_sentence"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He got life without parole, eleven times over."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "life",
+    "eleven"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s14_legacy",
+   "scene": "gs10_legacy",
+   "min_duration": 2.0,
+   "pad_after": 0.5,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "chime",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GS_legacy",
+    "GS_privacy"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Since then, the method has helped crack hundreds of cold cases."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "hundreds",
+    "cold"
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s15_next",
+   "scene": "gs10_next",
+   "min_duration": 3.0,
+   "pad_after": 1.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GS_next"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next: the Great Train Robbery, and the Monopoly board that helped catch the gang."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "great",
+    "train",
+    "monopoly"
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "GS_relatives",
+   "type": "established",
+   "nature": "fact",
+   "text": "DeAngelo had never submitted his own DNA to a genealogy database (nor to a law-enforcement one); the genealogy lead came from DNA profiles that distant relatives had uploaded and shared on GEDmatch.",
+   "sources": [
+    "thetech_dna",
+    "lamag_dna",
+    "ap_wrongman",
+    "npr_upload"
+   ]
+  },
+  {
+   "id": "GS_identified",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators identified DeAngelo as a suspect through that genealogy lead (family trees built from distant relatives' matches), then confirmed it with his own DNA.",
+   "sources": [
+    "npr_upload",
+    "ucdavis_dna",
+    "abc_tissue",
+    "cnn_free"
+   ]
+  },
+  {
+   "id": "GS_crimes",
+   "type": "established",
+   "nature": "fact",
+   "text": "The crimes he admitted were committed in California between 1975 and 1986: dozens of crimes, including 13 murders (he pleaded guilty to 13 counts of first-degree murder and admitted dozens of uncharged crimes). Summary only; no detail used.",
+   "sources": [
+    "breaking_sentence",
+    "ocda_plea",
+    "cbc_arrest",
+    "abc13_sentence"
+   ]
+  },
+  {
+   "id": "GS_nomatch",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators had the killer's crime-scene DNA, but for years it matched no one in the FBI's national DNA database or California's databank: he had never been arrested for an offence that put his DNA on file.",
+   "sources": [
+    "thetech_dna",
+    "lamag_dna"
+   ]
+  },
+  {
+   "id": "GS_upload",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators used crime-scene DNA to create a profile (reportedly under a pseudonym) on GEDmatch, a free public genealogy website where people upload and share DNA profiles to find relatives. GEDmatch said this was done without its knowledge.",
+   "sources": [
+    "npr_upload",
+    "cnn_free",
+    "ap_gedmatch"
+   ]
+  },
+  {
+   "id": "GS_cousins",
+   "type": "established",
+   "nature": "fact",
+   "text": "GEDmatch returned distant relatives of the killer, reported as roughly third- to fourth-cousin matches.",
+   "sources": [
+    "ucdavis_dna",
+    "vnews_tree",
+    "ap_gedmatch"
+   ]
+  },
+  {
+   "id": "GS_trees",
+   "type": "established",
+   "nature": "fact",
+   "text": "From those matches, investigators built family trees (reported as more than 25) and narrowed them to men of the right age who had lived in the right areas, which led to DeAngelo.",
+   "sources": [
+    "ucdavis_dna",
+    "vnews_tree",
+    "npr_upload"
+   ]
+  },
+  {
+   "id": "GS_oregon",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: in March 2017, an earlier genetic lead (from a different public genealogy database) led investigators to persuade a judge to order a DNA sample from a 73-year-old man in an Oregon nursing home. He was not the killer and was never charged; he is not named.",
+   "sources": [
+    "ap_wrongman",
+    "abc30_wrongman",
+    "nbc_wrongman"
+   ]
+  },
+  {
+   "id": "GS_name",
+   "type": "established",
+   "nature": "fact",
+   "text": "The suspect identified was Joseph James DeAngelo, then 72, of Citrus Heights, a suburb of Sacramento.",
+   "sources": [
+    "ap_cop",
+    "cbssac_who",
+    "ucdavis_dna"
+   ]
+  },
+  {
+   "id": "GS_cop",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: DeAngelo had been a police officer in two small California towns, Exeter and Auburn, between 1973 and 1979, so he was still an officer when the crimes began (1975).",
+   "sources": [
+    "ap_cop",
+    "yahoo_cop",
+    "cbssac_who",
+    "breaking_sentence"
+   ]
+  },
+  {
+   "id": "GS_fired",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was fired from the Auburn police in 1979 after being accused of shoplifting a hammer and a can of dog repellent from a store.",
+   "sources": [
+    "ap_cop",
+    "yahoo_cop",
+    "truthdig_cop"
+   ]
+  },
+  {
+   "id": "GS_door",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 18 April 2018, according to the unsealed affidavit, detectives followed DeAngelo to a store in Roseville and swabbed the driver's-side door handle of his car while he shopped; the sample pointed to a match.",
+   "sources": [
+    "scripps_door",
+    "ap_door",
+    "dailyworld_door"
+   ]
+  },
+  {
+   "id": "GS_tissue",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 23 April 2018, investigators took a tissue from the trash outside his home; per the warrant, its DNA provided the conclusive match to the crime-scene profile.",
+   "sources": [
+    "abc_tissue",
+    "buzzfeed_warrant",
+    "dailyworld_door"
+   ]
+  },
+  {
+   "id": "GS_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "DeAngelo was arrested outside his home in Citrus Heights (reported as in his driveway) on 24 April 2018. He was 72.",
+   "sources": [
+    "abc_tissue",
+    "beast_arrest",
+    "ap_cop"
+   ]
+  },
+  {
+   "id": "GS_plea",
+   "type": "established",
+   "nature": "procedure",
+   "text": "On 29 June 2020 he pleaded guilty to 13 counts of first-degree murder and 13 counts of kidnapping to commit robbery, and admitted 161 uncharged crimes, which could no longer be charged because of the statute of limitations. The deal took the death penalty off the table.",
+   "sources": [
+    "ocda_plea",
+    "hornet_plea",
+    "wamc_plea",
+    "chn_plea"
+   ]
+  },
+  {
+   "id": "GS_ballroom",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the plea hearing was held in a ballroom at Sacramento State university, used as a makeshift courtroom to allow social distancing during COVID-19.",
+   "sources": [
+    "hornet_plea",
+    "cbc_plea",
+    "pbs_plea"
+   ]
+  },
+  {
+   "id": "GS_sentence",
+   "type": "established",
+   "nature": "procedure",
+   "text": "On 21 August 2020, Judge Michael Bowman sentenced him to 11 consecutive life terms without the possibility of parole, plus further terms (reported by AP as 15 life terms with the possibility of parole and eight years).",
+   "sources": [
+    "abc13_sentence",
+    "breaking_sentence",
+    "id_sentence",
+    "nbc_sentence"
+   ]
+  },
+  {
+   "id": "GS_legacy",
+   "type": "established",
+   "nature": "fact",
+   "text": "Since the 2018 arrest, investigative genetic genealogy has been used to help solve hundreds of cold cases (an approximate, widely reported figure; no official national count was found).",
+   "sources": [
+    "ftm_igg",
+    "fox_hundreds",
+    "cnn_trend"
+   ]
+  },
+  {
+   "id": "GS_privacy",
+   "type": "established",
+   "nature": "fact",
+   "text": "The method raised privacy concerns: GEDmatch's co-founder said police use of the site was without its knowledge and raised privacy concerns shared by civil-liberties groups, while investigators said no court order was needed.",
+   "sources": [
+    "ap_gedmatch",
+    "fox_privacy",
+    "pbs_privacy"
+   ]
+  },
+  {
+   "id": "GS_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "Next-case tease: in the Great Train Robbery (8 August 1963) a gang stole about 2.6 million pounds from a Royal Mail train; fingerprints on a Monopoly board at their farm hideout helped lead police to them.",
+   "sources": [
+    "btp_gtr",
+    "smithsonian_gtr",
+    "familytree_gtr",
+    "yahoo_gtr"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "ocda_plea",
+   "publisher": "Orange County District Attorney (joint DA news release)",
+   "title": "Joseph James DeAngelo Jr. Pleads Guilty to 13 Murders, 13 Kidnappings and Dozens of Additional Uncharged Crimes",
+   "url": "https://ocdistrictattorney.gov/?p=23204",
+   "date": "2020-06-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "hornet_plea",
+   "publisher": "The State Hornet (Sacramento State)",
+   "title": "Golden State Killer suspect pleads guilty in hearing at Sac State",
+   "url": "https://statehornet.com/2020/06/golden-state-killer-plea-guilty-sac-state",
+   "date": "2020-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbc_plea",
+   "publisher": "CBC News",
+   "title": "Report on the 29 June 2020 Golden State Killer plea hearing (title not in extract)",
+   "url": "https://www.cbc.ca/1.5631418",
+   "date": "2020-06-29 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wamc_plea",
+   "publisher": "WAMC (NPR)",
+   "title": "Golden State Killer pleads guilty to 13 murders to avoid the death penalty",
+   "url": "https://www.wamc.org/2020-06-29/golden-state-killer-pleads-guilty-to-13-murders-to-avoid-the-death-penalty",
+   "date": "2020-06-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "chn_plea",
+   "publisher": "Courthouse News Service",
+   "title": "Golden State Killer pleads guilty to 13 murders, admits to multiple rapes",
+   "url": "https://www.courthousenews.com/golden-state-killer-pleads-guilty-to-13-murders-admits-to-multiple-rapes/",
+   "date": "2020-06-29 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pbs_plea",
+   "publisher": "PBS NewsHour (AP)",
+   "title": "Golden State Killer pleads guilty to 13 murders, evades death penalty",
+   "url": "https://www.pbs.org/newshour/amp/nation/golden-state-killer-pleads-guilty-to-13-murders-evades-death-penalty",
+   "date": "2020-06-29 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc13_sentence",
+   "publisher": "ABC13 (AP)",
+   "title": "Golden State Killer sentenced to life for 26 rapes, murders",
+   "url": "https://abc13.com/post/golden-state-killer-sentenced-to-life-for-26-rapes-slayings/6381825/",
+   "date": "2020-08-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "breaking_sentence",
+   "publisher": "BreakingNews.ie",
+   "title": "Golden State Killer will die in prison after string of rapes and murders",
+   "url": "https://www.breakingnews.ie/world/golden-state-killer-will-die-in-prison-after-string-of-rapes-and-murders-1014701.html",
+   "date": "2020-08-21 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "id_sentence",
+   "publisher": "Investigation Discovery (CrimeFeed)",
+   "title": "Golden State Killer Joseph DeAngelo Sentenced To Life In Prison Without Parole",
+   "url": "https://www.investigationdiscovery.com/crimefeed/serial-killer/golden-state-killer-joseph-deangelo-sentenced-to-life-in-prison-",
+   "date": "2020-08 (event 21 Aug)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_sentence",
+   "publisher": "NBC News",
+   "title": "Golden State Killer Joseph DeAngelo sentenced to life without possibility of parole",
+   "url": "https://www.nbcnews.com/news/us-news/golden-state-killer-joseph-deangelo-sentenced-life-without-possibility-parole-n1237670",
+   "date": "2020-08-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbc_arrest",
+   "publisher": "CBC News",
+   "title": "DNA brings arrest in sadistic California crime spree from '70s and '80s",
+   "url": "https://www.cbc.ca/lite/story/1.4634936",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "thetech_dna",
+   "publisher": "The Tech Interactive (Ask a Geneticist)",
+   "title": "Golden State Killer suspect tracked down through familial DNA",
+   "url": "https://www.thetech.org/ask-a-geneticist/golden-state-killer-suspect-tracked-down-through-familial-dna",
+   "date": "2018",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "lamag_dna",
+   "publisher": "Los Angeles Magazine",
+   "title": "How DNA led to the Golden State Killer suspect (CityThink)",
+   "url": "https://www.lamag.com/citythinkblog/dna-golden-state-killer/",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_upload",
+   "publisher": "NPR",
+   "title": "In Hunt For Golden State Killer, Investigators Uploaded His DNA To Genealogy Site",
+   "url": "https://www.npr.org/sections/thetwo-way/2018/04/27/606624218/",
+   "date": "2018-04-27",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_free",
+   "publisher": "CNN",
+   "title": "Police used free genealogy database to track Golden State Killer suspect",
+   "url": "https://www.cnn.com/2018/04/26/us/golden-state-killer-dna-report/index.html",
+   "date": "2018-04-26",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_gedmatch",
+   "publisher": "AP (via KTVU)",
+   "title": "Genealogy site didn't know it was used to seek serial killer",
+   "url": "https://www.ktvu.com/news/genealogy-site-didnt-know-it-was-used-to-seek-serial-killer",
+   "date": "2018-04-27",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ucdavis_dna",
+   "publisher": "UC Davis, College of Biological Sciences",
+   "title": "Using DNA Databases to Track Down the Golden State Killer Suspect",
+   "url": "https://biology.ucdavis.edu/news/using-dna-databases-track-down-golden-state-killer-suspect",
+   "date": "2018",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "vnews_tree",
+   "publisher": "Valley News",
+   "title": "Family tree led to suspected Golden State Killer",
+   "url": "https://vnews.com/2018/05/02/family-tree-led-to-suspected-golden-state-killer-17176624/",
+   "date": "2018-05-02",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pbs_privacy",
+   "publisher": "PBS NewsHour",
+   "title": "The Golden State Killer case was cracked with a genealogy website. What does that mean for genetic privacy?",
+   "url": "https://www.pbs.org/newshour/health/the-golden-state-killer-case-was-cracked-with-a-genealogy-website-what-does-that-mean-for-genetic-privacy",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_privacy",
+   "publisher": "Fox News",
+   "title": "Arrest in Golden State Killer case sparks privacy questions",
+   "url": "https://www.foxnews.com/tech/dna-link-to-golden-state-killer-raises-questions-of-privacy-versus-safety",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_wrongman",
+   "publisher": "AP (via KTVU)",
+   "title": "Search for Golden State Killer led to wrong man in 2017",
+   "url": "https://www.ktvu.com/news/search-for-golden-state-killer-led-to-wrong-man-in-2017",
+   "date": "2018-04-28",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc30_wrongman",
+   "publisher": "ABC30 (KFSN)",
+   "title": "DNA mistake pegged Oregon man as 'Golden State Killer'",
+   "url": "https://abc30.com/post/dna-mistake-pegged-oregon-man-as-golden-state-killer/3409391/",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_wrongman",
+   "publisher": "NBC News",
+   "title": "DNA used in hunt for Golden State Killer previously led to wrong man",
+   "url": "https://www.nbcnews.com/news/us-news/dna-used-hunt-golden-state-killer-previously-led-wrong-man-n869796",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_cop",
+   "publisher": "AP (via Anchorage Daily News)",
+   "title": "Suspect in Golden State Killer case, an ex-police officer, is arrested after decades",
+   "url": "https://www.adn.com/nation-world/2018/04/25/suspect-in-golden-state-killer-case-an-ex-police-officer-is-arrested-after-decades/",
+   "date": "2018-04-25",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yahoo_cop",
+   "publisher": "Yahoo News (wire report)",
+   "title": "Former California policeman arrested in 'Golden State' serial killer case",
+   "url": "https://news.yahoo.com/california-man-arrested-golden-state-killer-case-suspected-195117631.html",
+   "date": "2018-04-25",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbssac_who",
+   "publisher": "CBS Sacramento",
+   "title": "Who Is Accused East Area Rapist Joseph James DeAngelo?",
+   "url": "https://www.cbsnews.com/sacramento/news/citrus-heights-arrest-search/",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "truthdig_cop",
+   "publisher": "Truthdig",
+   "title": "Shoplifting Ended Accused Killer's Police Career",
+   "url": "https://www.truthdig.com/?p=168955",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "scripps_door",
+   "publisher": "10News (E.W. Scripps)",
+   "title": "Golden State Killer: DNA that led to suspect's arrest was collected from his car while he shopped",
+   "url": "https://www.10news.com/news/national/golden-state-killer-dna-that-led-to-suspects-arrest-was-collect-from-his-car-while-he-shopped",
+   "date": "2018-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_door",
+   "publisher": "AP (via WFTV)",
+   "title": "Affidavit: Golden State Killer suspect's DNA obtained while he shopped at Hobby Lobby",
+   "url": "https://www.wftv.com/news/trending-now/affidavit-golden-state-killer-suspects-dna-obtained-while-he-shopped-at-hobby-lobby/762734958",
+   "date": "2018-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "dailyworld_door",
+   "publisher": "The Daily World",
+   "title": "DNA lifted from Golden State Killer suspect at Hobby Lobby parking lot key to cracking case, documents show",
+   "url": "https://thedailyworld.com/?p=19252",
+   "date": "2018-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc_tissue",
+   "publisher": "ABC News",
+   "title": "DNA from tissue taken out of alleged Golden State Killer's trash led to arrest, warrant shows",
+   "url": "https://abcnews.com/US/dna-tissue-alleged-golden-state-killers-trash-led/story?id=55602892",
+   "date": "2018-06-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "buzzfeed_warrant",
+   "publisher": "BuzzFeed News",
+   "title": "A Tissue And A Swab From A Car Door Handle: How Police Got The Golden State Killer Suspect's DNA",
+   "url": "https://www.buzzfeednews.com/article/skbaer/golden-state-killer-arrest-search-warrants",
+   "date": "2018-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "beast_arrest",
+   "publisher": "The Daily Beast",
+   "title": "Golden State Killer arrested (police waited for him to leave his home)",
+   "url": "https://www.thedailybeast.com/golden-state-killer-arrested-according-to-co-author-of-ill-be-gone-in-the-dark",
+   "date": "2018-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ftm_igg",
+   "publisher": "Family Tree Magazine",
+   "title": "Investigative Genetic Genealogy: How DNA Testing Helps Solve Crimes",
+   "url": "https://familytreemagazine.com/dna/investigative-genetic-genealogy",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_hundreds",
+   "publisher": "Fox News",
+   "title": "Cold cases cracked: experts solving hundreds of violent crime mysteries",
+   "url": "https://foxnews.com/us/cold-cases-cracked-experts-solving-hundreds-violent-crime-mysteries-decades-no-answers.print",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_trend",
+   "publisher": "CNN",
+   "title": "Genetic genealogy and cold cases after the Golden State Killer arrest",
+   "url": "https://amp.cnn.com/cnn/2018/08/03/health/dna-genealogy-cold-cases-trnd",
+   "date": "2018-08-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "btp_gtr",
+   "publisher": "British Transport Police (history)",
+   "title": "The Great Train Robbery",
+   "url": "https://www.btp.police.uk/police-forces/british-transport-police/areas/campaigns/our-history/crime-history/great-train-robbery/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "smithsonian_gtr",
+   "publisher": "Smithsonian Magazine",
+   "title": "The big mystery behind the Great Train Robbery may finally have been solved",
+   "url": "https://www.smithsonianmag.com/history/big-mystery-behind-great-train-robbery-may-finally-have-been-solved-180952054/",
+   "date": "2014",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "familytree_gtr",
+   "publisher": "Family Tree (UK)",
+   "title": "The Great Train Robbery: on this day in history",
+   "url": "https://www.family-tree.co.uk/news/the-great-train-robbery-on-this-day-in-history",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yahoo_gtr",
+   "publisher": "Yahoo News (UK)",
+   "title": "The Great Train Robbery of 1963: who was in the gang and how much was stolen?",
+   "url": "https://ca.news.yahoo.com/great-train-robbery-1963-gang-140900036.html",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "legal_status_verified": "2026-10-11"
+}
