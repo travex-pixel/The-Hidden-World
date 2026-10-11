@@ -56,13 +56,13 @@
 
   // ---------------------------------------------------------------- a generic three-engined T-tail airliner, rear half (local units)
   // local frame: tail cone at x ~ 0, nose far to the left (-x), fuselage diameter 260 (y -130..130). The ventral stair hinges at STAIR.h.
-  const STAIR = { hx: -560, hy: 110, L: 430 };
-  const NIGHT = { base: '#5c636d', light: '#808893', dark: '#30353c', win: '#ffd9a0' };
+  const STAIR = { hx: -560, hy: 110, L: 430, n: 11, rail: 92 };
+  const NIGHT = { base: '#4f5660', light: '#717984', dark: '#2a2f36', win: '#ffd9a0' };
   function airliner(o, a, glow) {
     const c = o.palette || NIGHT; const ar = a * Math.PI / 180;
     let s = '';
     // far-side stair rail (behind everything else on the stair)
-    if (a > -4) { const ex = STAIR.hx + STAIR.L * Math.cos(ar), ey = STAIR.hy + STAIR.L * Math.sin(ar); s += `<path d="M${f1(STAIR.hx + 20)} ${f1(STAIR.hy - 96)} L${f1(ex - 6)} ${f1(ey - 104)}" stroke="#2a2e34" stroke-width="7" fill="none"/>`; }
+    if (a > -4) { const ex = STAIR.hx + STAIR.L * Math.cos(ar), ey = STAIR.hy + STAIR.L * Math.sin(ar); s += `<path d="M${f1(STAIR.hx + 20)} ${f1(STAIR.hy - STAIR.rail + 10)} L${f1(ex - 6)} ${f1(ey - STAIR.rail)}" stroke="#2a2e34" stroke-width="7" fill="none"/>`; }
     // fin and T-tail
     s += `<path d="M-720 -126 L-300 -770 L-110 -770 L-130 -520 L-36 -50 Z" fill="${c.base}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/><path d="M-300 -770 L-110 -770 L-122 -690 L-330 -700 Z" fill="${c.light}" opacity="0.5"/>` +
       `<path d="M-380 -750 L60 -792 L120 -778 L-360 -722 Z" fill="${c.dark}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>`;
@@ -83,26 +83,32 @@
     // the open stair well: warm cabin light spilling out
     if (a > -4) {
       const k = clamp((a + 4) / 30, 0, 1); const ux = STAIR.hx + 0.32 * STAIR.L * Math.cos(ar), uy = STAIR.hy + 0.32 * STAIR.L * Math.sin(ar);
-      s += `<path d="M${STAIR.hx - 10} ${STAIR.hy - 4} L-300 82 L${f1(ux)} ${f1(uy)} Z" fill="#ffcf8a" opacity="${f1(0.85 * k * glow)}"/>` + wash(STAIR.hx + 110, STAIR.hy + 70, 240, 140, '#ffcf8a', 0.45 * k * glow);
+      s += `<path d="M${STAIR.hx - 10} ${STAIR.hy - 4} L-300 82 L${f1(ux)} ${f1(uy)} Z" fill="#ffcf8a" opacity="${f1(0.55 * k * glow)}"/><path d="M${STAIR.hx - 6} ${STAIR.hy - 6} L-300 80" stroke="#fff0c8" stroke-width="10" opacity="${f1(0.9 * k * glow)}"/>` + wash(STAIR.hx + 90, STAIR.hy + 50, 190, 100, '#ffcf8a', 0.22 * k * glow);
     }
     // main gear (ground mode)
     if (o.gear) s += `<path d="M-1380 120 L-1380 300" stroke="#20242a" stroke-width="30"/><circle cx="-1420" cy="300" r="36" fill="#0b0c0e" stroke="#2a2e34" stroke-width="8"/><circle cx="-1340" cy="300" r="36" fill="#0b0c0e" stroke="#2a2e34" stroke-width="8"/>`;
     // the ventral stair (stringer + treads); stowed flush at a = -8
     if (a > -4) {
-      const cs = Math.cos(ar), sn = Math.sin(ar), L = STAIR.L, hx = STAIR.hx, hy = STAIR.hy, ex = hx + L * cs, ey = hy + L * sn, nx = -sn, ny = cs, th = 36;
-      s += `<path d="M${hx} ${hy} L${f1(ex)} ${f1(ey)} L${f1(ex + nx * th)} ${f1(ey + ny * th)} L${f1(hx + nx * th)} ${f1(hy + ny * th)} Z" fill="#4a4f57" stroke="${INK}" stroke-width="5"/>`;
-      for (let i = 1; i < 11; i++) { const u = i / 11; const x = hx + u * L * cs, y = hy + u * L * sn; s += `<rect x="${f1(x - 18)}" y="${f1(y - 7)}" width="36" height="10" fill="#9aa1aa" stroke="${INK}" stroke-width="2.5"/>`; }
+      const cs = Math.cos(ar), sn = Math.sin(ar), L = STAIR.L, hx = STAIR.hx, hy = STAIR.hy, n = STAIR.n, run = L * cs / n, rise = L * sn / n, ex = hx + L * cs, ey = hy + L * sn, nx = -sn, ny = cs, th = 30;
+      let p = `M${hx} ${hy}`, hi = '';
+      for (let i = 0; i < n; i++) { const x = hx + i * run, y = hy + i * rise; p += ` L${f1(x + run)} ${f1(y)} L${f1(x + run)} ${f1(y + rise)}`; hi += `M${f1(x + 2)} ${f1(y + 2)} L${f1(x + run - 2)} ${f1(y + 2)} `; }
+      p += ` L${f1(ex)} ${f1(ey + th)} L${f1(hx)} ${f1(hy + th)} Z`;
+      s += `<path d="${p}" fill="#545b65" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/><path d="${hi}" stroke="#aab1ba" stroke-width="4" fill="none"/>`;
     }
     return s;
   }
   function nearRail(a) {   // the handrail on the near side of the stair (drawn in front of a figure on the steps)
     if (a <= -4) return '';
     const ar = a * Math.PI / 180, cs = Math.cos(ar), sn = Math.sin(ar), P = u => [STAIR.hx + u * STAIR.L * cs, STAIR.hy + u * STAIR.L * sn];
-    const [x1, y1] = P(0.06), [x2, y2] = P(0.5), [x3, y3] = P(0.96);
-    return `<path d="M${f1(x1)} ${f1(y1)} L${f1(x1)} ${f1(y1 - 112)} L${f1(x3)} ${f1(y3 - 112)} L${f1(x3)} ${f1(y3)} M${f1(x2)} ${f1(y2)} L${f1(x2)} ${f1(y2 - 112)}" stroke="#20242a" stroke-width="9" fill="none" stroke-linejoin="round"/><path d="M${f1(x1)} ${f1(y1 - 112)} L${f1(x3)} ${f1(y3 - 112)}" stroke="#7a828c" stroke-width="3" fill="none"/>`;
+    const [x1, y1] = P(0.06), [x2, y2] = P(0.5), [x3, y3] = P(0.96), h = STAIR.rail;
+    return `<path d="M${f1(x1)} ${f1(y1)} L${f1(x1)} ${f1(y1 - h)} L${f1(x3)} ${f1(y3 - h)} L${f1(x3)} ${f1(y3)} M${f1(x2)} ${f1(y2)} L${f1(x2)} ${f1(y2 - h)}" stroke="#20242a" stroke-width="8" fill="none" stroke-linejoin="round"/><path d="M${f1(x1)} ${f1(y1 - h)} L${f1(x3)} ${f1(y3 - h)}" stroke="#7a828c" stroke-width="3" fill="none"/>`;
   }
   // screen position (in the plane layer) of a point a fraction u down the stair
-  function stairPt(o, u, a) { const ar = a * Math.PI / 180, k = o.k || 1; return [o.px + k * (STAIR.hx + u * STAIR.L * Math.cos(ar)), o.py + k * (STAIR.hy + u * STAIR.L * Math.sin(ar))]; }
+  function stairPt(o, u, a) {   // feet land on the tread under them
+    const ar = a * Math.PI / 180, k = o.k || 1, cs = Math.cos(ar), sn = Math.sin(ar);
+    const ly = a > 0 ? STAIR.hy + clamp(Math.floor(u * STAIR.n), 0, STAIR.n - 1) * STAIR.L * sn / STAIR.n : STAIR.hy + u * STAIR.L * sn;
+    return [o.px + k * (STAIR.hx + u * STAIR.L * cs), o.py + k * ly];
+  }
 
   // ---------------------------------------------------------------- cabin seat (figure units: occupant faces +x locally; dir mirrors)
   function seat(x, y, sc, dir, col = '#7a3e22') {
@@ -173,7 +179,7 @@
     // a sandy river bar: the far bank's low hills, a wide river with moving ripples, sand with driftwood. o.dusk for evening.
     db5_riverbank(ctx, o = {}) {
       const t = ctx.t, dusk = !!o.dusk, r = R(61);
-      const g = dusk ? ['#1b2140', '#c9744e'] : ['#8b98a1', '#d7dad3'];
+      const g = dusk ? ['#1b2140', '#c9744e'] : ['#5a6670', '#d2d6d0'];
       const sky = `<defs><linearGradient id="db5rsky${dusk ? 'd' : 'n'}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${g[0]}"/><stop offset="1" stop-color="${g[1]}"/></linearGradient></defs><rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="url(#db5rsky${dusk ? 'd' : 'n'})"/>` +
         (dusk ? `<circle cx="780" cy="640" r="46" fill="#ffd09a" opacity="0.9"/>` + wash(780, 640, 300, 120, '#ffb070', 0.4) : wash(400, 380, 600, 160, '#ffffff', 0.25));
       const hills = `<path d="M-300 700 Q 60 590 360 640 T 960 600 T 1400 650 L1400 760 L-300 760 Z" fill="${dusk ? '#2a2638' : '#5d6b69'}"/>` + E.cine.pines(746, 22, 17, dusk ? '#1e1b2a' : '#4a5856', 0.22, -300, W + 300);
@@ -207,20 +213,20 @@
     // 1 - hook: a man on the lowered rear stairs of a jet in flight, the money, the jump
     db5_hook(ctx) {
       const t = ctx.t, took = WT(ctx, 0, 5, 1.6), jumped = WT(ctx, 0, 8, 3.93), l2 = LS(ctx, 1, 5.59), found = WT(ctx, 1, 4, 6.28);
-      const o = { mode: 'flight', k: 4, px: 2280, py: 120, depth: 1.0, stair: 35, glow: 1, streaks: 140 };
-      const u = lerp(0.42, 0.58, clamp((t - 1.95) / 1.4, 0, 1)); let [x, y] = stairPt(o, u, 35);
-      const fall = clamp((t - jumped) / 0.9, 0, 1); x += 260 * fall; y += 1500 * fall * fall;
-      const sc = 0.6;
-      const bag = () => (t < jumped + 0.85 ? `<g opacity="${f1(1 - seg(t, jumped + 0.5, jumped + 0.85))}">${moneyBag(x + 70 * sc, y - 470 * sc, 0.62 * sc * 1.6)}</g>` : '');
+      const o = { mode: 'flight', k: 2.4, px: 1319, py: 470, depth: 1.0, stair: 35, glow: 1, streaks: 140 };
+      const u = lerp(0.4, 0.86, clamp((t - 1.95) / 1.8, 0, 1)); let [x, y] = stairPt(o, u, 35);
+      const fall = clamp((t - jumped + 0.1) / 0.8, 0, 1); x += 260 * fall; y += 1250 * fall * fall;
+      const sc = 0.41;
+      const bag = () => (t < jumped + 0.7 ? `<g opacity="${f1(1 - seg(t, jumped + 0.35, jumped + 0.7))}">${moneyBag(x + 70 * sc, y - 470 * sc, 0.62 * sc * 1.6)}</g>` : '');
       return E.cine.shot(ctx, {
         set: 'db5_airstair', setOpts: o, grade: 'night', cam: { from: { x: 0, y: -10, z: 1.0 }, to: { x: 30, y: 140, z: 1.06 }, handheld: 6 },
-        figures: [{ id: 'db5_cooper', x, y, scale: sc, dir: 1, turn: 0.45, headTurn: -0.25, pose: 'stand_tense', expr: 'blank', gaze: [0.3, 0.4], depth: 1.0, show: [-1, jumped + 0.8],
-          walk: { from: x, to: x, at: 1.95, dur: 1.4, cadence: 5.5, stride: 14 },
-          keys: [{ at: took - 0.1, pose: 'hands_together', headTurn: 0, gaze: [0.6, 0.6], dur: 0.4 }, { at: jumped - 0.35, pose: 'stand_tense', expr: 'stern', dur: 0.3 }] }],
+        figures: [{ id: 'db5_cooper', x, y, scale: sc, dir: 1, turn: 0.45, headTurn: -0.25, pose: 'stand_tense', expr: 'blank', gaze: [0.3, 0.4], depth: 1.0, show: [-1, jumped + 0.6],
+          walk: { from: x, to: x, at: 1.95, dur: 1.8, cadence: 5.5, stride: 14 },
+          keys: [{ at: took - 0.1, pose: 'hands_together', headTurn: 0, gaze: [0.6, 0.6], dur: 0.4 }, { at: jumped - 0.3, pose: 'stand_tense', expr: 'stern', dur: 0.2 }] }],
         props: [{ depth: 1.0, svg: bag }],
         overlays: [
           { type: 'label', at: took - 0.05, until: l2 - 0.2, x: 60, y: 430, text: '$200,000 RANSOM', fs: 46, sub: '24 Nov 1971 · Flight 305' },
-          { type: 'stamp', at: found - 0.12, x: 540, y: 860, text: 'NEVER FOUND', scale: 1.35, colour: '#e5372b' }
+          { type: 'stamp', at: found - 0.12, x: 540, y: 1000, text: 'NEVER FOUND', scale: 1.35, colour: '#e5372b' }
         ],
         tag: COOPER_TAG
       });
@@ -234,7 +240,6 @@
       return E.cine.shot(ctx, {
         set: 'db5_cabin', setOpts: { sky: 'day', seats }, grade: 'warm', cam: { from: { x: 60, y: 0, z: 1.0 }, to: { x: -20, y: 10, z: 1.04 } },
         figures: [
-          { id: 'db5_passenger', x: 230, y: 1640, scale: 0.8, dir: -1, turn: 0.55, pose: 'sit_read', noChair: true, expr: 'neutral', gaze: [0.5, 0.6], depth: 0.99, keys: [{ at: his, headTurn: -0.4, gaze: [-0.6, -0.1], dur: 0.6 }] },
           { id: 'db5_cooper', x: 640, y: 1640, scale: 0.82, dir: -1, turn: 0.55, pose: 'stand', expr: 'blank', gaze: [0.6, 0], noChair: true,
             walk: { from: 1260, to: 640, at: 0.15, dur: sitAt - 0.25, cadence: 6.2 }, keys: [{ at: sitAt, pose: 'sit', dur: 0.5 }, { at: dan - 0.2, headTurn: -0.3, gaze: [-0.4, 0], dur: 0.5 }] },
           { id: 'db5_attendant', x: 180, y: 1730, scale: 0.88, dir: 1, turn: 0.5, pose: 'hands_together', expr: 'neutral', gaze: [0.6, -0.1], depth: 1.02,
@@ -253,7 +258,7 @@
       const t = ctx.t, db = WT(ctx, 0, 6, 2.03), l2 = LS(ctx, 1, 2.94), mix = WT(ctx, 1, 4, 3.63);
       return E.cine.shot(ctx, {
         set: 'press_room', grade: 'cold', cam: { from: { x: 0, y: 80, z: 1.0 }, to: { x: -30, y: 70, z: 1.08 }, handheld: 2 },
-        figures: [{ id: 'press_operator', x: 790, y: 1900, scale: 1.05, dir: -1, turn: 0.45, pose: 'read', propOverride: 'paper', expr: 'focused', gaze: [0.3, 0.7],
+        figures: [{ id: 'press_operator', x: 800, y: 1960, scale: 1.1, depth: 1.1, dir: -1, turn: 0.45, pose: 'read', propOverride: 'paper', expr: 'focused', gaze: [0.3, 0.7],
           keys: [{ at: db - 0.2, pose: 'examine', dur: 0.4 }, { at: mix, pose: 'read', headTurn: -0.35, gaze: [-0.5, -0.1], expr: 'realise', dur: 0.5 }] }],
         overlays: [{ type: 'funfact', at: 0.25, y: 400, rows: [{ text: 'He bought his ticket as', fs: 40 }, { text: "'DAN COOPER'.", fs: 54, colour: '#ffd23f' }, { text: "'D.B.' came from a media mix-up.", fs: 36 }] }]
       });
@@ -302,18 +307,18 @@
     // 6 - Seattle: passengers out, cash and parachutes in (generic apron at night)
     db5_seattle(ctx) {
       const t = ctx.t, sw = WT(ctx, 0, 3, 1.06), pas = WT(ctx, 0, 5, 1.67), cash = WT(ctx, 0, 8, 2.65);
-      const o = { mode: 'ground', k: 1.0, px: 980, py: 1110, depth: 0.7, stair: 31.6, glow: 0.9 };
-      const ax = lerp(1300, 760, clamp((t - 0.2) / 2.4, 0, 1)), bx = lerp(1480, 930, clamp((t - 0.6) / 2.4, 0, 1));
-      const carry = () => moneyBag(ax - 50, 1300, 0.5) + chutePack(bx - 54, 1330, 0.45) + chutePack(bx - 30, 1300, 0.45);
+      const o = { mode: 'ground', k: 1.0, px: 980, py: 900, depth: 0.7, stair: 31.6, glow: 0.9 };
+      const ax = lerp(1240, 790, clamp((t - 0.2) / 2.4, 0, 1)), bx = lerp(1380, 900, clamp((t - 0.6) / 2.4, 0, 1));
+      const carry = () => moneyBag(ax - 24, 1155, 0.26) + chutePack(bx - 26, 1170, 0.22) + chutePack(bx - 14, 1156, 0.22);
       return E.cine.shot(ctx, {
         set: 'db5_airstair', setOpts: o, grade: 'night', rain: RAIN, cam: { from: { x: 0, y: 0, z: 1.0 }, to: { x: -30, y: 20, z: 1.06 }, handheld: 2 },
         figures: [
-          { id: 'db5_passenger', x: 560, y: 1520, scale: 0.46, dir: -1, turn: 0.55, pose: 'stand', expr: 'neutral', silhouette: 'warm', walk: { from: 560, to: -200, at: 0.0, dur: 3.6, cadence: 6.5 } },
-          { id: 'db5_passenger', x: 680, y: 1560, scale: 0.48, dir: -1, turn: 0.55, pose: 'stand', expr: 'neutral', silhouette: 'warm', walk: { from: 700, to: -60, at: pas - 0.9, dur: 3.4, cadence: 6.5 } },
-          { id: 'agent_a', x: ax, y: 1500, scale: 0.44, dir: -1, turn: 0.55, pose: 'stand', expr: 'stern', silhouette: 'cool', walk: { from: 1300, to: 760, at: 0.2, dur: 2.4, cadence: 6.5 }, keys: [{ at: cash, pose: 'present', dur: 0.5 }] },
-          { id: 'agent_b', x: bx, y: 1530, scale: 0.44, dir: -1, turn: 0.55, pose: 'stand', expr: 'stern', silhouette: 'cool', walk: { from: 1480, to: 930, at: 0.6, dur: 2.4, cadence: 6.5 } }
+          { id: 'agent_a', x: ax, y: 1252, scale: 0.25, dir: -1, turn: 0.55, pose: 'stand', expr: 'stern', silhouette: 'cool', depth: 0.72, walk: { from: 1240, to: 790, at: 0.2, dur: 2.4, cadence: 7 }, keys: [{ at: cash, pose: 'present', dur: 0.5 }] },
+          { id: 'agent_b', x: bx, y: 1260, scale: 0.25, dir: -1, turn: 0.55, pose: 'stand', expr: 'stern', silhouette: 'cool', depth: 0.72, walk: { from: 1380, to: 900, at: 0.6, dur: 2.4, cadence: 7 } },
+          { id: 'db5_passenger', x: 520, y: 1390, scale: 0.36, dir: -1, turn: 0.55, pose: 'stand', expr: 'neutral', silhouette: 'warm', walk: { from: 520, to: -200, at: 0.0, dur: 3.8, cadence: 6.5 } },
+          { id: 'db5_passenger', x: 700, y: 1440, scale: 0.38, dir: -1, turn: 0.55, pose: 'stand', expr: 'neutral', silhouette: 'warm', walk: { from: 720, to: -80, at: pas - 0.9, dur: 3.6, cadence: 6.5 } }
         ],
-        props: [{ depth: 1.0, svg: carry }],
+        props: [{ depth: 0.73, svg: carry }],
         overlays: [{ type: 'label', at: 0.25, x: 60, y: 430, text: 'SEATTLE', fs: 48, sub: 'Passengers out. Cash and parachutes in.' }]
       });
     },
@@ -351,7 +356,7 @@
       };
       return E.cine.shot(ctx, {
         set: 'office_day', grade: 'none', cam: { from: { x: 40, y: 0, z: 1.02 }, to: { x: 80, y: -10, z: 1.08 } },
-        figures: [{ id: 'analyst', x: 260, y: 1880, scale: 1.0, dir: 1, turn: 0.45, pose: 'stand', expr: 'focused', gaze: [0.7, 0.1],
+        figures: [{ id: 'analyst', x: 250, y: 1700, scale: 1.0, dir: 1, turn: 0.45, pose: 'stand', expr: 'focused', gaze: [0.7, 0.1],
           keys: [{ at: dev - 0.2, pose: 'point', gaze: [0.9, 0.2], dur: 0.5 }, { at: coop, pose: 'stand', headTurn: -0.35, gaze: [-0.2, 0], expr: 'realise', dur: 0.5 }] }],
         props: [{ depth: 1.03, svg: board }],
         overlays: [{ type: 'funfact', at: 0.25, y: 400, rows: [{ text: '727s got a spring-loaded paddle', fs: 40 }, { text: 'that stops the rear stairs', fs: 40 }, { text: 'being lowered in flight.', fs: 40 }] }]
@@ -405,13 +410,13 @@
         for (let i = 0; i < 2; i++) { s += `<rect x="20" y="${16 + i * 22}" width="${200 - i * 30}" height="8" fill="#8b857a"/>`; const k = seg(t, mat + i * 0.15, mat + i * 0.15 + 0.3); if (k > 0) s += `<path d="M300 ${f1(14 + i * 22)} l10 10 l22 -18" stroke="#2f7a3a" stroke-width="5" fill="none" opacity="${f1(k)}"/>`; }
         return s + `</g>`; };
       return E.cine.shot(ctx, {
-        set: 'lab', setOpts: { microX: 900 }, grade: 'cold', cam: { from: { x: 60, y: 0, z: 1.06 }, to: { x: 100, y: -20, z: 1.12 } },
-        figures: [{ id: 'examiner', x: 260, y: 1980, scale: 1.3, dir: 1, turn: 0.45, pose: 'examine', propOverride: 'magnifier', propOpts: { aim: 88 }, expr: 'focused', gaze: [0.6, 0.6],
+        set: 'lab', setOpts: { microX: 900 }, grade: 'cold', cam: { from: { x: 60, y: 0, z: 1.08 }, to: { x: 100, y: -20, z: 1.15 } },
+        figures: [{ id: 'examiner', x: 250, y: 1800, scale: 1.2, dir: 1, turn: 0.45, pose: 'examine', propOverride: 'magnifier', propOpts: { aim: 88 }, expr: 'focused', gaze: [0.6, 0.6],
           keys: [{ at: ser, gaze: [0.8, 0.5], dur: 0.3 }, { at: mat, expr: 'realise', dur: 0.3 }, { at: mat + 0.5, pose: 'stand', headTurn: -0.3, gaze: [-0.2, 0], expr: 'determined', dur: 0.6 }] }],
         props: [{ depth: 1.06, svg: bench }],
         overlays: [
           { type: 'card', at: f58 - 0.1, x: 90, y: 380, w: 900, rows: [{ text: 'RECOVERED: $5,800', fs: 50 }, { text: 'SERIAL NUMBERS vs RANSOM LIST', fs: 32, colour: '#6b665c', at: ser - 0.1 }] },
-          { type: 'stamp', at: mat - 0.05, x: 720, y: 650, text: 'MATCH', scale: 1.4, colour: '#2f7a3a' }
+          { type: 'stamp', at: mat - 0.05, x: 720, y: 650, text: 'MATCH', scale: 1.4, colour: '#4fc26a' }
         ]
       });
     },
@@ -435,11 +440,11 @@
     db5_fbi(ctx) {
       const t = ctx.t, st = WT(ctx, 0, 4, 2.01), l2 = LS(ctx, 1, 4.06), ev = WT(ctx, 1, 3, 4.77), par = WT(ctx, 1, 6, 5.46), mon = WT(ctx, 1, 9, 6.26);
       const box = () => { const lid = ease.inOut(seg(t, st - 0.1, st + 0.4));
-        return `<g transform="translate(760 1196)"><rect x="-150" y="-150" width="300" height="150" fill="#c9a964" stroke="${INK}" stroke-width="5"/><rect x="-110" y="-110" width="220" height="56" fill="#ebe3cf" stroke="${INK}" stroke-width="3"/><text x="0" y="-76" text-anchor="middle" ${TYPE} font-weight="700" font-size="24" fill="#1a1915">D.B. COOPER</text><text x="0" y="-60" text-anchor="middle" ${TYPE} font-size="14" fill="#6b665c">1971 · CASE FILES (GENERIC)</text>` +
+        return `<g transform="translate(760 1196)"><rect x="-150" y="-150" width="300" height="150" fill="#c9a964" stroke="${INK}" stroke-width="5"/><rect x="-110" y="-110" width="220" height="56" fill="#ebe3cf" stroke="${INK}" stroke-width="3"/><text x="0" y="-76" text-anchor="middle" ${TYPE} font-weight="700" font-size="24" fill="#1a1915">D.B. COOPER</text><text x="0" y="-62" text-anchor="middle" ${TYPE} font-size="16" fill="#6b665c">1971</text>` +
           `<g transform="translate(0 ${f1(-150 - 60 * (1 - lid))}) rotate(${f1(-24 * (1 - lid))} -150 0)"><rect x="-160" y="-22" width="320" height="26" fill="#b8975a" stroke="${INK}" stroke-width="5"/></g></g>`; };
       return E.cine.shot(ctx, {
         set: 'office_day', grade: 'cold', cam: { from: { x: 0, y: 0, z: 1.0 }, to: { x: 30, y: 10, z: 1.06 } },
-        figures: [{ id: 'agent_a', x: 330, y: 1880, scale: 1.0, dir: 1, turn: 0.45, pose: 'read', expr: 'focused', gaze: [0.5, 0.6],
+        figures: [{ id: 'agent_a', x: 330, y: 1700, scale: 1.0, dir: 1, turn: 0.45, pose: 'read', expr: 'focused', gaze: [0.5, 0.6],
           keys: [{ at: st - 0.3, pose: 'present', gaze: [0.8, 0.5], dur: 0.4 }, { at: st + 0.5, pose: 'stand', dur: 0.5 }, { at: ev, headTurn: -0.35, gaze: [-0.3, 0], expr: 'determined', dur: 0.5 }] }],
         props: [{ depth: 1.07, svg: box }],
         overlays: [
@@ -453,7 +458,7 @@
     db5_end(ctx) {
       const t = ctx.t, no = WT(ctx, 0, 4, 1.8), l2 = LS(ctx, 1, 4.05), cat = WT(ctx, 2, 2, 8.45);
       const b = () => cork(29) + pinCard(250, 330, 580, 520, -1.5, manSketch(540, 560, 1.15) + `<text x="540" y="410" text-anchor="middle" ${TYPE} font-weight="700" font-size="34" fill="#8e1f18">"DAN COOPER"</text><text x="540" y="810" text-anchor="middle" ${TYPE} font-weight="700" font-size="30" fill="#1a1915">NAME: UNKNOWN</text>` +
-        E.doc.stamp(700, 720, 'UNSOLVED', seg(t, no, no + 0.4), -12, '#c8312b'), seg(t, 0.05, 0.45));
+        E.doc.stamp(690, 660, 'UNSOLVED', seg(t, no, no + 0.4), -12, '#c8312b'), seg(t, 0.05, 0.45));
       return E.cine.shot(ctx, {
         set: 'task_force', setOpts: { rain: true }, grade: 'night', cam: { keys: [{ at: 0, x: 0, y: -40, z: 1.0 }, { at: l2 - 0.4, x: 0, y: 30, z: 1.08, dur: 1.4 }], handheld: 1.5 },
         figures: [{ id: 'detective', x: 790, y: 2110, scale: 1.3, dir: -1, turn: 0.35, pose: 'arms_crossed', expr: 'focused', gaze: [0.5, -0.8], depth: 1.1,
