@@ -15,66 +15,68 @@ def build(h):
     VER = h.VERIFIED
 
     scenes = [
-        # A - hook: the payoff of the title (the radiation sweep finds the teapot)
-        S("s01_hook", "lt14_hook", [N("Investigators swept a London hotel bar for radiation."),
-                                    N("The hottest spot? A teapot.", pause_before=0.25)],
-          "cold", ["L_sweep", "L_teapot"], sfx=[fx(0.0, "sub", 0.5), fw(0, 1, "static", 0.35, 0.0), fw(1, 2, "beep", 0.5, -0.15), fw(1, 4, "hit", 0.7, -0.05)],
-          emph=["radiation.", "hottest", "teapot."], min_d=4.4, pad=0.3),
-        S("s02_who", "lt14_who", [N("Alexander Litvinenko drank from it: a former Russian security officer and Kremlin critic.")],
-          "unease", ["L_tea", "L_who"], sfx=[fx(0.0, "rain", 0.35), fx(3.4, "rain", 0.3), fw(0, 1, "step", 0.3), fw(0, 4, "step", 0.3)],
-          emph=["litvinenko", "kremlin", "critic."], min_d=3.6, pad=0.3, tr="push"),
-        # B - investigation: the meeting, the mystery, the reveal, the trail
-        S("s03_meet", "lt14_meet", [N("On November 1st, 2006, he had met two Russian men there."),
+        # A - hook: the setup and the mystery. The hero object (the teapot) is big and centred from the first frame.
+        S("s01_hook", "lt14_hook", [N("A man drank tea in a London hotel bar."),
+                                    N("Three weeks later, he was dead.", pause_before=0.3),
+                                    N("Investigators found the teapot was radioactive.", pause_before=0.3)],
+          "cold", ["L_tea", "L_meet", "L_died", "L_sweep", "L_teapot"],
+          sfx=[fx(0.0, "sub", 0.5), fw(0, 2, "click", 0.35), fw(1, 4, "hit", 0.6, -0.05), fw(2, 0, "static", 0.3, -0.1), fw(2, 5, "hit", 0.7, -0.05)],
+          emph=["tea", "dead.", "teapot", "radioactive."], min_d=4.0, pad=0.25),
+        S("s02_who", "lt14_who", [N("Alexander Litvinenko. Former Russian security officer. Kremlin critic.")],
+          "unease", ["L_who"], sfx=[fx(0.0, "rain", 0.35), fx(3.0, "rain", 0.3), fw(0, 1, "step", 0.3), fw(0, 5, "step", 0.3)],
+          emph=["litvinenko.", "kremlin", "critic."], min_d=3.0, pad=0.25, tr="push"),
+        # B - investigation: a chain of concrete micro-reveals (the cup, the tests, the poison, the trail)
+        S("s03_meet", "lt14_meet", [N("November 1st, 2006: he had met two Russian men there."),
                                     N("That night, he fell ill.", pause_before=0.3)],
           "unease", ["L_meet", "L_ill"], sfx=[fw(0, 6, "click", 0.4), fw(1, 3, "sub", 0.5, -0.05)],
-          emph=["two", "russian", "ill."], pad=0.4, tr="push"),
-        S("s04_reveal", "lt14_reveal", [N("For three weeks, doctors couldn't name the poison."),
-                                        N("Only hours before he died did scientists find it: polonium-210.", pause_before=0.2)],
-          "revelation", ["L_mystery", "L_po", "L_died"], sfx=[fx(0.1, "tick", 0.4), fw(0, 5, "paper", 0.5, -0.1), fw(1, 9, "hit", 0.7, -0.05), fw(1, 9, "swell", 0.5, 0.2)],
-          emph=["three", "weeks,", "hours", "polonium-210."], pad=0.5, tr="flash"),
-        S("s05_detect", "lt14_detect", [N("Its radiation can't even pass through skin, so it's hard to detect.", pause_before=0.1)],
-          "tension", ["L_alpha"], sfx=[fw(0, 3, "sparkle", 0.8, -0.1), fw(0, 11, "beep", 0.35)],
-          emph=["skin,", "hard"], min_d=3.6, pad=0.4, tr="push"),
-        S("s06_trail", "lt14_trail", [N("They traced it across London: a sushi bar, offices, his home.")],
-          "tension-rise", ["L_trail", "L_planes"], sfx=[fw(0, 1, "whoosh", 0.4, -0.1), fw(0, 6, "ping", 0.45), fw(0, 8, "ping", 0.45), fw(0, 10, "ping", 0.45), fw(0, 10, "ping", 0.4, 0.7)],
-          emph=["london:", "sushi", "home."], min_d=4.2, pad=0.5, tr="zoom"),
-        # C - questions: the stadium, the charge, the inquiry
-        S("s07_stadium", "lt14_stadium", [N("Traces even turned up at Arsenal's stadium, where the two men watched a match.")],
-          "tension-rise", ["L_stadium"], sfx=[fw(0, 5, "sparkle", 0.8, -0.1), fx(0.2, "rumble", 0.3)],
-          emph=["arsenal's", "stadium,"], min_d=3.6, pad=0.35, tr="push"),
-        S("s08_charge", "lt14_charge", [N("Britain charged Andrei Lugovoi with murder. Russia refused to extradite him.")],
-          "tension", ["L_charge", "L_refuse"], sfx=[fx(0.0, "rain", 0.35), fw(0, 1, "paper", 0.5, -0.1), fw(0, 7, "stamp", 0.8, 0.05)],
-          emph=["charged", "refused"], pad=0.3, tr="push"),
+          emph=["two", "russian", "ill."], pad=0.25, tr="push"),
+        S("s04_poison", "lt14_poison", [N("For three weeks, doctors couldn't name the poison."),
+                                        N("Hours before he died, scientists found it.", pause_before=0.2),
+                                        N("Polonium-210.", pause_before=0.35)],
+          "revelation", ["L_mystery", "L_po"], sfx=[fx(0.1, "tick", 0.4), fw(0, 5, "paper", 0.5, -0.1), fw(2, 0, "hit", 0.7, -0.05), fw(2, 0, "swell", 0.5, 0.3)],
+          emph=["three", "weeks,", "hours", "polonium-210."], pad=0.45, tr="fade"),
+        S("s05_detect", "lt14_detect", [N("Its radiation can't even get through skin.", pause_before=0.1)],
+          "tension", ["L_alpha"], sfx=[fw(0, 3, "sparkle", 0.8, -0.1), fw(0, 6, "beep", 0.35, 0.1)],
+          emph=["can't", "skin."], min_d=4.0, pad=0.4, tr="push"),
+        S("s06_trail", "lt14_trail", [N("They traced it across London: a sushi bar, offices, his home."),
+                                      N("Even Arsenal's stadium, where the two men watched a match.", pause_before=0.25)],
+          "tension-rise", ["L_trail", "L_planes", "L_stadium"],
+          sfx=[fw(0, 1, "whoosh", 0.4, -0.1), fw(0, 6, "ping", 0.45), fw(0, 8, "ping", 0.45), fw(0, 10, "ping", 0.45), fw(1, 1, "sparkle", 0.8, -0.1)],
+          emph=["london:", "home.", "arsenal's", "stadium,"], pad=0.35, tr="zoom"),
+        # C - questions: back to the teapot, then the charge
+        S("s07_hottest", "lt14_hottest", [N("And the hottest spot? The teapot.")],
+          "tension-peak", ["L_teapot"], sfx=[fw(0, 2, "beep", 0.45), fw(0, 5, "hit", 0.7, -0.05)],
+          emph=["hottest", "teapot."], min_d=3.0, pad=0.4, tr="zoom"),
+        S("s08_charge", "lt14_charge", [N("Britain charged Lugovoi with murder."),
+                                        N("Russia refused to extradite him.", pause_before=0.2)],
+          "tension", ["L_charge", "L_refuse"], sfx=[fx(0.0, "rain", 0.35), fw(0, 1, "paper", 0.5, -0.1), fw(1, 1, "stamp", 0.8, 0.05)],
+          emph=["charged", "refused"], pad=0.25, tr="push"),
+        # D - the inquiry report (held until late), the denials, the court
         S("s09_inquiry", "lt14_inquiry", [N("In 2016, a UK public inquiry concluded Lugovoi and Dmitry Kovtun poisoned him."),
-                                          N("It found they had tried once before, in October.", pause_before=0.2)],
-          "tension-peak", ["L_inquiry", "L_earlier"], sfx=[fx(0.1, "paper", 0.5), fw(0, 11, "hit", 0.5, -0.05), fw(1, 5, "thump", 0.5)],
-          emph=["concluded", "poisoned", "once", "before,"], pad=0.3, tr="push"),
-        # D - the highest finding, the denials, the court
-        S("s10_approved", "lt14_approved", [N("It said the operation was probably approved by President Putin and FSB chief Patrushev.", pause_before=0.1)],
-          "tension-peak", ["L_approved"], sfx=[fw(0, 6, "sub", 0.5, -0.1), fw(0, 13, "thump", 0.5)],
-          emph=["probably", "approved", "putin", "patrushev."], pad=0.35, tr="zoom"),
-        S("s11_deny", "lt14_deny", [N("Lugovoi has always denied it. So did Kovtun, who died in 2022."),
-                                    N("Russia denies any role.", pause_before=0.1)],
-          "tension", ["L_deny", "L_kovtun", "L_russia"], sfx=[fx(0.0, "rain", 0.35), fx(3.4, "rain", 0.3), fw(1, 1, "thud", 0.4)],
-          emph=["denied", "died", "denies"], pad=0.3, tr="fade"),
-        S("s12_echr", "lt14_echr", [N("In 2021, the European Court of Human Rights held Russia responsible.")],
-          "aftermath", ["L_echr"], sfx=[fw(0, 10, "gavel", 0.9, -0.08), fw(0, 10, "stamp", 0.5, 0.3)],
+                                          N("Probably approved, it said, by President Putin and FSB chief Patrushev.", pause_before=0.3)],
+          "tension-peak", ["L_inquiry", "L_approved"], sfx=[fx(0.1, "paper", 0.5), fw(0, 11, "hit", 0.5, -0.05), fw(1, 0, "sub", 0.5, -0.1)],
+          emph=["concluded", "poisoned", "probably", "approved,"], pad=0.3, tr="push"),
+        S("s10_deny", "lt14_deny", [N("Both men denied it."),
+                                    N("Kovtun died in 2022.", pause_before=0.2),
+                                    N("Russia denies any role.", pause_before=0.2)],
+          "tension", ["L_deny", "L_kovtun", "L_russia"], sfx=[fx(0.0, "rain", 0.35), fx(3.0, "rain", 0.3), fw(2, 1, "thud", 0.4)],
+          emph=["denied", "died", "role."], pad=0.25, tr="fade"),
+        S("s11_echr", "lt14_echr", [N("In 2021, the European Court of Human Rights held Russia responsible.")],
+          "tension-peak", ["L_echr"], sfx=[fw(0, 3, "paper", 0.4, -0.1), fw(0, 10, "stamp", 0.8, -0.05)],
           emph=["european", "responsible."], min_d=3.6, pad=0.3, tr="push"),
-        # E - the anniversary, then the call to action
-        S("s13_years", "lt14_years", [N("Next month marks 20 years. No one has ever stood trial.", pause_before=0.1)],
-          "aftermath", ["L_anniv", "L_notrial"], sfx=[fx(0.0, "wind", 0.4), fw(0, 5, "click", 0.4)],
-          emph=["20", "no", "trial."], min_d=4.0, pad=0.5, tr="fade"),
-        S("s14_next", "lt14_next", [N("Which case should we crack next? Tell us in the comments.", pause_before=0.1)],
-          "outro", [], sfx=[fx(0.15, "whoosh", 0.6), fw(0, 0, "ping", 0.5, 0.2)],
-          emph=["next?", "comments."], min_d=3.0, pad=1.8, tr="zoom"),
+        # E - the callback on the hero object, then the call to action (the last frame is the teapot again: the video loops)
+        S("s12_end", "lt14_end", [N("Twenty years on, no one has stood trial.", pause_before=0.1),
+                                  N("It all comes back to one teapot.", pause_before=0.45),
+                                  N("Which case next?", pause_before=0.45)],
+          "aftermath", ["L_anniv", "L_notrial", "L_teapot"], sfx=[fx(0.0, "wind", 0.4), fw(1, 6, "hit", 0.5, -0.05), fw(2, 0, "whoosh", 0.5, -0.2), fw(2, 2, "ping", 0.5)],
+          emph=["no", "trial.", "teapot.", "next?"], min_d=4.0, pad=1.7, tr="fade"),
     ]
-    sections = {"s01_hook": "A", "s02_who": "A", "s03_meet": "B", "s04_reveal": "B", "s05_detect": "B", "s06_trail": "B",
-                "s07_stadium": "C", "s08_charge": "C", "s09_inquiry": "C", "s10_approved": "D", "s11_deny": "D", "s12_echr": "D",
-                "s13_years": "E", "s14_next": "E"}
+    sections = {"s01_hook": "A", "s02_who": "A", "s03_meet": "B", "s04_poison": "B", "s05_detect": "B", "s06_trail": "B",
+                "s07_hottest": "C", "s08_charge": "C", "s09_inquiry": "D", "s10_deny": "D", "s11_echr": "D", "s12_end": "E"}
     for sc in scenes:
         sc["section"] = sections[sc["id"]]
-    scenes[3]["music_drop"] = True     # "Only hours before he died did scientists find it: polonium-210."
-    scenes[9]["music_drop"] = True     # "...probably approved by President Putin and FSB chief Patrushev."
+    scenes[3]["music_drop"] = True     # "Polonium-210."
+    scenes[8]["music_drop"] = True     # the inquiry's conclusion
     scenes[-1]["fade_out"] = True
 
     src = h.src
@@ -87,7 +89,6 @@ def build(h):
         src("scotlegal_inquiry", "Scottish Legal News", "Public inquiry implicates Putin in Litvinenko murder", "https://www.scottishlegal.com/articles/public-inquiry-implicates-putin-in-litvinenko-murder", "2016-01"),
         src("aa_inquiry", "Anadolu Agency", "UK report names Putin in ex-spy's London murder", "https://aa.com.tr/en/world/uk-report-names-putin-in-ex-spy-s-london-murder/508285", "2016-01"),
         src("ukhrb_inquiry", "UK Human Rights Blog", "Litvinenko: When real life is more fantastic than fiction", "https://ukhumanrightsblog.com/2016/01/25/litvinenko-when-real-life-is-more-fantastic-than-fiction/", "2016-01-25"),
-        src("nybooks_report", "The New York Review of Books", "Fatal Russian Poison in London: The Report", "https://www.nybooks.com/articles/2016/04/21/fatal-russian-poison-in-london-the-report/", "2016-04-21"),
         src("dailymail_teapot", "Daily Mail (via PressReader)", "Daily Mail, 22 January 2016 (inquiry report coverage)", "https://www.pressreader.com/uk/daily-mail/20160122/281784218104483", "2016-01-22"),
         src("itv_teapot", "ITV News", "Images released of teapot used to poison Litvinenko", "https://itv.com/news/update/2016-01-21/images-released-of-teapot-used-to-poison-litvinenko", "2016-01-21"),
         src("cai_poisoning", "Crime+Investigation UK", "Poisoning Alexander Litvinenko", "https://crimeandinvestigation.co.uk/articles/poisoning-alexander-litvinenko", "date not in extract"),
@@ -166,8 +167,6 @@ def build(h):
           ["ria_refuse", "jurist_refuse", "rferl_refuse"], "procedure"),
         C("L_inquiry", "The UK public inquiry chaired by Sir Robert Owen reported on 21 January 2016 that Lugovoi and Kovtun deliberately poisoned Litvinenko with polonium-210 at the Pine Bar on 1 November 2006 (placing it in the teapot), probably under the direction of the FSB. This is an inquiry finding, not a criminal verdict; neither man has been tried.",
           ["vice_inquiry", "hurriyet_inquiry", "buzzfeed_inquiry", "scotlegal_inquiry", "aa_inquiry"], "finding"),
-        C("L_earlier", "The inquiry found that the two men had made an earlier attempt to poison Litvinenko with polonium-210 at a meeting at the Erinys office on 16 October 2006.",
-          ["ukhrb_inquiry", "nybooks_report", "cai_poisoning"], "finding"),
         C("L_approved", "The inquiry concluded that the FSB operation to kill Litvinenko was 'probably approved' by Nikolai Patrushev, then director of the FSB, and also by President Putin.",
           ["vice_inquiry", "hurriyet_inquiry", "buzzfeed_inquiry", "aa_inquiry"], "finding"),
         C("L_deny", "Lugovoi has denied any involvement since 2007, calling the accusations politically motivated, and disputed the 2016 findings; Kovtun also denied it (in 2015 he suggested the death was an accident).",
@@ -184,16 +183,16 @@ def build(h):
           ["jurist_refuse", "arabnews_kovtun", "irishlegal_echr", "ukgov_sanctions"], "procedure"),
     ]
 
-    figures = ["lt14_guest", "lt14_visitor_a", "lt14_visitor_b", "lt14_tech", "lt14_barman", "scientist", "analyst", "detective", "official", "agent_b", "press_operator"]
+    figures = ["lt14_guest", "lt14_visitor_a", "lt14_visitor_b", "lt14_tech", "lt14_barman", "scientist", "analyst", "detective", "official", "agent_b", "press_operator", "judge"]
     ep = h.base("tcv14-litvinenko", 14, "The Cup of Tea That Left a Radioactive Trail",
                 "How did investigators trace the polonium that killed Alexander Litvinenko, and why has no one stood trial?",
                 figures, scenes, claims, sources, "ALEXANDER LITVINENKO · 2006-2026", bpm=84)
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={
         "polonium-210": "polonium two ten", "FSB": "F S B", "UK": "U K",
-        "Lugovoi": "Loogovoy", "Kovtun": "Kovtoon", "Patrushev": "Patrooshev", "Litvinenko": "Litvinyenko"})
+        "Lugovoi": "Lugovoy", "Kovtun": "Kovtoon", "Patrushev": "Patrooshev", "Litvinenko": "Litvinyenko"})
     ep["score"] = {"root_hz": 138.59, "bpm": 84,
-                   "hits": [{"scene": "s04_reveal", "word": [1, 9], "at": -0.05, "gain": 0.45}],
-                   "cliff": {"scene": "s13_years", "word": [0, 10], "at": -0.08}}
+                   "hits": [{"scene": "s04_poison", "word": [2, 0], "at": -0.05, "gain": 0.45}],
+                   "cliff": {"scene": "s12_end", "word": [0, 7], "at": -0.08}}
     ep["content_notes"] = ("No trial has taken place. The killers are named only as the findings of a UK public inquiry (2016) and the European Court of Human Rights (2021), "
                            "always attributed; Lugovoi's denial, Kovtun's denial and his death in 2022, and Russia's denial are stated. Nobody is called a murderer in the "
                            "narrator's voice. Everyone on screen, Litvinenko included, is an anonymous rim-lit silhouette; no real person's likeness, no flags, emblems or "

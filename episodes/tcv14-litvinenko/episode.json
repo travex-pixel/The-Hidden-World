@@ -16,7 +16,7 @@
    "polonium-210": "polonium two ten",
    "FSB": "F S B",
    "UK": "U K",
-   "Lugovoi": "Loogovoy",
+   "Lugovoi": "Lugovoy",
    "Kovtun": "Kovtoon",
    "Patrushev": "Patrooshev",
    "Litvinenko": "Litvinyenko"
@@ -44,20 +44,20 @@
   "bpm": 84,
   "hits": [
    {
-    "scene": "s04_reveal",
+    "scene": "s04_poison",
     "word": [
-     1,
-     9
+     2,
+     0
     ],
     "at": -0.05,
     "gain": 0.45
    }
   ],
   "cliff": {
-   "scene": "s13_years",
+   "scene": "s12_end",
    "word": [
     0,
-    10
+    7
    ],
    "at": -0.08
   }
@@ -73,15 +73,16 @@
   "detective",
   "official",
   "agent_b",
-  "press_operator"
+  "press_operator",
+  "judge"
  ],
  "content_notes": "No trial has taken place. The killers are named only as the findings of a UK public inquiry (2016) and the European Court of Human Rights (2021), always attributed; Lugovoi's denial, Kovtun's denial and his death in 2022, and Russia's denial are stated. Nobody is called a murderer in the narrator's voice. Everyone on screen, Litvinenko included, is an anonymous rim-lit silhouette; no real person's likeness, no flags, emblems or leaders are shown. The illness, the hospital bed and the death are never depicted. The hotel bar, the London streets and the trail map are generic illustrations, not replicas; the map names only verified places. No real document, photograph, logo or court material is imitated. No dialogue is invented. Legal status verified 2026-10-11.",
  "scenes": [
   {
    "id": "s01_hook",
    "scene": "lt14_hook",
-   "min_duration": 4.4,
-   "pad_after": 0.3,
+   "min_duration": 4.0,
+   "pad_after": 0.25,
    "music_cue": "cold",
    "sfx": [
     {
@@ -93,19 +94,10 @@
      "at": 0.0,
      "word": [
       0,
-      1
-     ],
-     "name": "static",
-     "gain": 0.35
-    },
-    {
-     "at": -0.15,
-     "word": [
-      1,
       2
      ],
-     "name": "beep",
-     "gain": 0.5
+     "name": "click",
+     "gain": 0.35
     },
     {
      "at": -0.05,
@@ -114,10 +106,31 @@
       4
      ],
      "name": "hit",
+     "gain": 0.6
+    },
+    {
+     "at": -0.1,
+     "word": [
+      2,
+      0
+     ],
+     "name": "static",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      5
+     ],
+     "name": "hit",
      "gain": 0.7
     }
    ],
    "claims": [
+    "L_tea",
+    "L_meet",
+    "L_died",
     "L_sweep",
     "L_teapot"
    ],
@@ -126,27 +139,33 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Investigators swept a London hotel bar for radiation."
+     "text": "A man drank tea in a London hotel bar."
     },
     {
      "who": "narrator",
-     "text": "The hottest spot? A teapot.",
-     "pause_before": 0.25
+     "text": "Three weeks later, he was dead.",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Investigators found the teapot was radioactive.",
+     "pause_before": 0.3
     }
    ],
    "shot": {},
    "emphasis": [
-    "radiation.",
-    "hottest",
-    "teapot."
+    "tea",
+    "dead.",
+    "teapot",
+    "radioactive."
    ],
    "section": "A"
   },
   {
    "id": "s02_who",
    "scene": "lt14_who",
-   "min_duration": 3.6,
-   "pad_after": 0.3,
+   "min_duration": 3.0,
+   "pad_after": 0.25,
    "music_cue": "unease",
    "sfx": [
     {
@@ -155,7 +174,7 @@
      "gain": 0.35
     },
     {
-     "at": 3.4,
+     "at": 3.0,
      "name": "rain",
      "gain": 0.3
     },
@@ -172,14 +191,13 @@
      "at": 0.0,
      "word": [
       0,
-      4
+      5
      ],
      "name": "step",
      "gain": 0.3
     }
    ],
    "claims": [
-    "L_tea",
     "L_who"
    ],
    "transition": "push",
@@ -187,12 +205,12 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Alexander Litvinenko drank from it: a former Russian security officer and Kremlin critic."
+     "text": "Alexander Litvinenko. Former Russian security officer. Kremlin critic."
     }
    ],
    "shot": {},
    "emphasis": [
-    "litvinenko",
+    "litvinenko.",
     "kremlin",
     "critic."
    ],
@@ -202,7 +220,7 @@
    "id": "s03_meet",
    "scene": "lt14_meet",
    "min_duration": 2.0,
-   "pad_after": 0.4,
+   "pad_after": 0.25,
    "music_cue": "unease",
    "sfx": [
     {
@@ -233,7 +251,7 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "On November 1st, 2006, he had met two Russian men there."
+     "text": "November 1st, 2006: he had met two Russian men there."
     },
     {
      "who": "narrator",
@@ -250,10 +268,10 @@
    "section": "B"
   },
   {
-   "id": "s04_reveal",
-   "scene": "lt14_reveal",
+   "id": "s04_poison",
+   "scene": "lt14_poison",
    "min_duration": 2.0,
-   "pad_after": 0.5,
+   "pad_after": 0.45,
    "music_cue": "revelation",
    "sfx": [
     {
@@ -273,17 +291,17 @@
     {
      "at": -0.05,
      "word": [
-      1,
-      9
+      2,
+      0
      ],
      "name": "hit",
      "gain": 0.7
     },
     {
-     "at": 0.2,
+     "at": 0.3,
      "word": [
-      1,
-      9
+      2,
+      0
      ],
      "name": "swell",
      "gain": 0.5
@@ -291,10 +309,9 @@
    ],
    "claims": [
     "L_mystery",
-    "L_po",
-    "L_died"
+    "L_po"
    ],
-   "transition": "flash",
+   "transition": "fade",
    "caption_y": 1380,
    "lines": [
     {
@@ -303,8 +320,13 @@
     },
     {
      "who": "narrator",
-     "text": "Only hours before he died did scientists find it: polonium-210.",
+     "text": "Hours before he died, scientists found it.",
      "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "Polonium-210.",
+     "pause_before": 0.35
     }
    ],
    "shot": {},
@@ -320,7 +342,7 @@
   {
    "id": "s05_detect",
    "scene": "lt14_detect",
-   "min_duration": 3.6,
+   "min_duration": 4.0,
    "pad_after": 0.4,
    "music_cue": "tension",
    "sfx": [
@@ -334,10 +356,10 @@
      "gain": 0.8
     },
     {
-     "at": 0.0,
+     "at": 0.1,
      "word": [
       0,
-      11
+      6
      ],
      "name": "beep",
      "gain": 0.35
@@ -351,22 +373,22 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Its radiation can't even pass through skin, so it's hard to detect.",
+     "text": "Its radiation can't even get through skin.",
      "pause_before": 0.1
     }
    ],
    "shot": {},
    "emphasis": [
-    "skin,",
-    "hard"
+    "can't",
+    "skin."
    ],
    "section": "B"
   },
   {
    "id": "s06_trail",
    "scene": "lt14_trail",
-   "min_duration": 4.2,
-   "pad_after": 0.5,
+   "min_duration": 2.0,
+   "pad_after": 0.35,
    "music_cue": "tension-rise",
    "sfx": [
     {
@@ -406,18 +428,19 @@
      "gain": 0.45
     },
     {
-     "at": 0.7,
+     "at": -0.1,
      "word": [
-      0,
-      10
+      1,
+      1
      ],
-     "name": "ping",
-     "gain": 0.4
+     "name": "sparkle",
+     "gain": 0.8
     }
    ],
    "claims": [
     "L_trail",
-    "L_planes"
+    "L_planes",
+    "L_stadium"
    ],
    "transition": "zoom",
    "caption_y": 1380,
@@ -425,53 +448,63 @@
     {
      "who": "narrator",
      "text": "They traced it across London: a sushi bar, offices, his home."
+    },
+    {
+     "who": "narrator",
+     "text": "Even Arsenal's stadium, where the two men watched a match.",
+     "pause_before": 0.25
     }
    ],
    "shot": {},
    "emphasis": [
     "london:",
-    "sushi",
-    "home."
+    "home.",
+    "arsenal's",
+    "stadium,"
    ],
    "section": "B"
   },
   {
-   "id": "s07_stadium",
-   "scene": "lt14_stadium",
-   "min_duration": 3.6,
-   "pad_after": 0.35,
-   "music_cue": "tension-rise",
+   "id": "s07_hottest",
+   "scene": "lt14_hottest",
+   "min_duration": 3.0,
+   "pad_after": 0.4,
+   "music_cue": "tension-peak",
    "sfx": [
     {
-     "at": -0.1,
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "beep",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
      "word": [
       0,
       5
      ],
-     "name": "sparkle",
-     "gain": 0.8
-    },
-    {
-     "at": 0.2,
-     "name": "rumble",
-     "gain": 0.3
+     "name": "hit",
+     "gain": 0.7
     }
    ],
    "claims": [
-    "L_stadium"
+    "L_teapot"
    ],
-   "transition": "push",
+   "transition": "zoom",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "Traces even turned up at Arsenal's stadium, where the two men watched a match."
+     "text": "And the hottest spot? The teapot."
     }
    ],
    "shot": {},
    "emphasis": [
-    "arsenal's",
-    "stadium,"
+    "hottest",
+    "teapot."
    ],
    "section": "C"
   },
@@ -479,7 +512,7 @@
    "id": "s08_charge",
    "scene": "lt14_charge",
    "min_duration": 2.0,
-   "pad_after": 0.3,
+   "pad_after": 0.25,
    "music_cue": "tension",
    "sfx": [
     {
@@ -499,8 +532,8 @@
     {
      "at": 0.05,
      "word": [
-      0,
-      7
+      1,
+      1
      ],
      "name": "stamp",
      "gain": 0.8
@@ -515,7 +548,12 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Britain charged Andrei Lugovoi with murder. Russia refused to extradite him."
+     "text": "Britain charged Lugovoi with murder."
+    },
+    {
+     "who": "narrator",
+     "text": "Russia refused to extradite him.",
+     "pause_before": 0.2
     }
    ],
    "shot": {},
@@ -547,18 +585,18 @@
      "gain": 0.5
     },
     {
-     "at": 0.0,
+     "at": -0.1,
      "word": [
       1,
-      5
+      0
      ],
-     "name": "thump",
+     "name": "sub",
      "gain": 0.5
     }
    ],
    "claims": [
     "L_inquiry",
-    "L_earlier"
+    "L_approved"
    ],
    "transition": "push",
    "caption_y": 1380,
@@ -569,72 +607,25 @@
     },
     {
      "who": "narrator",
-     "text": "It found they had tried once before, in October.",
-     "pause_before": 0.2
+     "text": "Probably approved, it said, by President Putin and FSB chief Patrushev.",
+     "pause_before": 0.3
     }
    ],
    "shot": {},
    "emphasis": [
     "concluded",
     "poisoned",
-    "once",
-    "before,"
-   ],
-   "section": "C"
-  },
-  {
-   "id": "s10_approved",
-   "scene": "lt14_approved",
-   "min_duration": 2.0,
-   "pad_after": 0.35,
-   "music_cue": "tension-peak",
-   "sfx": [
-    {
-     "at": -0.1,
-     "word": [
-      0,
-      6
-     ],
-     "name": "sub",
-     "gain": 0.5
-    },
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      13
-     ],
-     "name": "thump",
-     "gain": 0.5
-    }
-   ],
-   "claims": [
-    "L_approved"
-   ],
-   "transition": "zoom",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "It said the operation was probably approved by President Putin and FSB chief Patrushev.",
-     "pause_before": 0.1
-    }
-   ],
-   "shot": {},
-   "emphasis": [
     "probably",
-    "approved",
-    "putin",
-    "patrushev."
+    "approved,"
    ],
    "section": "D",
    "music_drop": true
   },
   {
-   "id": "s11_deny",
+   "id": "s10_deny",
    "scene": "lt14_deny",
    "min_duration": 2.0,
-   "pad_after": 0.3,
+   "pad_after": 0.25,
    "music_cue": "tension",
    "sfx": [
     {
@@ -643,14 +634,14 @@
      "gain": 0.35
     },
     {
-     "at": 3.4,
+     "at": 3.0,
      "name": "rain",
      "gain": 0.3
     },
     {
      "at": 0.0,
      "word": [
-      1,
+      2,
       1
      ],
      "name": "thud",
@@ -667,46 +658,51 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Lugovoi has always denied it. So did Kovtun, who died in 2022."
+     "text": "Both men denied it."
+    },
+    {
+     "who": "narrator",
+     "text": "Kovtun died in 2022.",
+     "pause_before": 0.2
     },
     {
      "who": "narrator",
      "text": "Russia denies any role.",
-     "pause_before": 0.1
+     "pause_before": 0.2
     }
    ],
    "shot": {},
    "emphasis": [
     "denied",
     "died",
-    "denies"
+    "role."
    ],
    "section": "D"
   },
   {
-   "id": "s12_echr",
+   "id": "s11_echr",
    "scene": "lt14_echr",
    "min_duration": 3.6,
    "pad_after": 0.3,
-   "music_cue": "aftermath",
+   "music_cue": "tension-peak",
    "sfx": [
     {
-     "at": -0.08,
+     "at": -0.1,
      "word": [
       0,
-      10
+      3
      ],
-     "name": "gavel",
-     "gain": 0.9
+     "name": "paper",
+     "gain": 0.4
     },
     {
-     "at": 0.3,
+     "at": -0.05,
      "word": [
       0,
       10
      ],
      "name": "stamp",
-     "gain": 0.5
+     "gain": 0.8
     }
    ],
    "claims": [
@@ -728,10 +724,10 @@
    "section": "D"
   },
   {
-   "id": "s13_years",
-   "scene": "lt14_years",
+   "id": "s12_end",
+   "scene": "lt14_end",
    "min_duration": 4.0,
-   "pad_after": 0.5,
+   "pad_after": 1.7,
    "music_cue": "aftermath",
    "sfx": [
     {
@@ -740,72 +736,63 @@
      "gain": 0.4
     },
     {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": -0.2,
+     "word": [
+      2,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
      "at": 0.0,
      "word": [
-      0,
-      5
+      2,
+      2
      ],
-     "name": "click",
-     "gain": 0.4
+     "name": "ping",
+     "gain": 0.5
     }
    ],
    "claims": [
     "L_anniv",
-    "L_notrial"
+    "L_notrial",
+    "L_teapot"
    ],
    "transition": "fade",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "Next month marks 20 years. No one has ever stood trial.",
+     "text": "Twenty years on, no one has stood trial.",
      "pause_before": 0.1
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "20",
-    "no",
-    "trial."
-   ],
-   "section": "E"
-  },
-  {
-   "id": "s14_next",
-   "scene": "lt14_next",
-   "min_duration": 3.0,
-   "pad_after": 1.8,
-   "music_cue": "outro",
-   "sfx": [
-    {
-     "at": 0.15,
-     "name": "whoosh",
-     "gain": 0.6
     },
     {
-     "at": 0.2,
-     "word": [
-      0,
-      0
-     ],
-     "name": "ping",
-     "gain": 0.5
-    }
-   ],
-   "claims": [],
-   "transition": "zoom",
-   "caption_y": 1380,
-   "lines": [
+     "who": "narrator",
+     "text": "It all comes back to one teapot.",
+     "pause_before": 0.45
+    },
     {
      "who": "narrator",
-     "text": "Which case should we crack next? Tell us in the comments.",
-     "pause_before": 0.1
+     "text": "Which case next?",
+     "pause_before": 0.45
     }
    ],
    "shot": {},
    "emphasis": [
-    "next?",
-    "comments."
+    "no",
+    "trial.",
+    "teapot.",
+    "next?"
    ],
    "section": "E",
    "fade_out": true
@@ -992,17 +979,6 @@
    ]
   },
   {
-   "id": "L_earlier",
-   "type": "established",
-   "nature": "finding",
-   "text": "The inquiry found that the two men had made an earlier attempt to poison Litvinenko with polonium-210 at a meeting at the Erinys office on 16 October 2006.",
-   "sources": [
-    "ukhrb_inquiry",
-    "nybooks_report",
-    "cai_poisoning"
-   ]
-  },
-  {
    "id": "L_approved",
    "type": "established",
    "nature": "finding",
@@ -1138,14 +1114,6 @@
    "title": "Litvinenko: When real life is more fantastic than fiction",
    "url": "https://ukhumanrightsblog.com/2016/01/25/litvinenko-when-real-life-is-more-fantastic-than-fiction/",
    "date": "2016-01-25",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
-   "id": "nybooks_report",
-   "publisher": "The New York Review of Books",
-   "title": "Fatal Russian Poison in London: The Report",
-   "url": "https://www.nybooks.com/articles/2016/04/21/fatal-russian-poison-in-london-the-report/",
-   "date": "2016-04-21",
    "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
   },
   {
