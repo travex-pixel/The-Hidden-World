@@ -798,8 +798,9 @@ function cineFunFact(o, lt, d) {   // yellow FUN FACT pop-up (verified facts onl
   const rows = o.rows || []; const w = o.w || 820, x = o.x ?? (W - w - 90), y = o.y ?? 150; const h = 70 + rows.length * 58;
   ctx.save(); ctx.globalAlpha = out; ctx.translate(x + w / 2, y + h / 2); ctx.scale(Math.max(0.001, pop), Math.max(0.001, pop)); ctx.translate(-(x + w / 2), -(y + h / 2));
   ctx.fillStyle = 'rgba(17,19,23,0.94)'; rr(x, y, w, h, 22); ctx.fill(); ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 5; ctx.stroke();
-  ctx.save(); ctx.translate(x + 150, y); ctx.rotate(-0.07); ctx.fillStyle = '#ffd23f'; rr(-130, -34, 260, 64, 32); ctx.fill(); ctx.strokeStyle = '#141414'; ctx.lineWidth = 4; ctx.stroke();
-  setText(36, 900, 'display', '#141414', 'center', 'middle', 1); ctx.fillText(o.kicker || 'FUN FACT!', 0, 0); ctx.restore();
+  const kt = o.kicker || 'FUN FACT!'; setText(36, 900, 'display', '#141414', 'center', 'middle', 1); const bw = Math.max(260, ctx.measureText(kt).width + 48);   // badge grows for longer kickers
+  ctx.save(); ctx.translate(x + Math.max(150, bw / 2 + 20), y); ctx.rotate(-0.07); ctx.fillStyle = '#ffd23f'; rr(-bw / 2, -34, bw, 64, 32); ctx.fill(); ctx.strokeStyle = '#141414'; ctx.lineWidth = 4; ctx.stroke();
+  setText(36, 900, 'display', '#141414', 'center', 'middle', 1); ctx.fillText(kt, 0, 0); ctx.restore();
   rows.forEach((r_, i) => { setText(r_.size || 40, 800, 'sans', r_.color ? COLOR(r_.color) : '#f6f1e6', 'left', 'alphabetic'); ctx.fillText(r_.text, x + 36, y + 92 + i * 58); });
   ctx.restore();
 }

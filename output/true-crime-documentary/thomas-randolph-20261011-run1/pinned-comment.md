@@ -1,0 +1,1 @@
+Thomas Randolph was convicted in 2023 and the Nevada Supreme Court upheld the conviction in August 2026; he says he is innocent. In Utah, a jury acquitted him in 1989. Which part of the record surprised you most: the reversal, the walkthrough video or the 911 call? Sources are in the description.

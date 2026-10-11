@@ -116,6 +116,43 @@
    "needs_new_render": false,
    "state": "open",
    "raised": "2026-10-11"
+  },
+  {
+   "id": "AUD-01",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [
+    "R-SIX",
+    "R-ARREST",
+    "R-INNOCENT"
+   ],
+   "lines": [
+    31,
+    42,
+    69
+   ],
+   "problem": "Offline speech recognition on the MP4's own audio: corpus word-error rate 5.9%. 8 lines are over 20%, mostly numbers read as words, names (Slepian, O'Kelley, Gault) and homophones ('two juries' heard as 'to jury's'). Three are worth a listen: 2:22 'sixth wife' (heard 'six wife'), 3:34 'He was fifty-three' (heard 'fifth, three'), 6:39 'he is innocent' (heard 'he, he was innocent').",
+   "evidence": "audit/asr-audit.json (sherpa-onnx Moonshine base). The narration is synthesised from the script text, so inserted words are recognition errors; mispronunciations are possible.",
+   "recommendation": "Listen at 2:22, 3:34 and 6:39. If any is wrong, fixing it needs a new versioned render.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "AUD-02",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [
+    1,
+    33
+   ],
+   "problem": "Cosmetic: two yellow pop-up badges are wider than the fixed badge, so 'INVESTIGATORS' (about 2:40) is clipped at both ends, and 'HIS ACCOUNT' (about 0:05) only just fits. The text inside the cards is unaffected.",
+   "evidence": "contact_sheet.png; renderer fix in documentary/renderer/doc.js (badge width follows the text; default 'FUN FACT!' badges in earlier films stay pixel-identical).",
+   "recommendation": "Acceptable as is. A v2 cut rendered with the fixed renderer would remove it; per the house rule that would be a new versioned file, not an overwrite.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
   }
  ]
 }

@@ -70,7 +70,7 @@ if (opt('--stills')) {
     const seg = join(segDir, `seg_${k}.mp4`); segs.push(seg); jobs.push(renderRange(a, b, seg, k));
   }
   await Promise.all(jobs);
-  writeFileSync(join(segDir, 'list.txt'), segs.map(s => `file '${s}'`).join('\n'));
+  writeFileSync(join(segDir, 'list.txt'), segs.map(s => `file '${resolve(s)}'`).join('\n'));   // concat resolves relative entries against the list's own folder
   await new Promise((res, rej) => spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', join(segDir, 'list.txt'), '-c', 'copy', outPath], { stdio: 'inherit' })
     .on('close', c => c === 0 ? res() : rej(new Error('concat failed ' + c))));
   rmSync(segDir, { recursive: true, force: true });

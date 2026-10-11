@@ -142,6 +142,13 @@ def chunk_caption(text: str, max_chars: int = 42, max_lines: int = 2) -> list[st
         cur.append(w)
     if cur:
         cues.append(cur)
+    # no stub cue at the end of a sentence ("trials."): re-split the last two cues as evenly as they fit
+    if len(cues) >= 2 and len(" ".join(cues[-1])) < 16:
+        both = cues[-2] + cues[-1]
+        splits = [(min(len(" ".join(both[:k])), len(" ".join(both[k:]))) + (4 if re.search(r"[,;:.?!—]$", both[k - 1]) else 0), k)
+                  for k in range(1, len(both)) if fits(both[:k])[0] and fits(both[k:])[0]]
+        if splits:
+            k = max(splits)[1]; cues[-2:] = [both[:k], both[k:]]
     out = []
     for c in cues:
         out.append("\n".join(balance(c, max_chars)))
@@ -183,11 +190,13 @@ def build_captions(timeline: list[dict]) -> list[dict]:
                 d = (b - a) * w / tot
                 cues.append({"start": round(t, 3), "end": round(t + d, 3), "text": p})
                 t += d
-    # never let a cue flash: extend short cues into following silence where possible
+    # never let a cue flash, and give fast cues reading time (~20 characters a second): extend into the following
+    # silence where possible; a cue is never shortened
     for i, c in enumerate(cues):
         nxt = cues[i + 1]["start"] if i + 1 < len(cues) else c["end"] + 2
-        if c["end"] - c["start"] < 1.0:
-            c["end"] = round(min(nxt - 0.05, c["start"] + 1.0), 3)
+        need = max(1.0, len(c["text"].replace("\n", " ")) / 20.0)
+        if c["end"] - c["start"] < need:
+            c["end"] = round(max(c["end"], min(nxt - 0.05, c["start"] + need)), 3)
     return cues
 
 
