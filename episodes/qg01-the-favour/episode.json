@@ -1,0 +1,7044 @@
+{
+ "id": "qg01-the-favour",
+ "number": 1,
+ "series": "THE QUIET GAME",
+ "title": "The Favour",
+ "youtube_title": "The Nicest Person in the Office Might Be Playing You",
+ "central_question": "When does a small favour at work stop being kindness and become a trap?",
+ "template": "thriller",
+ "format": "landscape",
+ "narrator_voice": "en_GB-alba-medium",
+ "target_duration_seconds": [
+  420,
+  560
+ ],
+ "visual_mode": "svg",
+ "caption_style": "thriller",
+ "cast": [
+  "daniel",
+  "graham",
+  "leah",
+  "ruth",
+  "narrator"
+ ],
+ "fiction_notice": "A fictional story. Characters, companies and events are invented. The psychology is real.",
+ "music": {
+  "bpm": 84
+ },
+ "figures": {
+  "with_filter": 93.4,
+  "without_filter": 92.6,
+  "target": 93.0,
+  "northfield": 81.1,
+  "northfield_share": 0.065,
+  "others": {
+   "Ashby": [
+    95.0,
+    0.3
+   ],
+   "Barrow": [
+    93.0,
+    0.3
+   ],
+   "Carlton": [
+    92.5,
+    0.4
+   ]
+  }
+ },
+ "scenes": [
+  {
+   "id": "c01_cold_kitchen",
+   "scene": "ws_stage",
+   "min_duration": 5.0,
+   "pad_after": 0.32,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swell"
+    },
+    {
+     "at": 0.6,
+     "name": "door"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "cold",
+    "flash": true,
+    "chip": "THURSDAY · 16:42",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.08,
+      1.0
+     ],
+     "handheld": 0.6
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1500,
+      "y": 400,
+      "scale": 0.62,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0
+        ],
+        "turn": 0.5,
+        "x": 1420
+       },
+       {
+        "t": 0.4,
+        "x": 1880,
+        "dur": 2.6
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "cross",
+        "r": "cross"
+       }
+      ]
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 760,
+      "y": 460,
+      "scale": 1.18,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "guilty",
+        "gaze": [
+         0.5,
+         0.2
+        ],
+        "turn": 0.35,
+        "tilt": -3
+       },
+       {
+        "t": 2.6,
+        "expr": "tight",
+        "gaze": [
+         0.1,
+         0.6
+        ],
+        "turn": 0.1,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At 9:07 on Monday morning, Daniel Hale did his manager a favour.",
+     "speed": 0.97,
+     "pause_before": 0.42,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "Monday, 9:07"
+  },
+  {
+   "id": "c02_cold_email",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "ping"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "cold",
+    "flash": true,
+    "ui": {
+     "kind": "email",
+     "app": "Mail",
+     "from": "Ruth Adeyemi",
+     "to": "Client Reporting team",
+     "subject": "Ostrel Q3: who built these numbers?",
+     "body": [
+      "Team,",
+      "",
+      "Ostrel say our Q3 figures don't reconcile with theirs.",
+      "I'd like to understand how this happened before Friday.",
+      "",
+      "Ruth"
+     ],
+     "highlight": [
+      "who built these numbers"
+     ],
+     "highlight_at": 1.0
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "By Thursday, a colleague was being blamed for a mistake she hadn't made.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c03_cold_graham",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.6,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "warm",
+    "flash": true,
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.07
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 960,
+      "y": 410,
+      "scale": 1.25,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.2,
+         0.3
+        ],
+        "turn": -0.15,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "expr": "charm",
+        "gaze": [
+         0,
+         0
+        ],
+        "turn": -0.05,
+        "tilt": -4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "polish",
+        "r": "polish"
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "l": "steeple",
+        "r": "steeple",
+        "dur": 0.8
+       }
+      ],
+      "glasses_off": [
+       {
+        "t": 0,
+        "dur": 4.0
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Daniel knew the truth. So did one other person: his manager.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "And his manager never once raised his voice.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c04_title",
+   "scene": "ws_title",
+   "min_duration": 4.3,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "swell"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "title": "THE QUIET GAME",
+    "subtitle": "EPISODE 1 · THE FAVOUR",
+    "notice": "A fictional story. The psychology is real."
+   },
+   "silent": true,
+   "caption": "Title card: The Quiet Game, Episode 1, The Favour.",
+   "caption_mode": "card",
+   "visual_note": "Title card: The Quiet Game, Episode 1, The Favour."
+  },
+  {
+   "id": "c05_monday",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh"
+    },
+    {
+     "at": 1.4,
+     "name": "tick"
+    },
+    {
+     "at": 1.7,
+     "name": "tick"
+    },
+    {
+     "at": 2.1,
+     "name": "tick"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "day",
+    "chip": "MONDAY · 08:52",
+    "rewind": 1.0,
+    "bg_blur": 3,
+    "chapter_tag": {
+     "n": "CHAPTER 1",
+     "title": "The team",
+     "hold": 5
+    },
+    "lower_third": {
+     "who": "daniel",
+     "name": "Daniel Hale",
+     "role": "Reporting Analyst",
+     "at": 4.8,
+     "hold": 4.0
+    },
+    "camera": {
+     "zoom": [
+      1.12,
+      1.0
+     ],
+     "x": [
+      -60,
+      0
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      },
+      {
+       "kind": "mug",
+       "x": 420,
+       "colour": "#4f7cac"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.55,
+         0.35
+        ],
+        "turn": 0.32,
+        "tilt": -2
+       },
+       {
+        "line": 2,
+        "off": 1.0,
+        "expr": "pleased",
+        "gaze": [
+         0.5,
+         0.3
+        ],
+        "turn": 0.3,
+        "tilt": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Rewind to Monday.",
+     "speed": 0.97,
+     "pause_before": 0.77,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Daniel Hale, thirty-two. Reporting analyst at a logistics firm.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "The person everyone sends their spreadsheets to when they need them right.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "The team"
+  },
+  {
+   "id": "c06_leah_arrives",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "step"
+    },
+    {
+     "at": 0.7,
+     "name": "step"
+    },
+    {
+     "at": 1.2,
+     "name": "step"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "day",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      },
+      {
+       "kind": "mug",
+       "x": 420,
+       "colour": "#4f7cac"
+      }
+     ]
+    },
+    "lower_third": {
+     "who": "leah",
+     "name": "Leah Carter",
+     "role": "Data Analyst",
+     "at": 1.2,
+     "hold": 3.6,
+     "x": 1380,
+     "y": 700
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.3
+        ],
+        "turn": 0.32
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "expr": "pleased",
+        "gaze": [
+         0.7,
+         -0.1
+        ],
+        "turn": 0.45,
+        "tilt": -3
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         0.7,
+         -0.15
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 0,
+        "off": 0.6,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 1,
+        "off": 0.1,
+        "r": "talk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1960,
+      "y": 380,
+      "scale": 0.82,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.1
+        ],
+        "turn": -0.4,
+        "x": 2100
+       },
+       {
+        "t": 0.1,
+        "x": 1520,
+        "dur": 1.4
+       },
+       {
+        "line": 0,
+        "off": 0.2,
+        "expr": "pleased",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45,
+        "tilt": 3
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.2
+        ],
+        "turn": -0.4,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "paper",
+        "r": "paper"
+       },
+       {
+        "line": 0,
+        "off": 0.5,
+        "l": "rest",
+        "r": "talk"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "Final depot extract's in the folder. Every depot, every delivery.",
+     "pause_before": 1.19
+    },
+    {
+     "who": "daniel",
+     "text": "You're a star. I'll have the client pack out by ten."
+    }
+   ]
+  },
+  {
+   "id": "c07_leah_desk",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "day",
+    "bg_blur": 4,
+    "glass_office": false,
+    "camera": {
+     "zoom": [
+      1.05,
+      1.0
+     ],
+     "x": [
+      30,
+      0
+     ]
+    },
+    "desk": {
+     "back": 720,
+     "front": 880,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 640,
+       "flip": false
+      },
+      {
+       "kind": "keyboard",
+       "x": 1020
+      },
+      {
+       "kind": "notebook",
+       "x": 1330,
+       "colour": "#e06a4f"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1040,
+      "y": 420,
+      "scale": 0.86,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.55,
+         0.35
+        ],
+        "turn": -0.32,
+        "tilt": 2
+       },
+       {
+        "line": 1,
+        "off": 0.8,
+        "expr": "skeptical",
+        "gaze": [
+         -0.5,
+         0.3
+        ],
+        "turn": -0.3,
+        "tilt": 4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 1,
+        "off": 1.6,
+        "r": "chin"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Leah Carter joined eight months ago. She builds the data.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Daniel turns it into the report the client sees.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c08_coffee",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "intimate",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "step"
+    },
+    {
+     "at": 1.0,
+     "name": "step"
+    },
+    {
+     "at": 1.7,
+     "name": "step"
+    },
+    {
+     "at": 3.3,
+     "name": "thud"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "x": [
+      0,
+      -20
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      },
+      {
+       "kind": "mug",
+       "x": 1060,
+       "colour": "#8c3b4a",
+       "steam": true,
+       "from": 3.3
+      }
+     ]
+    },
+    "lower_third": {
+     "who": "graham",
+     "name": "Graham Royce",
+     "role": "Head of Client Reporting",
+     "at": 5.2,
+     "hold": 4.0,
+     "x": 1300,
+     "y": 640
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.3
+       },
+       {
+        "t": 2.2,
+        "expr": "pleased",
+        "gaze": [
+         0.7,
+         -0.2
+        ],
+        "turn": 0.45,
+        "tilt": -3
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         0.65,
+         -0.25
+        ],
+        "turn": 0.45,
+        "tilt": -4
+       },
+       {
+        "line": 2,
+        "off": 0.6,
+        "expr": "pleased",
+        "gaze": [
+         0.6,
+         -0.2
+        ],
+        "turn": 0.42,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "t": 2.4,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 2080,
+      "y": 340,
+      "scale": 0.84,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.5,
+         0.2
+        ],
+        "turn": -0.35,
+        "x": 2080
+       },
+       {
+        "t": 0.2,
+        "x": 1380,
+        "dur": 2.4
+       },
+       {
+        "t": 2.8,
+        "expr": "charm",
+        "gaze": [
+         -0.6,
+         0.35
+        ],
+        "turn": -0.4,
+        "tilt": 3
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "charm",
+        "gaze": [
+         -0.55,
+         0.3
+        ],
+        "turn": -0.38,
+        "tilt": 4,
+        "lean": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "mug"
+       },
+       {
+        "t": 2.7,
+        "l": "offer",
+        "dur": 0.6
+       },
+       {
+        "t": 3.4,
+        "l": "rest",
+        "dur": 0.6
+       },
+       {
+        "line": 0,
+        "off": 0.8,
+        "r": "talk",
+        "dur": 0.5
+       },
+       {
+        "line": 2,
+        "off": 0.5,
+        "r": "rest"
+       }
+      ],
+      "mug_colour": "#8c3b4a",
+      "steam": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "Flat white, no sugar. Big day.",
+     "pause_before": 2.55
+    },
+    {
+     "who": "daniel",
+     "text": "You remembered."
+    },
+    {
+     "who": "graham",
+     "text": "I always remember.",
+     "pause_before": 0.17
+    }
+   ]
+  },
+  {
+   "id": "c10_inbox",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 1.2,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "ui": {
+     "kind": "inbox",
+     "items": [
+      {
+       "from": "Graham Royce",
+       "date": "12 Sep",
+       "subject": "Re: Leave request: approved. Go to the wedding, we'll cover.",
+       "at": 0.3,
+       "hot_at": "L1+0.0"
+      },
+      {
+       "from": "Graham Royce",
+       "date": "27 Sep",
+       "subject": "Senior Analyst nominations: I've put your name forward.",
+       "at": 0.5,
+       "hot_at": "L2+0.0"
+      },
+      {
+       "from": "Graham Royce",
+       "date": "3 Oct",
+       "subject": "Re: Friday: take the afternoon, you've earned it.",
+       "at": 0.7,
+       "hot_at": "L2+3.0"
+      },
+      {
+       "from": "Facilities",
+       "date": "4 Oct",
+       "subject": "Kitchen fridge clear-out on Friday",
+       "at": 0.9,
+       "colour": "#6b7280"
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He's patient, generous, and very good at remembering things.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Last month, he approved Daniel's leave at a day's notice.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Two weeks ago, he put Daniel's name forward for promotion.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c11_likes_him",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.04,
+      1.1
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 900,
+      "y": 440,
+      "scale": 1.02,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         0.3,
+         0.1
+        ],
+        "turn": 0.2,
+        "tilt": -3
+       },
+       {
+        "t": 2.0,
+        "expr": "pleased",
+        "gaze": [
+         0.45,
+         0.4
+        ],
+        "turn": 0.3,
+        "tilt": -1
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "mug"
+       }
+      ],
+      "mug_colour": "#8c3b4a",
+      "steam": true,
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Daniel likes him. Most people do.",
+     "speed": 0.97,
+     "pause_before": 0.34,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c12_dashboard",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "tension-rise",
+   "sfx": [],
+   "claims": [
+    "F1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "chip": "MONDAY · 09:03",
+    "chapter_tag": {
+     "n": "CHAPTER 2",
+     "title": "The favour",
+     "y": 860,
+     "hold": 4
+    },
+    "ui": {
+     "kind": "dashboard",
+     "with_filter": 93.4,
+     "without_filter": 92.6,
+     "target": 93.0,
+     "chips": [
+      "Client: Ostrel Foods",
+      "Period: Q3",
+      "Exclude: NORTHFIELD (migration)"
+     ],
+     "hot": 2,
+     "circle_at": "L1+0.6",
+     "remove_at": "L2+0.2",
+     "depots": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Northfield",
+       81.1
+      ]
+     ],
+     "hot_depot": "Northfield"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At 9:03, Daniel notices something small.",
+     "speed": 0.97,
+     "pause_before": 0.34,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "A filter left over from a system migration has removed one depot.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "With Northfield included, on-time delivery is 92.6 percent. Without it, 93.4.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "The client's contract target is 93.",
+     "speed": 0.97,
+     "pause_before": 0.17,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "The favour"
+  },
+  {
+   "id": "c13_realise",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.2,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "thump"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "cold",
+    "bg_blur": 5,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 900,
+      "y": 450,
+      "scale": 1.22,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.35
+       },
+       {
+        "t": 0.8,
+        "expr": "realise",
+        "gaze": [
+         0.65,
+         0.3
+        ],
+        "turn": 0.38,
+        "tilt": 2
+       },
+       {
+        "line": 0,
+        "off": 1.6,
+        "expr": "tight",
+        "gaze": [
+         0.2,
+         0.5
+        ],
+        "turn": 0.15,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "t": 0.8,
+        "l": "desk",
+        "r": "desk",
+        "dur": 0.3
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "Northfield's been filtered out.",
+     "pause_before": 1.36,
+     "speed": 1.1
+    }
+   ]
+  },
+  {
+   "id": "c14_knock",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "door"
+    },
+    {
+     "at": 0.4,
+     "name": "step"
+    },
+    {
+     "at": 0.9,
+     "name": "step"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "day",
+    "chip": "09:07",
+    "bg_blur": 2,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.03
+     ]
+    },
+    "desk": {
+     "back": 724,
+     "front": 884,
+     "x0": 900,
+     "x1": 2100,
+     "slant": 50,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1560
+      },
+      {
+       "kind": "mug",
+       "x": 1120,
+       "colour": "#8c3b4a"
+      },
+      {
+       "kind": "paper",
+       "x": 1340
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1330,
+      "y": 420,
+      "scale": 0.82,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.2
+       },
+       {
+        "t": 1.6,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         -0.1
+        ],
+        "turn": -0.4,
+        "tilt": 2
+       },
+       {
+        "line": 1,
+        "off": 0.5,
+        "expr": "neutral",
+        "gaze": [
+         -0.55,
+         0.0
+        ],
+        "turn": -0.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "t": 1.6,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": -200,
+      "y": 400,
+      "scale": 0.88,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0.1
+        ],
+        "turn": 0.4,
+        "x": -200
+       },
+       {
+        "t": 0.1,
+        "x": 560,
+        "dur": 1.4
+       },
+       {
+        "line": 0,
+        "off": 0.0,
+        "expr": "neutral",
+        "gaze": [
+         0.65,
+         0.05
+        ],
+        "turn": 0.42,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0.1
+        ],
+        "turn": 0.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       },
+       {
+        "line": 0,
+        "off": 0.8,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 2.0,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "Graham, got a minute? There's a filter on the Ostrel dashboard.",
+     "pause_before": 1.44
+    },
+    {
+     "who": "daniel",
+     "text": "Northfield's been excluded since the migration."
+    }
+   ]
+  },
+  {
+   "id": "c15_thats_mine",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "day",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "x": [
+      0,
+      20
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1180,
+      "y": 430,
+      "scale": 1.05,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.5,
+         0.1
+        ],
+        "turn": -0.3
+       },
+       {
+        "line": 0,
+        "off": 0.2,
+        "expr": "pleased",
+        "gaze": [
+         -0.55,
+         0.0
+        ],
+        "turn": -0.32,
+        "tilt": 2
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "tight",
+        "gaze": [
+         -0.2,
+         0.4
+        ],
+        "turn": -0.15
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 1.0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ]
+     },
+     {
+      "who": "daniel",
+      "view": "back",
+      "x": 340,
+      "y": 560,
+      "scale": 1.45,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "gaze": [
+         0.6,
+         0
+        ],
+        "turn": 0.5
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "Ah. That'll be mine. I set it up for the cut-over.",
+     "pause_before": 0.26
+    },
+    {
+     "who": "daniel",
+     "text": "Without it, we're under target. Point eight under.",
+     "pause_before": 0.17
+    }
+   ]
+  },
+  {
+   "id": "c16_polish",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.5,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "dusk",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.02,
+      1.1
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 960,
+      "y": 410,
+      "scale": 1.2,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.1,
+         0.55
+        ],
+        "turn": 0.05,
+        "tilt": 2
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "lean_in",
+        "gaze": [
+         -0.25,
+         0.05
+        ],
+        "turn": -0.15,
+        "tilt": -3
+       },
+       {
+        "line": 1,
+        "off": 2.6,
+        "expr": "charm",
+        "gaze": [
+         -0.3,
+         0.0
+        ],
+        "turn": -0.18,
+        "tilt": -4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "polish",
+        "r": "polish",
+        "dur": 0.7
+       },
+       {
+        "line": 1,
+        "off": 3.4,
+        "l": "steeple",
+        "r": "steeple",
+        "dur": 0.8
+       }
+      ],
+      "glasses_off": [
+       {
+        "t": 0.0,
+        "dur": 30
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "The pack goes at ten. Flag it now, and it's a week of calls over a rounding error.",
+     "pause_before": 0.68
+    },
+    {
+     "who": "graham",
+     "text": "Leave it out of the notes for now. I'll fix it at source before the quarter closes.",
+     "pause_before": 0.34
+    }
+   ]
+  },
+  {
+   "id": "c17_hesitate",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "thump"
+    },
+    {
+     "at": 1.0,
+     "name": "thump"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "cold",
+    "bg_blur": 5,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "handheld": 0.4
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 900,
+      "y": 450,
+      "scale": 1.25,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.5,
+         0.4
+        ],
+        "turn": 0.3,
+        "tilt": 2
+       },
+       {
+        "t": 1.4,
+        "expr": "guilty",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.35,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       },
+       {
+        "t": 0.6,
+        "r": "neck",
+        "dur": 0.7
+       },
+       {
+        "t": 2.0,
+        "r": "rest",
+        "dur": 0.6
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "So we just... don't mention it?",
+     "pause_before": 1.53
+    }
+   ],
+   "music_gain_db": -6
+  },
+  {
+   "id": "c18_quietly",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "dusk",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.04,
+      1.0
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1000,
+      "y": 440,
+      "scale": 1.15,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "cool_smile",
+        "gaze": [
+         -0.3,
+         0.1
+        ],
+        "turn": -0.2
+       },
+       {
+        "line": 0,
+        "off": 1.2,
+        "expr": "pleased",
+        "gaze": [
+         -0.3,
+         0.05
+        ],
+        "turn": -0.2,
+        "tilt": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "polish",
+        "r": "polish"
+       },
+       {
+        "t": 1.0,
+        "l": "steeple",
+        "r": "steeple",
+        "dur": 0.8
+       }
+      ],
+      "glasses_off": [
+       {
+        "t": 0.0,
+        "dur": 1.1
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "We correct it properly. Quietly. No drama.",
+     "pause_before": 0.51
+    }
+   ]
+  },
+  {
+   "id": "c19_trust",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.6,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "warm",
+    "bg_blur": 6,
+    "camera": {
+     "zoom": [
+      1.1,
+      1.22
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 960,
+      "y": 470,
+      "scale": 1.45,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.15,
+         0.1
+        ],
+        "turn": -0.1
+       },
+       {
+        "t": 0.5,
+        "expr": "lean_in",
+        "gaze": [
+         -0.08,
+         0.0
+        ],
+        "turn": -0.06,
+        "tilt": -4
+       },
+       {
+        "line": 0,
+        "off": 1.4,
+        "expr": "charm",
+        "gaze": [
+         -0.05,
+         0.0
+        ],
+        "turn": -0.05,
+        "tilt": -5
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "I knew I could trust you.",
+     "pause_before": 0.85
+    }
+   ],
+   "music_gain_db": -3
+  },
+  {
+   "id": "c20_nod",
+   "scene": "ws_stage",
+   "min_duration": 2.8,
+   "pad_after": 0.32,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "warm",
+    "bg_blur": 6,
+    "camera": {
+     "zoom": [
+      1.05,
+      1.12
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 920,
+      "y": 460,
+      "scale": 1.3,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.4,
+         0.1
+        ],
+        "turn": 0.25
+       },
+       {
+        "t": 0.6,
+        "expr": "pleased",
+        "gaze": [
+         0.35,
+         0.05
+        ],
+        "turn": 0.22,
+        "tilt": 5
+       },
+       {
+        "t": 1.0,
+        "tilt": -2
+       },
+       {
+        "t": 1.4,
+        "tilt": 4
+       },
+       {
+        "t": 2.2,
+        "expr": "tight",
+        "gaze": [
+         0.1,
+         0.6
+        ],
+        "turn": 0.1,
+        "tilt": 1
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "silent": true,
+   "caption": "Daniel nods, then looks down.",
+   "caption_mode": "card",
+   "visual_note": "Daniel nods, then looks down."
+  },
+  {
+   "id": "c21_sent",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "stamp"
+    }
+   ],
+   "claims": [
+    "F1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "chip": "09:58",
+    "ui": {
+     "kind": "report",
+     "title": "Q3 Service Report",
+     "sub": "Prepared for Ostrel Foods · Client Reporting",
+     "kpi": "93.4%",
+     "notes": "No exceptions this quarter.",
+     "highlight_at": "L1+0.2",
+     "sent_at": "L0+1.2",
+     "sent_label": "09:58"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At 9:58, the report went out.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Notes and exceptions: none this quarter.",
+     "speed": 0.97,
+     "pause_before": 0.42,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c22_not_a_lie",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.07
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      },
+      {
+       "kind": "mug",
+       "x": 600,
+       "colour": "#8c3b4a"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.32
+       },
+       {
+        "line": 1,
+        "off": 0.5,
+        "expr": "pleased",
+        "gaze": [
+         0.3,
+         0.6
+        ],
+        "turn": 0.2,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It didn't feel like a lie.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "It felt like a favour, for someone who'd done him plenty.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c23_client",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 1.8,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "ping"
+    }
+   ],
+   "claims": [
+    "F1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "cold",
+    "chip": "TUESDAY · 14:20",
+    "chapter_tag": {
+     "n": "CHAPTER 3",
+     "title": "The blame",
+     "y": 860,
+     "hold": 4
+    },
+    "ui": {
+     "kind": "email",
+     "from": "Sam Okoro, Head of Logistics, Ostrel Foods",
+     "to": "Ruth Adeyemi",
+     "cc": "Graham Royce",
+     "subject": "Q3 service figures don't reconcile",
+     "body": [
+      "Hi Ruth,",
+      "",
+      "Our records put Q3 on-time delivery at 92.6%, below the 93% target.",
+      "Your report says 93.4%. Northfield alone was 81%.",
+      "Can you explain the difference before Friday's review?",
+      "",
+      "Sam"
+     ],
+     "highlight": [
+      "92.6%",
+      "93.4%"
+     ],
+     "highlight_at": 2.0
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On Tuesday afternoon, the client noticed.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "The blame"
+  },
+  {
+   "id": "c24_who_built",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "tension",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "neutral",
+    "bg_blur": 2,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "lower_third": {
+     "who": "ruth",
+     "name": "Ruth Adeyemi",
+     "role": "Director of Operations",
+     "at": 0.6,
+     "hold": 3.6,
+     "x": 64,
+     "y": 660
+    },
+    "desk": {
+     "back": 724,
+     "front": 884,
+     "x0": 900,
+     "x1": 2100,
+     "slant": 50,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1560
+      },
+      {
+       "kind": "mug",
+       "x": 1120,
+       "colour": "#8c3b4a"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 560,
+      "y": 390,
+      "scale": 0.86,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "expr": "skeptical",
+        "gaze": [
+         0.65,
+         0.05
+        ],
+        "turn": 0.42,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.08
+        ],
+        "turn": 0.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "paper",
+        "r": "paper"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "l": "rest",
+        "r": "rest"
+       }
+      ]
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1330,
+      "y": 420,
+      "scale": 0.82,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         -0.1
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "neutral",
+        "gaze": [
+         -0.55,
+         0.0
+        ],
+        "turn": -0.4,
+        "tilt": 2
+       },
+       {
+        "line": 2,
+        "off": 0.3,
+        "expr": "pleased",
+        "gaze": [
+         -0.55,
+         -0.05
+        ],
+        "turn": -0.4,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "r": "talk"
+       },
+       {
+        "line": 2,
+        "off": 0.3,
+        "r": "open"
+       },
+       {
+        "line": 2,
+        "off": 3.2,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "ruth",
+     "text": "Ostrel say our Q3 numbers don't reconcile. Who built the data?",
+     "pause_before": 0.51
+    },
+    {
+     "who": "graham",
+     "text": "The extract is Leah's. She's still learning the depot feeds."
+    },
+    {
+     "who": "graham",
+     "text": "Let's not pile on her. I'll take her through the checks myself.",
+     "pause_before": 0.26
+    }
+   ]
+  },
+  {
+   "id": "c25_nothing_false",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "tension",
+   "sfx": [],
+   "claims": [
+    "C3"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "dusk",
+    "bg_blur": 5,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 980,
+      "y": 450,
+      "scale": 1.25,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.4,
+         0.0
+        ],
+        "turn": -0.25,
+        "tilt": 2
+       },
+       {
+        "t": 2.6,
+        "expr": "cool_smile",
+        "gaze": [
+         -0.35,
+         0.05
+        ],
+        "turn": -0.22
+       },
+       {
+        "line": 1,
+        "off": 1.5,
+        "expr": "neutral",
+        "gaze": [
+         -0.2,
+         0.3
+        ],
+        "turn": -0.12
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Nothing Graham said was false.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "The extract was Leah's. She was still learning.",
+     "speed": 0.97,
+     "pause_before": 0.2,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c26_stayed",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "cold",
+    "bg_blur": 2,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "x": [
+      0,
+      -40
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "glass_figures": [
+     {
+      "x": 1520,
+      "head": "#1c1816",
+      "body": "#3c3f78",
+      "sway": true
+     },
+     {
+      "x": 1780,
+      "head": "#7d7873",
+      "body": "#b9a98c"
+     }
+    ],
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 700,
+      "y": 440,
+      "scale": 0.86,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.8,
+         -0.2
+        ],
+        "turn": 0.5,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "guilty",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.2
+       },
+       {
+        "line": 1,
+        "off": 2.0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.32
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 1,
+        "off": 2.0,
+        "l": "typing",
+        "r": "typing"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Daniel could have walked in. It would have taken one sentence.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "He stayed at his desk.",
+     "speed": 0.97,
+     "pause_before": 0.68,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c27_ruth_to_leah",
+   "scene": "ws_insert",
+   "min_duration": 3.6,
+   "pad_after": 0.32,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "ping"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "cold",
+    "chip": "WEDNESDAY · 09:15",
+    "ui": {
+     "kind": "email",
+     "from": "Ruth Adeyemi",
+     "to": "Leah Carter",
+     "subject": "Q3 depot extract",
+     "body": [
+      "Leah,",
+      "",
+      "Please walk me through your Q3 depot extract by Thursday, 5pm.",
+      "",
+      "Thanks,",
+      "Ruth"
+     ],
+     "highlight": [
+      "walk me through"
+     ],
+     "highlight_at": 1.4
+    }
+   },
+   "silent": true,
+   "caption": "Email from Ruth to Leah: please walk me through your Q3 extract by Thursday.",
+   "caption_mode": "card",
+   "visual_note": "Email from Ruth to Leah: please walk me through your Q3 extract by Thursday."
+  },
+  {
+   "id": "c28_leah_asks",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.7,
+         -0.1
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "tight",
+        "gaze": [
+         0.5,
+         0.4
+        ],
+        "turn": 0.3,
+        "tilt": 2
+       },
+       {
+        "line": 3,
+        "off": 0.6,
+        "expr": "guilty",
+        "gaze": [
+         0.65,
+         -0.1
+        ],
+        "turn": 0.42
+       },
+       {
+        "line": 4,
+        "off": 0.0,
+        "expr": "tight",
+        "gaze": [
+         0.7,
+         -0.12
+        ],
+        "turn": 0.45
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 2,
+        "off": 0.6,
+        "r": "neck",
+        "dur": 0.6
+       },
+       {
+        "line": 3,
+        "off": 0.4,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1500,
+      "y": 360,
+      "scale": 0.78,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         -0.7,
+         0.2
+        ],
+        "turn": -0.45,
+        "tilt": 2
+       },
+       {
+        "line": 1,
+        "off": 0.3,
+        "expr": "skeptical",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45,
+        "tilt": 4
+       },
+       {
+        "line": 3,
+        "off": 0.0,
+        "expr": "realise",
+        "gaze": [
+         -0.7,
+         0.2
+        ],
+        "turn": -0.45,
+        "tilt": 0
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "cross",
+        "r": "cross"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "l": "rest",
+        "r": "talk"
+       },
+       {
+        "line": 3,
+        "off": 0.2,
+        "r": "open"
+       },
+       {
+        "line": 4,
+        "off": 0.6,
+        "l": "cross",
+        "r": "cross"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "Ruth wants to go through my extract.",
+     "pause_before": 0.42
+    },
+    {
+     "who": "leah",
+     "text": "I've checked it three times. It's right, isn't it?"
+    },
+    {
+     "who": "daniel",
+     "text": "It... looks right to me.",
+     "pause_before": 0.42
+    },
+    {
+     "who": "leah",
+     "text": "Then where's the difference coming from?"
+    },
+    {
+     "who": "daniel",
+     "text": "I'll take another look.",
+     "pause_before": 0.51
+    }
+   ]
+  },
+  {
+   "id": "c29_true_too",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "cold",
+    "bg_blur": 5,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1600,
+      "y": 380,
+      "scale": 0.55,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.5,
+         0
+        ],
+        "turn": 0.3,
+        "x": 1600
+       },
+       {
+        "t": 0.3,
+        "x": 2080,
+        "dur": 2.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       }
+      ]
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 450,
+      "scale": 1.18,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "guilty",
+        "gaze": [
+         0.7,
+         -0.1
+        ],
+        "turn": 0.4
+       },
+       {
+        "t": 1.4,
+        "expr": "guilty",
+        "gaze": [
+         0.2,
+         0.55
+        ],
+        "turn": 0.15,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That was true too. Every word.",
+     "speed": 0.97,
+     "pause_before": 0.85,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c30_count_on",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.2,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.32
+       },
+       {
+        "line": 0,
+        "off": 0.3,
+        "expr": "neutral",
+        "gaze": [
+         0.7,
+         -0.2
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 1.2,
+        "expr": "tight",
+        "gaze": [
+         0.7,
+         -0.18
+        ],
+        "turn": 0.45,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 0,
+        "off": 0.3,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1480,
+      "y": 340,
+      "scale": 0.84,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.3
+        ],
+        "turn": -0.42,
+        "tilt": 3,
+        "lean": -4
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "charm",
+        "gaze": [
+         -0.6,
+         0.32
+        ],
+        "turn": -0.42,
+        "tilt": 4,
+        "lean": -5
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       },
+       {
+        "line": 0,
+        "off": 0.5,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 1.5,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "How's Leah holding up? Keep an eye on her for me, would you?",
+     "pause_before": 0.42
+    },
+    {
+     "who": "graham",
+     "text": "You're the one person here I can count on.",
+     "pause_before": 0.26
+    }
+   ]
+  },
+  {
+   "id": "c31_standup",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.6,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "neutral",
+    "chip": "THURSDAY · 09:30",
+    "bg_blur": 1,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.03
+     ]
+    },
+    "slide": {
+     "title": "Process update",
+     "bars": []
+    },
+    "desk": {
+     "kind": "table",
+     "back": 740,
+     "front": 900,
+     "x0": 200,
+     "x1": 1500,
+     "slant": 70,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 980
+      },
+      {
+       "kind": "glass",
+       "x": 520
+      },
+      {
+       "kind": "notebook",
+       "x": 760
+      },
+      {
+       "kind": "glass",
+       "x": 1180
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 560,
+      "y": 450,
+      "scale": 0.7,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.8,
+         -0.2
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 0,
+        "off": 2.0,
+        "expr": "tight",
+        "gaze": [
+         0.5,
+         0.5
+        ],
+        "turn": 0.3,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 1060,
+      "y": 450,
+      "scale": 0.7,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.8,
+         -0.2
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 1,
+        "off": 0.5,
+        "expr": "tight",
+        "gaze": [
+         -0.3,
+         0.4
+        ],
+        "turn": -0.15
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1620,
+      "y": 360,
+      "scale": 0.8,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.7,
+         0.2
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "charm",
+        "gaze": [
+         -0.65,
+         0.25
+        ],
+        "turn": -0.4,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "r": "open"
+       },
+       {
+        "line": 1,
+        "off": 1.6,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "From today, Leah's extracts get a second check before they go out.",
+     "pause_before": 0.51
+    },
+    {
+     "who": "graham",
+     "text": "No blame. Just process.",
+     "pause_before": 0.34
+    }
+   ]
+  },
+  {
+   "id": "c32_nobody",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [
+    "C4"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "cold",
+    "bg_blur": 2,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "x": [
+      0,
+      -60
+     ]
+    },
+    "slide": {
+     "title": "Process update",
+     "bars": []
+    },
+    "desk": {
+     "kind": "table",
+     "back": 740,
+     "front": 900,
+     "x0": 200,
+     "x1": 1500,
+     "slant": 70,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 980
+      },
+      {
+       "kind": "glass",
+       "x": 520
+      },
+      {
+       "kind": "notebook",
+       "x": 760
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 560,
+      "y": 450,
+      "scale": 0.7,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.3,
+         0.6
+        ],
+        "turn": 0.2,
+        "tilt": 3
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "expr": "guilty",
+        "gaze": [
+         0.1,
+         0.7
+        ],
+        "turn": 0.05,
+        "tilt": 4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 1060,
+      "y": 450,
+      "scale": 0.7,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         -0.3,
+         0.4
+        ],
+        "turn": -0.15
+       },
+       {
+        "line": 2,
+        "off": 0.2,
+        "expr": "guilty",
+        "gaze": [
+         0.6,
+         0.3
+        ],
+        "turn": 0.35
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Nobody said a word.",
+     "speed": 0.97,
+     "pause_before": 0.8,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Leah assumed everyone thought it was her fault.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Daniel assumed someone else would say something.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Each silence made the next one easier.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    }
+   ],
+   "music_gain_db": -4
+  },
+  {
+   "id": "c33_did_you_know",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "tension",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "neutral",
+    "chip": "THURSDAY · 16:40",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "handheld": 0.35
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 700,
+      "y": 420,
+      "scale": 0.92,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "expr": "frozen",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.42
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "guilty",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.2,
+        "tilt": 2
+       },
+       {
+        "line": 3,
+        "off": 0.3,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "mug"
+       },
+       {
+        "line": 2,
+        "off": 0.3,
+        "r": "open",
+        "dur": 0.5
+       },
+       {
+        "line": 3,
+        "off": 0.2,
+        "r": "rest"
+       }
+      ],
+      "mug_colour": "#4f7cac"
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1260,
+      "y": 400,
+      "scale": 0.9,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "cold",
+        "gaze": [
+         -0.6,
+         0.0
+        ],
+        "turn": -0.42,
+        "tilt": -2
+       },
+       {
+        "line": 3,
+        "off": 0.0,
+        "expr": "cold",
+        "gaze": [
+         -0.6,
+         0.0
+        ],
+        "turn": -0.42,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "cross",
+        "r": "cross"
+       },
+       {
+        "line": 0,
+        "off": 0.2,
+        "l": "rest",
+        "r": "point"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "l": "cross",
+        "r": "cross"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "You built the client pack. You'd have seen every filter on that dashboard.",
+     "pause_before": 0.51
+    },
+    {
+     "who": "leah",
+     "text": "Did you know?",
+     "pause_before": 0.42
+    },
+    {
+     "who": "daniel",
+     "text": "Leah... it's complicated.",
+     "pause_before": 0.85
+    },
+    {
+     "who": "leah",
+     "text": "No. It's really not.",
+     "pause_before": 0.34
+    }
+   ]
+  },
+  {
+   "id": "c34_alone",
+   "scene": "ws_stage",
+   "min_duration": 3.2,
+   "pad_after": 0.32,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "step"
+    },
+    {
+     "at": 0.9,
+     "name": "step"
+    },
+    {
+     "at": 2.4,
+     "name": "door"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "cold",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.06,
+      1.0
+     ],
+     "handheld": 0.5
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1400,
+      "y": 400,
+      "scale": 0.62,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0
+        ],
+        "turn": 0.5,
+        "x": 1360
+       },
+       {
+        "t": 0.2,
+        "x": 1900,
+        "dur": 2.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "cross",
+        "r": "cross"
+       }
+      ]
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 760,
+      "y": 460,
+      "scale": 1.18,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "guilty",
+        "gaze": [
+         0.5,
+         0.2
+        ],
+        "turn": 0.35,
+        "tilt": -3
+       },
+       {
+        "t": 2.6,
+        "expr": "tight",
+        "gaze": [
+         0.1,
+         0.6
+        ],
+        "turn": 0.1,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "mug"
+       }
+      ],
+      "mug_colour": "#4f7cac"
+     }
+    ]
+   },
+   "silent": true,
+   "caption": "Leah walks out. Daniel is left alone.",
+   "caption_mode": "card",
+   "visual_note": "Leah walks out. Daniel is left alone."
+  },
+  {
+   "id": "c35_pause",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "cold",
+    "flash": true,
+    "bg_blur": 6,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "chapter_tag": {
+     "n": "CHAPTER 4",
+     "title": "The quiet forces",
+     "hold": 4
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 960,
+      "y": 460,
+      "scale": 1.18,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.1,
+         0.6
+        ],
+        "turn": 0.1,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "mug"
+       }
+      ],
+      "mug_colour": "#4f7cac"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Let's pause. Daniel isn't a bad person.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "So why does a decent person stay quiet?",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "The quiet forces"
+  },
+  {
+   "id": "c36_forces",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 2.4,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "forces",
+     "items": [
+      {
+       "icon": "1",
+       "label": "Reciprocity",
+       "sub": "A favour can feel like a debt",
+       "colour": "#d98a9a",
+       "at": "L0+2.4"
+      },
+      {
+       "icon": "2",
+       "label": "Dissonance",
+       "sub": "We change the story to match what we did",
+       "colour": "#ffd38a",
+       "at": "L0+3.1"
+      },
+      {
+       "icon": "3",
+       "label": "Pluralistic ignorance",
+       "sub": "Everyone assumes everyone else is fine",
+       "colour": "#7fc8e8",
+       "at": "L0+3.8"
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Psychologists would point to at least three quiet forces.",
+     "speed": 0.97,
+     "pause_before": 0.34,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c37_ledger",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [
+    "C1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "ledger",
+     "cite": "Gouldner (1960), American Sociological Review",
+     "cite_at": 2.0,
+     "gave": [
+      {
+       "text": "Leave approved at a day's notice",
+       "at": "L2+0.0"
+      },
+      {
+       "text": "Name put forward for promotion",
+       "at": "L2+0.9"
+      },
+      {
+       "text": "Flat white, no sugar",
+       "at": "L2+1.8"
+      }
+     ],
+     "ask": {
+      "text": "“Leave it out of the notes”",
+      "at": "L3+0.6"
+     }
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The first is reciprocity.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Sociologist Alvin Gouldner described a near-universal norm:",
+     "speed": 0.97,
+     "pause_before": 0.17,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "when someone helps us, we feel we owe them.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "When Graham finally asked, saying no felt like refusing to pay a debt.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c38_regan",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [
+    "C1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "regan",
+     "at": "L0+0.6",
+     "cite": "Regan (1971), Journal of Experimental Social Psychology",
+     "cite_at": 1.0
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In one classic 1971 study, people given a free soft drink by a stranger",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "later bought about twice as many of his raffle tickets as people given nothing.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c39_dissonance",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "tension-rise",
+   "sfx": [],
+   "claims": [
+    "C2"
+   ],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "dissonance",
+     "a": "I'm an honest person.",
+     "b": "I stayed quiet.",
+     "notes": [
+      {
+       "text": "It's only 0.8%.",
+       "at": "L2+0.1"
+      },
+      {
+       "text": "Graham will fix it.",
+       "at": "L2+1.7"
+      },
+      {
+       "text": "It's not my place.",
+       "at": "L2+3.1"
+      }
+     ],
+     "caveat": {
+      "text": "A tendency, not a law (see Vaidis et al., 2024)",
+      "at": "L3+0.4"
+     },
+     "cite": "Festinger (1957); Festinger & Carlsmith (1959)",
+     "cite_at": 1.5
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The second is cognitive dissonance: the discomfort of acting against your own values.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "We often ease it by changing the story, not the behaviour.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "It's only point eight percent. Graham will fix it. It's not my place.",
+     "speed": 0.97,
+     "pause_before": 0.17,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Recent large replications found weaker effects, so treat it as a tendency, not a law.",
+     "speed": 0.97,
+     "pause_before": 0.42,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c40_plural",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [
+    "C4"
+   ],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "plural",
+     "private_at": "L1+0.4",
+     "private": [
+      [
+       "This feels",
+       "wrong"
+      ],
+      [
+       "Is it",
+       "just me?"
+      ],
+      [
+       "Not my",
+       "business"
+      ]
+     ],
+     "assume": "Each assumes everyone else is fine",
+     "assume_at": "L2+0.0",
+     "cite": "Prentice & Miller (1993), JPSP",
+     "cite_at": "L3+0.0"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The third is pluralistic ignorance.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Many people privately doubt something, but each assumes the others are fine with it.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "So nobody speaks.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "In one Princeton study, students thought they were more uneasy about campus drinking",
+     "speed": 0.97,
+     "pause_before": 0.34,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "than their peers were. Many of their peers felt exactly the same.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c41_foot",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 1.2,
+   "music_cue": "tension-rise",
+   "sfx": [],
+   "claims": [
+    "C5"
+   ],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "foot",
+     "cite": "Freedman & Fraser (1966), JPSP",
+     "cite_at": "L1+0.0",
+     "steps": [
+      {
+       "text": "A flat white",
+       "at": "L0+0.3"
+      },
+      {
+       "text": "Leave it out of the notes",
+       "at": "L0+2.3"
+      },
+      {
+       "text": "Confirm the story",
+       "at": "L0+4.1"
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Once you've agreed to something small, the next request feels smaller than it is.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Psychologists call it the foot in the door.",
+     "speed": 0.97,
+     "pause_before": 0.17,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c42_text",
+   "scene": "ws_insert",
+   "min_duration": 7.4,
+   "pad_after": 0.32,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "buzz"
+    },
+    {
+     "at": 3.1,
+     "name": "buzz"
+    },
+    {
+     "at": 4.9,
+     "name": "buzz"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "home_night",
+    "grade": "aftermath",
+    "chip": "THURSDAY · 21:14",
+    "chapter_tag": {
+     "n": "CHAPTER 5",
+     "title": "The paper trail",
+     "y": 860,
+     "hold": 4
+    },
+    "hand_who": "daniel",
+    "ui": {
+     "kind": "phone",
+     "contact": "Graham Royce",
+     "time": "21:14",
+     "colour": "#8c3b4a",
+     "messages": [
+      {
+       "text": "Ruth wants five minutes with you before tomorrow's Ostrel review.",
+       "at": 1.2,
+       "typing_from": 0.3
+      },
+      {
+       "text": "Just confirm it was an extract issue and we can all move on.",
+       "at": 3.1,
+       "typing_from": 2.1
+      },
+      {
+       "text": "Thanks for having my back.",
+       "at": 4.9,
+       "typing_from": 4.0
+      }
+     ]
+    }
+   },
+   "silent": true,
+   "caption": "Text from Graham: Ruth wants five minutes before tomorrow's review. Just confirm it was ",
+   "caption_mode": "card",
+   "chapter": "The paper trail",
+   "visual_note": "Text from Graham: Ruth wants five minutes before tomorrow's review. Just confirm it was an extract issue. Thanks for having my back."
+  },
+  {
+   "id": "c43_bigger",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "home_night",
+    "grade": "aftermath",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 880,
+      "y": 440,
+      "scale": 1.0,
+      "light": "phone",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.1,
+         0.7
+        ],
+        "turn": 0.1,
+        "tilt": 3
+       },
+       {
+        "line": 1,
+        "off": 1.4,
+        "expr": "realise",
+        "gaze": [
+         0.2,
+         0.6
+        ],
+        "turn": 0.12,
+        "tilt": 1
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "phone"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The first favour was to stay quiet.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "This one was to say something untrue, to a director, about a colleague.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c44_control",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "aftermath",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "home_night",
+    "grade": "aftermath",
+    "bg_blur": 2,
+    "rain": true,
+    "camera": {
+     "zoom": [
+      1.06,
+      1.0
+     ],
+     "x": [
+      -40,
+      0
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 1180,
+      "y": 440,
+      "scale": 0.95,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         -0.6,
+         -0.1
+        ],
+        "turn": -0.45,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "neutral",
+        "gaze": [
+         -0.3,
+         0.1
+        ],
+        "turn": -0.25
+       },
+       {
+        "line": 2,
+        "off": 0.8,
+        "expr": "confident",
+        "gaze": [
+         0.0,
+         0.05
+        ],
+        "turn": -0.05,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "cross",
+        "r": "cross"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "l": "rest",
+        "r": "rest",
+        "dur": 0.8
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Daniel couldn't know what Graham intended.",
+     "speed": 0.97,
+     "pause_before": 0.42,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "But he could control four things:",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "what he wrote down, what he confirmed, what he asked, and what he corrected.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c45_notes",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 2.0,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "tick"
+    },
+    {
+     "at": 2.4,
+     "name": "tick"
+    },
+    {
+     "at": 4.4,
+     "name": "tick"
+    },
+    {
+     "at": 6.0,
+     "name": "tick"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "home_night",
+    "grade": "aftermath",
+    "ui": {
+     "kind": "notes",
+     "title": "Ostrel Q3: what happened",
+     "items": [
+      {
+       "when": "Mon 09:03",
+       "text": "Found the Northfield filter on the dashboard, left on since the migration.",
+       "at": 0.6
+      },
+      {
+       "when": "Mon 09:07",
+       "text": "Told Graham. Agreed to leave it out of the client notes until fixed at source.",
+       "at": 2.4
+      },
+      {
+       "when": "Tue 14:20",
+       "text": "Ostrel query. Graham tells Ruth the extract is Leah's.",
+       "at": 4.4
+      },
+      {
+       "when": "Wed 11:00",
+       "text": "Re-checked Leah's extract. It is correct.",
+       "at": 6.0
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "First, he wrote it down.",
+     "speed": 0.97,
+     "pause_before": 0.34,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Dates, times, facts. No adjectives.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c46_email",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 1.8,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "day",
+    "chip": "FRIDAY · 08:12",
+    "ui": {
+     "kind": "email",
+     "from": "Daniel Hale",
+     "to": "Graham Royce",
+     "subject": "Ostrel Q3: before I meet Ruth",
+     "type_at": 0.4,
+     "cps": 40,
+     "body": [
+      "Hi Graham,",
+      "",
+      "Just to confirm before I see Ruth: on Monday we agreed to leave the Northfield filter out of the client notes until it was fixed at source.",
+      "Has that fix been made? Leah's extract is correct, so I'd like to explain the difference accurately.",
+      "Happy to draft the correction for Ostrel.",
+      "",
+      "Thanks, Daniel"
+     ],
+     "highlight": [
+      "Has that fix been made?"
+     ],
+     "highlight_at": "L1+0.0",
+     "stamp": {
+      "text": "SENT",
+      "at": "L2+1.6"
+     }
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he confirmed it in writing.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "He asked a neutral question. No accusation.",
+     "speed": 0.97,
+     "pause_before": 1.53,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Just the facts, and a way forward.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    }
+   ],
+   "music_gain_db": -5
+  },
+  {
+   "id": "c47_same_page",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.7,
+         -0.2
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "tight",
+        "gaze": [
+         0.7,
+         -0.22
+        ],
+        "turn": 0.45,
+        "tilt": 2
+       },
+       {
+        "line": 3,
+        "off": 0.0,
+        "expr": "confident",
+        "gaze": [
+         0.7,
+         -0.25
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 1.8,
+        "r": "desk"
+       },
+       {
+        "line": 3,
+        "off": 0.3,
+        "r": "open"
+       },
+       {
+        "line": 3,
+        "off": 2.2,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1500,
+      "y": 340,
+      "scale": 0.86,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.3
+        ],
+        "turn": -0.42,
+        "tilt": 3
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "charm",
+        "gaze": [
+         -0.6,
+         0.32
+        ],
+        "turn": -0.42,
+        "tilt": 4,
+        "lean": -3
+       },
+       {
+        "line": 3,
+        "off": 1.0,
+        "expr": "tight",
+        "gaze": [
+         -0.6,
+         0.3
+        ],
+        "turn": -0.42,
+        "tilt": 0,
+        "lean": 0
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "paper",
+        "r": "paper"
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "l": "rest",
+        "r": "talk"
+       },
+       {
+        "line": 3,
+        "off": 0.4,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "Daniel. Did we really need all that in an email?",
+     "pause_before": 0.51
+    },
+    {
+     "who": "daniel",
+     "text": "I just want us to be accurate.",
+     "pause_before": 0.26
+    },
+    {
+     "who": "graham",
+     "text": "I thought we were on the same page.",
+     "pause_before": 0.34
+    },
+    {
+     "who": "daniel",
+     "text": "We are. That's why I wrote it down.",
+     "pause_before": 0.51
+    }
+   ]
+  },
+  {
+   "id": "c48_warmth_drains",
+   "scene": "ws_stage",
+   "min_duration": 3.0,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "thump"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "bg_blur": 5,
+    "camera": {
+     "zoom": [
+      1.04,
+      1.12
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 960,
+      "y": 450,
+      "scale": 1.3,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "charm",
+        "gaze": [
+         -0.3,
+         0.2
+        ],
+        "turn": -0.2,
+        "tilt": 3
+       },
+       {
+        "t": 0.8,
+        "expr": "cool_smile",
+        "gaze": [
+         -0.3,
+         0.2
+        ],
+        "turn": -0.2,
+        "tilt": 1,
+        "dur": 0.8
+       },
+       {
+        "t": 1.8,
+        "expr": "tight",
+        "gaze": [
+         -0.25,
+         0.25
+        ],
+        "turn": -0.18,
+        "tilt": 0,
+        "dur": 0.8
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "silent": true,
+   "caption": "Graham's smile fades.",
+   "caption_mode": "card",
+   "music_gain_db": -6,
+   "visual_note": "Graham's smile fades."
+  },
+  {
+   "id": "c49_meeting",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "tension",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "neutral",
+    "chip": "FRIDAY · 10:00",
+    "bg_blur": 1,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "chapter_tag": {
+     "n": "CHAPTER 6",
+     "title": "Friday, 10:00",
+     "hold": 4
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 742,
+     "front": 900,
+     "x0": 150,
+     "x1": 1770,
+     "slant": 80,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 960
+      },
+      {
+       "kind": "glass",
+       "x": 600
+      },
+      {
+       "kind": "notebook",
+       "x": 1340
+      },
+      {
+       "kind": "glass",
+       "x": 1500
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 540,
+      "y": 460,
+      "scale": 0.66,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.5,
+         0.3
+        ],
+        "turn": 0.3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 960,
+      "y": 440,
+      "scale": 0.7,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.6,
+         0.3
+        ],
+        "turn": -0.3
+       },
+       {
+        "line": 0,
+        "off": 1.8,
+        "expr": "skeptical",
+        "gaze": [
+         -0.7,
+         0.4
+        ],
+        "turn": -0.35,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1400,
+      "y": 450,
+      "scale": 0.7,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.35
+        ],
+        "turn": -0.4
+       },
+       {
+        "line": 0,
+        "off": 2.8,
+        "expr": "charm",
+        "gaze": [
+         -0.8,
+         0.45
+        ],
+        "turn": -0.45,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "back",
+      "x": 240,
+      "y": 700,
+      "scale": 1.25,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "gaze": [
+         0.5,
+         0
+        ],
+        "turn": 0.5
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "ruth",
+     "text": "Before Ostrel join us: Daniel, Graham says you can explain the data issue.",
+     "pause_before": 0.68
+    }
+   ],
+   "chapter": "Friday, 10:00"
+  },
+  {
+   "id": "c50_graham_nods",
+   "scene": "ws_stage",
+   "min_duration": 2.8,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "thump"
+    },
+    {
+     "at": 1.1,
+     "name": "thump"
+    },
+    {
+     "at": 1.9,
+     "name": "thump"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "warm",
+    "bg_blur": 4,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1000,
+      "y": 450,
+      "scale": 1.15,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.5,
+         0.15
+        ],
+        "turn": -0.3
+       },
+       {
+        "t": 0.6,
+        "expr": "charm",
+        "gaze": [
+         -0.5,
+         0.1
+        ],
+        "turn": -0.3,
+        "tilt": 5
+       },
+       {
+        "t": 1.1,
+        "tilt": -1
+       },
+       {
+        "t": 1.6,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ]
+     }
+    ]
+   },
+   "silent": true,
+   "caption": "Graham smiles at Daniel and nods.",
+   "caption_mode": "card",
+   "music_gain_db": -6,
+   "visual_note": "Graham smiles at Daniel and nods."
+  },
+  {
+   "id": "c51_daniel_speaks",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "neutral",
+    "bg_blur": 4,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 900,
+      "y": 460,
+      "scale": 1.15,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.2,
+        "tilt": 2
+       },
+       {
+        "line": 0,
+        "off": 0.0,
+        "expr": "neutral",
+        "gaze": [
+         0.5,
+         0.05
+        ],
+        "turn": 0.3
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.35,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 1,
+        "off": 0.3,
+        "r": "talk"
+       },
+       {
+        "line": 2,
+        "off": 2.6,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ],
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": [
+      {
+       "kind": "notebook",
+       "x": 700
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "Leah's extract was correct.",
+     "pause_before": 1.02
+    },
+    {
+     "who": "daniel",
+     "text": "The difference is a filter on our dashboard that excluded Northfield.",
+     "pause_before": 0.26
+    },
+    {
+     "who": "daniel",
+     "text": "I spotted it on Monday, before the report went out, and told Graham.",
+     "pause_before": 0.26
+    }
+   ],
+   "music_gain_db": -4
+  },
+  {
+   "id": "c52_leah_reacts",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "neutral",
+    "bg_blur": 4,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 960,
+      "y": 460,
+      "scale": 1.12,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.2
+       },
+       {
+        "t": 0.4,
+        "expr": "realise",
+        "gaze": [
+         0.5,
+         0.0
+        ],
+        "turn": 0.3,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ],
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": []
+    }
+   },
+   "silent": true,
+   "caption": "Leah looks up.",
+   "caption_mode": "card",
+   "music_gain_db": -4,
+   "visual_note": "Leah looks up."
+  },
+  {
+   "id": "c53_correcting",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "power",
+    "bg_blur": 4,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.08,
+      1.16
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 900,
+      "y": 460,
+      "scale": 1.15,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.5,
+         0.05
+        ],
+        "turn": 0.3
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "guilty",
+        "gaze": [
+         0.4,
+         0.3
+        ],
+        "turn": 0.25
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "expr": "confident",
+        "gaze": [
+         0.5,
+         0.0
+        ],
+        "turn": 0.3,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 2,
+        "off": 0.2,
+        "r": "open"
+       },
+       {
+        "line": 2,
+        "off": 2.4,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ],
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": [
+      {
+       "kind": "notebook",
+       "x": 700
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "We agreed not to flag it.",
+     "pause_before": 0.26
+    },
+    {
+     "who": "daniel",
+     "text": "I should have corrected that on Tuesday.",
+     "pause_before": 0.42
+    },
+    {
+     "who": "daniel",
+     "text": "I'm correcting it now.",
+     "pause_before": 0.34
+    }
+   ],
+   "music_gain_db": -3
+  },
+  {
+   "id": "c54_graham_q",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "cold",
+    "bg_blur": 3,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 742,
+     "front": 900,
+     "x0": 150,
+     "x1": 1770,
+     "slant": 80,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 960
+      },
+      {
+       "kind": "glass",
+       "x": 600
+      },
+      {
+       "kind": "notebook",
+       "x": 1340
+      },
+      {
+       "kind": "glass",
+       "x": 1500
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 760,
+      "y": 440,
+      "scale": 0.86,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "skeptical",
+        "gaze": [
+         -0.4,
+         0.2
+        ],
+        "turn": -0.25
+       },
+       {
+        "t": 0.4,
+        "expr": "cold",
+        "gaze": [
+         0.7,
+         0.05
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1360,
+      "y": 450,
+      "scale": 0.82,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "frozen",
+        "gaze": [
+         -0.7,
+         0.3
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 0,
+        "off": 0.6,
+        "expr": "tight",
+        "gaze": [
+         -0.5,
+         0.0
+        ],
+        "turn": -0.35
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "ruth",
+     "text": "Graham?",
+     "pause_before": 0.51
+    }
+   ]
+  },
+  {
+   "id": "c55_fair_summary",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "neutral",
+    "bg_blur": 4,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.07
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1000,
+      "y": 450,
+      "scale": 1.15,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         -0.5,
+         0.1
+        ],
+        "turn": -0.3
+       },
+       {
+        "line": 0,
+        "off": 1.0,
+        "expr": "cool_smile",
+        "gaze": [
+         -0.5,
+         0.05
+        ],
+        "turn": -0.3,
+        "tilt": 2
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "pleased",
+        "gaze": [
+         -0.45,
+         0.1
+        ],
+        "turn": -0.28,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "r": "open"
+       },
+       {
+        "line": 1,
+        "off": 3.0,
+        "r": "steeple"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "That's... a fair summary.",
+     "pause_before": 0.51
+    },
+    {
+     "who": "graham",
+     "text": "I meant to fix it before it mattered. I should have been clearer.",
+     "pause_before": 0.34
+    }
+   ]
+  },
+  {
+   "id": "c56_calm",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "neutral",
+    "bg_blur": 5,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.07,
+      1.14
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1000,
+      "y": 460,
+      "scale": 1.3,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.45,
+         0.1
+        ],
+        "turn": -0.28,
+        "tilt": 3
+       },
+       {
+        "t": 2.0,
+        "expr": "neutral",
+        "gaze": [
+         -0.3,
+         0.3
+        ],
+        "turn": -0.2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Calm. Reasonable. Not a raised voice, even now.",
+     "speed": 0.97,
+     "pause_before": 0.26,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c57_ruth_decides",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "power",
+    "bg_blur": 3,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 960,
+      "y": 440,
+      "scale": 1.08,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.4,
+         0.05
+        ],
+        "turn": 0.25
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "expr": "confident",
+        "gaze": [
+         0.2,
+         0.05
+        ],
+        "turn": 0.1
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.4,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "point"
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ]
+     }
+    ],
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1300
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "ruth",
+     "text": "Then Ostrel get the corrected figure today.",
+     "pause_before": 0.42
+    },
+    {
+     "who": "ruth",
+     "text": "From now on, every dashboard change gets logged.",
+     "pause_before": 0.26
+    },
+    {
+     "who": "ruth",
+     "text": "Leah, I'm sorry. You were right.",
+     "pause_before": 0.51
+    }
+   ]
+  },
+  {
+   "id": "c58_tuesday",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "warm",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "power",
+    "bg_blur": 2,
+    "slide": {
+     "title": "Ostrel Foods · Q3 service",
+     "bars": [
+      [
+       "Ashby",
+       95.0
+      ],
+      [
+       "Barrow",
+       93.0
+      ],
+      [
+       "Carlton",
+       92.5
+      ],
+      [
+       "Total",
+       93.4,
+       "#8a92a0"
+      ]
+     ],
+     "target": 93.0
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 742,
+     "front": 900,
+     "x0": 150,
+     "x1": 1770,
+     "slant": 80,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 960
+      },
+      {
+       "kind": "glass",
+       "x": 600
+      },
+      {
+       "kind": "notebook",
+       "x": 1340
+      },
+      {
+       "kind": "glass",
+       "x": 1500
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 1240,
+      "y": 440,
+      "scale": 0.86,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.4
+       },
+       {
+        "line": 0,
+        "off": 0.6,
+        "expr": "cool_smile",
+        "gaze": [
+         -0.65,
+         0.05
+        ],
+        "turn": -0.42,
+        "tilt": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 640,
+      "y": 450,
+      "scale": 0.86,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "ruth",
+     "text": "And Daniel? Next time, say it on Tuesday.",
+     "pause_before": 0.51
+    },
+    {
+     "who": "daniel",
+     "text": "Next time, Tuesday.",
+     "pause_before": 0.42
+    }
+   ]
+  },
+  {
+   "id": "c59_kitchen_after",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "aftermath",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "tod": "evening",
+    "grade": "warm",
+    "chip": "FRIDAY · 16:30",
+    "bg_blur": 3,
+    "chapter_tag": {
+     "n": "CHAPTER 7",
+     "title": "Two conversations",
+     "hold": 4
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 700,
+      "y": 420,
+      "scale": 0.92,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "guilty",
+        "gaze": [
+         0.4,
+         0.4
+        ],
+        "turn": 0.3
+       },
+       {
+        "line": 3,
+        "off": 0.0,
+        "expr": "realise",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.42
+       },
+       {
+        "line": 4,
+        "off": 0.5,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "mug"
+       },
+       {
+        "line": 3,
+        "off": 0.2,
+        "r": "open"
+       },
+       {
+        "line": 4,
+        "off": 0.0,
+        "r": "mug"
+       }
+      ],
+      "mug_colour": "#4f7cac"
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1260,
+      "y": 400,
+      "scale": 0.9,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "skeptical",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42,
+        "tilt": 3
+       },
+       {
+        "line": 4,
+        "off": 0.3,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "mug",
+        "r": "rest"
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "r": "talk"
+       },
+       {
+        "line": 2,
+        "off": 3.0,
+        "r": "rest"
+       }
+      ],
+      "mug_colour": "#e06a4f"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "You could have said it on Tuesday.",
+     "pause_before": 0.68
+    },
+    {
+     "who": "daniel",
+     "text": "I know.",
+     "pause_before": 0.42
+    },
+    {
+     "who": "leah",
+     "text": "Graham told me on Tuesday you'd raised concerns about my extract.",
+     "pause_before": 0.51
+    },
+    {
+     "who": "daniel",
+     "text": "I never said that.",
+     "pause_before": 0.51
+    },
+    {
+     "who": "leah",
+     "text": "I know. Now.",
+     "pause_before": 0.42
+    }
+   ],
+   "chapter": "Two conversations"
+  },
+  {
+   "id": "c60_split",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "aftermath",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "split",
+     "title": "Two conversations",
+     "sub": "TUESDAY AND WEDNESDAY",
+     "link": "Each of them was watching the other",
+     "link_at": "L2+0.0",
+     "sides": [
+      {
+       "who": "daniel",
+       "name": "Daniel",
+       "quote": "Keep an eye on her for me.",
+       "at": "L0+0.3"
+      },
+      {
+       "who": "leah",
+       "name": "Leah",
+       "quote": "Daniel has concerns about your extract.",
+       "at": "L1+0.3"
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Graham had asked Daniel to keep an eye on Leah.",
+     "speed": 0.97,
+     "pause_before": 0.34,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "And he'd told Leah that Daniel had doubts about her.",
+     "speed": 0.97,
+     "pause_before": 0.42,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Each of them had been watching the other.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c61_manipulator",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "aftermath",
+   "sfx": [],
+   "claims": [
+    "C3"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "tod": "night",
+    "grade": "aftermath",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "x": [
+      40,
+      0
+     ]
+    },
+    "desk": {
+     "back": 724,
+     "front": 884,
+     "x0": 600,
+     "x1": 1500,
+     "slant": 50,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1240
+      },
+      {
+       "kind": "mug",
+       "x": 760,
+       "colour": "#8c3b4a"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1000,
+      "y": 430,
+      "scale": 0.84,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.3,
+         0.55
+        ],
+        "turn": 0.15
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "expr": "cool_smile",
+        "gaze": [
+         0.1,
+         0.5
+        ],
+        "turn": 0.05
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "polish",
+        "r": "polish"
+       }
+      ],
+      "glasses_off": [
+       {
+        "t": 0,
+        "dur": 60
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Was Graham a manipulator?",
+     "speed": 0.97,
+     "pause_before": 0.68,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Or just a likeable man protecting himself, one small, reasonable request at a time?",
+     "speed": 0.97,
+     "pause_before": 0.34,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Daniel never found out for certain. He didn't need to.",
+     "speed": 0.97,
+     "pause_before": 0.68,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "c62_closing_line",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.6,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "tod": "night",
+    "grade": "aftermath",
+    "bg_blur": 6,
+    "camera": {
+     "zoom": [
+      1.06,
+      1.2
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 960,
+      "y": 470,
+      "scale": 1.4,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.2,
+         0.5
+        ],
+        "turn": 0.1,
+        "tilt": 2
+       },
+       {
+        "line": 1,
+        "off": 0.3,
+        "expr": "neutral",
+        "gaze": [
+         0.05,
+         0.1
+        ],
+        "turn": 0.02
+       },
+       {
+        "line": 2,
+        "off": 0.8,
+        "expr": "cool_smile",
+        "gaze": [
+         0,
+         0
+        ],
+        "turn": 0,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "polish",
+        "r": "polish"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "l": "steeple",
+        "r": "steeple",
+        "dur": 0.9
+       }
+      ],
+      "glasses_off": [
+       {
+        "t": 0,
+        "dur": 3.0
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Because the trap was never the favour.",
+     "speed": 0.97,
+     "pause_before": 0.68,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "The manager didn't need everyone to trust him.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "He only needed everyone to distrust each other.",
+     "speed": 0.97,
+     "pause_before": 0.42,
+     "pause_after": 0.18
+    }
+   ],
+   "music_gain_db": -3
+  },
+  {
+   "id": "c63_moves",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 1.2,
+   "music_cue": "warm",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "moves",
+     "title": "Four moves",
+     "sub": "IF IT HAPPENS TO YOU",
+     "items": [
+      {
+       "title": "Write down what was asked",
+       "sub": "Dates, times, facts. No adjectives.",
+       "at": "L2+1.0"
+      },
+      {
+       "title": "Confirm it in writing",
+       "sub": "“Just to confirm what we agreed…”",
+       "at": "L3+0.0"
+      },
+      {
+       "title": "Ask neutral questions",
+       "sub": "“Has that fix been made?”",
+       "at": "L4+0.0"
+      },
+      {
+       "title": "Correct the record early",
+       "sub": "Silence gets more expensive every day.",
+       "at": "L5+0.0"
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Most favours are just kindness.",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "The warning sign is a favour that asks you to hide something.",
+     "speed": 0.97,
+     "pause_before": 0.34,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "If that happens: write down what was asked.",
+     "speed": 0.97,
+     "pause_before": 0.42,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Confirm it in writing.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Ask neutral questions.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "And correct the record early. Silence gets more expensive every day.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "What to do instead"
+  },
+  {
+   "id": "c64_end",
+   "scene": "ws_end",
+   "min_duration": 2.0,
+   "pad_after": 2.6,
+   "music_cue": "outro",
+   "sfx": [],
+   "claims": [],
+   "transition": "fade",
+   "shot": {
+    "question": "Have you ever been asked for a small favour at work that turned out not to be small?",
+    "tag": "EPISODE 1 · THE FAVOUR",
+    "notice": "A fictional story. Characters and companies are invented.",
+    "brand_at": "L1+3.2",
+    "fade_out": 1.2
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Have you ever been asked for a small favour at work that turned out not to be small?",
+     "speed": 0.97,
+     "pause_before": 0.68,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "What did you do, or what do you wish you'd done?",
+     "speed": 0.97,
+     "pause_before": 0.51,
+     "pause_after": 0.18
+    }
+   ],
+   "caption_mode": "none"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "type": "established",
+   "text": "Reciprocity: people tend to feel obliged to return favours; in Regan (1971) favour recipients bought about twice as many raffle tickets.",
+   "sources": [
+    "S1",
+    "S2"
+   ]
+  },
+  {
+   "id": "C2",
+   "type": "established",
+   "text": "Cognitive dissonance: discomfort when actions conflict with values, often reduced by changing beliefs; recent large replications found weaker effects.",
+   "sources": [
+    "S3",
+    "S4"
+   ]
+  },
+  {
+   "id": "C3",
+   "type": "illustrative",
+   "text": "Graham's intent is deliberately left ambiguous; the episode does not diagnose him.",
+   "sources": []
+  },
+  {
+   "id": "C4",
+   "type": "established",
+   "text": "Pluralistic ignorance: group members privately doubt a norm but assume others accept it (Prentice & Miller, 1993); organisational silence.",
+   "sources": [
+    "S5",
+    "S6"
+   ]
+  },
+  {
+   "id": "C5",
+   "type": "established",
+   "text": "Foot-in-the-door: agreeing to a small request raises compliance with a larger one (Freedman & Fraser, 1966); small transgressions can escalate (Welsh et al., 2015).",
+   "sources": [
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "id": "F1",
+   "type": "illustrative",
+   "text": "All company figures are invented and internally consistent: 93.4% excluding Northfield, 92.6% including it (Northfield 81.1% on 6.5% of volume).",
+   "sources": []
+  }
+ ],
+ "sources": [
+  {
+   "id": "S1",
+   "title": "The norm of reciprocity: A preliminary statement (Gouldner, 1960), American Sociological Review 25(2):161-178",
+   "publisher": "American Sociological Association / JSTOR",
+   "url": "https://doi.org/10.2307/2092623",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S2",
+   "title": "Effects of a favor and liking on compliance (Regan, 1971), Journal of Experimental Social Psychology 7(6):627-639",
+   "publisher": "Elsevier",
+   "url": "https://doi.org/10.1016/0022-1031(71)90025-4",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S3",
+   "title": "Cognitive consequences of forced compliance (Festinger & Carlsmith, 1959), J. Abnormal and Social Psychology 58(2):203-210",
+   "publisher": "American Psychological Association (PubMed 13640824)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/13640824/",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S4",
+   "title": "A multilab replication of the induced-compliance paradigm of cognitive dissonance (Vaidis et al., 2024), AMPPS 7(1)",
+   "publisher": "SAGE / Association for Psychological Science",
+   "url": "https://doi.org/10.1177/25152459231213375",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S5",
+   "title": "Pluralistic ignorance and alcohol use on campus (Prentice & Miller, 1993), JPSP 64(2):243-256",
+   "publisher": "American Psychological Association",
+   "url": "https://doi.org/10.1037/0022-3514.64.2.243",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S6",
+   "title": "Organizational silence (Morrison & Milliken, 2000), Academy of Management Review 25(4):706-725",
+   "publisher": "Academy of Management",
+   "url": "https://doi.org/10.2307/259200",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S7",
+   "title": "Compliance without pressure: The foot-in-the-door technique (Freedman & Fraser, 1966), JPSP 4(2):195-202",
+   "publisher": "American Psychological Association (PubMed 5969145)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/5969145/",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S8",
+   "title": "The slippery slope (Welsh, Ordonez, Snyder & Christian, 2015), Journal of Applied Psychology 100(1):114-127",
+   "publisher": "American Psychological Association",
+   "url": "https://doi.org/10.1037/a0036950",
+   "accessed": "2026-10-11"
+  }
+ ],
+ "thumbnail": {
+  "actors": [
+   {
+    "who": "graham",
+    "view": "front",
+    "x": 640,
+    "y": 470,
+    "scale": 1.22,
+    "light": "left",
+    "acting": [
+     {
+      "t": 0,
+      "expr": "charm",
+      "gaze": [
+       0.35,
+       0.05
+      ],
+      "turn": 0.25,
+      "tilt": 4,
+      "lean": 4
+     }
+    ],
+    "arms": [
+     {
+      "t": 0,
+      "l": "rest",
+      "r": "rest"
+     }
+    ],
+    "rim": "#ffc27a"
+   },
+   {
+    "who": "daniel",
+    "view": "front",
+    "x": 1420,
+    "y": 500,
+    "scale": 1.55,
+    "light": "right",
+    "acting": [
+     {
+      "t": 0,
+      "expr": "guilty",
+      "gaze": [
+       -0.85,
+       0.08
+      ],
+      "turn": -0.18,
+      "tilt": -3
+     }
+    ],
+    "arms": [
+     {
+      "t": 0,
+      "l": "rest",
+      "r": "rest"
+     }
+    ],
+    "rim": "#7fe8ff"
+   }
+  ],
+  "secret": {
+   "x": 1000,
+   "y": 880,
+   "rot": -6,
+   "shown": "93.4%",
+   "real": "92.6%"
+  },
+  "text": {
+   "x": 70,
+   "y": 170,
+   "size": 128,
+   "a": "JUST A",
+   "b": "FAVOUR?",
+   "bw": 700
+  }
+ }
+}

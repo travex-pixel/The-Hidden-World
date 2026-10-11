@@ -13,6 +13,9 @@ An original animated educational-mystery channel and the $0 production factory t
 ### FIVE MESSAGES (five-part animated thriller, Season 1)
 Five verified episodes, 27–32 s each. Story bible, scripts, QA and render instructions: [series/five-messages/](series/five-messages/README.md). Get the MP4s from the draft release `five-messages-s1` (Releases) or run **Actions → Render series**.
 
+### THE QUIET GAME (long-form, 16:9)
+**Episode 1, *The Favour*:** about 9 minutes, 1920×1080. A manager's small favour, a colleague blamed, and the psychology of staying quiet (reciprocity, cognitive dissonance, pluralistic ignorance). Deliverables, render steps and delivery: [series/the-quiet-game/](series/the-quiet-game/README.md). Series standard: [STYLE_GUIDE.md](series/the-quiet-game/STYLE_GUIDE.md).
+
 ### Dark Psychology series (animated thrillers)
 **Episode 004 — *The Compliment With a Deadline*** → render it with the workflow (artifact `ep004-compliment-deadline-seed1-final`). Recurring cast in [`characters/`](characters/), rig in [`renderer/cast.js`](renderer/cast.js), design system in [docs/THRILLER_STYLE.md](docs/THRILLER_STYLE.md).
 

@@ -1,0 +1,213 @@
+<title>The Quiet Game: The Favour</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@500;700;800&display=swap">
+<style>
+/* Layout: one narrow column like a phone screening room; the player first, then the upload kit. Single deliberate night look (the series' own palette). */
+:root{
+  --night:#0b1020; --night2:#141a2e; --panel:#182038; --line:#2a3352;
+  --ink:#eef0f6; --muted:#a8b0c6; --gold:#ffd38a; --oxblood:#c46a7a; --steel:#7fa6d4; --ok:#7fe0a0; --bad:#ff8a7a;
+  --display:"Fraunces",Georgia,"Times New Roman",serif; --body:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 56px;display:grid;gap:22px}
+header{display:grid;gap:4px}
+.series{font-family:var(--display);font-weight:800;font-size:clamp(28px,7vw,44px);letter-spacing:.06em;line-height:1.05;text-wrap:balance}
+.ep{font-weight:800;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.yt{font-family:var(--display);font-weight:600;font-size:clamp(19px,4.6vw,24px);line-height:1.25;color:var(--ink);text-wrap:balance;margin-top:8px}
+.player{background:#000;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+video{display:block;width:100%;aspect-ratio:16/9;max-width:100%;background:#000}
+.bar{display:grid;gap:8px;padding:12px 14px;background:var(--night2)}
+.row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.time{font-variant-numeric:tabular-nums;font-weight:700;color:var(--muted);font-size:14px}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.status{padding:12px 14px;border-radius:12px;font-weight:700;font-size:15px;border:1px solid var(--line);background:var(--panel)}
+.status.bad{border-color:var(--bad);color:#ffd8d2}
+.status.ok{border-color:#3d6b52;color:#d8f7e4}
+.specs{display:flex;flex-wrap:wrap;gap:8px}
+.spec{font-size:13px;font-weight:800;letter-spacing:.04em;padding:6px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-variant-numeric:tabular-nums}
+.btn{appearance:none;border:0;border-radius:12px;padding:14px 18px;font:800 16px/1.1 var(--body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;min-height:48px}
+.btn.primary{background:var(--gold);color:#1a1406;width:100%}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--steel);outline-offset:2px}
+.btn[disabled]{opacity:.6;cursor:progress}
+progress{width:100%;height:10px;accent-color:var(--gold)}
+h2{font-family:var(--display);font-weight:800;font-size:22px;margin:0;letter-spacing:.01em}
+.label{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+section{display:grid;gap:12px}
+.chapters{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.chapters button{all:unset;cursor:pointer;display:grid;grid-template-columns:4.2em 1fr;gap:10px;padding:10px 12px;border-radius:10px;width:100%;box-sizing:border-box}
+.chapters button:hover,.chapters button:focus-visible{background:var(--panel);outline:none}
+.chapters .t{font-variant-numeric:tabular-nums;color:var(--gold);font-weight:800}
+.chapters .on{background:var(--panel)}
+details{background:var(--night2);border:1px solid var(--line);border-radius:12px}
+summary{cursor:pointer;padding:14px 16px;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-weight:800}
+details[open] summary::after{content:"–"}
+.box{padding:0 16px 16px;display:grid;gap:10px;min-width:0}
+pre{margin:0;white-space:pre-wrap;word-wrap:break-word;font:500 14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--night);border:1px solid var(--line);border-radius:10px;padding:12px;max-height:360px;overflow:auto;color:var(--ink)}
+.small{font-size:14px;color:var(--muted)}
+.notice{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+a{color:var(--steel)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="ep" id="epline">Episode 1 · The Favour</div>
+    <div class="series">THE QUIET GAME</div>
+    <div class="yt" id="ytitle"></div>
+  </header>
+
+  <div class="player">
+    <video id="v" controls playsinline preload="metadata"></video>
+    <div class="bar" id="bar">
+      <input type="range" id="scrub" min="0" step="0.1" value="0" aria-label="Episode position">
+      <div class="row"><span class="time" id="clock">0:00 / 0:00</span><span class="time" id="part"></span><span class="time" id="chapnow"></span></div>
+    </div>
+  </div>
+  <div class="status" id="status" hidden></div>
+
+  <div class="specs" id="specs"></div>
+
+  <section aria-labelledby="dl-h">
+    <h2 id="dl-h">Download the MP4</h2>
+    <a class="btn primary" id="dl-local" hidden>Download MP4</a>
+    <button class="btn primary" id="dl-hosted" type="button" hidden>Download full-quality MP4</button>
+    <progress id="dlprog" max="1" value="0" hidden></progress>
+    <div class="small" id="dlnote"></div>
+  </section>
+
+  <section aria-labelledby="ch-h">
+    <h2 id="ch-h">Chapters</h2>
+    <ul class="chapters" id="chapters"></ul>
+  </section>
+
+  <section aria-labelledby="kit-h">
+    <h2 id="kit-h">Upload kit</h2>
+    <div class="small">Everything YouTube asks for. Copy each block straight into YouTube Studio.</div>
+    <div id="kit"></div>
+  </section>
+
+  <div class="notice" id="notice"></div>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+(function () {
+  const $ = id => document.getElementById(id);
+  const v = $('v'), scrub = $('scrub'), status = $('status');
+  const fmt = s => { s = Math.max(0, Math.floor(s)); const m = Math.floor(s / 60); return m + ':' + String(s % 60).padStart(2, '0'); };
+  const mb = b => (b / 1048576).toFixed(1) + ' MB';
+  function say(msg, kind) { status.hidden = false; status.className = 'status' + (kind ? ' ' + kind : ''); status.textContent = msg; }
+  if (!DATA) { say('This page has no episode data. Rebuild it with series/the-quiet-game/package.py.', 'bad'); return; }
+
+  $('ytitle').textContent = DATA.youtube_title;
+  $('epline').textContent = DATA.episode_line;
+  $('notice').textContent = DATA.notice;
+  const sp = DATA.specs; const specs = [sp.width + '×' + sp.height, sp.fps + ' fps', fmt(sp.duration), mb(sp.size), sp.codecs];
+  specs.forEach(t => { const s = document.createElement('span'); s.className = 'spec'; s.textContent = t; $('specs').appendChild(s); });
+  v.poster = DATA.poster;
+  scrub.max = String(DATA.specs.duration);
+
+  // ---------- playback: one file (local) or a chain of ~1-minute parts (hosted)
+  const segs = DATA.mode === 'hosted' ? DATA.segments : [{ src: DATA.src, start: 0, dur: DATA.specs.duration, vtt: DATA.vtt }];
+  let cur = -1, pendingSeek = null, wantPlay = false;
+  function load(i, offset, play) {
+    if (i !== cur) {
+      cur = i; v.src = segs[i].src;
+      [...v.querySelectorAll('track')].forEach(t => t.remove());
+      if (segs[i].vtt) { const tr = document.createElement('track'); tr.kind = 'subtitles'; tr.srclang = 'en'; tr.label = 'English'; tr.src = segs[i].vtt; v.appendChild(tr); }
+      pendingSeek = offset || 0; wantPlay = play; v.load();
+    } else { v.currentTime = offset || 0; if (play) v.play().catch(() => {}); }
+    $('part').textContent = segs.length > 1 ? 'Part ' + (i + 1) + ' of ' + segs.length : '';
+  }
+  function seekGlobal(t, play) { let i = segs.findIndex(s => t < s.start + s.dur); if (i < 0) i = segs.length - 1; load(i, Math.max(0, t - segs[i].start), play); }
+  v.addEventListener('loadedmetadata', () => { if (pendingSeek !== null) { v.currentTime = pendingSeek; pendingSeek = null; } if (wantPlay) { v.play().catch(() => {}); wantPlay = false; } status.hidden = true; });
+  v.addEventListener('ended', () => { if (cur < segs.length - 1) load(cur + 1, 0, true); });
+  const chs = DATA.chapters;
+  v.addEventListener('timeupdate', () => {
+    const g = segs[cur].start + v.currentTime; if (!scrub.matches(':active')) scrub.value = g;
+    $('clock').textContent = fmt(g) + ' / ' + fmt(DATA.specs.duration);
+    let k = 0; chs.forEach((c, j) => { if (g >= c.t) k = j; }); $('chapnow').textContent = chs.length ? '· ' + chs[k].title : '';
+    document.querySelectorAll('.chapters button').forEach((b, j) => b.classList.toggle('on', j === k));
+  });
+  scrub.addEventListener('change', () => seekGlobal(parseFloat(scrub.value), !v.paused));
+  v.addEventListener('error', () => {
+    if (DATA.mode === 'local') say('The video file was not found next to this page (expected ' + DATA.src + '). The MP4 is not stored in Git. Get it from the delivery link in README.md, put it in the episode folder as final.mp4, and reload.', 'bad');
+    else say('Part ' + (cur + 1) + ' of the video did not load. Check your connection, then tap a chapter to retry.', 'bad');
+  });
+  load(0, 0, false);
+
+  chs.forEach(c => { const li = document.createElement('li'); const b = document.createElement('button'); b.type = 'button';
+    b.innerHTML = '<span class="t"></span><span></span>'; b.children[0].textContent = fmt(c.t); b.children[1].textContent = c.title;
+    b.addEventListener('click', () => seekGlobal(c.t + 0.05, true)); li.appendChild(b); $('chapters').appendChild(li); });
+
+  // ---------- download
+  if (DATA.mode === 'local') {
+    const a = $('dl-local'); a.hidden = false; a.href = DATA.src; a.setAttribute('download', DATA.download_name);
+    a.textContent = 'Download MP4 (' + mb(DATA.specs.size) + ')';
+    $('dlnote').textContent = 'Saves ' + DATA.download_name + ' from this folder.';
+  } else {
+    const btn = $('dl-hosted'), prog = $('dlprog'), note = $('dlnote'); btn.hidden = false;
+    btn.textContent = 'Download full-quality MP4 (' + mb(DATA.specs.size) + ')';
+    note.textContent = DATA.download_hint;
+    let busy = false;
+    btn.addEventListener('click', async () => {
+      if (busy) return; busy = true; btn.disabled = true;
+      try {
+        const downloads = window.claude && window.claude.use ? await window.claude.use('downloads') : null;
+        if (!downloads) { note.textContent = 'Saving files is not available in this view. Open this page in the Claude app or claude.ai while signed in, then try again.'; return; }
+        const M = DATA.master; const buf = new Uint8Array(M.size); let off = 0; prog.hidden = false; prog.value = 0;
+        for (let i = 0; i < M.parts.length; i++) {
+          note.textContent = 'Fetching part ' + (i + 1) + ' of ' + M.parts.length + '…';
+          const r = await fetch(M.parts[i]); if (!r.ok) throw new Error('Part ' + (i + 1) + ' failed to load (HTTP ' + r.status + ').');
+          const b = new Uint8Array(await r.arrayBuffer()); buf.set(b, off); off += b.length; prog.value = off / M.size;
+        }
+        if (off !== M.size) throw new Error('Got ' + off + ' bytes, expected ' + M.size + '.');
+        note.textContent = 'Checking the file…';
+        const h = [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))].map(x => x.toString(16).padStart(2, '0')).join('');
+        if (h !== M.sha256) throw new Error('Checksum mismatch: the file is incomplete. Try again.');
+        note.textContent = 'Verified. Confirm the save in the prompt.';
+        const res = await downloads.save({ filename: DATA.download_name, data: new Blob([buf], { type: 'video/mp4' }) });
+        note.textContent = res.status === 'saved' ? 'Saved ' + DATA.download_name + ' (' + mb(M.size) + ', checksum verified). On Android it is in Downloads.' : 'Sent.';
+      } catch (e) {
+        const code = e && e.code;
+        note.textContent = code === 'declined' ? 'Save cancelled.' : code === 'too_large' ? 'This app could not save a file this large. Use the GitHub draft release described in the README instead.' : code === 'rate_limited' ? 'A save prompt is already open. Finish it, then try again.' : 'Download failed: ' + ((e && e.message) || e);
+      } finally { busy = false; btn.disabled = false; }
+    });
+  }
+
+  // ---------- upload kit
+  const kit = $('kit');
+  DATA.kit.forEach(item => {
+    const d = document.createElement('details'); if (item.open) d.open = true;
+    const s = document.createElement('summary'); s.textContent = item.label; d.appendChild(s);
+    const box = document.createElement('div'); box.className = 'box';
+    if (item.note) { const n = document.createElement('div'); n.className = 'small'; n.textContent = item.note; box.appendChild(n); }
+    const pre = document.createElement('pre'); pre.textContent = item.text; box.appendChild(pre);
+    const row = document.createElement('div'); row.className = 'row';
+    const copy = document.createElement('button'); copy.type = 'button'; copy.className = 'btn ghost'; copy.textContent = 'Copy';
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(item.text); copy.textContent = 'Copied'; }
+      catch (_) { const r = document.createRange(); r.selectNodeContents(pre); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); copy.textContent = 'Selected: press copy'; }
+      setTimeout(() => { copy.textContent = 'Copy'; }, 2200);
+    });
+    row.appendChild(copy);
+    if (item.save) {
+      const sv = document.createElement('button'); sv.type = 'button'; sv.className = 'btn ghost'; sv.textContent = 'Save ' + item.save;
+      sv.addEventListener('click', async () => {
+        if (DATA.mode === 'local') { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([item.text], { type: 'text/plain' })); a.download = item.save; a.click(); return; }
+        const dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null;
+        if (!dl) { sv.textContent = 'Saving unavailable here'; return; }
+        try { await dl.save({ filename: item.save, data: item.text }); sv.textContent = 'Saved'; } catch (e) { sv.textContent = e && e.code === 'declined' ? 'Cancelled' : 'Save failed'; }
+      });
+      row.appendChild(sv);
+    }
+    box.appendChild(row); d.appendChild(box); kit.appendChild(d);
+  });
+})();
+</script>

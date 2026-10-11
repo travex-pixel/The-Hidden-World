@@ -16,6 +16,9 @@ from pipeline.verify import verify
 ROOT = Path(__file__).resolve().parent.parent
 QUALITY = {"preview": {"width": 540, "height": 960, "fps": 15, "crf": 26, "preset": "veryfast"},
            "final": {"width": 1080, "height": 1920, "fps": 30, "crf": 20, "preset": "medium"}}
+# Long-form widescreen episodes ("format": "landscape") draw on a 1920x1080 logical canvas.
+QUALITY_LANDSCAPE = {"preview": {"width": 960, "height": 540, "fps": 15, "crf": 26, "preset": "veryfast"},
+                     "final": {"width": 1920, "height": 1080, "fps": 30, "crf": 20, "preset": "medium"}}
 
 
 def log(msg: str) -> None:
@@ -88,6 +91,7 @@ def main(argv=None) -> int:
     ap.add_argument("--visual", choices=["art", "svg"], default=None, help="art = illustrated panels (episode default); svg = code-drawn scenes")
     ap.add_argument("--plan-only", action="store_true", help="stop after writing plan.json (for quick stills with pipeline/stills.mjs)")
     ap.add_argument("--reuse-video", action="store_true", help="skip frame rendering and reuse out/<id>/video_silent.mp4 (audio-only iteration)")
+    ap.add_argument("--workers", type=int, default=1, help="parallel browser workers for frame rendering (long-form: 4-6)")
     args = ap.parse_args(argv)
 
     try:
@@ -95,7 +99,8 @@ def main(argv=None) -> int:
     except EpisodeError as e:
         log(f"ERROR {e}"); return 2
     seed = random.randrange(1, 10**6) if args.seed == "random" else int(args.seed)
-    q = QUALITY[args.quality]
+    landscape = ep.get("format") == "landscape"
+    q = (QUALITY_LANDSCAPE if landscape else QUALITY)[args.quality]
     out_dir = Path(args.out) if args.out else ROOT / "out" / ep["id"]
     out_dir.mkdir(parents=True, exist_ok=True)
     log(f"episode={ep['id']} seed={seed} quality={args.quality} -> {out_dir}")
@@ -179,6 +184,8 @@ def main(argv=None) -> int:
     plan = {"visual": visual, "art": art, "cast": cast, "width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed,
             "timeline": [{**s, "decisions": decisions["scenes"][s["id"]]} for s in tl], "episode": ep,
             "scenes_js": f"renderer/scenes/{ep['id']}.js"}
+    if landscape:
+        plan["canvas"] = [1920, 1080]
     if not (ROOT / plan["scenes_js"]).exists():
         log(f"ERROR: scene renderer {plan['scenes_js']} not found"); return 4
     (out_dir / "plan.json").write_text(json.dumps(plan))
@@ -189,7 +196,7 @@ def main(argv=None) -> int:
         log("render: skipped (--reuse-video)")
     else:
         log(f"render: {q['width']}x{q['height']} @ {q['fps']}fps, {round(total * q['fps'])} frames")
-        r = subprocess.run(["node", str(ROOT / "pipeline" / "render.mjs"), str(out_dir / "plan.json"), str(silent)], cwd=ROOT)
+        r = subprocess.run(["node", str(ROOT / "pipeline" / "render.mjs"), str(out_dir / "plan.json"), str(silent), "--workers", str(max(1, args.workers))], cwd=ROOT)
         if r.returncode != 0:
             log("ERROR: frame rendering failed (see messages above)"); return 5
 
@@ -203,6 +210,9 @@ def main(argv=None) -> int:
     log("verify: probing, decoding, contact sheet")
     rep = verify(final, expected_duration=total, width=q["width"], height=q["height"], fps=q["fps"], contact_sheet=out_dir / "contact_sheet.png")
     (out_dir / "verify.json").write_text(json.dumps(rep, indent=2))
+    # captions, transcript and chapters, all timed from the real narration in this render
+    from pipeline.captions import write_all as write_captions
+    write_captions(ep, json.loads((out_dir / "timeline.json").read_text()), out_dir)
     for k, v in rep["checks"].items():
         log(f"  {'PASS' if v else 'FAIL'} {k}")
     log(f"{'OK' if rep['all_passed'] else 'FAILED CHECKS'}: {final} ({rep['size_bytes']/1e6:.1f} MB, {rep['duration']}s)")

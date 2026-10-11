@@ -96,12 +96,31 @@
   }
 
   // ---------- hair
+  // bumpy closed outline around an ellipse (curly hair volumes); deterministic
+  function curlCloud(cx, cy, rx, ry, n, amp, ph = 0) {
+    let d = '';
+    for (let i = 0; i <= n; i++) {
+      const a = ph + i / n * 2 * Math.PI, x = cx + Math.cos(a) * rx, y = cy + Math.sin(a) * ry;
+      if (i === 0) { d += `M${f1(x)} ${f1(y)}`; continue; }
+      const am = ph + (i - 0.5) / n * 2 * Math.PI, k = 1 + amp / Math.min(rx, ry);
+      d += ` Q${f1(cx + Math.cos(am) * rx * k)} ${f1(cy + Math.sin(am) * ry * k)} ${f1(x)} ${f1(y)}`;
+    }
+    return d + ' Z';
+  }
+  function curlTexture(cx, cy, rx, ry, n, col, seed) {
+    const r = E.mulberry32(seed); let s = '';
+    for (let i = 0; i < n; i++) { const a = r() * Math.PI * 2, rr = Math.sqrt(r()); const x = cx + Math.cos(a) * rx * rr, y = cy + Math.sin(a) * ry * rr, q = 9 + r() * 9;
+      s += `<path d="M${f1(x - q)} ${f1(y)} q${f1(q)} ${f1(-q * 1.1)} ${f1(q * 2)} 0" stroke="${col}" stroke-width="3.2" fill="none" opacity="${f1(0.35 + r() * 0.35)}" stroke-linecap="round"/>`; }
+    return s;
+  }
   function hairBack(sp, T) {
     const hs = sp.look.hair_style, c = sp.look.hair, hl = sp.look.hair_light, sx = -T * 8;
     if (hs === 'long_waves_sidepart') return `<g transform="translate(${f1(sx)} 0)"><path d="M-128 -120 C-190 -40 -168 80 -200 210 C-215 280 -185 330 -150 360 C-110 330 -96 300 -84 250 L84 250 C96 300 120 340 160 360 C200 320 215 270 200 200 C175 90 192 -40 128 -120 C90 -205 -90 -205 -128 -120 Z" fill="${c}"/>
       <path d="M-176 40 C-190 130 -170 220 -196 300 M178 30 C196 130 176 220 196 300" stroke="${hl}" stroke-width="7" fill="none" opacity="0.55" stroke-linecap="round"/></g>`;
     if (hs === 'bob_bangs') return `<g transform="translate(${f1(sx)} 0)"><path d="M-122 -110 C-156 -40 -150 60 -136 128 C-116 156 -76 152 -62 132 L62 132 C76 152 116 156 136 128 C150 60 156 -40 122 -110 C92 -204 -92 -204 -122 -110 Z" fill="${c}"/></g>`;
     if (hs === 'silver_sweep') return `<g transform="translate(${f1(sx)} 0)"><path d="M-118 -100 C-138 -20 -130 50 -114 96 L114 96 C134 50 140 -20 118 -100 C88 -198 -88 -198 -118 -100 Z" fill="${c}"/></g>`;
+    if (hs === 'curly_puff') return `<g transform="translate(${f1(sx)} 0)"><path d="${curlCloud(0, -48, 188, 196, 26, 16, 0.2)}" fill="${c}"/>${curlTexture(0, -48, 170, 180, 46, hl, 11)}</g>`;
+    if (hs === 'close_crop') return '';
     return `<g transform="translate(${f1(sx)} 0)"><path d="M-114 -60 C-122 -150 -60 -200 0 -202 C64 -202 124 -152 114 -60 C114 -30 108 0 100 10 L-100 10 C-108 0 -114 -30 -114 -60 Z" fill="${c}"/></g>`;
   }
   function hairFront(sp, T, t) {
@@ -123,6 +142,27 @@
       <path d="M-114 -40 C-118 0 -114 30 -108 52 L-98 50 C-102 20 -104 -10 -102 -40 Z" fill="${c}"/>
       <path d="M-40 -176 C30 -194 104 -160 118 -86 M-30 -150 C30 -164 90 -134 108 -70 M110 -20 C116 20 114 56 106 90" stroke="${hl}" stroke-width="6" fill="none" opacity="0.8" stroke-linecap="round"/>
       <path d="M-20 -186 C30 -198 80 -186 108 -150" stroke="#fff" stroke-width="5" fill="none" opacity="0.3" stroke-linecap="round"/></g>`;
+    if (hs === 'short_crop') return `<g transform="translate(${f1(sx)} 0)">
+      <path d="M-108 -40 C-116 -132 -76 -198 -4 -206 C70 -212 122 -166 114 -72 C112 -54 110 -42 106 -30 L100 -90 C96 -104 90 -112 82 -118 L70 -104 L60 -124 L44 -110 L30 -130 L14 -112 L-4 -132 L-20 -112 L-36 -128 L-52 -108 L-66 -122 L-80 -100 L-92 -112 L-102 -84 Z" fill="${c}"/>
+      <path d="M-108 -44 L-105 18 M108 -44 L105 18" stroke="${c}" stroke-width="9" stroke-linecap="round" opacity="0.8"/>
+      <path d="M-70 -168 C-30 -196 40 -200 92 -170 M-56 -146 l10 -20 M-20 -150 l8 -22 M16 -152 l8 -22 M52 -146 l8 -20 M80 -136 l8 -16" stroke="${hl}" stroke-width="5" fill="none" opacity="0.7" stroke-linecap="round"/>
+      <path d="M-30 -196 C10 -206 50 -202 84 -186" stroke="#fff" stroke-width="4" fill="none" opacity="0.14" stroke-linecap="round"/></g>`;
+    if (hs === 'side_part_grey') return `<g transform="translate(${f1(sx)} 0)">
+      <path d="M-46 -200 C-92 -192 -116 -150 -112 -78 L-104 -58 C-102 -106 -84 -138 -48 -150 Z" fill="${c}"/>
+      <path d="M-46 -200 C22 -216 114 -188 120 -100 C122 -72 116 -52 110 -38 L104 -84 C96 -118 70 -132 30 -138 C0 -142 -30 -146 -48 -150 Z" fill="${c}"/>
+      <path d="M-46 -150 C-10 -170 40 -168 76 -150 C96 -140 104 -124 106 -110" stroke="${c}" stroke-width="14" fill="none" stroke-linecap="round"/>
+      <path d="M-112 -80 L-108 -8 M112 -84 L108 -10" stroke="${hl}" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+      <path d="M-40 -186 C10 -200 80 -186 108 -140 M-30 -168 C20 -180 70 -170 98 -132 M-60 -180 C-84 -170 -100 -140 -104 -100" stroke="${hl}" stroke-width="5" fill="none" opacity="0.8" stroke-linecap="round"/>
+      <path d="M-46 -200 L-48 -150" stroke="${sp.look.skin_shadow}" stroke-width="2.5" opacity="0.6"/></g>`;
+    if (hs === 'curly_puff') return `<g transform="translate(${f1(sx)} 0)">
+      <path d="${curlCloud(0, -168, 132, 66, 14, 13, 0.1)}" fill="${c}"/>
+      <path d="${curlCloud(-122, -40, 42, 78, 9, 9)}" fill="${c}"/><path d="${curlCloud(122, -40, 42, 78, 9, 9, 0.4)}" fill="${c}"/>
+      ${curlTexture(0, -172, 120, 50, 18, hl, 23)}${curlTexture(-122, -40, 30, 60, 6, hl, 29)}${curlTexture(122, -40, 30, 60, 6, hl, 31)}</g>`;
+    if (hs === 'close_crop') return `<g transform="translate(${f1(sx * 0.6)} 0)">
+      <path d="M-108 -44 C-116 -140 -64 -196 0 -198 C64 -196 116 -140 108 -44 C104 -70 98 -96 84 -112 C50 -132 -50 -132 -84 -112 C-98 -96 -104 -70 -108 -44 Z" fill="${c}"/>
+      <path d="M-96 -96 C-70 -150 70 -150 96 -96" stroke="${hl}" stroke-width="10" fill="none" opacity="0.35" stroke-dasharray="3 7" stroke-linecap="round"/>
+      <path d="M-84 -150 C-40 -186 40 -186 84 -150" stroke="${hl}" stroke-width="9" fill="none" opacity="0.3" stroke-dasharray="3 8" stroke-linecap="round"/>
+      <path d="M-108 -44 L-104 -86 M108 -44 L104 -86" stroke="${hl}" stroke-width="8" opacity="0.7" stroke-linecap="round"/></g>`;
     // swept quiff with a loose strand
     return `<g transform="translate(${f1(sx)} 0)">
       <path d="M-112 -40 C-120 -130 -84 -196 -6 -206 C70 -216 128 -176 120 -84 C118 -60 112 -40 106 -26 L100 -78 C80 -126 20 -138 -40 -128 C-74 -122 -98 -96 -104 -34 Z" fill="${c}"/>
@@ -161,6 +201,10 @@
       ${!male ? `<ellipse cx="${f1(-56 + fs)}" cy="44" rx="26" ry="14" fill="#e07a7a" opacity="${sp.look.age_lines ? 0.06 : 0.12}"/><ellipse cx="${f1(56 + fs)}" cy="44" rx="26" ry="14" fill="#e07a7a" opacity="${sp.look.age_lines ? 0.06 : 0.12}"/>` : ''}
       ${male && sp.look.stubble ? `<path d="M${sq(-90)} 70 C${sq(-76)} 120 ${sq(-40)} 150 0 156 C${sq(40)} 150 ${sq(76)} 120 ${sq(90)} 70 C${f1(64 + fs)} 116 ${f1(34 + fs)} 128 ${f1(fs)} 130 C${f1(-34 + fs)} 128 ${f1(-64 + fs)} 116 ${sq(-90)} 70 Z" fill="${sp.look.hair}" opacity="0.09"/><path d="M${f1(-30 + T * 22)} 72 Q${f1(T * 22)} 66 ${f1(30 + T * 22)} 72" stroke="${sp.look.hair}" stroke-width="6" opacity="0.1" fill="none"/>` : ''}
       <ellipse cx="${f1(-ex + fs)}" cy="${ey - 6}" rx="40" ry="22" fill="${sp.look.skin_shadow}" opacity="0.13"/><ellipse cx="${f1(ex + fs)}" cy="${ey - 6}" rx="40" ry="22" fill="${sp.look.skin_shadow}" opacity="0.13"/></g>`;
+    // trimmed beard (drawn under nose and mouth so the lips stay readable)
+    if (sp.look.beard) s += `<path d="M${sq(-100)} 6 C${sq(-100)} 70 ${sq(-84)} 128 ${sq(-40)} 156 C${sq(-16)} 170 ${sq(16)} 170 ${sq(40)} 156 C${sq(84)} 128 ${sq(100)} 70 ${sq(100)} 6 C${sq(92)} 40 ${sq(80)} 58 ${f1(T * 22 + 56)} 66 C${f1(T * 22 + 30)} 62 ${f1(T * 22 - 30)} 62 ${f1(T * 22 - 56)} 66 C${sq(-80)} 58 ${sq(-92)} 40 ${sq(-100)} 6 Z" fill="${sp.look.hair}" opacity="0.9"/>
+      <path d="M${sq(-80)} 70 C${sq(-70)} 110 ${sq(-40)} 140 0 150 M${sq(80)} 70 C${sq(70)} 110 ${sq(40)} 140 0 150 M${sq(-50)} 100 l4 18 M${sq(50)} 100 l-4 18 M${f1(T * 22 - 20)} 130 l2 16 M${f1(T * 22 + 20)} 130 l-2 16" stroke="${sp.look.hair_light}" stroke-width="3" fill="none" opacity="0.55" stroke-linecap="round"/>
+      <path d="M${f1(T * 22 - 44)} 80 C${f1(T * 22 - 24)} 66 ${f1(T * 22 + 24)} 66 ${f1(T * 22 + 44)} 80 C${f1(T * 22 + 24)} 74 ${f1(T * 22 - 24)} 74 ${f1(T * 22 - 44)} 80 Z" fill="${sp.look.hair}" stroke="${sp.look.hair}" stroke-width="6" stroke-linejoin="round"/>`;
     // nose
     const nx = T * 32;
     s += `<path d="M${f1(nx - 6 * Math.sign(T || 1))} -4 Q${f1(nx + 10 * (T >= 0 ? 1 : -1))} 30 ${f1(nx + 6)} 46" stroke="${sp.look.skin_shadow}" stroke-width="3" fill="none" opacity="0.75" stroke-linecap="round"/>
@@ -168,6 +212,13 @@
       <path d="M${f1(nx - 3)} -2 L${f1(nx - 1)} 34" stroke="${sp.look.skin_light}" stroke-width="4" opacity="0.4" stroke-linecap="round"/>`;
     // eyes, brows, mouth
     s += eye(-ex + fs, ey, nearL, sp, P, P.gaze, -1, uid('e')) + eye(ex + fs, ey, nearR, sp, P, P.gaze, 1, uid('e'));
+    if (sp.look.glasses && !P.noGlasses) {
+      const gw = 88, gh = 58, gc = sp.look.glasses, gl = (cx, k) => `<rect x="${f1(cx - gw / 2 * k)}" y="${ey - gh / 2 + 2}" width="${f1(gw * k)}" height="${gh}" rx="17" fill="#d8ecff" fill-opacity="0.07" stroke="${gc}" stroke-width="5.5"/><path d="M${f1(cx - gw * 0.3 * k)} ${ey + 16} L${f1(cx - gw * 0.05 * k)} ${ey - 18}" stroke="#fff" stroke-width="5" opacity="0.22" stroke-linecap="round"/>`;
+      const L = -ex + fs, R = ex + fs;
+      s += gl(L, nearL) + gl(R, nearR) + `<path d="M${f1(L + gw / 2 * nearL)} ${ey - 4} Q${f1((L + R) / 2)} ${ey - 16} ${f1(R - gw / 2 * nearR)} ${ey - 4}" stroke="${gc}" stroke-width="5" fill="none"/>`;
+      if (T < 0.45) s += `<path d="M${f1(R + gw / 2 * nearR)} ${ey - 8} L${sq(104)} ${ey - 4}" stroke="${gc}" stroke-width="5"/>`;
+      if (T > -0.45) s += `<path d="M${f1(L - gw / 2 * nearL)} ${ey - 8} L${sq(-104)} ${ey - 4}" stroke="${gc}" stroke-width="5"/>`;
+    }
     s += brow(-ex + fs, ey, nearL, sp, P, -1) + brow(ex + fs, ey, nearR, sp, P, 1);
     s += mouth(T * 22, male ? 92 : 90, sp, P, P.open || 0, 1 - 0.14 * Math.abs(T));
     if (sp.look.age_lines) s += `<path d="M${f1(T * 32 - 22)} 54 Q${f1(T * 22 - 40)} 80 ${f1(T * 22 - 34)} 104 M${f1(T * 32 + 22)} 54 Q${f1(T * 22 + 40)} 80 ${f1(T * 22 + 34)} 104" stroke="${sp.look.skin_shadow}" stroke-width="2.2" fill="none" opacity="0.55"/><path d="M${f1(-ex + fs - 20)} ${ey + 22} q20 8 38 0 M${f1(ex + fs - 18)} ${ey + 22} q20 8 38 0" stroke="${sp.look.skin_shadow}" stroke-width="1.6" fill="none" opacity="0.5"/>`;
@@ -179,6 +230,37 @@
 
   function torso(sp, t, variant) {
     const o = variant && sp.look.outfit_variants && sp.look.outfit_variants[variant] ? { ...sp.look.outfit, ...sp.look.outfit_variants[variant] } : sp.look.outfit; const br = Math.sin(t * 1.6) * 2;
+    if (o.style === 'knit_crew_shirt') return `<g transform="translate(0 ${f1(br)})">
+      <path d="M-44 110 L-50 270 L50 270 L44 110 Z" fill="${sp.look.skin}"/><path d="M-44 120 Q0 190 44 120 L44 150 Q0 210 -44 150 Z" fill="${sp.look.skin_shadow}" opacity="0.55"/>
+      <path d="M-240 340 C-236 300 -204 274 -130 262 L-64 246 Q0 284 64 246 L130 262 C204 274 236 300 240 340 L262 900 L-262 900 Z" fill="${o.top}"/>
+      <path d="M-48 232 L-74 290 L-18 276 Z M48 232 L74 290 L18 276 Z" fill="${o.inner}" stroke="${o.inner_shadow || '#9fb3c8'}" stroke-width="2.5"/>
+      <path d="M-66 246 Q0 292 66 246" stroke="${o.top_light}" stroke-width="16" fill="none" stroke-linecap="round"/><path d="M-66 246 Q0 292 66 246" stroke="${o.top}" stroke-width="4" fill="none" stroke-dasharray="2 6"/>
+      ${[-170, -110, -50, 10, 70, 130, 190].map(x => `<path d="M${x} 380 L${x + 6} 900" stroke="${o.top_light}" stroke-width="3" opacity="0.18"/>`).join('')}
+      <path d="M-34 276 L-14 560 M34 276 L14 560" stroke="${o.accent}" stroke-width="7" fill="none"/><rect x="-30" y="556" width="60" height="84" rx="8" fill="#eef2f6" stroke="#9aa6b2" stroke-width="3"/><rect x="-20" y="572" width="40" height="22" rx="4" fill="${o.accent}"/>
+      <path d="M-240 340 C-220 326 -190 322 -160 328" stroke="${o.top_light}" stroke-width="5" fill="none" opacity="0.6"/></g>`;
+    if (o.style === 'cardigan_tie') return `<g transform="translate(0 ${f1(br)})">
+      <path d="M-44 110 L-50 270 L50 270 L44 110 Z" fill="${sp.look.skin}"/><path d="M-44 120 Q0 190 44 120 L44 150 Q0 210 -44 150 Z" fill="${sp.look.skin_shadow}" opacity="0.55"/>
+      <path d="M-236 340 C-232 300 -200 276 -128 262 L-54 240 L0 300 L54 240 L128 262 C200 276 232 300 236 340 L258 900 L-258 900 Z" fill="${o.shirt}"/>
+      <path d="M-16 262 L16 262 L12 296 L-12 296 Z" fill="${o.tie}"/><path d="M-12 296 L12 296 L30 640 L0 690 L-30 640 Z" fill="${o.tie}"/><path d="M-4 310 L-14 620" stroke="#fff" stroke-width="3" opacity="0.15"/>
+      <path d="M-54 238 L-80 296 L-16 270 Z M54 238 L80 296 L16 270 Z" fill="${o.shirt}" stroke="${o.shirt_shadow}" stroke-width="2.5"/>
+      <path d="M-236 340 C-232 300 -200 276 -128 262 L-70 250 L-44 430 L-36 900 L-258 900 Z M236 340 C232 300 200 276 128 262 L70 250 L44 430 L36 900 L258 900 Z" fill="${o.top}"/>
+      <path d="M-70 250 L-44 430 L-36 900 M70 250 L44 430 L36 900" stroke="${o.top_light}" stroke-width="9" fill="none"/>${[500, 600, 700, 800].map(y => `<circle cx="-50" cy="${y}" r="7" fill="${o.accent}"/>`).join('')}
+      ${[-200, -150, -100, 100, 150, 200].map(x => `<path d="M${x} 380 L${x + 4} 900" stroke="${o.top_light}" stroke-width="3" opacity="0.25"/>`).join('')}
+      <path d="M-236 340 C-216 326 -186 322 -156 328" stroke="${o.top_light}" stroke-width="5" fill="none" opacity="0.7"/></g>`;
+    if (o.style === 'collar_shirt_f') return `<g transform="translate(0 ${f1(br)})">
+      <path d="M-38 110 L-44 270 L44 270 L38 110 Z" fill="${sp.look.skin}"/><path d="M-38 118 Q0 180 38 118 L38 150 Q0 200 -38 150 Z" fill="${sp.look.skin_shadow}" opacity="0.5"/>
+      <path d="M-196 340 C-198 296 -160 270 -96 258 L-46 246 L0 340 L46 246 L96 258 C160 270 198 296 196 340 L214 900 L-214 900 Z" fill="${o.top}"/>
+      <path d="M-46 246 L0 340 L46 246 Z" fill="${sp.look.skin}"/><path d="M-34 262 Q0 300 34 262" stroke="${o.accent}" stroke-width="2.4" fill="none"/><circle cx="0" cy="296" r="5" fill="${o.accent}"/>
+      <path d="M-48 240 L-96 262 L-60 330 L-6 346 Z M48 240 L96 262 L60 330 L6 346 Z" fill="${o.top_light}" stroke="${o.top_shadow || '#9a4a36'}" stroke-width="2.5"/>
+      <path d="M0 346 L0 900" stroke="${o.top_shadow || '#9a4a36'}" stroke-width="3"/>${[440, 540, 640, 740].map(y => `<circle cx="8" cy="${y}" r="5" fill="${o.top_shadow || '#9a4a36'}"/>`).join('')}
+      <path d="M-150 360 C-130 460 -150 600 -126 740 M150 360 C130 460 150 600 126 740" stroke="${o.top_shadow || '#9a4a36'}" stroke-width="4" fill="none" opacity="0.35" stroke-linecap="round"/></g>`;
+    if (o.style === 'turtleneck') return `<g transform="translate(0 ${f1(br)})">
+      <path d="M-44 104 L-48 286 L48 286 L44 104 Z" fill="${o.top}"/>${[140, 170, 200, 230, 260].map(y => `<path d="M-46 ${y} Q0 ${y + 8} 46 ${y}" stroke="${o.top_light}" stroke-width="3" fill="none" opacity="0.45"/>`).join('')}
+      <path d="M-196 340 C-198 296 -160 272 -96 262 L-48 258 Q0 296 48 258 L96 262 C160 272 198 296 196 340 L214 900 L-214 900 Z" fill="${o.top}"/>
+      <path d="M-48 258 Q0 300 48 258" stroke="${o.top_light}" stroke-width="5" fill="none" opacity="0.7"/>
+      <path d="M-30 300 L0 520 L30 300" stroke="${o.accent}" stroke-width="2.5" fill="none"/><path d="M0 520 l-14 22 l14 22 l14 -22 Z" fill="${o.accent}"/>
+      <path d="M-150 360 C-130 460 -150 600 -126 740 M150 360 C130 460 150 600 126 740" stroke="${o.top_light}" stroke-width="5" fill="none" opacity="0.35" stroke-linecap="round"/>
+      <path d="M-196 340 C-176 326 -150 322 -120 328" stroke="${o.top_light}" stroke-width="5" fill="none" opacity="0.7"/></g>`;
     if (o.style === 'shirt_sleeves') return `<g transform="translate(0 ${f1(br)})">
       <path d="M-44 110 L-50 270 L50 270 L44 110 Z" fill="${sp.look.skin}"/><path d="M-44 120 Q0 190 44 120 L44 150 Q0 210 -44 150 Z" fill="${sp.look.skin_shadow}" opacity="0.55"/>
       <path d="M-230 350 C-226 300 -196 276 -124 262 L-50 240 L0 330 L50 240 L124 262 C196 276 226 300 230 350 L250 900 L-250 900 Z" fill="${o.shirt}"/>
@@ -217,6 +299,7 @@
   }
   function earrings(sp, T) {
     const acc = (sp.look.accessories || []).join(' ');
+    if (acc.includes('drop')) { const x = 104 * (1 - 0.1 * Math.abs(T)) + T * 8; const g = sp.look.outfit.accent; const one = cx => `<circle cx="${f1(cx)}" cy="30" r="5" fill="${g}"/><path d="M${f1(cx)} 34 L${f1(cx)} 52" stroke="${g}" stroke-width="3"/><path d="M${f1(cx)} 52 l-9 14 l9 14 l9 -14 Z" fill="${g}"/>`; return one(-x) + (T < 0.5 ? one(x) : ''); }
     if (acc.includes('pearl') || acc.includes('stud')) { const x = 104 * (1 - 0.1 * Math.abs(T)) + T * 8; const col = acc.includes('pearl') ? '#f4f0e8' : '#d8d2c4'; return `<circle cx="${f1(-x)}" cy="30" r="7" fill="${col}" stroke="#8a8590" stroke-width="1.5"/>${T < 0.5 ? `<circle cx="${f1(x)}" cy="30" r="7" fill="${col}" stroke="#8a8590" stroke-width="1.5"/>` : ''}`; }
     if (!acc.includes('hoop')) return '';
     const x = 104 * (1 - 0.1 * Math.abs(T)) + T * 8;
@@ -229,6 +312,7 @@
     const P = actingAt(a, ctx.t, ctx.lines || []);
     P.blink = blinkAt(a.who, ctx.t + ctx.sceneStart, E.state.seed);
     P.open = a.view === 'back' ? 0 : E.mouth(a.who, ctx.t + ctx.sceneStart);
+    P.noGlasses = (a.glasses_off || []).some(g => { const g0 = resolveTime(g, ctx.lines || []); return ctx.t >= g0 && ctx.t < g0 + (g.dur || 2); });
     const idleTilt = Math.sin((ctx.t + ctx.sceneStart) * 0.9 + a.who.length) * 1.2, br = Math.sin((ctx.t + ctx.sceneStart) * 1.6) * 2;
     const rim = opts.rim || '#ffc27a';
     let s = `${a.shadowed ? '<g filter="url(#silhouette)">' : '<g>'}<g transform="translate(${f1(P.x)} ${f1(P.y)}) scale(${a.scale}) rotate(${f1(P.lean)} 0 400)">`;
@@ -236,16 +320,17 @@
       const sp2 = sp; const c = sp2.look.hair;
       const ov = a.outfit && sp2.look.outfit_variants ? sp2.look.outfit_variants[a.outfit] : null;
       s += `<g filter="url(#dof)" opacity="0.97"><g transform="translate(0 ${f1(br)})">${ov ? `<path d="M-230 350 C-226 300 -196 276 -124 262 L-50 250 L50 250 L124 262 C196 276 226 300 230 350 L250 900 L-250 900 Z" fill="${ov.shirt}"/>` : sp2.look.build === 'male'
-        ? `<path d="M-250 340 C-245 300 -210 272 -130 262 L-50 250 L50 250 L130 262 C210 272 245 300 250 340 L270 900 L-270 900 Z" fill="${sp2.look.outfit.jacket}"/><path d="M-60 250 Q0 236 60 250 L52 290 Q0 278 -52 290 Z" fill="${sp2.look.outfit.shirt}"/>`
+        ? `<path d="M-250 340 C-245 300 -210 272 -130 262 L-50 250 L50 250 L130 262 C210 272 245 300 250 340 L270 900 L-270 900 Z" fill="${sp2.look.outfit.jacket || sp2.look.outfit.top}"/><path d="M-60 250 Q0 236 60 250 L52 290 Q0 278 -52 290 Z" fill="${sp2.look.outfit.shirt || sp2.look.outfit.inner || sp2.look.outfit.top}"/>`
         : `<path d="M-196 340 C-198 296 -160 270 -96 258 L96 258 C160 270 198 296 196 340 L214 900 L-214 900 Z" fill="${sp2.look.outfit.top}"/>`}
         <path d="M-44 110 L-50 260 L50 260 L44 110 Z" fill="${sp2.look.skin_shadow}"/></g>
-        <g transform="rotate(${f1(P.tilt + idleTilt)} 0 120)"><ellipse cx="-104" cy="4" rx="14" ry="27" fill="${sp2.look.skin_shadow}"/>${sp2.look.hair_style === 'long_waves_sidepart' ? `<path d="M-128 -120 C-190 -40 -168 80 -200 210 C-215 280 -185 330 -150 360 L150 360 C185 330 215 280 200 210 C168 80 190 -40 128 -120 C90 -205 -90 -205 -128 -120 Z" fill="${c}"/>` : sp2.look.hair_style === 'bob_bangs' ? `<path d="M-122 -110 C-156 -40 -150 60 -136 128 L136 128 C150 60 156 -40 122 -110 C92 -204 -92 -204 -122 -110 Z" fill="${c}"/>` : `<path d="M-112 -40 C-124 -150 -60 -205 0 -206 C64 -206 126 -150 112 -40 C110 30 90 100 54 118 L-54 118 C-92 100 -112 30 -112 -40 Z" fill="${c}"/>`}
+        <g transform="rotate(${f1(P.tilt + idleTilt)} 0 120)"><ellipse cx="-104" cy="4" rx="14" ry="27" fill="${sp2.look.skin_shadow}"/>${sp2.look.hair_style === 'long_waves_sidepart' ? `<path d="M-128 -120 C-190 -40 -168 80 -200 210 C-215 280 -185 330 -150 360 L150 360 C185 330 215 280 200 210 C168 80 190 -40 128 -120 C90 -205 -90 -205 -128 -120 Z" fill="${c}"/>` : sp2.look.hair_style === 'curly_puff' ? `<path d="${curlCloud(0, -48, 188, 196, 26, 16, 0.2)}" fill="${c}"/>` : sp2.look.hair_style === 'bob_bangs' ? `<path d="M-122 -110 C-156 -40 -150 60 -136 128 L136 128 C150 60 156 -40 122 -110 C92 -204 -92 -204 -122 -110 Z" fill="${c}"/>` : `<path d="M-112 -40 C-124 -150 -60 -205 0 -206 C64 -206 126 -150 112 -40 C110 30 90 100 54 118 L-54 118 C-92 100 -112 30 -112 -40 Z" fill="${c}"/>`}
         <path d="M-80 -150 C-30 -190 40 -190 90 -150" stroke="${sp2.look.hair_light}" stroke-width="6" fill="none" opacity="0.6"/>
         <path d="M112 -40 C110 30 90 100 54 118" stroke="${rim}" stroke-width="6" fill="none" opacity="0.7"/></g></g>`;
       return s + '</g></g>';
     }
     s += torso(sp, ctx.t + ctx.sceneStart, a.outfit);
     s += `<g transform="rotate(${f1(P.tilt + idleTilt)} 0 120)">${hairBack(sp, P.turn)}${head(sp, P, ctx.t, a.light === 'right' ? 'right' : 'left', rim)}${earrings(sp, P.turn)}${hairFront(sp, P.turn, ctx.t + ctx.sceneStart)}</g>`;
+    if (opts.after) s += opts.after(P, sp, ctx);   // body-attached layers (arms, held props) drawn by long-form scenes
     if (a.light === 'phone') s += `<rect x="-300" y="-260" width="600" height="1200" fill="url(#phoneglow)" style="mix-blend-mode:screen"/>`;
     return s + '</g></g>';
   }
@@ -465,5 +550,5 @@
     }
   });
 
-  E.cast = { actor, actingAt, EXPR };
+  E.cast = { actor, actingAt, EXPR, resolveTime };
 })();
