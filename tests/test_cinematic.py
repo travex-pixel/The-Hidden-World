@@ -237,6 +237,25 @@ class SlateEpisodes(unittest.TestCase):
         self.assertRegex(ep.get("legal_status_verified", ""), r"^\d{4}-\d{2}-\d{2}$")
 
 
+class NoNewVideosInGit(unittest.TestCase):
+    """MP4s are build outputs: delivered in chat and archived in GitHub Releases, not committed (see README)."""
+    GRANDFATHERED = {
+        "releases/ep001-cash-vs-profit.mp4", "releases/ep002-mars-units.mp4", "releases/ep003-metronome-bridge.mp4",
+        "series/true-crime/output/true_crime_01.mp4", "series/true-crime/output/true_crime_02.mp4",
+        *[f"series/true-crime-cinematic/output/{f}" for f in (
+            "true_crime_01.mp4", "true_crime_02.mp4", "true_crime_d4vd_case.mp4", "true_crime_04_louvre_heist.mp4",
+            "true_crime_05_db_cooper.mp4", "true_crime_06_whitey_bulger.mp4", "true_crime_07_gilgo_beach.mp4",
+            "true_crime_08_lizzie_borden.mp4", "true_crime_09_agatha_christie.mp4")]}
+
+    def test_no_new_mp4_is_tracked(self):
+        import subprocess
+        r = subprocess.run(["git", "ls-files", "*.mp4"], cwd=ROOT, capture_output=True, text=True)
+        if r.returncode != 0:
+            self.skipTest("not a git checkout")
+        new = set(r.stdout.split()) - self.GRANDFATHERED
+        self.assertFalse(new, f"MP4s must not be committed (archive them in a GitHub Release): {sorted(new)}")
+
+
 class OngoingCaseSafeguards(unittest.TestCase):
     """The D4vd episode covers a live prosecution: these checks protect the presumption of innocence and the victim."""
     EID = "tcv03-d4vd-case"

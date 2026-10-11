@@ -102,8 +102,15 @@ A file reaches `output/` **only if every check passes**. Every stage is appended
 7. **Spoken numbers:** Piper reads "$200,000" as "dollar two, hundred thousand" and swallows "CCTV". Give every amount and acronym a spoken form in `narrator_profile.pronounce`; a test checks dollar amounts.
 8. **Preview without rendering:** run `python -m pipeline.build <id> --quality preview --plan-only` and then `node pipeline/stills.mjs out/<id>/plan.json /tmp/stills 3 10 20`.
 
+## Where the videos live (from 2026-10-11)
+MP4s are build outputs, so they are **no longer committed to git**. Each one adds about 35 MB to the history forever. The git history is already 573 MB, and about 526 MB of that is MP4s.
+- **Git keeps the recipe:** code, episode data, research, QA reports, contact sheets and `production_manifest.json`. The manifest records each verified file's SHA-256, so any copy can be checked. Any episode can be rebuilt with `produce.py N`.
+- **Delivery:** the verified MP4 is sent in chat. If it is over 30 MiB, a visually identical CRF-21 copy is sent instead.
+- **Archive:** GitHub Releases (free; up to 2 GB per file; not counted in the repository size). Until GitHub Actions runs on this repository, upload manually: on github.com, open **Releases → Draft a new release**, create a tag such as `case-files-04-09`, attach the MP4s, then **Publish**. A phone backup to Google Drive (15 GB free) also works.
+- The 14 MP4s already in the history stay as they are. Rewriting history to remove them is not worth the risk. `tests/test_cinematic.py` fails if a new MP4 is committed.
+
 ## Watch or upload on Android
-1. On your phone, open the repository on github.com in Chrome. Switch to branch `ccr-67645e21-nwgkaq`, open `series/true-crime-cinematic/output/`, tap the MP4, then use **⋯ → Download** (or "View raw" and save). If the files were sent to you in chat, save them from there. They play in Google Photos, Files or VLC.
+1. Save the MP4 from the chat, or from the GitHub release on your phone. Older episodes are also in this branch under `series/true-crime-cinematic/output/`: tap the MP4, then **⋯ → Download**. They play in Google Photos, Files or VLC.
 2. To upload: in the **YouTube** app tap **+**, then **Upload a video**, and pick the MP4. It is vertical and under 3 minutes, so it becomes a Short. Paste the title and description from `series/true-crime/sources.md`.
 3. Under **Altered or synthetic content**, answer **Yes**: the voice is synthetic and the scenes are illustrated reconstructions of real events.
 
