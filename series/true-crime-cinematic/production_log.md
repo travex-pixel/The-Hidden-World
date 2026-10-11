@@ -69,3 +69,7 @@
 - 2026-10-11 15:35:01 tcv14-litvinenko: VERIFIED -> series/true-crime-cinematic/output/true_crime_14_litvinenko.mp4 (78.6s, 31.6 MB, sha256 8031dc9adcb8)
 - 2026-10-11 15:35:10 produce 12: regenerating episode data
 - 2026-10-11 15:35:10 tcv12-son-of-sam: rendering (final, seed 1)
+- 2026-10-11 15:48:09 tcv10-golden-state-killer: rendered in 1053s
+- 2026-10-11 15:49:17 tcv10-golden-state-killer: VERIFIED -> series/true-crime-cinematic/output/true_crime_10_golden_state_killer.mp4 (76.6s, 29.8 MB, sha256 94520e382efa)
+- 2026-10-11 15:49:28 produce 14: regenerating episode data
+- 2026-10-11 15:49:28 tcv14-litvinenko: rendering (final, seed 1)
