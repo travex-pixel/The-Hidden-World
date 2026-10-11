@@ -35,3 +35,7 @@
 - 2026-10-11 11:45:44 tcv06-whitey-bulger: VERIFIED -> series/true-crime-cinematic/output/true_crime_06_whitey_bulger.mp4 (77.9s, 29.4 MB, sha256 1fc55be1b0be)
 - 2026-10-11 11:45:51 produce 5: regenerating episode data
 - 2026-10-11 11:45:51 tcv05-db-cooper: rendering (final, seed 1)
+- 2026-10-11 11:48:16 tcv09-agatha-christie: rendered in 1033s
+- 2026-10-11 11:49:26 tcv09-agatha-christie: VERIFIED -> series/true-crime-cinematic/output/true_crime_09_agatha_christie.mp4 (78.2s, 30.9 MB, sha256 265141f63629)
+- 2026-10-11 11:49:31 produce 4: regenerating episode data
+- 2026-10-11 11:49:31 tcv04-louvre-heist: rendering (final, seed 1)
