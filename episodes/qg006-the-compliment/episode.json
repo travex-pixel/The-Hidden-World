@@ -1,0 +1,365 @@
+{
+  "id": "qg006-the-compliment",
+  "number": 6,
+  "series": "THE QUIET GAME",
+  "season": 1,
+  "title": "The Compliment",
+  "central_question": "Why do some compliments feel like a punch?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    30,
+    47
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 72,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "COMPLIMENT OR DIG?",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.1,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.12,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.12,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.18,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.12,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.12,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.12,
+      "color": "#e0b07a",
+      "role": "colleague"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "cp_hook",
+      "min_duration": 3.8,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "It sounded like a compliment."
+        },
+        {
+          "who": "narrator",
+          "text": "It wasn't.",
+          "pause": 0.35
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "hud": false,
+      "action": "Close on Ben: big smile, eyes not smiling."
+    },
+    {
+      "id": "s02_praise",
+      "scene": "cp_praise",
+      "min_duration": 3.0,
+      "lead": 0.3,
+      "pad_after": 0.9,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "Bookings are up. Thanks to Theo!"
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "line": 0,
+          "at": 0.0,
+          "name": "clap"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "MON 9:30 AM",
+      "tags": [
+        {
+          "who": "rosa",
+          "role": "the boss",
+          "x": 780,
+          "y": 780,
+          "at": 0.3
+        }
+      ],
+      "action": "Rosa at the board: ONLINE BOOKING – THEO. Applause. Theo, shy grin."
+    },
+    {
+      "id": "s03_dig1",
+      "scene": "cp_dig1",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.5,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Wow. Must be nice being the favourite."
+        },
+        {
+          "who": "theo",
+          "text": "Oh. Ha. Thanks?",
+          "pause": 0.3,
+          "speed": 0.95
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 2,
+          "text": "“Must be nice being the favourite.” Dig.",
+          "at_line": 0
+        }
+      ],
+      "action": "Ben leans over, smiling. Theo laughs it off. Unsure."
+    },
+    {
+      "id": "s04_dig2",
+      "scene": "cp_dig2",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.9,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Bit keen, isn't he?"
+        },
+        {
+          "who": "ben",
+          "text": "Staying late to impress.",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "WED 6:10 PM",
+      "rumour": [
+        {
+          "level": 4,
+          "text": "“Bit keen, isn't he?” Dig.",
+          "at_line": 0
+        }
+      ],
+      "action": "Kitchen. Ben to Kemi, not quietly. Theo walks in behind him and hears it. Kemi's eyebrow goes up."
+    },
+    {
+      "id": "s05_spiral",
+      "scene": "cp_spiral",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "pop"
+        },
+        {
+          "at": 1.2,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 5,
+          "text": "Theo: “Should I stop trying?”",
+          "at": 1.2
+        }
+      ],
+      "action": "Theo at his desk. Bubbles: 'What did I do to him?' then 'Should I stop trying?'"
+    },
+    {
+      "id": "s06_desk",
+      "scene": "cp_desk",
+      "min_duration": 3.0,
+      "lead": 1.6,
+      "pad_after": 1.4,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Again.",
+          "speed": 0.85
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "text": "The digs were never about Theo.",
+        "at_line": 0,
+        "after": 0.3
+      },
+      "action": "Theo passes Ben's desk. A faded 'Employee of the Month, March 2023'. On screen: 'Promotion: unsuccessful.' Ben, quietly: 'Again.'"
+    },
+    {
+      "id": "s07_fix",
+      "scene": "cp_fix",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.5,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Hey. Your projector fix in that meeting?"
+        },
+        {
+          "who": "theo",
+          "text": "Saved it.",
+          "pause": 0.2
+        },
+        {
+          "who": "ben",
+          "text": "Cheers, mate.",
+          "pause": 0.6,
+          "speed": 0.95
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Theo, to Ben. A callback to #4. Ben, caught off guard, smiles for real."
+    },
+    {
+      "id": "s08_end",
+      "scene": "cp_end",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "The digs were never about Theo."
+        },
+        {
+          "who": "narrator",
+          "text": "They were about what Ben didn't have.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "action": "Wide office. Theo and Ben working. A nod across the desks."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Research distinguishes 'benign' envy (wanting to level yourself up) from 'malicious' envy (wanting to pull the other person down) (van de Ven, Zeelenberg & Pieters, 2009).",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Leveling up and down: The experiences of benign and malicious envy. van de Ven, N., Zeelenberg, M., & Pieters, R. (2009). Emotion, 9(3), 419-429",
+      "publisher": "American Psychological Association",
+      "url": "https://doi.org/10.1037/a0015669",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "S2",
+      "title": "Leveling up and down (repository record)",
+      "publisher": "Tilburg University",
+      "url": "https://repository.tilburguniversity.edu/items/2a96534b-4cec-4018-811b-ef111b0444cd",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

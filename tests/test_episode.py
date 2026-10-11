@@ -314,8 +314,20 @@ class QuietGameSeries(unittest.TestCase):
     def episodes(self):
         return [load_episode(p.name) for p in sorted((ROOT / "episodes").glob("qg*")) if (p / "episode.json").exists()]
 
-    def test_at_least_four_episodes(self):
-        self.assertGreaterEqual(len(self.episodes()), 4)
+    def test_season_one_is_complete(self):
+        eps = self.episodes()
+        self.assertGreaterEqual(len(eps), 8)
+        self.assertEqual([e["number"] for e in eps[:8]], list(range(1, 9)))
+
+    def test_finale_mirrors_episode_one(self):
+        fin = load_episode("qg008-the-new-guy"); ep1 = load_episode("qg001-the-rumour")
+        self.assertEqual(fin["scenes"][0]["clock"], "MON 9:02 AM")                      # same minute the rumour started
+        self.assertEqual(fin["scenes"][-1]["clock"], ep1["scenes"][0]["clock"])         # 12:31 PM, the lunch
+        self.assertIn("nobody hated him", fin["scenes"][-1]["lines"][0]["text"])
+        js = (ROOT / "renderer" / "scenes" / "qg008-the-new-guy.js").read_text()
+        for scene_fn, src in [("hook_lunch", "qg001"), ("mt_tent", "qg002"), ("fv_hook", "qg003"), ("cr_end", "qg004")]:
+            self.assertIn(f"'{scene_fn}'", js)                                           # memory flash
+            self.assertTrue(any(src in inc for inc in fin["renderer_includes"]), src)
 
     def test_series_rules(self):
         from pipeline.voices import APPROVED
@@ -342,7 +354,8 @@ class QuietGameSeries(unittest.TestCase):
                 last = 0
                 for s in ep["scenes"]:
                     for st in ([s["rumour"]] if isinstance(s.get("rumour"), dict) else s.get("rumour", [])):
-                        self.assertLess(st.get("at_line", 0), len(s["lines"]), s["id"])
+                        if "at" not in st:   # silent scenes time steps in seconds instead of by a line
+                            self.assertLess(st.get("at_line", 0), len(s["lines"]), s["id"])
                         self.assertGreaterEqual(st["level"], last, f"{s['id']}: meter went down before the truth")
                         last = st["level"]
                     if "truth" in s:

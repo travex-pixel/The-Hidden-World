@@ -1,0 +1,377 @@
+{
+  "id": "qg007-the-joke",
+  "number": 7,
+  "series": "THE QUIET GAME",
+  "season": 1,
+  "title": "The Joke",
+  "central_question": "Why do we laugh at jokes we don't find funny?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    30,
+    47
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 72,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "LAUGHING",
+    "truth_label": "FUNNY TO",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.1,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.12,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.12,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.18,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.12,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.12,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.12,
+      "color": "#e0b07a",
+      "role": "colleague"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "jk_hook",
+      "min_duration": 4.2,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Everyone laughed."
+        },
+        {
+          "who": "narrator",
+          "text": "Including the person it was about.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "11:00 AM",
+      "hud": false,
+      "action": "The meeting row, all laughing. Jo, at the screen, laughing too. Then his smile slides off."
+    },
+    {
+      "id": "s02_setup",
+      "scene": "jk_setup",
+      "min_duration": 3.0,
+      "lead": 0.6,
+      "pad_after": 0.3,
+      "lines": [
+        {
+          "who": "rosa",
+          "text": "Jo, can you get it working?"
+        },
+        {
+          "who": "jo",
+          "text": "On it.",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "10:59 AM",
+      "hud": false,
+      "jump": {
+        "dir": -1,
+        "label": "REWIND",
+        "text": "ONE MINUTE EARLIER"
+      },
+      "tags": [
+        {
+          "who": "jo",
+          "role": "IT",
+          "x": 760,
+          "y": 700,
+          "at_line": 1,
+          "dur": 1.2
+        }
+      ],
+      "action": "The projector says NO SIGNAL again. Jo gets up to fix it."
+    },
+    {
+      "id": "s03_joke",
+      "scene": "jk_joke",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 1.4,
+      "lines": [
+        {
+          "who": "sam",
+          "text": "Maybe ask someone who actually knows computers."
+        },
+        {
+          "who": "ben",
+          "text": "Ha ha!",
+          "pause": 0.1
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 1,
+          "text": "Ben.",
+          "at_line": 1,
+          "delay": 0
+        },
+        {
+          "level": 2,
+          "text": "Ben, Kemi.",
+          "at_line": 1,
+          "delay": 0.35
+        },
+        {
+          "level": 3,
+          "text": "Ben, Kemi, Rosa.",
+          "at_line": 1,
+          "delay": 0.7
+        },
+        {
+          "level": 4,
+          "text": "Ben, Kemi, Rosa… Theo.",
+          "at_line": 1,
+          "delay": 1.0
+        },
+        {
+          "level": 5,
+          "text": "Everyone. Even Jo.",
+          "at_line": 1,
+          "delay": 1.3
+        }
+      ],
+      "tags": [
+        {
+          "who": "sam",
+          "role": "the comedian",
+          "x": 540,
+          "y": 660,
+          "at": 0.1
+        }
+      ],
+      "action": "Sam's joke. The laugh spreads down the table one face at a time. Theo laughs before he's even thought about it."
+    },
+    {
+      "id": "s04_drop",
+      "scene": "jk_drop",
+      "min_duration": 3.4,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 1.9,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Jo's laugh fades. He looks down and turns back to the cable. Cut to Theo. Bubble: 'Wait. Why did I laugh?'"
+    },
+    {
+      "id": "s05_kitchen",
+      "scene": "jk_kitchen",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.5,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "That joke wasn't funny."
+        },
+        {
+          "who": "theo",
+          "text": "Sorry I laughed.",
+          "pause": 0.3
+        },
+        {
+          "who": "jo",
+          "text": "Everyone always laughs.",
+          "pause": 0.5,
+          "speed": 0.95
+        },
+        {
+          "who": "jo",
+          "text": "Thanks, though.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "3:30 PM",
+      "truth": {
+        "label": "FUNNY TO",
+        "text": "Not Jo. Not even Theo, really.",
+        "at_line": 1,
+        "after": 0.1
+      },
+      "action": "The kitchen. Theo finds Jo alone."
+    },
+    {
+      "id": "s06_next",
+      "scene": "jk_next",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.6,
+      "lines": [
+        {
+          "who": "sam",
+          "text": "Careful, Jo might—"
+        },
+        {
+          "who": "theo",
+          "text": "Jo fixed it in two minutes, actually.",
+          "pause": 0.05
+        },
+        {
+          "who": "sam",
+          "text": "Fair.",
+          "pause": 0.5,
+          "speed": 0.95
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "NEXT DAY",
+      "hud": false,
+      "action": "Next meeting. Sam starts again. Theo doesn't laugh. Nobody does. Jo smiles, a little."
+    },
+    {
+      "id": "s07_end",
+      "scene": "jk_end",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Laughing along is easy."
+        },
+        {
+          "who": "narrator",
+          "text": "Not laughing only takes one person.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "action": "The row, quiet. Jo back at the screen. Signal on."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Laughter is contagious: hearing laughter alone made most people in a classroom demonstration smile and many laugh (Provine, 1992). Exact figures vary between secondary reports.",
+      "sources": [
+        "S1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Contagious laughter: Laughter is a sufficient stimulus for laughs and smiles. Provine, R. R. (1992). Bulletin of the Psychonomic Society, 30 (secondary account)",
+      "publisher": "Mental Floss (profile of Robert Provine's laughter research)",
+      "url": "https://www.mentalfloss.com/article/30329/lab-worlds-leading-laugh-scientist",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

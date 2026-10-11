@@ -8,10 +8,16 @@
 | 2 | [`qg002-the-meeting.mp4`](releases/qg002-the-meeting.mp4) (41 s) | "Six people agreed to a plan. Not one of them wanted it." | the Abilene paradox, pluralistic ignorance |
 | 3 | [`qg003-the-favour.mp4`](releases/qg003-the-favour.mp4) (35 s) | "He never asked for anything. That was the trick." | reciprocity, unasked-for favours |
 | 4 | [`qg004-the-credit.mp4`](releases/qg004-the-credit.mp4) (33 s) | "It was Theo's idea. Nobody heard him say it first." | being talked over, "amplification" |
+| 5 | [`qg005-the-group-chat.mp4`](releases/qg005-the-group-chat.mp4) (31 s) | "Five people saw his message. Nobody replied." | being left out (even by accident) |
+| 6 | [`qg006-the-compliment.mp4`](releases/qg006-the-compliment.mp4) (32 s) | "It sounded like a compliment. It wasn't." | backhanded digs, envy |
+| 7 | [`qg007-the-joke.mp4`](releases/qg007-the-joke.mp4) (33 s) | "Everyone laughed. Including the person it was about." | laughing along |
+| 8 | [`qg008-the-new-guy.mp4`](releases/qg008-the-new-guy.mp4) (31 s) — **Season 1 finale** | "It started with a text. Again." | Theo gets the rumour, and stops it |
 
-Each episode has a script (`releases/<id>.script.md`), a source note with a suggested video description (`episodes/<id>/research.md`), and a verification report. Recurring cast: Theo (the new guy), Rosa (the boss), Ben, Kemi, Jo, Sam.
+**Season 1 arc:** Theo arrives as the target of a rumour (#1), learns how groups, favours, credit, chats, digs and jokes work (#2–#7), and in the finale is the one holding the rumour about the next new guy (#8). The finale replays real frames from #1–#4 as memory flashes and mirrors #1's lunch scene.
 
-**Make the next episode:** copy `episodes/qg004-the-credit/` to `episodes/qg005-<name>/` and rewrite `episode.json` (cast, lines, meter steps, truth). Then copy `renderer/scenes/qg004-the-credit.js` to `renderer/scenes/qg005-<name>.js` and rewrite its scene functions. The shared look comes from `renderer/scenes/qg-kit.js`.
+Each episode has a script (`releases/<id>.script.md`), a source note with a suggested video description (`episodes/<id>/research.md`), and a verification report. Recurring cast: Theo (the new guy), Rosa (the boss), Ben, Kemi, Jo, Sam, and from the finale, Max.
+
+**Make the next episode (Season 2):** copy `episodes/qg007-the-joke/` to `episodes/qg009-<name>/` and rewrite `episode.json` (cast, lines, meter steps, truth). Then copy `renderer/scenes/qg007-the-joke.js` to `renderer/scenes/qg009-<name>.js` and rewrite its scene functions. The shared look comes from `renderer/scenes/qg-kit.js`.
 
 Built to be easy to follow (ADHD-friendly), all driven from `episode.json`:
 - **Word-by-word captions:** 1–3 words on screen, the spoken word lit in the speaker's colour. Force a break with `|` in a line's `caption`.

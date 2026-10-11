@@ -12,7 +12,7 @@ Everything runs on GitHub. No computer, no paid services.
 3. Choose **Render episode** in the workflow list.
 4. Tap **Run workflow**.
 5. Fill the inputs:
-   - **episode**: a folder name under `episodes/`, e.g. `qg001-the-rumour`, `qg002-the-meeting`, `qg003-the-favour`, `qg004-the-credit` (or the older `ep001-cash-vs-profit`)
+   - **episode**: a folder name under `episodes/`, e.g. `qg001-the-rumour`, `qg002-the-meeting`, `qg003-the-favour`, … up to `qg008-the-new-guy` (or the older `ep001-cash-vs-profit`)
    - **seed**: a number (same number = same creative choices) or `random`
    - **quality**: `final` (1080×1920, 30 fps) or `preview` (540×960, 15 fps, about 3× faster)
    - **target_duration**: leave blank unless you want the narration nudged faster/slower

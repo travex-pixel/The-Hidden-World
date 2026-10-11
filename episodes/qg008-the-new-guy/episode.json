@@ -1,0 +1,337 @@
+{
+  "id": "qg008-the-new-guy",
+  "number": 8,
+  "series": "THE QUIET GAME",
+  "season": 1,
+  "title": "The New Guy (Season 1 finale)",
+  "central_question": "When the rumour reaches Theo, does he pass it on?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    30,
+    47
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js",
+    "renderer/scenes/qg001-the-rumour.js",
+    "renderer/scenes/qg002-the-meeting.js",
+    "renderer/scenes/qg003-the-favour.js",
+    "renderer/scenes/qg004-the-credit.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 72,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "THE RUMOUR",
+    "truth_label": "THE RUMOUR",
+    "quotes": true
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.1,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.12,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.12,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.18,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.12,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.12,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.12,
+      "color": "#e0b07a",
+      "role": "colleague"
+    },
+    "max": {
+      "name": "Max",
+      "voice": "en_GB-aru-medium",
+      "speaker": 1,
+      "speed": 1.12,
+      "color": "#7fb2ff",
+      "role": "the next new hire"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "ng_hook",
+      "min_duration": 4.0,
+      "lead": 0.2,
+      "pad_after": 0.5,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "It started with a text."
+        },
+        {
+          "who": "narrator",
+          "text": "Again.",
+          "pause": 0.4
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "buzz"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "MON 9:02 AM",
+      "hud": false,
+      "action": "Phone. Danny: 'Your new guy, Max? Careful. Heard he was trouble at his last place.' Same time as #1: 9:02."
+    },
+    {
+      "id": "s02_arrive",
+      "scene": "ng_arrive",
+      "min_duration": 3.0,
+      "lead": 1.2,
+      "pad_after": 1.2,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "Who's that?"
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "door"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 1,
+          "text": "Careful. He was trouble.",
+          "at_line": 0
+        }
+      ],
+      "tags": [
+        {
+          "who": "max",
+          "role": "starts today",
+          "x": 710,
+          "y": 600,
+          "at": 0.4
+        }
+      ],
+      "action": "Max walks in, waving nervously, exactly like Theo did in #1. Theo looks from his phone to Max."
+    },
+    {
+      "id": "s03_almost",
+      "scene": "ng_almost",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Careful with the new…"
+        },
+        {
+          "who": "theo",
+          "text": "Never mind.",
+          "pause": 2.3,
+          "speed": 0.95
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "line": 0,
+          "at": 0.1,
+          "name": "whoosh"
+        },
+        {
+          "line": 0,
+          "at": 0.65,
+          "name": "whoosh"
+        },
+        {
+          "line": 0,
+          "at": 1.2,
+          "name": "whoosh"
+        },
+        {
+          "line": 0,
+          "at": 1.75,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Theo starts to say it. Rosa's exact words from #1. He stops. Flashes: the bag on the chair, the tent, the coffee, the board."
+    },
+    {
+      "id": "s04_reply",
+      "scene": "ng_reply",
+      "min_duration": 3.4,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 1.6,
+          "name": "ping"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "action": "Theo replies to Danny: 'Let's not do this. He's new.' Sent."
+    },
+    {
+      "id": "s05_hello",
+      "scene": "ng_hello",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.8,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Hey. I'm Theo."
+        },
+        {
+          "who": "theo",
+          "text": "Want to get lunch?",
+          "pause": 0.2
+        },
+        {
+          "who": "max",
+          "text": "Oh! Yes. Thanks.",
+          "pause": 0.3
+        },
+        {
+          "who": "max",
+          "text": "Honestly? I was dreading today.",
+          "pause": 0.5
+        },
+        {
+          "who": "theo",
+          "text": "Yeah. I remember that feeling.",
+          "pause": 0.4,
+          "speed": 0.95
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "text": "Never started.",
+        "at_line": 2,
+        "after": 0.1
+      },
+      "action": "Theo walks over. Max, nervous, then relieved. He admits he was dreading today. Theo remembers."
+    },
+    {
+      "id": "s06_lunch",
+      "scene": "ng_lunch",
+      "min_duration": 6.5,
+      "lead": 0.6,
+      "pad_after": 2.4,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "By lunch, nobody hated him."
+        },
+        {
+          "who": "narrator",
+          "text": "Somebody actually spoke to him.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "scrape"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "clock": "12:31 PM",
+      "hud": false,
+      "action": "The #1 break room, mirrored. Theo and Max with trays. Kemi lifts her bag OFF the chair. Ben pulls out another. THE QUIET GAME · SEASON 1 · THE END."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "See the research notes for episodes 1-7 (this finale introduces no new claims)",
+      "publisher": "THE QUIET GAME repository",
+      "url": "https://github.com/travex-pixel/the-hidden-world",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

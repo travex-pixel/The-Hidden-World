@@ -1,0 +1,370 @@
+{
+  "id": "qg005-the-group-chat",
+  "number": 5,
+  "series": "THE QUIET GAME",
+  "season": 1,
+  "title": "The Group Chat",
+  "central_question": "Why does being ignored feel personal even when it isn't?",
+  "template": "story",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "target_duration_seconds": [
+    30,
+    47
+  ],
+  "renderer_includes": [
+    "renderer/scenes/qg-kit.js"
+  ],
+  "visual_mode": "svg",
+  "paper": false,
+  "ambience": "office",
+  "fiction_notice": "A fictional story. No real people or events.",
+  "music": {
+    "style": "sparse-drama",
+    "bpm": 72,
+    "level_db": -18.0
+  },
+  "hud": {
+    "label": "WHAT THEO THINKS",
+    "truth_label": "THE TRUTH",
+    "quotes": false
+  },
+  "cast": {
+    "narrator": {
+      "name": "Narrator",
+      "voice": "en_GB-alba-medium",
+      "speed": 1.1,
+      "color": "#f3e6c8"
+    },
+    "theo": {
+      "name": "Theo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 2,
+      "speed": 1.12,
+      "color": "#f2b544",
+      "role": "the new hire"
+    },
+    "rosa": {
+      "name": "Rosa",
+      "voice": "en_GB-aru-medium",
+      "speaker": 6,
+      "speed": 1.12,
+      "color": "#ef6f5e",
+      "role": "team manager"
+    },
+    "ben": {
+      "name": "Ben",
+      "voice": "en_GB-aru-medium",
+      "speaker": 9,
+      "speed": 1.18,
+      "color": "#5cc2b4",
+      "role": "desk neighbour"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "voice": "en_GB-aru-medium",
+      "speaker": 5,
+      "speed": 1.12,
+      "color": "#c39bf0",
+      "role": "colleague"
+    },
+    "jo": {
+      "name": "Jo",
+      "voice": "en_GB-aru-medium",
+      "speaker": 7,
+      "speed": 1.12,
+      "color": "#9fb6cc",
+      "role": "colleague"
+    },
+    "sam": {
+      "name": "Sam",
+      "voice": "en_GB-aru-medium",
+      "speaker": 10,
+      "speed": 1.12,
+      "color": "#e0b07a",
+      "role": "colleague"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "gc_hook",
+      "min_duration": 4.0,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Five people saw his message."
+        },
+        {
+          "who": "narrator",
+          "text": "Nobody replied.",
+          "pause": 0.35
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "ping"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "TUE 12:05 PM",
+      "hud": false,
+      "action": "Phone: Theo's 'Anyone fancy lunch?' — Seen by 5. No replies."
+    },
+    {
+      "id": "s02_wait",
+      "scene": "gc_wait",
+      "min_duration": 3.2,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "tick"
+        },
+        {
+          "at": 1.2,
+          "name": "tick"
+        },
+        {
+          "at": 0.5,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 1,
+          "text": "Maybe they're busy.",
+          "at": 0.5
+        }
+      ],
+      "tags": [
+        {
+          "who": "theo",
+          "role": "the new guy",
+          "x": 400,
+          "y": 620,
+          "at": 0.2
+        }
+      ],
+      "action": "Theo at his desk, staring at his phone. Bubble: 'Maybe they're busy.'"
+    },
+    {
+      "id": "s03_laugh",
+      "scene": "gc_laugh",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 1.2,
+      "lines": [
+        {
+          "who": "ben",
+          "text": "Ha! That's brilliant."
+        }
+      ],
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "line": 0,
+          "at": 0.3,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "rumour": [
+        {
+          "level": 2,
+          "text": "They have a chat without me.",
+          "at_line": 0
+        }
+      ],
+      "action": "Across the office: Ben, Kemi, Jo and Sam laughing at their phones. Theo's phone: nothing. Bubble: 'Is there… another chat?'"
+    },
+    {
+      "id": "s04_alone",
+      "scene": "gc_alone",
+      "min_duration": 3.8,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [],
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 0.6,
+          "name": "pop"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "12:40 PM",
+      "rumour": [
+        {
+          "level": 3,
+          "text": "They're laughing at me.",
+          "at": 0.4
+        },
+        {
+          "level": 4,
+          "text": "They don't want me here.",
+          "at": 1.8
+        }
+      ],
+      "action": "Theo eats a sandwich alone at his desk. Still 'Seen by 5'. Bubble: 'What did I do?'"
+    },
+    {
+      "id": "s05_kemi",
+      "scene": "gc_kemi",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 0.4,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "Why didn't you come to lunch?"
+        },
+        {
+          "who": "theo",
+          "text": "Nobody answered.",
+          "pause": 0.25,
+          "speed": 0.95
+        },
+        {
+          "who": "kemi",
+          "text": "Wait. Are you not in the other chat?",
+          "pause": 0.3
+        },
+        {
+          "who": "theo",
+          "text": "The other chat?",
+          "pause": 0.3,
+          "speed": 0.95
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "clock": "2:15 PM",
+      "action": "Kemi stops by Theo's desk. The question that changes everything."
+    },
+    {
+      "id": "s06_other",
+      "scene": "gc_other",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 1.5,
+      "lines": [
+        {
+          "who": "kemi",
+          "text": "It's for moaning about Rosa."
+        },
+        {
+          "who": "kemi",
+          "text": "We just forgot to add you.",
+          "pause": 0.2
+        }
+      ],
+      "music_cue": "silence",
+      "sfx": [
+        {
+          "line": 1,
+          "at": 0.2,
+          "name": "ping"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "truth": {
+        "text": "Not a plot. They just forgot him.",
+        "at_line": 1,
+        "after": 0.1
+      },
+      "action": "Kemi's phone: 'Team (NO ROSA)'. Moans about the camping trip. 'Kemi added Theo'."
+    },
+    {
+      "id": "s07_same",
+      "scene": "gc_same",
+      "min_duration": 3.0,
+      "lead": 0.2,
+      "pad_after": 1.6,
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Same."
+        },
+        {
+          "who": "narrator",
+          "text": "It wasn't personal.",
+          "pause": 0.5
+        },
+        {
+          "who": "narrator",
+          "text": "It still hurt.",
+          "pause": 0.3
+        }
+      ],
+      "music_cue": "tension",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "hud": false,
+      "action": "Theo reads the camping moans, grins, types 'Same.'"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "The story and characters are fiction. They dramatise a pattern; they do not prove anything.",
+      "sources": []
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Being ignored, even briefly, by strangers, in a simple online ball-tossing game, made people feel worse (Williams, Cheung & Choi, 2000, 'Cyberball').",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "CyberOstracism: Effects of being ignored over the Internet. Williams, K. D., Cheung, C. K. T., & Choi, W. (2000). JPSP, 79(5), 748-762",
+      "publisher": "Kip Williams's list of Cyberball publications (Purdue University)",
+      "url": "https://www3.psych.purdue.edu/~willia55/Announce/Cyberball_Articles.htm",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "S2",
+      "title": "Ostracism: effects of being ignored over the Internet (teaching summary)",
+      "publisher": "JoVE",
+      "url": "https://app.jove.com/v/10336",
+      "accessed": "2026-10-11"
+    }
+  ]
+}

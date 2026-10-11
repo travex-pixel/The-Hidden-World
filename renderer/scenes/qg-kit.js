@@ -15,6 +15,7 @@
     ben: { skin: '#f1c09d', skinSh: '#d39c79', hair: '#c4622b', hairHi: '#e08a4a', style: 'ben', top: '#2c8579', topSh: '#1f6158', inner: '#e8e4d8', trousers: '#3b3a36', shoes: '#231d1a', iris: '#37506b', build: 1.22, beard: true, collar: true },
     kemi: { skin: '#6d4430', skinSh: '#4f2f20', hair: '#17110f', hairHi: '#3b2a22', style: 'bun', top: '#7b4daf', topSh: '#5a3687', inner: '#7b4daf', trousers: '#1f1d26', shoes: '#151217', iris: '#2a1810', build: 0.92, hoops: true, necklace: true },
     jo: { skin: '#dba27b', skinSh: '#b97f59', hair: '#4b3426', hairHi: '#6b4c38', style: 'short', top: '#56687b', topSh: '#3f4e5e', inner: '#56687b', trousers: '#2a2e35', shoes: '#18161a', iris: '#3a2a1c', build: 1.05 },
+    max: { skin: '#eab896', skinSh: '#c99572', hair: '#d9a93e', hairHi: '#f0cb6e', style: 'short', top: '#3a74c9', topSh: '#2a5698', inner: '#3a74c9', trousers: '#2b2f3a', shoes: '#18161a', iris: '#4a6a3a', build: 0.9 },
     sam: { skin: '#c48a62', skinSh: '#9f6845', hair: '#2b2626', hairHi: '#4a4242', style: 'pony', top: '#8b6c49', topSh: '#6a5135', inner: '#8b6c49', trousers: '#24262c', shoes: '#141214', iris: '#2a1c14', build: 0.95 },
   };
 
@@ -31,6 +32,8 @@
     curious: { b: [0.7, 0.6], smile: 0.0, lid: 0.0, squint: 0 },
     shocked: { b: [1.35, 1.1], smile: -0.25, lid: -0.15, squint: 0, wide: 1 },
     guilty: { b: [1.1, -0.35], smile: -0.5, lid: 0.25, squint: 0 },
+    laugh: { b: [0.5, 0.3], smile: 0.95, lid: 0.55, squint: 0.85 },
+    nervous: { b: [0.85, 0.1], smile: 0.3, lid: 0.0, squint: 0.1 },
   };
   function ex(a, b, k) {  // blend two named (or object) expressions
     const A = typeof a === 'string' ? EX[a] : a, B = typeof b === 'string' ? EX[b] : b; k = clamp(k, 0, 1);
@@ -202,6 +205,7 @@
     if (kind === 'cup') return g(`<path d="M-24 -36 L24 -36 L19 34 L-19 34Z" fill="#f1ebe0" stroke="${LINE}" stroke-width="3.5"/><rect x="-28" y="-46" width="56" height="12" rx="4" fill="#3b2a20" stroke="${LINE}" stroke-width="3"/><rect x="-22" y="-8" width="44" height="22" fill="#b5532f"/>${o.steam ? `<path d="M-6 -52 q10 -16 0 -32 q-10 -16 0 -32" stroke="#fff" stroke-width="5" fill="none" opacity="0.5" stroke-linecap="round"/>` : ''}`);
     if (kind === 'cupcake') return g(`<path d="M-28 0 L28 0 L20 36 L-20 36Z" fill="#d9a05b" stroke="${LINE}" stroke-width="3.5"/><path d="M-34 2 Q-36 -30 -10 -34 Q0 -56 12 -34 Q38 -30 34 2Z" fill="#f4b6c8" stroke="${LINE}" stroke-width="3.5"/><circle cx="2" cy="-46" r="8" fill="#d6363c" stroke="${LINE}" stroke-width="2.5"/>`);
     if (kind === 'deskphone') return g(`<rect x="-60" y="-30" width="120" height="60" rx="12" fill="#2c2f35" stroke="${LINE}" stroke-width="3.5"/><path d="M-62 -30 Q-70 -60 -40 -62 L40 -62 Q70 -60 62 -30" fill="#3a3e45" stroke="${LINE}" stroke-width="3.5"/>${[0, 1, 2].map(i => [0, 1, 2].map(j => `<rect x="${-30 + j * 22}" y="${-20 + i * 14}" width="14" height="9" rx="2" fill="#9aa3ad"/>`).join('')).join('')}`);
+    if (kind === 'certificate') return g(`<rect x="-90" y="-64" width="180" height="128" fill="#efe6c8" stroke="#8a6a2a" stroke-width="7"/><rect x="-76" y="-50" width="152" height="100" fill="none" stroke="#c9a85a" stroke-width="2"/><text x="0" y="-18" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="17" fill="#5a4318">EMPLOYEE</text><text x="0" y="4" text-anchor="middle" font-family="Fraunces" font-weight="800" font-size="17" fill="#5a4318">OF THE MONTH</text><text x="0" y="32" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="16" fill="#8a6a2a">${esc(o.text || 'MARCH 2023')}</text><circle cx="60" cy="38" r="12" fill="#c9a85a"/>`);
     if (kind === 'pen') return g(`<rect x="-4" y="-34" width="8" height="58" rx="3" fill="#2a63c4" stroke="${LINE}" stroke-width="2"/><path d="M-4 24 L0 34 L4 24Z" fill="#ddd"/>`);
     if (kind === 'bag') return g(`<path d="M-40 -60 Q0 -110 40 -60" stroke="#7a5432" stroke-width="9" fill="none"/><path d="M-62 -60 L62 -60 L72 70 L-72 70Z" fill="#c99a5e" stroke="${LINE}" stroke-width="4" stroke-linejoin="round"/><path d="M-62 -38 L62 -38" stroke="#a87a42" stroke-width="4"/><rect x="-14" y="-46" width="28" height="18" rx="3" fill="#7a5432"/>`);
     return '';
@@ -255,6 +259,7 @@
       <linearGradient id="qgShaft" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#ffe3b0" stop-opacity="0.55"/><stop offset="1" stop-color="#ffe3b0" stop-opacity="0"/></linearGradient>
       <linearGradient id="qgShaftCool" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#d8f0ff" stop-opacity="0.45"/><stop offset="1" stop-color="#d8f0ff" stop-opacity="0"/></linearGradient>
       <radialGradient id="qgGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#9fd0ff" stop-opacity="0.55"/><stop offset="1" stop-color="#9fd0ff" stop-opacity="0"/></radialGradient>
+      <filter id="qgMemory"><feColorMatrix type="saturate" values="0.25"/><feComponentTransfer><feFuncR type="linear" slope="0.9" intercept="0.08"/><feFuncG type="linear" slope="0.85" intercept="0.07"/><feFuncB type="linear" slope="0.75" intercept="0.05"/></feComponentTransfer></filter>
       <radialGradient id="qgPool" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe6b8" stop-opacity="0.5"/><stop offset="1" stop-color="#ffe6b8" stop-opacity="0"/></radialGradient></defs>`;
   }
   function finish(grade) {
@@ -389,7 +394,7 @@
     far += windowWall(760, 330, 420, 560, opts.sky || '#d6e3e8', { blinds: 0.3, seed: 12, panes: 2 });
     far += `<rect x="40" y="360" width="600" height="420" rx="10" fill="#f5f4ef" stroke="${LINE}" stroke-width="5"/><rect x="40" y="780" width="600" height="18" fill="#9aa1a8" stroke="${LINE}" stroke-width="3"/>`;
     (opts.board || []).forEach((ln, i) => { far += `<text x="${opts.boardX || 80}" y="${450 + i * 78}" font-family="Fraunces" font-style="italic" font-weight="600" font-size="${i ? 52 : 60}" fill="${ln.color || '#1f4fa3'}">${esc(ln.text || ln)}</text>`; });
-    if (opts.screen) far += `<rect x="660" y="300" width="400" height="250" rx="6" fill="#e9eef3" stroke="${LINE}" stroke-width="4"/><rect x="680" y="320" width="360" height="210" fill="${opts.screen === 'blue' ? '#2b5fb8' : '#dfe6ee'}"/>${opts.screen === 'blue' ? `<text x="860" y="440" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="34" fill="#dfe8ff">NO SIGNAL</text>` : ''}`;
+    if (opts.screen) far += `<rect x="660" y="300" width="400" height="250" rx="6" fill="#e9eef3" stroke="${LINE}" stroke-width="4"/><rect x="680" y="320" width="360" height="210" fill="${opts.screen === 'blue' ? '#2b5fb8' : '#dfe6ee'}"/>${opts.screen === 'blue' ? `<text x="860" y="440" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="34" fill="#dfe8ff">NO SIGNAL</text>` : ''}${opts.screen === 'on' ? [60, 95, 80, 140, 170].map((h, i) => `<rect x="${720 + i * 62}" y="${500 - h}" width="40" height="${h}" fill="${i === 4 ? '#1e8a3c' : '#5c8fd6'}"/>`).join('') : ''}`;
     far += `<rect x="-200" y="900" width="${W + 400}" height="${H}" fill="${opts.floor || '#2f3338'}"/>`;
     let s = layer(0.55, far);
     s += layer(0.6, `<polygon points="760,330 1180,330 1300,1500 620,1500" fill="url(#qgShaft)" opacity="0.4" style="mix-blend-mode:screen"/>`);
@@ -411,6 +416,40 @@
     const r = E.mulberry32(17); let s = '';
     for (let i = 0; i < n; i++) { const x0 = r() * (W + 300) - 150, sp = 1700 + r() * 900, ph = r(); const y = ((t * sp + ph * H * 1.3) % (H * 1.3)) - 200; s += `<line x1="${f1(x0)}" y1="${f1(y)}" x2="${f1(x0 - 16)}" y2="${f1(y + 60)}" stroke="#cfe0f2" stroke-width="3" opacity="${op}"/>`; }
     return s;
+  }
+
+  // a group-chat app on a phone, filling the frame. msgs: [{who:name, text, mine, at, color, system}]
+  function chatScreen(t, o) {
+    let s = wallTex(-200, -200, W + 400, H + 400, o.desk || '#2e2a2a', '#5a4d44', 61);
+    const shake = o.buzz ? Math.sin(t * 90) * 6 * o.buzz : 0;
+    let p = `<g transform="translate(${f1(540 + shake)} 900) rotate(-3)"><rect x="-320" y="-620" width="640" height="1240" rx="70" fill="#101115" stroke="${LINE}" stroke-width="8"/><rect x="-296" y="-596" width="592" height="1192" rx="54" fill="#eef1f5"/>`;
+    p += `<rect x="-296" y="-596" width="592" height="130" rx="54" fill="#ffffff"/><rect x="-296" y="-520" width="592" height="54" fill="#ffffff"/><circle cx="-220" cy="-520" r="34" fill="${o.groupColor || '#5c8fd6'}"/><text x="-220" y="-509" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="30" fill="#fff">${esc((o.title || '?')[0])}</text>
+      <text x="-170" y="-526" font-family="Nunito" font-weight="800" font-size="36" fill="#1c2430">${esc(o.title || '')}</text><text x="-170" y="-490" font-family="Nunito" font-weight="700" font-size="24" fill="#7d8796">${esc(o.members || '')}</text>`;
+    let y = -400;
+    for (const m of o.msgs || []) {
+      const k = seg(t, m.at ?? -1, (m.at ?? -1) + 0.25); if (k <= 0) continue;
+      const lines = E.wrap(m.text, 20), h = lines.length * 46 + (m.mine || m.system ? 30 : 64);
+      if (m.system) { p += `<g opacity="${f1(k)}"><rect x="-200" y="${y}" width="400" height="56" rx="28" fill="#dfe4ea"/><text x="0" y="${y + 37}" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="26" fill="#5d6673">${esc(m.text)}</text></g>`; y += 76; continue; }
+      const w = Math.max(...lines.map(l => l.length)) * 22 + 60, x = m.mine ? 270 - w : -270;
+      p += `<g opacity="${f1(k)}" transform="translate(0 ${f1((1 - ease.out(k)) * 30)})"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="26" fill="${m.mine ? '#3a8a5f' : '#ffffff'}" stroke="#d4dae2" stroke-width="${m.mine ? 0 : 2}"/>`;
+      if (!m.mine) p += `<text x="${x + 26}" y="${y + 40}" font-family="Nunito" font-weight="800" font-size="26" fill="${m.color || '#d0544a'}">${esc(m.who)}</text>`;
+      lines.forEach((l, i) => { p += `<text x="${x + 26}" y="${y + (m.mine ? 50 : 84) + i * 46}" font-family="Nunito" font-weight="700" font-size="36" fill="${m.mine ? '#ffffff' : '#1c2430'}">${esc(l)}</text>`; });
+      p += '</g>'; y += h + 22;
+    }
+    if (o.seen) { const k = seg(t, o.seen.at, o.seen.at + 0.3); if (k > 0) p += `<text x="270" y="${y + 6}" text-anchor="end" font-family="Nunito" font-weight="800" font-size="28" fill="#7d8796" opacity="${f1(k)}">${esc(o.seen.text)}</text>`; }
+    if (o.typing && t > o.typing[0] && t < o.typing[1]) { const d = i => f1(0.35 + 0.65 * Math.abs(Math.sin(t * 6 + i))); p += `<rect x="-270" y="${y + 40}" width="130" height="64" rx="32" fill="#fff"/>${[0, 1, 2].map(i => `<circle cx="${-232 + i * 28}" cy="${y + 72}" r="9" fill="#9aa3ad" opacity="${d(i)}"/>`).join('')}`; }
+    p += `<rect x="-296" y="500" width="592" height="96" fill="#ffffff"/><rect x="-270" y="520" width="440" height="56" rx="28" fill="#eef1f5"/><text x="-246" y="557" font-family="Nunito" font-weight="700" font-size="28" fill="${o.draft ? '#1c2430' : '#9aa3ad'}">${esc(o.draft || 'Message')}</text><circle cx="230" cy="548" r="30" fill="#3a8a5f"/>`;
+    return s + p + '</g>';
+  }
+  // memory flash: replay a moment from an earlier episode (its scene function must be loaded via renderer_includes)
+  function memory(sceneName, t, ep, opts = {}) {
+    const fn = E.scenes[sceneName]; if (!fn) return '';
+    const fake = { t, T: 6, p: t / 6, rng: E.mulberry32(5), scene: { id: sceneName, hud: false }, ep: { cast: ep.cast, scenes: [{ hud: false }] }, decisions: {},
+      lines: [0, 1, 2, 3, 4].map(i => ({ who: 'narrator', caption: '', start: 90 + i, end: 90.5 + i, mouth: [] })), gt: t + 100, idx: 0, narrEnd: 0 };
+    const saveCam = { ...CAM };
+    const body = fn(fake, E); CAM = saveCam;
+    return `<g filter="url(#qgMemory)">${body}</g><rect width="${W}" height="${H}" fill="#fff6e0" opacity="0.12"/>` +
+      `<rect x="40" y="1540" width="1000" height="120" rx="20" fill="#0d0f12" opacity="0.85"/><text x="540" y="1620" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="52" letter-spacing="4" fill="#ffd36b">${esc(opts.label || '')}</text>`;
   }
 
   // ---------------------------------------------------------------- screen-space text (built for easy following)
@@ -435,9 +474,10 @@
   }
   function captions(ctx, opts = {}) {
     let s = ''; const cast = ctx.ep.cast, t = ctx.t;
-    for (const l of ctx.lines) {
-      const a = l.start - 0.05, b = l.end + 0.3;
-      if (t < a || t > b) continue;
+    ctx.lines.forEach((l, li) => {
+      const next = ctx.lines[li + 1];
+      const a = l.start - 0.05, b = Math.min(l.end + 0.3, next ? next.start - 0.06 : Infinity);   // never overlap the next caption
+      if (t < a || t > b) return;
       const { words, times } = wordTimes(l);
       let groups;
       if (l.caption.includes('|')) {   // explicit breaks written in the episode data: "Is he going | through Kemi's wallet?"
@@ -447,14 +487,14 @@
       let wi = 0; times.forEach((tm, i) => { if (t >= tm[0]) wi = i; });
       const g = groups.find(gr => gr.includes(wi)) || groups[0];
       const gStart = times[g[0]][0], pop = ease.back(seg(t, gStart - 0.02, gStart + 0.1));
-      const op = 1 - seg(t, b - 0.12, b);
+      const op = 1 - seg(t, b - Math.min(0.12, (b - l.end) * 0.8 + 0.02), b);
       const nar = l.who === 'narrator', col = nar ? '#ffd36b' : cast[l.who].color;
       const y = opts.y || 1380, fs = 80;
       s += `<g opacity="${f1(op)}" transform="translate(${W / 2} ${y}) scale(${f1(0.86 + 0.14 * pop)})">`;
       if (!nar) s += `<text x="0" y="-96" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="34" letter-spacing="6" fill="${col}" stroke="#0b0b0e" stroke-width="8" paint-order="stroke">${esc(cast[l.who].name.toUpperCase())}</text>`;
       s += `<text x="0" y="0" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" stroke="#0b0b0e" stroke-width="14" stroke-linejoin="round" paint-order="stroke">` +
         g.map((i, k) => `<tspan fill="${i === wi && t <= l.end + 0.05 ? col : '#ffffff'}">${k ? ' ' : ''}${esc(words[i])}</tspan>`).join('') + `</text></g>`;
-    }
+    });
     return s;
   }
   function clockChip(ctx, opts = {}) {
@@ -471,7 +511,7 @@
       if (i < ctx.idx && scenes[i].truth) cur = null;
       for (const st of scenes[i].rumour ? [].concat(scenes[i].rumour) : []) {
         if (i < ctx.idx) { cur = scenes[i].truth ? null : st; continue; }   // a revealed truth clears the meter for later scenes
-        const ln = ctx.lines[st.at_line || 0]; const a = ln ? ln.start + 0.15 : (st.at ?? 0.2);
+        const ln = ctx.lines[st.at_line || 0]; const a = st.at !== undefined ? st.at : (ln ? ln.start + 0.15 : 0.2) + (st.delay || 0);
         if (ctx.t >= a) { cur = st; at = a; fresh = true; }
       }
     }
@@ -538,7 +578,7 @@
     return `<rect width="${W}" height="${H}" fill="#0c0d10"/>${defs()}${body}${finish(grade)}${opts.noClock ? '' : clockChip(ctx, opts)}${rumourMeter(ctx)}${nameTags(ctx)}${captions(ctx, opts)}${jumpCard(ctx)}`;
   }
 
-  window.QG = { CAST, EX, ex, talk, blink, person, item, alive, setCam, layer, officeSet, breakSet, kitchenSet, phoneInsert, desk, partition, frame, sm, mix, punch, LINE, thought, meetingSet, meetingTable, rainNight, rainDrops };
+  window.QG = { CAST, EX, ex, talk, blink, person, item, alive, setCam, layer, officeSet, breakSet, kitchenSet, phoneInsert, desk, partition, frame, sm, mix, punch, LINE, thought, meetingSet, meetingTable, rainNight, rainDrops, chatScreen, memory };
 })();
 
 
