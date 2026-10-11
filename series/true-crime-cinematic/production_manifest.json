@@ -6,7 +6,7 @@
       "title": "She Got Life for Murder. The 'Blood' Was Sound-Deadener. #Shorts",
       "file": "true_crime_01.mp4",
       "status": "verified_automated",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "next_task": "none - delivered",
       "media": {
         "duration": 84.286,
         "width": 1080,
@@ -59,7 +59,51 @@
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_01",
       "sha256": "b823523e617e770d1f3d42ae14e8269ca145d2f7915276bc254ed663eb6dfa31",
       "output": "series/true-crime-cinematic/output/true_crime_01.mp4",
-      "verified": "2026-10-11T07:32:37"
+      "verified": "2026-10-11T07:32:37",
+      "episode_summary": "Azaria Chamberlain (Uluru, 1980-2012): a mother jailed for life on 'baby's blood' that was factory sound-deadener; a jacket found by chance freed her; a 2012 inquest confirmed a dingo took her daughter.",
+      "editorial_review": {
+        "reviewed": "2026-10-11",
+        "status": "passed",
+        "animation_director": {
+          "defects_found_and_fixed": [
+            "hand-to-face gesture read as a wave -> rebuilt as hand-to-mouth",
+            "judge/coroner too small at the bench (scale 0.42 -> 0.5)",
+            "verdict shot opened on an empty wall -> tighter start on the bench, Lindy revealed by the tilt down",
+            "frontal walk read as a kick -> 3/4 walk with shorter stride",
+            "magnifier hidden by the bench -> aimed above it",
+            "label boxes collided with the judge's head -> bench figures moved off-centre",
+            "night search lacked tension -> subtle handheld camera"
+          ],
+          "notes": "Character continuity holds across shots by construction (same characters/figures/*.json): Lindy (court/release outfits), Michael, judge, scientist recur unchanged. Remaining limit: 2D cut-out rig, rigid limbs, simple hands."
+        },
+        "documentary_producer": {
+          "checks": [
+            "narration identical to the reviewed, sourced v1 script (tests/test_cinematic.py)",
+            "every shot's claims are 'established' with >=2 sources (shot_manifest validation)",
+            "no depiction of Azaria, the dingo, violence or blood; dashboard 'spray' drawn dark brown",
+            "real people are illustrated representations, not likenesses; others generic",
+            "every reconstruction tagged ILLUSTRATION; jacket shot tagged NOT THE ACTUAL JACKET",
+            "no invented dialogue; prosecution case labelled as a claim; no 'declared innocent'"
+          ],
+          "defects_found_and_fixed": []
+        },
+        "retention_strategist": {
+          "hook": "0-3.6 s: Lindy in the dock under the judge, 'A mother was jailed for life for murdering her baby', gavel hit; 2.9 s later the 'NOT BLOOD' reversal.",
+          "pacing": "14 shots, average 6.0 s, longest 10.7 s (science reveal, three staged callouts); payoff in the 2012 finding; memorial close with fade.",
+          "defects_found_and_fixed": [
+            "captions overflowed the Shorts UI (right 1039 px, bottom 1563 px) -> 800 px safe width at y 1380, long words scaled"
+          ]
+        },
+        "software_test_engineer": {
+          "result": "16/16 QA checks pass; 87 unit tests pass",
+          "defects_found_and_fixed": [
+            "motion-energy metric could not tell a slideshow from animation (v1 also passed) -> kept only as a frozen-picture detector; character action now probed from the renderer",
+            "test module name collision between the two make_episodes.py files -> loaded by path",
+            "self-matching pgrep in a wait loop -> waits on the real PID"
+          ]
+        }
+      },
+      "before_after": "series/true-crime-cinematic/qa/before_after_01.png"
     },
     "02": {
       "id": "tcv02-unabomber",
@@ -119,5 +163,31 @@
       "next_task": "inspect qa/ and fix; then re-run qa.py"
     }
   },
-  "updated": "2026-10-11T07:32:37"
+  "updated": "2026-10-11T07:32:37",
+  "project": {
+    "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
+    "audit": "docs/STUDIO_AUDIT.md",
+    "licences": "docs/CREDITS.md (Case Files table)",
+    "readme": "series/true-crime-cinematic/README.md",
+    "one_command": "python series/true-crime-cinematic/produce.py <n|all>   (resumable; render cached by input hash)",
+    "cost": "0 - no paid API, subscription, trial or cloud renderer; runs on CPU (this session: 4 cores, no GPU) or GitHub Actions",
+    "tools": [
+      "Piper TTS (piper-tts 1.3, voice en_US-libritts_r-medium CC BY 4.0)",
+      "onnx (word timing)",
+      "Playwright 1.56.1 + Chromium (SVG frames)",
+      "FFmpeg 6.1 (libx264/AAC, loudnorm, ebur128)",
+      "NumPy, Pillow",
+      "sherpa-onnx Whisper tiny.en (QA only)"
+    ],
+    "studio_checks": [
+      "pipeline/verify.py media + full decode",
+      "pipeline/series.series_qa",
+      "EBU R128 loudness",
+      "offline ASR WER",
+      "pipeline/caption_safe.py (Shorts safe area, real font metrics)",
+      "pipeline/motion_qa.py (frozen/static picture)",
+      "pipeline/shot_probe.mjs + pipeline/shot_manifest.py (per-shot manifest, slideshow risk, character action, sources, tags)"
+    ],
+    "reference_evaluated": "calesthio/OpenMontage (AGPL-3.0): no code copied; adopted ideas = slideshow-risk score, beat-change check, shot-language fields (see docs/STUDIO_AUDIT.md section 5)"
+  }
 }
