@@ -160,6 +160,63 @@
       const desk = `<rect x="-300" y="1200" width="${W + 600}" height="44" fill="#6a5440" stroke="${INK}" stroke-width="6"/><rect x="-300" y="1244" width="${W + 600}" height="${H}" fill="#2a241e"/>`;
       return { light: { dir: 1, rim: '#fff6dc', key: '#fff6dc' }, layers: [[0.2, back], [0.5, bars], [1.0, ''], [1.06, desk]] };
     },
+    // impound / tow yard at night: city glow, hills, chain-link fence, rows of generic car silhouettes, sodium lamps,
+    // wet asphalt with light reflections (generic; not a replica of any real yard)
+    tow_yard_night(ctx, o = {}) {
+      const t = ctx.t;
+      const sky = `<defs><linearGradient id="tysky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05070d"/><stop offset="0.75" stop-color="#1c1626"/><stop offset="1" stop-color="#3a2a2a"/></linearGradient></defs><rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="url(#tysky)"/>`;
+      let hills = `<path d="M-300 820 Q 0 700 260 760 T 760 700 T 1400 780 L1400 900 L-300 900 Z" fill="#0d0b12"/>`; const r = R(17);
+      for (let i = 0; i < 70; i++) hills += `<circle cx="${f1(-250 + r() * 1600)}" cy="${f1(730 + r() * 150)}" r="${f1(1 + r() * 1.8)}" fill="#ffd9a0" opacity="${f1(0.3 + 0.5 * r())}"/>`;
+      const car = (x, y, k, c) => `<g transform="translate(${x} ${y}) scale(${k})"><path d="M-170 0 L-170 -46 Q-160 -66 -120 -70 L-70 -74 L-30 -118 Q -10 -128 60 -128 L110 -124 Q150 -110 175 -66 L190 -56 L192 0 Z" fill="${c}" stroke="#000" stroke-width="4"/><path d="M-20 -112 L-58 -74 L44 -74 L44 -120 Z M56 -120 L56 -74 L150 -74 Q136 -108 112 -118 Z" fill="#0a0c12" opacity="0.8"/><circle cx="-105" cy="0" r="32" fill="#050506"/><circle cx="118" cy="0" r="32" fill="#050506"/><path d="M-160 -50 L180 -60" stroke="#ffd9a0" stroke-opacity="0.25" stroke-width="3"/></g>`;
+      let rows = ''; [[-80, 0.55, '#1a1d24'], [190, 0.55, '#22252c'], [460, 0.55, '#1b1e26'], [730, 0.55, '#24262e'], [1000, 0.55, '#1a1c22']].forEach(([x, k, c]) => { rows += car(x, 1010, k, c); });
+      let rows2 = ''; [[60, 0.8, '#15171c'], [430, 0.8, '#1d2027'], [820, 0.8, '#17191f']].forEach(([x, k, c]) => { rows2 += car(x, 1110, k, c); });
+      const lamp = (x, h) => `<path d="M${x} 1080 L${x} ${1080 - h}" stroke="#0b0b0e" stroke-width="10"/><path d="M${x - 30} ${1080 - h} L${x + 30} ${1080 - h}" stroke="#0b0b0e" stroke-width="14"/><circle cx="${x}" cy="${1086 - h}" r="12" fill="#ffb347"/>` + wash(x, 1092 - h, 120, 60, '#ffb347', 0.5) + `<path d="M${x - 14} ${1094 - h} L${x - 170} 1110 L${x + 170} 1110 L${x + 14} ${1094 - h} Z" fill="#ffb347" opacity="0.07"/>`;
+      let fence = ''; for (let i = -6; i < 30; i++) fence += `<line x1="${-300 + i * 60}" y1="820" x2="${-300 + i * 60 + 260}" y2="1080" stroke="#8a8f99" stroke-opacity="0.18" stroke-width="2"/><line x1="${-40 + i * 60}" y1="820" x2="${-300 + i * 60}" y2="1080" stroke="#8a8f99" stroke-opacity="0.18" stroke-width="2"/>`;
+      fence += [-200, 200, 600, 1000, 1300].map(x => `<rect x="${x}" y="800" width="10" height="290" fill="#2a2d33"/>`).join('');
+      const ground = `<rect x="-300" y="1080" width="${W + 600}" height="${H}" fill="#0c0d11"/>` + [[160, '#ffb347'], [880, '#ffb347']].map(([x, c]) => `<rect x="${x - 40}" y="1120" width="80" height="700" fill="${c}" opacity="${f1(0.08 + 0.03 * Math.sin(t * 3 + x))}" filter="url(#cineSoft)"/>`).join('') +
+        (o.tape ? `<g transform="rotate(-4 540 1250)"><rect x="-300" y="1230" width="${W + 600}" height="40" fill="#e8c21c"/><text x="540" y="1260" text-anchor="middle" ${TYPE} font-weight="700" font-size="28" fill="#141414" letter-spacing="6">POLICE LINE · DO NOT CROSS · POLICE LINE · DO NOT CROSS</text></g>` : '');
+      return { light: { dir: -1, rim: '#ffb347', key: '#ffb347' }, layers: [[0.05, sky], [0.15, hills], [0.4, fence + lamp(160, 330) + lamp(880, 300)], [0.55, rows], [0.8, rows2], [1.0, ''], [1.05, ground]], fog: !!o.fog };
+    },
+    // press briefing room: curtain, podium with a generic emblem (no real seal), microphones, camera flashes
+    press_room(ctx, o = {}) {
+      const t = ctx.t; let back = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#0e1424"/>`;
+      for (let i = 0; i < 20; i++) back += `<rect x="${-300 + i * 90}" y="-300" width="44" height="${H + 600}" fill="#16203a" opacity="0.7"/>`;
+      back += wash(540, 600, 520, 420, '#3a5aa0', 0.25);
+      const emblem = `<g transform="translate(540 1040)"><circle r="78" fill="#1c2742" stroke="#c9a356" stroke-width="6"/><path d="M0 -44 L0 40 M-40 -20 L40 -20 M-40 -20 L-56 18 L-24 18 Z M40 -20 L24 18 L56 18 Z" stroke="#c9a356" stroke-width="5" fill="none"/></g>`;
+      const podium = `<path d="M340 940 L740 940 L700 1500 L380 1500 Z" fill="#2a2f3a" stroke="${INK}" stroke-width="6"/><rect x="320" y="920" width="440" height="34" rx="6" fill="#3a404c" stroke="${INK}" stroke-width="5"/>` + emblem +
+        [470, 510, 560, 600].map((x, i) => `<path d="M${x} 925 L${540 + (x - 540) * 0.3} ${860 - i % 2 * 20}" stroke="#111" stroke-width="5"/><ellipse cx="${540 + (x - 540) * 0.3}" cy="${852 - i % 2 * 20}" rx="12" ry="18" fill="#1a1a1a"/>`).join('');
+      let flash = ''; const r = R(23);
+      for (let i = 0; i < 9; i++) { const ft = r() * 6, fx = r() * W; const k = Math.max(0, 1 - Math.abs(((t - ft) % 6 + 6) % 6) / 0.12); if (k > 0) flash += `<circle cx="${f1(fx)}" cy="${f1(1500 + r() * 200)}" r="${f1(160 * k)}" fill="#fff" opacity="${f1(0.5 * k)}" filter="url(#cineSoft)"/>`; }
+      const cams = [120, 330, 760, 960].map((x, i) => `<g transform="translate(${x} ${1700 + (i % 2) * 40})"><rect x="-80" y="-60" width="160" height="110" rx="12" fill="#0a0a0c"/><circle cx="0" cy="-5" r="38" fill="#1b1b20" stroke="#333" stroke-width="6"/><rect x="-20" y="50" width="40" height="300" fill="#0a0a0c"/></g>`).join('');
+      return { light: { dir: 1, rim: '#9fb8ff', key: '#dfe8ff' }, layers: [[0.2, back], [1.0, ''], [1.02, podium], [1.25, flash], [1.4, cams]] };
+    },
+    // modern civic tower and plaza at night in the rain, with a mirrored reflection on the wet plaza (generic building)
+    courthouse_night(ctx, o = {}) {
+      const t = ctx.t; const r = R(31);
+      const sky = `<defs><linearGradient id="chsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#04060c"/><stop offset="1" stop-color="#1a2032"/></linearGradient></defs><rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="url(#chsky)"/>`;
+      let tower = `<rect x="250" y="180" width="580" height="900" fill="#1a1e28" stroke="${INK}" stroke-width="6"/><rect x="250" y="180" width="580" height="40" fill="#252a36"/>`;
+      for (let row = 0; row < 18; row++) for (let col = 0; col < 9; col++) { const lit = r() < (o.lit ?? 0.28); tower += `<rect x="${272 + col * 62}" y="${240 + row * 46}" width="40" height="28" fill="${lit ? '#ffd38a' : '#0d1018'}" opacity="${lit ? f1(0.55 + 0.35 * r()) : 0.9}"/>`; }
+      tower += `<rect x="200" y="1080" width="680" height="30" fill="#2a2f3a"/><rect x="160" y="1110" width="760" height="30" fill="#232833"/><rect x="120" y="1140" width="840" height="30" fill="#1c2029"/>`;
+      const palm = (x, h) => `<path d="M${x} 1170 Q ${x + 10} ${1170 - h / 2} ${x - 6} ${1170 - h}" stroke="#07080b" stroke-width="10" fill="none"/>` + [0, 1, 2, 3, 4, 5].map(i => `<path d="M${x - 6} ${1170 - h} q ${f1(Math.cos(i * 1.05) * 90)} ${f1(-30 + Math.sin(i * 1.05) * 40)} ${f1(Math.cos(i * 1.05) * 150)} ${f1(30 + Math.sin(i * 1.05) * 60)}" stroke="#07080b" stroke-width="9" fill="none" stroke-linecap="round"/>`).join('');
+      const lamps = [60, 1020].map(x => `<path d="M${x} 1170 L${x} 860" stroke="#0b0b0e" stroke-width="10"/><circle cx="${x}" cy="855" r="14" fill="#cfe0ff"/>` + wash(x, 860, 110, 60, '#cfe0ff', 0.45)).join('');
+      const above = tower + lamps + palm(-40, 520) + palm(1140, 560);
+      // the plaza mirrors the scene above it (flipped about y = 1170), darkened and rippled
+      const ripple = Math.sin(t * 2.2) * 2;
+      const plaza = `<rect x="-300" y="1170" width="${W + 600}" height="${H}" fill="#0b0d13"/><g opacity="0.3" transform="translate(0 ${f1(2340 + ripple)}) scale(1 -1)"><g filter="url(#fgBlur)">${tower + lamps}</g></g>` +
+        `<rect x="-300" y="1170" width="${W + 600}" height="${H}" fill="url(#chsky)" opacity="0.35"/>` + [0, 1, 2, 3, 4, 5, 6].map(i => `<line x1="-300" y1="${1200 + i * 60}" x2="${W + 300}" y2="${1200 + i * 60}" stroke="#000" stroke-opacity="0.35" stroke-width="${3 + i}"/>`).join('');
+      return { light: { dir: 1, rim: '#cfe0ff', key: '#ffd38a' }, layers: [[0.05, sky], [0.35, above], [0.6, plaza], [1.0, '']] };
+    },
+    // the Hollywood Hills at night in the rain: hillside lights, a generic house far up the slope, a winding road
+    hills_rain(ctx, o = {}) {
+      const t = ctx.t; const r = R(41);
+      const sky = `<defs><linearGradient id="hrsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05070e"/><stop offset="0.7" stop-color="#1e2538"/><stop offset="1" stop-color="#3a3348"/></linearGradient></defs><rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="url(#hrsky)"/>` + wash(540, 760, 700, 220, "#ff9a5a", 0.12);
+      let hill = `<path d="M-300 980 Q 100 520 520 600 Q 900 680 1400 460 L1400 1300 L-300 1300 Z" fill="#0b0d14"/>`;
+      for (let i = 0; i < 90; i++) { const x = -250 + r() * 1650, y = 640 + r() * 520; hill += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(1.2 + r() * 2)}" fill="#ffd9a0" opacity="${f1(0.25 + 0.55 * r())}"/>`; }
+      const house = `<g transform="translate(${o.houseX ?? 640} ${o.houseY ?? 640}) scale(${o.houseScale ?? 1})"><rect x="-90" y="-60" width="180" height="60" fill="#14171f" stroke="#000" stroke-width="3"/><rect x="-60" y="-110" width="140" height="50" fill="#181c25" stroke="#000" stroke-width="3"/><rect x="-80" y="-50" width="60" height="34" fill="#ffd38a" opacity="${f1(o.houseLit ?? 0.7)}"/><rect x="0" y="-100" width="60" height="30" fill="#ffd38a" opacity="${f1((o.houseLit ?? 0.7) * 0.7)}"/></g>`;
+      const road = `<path d="M-300 1500 C 200 1300 300 1180 640 1120 S 1100 980 1400 960" stroke="#1a1d24" stroke-width="70" fill="none"/><path d="M-300 1500 C 200 1300 300 1180 640 1120 S 1100 980 1400 960" stroke="#ffd38a" stroke-opacity="0.25" stroke-width="3" stroke-dasharray="30 30" fill="none"/>`;
+      const front = `<rect x="-300" y="1400" width="${W + 600}" height="${H}" fill="#06070a"/>` + [80, 980].map((x, i) => `<path d="M${x} 1420 Q ${x + 12} 1100 ${x - 8} 820" stroke="#05060a" stroke-width="12" fill="none"/>` + [0, 1, 2, 3, 4, 5].map(k => `<path d="M${x - 8} 820 q ${f1(Math.cos(k * 1.05 + i) * 100)} ${f1(-30 + Math.sin(k * 1.05) * 40)} ${f1(Math.cos(k * 1.05 + i) * 170)} ${f1(30 + Math.sin(k * 1.05) * 70)}" stroke="#05060a" stroke-width="10" fill="none" stroke-linecap="round"/>`).join('')).join('');
+      return { light: { dir: -1, rim: '#9fb8ff', key: '#ffd38a' }, layers: [[0.05, sky], [0.3, hill + house], [0.6, road], [1.0, ''], [1.35, front]], fog: !!o.fog };
+    },
     // printing hall: rollers and a running paper web
     press_hall(ctx, o = {}) {
       const t = ctx.t; let s = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#101418"/>`;

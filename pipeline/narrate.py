@@ -141,7 +141,19 @@ def _narrate_aligned(voice_name, text, length_scale, speaker, out: Path, words_j
     return out
 
 
-def map_words(display: str, spoken: str, spans: list, voice_name: str) -> list[dict]:
+def pronounce(text: str, table: dict | None) -> str:
+    """Whole-word spoken substitutions ({"D4vd": "David"}), case-insensitive, punctuation kept. Captions keep the
+    written form; each written word maps to its spoken replacement, so word timings stay aligned."""
+    if not table:
+        return text
+    def sub(m):
+        w = m.group(0); core = w.strip(".,:;?!\"'()")
+        rep = next((v for k, v in table.items() if k.lower() == core.lower()), None)
+        return w.replace(core, rep) if rep else w
+    return re.sub(r"\S+", sub, text)
+
+
+def map_words(display: str, spoken: str, spans: list, voice_name: str, table: dict | None = None) -> list[dict]:
     """Assign spoken-word spans to the caption's words. A caption word can be several spoken words
     ('1978' -> 'nineteen seventy eight'); counts come from the phonemiser. Falls back to proportional timing."""
     from piper import PiperVoice  # noqa: F401  (voice already loaded by the caller)
@@ -149,7 +161,7 @@ def map_words(display: str, spoken: str, spans: list, voice_name: str) -> list[d
     v = _VOICES.get(voice_name + "|align")
     counts = []
     for w in disp:
-        sw = speak_years(w) if spoken != display else w
+        sw = pronounce(speak_years(w), table) if spoken != display else w
         ph = v.phonemize(sw) if v else [list(sw)]
         groups = "".join("".join(p) for p in ph)
         counts.append(max(1, len([g for g in re.split(r"[ ,.:;?!\"'()—…-]+", groups) if g])))
@@ -191,6 +203,7 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
     for ln in scene["lines"]:
         v = narrator_voice if (narrator_voice and ln["who"] == "narrator") else load_character(ln["who"])["voice"]
         spoken = speak_years(ln["text"]) if v.get("year_words") else ln["text"]   # captions keep the digits
+        spoken = pronounce(spoken, v.get("pronounce"))                              # and the written names
         align = bool(v.get("word_timing"))
         p = narrate_scene(v["model"], spoken, v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"), align=align)
         x, sr_ = read_wav(p); sr = sr or sr_
@@ -201,7 +214,7 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
                 from piper import PiperVoice
                 from pipeline.voices import voice_path
                 _VOICES[v["model"] + "|align"] = PiperVoice.load(str(voice_path(v["model"])), include_alignments=True)
-            words = map_words(ln["text"], spoken, _json.loads(p.with_suffix(".words.json").read_text()), v["model"])
+            words = map_words(ln["text"], spoken, _json.loads(p.with_suffix(".words.json").read_text()), v["model"], v.get("pronounce"))
         if ln.get("fx") == "phone":   # small phone speaker: band-limited and slightly crunchy
             X = np.fft.rfft(x); f = np.fft.rfftfreq(len(x), 1 / sr_)
             X *= ((f > 320) & (f < 3400)).astype(float)

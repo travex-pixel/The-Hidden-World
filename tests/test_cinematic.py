@@ -115,7 +115,7 @@ class CinematicEpisodes(unittest.TestCase):
         lo, hi = CFG["duration_limits_s"]
         self.assertEqual((lo, hi), (45, 90))
         for e in CFG["episodes"]:
-            self.assertRegex(e["file"], r"^true_crime_0\d\.mp4$")
+            self.assertRegex(e["file"], r"^true_crime_[a-z0-9_]+\.mp4$")
         # the cinematic outputs live in their own folder and never overwrite the original series' files
         self.assertNotEqual(SERIES / "output", ROOT / "series" / "true-crime" / "output")
 
@@ -194,6 +194,47 @@ class StudioQA(unittest.TestCase):
                 for c in r["characters"]:
                     self.assertIn(c, ep["figures"])
             self.assertTrue(m["slideshow_risk"]["ok"], m["slideshow_risk"])
+
+
+class OngoingCaseSafeguards(unittest.TestCase):
+    """The D4vd episode covers a live prosecution: these checks protect the presumption of innocence and the victim."""
+    EID = "tcv03-d4vd-case"
+
+    def setUp(self):
+        self.ep = load_episode(self.EID)
+        self.said = " ".join(l["text"] for s in self.ep["scenes"] for l in s["lines"]).lower()
+        self.js = _code(ROOT / "renderer" / "scenes" / f"{self.EID}.js")
+
+    def test_presumption_of_innocence_and_plea_are_stated(self):
+        self.assertIn("presumed innocent", self.said)
+        self.assertIn("pleaded not guilty", self.said)
+        self.assertIn("allege", self.said)                      # the prosecution's account is attributed
+        self.assertIn("not a verdict", self.said)              # the holding order is not presented as a conviction
+
+    def test_no_graphic_unverified_or_prejudicial_wording(self):
+        banned = ["killer", "murdered her", "he killed", "confess", "chainsaw", "stab", "dismember", "pregnan", "abortion", "tmz",
+                  "will seek the death penalty", "trial date was set", "guilty of"]
+        for w in banned:
+            self.assertNotIn(w, self.said, f"narration: '{w}'")
+            self.assertNotIn(w, self.js.lower(), f"on screen: '{w}'")
+
+    def test_no_real_person_is_depicted(self):
+        for fid in self.ep["figures"]:
+            self.assertFalse(FIGS[fid]["real_person"], f"{fid} is a real person")
+        figs = re.findall(r"\{ id: '(\w+)'[^}]*", self.js)
+        specs = re.findall(r"\{ id: '\w+'[^\n]*", self.js)
+        self.assertTrue(specs)
+        for spec in specs:
+            self.assertRegex(spec, r"silhouette: '(cool|warm)'", f"figure not anonymised: {spec[:60]}")
+
+    def test_legal_status_is_dated_and_matches_the_dossier(self):
+        d = self.ep["legal_status_verified"]
+        self.assertRegex(d, r"^\d{4}-\d{2}-\d{2}$")
+        self.assertIn(f"Legal status verified on {d}", (ROOT / "episodes" / self.EID / "research.md").read_text())
+        for c in self.ep["claims"]:
+            self.assertGreaterEqual(len(c["sources"]), 2, c["id"])
+            self.assertIn(c.get("nature"), {"fact", "allegation", "defence", "procedure"}, c["id"])
+        self.assertIn("october 19th", self.said)   # the cliffhanger is the next scheduled hearing, as reported
 
 
 if __name__ == "__main__":

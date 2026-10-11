@@ -316,7 +316,7 @@
     // rim light on the body silhouette edge (back side)
     const flip = dir < 0 ? -1 : 1;
     let g = `<g transform="translate(${f1(x)} ${f1(y)}) scale(${f1(sc * flip * 1000) / 1000} ${f1(sc * 1000) / 1000})">${out}</g>`;
-    if (f.silhouette) g = `<g filter="url(#figSil)">${g}</g>`;
+    if (f.silhouette) g = `<g filter="url(#${f.silhouette === 'warm' ? 'figSilWarm' : f.silhouette === 'cool' ? 'figSilCool' : 'figSil'})">${g}</g>`;   // anonymous figure; 'warm'/'cool' add a rim light
     if (f.blur) g = `<g filter="url(#figBlur)">${g}</g>`;
     if (vis < 1) g = `<g opacity="${f1(vis)}">${g}</g>`;
     return g;
@@ -324,6 +324,8 @@
 
   const figDefs = `<defs><linearGradient id="beamG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff4cf" stop-opacity="0.45"/><stop offset="1" stop-color="#fff4cf" stop-opacity="0"/></linearGradient>
     <filter id="figSil"><feColorMatrix type="matrix" values="0 0 0 0 0.03  0 0 0 0 0.03  0 0 0 0 0.05  0 0 0 1 0"/></filter>
+    <filter id="figSilCool" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="4" result="d"/><feFlood flood-color="#a8c4ff" flood-opacity="0.75"/><feComposite in2="d" operator="in" result="rim"/><feGaussianBlur in="rim" stdDeviation="3" result="rimb"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.035  0 0 0 0 0.035  0 0 0 0 0.05  0 0 0 1 0" result="sil"/><feMerge><feMergeNode in="rimb"/><feMergeNode in="sil"/></feMerge></filter>
+    <filter id="figSilWarm" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="4" result="d"/><feFlood flood-color="#ffbe6a" flood-opacity="0.75"/><feComposite in2="d" operator="in" result="rim"/><feGaussianBlur in="rim" stdDeviation="3" result="rimb"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.035  0 0 0 0 0.035  0 0 0 0 0.05  0 0 0 1 0" result="sil"/><feMerge><feMergeNode in="rimb"/><feMergeNode in="sil"/></feMerge></filter>
     <filter id="figBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter></defs>`;
 
   E.fig = { figure, POSES, EXPR, stateAt, figDefs, INK, shade };
