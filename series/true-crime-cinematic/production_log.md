@@ -77,3 +77,8 @@
 - 2026-10-11 15:53:19 tcv12-son-of-sam: VERIFIED -> series/true-crime-cinematic/output/true_crime_12_son_of_sam.mp4 (75.8s, 31.5 MB, sha256 ef1ca847cc5c)
 - 2026-10-11 15:53:37 produce 11: regenerating episode data
 - 2026-10-11 15:53:37 tcv11-great-train-robbery: rendering (final, seed 1)
+- 2026-10-11 16:09:44 tcv11-great-train-robbery: rendered in 967s
+- 2026-10-11 16:10:54 tcv11-great-train-robbery: QA FAILED ['audio_music_never_masks']; frames and details in series/true-crime-cinematic/qa/true_crime_11
+- 2026-10-11 16:13:29 produce 11: regenerating episode data
+- 2026-10-11 16:13:29 tcv11-great-train-robbery: render cached (inputs unchanged), skipping to QA
+- 2026-10-11 16:14:39 tcv11-great-train-robbery: VERIFIED -> series/true-crime-cinematic/output/true_crime_11_great_train_robbery.mp4 (74.6s, 31.0 MB, sha256 d840392743e3)

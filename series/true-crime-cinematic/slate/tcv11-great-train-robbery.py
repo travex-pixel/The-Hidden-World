@@ -78,6 +78,8 @@ def build(h):
         sc["section"] = sections[sc["id"]]
     scenes[2]["music_drop"] = True    # the driver line: silence, with respect
     scenes[8]["music_drop"] = True    # the reveal: the fingerprints
+    scenes[12]["music_drop"] = True   # the return and arrest: the cliff impact must not mask the narration
+    scenes[13]["music_drop"] = True   # the callback line
     scenes[-1]["fade_out"] = True
 
     src = h.src
@@ -173,7 +175,7 @@ def build(h):
         "£2.6": "two point six", "million": "million pounds",       # "£2.6 million" -> "two point six million pounds" (pronounce() is per word)
         "Leatherslade": "Leatherslaid"})
     ep["score"] = {"root_hz": 146.83, "bpm": 78,
-                   "hits": [{"scene": "s02_signal", "word": [1, 7], "at": -0.05, "gain": 0.4}],
+                   "hits": [{"scene": "s02_signal", "word": [1, 7], "at": -0.05, "gain": 0.25}],
                    "cliff": {"scene": "s13_return", "word": [0, 12], "at": -0.08}}
     ep["content_notes"] = ("Closed case (1963-1964; Biggs died in 2013). The driver, Jack Mills, is named once and never depicted; the attack is never shown "
                            "or described. The gang are anonymous generic 1960s silhouettes (flat caps, suits), never glamorised; Ronnie Biggs is an "
