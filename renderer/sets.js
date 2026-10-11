@@ -28,6 +28,12 @@
       <path d="M-160 0 Q -130 -160 0 -175 Q 130 -160 160 0 Z" fill="#3a2f22" stroke="${INK}" stroke-width="5"/><path d="M-160 0 Q -130 -160 0 -175 Q 130 -160 160 0 Z" fill="#ffb760" opacity="${f1(0.5 * glow)}"/>
       <path d="M0 -175 L0 0" stroke="${INK}" stroke-width="4"/><path d="M-44 0 Q 0 -120 44 0 Z" fill="#140e09" opacity="0.85"/></g>`;
   }
+  // falling rain streaks inside a box (deterministic in t); used through windows or over exteriors
+  function rain(t, box, n = 70, seed = 9, op = 0.45, slant = 0.18) {
+    const [x0, y0, w, h] = box, r = R(seed); let s = '';
+    for (let i = 0; i < n; i++) { const sp = 1400 + r() * 700, L = 30 + r() * 40, x = x0 + r() * w, ph = r() * h; const y = y0 + ((ph + t * sp) % h); s += `<line x1="${f1(x - slant * L)}" y1="${f1(y - L)}" x2="${f1(x)}" y2="${f1(y)}" stroke="#cfe0f0" stroke-width="${f1(1.5 + r() * 1.5)}" stroke-opacity="${f1(op * (0.5 + r() * 0.5))}" stroke-linecap="round"/>`; }
+    return s;
+  }
   function benchRow(y, x0, x1, col, h = 70) { return `<rect x="${x0}" y="${y}" width="${x1 - x0}" height="${h}" fill="${col}" stroke="${INK}" stroke-width="4"/><rect x="${x0}" y="${y}" width="${x1 - x0}" height="10" fill="#000" opacity="0.25"/>`; }
 
   // ---------- environments: return { layers: [[depth, svg]], light }
@@ -101,6 +107,7 @@
     task_force(ctx, o = {}) {
       const t = ctx.t;
       let back = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#141a22"/>`;
+      if (o.rain) back += `<g opacity="0.9">${rain(t, [-300, 110, W + 600, 470], 90, 4, 0.35)}</g>`;
       for (let i = 0; i < 18; i++) back += `<rect x="-300" y="${120 + i * 26}" width="${W + 600}" height="12" fill="#2a3644" opacity="0.6"/>`;
       back += `<rect x="-300" y="580" width="${W + 600}" height="${H}" fill="#1a1f26"/>`;
       // evidence wall with pinned cards and string (generic, illegible)
@@ -115,7 +122,7 @@
     // a home kitchen at night (family reading the newspaper)
     kitchen_night(ctx, o = {}) {
       const back = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#2a2018"/><rect x="-300" y="-300" width="${W + 600}" height="900" fill="#3a2c20"/>` +
-        `<rect x="620" y="200" width="320" height="380" fill="#0d1428" stroke="${INK}" stroke-width="10"/><path d="M780 200 L780 580 M620 390 L940 390" stroke="${INK}" stroke-width="10"/>` + `<defs><clipPath id="kwin"><rect x="620" y="200" width="320" height="380"/></clipPath></defs><g clip-path="url(#kwin)">${stars(ctx.t, 40, 8, 200, 580)}</g>` +
+        `<rect x="620" y="200" width="320" height="380" fill="#0d1428" stroke="${INK}" stroke-width="10"/><path d="M780 200 L780 580 M620 390 L940 390" stroke="${INK}" stroke-width="10"/>` + `<defs><clipPath id="kwin"><rect x="620" y="200" width="320" height="380"/></clipPath></defs><g clip-path="url(#kwin)">${o.rain ? rain(ctx.t, [620, 200, 320, 380], 40, 8, 0.5) + `<rect x="620" y="200" width="320" height="380" fill="#9ab" opacity="0.08"/>` : stars(ctx.t, 40, 8, 200, 580)}</g>` +
         `<rect x="-200" y="260" width="320" height="200" fill="#4a3826" stroke="${INK}" stroke-width="5"/>` + [0, 1, 2].map(i => `<rect x="${-180 + i * 100}" y="280" width="80" height="160" fill="#5a442e" stroke="${INK}" stroke-width="3"/>`).join('');
       const lamp = `<path d="M540 -100 L540 380" stroke="#120d0b" stroke-width="6"/><path d="M430 380 L650 380 L600 300 L480 300 Z" fill="#6a4a2a" stroke="${INK}" stroke-width="5"/><path d="M430 380 L650 380 L960 1250 L120 1250 Z" fill="#ffd59a" opacity="0.10"/>` + wash(540, 1180, 520, 140, '#ffd59a', 0.28);
       const table = `<path d="M-200 1180 L1280 1180 L1280 1250 L-200 1250 Z" fill="#6a4a2e" stroke="${INK}" stroke-width="6"/><rect x="-300" y="1250" width="${W + 600}" height="${H}" fill="#1a1410"/>` +
@@ -168,7 +175,13 @@
   const GRADES = { warm: ['#ff9a4a', 0.16], cold: ['#2f8fb0', 0.22], night: ['#1a2a6a', 0.25], dawn: ['#ff8a5a', 0.14], sepia: ['#a87a40', 0.18], none: ['#000', 0] };
 
   // ---------- compositor
+  // subtle handheld drift: smooth, deterministic sum of sines (amplitude in px at the figures' plane)
+  function handheld(t, a) { return { x: a * (Math.sin(t * 1.31) + 0.6 * Math.sin(t * 2.73 + 1.7) + 0.3 * Math.sin(t * 5.1 + 0.4)), y: a * (0.8 * Math.sin(t * 1.07 + 2.1) + 0.5 * Math.sin(t * 3.19 + 0.9) + 0.25 * Math.sin(t * 6.3)) }; }
   function camAt(ctx, cam) {
+    const c = camBase(ctx, cam); if (!cam.handheld) return c;
+    const h = handheld(ctx.t + (ctx.sceneStart || 0), cam.handheld); return { x: c.x + h.x, y: c.y + h.y, z: c.z };
+  }
+  function camBase(ctx, cam) {
     if (cam.keys) {   // piecewise moves: [{at, x, y, z, dur}] each eased from the previous key
       let c = { x: 0, y: 0, z: 1, ...cam.keys[0] };
       for (const k of cam.keys.slice(1)) { const u = ease.inOut(clamp((ctx.t - k.at) / (k.dur || 0.8), 0, 1)); if (u <= 0) break; c = { x: lerp(c.x, k.x ?? c.x, u), y: lerp(c.y, k.y ?? c.y, u), z: lerp(c.z, k.z ?? c.z, u) }; }
@@ -220,7 +233,7 @@
     let world = '';
     for (const L of layers) { const inner = L.svg(); if (!inner) continue; world += `<g transform="${layerT(c, L.d)}"${L.d > 1.2 ? ' filter="url(#fgBlur)"' : ''}>${inner}</g>`; }
     if (set.dust || spec.dust) world += `<g style="mix-blend-mode:screen">${E.doc.dust(ctx.t, 45, 7, [0, 0, W, H * 0.75], 0.45)}</g>`;
-    if (spec.rain) world += E.cast ? '' : '';
+    if (spec.rain) world += rain(ctx.t, [-200, -200, W + 400, H + 400], spec.rain.n || 160, 21, spec.rain.op || 0.4);   // exterior rain over the whole frame
     s += `<g transform="${shakeT}">${world}</g>`;
     // grade + key light + vignette
     const G = GRADES[spec.grade || 'none'];
@@ -233,5 +246,5 @@
   }
 
   E.sets = SETS;
-  E.cine = { shot, project, camAt, layerT, overlay, wash, uluru, pines, scrub, tent, stars };
+  E.cine = { shot, project, camAt, layerT, overlay, wash, uluru, pines, scrub, tent, stars, rain, handheld };
 })();

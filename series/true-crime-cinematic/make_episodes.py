@@ -22,14 +22,17 @@ def fw(line, word, name, gain=1.0, at=0.0):
     return {"at": at, "word": [line, word], "name": name, "gain": gain}
 
 
+CAPTION_Y, CAPTION_MAX_W = 1380, 800   # inside the Shorts safe area (checked by pipeline/caption_safe.py)
+
+
 def S(id_, kind, lines, cue, claims, **kw):
-    sc = v1.scene(id_, kind, lines, cue, claims, **kw); sc["caption_y"] = 1460; return sc
+    sc = v1.scene(id_, kind, lines, cue, claims, **kw); sc["caption_y"] = CAPTION_Y; return sc
 
 
 def base(ep_id, number, title, question, figures, scenes, claims, sources, label, bpm=84):
     return {"id": ep_id, "number": number, "series": "THE HIDDEN WORLD: Case Files (cinematic)", "title": title, "central_question": question,
             "template": "true-crime", "narrator_voice": NARR["model"], "narrator_profile": NARR, "loudness_lufs": -14,
-            "target_duration_seconds": [4 if number == 0 else 45, 90], "visual_mode": "svg", "caption_style": "punch", "overlay": "wash",
+            "target_duration_seconds": [4 if number == 0 else 45, 90], "visual_mode": "svg", "caption_style": "punch", "caption_max_w": CAPTION_MAX_W, "overlay": "wash",
             "case_file": {"number": f"{number:02d}", "label": label}, "music": {"bpm": bpm, "beat_snap": 1}, "figures": figures,
             "content_notes": "Characters are illustrated representations, not likenesses; no real photograph, footage or document is imitated. No dialogue is invented: people do not speak, only the narrator.",
             "scenes": scenes, "claims": claims, "sources": sources}
@@ -102,7 +105,7 @@ def unabomber() -> dict:
         S("s01_hook", "tcv2_hook", [N("For seventeen years, the FBI hunted a bomber it couldn't name."),
                                     N("What finally caught him? His own words. And his own brother.", pause_before=0.25)],
           "cold", ["U_17years", "U_identified"], sfx=[fx(0.05, "hit", 0.8), fw(1, 6, "paper", 0.7, -0.15), fw(1, 10, "thump", 0.6, -0.1)], emph=["words.", "brother."], min_d=5.0),
-        v1map | {"caption_y": 1460},
+        v1map | {"caption_y": CAPTION_Y},
         S("s03_offer", "tcv2_offer", [N("In 1995, he made an offer."),
                                       N("Publish his 35,000-word manifesto, and he would \"desist from terrorism.\"", pause_before=0.1)],
           "tension", ["U_offer"], sfx=[fx(0.1, "typing", 0.6), fw(1, 0, "paper", 0.6, -0.2)], emph=["desist", "terrorism.\""]),

@@ -346,20 +346,21 @@
     for (let i = 0; i < ch.length; i++) { const st = ch[i][0].s - 0.06, nx = i + 1 < ch.length ? ch[i + 1][0].s - 0.06 : ch[i][ch[i].length - 1].e + 0.6; if (t >= st && t < nx) { k = i; break; } }
     if (k < 0) return '';
     const c = ch[k]; const emph = sc.emphasis ? new Set(sc.emphasis.map(capKey)) : null;
-    const fs = 92, gap = 56; const ws = c.map(w => ({ ...w, txt: w.w.toUpperCase(), wd: measure(w.w.toUpperCase(), fs) }));
-    // one or two rows, centred
+    const fs = 92, gap = 56, maxW = ctx.ep.caption_max_w || 920; const ws = c.map(w => ({ ...w, txt: w.w.toUpperCase(), wd: measure(w.w.toUpperCase(), fs) }));
+    // one or two rows, centred; a row wider than the safe width (e.g. one long word) is scaled down to fit
     const total = ws.reduce((a, w) => a + w.wd, 0) + gap * (ws.length - 1);
-    const rows = total > 920 && ws.length > 1 ? [ws.slice(0, Math.ceil(ws.length / 2)), ws.slice(Math.ceil(ws.length / 2))] : [ws];
+    const rows = total > maxW && ws.length > 1 ? [ws.slice(0, Math.ceil(ws.length / 2)), ws.slice(Math.ceil(ws.length / 2))] : [ws];
     const enter = ease.back(seg(t, c[0].s - 0.06, c[0].s + 0.1)); let out = `<g transform="translate(${W / 2} ${y0}) scale(${f1((0.86 + 0.14 * enter) * 100) / 100}) translate(${-W / 2} ${-y0})">`;
     rows.forEach((row, ri) => {
-      const rw = row.reduce((a, w) => a + w.wd, 0) + gap * (row.length - 1); let x = W / 2 - rw / 2; const y = y0 + (ri - (rows.length - 1) / 2) * fs * 1.08 + fs * 0.34;
-      row.forEach(w => {
-        const shown = t >= w.s - 0.04; if (!shown) { x += w.wd + gap; return; }
+      const rw0 = row.reduce((a, w) => a + w.wd, 0) + gap * (row.length - 1); const k = Math.min(1, maxW / rw0), rfs = fs * k, rgap = gap * k;
+      const rw = rw0 * k; let x = W / 2 - rw / 2; const y = y0 + (ri - (rows.length - 1) / 2) * fs * 1.08 + fs * 0.34;
+      row.forEach(w0 => {
+        const w = { ...w0, wd: w0.wd * k }; const shown = t >= w.s - 0.04; if (!shown) { x += w.wd + rgap; return; }
         const active = t < w.e + 0.05; const hot = emph && emph.has(capKey(w.w));
         const pop = active ? 1 + 0.07 * (1 - ease.out(seg(t, w.s - 0.04, w.s + 0.12))) : 1;
         const fill = hot ? '#ff5b45' : active ? '#ffd84a' : '#ffffff'; const cx = x + w.wd / 2;
-        out += `<text x="${f1(cx)}" y="${f1(y)}" text-anchor="middle" transform="translate(${f1(cx)} ${f1(y - fs * 0.34)}) scale(${f1(pop * 100) / 100}) translate(${f1(-cx)} ${f1(-(y - fs * 0.34))})" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${fill}" stroke="#05050a" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${esc(w.txt)}</text>`;
-        x += w.wd + gap;
+        out += `<text x="${f1(cx)}" y="${f1(y)}" text-anchor="middle" transform="translate(${f1(cx)} ${f1(y - fs * 0.34)}) scale(${f1(pop * 100) / 100}) translate(${f1(-cx)} ${f1(-(y - fs * 0.34))})" font-family="Nunito" font-weight="800" font-size="${f1(rfs)}" fill="${fill}" stroke="#05050a" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${esc(w.txt)}</text>`;
+        x += w.wd + rgap;
       });
     });
     return out + '</g>';

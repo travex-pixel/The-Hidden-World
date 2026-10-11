@@ -62,7 +62,7 @@
         return s;
       };
       return E.cine.shot(ctx, {
-        set: 'task_force', grade: 'cold', cam: { from: { x: 0, y: -40, z: 1.0 }, to: { x: 10, y: -60, z: 1.06 } },
+        set: 'task_force', setOpts: { rain: true }, grade: 'cold', cam: { from: { x: 0, y: -40, z: 1.0 }, to: { x: 10, y: -60, z: 1.06 }, handheld: 3 },
         figures: [{ id: 'agent_a', x: 840, y: 1900, scale: 1.02, dir: -1, turn: 0.4, pose: 'arms_crossed', expr: 'focused', gaze: [0.5, -0.7], depth: 1.1,
           keys: [{ at: name - 0.2, expr: 'stern', dur: 0.4 }, { at: caught, headTurn: -0.35, gaze: [-0.3, 0], expr: 'determined', dur: 0.5 }, { at: words - 0.3, pose: 'point_up', headTurn: -0.1, gaze: [0.7, -0.8], dur: 0.45 }, { at: bro - 0.2, pose: 'stand', gaze: [0.1, -0.9], dur: 0.5 }] }],
         props: [{ depth: 0.46, svg: board }],
@@ -191,7 +191,7 @@
           `<text x="180" y="390" ${TYPE} font-weight="700" font-size="30" fill="#6b665c">INSIDE THE CABIN</text>${parcel(530, 600, 1.15)}` +
           E.doc.typed(180, 800, 'LIVE BOMB', seg(t, live - 0.1, live + 0.4), { fs: 46, color: '#8e1f18', caret: false }) + E.doc.typed(180, 852, 'WRAPPED, READY TO MAIL', seg(t, wr - 0.1, wr + 0.7), { fs: 34, color: '#1a1915', caret: false }) + `</g>`; };
       return E.cine.shot(ctx, {
-        set: 'cabin_woods', grade: 'cold', cam: { from: { x: 0, y: 0, z: 1.0 }, to: { x: 20, y: 40, z: 1.08 } },
+        set: 'cabin_woods', grade: 'cold', cam: { from: { x: 0, y: 0, z: 1.0 }, to: { x: 20, y: 40, z: 1.08 }, handheld: 5 },
         figures: [
           { id: 'ted', x: 620, y: 1700, scale: 0.82, dir: -1, turn: 0.35, pose: 'stand', expr: 'blank', gaze: [0.6, 0], keys: [{ at: arr, pose: 'hands_behind', expr: 'stern', gaze: [0.2, 0.3], dur: 0.6 }] },
           { id: 'agent_a', x: -220, y: 1720, scale: 0.84, dir: 1, turn: 0.45, pose: 'stand', expr: 'stern', gaze: [0.7, 0], walk: { from: -220, to: 330, at: ag - 0.2, dur: 1.4, cadence: 7 }, keys: [{ at: arr + 0.2, pose: 'present', dur: 0.5 }] },
@@ -211,12 +211,12 @@
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { modern: true, dock: false }, grade: 'cold', cam: { from: { x: 0, y: 0, z: 1.0 }, to: { x: 20, y: 30, z: 1.08 } },
         figures: [
-          { id: 'judge', x: 700, y: 760, scale: 0.42, dir: -1, turn: 0.05, pose: 'sit', noChair: true, expr: 'stern', gaze: [0.2, 0.3], depth: 0.34, keys: [{ at: sen - 0.1, pose: 'gavel', dur: 0.4 }, { at: life - 0.1, pose: 'sit', dur: 0.12 }] },
+          { id: 'judge', x: 700, y: 790, scale: 0.5, dir: -1, turn: 0.05, pose: 'sit', noChair: true, expr: 'stern', gaze: [0.2, 0.3], depth: 0.34, keys: [{ at: sen - 0.1, pose: 'gavel', dur: 0.4 }, { at: life - 0.1, pose: 'sit', dur: 0.12 }] },
           { id: 'ted', x: 420, y: 1960, scale: 1.05, dir: 1, turn: 0.45, pose: 'hands_together', expr: 'blank', gaze: [0.7, -0.3], keys: [{ at: life, expr: 'stern', gaze: [0.4, 0.3], dur: 0.5 }] }
         ],
         overlays: [
           { type: 'label', at: 0.3, x: 60, y: 380, text: '1998', fs: 46 },
-          { type: 'card', at: gu - 0.1, x: 120, y: 720, w: 840, rows: [{ text: 'JANUARY 1998: PLEADS GUILTY', fs: 34 }, { text: 'MAY 1998: SENTENCED', fs: 34, at: sen - 0.1 }, { text: 'LIFE WITHOUT RELEASE', fs: 46, colour: '#8e1f18', at: life - 0.1 }] }
+          { type: 'card', at: gu - 0.1, x: 120, y: 590, w: 840, rows: [{ text: 'JANUARY 1998: PLEADS GUILTY', fs: 34 }, { text: 'MAY 1998: SENTENCED', fs: 34, at: sen - 0.1 }, { text: 'LIFE WITHOUT RELEASE', fs: 46, colour: '#8e1f18', at: life - 0.1 }] }
         ]
       });
     },

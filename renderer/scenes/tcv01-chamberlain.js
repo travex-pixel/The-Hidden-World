@@ -72,7 +72,7 @@
         set: 'courtroom', setOpts: { dock: { x: 560, y: 1990, s: 1.35 }, table: false }, grade: 'warm',
         cam: { from: { x: 0, y: 0, z: 1.0 }, to: { x: 20, y: 40, z: 1.08 } },
         figures: [
-          { id: 'judge', x: 700, y: 760, scale: 0.42, dir: -1, turn: 0.05, pose: 'gavel', noChair: true, expr: 'stern', gaze: [0.1, 0.4], depth: 0.34, keys: [{ at: 0.12, pose: 'sit', dur: 0.14 }] },
+          { id: 'judge', x: 700, y: 790, scale: 0.5, dir: -1, turn: 0.05, pose: 'gavel', noChair: true, expr: 'stern', gaze: [0.1, 0.4], depth: 0.34, keys: [{ at: 0.12, pose: 'sit', dur: 0.14 }] },
           { id: 'lindy', outfit: 'court', x: 560, y: 1990, scale: 1.35, dir: -1, turn: 0.3, headTurn: -0.15, pose: 'hands_together', expr: 'blank', gaze: [0.5, 0.1],
             keys: [{ at: life, expr: 'distraught', headTurn: -0.05, gaze: [-0.1, 0.35], dur: 0.4 }, { at: baby + 0.2, pose: 'hand_to_face', expr: 'sad', dur: 0.6 }] }
         ],
@@ -96,7 +96,7 @@
       const dingo = WT(ctx, 0, 4, 1.4), nine = WT(ctx, 0, 7, 2.2), az = WT(ctx, 0, 11, 3.4);
       return E.cine.shot(ctx, {
         set: 'camp_night', grade: 'night',
-        cam: { from: { x: 120, y: 30, z: 1.12 }, to: { x: -30, y: 0, z: 1.0 } },
+        cam: { from: { x: 120, y: 30, z: 1.12 }, to: { x: -30, y: 0, z: 1.0 }, handheld: 5 },
         figures: [
           { id: 'lindy', x: 820, y: 1560, scale: 0.95, dir: -1, turn: 0.55, pose: 'torch', expr: 'distraught', gaze: [0.7, 0], propOpts: { beamLen: 1100 },
             walk: { from: 840, to: 600, at: 0.15, dur: 1.4, cadence: 7 },
@@ -149,7 +149,7 @@
         set: 'courtroom', setOpts: { dock: false }, grade: 'warm',
         cam: { keys: [{ at: 0, x: -20, y: 0, z: 1.0 }, { at: spray - 0.3, x: 240, y: -40, z: 1.3, dur: 1.1 }] },
         figures: [
-          { id: 'judge', x: 540, y: 760, scale: 0.42, dir: 1, turn: 0.05, pose: 'sit', noChair: true, expr: 'stern', gaze: [-0.3, 0.3], depth: 0.34 },
+          { id: 'judge', x: 540, y: 790, scale: 0.5, dir: 1, turn: 0.05, pose: 'sit', noChair: true, expr: 'stern', gaze: [-0.3, 0.3], depth: 0.34 },
           { id: 'barrister', x: 360, y: 1900, scale: 1.05, dir: 1, turn: 0.4, pose: 'stand', expr: 'stern', gaze: [0.6, -0.1],
             keys: [{ at: said, pose: 'present', dur: 0.6 }, { at: spray - 0.1, pose: 'point', gaze: [0.8, -0.2], dur: 0.5 }] }
         ],
@@ -162,9 +162,9 @@
       const g = WT(ctx, 0, 2, 2.0), mu = WT(ctx, 0, 4, 2.6), l2 = LS(ctx, 1, 4.6), rej = WT(ctx, 1, 5, 6.6), three = WT(ctx, 1, 8, 7.8);
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { dock: { x: 700, y: 1900, s: 1.0 }, table: false }, grade: 'warm',
-        cam: { keys: [{ at: 0, x: 250, y: -700, z: 1.35 }, { at: l2 - 0.7, x: 120, y: 120, z: 1.15, dur: 1.3 }] },
+        cam: { keys: [{ at: 0, x: 260, y: -760, z: 1.55 }, { at: l2 - 0.7, x: 120, y: 120, z: 1.15, dur: 1.3 }] },
         figures: [
-          { id: 'judge', x: 700, y: 760, scale: 0.42, dir: -1, turn: 0.05, pose: 'sit', noChair: true, expr: 'stern', gaze: [0.2, 0.3], depth: 0.34, show: [-1, l2 - 0.2],
+          { id: 'judge', x: 700, y: 790, scale: 0.5, dir: -1, turn: 0.05, pose: 'sit', noChair: true, expr: 'stern', gaze: [0.2, 0.3], depth: 0.34, show: [-1, l2 - 0.2],
             keys: [{ at: g - 0.55, pose: 'gavel', dur: 0.3 }, { at: g - 0.1, pose: 'sit', dur: 0.12 }] },
           { id: 'lindy', outfit: 'court', x: 700, y: 1900, scale: 1.0, dir: -1, turn: 0.3, headTurn: -0.1, pose: 'hands_together', expr: 'blank', gaze: [0.6, -0.3], show: [l2 - 1.4],
             keys: [{ at: g, expr: 'shocked', dur: 0.25 }, { at: mu + 0.3, expr: 'distraught', gaze: [0.1, 0.3], dur: 0.6 }, { at: rej, pose: 'hand_to_face', expr: 'sad', dur: 0.6 }, { at: three, gaze: [-0.2, 0.6], dur: 0.4 }] }
@@ -183,7 +183,7 @@
       const glint = { depth: 1.0, svg: () => { const k = seg(t, found - 0.1, found + 0.5); if (k <= 0) return ''; return `<g opacity="${f1(k)}"><ellipse cx="640" cy="1650" rx="90" ry="22" fill="#fff4cf" opacity="0.25"/><path d="M590 1652 Q 620 1620 660 1630 Q 690 1640 700 1656 Z" fill="#efe6d4" stroke="${INK}" stroke-width="4"/></g>`; } };
       return E.cine.shot(ctx, {
         set: 'rock_night', grade: 'night',
-        cam: { keys: [{ at: 0, x: 0, y: -520, z: 1.0 }, { at: l2 - 0.6, x: 0, y: 0, z: 1.0, dur: 1.6 }, { at: found - 0.3, x: 70, y: 70, z: 1.12, dur: 1.2 }] },
+        cam: { keys: [{ at: 0, x: 0, y: -520, z: 1.0 }, { at: l2 - 0.6, x: 0, y: 0, z: 1.0, dur: 1.6 }, { at: found - 0.3, x: 70, y: 70, z: 1.12, dur: 1.2 }], handheld: 6 },
         figures: [
           { id: 'searcher_b', x: 160, y: 1060, scale: 0.28, dir: 1, turn: 0.5, pose: 'torch', expr: 'focused', depth: 0.6, propOpts: { beamLen: 700 }, walk: { from: 120, to: 330, at: 0.4, dur: 4.2, cadence: 5 }, show: [0.2, l2 - 0.2] },
           { id: 'searcher', x: 700, y: 1070, scale: 0.28, dir: -1, turn: 0.5, pose: 'torch_low', expr: 'focused', depth: 0.6, propOpts: { beamLen: 700 }, walk: { from: 760, to: 600, at: 0.6, dur: 4.0, cadence: 5 }, show: [0.2, l2 - 0.2] },
@@ -246,7 +246,7 @@
         set: 'courtroom', setOpts: { dock: false, table: false }, grade: 'warm',
         cam: { from: { x: 0, y: 40, z: 1.0 }, to: { x: 0, y: 70, z: 1.08 } },
         figures: [
-          { id: 'judge', x: 700, y: 760, scale: 0.42, dir: -1, turn: 0.05, pose: 'sit_read', noChair: true, expr: 'neutral', gaze: [0, 0.5], depth: 0.34 },
+          { id: 'judge', x: 700, y: 790, scale: 0.5, dir: -1, turn: 0.05, pose: 'sit_read', noChair: true, expr: 'neutral', gaze: [0, 0.5], depth: 0.34 },
           { id: 'michael', x: 330, y: 1900, scale: 1.02, dir: 1, turn: 0.35, pose: 'stand_tense', expr: 'worried', gaze: [0.3, -0.3], keys: [{ at: q, pose: 'stand', expr: 'relieved', dur: 0.6 }, { at: q + 0.5, gaze: [0.9, 0.1], headTurn: 0.15, dur: 0.4 }] },
           { id: 'lindy', outfit: 'release', x: 740, y: 1930, scale: 0.97, dir: -1, turn: 0.35, pose: 'hands_together', expr: 'worried', gaze: [0.4, -0.3], keys: [{ at: q, expr: 'relieved', dur: 0.5 }, { at: q + 0.3, pose: 'hand_to_face', dur: 0.6 }] }
         ],
@@ -264,7 +264,7 @@
         set: 'courtroom', setOpts: { modern: true, dock: false, table: false, benchDepth: 0.8 }, grade: 'cold',
         cam: { from: { x: 60, y: -300, z: 1.4 }, to: { x: 90, y: -330, z: 1.5 } },
         figures: [
-          { id: 'official', x: 700, y: 760, scale: 0.42, dir: 1, turn: 0.05, pose: 'sit_read', noChair: true, expr: 'focused', gaze: [0.1, 0.6], depth: 0.79, keys: [{ at: l2 - 0.3, pose: 'sit', gaze: [0, 0.05], expr: 'neutral', dur: 0.6 }] }
+          { id: 'official', x: 700, y: 790, scale: 0.5, dir: 1, turn: 0.05, pose: 'sit_read', noChair: true, expr: 'focused', gaze: [0.1, 0.6], depth: 0.79, keys: [{ at: l2 - 0.3, pose: 'sit', gaze: [0, 0.05], expr: 'neutral', dur: 0.6 }] }
         ],
         overlays: [
           { type: 'label', at: 0.3, x: 60, y: 380, text: '2012 · FOURTH INQUEST', fs: 40 },
