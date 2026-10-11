@@ -1,0 +1,1722 @@
+{
+  "id": "hist001-medieval-village",
+  "number": 1,
+  "series": "history",
+  "profile": "history",
+  "title": "You Wake Up in a Medieval Village",
+  "central_question": "You have one silver penny and need a loaf that costs a quarter of it. How do you pay?",
+  "template": "history-pov",
+  "narrator_voice": "en_GB-aru-medium",
+  "target_duration_seconds": [
+    85,
+    96
+  ],
+  "setting": "A manorial village in the English Midlands, about 1260 (reign of Henry III). Autumn morning, market day.",
+  "cast": [
+    "pov",
+    "baker_hugh",
+    "narrator_history"
+  ],
+  "music": {
+    "bpm": 84
+  },
+  "render_workers": 3,
+  "scenes": [
+    {
+      "id": "s01_wake",
+      "scene": "history",
+      "set": "cottage",
+      "ambience": "interior",
+      "min_duration": 10,
+      "pad_after": 0.6,
+      "music_cue": "dawn",
+      "transition": "cut",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "You wake up to a hen pecking at your hand.",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "In your fist is all the money you have: one silver penny."
+        },
+        {
+          "who": "narrator_history",
+          "text": "And you need bread. Today.",
+          "pause_before": 0.15
+        }
+      ],
+      "claims": [
+        "C12"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "You, this hen and this day are fictional",
+          "at": 1.2,
+          "dur": 3.4
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0.5,
+          "name": "hen"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 1.5
+          },
+          "name": "rustle"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 1.55
+          },
+          "name": "hen"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.3
+          },
+          "name": "chink"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -505,
+            "y": 350,
+            "dolly": 640
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 1.4
+            },
+            "x": -500,
+            "y": 345,
+            "dolly": 600,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 2.6
+            },
+            "x": -470,
+            "y": 250,
+            "dolly": 520,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": -440,
+            "y": 230,
+            "dolly": 470,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": -380,
+            "y": 120,
+            "dolly": 180,
+            "ease": "inOut"
+          }
+        ],
+        "shake": [
+          {
+            "t": {
+              "line": 0,
+              "off": 1.5
+            },
+            "dur": 0.4,
+            "amp": 0.25
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 640,
+          "h": 450,
+          "facing": 1,
+          "pose0": "lie",
+          "expr0": "asleep",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 0.9
+              },
+              "expr": "surprised",
+              "look": [
+                -0.6,
+                0.2
+              ],
+              "dur": 0.2
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.5
+              },
+              "pose": "sit",
+              "dur": 0.55
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.5
+              },
+              "expr": "shocked",
+              "look": [
+                -0.8,
+                0.1
+              ],
+              "dur": 0.15
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.1
+              },
+              "gesture": "hold_up",
+              "dur": 0.5,
+              "hold": 4.2,
+              "prop": "coin"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.1
+              },
+              "expr": "curious",
+              "look": [
+                0.7,
+                -0.7
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "determined",
+              "look": [
+                1,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hen",
+          "kind": "hen",
+          "x": 250,
+          "h": 105,
+          "facing": 1,
+          "peck": true,
+          "colour": "#b0612e",
+          "path": [
+            {
+              "t": 0,
+              "x": 250
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.5
+              },
+              "x": 250
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.3
+              },
+              "x": 110,
+              "facing": -1
+            }
+          ]
+        }
+      ],
+      "beats": {
+        "blanket_off": {
+          "line": 0,
+          "off": 1.5
+        }
+      },
+      "chapter": "You wake up"
+    },
+    {
+      "id": "s02_home",
+      "scene": "history",
+      "set": "cottage",
+      "ambience": "interior",
+      "min_duration": 10,
+      "pad_after": 0.9,
+      "music_cue": "dawn",
+      "transition": "cut",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "One room. Hens included.",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "No chimney: smoke from the hearth drifts out through the thatch."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Bread means the market. Time to go."
+        }
+      ],
+      "claims": [
+        "C7",
+        "C8"
+      ],
+      "badges": [
+        {
+          "kind": "reconstruction",
+          "claim": "C8",
+          "text": "Animals indoors: known from longhouses",
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "dur": 3.4
+        },
+        {
+          "kind": "documented",
+          "claim": "C7",
+          "text": "Open hearth, no chimney",
+          "at": {
+            "line": 1,
+            "off": 0.3
+          },
+          "dur": 3.8
+        }
+      ],
+      "cards": [
+        {
+          "kind": "title",
+          "title": "You Wake Up in a Medieval Village",
+          "sub": "THE HIDDEN WORLD · HISTORY",
+          "at": 0.1,
+          "dur": 3.2,
+          "y": 330
+        }
+      ],
+      "sfx": [
+        {
+          "at": 3.3,
+          "name": "hen"
+        },
+        {
+          "at": "end-2.9",
+          "name": "creak"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0.0,
+            "x": -380,
+            "y": 120,
+            "dolly": 180
+          },
+          {
+            "t": 2.6,
+            "x": -330,
+            "y": 60,
+            "dolly": 120,
+            "ease": "inOut"
+          },
+          {
+            "t": "end-1.6",
+            "dolly": 120
+          },
+          {
+            "t": "end",
+            "dolly": 330,
+            "ease": "in"
+          }
+        ],
+        "follow": [
+          {
+            "t": 2.8,
+            "w": 0,
+            "actor": "you",
+            "dx": 140,
+            "dy": 0,
+            "axes": "x"
+          },
+          {
+            "t": 4.6,
+            "w": 1,
+            "actor": "you",
+            "dx": 140,
+            "axes": "x"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": 0.4,
+              "expr": "neutral",
+              "look": [
+                0.4,
+                0
+              ]
+            },
+            {
+              "t": 1.5,
+              "pose": "rise",
+              "dur": 0.6
+            },
+            {
+              "t": 2.1,
+              "pose": "stand",
+              "dur": 0.6
+            },
+            {
+              "t": 2.7,
+              "gesture": "stretch",
+              "dur": 0.5,
+              "hold": 0.7
+            },
+            {
+              "t": 2.8,
+              "expr": "delighted",
+              "dur": 0.3
+            },
+            {
+              "t": 4.0,
+              "expr": "curious",
+              "look": [
+                1,
+                0
+              ],
+              "prop": "coin"
+            },
+            {
+              "t": 4.4,
+              "walk": 2020,
+              "until": "end-0.5",
+              "speed": 240
+            }
+          ]
+        },
+        {
+          "id": "hen2",
+          "kind": "hen",
+          "x": 1300,
+          "h": 100,
+          "facing": -1,
+          "peck": true,
+          "colour": "#e8d8b0",
+          "path": [
+            {
+              "t": 0,
+              "x": 1300
+            },
+            {
+              "t": 5.5,
+              "x": 1300
+            },
+            {
+              "t": 7.0,
+              "x": 1520,
+              "facing": 1
+            }
+          ]
+        }
+      ],
+      "beats": {
+        "door_open": "end-2.9"
+      }
+    },
+    {
+      "id": "s03_village",
+      "scene": "history",
+      "set": "village",
+      "ambience": "village",
+      "min_duration": 10,
+      "pad_after": 0.6,
+      "music_cue": "village",
+      "transition": "light",
+      "transition_dur": 0.7,
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Welcome to England, around 1260.",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "Four in five people live like you: in villages, farming."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Timber frames, wattle-and-clay walls, roofs of thatch."
+        }
+      ],
+      "claims": [
+        "C9",
+        "C7b"
+      ],
+      "badges": [
+        {
+          "kind": "estimate",
+          "claim": "C9",
+          "text": "Rural share c.1300: roughly 80–85%",
+          "at": {
+            "line": 1,
+            "off": 0.3
+          },
+          "dur": 4.2
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "England, c. 1260",
+          "sub": "A Midlands village · the reign of Henry III",
+          "at": 0.9,
+          "dur": 4.2
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "whoosh"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -260,
+            "y": -220,
+            "dolly": 60
+          },
+          {
+            "t": "p0.45",
+            "y": -30,
+            "dolly": 0,
+            "ease": "inOut"
+          }
+        ],
+        "follow": [
+          {
+            "t": 0,
+            "w": 0.0,
+            "actor": "you",
+            "dx": 200,
+            "axes": "x"
+          },
+          {
+            "t": 1.4,
+            "w": 1,
+            "actor": "you",
+            "dx": 200,
+            "axes": "x"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 80,
+          "h": 430,
+          "facing": 1,
+          "expr0": "curious",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "coin"
+            },
+            {
+              "t": 0.2,
+              "walk": 2380,
+              "until": "end",
+              "speed": 260,
+              "ramp": 0.12
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.6
+              },
+              "look": [
+                0.4,
+                -0.6
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.5
+              },
+              "expr": "happy",
+              "look": [
+                1,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pig",
+          "kind": "pig",
+          "x": 1700,
+          "h": 120,
+          "z": 1.25,
+          "facing": -1,
+          "path": [
+            {
+              "t": 0,
+              "x": 1700
+            },
+            {
+              "t": 3,
+              "x": 1700
+            },
+            {
+              "t": 9,
+              "x": 1100
+            }
+          ]
+        }
+      ],
+      "chapter": "England, c. 1260"
+    },
+    {
+      "id": "s04_market",
+      "scene": "history",
+      "set": "village",
+      "ambience": "market",
+      "min_duration": 10,
+      "pad_after": 0.6,
+      "music_cue": "market",
+      "transition": "cut",
+      "lines": [
+        {
+          "who": "baker_hugh",
+          "text": "Fresh bread! A farthing a loaf!",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "It's market day, and bread is serious business."
+        },
+        {
+          "who": "narrator_history",
+          "text": "By law, a loaf's weight was tied to the price of grain."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Short-weight bakers were fined. Repeat offenders: the pillory."
+        }
+      ],
+      "claims": [
+        "C6",
+        "C11",
+        "C13"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C6",
+          "text": "Assize of Bread and Ale",
+          "at": {
+            "line": 2,
+            "off": 0.3
+          },
+          "dur": 4.6
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 3,
+            "off": 3.2
+          },
+          "name": "thud"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 1500,
+            "y": -30,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.5
+            },
+            "x": 2560,
+            "y": 10,
+            "dolly": 170,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 1.2
+            },
+            "x": 2560,
+            "y": 10,
+            "dolly": 170
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 2.8
+            },
+            "x": 3330,
+            "y": -40,
+            "dolly": 230,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 3330,
+            "y": -40,
+            "dolly": 230
+          }
+        ],
+        "follow": [
+          {
+            "t": 0,
+            "w": 1,
+            "actor": "you",
+            "dx": 200,
+            "axes": "x"
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.4
+            },
+            "w": 1,
+            "actor": "you",
+            "dx": 200,
+            "axes": "x"
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 1.6
+            },
+            "w": 0,
+            "actor": "you",
+            "axes": "x"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": 0.0,
+              "walk": 3330,
+              "until": {
+                "line": 1,
+                "off": 1.0
+              },
+              "speed": 240
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.3
+              },
+              "expr": "curious",
+              "look": [
+                1,
+                -0.2
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 3.0
+              },
+              "expr": "surprised"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 4.4
+              },
+              "expr": "happy"
+            }
+          ]
+        },
+        {
+          "id": "baker",
+          "char": "baker_hugh",
+          "x": 3720,
+          "z": 1.04,
+          "h": 455,
+          "facing": -1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 0
+              },
+              "gesture": "wave",
+              "dur": 0.35,
+              "hold": 1.0
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.5
+              },
+              "gesture": "rub",
+              "dur": 0.4,
+              "hold": 2.2
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.5
+              },
+              "expr": "smug"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.2
+              },
+              "face": 1
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.25
+              },
+              "expr": "nervous",
+              "look": [
+                1,
+                -0.3
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 2.6
+              },
+              "face": -1
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 2.7
+              },
+              "gesture": "offer",
+              "dur": 0.3,
+              "hold": 1.0
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 3.1
+              },
+              "prop": "loaf"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 4.2
+              },
+              "expr": "happy",
+              "prop": null
+            }
+          ]
+        }
+      ],
+      "chapter": "Market day"
+    },
+    {
+      "id": "s05_problem",
+      "scene": "history",
+      "set": "village",
+      "ambience": "market",
+      "min_duration": 10,
+      "pad_after": 0.6,
+      "music_cue": "problem",
+      "transition": "cut",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So you hold out your penny.",
+          "pause_before": 0.2
+        },
+        {
+          "who": "baker_hugh",
+          "text": "A whole penny? For one loaf? I've no change for that!",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "The problem: the silver penny is the only coin in everyday use."
+        },
+        {
+          "who": "narrator_history",
+          "text": "That's about a day's pay. Your loaf costs a quarter of it."
+        }
+      ],
+      "claims": [
+        "C1",
+        "C5"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C1",
+          "text": "Smaller round coins arrive from 1279",
+          "at": {
+            "line": 2,
+            "off": 0.6
+          },
+          "dur": 3.6
+        },
+        {
+          "kind": "estimate",
+          "claim": "C5",
+          "text": "Labourer's pay: about 1d–1½d a day",
+          "at": {
+            "line": 3,
+            "off": 0.3
+          },
+          "dur": 4.0
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 0.9
+          },
+          "name": "chink"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "sting"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 3330,
+            "y": -40,
+            "dolly": 230
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 1.6
+            },
+            "x": 2650,
+            "y": 0,
+            "dolly": 220,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.4
+            },
+            "x": 2700,
+            "y": -10,
+            "dolly": 300,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.4
+            },
+            "x": 2420,
+            "y": -30,
+            "dolly": 360,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 2400,
+            "y": -40,
+            "dolly": 420,
+            "ease": "inOut"
+          }
+        ],
+        "shake": [
+          {
+            "t": {
+              "line": 1,
+              "off": 0.05
+            },
+            "dur": 0.6,
+            "amp": 0.35
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": 0.3,
+              "gesture": "offer",
+              "dur": 0.5,
+              "hold": -1
+            },
+            {
+              "t": 0.3,
+              "expr": "happy"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.3
+              },
+              "expr": "surprised"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.2
+              },
+              "expr": "worried"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "gesture": "scratch",
+              "dur": 0.5,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.5
+              },
+              "gesture": "offer",
+              "dur": 0.5,
+              "hold": -1
+            }
+          ]
+        },
+        {
+          "id": "baker",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 0
+              },
+              "expr": "shocked"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.1
+              },
+              "gesture": "hands_up",
+              "dur": 0.3,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.5
+              },
+              "expr": "stern"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.0
+              },
+              "gesture": "chin",
+              "dur": 0.5,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.0
+              },
+              "expr": "curious"
+            }
+          ]
+        }
+      ],
+      "chapter": "The problem"
+    },
+    {
+      "id": "s06_reveal",
+      "scene": "history",
+      "set": "coin",
+      "ambience": "market",
+      "min_duration": 10,
+      "pad_after": 0.6,
+      "music_cue": "reveal",
+      "transition": "dissolve",
+      "transition_dur": 0.6,
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So the baker does something wild.",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "He cuts your money in half. Then in half again.",
+          "pause_after": 0.45
+        },
+        {
+          "who": "narrator_history",
+          "text": "Cut halfpennies and farthings were everyday change."
+        },
+        {
+          "who": "narrator_history",
+          "text": "The cross runs to the coin's edge, and pieces were cut along it."
+        },
+        {
+          "who": "narrator_history",
+          "text": "That's what 'farthing' means: a fourth part."
+        }
+      ],
+      "claims": [
+        "C2",
+        "C3",
+        "C4",
+        "C12"
+      ],
+      "beats": {
+        "flip": {
+          "line": 0,
+          "off": 1.0
+        },
+        "cut1": {
+          "line": 1,
+          "off": 0.9
+        },
+        "cut2": {
+          "line": 1,
+          "off": 2.3
+        },
+        "slide": {
+          "line": 4,
+          "off": 0.6
+        }
+      },
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "Cut at a stall here; many were cut at the mint",
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "dur": 3.0
+        },
+        {
+          "kind": "documented",
+          "claim": "C2",
+          "text": "Cut halfpennies and farthings",
+          "at": {
+            "line": 2,
+            "off": 0.4
+          },
+          "dur": 3.8
+        },
+        {
+          "kind": "documented",
+          "claim": "C3",
+          "text": "Long Cross penny, from 1247",
+          "at": {
+            "line": 3,
+            "off": 0.3
+          },
+          "dur": 3.8
+        },
+        {
+          "kind": "documented",
+          "claim": "C4",
+          "text": "Old English feorthing: 'fourth part'",
+          "at": {
+            "line": 4,
+            "off": 0.2
+          },
+          "dur": 3.2
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 1.0
+          },
+          "name": "whoosh"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.9
+          },
+          "name": "chop"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 2.3
+          },
+          "name": "chop"
+        },
+        {
+          "at": {
+            "line": 4,
+            "off": 0.6
+          },
+          "name": "chink"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": 0,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.6
+            },
+            "x": 0,
+            "y": 0,
+            "dolly": 140,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 60,
+            "y": 10,
+            "dolly": 60,
+            "ease": "inOut"
+          }
+        ],
+        "shake": [
+          {
+            "t": {
+              "line": 1,
+              "off": 0.95
+            },
+            "dur": 0.45,
+            "amp": 0.5
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 2.35
+            },
+            "dur": 0.45,
+            "amp": 0.5
+          }
+        ]
+      },
+      "actors": [],
+      "chapter": "The reveal"
+    },
+    {
+      "id": "s07_payoff",
+      "scene": "history",
+      "set": "village",
+      "ambience": "village",
+      "min_duration": 10,
+      "pad_after": 1.6,
+      "music_cue": "resolve",
+      "transition": "dissolve",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "One quarter buys the loaf. Three go back in your purse.",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "Not bad for your first day."
+        },
+        {
+          "who": "narrator_history",
+          "text": "But tomorrow at dawn, the lord's reeve expects you in his fields."
+        },
+        {
+          "who": "narrator_history",
+          "text": "Unpaid. That's your rent."
+        }
+      ],
+      "claims": [
+        "C10"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C10",
+          "text": "Week-work: labour owed to the lord",
+          "at": {
+            "line": 2,
+            "off": 0.6
+          },
+          "dur": 4.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "next",
+          "title": "A Day in the Life of a Medieval Peasant",
+          "at": "end-3.4",
+          "dur": 3.3
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "churchbell"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 2200,
+            "y": -10,
+            "dolly": 120
+          },
+          {
+            "t": "p0.5",
+            "dolly": 0
+          },
+          {
+            "t": "p0.62",
+            "x": 1300,
+            "y": -10,
+            "dolly": 0
+          },
+          {
+            "t": "end",
+            "x": 1100,
+            "y": -400,
+            "dolly": 0,
+            "ease": "inOut"
+          }
+        ],
+        "follow": [
+          {
+            "t": 0,
+            "w": 1,
+            "actor": "you",
+            "dx": -180,
+            "axes": "x"
+          },
+          {
+            "t": "p0.5",
+            "w": 1,
+            "actor": "you",
+            "dx": -180,
+            "axes": "x"
+          },
+          {
+            "t": "p0.68",
+            "w": 0,
+            "actor": "you",
+            "axes": "x"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 3150,
+          "h": 430,
+          "facing": -1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "loaf",
+              "gesture": "carry",
+              "dur": 0.01,
+              "hold": -1
+            },
+            {
+              "t": 0.3,
+              "walk": 1500,
+              "until": "p0.82",
+              "speed": 240
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "delighted"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.6
+              },
+              "expr": "worried",
+              "face": 1
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.2
+              },
+              "expr": "wince"
+            }
+          ]
+        }
+      ],
+      "chapter": "What tomorrow brings"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "In mid-13th-century England the silver penny was the only coin in everyday circulation; round halfpennies and farthings were introduced in Edward I's recoinage (from 1279–80). Rare earlier round halfpennies exist (Henry I, Henry III c.1220–22).",
+      "sources": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Before 1279 pennies were cut into halves and quarters ('cut halfpennies', 'cut farthings') and these circulated as small change; many were probably cut at the mint.",
+      "sources": [
+        "S2",
+        "S4",
+        "S3"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "The Voided Long Cross penny (1247) extended the cross to the edge of the coin, mainly to deter clipping. Cut pieces follow the cross; the claim that the cross was designed as a cutting guide is NOT established and is not made.",
+      "sources": [
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "'Farthing' derives from Old English feorthing, 'a fourth part'.",
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "estimate",
+      "text": "An unskilled labourer in late-13th-century England earned roughly 1d–1½d a day (sometimes 2d); much farm work was paid partly in kind.",
+      "sources": [
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "established",
+      "text": "The Assize of Bread and Ale (c.1266–67, codifying older practice) fixed the weight of standard loaves such as the farthing loaf according to the price of wheat; short-weight bakers were amerced (fined) and repeat offenders could be pilloried.",
+      "sources": [
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "id": "C7",
+      "type": "established",
+      "text": "Peasant houses in 13th-century England typically had an open central hearth without a chimney; smoke escaped through the roof.",
+      "sources": [
+        "S12",
+        "S13"
+      ]
+    },
+    {
+      "id": "C7b",
+      "type": "established",
+      "text": "Timber framing (cruck framing in the Midlands, North and West), wattle-and-daub walls and thatched roofs were standard peasant building materials.",
+      "sources": [
+        "S12",
+        "S13"
+      ]
+    },
+    {
+      "id": "C8",
+      "type": "plausible",
+      "text": "Some peasant houses (longhouses, e.g. Hound Tor, Dartmoor) sheltered animals under the same roof; a hen indoors in this house is a reasonable reconstruction, not documented for any particular house.",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "id": "C9",
+      "type": "estimate",
+      "text": "Around 1300 roughly 80–85% of England's population lived in the countryside (towns c.15–20%: Britnell, Dyer).",
+      "sources": [
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "id": "C10",
+      "type": "established",
+      "text": "Unfree tenants (villeins) owed labour services ('week-work') on the lord's demesne as part of their rent, often two or three days a week and more at harvest, organised by the reeve; obligations varied widely by manor.",
+      "sources": [
+        "S17",
+        "S18"
+      ]
+    },
+    {
+      "id": "C11",
+      "type": "established",
+      "text": "Weekly markets were granted to lords by royal charter; many were granted under Henry III (e.g. Queen Camel 1264). Many villages had no market of their own.",
+      "sources": [
+        "S19"
+      ]
+    },
+    {
+      "id": "C12",
+      "type": "illustrative",
+      "text": "The protagonist, Hugh the baker, the hen, the dialogue and this particular day are fictional; the coin-cutting scene dramatises a documented practice.",
+      "sources": []
+    },
+    {
+      "id": "C13",
+      "type": "established",
+      "text": "Farthing loaves were a standard unit under the Assize of Bread.",
+      "sources": [
+        "S10",
+        "S11"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Early Edwardian Halfpennies (1279-1344)",
+      "publisher": "Rod Blunt / UK Detector Finds Database",
+      "url": "https://ukdfd.co.uk/pages/edwardian-halfpennies/edwardian-halfpennies-p1.htm",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S2",
+      "title": "Early Edwardian Farthings (1279-1344)",
+      "publisher": "Rod Blunt / UK Detector Finds Database",
+      "url": "https://www.ukdfd.co.uk/pages/edwardian-farthings/edwardian-farthings-p1.htm",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S3",
+      "title": "Collection object 2000,0907.1 (Henry III halfpenny)",
+      "publisher": "British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/C_2000-0907-1",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S4",
+      "title": "Medieval Long Cross Cut Farthing",
+      "publisher": "Coincraft (dealer)",
+      "url": "https://coincraft.com/medieval-long-cross-cut-farthing",
+      "accessed": "2026-10-11",
+      "note": "dealer source; search snippet only"
+    },
+    {
+      "id": "S5",
+      "title": "Medieval Voided Long Cross Silver Penny",
+      "publisher": "The Royal Mint",
+      "url": "https://royalmint.com/shop/ancient-historic/medieval/medieval-voided-long-cross-silver-penny",
+      "accessed": "2026-10-11",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S6",
+      "title": "Long Cross pennies",
+      "publisher": "Rod Blunt",
+      "url": "https://www.rodblunt.com/long-cross-pennies",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S7",
+      "title": "farthing (etymology)",
+      "publisher": "Online Etymology Dictionary",
+      "url": "https://www.etymonline.com/word/farthing",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S8",
+      "title": "Social and economic history: Appendix 2 (VCH Middlesex)",
+      "publisher": "British History Online",
+      "url": "https://prod.british-history.ac.uk/node/15304",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S9",
+      "title": "Standards of Living in the Later Middle Ages: Wage-earners (C. Dyer)",
+      "publisher": "Cambridge University Press",
+      "url": "https://resolve.cambridge.org/core/books/standards-of-living-in-the-later-middle-ages/wageearners/FD4F413E2C27CE55E7B911D0B02DD6A9",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S10",
+      "title": "Assize of Bread and Beer",
+      "publisher": "Fordham University Internet Medieval Sourcebook",
+      "url": "https://sourcebooks.web.fordham.edu/source/breadbeer.asp",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S11",
+      "title": "Assize of Bread and Ale",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale",
+      "accessed": "2026-10-11",
+      "note": "tertiary; search snippet only"
+    },
+    {
+      "id": "S12",
+      "title": "Peasant houses in Midland England",
+      "publisher": "Current Archaeology",
+      "url": "https://archaeology.co.uk/articles/features/peasant-houses-in-midland-england-how-the-black-death-prompted-a-building-boom.htm",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S13",
+      "title": "Peasant homes in medieval England",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Peasant_homes_in_medieval_England",
+      "accessed": "2026-10-11",
+      "note": "tertiary; search snippet only"
+    },
+    {
+      "id": "S14",
+      "title": "History of Hound Tor Deserted Medieval Village",
+      "publisher": "English Heritage",
+      "url": "https://www.english-heritage.org.uk/visit/places/hound-tor-deserted-medieval-village/history",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S15",
+      "title": "How Urban was Medieval England?",
+      "publisher": "History Today",
+      "url": "https://www.historytoday.com/archive/how-urban-was-medieval-england",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S16",
+      "title": "Review no. 294",
+      "publisher": "IHR Reviews in History",
+      "url": "https://reviews.history.ac.uk/review/294/print/",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S17",
+      "title": "Elsworth: Economic history (VCH Cambridgeshire)",
+      "publisher": "British History Online",
+      "url": "https://prod.british-history.ac.uk/node/8835",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S18",
+      "title": "HIST 371 lecture outline (manorialism)",
+      "publisher": "University of Wisconsin–Milwaukee",
+      "url": "https://sites.uwm.edu/carlin/?p=417",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    },
+    {
+      "id": "S19",
+      "title": "Gazetteer of Markets and Fairs in England and Wales to 1516",
+      "publisher": "Institute of Historical Research / Centre for Metropolitan History",
+      "url": "https://archives.history.ac.uk/gazetteer/gazweb1.html",
+      "accessed": "2026-10-11",
+      "note": "search snippet only"
+    }
+  ],
+  "publishing": {
+    "titles": [
+      "You Wake Up in a Medieval Village With One Penny",
+      "Why Medieval People Cut Their Money in Half",
+      "It's 1260. You Have One Penny. Can You Buy Bread?"
+    ],
+    "description": "You wake up in an English village around 1260 with one silver penny, and you need a loaf that costs a quarter of it. The baker has no change. What happens next was completely normal, and it explains where the word 'farthing' comes from.",
+    "thumbnail": {
+      "face_t": 52.0,
+      "coin_t": 72.0,
+      "text": "CUT YOUR MONEY?",
+      "sub": "ENGLAND · 1260",
+      "concept": "Focal point: You, wide-eyed, holding up a single silver penny (left). Visual question: the same penny cut into four pieces in a gold-rimmed medallion (right). Three words of text asking the question the video answers. Warm watercolour palette, readable at phone size; nothing on it that does not happen in the video.",
+      "face_crop": [
+        350,
+        440,
+        580
+      ]
+    }
+  }
+}

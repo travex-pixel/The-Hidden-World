@@ -1,0 +1,1 @@
+Focal point: You, wide-eyed, holding up a single silver penny (left). Visual question: the same penny cut into four pieces in a gold-rimmed medallion (right). Three words of text asking the question the video answers. Warm watercolour palette, readable at phone size; nothing on it that does not happen in the video.

@@ -7,11 +7,18 @@ ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_TOP = ["id", "number", "title", "central_question", "template", "narrator_voice",
                 "target_duration_seconds", "scenes", "claims", "sources"]
 REQUIRED_SCENE = ["id", "scene", "min_duration", "pad_after", "music_cue", "sfx", "claims", "transition"]
-TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "thriller"}
-TRANSITIONS = {"cut", "wipe", "iris", "fade"}
+TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "thriller", "history-pov"}
+TRANSITIONS = {"cut", "wipe", "iris", "fade", "dissolve", "light", "dip", "match"}
 CLAIM_TYPES = {"established", "plausible", "illustrative", "estimate", "disputed", "metaphor"}
-MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath"}
-SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain"}
+MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath",
+             "dawn", "village", "market", "problem", "reveal", "resolve", "tease"}
+SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain",
+             "hen", "creak", "chink", "chop", "churchbell", "anvil", "rustle", "mudstep", "gasp"}
+# history profile: painted 2.5D sets (renderer/history/sets) and on-screen evidence labels
+HISTORY_SETS = {"cottage", "village", "coin"}
+AMBIENCE = {"interior", "village", "market", "none"}
+BADGE_CLAIM_TYPES = {"documented": {"established"}, "estimate": {"estimate"}, "disputed": {"disputed"},
+                     "reconstruction": {"plausible", "illustrative"}, "dramatised": None}
 URL_RE = re.compile(r"^https://[\w.-]+(/[^\s]*)?$")
 
 
@@ -85,7 +92,11 @@ def validate(ep: dict, folder: Path | None = None) -> None:
         for fx in s.get("sfx", []):
             if fx.get("name") not in SFX_NAMES:
                 errs.append(f"scene {s.get('id')}: unknown sfx '{fx.get('name')}'")
-            if not isinstance(fx.get("at"), (int, float)) or fx["at"] < 0:
+            if ep.get("profile") == "history":
+                from pipeline.history import valid_anchor
+                if not valid_anchor(fx.get("at")):
+                    errs.append(f"scene {s.get('id')}: sfx 'at' must be seconds, 'p<frac>', 'end-<s>' or {{line, off}}")
+            elif not isinstance(fx.get("at"), (int, float)) or fx["at"] < 0:
                 errs.append(f"scene {s.get('id')}: sfx 'at' must be a non-negative number")
         for c in s.get("claims", []):
             if c not in claim_ids:
@@ -127,6 +138,8 @@ def validate(ep: dict, folder: Path | None = None) -> None:
                 z = sh.get("zoom", [])
                 if len(z) != 2 or min(z) < 1.0:
                     errs.append(f"scene {sc.get('id')}: zoom must be [from, to] with both >= 1.0 (art must always fill the frame)")
+    if ep.get("profile") == "history":
+        errs += validate_history(ep, claim_ids)
     if folder is not None and not (folder / "research.md").exists():
         errs.append("research.md is missing from the episode folder")
     if "financials" in ep:
@@ -139,6 +152,37 @@ def validate(ep: dict, folder: Path | None = None) -> None:
             errs.append("financials: cash_now != starting_cash + collected - paid")
     if errs:
         raise EpisodeError("Episode validation failed:\n  - " + "\n  - ".join(errs))
+
+
+def validate_history(ep: dict, claim_ids: set) -> list:
+    errs = []
+    claims = {c["id"]: c for c in ep["claims"]}
+    for s in ep["scenes"]:
+        sid = s.get("id")
+        if s.get("set") not in HISTORY_SETS:
+            errs.append(f"scene {sid}: set must be one of {sorted(HISTORY_SETS)}")
+        if s.get("ambience", "none") not in AMBIENCE:
+            errs.append(f"scene {sid}: ambience must be one of {sorted(AMBIENCE)}")
+        if not s.get("lines") and not s.get("silent"):
+            errs.append(f"scene {sid}: history scenes speak through 'lines' (narrator + characters) so subtitles are timed per line")
+        for b in s.get("badges", []):
+            kind = b.get("kind")
+            if kind not in BADGE_CLAIM_TYPES:
+                errs.append(f"scene {sid}: badge kind must be one of {sorted(BADGE_CLAIM_TYPES)}"); continue
+            allowed = BADGE_CLAIM_TYPES[kind]
+            if allowed is None:
+                continue
+            c = claims.get(b.get("claim"))
+            if not c:
+                errs.append(f"scene {sid}: '{kind}' badge must cite a claim id"); continue
+            if c["type"] not in allowed:
+                errs.append(f"scene {sid}: '{kind}' badge cites claim {c['id']} of type '{c['type']}' (needs {sorted(allowed)})")
+            if b.get("claim") not in s.get("claims", []):
+                errs.append(f"scene {sid}: badge claim {b.get('claim')} is not listed in the scene's claims")
+        for a in s.get("actors", []):
+            if a.get("char") and not (ROOT / "characters" / f"{a['char']}.json").exists():
+                errs.append(f"scene {sid}: actor '{a.get('id')}' uses unknown character '{a['char']}'")
+    return errs
 
 
 if __name__ == "__main__":

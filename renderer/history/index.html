@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>The Hidden World — history renderer</title>
+<style>
+  @font-face{font-family:'Fraunces';font-weight:600;src:url('../../assets/fonts/Fraunces-SemiBold.ttf')}
+  @font-face{font-family:'Fraunces';font-weight:800;src:url('../../assets/fonts/Fraunces-ExtraBold.ttf')}
+  @font-face{font-family:'Fraunces';font-weight:600;font-style:italic;src:url('../../assets/fonts/Fraunces-SemiBoldItalic.ttf')}
+  @font-face{font-family:'Nunito';font-weight:600;src:url('../../assets/fonts/Nunito-Bold.ttf')}
+  @font-face{font-family:'Nunito';font-weight:800;src:url('../../assets/fonts/Nunito-ExtraBold.ttf')}
+  html,body{margin:0;padding:0;background:#120a06;overflow:hidden}
+  canvas{display:block}
+</style></head>
+<body><canvas id="c"></canvas>
+<div style="position:absolute;left:-9999px;font-family:Fraunces;font-weight:800">a<i style="font-weight:600">a</i><span style="font-weight:600">a</span><b style="font-family:Nunito;font-weight:800">a</b><span style="font-family:Nunito;font-weight:600">a</span></div>
+<script>
+  // canvas size comes from the query string (?w=1920&h=1080); logical drawing space is always 1920x1080
+  const q = new URLSearchParams(location.search); const c = document.getElementById('c');
+  c.width = +(q.get('w') || 1920); c.height = +(q.get('h') || 1080);
+</script>
+<script src="core.js"></script>
+<script src="paint.js"></script>
+<script src="camera.js"></script>
+<script src="rig.js"></script>
+<script src="fx.js"></script>
+<script src="director.js"></script>
+</body></html>

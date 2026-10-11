@@ -16,6 +16,13 @@ Five verified episodes, 27–32 s each. Story bible, scripts, QA and render inst
 ### Dark Psychology series (animated thrillers)
 **Episode 004 — *The Compliment With a Deadline*** → render it with the workflow (artifact `ep004-compliment-deadline-seed1-final`). Recurring cast in [`characters/`](characters/), rig in [`renderer/cast.js`](renderer/cast.js), design system in [docs/THRILLER_STYLE.md](docs/THRILLER_STYLE.md).
 
+### History documentaries (new profile: watercolour worlds, rigged characters, 2.5D camera)
+**H01 — *You Wake Up in a Medieval Village*** (95 s, 1920×1080 proof of concept). Build it with
+`python -m pipeline.build hist001-medieval-village --quality final`, then `python -m pipeline.qa_history out/hist001-medieval-village`
+and `python -m pipeline.publish_history out/hist001-medieval-village`. Architecture, audit, authoring guide and limitations:
+[docs/HISTORY_MODE.md](docs/HISTORY_MODE.md). Review pack and QA: [releases/hist001/](releases/hist001/). Five-episode plan: [series/history/ROADMAP.md](series/history/ROADMAP.md).
+Selected per episode with `"profile": "history"`; every other episode builds exactly as before.
+
 ## How it works
 
 ```

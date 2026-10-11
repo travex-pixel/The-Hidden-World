@@ -28,6 +28,14 @@ CUES = {
     "hush":         {"chords": [[0, 7], [0, 7], [-1, 6], [0, 7]], "density": 0.0, "bright": 0.2, "tense": 0.15, "inst": "none"},
     "power":        {"chords": [[0, 4, 7, 11], [5, 9, 12, 16], [7, 11, 14, 17], [9, 12, 16, 19]], "density": 0.32, "bright": 0.8, "tense": 0.0, "inst": "bell", "pulse": True},
     "aftermath":    {"chords": [[0, 3, 7, 10], [5, 8, 12], [3, 7, 10], [-2, 2, 5, 9]], "density": 0.18, "bright": 0.4, "tense": 0.1, "inst": "bell"},
+    # history palette: modal harmony over a drone, plucked lute and a breathy recorder-like lead
+    "dawn":         {"chords": [[0, 7, 14], [-2, 5, 12], [0, 7, 14], [3, 10, 15]], "density": 0.22, "bright": 0.55, "tense": 0.0, "inst": "recorder", "drone": True, "scale": [0, 2, 3, 5, 7, 9, 10]},
+    "village":      {"chords": [[0, 4, 7], [-2, 2, 5], [0, 4, 7], [5, 9, 12]], "density": 0.62, "bright": 0.8, "tense": 0.0, "inst": "lute", "drone": True, "scale": [0, 2, 4, 5, 7, 9, 10]},
+    "market":       {"chords": [[0, 4, 7], [5, 9, 12], [-2, 2, 5], [0, 4, 7]], "density": 0.78, "bright": 0.85, "tense": 0.0, "inst": "lute", "drone": True, "scale": [0, 2, 4, 5, 7, 9, 10], "tabor": True},
+    "problem":      {"chords": [[0, 3, 7], [-2, 3, 7], [-4, 0, 3], [-5, -1, 2]], "density": 0.2, "bright": 0.3, "tense": 0.45, "inst": "lute", "drone": True, "scale": [0, 2, 3, 5, 7, 8, 10]},
+    "reveal":       {"chords": [[0, 4, 7, 11], [5, 9, 12], [2, 5, 9], [7, 11, 14]], "density": 0.42, "bright": 0.9, "tense": 0.0, "inst": "recorder", "drone": True, "scale": [0, 2, 4, 7, 9]},
+    "resolve":      {"chords": [[0, 4, 7], [5, 9, 12], [-3, 0, 4], [-5, -1, 2]], "density": 0.55, "bright": 0.85, "tense": 0.0, "inst": "lute", "drone": True, "scale": [0, 2, 4, 5, 7, 9, 11]},
+    "tease":        {"chords": [[0, 3, 7], [-4, 0, 3], [-2, 2, 5], [-5, -1, 2, 5]], "density": 0.25, "bright": 0.45, "tense": 0.25, "inst": "recorder", "drone": True, "scale": [0, 2, 3, 5, 7, 8, 10]},
 }
 PENTA = [0, 2, 4, 7, 9]
 
@@ -61,6 +69,18 @@ def tone(freq: float, dur: float, kind: str = "pluck", amp: float = 0.3, sr: int
     elif kind == "bell":
         x = sum(a * np.sin(2 * np.pi * freq * r * t) * np.exp(-t * dcy) for a, r, dcy in [(1, 1, 2.5), (0.6, 2.76, 4), (0.4, 5.4, 6), (0.25, 8.9, 9)])
         x *= (1 - np.exp(-t * 600))
+    elif kind == "lute":   # gut-string pluck: bright attack, quick decay of upper partials
+        x = sum(a * np.sin(2 * np.pi * freq * k * t) * np.exp(-t * (2.6 + k * 2.2)) for k, a in [(1, 1), (2, 0.55), (3, 0.32), (4, 0.18), (5, 0.1)])
+        x *= (1 - np.exp(-t * 900))
+    elif kind == "recorder":   # breathy wooden flute: soft attack, gentle vibrato, a little breath noise
+        vib = 1 + 0.005 * np.sin(2 * np.pi * 5.3 * t) * np.clip(t / 0.4, 0, 1)
+        ph = 2 * np.pi * freq * np.cumsum(vib) / sr
+        x = np.sin(ph) + 0.18 * np.sin(2 * ph) + 0.06 * np.sin(3 * ph)
+        br = np.random.default_rng(int(freq)).standard_normal(n) * 0.05
+        x = (x + br) * env(n, 0.06, 0.1, 0.8, min(0.25, dur * 0.3))
+    elif kind == "drone":
+        x = np.sin(2 * np.pi * freq * t) + 0.5 * np.sin(2 * np.pi * freq * 1.5 * t) + 0.25 * np.sin(2 * np.pi * freq * 2 * t)
+        x *= env(n, min(1.0, dur * 0.3), 0.2, 0.85, min(1.0, dur * 0.3))
     else:
         x = np.sin(2 * np.pi * freq * t) * env(n, 0.01, 0.1, 0.7, 0.1)
     return (amp * x).astype(np.float32)
@@ -112,6 +132,13 @@ def compose(timeline: list[dict], total: float, seed: int, bpm: int = 96, key_se
         add(bass, tone(note(chord[0] - 24, root), bar_len * 0.95, "bass", 0.16), t)
         if cue["density"] > 0.7:
             add(bass, tone(note(chord[0] - 24 + 7, root), beat * 0.9, "bass", 0.10), t + beat * 2.5)
+        if cue.get("drone"):   # bourdon on root + fifth under the whole bar
+            add(pad_buf, tone(note(-12, root), bar_len + 0.6, "drone", 0.05), t)
+        if cue.get("tabor"):   # small frame drum: a light dance rhythm
+            for off, a in ((0.0, 0.16), (beat * 1.5, 0.08), (beat * 2, 0.12), (beat * 3, 0.08), (beat * 3.5, 0.06)):
+                m = int(0.12 * SR); nz = rng.standard_normal(m).astype(np.float32)
+                hit = lowpass_fast(nz, 1400) * np.exp(-np.arange(m) / SR * 40) + np.sin(2 * np.pi * 110 * np.arange(m) / SR) * np.exp(-np.arange(m) / SR * 30)
+                add(tex, (hit * a).astype(np.float32), t + off)
         if cue.get("pulse"):   # heartbeat-like low pulse: lub-dub on beat 1
             for off, a in ((0.0, 0.22), (0.28, 0.14)):
                 add(bass, tone(55, 0.35, "bass", a), t + off)
@@ -120,13 +147,19 @@ def compose(timeline: list[dict], total: float, seed: int, bpm: int = 96, key_se
         for step in range(8 if inst != "none" else 0):
             if rng.random() < cue["density"] * (1.0 if step % 2 == 0 else 0.55):
                 move = int(rng.integers(-2, 3))
-                last_mel = int(np.clip(last_mel + move, 0, len(PENTA) * 2 - 1))
-                semi = PENTA[last_mel % len(PENTA)] + 12 * (last_mel // len(PENTA)) + 12
+                sc = cue.get("scale", PENTA)
+                last_mel = int(np.clip(last_mel + move, 0, len(sc) * 2 - 1))
+                semi = sc[last_mel % len(sc)] + 12 * (last_mel // len(sc)) + 12
                 if cue["tense"] > 0.5 and semi % 12 == 4:
                     semi -= 1  # flatten the third in tense cues
                 amp = 0.12 * (0.7 + 0.6 * cue["bright"]) * (1.0 if step % 4 == 0 else 0.75)
                 if inst == "bell":
                     add(mel, tone(note(semi, root), beat * 2.2, "bell", amp * 0.55), t + step * beat / 2)
+                elif inst == "lute":
+                    add(mel, tone(note(semi, root), beat * 1.4, "lute", amp * 0.8), t + step * beat / 2)
+                elif inst == "recorder":
+                    if step % 2 == 0:
+                        add(mel, tone(note(semi + 12, root), beat * 0.95, "recorder", amp * 0.5), t + step * beat / 2)
                 else:
                     add(mel, tone(note(semi, root), beat * 1.6, "pluck", amp), t + step * beat / 2)
         # tension texture: slow tremolo noise swell
@@ -277,7 +310,82 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
     if name == "whoosh":
         t = tt(0.5)
         return (lowpass_fast(noise(0.5), 1500) * env(len(t), 0.15, 0.1, 0.5, 0.2) * 0.3).astype(np.float32)
+    # ---- history palette
+    if name == "hen":     # a few clucks: pitched pulses with a noisy, nasal attack
+        out = np.zeros(int(1.1 * SR), np.float32)
+        for k, (f0, d) in enumerate([(520, 0.09), (560, 0.08), (480, 0.16)]):
+            t = tt(d); f = f0 * (1 + 0.25 * np.exp(-t * 30))
+            x = np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.5 * np.sin(4 * np.pi * np.cumsum(f) / SR) + lowpass_fast(noise(d), 3000) * 0.4
+            add(out, (x * env(len(t), 0.005, 0.03, 0.6, d * 0.5) * 0.3).astype(np.float32), k * 0.17 + (0.2 if k == 2 else 0))
+        return out
+    if name == "creak":   # wooden door on leather hinges: slow stick-slip friction
+        t = tt(1.0); f = 140 + 220 * np.sin(np.pi * t) + 30 * np.sin(2 * np.pi * 3 * t)
+        pulses = (np.sin(2 * np.pi * np.cumsum(f) / SR) > 0.85).astype(np.float32)
+        x = lowpass_fast(pulses, 2500) - lowpass_fast(pulses, 300)
+        return (x * env(len(t), 0.1, 0.2, 0.8, 0.3) * 0.9).astype(np.float32)
+    if name == "chink":   # small silver coin on wood
+        out = np.zeros(int(0.6 * SR), np.float32)
+        for k, f in enumerate([3200, 4100]):
+            t = tt(0.4); add(out, (sum(np.sin(2 * np.pi * f * r * t) * np.exp(-t * d) for r, d in [(1, 18), (1.47, 26), (2.09, 34)]) * 0.12).astype(np.float32), k * 0.09)
+        return out
+    if name == "chop":    # blade through soft silver into the board
+        t = tt(0.4)
+        x = np.sin(2 * np.pi * (180 + 300 * np.exp(-t * 40)) * t) * np.exp(-t * 22) * 0.7 + lowpass_fast(noise(0.4), 5000) * np.exp(-t * 70) * 0.5
+        x += sum(np.sin(2 * np.pi * f * t) * np.exp(-t * 30) for f in (2900, 4300)) * 0.06
+        return x.astype(np.float32)
+    if name == "churchbell":   # bronze bell: hum, prime, minor tierce, quint, nominal (inharmonic partials)
+        t = tt(4.0); f0 = 220
+        x = sum(a * np.sin(2 * np.pi * f0 * r * t) * np.exp(-t * d) for r, a, d in [(0.5, 0.5, 0.5), (1, 0.8, 0.8), (1.19, 0.5, 1.0), (1.5, 0.3, 1.3), (2, 0.55, 1.5), (2.5, 0.2, 2.2), (2.66, 0.18, 2.6)])
+        return (x * (1 - np.exp(-t * 300)) * 0.28).astype(np.float32)
+    if name == "anvil":   # distant hammer on iron
+        t = tt(0.5)
+        x = sum(np.sin(2 * np.pi * f * t) * np.exp(-t * d) for f, d in [(1180, 9), (2650, 14), (3900, 20)]) * 0.2 + lowpass_fast(noise(0.5), 4000) * np.exp(-t * 120) * 0.3
+        return x.astype(np.float32)
+    if name == "rustle":  # straw and wool shifting
+        t = tt(0.9)
+        x = (lowpass_fast(noise(0.9), 5000) - lowpass_fast(noise(0.9), 1200)) * (0.4 + 0.6 * (rng.random(len(t)) > 0.6))
+        return (lowpass_fast(x.astype(np.float32), 6000) * env(len(t), 0.1, 0.2, 0.6, 0.3) * 0.35).astype(np.float32)
+    if name == "mudstep":  # a footstep in soft mud
+        t = tt(0.3)
+        x = np.sin(2 * np.pi * 70 * t) * np.exp(-t * 25) * 0.5 + lowpass_fast(noise(0.3), 700) * np.exp(-t * 18) * 0.5
+        return x.astype(np.float32)
+    if name == "gasp":    # a small crowd "ooh": band-limited noise swell with a vowel-ish resonance
+        t = tt(1.0)
+        x = lowpass_fast(noise(1.0), 1100) - lowpass_fast(noise(1.0), 250)
+        x = x * np.sin(np.pi * np.clip(t / 1.0, 0, 1)) ** 1.5
+        return (x * 0.6).astype(np.float32)
     raise KeyError(name)
+
+
+# ---------------------------------------------------------------- ambience beds (history mode)
+def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
+    """Continuous background for a stretch of the episode. kinds: interior, village, market."""
+    import zlib
+    rng = np.random.default_rng(seed + zlib.crc32(kind.encode()) % 1000)
+    n = int(dur * SR); t = np.arange(n) / SR
+    def nz(): return rng.standard_normal(n).astype(np.float32)
+    out = np.zeros(n, np.float32)
+    if kind in ("interior", "village", "market"):   # wind / room tone
+        w = lowpass_fast(nz(), 350 if kind == "interior" else 600) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.07 * t + rng.uniform(0, 6)))
+        out += w * (0.10 if kind == "interior" else 0.07)
+    if kind in ("village", "interior"):   # birdsong: short FM chirps in phrases (muffled indoors)
+        k = 0.0
+        while k < dur:
+            k += rng.uniform(0.6, 2.4)
+            for j in range(int(rng.integers(2, 6))):
+                d = rng.uniform(0.05, 0.12); m = int(d * SR); tt_ = np.arange(m) / SR
+                f = rng.uniform(2600, 4200) + rng.uniform(-900, 900) * tt_ / d
+                ch = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.sin(np.pi * tt_ / d) ** 2
+                add(out, (ch * (0.03 if kind == "village" else 0.008)).astype(np.float32), k + j * rng.uniform(0.08, 0.16))
+    if kind == "market":   # crowd murmur: several syllabic noise "voices" in the speech band
+        for v in range(6):
+            x = lowpass_fast(nz(), rng.uniform(700, 1400)) - lowpass_fast(nz(), 180)
+            syl = np.clip(np.sin(2 * np.pi * rng.uniform(3, 5) * t + rng.uniform(0, 6)) + 0.4 * np.sin(2 * np.pi * 0.3 * t + v), 0, None)
+            out += (x * syl * 0.045).astype(np.float32)
+    f = int(0.8 * SR)
+    if n > 2 * f:
+        out[:f] *= np.linspace(0, 1, f); out[-f:] *= np.linspace(1, 0, f)
+    return out.astype(np.float32)
 
 
 # ---------------------------------------------------------------- mix

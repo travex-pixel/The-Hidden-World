@@ -202,6 +202,12 @@ class AllEpisodes(unittest.TestCase):
         self.assertGreaterEqual(len(self.episodes()), 2)
         for eid in self.episodes():
             ep = load_episode(eid)
+            if ep.get("profile") == "history":   # painted sets live in renderer/history/sets
+                sets = "".join(p.read_text() for p in (ROOT / "renderer" / "history" / "sets").glob("*.js"))
+                for sc in ep["scenes"]:
+                    self.assertIn(f"X.SETS.{sc['set']} =", sets, f"{eid}: no painted set {sc['set']}")
+                self.assertTrue((ROOT / "episodes" / eid / "research.md").exists())
+                continue
             js = (ROOT / "renderer" / "scenes" / f"{eid}.js").read_text() + (ROOT / "renderer" / "cast.js").read_text()
             for s in ep["scenes"]:
                 self.assertIn(s["scene"] + "(", js, f"{eid}: no renderer for {s['scene']}")
@@ -290,7 +296,8 @@ class ThrillerCast(unittest.TestCase):
     REQUIRED = ["id", "name", "age", "personality", "signature", "look", "voice", "expressions"]
 
     def cast_files(self):
-        return [p for p in (ROOT / "characters").glob("*.json") if p.stem != "narrator"]
+        # thriller cast only: narrators and history-mode characters (drawn by renderer/history/rig.js) have their own specs
+        return [p for p in (ROOT / "characters").glob("*.json") if not p.stem.startswith("narrator") and "rig" not in json.loads(p.read_text())]
 
     def test_character_specs_complete_and_adult(self):
         self.assertGreaterEqual(len(self.cast_files()), 2)

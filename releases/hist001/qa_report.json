@@ -1,0 +1,144 @@
+{
+  "episode": "hist001-medieval-village",
+  "file": "out/hist001-medieval-village/hist001-medieval-village.mp4",
+  "duration": 95.624,
+  "checks": [
+    {
+      "check": "foot_slip_planted_px",
+      "status": "PASS",
+      "value": 0.0,
+      "detail": "max displacement of a planted foot between frames over 2855 samples (screen px at rest)"
+    },
+    {
+      "check": "camera_accel_px_per_frame2",
+      "status": "WARN",
+      "value": 3.26,
+      "detail": "peak at t=46.27s (excl. cuts/shakes); <2.5 reads as smooth"
+    },
+    {
+      "check": "dolly_scale_rate_per_frame",
+      "status": "WARN",
+      "value": 0.0218,
+      "detail": "max change of acting-plane scale per frame (fast punch-ins > 0.02)"
+    },
+    {
+      "check": "character_scale_consistency",
+      "status": "PASS",
+      "value": {
+        "pov": 0.044,
+        "baker_hugh": 0.0
+      },
+      "detail": "relative spread of each character's authored height across shots (same rig spec everywhere)"
+    },
+    {
+      "check": "black_frames",
+      "status": "PASS",
+      "value": 0,
+      "detail": "frames with mean luma < 16 outside the opening/closing fades"
+    },
+    {
+      "check": "longest_frozen_stretch_s",
+      "status": "PASS",
+      "value": 0.77,
+      "detail": "near-identical consecutive frames, ending t=43.40s"
+    },
+    {
+      "check": "unplanned_jumps",
+      "status": "PASS",
+      "value": [],
+      "detail": "frame differences > 18.0 away from planned transitions"
+    },
+    {
+      "check": "motion_in_every_scene",
+      "status": "PASS",
+      "value": {
+        "s01_wake": 1.33,
+        "s02_home": 2.55,
+        "s03_village": 1.81,
+        "s04_market": 1.63,
+        "s05_problem": 1.49,
+        "s06_reveal": 0.73,
+        "s07_payoff": 1.86
+      },
+      "detail": "mean frame difference per scene (0 = static image)"
+    },
+    {
+      "check": "subtitle_timing",
+      "status": "WARN",
+      "value": {
+        "cues": 26,
+        "max_chars_per_s": 22.3,
+        "too_short": [],
+        "overlaps": 0
+      },
+      "detail": "reading speed <= 22 chars/s, every cue >= 0.9 s"
+    },
+    {
+      "check": "subtitle_voice_alignment",
+      "status": "PASS",
+      "value": 3.06,
+      "detail": "speech-band energy inside subtitle cues vs outside (higher = voice sits under its subtitle)"
+    },
+    {
+      "check": "dead_air_s",
+      "status": "PASS",
+      "value": {
+        "longest_gap": 1.55,
+        "opening_silence": 0.65,
+        "outro_after_last_line": 1.4
+      },
+      "detail": "gaps without speech (music/SFX and motion continue)"
+    },
+    {
+      "check": "claims_flagged_for_review",
+      "status": "WARN",
+      "value": {
+        "non_established_claims": [
+          {
+            "id": "C5",
+            "type": "estimate",
+            "text": "An unskilled labourer in late-13th-century England earned roughly 1d\u20131\u00bdd a day (sometimes 2d); much farm work was paid p"
+          },
+          {
+            "id": "C8",
+            "type": "plausible",
+            "text": "Some peasant houses (longhouses, e.g. Hound Tor, Dartmoor) sheltered animals under the same roof; a hen indoors in this "
+          },
+          {
+            "id": "C9",
+            "type": "estimate",
+            "text": "Around 1300 roughly 80\u201385% of England's population lived in the countryside (towns c.15\u201320%: Britnell, Dyer)."
+          }
+        ],
+        "sources_verified_by_snippet_only": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ]
+      },
+      "detail": "a historian/editor must confirm these before publishing"
+    }
+  ],
+  "summary": {
+    "PASS": 8,
+    "WARN": 4,
+    "FAIL": 0
+  },
+  "visual_review": "storyboard.png and transitions.png must be inspected by a person; automated checks do not judge beauty."
+}

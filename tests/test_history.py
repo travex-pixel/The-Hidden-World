@@ -1,0 +1,163 @@
+"""History documentary profile: schema, timing grammar, subtitles, audio additions, rig/camera maths.
+The rig tests run the actual renderer JavaScript in Node (skipped if Node is not installed)."""
+import json, shutil, subprocess, sys, unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from pipeline.schema import load_episode, validate, EpisodeError  # noqa: E402
+from pipeline import history, audio  # noqa: E402
+
+EP = "hist001-medieval-village"
+
+
+def fake_timeline(ep, per=4.0):
+    tl, t = [], 0.0
+    for s in ep["scenes"]:
+        lines = [{"who": l["who"], "text": l["text"], "start": t + 0.3 + i * 1.2, "end": t + 1.3 + i * 1.2} for i, l in enumerate(s["lines"])]
+        dur = max(per, 0.6 + 1.2 * len(lines))
+        tl.append({"id": s["id"], "start": t, "end": t + dur, "lines": lines, "music_cue": s["music_cue"]}); t += dur
+    return tl
+
+
+class HistorySchema(unittest.TestCase):
+    def setUp(self):
+        self.ep = load_episode(EP)
+
+    def test_valid_and_selected_by_profile(self):
+        self.assertEqual(self.ep["profile"], "history")
+        self.assertTrue(history.is_history(self.ep))
+        self.assertFalse(history.is_history(load_episode("ep001-cash-vs-profit")))
+
+    def test_unknown_set_rejected(self):
+        bad = json.loads(json.dumps(self.ep)); bad["scenes"][0]["set"] = "spaceship"
+        with self.assertRaises(EpisodeError): validate(bad)
+
+    def test_documented_badge_must_cite_established_claim(self):
+        bad = json.loads(json.dumps(self.ep))
+        sc = next(s for s in bad["scenes"] if any(b["kind"] == "documented" for b in s.get("badges", [])))
+        b = next(b for b in sc["badges"] if b["kind"] == "documented")
+        est = next(c["id"] for c in bad["claims"] if c["type"] == "estimate")
+        b["claim"] = est; sc["claims"].append(est)
+        with self.assertRaises(EpisodeError): validate(bad)
+
+    def test_every_non_fiction_scene_shows_its_evidence(self):
+        # each scene that makes a factual claim labels at least one of them on screen
+        for s in self.ep["scenes"]:
+            facts = [c for c in s["claims"] if c != "C12"]
+            if facts:
+                self.assertTrue(s.get("badges"), f"{s['id']} makes claims but shows no evidence badge")
+
+    def test_fiction_is_labelled(self):
+        kinds = {b["kind"] for s in self.ep["scenes"] for b in s.get("badges", [])}
+        self.assertIn("dramatised", kinds)
+
+    def test_no_cutting_guide_claim(self):
+        # research found no authority for "the cross was a cutting guide"; the script must not say it
+        text = " ".join(l["text"].lower() for s in self.ep["scenes"] for l in s["lines"])
+        self.assertNotIn("guide", text)
+
+    def test_lines_short_enough_for_subtitles(self):
+        for s in self.ep["scenes"]:
+            for l in s["lines"]:
+                self.assertLessEqual(len(l["text"]), 90)
+
+    def test_chapters_meet_youtube_rules(self):
+        tl = fake_timeline(self.ep, per=12)
+        from pipeline.publish_history import chapters
+        ch = chapters(self.ep, tl)
+        self.assertGreaterEqual(len(ch), 3); self.assertEqual(ch[0][0], 0.0)
+
+
+class Timing(unittest.TestCase):
+    def test_anchor_grammar(self):
+        s = {"id": "x", "start": 10.0, "end": 20.0, "lines": [{"start": 11.0, "end": 12.0}, {"start": 13.5, "end": 15.0}]}
+        self.assertEqual(history.resolve_at(2, s), 2.0)
+        self.assertEqual(history.resolve_at("p0.5", s), 5.0)
+        self.assertEqual(history.resolve_at("end-1.5", s), 8.5)
+        self.assertEqual(history.resolve_at({"line": 1, "off": 0.5}, s), 4.0)
+        with self.assertRaises(ValueError): history.resolve_at({"line": 9}, s)
+
+    def test_sequences_group_consecutive_sets(self):
+        ep = load_episode(EP); tl = fake_timeline(ep)
+        seqs = history.sequences(ep, tl)
+        self.assertEqual([q["set"] for q in seqs], ["cottage", "village", "coin", "village"])
+        self.assertEqual(seqs[0]["scenes"], ["s01_wake", "s02_home"])
+
+    def test_srt_cues_ordered_without_overlap(self):
+        ep = load_episode(EP); tl = fake_timeline(ep)
+        cues = history.subtitles(tl, {"baker_hugh": {"name": "Hugh the Baker"}})
+        self.assertEqual(len(cues), sum(len(s["lines"]) for s in ep["scenes"]))
+        for a, b in zip(cues, cues[1:]):
+            self.assertLessEqual(a["end"], b["start"])
+        self.assertTrue(any(c["text"].startswith("HUGH THE BAKER:") for c in cues))
+        self.assertEqual(history.srt_time(3723.456), "01:02:03,456")
+
+
+class HistoryAudio(unittest.TestCase):
+    def test_new_cues_and_sfx_render(self):
+        tl = [{"start": i * 3.0, "end": (i + 1) * 3.0, "music_cue": c} for i, c in enumerate(["dawn", "village", "market", "problem", "reveal", "resolve", "tease"])]
+        m = audio.compose(tl, 21.0, 1)
+        self.assertEqual(len(m), int(21.0 * audio.SR)); self.assertGreater(float(abs(m).max()), 0.01)
+        for n in ["hen", "creak", "chink", "chop", "churchbell", "anvil", "rustle", "mudstep", "gasp"]:
+            x = audio.sfx(n, 1); self.assertGreater(len(x), 1000, n); self.assertLessEqual(float(abs(x).max()), 0.951, n)
+
+    def test_ambience_beds(self):
+        for k in ("interior", "village", "market"):
+            x = audio.ambience(k, 3.0, 2); self.assertEqual(len(x), 3 * audio.SR); self.assertGreater(float(abs(x).max()), 0.005)
+
+    def test_existing_cues_unchanged_by_history_palette(self):
+        # the history cues must not alter the crime/thriller music: same seed -> same samples as a scale-less cue path
+        tl = [{"start": 0.0, "end": 6.0, "music_cue": "curious"}, {"start": 6.0, "end": 12.0, "music_cue": "cold"}]
+        a = audio.compose(tl, 12.0, 5); b = audio.compose(tl, 12.0, 5)
+        self.assertTrue((a == b).all())
+        self.assertNotIn("scale", audio.CUES["curious"]); self.assertNotIn("drone", audio.CUES["cold"])
+
+
+@unittest.skipUnless(shutil.which("node"), "node not installed")
+class RigAndCamera(unittest.TestCase):
+    """Runs renderer/history/core.js + rig.js + camera maths in Node and checks motion invariants."""
+    def node(self, body):
+        js = """
+const vm = require('vm'), fs = require('fs'); const c = { Math, console }; c.globalThis = c; c.window = c; vm.createContext(c);
+for (const f of ['core.js', 'rig.js']) vm.runInContext(fs.readFileSync('%s/renderer/history/' + f, 'utf8'), c);
+const R = c.HX.Rig, X = c.HX; const out = (()=>{ %s })(); console.log(JSON.stringify(out));
+""" % (ROOT, body)
+        r = subprocess.run(["node", "-e", js], capture_output=True, text=True, check=True)
+        return json.loads(r.stdout.strip().splitlines()[-1])
+
+    def test_planted_feet_never_slide(self):
+        res = self.node("""
+          const A = R.compileActor({ id: 'a', x: 100, acts: [{ t: 1, walk: 1300, dur: 6 }, { t: 8, walk: 700, dur: 3 }, { t: 12, walk: 905, dur: 1.4 }] });
+          let prev = null, slip = 0, planted = 0;
+          for (let t = 0; t < 15; t += 1 / 120) { const w = R.walkAt(A, t); if (!w.feet) { prev = null; continue; }
+            if (prev) for (const i of [0, 1]) if (w.lift[i] === 0 && prev.lift[i] === 0) { planted++; slip = Math.max(slip, Math.abs(w.feet[i] - prev.feet[i])); }
+            prev = { feet: w.feet.slice(), lift: w.lift.slice() }; }
+          return { slip, planted, end: R.walkAt(A, 20).x };""")
+        self.assertLess(res["slip"], 1e-6); self.assertGreater(res["planted"], 1000); self.assertAlmostEqual(res["end"], 905, places=6)
+
+    def test_walk_speed_ramps_smoothly(self):
+        res = self.node("""
+          const v = []; for (let u = 0; u <= 1.0001; u += 0.01) v.push(R.rampPos(u, 0.28));
+          let mono = true; for (let i = 1; i < v.length; i++) if (v[i] < v[i - 1] - 1e-12) mono = false;
+          const d = v.slice(1).map((x, i) => x - v[i]); const dd = d.slice(1).map((x, i) => Math.abs(x - d[i]));
+          return { start: v[0], end: v[v.length - 1], mono, maxJerk: Math.max(...dd) };""")
+        self.assertEqual(res["start"], 0); self.assertAlmostEqual(res["end"], 1, places=9); self.assertTrue(res["mono"]); self.assertLess(res["maxJerk"], 0.002)
+
+    def test_leg_ik_preserves_bone_lengths(self):
+        res = self.node("""
+          let worst = 0; for (const [fx, fy] of [[0, -36], [180, -36], [-150, -60], [400, -36], [20, -300]]) {
+            const r = R.ik2(0, -490, fx, fy); const a = Math.hypot(r.knee[0], r.knee[1] + 490), b = Math.hypot(r.foot[0] - r.knee[0], r.foot[1] - r.knee[1]);
+            worst = Math.max(worst, Math.abs(a - 232), Math.abs(b - 226)); } return { worst };""")
+        self.assertLess(res["worst"], 1e-6)
+
+    def test_rig_is_deterministic(self):
+        res = self.node("""
+          const mk = () => R.compileActor({ id: 'b', x: 0, acts: [{ t: 0.5, walk: 800, dur: 3 }, { t: 1, expr: 'happy' }, { t: 2, gesture: 'wave' }] });
+          const a = R.evaluate(mk(), 1.73, null), b = R.evaluate(mk(), 1.73, null);
+          return { same: JSON.stringify(a) === JSON.stringify(b) };""")
+        self.assertTrue(res["same"])
+
+
+if __name__ == "__main__":
+    unittest.main()
