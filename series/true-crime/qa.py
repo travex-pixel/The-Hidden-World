@@ -20,6 +20,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT))
 from pipeline.series import series_qa, sha256  # noqa: E402
+from pipeline import caption_safe, motion_qa, shot_manifest  # noqa: E402
 
 TOOLS = HERE / "tools"   # offline speech recogniser, shared by every series folder
 SERIES = HERE            # the series folder being verified (switch with --series)
@@ -103,9 +104,19 @@ def main(argv=None) -> int:
     asr = asr_check(src, tl, qadir if qadir.mkdir(parents=True, exist_ok=True) is None else qadir)
     if asr is not None:
         qa["narration_intelligible_asr"] = asr["word_error_rate"] <= 0.25
+    # studio checks: captions inside the Shorts safe area, no frozen picture, and (for character-driven episodes)
+    # every shot's staging read from the renderer into a per-shot manifest with slideshow-risk scoring
+    plan = json.loads((out / "plan.json").read_text()); studio = {}
+    if plan["episode"].get("caption_style") == "punch":
+        cs = caption_safe.check(plan); studio["captions"] = cs; qa["captions_in_safe_area"] = cs["ok"]
+    mq = motion_qa.analyse(src, tl); studio["motion"] = mq; qa["no_frozen_or_static_picture"] = mq["ok"]
+    if plan["episode"].get("figures"):
+        sm = shot_manifest.build(ep["id"], {"series_manifest": str(MANIFEST.relative_to(ROOT)), "video": ep["file"]})
+        studio["slideshow_risk"] = sm["slideshow_risk"]; qa["shot_variety_and_character_action"] = sm["slideshow_risk"]["ok"]
+        qa["every_shot_sourced_and_tagged"] = all(r["validation"]["claims_sourced"] and r["validation"]["tagged_as_illustration"] for r in sm["shots"])
     sampled = frames(src, verify["duration"], qadir)
     shutil.copy2(out / "contact_sheet.png", qadir / "contact_sheet.png")
-    (qadir / "verify.json").write_text(json.dumps({"media": verify, "series_qa": qa, "loudness": ld, "asr": asr}, indent=2))
+    (qadir / "verify.json").write_text(json.dumps({"media": verify, "series_qa": qa, "loudness": ld, "asr": asr, "studio": studio}, indent=2))
     ok = bool(verify["all_passed"]) and all(v for v in qa.values() if isinstance(v, bool))
     rec.update(media={k: verify[k] for k in ("duration", "width", "height", "fps", "video_codec", "audio_codec", "size_bytes", "mean_volume_db", "max_volume_db")},
                media_checks=verify["checks"], series_qa=qa, loudness=ld, asr_word_error_rate=None if asr is None else asr["word_error_rate"],

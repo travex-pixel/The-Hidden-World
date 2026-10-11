@@ -149,5 +149,52 @@ class EngineV3(unittest.TestCase):
         self.assertGreaterEqual(len(POSES), 20)
 
 
+class StudioQA(unittest.TestCase):
+    def _plan(self, caption_y, max_w=None, words=("SOUND-DEADENING",)):
+        ep = {"scenes": [{"caption_y": caption_y}], **({"caption_max_w": max_w} if max_w else {})}
+        line = {"start": 0.0, "end": 2.0, "text": " ".join(words), "words": [{"w": w, "start": 0.3 * i, "end": 0.3 * i + 0.25} for i, w in enumerate(words)]}
+        return {"episode": ep, "timeline": [{"id": "s", "start": 0.0, "end": 2.0, "lines": [line]}]}
+
+    def test_caption_safe_area_catches_old_geometry_and_passes_new(self):
+        from pipeline import caption_safe
+        self.assertFalse(caption_safe.check(self._plan(1460))["ok"])                 # v2 layout: too low and too wide
+        r = caption_safe.check(self._plan(1380, 800))
+        self.assertTrue(r["ok"], r)
+        self.assertIn("SOUND-DEADENING", r["rows_scaled_to_fit"])                     # a long word is scaled, not clipped
+        self.assertTrue(caption_safe.check(self._plan(1380, 800, ("WHAT", "FINALLY", "CAUGHT")))["ok"])
+
+    def test_cinematic_episodes_use_safe_caption_geometry(self):
+        for eid in EPS:
+            ep = load_episode(eid)
+            self.assertEqual(ep["caption_max_w"], 800)
+            self.assertTrue(all(s["caption_y"] == 1380 for s in ep["scenes"]))
+        self.assertIn("ctx.ep.caption_max_w || 920", (ROOT / "renderer" / "engine.js").read_text())   # older episodes unchanged
+
+    def test_produce_hash_covers_every_render_input(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("produce_cinematic", SERIES / "produce.py")
+        pr = importlib.util.module_from_spec(spec); spec.loader.exec_module(pr)
+        h1 = pr.inputs_hash("tcv01-chamberlain", "final", 1)
+        self.assertEqual(h1, pr.inputs_hash("tcv01-chamberlain", "final", 1))      # deterministic -> safe resume
+        self.assertNotEqual(h1, pr.inputs_hash("tcv01-chamberlain", "final60", 1))  # quality change forces a re-render
+        for f in ["renderer/figures.js", "renderer/sets.js", "renderer/engine.js", "pipeline/audio.py", "pipeline/narrate.py"]:
+            self.assertIn(f, pr.ENGINE)
+
+    def test_shot_manifest_if_built(self):
+        for eid in EPS:
+            p = ROOT / "episodes" / eid / "shot_manifest.json"
+            if not p.exists():
+                continue
+            m = json.loads(p.read_text()); ep = load_episode(eid)
+            self.assertEqual([r["id"] for r in m["shots"]], [s["id"] for s in ep["scenes"]])
+            for r in m["shots"]:
+                for k in ["duration", "narration", "caption_timings", "visual_description", "characters", "camera", "sources", "audio", "assets", "validation"]:
+                    self.assertIn(k, r, f"{eid}/{r['id']}: {k}")
+                self.assertTrue(all(v for v in r["validation"].values()), f"{eid}/{r['id']}: {r['validation']}")
+                for c in r["characters"]:
+                    self.assertIn(c, ep["figures"])
+            self.assertTrue(m["slideshow_risk"]["ok"], m["slideshow_risk"])
+
+
 if __name__ == "__main__":
     unittest.main()
