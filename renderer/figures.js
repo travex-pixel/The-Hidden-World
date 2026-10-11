@@ -22,6 +22,8 @@
     read_newspaper: { lean: 2, tilt: 10, nUa: 30, nFa: 80, fUa: 36, fFa: 78, nTh: 2, nSh: 0, fTh: -2, fSh: 0, prop: 'newspaper' },
     examine:        { lean: 12, tilt: 18, nUa: 46, nFa: 60, fUa: 14, fFa: 40, nTh: 4, nSh: 2, fTh: -4, fSh: 2 },
     point:          { lean: 2, tilt: -2, nUa: 78, nFa: 6, fUa: 4, fFa: 10, nTh: 3, nSh: 0, fTh: -3, fSh: 0 },
+    point_up:       { lean: -2, tilt: -8, nUa: 128, nFa: 4, fUa: 6, fFa: 12, nTh: 3, nSh: 0, fTh: -3, fSh: 0 },
+    present:        { lean: 4, tilt: 2, nUa: 64, nFa: 30, fUa: 30, fFa: 70, nTh: 3, nSh: 0, fTh: -3, fSh: 0 },
     torch:          { lean: 6, tilt: 10, nUa: 52, nFa: 18, fUa: 6, fFa: 14, nTh: 6, nSh: 4, fTh: -6, fSh: 4, prop: 'torch' },
     torch_low:      { lean: 18, tilt: 24, nUa: 30, nFa: 10, fUa: 10, fFa: 20, nTh: 10, nSh: 8, fTh: -6, fSh: 6, prop: 'torch' },
     kneel:          { lean: 14, tilt: 22, nUa: 40, nFa: 22, fUa: 20, fFa: 40, nTh: 88, nSh: 92, fTh: -10, fSh: 96, kneel: 1, prop: 'torch' },
@@ -30,7 +32,8 @@
     sit_slumped:    { lean: 16, tilt: 26, nUa: 22, nFa: 50, fUa: 24, fFa: 46, nTh: 88, nSh: 92, fTh: 84, fSh: 90, sit: 1 },
     sit_type:       { lean: 12, tilt: 12, nUa: 34, nFa: 56, fUa: 38, fFa: 54, nTh: 88, nSh: 88, fTh: 84, fSh: 86, sit: 1 },
     hands_behind:   { lean: 4, tilt: 8, nUa: -18, nFa: 40, fUa: -22, fFa: 44, nTh: 2, nSh: 0, fTh: -2, fSh: 0 },
-    hand_to_face:   { lean: 2, tilt: 8, nUa: 30, nFa: 150, fUa: 8, fFa: 30, nTh: 2, nSh: 0, fTh: -2, fSh: 0 },
+    hand_to_face:   { lean: 4, tilt: 14, nUa: 70, nFa: 150, fUa: 8, fFa: 30, nTh: 2, nSh: 0, fTh: -2, fSh: 0 },   // hand to mouth
+    bowed:          { lean: 6, tilt: 26, nUa: 10, nFa: 46, fUa: 12, fFa: 44, nTh: 2, nSh: 0, fTh: -2, fSh: 0 },
     gavel:          { lean: 6, tilt: 6, nUa: 40, nFa: 70, fUa: 20, fFa: 70, nTh: 88, nSh: 88, fTh: 84, fSh: 86, sit: 1, prop: 'gavel' },
     walk:           { lean: 3, tilt: 0, nUa: 0, nFa: 12, fUa: 0, fFa: 12, nTh: 0, nSh: 0, fTh: 0, fSh: 0, walk: 1 }
   };
@@ -232,6 +235,8 @@
   function figure(f, ctx, light) {
     const sp = E.state.cast[f.id]; if (!sp) throw new Error('figure ' + f.id + ' not in episode figures');
     const t = ctx.t, tg = t + (ctx.sceneStart || 0);
+    const vis = f.show ? clamp((t - f.show[0]) / 0.3, 0, 1) * (f.show[1] !== undefined ? clamp((f.show[1] - t) / 0.3, 0, 1) : 1) : 1;   // show: [from, until] with 0.3 s fades
+    if (vis <= 0) return '';
     const st = stateAt(f, t); const P = st.P, X = st.X; const dir = f.dir || 1; const sc = (st.scale || 1) * (sp.height || 1);
     const o = f.outfit && sp.outfit_variants && sp.outfit_variants[f.outfit] ? { ...sp.outfit, ...sp.outfit_variants[f.outfit] } : sp.outfit;
     const turn = clamp(st.turn, 0, 1), ht = clamp((st.headTurn ?? 0) + turn, 0, 1);
@@ -257,7 +262,7 @@
     const legs = [];
     [[Hh[0], P.fTh, P.fSh, -1], [Hh[1], P.nTh, P.nSh, 1]].forEach(([hp, th, shn, side]) => {
       let thA = th, shA = shn;
-      if (walking) { const s2 = side * sw; thA += 26 * s2; shA += Math.max(0, 36 * (side * -cw)) + 6; }
+      if (walking) { const s2 = side * sw; thA += (f.walk.stride ?? 26) * s2; shA += Math.max(0, 36 * (side * -cw)) + 6; }
       const knee = pt(hp[0], hp[1], thA, P.sit ? 205 : 225, P.sit || P.kneel ? Math.max(FX, 0.55) : FX);
       const ankle = pt(knee[0], knee[1], thA - shA, P.sit ? 225 : 222, FX);
       legs.push({ hp, knee, ankle, side });
@@ -289,7 +294,7 @@
       let s = limb(a.s0, a.elbow, 60, 50, shade(sl, dk), shade(sl, 0.62 * dk), lightSide) + limb(a.elbow, a.wrist, 50, 40, shade(sl, dk), shade(sl, 0.62 * dk), lightSide);
       const hd = pt(a.wrist[0], a.wrist[1], a.ang, 22, FX);
       s += `<ellipse cx="${f1(hd[0])}" cy="${f1(hd[1])}" rx="20" ry="25" transform="rotate(${f1(-a.ang)} ${f1(hd[0])} ${f1(hd[1])})" fill="${shade(skin, dk)}" stroke="${INK}" stroke-width="4"/>`;
-      if (front && P.prop && a.side > 0) s += prop(P.prop, hd, a.ang, t, f.propOpts || {});
+      if (front && P.prop && a.side > 0) s += prop(P.prop, hd, (f.propOpts && f.propOpts.aim !== undefined) ? f.propOpts.aim : a.ang, t, f.propOpts || {});   // aim: torch direction override (deg)
       return s;
     };
     // ground shadow
@@ -312,6 +317,7 @@
     let g = `<g transform="translate(${f1(x)} ${f1(y)}) scale(${f1(sc * flip * 1000) / 1000} ${f1(sc * 1000) / 1000})">${out}</g>`;
     if (f.silhouette) g = `<g filter="url(#figSil)">${g}</g>`;
     if (f.blur) g = `<g filter="url(#figBlur)">${g}</g>`;
+    if (vis < 1) g = `<g opacity="${f1(vis)}">${g}</g>`;
     return g;
   }
 

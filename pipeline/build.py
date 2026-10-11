@@ -83,6 +83,16 @@ def build_timeline(ep: dict, narr: list[dict], target: float | None) -> list[dic
     return tl
 
 
+def fx_time(s, fx):
+    """Absolute time of a sound effect: scene start + at, or (with "word": [line, word]) that word's spoken start + at."""
+    if "word" in fx:
+        li, wi = fx["word"]; lines = s.get("lines") or []
+        if li < len(lines):
+            ws = lines[li].get("words") or []
+            return max(s["start"], lines[li]["start"] + (ws[wi]["start"] if wi < len(ws) else 0.0) + fx.get("at", 0.0))
+    return s["start"] + fx.get("at", 0.0)
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("episode")
@@ -150,7 +160,7 @@ def main(argv=None) -> int:
     music = audio.compose(tl, total, seed, bpm=ep.get("music", {}).get("bpm", 96), key_semi=decisions["music_key_offset"])
     clips = [(s["narration_at"], *read_wav(Path(n["path"]))) for s, n in zip(tl, narr)]
     clips = [(at, x, sr) for at, (x, sr) in [(c[0], (c[1], c[2])) for c in clips]]
-    sfx_events = [(s["start"] + fx["at"], fx["name"], fx.get("gain", 1.0)) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] + fx["at"] < s["end"]]
+    sfx_events = [(fx_time(s, fx), fx["name"], fx.get("gain", 1.0)) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] <= fx_time(s, fx) < s["end"]]
     if "metronomes" in ep:
         ep["metronomes"] = metronome_model(ep["metronomes"])
         for s, sc in zip(tl, ep["scenes"]):

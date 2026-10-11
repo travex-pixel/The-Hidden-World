@@ -16,6 +16,11 @@ NARR = dict(v1.NARRATOR, length_scale=1.06, word_timing=True)
 N, fx = v1.N, v1.fx
 
 
+def fw(line, word, name, gain=1.0, at=0.0):
+    """A sound effect anchored to a spoken word (pipeline/build.py fx_time): lands on the word whatever the narration timing."""
+    return {"at": at, "word": [line, word], "name": name, "gain": gain}
+
+
 def S(id_, kind, lines, cue, claims, **kw):
     sc = v1.scene(id_, kind, lines, cue, claims, **kw); sc["caption_y"] = 1460; return sc
 
@@ -57,26 +62,26 @@ def chamberlain() -> dict:
           "unease", ["C_lindy_said"], sfx=[fx(0.0, "wind", 0.8), fx(3.6, "wind", 0.5)], emph=["dingo"], tr="push"),
         S("s05_board", "tcv1_board", [N("Azaria was never found. Her jumpsuit was, near the rock."),
                                       N("But not the matinee jacket Lindy said Azaria wore over it.", pause_before=0.2)],
-          "unease", ["C_jumpsuit", "C_jacket_missing"], sfx=[fx(0.2, "paper", 0.7), fx(3.4, "pen", 0.6)], emph=["jacket"], tr="push"),
+          "unease", ["C_jumpsuit", "C_jacket_missing"], sfx=[fw(0, 5, "paper", 0.7, -0.2), fw(1, 3, "paper", 0.6, -0.1)], emph=["jacket"], tr="push"),
         S("s06_case", "tcv1_case", [N("Prosecutors said she killed Azaria in the family car,"),
                                     N("and that tests found a baby's blood. Even a spray of it, under the dashboard.", pause_before=0.1)],
           "tension", ["C_prosecution", "C_spray_claim"], sfx=[fx(0.3, "step", 0.6), fx(0.7, "step", 0.5)], emph=["blood.", "spray"], tr="push"),
         S("s07_verdict", "tcv1_verdict", [N("October 1982: guilty of murder. Life, with hard labour."),
                                           N("In 1984, the High Court rejected her appeal, three votes to two.", pause_before=0.2)],
-          "cold", ["C_convicted", "C_michael", "C_highcourt"], sfx=[fx(0.25, "gavel"), fx(1.0, "stamp", 0.7)], emph=["guilty", "three", "two."], tr="zoom"),
+          "cold", ["C_convicted", "C_michael", "C_highcourt"], sfx=[fw(0, 2, "gavel", 1.0, -0.1), fw(1, 8, "stamp", 0.5, -0.05)], emph=["guilty", "three", "two."], tr="zoom"),
         S("s08_search", "tcv1_search", [N("Then, in early 1986, a tourist fell to his death from Uluru."),
                                         N("Searching near dingo dens below the rock, police found something else.", pause_before=0.15)],
-          "hush", ["C_fall", "C_found"], sfx=[fx(0.0, "wind", 0.7), fx(3.6, "wind", 0.6), fx(6.0, "step", 0.4)], music_db=-4, tr="fade"),
+          "hush", ["C_fall", "C_found"], sfx=[fx(0.0, "wind", 0.7), fx(3.6, "wind", 0.6), fw(1, 0, "step", 0.4, -0.2), fw(1, 3, "step", 0.4), fw(1, 8, "step", 0.5, 0.1)], music_db=-4, tr="fade"),
         S("s09_jacket", "tcv1_jacket", [N("Azaria's matinee jacket.", pause_before=0.6)], "hush", ["C_found"],
           sfx=[fx(0.0, "hit", 0.8)], min_d=4.0, pad=1.0, emph=["matinee", "jacket."], music_db=-8, tr="flash"),
         S("s10_release", "tcv1_release", [N("Five days later, Lindy was released from prison.")], "aftermath", ["C_release"],
-          sfx=[fx(0.3, "door", 0.9), fx(1.6, "step", 0.5), fx(2.1, "step", 0.5)], min_d=4.0, emph=["released"], tr="push"),
+          sfx=[fx(0.3, "door", 0.9), fx(1.6, "step", 0.4), fx(2.16, "step", 0.4), fx(2.72, "step", 0.4), fx(3.28, "step", 0.4)], min_d=4.0, emph=["released"], tr="push"),
         S("s11_science", "tcv1_science", [N("Then a Royal Commission re-examined the science."),
                                           N("The 'blood spray' under the dashboard? Sound-deadening compound, applied at the factory.", pause_before=0.1),
                                           N("No blood was found in the car at all.", pause_before=0.25)],
-          "revelation", ["C_royal", "C_noblood"], sfx=[fx(0.2, "paper", 0.6), fx(2.9, "click", 0.5)], emph=["sound-deadening", "factory.", "no", "blood"], music_db=-2, tr="push"),
+          "revelation", ["C_royal", "C_noblood"], sfx=[fx(0.2, "paper", 0.6), fw(1, 6, "click", 0.5, -0.05)], emph=["sound-deadening", "factory.", "no", "blood"], music_db=-2, tr="push"),
         S("s12_quashed", "tcv1_quashed", [N("In 1988, all the convictions were quashed.")], "aftermath", ["C_quashed"],
-          sfx=[fx(0.2, "gavel", 0.8), fx(1.0, "stamp")], min_d=3.6, emph=["quashed."], tr="zoom"),
+          sfx=[fw(0, 6, "gavel", 0.8, -0.15), fw(0, 6, "stamp", 1.0, 0.05)], min_d=3.6, emph=["quashed."], tr="zoom"),
         S("s13_coroner", "tcv1_coroner", [N("But only in 2012 did a coroner finally rule how Azaria died:"), N("attacked and taken by a dingo.", pause_before=0.35)],
           "aftermath", ["C_2012"], sfx=[fx(0.2, "paper", 0.5)], emph=["dingo."], tr="push"),
         S("s14_end", "tcv1_end", [N("Just as her mother said, almost thirty-two years earlier.", pause_before=0.3)], "aftermath", ["C_2012"],

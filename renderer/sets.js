@@ -64,17 +64,20 @@
       const shafts = `<path d="M-120 120 L80 120 L520 1300 L180 1300 Z" fill="${warm}" opacity="${f1(0.07 + 0.01 * Math.sin(t))}"/><path d="M1000 120 L1200 120 L960 1300 L620 1300 Z" fill="${warm}" opacity="0.06"/>`;
       const bench = `<rect x="200" y="560" width="680" height="300" fill="${wood}" stroke="${INK}" stroke-width="6"/><rect x="180" y="540" width="720" height="34" fill="${woodL}" stroke="${INK}" stroke-width="5"/>` +
         `<circle cx="540" cy="330" r="74" fill="none" stroke="#c9a356" stroke-width="7" opacity="0.6"/><circle cx="540" cy="330" r="46" fill="#c9a356" opacity="0.25"/>` + [260, 400, 680, 820].map(x => `<rect x="${x}" y="600" width="70" height="230" fill="none" stroke="${INK}" stroke-width="3" opacity="0.6"/>`).join('');
-      const dock = o.dock !== false ? `<g transform="translate(${o.dockX ?? 760} 1180)"><rect x="-190" y="-170" width="380" height="250" fill="${wood}" stroke="${INK}" stroke-width="6"/><rect x="-206" y="-190" width="412" height="30" rx="8" fill="${woodL}" stroke="${INK}" stroke-width="5"/>${[-120, 0, 120].map(x => `<rect x="${x - 40}" y="-140" width="80" height="190" fill="none" stroke="${INK}" stroke-width="3" opacity="0.5"/>`).join('')}</g>` : '';
+      // dock in figure units (feet line at 0, rail at waist height ~-560) so a figure with the same x/y/scale stands in it waist-deep
+      const dk = typeof o.dock === 'object' ? o.dock : { x: o.dockX ?? 760, y: 1210, s: 0.62 };
+      const dock = o.dock !== false ? `<g transform="translate(${dk.x} ${dk.y}) scale(${dk.s})"><rect x="-300" y="-540" width="600" height="700" fill="${wood}" stroke="${INK}" stroke-width="8"/><rect x="-324" y="-576" width="648" height="44" rx="12" fill="${woodL}" stroke="${INK}" stroke-width="7"/>${[-190, 0, 190].map(x => `<rect x="${x - 70}" y="-490" width="140" height="300" fill="none" stroke="${INK}" stroke-width="5" opacity="0.5"/>`).join('')}<rect x="-300" y="-532" width="600" height="18" fill="#000" opacity="0.3"/></g>` : '';
       const table = `<rect x="-300" y="1500" width="${W + 600}" height="420" fill="${wood}" stroke="${INK}" stroke-width="6"/><rect x="-300" y="1480" width="${W + 600}" height="34" fill="${woodL}" stroke="${INK}" stroke-width="5"/>` +
         `<g transform="translate(260 1470) rotate(-6)"><rect x="-90" y="-20" width="180" height="40" fill="#ece5d4" stroke="${INK}" stroke-width="3"/></g><g transform="translate(760 1474) rotate(4)"><rect x="-70" y="-16" width="140" height="32" fill="#d9cfb6" stroke="${INK}" stroke-width="3"/></g>`;
-      return { light: { dir: -1, rim: warm, key: warm }, layers: [[0.15, wall], [0.35, shafts + bench], [1.0, ''], [1.02, dock], [1.5, table]], dust: true };
+      const bd = o.benchDepth ?? 0.35;   // bring the bench closer for a medium shot of whoever sits at it
+      return { light: { dir: -1, rim: warm, key: warm }, layers: [[0.15, wall], [Math.min(0.3, bd - 0.05), shafts], [bd, bench], [1.0, ''], [1.02, dock], ...(o.table === false ? [] : [[1.5, table]])], dust: true };
     },
     // forensic laboratory / inquiry workroom: bench, lamp, microscope, shelves
     lab(ctx, o = {}) {
       const t = ctx.t;
       const back = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#0f1418"/>` + [200, 420, 640].map(y => `<rect x="-200" y="${y}" width="${W + 400}" height="16" fill="#26313a"/>` + [0, 1, 2, 3, 4, 5, 6, 7].map(i => `<rect x="${-120 + i * 160 + (y % 3) * 20}" y="${y - 90}" width="${40 + (i % 3) * 20}" height="90" fill="${['#3c5a6a', '#6a5a3c', '#2c4a3a', '#5a3c3c'][i % 4]}" opacity="0.7"/>`).join('')).join('');
       const benchSvg = `<rect x="-300" y="1220" width="${W + 600}" height="70" fill="#d8dcdf" stroke="${INK}" stroke-width="6"/><rect x="-300" y="1290" width="${W + 600}" height="${H}" fill="#2a3036"/>` +
-        `<g transform="translate(250 1220)"><rect x="-30" y="-260" width="60" height="22" fill="#3a3f46"/><path d="M0 -240 L-60 -40 M0 -240 L40 -150" stroke="#3a3f46" stroke-width="18"/><rect x="-80" y="-40" width="160" height="40" rx="6" fill="#3a3f46" stroke="${INK}" stroke-width="4"/><circle cx="-60" cy="-60" r="14" fill="#9ab"/></g>` +
+        `<g transform="translate(${o.microX ?? 250} 1220)"><rect x="-30" y="-260" width="60" height="22" fill="#3a3f46"/><path d="M0 -240 L-60 -40 M0 -240 L40 -150" stroke="#3a3f46" stroke-width="18"/><rect x="-80" y="-40" width="160" height="40" rx="6" fill="#3a3f46" stroke="${INK}" stroke-width="4"/><circle cx="-60" cy="-60" r="14" fill="#9ab"/></g>` +
         `<g transform="translate(860 1220)"><path d="M0 0 L0 -260 L-140 -340" stroke="#2a2e34" stroke-width="16" fill="none"/><path d="M-200 -360 L-80 -360 L-110 -300 L-170 -300 Z" fill="#2a2e34" stroke="${INK}" stroke-width="4"/></g>`;
       const lampPool = `<path d="M600 880 L740 880 L980 1240 L360 1240 Z" fill="#fff2cc" opacity="0.10"/>` + wash(670, 1230, 300, 40, '#fff2cc', 0.25);
       return { light: { dir: 1, rim: '#bfe6ff', key: '#fff2cc' }, layers: [[0.2, back], [0.6, lampPool], [1.0, ''], [1.05, benchSvg]] };
@@ -84,9 +87,9 @@
       const open = clamp(o.open ?? 0, 0, 1);
       const sky = `<defs><linearGradient id="gdsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3a5a"/><stop offset="0.7" stop-color="#e09a6a"/><stop offset="1" stop-color="#f3c792"/></linearGradient></defs><rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="url(#gdsky)"/>`;
       const wall = `<rect x="-300" y="560" width="${W + 600}" height="700" fill="#4a4440"/>` + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => `<path d="M${-260 + i * 160} 560 l40 -40 l40 40" stroke="#2a2522" stroke-width="5" fill="none"/>`).join('') + `<rect x="-300" y="1260" width="${W + 600}" height="${H}" fill="#6a5040"/>`;
-      let gate = `<rect x="300" y="620" width="480" height="640" fill="#f3c792" opacity="0.9"/>`;
+      const through = `<rect x="300" y="620" width="480" height="640" fill="#f3c792" opacity="0.9"/>`; let gate = '';
       for (const side of [-1, 1]) { const w = 240, x0 = side < 0 ? 300 - w * open : 540 + w * open; gate += `<rect x="${f1(x0)}" y="620" width="${w}" height="640" fill="#2a2d33" stroke="${INK}" stroke-width="5"/>` + [0, 1, 2, 3, 4].map(i => `<rect x="${f1(x0 + 20 + i * 46)}" y="630" width="14" height="620" fill="#4a4f58"/>`).join(''); }
-      return { light: { dir: 1, rim: '#ffd8a0', key: '#ffd8a0' }, layers: [[0.05, sky], [0.4, wall], [0.55, gate], [1.0, '']] };
+      return { light: { dir: 1, rim: '#ffd8a0', key: '#ffd8a0' }, layers: [[0.05, sky], [0.4, wall], [0.5, through], [0.55, gate], [1.0, '']] };
     },
     // dawn over the rock (ending)
     rock_dawn(ctx, o = {}) {
@@ -143,6 +146,11 @@
 
   // ---------- compositor
   function camAt(ctx, cam) {
+    if (cam.keys) {   // piecewise moves: [{at, x, y, z, dur}] each eased from the previous key
+      let c = { x: 0, y: 0, z: 1, ...cam.keys[0] };
+      for (const k of cam.keys.slice(1)) { const u = ease.inOut(clamp((ctx.t - k.at) / (k.dur || 0.8), 0, 1)); if (u <= 0) break; c = { x: lerp(c.x, k.x ?? c.x, u), y: lerp(c.y, k.y ?? c.y, u), z: lerp(c.z, k.z ?? c.z, u) }; }
+      return c;
+    }
     const p = ease.inOut(clamp(ctx.t / ctx.T, 0, 1)); const a = cam.from || { x: 0, y: 0, z: 1 }, b = cam.to || a;
     return { x: lerp(a.x || 0, b.x || 0, p), y: lerp(a.y || 0, b.y || 0, p), z: lerp(a.z || 1, b.z || 1, p) };
   }
@@ -159,8 +167,8 @@
       const L = Math.hypot(lx - ax, ly - ay); const draw = ease.out(seg(t, o.at, o.at + 0.45));
       const ex = ax + (lx - ax) * draw, ey = ay + (ly - ay) * draw;
       return `<g opacity="${op}"><circle cx="${f1(ax)}" cy="${f1(ay)}" r="${f1(o.r || 40)}" fill="none" stroke="${o.colour || '#e5372b'}" stroke-width="7"/><line x1="${f1(ax)}" y1="${f1(ay)}" x2="${f1(ex)}" y2="${f1(ey)}" stroke="${o.colour || '#e5372b'}" stroke-width="5"/>` +
-        (draw > 0.95 ? `<rect x="${f1(lx - (o.anchor === 'end' ? o.w || 420 : 0))}" y="${f1(ly - 46)}" width="${o.w || 420}" height="${o.h || 66}" rx="8" fill="#0b0b0d" opacity="0.88" stroke="${o.colour || '#e5372b'}" stroke-width="3"/>` +
-          `<text x="${f1(lx + (o.anchor === 'end' ? -(o.w || 420) + 20 : 20))}" y="${f1(ly)}" ${TYPE} font-weight="700" font-size="${o.fs || 34}" fill="#f4efe4">${esc(o.text)}</text>` + (o.sub ? `<text x="${f1(lx + (o.anchor === 'end' ? -(o.w || 420) + 20 : 20))}" y="${f1(ly + (o.h || 66) - 16)}" ${TYPE} font-size="24" fill="#c9c2b4">${esc(o.sub)}</text>` : '') : '') + `</g>`;
+        (draw > 0.95 ? `<rect x="${f1(lx - (o.anchor === 'end' ? o.w || 420 : 0))}" y="${f1(ly - 46)}" width="${o.w || 420}" height="${o.h || (o.sub ? 104 : 66)}" rx="8" fill="#0b0b0d" opacity="0.88" stroke="${o.colour || '#e5372b'}" stroke-width="3"/>` +
+          `<text x="${f1(lx + (o.anchor === 'end' ? -(o.w || 420) + 20 : 20))}" y="${f1(ly)}" ${TYPE} font-weight="700" font-size="${o.fs || 34}" fill="#f4efe4">${esc(o.text)}</text>` + (o.sub ? `<text x="${f1(lx + (o.anchor === 'end' ? -(o.w || 420) + 20 : 20))}" y="${f1(ly - 46 + (o.h || 104) - 20)}" ${TYPE} font-size="28" fill="#d9d2c4">${esc(o.sub)}</text>` : '') : '') + `</g>`;
     }
     if (o.type === 'card') {   // typed evidence/legal card (our own graphic, not a replica)
       const w = o.w || 820, rows = o.rows; const h = o.h || (rows.length * 66 + 70); const x = o.x ?? (W - w) / 2, y = o.y ?? 300;
@@ -168,7 +176,7 @@
       return `<g opacity="${op}" transform="translate(0 ${f1((1 - ease.out(k)) * 30)})"><rect x="${x + 10}" y="${y + 14}" width="${w}" height="${h}" fill="#000" opacity="0.45" filter="url(#cineSoft)"/><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="#ebe3cf" stroke="#b9ad90" stroke-width="3"/>${inner}</g>`;
     }
     if (o.type === 'stamp') return `<g opacity="${op}" transform="translate(${o.x} ${o.y}) scale(${o.scale || 1.6}) translate(${-o.x} ${-o.y})">${E.doc.stamp(o.x, o.y, o.text, k, o.rot ?? -10, o.colour || '#e5372b')}</g>`;
-    if (o.type === 'label') return `<g opacity="${op}">${E.doc.typed(o.x ?? 60, o.y ?? 380, o.text, seg(t, o.at, o.at + (o.typeDur || 0.9)), { fs: o.fs || 44, color: o.colour || '#e7ae4f' })}${o.sub ? E.doc.typed(o.x ?? 60, (o.y ?? 380) + 52, o.sub, seg(t, o.at + 0.4, o.at + 1.4), { fs: 30, color: '#f4efe4', caret: false, weight: 400 }) : ''}</g>`;
+    if (o.type === 'label') return `<g opacity="${op}">${o.box === false ? '' : `<rect x="${(o.x ?? 60) - 18}" y="${(o.y ?? 380) - (o.fs || 44) - 8}" width="${f1(Math.max(o.text.length * (o.fs || 44), (o.sub || '').length * 30) * 0.61 + 40)}" height="${(o.fs || 44) + (o.sub ? 70 : 26)}" rx="6" fill="#000" opacity="0.55"/>`}${E.doc.typed(o.x ?? 60, o.y ?? 380, o.text, seg(t, o.at, o.at + (o.typeDur || 0.9)), { fs: o.fs || 44, color: o.colour || '#e7ae4f' })}${o.sub ? E.doc.typed(o.x ?? 60, (o.y ?? 380) + 52, o.sub, seg(t, o.at + 0.4, o.at + 1.4), { fs: 30, color: '#f4efe4', caret: false, weight: 400 }) : ''}</g>`;
     if (o.type === 'circle') { const [ax, ay] = project(c, o.depth || 1, o.target[0], o.target[1]); return `<g opacity="${op}">${E.doc.circleOn(f1(ax), f1(ay), o.rx || 120, o.ry || 70, ease.out(k), o.colour || '#e5372b', 8)}</g>`; }
     if (o.type === 'vote') { let s = ''; for (let i = 0; i < 5; i++) { const q = ease.back(seg(t, o.at + i * 0.15, o.at + i * 0.15 + 0.4)); const x = 200 + i * 170; s += `<g transform="translate(${x} ${o.y || 1180}) scale(${f1(Math.max(0.001, q) * 100) / 100})"><rect x="-76" y="-40" width="152" height="80" rx="10" fill="${i < 3 ? '#d23a2e' : '#e9e4d8'}" stroke="#000" stroke-opacity="0.5" stroke-width="3"/><text y="11" text-anchor="middle" ${TYPE} font-weight="700" font-size="28" fill="${i < 3 ? '#fff' : '#1a1915'}">${i < 3 ? 'DISMISS' : 'ALLOW'}</text></g>`; } return `<g opacity="${op}">${s}</g>`; }
     if (o.type === 'svg') return `<g opacity="${op}">${typeof o.svg === 'function' ? o.svg(t, c) : o.svg}</g>`;
