@@ -23,3 +23,8 @@
 - 2026-10-11 11:07:32 tcv08-lizzie-borden: rendering (final, seed 1)
 - 2026-10-11 11:08:57 produce 7: regenerating episode data
 - 2026-10-11 11:08:57 tcv07-gilgo-beach: rendering (final, seed 1)
+- 2026-10-11 11:25:50 tcv08-lizzie-borden: rendered in 1099s
+- 2026-10-11 11:27:05 tcv08-lizzie-borden: VERIFIED -> series/true-crime-cinematic/output/true_crime_08_lizzie_borden.mp4 (79.7s, 35.0 MB, sha256 0ef027a14049)
+- 2026-10-11 11:27:12 produce 6: regenerating episode data
+- 2026-10-11 11:27:12 tcv06-whitey-bulger: rendering (final, seed 1)
+- 2026-10-11 11:29:20 tcv07-gilgo-beach: rendered in 1223s

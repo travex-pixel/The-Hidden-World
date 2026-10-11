@@ -424,9 +424,79 @@
           "ASR mishears proper names (Rivas, Elsinore) - the narration itself uses the correct names."
         ]
       }
+    },
+    "08": {
+      "id": "tcv08-lizzie-borden",
+      "title": "Acquitted of Murder. So Why Did She Burn Her Dress? #Shorts",
+      "file": "true_crime_08_lizzie_borden.mp4",
+      "media": {
+        "duration": 79.733,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 35037692,
+        "mean_volume_db": -16.6,
+        "max_volume_db": -1.6
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 2392,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -16.7,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true,
+        "captions_in_safe_area": true,
+        "no_frozen_or_static_picture": true,
+        "audio_opening_speech_steady": true,
+        "audio_opening_no_holes": true,
+        "audio_narration_on_time": true,
+        "audio_music_never_masks": true,
+        "audio_music_audible": true,
+        "audio_no_clipping": true,
+        "audio_no_long_silence": true,
+        "audio_ending_intentional": true,
+        "audio_mono_compatible": true,
+        "audio_av_duration_match": true,
+        "shot_variety_and_character_action": true,
+        "every_shot_sourced_and_tagged": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "true_peak_dbtp": -1.6
+      },
+      "asr_word_error_rate": 0.042,
+      "frames_sampled": 14,
+      "qa_dir": "series/true-crime-cinematic/qa/true_crime_08",
+      "status": "verified_automated",
+      "sha256": "0ef027a14049ea08b6ca1dd310519875863eeb71b41d70e049622296a4457635",
+      "output": "series/true-crime-cinematic/output/true_crime_08_lizzie_borden.mp4",
+      "verified": "2026-10-11T11:27:05",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
     }
   },
-  "updated": "2026-10-11T09:32:24",
+  "updated": "2026-10-11T11:27:05",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",
