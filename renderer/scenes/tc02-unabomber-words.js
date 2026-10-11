@@ -79,7 +79,7 @@
       let s = D.defs + D.camera(ctx, { zoom: [1.05, 1.0] }, w);
       s += D.typed(60, 330, 'U.S. ATTORNEY GENERAL + FBI DIRECTOR: PUBLISH', seg(t, 0.2, 2.0), { fs: 30, color: C.amber });
       const k = seg(t, l3, l3 + 0.5);
-      s += `<g opacity="${f1(k)}"><rect x="60" y="1180" width="960" height="150" rx="14" fill="#05070a" opacity="0.85"/>` + D.typed(100, 1245, '19 SEPTEMBER 1995', seg(t, l3, l3 + 1.0), { fs: 48, color: C.amber }) + D.typed(100, 1300, 'PRINTED IN FULL · 8-PAGE INSERT', seg(t, l3 + 0.8, l3 + 2.0), { fs: 32, color: C.text, weight: 400 }) + `</g>`;
+      s += `<g opacity="${f1(k)}"><rect x="60" y="1100" width="960" height="150" rx="14" fill="#05070a" opacity="0.85"/>` + D.typed(100, 1165, '19 SEPTEMBER 1995', seg(t, l3, l3 + 1.0), { fs: 48, color: C.amber }) + D.typed(100, 1220, 'PRINTED IN FULL · 8-PAGE INSERT', seg(t, l3 + 0.8, l3 + 2.0), { fs: 32, color: C.text, weight: 400 }) + `</g>`;
       return s + D.tag('ILLUSTRATION') + D.film(t) + D.bug(ctx.ep);
     },
     // 5 — one reader (no person depicted): lamp, table, the insert

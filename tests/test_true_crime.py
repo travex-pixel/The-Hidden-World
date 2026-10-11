@@ -119,6 +119,17 @@ class EngineAdditions(unittest.TestCase):
         with wave.open(a["path"]) as wa, wave.open(b["path"]) as wb:
             self.assertNotEqual(wa.getnframes(), wb.getnframes())
 
+    def test_years_spoken_naturally(self):
+        # Piper's phonemiser says "nineteen hundred seventy eight"; narration with year_words speaks years like a person
+        from pipeline.narrate import speak_years
+        self.assertEqual(speak_years("From 1978 to 1995, sixteen bombs"), "From nineteen seventy-eight to nineteen ninety-five, sixteen bombs")
+        self.assertEqual(speak_years("In 2012."), "In twenty twelve.")
+        self.assertEqual(speak_years("in 2005 and 1905"), "in two thousand five and nineteen oh-five")
+        for keep in ("35,000-word", "$1,000,000", "the 1970s", "$1,999"):
+            self.assertEqual(speak_years(keep), keep)
+        for eid in EPS:
+            self.assertTrue(load_episode(eid)["narrator_profile"].get("year_words"), f"{eid}: years must be spoken as words")
+
     def test_caption_emphasis_matching_ignores_punctuation(self):
         js = (ROOT / "renderer" / "engine.js").read_text()
         self.assertIn("const capKey", js)

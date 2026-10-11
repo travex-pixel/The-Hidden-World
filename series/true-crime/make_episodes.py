@@ -13,7 +13,7 @@ ACCESSED = "2026-10-11"
 
 # One narrator for the whole Case Files series (LibriTTS-R speaker 666: low register ~105 Hz measured,
 # 0% word error on an offline Whisper round-trip; distinct from the thriller cast's voices).
-NARRATOR = {"model": "en_US-libritts_r-medium", "speaker": 666, "length_scale": 1.1}
+NARRATOR = {"model": "en_US-libritts_r-medium", "speaker": 666, "length_scale": 1.1, "year_words": True}
 CAPTION_Y = 1420   # captions sit above the Shorts title/channel overlay at the bottom of the screen
 
 

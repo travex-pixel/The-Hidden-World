@@ -34,6 +34,29 @@ def trim_silence(x: np.ndarray, sr: int, thresh: float = 0.01, keep: float = 0.0
 
 _VOICES = {}
 
+_ONES = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
+_TENS = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
+
+
+def _two(n: int) -> str:
+    return _ONES[n] if n < 20 else _TENS[n // 10] + ("" if n % 10 == 0 else "-" + _ONES[n % 10])
+
+
+def speak_years(text: str) -> str:
+    """Spell four-digit years the way a narrator says them. Piper's phonemiser reads '1978' as
+    'nineteen hundred seventy eight'; this gives 'nineteen seventy-eight', 'two thousand five', 'twenty twelve'.
+    Only standalone 1100-2099 numbers are touched (not '35,000', not '1978s')."""
+    import re
+
+    def year(m):
+        y = int(m.group(0)); hi, lo = divmod(y, 100)
+        if 2000 <= y <= 2009:
+            return "two thousand" + ("" if lo == 0 else " " + _ONES[lo])
+        if lo == 0:
+            return _two(hi) + " hundred"
+        return _two(hi) + " " + ("oh-" + _ONES[lo] if lo < 10 else _two(lo))
+    return re.sub(r"(?<![\d,.])(1[1-9]\d\d|20\d\d)(?!\d|,\d|s\b)", year, text)
+
 
 def narrate_scene(voice_name: str, text: str, length_scale: float = 1.0, speaker=None) -> Path:
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -86,7 +109,8 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
     parts, lines, t, sr = [], [], 0.0, None
     for ln in scene["lines"]:
         v = narrator_voice if (narrator_voice and ln["who"] == "narrator") else load_character(ln["who"])["voice"]
-        p = narrate_scene(v["model"], ln["text"], v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"))
+        spoken = speak_years(ln["text"]) if v.get("year_words") else ln["text"]   # captions keep the digits
+        p = narrate_scene(v["model"], spoken, v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"))
         x, sr_ = read_wav(p); sr = sr or sr_
         if ln.get("fx") == "phone":   # small phone speaker: band-limited and slightly crunchy
             X = np.fft.rfft(x); f = np.fft.rfftfreq(len(x), 1 / sr_)
