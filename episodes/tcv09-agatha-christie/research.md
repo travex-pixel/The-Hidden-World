@@ -1,13 +1,13 @@
 # Case File 09: Agatha Christie's 11 missing days (3–14 December 1926)
 
-Research ledger. Compiled 2026-10-11 for the cinematic Case Files episode `tcv09-agatha-christie`.
+Research ledger. Compiled 2026-10-11 for the cinematic Case Files episode `tcv09-agatha-christie` (12 scenes, about 78 s).
 
 ## Method and limits
 - 12 web searches (standard mode) on 2026-10-11. WebFetch and curl are blocked in the build environment, so every source below is cited from its **search-result extract**, not a full read of the page. Each source record in `episode.json` says so in its `accessed` field.
 - Starting point: `series/true-crime/research_next_slate/producer_checks_2026-10-11.md` (Agatha Christie section).
 - Rule applied: every narrated fact and every on-screen fact needs at least two independent sources. Anything with only one source is either attributed ("reported", "the papers said"), kept off screen, or listed under "Myths / details NOT used".
 - This was not a crime. No one was charged with anything. Christie was found alive and well.
-- Real people (Agatha Christie, Arthur Conan Doyle, Dorothy L. Sayers) are illustrated representations, not likenesses. Police, volunteers, hotel staff and musicians are generic 1920s figures.
+- Real people (Agatha Christie, Arthur Conan Doyle) are illustrated representations, not likenesses, and are tagged "ILLUSTRATION · NOT A LIKENESS" on screen. Police, volunteers, hotel staff and musicians are generic 1920s figures.
 
 ## Established facts (narrated)
 | Claim id | Fact | Sources |
@@ -18,7 +18,6 @@ Research ledger. Compiled 2026-10-11 for the cinematic Case Files episode `tcv09
 | A_search | Contemporary press reports and later popular accounts give more than 1,000 police officers and an estimated 15,000 volunteers, and say aeroplanes were used. The narration attributes these figures ("were reported", "the papers said"). | Countryfile; The Sunday Post; Bite Sized Britain; National Archives record (caveat below) |
 | A_rumours | Public speculation ranged from accident to murder, and some suspected her husband. Nobody was ever charged; she was found alive. | Aspects of History; History Hit; Stylist |
 | A_doyle | Sir Arthur Conan Doyle gave one of Christie's gloves to the medium (psychometrist) Horace Leaf for a reading, on Sunday 12 Dec 1926 (Leeds Mercury, 21 Dec 1926; Doyle's letter to the Morning Post). | Arthur Conan Doyle Encyclopedia; History Collection; Countryfile |
-| A_sayers | The crime novelist Dorothy L. Sayers visited Newlands Corner to look for clues; accounts link it to her novel *Unnatural Death*. | Gizmodo; History Collection |
 | A_found | On 14 Dec 1926, 11 days after she vanished, she was recognised at the Swan Hydropathic Hotel in Harrogate, Yorkshire (now the Old Swan Hotel). A banjo player in the hotel band is said to have recognised her. | Wikipedia (Old Swan Hotel); Gizmodo; History Hit; Ripon Gazette |
 | A_neele | She had registered as Mrs Teresa (also spelt Theresa) Neele, from Cape Town, posing as a woman newly arrived from South Africa. Neele was the surname of Archie's mistress, Nancy Neele. | Gizmodo; Lucy Worsley via Pocklington Post; Wikipedia (Old Swan Hotel); National Geographic |
 | A_memory | The family's public explanation was loss of memory (amnesia). Archie spoke of amnesia and possible concussion. | A&E; History Hit; Stylist |
@@ -48,6 +47,7 @@ The narration says: "Biographer Andrew Norman suggests a 'fugue state'… Others
 - **Glove origin.** One account says Doyle took the glove from her car; the Leeds Mercury says the medium was given it without being told whose it was. We say only that he took one of her gloves to a medium.
 
 ## Myths and details NOT used
+- **Dorothy L. Sayers visited Newlands Corner** to look for clues (Gizmodo; History Collection; accounts link it to her novel *Unnatural Death*). Two sources, but both are popular-history sites, and the scene was cut to keep the runtime under 80 s. It can be used in a longer cut.
 - "Aeroplanes were used for the first time in a missing-person search": single-sourced and contested by the police letter. Not used.
 - "15,000 volunteers" as a fact on screen: an estimate. Narrated only as "thousands of volunteers", attributed to reports.
 - The medium's reading ("she is alive"; "heard of on Wednesday"): only the Leeds Mercury reprint. Not used.
@@ -58,7 +58,8 @@ The narration says: "Biographer Andrew Norman suggests a 'fugue state'… Others
 
 ## Ethics decisions
 - Kind framing of distress. Agatha is shown with dignity: walking out alone, a hand to her face, writing at night. No mockery and no "gotcha" tone about the fake name. The fugue and trauma theories are given first and the cynical ones last, all attributed.
-- Archie is never accused. The rumours line is posed as questions that were asked at the time ("Was her husband to blame?"), and the claim notes that no one was charged.
+- Archie is never accused and is not depicted. The rumours line is posed as questions that were asked at the time ("Was her husband to blame?"), and the claim notes that no one was charged.
+- The medium (Horace Leaf) is not named on screen and appears only as an anonymous silhouette. The final dawn shot keeps Agatha away from the chalk pit, so it implies no danger.
 - Nancy Neele is named only as the source of the surname, which is a matter of public record. She is not depicted.
 - Generic places. The house is labelled "generic house, not the real home". The hotel, downs and study are generic illustrations, not replicas.
 - No replica newspapers, hotel registers or police documents. The cards are our own typed graphics with plain text, and the newspapers have no mastheads and illegible text.

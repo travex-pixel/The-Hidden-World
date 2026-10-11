@@ -233,8 +233,8 @@
         cam: { keys: [{ at: 0, x: 40, y: 160, z: 1.32 }, { at: 0.2, x: 30, y: 140, z: 1.26, dur: 3.2 }, { at: thou - 0.5, x: 0, y: -30, z: 1.0, dur: 1.8 }], handheld: 2.5 },
         figures: [sr(-140, 260, thou - 0.1, { style: 'flatcap', color: '#3a3026' }), sr(60, 240, thou + 0.1), sr(720, 220, thou), sr(900, 200, thou + 0.25), sr(1130, 220, thou + 0.15)],
         overlays: [
-          { type: 'label', at: elev - 0.1, until: thou - 0.3, x: 60, y: 400, text: '11 DAYS MISSING', fs: 48, sub: 'December 1926' },
-          { type: 'label', at: hotel - 0.2, x: 60, y: 400, text: 'FOUND: A SPA HOTEL', fs: 44, sub: 'under a false name' }
+          { type: 'label', at: elev - 0.1, until: thou - 0.3, x: 60, y: 430, text: '11 DAYS MISSING', fs: 48, sub: 'December 1926' },
+          { type: 'label', at: hotel - 0.2, x: 60, y: 430, text: 'FOUND: A SPA HOTEL', fs: 44, sub: 'under a false name' }
         ]
       });
     },
@@ -251,8 +251,8 @@
                  { at: l2, headTurn: -0.45, gaze: [-0.5, 0.2], dur: 0.6 }, { at: hus, pose: 'bowed', expr: 'worried', gaze: [0, 0.6], dur: 0.6 }, { at: ano, pose: 'hand_to_face', expr: 'blank', dur: 0.6 }] }],
         props: [{ depth: 0.99, svg: `<g><rect x="900" y="560" width="250" height="640" fill="#120c08" stroke="${INK}" stroke-width="10"/><rect x="900" y="560" width="250" height="640" fill="#4a6a9a" opacity="0.12"/></g>` }],
         overlays: [
-          { type: 'label', at: 0.25, until: ag - 0.3, x: 60, y: 400, text: 'SUNNINGDALE, BERKSHIRE', fs: 40, sub: 'Generic house, not the real home' },
-          { type: 'funfact', at: ag - 0.1, until: ctx.T - 0.3, y: 400, w: 920, fs: 40,
+          { type: 'label', at: 0.25, until: ag - 0.3, x: 60, y: 430, text: 'SUNNINGDALE, BERKSHIRE', fs: 40, sub: 'Generic house, not the real home' },
+          { type: 'funfact', at: ag - 0.1, until: ctx.T - 0.3, y: 420, w: 920, fs: 40,
             rows: [{ text: 'Guinness World Records lists' }, { text: 'her as the best-selling' }, { text: 'fiction writer of all time:' }, { text: 'about 2 billion copies sold.', colour: '#ffd23f' }] }
         ],
         tag: LIKENESS
@@ -272,7 +272,7 @@
             keys: [{ at: ch - 0.1, pose: 'point', gaze: [0.9, -0.1], dur: 0.45 }, { at: l2, pose: 'stand', dur: 0.5 }, { at: ag - 0.1, headTurn: -0.4, gaze: [-0.3, 0], expr: 'worried', dur: 0.5 }] }
         ],
         overlays: [
-          { type: 'label', at: 0.25, until: ch - 0.3, x: 60, y: 400, text: 'NEWLANDS CORNER, SURREY', fs: 40, sub: '4 December 1926 · morning' },
+          { type: 'label', at: 0.25, until: ch - 0.3, x: 60, y: 430, text: 'NEWLANDS CORNER, SURREY', fs: 40, sub: '4 December 1926 · morning' },
           { type: 'callout', at: ch - 0.05, until: l2 - 0.1, target: [880, 1006], depth: 0.55, r: 74, label: [560, 560], w: 360, text: 'CHALK PIT', fs: 44 },
           { type: 'callout', at: coat - 0.1, target: [140, 1050], depth: 0.8, r: 64, colour: '#e7ae4f', label: [90, 560], w: 520, text: 'HER FUR COAT', sub: 'still inside the car', fs: 44 }
         ]
@@ -293,7 +293,7 @@
           { id: 'ac9_constable', x: 850, y: 1880, scale: 0.8, dir: -1, turn: 0.4, pose: 'stand', expr: 'stern', gaze: [0.6, 0],
             keys: [{ at: pol - 0.1, pose: 'point', gaze: [0.9, 0], dur: 0.45 }, { at: thou + 0.2, pose: 'stand', dur: 0.5 }, { at: aero + 0.15, headTurn: -0.25, gaze: [0.2, -1], expr: 'realise', dur: 0.5 }] }
         ],
-        overlays: [{ type: 'label', at: 0.3, x: 60, y: 400, text: 'AS REPORTED IN THE PRESS', fs: 40, sub: '1,000+ police · thousands of volunteers' }, { type: 'label', at: aero + 0.2, x: 60, y: 1010, text: 'AEROPLANES, THE PAPERS SAID', fs: 36 }]
+        overlays: [{ type: 'label', at: 0.3, x: 60, y: 430, text: 'AS REPORTED IN THE PRESS', fs: 40, sub: '1,000+ police · thousands of volunteers' }, { type: 'label', at: aero + 0.2, x: 60, y: 1010, text: 'AEROPLANES, THE PAPERS SAID', fs: 36 }]
       });
     },
 
@@ -323,8 +323,8 @@
         ],
         props: [{ depth: 1.065, svg: glove(600, 1196, 0.95, -6) }, candle],
         overlays: [
-          { type: 'label', at: 0.3, until: doy - 0.25, x: 60, y: 400, text: 'SIR ARTHUR CONAN DOYLE', fs: 40, sub: 'Creator of Sherlock Holmes' },
-          { type: 'funfact', at: doy - 0.1, y: 400, w: 920, fs: 42, rows: [{ text: "Sherlock Holmes's creator" }, { text: "asked a medium to 'read'" }, { text: 'one of her gloves for clues.', colour: '#ffd23f' }] }
+          { type: 'label', at: 0.3, until: doy - 0.25, x: 60, y: 430, text: 'SIR ARTHUR CONAN DOYLE', fs: 40, sub: 'Creator of Sherlock Holmes' },
+          { type: 'funfact', at: doy - 0.1, y: 420, w: 920, fs: 42, rows: [{ text: "Sherlock Holmes's creator" }, { text: "asked a medium to 'read'" }, { text: 'one of her gloves for clues.', colour: '#ffd23f' }] }
         ],
         tag: LIKENESS
       });
@@ -343,7 +343,7 @@
             keys: [{ at: van, gaze: [0.3, 0.3], expr: 'relieved', dur: 0.4 }, { at: rec + 0.3, headTurn: -0.3, gaze: [-0.2, 0.1], expr: 'worried', dur: 0.6 }, { at: har, pose: 'sit_slumped', gaze: [0.1, 0.5], expr: 'blank', dur: 0.8 }] }
         ],
         props: [{ depth: 1.03, svg: roundTable(520, 1680, 0.95) }],
-        overlays: [{ type: 'label', at: 0.3, x: 60, y: 400, text: 'SWAN HYDROPATHIC HOTEL', fs: 40, sub: 'Harrogate, Yorkshire · 14 Dec 1926' }],
+        overlays: [{ type: 'label', at: 0.3, x: 60, y: 430, text: 'SWAN HYDROPATHIC HOTEL', fs: 40, sub: 'Harrogate, Yorkshire · 14 Dec 1926' }],
         tag: LIKENESS
       });
     },
@@ -416,7 +416,7 @@
         figures: [{ id: 'ac9_agatha', x: 240, y: 1660, scale: 0.62, dir: 1, turn: 0.55, pose: 'stand', expr: 'neutral', gaze: [0.7, -0.2],
           walk: { from: 240, to: 600, at: 0.15, dur: 2.0, cadence: 5.4, stride: 18 },
           keys: [{ at: hund - 0.1, headTurn: -0.55, gaze: [-0.4, 0], expr: 'neutral', dur: 0.8 }, { at: mys, pose: 'hands_together', gaze: [-0.2, 0.3], dur: 0.8 }, { at: uns, headTurn: 0, gaze: [0.8, -0.3], expr: 'blank', dur: 0.8 }] }],
-        overlays: [{ type: 'label', at: hund - 0.15, x: 60, y: 400, text: '3 DEC 1926 - 3 DEC 2026', fs: 44, sub: '100 years · still unsolved' }],
+        overlays: [{ type: 'label', at: hund - 0.15, x: 60, y: 430, text: '3 DEC 1926 - 3 DEC 2026', fs: 44, sub: '100 years · still unsolved' }],
         tag: LIKENESS
       });
     },
@@ -429,7 +429,7 @@
         cam: { from: { x: 0, y: -20, z: 1.08 }, to: { x: 0, y: 10, z: 1.0 } },
         figures: [{ id: 'ac9_inspector', x: 700, y: 1900, scale: 1.0, dir: -1, turn: 0.2, pose: 'arms_crossed', expr: 'focused', gaze: [0, 0], depth: 1.1,
           keys: [{ at: cr - 0.3, pose: 'point', expr: 'determined', gaze: [0, 0.1], headTurn: -0.2, dur: 0.5 }, { at: com, pose: 'point_up', gaze: [0.4, -0.8], dur: 0.5 }] }],
-        overlays: [{ type: 'nextcase', at: 0.15, y: 400, rows: [{ text: 'YOU PICK THE NEXT CASE', fs: 52 }, { text: 'Comment below', fs: 46, colour: '#ffd23f' }], sub: 'FOLLOW FOR MORE CASES' }]
+        overlays: [{ type: 'nextcase', at: 0.15, y: 410, rows: [{ text: 'YOU PICK THE NEXT CASE', fs: 52 }, { text: 'Comment below', fs: 46, colour: '#ffd23f' }], sub: 'FOLLOW FOR MORE CASES' }]
       });
     }
   });

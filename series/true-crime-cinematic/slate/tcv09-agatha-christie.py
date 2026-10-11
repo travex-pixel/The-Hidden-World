@@ -11,12 +11,12 @@ def build(h):
         S("s01_car", "ac9_car", [N("The world's best-selling novelist vanished for eleven days."),
                                  N("Thousands hunted for her. Then she turned up at a spa hotel, under a fake name.", pause_before=0.2)],
           "cold", ["A_guinness", "A_search", "A_found", "A_neele"],
-          sfx=[fx(0.0, "hit", 0.7), fx(0.1, "wind", 0.6), fx(3.8, "wind", 0.45), fw(1, 13, "sting", 0.35, -0.05)],
+          sfx=[fx(0.0, "hit", 0.7), fx(0.1, "wind", 0.6), fx(3.8, "wind", 0.45), fw(1, 14, "sting", 0.35, -0.05)],
           emph=["vanished", "eleven", "thousands", "fake", "name."], min_d=4.0, pad=0.2),
         S("s02_night", "ac9_night", [N("On December 3rd, 1926, Agatha Christie drove off into the night."),
                                      N("Her husband had fallen for another woman.", pause_before=0.2)],
           "unease", ["A_left", "A_marriage", "A_guinness"],
-          sfx=[fw(0, 4, "sparkle", 0.8, -0.1), fw(0, 7, "step", 0.4), fw(0, 8, "step", 0.4, 0.1), fw(1, 4, "door", 0.4, 0.1)],
+          sfx=[fw(0, 4, "sparkle", 0.8, -0.1), fw(0, 7, "step", 0.4), fw(0, 8, "step", 0.4, 0.1)],
           emph=["agatha", "christie", "another", "woman."], tr="push", pad=0.15),
         # B: the empty car, the search, the frenzy
         S("s03_found", "ac9_found", [N("Next morning, her car was found abandoned beside a chalk pit."),
@@ -28,39 +28,39 @@ def build(h):
           "tension-rise", ["A_search"], sfx=[fx(0.2, "step", 0.4), fx(0.7, "step", 0.4), fx(1.2, "step", 0.4), fw(1, 0, "rumble", 0.7, -0.4), fw(1, 0, "whoosh", 0.4)],
           emph=["thousand", "thousands", "aeroplanes,"], tr="push", pad=0.1),
         S("s05_press", "ac9_press", [N("Rumours flew. Had she been murdered? Was her husband to blame?")],
-          "tension", ["A_rumours"], sfx=[fx(0.0, "paper", 0.7), fw(0, 4, "click", 0.4), fw(0, 9, "click", 0.4)],
+          "tension", ["A_rumours"], sfx=[fx(0.0, "paper", 0.7), fw(0, 5, "click", 0.4), fw(0, 8, "click", 0.4)],
           emph=["murdered?", "husband"], min_d=3.4, pad=0.15, tr="push"),
         # C: the famous writers join in; then the hotel and the name
         S("s06_doyle", "ac9_doyle", [N("Sherlock Holmes's creator, Arthur Conan Doyle, took her glove to a medium.")],
-          "tension", ["A_doyle"], sfx=[fx(0.2, "paper", 0.4), fw(0, 8, "sparkle", 0.8, -0.1)],
+          "tension", ["A_doyle"], sfx=[fx(0.2, "paper", 0.4), fw(0, 5, "sparkle", 0.8, -0.1)],
           emph=["sherlock", "glove"], min_d=4.9, pad=0.2, tr="push"),
-        S("s08_hotel", "ac9_hotel", [N("Eleven days after she vanished, she was recognised at a spa hotel in Harrogate.")],
-          "revelation", ["A_found"], sfx=[fx(0.0, "whoosh", 0.5), fw(0, 6, "chime", 0.5, -0.05)],
+        S("s07_hotel", "ac9_hotel", [N("Eleven days after she vanished, she was recognised at a spa hotel in Harrogate.")],
+          "revelation", ["A_found"], sfx=[fx(0.0, "whoosh", 0.5), fw(0, 7, "chime", 0.5, -0.05)],
           emph=["recognised", "harrogate."], min_d=4.6, pad=0.15, tr="zoom"),
-        S("s09_name", "ac9_name", [N("She had checked in as Mrs Teresa Neele, from Cape Town."),
+        S("s08_name", "ac9_name", [N("She had checked in as Mrs Teresa Neele, from Cape Town."),
                                    N("Neele. The surname of her husband's mistress.", pause_before=0.45)],
           "tension-peak", ["A_neele"], sfx=[fw(0, 2, "pen", 0.6), fw(1, 0, "hit", 0.8, -0.04)],
           emph=["teresa", "neele,", "neele.", "mistress."], tr="push", pad=0.3),
         # D: what happened? (attributed theories) and the cliff: she never explained
-        S("s10_theories", "ac9_theories", [N("Her family blamed memory loss."),
+        S("s09_theories", "ac9_theories", [N("Her family blamed memory loss."),
                                            N("Biographer Andrew Norman suggests a 'fugue state', brought on by trauma.", pause_before=0.2),
                                            N("Others suspect revenge on Archie, or a publicity stunt.", pause_before=0.15)],
-          "unease", ["A_memory", "A_theories"], sfx=[fw(0, 3, "paper", 0.5), fw(1, 5, "paper", 0.5), fw(2, 3, "paper", 0.5), fw(2, 7, "paper", 0.5)],
+          "unease", ["A_memory", "A_theories"], sfx=[fw(0, 3, "paper", 0.5), fw(1, 5, "paper", 0.5), fw(2, 2, "paper", 0.5), fw(2, 7, "paper", 0.5)],
           emph=["memory", "fugue", "revenge", "stunt."], tr="push", pad=0.15),
-        S("s11_never", "ac9_never", [N("She never fully explained those eleven days.", pause_before=0.1),
+        S("s10_never", "ac9_never", [N("She never fully explained those eleven days.", pause_before=0.1),
                                      N("Her autobiography doesn't mention them at all.", pause_before=0.2)],
           "tension-peak", ["A_never"], sfx=[fx(0.1, "typing", 0.45), fw(1, 1, "paper", 0.4)],
           emph=["never", "at", "all."], tr="fade", pad=0.3),
         # E: the payoff (100 years) and the call to action
-        S("s12_anniv", "ac9_anniv", [N("This December 3rd marks exactly 100 years. The mystery is still unsolved.", pause_before=0.1)],
+        S("s11_anniv", "ac9_anniv", [N("This December 3rd marks exactly 100 years. The mystery is still unsolved.", pause_before=0.1)],
           "aftermath", ["A_centenary", "A_never"], sfx=[fx(0.0, "wind", 0.5), fx(3.8, "wind", 0.35)],
           emph=["100", "unsolved."], min_d=4.4, pad=0.2, tr="fade"),
-        S("s13_next", "ac9_next", [N("Which mystery should we crack next? Tell us in the comments.", pause_before=0.1)],
+        S("s12_next", "ac9_next", [N("Which mystery should we crack next? Tell us in the comments.", pause_before=0.1)],
           "outro", [], sfx=[fx(0.15, "whoosh", 0.6), fw(0, 0, "ping", 0.5, 0.2)],
           emph=["next?", "comments."], min_d=3.0, pad=1.45, tr="zoom"),
     ]
     sections = {"s01_car": "A", "s02_night": "A", "s03_found": "B", "s04_search": "B", "s05_press": "B", "s06_doyle": "C",
-                "s08_hotel": "C", "s09_name": "C", "s10_theories": "C", "s11_never": "D", "s12_anniv": "E", "s13_next": "E"}
+                "s07_hotel": "C", "s08_name": "C", "s09_theories": "C", "s10_never": "D", "s11_anniv": "E", "s12_next": "E"}
     for sc in scenes:
         sc["section"] = sections[sc["id"]]
     scenes[7]["music_drop"] = True     # silence under "Neele. The surname of her husband's mistress."
@@ -111,8 +111,8 @@ def build(h):
                 figures, scenes, claims, sources, "AGATHA CHRISTIE · 1926", bpm=76)
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"Neele": "Neel"})
     ep["score"] = {"root_hz": 146.83, "bpm": 76,
-                   "hits": [{"scene": "s09_name", "word": [1, 0], "at": 0.0, "gain": 0.45}],
-                   "cliff": {"scene": "s11_never", "word": [0, 1], "at": -0.1}}
+                   "hits": [{"scene": "s08_name", "word": [1, 0], "at": 0.0, "gain": 0.45}],
+                   "cliff": {"scene": "s10_never", "word": [0, 1], "at": -0.1}}
     ep["content_notes"] = ("Not a crime: a real, unsolved disappearance; no one was charged and she was found alive. Agatha Christie and Arthur Conan Doyle "
                            "are illustrated representations, not likenesses; police, volunteers, hotel staff and musicians are generic 1920s figures. "
                            "Search figures are attributed to press reports; theories are attributed and none is presented as fact. Her distress is treated kindly. "

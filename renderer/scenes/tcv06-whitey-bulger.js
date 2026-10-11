@@ -141,7 +141,7 @@
       const walk = `<rect x="-300" y="1200" width="${W + 600}" height="${H}" fill="${n ? '#26232a' : '#9a8676'}"/><rect x="-300" y="1200" width="${W + 600}" height="14" fill="${n ? '#3a363e' : '#b8a492'}"/>` +
         [0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => `<path d="M${-200 + i * 190} 1214 L${-420 + i * 260} ${H}" stroke="#000" stroke-opacity="0.18" stroke-width="3"/>`).join('') + `<path d="M-300 1420 L${W + 300} 1420 M-300 1700 L${W + 300} 1700" stroke="#000" stroke-opacity="0.14" stroke-width="3"/>` +
         streetLamp(o.lampX ?? 930, 1214, 560, true, t) + wash(o.lampX ?? 930, 1260, 260, 50, '#ffcf7a', n ? 0.35 : 0.15);
-      const fg = palm(-110, 2000, 1000, 40, n ? '#030304' : '#1a1218', t, 0.7, 1.6) + `<rect x="-300" y="1800" width="${W + 600}" height="400" fill="${n ? '#0a0a0c' : '#2a2226'}"/>` +
+      const fg = palm(-250, 2000, 1000, 30, n ? '#030304' : '#1a1218', t, 0.7, 1.6) + `<rect x="-300" y="1800" width="${W + 600}" height="400" fill="${n ? '#0a0a0c' : '#2a2226'}"/>` +
         Array.from({ length: 7 }, (_, i) => `<ellipse cx="${-100 + i * 220}" cy="1810" rx="140" ry="60" fill="${n ? '#07090a' : '#1c2a1e'}"/>`).join('');
       return { light: n ? { dir: 1, rim: '#ffcf7a', key: '#ffcf7a' } : { dir: 1, rim: '#ffc890', key: '#ffd9a0' }, layers: [[0.05, sky], [0.18, far], [0.4, block], [0.6, street], [1.0, walk], [1.4, fg]] };
     },
@@ -159,9 +159,9 @@
         // wallpapered wall, a cut-open section with studs and banded cash bundles inside (no weapons drawn)
         for (let i = -3; i < 14; i++) back += `<rect x="${i * 100}" y="120" width="50" height="920" fill="#44362c" opacity="0.6"/>`;
         const k = clamp(o.open ?? 1, 0, 1);
-        back += `<rect x="300" y="520" width="480" height="380" fill="#120c08" stroke="${INK}" stroke-width="8"/>` + [380, 540, 700].map(x => `<rect x="${x - 14}" y="520" width="28" height="380" fill="#7a5a36" stroke="${INK}" stroke-width="3"/>`).join('') +
-          `<g opacity="${f1(k)}">${cashBundles(318, 890, 16, 3, k)}${cashBundles(318, 740, 12, 9, k)}</g>` +
-          `<path d="M300 520 L340 560 L330 600 L300 590 Z M780 520 L742 548 L770 590 L780 600 Z" fill="#cbbba0" stroke="${INK}" stroke-width="3"/>`;
+        back += `<rect x="260" y="640" width="480" height="380" fill="#120c08" stroke="${INK}" stroke-width="8"/>` + [340, 500, 660].map(x => `<rect x="${x - 14}" y="640" width="28" height="380" fill="#7a5a36" stroke="${INK}" stroke-width="3"/>`).join('') +
+          `<g opacity="${f1(k)}">${cashBundles(278, 1010, 16, 3, k)}${cashBundles(278, 860, 12, 9, k)}</g>` +
+          `<path d="M260 640 L300 680 L290 720 L260 710 Z M740 640 L702 668 L730 710 L740 720 Z" fill="#cbbba0" stroke="${INK}" stroke-width="3"/>`;
       }
       const lamp = `<g transform="translate(${o.lampX ?? 120} 1180)"><path d="M0 0 L0 -560" stroke="#1a1410" stroke-width="10"/><path d="M-80 -560 L80 -560 L50 -680 L-50 -680 Z" fill="#d8c49a" stroke="${INK}" stroke-width="5"/></g>` + wash(o.lampX ?? 120, 620, 300, 260, '#ffcf8a', 0.32);
       const tv = o.wall ? '' : `<rect x="560" y="1000" width="520" height="180" fill="#2a2018" stroke="${INK}" stroke-width="6"/><rect x="580" y="1030" width="220" height="120" fill="#20180f" stroke="${INK}" stroke-width="4"/><rect x="840" y="1030" width="220" height="120" fill="#20180f" stroke="${INK}" stroke-width="4"/>` +
@@ -206,7 +206,7 @@
       return E.cine.shot(ctx, {
         set: 'wb6_santa_monica', grade: 'dawn', tag: LIKENESS, cam: { from: { x: -40, y: 10, z: 1.0 }, to: { x: 40, y: -10, z: 1.08 } },
         figures: [
-          { id: 'wb6_bulger', x: 120, y: 1300, scale: 0.55, dir: 1, turn: 0.5, pose: 'stand', expr: 'blank', gaze: [0.7, 0], walk: { from: 90, to: 360, at: 0.1, dur: l2 + 0.1, cadence: 6 },
+          { id: 'wb6_bulger', x: 170, y: 1300, scale: 0.55, dir: 1, turn: 0.5, pose: 'stand', expr: 'blank', gaze: [0.7, 0], walk: { from: 170, to: 380, at: 0.1, dur: l2 + 0.1, cadence: 6 },
             keys: [{ at: six, headTurn: -0.45, gaze: [0, 0.1], expr: 'stern', dur: 0.4 }, { at: tip, headTurn: 0.1, gaze: [0.8, 0.2], expr: 'neutral', dur: 0.5 }] },
           { id: 'wb6_greig', x: 640, y: 1300, scale: 0.55, dir: 1, turn: 0.55, pose: 'stand', expr: 'neutral', gaze: [0.6, 0.4],
             keys: [{ at: tip - 0.2, pose: 'kneel', gaze: [0.8, 0.7], dur: 0.6 }, { at: catW, expr: 'relieved', dur: 0.4 }], propOverride: null }
@@ -265,11 +265,11 @@
       };
       return E.cine.shot(ctx, {
         set: 'press_room', grade: 'cold', tag: LIKENESS, cam: { from: { x: 0, y: -30, z: 1.0 }, to: { x: -20, y: -50, z: 1.06 } },
-        figures: [{ id: 'official', x: 520, y: 1330, scale: 0.7, dir: 1, turn: 0.15, pose: 'stand', expr: 'stern', gaze: [0.1, 0.1],
+        figures: [{ id: 'official', x: 520, y: 1290, scale: 0.7, dir: 1, turn: 0.15, pose: 'stand', expr: 'stern', gaze: [0.1, 0.1],
           keys: [{ at: ten - 0.3, pose: 'point', headTurn: 0.4, gaze: [0.8, -0.3], dur: 0.5 }, { at: l2 - 0.1, pose: 'hands_together', headTurn: 0, gaze: [0, 0], expr: 'neutral', dur: 0.5 }, { at: dep, expr: 'relieved', dur: 0.4 }] }],
         props: [{ depth: 0.5, svg: screen }],
         overlays: [
-          { type: 'funfact', at: jack - 0.5, y: 420, fs: 40, rows: [{ text: "Jack Nicholson's mob boss" }, { text: 'in THE DEPARTED (2006) was' }, { text: 'reportedly inspired by Bulger.' }] }
+          { type: 'funfact', at: jack - 0.5, y: 432, fs: 40, rows: [{ text: "Jack Nicholson's DEPARTED mob boss" }, { text: 'was reportedly inspired by Bulger.' }] }
         ]
       });
     },
@@ -304,18 +304,17 @@
     // 7 — the tip comes in (generic FBI desk at night)
     wb6_tip(ctx) {
       const t = ctx.t, tip = WT(ctx, 0, 4, 1.2), l2 = LS(ctx, 1, 2.3), nb = WT(ctx, 1, 3, 2.9), sm = WT(ctx, 1, 5, 3.5);
-      // desk phone; the handset lifts to her face on "tip" (drawn at the figure's depth, over her hand)
+      // desk phone ringing on "tip" (ring arcs), then she takes notes
       const phone = () => {
-        const k = ease.inOut(seg(t, tip - 0.25, tip + 0.15)), cx = lerp(300, 462, k), cy = lerp(1138, 1062, k), a = lerp(0, -66, k);
-        const end = [cx - Math.cos(a * Math.PI / 180) * 62, cy - Math.sin(a * Math.PI / 180) * 62];
-        return `<g transform="translate(300 1172)"><rect x="-80" y="-30" width="160" height="40" rx="10" fill="#1c1e22" stroke="${INK}" stroke-width="4"/><rect x="-26" y="-22" width="52" height="22" rx="4" fill="#2e3238"/></g>` +
-          `<path d="M${f1(end[0])} ${f1(end[1])} C ${f1(end[0] - 20)} ${f1(end[1] + 60)} 250 1120 260 1150" stroke="#1c1e22" stroke-width="5" fill="none"/>` +
-          `<g transform="translate(${f1(cx)} ${f1(cy)}) rotate(${f1(a)})"><path d="M-78 -16 Q -84 6 -64 16 L64 16 Q 84 6 78 -16 Q 60 -26 40 -12 L-40 -12 Q -60 -26 -78 -16 Z" fill="#d2cab4" stroke="${INK}" stroke-width="4"/></g>`;
+        const ring = t > tip - 0.35 && t < tip + 0.5 ? Math.sin(t * 60) : 0, rk = seg(t, tip - 0.35, tip - 0.1) * (1 - seg(t, tip + 0.3, tip + 0.5));
+        let s_ = `<g transform="translate(${f1(330 + ring * 2)} 1172)"><rect x="-84" y="-32" width="168" height="42" rx="10" fill="#cfc8b6" stroke="${INK}" stroke-width="4"/><path d="M-78 -36 Q -84 -60 -60 -64 L60 -64 Q 84 -60 78 -36 Z" fill="#bdb5a2" stroke="${INK}" stroke-width="4"/><rect x="-30" y="-26" width="60" height="22" rx="4" fill="#3a3f46"/></g>`;
+        if (rk > 0) s_ += `<g opacity="${f1(rk)}" stroke="#ffd23f" stroke-width="6" fill="none" stroke-linecap="round">${[0, 1, 2].map(i => `<path d="M${250 - i * 22} ${1110 - i * 22} q -20 -30 0 -60"/><path d="M${410 + i * 22} ${1110 - i * 22} q 20 -30 0 -60"/>`).join('')}</g>`;
+        return s_;
       };
       return E.cine.shot(ctx, {
         set: 'task_force', setOpts: { rain: false }, grade: 'night', tag: 'ILLUSTRATION · GENERIC OFFICE', cam: { keys: [{ at: 0, x: 0, y: 40, z: 1.0 }, { at: l2, x: 60, y: 0, z: 1.12, dur: 1.4 }], handheld: 2 },
-        figures: [{ id: 'agent_b', x: 560, y: 1920, scale: 1.0, dir: -1, turn: 0.45, pose: 'read', expr: 'focused', gaze: [0.4, 0.6], depth: 1.1,
-          keys: [{ at: tip, pose: 'hand_to_face', expr: 'focused', gaze: [0.6, 0.1], dur: 0.35 }, { at: nb, expr: 'realise', gaze: [0.2, -0.2], dur: 0.4 }, { at: sm + 0.2, headTurn: -0.35, gaze: [-0.1, 0], expr: 'determined', dur: 0.5 }] }],
+        figures: [{ id: 'agent_b', x: 600, y: 1920, scale: 1.0, dir: -1, turn: 0.45, pose: 'arms_crossed', expr: 'focused', gaze: [0.7, -0.1], depth: 1.1,
+          keys: [{ at: tip - 0.2, pose: 'present', expr: 'focused', gaze: [0.7, 0.6], dur: 0.35 }, { at: nb - 0.3, pose: 'read', expr: 'realise', gaze: [0.4, 0.6], dur: 0.45 }, { at: sm + 0.2, headTurn: -0.35, gaze: [-0.1, 0], expr: 'determined', dur: 0.5 }] }],
         props: [{ depth: 1.1, svg: phone }],
         overlays: [
           { type: 'label', at: 0.2, until: l2 - 0.1, x: 60, y: 440, text: '21 JUNE 2011', fs: 46, sub: 'Evening: a tip comes in' },
@@ -337,7 +336,7 @@
         ],
         props: [{ depth: 1.0, svg: tt => wash(600, 1640, 200, 60, '#ffd9a0', 0.3) + bowl(540, 1658, 0.9) + cat(620, 1660, 0.95, -1, tt, 'eat') }],
         overlays: [
-          { type: 'funfact', at: l2 - 0.15, y: 420, rows: [{ text: 'The tipster was reportedly' }, { text: 'a former Miss Iceland.' }, { text: 'She saw the news in Iceland.', fs: 34, colour: '#ffd23f' }] }
+          { type: 'funfact', at: l2 - 0.15, y: 432, rows: [{ text: 'The tipster was reportedly' }, { text: 'a former Miss Iceland.' }, { text: 'She saw the news in Iceland.', fs: 34, colour: '#ffd23f' }] }
         ]
       });
     },
@@ -383,7 +382,7 @@
         figures: [{ id: 'agent_b', x: 880, y: 1820, scale: 1.0, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused', gaze: [0.6, 0], propOpts: { aim: 160, beamLen: 700 },
           keys: [{ at: ins, pose: 'torch', gaze: [0.7, -0.3], dur: 0.5 }, { at: cash, expr: 'realise', dur: 0.3 }, { at: walls - 0.4, pose: 'torch_low', expr: 'shocked', dur: 0.5 }] }],
         overlays: [
-          { type: 'card', at: cash - 0.1, x: 60, y: 380, w: 620, h: 250, rows: [{ text: 'NEARLY $822,000 CASH', fs: 36, colour: '#2f6b3a' }, { text: '30 GUNS', fs: 36, at: guns - 0.1 }, { text: 'MUCH OF IT IN THE WALLS', fs: 32, colour: '#8e1f18', at: walls - 0.2 }] }
+          { type: 'card', at: cash - 0.1, x: 60, y: 380, w: 620, h: 228, rows: [{ text: 'NEARLY $822,000 CASH', fs: 36, colour: '#2f6b3a' }, { text: '30 GUNS', fs: 36, at: guns - 0.1 }, { text: 'MUCH OF IT IN THE WALLS', fs: 32, colour: '#8e1f18', at: walls - 0.2 }] }
         ]
       });
     },

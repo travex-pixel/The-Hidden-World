@@ -21,14 +21,14 @@
 |---|---|---|
 | W_16years | "He hid from the FBI for sixteen years." The FBI said its task force had sought him for 16 years. He fled in late 1994 (HISTORY.com) or 1995 (the FBI on Greig's flight); on screen this is "1994-95". | FBI story 23 Jun 2011; FBI Boston statement; HISTORY.com |
 | W_who | Boston mob boss, secretly an FBI informant. | CBS News; Fox News/AP (2011); NBC News (2008) |
-| W_tipoff | His FBI handler, John Connolly, warned him of the coming indictment and he fled. Connolly was convicted of racketeering in 2002. Sources differ on the exact date of the tip (December 1994 or 1995), so the narration gives none. | NBC News 2008; WBUR 2008; CBS News |
+| W_tipoff | "His FBI handler warned him charges were coming. Bulger vanished. That agent was later convicted." The on-screen card reads "John Connolly · convicted, 2002 · racketeering". Sources differ on the exact date of the tip (December 1994 or 1995), so the narration gives none; on screen it is "1994-95". | NBC News 2008; WBUR 2008; CBS News |
 | W_list | On the FBI's Ten Most Wanted list from 1999. | FBI release 20 Jun 2011; WBUR; FBI story |
 | W_campaign | On 20 June 2011 the FBI announced a 30-second PSA built around Catherine Greig. It ran on daytime shows with many female viewers, about 350 slots in 14 markets. The aim was to reach people who might know her, such as a hair stylist, a dentist or a neighbour. | FBI release; WBUR; Bangor Daily News/AP |
 | W_tip | The tip reached the FBI on the evening of 21 June. The FBI called the arrest a direct result of the campaign. The tipster was a former neighbour in Santa Monica. | Boston Globe; NBC News; FBI story; CBS News |
 | W_cat | She and Greig "bonded over" a stray cat that the couple fed (Globe reporting). | CBS News; TIME; PRI |
 | W_lure | 22 June 2011: agents had the building manager tell Bulger that his storage locker had been broken into. He came down to the garage, where agents were waiting (Agent Scott Garriola's trial testimony). | Santa Monica Daily Press/AP; Portland Press Herald/AP |
 | W_arrest | Arrested aged 81, with Greig, in Santa Monica. | FBI story; CNBC; HISTORY.com |
-| W_cash | Nearly $822,000 in cash and 30 guns. A court filing says $822,198, "much of it… hidden inside a wall". The trial testimony says most of the guns were in holes cut into the walls. Hence "much of it hidden in the walls". | SMDP/AP trial coverage; Press Herald/AP; CBS News/AP (auction) |
+| W_cash | Narrated as "more than $800,000 in cash and 30 guns, much of it hidden in the walls"; the card reads "nearly $822,000". A court filing says $822,198, "much of it… hidden inside a wall". The trial testimony says most of the guns were in holes cut into the walls. The guns are named, never drawn. | SMDP/AP trial coverage; Press Herald/AP; CBS News/AP (auction) |
 | W_verdict | 12 August 2013: convicted on 31 of 32 counts, including racketeering. The jury found him involved in 11 of the 19 murders charged. | CNN; Boston Globe; WGBH; VOA/Reuters |
 | W_died | Died in prison in 2018. The narration says only this. | CBS News; PBS NewsHour/AP |
 | W_next | The end tease. Prosecutors said DNA from a pizza crust Rex Heuermann threw into a Manhattan trash can was linked to a hair found with a Gilgo Beach victim, which led to his 2023 arrest. | Al Jazeera; NBC New York |
@@ -39,7 +39,7 @@
 - **"Caught because of a stray cat."** Overstated. The tip came from a neighbour who knew Greig through a stray cat. Wording used: "The tip that caught him began with a stray cat" and "a stray cat helped end".
 - **"She saw the FBI's TV ad."** Unverified. Reports say she saw news coverage of the search while in Iceland, and one report says the spots did not air in Los Angeles. Wording used: "She saw the news in Iceland."
 - **"A woman in Iceland recognised her."** Misleading. She was a former Santa Monica neighbour who happened to be in Iceland.
-- **"$800,000 in the walls."** Imprecise. The figure is nearly $822,000, and "much of it" was hidden in a wall or walls. The guns are only named, never drawn.
+- **"$800,000 in the walls" (all of it).** Imprecise. The figure is nearly $822,000 (narrated as "more than $800,000"), and "much of it", not all, was hidden in a wall or walls.
 - **Greig's plastic surgery or monthly dental cleanings.** Not used (unverified in the extracts).
 - **"The only tip" / "the FBI's genius".** Not claimed. A Las Vegas man said he reported a sighting in 2008. The FBI's own corruption (Connolly) is stated plainly.
 - **The building name and the cat's name ("Tiger").** Not used (single extract).
@@ -68,3 +68,19 @@
 - **Victims.** No violence, victim, weapon or injury is shown. The murders are given in summary only ("involvement in eleven murders"). His death is "died in prison in 2018" with no detail.
 - **No imitation of official material.** No FBI seal, poster, PSA, newscast or document is imitated. The "WANTED" / "TEN MOST WANTED" cards and the TV "PUBLIC APPEAL" are our own typed graphics, with no logo, seal or phone number. Every place (the street, the apartment, the garage, the office) is generic and tagged.
 - **No invented dialogue or quotes.** The ruse is paraphrased from trial testimony, not quoted.
+
+## Final script (as built, 77.9 s, 13 shots)
+
+1. He hid from the FBI for sixteen years. / The tip that caught him began with a stray cat.
+2. "Whitey" Bulger: Boston mob boss, and secretly an FBI informant.
+3. His FBI handler warned him charges were coming. / Bulger vanished. / That agent was later convicted.
+4. By 1999, he was on the FBI's Ten Most Wanted list. / Fun fact: Jack Nicholson's Departed role was reportedly inspired by him.
+5. In 2011, the FBI tried something new. / Daytime TV ads about his girlfriend, Catherine Greig.
+6. Aimed at women who might recognise her.
+7. The next evening, a tip came in. / From a former neighbour, in Santa Monica, California.
+8. She and Greig had bonded over a stray cat. / Fun fact: she was reportedly a former Miss Iceland.
+9. A ruse: he was told someone broke into his storage locker. / He came down to the garage. Agents were waiting.
+10. Bulger, now 81, was under arrest.
+11. Inside: more than $800,000 in cash and 30 guns, much of it hidden in the walls.
+12. In 2013, he was convicted, including of involvement in eleven murders. / He died in prison in 2018.
+13. Sixteen years on the run, ended by a neighbour who knew her face. / Next: the pizza crust that helped crack a serial killer case.
