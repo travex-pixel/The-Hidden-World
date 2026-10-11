@@ -58,3 +58,14 @@
 - 2026-10-11 15:06:09 tcv14-litvinenko: rendering (final, seed 1)
 - 2026-10-11 15:12:25 produce 13: regenerating episode data
 - 2026-10-11 15:12:25 tcv13-hatton-garden: rendering (final, seed 1)
+- 2026-10-11 15:29:13 tcv13-hatton-garden: rendered in 1008s
+- 2026-10-11 15:30:23 tcv13-hatton-garden: QA FAILED ['audio_no_clipping']; frames and details in series/true-crime-cinematic/qa/true_crime_13
+- 2026-10-11 15:30:36 produce 10: regenerating episode data
+- 2026-10-11 15:30:37 tcv10-golden-state-killer: rendering (final, seed 1)
+- 2026-10-11 15:32:42 produce 13: regenerating episode data
+- 2026-10-11 15:32:42 tcv13-hatton-garden: render cached (inputs unchanged), skipping to QA
+- 2026-10-11 15:33:26 tcv14-litvinenko: rendered in 1637s
+- 2026-10-11 15:34:25 tcv13-hatton-garden: VERIFIED -> series/true-crime-cinematic/output/true_crime_13_hatton_garden.mp4 (76.9s, 33.9 MB, sha256 ce4675444e92)
+- 2026-10-11 15:35:01 tcv14-litvinenko: VERIFIED -> series/true-crime-cinematic/output/true_crime_14_litvinenko.mp4 (78.6s, 31.6 MB, sha256 8031dc9adcb8)
+- 2026-10-11 15:35:10 produce 12: regenerating episode data
+- 2026-10-11 15:35:10 tcv12-son-of-sam: rendering (final, seed 1)

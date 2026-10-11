@@ -243,8 +243,19 @@ def main(argv=None) -> int:
     # 4. mux
     final = out_dir / f"{ep['id']}.mp4"
     log("mux: combining video and audio")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out_dir / "mix.wav"), "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
-                    "-movflags", "+faststart", "-shortest", str(final)], check=True)
+    def mux(gain_db: float = 0.0):
+        af = ["-af", f"volume={gain_db:.2f}dB"] if gain_db else []
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out_dir / "mix.wav"), *af, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+                        "-movflags", "+faststart", "-shortest", str(final)], check=True)
+    mux()
+    if ep.get("loudness_lufs"):
+        # AAC can overshoot the mix's true peak (hard-edged tones such as alarm beeps): re-measure the encoded file and,
+        # if it is above -1.2 dBTP, trim the whole track by the excess. One static gain, never dynamic.
+        tp = mixdown.measure(final)["TP"]
+        if tp > -1.2:
+            trim = -1.2 - tp - 0.2
+            log(f"mux: encoded true peak {tp:.1f} dBTP, trimming {trim:.1f} dB")
+            mux(trim)
 
     # 5. verify
     log("verify: probing, decoding, contact sheet")
