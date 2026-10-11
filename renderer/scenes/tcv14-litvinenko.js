@@ -264,7 +264,7 @@
 
     // 4 - the hospital tests come back empty for weeks; then the lab finds it (lab bench and a generic spectrum, no patient)
     lt14_poison(ctx) {
-      const t = ctx.t, name = WT(ctx, 0, 5, 1.7), l1 = LS(ctx, 1, 2.9), found = WT(ctx, 1, 5, 4.6), po = WT(ctx, 2, 0, 5.7);
+      const t = ctx.t, name = WT(ctx, 0, 5, 1.7), l1 = LS(ctx, 1, 2.9), found = WT(ctx, 1, 5, 4.6), po = WT(ctx, 2, 2, 5.7);
       const screen = () => {
         const x0 = 90, y0 = 880, w = 320, h = 230; let s = `<rect x="${x0}" y="${y0}" width="${w}" height="${h}" fill="#0c1a24"/>`;
         let d = `M${x0 + 10} ${y0 + h - 30}`; const pk = seg(t, found - 0.2, found + 0.6);

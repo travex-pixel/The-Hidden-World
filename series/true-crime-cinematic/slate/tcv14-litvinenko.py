@@ -32,8 +32,8 @@ def build(h):
           emph=["two", "russian", "ill."], pad=0.25, tr="push"),
         S("s04_poison", "lt14_poison", [N("For three weeks, doctors couldn't name the poison."),
                                         N("Hours before he died, scientists found it.", pause_before=0.2),
-                                        N("Polonium-210.", pause_before=0.35)],
-          "revelation", ["L_mystery", "L_po"], sfx=[fx(0.1, "tick", 0.4), fw(0, 5, "paper", 0.5, -0.1), fw(2, 0, "hit", 0.7, -0.05), fw(2, 0, "swell", 0.5, 0.3)],
+                                        N("It was polonium-210.", pause_before=0.35)],
+          "revelation", ["L_mystery", "L_po"], sfx=[fx(0.1, "tick", 0.4), fw(0, 5, "paper", 0.5, -0.1), fw(2, 2, "hit", 0.7, -0.05), fw(2, 2, "swell", 0.5, 0.3)],
           emph=["three", "weeks,", "hours", "polonium-210."], pad=0.45, tr="fade"),
         S("s05_detect", "lt14_detect", [N("Its radiation can't even get through skin.", pause_before=0.1)],
           "tension", ["L_alpha"], sfx=[fw(0, 3, "sparkle", 0.8, -0.1), fw(0, 6, "beep", 0.35, 0.1)],
@@ -75,7 +75,7 @@ def build(h):
                 "s07_hottest": "C", "s08_charge": "C", "s09_inquiry": "D", "s10_deny": "D", "s11_echr": "D", "s12_end": "E"}
     for sc in scenes:
         sc["section"] = sections[sc["id"]]
-    scenes[3]["music_drop"] = True     # "Polonium-210."
+    scenes[3]["music_drop"] = True     # "It was polonium-210."
     scenes[8]["music_drop"] = True     # the inquiry's conclusion
     scenes[-1]["fade_out"] = True
 
@@ -191,7 +191,7 @@ def build(h):
         "polonium-210": "polonium two ten", "FSB": "F S B", "UK": "U K",
         "Lugovoi": "Lugovoy", "Kovtun": "Kovtoon", "Patrushev": "Patrooshev", "Litvinenko": "Litvinyenko"})
     ep["score"] = {"root_hz": 138.59, "bpm": 84,
-                   "hits": [{"scene": "s04_poison", "word": [2, 0], "at": -0.05, "gain": 0.45}],
+                   "hits": [{"scene": "s04_poison", "word": [2, 2], "at": -0.05, "gain": 0.45}],
                    "cliff": {"scene": "s12_end", "word": [0, 7], "at": -0.08}}
     ep["content_notes"] = ("No trial has taken place. The killers are named only as the findings of a UK public inquiry (2016) and the European Court of Human Rights (2021), "
                            "always attributed; Lugovoi's denial, Kovtun's denial and his death in 2022, and Russia's denial are stated. Nobody is called a murderer in the "
