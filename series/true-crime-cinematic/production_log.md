@@ -39,3 +39,10 @@
 - 2026-10-11 11:49:26 tcv09-agatha-christie: VERIFIED -> series/true-crime-cinematic/output/true_crime_09_agatha_christie.mp4 (78.2s, 30.9 MB, sha256 265141f63629)
 - 2026-10-11 11:49:31 produce 4: regenerating episode data
 - 2026-10-11 11:49:31 tcv04-louvre-heist: rendering (final, seed 1)
+- 2026-10-11 12:01:07 tcv05-db-cooper: rendered in 916s
+- 2026-10-11 12:02:18 tcv05-db-cooper: VERIFIED -> series/true-crime-cinematic/output/true_crime_05_db_cooper.mp4 (79.9s, 35.2 MB, sha256 62b67b956372)
+- 2026-10-11 12:03:40 produce 5: regenerating episode data
+- 2026-10-11 12:03:40 tcv05-db-cooper: rendering (final, seed 1)
+- 2026-10-11 12:04:00 tcv04-louvre-heist: RENDER FAILED, see out/tcv04-louvre-heist/ and fix; re-run produce.py 4
+- 2026-10-11 12:05:35 produce 4: regenerating episode data
+- 2026-10-11 12:05:35 tcv04-louvre-heist: rendering (final, seed 1)
