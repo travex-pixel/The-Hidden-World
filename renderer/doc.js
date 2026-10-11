@@ -35,16 +35,16 @@
     return `<rect width="${W}" height="${H}" fill="${C.night}"/>`;
   }
   // "ILLUSTRATION" label for any drawn reconstruction of a real object, person or place
-  function tag(text = 'ILLUSTRATION', x = 60, y = 250) {
-    const w = text.length * 15.5 + 34;
-    return `<g opacity="0.92"><rect x="${x}" y="${y}" width="${f1(w)}" height="40" rx="6" fill="#000" fill-opacity="0.55" stroke="${C.text}" stroke-opacity="0.5" stroke-width="2"/>` +
-      `<text x="${x + 17}" y="${y + 28}" ${TYPE} font-weight="700" font-size="25" letter-spacing="1.5" fill="${C.text}">${esc(text)}</text></g>`;
+  function tag(text = 'ILLUSTRATION', x = 60, y = 244) {
+    const w = text.length * 17.6 + 34;
+    return `<g opacity="0.92"><rect x="${x}" y="${y}" width="${f1(w)}" height="44" rx="6" fill="#000" fill-opacity="0.55" stroke="${C.text}" stroke-opacity="0.5" stroke-width="2"/>` +
+      `<text x="${x + 17}" y="${y + 31}" ${TYPE} font-weight="700" font-size="28" letter-spacing="1.5" fill="${C.text}">${esc(text)}</text></g>`;
   }
   // series bug, top of frame (kept clear of the Shorts UI)
   function bug(ep) {
     const cf = ep.case_file || {};
-    return `<g opacity="0.85"><text x="60" y="170" ${TYPE} font-weight="700" font-size="28" letter-spacing="4" fill="${C.amber}">CASE FILE ${esc(cf.number || '')}</text>` +
-      `<text x="60" y="206" ${TYPE} font-size="24" letter-spacing="2" fill="${C.muted}">${esc(cf.label || '')}</text></g>`;
+    return `<g opacity="0.9"><text x="60" y="166" ${TYPE} font-weight="700" font-size="36" letter-spacing="5" fill="${C.amber}">CASE FILE ${esc(cf.number || '')}</text>` +
+      `<text x="60" y="210" ${TYPE} font-weight="700" font-size="28" letter-spacing="2" fill="${C.muted}">${esc(cf.label || '')}</text></g>`;
   }
   // typed text revealed character by character
   function typed(x, y, text, p, opts = {}) {
@@ -126,6 +126,8 @@
     const g0 = m.grid || 1; for (let lo = Math.floor(view.center[0] - view.span) ; lo <= view.center[0] + view.span; lo += g0) { const a = P([lo, view.center[1] - 60]), b = P([lo, view.center[1] + 60]); s += `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${C.cold}" stroke-opacity="0.08" stroke-width="2"/>`; }
     for (let la = Math.floor(view.center[1] - view.span * 2); la <= view.center[1] + view.span * 2; la += g0) { const a = P([view.center[0] - 60, la]), b = P([view.center[0] + 60, la]); s += `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${C.cold}" stroke-opacity="0.08" stroke-width="2"/>`; }
     s += `<g filter="url(#dblur)" opacity="0.5">${mapLines(geo, view, { stroke: C.cold, sw: 10, op: 0.35 })}</g>` + mapLines(geo, view, { stroke: '#b9d6e2', sw: 3.2 });
+    if (geo.borders && m.borders !== false) { const bo = seg(ctx.t, m.borders_at || 0, (m.borders_at || 0) + 0.8); s += `<g stroke-dasharray="10 9" opacity="${f1(bo * 0.8)}">` + mapLines({ lines: geo.borders }, view, { stroke: C.amber, sw: 2.6 }) + `</g>`; }
+    if (m.region_label) { const [x, y] = P(m.region_label.ll); s += `<text x="${f1(x)}" y="${f1(y)}" text-anchor="middle" ${TYPE} font-weight="700" font-size="${m.region_label.fs || 30}" letter-spacing="4" fill="${C.amber}" opacity="${f1(0.85 * seg(ctx.t, m.region_label.at || 0, (m.region_label.at || 0) + 0.8))}">${esc(m.region_label.text)}</text>`; }
     for (const lb of m.labels || []) { const [x, y] = P(lb.ll); s += `<text x="${f1(x)}" y="${f1(y)}" text-anchor="middle" ${TYPE} font-size="${lb.fs || 30}" letter-spacing="${lb.ls ?? 6}" fill="${C.muted}" opacity="${f1(seg(ctx.t, lb.at || 0, (lb.at || 0) + 0.6))}">${esc(lb.text)}</text>`; }
     for (const r of m.routes || []) {
       const pts = r.path.map(P); let d = ''; pts.forEach((q, i) => { d += (i ? 'L' : 'M') + f1(q[0]) + ' ' + f1(q[1]); });
@@ -133,6 +135,8 @@
       s += `<path d="${d}" fill="none" stroke="${r.colour || C.amber}" stroke-width="6" stroke-dasharray="${f1(L)}" stroke-dashoffset="${f1(L * (1 - k))}" stroke-linecap="round"/>`;
     }
     for (const pn of m.pins || []) s += pin(P, pn.ll, pn.label, seg(ctx.t, pn.at, pn.at + 0.8), pn);
+    if (m.title) { const q = seg(ctx.t, m.title.at || 0, (m.title.at || 0) + 0.6); s += `<g opacity="${f1(q)}"><text x="60" y="320" ${TYPE} font-weight="700" font-size="44" fill="${C.amber}" stroke="#000" stroke-width="6" paint-order="stroke">${esc(m.title.text)}</text>` + (m.title.sub ? `<text x="60" y="366" ${TYPE} font-weight="700" font-size="28" fill="${C.muted}" stroke="#000" stroke-width="5" paint-order="stroke">${esc(m.title.sub)}</text>` : '') + `</g>`; }
+    if (m.stat) { m.stat.rows.forEach((r_, i) => { const q = ease.out(seg(ctx.t, m.stat.at + i * 0.35, m.stat.at + i * 0.35 + 0.5)); s += `<text x="${f1(60 + i * 330)}" y="${f1(1240 + (1 - q) * 20)}" opacity="${f1(q)}" ${TYPE} font-weight="700" font-size="46" fill="${i === 1 ? C.red : C.text}" stroke="#000" stroke-width="6" paint-order="stroke">${esc(r_)}</text>`; }); }
     if (m.scale_note) s += `<text x="${W - 60}" y="1180" text-anchor="end" ${TYPE} font-size="24" fill="${C.muted}" opacity="0.8">${esc(m.scale_note)}</text>`;
     return s;
   }

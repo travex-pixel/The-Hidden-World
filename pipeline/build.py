@@ -140,7 +140,7 @@ def main(argv=None) -> int:
     music = audio.compose(tl, total, seed, bpm=ep.get("music", {}).get("bpm", 96), key_semi=decisions["music_key_offset"])
     clips = [(s["narration_at"], *read_wav(Path(n["path"]))) for s, n in zip(tl, narr)]
     clips = [(at, x, sr) for at, (x, sr) in [(c[0], (c[1], c[2])) for c in clips]]
-    sfx_events = [(s["start"] + fx["at"], fx["name"]) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] + fx["at"] < s["end"]]
+    sfx_events = [(s["start"] + fx["at"], fx["name"], fx.get("gain", 1.0)) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] + fx["at"] < s["end"]]
     if "metronomes" in ep:
         ep["metronomes"] = metronome_model(ep["metronomes"])
         for s, sc in zip(tl, ep["scenes"]):
@@ -160,6 +160,9 @@ def main(argv=None) -> int:
         music = (music * np.convolve(env, k, mode="same")).astype(np.float32)
     mixed = audio.mix(total, clips, music, sfx_events, seed)
     audio.write_wav(out_dir / "mix.wav", mixed)
+    if ep.get("loudness_lufs"):   # optional: normalise the final mix (YouTube plays back at about -14 LUFS)
+        audio.loudnorm(out_dir / "mix.wav", float(ep["loudness_lufs"]))
+        log(f"audio: loudness normalised to {ep['loudness_lufs']} LUFS")
     audio.write_wav(out_dir / "music_only.wav", music)
 
     # 3. render frames

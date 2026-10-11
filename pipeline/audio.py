@@ -277,6 +277,29 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
     if name == "whoosh":
         t = tt(0.5)
         return (lowpass_fast(noise(0.5), 1500) * env(len(t), 0.15, 0.1, 0.5, 0.2) * 0.3).astype(np.float32)
+    if name == "typing":  # typewriter: a burst of irregular key strikes with a carriage bell-less clack
+        out = np.zeros(int(1.2 * SR), np.float32); at = 0.0
+        while at < 1.05:
+            t = tt(0.05); k = 0.5 + 0.5 * rng.random()
+            x = (lowpass_fast(noise(0.05), 5000) * np.exp(-t * 180) * 0.7 + np.sin(2 * np.pi * (180 + 60 * rng.random()) * t) * np.exp(-t * 90) * 0.4) * k
+            add(out, x.astype(np.float32), at); at += 0.06 + 0.07 * rng.random()
+        return out
+    if name == "wind":   # 4 s of low desert wind, slow gusts
+        t = tt(4.0)
+        x = lowpass_fast(noise(4.0), 500) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.35 * t + rng.random() * 6)) + lowpass_fast(noise(4.0), 1800) * 0.08
+        f = int(0.8 * SR); x[:f] *= np.linspace(0, 1, f); x[-f:] *= np.linspace(1, 0, f)
+        return (x * 0.55).astype(np.float32)
+    if name == "gavel":  # two wooden knocks
+        out = np.zeros(int(0.7 * SR), np.float32)
+        for k, a in ((0.0, 0.9), (0.22, 0.7)):
+            t = tt(0.18)
+            x = np.sin(2 * np.pi * 420 * t) * np.exp(-t * 45) * 0.5 + np.sin(2 * np.pi * 160 * t) * np.exp(-t * 30) * 0.6 + lowpass_fast(noise(0.18), 4000) * np.exp(-t * 160) * 0.4
+            add(out, (x * a).astype(np.float32), k)
+        return out
+    if name == "hit":    # low cinematic impact for a verified reveal
+        t = tt(2.2)
+        x = np.sin(2 * np.pi * (38 + 40 * np.exp(-t * 6)) * t) * np.exp(-t * 1.8) * 0.9 + lowpass_fast(noise(2.2), 900) * np.exp(-t * 5) * 0.35
+        return x.astype(np.float32)
     raise KeyError(name)
 
 
@@ -288,6 +311,20 @@ def write_wav(path: Path, x: np.ndarray, sr: int = SR) -> None:
     with wave.open(str(path), "wb") as w:
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr)
         w.writeframes((x * 32767).astype(np.int16).tobytes())
+
+
+def loudnorm(path: Path, target_lufs: float = -14.0, true_peak: float = -1.5) -> dict:
+    """Two-pass EBU R128 loudness normalisation of a WAV in place (ffmpeg loudnorm, linear mode). Returns measured stats."""
+    import json as _json, subprocess as _sp
+    m = _sp.run(["ffmpeg", "-hide_banner", "-i", str(path), "-af", f"loudnorm=I={target_lufs}:TP={true_peak}:LRA=11:print_format=json", "-f", "null", "-"],
+                capture_output=True, text=True).stderr
+    st = _json.loads(m[m.rindex("{"):m.rindex("}") + 1])
+    tmp = path.with_suffix(".norm.wav")
+    af = (f"loudnorm=I={target_lufs}:TP={true_peak}:LRA=11:measured_I={st['input_i']}:measured_TP={st['input_tp']}:measured_LRA={st['input_lra']}:"
+          f"measured_thresh={st['input_thresh']}:offset={st['target_offset']}:linear=true")
+    _sp.run(["ffmpeg", "-v", "error", "-y", "-i", str(path), "-af", af, "-ar", str(SR), "-c:a", "pcm_s16le", str(tmp)], check=True)
+    tmp.replace(path)
+    return st
 
 
 def resample(x: np.ndarray, sr_in: int, sr_out: int = SR) -> np.ndarray:

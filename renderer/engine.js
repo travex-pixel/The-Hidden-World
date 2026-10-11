@@ -286,6 +286,7 @@
   }
 
   // ---------- thriller captions: speaker name in their colour, words revealed in time with speech
+  const capKey = w => w.toLowerCase().replace(/[^a-z0-9'-]/g, '').replace(/^'+|'+$/g, '');   // caption emphasis matching ignores punctuation
   function thrillerCaption(text, name, colour, t, progress, y, emph) {
     const words = text.split(' '); const shown = Math.max(1, Math.ceil(words.length * clamp(progress, 0, 1)));
     const lines = wrap(text, 26); const fs = 54, lh = 66; let wi = 0; const op = ease.out(seg(t, 0, 0.18));
@@ -294,7 +295,7 @@
     lines.forEach((l, i) => {
       const ws = l.split(' '); const yy = f1(y - (lines.length - 1) * lh / 2 + i * lh + 18);
       s += `<text x="${W / 2}" y="${yy}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" stroke="#05040a" stroke-width="12" stroke-linejoin="round" paint-order="stroke">` +
-        ws.map(w => { const vis = wi++ < shown; const hot = emph && emph.has(w.toLowerCase().replace(/[^a-z0-9'.-]/g, '').replace(/[.]+$/, '')); return `<tspan fill="${hot ? '#f2b84b' : '#ffffff'}" fill-opacity="${vis ? 1 : 0.28}" stroke-opacity="${vis ? 1 : 0.2}">${esc(w)} </tspan>`; }).join('') + `</text>`;
+        ws.map(w => { const vis = wi++ < shown; const hot = emph && emph.has(capKey(w)); return `<tspan fill="${hot ? '#f2b84b' : '#ffffff'}" fill-opacity="${vis ? 1 : 0.28}" stroke-opacity="${vis ? 1 : 0.2}">${esc(w)} </tspan>`; }).join('') + `</text>`;
     });
     return s + '</g>';
   }
@@ -303,7 +304,7 @@
     if (!ln) return '';
     const sp = cast[ln.who] || {}; const narr = ln.who === 'narrator';
     const progress = (t - ln.start) / Math.max(0.3, ln.end - ln.start) * 1.15;
-    const emph = ctx.scene.emphasis ? new Set(ctx.scene.emphasis.map(w => w.toLowerCase())) : null;  // optional key words in amber
+    const emph = ctx.scene.emphasis ? new Set(ctx.scene.emphasis.map(capKey)) : null;  // optional key words in amber
     return thrillerCaption(ln.text, narr ? null : sp.name.split(' ')[0], narr ? '#cfd6e6' : (sp.signature || {}).colour || '#fff', t - ln.start + 0.12, progress, ctx.scene.caption_y || 1640, emph);
   }
 

@@ -7,11 +7,11 @@ ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_TOP = ["id", "number", "title", "central_question", "template", "narrator_voice",
                 "target_duration_seconds", "scenes", "claims", "sources"]
 REQUIRED_SCENE = ["id", "scene", "min_duration", "pad_after", "music_cue", "sfx", "claims", "transition"]
-TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "thriller"}
+TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "thriller", "true-crime"}
 TRANSITIONS = {"cut", "wipe", "iris", "fade"}
 CLAIM_TYPES = {"established", "plausible", "illustrative", "estimate", "disputed", "metaphor"}
 MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath"}
-SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain"}
+SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain", "typing", "wind", "gavel", "hit"}
 URL_RE = re.compile(r"^https://[\w.-]+(/[^\s]*)?$")
 
 
