@@ -34,7 +34,7 @@
 [ 45.00s –  54.75s] s08_password
   NARRATOR [45.25s]: Then it got embarrassing.
   NARRATOR [46.77s]: A 2014 audit reportedly found the museum's CCTV password was... LOUVRE.
-  NARRATOR [51.24s]: Still in use in 2025? Unconfirmed.
+  NARRATOR [51.80s]: Still in use in 2025? Unconfirmed.
 
 [ 54.75s –  59.25s] s09_ff_mona
   NARRATOR [55.00s]: Fun fact: the Mona Lisa was stolen from the Louvre too, in 1911.
