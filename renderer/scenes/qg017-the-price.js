@@ -30,7 +30,7 @@
       const { t } = ctx; const cut = LS(ctx, 1) - 0.1;
       if (t < cut) {
         setCam(lerp(1.0, 1.08, sm(t, 0, cut)) + punch(t, LS(ctx, 0) + 0.5, 0.05), 540, 900, ctx.gt);
-        return Q.frame(ctx, T.listing(t, { title: '24" monitor (same model)', sub: 'Used · good condition', price: '£90' }), GRADE.day, { y: 1560 });
+        return Q.frame(ctx, T.listing(t, { title: 'Same 24" monitor', sub: 'Used · good condition', price: '£90' }), GRADE.day, { y: 1560 });
       }
       setCam(1.12 + punch(t, cut, 0.05), 600, 1050, ctx.gt);
       return Q.frame(ctx, shot(ctx, { me: { ex: T.CALM }, them: { ex: { b: [0.7, 0.1], smile: 0.35, lid: 0.25, squint: 0.3 }, shrug: Math.sin(Math.PI * seg(t, cut, LE(ctx, 1))) }, strike: 1, second: 1 }), GRADE.day, { y: 1500 });
