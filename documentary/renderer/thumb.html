@@ -1,0 +1,100 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Thumbnail renderer (1280x720)</title>
+<style>
+  @font-face{font-family:'Fraunces';font-weight:800;src:url('../../assets/fonts/Fraunces-ExtraBold.ttf')}
+  html,body{margin:0;background:#000}canvas{display:block}
+</style></head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<div style="position:absolute;left:-9999px"><span style="font-family:'Inter Display';font-weight:900">a</span><span style="font-family:Inter;font-weight:800">a</span><span style="font-family:'Courier 10 Pitch'">a</span><span style="font-family:Fraunces;font-weight:800">a</span></div>
+<script>
+/* Three thumbnail concepts in the documentary's visual identity. Generic silhouettes only (no likeness of
+   any real person), no imitation news headlines, no imitation of a real insurer's form. */
+const W = 1280, H = 720, cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const C = { ink: '#f6f2ea', red: '#e2432f', green: '#5fd38f', amber: '#f6b93b', paper: '#efe7d3' };
+function rng(seed) { let s = seed >>> 0; return () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; }; }
+function grainVignette(a = 0.07) {
+  const r = rng(5), im = ctx.createImageData(W, H);
+  for (let i = 0; i < im.data.length; i += 4) { const v = 128 + (r() - .5) * 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; }
+  const g = document.createElement('canvas'); g.width = W; g.height = H; g.getContext('2d').putImageData(im, 0, 0);
+  ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = a; ctx.drawImage(g, 0, 0); ctx.restore();
+  const v = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 1.0); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,0.7)');
+  ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
+}
+function glow(x, y, r, c) { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, c); g.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = g; ctx.fillRect(x - r, y - r, 2 * r, 2 * r); }
+function silhouette(cx, cy, s, kind, rim) {
+  const c = document.createElement('canvas'); c.width = 600; c.height = 640; const g = c.getContext('2d');
+  g.translate(300, 330); const gr = g.createLinearGradient(0, -260, 0, 260); gr.addColorStop(0, '#2e3747'); gr.addColorStop(1, '#0d1118'); g.fillStyle = gr;
+  g.beginPath(); g.moveTo(-250, 310); g.bezierCurveTo(-240, 120, -160, 70, -60, 50); g.lineTo(60, 50); g.bezierCurveTo(160, 70, 240, 120, 250, 310); g.closePath(); g.fill();
+  g.fillRect(-42, 0, 84, 70);
+  if (kind === 'f') { g.beginPath(); g.ellipse(0, -55, 112, 150, 0, Math.PI * 0.95, Math.PI * 2.05); g.lineTo(108, 70); g.quadraticCurveTo(0, 30, -108, 70); g.closePath(); g.fill(); }
+  g.beginPath(); g.ellipse(0, -80, 88, 112, 0, 0, 7); g.fill();
+  if (kind === 'm') { g.beginPath(); g.ellipse(0, -150, 92, 52, 0, Math.PI, Math.PI * 2); g.fill(); }
+  g.globalCompositeOperation = 'source-atop'; const rg = g.createLinearGradient(-260, 0, 260, 0);
+  rg.addColorStop(0, rim[0]); rg.addColorStop(0.18, 'rgba(0,0,0,0)'); rg.addColorStop(0.82, 'rgba(0,0,0,0)'); rg.addColorStop(1, rim[1]);
+  g.globalAlpha = 0.55; g.fillStyle = rg; g.fillRect(-300, -330, 600, 640);
+  ctx.drawImage(c, cx - 300 * s, cy - 330 * s, 600 * s, 640 * s);
+}
+function stamp(text, x, y, size, color, rot) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.font = `900 ${size}px "Inter Display", Inter`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  const w = ctx.measureText(text).width; ctx.shadowColor = 'rgba(0,0,0,0.8)'; ctx.shadowBlur = 30;
+  ctx.fillStyle = 'rgba(0,0,0,0.35)'; ctx.beginPath(); ctx.roundRect(-w / 2 - 30, -size * 0.72, w + 60, size * 1.44, 12); ctx.fill(); ctx.shadowColor = 'transparent';
+  ctx.strokeStyle = color; ctx.lineWidth = size * 0.085; ctx.beginPath(); ctx.roundRect(-w / 2 - 30, -size * 0.72, w + 60, size * 1.44, 12); ctx.stroke();
+  ctx.fillStyle = color; ctx.fillText(text, 0, size * 0.05); ctx.restore();
+}
+function boxText(text, x, y, size, bg, fg, align = 'left') {
+  ctx.font = `900 ${size}px "Inter Display", Inter`; ctx.textBaseline = 'middle'; const w = ctx.measureText(text).width;
+  const x0 = align === 'center' ? x - w / 2 - 18 : x; ctx.fillStyle = bg; ctx.fillRect(x0, y - size * 0.66, w + 36, size * 1.3);
+  ctx.fillStyle = fg; ctx.textAlign = 'left'; ctx.fillText(text, x0 + 18, y + size * 0.04);
+}
+
+const CONCEPTS = {
+  // A — the verdict flip: one man, two verdicts
+  verdict() {
+    let g = ctx.createLinearGradient(0, 0, W, 0); g.addColorStop(0, '#3a0d08'); g.addColorStop(0.5, '#120a0b'); g.addColorStop(1, '#06281c');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    glow(250, 300, 420, 'rgba(226,67,47,0.35)'); glow(1030, 300, 420, 'rgba(95,211,143,0.28)');
+    silhouette(W / 2, 520, 1.05, 'm', ['rgba(226,67,47,1)', 'rgba(95,211,143,1)']);
+    stamp('GUILTY', 300, 250, 120, C.red, -0.12);
+    stamp('NOT GUILTY', 975, 470, 96, C.green, -0.06);
+    ctx.font = '800 34px Inter'; ctx.fillStyle = 'rgba(246,242,234,0.9)'; ctx.textAlign = 'center'; ctx.fillText('2013', 300, 380); ctx.fillText('2015', 975, 585);
+    grainVignette();
+  },
+  // B — the policy: the money changed hands days before the killing
+  policy() {
+    ctx.fillStyle = '#0e0b08'; ctx.fillRect(0, 0, W, H); glow(980, 330, 620, 'rgba(255,214,150,0.30)');
+    ctx.save(); ctx.translate(1000, 400); ctx.rotate(0.06); ctx.scale(0.86, 0.86); ctx.shadowColor = 'rgba(0,0,0,0.75)'; ctx.shadowBlur = 50; ctx.shadowOffsetY = 20;
+    ctx.fillStyle = C.paper; ctx.fillRect(-330, -360, 660, 760); ctx.shadowColor = 'transparent';
+    ctx.fillStyle = '#7a2a1e'; ctx.font = '800 26px Inter'; ctx.textAlign = 'left'; ctx.letterSpacing = '5px'; ctx.fillText('LIFE INSURANCE', -280, -280); ctx.letterSpacing = '0px';
+    ctx.fillStyle = 'rgba(30,25,20,0.45)'; ctx.fillRect(-280, -255, 560, 3);
+    ctx.fillStyle = '#5a5045'; ctx.font = '700 30px "Courier 10 Pitch", monospace'; ctx.fillText('BENEFICIARY', -280, -170);
+    ctx.fillStyle = '#2a2520'; ctx.font = '800 66px Fraunces'; ctx.fillText('Husband', -280, -90);
+    ctx.strokeStyle = C.red; ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(-292, -110); ctx.lineTo(10, -96); ctx.stroke();
+    ctx.fillStyle = 'rgba(246,185,59,0.85)'; ctx.fillRect(-292, -30, 470, 96);
+    ctx.fillStyle = '#1d1a16'; ctx.font = '800 74px Fraunces'; ctx.fillText('Her friend', -280, 44);
+    ctx.strokeStyle = C.red; ctx.lineWidth = 8; ctx.beginPath(); ctx.ellipse(-50, 16, 290, 92, -0.04, 0, 7); ctx.stroke();
+    ctx.fillStyle = 'rgba(40,35,30,0.25)'; for (let i = 0; i < 4; i++) ctx.fillRect(-280, 150 + i * 46, 520 - i * 70, 14);
+    ctx.restore();
+    ctx.textAlign = 'left'; ctx.shadowColor = 'rgba(0,0,0,0.9)'; ctx.shadowBlur = 28;
+    ctx.font = '900 128px "Inter Display", Inter'; ctx.fillStyle = C.ink; ctx.fillText('$150,000', 52, 290); ctx.shadowColor = 'transparent';
+    boxText('DAYS BEFORE', 56, 410, 66, C.red, C.ink);
+    boxText('HER MURDER', 56, 505, 66, C.red, C.ink);
+    grainVignette();
+  },
+  // C — the alibi: behind bars despite an alibi
+  alibi() {
+    const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#111823'); g.addColorStop(1, '#05070a'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    glow(820, 260, 520, 'rgba(127,179,230,0.25)');
+    silhouette(820, 520, 1.1, 'm', ['rgba(127,179,230,0.3)', 'rgba(127,179,230,1)']);
+    const bg = ctx.createLinearGradient(0, 0, 40, 0); bg.addColorStop(0, '#20262e'); bg.addColorStop(0.5, '#5d6670'); bg.addColorStop(1, '#151a20');
+    for (let x = 560; x < W + 40; x += 120) { ctx.save(); ctx.translate(x, 0); ctx.fillStyle = bg; ctx.fillRect(0, 0, 26, H); ctx.restore(); }
+    ctx.fillStyle = '#2a3038'; ctx.fillRect(540, 70, W, 22);
+    ctx.textAlign = 'left'; ctx.shadowColor = 'rgba(0,0,0,0.9)'; ctx.shadowBlur = 24;
+    ctx.font = '900 112px "Inter Display", Inter'; ctx.fillStyle = C.amber; ctx.fillText('HE HAD', 60, 250); ctx.fillText('AN ALIBI.', 60, 370); ctx.shadowColor = 'transparent';
+    stamp('LIFE', 260, 530, 110, C.red, -0.1);
+    grainVignette();
+  },
+};
+window.renderThumb = name => { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, H); CONCEPTS[name](); return cv.toDataURL('image/png'); };
+</script>
+</body></html>

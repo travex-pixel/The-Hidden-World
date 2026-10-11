@@ -1,0 +1,2361 @@
+{
+ "id": "betsy-faria",
+ "title": "The Murder That Sent the Wrong Man to Prison",
+ "voice": "en_US-ljspeech-high",
+ "length_scale": 1.04,
+ "pause": 0.34,
+ "lead_in": 0.5,
+ "tail": 0.6,
+ "seed": 11,
+ "bpm": 70,
+ "key": -5,
+ "music_db": -15,
+ "sfx_db": -11,
+ "duck_db": -9,
+ "crf": 20,
+ "pronounce": {
+  "Faria": "[[fəɹˈiːə]]"
+ },
+ "spoken": {
+  "$150,000": "hundred and fifty thousand dollar",
+  "$900": "nine hundred dollars",
+  "$1,000": "a thousand dollars",
+  "$2 million": "two million dollars",
+  "9:40": "nine forty",
+  "7:04 p.m.": "seven oh four p m",
+  "St. Louis": "Saint Louis",
+  "911": "nine one one",
+  "2011": "twenty eleven",
+  "2013": "twenty thirteen",
+  "2015": "twenty fifteen",
+  "2016": "twenty sixteen",
+  "2017": "twenty seventeen",
+  "2019": "twenty nineteen",
+  "2020": "twenty twenty",
+  "2021": "twenty twenty-one",
+  "2025": "twenty twenty-five",
+  "2026": "twenty twenty-six",
+  "2028": "twenty twenty-eight"
+ },
+ "timeline": [
+  {
+   "date": "DEC 2011",
+   "label": "Betsy Faria is killed near Troy, Missouri"
+  },
+  {
+   "date": "JAN 2012",
+   "label": "Russ Faria is arrested and charged"
+  },
+  {
+   "date": "NOV 2013",
+   "label": "A jury convicts Russ"
+  },
+  {
+   "date": "JUN 2015",
+   "label": "A judge orders a new trial"
+  },
+  {
+   "date": "NOV 2015",
+   "label": "Russ is acquitted"
+  },
+  {
+   "date": "AUG 2016",
+   "label": "Hupp kills Louis Gumpenberger"
+  },
+  {
+   "date": "2019",
+   "label": "Hupp: Alford plea, life without parole"
+  },
+  {
+   "date": "2020",
+   "label": "Russ settles civil suit for $2 million"
+  },
+  {
+   "date": "JUL 2021",
+   "label": "Hupp charged in Betsy's death"
+  },
+  {
+   "date": "JAN 2028",
+   "label": "Bench trial scheduled"
+  }
+ ],
+ "lines": [
+  {
+   "chapter": "Cold open",
+   "chapter_title": "Cold open",
+   "tag": "",
+   "cue": "cold",
+   "say": "Life without parole, for murdering his wife.",
+   "pause": 0.22,
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.3
+    }
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "GUILTY",
+     "at": 0.2,
+     "lines": [
+      "Lincoln County, Missouri · 2013"
+     ],
+     "w": 1.0,
+     "label": "",
+     "source": "National Registry of Exonerations"
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "LIFE WITHOUT",
+      "PAROLE"
+     ],
+     "em": [
+      "PAROLE"
+     ],
+     "box": true,
+     "w": 0.75
+    }
+   ]
+  },
+  {
+   "say": "Two years later: not guilty.",
+   "pause": 0.45,
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.15
+    }
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "NOT GUILTY",
+     "color": "green",
+     "at": 0.05,
+     "lines": [
+      "Retrial · November 2015"
+     ],
+     "label": "",
+     "in": "flash",
+     "source": "NBC News"
+    }
+   ]
+  },
+  {
+   "say": "His name is Russ Faria.",
+   "pause": 0.3,
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Russ Faria",
+     "kicker": "THE HUSBAND",
+     "kind": "m",
+     "lines": [
+      "Convicted in 2013",
+      "Acquitted in 2015"
+     ],
+     "tag": "Not guilty",
+     "tagColor": "green",
+     "rim": "red"
+    }
+   ]
+  },
+  {
+   "say": "And today, prosecutors have charged someone else with his wife's murder: the friend who drove her home that night.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "road_night",
+     "caption": "The friend who drove her home",
+     "w": 1.1
+    },
+    {
+     "type": "profile",
+     "name": "Pam Hupp",
+     "kicker": "THE FRIEND",
+     "kind": "f",
+     "lines": [
+      "Charged with Betsy's murder in 2021",
+      "Has pleaded not guilty"
+     ],
+     "tag": "Charged · not convicted",
+     "tagColor": "amber",
+     "w": 1.3,
+     "source": "NBC News · KSDK"
+    }
+   ]
+  },
+  {
+   "say": "Days before the killing, that friend had been made the sole beneficiary of the victim's $150,000 life insurance policy.",
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "Life insurance: beneficiary change",
+     "lines": [
+      "Policy value:   $150,000",
+      "Old beneficiary: her husband",
+      "New beneficiary: Pam Hupp",
+      "When: days before her death"
+     ],
+     "hl": 2,
+     "stamp": "CHANGED",
+     "w": 1.4
+    },
+    {
+     "type": "stat",
+     "count": 150000,
+     "prefix": "$",
+     "label": "to the friend",
+     "note": "Beneficiary changed days before the killing",
+     "source": "KSDK"
+    }
+   ]
+  },
+  {
+   "silence": 2.6,
+   "cue": "tension-peak",
+   "sfx": [
+    {
+     "name": "sting",
+     "at": 0.0,
+     "gain": 0.8
+    }
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "THE MURDER OF BETSY FARIA",
+     "text": "THE WRONG MAN",
+     "sub": "A documentary investigation",
+     "in": "glitch",
+     "chapterTag": ""
+    }
+   ]
+  },
+  {
+   "cue": "cold",
+   "say": "So how did a man with four alibi witnesses, a receipt and a phone trail end up with a life sentence?",
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "HIS ALIBI",
+     "title": "What Russ Faria had",
+     "items": [
+      "Four friends at game night",
+      "A fast-food receipt",
+      "Surveillance video",
+      "Phone records"
+     ],
+     "w": 1.4,
+     "source": "St. Louis Post-Dispatch"
+    },
+    {
+     "type": "question",
+     "kicker": "QUESTION ONE",
+     "lines": [
+      "How did he end up",
+      "with a life sentence?"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "And why did it take nearly ten years to charge the last person known to have seen her alive?",
+   "pause": 0.7,
+   "shots": [
+    {
+     "type": "timeline",
+     "focus": 8,
+     "from": 0,
+     "kicker": "2011 → 2021",
+     "w": 1.2
+    },
+    {
+     "type": "question",
+     "kicker": "QUESTION TWO",
+     "lines": [
+      "Why did it take",
+      "nearly ten years?"
+     ],
+     "out": "dip"
+    }
+   ]
+  },
+  {
+   "silence": 2.3,
+   "chapter": "Part 1 · The drive home",
+   "chapter_title": "The drive home",
+   "cue": "unease",
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.7
+    }
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "PART ONE",
+     "text": "The Drive Home",
+     "sub": "Troy, Missouri · December 27, 2011",
+     "in": "fade"
+    }
+   ]
+  },
+  {
+   "say": "December 27th, 2011. Troy, Missouri, a small town about an hour northwest of St. Louis.",
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "TUESDAY",
+     "text": "DEC 27, 2011",
+     "sub": "Troy, Lincoln County, Missouri",
+     "w": 0.9
+    },
+    {
+     "type": "map",
+     "kicker": "LINCOLN COUNTY, MISSOURI",
+     "from": [
+      -92.3,
+      38.45,
+      0.95
+     ],
+     "view": [
+      -90.75,
+      38.82,
+      3.4
+     ],
+     "hl": [
+      "29113"
+     ],
+     "pins": [
+      {
+       "lon": -90.98,
+       "lat": 38.98,
+       "label": "Troy",
+       "sub": "Lincoln County",
+       "at": 1.2
+      },
+      {
+       "lon": -90.2,
+       "lat": 38.63,
+       "label": "St. Louis",
+       "color": "blue",
+       "at": 1.6
+      }
+     ],
+     "w": 1.3
+    }
+   ]
+  },
+  {
+   "say": "Betsy Faria was 42, a mother of two daughters.",
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Betsy Faria",
+     "kicker": "THE VICTIM",
+     "kind": "f",
+     "lines": [
+      "42 years old",
+      "Mother of two daughters"
+     ],
+     "tag": "Troy, Missouri",
+     "tagColor": "blue"
+    }
+   ]
+  },
+  {
+   "say": "She was also fighting cancer that had spread to her liver. That day, she'd had chemotherapy.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "Terminal cancer."
+     ],
+     "em": [
+      "cancer."
+     ],
+     "sub": "It had spread to her liver",
+     "w": 0.9
+    },
+    {
+     "type": "scene",
+     "variant": "iv_drip",
+     "caption": "Chemotherapy that day",
+     "w": 1.1
+    }
+   ]
+  },
+  {
+   "say": "That evening, her friend Pam Hupp drove her home.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "road_night",
+     "caption": "That evening",
+     "z0": 1.0,
+     "z1": 1.12
+    },
+    {
+     "type": "board",
+     "nodes": [
+      {
+       "id": "b",
+       "label": "Betsy",
+       "kicker": "victim",
+       "x": 640,
+       "y": 470
+      },
+      {
+       "id": "p",
+       "label": "Pam Hupp",
+       "kicker": "her friend",
+       "sub": "drove her home",
+       "x": 1280,
+       "y": 560
+      }
+     ],
+     "links": [
+      [
+       "p",
+       "b",
+       "the ride"
+      ]
+     ],
+     "focus": [
+      "b",
+      "p"
+     ],
+     "zoom": 1.15
+    }
+   ]
+  },
+  {
+   "say": "According to later reporting, Hupp had insisted on giving her the ride.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "road_night",
+     "caption": "",
+     "z0": 1.1,
+     "z1": 1.0,
+     "rain": true
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "She insisted."
+     ],
+     "em": [
+      "insisted."
+     ],
+     "sub": "according to later reporting",
+     "source": "KMOV First Alert 4"
+    }
+   ]
+  },
+  {
+   "say": "Betsy's husband, Russ, was somewhere else entirely: at his regular Tuesday game night with four friends, more than 20 miles away.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "gamenight",
+     "caption": "Tuesday game night",
+     "w": 1.1
+    },
+    {
+     "type": "map",
+     "kicker": "THAT EVENING",
+     "view": [
+      -90.86,
+      38.88,
+      6.0
+     ],
+     "from": [
+      -90.9,
+      38.9,
+      4.2
+     ],
+     "hl": [
+      "29113",
+      "29183"
+     ],
+     "pins": [
+      {
+       "lon": -90.98,
+       "lat": 38.98,
+       "label": "Troy",
+       "sub": "the Faria home",
+       "at": 0.3
+      },
+      {
+       "lon": -90.785,
+       "lat": 38.797,
+       "label": "Lake Saint Louis",
+       "sub": "game night (as reported)",
+       "color": "amber",
+       "at": 0.9,
+       "side": "left"
+      }
+     ],
+     "routes": [
+      {
+       "from": [
+        -90.785,
+        38.797
+       ],
+       "to": [
+        -90.98,
+        38.98
+       ],
+       "at": 1.3,
+       "dur": 1.4,
+       "color": "amber"
+      }
+     ],
+     "w": 1.3,
+     "source": "St. Louis Post-Dispatch · FOX 2"
+    }
+   ]
+  },
+  {
+   "say": "On his way home, he stopped at an Arby's. There was a receipt, and surveillance video.",
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE ALIBI",
+     "title": "Russ Faria's evening",
+     "items": [
+      "Game night with four friends",
+      "Stop at Arby's around 9 p.m."
+     ],
+     "hl": 1,
+     "source": "St. Louis Post-Dispatch (2014)"
+    },
+    {
+     "type": "list",
+     "kicker": "THE ALIBI",
+     "title": "Russ Faria's evening",
+     "items": [
+      "Game night with four friends",
+      "Stop at Arby's around 9 p.m.",
+      "Receipt + surveillance video"
+     ],
+     "hl": 2,
+     "source": "St. Louis Post-Dispatch (2014)"
+    }
+   ]
+  },
+  {
+   "say": "At 9:40 that night, Russ called 911.",
+   "pause": 0.5,
+   "sfx": [
+    {
+     "name": "beep",
+     "at": 0.9
+    },
+    {
+     "name": "beep",
+     "at": 1.5
+    }
+   ],
+   "shots": [
+    {
+     "type": "clock",
+     "time": "21:40",
+     "display": "9:40 PM",
+     "kicker": "DECEMBER 27, 2011",
+     "lines": [
+      "Russ Faria calls 911"
+     ],
+     "fromMins": 1250,
+     "w": 1.0
+    },
+    {
+     "type": "scene",
+     "variant": "phone",
+     "number": "911",
+     "top": "CALLING",
+     "caption": "",
+     "z0": 1.0,
+     "z1": 1.1,
+     "source": "National Registry of Exonerations"
+    }
+   ]
+  },
+  {
+   "say": "He had found Betsy dead inside their home.",
+   "sfx": [
+    {
+     "name": "rain",
+     "at": 0.0,
+     "gain": 0.35
+    }
+   ],
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "house_night",
+     "police": true,
+     "rain": true,
+     "caption": "",
+     "z0": 1.0,
+     "z1": 1.1
+    }
+   ]
+  },
+  {
+   "say": "She had been stabbed 55 times.",
+   "pause": 0.8,
+   "tts": "She had been stabbed fifty five times.",
+   "shots": [
+    {
+     "type": "stat",
+     "value": "55",
+     "label": "stab wounds",
+     "note": "as reported in coverage of the trials",
+     "size": 330,
+     "source": "St. Louis Post-Dispatch · KSDK"
+    }
+   ]
+  },
+  {
+   "say": "Days later, after Betsy's funeral, Russ was arrested and charged with first-degree murder.",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 2.6
+    }
+   ],
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "police",
+     "caption": "January 2012",
+     "w": 0.9
+    },
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "State of Missouri v. Russell Faria",
+     "lines": [
+      "Charge 1: first-degree murder",
+      "Charge 2: armed criminal action",
+      "Arrested: January 2012"
+     ],
+     "hl": 0,
+     "stamp": "CHARGED",
+     "w": 1.2,
+     "source": "National Registry of Exonerations"
+    }
+   ]
+  },
+  {
+   "silence": 2.2,
+   "chapter": "Part 2 · The case against Russ",
+   "chapter_title": "The case against Russ",
+   "cue": "tension",
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.7
+    }
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "PART TWO",
+     "text": "The Case Against Russ",
+     "sub": "Lincoln County · 2012–2013",
+     "in": "flash"
+    }
+   ]
+  },
+  {
+   "say": "Prosecutors built their case around the husband.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "courtroom",
+     "caption": "The prosecution's theory",
+     "z0": 1.0,
+     "z1": 1.1
+    }
+   ]
+  },
+  {
+   "say": "Pam Hupp testified at that trial, as a witness for the prosecution.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "courtroom",
+     "caption": "Witness for the prosecution",
+     "dim": 0.25,
+     "z0": 1.12,
+     "z1": 1.02,
+     "w": 0.9
+    },
+    {
+     "type": "profile",
+     "name": "Pam Hupp",
+     "kicker": "2013 TRIAL",
+     "kind": "f",
+     "lines": [
+      "Testified for the prosecution"
+     ],
+     "tag": "Witness",
+     "tagColor": "blue",
+     "w": 1.0,
+     "source": "AP · Wikipedia"
+    }
+   ]
+  },
+  {
+   "say": "They pointed to a pair of slippers they said were stained with blood.",
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE PROSECUTION SAID",
+     "title": "The case against Russ",
+     "items": [
+      "Bloodstained slippers"
+     ],
+     "hl": 0,
+     "source": "St. Louis Post-Dispatch (2014)"
+    }
+   ]
+  },
+  {
+   "say": "They told jurors his friends were covering for him, and that his frantic 911 call was an act.",
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE PROSECUTION SAID",
+     "title": "The case against Russ",
+     "items": [
+      "Bloodstained slippers",
+      "His friends were covering for him",
+      "The 911 call was an act"
+     ],
+     "hl": 2,
+     "w": 1.3,
+     "source": "St. Louis Post-Dispatch (2014)"
+    },
+    {
+     "type": "split",
+     "head": [
+      "THE STATE",
+      "THE DEFENSE"
+     ],
+     "big": [
+      "He did it",
+      "He was 20+ miles away"
+     ],
+     "bigColor": [
+      "red",
+      "blue"
+     ],
+     "bigSize": 84,
+     "body": [
+      [
+       "and his friends covered for him"
+      ],
+      [
+       "with witnesses, a receipt and video"
+      ]
+     ],
+     "vs": "VS"
+    }
+   ]
+  },
+  {
+   "say": "But the jury never heard the defense's case about someone else.",
+   "pause": 0.6,
+   "sfx": [
+    {
+     "name": "swell",
+     "at": 0.6,
+     "gain": 0.6
+    }
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "The argument the jury",
+      "never heard"
+     ],
+     "em": [
+      "never"
+     ],
+     "ghost": "?"
+    }
+   ]
+  },
+  {
+   "say": "Days before she died, Betsy had changed the beneficiary of her $150,000 life insurance policy, from Russ to Pam Hupp.",
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.3
+    }
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "Beneficiary designation",
+     "lines": [
+      "Insured: Betsy Faria",
+      "Amount: $150,000",
+      "Before: Russ Faria",
+      "After:  Pam Hupp"
+     ],
+     "hl": 3,
+     "w": 1.3
+    },
+    {
+     "type": "board",
+     "nodes": [
+      {
+       "id": "b",
+       "label": "Betsy",
+       "kicker": "victim",
+       "x": 640,
+       "y": 470
+      },
+      {
+       "id": "r",
+       "label": "Russ",
+       "kicker": "husband",
+       "x": 1300,
+       "y": 380
+      },
+      {
+       "id": "p",
+       "label": "Pam Hupp",
+       "kicker": "friend",
+       "x": 1180,
+       "y": 820
+      }
+     ],
+     "links": [
+      [
+       "b",
+       "r",
+       "",
+       "#555"
+      ],
+      [
+       "b",
+       "p",
+       "$150,000"
+      ]
+     ],
+     "focus": [
+      "b",
+      "p"
+     ],
+     "zoom": 1.1,
+     "source": "KSDK"
+    }
+   ]
+  },
+  {
+   "say": "Hupp said Betsy wanted the money to go to her daughters one day.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "“For her daughters”"
+     ],
+     "em": [
+      "daughters”"
+     ],
+     "sub": "Hupp's explanation, as reported",
+     "zoom": 1.07
+    }
+   ]
+  },
+  {
+   "say": "And according to the Post-Dispatch, Hupp's own account of that evening kept changing.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "Her story",
+      "changed."
+     ],
+     "em": [
+      "changed."
+     ],
+     "box": true,
+     "source": "St. Louis Post-Dispatch"
+    }
+   ]
+  },
+  {
+   "say": "She first told investigators she hadn't gone inside the house. Later, that she'd gone as far as the living room. Later still, that she'd been in the bedroom.",
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "HUPP'S ACCOUNTS, AS REPORTED",
+     "title": "Did she go inside?",
+     "items": [
+      "No, she stayed outside"
+     ],
+     "hl": 0,
+     "w": 0.8
+    },
+    {
+     "type": "list",
+     "kicker": "HUPP'S ACCOUNTS, AS REPORTED",
+     "title": "Did she go inside?",
+     "items": [
+      "No, she stayed outside",
+      "Only to the living room"
+     ],
+     "hl": 1,
+     "w": 0.9
+    },
+    {
+     "type": "list",
+     "kicker": "HUPP'S ACCOUNTS, AS REPORTED",
+     "title": "Did she go inside?",
+     "items": [
+      "No, she stayed outside",
+      "Only to the living room",
+      "Into the bedroom"
+     ],
+     "hl": 2,
+     "w": 1.1,
+     "source": "St. Louis Post-Dispatch"
+    }
+   ]
+  },
+  {
+   "say": "Phone records showed her making a call at 7:04 p.m. from near the Faria home, and those records would become a key point of dispute.",
+   "shots": [
+    {
+     "type": "clock",
+     "time": "19:04",
+     "display": "7:04 PM",
+     "kicker": "PHONE RECORDS",
+     "lines": [
+      "A call from near the Faria home"
+     ],
+     "fromMins": 1110,
+     "w": 1.1
+    },
+    {
+     "type": "scene",
+     "variant": "tower",
+     "caption": "Cell records became a key dispute",
+     "w": 1.1,
+     "source": "National Registry of Exonerations"
+    }
+   ]
+  },
+  {
+   "say": "But at Russ's first trial, the judge did not allow the defense to argue that Hupp could be the killer.",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 2.2
+    }
+   ],
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "courtroom",
+     "caption": "",
+     "z0": 1.08,
+     "z1": 1.0,
+     "w": 0.8
+    },
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "First trial · ruling on evidence",
+     "lines": [
+      "Defense wanted to argue:",
+      "  Pam Hupp as the killer",
+      "Judge's ruling:",
+      "  not allowed before the jury"
+     ],
+     "hl": 3,
+     "stamp": "EXCLUDED",
+     "w": 1.2,
+     "source": "St. Louis Post-Dispatch"
+    }
+   ]
+  },
+  {
+   "say": "Missouri law required evidence directly connecting another suspect to the crime, and the judge ruled that standard had not been met.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "“Direct connection”"
+     ],
+     "em": [
+      "connection”"
+     ],
+     "sub": "the standard to name another suspect at trial",
+     "w": 1.0
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "Ruled: not met."
+     ],
+     "em": [
+      "not",
+      "met."
+     ],
+     "box": true,
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "say": "On November 21st, 2013, the jury found Russ Faria guilty.",
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 2.1
+    }
+   ],
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "THE VERDICT",
+     "text": "NOV 21, 2013",
+     "sub": "Lincoln County, Missouri",
+     "w": 0.8
+    },
+    {
+     "type": "verdict",
+     "text": "GUILTY",
+     "at": 0.15,
+     "lines": [
+      "First-degree murder · armed criminal action"
+     ],
+     "label": "",
+     "source": "KSDK · National Registry of Exonerations"
+    }
+   ]
+  },
+  {
+   "say": "The sentence: life in prison without parole, plus 30 years.",
+   "pause": 0.9,
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "jail",
+     "caption": "Life without parole + 30 years",
+     "tally": [
+      0,
+      30
+     ],
+     "out": "dip"
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "Life without parole",
+      "+ 30 years"
+     ],
+     "em": [
+      "+",
+      "30",
+      "years"
+     ],
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "silence": 2.2,
+   "chapter": "Part 3 · The money",
+   "chapter_title": "The money",
+   "cue": "aftermath",
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.7
+    }
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "PART THREE",
+     "text": "The Money",
+     "sub": "$150,000",
+     "in": "fade"
+    }
+   ]
+  },
+  {
+   "say": "The insurance payout went to Pam Hupp.",
+   "shots": [
+    {
+     "type": "board",
+     "nodes": [
+      {
+       "id": "pol",
+       "label": "$150,000",
+       "kicker": "life insurance",
+       "x": 620,
+       "y": 450
+      },
+      {
+       "id": "p",
+       "label": "Pam Hupp",
+       "kicker": "beneficiary",
+       "x": 1300,
+       "y": 520
+      },
+      {
+       "id": "d",
+       "label": "Betsy's daughters",
+       "kicker": "not on the form",
+       "x": 900,
+       "y": 860,
+       "size": 34
+      }
+     ],
+     "links": [
+      [
+       "pol",
+       "p",
+       "paid"
+      ]
+     ],
+     "focus": [
+      "pol",
+      "p"
+     ],
+     "zoom": 1.12,
+     "w": 0.9
+    },
+    {
+     "type": "stat",
+     "count": 150000,
+     "prefix": "$",
+     "label": "paid to Pam Hupp",
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "say": "Betsy's daughters sued for it. They lost.",
+   "pause": 0.5,
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "BETSY'S DAUGHTERS",
+      "THE COURTS"
+     ],
+     "big": [
+      "Sued",
+      "Sided with Hupp"
+     ],
+     "bigColor": [
+      "ink",
+      "amber"
+     ],
+     "body": [
+      [
+       "for the insurance money"
+      ],
+      [
+       "the verdict was upheld on appeal"
+      ]
+     ],
+     "vs": "→",
+     "source": "KSDK"
+    }
+   ]
+  },
+  {
+   "say": "An appeals court said the form named Hupp, and that Betsy's intentions beyond that could not be determined from the evidence.",
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "SUMMARY · MISSOURI COURT OF APPEALS",
+     "title": "What the court found",
+     "lines": [
+      "The form named: Pam Hupp",
+      "Any wider intention:",
+      "  could not be determined",
+      "  from the limited evidence"
+     ],
+     "hl": 2,
+     "w": 1.3,
+     "source": "KSDK"
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "The money stayed",
+      "with Hupp."
+     ],
+     "em": [
+      "Hupp."
+     ],
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "silence": 2.2,
+   "chapter": "Part 4 · The second trial",
+   "chapter_title": "The second trial",
+   "cue": "tension-rise",
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.7
+    }
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "PART FOUR",
+     "text": "The Second Trial",
+     "sub": "2015",
+     "in": "flash"
+    }
+   ]
+  },
+  {
+   "say": "Russ's lawyer, Joel Schwartz, kept fighting.",
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Joel Schwartz",
+     "kicker": "RUSS'S DEFENSE ATTORNEY",
+     "kind": "m",
+     "lines": [
+      "Pressed for a new trial"
+     ],
+     "tag": "Defense",
+     "tagColor": "blue"
+    }
+   ]
+  },
+  {
+   "say": "In 2015, the case went back to the trial court, and on June 5th, Judge Steven Ohmer, a St. Louis judge assigned to the case, ordered a new trial.",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 4.8
+    }
+   ],
+   "shots": [
+    {
+     "type": "timeline",
+     "focus": 3,
+     "from": 2,
+     "kicker": "THE TURN",
+     "w": 1.0
+    },
+    {
+     "type": "date",
+     "kicker": "NEW TRIAL ORDERED",
+     "text": "JUN 5, 2015",
+     "sub": "Judge Steven Ohmer",
+     "w": 0.9
+    },
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "Motion for new trial",
+     "lines": [
+      "Basis: evidence about",
+      "  Pam Hupp",
+      "Decision: new trial"
+     ],
+     "hl": 2,
+     "stamp": "GRANTED",
+     "w": 1.0,
+     "source": "NBC News · National Registry of Exonerations"
+    }
+   ]
+  },
+  {
+   "say": "His ruling centered on the evidence about Pam Hupp.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "The evidence",
+      "about Pam Hupp"
+     ],
+     "em": [
+      "Pam",
+      "Hupp"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Days later, Russ walked out of jail on bond, after about three and a half years behind bars.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "doors",
+     "caption": "",
+     "w": 1.0
+    },
+    {
+     "type": "stat",
+     "value": "~3.5",
+     "label": "years locked up",
+     "note": "January 2012 to June 2015",
+     "w": 1.0,
+     "source": "AP · National Registry of Exonerations"
+    }
+   ]
+  },
+  {
+   "say": "In November 2015, he was tried again. This time, he chose to have a judge decide, not a jury.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "courtroom",
+     "caption": "The retrial: a bench trial",
+     "w": 1.1
+    },
+    {
+     "type": "split",
+     "head": [
+      "2013",
+      "2015"
+     ],
+     "big": [
+      "Jury trial",
+      "Bench trial"
+     ],
+     "bigColor": [
+      "ink",
+      "blue"
+     ],
+     "body": [
+      [
+       "12 jurors decide"
+      ],
+      [
+       "a judge decides"
+      ]
+     ],
+     "together": true
+    }
+   ]
+  },
+  {
+   "say": "And this time, the defense could point to Pam Hupp.",
+   "shots": [
+    {
+     "type": "board",
+     "nodes": [
+      {
+       "id": "b",
+       "label": "Betsy",
+       "kicker": "victim",
+       "x": 640,
+       "y": 470
+      },
+      {
+       "id": "r",
+       "label": "Russ",
+       "kicker": "husband",
+       "sub": "alibi",
+       "x": 1300,
+       "y": 380
+      },
+      {
+       "id": "p",
+       "label": "Pam Hupp",
+       "kicker": "friend",
+       "sub": "last known to see her alive",
+       "x": 1180,
+       "y": 820
+      }
+     ],
+     "links": [
+      [
+       "b",
+       "p",
+       "the ride"
+      ],
+      [
+       "b",
+       "p",
+       "$150,000"
+      ]
+     ],
+     "focus": [
+      "r",
+      "p"
+     ],
+     "zoom": 1.15
+    }
+   ]
+  },
+  {
+   "say": "On November 6th, 2015, Judge Ohmer found Russ Faria not guilty.",
+   "pause": 0.6,
+   "cue": "revelation",
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 2.4
+    }
+   ],
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "THE RETRIAL",
+     "text": "NOV 6, 2015",
+     "sub": "Lincoln County, Missouri",
+     "w": 0.8
+    },
+    {
+     "type": "verdict",
+     "text": "NOT GUILTY",
+     "color": "green",
+     "at": 0.15,
+     "lines": [
+      "Acquitted of all charges"
+     ],
+     "label": "",
+     "in": "flash",
+     "source": "NBC News"
+    }
+   ]
+  },
+  {
+   "say": "And the judge openly criticized the investigation that had put him in prison.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "The judge criticized",
+      "the investigation."
+     ],
+     "em": [
+      "criticized"
+     ],
+     "sub": "as reported by NBC News",
+     "out": "dip"
+    }
+   ]
+  },
+  {
+   "silence": 2.3,
+   "chapter": "Part 5 · O'Fallon, 2016",
+   "chapter_title": "O'Fallon, 2016",
+   "cue": "cold",
+   "sfx": [
+    {
+     "name": "sting",
+     "at": 0.0,
+     "gain": 0.7
+    }
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "PART FIVE",
+     "text": "O'Fallon, 2016",
+     "sub": "Nine months later",
+     "in": "glitch"
+    }
+   ]
+  },
+  {
+   "say": "Nine months later, in August 2016, Pam Hupp called 911 from her home in O'Fallon, Missouri.",
+   "sfx": [
+    {
+     "name": "beep",
+     "at": 3.2
+    }
+   ],
+   "shots": [
+    {
+     "type": "map",
+     "kicker": "ST. CHARLES COUNTY",
+     "from": [
+      -90.86,
+      38.88,
+      4.2
+     ],
+     "view": [
+      -90.72,
+      38.82,
+      7.0
+     ],
+     "hl": [
+      "29183"
+     ],
+     "pins": [
+      {
+       "lon": -90.7,
+       "lat": 38.81,
+       "label": "O'Fallon",
+       "sub": "Hupp's home",
+       "at": 0.6
+      },
+      {
+       "lon": -90.98,
+       "lat": 38.98,
+       "label": "Troy",
+       "color": "blue",
+       "at": 0.3,
+       "side": "left"
+      }
+     ],
+     "w": 1.0
+    },
+    {
+     "type": "scene",
+     "variant": "house_day",
+     "police": true,
+     "caption": "August 2016",
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "say": "She had shot and killed a man: Louis Gumpenberger, 33, who lived with a disability.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "She shot and",
+      "killed a man."
+     ],
+     "em": [
+      "killed"
+     ],
+     "w": 0.8
+    },
+    {
+     "type": "profile",
+     "name": "Louis Gumpenberger",
+     "kicker": "THE VICTIM",
+     "kind": "m",
+     "lines": [
+      "33 years old",
+      "Lived with a disability"
+     ],
+     "tag": "Killed August 2016",
+     "tagColor": "red",
+     "source": "NBC News · AP"
+    }
+   ]
+  },
+  {
+   "say": "She told police he was an intruder, and that he'd demanded \"Russ's money.\"",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "“Russ's money”"
+     ],
+     "em": [
+      "money”"
+     ],
+     "sub": "what Hupp said the man demanded, as reported",
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "say": "In his pocket, police found $900 in cash and a note: apparent instructions to kidnap Hupp and get \"Russ's money.\"",
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 2.0
+    }
+   ],
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "cash_note",
+     "caption": "$900 and a note",
+     "w": 1.1
+    },
+    {
+     "type": "doc",
+     "kicker": "SUMMARY · AS DESCRIBED BY PROSECUTORS",
+     "title": "The note in his pocket",
+     "lines": [
+      "Apparent instructions to:",
+      "  kidnap Pam Hupp",
+      "  get \"Russ's money\""
+     ],
+     "hl": 2,
+     "w": 1.0,
+     "source": "NBC News"
+    }
+   ]
+  },
+  {
+   "say": "Prosecutors said the cash and the note had been planted, and that the serial numbers ran in sequence with bills found in Hupp's home.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "Planted?"
+     ],
+     "em": [
+      "Planted?"
+     ],
+     "sub": "the prosecution's allegation",
+     "w": 0.8
+    },
+    {
+     "type": "list",
+     "kicker": "WHAT PROSECUTORS ALLEGED",
+     "title": "The $100 bills",
+     "items": [
+      "$900 in his pocket",
+      "Serial numbers in sequence",
+      "with bills in Hupp's home"
+     ],
+     "hl": 1,
+     "w": 1.2,
+     "source": "NBC News"
+    }
+   ]
+  },
+  {
+   "say": "They said she had lured him by posing as a producer for NBC's Dateline, offering $1,000 to help reenact a 911 call.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "tv",
+     "text": "“Help us reenact a 911 call”",
+     "caption": "",
+     "label": "ILLUSTRATION · PROSECUTORS' ALLEGATION",
+     "w": 1.1
+    },
+    {
+     "type": "stat",
+     "count": 1000,
+     "prefix": "$",
+     "label": "the alleged offer",
+     "note": "for a staged 911 call",
+     "w": 0.9,
+     "source": "NBC News"
+    }
+   ]
+  },
+  {
+   "say": "Days earlier, another woman had reported the same kind of approach.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "Days earlier:",
+      "the same pitch."
+     ],
+     "em": [
+      "same"
+     ],
+     "sub": "to a different woman, prosecutors said"
+    },
+    {
+     "type": "scene",
+     "variant": "tv",
+     "caption": "",
+     "dim": 0.35,
+     "label": "ILLUSTRATION"
+    }
+   ]
+  },
+  {
+   "say": "Prosecutors alleged it was an attempt to frame Russ Faria all over again.",
+   "pause": 0.6,
+   "sfx": [
+    {
+     "name": "swell",
+     "at": 0.8,
+     "gain": 0.6
+    }
+   ],
+   "shots": [
+    {
+     "type": "question",
+     "kicker": "THE KEY QUESTION",
+     "lines": [
+      "Why would an intruder",
+      "want “Russ's money”?"
+     ],
+     "w": 1.0
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "Framing Russ",
+      "all over again?"
+     ],
+     "em": [
+      "again?"
+     ],
+     "sub": "the prosecution's theory",
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "say": "In 2019, Hupp entered an Alford plea to first-degree murder: not admitting guilt, but conceding the state had enough evidence to convict her.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "The Alford plea"
+     ],
+     "em": [
+      "Alford"
+     ],
+     "w": 0.6
+    },
+    {
+     "type": "doc",
+     "kicker": "EXPLAINER",
+     "title": "What is an Alford plea?",
+     "lines": [
+      "Not an admission of guilt",
+      "Concedes the evidence would",
+      "  likely lead to conviction",
+      "Treated as a conviction"
+     ],
+     "hl": 1,
+     "label": "EXPLAINER GRAPHIC",
+     "w": 1.4
+    },
+    {
+     "type": "timeline",
+     "focus": 6,
+     "from": 5,
+     "kicker": "2016 → 2019",
+     "w": 0.9,
+     "source": "AP · Missourinet"
+    }
+   ]
+  },
+  {
+   "say": "She was sentenced to life without parole.",
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.6
+    }
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "LIFE",
+     "at": 0.1,
+     "lines": [
+      "Without parole · August 2019 · St. Charles County"
+     ],
+     "label": "",
+     "size": 200
+    }
+   ]
+  },
+  {
+   "say": "Investigators also took another look at a death from 2013.",
+   "cue": "unease",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "files",
+     "tabs": [
+      "2013",
+      "M.E.",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "caption": "Another death",
+     "z0": 1.0,
+     "z1": 1.12
+    },
+    {
+     "type": "date",
+     "kicker": "ANOTHER DEATH",
+     "text": "OCT 2013",
+     "sub": "Fenton, Missouri",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "say": "Hupp's mother, Shirley Neumann, had died after falling from her balcony at a senior living facility.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "balcony",
+     "caption": "October 2013",
+     "w": 1.1
+    },
+    {
+     "type": "profile",
+     "name": "Shirley Neumann",
+     "kicker": "HUPP'S MOTHER",
+     "kind": "f",
+     "lines": [
+      "Died October 2013",
+      "Fall from her balcony"
+     ],
+     "tag": "Senior living facility",
+     "tagColor": "blue",
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "say": "Her death was ruled an accident. In 2017, the medical examiner changed the manner of death to \"undetermined.\"",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 3.6
+    }
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "2013",
+      "2017"
+     ],
+     "big": [
+      "Accident",
+      "Undetermined"
+     ],
+     "bigColor": [
+      "ink",
+      "amber"
+     ],
+     "body": [
+      [
+       "original ruling"
+      ],
+      [
+       "amended by the medical examiner"
+      ]
+     ],
+     "vs": "→",
+     "w": 1.2,
+     "source": "NBC News"
+    },
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "Manner of death",
+     "lines": [
+      "2013: accident",
+      "2017: undetermined"
+     ],
+     "hl": 1,
+     "stamp": "AMENDED",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "say": "No one has been charged in her death.",
+   "pause": 0.8,
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "No one has been",
+      "charged."
+     ],
+     "em": [
+      "No",
+      "one"
+     ],
+     "sub": "in Shirley Neumann's death",
+     "out": "dip"
+    }
+   ]
+  },
+  {
+   "silence": 2.2,
+   "chapter": "Part 6 · The reckoning",
+   "chapter_title": "The reckoning",
+   "cue": "tension",
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.7
+    }
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "PART SIX",
+     "text": "The Reckoning",
+     "sub": "2020 – today",
+     "in": "fade"
+    }
+   ]
+  },
+  {
+   "say": "In 2020, Russ Faria settled his civil rights lawsuit for $2 million, with no admission of wrongdoing.",
+   "shots": [
+    {
+     "type": "stat",
+     "value": "$2M",
+     "label": "civil rights settlement",
+     "note": "March 2020 · no admission of wrongdoing",
+     "w": 1.1,
+     "source": "St. Louis Post-Dispatch · Insurance Journal"
+    },
+    {
+     "type": "timeline",
+     "focus": 7,
+     "from": 6,
+     "kicker": "2020",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "say": "Then, in July 2021, Lincoln County Prosecutor Mike Wood charged Pam Hupp with first-degree murder in Betsy Faria's death.",
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 4.2
+    }
+   ],
+   "shots": [
+    {
+     "type": "timeline",
+     "focus": 8,
+     "from": 7,
+     "kicker": "NEARLY TEN YEARS LATER",
+     "w": 0.8
+    },
+    {
+     "type": "date",
+     "kicker": "LINCOLN COUNTY",
+     "text": "JUL 2021",
+     "sub": "Prosecutor Mike Wood files charges",
+     "w": 0.8
+    },
+    {
+     "type": "verdict",
+     "text": "CHARGED",
+     "color": "amber",
+     "at": 0.2,
+     "lines": [
+      "Pam Hupp · first-degree murder · Betsy Faria"
+     ],
+     "label": "",
+     "w": 1.1,
+     "source": "NBC News · KSDK"
+    }
+   ]
+  },
+  {
+   "say": "She pleaded not guilty.",
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Pam Hupp",
+     "kicker": "BETSY FARIA CASE",
+     "kind": "f",
+     "lines": [
+      "Charged July 2021",
+      "Pleaded not guilty"
+     ],
+     "tag": "Presumed innocent in this case",
+     "tagColor": "amber"
+    }
+   ]
+  },
+  {
+   "say": "Wood also opened an investigation into how the original case was handled.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "files",
+     "tabs": [
+      "2011",
+      "2012",
+      "2013",
+      "REVIEW",
+      "",
+      "",
+      ""
+     ],
+     "caption": "Investigating the investigation",
+     "z0": 1.08,
+     "z1": 1.0,
+     "source": "KSDK"
+    }
+   ]
+  },
+  {
+   "say": "In 2025, a former sheriff's captain on the case, Mike Merkel, was charged with perjury over his testimony in the Faria case. He is presumed innocent, and that case is pending.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "courtroom",
+     "caption": "2025",
+     "z0": 1.0,
+     "z1": 1.1,
+     "w": 0.7
+    },
+    {
+     "type": "profile",
+     "name": "Mike Merkel",
+     "kicker": "FORMER SHERIFF'S CAPTAIN",
+     "kind": "m",
+     "lines": [
+      "Investigator on the Faria case",
+      "Charged with perjury, 2025"
+     ],
+     "tag": "Presumed innocent",
+     "tagColor": "amber",
+     "w": 1.0
+    },
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "State v. Michael Merkel (2025)",
+     "lines": [
+      "Charges: two counts of perjury",
+      "Alleged: false testimony about",
+      "  crime-scene search photos",
+      "Status: pending; presumed innocent"
+     ],
+     "hl": 3,
+     "w": 1.0,
+     "source": "NBC News · KMOV First Alert 4"
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "Case pending."
+     ],
+     "em": [
+      "pending."
+     ],
+     "w": 0.7
+    }
+   ]
+  },
+  {
+   "say": "The original prosecutor, Leah Askey, has denied any wrongdoing.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "courtroom",
+     "caption": "",
+     "dim": 0.3,
+     "z0": 1.1,
+     "z1": 1.0,
+     "w": 0.8
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "The original prosecutor",
+      "denies wrongdoing."
+     ],
+     "em": [
+      "denies"
+     ],
+     "source": "KSDK"
+    }
+   ]
+  },
+  {
+   "say": "Hupp's trial has been moved and delayed again and again.",
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE CASE AGAINST HUPP",
+     "title": "Moved and delayed",
+     "items": [
+      "2022: moved to Greene County",
+      "2023: dismissed and refiled",
+      "2026: trial date vacated"
+     ],
+     "hl": 2,
+     "source": "KSDK · CBS News"
+    }
+   ]
+  },
+  {
+   "say": "Her lawyers have pointed to DNA from an unidentified man on evidence, including the knife handle. Prosecutors dispute that it clears her.",
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "Unknown male DNA"
+     ],
+     "em": [
+      "DNA"
+     ],
+     "sub": "what Hupp's defense points to",
+     "w": 0.8
+    },
+    {
+     "type": "split",
+     "head": [
+      "HUPP'S DEFENSE",
+      "PROSECUTORS"
+     ],
+     "big": [
+      "Unknown male DNA",
+      "Doesn't clear her"
+     ],
+     "bigColor": [
+      "blue",
+      "red"
+     ],
+     "bigSize": 84,
+     "body": [
+      [
+       "on evidence incl. the knife handle"
+      ],
+      [
+       "they dispute its significance"
+      ]
+     ],
+     "vs": "VS",
+     "source": "St. Louis Post-Dispatch (2024)",
+     "w": 1.3
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "Disputed."
+     ],
+     "em": [
+      "Disputed."
+     ],
+     "box": true,
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "say": "In April 2026, Hupp waived her right to a jury, and the state dropped its pursuit of the death penalty.",
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "SUMMARY · APRIL 28, 2026",
+     "title": "Hearing outcome",
+     "lines": [
+      "Jury trial: waived by Hupp",
+      "Death penalty: withdrawn",
+      "Next: bench trial"
+     ],
+     "hl": 1,
+     "w": 1.2,
+     "source": "KSDK · FOX 2 · KMOV"
+    },
+    {
+     "type": "timeline",
+     "focus": 9,
+     "from": 8,
+     "kicker": "WHAT'S NEXT",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "say": "A judge is scheduled to hear the case in January 2028.",
+   "pause": 0.9,
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "SCHEDULED BENCH TRIAL",
+     "text": "JANUARY 2028",
+     "sub": "State of Missouri v. Pamela Hupp"
+    },
+    {
+     "type": "scene",
+     "variant": "courtroom",
+     "caption": "A judge, not a jury",
+     "z0": 1.0,
+     "z1": 1.08,
+     "w": 0.8,
+     "out": "dip"
+    }
+   ]
+  },
+  {
+   "silence": 1.8,
+   "chapter": "Where it stands",
+   "chapter_title": "Where it stands",
+   "cue": "aftermath",
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "OCTOBER 2026",
+     "text": "Where It Stands",
+     "in": "fade"
+    }
+   ]
+  },
+  {
+   "say": "Russ Faria spent about three and a half years locked up for a murder he was ultimately acquitted of.",
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "jail",
+     "caption": "",
+     "tally": [
+      0,
+      42
+     ],
+     "w": 0.8
+    },
+    {
+     "type": "profile",
+     "name": "Russ Faria",
+     "kicker": "THE HUSBAND",
+     "kind": "m",
+     "lines": [
+      "Convicted 2013",
+      "Acquitted 2015",
+      "~3.5 years in custody"
+     ],
+     "tag": "Not guilty",
+     "tagColor": "green"
+    }
+   ]
+  },
+  {
+   "say": "Pam Hupp is serving life for killing Louis Gumpenberger. In Betsy's case, she is charged, not convicted, and presumed innocent.",
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "LOUIS GUMPENBERGER CASE",
+      "BETSY FARIA CASE"
+     ],
+     "big": [
+      "Life sentence",
+      "Charged only"
+     ],
+     "bigColor": [
+      "red",
+      "amber"
+     ],
+     "bigSize": 96,
+     "body": [
+      [
+       "Alford plea, 2019"
+      ],
+      [
+       "not convicted · presumed innocent"
+      ]
+     ],
+     "together": true,
+     "w": 1.4
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "Charged.",
+      "Not convicted."
+     ],
+     "em": [
+      "Not",
+      "convicted."
+     ],
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "say": "Betsy Faria was 42 years old.",
+   "pause": 0.8,
+   "shots": [
+    {
+     "type": "scene",
+     "variant": "house_night",
+     "caption": "Betsy Faria · 42",
+     "lit": [
+      true,
+      true
+     ],
+     "porch": 0.9,
+     "z0": 1.12,
+     "z1": 1.0
+    }
+   ]
+  },
+  {
+   "say": "Nearly fifteen years after her death, no court has decided who killed her.",
+   "pause": 1.4,
+   "sfx": [
+    {
+     "name": "sting",
+     "at": 3.0,
+     "gain": 0.5
+    }
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "Nearly 15 years later,",
+      "no court has decided",
+      "who killed her."
+     ],
+     "em": [
+      "who",
+      "killed",
+      "her."
+     ],
+     "size": 96,
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "silence": 4.2,
+   "cue": "aftermath",
+   "shots": [
+    {
+     "type": "endcard",
+     "kicker": "IN MEMORY OF BETSY FARIA AND LOUIS GUMPENBERGER",
+     "lines": [
+      "Pam Hupp has pleaded not guilty",
+      "in Betsy Faria's death."
+     ],
+     "sub": "Sources for every claim are listed in the description.",
+     "chapterTag": "",
+     "out": "dip"
+    }
+   ]
+  }
+ ]
+}
