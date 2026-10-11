@@ -9,6 +9,18 @@ A short reference for every new episode. Tools: `series/true-crime-cinematic/pro
 - **End on a real, current, sourced open question or legal milestone.** Never withhold something the episode could easily explain.
 - **Runtime:** the shortest that tells the story properly, at most 90 s for Shorts.
 
+## What our best performer does (BTK "floppy disk", Case File 03)
+On the owner's Instagram, this episode has done best so far. That is the owner's report; we cannot see the analytics. What sets it apart from the other episodes:
+1. **The hook is the setup and the mystery, not the answer.** It opens "A serial killer asked the police one question. / Could a floppy disk be traced?" The payoff (the deleted file that named him) comes at about 70% of the runtime. Episodes that open with the answer ("A pizza crust helped crack the case") give the payoff away in the first line.
+2. **Irony early.** At about 6 s: "They told him it was safe. / They lied." The arrogant killer is outsmarted by the people he taunted.
+3. **One hero object,** shown big, centred and readable at thumbnail size in the first and last frames. Here it is the floppy disk, a familiar object, so the cover frame reads instantly in the grid and the ending loops back to the opening.
+4. **A chain of concrete micro-reveals,** each a simple object close-up: cereal box, note, newspaper ad, disk, deleted file, church, name. Each one reads in under a second on a phone.
+5. **Real words, verified:** short reported quotes on a "wording as reported" card ("Rex, it will be OK").
+6. **Fewer words, more air:** 175 words at 136 wpm, against 190–215 words at about 147 wpm in the other episodes. There are 16 short scenes, about 4.8 s each.
+7. **A callback ending that echoes the opener:** "31 years of hiding, / ended by one question, one lie, and one deleted file." It ends on the same object it opened with, which invites a rewatch.
+
+Since Case File 10, every episode follows these points. The NEXT CASE tease comes after the callback line.
+
 ## Facts and fairness
 - Every narrated claim maps to a claim in `episode.json` with at least two independent sources. The episode's `research.md` separates established facts, allegations (attributed), defence positions, court procedure and unresolved questions.
 - **Ongoing cases:**
