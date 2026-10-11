@@ -369,3 +369,88 @@ class QuietGameSeries(unittest.TestCase):
     def test_every_episode_has_a_twist_or_truth_beat(self):
         for ep in self.episodes():
             self.assertTrue(any("truth" in s for s in ep["scenes"]), ep["id"])
+
+
+class YouTubeUpload(unittest.TestCase):
+    """The uploader, tested against a fake YouTube (no network, no credentials)."""
+    def setUp(self):
+        from pipeline import youtube
+        self.yt = youtube
+        import tempfile
+        self.tmp = Path(tempfile.mkdtemp())
+        self._ledger = youtube.LEDGER
+        youtube.LEDGER = self.tmp / "youtube.json"
+
+    def tearDown(self):
+        self.yt.LEDGER = self._ledger
+
+    def test_metadata_for_every_episode(self):
+        for ep in self.yt.series_episodes():
+            m = self.yt.build_metadata(ep)
+            with self.subTest(ep=ep["id"]):
+                self.assertLessEqual(len(m["snippet"]["title"]), 100)
+                self.assertLessEqual(len(m["snippet"]["description"]), 5000)
+                self.assertEqual(m["snippet"]["description"].count("Piper TTS"), 1, "voice credit exactly once (CC BY)")
+                self.assertIn("#Shorts", m["snippet"]["description"])
+                self.assertIs(m["status"]["selfDeclaredMadeForKids"], False)
+                self.assertEqual(m["status"]["privacyStatus"], "private")
+
+    def test_publish_at_needs_private(self):
+        ep = self.yt.series_episodes()[0]
+        self.assertEqual(self.yt.build_metadata(ep, "private", "2026-10-12T17:00:00Z")["status"]["publishAt"], "2026-10-12T17:00:00Z")
+        with self.assertRaises(self.yt.UploadError):
+            self.yt.build_metadata(ep, "public", "2026-10-12T17:00:00Z")
+
+    def test_next_skips_already_uploaded(self):
+        self.assertEqual(self.yt.pick_episode("next")["id"], "qg001-the-rumour")
+        self.yt.write_ledger({"qg001-the-rumour": {"video_id": "x"}, "qg002-the-meeting": {"video_id": "y"}})
+        self.assertEqual(self.yt.pick_episode("next")["id"], "qg003-the-favour")
+
+    def test_missing_secrets_fail_clearly(self):
+        import os
+        saved = {k: os.environ.pop(k, None) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")}
+        try:
+            with self.assertRaises(self.yt.UploadError) as cm:
+                self.yt.access_token(opener=lambda *a, **k: self.fail("must not call the network"))
+            self.assertIn("YT_REFRESH_TOKEN", str(cm.exception))
+        finally:
+            for k, v in saved.items():
+                if v is not None: os.environ[k] = v
+
+    def test_resumable_upload_protocol(self):
+        calls = []
+        class Resp:
+            def __init__(self, body=b"{}", headers=None): self.body, self.headers = body, headers or {}
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+            def read(self): return self.body
+        def fake(req, timeout=None):
+            calls.append((req.get_method(), req.full_url, dict(req.header_items()), req.data))
+            if "oauth2" in req.full_url:
+                return Resp(json.dumps({"access_token": "tok"}).encode())
+            if req.get_method() == "POST":
+                return Resp(headers={"Location": "https://upload.example/session/1"})
+            return Resp(json.dumps({"id": "VID123", "status": {"privacyStatus": "private"}}).encode())
+        import os
+        os.environ.update(YT_CLIENT_ID="c", YT_CLIENT_SECRET="s", YT_REFRESH_TOKEN="r")
+        tok = self.yt.access_token(opener=fake)
+        ep = self.yt.series_episodes()[0]
+        video = ROOT / "releases" / f"{ep['id']}.mp4"
+        res = self.yt.upload(video, self.yt.build_metadata(ep), tok, opener=fake)
+        self.assertEqual(res["id"], "VID123")
+        (m1, u1, h1, d1), (m2, u2, h2, d2), (m3, u3, h3, d3) = calls
+        self.assertEqual((m1, m2, m3), ("POST", "POST", "PUT"))
+        self.assertIn(b"grant_type=refresh_token", d1)
+        self.assertIn("uploadType=resumable", u2)
+        self.assertEqual(json.loads(d2)["snippet"]["title"], self.yt.build_metadata(ep)["snippet"]["title"])
+        self.assertEqual(h2["X-upload-content-length"], str(video.stat().st_size))
+        self.assertEqual(u3, "https://upload.example/session/1")
+        self.assertEqual(len(d3), video.stat().st_size)
+        self.assertEqual(h3["Authorization"], "Bearer tok")
+
+    def test_dry_run_touches_nothing(self):
+        import io, contextlib
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            self.assertEqual(self.yt.main(["next", "--dry-run"]), 0)
+        self.assertIn("dry run", out.getvalue())
+        self.assertFalse(self.yt.LEDGER.exists())

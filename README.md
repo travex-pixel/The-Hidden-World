@@ -17,6 +17,8 @@
 
 Each episode has a script (`releases/<id>.script.md`), a source note with a suggested video description (`episodes/<id>/research.md`), and a verification report. Recurring cast: Theo (the new guy), Rosa (the boss), Ben, Kemi, Jo, Sam, and from the finale, Max.
 
+**Upload to YouTube automatically:** *Actions → Upload to YouTube* (one tap, or one a day on autopilot). One-time setup from your phone: **[docs/YOUTUBE.md](docs/YOUTUBE.md)**.
+
 **Make the next episode (Season 2):** copy `episodes/qg007-the-joke/` to `episodes/qg009-<name>/` and rewrite `episode.json` (cast, lines, meter steps, truth). Then copy `renderer/scenes/qg007-the-joke.js` to `renderer/scenes/qg009-<name>.js` and rewrite its scene functions. The shared look comes from `renderer/scenes/qg-kit.js`.
 
 Built to be easy to follow (ADHD-friendly), all driven from `episode.json`:

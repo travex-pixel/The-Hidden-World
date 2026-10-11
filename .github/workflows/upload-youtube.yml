@@ -1,0 +1,78 @@
+name: Upload to YouTube
+
+# Manual: Actions → Upload to YouTube → Run workflow.
+# Automatic: one episode a day, only when the repository variable YT_AUTO_UPLOAD is set to "true".
+# One-time setup (Google project + 3 secrets): docs/YOUTUBE.md
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Episode id (e.g. qg003-the-favour) or 'next' for the next one not yet uploaded"
+        required: true
+        default: "next"
+        type: string
+      privacy:
+        description: "private | unlisted | public (unaudited Google projects are forced to private anyway)"
+        required: true
+        default: "private"
+        type: choice
+        options: [private, unlisted, public]
+      publish_at:
+        description: "Optional scheduled publish time, e.g. 2026-10-12T17:00:00Z (needs privacy = private)"
+        required: false
+        default: ""
+        type: string
+      dry_run:
+        description: "Dry run: only show the title/description, upload nothing"
+        required: true
+        default: false
+        type: boolean
+  schedule:
+    - cron: "47 16 * * *"   # daily 16:47 UTC; does nothing unless YT_AUTO_UPLOAD == 'true'
+
+permissions:
+  contents: write   # to commit releases/youtube.json (the "already uploaded" list)
+
+concurrency:
+  group: youtube-upload
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    if: github.event_name == 'workflow_dispatch' || vars.YT_AUTO_UPLOAD == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Upload
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          EPISODE: ${{ inputs.episode || 'next' }}
+          PRIVACY: ${{ inputs.privacy || 'private' }}
+          PUBLISH_AT: ${{ inputs.publish_at }}
+          DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+        run: |
+          ARGS=("$EPISODE" --privacy "$PRIVACY")
+          [ -n "$PUBLISH_AT" ] && ARGS+=(--publish-at "$PUBLISH_AT")
+          [ "$DRY_RUN" = "true" ] && ARGS+=(--dry-run)
+          python -m pipeline.youtube "${ARGS[@]}" | tee upload.log
+          grep -h "OK:\|dry run\|title:" upload.log >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Remember what was uploaded
+        if: success() && (inputs.dry_run != true)
+        run: |
+          if ! git diff --quiet -- releases/youtube.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add releases/youtube.json
+            git commit -m "YouTube: record upload"
+            git push
+          fi
