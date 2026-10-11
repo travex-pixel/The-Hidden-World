@@ -74,8 +74,9 @@ def main(argv=None) -> int:
     key = f"{a.n:02d}"; m = load_manifest(); rec = m["videos"].setdefault(key, {})
     rec.update(id=ep["id"], title=ep["youtube_title"], file=ep["file"])
     if a.render:
-        rec.update(status="rendering", next_task=f"python -m pipeline.build {ep['id']} --quality final --seed {CFG['seed']}"); save(m)
-        r = subprocess.run([sys.executable, "-m", "pipeline.build", ep["id"], "--quality", "final", "--seed", str(CFG["seed"])], cwd=ROOT)
+        qual = ep.get("quality", CFG["quality"])
+        rec.update(status="rendering", next_task=f"python -m pipeline.build {ep['id']} --quality {qual} --seed {CFG['seed']}"); save(m)
+        r = subprocess.run([sys.executable, "-m", "pipeline.build", ep["id"], "--quality", qual, "--seed", str(CFG["seed"])], cwd=ROOT)
         if r.returncode != 0:
             rec.update(status="failed", error=f"pipeline.build exit {r.returncode}"); save(m); return 1
     out = ROOT / "out" / ep["id"]; src = out / f"{ep['id']}.mp4"

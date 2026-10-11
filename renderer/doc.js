@@ -157,7 +157,35 @@
     return s;
   }
 
-  E.doc = { C, TYPE, defs, bg, tag, bug, typed, paperCard, stamp, circleOn, underline, camera, film, headline, project, mapLines, pin, mapScene, timelineScene, sstep };
+  // ---------- motion polish (Case Files 03+)
+  // camera shake after impacts: hits = [{at, amp}] in scene seconds; returns a transform string
+  function shake(t, hits, cx = W / 2, cy = H * 0.42) {
+    let dx = 0, dy = 0, rot = 0;
+    for (const h of hits || []) { const u = t - h.at; if (u < 0 || u > 0.6) continue; const k = (h.amp || 1) * Math.exp(-u * 9); dx += Math.sin(u * 83) * 18 * k; dy += Math.cos(u * 71) * 14 * k; rot += Math.sin(u * 57) * 0.6 * k; }
+    return `translate(${f1(dx)} ${f1(dy)}) rotate(${f1(rot * 100) / 100} ${cx} ${cy})`;
+  }
+  // dust motes drifting through a light cone (deterministic)
+  function dust(t, n = 40, seed = 3, box = [0, 0, W, H], op = 0.5) {
+    const r = E.mulberry32(seed); let s = '';
+    for (let i = 0; i < n; i++) { const x0 = r(), y0 = r(), sp = 0.01 + r() * 0.03, z = r(); const x = box[0] + ((x0 + Math.sin(t * 0.3 + i) * 0.02) % 1) * box[2], y = box[1] + (((y0 - t * sp) % 1 + 1) % 1) * box[3]; s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(1 + z * 2.6)}" fill="#fff" opacity="${f1(op * (0.2 + 0.8 * z) * (0.6 + 0.4 * Math.sin(t * 2 + i)))}"/>`; }
+    return s;
+  }
+  // anamorphic flare sweeping across the frame at time `at`
+  function flare(t, at, y = H * 0.42, colour = '#bfe6ff', dur = 0.7) {
+    const u = seg(t, at, at + dur); if (u <= 0 || u >= 1) return '';
+    const x = lerp(-200, W + 200, ease.inOut(u)); const o = Math.sin(Math.PI * u);
+    return `<g opacity="${f1(o)}" style="mix-blend-mode:screen"><ellipse cx="${f1(x)}" cy="${f1(y)}" rx="520" ry="10" fill="${colour}" opacity="0.55" filter="url(#dsoft)"/><circle cx="${f1(x)}" cy="${f1(y)}" r="70" fill="${colour}" opacity="0.35" filter="url(#dsoft)"/></g>`;
+  }
+  // alternating red/blue police light wash (no vehicle, no people)
+  function policeLights(t, op = 0.5) {
+    const ph = (t * 2.2) % 1; const red = ph < 0.5; const k = Math.sin(Math.PI * ((ph * 2) % 1));
+    return `<rect width="${W}" height="${H}" fill="${red ? '#ff2a2a' : '#2a5cff'}" opacity="${f1(op * k * 0.55)}" style="mix-blend-mode:screen"/>`;
+  }
+  function glowText(x, y, text, fs, colour, opts = {}) {
+    return `<text x="${x}" y="${y}" text-anchor="${opts.anchor || 'middle'}" font-family="${opts.font || 'Fraunces'}" font-weight="${opts.weight || 800}" font-size="${fs}" letter-spacing="${opts.ls ?? 0}" fill="${colour}" filter="url(#glowR)">${esc(text)}</text>`;
+  }
+
+  E.doc = { C, TYPE, defs, shake, dust, flare, policeLights, glowText, bg, tag, bug, typed, paperCard, stamp, circleOn, underline, camera, film, headline, project, mapLines, pin, mapScene, timelineScene, sstep };
 
   E.registerScenes({
     case_map(ctx) { return defs + mapScene(ctx, ctx.scene.shot.map) + film(ctx.t, 0.6) + bug(ctx.ep); },

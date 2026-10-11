@@ -1,6 +1,6 @@
 """Per-scene narration with Piper TTS, cached by (voice, text) hash."""
 from __future__ import annotations
-import hashlib, json, wave
+import hashlib, json, re, wave
 from pathlib import Path
 import numpy as np
 
@@ -59,11 +59,36 @@ def speak_years(text: str) -> str:
     return re.sub(r"(?<![\d,.])(1[1-9]\d\d|20\d\d)(?!\d|,\d|s\b)", year, text)
 
 
-def narrate_scene(voice_name: str, text: str, length_scale: float = 1.0, speaker=None) -> Path:
+_PUNCT = set(" ,.:;?!\"'()-—…^$_")
+
+
+def _phoneme_words(alignments, sr: int) -> list[tuple[float, float]]:
+    """Group Piper phoneme alignments into spoken words: [(start_s, end_s)] (pauses fall between words)."""
+    out, pos, start, cur = [], 0, None, False
+    for a in alignments:
+        n = int(a.num_samples)
+        if a.phoneme in _PUNCT:
+            if cur:
+                out.append((start / sr, pos / sr)); cur = False
+        else:
+            if not cur:
+                start, cur = pos, True
+        pos += n
+    if cur:
+        out.append((start / sr, pos / sr))
+    return out
+
+
+def narrate_scene(voice_name: str, text: str, length_scale: float = 1.0, speaker=None, align: bool = False) -> Path:
+    """Synthesise one clip (cached). align=True also writes <clip>.words.json: spoken-word timings from Piper's
+    phoneme alignments, relative to the trimmed clip (needs the free `onnx` package)."""
     CACHE.mkdir(parents=True, exist_ok=True)
     out = CACHE / f"{_key(voice_name, text, length_scale, speaker)}.wav"
-    if out.exists():
+    words_json = out.with_suffix(".words.json")
+    if out.exists() and (not align or words_json.exists()):
         return out
+    if align:
+        return _narrate_aligned(voice_name, text, length_scale, speaker, out, words_json)
     from piper import PiperVoice
     from piper.config import SynthesisConfig
     from pipeline.voices import voice_path
@@ -82,6 +107,61 @@ def narrate_scene(voice_name: str, text: str, length_scale: float = 1.0, speaker
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
         w.writeframes((x * 32767).astype(np.int16).tobytes())
     tmp.unlink(missing_ok=True)
+    return out
+
+
+def _narrate_aligned(voice_name, text, length_scale, speaker, out: Path, words_json: Path) -> Path:
+    import json
+    from piper import PiperVoice
+    from piper.config import SynthesisConfig
+    from pipeline.voices import voice_path
+    k = voice_name + "|align"
+    if k not in _VOICES:
+        _VOICES[k] = PiperVoice.load(str(voice_path(voice_name)), include_alignments=True)
+    voice = _VOICES[k]
+    cfg = SynthesisConfig(length_scale=length_scale, speaker_id=speaker)
+    audio, words, off, sr = [], [], 0.0, None
+    for ch in voice.synthesize(text, syn_config=cfg, include_alignments=True):
+        sr = ch.sample_rate
+        if not ch.phoneme_alignments:
+            raise RuntimeError("voice returned no phoneme alignments (pip install onnx)")
+        words += [(a + off, b + off) for a, b in _phoneme_words(ch.phoneme_alignments, sr)]
+        audio.append(ch.audio_float_array); off += len(ch.audio_float_array) / sr
+    x = np.concatenate(audio).astype(np.float32)
+    idx = np.where(np.abs(x) > 0.01)[0]
+    cut = max(0, idx[0] - int(0.08 * sr)) if len(idx) else 0
+    x = trim_silence(x, sr)
+    peak = float(np.max(np.abs(x))) or 1.0
+    x = x / peak * 0.89
+    with wave.open(str(out), "wb") as w:
+        w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
+        w.writeframes((x * 32767).astype(np.int16).tobytes())
+    dur = len(x) / sr
+    words_json.write_text(json.dumps([[round(max(0.0, a - cut / sr), 3), round(min(dur, b - cut / sr), 3)] for a, b in words]))
+    return out
+
+
+def map_words(display: str, spoken: str, spans: list, voice_name: str) -> list[dict]:
+    """Assign spoken-word spans to the caption's words. A caption word can be several spoken words
+    ('1978' -> 'nineteen seventy eight'); counts come from the phonemiser. Falls back to proportional timing."""
+    from piper import PiperVoice  # noqa: F401  (voice already loaded by the caller)
+    disp = display.split()
+    v = _VOICES.get(voice_name + "|align")
+    counts = []
+    for w in disp:
+        sw = speak_years(w) if spoken != display else w
+        ph = v.phonemize(sw) if v else [list(sw)]
+        groups = "".join("".join(p) for p in ph)
+        counts.append(max(1, len([g for g in re.split(r"[ ,.:;?!\"'()—…-]+", groups) if g])))
+    if sum(counts) == len(spans) and spans:
+        out, i = [], 0
+        for w, c in zip(disp, counts):
+            out.append({"w": w, "start": spans[i][0], "end": spans[i + c - 1][1]}); i += c
+        return out
+    a, b = (spans[0][0], spans[-1][1]) if spans else (0.0, 0.0)
+    tot = sum(len(w) for w in disp) or 1; t, out = a, []
+    for w in disp:
+        d = (b - a) * len(w) / tot; out.append({"w": w, "start": round(t, 3), "end": round(t + d, 3)}); t += d
     return out
 
 
@@ -111,8 +191,17 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
     for ln in scene["lines"]:
         v = narrator_voice if (narrator_voice and ln["who"] == "narrator") else load_character(ln["who"])["voice"]
         spoken = speak_years(ln["text"]) if v.get("year_words") else ln["text"]   # captions keep the digits
-        p = narrate_scene(v["model"], spoken, v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"))
+        align = bool(v.get("word_timing"))
+        p = narrate_scene(v["model"], spoken, v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"), align=align)
         x, sr_ = read_wav(p); sr = sr or sr_
+        words = None
+        if align:
+            import json as _json
+            if (v["model"] + "|align") not in _VOICES:   # phonemiser needed for mapping even on a cache hit
+                from piper import PiperVoice
+                from pipeline.voices import voice_path
+                _VOICES[v["model"] + "|align"] = PiperVoice.load(str(voice_path(v["model"])), include_alignments=True)
+            words = map_words(ln["text"], spoken, _json.loads(p.with_suffix(".words.json").read_text()), v["model"])
         if ln.get("fx") == "phone":   # small phone speaker: band-limited and slightly crunchy
             X = np.fft.rfft(x); f = np.fft.rfftfreq(len(x), 1 / sr_)
             X *= ((f > 320) & (f < 3400)).astype(float)
@@ -122,7 +211,8 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
         pre = int(ln.get("pause_before", 0.0) * sr)
         if pre:
             parts.append(np.zeros(pre, np.float32)); t += pre / sr
-        lines.append({"who": ln["who"], "text": ln["text"], "start": round(t, 3), "end": round(t + len(x) / sr, 3), "env": lip_envelope(x, sr)})
+        lines.append({"who": ln["who"], "text": ln["text"], "start": round(t, 3), "end": round(t + len(x) / sr, 3), "env": lip_envelope(x, sr)}
+                     | ({"words": words} if words else {}))   # word times are relative to the line start
         parts.append(x.astype(np.float32)); t += len(x) / sr
         gap = int(ln.get("pause_after", 0.3) * sr)
         parts.append(np.zeros(gap, np.float32)); t += gap / sr

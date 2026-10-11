@@ -258,8 +258,114 @@ def unabomber() -> dict:
     }
 
 
+# ------------------------------------------------------------------ Case File 03: BTK and the floppy disk
+def btk() -> dict:
+    geo = json.loads((HERE / "geo" / "usa.json").read_text())
+    WICHITA = [-97.3301, 37.6872]
+    V = dict(NARRATOR, length_scale=1.04, word_timing=True)   # same narrator; real word timings for punch captions
+    def S(id_, kind, lines, cue, claims, **kw):
+        sc = scene(id_, kind, lines, cue, claims, **kw); sc["caption_y"] = 1390; return sc
+    scenes = [
+        S("s01_question", "tc3_question", [N("A serial killer asked the police one question.")], "drive", ["B_question"],
+          sfx=[fx(0.0, "sub", 0.8)], emph=["question."], min_d=2.4, pad=0.15),
+        S("s02_traced", "tc3_traced", [N("Could a floppy disk be traced?")], "drive", ["B_question"],
+          sfx=[fx(0.0, "glitch", 0.3)], emph=["traced?"], tr="flash", min_d=2.0, pad=0.2),
+        S("s03_lie", "tc3_lie", [N("They told him it was safe."), N("They lied.", pause_before=0.35)], "drive", ["B_ad", "B_deception"],
+          sfx=[fx(0.0, "whoosh", 0.8), fx(2.15, "hit", 1.0)], emph=["safe.", "lied."], tr="push", pad=0.45),
+        S("s04_map", "case_map", [N("From 1974, a killer who called himself BTK"), N("murdered ten people in and around Wichita, Kansas.", pause_before=0.05)],
+          "drive", ["B_ten", "B_name"], sfx=[fx(0.0, "whoosh", 0.8), fx(2.6, "thump", 0.6)], emph=["btk", "ten"], tr="zoom",
+          shot={"map": {"geo": "usa", "from": {"center": [-97.0, 38.6], "span": 52}, "to": {"center": [-97.6, 38.2], "span": 7.5},
+                        "cy": 0.40, "borders_at": 0.0, "grid": 2,
+                        "title": {"text": "WICHITA, KANSAS", "sub": "1974 - 1991 · 10 VICTIMS", "at": 2.4},
+                        "pins": [{"ll": WICHITA, "label": "WICHITA", "at": 2.2, "fs": 46}], "scale_note": "Map: Natural Earth",
+                        "labels": [{"ll": [-98.6, 38.75], "text": "KANSAS", "at": 1.6, "fs": 44, "ls": 14}]}}),
+        S("s05_silence", "tc3_letters", [N("He taunted police and the press with letters."), N("Then, for years, silence.", pause_before=0.2)],
+          "drive", ["B_letters"], sfx=[fx(0.2, "paper", 0.8), fx(1.0, "paper", 0.6)], emph=["letters.", "silence."], tr="push", music_db=-3),
+        S("s06_back", "tc3_back", [N("In 2004, he started writing again.")], "drive", ["B_2004"],
+          sfx=[fx(0.0, "hit", 0.7), fx(0.4, "typing", 0.7)], emph=["again."], tr="flash", pad=0.25),
+        S("s07_cereal", "tc3_cereal", [N("In January 2005, he left a note inside a cereal box.")], "drive", ["B_cereal"],
+          sfx=[fx(0.3, "paper", 0.8)], emph=["note", "cereal"], tr="push", pad=0.2),
+        S("s08_note", "tc3_note", [N("\"Can I communicate with Floppy and not be traced to a computer?\""),
+                                  N("If it was safe, he said, answer with an ad in the newspaper.", pause_before=0.3)],
+          "drive", ["B_question", "B_ad_request"], sfx=[fx(0.0, "typing", 0.7)], emph=["floppy", "traced", "ad"], tr="zoom", pad=0.3),
+        S("s09_ad", "tc3_ad", [N("Police ran the ad:"), N("\"Rex, it will be OK.\"", pause_before=0.25)], "drive", ["B_ad", "B_deception"],
+          sfx=[fx(0.1, "paper", 0.7), fx(1.6, "stamp", 0.6)], emph=["rex,", "ok.\""], tr="push", pad=0.35),
+        S("s10_disk", "tc3_disk", [N("Weeks later, a television station received a floppy disk from BTK.")], "drive-peak", ["B_disk"],
+          sfx=[fx(0.0, "sub", 0.8), fx(1.4, "click", 0.9)], emph=["floppy", "disk"], tr="flash", pad=0.25),
+        S("s11_file", "tc3_file", [N("Examiners found one deleted file."), N("Hidden in its data:", pause_before=0.2)], "drive-peak", ["B_deleted"],
+          sfx=[fx(0.4, "typing", 0.8), fx(2.0, "glitch", 0.8), fx(2.6, "riser", 0.9)], emph=["deleted", "hidden"], tr="zoom", pad=0.15),
+        S("s12_reveal", "tc3_reveal", [N("\"Christ Lutheran Church.\"", pause_before=0.5), N("And the name: \"Dennis.\"", pause_before=0.45)],
+          "hush", ["B_metadata"], sfx=[fx(0.0, "sub", 0.6), fx(0.02, "hit", 0.5)], emph=["church.\"", "dennis.\""], tr="flash", pad=0.6, music_db=-6),
+        S("s13_church", "tc3_church", [N("The president of that church's council was Dennis Rader.")], "drive-peak", ["B_rader"],
+          sfx=[fx(0.0, "whoosh", 0.8), fx(1.8, "hit", 0.8)], emph=["dennis", "rader."], tr="push", pad=0.4),
+        S("s14_arrest", "tc3_arrest", [N("A DNA test confirmed the link."), N("On February 25th, 2005, he was arrested.", pause_before=0.2)],
+          "drive-peak", ["B_dna", "B_arrest"], sfx=[fx(0.1, "glitch", 0.5), fx(2.2, "hit", 0.9)], emph=["dna", "arrested."], tr="flash", pad=0.3),
+        S("s15_sentence", "tc3_sentence", [N("He pleaded guilty to all ten murders."), N("Ten consecutive life sentences.", pause_before=0.3)],
+          "aftermath", ["B_plea", "B_sentence"], sfx=[fx(0.2, "gavel"), fx(0.9, "stamp", 0.7)], emph=["guilty", "life"], tr="push", pad=0.4),
+        S("s16_end", "tc3_end", [N("31 years of hiding,"), N("ended by one question, one lie, and one deleted file.", pause_before=0.15)],
+          "aftermath", ["B_31", "B_question", "B_deception", "B_deleted"], sfx=[fx(0.0, "sub", 0.7)], emph=["question,", "lie,", "file."],
+          tr="zoom", min_d=3.0, pad=2.6),
+    ]
+    scenes[-1]["fade_out"] = True   # fade to black at the end (engine honours fade_out on the last scene)
+    claims = [
+        {"id": "B_question", "type": "established", "text": "In a note left in a cereal box (location given by a postcard to KAKE-TV, 25 Jan 2005), BTK asked whether he could communicate by floppy disk without being traced: 'Can I communicate with Floppy and not be traced to a computer.' (wording as reported; minor variants exist)", "sources": ["oxygen_floppy", "refinery29", "biography_timeline", "history_jan25"]},
+        {"id": "B_ad_request", "type": "established", "text": "He asked police to answer through a classified ad in The Wichita Eagle.", "sources": ["refinery29", "oxygen_floppy", "aba"]},
+        {"id": "B_ad", "type": "established", "text": "Police ran the ad 'Rex, it will be OK', signalling (falsely) that a disk could not be traced.", "sources": ["refinery29", "oxygen_floppy", "aba", "biography_timeline"]},
+        {"id": "B_deception", "type": "established", "text": "The reply was a deliberate deception by investigators; Rader later expressed shock that police had deceived him.", "sources": ["oxygen_floppy", "refinery29", "aba"]},
+        {"id": "B_ten", "type": "established", "text": "Between 1974 and 1991 BTK killed ten people in and around Wichita, Kansas (Rader pleaded guilty to ten counts of first-degree murder).", "sources": ["ljworld_plea", "cnn_plea", "britannica"]},
+        {"id": "B_name", "type": "established", "text": "The killer used the name 'BTK' for himself in his communications.", "sources": ["britannica", "biography_timeline"]},
+        {"id": "B_letters", "type": "established", "text": "In the 1970s BTK sent letters to police and the media; communications then stopped for decades until 2004.", "sources": ["nbc_resurfaces", "britannica", "ksn_ap"]},
+        {"id": "B_2004", "type": "established", "text": "In March 2004 BTK resumed communication with a letter to The Wichita Eagle, followed by further messages and packages.", "sources": ["nbc_resurfaces", "ksn_ap", "crimelibrary_returns"]},
+        {"id": "B_cereal", "type": "established", "text": "In January 2005 a note from BTK was left inside a cereal box; a postcard to KAKE-TV gave its location.", "sources": ["biography_timeline", "history_jan25", "oxygen_floppy"]},
+        {"id": "B_disk", "type": "established", "text": "Weeks later (16 Feb 2005 per AP) a floppy disk from BTK arrived at Wichita TV station KSAS.", "sources": ["ljworld_disk", "nbc_disk", "refinery29"]},
+        {"id": "B_deleted", "type": "established", "text": "Forensic examination found a deleted Microsoft Word document on the disk.", "sources": ["oxygen_floppy", "aba", "refinery29"]},
+        {"id": "B_metadata", "type": "established", "text": "The deleted file's metadata named 'Christ Lutheran Church' and a user 'Dennis'.", "sources": ["oxygen_floppy", "aba", "refinery29", "ljworld_disk"]},
+        {"id": "B_rader", "type": "established", "text": "Dennis Rader was president of the Christ Lutheran Church council.", "sources": ["ljworld_disk", "britannica", "nbc_disk"]},
+        {"id": "B_dna", "type": "established", "text": "Before the arrest, a familial DNA test (using a medical sample of his daughter's, obtained with court authorisation) linked him to crime-scene DNA.", "sources": ["abc_daughter", "rd_daughter", "seattle_times"]},
+        {"id": "B_arrest", "type": "established", "text": "Rader was arrested on 25 February 2005.", "sources": ["ljworld_disk", "nbc_disk", "britannica"]},
+        {"id": "B_plea", "type": "established", "text": "On 27 June 2005 Rader pleaded guilty to ten counts of first-degree murder.", "sources": ["ljworld_plea", "cnn_plea", "nbc_plea"]},
+        {"id": "B_sentence", "type": "established", "text": "On 18 August 2005 he was sentenced to ten consecutive life terms (minimum 175 years).", "sources": ["nbc_sentence", "deseret_sentence", "britannica"]},
+        {"id": "B_31", "type": "established", "text": "From the first killings (January 1974) to the arrest (February 2005) is 31 years.", "sources": ["ap_victims", "ljworld_disk"]},
+    ]
+    sources = [
+        {"id": "oxygen_floppy", "title": "How A Floppy Disk Exposed Dennis Rader As The BTK Killer", "publisher": "Oxygen", "url": "https://www.oxygen.com/snapped/crime-time/floppy-disk-exposed-dennis-rader-btk-killer"},
+        {"id": "refinery29", "title": "How A Floppy Disk Brought The BTK Killer Down", "publisher": "Refinery29", "url": "https://www.refinery29.com/en-us/2019/08/240899/btk-killer-caught-when-how-floppy-disk-dennis-rader", "date": "2019-08"},
+        {"id": "aba", "title": "How the Cops Caught BTK", "publisher": "ABA Journal", "url": "https://www.abajournal.com/magazine/article/how_the_cops_caught_btk"},
+        {"id": "biography_timeline", "title": "BTK Killer criminal timeline", "publisher": "Biography.com", "url": "https://www.biography.com/crime/a63496187/btk-killer-criminal-timeline"},
+        {"id": "history_jan25", "title": "BTK killer sends message", "publisher": "History.com", "url": "https://www.history.com/this-day-in-history/january-25/btk-killer-sends-message"},
+        {"id": "ljworld_disk", "title": "Computer disk, DNA and messages helped lead police to BTK suspect", "publisher": "Lawrence Journal-World (AP)", "url": "https://www2.ljworld.com/news/2005/mar/04/computer_disk_dna/", "date": "2005-03-04"},
+        {"id": "nbc_disk", "title": "Computer disk may have cracked BTK case", "publisher": "NBC News (AP)", "url": "https://www.nbcnews.com/id/wbna6988048", "date": "2005-03"},
+        {"id": "ljworld_plea", "title": "Rader pleads guilty to BTK killings", "publisher": "Lawrence Journal-World", "url": "https://www2.ljworld.com/news/2005/jun/27/btk/", "date": "2005-06-27"},
+        {"id": "cnn_plea", "title": "Rader details how he killed 10 people", "publisher": "CNN", "url": "https://www.cnn.com/2005/LAW/06/27/btk/index.html", "date": "2005-06-28"},
+        {"id": "nbc_plea", "title": "BTK killer waives trial, admits 10 slayings", "publisher": "NBC News", "url": "https://www.nbcnews.com/id/wbna8367581", "date": "2005-06"},
+        {"id": "nbc_sentence", "title": "BTK killer gets maximum life sentence", "publisher": "NBC News", "url": "https://www.nbcnews.com/id/wbna8996967", "date": "2005-08"},
+        {"id": "deseret_sentence", "title": "BTK killer is sentenced to consecutive life terms", "publisher": "Deseret News (AP)", "url": "https://www.deseret.com/2005/8/19/19907875/btk-killer-is-sentenced-to-consecutive-life-terms/", "date": "2005-08-19"},
+        {"id": "britannica", "title": "Dennis Rader", "publisher": "Encyclopaedia Britannica", "url": "https://www.britannica.com/biography/Dennis-Rader"},
+        {"id": "nbc_resurfaces", "title": "Kan. serial killer resurfaces two decades later", "publisher": "NBC News", "url": "https://www.nbcnews.com/news/amp/wbna4615264", "date": "2004-03"},
+        {"id": "ksn_ap", "title": "BTK serial killer is in the news again: background on his case", "publisher": "KSN (AP)", "url": "https://www.ksn.com/news/local/ap-btk-serial-killer-is-in-the-news-again-heres-why-and-some-background-about-his-case/"},
+        {"id": "crimelibrary_returns", "title": "BTK returns", "publisher": "Crime Library", "url": "https://crimelibrary.org/serial_killers/unsolved/btk/returns_11.html"},
+        {"id": "abc_daughter", "title": "BTK serial killer's daughter: 'We were living our normal life...'", "publisher": "ABC News", "url": "https://abcnews.com/US/btk-serial-killers-daughter-living-normal-life-upended/story?id=60428529", "date": "2019"},
+        {"id": "rd_daughter", "title": "My Father Was the BTK Killer", "publisher": "Reader's Digest", "url": "https://www.rd.com/article/my-father-was-the-btk-killer/"},
+        {"id": "seattle_times", "title": "Daughter of a serial killer helps link her father to cold cases", "publisher": "The Seattle Times", "url": "https://www.seattletimes.com/nation-world/nation/her-father-is-the-btk-killer-shes-helping-to-close-more-cases/"},
+        {"id": "ap_victims", "title": "BTK victims (AP list)", "publisher": "Crime Library (AP)", "url": "https://crimelibrary.org/news/ap/06052/2807_btk_victims.html"},
+    ]
+    for s_ in sources:
+        s_["accessed"] = ACCESSED + " (search-result extract; full page not reachable from the build environment)"
+    return {
+        "id": "tc03-btk-floppy", "number": 3, "series": "THE HIDDEN WORLD: Case Files",
+        "title": "The Question That Caught BTK",
+        "central_question": "How did one question to the police, and one deleted file, end a 31-year hunt for the BTK killer?",
+        "template": "true-crime", "narrator_voice": V["model"], "narrator_profile": V, "loudness_lufs": -14,
+        "target_duration_seconds": [45, 90], "visual_mode": "svg", "caption_style": "punch",
+        "case_file": {"number": "03", "label": "BTK · WICHITA · 1974-2005"},
+        "music": {"bpm": 100, "beat_snap": 1}, "geo": {"usa": geo},
+        "content_notes": "Non-graphic. No victims, crime scenes, violence or likeness of the perpetrator are shown. Objects (note, ad, disk, monitor, church) are labelled illustrations; no real document, newspaper page or photograph is imitated.",
+        "scenes": scenes, "claims": claims, "sources": sources,
+    }
+
+
 def main() -> None:
-    for ep in (chamberlain(), unabomber()):
+    for ep in (chamberlain(), unabomber(), btk()):
         d = ROOT / "episodes" / ep["id"]; d.mkdir(parents=True, exist_ok=True)
         (d / "episode.json").write_text(json.dumps(ep, indent=1, ensure_ascii=False) + "\n")
         print("wrote", d / "episode.json")

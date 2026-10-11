@@ -84,6 +84,45 @@ CREATIVE = {
             "s10_end": ("$0 counts up to $1,000,000: \"REWARD PAID TO DAVID KACZYNSKI, 1998\" then \"MOST OF IT PLEDGED TO THE VICTIMS' FAMILIES\". Cross-fade to a newspaper page with one line underlined in red. \"In memory of Hugh Scrutton, Thomas Mosser and Gilbert Murray\". Fade to black.", "Typewriter; quiet aftermath bells; fade."),
         },
     },
+    "tc03-btk-floppy": {
+        "working_title": "The Question That Caught BTK",
+        "hooks": [
+            ("A serial killer asked the police one question. Could a floppy disk be traced? They told him it was safe. They lied.",
+             "SELECTED. A verified twist inside 9 seconds; three short beats (question, answer, lie) that each change what the viewer knows, and a curiosity gap (how did the lie catch him?)."),
+            ("One deleted file ended a 31-year manhunt.",
+             "Strong, but abstract without context, and it gives away the payoff mechanism first."),
+            ("Police answered a serial killer's question in the newspaper classifieds.",
+             "Intriguing, but slower; it lacks the stakes of the lie."),
+        ],
+        "story_timeline": [
+            "Jan 1974 - 1991: BTK kills ten people in and around Wichita, Kansas; letters to police and media in the 1970s, then silence.",
+            "Mar 2004: BTK resumes communication with a letter to The Wichita Eagle.",
+            "Jan 2005: a postcard to KAKE-TV leads to a cereal box containing a note asking if a floppy disk could be traced.",
+            "Late Jan/early Feb 2005: police run the classified ad 'Rex, it will be OK'.",
+            "16 Feb 2005 (per AP): a floppy disk arrives at KSAS-TV; a deleted Word file's metadata names Christ Lutheran Church and 'Dennis'.",
+            "Feb 2005: Dennis Rader, church council president, is linked by a familial DNA test.",
+            "25 Feb 2005: arrest.",
+            "27 Jun 2005: guilty plea to ten counts of first-degree murder. 18 Aug 2005: ten consecutive life terms.",
+        ],
+        "board": {
+            "s01_question": ("Cold open, no fade-in: a floppy disk tilts into a sodium street-light cone, with drifting dust and a lens flare. A red '?' slams in on the word 'question' (camera shake).", "Sub-drop on frame 1; driving 100 BPM cue (saw-bass ostinato, ticking hats)."),
+            "s02_traced": ("Flash cut. Macro: the metal shutter slides open; a cold scan line sweeps down; glowing 'TRACEABLE?'.", "Digital glitch under the flash (kept quiet so the line lands)."),
+            "s03_lie": ("Motion-blur push to a classifieds page; one ad, 'REX, IT WILL BE OK'. On 'lied' the frame shakes, the ad outline turns red and a TRAP stamp slams across it.", "Whoosh; impact on 'lied'."),
+            "s04_map": ("Zoom transition. Natural Earth map of the USA zooms to Kansas (state lines). 'KANSAS' label; pin WICHITA; header 'WICHITA, KANSAS · 1974 - 1991 · 10 VICTIMS'.", "Whoosh; one heartbeat thump."),
+            "s05_silence": ("Push. Envelopes fall one by one onto a lamp-lit desk ('THE 1970s'). On 'silence' the lamp dims and 'THEN: SILENCE' types in grey.", "Paper; music drops 3 dB."),
+            "s06_back": ("Flash. A new envelope slams onto the desk with a red '2004' stamp ('A NEW LETTER').", "Impact; typewriter."),
+            "s07_cereal": ("Push. A generic cereal box under cold light; a folded note slides out of the top ('JANUARY 2005'). Tag: NOT THE ACTUAL BOX.", "Paper."),
+            "s08_note": ("Zoom. A typed card ('BTK'S NOTE · WORDING AS REPORTED'); words appear exactly as narrated, FLOPPY and TRACED in red. Card lifts; 'NEWSPAPER AD?' pops in on the word 'ad'.", "Typewriter."),
+            "s09_ad": ("Push. 'THE WICHITA EAGLE · CLASSIFIEDS'; the ad prints word by word in sync: REX, / IT / WILL / BE / OK. Tag: AD TEXT AS REPORTED.", "Paper; soft stamp."),
+            "s10_disk": ("Flash. A padded envelope on a desk; the disk slides out toward camera on 'floppy disk' (shake). 'FEBRUARY 2005 · KSAS-TV, WICHITA'.", "Sub-drop; mechanical click. Music steps up to the peak cue (kick on 1 and 3)."),
+            "s11_file": ("Zoom. A beige CRT: '> SCANNING DISK', '> 1 DELETED FILE FOUND', a progress bar, '> READING HIDDEN DATA'; scanlines; glitch bands. Tag: ILLUSTRATION · SIMPLIFIED.", "Typing; glitch; riser into the reveal."),
+            "s12_reveal": ("Flash to near-black CRT glow: 'IN THE DELETED FILE'S HIDDEN DATA', then 'CHRIST LUTHERAN CHURCH' (glow) and a huge red '\"DENNIS\"', each landing on the spoken word with shake.", "Sub and impact at the cut, then the narration in near-silence (music -6 dB, hush cue)."),
+            "s13_church": ("Push. A moonlit, rim-lit generic church; one window lights up; a name card slides in on 'Dennis': 'DENNIS RADER · CHURCH COUNCIL PRESIDENT'. Tag: NOT THE ACTUAL BUILDING.", "Whoosh; impact."),
+            "s14_arrest": ("Flash. Two abstract DNA band profiles slide together: 'FAMILIAL DNA: LINK CONFIRMED'. Cross-fade to a night road under sodium street lights with a red/blue light wash; '25 FEB 2005', then 'ARRESTED' on the word.", "Glitch; impact on 'arrested'."),
+            "s15_sentence": ("Push. Ten candle lights appear one by one (in memory, not a tally of violence). 'PLEADED GUILTY · JUNE 2005', then '10 × LIFE · CONSECUTIVE · AUGUST 2005'.", "Gavel and stamp; aftermath bells."),
+            "s16_end": ("Zoom. The disk alone in a cold spotlight, slowly turning. Three icons light on the spoken words: '?' (question), 'AD' (lie), 'FILE'. The frame darkens to 'In memory of the ten people he killed.', then fades to black.", "Sub; aftermath; fade."),
+        },
+    },
 }
 
 DESC_TAIL = ("\n\nIllustrated documentary reconstruction. Scenes are labelled illustrations; no real footage, photographs or documents are shown. "
@@ -96,7 +135,8 @@ def main() -> None:
           "Both videos share one design system: night-desk backgrounds, Courier Prime case-file typography, Fraunces headlines, "
           "Nunito word-by-word captions at y = 1420 (above the Shorts title overlay) with key words in amber, red reserved for evidence, "
           "ILLUSTRATION tags on every reconstruction, one documentary narrator (Piper LibriTTS-R speaker 666) and -14 LUFS loudness. "
-          "Case 01 is graded warm (desert and amber); Case 02 is graded cold (blue newsprint).\n",
+          "Case 01 is graded warm (desert and amber); Case 02 is graded cold (blue newsprint). Case 03 (v2 engine) adds word-synced punch captions, "
+          "beat-snapped cuts at 100 BPM, push/flash/zoom transitions, a driving music cue and 60 fps; its palette is sodium orange, police blue, CRT green.\n",
           "Timings below come from the final render (`out/<id>/timeline.json`).\n"]
     src_md = ["# Sources\n", "Every narrated scene cites claim IDs in `episodes/<id>/episode.json`; each claim lists these sources. "
               "Access note: pages were consulted through web-search extracts on 2026-10-11 (direct fetching was blocked in the build environment).\n"]
@@ -129,7 +169,7 @@ def main() -> None:
             src_md.append(f"- **[{s_['id']}]** {s_['title']}. *{s_['publisher']}*{(', ' + s_['date']) if s_.get('date') else ''}. {s_['url']}  \n  Supports: {', '.join(used)}")
         key = [s_ for s_ in ep["sources"]][:8]
         desc = (f"{ep['central_question']}\n\nSources:\n" + "\n".join(f"- {s_['publisher']}: {s_['url']}" for s_ in key) + DESC_TAIL)
-        src_md.append(f"\n### YouTube upload metadata — Video {n:02d}\n**Title:** {meta['youtube_title']}\n\n**Description (paste as is):**\n```\n{desc}\n```\n**Hashtags:** #Shorts #TrueCrime #Documentary {'#Australia #LindyChamberlain' if n == 1 else '#Unabomber #FBI'}\n")
+        src_md.append(f"\n### YouTube upload metadata — Video {n:02d}\n**Title:** {meta['youtube_title']}\n\n**Description (paste as is):**\n```\n{desc}\n```\n**Hashtags:** #Shorts #TrueCrime #Documentary { {1: '#Australia #LindyChamberlain', 2: '#Unabomber #FBI', 3: '#BTK #ColdCase #Wichita'}[n] }\n")
     (HERE / "scripts_and_storyboards.md").write_text("\n".join(md) + "\n")
     (HERE / "sources.md").write_text("\n".join(src_md) + "\n")
     print("wrote scripts_and_storyboards.md, sources.md")

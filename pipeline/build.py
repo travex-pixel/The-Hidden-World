@@ -15,7 +15,8 @@ from pipeline.verify import verify
 
 ROOT = Path(__file__).resolve().parent.parent
 QUALITY = {"preview": {"width": 540, "height": 960, "fps": 15, "crf": 26, "preset": "veryfast"},
-           "final": {"width": 1080, "height": 1920, "fps": 30, "crf": 20, "preset": "medium"}}
+           "final": {"width": 1080, "height": 1920, "fps": 30, "crf": 20, "preset": "medium"},
+           "final60": {"width": 1080, "height": 1920, "fps": 60, "crf": 19, "preset": "medium"}}
 
 
 def log(msg: str) -> None:
@@ -68,6 +69,10 @@ def build_timeline(ep: dict, narr: list[dict], target: float | None) -> list[dic
     for s, n in zip(ep["scenes"], narr):
         lead = 0.25  # small breath before narration starts in each scene
         dur = max(float(s["min_duration"]), lead + n["duration"] + float(s["pad_after"]))
+        snap = ep.get("music", {}).get("beat_snap")   # cut on the beat: scene ends land on the music grid
+        if snap:
+            step = 60.0 / float(ep["music"].get("bpm", 96)) * float(snap)
+            dur = float(np.ceil((t + dur) / step - 1e-6) * step - t)
         tl.append({"id": s["id"], "start": round(t, 3), "end": round(t + dur, 3), "narration_at": round(t + lead, 3),
                    "narration_end": round(t + lead + n["duration"], 3), "music_cue": s["music_cue"]})
         t += dur

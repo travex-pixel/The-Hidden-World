@@ -308,6 +308,47 @@
     return thrillerCaption(ln.text, narr ? null : sp.name.split(' ')[0], narr ? '#cfd6e6' : (sp.signature || {}).colour || '#fff', t - ln.start + 0.12, progress, ctx.scene.caption_y || 1640, emph);
   }
 
+  // ---------- "punch" captions: 1-3 word chunks shown word by word on real spoken-word timings (Piper alignments)
+  const _mctx = document.createElement('canvas').getContext('2d'); const _mw = {};
+  function measure(txt, fs) { const k = fs + '|' + txt; if (_mw[k] === undefined) { _mctx.font = `800 ${fs}px Nunito`; _mw[k] = _mctx.measureText(txt).width; } return _mw[k]; }
+  function punchChunks(lines) {
+    const words = []; lines.forEach(l => (l.words || []).forEach(w => words.push({ w: w.w, s: l.start + w.start, e: l.start + w.end })));
+    const chunks = []; let cur = [];
+    words.forEach((w, i) => {
+      const prev = cur[cur.length - 1];
+      const brk = prev && (cur.length >= 3 || (cur.map(x => x.w).join(' ') + ' ' + w.w).length > 15 || /[.,:;?!"]$/.test(prev.w) || w.s - prev.e > 0.35);
+      if (brk) { chunks.push(cur); cur = []; }
+      cur.push(w);
+    });
+    if (cur.length) chunks.push(cur);
+    return chunks;
+  }
+  function punchCaption(ctx) {
+    const t = ctx.t; const sc = ctx.scene; const y0 = sc.caption_y || 1380;
+    if (!ctx._chunks) ctx._chunks = punchChunks(ctx.lines);
+    const ch = ctx._chunks; let k = -1;
+    for (let i = 0; i < ch.length; i++) { const st = ch[i][0].s - 0.06, nx = i + 1 < ch.length ? ch[i + 1][0].s - 0.06 : ch[i][ch[i].length - 1].e + 0.6; if (t >= st && t < nx) { k = i; break; } }
+    if (k < 0) return '';
+    const c = ch[k]; const emph = sc.emphasis ? new Set(sc.emphasis.map(capKey)) : null;
+    const fs = 92, gap = 26; const ws = c.map(w => ({ ...w, txt: w.w.toUpperCase(), wd: measure(w.w.toUpperCase(), fs) }));
+    // one or two rows, centred
+    const total = ws.reduce((a, w) => a + w.wd, 0) + gap * (ws.length - 1);
+    const rows = total > 940 && ws.length > 1 ? [ws.slice(0, Math.ceil(ws.length / 2)), ws.slice(Math.ceil(ws.length / 2))] : [ws];
+    const enter = ease.back(seg(t, c[0].s - 0.06, c[0].s + 0.1)); let out = `<g transform="translate(${W / 2} ${y0}) scale(${f1((0.86 + 0.14 * enter) * 100) / 100}) translate(${-W / 2} ${-y0})">`;
+    rows.forEach((row, ri) => {
+      const rw = row.reduce((a, w) => a + w.wd, 0) + gap * (row.length - 1); let x = W / 2 - rw / 2; const y = y0 + (ri - (rows.length - 1) / 2) * fs * 1.08 + fs * 0.34;
+      row.forEach(w => {
+        const shown = t >= w.s - 0.04; if (!shown) { x += w.wd + gap; return; }
+        const active = t < w.e + 0.05; const hot = emph && emph.has(capKey(w.w));
+        const pop = active ? 1 + 0.12 * (1 - ease.out(seg(t, w.s - 0.04, w.s + 0.12))) : 1;
+        const fill = hot ? '#ff5b45' : active ? '#ffd84a' : '#ffffff'; const cx = x + w.wd / 2;
+        out += `<text x="${f1(cx)}" y="${f1(y)}" text-anchor="middle" transform="translate(${f1(cx)} ${f1(y - fs * 0.34)}) scale(${f1(pop * 100) / 100}) translate(${f1(-cx)} ${f1(-(y - fs * 0.34))})" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${fill}" stroke="#05050a" stroke-width="16" stroke-linejoin="round" paint-order="stroke">${esc(w.txt)}</text>`;
+        x += w.wd + gap;
+      });
+    });
+    return out + '</g>';
+  }
+
   const HW = {
     W, H, PAL, mulberry32, hashStr, clamp, lerp, ease, seg, esc, f1, blob, inkPath, shadowEllipse, coin, coinPile, invoice, label, sparkles, confetti, cloud,
     marigold, pip, bird, artScene, truck, reservoir, pipe, coinsAlong, chart, wrap, textBlock, captionBox, brandMark, sky, paperOverlay, defs,
@@ -344,6 +385,7 @@
       if (!useArt && !fn) throw new Error('No scene renderer for "' + ctx.scene.scene + '"');
       const body = useArt ? artScene(ctx, this.state.art) : fn(ctx, this);
       const capY = useArt ? (ctx.scene.art.caption_y || 1650) : (ctx.scene.caption_y || 1560);
+      if (this.state.ep.caption_style === 'punch') return body + (ctx.scene.caption_mode === 'none' ? '' : punchCaption(ctx));
       if (ctx.lines.length && this.state.ep.caption_style === 'thriller') return body + dialogueCaption(ctx, this.state.cast);
       if (this.state.ep.caption_style === 'thriller') return body + (ctx.scene.caption_mode === 'card' ? '' : thrillerCaption(ctx.scene.caption, null, null, ctx.t, 1, ctx.scene.caption_y || 1640));
       const cap = (useArt ? (ctx.scene.art.caption === false || (ctx.scene.caption_mode === 'card' && ctx.scene.art.caption !== true)) : ctx.scene.caption_mode === 'card') ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
@@ -353,13 +395,19 @@
       const st = this.state; const tl = st.timeline;
       let i = tl.findIndex(s => t < s.end); if (i < 0) i = tl.length - 1;
       const sc = st.ep.scenes[i]; const s = tl[i]; const local = t - s.start;
-      const TR = 0.5; let inner = '';
-      if (i > 0 && sc.transition !== 'cut' && sc.transition !== 'fade' && local < TR) {
+      const TR = 0.5; let inner = ''; const TX = { push: 0.34, zoom: 0.4, flash: 0.28 }[sc.transition];
+      if (i > 0 && TX && local < TX) {
+        // motion transitions: push (whip with horizontal motion blur), zoom (scale-through), flash (white pop)
+        const p = local / TX, e = ease.inOut(p); const prevT = tl[i - 1].end - 0.001;
+        if (sc.transition === 'flash') inner = this.renderScene(i, t) + `<rect width="${W}" height="${H}" fill="#fff" opacity="${f1(Math.pow(1 - p, 2) * 0.9)}"/>`;
+        else if (sc.transition === 'zoom') inner = `<g opacity="${f1(1 - e)}" transform="translate(${W / 2} ${H / 2}) scale(${f1((1 + 0.35 * e) * 100) / 100}) translate(${-W / 2} ${-H / 2})">${this.renderScene(i - 1, prevT)}</g><g opacity="${f1(e)}" transform="translate(${W / 2} ${H / 2}) scale(${f1((0.9 + 0.1 * e) * 1000) / 1000}) translate(${-W / 2} ${-H / 2})">${this.renderScene(i, t)}</g>`;
+        else { const b = f1(55 * Math.sin(Math.PI * p)); inner = `<filter id="mblur" x="-10%" y="0" width="120%" height="100%"><feGaussianBlur stdDeviation="${b} 0"/></filter><g filter="url(#mblur)"><g transform="translate(${f1(-W * e)} 0)">${this.renderScene(i - 1, prevT)}</g><g transform="translate(${f1(W * (1 - e))} 0)">${this.renderScene(i, t)}</g></g>`; }
+      } else if (i > 0 && sc.transition !== 'cut' && sc.transition !== 'fade' && !TX && local < TR) {
         const p = local / TR; const prev = this.renderScene(i - 1, tl[i - 1].end - 0.001);
         inner = `<g>${prev}</g>${transitionMask(sc.transition, p)}<g clip-path="url(#tr)">${this.renderScene(i, t)}</g>`;
       } else inner = this.renderScene(i, t);
       let fade = '';
-      if (sc.transition === 'fade' && i === tl.length - 1) { const k = seg(t, st.total - 1.0, st.total - 0.05); if (k > 0) fade = `<rect width="${W}" height="${H}" fill="${PAL.ink}" opacity="${f1(k)}"/>`; }
+      if ((sc.transition === 'fade' || sc.fade_out) && i === tl.length - 1) { const k = seg(t, st.total - 1.0, st.total - 0.05); if (k > 0) fade = `<rect width="${W}" height="${H}" fill="${PAL.ink}" opacity="${f1(k)}"/>`; }
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}<rect width="${W}" height="${H}" fill="url(#vig)"/>${fade}</svg>`;
       const stage = document.getElementById('stage'); stage.innerHTML = svg;
       // place moving coins along pipes (exact per-frame positions via getPointAtLength)

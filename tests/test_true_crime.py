@@ -19,7 +19,7 @@ class CaseFileEpisodes(unittest.TestCase):
         # episode.json must match what make_episodes.py produces (no hand edits drifting from the reviewed script)
         sys.path.insert(0, str(SERIES))
         import make_episodes
-        for build in (make_episodes.chamberlain, make_episodes.unabomber):
+        for build in (make_episodes.chamberlain, make_episodes.unabomber, make_episodes.btk):
             ep = build()
             on_disk = json.loads((ROOT / "episodes" / ep["id"] / "episode.json").read_text())
             self.assertEqual(on_disk, json.loads(json.dumps(ep)), f"{ep['id']}: run python series/true-crime/make_episodes.py")
@@ -53,6 +53,7 @@ class CaseFileEpisodes(unittest.TestCase):
         banned = {
             "tc01-chamberlain-jacket": ["dingo ate my baby", "declared innocent", "innocent", "faked", "cardigan", "David Brett"],
             "tc02-unabomber-words": ["typewriter matched", "original manifesto", "suicide", "never seen", "23 injured", "24 injured"],
+            "tc03-btk-floppy": ["torture", "strangl", "bind,", "pap smear", "kerri", "favorite lie", "purple", "post toasties", "special k"],
         }
         for eid, words in banned.items():
             ep = load_episode(eid)
@@ -136,6 +137,53 @@ class EngineAdditions(unittest.TestCase):
         out = subprocess.run(["node", "-e", re.search(r"const capKey = [^;]+;", js).group(0) + " console.log(JSON.stringify(['Blood.', '\"desist', 'terrorism.\"', \"blood'\"].map(capKey)))"],
                              capture_output=True, text=True, check=True).stdout
         self.assertEqual(json.loads(out), ["blood", "desist", "terrorism", "blood"])
+
+
+class Episode3Engine(unittest.TestCase):
+    def test_new_transitions_sfx_and_cues_are_valid(self):
+        from pipeline.schema import TRANSITIONS, SFX_NAMES, MUSIC_CUES
+        self.assertTrue({"push", "zoom", "flash"} <= TRANSITIONS)
+        self.assertTrue({"riser", "sub", "click", "glitch"} <= SFX_NAMES)
+        self.assertTrue({"drive", "drive-peak"} <= MUSIC_CUES)
+        for n in ("riser", "sub", "click", "glitch"):
+            x = audio.sfx(n, 1)
+            self.assertTrue(np.isfinite(x).all()); self.assertLessEqual(float(np.abs(x).max()), 0.951)
+
+    def test_drive_cue_has_a_rhythm_on_the_beat_grid(self):
+        bpm = 100; m = audio.compose([{"start": 0, "end": 12, "music_cue": "drive-peak"}], 12, 1, bpm=bpm, key_semi=-3)
+        y = m[int(2 * audio.SR):int(10 * audio.SR)]; hop = int(0.01 * audio.SR)
+        e = np.sqrt((y[:len(y) // hop * hop].reshape(-1, hop) ** 2).mean(1)); depth = e.std() / e.mean(); e = e - e.mean()
+        ac = np.correlate(e, e, "full")[len(e) - 1:]; ac /= ac[0]
+        self.assertGreater(depth, 0.3)                                   # audibly pulsing, not a flat pad
+        self.assertGreater(ac[int(round(120 / bpm / 0.01))], 0.25)      # periodic every two beats (kick on 1 and 3)
+
+    def test_beat_snap_puts_every_cut_on_the_beat(self):
+        from pipeline.build import build_timeline
+        ep = load_episode("tc03-btk-floppy"); beat = 60 / ep["music"]["bpm"]
+        narr = [{"duration": 1.234 + 0.37 * i} for i in range(len(ep["scenes"]))]
+        tl = build_timeline(ep, narr, None)
+        for s in tl:
+            self.assertAlmostEqual(s["end"] / beat, round(s["end"] / beat), places=2)
+
+    def test_word_timings_cover_every_caption_word(self):
+        try:
+            import piper, onnx  # noqa: F401
+        except ImportError:
+            self.skipTest("piper/onnx not installed")
+        from pipeline.narrate import narrate_episode
+        ep = load_episode("tc03-btk-floppy")
+        for sc, n in zip(ep["scenes"], narrate_episode(ep)):
+            for ln in n["lines"]:
+                ws = ln["words"]
+                self.assertEqual([w["w"] for w in ws], ln["text"].split(), sc["id"])
+                starts = [w["start"] for w in ws]
+                self.assertEqual(starts, sorted(starts), f"{sc['id']}: word times not monotonic")
+                self.assertLessEqual(ws[-1]["end"], ln["end"] - ln["start"] + 1e-3)
+
+    def test_punch_captions_and_motion_code_present(self):
+        js = (ROOT / "renderer" / "engine.js").read_text()
+        for needle in ("function punchCaption", "caption_style === 'punch'", "transition === 'flash'", "mblur"):
+            self.assertIn(needle, js)
 
 
 class Deliverables(unittest.TestCase):
