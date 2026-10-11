@@ -901,22 +901,13 @@
      ]
     }
    ],
-   "visual_description": "press room (cold grade); agent_a (silhouette): stand -> present -> hands_together -> present; camera push/pull; overlays: card 'CHARGED · 20 APRIL 2026 / MURDER + SPECIAL CIRCUMSTANCES / CONTINUOUS SEXUAL ABUSE OF A CHILD UNDER 14 / UNLAWFUL MUTILATION OF HUMAN REMAINS / ALLEGATIONS · HE HAS PLEADED NOT GUILTY'.",
+   "visual_description": "press room (cold grade); agent_a (silhouette): stand -> present -> hands_together -> present; keyed camera moves, handheld; overlays: card 'CHARGED · 20 APRIL 2026 / MURDER + SPECIAL CIRCUMSTANCES / CONTINUOUS SEXUAL ABUSE OF A CHILD UNDER 14 / UNLAWFUL MUTILATION OF HUMAN REMAINS / ALLEGATIONS · HE HAS PLEADED NOT GUILTY'.",
    "shot_size": "medium",
    "set": "press_room",
    "grade": "cold",
    "camera": {
-    "from": {
-     "x": 0,
-     "y": 60,
-     "z": 1
-    },
-    "to": {
-     "x": 0,
-     "y": 90,
-     "z": 1.08
-    },
-    "handheld": 0
+    "keys": 3,
+    "handheld": 2
    },
    "characters": [
     "agent_a"
@@ -1121,22 +1112,22 @@
      ]
     }
    ],
-   "visual_description": "hills rain (night grade); camera push/pull; overlays: svg.",
+   "visual_description": "hills rain (night grade); camera push/pull, handheld; overlays: svg.",
    "shot_size": "insert/graphic",
    "set": "hills_rain",
    "grade": "night",
    "camera": {
     "from": {
-     "x": -20,
-     "y": 40,
-     "z": 1
+     "x": -260,
+     "y": 120,
+     "z": 0.96
     },
     "to": {
-     "x": 110,
-     "y": -60,
-     "z": 1.32
+     "x": 150,
+     "y": -40,
+     "z": 1.5
     },
-    "handheld": 0
+    "handheld": 2
    },
    "characters": [],
    "character_actions": [],
@@ -1311,7 +1302,7 @@
      ]
     }
    ],
-   "visual_description": "courtroom (cold grade); press_operator (silhouette): hands_together; agent_a (silhouette): stand -> present; official (silhouette): hands_together; camera push/pull; overlays: label 'PLEA: NOT GUILTY', card 'DEFENCE · APRIL 2026 / THE EVIDENCE WILL SHOW HE / 'DID NOT MURDER CELESTE / RIVAS HERNANDEZ''.",
+   "visual_description": "courtroom (cold grade); press_operator (silhouette): hands_together; agent_a (silhouette): stand -> present; official (silhouette): hands_together; camera push/pull; overlays: label 'PLEA: NOT GUILTY', card 'DEFENCE (FORMER COUNSEL) · APRIL 2026 / THE EVIDENCE WILL SHOW HE / 'DID NOT MURDER CELESTE / RIVAS HERNANDEZ''.",
    "shot_size": "medium",
    "set": "courtroom",
    "grade": "cold",
@@ -1379,7 +1370,7 @@
     {
      "type": "card",
      "at": 2.19,
-     "text": "DEFENCE · APRIL 2026 / THE EVIDENCE WILL SHOW HE / 'DID NOT MURDER CELESTE / RIVAS HERNANDEZ'"
+     "text": "DEFENCE (FORMER COUNSEL) · APRIL 2026 / THE EVIDENCE WILL SHOW HE / 'DID NOT MURDER CELESTE / RIVAS HERNANDEZ'"
     }
    ],
    "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",

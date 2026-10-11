@@ -18,3 +18,4 @@
 - 2026-10-11 09:12:23 produce 3: regenerating episode data
 - 2026-10-11 09:12:23 tcv03-d4vd-case: rendering (final, seed 1)
 - 2026-10-11 09:31:28 tcv03-d4vd-case: rendered in 1144s
+- 2026-10-11 09:32:24 tcv03-d4vd-case: VERIFIED -> series/true-crime-cinematic/output/true_crime_d4vd_case.mp4 (79.1s, 34.0 MB, sha256 65eec5eee0fe)

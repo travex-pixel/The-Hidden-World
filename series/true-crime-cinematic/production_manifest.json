@@ -236,7 +236,7 @@
         "fps": 30.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 33766579,
+        "size_bytes": 34022010,
         "mean_volume_db": -16.6,
         "max_volume_db": -1.6
       },
@@ -290,13 +290,143 @@
       "frames_sampled": 14,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_03",
       "status": "verified_automated",
-      "sha256": "a2a132d362441aa3f03180b84432d1d9a2909f6e08046df4e5f62befffbe964c",
+      "sha256": "65eec5eee0fee28fe908b4c323a0123227ed4f13e8976a22828cd8b23d59cb37",
       "output": "series/true-crime-cinematic/output/true_crime_d4vd_case.mp4",
-      "verified": "2026-10-11T09:09:25",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "verified": "2026-10-11T09:32:24",
+      "next_task": "Before publishing: re-check the 19 Oct 2026 hearing status; then upload (YouTube: altered/synthetic content = Yes).",
+      "episode_summary": "The D4vd case (Los Angeles, ongoing): remains found in a Tesla registered to the singer; his arrest, the charges (allegations), his not-guilty pleas, the July holding order, the change of counsel, and the next hearing. Presumption of innocence stated; no real person depicted.",
+      "legal_status_verified": "2026-10-11",
+      "research": "episodes/tcv03-d4vd-case/research.md",
+      "soundtrack": {
+        "engine": "pipeline/score.py (original, procedural; no samples or third-party audio)",
+        "mix": "pipeline/mixdown.py",
+        "sections": "A hook s01-s02 \u00b7 B investigation s03-s05 \u00b7 C questions s06-s09 \u00b7 D cliffhanger s10-s11 (impact on 'trial' at 70.4 s) \u00b7 E exit s12",
+        "licence": "original work generated in this repository; no attribution required (see docs/CREDITS.md)"
+      },
+      "editorial_review": {
+        "reviewed": "2026-10-11",
+        "method": "rendered artefact: 24 extracted frames + 12 re-render frames, measured audio (pipeline/audio_qa.py), offline ASR transcript; no human listening test was possible in this environment",
+        "round_1": {
+          "executive_producer": {
+            "decision": "pass with medium issues",
+            "findings": [
+              {
+                "t": "0-9 s",
+                "severity": "info",
+                "note": "Hook lands: tow yard, smell, remains, then the registration card and D4VD caption by ~9 s."
+              },
+              {
+                "t": "23.6-33.6 s",
+                "severity": "medium",
+                "note": "Press-room shot near-static for 10 s (only card rows change)."
+              },
+              {
+                "t": "33.6-42.7 s",
+                "severity": "medium",
+                "note": "Hills shot dark and static for 9 s; house partly under the timeline card in preview."
+              }
+            ]
+          },
+          "composer_sound_designer": {
+            "decision": "pass with low issues",
+            "findings": [
+              {
+                "t": "whole",
+                "severity": "low",
+                "note": "Restrained build: section phone-band medians A -41.9, B -45.4, C -43.5, D -40.9, E -41.8 dB; drops at 6 s and 51 s are intentional."
+              },
+              {
+                "t": "70.4 s",
+                "severity": "info",
+                "note": "Cliffhanger impact lands on 'trial'; unresolved cluster carries into the exit."
+              }
+            ]
+          },
+          "audio_engineer": {
+            "decision": "fail",
+            "findings": [
+              {
+                "t": "78.9-79.1 s",
+                "severity": "high",
+                "note": "Rain effect bed held at ~-32 dBFS and was chopped in the last 20 ms while the picture faded; the ending check (250 ms average) missed it."
+              },
+              {
+                "t": "0-15 s",
+                "severity": "info",
+                "note": "First word at 0.31 s (intended 0.25), gap bed 14.5 dB under speech, no holes; -14.2 LUFS, TP -1.6 dBTP, mono 0 LU."
+              }
+            ]
+          },
+          "legal_factual": {
+            "decision": "pass with low issues",
+            "findings": [
+              {
+                "t": "42.7-48.2 s",
+                "severity": "low",
+                "note": "Defence quote card should say the lawyers were former counsel (they withdrew 31 Aug 2026)."
+              },
+              {
+                "t": "whole",
+                "severity": "info",
+                "note": "All narration attributed and sourced (13 claims, >=2 sources each); 'pleaded not guilty', 'not a verdict', 'presumed innocent' present; next date 19 Oct as scheduled 31 Aug, re-searched 2026-10-11."
+              }
+            ]
+          },
+          "mobile_retention": {
+            "decision": "pass with medium issues",
+            "findings": [
+              {
+                "t": "23-43 s",
+                "severity": "medium",
+                "note": "Two longest shots back to back at the midpoint with little motion: drop-off risk."
+              },
+              {
+                "t": "23.6-33.6 s",
+                "severity": "low",
+                "note": "Charge card text 26-29 px is small on a phone."
+              }
+            ]
+          }
+        },
+        "fixes_applied": [
+          "master tail fade in pipeline/mixdown.py (all score and effects end with the picture) + stricter ending check (last 50 ms < -48 dBFS) + regression test",
+          "press room: keyed push-in wide -> medium -> close, handheld; podium extended to the floor",
+          "hills: stronger push toward the house, handheld; house moved clear of the timeline card",
+          "card text enlarged (31/29 px)",
+          "'DEFENCE (FORMER COUNSEL)'",
+          "Case Files 01/02 re-mixed with the same fix and re-verified"
+        ],
+        "round_2": {
+          "executive_producer": {
+            "decision": "pass",
+            "note": "Mid-video shots now move (push-ins); every scene adds a new fact; ending lands on the next hearing and the presumption of innocence."
+          },
+          "composer_sound_designer": {
+            "decision": "pass",
+            "note": "Score sections and drops unchanged; exit fades with the picture. Remaining: the build is deliberately restrained; louder D section is a taste call, not changed."
+          },
+          "audio_engineer": {
+            "decision": "pass",
+            "note": "Last 50 ms -95.5 dBFS, last 250 ms -66.2 dBFS; all 10 audio checks pass; full decode clean; A/V within 58 ms."
+          },
+          "legal_factual": {
+            "decision": "pass",
+            "note": "Former-counsel attribution added; no allegation presented as fact; no graphic or tabloid detail; no real person depicted."
+          },
+          "mobile_retention": {
+            "decision": "pass",
+            "note": "Captions inside the safe area (x 105-975, y 1281-1483); cards readable; first 10 s strong."
+          }
+        },
+        "outstanding": [
+          "No human listening test was possible here; levels are measured, not heard.",
+          "The 19 Oct 2026 hearing could be continued after publication; re-check the docket before posting and update the closing line if it moves.",
+          "ASR mishears proper names (Rivas, Elsinore) - the narration itself uses the correct names."
+        ]
+      }
     }
   },
-  "updated": "2026-10-11T09:16:25",
+  "updated": "2026-10-11T09:32:24",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",
