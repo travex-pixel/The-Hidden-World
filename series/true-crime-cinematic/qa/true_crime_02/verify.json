@@ -1,0 +1,105 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv02-unabomber/tcv02-unabomber.mp4",
+    "size_bytes": 30811316,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 87.632,
+    "audio_duration": 87.632,
+    "decode_stderr": "",
+    "mean_volume_db": -17.1,
+    "max_volume_db": -1.1,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv02-unabomber/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2628,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.5,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "shot_variety_and_character_action": false,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.1
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.095,
+    "transcript": "For 17 years, the FBA hunted a bomber it couldn't name, but finally caught him, his own words and his own brother. Between 1970, 8 and 1995, 16 bombs killed three people and injured more than 20. In 1995, he made an offer. Published his 35,000 word manifesto and he would assist from terrorism. The FBI and the Attorney General back printing it, hoping someone would recognize the writer. On September 19th, 1995, the Washington Post printed all of it. One reader, Linda Patrick, suspected her husband's brother. She urged her husband, David, to read it. David compared it with old letters from his brother Ted. An outside analyst judge the same person had probably written both. Early in 1996, Through a lawyer, the family went to the FBI. Analysts found the same unusual twist on an old saying in both. You can't eat your cake and have it too. April 3, 1996, agents arrested Ted Kaksensky at his tiny cabin in Montana. Inside, they found a live bomb wrapped and ready to mail. In 1998, he pleaded guilty and was sentenced to life without release. David received to one million-dollar reward. He pledged most of it to the families of his brothers victims. Palmer wanted the world to read his works. His own family did."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 105,
+      "extent": {
+        "left": 105.0,
+        "right": 975.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "one-million-dollar"
+      ]
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.3,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.45,
+      "frames": 876
+    },
+    "slideshow_risk": {
+      "shots": 12,
+      "composed_shots": 11,
+      "shots_with_characters": 11,
+      "character_shot_share": 1.0,
+      "distinct_sets": 7,
+      "max_set_share": 0.27,
+      "shot_sizes": {
+        "medium": 9,
+        "map/graphic": 1,
+        "close-up": 1,
+        "medium-wide": 1
+      },
+      "max_shot_size_share": 0.75,
+      "ok": false
+    }
+  }
+}

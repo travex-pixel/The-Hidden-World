@@ -56,7 +56,64 @@
       "sha256": "b3a8abffe01712ea433fd89bd8f2cf9364963b844b1c293c9e642228031b8bef",
       "output": "series/true-crime-cinematic/output/true_crime_01.mp4",
       "verified": "2026-10-11T07:03:27"
+    },
+    "02": {
+      "id": "tcv02-unabomber",
+      "title": "How the Unabomber's Own Words Gave Him Away #Shorts",
+      "file": "true_crime_02.mp4",
+      "media": {
+        "duration": 87.632,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 30811316,
+        "mean_volume_db": -17.1,
+        "max_volume_db": -1.1
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 2628,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -18.5,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true,
+        "captions_in_safe_area": true,
+        "no_frozen_or_static_picture": true,
+        "shot_variety_and_character_action": false,
+        "every_shot_sourced_and_tagged": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "true_peak_dbtp": -1.1
+      },
+      "asr_word_error_rate": 0.095,
+      "frames_sampled": 15,
+      "qa_dir": "series/true-crime-cinematic/qa/true_crime_02",
+      "status": "failed_qa",
+      "next_task": "inspect qa/ and fix; then re-run qa.py"
     }
   },
-  "updated": "2026-10-11T07:03:27"
+  "updated": "2026-10-11T07:19:40"
 }

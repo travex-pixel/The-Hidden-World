@@ -74,7 +74,7 @@
     tcv2_offer(ctx) {
       const l2 = LS(ctx, 1, 2.8), and_ = WT(ctx, 1, 4, 5.8), des = WT(ctx, 1, 7, 6.3);
       return E.cine.shot(ctx, {
-        set: 'cabin_interior', grade: 'night', cam: { from: { x: -40, y: 0, z: 1.0 }, to: { x: 40, y: -20, z: 1.1 } },
+        set: 'cabin_interior', grade: 'night', cam: { from: { x: 0, y: -40, z: 1.12 }, to: { x: 60, y: -110, z: 1.4 } },
         figures: [{ id: 'ted', x: 330, y: 1700, scale: 1.1, dir: 1, turn: 0.55, pose: 'sit_type', expr: 'focused', gaze: [0.6, 0.5], silhouette: true, keys: typingKeys(0.1, ctx.T) }],
         props: [{ depth: 1.07, svg: typewriter(600, 1176, 1.15) + stack(880, 1172, 0.9, 12) }],
         overlays: [
@@ -105,9 +105,9 @@
     tcv2_press(ctx) {
       const pr = WT(ctx, 0, 7, 3.9);
       return E.cine.shot(ctx, {
-        set: 'press_hall', grade: 'cold', cam: { from: { x: 0, y: 0, z: 1.06 }, to: { x: 30, y: 20, z: 1.0 } },
-        figures: [{ id: 'press_operator', x: 830, y: 1950, scale: 1.05, dir: -1, turn: 0.45, pose: 'stand', expr: 'neutral', gaze: [0.5, -0.2], keys: [{ at: pr - 0.4, pose: 'read_newspaper', expr: 'focused', gaze: [0.3, 0.5], dur: 0.6 }] }],
-        props: [{ depth: 1.0, svg: `<g transform="translate(250 1560)">${[0, 1, 2, 3, 4, 5].map(i => newspaper(0, -i * 14, 0.9, (i % 2) * 2 - 1)).join('')}</g>` }],
+        set: 'press_hall', grade: 'cold', cam: { from: { x: 0, y: 0, z: 1.06 }, to: { x: 30, y: 20, z: 1.0 }, handheld: 2 },
+        figures: [{ id: 'press_operator', x: 860, y: 1560, scale: 0.55, dir: -1, turn: 0.45, pose: 'stand', expr: 'neutral', gaze: [0.5, -0.2], keys: [{ at: pr - 0.4, pose: 'read_newspaper', expr: 'focused', gaze: [0.3, 0.5], dur: 0.6 }] }],
+        props: [{ depth: 1.0, svg: `<g transform="translate(290 1300)">${[0, 1, 2, 3, 4, 5].map(i => newspaper(0, -i * 14, 0.9, (i % 2) * 2 - 1)).join('')}</g>` }],
         overlays: [{ type: 'label', at: 0.3, x: 60, y: 380, text: '19 SEPTEMBER 1995', fs: 44, sub: 'The Washington Post · full text' }]
       });
     },
@@ -141,7 +141,7 @@
         return s;
       };
       return E.cine.shot(ctx, {
-        set: 'kitchen_night', grade: 'warm', cam: { from: { x: 0, y: 0, z: 1.0 }, to: { x: 0, y: 20, z: 1.06 } },
+        set: 'kitchen_night', grade: 'warm', cam: { from: { x: -30, y: -40, z: 1.15 }, to: { x: -60, y: -95, z: 1.35 } },
         figures: [{ id: 'david', x: 470, y: 1700, scale: 1.05, dir: 1, turn: 0.3, pose: 'sit_read', noChair: true, expr: 'focused', gaze: [0.3, 0.6], keys: [{ at: ted - 0.1, expr: 'worried', gaze: [0, 0.2], headTurn: -0.15, dur: 0.5 }] }],
         props: [{ depth: 0.99, svg: chair(470, 1700, 1.05, 1) }],
         overlays: [{ type: 'svg', at: 0, svg: cards }]
@@ -157,7 +157,7 @@
           keys: [{ at: same, expr: 'realise', dur: 0.3 }, { at: prob, pose: 'stand', headTurn: -0.3, gaze: [-0.2, 0], expr: 'determined', dur: 0.6 }] }],
         props: [{ depth: 1.07, svg: page(560, 1150, 170, 70, -4, 31) + page(760, 1150, 170, 70, 3, 33, true) }],
         overlays: [
-          { type: 'label', at: 0.3, until: same - 0.2, x: 60, y: 380, text: 'OUTSIDE ANALYSIS', fs: 44, sub: 'Hired privately by the family' },
+          { type: 'label', at: 0.3, until: same - 0.2, x: 60, y: 380, text: 'OUTSIDE ANALYSIS', fs: 44, sub: 'Arranged via a family friend' },
           { type: 'card', at: same - 0.1, x: 140, y: 330, w: 800, rows: [{ text: 'SAME WRITER?', fs: 44 }, { text: 'PROBABLY.', fs: 60, colour: '#8a5a12', at: prob - 0.1 }] }
         ]
       });
