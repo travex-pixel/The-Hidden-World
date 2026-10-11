@@ -155,7 +155,7 @@ def build(h):
                 "Who was 'Dan Cooper', and what happened after he jumped from Flight 305?",
                 figures, scenes, claims, sources, "THE D.B. COOPER HIJACKING · 1971", bpm=80)
     ep["music"]["beat_snap"] = 0.5   # cut on the half-beat: brisker pacing
-    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"727": "seven twenty seven", "727s": "seven twenty sevens"})
+    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"727": "seven twenty seven", "727s": "seven twenty sevens", "$200,000": "two hundred thousand dollars", "$20": "twenty dollar", "$5,800": "five thousand eight hundred dollars"})
     ep["score"] = {"root_hz": 146.83, "bpm": 80,
                    "hits": [{"scene": "s07_jump", "word": [1, 1], "at": 0.0, "gain": 0.45},
                             {"scene": "s11_serials", "word": [0, 4], "at": 0.0, "gain": 0.5}],
