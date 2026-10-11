@@ -7,23 +7,23 @@ Reads the verified render in out/qg01-the-favour/ and writes, into series/the-qu
   description.md, promo.md, qa/verify.json, qa/contact_sheet.png, delivery/index.html (plays ../final.mp4)
 With --hosted it also builds out/qg01-delivery-hosted/: the same page in "hosted" mode for a private claude.ai
 artifact. A 720p phone stream is split into ~1-minute MP4 parts (each plays on its own, with its own captions),
-and the full 1080p master is split into exact byte chunks that the page reassembles and verifies (SHA-256)
-before offering the save.
+and the full 1080p master is split into base64 text pieces (artifact hosting serves only standard web types)
+that the page decodes, reassembles and verifies (SHA-256) before offering the save.
 """
 from __future__ import annotations
-import argparse, hashlib, json, shutil, subprocess, sys
+import argparse, base64, hashlib, json, shutil, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from pipeline.captions import cues, clock, chapters as chapter_list, _ts, _wrap  # noqa: E402
+from pipeline.captions import clock, chapters as chapter_list  # noqa: E402
 
 EP = "qg01-the-favour"
 OUT = ROOT / "out" / EP
 DST = ROOT / "series" / "the-quiet-game" / "the-favour"
 HOSTED = ROOT / "out" / "qg01-delivery-hosted"
 DOWNLOAD_NAME = "The-Quiet-Game-E01-The-Favour-1080p.mp4"
-CHUNK = 14 * 1024 * 1024          # artifact files must stay under 15 MB each
+CHUNK = 11 * 1024 * 1024          # raw bytes per piece; base64 text stays under the 16 MB artifact text limit
 STREAM_PART_S = 60
 
 
@@ -127,7 +127,7 @@ def longform_qa(master: Path) -> dict:
 
 
 def build_stream(master: Path, dst: Path, ep: dict, tl: list) -> list[dict]:
-    """720p phone stream in ~60 s parts, each a standalone MP4 with its own WebVTT captions."""
+    """720p phone stream in ~60 s parts, each a standalone MP4 (captions are burned in)."""
     dst.mkdir(parents=True, exist_ok=True)
     for f in dst.glob("part*"):
         f.unlink()
@@ -135,18 +135,12 @@ def build_stream(master: Path, dst: Path, ep: dict, tl: list) -> list[dict]:
                     "-maxrate", "1800k", "-bufsize", "3600k", "-pix_fmt", "yuv420p", "-force_key_frames", f"expr:gte(t,n_forced*{STREAM_PART_S})",
                     "-c:a", "aac", "-b:a", "128k", "-f", "segment", "-segment_time", str(STREAM_PART_S), "-reset_timestamps", "1",
                     "-segment_format", "mp4", "-segment_format_options", "movflags=+faststart", str(dst / "part%02d.mp4")], check=True)
-    cs = cues(ep, tl); segs = []; start = 0.0
+    segs = []; start = 0.0
     for p in sorted(dst.glob("part*.mp4")):
         if p.stat().st_size >= 15_000_000:
             raise SystemExit(f"{p.name} is {p.stat().st_size} bytes; lower the stream bitrate")
         dur = float(probe(p)["format"]["duration"])
-        vtt = ["WEBVTT\n"]
-        for c in cs:
-            a, b = max(c["start"], start), min(c["end"], start + dur)
-            if b - a > 0.15:
-                vtt.append(f"{_ts(a - start, '.')} --> {_ts(b - start, '.')}\n" + "\n".join(_wrap(c["text"])) + "\n")
-        (p.with_suffix(".vtt")).write_text("\n".join(vtt))
-        segs.append({"src": f"stream/{p.name}", "vtt": f"stream/{p.stem}.vtt", "start": round(start, 3), "dur": round(dur, 3)})
+        segs.append({"src": f"stream/{p.name}", "vtt": None, "start": round(start, 3), "dur": round(dur, 3)})
         start += dur
     return segs
 
@@ -158,13 +152,46 @@ def page(template: str, data: dict, standalone: bool) -> str:
     return body
 
 
+def write_pages(ep: dict, tl: list, v: dict, master: Path, hosted_info: dict | None) -> None:
+    ch = chapter_list(ep, tl)
+    size = master.stat().st_size; digest = hosted_info["sha256"] if hosted_info else sha256(master)
+    specs = {"width": v["width"], "height": v["height"], "fps": v["fps"], "duration": v["duration"], "size": size, "codecs": "H.264 · AAC"}
+    kit = [
+        {"label": "Title", "text": ep["youtube_title"], "open": True},
+        {"label": "Description", "text": (DST / "description.md").read_text().split("---\n")[1].strip(), "save": "description.txt"},
+        {"label": "Chapters", "text": (DST / "chapters.txt").read_text().strip()},
+        {"label": "Captions (SRT)", "text": (DST / "captions.srt").read_text(), "save": "the-favour-captions.srt.txt", "note": "YouTube Studio → Subtitles → Upload file. If you save it from here, rename the file to end in .srt."},
+        {"label": "Transcript", "text": (DST / "transcript.txt").read_text()},
+        {"label": "Pinned comment and community post", "text": (DST / "promo.md").read_text().split("## Short teaser")[0].replace("# Promotion pack: The Quiet Game, Episode 1\n\n", "").strip()},
+        {"label": "Sources", "text": (DST / "references.md").read_text()},
+    ]
+    common = {"youtube_title": ep["youtube_title"], "episode_line": "Episode 1 · The Favour", "specs": specs, "chapters": [{"t": t, "title": title} for t, title in ch],
+              "download_name": DOWNLOAD_NAME, "kit": kit,
+              "notice": f"A fictional story; the psychology is real. This video has not been uploaded or published anywhere. Master file SHA-256 {digest[:16]}…"}
+    tpl = (ROOT / "series" / "the-quiet-game" / "delivery_template.html").read_text()
+    local = {**common, "mode": "local", "src": "../final.mp4", "vtt": "../captions.vtt", "poster": "../thumbnail.png"}
+    (DST / "delivery" / "index.html").write_text(page(tpl, local, standalone=True))
+    print(f"local page -> {DST / 'delivery' / 'index.html'}")
+    if hosted_info:
+        hosted = {**common, "mode": "hosted", "segments": hosted_info["segments"], "poster": "poster.jpg",
+                  "master": {"parts": hosted_info["parts"], "size": size, "sha256": digest, "encoding": "base64"},
+                  "download_hint": f"Fetches the 1080p master in {len(hosted_info['parts'])} pieces, checks the SHA-256, then asks you to confirm the save. Use Wi-Fi: about {size / 1e6:.0f} MB."}
+        (HOSTED / "index.html").write_text(page(tpl, hosted, standalone=False))
+        print(f"hosted page -> {HOSTED / 'index.html'}")
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(); ap.add_argument("--hosted", action="store_true"); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--hosted", action="store_true")
+    ap.add_argument("--pages-only", action="store_true", help="rebuild the two delivery pages from already-packaged files")
+    a = ap.parse_args()
     ep = json.loads((ROOT / "episodes" / EP / "episode.json").read_text())
     master = OUT / f"{EP}.mp4"; v = json.loads((OUT / "verify.json").read_text())
     if not master.exists() or not v["all_passed"]:
         raise SystemExit("no verified render in out/; run: python -m pipeline.build qg01-the-favour --quality final --workers 5")
     tl = json.loads((OUT / "timeline.json").read_text())
+    if a.pages_only:
+        write_pages(ep, tl, v, master, json.loads((HOSTED / "manifest.json").read_text()) if (HOSTED / "manifest.json").exists() else None)
+        return 0
     q = longform_qa(master)
     for k, val in q.items():
         if isinstance(val, bool):
@@ -191,25 +218,7 @@ def main() -> int:
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(master), "-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "20", "-preset", "medium",
                     "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", str(DST / "teaser.mp4")], check=True)
 
-    size = master.stat().st_size; digest = sha256(master)
-    specs = {"width": v["width"], "height": v["height"], "fps": v["fps"], "duration": v["duration"], "size": size, "codecs": "H.264 · AAC"}
-    kit = [
-        {"label": "Title", "text": ep["youtube_title"], "open": True},
-        {"label": "Description", "text": (DST / "description.md").read_text().split("---\n")[1].strip(), "save": "description.txt"},
-        {"label": "Chapters", "text": (DST / "chapters.txt").read_text().strip()},
-        {"label": "Captions (SRT)", "text": (DST / "captions.srt").read_text(), "save": "the-favour-captions.srt.txt", "note": "YouTube Studio → Subtitles → Upload file. If you save it from here, rename the file to end in .srt."},
-        {"label": "Transcript", "text": (DST / "transcript.txt").read_text()},
-        {"label": "Pinned comment and community post", "text": (DST / "promo.md").read_text().split("## Short teaser")[0].replace("# Promotion pack: The Quiet Game, Episode 1\n\n", "").strip()},
-        {"label": "Sources", "text": (DST / "references.md").read_text()},
-    ]
-    common = {"youtube_title": ep["youtube_title"], "episode_line": "Episode 1 · The Favour", "specs": specs, "chapters": [{"t": t, "title": title} for t, title in ch],
-              "download_name": DOWNLOAD_NAME, "kit": kit,
-              "notice": f"A fictional story; the psychology is real. This video has not been uploaded or published anywhere. Master file SHA-256 {digest[:16]}…"}
-    tpl = (ROOT / "series" / "the-quiet-game" / "delivery_template.html").read_text()
-    local = {**common, "mode": "local", "src": "../final.mp4", "vtt": "../captions.vtt", "poster": "../thumbnail.png"}
-    (DST / "delivery" / "index.html").write_text(page(tpl, local, standalone=True))
-    print(f"local deliverables -> {DST}")
-
+    hosted_info = None
     if a.hosted:
         if HOSTED.exists():
             shutil.rmtree(HOSTED)
@@ -223,14 +232,12 @@ def main() -> int:
                 b = f.read(CHUNK)
                 if not b:
                     break
-                name = f"master/final.part{i:02d}.bin"; (HOSTED / name).write_bytes(b); parts.append(name); i += 1
+                name = f"master/final.part{i:02d}.b64.txt"; (HOSTED / name).write_bytes(base64.b64encode(b)); parts.append(name); i += 1
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(DST / "thumbnail.png"), "-q:v", "3", str(HOSTED / "poster.jpg")], check=True)
-        hosted = {**common, "mode": "hosted", "segments": segs, "poster": "poster.jpg",
-                  "master": {"parts": parts, "size": size, "sha256": digest},
-                  "download_hint": f"Fetches the 1080p master in {len(parts)} pieces, checks the SHA-256, then asks you to confirm the save. Use Wi-Fi: about {size / 1048576:.0f} MB."}
-        (HOSTED / "index.html").write_text(page(tpl, hosted, standalone=False))
-        (HOSTED / "manifest.json").write_text(json.dumps({"sha256": digest, "size": size, "parts": parts, "segments": segs}, indent=1))
+        hosted_info = {"sha256": sha256(master), "size": master.stat().st_size, "parts": parts, "segments": segs}
+        (HOSTED / "manifest.json").write_text(json.dumps(hosted_info, indent=1))
         print(f"hosted bundle -> {HOSTED} ({len(segs)} stream parts, {len(parts)} master chunks)")
+    write_pages(ep, tl, v, master, hosted_info)
     return 0
 
 
