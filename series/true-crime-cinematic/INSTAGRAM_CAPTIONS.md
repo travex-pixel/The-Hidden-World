@@ -83,3 +83,80 @@ Where do YOU think she went? 👇 Follow for more cases.
 #AgathaChristie #UnsolvedMysteries #RealMystery #HistoryMystery #1920s #TrueCrime #CaseFiles #TheHiddenWorld
 
 Illustrated reconstruction · AI narration
+
+---
+
+# Case Files 10–14 (posted 2026-10-11)
+**Posting order.** Post 10 through 14 in order. Each video's ending teases the next one:
+
+> Golden State Killer → Great Train Robbery → Son of Sam → Hatton Garden → Litvinenko
+
+Litvinenko, the last video, asks viewers to choose the next case. These five follow the BTK "floppy disk" formula; see `docs/STYLE_GUIDE_TRUE_CRIME.md`.
+
+## 10: Golden State Killer (`true_crime_10_golden_state_killer.mp4`)
+Police had his DNA for decades. They still had no name. 🧬
+
+So investigators tried something new: they went looking for his cousins.
+A family tree, a car door handle, and one tissue later…
+
+Would you put your DNA on a family-tree website? 👇 Follow for the next case.
+
+#TrueCrime #GoldenStateKiller #ColdCase #DNA #GeneticGenealogy #Forensics #TrueCrimeCommunity #CaseFiles
+
+He pleaded guilty in 2020 and is serving life without parole. Victims are not shown or named.
+Illustrated reconstruction · AI narration
+
+## 11: The Great Train Robbery (`true_crime_11_great_train_robbery.mp4`)
+Britain's biggest train robbers got away with £2.6 million… then a board game gave them away. 🎲
+
+August 1963: a rigged signal stops the night mail train.
+The gang vanishes to a remote farmhouse to lie low.
+Five days later, police arrive. What did the gang leave behind?
+
+Would you have spotted their mistake? 👇 Follow for the next case.
+
+#TrueCrime #GreatTrainRobbery #CrimeHistory #BritishHistory #Heist #RonnieBiggs #History #CaseFiles
+
+The train driver, Jack Mills, was badly hurt in the robbery. Gang members are shown as illustrations, not likenesses.
+Illustrated reconstruction · AI narration
+
+## 12: Son of Sam (`true_crime_12_son_of_sam.mp4`)
+A parking ticket ended a year of terror in New York. 🎫
+
+For a year, police couldn't catch the killer who called himself the Son of Sam.
+Then, one summer night in Brooklyn, he parked by a fire hydrant.
+A woman walking her dog noticed.
+
+Would you have come forward? 👇 Follow for the next case.
+
+#TrueCrime #SonOfSam #NewYorkHistory #CrimeHistory #1970s #TrueCrimeCommunity #CaseFiles
+
+Six people were killed and seven wounded in 1976–77. We remember them, not him.
+Illustrated reconstruction · AI narration
+
+## 13: Hatton Garden (`true_crime_13_hatton_garden.mp4`)
+Thieves drilled through a London vault wall over Easter. The ringleader was 76. 🕳️
+
+The alarm went off. The police never came.
+On night one, a bolted-down cabinet stopped them cold.
+So how did detectives finally catch them?
+
+Would you have spotted the clue? 👇 Follow for the next case.
+
+#TrueCrime #HattonGarden #Heist #London #CrimeStory #TrueCrimeCommunity #BritishCrime #CaseFiles
+
+Convictions in 2016 and 2019. The gang are shown as generic illustrated figures, not likenesses.
+Illustrated reconstruction · AI narration
+
+## 14: Litvinenko (`true_crime_14_litvinenko.mp4`)
+A man drank tea in a London hotel bar. Three weeks later, he was dead. ☕
+
+Doctors couldn't name the poison until hours before he died.
+Then investigators followed its trail across London, back to one teapot.
+
+Which case should we crack next? 👇 Tell us in the comments, and follow for more.
+
+#TrueCrime #Litvinenko #London #Polonium #ColdCase #Unsolved #CaseFiles #History
+
+A UK public inquiry (2016) and the European Court of Human Rights (2021) made findings; no one has been tried. Andrei Lugovoi denies involvement, Dmitry Kovtun denied it before his death in 2022, and Russia denies any role.
+Illustrated reconstruction · AI narration

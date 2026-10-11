@@ -11,6 +11,11 @@
 | 07 | [`output/true_crime_07_gilgo_beach.mp4`](output/true_crime_07_gilgo_beach.mp4) | Gilgo Beach and the pizza crust (2010–2026) | see `production_manifest.json` |
 | 08 | [`output/true_crime_08_lizzie_borden.mp4`](output/true_crime_08_lizzie_borden.mp4) | Lizzie Borden and the burned dress (1892–1893) | see `production_manifest.json` |
 | 09 | [`output/true_crime_09_agatha_christie.mp4`](output/true_crime_09_agatha_christie.mp4) | Agatha Christie's 11-day disappearance (1926) | see `production_manifest.json` |
+| 10 | `true_crime_10_golden_state_killer.mp4` (archived outside git) | Golden State Killer and genetic genealogy (1975–2020) | see `production_manifest.json` |
+| 11 | `true_crime_11_great_train_robbery.mp4` (archived outside git) | The Great Train Robbery and the board game (1963) | see `production_manifest.json` |
+| 12 | `true_crime_12_son_of_sam.mp4` (archived outside git) | Son of Sam and the parking ticket (1976–77) | see `production_manifest.json` |
+| 13 | `true_crime_13_hatton_garden.mp4` (archived outside git) | The Hatton Garden pensioner heist (2015) | see `production_manifest.json` |
+| 14 | `true_crime_14_litvinenko.mp4` (archived outside git) | Litvinenko and the radioactive teapot (2006) | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.
