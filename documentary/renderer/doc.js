@@ -443,7 +443,8 @@ T.clock = (s, lt, d) => {        // time of night
   ctx.fillStyle = C.red; ctx.beginPath(); ctx.arc(cx, cy, 14, 0, 7); ctx.fill();
   const a = eo(ramp(lt, 0.3, 0.4)); ctx.globalAlpha = a;
   capsLabel(s.kicker || '', 960, 380, C.red, 28);
-  setText(150, 900, 'display', C.ink, 'left', 'alphabetic', -2); ctx.fillText(s.display || s.time, 960, 530);
+  setText(150, 900, 'display', C.ink, 'left', 'alphabetic', -2);
+  { const txt = s.display || s.time, fit = ctx.measureText(txt).width; if (fit > W - 960 - 90) setText(150 * (W - 960 - 90) / fit, 900, 'display', C.ink, 'left', 'alphabetic', -2); ctx.fillText(txt, 960, 530); }   // long displays shrink to fit
   setText(42, 500, 'sans', 'rgba(243,240,232,0.85)', 'left'); (s.lines || []).forEach((l, i) => ctx.fillText(l, 960, 620 + i * 58));
   ctx.restore();
 };
@@ -710,6 +711,132 @@ T.character = (s, lt, d) => {
   if (s.caption) { ctx.save(); setText(60, 900, 'display', C.ink, 'left', 'alphabetic', -1); ctx.shadowColor = 'rgba(0,0,0,0.8)'; ctx.shadowBlur = 20; ctx.fillText(s.caption, 120, H - 170); ctx.restore(); }
 };
 
+// ---- cinematic shots: Case Files sets + full-body acting/walking figures (vendored, read-only: renderer/cine/).
+// The world is composed in the Shorts' portrait space (1080x1920) with depth parallax, then a 16:9 window of it
+// (`view` -> `view_to`) is rasterised per frame in DOC.prepare(). Timing in a cine spec is either seconds from the
+// shot start (`at`) or a fraction of the shot (`p`), so shots survive re-timed narration.
+const CINE_GRADES = { warm: ['#ff9a4a', 0.16], cold: ['#2f8fb0', 0.22], night: ['#1a2a6a', 0.25], dawn: ['#ff8a5a', 0.14], sepia: ['#a87a40', 0.18], none: ['#000', 0] };
+const cineT = (k, d, pk = 'p', ak = 'at') => (k[pk] !== undefined ? k[pk] * d : (k[ak] ?? 0));
+function cineOpts(o, lt, d) {   // {key: {anim:[a,b], p0, p1, ease}} -> value at lt; plain values pass through
+  const out = {};
+  for (const [k, v] of Object.entries(o || {})) {
+    if (v && typeof v === 'object' && Array.isArray(v.anim)) { const u = clamp((lt - (v.p0 ?? 0) * d) / Math.max(0.01, ((v.p1 ?? 1) - (v.p0 ?? 0)) * d)); out[k] = lerp(v.anim[0], v.anim[1], v.ease === 'lin' ? u : eio(u)); }
+    else out[k] = v;
+  }
+  return out;
+}
+function cineFigure(f, d) {
+  const g = { ...f };
+  if (f.keys) g.keys = f.keys.map(k => ({ ...k, at: cineT(k, d), ...(k.pd !== undefined ? { dur: k.pd * d } : {}) }));
+  if (f.walk) { const a = cineT(f.walk, d, 'p0', 'at'); const b = f.walk.p1 !== undefined ? f.walk.p1 * d : a + (f.walk.dur ?? 1); g.walk = { ...f.walk, at: a, dur: Math.max(0.05, b - a) }; }
+  if (f.showp) g.show = [f.showp[0] * d, f.showp[1] !== undefined ? f.showp[1] * d : undefined];
+  return g;
+}
+function cineView(s, lt, d) {
+  const a = { cx: 540, cy: 1000, w: 1500, ...(s.view || {}) }; const b = { ...a, ...(s.view_to || {}) };
+  const u = s.view_to ? eio(clamp((lt - (s.view_p0 ?? 0) * d) / Math.max(0.01, ((s.view_p1 ?? 1) - (s.view_p0 ?? 0)) * d))) : 0;
+  const w = lerp(a.w, b.w, u), h = w * 9 / 16; return { x: lerp(a.cx, b.cx, u) - w / 2, y: lerp(a.cy, b.cy, u) - h / 2, w, h };
+}
+function cineSVG(s, lt, d) {
+  const E = window.HW; if (!E || !E.cine || !E.fig) throw new Error('cine template needs renderer/cine/sets.js + figures.js');
+  if (!E.state || !E.state.__cine) E.state = { __doc: true, __cine: true, cast: { ...(PLAN.cast || {}), ...(PLAN.figures || {}) }, seed: PLAN.seed || 1, timeline: [], ep: {} };
+  const set = E.sets[s.set]; if (!set) throw new Error('unknown cine set ' + s.set);
+  const c0 = { t: lt, T: d, sceneStart: s.start, lines: [] };
+  const built = set(c0, cineOpts(s.setOpts, lt, d));
+  const camSpec = s.cam ? { ...s.cam, ...(s.cam.keys ? { keys: s.cam.keys.map(k => ({ ...k, at: cineT(k, d), dur: k.pd !== undefined ? k.pd * d : k.dur })) } : {}) } : {};
+  const cm = E.cine.camAt(c0, camSpec); const light = { ...built.light, ...(s.light || {}) };
+  const items = (s.figures || []).map(f => { const g = cineFigure(f, d); return { d: g.depth ?? 1, svg: () => E.fig.figure(g, c0, light) }; })
+    .concat((s.props || []).map(p => ({ d: p.depth ?? 1, svg: () => (CINE_PROPS[p.kind] ? CINE_PROPS[p.kind](p, lt, d) : '') })));
+  const layers = built.layers.map(([dd, svg]) => ({ d: dd, svg: () => svg })).concat(items).sort((a, b) => a.d - b.d);
+  let world = '';
+  for (const L of layers) { const inner = L.svg(); if (!inner) continue; world += `<g transform="${E.cine.layerT(cm, L.d)}"${L.d > 1.2 ? ' filter="url(#fgBlur)"' : ''}>${inner}</g>`; }
+  if (s.rain) world += E.cine.rain(lt + s.start, [-400, -200, 1880, 2400], s.rain.n || 200, 21, s.rain.op || 0.4);
+  if (s.mirror) world = `<g transform="translate(1080 0) scale(-1 1)">${world}</g>`;
+  const v = cineView(s, lt, d); cache.cineMeta = { dust: !!(built.dust || s.dust), grade: s.grade || 'none' };
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${v.x.toFixed(1)} ${v.y.toFixed(1)} ${v.w.toFixed(1)} ${v.h.toFixed(1)}" width="1920" height="1080" preserveAspectRatio="xMidYMid slice">` +
+    `<defs><filter id="cineSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter><filter id="fgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter></defs>` +
+    E.fig.figDefs + world + '</svg>';
+}
+// small props the documentary adds to a cine world (world units, portrait space)
+const CINE_PROPS = {
+  rect: p => `<rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" rx="${p.r || 0}" fill="${p.fill || '#3b2618'}" stroke="#120d0b" stroke-width="${p.sw ?? 5}" opacity="${p.op ?? 1}"/>`,
+  svg: p => p.svg || '',
+  pail: p => `<g transform="translate(${p.x} ${p.y}) scale(${p.s || 1})"><path d="M-40 -70 L40 -70 L32 0 L-32 0 Z" fill="#8a8a86" stroke="#120d0b" stroke-width="4"/><path d="M-40 -70 Q 0 -130 40 -70" stroke="#3a3632" stroke-width="5" fill="none"/><ellipse cx="0" cy="-70" rx="40" ry="9" fill="#6a8a9a" stroke="#120d0b" stroke-width="3"/><rect x="18" y="-110" width="12" height="60" rx="4" fill="#6a4426" stroke="#120d0b" stroke-width="3" transform="rotate(20 24 -80)"/></g>`
+};
+function cineDust(lt, seed = 5) {
+  const r = rng(seed); ctx.save(); ctx.globalCompositeOperation = 'screen';
+  for (let i = 0; i < 70; i++) { const x0 = r() * W, y0 = r() * H, sp = 6 + r() * 14, ph = r() * 6.28; const x = (x0 + lt * sp + Math.sin(lt * 0.7 + ph) * 18) % W, y = (y0 - lt * sp * 0.4 + H) % H;
+    ctx.globalAlpha = 0.18 + 0.25 * (0.5 + 0.5 * Math.sin(lt * 1.3 + ph)); ctx.fillStyle = '#ffe8c0'; ctx.beginPath(); ctx.arc(x, y, 1.2 + r() * 2.4, 0, 6.283); ctx.fill(); }
+  ctx.restore();
+}
+function cineLower(o, lt, d) {   // lower-third: kicker + title (+ sub), slides in from the left
+  const a0 = cineT(o, d), a = eo(ramp(lt, a0, 0.45)); const out = o.until !== undefined ? 1 - eo(ramp(lt, o.until * d, 0.35)) : 1; if (a <= 0 || out <= 0) return;
+  ctx.save(); ctx.globalAlpha = a * out; ctx.translate((1 - a) * -60, 0);
+  setText(o.size || 64, 900, 'display', C.ink, 'left', 'alphabetic', -1); const tw = ctx.measureText(o.title).width;
+  ctx.font = font(30, 600, 'sans'); const sw = o.sub ? ctx.measureText(o.sub).width : 0;
+  ctx.font = font(24, 800, 'sans'); ctx.letterSpacing = (24 * 0.22) + 'px'; const kw = o.kicker ? ctx.measureText(String(o.kicker).toUpperCase()).width : 0; ctx.letterSpacing = '0px';
+  const bw = Math.max(tw, sw, kw) + 90;
+  const y = o.y ?? 860; ctx.fillStyle = 'rgba(5,7,10,0.72)'; rr(70, y - (o.size || 64) - 50, bw, (o.size || 64) + (o.sub ? 110 : 70), 6); ctx.fill();
+  ctx.fillStyle = COLOR(o.color || 'red'); ctx.fillRect(70, y - (o.size || 64) - 50, 8, (o.size || 64) + (o.sub ? 110 : 70));
+  if (o.kicker) capsLabel(o.kicker, 112, y - (o.size || 64) - 12, COLOR(o.color || 'red'), 24);
+  setText(o.size || 64, 900, 'display', C.ink, 'left', 'alphabetic', -1); ctx.fillText(o.title, 112, y + (o.kicker ? 8 : -4));
+  if (o.sub) { setText(30, 600, 'sans', 'rgba(243,240,232,0.82)', 'left'); ctx.fillText(o.sub, 112, y + 52); }
+  ctx.restore();
+}
+function cineStamp(o, lt, d) {
+  const a = ramp(lt, cineT(o, d), 0.2); if (a <= 0) return;
+  const shake = (1 - clamp((lt - cineT(o, d) - 0.2) / 0.35)) * (a >= 1 ? 10 : 0);
+  ctx.save(); ctx.translate((o.x ?? W / 2) + Math.sin(lt * 90) * shake, (o.y ?? H / 2) + Math.cos(lt * 77) * shake); ctx.rotate(o.rot ?? -0.07);
+  const sc = lerp(2.2, 1, eo(a)); ctx.scale(sc, sc); ctx.globalAlpha = clamp(a * 1.4) * 0.92;
+  const col = COLOR(o.color || 'red'); setText(o.size || 120, 900, 'display', col, 'center', 'middle', 6);
+  const tw = ctx.measureText(o.text).width; ctx.strokeStyle = col; ctx.lineWidth = 10; rr(-tw / 2 - 40, -(o.size || 120) * 0.75, tw + 80, (o.size || 120) * 1.4, 12);
+  if (o.bg) { ctx.save(); ctx.globalAlpha = 0.72; ctx.fillStyle = o.bg; ctx.fill(); ctx.restore(); } ctx.stroke(); ctx.fillText(o.text, 0, 6);
+  ctx.restore();
+}
+function cineFunFact(o, lt, d) {   // yellow FUN FACT pop-up (verified facts only), as in the Case Files Shorts
+  const a0 = cineT(o, d), pop = eback(ramp(lt, a0, 0.42)); const out = o.until !== undefined ? 1 - eo(ramp(lt, o.until * d, 0.3)) : 1; if (pop <= 0 || out <= 0) return;
+  const rows = o.rows || []; const w = o.w || 820, x = o.x ?? (W - w - 90), y = o.y ?? 150; const h = 70 + rows.length * 58;
+  ctx.save(); ctx.globalAlpha = out; ctx.translate(x + w / 2, y + h / 2); ctx.scale(Math.max(0.001, pop), Math.max(0.001, pop)); ctx.translate(-(x + w / 2), -(y + h / 2));
+  ctx.fillStyle = 'rgba(17,19,23,0.94)'; rr(x, y, w, h, 22); ctx.fill(); ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 5; ctx.stroke();
+  ctx.save(); ctx.translate(x + 150, y); ctx.rotate(-0.07); ctx.fillStyle = '#ffd23f'; rr(-130, -34, 260, 64, 32); ctx.fill(); ctx.strokeStyle = '#141414'; ctx.lineWidth = 4; ctx.stroke();
+  setText(36, 900, 'display', '#141414', 'center', 'middle', 1); ctx.fillText(o.kicker || 'FUN FACT!', 0, 0); ctx.restore();
+  rows.forEach((r_, i) => { setText(r_.size || 40, 800, 'sans', r_.color ? COLOR(r_.color) : '#f6f1e6', 'left', 'alphabetic'); ctx.fillText(r_.text, x + 36, y + 92 + i * 58); });
+  ctx.restore();
+}
+function cineCard(o, lt, d) {   // typed paper card: our own on-screen summary, never a replica document
+  const a0 = cineT(o, d), a = eo(ramp(lt, a0, 0.4)); const out = o.until !== undefined ? 1 - eo(ramp(lt, o.until * d, 0.3)) : 1; if (a <= 0 || out <= 0) return;
+  const rows = o.rows || []; const w = o.w || 760, x = o.x ?? 110, y = o.y ?? 170, h = 60 + rows.length * 62;
+  ctx.save(); ctx.globalAlpha = a * out; ctx.translate(0, (1 - a) * 24); ctx.rotate(o.rot ?? -0.01);
+  ctx.fillStyle = 'rgba(0,0,0,0.45)'; rr(x + 12, y + 14, w, h, 4); ctx.fill(); ctx.fillStyle = C.paper; rr(x, y, w, h, 4); ctx.fill();
+  rows.forEach((r_, i) => { const k = clamp((lt - (r_.p !== undefined ? r_.p * d : a0) - 0.1) / 0.7); const txt = String(r_.text); const n = Math.floor(k * txt.length); if (n <= 0) return;
+    setText(r_.size || 36, 700, 'mono', r_.color ? COLOR(r_.color) : C.paperInk, 'left', 'alphabetic', 1); ctx.fillText(txt.slice(0, n), x + 34, y + 70 + i * 62); });
+  ctx.letterSpacing = '0px'; ctx.restore();
+}
+T.cine = (s, lt, d) => {
+  const img = cache.cineFrame; if (img) ctx.drawImage(img, 0, 0, W, H);
+  const meta = cache.cineMeta || {}; const g = CINE_GRADES[meta.grade] || CINE_GRADES.none;
+  if (g[1] > 0) { ctx.save(); ctx.globalCompositeOperation = 'soft-light'; ctx.globalAlpha = g[1]; ctx.fillStyle = g[0]; ctx.fillRect(0, 0, W, H); ctx.restore(); }
+  if (meta.dust) cineDust(lt + s.start, hash(s.set) % 97);
+  if (s.dim) { ctx.fillStyle = `rgba(0,0,0,${s.dim})`; ctx.fillRect(0, 0, W, H); }
+  (s.cards || []).forEach(o => cineCard(o, lt, d));
+  if (s.lower) cineLower(s.lower, lt, d);
+  (s.funfacts || []).forEach(o => cineFunFact(o, lt, d));
+  (s.stamps || []).forEach(o => cineStamp(o, lt, d));
+  if (s.headline) cineHeadline(s.headline, lt, d);
+  if (s.tagTop) { ctx.save(); setText(22, 800, 'sans', 'rgba(243,240,232,0.9)', 'right', 'middle', 3); const t = String(s.tagTop).toUpperCase(), w = ctx.measureText(t).width;
+    ctx.fillStyle = 'rgba(5,7,10,0.62)'; rr(W - 60 - w - 20, 40, w + 40, 42, 4); ctx.fill(); ctx.fillStyle = 'rgba(243,240,232,0.9)'; ctx.fillText(t, W - 60, 62); ctx.letterSpacing = '0px'; ctx.restore(); }   // thumbnails: label away from the duration badge
+};
+function cineHeadline(o, lt, d) {   // big stroked words (thumbnails, chapter punches): rows [{text, color, size}]
+  const a = eo(ramp(lt, cineT(o, d), 0.3)); if (a <= 0) return;
+  ctx.save(); ctx.globalAlpha = a; let y = o.y ?? 220;
+  (o.rows || []).forEach(r_ => {
+    const size = r_.size || o.size || 150; setText(size, 900, 'display', COLOR(r_.color || 'ink'), o.align || 'left', 'alphabetic', -2);
+    ctx.lineJoin = 'round'; ctx.strokeStyle = 'rgba(5,6,9,0.95)'; ctx.lineWidth = size * 0.16; ctx.strokeText(r_.text, o.x ?? 80, y + size * 0.8);
+    ctx.fillText(r_.text, o.x ?? 80, y + size * 0.8); y += size * (r_.gap ?? 1.0);
+  });
+  ctx.letterSpacing = '0px'; ctx.restore();
+}
+
 T.endcard = (s, lt, d) => {
   bgBase(lt, d, { fogA: 0.5 });
   ctx.save(); cam(lt, d, { z0: 1.0, z1: 1.03 });
@@ -732,8 +859,8 @@ function overlays(s, lt, d, t) {
     ctx.save(); ctx.globalAlpha = 0.85; ctx.fillStyle = C.red; ctx.fillRect(70, 62, 12, 12);
     setText(20, 800, 'sans', 'rgba(243,240,232,0.8)', 'left', 'middle', 4); ctx.fillText(s.chapterTag.toUpperCase(), 96, 69); ctx.restore();
   }
-  const lbl = s.label ?? (s.type === 'scene' ? 'RECONSTRUCTION · ILLUSTRATION' : s.type === 'doc' ? 'ILLUSTRATIVE SUMMARY · NOT THE ORIGINAL DOCUMENT' : null);
-  const lbl2 = s.type === 'character' ? (s.label ?? 'ILLUSTRATION · STYLISED CHARACTER · NOT A LIKENESS') : lbl;
+  const lbl = s.noCorner ? null : s.label ?? (s.type === 'scene' ? 'RECONSTRUCTION · ILLUSTRATION' : s.type === 'doc' ? 'ILLUSTRATIVE SUMMARY · NOT THE ORIGINAL DOCUMENT' : null);
+  const lbl2 = s.type === 'character' ? (s.label ?? 'ILLUSTRATION · STYLISED CHARACTER · NOT A LIKENESS') : s.type === 'cine' ? (s.label ?? 'ILLUSTRATION · NOT A LIKENESS') : lbl;
   if (lbl2) cornerLabel(lbl2);
   if (s.source) sourceTag(s.source);
 }
@@ -764,14 +891,18 @@ const DOC = {
     ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.letterSpacing = '0px';
     overlays(s, lt, d, t);
     transitions(s, lt, d);
-    ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.07; ctx.drawImage(cache.grain[Math.floor(t * 12) % 6], 0, 0, W, H); ctx.restore();
+    ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = s.type === 'cine' ? 0.045 : 0.07; ctx.drawImage(cache.grain[Math.floor(t * 12) % 6], 0, 0, W, H); ctx.restore();   // cine art carries its own texture
     ctx.drawImage(cache.vignette, 0, 0);
     return s.i;
   },
   jpeg(q = 0.92) { return cv.toDataURL('image/jpeg', q); },
   // Async work a frame needs before drawing (only the character template uses it; other shots: no-op).
   async prepare(t) {
-    const s = findShot(t); cache.charFrame = null;
+    const s = findShot(t); cache.charFrame = null; cache.cineFrame = null;
+    if (s.type === 'cine') {
+      const im = new Image(); im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(cineSVG(s, t - s.start, Math.max(0.01, s.end - s.start)));
+      await im.decode(); cache.cineFrame = im; return;
+    }
     if (s.type !== 'character') return;
     const svg = characterSVG(s, t - s.start); const img = new Image();
     img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); await img.decode(); cache.charFrame = img;

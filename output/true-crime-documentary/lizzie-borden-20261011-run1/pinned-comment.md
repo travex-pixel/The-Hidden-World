@@ -1,0 +1,1 @@
+Lizzie Borden was acquitted in 1893, and the killings are officially unsolved. Which detail matters most to you: the note no one found, the barn and the pears, or the dress? Sources are in the description.

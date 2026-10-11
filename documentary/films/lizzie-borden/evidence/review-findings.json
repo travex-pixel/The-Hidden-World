@@ -1,0 +1,90 @@
+{
+ "film": "lizzie-borden",
+ "findings": [
+  {
+   "id": "FC-01",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Every source was read as a search excerpt; no page could be opened (network policy). 14 low-risk details rest on one publisher: Fall River's nickname, Andrew's career, the daughters, the illness, Russell's visit, Andrew leaving at about 9, the laugh, Churchill and the doctor arriving, 'almost sure she heard her come in', Lubinsky, Russell's warning, the burial and the bequest, and 'no blood on her'.",
+   "evidence": "evidence/claims.json: 57 CORROBORATED (two or more independent publishers), 14 REQUIRES REVIEW; no claim is VERIFIED.",
+   "recommendation": "Before publication, read the Famous Trials transcripts in full (Russell, Sullivan, Emma Borden, Lubinsky, the inquest) and the Smithsonian and Britannica pages, then upgrade or reword.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-01",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C-HISTORIANS",
+    "C-NO-BLOOD",
+    "C-VERDICT"
+   ],
+   "lines": [
+    84,
+    85
+   ],
+   "problem": "'Historians have argued that her class, and the fact that she was a woman, help explain why she was not convicted' could be heard as implying she was guilty. It is attributed, and the next line gives the other side (no blood on her, no proven weapon, the jury acquitted).",
+   "evidence": "Smithsonian (C63) and NPR's review; the defence points follow in L85.",
+   "recommendation": "Keep as written. A human editor should hear L84-L85 together.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-02",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C-VERDICT",
+    "C-UNSOLVED"
+   ],
+   "lines": [],
+   "problem": "The selected thumbnail puts an illustrated Lizzie beside 'WHO KILLED THE BORDENS?'. The 'ACQUITTED · 1893' stamp states the outcome, and everyone involved died long ago, but the pairing invites viewers to suspect her.",
+   "evidence": "packaging.json thumbnails[0]; an alternative with no person exists (house-at-dusk).",
+   "recommendation": "Human judgement before upload. Use house-at-dusk if a stricter standard is wanted.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "AUD-01",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [
+    "C-THEORIES",
+    "C-MORSE"
+   ],
+   "lines": [
+    85,
+    26
+   ],
+   "problem": "Offline speech recognition on the MP4: corpus word-error rate 4%, with 5 lines above 20%. L85 'an unknown intruder' came out as 'on Nolan Truder'; L26 'John Morse went out' as 'Morsewite ouch'. These are probably recogniser errors on run-together words.",
+   "evidence": "audit/asr-audit.json",
+   "recommendation": "Listen at 7:51 and 2:19 at normal volume. Re-voice only if a person mishears them.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-02",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [
+    "C-DELIBERATION",
+    "C-RUSSELL-WARNING",
+    "C-CALL"
+   ],
+   "lines": [],
+   "problem": "The sources conflict on how long the jury deliberated, on the exact wording of Russell's warning, and on Lizzie's exact words to Bridget.",
+   "evidence": "Conflict notes on each claim (conflict_handling).",
+   "recommendation": "The script states the disagreement or paraphrases with attribution. No change needed.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  }
+ ]
+}

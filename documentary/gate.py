@@ -57,12 +57,26 @@ def line_text(ln: dict) -> str:
     return ln.get("say", "") or ""
 
 
+CINE_NON_TEXT = {"set", "setOpts", "view_to", "view_p0", "view_p1", "cam", "figures", "props", "grade", "mirror", "rain", "dust", "light", "depicts"}
+
+
 def shot_strings(s: dict) -> list[str]:
     """Every piece of on-screen text a shot can show (not the corner label / source tag)."""
     out = []
     for k, v in s.items():
         if k in ("type", "variant", "label", "source", "in", "out", "color", "tagColor", "kind", "rim", "emColor", "tint", "colors", "bigColor", "claims", "chapterTag", "w", "box",
                  "together", "hl", "time", "fromMins", "from", "view", "focus", "zoom", "z0", "z1", "fx", "fy", "dx", "at", "size", "bigSize", "rot", "tally", "dim", "lit", "porch"):
+            continue
+        if k in CINE_NON_TEXT:
+            continue
+        if k == "lower" and isinstance(v, dict):   # cine lower third
+            out += [y for kk, y in v.items() if kk in ("kicker", "title", "sub") and isinstance(y, str)]
+            continue
+        if k in ("cards", "funfacts", "stamps") and isinstance(v, list):   # cine overlays
+            for o in v:
+                if isinstance(o, dict):
+                    out += [y for kk, y in o.items() if kk in ("text", "kicker", "title") and isinstance(y, str)]
+                    out += [r.get("text", "") for r in o.get("rows", []) if isinstance(r, dict)]
             continue
         if isinstance(v, str):
             out.append(v)
@@ -170,8 +184,10 @@ def run_gate(b: dict, as_of: dt.date) -> dict:
                 R.add(sev, "G13-insufficient-status", f"{c['id']} ({c.get('risk')} risk) is {e}; clearing requires at least {need}.",
                       "Strengthen the evidence (read primary/full-text sources) or qualify/remove the claim.", claim=c["id"], lines=c.get("lines"))
         if c.get("contradictions"):
-            R.add("MEDIUM" if c.get("assertion") != "fact" else "MEDIUM", "G4-conflict", f"{c['id']}: conflicting accounts recorded: " + " | ".join(c["contradictions"]),
-                  "Make sure the script states the uncertainty or uses only the uncontested part.", claim=c["id"], lines=c.get("lines"))
+            # a recorded, reviewed decision on how the script handles the conflict lowers this to LOW (it stays in the report)
+            handled = c.get("conflict_handling")
+            R.add("LOW" if handled else "MEDIUM", "G4-conflict", f"{c['id']}: conflicting accounts recorded: " + " | ".join(c["contradictions"]) + (f" — Handling: {handled}" if handled else ""),
+                  "Make sure the script states the uncertainty or uses only the uncontested part." if not handled else "Re-check the handling note if the script changes.", claim=c["id"], lines=c.get("lines"))
         # G3 passage must contain the claim's figures
         if c.get("assertion") not in ("derived", "characterization", "context", "negative"):
             prop_nums = {n for n in numbers(c["proposition"]) if len(n) >= 2}
@@ -230,7 +246,7 @@ def run_gate(b: dict, as_of: dt.date) -> dict:
                     if alias not in pubs:
                         R.add("MEDIUM", "G6-source-tag", f"L{i:02d} shot {k} credits '{tag}' but none of its claims cite that publisher.",
                               "Cite the publisher in the claim evidence or change the on-screen source tag.", line=i, shot=k)
-            if s["type"] == "scene" and s.get("label", None) == "":
+            if s["type"] in ("scene", "cine") and s.get("label", None) == "":
                 R.add("HIGH", "G14-unlabelled-reconstruction", f"L{i:02d} shot {k}: reconstruction shown without its label.", "Restore the RECONSTRUCTION label.", line=i, shot=k)
             if s["type"] in ("photo", "footage", "asset"):
                 if not s.get("asset_id"):
@@ -307,11 +323,19 @@ def run_gate(b: dict, as_of: dt.date) -> dict:
     # G15 'sources for every claim are in the description' must be true
     promise = any(re.search(r"sources for every claim", " ".join(shot_strings(s_)), re.I) for ln in lines for s_ in ln.get("shots", []))
     if promise and pk.get("description_text") is not None:
-        used = {e["source"] for c in claims.values() if c.get("lines") for e in c.get("evidence", []) if e.get("supports") != "contradicts"}
-        missing = sorted(x for x in used if x in src and src[x]["url"] not in pk["description_text"] and src[x]["source_type"] != "public_domain_data")
-        if missing:
-            R.add("MEDIUM", "G15-bibliography", f"The film promises 'sources for every claim' in the description, but {len(missing)} cited sources are not listed: {missing[:8]}...",
-                  "Add every cited source (URL) to the description, or change the on-screen promise.", where="description")
+        # the promise is per claim: every claim on screen or in the narration needs at least one of its supporting sources listed
+        # (YouTube caps descriptions at 5,000 characters, so a long bibliography may live elsewhere)
+        desc = pk["description_text"]; shown = {c_ for ln in lines for s_ in ln.get("shots", []) for c_ in s_.get("claims", [])}
+        uncovered = []
+        for c in claims.values():
+            if not (c.get("lines") or c["id"] in shown) or c.get("assertion") == "derived":
+                continue
+            sup = [e["source"] for e in c.get("evidence", []) if e.get("supports") in ("direct", "reports_allegation") and e["source"] in src and not src[e["source"]].get("context_only")]
+            if sup and not any(src[x]["url"] in desc or src[x]["source_type"] == "public_domain_data" for x in sup):
+                uncovered.append(c["id"])
+        if uncovered:
+            R.add("MEDIUM", "G15-bibliography", f"The film promises 'sources for every claim' in the description, but {len(uncovered)} claims have none of their sources listed: {uncovered[:8]}...",
+                  "List at least one supporting source (URL) per claim in the description, or change the on-screen promise.", where="description")
 
     # G9 implication in thumbnails/titles about people who are only charged / not charged
     for t in pk.get("thumbnails", []) + [{"concept": "title", "text": [pk.get("title", "")], "depicts": []}]:
@@ -361,7 +385,7 @@ def run_gate(b: dict, as_of: dt.date) -> dict:
                 R.add("HIGH", "G12-render-drift", f"Rendered narration differs from approved script at lines {diff[:8]} (or line count {len(rendered)} vs {len(approved)}).",
                       "Re-audit the render against the current script; a material change needs a new version.", where="render")
         if run.get("plan"):
-            rshots = [{k: v for k, v in s.items() if k not in ("i", "line", "start", "end", "chapterTag")} for s in run["plan"]["shots"]]
+            rshots = [{k: v for k, v in s.items() if k not in ("i", "line", "start", "end", "chapterTag", "claims", "depicts")} for s in run["plan"]["shots"]]   # evidence tags are not on-screen content
             ashots = [{k: v for k, v in s.items() if k not in ("claims", "depicts", "chapterTag", "w")} for ln in lines for s in ln["shots"]]
             rshots = [{k: v for k, v in s.items() if k != "w"} for s in rshots]
             if len(rshots) != len(ashots) or any(x != y for x, y in zip(rshots, ashots)):

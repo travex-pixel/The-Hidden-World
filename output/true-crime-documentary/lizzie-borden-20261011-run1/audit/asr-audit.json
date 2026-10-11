@@ -1,0 +1,1109 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR)",
+ "lines": 91,
+ "corpus_wer": 0.04,
+ "lines_over_20pct": [
+  {
+   "line": 12,
+   "t": 60.178,
+   "script": "So did the family's maid, Bridget Sullivan. The sisters called her Maggie.",
+   "asr": "So did the families made Bridget Sullivan. The sisters called her Maddie.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "family's",
+     "families"
+    ],
+    [
+     "maid",
+     "made"
+    ],
+    [
+     "maggie",
+     "maddie"
+    ]
+   ]
+  },
+  {
+   "line": 26,
+   "t": 139.317,
+   "script": "John Morse went out. He was visiting relatives when the killings happened.",
+   "asr": "John Morsewite ouch. He was visiting relatives when the killings happened.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "morse",
+     "∅"
+    ],
+    [
+     "went",
+     "morsewite"
+    ],
+    [
+     "out",
+     "ouch"
+    ]
+   ]
+  },
+  {
+   "line": 38,
+   "t": 208.373,
+   "script": "Neither the note, nor the messenger, was ever found.",
+   "asr": "Neither of a note nor the messenger was ever found.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "∅",
+     "of"
+    ],
+    [
+     "the",
+     "a"
+    ]
+   ]
+  },
+  {
+   "line": 75,
+   "t": 418.323,
+   "script": "They bought a big house in one of the best neighbourhoods in town, and Lizzie named it Maplecroft.",
+   "asr": "They bought a bakehouse in one of the best neighborhoods in town and Lizzie named Maple Croft.",
+   "wer": 0.278,
+   "diffs": [
+    [
+     "big",
+     "∅"
+    ],
+    [
+     "house",
+     "bakehouse"
+    ],
+    [
+     "neighbourhoods",
+     "neighborhoods"
+    ],
+    [
+     "it",
+     "maple"
+    ],
+    [
+     "maplecroft",
+     "croft"
+    ]
+   ]
+  },
+  {
+   "line": 85,
+   "t": 471.299,
+   "script": "Writers have pointed at others: at Bridget, at John Morse, at Emma, at an unknown intruder.",
+   "asr": "Writers have pointed at others at Bridget, at John Morse, at Emmer, and on Nolan Truder.",
+   "wer": 0.312,
+   "diffs": [
+    [
+     "emma",
+     "emmer"
+    ],
+    [
+     "at",
+     "and"
+    ],
+    [
+     "an",
+     "on"
+    ],
+    [
+     "unknown",
+     "nolan"
+    ],
+    [
+     "intruder",
+     "truder"
+    ]
+   ]
+  }
+ ],
+ "name_mismatches": [],
+ "rows": [
+  {
+   "line": 0,
+   "t": 0.5,
+   "script": "Sunday morning. The seventh of August, 1892.",
+   "asr": "Sunday morning the seventh of august 1892",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 1,
+   "t": 4.705,
+   "script": "Alice Russell, a family friend, later testified that she found Lizzie Borden at the kitchen stove, holding a dress.",
+   "asr": "Alice Russell, a family friend, later testified that she found Lizzie Borden at the kitchen stove, holding a dress.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 2,
+   "t": 12.742,
+   "script": "Lizzie said she was going to burn it. It was covered with paint, she said.",
+   "asr": "Lizzie said she was going to burn it. It was covered with paint, she said.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 3,
+   "t": 17.587,
+   "script": "Three days earlier, in that same house, Lizzie's father and stepmother had been killed.",
+   "asr": "Three days earlier in that same house, Lizzie's father and stepmother had been killed.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 4,
+   "t": 23.567,
+   "script": "Ten months later, a jury found her not guilty.",
+   "asr": "Ten months later, a jury found her not guilty.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 5,
+   "t": 26.898,
+   "script": "No one else was ever charged.",
+   "asr": "No one else was ever charged.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 6,
+   "t": 29.036,
+   "script": "So who killed Andrew and Abby Borden?",
+   "asr": "So who killed Andrew and Abby Borden?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 8,
+   "t": 34.096,
+   "script": "In 1892, Fall River was a mill city. People called it Spindle City.",
+   "asr": "In 1892, full river was a mill city. People called it spindle city.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "fall",
+     "full"
+    ]
+   ]
+  },
+  {
+   "line": 9,
+   "t": 39.655,
+   "script": "And Andrew Borden had made himself a wealthy man, in business, property and banking.",
+   "asr": "And Andrew Borden had made himself a wealthy man in business, property and banking.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 10,
+   "t": 45.532,
+   "script": "He lived at 92 Second Street, with his second wife, Abby. They had married in 1865.",
+   "asr": "He lived at 92 Second Street, with his second wife, Abby. They had married in 1865.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 11,
+   "t": 52.856,
+   "script": "His two daughters from his first marriage lived there too. Emma, the elder. And Lizzie, who was thirty-two.",
+   "asr": "His two daughters from his first marriage lived there too, Emma, the elder and Lizzie, who was thirty-two.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 12,
+   "t": 60.178,
+   "script": "So did the family's maid, Bridget Sullivan. The sisters called her Maggie.",
+   "asr": "So did the families made Bridget Sullivan. The sisters called her Maddie.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "family's",
+     "families"
+    ],
+    [
+     "maid",
+     "made"
+    ],
+    [
+     "maggie",
+     "maddie"
+    ]
+   ]
+  },
+  {
+   "line": 13,
+   "t": 65.475,
+   "script": "There was friction in the house, over property.",
+   "asr": "There was friction in the house over property.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 14,
+   "t": 68.315,
+   "script": "In 1887, Andrew bought a share of a house for Abby's half-sister, and put it in Abby's name. Emma later testified that it caused trouble in the family.",
+   "asr": "In 1887, Andrew bought a share of a house for Abby's half-sister and put it in Abby's name. Emmer later testified that it caused trouble in the family.",
+   "wer": 0.034,
+   "diffs": [
+    [
+     "emma",
+     "emmer"
+    ]
+   ]
+  },
+  {
+   "line": 15,
+   "t": 79.364,
+   "script": "At the inquest, Lizzie said she had stopped calling Abby mother. Asked why, she said it was because she wanted to.",
+   "asr": "At the inquest, Lizzie said she had stopped calling Abby Mother. Asked why she said it was because she wanted to.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 16,
+   "t": 87.117,
+   "script": "But Bridget testified that she never saw the two of them quarrel.",
+   "asr": "But Bridget testified that she never saw the two of them quarrel.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 17,
+   "t": 91.184,
+   "script": "In the days before the killings, Andrew and Abby were sick to their stomachs.",
+   "asr": "In the days before the killings, Andrew and Abby were sick to their stomachs.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 18,
+   "t": 96.133,
+   "script": "Abby went to the family doctor, Seabury Bowen, and told him she was afraid they had been poisoned. He was sceptical.",
+   "asr": "Abby went to the family doctor, Sebary Bowen, and told him she was afraid they had been poisoned. He was skeptical.",
+   "wer": 0.095,
+   "diffs": [
+    [
+     "seabury",
+     "sebary"
+    ],
+    [
+     "sceptical",
+     "skeptical"
+    ]
+   ]
+  },
+  {
+   "line": 19,
+   "t": 103.561,
+   "script": "The day before the killings, according to a drugstore clerk named Eli Bence, a woman he identified as Lizzie tried to buy prussic acid, a deadly poison.",
+   "asr": "The day before the killings, according to a drugstore clerk named Ellie Bence, a woman he identified as Lizzie tried to buy a pressic acid, a deadly poison.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "eli",
+     "ellie"
+    ],
+    [
+     "∅",
+     "a"
+    ],
+    [
+     "prussic",
+     "pressic"
+    ]
+   ]
+  },
+  {
+   "line": 20,
+   "t": 112.733,
+   "script": "The jury at her trial would never hear his story.",
+   "asr": "The jury at her trial would never hear his story.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 21,
+   "t": 115.761,
+   "script": "That day, Russell testified, Lizzie came to see her.",
+   "asr": "That day, Russell testified, Lizzie came to see her.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 22,
+   "t": 119.609,
+   "script": "Russell testified that Lizzie told her: I feel afraid something is going to happen.",
+   "asr": "Russell testified that Lizzie told her, \"I feel afraid something is going to happen.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 23,
+   "t": 124.877,
+   "script": "And Lizzie's uncle, John Morse, arrived unexpectedly, and stayed the night.",
+   "asr": "And Lizzie's uncle, John Morse, arrived unexpectedly and stayed the night.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 24,
+   "t": 130.343,
+   "script": "Thursday, the fourth of August, was a hot day.",
+   "asr": "Thursday, the fourth of August was a hot day.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 25,
+   "t": 133.892,
+   "script": "Emma was away, visiting friends in Fairhaven, about fifteen miles off.",
+   "asr": "Emma was away visiting friends in Fairhaven about 15 miles off.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "fifteen",
+     "15"
+    ]
+   ]
+  },
+  {
+   "line": 26,
+   "t": 139.317,
+   "script": "John Morse went out. He was visiting relatives when the killings happened.",
+   "asr": "John Morsewite ouch. He was visiting relatives when the killings happened.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "morse",
+     "∅"
+    ],
+    [
+     "went",
+     "morsewite"
+    ],
+    [
+     "out",
+     "ouch"
+    ]
+   ]
+  },
+  {
+   "line": 27,
+   "t": 143.976,
+   "script": "Andrew left at about nine, to do business downtown.",
+   "asr": "Andrew left at about nine to do business downtown.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 28,
+   "t": 147.835,
+   "script": "Abby asked Bridget to wash the windows, and Bridget spent much of the morning outside.",
+   "asr": "Abby asked Bridget to wash the windows, and Bridget spent much of the morning outside.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 29,
+   "t": 153.653,
+   "script": "At about half past nine, Abby went upstairs to tidy the guest room.",
+   "asr": "At about half past nine, Abby went upstairs to tidy the guest room.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 30,
+   "t": 158.563,
+   "script": "Within roughly the next hour, she was killed there.",
+   "asr": "Within roughly the next hour, she was killed there.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 31,
+   "t": 161.894,
+   "script": "Shortly before eleven, Andrew came home.",
+   "asr": "Shortly before eleven, Andrew came home.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 32,
+   "t": 165.027,
+   "script": "The front door was locked three ways. Bridget had to unlock it to let him in.",
+   "asr": "The front door was locked three waves. Bridget had to unlock it to let him in.",
+   "wer": 0.062,
+   "diffs": [
+    [
+     "ways",
+     "waves"
+    ]
+   ]
+  },
+  {
+   "line": 33,
+   "t": 170.051,
+   "script": "Bridget testified that as she fumbled with the locks, she said, pshaw, and heard Lizzie laugh, upstairs. She did not see her.",
+   "asr": "Bridget testified that as she fumbled with the locks, she said P. Shore and heard Lizzie laugh upstairs. She did not see her.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "∅",
+     "p"
+    ],
+    [
+     "pshaw",
+     "shore"
+    ]
+   ]
+  },
+  {
+   "line": 34,
+   "t": 178.344,
+   "script": "Andrew lay down on the sofa in the sitting room. Bridget went up to her attic room to rest. By her clock, she testified, it was eleven.",
+   "asr": "Andrew lay down on the sofa in the sitting room. Bridget went up to her attic room to rest. By her clock, she testified it was eleven.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 35,
+   "t": 187.322,
+   "script": "A few minutes after eleven, Lizzie called up to her. Her father was dead, she said. Somebody had come in and killed him.",
+   "asr": "A few minutes after 11, Lizzie called up to her. Her father was dead, she said. Somebody had come in and killed him.",
+   "wer": 0.043,
+   "diffs": [
+    [
+     "eleven",
+     "11"
+    ]
+   ]
+  },
+  {
+   "line": 36,
+   "t": 195.583,
+   "script": "A neighbour, Adelaide Churchill, came. So did the family doctor.",
+   "asr": "A neighbor, Adelaide Churchill, came, so did the family doctor.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "neighbour",
+     "neighbor"
+    ]
+   ]
+  },
+  {
+   "line": 37,
+   "t": 200.374,
+   "script": "Lizzie said Abby had gone out. A messenger had brought a note, she said, asking her to visit someone who was sick.",
+   "asr": "Lizzie said Abby had gone out. A messenger had brought a note. She said, asking her to visit someone who was sick.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 38,
+   "t": 208.373,
+   "script": "Neither the note, nor the messenger, was ever found.",
+   "asr": "Neither of a note nor the messenger was ever found.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "∅",
+     "of"
+    ],
+    [
+     "the",
+     "a"
+    ]
+   ]
+  },
+  {
+   "line": 39,
+   "t": 212.317,
+   "script": "Then, Bridget testified, Lizzie said she was almost sure she had heard Abby come back in.",
+   "asr": "Then Bridget testified Lizzie said she was almost sure she had heard Abby come back in.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 40,
+   "t": 218.698,
+   "script": "Bridget would not go upstairs alone. Mrs. Churchill went with her. They found Abby in the guest room.",
+   "asr": "Bridget would not go upstairs alone, Mrs. Churchill went with her. They found Abby in the guest room.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 41,
+   "t": 225.295,
+   "script": "Medical evidence showed that Abby had died first, roughly an hour or more before her husband.",
+   "asr": "Medical evidence showed that Abby had died first, roughly an hour or more before her husband.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 42,
+   "t": 231.252,
+   "script": "So where was Lizzie?",
+   "asr": "So where was Lizzie?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 43,
+   "t": 232.716,
+   "script": "She told the neighbour and the doctor that she had gone out to the barn, for a piece of iron.",
+   "asr": "She told the neighbor and the doctor that she had gone out to the barn for a piece of iron.",
+   "wer": 0.05,
+   "diffs": [
+    [
+     "neighbour",
+     "neighbor"
+    ]
+   ]
+  },
+  {
+   "line": 44,
+   "t": 238.227,
+   "script": "At the inquest, she said she spent fifteen or twenty minutes up in the loft, looking for lead sinkers for a fishing trip. And she ate some pears.",
+   "asr": "At the inquest, she said she spent 15 or 20 minutes up in the loft looking for lead sinkers for a fishing trip and she ate some pears.",
+   "wer": 0.071,
+   "diffs": [
+    [
+     "fifteen",
+     "15"
+    ],
+    [
+     "twenty",
+     "20"
+    ]
+   ]
+  },
+  {
+   "line": 45,
+   "t": 247.331,
+   "script": "Police said the loft was stifling hot, and that they found no footprints there to back up her story.",
+   "asr": "Police said the loft was stifling hot and that they found no footprints there to back up her story.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 46,
+   "t": 253.233,
+   "script": "But a defence witness, an ice cream peddler named Hyman Lubinsky, testified that shortly after eleven he saw a woman walk from the barn toward the house.",
+   "asr": "But a defense witness, an ice cream peddler named Jaime Lubinsky testified that shortly after eleven he saw a woman walk from the barn toward the house.",
+   "wer": 0.074,
+   "diffs": [
+    [
+     "defence",
+     "defense"
+    ],
+    [
+     "hyman",
+     "jaime"
+    ]
+   ]
+  },
+  {
+   "line": 47,
+   "t": 263.72,
+   "script": "And at the inquest, her answers shifted. She said she was on the stairs. Then in the kitchen. Then perhaps the dining room.",
+   "asr": "And at the inquest, her answers shifted, she said she was on the stairs, then in the kitchen, then perhaps the dining-room,",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 48,
+   "t": 272.292,
+   "script": "In the basement, police found a hatchet head. Its handle had been broken off.",
+   "asr": "In the basement, police found a hatchet head. Its handle had been broken off.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 49,
+   "t": 277.264,
+   "script": "The prosecution could never prove it was the murder weapon.",
+   "asr": "The prosecution could never prove it was the murder weapon.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 50,
+   "t": 280.584,
+   "script": "The inquest ran from the ninth to the eleventh of August. Lizzie testified without a lawyer.",
+   "asr": "The inquest ran from the ninth to the eleventh of August, Lizzie testified without a lawyer.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 51,
+   "t": 286.909,
+   "script": "On the eleventh, she was arrested. The next day she pleaded not guilty, and she was taken to the jail in Taunton.",
+   "asr": "On the eleventh she was arrested the next day she pleaded not guilty and she was taken to the jail in taunton",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 52,
+   "t": 293.8,
+   "script": "Which brings us back to that Sunday morning, in the kitchen.",
+   "asr": "Which brings us back to that Sunday morning in the kitchen.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 53,
+   "t": 297.019,
+   "script": "Russell testified that Lizzie was at the stove with a dress, and that Emma was in the room.",
+   "asr": "Russell testified that Lizzie was at the stove with a dress and that Emmer was in the room.",
+   "wer": 0.056,
+   "diffs": [
+    [
+     "emma",
+     "emmer"
+    ]
+   ]
+  },
+  {
+   "line": 54,
+   "t": 302.195,
+   "script": "Lizzie said she was going to burn this old thing up. It was covered with paint.",
+   "asr": "Lizzie said she was going to burn this old thing up. It was covered with paint.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 55,
+   "t": 306.865,
+   "script": "Russell said she told Lizzie she would not let anyone see her do that.",
+   "asr": "Russell said she told Lizzie she would not let anyone see her do that.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 56,
+   "t": 311.209,
+   "script": "But Russell also testified that she saw no blood on the dress, and never actually saw it go into the stove.",
+   "asr": "But Russell also testified that she saw no blood on the dress and never actually saw it go into the stove.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 57,
+   "t": 318.156,
+   "script": "Emma testified that it was an old dress, stained with paint soon after it was made that May. When Lizzie said she would burn it, Emma's answer, she said, was: do it.",
+   "asr": "Emmert testified that it was an old dress stained with paint soon after it was made that May. When Lizzie said she would burn it, Emmert's answer she said was do it.",
+   "wer": 0.062,
+   "diffs": [
+    [
+     "emma",
+     "emmert"
+    ],
+    [
+     "emma's",
+     "emmert's"
+    ]
+   ]
+  },
+  {
+   "line": 58,
+   "t": 329.216,
+   "script": "Russell testified that she had not mentioned the dress at the early hearings.",
+   "asr": "Russell testified that she had not mentioned the dress at the early hearings.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 59,
+   "t": 333.701,
+   "script": "And at first, the grand jury did not indict Lizzie.",
+   "asr": "And at first, the grand jury did not indict Lizzie.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 60,
+   "t": 337.284,
+   "script": "Then, on the first of December, Russell went back and told them about the dress. The next day, Lizzie was indicted for murder.",
+   "asr": "Then, on the 1st of December, Russell went back and told them about the dress. The next day, Lizzie was indicted from murder.",
+   "wer": 0.087,
+   "diffs": [
+    [
+     "first",
+     "1st"
+    ],
+    [
+     "for",
+     "from"
+    ]
+   ]
+  },
+  {
+   "line": 61,
+   "t": 345.692,
+   "script": "Prosecutors said the dress was burned to cover up the crime. The defence said it was burned in broad daylight, in front of witnesses.",
+   "asr": "Prosecutors said the dress was burned to cover up the crime. The defense said it was burned and brought daylight in front of witnesses.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "defence",
+     "defense"
+    ],
+    [
+     "in",
+     "and"
+    ],
+    [
+     "broad",
+     "brought"
+    ]
+   ]
+  },
+  {
+   "line": 62,
+   "t": 354.173,
+   "script": "The trial opened in New Bedford on the fifth of June, 1893.",
+   "asr": "The trial opened a new Bedford on the 5th of June 1893.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "in",
+     "a"
+    ],
+    [
+     "fifth",
+     "5th"
+    ]
+   ]
+  },
+  {
+   "line": 63,
+   "t": 358.815,
+   "script": "Newspapers all over the country, and beyond, followed it.",
+   "asr": "Newspapers all over the country and beyond followed it.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 64,
+   "t": 362.462,
+   "script": "Three judges sat on the case. The jury was twelve men.",
+   "asr": "Three judges sat on the case. The jury was twelve men.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 65,
+   "t": 366.843,
+   "script": "Lizzie's lead lawyer was George Robinson, a former governor of Massachusetts.",
+   "asr": "Lizzie's lead lawyer was George Robinson, a former governor of Massachusetts.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 66,
+   "t": 372.071,
+   "script": "And as governor, Robinson had appointed one of the three judges.",
+   "asr": "And as governor, Robinson had appointed one of the three judges.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 67,
+   "t": 376.729,
+   "script": "One of the prosecutors, William Moody, would later sit on the United States Supreme Court.",
+   "asr": "One of the prosecutors, William Moody, would later sit on the United States Supreme Court.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 68,
+   "t": 382.542,
+   "script": "Two things never reached the jury: Lizzie's inquest testimony, and the drugstore clerk's poison story. The judges kept both out.",
+   "asr": "Two things never reached the jury, Lizzie's inquest testimony, and the drugstore clark's poison story. The judges kept both out.",
+   "wer": 0.05,
+   "diffs": [
+    [
+     "clerk's",
+     "clark's"
+    ]
+   ]
+  },
+  {
+   "line": 69,
+   "t": 391.761,
+   "script": "Lizzie never took the stand.",
+   "asr": "Lizzie never took the stand.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 70,
+   "t": 393.771,
+   "script": "In his charge to the jury, Justice Dewey stressed the presumption of innocence, and the gaps in the state's case. One newspaper said it was a plea for the innocent.",
+   "asr": "In his charge to the jury, Justice Dewey stressed the presumption of innocence and the gaps in the state's case. One newspaper said it was a plea for the innocent.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 71,
+   "t": 403.533,
+   "script": "On the twentieth of June, the jury went out.",
+   "asr": "On the 20th of June, the jury went out.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "twentieth",
+     "20th"
+    ]
+   ]
+  },
+  {
+   "line": 72,
+   "t": 406.712,
+   "script": "Accounts differ on how long they took. About an hour. Some say an hour and a half.",
+   "asr": "Accounts differ on how long they took, about an hour, some say an hour and a half,",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 73,
+   "t": 412.515,
+   "script": "Not guilty.",
+   "asr": "Not guilty.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 74,
+   "t": 415.115,
+   "script": "Lizzie and Emma inherited their father's fortune.",
+   "asr": "Lizzie and emma inherited their father's fortune",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 75,
+   "t": 418.323,
+   "script": "They bought a big house in one of the best neighbourhoods in town, and Lizzie named it Maplecroft.",
+   "asr": "They bought a bakehouse in one of the best neighborhoods in town and Lizzie named Maple Croft.",
+   "wer": 0.278,
+   "diffs": [
+    [
+     "big",
+     "∅"
+    ],
+    [
+     "house",
+     "bakehouse"
+    ],
+    [
+     "neighbourhoods",
+     "neighborhoods"
+    ],
+    [
+     "it",
+     "maple"
+    ],
+    [
+     "maplecroft",
+     "croft"
+    ]
+   ]
+  },
+  {
+   "line": 76,
+   "t": 424.361,
+   "script": "She began calling herself Lizbeth.",
+   "asr": "She began calling herself Lisbeth.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "lizbeth",
+     "lisbeth"
+    ]
+   ]
+  },
+  {
+   "line": 77,
+   "t": 426.698,
+   "script": "But much of Fall River shunned her for the rest of her life.",
+   "asr": "But much of full river shunned her for the rest of her life.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "fall",
+     "full"
+    ]
+   ]
+  },
+  {
+   "line": 78,
+   "t": 429.987,
+   "script": "In 1905, Emma moved out. The sisters never reconciled.",
+   "asr": "In 1905, Emma moved out. The sisters never reconciled.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 79,
+   "t": 435.102,
+   "script": "Lizzie died on the first of June, 1927. Emma died nine days later.",
+   "asr": "Lizzie died on the 1st of June 1927 Emma died nine days later",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "first",
+     "1st"
+    ]
+   ]
+  },
+  {
+   "line": 80,
+   "t": 440.883,
+   "script": "In her will, Lizzie left money to the Animal Rescue League.",
+   "asr": "In her will, Lizzie left money to the animal rescue league.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 81,
+   "t": 444.924,
+   "script": "So who killed Andrew and Abby Borden?",
+   "asr": "So who killed Andrew and Abby Borden?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 82,
+   "t": 447.584,
+   "script": "Prosecutors argued that it was Lizzie. She was at home. She burned a dress. A clerk said she had tried to buy poison, though the jury never heard that.",
+   "asr": "Prosecutors argued that it was Lizzie. She was at home. She burned a dress. A clerk said she had tried to buy poison, though the jury never heard that.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 83,
+   "t": 458.023,
+   "script": "Historians have argued that her class, and the fact that she was a woman, help explain why she was not convicted.",
+   "asr": "Historians have argued that her class and the fact that she was a woman help explain why she was not convicted",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 84,
+   "t": 465.084,
+   "script": "But no blood was found on her, no weapon was proven, and the jury that heard the evidence acquitted her.",
+   "asr": "But no blood was found on her, no weapon was proven, and the jury that heard the evidence acquitted her.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 85,
+   "t": 471.299,
+   "script": "Writers have pointed at others: at Bridget, at John Morse, at Emma, at an unknown intruder.",
+   "asr": "Writers have pointed at others at Bridget, at John Morse, at Emmer, and on Nolan Truder.",
+   "wer": 0.312,
+   "diffs": [
+    [
+     "emma",
+     "emmer"
+    ],
+    [
+     "at",
+     "and"
+    ],
+    [
+     "an",
+     "on"
+    ],
+    [
+     "unknown",
+     "nolan"
+    ],
+    [
+     "intruder",
+     "truder"
+    ]
+   ]
+  },
+  {
+   "line": 86,
+   "t": 477.434,
+   "script": "There is no direct evidence against Bridget. Morse had an alibi. Emma was miles away.",
+   "asr": "There is no direct evidence against Bridget. Morse had an alibi. Emma was miles away.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 87,
+   "t": 483.604,
+   "script": "In 2012, the journals of Lizzie's own lawyer surfaced. They had sat for years in his attic, in a Victorian bathtub.",
+   "asr": "In 2012, the journals of Lizzie's own lawyer surfaced. They had sat for years in his attic, in a Victorian bafftow.",
+   "wer": 0.048,
+   "diffs": [
+    [
+     "bathtub",
+     "bafftow"
+    ]
+   ]
+  },
+  {
+   "line": 88,
+   "t": 492.072,
+   "script": "They did not solve it. Officially, the case is still unsolved.",
+   "asr": "They did not solve it. Officially, the case is still unsolved.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 89,
+   "t": 496.781,
+   "script": "Today, the house on Second Street is a museum, and a bed and breakfast. You can stay the night.",
+   "asr": "Today, the house on Second Street is a museum and a bed and breakfast. You can stay the night.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 90,
+   "t": 503.511,
+   "script": "This autumn, a Netflix drama sent Lizzie Borden to number one all over again. This film has kept to the record.",
+   "asr": "This autumn, a Netflix drama sent Lizzie Borden to number one all over again. This film has kept to the record.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 91,
+   "t": 511.196,
+   "script": "Lizzie Borden was acquitted. No one else was ever charged. And more than a hundred and thirty years later, the question is still open.",
+   "asr": "Lizzie Borden was acquitted. No one else was ever charged. And more than 130 years later, the question is still open.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "a",
+     "∅"
+    ],
+    [
+     "hundred",
+     "∅"
+    ],
+    [
+     "and",
+     "∅"
+    ],
+    [
+     "thirty",
+     "130"
+    ]
+   ]
+  }
+ ],
+ "note": "ASR errors are expected on proper names and numbers; mismatches are leads for a human listen, not proof of a narration defect."
+}

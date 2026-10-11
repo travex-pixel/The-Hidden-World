@@ -27,7 +27,34 @@ python -m documentary.qa output/true-crime-documentary/<run>             # extra
 python -m documentary.shorts output/true-crime-documentary/<run>         # five vertical 9:16 cut-downs with burned captions
 node documentary/thumbnail.mjs <outdir>                                  # thumbnail concepts, 1280×720 PNG
 python -m unittest tests.test_documentary                                # data, captions, editorial guardrails
+python -m documentary.deliver <run>/documentary.mp4 --out <scratch>/dl   # phone delivery page + chunks (see CLAUDE.md)
 ```
+
+## Delivery to the owner's phone
+
+Masters are far over the ~30 MiB chat-attachment limit. `documentary/deliver.py` prepares a private claude.ai download page, which is published with the Artifact tool. The page saves the master as **one MP4** through the `downloads` capability. The full procedure is in `CLAUDE.md`.
+
+## Cinematic shots (`"type": "cine"`)
+
+`cine` shots use the Case Files sets and full-body figures, with walking, poses, expressions, blinking and depth parallax. They are vendored read-only in `documentary/renderer/cine/` (see `SOURCE.md`), with figure specs in `documentary/cast/figures/`. List the figure ids a film uses in `film.json` → `"figures"`.
+
+A shot has these fields:
+
+| Field | Meaning |
+|---|---|
+| `set` | Environment name, e.g. `lb8_kitchen`, `lb8_house`, `lb8_parlour`, `courtroom`, `press_hall`, `office_day` |
+| `setOpts` | Set options. `{"anim": [a, b], "p0": .., "p1": ..}` animates a number over the shot. |
+| `view`, `view_to` | 16:9 window into the portrait world: `{cx, cy, w}`. Use it to frame, push in or pan. |
+| `cam` | Parallax camera `{from, to, handheld}` or `keys` |
+| `figures` | `[{id, x, y, scale, dir, turn, pose, expr, gaze, depth, keys:[{p, pose, expr, ...}], walk:{from, to, p0, p1, cadence}}]` |
+| `grade` | `warm`, `cold`, `night`, `dawn` or `sepia` |
+| `mirror` | Flip the whole world horizontally |
+
+Overlays drawn on top: `lower` (lower third), `cards` (typed summary cards), `funfacts` (yellow FUN FACT pop-ups), `stamps`.
+
+Timing in a cine shot can be given in seconds from the shot start (`at`) or as a fraction of the shot (`p`). Fractions keep the action on the words even when the narration is re-timed.
+
+Each shot is labelled "ILLUSTRATION · NOT A LIKENESS" unless the shot sets `label`.
 
 Output folders get a unique run suffix, so an existing run is never overwritten.
 

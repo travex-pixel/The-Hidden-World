@@ -1,0 +1,702 @@
+{
+ "as_of": "2026-10-11",
+ "decision": "DRAFT — NOT CLEARED FOR PUBLICATION",
+ "reasons": [
+  "no human fact-check sign-off recorded",
+  "no qualified legal review recorded"
+ ],
+ "technical_ok": true,
+ "factual_ok": true,
+ "legal_risk_ok": true,
+ "human_signoff": {
+  "factual": false,
+  "legal": false
+ },
+ "claim_status_counts": {
+  "CORROBORATED": 57,
+  "REQUIRES REVIEW": 14
+ },
+ "effective_status": {
+  "C-DRESS-RUSSELL": "CORROBORATED",
+  "C-DRESS-PAINT": "CORROBORATED",
+  "C-DRESS-BURNED": "CORROBORATED",
+  "C-DRESS-DATE": "CORROBORATED",
+  "C-KILLED-AUG4": "CORROBORATED",
+  "C-VERDICT": "CORROBORATED",
+  "C-UNSOLVED": "CORROBORATED",
+  "C-FALLRIVER": "REQUIRES REVIEW",
+  "C-ANDREW-WEALTH": "REQUIRES REVIEW",
+  "C-STEPMOTHER": "CORROBORATED",
+  "C-AGES": "CORROBORATED",
+  "C-DAUGHTERS": "REQUIRES REVIEW",
+  "C-BRIDGET": "CORROBORATED",
+  "C-PROPERTY": "CORROBORATED",
+  "C-MRS-BORDEN": "CORROBORATED",
+  "C-NO-QUARRELS": "CORROBORATED",
+  "C-RHYME": "CORROBORATED",
+  "C-SICK": "REQUIRES REVIEW",
+  "C-BENCE": "CORROBORATED",
+  "C-EXCLUDED": "CORROBORATED",
+  "C-RUSSELL-VISIT": "REQUIRES REVIEW",
+  "C-MORSE": "CORROBORATED",
+  "C-HOT": "CORROBORATED",
+  "C-EMMA-AWAY": "CORROBORATED",
+  "C-ANDREW-DOWNTOWN": "REQUIRES REVIEW",
+  "C-WINDOWS": "CORROBORATED",
+  "C-ABBY-UPSTAIRS": "CORROBORATED",
+  "C-ANDREW-RETURNS": "CORROBORATED",
+  "C-LAUGH": "REQUIRES REVIEW",
+  "C-SOFA-ATTIC": "CORROBORATED",
+  "C-CALL": "CORROBORATED",
+  "C-RESPONSE": "REQUIRES REVIEW",
+  "C-NOTE": "CORROBORATED",
+  "C-HEARD-COME-IN": "REQUIRES REVIEW",
+  "C-BARN": "CORROBORATED",
+  "C-LOFT-POLICE": "CORROBORATED",
+  "C-LUBINSKY": "REQUIRES REVIEW",
+  "C-INCONSISTENT": "CORROBORATED",
+  "C-HATCHET": "CORROBORATED",
+  "C-INQUEST": "CORROBORATED",
+  "C-ARREST": "CORROBORATED",
+  "C-INDICTED": "CORROBORATED",
+  "C-RUSSELL-WARNING": "REQUIRES REVIEW",
+  "C-RUSSELL-NO-BLOOD": "CORROBORATED",
+  "C-EMMA-DRESS": "CORROBORATED",
+  "C-DRESS-ARGUMENTS": "CORROBORATED",
+  "C-TRIAL": "CORROBORATED",
+  "C-JUDGES-JURY": "CORROBORATED",
+  "C-PRESS": "CORROBORATED",
+  "C-ROBINSON": "CORROBORATED",
+  "C-ROBINSON-APPOINTED": "CORROBORATED",
+  "C-MOODY": "CORROBORATED",
+  "C-NO-TESTIFY": "CORROBORATED",
+  "C-CHARGE": "CORROBORATED",
+  "C-DELIBERATION": "CORROBORATED",
+  "C-MAPLECROFT": "CORROBORATED",
+  "C-LIZBETH": "CORROBORATED",
+  "C-SHUNNED": "CORROBORATED",
+  "C-EMMA-LEAVES": "CORROBORATED",
+  "C-DEATHS": "CORROBORATED",
+  "C-BURIED": "REQUIRES REVIEW",
+  "C-ANIMAL": "REQUIRES REVIEW",
+  "C-NO-BLOOD": "REQUIRES REVIEW",
+  "C-HISTORIANS": "CORROBORATED",
+  "C-THEORIES": "CORROBORATED",
+  "C-THEORY-LIMITS": "CORROBORATED",
+  "C-JENNINGS": "CORROBORATED",
+  "C-PROSECUTION-CASE": "CORROBORATED",
+  "C-HOUSE-TODAY": "CORROBORATED",
+  "C-HOUSE-SALE": "CORROBORATED",
+  "C-NETFLIX": "CORROBORATED"
+ },
+ "counts": {
+  "CRITICAL": 0,
+  "HIGH": 0,
+  "MEDIUM": 0,
+  "LOW": 57,
+  "INFO": 0
+ },
+ "findings": [
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-DRESS-RUSSELL: conflicting accounts recorded: C45: Timing: 'three days after the murders' and 'the Sunday morning after' agree (4 Aug was a Thursday, so 7 Aug was the Sunday). Fabric: 'blue dress' vs 'Bedford cord'. Russell did not see the dress go into the stove (C47). — Handling: Script says only 'a dress' and that Russell found Lizzie 'at the stove, holding' it; no fabric, and it does not claim Russell saw it go into the stove (stated explicitly later).",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-DRESS-RUSSELL",
+   "lines": [
+    1,
+    53
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-DRESS-PAINT: conflicting accounts recorded: C45: Timing: 'three days after the murders' and 'the Sunday morning after' agree (4 Aug was a Thursday, so 7 Aug was the Sunday). Fabric: 'blue dress' vs 'Bedford cord'. Russell did not see the dress go into the stove (C47). — Handling: Paraphrased ('going to burn this old thing up... covered with paint'), wording consistent across both sources; no on-screen quotation beyond 'covered with paint'.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-DRESS-PAINT",
+   "lines": [
+    2,
+    54
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-DRESS-BURNED: conflicting accounts recorded: C45: Timing: 'three days after the murders' and 'the Sunday morning after' agree (4 Aug was a Thursday, so 7 Aug was the Sunday). Fabric: 'blue dress' vs 'Bedford cord'. Russell did not see the dress go into the stove (C47). | C48: The transcript is reportedly inconsistent on whether Emma saw the burning (one answer no, a later one yes). Emma denied being the first to ask what Lizzie planned to do with it. Biography.com frames this as Emma 'suggesting' the burning. — Handling: Only the undisputed fact (a dress was burned that Sunday) is depicted; the meaning is given as prosecution vs defence arguments.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-DRESS-BURNED",
+   "lines": [
+    2
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-KILLED-AUG4: conflicting accounts recorded: C02: Today's street address is given as 230 Second Street (see C77). The renumbering itself was not documented in any result. — Handling: Uses the historical address (92 Second Street) with the year 1892; today's address is not mentioned.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-KILLED-AUG4",
+   "lines": [
+    3,
+    10,
+    24
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-STEPMOTHER: conflicting accounts recorded: C07: Lizzie's age when her mother died is given differently: Biography 'soon thereafter', EBSCO 'an infant', KQED 'about two'. On the 26 March 1863 date she was about 2 years 8 months old (our arithmetic). — Handling: Script gives only the 1865 marriage and 'second wife'; no date or age for the first wife's death.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-STEPMOTHER",
+   "lines": [
+    3,
+    10
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-AGES: conflicting accounts recorded: C08: Andrew's age: Smithsonian, Biography.com and Find a Grave give 69; Britannica gives 70. His birth date of 13 Sept 1822 makes him 69 on 4 Aug 1892. — Handling: Andrew's age shown as 69 (birth date 13 Sept 1822; most sources); Britannica's 70 recorded here.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-AGES",
+   "lines": [
+    11
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-DAUGHTERS: conflicting accounts recorded: C07: Lizzie's age when her mother died is given differently: Biography 'soon thereafter', EBSCO 'an infant', KQED 'about two'. On the 26 March 1863 date she was about 2 years 8 months old (our arithmetic). | C09: One source says she was visiting relatives rather than friends. Enthusiast sources name the Brownell family on Green Street (context only). — Handling: Script does not mention the mother's death date or Lizzie's age at the time.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-DAUGHTERS",
+   "lines": [
+    11
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-BRIDGET: conflicting accounts recorded: C10: Origin of the nickname: one account says it may have come from an earlier maid also called Maggie (theory, unverified). — Handling: Script says only that the sisters called her Maggie; no explanation of the nickname.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-BRIDGET",
+   "lines": [
+    12
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-PROPERTY: conflicting accounts recorded: C12: The details of the share (who sold it, which fraction) vary between enthusiast sources. The name Sarah Whitehead comes from an enthusiast source quoting Rebello. — Handling: Script says 'a share of a house' for Abby's half-sister, in Abby's name; no seller, fraction or names.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-PROPERTY",
+   "lines": [
+    13,
+    14
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-MRS-BORDEN: conflicting accounts recorded: C13: One enthusiast account says EMMA confronted her father and stopped calling Abby 'Mother' (single author). The Hatchet journal says the sisters described only one disagreement in 27 years of marriage. — Handling: Script attributes the inquest answer to Lizzie and does not use the enthusiast account.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-MRS-BORDEN",
+   "lines": [
+    15
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-NO-QUARRELS: conflicting accounts recorded: C15: This sits in tension with C12/C13 (the tensions over the property and how Lizzie addressed Abby). Present both. — Handling: Both are presented: the property friction and Bridget's testimony that she saw no quarrels.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-NO-QUARRELS",
+   "lines": [
+    16
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-RHYME: conflicting accounts recorded: C35: The search summary dated the earliest printings to 'February 1894'. The authorship is unknown. — Handling: Card says only that the rhyme calls Abby 'mother'; no dates or counts.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-RHYME",
+   "lines": []
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-SICK: conflicting accounts recorded: C16: The exact start date was given as 'around August 2, 1892' by the search summary; the chronology's own date line was not shown. | Date: illness from about 2 August; the 'AUGUST 3, 1892 · WEDNESDAY' date card marks the day before the killings (derived from 4 August). — Handling: Script says 'in the days before the killings'; the WEDNESDAY / AUGUST 3, 1892 card marks the day before the killings, not the onset date.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-SICK",
+   "lines": [
+    17,
+    18
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-BENCE: conflicting accounts recorded: C18: Store name: 'S. R. Smith's drug store' (mixed reputable result) vs 'D.R. Smith's pharmacy' (enthusiast blog). Lizzie said she was ill at home that morning and did not know where the pharmacy was (enthusiast source). — Handling: Script attributes the account to Bence and says 'a woman he identified as Lizzie'; no store name; the customer is drawn as an anonymous silhouette.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-BENCE",
+   "lines": [
+    19
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-EXCLUDED: conflicting accounts recorded: C19: Reasons differ: Smithsonian says the poison has innocent uses; Britannica says an attempted purchase did not show intent; an 1893 newspaper (on Famous Trials) says the foundation was insufficient; an enthusiast blog says it was too remote in time. HISTORY.com credits Judge Dewey, while Famous Trials and Smithsonian say 'the justices' or 'Chief Justice Mason'. | C56: HISTORY.com attributes the exclusion to Judge Dewey and calls it 'statements to the police'; Famous Trials says the three-judge panel excluded the inquest testimony. — Handling: Script says the judges kept both out and gives no reason.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-EXCLUDED",
+   "lines": [
+    20,
+    68
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-RUSSELL-VISIT: conflicting accounts recorded: C17: Wording: 'I feel afraid something is going to happen' (attributed to Russell's account) vs 'I'm afraid but that someone will do something' (chronology). Time of day: evening vs afternoon of 3 Aug. — Handling: Script quotes Russell's version ('I feel afraid something is going to happen'), attributed to her testimony, and says 'that day' (no time of day).",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-RUSSELL-VISIT",
+   "lines": [
+    21,
+    22
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-MORSE: conflicting accounts recorded: C11: Morse's movements that morning differ between accounts (one says he went to Baker's drug store after learning of the killings, another that he came back to the house for lunch). We found NO source clearly saying he left in the morning to visit relatives. — Handling: Script says only that he arrived unexpectedly, stayed the night and was visiting relatives at the time; no claim about when he left.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-MORSE",
+   "lines": [
+    23,
+    26
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-EMMA-AWAY: conflicting accounts recorded: C09: One source says she was visiting relatives rather than friends. Enthusiast sources name the Brownell family on Green Street (context only). — Handling: Script says 'visiting friends in Fairhaven'.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-EMMA-AWAY",
+   "lines": [
+    25
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-ABBY-UPSTAIRS: conflicting accounts recorded: C24: Interval between deaths: 'roughly 90 minutes' (Smithsonian) vs 'a full hour before her husband came' (1892 headline, which may refer to his return rather than his death). — Handling: Script says 'within roughly the next hour' and 'roughly an hour or more before'; the on-screen stat says '1 HOUR+'.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-ABBY-UPSTAIRS",
+   "lines": [
+    29,
+    30,
+    41
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-ANDREW-RETURNS: conflicting accounts recorded: C25: Return time: ~10:40 a.m. (one account of Bridget's testimony), 'shortly before 11' (Biography.com), '11 A.M.' (Famous Trials chronology). The commonly quoted 10:45 was NOT found in any result. — Handling: Script and clock say 'shortly before 11'; 10:45 is not used.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-ANDREW-RETURNS",
+   "lines": [
+    31,
+    32
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-LAUGH: conflicting accounts recorded: C26: Transcript versions differ: 'pshaw' vs 'Oh, pshaw!'; 'upstairs' vs 'either at the head of the stairs or in her room'. — Handling: Script uses 'pshaw' and 'upstairs', and adds that she did not see her.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-LAUGH",
+   "lines": [
+    33
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-CALL: conflicting accounts recorded: C29: Wording: 'Maggie, come down! Come down quick; Father's dead; somebody came in and killed him' vs 'Maggie, come down quick; Father's dead' vs 'Maggie, come quick!'. Time: 11:10 (Biography.com; one account) vs about 11:15 (other sources); police were notified 'shortly after 11:15' (FT chronology). A Famous Trials-restricted search could NOT confirm the verbatim words in Sullivan's transcript. — Handling: Script paraphrases (father dead; somebody came in and killed him) and says 'a few minutes after eleven'; no exact words.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-CALL",
+   "lines": [
+    35
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-RESPONSE: conflicting accounts recorded: C33: Lizzie said she thought Abby had gone out (C27), yet also that she was 'almost sure I heard her come in'. Note the tension and attribute both. | C34: The search summary said Bowen 'found Abby's body'. Churchill's and Bridget's testimony (C33) has the two women discovering her first. Avoid saying who found her first in connection with Bowen. — Handling: Script says only that Churchill and the doctor came; it does not say who found Abby first in connection with Bowen.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-RESPONSE",
+   "lines": [
+    36
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-NOTE: conflicting accounts recorded: C27: Lizzie suggested Abby had burned the note; an 1892 newspaper reported bits of charred paper in the grate, 'not enough to give any idea of the nature of the note'. — Handling: Script says the note and messenger were never found; the charred-paper report is not used.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-NOTE",
+   "lines": [
+    37,
+    38
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-HEARD-COME-IN: conflicting accounts recorded: C33: Lizzie said she thought Abby had gone out (C27), yet also that she was 'almost sure I heard her come in'. Note the tension and attribute both. — Handling: Both of Lizzie's statements are given, each attributed: Abby had gone out (her account), then 'almost sure' she heard her come in (Bridget's testimony).",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-HEARD-COME-IN",
+   "lines": [
+    39,
+    40
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-BARN: conflicting accounts recorded: C30: 'iron' vs 'irons' vs 'sinkers' (wording varies between witnesses). The search summary paraphrased the inquest as gathering pears under the tree before going up to the loft. — Handling: Script gives 'a piece of iron' (to the neighbour and doctor) and 'lead sinkers' (inquest) separately, each attributed.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-BARN",
+   "lines": [
+    43,
+    44
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-LOFT-POLICE: conflicting accounts recorded: C31: One search summary said a defence-side account claimed other people had been in the loft shortly before, which would undercut the dust argument. Its source was unclear and it is NOT used. — Handling: Attributed to police; the unclear defence claim about others in the loft is not used. Lubinsky's testimony is given as the defence answer.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-LOFT-POLICE",
+   "lines": [
+    45
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-LUBINSKY: conflicting accounts recorded: C32: A contemporary press summary said he saw 'Miss Lizzie Borden' coming from the barn. The transcript (per the search summary) records that he could not identify the woman. — Handling: Script says 'a woman' and does not identify her, matching the transcript summary.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-LUBINSKY",
+   "lines": [
+    46
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-INCONSISTENT: conflicting accounts recorded: C40: Bridget's own statement put Lizzie coming downstairs as her father arrived (FT search summary), which differs from Lizzie's inquest answers. — Handling: Script lists her inquest answers only; Bridget's differing account is not used here.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-INCONSISTENT",
+   "lines": [
+    47
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-HATCHET: conflicting accounts recorded: C38: A partisan 1893 newspaper (on Famous Trials) said the handle had 'mysteriously disappeared'; treat that as rhetoric. Police alleged Lizzie broke the handle (allegation, not established). — Handling: Script says only that the handle was broken off and that the prosecution could not prove it was the weapon; the 'disappeared' rhetoric and the allegation about the handle are not used.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-HATCHET",
+   "lines": [
+    48,
+    49,
+    84
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-ARREST: conflicting accounts recorded: C42: The search summary described Taunton as 'eight miles north of Fall River'. That distance was not verified, so do not use it. — Handling: Taunton named without a distance.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-ARREST",
+   "lines": [
+    51
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-INDICTED: conflicting accounts recorded: C44: The Famous Trials chronology reportedly gives the invalid date 'November 31, 1892'. The ABA headline says 'indicted for murdering her father'; she was charged with both deaths (the verdict covered 'all three charges' per Crime Library). Not reconciled. — Handling: Script says she was indicted 'for murder' with the date 2 December 1892; it does not say which count.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-INDICTED",
+   "lines": [
+    59,
+    60
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-RUSSELL-WARNING: conflicting accounts recorded: C46: Three versions: 'I would not let anyone see you do that' / 'I wouldn't let anybody see me do that, Lizzie' / the brief's 'I wouldn't let anybody see you do that' (NOT found verbatim). A Famous Trials-restricted search did not surface 'anybody see'. A 1893 trial account summarized it as Russell telling Lizzie she 'would not let anyone see her do it'. — Handling: Paraphrased and attributed ('Russell said she told Lizzie she would not let anyone see her do that'); no quotation marks on screen.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-RUSSELL-WARNING",
+   "lines": [
+    55
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-EMMA-DRESS: conflicting accounts recorded: C48: The transcript is reportedly inconsistent on whether Emma saw the burning (one answer no, a later one yes). Emma denied being the first to ask what Lizzie planned to do with it. Biography.com frames this as Emma 'suggesting' the burning. — Handling: Script says 'Emma's answer, she said, was: do it', which matches the transcript's meaning; it does not say whether Emma watched the burning.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-EMMA-DRESS",
+   "lines": [
+    57
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-JUDGES-JURY: conflicting accounts recorded: C51: Spelling 'Blodget' (Encyclopedia.com) vs 'Blodgett' (another search summary). — Handling: The judges are not named on screen.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-JUDGES-JURY",
+   "lines": [
+    64
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-ROBINSON-APPOINTED: conflicting accounts recorded: C55: A search restricted to famous-trials/smithsonian/biography/aetv/britannica did NOT name who appointed Dewey. — Handling: Script says 'one of the three judges'; it does not name him.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-ROBINSON-APPOINTED",
+   "lines": [
+    66
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-MOODY: conflicting accounts recorded: C53: End of service: 19 Nov 1910 (FJC) vs 20 Nov 1910 (Oyez). 'Resignation' (FJC) vs 'retired by special act of Congress' (another passage). | C52: One result wrongly referred to 'Thomas Moody'. — Handling: Script says only that he later sat on the U.S. Supreme Court; no end date.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-MOODY",
+   "lines": [
+    67
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-NO-TESTIFY: conflicting accounts recorded: C59: Scope: 'only time during the trial' (Crime Library) vs 'only words spoken aloud in court before the jury was charged' (CBS). — Handling: Script says only that she never took the stand.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-NO-TESTIFY",
+   "lines": [
+    69
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-CHARGE: conflicting accounts recorded: C58: One forum post claims Mason, not Dewey, presided (forum, not support). Famous Trials and Encyclopedia.com name Dewey as the justice who gave the charge. — Handling: Dewey is named as the justice who gave the charge (Famous Trials, Encyclopedia.com); the forum claim is not used.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-CHARGE",
+   "lines": [
+    70
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-DELIBERATION: conflicting accounts recorded: C60: ~1 hour (Britannica, NatGeo, Biography) vs 68 min (Crime Library timestamps) vs ~90 min (HISTORY.com, A&E, Macmillan). Publishers Weekly (on Robertson's book) and Smithsonian report the jurors agreed almost at once and then waited about an hour or an hour and a half before announcing; Biography mentions later reports of just 10 minutes. The 66-minute figure was NOT found. — Handling: Script states the disagreement: 'About an hour. Some say an hour and a half.'",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-DELIBERATION",
+   "lines": [
+    72
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-MAPLECROFT: conflicting accounts recorded: C64: Purchase date: 'September of 1893' vs 'five weeks after the trial' vs 'about 2 months after the verdict' (mixed sources). — Handling: No purchase date is given.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-MAPLECROFT",
+   "lines": [
+    74,
+    75
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-LIZBETH: conflicting accounts recorded: C65: Timing: around the Maplecroft purchase (1893; one source) vs after the 1905 split with Emma (another). — Handling: No date is given for the name change.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-LIZBETH",
+   "lines": [
+    76
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-SHUNNED: conflicting accounts recorded: C66: Mental Floss notes that mourners remembered her as a quiet source of charitable donations, and that public opinion at the time of the trial was split. — Handling: Script says 'much of Fall River', not everyone.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-SHUNNED",
+   "lines": [
+    77
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-EMMA-LEAVES: conflicting accounts recorded: C67: The reason for Emma's departure is disputed ('never confirmed'). The nature of the O'Neil relationship is unclear (some interpret it as romantic; Mental Floss calls it speculation). The Emma quote (said to be from the Boston Sunday Herald) could not be pinned to a source. — Handling: Script gives only the year and that the sisters never reconciled; no reason and no mention of O'Neil.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-EMMA-LEAVES",
+   "lines": [
+    78
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-DEATHS: conflicting accounts recorded: C68: Cause: pneumonia (several) vs complications of gallbladder surgery (Mental Floss passage); one source ties the pneumonia to the surgery. | C69: No reputable result stated '10 June' outright: it is 1 June + 9 days, plus one weakly attributed passage. — Handling: Script says 'nine days later' (no exact date for Emma) and gives no cause of death.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-DEATHS",
+   "lines": [
+    79
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-ANIMAL: conflicting accounts recorded: C71: $30,000 (Mental Floss and 'most secondary sources') vs $20,000 (Springfield Daily News, 8 June 1927, as reported in a dealer listing). The contradiction applies to the amount only. — Handling: No amount is given.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-ANIMAL",
+   "lines": [
+    80
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-THEORIES: conflicting accounts recorded: C74: Victoria Lincoln relayed a claim that Bridget later told a friend she had helped Lizzie at the trial; it was relayed years later and cannot be verified. | C78: Bridget testified the front door had been triple-locked when Andrew came home (C25), which the prosecution used against the intruder idea. This is inferred, not quoted. — Handling: Theories are labelled 'theories, not findings'; the deathbed-confession story is not used.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-THEORIES",
+   "lines": [
+    85
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-THEORY-LIMITS: conflicting accounts recorded: C74: Victoria Lincoln relayed a claim that Bridget later told a friend she had helped Lizzie at the trial; it was relayed years later and cannot be verified. — Handling: Only the reputable-source limits are used (no direct evidence, an alibi, Fairhaven).",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-THEORY-LIMITS",
+   "lines": [
+    86
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-JENNINGS: conflicting accounts recorded: C80: Timing of the donation: Boston Globe calls them recently acquired; a forum post says the donation came two to three years earlier (forum, not support). The search summary said 'kept by Jennings ... during the 1892 trial', but the trial was in 1893. — Handling: Script says the journals 'surfaced' in 2012 after years in the attic; no donation date.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-JENNINGS",
+   "lines": [
+    87
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-HOUSE-TODAY: conflicting accounts recorded: C82: Room count: 'two suites and four rooms' vs 'one of the eight rooms' (both on the official site, per summary); Smithsonian says six bedrooms with a cellar room planned. Tour times differ between pages. — Handling: No room count or tour times.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-HOUSE-TODAY",
+   "lines": [
+    89
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-HOUSE-SALE: conflicting accounts recorded: C84: No exact closing price was found ('close to $2 million'). Company name: 'Ghost Adventures' (Smithsonian summary) vs 'US Ghost Adventures' (travel site). — Handling: Not narrated.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-HOUSE-SALE",
+   "lines": []
+  },
+  {
+   "severity": "LOW",
+   "rule": "G4-conflict",
+   "message": "C-NETFLIX: conflicting accounts recorded: C89: One summary said 'most-watched title of the week ... across both series and films'; not confirmed elsewhere. Not used. — Handling: Script says only that the drama reached number one; no episode count, and no characterisation of the launch.",
+   "fix": "Re-check the handling note if the script changes.",
+   "claim": "C-NETFLIX",
+   "lines": [
+    90
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "REVIEW-C",
+   "message": "FC-01: Every source was read as a search excerpt; no page could be opened (network policy). 14 low-risk details rest on one publisher: Fall River's nickname, Andrew's career, the daughters, the illness, Russell's visit, Andrew leaving at about 9, the laugh, Churchill and the doctor arriving, 'almost sure she heard her come in', Lubinsky, Russell's warning, the burial and the bequest, and 'no blood on her'.",
+   "fix": "Before publication, read the Famous Trials transcripts in full (Russell, Sullivan, Emma Borden, Lubinsky, the inquest) and the Smithsonian and Britannica pages, then upgrade or reword.",
+   "finding": "FC-01",
+   "claim": [],
+   "lines": []
+  },
+  {
+   "severity": "LOW",
+   "rule": "REVIEW-D",
+   "message": "LR-01: 'Historians have argued that her class, and the fact that she was a woman, help explain why she was not convicted' could be heard as implying she was guilty. It is attributed, and the next line gives the other side (no blood on her, no proven weapon, the jury acquitted).",
+   "fix": "Keep as written. A human editor should hear L84-L85 together.",
+   "finding": "LR-01",
+   "claim": [
+    "C-HISTORIANS",
+    "C-NO-BLOOD",
+    "C-VERDICT"
+   ],
+   "lines": [
+    84,
+    85
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "REVIEW-D",
+   "message": "LR-02: The selected thumbnail puts an illustrated Lizzie beside 'WHO KILLED THE BORDENS?'. The 'ACQUITTED · 1893' stamp states the outcome, and everyone involved died long ago, but the pairing invites viewers to suspect her.",
+   "fix": "Human judgement before upload. Use house-at-dusk if a stricter standard is wanted.",
+   "finding": "LR-02",
+   "claim": [
+    "C-VERDICT",
+    "C-UNSOLVED"
+   ],
+   "lines": []
+  },
+  {
+   "severity": "LOW",
+   "rule": "REVIEW-F",
+   "message": "AUD-01: Offline speech recognition on the MP4: corpus word-error rate 4%, with 5 lines above 20%. L85 'an unknown intruder' came out as 'on Nolan Truder'; L26 'John Morse went out' as 'Morsewite ouch'. These are probably recogniser errors on run-together words.",
+   "fix": "Listen at 7:51 and 2:19 at normal volume. Re-voice only if a person mishears them.",
+   "finding": "AUD-01",
+   "claim": [
+    "C-THEORIES",
+    "C-MORSE"
+   ],
+   "lines": [
+    85,
+    26
+   ]
+  },
+  {
+   "severity": "LOW",
+   "rule": "REVIEW-C",
+   "message": "FC-02: The sources conflict on how long the jury deliberated, on the exact wording of Russell's warning, and on Lizzie's exact words to Bridget.",
+   "fix": "The script states the disagreement or paraphrases with attribution. No change needed.",
+   "finding": "FC-02",
+   "claim": [
+    "C-DELIBERATION",
+    "C-RUSSELL-WARNING",
+    "C-CALL"
+   ],
+   "lines": []
+  }
+ ]
+}

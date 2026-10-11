@@ -106,6 +106,14 @@ class EvidenceRules(unittest.TestCase):
         self.assertEqual(rep["effective_status"]["K1"], "DISPUTED")
         self.assertIn("G13-insufficient-status", rules(rep))
 
+    def test_conflict_with_recorded_handling_is_low_not_medium(self):
+        b = base(); b["claims"][0]["contradictions"] = ["Source A says 2015, source B says 2016"]; approve(b)
+        self.assertIn("G4-conflict", rules(run_gate(b, TODAY), ("MEDIUM",)))
+        b["claims"][0]["conflict_handling"] = "Script gives only the year both sources agree on."; approve(b)
+        r = run_gate(b, TODAY)
+        self.assertNotIn("G4-conflict", rules(r, ("MEDIUM",)))
+        self.assertTrue(any(f["rule"] == "G4-conflict" and f["severity"] == "LOW" for f in r["findings"]))
+
     def test_passage_must_contain_the_claims_figures(self):
         b = base(); b["claims"][1]["proposition"] = "In 2019 prosecutors charged Jo Roe; she pleaded not guilty."; approve(b)
         self.assertIn("G3-passage-mismatch", rules(run_gate(b, TODAY), ("MEDIUM",)))
@@ -191,6 +199,32 @@ class OutputsAndPackaging(unittest.TestCase):
         self.assertIn("G9-short-without-status", rules(run_gate(b, TODAY)))
         b["packaging"]["shorts"] = [{"slug": "clip", "in": 5.0, "out": 15.0, "hook": "THE CASE"}]   # includes the 'pleaded not guilty' line
         self.assertNotIn("G9-short-without-status", rules(run_gate(b, TODAY)))
+
+    def test_sources_promise_is_checked_per_claim(self):
+        b = base(); b["film"]["lines"][0]["shots"][0]["sub"] = "Sources for every claim are listed in the description."; approve(b)
+        b["packaging"]["description_text"] = "Sources: https://court.example/1 https://a.example/1"   # K1 via S1, K2 and K3 via S2
+        self.assertNotIn("G15-bibliography", rules(run_gate(b, TODAY), ("MEDIUM",)))
+        b["packaging"]["description_text"] = "Sources: https://court.example/1"                      # K2/K3 have no listed source
+        self.assertIn("G15-bibliography", rules(run_gate(b, TODAY), ("MEDIUM",)))
+
+    def test_plan_shots_carrying_claim_tags_are_not_drift(self):
+        b = base(); b["film"]["lines"][0]["shots"][0]["claims"] = ["K1"]; approve(b)
+        plan_shots = [{**s, "i": j, "line": i, "start": 0, "end": 1} for i, ln in enumerate(b["film"]["lines"]) for j, s in enumerate(ln["shots"])]
+        b["run"] = {"plan": {"shots": plan_shots}}
+        self.assertNotIn("G12-onscreen-drift", rules(run_gate(b, TODAY)))
+        plan_shots[0] = {**plan_shots[0], "text": "GUILTY"}
+        self.assertIn("G12-onscreen-drift", rules(run_gate(b, TODAY)))
+
+    def test_cine_overlay_text_is_checked_like_any_onscreen_text(self):
+        b = base(); b["film"]["lines"][1]["shots"] = [{"type": "cine", "set": "lb8_house", "figures": [{"id": "x", "x": 100}],
+            "lower": {"kicker": "Charged 2021", "title": "Seen at 7:27 PM"}, "funfacts": [{"rows": [{"text": "It cost $10,000."}]}]}]
+        found = [f["message"] for f in run_gate(b, TODAY)["findings"] if f["rule"] == "G6-unsupported-onscreen"]
+        self.assertTrue(any("7:27" in m for m in found) and any("$10000" in m or "10,000" in m or "10000" in m for m in found), found)
+        self.assertFalse(any("2021" in m for m in found))        # backed by the line's claim
+
+    def test_unlabelled_cine_illustration_is_flagged(self):
+        b = base(); b["film"]["lines"][0]["shots"] = [{"type": "cine", "set": "courtroom", "label": ""}]
+        self.assertIn("G14-unlabelled-reconstruction", rules(run_gate(b, TODAY)))
 
     def test_unproven_depicted_act_is_critical(self):
         b = base(); b["film"]["lines"][2]["shots"][0]["depicts"] = {"person": "Jo Roe", "act": "staging the scene"}

@@ -1,0 +1,102 @@
+{
+ "figures": [
+  "lb8_lizzie",
+  "lb8_alice"
+ ],
+ "concepts": [
+  {
+   "name": "verdict-question",
+   "note": "Selected. Lizzie (illustrated, not a likeness, neutral expression) by the glowing stove; the question the film answers honestly: unsolved. ACQUITTED states the verdict.",
+   "shot": {
+    "set": "lb8_kitchen",
+    "setOpts": {
+     "open": 1,
+     "burn": 0.5
+    },
+    "grade": "warm",
+    "view": {
+     "cx": 440,
+     "cy": 975,
+     "w": 1000
+    },
+    "figures": [
+     {
+      "id": "lb8_lizzie",
+      "x": 650,
+      "y": 1460,
+      "scale": 0.7,
+      "dir": -1,
+      "turn": 0.3,
+      "pose": "stand",
+      "expr": "neutral",
+      "gaze": [
+       -0.5,
+       0.0
+      ],
+      "headTurn": -0.35,
+      "outfit": "house"
+     }
+    ],
+    "headline": {
+     "x": 60,
+     "y": 110,
+     "rows": [
+      {
+       "text": "WHO KILLED",
+       "size": 150
+      },
+      {
+       "text": "THE BORDENS?",
+       "size": 150,
+       "color": "amber"
+      }
+     ]
+    },
+    "stamps": [
+     {
+      "at": 0.0,
+      "text": "ACQUITTED \u00b7 1893",
+      "color": "green",
+      "x": 480,
+      "y": 900,
+      "size": 78,
+      "rot": -0.05,
+      "bg": "#05070a"
+     }
+    ]
+   }
+  },
+  {
+   "name": "house-at-dusk",
+   "note": "Alternative: the generic house at dusk with lit windows; no person.",
+   "shot": {
+    "set": "lb8_house",
+    "setOpts": {
+     "mode": "dusk"
+    },
+    "grade": "night",
+    "view": {
+     "cx": 700,
+     "cy": 1000,
+     "w": 1500
+    },
+    "figures": [],
+    "headline": {
+     "x": 70,
+     "y": 150,
+     "rows": [
+      {
+       "text": "THE CASE",
+       "size": 160
+      },
+      {
+       "text": "NO ONE SOLVED",
+       "size": 160,
+       "color": "red"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

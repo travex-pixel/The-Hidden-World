@@ -19,7 +19,7 @@ from pipeline.verify import verify
 ROOT = Path(__file__).resolve().parent.parent
 W, H, FPS = 1920, 1080, 30
 TEMPLATES = {"title", "date", "kinetic", "stat", "quote", "doc", "split", "profile", "verdict", "question", "list",
-             "timeline", "clock", "board", "map", "scene", "endcard", "black"}
+             "timeline", "clock", "board", "map", "scene", "endcard", "black", "character", "cine"}
 SFX = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping",
        "rumble", "rain", "buzz", "thump", "step", "pen", "door", "swell", "tick", "puff", "beep", "static", "whoosh"}
 
@@ -316,6 +316,8 @@ def main(argv=None) -> int:
     # 5. plan + edit manifest
     plan = {"fps": FPS, "width": W, "height": H, "crf": int(film.get("crf", 20)), "preset": film.get("preset", "medium"), "shots": shots, "timeline": film.get("timeline", []),
             "cast": {cid: json.loads((ROOT / path).read_text()) for cid, path in film.get("cast", {}).items()}, "seed": int(film.get("seed", 1))}
+    if film.get("figures"):  # full-body Case Files figures for `cine` shots (documentary/cast/figures/<id>.json)
+        plan["figures"] = {fid: json.loads((ROOT / "documentary" / "cast" / "figures" / f"{fid}.json").read_text()) for fid in film["figures"]}
     (out / "plan.json").write_text(json.dumps(plan))
     manifest = {"film": film["id"], "title": film["title"], "duration_s": total, "fps": FPS, "resolution": [W, H],
                 "visual_beats": len(shots), "chapters": chapters,

@@ -1,0 +1,4525 @@
+{
+ "film": "lizzie-borden",
+ "as_of": "2026-10-11",
+ "status_vocabulary": [
+  "VERIFIED",
+  "DIRECTLY SUPPORTED",
+  "CORROBORATED",
+  "DISPUTED",
+  "UNVERIFIED",
+  "OUTDATED",
+  "REQUIRES REVIEW"
+ ],
+ "claims": [
+  {
+   "id": "C-DRESS-RUSSELL",
+   "proposition": "Alice Russell testified that on the Sunday morning after the killings she found Lizzie at the kitchen stove holding a dress.",
+   "lines": [
+    1,
+    53
+   ],
+   "facts": [
+    "Testimony of Alice Russell",
+    "The kitchen stove",
+    "Sunday"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "Russell testified that on the Sunday morning, she saw Lizzie at the stove holding a skirt, and when Emma asked what she was doing, Lizzie replied that she was going to burn the old thing because it was covered with paint.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "She testified that Lizzie said she was going to burn this old thing up; it is covered with paint.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "direct",
+     "passage": "\"I am going to burn this old thing up,\" Lizzie told her sister, according to Russell's later testimony. \"It is covered with paint.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-ABA-INDICT",
+     "supports": "partial",
+     "passage": "A neighbor's late account, which included seeing Lizzie burn part of a blue skirt, helped push the grand jury toward an indictment.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    }
+   ],
+   "contradictions": [
+    "C45: Timing: 'three days after the murders' and 'the Sunday morning after' agree (4 Aug was a Thursday, so 7 Aug was the Sunday). Fabric: 'blue dress' vs 'Bedford cord'. Russell did not see the dress go into the stove (C47)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C45"
+   ],
+   "conflict_handling": "Script says only 'a dress' and that Russell found Lizzie 'at the stove, holding' it; no fabric, and it does not claim Russell saw it go into the stove (stated explicitly later)."
+  },
+  {
+   "id": "C-DRESS-PAINT",
+   "proposition": "According to Russell's testimony, Lizzie said she was going to burn the old thing up because it was covered with paint.",
+   "lines": [
+    2,
+    54
+   ],
+   "facts": [
+    "COVERED WITH PAINT",
+    "“Covered with paint”",
+    "Lizzie's explanation, per Russell"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "Russell testified that on the Sunday morning, she saw Lizzie at the stove holding a skirt, and when Emma asked what she was doing, Lizzie replied that she was going to burn the old thing because it was covered with paint.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "She testified that Lizzie said she was going to burn this old thing up; it is covered with paint.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "direct",
+     "passage": "\"I am going to burn this old thing up,\" Lizzie told her sister, according to Russell's later testimony. \"It is covered with paint.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-ABA-INDICT",
+     "supports": "partial",
+     "passage": "A neighbor's late account, which included seeing Lizzie burn part of a blue skirt, helped push the grand jury toward an indictment.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    }
+   ],
+   "contradictions": [
+    "C45: Timing: 'three days after the murders' and 'the Sunday morning after' agree (4 Aug was a Thursday, so 7 Aug was the Sunday). Fabric: 'blue dress' vs 'Bedford cord'. Russell did not see the dress go into the stove (C47)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C45"
+   ],
+   "conflict_handling": "Paraphrased ('going to burn this old thing up... covered with paint'), wording consistent across both sources; no on-screen quotation beyond 'covered with paint'."
+  },
+  {
+   "id": "C-DRESS-BURNED",
+   "proposition": "Lizzie burned an old dress in the kitchen stove on the Sunday after the killings; the defence did not dispute the burning and said it was done openly.",
+   "lines": [
+    2
+   ],
+   "facts": [
+    "The kitchen stove"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "Russell testified that on the Sunday morning, she saw Lizzie at the stove holding a skirt, and when Emma asked what she was doing, Lizzie replied that she was going to burn the old thing because it was covered with paint.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "She testified that Lizzie said she was going to burn this old thing up; it is covered with paint.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "direct",
+     "passage": "\"I am going to burn this old thing up,\" Lizzie told her sister, according to Russell's later testimony. \"It is covered with paint.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-ABA-INDICT",
+     "supports": "partial",
+     "passage": "A neighbor's late account, which included seeing Lizzie burn part of a blue skirt, helped push the grand jury toward an indictment.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C45"
+    },
+    {
+     "source": "S-FT-EMMA",
+     "supports": "direct",
+     "passage": "She said the dressmaker made the dress in early May, and that paint landed on the front, one side near the hem, and the wrong side of the skirt, within about two weeks of its making, perhaps less.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C48"
+    },
+    {
+     "source": "S-FT-EMMA",
+     "supports": "direct",
+     "passage": "Emma recalled that Lizzie, holding the dress on her arm, said she thought she would burn it, and that Emma's reply meant \"Do it.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C48"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "direct",
+     "passage": "Emma Borden contradicted Russell's account of the dress, testifying that she had suggested Lizzie destroy a paint-stained dress to make more room in their closet.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C48"
+    },
+    {
+     "source": "S-FT-JENNINGS",
+     "supports": "direct",
+     "passage": "It was burned in the broad light of day in the presence of witnesses.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C49"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "reports_allegation",
+     "passage": "Prosecutors later alleged the dress was stained with blood and that Lizzie had burned the dress in order to cover up her crime.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C49"
+    }
+   ],
+   "contradictions": [
+    "C45: Timing: 'three days after the murders' and 'the Sunday morning after' agree (4 Aug was a Thursday, so 7 Aug was the Sunday). Fabric: 'blue dress' vs 'Bedford cord'. Russell did not see the dress go into the stove (C47).",
+    "C48: The transcript is reportedly inconsistent on whether Emma saw the burning (one answer no, a later one yes). Emma denied being the first to ask what Lizzie planned to do with it. Biography.com frames this as Emma 'suggesting' the burning."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C45",
+    "C48",
+    "C49"
+   ],
+   "notes": "Both sides accepted that a dress was burned; they disputed what it meant.",
+   "conflict_handling": "Only the undisputed fact (a dress was burned that Sunday) is depicted; the meaning is given as prosecution vs defence arguments."
+  },
+  {
+   "id": "C-DRESS-DATE",
+   "proposition": "That Sunday was 7 August 1892 (the killings were on Thursday 4 August 1892).",
+   "lines": [
+    0
+   ],
+   "facts": [
+    "AUGUST 7, 1892",
+    "SUNDAY",
+    "AUG 7, 1892",
+    "Sunday, 7 August 1892"
+   ],
+   "assertion": "derived",
+   "subjects": [],
+   "matter": null,
+   "evidence": [],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [],
+   "derived_from": [
+    "C-KILLED-AUG4",
+    "C-DRESS-RUSSELL"
+   ]
+  },
+  {
+   "id": "C-KILLED-AUG4",
+   "proposition": "Andrew and Abby Borden were killed in their home at 92 Second Street, Fall River, on the morning of Thursday 4 August 1892: Andrew on the sitting-room sofa, Abby upstairs in the guest room.",
+   "lines": [
+    3,
+    10,
+    24
+   ],
+   "facts": [
+    "AUGUST 4, 1892",
+    "THURSDAY",
+    "AUG 4, 1892",
+    "4 August 1892",
+    "92 Second Street",
+    "92 SECOND STREET",
+    "THURSDAY, AUGUST 4"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-HIST-AUG4",
+     "supports": "direct",
+     "passage": "Andrew's body was on the sitting-room couch, and when the police came, they found Abby's body upstairs.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C20"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Andrew Borden is murdered shortly thereafter in the sitting room sofa.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C20"
+    },
+    {
+     "source": "S-BIO-TIMELINE",
+     "supports": "direct",
+     "passage": "At about 9:30 a.m., she went upstairs to straighten the guest room, where she was attacked and killed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C20"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "On a hot August 4, 1892 at 92 Second Street in Fall River, Massachusetts",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C21"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "On a hot August 4, 1892 at 92 Second Street in Fall River, Massachusetts, Bridget (\"Maggie\") Sullivan, the maid in the Borden family residence rested in her bed after having washed the outside windows.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C02"
+    }
+   ],
+   "contradictions": [
+    "C02: Today's street address is given as 230 Second Street (see C77). The renumbering itself was not documented in any result."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C20",
+    "C21",
+    "C02"
+   ],
+   "conflict_handling": "Uses the historical address (92 Second Street) with the year 1892; today's address is not mentioned."
+  },
+  {
+   "id": "C-VERDICT",
+   "proposition": "On 20 June 1893 a jury of twelve men found Lizzie Borden not guilty.",
+   "lines": [
+    4,
+    71,
+    73,
+    84,
+    91
+   ],
+   "facts": [
+    "NOT GUILTY",
+    "ACQUITTED",
+    "June 1893",
+    "JUNE 20, 1893",
+    "June 20, 1893",
+    "20 June 1893",
+    "1893",
+    "New Bedford, Massachusetts · June 1893",
+    "Lizzie Borden was acquitted in 1893.",
+    "JUN 20, 1893"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-HIST-ACQ",
+     "supports": "direct",
+     "passage": "It reports that Lizzie Borden was found not guilty of the hatchet murders of her father and stepmother on June 20, 1893.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C61"
+    },
+    {
+     "source": "S-BIO-MAIN",
+     "supports": "direct",
+     "passage": "Biography.com gives the exact verdict date, June 20, 1893",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C61"
+    },
+    {
+     "source": "S-ABA-INDICT",
+     "supports": "direct",
+     "passage": "the all-male jury acquitted her on June 20, 1893",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C61"
+    },
+    {
+     "source": "S-LOC-GUIDE",
+     "supports": "direct",
+     "passage": "with the acquittal on June 20, 1893.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C61"
+    },
+    {
+     "source": "S-BG-REVIEW",
+     "supports": "direct",
+     "passage": "Boston Globe says the verdict came on June 20, 1893.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C61"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "the jury of 12 men deliberated for just about 90 minutes before returning a verdict of not guilty.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C57"
+    },
+    {
+     "source": "S-ABA-INDICT",
+     "supports": "direct",
+     "passage": "the all-male jury acquitted her on June 20, 1893",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C57"
+    },
+    {
+     "source": "S-NATGEO",
+     "supports": "direct",
+     "passage": "National Geographic says the all-male jury deliberated for about an hour before finding her not guilty.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C57"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C61",
+    "C57"
+   ]
+  },
+  {
+   "id": "C-UNSOLVED",
+   "proposition": "No one else was ever charged with the killings of Andrew and Abby Borden; the case remains officially unsolved.",
+   "lines": [
+    5,
+    6,
+    81,
+    88,
+    91
+   ],
+   "facts": [
+    "NO ONE ELSE",
+    "WAS EVER CHARGED",
+    "The killings remain officially unsolved."
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-BIO-MAIN",
+     "supports": "direct",
+     "passage": "notes that no one else was ever charged with the crimes.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C72"
+    },
+    {
+     "source": "S-SMITH-MAYBE",
+     "supports": "direct",
+     "passage": "Borden was the only person charged in the killings of her parents, and the case has never been resolved.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C72"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "The case went unsolved and remains up for debate in the public sphere.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C72"
+    },
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "direct",
+     "passage": "though she is still suspected to be the murderer, the case remains—technically—unsolved.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C72"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C72"
+   ]
+  },
+  {
+   "id": "C-FALLRIVER",
+   "proposition": "In the late nineteenth century Fall River, Massachusetts, was a leading cotton-textile centre nicknamed 'Spindle City'.",
+   "lines": [
+    8
+   ],
+   "facts": [
+    "Spindle City",
+    "Fall River, Massachusetts",
+    "Fall River"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BRIT-FALLRIVER",
+     "supports": "direct",
+     "passage": "the city had become a leading cotton-textile center by 1871 and earned the nickname \"Spindle City.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C01"
+    },
+    {
+     "source": "S-BRIT-FALLRIVER",
+     "supports": "partial",
+     "passage": "abundant waterpower, a fine harbor, and a moist climate encouraged textile milling in the town as early as 1811.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C01"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C01"
+   ]
+  },
+  {
+   "id": "C-ANDREW-WEALTH",
+   "proposition": "By 1892 Andrew Borden was a wealthy man; he had prospered in business, moved into property development and became president of a savings bank.",
+   "lines": [
+    9
+   ],
+   "facts": [
+    "Property, banks, mills",
+    "Business, property, a bank"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-AMHERITAGE",
+     "supports": "direct",
+     "passage": "Andrew Borden began his business career as an undertaker. He later partnered with William M. Almy, and the two prospered in manufacturing and selling caskets and furniture. He later moved into property development and became president of the Union Savings Bank.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C03"
+    },
+    {
+     "source": "S-AMHERITAGE",
+     "supports": "direct",
+     "passage": "One account says that by 1892 he was worth nearly half a million dollars, and that he sat on several bank boards and the boards of three woolen mills.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C03"
+    },
+    {
+     "source": "S-MF-AFTER",
+     "supports": "partial",
+     "passage": "She and Emma inherited their father's considerable fortune",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C03"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C03"
+   ]
+  },
+  {
+   "id": "C-STEPMOTHER",
+   "proposition": "Abby Durfee Gray Borden was Lizzie's stepmother; Andrew married her in 1865, after the death of his first wife.",
+   "lines": [
+    3,
+    10
+   ],
+   "facts": [
+    "THE STEPMOTHER",
+    "Married Andrew in 1865",
+    "1865"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "direct",
+     "passage": "Her father remarried Abby in 1865, and Lizzie, who later refused to call her \"Mother,\" insisted on the distinction. Abby Durfee Gray was Lizzie's stepmother.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C06"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "She was 32 and was accused of killing her 70-year-old father and 64-year-old stepmother.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C06"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "The Famous Trials chronology gives the death as March 26, 1863.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C07"
+    }
+   ],
+   "contradictions": [
+    "C07: Lizzie's age when her mother died is given differently: Biography 'soon thereafter', EBSCO 'an infant', KQED 'about two'. On the 26 March 1863 date she was about 2 years 8 months old (our arithmetic)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C06",
+    "C07"
+   ],
+   "conflict_handling": "Script gives only the 1865 marriage and 'second wife'; no date or age for the first wife's death."
+  },
+  {
+   "id": "C-AGES",
+   "proposition": "In August 1892 Lizzie was 32, Abby 64 and Andrew 69 (Britannica gives 70).",
+   "lines": [
+    11
+   ],
+   "facts": [
+    "32",
+    "64",
+    "69",
+    "Age 64 in 1892",
+    "Age 69 in 1892",
+    "LIZZIE BORDEN · 32"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-HIST-AUG4",
+     "supports": "direct",
+     "passage": "On August 11, 1892, 32-year-old Lizzie was arrested",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C08"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "She was 32 and was accused of killing her 70-year-old father and 64-year-old stepmother.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C08"
+    },
+    {
+     "source": "S-SMITH-HOW",
+     "supports": "direct",
+     "passage": "[...] 64-year-old Abby Borden, and [...] Lizzie Borden's 69-year-old father, Andrew Borden [...]",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C08"
+    },
+    {
+     "source": "S-BIO-TIMELINE",
+     "supports": "direct",
+     "passage": "Lizzie discovers the body of her father, Andrew, 69",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C08"
+    }
+   ],
+   "contradictions": [
+    "C08: Andrew's age: Smithsonian, Biography.com and Find a Grave give 69; Britannica gives 70. His birth date of 13 Sept 1822 makes him 69 on 4 Aug 1892."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C08"
+   ],
+   "conflict_handling": "Andrew's age shown as 69 (birth date 13 Sept 1822; most sources); Britannica's 70 recorded here."
+  },
+  {
+   "id": "C-DAUGHTERS",
+   "proposition": "Andrew's two daughters from his first marriage, Emma (the elder) and Lizzie, lived in the house.",
+   "lines": [
+    11
+   ],
+   "facts": [
+    "EMMA BORDEN",
+    "THE ELDER SISTER"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BIO-MAIN",
+     "supports": "direct",
+     "passage": "Sources agree she was born July 19, 1860, in Fall River, Massachusetts, the youngest of three children to Sarah and Andrew Borden.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C07"
+    },
+    {
+     "source": "S-HIST-AUG4",
+     "supports": "direct",
+     "passage": "Andrew and Abby Borden were found dead in the home they shared with Lizzie and her older sister.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C09"
+    }
+   ],
+   "contradictions": [
+    "C07: Lizzie's age when her mother died is given differently: Biography 'soon thereafter', EBSCO 'an infant', KQED 'about two'. On the 26 March 1863 date she was about 2 years 8 months old (our arithmetic).",
+    "C09: One source says she was visiting relatives rather than friends. Enthusiast sources name the Brownell family on Green Street (context only)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C07",
+    "C09"
+   ],
+   "conflict_handling": "Script does not mention the mother's death date or Lizzie's age at the time."
+  },
+  {
+   "id": "C-BRIDGET",
+   "proposition": "The family's maid was Bridget Sullivan, whom Lizzie and Emma called 'Maggie'.",
+   "lines": [
+    12
+   ],
+   "facts": [
+    "Bridget Sullivan",
+    "The maid",
+    "Called “Maggie” by the sisters"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "Bridget (\"Maggie\") Sullivan, the maid in the Borden family residence",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C10"
+    },
+    {
+     "source": "S-IRISHCENTRAL",
+     "supports": "direct",
+     "passage": "She was asked whether she was in the Borden household sometimes called Maggie, and answered yes. Asked by whom, she said Lizzie and Emma.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C10"
+    },
+    {
+     "source": "S-NETFLIX-TUDUM-S4",
+     "supports": "partial",
+     "passage": "Vicky Krieps plays the maid Bridget \"Maggie\" Sullivan.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C10"
+    }
+   ],
+   "contradictions": [
+    "C10: Origin of the nickname: one account says it may have come from an earlier maid also called Maggie (theory, unverified)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C10"
+   ],
+   "conflict_handling": "Script says only that the sisters called her Maggie; no explanation of the nickname."
+  },
+  {
+   "id": "C-PROPERTY",
+   "proposition": "In 1887 Andrew bought a share of a house on Fourth Street for Abby's half-sister and put it in Abby's name; Emma testified it caused trouble in the family.",
+   "lines": [
+    13,
+    14
+   ],
+   "facts": [
+    "1887",
+    "Fourth Street",
+    "a house for Abby's family",
+    "Property"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BIO-ANDREWABBY",
+     "supports": "direct",
+     "passage": "It says that in 1887, Andrew secretly bought a house on Fourth Street for Abby's half-sister and placed it in his wife's name.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C12"
+    },
+    {
+     "source": "S-FT-EMMA",
+     "supports": "direct",
+     "passage": "Emma's testimony says the house purchase caused trouble in the family and that Lizzie found fault with it.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C12"
+    },
+    {
+     "source": "S-FT-INQUEST",
+     "supports": "partial",
+     "passage": "Asked what led to the change, she pointed to the affair with her step-sister, which she dated five or six years before the 1892 hearing.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C12"
+    }
+   ],
+   "contradictions": [
+    "C12: The details of the share (who sold it, which fraction) vary between enthusiast sources. The name Sarah Whitehead comes from an enthusiast source quoting Rebello."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C12"
+   ],
+   "conflict_handling": "Script says 'a share of a house' for Abby's half-sister, in Abby's name; no seller, fraction or names."
+  },
+  {
+   "id": "C-MRS-BORDEN",
+   "proposition": "At the inquest Lizzie said she had stopped calling Abby 'mother', and that she did so because she wanted to; her usual form of address became 'Mrs. Borden'.",
+   "lines": [
+    15
+   ],
+   "facts": [],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-INQUEST",
+     "supports": "direct",
+     "passage": "The questioner asked why she left off calling her mother, and she answered that it was because she wanted to.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C13"
+    },
+    {
+     "source": "S-BIO-ANDREWABBY",
+     "supports": "direct",
+     "passage": "Lizzie later testified that this affair led her to stop calling Abby \"Mother,\" and her usual form of address became \"Mrs. Borden.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C13"
+    },
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "partial",
+     "passage": "Lizzie, who later refused to call her \"Mother,\" insisted on the distinction.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C13"
+    }
+   ],
+   "contradictions": [
+    "C13: One enthusiast account says EMMA confronted her father and stopped calling Abby 'Mother' (single author). The Hatchet journal says the sisters described only one disagreement in 27 years of marriage."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C13"
+   ],
+   "conflict_handling": "Script attributes the inquest answer to Lizzie and does not use the enthusiast account."
+  },
+  {
+   "id": "C-NO-QUARRELS",
+   "proposition": "Bridget Sullivan testified that she had never seen quarrels between Lizzie and her stepmother.",
+   "lines": [
+    16
+   ],
+   "facts": [],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-NEWS8",
+     "supports": "direct",
+     "passage": "weakened the effect of the state's case by reiterating that between the accused and her stepmother there had never been an unkind word.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C15"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "Bridget Sullivan, testified that Lizzie was the only person she saw in the home at the time her parents were murdered, though she also said she had seen no sign of a bad relationship between Lizzie and her stepmother.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C15"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "Her trial testimony placed Lizzie at home during the murders, but she never witnessed any fights or disagreements between Lizzie and Abby.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C15"
+    }
+   ],
+   "contradictions": [
+    "C15: This sits in tension with C12/C13 (the tensions over the property and how Lizzie addressed Abby). Present both."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C15"
+   ],
+   "conflict_handling": "Both are presented: the property friction and Bridget's testimony that she saw no quarrels."
+  },
+  {
+   "id": "C-RHYME",
+   "proposition": "The jump-rope rhyme is inaccurate: Abby was Lizzie's stepmother, and the rhyme ignores that Lizzie was acquitted.",
+   "lines": [],
+   "facts": [
+    "The famous rhyme calls Abby",
+    "Lizzie's “mother”.",
+    "She was her STEPMOTHER."
+   ],
+   "assertion": "context",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "direct",
+     "passage": "Contemporary accounts distinguish hatchets from axes and suggest the weapon was likely a hatchet.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C35"
+    },
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "direct",
+     "passage": "The rhyme's earliest printings were newspaper filler from 1894, and every one of them says 20 whacks, and 21.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C35"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "How the Gruesome Lizzie Borden Rhyme Gets the Murders Wrong",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C35"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "partial",
+     "passage": "Lizzie Borden Rhyme",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C35"
+    },
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "direct",
+     "passage": "The rhyme ignores that Borden was acquitted.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C35"
+    }
+   ],
+   "contradictions": [
+    "C35: The search summary dated the earliest printings to 'February 1894'. The authorship is unknown."
+   ],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C35"
+   ],
+   "conflict_handling": "Card says only that the rhyme calls Abby 'mother'; no dates or counts."
+  },
+  {
+   "id": "C-SICK",
+   "proposition": "In the days before the killings Andrew and Abby were ill with stomach sickness; Abby went to Dr. Seabury Bowen saying she feared poison, and he was sceptical.",
+   "lines": [
+    17,
+    18
+   ],
+   "facts": [
+    "Dr. Seabury Bowen",
+    "The family doctor",
+    "AUGUST 3, 1892",
+    "WEDNESDAY"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Abby and Andrew Borden awaken, complaining of stomach sickness. Abby visits Dr. Bowen. She suggests that she might have been poisoned, but Dr. Bowen is skeptical.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C16"
+    },
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "Dr Bowen told her—she told him she was afraid they were poisoned—and Dr. Bowen laughed, and said, No, there wasn't any poison.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C16"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "partial",
+     "passage": "Bridget Sullivan goes to the backyard to throw up.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C16"
+    }
+   ],
+   "contradictions": [
+    "C16: The exact start date was given as 'around August 2, 1892' by the search summary; the chronology's own date line was not shown.",
+    "Date: illness from about 2 August; the 'AUGUST 3, 1892 · WEDNESDAY' date card marks the day before the killings (derived from 4 August)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C16"
+   ],
+   "conflict_handling": "Script says 'in the days before the killings'; the WEDNESDAY / AUGUST 3, 1892 card marks the day before the killings, not the onset date."
+  },
+  {
+   "id": "C-BENCE",
+   "proposition": "Drugstore clerk Eli Bence told police that, the day before the killings, a woman he identified as Lizzie tried to buy prussic acid, a deadly poison.",
+   "lines": [
+    19
+   ],
+   "facts": [
+    "Eli Bence's account",
+    "Drugstore clerk",
+    "Later excluded from the trial"
+   ],
+   "assertion": "attributed_allegation",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "direct",
+     "passage": "Eli Bence, a clerk at S. R. Smith's drug store in Fall River, told police that Lizzie visited the store the day before the murder and attempted to purchase prussic acid, a deadly poison.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C18"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "reports_allegation",
+     "passage": "He also blocked the drugstore clerk's testimony about Lizzie attempting to buy poison.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C18"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "reports_allegation",
+     "passage": "Key evidence, including her inquest testimony and an attempted poison purchase, was excluded at trial.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C18"
+    }
+   ],
+   "contradictions": [
+    "C18: Store name: 'S. R. Smith's drug store' (mixed reputable result) vs 'D.R. Smith's pharmacy' (enthusiast blog). Lizzie said she was ill at home that morning and did not know where the pharmacy was (enthusiast source)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C18"
+   ],
+   "conflict_handling": "Script attributes the account to Bence and says 'a woman he identified as Lizzie'; no store name; the customer is drawn as an anonymous silhouette."
+  },
+  {
+   "id": "C-EXCLUDED",
+   "proposition": "The trial judges excluded both Lizzie's inquest testimony and the prussic-acid (Bence) evidence, so the jury heard neither.",
+   "lines": [
+    20,
+    68
+   ],
+   "facts": [
+    "KEPT FROM THE JURY",
+    "Her inquest testimony",
+    "The prussic acid account",
+    "Ruled out by the judges",
+    "Later excluded from the trial"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-SMITH-HOW",
+     "supports": "direct",
+     "passage": "the justices excluded testimony about prussic acid because the prosecution had not refuted that the deadly poison could be used for innocent purposes.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C19"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "Britannica says the court ruled that an attempt to purchase poison did not demonstrate intent.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C19"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "Chief Justice Mason said the court found the preliminary proceedings insufficient and excluded the evidence.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C19"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "He also blocked the drugstore clerk's testimony about Lizzie attempting to buy poison.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C19"
+    },
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "direct",
+     "passage": "At the 1893 trial, a three-judge panel ruled that her inquest testimony could not be admitted, because she had not been warned of her right to silence and had no attorney present",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C56"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "the judges concluded that Lizzie, at the time of the coroner's inquest, was for all practical purposes a prisoner charged with two murders.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C56"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "Key evidence, including her inquest testimony and an attempted poison purchase, was excluded at trial.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C56"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "Judge Justin Dewey excluded Lizzie's conflicting and confused statements to the police, because she didn't have an attorney present.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C56"
+    }
+   ],
+   "contradictions": [
+    "C19: Reasons differ: Smithsonian says the poison has innocent uses; Britannica says an attempted purchase did not show intent; an 1893 newspaper (on Famous Trials) says the foundation was insufficient; an enthusiast blog says it was too remote in time. HISTORY.com credits Judge Dewey, while Famous Trials and Smithsonian say 'the justices' or 'Chief Justice Mason'.",
+    "C56: HISTORY.com attributes the exclusion to Judge Dewey and calls it 'statements to the police'; Famous Trials says the three-judge panel excluded the inquest testimony."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C19",
+    "C56"
+   ],
+   "conflict_handling": "Script says the judges kept both out and gives no reason."
+  },
+  {
+   "id": "C-RUSSELL-VISIT",
+   "proposition": "Alice Russell testified that Lizzie visited her the day before the killings and said, 'I feel afraid something is going to happen.'",
+   "lines": [
+    21,
+    22
+   ],
+   "facts": [],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "Lizzie revealed, \"I feel afraid something is going to happen.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C17"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "partial",
+     "passage": "\"I'm afraid but that someone will do something,\" she says.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C17"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "partial",
+     "passage": "A chronology places Lizzie's visit to Alice Russell on the afternoon of August 3, where she says she fears poisoning, that her father has enemies, and that she has seen suspicious characters around the family house.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C17"
+    }
+   ],
+   "contradictions": [
+    "C17: Wording: 'I feel afraid something is going to happen' (attributed to Russell's account) vs 'I'm afraid but that someone will do something' (chronology). Time of day: evening vs afternoon of 3 Aug."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C17"
+   ],
+   "conflict_handling": "Script quotes Russell's version ('I feel afraid something is going to happen'), attributed to her testimony, and says 'that day' (no time of day)."
+  },
+  {
+   "id": "C-MORSE",
+   "proposition": "Lizzie's uncle John V. Morse arrived unexpectedly on 3 August, the day before the killings, and stayed the night; he was visiting relatives when the killings happened.",
+   "lines": [
+    23,
+    26
+   ],
+   "facts": [
+    "John V. Morse",
+    "The uncle"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "his timing of his surprise visit raised questions, though he was visiting relatives when the murders were committed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C11"
+    },
+    {
+     "source": "S-AETV-OTHERS",
+     "supports": "direct",
+     "passage": "One source says Morse arrived unexpectedly at 92 Second Street on August 3, the day before the murders, reportedly without luggage.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C11"
+    }
+   ],
+   "contradictions": [
+    "C11: Morse's movements that morning differ between accounts (one says he went to Baker's drug store after learning of the killings, another that he came back to the house for lunch). We found NO source clearly saying he left in the morning to visit relatives."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C11"
+   ],
+   "conflict_handling": "Script says only that he arrived unexpectedly, stayed the night and was visiting relatives at the time; no claim about when he left."
+  },
+  {
+   "id": "C-HOT",
+   "proposition": "4 August 1892 was a hot day.",
+   "lines": [
+    24
+   ],
+   "facts": [
+    "AUGUST 4, 1892",
+    "THURSDAY"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "On a hot August 4, 1892 at 92 Second Street in Fall River, Massachusetts",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C21"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "the barn was stifling hot, raising doubts that she would have spent 15 or more minutes inside the building.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C21"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C21"
+   ]
+  },
+  {
+   "id": "C-EMMA-AWAY",
+   "proposition": "Emma was away in Fairhaven, about 15 miles from Fall River, visiting friends on 4 August 1892.",
+   "lines": [
+    25
+   ],
+   "facts": [
+    "Fairhaven",
+    "15 miles"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "However, on the day of the murders, she was about 15 miles (24 km) away in Fairhaven, visiting friends.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C09"
+    },
+    {
+     "source": "S-CRIMEINV-UK",
+     "supports": "direct",
+     "passage": "The search results consistently say Emma Borden was in Fairhaven, not Fall River, when her father and stepmother were killed on August 4, 1892.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C09"
+    }
+   ],
+   "contradictions": [
+    "C09: One source says she was visiting relatives rather than friends. Enthusiast sources name the Brownell family on Green Street (context only)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C09"
+   ],
+   "conflict_handling": "Script says 'visiting friends in Fairhaven'."
+  },
+  {
+   "id": "C-ANDREW-DOWNTOWN",
+   "proposition": "Andrew Borden left the house at about 9:00 a.m. to do business downtown.",
+   "lines": [
+    27
+   ],
+   "facts": [
+    "ABOUT 9 A.M.",
+    "Andrew goes downtown"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BIO-TIMELINE",
+     "supports": "direct",
+     "passage": "at 9:00 a.m., Andrew leaves the house to run errands and conduct business.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C22"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C22"
+   ]
+  },
+  {
+   "id": "C-WINDOWS",
+   "proposition": "At Abby's instruction Bridget spent the morning outside washing the windows.",
+   "lines": [
+    28
+   ],
+   "facts": [],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "direct",
+     "passage": "The maid, Bridget Sullivan, reported that Abby instructed her to wash the windows that morning, which she began sometime after 9 a.m.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C23"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Bridget Sullivan is outdoors cleaning windows for the next hour.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C23"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "She was outside cleaning windows when Abby Borden was believed to have been killed—a claim confirmed by Lizzie Borden and neighbors—though she was in her attic room at the time of Andrew Borden's murder.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C23"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C23"
+   ]
+  },
+  {
+   "id": "C-ABBY-UPSTAIRS",
+   "proposition": "Abby went upstairs at about 9:30 a.m. to tidy the guest room and was killed there within roughly the next hour; medical evidence showed she died first, roughly an hour or more before Andrew.",
+   "lines": [
+    29,
+    30,
+    41
+   ],
+   "facts": [
+    "1 HOUR+",
+    "Abby died first",
+    "Medical evidence at the trial",
+    "9:30"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Abby goes up the stairs to continue her house cleaning on the second floor. Bridget Sullivan is outdoors cleaning windows for the next hour. Sometime during the next hour, Abby Borden is killed in the guest room [...]",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C24"
+    },
+    {
+     "source": "S-BIO-TIMELINE",
+     "supports": "direct",
+     "passage": "she is likely killed around 9:30 a.m.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C24"
+    },
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "direct",
+     "passage": "Medical evidence established Abby had died first.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C24"
+    },
+    {
+     "source": "S-SMITH-HOW",
+     "supports": "direct",
+     "passage": "The Smithsonian piece \"How Lizzie Borden Got Away With Murder\" places the attacks roughly 90 minutes apart on the morning of August 4, 1892",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C24"
+    },
+    {
+     "source": "S-FT-NEWS4",
+     "supports": "direct",
+     "passage": "Mrs. Borden was dead a full hour before her husband came.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C24"
+    }
+   ],
+   "contradictions": [
+    "C24: Interval between deaths: 'roughly 90 minutes' (Smithsonian) vs 'a full hour before her husband came' (1892 headline, which may refer to his return rather than his death)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C24"
+   ],
+   "conflict_handling": "Script says 'within roughly the next hour' and 'roughly an hour or more before'; the on-screen stat says '1 HOUR+'."
+  },
+  {
+   "id": "C-ANDREW-RETURNS",
+   "proposition": "Andrew came home shortly before 11 a.m.; the front door was locked three ways and Bridget unlocked it to let him in.",
+   "lines": [
+    31,
+    32
+   ],
+   "facts": [
+    "SHORTLY BEFORE 11",
+    "Andrew comes home",
+    "three locks"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-SULLIVAN",
+     "supports": "direct",
+     "passage": "The spring lock was locked. She unbolted the door and it was locked with a key; there were three locks.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C25"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Aug. 4, 1892: 11 A.M. · Andrew Borden returns home carrying a small parcel.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C25"
+    },
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "direct",
+     "passage": "he came back shortly before 11, then lay down on the sitting-room sofa where he was killed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C25"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "partial",
+     "passage": "She said Andrew left the house that morning and returned around 10:40 a.m., while she was washing windows.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C25"
+    }
+   ],
+   "contradictions": [
+    "C25: Return time: ~10:40 a.m. (one account of Bridget's testimony), 'shortly before 11' (Biography.com), '11 A.M.' (Famous Trials chronology). The commonly quoted 10:45 was NOT found in any result."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C25"
+   ],
+   "conflict_handling": "Script and clock say 'shortly before 11'; 10:45 is not used."
+  },
+  {
+   "id": "C-LAUGH",
+   "proposition": "Bridget testified that as she struggled with the locks she said 'pshaw' and heard Lizzie laugh upstairs; she did not see her.",
+   "lines": [
+    33
+   ],
+   "facts": [
+    "Bridget Sullivan's testimony",
+    "At the trial"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-SULLIVAN",
+     "supports": "direct",
+     "passage": "She said \"pshaw,\" and Miss Lizzie laughed, upstairs.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C26"
+    },
+    {
+     "source": "S-FT-SULLIVAN",
+     "supports": "direct",
+     "passage": "She must have been either in the entry or at the top of the stairs, I can't tell which.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C26"
+    },
+    {
+     "source": "S-FT-SULLIVAN",
+     "supports": "partial",
+     "passage": "On cross-examination, she confirmed she heard the laugh but did not see Lizzie on the stairs.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C26"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Bridget Sullivan lets Andrew into the house as she hears a muted laugh from upstairs.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C26"
+    }
+   ],
+   "contradictions": [
+    "C26: Transcript versions differ: 'pshaw' vs 'Oh, pshaw!'; 'upstairs' vs 'either at the head of the stairs or in her room'."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C26"
+   ],
+   "conflict_handling": "Script uses 'pshaw' and 'upstairs', and adds that she did not see her."
+  },
+  {
+   "id": "C-SOFA-ATTIC",
+   "proposition": "Andrew lay down on the sitting-room sofa and Bridget went up to rest in her attic room; she testified the City Hall bell and her clock said eleven o'clock.",
+   "lines": [
+    34
+   ],
+   "facts": [
+    "11:00 AM",
+    "BY BRIDGET'S CLOCK",
+    "Bridget rests upstairs"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Andrew lies down in the sitting room, and Bridget goes to rest in her attic room.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C28"
+    },
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "direct",
+     "passage": "she heard the bell at City Hall ring and looked at her clock: it was eleven o'clock.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C28"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "though she was in her attic room at the time of Andrew Borden's murder.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C28"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C28"
+   ]
+  },
+  {
+   "id": "C-CALL",
+   "proposition": "A few minutes after 11, Lizzie called up to Bridget that her father was dead and that somebody had come in and killed him (wording varies by account).",
+   "lines": [
+    35
+   ],
+   "facts": [
+    "A FEW MINUTES AFTER 11",
+    "Lizzie calls up to Bridget",
+    "THURSDAY, AUGUST 4"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "direct",
+     "passage": "One account gives the line as \"Maggie, come down! Come down quick; Father's dead; somebody came in and killed him.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C29"
+    },
+    {
+     "source": "S-IRISHCENTRAL",
+     "supports": "direct",
+     "passage": "Lizzie soon called to her, \"Maggie, come down quick; Father's dead.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C29"
+    },
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "partial",
+     "passage": "Lizzie's cry for help a few minutes after eleven o'clock.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C29"
+    },
+    {
+     "source": "S-BIO-TIMELINE",
+     "supports": "direct",
+     "passage": "around 11:10 a.m., Lizzie discovers the body of her father, Andrew, 69",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C29"
+    }
+   ],
+   "contradictions": [
+    "C29: Wording: 'Maggie, come down! Come down quick; Father's dead; somebody came in and killed him' vs 'Maggie, come down quick; Father's dead' vs 'Maggie, come quick!'. Time: 11:10 (Biography.com; one account) vs about 11:15 (other sources); police were notified 'shortly after 11:15' (FT chronology). A Famous Trials-restricted search could NOT confirm the verbatim words in Sullivan's transcript."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C29"
+   ],
+   "conflict_handling": "Script paraphrases (father dead; somebody came in and killed him) and says 'a few minutes after eleven'; no exact words."
+  },
+  {
+   "id": "C-RESPONSE",
+   "proposition": "Neighbour Adelaide Churchill and the family doctor, Seabury Bowen, came to the house that morning.",
+   "lines": [
+    36
+   ],
+   "facts": [],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-CHURCHILL",
+     "supports": "direct",
+     "passage": "Churchill also said Lizzie suggested Mrs. Borden might be dead too, and that Lizzie said she didn't know where her stepmother was",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C33"
+    },
+    {
+     "source": "S-FT-CHURCHILL",
+     "supports": "direct",
+     "passage": "she went upstairs with Bridget Sullivan, looked across the spare room from the stairs, and saw what appeared to be a person's form on the far side.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C33"
+    },
+    {
+     "source": "S-FT-NEWS8",
+     "supports": "direct",
+     "passage": "\"I am almost sure I heard her come in; go upstairs and see if she is there.\" \"I said, 'I will not go up stairs alone,' and Mrs. Churchill went up with me.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C33"
+    },
+    {
+     "source": "S-FT-BOWEN",
+     "supports": "direct",
+     "passage": "Bowen was called to the house on August 4 and found Abby's body (he felt her pulse: she was dead.).",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C34"
+    }
+   ],
+   "contradictions": [
+    "C33: Lizzie said she thought Abby had gone out (C27), yet also that she was 'almost sure I heard her come in'. Note the tension and attribute both.",
+    "C34: The search summary said Bowen 'found Abby's body'. Churchill's and Bridget's testimony (C33) has the two women discovering her first. Avoid saying who found her first in connection with Bowen."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C33",
+    "C34"
+   ],
+   "conflict_handling": "Script says only that Churchill and the doctor came; it does not say who found Abby first in connection with Bowen."
+  },
+  {
+   "id": "C-NOTE",
+   "proposition": "Lizzie said Abby had received a note brought by a messenger asking her to visit someone sick and had gone out; neither the note nor the messenger was ever found, and no such friend came forward.",
+   "lines": [
+    37,
+    38
+   ],
+   "facts": [
+    "THE NOTE",
+    "From: unknown",
+    "Never found",
+    "THE NOTE WAS",
+    "NEVER FOUND"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Lizzie visits her father briefly in the dining room, telling him that Abby had received a message and left the house.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C27"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "She told police that while she was alone in the house with her mother on the morning of the murder, a messenger came to the door with a note. Neither the note nor its messenger was ever found.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C27"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "The officers had searched all over the house for that letter, the marshal said",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C27"
+    },
+    {
+     "source": "S-SMITH-NEWHANDS",
+     "supports": "direct",
+     "passage": "Smithsonian notes that no such friend ever later emerged.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C27"
+    }
+   ],
+   "contradictions": [
+    "C27: Lizzie suggested Abby had burned the note; an 1892 newspaper reported bits of charred paper in the grate, 'not enough to give any idea of the nature of the note'."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C27"
+   ],
+   "conflict_handling": "Script says the note and messenger were never found; the charred-paper report is not used."
+  },
+  {
+   "id": "C-HEARD-COME-IN",
+   "proposition": "Bridget testified that Lizzie then said she was almost sure she had heard Abby come in; Bridget would not go upstairs alone, and she and neighbour Adelaide Churchill found Abby in the guest room.",
+   "lines": [
+    39,
+    40
+   ],
+   "facts": [],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-CHURCHILL",
+     "supports": "direct",
+     "passage": "Churchill also said Lizzie suggested Mrs. Borden might be dead too, and that Lizzie said she didn't know where her stepmother was",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C33"
+    },
+    {
+     "source": "S-FT-CHURCHILL",
+     "supports": "direct",
+     "passage": "she went upstairs with Bridget Sullivan, looked across the spare room from the stairs, and saw what appeared to be a person's form on the far side.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C33"
+    },
+    {
+     "source": "S-FT-NEWS8",
+     "supports": "direct",
+     "passage": "\"I am almost sure I heard her come in; go upstairs and see if she is there.\" \"I said, 'I will not go up stairs alone,' and Mrs. Churchill went up with me.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C33"
+    }
+   ],
+   "contradictions": [
+    "C33: Lizzie said she thought Abby had gone out (C27), yet also that she was 'almost sure I heard her come in'. Note the tension and attribute both."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C33"
+   ],
+   "conflict_handling": "Both of Lizzie's statements are given, each attributed: Abby had gone out (her account), then 'almost sure' she heard her come in (Bridget's testimony)."
+  },
+  {
+   "id": "C-BARN",
+   "proposition": "Lizzie said she had been in the barn: she told a neighbour and the doctor she went for a piece of iron, and at the inquest said she spent 15 to 20 minutes in the loft looking for lead sinkers for a fishing trip and ate some pears.",
+   "lines": [
+    43,
+    44
+   ],
+   "facts": [
+    "HER ACCOUNT",
+    "Looking for sinkers",
+    "Ate some pears",
+    "15",
+    "20"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-CHURCHILL",
+     "supports": "direct",
+     "passage": "Lizzie answered that she had gone to the barn for a piece of iron.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C30"
+    },
+    {
+     "source": "S-FT-BOWEN",
+     "supports": "direct",
+     "passage": "Dr. Seabury Bowen testified that Lizzie told him she had been in the barn looking for iron",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C30"
+    },
+    {
+     "source": "S-FT-INQUEST",
+     "supports": "direct",
+     "passage": "Lizzie's inquest testimony put the barn stay at 15 to 20 minutes, searching the loft for lead sinkers for a fishing trip",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C30"
+    },
+    {
+     "source": "S-FT-INQUEST",
+     "supports": "direct",
+     "passage": "she ate my pears there.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C30"
+    },
+    {
+     "source": "S-HIST-AUG4",
+     "supports": "direct",
+     "passage": "Lizzie's account was that she was in the barn at the time of the murders and entered the house later that morning.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C30"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "She said she was in the barn looking for fishing sinkers",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C30"
+    }
+   ],
+   "contradictions": [
+    "C30: 'iron' vs 'irons' vs 'sinkers' (wording varies between witnesses). The search summary paraphrased the inquest as gathering pears under the tree before going up to the loft."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C30"
+   ],
+   "conflict_handling": "Script gives 'a piece of iron' (to the neighbour and doctor) and 'lead sinkers' (inquest) separately, each attributed."
+  },
+  {
+   "id": "C-LOFT-POLICE",
+   "proposition": "Police said the barn loft was stiflingly hot and that they found no footprints there to support Lizzie's account.",
+   "lines": [
+    45
+   ],
+   "facts": [
+    "Police testimony",
+    "At the trial"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "Police found the loft so stiflingly hot that it was difficult to believe anyone would voluntarily remain in such a place for as much as 20 minutes. They also found no footprints in the loft that could substantiate Lizzie's story.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C31"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "the barn was stifling hot, raising doubts that she would have spent 15 or more minutes inside the building.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C31"
+    }
+   ],
+   "contradictions": [
+    "C31: One search summary said a defence-side account claimed other people had been in the loft shortly before, which would undercut the dust argument. Its source was unclear and it is NOT used."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C31"
+   ],
+   "conflict_handling": "Attributed to police; the unclear defence claim about others in the loft is not used. Lubinsky's testimony is given as the defence answer."
+  },
+  {
+   "id": "C-LUBINSKY",
+   "proposition": "Defence witness Hyman Lubinsky, an ice-cream peddler, testified that shortly after eleven he saw a woman come from the barn toward the house.",
+   "lines": [
+    46
+   ],
+   "facts": [
+    "Hyman Lubinsky",
+    "Defence witness",
+    "Ice cream seller"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-LUBINSKY",
+     "supports": "direct",
+     "passage": "He reported that, shortly after eleven on the morning of the murders, he drove past the Borden house and saw a woman in a dark dress come from the barn toward the north-side stairs, walking slowly, with nothing on her head. He said he did not see her enter the house. He also said she was not the Borden servant",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C32"
+    },
+    {
+     "source": "S-FT-LUBINSKY",
+     "supports": "partial",
+     "passage": "Under questioning by prosecutor Knowlton, his timing and details wavered.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C32"
+    }
+   ],
+   "contradictions": [
+    "C32: A contemporary press summary said he saw 'Miss Lizzie Borden' coming from the barn. The transcript (per the search summary) records that he could not identify the woman."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C32"
+   ],
+   "conflict_handling": "Script says 'a woman' and does not identify her, matching the transcript summary."
+  },
+  {
+   "id": "C-INCONSISTENT",
+   "proposition": "At the inquest Lizzie's answers shifted: she first said she was on the stairs when her father came home, then the kitchen, then the kitchen or the dining room.",
+   "lines": [
+    47
+   ],
+   "facts": [
+    "HER ACCOUNTS",
+    "On the stairs",
+    "In the kitchen",
+    "Perhaps the dining room",
+    "At the inquest, 1892"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-FT-INQUEST",
+     "supports": "direct",
+     "passage": "At first she thought she had been on the stairs, then said she remembered being in the kitchen. Later she said she was not sure whether she was in the kitchen or the dining room, and when pressed, she thought, as nearly as she knew, that she was in the kitchen.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C40"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "Prosecutor Hosea Knowlton questioned Lizzie Borden for about four hours, and her answers were confused and contradictory",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C40"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "partial",
+     "passage": "Judge Justin Dewey excluded Lizzie's conflicting and confused statements to the police, because she didn't have an attorney present.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C40"
+    },
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "direct",
+     "passage": "she first told authorities she was out back in the hot, unventilated barn looking for fishing sinkers, and later claimed she was in the barn eating pears.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C40"
+    }
+   ],
+   "contradictions": [
+    "C40: Bridget's own statement put Lizzie coming downstairs as her father arrived (FT search summary), which differs from Lizzie's inquest answers."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C40"
+   ],
+   "conflict_handling": "Script lists her inquest answers only; Bridget's differing account is not used here."
+  },
+  {
+   "id": "C-HATCHET",
+   "proposition": "Police found a hatchet head with a broken-off handle in the basement; the prosecution could not prove it was the murder weapon.",
+   "lines": [
+    48,
+    49,
+    84
+   ],
+   "facts": [
+    "THE BASEMENT",
+    "A hatchet head",
+    "Its handle broken off",
+    "The weapon",
+    "Never proven",
+    "no proven link",
+    "No proven weapon",
+    "the hatchet head"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "it was missing a handle, and the prosecution was unable to offer any proof that it was linked to the murders.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C38"
+    },
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "direct",
+     "passage": "authorities found a hatchet with a broken handle in the Borden's cellar, but there was no blood or evidence on the hatchet to conclusively prove it was the murder weapon.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C38"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "its blade was clean and the handle had been broken off—something police alleged Lizzie had done.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C38"
+    },
+    {
+     "source": "S-FT-WOOD",
+     "supports": "partial",
+     "passage": "as to the break in the handle of the \"handleless\" hatchet, I would not express any opinion as to the freshness of the break.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C38"
+    },
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "partial",
+     "passage": "Famous-Trials' account of the trial says the defense asked where the handle that supposedly broke off the head was, and the state had no answer.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C38"
+    }
+   ],
+   "contradictions": [
+    "C38: A partisan 1893 newspaper (on Famous Trials) said the handle had 'mysteriously disappeared'; treat that as rhetoric. Police alleged Lizzie broke the handle (allegation, not established)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C38"
+   ],
+   "conflict_handling": "Script says only that the handle was broken off and that the prosecution could not prove it was the weapon; the 'disappeared' rhetoric and the allegation about the handle are not used."
+  },
+  {
+   "id": "C-INQUEST",
+   "proposition": "A closed inquest was held from 9 to 11 August 1892; Lizzie testified without a lawyer.",
+   "lines": [
+    50
+   ],
+   "facts": [
+    "The inquest",
+    "9 to 11 August 1892",
+    "AUG 9-11, 1892"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "The closed inquest ran August 9 to 11, 1892",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C41"
+    },
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "direct",
+     "passage": "because she had not been warned of her right to silence and had no attorney present",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C41"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "because she didn't have an attorney present.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C41"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C41"
+   ]
+  },
+  {
+   "id": "C-ARREST",
+   "proposition": "Lizzie was arrested on 11 August 1892; she pleaded not guilty on 12 August and was held at the Taunton jail.",
+   "lines": [
+    51
+   ],
+   "facts": [
+    "ARRESTED",
+    "AUG 11, 1892",
+    "11 August 1892",
+    "Taunton"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-HIST-AUG4",
+     "supports": "direct",
+     "passage": "On August 11, 1892, 32-year-old Lizzie was arrested",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C42"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "Police arrested her on August 11",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C42"
+    },
+    {
+     "source": "S-FT-NEWS5",
+     "supports": "partial",
+     "passage": "The New York Times account describes her as arrested after the inquest adjourned, with the warrant read to her in the matron's room",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C42"
+    },
+    {
+     "source": "S-FT-CHRON",
+     "supports": "direct",
+     "passage": "She pleaded not guilty on August 12 and was moved to the Taunton jail, eight miles north of Fall River",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C42"
+    }
+   ],
+   "contradictions": [
+    "C42: The search summary described Taunton as 'eight miles north of Fall River'. That distance was not verified, so do not use it."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C42"
+   ],
+   "conflict_handling": "Taunton named without a distance."
+  },
+  {
+   "id": "C-INDICTED",
+   "proposition": "A Bristol County grand jury at first did not indict; after Alice Russell returned on 1 December 1892 with testimony about the dress, it indicted Lizzie on 2 December 1892.",
+   "lines": [
+    59,
+    60
+   ],
+   "facts": [
+    "DEC 2, 1892",
+    "December",
+    "INDICTED"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-ABA-INDICT",
+     "supports": "direct",
+     "passage": "the grand jury had heard enough, and on Dec. 2, 1892, Lizzie was indicted for murdering her father.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C44"
+    },
+    {
+     "source": "S-ABA-INDICT",
+     "supports": "partial",
+     "passage": "a Bristol County grand jury was empaneled Nov. 7",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C44"
+    },
+    {
+     "source": "S-FT-INDICT",
+     "supports": "direct",
+     "passage": "A separate famous-trials page dates the indictment document December 2, 1892",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C44"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "partial",
+     "passage": "The grand jury first declined to indict. After hearing new testimony from Alice Russell, it returned an indictment",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C44"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "direct",
+     "passage": "After consulting a lawyer, she returned to the grand jury on December 1, and the grand jury indicted Borden the next day.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C44"
+    }
+   ],
+   "contradictions": [
+    "C44: The Famous Trials chronology reportedly gives the invalid date 'November 31, 1892'. The ABA headline says 'indicted for murdering her father'; she was charged with both deaths (the verdict covered 'all three charges' per Crime Library). Not reconciled."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C44"
+   ],
+   "conflict_handling": "Script says she was indicted 'for murder' with the date 2 December 1892; it does not say which count."
+  },
+  {
+   "id": "C-RUSSELL-WARNING",
+   "proposition": "Russell said she told Lizzie she would not let anyone see her do that (wording varies by source).",
+   "lines": [
+    55
+   ],
+   "facts": [],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "direct",
+     "passage": "Russell says she told Lizzie, \"I would not let anyone see you do that,\" at the time.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C46"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "partial",
+     "passage": "Another source gives the wording as \"I wouldn't let anybody see me do that, Lizzie.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C46"
+    }
+   ],
+   "contradictions": [
+    "C46: Three versions: 'I would not let anyone see you do that' / 'I wouldn't let anybody see me do that, Lizzie' / the brief's 'I wouldn't let anybody see you do that' (NOT found verbatim). A Famous Trials-restricted search did not surface 'anybody see'. A 1893 trial account summarized it as Russell telling Lizzie she 'would not let anyone see her do it'."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C46"
+   ],
+   "conflict_handling": "Paraphrased and attributed ('Russell said she told Lizzie she would not let anyone see her do that'); no quotation marks on screen."
+  },
+  {
+   "id": "C-RUSSELL-NO-BLOOD",
+   "proposition": "Russell testified that she saw no blood on the dress and did not see it go into the stove, and that she had not mentioned the burning at earlier hearings.",
+   "lines": [
+    56,
+    58
+   ],
+   "facts": [],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "Russell said she saw no blood on that dress, and she did not actually see Lizzie put it in the stove.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C47"
+    },
+    {
+     "source": "S-FT-RUSSELL",
+     "supports": "direct",
+     "passage": "Russell did not mention the burning at earlier hearings. Asked whether she had, she answered \"No sir.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C47"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "direct",
+     "passage": "The defense also noted that Russell testified she had seen no blood on the dress.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C47"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C47"
+   ]
+  },
+  {
+   "id": "C-EMMA-DRESS",
+   "proposition": "Emma testified the dress was an old one stained with paint soon after it was made in May, and that when Lizzie said she would burn it, her answer meant 'do it'.",
+   "lines": [
+    57
+   ],
+   "facts": [
+    "Emma Borden's testimony",
+    "For the defence",
+    "May"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-EMMA",
+     "supports": "direct",
+     "passage": "She said the dressmaker made the dress in early May, and that paint landed on the front, one side near the hem, and the wrong side of the skirt, within about two weeks of its making, perhaps less.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C48"
+    },
+    {
+     "source": "S-FT-EMMA",
+     "supports": "direct",
+     "passage": "Emma recalled that Lizzie, holding the dress on her arm, said she thought she would burn it, and that Emma's reply meant \"Do it.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C48"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "direct",
+     "passage": "Emma Borden contradicted Russell's account of the dress, testifying that she had suggested Lizzie destroy a paint-stained dress to make more room in their closet.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C48"
+    }
+   ],
+   "contradictions": [
+    "C48: The transcript is reportedly inconsistent on whether Emma saw the burning (one answer no, a later one yes). Emma denied being the first to ask what Lizzie planned to do with it. Biography.com frames this as Emma 'suggesting' the burning."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C48"
+   ],
+   "conflict_handling": "Script says 'Emma's answer, she said, was: do it', which matches the transcript's meaning; it does not say whether Emma watched the burning."
+  },
+  {
+   "id": "C-DRESS-ARGUMENTS",
+   "proposition": "Prosecutors alleged the dress was burned to cover up the crime; the defence said it was burned in broad daylight in front of witnesses.",
+   "lines": [
+    61
+   ],
+   "facts": [
+    "Destroyed evidence",
+    "Burned openly",
+    "the dress she wore that morning",
+    "an old dress, burned in daylight"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-JENNINGS",
+     "supports": "direct",
+     "passage": "It was burned in the broad light of day in the presence of witnesses.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C49"
+    },
+    {
+     "source": "S-BIO-RUSSELL",
+     "supports": "reports_allegation",
+     "passage": "Prosecutors later alleged the dress was stained with blood and that Lizzie had burned the dress in order to cover up her crime.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C49"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C49"
+   ]
+  },
+  {
+   "id": "C-TRIAL",
+   "proposition": "The trial opened on 5 June 1893 in New Bedford, Massachusetts.",
+   "lines": [
+    62
+   ],
+   "facts": [
+    "JUN 5, 1893",
+    "June 1893",
+    "New Bedford",
+    "5 June 1893",
+    "NEW BEDFORD"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-HIST-ACQ",
+     "supports": "direct",
+     "passage": "It also notes that the trial began on June 5, 1893, in New Bedford, Massachusetts.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C50"
+    },
+    {
+     "source": "S-ENC",
+     "supports": "direct",
+     "passage": "Encyclopedia.com has a summary of the 1893 trial, with dates of June 5-20, 1893 and a not-guilty verdict.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C50"
+    },
+    {
+     "source": "S-LOC-GUIDE",
+     "supports": "direct",
+     "passage": "Its timeline puts the trial's start in New Bedford on June 5, 1893, with the acquittal on June 20, 1893.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C50"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C50"
+   ]
+  },
+  {
+   "id": "C-JUDGES-JURY",
+   "proposition": "Three Superior Court justices heard the case; the jury was twelve men.",
+   "lines": [
+    64
+   ],
+   "facts": [
+    "3 judges",
+    "12 men",
+    "Three judges",
+    "Twelve men"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ENC",
+     "supports": "direct",
+     "passage": "Judges Caleb Blodget, Justin Dewey, and Albert Mason presided over the trial.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C51"
+    },
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "partial",
+     "passage": "At the 1893 trial, a three-judge panel ruled that her inquest testimony could not be admitted",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C51"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "partial",
+     "passage": "Chief Justice Mason said the court found the preliminary proceedings insufficient and excluded the evidence.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C51"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "the jury of 12 men deliberated for just about 90 minutes before returning a verdict of not guilty.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C57"
+    },
+    {
+     "source": "S-ABA-INDICT",
+     "supports": "direct",
+     "passage": "the all-male jury acquitted her on June 20, 1893",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C57"
+    },
+    {
+     "source": "S-NATGEO",
+     "supports": "direct",
+     "passage": "National Geographic says the all-male jury deliberated for about an hour before finding her not guilty.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C57"
+    }
+   ],
+   "contradictions": [
+    "C51: Spelling 'Blodget' (Encyclopedia.com) vs 'Blodgett' (another search summary)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C51",
+    "C57"
+   ],
+   "conflict_handling": "The judges are not named on screen."
+  },
+  {
+   "id": "C-PRESS",
+   "proposition": "The trial was a national, even international, newspaper sensation.",
+   "lines": [
+    63
+   ],
+   "facts": [],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "her trial became a national sensation in the United States.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C62"
+    },
+    {
+     "source": "S-LOC-GUIDE",
+     "supports": "direct",
+     "passage": "Examples include a June 1893 piece in The Evening World (New York), a Washington Bee item from June 10, 1893, and a Morning Call (San Francisco) article from June 21, 1893",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C62"
+    },
+    {
+     "source": "S-CA-FISHERMAN",
+     "supports": "partial",
+     "passage": "with a headline that describes the case as a murder case that excites national interest.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C62"
+    },
+    {
+     "source": "S-LOC-NLS",
+     "supports": "direct",
+     "passage": "the case became international news.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C62"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C62"
+   ]
+  },
+  {
+   "id": "C-ROBINSON",
+   "proposition": "Lizzie's defence was led by George D. Robinson, a former governor of Massachusetts.",
+   "lines": [
+    65
+   ],
+   "facts": [
+    "George D. Robinson",
+    "For the defence",
+    "Former governor of Massachusetts"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "direct",
+     "passage": "George D. Robinson, a former Massachusetts governor, handled virtually all defense trial matters in the Borden case.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C54"
+    },
+    {
+     "source": "S-LOC-PHOTO",
+     "supports": "direct",
+     "passage": "The Borden murder trial--A scene in the court-room before the acquittal - Lizzie Borden, the accused, and her counsel, Ex-Governor Robinson",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C54"
+    },
+    {
+     "source": "S-ENC",
+     "supports": "direct",
+     "passage": "Lizzie's defense lawyers were Andrew Jennings and George D. Robinson. Robinson was a particularly distinguished lawyer, having once been the governor of Massachusetts.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C54"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C54"
+   ]
+  },
+  {
+   "id": "C-ROBINSON-APPOINTED",
+   "proposition": "As governor, Robinson had appointed one of the three trial justices.",
+   "lines": [
+    66
+   ],
+   "facts": [
+    "He had appointed one of the judges"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-SMITH-HOW",
+     "supports": "direct",
+     "passage": "Smithsonian says Borden's wealth let her hire a strong defense team, including a former Massachusetts governor who had appointed one of the three justices on the case.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C55"
+    },
+    {
+     "source": "S-CRIMELIB-4B",
+     "supports": "direct",
+     "passage": "the fact that he had appointed Justice Dewey to the Superior Court certainly did not hurt their cause.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C55"
+    }
+   ],
+   "contradictions": [
+    "C55: A search restricted to famous-trials/smithsonian/biography/aetv/britannica did NOT name who appointed Dewey."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C55"
+   ],
+   "conflict_handling": "Script says 'one of the three judges'; it does not name him."
+  },
+  {
+   "id": "C-MOODY",
+   "proposition": "Prosecutor William H. Moody later served as an Associate Justice of the U.S. Supreme Court (1906-1910).",
+   "lines": [
+    67
+   ],
+   "facts": [
+    "Prosecutor William H. Moody later",
+    "became a U.S. Supreme Court justice."
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FJC-MOODY",
+     "supports": "direct",
+     "passage": "The FJC lists the service end as November 19, 1910, due to resignation.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C53"
+    },
+    {
+     "source": "S-OYEZ-MOODY",
+     "supports": "direct",
+     "passage": "Oyez gives November 20, 1910, so the exact date varies by source.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C53"
+    },
+    {
+     "source": "S-DOJ-MOODY",
+     "supports": "direct",
+     "passage": "Roosevelt nominated him on December 3, 1906, to the seat vacated by Henry B. Brown. The Senate confirmed him on December 12, 1906.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C53"
+    },
+    {
+     "source": "S-BRIT-MOODY",
+     "supports": "direct",
+     "passage": "Roosevelt named him Secretary of the Navy in 1902, and he became Attorney General in 1904.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C53"
+    },
+    {
+     "source": "S-ENC",
+     "supports": "direct",
+     "passage": "Moody (1853-1917), later Attorney General of the United States, and Supreme Court Justice",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C53"
+    },
+    {
+     "source": "S-HAVERHILL-MOODY",
+     "supports": "direct",
+     "passage": "He was appointed Justice of the Supreme Court (1906-1910), serving until severe rheumatism forced Justice Moody to retire from the bench.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C53"
+    },
+    {
+     "source": "S-FRHS",
+     "supports": "direct",
+     "passage": "letters and documents from the personal files of District Attorney Hosea Morrill Knowlton (1847-1902), who served as prosecuting attorney",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C52"
+    },
+    {
+     "source": "S-ENC",
+     "supports": "direct",
+     "passage": "Knowlton (1847-1902), later Attorney General of Massachusetts; Moody (1853-1917), later Attorney General of the United States, and Supreme Court Justice",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C52"
+    },
+    {
+     "source": "S-HAVERHILL-MOODY",
+     "supports": "partial",
+     "passage": "Knowlton was the more experienced attorney, but because he was feeling ill he had brought Moody along as co-counsel. Moody also delivered the government's opening statement",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C52"
+    },
+    {
+     "source": "S-BRIT-MOODY",
+     "supports": "partial",
+     "passage": "He first gained national attention as prosecutor in the 1893 Lizzie Borden murder trial.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C52"
+    }
+   ],
+   "contradictions": [
+    "C53: End of service: 19 Nov 1910 (FJC) vs 20 Nov 1910 (Oyez). 'Resignation' (FJC) vs 'retired by special act of Congress' (another passage).",
+    "C52: One result wrongly referred to 'Thomas Moody'."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C53",
+    "C52"
+   ],
+   "conflict_handling": "Script says only that he later sat on the U.S. Supreme Court; no end date."
+  },
+  {
+   "id": "C-NO-TESTIFY",
+   "proposition": "Lizzie did not take the stand at her trial.",
+   "lines": [
+    69
+   ],
+   "facts": [],
+   "assertion": "fact",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "Lizzie herself never took the stand",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C59"
+    },
+    {
+     "source": "S-CRIMELIB-4B",
+     "supports": "direct",
+     "passage": "Lizzie was then asked if she had anything to say. For the only time during the trial, she spoke.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C59"
+    },
+    {
+     "source": "S-CBS",
+     "supports": "partial",
+     "passage": "CBS News frames the same words as the only ones she spoke aloud in court before the jury was charged.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C59"
+    }
+   ],
+   "contradictions": [
+    "C59: Scope: 'only time during the trial' (Crime Library) vs 'only words spoken aloud in court before the jury was charged' (CBS)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C59"
+   ],
+   "conflict_handling": "Script says only that she never took the stand."
+  },
+  {
+   "id": "C-CHARGE",
+   "proposition": "Justice Dewey's charge to the jury stressed the presumption of innocence and the weaknesses of the state's case; a newspaper called it 'a plea for the innocent'.",
+   "lines": [
+    70
+   ],
+   "facts": [
+    "“A plea for the innocent”"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "direct",
+     "passage": "His lengthy charge strongly emphasized the presumption of innocence and weaknesses in the state's case, prompting criticism that he sounded more like another defense attorney than an impartial judge.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C58"
+    },
+    {
+     "source": "S-SMITH-HOW",
+     "supports": "direct",
+     "passage": "Smithsonian reports that one justice gave the jury a slanted charge, which a major newspaper called a plea for the innocent.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C58"
+    },
+    {
+     "source": "S-FT-SITE",
+     "supports": "direct",
+     "passage": "\"remarkable\" charge--\"a plea for the innocent.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C58"
+    },
+    {
+     "source": "S-CRIMELIB-4B",
+     "supports": "partial",
+     "passage": "in effect, a second summation of the case for the defense, remarkable in its bias",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C58"
+    }
+   ],
+   "contradictions": [
+    "C58: One forum post claims Mason, not Dewey, presided (forum, not support). Famous Trials and Encyclopedia.com name Dewey as the justice who gave the charge."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C58"
+   ],
+   "conflict_handling": "Dewey is named as the justice who gave the charge (Famous Trials, Encyclopedia.com); the forum claim is not used."
+  },
+  {
+   "id": "C-DELIBERATION",
+   "proposition": "The jury deliberated briefly: accounts range from about an hour to about 90 minutes.",
+   "lines": [
+    72
+   ],
+   "facts": [
+    "ABOUT 1 HOUR",
+    "SOME SAY 90 MINUTES",
+    "The jury deliberates",
+    "JUNE 20, 1893"
+   ],
+   "assertion": "legal_status",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "Britannica says a Massachusetts jury acquitted her in June 1893, after just over an hour of deliberation.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-NATGEO",
+     "supports": "direct",
+     "passage": "National Geographic says the jury deliberated for just one hour.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-CRIMELIB-4B",
+     "supports": "direct",
+     "passage": "The Crime Library says the jury was sent out at 3:24 and returned at 4:32, a little over an hour later, which works out to 68 minutes.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "the jury of 12 men deliberated for just about 90 minutes before returning a verdict of not guilty.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-AETV-WHY",
+     "supports": "direct",
+     "passage": "AETV says the jurors deliberated for about 90 minutes before finding Lizzie not guilty.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-MACMILLAN",
+     "supports": "direct",
+     "passage": "Macmillan's document says the jury took an hour and a half to deliberate.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-PW-ROBERTSON",
+     "supports": "partial",
+     "passage": "the jurors were unanimous on their first ballot but withheld their verdict of \"not guilty\" for another hour and a half to seem deliberative.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-SMITH-HOW",
+     "supports": "partial",
+     "passage": "the jury acquitted quickly, then waited an hour before announcing the verdict.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "partial",
+     "passage": "Biography.com says the jury adjourned and returned an hour later, and adds that there were later reports that they deliberated for just 10 minutes.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    }
+   ],
+   "contradictions": [
+    "C60: ~1 hour (Britannica, NatGeo, Biography) vs 68 min (Crime Library timestamps) vs ~90 min (HISTORY.com, A&E, Macmillan). Publishers Weekly (on Robertson's book) and Smithsonian report the jurors agreed almost at once and then waited about an hour or an hour and a half before announcing; Biography mentions later reports of just 10 minutes. The 66-minute figure was NOT found."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C60"
+   ],
+   "conflict_handling": "Script states the disagreement: 'About an hour. Some say an hour and a half.'"
+  },
+  {
+   "id": "C-MAPLECROFT",
+   "proposition": "After the trial Lizzie and Emma, who had inherited their father's fortune, bought a large house in one of the best neighbourhoods, which Lizzie named Maplecroft (on French Street).",
+   "lines": [
+    74,
+    75
+   ],
+   "facts": [
+    "Maplecroft",
+    "French Street, Fall River"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-MF-AFTER",
+     "supports": "direct",
+     "passage": "She bought a new house, which she deemed \"Maplecroft,\" in one of the nicest neighborhoods in town.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C64"
+    },
+    {
+     "source": "S-MF-AFTER",
+     "supports": "direct",
+     "passage": "She and Emma inherited their father's considerable fortune, and after being acquitted, Lizzie used her inheritance to buy a big manor and live luxuriously.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C64"
+    },
+    {
+     "source": "S-OXYGEN-AFTER",
+     "supports": "direct",
+     "passage": "Maplecroft is at 306 French St, Fall River, Massachusetts, and is privately owned, and only occasionally available for touring.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C64"
+    }
+   ],
+   "contradictions": [
+    "C64: Purchase date: 'September of 1893' vs 'five weeks after the trial' vs 'about 2 months after the verdict' (mixed sources)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C64"
+   ],
+   "conflict_handling": "No purchase date is given."
+  },
+  {
+   "id": "C-LIZBETH",
+   "proposition": "Lizzie began calling herself 'Lizbeth'.",
+   "lines": [
+    76
+   ],
+   "facts": [
+    "LIZZIE",
+    "LIZBETH"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-MF-AFTER",
+     "supports": "direct",
+     "passage": "And, perhaps to fit into her swanky new digs, she started going by \"Lizbeth\" instead of Lizzie.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C65"
+    },
+    {
+     "source": "S-OXYGEN-AFTER",
+     "supports": "direct",
+     "passage": "Lizzie Borden began using the name \"Lizbeth A. Borden\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C65"
+    }
+   ],
+   "contradictions": [
+    "C65: Timing: around the Maplecroft purchase (1893; one source) vs after the 1905 split with Emma (another)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C65"
+   ],
+   "conflict_handling": "No date is given for the name change."
+  },
+  {
+   "id": "C-SHUNNED",
+   "proposition": "Despite the acquittal, much of Fall River shunned Lizzie for the rest of her life.",
+   "lines": [
+    77
+   ],
+   "facts": [],
+   "assertion": "fact",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "The people of Fall River shunned her for the rest of her life.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C66"
+    },
+    {
+     "source": "S-BRIT-KIDS",
+     "supports": "direct",
+     "passage": "although Borden was acquitted, her neighbors believed she was guilty and avoided her for the rest of her life.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C66"
+    },
+    {
+     "source": "S-SMITH-SALE",
+     "supports": "direct",
+     "passage": "Despite being acquitted of the killings in an 1893 trial, she remained under suspicion for the rest of her life.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C66"
+    },
+    {
+     "source": "S-SMITH-MAYBE",
+     "supports": "direct",
+     "passage": "Despite the verdict, the town where she lived for the rest of her life did not accept her innocence",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C66"
+    },
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "direct",
+     "passage": "Women's rights and church groups stood by Lizzie in her defense",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C66"
+    }
+   ],
+   "contradictions": [
+    "C66: Mental Floss notes that mourners remembered her as a quiet source of charitable donations, and that public opinion at the time of the trial was split."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C66"
+   ],
+   "conflict_handling": "Script says 'much of Fall River', not everyone."
+  },
+  {
+   "id": "C-EMMA-LEAVES",
+   "proposition": "In 1905 Emma moved out of Maplecroft and the sisters never reconciled.",
+   "lines": [
+    78
+   ],
+   "facts": [
+    "1905"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-MF-AFTER",
+     "supports": "direct",
+     "passage": "Her sister Emma moved out in 1905 after a party for O'Neil at Maplecroft, and the sisters remained estranged for the rest of their lives.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C67"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "Her sister Emma and she never reconciled and died nine days apart in 1927.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C67"
+    },
+    {
+     "source": "S-NETFLIX-TUDUM-S4",
+     "supports": "partial",
+     "passage": "Jessica Barden plays Nance O'Neil (a stage actress whose close friendship with Lizzie created a rift between her and her sister Emma).",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C67"
+    },
+    {
+     "source": "S-OXYGEN-AFTER",
+     "supports": "partial",
+     "passage": "\"I did not go until conditions became absolutely unbearable.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C67"
+    }
+   ],
+   "contradictions": [
+    "C67: The reason for Emma's departure is disputed ('never confirmed'). The nature of the O'Neil relationship is unclear (some interpret it as romantic; Mental Floss calls it speculation). The Emma quote (said to be from the Boston Sunday Herald) could not be pinned to a source."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C67"
+   ],
+   "conflict_handling": "Script gives only the year and that the sisters never reconciled; no reason and no mention of O'Neil."
+  },
+  {
+   "id": "C-DEATHS",
+   "proposition": "Lizzie died in Fall River on 1 June 1927; Emma died nine days later.",
+   "lines": [
+    79
+   ],
+   "facts": [
+    "1927",
+    "June 1927"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-MF-AFTER",
+     "supports": "direct",
+     "passage": "After a year of illness, Lizzie died on June 1, 1927—and no one was invited to her burial.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C68"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "partial",
+     "passage": "Her sister Emma and she never reconciled and died nine days apart in 1927.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C68"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "Her sister Emma and she never reconciled and died nine days apart in 1927.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C69"
+    },
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "direct",
+     "passage": "both died in 1927—Borden first and Emma nine days later.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C69"
+    },
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "partial",
+     "passage": "Emma died in Newmarket, New Hampshire, just days later after Lizzie's death.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C69"
+    }
+   ],
+   "contradictions": [
+    "C68: Cause: pneumonia (several) vs complications of gallbladder surgery (Mental Floss passage); one source ties the pneumonia to the surgery.",
+    "C69: No reputable result stated '10 June' outright: it is 1 June + 9 days, plus one weakly attributed passage."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C68",
+    "C69"
+   ],
+   "conflict_handling": "Script says 'nine days later' (no exact date for Emma) and gives no cause of death."
+  },
+  {
+   "id": "C-BURIED",
+   "proposition": "Lizzie and Emma were buried in the family plot at Oak Grove Cemetery, beside their father and stepmother.",
+   "lines": [],
+   "facts": [
+    "Oak Grove Cemetery"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BIO-CLUSTER",
+     "supports": "direct",
+     "passage": "both sisters were buried beside their murdered parents in the family plot at Oak Grove Cemetery.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C70"
+    },
+    {
+     "source": "S-MF-AFTER",
+     "supports": "partial",
+     "passage": "the plot also holds their mother Sarah and their sister Alice, who died as an infant.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C70"
+    },
+    {
+     "source": "S-LBH-OFFICIAL",
+     "supports": "partial",
+     "passage": "There is also a guided tour of Oak Grove Cemetery.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C70"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C70"
+   ]
+  },
+  {
+   "id": "C-ANIMAL",
+   "proposition": "In her will Lizzie left a bequest to the Animal Rescue League in Fall River (the amount varies between accounts).",
+   "lines": [
+    80
+   ],
+   "facts": [
+    "Lizzie left part of her estate",
+    "to the Animal Rescue League."
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-MF-AFTER",
+     "supports": "direct",
+     "passage": "In her will, the largest earmark from her substantial estate was a $30,000 donation to the local Animal Rescue League.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C71"
+    }
+   ],
+   "contradictions": [
+    "C71: $30,000 (Mental Floss and 'most secondary sources') vs $20,000 (Springfield Daily News, 8 June 1927, as reported in a dealer listing). The contradiction applies to the amount only."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C71"
+   ],
+   "conflict_handling": "No amount is given."
+  },
+  {
+   "id": "C-NO-BLOOD",
+   "proposition": "No blood was found on Lizzie.",
+   "lines": [
+    84
+   ],
+   "facts": [
+    "No blood on her"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "The fact that no blood was found on Lizzie, along with her well-bred Christian persona, reportedly convinced the all-male jury she was incapable of the crime.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C63"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C63"
+   ]
+  },
+  {
+   "id": "C-HISTORIANS",
+   "proposition": "Historians have argued that Lizzie's gender and social class help explain why she was not convicted; she did not fit contemporary assumptions about violent criminals.",
+   "lines": [
+    83
+   ],
+   "facts": [],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Lizzie Borden"
+   ],
+   "matter": "deaths of Andrew and Abby Borden",
+   "evidence": [
+    {
+     "source": "S-SMITH-HOW",
+     "supports": "direct",
+     "passage": "Borden's gender and social class probably go a long way toward explaining why she wasn't convicted.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C63"
+    },
+    {
+     "source": "S-NPR-REVIEW",
+     "supports": "direct",
+     "passage": "An NPR review notes that Borden didn't fit common assumptions about violent criminals: she was a white, upper-class, churchgoing single woman in her 30s.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C63"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C63"
+   ]
+  },
+  {
+   "id": "C-THEORIES",
+   "proposition": "Writers have floated other suspects, including the maid Bridget Sullivan, uncle John Morse, sister Emma and an unknown intruder; none was charged.",
+   "lines": [
+    85
+   ],
+   "facts": [
+    "THEORIES, NOT FINDINGS",
+    "Bridget Sullivan",
+    "John Morse",
+    "Emma Borden",
+    "An intruder"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "partial",
+     "passage": "according to this theory, the two women were discovered by Lizzie's stepmother, Abby Borden, and Lizzie killed her in 1892. Bridget was then involved in a cover-up.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C74"
+    },
+    {
+     "source": "S-AETV-OTHERS",
+     "supports": "direct",
+     "passage": "Sullivan had no clear motive, and there was no direct evidence linking her with the murders.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C74"
+    },
+    {
+     "source": "S-AETV-OTHERS",
+     "supports": "direct",
+     "passage": "Andrew's brother-in-law George Fish publicly suggested that Lizzie and Morse might have conspired to have Andrew and Abby killed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C75"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "partial",
+     "passage": "his timing of his surprise visit raised questions, though he was visiting relatives when the murders were committed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C75"
+    },
+    {
+     "source": "S-AETV-OTHERS",
+     "supports": "direct",
+     "passage": "he had a good alibi for the times of both killings, he was an early and favorite suspect.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C75"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "Britannica says she reportedly shared her concerns about their inheritance. However, on the day of the murders, she was about 15 miles (24 km) away in Fairhaven, visiting friends.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C77"
+    },
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "partial",
+     "passage": "Other suspects that have been floated include her uncle John Morse, the maid Bridget Sullivan, and her sister Emma",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C77"
+    },
+    {
+     "source": "S-FT-ACCOUNT",
+     "supports": "partial",
+     "passage": "One account gives the line as \"Maggie, come down! Come down quick; Father's dead; somebody came in and killed him.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C78"
+    },
+    {
+     "source": "S-FT-LUBINSKY",
+     "supports": "partial",
+     "passage": "saw a woman in a dark dress come from the barn toward the north-side stairs",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C78"
+    },
+    {
+     "source": "S-SMITH-HOW",
+     "supports": "partial",
+     "passage": "Police initially considered the killings the work of a man, probably a \"foreigner.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C78"
+    }
+   ],
+   "contradictions": [
+    "C74: Victoria Lincoln relayed a claim that Bridget later told a friend she had helped Lizzie at the trial; it was relayed years later and cannot be verified.",
+    "C78: Bridget testified the front door had been triple-locked when Andrew came home (C25), which the prosecution used against the intruder idea. This is inferred, not quoted."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C74",
+    "C75",
+    "C77",
+    "C78"
+   ],
+   "conflict_handling": "Theories are labelled 'theories, not findings'; the deathbed-confession story is not used."
+  },
+  {
+   "id": "C-THEORY-LIMITS",
+   "proposition": "There is no direct evidence linking Bridget to the killings; Morse had an alibi; Emma was in Fairhaven.",
+   "lines": [
+    86
+   ],
+   "facts": [
+    "No direct evidence",
+    "An alibi",
+    "In Fairhaven"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "partial",
+     "passage": "according to this theory, the two women were discovered by Lizzie's stepmother, Abby Borden, and Lizzie killed her in 1892. Bridget was then involved in a cover-up.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C74"
+    },
+    {
+     "source": "S-AETV-OTHERS",
+     "supports": "direct",
+     "passage": "Sullivan had no clear motive, and there was no direct evidence linking her with the murders.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C74"
+    },
+    {
+     "source": "S-AETV-OTHERS",
+     "supports": "direct",
+     "passage": "Andrew's brother-in-law George Fish publicly suggested that Lizzie and Morse might have conspired to have Andrew and Abby killed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C75"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "partial",
+     "passage": "his timing of his surprise visit raised questions, though he was visiting relatives when the murders were committed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C75"
+    },
+    {
+     "source": "S-AETV-OTHERS",
+     "supports": "direct",
+     "passage": "he had a good alibi for the times of both killings, he was an early and favorite suspect.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C75"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "direct",
+     "passage": "Britannica says she reportedly shared her concerns about their inheritance. However, on the day of the murders, she was about 15 miles (24 km) away in Fairhaven, visiting friends.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C77"
+    },
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "partial",
+     "passage": "Other suspects that have been floated include her uncle John Morse, the maid Bridget Sullivan, and her sister Emma",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C77"
+    }
+   ],
+   "contradictions": [
+    "C74: Victoria Lincoln relayed a claim that Bridget later told a friend she had helped Lizzie at the trial; it was relayed years later and cannot be verified."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C74",
+    "C75",
+    "C77"
+   ],
+   "conflict_handling": "Only the reputable-source limits are used (no direct evidence, an alibi, Fairhaven)."
+  },
+  {
+   "id": "C-JENNINGS",
+   "proposition": "In 2012 the Fall River Historical Society announced it had received the handwritten journals of Lizzie's defence lawyer Andrew Jennings, long kept in his attic in a Victorian bathtub.",
+   "lines": [
+    87
+   ],
+   "facts": [
+    "2012",
+    "Victorian bathtub",
+    "Andrew Jennings"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BG-JENNINGS",
+     "supports": "direct",
+     "passage": "Notes from Lizzie Borden trial revealed",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C80"
+    },
+    {
+     "source": "S-ABA-JENNINGS",
+     "supports": "direct",
+     "passage": "Handwritten Journals of Lizzie Borden's Lawyer Reveal New Details About Infamous Murder Trial",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C80"
+    },
+    {
+     "source": "S-HIST-CLUSTER",
+     "supports": "direct",
+     "passage": "In March 2012, the Borden case was back in the headlines when researchers at the Fall River Historical Society announced the discovery of the handwritten journals of Andrew Jennings",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C80"
+    },
+    {
+     "source": "S-BG-JENNINGS",
+     "supports": "partial",
+     "passage": "the historical trove sat for years in Jennings's attic, stored in a Victorian bathtub.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C80"
+    },
+    {
+     "source": "S-BG-JENNINGS",
+     "supports": "partial",
+     "passage": "Jennings's grandson, who died last year, left the leather-bound journals to the society in his will. He had kept them private out of concern that researchers might misquote Jennings",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C80"
+    }
+   ],
+   "contradictions": [
+    "C80: Timing of the donation: Boston Globe calls them recently acquired; a forum post says the donation came two to three years earlier (forum, not support). The search summary said 'kept by Jennings ... during the 1892 trial', but the trial was in 1893."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C80"
+   ],
+   "conflict_handling": "Script says the journals 'surfaced' in 2012 after years in the attic; no donation date."
+  },
+  {
+   "id": "C-PROSECUTION-CASE",
+   "proposition": "Prosecutors argued Lizzie was the killer, pointing to her presence at home, the burned dress and the poison account (which the jury never heard).",
+   "lines": [
+    82
+   ],
+   "facts": [
+    "THE PROSECUTION'S CASE",
+    "What prosecutors argued",
+    "She was at home",
+    "The burned dress",
+    "The poison account (excluded)"
+   ],
+   "assertion": "derived",
+   "subjects": [],
+   "matter": null,
+   "evidence": [],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [],
+   "derived_from": [
+    "C-DRESS-ARGUMENTS",
+    "C-BENCE",
+    "C-LOFT-POLICE",
+    "C-EXCLUDED"
+   ]
+  },
+  {
+   "id": "C-HOUSE-TODAY",
+   "proposition": "Today the Second Street house is a museum and bed-and-breakfast with house tours and overnight stays.",
+   "lines": [
+    89
+   ],
+   "facts": [
+    "museum and a bed & breakfast.",
+    "The Borden house is now a"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-LBH-OFFICIAL",
+     "supports": "direct",
+     "passage": "House Tour: 90 minute | Daily 10:30am - 4:30pm",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C82"
+    },
+    {
+     "source": "S-SMITH-SALE",
+     "supports": "direct",
+     "passage": "The listing agent said the retiring owners had run the house as a bed and breakfast for more than 15 years.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C82"
+    },
+    {
+     "source": "S-SMITH-NEWHANDS",
+     "supports": "direct",
+     "passage": "He also sees the house as a wedding venue and plans to refit the cellar to create a rentable bedroom to join the existing six.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C82"
+    },
+    {
+     "source": "S-VISITSEMASS",
+     "supports": "direct",
+     "passage": "Lizzie Borden Bed & Breakfast /Museum",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C82"
+    },
+    {
+     "source": "S-MF-MYTHS",
+     "supports": "partial",
+     "passage": "Armchair Field Trip: The Lizzie Borden Bed and Breakfast",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C82"
+    }
+   ],
+   "contradictions": [
+    "C82: Room count: 'two suites and four rooms' vs 'one of the eight rooms' (both on the official site, per summary); Smithsonian says six bedrooms with a cellar room planned. Tour times differ between pages."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C82"
+   ],
+   "conflict_handling": "No room count or tour times."
+  },
+  {
+   "id": "C-HOUSE-SALE",
+   "proposition": "The house was listed in January 2021 at $2 million and sold in May 2021 for close to that.",
+   "lines": [],
+   "facts": [
+    "2021",
+    "$2 million",
+    "close to $2 million"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-SMITH-SALE",
+     "supports": "direct",
+     "passage": "The house where Lizzie Borden's father and stepmother famously met a grisly end is now on sale for $2 million.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C84"
+    },
+    {
+     "source": "S-SMITH-NEWHANDS",
+     "supports": "direct",
+     "passage": "The house sold to entrepreneur Lance Zaal in May for close to $2 million.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C84"
+    },
+    {
+     "source": "S-BG-SALE",
+     "supports": "direct",
+     "passage": "For $2 million, you can own the house where Lizzie Borden's family was murdered",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C84"
+    },
+    {
+     "source": "S-VISITSEMASS",
+     "supports": "partial",
+     "passage": "In 2021, it was purchased by US Ghost Adventures, a national company dedicated to tours & investigations of the supernatural.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C84"
+    }
+   ],
+   "contradictions": [
+    "C84: No exact closing price was found ('close to $2 million'). Company name: 'Ghost Adventures' (Smithsonian summary) vs 'US Ghost Adventures' (travel site)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C84"
+   ],
+   "conflict_handling": "Not narrated."
+  },
+  {
+   "id": "C-NETFLIX",
+   "proposition": "Netflix's 'Monster: The Lizzie Borden Story' premiered on 17 September 2026 and was No. 1 on Netflix's English TV list in its first two weeks (12.1M and 14.5M views).",
+   "lines": [
+    90
+   ],
+   "facts": [
+    "Netflix, 2026",
+    "a scripted series",
+    "No. 1"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-NETFLIX-TUDUM-S4",
+     "supports": "direct",
+     "passage": "Monster: The Lizzie Borden Story premiered on Netflix on September 17, 2026, and is the fourth season of Ryan Murphy and Ian Brennan's Monster anthology.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C85"
+    },
+    {
+     "source": "S-TVLINE-DATE",
+     "supports": "direct",
+     "passage": "Monster: The Lizzie Borden Story Gets September Release Date — Plus, See First Photos",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C85"
+    },
+    {
+     "source": "S-BLOODY",
+     "supports": "direct",
+     "passage": "first look monster the lizzie borden story premieres september 17 on netflix",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C85"
+    },
+    {
+     "source": "S-BRIT-CLUSTER",
+     "supports": "partial",
+     "passage": "A miniseries, Monster: The Lizzie Borden Story, starring Ella Beatty, is part of Ryan Murphy's Monster anthology.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C85"
+    },
+    {
+     "source": "S-NETFLIX-TOP10-0914",
+     "supports": "direct",
+     "passage": "It debuted at No. 1 on the September 14 chart with 12.1 million views.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C89"
+    },
+    {
+     "source": "S-THEWRAP-W1",
+     "supports": "direct",
+     "passage": "'Monster: The Lizzie Borden Story' Debuts at No. 1 on Netflix With 12.1 Million Views, on Par With Previous Seasons",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C89"
+    },
+    {
+     "source": "S-DEADLINE-SLOW",
+     "supports": "direct",
+     "passage": "raking in 12.1 million views through its first four days of availability.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C89"
+    },
+    {
+     "source": "S-VARIETY-RATINGS",
+     "supports": "direct",
+     "passage": "'Monster: The Lizzie Borden Story' Ratings: 12.1 Million Netflix Views",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C89"
+    },
+    {
+     "source": "S-WON-W1",
+     "supports": "direct",
+     "passage": "'Monster: The Lizzie Borden Story' Debuts With 12.1M Views on Netflix; Here's How It Compares To Prior Seasons",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C89"
+    },
+    {
+     "source": "S-THEWRAP-W1",
+     "supports": "partial",
+     "passage": "hitting #1 with 12.1 million views and reaching the Top 10 in 89 countries.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C89"
+    },
+    {
+     "source": "S-NETFLIX-TOP10-0921",
+     "supports": "direct",
+     "passage": "Monster: The Lizzie Borden Story Takes the No. 1 Spot for a Second Week",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C90"
+    },
+    {
+     "source": "S-NETFLIX-TOP10-0921",
+     "supports": "direct",
+     "passage": "The show took the No. 1 spot on the English TV list that week with 14.5 million views, up 20% from the prior week.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C90"
+    },
+    {
+     "source": "S-THEWRAP-W2",
+     "supports": "direct",
+     "passage": "Lizzie Borden's 'Monster' Jumps 20% From Premiere Week With 14.5 Million Views on Netflix, Tops TV Chart",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C90"
+    },
+    {
+     "source": "S-THEWRAP-W2",
+     "supports": "partial",
+     "passage": "It ranked in the top 10 in 92 countries, up from 89 in its first week.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C90"
+    }
+   ],
+   "contradictions": [
+    "C89: One summary said 'most-watched title of the week ... across both series and films'; not confirmed elsewhere. Not used."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C85",
+    "C89",
+    "C90"
+   ],
+   "conflict_handling": "Script says only that the drama reached number one; no episode count, and no characterisation of the launch."
+  }
+ ]
+}

@@ -2,6 +2,7 @@
 
 | Run | Status | Notes |
 |---|---|---|
+| `lizzie-borden-20261011-run1/` | **FINAL: Lizzie Borden** | 8:41. 73 of the 111 shots are walking and acting character scenes from the Case Files rig. Gate: 0 critical, high or medium findings; DRAFT until human sign-off. Delivered as a private download page. |
 | `betsy-faria-20261011-run2/` | **FINAL (v2): use this one** | 7:17. Tighter cold open: the GUILTY → NOT GUILTY contradiction lands at 0:03.6. Includes the accuracy fixes from the investigative review and the fixed opening frames. Full deliverables are in the folder. |
 | `betsy-faria-20261011-run1/` | Superseded (v1) | 7:26. Passed the 12 core media checks and was delivered first as an early preview. The extended QA later found its first 0.87 s nearly black. Kept for reference. |
 

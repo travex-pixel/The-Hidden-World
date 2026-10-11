@@ -1,0 +1,5013 @@
+{
+ "id": "lizzie-borden",
+ "title": "Lizzie Borden Was Acquitted. So Who Killed the Bordens?",
+ "voice": "en_US-ljspeech-high",
+ "length_scale": 1.0,
+ "pause": 0.34,
+ "lead_in": 0.5,
+ "tail": 0.8,
+ "sentence_gap": 0.36,
+ "seed": 23,
+ "bpm": 66,
+ "key": -3,
+ "music_db": -15,
+ "sfx_db": -11,
+ "duck_db": -9,
+ "crf": 22,
+ "pronounce": {
+  "Knowlton": "Nolton",
+  "Hosea": "Hozayuh",
+  "Lubinsky": "Loobinsky",
+  "Seabury": "Seeberry"
+ },
+ "spoken": {
+  "1892": "eighteen ninety-two",
+  "1893": "eighteen ninety-three",
+  "1865": "eighteen sixty-five",
+  "1887": "eighteen eighty-seven",
+  "1905": "nineteen oh five",
+  "1927": "nineteen twenty-seven",
+  "2012": "twenty twelve",
+  "92 Second": "ninety-two Second"
+ },
+ "figures": [
+  "lb8_lizzie",
+  "lb8_alice",
+  "lb8_officer",
+  "lb8_neighbour",
+  "lb8_juror",
+  "lb8_lawyer",
+  "judge",
+  "lzb_bridget",
+  "lzb_emma",
+  "lzb_morse",
+  "lzb_doctor",
+  "lzb_clerk",
+  "lzb_defence"
+ ],
+ "timeline": [
+  {
+   "date": "AUG 3, 1892",
+   "label": "Abby tells the doctor she fears poison",
+   "claims": [
+    "C-SICK"
+   ]
+  },
+  {
+   "date": "AUG 4, 1892",
+   "label": "Andrew and Abby Borden are killed at home",
+   "claims": [
+    "C-KILLED-AUG4"
+   ]
+  },
+  {
+   "date": "AUG 7, 1892",
+   "label": "Alice Russell sees Lizzie with a dress at the stove",
+   "claims": [
+    "C-DRESS-RUSSELL",
+    "C-DRESS-DATE"
+   ]
+  },
+  {
+   "date": "AUG 11, 1892",
+   "label": "Lizzie is arrested after the inquest",
+   "claims": [
+    "C-ARREST",
+    "C-INQUEST"
+   ]
+  },
+  {
+   "date": "DEC 2, 1892",
+   "label": "Indicted, after Russell tells the grand jury about the dress",
+   "claims": [
+    "C-INDICTED"
+   ]
+  },
+  {
+   "date": "JUN 5, 1893",
+   "label": "The trial opens in New Bedford",
+   "claims": [
+    "C-TRIAL"
+   ]
+  },
+  {
+   "date": "JUN 20, 1893",
+   "label": "The jury finds her not guilty",
+   "claims": [
+    "C-VERDICT"
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "say": "Sunday morning. The seventh of August, 1892.",
+   "claims": [
+    "C-DRESS-DATE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 650,
+       "y": 1460,
+       "scale": 0.7,
+       "dir": -1,
+       "turn": 0.85,
+       "pose": "stand",
+       "expr": "blank",
+       "gaze": [
+        0.8,
+        0.6
+       ],
+       "outfit": "house",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "present",
+         "gaze": [
+          0.9,
+          0.7
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 470,
+      "cy": 1010,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1350
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": 0.15
+     },
+     "grade": "warm",
+     "cam": {
+      "handheld": 2
+     },
+     "lower": {
+      "p": 0.12,
+      "title": "Sunday, 7 August 1892",
+      "color": "red",
+      "kicker": "Fall River, Massachusetts"
+     },
+     "depicts": {
+      "person": "Lizzie Borden",
+      "act": "holding a dress at the kitchen stove"
+     },
+     "claims": [
+      "C-DRESS-BURNED",
+      "C-FALLRIVER"
+     ]
+    }
+   ],
+   "chapter": "Cold open",
+   "chapter_title": "Cold open",
+   "tag": "",
+   "cue": "cold",
+   "sfx": [
+    {
+     "name": "chime",
+     "at": 0.2,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "say": "Alice Russell, a family friend, later testified that she found Lizzie Borden at the kitchen stove, holding a dress.",
+   "claims": [
+    "C-DRESS-RUSSELL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lb8_alice",
+       "x": 880,
+       "y": 1300,
+       "scale": 0.56,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "stand",
+       "expr": "focused",
+       "gaze": [
+        -0.6,
+        0.2
+       ],
+       "depth": 0.56,
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "hand_to_face",
+         "expr": "worried"
+        }
+       ]
+      },
+      {
+       "id": "lb8_lizzie",
+       "x": 650,
+       "y": 1460,
+       "scale": 0.7,
+       "dir": -1,
+       "turn": 0.55,
+       "pose": "present",
+       "expr": "blank",
+       "gaze": [
+        0.7,
+        0.5
+       ],
+       "outfit": "house"
+      }
+     ],
+     "view": {
+      "cx": 600,
+      "cy": 1080,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1100,
+      "w": 1450
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": {
+       "anim": [
+        0.15,
+        0.4
+       ],
+       "p0": 0.3,
+       "p1": 1.0
+      }
+     },
+     "grade": "warm",
+     "cam": {
+      "handheld": 3
+     },
+     "lower": {
+      "p": 0.2,
+      "title": "Alice Russell",
+      "color": "red",
+      "kicker": "Family friend · trial witness"
+     },
+     "depicts": {
+      "person": "Lizzie Borden",
+      "act": "holding a dress at the kitchen stove"
+     },
+     "claims": [
+      "C-DRESS-BURNED"
+     ],
+     "w": 1.3
+    },
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lb8_alice",
+       "x": 880,
+       "y": 1300,
+       "scale": 0.56,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "hand_to_face",
+       "expr": "worried",
+       "gaze": [
+        -0.6,
+        0.2
+       ],
+       "depth": 0.56,
+       "keys": [
+        {
+         "p": 0.5,
+         "gaze": [
+          -0.8,
+          0.4
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 870,
+      "cy": 880,
+      "w": 700
+     },
+     "view_to": {
+      "cx": 870,
+      "cy": 870,
+      "w": 640
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": 0.4
+     },
+     "grade": "warm",
+     "w": 0.7
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "say": "Lizzie said she was going to burn it. It was covered with paint, she said.",
+   "claims": [
+    "C-DRESS-PAINT",
+    "C-DRESS-BURNED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 650,
+       "y": 1460,
+       "scale": 0.7,
+       "dir": -1,
+       "turn": 0.55,
+       "pose": "present",
+       "expr": "neutral",
+       "gaze": [
+        0.9,
+        0.7
+       ],
+       "outfit": "house",
+       "keys": [
+        {
+         "p": 0.55,
+         "pose": "stand",
+         "headTurn": -0.4,
+         "gaze": [
+          -0.3,
+          0
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 470,
+      "cy": 990,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 985,
+      "w": 820
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": {
+       "anim": [
+        0.4,
+        0.9
+       ],
+       "p0": 0.0,
+       "p1": 1.0
+      }
+     },
+     "grade": "warm",
+     "depicts": {
+      "person": "Lizzie Borden",
+      "act": "holding a dress at the kitchen stove"
+     },
+     "w": 1.2
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "“COVERED",
+      "WITH PAINT”"
+     ],
+     "em": [
+      "PAINT”"
+     ],
+     "sub": "Lizzie's explanation, per Russell",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "say": "Three days earlier, in that same house, Lizzie's father and stepmother had been killed.",
+   "claims": [
+    "C-KILLED-AUG4",
+    "C-STEPMOTHER"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 960,
+      "w": 1400
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1040,
+      "w": 1750
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME"
+    }
+   ],
+   "cue": "unease"
+  },
+  {
+   "say": "Ten months later, a jury found her not guilty.",
+   "claims": [
+    "C-VERDICT"
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "NOT GUILTY",
+     "color": "green",
+     "lines": [
+      "New Bedford, Massachusetts · June 1893"
+     ],
+     "at": 0.35
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.4
+    }
+   ]
+  },
+  {
+   "say": "No one else was ever charged.",
+   "claims": [
+    "C-UNSOLVED"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "NO ONE ELSE",
+      "WAS EVER CHARGED"
+     ],
+     "em": [
+      "CHARGED"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "So who killed Andrew and Abby Borden?",
+   "claims": [
+    "C-UNSOLVED"
+   ],
+   "shots": [
+    {
+     "type": "question",
+     "kicker": "THE QUESTION",
+     "lines": [
+      "Who killed",
+      "Andrew and Abby Borden?"
+     ]
+    }
+   ]
+  },
+  {
+   "silence": 2.4,
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "THE LIZZIE BORDEN CASE",
+     "text": "WHO KILLED\nTHE BORDENS?",
+     "sub": "A documentary investigation from the trial record",
+     "in": "glitch",
+     "chapterTag": ""
+    }
+   ],
+   "cue": "tension-peak",
+   "sfx": [
+    {
+     "name": "sting",
+     "at": 0.0,
+     "gain": 0.8
+    }
+   ]
+  },
+  {
+   "say": "In 1892, Fall River was a mill city. People called it Spindle City.",
+   "claims": [
+    "C-FALLRIVER"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_mills",
+     "figures": [
+      {
+       "id": "lb8_juror",
+       "x": -300,
+       "y": 1290,
+       "scale": 0.32,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -300,
+        "to": 1300,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 6.6
+       },
+       "depth": 0.95,
+       "hat": {
+        "style": "bowler",
+        "color": "#2a2622"
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 860,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 880,
+      "w": 1500
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "sepia",
+     "label": "ILLUSTRATION · GENERIC MILL CITY",
+     "lower": {
+      "p": 0.45,
+      "title": "“Spindle City”",
+      "color": "red",
+      "kicker": "Fall River, Massachusetts"
+     }
+    }
+   ],
+   "chapter": "The house on Second Street",
+   "chapter_title": "1 · The house on Second Street",
+   "tag": "Chapter 1 · The house",
+   "cue": "unease"
+  },
+  {
+   "say": "And Andrew Borden had made himself a wealthy man, in business, property and banking.",
+   "claims": [
+    "C-ANDREW-WEALTH"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Andrew J. Borden",
+     "kicker": "THE FATHER",
+     "kind": "m",
+     "lines": [
+      "Business, property, a bank",
+      "Age 69 in 1892"
+     ],
+     "rim": "amber",
+     "claims": [
+      "C-AGES"
+     ],
+     "w": 1.0
+    },
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_juror",
+       "x": 1300,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1300,
+        "to": 700,
+        "p0": 0.0,
+        "p1": 0.85,
+        "cadence": 6.2
+       },
+       "keys": [
+        {
+         "p": 0.87,
+         "pose": "stand",
+         "headTurn": -0.3
+        }
+       ],
+       "outfit": "grey",
+       "hat": {
+        "style": "bowler",
+        "color": "#2a2622"
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1100,
+      "w": 1550
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "sepia",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "say": "He lived at 92 Second Street, with his second wife, Abby. They had married in 1865.",
+   "claims": [
+    "C-KILLED-AUG4",
+    "C-STEPMOTHER"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [],
+     "view": {
+      "cx": 520,
+      "cy": 900,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1650
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "lower": {
+      "p": 0.1,
+      "title": "92 Second Street",
+      "color": "red",
+      "kicker": "Fall River",
+      "sub": "Generic illustration, not the real house"
+     },
+     "w": 1.0
+    },
+    {
+     "type": "profile",
+     "name": "Abby Durfee Borden",
+     "kicker": "THE STEPMOTHER",
+     "kind": "f",
+     "lines": [
+      "Married Andrew in 1865",
+      "Age 64 in 1892"
+     ],
+     "rim": "amber",
+     "claims": [
+      "C-AGES"
+     ],
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "say": "His two daughters from his first marriage lived there too. Emma, the elder. And Lizzie, who was thirty-two.",
+   "claims": [
+    "C-DAUGHTERS",
+    "C-AGES"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_parlour",
+     "figures": [
+      {
+       "id": "lzb_emma",
+       "x": 360,
+       "y": 1620,
+       "scale": 0.78,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "hands_together",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.15,
+         "headTurn": 0.2,
+         "gaze": [
+          0.6,
+          0
+         ]
+        }
+       ]
+      },
+      {
+       "id": "lb8_lizzie",
+       "x": 800,
+       "y": 1640,
+       "scale": 0.8,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "hands_together",
+         "headTurn": -0.3,
+         "gaze": [
+          -0.2,
+          0
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1150,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 580,
+      "cy": 1140,
+      "w": 1400
+     },
+     "grade": "sepia",
+     "cards": [
+      {
+       "p": 0.12,
+       "x": 600,
+       "y": 800,
+       "w": 720,
+       "rows": [
+        {
+         "text": "EMMA BORDEN · THE ELDER"
+        },
+        {
+         "text": "LIZZIE BORDEN · 32",
+         "p": 0.62,
+         "color": "red"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "So did the family's maid, Bridget Sullivan. The sisters called her Maggie.",
+   "claims": [
+    "C-BRIDGET"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lzb_bridget",
+       "x": 300,
+       "y": 1430,
+       "scale": 0.66,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 300,
+        "p0": 0.0,
+        "p1": 0.45,
+        "cadence": 6.0
+       },
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "hands_together",
+         "headTurn": 0.3,
+         "gaze": [
+          0.5,
+          0
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1080,
+      "w": 1500
+     },
+     "setOpts": {
+      "open": 0
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "lower": {
+      "p": 0.3,
+      "title": "Bridget Sullivan",
+      "color": "red",
+      "kicker": "The maid",
+      "sub": "Called “Maggie” by the sisters"
+     }
+    }
+   ]
+  },
+  {
+   "say": "There was friction in the house, over property.",
+   "claims": [
+    "C-PROPERTY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_parlour",
+     "figures": [
+      {
+       "id": "lzb_emma",
+       "x": 300,
+       "y": 1620,
+       "scale": 0.78,
+       "dir": 1,
+       "turn": 0.6,
+       "pose": "arms_crossed",
+       "expr": "stern"
+      },
+      {
+       "id": "lb8_lizzie",
+       "x": 820,
+       "y": 1640,
+       "scale": 0.8,
+       "dir": -1,
+       "turn": 0.7,
+       "pose": "arms_crossed",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": -0.4
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1150,
+      "w": 1500
+     },
+     "setOpts": {
+      "night": true
+     },
+     "grade": "night",
+     "dim": 0.1
+    }
+   ]
+  },
+  {
+   "say": "In 1887, Andrew bought a share of a house for Abby's half-sister, and put it in Abby's name. Emma later testified that it caused trouble in the family.",
+   "claims": [
+    "C-PROPERTY"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "The Fourth Street house",
+     "lines": [
+      "When:     1887",
+      "Bought by: Andrew Borden",
+      "For:      Abby's half-sister",
+      "In the name of: Abby"
+     ],
+     "hl": 3,
+     "stamp": "TROUBLE",
+     "w": 1.1
+    },
+    {
+     "type": "split",
+     "head": [
+      "THE SISTERS",
+      "THE STEPMOTHER"
+     ],
+     "big": [
+      "Resentment",
+      "Property"
+     ],
+     "bigColor": [
+      "red",
+      "amber"
+     ],
+     "bigSize": 84,
+     "body": [
+      [
+       "Emma and Lizzie"
+      ],
+      [
+       "a house for Abby's family"
+      ]
+     ],
+     "vs": "OVER",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "say": "At the inquest, Lizzie said she had stopped calling Abby mother. Asked why, she said it was because she wanted to.",
+   "claims": [
+    "C-MRS-BORDEN"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_parlour",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 560,
+       "y": 1680,
+       "scale": 0.92,
+       "dir": -1,
+       "turn": 0.6,
+       "pose": "hands_together",
+       "expr": "neutral",
+       "gaze": [
+        0.8,
+        -0.1
+       ],
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": -0.5,
+         "gaze": [
+          -0.1,
+          0
+         ],
+         "expr": "focused"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 520,
+      "cy": 1010,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 530,
+      "cy": 1000,
+      "w": 900
+     },
+     "grade": "sepia",
+     "claims": [
+      "C-RHYME"
+     ],
+     "funfacts": [
+      {
+       "p": 0.45,
+       "rows": [
+        {
+         "text": "The famous rhyme calls Abby"
+        },
+        {
+         "text": "Lizzie's “mother”."
+        },
+        {
+         "text": "She was her STEPMOTHER.",
+         "color": "amber"
+        }
+       ],
+       "x": 90,
+       "y": 640
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "But Bridget testified that she never saw the two of them quarrel.",
+   "claims": [
+    "C-NO-QUARRELS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lzb_bridget",
+       "x": 560,
+       "y": 1440,
+       "scale": 0.7,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "hands_together",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.4,
+         "headTurn": -0.3,
+         "expr": "focused"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 520,
+      "cy": 1060,
+      "w": 1200
+     },
+     "setOpts": {
+      "open": 0
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "lower": {
+      "p": 0.15,
+      "title": "Bridget's testimony",
+      "color": "red",
+      "kicker": "At the trial"
+     }
+    }
+   ]
+  },
+  {
+   "say": "In the days before the killings, Andrew and Abby were sick to their stomachs.",
+   "claims": [
+    "C-SICK"
+   ],
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "WEDNESDAY",
+     "text": "AUGUST 3, 1892",
+     "sub": "The day before",
+     "w": 0.9
+    },
+    {
+     "type": "cine",
+     "set": "lb8_parlour",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 1100,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 1060,
+      "w": 1100
+     },
+     "setOpts": {
+      "night": true
+     },
+     "grade": "night",
+     "w": 0.8
+    }
+   ],
+   "chapter": "The day before",
+   "chapter_title": "2 · The day before",
+   "tag": "Chapter 2 · The day before",
+   "cue": "tension"
+  },
+  {
+   "say": "Abby went to the family doctor, Seabury Bowen, and told him she was afraid they had been poisoned. He was sceptical.",
+   "claims": [
+    "C-SICK"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lzb_doctor",
+       "x": 980,
+       "y": 1500,
+       "scale": 0.56,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "stand",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "hands_behind",
+         "expr": "stern",
+         "headTurn": -0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1100,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 760,
+      "cy": 1080,
+      "w": 1100
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "sepia",
+     "label": "ILLUSTRATION · GENERIC STREET",
+     "lower": {
+      "p": 0.2,
+      "title": "Dr. Seabury Bowen",
+      "color": "red",
+      "kicker": "The family doctor"
+     }
+    }
+   ]
+  },
+  {
+   "say": "The day before the killings, according to a drugstore clerk named Eli Bence, a woman he identified as Lizzie tried to buy prussic acid, a deadly poison.",
+   "claims": [
+    "C-BENCE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_drugstore",
+     "figures": [
+      {
+       "id": "lzb_clerk",
+       "x": 300,
+       "y": 1220,
+       "scale": 0.56,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "focused",
+       "depth": 0.7,
+       "keys": [
+        {
+         "p": 0.55,
+         "pose": "present",
+         "expr": "stern"
+        }
+       ]
+      },
+      {
+       "id": "lb8_neighbour",
+       "x": 900,
+       "y": 1520,
+       "scale": 0.66,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 820,
+        "p0": 0.0,
+        "p1": 0.35,
+        "cadence": 5.8
+       },
+       "keys": [
+        {
+         "p": 0.38,
+         "pose": "hands_together"
+        }
+       ],
+       "silhouette": "warm"
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 980,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 960,
+      "w": 1450
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · BENCE'S ACCOUNT · GENERIC DRUGSTORE",
+     "lower": {
+      "p": 0.45,
+      "title": "Eli Bence's account",
+      "color": "red",
+      "kicker": "Drugstore clerk"
+     },
+     "w": 1.4
+    },
+    {
+     "type": "cine",
+     "set": "lzb_drugstore",
+     "figures": [
+      {
+       "id": "lzb_clerk",
+       "x": 300,
+       "y": 1220,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "stern",
+       "depth": 0.7,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "arms_crossed"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 330,
+      "cy": 850,
+      "w": 900
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · BENCE'S ACCOUNT · GENERIC DRUGSTORE",
+     "w": 0.6
+    }
+   ]
+  },
+  {
+   "say": "The jury at her trial would never hear his story.",
+   "claims": [
+    "C-EXCLUDED"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "THE JURY",
+      "NEVER HEARD IT"
+     ],
+     "em": [
+      "NEVER"
+     ],
+     "sub": "Later excluded from the trial"
+    }
+   ]
+  },
+  {
+   "say": "That day, Russell testified, Lizzie came to see her.",
+   "claims": [
+    "C-RUSSELL-VISIT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": -150,
+       "y": 1500,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -150,
+        "to": 520,
+        "p0": 0.0,
+        "p1": 0.8,
+        "cadence": 5.6
+       },
+       "keys": [
+        {
+         "p": 0.82,
+         "pose": "stand",
+         "headTurn": 0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1080,
+      "w": 1500
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC STREET"
+    }
+   ]
+  },
+  {
+   "say": "Russell testified that Lizzie told her: I feel afraid something is going to happen.",
+   "claims": [
+    "C-RUSSELL-VISIT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_parlour",
+     "figures": [
+      {
+       "id": "lb8_alice",
+       "x": 380,
+       "y": 1640,
+       "scale": 0.8,
+       "dir": 1,
+       "turn": 0.45,
+       "pose": "hands_together",
+       "expr": "worried"
+      },
+      {
+       "id": "lb8_lizzie",
+       "x": 820,
+       "y": 1660,
+       "scale": 0.82,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "hand_to_face",
+       "expr": "worried",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "hands_together"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1150,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 1140,
+      "w": 1350
+     },
+     "setOpts": {
+      "night": true
+     },
+     "grade": "night",
+     "w": 1.2
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "“SOMETHING IS",
+      "GOING TO HAPPEN”"
+     ],
+     "em": [
+      "HAPPEN”"
+     ],
+     "sub": "Lizzie, as Alice Russell testified",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "say": "And Lizzie's uncle, John Morse, arrived unexpectedly, and stayed the night.",
+   "claims": [
+    "C-MORSE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lzb_morse",
+       "x": 1300,
+       "y": 1510,
+       "scale": 0.55,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1300,
+        "to": 640,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 5.8
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "stand",
+         "headTurn": -0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "dusk",
+      "gate": {
+       "anim": [
+        0,
+        1
+       ],
+       "p0": 0.6,
+       "p1": 0.8
+      }
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "lower": {
+      "p": 0.25,
+      "title": "John V. Morse",
+      "color": "red",
+      "kicker": "The uncle"
+     }
+    }
+   ]
+  },
+  {
+   "say": "Thursday, the fourth of August, was a hot day.",
+   "claims": [
+    "C-HOT",
+    "C-KILLED-AUG4"
+   ],
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "THURSDAY",
+     "text": "AUGUST 4, 1892",
+     "sub": "92 Second Street",
+     "w": 0.9
+    },
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "w": 0.8
+    }
+   ],
+   "chapter": "Thursday",
+   "chapter_title": "3 · Thursday, 4 August",
+   "tag": "Chapter 3 · Thursday",
+   "cue": "tension-rise"
+  },
+  {
+   "say": "Emma was away, visiting friends in Fairhaven, about fifteen miles off.",
+   "claims": [
+    "C-EMMA-AWAY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_mills",
+     "figures": [
+      {
+       "id": "lzb_emma",
+       "x": -200,
+       "y": 1290,
+       "scale": 0.32,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 900,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 5.6
+       },
+       "depth": 0.95
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 900,
+      "w": 1500
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "lower": {
+      "p": 0.15,
+      "title": "Emma: away",
+      "color": "red",
+      "kicker": "In Fairhaven, about 15 miles off"
+     }
+    }
+   ]
+  },
+  {
+   "say": "John Morse went out. He was visiting relatives when the killings happened.",
+   "claims": [
+    "C-MORSE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lzb_morse",
+       "x": 520,
+       "y": 1500,
+       "scale": 0.55,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 520,
+        "to": 1400,
+        "p0": 0.05,
+        "p1": 0.9,
+        "cadence": 5.8
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "day",
+      "gate": {
+       "anim": [
+        1,
+        0
+       ],
+       "p0": 0.3,
+       "p1": 0.5
+      }
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME"
+    }
+   ]
+  },
+  {
+   "say": "Andrew left at about nine, to do business downtown.",
+   "claims": [
+    "C-ANDREW-DOWNTOWN"
+   ],
+   "shots": [
+    {
+     "type": "clock",
+     "time": "09:00",
+     "display": "ABOUT 9 A.M.",
+     "kicker": "THURSDAY, AUGUST 4",
+     "lines": [
+      "Andrew goes downtown"
+     ],
+     "fromMins": 500
+    }
+   ]
+  },
+  {
+   "say": "Abby asked Bridget to wash the windows, and Bridget spent much of the morning outside.",
+   "claims": [
+    "C-WINDOWS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lzb_bridget",
+       "x": 420,
+       "y": 1330,
+       "scale": 0.44,
+       "dir": 1,
+       "turn": 0.6,
+       "pose": "point_up",
+       "expr": "focused",
+       "depth": 0.7,
+       "gaze": [
+        0.2,
+        -0.8
+       ],
+       "keys": [
+        {
+         "p": 0.15,
+         "pose": "present"
+        },
+        {
+         "p": 0.3,
+         "pose": "point_up"
+        },
+        {
+         "p": 0.45,
+         "pose": "present"
+        },
+        {
+         "p": 0.6,
+         "pose": "point_up"
+        },
+        {
+         "p": 0.75,
+         "pose": "present"
+        },
+        {
+         "p": 0.9,
+         "pose": "point_up"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1060,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1080,
+      "w": 1150
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "props": [
+      {
+       "kind": "pail",
+       "x": 560,
+       "y": 1340,
+       "s": 0.8,
+       "depth": 0.71
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "At about half past nine, Abby went upstairs to tidy the guest room.",
+   "claims": [
+    "C-ABBY-UPSTAIRS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_hall",
+     "figures": [],
+     "view": {
+      "cx": 760,
+      "cy": 900,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 900,
+      "cy": 760,
+      "w": 1000
+     },
+     "grade": "night",
+     "setOpts": {
+      "door": 0,
+      "hour": 0.5
+     },
+     "label": "ILLUSTRATION · GENERIC INTERIOR"
+    }
+   ]
+  },
+  {
+   "say": "Within roughly the next hour, she was killed there.",
+   "claims": [
+    "C-ABBY-UPSTAIRS"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "SHE NEVER",
+      "CAME DOWN"
+     ],
+     "em": [
+      "NEVER"
+     ]
+    }
+   ],
+   "cue": "cold"
+  },
+  {
+   "say": "Shortly before eleven, Andrew came home.",
+   "claims": [
+    "C-ANDREW-RETURNS"
+   ],
+   "shots": [
+    {
+     "type": "clock",
+     "time": "10:50",
+     "display": "SHORTLY BEFORE 11",
+     "kicker": "THURSDAY, AUGUST 4",
+     "lines": [
+      "Andrew comes home"
+     ],
+     "fromMins": 600
+    }
+   ]
+  },
+  {
+   "say": "The front door was locked three ways. Bridget had to unlock it to let him in.",
+   "claims": [
+    "C-ANDREW-RETURNS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_hall",
+     "figures": [
+      {
+       "id": "lzb_bridget",
+       "x": 260,
+       "y": 1480,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "present",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.3,
+         "pose": "stand_tense"
+        },
+        {
+         "p": 0.55,
+         "pose": "present"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1000,
+      "w": 1400
+     },
+     "view_to": {
+      "cx": 300,
+      "cy": 1000,
+      "w": 1150
+     },
+     "setOpts": {
+      "door": {
+       "anim": [
+        0,
+        0.7
+       ],
+       "p0": 0.6,
+       "p1": 0.95
+      }
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC INTERIOR",
+     "cards": [
+      {
+       "p": 0.15,
+       "x": 1180,
+       "y": 170,
+       "w": 600,
+       "rows": [
+        {
+         "text": "THE FRONT DOOR"
+        },
+        {
+         "text": "three locks",
+         "p": 0.35,
+         "color": "red"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "door",
+     "at": 2.4,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "say": "Bridget testified that as she fumbled with the locks, she said, pshaw, and heard Lizzie laugh, upstairs. She did not see her.",
+   "claims": [
+    "C-LAUGH"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_hall",
+     "figures": [
+      {
+       "id": "lzb_bridget",
+       "x": 260,
+       "y": 1480,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "stand_tense",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.45,
+         "headTurn": 0.6,
+         "gaze": [
+          0.7,
+          -0.8
+         ],
+         "expr": "worried"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 600,
+      "cy": 960,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 820,
+      "cy": 820,
+      "w": 1200
+     },
+     "setOpts": {
+      "door": 0.7
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC INTERIOR",
+     "lower": {
+      "p": 0.12,
+      "title": "Bridget Sullivan's testimony",
+      "color": "red",
+      "kicker": "At the trial"
+     }
+    }
+   ]
+  },
+  {
+   "say": "Andrew lay down on the sofa in the sitting room. Bridget went up to her attic room to rest. By her clock, she testified, it was eleven.",
+   "claims": [
+    "C-SOFA-ATTIC"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_hall",
+     "figures": [
+      {
+       "id": "lzb_bridget",
+       "x": 700,
+       "y": 1300,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.55,
+       "pose": "walk",
+       "expr": "neutral",
+       "depth": 0.64,
+       "walk": {
+        "from": 560,
+        "to": 1060,
+        "p0": 0.1,
+        "p1": 0.9,
+        "cadence": 5.0
+       }
+      }
+     ],
+     "view": {
+      "cx": 800,
+      "cy": 900,
+      "w": 1400
+     },
+     "setOpts": {
+      "door": 0,
+      "hour": 0.0
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC INTERIOR",
+     "w": 1.3
+    },
+    {
+     "type": "clock",
+     "time": "11:00",
+     "display": "11:00 AM",
+     "kicker": "BY BRIDGET'S CLOCK",
+     "lines": [
+      "Bridget rests upstairs"
+     ],
+     "fromMins": 650,
+     "w": 0.7
+    }
+   ]
+  },
+  {
+   "say": "A few minutes after eleven, Lizzie called up to her. Her father was dead, she said. Somebody had come in and killed him.",
+   "claims": [
+    "C-CALL"
+   ],
+   "shots": [
+    {
+     "type": "clock",
+     "time": "11:10",
+     "display": "A FEW MINUTES AFTER 11",
+     "kicker": "THURSDAY, AUGUST 4",
+     "lines": [
+      "Lizzie calls up to Bridget"
+     ],
+     "fromMins": 655,
+     "w": 0.7
+    },
+    {
+     "type": "cine",
+     "set": "lzb_hall",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 300,
+       "y": 1500,
+       "scale": 0.66,
+       "dir": 1,
+       "turn": 0.45,
+       "pose": "stand_tense",
+       "expr": "distraught",
+       "gaze": [
+        0.7,
+        -0.8
+       ],
+       "headTurn": 0.4,
+       "keys": [
+        {
+         "p": 0.25,
+         "pose": "point_up"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 480,
+      "cy": 1020,
+      "w": 1400
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 980,
+      "w": 1150
+     },
+     "setOpts": {
+      "door": 0
+     },
+     "grade": "cold",
+     "cam": {
+      "handheld": 4
+     },
+     "w": 1.3
+    }
+   ],
+   "cue": "tension-peak",
+   "sfx": [
+    {
+     "name": "thump",
+     "at": 0.3,
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "say": "A neighbour, Adelaide Churchill, came. So did the family doctor.",
+   "claims": [
+    "C-RESPONSE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_neighbour",
+       "x": 1300,
+       "y": 1510,
+       "scale": 0.54,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "worried",
+       "walk": {
+        "from": 1300,
+        "to": 560,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 7.0
+       }
+      },
+      {
+       "id": "lzb_doctor",
+       "x": -250,
+       "y": 1520,
+       "scale": 0.55,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -250,
+        "to": 360,
+        "p0": 0.35,
+        "p1": 0.95,
+        "cadence": 7.0
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "day",
+      "gate": {
+       "anim": [
+        0,
+        1
+       ],
+       "p0": 0.45,
+       "p1": 0.65
+      }
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "cam": {
+      "handheld": 3
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "step",
+     "at": 0.4
+    },
+    {
+     "name": "step",
+     "at": 0.8
+    },
+    {
+     "name": "step",
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "say": "Lizzie said Abby had gone out. A messenger had brought a note, she said, asking her to visit someone who was sick.",
+   "claims": [
+    "C-NOTE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_parlour",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 420,
+       "y": 1660,
+       "scale": 0.84,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "hands_together",
+       "expr": "worried",
+       "gaze": [
+        0.6,
+        0
+       ],
+       "keys": [
+        {
+         "p": 0.55,
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1120,
+      "w": 1300
+     },
+     "grade": "sepia",
+     "cards": [
+      {
+       "p": 0.3,
+       "x": 1150,
+       "y": 220,
+       "w": 640,
+       "rows": [
+        {
+         "text": "THE NOTE"
+        },
+        {
+         "text": "From: unknown",
+         "p": 0.4
+        },
+        {
+         "text": "Never found",
+         "p": 0.75,
+         "color": "red"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Neither the note, nor the messenger, was ever found.",
+   "claims": [
+    "C-NOTE"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "THE NOTE WAS",
+      "NEVER FOUND"
+     ],
+     "em": [
+      "NEVER"
+     ]
+    }
+   ],
+   "attribution_context": true
+  },
+  {
+   "say": "Then, Bridget testified, Lizzie said she was almost sure she had heard Abby come back in.",
+   "claims": [
+    "C-HEARD-COME-IN"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_hall",
+     "figures": [
+      {
+       "id": "lzb_bridget",
+       "x": 300,
+       "y": 1480,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "hands_together",
+       "expr": "worried",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.6,
+         "gaze": [
+          0.7,
+          -0.8
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 500,
+      "cy": 1000,
+      "w": 1400
+     },
+     "setOpts": {
+      "door": 0
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC INTERIOR"
+    }
+   ]
+  },
+  {
+   "say": "Bridget would not go upstairs alone. Mrs. Churchill went with her. They found Abby in the guest room.",
+   "claims": [
+    "C-HEARD-COME-IN"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_hall",
+     "figures": [
+      {
+       "id": "lzb_bridget",
+       "x": 560,
+       "y": 1360,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.6,
+       "pose": "walk",
+       "expr": "worried",
+       "walk": {
+        "from": 560,
+        "to": 860,
+        "p0": 0.0,
+        "p1": 0.9,
+        "cadence": 4.6
+       },
+       "depth": 0.64
+      },
+      {
+       "id": "lb8_neighbour",
+       "x": 400,
+       "y": 1400,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.6,
+       "pose": "walk",
+       "expr": "worried",
+       "walk": {
+        "from": 300,
+        "to": 640,
+        "p0": 0.15,
+        "p1": 0.95,
+        "cadence": 4.6
+       },
+       "depth": 0.66
+      }
+     ],
+     "view": {
+      "cx": 760,
+      "cy": 900,
+      "w": 1400
+     },
+     "view_to": {
+      "cx": 900,
+      "cy": 780,
+      "w": 1150
+     },
+     "setOpts": {
+      "door": 0
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC INTERIOR"
+    }
+   ],
+   "cue": "cold",
+   "attribution_context": true
+  },
+  {
+   "say": "Medical evidence showed that Abby had died first, roughly an hour or more before her husband.",
+   "claims": [
+    "C-ABBY-UPSTAIRS"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "1 HOUR+",
+     "label": "Abby died first",
+     "note": "Medical evidence at the trial",
+     "size": 220,
+     "noCorner": true
+    }
+   ]
+  },
+  {
+   "say": "So where was Lizzie?",
+   "claims": [],
+   "shots": [
+    {
+     "type": "question",
+     "kicker": "THE ALIBI",
+     "lines": [
+      "Where was Lizzie?"
+     ]
+    }
+   ],
+   "nonfactual": true,
+   "chapter": "The barn",
+   "chapter_title": "4 · The barn",
+   "tag": "Chapter 4 · The barn",
+   "cue": "tension"
+  },
+  {
+   "say": "She told the neighbour and the doctor that she had gone out to the barn, for a piece of iron.",
+   "claims": [
+    "C-BARN"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_barn",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": -200,
+       "y": 1330,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 560,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 5.0
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "stand",
+         "headTurn": 0.3,
+         "gaze": [
+          0.4,
+          -0.3
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1040,
+      "w": 1400
+     },
+     "grade": "warm",
+     "setOpts": {
+      "heat": 0.8
+     },
+     "label": "ILLUSTRATION · HER ACCOUNT, AS SHE GAVE IT · GENERIC BARN"
+    }
+   ]
+  },
+  {
+   "say": "At the inquest, she said she spent fifteen or twenty minutes up in the loft, looking for lead sinkers for a fishing trip. And she ate some pears.",
+   "claims": [
+    "C-BARN"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_barn",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 620,
+       "y": 1330,
+       "scale": 0.62,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "examine",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.7,
+         "pose": "stand",
+         "headTurn": -0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1030,
+      "w": 1400
+     },
+     "grade": "warm",
+     "setOpts": {
+      "heat": 0.9
+     },
+     "label": "ILLUSTRATION · HER ACCOUNT, AS SHE GAVE IT · GENERIC BARN",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 1120,
+       "y": 170,
+       "w": 660,
+       "rows": [
+        {
+         "text": "HER ACCOUNT"
+        },
+        {
+         "text": "15 to 20 minutes",
+         "p": 0.35
+        },
+        {
+         "text": "Looking for sinkers",
+         "p": 0.65
+        }
+       ]
+      }
+     ],
+     "w": 1.1
+    },
+    {
+     "type": "cine",
+     "set": "lzb_barn",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 620,
+       "y": 1330,
+       "scale": 0.62,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "hands_together",
+       "expr": "neutral",
+       "gaze": [
+        0.6,
+        0.3
+       ],
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": -0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 600,
+      "cy": 990,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 610,
+      "cy": 980,
+      "w": 820
+     },
+     "grade": "warm",
+     "setOpts": {
+      "heat": 0.9
+     },
+     "label": "ILLUSTRATION · HER ACCOUNT, AS SHE GAVE IT · GENERIC BARN",
+     "cards": [
+      {
+       "p": 0.05,
+       "x": 1150,
+       "y": 170,
+       "w": 600,
+       "rows": [
+        {
+         "text": "HER ACCOUNT"
+        },
+        {
+         "text": "Ate some pears",
+         "p": 0.2
+        }
+       ]
+      }
+     ],
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "say": "Police said the loft was stifling hot, and that they found no footprints there to back up her story.",
+   "claims": [
+    "C-LOFT-POLICE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_barn",
+     "figures": [
+      {
+       "id": "lb8_officer",
+       "x": 300,
+       "y": 1330,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.45,
+       "pose": "examine",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.55,
+         "pose": "stand",
+         "headTurn": 0.4
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 420,
+      "cy": 1100,
+      "w": 1300
+     },
+     "grade": "warm",
+     "setOpts": {
+      "heat": 1.0
+     },
+     "label": "ILLUSTRATION · GENERIC BARN",
+     "lower": {
+      "p": 0.2,
+      "title": "Police testimony",
+      "color": "red",
+      "kicker": "At the trial"
+     }
+    }
+   ]
+  },
+  {
+   "say": "But a defence witness, an ice cream peddler named Hyman Lubinsky, testified that shortly after eleven he saw a woman walk from the barn toward the house.",
+   "claims": [
+    "C-LUBINSKY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_juror",
+       "x": -200,
+       "y": 1520,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 620,
+        "p0": 0.0,
+        "p1": 0.55,
+        "cadence": 6.0
+       },
+       "keys": [
+        {
+         "p": 0.58,
+         "pose": "stand",
+         "headTurn": 0.5,
+         "gaze": [
+          0.6,
+          -0.3
+         ]
+        }
+       ],
+       "outfit": "shirtsleeves",
+       "hat": {
+        "style": "cap",
+        "color": "#3a3226"
+       }
+      },
+      {
+       "id": "lb8_neighbour",
+       "x": 980,
+       "y": 1330,
+       "scale": 0.36,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "walk",
+       "expr": "neutral",
+       "depth": 0.72,
+       "walk": {
+        "from": 1100,
+        "to": 820,
+        "p0": 0.35,
+        "p1": 0.95,
+        "cadence": 4.6
+       },
+       "silhouette": "warm"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "lower": {
+      "p": 0.15,
+      "title": "Hyman Lubinsky",
+      "color": "red",
+      "kicker": "Defence witness",
+      "sub": "Ice cream seller"
+     },
+     "w": 1.1
+    },
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_neighbour",
+       "x": 1150,
+       "y": 1340,
+       "scale": 0.42,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "walk",
+       "expr": "neutral",
+       "depth": 0.72,
+       "walk": {
+        "from": 1200,
+        "to": 880,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 4.4
+       },
+       "silhouette": "warm"
+      }
+     ],
+     "view": {
+      "cx": 980,
+      "cy": 1120,
+      "w": 900
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · AN UNIDENTIFIED WOMAN, AS DESCRIBED",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "say": "And at the inquest, her answers shifted. She said she was on the stairs. Then in the kitchen. Then perhaps the dining room.",
+   "claims": [
+    "C-INCONSISTENT"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "HER ACCOUNTS",
+     "title": "At the inquest, 1892",
+     "items": [
+      "On the stairs",
+      "In the kitchen",
+      "Perhaps the dining room"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "In the basement, police found a hatchet head. Its handle had been broken off.",
+   "claims": [
+    "C-HATCHET"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_hall",
+     "figures": [
+      {
+       "id": "lb8_officer",
+       "x": 200,
+       "y": 1480,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "id": "lb8_officer",
+       "x": 700,
+       "y": 1300,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 560,
+        "to": 900,
+        "p0": 0.1,
+        "p1": 0.9,
+        "cadence": 6.0
+       },
+       "depth": 0.64
+      }
+     ],
+     "view": {
+      "cx": 500,
+      "cy": 1000,
+      "w": 1500
+     },
+     "setOpts": {
+      "door": 0.3
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC INTERIOR",
+     "cards": [
+      {
+       "p": 0.25,
+       "x": 1120,
+       "y": 690,
+       "w": 700,
+       "rows": [
+        {
+         "text": "THE BASEMENT"
+        },
+        {
+         "text": "A hatchet head",
+         "p": 0.45
+        },
+        {
+         "text": "Its handle broken off",
+         "p": 0.75
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "chapter": "The investigation",
+   "chapter_title": "5 · The investigation",
+   "tag": "Chapter 5 · The investigation",
+   "cue": "unease"
+  },
+  {
+   "say": "The prosecution could never prove it was the murder weapon.",
+   "claims": [
+    "C-HATCHET"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE PROSECUTION",
+      "THE RECORD"
+     ],
+     "big": [
+      "The weapon",
+      "Never proven"
+     ],
+     "bigColor": [
+      "red",
+      "blue"
+     ],
+     "bigSize": 84,
+     "body": [
+      [
+       "the hatchet head"
+      ],
+      [
+       "no proven link"
+      ]
+     ],
+     "vs": "VS"
+    }
+   ]
+  },
+  {
+   "say": "The inquest ran from the ninth to the eleventh of August. Lizzie testified without a lawyer.",
+   "claims": [
+    "C-INQUEST"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.35,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.5,
+         "expr": "worried"
+        }
+       ]
+      },
+      {
+       "id": "lb8_lawyer",
+       "x": 760,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "stern",
+       "keys": [
+        {
+         "p": 0.45,
+         "pose": "point"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 870,
+      "w": 1700
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "lower": {
+      "p": 0.15,
+      "title": "The inquest",
+      "color": "red",
+      "kicker": "9 to 11 August 1892",
+      "sub": "No lawyer at her side"
+     }
+    }
+   ]
+  },
+  {
+   "say": "On the eleventh, she was arrested. The next day she pleaded not guilty, and she was taken to the jail in Taunton.",
+   "claims": [
+    "C-ARREST"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 560,
+       "y": 1500,
+       "scale": 0.66,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "stand_tense",
+       "expr": "worried",
+       "walk": {
+        "from": 600,
+        "to": 470,
+        "p0": 0.05,
+        "p1": 0.35,
+        "cadence": 5.0
+       },
+       "keys": [
+        {
+         "p": 0.4,
+         "pose": "hands_together",
+         "expr": "blank"
+        }
+       ]
+      },
+      {
+       "id": "lb8_officer",
+       "x": 230,
+       "y": 1520,
+       "scale": 0.72,
+       "dir": 1,
+       "turn": 0.45,
+       "pose": "stand",
+       "expr": "stern",
+       "keys": [
+        {
+         "p": 0.2,
+         "pose": "present"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 420,
+      "cy": 1180,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "day",
+      "gate": 1
+     },
+     "grade": "warm",
+     "stamps": [
+      {
+       "p": 0.3,
+       "text": "ARRESTED",
+       "color": "red",
+       "x": 1450,
+       "y": 800,
+       "size": 100
+      }
+     ],
+     "w": 1.1
+    },
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 200,
+       "y": 1350,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "sit_slumped",
+         "expr": "sad"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 500,
+      "cy": 1000,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 1020,
+      "w": 1200
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "lower": {
+      "p": 0.1,
+      "title": "Taunton jail",
+      "color": "red",
+      "kicker": "Held until trial"
+     },
+     "w": 0.9
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "say": "Which brings us back to that Sunday morning, in the kitchen.",
+   "claims": [],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [],
+     "view": {
+      "cx": 470,
+      "cy": 1030,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1080,
+      "w": 1300
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": 0.3
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC KITCHEN"
+    }
+   ],
+   "nonfactual": true,
+   "chapter": "The dress",
+   "chapter_title": "6 · The dress",
+   "tag": "Chapter 6 · The dress",
+   "cue": "tension"
+  },
+  {
+   "say": "Russell testified that Lizzie was at the stove with a dress, and that Emma was in the room.",
+   "claims": [
+    "C-DRESS-RUSSELL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lb8_alice",
+       "x": 880,
+       "y": 1300,
+       "scale": 0.56,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "stand",
+       "expr": "focused",
+       "depth": 0.56,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "hand_to_face",
+         "expr": "worried"
+        }
+       ]
+      },
+      {
+       "id": "lzb_emma",
+       "x": -40,
+       "y": 1420,
+       "scale": 0.66,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "hands_together",
+       "expr": "worried",
+       "depth": 0.9
+      },
+      {
+       "id": "lb8_lizzie",
+       "x": 650,
+       "y": 1460,
+       "scale": 0.7,
+       "dir": -1,
+       "turn": 0.55,
+       "pose": "present",
+       "expr": "blank",
+       "gaze": [
+        0.9,
+        0.7
+       ],
+       "outfit": "house"
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1100,
+      "w": 1450
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": {
+       "anim": [
+        0.2,
+        0.5
+       ],
+       "p0": 0.2,
+       "p1": 1.0
+      }
+     },
+     "grade": "warm",
+     "depicts": {
+      "person": "Lizzie Borden",
+      "act": "holding a dress at the kitchen stove"
+     },
+     "claims": [
+      "C-DRESS-BURNED"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Lizzie said she was going to burn this old thing up. It was covered with paint.",
+   "claims": [
+    "C-DRESS-PAINT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 650,
+       "y": 1460,
+       "scale": 0.7,
+       "dir": -1,
+       "turn": 0.55,
+       "pose": "stand",
+       "expr": "neutral",
+       "outfit": "house",
+       "headTurn": -0.4,
+       "gaze": [
+        -0.3,
+        0
+       ]
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 960,
+      "w": 1000
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": 0.6
+     },
+     "grade": "warm",
+     "lower": {
+      "p": 0.2,
+      "title": "“Covered with paint”",
+      "color": "red",
+      "kicker": "Lizzie's explanation, per Russell"
+     }
+    }
+   ]
+  },
+  {
+   "say": "Russell said she told Lizzie she would not let anyone see her do that.",
+   "claims": [
+    "C-RUSSELL-WARNING"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [
+      {
+       "id": "lb8_alice",
+       "x": 760,
+       "y": 1380,
+       "scale": 0.66,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "present",
+       "expr": "worried",
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "hands_together"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1000,
+      "w": 1100
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": 0.7
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · NOT A LIKENESS"
+    }
+   ]
+  },
+  {
+   "say": "But Russell also testified that she saw no blood on the dress, and never actually saw it go into the stove.",
+   "claims": [
+    "C-RUSSELL-NO-BLOOD"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "ALSO IN RUSSELL'S TESTIMONY",
+     "title": "What she did not see",
+     "items": [
+      "No blood on the dress",
+      "Not the dress going into the stove"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Emma testified that it was an old dress, stained with paint soon after it was made that May. When Lizzie said she would burn it, Emma's answer, she said, was: do it.",
+   "claims": [
+    "C-EMMA-DRESS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_parlour",
+     "figures": [
+      {
+       "id": "lzb_emma",
+       "x": 520,
+       "y": 1660,
+       "scale": 0.86,
+       "dir": 1,
+       "turn": 0.45,
+       "pose": "hands_together",
+       "expr": "determined",
+       "gaze": [
+        0.5,
+        0
+       ],
+       "keys": [
+        {
+         "p": 0.55,
+         "pose": "present"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 520,
+      "cy": 1100,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1080,
+      "w": 1100
+     },
+     "grade": "sepia",
+     "lower": {
+      "p": 0.12,
+      "title": "Emma Borden's testimony",
+      "color": "red",
+      "kicker": "For the defence"
+     },
+     "w": 1.2
+    },
+    {
+     "type": "cine",
+     "set": "lb8_kitchen",
+     "figures": [],
+     "view": {
+      "cx": 450,
+      "cy": 1180,
+      "w": 600
+     },
+     "view_to": {
+      "cx": 450,
+      "cy": 1190,
+      "w": 520
+     },
+     "setOpts": {
+      "open": 1,
+      "burn": {
+       "anim": [
+        0.5,
+        1.0
+       ],
+       "p0": 0.0,
+       "p1": 1.0
+      }
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC STOVE",
+     "w": 0.8
+    }
+   ]
+  },
+  {
+   "say": "Russell testified that she had not mentioned the dress at the early hearings.",
+   "claims": [
+    "C-RUSSELL-NO-BLOOD"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "AT FIRST",
+      "SHE SAID NOTHING"
+     ],
+     "em": [
+      "NOTHING"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "And at first, the grand jury did not indict Lizzie.",
+   "claims": [
+    "C-INDICTED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_juror",
+       "x": 180,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "default"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 340,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "grey"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 740,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "brown"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 900,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "default"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 870,
+      "w": 1700
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "label": "ILLUSTRATION · GENERIC GRAND JURY"
+    }
+   ]
+  },
+  {
+   "say": "Then, on the first of December, Russell went back and told them about the dress. The next day, Lizzie was indicted for murder.",
+   "claims": [
+    "C-INDICTED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_alice",
+       "x": 540,
+       "y": 1560,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.2,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.4,
+         "pose": "hands_together",
+         "expr": "worried"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1300
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "lower": {
+      "p": 0.1,
+      "title": "Alice Russell returns",
+      "color": "red",
+      "kicker": "1 December 1892"
+     },
+     "w": 1.2
+    },
+    {
+     "type": "verdict",
+     "text": "INDICTED",
+     "color": "red",
+     "lines": [
+      "Dec. 2, 1892"
+     ],
+     "at": 0.25,
+     "w": 0.8
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 3.2
+    }
+   ]
+  },
+  {
+   "say": "Prosecutors said the dress was burned to cover up the crime. The defence said it was burned in broad daylight, in front of witnesses.",
+   "claims": [
+    "C-DRESS-ARGUMENTS"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE PROSECUTION",
+      "THE DEFENCE"
+     ],
+     "big": [
+      "Destroyed evidence",
+      "Burned openly"
+     ],
+     "bigColor": [
+      "red",
+      "blue"
+     ],
+     "bigSize": 76,
+     "body": [
+      [
+       "to cover up the crime"
+      ],
+      [
+       "an old dress, burned in daylight"
+      ]
+     ],
+     "vs": "VS"
+    }
+   ]
+  },
+  {
+   "say": "The trial opened in New Bedford on the fifth of June, 1893.",
+   "claims": [
+    "C-TRIAL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 400,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 680,
+       "y": 790,
+       "scale": 0.42,
+       "dir": -1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "lb8_lizzie",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.35,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 870,
+      "w": 1700
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "lower": {
+      "p": 0.15,
+      "title": "New Bedford",
+      "color": "red",
+      "kicker": "5 June 1893",
+      "sub": "The murder trial opens"
+     }
+    }
+   ],
+   "chapter": "The trial",
+   "chapter_title": "7 · The trial",
+   "tag": "Chapter 7 · The trial",
+   "cue": "tension-rise"
+  },
+  {
+   "say": "Newspapers all over the country, and beyond, followed it.",
+   "claims": [
+    "C-PRESS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "press_hall",
+     "figures": [
+      {
+       "id": "lb8_juror",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 120,
+        "p0": 0.0,
+        "p1": 0.4,
+        "cadence": 7.0
+       },
+       "keys": [
+        {
+         "p": 0.45,
+         "pose": "read_newspaper",
+         "gaze": [
+          0.4,
+          0.6
+         ]
+        }
+       ],
+       "outfit": "grey",
+       "hat": {
+        "style": "bowler",
+        "color": "#2a2622"
+       }
+      },
+      {
+       "id": "lb8_juror",
+       "x": 800,
+       "y": 1880,
+       "scale": 1.0,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "read_newspaper",
+       "expr": "focused",
+       "outfit": "shirtsleeves",
+       "keys": [
+        {
+         "p": 0.5,
+         "expr": "shocked"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "grade": "sepia",
+     "label": "ILLUSTRATION · OUR OWN GENERIC NEWSPAPERS"
+    }
+   ]
+  },
+  {
+   "say": "Three judges sat on the case. The jury was twelve men.",
+   "claims": [
+    "C-JUDGES-JURY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 400,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 680,
+       "y": 790,
+       "scale": 0.42,
+       "dir": -1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 700,
+      "w": 1200
+     },
+     "grade": "sepia",
+     "setOpts": {
+      "dock": false
+     },
+     "w": 1.0
+    },
+    {
+     "type": "stat",
+     "value": "12",
+     "label": "men on the jury",
+     "note": "Three judges heard the case",
+     "w": 0.9,
+     "noCorner": true
+    }
+   ]
+  },
+  {
+   "say": "Lizzie's lead lawyer was George Robinson, a former governor of Massachusetts.",
+   "claims": [
+    "C-ROBINSON"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lzb_defence",
+       "x": 640,
+       "y": 1560,
+       "scale": 0.64,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point"
+        }
+       ]
+      },
+      {
+       "id": "lb8_lizzie",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.35,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "court"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 870,
+      "w": 1700
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "lower": {
+      "p": 0.15,
+      "title": "George D. Robinson",
+      "color": "red",
+      "kicker": "For the defence",
+      "sub": "Former governor of Massachusetts"
+     }
+    }
+   ]
+  },
+  {
+   "say": "And as governor, Robinson had appointed one of the three judges.",
+   "claims": [
+    "C-ROBINSON-APPOINTED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 400,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 680,
+       "y": 790,
+       "scale": 0.42,
+       "dir": -1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "lzb_defence",
+       "x": 760,
+       "y": 1560,
+       "scale": 0.64,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "hands_behind",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.4,
+         "headTurn": 0.4,
+         "gaze": [
+          0.2,
+          -0.6
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 900,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 690,
+      "w": 1100
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "As governor, Robinson had"
+        },
+        {
+         "text": "appointed one of the judges.",
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "One of the prosecutors, William Moody, would later sit on the United States Supreme Court.",
+   "claims": [
+    "C-MOODY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_lawyer",
+       "x": 640,
+       "y": 1560,
+       "scale": 0.64,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "point",
+       "expr": "stern",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "present"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 870,
+      "w": 1700
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "Prosecutor William H. Moody later"
+        },
+        {
+         "text": "became a U.S. Supreme Court justice.",
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Two things never reached the jury: Lizzie's inquest testimony, and the drugstore clerk's poison story. The judges kept both out.",
+   "claims": [
+    "C-EXCLUDED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 400,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 680,
+       "y": 790,
+       "scale": 0.42,
+       "dir": -1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 650,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 640,
+      "w": 900
+     },
+     "grade": "sepia",
+     "setOpts": {
+      "dock": false
+     },
+     "w": 0.8
+    },
+    {
+     "type": "list",
+     "kicker": "KEPT FROM THE JURY",
+     "title": "Ruled out by the judges",
+     "items": [
+      "Her inquest testimony",
+      "The prussic acid account"
+     ],
+     "w": 1.2
+    }
+   ]
+  },
+  {
+   "say": "Lizzie never took the stand.",
+   "claims": [
+    "C-NO-TESTIFY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.35,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "sit_read"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 380,
+      "cy": 1100,
+      "w": 1000
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia"
+    }
+   ]
+  },
+  {
+   "say": "In his charge to the jury, Justice Dewey stressed the presumption of innocence, and the gaps in the state's case. One newspaper said it was a plea for the innocent.",
+   "claims": [
+    "C-CHARGE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 400,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "judge",
+       "x": 680,
+       "y": 790,
+       "scale": 0.42,
+       "dir": -1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 680,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 640,
+      "w": 850
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "w": 1.2
+    },
+    {
+     "type": "kinetic",
+     "lines": [
+      "“A PLEA FOR",
+      "THE INNOCENT”"
+     ],
+     "em": [
+      "INNOCENT”"
+     ],
+     "sub": "A newspaper's verdict on the judge's charge",
+     "w": 0.9
+    }
+   ]
+  },
+  {
+   "say": "On the twentieth of June, the jury went out.",
+   "claims": [
+    "C-VERDICT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_juror",
+       "x": 100,
+       "y": 1420,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 100,
+        "to": 800,
+        "p0": 0.05,
+        "p1": 0.9,
+        "cadence": 5.5
+       },
+       "depth": 0.9,
+       "outfit": "default"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 260,
+       "y": 1420,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 260,
+        "to": 960,
+        "p0": 0.13,
+        "p1": 0.9,
+        "cadence": 5.5
+       },
+       "depth": 0.9,
+       "outfit": "grey"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 420,
+       "y": 1420,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 420,
+        "to": 1120,
+        "p0": 0.21000000000000002,
+        "p1": 0.9,
+        "cadence": 5.5
+       },
+       "depth": 0.9,
+       "outfit": "brown"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 580,
+       "y": 1420,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 580,
+        "to": 1280,
+        "p0": 0.29,
+        "p1": 0.9,
+        "cadence": 5.5
+       },
+       "depth": 0.9,
+       "outfit": "default"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 870,
+      "w": 1700
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "lower": {
+      "p": 0.1,
+      "title": "20 June 1893",
+      "color": "red",
+      "kicker": "The verdict"
+     }
+    }
+   ]
+  },
+  {
+   "say": "Accounts differ on how long they took. About an hour. Some say an hour and a half.",
+   "claims": [
+    "C-DELIBERATION"
+   ],
+   "shots": [
+    {
+     "type": "clock",
+     "time": "16:30",
+     "display": "ABOUT 1 HOUR",
+     "kicker": "JUNE 20, 1893",
+     "lines": [
+      "SOME SAY 90 MINUTES"
+     ],
+     "fromMins": 900
+    }
+   ]
+  },
+  {
+   "say": "Not guilty.",
+   "claims": [
+    "C-VERDICT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.35,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.4,
+         "pose": "bowed",
+         "expr": "relieved"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1080,
+      "w": 1100
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "stamps": [
+      {
+       "p": 0.12,
+       "text": "NOT GUILTY",
+       "color": "green",
+       "x": 1460,
+       "y": 380,
+       "size": 110
+      }
+     ]
+    }
+   ],
+   "cue": "revelation",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.3
+    }
+   ],
+   "min": 2.6
+  },
+  {
+   "say": "Lizzie and Emma inherited their father's fortune.",
+   "claims": [
+    "C-MAPLECROFT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 1200,
+       "y": 1500,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 600,
+        "p0": 0.0,
+        "p1": 0.85,
+        "cadence": 5.4
+       }
+      },
+      {
+       "id": "lzb_emma",
+       "x": 1450,
+       "y": 1500,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1500,
+        "to": 820,
+        "p0": 0.05,
+        "p1": 0.9,
+        "cadence": 5.4
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "maple"
+     },
+     "grade": "dawn",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL MAPLECROFT"
+    }
+   ],
+   "chapter": "After",
+   "chapter_title": "8 · After",
+   "tag": "Chapter 8 · After",
+   "cue": "aftermath"
+  },
+  {
+   "say": "They bought a big house in one of the best neighbourhoods in town, and Lizzie named it Maplecroft.",
+   "claims": [
+    "C-MAPLECROFT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1200
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "maple"
+     },
+     "grade": "dawn",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL MAPLECROFT",
+     "lower": {
+      "p": 0.3,
+      "title": "Maplecroft",
+      "color": "red",
+      "kicker": "French Street, Fall River"
+     }
+    }
+   ]
+  },
+  {
+   "say": "She began calling herself Lizbeth.",
+   "claims": [
+    "C-LIZBETH"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "LIZZIE",
+      "LIZBETH"
+     ],
+     "em": [
+      "LIZBETH"
+     ],
+     "box": true
+    }
+   ]
+  },
+  {
+   "say": "But much of Fall River shunned her for the rest of her life.",
+   "claims": [
+    "C-SHUNNED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 560,
+       "y": 1500,
+       "scale": 0.54,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 800,
+        "to": 300,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 5.0
+       }
+      },
+      {
+       "id": "lb8_neighbour",
+       "x": 120,
+       "y": 1510,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "stern",
+       "keys": [
+        {
+         "p": 0.35,
+         "turn": 0.95
+        }
+       ]
+      },
+      {
+       "id": "lb8_juror",
+       "x": 1000,
+       "y": 1520,
+       "scale": 0.54,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "stern",
+       "outfit": "grey",
+       "keys": [
+        {
+         "p": 0.55,
+         "turn": 0.95
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "maple"
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · NOT A LIKENESS"
+    }
+   ]
+  },
+  {
+   "say": "In 1905, Emma moved out. The sisters never reconciled.",
+   "claims": [
+    "C-EMMA-LEAVES"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lzb_emma",
+       "x": 560,
+       "y": 1500,
+       "scale": 0.54,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 560,
+        "to": 1400,
+        "p0": 0.1,
+        "p1": 1.0,
+        "cadence": 5.4
+       }
+      },
+      {
+       "id": "lb8_lizzie",
+       "x": 380,
+       "y": 1300,
+       "scale": 0.4,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "hands_together",
+       "expr": "sad",
+       "depth": 0.7
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "maple"
+     },
+     "grade": "dawn",
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "lower": {
+      "p": 0.1,
+      "title": "1905",
+      "color": "red",
+      "kicker": "Emma leaves Maplecroft"
+     }
+    }
+   ]
+  },
+  {
+   "say": "Lizzie died on the first of June, 1927. Emma died nine days later.",
+   "claims": [
+    "C-DEATHS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cemetery",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1300
+     },
+     "grade": "dawn",
+     "label": "ILLUSTRATION · GENERIC CEMETERY",
+     "lower": {
+      "p": 0.2,
+      "title": "June 1927",
+      "color": "red",
+      "kicker": "Nine days apart"
+     }
+    }
+   ],
+   "cue": "intimate"
+  },
+  {
+   "say": "In her will, Lizzie left money to the Animal Rescue League.",
+   "claims": [
+    "C-ANIMAL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cemetery",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 1140,
+      "w": 1100
+     },
+     "grade": "dawn",
+     "label": "ILLUSTRATION · GENERIC CEMETERY",
+     "funfacts": [
+      {
+       "p": 0.15,
+       "rows": [
+        {
+         "text": "Lizzie left part of her estate"
+        },
+        {
+         "text": "to the Animal Rescue League.",
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "So who killed Andrew and Abby Borden?",
+   "claims": [
+    "C-UNSOLVED"
+   ],
+   "shots": [
+    {
+     "type": "question",
+     "kicker": "THE OPEN QUESTION",
+     "lines": [
+      "Who killed",
+      "Andrew and Abby Borden?"
+     ]
+    }
+   ],
+   "chapter": "Who did it?",
+   "chapter_title": "9 · Who did it?",
+   "tag": "Chapter 9 · Who did it?",
+   "cue": "tension"
+  },
+  {
+   "say": "Prosecutors argued that it was Lizzie. She was at home. She burned a dress. A clerk said she had tried to buy poison, though the jury never heard that.",
+   "claims": [
+    "C-PROSECUTION-CASE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_lawyer",
+       "x": 700,
+       "y": 1560,
+       "scale": 0.64,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "point",
+       "expr": "stern",
+       "keys": [
+        {
+         "p": 0.35,
+         "pose": "present"
+        },
+        {
+         "p": 0.7,
+         "pose": "point"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 870,
+      "w": 1700
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "cards": [
+      {
+       "p": 0.08,
+       "x": 110,
+       "y": 170,
+       "w": 820,
+       "rows": [
+        {
+         "text": "THE PROSECUTION'S CASE"
+        },
+        {
+         "text": "She was at home",
+         "p": 0.2
+        },
+        {
+         "text": "The burned dress",
+         "p": 0.4
+        },
+        {
+         "text": "The poison account (excluded)",
+         "p": 0.65
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Historians have argued that her class, and the fact that she was a woman, help explain why she was not convicted.",
+   "claims": [
+    "C-HISTORIANS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_lizzie",
+       "x": 540,
+       "y": 1560,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.2,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "court"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1200
+     },
+     "setOpts": {
+      "dock": false
+     },
+     "grade": "sepia",
+     "lower": {
+      "p": 0.2,
+      "title": "The historians' view",
+      "color": "red",
+      "kicker": "Smithsonian · NPR"
+     }
+    }
+   ]
+  },
+  {
+   "say": "But no blood was found on her, no weapon was proven, and the jury that heard the evidence acquitted her.",
+   "claims": [
+    "C-NO-BLOOD",
+    "C-HATCHET",
+    "C-VERDICT"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "WHAT THE CASE LACKED",
+     "title": "As the defence stressed",
+     "items": [
+      "No blood on her",
+      "No proven weapon",
+      "No conviction"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Writers have pointed at others: at Bridget, at John Morse, at Emma, at an unknown intruder.",
+   "claims": [
+    "C-THEORIES"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THEORIES, NOT FINDINGS",
+     "title": "Suggested by writers since",
+     "items": [
+      "Bridget Sullivan",
+      "John Morse",
+      "Emma Borden",
+      "An intruder"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "There is no direct evidence against Bridget. Morse had an alibi. Emma was miles away.",
+   "claims": [
+    "C-THEORY-LIMITS"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE THEORY",
+      "THE RECORD"
+     ],
+     "big": [
+      "Other suspects",
+      "Nothing proven"
+     ],
+     "bigColor": [
+      "amber",
+      "blue"
+     ],
+     "bigSize": 80,
+     "body": [
+      [
+       "Bridget, Morse, Emma"
+      ],
+      [
+       "no direct evidence · an alibi · in Fairhaven"
+      ]
+     ],
+     "vs": "VS"
+    }
+   ]
+  },
+  {
+   "say": "In 2012, the journals of Lizzie's own lawyer surfaced. They had sat for years in his attic, in a Victorian bathtub.",
+   "claims": [
+    "C-JENNINGS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_parlour",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 1060,
+      "w": 1200
+     },
+     "setOpts": {
+      "night": true
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC INTERIOR",
+     "funfacts": [
+      {
+       "p": 0.25,
+       "rows": [
+        {
+         "text": "Defence lawyer Andrew Jennings's"
+        },
+        {
+         "text": "journals sat in his attic, in a"
+        },
+        {
+         "text": "Victorian bathtub.",
+         "color": "amber"
+        },
+        {
+         "text": "Made public in 2012.",
+         "size": 32
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "They did not solve it. Officially, the case is still unsolved.",
+   "claims": [
+    "C-UNSOLVED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1100
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME"
+    }
+   ]
+  },
+  {
+   "say": "Today, the house on Second Street is a museum, and a bed and breakfast. You can stay the night.",
+   "claims": [
+    "C-HOUSE-TODAY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lb8_house",
+     "figures": [
+      {
+       "id": "lb8_neighbour",
+       "x": -200,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 300,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.0
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "point_up",
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "funfacts": [
+      {
+       "p": 0.25,
+       "rows": [
+        {
+         "text": "The Borden house is now a"
+        },
+        {
+         "text": "museum and a bed & breakfast.",
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "chapter": "Today",
+   "chapter_title": "Today",
+   "tag": "Today",
+   "cue": "outro"
+  },
+  {
+   "say": "This autumn, a Netflix drama sent Lizzie Borden to number one all over again. This film has kept to the record.",
+   "claims": [
+    "C-NETFLIX"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE DRAMA",
+      "THE RECORD"
+     ],
+     "big": [
+      "Netflix, 2026",
+      "Fall River, 1892–93"
+     ],
+     "bigColor": [
+      "amber",
+      "blue"
+     ],
+     "bigSize": 72,
+     "body": [
+      [
+       "a scripted series"
+      ],
+      [
+       "testimony, rulings, the verdict"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "C-VERDICT",
+      "C-KILLED-AUG4"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Lizzie Borden was acquitted. No one else was ever charged. And more than a hundred and thirty years later, the question is still open.",
+   "claims": [
+    "C-VERDICT",
+    "C-UNSOLVED"
+   ],
+   "shots": [
+    {
+     "type": "endcard",
+     "kicker": "IN MEMORY OF ANDREW AND ABBY BORDEN",
+     "lines": [
+      "Lizzie Borden was acquitted in 1893.",
+      "The killings remain officially unsolved."
+     ],
+     "sub": "Sources for every claim are listed in the description.",
+     "chapterTag": "",
+     "out": "dip",
+     "claims": [
+      "C-VERDICT",
+      "C-UNSOLVED"
+     ]
+    }
+   ]
+  }
+ ]
+}
