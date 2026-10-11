@@ -46,3 +46,5 @@
 - 2026-10-11 12:04:00 tcv04-louvre-heist: RENDER FAILED, see out/tcv04-louvre-heist/ and fix; re-run produce.py 4
 - 2026-10-11 12:05:35 produce 4: regenerating episode data
 - 2026-10-11 12:05:35 tcv04-louvre-heist: rendering (final, seed 1)
+- 2026-10-11 12:18:36 tcv05-db-cooper: rendered in 896s
+- 2026-10-11 12:19:48 tcv05-db-cooper: VERIFIED -> series/true-crime-cinematic/output/true_crime_05_db_cooper.mp4 (79.1s, 34.7 MB, sha256 52aab85d5a38)
