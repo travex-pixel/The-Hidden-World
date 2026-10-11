@@ -14,9 +14,9 @@
         "fps": 30.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 31031260,
+        "size_bytes": 31027798,
         "mean_volume_db": -16.3,
-        "max_volume_db": -1.6
+        "max_volume_db": -1.8
       },
       "media_checks": {
         "has_video_stream": true,
@@ -62,14 +62,14 @@
       },
       "loudness": {
         "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.6
+        "true_peak_dbtp": -1.7
       },
       "asr_word_error_rate": 0.086,
       "frames_sampled": 14,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_01",
-      "sha256": "81adb3babbba42432fc32d46cdca7984b742a8bd3bf4443b205edd1c46160e2e",
+      "sha256": "3edd8f9144b4f1a4b0610b53e138546bab3b17c084b84f36b8e6d612cbbedb8b",
       "output": "series/true-crime-cinematic/output/true_crime_01.mp4",
-      "verified": "2026-10-11T08:35:24",
+      "verified": "2026-10-11T09:15:09",
       "episode_summary": "Azaria Chamberlain (Uluru, 1980-2012): a mother jailed for life on 'baby's blood' that was factory sound-deadener; a jacket found by chance freed her; a 2012 inquest confirmed a dingo took her daughter.",
       "editorial_review": {
         "reviewed": "2026-10-11",
@@ -126,9 +126,9 @@
         "fps": 30.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 31047315,
+        "size_bytes": 31044356,
         "mean_volume_db": -16.4,
-        "max_volume_db": -1.4
+        "max_volume_db": -1.6
       },
       "media_checks": {
         "has_video_stream": true,
@@ -174,16 +174,16 @@
       },
       "loudness": {
         "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.4
+        "true_peak_dbtp": -1.6
       },
       "asr_word_error_rate": 0.09,
       "frames_sampled": 15,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_02",
       "status": "verified_automated",
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "sha256": "e725dc134ae56c359fe16ac3b29a847cd658f10d15c5f01a132b993626da865f",
+      "sha256": "0c574d5aa4f2da0169e656ad3ba757c51130b0ac236049e6f0738f70f94d34ca",
       "output": "series/true-crime-cinematic/output/true_crime_02.mp4",
-      "verified": "2026-10-11T08:36:26",
+      "verified": "2026-10-11T09:16:25",
       "episode_summary": "The Unabomber (USA, 1978-1998): seventeen years without a name, until the FBI published his manifesto and his own family recognised the writing - and a twisted old saying.",
       "editorial_review": {
         "reviewed": "2026-10-11",
@@ -224,9 +224,79 @@
           ]
         }
       }
+    },
+    "03": {
+      "id": "tcv03-d4vd-case",
+      "title": "A Teen Was Found in a Pop Star's Tesla. Where the D4vd Case Stands Now #Shorts",
+      "file": "true_crime_d4vd_case.mp4",
+      "media": {
+        "duration": 79.091,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 33766579,
+        "mean_volume_db": -16.6,
+        "max_volume_db": -1.6
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 2371,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -17.4,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true,
+        "captions_in_safe_area": true,
+        "no_frozen_or_static_picture": true,
+        "audio_opening_speech_steady": true,
+        "audio_opening_no_holes": true,
+        "audio_narration_on_time": true,
+        "audio_music_never_masks": true,
+        "audio_music_audible": true,
+        "audio_no_clipping": true,
+        "audio_no_long_silence": true,
+        "audio_ending_intentional": true,
+        "audio_mono_compatible": true,
+        "audio_av_duration_match": true,
+        "shot_variety_and_character_action": true,
+        "every_shot_sourced_and_tagged": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "true_peak_dbtp": -1.6
+      },
+      "asr_word_error_rate": 0.077,
+      "frames_sampled": 14,
+      "qa_dir": "series/true-crime-cinematic/qa/true_crime_03",
+      "status": "verified_automated",
+      "sha256": "a2a132d362441aa3f03180b84432d1d9a2909f6e08046df4e5f62befffbe964c",
+      "output": "series/true-crime-cinematic/output/true_crime_d4vd_case.mp4",
+      "verified": "2026-10-11T09:09:25",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
     }
   },
-  "updated": "2026-10-11T08:36:26",
+  "updated": "2026-10-11T09:16:25",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

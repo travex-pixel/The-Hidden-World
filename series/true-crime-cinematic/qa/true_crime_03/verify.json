@@ -1,0 +1,162 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv03-d4vd-case/tcv03-d4vd-case.mp4",
+    "size_bytes": 33766579,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 79.091,
+    "audio_duration": 79.091,
+    "decode_stderr": "",
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.6,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv03-d4vd-case/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2371,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.4,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.077,
+    "transcript": "A Hollywood tow yard reported a smell coming from an impounded Tesla. Inside its front trunk were human remains. The car was registered to the singer David. The remains were identified as Celeste Ravez Hernandez of Lake Elsonor, California. Once passed with no charges. Then, in April 2026, police arrested the singer, David Anthony Burke. He is charged with murder. with special circumstances. Continuous actual abuse of a child under 14, an unlawful mutilation of human remains. Prosecutors alleged Celeste went to his home on April 23, 2025, aged 14, and was never seen alive again. He has pleaded not guilty. His lawyer said the evidence would show he did not murder her. In July, a judge ruled there There was enough evidence for a trial on every charge. That is not a verdict. Then his high profile lawyers withdrew, a public defender took over. There is still no trial day, and prosecutors have not decided on the death penalty. His next hearing is set for October 19th. That is when both sides are expected to say whether they are ready for trial. Until a jury decides he is presumed innocent. The less family is still waiting."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 98,
+      "extent": {
+        "left": 105.0,
+        "right": 975.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "yard reported a",
+        "circumstances,"
+      ]
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.2,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.84,
+      "frames": 790
+    },
+    "audio": {
+      "opening_speech_median_db": -20.6,
+      "opening_min_speech_window_db": -35.7,
+      "first_word_db": -13.7,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -35.1,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.308,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 12.6,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -34.8,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8312,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.6,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -35.5,
+      "end_before_db": -15.6,
+      "silent_tail_s": 0.0,
+      "ending_intentional": true,
+      "durations": {
+        "video": 79.033333,
+        "audio": 79.090998
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 12,
+      "composed_shots": 11,
+      "shots_with_characters": 10,
+      "character_shot_share": 0.91,
+      "distinct_sets": 6,
+      "max_set_share": 0.27,
+      "shot_sizes": {
+        "medium-wide": 2,
+        "medium": 6,
+        "map/graphic": 1,
+        "insert/graphic": 1,
+        "wide": 2
+      },
+      "max_shot_size_share": 0.5,
+      "ok": true
+    }
+  }
+}

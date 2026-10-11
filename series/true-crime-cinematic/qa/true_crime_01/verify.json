@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv01-chamberlain/tcv01-chamberlain.mp4",
-    "size_bytes": 31031260,
+    "size_bytes": 31027798,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -25,7 +25,7 @@
     "audio_duration": 84.286,
     "decode_stderr": "",
     "mean_volume_db": -16.3,
-    "max_volume_db": -1.6,
+    "max_volume_db": -1.8,
     "long_silences": [],
     "contact_sheet": "/home/user/The-Hidden-World/out/tcv01-chamberlain/contact_sheet.png",
     "all_passed": true
@@ -60,7 +60,7 @@
   },
   "loudness": {
     "integrated_lufs": -14.2,
-    "true_peak_dbtp": -1.6
+    "true_peak_dbtp": -1.7
   },
   "asr": {
     "engine": "sherpa-onnx whisper tiny.en",
@@ -111,15 +111,16 @@
       "music_audible": true,
       "longest_silence_s": 0.0,
       "no_long_silence": true,
-      "sample_peak": 0.8285,
+      "sample_peak": 0.8168,
       "loudness_lufs": -14.2,
-      "true_peak_dbtp": -1.6,
+      "true_peak_dbtp": -1.7,
       "mono_lufs": -14.2,
       "no_clipping": true,
       "mono_compatible": true,
-      "end_last_db": -59.4,
+      "end_last_db": -85.6,
       "end_before_db": -13.0,
-      "silent_tail_s": 0.1,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.3,
       "ending_intentional": true,
       "durations": {
         "video": 84.233333,

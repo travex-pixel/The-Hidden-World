@@ -68,3 +68,25 @@ Considered and rejected for now:
 - This is 2D cut-out animation: rigid limbs, no cloth or hair simulation, simple hands and a fixed set of expressions. It is readable and consistent at phone size, but it is not hand-drawn studio animation.
 - Real people are deliberately generic, illustrated representations. They are identified by on-screen labels, not by likeness.
 - No real archival photographs are used, because this environment could not download or verify their licences. The pipeline can include licensed images later through an `<image>` prop.
+
+## 7. Opening audio "dropout" (October 2026): measured root cause and fix
+**Reported:** the audio cut out or was weak at the start and improved at about 10 s.
+
+**Reproduced:** on Case Files 01 and 02 (cinematic) I measured momentary loudness and the separate narration, music and effects tracks, through a 300 Hz high-pass that models a phone speaker.
+- Stream timing was fine: audio and video both start at 0, the durations match within 53 ms, and the first word is at 0.25 s.
+- **Cause 1, the main one (perceived):** 93 % of the opening score's energy was below 300 Hz (76 % below 150 Hz). Phone speakers barely reproduce that. The hook has three short scenes in its first 10 s, with narration gaps of 0.6–1.0 s, and in those gaps the phone output fell to about −40 dB, 20–26 dB below the voice. It sounds like the audio cutting out. After about 10 s the scenes are longer, so the gaps are rarer.
+- **Cause 2 (pipeline bug):** the "linear" two-pass ffmpeg loudnorm silently fell back to **dynamic** mode on the real mix (I −14.51 LUFS, TP −0.44 dBTP; ffmpeg reported `normalization_type: dynamic`). Dynamic mode rides the gain on a 3 s window.
+- **Found during review:** a rain effect bed was chopped in the last 20 ms of the D4vd episode while the picture faded.
+
+**Fix (reusable, all episodes with a `score` block):**
+- `pipeline/score.py`: an original sectioned score with phone-audible mid-range content (felt piano motif, mid pad, breathing noise band, metal).
+- `pipeline/mixdown.py`:
+  - per-line voice levelling;
+  - look-ahead per-stem ducking: the bed rises in gaps and recedes under speech;
+  - music drops;
+  - a master tail fade;
+  - linear gain plus limiter loudness (never dynamic).
+- `pipeline/audio_qa.py`: ten measured checks in the QA gate.
+- `tests/test_audio_v2.py`: regression tests (holes in gaps, masking, phone audibility against the old cue, linear loudness, fades, a chopped ending).
+
+**Result (Case File 01):** the opening gap bed went from 26.5 dB to 18 dB under speech (phone band). Music stays at least 10 dB under the voice in 95 % of speech windows. Loudness is −14.2 LUFS, TP −1.7 dBTP, the mix is mono-safe and the ending is clean.
