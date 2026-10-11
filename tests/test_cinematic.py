@@ -86,6 +86,9 @@ class CinematicEpisodes(unittest.TestCase):
             for x in re.findall(r"\bexpr: '(\w+)'", js):
                 self.assertIn(x, EXPRS, f"{eid}: unknown expression {x}")
             local = set(re.findall(r"E\.sets\.(\w+) =", js))
+            i = js.find("E.registerSets(")   # environments an episode adds itself (set functions take (ctx, o))
+            if i >= 0:
+                local |= set(re.findall(r"\b(\w+)\s*\(\s*ctx\s*,\s*o\b", js[i:]))
             for s in re.findall(r"\bset: '(\w+)'", js):
                 self.assertIn(s, SETS | local, f"{eid}: unknown set {s}")
             for fid, var in re.findall(r"id: '(\w+)', outfit: '(\w+)'", js):
