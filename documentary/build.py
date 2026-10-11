@@ -161,6 +161,19 @@ def drone(total: float, key_hz: float = 55.0, seed: int = 1) -> np.ndarray:
     return y
 
 
+def mux(silent: Path, mix_wav: Path, final: Path, I: float = -16.0, TP: float = -2.0, LRA: float = 11.0) -> dict:
+    """Copy the video stream; loudness-normalise the mix in two passes (measure, then linear gain) and encode AAC."""
+    meas = subprocess.run(["ffmpeg", "-v", "info", "-i", str(mix_wav), "-af", f"loudnorm=I={I}:TP={TP}:LRA={LRA}:print_format=json", "-f", "null", "-"],
+                          capture_output=True, text=True).stderr
+    m = json.loads(meas[meas.rindex("{"): meas.rindex("}") + 1])
+    af = (f"loudnorm=I={I}:TP={TP}:LRA={LRA}:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
+          f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(mix_wav), "-map", "0:v:0", "-map", "1:a:0",
+                    "-c:v", "copy", "-af", af, "-ar", "48000", "-c:a", "aac", "-b:a", "192k",
+                    "-movflags", "+faststart", "-shortest", str(final)], check=True)
+    return m
+
+
 # ------------------------------------------------------------------ main
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
@@ -278,10 +291,8 @@ def main(argv=None) -> int:
 
     # 7. mux with loudness normalisation (YouTube-friendly ~-16 LUFS integrated, -1.5 dBTP)
     final = out / "documentary.mp4"
-    log("mux: H.264 + AAC, loudnorm")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out / "mix.wav"), "-map", "0:v:0", "-map", "1:a:0",
-                    "-c:v", "copy", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac", "-b:a", "192k",
-                    "-movflags", "+faststart", "-shortest", str(final)], check=True)
+    log("mux: H.264 + AAC, two-pass loudnorm (-16 LUFS, -2 dBTP)")
+    mux(silent, out / "mix.wav", final)
 
     # 8. verify
     log("verify: streams, codecs, dimensions, fps, duration, full decode, loudness")

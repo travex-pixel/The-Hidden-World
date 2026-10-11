@@ -11,11 +11,11 @@ import argparse, json, re, subprocess, sys
 from pathlib import Path
 
 CLIPS = [
-    {"slug": "01-guilty-then-not-guilty", "in": 0.0, "out": 31.7, "hook": "SAME MAN.\\NTWO VERDICTS."},
-    {"slug": "02-what-the-jury-never-heard", "in": 119.34, "out": 172.5, "hook": "THE JURY NEVER\\NHEARD THIS"},
-    {"slug": "03-the-900-dollar-note", "in": 250.68, "out": 305.8, "hook": "“RUSS'S MONEY”"},
-    {"slug": "04-he-walked-free", "in": 219.62, "out": 248.38, "hook": "3½ YEARS LATER"},
-    {"slug": "05-where-it-stands", "in": 416.1, "out": 446.2, "hook": "STILL NO VERDICT"},
+    {"slug": "01-guilty-then-not-guilty", "in": 0.0, "out": 25.7, "hook": "SAME MAN.\\NTWO VERDICTS."},
+    {"slug": "02-the-argument-the-jury-never-heard", "in": 117.2, "out": 172.4, "hook": "THE ARGUMENT THE\\NJURY NEVER HEARD"},
+    {"slug": "03-the-900-dollar-note", "in": 248.4, "out": 302.8, "hook": "“RUSS'S MONEY”"},
+    {"slug": "04-he-walked-free", "in": 218.4, "out": 246.1, "hook": "3½ YEARS LATER"},
+    {"slug": "05-where-it-stands", "in": 406.9, "out": 437.0, "hook": "STILL NO VERDICT"},
 ]
 
 
@@ -48,16 +48,24 @@ WrapStyle: 0
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Hook,Inter Display Black,96,&H00EAF0F6,&H00000000,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,0,6,8,60,60,230,1
-Style: Cap,Inter,62,&H00FFFFFF,&H00000000,&H00101010,&H96000000,1,0,0,0,100,100,0,0,1,5,2,2,70,70,400,1
+Style: Cap,Inter,64,&H00FFFFFF,&H00000000,&H00101010,&H96000000,1,0,0,0,100,100,0,0,1,5,2,2,70,70,400,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = [f"Dialogue: 1,{ass_time(0)},{ass_time(dur)},Hook,,0,0,0,,{{\\fad(150,0)}}{clip['hook']}"]
+    from documentary.build import chunk_caption
     for a, b, txt in cues:
         if b <= clip["in"] or a >= clip["out"]:
             continue
-        ev.append(f"Dialogue: 0,{ass_time(a - clip['in'])},{ass_time(min(b, clip['out']) - clip['in'])},Cap,,0,0,0,,{txt}")
+        # vertical frame: re-chunk to <= 2 lines of <= 28 chars, splitting the cue's time by text length
+        parts = chunk_caption(txt.replace("\\N", " "), max_chars=28)
+        w = [len(x) + 4 for x in parts]; t = a
+        for x, k in zip(parts, w):
+            d = (b - a) * k / sum(w)
+            if t + d > clip["in"] and t < clip["out"]:
+                ev.append(f"Dialogue: 0,{ass_time(t - clip['in'])},{ass_time(min(t + d, clip['out']) - clip['in'])},Cap,,0,0,0,,{x.replace(chr(10), '\\N')}")
+            t += d
     path.write_text(head + "\n".join(ev) + "\n")
 
 
