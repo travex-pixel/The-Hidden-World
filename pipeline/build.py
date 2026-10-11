@@ -93,6 +93,19 @@ def fx_time(s, fx):
     return s["start"] + fx.get("at", 0.0)
 
 
+def resolve_score_times(ep: dict, tl: list) -> dict:
+    """Score hits and the cliffhanger impact may be anchored to spoken words: {"scene": id, "word": [line, word], "at": offset}.
+    Returns a copy of the episode whose score has absolute times ("at" in seconds, "cliff_at")."""
+    by_id = {s["id"]: s for s in tl}; cfg = dict(ep.get("score") or {})
+    def t_of(h):
+        s = by_id[h["scene"]] if h.get("scene") in by_id else None
+        return fx_time(s, h) if s else float(h.get("at", 0.0))
+    cfg["hits"] = [{"at": round(t_of(h), 3), "gain": h.get("gain", 0.5)} for h in cfg.get("hits", [])]
+    if isinstance(cfg.get("cliff"), dict):
+        cfg["cliff_at"] = round(t_of(cfg["cliff"]), 3)
+    return {**ep, "score": cfg}
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("episode")
@@ -176,13 +189,24 @@ def main(argv=None) -> int:
             g = 10 ** (sc.get("music_gain_db", 0) / 20)
             a, b = int(s["start"] * audio.SR), min(len(music), int(s["end"] * audio.SR))
             env[a:b] = g
-        k = np.ones(fade, np.float32) / fade
-        music = (music * np.convolve(env, k, mode="same")).astype(np.float32)
-    mixed = audio.mix(total, clips, music, sfx_events, seed)
+        from pipeline.score import smooth
+        music = (music * smooth(env, fade)).astype(np.float32)
+    report = {"engine": "legacy cues"}
+    if ep.get("score") is not None:   # structured original score + narration-first ducking mix (pipeline/score.py, pipeline/mixdown.py)
+        from pipeline import score as score_mod, mixdown
+        sc_ = score_mod.compose_score(resolve_score_times(ep, tl), tl, total, seed)
+        mixed, rep = mixdown.mixdown(total, clips, sc_["stems"], sfx_events, tl, ep, seed, out_dir)
+        music = sum(sc_["stems"].values())
+        report = {"engine": "structured score", "sections": dict(zip([s["id"] for s in tl], sc_["sections"])), "root_hz": sc_["root_hz"], "bpm": sc_["bpm"], **rep}
+        log(f"audio: structured score, sections {''.join(sc_['sections'])}")
+    else:
+        mixed = audio.mix(total, clips, music, sfx_events, seed)
     audio.write_wav(out_dir / "mix.wav", mixed)
-    if ep.get("loudness_lufs"):   # optional: normalise the final mix (YouTube plays back at about -14 LUFS)
-        audio.loudnorm(out_dir / "mix.wav", float(ep["loudness_lufs"]))
-        log(f"audio: loudness normalised to {ep['loudness_lufs']} LUFS")
+    if ep.get("loudness_lufs"):   # normalise the final mix (YouTube plays back at about -14 LUFS); linear, never dynamic
+        from pipeline import mixdown
+        report["loudness"] = mixdown.normalise_linear(out_dir / "mix.wav", float(ep["loudness_lufs"]))
+        log(f"audio: loudness {report['loudness']['before']['I']} -> {report['loudness']['after']['I']} LUFS, TP {report['loudness']['after']['TP']} dBTP (linear)")
+    (out_dir / "audio_report.json").write_text(json.dumps(report, indent=2))
     audio.write_wav(out_dir / "music_only.wav", music)
 
     # 3. render frames

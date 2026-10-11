@@ -33,7 +33,7 @@ def base(ep_id, number, title, question, figures, scenes, claims, sources, label
     return {"id": ep_id, "number": number, "series": "THE HIDDEN WORLD: Case Files (cinematic)", "title": title, "central_question": question,
             "template": "true-crime", "narrator_voice": NARR["model"], "narrator_profile": NARR, "loudness_lufs": -14,
             "target_duration_seconds": [4 if number == 0 else 45, 90], "visual_mode": "svg", "caption_style": "punch", "caption_max_w": CAPTION_MAX_W, "overlay": "wash",
-            "case_file": {"number": f"{number:02d}", "label": label}, "music": {"bpm": bpm, "beat_snap": 1}, "figures": figures,
+            "case_file": {"number": f"{number:02d}", "label": label}, "music": {"bpm": bpm, "beat_snap": 1}, "score": {"root_hz": 146.83, "bpm": bpm}, "figures": figures,
             "content_notes": "Characters are illustrated representations, not likenesses; no real photograph, footage or document is imitated. No dialogue is invented: people do not speak, only the narrator.",
             "scenes": scenes, "claims": claims, "sources": sources}
 

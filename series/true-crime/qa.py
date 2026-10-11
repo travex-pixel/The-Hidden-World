@@ -20,7 +20,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT))
 from pipeline.series import series_qa, sha256  # noqa: E402
-from pipeline import caption_safe, motion_qa, shot_manifest  # noqa: E402
+from pipeline import audio_qa, caption_safe, motion_qa, shot_manifest  # noqa: E402
 
 TOOLS = HERE / "tools"   # offline speech recogniser, shared by every series folder
 SERIES = HERE            # the series folder being verified (switch with --series)
@@ -110,6 +110,9 @@ def main(argv=None) -> int:
     if plan["episode"].get("caption_style") == "punch":
         cs = caption_safe.check(plan); studio["captions"] = cs; qa["captions_in_safe_area"] = cs["ok"]
     mq = motion_qa.analyse(src, tl); studio["motion"] = mq; qa["no_frozen_or_static_picture"] = mq["ok"]
+    aq = audio_qa.analyse(src, out, plan["episode"]); studio["audio"] = aq   # opening dropout, holes, masking, clipping, ending, mono
+    for k, v in aq["checks"].items():
+        qa[f"audio_{k}"] = v
     if plan["episode"].get("figures"):
         sm = shot_manifest.build(ep["id"], {"series_manifest": str(MANIFEST.relative_to(ROOT)), "video": ep["file"]})
         studio["slideshow_risk"] = sm["slideshow_risk"]; qa["shot_variety_and_character_action"] = sm["slideshow_risk"]["ok"]

@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv01-chamberlain/tcv01-chamberlain.mp4",
-    "size_bytes": 31016720,
+    "size_bytes": 31031260,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -24,8 +24,8 @@
     "duration": 84.286,
     "audio_duration": 84.286,
     "decode_stderr": "",
-    "mean_volume_db": -17.3,
-    "max_volume_db": -1.2,
+    "mean_volume_db": -16.3,
+    "max_volume_db": -1.6,
     "long_silences": [],
     "contact_sheet": "/home/user/The-Hidden-World/out/tcv01-chamberlain/contact_sheet.png",
     "all_passed": true
@@ -37,7 +37,7 @@
     "frames_checked": 2527,
     "no_black_frames": true,
     "captions_timed_within_scenes": true,
-    "speech_db_min": -18.2,
+    "speech_db_min": -17.8,
     "dialogue_clear_of_music": true,
     "all_passed": true,
     "loudness_near_target": true,
@@ -45,17 +45,27 @@
     "narration_intelligible_asr": true,
     "captions_in_safe_area": true,
     "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
     "shot_variety_and_character_action": true,
     "every_shot_sourced_and_tagged": true
   },
   "loudness": {
-    "integrated_lufs": -14.1,
-    "true_peak_dbtp": -1.2
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
   },
   "asr": {
     "engine": "sherpa-onnx whisper tiny.en",
-    "word_error_rate": 0.077,
-    "transcript": "A mother was jailed for life from murdering her baby. The baby's blood in her car was never blood. August 1980, a campsite at Uluru. Lindy Chamberlain said a dingo took her nine-week old daughter, Azaria, from their tent. Azaria was never found, her jumpsuit was near the rock. But not the matinee jacket Lindy said Azaria wore over it. Prosecutors said she killed Azaria in the family car. and that test found a baby's blood, even a spray of it under the dashboard. October 1982, guilty of murder, life with hard labor. In 1984, the High Court rejected her appeal, three votes to two. Then in early 1986, a tourist fell to his death from Wuhluru, searching near Dingo Dens below the rock, police found something else. Azaria's matinee jacket. 5 days later, Lindy was released from prison. Then, a royal commission reexamine the science. What spray under the dashboard? Sound, dead in compound, applied at the factory. No blood was found in the car at all. In 1988, all the convictions were quashed. But only in 2012 did a coroner finally rule how his area died. attacked and taken by a dingo. Just as her mother said almost 32 years earlier."
+    "word_error_rate": 0.086,
+    "transcript": "A mother was jailed for life from murdering her baby. But the baby's blood in her car was never blood. August 1980, a campsite at Uluru. Lindy Chamberlain said a dingo took her nine-week old daughter, Azaria, from their tent. Azaria was never found, her jumpsuit was near the rock. But not the mat in a jacket Lindy said Azaria wore over it. Prosecutors said she killed Azaria in the family car. and that test found a baby's blood, even a spray of it under the dashboard. October 1982, guilty of murder, life with hard labor. In 1984, the High Court rejected her appeal, three votes to two. Then in early 1986, a tourist fell to his death from Wuhluru, searching near Dingo Dens below the rock, police found something else. Azaria's matinee jacket. 5 days later, Lindy was released from prison. Then, a royal commission reexamine the science. What spray under the dashboard? Sound, dead in compound, applied at the factory. No blood was found in the car at all. In 1988, all the convictions were quashed. But only in 2012 did a coroner finally rule how his area died. attacked and taken by a dingo. Just as her mother said almost 32 years earlier."
   },
   "studio": {
     "captions": {
@@ -84,6 +94,51 @@
       "beats_without_visual_change": [],
       "median_motion": 1.78,
       "frames": 842
+    },
+    "audio": {
+      "opening_speech_median_db": -20.5,
+      "opening_min_speech_window_db": -33.0,
+      "first_word_db": -17.1,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -38.8,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.327,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 12.9,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -32.4,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8285,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.6,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -59.4,
+      "end_before_db": -13.0,
+      "silent_tail_s": 0.1,
+      "ending_intentional": true,
+      "durations": {
+        "video": 84.233333,
+        "audio": 84.286009
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
     },
     "slideshow_risk": {
       "shots": 14,
