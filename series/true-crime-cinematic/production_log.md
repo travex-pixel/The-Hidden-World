@@ -31,3 +31,7 @@
 - 2026-10-11 11:30:58 tcv07-gilgo-beach: VERIFIED -> series/true-crime-cinematic/output/true_crime_07_gilgo_beach.mp4 (77.7s, 32.8 MB, sha256 a16f4723252c)
 - 2026-10-11 11:31:02 produce 9: regenerating episode data
 - 2026-10-11 11:31:02 tcv09-agatha-christie: rendering (final, seed 1)
+- 2026-10-11 11:44:30 tcv06-whitey-bulger: rendered in 1038s
+- 2026-10-11 11:45:44 tcv06-whitey-bulger: VERIFIED -> series/true-crime-cinematic/output/true_crime_06_whitey_bulger.mp4 (77.9s, 29.4 MB, sha256 1fc55be1b0be)
+- 2026-10-11 11:45:51 produce 5: regenerating episode data
+- 2026-10-11 11:45:51 tcv05-db-cooper: rendering (final, seed 1)
