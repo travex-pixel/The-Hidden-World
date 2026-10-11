@@ -1,0 +1,1007 @@
+{
+ "id": "tcv09-agatha-christie",
+ "number": 9,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Agatha Christie Vanished for 11 Days. Then She Checked In Under a Fake Name.",
+ "central_question": "Where was Agatha Christie for 11 days in December 1926, and why did she never explain?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "Neele": "Neel"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "09",
+  "label": "AGATHA CHRISTIE · 1926"
+ },
+ "music": {
+  "bpm": 76,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 76,
+  "hits": [
+   {
+    "scene": "s09_name",
+    "word": [
+     1,
+     0
+    ],
+    "at": 0.0,
+    "gain": 0.45
+   }
+  ],
+  "cliff": {
+   "scene": "s11_never",
+   "word": [
+    0,
+    1
+   ],
+   "at": -0.1
+  }
+ },
+ "figures": [
+  "ac9_agatha",
+  "ac9_constable",
+  "ac9_inspector",
+  "ac9_volunteer",
+  "ac9_musician",
+  "ac9_clerk",
+  "ac9_doyle"
+ ],
+ "content_notes": "Not a crime: a real, unsolved disappearance; no one was charged and she was found alive. Agatha Christie and Arthur Conan Doyle are illustrated representations, not likenesses; police, volunteers, hotel staff and musicians are generic 1920s figures. Search figures are attributed to press reports; theories are attributed and none is presented as fact. Her distress is treated kindly. No real photograph, newspaper masthead, hotel register or police document is imitated: cards are our own typed graphics. No dialogue is invented.",
+ "scenes": [
+  {
+   "id": "s01_car",
+   "scene": "ac9_car",
+   "min_duration": 4.0,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": 0.1,
+     "name": "wind",
+     "gain": 0.6
+    },
+    {
+     "at": 3.8,
+     "name": "wind",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      13
+     ],
+     "name": "sting",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "A_guinness",
+    "A_search",
+    "A_found",
+    "A_neele"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The world's best-selling novelist vanished for eleven days."
+    },
+    {
+     "who": "narrator",
+     "text": "Thousands hunted for her. Then she turned up at a spa hotel, under a fake name.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "vanished",
+    "eleven",
+    "thousands",
+    "fake",
+    "name."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_night",
+   "scene": "ac9_night",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "door",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_left",
+    "A_marriage",
+    "A_guinness"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On December 3rd, 1926, Agatha Christie drove off into the night."
+    },
+    {
+     "who": "narrator",
+     "text": "Her husband had fallen for another woman.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "agatha",
+    "christie",
+    "another",
+    "woman."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_found",
+   "scene": "ac9_found",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "flutter",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_car"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next morning, her car was found abandoned beside a chalk pit."
+    },
+    {
+     "who": "narrator",
+     "text": "Her fur coat was still inside. Agatha was not.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "abandoned",
+    "chalk",
+    "not."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_search",
+   "scene": "ac9_hunt",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.7,
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 1.2,
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.4,
+     "word": [
+      1,
+      0
+     ],
+     "name": "rumble",
+     "gain": 0.7
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_search"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Over a thousand police were reported searching, with thousands of volunteers."
+    },
+    {
+     "who": "narrator",
+     "text": "Even aeroplanes, the papers said.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "thousand",
+    "thousands",
+    "aeroplanes,"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_press",
+   "scene": "ac9_press",
+   "min_duration": 3.4,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "paper",
+     "gain": 0.7
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      9
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_rumours"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Rumours flew. Had she been murdered? Was her husband to blame?"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "murdered?",
+    "husband"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_doyle",
+   "scene": "ac9_doyle",
+   "min_duration": 4.9,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "A_doyle"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sherlock Holmes's creator, Arthur Conan Doyle, took her glove to a medium."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sherlock",
+    "glove"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_hotel",
+   "scene": "ac9_hotel",
+   "min_duration": 4.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "chime",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "A_found"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Eleven days after she vanished, she was recognised at a spa hotel in Harrogate."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "recognised",
+    "harrogate."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_name",
+   "scene": "ac9_name",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "pen",
+     "gain": 0.6
+    },
+    {
+     "at": -0.04,
+     "word": [
+      1,
+      0
+     ],
+     "name": "hit",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "A_neele"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She had checked in as Mrs Teresa Neele, from Cape Town."
+    },
+    {
+     "who": "narrator",
+     "text": "Neele. The surname of her husband's mistress.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "teresa",
+    "neele,",
+    "neele.",
+    "mistress."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s10_theories",
+   "scene": "ac9_theories",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      2,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      2,
+      7
+     ],
+     "name": "paper",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "A_memory",
+    "A_theories"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Her family blamed memory loss."
+    },
+    {
+     "who": "narrator",
+     "text": "Biographer Andrew Norman suggests a 'fugue state', brought on by trauma.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "Others suspect revenge on Archie, or a publicity stunt.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "memory",
+    "fugue",
+    "revenge",
+    "stunt."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s11_never",
+   "scene": "ac9_never",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_never"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She never fully explained those eleven days.",
+     "pause_before": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "Her autobiography doesn't mention them at all.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "never",
+    "at",
+    "all."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s12_anniv",
+   "scene": "ac9_anniv",
+   "min_duration": 4.4,
+   "pad_after": 0.2,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.5
+    },
+    {
+     "at": 3.8,
+     "name": "wind",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "A_centenary",
+    "A_never"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This December 3rd marks exactly 100 years. The mystery is still unsolved.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "100",
+    "unsolved."
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s13_next",
+   "scene": "ac9_next",
+   "min_duration": 3.0,
+   "pad_after": 1.45,
+   "music_cue": "outro",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      0
+     ],
+     "name": "ping",
+     "gain": 0.5
+    }
+   ],
+   "claims": [],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Which mystery should we crack next? Tell us in the comments.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "next?",
+    "comments."
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "A_guinness",
+   "type": "established",
+   "nature": "fact",
+   "text": "Guinness World Records lists Agatha Christie as the best-selling fiction writer of all time, with an estimated 2 billion copies sold.",
+   "sources": [
+    "guinness",
+    "iwm"
+   ]
+  },
+  {
+   "id": "A_left",
+   "type": "established",
+   "nature": "fact",
+   "text": "On the evening of 3 December 1926 Agatha Christie left her home in Sunningdale, Berkshire, by car.",
+   "sources": [
+    "countryfile",
+    "historyhit",
+    "na_blog"
+   ]
+  },
+  {
+   "id": "A_marriage",
+   "type": "established",
+   "nature": "fact",
+   "text": "Her marriage was in crisis: her husband Archie had told her he was in love with another woman, Nancy Neele, and wanted a divorce.",
+   "sources": [
+    "gizmodo",
+    "aspects",
+    "natgeo"
+   ]
+  },
+  {
+   "id": "A_car",
+   "type": "established",
+   "nature": "fact",
+   "text": "Her car was found abandoned the next morning (4 Dec 1926) at Newlands Corner near Guildford, Surrey, beside an old chalk pit on the North Downs; the police letter lists a fur coat, a dressing case and her driving licence inside, and other accounts mention her luggage. She was not there.",
+   "sources": [
+    "na_record",
+    "countryfile",
+    "bitesized",
+    "blackpool"
+   ]
+  },
+  {
+   "id": "A_search",
+   "type": "established",
+   "nature": "reported",
+   "text": "Press reports and later popular accounts say more than 1,000 police and an estimated 15,000 volunteers searched, and that aeroplanes were used. A Surrey Constabulary letter says some press reports overstated the operation, so the figures are narrated as reported.",
+   "sources": [
+    "countryfile",
+    "sundaypost",
+    "bitesized",
+    "na_record"
+   ]
+  },
+  {
+   "id": "A_rumours",
+   "type": "established",
+   "nature": "reported",
+   "text": "Public speculation at the time ranged from accident to murder, and some suspected her husband. No one was ever charged, and she was found alive.",
+   "sources": [
+    "aspects",
+    "historyhit",
+    "stylist"
+   ]
+  },
+  {
+   "id": "A_doyle",
+   "type": "established",
+   "nature": "fact",
+   "text": "Sir Arthur Conan Doyle gave one of Christie's gloves to a medium (the psychometrist Horace Leaf) for a reading, on 12 Dec 1926.",
+   "sources": [
+    "acd_encyc",
+    "histcoll",
+    "countryfile"
+   ]
+  },
+  {
+   "id": "A_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 14 Dec 1926, 11 days after she vanished, she was recognised at the Swan Hydropathic Hotel in Harrogate, Yorkshire (now the Old Swan Hotel); a member of the hotel band is said to have recognised her.",
+   "sources": [
+    "wiki_oldswan",
+    "gizmodo",
+    "historyhit",
+    "ripon"
+   ]
+  },
+  {
+   "id": "A_neele",
+   "type": "established",
+   "nature": "fact",
+   "text": "She had registered as Mrs Teresa (Theresa) Neele, from Cape Town; Neele was the surname of her husband's mistress, Nancy Neele.",
+   "sources": [
+    "gizmodo",
+    "worsley_pp",
+    "wiki_oldswan",
+    "natgeo"
+   ]
+  },
+  {
+   "id": "A_memory",
+   "type": "established",
+   "nature": "fact",
+   "text": "The family's public explanation was that she had lost her memory (amnesia).",
+   "sources": [
+    "aetv",
+    "historyhit",
+    "stylist"
+   ]
+  },
+  {
+   "id": "A_theories",
+   "type": "established",
+   "nature": "theory",
+   "text": "Theories, none proven: biographer Andrew Norman suggests a psychogenic 'fugue state' brought on by trauma or depression; others suggest revenge on, or embarrassing, her husband (pointing to the name Neele); rumours of a publicity stunt circulated; historian Lucy Worsley points to trauma and a depressive episode.",
+   "sources": [
+    "natgeo",
+    "historyhit",
+    "aetv",
+    "stylist",
+    "worsley_pp"
+   ]
+  },
+  {
+   "id": "A_never",
+   "type": "established",
+   "nature": "fact",
+   "text": "Christie never fully explained the 11 days, and her autobiography does not mention them.",
+   "sources": [
+    "historyhit",
+    "aetv"
+   ]
+  },
+  {
+   "id": "A_centenary",
+   "type": "established",
+   "nature": "fact",
+   "text": "The disappearance began on 3 Dec 1926, so 3 Dec 2026 is its 100th anniversary.",
+   "sources": [
+    "countryfile",
+    "historyhit"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "na_record",
+   "publisher": "The National Archives (UK)",
+   "title": "Record revealed: police report on the disappearance of Agatha Christie",
+   "url": "https://www.nationalarchives.gov.uk/explore-the-collection/stories/police-report-disappearance-agatha-christie/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "na_blog",
+   "publisher": "The National Archives blog",
+   "title": "Investigating the strange disappearance of Mrs Agatha Christie",
+   "url": "https://blog.nationalarchives.gov.uk/20speople-investigating-the-strange-disappearance-of-mrs-agatha-christie/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "countryfile",
+   "publisher": "BBC Countryfile magazine",
+   "title": "Agatha Christie's disappearance",
+   "url": "https://www.countryfile.com/famous-people/agatha-christie-disappearance",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "historyhit",
+   "publisher": "History Hit",
+   "title": "The Enduring Mystery of Agatha Christie's Disappearance",
+   "url": "https://www.historyhit.com/the-enduring-mystery-of-agatha-christies-disappearance/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "natgeo",
+   "publisher": "National Geographic",
+   "title": "Why did Agatha Christie go missing? Here are 4 theories, from amnesia to publicity stunt",
+   "url": "https://www.nationalgeographic.com/history/article/agatha-christie-mystery-disappearance-theories",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "gizmodo",
+   "publisher": "Gizmodo",
+   "title": "The Lady Vanished: the mysterious 1926 disappearance of Agatha Christie",
+   "url": "https://gizmodo.com/the-lady-vanished-the-mysterious-1926-disappearance-of-1719753422",
+   "date": "2015",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "histcoll",
+   "publisher": "History Collection",
+   "title": "Mysteries of the mystery author: Agatha Christie's disappearance in 1926",
+   "url": "https://historycollection.com/mysteries-of-the-mystery-author-agatha-christies-disappearance-in-1926/2/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "acd_encyc",
+   "publisher": "The Arthur Conan Doyle Encyclopedia",
+   "title": "Sir Arthur Conan Doyle's Psychic Sherlock Holmes (reprints the Leeds Mercury, 21 Dec 1926)",
+   "url": "https://www.arthur-conan-doyle.com/wiki/Sir_Arthur_Conan_Doyle%27s_Psychic_Sherlock_Holmes",
+   "date": "1926-12-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bitesized",
+   "publisher": "Bite Sized Britain",
+   "title": "The strange vanishing of Agatha Christie",
+   "url": "https://www.bitesizedbritain.co.uk/the-strange-vanishing-of-agatha-christie11/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "sundaypost",
+   "publisher": "The Sunday Post",
+   "title": "The curious case of Agatha Christie's disappearance",
+   "url": "https://www.sundaypost.com/fp/the-curious-case-of-agatha-christies-disappearance/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_oldswan",
+   "publisher": "Wikipedia",
+   "title": "Old Swan Hotel",
+   "url": "https://en.wikipedia.org/wiki/Old_Swan_Hotel",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "worsley_pp",
+   "publisher": "Pocklington Post (National World)",
+   "title": "New book by historian Lucy Worsley to unravel mysteries of writer Agatha Christie's 'disappearance' in Harrogate in 1926",
+   "url": "https://www.pocklingtonpost.co.uk/heritage-and-retro/heritage/new-book-by-historian-lucy-worsley-to-unravel-mysteries-of-writer-agatha-christies-disappearance-in-harrogate-in-1926-3821812",
+   "date": "2022",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ripon",
+   "publisher": "Ripon Gazette",
+   "title": "Agatha Christie's legendary 'disappearance' in Harrogate explained",
+   "url": "https://www.ripongazette.co.uk/news/agatha-christies-legendary-disappearance-harrogate-explained-850598",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aetv",
+   "publisher": "A&E (Crime + Investigation)",
+   "title": "Agatha Christie's 1926 disappearance",
+   "url": "https://www.aetv.com/articles/agatha-christie-disappearance-1926",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "stylist",
+   "publisher": "Stylist",
+   "title": "The shocking true story behind Agatha Christie's Gone Girl-style disappearance",
+   "url": "https://stylist.co.uk/entertainment/agatha-christie-disapperance-true-story/735080",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aspects",
+   "publisher": "Aspects of History",
+   "title": "Agatha Christie's Greatest Mystery",
+   "url": "https://aspectsofhistory.com/agatha-christies-greatest-mystery/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "blackpool",
+   "publisher": "Blackpool Grand Theatre",
+   "title": "When did Agatha Christie go missing? 1926",
+   "url": "https://www.blackpoolgrand.co.uk/agatha-christie-go-missing-1926",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "guinness",
+   "publisher": "Guinness World Records",
+   "title": "Best-selling author for fiction",
+   "url": "https://www.guinnessworldrecords.com/world-records/67383-best-selling-author-for-fiction",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "iwm",
+   "publisher": "Imperial War Museums (Lives of the First World War)",
+   "title": "Literary career: the best selling novelist of all time",
+   "url": "https://livesofthefirstworldwar.iwm.org.uk/story/26405",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ]
+}
