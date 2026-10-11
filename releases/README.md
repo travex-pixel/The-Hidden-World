@@ -20,3 +20,9 @@ Final rendered episodes, committed so they can be downloaded directly from GitHu
 | Round 2 · Part 4/6 — The Secret | `qg012-the-secret.mp4` (1080×1920, 30 fps, 21.4 s, H.264 + AAC, 6 MB) | 1 | 2026-10-11, local pipeline run | `qg012-the-secret.verify.json` — all 12 checks pass |
 | Round 2 · Part 5/6 — The Review | `qg013-the-review.mp4` (1080×1920, 30 fps, 20.9 s, H.264 + AAC, 6 MB) | 1 | 2026-10-11, local pipeline run | `qg013-the-review.verify.json` — all 12 checks pass |
 | Round 2 · Part 6/6 — The Other Half | `qg014-the-other-half.mp4` (1080×1920, 30 fps, 25.1 s, H.264 + AAC, 8 MB) | 1 | 2026-10-11, local pipeline run | `qg014-the-other-half.verify.json` — all 12 checks pass |
+| Round 3 · Counter-Move #1 — The Pen | `qg015-the-pen.mp4` (1080×1920, 30 fps, 24.1 s, H.264 + AAC, 6 MB) | 1 | 2026-10-11, local pipeline run | `qg015-the-pen.verify.json` — all 12 checks pass |
+| Round 3 · Counter-Move #2 — The Big Ask | `qg016-the-big-ask.mp4` (1080×1920, 30 fps, 26.7 s, H.264 + AAC, 7 MB) | 1 | 2026-10-11, local pipeline run | `qg016-the-big-ask.verify.json` — all 12 checks pass |
+| Round 3 · Counter-Move #3 — The Price | `qg017-the-price.mp4` (1080×1920, 30 fps, 23.7 s, H.264 + AAC, 6 MB) | 1 | 2026-10-11, local pipeline run | `qg017-the-price.verify.json` — all 12 checks pass |
+| Round 3 · Counter-Move #4 — The Smoke | `qg018-the-smoke.mp4` (1080×1920, 30 fps, 20.3 s, H.264 + AAC, 7 MB) | 1 | 2026-10-11, local pipeline run | `qg018-the-smoke.verify.json` — all 12 checks pass |
+| Round 3 · Counter-Move #5 — Last Chance | `qg019-last-chance.mp4` (1080×1920, 30 fps, 27.4 s, H.264 + AAC, 7 MB) | 1 | 2026-10-11, local pipeline run | `qg019-last-chance.verify.json` — all 12 checks pass |
+| Round 3 · Counter-Move #6 — Everyone's In | `qg020-everyones-in.mp4` (1080×1920, 30 fps, 27.0 s, H.264 + AAC, 7 MB) | 1 | 2026-10-11, local pipeline run | `qg020-everyones-in.verify.json` — all 12 checks pass |
