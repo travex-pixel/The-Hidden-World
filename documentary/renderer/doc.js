@@ -367,9 +367,9 @@ T.profile = (s, lt, d) => {      // person card with a featureless silhouette
 };
 
 T.verdict = (s, lt, d) => {      // stamp slam
-  T.scene({ ...s, variant: 'courtroom', dim: 0.55 }, lt, d, true);
+  T.scene({ ...s, variant: 'courtroom', dim: 0.28 }, lt, d, true);
   const a = ramp(lt, s.at ?? 0.25, 0.22);
-  ctx.save(); ctx.fillStyle = 'rgba(5,7,10,0.45)'; ctx.fillRect(0, 0, W, H);
+  ctx.save(); ctx.fillStyle = 'rgba(5,7,10,0.22)'; ctx.fillRect(0, 0, W, H); glow(W / 2, H / 2 - 40, 760, s.color === 'green' ? 'rgba(126,211,160,0.10)' : s.color === 'amber' ? 'rgba(243,180,64,0.10)' : 'rgba(226,67,47,0.12)');
   if (a > 0) {
     const shake = (1 - clamp((lt - (s.at ?? 0.25) - 0.22) / 0.35)) * (a >= 1 ? 14 : 0);
     ctx.translate(W / 2 + Math.sin(lt * 90) * shake, H / 2 - 40 + Math.cos(lt * 77) * shake); ctx.rotate(-0.07);

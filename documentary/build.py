@@ -219,6 +219,7 @@ def main(argv=None) -> int:
             d = span * w / sum(ws)
             shots.append({**s, "i": len(shots), "line": tl["i"], "start": round(a, 4), "end": round(a + d, 4), "chapterTag": s.get("chapterTag", chapter)})
             a += d
+    shots[0]["start"] = 0.0  # picture from the very first frame; the lead-in only delays the narration
     shots[-1]["end"] = total
     durs = [s["end"] - s["start"] for s in shots]
     log(f"shots: {len(shots)} visual beats, mean {np.mean(durs):.2f}s, max {max(durs):.2f}s, min {min(durs):.2f}s")
