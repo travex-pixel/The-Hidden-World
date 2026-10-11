@@ -10,13 +10,14 @@
   "distinct_sets": 7,
   "max_set_share": 0.27,
   "shot_sizes": {
-   "medium": 9,
+   "medium": 6,
    "map/graphic": 1,
-   "close-up": 1,
+   "close-up": 3,
+   "wide": 1,
    "medium-wide": 1
   },
-  "max_shot_size_share": 0.75,
-  "ok": false
+  "max_shot_size_share": 0.5,
+  "ok": true
  },
  "production_status": {
   "series_manifest": "series/true-crime-cinematic/production_manifest.json",
@@ -542,19 +543,19 @@
     }
    ],
    "visual_description": "cabin interior (night grade); ted (silhouette): sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type; camera push/pull; overlays: label '1995', card 'THE OFFER: / PUBLISH HIS 35,000-WORD / MANIFESTO, AND HE WOULD / 'DESIST FROM TERRORISM''.",
-   "shot_size": "medium",
+   "shot_size": "close-up",
    "set": "cabin_interior",
    "grade": "night",
    "camera": {
     "from": {
-     "x": -40,
-     "y": 0,
-     "z": 1
+     "x": 0,
+     "y": -40,
+     "z": 1.12
     },
     "to": {
-     "x": 40,
-     "y": -20,
-     "z": 1.1
+     "x": 60,
+     "y": -110,
+     "z": 1.4
     },
     "handheld": 0
    },
@@ -1092,8 +1093,8 @@
      ]
     }
    ],
-   "visual_description": "press hall (cold grade); press_operator: stand -> read_newspaper; camera push/pull; overlays: label '19 SEPTEMBER 1995'.",
-   "shot_size": "medium",
+   "visual_description": "press hall (cold grade); press_operator: stand -> read_newspaper; camera push/pull, handheld; overlays: label '19 SEPTEMBER 1995'.",
+   "shot_size": "wide",
    "set": "press_hall",
    "grade": "cold",
    "camera": {
@@ -1107,7 +1108,7 @@
      "y": 20,
      "z": 1
     },
-    "handheld": 0
+    "handheld": 2
    },
    "characters": [
     "press_operator"
@@ -1117,7 +1118,7 @@
      "id": "press_operator",
      "outfit": "default",
      "depth": 1,
-     "scale": 1.05,
+     "scale": 0.55,
      "start_pose": "stand",
      "start_expr": "neutral",
      "actions": [
@@ -1492,19 +1493,19 @@
     }
    ],
    "visual_description": "kitchen night (warm grade); david: sit_read -> worried; camera push/pull; overlays: svg.",
-   "shot_size": "medium",
+   "shot_size": "close-up",
    "set": "kitchen_night",
    "grade": "warm",
    "camera": {
     "from": {
-     "x": 0,
-     "y": 0,
-     "z": 1
+     "x": -30,
+     "y": -40,
+     "z": 1.15
     },
     "to": {
-     "x": 0,
-     "y": 20,
-     "z": 1.06
+     "x": -60,
+     "y": -95,
+     "z": 1.35
     },
     "handheld": 0
    },

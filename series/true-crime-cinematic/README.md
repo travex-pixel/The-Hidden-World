@@ -2,8 +2,8 @@
 
 | # | File | Case | Status |
 |---|------|------|--------|
-| 01 | [`output/true_crime_01.mp4`](output/true_crime_01.mp4) | Azaria Chamberlain, Uluru, Australia (1980–2012) | see `production_manifest.json` |
-| 02 | [`output/true_crime_02.mp4`](output/true_crime_02.mp4) | The Unabomber, USA (1978–1998) | see `production_manifest.json` |
+| 01 | [`output/true_crime_01.mp4`](output/true_crime_01.mp4) | Azaria Chamberlain, Uluru, Australia (1980–2012) | verified: 84.3 s, 31.0 MB, 16/16 checks |
+| 02 | [`output/true_crime_02.mp4`](output/true_crime_02.mp4) | The Unabomber, USA (1978–1998) | verified: 87.6 s, 31.0 MB, 16/16 checks |
 
 These are re-made versions of Case Files 01 and 02. The narration, claims and sources are the same reviewed, sourced script as `series/true-crime/`; a test enforces this word for word. The difference is the picture. Every shot is now staged with **illustrated characters acting out the narration** in layered, lit environments, instead of object and text cards. The original files in `series/true-crime/output/` are untouched.
 

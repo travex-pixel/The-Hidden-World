@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv02-unabomber/tcv02-unabomber.mp4",
-    "size_bytes": 30811316,
+    "size_bytes": 31040815,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -45,7 +45,7 @@
     "narration_intelligible_asr": true,
     "captions_in_safe_area": true,
     "no_frozen_or_static_picture": true,
-    "shot_variety_and_character_action": false,
+    "shot_variety_and_character_action": true,
     "every_shot_sourced_and_tagged": true
   },
   "loudness": {
@@ -82,7 +82,7 @@
       "longest_still_s": 0.3,
       "still_spans_over_limit": [],
       "beats_without_visual_change": [],
-      "median_motion": 1.45,
+      "median_motion": 1.49,
       "frames": 876
     },
     "slideshow_risk": {
@@ -93,13 +93,14 @@
       "distinct_sets": 7,
       "max_set_share": 0.27,
       "shot_sizes": {
-        "medium": 9,
+        "medium": 6,
         "map/graphic": 1,
-        "close-up": 1,
+        "close-up": 3,
+        "wide": 1,
         "medium-wide": 1
       },
-      "max_shot_size_share": 0.75,
-      "ok": false
+      "max_shot_size_share": 0.5,
+      "ok": true
     }
   }
 }
