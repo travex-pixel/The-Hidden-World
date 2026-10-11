@@ -31,6 +31,7 @@
     sit_read:       { lean: 10, tilt: 18, nUa: 30, nFa: 88, fUa: 34, fFa: 84, nTh: 88, nSh: 88, fTh: 84, fSh: 86, sit: 1, prop: 'paper' },
     sit_slumped:    { lean: 16, tilt: 26, nUa: 22, nFa: 50, fUa: 24, fFa: 46, nTh: 88, nSh: 92, fTh: 84, fSh: 90, sit: 1 },
     sit_type:       { lean: 12, tilt: 12, nUa: 34, nFa: 56, fUa: 38, fFa: 54, nTh: 88, nSh: 88, fTh: 84, fSh: 86, sit: 1 },
+    sit_type_b:     { lean: 12, tilt: 13, nUa: 31, nFa: 62, fUa: 41, fFa: 48, nTh: 88, nSh: 88, fTh: 84, fSh: 86, sit: 1 },   // alternate with sit_type for typing
     hands_behind:   { lean: 4, tilt: 8, nUa: -18, nFa: 40, fUa: -22, fFa: 44, nTh: 2, nSh: 0, fTh: -2, fSh: 0 },
     hand_to_face:   { lean: 4, tilt: 14, nUa: 70, nFa: 150, fUa: 8, fFa: 30, nTh: 2, nSh: 0, fTh: -2, fSh: 0 },   // hand to mouth
     bowed:          { lean: 6, tilt: 26, nUa: 10, nFa: 46, fUa: 12, fFa: 44, nTh: 2, nSh: 0, fTh: -2, fSh: 0 },

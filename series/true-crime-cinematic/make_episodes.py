@@ -9,8 +9,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT / "series" / "true-crime"))
-import make_episodes as v1   # noqa: E402  (verified research: claims, sources, narrator)
+import importlib.util   # noqa: E402
+_spec = importlib.util.spec_from_file_location("case_files_v1", ROOT / "series" / "true-crime" / "make_episodes.py")
+v1 = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(v1)   # verified research: claims, sources, narrator
 
 NARR = dict(v1.NARRATOR, length_scale=1.06, word_timing=True)
 N, fx = v1.N, v1.fx
@@ -93,8 +94,53 @@ def chamberlain() -> dict:
                 scenes, ch["claims"], ch["sources"], "AZARIA CHAMBERLAIN · 1980-2012", bpm=84) | {"geo": ch["geo"]}
 
 
+# ------------------------------------------------------------------ Video 2: the Unabomber (character-driven)
+def unabomber() -> dict:
+    un = v1.unabomber()
+    v1map = next(sc for sc in un["scenes"] if sc["id"] == "s02_map")
+    scenes = [
+        S("s01_hook", "tcv2_hook", [N("For seventeen years, the FBI hunted a bomber it couldn't name."),
+                                    N("What finally caught him? His own words. And his own brother.", pause_before=0.25)],
+          "cold", ["U_17years", "U_identified"], sfx=[fx(0.05, "hit", 0.8), fw(1, 6, "paper", 0.7, -0.15), fw(1, 10, "thump", 0.6, -0.1)], emph=["words.", "brother."], min_d=5.0),
+        v1map | {"caption_y": 1460},
+        S("s03_offer", "tcv2_offer", [N("In 1995, he made an offer."),
+                                      N("Publish his 35,000-word manifesto, and he would \"desist from terrorism.\"", pause_before=0.1)],
+          "tension", ["U_offer"], sfx=[fx(0.1, "typing", 0.6), fw(1, 0, "paper", 0.6, -0.2)], emph=["desist", "terrorism.\""]),
+        S("s04_backing", "tcv2_backing", [N("The FBI and the Attorney General backed printing it,"),
+                                          N("hoping someone would recognise the writer.", pause_before=0.05)],
+          "tension-rise", ["U_reno"], sfx=[fx(0.2, "paper", 0.6)], emph=["recognise"]),
+        S("s05_press", "tcv2_press", [N("On September 19th, 1995, The Washington Post printed all of it.", pause_before=0.1)],
+          "tension-rise", ["U_published"], sfx=[fx(0.0, "rumble", 0.6), fw(0, 9, "paper", 0.8)], emph=["all"], tr="push"),
+        S("s06_reader", "tcv2_reader", [N("One reader, Linda Patrik, suspected her husband's brother."),
+                                        N("She urged her husband, David, to read it.", pause_before=0.2)],
+          "unease", ["U_linda"], sfx=[fx(0.4, "paper", 0.6), fw(1, 5, "step", 0.4, -0.6), fw(1, 5, "step", 0.4, -0.1)], emph=["brother."], tr="push"),
+        S("s07_letters", "tcv2_letters", [N("David compared it with old letters from his brother, Ted.")],
+          "tension", ["U_compare"], sfx=[fx(0.3, "paper", 0.7), fw(0, 9, "thump", 0.5)], emph=["ted."], tr="push"),
+        S("s08_analyst", "tcv2_analyst", [N("An outside analyst judged the same person had probably written both.", pause_before=0.1)],
+          "tension", ["U_compare"], sfx=[fw(0, 5, "thump", 0.6), fw(0, 10, "thump", 0.5)], emph=["same", "both."], tr="push"),
+        S("s09_phrase", "tcv2_phrase", [N("Early in 1996, through a lawyer, the family went to the FBI."),
+                                        N("Analysts found the same unusual twist on an old saying in both:", pause_before=0.2),
+                                        N("\"You can't eat your cake and have it too.\"", pause_before=0.3)],
+          "tension-peak", ["U_lawyer", "U_phrase"], sfx=[fx(0.3, "pen", 0.8), fw(2, 0, "swell", 0.7, -0.4)], emph=["eat", "cake", "have"], music_db=-3, tr="push"),
+        S("s10_cabin", "tcv2_cabin", [N("April 3rd, 1996. Agents arrested Ted Kaczynski at his tiny cabin in Montana."),
+                                      N("Inside, they found a live bomb, wrapped and ready to mail.", pause_before=0.3)],
+          "cold", ["U_arrest", "U_cabin"], sfx=[fx(0.0, "hit", 0.8), fx(0.6, "wind", 0.5), fw(0, 5, "door", 0.6, -0.2)], emph=["kaczynski", "live", "bomb,"], tr="fade"),
+        S("s11_plea", "tcv2_plea", [N("In 1998, he pleaded guilty, and was sentenced to life without release.")],
+          "aftermath", ["U_plea"], sfx=[fw(0, 9, "gavel", 1.0, -0.08), fw(0, 11, "stamp", 0.7)], emph=["guilty,", "life"], tr="zoom"),
+        S("s12_end", "tcv2_end", [N("David received a one-million-dollar reward."),
+                                  N("He pledged most of it to the families of his brother's victims.", pause_before=0.25),
+                                  N("The bomber wanted the world to read his words. His own family did.", pause_before=0.6)],
+          "aftermath", ["U_reward", "U_identified"], sfx=[fx(0.2, "paper", 0.4)], emph=["victims.", "family"], min_d=3.0, pad=2.4, tr="fade"),
+    ]
+    scenes[-1]["fade_out"] = True
+    return base("tcv02-unabomber", 2, "How the Unabomber's Own Words Gave Him Away",
+                un["central_question"], ["ted", "david", "linda", "analyst", "examiner", "agent_a", "agent_b", "judge", "press_operator"],
+                scenes, un["claims"], un["sources"], "UNABOM · 1978-1998", bpm=76) | {"geo": un["geo"],
+                "content_notes": "Characters are illustrated representations, not likenesses; no real photograph, footage, newspaper masthead, letter or FBI document is imitated, and manuscript text is illegible placeholder except the verified quoted phrases. Non-graphic: no explosion, injury or bomb construction is shown. No dialogue is invented."}
+
+
 def main() -> None:
-    for ep in (poc(), chamberlain()):
+    for ep in (poc(), chamberlain(), unabomber()):
         d = ROOT / "episodes" / ep["id"]; d.mkdir(parents=True, exist_ok=True)
         (d / "episode.json").write_text(json.dumps(ep, indent=1, ensure_ascii=False) + "\n")
         print("wrote", d / "episode.json")

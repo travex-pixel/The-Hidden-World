@@ -130,6 +130,29 @@
       const fg = pines(1720, 4, 9, '#060b0e', 1.3, -500, -50) + pines(1720, 3, 12, '#060b0e', 1.3, 1100, 1500);
       return { light: { dir: 1, rim: '#bcd4e6', key: '#bcd4e6' }, layers: [[0.05, sky], [0.3, hills], [0.7, cabin], [1.0, ''], [1.45, fg]], fog: true };
     },
+    // inside a one-room plank cabin at night: oil-lamp light, small window, shelves, stove (generic)
+    cabin_interior(ctx, o = {}) {
+      const t = ctx.t; let wall = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#24180f"/>`;
+      for (let i = 0; i < 30; i++) wall += `<rect x="-300" y="${-200 + i * 48}" width="${W + 600}" height="44" fill="${i % 2 ? '#2e2014' : '#2a1d12'}" stroke="#140c07" stroke-width="3"/>`;
+      wall += `<rect x="640" y="300" width="260" height="220" fill="#0b1018" stroke="#140c07" stroke-width="14"/><path d="M770 300 L770 520 M640 410 L900 410" stroke="#140c07" stroke-width="10"/>` +
+        `<defs><clipPath id="ciwin"><rect x="640" y="300" width="260" height="220"/></clipPath></defs><g clip-path="url(#ciwin)">${stars(t, 18, 12, 300, 520)}</g>` +
+        `<rect x="-120" y="360" width="420" height="16" fill="#3a2716"/><rect x="-120" y="560" width="420" height="16" fill="#3a2716"/>` + [0, 1, 2, 3, 4, 5, 6].map(i => `<rect x="${-100 + i * 56}" y="${290 + (i % 2) * 8}" width="40" height="${70 - (i % 2) * 8}" fill="${['#5a4a3a', '#4a3a2a', '#6a5040'][i % 3]}"/><rect x="${-96 + i * 56}" y="${494 + (i % 3) * 6}" width="44" height="${66 - (i % 3) * 6}" fill="${['#4a4030', '#3a3020', '#5a4636'][i % 3]}"/>`).join('');
+      const glow = 0.85 + 0.15 * Math.sin(t * 7) * Math.sin(t * 3.1);
+      const lamp = wash(o.lampX ?? 760, 1080, 520, 380, '#ffb35a', 0.28 * glow) + `<rect x="-300" y="1240" width="${W + 600}" height="${H}" fill="#1a110a"/>`;
+      const desk = `<rect x="-300" y="1170" width="${W + 600}" height="44" fill="#4a3220" stroke="${INK}" stroke-width="6"/><rect x="-300" y="1214" width="${W + 600}" height="${H}" fill="#20150c"/>` +
+        `<g transform="translate(${o.lampX ?? 760} 1170)"><ellipse cx="0" cy="-2" rx="40" ry="10" fill="#2a1c10"/><path d="M-24 -10 Q -30 -60 0 -70 Q 30 -60 24 -10 Z" fill="#c9a964" stroke="${INK}" stroke-width="4"/><path d="M-22 -70 L22 -70 L16 -150 L-16 -150 Z" fill="#fff0c8" opacity="0.55" stroke="${INK}" stroke-width="3"/><ellipse cx="0" cy="-100" rx="9" ry="16" fill="#ffd27a" opacity="${f1(glow)}"/></g>`;
+      return { light: { dir: 1, rim: '#ffb35a', key: '#ffb35a' }, layers: [[0.2, wall], [0.5, lamp], [1.0, ''], [1.06, desk]] };
+    },
+    // a daytime office: window blinds with light bars, filing cabinet, desk with lamp (generic)
+    office_day(ctx, o = {}) {
+      let back = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#3a4048"/><rect x="560" y="200" width="460" height="560" fill="#cfe0ea"/>`;
+      for (let i = 0; i < 20; i++) back += `<rect x="560" y="${206 + i * 28}" width="460" height="16" fill="#8a96a2"/>`;
+      back += `<rect x="560" y="200" width="460" height="560" fill="none" stroke="${INK}" stroke-width="12"/><rect x="-300" y="1000" width="${W + 600}" height="${H}" fill="#2c3036"/>` +
+        `<g transform="translate(120 1000)"><rect x="-110" y="-520" width="220" height="520" fill="#5a6470" stroke="${INK}" stroke-width="6"/>${[0, 1, 2].map(i => `<rect x="-90" y="${-500 + i * 168}" width="180" height="150" fill="#6a7480" stroke="${INK}" stroke-width="4"/><rect x="-30" y="${-440 + i * 168}" width="60" height="14" rx="5" fill="#c9ced6"/>`).join('')}</g>`;
+      const bars = [0, 1, 2, 3, 4, 5, 6, 7].map(i => `<path d="M560 ${230 + i * 66} L1020 ${230 + i * 66} L700 ${1000 + i * 110} L240 ${1000 + i * 110} Z" fill="#fff6dc" opacity="0.05"/>`).join('');
+      const desk = `<rect x="-300" y="1200" width="${W + 600}" height="44" fill="#6a5440" stroke="${INK}" stroke-width="6"/><rect x="-300" y="1244" width="${W + 600}" height="${H}" fill="#2a241e"/>`;
+      return { light: { dir: 1, rim: '#fff6dc', key: '#fff6dc' }, layers: [[0.2, back], [0.5, bars], [1.0, ''], [1.06, desk]] };
+    },
     // printing hall: rollers and a running paper web
     press_hall(ctx, o = {}) {
       const t = ctx.t; let s = `<rect x="-300" y="-300" width="${W + 600}" height="${H + 600}" fill="#101418"/>`;
@@ -189,13 +212,14 @@
     // group figures/props by depth so foreground layers can overlap them
     const items = (spec.figures || []).map(f => ({ d: f.depth ?? 1, svg: () => E.fig.figure(f, ctx, light) }))
       .concat((spec.props || []).map(p => ({ d: p.depth ?? 1, svg: () => (typeof p.svg === 'function' ? p.svg(ctx.t) : p.svg) })));
-    const layers = set.layers.map(([d, svg]) => ({ d, svg: () => svg })).concat(items).sort((a, b) => a.d - b.d);
+    const fogSvg = () => { const fx = (ctx.t * 18) % 400; return `<g opacity="0.35">${[0, 1, 2].map(i => `<ellipse cx="${f1(-200 + fx + i * 520)}" cy="${1060 + i * 30}" rx="420" ry="70" fill="#c9d6e0" filter="url(#cineSoft)"/>`).join('')}</g>`; };
+    const fogL = (set.fog || spec.fog) ? [{ d: spec.fogDepth ?? 0.85, svg: fogSvg }] : [];   // ground fog sits behind the figures' plane
+    const layers = set.layers.map(([d, svg]) => ({ d, svg: () => svg })).concat(items, fogL).sort((a, b) => a.d - b.d);
     let s = `<defs><filter id="cineSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter><filter id="fgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter></defs>` + E.fig.figDefs + E.doc.defs;
     const shakeT = spec.shake ? E.doc.shake(ctx.t, spec.shake) : '';
     let world = '';
     for (const L of layers) { const inner = L.svg(); if (!inner) continue; world += `<g transform="${layerT(c, L.d)}"${L.d > 1.2 ? ' filter="url(#fgBlur)"' : ''}>${inner}</g>`; }
     if (set.dust || spec.dust) world += `<g style="mix-blend-mode:screen">${E.doc.dust(ctx.t, 45, 7, [0, 0, W, H * 0.75], 0.45)}</g>`;
-    if (set.fog || spec.fog) { const fx = (ctx.t * 18) % 400; world += `<g opacity="0.35">${[0, 1, 2].map(i => `<ellipse cx="${f1(-200 + fx + i * 520)}" cy="${1060 + i * 30}" rx="420" ry="70" fill="#c9d6e0" filter="url(#cineSoft)"/>`).join('')}</g>`; }
     if (spec.rain) world += E.cast ? '' : '';
     s += `<g transform="${shakeT}">${world}</g>`;
     // grade + key light + vignette
