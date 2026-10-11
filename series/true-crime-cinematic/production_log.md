@@ -82,3 +82,5 @@
 - 2026-10-11 16:13:29 produce 11: regenerating episode data
 - 2026-10-11 16:13:29 tcv11-great-train-robbery: render cached (inputs unchanged), skipping to QA
 - 2026-10-11 16:14:39 tcv11-great-train-robbery: VERIFIED -> series/true-crime-cinematic/output/true_crime_11_great_train_robbery.mp4 (74.6s, 31.0 MB, sha256 d840392743e3)
+- 2026-10-11 16:15:45 tcv14-litvinenko: rendered in 1577s
+- 2026-10-11 16:16:40 tcv14-litvinenko: VERIFIED -> series/true-crime-cinematic/output/true_crime_14_litvinenko.mp4 (78.6s, 31.6 MB, sha256 1f4243418239)

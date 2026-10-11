@@ -15,7 +15,7 @@
 [ 20.71s –  28.57s] s04_poison
   NARRATOR [20.96s]: For three weeks, doctors couldn't name the poison.
   NARRATOR [23.65s]: Hours before he died, scientists found it.
-  NARRATOR [26.40s]: Polonium-210.
+  NARRATOR [26.40s]: It was polonium-210.
 
 [ 28.57s –  32.86s] s05_detect
   NARRATOR [28.92s]: Its radiation can't even get through skin.
