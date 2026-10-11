@@ -26,12 +26,12 @@
     "R-GUNFIRE"
    ],
    "lines": [
-    33,
-    35,
-    37,
-    39,
-    41,
-    59
+    34,
+    36,
+    38,
+    40,
+    42,
+    60
    ],
    "problem": "Trial-evidence details (the clean ski mask, 'nearly 300' calls, the CPR exchange on the 911 call, the defence closing, the mimicked gunfire) surfaced in combined search summaries; the research agent assigned them to the Review-Journal, NewsNation or KLAS on a best-effort basis. Each is attributed on screen ('police said', 'investigators said', 'the defence said').",
    "evidence": "Passages carry an 'attribution: best_effort' note in evidence/claims.json; the claims are declared REQUIRES REVIEW, so gate G13 reports them as open.",
@@ -51,9 +51,9 @@
     "R-BECKY-ACQUIT"
    ],
    "lines": [
-    17,
     18,
-    19
+    19,
+    20
    ],
    "problem": "'Four of his six wives have died' could be heard as insinuating a pattern. The next two lines give the causes (heart surgery, cancer), say he was never charged over those two deaths, and say the Utah death ended in an acquittal. No music sting is used on these lines.",
    "evidence": "Dossier guidance: never frame the deaths as a pattern; only Sharon's and Miller's deaths led to a conviction.",
@@ -89,8 +89,8 @@
    ],
    "lines": [
     6,
-    25,
-    41
+    26,
+    42
    ],
    "problem": "Two allegations against people who were never convicted of them: the Utah offer to a 'cellmate' and Michael Miller's alleged role. The offer is the conduct reported behind Randolph's guilty plea to felony witness tampering. It is attributed to news reports and never called attempted murder or solicitation. Miller (never charged; he died that night) appears only as 'prosecutors alleged', and the defence's version, that he acted alone, is given.",
    "evidence": "people.json: tampering CONVICTED by plea; Miller's alleged role NOT_CHARGED; gate G8 found no unqualified guilt language.",
@@ -108,32 +108,11 @@
     "R-PRISON"
    ],
    "lines": [
-    65
+    66
    ],
    "problem": "We could not verify whether anything has been filed since the 31 Aug 2026 ruling (rehearing, habeas). The film says only that the court upheld the convictions; it does not say his appeals are over. His prison location is time-sensitive (checked 11 Oct 2026).",
    "evidence": "Dossier 'could not verify' list; R-PRISON is time_sensitive (the gate marks it OUTDATED 14 days after the check).",
    "recommendation": "Re-check the Nevada Supreme Court docket and NDOC inmate search before publishing after 25 Oct 2026.",
-   "needs_new_render": false,
-   "state": "open",
-   "raised": "2026-10-11"
-  },
-  {
-   "id": "AUD-01",
-   "stage": "F",
-   "severity": "LOW",
-   "claims": [
-    "R-SIX",
-    "R-ARREST",
-    "R-INNOCENT"
-   ],
-   "lines": [
-    31,
-    42,
-    69
-   ],
-   "problem": "Offline speech recognition on the MP4's own audio: corpus word-error rate 5.9%. 8 lines are over 20%, mostly numbers read as words, names (Slepian, O'Kelley, Gault) and homophones ('two juries' heard as 'to jury's'). Three are worth a listen: 2:22 'sixth wife' (heard 'six wife'), 3:34 'He was fifty-three' (heard 'fifth, three'), 6:39 'he is innocent' (heard 'he, he was innocent').",
-   "evidence": "audit/asr-audit.json (sherpa-onnx Moonshine base). The narration is synthesised from the script text, so inserted words are recognition errors; mispronunciations are possible.",
-   "recommendation": "Listen at 2:22, 3:34 and 6:39. If any is wrong, fixing it needs a new versioned render.",
    "needs_new_render": false,
    "state": "open",
    "raised": "2026-10-11"
@@ -150,6 +129,42 @@
    "problem": "Cosmetic: two yellow pop-up badges are wider than the fixed badge, so 'INVESTIGATORS' (about 2:40) is clipped at both ends, and 'HIS ACCOUNT' (about 0:05) only just fits. The text inside the cards is unaffected.",
    "evidence": "contact_sheet.png; renderer fix in documentary/renderer/doc.js (badge width follows the text; default 'FUN FACT!' badges in earlier films stay pixel-identical).",
    "recommendation": "Acceptable as is. A v2 cut rendered with the fixed renderer would remove it; per the house rule that would be a new versioned file, not an overwrite.",
+   "needs_new_render": false,
+   "state": "resolved",
+   "raised": "2026-10-11",
+   "resolution": "v2 (run2) is rendered with the fixed badge renderer; run1 keeps the clipped labels."
+  },
+  {
+   "id": "AUD-01",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [
+    "R-THEORY",
+    "R-THREE-TRIALS"
+   ],
+   "lines": [
+    6,
+    8,
+    53
+   ],
+   "problem": "v2 narration (Kokoro bm_fable): offline speech recognition on the final MP4 gives a corpus word-error rate of 2.4%. No line is over 20%, and no name is mismatched. Three spots to hear: 0:29 'hired Miller' (heard 'Milo'), 0:42 'He has now stood trial' (heard 'He is now stood'), and 5:41 'He appealed.' (heard 'Tia peeled'). The last is a short sentence at the start of a line, where synthesis can blur.",
+   "evidence": "audit/asr-audit.json and audit/voice-audit.json in the run folder.",
+   "recommendation": "Listen at 0:29, 0:42 and 5:41. If any is wrong, fix it in the next cut with a respelling or by merging the short sentence into the next, then render a new version.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "AUD-03",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [
+    6
+   ],
+   "problem": "Cosmetic: in v2, the 'THE PROSECUTION'S CASE' stamp runs off the right edge at about 0:30–0:39 (it did in v1 too).",
+   "evidence": "Frames from run2/documentary.mp4 at 0:34.",
+   "recommendation": "Fixed in build_film.py (x 1250, size 50; checked on a still). It goes into the next cut together with any narration changes from the owner's listening notes.",
    "needs_new_render": false,
    "state": "open",
    "raised": "2026-10-11"

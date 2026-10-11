@@ -1,0 +1,785 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR)",
+ "lines": 79,
+ "corpus_wer": 0.024,
+ "lines_over_20pct": [],
+ "name_mismatches": [],
+ "rows": [
+  {
+   "line": 0,
+   "t": 0.45,
+   "script": "In May 2008, a man in Las Vegas called 911.",
+   "asr": "In May 2008, a man in Las Vegas called 911.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 1,
+   "t": 4.972,
+   "script": "His wife had been shot, he said, by a masked intruder.",
+   "asr": "His wife had been shot, he said, by a masked intruder.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 2,
+   "t": 9.043,
+   "script": "And he said something else. He'd wrestled the gun away from the man, and shot him.",
+   "asr": "And he said something else. He'd wrestled the gun away from the man and shot him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 3,
+   "t": 15.712,
+   "script": "The man he shot wasn't a stranger.",
+   "asr": "The man he shot wasn't a stranger.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 4,
+   "t": 19.059,
+   "script": "He was Michael Miller, a thirty-eight-year-old handyman the caller knew.",
+   "asr": "He was Michael Miller, a 38-year-old handyman the caller knew.",
+   "wer": 0.154,
+   "diffs": [
+    [
+     "thirty",
+     "∅"
+    ],
+    [
+     "eight",
+     "38"
+    ]
+   ]
+  },
+  {
+   "line": 5,
+   "t": 23.546,
+   "script": "The caller was Thomas Randolph. And Sharon, his sixth wife, was dead.",
+   "asr": "The caller was Thomas Randolph, and Sharon, his sixth wife, was dead.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 6,
+   "t": 29.321,
+   "script": "Prosecutors would later tell a jury a very different story. They alleged Randolph had hired Miller to kill Sharon, then shot Miller to silence a witness.",
+   "asr": "Prosecutors would later tell a jury a very different story. They alleged Randolph had hired Milo to kill Sharon, then shot Milo to silence a witness.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "miller",
+     "milo"
+    ],
+    [
+     "miller",
+     "milo"
+    ]
+   ]
+  },
+  {
+   "line": 7,
+   "t": 39.621,
+   "script": "Randolph says he's innocent.",
+   "asr": "Randolph says he's innocent.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 8,
+   "t": 42.166,
+   "script": "He has now stood trial for murder three times.",
+   "asr": "He is now stood trial for murder three times.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "has",
+     "is"
+    ]
+   ]
+  },
+  {
+   "line": 9,
+   "t": 45.66,
+   "script": "One jury acquitted him. Two juries convicted him.",
+   "asr": "One jury acquitted him. Two juries convicted him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 10,
+   "t": 51.133,
+   "script": "And the first of those convictions, with its two death sentences, was thrown out, because the jury had heard about a death he'd already been acquitted of.",
+   "asr": "And the first of those convictions with its two death sentences was thrown out because the jury had heard about a death he'd already been acquitted of.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 11,
+   "t": 60.011,
+   "script": "To understand how that happened, we have to go back to Utah, more than twenty years before that 911 call.",
+   "asr": "To understand how that happened, we have to go back to Utah, more than 20 years before that 9-1-1 call.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "twenty",
+     "20"
+    ],
+    [
+     "∅",
+     "9"
+    ],
+    [
+     "∅",
+     "1"
+    ],
+    [
+     "911",
+     "1"
+    ]
+   ]
+  },
+  {
+   "line": 12,
+   "t": 66.994,
+   "script": "This is the true story behind Netflix's The Widower, and where Thomas Randolph is now.",
+   "asr": "This is the true story behind Netflix's The Widower and where Thomas Randolph is now.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 14,
+   "t": 74.964,
+   "script": "Thomas Randolph has been married six times.",
+   "asr": "Thomas Randolph has been married six times.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 15,
+   "t": 78.499,
+   "script": "His first marriage lasted from 1975 to 1983. That wife is still alive, and years later, she testified against him.",
+   "asr": "His first marriage lasted from 1975 to 1983. That wife is still alive and years later she testified against him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 16,
+   "t": 87.896,
+   "script": "In 1983 he married Becky Gault. According to reports, it was the same day his divorce came through.",
+   "asr": "In 1983 he married Becky Galt. According to reports, it was the same day his divorce came through.",
+   "wer": 0.056,
+   "diffs": [
+    [
+     "gault",
+     "galt"
+    ]
+   ]
+  },
+  {
+   "line": 17,
+   "t": 95.629,
+   "script": "After Becky, there were four more marriages.",
+   "asr": "After Becky there were four more marriages.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 18,
+   "t": 98.902,
+   "script": "Four of his six wives have died. But those deaths were very different, and the law has treated them very differently.",
+   "asr": "Four of his six wives have died, but those deaths were very different and the law has treated them very differently.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 19,
+   "t": 107.66,
+   "script": "One died in 2004, after heart surgery. Another died of cancer. He was never charged over either death.",
+   "asr": "One died in 2004 after heart surgery. Another died of cancer. He was never charged over either death.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 20,
+   "t": 118.23,
+   "script": "One, in Utah, led to a murder trial. And one, in Las Vegas, led to the sentence he's serving now.",
+   "asr": "One in Utah led to a murder trial. And one in Las Vegas led to the sentence he's serving now.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 21,
+   "t": 125.804,
+   "script": "Utah. November 1986.",
+   "asr": "Utah November 1986",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 22,
+   "t": 130.203,
+   "script": "Becky Gault, Randolph's second wife, died at home from a gunshot wound.",
+   "asr": "Becky Galt, Randolph's second wife, died at home from a gunshot wound.",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "gault",
+     "galt"
+    ]
+   ]
+  },
+  {
+   "line": 23,
+   "t": 134.96,
+   "script": "At first, her death was ruled a suicide.",
+   "asr": "At first her death was ruled a suicide.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 24,
+   "t": 138.413,
+   "script": "Then a former friend and co-worker, Eric Tarantino, went to the authorities. He told them Randolph had talked about having Becky killed, for the insurance money.",
+   "asr": "Then a former friend and co-worker, Eric Tarantino, went to the authorities. He told them Randolph had talked about having Becky killed for the insurance money.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 25,
+   "t": 149.167,
+   "script": "Randolph was charged with her murder.",
+   "asr": "Randolph was charged with her murder.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 26,
+   "t": 152.283,
+   "script": "And while he sat in jail waiting for trial, according to news reports, he offered a cellmate cash, and the title to a car, to kill Tarantino.",
+   "asr": "And while he sat in jail waiting for trial, according to news reports, he offered a cellmate cash and the title to a car to kill Tarantino.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 27,
+   "t": 161.435,
+   "script": "The cellmate was an undercover police officer.",
+   "asr": "The cellmate was an undercover police officer.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 28,
+   "t": 165.38,
+   "script": "Randolph pleaded guilty to felony witness tampering.",
+   "asr": "Randolph pleaded guilty to felony witness tampering.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 29,
+   "t": 169.343,
+   "script": "The murder charge was a different story. At trial in 1989, his lawyers argued that Becky had taken her own life.",
+   "asr": "The murder charge was a different story. At trial in 1989, his lawyers argued that Becky had taken her own life.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 30,
+   "t": 178.44,
+   "script": "And the jury acquitted him.",
+   "asr": "And the jury acquitted him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 31,
+   "t": 181.259,
+   "script": "Remember that acquittal. Three decades later, in a courtroom in Las Vegas, it would matter again.",
+   "asr": "Remember that acquittal. Three decades later, in a courtroom in Las Vegas, it would matter again.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 32,
+   "t": 188.956,
+   "script": "By 2008, Randolph was living in Las Vegas with his sixth wife, Sharon.",
+   "asr": "By 2008, Randolph was living in Las Vegas with his sixth wife, Sharon.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 33,
+   "t": 194.437,
+   "script": "Prosecutors would later say he'd taken out life insurance on Sharon in the two years before she died, and stood to collect more than $300,000.",
+   "asr": "Prosecutors would later say he'd taken out life insurance on Sharon in the two years before she died and stood to collect more than $300,000.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 34,
+   "t": 203.485,
+   "script": "Investigators went through the phone records, too. They counted nearly 300 calls between Randolph and Miller in the months before the shootings. Most, they said, were made by Randolph.",
+   "asr": "Investigators went through the phone records too. They counted nearly 300 calls between Randolph and Miller in the months before the shootings. Most they said were made by Randolph.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 35,
+   "t": 216.47,
+   "script": "Randolph told police Miller was wearing a mask when he shot him.",
+   "asr": "Randolph told police Miller was wearing a mask when he shot him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 36,
+   "t": 221.568,
+   "script": "But police said Miller had been shot in the forehead. And the ski mask was found on the garage floor, with no blood on it, and no bullet holes.",
+   "asr": "But police said Miller had been shot in the forehead. And the ski mask was found on the garage floor, with no blood on it and no bullet holes.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 37,
+   "t": 231.421,
+   "script": "Then there was the 911 call itself.",
+   "asr": "Then there was the 911 call itself.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 38,
+   "t": 234.776,
+   "script": "Prosecutors said the dispatcher had to ask Randolph several times to give Sharon CPR.",
+   "asr": "Prosecutors said the dispatcher had to ask Randolph several times to give Sharon CPR.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 39,
+   "t": 241.219,
+   "script": "His defence argued the call showed something else: a man screaming and crying over his wife, and the only person who tried to help her.",
+   "asr": "His defense argued the call showed something else: a man screaming and crying over his wife, and the only person who tried to help her.",
+   "wer": 0.04,
+   "diffs": [
+    [
+     "defence",
+     "defense"
+    ]
+   ]
+  },
+  {
+   "line": 40,
+   "t": 248.885,
+   "script": "Detectives also filmed Randolph walking them through the house. On that video, he acts out the shootings and, one station reported, mimics the sound of the gunfire.",
+   "asr": "Detectives also filmed Randolph walking them through the house. On that video he acts out the shootings and one station reported mimics the sound of the gunfire.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 41,
+   "t": 259.702,
+   "script": "Jurors at both of his trials would watch it.",
+   "asr": "Jira's at both of his trials would watch it.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "jurors",
+     "jira's"
+    ]
+   ]
+  },
+  {
+   "line": 42,
+   "t": 263.029,
+   "script": "His defence argued there was no physical evidence of any plot, and that Miller acted alone, in a burglary that went wrong.",
+   "asr": "His defense argued there was no physical evidence of any plot, and that Miller acted alone in a burglary that went wrong.",
+   "wer": 0.045,
+   "diffs": [
+    [
+     "defence",
+     "defense"
+    ]
+   ]
+  },
+  {
+   "line": 43,
+   "t": 270.24,
+   "script": "Eight months after the shootings, in January 2009, police arrested Randolph at his parents' home in Clearfield, Utah. He was fifty-three.",
+   "asr": "Eight months after the shootings, in January 2009, police arrested Randolph at his parents' home in Clearfield, Utah. He was 53.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "fifty",
+     "∅"
+    ],
+    [
+     "three",
+     "53"
+    ]
+   ]
+  },
+  {
+   "line": 44,
+   "t": 279.735,
+   "script": "He was charged with conspiracy to commit murder, and with murder.",
+   "asr": "He was charged with conspiracy to commit murder and with murder.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 45,
+   "t": 284.237,
+   "script": "And then, he waited. It would be almost nine years before his first trial.",
+   "asr": "And then he waited. It would be almost nine years before his first trial.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 46,
+   "t": 290.741,
+   "script": "In 2017, the case finally went to trial in Las Vegas.",
+   "asr": "In 2017, the case finally went to trial in Las Vegas.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 47,
+   "t": 295.652,
+   "script": "And this time, the jury heard about Utah: Becky's death, and witnesses who said Randolph had tried to arrange her killing.",
+   "asr": "And this time the jury heard about Utah, Becky's death, and witnesses who said Randolph had tried to arrange her killing.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 48,
+   "t": 303.041,
+   "script": "Before that evidence could be used, the judge held a hearing. The State called just one witness: the prosecutor from Randolph's Utah murder trial.",
+   "asr": "Before that evidence could be used, the judge held a hearing. The state called just one witness, the prosecutor from Randolph's Utah murder trial.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 49,
+   "t": 312.902,
+   "script": "The jury heard all of it, even though Randolph had been acquitted of Becky's murder.",
+   "asr": "The jury heard all of it, even though Randolph had been acquitted of Becky's murder.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 50,
+   "t": 318.346,
+   "script": "Two of his former wives testified, too.",
+   "asr": "Two of his former wives testified too.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 51,
+   "t": 322.165,
+   "script": "On the 28th of June, 2017, the jury found Randolph guilty of conspiracy, and of two counts of first-degree murder.",
+   "asr": "On the 28th of June 2017, the jury found Randolph guilty of conspiracy and of two counts of first-degree murder.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 52,
+   "t": 330.763,
+   "script": "A week later, the same jury, eight women and four men, sentenced him to death, twice. One sentence for each victim.",
+   "asr": "A week later the same jury, eight women and four men, sentenced him to death twice. One sentence for each victim.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 53,
+   "t": 340.776,
+   "script": "He appealed. And on the 10th of December, 2020, the Nevada Supreme Court threw out the convictions and both death sentences, and ordered a new trial.",
+   "asr": "Tia peeled, and on 10 December 2020, the Nevada Supreme Court threw out the convictions and both death sentences and ordered a new trial.",
+   "wer": 0.192,
+   "diffs": [
+    [
+     "he",
+     "tia"
+    ],
+    [
+     "appealed",
+     "peeled"
+    ],
+    [
+     "the",
+     "∅"
+    ],
+    [
+     "10th",
+     "∅"
+    ],
+    [
+     "of",
+     "10"
+    ]
+   ]
+  },
+  {
+   "line": 54,
+   "t": 351.358,
+   "script": "The reason was Utah. The court said that evidence should never have been admitted, because the risk of unfair prejudice substantially outweighed its value.",
+   "asr": "The raisin was Utah. The court said that evidence should never have been admitted because the risk of unfair prejudice substantially outweighed its value.",
+   "wer": 0.042,
+   "diffs": [
+    [
+     "reason",
+     "raisin"
+    ]
+   ]
+  },
+  {
+   "line": 55,
+   "t": 360.673,
+   "script": "It found the State's proof of those old allegations rested on a single witness. And it pointed out that Randolph had been acquitted.",
+   "asr": "It found the state's proof of those old allegations rested on a single witness, and it pointed out that Randolph had been acquitted.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 56,
+   "t": 369.185,
+   "script": "The ruling didn't mean he was innocent. It meant he'd be tried again.",
+   "asr": "The ruling didn't mean he was innocent. It meant he'd be tried again.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 57,
+   "t": 375.432,
+   "script": "Two months later, Dateline NBC aired a three-part series about the case. It was called The Widower.",
+   "asr": "Two months later, Dateline NBC aired a three-part series about the case. It was called the widower.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 58,
+   "t": 382.561,
+   "script": "The retrial began in August 2023.",
+   "asr": "The retrial began in August 2023.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 59,
+   "t": 386.45,
+   "script": "This time, prosecutors were largely limited to the deaths of Sharon and Michael Miller. And they didn't seek the death penalty.",
+   "asr": "This time, prosecutors were largely limited to the deaths of Sharon and Michael Miller. And they didn't seek the death penalty.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 60,
+   "t": 394.467,
+   "script": "Defence attorney Josh Tomsheck told the jury there was no physical evidence of a plot, and that Randolph was the only person who tried to help Sharon that night.",
+   "asr": "Defence attorney Josh Tomshack told the jury there was no physical evidence of a plot, and that Randolph was the only person who tried to help Sharon that night.",
+   "wer": 0.034,
+   "diffs": [
+    [
+     "tomsheck",
+     "tomshack"
+    ]
+   ]
+  },
+  {
+   "line": 61,
+   "t": 403.998,
+   "script": "The jury deliberated for more than four hours. Then it found Randolph guilty of conspiracy to commit murder, and of two counts of murder with a deadly weapon.",
+   "asr": "The jury deliberated for more than four hours. Then it found Randolph guilty of conspiracy to commit murder and of two counts of murder with a deadly weapon.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 62,
+   "t": 414.603,
+   "script": "In April 2024, Judge Tierra Jones sentenced him to sixty years to life in prison.",
+   "asr": "In April 2024, Judge Tiara Jones sentenced him to 60 years to life in prison.",
+   "wer": 0.133,
+   "diffs": [
+    [
+     "tierra",
+     "tiara"
+    ],
+    [
+     "sixty",
+     "60"
+    ]
+   ]
+  },
+  {
+   "line": 63,
+   "t": 421.489,
+   "script": "At his sentencing, Randolph spoke.",
+   "asr": "At his sentencing, Randolph spoke.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 64,
+   "t": 425.266,
+   "script": "\"I didn't kill Sharon,\" he said. \"I have nothing to do with this.\"",
+   "asr": "I didn't kill Sharon, he said. I have nothing to do with this.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 65,
+   "t": 431.321,
+   "script": "He appealed again. He argued that years of delay had violated his right to a speedy trial, and that what he told detectives on that walkthrough video wasn't voluntary.",
+   "asr": "He appealed again. He argued that years of delay had violated his right to a speedy trial and that what he told detectives on that walkthrough video wasn't voluntary.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 66,
+   "t": 442.418,
+   "script": "On the 31st of August, 2026, the Nevada Supreme Court rejected every one of his arguments, and upheld the convictions.",
+   "asr": "On the 31st of August, 2026, the Nevada Supreme Court rejected every one of his arguments and upheld the convictions.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 67,
+   "t": 451.272,
+   "script": "The nine years before his first trial, it said, didn't violate his rights. The nineteen-month wait before the retrial was long enough to be presumed prejudicial, but the State wasn't to blame.",
+   "asr": "The nine years before his first trial, it said, didn't violate his rights. The 19-month wait before the retrial was long enough to be presumed prejudicial, but the state wasn't to blame.",
+   "wer": 0.03,
+   "diffs": [
+    [
+     "nineteen",
+     "19"
+    ]
+   ]
+  },
+  {
+   "line": 68,
+   "t": 463.189,
+   "script": "He'd also said he was in pain, and on medication, when he spoke to detectives. Two detectives testified otherwise, and the court let his statements stand.",
+   "asr": "He'd also said he was in pain and on medication when he spoke to detectives. Two detectives testified otherwise and the court let his statements stand.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 69,
+   "t": 473.208,
+   "script": "Today, Thomas Randolph is in his seventies, serving his sentence at Lovelock Correctional Center in Nevada.",
+   "asr": "Today, Thomas Randolph is in his 70s, serving his sentence at Lovelock Correctional Centre in Nevada.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "seventies",
+     "70s"
+    ],
+    [
+     "center",
+     "centre"
+    ]
+   ]
+  },
+  {
+   "line": 70,
+   "t": 480.912,
+   "script": "He says he is innocent.",
+   "asr": "He says he is innocent",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 71,
+   "t": 483.724,
+   "script": "One journalist had been there almost from the start. Dateline producer Dan Slepian was embedded with Las Vegas police in 2008, and followed the case for years.",
+   "asr": "One journalist had been there almost from the start. Dateline producer Dan Slepian was embedded with Las Vegas Police in 2008 and followed the case for years.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 72,
+   "t": 494.478,
+   "script": "On the 30th of September, 2026, Netflix released The Widower: 'Til Death Do Us Part, directed by Chris Smith.",
+   "asr": "On the 30th of September 2026, Netflix released the widower till death do us part directed by Chris Smith.",
+   "wer": 0.053,
+   "diffs": [
+    [
+     "til",
+     "till"
+    ]
+   ]
+  },
+  {
+   "line": 73,
+   "t": 501.992,
+   "script": "It follows Slepian, and Las Vegas police detective Dean O'Kelley.",
+   "asr": "It follows Slepian and Las Vegas Police Detective Dean O'Kelly.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "o'kelley",
+     "o'kelly"
+    ]
+   ]
+  },
+  {
+   "line": 74,
+   "t": 506.525,
+   "script": "In its first week, it drew 11.6 million views, and was reported as Netflix's number-two English-language film worldwide.",
+   "asr": "In its first week, it drew 11.6 million views and was reported as Netflix's number two English language film worldwide.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 75,
+   "t": 514.356,
+   "script": "So, here's where the record stands.",
+   "asr": "So here's where the record stands.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 76,
+   "t": 517.649,
+   "script": "In Utah, a jury acquitted Randolph of murder in Becky Gault's death. He pleaded guilty to witness tampering.",
+   "asr": "In Utah, a jury acquitted Randolph of murder in Becky Galt's death. He pleaded guilty to witness tampering.",
+   "wer": 0.056,
+   "diffs": [
+    [
+     "gault's",
+     "galt's"
+    ]
+   ]
+  },
+  {
+   "line": 77,
+   "t": 526.429,
+   "script": "No charge was ever brought over the deaths of two of his other wives.",
+   "asr": "No charge was ever brought over the deaths of two of his other wives.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 78,
+   "t": 531.439,
+   "script": "In Las Vegas, two juries convicted him of murdering Sharon and Michael Miller. The first verdict was thrown out. The second has been upheld.",
+   "asr": "In Las Vegas, two juries convicted him of murdering Sharon and Michael Miller. The first verdict was thrown out. The second has been upheld.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 79,
+   "t": 542.925,
+   "script": "Thomas Randolph says he didn't kill Sharon. Two juries said that he did.",
+   "asr": "Thomas Randolph says he didn't kill Sharon. Two juries said that he did.",
+   "wer": 0.0,
+   "diffs": []
+  }
+ ],
+ "note": "ASR errors are expected on proper names and numbers; mismatches are leads for a human listen, not proof of a narration defect."
+}

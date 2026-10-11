@@ -2,7 +2,8 @@
 
 | Run | Status | Notes |
 |---|---|---|
-| `thomas-randolph-20261011-run1/` | **FINAL: The Widower (Thomas Randolph)** | 7:35. 58 of the 87 shots are character scenes (18 with walking). Gate: no critical findings, legal-language checks pass. 14 high findings are open because high-risk legal claims were read only as excerpts (read the two court rulings in full). DRAFT until human sign-off. Delivered as a private download page. |
+| `thomas-randolph-20261011-run2/` | **FINAL (v2): The Widower, new narration** | 9:11. Kokoro `bm_fable` narrator. The script was rewritten for the ear, with a new 60-second opening and a tone per line. ASR WER 2.4%; voice 19–22 dB over the music. Gate: no critical findings; legal-language checks pass; 14 high findings open until the court rulings are read in full. DRAFT until human sign-off and the owner's listening check (`audit/narration-qa.md`). Delivered as a private download page. |
+| `thomas-randolph-20261011-run1/` | Superseded by run2 (v1 narration) | 7:35. Piper narrator. Kept for reference; run2 has the same evidence with the new narration and opening. |
 | `lizzie-borden-20261011-run1/` | **FINAL: Lizzie Borden** | 8:41. 73 of the 111 shots are walking and acting character scenes from the Case Files rig. Gate: 0 critical, high or medium findings; DRAFT until human sign-off. Delivered as a private download page. |
 | `betsy-faria-20261011-run2/` | **FINAL (v2): use this one** | 7:17. Tighter cold open: the GUILTY → NOT GUILTY contradiction lands at 0:03.6. Includes the accuracy fixes from the investigative review and the fixed opening frames. Full deliverables are in the folder. |
 | `betsy-faria-20261011-run1/` | Superseded (v1) | 7:26. Passed the 12 core media checks and was delivered first as an early preview. The extended QA later found its first 0.87 s nearly black. Kept for reference. |

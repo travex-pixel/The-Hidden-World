@@ -1,23 +1,29 @@
 {
  "id": "thomas-randolph",
  "title": "The Widower True Story: Where Is Thomas Randolph Now?",
- "voice": "en_US-libritts_r-medium",
- "speaker": 428,
- "length_scale": 1.3,
- "pause": 0.34,
- "lead_in": 0.5,
- "tail": 0.8,
- "sentence_gap": 0.36,
+ "version": 2,
+ "voice": "kokoro:bm_fable",
+ "engine": "kokoro",
+ "narrator": "bm_fable",
+ "speed": 1.0,
+ "lead_in": 0.45,
+ "tail": 1.2,
  "seed": 31,
  "bpm": 70,
  "key": -5,
- "music_db": -15,
- "sfx_db": -11,
- "duck_db": -9,
+ "music_db": -22,
+ "sfx_db": -15,
+ "duck_db": -12,
  "crf": 22,
+ "music_gain": [
+  [
+   0.0,
+   62.0,
+   -3.0
+  ]
+ ],
  "pronounce": {
   "Gault": "Galt",
-  "Slepian": "Sleppian",
   "Tierra": "Tee-erra",
   "Tomsheck": "Tom-shek"
  },
@@ -38,7 +44,9 @@
   "911": "nine one one",
   "$300,000": "three hundred thousand dollars",
   "11.6 million": "eleven point six million",
-  "300 phone": "three hundred phone"
+  "300 calls": "three hundred calls",
+  "'Til Death Do Us Part": "Till Death Do Us Part",
+  "CPR": "C P R"
  },
  "figures": [
   "trw_randolph",
@@ -54,7 +62,7 @@
  "timeline": [],
  "lines": [
   {
-   "say": "Las Vegas. May 2008. A man calls 911.",
+   "say": "In May 2008, a man in Las Vegas called 911.",
    "claims": [
     "R-911-CALL",
     "R-KILLINGS"
@@ -70,9 +78,9 @@
       "w": 1250
      },
      "view_to": {
-      "cx": 540,
-      "cy": 1100,
-      "w": 1700
+      "cx": 545,
+      "cy": 1090,
+      "w": 1600
      },
      "setOpts": {
       "mode": "night",
@@ -81,12 +89,12 @@
      "grade": "night",
      "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
      "lower": {
-      "p": 0.15,
+      "p": 0.12,
       "title": "May 2008",
       "color": "red",
       "kicker": "Las Vegas, Nevada"
      },
-     "w": 1.1
+     "w": 1.0
     },
     {
      "type": "cine",
@@ -148,13 +156,14 @@
    "sfx": [
     {
      "name": "beep",
-     "at": 0.6,
-     "gain": 0.5
+     "at": 0.0,
+     "gain": 0.45
     }
-   ]
+   ],
+   "tone": "hook"
   },
   {
-   "say": "He says a masked intruder has shot his wife.",
+   "say": "His wife had been shot, he said, by a masked intruder.",
    "claims": [
     "R-911"
    ],
@@ -225,10 +234,11 @@
       "R-911-CALL"
      ]
     }
-   ]
+   ],
+   "tone": "hook"
   },
   {
-   "say": "He says he fought the man for the gun, got it, and shot him.",
+   "say": "And he said something else. He'd wrestled the gun away from the man, and shot him.",
    "claims": [
     "R-911",
     "R-SHOT-MILLER"
@@ -315,13 +325,53 @@
      "at": 0.1,
      "gain": 0.4
     }
-   ]
+   ],
+   "tone": "tense"
   },
   {
-   "say": "The man he shot was Michael Miller, a handyman he knew.",
+   "say": "The man he shot wasn't a stranger.",
    "claims": [
     "R-SHOT-MILLER",
     "R-MILLER"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [],
+     "view": {
+      "cx": 620,
+      "cy": 1080,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 640,
+      "cy": 1090,
+      "w": 760
+     },
+     "setOpts": {
+      "mode": "night",
+      "police": 0.7,
+      "lit": 0.6
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.05,
+     "gain": 0.35
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "He was Michael Miller, a thirty-eight-year-old handyman the caller knew.",
+   "claims": [
+    "R-MILLER",
+    "R-AGES"
    ],
    "shots": [
     {
@@ -336,70 +386,19 @@
      "rim": "amber",
      "claims": [
       "R-AGES",
-      "R-KILLINGS"
+      "R-KILLINGS",
+      "R-SHOT-MILLER"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "His wife, Sharon, was dead. So was Miller.",
-   "claims": [
-    "R-KILLINGS"
-   ],
-   "shots": [
-    {
-     "type": "profile",
-     "name": "Sharon Causse",
-     "kicker": "HIS SIXTH WIFE",
-     "kind": "f",
-     "lines": [
-      "57",
-      "Killed at home, May 2008"
-     ],
-     "rim": "red",
-     "claims": [
-      "R-AGES",
-      "R-SIX"
-     ],
-     "w": 1.1
-    },
-    {
-     "type": "cine",
-     "set": "trw_suburb",
-     "figures": [],
-     "view": {
-      "cx": 620,
-      "cy": 1080,
-      "w": 900
-     },
-     "view_to": {
-      "cx": 640,
-      "cy": 1090,
-      "w": 1100
-     },
-     "setOpts": {
-      "mode": "night",
-      "police": 0.7,
-      "lit": 0.6
-     },
-     "grade": "night",
-     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
-     "w": 0.9
-    }
-   ],
-   "sfx": [
-    {
-     "name": "thud",
-     "at": 0.3,
-     "gain": 0.4
-    }
-   ]
-  },
-  {
-   "say": "The man who made that call was Thomas Randolph. Sharon was his sixth wife.",
+   "say": "The caller was Thomas Randolph. And Sharon, his sixth wife, was dead.",
    "claims": [
     "R-911-CALL",
-    "R-SIX"
+    "R-SIX",
+    "R-KILLINGS"
    ],
    "shots": [
     {
@@ -472,20 +471,39 @@
       "act": "on the phone to 911"
      },
      "lower": {
-      "p": 0.2,
+      "p": 0.15,
       "title": "Thomas Randolph",
       "color": "red",
       "kicker": "Married six times",
       "sub": "Illustration, not a likeness"
      },
+     "w": 1.2,
      "claims": [
       "R-911-CALL"
      ]
+    },
+    {
+     "type": "profile",
+     "name": "Sharon Causse",
+     "kicker": "HIS SIXTH WIFE",
+     "kind": "f",
+     "lines": [
+      "57",
+      "Killed at home, May 2008"
+     ],
+     "rim": "red",
+     "claims": [
+      "R-AGES",
+      "R-SIX",
+      "R-KILLINGS"
+     ],
+     "w": 0.9
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "Prosecutors alleged that Randolph had hired Miller to kill Sharon, then killed Miller to get rid of a witness.",
+   "say": "Prosecutors would later tell a jury a very different story. They alleged Randolph had hired Miller to kill Sharon, then shot Miller to silence a witness.",
    "claims": [
     "R-THEORY"
    ],
@@ -567,7 +585,7 @@
      },
      "stamps": [
       {
-       "p": 0.5,
+       "p": 0.45,
        "text": "THE PROSECUTION'S CASE",
        "color": "red",
        "x": 1400,
@@ -580,10 +598,11 @@
      ]
     }
    ],
-   "cue": "unease"
+   "cue": "unease",
+   "tone": "tense"
   },
   {
-   "say": "Randolph says he is innocent.",
+   "say": "Randolph says he's innocent.",
    "claims": [
     "R-INNOCENT"
    ],
@@ -641,10 +660,11 @@
       "R-IN-COURT"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "He has been tried for murder three times.",
+   "say": "He has now stood trial for murder three times.",
    "claims": [
     "R-THREE-TRIALS"
    ],
@@ -718,7 +738,8 @@
       ]
      }
     }
-   ]
+   ],
+   "tone": "curious"
   },
   {
    "say": "One jury acquitted him. Two juries convicted him.",
@@ -736,10 +757,11 @@
       "2023 · Las Vegas · CONVICTED (upheld in 2026)"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "And the first conviction, with its two death sentences, was thrown out, because that jury had heard about the case in which he was acquitted.",
+   "say": "And the first of those convictions, with its two death sentences, was thrown out, because the jury had heard about a death he'd already been acquitted of.",
    "claims": [
     "R-REVERSAL",
     "R-REVERSAL-WHY",
@@ -762,14 +784,44 @@
    "sfx": [
     {
      "name": "stamp",
-     "at": 0.35
+     "at": 0.3
     }
-   ]
+   ],
+   "tone": "reveal"
   },
   {
-   "say": "This is the true story behind Netflix's The Widower.",
+   "say": "To understand how that happened, we have to go back to Utah, more than twenty years before that 911 call.",
    "claims": [
-    "R-NETFLIX"
+    "R-BECKY-DEATH",
+    "R-911-CALL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_mountain_town",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC MOUNTAIN TOWN"
+    }
+   ],
+   "cue": "tension-rise",
+   "tone": "curious"
+  },
+  {
+   "say": "This is the true story behind Netflix's The Widower, and where Thomas Randolph is now.",
+   "claims": [
+    "R-NETFLIX",
+    "R-PRISON"
    ],
    "shots": [
     {
@@ -790,10 +842,10 @@
      "label": "ILLUSTRATION · GENERIC CITY SKYLINE"
     }
    ],
-   "cue": "tension-rise"
+   "tone": "confident"
   },
   {
-   "silence": 2.6,
+   "silence": 2.4,
    "shots": [
     {
      "type": "title",
@@ -888,10 +940,11 @@
    "chapter": "Six marriages",
    "chapter_title": "1 · Six marriages",
    "tag": "Chapter 1 · Six marriages",
-   "cue": "unease"
+   "cue": "unease",
+   "tone": "confident"
   },
   {
-   "say": "His first marriage lasted from 1975 to 1983. That wife is still alive, and she later testified against him at one of his trials.",
+   "say": "His first marriage lasted from 1975 to 1983. That wife is still alive, and years later, she testified against him.",
    "claims": [
     "R-KATHY"
    ],
@@ -960,10 +1013,11 @@
       }
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "In 1983, he married Becky Gault. According to reports, it was the same day his first divorce was finalised.",
+   "say": "In 1983 he married Becky Gault. According to reports, it was the same day his divorce came through.",
    "claims": [
     "R-SAMEDAY"
    ],
@@ -1029,10 +1083,11 @@
       }
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "After Becky, he married four more times.",
+   "say": "After Becky, there were four more marriages.",
    "claims": [
     "R-SIX"
    ],
@@ -1089,12 +1144,16 @@
       }
      ]
     }
-   ]
+   ],
+   "tone": "curious"
   },
   {
-   "say": "Four of his six wives have died.",
+   "say": "Four of his six wives have died. But those deaths were very different, and the law has treated them very differently.",
    "claims": [
-    "R-FOUR-DEAD"
+    "R-FOUR-DEAD",
+    "R-NOCHARGE",
+    "R-BECKY-ACQUIT",
+    "R-CONVICT-2023"
    ],
    "shots": [
     {
@@ -1106,7 +1165,8 @@
      "noCorner": true
     }
    ],
-   "cue": "intimate"
+   "cue": "intimate",
+   "tone": "reflective"
   },
   {
    "say": "One died in 2004, after heart surgery. Another died of cancer. He was never charged over either death.",
@@ -1125,10 +1185,11 @@
       "Never charged over either death"
      ]
     }
-   ]
+   ],
+   "tone": "reflective"
   },
   {
-   "say": "One, in Utah in 1986, led to a murder trial. And one, in Las Vegas in 2008, led to the sentence he is serving today.",
+   "say": "One, in Utah, led to a murder trial. And one, in Las Vegas, led to the sentence he's serving now.",
    "claims": [
     "R-BECKY-DEATH",
     "R-BECKY-CHARGED",
@@ -1167,7 +1228,8 @@
       "R-CONVICT-2023"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
    "say": "Utah. November 1986.",
@@ -1202,10 +1264,11 @@
    "chapter": "Utah, 1986",
    "chapter_title": "2 · Utah, 1986",
    "tag": "Chapter 2 · Utah",
-   "cue": "unease"
+   "cue": "unease",
+   "tone": "curious"
   },
   {
-   "say": "Becky Gault, Randolph's second wife, died of a gunshot wound at home.",
+   "say": "Becky Gault, Randolph's second wife, died at home from a gunshot wound.",
    "claims": [
     "R-BECKY-DEATH"
    ],
@@ -1221,10 +1284,11 @@
      ],
      "rim": "amber"
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "Her death was first ruled a suicide.",
+   "say": "At first, her death was ruled a suicide.",
    "claims": [
     "R-BECKY-SUICIDE"
    ],
@@ -1244,10 +1308,11 @@
       "R-BECKY-DEATH"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "Then a former friend and co-worker of Randolph's, Eric Tarantino, told authorities that Randolph had talked about having her killed for the insurance money.",
+   "say": "Then a former friend and co-worker, Eric Tarantino, went to the authorities. He told them Randolph had talked about having Becky killed, for the insurance money.",
    "claims": [
     "R-TARANTINO"
    ],
@@ -1302,10 +1367,11 @@
      "label": "ILLUSTRATION · GENERIC MOUNTAIN TOWN",
      "w": 1.0
     }
-   ]
+   ],
+   "tone": "tense"
   },
   {
-   "say": "Randolph was charged with Becky's murder.",
+   "say": "Randolph was charged with her murder.",
    "claims": [
     "R-BECKY-CHARGED"
    ],
@@ -1354,10 +1420,11 @@
      "name": "stamp",
      "at": 0.35
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "And while he was in jail awaiting trial, news reports say, he offered a cellmate cash and a car title to kill Tarantino.",
+   "say": "And while he sat in jail waiting for trial, according to news reports, he offered a cellmate cash, and the title to a car, to kill Tarantino.",
    "claims": [
     "R-TAMPERING"
    ],
@@ -1400,7 +1467,8 @@
      ]
     }
    ],
-   "cue": "tension"
+   "cue": "tension",
+   "tone": "tense"
   },
   {
    "say": "The cellmate was an undercover police officer.",
@@ -1426,7 +1494,8 @@
      "at": 0.1,
      "gain": 0.5
     }
-   ]
+   ],
+   "tone": "reveal"
   },
   {
    "say": "Randolph pleaded guilty to felony witness tampering.",
@@ -1449,10 +1518,11 @@
      "name": "stamp",
      "at": 0.35
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "But at the murder trial in 1989, his lawyers argued that Becky had taken her own life.",
+   "say": "The murder charge was a different story. At trial in 1989, his lawyers argued that Becky had taken her own life.",
    "claims": [
     "R-BECKY-DEFENCE"
    ],
@@ -1514,10 +1584,11 @@
      }
     }
    ],
-   "cue": "tension-rise"
+   "cue": "tension-rise",
+   "tone": "curious"
   },
   {
-   "say": "And a Utah jury acquitted him of murder.",
+   "say": "And the jury acquitted him.",
    "claims": [
     "R-BECKY-ACQUIT"
    ],
@@ -1537,7 +1608,8 @@
      "name": "stamp",
      "at": 0.35
     }
-   ]
+   ],
+   "tone": "reveal"
   },
   {
    "say": "Remember that acquittal. Three decades later, in a courtroom in Las Vegas, it would matter again.",
@@ -1564,7 +1636,8 @@
      "label": "ILLUSTRATION · GENERIC MOUNTAIN TOWN"
     }
    ],
-   "cue": "unease"
+   "cue": "unease",
+   "tone": "reflective"
   },
   {
    "say": "By 2008, Randolph was living in Las Vegas with his sixth wife, Sharon.",
@@ -1648,10 +1721,11 @@
    "chapter": "Las Vegas, 2008",
    "chapter_title": "3 · Las Vegas, 2008",
    "tag": "Chapter 3 · Las Vegas",
-   "cue": "intimate"
+   "cue": "intimate",
+   "tone": "confident"
   },
   {
-   "say": "Prosecutors later said he had taken out life insurance policies on Sharon in the two years before her death, and that he stood to collect more than $300,000.",
+   "say": "Prosecutors would later say he'd taken out life insurance on Sharon in the two years before she died, and stood to collect more than $300,000.",
    "claims": [
     "R-INSURANCE"
    ],
@@ -1708,10 +1782,11 @@
      "w": 1.0
     }
    ],
-   "cue": "tension"
+   "cue": "tension",
+   "tone": "tense"
   },
   {
-   "say": "Investigators also counted nearly 300 phone calls between Randolph and Miller in the months before the killings. Most, they said, were made by Randolph.",
+   "say": "Investigators went through the phone records, too. They counted nearly 300 calls between Randolph and Miller in the months before the shootings. Most, they said, were made by Randolph.",
    "claims": [
     "R-CALLS"
    ],
@@ -1773,10 +1848,11 @@
       }
      ]
     }
-   ]
+   ],
+   "tone": "tense"
   },
   {
-   "say": "Randolph told police that Miller had been wearing a mask when he shot him.",
+   "say": "Randolph told police Miller was wearing a mask when he shot him.",
    "claims": [
     "R-MASK",
     "R-911"
@@ -1844,7 +1920,8 @@
    "chapter": "The evidence",
    "chapter_title": "4 · The evidence",
    "tag": "Chapter 4 · The evidence",
-   "cue": "tension"
+   "cue": "tension",
+   "tone": "curious"
   },
   {
    "say": "But police said Miller had been shot in the forehead. And the ski mask was found on the garage floor, with no blood on it, and no bullet holes.",
@@ -1925,7 +2002,8 @@
      "at": 0.2,
      "gain": 0.5
     }
-   ]
+   ],
+   "tone": "reveal"
   },
   {
    "say": "Then there was the 911 call itself.",
@@ -1971,7 +2049,8 @@
       "R-911-CALL"
      ]
     }
-   ]
+   ],
+   "tone": "curious"
   },
   {
    "say": "Prosecutors said the dispatcher had to ask Randolph several times to give Sharon CPR.",
@@ -2005,10 +2084,11 @@
      ],
      "vs": "VS"
     }
-   ]
+   ],
+   "tone": "tense"
   },
   {
-   "say": "The defence said the call captured a man screaming and crying over his wife, and that he was the only person who tried to help her.",
+   "say": "His defence argued the call showed something else: a man screaming and crying over his wife, and the only person who tried to help her.",
    "claims": [
     "R-911-ARGS"
    ],
@@ -2081,10 +2161,11 @@
       "R-IN-COURT"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "Detectives also recorded Randolph walking them through the house. On the video, he acted out the shootings, and, one station reported, mimicked the sound of the gunfire.",
+   "say": "Detectives also filmed Randolph walking them through the house. On that video, he acts out the shootings and, one station reported, mimics the sound of the gunfire.",
    "claims": [
     "R-WALKTHROUGH",
     "R-GUNFIRE"
@@ -2192,10 +2273,11 @@
       "R-WALKTHROUGH"
      ]
     }
-   ]
+   ],
+   "tone": "tense"
   },
   {
-   "say": "Jurors at both trials would watch that video.",
+   "say": "Jurors at both of his trials would watch it.",
    "claims": [
     "R-WALKTHROUGH"
    ],
@@ -2255,10 +2337,11 @@
       "R-IN-COURT"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "His defence argued that there was no physical evidence of any plot, and that Miller acted on his own, in a burglary that went wrong.",
+   "say": "His defence argued there was no physical evidence of any plot, and that Miller acted alone, in a burglary that went wrong.",
    "claims": [
     "R-DEFENCE"
    ],
@@ -2292,10 +2375,11 @@
       "R-THEORY"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "In January 2009, eight months after the shootings, police arrested Randolph at his parents' home in Clearfield, Utah. He was fifty-three.",
+   "say": "Eight months after the shootings, in January 2009, police arrested Randolph at his parents' home in Clearfield, Utah. He was fifty-three.",
    "claims": [
     "R-ARREST"
    ],
@@ -2411,7 +2495,8 @@
    "chapter": "Nine years",
    "chapter_title": "5 · Nine years",
    "tag": "Chapter 5 · Nine years",
-   "cue": "tension"
+   "cue": "tension",
+   "tone": "confident"
   },
   {
    "say": "He was charged with conspiracy to commit murder, and with murder.",
@@ -2434,10 +2519,11 @@
       "R-KILLINGS"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "Then he waited. Almost nine years passed before his first trial.",
+   "say": "And then, he waited. It would be almost nine years before his first trial.",
    "claims": [
     "R-NINE-YEARS"
    ],
@@ -2472,7 +2558,8 @@
      "w": 0.7
     }
    ],
-   "cue": "aftermath"
+   "cue": "aftermath",
+   "tone": "reflective"
   },
   {
    "say": "In 2017, the case finally went to trial in Las Vegas.",
@@ -2540,10 +2627,11 @@
    "chapter": "The first verdict",
    "chapter_title": "6 · The first verdict",
    "tag": "Chapter 6 · The first verdict",
-   "cue": "tension-rise"
+   "cue": "tension-rise",
+   "tone": "curious"
   },
   {
-   "say": "And this time, the jury heard about Utah: about Becky's death, and witnesses who said Randolph had tried to arrange her killing.",
+   "say": "And this time, the jury heard about Utah: Becky's death, and witnesses who said Randolph had tried to arrange her killing.",
    "claims": [
     "R-2017-UTAH"
    ],
@@ -2641,10 +2729,11 @@
       "R-IN-COURT"
      ]
     }
-   ]
+   ],
+   "tone": "tense"
   },
   {
-   "say": "Before it could be used, the judge held a hearing. The State called one witness: the prosecutor from Randolph's Utah murder trial.",
+   "say": "Before that evidence could be used, the judge held a hearing. The State called just one witness: the prosecutor from Randolph's Utah murder trial.",
    "claims": [
     "R-PETROCELLI"
    ],
@@ -2711,10 +2800,11 @@
       }
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "Even though, in Utah, he had been acquitted of her murder.",
+   "say": "The jury heard all of it, even though Randolph had been acquitted of Becky's murder.",
    "claims": [
     "R-2017-UTAH",
     "R-BECKY-ACQUIT"
@@ -2753,10 +2843,11 @@
       "kicker": "1989"
      }
     }
-   ]
+   ],
+   "tone": "reveal"
   },
   {
-   "say": "Two of his former wives testified too.",
+   "say": "Two of his former wives testified, too.",
    "claims": [
     "R-EXWIVES"
    ],
@@ -2813,7 +2904,8 @@
       "kicker": "2017 trial"
      }
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
    "say": "On the 28th of June, 2017, the jury found Randolph guilty of conspiracy, and of two counts of first-degree murder.",
@@ -2907,10 +2999,11 @@
      "at": 0.5
     }
    ],
-   "cue": "tension-peak"
+   "cue": "tension-peak",
+   "tone": "reveal"
   },
   {
-   "say": "A week later, the same jury, eight women and four men, sentenced him to death. Twice: one sentence for each victim.",
+   "say": "A week later, the same jury, eight women and four men, sentenced him to death, twice. One sentence for each victim.",
    "claims": [
     "R-DEATH-2017"
    ],
@@ -2996,7 +3089,8 @@
       "R-IN-COURT"
      ]
     }
-   ]
+   ],
+   "tone": "reflective"
   },
   {
    "say": "He appealed. And on the 10th of December, 2020, the Nevada Supreme Court threw out the convictions and both death sentences, and ordered a new trial.",
@@ -3059,10 +3153,11 @@
      "name": "stamp",
      "at": 0.58
     }
-   ]
+   ],
+   "tone": "reveal"
   },
   {
-   "say": "The court held that the Utah evidence should never have been admitted. The danger of unfair prejudice, it said, substantially outweighed its value.",
+   "say": "The reason was Utah. The court said that evidence should never have been admitted, because the risk of unfair prejudice substantially outweighed its value.",
    "claims": [
     "R-REVERSAL-WHY"
    ],
@@ -3084,10 +3179,11 @@
       "R-2017-UTAH"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "It found that the State's proof of those old allegations rested on one witness. And it noted that Randolph had been acquitted.",
+   "say": "It found the State's proof of those old allegations rested on a single witness. And it pointed out that Randolph had been acquitted.",
    "claims": [
     "R-REVERSAL-WEAK"
    ],
@@ -3104,10 +3200,11 @@
       "R-REVERSAL"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "The ruling did not say he was innocent. It meant he would be tried again.",
+   "say": "The ruling didn't mean he was innocent. It meant he'd be tried again.",
    "claims": [
     "R-REVERSAL"
    ],
@@ -3130,12 +3227,14 @@
      "label": "ILLUSTRATION · GENERIC CELL"
     }
    ],
-   "cue": "aftermath"
+   "cue": "aftermath",
+   "tone": "reflective"
   },
   {
-   "say": "In February 2021, Dateline NBC aired a three-part series on the case, called The Widower.",
+   "say": "Two months later, Dateline NBC aired a three-part series about the case. It was called The Widower.",
    "claims": [
-    "R-DATELINE"
+    "R-DATELINE",
+    "R-REVERSAL"
    ],
    "shots": [
     {
@@ -3189,7 +3288,8 @@
       }
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
    "say": "The retrial began in August 2023.",
@@ -3246,10 +3346,11 @@
    "chapter": "The second jury",
    "chapter_title": "8 · The second jury",
    "tag": "Chapter 8 · The second jury",
-   "cue": "tension-rise"
+   "cue": "tension-rise",
+   "tone": "curious"
   },
   {
-   "say": "This time, prosecutors were largely limited to evidence about the deaths of Sharon and Michael Miller. And they did not seek the death penalty.",
+   "say": "This time, prosecutors were largely limited to the deaths of Sharon and Michael Miller. And they didn't seek the death penalty.",
    "claims": [
     "R-RETRIAL"
    ],
@@ -3346,10 +3447,11 @@
       "R-IN-COURT"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "Defence attorney Josh Tomsheck argued there was no physical evidence of a plot, and that Randolph was the only person who tried to help Sharon that night.",
+   "say": "Defence attorney Josh Tomsheck told the jury there was no physical evidence of a plot, and that Randolph was the only person who tried to help Sharon that night.",
    "claims": [
     "R-DEFENCE",
     "R-911-ARGS"
@@ -3403,10 +3505,11 @@
       "kicker": "Defence attorney · illustration"
      }
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "In August 2023, after more than four hours of deliberation, the second jury found Randolph guilty of conspiracy to commit murder, and two counts of murder with a deadly weapon.",
+   "say": "The jury deliberated for more than four hours. Then it found Randolph guilty of conspiracy to commit murder, and of two counts of murder with a deadly weapon.",
    "claims": [
     "R-CONVICT-2023"
    ],
@@ -3498,7 +3601,8 @@
      "at": 0.62
     }
    ],
-   "cue": "tension-peak"
+   "cue": "tension-peak",
+   "tone": "reveal"
   },
   {
    "say": "In April 2024, Judge Tierra Jones sentenced him to sixty years to life in prison.",
@@ -3568,10 +3672,11 @@
      "name": "thud",
      "at": 0.45
     }
-   ]
+   ],
+   "tone": "reflective"
   },
   {
-   "say": "Before he was sentenced, Randolph spoke.",
+   "say": "At his sentencing, Randolph spoke.",
    "claims": [
     "R-IN-COURT"
    ],
@@ -3626,7 +3731,8 @@
      ]
     }
    ],
-   "cue": "intimate"
+   "cue": "intimate",
+   "tone": "reflective"
   },
   {
    "say": "\"I didn't kill Sharon,\" he said. \"I have nothing to do with this.\"",
@@ -3639,10 +3745,11 @@
      "text": "I didn't kill Sharon. I have nothing to do with this.",
      "who": "Thomas Randolph · sentencing hearing, April 2024"
     }
-   ]
+   ],
+   "tone": "reflective"
   },
   {
-   "say": "He appealed again. He argued that the years of delay had violated his right to a speedy trial, and that his walkthrough statements were not voluntary.",
+   "say": "He appealed again. He argued that years of delay had violated his right to a speedy trial, and that what he told detectives on that walkthrough video wasn't voluntary.",
    "claims": [
     "R-APPEAL-ARGS"
    ],
@@ -3721,10 +3828,11 @@
    "chapter": "Where is he now?",
    "chapter_title": "9 · Where is he now?",
    "tag": "Chapter 9 · Where is he now?",
-   "cue": "unease"
+   "cue": "unease",
+   "tone": "curious"
   },
   {
-   "say": "On the 31st of August, 2026, the Nevada Supreme Court rejected every argument, and upheld his convictions.",
+   "say": "On the 31st of August, 2026, the Nevada Supreme Court rejected every one of his arguments, and upheld the convictions.",
    "claims": [
     "R-AFFIRM"
    ],
@@ -3772,10 +3880,11 @@
      "name": "stamp",
      "at": 0.52
     }
-   ]
+   ],
+   "tone": "reveal"
   },
   {
-   "say": "The court said the nine years before his first trial did not violate his rights. The nineteen months before his retrial were long enough to be presumed prejudicial, it said, but the State was not to blame.",
+   "say": "The nine years before his first trial, it said, didn't violate his rights. The nineteen-month wait before the retrial was long enough to be presumed prejudicial, but the State wasn't to blame.",
    "claims": [
     "R-SPEEDY"
    ],
@@ -3827,10 +3936,11 @@
       }
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "He had also argued that he was in pain and on medication when he spoke to detectives. Two detectives testified otherwise, and the court refused to throw out his statements.",
+   "say": "He'd also said he was in pain, and on medication, when he spoke to detectives. Two detectives testified otherwise, and the court let his statements stand.",
    "claims": [
     "R-VOLUNTARY"
    ],
@@ -3914,10 +4024,11 @@
       "R-WALKTHROUGH"
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "Today, Randolph is in his seventies. He is serving his sentence at Lovelock Correctional Center, in Nevada.",
+   "say": "Today, Thomas Randolph is in his seventies, serving his sentence at Lovelock Correctional Center in Nevada.",
    "claims": [
     "R-PRISON"
    ],
@@ -3974,10 +4085,11 @@
      ]
     }
    ],
-   "cue": "aftermath"
+   "cue": "aftermath",
+   "tone": "reflective"
   },
   {
-   "say": "He has said he is innocent.",
+   "say": "He says he is innocent.",
    "claims": [
     "R-INNOCENT"
    ],
@@ -4063,10 +4175,11 @@
       "R-PRISON"
      ]
     }
-   ]
+   ],
+   "tone": "reflective"
   },
   {
-   "say": "Dateline producer Dan Slepian had been embedded with Las Vegas police in 2008, and followed the case for years.",
+   "say": "One journalist had been there almost from the start. Dateline producer Dan Slepian was embedded with Las Vegas police in 2008, and followed the case for years.",
    "claims": [
     "R-DATELINE"
    ],
@@ -4146,7 +4259,8 @@
    "chapter": "The documentary",
    "chapter_title": "10 · The documentary",
    "tag": "Chapter 10 · The documentary",
-   "cue": "outro"
+   "cue": "outro",
+   "tone": "curious"
   },
   {
    "say": "On the 30th of September, 2026, Netflix released The Widower: 'Til Death Do Us Part, directed by Chris Smith.",
@@ -4193,10 +4307,11 @@
       }
      ]
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "It follows Slepian and Las Vegas police detective Dean O'Kelley.",
+   "say": "It follows Slepian, and Las Vegas police detective Dean O'Kelley.",
    "claims": [
     "R-NETFLIX-CAST"
    ],
@@ -4235,7 +4350,8 @@
      "grade": "cold",
      "label": "ILLUSTRATION · GENERIC DETECTIVE, NOT A LIKENESS"
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
    "say": "In its first week, it drew 11.6 million views, and was reported as Netflix's number-two English-language film worldwide.",
@@ -4251,10 +4367,11 @@
      "size": 170,
      "noCorner": true
     }
-   ]
+   ],
+   "tone": "confident"
   },
   {
-   "say": "So here is where the record stands.",
+   "say": "So, here's where the record stands.",
    "claims": [
     "R-THREE-TRIALS"
    ],
@@ -4283,7 +4400,8 @@
    ],
    "chapter": "The record",
    "chapter_title": "The record",
-   "tag": "The record"
+   "tag": "The record",
+   "tone": "resolve"
   },
   {
    "say": "In Utah, a jury acquitted Randolph of murder in Becky Gault's death. He pleaded guilty to witness tampering.",
@@ -4320,10 +4438,11 @@
       "R-BECKY-DEATH"
      ]
     }
-   ]
+   ],
+   "tone": "resolve"
   },
   {
-   "say": "No charge was ever brought over the deaths of two other wives.",
+   "say": "No charge was ever brought over the deaths of two of his other wives.",
    "claims": [
     "R-NOCHARGE"
    ],
@@ -4341,10 +4460,11 @@
       "R-FRANCIS-LEONA"
      ]
     }
-   ]
+   ],
+   "tone": "resolve"
   },
   {
-   "say": "And in Las Vegas, two juries convicted him over the deaths of Sharon and Michael Miller. The first verdict was overturned. The second has been upheld.",
+   "say": "In Las Vegas, two juries convicted him of murdering Sharon and Michael Miller. The first verdict was thrown out. The second has been upheld.",
    "claims": [
     "R-CONVICT-2017",
     "R-REVERSAL",
@@ -4364,12 +4484,16 @@
       "R-KILLINGS"
      ]
     }
-   ]
+   ],
+   "tone": "resolve"
   },
   {
-   "say": "Randolph says he is innocent.",
+   "say": "Thomas Randolph says he didn't kill Sharon. Two juries said that he did.",
    "claims": [
-    "R-INNOCENT"
+    "R-INNOCENT",
+    "R-QUOTE",
+    "R-CONVICT-2017",
+    "R-CONVICT-2023"
    ],
    "shots": [
     {
@@ -4391,7 +4515,8 @@
       "R-INNOCENT"
      ]
     }
-   ]
+   ],
+   "tone": "resolve"
   }
  ]
 }

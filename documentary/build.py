@@ -86,10 +86,59 @@ def split_sentences(text: str) -> list[str]:
     return out
 
 
+# Delivery presets for the 'kokoro' engine: speed multiplier, base pause between sentences, pause before the line
+# (a beat before a reveal), pause after it. A line picks one with "tone"; explicit "pace"/"gaps"/"pre"/"pause" override.
+DELIVERY = {
+    "hook":       {"speed": 1.00, "gap": 0.30, "pre": 0.00, "after": 0.32},
+    "curious":    {"speed": 0.97, "gap": 0.36, "pre": 0.00, "after": 0.38},
+    "confident":  {"speed": 1.00, "gap": 0.30, "pre": 0.00, "after": 0.30},
+    "tense":      {"speed": 0.95, "gap": 0.40, "pre": 0.05, "after": 0.42},
+    "reveal":     {"speed": 0.94, "gap": 0.48, "pre": 0.45, "after": 0.58},
+    "reflective": {"speed": 0.91, "gap": 0.50, "pre": 0.10, "after": 0.70},
+    "resolve":    {"speed": 0.93, "gap": 0.46, "pre": 0.10, "after": 0.60},
+}
+
+
+def _jitter(key: str, amount: float) -> float:
+    """Deterministic +/- variation so pauses never repeat to the millisecond (same text -> same timing)."""
+    import hashlib
+    return (int(hashlib.md5(key.encode()).hexdigest()[:6], 16) / 0xFFFFFF - 0.5) * 2 * amount
+
+
+def delivery(film: dict, ln: dict) -> dict:
+    d = dict(DELIVERY.get(ln.get("tone", "confident"), DELIVERY["confident"]))
+    d["speed"] = float(film.get("speed", 1.0)) * float(ln.get("pace", d["speed"]))
+    return d
+
+
+def narrate_line_kokoro(film: dict, ln: dict) -> tuple[Path, float, list[dict]]:
+    """Kokoro narrator: every sentence synthesised separately (exact caption timings, consistent processing), joined with
+    pauses set by the line's tone and the sentence's ending ('?' and ':' breathe longer)."""
+    from documentary import voice as V
+    d = delivery(film, ln); narrator = film["narrator"]
+    sents = split_sentences(ln["say"])
+    clips, spans, t, sr = [], [], 0.0, 24000
+    for k, sent in enumerate(sents):
+        x, sr = V.read_wav(V.say(tts_text(film, {"say": sent}), narrator, d["speed"]))
+        if k:
+            g = ln["gaps"][k - 1] if ln.get("gaps") else d["gap"] + (0.12 if sents[k - 1].rstrip().endswith("?") else 0.0) + _jitter(sent, 0.05)
+            clips.append(np.zeros(int(g * sr), np.float32)); t += g
+        spans.append({"text": sent, "start": round(t, 3), "end": round(t + len(x) / sr, 3)})
+        clips.append(x); t += len(x) / sr
+    import hashlib, wave
+    key = narrator + f"{d['speed']:.3f}" + "|".join(f"{s['text']}@{s['start']}" for s in spans)
+    out = V.CACHE / f"line_{hashlib.sha1(key.encode()).hexdigest()[:16]}.wav"
+    if not out.exists():
+        V.write_wav(out, np.concatenate(clips), sr)
+    return out, t, spans
+
+
 def narrate_line(film: dict, ln: dict, length_scale: float) -> tuple[Path, float, list[dict]]:
     """Synthesise one narration line. With sentence_gap > 0 every sentence is voiced separately and joined with a
     real pause (Piper otherwise runs sentences together, ~0.1 s), and exact per-sentence spans are returned for
     captions. sentence_gap = 0 reproduces the single-clip behaviour used for the first Betsy Faria renders."""
+    if film.get("engine") == "kokoro":
+        return narrate_line_kokoro(film, ln)
     voice, gap = film["voice"], float(ln.get("sentence_gap", film.get("sentence_gap", 0.38)))
     spk = film.get("speaker")   # multi-speaker voices (e.g. LibriTTS-R): pick one narrator; None = single-speaker model
     sents = split_sentences(ln["say"])
@@ -263,12 +312,17 @@ def main(argv=None) -> int:
     # 1. narration
     voice, ls = film["voice"], float(film.get("length_scale", 1.0))
     t = float(film.get("lead_in", 0.8)); timeline = []
-    log(f"narration: {sum(1 for l in film['lines'] if l.get('say'))} lines with {voice}")
+    log(f"narration: {sum(1 for l in film['lines'] if l.get('say'))} lines with {film.get('narrator') if film.get('engine') == 'kokoro' else voice}")
     for i, ln in enumerate(film["lines"]):
         if ln.get("say"):
             p, nd, spans = narrate_line(film, ln, ls * float(ln.get("speed", 1.0)))
-            pre = float(ln.get("pre", 0.0))
-            dur = max(float(ln.get("min", 0)), pre + nd + float(ln.get("pause", film.get("pause", 0.32))))
+            if film.get("engine") == "kokoro":   # tone-driven beats: a breath before reveals, longer rests after reflective lines
+                dv = delivery(film, ln)
+                pre = float(ln.get("pre", dv["pre"]))
+                after = float(ln.get("pause", dv["after"] + _jitter(ln["say"] + "|after", 0.06)))
+            else:
+                pre = float(ln.get("pre", 0.0)); after = float(ln.get("pause", film.get("pause", 0.32)))
+            dur = max(float(ln.get("min", 0)), pre + nd + after)
             timeline.append({"i": i, "start": round(t, 3), "end": round(t + dur, 3), "narration_at": round(t + pre, 3),
                              "narration_end": round(t + pre + nd, 3), "say": ln["say"], "wav": str(p),
                              "sentences": ([{"text": ln["say"], "start": round(t + pre, 3), "end": round(t + pre + nd, 3)}] if len(spans) == 1 else
@@ -315,6 +369,13 @@ def main(argv=None) -> int:
     music = audio.compose(segs, total, int(film.get("seed", 1)), bpm=int(film.get("bpm", 72)), key_semi=int(film.get("key", -3)))
     bed = drone(total)
     music = (music[: len(bed)] + bed[: len(music)]).astype(np.float32)
+    for a_, b_, db_ in film.get("music_gain", []):   # e.g. keep the bed lower under the hook; 0.6 s ramps either side
+        g = np.ones(len(music), np.float32); r = int(0.6 * audio.SR)
+        i0, i1 = int(a_ * audio.SR), min(len(music), int(b_ * audio.SR)); lv = 10 ** (db_ / 20)
+        g[i0:i1] = lv
+        if i0 > 0: g[max(0, i0 - r):i0] = np.linspace(1, lv, i0 - max(0, i0 - r))
+        if i1 < len(music): g[i1:min(len(music), i1 + r)] = np.linspace(lv, 1, min(len(music), i1 + r) - i1)
+        music = music * g
     clips = [(tl["narration_at"], *read_wav(Path(tl["wav"]))) for tl in timeline if tl.get("wav")]
     events = []
     for tl, ln in zip(timeline, film["lines"]):

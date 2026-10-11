@@ -28,3 +28,27 @@ The owner watches and downloads deliverables on an **Android phone**.
   - keep the evidence ledger and run the release gate (`documentary/gate.py`);
   - never invent sources or quotes;
   - never imply guilt beyond the legal record.
+
+## Narration and openings (owner's requirement, 11 Oct 2026; overrides engine defaults)
+
+The goal is narration that sounds like a professionally narrated series, not a voice reading a report.
+
+- **Voice.** House narrator: Kokoro v1.0 `bm_fable` (`"engine": "kokoro", "narrator": "bm_fable"` in film.json; `documentary/voice.py`). It is free, offline and Apache-2.0.
+  - Chosen from a measured audition (`documentary/voice_audit.py`); the owner's ear has the final say.
+  - Keep the same narrator across episodes.
+  - No paid voice services, API keys or new credentials without the owner's approval.
+- **Script.** Write for the ear: spoken sentences, concrete details before abstractions, plain English for legal points, and varied rhythm.
+  - Give every narrated line a `tone` (`hook`, `curious`, `confident`, `tense`, `reveal`, `reflective`, `resolve`). It sets speed and pauses (`DELIVERY` in `documentary/build.py`).
+  - Not every line is dramatic.
+- **Opening.** The story starts with the first spoken line. Write three opening concepts and pick one (record the choice, e.g. `films/<id>/opening-concepts.md`). The beats:
+  - 0–10 s: the hook;
+  - 10–25 s: the stakes;
+  - 25–40 s: escalate;
+  - 40–60 s: a reason to stay.
+  Build the hook only on CORROBORATED claims.
+- **Pronunciation.** Use `pronounce`/`spoken` overrides in film.json, and test hard names in the chosen voice before the full render.
+- **Mix.** Speech must stay intelligible on a phone speaker. Measure the voice-to-music ratio under speech: aim for 20 dB or more, and more in the hook.
+- **QA before final delivery.**
+  - Run `python -m documentary.voice_audit run <run>` and the ASR audit.
+  - Send the owner short MP3s: the opening minute, a names section, a tense section, a reflective section and the ending.
+  - Never claim to have listened; measurements are diagnostics, not listening.

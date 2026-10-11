@@ -1,0 +1,68 @@
+{
+  "frames": {
+    "decoded": 16523,
+    "expected": 16523,
+    "ok": true
+  },
+  "format": {
+    "pix_fmt": "yuv420p",
+    "profile": "High",
+    "dar": "16:9",
+    "sar": "1:1",
+    "ok": true
+  },
+  "audio_stream": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "bit_rate": "191745",
+    "ok": true
+  },
+  "black_segments_over_0.6s": {
+    "segments": [],
+    "ok": true
+  },
+  "frozen_over_4s": {
+    "starts": [],
+    "ok": true
+  },
+  "loudness": {
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -1.7,
+    "ok": true
+  },
+  "captions": {
+    "cues": 150,
+    "ordered": true,
+    "within_film": true,
+    "min_duration_s": 1.0,
+    "max_chars_per_s": 18.9,
+    "text_matches_narration": true,
+    "vtt_cues": 150,
+    "ok": true
+  },
+  "sync_spot_check": {
+    "times": [
+      51.38,
+      166.08,
+      178.69
+    ],
+    "expected": [
+      "OVERTURNED",
+      "PLEADED GUILTY",
+      "NOT GUILTY"
+    ],
+    "image": "sync_check.png"
+  },
+  "thumbnails": {
+    "thumbnail.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "bytes": 549147,
+      "ok": true
+    }
+  },
+  "all_ok": true
+}
