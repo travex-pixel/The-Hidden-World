@@ -137,4 +137,91 @@
       return { light: { dir: 1, rim: '#dfe6ee', key: '#dfe6ee' }, layers: [[0.2, back], [0.45, shaft], [0.75, cot], [0.85, floor], [1.0, ''], [1.5, o.bars === false ? '' : bars]] };
     }
   });
+
+  // ---------------------------------------------------------------- modern sets (2000s-2020s Nevada / Utah); generic, no real buildings or signage
+  const palm = (x, y, s, c = '#1e2a22', t = 0) => { let f = `<path d="M${x} ${y} Q ${x + 10 * s} ${y - 260 * s} ${x + 6 * s} ${y - 520 * s}" stroke="#3a2e24" stroke-width="${f1(18 * s)}" fill="none" stroke-linecap="round"/>`;
+    for (let i = 0; i < 8; i++) { const a = -2.6 + i * 0.75 + 0.05 * Math.sin(t * 1.2 + i); const ex = x + 6 * s + Math.cos(a) * 190 * s, ey = y - 520 * s + Math.sin(a) * 90 * s + 70 * s;
+      f += `<path d="M${f1(x + 6 * s)} ${f1(y - 520 * s)} Q ${f1((x + 6 * s + ex) / 2)} ${f1(y - 600 * s)} ${f1(ex)} ${f1(ey)}" stroke="${c}" stroke-width="${f1(22 * s)}" fill="none" stroke-linecap="round"/>`; }
+    return f; };
+  const mountains = (y, c, seed, amp = 260) => { const r = R(seed); let d = `M-600 ${y}`; for (let x = -600; x <= W + 600; x += 120) d += ` L${x} ${f1(y - 80 - r() * amp)}`; return `<path d="${d} L${W + 600} ${y + 400} L-600 ${y + 400} Z" fill="${c}"/>`; };
+  function policeLights(t, a = 1) {   // red/blue wash, alternating (generic emergency lights, no vehicle markings)
+    const k = (Math.sin(t * 9) > 0); return wash(k ? 120 : 960, 1180, 520, 300, k ? '#ff2a3a' : '#2a6aff', 0.32 * a) + wash(k ? 960 : 120, 1220, 380, 220, k ? '#2a6aff' : '#ff2a3a', 0.18 * a);
+  }
+  E.registerSets({
+    // a single-storey desert-suburb house (stucco, tile roof, garage, palms); o.mode 'day' | 'night'; o.police 0..1 flashing lights; o.lit 0..1 windows
+    trw_suburb(ctx, o = {}) {
+      const t = ctx.t, night = o.mode !== 'day', r = R(41);
+      const sky = night ? `<defs><linearGradient id="trwsn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070b1c"/><stop offset="1" stop-color="#2a2140"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#trwsn)"/>` +
+          Array.from({ length: 60 }, () => `<circle cx="${f1(-400 + r() * 1900)}" cy="${f1(-200 + r() * 700)}" r="${f1(0.8 + r() * 1.6)}" fill="#fff" opacity="${f1(0.3 + 0.5 * r())}"/>`).join('')
+        : `<defs><linearGradient id="trwsd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa8d8"/><stop offset="1" stop-color="#f4dcb4"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#trwsd)"/>` + wash(860, 300, 300, 160, '#fff6dc', 0.5);
+      const far = mountains(1000, night ? '#14121e' : '#b88a6a', 3) + mountains(1060, night ? '#0e0c16' : '#9a7258', 8, 160);
+      const wall = night ? '#5a5048' : '#e2c9a4', roof = night ? '#3a2420' : '#b4553a', lit = clamp(o.lit ?? (night ? 0.8 : 0), 0, 1);
+      const win = (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${lit > 0 ? '#ffd27a' : '#5a7a92'}" opacity="${lit > 0 ? f1(0.55 + 0.4 * lit * flick(t, x)) : 1}" stroke="${INK}" stroke-width="5"/><path d="M${x + w / 2} ${y} L${x + w / 2} ${y + h}" stroke="${INK}" stroke-width="4"/>` + (lit > 0 ? wash(x + w / 2, y + h / 2, w, h, '#ffc870', 0.35 * lit) : '');
+      const house = `<rect x="80" y="980" width="900" height="320" fill="${wall}" stroke="${INK}" stroke-width="6"/>` +
+        `<path d="M40 990 L240 860 L820 860 L1020 990 Z" fill="${roof}" stroke="${INK}" stroke-width="6"/>` + Array.from({ length: 9 }, (_, i) => `<path d="M${120 + i * 100} 990 L${200 + i * 80} 870" stroke="${shade(roof, 0.7)}" stroke-width="5"/>`).join('') +
+        win(150, 1060, 150, 120) + win(360, 1060, 150, 120) +
+        `<rect x="580" y="1110" width="90" height="190" fill="#3a2a20" stroke="${INK}" stroke-width="5"/><circle cx="655" cy="1210" r="6" fill="#c9a24a"/>` +
+        `<rect x="720" y="1080" width="230" height="220" fill="${shade(wall, 0.85)}" stroke="${INK}" stroke-width="5"/>` + Array.from({ length: 5 }, (_, i) => `<path d="M720 ${1110 + i * 38} L950 ${1110 + i * 38}" stroke="${shade(wall, 0.65)}" stroke-width="4"/>`).join('') +
+        (night ? `<circle cx="625" cy="1090" r="9" fill="#ffe1a0"/>` + wash(625, 1100, 110, 80, '#ffc870', 0.45) : '');
+      const yard = `<rect x="-600" y="1290" width="${W + 1200}" height="220" fill="${night ? '#2a2620' : '#c9a878'}"/>` + `<path d="M720 1300 L950 1300 L1080 1500 L620 1500 Z" fill="${night ? '#3a3632' : '#9a948a'}"/>` +
+        Array.from({ length: 30 }, () => `<circle cx="${f1(-500 + r() * 1900)}" cy="${f1(1310 + r() * 180)}" r="${f1(4 + r() * 8)}" fill="${night ? '#1e1a16' : '#8a7458'}"/>`).join('') +
+        `<g transform="translate(-150 1320)"><path d="M-40 0 Q -60 -60 -20 -90 Q 0 -60 10 -100 Q 30 -60 50 -80 Q 60 -30 40 0 Z" fill="${night ? '#1a2a1a' : '#5a7a4a'}" stroke="${INK}" stroke-width="3"/></g>`;
+      const street = `<rect x="-600" y="1500" width="${W + 1200}" height="${H}" fill="${night ? '#1a1a1e' : '#6a6a6e'}"/><rect x="-600" y="1500" width="${W + 1200}" height="18" fill="${night ? '#3a3a3e' : '#b8b4aa'}" stroke="${INK}" stroke-width="3"/>` +
+        Array.from({ length: 8 }, (_, i) => `<rect x="${-500 + i * 260}" y="1700" width="140" height="12" fill="${night ? '#5a5a3a' : '#e8d880'}" opacity="0.8"/>`).join('');
+      const palms = palm(-260, 1310, 1.0, night ? '#0e1a12' : '#3a5a2a', t) + palm(1240, 1300, 1.15, night ? '#0e1a12' : '#3a5a2a', t + 1);
+      const lights = o.police ? policeLights(t, o.police) : '';
+      return { light: { dir: night ? -1 : 1, rim: night ? '#9ab8ff' : '#fff1cf', key: night ? '#9ab8ff' : '#fff1cf' }, layers: [[0.04, sky], [0.18, far], [0.45, house], [0.62, yard], [0.85, palms], [0.95, street], [1.0, ''], [1.05, lights]] };
+    },
+    // a generic neon city skyline at night with a desert highway (no real casinos, no readable signs)
+    trw_strip(ctx, o = {}) {
+      const t = ctx.t, r = R(77);
+      let s = `<defs><linearGradient id="trwst" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05061a"/><stop offset="1" stop-color="#3a1a4a"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#trwst)"/>`;
+      s += wash(540, 1000, 900, 260, '#ff6ad5', 0.25) + mountains(1080, '#0a0814', 5, 140);
+      const neon = ['#ff3aa8', '#3af0ff', '#ffd23a', '#9a6aff', '#ff6a3a'];
+      let towers = '';
+      for (let i = 0; i < 14; i++) { const x = -420 + i * 135 + r() * 40, w = 70 + r() * 70, h = 220 + r() * 520, c = neon[i % 5];
+        towers += `<rect x="${f1(x)}" y="${f1(1080 - h)}" width="${f1(w)}" height="${f1(h)}" fill="#120e22" stroke="${INK}" stroke-width="4"/>` +
+          Array.from({ length: Math.floor(h / 40) }, (_, j) => `<rect x="${f1(x + 8)}" y="${f1(1080 - h + 14 + j * 40)}" width="${f1(w - 16)}" height="6" fill="${c}" opacity="${f1(0.25 + 0.5 * (0.5 + 0.5 * Math.sin(t * 2 + i + j)))}"/>`).join('') +
+          `<rect x="${f1(x - 4)}" y="${f1(1080 - h - 8)}" width="${f1(w + 8)}" height="10" fill="${c}" opacity="0.9"/>`; }
+      const road = `<rect x="-600" y="1080" width="${W + 1200}" height="${H}" fill="#0e0c14"/><path d="M380 1080 L700 1080 L1300 ${H + 200} L-200 ${H + 200} Z" fill="#1a1820"/>` +
+        Array.from({ length: 8 }, (_, i) => { const u = ((t * 0.5 + i / 8) % 1); return `<rect x="${f1(536 - 4 - u * 40)}" y="${f1(1090 + u * u * 900)}" width="${f1(8 + u * 60)}" height="${f1(10 + u * 50)}" fill="#e8d880" opacity="0.8"/>`; }).join('') +
+        Array.from({ length: 6 }, (_, i) => { const u = ((t * 0.35 + i / 6) % 1); return wash(f1(470 - u * 500), f1(1100 + u * u * 700), 30 + u * 60, 12 + u * 20, '#ffe8b0', 0.8 * (1 - u)); }).join('');
+      return { light: { dir: 1, rim: '#ff8ad5', key: '#ff8ad5' }, layers: [[0.04, s], [0.25, towers], [0.8, road], [1.0, '']] };
+    },
+    // a small roadside wedding chapel at night: white clapboard, steeple, neon heart (generic, no lettering)
+    trw_chapel(ctx, o = {}) {
+      const t = ctx.t, on = 0.6 + 0.4 * (Math.sin(t * 3) > -0.3 ? 1 : 0);
+      const sky = `<rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="#0a0a1e"/>` + wash(540, 900, 800, 300, '#3a1a5a', 0.6);
+      const ch = `<rect x="240" y="900" width="600" height="420" fill="#efeae0" stroke="${INK}" stroke-width="6"/><path d="M200 910 L540 700 L880 910 Z" fill="#d8d2c4" stroke="${INK}" stroke-width="6"/>` +
+        `<rect x="490" y="520" width="100" height="200" fill="#efeae0" stroke="${INK}" stroke-width="5"/><path d="M470 530 L540 400 L610 530 Z" fill="#d8d2c4" stroke="${INK}" stroke-width="5"/>` +
+        `<path d="M480 1320 L480 1140 Q 540 1080 600 1140 L600 1320 Z" fill="#5a2a2a" stroke="${INK}" stroke-width="5"/>` +
+        [300, 700].map(x => `<path d="M${x} 1180 L${x} 1040 Q ${x + 40} 1000 ${x + 80} 1040 L${x + 80} 1180 Z" fill="#ffd27a" opacity="0.85" stroke="${INK}" stroke-width="4"/>`).join('') + wash(540, 1200, 300, 120, '#ffd27a', 0.3);
+      const heart = `<g transform="translate(540 820) scale(1.2)"><path d="M0 40 C -70 -10 -60 -70 -20 -70 C 0 -70 0 -50 0 -45 C 0 -50 0 -70 20 -70 C 60 -70 70 -10 0 40 Z" fill="none" stroke="#ff3a8a" stroke-width="12" opacity="${f1(on)}"/></g>` + wash(540, 800, 160, 120, '#ff3a8a', 0.4 * on);
+      const ground = `<rect x="-600" y="1320" width="${W + 1200}" height="${H}" fill="#1a1820"/>` + palm(-120, 1340, 0.9, '#0e1a12', t) + palm(1180, 1330, 1.0, '#0e1a12', t + 2);
+      return { light: { dir: 1, rim: '#ff8ac0', key: '#ffd27a' }, layers: [[0.05, sky], [0.4, ch], [0.42, heart], [0.8, ground], [1.0, '']] };
+    },
+    // a police interview room: table, two chairs, a dark one-way mirror, a hard overhead light
+    trw_interview(ctx, o = {}) {
+      const t = ctx.t;
+      const back = `<rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="#3a4044"/>` + `<rect x="-600" y="1240" width="${W + 1200}" height="${H}" fill="#2a2e30"/>` +
+        `<rect x="560" y="420" width="760" height="520" fill="#0e1214" stroke="#1a1e20" stroke-width="16"/><path d="M600 460 L760 460 L620 700 Z" fill="#fff" opacity="0.06"/>` +
+        `<rect x="-300" y="400" width="80" height="80" fill="#2a2e30" stroke="${INK}" stroke-width="4"/><circle cx="-260" cy="440" r="14" fill="${Math.sin(t * 4) > 0 ? '#ff3a3a' : '#5a1a1a'}"/>`;
+      const lamp = `<rect x="340" y="-200" width="400" height="30" fill="#c8d0d4" stroke="${INK}" stroke-width="4"/><path d="M340 -170 L740 -170 L1100 1300 L-20 1300 Z" fill="#e8f0f4" opacity="${f1(0.08 + 0.01 * Math.sin(t * 40))}"/>`;
+      const table = `<rect x="-200" y="1180" width="1480" height="40" fill="#5a5e60" stroke="${INK}" stroke-width="5"/><rect x="-200" y="1220" width="1480" height="${H}" fill="#2a2e30"/>` +
+        `<rect x="440" y="1150" width="160" height="32" fill="#e8e2d4" stroke="${INK}" stroke-width="3"/><rect x="660" y="1156" width="60" height="26" rx="4" fill="#1a1a1e" stroke="${INK}" stroke-width="3"/><circle cx="690" cy="1169" r="5" fill="#ff3a3a" opacity="${f1(0.5 + 0.5 * Math.sin(t * 3))}"/>`;
+      return { light: { dir: 1, rim: '#e8f0f4', key: '#e8f0f4' }, layers: [[0.25, back], [0.45, lamp], [1.0, ''], [1.06, table]] };
+    },
+    // a small mountain town in the 1980s: wooden house, pines, snow-capped peaks (generic)
+    trw_mountain_town(ctx, o = {}) {
+      const t = ctx.t, r = R(19);
+      const sky = `<defs><linearGradient id="trwmt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a9ab8"/><stop offset="1" stop-color="#e8dcc8"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#trwmt)"/>`;
+      let peaks = `<path d="M-600 900 L-200 420 L60 700 L380 300 L700 680 L1000 380 L1500 900 Z" fill="#6a7088"/>` + `<path d="M-280 520 L-200 420 L-120 520 Z M300 400 L380 300 L460 400 Z M930 470 L1000 380 L1070 470 Z" fill="#f4f4f8"/>`;
+      peaks += mountains(1000, '#4a5a48', 12, 120);
+      const pine = (x, y, s) => `<path d="M${x} ${y - 300 * s} L${x + 90 * s} ${y} L${x - 90 * s} ${y} Z" fill="#1e3a2a" stroke="${INK}" stroke-width="4"/><rect x="${x - 10 * s}" y="${y}" width="${20 * s}" height="${40 * s}" fill="#3a2a1e"/>`;
+      const house = `<rect x="240" y="1000" width="560" height="300" fill="#8a5a3a" stroke="${INK}" stroke-width="6"/>` + Array.from({ length: 7 }, (_, i) => `<path d="M240 ${1030 + i * 40} L800 ${1030 + i * 40}" stroke="#6a422a" stroke-width="4"/>`).join('') +
+        `<path d="M200 1010 L520 820 L840 1010 Z" fill="#3a3030" stroke="${INK}" stroke-width="6"/><rect x="300" y="1080" width="120" height="100" fill="#cfe0ea" stroke="${INK}" stroke-width="5"/><rect x="560" y="1120" width="90" height="180" fill="#4a2a1a" stroke="${INK}" stroke-width="5"/>`;
+      const ground = `<rect x="-600" y="1290" width="${W + 1200}" height="${H}" fill="#7a7a58"/>` + pine(-200, 1300, 1.3) + pine(1150, 1320, 1.5) + pine(980, 1240, 0.9) + pine(60, 1250, 0.8);
+      return { light: { dir: 1, rim: '#fff1cf', key: '#fff1cf' }, layers: [[0.04, sky], [0.15, peaks], [0.45, house], [0.85, ground], [1.0, '']] };
+    }
+  });
 })();

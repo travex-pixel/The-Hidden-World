@@ -91,21 +91,23 @@ def narrate_line(film: dict, ln: dict, length_scale: float) -> tuple[Path, float
     real pause (Piper otherwise runs sentences together, ~0.1 s), and exact per-sentence spans are returned for
     captions. sentence_gap = 0 reproduces the single-clip behaviour used for the first Betsy Faria renders."""
     voice, gap = film["voice"], float(ln.get("sentence_gap", film.get("sentence_gap", 0.38)))
+    spk = film.get("speaker")   # multi-speaker voices (e.g. LibriTTS-R): pick one narrator; None = single-speaker model
     sents = split_sentences(ln["say"])
     if gap <= 0 or len(sents) < 2 or ln.get("tts"):
-        p = narrate_scene(voice, tts_text(film, ln), length_scale)
+        p = narrate_scene(voice, tts_text(film, ln), length_scale, spk)
         x, sr = read_wav(p)
         return p, len(x) / sr, [{"text": ln["say"], "start": 0.0, "end": round(len(x) / sr, 3)}]
     clips, spans, t, sr = [], [], 0.0, None
     for k, sent in enumerate(sents):
-        x, sr_ = read_wav(narrate_scene(voice, tts_text(film, {"say": sent}), length_scale)); sr = sr or sr_
+        x, sr_ = read_wav(narrate_scene(voice, tts_text(film, {"say": sent}), length_scale, spk)); sr = sr or sr_
         if k:
             clips.append(np.zeros(int(gap * sr), np.float32)); t += gap
         spans.append({"text": sent, "start": round(t, 3), "end": round(t + len(x) / sr, 3)})
         clips.append(x.astype(np.float32)); t += len(x) / sr
     import hashlib, wave
     from pipeline.narrate import CACHE
-    out = CACHE / f"sent_{hashlib.sha1((voice + str(length_scale) + str(gap) + '|'.join(tts_text(film, {'say': s_}) for s_ in sents)).encode()).hexdigest()[:16]}.wav"
+    key = voice + str(length_scale) + str(gap) + ("" if spk is None else f"|spk{spk}") + '|'.join(tts_text(film, {'say': s_}) for s_ in sents)
+    out = CACHE / f"sent_{hashlib.sha1(key.encode()).hexdigest()[:16]}.wav"
     if not out.exists():
         y = np.concatenate(clips)
         with wave.open(str(out), "wb") as w:

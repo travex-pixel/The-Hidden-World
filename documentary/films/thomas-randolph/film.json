@@ -1,0 +1,4397 @@
+{
+ "id": "thomas-randolph",
+ "title": "The Widower True Story: Where Is Thomas Randolph Now?",
+ "voice": "en_US-libritts_r-medium",
+ "speaker": 428,
+ "length_scale": 1.3,
+ "pause": 0.34,
+ "lead_in": 0.5,
+ "tail": 0.8,
+ "sentence_gap": 0.36,
+ "seed": 31,
+ "bpm": 70,
+ "key": -5,
+ "music_db": -15,
+ "sfx_db": -11,
+ "duck_db": -9,
+ "crf": 22,
+ "pronounce": {
+  "Gault": "Galt",
+  "Slepian": "Sleppian",
+  "Tierra": "Tee-erra",
+  "Tomsheck": "Tom-shek"
+ },
+ "spoken": {
+  "1975": "nineteen seventy-five",
+  "1983": "nineteen eighty-three",
+  "1986": "nineteen eighty-six",
+  "1989": "nineteen eighty-nine",
+  "2004": "two thousand four",
+  "2008": "two thousand eight",
+  "2009": "two thousand nine",
+  "2017": "twenty seventeen",
+  "2020": "twenty twenty",
+  "2021": "twenty twenty-one",
+  "2023": "twenty twenty-three",
+  "2024": "twenty twenty-four",
+  "2026": "twenty twenty-six",
+  "911": "nine one one",
+  "$300,000": "three hundred thousand dollars",
+  "11.6 million": "eleven point six million",
+  "300 phone": "three hundred phone"
+ },
+ "figures": [
+  "trw_randolph",
+  "trw_prosecutor",
+  "trw_defence",
+  "trw_detective",
+  "trw_officer",
+  "judge",
+  "detective",
+  "analyst",
+  "agent_b"
+ ],
+ "timeline": [],
+ "lines": [
+  {
+   "say": "Las Vegas. May 2008. A man calls 911.",
+   "claims": [
+    "R-911-CALL",
+    "R-KILLINGS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 1040,
+      "w": 1250
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "setOpts": {
+      "mode": "night",
+      "lit": 0.9
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "lower": {
+      "p": 0.15,
+      "title": "May 2008",
+      "color": "red",
+      "kicker": "Las Vegas, Nevada"
+     },
+     "w": 1.1
+    },
+    {
+     "type": "cine",
+     "set": "kitchen_night",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 420,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "hand_to_face",
+       "expr": "worried",
+       "gaze": [
+        0.4,
+        0.1
+       ],
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.3,
+         "gaze": [
+          0.7,
+          0.2
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 470,
+      "cy": 1060,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 460,
+      "cy": 1050,
+      "w": 950
+     },
+     "grade": "night",
+     "cam": {
+      "handheld": 3
+     },
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "on the phone to 911"
+     },
+     "claims": [
+      "R-911-CALL"
+     ],
+     "w": 1.0
+    }
+   ],
+   "chapter": "Cold open",
+   "chapter_title": "Cold open",
+   "tag": "",
+   "cue": "cold",
+   "sfx": [
+    {
+     "name": "beep",
+     "at": 0.6,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "say": "He says a masked intruder has shot his wife.",
+   "claims": [
+    "R-911"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kitchen_night",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 420,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.6,
+       "pose": "hand_to_face",
+       "expr": "distraught",
+       "gaze": [
+        0.2,
+        0.3
+       ],
+       "keys": [
+        {
+         "p": 0.5,
+         "expr": "worried",
+         "headTurn": -0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 440,
+      "cy": 1020,
+      "w": 760
+     },
+     "view_to": {
+      "cx": 440,
+      "cy": 1010,
+      "w": 680
+     },
+     "grade": "night",
+     "cam": {
+      "handheld": 4
+     },
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "on the phone to 911"
+     },
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "On the 911 call:"
+        },
+        {
+         "text": "a masked intruder.",
+         "color": "amber"
+        }
+       ],
+       "x": 1100,
+       "y": 300,
+       "w": 700,
+       "kicker": "HIS ACCOUNT"
+      }
+     ],
+     "claims": [
+      "R-911-CALL"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "He says he fought the man for the gun, got it, and shot him.",
+   "claims": [
+    "R-911",
+    "R-SHOT-MILLER"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [
+      {
+       "id": "trw_officer",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 380,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 7.0
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "stand",
+         "headTurn": 0.3
+        }
+       ]
+      },
+      {
+       "id": "trw_officer",
+       "x": -420,
+       "y": 1520,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -420,
+        "to": 180,
+        "p0": 0.08,
+        "p1": 0.8,
+        "cadence": 7.2
+       },
+       "keys": [
+        {
+         "p": 0.82,
+         "pose": "point",
+         "headTurn": 0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 1110,
+      "w": 1450
+     },
+     "setOpts": {
+      "mode": "night",
+      "police": 1,
+      "lit": 0.9
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "cam": {
+      "handheld": 2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "say": "The man he shot was Michael Miller, a handyman he knew.",
+   "claims": [
+    "R-SHOT-MILLER",
+    "R-MILLER"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Michael Miller",
+     "kicker": "SHOT DEAD IN THE GARAGE",
+     "kind": "m",
+     "lines": [
+      "Handyman, 38",
+      "A handyman he knew"
+     ],
+     "rim": "amber",
+     "claims": [
+      "R-AGES",
+      "R-KILLINGS"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "His wife, Sharon, was dead. So was Miller.",
+   "claims": [
+    "R-KILLINGS"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Sharon Causse",
+     "kicker": "HIS SIXTH WIFE",
+     "kind": "f",
+     "lines": [
+      "57",
+      "Killed at home, May 2008"
+     ],
+     "rim": "red",
+     "claims": [
+      "R-AGES",
+      "R-SIX"
+     ],
+     "w": 1.1
+    },
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [],
+     "view": {
+      "cx": 620,
+      "cy": 1080,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 640,
+      "cy": 1090,
+      "w": 1100
+     },
+     "setOpts": {
+      "mode": "night",
+      "police": 0.7,
+      "lit": 0.6
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "w": 0.9
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.3,
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "say": "The man who made that call was Thomas Randolph. Sharon was his sixth wife.",
+   "claims": [
+    "R-911-CALL",
+    "R-SIX"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 700,
+       "y": 1470,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.35,
+       "pose": "stand",
+       "expr": "blank",
+       "gaze": [
+        -0.3,
+        0.1
+       ],
+       "keys": [
+        {
+         "p": 0.55,
+         "headTurn": -0.25
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 1300,
+       "y": 1500,
+       "scale": 0.52,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1300,
+        "to": 900,
+        "p0": 0.1,
+        "p1": 0.6,
+        "cadence": 6.6
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "read",
+         "expr": "focused"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1150,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1120,
+      "w": 1050
+     },
+     "setOpts": {
+      "mode": "night",
+      "police": 0.8,
+      "lit": 0.8
+     },
+     "grade": "night",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "on the phone to 911"
+     },
+     "lower": {
+      "p": 0.2,
+      "title": "Thomas Randolph",
+      "color": "red",
+      "kicker": "Married six times",
+      "sub": "Illustration, not a likeness"
+     },
+     "claims": [
+      "R-911-CALL"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Prosecutors alleged that Randolph had hired Miller to kill Sharon, then killed Miller to get rid of a witness.",
+   "claims": [
+    "R-THEORY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "court",
+       "gaze": [
+        0.4,
+        0
+       ]
+      },
+      {
+       "id": "trw_prosecutor",
+       "x": 980,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 980,
+        "to": 780,
+        "p0": 0.0,
+        "p1": 0.35,
+        "cadence": 6.0
+       },
+       "keys": [
+        {
+         "p": 0.38,
+         "pose": "point",
+         "expr": "determined"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 910,
+      "w": 1600
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "stamps": [
+      {
+       "p": 0.5,
+       "text": "THE PROSECUTION'S CASE",
+       "color": "red",
+       "x": 1400,
+       "y": 230,
+       "size": 60
+      }
+     ],
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ],
+   "cue": "unease"
+  },
+  {
+   "say": "Randolph says he is innocent.",
+   "claims": [
+    "R-INNOCENT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "court",
+       "gaze": [
+        0.2,
+        0
+       ],
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.25,
+         "gaze": [
+          0.6,
+          0.1
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 330,
+      "cy": 1150,
+      "w": 700
+     },
+     "view_to": {
+      "cx": 320,
+      "cy": 1140,
+      "w": 620
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "He has been tried for murder three times.",
+   "claims": [
+    "R-THREE-TRIALS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "trw_prosecutor",
+       "x": -150,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -150,
+        "to": 300,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.63,
+         "pose": "stand",
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 880,
+      "w": 1650
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC COURTROOM",
+     "headline": {
+      "x": 900,
+      "y": 820,
+      "rows": [
+       {
+        "text": "3 MURDER TRIALS",
+        "size": 100,
+        "color": "amber"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "say": "One jury acquitted him. Two juries convicted him.",
+   "claims": [
+    "R-THREE-TRIALS"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THREE MURDER TRIALS",
+     "title": "Utah, then Las Vegas twice",
+     "items": [
+      "1989 · Utah · ACQUITTED",
+      "2017 · Las Vegas · CONVICTED (overturned in 2020)",
+      "2023 · Las Vegas · CONVICTED (upheld in 2026)"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "And the first conviction, with its two death sentences, was thrown out, because that jury had heard about the case in which he was acquitted.",
+   "claims": [
+    "R-REVERSAL",
+    "R-REVERSAL-WHY",
+    "R-DEATH-2017"
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "OVERTURNED",
+     "color": "amber",
+     "lines": [
+      "Nevada Supreme Court · December 2020"
+     ],
+     "at": 0.3,
+     "claims": [
+      "R-REVERSAL"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.35
+    }
+   ]
+  },
+  {
+   "say": "This is the true story behind Netflix's The Widower.",
+   "claims": [
+    "R-NETFLIX"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_strip",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1250
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1700
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CITY SKYLINE"
+    }
+   ],
+   "cue": "tension-rise"
+  },
+  {
+   "silence": 2.6,
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "THE THOMAS RANDOLPH CASE",
+     "text": "THE\nWIDOWER",
+     "sub": "Six marriages. Three murder trials.",
+     "in": "glitch",
+     "chapterTag": "",
+     "claims": [
+      "R-THREE-TRIALS"
+     ]
+    }
+   ],
+   "cue": "tension-peak",
+   "sfx": [
+    {
+     "name": "sting",
+     "at": 0.0,
+     "gain": 0.8
+    }
+   ]
+  },
+  {
+   "say": "Thomas Randolph has been married six times.",
+   "claims": [
+    "R-SIX"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_chapel",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": -150,
+       "y": 1340,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -150,
+        "to": 330,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "hands_together",
+         "headTurn": 0.3,
+         "gaze": [
+          0.5,
+          -0.2
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 500,
+      "cy": 1020,
+      "w": 1350
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CHAPEL",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "MARRIED 6 TIMES",
+         "color": "amber",
+         "size": 64
+        }
+       ],
+       "x": 1150,
+       "y": 260,
+       "w": 640,
+       "kicker": "THE RECORD"
+      }
+     ]
+    }
+   ],
+   "chapter": "Six marriages",
+   "chapter_title": "1 · Six marriages",
+   "tag": "Chapter 1 · Six marriages",
+   "cue": "unease"
+  },
+  {
+   "say": "His first marriage lasted from 1975 to 1983. That wife is still alive, and she later testified against him at one of his trials.",
+   "claims": [
+    "R-KATHY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_chapel",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 1250,
+       "y": 1340,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 760,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.2
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "stand",
+         "headTurn": -0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 1010,
+      "w": 1400
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CHAPEL",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 110,
+       "y": 170,
+       "w": 700,
+       "rows": [
+        {
+         "text": "FIRST MARRIAGE"
+        },
+        {
+         "text": "1975 – 1983",
+         "p": 0.25,
+         "color": "amber"
+        },
+        {
+         "text": "She is alive · Testified at his trial",
+         "p": 0.5
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "In 1983, he married Becky Gault. According to reports, it was the same day his first divorce was finalised.",
+   "claims": [
+    "R-SAMEDAY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_chapel",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 330,
+       "y": 1340,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.45,
+       "pose": "hands_together",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.4,
+         "gaze": [
+          0.6,
+          -0.1
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 470,
+      "cy": 1060,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 1050,
+      "w": 900
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CHAPEL",
+     "cards": [
+      {
+       "p": 0.15,
+       "x": 1050,
+       "y": 220,
+       "w": 760,
+       "rows": [
+        {
+         "text": "BECKY GAULT · SECOND WIFE"
+        },
+        {
+         "text": "1983 · SAME DAY AS HIS DIVORCE",
+         "p": 0.55,
+         "color": "amber"
+        },
+        {
+         "text": "per the Las Vegas Review-Journal, via Oxygen",
+         "p": 0.6,
+         "size": 26
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "After Becky, he married four more times.",
+   "claims": [
+    "R-SIX"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_chapel",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": -150,
+       "y": 1340,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -150,
+        "to": 1250,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 6.6
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CHAPEL",
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "Outlets list wives three to five"
+        },
+        {
+         "text": "in different orders."
+        }
+       ],
+       "x": 1060,
+       "y": 780,
+       "w": 780,
+       "kicker": "NOTE"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Four of his six wives have died.",
+   "claims": [
+    "R-FOUR-DEAD"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "4 OF 6",
+     "label": "of his wives have died",
+     "note": "Causes and legal outcomes differ; they follow.",
+     "size": 220,
+     "noCorner": true
+    }
+   ],
+   "cue": "intimate"
+  },
+  {
+   "say": "One died in 2004, after heart surgery. Another died of cancer. He was never charged over either death.",
+   "claims": [
+    "R-FRANCIS-LEONA",
+    "R-NOCHARGE"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "NO CHARGES",
+     "title": "Two deaths from medical causes",
+     "items": [
+      "Francis Randolph · Died 2004, after heart surgery",
+      "Leona Stapleton · Died of cancer",
+      "Never charged over either death"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "One, in Utah in 1986, led to a murder trial. And one, in Las Vegas in 2008, led to the sentence he is serving today.",
+   "claims": [
+    "R-BECKY-DEATH",
+    "R-BECKY-CHARGED",
+    "R-KILLINGS",
+    "R-SENTENCE"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "UTAH · 1986",
+      "LAS VEGAS · 2008"
+     ],
+     "big": [
+      "ACQUITTED",
+      "CONVICTED"
+     ],
+     "bigColor": [
+      "blue",
+      "red"
+     ],
+     "bigSize": 84,
+     "body": [
+      [
+       "Becky Gault's death",
+       "trial in 1989"
+      ],
+      [
+       "deaths of Sharon and",
+       "Michael Miller · 2023"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "R-BECKY-ACQUIT",
+      "R-CONVICT-2023"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Utah. November 1986.",
+   "claims": [
+    "R-BECKY-DEATH"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_mountain_town",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC MOUNTAIN TOWN",
+     "lower": {
+      "p": 0.15,
+      "title": "November 1986",
+      "color": "red",
+      "kicker": "Utah"
+     }
+    }
+   ],
+   "chapter": "Utah, 1986",
+   "chapter_title": "2 · Utah, 1986",
+   "tag": "Chapter 2 · Utah",
+   "cue": "unease"
+  },
+  {
+   "say": "Becky Gault, Randolph's second wife, died of a gunshot wound at home.",
+   "claims": [
+    "R-BECKY-DEATH"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Becky Gault",
+     "kicker": "HIS SECOND WIFE",
+     "kind": "f",
+     "lines": [
+      "Died November 1986",
+      "Utah"
+     ],
+     "rim": "amber"
+    }
+   ]
+  },
+  {
+   "say": "Her death was first ruled a suicide.",
+   "claims": [
+    "R-BECKY-SUICIDE"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "Becky Gault, 1986",
+     "lines": [
+      "Where:   at home, Utah",
+      "Cause:   gunshot wound",
+      "Ruling:  suicide (first ruling)"
+     ],
+     "hl": 2,
+     "stamp": "AS REPORTED",
+     "claims": [
+      "R-BECKY-DEATH"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Then a former friend and co-worker of Randolph's, Eric Tarantino, told authorities that Randolph had talked about having her killed for the insurance money.",
+   "claims": [
+    "R-TARANTINO"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Eric Tarantino",
+     "kicker": "PROSECUTION WITNESS",
+     "kind": "m",
+     "lines": [
+      "Former friend and co-worker",
+      "His account, not a finding"
+     ],
+     "rim": "amber",
+     "w": 1.0
+    },
+    {
+     "type": "cine",
+     "set": "trw_mountain_town",
+     "figures": [
+      {
+       "id": "detective",
+       "x": 1300,
+       "y": 1450,
+       "scale": 0.46,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1300,
+        "to": 760,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 6.2
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "read",
+         "expr": "focused"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC MOUNTAIN TOWN",
+     "w": 1.0
+    }
+   ]
+  },
+  {
+   "say": "Randolph was charged with Becky's murder.",
+   "claims": [
+    "R-BECKY-CHARGED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_mountain_town",
+     "figures": [
+      {
+       "id": "detective",
+       "x": 760,
+       "y": 1450,
+       "scale": 0.46,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "focused"
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1150,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 680,
+      "cy": 1140,
+      "w": 900
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC MOUNTAIN TOWN",
+     "stamps": [
+      {
+       "p": 0.3,
+       "text": "CHARGED",
+       "color": "red",
+       "x": 560,
+       "y": 300,
+       "size": 110
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.35
+    }
+   ]
+  },
+  {
+   "say": "And while he was in jail awaiting trial, news reports say, he offered a cellmate cash and a car title to kill Tarantino.",
+   "claims": [
+    "R-TAMPERING"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 1000,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "cam": {
+      "handheld": 1
+     },
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "Offered: cash and a car title,"
+        },
+        {
+         "text": "to kill the key witness."
+        }
+       ],
+       "x": 1080,
+       "y": 300,
+       "w": 720,
+       "kicker": "REPORTED"
+      }
+     ]
+    }
+   ],
+   "cue": "tension"
+  },
+  {
+   "say": "The cellmate was an undercover police officer.",
+   "claims": [
+    "R-TAMPERING"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "THE 'CELLMATE'",
+      "WAS UNDERCOVER"
+     ],
+     "em": [
+      "UNDERCOVER"
+     ],
+     "sub": "Undercover officer"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "sting",
+     "at": 0.1,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "say": "Randolph pleaded guilty to felony witness tampering.",
+   "claims": [
+    "R-TAMPERING"
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "PLEADED GUILTY",
+     "color": "amber",
+     "lines": [
+      "Felony witness tampering"
+     ],
+     "at": 0.3
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.35
+    }
+   ]
+  },
+  {
+   "say": "But at the murder trial in 1989, his lawyers argued that Becky had taken her own life.",
+   "claims": [
+    "R-BECKY-DEFENCE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "neutral",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "trw_defence",
+       "x": 700,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point_up"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 920,
+      "w": 1550
+     },
+     "setOpts": {
+      "modern": false,
+      "dock": false
+     },
+     "grade": "sepia",
+     "label": "ILLUSTRATION · GENERIC 1980s COURTROOM",
+     "lower": {
+      "p": 0.2,
+      "title": "The defence: suicide",
+      "color": "red",
+      "kicker": "Utah · 1989"
+     }
+    }
+   ],
+   "cue": "tension-rise"
+  },
+  {
+   "say": "And a Utah jury acquitted him of murder.",
+   "claims": [
+    "R-BECKY-ACQUIT"
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "NOT GUILTY",
+     "color": "green",
+     "lines": [
+      "Utah · 1989 · Acquitted of murder"
+     ],
+     "at": 0.3
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.35
+    }
+   ]
+  },
+  {
+   "say": "Remember that acquittal. Three decades later, in a courtroom in Las Vegas, it would matter again.",
+   "claims": [
+    "R-BECKY-ACQUIT",
+    "R-REVERSAL-WHY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_mountain_town",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 700,
+      "w": 900
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC MOUNTAIN TOWN"
+    }
+   ],
+   "cue": "unease"
+  },
+  {
+   "say": "By 2008, Randolph was living in Las Vegas with his sixth wife, Sharon.",
+   "claims": [
+    "R-HOME",
+    "R-SIX"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_strip",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1250
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CITY SKYLINE",
+     "w": 0.8
+    },
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 1300,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1300,
+        "to": 760,
+        "p0": 0.0,
+        "p1": 0.75,
+        "cadence": 6.2
+       },
+       "keys": [
+        {
+         "p": 0.78,
+         "pose": "stand",
+         "headTurn": -0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 640,
+      "cy": 1120,
+      "w": 1400
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "at home"
+     },
+     "w": 1.2,
+     "claims": [
+      "R-HOME"
+     ]
+    }
+   ],
+   "chapter": "Las Vegas, 2008",
+   "chapter_title": "3 · Las Vegas, 2008",
+   "tag": "Chapter 3 · Las Vegas",
+   "cue": "intimate"
+  },
+  {
+   "say": "Prosecutors later said he had taken out life insurance policies on Sharon in the two years before her death, and that he stood to collect more than $300,000.",
+   "claims": [
+    "R-INSURANCE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_prosecutor",
+       "x": 780,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point_up"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1150,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1160,
+      "w": 1000
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC PROSECUTOR",
+     "w": 1.0
+    },
+    {
+     "type": "stat",
+     "value": "$300,000+",
+     "label": "Life insurance on Sharon, prosecutors said",
+     "note": "Reported figures range up to about $400,000",
+     "size": 200,
+     "noCorner": true,
+     "claims": [
+      "R-INSURANCE"
+     ],
+     "w": 1.0
+    }
+   ],
+   "cue": "tension"
+  },
+  {
+   "say": "Investigators also counted nearly 300 phone calls between Randolph and Miller in the months before the killings. Most, they said, were made by Randolph.",
+   "claims": [
+    "R-CALLS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lab",
+     "figures": [
+      {
+       "id": "analyst",
+       "x": 420,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "examine",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "read"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 500,
+      "cy": 1020,
+      "w": 1250
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC ANALYST",
+     "funfacts": [
+      {
+       "p": 0.25,
+       "rows": [
+        {
+         "text": "NEARLY 300",
+         "color": "amber",
+         "size": 70
+        },
+        {
+         "text": "Phone calls, per investigators"
+        },
+        {
+         "text": "most placed by Randolph",
+         "size": 30
+        }
+       ],
+       "x": 1150,
+       "y": 280,
+       "w": 640,
+       "kicker": "INVESTIGATORS"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Randolph told police that Miller had been wearing a mask when he shot him.",
+   "claims": [
+    "R-MASK",
+    "R-911"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_interview",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "gaze": [
+        0.5,
+        0
+       ],
+       "keys": [
+        {
+         "p": 0.4,
+         "pose": "present"
+        },
+        {
+         "p": 0.8,
+         "pose": "sit"
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 820,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit_type",
+       "expr": "focused"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 1050,
+      "w": 1250
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "giving a statement to detectives"
+     },
+     "claims": [
+      "R-WALKTHROUGH"
+     ]
+    }
+   ],
+   "chapter": "The evidence",
+   "chapter_title": "4 · The evidence",
+   "tag": "Chapter 4 · The evidence",
+   "cue": "tension"
+  },
+  {
+   "say": "But police said Miller had been shot in the forehead. And the ski mask was found on the garage floor, with no blood on it, and no bullet holes.",
+   "claims": [
+    "R-MASK"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 380,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "id": "trw_officer",
+       "x": 1250,
+       "y": 1500,
+       "scale": 0.58,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 820,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.6
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "stand"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 930,
+      "w": 1300
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC POLICE OFFICE",
+     "w": 0.9
+    },
+    {
+     "type": "doc",
+     "kicker": "EVIDENCE · AS PRESENTED BY PROSECUTORS",
+     "title": "THE SKI MASK",
+     "lines": [
+      "Wound: forehead",
+      "Found: garage floor",
+      "Blood on the mask: none",
+      "Bullet holes: none"
+     ],
+     "hl": 3,
+     "stamp": "POLICE EVIDENCE",
+     "w": 1.2
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.2,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "say": "Then there was the 911 call itself.",
+   "claims": [
+    "R-911-CALL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kitchen_night",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 420,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "hand_to_face",
+       "expr": "distraught",
+       "gaze": [
+        0.4,
+        0.2
+       ]
+      }
+     ],
+     "view": {
+      "cx": 470,
+      "cy": 1040,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 440,
+      "cy": 1020,
+      "w": 800
+     },
+     "grade": "night",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "on the phone to 911"
+     },
+     "claims": [
+      "R-911-CALL"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Prosecutors said the dispatcher had to ask Randolph several times to give Sharon CPR.",
+   "claims": [
+    "R-911-ARGS"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "PROSECUTION · THE 911 CALL",
+      "DEFENCE · THE 911 CALL"
+     ],
+     "big": [
+      "CPR",
+      "He tried"
+     ],
+     "bigColor": [
+      "red",
+      "blue"
+     ],
+     "bigSize": 84,
+     "body": [
+      [
+       "Asked several times"
+      ],
+      [
+       "Screaming and crying",
+       "The only one who helped her"
+      ]
+     ],
+     "vs": "VS"
+    }
+   ]
+  },
+  {
+   "say": "The defence said the call captured a man screaming and crying over his wife, and that he was the only person who tried to help her.",
+   "claims": [
+    "R-911-ARGS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "trw_defence",
+       "x": 820,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.55,
+         "pose": "hands_together",
+         "headTurn": -0.2
+        }
+       ]
+      },
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "sad",
+       "outfit": "court"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 930,
+      "w": 1550
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Detectives also recorded Randolph walking them through the house. On the video, he acted out the shootings, and, one station reported, mimicked the sound of the gunfire.",
+   "claims": [
+    "R-WALKTHROUGH",
+    "R-GUNFIRE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 600,
+       "y": 1450,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.45,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 400,
+        "to": 620,
+        "p0": 0.0,
+        "p1": 0.35,
+        "cadence": 6.0
+       },
+       "keys": [
+        {
+         "p": 0.38,
+         "pose": "present",
+         "headTurn": 0.3
+        },
+        {
+         "p": 0.7,
+         "pose": "point_up"
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 900,
+       "y": 1460,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "read",
+       "expr": "focused"
+      },
+      {
+       "id": "trw_officer",
+       "x": 1120,
+       "y": 1480,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral"
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1150,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1140,
+      "w": 950
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "walking detectives through his account"
+     },
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "The walkthrough video"
+        },
+        {
+         "text": "Shown at both trials",
+         "color": "amber"
+        },
+        {
+         "text": "Mimicked the sound of gunfire",
+         "size": 30
+        },
+        {
+         "text": "per 8 News Now",
+         "size": 30
+        }
+       ],
+       "x": 100,
+       "y": 150,
+       "w": 560,
+       "kicker": "AT TRIAL"
+      }
+     ],
+     "claims": [
+      "R-WALKTHROUGH"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Jurors at both trials would watch that video.",
+   "claims": [
+    "R-WALKTHROUGH"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "gaze": [
+        0.6,
+        0.2
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 890,
+      "w": 1600
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "His defence argued that there was no physical evidence of any plot, and that Miller acted on his own, in a burglary that went wrong.",
+   "claims": [
+    "R-DEFENCE"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE PROSECUTION",
+      "THE DEFENCE"
+     ],
+     "big": [
+      "A plot",
+      "A burglary"
+     ],
+     "bigColor": [
+      "red",
+      "blue"
+     ],
+     "bigSize": 84,
+     "body": [
+      [
+       "Randolph and Miller together"
+      ],
+      [
+       "Miller acted alone",
+       "No physical evidence of a plot"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "R-THEORY"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "In January 2009, eight months after the shootings, police arrested Randolph at his parents' home in Clearfield, Utah. He was fifty-three.",
+   "claims": [
+    "R-ARREST"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [
+      {
+       "id": "trw_officer",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 420,
+        "p0": 0.0,
+        "p1": 0.55,
+        "cadence": 7.0
+       },
+       "keys": [
+        {
+         "p": 0.57,
+         "pose": "stand"
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": -420,
+       "y": 1510,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -420,
+        "to": 240,
+        "p0": 0.05,
+        "p1": 0.6,
+        "cadence": 6.6
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "read"
+        }
+       ]
+      },
+      {
+       "id": "trw_randolph",
+       "x": 700,
+       "y": 1450,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "worried",
+       "keys": [
+        {
+         "p": 0.7,
+         "pose": "hands_behind",
+         "expr": "blank"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1120,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC HOUSE",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "being arrested at his parents' home"
+     },
+     "lower": {
+      "p": 0.12,
+      "title": "Clearfield, Utah",
+      "color": "red",
+      "kicker": "January 2009 · eight months later"
+     },
+     "stamps": [
+      {
+       "p": 0.72,
+       "text": "ARRESTED",
+       "color": "red",
+       "x": 1450,
+       "y": 300,
+       "size": 100
+      }
+     ],
+     "claims": [
+      "R-ARREST"
+     ]
+    }
+   ],
+   "chapter": "Nine years",
+   "chapter_title": "5 · Nine years",
+   "tag": "Chapter 5 · Nine years",
+   "cue": "tension"
+  },
+  {
+   "say": "He was charged with conspiracy to commit murder, and with murder.",
+   "claims": [
+    "R-CHARGES"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "SUMMARY",
+     "title": "The charges, 2009",
+     "lines": [
+      "Conspiracy to commit murder",
+      "Murder (Sharon)",
+      "Murder (Michael Miller)"
+     ],
+     "hl": 0,
+     "stamp": "CHARGED",
+     "claims": [
+      "R-KILLINGS"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Then he waited. Almost nine years passed before his first trial.",
+   "claims": [
+    "R-NINE-YEARS"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "~9 YEARS",
+     "label": "From arrest to first trial",
+     "note": "2009 → 2017",
+     "size": 220,
+     "noCorner": true,
+     "claims": [
+      "R-ARREST"
+     ]
+    },
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 960,
+      "w": 1100
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "w": 0.7
+    }
+   ],
+   "cue": "aftermath"
+  },
+  {
+   "say": "In 2017, the case finally went to trial in Las Vegas.",
+   "claims": [
+    "R-CONVICT-2017"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [
+      {
+       "id": "trw_prosecutor",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 380,
+        "p0": 0.0,
+        "p1": 0.8,
+        "cadence": 6.4
+       }
+      },
+      {
+       "id": "trw_defence",
+       "x": 1300,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1300,
+        "to": 760,
+        "p0": 0.05,
+        "p1": 0.85,
+        "cadence": 6.6
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1060,
+      "w": 1400
+     },
+     "grade": "night",
+     "rain": {
+      "n": 140,
+      "op": 0.25
+     },
+     "label": "ILLUSTRATION · GENERIC COURTHOUSE"
+    }
+   ],
+   "chapter": "The first verdict",
+   "chapter_title": "6 · The first verdict",
+   "tag": "Chapter 6 · The first verdict",
+   "cue": "tension-rise"
+  },
+  {
+   "say": "And this time, the jury heard about Utah: about Becky's death, and witnesses who said Randolph had tried to arrange her killing.",
+   "claims": [
+    "R-2017-UTAH"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "trw_prosecutor",
+       "x": 780,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point"
+        }
+       ]
+      },
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "court"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 900,
+      "w": 1400
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 1080,
+       "y": 170,
+       "w": 740,
+       "rows": [
+        {
+         "text": "THE JURY HEARD ABOUT UTAH"
+        },
+        {
+         "text": "Becky Gault's death",
+         "p": 0.3
+        },
+        {
+         "text": "The Utah allegations",
+         "p": 0.45
+        },
+        {
+         "text": "The 1989 acquittal",
+         "p": 0.6,
+         "color": "amber"
+        }
+       ]
+      }
+     ],
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Before it could be used, the judge held a hearing. The State called one witness: the prosecutor from Randolph's Utah murder trial.",
+   "claims": [
+    "R-PETROCELLI"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34,
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 880,
+      "w": 1600
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC COURTROOM",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 110,
+       "y": 170,
+       "w": 640,
+       "rows": [
+        {
+         "text": "THE HEARING"
+        },
+        {
+         "text": "ONE WITNESS",
+         "p": 0.45,
+         "color": "amber"
+        },
+        {
+         "text": "The Utah prosecutor",
+         "p": 0.6
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Even though, in Utah, he had been acquitted of her murder.",
+   "claims": [
+    "R-2017-UTAH",
+    "R-BECKY-ACQUIT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_mountain_town",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1400
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC MOUNTAIN TOWN",
+     "stamps": [
+      {
+       "p": 0.2,
+       "text": "ACQUITTED · 1989",
+       "color": "green",
+       "x": 960,
+       "y": 300,
+       "size": 100
+      }
+     ],
+     "lower": {
+      "p": 0.35,
+      "title": "Utah jury verdict",
+      "color": "red",
+      "kicker": "1989"
+     }
+    }
+   ]
+  },
+  {
+   "say": "Two of his former wives testified too.",
+   "claims": [
+    "R-EXWIVES"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "agent_b",
+       "x": 900,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.45,
+       "pose": "sit",
+       "expr": "worried",
+       "noChair": false,
+       "silhouette": true
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 900,
+      "w": 1600
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · ANONYMOUS WITNESS",
+     "lower": {
+      "p": 0.2,
+      "title": "Two former wives testified",
+      "color": "red",
+      "kicker": "2017 trial"
+     }
+    }
+   ]
+  },
+  {
+   "say": "On the 28th of June, 2017, the jury found Randolph guilty of conspiracy, and of two counts of first-degree murder.",
+   "claims": [
+    "R-CONVICT-2017"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34,
+       "keys": [
+        {
+         "p": 0.4,
+         "pose": "gavel"
+        }
+       ]
+      },
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 420,
+      "cy": 1100,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 400,
+      "cy": 1150,
+      "w": 900
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "stamps": [
+      {
+       "p": 0.45,
+       "text": "GUILTY",
+       "color": "red",
+       "x": 1400,
+       "y": 320,
+       "size": 120
+      }
+     ],
+     "lower": {
+      "p": 0.12,
+      "title": "28 June 2017",
+      "color": "red",
+      "kicker": "Las Vegas · June 2017"
+     },
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.5
+    }
+   ],
+   "cue": "tension-peak"
+  },
+  {
+   "say": "A week later, the same jury, eight women and four men, sentenced him to death. Twice: one sentence for each victim.",
+   "claims": [
+    "R-DEATH-2017"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "sad",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.15
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 980,
+      "w": 1300
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "stamps": [
+      {
+       "p": 0.4,
+       "text": "2 DEATH SENTENCES",
+       "color": "red",
+       "x": 1350,
+       "y": 280,
+       "size": 80
+      },
+      {
+       "p": 0.75,
+       "text": "Later overturned",
+       "color": "amber",
+       "x": 1350,
+       "y": 470,
+       "size": 56
+      }
+     ],
+     "lower": {
+      "p": 0.15,
+      "title": "July 2017",
+      "color": "red",
+      "kicker": "One for each victim"
+     },
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "He appealed. And on the 10th of December, 2020, the Nevada Supreme Court threw out the convictions and both death sentences, and ordered a new trial.",
+   "claims": [
+    "R-REVERSAL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "grade": "night",
+     "rain": {
+      "n": 160,
+      "op": 0.3
+     },
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "lower": {
+      "p": 0.1,
+      "title": "Nevada Supreme Court",
+      "color": "red",
+      "kicker": "10 December 2020"
+     },
+     "stamps": [
+      {
+       "p": 0.55,
+       "text": "REVERSED",
+       "color": "amber",
+       "x": 1400,
+       "y": 320,
+       "size": 110
+      },
+      {
+       "p": 0.75,
+       "text": "NEW TRIAL",
+       "color": "amber",
+       "x": 1400,
+       "y": 520,
+       "size": 70
+      }
+     ]
+    }
+   ],
+   "chapter": "Thrown out",
+   "chapter_title": "7 · Thrown out",
+   "tag": "Chapter 7 · Thrown out",
+   "cue": "revelation",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.58
+    }
+   ]
+  },
+  {
+   "say": "The court held that the Utah evidence should never have been admitted. The danger of unfair prejudice, it said, substantially outweighed its value.",
+   "claims": [
+    "R-REVERSAL-WHY"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "NEVADA SUPREME COURT · 2020 (PARAPHRASED)",
+     "title": "The Utah evidence",
+     "lines": [
+      "Admitted at the 2017 trial",
+      "Should not have been admitted",
+      "Why: unfair prejudice",
+      "Error: not harmless"
+     ],
+     "hl": 2,
+     "stamp": "REVERSED",
+     "w": 1.2,
+     "claims": [
+      "R-2017-UTAH"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "It found that the State's proof of those old allegations rested on one witness. And it noted that Randolph had been acquitted.",
+   "claims": [
+    "R-REVERSAL-WEAK"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE COURT ALSO FOUND",
+     "title": "Nevada Supreme Court · 2020",
+     "items": [
+      "The proof rested on one witness",
+      "He had been acquitted"
+     ],
+     "claims": [
+      "R-REVERSAL"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "The ruling did not say he was innocent. It meant he would be tried again.",
+   "claims": [
+    "R-REVERSAL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 360,
+      "cy": 1150,
+      "w": 1000
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL"
+    }
+   ],
+   "cue": "aftermath"
+  },
+  {
+   "say": "In February 2021, Dateline NBC aired a three-part series on the case, called The Widower.",
+   "claims": [
+    "R-DATELINE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "office_day",
+     "figures": [
+      {
+       "id": "agent_b",
+       "x": 420,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit_type",
+       "expr": "focused",
+       "noChair": false
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 500,
+      "cy": 1020,
+      "w": 1350
+     },
+     "grade": "warm",
+     "label": "ILLUSTRATION · GENERIC NEWSROOM",
+     "funfacts": [
+      {
+       "p": 0.25,
+       "rows": [
+        {
+         "text": "DATELINE NBC"
+        },
+        {
+         "text": "'THE WIDOWER'",
+         "color": "amber",
+         "size": 60
+        },
+        {
+         "text": "February 2021 · 3 nights"
+        }
+       ],
+       "x": 1100,
+       "y": 260,
+       "w": 700,
+       "kicker": "DATELINE"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "The retrial began in August 2023.",
+   "claims": [
+    "R-RETRIAL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [
+      {
+       "id": "trw_defence",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 420,
+        "p0": 0.0,
+        "p1": 0.85,
+        "cadence": 6.6
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1060,
+      "w": 1350
+     },
+     "grade": "night",
+     "rain": {
+      "n": 120,
+      "op": 0.25
+     },
+     "label": "ILLUSTRATION · GENERIC COURTHOUSE",
+     "lower": {
+      "p": 0.12,
+      "title": "August 2023",
+      "color": "red",
+      "kicker": "The retrial"
+     }
+    }
+   ],
+   "chapter": "The second jury",
+   "chapter_title": "8 · The second jury",
+   "tag": "Chapter 8 · The second jury",
+   "cue": "tension-rise"
+  },
+  {
+   "say": "This time, prosecutors were largely limited to evidence about the deaths of Sharon and Michael Miller. And they did not seek the death penalty.",
+   "claims": [
+    "R-RETRIAL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "trw_prosecutor",
+       "x": -150,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -150,
+        "to": 780,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "stand",
+         "headTurn": 0.2
+        }
+       ]
+      },
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "court"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 1060,
+       "y": 170,
+       "w": 760,
+       "rows": [
+        {
+         "text": "THE RETRIAL · AUGUST 2023"
+        },
+        {
+         "text": "Limited to the 2008 deaths",
+         "p": 0.35
+        },
+        {
+         "text": "No death penalty",
+         "p": 0.65,
+         "color": "amber"
+        }
+       ]
+      }
+     ],
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Defence attorney Josh Tomsheck argued there was no physical evidence of a plot, and that Randolph was the only person who tried to help Sharon that night.",
+   "claims": [
+    "R-DEFENCE",
+    "R-911-ARGS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_defence",
+       "x": 820,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.45,
+         "pose": "point_up"
+        },
+        {
+         "p": 0.8,
+         "pose": "hands_together"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 800,
+      "cy": 1110,
+      "w": 980
+     },
+     "view_to": {
+      "cx": 790,
+      "cy": 1100,
+      "w": 920
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC LAWYER, NOT A LIKENESS",
+     "lower": {
+      "p": 0.15,
+      "title": "Josh Tomsheck",
+      "color": "red",
+      "kicker": "Defence attorney · illustration"
+     }
+    }
+   ]
+  },
+  {
+   "say": "In August 2023, after more than four hours of deliberation, the second jury found Randolph guilty of conspiracy to commit murder, and two counts of murder with a deadly weapon.",
+   "claims": [
+    "R-CONVICT-2023"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "gavel"
+        }
+       ]
+      },
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.55,
+         "headTurn": 0.2,
+         "expr": "sad"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 1100,
+      "w": 1000
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "lower": {
+      "p": 0.1,
+      "title": "August 2023",
+      "color": "red",
+      "kicker": "Second jury"
+     },
+     "stamps": [
+      {
+       "p": 0.6,
+       "text": "GUILTY · AGAIN",
+       "color": "red",
+       "x": 1380,
+       "y": 320,
+       "size": 100
+      }
+     ],
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.62
+    }
+   ],
+   "cue": "tension-peak"
+  },
+  {
+   "say": "In April 2024, Judge Tierra Jones sentenced him to sixty years to life in prison.",
+   "claims": [
+    "R-SENTENCE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "gavel"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 880,
+      "w": 1550
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC JUDGE",
+     "lower": {
+      "p": 0.12,
+      "title": "District Judge Tierra Jones",
+      "color": "red",
+      "kicker": "April 2024"
+     },
+     "w": 1.0
+    },
+    {
+     "type": "stat",
+     "value": "60 YEARS TO LIFE",
+     "label": "April 2024",
+     "note": "720 months to life",
+     "size": 150,
+     "noCorner": true,
+     "w": 1.0
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "say": "Before he was sentenced, Randolph spoke.",
+   "claims": [
+    "R-IN-COURT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "sad",
+       "outfit": "court",
+       "gaze": [
+        0.5,
+        -0.1
+       ],
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "hands_together"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 330,
+      "cy": 1120,
+      "w": 760
+     },
+     "view_to": {
+      "cx": 320,
+      "cy": 1110,
+      "w": 680
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "sitting in court"
+     },
+     "claims": [
+      "R-IN-COURT"
+     ]
+    }
+   ],
+   "cue": "intimate"
+  },
+  {
+   "say": "\"I didn't kill Sharon,\" he said. \"I have nothing to do with this.\"",
+   "claims": [
+    "R-QUOTE"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "I didn't kill Sharon. I have nothing to do with this.",
+     "who": "Thomas Randolph · sentencing hearing, April 2024"
+    }
+   ]
+  },
+  {
+   "say": "He appealed again. He argued that the years of delay had violated his right to a speedy trial, and that his walkthrough statements were not voluntary.",
+   "claims": [
+    "R-APPEAL-ARGS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [
+      {
+       "id": "trw_defence",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 380,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "read"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1020,
+      "w": 1400
+     },
+     "grade": "night",
+     "rain": {
+      "n": 120,
+      "op": 0.25
+     },
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 1060,
+       "y": 170,
+       "w": 720,
+       "rows": [
+        {
+         "text": "HIS APPEAL ARGUED"
+        },
+        {
+         "text": "Speedy trial",
+         "p": 0.3
+        },
+        {
+         "text": "Walkthrough statements",
+         "p": 0.5
+        },
+        {
+         "text": "Cumulative error",
+         "p": 0.7
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "chapter": "Where is he now?",
+   "chapter_title": "9 · Where is he now?",
+   "tag": "Chapter 9 · Where is he now?",
+   "cue": "unease"
+  },
+  {
+   "say": "On the 31st of August, 2026, the Nevada Supreme Court rejected every argument, and upheld his convictions.",
+   "claims": [
+    "R-AFFIRM"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 880,
+      "w": 1150
+     },
+     "grade": "night",
+     "rain": {
+      "n": 100,
+      "op": 0.2
+     },
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "lower": {
+      "p": 0.1,
+      "title": "Nevada Supreme Court",
+      "color": "red",
+      "kicker": "31 August 2026"
+     },
+     "stamps": [
+      {
+       "p": 0.5,
+       "text": "AFFIRMED",
+       "color": "red",
+       "x": 1400,
+       "y": 320,
+       "size": 110
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.52
+    }
+   ]
+  },
+  {
+   "say": "The court said the nine years before his first trial did not violate his rights. The nineteen months before his retrial were long enough to be presumed prejudicial, it said, but the State was not to blame.",
+   "claims": [
+    "R-SPEEDY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 960,
+      "w": 1200
+     },
+     "grade": "night",
+     "rain": {
+      "n": 120,
+      "op": 0.25
+     },
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "cards": [
+      {
+       "p": 0.08,
+       "x": 110,
+       "y": 170,
+       "w": 760,
+       "rows": [
+        {
+         "text": "SPEEDY TRIAL"
+        },
+        {
+         "text": "9 YEARS · no violation",
+         "p": 0.2
+        },
+        {
+         "text": "19 MONTHS · presumed prejudicial",
+         "p": 0.5
+        },
+        {
+         "text": "Not the State's fault",
+         "p": 0.75,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "He had also argued that he was in pain and on medication when he spoke to detectives. Two detectives testified otherwise, and the court refused to throw out his statements.",
+   "claims": [
+    "R-VOLUNTARY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_interview",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "worried",
+       "gaze": [
+        0.5,
+        0
+       ],
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "hand_to_face"
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 820,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit_type",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "sit",
+         "headTurn": -0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1040,
+      "w": 1300
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "giving a statement to detectives"
+     },
+     "funfacts": [
+      {
+       "p": 0.45,
+       "rows": [
+        {
+         "text": "His claim: pain medication"
+        },
+        {
+         "text": "Court: statements voluntary",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 720,
+       "kicker": "THE RULING"
+      }
+     ],
+     "claims": [
+      "R-WALKTHROUGH"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Today, Randolph is in his seventies. He is serving his sentence at Lovelock Correctional Center, in Nevada.",
+   "claims": [
+    "R-PRISON"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1400,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "jail",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "sit_slumped",
+         "expr": "sad"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1050,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1060,
+      "w": 950
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "serving his sentence"
+     },
+     "lower": {
+      "p": 0.15,
+      "title": "Lovelock Correctional Center",
+      "color": "red",
+      "kicker": "Nevada"
+     },
+     "claims": [
+      "R-PRISON"
+     ]
+    }
+   ],
+   "cue": "aftermath"
+  },
+  {
+   "say": "He has said he is innocent.",
+   "claims": [
+    "R-INNOCENT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "trw_randolph",
+       "x": 300,
+       "y": 1400,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "jail",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.35,
+         "gaze": [
+          0.6,
+          -0.2
+         ]
+        }
+       ]
+      },
+      {
+       "id": "trw_officer",
+       "x": 1300,
+       "y": 1520,
+       "scale": 0.55,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1300,
+        "to": -300,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 6.8
+       },
+       "depth": 1.2
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 1060,
+      "w": 1300
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "depicts": {
+      "person": "Thomas Randolph",
+      "act": "serving his sentence"
+     },
+     "headline": {
+      "x": 1000,
+      "y": 140,
+      "rows": [
+       {
+        "text": "HE SAYS HE",
+        "size": 90
+       },
+       {
+        "text": "IS INNOCENT",
+        "size": 90,
+        "color": "amber"
+       }
+      ]
+     },
+     "claims": [
+      "R-PRISON"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Dateline producer Dan Slepian had been embedded with Las Vegas police in 2008, and followed the case for years.",
+   "claims": [
+    "R-DATELINE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 380,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "examine",
+         "expr": "focused"
+        }
+       ]
+      },
+      {
+       "id": "trw_officer",
+       "x": 1250,
+       "y": 1500,
+       "scale": 0.58,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 820,
+        "p0": 0.1,
+        "p1": 0.65,
+        "cadence": 6.8
+       },
+       "keys": [
+        {
+         "p": 0.67,
+         "pose": "stand"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 920,
+      "w": 1400
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC POLICE OFFICE",
+     "lower": {
+      "p": 0.2,
+      "title": "Dan Slepian",
+      "color": "red",
+      "kicker": "Dateline NBC producer · not shown"
+     }
+    }
+   ],
+   "chapter": "The documentary",
+   "chapter_title": "10 · The documentary",
+   "tag": "Chapter 10 · The documentary",
+   "cue": "outro"
+  },
+  {
+   "say": "On the 30th of September, 2026, Netflix released The Widower: 'Til Death Do Us Part, directed by Chris Smith.",
+   "claims": [
+    "R-NETFLIX"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_strip",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1150
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CITY SKYLINE",
+     "cards": [
+      {
+       "p": 0.15,
+       "x": 110,
+       "y": 170,
+       "w": 820,
+       "rows": [
+        {
+         "text": "NETFLIX · 30 SEPTEMBER 2026"
+        },
+        {
+         "text": "The Widower: 'Til Death Do Us Part",
+         "p": 0.3,
+         "color": "amber"
+        },
+        {
+         "text": "Directed by Chris Smith",
+         "p": 0.5
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "say": "It follows Slepian and Las Vegas police detective Dean O'Kelley.",
+   "claims": [
+    "R-NETFLIX-CAST"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 380,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 480,
+      "cy": 1050,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 460,
+      "cy": 1060,
+      "w": 950
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC DETECTIVE, NOT A LIKENESS"
+    }
+   ]
+  },
+  {
+   "say": "In its first week, it drew 11.6 million views, and was reported as Netflix's number-two English-language film worldwide.",
+   "claims": [
+    "R-NETFLIX-VIEWS"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "11.6M VIEWS",
+     "label": "First week",
+     "note": "Netflix Top 10, as reported · No. 2",
+     "size": 170,
+     "noCorner": true
+    }
+   ]
+  },
+  {
+   "say": "So here is where the record stands.",
+   "claims": [
+    "R-THREE-TRIALS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "night",
+      "lit": 0.3
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME"
+    }
+   ],
+   "chapter": "The record",
+   "chapter_title": "The record",
+   "tag": "The record"
+  },
+  {
+   "say": "In Utah, a jury acquitted Randolph of murder in Becky Gault's death. He pleaded guilty to witness tampering.",
+   "claims": [
+    "R-BECKY-ACQUIT",
+    "R-TAMPERING"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "BECKY GAULT · 1986",
+      "WITNESS TAMPERING"
+     ],
+     "big": [
+      "ACQUITTED",
+      "PLEADED GUILTY"
+     ],
+     "bigColor": [
+      "blue",
+      "amber"
+     ],
+     "bigSize": 72,
+     "body": [
+      [
+       "Utah jury · 1989"
+      ],
+      [
+       "Utah · felony"
+      ]
+     ],
+     "vs": "UTAH",
+     "claims": [
+      "R-BECKY-DEATH"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "No charge was ever brought over the deaths of two other wives.",
+   "claims": [
+    "R-NOCHARGE"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "NO CHARGES"
+     ],
+     "em": [
+      "NO"
+     ],
+     "sub": "Francis Randolph · Leona Stapleton",
+     "claims": [
+      "R-FRANCIS-LEONA"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "And in Las Vegas, two juries convicted him over the deaths of Sharon and Michael Miller. The first verdict was overturned. The second has been upheld.",
+   "claims": [
+    "R-CONVICT-2017",
+    "R-REVERSAL",
+    "R-CONVICT-2023",
+    "R-AFFIRM"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "LAS VEGAS",
+     "title": "Sharon Causse and Michael Miller",
+     "items": [
+      "2017 · CONVICTED · overturned 2020",
+      "2023 · CONVICTED · upheld 2026"
+     ],
+     "claims": [
+      "R-KILLINGS"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Randolph says he is innocent.",
+   "claims": [
+    "R-INNOCENT"
+   ],
+   "shots": [
+    {
+     "type": "endcard",
+     "kicker": "IN MEMORY OF SHARON CAUSSE",
+     "lines": [
+      "Thomas Randolph: convicted in 2023, upheld in August 2026",
+      "Acquitted of murder in Utah in 1989",
+      "He says he is innocent"
+     ],
+     "size": 52,
+     "sub": "Sources for every claim are listed in the description.",
+     "chapterTag": "",
+     "out": "dip",
+     "claims": [
+      "R-CONVICT-2023",
+      "R-AFFIRM",
+      "R-BECKY-ACQUIT",
+      "R-INNOCENT"
+     ]
+    }
+   ]
+  }
+ ]
+}

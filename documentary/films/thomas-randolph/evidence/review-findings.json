@@ -1,0 +1,121 @@
+{
+ "film": "thomas-randolph",
+ "findings": [
+  {
+   "id": "FC-01",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Every source was read as a search excerpt; no page could be opened (the environment's network policy blocks the publishers and the court sites). 11 claims are REQUIRES REVIEW and 11 high-risk legal claims are CORROBORATED by two or more independent publishers, including the courts' own text, but not read in full.",
+   "evidence": "evidence/claims.json: 44 CORROBORATED, 11 REQUIRES REVIEW, none VERIFIED. Gate G13 lists the high-risk claims.",
+   "recommendation": "Before publication, read in full: the Nevada Supreme Court's 10 Dec 2020 opinion (No. 73825) and its 31 Aug 2026 order (No. 88625), Fox News's 2023 verdict story, A&E's explainer and the Review-Journal's 2023 retrial story. Then record the passages with access level full_text, which lets the gate clear the high-risk claims.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-02",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "R-MASK",
+    "R-CALLS",
+    "R-911-ARGS",
+    "R-DEFENCE",
+    "R-GUNFIRE"
+   ],
+   "lines": [
+    33,
+    35,
+    37,
+    39,
+    41,
+    59
+   ],
+   "problem": "Trial-evidence details (the clean ski mask, 'nearly 300' calls, the CPR exchange on the 911 call, the defence closing, the mimicked gunfire) surfaced in combined search summaries; the research agent assigned them to the Review-Journal, NewsNation or KLAS on a best-effort basis. Each is attributed on screen ('police said', 'investigators said', 'the defence said').",
+   "evidence": "Passages carry an 'attribution: best_effort' note in evidence/claims.json; the claims are declared REQUIRES REVIEW, so gate G13 reports them as open.",
+   "recommendation": "Confirm each passage on the named publisher's page. If one cannot be confirmed, reword to the confirmed version (for example Fox's 'hundreds of phone calls') or cut the line; any wording change needs a new render.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-01",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "R-FOUR-DEAD",
+    "R-FRANCIS-LEONA",
+    "R-NOCHARGE",
+    "R-BECKY-ACQUIT"
+   ],
+   "lines": [
+    17,
+    18,
+    19
+   ],
+   "problem": "'Four of his six wives have died' could be heard as insinuating a pattern. The next two lines give the causes (heart surgery, cancer), say he was never charged over those two deaths, and say the Utah death ended in an acquittal. No music sting is used on these lines.",
+   "evidence": "Dossier guidance: never frame the deaths as a pattern; only Sharon's and Miller's deaths led to a conviction.",
+   "recommendation": "Keep as written. A human editor should hear these three lines together; cut the 'four of six' line if any doubt remains.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-02",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "R-THREE-TRIALS",
+    "R-AFFIRM"
+   ],
+   "lines": [],
+   "problem": "The selected thumbnail shows an illustrated Randolph, not a likeness, beside 'THE WIDOWER · 3 MURDER TRIALS'. The stamp states the standing record ('CONVICTED · UPHELD 2026'). 'The Widower' is the title of the Netflix and Dateline films, not our label.",
+   "evidence": "packaging.json thumbnails[0]; alternatives: two-verdicts (shows the 1989 acquittal too) and house-911 (no person).",
+   "recommendation": "Human judgement before upload. Use two-verdicts or house-911 if a stricter standard is wanted.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-03",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "R-TAMPERING",
+    "R-THEORY",
+    "R-DEFENCE"
+   ],
+   "lines": [
+    6,
+    25,
+    41
+   ],
+   "problem": "Two allegations against people who were never convicted of them: the Utah offer to a 'cellmate' and Michael Miller's alleged role. The offer is the conduct reported behind Randolph's guilty plea to felony witness tampering. It is attributed to news reports and never called attempted murder or solicitation. Miller (never charged; he died that night) appears only as 'prosecutors alleged', and the defence's version, that he acted alone, is given.",
+   "evidence": "people.json: tampering CONVICTED by plea; Miller's alleged role NOT_CHARGED; gate G8 found no unqualified guilt language.",
+   "recommendation": "Keep as written.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-04",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "R-AFFIRM",
+    "R-PRISON"
+   ],
+   "lines": [
+    65
+   ],
+   "problem": "We could not verify whether anything has been filed since the 31 Aug 2026 ruling (rehearing, habeas). The film says only that the court upheld the convictions; it does not say his appeals are over. His prison location is time-sensitive (checked 11 Oct 2026).",
+   "evidence": "Dossier 'could not verify' list; R-PRISON is time_sensitive (the gate marks it OUTDATED 14 days after the check).",
+   "recommendation": "Re-check the Nevada Supreme Court docket and NDOC inmate search before publishing after 25 Oct 2026.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  }
+ ]
+}

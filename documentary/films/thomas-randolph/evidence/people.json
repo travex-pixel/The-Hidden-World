@@ -1,0 +1,382 @@
+{
+ "as_of": "2026-10-11",
+ "status_vocabulary": [
+  "SUSPECTED",
+  "INVESTIGATED",
+  "ARRESTED",
+  "CHARGED_PENDING",
+  "CONVICTED",
+  "CONVICTION_VACATED",
+  "ACQUITTED",
+  "NOT_CHARGED",
+  "VICTIM",
+  "OFFICIAL",
+  "CIVIL_ONLY",
+  "DECEASED_NO_FINDING",
+  "WITNESS"
+ ],
+ "status_notes": {
+  "DECEASED_NO_FINDING": "a death with no criminal finding (natural, medical, or a ruling the film does not contest); the person is not described as a crime victim",
+  "WITNESS": "gave evidence; no allegation against them"
+ },
+ "matters": {
+  "deaths of Sharon Causse and Michael Miller (May 2008, Las Vegas)": [
+   "Sharon",
+   "Causse",
+   "2008",
+   "Las Vegas",
+   "911",
+   "Miller"
+  ],
+  "death of Becky Gault (Nov 1986, Utah)": [
+   "Becky",
+   "Gault",
+   "Tarantino",
+   "1986",
+   "1989",
+   "second wife"
+  ],
+  "witness tampering (Utah, while awaiting the 1989 murder trial)": [
+   "tampering",
+   "cellmate",
+   "undercover"
+  ],
+  "deaths of Francis Randolph (2004) and Leona Stapleton": [
+   "Francis",
+   "Leona",
+   "Stapleton",
+   "heart surgery",
+   "cancer",
+   "two other wives",
+   "either death"
+  ],
+  "alleged role of Michael Miller as a hired killer (2008)": [
+   "hired",
+   "hire",
+   "hit man",
+   "hitman",
+   "murder-for-hire"
+  ]
+ },
+ "people": [
+  {
+   "name": "Thomas Randolph",
+   "aliases": [
+    "Thomas Randolph",
+    "Thomas William Randolph",
+    "Tom Randolph",
+    "Randolph",
+    "the Widower",
+    "Black Widower"
+   ],
+   "role": "defendant; married six times; alive; says he is innocent",
+   "matters": [
+    {
+     "matter": "deaths of Sharon Causse and Michael Miller (May 2008, Las Vegas)",
+     "status": "CONVICTED",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-ARREST",
+      "R-CHARGES",
+      "R-CONVICT-2017",
+      "R-DEATH-2017",
+      "R-REVERSAL",
+      "R-CONVICT-2023",
+      "R-SENTENCE",
+      "R-AFFIRM"
+     ],
+     "history": [
+      {
+       "date": "2009-01-08",
+       "event": "ARRESTED",
+       "detail": "at his parents' home in Clearfield, Utah, on a Clark County warrant"
+      },
+      {
+       "date": "2009",
+       "event": "CHARGED",
+       "detail": "conspiracy to commit murder, murder with a deadly weapon (burglary also reported)"
+      },
+      {
+       "date": "2017-06-28",
+       "event": "CONVICTED",
+       "detail": "conspiracy and two counts of first-degree murder with a deadly weapon"
+      },
+      {
+       "date": "2017-07-05",
+       "event": "SENTENCED",
+       "detail": "two death sentences (jury)"
+      },
+      {
+       "date": "2020-12-10",
+       "event": "CONVICTION_VACATED",
+       "detail": "Nevada Supreme Court reversed and remanded for a new trial (No. 73825)"
+      },
+      {
+       "date": "2023-08-24",
+       "event": "CONVICTED",
+       "detail": "retrial: conspiracy and two counts of murder with use of a deadly weapon"
+      },
+      {
+       "date": "2024-04",
+       "event": "SENTENCED",
+       "detail": "aggregate 60 years to life (Judge Tierra Jones)"
+      },
+      {
+       "date": "2026-08-31",
+       "event": "AFFIRMED",
+       "detail": "Nevada Supreme Court, No. 88625"
+      }
+     ],
+     "notes": "Standing conviction (2023), affirmed on direct appeal 31 Aug 2026. He maintains his innocence. Do not say his appeals are exhausted."
+    },
+    {
+     "matter": "death of Becky Gault (Nov 1986, Utah)",
+     "status": "ACQUITTED",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-BECKY-CHARGED",
+      "R-BECKY-ACQUIT"
+     ],
+     "history": [
+      {
+       "date": "1988",
+       "event": "CHARGED",
+       "detail": "murder (after Eric Tarantino's account)"
+      },
+      {
+       "date": "1989",
+       "event": "ACQUITTED",
+       "detail": "Utah jury verdict"
+      }
+     ],
+     "notes": "Acquitted. The film always pairs any mention of the Utah allegations with the acquittal."
+    },
+    {
+     "matter": "witness tampering (Utah, while awaiting the 1989 murder trial)",
+     "status": "CONVICTED",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-TAMPERING"
+     ],
+     "history": [
+      {
+       "date": "1988-89",
+       "event": "CONVICTED",
+       "detail": "guilty plea: felony witness tampering"
+      }
+     ],
+     "notes": "Name the plea exactly; not attempted murder or solicitation."
+    },
+    {
+     "matter": "deaths of Francis Randolph (2004) and Leona Stapleton",
+     "status": "NOT_CHARGED",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-FRANCIS-LEONA",
+      "R-NOCHARGE"
+     ],
+     "notes": "Medical/natural deaths as reported; never charged; never insinuated."
+    }
+   ]
+  },
+  {
+   "name": "Sharon Causse",
+   "aliases": [
+    "Sharon Causse",
+    "Sharon Causse Randolph",
+    "Sharon Randolph",
+    "Sharon"
+   ],
+   "role": "his sixth wife; killed May 2008",
+   "matters": [
+    {
+     "matter": "deaths of Sharon Causse and Michael Miller (May 2008, Las Vegas)",
+     "status": "VICTIM",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-KILLINGS"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Michael Miller",
+   "aliases": [
+    "Michael Miller",
+    "Michael James Miller",
+    "Miller"
+   ],
+   "role": "handyman Randolph knew; shot dead by Randolph in the house",
+   "matters": [
+    {
+     "matter": "deaths of Sharon Causse and Michael Miller (May 2008, Las Vegas)",
+     "status": "VICTIM",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-KILLINGS",
+      "R-SHOT-MILLER"
+     ],
+     "notes": "Randolph was convicted of his murder."
+    },
+    {
+     "matter": "alleged role of Michael Miller as a hired killer (2008)",
+     "status": "NOT_CHARGED",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-THEORY",
+      "R-DEFENCE"
+     ],
+     "notes": "Prosecutors said Randolph recruited him to kill Sharon; he died that night and was never charged or tried. The defence said he acted alone in a burglary. Always attribute."
+    }
+   ]
+  },
+  {
+   "name": "Becky Gault",
+   "aliases": [
+    "Becky Gault",
+    "Beckie Gault",
+    "Rebecca Randolph",
+    "Becky"
+   ],
+   "role": "his second wife; died of a gunshot wound, November 1986",
+   "matters": [
+    {
+     "matter": "death of Becky Gault (Nov 1986, Utah)",
+     "status": "DECEASED_NO_FINDING",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-BECKY-DEATH",
+      "R-BECKY-SUICIDE"
+     ],
+     "notes": "First ruled a suicide; Randolph acquitted of her murder."
+    }
+   ]
+  },
+  {
+   "name": "Francis Randolph",
+   "aliases": [
+    "Francis Randolph",
+    "Frances Randolph",
+    "Francis"
+   ],
+   "role": "a wife; died 2004 after heart surgery",
+   "matters": [
+    {
+     "matter": "deaths of Francis Randolph (2004) and Leona Stapleton",
+     "status": "DECEASED_NO_FINDING",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-FRANCIS-LEONA"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Leona Stapleton",
+   "aliases": [
+    "Leona Stapleton",
+    "Leona"
+   ],
+   "role": "a wife; died of cancer",
+   "matters": [
+    {
+     "matter": "deaths of Francis Randolph (2004) and Leona Stapleton",
+     "status": "DECEASED_NO_FINDING",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-FRANCIS-LEONA"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Eric Tarantino",
+   "aliases": [
+    "Eric Tarantino",
+    "Tarantino"
+   ],
+   "role": "former friend and co-worker; key prosecution witness in the Utah case",
+   "matters": [
+    {
+     "matter": "death of Becky Gault (Nov 1986, Utah)",
+     "status": "WITNESS",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-TARANTINO"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Tierra Jones",
+   "aliases": [
+    "Tierra Jones",
+    "Judge Jones"
+   ],
+   "role": "Clark County District Judge (sentencing, April 2024)",
+   "matters": [
+    {
+     "matter": "deaths of Sharon Causse and Michael Miller (May 2008, Las Vegas)",
+     "status": "OFFICIAL",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-SENTENCE"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Josh Tomsheck",
+   "aliases": [
+    "Josh Tomsheck",
+    "Tomsheck"
+   ],
+   "role": "defence attorney at the 2023 retrial",
+   "matters": [
+    {
+     "matter": "deaths of Sharon Causse and Michael Miller (May 2008, Las Vegas)",
+     "status": "OFFICIAL",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-DEFENCE"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dean O'Kelley",
+   "aliases": [
+    "Dean O'Kelley",
+    "O'Kelley"
+   ],
+   "role": "Las Vegas police detective featured in the Netflix film",
+   "matters": [
+    {
+     "matter": "deaths of Sharon Causse and Michael Miller (May 2008, Las Vegas)",
+     "status": "OFFICIAL",
+     "checked": "2026-10-11",
+     "claims": [
+      "R-NETFLIX-CAST"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dan Slepian",
+   "aliases": [
+    "Dan Slepian",
+    "Slepian"
+   ],
+   "role": "Dateline NBC producer",
+   "matters": []
+  },
+  {
+   "name": "Chris Smith",
+   "aliases": [
+    "Chris Smith"
+   ],
+   "role": "director of the Netflix film",
+   "matters": []
+  }
+ ]
+}

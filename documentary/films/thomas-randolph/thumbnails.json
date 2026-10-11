@@ -1,0 +1,174 @@
+{
+ "figures": [
+  "trw_randolph",
+  "judge"
+ ],
+ "concepts": [
+  {
+   "name": "widower-chapel",
+   "note": "Selected. The neon wedding chapel (the six marriages) with an illustrated Randolph, not a likeness, neutral expression, in a suit. '3 MURDER TRIALS' is factual; the stamp states where the record stands.",
+   "shot": {
+    "set": "trw_chapel",
+    "grade": "night",
+    "view": {
+     "cx": 540,
+     "cy": 1000,
+     "w": 1150
+    },
+    "figures": [
+     {
+      "id": "trw_randolph",
+      "x": 830,
+      "y": 1345,
+      "scale": 0.58,
+      "dir": -1,
+      "turn": 0.3,
+      "pose": "stand",
+      "expr": "neutral",
+      "gaze": [
+       -0.4,
+       0.0
+      ],
+      "headTurn": -0.3,
+      "outfit": "court"
+     }
+    ],
+    "headline": {
+     "x": 60,
+     "y": 110,
+     "rows": [
+      {
+       "text": "THE WIDOWER",
+       "size": 150
+      },
+      {
+       "text": "3 MURDER TRIALS",
+       "size": 96,
+       "color": "amber"
+      }
+     ]
+    },
+    "stamps": [
+     {
+      "at": 0.0,
+      "text": "CONVICTED · UPHELD 2026",
+      "color": "red",
+      "x": 600,
+      "y": 980,
+      "size": 56,
+      "rot": -0.04,
+      "bg": "#05070a"
+     }
+    ]
+   }
+  },
+  {
+   "name": "two-verdicts",
+   "note": "Alternative. Courtroom; the two outcomes side by side (Utah acquittal, Las Vegas conviction).",
+   "shot": {
+    "set": "courtroom",
+    "setOpts": {
+     "modern": true,
+     "dock": false
+    },
+    "grade": "cold",
+    "view": {
+     "cx": 470,
+     "cy": 1050,
+     "w": 1250
+    },
+    "figures": [
+     {
+      "id": "judge",
+      "x": 540,
+      "y": 790,
+      "scale": 0.42,
+      "dir": 1,
+      "turn": 0.05,
+      "pose": "sit",
+      "expr": "stern",
+      "noChair": true,
+      "depth": 0.34
+     },
+     {
+      "id": "trw_randolph",
+      "x": 300,
+      "y": 1560,
+      "scale": 0.6,
+      "dir": 1,
+      "turn": 0.4,
+      "pose": "sit",
+      "expr": "neutral",
+      "outfit": "court"
+     }
+    ],
+    "headline": {
+     "x": 60,
+     "y": 110,
+     "rows": [
+      {
+       "text": "TRIED 3 TIMES",
+       "size": 140
+      }
+     ]
+    },
+    "stamps": [
+     {
+      "at": 0.0,
+      "text": "ACQUITTED · 1989",
+      "color": "green",
+      "x": 1350,
+      "y": 560,
+      "size": 70,
+      "rot": -0.05,
+      "bg": "#05070a"
+     },
+     {
+      "at": 0.0,
+      "text": "GUILTY · 2023",
+      "color": "red",
+      "x": 1350,
+      "y": 760,
+      "size": 70,
+      "rot": 0.04,
+      "bg": "#05070a"
+     }
+    ]
+   }
+  },
+  {
+   "name": "house-911",
+   "note": "Alternative with no person: the generic house at night with emergency lights.",
+   "shot": {
+    "set": "trw_suburb",
+    "setOpts": {
+     "mode": "night",
+     "police": 1,
+     "lit": 0.9
+    },
+    "grade": "night",
+    "view": {
+     "cx": 620,
+     "cy": 1100,
+     "w": 1300
+    },
+    "figures": [],
+    "headline": {
+     "x": 60,
+     "y": 120,
+     "rows": [
+      {
+       "text": "THE 911 CALL",
+       "size": 150
+      },
+      {
+       "text": "LAS VEGAS · MAY 2008",
+       "size": 84,
+       "color": "amber"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}
