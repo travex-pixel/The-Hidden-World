@@ -11,3 +11,5 @@
 - 2026-10-11 07:32:43 tcv02-unabomber: rendering (final, seed 1)
 - 2026-10-11 07:45:12 tcv02-unabomber: rendered in 749s
 - 2026-10-11 07:46:04 tcv02-unabomber: VERIFIED -> series/true-crime-cinematic/output/true_crime_02.mp4 (87.6s, 31.0 MB, sha256 ef93242c461a)
+- 2026-10-11 08:49:25 produce 3: regenerating episode data
+- 2026-10-11 08:49:26 tcv03-d4vd-case: rendering (final, seed 1)
