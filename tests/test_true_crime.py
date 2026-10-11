@@ -122,9 +122,9 @@ class EngineAdditions(unittest.TestCase):
     def test_years_spoken_naturally(self):
         # Piper's phonemiser says "nineteen hundred seventy eight"; narration with year_words speaks years like a person
         from pipeline.narrate import speak_years
-        self.assertEqual(speak_years("From 1978 to 1995, sixteen bombs"), "From nineteen seventy-eight to nineteen ninety-five, sixteen bombs")
+        self.assertEqual(speak_years("From 1978 to 1995, sixteen bombs"), "From nineteen seventy eight to nineteen ninety five, sixteen bombs")
         self.assertEqual(speak_years("In 2012."), "In twenty twelve.")
-        self.assertEqual(speak_years("in 2005 and 1905"), "in two thousand five and nineteen oh-five")
+        self.assertEqual(speak_years("in 2005 and 1905"), "in two thousand five and nineteen oh five")
         for keep in ("35,000-word", "$1,000,000", "the 1970s", "$1,999"):
             self.assertEqual(speak_years(keep), keep)
         for eid in EPS:

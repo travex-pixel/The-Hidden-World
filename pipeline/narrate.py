@@ -39,12 +39,13 @@ _TENS = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
 
 
 def _two(n: int) -> str:
-    return _ONES[n] if n < 20 else _TENS[n // 10] + ("" if n % 10 == 0 else "-" + _ONES[n % 10])
+    # a space, not a hyphen: Piper stresses "eighty-two" as one odd word, and listeners/ASR hear "1980, two"
+    return _ONES[n] if n < 20 else _TENS[n // 10] + ("" if n % 10 == 0 else " " + _ONES[n % 10])
 
 
 def speak_years(text: str) -> str:
     """Spell four-digit years the way a narrator says them. Piper's phonemiser reads '1978' as
-    'nineteen hundred seventy eight'; this gives 'nineteen seventy-eight', 'two thousand five', 'twenty twelve'.
+    'nineteen hundred seventy eight'; this gives 'nineteen seventy eight', 'two thousand five', 'twenty twelve'.
     Only standalone 1100-2099 numbers are touched (not '35,000', not '1978s')."""
     import re
 
@@ -54,7 +55,7 @@ def speak_years(text: str) -> str:
             return "two thousand" + ("" if lo == 0 else " " + _ONES[lo])
         if lo == 0:
             return _two(hi) + " hundred"
-        return _two(hi) + " " + ("oh-" + _ONES[lo] if lo < 10 else _two(lo))
+        return _two(hi) + " " + ("oh " + _ONES[lo] if lo < 10 else _two(lo))
     return re.sub(r"(?<![\d,.])(1[1-9]\d\d|20\d\d)(?!\d|,\d|s\b)", year, text)
 
 

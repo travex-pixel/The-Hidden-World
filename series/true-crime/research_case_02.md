@@ -24,7 +24,7 @@
 |---|---|---|
 | "For seventeen years, the FBI hunted a bomber it couldn't name" / "1978 - 1995 · NO NAME" | Established (UNABOM 1978–1995; identified 1996). The first draft said "never seen"; this was **removed** in review because a 1987 eyewitness sketch exists. | fbi_history, fbi_2008 |
 | "His own words. And his own brother." | Established | fbi_2021, fbi_history, fox_family |
-| "From 1978 to 1995, sixteen bombs killed three people and injured more than twenty" | Established. Injured is given as 23 (AP; the FBI as quoted by AP) or 24 (one FBI.gov page), hence "more than twenty". | fbi_history, pbs_2023, kiro_2026, fbi_2008 |
+| "Between 1978 and 1995, sixteen bombs killed three people and injured more than twenty" | Established. Injured is given as 23 (AP; the FBI as quoted by AP) or 24 (one FBI.gov page), hence "more than twenty". | fbi_history, pbs_2023, kiro_2026, fbi_2008 |
 | Map card "FBI CASE NAME: UNABOM · UNIVERSITY AND AIRLINE BOMBINGS"; pins Chicago area 1978, Sacramento 1985 & 1995, New Jersey 1994 (labelled "Selected locations") | Established | fbi_history, kiro_2026, research appendix (victims) |
 | "In 1995, he made an offer. Publish his 35,000-word manifesto, and he would 'desist from terrorism.'" | Established (letter to the NYT, Apr 1995; length about 35,000 words) | nyt_letter, ap_semo, cnbc_2023 |
 | "The FBI and the Attorney General backed printing it, hoping someone would recognise the writer." | Established (Reno and Freeh recommended publication; the FBI states the aim was recognition) | cnn_1995, csm_1995, fbi_2021 |

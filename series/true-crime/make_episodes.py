@@ -153,7 +153,7 @@ def unabomber() -> dict:
             N("What finally caught him? His own words. And his own brother.", pause_before=0.25)],
             "cold", ["U_17years", "U_identified"], sfx=[fx(0.05, "hit", 0.8), fx(3.3, "typing", 0.6)], emph=["words.", "brother."], min_d=5.0),
         scene("s02_map", "case_map", [
-            N("From 1978 to 1995, sixteen bombs killed three people and injured more than twenty.")],
+            N("Between 1978 and 1995, sixteen bombs killed three people and injured more than twenty.")],
             "unease", ["U_toll", "U_name"], sfx=[fx(0.0, "whoosh", 0.8), fx(1.3, "thump", 0.5), fx(2.6, "thump", 0.5), fx(3.9, "thump", 0.5)],
             emph=["sixteen", "three"], shot={"map": {
                 "geo": "usa", "from": {"center": [-96.0, 38.6], "span": 58}, "to": {"center": [-96.0, 38.8], "span": 52},
