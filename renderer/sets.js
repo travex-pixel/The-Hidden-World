@@ -272,6 +272,26 @@
     if (o.type === 'label') return `<g opacity="${op}">${o.box === false ? '' : `<rect x="${(o.x ?? 60) - 18}" y="${(o.y ?? 380) - (o.fs || 44) - 8}" width="${f1(Math.max(o.text.length * (o.fs || 44), (o.sub || '').length * 30) * 0.61 + 40)}" height="${(o.fs || 44) + (o.sub ? 70 : 26)}" rx="6" fill="#000" opacity="0.55"/>`}${E.doc.typed(o.x ?? 60, o.y ?? 380, o.text, seg(t, o.at, o.at + (o.typeDur || 0.9)), { fs: o.fs || 44, color: o.colour || '#e7ae4f' })}${o.sub ? E.doc.typed(o.x ?? 60, (o.y ?? 380) + 52, o.sub, seg(t, o.at + 0.4, o.at + 1.4), { fs: 30, color: '#f4efe4', caret: false, weight: 400 }) : ''}</g>`;
     if (o.type === 'circle') { const [ax, ay] = project(c, o.depth || 1, o.target[0], o.target[1]); return `<g opacity="${op}">${E.doc.circleOn(f1(ax), f1(ay), o.rx || 120, o.ry || 70, ease.out(k), o.colour || '#e5372b', 8)}</g>`; }
     if (o.type === 'vote') { let s = ''; for (let i = 0; i < 5; i++) { const q = ease.back(seg(t, o.at + i * 0.15, o.at + i * 0.15 + 0.4)); const x = 200 + i * 170; s += `<g transform="translate(${x} ${o.y || 1180}) scale(${f1(Math.max(0.001, q) * 100) / 100})"><rect x="-76" y="-40" width="152" height="80" rx="10" fill="${i < 3 ? '#d23a2e' : '#e9e4d8'}" stroke="#000" stroke-opacity="0.5" stroke-width="3"/><text y="11" text-anchor="middle" ${TYPE} font-weight="700" font-size="28" fill="${i < 3 ? '#fff' : '#1a1915'}">${i < 3 ? 'DISMISS' : 'ALLOW'}</text></g>`; } return `<g opacity="${op}">${s}</g>`; }
+    if (o.type === 'funfact') {   // "FUN FACT" pop-up: yellow badge over a dark card; rows: [{text, fs}] (pre-wrapped, verified facts only)
+      const rows = o.rows || [], fs0 = o.fs || 42, w = o.w || 920, x = o.x ?? (W - w) / 2, y = o.y ?? 380;
+      const lh = r_ => (r_.fs || fs0) * 1.28; const h = 64 + rows.reduce((a, r_) => a + lh(r_), 0) + 22;
+      const pop = ease.back(seg(t, o.at || 0, (o.at || 0) + 0.42)); const cx = x + w / 2, cy = y + h / 2;
+      let yy = y + 56, txt = ''; rows.forEach(r_ => { yy += lh(r_) * 0.86; txt += `<text x="${x + 40}" y="${f1(yy)}" font-family="Nunito" font-weight="800" font-size="${r_.fs || fs0}" fill="${r_.colour || '#f6f1e6'}">${esc(r_.text)}</text>`; yy += lh(r_) * 0.14; });
+      const wob = 1 + 0.012 * Math.sin((t - (o.at || 0)) * 5);
+      return `<g opacity="${op}" transform="translate(${f1(cx)} ${f1(cy)}) scale(${f1(Math.max(0.001, pop) * wob * 1000) / 1000}) translate(${f1(-cx)} ${f1(-cy)})"><rect x="${x + 10}" y="${y + 14}" width="${w}" height="${h}" rx="22" fill="#000" opacity="0.5" filter="url(#cineSoft)"/>` +
+        `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="22" fill="#111317" opacity="0.94" stroke="#ffd23f" stroke-width="5"/>` +
+        `<g transform="rotate(-4 ${x + 170} ${y})"><rect x="${x + 22}" y="${y - 40}" width="300" height="76" rx="38" fill="#ffd23f" stroke="#141414" stroke-width="4"/><text x="${x + 172}" y="${y + 12}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="42" fill="#141414">FUN FACT!</text></g>${txt}</g>`;
+    }
+    if (o.type === 'nextcase') {   // end-of-video open loop: "NEXT CASE" teaser + follow prompt; rows: [{text, fs}]
+      const rows = o.rows || [], w = o.w || 940, x = o.x ?? (W - w) / 2, y = o.y ?? 360, fs0 = o.fs || 56;
+      const lh = r_ => (r_.fs || fs0) * 1.22; const h = 96 + rows.reduce((a, r_) => a + lh(r_), 0) + (o.sub ? 92 : 30);
+      const pop = ease.back(seg(t, o.at || 0, (o.at || 0) + 0.45)); const cx = x + w / 2, cy = y + h / 2;
+      let yy = y + 92, txt = ''; rows.forEach((r_, i) => { const k2 = seg(t, (o.at || 0) + 0.25 + i * 0.22, (o.at || 0) + 0.6 + i * 0.22); yy += lh(r_) * 0.84; txt += `<text x="${cx}" y="${f1(yy)}" text-anchor="middle" opacity="${f1(k2)}" font-family="Nunito" font-weight="800" font-size="${r_.fs || fs0}" fill="${r_.colour || '#ffffff'}">${esc(r_.text)}</text>`; yy += lh(r_) * 0.16; });
+      const pulse = 1 + 0.035 * Math.max(0, Math.sin((t - (o.at || 0)) * 6));
+      const sub = o.sub ? `<g transform="translate(${f1(cx)} ${f1(y + h - 52)}) scale(${f1(pulse * 1000) / 1000})"><rect x="-300" y="-36" width="600" height="72" rx="36" fill="#e5372b"/><text y="13" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="36" fill="#fff">${esc(o.sub)}</text></g>` : '';
+      return `<g opacity="${op}" transform="translate(${f1(cx)} ${f1(cy)}) scale(${f1(Math.max(0.001, pop) * 1000) / 1000}) translate(${f1(-cx)} ${f1(-cy)})"><rect x="${x + 10}" y="${y + 14}" width="${w}" height="${h}" rx="26" fill="#000" opacity="0.55" filter="url(#cineSoft)"/>` +
+        `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="26" fill="#0d0f14" opacity="0.93" stroke="#e5372b" stroke-width="5"/><rect x="${cx - 190}" y="${y - 34}" width="380" height="72" rx="10" fill="#e5372b"/><text x="${cx - 16}" y="${y + 16}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="44" fill="#fff" letter-spacing="3">NEXT CASE</text><path d="M${cx + 150} ${y - 14} l26 14 l-26 14 Z" fill="#fff"/>${txt}${sub}</g>`;
+    }
     if (o.type === 'svg') return `<g opacity="${op}">${typeof o.svg === 'function' ? o.svg(t, c) : o.svg}</g>`;
     return '';
   }
@@ -303,5 +323,6 @@
   }
 
   E.sets = SETS;
+  E.registerSets = m => Object.assign(SETS, m);   // episode scene files may add their own environments
   E.cine = { shot, project, camAt, layerT, overlay, wash, uluru, pines, scrub, tent, stars, rain, handheld };
 })();

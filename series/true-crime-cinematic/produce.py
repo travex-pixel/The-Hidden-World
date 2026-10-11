@@ -71,11 +71,11 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("which", help="episode number from series.json, or 'all'"); ap.add_argument("--force", action="store_true")
     a = ap.parse_args(argv)
     log(f"produce {a.which}{' --force' if a.force else ''}: regenerating episode data")
-    if run([sys.executable, str(HERE / "make_episodes.py")]) != 0:
-        log("make_episodes.py failed"); return 1
     eps = CFG["episodes"] if a.which == "all" else [e for e in CFG["episodes"] if str(e["n"]) == a.which]
     if not eps:
         print(f"no episode {a.which} in series.json"); return 2
+    if run([sys.executable, str(HERE / "make_episodes.py"), *[e["id"] for e in eps]]) != 0:
+        log("make_episodes.py failed"); return 1
     ok = [produce(e, a.force) for e in eps]
     return 0 if all(ok) else 1
 

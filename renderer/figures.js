@@ -150,10 +150,23 @@
     if (fh === 'moustache') s += `<path d="M${f1(mx - mw - 3)} ${f1(my - 3)} Q${f1(mx)} ${f1(my - 12)} ${f1(mx + mw + 3)} ${f1(my - 3)} Q${f1(mx)} ${f1(my - 6)} ${f1(mx - mw - 3)} ${f1(my - 3)} Z" fill="${sp.hair.color}" stroke="${INK}" stroke-width="2.5"/>`;
     if (fh === 'stubble') s += `<path d="M-44 14 C-40 44 -20 62 ${f1(cx * 0.5)} 64 C24 62 42 44 46 14 C30 40 12 46 0 46 C-12 46 -30 40 -44 14 Z" fill="${sp.hair.color}" opacity="0.22"/>`;
     s += hairFront(sp, T);
-    if (sp.glasses) { const gx = cx; s += `<g fill="none" stroke="${sp.glasses_colour || '#2a2420'}" stroke-width="3.2"><rect x="${f1(gx - sep - 15)}" y="${eyeY - 11}" width="${f1(30 * (1 - 0.6 * T))}" height="22" rx="7"/><rect x="${f1(gx + sep - 15)}" y="${eyeY - 11}" width="30" height="22" rx="7"/><path d="M${f1(gx - sep + 15 - 18 * T)} ${eyeY - 3} L${f1(gx + sep - 15)} ${eyeY - 3}"/></g>`; }
+    if (sp.glasses) { const gx = cx; s += `<g fill="${sp.glasses === 'dark' ? '#0d0f12' : 'none'}" stroke="${sp.glasses_colour || '#2a2420'}" stroke-width="3.2"><rect x="${f1(gx - sep - 15)}" y="${eyeY - 11}" width="${f1(30 * (1 - 0.6 * T))}" height="22" rx="7"/><rect x="${f1(gx + sep - 15)}" y="${eyeY - 11}" width="30" height="22" rx="7"/><path d="M${f1(gx - sep + 15 - 18 * T)} ${eyeY - 3} L${f1(gx + sep - 15)} ${eyeY - 3}"/></g>`; }
+    if (sp.hat) s += hat(sp.hat, T);
     // rim light along the back edge of the head
     s += `<path d="${face}" fill="none" stroke="${rim}" stroke-width="6" opacity="0.8" clip-path="url(#${id}r)"/><clipPath id="${id}r"><rect x="${lx > 0 ? -80 : 30}" y="-90" width="50" height="160"/></clipPath>`;
     return s;
+  }
+  // hats (drawn over the hair, in head space: face top at y -66, eyes near -6); styles: fedora, trilby, cloche, cap, flatcap, bowler
+  function hat(h, T) {
+    const c = h.color || '#2a2622', band = h.band || shade(c, 0.55), sx = T * 6, st = h.style || 'fedora';
+    const g = d => `<g transform="translate(${f1(sx)} 0)">${d}</g>`;
+    if (st === 'fedora' || st === 'trilby') { const bw = st === 'trilby' ? 64 : 82;
+      return g(`<ellipse cx="0" cy="-50" rx="${bw}" ry="13" fill="${c}" stroke="${INK}" stroke-width="4"/><path d="M-46 -50 C-50 -92 -30 -112 -8 -104 Q 0 -96 8 -104 C30 -112 50 -92 46 -50 Z" fill="${c}" stroke="${INK}" stroke-width="4"/><path d="M-46 -60 L46 -60 L46 -50 L-46 -50 Z" fill="${band}"/><path d="M-30 -96 Q 0 -86 30 -96" stroke="${shade(c, 0.6)}" stroke-width="4" fill="none"/>`); }
+    if (st === 'bowler') return g(`<ellipse cx="0" cy="-50" rx="66" ry="11" fill="${c}" stroke="${INK}" stroke-width="4"/><path d="M-48 -50 C-52 -112 52 -112 48 -50 Z" fill="${c}" stroke="${INK}" stroke-width="4"/><rect x="-48" y="-62" width="96" height="10" fill="${band}"/>`);
+    if (st === 'cloche') return g(`<path d="M-60 -14 C-66 -60 -40 -98 0 -98 C40 -98 66 -60 60 -14 C50 -28 30 -36 0 -36 C-30 -36 -50 -28 -60 -14 Z" fill="${c}" stroke="${INK}" stroke-width="4"/><path d="M-56 -30 C-30 -42 30 -42 56 -30" stroke="${band}" stroke-width="9" fill="none"/>` + (h.flower ? `<circle cx="-40" cy="-40" r="11" fill="${h.flower}" stroke="${INK}" stroke-width="3"/>` : ''));
+    if (st === 'cap') return g(`<path d="M-52 -40 C-56 -96 52 -96 52 -40 Z" fill="${c}" stroke="${INK}" stroke-width="4"/><path d="M${f1(10 - 30 * (1 - T))} -42 Q ${f1(60 + 40 * T)} -46 ${f1(70 + 50 * T)} -34 L${f1(4 - 30 * (1 - T))} -34 Z" fill="${shade(c, 0.8)}" stroke="${INK}" stroke-width="4"/><circle cx="0" cy="-90" r="5" fill="${band}"/>`);
+    if (st === 'flatcap') return g(`<path d="M-54 -44 C-58 -86 30 -96 56 -60 Q 74 -50 66 -42 Z" fill="${c}" stroke="${INK}" stroke-width="4"/><path d="M-50 -46 L64 -44" stroke="${shade(c, 0.6)}" stroke-width="4"/>`);
+    return '';
   }
   function hairBack(sp, T) {
     const c = sp.hair.color, st = sp.hair.style, bx = -T * 8;
@@ -196,7 +209,7 @@
     // S: shoulders [far, near], H: hips [far, near] (figure facing right); returns {back, front} svg
     const top = o.top, tsh = o.top_shadow || shade(top, 0.7), mid = [(S[0][0] + S[1][0]) / 2, (S[0][1] + S[1][1]) / 2], hip = [(H[0][0] + H[1][0]) / 2, (H[0][1] + H[1][1]) / 2];
     const chestF = 26 * turn;   // chest pushes forward in profile
-    const coatLen = o.style === 'coat' || o.style === 'labcoat' || o.style === 'robe' ? (sit ? 60 : (o.style === 'robe' ? 430 : 300)) : (o.style === 'dress' ? (sit ? 40 : 250) : 30);
+    const coatLen = o.style === 'coat' || o.style === 'labcoat' || o.style === 'robe' ? (sit ? 60 : (o.style === 'robe' ? 430 : 300)) : (o.style === 'dress' ? (sit ? 40 : (o.length || 250)) : 30);
     const female = sp.sex === 'female'; const nk = [mid[0] + 4 + turn * 10, Math.min(S[0][1], S[1][1]) - 26];
     const wy = hip[1] - 70, win = female ? 16 : 7;   // waist height and taper
     const flare = o.style === 'dress' ? 26 : (o.style === 'coat' || o.style === 'labcoat' || o.style === 'robe' ? 12 : 0);
@@ -234,7 +247,8 @@
 
   // ---------- public: draw a figure. f = {id, x, y, scale, dir, keys, outfit, ...}; ctx.t = scene time
   function figure(f, ctx, light) {
-    const sp = E.state.cast[f.id]; if (!sp) throw new Error('figure ' + f.id + ' not in episode figures');
+    const sp0 = E.state.cast[f.id]; if (!sp0) throw new Error('figure ' + f.id + ' not in episode figures');
+    const sp = (f.hat !== undefined || f.glasses !== undefined) ? { ...sp0, ...(f.hat !== undefined ? { hat: f.hat } : {}), ...(f.glasses !== undefined ? { glasses: f.glasses } : {}) } : sp0;   // per-shot hat / glasses
     const t = ctx.t, tg = t + (ctx.sceneStart || 0);
     const vis = f.show ? clamp((t - f.show[0]) / 0.3, 0, 1) * (f.show[1] !== undefined ? clamp((f.show[1] - t) / 0.3, 0, 1) : 1) : 1;   // show: [from, until] with 0.3 s fades
     if (vis <= 0) return '';

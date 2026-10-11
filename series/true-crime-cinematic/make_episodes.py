@@ -5,6 +5,7 @@ Narration, claims and sources are reused from the verified Case Files research (
 shot composition lives in renderer/scenes/tcv*.js using the shared figure rig (renderer/figures.js) and sets (renderer/sets.js)."""
 from __future__ import annotations
 import json, sys
+from types import SimpleNamespace
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -247,8 +248,43 @@ def d4vd() -> dict:
     return ep
 
 
-def main() -> None:
-    for ep in (poc(), chamberlain(), unabomber(), d4vd()):
+def src(id_, pub, title, url, date, accessed=None):
+    """A source record. Research in this environment is from search-result extracts, so say so."""
+    return {"id": id_, "publisher": pub, "title": title, "url": url, "date": date,
+            "accessed": accessed or (VERIFIED + " (search-result extract; full page not reachable from the build environment)")}
+
+
+def claim(id_, text, srcs, nature="fact"):
+    return {"id": id_, "type": "established", "nature": nature, "text": text, "sources": list(srcs)}
+
+
+# helpers handed to the per-episode modules in slate/ (one file per episode, named after the episode id)
+H = SimpleNamespace(v1=v1, N=N, fx=fx, fw=fw, S=S, base=base, NARR=NARR, ROOT=ROOT, VERIFIED=VERIFIED, src=src, claim=claim,
+                    CAPTION_Y=CAPTION_Y, CAPTION_MAX_W=CAPTION_MAX_W, json=json)
+LEGACY = {"tcv00-poc": poc, "tcv01-chamberlain": chamberlain, "tcv02-unabomber": unabomber, "tcv03-d4vd-case": d4vd}
+
+
+def slate_builders() -> dict:
+    out = {}
+    for f in sorted((HERE / "slate").glob("tcv*.py")):
+        out[f.stem] = f
+    return out
+
+
+def build_slate(path: Path) -> dict:
+    spec = importlib.util.spec_from_file_location("slate_" + path.stem.replace("-", "_"), path)
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    ep = m.build(H); assert ep["id"] == path.stem, (ep["id"], path.stem)
+    return ep
+
+
+def main(argv=None) -> None:
+    only = set((argv if argv is not None else sys.argv[1:]))   # episode ids; none = all
+    slate = slate_builders()
+    for eid in [*LEGACY, *slate]:
+        if only and eid not in only:
+            continue
+        ep = LEGACY[eid]() if eid in LEGACY else build_slate(slate[eid])
         d = ROOT / "episodes" / ep["id"]; d.mkdir(parents=True, exist_ok=True)
         (d / "episode.json").write_text(json.dumps(ep, indent=1, ensure_ascii=False) + "\n")
         print("wrote", d / "episode.json")
