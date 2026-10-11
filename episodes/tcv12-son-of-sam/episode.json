@@ -36,17 +36,17 @@
   "bpm": 80,
   "hits": [
    {
-    "scene": "s06_tickets",
+    "scene": "s11_name",
     "word": [
-     1,
-     4
+     0,
+     5
     ],
     "at": -0.05,
     "gain": 0.4
    }
   ],
   "cliff": {
-   "scene": "s11_law",
+   "scene": "s13_law",
    "word": [
     1,
     7
@@ -71,8 +71,8 @@
   {
    "id": "s01_hook",
    "scene": "ss12_hook",
-   "min_duration": 3.75,
-   "pad_after": 0.2,
+   "min_duration": 2.0,
+   "pad_after": 0.3,
    "music_cue": "cold",
    "sfx": [
     {
@@ -81,87 +81,75 @@
      "gain": 0.5
     },
     {
-     "at": -0.05,
-     "word": [
-      0,
-      6
-     ],
-     "name": "hit",
-     "gain": 0.6
-    },
-    {
      "at": 0.0,
      "word": [
       0,
       9
      ],
-     "name": "paper",
-     "gain": 0.6
+     "name": "thump",
+     "gain": 0.4
     },
     {
-     "at": 0.1,
+     "at": -0.05,
      "word": [
-      0,
-      10
+      1,
+      2
      ],
-     "name": "thud",
+     "name": "whoosh",
      "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.6
     }
    ],
    "claims": [
-    "S_ticket",
-    "S_span"
+    "S_span",
+    "S_ticket"
    ],
    "transition": "cut",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "New York's most feared killer was caught by a parking ticket."
+     "text": "For a year, police couldn't catch New York's most feared killer."
+    },
+    {
+     "who": "narrator",
+     "text": "Then he parked by a fire hydrant.",
+     "pause_before": 0.4
     }
    ],
    "shot": {},
    "emphasis": [
+    "year,",
     "feared",
-    "parking",
-    "ticket."
+    "parked",
+    "hydrant."
    ],
    "section": "A"
   },
   {
    "id": "s02_fear",
    "scene": "ss12_fear",
-   "min_duration": 2.0,
-   "pad_after": 0.1,
+   "min_duration": 3.0,
+   "pad_after": 0.3,
    "music_cue": "unease",
    "sfx": [
     {
      "at": 0.0,
      "name": "wind",
-     "gain": 0.5
-    },
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      4
-     ],
-     "name": "step",
-     "gain": 0.35
-    },
-    {
-     "at": 0.2,
-     "word": [
-      0,
-      5
-     ],
-     "name": "step",
-     "gain": 0.35
+     "gain": 0.4
     },
     {
      "at": -0.05,
      "word": [
-      1,
+      0,
       0
      ],
      "name": "thump",
@@ -176,72 +164,21 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "For a year, a gunman terrorised New York City."
-    },
-    {
-     "who": "narrator",
-     "text": "Six people were killed, seven wounded.",
-     "pause_before": 0.15
+     "text": "Six people were killed, seven wounded."
     }
    ],
    "shot": {},
    "emphasis": [
-    "year,",
-    "gunman",
     "six",
     "seven"
    ],
    "section": "A"
   },
   {
-   "id": "s03_hair",
-   "scene": "ss12_hair",
-   "min_duration": 3.0,
-   "pad_after": 0.2,
-   "music_cue": "unease",
-   "sfx": [
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      0
-     ],
-     "name": "paper",
-     "gain": 0.5
-    },
-    {
-     "at": -0.05,
-     "word": [
-      0,
-      3
-     ],
-     "name": "sting",
-     "gain": 0.35
-    }
-   ],
-   "claims": [
-    "S_hair"
-   ],
-   "transition": "push",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "Some women even dyed their dark hair blonde."
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "dyed",
-    "blonde."
-   ],
-   "section": "A"
-  },
-  {
-   "id": "s04_letters",
+   "id": "s03_letters",
    "scene": "ss12_letters",
    "min_duration": 2.0,
-   "pad_after": 0.1,
+   "pad_after": 0.2,
    "music_cue": "tension",
    "sfx": [
     {
@@ -253,7 +190,7 @@
      "at": 0.0,
      "word": [
       0,
-      3
+      2
      ],
      "name": "paper",
      "gain": 0.5
@@ -276,12 +213,12 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Then he wrote letters to police and a newspaper columnist."
+     "text": "He wrote letters to police and the press."
     },
     {
      "who": "narrator",
      "text": "He called himself the Son of Sam.",
-     "pause_before": 0.1
+     "pause_before": 0.3
     }
    ],
    "shot": {},
@@ -293,266 +230,17 @@
    "section": "B"
   },
   {
-   "id": "s05_witness",
-   "scene": "ss12_witness",
-   "min_duration": 2.0,
-   "pad_after": 0.2,
-   "music_cue": "tension-rise",
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "wind",
-     "gain": 0.45
-    },
-    {
-     "at": 0.0,
-     "word": [
-      1,
-      3
-     ],
-     "name": "step",
-     "gain": 0.3
-    },
-    {
-     "at": 0.0,
-     "word": [
-      1,
-      8
-     ],
-     "name": "pen",
-     "gain": 0.5
-    },
-    {
-     "at": 0.0,
-     "word": [
-      1,
-      14
-     ],
-     "name": "click",
-     "gain": 0.45
-    }
-   ],
-   "claims": [
-    "S_last",
-    "S_witness"
-   ],
-   "transition": "push",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "July 31st, 1977: his last attack, in Brooklyn."
-    },
-    {
-     "who": "narrator",
-     "text": "Nearby, a woman walking her dog saw police ticketing a car by a fire hydrant.",
-     "pause_before": 0.15
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "last",
-    "ticketing",
-    "hydrant."
-   ],
-   "section": "B"
-  },
-  {
-   "id": "s06_tickets",
-   "scene": "ss12_tickets",
-   "min_duration": 2.0,
-   "pad_after": 0.3,
-   "music_cue": "revelation",
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "typing",
-     "gain": 0.4
-    },
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      3
-     ],
-     "name": "paper",
-     "gain": 0.5
-    },
-    {
-     "at": -0.05,
-     "word": [
-      1,
-      4
-     ],
-     "name": "hit",
-     "gain": 0.7
-    }
-   ],
-   "claims": [
-    "S_ticket"
-   ],
-   "transition": "push",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "Detectives checked the tickets written there that night."
-    },
-    {
-     "who": "narrator",
-     "text": "One led to David Berkowitz, a 24-year-old postal worker from Yonkers.",
-     "pause_before": 0.25
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "tickets",
-    "berkowitz,",
-    "yonkers."
-   ],
-   "section": "B",
-   "music_drop": true
-  },
-  {
-   "id": "s07_stakeout",
-   "scene": "ss12_stakeout",
-   "min_duration": 4.2,
-   "pad_after": 0.25,
-   "music_cue": "tension-rise",
-   "sfx": [
-    {
-     "at": 0.0,
-     "name": "wind",
-     "gain": 0.4
-    },
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      3
-     ],
-     "name": "step",
-     "gain": 0.4
-    },
-    {
-     "at": 0.1,
-     "word": [
-      0,
-      4
-     ],
-     "name": "step",
-     "gain": 0.4
-    },
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      10
-     ],
-     "name": "tick",
-     "gain": 0.4
-    }
-   ],
-   "claims": [
-    "S_arrest"
-   ],
-   "transition": "push",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "On August 10th, detectives found his car in Yonkers, and waited."
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "found",
-    "car",
-    "waited."
-   ],
-   "section": "C"
-  },
-  {
-   "id": "s08_arrest",
-   "scene": "ss12_arrest",
-   "min_duration": 2.0,
-   "pad_after": 0.4,
-   "music_cue": "tension-peak",
-   "sfx": [
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      2
-     ],
-     "name": "step",
-     "gain": 0.4
-    },
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      4
-     ],
-     "name": "step",
-     "gain": 0.4
-    },
-    {
-     "at": -0.05,
-     "word": [
-      0,
-      7
-     ],
-     "name": "hit",
-     "gain": 0.7
-    },
-    {
-     "at": 0.1,
-     "word": [
-      0,
-      8
-     ],
-     "name": "door",
-     "gain": 0.5
-    }
-   ],
-   "claims": [
-    "S_arrest",
-    "S_span"
-   ],
-   "transition": "zoom",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "When he walked out to it, they arrested him."
-    },
-    {
-     "who": "narrator",
-     "text": "A year of terror was over.",
-     "pause_before": 0.3
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "arrested",
-    "over."
-   ],
-   "section": "C",
-   "music_drop": true
-  },
-  {
-   "id": "s09_demon",
+   "id": "s04_demon",
    "scene": "ss12_demon",
    "min_duration": 2.0,
-   "pad_after": 0.3,
+   "pad_after": 0.2,
    "music_cue": "tension",
    "sfx": [
     {
      "at": 0.0,
      "word": [
       0,
-      1
+      2
      ],
      "name": "paper",
      "gain": 0.4
@@ -573,7 +261,7 @@
       6
      ],
      "name": "stamp",
-     "gain": 0.5
+     "gain": 0.6
     }
    ],
    "claims": [
@@ -584,26 +272,383 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "He blamed a demon speaking through a neighbour's dog."
+     "text": "He later claimed Sam was a neighbour whose dog relayed a demon's orders."
     },
     {
      "who": "narrator",
-     "text": "He later admitted it was a hoax.",
-     "pause_before": 0.15
+     "text": "Then he admitted it was a hoax.",
+     "pause_before": 0.3
     }
    ],
    "shot": {},
    "emphasis": [
-    "demon",
+    "demon's",
     "hoax."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_last",
+   "scene": "ss12_last",
+   "min_duration": 3.5,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sting",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "S_last"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "July 31st, 1977. His last attack, in Brooklyn."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "last",
+    "brooklyn."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_witness",
+   "scene": "ss12_witness",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "pen",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_witness"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Nearby, a dog walker saw police ticketing a car."
+    },
+    {
+     "who": "narrator",
+     "text": "It was parked by a fire hydrant.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ticketing",
+    "hydrant."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_tickets",
+   "scene": "ss12_tickets",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": 0.2,
+     "word": [
+      1,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "S_witness",
+    "S_ticket"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Days later, she told detectives."
+    },
+    {
+     "who": "narrator",
+     "text": "They checked every ticket written there that night.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "detectives.",
+    "every",
+    "ticket"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s08_car",
+   "scene": "ss12_car",
+   "min_duration": 3.0,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_ticket"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "One was for a car registered in Yonkers."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "car",
+    "yonkers."
    ],
    "section": "C"
   },
   {
-   "id": "s10_plea",
+   "id": "s09_stakeout",
+   "scene": "ss12_stakeout",
+   "min_duration": 3.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "S_arrest"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On August 10th, police waited by that car."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "waited",
+    "car."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s10_arrest",
+   "scene": "ss12_arrest",
+   "min_duration": 3.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "door",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_arrest"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "When its owner walked out, they arrested him."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "owner",
+    "arrested"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s11_name",
+   "scene": "ss12_name",
+   "min_duration": 2.0,
+   "pad_after": 0.5,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "S_ticket",
+    "S_arrest"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The Son of Sam was David Berkowitz, a 24-year-old postal worker.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "david",
+    "berkowitz,",
+    "postal"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s12_plea",
    "scene": "ss12_plea",
    "min_duration": 2.0,
-   "pad_after": 0.1,
+   "pad_after": 0.3,
    "music_cue": "tension-peak",
    "sfx": [
     {
@@ -624,14 +669,15 @@
      "at": -0.08,
      "word": [
       1,
-      5
+      3
      ],
      "name": "gavel",
      "gain": 1.0
     }
    ],
    "claims": [
-    "S_plea"
+    "S_plea",
+    "S_today"
    ],
    "transition": "push",
    "caption_y": 1380,
@@ -642,20 +688,20 @@
     },
     {
      "who": "narrator",
-     "text": "He got 25 years to life for each.",
-     "pause_before": 0.15
+     "text": "25 years to life, for each one.",
+     "pause_before": 0.3
     }
    ],
    "shot": {},
    "emphasis": [
     "guilty",
     "six",
-    "life"
+    "life,"
    ],
    "section": "D"
   },
   {
-   "id": "s11_law",
+   "id": "s13_law",
    "scene": "ss12_law",
    "min_duration": 2.0,
    "pad_after": 0.3,
@@ -665,7 +711,7 @@
      "at": -0.1,
      "word": [
       0,
-      3
+      2
      ],
      "name": "sparkle",
      "gain": 0.8
@@ -688,104 +734,67 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "New York even passed a 'Son of Sam law' to stop criminals profiting from their stories."
+     "text": "New York passed a Son of Sam law against criminals profiting from their stories."
     },
     {
      "who": "narrator",
      "text": "In 1991, the Supreme Court struck it down.",
-     "pause_before": 0.15
+     "pause_before": 0.3
     }
    ],
    "shot": {},
    "emphasis": [
     "son",
     "sam",
-    "law'",
+    "law",
     "struck",
     "down."
    ],
    "section": "D"
   },
   {
-   "id": "s12_today",
-   "scene": "ss12_today",
-   "min_duration": 4.6,
-   "pad_after": 0.4,
+   "id": "s14_end",
+   "scene": "ss12_end",
+   "min_duration": 2.0,
+   "pad_after": 1.3,
    "music_cue": "aftermath",
    "sfx": [
     {
      "at": 0.0,
      "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
      "gain": 0.5
     },
     {
-     "at": -0.05,
+     "at": -0.1,
      "word": [
       1,
       0
      ],
-     "name": "chime",
-     "gain": 0.35
-    }
-   ],
-   "claims": [
-    "S_today",
-    "S_span"
-   ],
-   "transition": "fade",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "He's still in prison. In 2026, he skipped his parole hearing."
-    },
-    {
-     "who": "narrator",
-     "text": "Six lives were taken. Remember them, not him.",
-     "pause_before": 0.3
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "prison.",
-    "skipped",
-    "remember",
-    "them,"
-   ],
-   "section": "E"
-  },
-  {
-   "id": "s13_next",
-   "scene": "ss12_next",
-   "min_duration": 3.0,
-   "pad_after": 1.5,
-   "music_cue": "aftermath",
-   "sfx": [
-    {
-     "at": 0.0,
      "name": "whoosh",
      "gain": 0.6
     },
     {
-     "at": -0.05,
+     "at": 0.0,
      "word": [
-      0,
+      1,
       5
      ],
      "name": "rumble",
-     "gain": 0.5
-    },
-    {
-     "at": -0.05,
-     "word": [
-      0,
-      11
-     ],
-     "name": "hit",
-     "gain": 0.5
+     "gain": 0.45
     }
    ],
    "claims": [
+    "S_span",
+    "S_ticket",
     "S_next"
    ],
    "transition": "zoom",
@@ -793,16 +802,25 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Next: a gang of pensioners drilled into a London vault, then bragged about it in the pub."
+     "text": "A year of terror, ended by a parking ticket.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "Next: the pensioner gang that drilled into a vault in London.",
+     "pause_before": 0.6
     }
    ],
    "shot": {},
    "emphasis": [
-    "pensioners",
-    "vault,",
-    "bragged"
+    "terror,",
+    "parking",
+    "ticket.",
+    "pensioner",
+    "london."
    ],
    "section": "E",
+   "music_drop": true,
    "fade_out": true
   }
  ],
@@ -830,17 +848,6 @@
     "aetv_alone",
     "sage_enc",
     "cbs_story"
-   ]
-  },
-  {
-   "id": "S_hair",
-   "type": "established",
-   "nature": "fact",
-   "text": "Reports said many of those attacked had long, dark hair; that summer some New York women cut their hair short or dyed it blonde.",
-   "sources": [
-    "cbsny_back",
-    "history_arrest",
-    "jezebel_1977"
    ]
   },
   {
@@ -1009,14 +1016,6 @@
    "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
   },
   {
-   "id": "cbsny_back",
-   "publisher": "CBS New York",
-   "title": "Back Stories: 'Son of Sam' sparks 'a very fearful time'",
-   "url": "https://www.cbsnews.com/newyork/news/back-stories-summer-of-sam/",
-   "date": "date not in extract",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
    "id": "wnyc_40",
    "publisher": "WNYC (AP)",
    "title": "'Son of Sam' killer was arrested 40 years ago this week",
@@ -1077,14 +1076,6 @@
    "publisher": "CBS News",
    "title": "Survivors of the \"Son of Sam\" serial killer in their own words",
    "url": "https://www.cbsnews.com/amp/news/son-of-sam-victims-in-their-own-words/",
-   "date": "2017",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
-   "id": "jezebel_1977",
-   "publisher": "Jezebel",
-   "title": "Eerie 1977 footage shows a reporter polling dark-haired women during the 'Summer of Sam'",
-   "url": "https://jezebel.com/eerie-1977-footage-shows-a-reporter-polling-dark-haired-1797273659",
    "date": "2017",
    "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
   },

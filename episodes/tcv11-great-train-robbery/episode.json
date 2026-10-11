@@ -1,0 +1,1382 @@
+{
+ "id": "tcv11-great-train-robbery",
+ "number": 11,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Britain's Biggest Train Robbers Were Given Away by a Board Game",
+ "central_question": "How did the gang behind Britain's biggest train robbery give themselves away, and what happened to them?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "£2.6": "two point six",
+   "million": "million pounds",
+   "Leatherslade": "Leatherslaid",
+   "Wandsworth": "Wandzwurth"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "11",
+  "label": "GREAT TRAIN ROBBERY · 1963"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 78,
+  "hits": [
+   {
+    "scene": "s02_signal",
+    "word": [
+     1,
+     7
+    ],
+    "at": -0.05,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s13_return",
+   "word": [
+    0,
+    12
+   ],
+   "at": -0.08
+  }
+ },
+ "figures": [
+  "gt11_robber_a",
+  "gt11_robber_b",
+  "gt11_robber_c",
+  "gt11_biggs",
+  "gt11_detective",
+  "agent_a",
+  "scientist",
+  "analyst",
+  "judge",
+  "barrister",
+  "press_operator"
+ ],
+ "content_notes": "Closed case (1963-1964; Biggs died in 2013). The driver, Jack Mills, is named once and never depicted; the attack is never shown or described. The gang are anonymous generic 1960s silhouettes (flat caps, suits), never glamorised; Ronnie Biggs is an illustrated silhouette, not a likeness. 'They played with the real money' is narrated only as an unproven legend; the Monopoly board's museum display and the modern value of the haul are not used (not two reputable sources). The board game, bottle, mailbags, train, farm and prison are generic illustrations: no logo, banknote, insignia, newspaper or document is imitated. No dialogue is invented. Research verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "gt11_hook",
+   "min_duration": 4.2,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "click",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GT_haul",
+    "GT_payoff"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Britain's biggest train robbers got away with £2.6 million."
+    },
+    {
+     "who": "narrator",
+     "text": "Then a board game gave them away.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "£2.6",
+    "million.",
+    "board",
+    "game"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_signal",
+   "scene": "gt11_signal",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "click",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GT_train",
+    "GT_signal"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "August 1963. The night mail, Glasgow to London."
+    },
+    {
+     "who": "narrator",
+     "text": "A signal turned red. It was a fake.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "glasgow",
+    "red.",
+    "fake."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_driver",
+   "scene": "gt11_driver",
+   "min_duration": 4.4,
+   "pad_after": 0.55,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "brake",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GT_mills"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The train stopped. The driver, Jack Mills, was attacked and badly hurt."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "jack",
+    "mills,"
+   ],
+   "music_gain_db": -6,
+   "section": "B",
+   "music_drop": true
+  },
+  {
+   "id": "s04_bags",
+   "scene": "gt11_bags",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.5
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thud",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "GT_bridge"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At a bridge down the line, they unloaded the mailbags."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bridge",
+    "mailbags."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_farm",
+   "scene": "gt11_farm",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "door",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "GT_farm"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They vanished to a hideout: Leatherslade Farm."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "hideout:",
+    "leatherslade"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_game",
+   "scene": "gt11_game",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.45
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      5
+     ],
+     "name": "flutter",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "stamp",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GT_played",
+    "GT_legend"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "There, they passed the time playing Monopoly."
+    },
+    {
+     "who": "narrator",
+     "text": "Legend says they used real cash. Never proven.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "monopoly.",
+    "legend",
+    "never"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_tip",
+   "scene": "gt11_tip",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.4
+    },
+    {
+     "at": -0.2,
+     "word": [
+      0,
+      4
+     ],
+     "name": "buzz",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "step",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "GT_tip"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Five days later, a herdsman tipped off police."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "five",
+    "herdsman"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s08_raid",
+   "scene": "gt11_raid",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "door",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": 0.0,
+     "word": [
+      2,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "GT_fled",
+    "GT_money",
+    "GT_prints"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The gang had fled early."
+    },
+    {
+     "who": "narrator",
+     "text": "Most of the money? Never recovered.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "But they left mailbags, food... and the board game.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fled",
+    "never",
+    "recovered.",
+    "board",
+    "game."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_prints",
+   "scene": "gt11_prints",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swell",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "puff",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "GT_prints"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then came the fingerprints."
+    },
+    {
+     "who": "narrator",
+     "text": "On the Monopoly board.",
+     "pause_before": 0.35
+    },
+    {
+     "who": "narrator",
+     "text": "And on a ketchup bottle.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fingerprints.",
+    "monopoly",
+    "ketchup"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s10_match",
+   "scene": "gt11_match",
+   "min_duration": 2.8,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "GT_biggs_prints"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Some belonged to Ronnie Biggs."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ronnie",
+    "biggs."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s11_trial",
+   "scene": "gt11_trial",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      9
+     ],
+     "name": "gavel",
+     "gain": 1.0
+    }
+   ],
+   "claims": [
+    "GT_convicted"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 1964, the prints helped convict them. Seven got thirty years."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convict",
+    "seven",
+    "thirty"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s12_escape",
+   "scene": "gt11_escape",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "flutter",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "GT_escape"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 1965, Biggs escaped over the prison wall, on a rope ladder."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "escaped",
+    "wall,",
+    "rope",
+    "ladder."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s13_return",
+   "scene": "gt11_return",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      12
+     ],
+     "name": "stamp",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "GT_run",
+    "GT_return"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Decades on the run. Then, in 2001, he flew home and was arrested."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "decades",
+    "run.",
+    "arrested."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s14_callback",
+   "scene": "gt11_callback",
+   "min_duration": 4.2,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "GT_payoff",
+    "GT_haul"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Britain's biggest train robbery, given away by a board game.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "biggest",
+    "board",
+    "game."
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s15_next",
+   "scene": "gt11_next",
+   "min_duration": 3.0,
+   "pad_after": 1.5,
+   "music_cue": "outro",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "ping",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GT_next"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next: the parking ticket that led to the Son of Sam.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "parking",
+    "ticket",
+    "sam."
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "GT_prints",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police lifted the gang's fingerprints from everyday objects at the Leatherslade Farm hideout, including the Monopoly board and pieces and a ketchup bottle.",
+   "sources": [
+    "smithsonian",
+    "time",
+    "bbc_obit",
+    "nbc",
+    "mentalfloss"
+   ]
+  },
+  {
+   "id": "GT_haul",
+   "type": "established",
+   "nature": "fact",
+   "text": "About £2.6 million was taken (Guinness World Records lists £2,631,784 under 'Greatest robbery from a train'), a record for a train robbery.",
+   "sources": [
+    "guinness",
+    "bbc_aol",
+    "oxford_times",
+    "wiki_gtr"
+   ]
+  },
+  {
+   "id": "GT_train",
+   "type": "established",
+   "nature": "fact",
+   "text": "In the early hours of 8 August 1963 the Royal Mail's overnight travelling post office train from Glasgow to London was robbed near Cheddington, Buckinghamshire.",
+   "sources": [
+    "btp",
+    "bbc_aol",
+    "railstaff",
+    "wiki_gtr"
+   ]
+  },
+  {
+   "id": "GT_signal",
+   "type": "established",
+   "nature": "fact",
+   "text": "The gang stopped the train with a fake red signal at Sears Crossing: the green lamp was covered (a glove is named) and the red lamp powered by a battery.",
+   "sources": [
+    "btp",
+    "hsw",
+    "crimelib_2",
+    "wiki_gtr"
+   ]
+  },
+  {
+   "id": "GT_bridge",
+   "type": "established",
+   "nature": "fact",
+   "text": "The locomotive and front coaches were then moved on to Bridego (Railway) Bridge, where the mailbags were unloaded into waiting vehicles (on screen only).",
+   "sources": [
+    "btp",
+    "hsw",
+    "crimelib_2"
+   ]
+  },
+  {
+   "id": "GT_mills",
+   "type": "established",
+   "nature": "fact",
+   "text": "The driver, Jack Mills, was struck on the head and seriously hurt during the robbery. (He died in 1970; the cause is disputed and is not attributed to the attack in the episode.)",
+   "sources": [
+    "railstaff",
+    "cni_gtr",
+    "sunday_post",
+    "wiki_gtr"
+   ]
+  },
+  {
+   "id": "GT_farm",
+   "type": "established",
+   "nature": "fact",
+   "text": "The gang hid at Leatherslade Farm, near Oakley, Buckinghamshire, bought weeks earlier as a hideout.",
+   "sources": [
+    "smithsonian",
+    "brill",
+    "oxford_times",
+    "wiki_gtr"
+   ]
+  },
+  {
+   "id": "GT_played",
+   "type": "established",
+   "nature": "fact",
+   "text": "While hiding at the farm, the gang played Monopoly.",
+   "sources": [
+    "nbc",
+    "time",
+    "smithsonian",
+    "mentalfloss"
+   ]
+  },
+  {
+   "id": "GT_legend",
+   "type": "established",
+   "nature": "fact",
+   "text": "The story that they played with the real stolen banknotes is widely repeated (Oxford Times: 'playing with real £5 notes'; museum notices: 'reputed to have used real money') but rests on hearsay; no reputable source confirms it. Narrated as a legend, never proven.",
+   "sources": [
+    "oxford_times",
+    "finchampstead",
+    "mkheritage"
+   ]
+  },
+  {
+   "id": "GT_tip",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 13 August 1963, five days after the robbery, a local herdsman tipped off police about the farm, and officers went there.",
+   "sources": [
+    "smithsonian",
+    "gale",
+    "oxford_times",
+    "channel4"
+   ]
+  },
+  {
+   "id": "GT_fled",
+   "type": "established",
+   "nature": "fact",
+   "text": "The gang had left the farm sooner than planned, abandoning evidence: empty mailbags, shelves of food and the getaway vehicles.",
+   "sources": [
+    "smithsonian",
+    "oxford_times",
+    "brill",
+    "gale"
+   ]
+  },
+  {
+   "id": "GT_biggs_prints",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: Ronnie Biggs's fingerprints were found at the farm, on a ketchup bottle.",
+   "sources": [
+    "bbc_obit",
+    "crimelib_7"
+   ]
+  },
+  {
+   "id": "GT_convicted",
+   "type": "established",
+   "nature": "procedure",
+   "text": "Fingerprints from the farm helped convict the gang. After a trial at Aylesbury, sentences were passed in April 1964: seven men got 30 years each and five others got shorter terms.",
+   "sources": [
+    "macau_1964",
+    "shropshire",
+    "lccsa",
+    "cni_trial",
+    "nbc"
+   ]
+  },
+  {
+   "id": "GT_escape",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: on 8 July 1965, about 15 months into a 30-year sentence, Biggs escaped from Wandsworth Prison, London, going over the wall on a rope ladder into a waiting furniture van.",
+   "sources": [
+    "ksl_ap",
+    "fox_ap",
+    "cbc",
+    "macau_1965",
+    "yep"
+   ]
+  },
+  {
+   "id": "GT_run",
+   "type": "established",
+   "nature": "fact",
+   "text": "Biggs spent decades as a fugitive abroad, in Australia and then, from about 1970, in Brazil, which did not extradite him.",
+   "sources": [
+    "cbc",
+    "globalnews",
+    "bbc_obit",
+    "heraldnet"
+   ]
+  },
+  {
+   "id": "GT_return",
+   "type": "established",
+   "nature": "fact",
+   "text": "In May 2001, aged 71 and in poor health, he flew back to Britain voluntarily on a jet arranged by The Sun and was arrested by Scotland Yard officers on arrival.",
+   "sources": [
+    "ksl_ap",
+    "cbc",
+    "heraldnet",
+    "macau_1965"
+   ]
+  },
+  {
+   "id": "GT_money",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: most of the stolen money was never recovered (Guinness World Records gives £343,448 recovered of £2,631,784).",
+   "sources": [
+    "guinness",
+    "bbc_ws",
+    "bbc_aol",
+    "wiki_gtr"
+   ]
+  },
+  {
+   "id": "GT_payoff",
+   "type": "established",
+   "nature": "fact",
+   "text": "Summary: the record haul was given away by fingerprints on everyday things at the hideout, notably the Monopoly set and a ketchup bottle, which helped convict the gang.",
+   "sources": [
+    "nbc",
+    "time",
+    "bbc_obit",
+    "smithsonian"
+   ]
+  },
+  {
+   "id": "GT_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "Next-case tease: David Berkowitz, the 'Son of Sam', was arrested on 10 August 1977 after police traced a parking ticket, issued near the last shooting in Brooklyn on 31 July 1977, to his car.",
+   "sources": [
+    "history_sam",
+    "bio_sam",
+    "ae_sam"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "btp",
+   "publisher": "British Transport Police",
+   "title": "Our history: the Great Train Robbery",
+   "url": "https://www.btp.police.uk/police-forces/british-transport-police/areas/campaigns/our-history/crime-history/great-train-robbery/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "hsw",
+   "publisher": "HowStuffWorks",
+   "title": "How the Great Train Robbery Worked",
+   "url": "https://history.howstuffworks.com/historical-events/great-train-robbery.htm",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "crimelib_2",
+   "publisher": "Crime Library",
+   "title": "The Big One: Ronald Biggs and the Great Train Robbery (part 2)",
+   "url": "https://crimelibrary.org/gangsters_outlaws/cops_others/biggs/2.html",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "crimelib_7",
+   "publisher": "Crime Library",
+   "title": "The Big One: Ronald Biggs and the Great Train Robbery (part 7)",
+   "url": "https://crimelibrary.org/gangsters_outlaws/cops_others/biggs/7.html",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_gtr",
+   "publisher": "Wikipedia (pointer/corroboration only)",
+   "title": "Great Train Robbery (1963)",
+   "url": "https://en.wikipedia.org/wiki/Great_Train_Robbery_(1963)",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "railstaff",
+   "publisher": "RailStaff",
+   "title": "Robbery staff remembered",
+   "url": "https://www.railstaff.co.uk/2013/10/15/robbery-staff-remembered/",
+   "date": "2013-10-15",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cni_gtr",
+   "publisher": "Crime+Investigation (UK)",
+   "title": "The Great Train Robbery (crime file)",
+   "url": "https://www.crimeandinvestigation.co.uk/crime-files/great-train-robbery",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cni_trial",
+   "publisher": "Crime+Investigation (UK)",
+   "title": "The Great Train Robbery: the trial",
+   "url": "https://www.crimeandinvestigation.co.uk/crime-files/great-train-robbery/trial",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "sunday_post",
+   "publisher": "The Sunday Post (via PressReader)",
+   "title": "August 8, 1963: Audacious but violent and foiled, so was train robbery really so great?",
+   "url": "https://www.pressreader.com/uk/the-sunday-post-newcastle/20220807/284932433888638",
+   "date": "2022-08-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "guinness",
+   "publisher": "Guinness World Records",
+   "title": "Greatest robbery from a train",
+   "url": "https://www.guinnessworldrecords.com/world-records/65601-greatest-robbery-from-a-train",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bbc_aol",
+   "publisher": "BBC News (via AOL)",
+   "title": "Great Train Robbery evidence to be auctioned",
+   "url": "https://www.aol.com/articles/great-train-robbery-evidence-auctioned-070002243.html",
+   "date": "2026",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bbc_ws",
+   "publisher": "BBC World Service podcast (via Global Player)",
+   "title": "The Great Train Robbery",
+   "url": "https://globalplayer.com/podcasts/episodes/7Drgt4w",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "oxford_times",
+   "publisher": "Oxford Times (Memory Lane)",
+   "title": "Great Train Robbery: £2.6m worth stolen in Thames Valley",
+   "url": "https://www.oxfordtimes.co.uk/news/community/memorylane/10589849.great-train-robbery-2-6m-worth-stolen-thames-valley/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "smithsonian",
+   "publisher": "Smithsonian Magazine",
+   "title": "The big mystery behind the Great Train Robbery may finally have been solved",
+   "url": "https://www.smithsonianmag.com/history/big-mystery-behind-great-train-robbery-may-finally-have-been-solved-180952054/",
+   "date": "2014",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "gale",
+   "publisher": "Gale (Archives Explored)",
+   "title": "The Great Train Robbery: prelude, the crime",
+   "url": "https://gale.com/intl/archives-explored/great-train-robbery",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "channel4",
+   "publisher": "Channel 4 News (ITN archive)",
+   "title": "Great Train Robbery 1963: archive video",
+   "url": "https://channel4.com/news/great-train-robbery-1963-ronnie-biggs-bruce-reynolds-video",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "brill",
+   "publisher": "Brill Parish Council",
+   "title": "The Great Train Robbery (local history)",
+   "url": "https://www.brillparishcouncil.gov.uk/great-train-robbery",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bbc_obit",
+   "publisher": "BBC News",
+   "title": "Obituary: Ronnie Biggs",
+   "url": "https://bbc.in/2Vwy7ob",
+   "date": "2013-12-18",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "time",
+   "publisher": "Time",
+   "title": "Top 25 crimes of the century: the Great Train Robbery",
+   "url": "https://content.time.com/time/specials/packages/article/0,28804,1865132_1865133_1865148,00.html",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc",
+   "publisher": "NBC News",
+   "title": "The great train robber gains his freedom",
+   "url": "https://www.nbcnews.com/id/wbna32333259",
+   "date": "2009-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mentalfloss",
+   "publisher": "Mental Floss",
+   "title": "How a game of Monopoly put 15 criminals behind bars",
+   "url": "https://www.mentalfloss.com/article/61096/how-game-monopoly-put-15-criminals-behind-bars",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "finchampstead",
+   "publisher": "Finchampstead Parish Council",
+   "title": "Thames Valley Police Museum notice",
+   "url": "https://www.finchampstead-pc.gov.uk/?p=17219",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mkheritage",
+   "publisher": "MK Heritage (Bletchley Community Heritage)",
+   "title": "Great Train Robbery",
+   "url": "https://www.mkheritage.org.uk/bch/docs/great%20train%20robbery.html",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "macau_1964",
+   "publisher": "Macau Daily Times (This day in history, from BBC On This Day)",
+   "title": "1964: 'Great Train Robbers' get 300 years",
+   "url": "https://macaudailytimes.com.mo/?p=140659",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "shropshire",
+   "publisher": "Shropshire Star",
+   "title": "Train robbery sentences which sent shockwaves",
+   "url": "https://www.shropshirestar.com/nostalgia/train-robbery-sentences-which-sent-shockwaves-6108704",
+   "date": "2020-04-16",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "lccsa",
+   "publisher": "LCCSA (archive reprint)",
+   "title": "From the archive, 17 April 1964: Mail train robbery: grave punishment for a grave crime",
+   "url": "https://www.lccsa.org.uk/from-the-archive-17-april-1964-mail-train-robbery-grave-punishment-for-a-grave-crime/",
+   "date": "1964-04-17",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ksl_ap",
+   "publisher": "KSL (AP)",
+   "title": "'Great Train Robber' Ronnie Biggs dies at 84",
+   "url": "https://www.ksl.com/article/28070833",
+   "date": "2013-12-18",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_ap",
+   "publisher": "Fox News (AP)",
+   "title": "Britain's Great Train Robber Ronnie Biggs dies at 84",
+   "url": "https://www.foxnews.com/world/britains-great-train-robber-ronnie-biggs-dies-at-84",
+   "date": "2013-12-18",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbc",
+   "publisher": "CBC News",
+   "title": "Ronnie Biggs, Great Train Robber, dead at 84",
+   "url": "https://amp.cbc.ca/news/world/ronnie-biggs-great-train-robber-dead-at-84-1.2468472",
+   "date": "2013-12-18",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "globalnews",
+   "publisher": "Global News",
+   "title": "Great Train Robber Ronnie Biggs dies at 84",
+   "url": "https://globalnews.ca/news/1037451/great-train-robber-ronnie-biggs-dies-at-84/",
+   "date": "2013-12-18",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "macau_1965",
+   "publisher": "Macau Daily Times (This day in history)",
+   "title": "This day in history: 1965, Great Train Robber escapes",
+   "url": "https://macaudailytimes.com.mo/?p=155859",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yep",
+   "publisher": "Yorkshire Evening Post (Nostalgia)",
+   "title": "The year the law caught up with Ronnie Biggs, only to see him slip through their fingers",
+   "url": "https://www.yorkshireeveningpost.co.uk/retro/nostalgia-the-year-the-law-caught-up-with-ronnie-briggs-only-to-see-him-slip-through-their-fingers-589370",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "heraldnet",
+   "publisher": "HeraldNet (AP)",
+   "title": "Rascal robber heads home",
+   "url": "https://www.heraldnet.com/?p=437803",
+   "date": "2001-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_sam",
+   "publisher": "HISTORY.com",
+   "title": "Son of Sam arrested (This Day in History, August 10)",
+   "url": "https://www.history.com/this-day-in-history/august-10/son-of-sam-arrested",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_sam",
+   "publisher": "Biography.com",
+   "title": "Son of Sam",
+   "url": "https://www.biography.com/crime/a65436797/son-of-sam",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ae_sam",
+   "publisher": "A&E (aetv.com)",
+   "title": "David Berkowitz",
+   "url": "https://www.aetv.com/articles/david-berkowitz",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ]
+}

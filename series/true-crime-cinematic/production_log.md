@@ -54,3 +54,5 @@
 - 2026-10-11 12:29:56 tcv04-louvre-heist: rendering (final, seed 1)
 - 2026-10-11 12:51:28 tcv04-louvre-heist: rendered in 1292s
 - 2026-10-11 12:52:23 tcv04-louvre-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_04_louvre_heist.mp4 (79.5s, 34.9 MB, sha256 9713b40e173f)
+- 2026-10-11 15:06:09 produce 14: regenerating episode data
+- 2026-10-11 15:06:09 tcv14-litvinenko: rendering (final, seed 1)

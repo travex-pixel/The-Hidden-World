@@ -12,66 +12,69 @@ Research ledger: episodes/tcv13-hatton-garden/research.md. Shots: renderer/scene
 def build(h):
     N, fx, fw, S = h.N, h.fx, h.fw, h.S
     scenes = [
-        # A - hook: the payoff of the title, stated plainly over the drilled vault wall
-        S("s01_hook", "hg13_hook", [N("Prosecutors called it the largest burglary in English legal history."),
-                                    N("The ringleader was 76.", pause_before=0.25)],
-          "cold", ["HG_largest", "HG_reader76"], sfx=[fx(0.0, "hit", 0.7), fx(0.05, "rumble", 0.4), fw(1, 3, "thump", 0.6, -0.05)],
-          emph=["largest", "burglary", "76."], min_d=4.6, pad=0.15),
-        S("s02_bus", "hg13_bus", [N("Easter 2015. Hatton Garden, London's jewellery quarter."),
-                                  N("Fun fact: prosecutors said he took the bus there, on a pensioner's free pass.", pause_before=0.15)],
-          "unease", ["HG_easter", "HG_buspass"], sfx=[fx(0.0, "rain", 0.35), fx(3.5, "rain", 0.3), fw(1, 0, "sparkle", 0.85, -0.12), fw(1, 7, "brake", 0.35, -0.1)],
-          emph=["hatton", "garden,", "bus", "pass."], tr="push", pad=0.15),
-        # B - the break-in, the alarm, the cabinet, the return
-        S("s03_drill", "hg13_drill", [N("Inside, they bored through the vault's concrete wall with a diamond-tipped drill.")],
-          "tension", ["HG_drill"], sfx=[fw(0, 2, "rumble", 0.55, -0.05), fw(0, 2, "buzz", 0.35, 0.1), fw(0, 7, "thud", 0.5, 0.05)],
-          emph=["concrete", "diamond-tipped"], tr="push", min_d=3.8, pad=0.15),
-        S("s04_alarm", "hg13_alarm", [N("The alarm went off. But police graded the call as needing no response."),
-                                      N("The Met later apologised.", pause_before=0.3)],
-          "tension-rise", ["HG_alarm", "HG_apology"], sfx=[fx(0.0, "beep", 0.5), fx(0.35, "beep", 0.45), fw(0, 6, "click", 0.5, -0.05), fw(1, 3, "stamp", 0.7, -0.05)],
-          emph=["alarm", "no", "response.", "apologised."], tr="flash", pad=0.2),
-        S("s05_cabinet", "hg13_cabinet", [N("Then a bolted-down cabinet blocked the holes. They left empty-handed."),
-                                          N("Prosecutors said the ringleader quit that night.", pause_before=0.2)],
-          "unease", ["HG_cabinet", "HG_quit"], sfx=[fw(0, 3, "thud", 0.6, -0.05), fw(0, 8, "step", 0.4), fw(0, 8, "step", 0.4, 0.4), fw(1, 4, "door", 0.4, 0.1)],
-          emph=["cabinet", "empty-handed.", "quit"], tr="push", pad=0.15),
+        # A - hook: the setup and the mystery (not the answer), over the hero object: the drilled hole in the vault wall
+        S("s01_hook", "hg13_hook", [N("Over one Easter weekend, a gang of thieves drilled through a vault wall in London."),
+                                    N("The ringleader was 76.", pause_before=0.4)],
+          "cold", ["HG_easter", "HG_drill", "HG_reader76", "HG_largest"],
+          sfx=[fx(0.0, "hit", 0.6), fw(0, 8, "buzz", 0.4, -0.05), fw(0, 8, "rumble", 0.45, 0.05), fw(1, 3, "thump", 0.6, -0.05)],
+          emph=["drilled", "vault", "76."], min_d=4.6, pad=0.25),
+        S("s02_bus", "hg13_bus", [N("Fun fact: prosecutors said he took the bus there, on a pensioner's free pass.")],
+          "unease", ["HG_buspass", "HG_reader76"], sfx=[fx(0.0, "rain", 0.35), fx(3.5, "rain", 0.3), fw(0, 0, "sparkle", 0.85, -0.12), fw(0, 7, "brake", 0.35, -0.1)],
+          emph=["bus", "pensioner's", "pass."], tr="push", pad=0.25),
+        # B - a chain of object reveals: the vault, the drill, the alarm, the cabinet, the boxes
+        S("s03_drill", "hg13_drill", [N("The vault: in Hatton Garden, London's jewellery district."),
+                                      N("The tool: a diamond-tipped drill.", pause_before=0.25)],
+          "tension", ["HG_easter", "HG_drill"], sfx=[fw(0, 3, "whoosh", 0.4, -0.1), fw(1, 3, "buzz", 0.45, -0.05), fw(1, 3, "rumble", 0.5, 0.1)],
+          emph=["hatton", "garden,", "diamond-tipped"], tr="push", pad=0.2),
+        S("s04_alarm", "hg13_alarm", [N("The alarm went off."),
+                                      N("The police never came.", pause_before=0.3),
+                                      N("The Met later apologised.", pause_before=0.35)],
+          "tension-rise", ["HG_alarm", "HG_apology"], sfx=[fx(0.0, "beep", 0.5), fx(0.35, "beep", 0.45), fw(1, 2, "click", 0.5, -0.05), fw(2, 3, "stamp", 0.7, -0.05)],
+          emph=["alarm", "never", "came.", "apologised."], tr="flash", pad=0.2),
+        S("s05_cabinet", "hg13_cabinet", [N("But a bolted-down metal cabinet blocked the holes."),
+                                          N("Prosecutors said the ringleader quit that night.", pause_before=0.3)],
+          "unease", ["HG_cabinet", "HG_quit"], sfx=[fw(0, 4, "thud", 0.6, -0.05), fw(1, 4, "door", 0.4, 0.1), fw(1, 5, "step", 0.35), fw(1, 6, "step", 0.35)],
+          emph=["cabinet", "quit"], tr="push", pad=0.2),
         S("s06_return", "hg13_return", [N("Two nights later, the others came back and got through."),
-                                        N("They ransacked more than 70 safe deposit boxes.", pause_before=0.1),
-                                        N("Prosecutors put the haul at around 14 million pounds.", pause_before=0.1)],
-          "tension-peak", ["HG_return", "HG_boxes", "HG_value"], sfx=[fw(0, 8, "hit", 0.55, -0.05), fw(1, 1, "click", 0.4), fw(1, 4, "click", 0.4), fw(1, 7, "thud", 0.45), fw(2, 6, "coins", 0.5, -0.05)],
-          emph=["got", "through.", "70", "14", "million"], tr="push", pad=0.2),
-        # C - how they were caught: the car, the bugs, the pub
-        S("s07_cctv", "hg13_cctv", [N("Detectives trawled CCTV, and spotted a white Mercedes with a black roof.")],
-          "tension", ["HG_cctv"], sfx=[fx(0.1, "static", 0.3), fw(0, 1, "typing", 0.4, -0.1), fw(0, 6, "ping", 0.55, -0.05)],
-          emph=["cctv,", "white", "mercedes"], tr="flash", min_d=4.0, pad=0.15),
-        S("s08_bug", "hg13_bug", [N("Police secretly bugged it, and another gang member's car.")],
-          "tension-rise", ["HG_bugged"], sfx=[fx(0.0, "rain", 0.3), fw(0, 2, "click", 0.55, 0.1), fw(0, 8, "beep", 0.35, 0.1)],
-          emph=["bugged"], tr="push", min_d=3.4, pad=0.2),
-        S("s09_pub", "hg13_pub", [N("They recorded the men in a pub, too."),
-                                  N("After a few pints, police said, they got boastful.", pause_before=0.2)],
+                                        N("They ransacked more than 70 safe deposit boxes.", pause_before=0.2)],
+          "tension-peak", ["HG_return", "HG_boxes", "HG_value"], sfx=[fw(0, 8, "hit", 0.55, -0.05), fw(1, 1, "click", 0.4), fw(1, 4, "click", 0.4), fw(1, 7, "thud", 0.45), fw(1, 7, "coins", 0.45, 0.3)],
+          emph=["got", "through.", "70"], tr="push", pad=0.3),
+        # C - how they were caught: the car, the bug, the pub (the payoff, about two-thirds in)
+        S("s07_cctv", "hg13_cctv", [N("Detectives scoured CCTV."),
+                                    N("One car stood out: a white Mercedes, black roof.", pause_before=0.25)],
+          "tension", ["HG_cctv"], sfx=[fx(0.1, "static", 0.3), fw(0, 1, "typing", 0.4, -0.1), fw(1, 5, "ping", 0.55, -0.05)],
+          emph=["cctv.", "white", "mercedes,"], tr="flash", pad=0.2),
+        S("s08_bug", "hg13_bug", [N("Officers secretly bugged it.")],
+          "tension-rise", ["HG_bugged"], sfx=[fx(0.0, "rain", 0.3), fw(0, 2, "click", 0.55, 0.05), fw(0, 3, "beep", 0.35, 0.4)],
+          emph=["bugged"], tr="push", min_d=3.2, pad=0.2),
+        S("s09_pub", "hg13_pub", [N("Officers recorded them in a pub."),
+                                  N("After a few pints, police said, they got boastful.", pause_before=0.4)],
           "tension-peak", ["HG_pub"], sfx=[fx(0.0, "static", 0.25), fw(0, 1, "beep", 0.4, -0.05), fw(1, 8, "sting", 0.35, -0.05)],
-          emph=["recorded", "pub,", "boastful."], tr="push", pad=0.2),
+          emph=["recorded", "pub.", "boastful."], tr="push", pad=0.3),
         # D - the verdicts, the missing man, the missing loot (cliff)
         S("s10_court", "hg13_court", [N("Four ringleaders pleaded guilty."),
-                                      N("Three more were convicted at trial in 2016.", pause_before=0.1)],
+                                      N("Three more were convicted.", pause_before=0.25)],
           "tension", ["HG_pleas", "HG_trial"], sfx=[fw(0, 3, "stamp", 0.6, -0.05), fw(1, 3, "gavel", 1.0, -0.08)],
-          emph=["guilty.", "convicted"], tr="zoom", pad=0.2),
-        S("s11_basil", "hg13_basil", [N("Fun fact: 'Basil', the man who got them inside, stayed free for three years."),
-                                      N("He was convicted in 2019.", pause_before=0.2)],
-          "unease", ["HG_basil"], sfx=[fx(0.0, "wind", 0.4), fw(0, 0, "sparkle", 0.85, -0.12), fw(1, 2, "gavel", 0.7, -0.05)],
-          emph=["basil,", "three", "years.", "2019."], tr="fade", pad=0.2),
-        S("s12_loot", "hg13_loot", [N("And much of the loot was never recovered.", pause_before=0.1)],
-          "aftermath", ["HG_unrecovered"], sfx=[fx(0.0, "wind", 0.35), fw(0, 7, "sub", 0.6, -0.05)],
-          emph=["never", "recovered."], tr="fade", min_d=3.4, pad=0.35),
-        # E - payoff and the next case
-        S("s13_end", "hg13_end", [N("The ringleader, Brian Reader, died in 2023."),
-                                  N("Next: a cup of tea that left a radioactive trail across London.", pause_before=0.35)],
-          "aftermath", ["HG_reader_died", "HG_next"], sfx=[fx(0.0, "paper", 0.4), fw(1, 0, "whoosh", 0.6, -0.15), fw(1, 8, "hit", 0.45, -0.05)],
-          emph=["died", "tea", "radioactive"], tr="fade", min_d=3.0, pad=1.6),
+          emph=["guilty.", "convicted."], tr="zoom", pad=0.2),
+        S("s11_basil", "hg13_basil", [N("Fun fact: 'Basil', the man who got them inside, stayed free for three years.")],
+          "unease", ["HG_basil"], sfx=[fx(0.0, "wind", 0.4), fw(0, 0, "sparkle", 0.85, -0.12), fw(0, 13, "gavel", 0.6, 0.2)],
+          emph=["basil,", "three", "years."], tr="fade", pad=0.3),
+        S("s12_loot", "hg13_loot", [N("Much of the loot was never recovered."),
+                                    N("The ringleader died in 2023.", pause_before=0.4)],
+          "aftermath", ["HG_unrecovered", "HG_reader_died"], sfx=[fx(0.0, "wind", 0.35), fw(0, 6, "sub", 0.6, -0.05), fw(1, 2, "paper", 0.35)],
+          emph=["never", "recovered.", "died"], tr="fade", pad=0.3),
+        # E - callback to the opener, on the hero object; then the next case
+        S("s13_end", "hg13_end", [N("One of Britain's biggest burglaries,"),
+                                  N("undone by a car, and a chat in the pub.", pause_before=0.15),
+                                  N("Next: a cup of tea that left a radioactive trail across London.", pause_before=0.5)],
+          "aftermath", ["HG_largest", "HG_callback", "HG_next"], sfx=[fx(0.0, "wind", 0.35), fw(2, 0, "whoosh", 0.6, -0.15), fw(2, 8, "hit", 0.45, -0.05)],
+          emph=["biggest", "car,", "pub.", "tea", "radioactive"], tr="fade", min_d=3.0, pad=1.6),
     ]
     sections = ["A", "A", "B", "B", "B", "B", "C", "C", "C", "D", "D", "D", "E"]
     for sc, sec in zip(scenes, sections):
         sc["section"] = sec
-    scenes[3]["music_drop"] = True     # "...graded the call as needing no response."
-    scenes[11]["music_drop"] = True    # "much of the loot was never recovered."
+    scenes[3]["music_drop"] = True     # "The police never came."
+    scenes[8]["music_drop"] = True     # the payoff: recorded in the pub, boasting
     scenes[-1]["fade_out"] = True
 
     src = h.src
@@ -169,19 +172,21 @@ def build(h):
           ["kent_loot", "buzzfeed_trial", "polprof_confisc", "benchpeg_confisc"], "fact"),
         C("HG_reader_died", "Brian Reader died in September 2023, aged 84, at home in Dartford, Kent; his death was reported in April 2024.",
           ["lbc_reader", "kent_reader", "nw_reader"], "fact"),
+        C("HG_callback", "Callback summary (not a new fact): one of Britain's biggest burglaries (prosecutors: the largest in English legal history), whose gang was traced through a distinctive car spotted on CCTV and then bugged, and recorded boasting in a pub.",
+          ["fox_largest", "itv_convicted", "buzzfeed_caught", "npr_guilty"], "fact"),
         C("HG_next", "Next episode tease (Litvinenko): in November 2006 Alexander Litvinenko drank tea laced with polonium-210 at a London hotel; investigators traced radioactive contamination across London.",
           ["cw_litvinenko", "mt_litvinenko", "voa_litvinenko"], "fact"),
     ]
     figures = ["hg13_reader", "hg13_crew_a", "hg13_crew_b", "hg13_driver", "hg13_basil", "detective", "agent_a", "agent_b", "analyst", "judge",
                "barrister", "press_operator"]
-    ep = h.base("tcv13-hatton-garden", 13, "Prosecutors Called It England's Largest Burglary. The Ringleader Was 76.",
+    ep = h.base("tcv13-hatton-garden", 13, "Thieves Drilled Into a London Vault Over Easter. The Ringleader Was 76.",
                 "How did an ageing gang get into a London vault over Easter 2015, and how were they caught?",
                 figures, scenes, claims, sources, "HATTON GARDEN · 2015-2019", bpm=78)
     ep["music"]["beat_snap"] = 0.5
-    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"CCTV": "C C T V"})
+    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"CCTV": "C C T V", "jewellery": "jewelry"})
     ep["score"] = {"root_hz": 123.47, "bpm": 78,
-                   "hits": [{"scene": "s05_cabinet", "word": [0, 3], "at": -0.05, "gain": 0.4}],
-                   "cliff": {"scene": "s12_loot", "word": [0, 7], "at": -0.08}}
+                   "hits": [{"scene": "s05_cabinet", "word": [0, 4], "at": -0.05, "gain": 0.4}],
+                   "cliff": {"scene": "s12_loot", "word": [0, 6], "at": -0.08}}
     ep["content_notes"] = ("Closed case: four ringleaders pleaded guilty in 2015, three more men were convicted at trial in January 2016, and "
                            "Michael Seed ('Basil') was convicted in 2019. The gang appears only as illustrated generic older men in flat caps and hi-vis "
                            "workwear, tagged 'ILLUSTRATION · NOT A LIKENESS'; no real face is copied and no one is caricatured. 'Basil' is an anonymous "

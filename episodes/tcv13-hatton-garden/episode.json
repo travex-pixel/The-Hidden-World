@@ -2,7 +2,7 @@
  "id": "tcv13-hatton-garden",
  "number": 13,
  "series": "THE HIDDEN WORLD: Case Files (cinematic)",
- "title": "Prosecutors Called It England's Largest Burglary. The Ringleader Was 76.",
+ "title": "Thieves Drilled Into a London Vault Over Easter. The Ringleader Was 76.",
  "central_question": "How did an ageing gang get into a London vault over Easter 2015, and how were they caught?",
  "template": "true-crime",
  "narrator_voice": "en_US-libritts_r-medium",
@@ -13,7 +13,8 @@
   "year_words": true,
   "word_timing": true,
   "pronounce": {
-   "CCTV": "C C T V"
+   "CCTV": "C C T V",
+   "jewellery": "jewelry"
   }
  },
  "loudness_lufs": -14,
@@ -41,7 +42,7 @@
     "scene": "s05_cabinet",
     "word": [
      0,
-     3
+     4
     ],
     "at": -0.05,
     "gain": 0.4
@@ -51,7 +52,7 @@
    "scene": "s12_loot",
    "word": [
     0,
-    7
+    6
    ],
    "at": -0.08
   }
@@ -76,18 +77,31 @@
    "id": "s01_hook",
    "scene": "hg13_hook",
    "min_duration": 4.6,
-   "pad_after": 0.15,
+   "pad_after": 0.25,
    "music_cue": "cold",
    "sfx": [
     {
      "at": 0.0,
      "name": "hit",
-     "gain": 0.7
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "buzz",
+     "gain": 0.4
     },
     {
      "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
      "name": "rumble",
-     "gain": 0.4
+     "gain": 0.45
     },
     {
      "at": -0.05,
@@ -100,26 +114,28 @@
     }
    ],
    "claims": [
-    "HG_largest",
-    "HG_reader76"
+    "HG_easter",
+    "HG_drill",
+    "HG_reader76",
+    "HG_largest"
    ],
    "transition": "cut",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "Prosecutors called it the largest burglary in English legal history."
+     "text": "Over one Easter weekend, a gang of thieves drilled through a vault wall in London."
     },
     {
      "who": "narrator",
      "text": "The ringleader was 76.",
-     "pause_before": 0.25
+     "pause_before": 0.4
     }
    ],
    "shot": {},
    "emphasis": [
-    "largest",
-    "burglary",
+    "drilled",
+    "vault",
     "76."
    ],
    "section": "A"
@@ -128,7 +144,7 @@
    "id": "s02_bus",
    "scene": "hg13_bus",
    "min_duration": 2.0,
-   "pad_after": 0.15,
+   "pad_after": 0.25,
    "music_cue": "unease",
    "sfx": [
     {
@@ -144,7 +160,7 @@
     {
      "at": -0.12,
      "word": [
-      1,
+      0,
       0
      ],
      "name": "sparkle",
@@ -153,7 +169,7 @@
     {
      "at": -0.1,
      "word": [
-      1,
+      0,
       7
      ],
      "name": "brake",
@@ -161,27 +177,21 @@
     }
    ],
    "claims": [
-    "HG_easter",
-    "HG_buspass"
+    "HG_buspass",
+    "HG_reader76"
    ],
    "transition": "push",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "Easter 2015. Hatton Garden, London's jewellery quarter."
-    },
-    {
-     "who": "narrator",
-     "text": "Fun fact: prosecutors said he took the bus there, on a pensioner's free pass.",
-     "pause_before": 0.15
+     "text": "Fun fact: prosecutors said he took the bus there, on a pensioner's free pass."
     }
    ],
    "shot": {},
    "emphasis": [
-    "hatton",
-    "garden,",
     "bus",
+    "pensioner's",
     "pass."
    ],
    "section": "A"
@@ -189,39 +199,40 @@
   {
    "id": "s03_drill",
    "scene": "hg13_drill",
-   "min_duration": 3.8,
-   "pad_after": 0.15,
+   "min_duration": 2.0,
+   "pad_after": 0.2,
    "music_cue": "tension",
    "sfx": [
     {
-     "at": -0.05,
+     "at": -0.1,
      "word": [
       0,
-      2
+      3
      ],
-     "name": "rumble",
-     "gain": 0.55
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "buzz",
+     "gain": 0.45
     },
     {
      "at": 0.1,
      "word": [
-      0,
-      2
+      1,
+      3
      ],
-     "name": "buzz",
-     "gain": 0.35
-    },
-    {
-     "at": 0.05,
-     "word": [
-      0,
-      7
-     ],
-     "name": "thud",
+     "name": "rumble",
      "gain": 0.5
     }
    ],
    "claims": [
+    "HG_easter",
     "HG_drill"
    ],
    "transition": "push",
@@ -229,12 +240,18 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Inside, they bored through the vault's concrete wall with a diamond-tipped drill."
+     "text": "The vault: in Hatton Garden, London's jewellery district."
+    },
+    {
+     "who": "narrator",
+     "text": "The tool: a diamond-tipped drill.",
+     "pause_before": 0.25
     }
    ],
    "shot": {},
    "emphasis": [
-    "concrete",
+    "hatton",
+    "garden,",
     "diamond-tipped"
    ],
    "section": "B"
@@ -259,8 +276,8 @@
     {
      "at": -0.05,
      "word": [
-      0,
-      6
+      1,
+      2
      ],
      "name": "click",
      "gain": 0.5
@@ -268,7 +285,7 @@
     {
      "at": -0.05,
      "word": [
-      1,
+      2,
       3
      ],
      "name": "stamp",
@@ -284,19 +301,24 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "The alarm went off. But police graded the call as needing no response."
+     "text": "The alarm went off."
+    },
+    {
+     "who": "narrator",
+     "text": "The police never came.",
+     "pause_before": 0.3
     },
     {
      "who": "narrator",
      "text": "The Met later apologised.",
-     "pause_before": 0.3
+     "pause_before": 0.35
     }
    ],
    "shot": {},
    "emphasis": [
     "alarm",
-    "no",
-    "response.",
+    "never",
+    "came.",
     "apologised."
    ],
    "section": "B",
@@ -306,35 +328,17 @@
    "id": "s05_cabinet",
    "scene": "hg13_cabinet",
    "min_duration": 2.0,
-   "pad_after": 0.15,
+   "pad_after": 0.2,
    "music_cue": "unease",
    "sfx": [
     {
      "at": -0.05,
      "word": [
       0,
-      3
+      4
      ],
      "name": "thud",
      "gain": 0.6
-    },
-    {
-     "at": 0.0,
-     "word": [
-      0,
-      8
-     ],
-     "name": "step",
-     "gain": 0.4
-    },
-    {
-     "at": 0.4,
-     "word": [
-      0,
-      8
-     ],
-     "name": "step",
-     "gain": 0.4
     },
     {
      "at": 0.1,
@@ -344,6 +348,24 @@
      ],
      "name": "door",
      "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "step",
+     "gain": 0.35
     }
    ],
    "claims": [
@@ -355,18 +377,17 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Then a bolted-down cabinet blocked the holes. They left empty-handed."
+     "text": "But a bolted-down metal cabinet blocked the holes."
     },
     {
      "who": "narrator",
      "text": "Prosecutors said the ringleader quit that night.",
-     "pause_before": 0.2
+     "pause_before": 0.3
     }
    ],
    "shot": {},
    "emphasis": [
     "cabinet",
-    "empty-handed.",
     "quit"
    ],
    "section": "B"
@@ -375,7 +396,7 @@
    "id": "s06_return",
    "scene": "hg13_return",
    "min_duration": 2.0,
-   "pad_after": 0.2,
+   "pad_after": 0.3,
    "music_cue": "tension-peak",
    "sfx": [
     {
@@ -415,13 +436,13 @@
      "gain": 0.45
     },
     {
-     "at": -0.05,
+     "at": 0.3,
      "word": [
-      2,
-      6
+      1,
+      7
      ],
      "name": "coins",
-     "gain": 0.5
+     "gain": 0.45
     }
    ],
    "claims": [
@@ -439,29 +460,22 @@
     {
      "who": "narrator",
      "text": "They ransacked more than 70 safe deposit boxes.",
-     "pause_before": 0.1
-    },
-    {
-     "who": "narrator",
-     "text": "Prosecutors put the haul at around 14 million pounds.",
-     "pause_before": 0.1
+     "pause_before": 0.2
     }
    ],
    "shot": {},
    "emphasis": [
     "got",
     "through.",
-    "70",
-    "14",
-    "million"
+    "70"
    ],
    "section": "B"
   },
   {
    "id": "s07_cctv",
    "scene": "hg13_cctv",
-   "min_duration": 4.0,
-   "pad_after": 0.15,
+   "min_duration": 2.0,
+   "pad_after": 0.2,
    "music_cue": "tension",
    "sfx": [
     {
@@ -481,8 +495,8 @@
     {
      "at": -0.05,
      "word": [
-      0,
-      6
+      1,
+      5
      ],
      "name": "ping",
      "gain": 0.55
@@ -496,21 +510,26 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Detectives trawled CCTV, and spotted a white Mercedes with a black roof."
+     "text": "Detectives scoured CCTV."
+    },
+    {
+     "who": "narrator",
+     "text": "One car stood out: a white Mercedes, black roof.",
+     "pause_before": 0.25
     }
    ],
    "shot": {},
    "emphasis": [
-    "cctv,",
+    "cctv.",
     "white",
-    "mercedes"
+    "mercedes,"
    ],
    "section": "C"
   },
   {
    "id": "s08_bug",
    "scene": "hg13_bug",
-   "min_duration": 3.4,
+   "min_duration": 3.2,
    "pad_after": 0.2,
    "music_cue": "tension-rise",
    "sfx": [
@@ -520,7 +539,7 @@
      "gain": 0.3
     },
     {
-     "at": 0.1,
+     "at": 0.05,
      "word": [
       0,
       2
@@ -529,10 +548,10 @@
      "gain": 0.55
     },
     {
-     "at": 0.1,
+     "at": 0.4,
      "word": [
       0,
-      8
+      3
      ],
      "name": "beep",
      "gain": 0.35
@@ -546,7 +565,7 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Police secretly bugged it, and another gang member's car."
+     "text": "Officers secretly bugged it."
     }
    ],
    "shot": {},
@@ -559,7 +578,7 @@
    "id": "s09_pub",
    "scene": "hg13_pub",
    "min_duration": 2.0,
-   "pad_after": 0.2,
+   "pad_after": 0.3,
    "music_cue": "tension-peak",
    "sfx": [
     {
@@ -594,21 +613,22 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "They recorded the men in a pub, too."
+     "text": "Officers recorded them in a pub."
     },
     {
      "who": "narrator",
      "text": "After a few pints, police said, they got boastful.",
-     "pause_before": 0.2
+     "pause_before": 0.4
     }
    ],
    "shot": {},
    "emphasis": [
     "recorded",
-    "pub,",
+    "pub.",
     "boastful."
    ],
-   "section": "C"
+   "section": "C",
+   "music_drop": true
   },
   {
    "id": "s10_court",
@@ -649,14 +669,14 @@
     },
     {
      "who": "narrator",
-     "text": "Three more were convicted at trial in 2016.",
-     "pause_before": 0.1
+     "text": "Three more were convicted.",
+     "pause_before": 0.25
     }
    ],
    "shot": {},
    "emphasis": [
     "guilty.",
-    "convicted"
+    "convicted."
    ],
    "section": "D"
   },
@@ -664,7 +684,7 @@
    "id": "s11_basil",
    "scene": "hg13_basil",
    "min_duration": 2.0,
-   "pad_after": 0.2,
+   "pad_after": 0.3,
    "music_cue": "unease",
    "sfx": [
     {
@@ -682,13 +702,13 @@
      "gain": 0.85
     },
     {
-     "at": -0.05,
+     "at": 0.2,
      "word": [
-      1,
-      2
+      0,
+      13
      ],
      "name": "gavel",
-     "gain": 0.7
+     "gain": 0.6
     }
    ],
    "claims": [
@@ -700,27 +720,21 @@
     {
      "who": "narrator",
      "text": "Fun fact: 'Basil', the man who got them inside, stayed free for three years."
-    },
-    {
-     "who": "narrator",
-     "text": "He was convicted in 2019.",
-     "pause_before": 0.2
     }
    ],
    "shot": {},
    "emphasis": [
     "basil,",
     "three",
-    "years.",
-    "2019."
+    "years."
    ],
    "section": "D"
   },
   {
    "id": "s12_loot",
    "scene": "hg13_loot",
-   "min_duration": 3.4,
-   "pad_after": 0.35,
+   "min_duration": 2.0,
+   "pad_after": 0.3,
    "music_cue": "aftermath",
    "sfx": [
     {
@@ -732,31 +746,45 @@
      "at": -0.05,
      "word": [
       0,
-      7
+      6
      ],
      "name": "sub",
      "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.35
     }
    ],
    "claims": [
-    "HG_unrecovered"
+    "HG_unrecovered",
+    "HG_reader_died"
    ],
    "transition": "fade",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "And much of the loot was never recovered.",
-     "pause_before": 0.1
+     "text": "Much of the loot was never recovered."
+    },
+    {
+     "who": "narrator",
+     "text": "The ringleader died in 2023.",
+     "pause_before": 0.4
     }
    ],
    "shot": {},
    "emphasis": [
     "never",
-    "recovered."
+    "recovered.",
+    "died"
    ],
-   "section": "D",
-   "music_drop": true
+   "section": "D"
   },
   {
    "id": "s13_end",
@@ -767,13 +795,13 @@
    "sfx": [
     {
      "at": 0.0,
-     "name": "paper",
-     "gain": 0.4
+     "name": "wind",
+     "gain": 0.35
     },
     {
      "at": -0.15,
      "word": [
-      1,
+      2,
       0
      ],
      "name": "whoosh",
@@ -782,7 +810,7 @@
     {
      "at": -0.05,
      "word": [
-      1,
+      2,
       8
      ],
      "name": "hit",
@@ -790,7 +818,8 @@
     }
    ],
    "claims": [
-    "HG_reader_died",
+    "HG_largest",
+    "HG_callback",
     "HG_next"
    ],
    "transition": "fade",
@@ -798,17 +827,24 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "The ringleader, Brian Reader, died in 2023."
+     "text": "One of Britain's biggest burglaries,"
+    },
+    {
+     "who": "narrator",
+     "text": "undone by a car, and a chat in the pub.",
+     "pause_before": 0.15
     },
     {
      "who": "narrator",
      "text": "Next: a cup of tea that left a radioactive trail across London.",
-     "pause_before": 0.35
+     "pause_before": 0.5
     }
    ],
    "shot": {},
    "emphasis": [
-    "died",
+    "biggest",
+    "car,",
+    "pub.",
     "tea",
     "radioactive"
    ],
@@ -1038,6 +1074,18 @@
     "lbc_reader",
     "kent_reader",
     "nw_reader"
+   ]
+  },
+  {
+   "id": "HG_callback",
+   "type": "established",
+   "nature": "fact",
+   "text": "Callback summary (not a new fact): one of Britain's biggest burglaries (prosecutors: the largest in English legal history), whose gang was traced through a distinctive car spotted on CCTV and then bugged, and recorded boasting in a pub.",
+   "sources": [
+    "fox_largest",
+    "itv_convicted",
+    "buzzfeed_caught",
+    "npr_guilty"
    ]
   },
   {

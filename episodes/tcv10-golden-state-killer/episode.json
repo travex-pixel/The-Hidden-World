@@ -3,7 +3,7 @@
  "number": 10,
  "series": "THE HIDDEN WORLD: Case Files (cinematic)",
  "title": "The Golden State Killer Was Caught by His Cousins' DNA",
- "central_question": "How did a genealogy website help identify the Golden State Killer decades after his crimes?",
+ "central_question": "Police had the Golden State Killer's DNA for decades but no name. How did his distant cousins lead them to him?",
  "template": "true-crime",
  "narrator_voice": "en_US-libritts_r-medium",
  "narrator_profile": {
@@ -13,7 +13,7 @@
   "year_words": true,
   "word_timing": true,
   "pronounce": {
-   "DeAngelo": "Dee Angelo",
+   "DeAngelo": "Dee-Anjuh-lo",
    "GEDmatch": "G E D match"
   }
  },
@@ -39,17 +39,17 @@
   "bpm": 76,
   "hits": [
    {
-    "scene": "s07_name",
+    "scene": "s06_name",
     "word": [
-     0,
-     9
+     1,
+     0
     ],
     "at": -0.05,
     "gain": 0.4
    }
   ],
   "cliff": {
-   "scene": "s13_sentence",
+   "scene": "s12_sentence",
    "word": [
     0,
     2
@@ -68,13 +68,13 @@
   "judge",
   "official"
  ],
- "content_notes": "Closed case: DeAngelo pleaded guilty on 29 Jun 2020 and was sentenced on 21 Aug 2020. The crimes are referred to only in summary ('dozens of crimes, including 13 murders'); they are never described or depicted, and no victim, survivor or family member is named, shown or implied. DeAngelo appears only as an anonymous rim-lit silhouette with no face or likeness. Investigators and genealogists are generic figures and are not named. The Oregon man wrongly pointed to in 2017 is not named or shown. Streets, the store car park, the house and the hearing room are generic illustrations, not the real places; no store brand, police badge, court document, warrant or website logo is imitated. The privacy debate is stated neutrally. No dialogue is invented. Legal status verified 2026-10-11.",
+ "content_notes": "Closed case: DeAngelo pleaded guilty on 29 Jun 2020 and was sentenced on 21 Aug 2020. The crimes are referred to only in summary ('dozens of crimes, including 13 murders'); they are never described or depicted, and no victim, survivor or family member is named, shown or implied. DeAngelo appears only as an anonymous rim-lit silhouette with no face or likeness. Investigators and genealogists are generic figures and are not named. Streets, the store car park, the house and the hearing room are generic illustrations, not the real places; no store brand, police badge, court document, warrant or website logo is imitated. The hero object (a crime-scene DNA vial) is a generic illustrated tube with our own typed label. No dialogue is invented. Legal status verified 2026-10-11.",
  "scenes": [
   {
    "id": "s01_hook",
    "scene": "gs10_hook",
-   "min_duration": 5.0,
-   "pad_after": 0.15,
+   "min_duration": 4.8,
+   "pad_after": 0.3,
    "music_cue": "cold",
    "sfx": [
     {
@@ -85,10 +85,10 @@
     {
      "at": -0.05,
      "word": [
-      1,
-      2
+      0,
+      7
      ],
-     "name": "chime",
+     "name": "hit",
      "gain": 0.5
     },
     {
@@ -97,40 +97,41 @@
       1,
       6
      ],
-     "name": "hit",
+     "name": "chime",
      "gain": 0.6
     }
    ],
    "claims": [
-    "GS_relatives",
-    "GS_identified"
+    "GS_noname",
+    "GS_relatives"
    ],
    "transition": "cut",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "The Golden State Killer never put his DNA on a genealogy site."
+     "text": "For decades, police had his DNA, but no name."
     },
     {
      "who": "narrator",
-     "text": "His distant cousins did. And that caught him.",
-     "pause_before": 0.25
+     "text": "So they went looking for his cousins.",
+     "pause_before": 0.45
     }
    ],
    "shot": {},
    "emphasis": [
-    "never",
-    "cousins",
-    "caught"
+    "dna,",
+    "no",
+    "name.",
+    "cousins."
    ],
    "section": "A"
   },
   {
-   "id": "s02_crimes",
-   "scene": "gs10_crimes",
+   "id": "s02_who",
+   "scene": "gs10_who",
    "min_duration": 2.0,
-   "pad_after": 0.3,
+   "pad_after": 0.35,
    "music_cue": "unease",
    "sfx": [
     {
@@ -139,18 +140,18 @@
      "gain": 0.5
     },
     {
-     "at": -0.1,
+     "at": -0.05,
      "word": [
       0,
-      7
+      4
      ],
-     "name": "paper",
-     "gain": 0.6
+     "name": "thump",
+     "gain": 0.5
     },
     {
      "at": -0.05,
      "word": [
-      0,
+      1,
       11
      ],
      "name": "thump",
@@ -165,59 +166,25 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "From 1975 to 1986, he committed dozens of crimes, including 13 murders."
+     "text": "They called him the Golden State Killer."
+    },
+    {
+     "who": "narrator",
+     "text": "He committed dozens of crimes from 1975 to 1986, including 13 murders.",
+     "pause_before": 0.2
     }
    ],
    "shot": {},
    "emphasis": [
-    "dozens",
-    "13",
-    "murders."
+    "golden",
+    "state",
+    "killer.",
+    "13"
    ],
    "section": "A"
   },
   {
-   "id": "s03_nomatch",
-   "scene": "gs10_nomatch",
-   "min_duration": 2.0,
-   "pad_after": 0.4,
-   "music_cue": "unease",
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "click",
-     "gain": 0.5
-    },
-    {
-     "at": -0.05,
-     "word": [
-      0,
-      9
-     ],
-     "name": "buzz",
-     "gain": 0.5
-    }
-   ],
-   "claims": [
-    "GS_nomatch"
-   ],
-   "transition": "push",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "Police had his DNA. But for years, it matched no one."
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "no",
-    "one."
-   ],
-   "section": "B"
-  },
-  {
-   "id": "s04_upload",
+   "id": "s03_upload",
    "scene": "gs10_upload",
    "min_duration": 2.0,
    "pad_after": 0.3,
@@ -232,7 +199,7 @@
      "at": 0.0,
      "word": [
       0,
-      2
+      1
      ],
      "name": "click",
      "gain": 0.5
@@ -241,7 +208,7 @@
      "at": -0.05,
      "word": [
       0,
-      9
+      8
      ],
      "name": "ping",
      "gain": 0.6
@@ -255,7 +222,7 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "So they uploaded crime-scene DNA to a free genealogy site, GEDmatch."
+     "text": "Investigators uploaded his DNA to a free genealogy site: GEDmatch."
     }
    ],
    "shot": {},
@@ -266,8 +233,8 @@
    "section": "B"
   },
   {
-   "id": "s05_tree",
-   "scene": "gs10_tree",
+   "id": "s04_cousins",
+   "scene": "gs10_cousins",
    "min_duration": 2.0,
    "pad_after": 0.3,
    "music_cue": "tension",
@@ -276,16 +243,57 @@
      "at": -0.05,
      "word": [
       0,
+      4
+     ],
+     "name": "buzz",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
       3
      ],
      "name": "ping",
-     "gain": 0.5
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "GS_cousins"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It didn't find the killer."
     },
+    {
+     "who": "narrator",
+     "text": "It found distant cousins.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "didn't",
+    "distant",
+    "cousins."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_tree",
+   "scene": "gs10_tree",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
     {
      "at": -0.1,
      "word": [
-      1,
-      4
+      0,
+      3
      ],
      "name": "pen",
      "gain": 0.6
@@ -294,14 +302,13 @@
      "at": 0.0,
      "word": [
       1,
-      8
+      1
      ],
      "name": "paper",
      "gain": 0.5
     }
    ],
    "claims": [
-    "GS_cousins",
     "GS_trees"
    ],
    "transition": "push",
@@ -309,67 +316,27 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "It found distant cousins."
+     "text": "So they built family trees,"
     },
     {
      "who": "narrator",
-     "text": "So they built family trees, and narrowed them by age and location.",
-     "pause_before": 0.15
+     "text": "and narrowed them by age and location.",
+     "pause_before": 0.1
     }
    ],
    "shot": {},
    "emphasis": [
-    "cousins.",
+    "family",
     "trees,",
     "narrowed"
    ],
    "section": "B"
   },
   {
-   "id": "s06_wrong",
-   "scene": "gs10_wrong",
-   "min_duration": 2.0,
-   "pad_after": 0.6,
-   "music_cue": "tension-rise",
-   "sfx": [
-    {
-     "at": 0.1,
-     "name": "paper",
-     "gain": 0.5
-    },
-    {
-     "at": -0.1,
-     "word": [
-      0,
-      4
-     ],
-     "name": "sparkle",
-     "gain": 0.8
-    }
-   ],
-   "claims": [
-    "GS_oregon"
-   ],
-   "transition": "push",
-   "caption_y": 1380,
-   "lines": [
-    {
-     "who": "narrator",
-     "text": "A year earlier, a DNA lead had pointed to the wrong man, in Oregon."
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "wrong",
-    "man,"
-   ],
-   "section": "B"
-  },
-  {
-   "id": "s07_name",
+   "id": "s06_name",
    "scene": "gs10_name",
    "min_duration": 2.0,
-   "pad_after": 0.3,
+   "pad_after": 0.35,
    "music_cue": "tension-rise",
    "sfx": [
     {
@@ -380,8 +347,8 @@
     {
      "at": -0.05,
      "word": [
-      0,
-      9
+      1,
+      0
      ],
      "name": "hit",
      "gain": 0.6
@@ -396,19 +363,25 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "This time, the trees led to one man: Joseph James DeAngelo."
+     "text": "The trees led to one man."
+    },
+    {
+     "who": "narrator",
+     "text": "Joseph James DeAngelo.",
+     "pause_before": 0.4
     }
    ],
    "shot": {},
    "emphasis": [
     "one",
-    "man:",
+    "man.",
     "deangelo."
    ],
-   "section": "C"
+   "section": "C",
+   "music_drop": true
   },
   {
-   "id": "s08_cop",
+   "id": "s07_cop",
    "scene": "gs10_cop",
    "min_duration": 2.0,
    "pad_after": 0.35,
@@ -432,7 +405,7 @@
      "at": -0.05,
      "word": [
       1,
-      0
+      2
      ],
      "name": "stamp",
      "gain": 0.5
@@ -447,24 +420,24 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "The twist? He was a former police officer,"
+     "text": "The twist? He was once a police officer."
     },
     {
      "who": "narrator",
-     "text": "fired in 1979, accused of shoplifting a hammer and dog repellent.",
-     "pause_before": 0.15
+     "text": "He was fired in 1979, accused of shoplifting a hammer and dog repellent.",
+     "pause_before": 0.2
     }
    ],
    "shot": {},
    "emphasis": [
     "police",
-    "officer,",
+    "officer.",
     "hammer"
    ],
    "section": "C"
   },
   {
-   "id": "s09_door",
+   "id": "s08_door",
    "scene": "gs10_door",
    "min_duration": 2.0,
    "pad_after": 0.3,
@@ -472,18 +445,26 @@
    "sfx": [
     {
      "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
      "name": "step",
      "gain": 0.4
     },
     {
      "at": 0.45,
+     "word": [
+      1,
+      1
+     ],
      "name": "step",
      "gain": 0.4
     },
     {
      "at": -0.05,
      "word": [
-      0,
+      1,
       7
      ],
      "name": "click",
@@ -498,34 +479,43 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "They followed him to a store, and swabbed his car's door handle."
+     "text": "Now they needed his own DNA."
+    },
+    {
+     "who": "narrator",
+     "text": "They followed him to a store, and swabbed his car's door handle.",
+     "pause_before": 0.15
     }
    ],
    "shot": {},
    "emphasis": [
-    "followed",
+    "own",
     "door",
     "handle."
    ],
    "section": "C"
   },
   {
-   "id": "s10_tissue",
+   "id": "s09_tissue",
    "scene": "gs10_tissue",
    "min_duration": 4.0,
-   "pad_after": 0.6,
+   "pad_after": 0.5,
    "music_cue": "revelation",
    "sfx": [
     {
-     "at": 0.1,
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
      "name": "paper",
-     "gain": 0.4
+     "gain": 0.5
     },
     {
      "at": -0.3,
      "word": [
-      0,
-      7
+      1,
+      4
      ],
      "name": "swell",
      "gain": 0.6
@@ -533,11 +523,11 @@
     {
      "at": 0.05,
      "word": [
-      0,
-      9
+      1,
+      5
      ],
      "name": "hit",
-     "gain": 0.6
+     "gain": 0.7
     }
    ],
    "claims": [
@@ -548,13 +538,18 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "Then a tissue from his trash gave the conclusive DNA match.",
-     "pause_before": 0.1
+     "text": "Then they took a tissue from his trash."
+    },
+    {
+     "who": "narrator",
+     "text": "The DNA was a conclusive match.",
+     "pause_before": 0.5
     }
    ],
    "shot": {},
    "emphasis": [
     "tissue",
+    "trash.",
     "conclusive",
     "match."
    ],
@@ -562,17 +557,17 @@
    "music_drop": true
   },
   {
-   "id": "s11_arrest",
+   "id": "s10_arrest",
    "scene": "gs10_arrest",
    "min_duration": 2.0,
-   "pad_after": 0.6,
+   "pad_after": 0.35,
    "music_cue": "tension",
    "sfx": [
     {
      "at": -0.35,
      "word": [
       0,
-      4
+      5
      ],
      "name": "step",
      "gain": 0.5
@@ -581,7 +576,7 @@
      "at": -0.05,
      "word": [
       0,
-      4
+      5
      ],
      "name": "step",
      "gain": 0.5
@@ -590,7 +585,7 @@
      "at": 0.05,
      "word": [
       0,
-      4
+      5
      ],
      "name": "hit",
      "gain": 0.6
@@ -604,7 +599,7 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "In April 2018, police arrested him outside his home."
+     "text": "On April 24th, 2018, police arrested him outside his home."
     }
    ],
    "shot": {},
@@ -615,7 +610,7 @@
    "section": "D"
   },
   {
-   "id": "s12_plea",
+   "id": "s11_plea",
    "scene": "gs10_plea",
    "min_duration": 2.0,
    "pad_after": 0.7,
@@ -625,7 +620,7 @@
      "at": 0.05,
      "word": [
       0,
-      3
+      4
      ],
      "name": "stamp",
      "gain": 0.6
@@ -663,14 +658,13 @@
     "13",
     "ballroom."
    ],
-   "section": "D",
-   "music_drop": true
+   "section": "D"
   },
   {
-   "id": "s13_sentence",
+   "id": "s12_sentence",
    "scene": "gs10_sentence",
    "min_duration": 2.0,
-   "pad_after": 0.6,
+   "pad_after": 0.4,
    "music_cue": "aftermath",
    "sfx": [
     {
@@ -686,7 +680,7 @@
      "at": 0.1,
      "word": [
       0,
-      6
+      5
      ],
      "name": "stamp",
      "gain": 0.5
@@ -700,7 +694,7 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "He got life without parole, eleven times over."
+     "text": "His sentence: life without parole, eleven times over."
     }
    ],
    "shot": {},
@@ -711,62 +705,39 @@
    "section": "D"
   },
   {
-   "id": "s14_legacy",
-   "scene": "gs10_legacy",
-   "min_duration": 2.0,
-   "pad_after": 0.5,
+   "id": "s13_end",
+   "scene": "gs10_end",
+   "min_duration": 3.0,
+   "pad_after": 1.7,
    "music_cue": "aftermath",
    "sfx": [
     {
-     "at": 0.1,
-     "name": "typing",
+     "at": 0.0,
+     "name": "wind",
      "gain": 0.4
     },
     {
      "at": -0.05,
      "word": [
-      0,
-      8
+      1,
+      7
      ],
      "name": "chime",
      "gain": 0.5
-    }
-   ],
-   "claims": [
-    "GS_legacy",
-    "GS_privacy"
-   ],
-   "transition": "fade",
-   "caption_y": 1380,
-   "lines": [
+    },
     {
-     "who": "narrator",
-     "text": "Since then, the method has helped crack hundreds of cold cases."
-    }
-   ],
-   "shot": {},
-   "emphasis": [
-    "hundreds",
-    "cold"
-   ],
-   "section": "E"
-  },
-  {
-   "id": "s15_next",
-   "scene": "gs10_next",
-   "min_duration": 3.0,
-   "pad_after": 1.6,
-   "music_cue": "aftermath",
-   "sfx": [
-    {
-     "at": 0.0,
+     "at": -0.15,
+     "word": [
+      2,
+      0
+     ],
      "name": "whoosh",
      "gain": 0.6
     },
     {
      "at": -0.05,
      "word": [
-      0,
+      2,
       7
      ],
      "name": "hit",
@@ -774,20 +745,33 @@
     }
    ],
    "claims": [
+    "GS_trees",
+    "GS_tissue",
     "GS_next"
    ],
-   "transition": "zoom",
+   "transition": "fade",
    "caption_y": 1380,
    "lines": [
     {
      "who": "narrator",
-     "text": "Next: the Great Train Robbery, and the Monopoly board that helped catch the gang."
+     "text": "Decades of hiding,"
+    },
+    {
+     "who": "narrator",
+     "text": "ended by a family tree and a tissue in the trash.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "Next: the Great Train Robbery, and a Monopoly board.",
+     "pause_before": 0.6
     }
    ],
    "shot": {},
    "emphasis": [
-    "great",
-    "train",
+    "decades",
+    "family",
+    "tissue",
     "monopoly"
    ],
    "section": "E",
@@ -799,24 +783,12 @@
    "id": "GS_relatives",
    "type": "established",
    "nature": "fact",
-   "text": "DeAngelo had never submitted his own DNA to a genealogy database (nor to a law-enforcement one); the genealogy lead came from DNA profiles that distant relatives had uploaded and shared on GEDmatch.",
+   "text": "Investigators searched a public genealogy database for the killer's relatives. DeAngelo had never submitted his own DNA to a genealogy database; the lead came from DNA profiles that distant relatives had uploaded and shared on GEDmatch.",
    "sources": [
     "thetech_dna",
     "lamag_dna",
     "ap_wrongman",
     "npr_upload"
-   ]
-  },
-  {
-   "id": "GS_identified",
-   "type": "established",
-   "nature": "fact",
-   "text": "Investigators identified DeAngelo as a suspect through that genealogy lead (family trees built from distant relatives' matches), then confirmed it with his own DNA.",
-   "sources": [
-    "npr_upload",
-    "ucdavis_dna",
-    "abc_tissue",
-    "cnn_free"
    ]
   },
   {
@@ -832,10 +804,10 @@
    ]
   },
   {
-   "id": "GS_nomatch",
+   "id": "GS_noname",
    "type": "established",
    "nature": "fact",
-   "text": "Investigators had the killer's crime-scene DNA, but for years it matched no one in the FBI's national DNA database or California's databank: he had never been arrested for an offence that put his DNA on file.",
+   "text": "For decades the killer's crime-scene DNA sat in evidence (collected in the 1970s-80s; DNA profiles later linked the crimes), but it matched no one in the FBI's national DNA database or California's databank, so investigators had no name. He had never been arrested for an offence that put his DNA on file.",
    "sources": [
     "thetech_dna",
     "lamag_dna"
@@ -872,17 +844,6 @@
     "ucdavis_dna",
     "vnews_tree",
     "npr_upload"
-   ]
-  },
-  {
-   "id": "GS_oregon",
-   "type": "established",
-   "nature": "fact",
-   "text": "FUN FACT: in March 2017, an earlier genetic lead (from a different public genealogy database) led investigators to persuade a judge to order a DNA sample from a 73-year-old man in an Oregon nursing home. He was not the killer and was never charged; he is not named.",
-   "sources": [
-    "ap_wrongman",
-    "abc30_wrongman",
-    "nbc_wrongman"
    ]
   },
   {
@@ -988,32 +949,10 @@
    ]
   },
   {
-   "id": "GS_legacy",
-   "type": "established",
-   "nature": "fact",
-   "text": "Since the 2018 arrest, investigative genetic genealogy has been used to help solve hundreds of cold cases (an approximate, widely reported figure; no official national count was found).",
-   "sources": [
-    "ftm_igg",
-    "fox_hundreds",
-    "cnn_trend"
-   ]
-  },
-  {
-   "id": "GS_privacy",
-   "type": "established",
-   "nature": "fact",
-   "text": "The method raised privacy concerns: GEDmatch's co-founder said police use of the site was without its knowledge and raised privacy concerns shared by civil-liberties groups, while investigators said no court order was needed.",
-   "sources": [
-    "ap_gedmatch",
-    "fox_privacy",
-    "pbs_privacy"
-   ]
-  },
-  {
    "id": "GS_next",
    "type": "established",
    "nature": "fact",
-   "text": "Next-case tease: in the Great Train Robbery (8 August 1963) a gang stole about 2.6 million pounds from a Royal Mail train; fingerprints on a Monopoly board at their farm hideout helped lead police to them.",
+   "text": "Next-case tease: in the Great Train Robbery (8 August 1963) a gang stole about 2.6 million pounds from a Royal Mail train; fingerprints on a Monopoly board at their farm hideout helped lead police to them. (Narration names only the robbery and 'a Monopoly board'; the card shows the amount.)",
    "sources": [
     "btp_gtr",
     "smithsonian_gtr",
@@ -1168,43 +1107,11 @@
    "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
   },
   {
-   "id": "pbs_privacy",
-   "publisher": "PBS NewsHour",
-   "title": "The Golden State Killer case was cracked with a genealogy website. What does that mean for genetic privacy?",
-   "url": "https://www.pbs.org/newshour/health/the-golden-state-killer-case-was-cracked-with-a-genealogy-website-what-does-that-mean-for-genetic-privacy",
-   "date": "2018-04",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
-   "id": "fox_privacy",
-   "publisher": "Fox News",
-   "title": "Arrest in Golden State Killer case sparks privacy questions",
-   "url": "https://www.foxnews.com/tech/dna-link-to-golden-state-killer-raises-questions-of-privacy-versus-safety",
-   "date": "2018-04",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
    "id": "ap_wrongman",
    "publisher": "AP (via KTVU)",
    "title": "Search for Golden State Killer led to wrong man in 2017",
    "url": "https://www.ktvu.com/news/search-for-golden-state-killer-led-to-wrong-man-in-2017",
    "date": "2018-04-28",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
-   "id": "abc30_wrongman",
-   "publisher": "ABC30 (KFSN)",
-   "title": "DNA mistake pegged Oregon man as 'Golden State Killer'",
-   "url": "https://abc30.com/post/dna-mistake-pegged-oregon-man-as-golden-state-killer/3409391/",
-   "date": "2018-04",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
-   "id": "nbc_wrongman",
-   "publisher": "NBC News",
-   "title": "DNA used in hunt for Golden State Killer previously led to wrong man",
-   "url": "https://www.nbcnews.com/news/us-news/dna-used-hunt-golden-state-killer-previously-led-wrong-man-n869796",
-   "date": "2018-04",
    "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
   },
   {
@@ -1285,30 +1192,6 @@
    "title": "Golden State Killer arrested (police waited for him to leave his home)",
    "url": "https://www.thedailybeast.com/golden-state-killer-arrested-according-to-co-author-of-ill-be-gone-in-the-dark",
    "date": "2018-04",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
-   "id": "ftm_igg",
-   "publisher": "Family Tree Magazine",
-   "title": "Investigative Genetic Genealogy: How DNA Testing Helps Solve Crimes",
-   "url": "https://familytreemagazine.com/dna/investigative-genetic-genealogy",
-   "date": "date not in extract",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
-   "id": "fox_hundreds",
-   "publisher": "Fox News",
-   "title": "Cold cases cracked: experts solving hundreds of violent crime mysteries",
-   "url": "https://foxnews.com/us/cold-cases-cracked-experts-solving-hundreds-violent-crime-mysteries-decades-no-answers.print",
-   "date": "date not in extract",
-   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
-  },
-  {
-   "id": "cnn_trend",
-   "publisher": "CNN",
-   "title": "Genetic genealogy and cold cases after the Golden State Killer arrest",
-   "url": "https://amp.cnn.com/cnn/2018/08/03/health/dna-genealogy-cold-cases-trnd",
-   "date": "2018-08-03",
    "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
   },
   {

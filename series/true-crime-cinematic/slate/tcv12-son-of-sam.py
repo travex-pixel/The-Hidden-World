@@ -13,65 +13,67 @@ def build(h):
     VER = h.VERIFIED
 
     scenes = [
-        # A - hook: the payoff of the title, with the matching picture (a ticket slid under a wiper by a hydrant)
-        S("s01_hook", "ss12_hook", [N("New York's most feared killer was caught by a parking ticket.")],
-          "cold", ["S_ticket", "S_span"], sfx=[fx(0.0, "sub", 0.5), fw(0, 6, "hit", 0.6, -0.05), fw(0, 9, "paper", 0.6), fw(0, 10, "thud", 0.5, 0.1)],
-          emph=["feared", "parking", "ticket."], min_d=3.75, pad=0.2),
-        S("s02_fear", "ss12_fear", [N("For a year, a gunman terrorised New York City."),
-                                    N("Six people were killed, seven wounded.", pause_before=0.15)],
-          "unease", ["S_span"], sfx=[fx(0.0, "wind", 0.5), fw(0, 4, "step", 0.35), fw(0, 5, "step", 0.35, 0.2), fw(1, 0, "thump", 0.5, -0.05)],
-          emph=["year,", "gunman", "six", "seven"], pad=0.1, tr="fade"),
-        S("s03_hair", "ss12_hair", [N("Some women even dyed their dark hair blonde.")],
-          "unease", ["S_hair"], sfx=[fw(0, 0, "paper", 0.5), fw(0, 3, "sting", 0.35, -0.05)],
-          emph=["dyed", "blonde."], min_d=3.0, pad=0.2, tr="push"),
-        # B - investigation: letters, the last night, the witness, the tickets
-        S("s04_letters", "ss12_letters", [N("Then he wrote letters to police and a newspaper columnist."),
-                                          N("He called himself the Son of Sam.", pause_before=0.1)],
-          "tension", ["S_letters"], sfx=[fx(0.0, "rumble", 0.4), fw(0, 3, "paper", 0.5), fw(1, 4, "hit", 0.6, -0.05)],
-          emph=["letters", "son", "sam."], pad=0.1, tr="push"),
-        S("s05_witness", "ss12_witness", [N("July 31st, 1977: his last attack, in Brooklyn."),
-                                          N("Nearby, a woman walking her dog saw police ticketing a car by a fire hydrant.", pause_before=0.15)],
-          "tension-rise", ["S_last", "S_witness"], sfx=[fx(0.0, "wind", 0.45), fw(1, 3, "step", 0.3), fw(1, 8, "pen", 0.5), fw(1, 14, "click", 0.45)],
-          emph=["last", "ticketing", "hydrant."], pad=0.2, tr="push"),
-        S("s06_tickets", "ss12_tickets", [N("Detectives checked the tickets written there that night."),
-                                          N("One led to David Berkowitz, a 24-year-old postal worker from Yonkers.", pause_before=0.25)],
-          "revelation", ["S_ticket"], sfx=[fx(0.1, "typing", 0.4), fw(0, 3, "paper", 0.5), fw(1, 4, "hit", 0.7, -0.05)],
-          emph=["tickets", "berkowitz,", "yonkers."], pad=0.3, tr="push"),
-        # C - the stakeout, the arrest, the debunked story
-        S("s07_stakeout", "ss12_stakeout", [N("On August 10th, detectives found his car in Yonkers, and waited.")],
-          "tension-rise", ["S_arrest"], sfx=[fx(0.0, "wind", 0.4), fw(0, 3, "step", 0.4), fw(0, 4, "step", 0.4, 0.1), fw(0, 10, "tick", 0.4)],
-          emph=["found", "car", "waited."], min_d=4.2, pad=0.25, tr="push"),
-        S("s08_arrest", "ss12_arrest", [N("When he walked out to it, they arrested him."),
-                                        N("A year of terror was over.", pause_before=0.3)],
-          "tension-peak", ["S_arrest", "S_span"], sfx=[fw(0, 2, "step", 0.4), fw(0, 4, "step", 0.4), fw(0, 7, "hit", 0.7, -0.05), fw(0, 8, "door", 0.5, 0.1)],
-          emph=["arrested", "over."], pad=0.4, tr="zoom"),
-        S("s09_demon", "ss12_demon", [N("He blamed a demon speaking through a neighbour's dog."),
-                                      N("He later admitted it was a hoax.", pause_before=0.15)],
-          "tension", ["S_demon"], sfx=[fw(0, 1, "paper", 0.4), fw(1, 2, "sparkle", 0.8, -0.1), fw(1, 6, "stamp", 0.5)],
-          emph=["demon", "hoax."], pad=0.3, tr="push"),
-        # D - the plea, the law, the cliff
-        S("s10_plea", "ss12_plea", [N("In 1978, he pleaded guilty to all six murders."),
-                                    N("He got 25 years to life for each.", pause_before=0.15)],
-          "tension-peak", ["S_plea"], sfx=[fx(0.1, "step", 0.3), fw(0, 4, "hit", 0.5, -0.05), fw(1, 5, "gavel", 1.0, -0.08)],
-          emph=["guilty", "six", "life"], pad=0.1, tr="push"),
-        S("s11_law", "ss12_law", [N("New York even passed a 'Son of Sam law' to stop criminals profiting from their stories."),
-                                  N("In 1991, the Supreme Court struck it down.", pause_before=0.15)],
-          "aftermath", ["S_law"], sfx=[fw(0, 3, "sparkle", 0.8, -0.1), fw(1, 5, "stamp", 0.7, 0.05)],
-          emph=["son", "sam", "law'", "struck", "down."], pad=0.3, tr="push"),
-        # E - where he is now, remembrance, then the next case
-        S("s12_today", "ss12_today", [N("He's still in prison. In 2026, he skipped his parole hearing."),
-                                      N("Six lives were taken. Remember them, not him.", pause_before=0.3)],
-          "aftermath", ["S_today", "S_span"], sfx=[fx(0.0, "wind", 0.5), fw(1, 0, "chime", 0.35, -0.05)],
-          emph=["prison.", "skipped", "remember", "them,"], min_d=4.6, pad=0.4, tr="fade"),
-        S("s13_next", "ss12_next", [N("Next: a gang of pensioners drilled into a London vault, then bragged about it in the pub.")],
-          "aftermath", ["S_next"], sfx=[fx(0.0, "whoosh", 0.6), fw(0, 5, "rumble", 0.5, -0.05), fw(0, 11, "hit", 0.5, -0.05)],
-          emph=["pensioners", "vault,", "bragged"], min_d=3.0, pad=1.5, tr="zoom"),
+        # A - hook: the setup and the mystery, not the answer. The hero object (a generic parking ticket) fills the first frame.
+        S("s01_hook", "ss12_hook", [N("For a year, police couldn't catch New York's most feared killer."),
+                                    N("Then he parked by a fire hydrant.", pause_before=0.4)],
+          "cold", ["S_span", "S_ticket"], sfx=[fx(0.0, "sub", 0.5), fw(0, 9, "thump", 0.4), fw(1, 2, "whoosh", 0.5, -0.05), fw(1, 6, "hit", 0.6, -0.05)],
+          emph=["year,", "feared", "parked", "hydrant."], pad=0.3),
+        S("s02_fear", "ss12_fear", [N("Six people were killed, seven wounded.")],
+          "unease", ["S_span"], sfx=[fx(0.0, "wind", 0.4), fw(0, 0, "thump", 0.5, -0.05)],
+          emph=["six", "seven"], min_d=3.0, pad=0.3, tr="fade"),
+        # B - the chain of object reveals: letters, the name, the last night, the hydrant, the witness, the tickets
+        S("s03_letters", "ss12_letters", [N("He wrote letters to police and the press."),
+                                          N("He called himself the Son of Sam.", pause_before=0.3)],
+          "tension", ["S_letters"], sfx=[fx(0.0, "rumble", 0.4), fw(0, 2, "paper", 0.5), fw(1, 4, "hit", 0.6, -0.05)],
+          emph=["letters", "son", "sam."], pad=0.2, tr="push"),
+        S("s04_demon", "ss12_demon", [N("He later claimed Sam was a neighbour whose dog relayed a demon's orders."),
+                                      N("Then he admitted it was a hoax.", pause_before=0.3)],
+          "tension", ["S_demon"], sfx=[fw(0, 2, "paper", 0.4), fw(1, 2, "sparkle", 0.8, -0.1), fw(1, 6, "stamp", 0.6)],
+          emph=["demon's", "hoax."], pad=0.2, tr="push"),
+        S("s05_last", "ss12_last", [N("July 31st, 1977. His last attack, in Brooklyn.")],
+          "tension-rise", ["S_last"], sfx=[fx(0.0, "wind", 0.45), fw(0, 4, "sting", 0.35, -0.05)],
+          emph=["last", "brooklyn."], min_d=3.5, pad=0.3, tr="fade"),
+        S("s06_witness", "ss12_witness", [N("Nearby, a dog walker saw police ticketing a car."),
+                                          N("It was parked by a fire hydrant.", pause_before=0.35)],
+          "tension-rise", ["S_witness"], sfx=[fw(0, 2, "step", 0.3), fw(0, 6, "pen", 0.5), fw(1, 6, "hit", 0.5, -0.05)],
+          emph=["ticketing", "hydrant."], pad=0.2, tr="push"),
+        S("s07_tickets", "ss12_tickets", [N("Days later, she told detectives."),
+                                          N("They checked every ticket written there that night.", pause_before=0.25)],
+          "tension", ["S_witness", "S_ticket"], sfx=[fx(0.1, "typing", 0.35), fw(1, 1, "paper", 0.5), fw(1, 3, "paper", 0.4, 0.2)],
+          emph=["detectives.", "every", "ticket"], pad=0.2, tr="push"),
+        # C - the car, the address, the stakeout, the arrest, the name
+        S("s08_car", "ss12_car", [N("One was for a car registered in Yonkers.")],
+          "revelation", ["S_ticket"], sfx=[fw(0, 4, "click", 0.5), fw(0, 7, "hit", 0.5, -0.05)],
+          emph=["car", "yonkers."], min_d=3.0, pad=0.3, tr="push"),
+        S("s09_stakeout", "ss12_stakeout", [N("On August 10th, police waited by that car.")],
+          "tension-rise", ["S_arrest"], sfx=[fx(0.0, "wind", 0.4), fw(0, 4, "tick", 0.4), fw(0, 7, "thump", 0.4)],
+          emph=["waited", "car."], min_d=3.0, pad=0.3, tr="push"),
+        S("s10_arrest", "ss12_arrest", [N("When its owner walked out, they arrested him.")],
+          "tension-peak", ["S_arrest"], sfx=[fw(0, 3, "step", 0.4), fw(0, 4, "step", 0.4, 0.1), fw(0, 6, "hit", 0.7, -0.05), fw(0, 7, "door", 0.5, 0.1)],
+          emph=["owner", "arrested"], min_d=3.0, pad=0.3, tr="zoom"),
+        S("s11_name", "ss12_name", [N("The Son of Sam was David Berkowitz, a 24-year-old postal worker.", pause_before=0.2)],
+          "revelation", ["S_ticket", "S_arrest"], sfx=[fw(0, 5, "hit", 0.7, -0.05), fw(0, 8, "click", 0.4)],
+          emph=["david", "berkowitz,", "postal"], pad=0.5, tr="push"),
+        # D - the plea, the law
+        S("s12_plea", "ss12_plea", [N("In 1978, he pleaded guilty to all six murders."),
+                                    N("25 years to life, for each one.", pause_before=0.3)],
+          "tension-peak", ["S_plea", "S_today"], sfx=[fx(0.1, "step", 0.3), fw(0, 4, "hit", 0.5, -0.05), fw(1, 3, "gavel", 1.0, -0.08)],
+          emph=["guilty", "six", "life,"], pad=0.3, tr="push"),
+        S("s13_law", "ss12_law", [N("New York passed a Son of Sam law against criminals profiting from their stories."),
+                                  N("In 1991, the Supreme Court struck it down.", pause_before=0.3)],
+          "aftermath", ["S_law"], sfx=[fw(0, 2, "sparkle", 0.8, -0.1), fw(1, 5, "stamp", 0.7, 0.05)],
+          emph=["son", "sam", "law", "struck", "down."], pad=0.3, tr="push"),
+        # E - the callback on the hero object, then the next case
+        S("s14_end", "ss12_end", [N("A year of terror, ended by a parking ticket.", pause_before=0.2),
+                                  N("Next: the pensioner gang that drilled into a vault in London.", pause_before=0.6)],
+          "aftermath", ["S_span", "S_ticket", "S_next"], sfx=[fx(0.0, "wind", 0.4), fw(0, 8, "thud", 0.5), fw(1, 0, "whoosh", 0.6, -0.1), fw(1, 5, "rumble", 0.45)],
+          emph=["terror,", "parking", "ticket.", "pensioner", "london."], pad=1.3, tr="zoom"),
     ]
-    sections = ["A", "A", "A", "B", "B", "B", "C", "C", "C", "D", "D", "E", "E"]
+    sections = ["A", "A", "B", "B", "B", "B", "B", "C", "C", "C", "C", "D", "D", "E"]
     for sc, sec in zip(scenes, sections):
         sc["section"] = sec
-    scenes[5]["music_drop"] = True    # "One led to David Berkowitz..."
-    scenes[7]["music_drop"] = True    # "...they arrested him. A year of terror was over."
+    scenes[10]["music_drop"] = True   # "The Son of Sam was David Berkowitz..."
+    scenes[13]["music_drop"] = True   # "A year of terror, ended by a parking ticket."
     scenes[-1]["fade_out"] = True
 
     src = h.src
@@ -84,7 +86,6 @@ def build(h):
         src("cbs_speaks", "CBS News", "Serial killer \"Son of Sam\": \"They wouldn't understand what it was to walk in darkness\"", "https://www.cbsnews.com/news/son-of-sam-serial-killer-david-berkowitz-speaks-out-40-years-after-new-york-city-murder-spree/", "2017"),
         src("cbs_story", "CBS News", "The Son of Sam story", "https://www.cbsnews.com/news/the-son-of-sam-story/", "date not in extract"),
         src("cbsny_40", "CBS New York", "Remembering the 'Son of Sam' case 40 years after serial killer's arrest", "https://www.cbsnews.com/newyork/news/son-of-sam-arrest-40th-anniversary/", "2017-08"),
-        src("cbsny_back", "CBS New York", "Back Stories: 'Son of Sam' sparks 'a very fearful time'", "https://www.cbsnews.com/newyork/news/back-stories-summer-of-sam/", "date not in extract"),
         src("wnyc_40", "WNYC (AP)", "'Son of Sam' killer was arrested 40 years ago this week", "https://wnyc.org/story/son-sam-killer-was-arrested-40-years-ago-week/", "2017-08"),
         src("time_crimes", "TIME", "The Son of Sam, 1977 (Crimes of the Century)", "https://content.time.com/time/specials/packages/article/0,28804,1937349_1937350_1937438,00.html", "date not in extract"),
         src("time_letters", "TIME", "Son of Sam 40th anniversary: the letters that terrorized NYC", "https://time.com/4886540/son-of-sam-letters-anniversary/", "2017-08"),
@@ -93,7 +94,6 @@ def build(h):
         src("aetv_alone", "A&E (aetv.com)", "Did Son of Sam David Berkowitz act alone?", "https://www.aetv.com/articles/did-son-of-sam-david-berkowitz-act-alone", "date not in extract"),
         src("sage_enc", "SAGE Encyclopedia of Violent Crime", "David Richard Berkowitz (Son of Sam)", "https://sk.sagepub.com/ency/edvol/embed/violentcrime/chpt/david-richard-berkowitz-son-sam", "date not in extract"),
         src("cbs_victims", "CBS News", "Survivors of the \"Son of Sam\" serial killer in their own words", "https://www.cbsnews.com/amp/news/son-of-sam-victims-in-their-own-words/", "2017"),
-        src("jezebel_1977", "Jezebel", "Eerie 1977 footage shows a reporter polling dark-haired women during the 'Summer of Sam'", "https://jezebel.com/eerie-1977-footage-shows-a-reporter-polling-dark-haired-1797273659", "2017"),
         src("enc_trial", "Encyclopedia.com (Great American Trials)", "The \"Son of Sam\" trial: 1978", "https://www.encyclopedia.com/law/law-magazines/son-sam-trial-1978", "date not in extract"),
         # the "demon dog" story and its retraction
         src("netflix_tudum", "Netflix Tudum", "Conversations with a Killer: The Son of Sam Tapes", "https://www.netflix.com/tudum/articles/conversations-with-a-killer-the-son-of-sam-tapes-release-date-news", "2025"),
@@ -126,8 +126,6 @@ def build(h):
         C("S_span", "Between July 1976 and July 1977 a gunman shot people in the Bronx, Queens and Brooklyn: six people were killed and seven wounded. "
           "He was arrested on 10 August 1977.",
           ["history_arrest", "aetv_alone", "sage_enc", "cbs_story"]),
-        C("S_hair", "Reports said many of those attacked had long, dark hair; that summer some New York women cut their hair short or dyed it blonde.",
-          ["cbsny_back", "history_arrest", "jezebel_1977"]),
         C("S_letters", "In April 1977 a handwritten letter addressed to NYPD Captain Joseph Borrelli was left near a Bronx shooting, the first in which "
           "the killer called himself the 'Son of Sam'. On 30 May 1977 Daily News columnist Jimmy Breslin received a letter from him, which the paper "
           "published. (Letters not quoted in the episode.)",
@@ -165,8 +163,8 @@ def build(h):
                 scenes, claims, sources, "NEW YORK CITY · 1976-1977", bpm=80)
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={})
     ep["score"] = {"root_hz": 130.81, "bpm": 80,
-                   "hits": [{"scene": "s06_tickets", "word": [1, 4], "at": -0.05, "gain": 0.4}],
-                   "cliff": {"scene": "s11_law", "word": [1, 7], "at": -0.06}}
+                   "hits": [{"scene": "s11_name", "word": [0, 5], "at": -0.05, "gain": 0.4}],
+                   "cliff": {"scene": "s13_law", "word": [1, 7], "at": -0.06}}
     ep["content_notes"] = ("Closed case: Berkowitz pleaded guilty on 8 May 1978 and was sentenced on 12 June 1978. He is alive, so he appears only "
                            "as an anonymous rim-lit silhouette with no face or likeness (tag 'ILLUSTRATION · NOT A LIKENESS'). The shootings, the "
                            "victims, any weapon and any crime scene are never depicted; the street is a generic Brooklyn street, not the scene. "

@@ -1,4 +1,8 @@
-"""Case File 11 (cinematic): the Great Train Robbery (8 Aug 1963). The gang's fingerprints on a Monopoly set and a ketchup bottle.
+"""Case File 11 (cinematic): the Great Train Robbery (8 Aug 1963). Given away by a board game (and a ketchup bottle).
+
+Structure follows the BTK "floppy disk" lessons: the hook is the setup and the mystery, the hero object (a GENERIC board
+game, never Monopoly trade dress) opens and closes the video, the fingerprint reveal lands at about two thirds, and the
+ending is a callback line, then the NEXT CASE card.
 
 CLOSED case: sentences in April 1964; Ronnie Biggs escaped in 1965, came back in 2001 and died in 2013.
 Research ledger: episodes/tcv11-great-train-robbery/research.md. Shots: renderer/scenes/tcv11-great-train-robbery.js.
@@ -9,66 +13,71 @@ generic 1960s silhouettes, never glamorised; "they played with the real money" i
 def build(h):
     N, fx, fw, S = h.N, h.fx, h.fw, h.S
     scenes = [
-        # A - hook: the payoff of the title, over the dusted board game
-        S("s01_hook", "gt11_hook", [N("Britain's biggest train robbers left their fingerprints on a Monopoly board."),
-                                    N("And on a ketchup bottle.", pause_before=0.25)],
-          "cold", ["GT_prints", "GT_haul"], sfx=[fx(0.0, "hit", 0.7), fw(0, 6, "puff", 0.5, -0.05), fw(1, 3, "thud", 0.5, -0.05)],
-          emph=["fingerprints", "monopoly", "ketchup"], min_d=4.6, pad=0.2),
-        S("s02_signal", "gt11_signal", [N("August 1963: the night mail train from Glasgow to London."),
-                                        N("In Buckinghamshire, a signal turned red. It was a fake.", pause_before=0.2)],
-          "unease", ["GT_train", "GT_signal"], sfx=[fx(0.0, "rumble", 0.5), fw(1, 5, "click", 0.6, -0.05), fw(1, 8, "hit", 0.5, -0.05)],
+        # A - hook: the setup and the mystery (the hero object is on screen from the first frame; the answer comes at ~65%)
+        S("s01_hook", "gt11_hook", [N("Britain's biggest train robbers got away with £2.6 million."),
+                                    N("Then a board game gave them away.", pause_before=0.35)],
+          "cold", ["GT_haul", "GT_payoff"], sfx=[fx(0.0, "hit", 0.7), fw(0, 7, "thud", 0.4, -0.05), fw(1, 2, "click", 0.5, -0.05)],
+          emph=["£2.6", "million.", "board", "game"], min_d=4.2, pad=0.2),
+        # the chain of objects: the signal, the train, the mailbags, the farm, the board
+        S("s02_signal", "gt11_signal", [N("August 1963. The night mail, Glasgow to London."),
+                                        N("A signal turned red. It was a fake.", pause_before=0.2)],
+          "unease", ["GT_train", "GT_signal"], sfx=[fx(0.0, "rumble", 0.5), fw(1, 3, "click", 0.6, -0.05), fw(1, 7, "hit", 0.5, -0.05)],
           emph=["glasgow", "red.", "fake."], tr="fade", pad=0.15),
-        # B - the robbery in summary (no violence shown), the haul, the hideout
         S("s03_driver", "gt11_driver", [N("The train stopped. The driver, Jack Mills, was attacked and badly hurt.")],
-          "hush", ["GT_mills", "GT_bridge"], sfx=[fx(0.0, "brake", 0.6), fw(0, 2, "rumble", 0.3, 0.2)],
-          emph=["jack", "mills,"], min_d=4.6, pad=0.6, tr="fade", music_db=-6),
-        S("s04_haul", "gt11_haul", [N("They got away with about £2.6 million. A record for a train robbery.")],
-          "tension", ["GT_haul"], sfx=[fw(0, 3, "thud", 0.5, -0.1), fw(0, 6, "thud", 0.45, 0.1), fw(0, 10, "hit", 0.5, -0.05)],
-          emph=["£2.6", "million.", "record"], pad=0.2, tr="push"),
-        S("s05_game", "gt11_game", [N("Hiding out at Leatherslade Farm, they passed the time playing Monopoly."),
-                                    N("Legend says they used real cash. Never proven.", pause_before=0.2)],
-          "unease", ["GT_farm", "GT_played", "GT_legend"], sfx=[fw(0, 9, "click", 0.4), fw(1, 5, "flutter", 0.4, -0.1), fw(1, 6, "stamp", 0.6, 0.05)],
-          emph=["leatherslade", "monopoly.", "legend", "never"], tr="push", pad=0.15),
-        S("s06_tip", "gt11_tip", [N("A local herdsman tipped off the police."),
-                                  N("Five days after the robbery, officers reached the farm.", pause_before=0.15)],
-          "tension-rise", ["GT_tip"], sfx=[fx(0.1, "typing", 0.4), fw(0, 4, "buzz", 0.4, -0.2), fw(1, 7, "step", 0.4), fw(1, 8, "step", 0.4, 0.05)],
-          emph=["herdsman", "five", "days"], tr="push", pad=0.15),
-        # C - the farm, the prints, the verdict
-        S("s07_raid", "gt11_raid", [N("The gang had fled early, leaving mailbags, food and vehicles behind.")],
-          "tension", ["GT_fled"], sfx=[fx(0.0, "door", 0.5), fw(0, 4, "step", 0.4), fw(0, 6, "paper", 0.5, -0.05)],
-          emph=["fled", "early,"], tr="push", pad=0.15),
-        S("s08_prints", "gt11_prints", [N("And fingerprints, on the Monopoly set and the ketchup bottle."),
-                                        N("Some belonged to Ronnie Biggs.", pause_before=0.25)],
-          "revelation", ["GT_prints", "GT_biggs_prints"], sfx=[fx(0.0, "swell", 0.4), fw(0, 0, "puff", 0.4, 0.2), fw(1, 3, "sparkle", 0.8, -0.1)],
-          emph=["fingerprints,", "ketchup", "biggs."], tr="flash", pad=0.5),
-        S("s09_trial", "gt11_trial", [N("The prints helped convict them."),
-                                      N("In 1964, seven were jailed for thirty years each.", pause_before=0.15)],
-          "tension", ["GT_convicted"], sfx=[fw(1, 6, "gavel", 1.0, -0.1), fw(1, 7, "stamp", 0.6, 0.15)],
+          "hush", ["GT_mills"], sfx=[fx(0.0, "brake", 0.6)],
+          emph=["jack", "mills,"], min_d=4.4, pad=0.55, tr="fade", music_db=-6),
+        S("s04_bags", "gt11_bags", [N("At a bridge down the line, they unloaded the mailbags.")],
+          "tension", ["GT_bridge"], sfx=[fw(0, 7, "thud", 0.5, -0.05), fw(0, 9, "thud", 0.45, 0.1)],
+          emph=["bridge", "mailbags."], pad=0.15, tr="push"),
+        S("s05_farm", "gt11_farm", [N("They vanished to a hideout: Leatherslade Farm.")],
+          "unease", ["GT_farm"], sfx=[fx(0.0, "wind", 0.5), fw(0, 1, "step", 0.3), fw(0, 2, "step", 0.3, 0.1), fw(0, 6, "door", 0.4, -0.05)],
+          emph=["hideout:", "leatherslade"], pad=0.15, tr="fade"),
+        S("s06_game", "gt11_game", [N("There, they passed the time playing Monopoly."),
+                                    N("Legend says they used real cash. Never proven.", pause_before=0.25)],
+          "unease", ["GT_played", "GT_legend"], sfx=[fw(0, 6, "click", 0.45), fw(1, 5, "flutter", 0.4, -0.1), fw(1, 7, "stamp", 0.6, 0.05)],
+          emph=["monopoly.", "legend", "never"], tr="push", pad=0.15),
+        # B -> C - the hunt, the empty farm, the reveal
+        S("s07_tip", "gt11_tip", [N("Five days later, a herdsman tipped off police.")],
+          "tension-rise", ["GT_tip"], sfx=[fx(0.1, "typing", 0.4), fw(0, 4, "buzz", 0.45, -0.2), fw(0, 7, "step", 0.4, 0.1)],
+          emph=["five", "herdsman"], tr="push", pad=0.15),
+        S("s08_raid", "gt11_raid", [N("The gang had fled early."),
+                                    N("Most of the money? Never recovered.", pause_before=0.2),
+                                    N("But they left mailbags, food... and the board game.", pause_before=0.25)],
+          "tension", ["GT_fled", "GT_money", "GT_prints"], sfx=[fx(0.0, "door", 0.5), fw(0, 3, "step", 0.4), fw(1, 4, "sparkle", 0.8, -0.1), fw(2, 3, "paper", 0.4), fw(2, 8, "hit", 0.45, -0.05)],
+          emph=["fled", "never", "recovered.", "board", "game."], tr="push", pad=0.2),
+        S("s09_prints", "gt11_prints", [N("Then came the fingerprints."),
+                                        N("On the Monopoly board.", pause_before=0.35),
+                                        N("And on a ketchup bottle.", pause_before=0.3)],
+          "revelation", ["GT_prints"], sfx=[fx(0.0, "swell", 0.4), fw(0, 3, "puff", 0.4), fw(1, 3, "hit", 0.5, -0.05), fw(2, 4, "hit", 0.45, -0.05)],
+          emph=["fingerprints.", "monopoly", "ketchup"], tr="flash", pad=0.35),
+        S("s10_match", "gt11_match", [N("Some belonged to Ronnie Biggs.")],
+          "tension", ["GT_biggs_prints"], sfx=[fw(0, 1, "click", 0.4), fw(0, 4, "sparkle", 0.8, -0.1)],
+          emph=["ronnie", "biggs."], tr="push", min_d=2.8, pad=0.2),
+        S("s11_trial", "gt11_trial", [N("In 1964, the prints helped convict them. Seven got thirty years.")],
+          "tension", ["GT_convicted"], sfx=[fw(0, 5, "stamp", 0.5, 0.05), fw(0, 9, "gavel", 1.0, -0.1)],
           emph=["convict", "seven", "thirty"], tr="zoom", pad=0.3),
-        # D - the escape, the decades abroad, the return (cliff impact on "arrested")
-        S("s10_escape", "gt11_escape", [N("Then, in 1965, Biggs escaped from Wandsworth Prison."),
-                                        N("Over the wall on a rope ladder, into a waiting furniture van.", pause_before=0.15)],
-          "tension-rise", ["GT_escape"], sfx=[fx(0.0, "wind", 0.4), fw(1, 6, "flutter", 0.5, -0.1), fw(1, 6, "sparkle", 0.8, 0.1), fw(1, 11, "door", 0.6)],
-          emph=["escaped", "wall", "ladder,", "van."], tr="push", pad=0.25),
-        S("s11_return", "gt11_return", [N("He spent decades on the run, mostly in Brazil."),
-                                        N("In 2001, old and ill, he flew home, and was arrested.", pause_before=0.2)],
-          "tension-peak", ["GT_run", "GT_return"], sfx=[fx(0.0, "rumble", 0.5), fw(0, 7, "paper", 0.5), fw(1, 10, "stamp", 0.7, 0.05)],
-          emph=["decades", "brazil.", "arrested."], tr="push", pad=0.3),
-        # E - the payoff and the next case
-        S("s12_money", "gt11_money", [N("And the money? Most of it was never recovered."),
-                                      N("A record heist, given away by a board game and a ketchup bottle.", pause_before=0.3)],
-          "aftermath", ["GT_money", "GT_payoff"], sfx=[fw(0, 6, "sparkle", 0.8, -0.1), fw(1, 9, "thud", 0.4, -0.05)],
-          emph=["never", "recovered.", "board", "ketchup"], tr="fade", pad=0.3),
-        S("s13_next", "gt11_next", [N("Next: how a parking ticket led police to New York's most feared killer.", pause_before=0.1)],
-          "outro", ["GT_next"], sfx=[fx(0.0, "whoosh", 0.6), fw(0, 4, "ping", 0.5, -0.05)],
-          emph=["parking", "ticket", "killer."], min_d=3.0, pad=1.8, tr="zoom"),
+        # D - the escape and the return (cliff impact on "arrested")
+        S("s12_escape", "gt11_escape", [N("In 1965, Biggs escaped over the prison wall, on a rope ladder.")],
+          "tension-rise", ["GT_escape"], sfx=[fx(0.0, "wind", 0.4), fw(0, 7, "flutter", 0.5, -0.1), fw(0, 10, "sparkle", 0.8, -0.05)],
+          emph=["escaped", "wall,", "rope", "ladder."], tr="push", pad=0.2),
+        S("s13_return", "gt11_return", [N("Decades on the run. Then, in 2001, he flew home and was arrested.")],
+          "tension-peak", ["GT_run", "GT_return"], sfx=[fx(0.0, "rumble", 0.5), fw(0, 3, "paper", 0.4), fw(0, 12, "stamp", 0.7, 0.05)],
+          emph=["decades", "run.", "arrested."], tr="push", pad=0.3),
+        # E - the callback on the hero object, then the next case
+        S("s14_callback", "gt11_callback", [N("Britain's biggest train robbery, given away by a board game.", pause_before=0.2)],
+          "aftermath", ["GT_payoff", "GT_haul"], sfx=[fx(0.0, "wind", 0.3), fw(0, 8, "thud", 0.45, -0.05)],
+          emph=["biggest", "board", "game."], min_d=4.2, tr="fade", pad=0.6),
+        S("s15_next", "gt11_next", [N("Next: the parking ticket that led to the Son of Sam.", pause_before=0.1)],
+          "outro", ["GT_next"], sfx=[fx(0.0, "whoosh", 0.6), fw(0, 3, "ping", 0.5, -0.05)],
+          emph=["parking", "ticket", "sam."], min_d=3.0, pad=1.5, tr="zoom"),
     ]
-    sections = {"s01_hook": "A", "s02_signal": "A", "s03_driver": "B", "s04_haul": "B", "s05_game": "B", "s06_tip": "B",
-                "s07_raid": "C", "s08_prints": "C", "s09_trial": "C", "s10_escape": "D", "s11_return": "D", "s12_money": "E", "s13_next": "E"}
+    sections = {"s01_hook": "A", "s02_signal": "A", "s03_driver": "B", "s04_bags": "B", "s05_farm": "B", "s06_game": "B", "s07_tip": "B",
+                "s08_raid": "C", "s09_prints": "C", "s10_match": "C", "s11_trial": "C", "s12_escape": "D", "s13_return": "D",
+                "s14_callback": "E", "s15_next": "E"}
     for sc in scenes:
         sc["section"] = sections[sc["id"]]
     scenes[2]["music_drop"] = True    # the driver line: silence, with respect
-    scenes[7]["music_drop"] = True    # the reveal: the fingerprints
+    scenes[8]["music_drop"] = True    # the reveal: the fingerprints
     scenes[-1]["fade_out"] = True
 
     src = h.src
@@ -156,16 +165,16 @@ def build(h):
         C("GT_next", "Next-case tease: David Berkowitz, the 'Son of Sam', was arrested on 10 August 1977 after police traced a parking ticket, issued near the last shooting in Brooklyn on 31 July 1977, to his car.",
           ["history_sam", "bio_sam", "ae_sam"]),
     ]
-    figures = ["gt11_robber_a", "gt11_robber_b", "gt11_robber_c", "gt11_biggs", "gt11_detective", "ac9_constable", "scientist", "judge", "barrister", "press_operator", "analyst"]
-    ep = h.base("tcv11-great-train-robbery", 11, "The Great Train Robbers Left Their Fingerprints on a Monopoly Board",
+    figures = ["gt11_robber_a", "gt11_robber_b", "gt11_robber_c", "gt11_biggs", "gt11_detective", "agent_a", "scientist", "analyst", "judge", "barrister", "press_operator"]
+    ep = h.base("tcv11-great-train-robbery", 11, "Britain's Biggest Train Robbers Were Given Away by a Board Game",
                 "How did the gang behind Britain's biggest train robbery give themselves away, and what happened to them?",
                 figures, scenes, claims, sources, "GREAT TRAIN ROBBERY · 1963", bpm=78)
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={
         "£2.6": "two point six", "million": "million pounds",       # "£2.6 million" -> "two point six million pounds" (pronounce() is per word)
         "Leatherslade": "Leatherslaid", "Wandsworth": "Wandzwurth"})
     ep["score"] = {"root_hz": 146.83, "bpm": 78,
-                   "hits": [{"scene": "s02_signal", "word": [1, 8], "at": -0.05, "gain": 0.4}],
-                   "cliff": {"scene": "s11_return", "word": [1, 10], "at": -0.08}}
+                   "hits": [{"scene": "s02_signal", "word": [1, 7], "at": -0.05, "gain": 0.4}],
+                   "cliff": {"scene": "s13_return", "word": [0, 12], "at": -0.08}}
     ep["content_notes"] = ("Closed case (1963-1964; Biggs died in 2013). The driver, Jack Mills, is named once and never depicted; the attack is never shown "
                            "or described. The gang are anonymous generic 1960s silhouettes (flat caps, suits), never glamorised; Ronnie Biggs is an "
                            "illustrated silhouette, not a likeness. 'They played with the real money' is narrated only as an unproven legend; the Monopoly "
