@@ -79,8 +79,9 @@ class CinematicEpisodes(unittest.TestCase):
             js = _code(ROOT / "renderer" / "scenes" / f"{eid}.js")
             for fid in ep["figures"]:
                 self.assertIn(fid, FIGS, f"{eid}: figure {fid} has no characters/figures/{fid}.json")
+            derived = dict(re.findall(r"c\.(\w+) = \{ \.\.\.c\.(\w+)", js))   # runtime variants of a cast member (e.g. a card portrait)
             for fid in re.findall(r"\bid: '(\w+)'", js):
-                self.assertIn(fid, ep["figures"], f"{eid}: shot uses {fid}, which is not in the episode's figures")
+                self.assertIn(derived.get(fid, fid), ep["figures"], f"{eid}: shot uses {fid}, which is not in the episode's figures")
             for p in re.findall(r"\bpose: '(\w+)'", js) + re.findall(r"\? 'sit_type' : '(\w+)'", js):
                 self.assertIn(p, POSES, f"{eid}: unknown pose {p}")
             for x in re.findall(r"\bexpr: '(\w+)'", js):
@@ -197,6 +198,43 @@ class StudioQA(unittest.TestCase):
                 for c in r["characters"]:
                     self.assertIn(c, ep["figures"])
             self.assertTrue(m["slideshow_risk"]["ok"], m["slideshow_risk"])
+
+
+class SlateEpisodes(unittest.TestCase):
+    """Episodes 04-09: retention devices are present and verifiable, and numbers are spoken as words."""
+    SLATE = [e for e in EPS if int(e[3:5]) >= 4]
+
+    def test_fun_facts_and_next_case_hook(self):
+        for eid in self.SLATE:
+            js = _code(ROOT / "renderer" / "scenes" / f"{eid}.js")
+            self.assertGreaterEqual(js.count("type: 'funfact'"), 2, f"{eid}: at least two FUN FACT cards")
+            self.assertIn("type: 'nextcase'", js, f"{eid}: end-of-video NEXT CASE hook")
+
+    def test_every_claim_has_two_sources(self):
+        for eid in self.SLATE:
+            ep = load_episode(eid); ids = {s["id"] for s in ep["sources"]}
+            for c in ep["claims"]:
+                self.assertGreaterEqual(len(c["sources"]), 2, f"{eid}: {c['id']}")
+                self.assertTrue(set(c["sources"]) <= ids, f"{eid}: {c['id']} cites an unknown source")
+            used = {c for s in ep["scenes"] for c in s["claims"]}
+            self.assertTrue(used <= {c["id"] for c in ep["claims"]}, f"{eid}: scene cites an unknown claim")
+
+    def test_dollar_amounts_are_spoken_as_words(self):
+        # Piper reads "$200,000" as "dollar two, hundred thousand": every amount needs a spoken form
+        for eid in self.SLATE:
+            ep = load_episode(eid); table = {k.lower() for k in (ep["narrator_profile"].get("pronounce") or {})}
+            for s in ep["scenes"]:
+                for l in s["lines"]:
+                    for w in re.findall(r"\$[\d,]+", l["text"]):
+                        self.assertIn(w.rstrip(",").lower(), table, f"{eid}: '{w}' has no spoken form")
+
+    def test_ongoing_louvre_case_is_anonymous_and_presumes_innocence(self):
+        ep = load_episode("tcv04-louvre-heist"); js = _code(ROOT / "renderer" / "scenes" / "tcv04-louvre-heist.js")
+        said = " ".join(l["text"] for s in ep["scenes"] for l in s["lines"]).lower()
+        self.assertIn("presumed innocent", said)
+        for fid in ep["figures"]:
+            self.assertFalse(FIGS[fid]["real_person"], fid)
+        self.assertRegex(ep.get("legal_status_verified", ""), r"^\d{4}-\d{2}-\d{2}$")
 
 
 class OngoingCaseSafeguards(unittest.TestCase):

@@ -473,7 +473,7 @@
           { text: 'PASSWORD:', fs: 40, at: pw - 0.1 },
           { text: 'LOUVRE', fs: 64, colour: '#8e1f18', at: lv - 0.05 },
           { text: 'IN USE IN 2025? NOT CONFIRMED', fs: 28, colour: '#2f4f6b', at: l3 }] }],
-        shake: t > lv && t < lv + 0.3 ? 0.4 : 0,
+        shake: [{ at: lv, amp: 0.4 }],
         tag: TAG1
       }));
     },
