@@ -34,10 +34,10 @@
   // a white saloon with a black roof and black wheels (no badge, no grille emblem); base at (x, y), facing right
   function merc(x, y, k, flip = 1) {
     return `<g transform="translate(${f1(x)} ${f1(y)}) scale(${f1(k * flip * 1000) / 1000} ${f1(k * 1000) / 1000})"><ellipse cx="0" cy="6" rx="250" ry="22" fill="#000" opacity="0.5"/>` +
-      `<path d="M-226 -6 L-228 -62 Q-218 -86 -170 -92 L-110 -98 L-60 -150 Q-36 -162 52 -162 L112 -156 Q160 -140 188 -96 L232 -84 Q246 -76 244 -40 L240 -6 Z" fill="#e9e8e2" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>` +
-      `<path d="M-60 -150 Q-36 -162 52 -162 L112 -156 Q160 -140 188 -96 L-110 -98 Z" fill="#15171c" stroke="${INK}" stroke-width="5"/>` +
-      `<path d="M-50 -142 L-94 -100 L44 -100 L44 -152 Z M56 -152 L56 -100 L172 -100 Q156 -134 116 -148 Z" fill="#2a3240" stroke="${INK}" stroke-width="4"/>` +
-      `<path d="M-226 -58 L240 -66" stroke="#b9b8b0" stroke-width="4"/><path d="M-30 -96 L-30 -10 M60 -98 L60 -10" stroke="#9a9a92" stroke-width="3"/>` +
+      `<path d="M-112 -96 L-64 -160 Q-42 -176 50 -176 L116 -170 Q166 -152 194 -96 Z" fill="#101215" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>` +
+      `<path d="M-96 -102 L-58 -148 L40 -150 L40 -102 Z M54 -150 L110 -146 Q146 -130 170 -102 L54 -102 Z" fill="#4a5a6e" stroke="${INK}" stroke-width="4"/><path d="M-60 -162 Q-40 -174 50 -174 L114 -168" stroke="#8a94a4" stroke-width="5" fill="none"/>` +
+      `<path d="M-226 -6 L-228 -62 Q-218 -86 -170 -92 L-112 -98 L194 -98 L232 -84 Q246 -76 244 -40 L240 -6 Z" fill="#ecebe5" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>` +
+      `<path d="M-226 -58 L240 -66" stroke="#b9b8b0" stroke-width="4"/><path d="M-30 -96 L-30 -10 M60 -96 L60 -10" stroke="#9a9a92" stroke-width="3"/>` +
       `<rect x="214" y="-70" width="26" height="16" rx="4" fill="#fff6d8"/><rect x="-230" y="-72" width="12" height="20" fill="#c8312b"/>` +
       [-140, 150].map(cx => `<circle cx="${cx}" cy="-6" r="44" fill="#0a0a0c" stroke="${INK}" stroke-width="5"/><circle cx="${cx}" cy="-6" r="24" fill="#1c1e22"/>` + [0, 1, 2, 3, 4].map(i => `<path d="M${cx} -6 L${f1(cx + Math.cos(i * 1.256) * 22)} ${f1(-6 + Math.sin(i * 1.256) * 22)}" stroke="#2c2f36" stroke-width="5"/>`).join('')).join('') + `</g>`;
   }
@@ -287,11 +287,11 @@
         set: 'hg13_vault', setOpts: { side: 'wall', holes: [1, 1, 1], through: 'dark', rig: { on }, plugs: false }, grade: 'cold',
         cam: { from: { x: 40, y: 80, z: 1.22 }, to: { x: 80, y: 110, z: 1.32 }, handheld: on ? 3.2 : 1.2 },
         shake: on ? [{ at: dt, amp: 0.4 }] : [],
-        figures: [{ id: 'hg13_crew_a', x: 900, y: 1990, scale: 1.1, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused', gaze: [0.6, 0.3],
+        figures: [{ id: 'hg13_crew_a', x: 1000, y: 2110, scale: 1.1, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused', gaze: [0.6, 0.3],
           keys: [{ at: l1 - 0.4, pose: 'examine', dur: 0.5 }, { at: dt - 0.1, expr: 'determined', gaze: [0.8, 0.4], dur: 0.3 }] }],
         overlays: [
           { type: 'label', at: hg - 0.1, until: l1 - 0.1, x: 60, y: 420, text: 'HATTON GARDEN · LONDON', fs: 42, sub: "The city's jewellery district" },
-          { type: 'callout', at: dt + 0.05, target: [740, 1090], depth: 0.62, r: 80, label: [90, 470], w: 560, text: 'DIAMOND-TIPPED CORE DRILL', fs: 32, colour: '#ffd23f' }
+          { type: 'callout', at: dt + 0.05, target: [610, 985], depth: 0.62, r: 80, label: [90, 470], w: 560, text: 'DIAMOND-TIPPED CORE DRILL', fs: 32, colour: '#ffd23f' }
         ],
         tag: LIKENESS
       });
@@ -332,8 +332,8 @@
             keys: [{ at: cab - 0.2, pose: 'present', expr: 'worried', dur: 0.35 }, { at: cab + 0.6, pose: 'bowed', dur: 0.5 }] },
           { id: 'hg13_crew_b', x: 880, y: 1700, scale: 0.8, dir: -1, turn: 0.55, pose: 'stand_tense', expr: 'focused', gaze: [0.6, -0.4],
             keys: [{ at: cab + 0.2, pose: 'arms_crossed', expr: 'worried', dur: 0.5 }, { at: qt + 0.3, headTurn: 0.4, gaze: [-0.8, 0], dur: 0.4 }] },
-          { id: 'hg13_reader', x: 640, y: 1760, scale: 0.8, dir: 1, turn: 0.5, headTurn: -0.3, pose: 'stand', expr: 'stern', gaze: [-0.6, -0.2], show: [l1 - 0.7],
-            keys: [{ at: qt - 0.35, headTurn: 0, gaze: [0.5, 0], dur: 0.3 }], walk: { from: 640, to: 1450, at: qt - 0.2, dur: 2.0, cadence: 5 } }
+          { id: 'hg13_reader', x: 620, y: 1600, scale: 0.72, depth: 0.95, dir: 1, turn: 0.5, headTurn: -0.3, pose: 'stand', expr: 'stern', gaze: [-0.6, -0.2], show: [l1 - 0.7],
+            keys: [{ at: qt - 0.35, headTurn: 0, gaze: [0.5, 0], dur: 0.3 }], walk: { from: 620, to: 1450, at: qt - 0.2, dur: 2.0, cadence: 5 } }
         ],
         overlays: [
           { type: 'circle', at: cab, target: [540, 880], depth: 0.62, rx: 240, ry: 210, colour: '#ffd23f' },
@@ -386,8 +386,8 @@
         figures: [
           { id: 'agent_b', x: 400, y: 1760, scale: 1.0, dir: 1, turn: 0.55, pose: 'sit_type', expr: 'focused', gaze: [0.8, 0.1],
             keys: [{ at: sc, pose: 'sit_type_b', dur: 0.2 }, { at: sc + 0.3, pose: 'sit_type', dur: 0.2 }, { at: sc + 0.6, pose: 'sit_type_b', dur: 0.2 }, { at: sc + 0.9, pose: 'sit_type', dur: 0.2 }, { at: out - 0.1, pose: 'sit', expr: 'realise', gaze: [0.9, -0.3], dur: 0.35 }] },
-          { id: 'detective', x: -220, y: 1740, scale: 0.98, dir: 1, turn: 0.5, pose: 'stand', expr: 'determined',
-            walk: { from: -220, to: 130, at: 0.2, dur: 1.4, cadence: 6 }, keys: [{ at: 1.8, pose: 'arms_crossed', dur: 0.4 }, { at: wh - 0.2, pose: 'point', expr: 'realise', gaze: [0.9, -0.3], dur: 0.35 }] }
+          { id: 'detective', x: -220, y: 1660, scale: 0.92, depth: 0.96, dir: 1, turn: 0.5, pose: 'stand', expr: 'determined',
+            walk: { from: -220, to: 190, at: 0.2, dur: 1.4, cadence: 6 }, keys: [{ at: 1.8, pose: 'arms_crossed', dur: 0.4 }, { at: wh - 0.2, pose: 'point', expr: 'realise', gaze: [0.9, -0.3], dur: 0.35 }] }
         ],
         props: [{ depth: 1.04, svg: grid }],
         overlays: [
@@ -404,11 +404,11 @@
       return E.cine.shot(ctx, {
         set: 'hg13_street', setOpts: { doorX: 820, lampX: 160 }, grade: 'night', rain: { n: 110, op: 0.28 },
         cam: { from: { x: 30, y: 60, z: 1.06 }, to: { x: -20, y: 70, z: 1.14 }, handheld: 2.5 },
-        figures: [{ id: 'agent_a', x: -240, y: 1660, scale: 0.86, dir: 1, turn: 0.5, pose: 'stand', silhouette: 'cool', propOverride: null,
-          walk: { from: -240, to: 210, at: 0.0, dur: Math.max(0.6, bg - 0.5), cadence: 6.5 }, keys: [{ at: bg - 0.45, pose: 'kneel', gaze: [0.8, 0.6], dur: 0.45 }, { at: ctx.T - 1.0, pose: 'stand_tense', dur: 0.45 }] }],
-        props: [{ depth: 1.01, svg: merc(600, 1700, 1.12) }],
+        figures: [{ id: 'agent_a', x: -240, y: 1650, scale: 0.6, dir: 1, turn: 0.5, pose: 'stand', silhouette: 'cool', propOverride: null,
+          walk: { from: -240, to: 150, at: 0.0, dur: Math.max(0.6, bg - 0.5), cadence: 6.5 }, keys: [{ at: bg - 0.45, pose: 'kneel', gaze: [0.8, 0.6], dur: 0.45 }, { at: ctx.T - 1.0, pose: 'stand_tense', dur: 0.45 }] }],
+        props: [{ depth: 1.01, svg: merc(620, 1690, 1.5) }],
         overlays: [
-          { type: 'svg', at: bg, svg: tt => micBadge(600, 660, tt, 0.9, 'LISTENING DEVICE') },
+          { type: 'svg', at: bg, svg: tt => micBadge(620, 680, tt, 0.9, 'LISTENING DEVICE') },
           { type: 'label', at: 0.15, x: 60, y: 420, text: 'THE GANG’S CAR', fs: 40, sub: 'Secretly bugged by police' }
         ],
         tag: GENERIC
@@ -463,7 +463,7 @@
         set: 'hg13_street', setOpts: { doorX: 760, doorOpen: seg(t, 0.2, 1.2), van: true, vanX: 1060, lampX: 140 }, grade: 'night', rain: { n: 100, op: 0.25 },
         cam: { from: { x: 60, y: 20, z: 1.02 }, to: { x: 20, y: 40, z: 1.1 }, handheld: 1.8 },
         figures: [
-          { id: 'hg13_basil', x: 760, y: 1176, scale: 0.52, dir: -1, turn: 0.35, pose: 'stand', silhouette: 'warm', depth: 0.55,
+          { id: 'hg13_basil', x: 760, y: 1176, scale: 0.36, dir: -1, turn: 0.35, pose: 'stand', silhouette: 'warm', depth: 0.55,
             keys: [{ at: 0.9, pose: 'present', dur: 0.4 }, { at: ins + 0.4, pose: 'stand', dur: 0.4 }, { at: yrs, pose: 'hands_behind', dur: 0.5 }] },
           { id: 'hg13_crew_a', x: -160, y: 1330, scale: 0.64, dir: 1, turn: 0.5, pose: 'stand', walk: { from: -160, to: 470, at: 0.6, dur: 2.4, cadence: 6 } },
           { id: 'hg13_crew_b', x: -380, y: 1330, scale: 0.64, dir: 1, turn: 0.5, pose: 'stand', walk: { from: -380, to: 290, at: 0.9, dur: 2.6, cadence: 6 }, keys: [{ at: yrs + 0.2, pose: 'stand_tense', dur: 0.4 }] }
@@ -498,11 +498,11 @@
       const t = ctx.t, l1 = LS(ctx, 1, 2.3), pub = WT(ctx, 1, 9, 4.4), nx = LS(ctx, 2, 5.5);
       return E.cine.shot(ctx, {
         set: 'hg13_vault', setOpts: { side: 'wall', holes: [1, 1, 1], through: 'light', bins: 1120 }, grade: 'cold',
-        cam: { keys: [{ at: 0, x: 40, y: 30, z: 1.08 }, { at: 0.4, x: 0, y: 0, z: 1.24, dur: Math.max(1, nx - 0.6) }], handheld: 1.0 },
+        cam: { keys: [{ at: 0, x: 40, y: 30, z: 1.08 }, { at: 0.4, x: 0, y: 0, z: 1.2, dur: Math.max(1, nx - 0.6) }], handheld: 1.0 },
         figures: [{ id: 'agent_b', x: 200, y: 1680, scale: 0.78, dir: 1, turn: 0.55, pose: 'torch', expr: 'focused', gaze: [0.8, -0.4], propOpts: { beamLen: 520 },
           keys: [{ at: l1, pose: 'examine', dur: 0.5 }, { at: pub, pose: 'stand', expr: 'neutral', gaze: [0.4, 0], dur: 0.5 }, { at: nx + 0.6, pose: 'arms_crossed', dur: 0.5 }] }],
         overlays: [
-          { type: 'nextcase', at: nx - 0.1, y: 380, w: 920, fs: 50, rows: [{ text: 'A cup of tea' }, { text: 'left a radioactive trail', colour: '#ffd23f', fs: 46 }, { text: ' ', fs: 16 }], sub: 'FOLLOW FOR THE NEXT CASE' }
+          { type: 'nextcase', at: nx - 0.1, y: 345, w: 920, fs: 46, rows: [{ text: 'A cup of tea' }, { text: 'left a radioactive trail', colour: '#ffd23f', fs: 44 }, { text: ' ', fs: 14 }], sub: 'FOLLOW FOR THE NEXT CASE' }
         ],
         tag: GENERIC
       });
