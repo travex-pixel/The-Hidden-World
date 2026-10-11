@@ -48,3 +48,7 @@
 - 2026-10-11 12:05:35 tcv04-louvre-heist: rendering (final, seed 1)
 - 2026-10-11 12:18:36 tcv05-db-cooper: rendered in 896s
 - 2026-10-11 12:19:48 tcv05-db-cooper: VERIFIED -> series/true-crime-cinematic/output/true_crime_05_db_cooper.mp4 (79.1s, 34.7 MB, sha256 52aab85d5a38)
+- 2026-10-11 12:28:03 tcv04-louvre-heist: rendered in 1348s
+- 2026-10-11 12:28:57 tcv04-louvre-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_04_louvre_heist.mp4 (79.5s, 34.9 MB, sha256 c2b6d900c8b5)
+- 2026-10-11 12:29:56 produce 4: regenerating episode data
+- 2026-10-11 12:29:56 tcv04-louvre-heist: rendering (final, seed 1)
