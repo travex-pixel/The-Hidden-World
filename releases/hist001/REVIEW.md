@@ -1,5 +1,10 @@
 # H01 — You Wake Up in a Medieval Village · review pack
 
+> **Correction (v2):** the v1 claim below of 0.0 px foot slip was wrong. QA measured the feet before a unit
+> conversion, so in shots where a character is scaled, a planted foot visibly drifted while walking. Fixed in engine v2
+> and re-rendered: see [v2/](v2/) (`hist001-medieval-village-v2.mp4`, watercolour character style). This v1 is kept
+> unchanged for comparison.
+
 `hist001-medieval-village.mp4` — 1920×1080, 30 fps, 95.6 s, H.264 + AAC, 40.5 MB, seed 1, rendered 2026-10-11.
 Reproduce: `python -m pipeline.build hist001-medieval-village --quality final` (≈7.5 min on 4 CPU cores).
 
