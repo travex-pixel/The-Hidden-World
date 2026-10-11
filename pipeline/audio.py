@@ -4,7 +4,7 @@ Music is a small composed system: a chord progression per cue, a soft pad, a sub
 music-box melody on a pentatonic scale. The seed varies ornamentation only, never the cue structure.
 """
 from __future__ import annotations
-import math, wave
+import math, wave, zlib
 from pathlib import Path
 import numpy as np
 
@@ -140,7 +140,14 @@ def compose(timeline: list[dict], total: float, seed: int, bpm: int = 96, key_se
 
 # ---------------------------------------------------------------- sfx
 def sfx(name: str, seed: int = 0) -> np.ndarray:
-    rng = np.random.default_rng(seed + hash(name) % 1000)
+    """A synthesised sound effect, peak-limited to 0.95 and reproducible for a given (name, seed)."""
+    x = _sfx(name, seed)
+    peak = float(np.max(np.abs(x))) if len(x) else 0.0
+    return (x * (0.95 / peak) if peak > 0.95 else x).astype(np.float32)
+
+
+def _sfx(name: str, seed: int = 0) -> np.ndarray:
+    rng = np.random.default_rng(seed + zlib.crc32(name.encode()) % 1000)   # stable across runs (hash() is salted per process)
     def noise(d): return rng.standard_normal(int(d * SR)).astype(np.float32)
     def tt(d): return np.arange(int(d * SR)) / SR
     if name == "sparkle":

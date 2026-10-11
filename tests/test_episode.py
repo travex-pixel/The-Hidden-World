@@ -144,6 +144,13 @@ class AudioSynthesis(unittest.TestCase):
         m = audio.compose([{"start": 0, "end": 6, "music_cue": "curious"}, {"start": 6, "end": 12, "music_cue": "revelation"}], 12, 3)
         self.assertEqual(len(m), 12 * audio.SR); self.assertTrue(np.isfinite(m).all()); self.assertGreater(float(np.abs(m).max()), 0.05)
 
+    def test_sfx_reproducible_across_processes(self):
+        # sound effects must not depend on Python's per-process hash salt
+        import subprocess, sys as _sys
+        code = "from pipeline import audio; import numpy as np; print(float(np.abs(audio.sfx('stamp', 1)).sum()))"
+        runs = {subprocess.run([_sys.executable, "-c", code], cwd=ROOT, capture_output=True, text=True, env={**__import__('os').environ, "PYTHONHASHSEED": h}).stdout for h in ("1", "2")}
+        self.assertEqual(len(runs), 1, runs)
+
     def test_music_reproducible_for_seed(self):
         import numpy as np
         from pipeline import audio
@@ -181,7 +188,7 @@ class RenderedOutput(unittest.TestCase):
             self.assertEqual(kinds, ["audio", "video"], c)
             v = next(s for s in p["streams"] if s["codec_type"] == "video")
             self.assertEqual(v["width"] * 16, v["height"] * 9, "must be 9:16")
-            self.assertGreater(float(p["format"]["duration"]), 30)
+            self.assertGreater(float(p["format"]["duration"]), 15)   # Round 2 parts are ~20-25 s by design
 
 
 if __name__ == "__main__":
