@@ -131,6 +131,11 @@ def main(argv=None) -> int:
     cast_ids = sorted({l["who"] for s_ in tl for l in s_.get("lines", [])} | set(ep.get("cast", [])))
     from pipeline.narrate import load_character
     cast = {cid: load_character(cid) for cid in cast_ids}
+    for fid in ep.get("figures", []):   # full-body figure library (characters/figures/<id>.json), Case Files v3
+        fp = ROOT / "characters" / "figures" / f"{fid}.json"
+        if not fp.exists():
+            log(f"ERROR: figure '{fid}' has no characters/figures/{fid}.json"); return 4
+        cast[fid] = json.loads(fp.read_text())
     (out_dir / "timeline.json").write_text(json.dumps([{k: v for k, v in s_.items() if k != "lines"} | ({"lines": [{k: v for k, v in l.items() if k != "env"} for l in s_["lines"]]} if s_.get("lines") else {}) for s_ in tl], indent=2))
     def _script(s, sc):
         if s.get("lines"):

@@ -29,6 +29,16 @@
   <linearGradient id="goldG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1c85a"/><stop offset="1" stop-color="${PAL.goldDark}"/></linearGradient>
 </defs>`;
   }
+  // dark watercolour texture for the cinematic true-crime look: mottled washes, paper fibre, grain, soft edge darkening.
+  // Lives in the persistent #paper layer (drawn once), so it costs nothing per frame.
+  function washOverlay(seed) {
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%"><defs>
+  <filter id="wmott" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.0035 0.0045" numOctaves="4" seed="${seed % 40}"/><feColorMatrix type="matrix" values="0 0 0 0 0.55  0 0 0 0 0.42  0 0 0 0 0.30  0 0 0 0.9 -0.32"/></filter>
+  <filter id="wfib"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.06" numOctaves="3" seed="${(seed + 5) % 40}"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.10"/></feComponentTransfer></filter>
+  <filter id="wgrain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="${(seed + 9) % 40}" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.13"/></feComponentTransfer></filter>
+  <radialGradient id="wvig" cx="50%" cy="44%" r="78%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#05040a" stop-opacity="0.38"/></radialGradient>
+</defs><rect width="${W}" height="${H}" filter="url(#wmott)" style="mix-blend-mode:soft-light"/><rect width="${W}" height="${H}" filter="url(#wfib)" style="mix-blend-mode:multiply"/><rect width="${W}" height="${H}" filter="url(#wgrain)" style="mix-blend-mode:overlay"/><rect width="${W}" height="${H}" fill="url(#wvig)"/></svg>`;
+  }
   function paperOverlay(seed) {
     // static grain + vignette, rendered in a separate persistent SVG (see index.html)
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%"><defs>
@@ -362,7 +372,7 @@
     registerScenes(map) { Object.assign(this.scenes, map); },
     async setup(ep, timeline, seed, visual, art, cast) {
       this.state = { ep, timeline, seed, total: timeline[timeline.length - 1].end, visual: visual || 'svg', art: art || { panels: {} }, cast: cast || {} };
-      document.getElementById('paper').innerHTML = paperOverlay(seed);
+      document.getElementById('paper').innerHTML = ep.overlay === 'wash' ? washOverlay(seed) : paperOverlay(seed);
       // preload artwork so frames never capture a half-loaded image
       this._imgs = await Promise.all(Object.values(this.state.art.panels).map(p => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('cannot load ' + p.src)); im.src = '../' + p.src; })));
     },
