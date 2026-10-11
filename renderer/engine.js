@@ -309,8 +309,14 @@
   }
 
   // ---------- "punch" captions: 1-3 word chunks shown word by word on real spoken-word timings (Piper alignments)
-  const _mctx = document.createElement('canvas').getContext('2d'); const _mw = {};
-  function measure(txt, fs) { const k = fs + '|' + txt; if (_mw[k] === undefined) { _mctx.font = `800 ${fs}px Nunito`; _mw[k] = _mctx.measureText(txt).width; } return _mw[k]; }
+  // measure with a real (hidden) SVG text node so widths match exactly what the frame renders
+  const _mw = {}; let _msvg = null;
+  function measure(txt, fs) {
+    const k = fs + '|' + txt; if (_mw[k] !== undefined) return _mw[k];
+    if (!_msvg) { _msvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); _msvg.setAttribute('style', 'position:absolute;left:-9999px;top:0;width:10px;height:10px'); document.body.appendChild(_msvg); }
+    const el = document.createElementNS('http://www.w3.org/2000/svg', 'text'); el.setAttribute('font-family', 'Nunito'); el.setAttribute('font-weight', '800'); el.setAttribute('font-size', fs); el.textContent = txt;
+    _msvg.appendChild(el); const w = el.getComputedTextLength(); _msvg.removeChild(el); return (_mw[k] = w);
+  }
   function punchChunks(lines) {
     const words = []; lines.forEach(l => (l.words || []).forEach(w => words.push({ w: w.w, s: l.start + w.start, e: l.start + w.end })));
     const chunks = []; let cur = [];
@@ -330,19 +336,19 @@
     for (let i = 0; i < ch.length; i++) { const st = ch[i][0].s - 0.06, nx = i + 1 < ch.length ? ch[i + 1][0].s - 0.06 : ch[i][ch[i].length - 1].e + 0.6; if (t >= st && t < nx) { k = i; break; } }
     if (k < 0) return '';
     const c = ch[k]; const emph = sc.emphasis ? new Set(sc.emphasis.map(capKey)) : null;
-    const fs = 92, gap = 26; const ws = c.map(w => ({ ...w, txt: w.w.toUpperCase(), wd: measure(w.w.toUpperCase(), fs) }));
+    const fs = 92, gap = 56; const ws = c.map(w => ({ ...w, txt: w.w.toUpperCase(), wd: measure(w.w.toUpperCase(), fs) }));
     // one or two rows, centred
     const total = ws.reduce((a, w) => a + w.wd, 0) + gap * (ws.length - 1);
-    const rows = total > 940 && ws.length > 1 ? [ws.slice(0, Math.ceil(ws.length / 2)), ws.slice(Math.ceil(ws.length / 2))] : [ws];
+    const rows = total > 920 && ws.length > 1 ? [ws.slice(0, Math.ceil(ws.length / 2)), ws.slice(Math.ceil(ws.length / 2))] : [ws];
     const enter = ease.back(seg(t, c[0].s - 0.06, c[0].s + 0.1)); let out = `<g transform="translate(${W / 2} ${y0}) scale(${f1((0.86 + 0.14 * enter) * 100) / 100}) translate(${-W / 2} ${-y0})">`;
     rows.forEach((row, ri) => {
       const rw = row.reduce((a, w) => a + w.wd, 0) + gap * (row.length - 1); let x = W / 2 - rw / 2; const y = y0 + (ri - (rows.length - 1) / 2) * fs * 1.08 + fs * 0.34;
       row.forEach(w => {
         const shown = t >= w.s - 0.04; if (!shown) { x += w.wd + gap; return; }
         const active = t < w.e + 0.05; const hot = emph && emph.has(capKey(w.w));
-        const pop = active ? 1 + 0.12 * (1 - ease.out(seg(t, w.s - 0.04, w.s + 0.12))) : 1;
+        const pop = active ? 1 + 0.07 * (1 - ease.out(seg(t, w.s - 0.04, w.s + 0.12))) : 1;
         const fill = hot ? '#ff5b45' : active ? '#ffd84a' : '#ffffff'; const cx = x + w.wd / 2;
-        out += `<text x="${f1(cx)}" y="${f1(y)}" text-anchor="middle" transform="translate(${f1(cx)} ${f1(y - fs * 0.34)}) scale(${f1(pop * 100) / 100}) translate(${f1(-cx)} ${f1(-(y - fs * 0.34))})" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${fill}" stroke="#05050a" stroke-width="16" stroke-linejoin="round" paint-order="stroke">${esc(w.txt)}</text>`;
+        out += `<text x="${f1(cx)}" y="${f1(y)}" text-anchor="middle" transform="translate(${f1(cx)} ${f1(y - fs * 0.34)}) scale(${f1(pop * 100) / 100}) translate(${f1(-cx)} ${f1(-(y - fs * 0.34))})" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${fill}" stroke="#05050a" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${esc(w.txt)}</text>`;
         x += w.wd + gap;
       });
     });

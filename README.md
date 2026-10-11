@@ -16,6 +16,7 @@ An original animated educational-mystery channel and the $0 production factory t
 ### Case Files (true crime, illustrated documentary)
 **01 — *She Got Life for Murder. The 'Blood' Was Sound-Deadener.*** (Azaria Chamberlain) → [`series/true-crime/output/true_crime_01.mp4`](series/true-crime/output/true_crime_01.mp4)
 **02 — *How the Unabomber's Own Words Gave Him Away*** → [`series/true-crime/output/true_crime_02.mp4`](series/true-crime/output/true_crime_02.mp4)
+**03 — *He Asked Police One Question. Their Answer Was a Trap.*** (BTK, 60 fps, engine v2) → [`series/true-crime/output/true_crime_03.mp4`](series/true-crime/output/true_crime_03.mp4)
 Research dossiers, scripts, storyboards, sources, QA manifest and regeneration steps: [`series/true-crime/`](series/true-crime/README.md).
 
 ## How it works

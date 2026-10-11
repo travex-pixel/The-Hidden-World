@@ -4,8 +4,9 @@
 |---|------|------|-------|
 | 01 | [`output/true_crime_01.mp4`](output/true_crime_01.mp4) | Azaria Chamberlain, Uluru, Australia (1980–2012) | A mother jailed for life on "baby's blood" that was factory sound-deadener; a jacket found by chance freed her. |
 | 02 | [`output/true_crime_02.mp4`](output/true_crime_02.mp4) | The Unabomber, USA (1978–1998) | Seventeen years without a name, undone by his own published words and his own brother. |
+| 03 | [`output/true_crime_03.mp4`](output/true_crime_03.mp4) | BTK, Wichita, USA (1974–2005) | He asked police whether a floppy disk could be traced. They said it was safe. A deleted file named his church and "Dennis". |
 
-Both are 1080 × 1920, 30 fps, H.264 + AAC, about −14 LUFS, and under 90 s. They are illustrated documentary reconstructions made entirely by this repository's existing engine. No paid service was used.
+All are 1080 × 1920, H.264 + AAC, about −14 LUFS, and under 90 s (01–02 at 30 fps; 03 at 60 fps). They are illustrated documentary reconstructions made entirely by this repository's existing engine. No paid service was used.
 
 ## What's in this folder
 - `research_case_01.md`, `research_case_02.md`: selection rationale, a claim-by-claim evidence map, the ethics review and the full dossiers. `research_other_candidates/` holds the shortlisted cases that were rejected, plus audience-interest evidence.
@@ -23,6 +24,7 @@ pip install -r requirements.txt && npm install && npx playwright install chromiu
 python series/true-crime/make_episodes.py          # episode.json from the reviewed script
 python series/true-crime/qa.py 1 --render          # render + verify + copy to output/true_crime_01.mp4
 python series/true-crime/qa.py 2 --render
+python series/true-crime/qa.py 3 --render          # 60 fps (quality final60), about 12 minutes
 python series/true-crime/tools/write_docs.py       # refresh the storyboard and sources docs
 python -m unittest discover -s tests
 ```
@@ -44,6 +46,14 @@ From a phone, use the existing GitHub Actions workflow: **Actions → Render epi
 - `renderer/doc.js`: the shared Case Files design kit (maps, timelines, typed cards, stamps, ILLUSTRATION tags, film grain).
 - `renderer/scenes/tc01-*.js`, `tc02-*.js`: per-episode illustrated scenes. `assets/fonts/CourierPrime-*` (OFL).
 - Tests: `tests/test_true_crime.py`.
+
+### Engine v2 (used by Case File 03; every feature is opt-in, so older episodes render unchanged)
+- **Real word timings:** `narrator_profile.word_timing` uses Piper's phoneme alignments (needs `pip install onnx`) to time every caption word. Multi-word years such as "1974" map to their full spoken span.
+- **Punch captions** (`caption_style: "punch"`): one to three words at a time, each appearing as it is spoken. The current word is yellow with a small pop and key words are red. Words are measured with the real font.
+- **Transitions:** `push` (whip with horizontal motion blur), `zoom` (scale-through crossfade) and `flash`. **Beat-snapped cuts:** `music.beat_snap` puts every scene end on the BPM grid.
+- **Music cues** `drive` / `drive-peak` (saw-bass ostinato on eighths, sixteenth hats, kick on 1 and 3). **Sound effects** `riser`, `sub`, `click`, `glitch`.
+- **`final60` quality** (60 fps), plus `fade_out` on the last scene and camera shake, dust, lens flare and police-light primitives in `doc.js`.
+- **Narration fixes found by speech recognition:** years are spoken as "nineteen seventy four" (`year_words`); hyphenated numbers and ambiguous words are reworded.
 
 ## Upload from an Android phone
 1. **Get the files.** On your phone, open this repository on github.com (Chrome), switch to branch `ccr-67645e21-nwgkaq`, go to `series/true-crime/output/`, tap `true_crime_01.mp4`, then **⋯ → Download** (or "View raw" and save). Do the same for `true_crime_02.mp4`. If the files were sent to you in chat, just save them from there.

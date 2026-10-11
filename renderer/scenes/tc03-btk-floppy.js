@@ -95,7 +95,7 @@
       w += `<rect width="${W}" height="${H}" fill="url(#dvig)"/>`;
       let s = D.defs + wrapShake(ctx, [{ at: lied, amp: 1.3 }], D.camera(ctx, { zoom: [1.18, 1.04], y: [40, 0] }, w));
       s += `<rect width="${W}" height="${H}" fill="#2a0000" opacity="${f1(0.35 * pk)}"/>`;
-      s += `<g transform="translate(540 770) scale(2.2) translate(-540 -770)">` + D.stamp(540, 770, 'TRAP', seg(t, lied, lied + 0.2), -9, '#ff3b2f') + `</g>`;
+      s += `<g transform="translate(540 1080) scale(2.2) translate(-540 -1080)">` + D.stamp(540, 1080, 'TRAP', seg(t, lied, lied + 0.2), -7, '#ff3b2f') + `</g>`;
       s += `<rect x="0" y="300" width="${W}" height="110" fill="#000" opacity="0.55"/>` + label(60, 380, 'THE ANSWER POLICE GAVE', seg(t, 0.1, 1.0), { fs: 40 });
       return s + D.tag('ILLUSTRATION · AD TEXT AS REPORTED') + D.film(t) + D.bug(ctx.ep);
     },
@@ -186,7 +186,7 @@
     // 12 — the reveal: two words in the file's hidden data
     tc3_reveal(ctx) {
       const t = ctx.t; const a = WT(ctx, 0, 0, 0.3), b = WT(ctx, 1, 3, 2.4);
-      let s = D.defs + `<rect width="${W}" height="${H}" fill="#020303"/>` + scanlines(0.14) + `<ellipse cx="540" cy="760" rx="600" ry="420" fill="${GREEN}" opacity="${f1(0.05 + 0.04 * Math.sin(t * 9))}"/>`;
+      let s = D.defs + `<rect width="${W}" height="${H}" fill="#020303"/>` + scanlines(0.14) + `<defs><radialGradient id="crtglow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="${GREEN}" stop-opacity="${f1(0.16 + 0.04 * Math.sin(t * 9))}"/><stop offset="1" stop-color="${GREEN}" stop-opacity="0"/></radialGradient></defs><ellipse cx="540" cy="760" rx="700" ry="520" fill="url(#crtglow)"/>`;
       s += `<text x="540" y="430" text-anchor="middle" font-family="Courier Prime" font-weight="700" font-size="34" letter-spacing="6" fill="${GREEN}" opacity="0.8">IN THE DELETED FILE'S HIDDEN DATA</text>`;
       const ka = ease.back(seg(t, a - 0.05, a + 0.2)), kb = ease.back(seg(t, b - 0.05, b + 0.2));
       let inner = '';
@@ -213,11 +213,13 @@
     tc3_arrest(ctx) {
       const t = ctx.t; const l2 = LS(ctx, 1, 2.4); const sw = ease.inOut(seg(t, l2 - 0.3, l2 + 0.3));
       let s = D.defs + `<rect width="${W}" height="${H}" fill="#05060a"/>`;
-      // part A: two abstract band profiles slide together and align
-      const al = ease.inOut(seg(t, 0.3, 1.6)); const r = E.mulberry32(31); const bands = Array.from({ length: 16 }, () => [r() * 760, 6 + r() * 16]);
+      // part A: familial comparison. A close relative shares about half the bands, so the profiles match only partly (never identical)
+      const al = ease.inOut(seg(t, 0.3, 1.6)); const r = E.mulberry32(31);
+      const bandsA = Array.from({ length: 16 }, () => [r() * 760, 6 + r() * 16]);
+      const bandsB = bandsA.map((b, j) => j % 2 === 0 ? b : [r() * 760, 6 + r() * 16]);   // every other band shared
       let a = '';
-      [[-150, 'SAMPLE A'], [150, 'SAMPLE B']].forEach(([dx, lab], i) => { const x = 540 + dx * (1 - al) * 1.6 + dx * 0.55; a += `<rect x="${f1(x - 80)}" y="300" width="160" height="800" rx="10" fill="#0e1422" stroke="#2c3a5a" stroke-width="3"/>` + bands.map(([y, h], j) => `<rect x="${f1(x - 64)}" y="${f1(320 + y)}" width="128" height="${f1(h)}" fill="${al > 0.95 && j % 3 === 0 ? GREEN : '#7fa4ff'}" opacity="0.85"/>`).join('') + `<text x="${f1(x)}" y="1150" text-anchor="middle" font-family="Courier Prime" font-weight="700" font-size="30" fill="${C.muted}">${lab}</text>`; });
-      a += `<g opacity="${f1(seg(t, 1.6, 1.9))}">${D.glowText(540, 250, 'FAMILIAL DNA: LINK CONFIRMED', 46, GREEN, { font: 'Courier Prime', weight: 700 })}</g>`;
+      [[-150, 'CRIME SCENE', bandsA], [150, 'FAMILY SAMPLE', bandsB]].forEach(([dx, lab, bands]) => { const x = 540 + dx * (1 - al) * 1.2 + dx * 1.0; a += `<rect x="${f1(x - 80)}" y="300" width="160" height="800" rx="10" fill="#0e1422" stroke="#2c3a5a" stroke-width="3"/>` + bands.map(([y, h], j) => `<rect x="${f1(x - 64)}" y="${f1(320 + y)}" width="128" height="${f1(h)}" fill="${al > 0.95 && j % 2 === 0 ? GREEN : '#7fa4ff'}" opacity="0.85"/>`).join('') + `<text x="${f1(x)}" y="1150" text-anchor="middle" font-family="Courier Prime" font-weight="700" font-size="28" fill="${C.muted}">${lab}</text>`; });
+      a += `<g opacity="${f1(seg(t, 1.6, 1.9))}">${D.glowText(540, 230, 'FAMILIAL DNA TEST', 46, GREEN, { font: 'Courier Prime', weight: 700 })}${D.glowText(540, 275, 'CLOSE-RELATIVE MATCH', 34, GREEN, { font: 'Courier Prime', weight: 700 })}</g>`;
       s += `<g opacity="${f1(1 - sw)}">${a}</g>`;
       // part B: street at night, police light wash, the date
       let b = `<defs><linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#04050a"/><stop offset="0.5" stop-color="#0d111c"/><stop offset="1" stop-color="#151820"/></linearGradient></defs><rect width="${W}" height="${H}" fill="url(#road)"/>` +
