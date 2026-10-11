@@ -9,8 +9,8 @@
       const { t } = ctx;
       setCam(lerp(1.05, 1.15, sm(t, 0, 3)) + punch(t, 0.2, 0.06), 540, 980, ctx.gt);
       let s = blurSet(1, Q.officeSet(t, { warm: 0.8 }));
-      s += layer(1, person('sam', { x: 400, y: 1700, s: 2.2, ...alive(t, 0.9), ex: EAGER, look: [0.3, 0], lit: 1, arms: { l: [-10, 100], r: [-10, 100] }, armsFront: true }) + T.clipboard(700, 1250, 1.3, 'LISBON TRIP', '2 SPOTS LEFT!'));
-      return Q.frame(ctx, s, GRADE.day, { y: 1500 });
+      s += layer(1, person('sam', { x: 400, y: 1700, s: 2.2, ...alive(t, 0.9), ex: EAGER, look: [0.3, 0], lit: 1, arms: { l: [-10, 100], r: [-10, 100] }, armsFront: true }) + T.clipboard(700, 1080, 1.3, 'LISBON TRIP', '2 SPOTS LEFT!'));
+      return Q.frame(ctx, s, GRADE.day, { y: 1520 });   // clipboard sits above the caption so its status line stays readable
     },
     lc_pitch(ctx) {
       const { t } = ctx;
