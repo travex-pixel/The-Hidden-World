@@ -5,9 +5,58 @@
       "id": "tcv01-chamberlain",
       "title": "She Got Life for Murder. The 'Blood' Was Sound-Deadener. #Shorts",
       "file": "true_crime_01.mp4",
-      "status": "rendering",
-      "next_task": "python -m pipeline.build tcv01-chamberlain --quality final --seed 1"
+      "status": "verified_automated",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "media": {
+        "duration": 84.286,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 30733387,
+        "mean_volume_db": -17.3,
+        "max_volume_db": -1.2
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 2527,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -18.2,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.1,
+        "true_peak_dbtp": -1.2
+      },
+      "asr_word_error_rate": 0.077,
+      "frames_sampled": 14,
+      "qa_dir": "series/true-crime-cinematic/qa/true_crime_01",
+      "sha256": "b3a8abffe01712ea433fd89bd8f2cf9364963b844b1c293c9e642228031b8bef",
+      "output": "series/true-crime-cinematic/output/true_crime_01.mp4",
+      "verified": "2026-10-11T07:03:27"
     }
   },
-  "updated": "2026-10-11T06:50:42"
+  "updated": "2026-10-11T07:03:27"
 }
