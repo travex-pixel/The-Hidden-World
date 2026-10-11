@@ -20,6 +20,11 @@ Recommended YouTube title: **The Nicest Person in the Office Might Be Playing Yo
 | Delivery page (local) | [`the-favour/delivery/index.html`](the-favour/delivery/index.html) |
 | Delivery instructions | [`the-favour/delivery/README.md`](the-favour/delivery/README.md) |
 
+## Episode 2: "The Credit"
+Recommended YouTube title: **He Stole Her Idea in the Meeting. He Didn't Even Know.**
+
+Leah suggests a fix over coffee. Two days later, with a promotion on the line, Daniel pitches it to the director as his own idea, and genuinely believes it. The psychology: cryptomnesia, source memory, the egocentric bias, unequal credit and amplification. Deliverables live in [`the-credit/`](the-credit/) with the same layout as Episode 1 (`final.mp4` is not in Git). Source of truth: `make_the_credit.py`. Package with `python series/the-quiet-game/package.py --episode qg02-the-credit --hosted`.
+
 ## Get the MP4
 See [`the-favour/delivery/README.md`](the-favour/delivery/README.md) for the verified ways to get it onto an Android phone.
 

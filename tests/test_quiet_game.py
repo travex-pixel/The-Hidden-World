@@ -8,6 +8,7 @@ from pipeline.schema import load_episode  # noqa: E402
 from pipeline import captions  # noqa: E402
 
 EP = "qg01-the-favour"
+EPISODES = ["qg01-the-favour", "qg02-the-credit"]
 WS = (ROOT / "renderer" / "widescreen.js").read_text()
 DST = ROOT / "series" / "the-quiet-game" / "the-favour"
 
@@ -80,9 +81,49 @@ class StoryInvariants(unittest.TestCase):
         self.assertTrue(e["scenes"][0].get("chapter"), "first scene must open a chapter (0:00)")
 
 
+class CreditInvariants(unittest.TestCase):
+    """Episode 2, "The Credit"."""
+    def e2(self):
+        return load_episode("qg02-the-credit")
+
+    def test_generator_is_source_of_truth(self):
+        sys.path.insert(0, str(ROOT / "series" / "the-quiet-game"))
+        import importlib
+        mod = importlib.import_module("make_the_credit")
+        self.assertEqual(json.loads(json.dumps(mod.EPISODE)), json.loads((ROOT / "episodes" / "qg02-the-credit" / "episode.json").read_text()))
+
+    def test_figures_continue_from_episode_one(self):
+        f = self.e2()["figures"]; f1 = ep()["figures"]
+        self.assertAlmostEqual(f["northfield_on_time"] * 100, f1["northfield"], places=6)
+        late = f["northfield_weekly"] * (1 - f["northfield_on_time"])
+        self.assertLessEqual(f["recovered_per_week"], late)
+        self.assertLessEqual(f["week_one_reduction"], f["recovered_per_week"])
+        text = json.dumps(self.e2()["scenes"], ensure_ascii=False)
+        self.assertIn("forty late deliveries", text); self.assertIn("~40 late deliveries", text); self.assertIn("down 31", text)
+
+    def test_fair_play_clue_and_timestamps(self):
+        e = self.e2(); lines = " ".join(l["text"] for s in e["scenes"] for l in s.get("lines", []))
+        self.assertIn("since Monday", lines)                       # Daniel's tell
+        self.assertIn("seventeen minutes later", lines)
+        chat = next(s for s in e["scenes"] if s["id"] == "d09_chat")["shot"]["ui"]["messages"]
+        h = lambda t: int(t[:2]) * 60 + int(t[3:])
+        self.assertEqual(h(chat[1]["time"]) - h(chat[0]["time"]), 17)
+
+    def test_balance_and_caveats(self):
+        e = self.e2(); lines = " ".join(l["text"] for s in e["scenes"] for l in s.get("lines", []))
+        self.assertIn("I honestly thought it was mine", lines)      # a memory error, not a lie
+        self.assertIn("Maybe he had", lines)                        # Graham stays ambiguous
+        ov = next(s for s in e["scenes"] if s["id"] == "d21_overclaim")["shot"]["ex"]
+        self.assertEqual(ov.get("tag"), "Illustration")             # Ross & Sicoly used a scale, not percentages
+        claims = {c["id"]: c for c in e["claims"]}
+        for s in e["scenes"]:
+            if s["scene"] == "ws_explainer" and s["shot"]["ex"]["kind"] in ("source", "overclaim", "amplify"):
+                self.assertTrue(all(claims[c]["sources"] for c in s["claims"]) and s["claims"], s["id"])
+
+
 class Staging(unittest.TestCase):
     def test_every_ws_scene_type_is_registered(self):
-        for s in ep()["scenes"]:
+        for s in [s for e in EPISODES for s in load_episode(e)["scenes"]]:
             self.assertRegex(WS, rf"\b{s['scene']}\s*[:(]", s["scene"])
 
     def test_expressions_and_arm_poses_exist(self):
@@ -90,7 +131,7 @@ class Staging(unittest.TestCase):
         exprs = set(re.findall(r"^\s{4}(\w+):\s+\{ smile", rig, re.M))
         arm_block = WS[WS.index("const ARM = {"):WS.index("};", WS.index("const ARM = {"))]
         poses = set(re.findall(r"(\w+): \{ e:", arm_block))
-        e = ep(); actors = [a for s in e["scenes"] for a in s["shot"].get("actors", [])] + e["thumbnail"]["actors"]
+        actors = [a for eid in EPISODES for e in [load_episode(eid)] for a in [x for s in e["scenes"] for x in s["shot"].get("actors", [])] + e["thumbnail"]["actors"]]
         for a in actors:
             for k in a.get("acting", []):
                 if "expr" in k:
@@ -102,7 +143,7 @@ class Staging(unittest.TestCase):
 
     def test_line_relative_times_point_at_real_lines(self):
         """A cue that names a missing line silently fires at t=0, so every reference must exist."""
-        for s in ep()["scenes"]:
+        for s in [s for e in EPISODES for s in load_episode(e)["scenes"]]:
             n = len(s.get("lines", []))
             refs = [int(a or b) for a, b in re.findall(r'"L(\d+)[+-][\d.]+"|"L(\d+)"', json.dumps(s["shot"]))]
             for a in s["shot"].get("actors", []):
@@ -114,7 +155,7 @@ class Staging(unittest.TestCase):
 
     def test_captions_never_cover_a_face(self):
         # widescreen caption band starts around y=925 (two lines centred on 978)
-        for s in ep()["scenes"]:
+        for s in [s for e in EPISODES for s in load_episode(e)["scenes"]]:
             if s["scene"] != "ws_stage" or s.get("caption_mode") in ("card", "none") or not s.get("lines"):
                 continue
             for a in s["shot"].get("actors", []):
@@ -135,7 +176,7 @@ class Staging(unittest.TestCase):
             self.assertIn(c["look"]["outfit"]["style"], (ROOT / "renderer" / "cast.js").read_text())
 
     def test_dialogue_readable(self):
-        for s in ep()["scenes"]:
+        for s in [s for e in EPISODES for s in load_episode(e)["scenes"]]:
             for l in s.get("lines", []):
                 self.assertLessEqual(len(l["text"]), 90, s["id"])
 
@@ -171,7 +212,8 @@ class EngineUpgrades(unittest.TestCase):
 
 
 class Delivered(unittest.TestCase):
-    """Runs against the packaged deliverables when they are present (they are produced by package.py)."""
+    """Runs against the packaged deliverables when they are present (they are produced by package.py).
+    Subclassed below for each episode folder."""
     def test_text_deliverables(self):
         for f in ("title-options.md", "references.md"):
             self.assertTrue((DST / f).exists(), f)
@@ -214,6 +256,16 @@ class Delivered(unittest.TestCase):
         self.assertEqual((v["width"], v["height"], v["codec_name"], v["r_frame_rate"]), (1920, 1080, "h264", "30/1"))
         self.assertEqual(a[0]["codec_name"], "aac")
         self.assertTrue(420 <= float(p["format"]["duration"]) <= 560)
+
+
+class DeliveredCredit(Delivered):
+    def setUp(self):
+        global DST
+        self._dst = DST; DST = ROOT / "series" / "the-quiet-game" / "the-credit"
+
+    def tearDown(self):
+        global DST
+        DST = self._dst
 
 
 if __name__ == "__main__":

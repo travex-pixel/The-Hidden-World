@@ -1,0 +1,5493 @@
+{
+ "id": "qg02-the-credit",
+ "number": 2,
+ "series": "THE QUIET GAME",
+ "title": "The Credit",
+ "youtube_title": "He Stole Her Idea in the Meeting. He Didn't Even Know.",
+ "central_question": "When a colleague presents your idea as theirs, are they lying, or did they genuinely forget?",
+ "template": "thriller",
+ "format": "landscape",
+ "narrator_voice": "en_GB-alba-medium",
+ "target_duration_seconds": [
+  420,
+  560
+ ],
+ "visual_mode": "svg",
+ "caption_style": "thriller",
+ "cast": [
+  "daniel",
+  "graham",
+  "leah",
+  "ruth",
+  "narrator"
+ ],
+ "fiction_notice": "A fictional story. Characters, companies and events are invented. The psychology is real.",
+ "music": {
+  "bpm": 88
+ },
+ "figures": {
+  "northfield_weekly": 250,
+  "northfield_on_time": 0.811,
+  "recovered_per_week": 40,
+  "week_one_reduction": 31
+ },
+ "scenes": [
+  {
+   "id": "d01_cold_pitch",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "power",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swell"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "power",
+    "flash": true,
+    "chip": "WEDNESDAY · 10:14",
+    "bg_blur": 1,
+    "slide": {
+     "title": "Northfield: evening runs via Barrow",
+     "bullets": [
+      "Late runs all leave after 18:00",
+      "Barrow trucks idle after 18:00",
+      "~40 late deliveries recovered a week"
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 742,
+     "front": 900,
+     "x0": -60,
+     "x1": 1000,
+     "slant": 80,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 760
+      },
+      {
+       "kind": "glass",
+       "x": 380
+      },
+      {
+       "kind": "notebook",
+       "x": 120
+      }
+     ]
+    },
+    "camera": {
+     "zoom": [
+      1.1,
+      1.0
+     ],
+     "x": [
+      80,
+      0
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 250,
+      "y": 470,
+      "scale": 0.64,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.8,
+         -0.1
+        ],
+        "turn": 0.45
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 520,
+      "y": 470,
+      "scale": 0.64,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.8,
+         -0.15
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 0,
+        "off": 1.6,
+        "expr": "realise",
+        "gaze": [
+         0.8,
+         -0.15
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 1520,
+      "y": 380,
+      "scale": 0.84,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "confident",
+        "gaze": [
+         -0.5,
+         0.1
+        ],
+        "turn": -0.35
+       },
+       {
+        "line": 0,
+        "off": 2.0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.15
+        ],
+        "turn": -0.4,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "point",
+        "r": "rest"
+       },
+       {
+        "line": 0,
+        "off": 2.4,
+        "l": "rest",
+        "r": "talk"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "What if Northfield's late runs went through Barrow instead?",
+     "pause_before": 0.4
+    }
+   ],
+   "chapter": "Wednesday, 10:14"
+  },
+  {
+   "id": "d02_cold_leah",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.6,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "thump"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "cold",
+    "flash": true,
+    "bg_blur": 5,
+    "slide": {
+     "title": "Northfield: evening runs via Barrow",
+     "bullets": [
+      "Late runs all leave after 18:00",
+      "Barrow trucks idle after 18:00",
+      "~40 late deliveries recovered a week"
+     ]
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.1
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": [
+      {
+       "kind": "notebook",
+       "x": 700,
+       "colour": "#e06a4f"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 960,
+      "y": 450,
+      "scale": 1.25,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.35
+       },
+       {
+        "t": 1.2,
+        "expr": "frozen",
+        "gaze": [
+         0.65,
+         -0.05
+        ],
+        "turn": 0.38
+       },
+       {
+        "t": 5.5,
+        "expr": "tight",
+        "gaze": [
+         0.2,
+         0.55
+        ],
+        "turn": 0.12,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At 10:14 on Wednesday, Daniel Hale pitched the best idea of his career.",
+     "speed": 0.97,
+     "pause_before": 0.6,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "There was one problem. It wasn't his.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "And the strange part? He had no idea.",
+     "speed": 0.97,
+     "pause_before": 0.5,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d03_title",
+   "scene": "ws_title",
+   "min_duration": 4.3,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "swell"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "title": "THE QUIET GAME",
+    "subtitle": "EPISODE 2 · THE CREDIT",
+    "notice": "A fictional story. The psychology is real."
+   },
+   "silent": true,
+   "caption": "Title card: The Quiet Game, Episode 2, The Credit.",
+   "caption_mode": "card",
+   "visual_note": "Title card: The Quiet Game, Episode 2, The Credit."
+  },
+  {
+   "id": "d04_calmer",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "day",
+    "chip": "TWO WEEKS EARLIER",
+    "rewind": 1.0,
+    "bg_blur": 3,
+    "chapter_tag": {
+     "n": "CHAPTER 1",
+     "title": "The shortlist",
+     "hold": 5
+    },
+    "camera": {
+     "zoom": [
+      1.1,
+      1.0
+     ],
+     "x": [
+      -40,
+      0
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      },
+      {
+       "kind": "mug",
+       "x": 420,
+       "colour": "#4f7cac"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.55,
+         0.35
+        ],
+        "turn": 0.32
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "expr": "pleased",
+        "gaze": [
+         0.75,
+         -0.15
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1500,
+      "y": 360,
+      "scale": 0.78,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45,
+        "x": 2100
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "x": 1500,
+        "dur": 1.4
+       },
+       {
+        "line": 2,
+        "off": 1.6,
+        "expr": "pleased",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "mug",
+        "r": "rest"
+       }
+      ],
+      "mug_colour": "#e06a4f"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Two weeks after the Ostrel report, things at Halvern were calmer.",
+     "speed": 0.97,
+     "pause_before": 0.9,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Every dashboard change was logged.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "And Daniel and Leah were friends again.",
+     "speed": 0.97,
+     "pause_before": 0.2,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "The shortlist"
+  },
+  {
+   "id": "d05_announcement",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "ping"
+    }
+   ],
+   "claims": [
+    "F1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "ui": {
+     "kind": "email",
+     "from": "Ruth Adeyemi",
+     "to": "Client Reporting team",
+     "subject": "Senior Analyst: shortlist conversations on Wednesday",
+     "body": [
+      "Team,",
+      "",
+      "We're appointing one Senior Analyst this month.",
+      "Shortlisted: Daniel Hale and Leah Carter.",
+      "On Wednesday, bring one idea that would fix a depot.",
+      "",
+      "Ruth"
+     ],
+     "highlight": [
+      "Daniel Hale and Leah Carter"
+     ],
+     "highlight_at": "L1+0.2"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then Ruth announced a promotion.",
+     "speed": 0.97,
+     "pause_before": 0.5,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "One Senior Analyst role. Two names on the shortlist.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Bring one idea that would fix a depot.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d05b_leah_stake",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "bg_blur": 4,
+    "glass_office": false,
+    "camera": {
+     "zoom": [
+      1.05,
+      1.0
+     ],
+     "x": [
+      30,
+      0
+     ]
+    },
+    "desk": {
+     "back": 720,
+     "front": 880,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 640,
+       "flip": false
+      },
+      {
+       "kind": "keyboard",
+       "x": 1020
+      },
+      {
+       "kind": "notebook",
+       "x": 1330,
+       "colour": "#e06a4f"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1040,
+      "y": 420,
+      "scale": 0.86,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.55,
+         0.35
+        ],
+        "turn": -0.32,
+        "tilt": 2
+       },
+       {
+        "line": 1,
+        "off": 1.0,
+        "expr": "tight",
+        "gaze": [
+         -0.3,
+         0.5
+        ],
+        "turn": -0.2,
+        "tilt": 3
+       },
+       {
+        "line": 2,
+        "off": 0.6,
+        "expr": "confident",
+        "gaze": [
+         -0.5,
+         0.3
+        ],
+        "turn": -0.3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "l": "desk",
+        "r": "chin"
+       },
+       {
+        "line": 2,
+        "off": 1.2,
+        "l": "typing",
+        "r": "typing"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "For Leah, this was about more than a title.",
+     "speed": 0.97,
+     "pause_before": 0.5,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Two weeks earlier, she'd been blamed for a mistake that wasn't hers.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "A promotion would mean nobody doubted her work again.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d05c_daniel_stake",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      },
+      {
+       "kind": "mug",
+       "x": 420,
+       "colour": "#8c3b4a"
+      }
+     ]
+    },
+    "glass_figures": [
+     {
+      "x": 1640,
+      "sway": true
+     }
+    ],
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.32
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "expr": "neutral",
+        "gaze": [
+         0.9,
+         -0.3
+        ],
+        "turn": 0.55,
+        "tilt": -2
+       },
+       {
+        "line": 2,
+        "off": 0.8,
+        "expr": "tight",
+        "gaze": [
+         0.5,
+         0.45
+        ],
+        "turn": 0.3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Daniel wanted it too.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Graham had put his name forward weeks ago.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "And Graham had made it clear he was expecting something big.",
+     "speed": 0.97,
+     "pause_before": 0.2,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d06_rivals",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.7,
+         -0.15
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         0.7,
+         -0.18
+        ],
+        "turn": 0.45,
+        "tilt": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 2.0,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1500,
+      "y": 360,
+      "scale": 0.78,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45,
+        "tilt": 2
+       },
+       {
+        "line": 0,
+        "off": 1.0,
+        "expr": "skeptical",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45,
+        "tilt": 5
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "mug",
+        "r": "rest"
+       },
+       {
+        "line": 0,
+        "off": 0.3,
+        "r": "point"
+       },
+       {
+        "line": 0,
+        "off": 1.8,
+        "r": "rest"
+       }
+      ],
+      "mug_colour": "#e06a4f"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "So. Rivals.",
+     "pause_before": 0.5
+    },
+    {
+     "who": "daniel",
+     "text": "Friendly rivals. May the best idea win.",
+     "pause_before": 0.4
+    }
+   ]
+  },
+  {
+   "id": "d07_kettle",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "buzz"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "warm",
+    "chip": "MONDAY · 10:41",
+    "bg_blur": 3,
+    "chapter_tag": {
+     "n": "CHAPTER 2",
+     "title": "Monday",
+     "hold": 4
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 700,
+      "y": 420,
+      "scale": 0.92,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.2,
+         0.7
+        ],
+        "turn": 0.15,
+        "tilt": 3
+       },
+       {
+        "line": 1,
+        "off": 1.5,
+        "expr": "neutral",
+        "gaze": [
+         0.5,
+         0.2
+        ],
+        "turn": 0.35
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         0.3,
+         0.6
+        ],
+        "turn": 0.2,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "phone"
+       },
+       {
+        "line": 2,
+        "off": 1.0,
+        "r": "phone"
+       }
+      ]
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1260,
+      "y": 400,
+      "scale": 0.9,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "skeptical",
+        "gaze": [
+         -0.3,
+         -0.3
+        ],
+        "turn": -0.25,
+        "tilt": -4
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42,
+        "tilt": 3
+       },
+       {
+        "line": 2,
+        "off": 0.8,
+        "expr": "tight",
+        "gaze": [
+         -0.6,
+         0.15
+        ],
+        "turn": -0.42
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "mug",
+        "r": "chin"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "r": "talk"
+       },
+       {
+        "line": 2,
+        "off": 0.6,
+        "r": "rest"
+       }
+      ],
+      "mug_colour": "#e06a4f"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "Northfield's late runs all leave after six. Barrow's trucks sit empty after six.",
+     "pause_before": 0.6
+    },
+    {
+     "who": "leah",
+     "text": "What if the evening runs went via Barrow?",
+     "pause_before": 0.4
+    },
+    {
+     "who": "daniel",
+     "text": "Huh. Maybe.",
+     "pause_before": 0.6
+    }
+   ],
+   "chapter": "Monday"
+  },
+  {
+   "id": "d08_not_listening",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "neutral",
+    "bg_blur": 5,
+    "camera": {
+     "zoom": [
+      1.04,
+      1.12
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 940,
+      "y": 450,
+      "scale": 1.25,
+      "light": "phone",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.2,
+         0.75
+        ],
+        "turn": 0.12,
+        "tilt": 3
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "pleased",
+        "gaze": [
+         0.15,
+         0.7
+        ],
+        "turn": 0.1,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "phone"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Daniel heard it. He just wasn't really listening.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Remember that.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d09_chat",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 1.4,
+   "music_cue": "curious",
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "ping"
+    }
+   ],
+   "claims": [
+    "F1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "chip": "MONDAY · 11:02",
+    "ui": {
+     "kind": "chat",
+     "title": "Leah Carter",
+     "channels": [
+      [
+       "Leah Carter",
+       "#e06a4f"
+      ],
+      [
+       "Graham Royce",
+       "#8c3b4a"
+      ],
+      [
+       "Ruth Adeyemi",
+       "#5b5fb0"
+      ]
+     ],
+     "messages": [
+      {
+       "from": "Leah Carter",
+       "colour": "#e06a4f",
+       "time": "11:02",
+       "text": "Thinking more about Barrow. Running Northfield's evening routes through it could save ~40 late deliveries a week. Worth pitching Wednesday?",
+       "at": 0.5
+      },
+      {
+       "from": "Daniel Hale",
+       "colour": "#4f7cac",
+       "time": "11:19",
+       "text": "nice, could work",
+       "at": "L0+0.6",
+       "reaction": "+1 Leah"
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At 11:02, Leah wrote it down. Daniel replied seventeen minutes later.",
+     "speed": 0.97,
+     "pause_before": 1.6,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d10_make_it_yours",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "chip": "TUESDAY · 15:30",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.32
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "expr": "neutral",
+        "gaze": [
+         0.7,
+         -0.2
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         0.7,
+         -0.2
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       },
+       {
+        "line": 2,
+        "off": 1.0,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 2.0,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1480,
+      "y": 340,
+      "scale": 0.84,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.3
+        ],
+        "turn": -0.42,
+        "tilt": 3,
+        "lean": -4
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "lean_in",
+        "gaze": [
+         -0.6,
+         0.32
+        ],
+        "turn": -0.42,
+        "tilt": 4,
+        "lean": -6
+       },
+       {
+        "line": 2,
+        "off": 2.4,
+        "expr": "charm",
+        "gaze": [
+         -0.6,
+         0.32
+        ],
+        "turn": -0.42,
+        "tilt": 3,
+        "lean": -5
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "mug"
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "r": "talk"
+       },
+       {
+        "line": 2,
+        "off": 3.0,
+        "r": "mug"
+       }
+      ],
+      "mug_colour": "#8c3b4a"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "Ruth wants one big idea tomorrow. Got one?",
+     "pause_before": 0.5
+    },
+    {
+     "who": "daniel",
+     "text": "I've been thinking about Northfield.",
+     "pause_before": 0.4
+    },
+    {
+     "who": "graham",
+     "text": "Good. Make it yours. Ruth remembers whoever says it first.",
+     "pause_before": 0.5
+    }
+   ]
+  },
+  {
+   "id": "d11_midnight",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "tick"
+    },
+    {
+     "at": 0.9,
+     "name": "tick"
+    },
+    {
+     "at": 1.5,
+     "name": "tick"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "home_night",
+    "grade": "aftermath",
+    "chip": "TUESDAY · 23:48",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.07
+     ]
+    },
+    "desk": {
+     "back": 724,
+     "front": 884,
+     "x0": 360,
+     "x1": 1560,
+     "slant": 50,
+     "colour": "#3a2e28",
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1120
+      },
+      {
+       "kind": "mug",
+       "x": 600,
+       "colour": "#4f7cac"
+      },
+      {
+       "kind": "notebook",
+       "x": 820,
+       "colour": "#2b3a55"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 900,
+      "y": 440,
+      "scale": 0.86,
+      "light": "phone",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.5,
+         0.45
+        ],
+        "turn": 0.3
+       },
+       {
+        "line": 1,
+        "off": 0.5,
+        "expr": "pleased",
+        "gaze": [
+         0.5,
+         0.4
+        ],
+        "turn": 0.3,
+        "tilt": -2
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "expr": "confident",
+        "gaze": [
+         0.3,
+         0.2
+        ],
+        "turn": 0.2,
+        "tilt": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "l": "desk",
+        "r": "chin"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On Tuesday night, Daniel worked on Northfield until midnight.",
+     "speed": 0.97,
+     "pause_before": 0.6,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "He built the routes, the numbers, the slides.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "By morning, the idea felt completely his.",
+     "speed": 0.97,
+     "pause_before": 0.5,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d12_pitch",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "power",
+    "chip": "WEDNESDAY · 10:14",
+    "bg_blur": 1,
+    "slide": {
+     "title": "Northfield: evening runs via Barrow",
+     "bullets": [
+      "Late runs all leave after 18:00",
+      "Barrow trucks idle after 18:00",
+      "~40 late deliveries recovered a week"
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 742,
+     "front": 900,
+     "x0": -60,
+     "x1": 1000,
+     "slant": 80,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 760
+      },
+      {
+       "kind": "glass",
+       "x": 380
+      },
+      {
+       "kind": "notebook",
+       "x": 120
+      }
+     ]
+    },
+    "chapter_tag": {
+     "n": "CHAPTER 3",
+     "title": "The pitch",
+     "hold": 4
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 250,
+      "y": 470,
+      "scale": 0.64,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.8,
+         -0.1
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 1,
+        "off": 1.0,
+        "expr": "pleased",
+        "gaze": [
+         0.8,
+         -0.1
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 520,
+      "y": 470,
+      "scale": 0.64,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.8,
+         -0.15
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 0,
+        "off": 1.8,
+        "expr": "realise",
+        "gaze": [
+         0.8,
+         -0.15
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 1.5,
+        "expr": "frozen",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.35
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 1520,
+      "y": 380,
+      "scale": 0.84,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "confident",
+        "gaze": [
+         -0.5,
+         0.1
+        ],
+        "turn": -0.35
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         -0.7,
+         0.2
+        ],
+        "turn": -0.42,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "point",
+        "r": "rest"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "l": "rest",
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 3.6,
+        "r": "open"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "What if Northfield's late runs went through Barrow instead?",
+     "pause_before": 0.6
+    },
+    {
+     "who": "daniel",
+     "text": "Barrow's trucks sit empty after six. We'd recover about forty late deliveries a week.",
+     "pause_before": 0.4
+    }
+   ],
+   "chapter": "The pitch"
+  },
+  {
+   "id": "d13_whose",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "tension",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "neutral",
+    "bg_blur": 3,
+    "slide": {
+     "title": "Northfield: evening runs via Barrow",
+     "bullets": [
+      "Late runs all leave after 18:00",
+      "Barrow trucks idle after 18:00",
+      "~40 late deliveries recovered a week"
+     ]
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1300
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 960,
+      "y": 440,
+      "scale": 1.08,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         0.5,
+         0.0
+        ],
+        "turn": 0.3
+       },
+       {
+        "line": 0,
+        "off": 1.0,
+        "expr": "skeptical",
+        "gaze": [
+         0.55,
+         0.0
+        ],
+        "turn": 0.32,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "r": "talk"
+       },
+       {
+        "line": 0,
+        "off": 2.4,
+        "r": "steeple"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "ruth",
+     "text": "That's sharp. Whose idea was this?",
+     "pause_before": 0.6
+    }
+   ]
+  },
+  {
+   "id": "d14_mine",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.6,
+   "music_cue": "tension",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "power",
+    "bg_blur": 4,
+    "slide": {
+     "title": "Northfield: evening runs via Barrow",
+     "bullets": [
+      "Late runs all leave after 18:00",
+      "Barrow trucks idle after 18:00",
+      "~40 late deliveries recovered a week"
+     ]
+    },
+    "camera": {
+     "zoom": [
+      1.04,
+      1.12
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 920,
+      "y": 440,
+      "scale": 1.2,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.4,
+         0.1
+        ],
+        "turn": -0.25
+       },
+       {
+        "line": 0,
+        "off": 0.2,
+        "expr": "confident",
+        "gaze": [
+         -0.45,
+         0.05
+        ],
+        "turn": -0.28,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "r": "open"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "Mine. I've been working on it since Monday.",
+     "pause_before": 0.5
+    }
+   ]
+  },
+  {
+   "id": "d15_leah_freezes",
+   "scene": "ws_stage",
+   "min_duration": 3.0,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "thump"
+    },
+    {
+     "at": 1.2,
+     "name": "thump"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "cold",
+    "bg_blur": 5,
+    "slide": {
+     "title": "Northfield: evening runs via Barrow",
+     "bullets": [
+      "Late runs all leave after 18:00",
+      "Barrow trucks idle after 18:00",
+      "~40 late deliveries recovered a week"
+     ]
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "handheld": 0.4
+    },
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": [
+      {
+       "kind": "notebook",
+       "x": 700,
+       "colour": "#e06a4f"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 960,
+      "y": 450,
+      "scale": 1.25,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "frozen",
+        "gaze": [
+         0.6,
+         -0.05
+        ],
+        "turn": 0.38
+       },
+       {
+        "t": 1.6,
+        "expr": "tight",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.15,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "silent": true,
+   "caption": "Leah freezes. Since Monday.",
+   "caption_mode": "card",
+   "music_gain_db": -6,
+   "visual_note": "Leah freezes. Since Monday."
+  },
+  {
+   "id": "d16_graham_praise",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "tension",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "warm",
+    "bg_blur": 2,
+    "slide": {
+     "title": "Northfield: evening runs via Barrow",
+     "bullets": [
+      "Late runs all leave after 18:00",
+      "Barrow trucks idle after 18:00",
+      "~40 late deliveries recovered a week"
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 742,
+     "front": 900,
+     "x0": -60,
+     "x1": 1000,
+     "slant": 80,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 760
+      },
+      {
+       "kind": "glass",
+       "x": 380
+      },
+      {
+       "kind": "notebook",
+       "x": 120
+      }
+     ]
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 250,
+      "y": 470,
+      "scale": 0.64,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         0.8,
+         -0.1
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "neutral",
+        "gaze": [
+         0.7,
+         0.05
+        ],
+        "turn": 0.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 520,
+      "y": 470,
+      "scale": 0.64,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.15
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "frozen",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.35
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "tight",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.35
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1560,
+      "y": 380,
+      "scale": 0.82,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "charm",
+        "gaze": [
+         -0.6,
+         0.25
+        ],
+        "turn": -0.42,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "talk"
+       },
+       {
+        "line": 0,
+        "off": 2.6,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "That's exactly the thinking we need from a Senior Analyst.",
+     "pause_before": 0.4
+    },
+    {
+     "who": "ruth",
+     "text": "Leah, what have you got?",
+     "pause_before": 0.6
+    },
+    {
+     "who": "leah",
+     "text": "I... had something similar. I'll send it over.",
+     "pause_before": 0.9
+    }
+   ]
+  },
+  {
+   "id": "d16b_corridor",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.2,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "chip": "WEDNESDAY · 10:41",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "handheld": 0.3
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 700,
+      "y": 410,
+      "scale": 0.9,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4,
+        "tilt": 3
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "talk"
+       },
+       {
+        "line": 0,
+        "off": 2.0,
+        "r": "rest"
+       },
+       {
+        "line": 2,
+        "off": 0.2,
+        "r": "open"
+       },
+       {
+        "line": 2,
+        "off": 2.6,
+        "r": "rest"
+       }
+      ]
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1260,
+      "y": 400,
+      "scale": 0.9,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "frozen",
+        "gaze": [
+         -0.6,
+         0.0
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 2,
+        "off": 1.4,
+        "expr": "cold",
+        "gaze": [
+         -0.3,
+         0.4
+        ],
+        "turn": -0.25,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "paper",
+        "r": "paper"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "Leah! What did you think? Too much?",
+     "pause_before": 0.6
+    },
+    {
+     "who": "leah",
+     "text": "It was a good idea.",
+     "pause_before": 1.0
+    },
+    {
+     "who": "daniel",
+     "text": "Thanks. I've been thinking about it all week.",
+     "pause_before": 0.4
+    }
+   ]
+  },
+  {
+   "id": "d17_choice",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "cold",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "cold",
+    "bg_blur": 5,
+    "slide": {
+     "title": "Northfield: evening runs via Barrow",
+     "bullets": [
+      "Late runs all leave after 18:00",
+      "Barrow trucks idle after 18:00",
+      "~40 late deliveries recovered a week"
+     ]
+    },
+    "camera": {
+     "zoom": [
+      1.06,
+      1.14
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": [
+      {
+       "kind": "notebook",
+       "x": 700,
+       "colour": "#e06a4f"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 960,
+      "y": 450,
+      "scale": 1.28,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.15,
+        "tilt": 3
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "cold",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.38
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "expr": "guilty",
+        "gaze": [
+         0.2,
+         0.6
+        ],
+        "turn": 0.1,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Leah had two obvious options.",
+     "speed": 0.97,
+     "pause_before": 0.5,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Accuse him, in front of the director, two days before a promotion.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Or say nothing, and let it go.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ],
+   "music_gain_db": -3
+  },
+  {
+   "id": "d17b_rehearse",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.9,
+   "music_cue": "hush",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "cold",
+    "chip": "WEDNESDAY · 10:58",
+    "bg_blur": 5,
+    "camera": {
+     "zoom": [
+      1.02,
+      1.1
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 960,
+      "y": 440,
+      "scale": 1.15,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "cold",
+        "gaze": [
+         0.1,
+         0.1
+        ],
+        "turn": 0.05
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "tight",
+        "gaze": [
+         0.3,
+         0.5
+        ],
+        "turn": 0.15,
+        "tilt": 4
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "neutral",
+        "gaze": [
+         0.05,
+         0.05
+        ],
+        "turn": 0.0,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "point"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "l": "cross",
+        "r": "cross"
+       },
+       {
+        "line": 2,
+        "off": 0.2,
+        "l": "rest",
+        "r": "open"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "You stole my idea.",
+     "pause_before": 0.8,
+     "speed": 1.08
+    },
+    {
+     "who": "leah",
+     "text": "No.",
+     "pause_before": 1.0
+    },
+    {
+     "who": "leah",
+     "text": "Can I show you something?",
+     "pause_before": 1.2
+    }
+   ],
+   "music_gain_db": -4
+  },
+  {
+   "id": "d18_question",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "neutral",
+    "chip": "WEDNESDAY · 11:05",
+    "bg_blur": 4,
+    "chapter_tag": {
+     "n": "CHAPTER 4",
+     "title": "Did he steal it?",
+     "hold": 4
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 960,
+      "y": 440,
+      "scale": 1.0,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "cold",
+        "gaze": [
+         0.3,
+         0.3
+        ],
+        "turn": 0.2
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "skeptical",
+        "gaze": [
+         0.0,
+         0.1
+        ],
+        "turn": 0.0,
+        "tilt": 4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "cross",
+        "r": "cross"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Leah was sure Daniel had taken her idea.",
+     "speed": 0.97,
+     "pause_before": 0.5,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "But here's the uncomfortable question. Did he know?",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "Did he steal it?"
+  },
+  {
+   "id": "d19_source",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [
+    "C1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "source",
+     "title": "Cryptomnesia",
+     "sub": "FORCE 1",
+     "from": "leah",
+     "from_label": "Leah",
+     "to": "daniel",
+     "to_label": "Daniel",
+     "idea": [
+      "Northfield evening runs",
+      "via Barrow"
+     ],
+     "move_at": "L1+0.4",
+     "relabel_at": "L2+0.8",
+     "rows": [
+      {
+       "text": "Idea: kept",
+       "ok": true,
+       "at": "L3+0.2"
+      },
+      {
+       "text": "Source: lost",
+       "ok": false,
+       "at": "L3+1.6"
+      }
+     ],
+     "cite": "Brown & Murphy (1989), JEP: Learning, Memory, and Cognition",
+     "cite_at": "L1+0.0"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Psychologists call it cryptomnesia: accidental plagiarism.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "In a 1989 study, people took turns naming ideas in small groups.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Later, some of them listed their partners' ideas as their own.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Memory tends to keep an idea, and quietly lose where it came from.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d19b_label",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [
+    "C1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "warm",
+    "flash": true,
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 700,
+      "y": 420,
+      "scale": 0.92,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.2,
+         0.7
+        ],
+        "turn": 0.15,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "phone"
+       }
+      ]
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1260,
+      "y": 400,
+      "scale": 0.9,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "mug",
+        "r": "talk"
+       }
+      ],
+      "mug_colour": "#e06a4f"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Our memories don't come with a label saying who said what.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "The brain rebuilds the source each time we remember, and it can get it wrong.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Daniel kept the idea from Monday. He lost the part with Leah in it.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d20_improve",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.6,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [
+    "C1b"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "home_night",
+    "grade": "aftermath",
+    "flash": true,
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "desk": {
+     "back": 724,
+     "front": 884,
+     "x0": 360,
+     "x1": 1560,
+     "slant": 50,
+     "colour": "#3a2e28",
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1120
+      },
+      {
+       "kind": "notebook",
+       "x": 820,
+       "colour": "#2b3a55"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 900,
+      "y": 440,
+      "scale": 0.86,
+      "light": "phone",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         0.5,
+         0.4
+        ],
+        "turn": 0.3,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Later studies found that improving someone else's idea",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "makes you more likely to claim it later.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Daniel had spent a whole night improving it.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d21_overclaim",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [
+    "C2",
+    "C2b"
+   ],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "overclaim",
+     "title": "Everyone did most of the work",
+     "sub": "FORCE 2",
+     "note": "27 of 37 couples claimed more than their share",
+     "note_at": "L2+0.2",
+     "tag": "Illustration",
+     "bars": [
+      {
+       "label": "Partner A says",
+       "value": 58,
+       "colour": "#d98a9a",
+       "at": "L1+0.6"
+      },
+      {
+       "label": "Partner B says",
+       "value": 56,
+       "colour": "#7fc8e8",
+       "at": "L2+0.0"
+      }
+     ],
+     "cite": "Ross & Sicoly (1979), JPSP",
+     "cite_at": "L1+0.0"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The second force is the egocentric bias.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "In a classic 1979 study, most married couples each rated their own share of the housework",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "higher than their partner did. Put together, their claims came to more than the whole.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Nobody was lying. We simply remember our own effort most vividly.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Studies of co-authors find the same thing.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Add up everyone's claimed share, and it's more than the whole.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "It shrinks when people stop to think about what each person actually did.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d22_not_fair",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "curious",
+   "sfx": [],
+   "claims": [
+    "C3",
+    "C5"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "grade": "neutral",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 960,
+      "y": 440,
+      "scale": 1.05,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "skeptical",
+        "gaze": [
+         0.0,
+         0.1
+        ],
+        "turn": 0.0,
+        "tilt": 4
+       },
+       {
+        "line": 4,
+        "off": 0.4,
+        "expr": "neutral",
+        "gaze": [
+         0.4,
+         0.3
+        ],
+        "turn": 0.25
+       },
+       {
+        "line": 4,
+        "off": 2.4,
+        "expr": "confident",
+        "gaze": [
+         0.1,
+         0.0
+        ],
+        "turn": 0.05,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "cross",
+        "r": "cross"
+       },
+       {
+        "line": 4,
+        "off": 0.4,
+        "l": "rest",
+        "r": "rest",
+        "dur": 0.8
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And credit doesn't land equally. In one study, men who offered new ideas",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "were seen as more leader-like.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Women offering the same kind of ideas didn't get that boost.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "None of this makes it fair. Leah still did the noticing.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "But it changed what she should do next.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d23_search",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 0.9,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [
+    "F1"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "chip": "WEDNESDAY · 11:12",
+    "chapter_tag": {
+     "n": "CHAPTER 5",
+     "title": "The receipts",
+     "y": 860,
+     "hold": 4
+    },
+    "ui": {
+     "kind": "chat",
+     "title": "Daniel Hale",
+     "channels": [
+      [
+       "Daniel Hale",
+       "#4f7cac"
+      ],
+      [
+       "Graham Royce",
+       "#8c3b4a"
+      ],
+      [
+       "Ruth Adeyemi",
+       "#5b5fb0"
+      ]
+     ],
+     "search": {
+      "text": "Barrow",
+      "at": 0.6
+     },
+     "messages": [
+      {
+       "from": "Leah Carter",
+       "colour": "#e06a4f",
+       "time": "Mon 11:02",
+       "text": "Thinking more about Barrow. Running Northfield's evening routes through it could save ~40 late deliveries a week. Worth pitching Wednesday?",
+       "at": 1.2
+      },
+      {
+       "from": "Daniel Hale",
+       "colour": "#4f7cac",
+       "time": "Mon 11:19",
+       "text": "nice, could work",
+       "at": 1.4,
+       "reaction": "+1 Leah"
+      }
+     ],
+     "highlight": 0,
+     "highlight_at": "L1+0.6"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So Leah chose a third option. Not an accusation. A question, with evidence.",
+     "speed": 0.97,
+     "pause_before": 1.8,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "She didn't need to win an argument about memory. She had a timestamp.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "The receipts",
+   "music_gain_db": -4
+  },
+  {
+   "id": "d24_show_you",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "neutral",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         0.7,
+         -0.15
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 1,
+        "off": 1.2,
+        "expr": "neutral",
+        "gaze": [
+         0.65,
+         0.05
+        ],
+        "turn": 0.42
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "realise",
+        "gaze": [
+         0.6,
+         0.1
+        ],
+        "turn": 0.4
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1500,
+      "y": 360,
+      "scale": 0.78,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "expr": "neutral",
+        "gaze": [
+         -0.5,
+         0.6
+        ],
+        "turn": -0.35,
+        "tilt": 3
+       },
+       {
+        "line": 2,
+        "off": 0.6,
+        "expr": "tight",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "phone"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "offer"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "Can I show you something?",
+     "pause_before": 0.6
+    },
+    {
+     "who": "leah",
+     "text": "On Monday, I suggested running Northfield's evenings through Barrow.",
+     "pause_before": 0.3
+    },
+    {
+     "who": "daniel",
+     "text": "That... was you.",
+     "pause_before": 0.9
+    }
+   ]
+  },
+  {
+   "id": "d24b_reread",
+   "scene": "ws_insert",
+   "min_duration": 3.4,
+   "pad_after": 0.32,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "thump"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "cold",
+    "ui": {
+     "kind": "chat",
+     "title": "Leah Carter",
+     "channels": [
+      [
+       "Leah Carter",
+       "#e06a4f"
+      ],
+      [
+       "Graham Royce",
+       "#8c3b4a"
+      ],
+      [
+       "Ruth Adeyemi",
+       "#5b5fb0"
+      ]
+     ],
+     "messages": [
+      {
+       "from": "Leah Carter",
+       "colour": "#e06a4f",
+       "time": "Mon 11:02",
+       "text": "Thinking more about Barrow. Running Northfield's evening routes through it could save ~40 late deliveries a week. Worth pitching Wednesday?",
+       "at": 0.0
+      },
+      {
+       "from": "Daniel Hale",
+       "colour": "#4f7cac",
+       "time": "Mon 11:19",
+       "text": "nice, could work",
+       "at": 0.0,
+       "reaction": "+1 Leah"
+      }
+     ],
+     "highlight": 1,
+     "highlight_at": 1.0
+    }
+   },
+   "silent": true,
+   "caption": "Daniel reads his own reply from Monday: nice, could work.",
+   "caption_mode": "card",
+   "music_gain_db": -6,
+   "visual_note": "Daniel reads his own reply from Monday: nice, could work."
+  },
+  {
+   "id": "d25_believe_you",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "intimate",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "guilty",
+        "gaze": [
+         0.6,
+         0.1
+        ],
+        "turn": 0.4
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "realise",
+        "gaze": [
+         0.7,
+         -0.15
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "expr": "tight",
+        "gaze": [
+         0.7,
+         -0.15
+        ],
+        "turn": 0.45
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "r": "neck"
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1500,
+      "y": 360,
+      "scale": 0.78,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "expr": "neutral",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45,
+        "tilt": 3
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "expr": "pleased",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       },
+       {
+        "line": 2,
+        "off": 0.4,
+        "r": "talk"
+       },
+       {
+        "line": 2,
+        "off": 4.0,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "Leah, I honestly thought it was mine.",
+     "pause_before": 0.6
+    },
+    {
+     "who": "leah",
+     "text": "I believe you. That's what worries me.",
+     "pause_before": 0.7
+    },
+    {
+     "who": "leah",
+     "text": "Let's take it to Ruth together. I had the idea. You built the numbers.",
+     "pause_before": 0.6
+    }
+   ]
+  },
+  {
+   "id": "d26_own_it",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "dusk",
+    "chip": "WEDNESDAY · 16:20",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.05
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 860,
+      "y": 430,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.32
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "expr": "neutral",
+        "gaze": [
+         0.7,
+         -0.2
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "confident",
+        "gaze": [
+         0.7,
+         -0.22
+        ],
+        "turn": 0.45,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 1,
+        "off": 0.3,
+        "r": "open"
+       },
+       {
+        "line": 1,
+        "off": 2.4,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1480,
+      "y": 340,
+      "scale": 0.84,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "charm",
+        "gaze": [
+         -0.6,
+         0.3
+        ],
+        "turn": -0.42,
+        "tilt": 3,
+        "lean": -4
+       },
+       {
+        "line": 1,
+        "off": 1.4,
+        "expr": "tight",
+        "gaze": [
+         -0.6,
+         0.3
+        ],
+        "turn": -0.42,
+        "tilt": 0,
+        "lean": 0
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "talk"
+       },
+       {
+        "line": 0,
+        "off": 3.4,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "graham",
+     "text": "Ruth loved it. Don't overthink it. Ideas belong to whoever makes them happen.",
+     "pause_before": 0.5
+    },
+    {
+     "who": "daniel",
+     "text": "Then it belongs to both of us.",
+     "pause_before": 0.6
+    }
+   ]
+  },
+  {
+   "id": "d27_correct",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "neutral",
+    "chip": "THURSDAY · 09:00",
+    "bg_blur": 2,
+    "chapter_tag": {
+     "n": "CHAPTER 6",
+     "title": "The record",
+     "hold": 4
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.03
+     ]
+    },
+    "desk": {
+     "back": 724,
+     "front": 884,
+     "x0": 1050,
+     "x1": 2100,
+     "slant": 50,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1640
+      },
+      {
+       "kind": "paper",
+       "x": 1400
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 1480,
+      "y": 420,
+      "scale": 0.82,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.6,
+         0.0
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.0
+        ],
+        "turn": -0.42,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 520,
+      "y": 390,
+      "scale": 0.86,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "tight",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       },
+       {
+        "line": 0,
+        "off": 0.0,
+        "expr": "neutral",
+        "gaze": [
+         0.65,
+         0.0
+        ],
+        "turn": 0.42
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "confident",
+        "gaze": [
+         0.65,
+         0.0
+        ],
+        "turn": 0.42
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       },
+       {
+        "line": 0,
+        "off": 0.6,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 1.6,
+        "r": "rest"
+       }
+      ]
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 860,
+      "y": 400,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       },
+       {
+        "line": 1,
+        "off": 1.0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.0
+        ],
+        "turn": -0.4,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "Ruth, I need to correct something. The Barrow idea started with Leah, on Monday.",
+     "pause_before": 0.6
+    },
+    {
+     "who": "daniel",
+     "text": "I built it out. But it was hers first.",
+     "pause_before": 0.4
+    }
+   ],
+   "chapter": "The record"
+  },
+  {
+   "id": "d28_ruth_asks",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "power",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 980,
+      "y": 440,
+      "scale": 1.12,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.45,
+         0.05
+        ],
+        "turn": -0.3
+       },
+       {
+        "line": 0,
+        "off": 0.2,
+        "expr": "pleased",
+        "gaze": [
+         -0.45,
+         0.05
+        ],
+        "turn": -0.3,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "confident",
+        "gaze": [
+         -0.55,
+         0.05
+        ],
+        "turn": -0.36
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 2.6,
+        "r": "steeple"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "ruth",
+     "text": "Thank you for telling me.",
+     "pause_before": 0.6
+    },
+    {
+     "who": "ruth",
+     "text": "Leah, walk me through how you spotted it.",
+     "pause_before": 0.4
+    }
+   ]
+  },
+  {
+   "id": "d29_leah_explains",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "warm",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 940,
+      "y": 440,
+      "scale": 1.15,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.45,
+         0.05
+        ],
+        "turn": 0.3
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "expr": "confident",
+        "gaze": [
+         0.5,
+         0.05
+        ],
+        "turn": 0.32,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 0.4,
+        "expr": "pleased",
+        "gaze": [
+         0.5,
+         0.05
+        ],
+        "turn": 0.32,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "r": "talk"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "open"
+       },
+       {
+        "line": 1,
+        "off": 2.8,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "Every late run at Northfield leaves after six. I checked a month of logs.",
+     "pause_before": 0.6
+    },
+    {
+     "who": "leah",
+     "text": "And every evening, Barrow's trucks sit empty.",
+     "pause_before": 0.3
+    }
+   ]
+  },
+  {
+   "id": "d30_cant_teach",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "warm",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "glass_office",
+    "grade": "power",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "desk": {
+     "back": 724,
+     "front": 884,
+     "x0": 1050,
+     "x1": 2100,
+     "slant": 50,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 1640
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "ruth",
+      "view": "front",
+      "x": 1480,
+      "y": 420,
+      "scale": 0.82,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.0
+        ],
+        "turn": -0.42
+       },
+       {
+        "line": 0,
+        "off": 0.6,
+        "expr": "cool_smile",
+        "gaze": [
+         -0.6,
+         0.0
+        ],
+        "turn": -0.42,
+        "tilt": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 520,
+      "y": 390,
+      "scale": 0.86,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4
+       },
+       {
+        "line": 0,
+        "off": 1.2,
+        "expr": "pleased",
+        "gaze": [
+         0.65,
+         0.0
+        ],
+        "turn": 0.42,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       }
+      ]
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 860,
+      "y": 400,
+      "scale": 0.8,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4,
+        "tilt": 2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "ruth",
+     "text": "Noticing is the part I can't teach.",
+     "pause_before": 0.6
+    }
+   ]
+  },
+  {
+   "id": "d30b_ruth_email",
+   "scene": "ws_insert",
+   "min_duration": 2.0,
+   "pad_after": 1.6,
+   "music_cue": "warm",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "ping"
+    }
+   ],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "chip": "THURSDAY · 14:05",
+    "ui": {
+     "kind": "email",
+     "from": "Ruth Adeyemi",
+     "to": "Operations; Client Reporting team",
+     "subject": "Northfield evening pilot",
+     "body": [
+      "All,",
+      "",
+      "From Monday we pilot Northfield's evening runs via Barrow.",
+      "The idea came from Leah Carter; Daniel Hale built the model.",
+      "Please give them what they need.",
+      "",
+      "Ruth"
+     ],
+     "highlight": [
+      "The idea came from Leah Carter"
+     ],
+     "highlight_at": "L0+1.0"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That afternoon, Ruth sent one email. Credit, in writing, to everyone.",
+     "speed": 0.97,
+     "pause_before": 0.6,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d31_truth_cost",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "warm",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "open_plan",
+    "grade": "warm",
+    "bg_blur": 3,
+    "camera": {
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "x": [
+      0,
+      -30
+     ]
+    },
+    "desk": {
+     "back": 712,
+     "front": 872,
+     "items": [
+      {
+       "kind": "monitor",
+       "x": 1230,
+       "flip": true
+      },
+      {
+       "kind": "keyboard",
+       "x": 860
+      },
+      {
+       "kind": "paper",
+       "x": 560,
+       "rot": -6
+      }
+     ]
+    },
+    "glass_figures": [
+     {
+      "x": 1560,
+      "head": "#1c1816",
+      "body": "#3c3f78",
+      "sway": true
+     }
+    ],
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 700,
+      "y": 440,
+      "scale": 0.86,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.6,
+         0.35
+        ],
+        "turn": 0.32
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "pleased",
+        "gaze": [
+         0.8,
+         -0.2
+        ],
+        "turn": 0.5,
+        "tilt": -2
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "typing",
+        "r": "typing"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Ruth didn't decide the promotion that day.",
+     "speed": 0.97,
+     "pause_before": 0.5,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "But she now knew who noticed things, and who told the truth when it cost him.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d32_next_meeting",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "unease",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "neutral",
+    "chip": "THE FOLLOWING MONDAY",
+    "bg_blur": 1,
+    "chapter_tag": {
+     "n": "CHAPTER 7",
+     "title": "Amplify",
+     "hold": 4
+    },
+    "slide": {
+     "title": "Weekly review",
+     "bullets": [
+      "Barrow evening runs: week 1",
+      "Late deliveries: down 31"
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 742,
+     "front": 900,
+     "x0": -60,
+     "x1": 1000,
+     "slant": 80,
+     "items": [
+      {
+       "kind": "laptop",
+       "x": 760
+      },
+      {
+       "kind": "glass",
+       "x": 380
+      },
+      {
+       "kind": "notebook",
+       "x": 120
+      }
+     ]
+    },
+    "camera": {
+     "zoom": [
+      1.0,
+      1.04
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 250,
+      "y": 470,
+      "scale": 0.64,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         0.8,
+         -0.1
+        ],
+        "turn": 0.45
+       },
+       {
+        "line": 0,
+        "off": 0.2,
+        "expr": "confident",
+        "gaze": [
+         0.8,
+         -0.1
+        ],
+        "turn": 0.45
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 0,
+        "off": 0.4,
+        "r": "talk"
+       },
+       {
+        "line": 0,
+        "off": 3.4,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 520,
+      "y": 470,
+      "scale": 0.64,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.8,
+         -0.1
+        ],
+        "turn": -0.45
+       },
+       {
+        "line": 1,
+        "off": 1.6,
+        "expr": "skeptical",
+        "gaze": [
+         0.8,
+         -0.15
+        ],
+        "turn": 0.45,
+        "tilt": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     },
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 1560,
+      "y": 380,
+      "scale": 0.82,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "neutral",
+        "gaze": [
+         -0.7,
+         0.25
+        ],
+        "turn": -0.45
+       },
+       {
+        "line": 1,
+        "off": 0.0,
+        "expr": "charm",
+        "gaze": [
+         -0.7,
+         0.2
+        ],
+        "turn": -0.42,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "rest"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "open"
+       },
+       {
+        "line": 1,
+        "off": 3.0,
+        "r": "rest"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "We should run the same check on Carlton. Its late runs leave after six too.",
+     "pause_before": 0.6
+    },
+    {
+     "who": "graham",
+     "text": "Here's a thought. We check Carlton's evening runs as well.",
+     "pause_before": 0.8
+    }
+   ],
+   "chapter": "Amplify"
+  },
+  {
+   "id": "d33_building_on",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "power",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "power",
+    "bg_blur": 4,
+    "slide": {
+     "title": "Weekly review",
+     "bullets": []
+    },
+    "camera": {
+     "zoom": [
+      1.04,
+      1.12
+     ]
+    },
+    "desk": {
+     "kind": "table",
+     "back": 800,
+     "front": 960,
+     "slant": 40,
+     "items": [
+      {
+       "kind": "notebook",
+       "x": 700,
+       "colour": "#e06a4f"
+      }
+     ]
+    },
+    "actors": [
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 960,
+      "y": 450,
+      "scale": 1.2,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "skeptical",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.35,
+        "tilt": -3
+       },
+       {
+        "line": 0,
+        "off": 0.2,
+        "expr": "confident",
+        "gaze": [
+         0.6,
+         0.0
+        ],
+        "turn": 0.35,
+        "tilt": -2
+       },
+       {
+        "line": 0,
+        "off": 3.2,
+        "expr": "pleased",
+        "gaze": [
+         0.5,
+         0.05
+        ],
+        "turn": 0.3,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "desk",
+        "r": "desk"
+       },
+       {
+        "line": 0,
+        "off": 0.3,
+        "r": "talk"
+       },
+       {
+        "line": 0,
+        "off": 3.6,
+        "r": "desk"
+       }
+      ],
+      "seated": true
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "leah",
+     "text": "Building on Daniel's point a minute ago, yes. Carlton's next.",
+     "pause_before": 0.5
+    }
+   ]
+  },
+  {
+   "id": "d34_amplify",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 0.32,
+   "music_cue": "warm",
+   "sfx": [],
+   "claims": [
+    "C4"
+   ],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "amplify",
+     "title": "Amplification",
+     "sub": "A TACTIC WITH A NAME",
+     "speaker": 4,
+     "amplifier": 1,
+     "idea": "Check Carlton too",
+     "idea_at": "L0+0.6",
+     "repeat": "“As Daniel said…”",
+     "repeat_at": "L1+0.6",
+     "cite": "J. Eilperin, The Washington Post, Sept 2016",
+     "cite_at": "L0+0.0"
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2016, women on President Obama's staff described a tactic they called amplification.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "When one of them made a key point, another repeated it, and credited her by name.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "It's hard to take an idea that someone has just credited out loud.",
+     "speed": 0.97,
+     "pause_before": 0.3,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d35_graham_maybe",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 0.8,
+   "music_cue": "aftermath",
+   "sfx": [],
+   "claims": [
+    "C3"
+   ],
+   "transition": "cut",
+   "shot": {
+    "env": "meeting_room",
+    "grade": "aftermath",
+    "bg_blur": 5,
+    "slide": {
+     "title": "Weekly review",
+     "bullets": []
+    },
+    "camera": {
+     "zoom": [
+      1.06,
+      1.16
+     ]
+    },
+    "actors": [
+     {
+      "who": "graham",
+      "view": "front",
+      "x": 980,
+      "y": 450,
+      "scale": 1.25,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "charm",
+        "gaze": [
+         -0.4,
+         0.15
+        ],
+        "turn": -0.25,
+        "tilt": 3
+       },
+       {
+        "line": 0,
+        "off": 1.0,
+        "expr": "cool_smile",
+        "gaze": [
+         -0.35,
+         0.2
+        ],
+        "turn": -0.22
+       },
+       {
+        "line": 1,
+        "off": 0.6,
+        "expr": "neutral",
+        "gaze": [
+         -0.2,
+         0.4
+        ],
+        "turn": -0.12
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "steeple",
+        "r": "steeple"
+       }
+      ]
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Maybe Graham hadn't heard Daniel.",
+     "speed": 0.97,
+     "pause_before": 0.6,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Maybe he had. Either way, everyone in the room now knew whose point it was.",
+     "speed": 0.97,
+     "pause_before": 0.4,
+     "pause_after": 0.18
+    }
+   ]
+  },
+  {
+   "id": "d36_closing",
+   "scene": "ws_stage",
+   "min_duration": 2.0,
+   "pad_after": 1.6,
+   "music_cue": "warm",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "env": "kitchen",
+    "tod": "evening",
+    "grade": "warm",
+    "bg_blur": 4,
+    "camera": {
+     "zoom": [
+      1.04,
+      1.12
+     ]
+    },
+    "actors": [
+     {
+      "who": "daniel",
+      "view": "front",
+      "x": 700,
+      "y": 430,
+      "scale": 0.95,
+      "light": "left",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4,
+        "tilt": 3
+       },
+       {
+        "line": 2,
+        "off": 0.0,
+        "expr": "confident",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4,
+        "tilt": -2
+       },
+       {
+        "line": 3,
+        "off": 0.0,
+        "expr": "pleased",
+        "gaze": [
+         0.6,
+         0.05
+        ],
+        "turn": 0.4,
+        "tilt": 3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "rest",
+        "r": "mug"
+       },
+       {
+        "line": 2,
+        "off": 0.2,
+        "l": "rest",
+        "r": "talk"
+       },
+       {
+        "line": 2,
+        "off": 3.0,
+        "r": "mug"
+       }
+      ],
+      "mug_colour": "#4f7cac"
+     },
+     {
+      "who": "leah",
+      "view": "front",
+      "x": 1260,
+      "y": 410,
+      "scale": 0.93,
+      "light": "right",
+      "acting": [
+       {
+        "t": 0,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42,
+        "tilt": -2
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "expr": "skeptical",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42,
+        "tilt": 4
+       },
+       {
+        "line": 2,
+        "off": 1.8,
+        "expr": "pleased",
+        "gaze": [
+         -0.6,
+         0.05
+        ],
+        "turn": -0.42,
+        "tilt": -3
+       }
+      ],
+      "arms": [
+       {
+        "t": 0,
+        "l": "mug",
+        "r": "rest"
+       },
+       {
+        "line": 1,
+        "off": 0.2,
+        "r": "point"
+       },
+       {
+        "line": 1,
+        "off": 2.4,
+        "r": "rest"
+       }
+      ],
+      "mug_colour": "#e06a4f"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "who": "daniel",
+     "text": "Carlton next?",
+     "pause_before": 0.6
+    },
+    {
+     "who": "leah",
+     "text": "Carlton next. And this time, I'm writing it down.",
+     "pause_before": 0.5
+    },
+    {
+     "who": "daniel",
+     "text": "Send it to me. I'll forward it to Ruth, with your name on it.",
+     "pause_before": 0.5
+    },
+    {
+     "who": "narrator",
+     "text": "Most stolen ideas aren't stolen.",
+     "speed": 0.97,
+     "pause_before": 1.0,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "They're forgotten, by the one person who remembers them as his own.",
+     "speed": 0.97,
+     "pause_before": 0.6,
+     "pause_after": 0.18
+    }
+   ],
+   "music_gain_db": -2
+  },
+  {
+   "id": "d37_moves",
+   "scene": "ws_explainer",
+   "min_duration": 2.0,
+   "pad_after": 1.2,
+   "music_cue": "warm",
+   "sfx": [],
+   "claims": [],
+   "transition": "cut",
+   "shot": {
+    "ex": {
+     "kind": "moves",
+     "title": "Four moves",
+     "sub": "IF IT HAPPENS TO YOU",
+     "items": [
+      {
+       "title": "Put ideas in writing early",
+       "sub": "A two-line message is a timestamp.",
+       "at": "L1+0.2"
+      },
+      {
+       "title": "Check the record before you accuse",
+       "sub": "Memory is the weakest evidence in the room.",
+       "at": "L2+0.0"
+      },
+      {
+       "title": "Raise it privately, with curiosity",
+       "sub": "“Can I show you something?”",
+       "at": "L3+0.0"
+      },
+      {
+       "title": "Amplify, and credit out loud",
+       "sub": "“Building on Leah's point…”",
+       "at": "L4+0.0"
+      }
+     ]
+    }
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So if someone presents your idea as theirs:",
+     "speed": 0.97,
+     "pause_before": 0.6,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "put your ideas in writing early. A two-line message is a timestamp.",
+     "speed": 0.97,
+     "pause_before": 0.2,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Check the record before you accuse. Memory is weak evidence.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Raise it privately, with curiosity, not a verdict. \"Can I show you something?\"",
+     "speed": 0.97,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "And amplify others. Give credit out loud, and it tends to come back.",
+     "speed": 0.97,
+     "pause_after": 0.18
+    }
+   ],
+   "chapter": "What to do instead"
+  },
+  {
+   "id": "d38_end",
+   "scene": "ws_end",
+   "min_duration": 2.0,
+   "pad_after": 2.6,
+   "music_cue": "outro",
+   "sfx": [],
+   "claims": [],
+   "transition": "fade",
+   "shot": {
+    "question": "Has someone ever presented your idea as their own? Do you think they knew?",
+    "tag": "EPISODE 2 · THE CREDIT",
+    "notice": "A fictional story. Characters and companies are invented.",
+    "brand_at": "L1+3.0",
+    "fade_out": 1.2
+   },
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Has someone ever presented your idea as their own?",
+     "speed": 0.97,
+     "pause_before": 0.8,
+     "pause_after": 0.18
+    },
+    {
+     "who": "narrator",
+     "text": "Do you think they knew?",
+     "speed": 0.97,
+     "pause_before": 0.6,
+     "pause_after": 0.18
+    }
+   ],
+   "caption_mode": "none"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "type": "established",
+   "text": "Cryptomnesia: people can reproduce others' ideas believing them to be their own (Brown & Murphy, 1989); source memory is fallible.",
+   "sources": [
+    "S1",
+    "S2"
+   ]
+  },
+  {
+   "id": "C1b",
+   "type": "established",
+   "text": "Generating improvements to someone else's idea increases later unconscious plagiarism of it (Stark, Perfect & Newstead, 2005; Perfect & Stark, 2012).",
+   "sources": [
+    "S5",
+    "S6"
+   ]
+  },
+  {
+   "id": "C2",
+   "type": "established",
+   "text": "Egocentric bias: in Ross & Sicoly (1979), 27 of 37 married couples overestimated their own share of responsibility (rating scale, not percentages); the on-screen percentages are illustrative.",
+   "sources": [
+    "S3"
+   ]
+  },
+  {
+   "id": "C2b",
+   "type": "established",
+   "text": "Co-authors in multi-author teams believe they contributed more than is logically possible; considering others' contributions reduces overclaiming (Caruso, Epley & Bazerman, 2006).",
+   "sources": [
+    "S8"
+   ]
+  },
+  {
+   "id": "C3",
+   "type": "illustrative",
+   "text": "Daniel's lapse is presented as a memory error, not a lie; Graham's intent is left ambiguous.",
+   "sources": []
+  },
+  {
+   "id": "C4",
+   "type": "established",
+   "text": "Women staffers in the Obama White House described 'amplification': repeating a colleague's key point and crediting her (Washington Post, 2016).",
+   "sources": [
+    "S4"
+   ]
+  },
+  {
+   "id": "C5",
+   "type": "established",
+   "text": "Promotive voice raised men's status and leader emergence but not women's (McClean, Martin, Emich & Woodruff, 2018).",
+   "sources": [
+    "S7"
+   ]
+  },
+  {
+   "id": "F1",
+   "type": "illustrative",
+   "text": "Invented figures: Northfield ~250 deliveries a week at 81.1% on time (~47 late); evening re-routing via Barrow recovers ~40; week one saw 31 fewer late deliveries.",
+   "sources": []
+  }
+ ],
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Cryptomnesia: Delineating inadvertent plagiarism (Brown & Murphy, 1989), JEP: Learning, Memory, and Cognition 15(3):432-442",
+   "publisher": "American Psychological Association",
+   "url": "https://doi.org/10.1037/0278-7393.15.3.432",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S2",
+   "title": "Source monitoring (Johnson, Hashtroudi & Lindsay, 1993), Psychological Bulletin 114(1):3-28",
+   "publisher": "American Psychological Association",
+   "url": "https://doi.org/10.1037/0033-2909.114.1.3",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S3",
+   "title": "Egocentric biases in availability and attribution (Ross & Sicoly, 1979), JPSP 37(3):322-336",
+   "publisher": "American Psychological Association",
+   "url": "https://doi.org/10.1037/0022-3514.37.3.322",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S4",
+   "title": "How female White House staffers cracked the code of power (Juliet Eilperin, The Washington Post, 13 Sept 2016; republished 18 Sept 2016)",
+   "publisher": "The Washington Post via Daily Herald",
+   "url": "https://www.dailyherald.com/20160918/business/how-female-white-house-staffers-cracked-the-code-of-power/",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S5",
+   "title": "When elaboration leads to appropriation: Unconscious plagiarism in a creative task (Stark, Perfect & Newstead, 2005), Memory 13(6):561-573",
+   "publisher": "Taylor & Francis (Plymouth research portal)",
+   "url": "https://researchportal.plymouth.ac.uk/en/publications/when-elaboration-leads-to-appropriation-unconscious-plagiarism-in/",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S7",
+   "title": "The social consequences of voice (McClean, Martin, Emich & Woodruff, 2018), Academy of Management Journal 61(5):1869-1891",
+   "publisher": "Academy of Management",
+   "url": "https://doi.org/10.5465/amj.2016.0148",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S8",
+   "title": "The costs and benefits of undoing egocentric responsibility assessments in groups (Caruso, Epley & Bazerman, 2006), JPSP 91(5):857-871",
+   "publisher": "American Psychological Association",
+   "url": "https://doi.org/10.1037/0022-3514.91.5.857",
+   "accessed": "2026-10-11"
+  },
+  {
+   "id": "S6",
+   "title": "Perfect & Stark (2012), Europe's Journal of Psychology 8(2): idea improvement and unconscious plagiarism",
+   "publisher": "PsychOpen",
+   "url": "https://ejop.psychopen.eu/index.php/ejop/article/view/459",
+   "accessed": "2026-10-11"
+  }
+ ],
+ "thumbnail": {
+  "actors": [
+   {
+    "who": "daniel",
+    "view": "front",
+    "x": 680,
+    "y": 500,
+    "scale": 1.2,
+    "light": "left",
+    "acting": [
+     {
+      "t": 0,
+      "expr": "smirk",
+      "gaze": [
+       0.3,
+       0.0
+      ],
+      "turn": 0.22,
+      "tilt": -4
+     }
+    ],
+    "arms": [
+     {
+      "t": 0,
+      "l": "rest",
+      "r": "rest"
+     }
+    ],
+    "rim": "#ffd38a"
+   },
+   {
+    "who": "leah",
+    "view": "front",
+    "x": 1440,
+    "y": 500,
+    "scale": 1.55,
+    "light": "right",
+    "acting": [
+     {
+      "t": 0,
+      "expr": "cold",
+      "gaze": [
+       -0.9,
+       0.08
+      ],
+      "turn": -0.2,
+      "tilt": 3
+     }
+    ],
+    "arms": [
+     {
+      "t": 0,
+      "l": "rest",
+      "r": "rest"
+     }
+    ],
+    "rim": "#7fe8ff"
+   }
+  ],
+  "message": {
+   "x": 1010,
+   "y": 890,
+   "rot": -5,
+   "from": "Leah",
+   "colour": "#e06a4f",
+   "time": "Mon 11:02",
+   "text": "What if Northfield's evening runs went via Barrow?",
+   "wrap": 26
+  },
+  "text": {
+   "x": 70,
+   "y": 170,
+   "size": 128,
+   "a": "WHOSE",
+   "b": "IDEA?",
+   "bw": 520
+  }
+ }
+}

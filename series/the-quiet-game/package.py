@@ -1,6 +1,6 @@
 """Package a rendered Quiet Game episode into upload-ready deliverables and a delivery page.
 
-usage: python series/the-quiet-game/package.py [--hosted]
+usage: python series/the-quiet-game/package.py [--episode qg02-the-credit] [--hosted] [--pages-only]
 
 Reads the verified render in out/qg01-the-favour/ and writes, into series/the-quiet-game/the-favour/:
   final.mp4 (git-ignored), thumbnail.png, captions.srt, captions.vtt, transcript.txt, chapters.txt,
@@ -18,11 +18,20 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from pipeline.captions import clock, chapters as chapter_list  # noqa: E402
 
-EP = "qg01-the-favour"
-OUT = ROOT / "out" / EP
-DST = ROOT / "series" / "the-quiet-game" / "the-favour"
-HOSTED = ROOT / "out" / "qg01-delivery-hosted"
-DOWNLOAD_NAME = "The-Quiet-Game-E01-The-Favour-1080p.mp4"
+# Per-episode settings; configure() points the module-level names at one of them.
+EPISODES = {
+    "qg01-the-favour": {"folder": "the-favour", "hosted": "qg01-delivery-hosted", "download": "The-Quiet-Game-E01-The-Favour-1080p.mp4",
+                        "line": "Episode 1 · The Favour", "teaser": [("start", "c03_cold_graham"), ("c19_trust", "c19_trust"), ("title", "c04_title")]},
+    "qg02-the-credit": {"folder": "the-credit", "hosted": "qg02-delivery-hosted", "download": "The-Quiet-Game-E02-The-Credit-1080p.mp4",
+                        "line": "Episode 2 · The Credit", "teaser": [("start", "d02_cold_leah"), ("d14_mine", "d15_leah_freezes"), ("title", "d03_title")]},
+}
+EP = OUT = DST = HOSTED = DOWNLOAD_NAME = CFG = None
+
+
+def configure(ep_id: str) -> None:
+    global EP, OUT, DST, HOSTED, DOWNLOAD_NAME, CFG
+    CFG = EPISODES[ep_id]; EP = ep_id; OUT = ROOT / "out" / ep_id
+    DST = ROOT / "series" / "the-quiet-game" / CFG["folder"]; HOSTED = ROOT / "out" / CFG["hosted"]; DOWNLOAD_NAME = CFG["download"]
 CHUNK = 11 * 1024 * 1024          # raw bytes per piece; base64 text stays under the 16 MB artifact text limit
 STREAM_PART_S = 60
 
@@ -41,6 +50,8 @@ def probe(p: Path) -> dict:
 
 
 def description(ep: dict, ch: list) -> str:
+    if EP == "qg02-the-credit":
+        return description_credit(ep, ch)
     chap = "\n".join(f"{clock(t)} {title}" for t, title in ch)
     return f"""# YouTube description (paste everything below the line)
 
@@ -80,6 +91,75 @@ If the story felt familiar, tell us in the comments what you did, or wish you'd 
 **Tags (YouTube Studio → Tags):** office politics, workplace psychology, manipulation at work, toxic manager, reciprocity, cognitive dissonance, pluralistic ignorance, foot in the door, speaking up at work, career advice, animated story, psychology explained
 
 **Category:** Education · **Audience:** not made for kids · **Altered or synthetic content:** this is an animated, clearly fictional story with synthetic (text-to-speech) voices; it does not depict real people or events, so YouTube's "realistic altered content" label is not required, but disclose it if you prefer.
+"""
+
+
+def description_credit(ep: dict, ch: list) -> str:
+    chap = "\n".join(f"{clock(t)} {title}" for t, title in ch)
+    return f"""# YouTube description (paste everything below the line)
+
+---
+He pitched the best idea of his career. It wasn't his. And he genuinely didn't know.
+
+THE QUIET GAME is an animated psychological drama about the hidden games at work. In Episode 2, Leah suggests a fix to Daniel over coffee. Two days later, with a promotion on the line, Daniel pitches it to the director as his own idea, and believes every word. Did he steal it, or did his memory?
+
+In this episode:
+• Cryptomnesia: why we can forget where an idea came from and remember it as our own
+• Why improving someone's idea makes you more likely to claim it
+• The egocentric bias: why everyone on a team thinks they did most of the work
+• Why credit for ideas doesn't land equally
+• Amplification: the simple meeting tactic that makes credit stick
+• Four moves for when someone presents your idea as theirs
+
+Chapters
+{chap}
+
+This is a fictional story. Characters, companies and events are invented. The psychology is real; sources are below.
+
+Sources
+• Brown & Murphy (1989), Cryptomnesia: Delineating inadvertent plagiarism: https://doi.org/10.1037/0278-7393.15.3.432
+• Stark, Perfect & Newstead (2005), When elaboration leads to appropriation: https://researchportal.plymouth.ac.uk/en/publications/when-elaboration-leads-to-appropriation-unconscious-plagiarism-in/
+• Johnson, Hashtroudi & Lindsay (1993), Source monitoring: https://doi.org/10.1037/0033-2909.114.1.3
+• Ross & Sicoly (1979), Egocentric biases in availability and attribution: https://doi.org/10.1037/0022-3514.37.3.322
+• Caruso, Epley & Bazerman (2006), Egocentric responsibility in groups: https://doi.org/10.1037/0022-3514.91.5.857
+• McClean et al. (2018), The social consequences of voice: https://doi.org/10.5465/amj.2016.0148
+• Eilperin (2016), The Washington Post, on "amplification" (republished): https://www.dailyherald.com/20160918/business/how-female-white-house-staffers-cracked-the-code-of-power/
+
+Has someone ever presented your idea as their own? Do you think they knew? Tell us below. Episode 1, "The Favour", is on the channel.
+
+#OfficePolitics #WorkplacePsychology #TheQuietGame
+---
+
+**Tags:** idea stolen at work, coworker took credit, credit stealing, office politics, workplace psychology, cryptomnesia, unconscious plagiarism, egocentric bias, amplification, career advice, animated story, psychology explained
+
+**Category:** Education · **Audience:** not made for kids · **Altered or synthetic content:** animated, clearly fictional, synthetic (text-to-speech) voices; no real people or events depicted.
+"""
+
+
+PROMO_CREDIT = """# Promotion pack: The Quiet Game, Episode 2
+
+## Pinned comment
+Most stolen ideas aren't stolen. They're forgotten, by the one person who remembers them as their own.
+That doesn't make it fair. It changes what to do next: check the record, then ask, "Can I show you something?"
+
+Has someone presented your idea as theirs? Do you think they knew?
+(Leah's four moves are at {moves}.)
+
+## Community post
+New episode: THE QUIET GAME, "The Credit" 💡
+Leah suggested it on Monday. On Wednesday, Daniel pitched it to the director as his own idea, and he believed it.
+
+Poll: what would you do?
+• Call it out in the meeting
+• Say nothing
+• Raise it privately, with the receipts
+• Build on it and credit myself out loud
+
+## Short teaser
+VO: "At 10:14 on Wednesday, Daniel Hale pitched the best idea of his career. There was one problem. It wasn't his."
+Daniel: "Mine. I've been working on it since Monday."
+Card: THE QUIET GAME · The Credit · full episode on the channel
+A rendered 16:9 teaser cut from the final episode is in this folder as teaser.mp4 (git-ignored; rebuilt by package.py).
 """
 
 
@@ -162,10 +242,10 @@ def write_pages(ep: dict, tl: list, v: dict, master: Path, hosted_info: dict | N
         {"label": "Chapters", "text": (DST / "chapters.txt").read_text().strip()},
         {"label": "Captions (SRT)", "text": (DST / "captions.srt").read_text(), "save": "the-favour-captions.srt.txt", "note": "YouTube Studio → Subtitles → Upload file. If you save it from here, rename the file to end in .srt."},
         {"label": "Transcript", "text": (DST / "transcript.txt").read_text()},
-        {"label": "Pinned comment and community post", "text": (DST / "promo.md").read_text().split("## Short teaser")[0].replace("# Promotion pack: The Quiet Game, Episode 1\n\n", "").strip()},
+        {"label": "Pinned comment and community post", "text": (DST / "promo.md").read_text().split("## Short teaser")[0].split("\n", 2)[2].strip()},
         {"label": "Sources", "text": (DST / "references.md").read_text()},
     ]
-    common = {"youtube_title": ep["youtube_title"], "episode_line": "Episode 1 · The Favour", "specs": specs, "chapters": [{"t": t, "title": title} for t, title in ch],
+    common = {"youtube_title": ep["youtube_title"], "episode_line": CFG["line"], "specs": specs, "chapters": [{"t": t, "title": title} for t, title in ch],
               "download_name": DOWNLOAD_NAME, "kit": kit,
               "notice": f"A fictional story; the psychology is real. This video has not been uploaded or published anywhere. Master file SHA-256 {digest[:16]}…"}
     tpl = (ROOT / "series" / "the-quiet-game" / "delivery_template.html").read_text()
@@ -183,11 +263,12 @@ def write_pages(ep: dict, tl: list, v: dict, master: Path, hosted_info: dict | N
 def main() -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("--hosted", action="store_true")
     ap.add_argument("--pages-only", action="store_true", help="rebuild the two delivery pages from already-packaged files")
-    a = ap.parse_args()
+    ap.add_argument("--episode", default="qg01-the-favour", choices=sorted(EPISODES))
+    a = ap.parse_args(); configure(a.episode)
     ep = json.loads((ROOT / "episodes" / EP / "episode.json").read_text())
     master = OUT / f"{EP}.mp4"; v = json.loads((OUT / "verify.json").read_text())
     if not master.exists() or not v["all_passed"]:
-        raise SystemExit("no verified render in out/; run: python -m pipeline.build qg01-the-favour --quality final --workers 5")
+        raise SystemExit(f"no verified render in out/; run: python -m pipeline.build {EP} --quality final --workers 5")
     tl = json.loads((OUT / "timeline.json").read_text())
     if a.pages_only:
         write_pages(ep, tl, v, master, json.loads((HOSTED / "manifest.json").read_text()) if (HOSTED / "manifest.json").exists() else None)
@@ -209,10 +290,11 @@ def main() -> int:
     ch = chapter_list(ep, tl)
     (DST / "description.md").write_text(description(ep, ch))
     moves = next(clock(t) for t, title in ch if title == "What to do instead")
-    (DST / "promo.md").write_text(PROMO.format(moves=moves))
-    # 16:9 teaser: cold open (first 3 shots) + "I knew I could trust you" + end of the title card
+    (DST / "promo.md").write_text((PROMO_CREDIT if EP == "qg02-the-credit" else PROMO).format(moves=moves))
+    # 16:9 teaser: the cold open, the episode's key line, then the end of the title card
     T = {s["id"]: s for s in tl}
-    cuts = [(0, T["c03_cold_graham"]["end"]), (T["c19_trust"]["start"], T["c19_trust"]["end"]), (T["c04_title"]["start"] + 0.6, T["c04_title"]["end"])]
+    (a0, a1), (b0, b1), (c0, c1) = CFG["teaser"]
+    cuts = [(0, T[a1]["end"]), (T[b0]["start"], T[b1]["end"]), (T[c1]["start"] + 0.6, T[c1]["end"])]
     fc = "".join(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS[v{i}];[0:a]atrim={s}:{e},asetpts=PTS-STARTPTS[a{i}];" for i, (s, e) in enumerate(cuts))
     fc += "".join(f"[v{i}][a{i}]" for i in range(len(cuts))) + f"concat=n={len(cuts)}:v=1:a=1[v][a]"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(master), "-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "20", "-preset", "medium",

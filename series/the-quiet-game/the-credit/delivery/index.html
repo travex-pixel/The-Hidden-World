@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"></head><body>
+<title>The Quiet Game: The Favour</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@500;700;800&display=swap">
+<style>
+/* Layout: one narrow column like a phone screening room; the player first, then the upload kit. Single deliberate night look (the series' own palette). */
+:root{
+  --night:#0b1020; --night2:#141a2e; --panel:#182038; --line:#2a3352;
+  --ink:#eef0f6; --muted:#a8b0c6; --gold:#ffd38a; --oxblood:#c46a7a; --steel:#7fa6d4; --ok:#7fe0a0; --bad:#ff8a7a;
+  --display:"Fraunces",Georgia,"Times New Roman",serif; --body:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 56px;display:grid;gap:22px}
+header{display:grid;gap:4px}
+.series{font-family:var(--display);font-weight:800;font-size:clamp(28px,7vw,44px);letter-spacing:.06em;line-height:1.05;text-wrap:balance}
+.ep{font-weight:800;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.yt{font-family:var(--display);font-weight:600;font-size:clamp(19px,4.6vw,24px);line-height:1.25;color:var(--ink);text-wrap:balance;margin-top:8px}
+.player{background:#000;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+video{display:block;width:100%;aspect-ratio:16/9;max-width:100%;background:#000}
+.bar{display:grid;gap:8px;padding:12px 14px;background:var(--night2)}
+.row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.time{font-variant-numeric:tabular-nums;font-weight:700;color:var(--muted);font-size:14px}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.status{padding:12px 14px;border-radius:12px;font-weight:700;font-size:15px;border:1px solid var(--line);background:var(--panel)}
+.status.bad{border-color:var(--bad);color:#ffd8d2}
+.status.ok{border-color:#3d6b52;color:#d8f7e4}
+.specs{display:flex;flex-wrap:wrap;gap:8px}
+.spec{font-size:13px;font-weight:800;letter-spacing:.04em;padding:6px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-variant-numeric:tabular-nums}
+.btn{appearance:none;border:0;border-radius:12px;padding:14px 18px;font:800 16px/1.1 var(--body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;min-height:48px}
+.btn.primary{background:var(--gold);color:#1a1406;width:100%}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--steel);outline-offset:2px}
+.btn[disabled]{opacity:.6;cursor:progress}
+progress{width:100%;height:10px;accent-color:var(--gold)}
+h2{font-family:var(--display);font-weight:800;font-size:22px;margin:0;letter-spacing:.01em}
+.label{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+section{display:grid;gap:12px}
+.chapters{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.chapters button{all:unset;cursor:pointer;display:grid;grid-template-columns:4.2em 1fr;gap:10px;padding:10px 12px;border-radius:10px;width:100%;box-sizing:border-box}
+.chapters button:hover,.chapters button:focus-visible{background:var(--panel);outline:none}
+.chapters .t{font-variant-numeric:tabular-nums;color:var(--gold);font-weight:800}
+.chapters .on{background:var(--panel)}
+details{background:var(--night2);border:1px solid var(--line);border-radius:12px}
+summary{cursor:pointer;padding:14px 16px;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-weight:800}
+details[open] summary::after{content:"–"}
+.box{padding:0 16px 16px;display:grid;gap:10px;min-width:0}
+pre{margin:0;white-space:pre-wrap;word-wrap:break-word;font:500 14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--night);border:1px solid var(--line);border-radius:10px;padding:12px;max-height:360px;overflow:auto;color:var(--ink)}
+.small{font-size:14px;color:var(--muted)}
+.notice{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+a{color:var(--steel)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="ep" id="epline">Episode 1 · The Favour</div>
+    <div class="series">THE QUIET GAME</div>
+    <div class="yt" id="ytitle"></div>
+  </header>
+
+  <div class="player">
+    <video id="v" controls playsinline preload="metadata"></video>
+    <div class="bar" id="bar">
+      <input type="range" id="scrub" min="0" step="0.1" value="0" aria-label="Episode position">
+      <div class="row"><span class="time" id="clock">0:00 / 0:00</span><span class="time" id="part"></span><span class="time" id="chapnow"></span></div>
+    </div>
+  </div>
+  <div class="status" id="status" hidden></div>
+
+  <div class="specs" id="specs"></div>
+
+  <section aria-labelledby="dl-h">
+    <h2 id="dl-h">Download the MP4</h2>
+    <a class="btn primary" id="dl-local" hidden>Download MP4</a>
+    <button class="btn primary" id="dl-hosted" type="button" hidden>Download full-quality MP4</button>
+    <progress id="dlprog" max="1" value="0" hidden></progress>
+    <div class="small" id="dlnote"></div>
+  </section>
+
+  <section aria-labelledby="ch-h">
+    <h2 id="ch-h">Chapters</h2>
+    <ul class="chapters" id="chapters"></ul>
+  </section>
+
+  <section aria-labelledby="kit-h">
+    <h2 id="kit-h">Upload kit</h2>
+    <div class="small">Everything YouTube asks for. Copy each block straight into YouTube Studio.</div>
+    <div id="kit"></div>
+  </section>
+
+  <div class="notice" id="notice"></div>
+</div>
+
+<script>
+const DATA = {"youtube_title": "He Stole Her Idea in the Meeting. He Didn't Even Know.", "episode_line": "Episode 2 · The Credit", "specs": {"width": 1920, "height": 1080, "fps": 30.0, "duration": 458.4, "size": 84795054, "codecs": "H.264 · AAC"}, "chapters": [{"t": 0.0, "title": "Wednesday, 10:14"}, {"t": 20.38, "title": "The shortlist"}, {"t": 66.152, "title": "Monday"}, {"t": 117.774, "title": "The pitch"}, {"t": 179.845, "title": "Did he steal it?"}, {"t": 274.291, "title": "The receipts"}, {"t": 322.509, "title": "The record"}, {"t": 366.791, "title": "Amplify"}, {"t": 428.015, "title": "What to do instead"}], "download_name": "The-Quiet-Game-E02-The-Credit-1080p.mp4", "kit": [{"label": "Title", "text": "He Stole Her Idea in the Meeting. He Didn't Even Know.", "open": true}, {"label": "Description", "text": "He pitched the best idea of his career. It wasn't his. And he genuinely didn't know.\n\nTHE QUIET GAME is an animated psychological drama about the hidden games at work. In Episode 2, Leah suggests a fix to Daniel over coffee. Two days later, with a promotion on the line, Daniel pitches it to the director as his own idea, and believes every word. Did he steal it, or did his memory?\n\nIn this episode:\n• Cryptomnesia: why we can forget where an idea came from and remember it as our own\n• Why improving someone's idea makes you more likely to claim it\n• The egocentric bias: why everyone on a team thinks they did most of the work\n• Why credit for ideas doesn't land equally\n• Amplification: the simple meeting tactic that makes credit stick\n• Four moves for when someone presents your idea as theirs\n\nChapters\n0:00 Wednesday, 10:14\n0:20 The shortlist\n1:06 Monday\n1:57 The pitch\n2:59 Did he steal it?\n4:34 The receipts\n5:22 The record\n6:06 Amplify\n7:08 What to do instead\n\nThis is a fictional story. Characters, companies and events are invented. The psychology is real; sources are below.\n\nSources\n• Brown & Murphy (1989), Cryptomnesia: Delineating inadvertent plagiarism: https://doi.org/10.1037/0278-7393.15.3.432\n• Stark, Perfect & Newstead (2005), When elaboration leads to appropriation: https://researchportal.plymouth.ac.uk/en/publications/when-elaboration-leads-to-appropriation-unconscious-plagiarism-in/\n• Johnson, Hashtroudi & Lindsay (1993), Source monitoring: https://doi.org/10.1037/0033-2909.114.1.3\n• Ross & Sicoly (1979), Egocentric biases in availability and attribution: https://doi.org/10.1037/0022-3514.37.3.322\n• Caruso, Epley & Bazerman (2006), Egocentric responsibility in groups: https://doi.org/10.1037/0022-3514.91.5.857\n• McClean et al. (2018), The social consequences of voice: https://doi.org/10.5465/amj.2016.0148\n• Eilperin (2016), The Washington Post, on \"amplification\" (republished): https://www.dailyherald.com/20160918/business/how-female-white-house-staffers-cracked-the-code-of-power/\n\nHas someone ever presented your idea as their own? Do you think they knew? Tell us below. Episode 1, \"The Favour\", is on the channel.\n\n#OfficePolitics #WorkplacePsychology #TheQuietGame", "save": "description.txt"}, {"label": "Chapters", "text": "0:00 Wednesday, 10:14\n0:20 The shortlist\n1:06 Monday\n1:57 The pitch\n2:59 Did he steal it?\n4:34 The receipts\n5:22 The record\n6:06 Amplify\n7:08 What to do instead"}, {"label": "Captions (SRT)", "text": "1\n00:00:00,650 --> 00:00:03,875\nDaniel: What if Northfield's late runs\nwent through Barrow instead?\n\n2\n00:00:05,045 --> 00:00:09,610\nAt 10:14 on Wednesday, Daniel Hale pitched\nthe best idea of his career.\n\n3\n00:00:10,190 --> 00:00:12,435\nThere was one problem. It wasn't his.\n\n4\n00:00:13,115 --> 00:00:15,480\nAnd the strange part? He had no idea.\n\n5\n00:00:21,530 --> 00:00:25,199\nTwo weeks after the Ostrel report, things\nat Halvern were calmer.\n\n6\n00:00:25,379 --> 00:00:27,442\nEvery dashboard change was logged.\n\n7\n00:00:27,822 --> 00:00:30,311\nAnd Daniel and Leah were friends again.\n\n8\n00:00:31,381 --> 00:00:33,586\nThen Ruth announced a promotion.\n\n9\n00:00:33,766 --> 00:00:37,131\nOne Senior Analyst role. Two names on the\nshortlist.\n\n10\n00:00:37,611 --> 00:00:40,107\nBring one idea that would fix a depot.\n\n11\n00:00:41,177 --> 00:00:43,794\nFor Leah, this was about more than a\ntitle.\n\n12\n00:00:43,974 --> 00:00:47,374\nTwo weeks earlier, she'd been blamed for a\nmistake that wasn't hers.\n\n13\n00:00:47,854 --> 00:00:50,621\nA promotion would mean nobody doubted her\nwork again.\n\n14\n00:00:51,591 --> 00:00:52,828\nDaniel wanted it too.\n\n15\n00:00:53,008 --> 00:00:55,563\nGraham had put his name forward weeks ago.\n\n16\n00:00:55,943 --> 00:00:59,185\nAnd Graham had made it clear he was\nexpecting something big.\n\n17\n00:01:00,255 --> 00:01:01,622\nLeah: So. Rivals.\n\n18\n00:01:02,322 --> 00:01:05,352\nDaniel: Friendly rivals. May the best idea\nwin.\n\n19\n00:01:07,002 --> 00:01:12,792\nLeah: Northfield's late runs all leave after\nsix. Barrow's trucks sit empty after six.\n\n20\n00:01:13,492 --> 00:01:16,173\nWhat if the evening runs went via Barrow?\n\n21\n00:01:17,073 --> 00:01:18,289\nDaniel: Huh. Maybe.\n\n22\n00:01:19,259 --> 00:01:21,879\nDaniel heard it. He just wasn't really\nlistening.\n\n23\n00:01:22,359 --> 00:01:23,359\nRemember that.\n\n24\n00:01:25,949 --> 00:01:31,090\nAt 11:02, Leah wrote it down. Daniel\nreplied seventeen minutes later.\n\n25\n00:01:33,240 --> 00:01:36,753\nGraham: Ruth wants one big idea tomorrow.\nGot one?\n\n26\n00:01:37,453 --> 00:01:39,833\nDaniel: I've been thinking about\nNorthfield.\n\n27\n00:01:40,633 --> 00:01:45,178\nGraham: Good. Make it yours. Ruth\nremembers whoever says it first.\n\n28\n00:01:46,828 --> 00:01:50,786\nOn Tuesday night, Daniel worked on\nNorthfield until midnight.\n\n29\n00:01:50,966 --> 00:01:53,623\nHe built the routes, the numbers, the\nslides.\n\n30\n00:01:54,303 --> 00:01:56,974\nBy morning, the idea felt completely his.\n\n31\n00:01:58,624 --> 00:02:01,849\nDaniel: What if Northfield's late runs\nwent through Barrow instead?\n\n32\n00:02:02,549 --> 00:02:08,038\nBarrow's trucks sit empty after six. We'd\nrecover about forty late deliveries a week.\n\n33\n00:02:09,208 --> 00:02:11,900\nRuth: That's sharp. Whose idea was this?\n\n34\n00:02:12,970 --> 00:02:15,664\nDaniel: Mine. I've been working on it\nsince Monday.\n\n35\n00:02:19,914 --> 00:02:23,474\nGraham: That's exactly the thinking we\nneed from a Senior Analyst.\n\n36\n00:02:24,374 --> 00:02:25,676\nRuth: Leah, what have you got?\n\n37\n00:02:26,876 --> 00:02:30,059\nLeah: I... had something similar. I'll\nsend it over.\n\n38\n00:02:31,229 --> 00:02:33,782\nDaniel: Leah! What did you think? Too\nmuch?\n\n39\n00:02:35,082 --> 00:02:36,362\nLeah: It was a good idea.\n\n40\n00:02:37,062 --> 00:02:40,290\nDaniel: Thanks. I've been thinking about\nit all week.\n\n41\n00:02:42,240 --> 00:02:44,173\nLeah had two obvious options.\n\n42\n00:02:44,353 --> 00:02:48,429\nAccuse him, in front of the director, two\ndays before a promotion.\n\n43\n00:02:48,909 --> 00:02:50,845\nOr say nothing, and let it go.\n\n44\n00:02:52,695 --> 00:02:54,259\nLeah: You stole my idea.\n\n45\n00:02:55,559 --> 00:02:56,559\nNo.\n\n46\n00:02:57,531 --> 00:02:58,945\nCan I show you something?\n\n47\n00:03:00,595 --> 00:03:03,074\nLeah was sure Daniel had taken her idea.\n\n48\n00:03:03,654 --> 00:03:06,432\nBut here's the uncomfortable question. Did\nhe know?\n\n49\n00:03:07,302 --> 00:03:10,994\nPsychologists call it cryptomnesia:\naccidental plagiarism.\n\n50\n00:03:11,174 --> 00:03:16,335\nIn a 1989 study, people took turns naming\nideas in small groups.\n\n51\n00:03:16,515 --> 00:03:19,942\nLater, some of them listed their partners'\nideas as their own.\n\n52\n00:03:20,422 --> 00:03:24,093\nMemory tends to keep an idea, and quietly\nlose where it came from.\n\n53\n00:03:25,063 --> 00:03:28,036\nOur memories don't come with a label\nsaying who said what.\n\n54\n00:03:28,216 --> 00:03:32,249\nThe brain rebuilds the source each time we\nremember, and it can get it wrong.\n\n55\n00:03:32,729 --> 00:03:36,549\nDaniel kept the idea from Monday. He lost\nthe part with Leah in it.\n\n56\n00:03:37,519 --> 00:03:40,852\nLater studies found that improving someone\nelse's idea\n\n57\n00:03:41,032 --> 00:03:43,113\nmakes you more likely to claim it later.\n\n58\n00:03:43,593 --> 00:03:46,188\nDaniel had spent a whole night improving\nit.\n\n59\n00:03:47,338 --> 00:03:50,019\nThe second force is the egocentric bias.\n\n60\n00:03:50,199 --> 00:03:56,554\nIn a classic 1979 study, most married couples\neach rated their own share of the housework\n\n61\n00:03:56,734 --> 00:04:01,004\nhigher than their partner did. Put together,\ntheir claims came to more than the whole.\n\n62\n00:04:01,484 --> 00:04:05,730\nNobody was lying. We simply remember our\nown effort most vividly.\n\n63\n00:04:06,310 --> 00:04:08,774\nStudies of co-authors find the same thing.\n\n64\n00:04:08,954 --> 00:04:12,140\nAdd up everyone's claimed share, and it's\nmore than the whole.\n\n65\n00:04:12,320 --> 00:04:15,997\nIt shrinks when people stop to think about\nwhat each person actually did.\n\n66\n00:04:17,447 --> 00:04:22,433\nAnd credit doesn't land equally. In one\nstudy, men who offered new ideas\n\n67\n00:04:22,613 --> 00:04:24,389\nwere seen as more leader-like.\n\n68\n00:04:24,569 --> 00:04:27,543\nWomen offering the same kind of ideas\ndidn't get that boost.\n\n69\n00:04:28,123 --> 00:04:31,078\nNone of this makes it fair. Leah still did\nthe noticing.\n\n70\n00:04:31,558 --> 00:04:33,491\nBut it changed what she should do next.\n\n71\n00:04:36,341 --> 00:04:42,093\nSo Leah chose a third option. Not an\naccusation. A question, with evidence.\n\n72\n00:04:42,673 --> 00:04:46,604\nShe didn't need to win an argument about\nmemory. She had a timestamp.\n\n73\n00:04:48,354 --> 00:04:49,767\nLeah: Can I show you something?\n\n74\n00:04:50,367 --> 00:04:54,210\nOn Monday, I suggested running\nNorthfield's evenings through Barrow.\n\n75\n00:04:55,410 --> 00:04:56,411\nDaniel: That... was you.\n\n76\n00:05:00,981 --> 00:05:03,233\nLeah, I honestly thought it was mine.\n\n77\n00:05:04,233 --> 00:05:06,618\nLeah: I believe you. That's what worries\nme.\n\n78\n00:05:07,518 --> 00:05:12,089\nLet's take it to Ruth together. I had the\nidea. You built the numbers.\n\n79\n00:05:13,159 --> 00:05:18,662\nGraham: Ruth loved it. Don't overthink it.\nIdeas belong to whoever makes them happen.\n\n80\n00:05:19,562 --> 00:05:21,509\nDaniel: Then it belongs to both of us.\n\n81\n00:05:23,359 --> 00:05:27,860\nRuth, I need to correct something. The\nBarrow idea started with Leah, on Monday.\n\n82\n00:05:28,560 --> 00:05:31,253\nI built it out. But it was hers first.\n\n83\n00:05:32,423 --> 00:05:33,720\nRuth: Thank you for telling me.\n\n84\n00:05:34,420 --> 00:05:36,803\nLeah, walk me through how you spotted it.\n\n85\n00:05:37,973 --> 00:05:43,081\nLeah: Every late run at Northfield leaves\nafter six. I checked a month of logs.\n\n86\n00:05:43,681 --> 00:05:46,506\nAnd every evening, Barrow's trucks sit\nempty.\n\n87\n00:05:47,676 --> 00:05:49,900\nRuth: Noticing is the part I can't teach.\n\n88\n00:05:51,550 --> 00:05:56,491\nThat afternoon, Ruth sent one email.\nCredit, in writing, to everyone.\n\n89\n00:05:58,841 --> 00:06:01,641\nRuth didn't decide the promotion that day.\n\n90\n00:06:02,121 --> 00:06:05,991\nBut she now knew who noticed things, and\nwho told the truth when it cost him.\n\n91\n00:06:07,641 --> 00:06:12,273\nDaniel: We should run the same check on\nCarlton. Its late runs leave after six too.\n\n92\n00:06:13,373 --> 00:06:17,127\nGraham: Here's a thought. We check\nCarlton's evening runs as well.\n\n93\n00:06:18,197 --> 00:06:23,718\nLeah: Building on Daniel's point a minute\nago, yes. Carlton's next.\n\n94\n00:06:25,168 --> 00:06:30,689\nIn 2016, women on President Obama's\nstaff described a tactic they called amplification.\n\n95\n00:06:30,869 --> 00:06:35,122\nWhen one of them made a key point, another\nrepeated it, and credited her by name.\n\n96\n00:06:35,602 --> 00:06:38,855\nIt's hard to take an idea that someone has\njust credited out loud.\n\n97\n00:06:40,025 --> 00:06:42,065\nMaybe Graham hadn't heard Daniel.\n\n98\n00:06:42,645 --> 00:06:47,292\nMaybe he had. Either way, everyone in the\nroom now knew whose point it was.\n\n99\n00:06:48,942 --> 00:06:50,138\nDaniel: Carlton next?\n\n100\n00:06:50,938 --> 00:06:54,548\nLeah: Carlton next. And this time, I'm\nwriting it down.\n\n101\n00:06:55,348 --> 00:06:58,912\nDaniel: Send it to me. I'll forward it to\nRuth, with your name on it.\n\n102\n00:07:00,212 --> 00:07:02,361\nMost stolen ideas aren't stolen.\n\n103\n00:07:03,141 --> 00:07:06,415\nThey're forgotten, by the one person who\nremembers them as his own.\n\n104\n00:07:08,865 --> 00:07:11,275\nSo if someone presents your idea as\ntheirs:\n\n105\n00:07:11,655 --> 00:07:15,807\nput your ideas in writing early. A\ntwo-line message is a timestamp.\n\n106\n00:07:15,987 --> 00:07:19,844\nCheck the record before you accuse. Memory\nis weak evidence.\n\n107\n00:07:20,024 --> 00:07:24,644\nRaise it privately, with curiosity, not a\nverdict. \"Can I show you something?\"\n\n108\n00:07:24,824 --> 00:07:29,032\nAnd amplify others. Give credit out loud,\nand it tends to come back.\n\n109\n00:07:31,282 --> 00:07:34,044\nHas someone ever presented your idea as\ntheir own?\n\n110\n00:07:34,824 --> 00:07:35,824\nDo you think they knew?\n", "save": "the-favour-captions.srt.txt", "note": "YouTube Studio → Subtitles → Upload file. If you save it from here, rename the file to end in .srt."}, {"label": "Transcript", "text": "THE QUIET GAME — The Credit\n\nA fictional story. Characters, companies and events are invented. The psychology is real.\n\n\n== 0:00  WEDNESDAY, 10:14 ==\n\n[0:00] DANIEL: What if Northfield's late runs went through Barrow instead?\n[0:05] NARRATOR: At 10:14 on Wednesday, Daniel Hale pitched the best idea of his career.\n[0:10] NARRATOR: There was one problem. It wasn't his.\n[0:13] NARRATOR: And the strange part? He had no idea.\n[0:16] (Title card: The Quiet Game, Episode 2, The Credit.)\n\n== 0:20  THE SHORTLIST ==\n\n[0:21] NARRATOR: Two weeks after the Ostrel report, things at Halvern were calmer.\n[0:25] NARRATOR: Every dashboard change was logged.\n[0:27] NARRATOR: And Daniel and Leah were friends again.\n[0:31] NARRATOR: Then Ruth announced a promotion.\n[0:33] NARRATOR: One Senior Analyst role. Two names on the shortlist.\n[0:37] NARRATOR: Bring one idea that would fix a depot.\n[0:41] NARRATOR: For Leah, this was about more than a title.\n[0:43] NARRATOR: Two weeks earlier, she'd been blamed for a mistake that wasn't hers.\n[0:47] NARRATOR: A promotion would mean nobody doubted her work again.\n[0:51] NARRATOR: Daniel wanted it too.\n[0:53] NARRATOR: Graham had put his name forward weeks ago.\n[0:55] NARRATOR: And Graham had made it clear he was expecting something big.\n[1:00] LEAH: So. Rivals.\n[1:02] DANIEL: Friendly rivals. May the best idea win.\n\n== 1:06  MONDAY ==\n\n[1:07] LEAH: Northfield's late runs all leave after six. Barrow's trucks sit empty after six.\n[1:13] LEAH: What if the evening runs went via Barrow?\n[1:17] DANIEL: Huh. Maybe.\n[1:19] NARRATOR: Daniel heard it. He just wasn't really listening.\n[1:22] NARRATOR: Remember that.\n[1:25] NARRATOR: At 11:02, Leah wrote it down. Daniel replied seventeen minutes later.\n[1:33] GRAHAM: Ruth wants one big idea tomorrow. Got one?\n[1:37] DANIEL: I've been thinking about Northfield.\n[1:40] GRAHAM: Good. Make it yours. Ruth remembers whoever says it first.\n[1:46] NARRATOR: On Tuesday night, Daniel worked on Northfield until midnight.\n[1:50] NARRATOR: He built the routes, the numbers, the slides.\n[1:54] NARRATOR: By morning, the idea felt completely his.\n\n== 1:57  THE PITCH ==\n\n[1:58] DANIEL: What if Northfield's late runs went through Barrow instead?\n[2:02] DANIEL: Barrow's trucks sit empty after six. We'd recover about forty late deliveries a week.\n[2:09] RUTH: That's sharp. Whose idea was this?\n[2:12] DANIEL: Mine. I've been working on it since Monday.\n[2:16] (Leah freezes. Since Monday.)\n[2:19] GRAHAM: That's exactly the thinking we need from a Senior Analyst.\n[2:24] RUTH: Leah, what have you got?\n[2:26] LEAH: I... had something similar. I'll send it over.\n[2:31] DANIEL: Leah! What did you think? Too much?\n[2:35] LEAH: It was a good idea.\n[2:37] DANIEL: Thanks. I've been thinking about it all week.\n[2:42] NARRATOR: Leah had two obvious options.\n[2:44] NARRATOR: Accuse him, in front of the director, two days before a promotion.\n[2:48] NARRATOR: Or say nothing, and let it go.\n[2:52] LEAH: You stole my idea.\n[2:55] LEAH: No.\n[2:57] LEAH: Can I show you something?\n\n== 2:59  DID HE STEAL IT? ==\n\n[3:00] NARRATOR: Leah was sure Daniel had taken her idea.\n[3:03] NARRATOR: But here's the uncomfortable question. Did he know?\n[3:07] NARRATOR: Psychologists call it cryptomnesia: accidental plagiarism.\n[3:11] NARRATOR: In a 1989 study, people took turns naming ideas in small groups.\n[3:16] NARRATOR: Later, some of them listed their partners' ideas as their own.\n[3:20] NARRATOR: Memory tends to keep an idea, and quietly lose where it came from.\n[3:25] NARRATOR: Our memories don't come with a label saying who said what.\n[3:28] NARRATOR: The brain rebuilds the source each time we remember, and it can get it wrong.\n[3:32] NARRATOR: Daniel kept the idea from Monday. He lost the part with Leah in it.\n[3:37] NARRATOR: Later studies found that improving someone else's idea\n[3:41] NARRATOR: makes you more likely to claim it later.\n[3:43] NARRATOR: Daniel had spent a whole night improving it.\n[3:47] NARRATOR: The second force is the egocentric bias.\n[3:50] NARRATOR: In a classic 1979 study, most married couples each rated their own share of the housework\n[3:56] NARRATOR: higher than their partner did. Put together, their claims came to more than the whole.\n[4:01] NARRATOR: Nobody was lying. We simply remember our own effort most vividly.\n[4:06] NARRATOR: Studies of co-authors find the same thing.\n[4:08] NARRATOR: Add up everyone's claimed share, and it's more than the whole.\n[4:12] NARRATOR: It shrinks when people stop to think about what each person actually did.\n[4:17] NARRATOR: And credit doesn't land equally. In one study, men who offered new ideas\n[4:22] NARRATOR: were seen as more leader-like.\n[4:24] NARRATOR: Women offering the same kind of ideas didn't get that boost.\n[4:28] NARRATOR: None of this makes it fair. Leah still did the noticing.\n[4:31] NARRATOR: But it changed what she should do next.\n\n== 4:34  THE RECEIPTS ==\n\n[4:36] NARRATOR: So Leah chose a third option. Not an accusation. A question, with evidence.\n[4:42] NARRATOR: She didn't need to win an argument about memory. She had a timestamp.\n[4:48] LEAH: Can I show you something?\n[4:50] LEAH: On Monday, I suggested running Northfield's evenings through Barrow.\n[4:55] DANIEL: That... was you.\n[4:56] (Daniel reads his own reply from Monday: nice, could work.)\n[5:00] DANIEL: Leah, I honestly thought it was mine.\n[5:04] LEAH: I believe you. That's what worries me.\n[5:07] LEAH: Let's take it to Ruth together. I had the idea. You built the numbers.\n[5:13] GRAHAM: Ruth loved it. Don't overthink it. Ideas belong to whoever makes them happen.\n[5:19] DANIEL: Then it belongs to both of us.\n\n== 5:22  THE RECORD ==\n\n[5:23] DANIEL: Ruth, I need to correct something. The Barrow idea started with Leah, on Monday.\n[5:28] DANIEL: I built it out. But it was hers first.\n[5:32] RUTH: Thank you for telling me.\n[5:34] RUTH: Leah, walk me through how you spotted it.\n[5:37] LEAH: Every late run at Northfield leaves after six. I checked a month of logs.\n[5:43] LEAH: And every evening, Barrow's trucks sit empty.\n[5:47] RUTH: Noticing is the part I can't teach.\n[5:51] NARRATOR: That afternoon, Ruth sent one email. Credit, in writing, to everyone.\n[5:58] NARRATOR: Ruth didn't decide the promotion that day.\n[6:02] NARRATOR: But she now knew who noticed things, and who told the truth when it cost him.\n\n== 6:06  AMPLIFY ==\n\n[6:07] DANIEL: We should run the same check on Carlton. Its late runs leave after six too.\n[6:13] GRAHAM: Here's a thought. We check Carlton's evening runs as well.\n[6:18] LEAH: Building on Daniel's point a minute ago, yes. Carlton's next.\n[6:25] NARRATOR: In 2016, women on President Obama's staff described a tactic they called amplification.\n[6:30] NARRATOR: When one of them made a key point, another repeated it, and credited her by name.\n[6:35] NARRATOR: It's hard to take an idea that someone has just credited out loud.\n[6:40] NARRATOR: Maybe Graham hadn't heard Daniel.\n[6:42] NARRATOR: Maybe he had. Either way, everyone in the room now knew whose point it was.\n[6:48] DANIEL: Carlton next?\n[6:50] LEAH: Carlton next. And this time, I'm writing it down.\n[6:55] DANIEL: Send it to me. I'll forward it to Ruth, with your name on it.\n[7:00] NARRATOR: Most stolen ideas aren't stolen.\n[7:03] NARRATOR: They're forgotten, by the one person who remembers them as his own.\n\n== 7:08  WHAT TO DO INSTEAD ==\n\n[7:08] NARRATOR: So if someone presents your idea as theirs:\n[7:11] NARRATOR: put your ideas in writing early. A two-line message is a timestamp.\n[7:15] NARRATOR: Check the record before you accuse. Memory is weak evidence.\n[7:20] NARRATOR: Raise it privately, with curiosity, not a verdict. \"Can I show you something?\"\n[7:24] NARRATOR: And amplify others. Give credit out loud, and it tends to come back.\n[7:31] NARRATOR: Has someone ever presented your idea as their own?\n[7:34] NARRATOR: Do you think they knew?\n"}, {"label": "Pinned comment and community post", "text": "## Pinned comment\nMost stolen ideas aren't stolen. They're forgotten, by the one person who remembers them as their own.\nThat doesn't make it fair. It changes what to do next: check the record, then ask, \"Can I show you something?\"\n\nHas someone presented your idea as theirs? Do you think they knew?\n(Leah's four moves are at 7:08.)\n\n## Community post\nNew episode: THE QUIET GAME, \"The Credit\" 💡\nLeah suggested it on Monday. On Wednesday, Daniel pitched it to the director as his own idea, and he believed it.\n\nPoll: what would you do?\n• Call it out in the meeting\n• Say nothing\n• Raise it privately, with the receipts\n• Build on it and credit myself out loud"}, {"label": "Sources", "text": "# References and research notes: \"The Credit\"\n\nThe story is fiction; the psychology is real. Citations were checked on 2026-10-11 against bibliographic records, abstracts and reputable secondary sources. Full papers could not be opened from the research environment. Anything unconfirmed is marked **unverified**. All effects are **tendencies, not rules**, and most come from lab studies with student samples.\n\n## 1. Cryptomnesia (Chapter 4, \"Force 1\")\n- **Brown, A. S., & Murphy, D. R. (1989).** Cryptomnesia: Delineating inadvertent plagiarism. *JEP: Learning, Memory, and Cognition, 15*(3), 432–442. https://doi.org/10.1037/0278-7393.15.3.432\n  - Groups of four took turns naming category examples. Later, people sometimes listed others' items as their own, or offered them as \"new\". Item-level rates were modest: later work cites about 9.8% in Experiment 3. Popular claims of \"75% of participants\" are **unverified** and not used.\n- **Marsh, R. L., & Bower, G. H. (1993).** Eliciting cryptomnesia: Unconscious plagiarism in a puzzle task. *JEP: LMC, 19*(3), 673–688. Participants later claimed words found by a computer partner.\n- **Stark, L.-J., Perfect, T. J., & Newstead, S. E. (2005).** When elaboration leads to appropriation. *Memory, 13*(6), 561–573. https://researchportal.plymouth.ac.uk/en/publications/when-elaboration-leads-to-appropriation-unconscious-plagiarism-in/\n  - Generating *improvements* to a partner's idea increased later claiming it. Hearing it again or imagining it did not.\n- **Perfect, T. J., & Stark, L.-J. (2012).** *Europe's Journal of Psychology, 8*(2). https://ejop.psychopen.eu/index.php/ejop/article/view/459. Improving ideas roughly doubled later plagiarism.\n- **Narrated:** \"In a 1989 study, people took turns naming ideas in small groups. Later, some of them listed their partners' ideas as their own.\" / \"Later studies found that improving someone else's idea makes you more likely to claim it later.\"\n\n## 2. Source monitoring\n- **Johnson, M. K., Hashtroudi, S., & Lindsay, D. S. (1993).** Source monitoring. *Psychological Bulletin, 114*(1), 3–28. https://doi.org/10.1037/0033-2909.114.1.3\n  - Memories aren't stored with a source label. We infer the source when we remember, so source errors are normal.\n- **Narrated:** \"Our memories don't come with a label saying who said what. The brain rebuilds the source each time we remember, and it can get it wrong.\"\n\n## 3. Egocentric bias (Chapter 4, \"Force 2\")\n- **Ross, M., & Sicoly, F. (1979).** Egocentric biases in availability and attribution. *JPSP, 37*(3), 322–336. https://doi.org/10.1037/0022-3514.37.3.322\n  - 37 married couples rated their share of responsibility for 20 activities on a line scale, not in percentages. **27 of 37 couples** overestimated.\n  - The episode's 58% and 56% bars are therefore labelled **\"Illustration\"** on screen, and the narration says the claims \"came to more than the whole\".\n- **Caruso, E. M., Epley, N., & Bazerman, M. H. (2006).** *JPSP, 91*(5), 857–871. https://doi.org/10.1037/0022-3514.91.5.857\n  - Authors of multi-author papers believed they contributed more of the total work than is logically possible. Considering others' contributions reduced this.\n- **Savitsky, Van Boven, Epley & Wight (2005).** *JESP, 41*(5), 447–457. Overclaiming shrank when people thought about each collaborator individually (school and student samples).\n\n## 4. Unequal credit for ideas\n- **McClean, E. J., Martin, S. R., Emich, K. J., & Woodruff, T. (2018).** The social consequences of voice. *Academy of Management Journal, 61*(5), 1869–1891. https://doi.org/10.5465/amj.2016.0148\n  - Men who offered constructive, idea-based suggestions gained status and leader emergence. Women offering the same kind of suggestions did not. This summary is from the abstract; effect sizes are unverified.\n- **Narrated:** \"In one study, men who offered new ideas were seen as more leader-like. Women offering the same kind of ideas didn't get that boost.\"\n\n## 5. Amplification (Chapter 7)\n- **Eilperin, J. (2016, 13 September).** *The Washington Post.* Republished 18 Sept 2016 as \"How female White House staffers cracked the code of power\": https://www.dailyherald.com/20160918/business/how-female-white-house-staffers-cracked-the-code-of-power/\n  - Women staffers repeated each other's key points and credited the author, so the points couldn't be ignored or claimed by others.\n  - The exact original headline and washingtonpost.com URL are **unverified**. This is journalism based on staff accounts, not a controlled study.\n\n## What the episode deliberately does not do\n- It does not call Daniel a liar. His lapse is presented as a memory error, and he corrects it himself.\n- It does not prove Graham's intent (\"Maybe he hadn't heard Daniel. Maybe he had.\").\n- It invents no statistics. Company figures are fictional and labelled, consistent with Episode 1, and checked by `tests/test_quiet_game.py`.\n"}], "notice": "A fictional story; the psychology is real. This video has not been uploaded or published anywhere. Master file SHA-256 02f690d85c3fea25…", "mode": "local", "src": "../final.mp4", "vtt": "../captions.vtt", "poster": "../thumbnail.png"};
+(function () {
+  const $ = id => document.getElementById(id);
+  const v = $('v'), scrub = $('scrub'), status = $('status');
+  const fmt = s => { s = Math.max(0, Math.floor(s)); const m = Math.floor(s / 60); return m + ':' + String(s % 60).padStart(2, '0'); };
+  const mb = b => (b / 1e6).toFixed(1) + ' MB';
+  function say(msg, kind) { status.hidden = false; status.className = 'status' + (kind ? ' ' + kind : ''); status.textContent = msg; }
+  if (!DATA) { say('This page has no episode data. Rebuild it with series/the-quiet-game/package.py.', 'bad'); return; }
+
+  $('ytitle').textContent = DATA.youtube_title;
+  $('epline').textContent = DATA.episode_line;
+  $('notice').textContent = DATA.notice;
+  const sp = DATA.specs; const specs = [sp.width + '×' + sp.height, sp.fps + ' fps', fmt(sp.duration), mb(sp.size), sp.codecs];
+  specs.forEach(t => { const s = document.createElement('span'); s.className = 'spec'; s.textContent = t; $('specs').appendChild(s); });
+  v.poster = DATA.poster;
+  scrub.max = String(DATA.specs.duration);
+
+  // ---------- playback: one file (local) or a chain of ~1-minute parts (hosted)
+  const segs = DATA.mode === 'hosted' ? DATA.segments : [{ src: DATA.src, start: 0, dur: DATA.specs.duration, vtt: DATA.vtt }];
+  let cur = -1, pendingSeek = null, wantPlay = false;
+  function load(i, offset, play) {
+    if (i !== cur) {
+      cur = i; v.src = segs[i].src;
+      [...v.querySelectorAll('track')].forEach(t => t.remove());
+      if (segs[i].vtt) { const tr = document.createElement('track'); tr.kind = 'subtitles'; tr.srclang = 'en'; tr.label = 'English'; tr.src = segs[i].vtt; v.appendChild(tr); }
+      pendingSeek = offset || 0; wantPlay = play; v.load();
+    } else { v.currentTime = offset || 0; if (play) v.play().catch(() => {}); }
+    $('part').textContent = segs.length > 1 ? 'Part ' + (i + 1) + ' of ' + segs.length : '';
+  }
+  function seekGlobal(t, play) { let i = segs.findIndex(s => t < s.start + s.dur); if (i < 0) i = segs.length - 1; load(i, Math.max(0, t - segs[i].start), play); }
+  v.addEventListener('loadedmetadata', () => { if (pendingSeek !== null) { v.currentTime = pendingSeek; pendingSeek = null; } if (wantPlay) { v.play().catch(() => {}); wantPlay = false; } status.hidden = true; });
+  v.addEventListener('ended', () => { if (cur < segs.length - 1) load(cur + 1, 0, true); });
+  const chs = DATA.chapters;
+  v.addEventListener('timeupdate', () => {
+    const g = segs[cur].start + v.currentTime; if (!scrub.matches(':active')) scrub.value = g;
+    $('clock').textContent = fmt(g) + ' / ' + fmt(DATA.specs.duration);
+    let k = 0; chs.forEach((c, j) => { if (g >= c.t) k = j; }); $('chapnow').textContent = chs.length ? '· ' + chs[k].title : '';
+    document.querySelectorAll('.chapters button').forEach((b, j) => b.classList.toggle('on', j === k));
+  });
+  scrub.addEventListener('change', () => seekGlobal(parseFloat(scrub.value), !v.paused));
+  v.addEventListener('error', () => {
+    if (DATA.mode === 'local') say('The video did not play. Either final.mp4 is not in the episode folder (it is not stored in Git; see delivery/README.md), or this browser cannot play H.264 MP4. Chrome, Safari, Edge and Firefox on phones and desktops can.', 'bad');
+    else say('Part ' + (cur + 1) + ' of the video did not load. Check your connection, then tap a chapter to retry.', 'bad');
+  });
+  load(0, 0, false);
+
+  chs.forEach(c => { const li = document.createElement('li'); const b = document.createElement('button'); b.type = 'button';
+    b.innerHTML = '<span class="t"></span><span></span>'; b.children[0].textContent = fmt(c.t); b.children[1].textContent = c.title;
+    b.addEventListener('click', () => seekGlobal(c.t + 0.05, true)); li.appendChild(b); $('chapters').appendChild(li); });
+
+  // ---------- download
+  if (DATA.mode === 'local') {
+    const a = $('dl-local'); a.hidden = false; a.href = DATA.src; a.setAttribute('download', DATA.download_name);
+    a.textContent = 'Download MP4 (' + mb(DATA.specs.size) + ')';
+    $('dlnote').textContent = 'Saves ' + DATA.download_name + ' from this folder.';
+  } else {
+    const btn = $('dl-hosted'), prog = $('dlprog'), note = $('dlnote'); btn.hidden = false;
+    btn.textContent = 'Download full-quality MP4 (' + mb(DATA.specs.size) + ')';
+    note.textContent = DATA.download_hint;
+    let busy = false;
+    btn.addEventListener('click', async () => {
+      if (busy) return; busy = true; btn.disabled = true;
+      try {
+        const downloads = window.claude && window.claude.use ? await window.claude.use('downloads') : null;
+        if (!downloads) { note.textContent = 'Saving files is not available in this view. Open this page in the Claude app or claude.ai while signed in, then try again.'; return; }
+        const M = DATA.master; const buf = new Uint8Array(M.size); let off = 0; prog.hidden = false; prog.value = 0;
+        for (let i = 0; i < M.parts.length; i++) {
+          note.textContent = 'Fetching part ' + (i + 1) + ' of ' + M.parts.length + '…';
+          const r = await fetch(M.parts[i]); if (!r.ok) throw new Error('Part ' + (i + 1) + ' failed to load (HTTP ' + r.status + ').');
+          let b;
+          if (M.encoding === 'base64') { const t = (await r.text()).trim(); const bin = atob(t); b = new Uint8Array(bin.length); for (let k = 0; k < bin.length; k++) b[k] = bin.charCodeAt(k); }
+          else b = new Uint8Array(await r.arrayBuffer());
+          if (off + b.length > M.size) throw new Error('Part ' + (i + 1) + ' is larger than expected.');
+          buf.set(b, off); off += b.length; prog.value = off / M.size;
+        }
+        if (off !== M.size) throw new Error('Got ' + off + ' bytes, expected ' + M.size + '.');
+        note.textContent = 'Checking the file…';
+        const h = [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))].map(x => x.toString(16).padStart(2, '0')).join('');
+        if (h !== M.sha256) throw new Error('Checksum mismatch: the file is incomplete. Try again.');
+        note.textContent = 'Verified. Confirm the save in the prompt.';
+        const res = await downloads.save({ filename: DATA.download_name, data: new Blob([buf], { type: 'video/mp4' }) });
+        note.textContent = res.status === 'saved' ? 'Saved ' + DATA.download_name + ' (' + mb(M.size) + ', checksum verified). On Android it is in Downloads.' : 'Sent.';
+      } catch (e) {
+        const code = e && e.code;
+        note.textContent = code === 'declined' ? 'Save cancelled.' : code === 'too_large' ? 'This app could not save a file this large. Use the GitHub draft release described in the README instead.' : code === 'rate_limited' ? 'A save prompt is already open. Finish it, then try again.' : 'Download failed: ' + ((e && e.message) || e);
+      } finally { busy = false; btn.disabled = false; }
+    });
+  }
+
+  // ---------- upload kit
+  const kit = $('kit');
+  DATA.kit.forEach(item => {
+    const d = document.createElement('details'); if (item.open) d.open = true;
+    const s = document.createElement('summary'); s.textContent = item.label; d.appendChild(s);
+    const box = document.createElement('div'); box.className = 'box';
+    if (item.note) { const n = document.createElement('div'); n.className = 'small'; n.textContent = item.note; box.appendChild(n); }
+    const pre = document.createElement('pre'); pre.textContent = item.text; box.appendChild(pre);
+    const row = document.createElement('div'); row.className = 'row';
+    const copy = document.createElement('button'); copy.type = 'button'; copy.className = 'btn ghost'; copy.textContent = 'Copy';
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(item.text); copy.textContent = 'Copied'; }
+      catch (_) { const r = document.createRange(); r.selectNodeContents(pre); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); copy.textContent = 'Selected: press copy'; }
+      setTimeout(() => { copy.textContent = 'Copy'; }, 2200);
+    });
+    row.appendChild(copy);
+    if (item.save) {
+      const sv = document.createElement('button'); sv.type = 'button'; sv.className = 'btn ghost'; sv.textContent = 'Save ' + item.save;
+      sv.addEventListener('click', async () => {
+        if (DATA.mode === 'local') { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([item.text], { type: 'text/plain' })); a.download = item.save; a.click(); return; }
+        const dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null;
+        if (!dl) { sv.textContent = 'Saving unavailable here'; return; }
+        try { await dl.save({ filename: item.save, data: item.text }); sv.textContent = 'Saved'; } catch (e) { sv.textContent = e && e.code === 'declined' ? 'Cancelled' : 'Save failed'; }
+      });
+      row.appendChild(sv);
+    }
+    box.appendChild(row); d.appendChild(box); kit.appendChild(d);
+  });
+})();
+</script>
+
+</body></html>

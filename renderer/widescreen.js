@@ -128,6 +128,7 @@
     if (slide.title) {
       mid += `<text x="680" y="210" ${SANS} font-size="26" fill="#1a1c21">${esc(slide.title)}</text><rect x="680" y="224" width="200" height="5" fill="#4f7cac"/>`;
       const vals = slide.bars || []; vals.forEach((b, i) => { const hh = (b[1] - 70) * 9; mid += `<rect x="${720 + i * 130}" y="${f1(470 - hh)}" width="80" height="${f1(hh)}" fill="${b[2] || '#4f7cac'}"/><text x="${760 + i * 130}" y="496" text-anchor="middle" ${SANS7} font-size="18" fill="#3a3f48">${esc(b[0])}</text>`; });
+      (slide.bullets || []).forEach((b, i) => { mid += `<circle cx="694" cy="${276 + i * 52}" r="7" fill="#4f7cac"/><text x="716" y="${284 + i * 52}" ${SANS7} font-size="26" fill="#1a1c21">${esc(b)}</text>`; });
       if (slide.target) mid += `<line x1="690" y1="${f1(470 - (slide.target - 70) * 9)}" x2="1240" y2="${f1(470 - (slide.target - 70) * 9)}" stroke="#d0303a" stroke-width="3" stroke-dasharray="10 6"/>`;
     }
     mid += `<rect x="-200" y="700" width="${W + 400}" height="${H}" fill="#5f5a62"/>`;
@@ -361,6 +362,19 @@
     if (ui.sent_at !== undefined) { const k = ease.back(seg(t, ui.sent_at, ui.sent_at + 0.4)); if (k > 0) s += `<g transform="translate(${x + w - 190} ${y + 590}) rotate(-8) scale(${f1(clamp(k, 0, 1.2))})"><rect x="-150" y="-50" width="300" height="100" rx="14" fill="none" stroke="#c0303a" stroke-width="7"/><text x="0" y="-6" text-anchor="middle" ${SANS} font-size="36" fill="#c0303a" letter-spacing="4">SENT</text><text x="0" y="32" text-anchor="middle" ${SANS} font-size="28" fill="#c0303a">${esc(ui.sent_label || '')}</text></g>`; }
     return s;
   }
+  function chat(ui, t) {
+    const x = 260, y = 90, w = 1400, h = 840; let s = windowChrome(x, y, w, h, ui.app || 'Team chat');
+    s += `<rect x="${x}" y="${y + 56}" width="300" height="${h - 56}" fill="#eef1f5"/><text x="${x + 30}" y="${y + 110}" ${SANS} font-size="24" fill="#3a4250">Direct messages</text>`;
+    (ui.channels || []).forEach((c, i) => { const on = i === 0; s += `<rect x="${x + 14}" y="${y + 132 + i * 54}" width="272" height="44" rx="10" fill="${on ? '#dbe6f3' : 'none'}"/><circle cx="${x + 40}" cy="${y + 154 + i * 54}" r="12" fill="${c[1]}"/><text x="${x + 62}" y="${y + 162 + i * 54}" ${SANS7} font-size="22" fill="#20242c">${esc(c[0])}</text>`; });
+    const cx = x + 340; s += `<text x="${cx}" y="${y + 110}" ${SANS} font-size="28" fill="#1a1c21">${esc(ui.title || '')}</text><line x1="${cx}" y1="${y + 132}" x2="${x + w - 40}" y2="${y + 132}" stroke="#d6dbe2" stroke-width="2"/>`;
+    if (ui.search) { const k = ease.out(seg(t, ui.search.at, ui.search.at + 0.4)); if (k > 0) { const q = typed(ui.search.text, t, ui.search.at + 0.2, 12); s += `<g opacity="${f1(k)}"><rect x="${x + w - 470}" y="${y + 74}" width="420" height="46" rx="23" fill="#ffffff" stroke="#4f7cac" stroke-width="3"/><circle cx="${x + w - 440}" cy="${y + 96}" r="9" fill="none" stroke="#4f7cac" stroke-width="3"/><path d="M${x + w - 433} ${y + 103} l8 8" stroke="#4f7cac" stroke-width="3"/><text x="${x + w - 418}" y="${y + 105}" ${SANS7} font-size="22" fill="#20242c">${esc(q)}</text></g>`; } }
+    let yy = y + 190;
+    ui.messages.forEach((m, i) => { const k = ease.out(seg(t, m.at ?? 0, (m.at ?? 0) + 0.35)); if (k <= 0) return; const lines = E.wrap(m.text, 62); const hot = ui.highlight !== undefined && i === ui.highlight && t >= (ui.highlight_at ?? 0);
+      const hh = 58 + lines.length * 38;
+      s += `<g opacity="${f1(clamp(k, 0, 1))}">${hot ? `<rect x="${cx - 14}" y="${yy - 30}" width="${w - 370}" height="${hh + 10}" rx="12" fill="#fff4c2" stroke="#e3b04b" stroke-width="3"/>` : ''}<circle cx="${cx + 26}" cy="${yy}" r="26" fill="${m.colour || '#8c3b4a'}"/><text x="${cx + 26}" y="${yy + 10}" text-anchor="middle" ${SERIF} font-size="26" fill="#fff">${esc(m.from[0])}</text><text x="${cx + 70}" y="${yy - 4}" ${SANS} font-size="24" fill="#1a1c21">${esc(m.from)}</text><text x="${cx + 80 + m.from.length * 13.5}" y="${yy - 4}" ${SANS7} font-size="20" fill="#8a92a0">${esc(m.time || '')}</text>${lines.map((l, j) => `<text x="${cx + 70}" y="${yy + 34 + j * 38}" ${SANS7} font-size="27" fill="#20242c">${esc(l)}</text>`).join('')}${m.reaction ? `<rect x="${cx + 70}" y="${yy + 18 + lines.length * 38}" width="${40 + m.reaction.length * 13}" height="34" rx="17" fill="#e6eef8" stroke="#9fb6d4" stroke-width="2"/><text x="${cx + 90}" y="${yy + 42 + lines.length * 38}" ${SANS7} font-size="19" fill="#2f4f7a">${esc(m.reaction)}</text>` : ''}</g>`;
+      yy += hh + (m.reaction ? 50 : 22); });
+    return s;
+  }
   function phoneThread(ui, t) {
     let s = `<g transform="translate(960 560) rotate(-3)"><rect x="-300" y="-560" width="600" height="1140" rx="70" fill="#0c0c10" stroke="#2a2a33" stroke-width="8"/><rect x="-278" y="-538" width="556" height="1096" rx="54" fill="#14161f"/>`;
     s += `<rect x="-278" y="-538" width="556" height="150" rx="54" fill="#1d2030"/><circle cx="-180" cy="-460" r="40" fill="${ui.colour || '#8c3b4a'}"/><text x="-180" y="-446" text-anchor="middle" ${SERIF} font-size="40" fill="#fff">${esc(ui.contact[0])}</text><text x="-120" y="-450" ${SANS} font-size="38" fill="#f2f2f5">${esc(ui.contact)}</text><text x="230" y="-450" text-anchor="end" ${SANS7} font-size="28" fill="#9aa3b5">${esc(ui.time || '')}</text>`;
@@ -430,6 +444,38 @@
       if (ex.link_at !== undefined) { const k = ease.inOut(seg(t, ex.link_at, ex.link_at + 0.9)); if (k > 0) s += `<path d="M640 760 Q960 ${f1(860)} ${f1(640 + 640 * k)} 760" stroke="#ff7a8a" stroke-width="6" fill="none" stroke-dasharray="16 12"/><g opacity="${f1(seg(t, ex.link_at + 0.6, ex.link_at + 1.1))}"><text x="960" y="900" text-anchor="middle" ${SANS} font-size="34" fill="#ffd0d6">${esc(ex.link)}</text></g>`; }
       return s;
     },
+    source(ex, t) {
+      let s = heading(ex.title || 'Cryptomnesia', t, ex.sub || 'FORCE 1');
+      const person = (x, who, label) => { const col = (E.state.cast[who] || {}).signature?.colour || '#ccc'; return `<g transform="translate(${x} 470)"><circle cx="0" cy="-60" r="62" fill="${col}"/><path d="M-100 140 Q-100 20 0 12 Q100 20 100 140 Z" fill="${col}" opacity="0.85"/><text x="0" y="200" text-anchor="middle" ${SANS} font-size="30" fill="#f4e8d0">${esc(label)}</text></g>`; };
+      s += person(420, ex.from, ex.from_label) + person(1500, ex.to, ex.to_label);
+      const mv = ease.inOut(seg(t, ex.move_at, ex.move_at + 1.4)); const cxp = lerp(420, 1500, mv), cy = 340 - Math.sin(mv * Math.PI) * 60;
+      const relabel = seg(t, ex.relabel_at, ex.relabel_at + 0.8);
+      s += `<g transform="translate(${f1(cxp)} ${f1(cy)})"><rect x="-230" y="-70" width="460" height="140" rx="18" fill="#ffe27a"/><text x="0" y="-12" text-anchor="middle" ${SANS} font-size="28" fill="#3a2e10">${esc(ex.idea[0])}</text><text x="0" y="26" text-anchor="middle" ${SANS} font-size="28" fill="#3a2e10">${esc(ex.idea[1])}</text>
+        <g transform="translate(0 102)"><rect x="-150" y="-26" width="300" height="52" rx="26" fill="#1f2a3a" stroke="${relabel > 0.5 ? '#ff7a8a' : '#7fa6c8'}" stroke-width="3"/><text x="0" y="10" text-anchor="middle" ${SANS} font-size="26" fill="#cfe0f2" opacity="${f1(1 - relabel)}">Source: ${esc(ex.from_label)}</text><text x="0" y="10" text-anchor="middle" ${SANS} font-size="26" fill="#ffd0d6" opacity="${f1(relabel)}">Source: me</text></g></g>`;
+      (ex.rows || []).forEach((r, i) => { const k = ease.out(seg(t, r.at, r.at + 0.4)); if (k <= 0) return; s += `<g opacity="${f1(k)}" transform="translate(${660 + i * 340} 790)"><rect x="-150" y="-36" width="300" height="72" rx="36" fill="${r.ok ? '#1f3a2a' : '#3a1f24'}" stroke="${r.ok ? '#7fe0a0' : '#ff7a8a'}" stroke-width="3"/><text x="0" y="10" text-anchor="middle" ${SANS} font-size="28" fill="${r.ok ? '#d8f7e4' : '#ffd0d6'}">${esc(r.text)}</text></g>`; });
+      return s + cite(ex.cite, t, ex.cite_at);
+    },
+    overclaim(ex, t) {
+      let s = heading(ex.title || 'Everyone did most of the work', t, ex.sub || 'FORCE 2');
+      const X0 = 360, X1 = 1560, sc = (X1 - X0) / 100; let acc = 0;
+      s += `<rect x="${X0}" y="440" width="${X1 - X0}" height="120" rx="10" fill="#1f2a3a" stroke="#4f7cac" stroke-width="3"/><line x1="${X1}" y1="410" x2="${X1}" y2="600" stroke="#f4f4f6" stroke-width="4" stroke-dasharray="10 8"/><text x="${X1}" y="398" text-anchor="middle" ${SANS} font-size="26" fill="#f4f4f6">100% of the work</text>`;
+      ex.bars.forEach((b, i) => { const k = ease.out(seg(t, b.at, b.at + 0.7)); if (k <= 0) return; const w = b.value * sc * k; s += `<rect x="${f1(X0 + acc * sc)}" y="450" width="${f1(w)}" height="100" fill="${b.colour}" opacity="0.92"/><text x="${f1(X0 + acc * sc + w / 2)}" y="512" text-anchor="middle" ${SANS} font-size="30" fill="#0b0d14">${esc(b.label)} ${Math.round(b.value * k)}%</text>`; acc += b.value * k; });
+      if (acc > 100) s += `<rect x="${X1}" y="440" width="${f1((acc - 100) * sc)}" height="120" fill="none" stroke="#ff6a6a" stroke-width="6"/><text x="${f1(X1 + (acc - 100) * sc / 2)}" y="640" text-anchor="middle" ${SERIF} font-size="44" fill="#ff8a7a">+${Math.round(acc - 100)}%</text>`;
+      if (ex.tag) s += `<g transform="translate(${X0} 404)"><rect width="${30 + ex.tag.length * 14}" height="34" rx="17" fill="#1f2a3a" stroke="#7fa6c8" stroke-width="2"/><text x="15" y="24" ${SANS7} font-size="20" fill="#cfe0f2">${esc(ex.tag)}</text></g>`;
+      if (ex.note) { const k = ease.out(seg(t, ex.note_at, ex.note_at + 0.5)); s += `<text x="960" y="760" text-anchor="middle" ${SERIF} font-size="44" fill="#f4e8d0" opacity="${f1(k)}">${esc(ex.note)}</text>`; }
+      return s + cite(ex.cite, t, ex.cite_at);
+    },
+    amplify(ex, t) {
+      let s = heading(ex.title || 'Amplification', t, ex.sub || 'A TACTIC');
+      const cols = ['#e06a4f', '#5b5fb0', '#5a8a6a', '#d9a441', '#4f7cac', '#b07ad0']; const R = 230, C = [960, 600];
+      cols.forEach((c, i) => { const a = -Math.PI / 2 + i * Math.PI * 2 / cols.length; const x = C[0] + Math.cos(a) * R * 1.6, y = C[1] + Math.sin(a) * R * 0.9; s += `<g transform="translate(${f1(x)} ${f1(y)})"><circle r="44" fill="${c}"/>${i === ex.speaker ? `<circle r="56" fill="none" stroke="#ffd38a" stroke-width="5" opacity="${f1(seg(t, ex.idea_at, ex.idea_at + 0.4))}"/>` : ''}</g>`; });
+      const pos = i => { const a = -Math.PI / 2 + i * Math.PI * 2 / cols.length; return [C[0] + Math.cos(a) * R * 1.6, C[1] + Math.sin(a) * R * 0.9]; };
+      const bubble = (i, text, k, col) => { const [x, y] = pos(i); return `<g opacity="${f1(k)}" transform="translate(${f1(x)} ${f1(y - 110)})"><rect x="-190" y="-40" width="380" height="74" rx="30" fill="${col}"/><text x="0" y="8" text-anchor="middle" ${SANS} font-size="27" fill="#0b0d14">${esc(text)}</text></g>`; };
+      s += bubble(ex.speaker, ex.idea, ease.out(seg(t, ex.idea_at, ex.idea_at + 0.4)) * (1 - 0.5 * seg(t, ex.repeat_at, ex.repeat_at + 0.4)), '#f4f4f6');
+      s += bubble(ex.amplifier, ex.repeat, ease.out(seg(t, ex.repeat_at, ex.repeat_at + 0.4)), '#ffd38a');
+      if (t > ex.repeat_at + 0.3) { const [ax, ay] = pos(ex.amplifier), [bx, by] = pos(ex.speaker); const k = ease.inOut(seg(t, ex.repeat_at + 0.3, ex.repeat_at + 1.0)); s += `<path d="M${f1(ax)} ${f1(ay)} Q${C[0]} ${C[1]} ${f1(lerp(ax, bx, k))} ${f1(lerp(ay, by, k))}" stroke="#ffd38a" stroke-width="6" fill="none" stroke-dasharray="14 10"/>`; }
+      return s + cite(ex.cite, t, ex.cite_at);
+    },
     moves(ex, t) {
       let s = heading(ex.title || 'Four moves', t, ex.sub || 'WHAT DANIEL DID');
       ex.items.forEach((it, i) => { const kk = ease.out(seg(t, it.at, it.at + 0.5)); if (kk <= 0) return; const y = 300 + i * 150;
@@ -491,7 +537,7 @@
   function insert(ctx) {
     const sh = resolvedShot(ctx); const ui = sh.ui; const t = ctx.t; const cam = camera(ctx, sh.camera || { zoom: [1.0, 1.05] });
     let bg = (ENVS[sh.env || 'open_plan'])(ctx, { ...sh, bg_blur: 7, figures: 0 }, { x: 0, y: 0 });
-    let inner = ui.kind === 'dashboard' ? dashboard(ui, t) : ui.kind === 'email' ? email(ui, t) : ui.kind === 'notes' ? notes(ui, t) : ui.kind === 'inbox' ? inbox(ui, t) : ui.kind === 'report' ? reportPage(ui, t) : ui.kind === 'phone' ? phoneThread(ui, t) : '';
+    let inner = ui.kind === 'dashboard' ? dashboard(ui, t) : ui.kind === 'email' ? email(ui, t) : ui.kind === 'notes' ? notes(ui, t) : ui.kind === 'inbox' ? inbox(ui, t) : ui.kind === 'report' ? reportPage(ui, t) : ui.kind === 'phone' ? phoneThread(ui, t) : ui.kind === 'chat' ? chat(ui, t) : '';
     if (ui.kind !== 'phone' && ui.kind !== 'report') inner = `<rect x="150" y="60" width="1620" height="900" rx="26" fill="#0c0d12"/>` + inner + `<path d="M150 60 L700 60 L420 960 L150 960 Z" fill="#fff" opacity="0.025"/>`;
     if (ui.kind === 'phone' && sh.hand !== false) inner += `<g transform="translate(960 560) rotate(-3)">${[-170, -60, 50, 160].map(y => `<rect x="-318" y="${y}" width="40" height="76" rx="20" fill="${(E.state.cast[sh.hand_who || 'daniel'] || {}).look?.skin || '#cf9a72'}" stroke="#a6714f" stroke-width="2"/>`).join('')}<rect x="282" y="80" width="40" height="130" rx="20" fill="${(E.state.cast[sh.hand_who || 'daniel'] || {}).look?.skin || '#cf9a72'}" stroke="#a6714f" stroke-width="2"/></g>`;
     let s = defs + `<g>${bg}<rect width="${W}" height="${H}" fill="#05060a" opacity="${sh.env === 'home_night' ? 0.35 : 0.5}"/></g>` + cam.wrap(inner);
@@ -515,6 +561,7 @@
     for (const a of th.actors) { const r = a.rim || '#ffc27a'; const d = person(a, cx, {}, r); s += d.body + d.arms; }
     // the secret: the report figure, struck through
     if (th.secret) { const k = th.secret; s += `<g transform="translate(${k.x} ${k.y}) rotate(${k.rot || -7})"><rect x="-210" y="-120" width="420" height="250" rx="10" fill="#f6f3ec" stroke="#0b0d14" stroke-width="6"/><text x="-176" y="-62" ${SANS} font-size="30" fill="#6b7280" letter-spacing="2">ON-TIME DELIVERY</text><text x="-180" y="40" ${SERIF} font-size="112" fill="#1f7a5a">${esc(k.shown)}</text><text x="-176" y="104" ${SANS} font-size="34" fill="#c0303a">really ${esc(k.real)}</text><path d="M-190 4 L200 -6" stroke="#d0303a" stroke-width="12" stroke-linecap="round" opacity="0.92"/></g>`; }
+    if (th.message) { const m = th.message; const ls = E.wrap(m.text, m.wrap || 24); s += `<g transform="translate(${m.x} ${m.y}) rotate(${m.rot || -4})"><rect x="-300" y="-70" width="600" height="${110 + ls.length * 54}" rx="26" fill="#f6f3ec" stroke="#0b0d14" stroke-width="6"/><circle cx="-240" cy="-12" r="30" fill="${m.colour}"/><text x="-240" y="0" text-anchor="middle" ${SERIF} font-size="32" fill="#fff">${esc(m.from[0])}</text><text x="-196" y="-2" ${SANS} font-size="32" fill="#1a1c21">${esc(m.from)}</text><text x="270" y="-2" text-anchor="end" ${SANS} font-size="26" fill="#6b7280">${esc(m.time)}</text>${ls.map((l, i) => `<text x="-266" y="${56 + i * 54}" ${SANS7} font-size="40" fill="#20242c">${esc(l)}</text>`).join('')}</g>`; }
     if (th.text) { const t = th.text; s += `<g transform="translate(${t.x} ${t.y})"><text x="0" y="0" ${SERIF} font-size="${t.size || 150}" fill="#fff" stroke="#05040a" stroke-width="16" paint-order="stroke" letter-spacing="2">${esc(t.a)}</text>${t.b ? `<rect x="-8" y="${(t.size || 150) * 0.28}" width="${t.bw || 820}" height="${(t.size || 150) * 1.02}" fill="#ffd34a"/><text x="10" y="${(t.size || 150) * 1.12}" ${SERIF} font-size="${t.size || 150}" fill="#0b0d14" letter-spacing="2">${esc(t.b)}</text>` : ''}</g>`; }
     s += `<rect width="${W}" height="${H}" fill="url(#wvig)" opacity="0.85"/>`;
     return s;
