@@ -219,14 +219,20 @@ class SlateEpisodes(unittest.TestCase):
             used = {c for s in ep["scenes"] for c in s["claims"]}
             self.assertTrue(used <= {c["id"] for c in ep["claims"]}, f"{eid}: scene cites an unknown claim")
 
-    def test_dollar_amounts_are_spoken_as_words(self):
-        # Piper reads "$200,000" as "dollar two, hundred thousand": every amount needs a spoken form
+    def test_currency_amounts_are_spoken_as_words(self):
+        # Piper reads "$200,000" as "dollar two, hundred thousand": every amount ($, £, €) needs a spoken form
         for eid in self.SLATE:
             ep = load_episode(eid); table = {k.lower() for k in (ep["narrator_profile"].get("pronounce") or {})}
             for s in ep["scenes"]:
                 for l in s["lines"]:
-                    for w in re.findall(r"\$[\d,]+", l["text"]):
-                        self.assertIn(w.rstrip(",").lower(), table, f"{eid}: '{w}' has no spoken form")
+                    for w in re.findall(r"[$£€][\d,.]*\d", l["text"]):
+                        self.assertIn(w.lower(), table, f"{eid}: '{w}' has no spoken form")
+
+    def test_pronounce_keys_are_single_words(self):
+        # pipeline/narrate.pronounce swaps one written word at a time: a key with a space never matches
+        for eid in self.SLATE:
+            for k in (load_episode(eid)["narrator_profile"].get("pronounce") or {}):
+                self.assertNotRegex(k, r"\s", f"{eid}: pronounce key '{k}' must be a single word")
 
     def test_ongoing_louvre_case_is_anonymous_and_presumes_innocence(self):
         ep = load_episode("tcv04-louvre-heist"); js = _code(ROOT / "renderer" / "scenes" / "tcv04-louvre-heist.js")

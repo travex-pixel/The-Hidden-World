@@ -1,6 +1,6 @@
 # Case File 11: The Great Train Robbery (Buckinghamshire, 8 August 1963)
 
-Research ledger. Compiled 2026-10-11 for the cinematic Case Files episode `tcv11-great-train-robbery` (13 scenes).
+Research ledger. Compiled 2026-10-11 for the cinematic Case Files episode `tcv11-great-train-robbery` (15 scenes, about 75 s).
 CLOSED case: convictions in 1964; Ronnie Biggs died in 2013.
 
 ## Method and limits
@@ -32,27 +32,43 @@ CLOSED case: convictions in 1964; Ronnie Biggs died in 2013.
 | GT_next | Next-case tease: David Berkowitz, the "Son of Sam", was arrested on 10 Aug 1977. Police traced a parking ticket issued near the last shooting, in Brooklyn on 31 July 1977, to his car. | HISTORY.com; Biography.com; A&E |
 
 ### Wording decisions in the narration
-- **"Britain's biggest train robbers"** rests on GT_haul. Guinness lists it as the greatest robbery from a train.
-- **"A record for a train robbery"** is narrated instead of "the biggest robbery ever" (Guinness: "Greatest robbery from a train").
-- **"The prints helped convict them"** is used, not "one fingerprint convicted the gang". The dossier flags the second as an oversimplification. NBC: the gang "was convicted after their fingerprints were found on a board game".
-- **"In 1964, seven were jailed for thirty years each"** is used instead of "most of the gang were convicted in 1964".
+- **Structure (producer note, BTK "floppy disk" lessons).**
+  - The hook is the setup and the mystery: "Britain's biggest train robbers got away with £2.6 million. / Then a board game gave them away."
+  - The mechanism (the fingerprints) lands at about 55% of the runtime, and the conviction at about 68%.
+  - The ending is a callback on the same object: "Britain's biggest train robbery, given away by a board game."
+- **"A board game gave them away"** (hook and callback) is a summary of GT_prints and GT_convicted.
+  - The narration itself names the Monopoly board **and** the ketchup bottle as places the prints were found.
+  - It says the prints "helped convict them", never that one print convicted the gang. NBC: the gang "was convicted after their fingerprints were found on a board game".
+- **"Britain's biggest train robbers / robbery"** rests on GT_haul. Guinness World Records lists it as the greatest robbery from a train.
+- **"In 1964, the prints helped convict them. Seven got thirty years."** is used instead of "most of the gang were convicted in 1964".
   - Of the roughly 15 robbers, three were caught later (1966–68) and some were never convicted.
   - The 1964 trial also convicted associates, and one man (Bill Boal) was wrongly convicted.
   - "Most" is therefore not safe.
-- **Bridego Bridge** is on screen only (label), not narrated.
-  - The train was **stopped** at Sears Crossing and **moved** to Bridego Bridge. The narration says only that a rigged signal stopped it.
-  - The pronunciation of "Bridego" could not be confirmed.
-- **"He flew home, and was arrested"** is used. AP says he was taken into custody by Scotland Yard officers who boarded the plane after it landed.
+- **"Most of the money? Never recovered."** is placed at the empty farm (s08) as a flash-forward, with the fun-fact card "Most of the £2.6 million was never recovered."
+- **On screen only, not narrated:**
+  - **Bridego Bridge.** The train was **stopped** at Sears Crossing and **moved** to Bridego Bridge. The narration says only that a rigged signal stopped it and that the mailbags were unloaded "at a bridge down the line". The pronunciation of "Bridego" could not be confirmed.
+  - **Wandsworth Prison** (label "WANDSWORTH PRISON · London · 8 July 1965"). The narration says "over the prison wall".
+  - **Buckinghamshire** (labels "Sears Crossing, Buckinghamshire" and "The hideout, Buckinghamshire").
+  - **"Mostly in Brazil"** (label). The narration says "Decades on the run."
+- **"He flew home and was arrested"** is used. AP says he was taken into custody by Scotland Yard officers who boarded the plane after it landed.
+- **Pronunciation.**
+  - Spoken forms: "£2.6" is read as "two point six", and "million" as "million pounds". `pronounce()` substitutes word by word, so a key "£2.6 million" would never match. "million" occurs only after "£2.6".
+  - "Leatherslade" is read as "Leatherslaid".
+  - Every line was checked with the offline recogniser (overall WER 0.075). Lines it misheard were reworded:
+    - "a ketchup bottle" became "the ketchup bottle";
+    - "the night mail" became "the overnight mail train";
+    - "the parking ticket that led to the Son of Sam" became "how a parking ticket led police to the Son of Sam".
 
 ## Allegations / inquiry findings
 - None used. The convictions are final. The minority theory that Glasgow's Arthur Thompson was the mastermind (a 2020s book) is not established and is not mentioned.
 
 ## Fun facts (each with two sources)
-1. **Ronnie Biggs's prints were on the ketchup bottle** (scene s08).
+Three FUN FACT cards, each with a `sparkle` anchored to its line.
+1. **Ronnie Biggs's prints were on the ketchup bottle** (scene s10).
    - Sources: BBC obituary ("fingerprints were also found on a ketchup bottle at their hideout, Leatherslade Farm"); Crime Library (ketchup bottle, beer bottles, Monopoly pieces).
-2. **He escaped after serving only about 15 months of a 30-year sentence** (scene s10).
+2. **He escaped after serving only about 15 months of a 30-year sentence** (scene s12).
    - Sources: AP via KSL ("15 months into his sentence"); CBC News; Macau Daily Times / Yorkshire Evening Post (dossier: about 15 months).
-3. **Most of the money was never recovered** (scene s12).
+3. **Most of the money was never recovered** (scene s08).
    - Sources: Guinness World Records (£343,448 recovered of £2,631,784); BBC World Service; BBC News report (via AOL).
    - The exact recovered figure has only one source (Guinness), so it is not shown. The card says "most of it was never recovered".
 
@@ -68,7 +84,7 @@ CLOSED case: convictions in 1964; Ronnie Biggs died in 2013.
 - **"They played Monopoly with the real stolen banknotes."** This is UNVERIFIED.
   - It is repeated by the Oxford Times ("playing with real £5 notes"), by police-museum and community notices (Finchampstead Parish Council: "reputed to have used real money"; MK Heritage: "reported to have used real money") and by Mental Floss.
   - No reputable source confirms it.
-  - Decision: narrated only as **"Legend says they used real cash. Never proven."**, with an on-screen card reading "LEGEND · NEVER PROVEN".
+  - Decision: narrated only as **"Legend says they used real cash. Never proven."**, with an on-screen card ("LEGEND: THEY PLAYED WITH THE REAL CASH?") stamped "NEVER PROVEN".
 - **"The actual Monopoly board survives in the Thames Valley Police Museum."** NOT USED.
   - The only sources are a Milton Keynes heritage page, a 2001 Wargrave local-history newsletter and parish-council notices (dossier GTR12–13).
   - No reputable source was found, so the claim does not meet the two-reputable-source bar.
@@ -88,7 +104,7 @@ CLOSED case: convictions in 1964; Ronnie Biggs died in 2013.
 - **No glamour.**
   - The gang appears only as anonymous rim-lit silhouettes of generic 1960s men (flat caps, suits). Every such shot is tagged "ILLUSTRATION · NOT A LIKENESS".
   - There are no faces, no weapons and no swagger: they sit, stack sacks and play a board game.
-  - The haul is a typed card, not a pile of cash. No banknote is drawn or imitated: the board game uses blank coloured "play money" slips.
+  - The haul is a typed label ("£2.6 MILLION"), not a pile of cash. No banknote is drawn or imitated: the board game uses blank coloured "play money" slips.
 - **Ronnie Biggs** (`characters/figures/gt11_biggs.json`, `real_person: true`) is a generic 1960s man in a dark suit, drawn only as a silhouette. He is never presented as heroic: the escape is told flatly, and the return ends with "and was arrested."
 - **Exonerated men.** Bill Boal and Lennie Field were later exonerated. Neither they nor any other individual gang member except Biggs is named. No one is drawn as a likeness.
 - **No real brands or documents.**
