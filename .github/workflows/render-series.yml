@@ -1,0 +1,85 @@
+name: Render series
+
+# Renders every episode of a series in parallel, verifies each one, and attaches the MP4s to a
+# DRAFT GitHub release (drafts are visible only to people with write access to this repo).
+on:
+  workflow_dispatch:
+    inputs:
+      series:
+        description: "Series folder under series/"
+        required: true
+        default: "five-messages"
+        type: string
+      episodes:
+        description: "Episode numbers, comma-separated"
+        required: true
+        default: "1,2,3,4,5"
+        type: string
+
+permissions:
+  contents: write   # needed only to create/update the draft release
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.m.outputs.matrix }}
+    steps:
+      - id: m
+        run: echo "matrix=[$(echo '${{ inputs.episodes }}' | tr -d ' ')]" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        ep: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+      - run: pip install -r requirements.txt
+      - run: npm install --no-fund --no-audit && npx playwright install --with-deps chromium
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: hw-cache-${{ hashFiles('episodes/**/episode.json', 'characters/*.json', 'pipeline/narrate.py') }}
+          restore-keys: hw-cache-
+      - run: python -m unittest discover -s tests
+      - name: Render and verify episode ${{ matrix.ep }}
+        run: python -m pipeline.series "series/${{ inputs.series }}" --only ${{ matrix.ep }}
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: episode_0${{ matrix.ep }}
+          path: |
+            series/${{ inputs.series }}/output/
+            series/${{ inputs.series }}/manifest.json
+            series/${{ inputs.series }}/qa/
+            series/${{ inputs.series }}/scripts/
+          retention-days: 30
+          if-no-files-found: error
+
+  release:
+    needs: render
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: dl }
+      - name: Attach verified MP4s to a draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ inputs.series }}-s1"
+          ls dl/*/output/*.mp4 || { echo "No verified episodes to publish"; exit 1; }
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --draft --title "${{ inputs.series }} (season 1)" --notes "Verified MP4s rendered by the Render series workflow. Draft: visible only to repo collaborators."
+          gh release upload "$TAG" dl/*/output/*.mp4 --clobber
+          echo "## Draft release $TAG" >> $GITHUB_STEP_SUMMARY
+          for f in dl/*/output/*.mp4; do echo "- $(basename $f): $(du -h "$f" | cut -f1)" >> $GITHUB_STEP_SUMMARY; done

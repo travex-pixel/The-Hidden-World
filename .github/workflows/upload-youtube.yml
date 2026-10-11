@@ -1,0 +1,48 @@
+name: Upload to YouTube
+
+# Uploads verified episodes from the series' draft release using the official YouTube Data API.
+# Requires repository secrets YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (see docs/YOUTUBE_UPLOAD.md).
+on:
+  workflow_dispatch:
+    inputs:
+      series: { description: "Series folder under series/", required: true, default: "five-messages", type: string }
+      episodes: { description: "Episode numbers, comma-separated", required: true, default: "1,2,3,4,5", type: string }
+      privacy: { description: "private (default), unlisted or public", required: true, default: "private", type: choice, options: [private, unlisted, public] }
+      confirm: { description: "Type PUBLISH to allow a public upload", required: false, default: "", type: string }
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install google-api-python-client google-auth
+      - name: Fetch verified MP4s and manifest from the latest Render series run
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          mkdir -p "series/${{ inputs.series }}/output"
+          gh release download "${{ inputs.series }}-s1" --pattern 'episode_0*.mp4' --dir "series/${{ inputs.series }}/output"
+          RUN=$(gh run list --workflow render-series.yml --status success --limit 1 --json databaseId -q '.[0].databaseId')
+          gh run download "$RUN" --dir dl
+          python - <<'PY'
+          import json, glob
+          m = {"episodes": {}}
+          for f in glob.glob("dl/*/manifest.json"):
+              for k, v in json.load(open(f))["episodes"].items():
+                  if v.get("status") == "verified": m["episodes"][k] = v
+          json.dump(m, open("series/${{ inputs.series }}/manifest.json", "w"), indent=2)
+          PY
+      - name: Upload
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          HW_CONFIRM_PUBLIC: ${{ inputs.confirm }}
+        run: python -m pipeline.youtube_upload "series/${{ inputs.series }}" --episodes "${{ inputs.episodes }}" --privacy "${{ inputs.privacy }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: upload-log, path: "series/${{ inputs.series }}/upload_log.json", if-no-files-found: ignore }

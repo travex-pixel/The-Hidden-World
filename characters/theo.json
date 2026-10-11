@@ -31,13 +31,21 @@
     },
     "accessories": [
       "steel watch"
-    ]
+    ],
+    "outfit_variants": {
+      "shirt_sleeves": {
+        "style": "shirt_sleeves",
+        "shirt": "#e9e4da",
+        "shirt_shadow": "#b9b2a4"
+      }
+    }
   },
   "voice": {
     "model": "en_US-libritts_r-medium",
     "speaker": 736,
-    "length_scale": 1.16,
-    "notes": "Low baritone (~100 Hz median pitch measured), unhurried."
+    "length_scale": 1.62,
+    "notes": "Low baritone (~100 Hz median pitch measured), unhurried.",
+    "pace_note": "Tuned to ~2.9 words/sec measured (LibriTTS-R speakers run fast at 1.0)."
   },
   "expressions": [
     "neutral",
@@ -47,5 +55,6 @@
     "cold",
     "frozen",
     "tight"
-  ]
+  ],
+  "continuity": "Season 1 (Five Messages): suspended after the Northgate exposure; wears shirt sleeves, no jacket, collar open (outfit_variant: shirt_sleeves)."
 }

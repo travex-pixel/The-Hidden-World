@@ -88,6 +88,10 @@ def narrate_dialogue(scene: dict) -> dict:
         v = ch["voice"]
         p = narrate_scene(v["model"], ln["text"], v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"))
         x, sr_ = read_wav(p); sr = sr or sr_
+        if ln.get("fx") == "phone":   # small phone speaker: band-limited and slightly crunchy
+            X = np.fft.rfft(x); f = np.fft.rfftfreq(len(x), 1 / sr_)
+            X *= ((f > 320) & (f < 3400)).astype(float)
+            x = np.tanh(np.fft.irfft(X, n=len(x)) * 2.2) * 0.6
         if sr_ != sr:
             x = np.interp(np.linspace(0, len(x) - 1, int(len(x) * sr / sr_)), np.arange(len(x)), x)
         pre = int(ln.get("pause_before", 0.0) * sr)
@@ -98,7 +102,7 @@ def narrate_dialogue(scene: dict) -> dict:
         gap = int(ln.get("pause_after", 0.3) * sr)
         parts.append(np.zeros(gap, np.float32)); t += gap / sr
     clip = np.concatenate(parts[:-1]) if len(parts) > 1 else parts[0]
-    key = hashlib.sha1(repr([(l["who"], l["text"]) for l in scene["lines"]] + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]]).encode()).hexdigest()[:16]
+    key = hashlib.sha1(repr([(l["who"], l["text"]) for l in scene["lines"]] + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]] + [ln.get("fx", "") for ln in scene["lines"]]).encode()).hexdigest()[:16]
     out = CACHE / f"dlg_{key}.wav"
     with wave.open(str(out), "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)

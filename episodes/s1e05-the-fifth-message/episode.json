@@ -1,0 +1,545 @@
+{
+  "id": "s1e05-the-fifth-message",
+  "number": 5,
+  "season": 1,
+  "title": "The Fifth Message",
+  "series": "FIVE MESSAGES",
+  "central_question": "Who is sending Mara messages that predict exactly what people will do, and why?",
+  "template": "thriller",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.1,
+  "target_duration_seconds": [
+    26,
+    50
+  ],
+  "visual_mode": "svg",
+  "caption_style": "thriller",
+  "cast": [
+    "mara",
+    "theo",
+    "priya",
+    "celeste"
+  ],
+  "fiction_notice": "Fictional story. Characters, company and events are invented.",
+  "music": {
+    "style": "thriller",
+    "bpm": 76
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "stage",
+      "min_duration": 3.4,
+      "pad_after": 0.3,
+      "music_cue": "intimate",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_day",
+        "grade": "warm",
+        "camera": {
+          "zoom": [
+            1.12,
+            1.0
+          ]
+        },
+        "actors": [
+          {
+            "who": "celeste",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "cool_smile",
+                "gaze": [
+                  -0.2,
+                  0
+                ],
+                "turn": -0.1,
+                "tilt": -2
+              },
+              {
+                "line": 0,
+                "off": 1.2,
+                "expr": "confident",
+                "gaze": [
+                  -0.25,
+                  0.05
+                ],
+                "turn": -0.12
+              }
+            ]
+          }
+        ],
+        "table": false,
+        "clock": {
+          "from": "9:13",
+          "to": "9:13"
+        }
+      },
+      "lines": [
+        {
+          "who": "celeste",
+          "text": "You remind me of myself, Mara.",
+          "pause_before": 0.2
+        }
+      ]
+    },
+    {
+      "id": "s02_problem",
+      "scene": "stage",
+      "min_duration": 3.0,
+      "pad_after": 0.3,
+      "music_cue": "power",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_day",
+        "grade": "power",
+        "camera": {
+          "zoom": [
+            1.08,
+            1.0
+          ],
+          "y": [
+            -30,
+            0
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 540,
+            "y": 640,
+            "scale": 1.6,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "cool_smile",
+                "gaze": [
+                  0.3,
+                  0.4
+                ],
+                "turn": 0.15,
+                "tilt": -2
+              },
+              {
+                "line": 1,
+                "off": 0,
+                "expr": "confident",
+                "gaze": [
+                  0.3,
+                  0.4
+                ],
+                "turn": 0.12,
+                "tilt": -3
+              }
+            ]
+          }
+        ],
+        "low_angle": true,
+        "table": false
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "I know.",
+          "pause_after": 0.35
+        },
+        {
+          "who": "mara",
+          "text": "That's the problem."
+        }
+      ]
+    },
+    {
+      "id": "s03_fifth",
+      "scene": "phone_thread",
+      "min_duration": 3.4,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "buzz"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "phone": {
+          "contact": "Unknown",
+          "time": "Last night",
+          "messages": [
+            {
+              "at": 0.3,
+              "me": false,
+              "text": "9:15 tomorrow. You'll resign.",
+              "tone": "cold"
+            }
+          ]
+        }
+      },
+      "silent": true,
+      "caption": "Last night, Celeste got a message too. From Theo's phone. Sent by Mara."
+    },
+    {
+      "id": "s04_recording",
+      "scene": "recording",
+      "min_duration": 4.0,
+      "pad_after": 0.3,
+      "music_cue": "hush",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "rec": {
+          "title": "Voice memo",
+          "sub": "The Linden · Thu 7:42 PM",
+          "voice": "celeste"
+        }
+      },
+      "lines": [
+        {
+          "who": "celeste",
+          "text": "Theo signs. Mara catches him. And everyone thanks me.",
+          "fx": "phone",
+          "pause_before": 0.3
+        }
+      ],
+      "music_gain_db": -8
+    },
+    {
+      "id": "s05_priya",
+      "scene": "stage",
+      "min_duration": 4.2,
+      "pad_after": 0.3,
+      "music_cue": "power",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "door"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_day",
+        "grade": "power",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ]
+        },
+        "actors": [
+          {
+            "who": "priya",
+            "view": "front",
+            "x": 815,
+            "y": 750,
+            "scale": 1.22,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "guilty",
+                "gaze": [
+                  -0.6,
+                  0.2
+                ],
+                "turn": -0.35,
+                "tilt": 3
+              },
+              {
+                "line": 1,
+                "off": 0,
+                "expr": "neutral",
+                "gaze": [
+                  -0.6,
+                  0
+                ],
+                "turn": -0.35
+              }
+            ]
+          },
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 280,
+            "y": 730,
+            "scale": 1.22,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "calculating",
+                "gaze": [
+                  0.6,
+                  0
+                ],
+                "turn": 0.35
+              },
+              {
+                "line": 1,
+                "off": 0.5,
+                "expr": "pleased",
+                "gaze": [
+                  0.6,
+                  0
+                ],
+                "turn": 0.35
+              }
+            ]
+          }
+        ],
+        "table": false
+      },
+      "lines": [
+        {
+          "who": "priya",
+          "text": "I'm sorry it took me so long.",
+          "pause_after": 0.3
+        },
+        {
+          "who": "priya",
+          "text": "Compliance has the recording."
+        }
+      ]
+    },
+    {
+      "id": "s06_nine-fifteen",
+      "scene": "stage",
+      "min_duration": 3.2,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "tick"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_day",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.1
+          ]
+        },
+        "actors": [
+          {
+            "who": "celeste",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "right",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "frozen",
+                "gaze": [
+                  0.2,
+                  0
+                ],
+                "turn": 0.1
+              },
+              {
+                "line": 0,
+                "off": 0,
+                "expr": "cold",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0
+              },
+              {
+                "line": 0,
+                "off": 1.0,
+                "expr": "cool_smile",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0,
+                "tilt": -2
+              }
+            ]
+          }
+        ],
+        "table": false,
+        "clock": {
+          "from": "9:14",
+          "to": "9:15",
+          "flip_at": 0.4
+        }
+      },
+      "lines": [
+        {
+          "who": "celeste",
+          "text": "Well played.",
+          "pause_before": 0.9
+        }
+      ]
+    },
+    {
+      "id": "s07_ring-off",
+      "scene": "insert_hand",
+      "min_duration": 2.8,
+      "pad_after": 0.3,
+      "music_cue": "aftermath",
+      "sfx": [
+        {
+          "at": 1.6,
+          "name": "pen"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "hand": {
+          "who": "celeste",
+          "ring": true,
+          "action": "remove",
+          "at": 0.4
+        },
+        "surface": "folder",
+        "grade": "cold"
+      },
+      "silent": true,
+      "caption": "She takes off the ring."
+    },
+    {
+      "id": "s08_end",
+      "scene": "stage",
+      "min_duration": 6.0,
+      "pad_after": 1.0,
+      "music_cue": "aftermath",
+      "sfx": [
+        {
+          "at": 3.5,
+          "name": "buzz"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "caption_y": 1640,
+      "shot": {
+        "env": "office_day",
+        "grade": "power",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 540,
+            "y": 760,
+            "scale": 1.6,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "confident",
+                "gaze": [
+                  0.4,
+                  -0.1
+                ],
+                "turn": 0.2
+              },
+              {
+                "t": 3.6,
+                "expr": "realise",
+                "gaze": [
+                  0.05,
+                  0.85
+                ],
+                "turn": 0.05
+              },
+              {
+                "t": 4.5,
+                "expr": "smirk",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0,
+                "tilt": -3
+              }
+            ]
+          }
+        ],
+        "phone_toast": {
+          "at": 3.5,
+          "from": "Unknown",
+          "text": "Impressive. Want to play for real?"
+        },
+        "end_card": {
+          "at": 5.1,
+          "ep": "END OF SEASON 1",
+          "next": ""
+        }
+      },
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "The easiest person to steer",
+          "pause_after": 0.15
+        },
+        {
+          "who": "narrator",
+          "text": "is the one who thinks they're steering."
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "Fictional drama about flattery, conditional approval and predictable incentives; it makes no factual claim about real people.",
+      "sources": []
+    }
+  ],
+  "sources": []
+}

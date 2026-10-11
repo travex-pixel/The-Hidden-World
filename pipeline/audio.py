@@ -216,6 +216,13 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
         t = tt(1.3)
         x = lowpass_fast(noise(1.3), 160) * (1 + 0.5 * np.sin(2 * np.pi * 7 * t))
         return (x * env(len(x), 0.3, 0.2, 0.8, 0.4) * 0.9).astype(np.float32)
+    if name == "rain":   # 4 s of steady rain on glass and pavement
+        t = tt(4.0)
+        x = lowpass_fast(noise(4.0), 6000) - lowpass_fast(noise(4.0), 900) * 0.3
+        drops = (rng.random(len(t)) > 0.9993).astype(np.float32)
+        x = x * 0.18 + lowpass_fast(drops, 3000) * 2.5
+        f = int(0.3 * SR); x[:f] *= np.linspace(0, 1, f); x[-f:] *= np.linspace(1, 0, f)
+        return x.astype(np.float32)
     if name == "buzz":   # phone vibrating on a desk: two pulses
         out = np.zeros(int(0.9 * SR), np.float32)
         for k in (0.0, 0.45):

@@ -1,0 +1,556 @@
+{
+  "id": "s1e04-the-sender",
+  "number": 4,
+  "season": 1,
+  "title": "The Sender",
+  "series": "FIVE MESSAGES",
+  "central_question": "Who is sending Mara messages that predict exactly what people will do, and why?",
+  "template": "thriller",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.1,
+  "target_duration_seconds": [
+    26,
+    50
+  ],
+  "visual_mode": "svg",
+  "caption_style": "thriller",
+  "cast": [
+    "mara",
+    "theo",
+    "priya",
+    "celeste"
+  ],
+  "fiction_notice": "Fictional story. Characters, company and events are invented.",
+  "music": {
+    "style": "thriller",
+    "bpm": 76
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "phone_thread",
+      "min_duration": 3.4,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.25,
+          "name": "buzz"
+        },
+        {
+          "at": 1.4,
+          "name": "buzz"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "phone": {
+          "contact": "Unknown",
+          "time": "10:58 PM",
+          "messages": [
+            {
+              "at": 0.25,
+              "me": false,
+              "text": "Floor 31. Eleven tonight.",
+              "tone": "cold"
+            },
+            {
+              "at": 1.4,
+              "me": false,
+              "text": "Come alone.",
+              "tone": "cold"
+            }
+          ]
+        }
+      },
+      "silent": true,
+      "caption": "Three messages. Three predictions. All true."
+    },
+    {
+      "id": "s02_arrive",
+      "scene": "stage",
+      "min_duration": 4.6,
+      "pad_after": 0.3,
+      "music_cue": "unease",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "step"
+        },
+        {
+          "at": 0.45,
+          "name": "step"
+        },
+        {
+          "at": 2.4,
+          "name": "buzz"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_night",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 560,
+            "y": 690,
+            "scale": 1.45,
+            "light": "right",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "calculating",
+                "gaze": [
+                  -0.3,
+                  0.1
+                ],
+                "turn": -0.2,
+                "x": 780
+              },
+              {
+                "t": 0.8,
+                "expr": "calculating",
+                "gaze": [
+                  0.1,
+                  0.6
+                ],
+                "turn": 0,
+                "x": 560
+              },
+              {
+                "t": 2.4,
+                "expr": "realise",
+                "gaze": [
+                  0.2,
+                  0.9
+                ],
+                "turn": 0.1
+              }
+            ],
+            "behind_table": true
+          }
+        ],
+        "table_phone": {
+          "x": 560,
+          "y": 1340,
+          "rot": -8,
+          "lit_at": 2.4,
+          "text": "I'm here."
+        }
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "I'm here.",
+          "pause_before": 1.4
+        }
+      ]
+    },
+    {
+      "id": "s03_reveal",
+      "scene": "stage",
+      "min_duration": 4.6,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "swell"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_night",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.06,
+            1.0
+          ]
+        },
+        "actors": [
+          {
+            "who": "theo",
+            "view": "front",
+            "x": 560,
+            "y": 700,
+            "scale": 1.5,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "tight",
+                "gaze": [
+                  -0.3,
+                  0.1
+                ],
+                "turn": -0.25,
+                "x": 760
+              },
+              {
+                "t": 0.5,
+                "expr": "cold",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0,
+                "x": 560
+              },
+              {
+                "line": 1,
+                "off": 0.3,
+                "expr": "smirk",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0,
+                "tilt": -3
+              }
+            ],
+            "behind_table": true,
+            "outfit": "shirt_sleeves"
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "theo",
+          "text": "You'd never trust me.",
+          "pause_before": 0.5,
+          "pause_after": 0.4
+        },
+        {
+          "who": "theo",
+          "text": "So I made you trust a stranger."
+        }
+      ]
+    },
+    {
+      "id": "s04_again",
+      "scene": "stage",
+      "min_duration": 2.2,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_night",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "right",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "cold",
+                "gaze": [
+                  -0.2,
+                  0
+                ],
+                "turn": -0.1
+              }
+            ]
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "You used me. Again.",
+          "pause_before": 0.15
+        }
+      ]
+    },
+    {
+      "id": "s05_mirror",
+      "scene": "stage",
+      "min_duration": 5.6,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_night",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.1
+          ]
+        },
+        "actors": [
+          {
+            "who": "theo",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "tight",
+                "gaze": [
+                  0.2,
+                  0.1
+                ],
+                "turn": 0.1
+              },
+              {
+                "line": 1,
+                "off": 0,
+                "expr": "cold",
+                "gaze": [
+                  0.3,
+                  0.6
+                ],
+                "turn": 0.15,
+                "tilt": 4
+              },
+              {
+                "line": 2,
+                "off": 0,
+                "expr": "tight",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0
+              }
+            ],
+            "outfit": "shirt_sleeves"
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Celeste used us both.",
+          "pause_after": 0.3
+        },
+        {
+          "who": "theo",
+          "text": "She ran every move on me first.",
+          "pause_after": 0.35
+        },
+        {
+          "who": "theo",
+          "text": "I signed because she called me brilliant."
+        }
+      ]
+    },
+    {
+      "id": "s06_plan",
+      "scene": "stage",
+      "min_duration": 5.4,
+      "pad_after": 0.3,
+      "music_cue": "power",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "boardroom_night",
+        "grade": "power",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 280,
+            "y": 730,
+            "scale": 1.22,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "calculating",
+                "gaze": [
+                  0.6,
+                  0
+                ],
+                "turn": 0.35
+              },
+              {
+                "line": 0,
+                "off": 1.0,
+                "expr": "confident",
+                "gaze": [
+                  0.6,
+                  0
+                ],
+                "turn": 0.35
+              }
+            ],
+            "behind_table": true
+          },
+          {
+            "who": "theo",
+            "view": "front",
+            "x": 815,
+            "y": 715,
+            "scale": 1.25,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "cold",
+                "gaze": [
+                  -0.6,
+                  0
+                ],
+                "turn": -0.35
+              },
+              {
+                "line": 1,
+                "off": 0,
+                "expr": "smirk",
+                "gaze": [
+                  -0.55,
+                  0
+                ],
+                "turn": -0.3
+              }
+            ],
+            "behind_table": true,
+            "outfit": "shirt_sleeves"
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "Then we need proof she can't charm away.",
+          "pause_after": 0.35
+        },
+        {
+          "who": "theo",
+          "text": "Priya has it. She recorded the dinner."
+        }
+      ]
+    },
+    {
+      "id": "s07_doorway",
+      "scene": "stage",
+      "min_duration": 3.8,
+      "pad_after": 0.6,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "door"
+        },
+        {
+          "at": 0.4,
+          "name": "thump"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "caption_y": 1640,
+      "shot": {
+        "env": "doorway",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.08
+          ]
+        },
+        "actors": [
+          {
+            "who": "celeste",
+            "view": "front",
+            "x": 560,
+            "y": 760,
+            "scale": 1.05,
+            "light": "right",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "cool_smile",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0
+              }
+            ]
+          }
+        ],
+        "end_card": {
+          "at": 2.4,
+          "ep": "EPISODE 4 OF 5",
+          "next": "Next: The Fifth Message"
+        }
+      },
+      "lines": [
+        {
+          "who": "celeste",
+          "text": "Working late, you two?",
+          "pause_before": 0.6
+        }
+      ],
+      "music_gain_db": -6
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "Fictional drama about flattery, conditional approval and predictable incentives; it makes no factual claim about real people.",
+      "sources": []
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,565 @@
+{
+  "id": "s1e02-the-lie",
+  "number": 2,
+  "season": 1,
+  "title": "The Lie",
+  "series": "FIVE MESSAGES",
+  "central_question": "Who is sending Mara messages that predict exactly what people will do, and why?",
+  "template": "thriller",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.1,
+  "target_duration_seconds": [
+    26,
+    50
+  ],
+  "visual_mode": "svg",
+  "caption_style": "thriller",
+  "cast": [
+    "mara",
+    "theo",
+    "priya",
+    "celeste"
+  ],
+  "fiction_notice": "Fictional story. Characters, company and events are invented.",
+  "music": {
+    "style": "thriller",
+    "bpm": 76
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "stage",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "music_cue": "unease",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "step"
+        },
+        {
+          "at": 0.35,
+          "name": "step"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "parking",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.1,
+            1.0
+          ]
+        },
+        "actors": [
+          {
+            "who": "theo",
+            "view": "front",
+            "x": 600,
+            "y": 690,
+            "scale": 1.5,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "tight",
+                "gaze": [
+                  -0.5,
+                  0.05
+                ],
+                "turn": -0.3,
+                "tilt": 2,
+                "x": 760
+              },
+              {
+                "t": 0.6,
+                "expr": "tight",
+                "gaze": [
+                  -0.45,
+                  0.05
+                ],
+                "turn": -0.25,
+                "x": 600
+              },
+              {
+                "line": 2,
+                "off": 0,
+                "expr": "cold",
+                "gaze": [
+                  -0.4,
+                  0
+                ],
+                "turn": -0.2,
+                "tilt": -3
+              }
+            ],
+            "outfit": "shirt_sleeves"
+          },
+          {
+            "who": "mara",
+            "view": "back",
+            "x": 200,
+            "y": 900,
+            "scale": 1.9,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "tilt": 2
+              }
+            ]
+          }
+        ],
+        "chip": "THEO · SUSPENDED"
+      },
+      "lines": [
+        {
+          "who": "theo",
+          "text": "I didn't build Northgate.",
+          "pause_before": 0.35,
+          "pause_after": 0.25
+        },
+        {
+          "who": "mara",
+          "text": "You signed it.",
+          "pause_after": 0.3
+        },
+        {
+          "who": "theo",
+          "text": "Because someone told me to."
+        }
+      ]
+    },
+    {
+      "id": "s02_who",
+      "scene": "stage",
+      "min_duration": 1.8,
+      "pad_after": 0.3,
+      "music_cue": "unease",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "parking",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "right",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "skeptical",
+                "gaze": [
+                  -0.35,
+                  0
+                ],
+                "turn": -0.2
+              }
+            ]
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "Who?",
+          "pause_before": 0.2
+        }
+      ]
+    },
+    {
+      "id": "s03_midpoint",
+      "scene": "stage",
+      "min_duration": 3.2,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "swell"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "parking",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.12
+          ]
+        },
+        "actors": [
+          {
+            "who": "theo",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "cold",
+                "gaze": [
+                  0.1,
+                  0.1
+                ],
+                "turn": 0.1
+              },
+              {
+                "line": 0,
+                "off": 1.0,
+                "expr": "tight",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0
+              },
+              {
+                "line": 2,
+                "off": 0,
+                "expr": "smirk",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0,
+                "tilt": -3
+              }
+            ],
+            "outfit": "shirt_sleeves"
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "theo",
+          "text": "Someone who knew you'd catch me.",
+          "pause_before": 0.3,
+          "pause_after": 0.5
+        },
+        {
+          "who": "mara",
+          "text": "Why should I believe you?",
+          "pause_after": 0.35
+        },
+        {
+          "who": "theo",
+          "text": "Don't. Just ask Priya who she told."
+        }
+      ]
+    },
+    {
+      "id": "s04_the-lie",
+      "scene": "stage",
+      "min_duration": 5.5,
+      "pad_after": 0.3,
+      "music_cue": "intimate",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "office_day",
+        "grade": "warm",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 280,
+            "y": 730,
+            "scale": 1.22,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "calculating",
+                "gaze": [
+                  0.6,
+                  0
+                ],
+                "turn": 0.35
+              }
+            ]
+          },
+          {
+            "who": "priya",
+            "view": "front",
+            "x": 815,
+            "y": 760,
+            "scale": 1.22,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "pleased",
+                "gaze": [
+                  -0.6,
+                  0
+                ],
+                "turn": -0.35,
+                "tilt": 3
+              },
+              {
+                "line": 1,
+                "off": 0,
+                "expr": "pleased",
+                "gaze": [
+                  -0.6,
+                  0
+                ],
+                "turn": -0.3,
+                "tilt": 4
+              },
+              {
+                "line": 1,
+                "off": 0.8,
+                "expr": "guilty",
+                "gaze": [
+                  0.5,
+                  0.55
+                ],
+                "turn": 0.1,
+                "tilt": -2
+              },
+              {
+                "line": 1,
+                "off": 1.4,
+                "expr": "pleased",
+                "gaze": [
+                  -0.55,
+                  0
+                ],
+                "turn": -0.3,
+                "tilt": 3
+              }
+            ]
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "Did you tell anyone I flagged Northgate?",
+          "pause_after": 0.45
+        },
+        {
+          "who": "priya",
+          "text": "No one. I swear."
+        }
+      ]
+    },
+    {
+      "id": "s05_message",
+      "scene": "phone_thread",
+      "min_duration": 3.2,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "buzz"
+        },
+        {
+          "at": 1.4,
+          "name": "buzz"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "phone": {
+          "contact": "Unknown",
+          "time": "11:02",
+          "messages": [
+            {
+              "at": 0.3,
+              "me": false,
+              "text": "She's lying.",
+              "tone": "cold"
+            },
+            {
+              "at": 1.4,
+              "me": false,
+              "text": "Check her calendar. Thursday.",
+              "tone": "cold"
+            }
+          ]
+        }
+      },
+      "silent": true,
+      "caption": "The unknown number again."
+    },
+    {
+      "id": "s06_calendar",
+      "scene": "calendar",
+      "min_duration": 3.6,
+      "pad_after": 0.3,
+      "music_cue": "hush",
+      "sfx": [
+        {
+          "at": 0.8,
+          "name": "thump"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "cal": {
+          "title": "Priya Shah · This week",
+          "day": "THU",
+          "time": "7:00 PM",
+          "event": "Dinner with C.A.",
+          "detail": [
+            "The Linden",
+            "window table"
+          ],
+          "reveal_at": 0.8,
+          "filler": [
+            [
+              0,
+              560,
+              120,
+              "Stand-up"
+            ],
+            [
+              1,
+              700,
+              160,
+              "Q3 review"
+            ],
+            [
+              2,
+              520,
+              120,
+              "1:1 Mara"
+            ],
+            [
+              4,
+              820,
+              140,
+              "Offsite"
+            ]
+          ]
+        }
+      },
+      "silent": true,
+      "caption": "Thursday, 7 p.m. Dinner with \"C.A.\"",
+      "music_gain_db": -6
+    },
+    {
+      "id": "s07_end",
+      "scene": "stage",
+      "min_duration": 2.8,
+      "pad_after": 0.6,
+      "music_cue": "cold",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "caption_y": 1640,
+      "shot": {
+        "env": "office_day",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.08
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "right",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "calculating",
+                "gaze": [
+                  0.2,
+                  0.6
+                ],
+                "turn": 0.1
+              },
+              {
+                "line": 0,
+                "off": 0.3,
+                "expr": "calculating",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0
+              }
+            ]
+          }
+        ],
+        "end_card": {
+          "at": 1.6,
+          "ep": "EPISODE 2 OF 5",
+          "next": "Next: The Window Table"
+        }
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "Who's C.A.?",
+          "pause_before": 0.2
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "Fictional drama about flattery, conditional approval and predictable incentives; it makes no factual claim about real people.",
+      "sources": []
+    }
+  ],
+  "sources": []
+}

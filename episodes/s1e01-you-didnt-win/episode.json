@@ -1,0 +1,593 @@
+{
+  "id": "s1e01-you-didnt-win",
+  "number": 1,
+  "season": 1,
+  "title": "You Didn't Win",
+  "series": "FIVE MESSAGES",
+  "central_question": "Who is sending Mara messages that predict exactly what people will do, and why?",
+  "template": "thriller",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.1,
+  "target_duration_seconds": [
+    26,
+    50
+  ],
+  "visual_mode": "svg",
+  "caption_style": "thriller",
+  "cast": [
+    "mara",
+    "theo",
+    "priya",
+    "celeste"
+  ],
+  "fiction_notice": "Fictional story. Characters, company and events are invented.",
+  "music": {
+    "style": "thriller",
+    "bpm": 76
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "stage",
+      "min_duration": 3.6,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "buzz"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "dark",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.15,
+            1.0
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 540,
+            "y": 800,
+            "scale": 2.2,
+            "light": "phone",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "calculating",
+                "gaze": [
+                  0.05,
+                  0.85
+                ],
+                "turn": 0.05,
+                "tilt": -3
+              },
+              {
+                "line": 0,
+                "off": -0.3,
+                "expr": "realise",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0,
+                "tilt": 0
+              }
+            ]
+          }
+        ],
+        "phone_toast": {
+          "at": 0.15,
+          "from": "Unknown",
+          "text": "You didn't win. You were chosen."
+        }
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "Who is this?",
+          "pause_before": 1.7
+        }
+      ],
+      "music_gain_db": -6
+    },
+    {
+      "id": "s02_context",
+      "scene": "document",
+      "min_duration": 3.0,
+      "pad_after": 0.3,
+      "music_cue": "unease",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "paper"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "doc": {
+          "title": "VENDOR PAYMENT AUTHORISATION",
+          "rows": [
+            [
+              "Payee",
+              "Northgate Consulting Ltd"
+            ],
+            [
+              "Amount",
+              "$480,000"
+            ],
+            [
+              "Prepared by",
+              "T. Vance"
+            ],
+            [
+              "Approved by",
+              "Mara Okafor"
+            ]
+          ],
+          "reveal_row": 3,
+          "reveal_at": 0.2
+        }
+      },
+      "lines": [
+        {
+          "who": "narrator",
+          "text": "Yesterday, she exposed her boss for fraud."
+        }
+      ]
+    },
+    {
+      "id": "s03_praise",
+      "scene": "stage",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "music_cue": "intimate",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "office_day",
+        "grade": "warm",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ]
+        },
+        "actors": [
+          {
+            "who": "celeste",
+            "view": "front",
+            "x": 280,
+            "y": 700,
+            "scale": 1.22,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "cool_smile",
+                "gaze": [
+                  0.6,
+                  0.1
+                ],
+                "turn": 0.35,
+                "tilt": -2
+              },
+              {
+                "line": 2,
+                "off": 0,
+                "expr": "pleased",
+                "gaze": [
+                  0.55,
+                  0.15
+                ],
+                "turn": 0.3,
+                "tilt": -4
+              }
+            ]
+          },
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 815,
+            "y": 770,
+            "scale": 1.2,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "pleased",
+                "gaze": [
+                  -0.6,
+                  0.0
+                ],
+                "turn": -0.35,
+                "tilt": 3
+              },
+              {
+                "line": 1,
+                "off": 0,
+                "expr": "pleased",
+                "gaze": [
+                  -0.3,
+                  0.6
+                ],
+                "turn": -0.25,
+                "tilt": 5
+              },
+              {
+                "line": 2,
+                "off": 0.2,
+                "expr": "pleased",
+                "gaze": [
+                  -0.6,
+                  0
+                ],
+                "turn": -0.35,
+                "tilt": 4
+              }
+            ]
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "celeste",
+          "text": "Brave work, Mara. The board noticed.",
+          "pause_after": 0.3
+        },
+        {
+          "who": "mara",
+          "text": "I just read the numbers."
+        },
+        {
+          "who": "celeste",
+          "text": "Most people don't."
+        }
+      ]
+    },
+    {
+      "id": "s04_ring",
+      "scene": "insert_hand",
+      "min_duration": 2.2,
+      "pad_after": 0.3,
+      "music_cue": "intimate",
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "pen"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "hand": {
+          "who": "celeste",
+          "ring": true,
+          "action": "tap"
+        },
+        "surface": "folder",
+        "grade": "warm"
+      },
+      "silent": true,
+      "caption": "Celeste Arden. Chief Financial Officer."
+    },
+    {
+      "id": "s05_prediction",
+      "scene": "phone_thread",
+      "min_duration": 3.6,
+      "pad_after": 0.3,
+      "music_cue": "unease",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "buzz"
+        },
+        {
+          "at": 1.9,
+          "name": "ping"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "phone": {
+          "contact": "Unknown",
+          "time": "9:12",
+          "messages": [
+            {
+              "at": 0.3,
+              "me": false,
+              "text": "At 9:15 she'll offer you Theo's job.",
+              "tone": "cold"
+            },
+            {
+              "at": 1.9,
+              "me": false,
+              "text": "Say yes.",
+              "tone": "cold"
+            }
+          ]
+        }
+      },
+      "silent": true,
+      "caption": "Three minutes later."
+    },
+    {
+      "id": "s06_offer",
+      "scene": "stage",
+      "min_duration": 3.4,
+      "pad_after": 0.3,
+      "music_cue": "intimate",
+      "sfx": [
+        {
+          "at": 0.5,
+          "name": "tick"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "office_day",
+        "grade": "warm",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.08
+          ]
+        },
+        "actors": [
+          {
+            "who": "celeste",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "left",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "confident",
+                "gaze": [
+                  -0.25,
+                  0.05
+                ],
+                "turn": -0.15,
+                "tilt": -2
+              }
+            ]
+          }
+        ],
+        "clock": {
+          "from": "9:14",
+          "to": "9:15",
+          "flip_at": 0.5
+        }
+      },
+      "lines": [
+        {
+          "who": "celeste",
+          "text": "I'd like you to run Partnerships.",
+          "pause_before": 0.7
+        }
+      ]
+    },
+    {
+      "id": "s07_yes",
+      "scene": "stage",
+      "min_duration": 2.4,
+      "pad_after": 0.3,
+      "music_cue": "hush",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "thump"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "env": "office_day",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.1
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 540,
+            "y": 790,
+            "scale": 2.2,
+            "light": "right",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "realise",
+                "gaze": [
+                  0.3,
+                  0.1
+                ],
+                "turn": 0.1
+              },
+              {
+                "line": 0,
+                "off": 0.1,
+                "expr": "calculating",
+                "gaze": [
+                  0.3,
+                  0.05
+                ],
+                "turn": 0.1,
+                "tilt": -2
+              }
+            ]
+          }
+        ]
+      },
+      "lines": [
+        {
+          "who": "mara",
+          "text": "Yes.",
+          "pause_before": 0.8
+        }
+      ],
+      "music_gain_db": -8
+    },
+    {
+      "id": "s08_reply",
+      "scene": "phone_thread",
+      "min_duration": 4.8,
+      "pad_after": 0.3,
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "ping"
+        },
+        {
+          "at": 1.6,
+          "name": "buzz"
+        },
+        {
+          "at": 3.0,
+          "name": "buzz"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut",
+      "caption_y": 1640,
+      "shot": {
+        "phone": {
+          "contact": "Unknown",
+          "time": "9:21",
+          "messages": [
+            {
+              "at": 0.3,
+              "me": true,
+              "text": "Who are you?",
+              "tone": "neutral"
+            },
+            {
+              "at": 1.6,
+              "me": false,
+              "text": "Someone who knows how this ends.",
+              "tone": "cold"
+            },
+            {
+              "at": 3.0,
+              "me": false,
+              "text": "Tomorrow, ask Priya who she told.",
+              "tone": "cold"
+            }
+          ]
+        }
+      },
+      "silent": true,
+      "caption": "She replied."
+    },
+    {
+      "id": "s09_end",
+      "scene": "stage",
+      "min_duration": 2.6,
+      "pad_after": 0.4,
+      "music_cue": "cold",
+      "sfx": [],
+      "claims": [
+        "C1"
+      ],
+      "transition": "fade",
+      "caption_y": 1640,
+      "shot": {
+        "env": "dark",
+        "grade": "cold",
+        "camera": {
+          "zoom": [
+            1.0,
+            1.05
+          ]
+        },
+        "actors": [
+          {
+            "who": "mara",
+            "view": "front",
+            "x": 540,
+            "y": 800,
+            "scale": 2.2,
+            "light": "phone",
+            "acting": [
+              {
+                "t": 0,
+                "expr": "calculating",
+                "gaze": [
+                  0.0,
+                  0.8
+                ],
+                "turn": 0
+              },
+              {
+                "t": 0.8,
+                "expr": "cool_smile",
+                "gaze": [
+                  0,
+                  0
+                ],
+                "turn": 0,
+                "tilt": -3
+              }
+            ]
+          }
+        ],
+        "end_card": {
+          "at": 1.3,
+          "ep": "EPISODE 1 OF 5",
+          "next": "Next: The Lie"
+        }
+      },
+      "silent": true,
+      "caption": "Who chose her? And why?"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "illustrative",
+      "text": "Fictional drama about flattery, conditional approval and predictable incentives; it makes no factual claim about real people.",
+      "sources": []
+    }
+  ],
+  "sources": []
+}
