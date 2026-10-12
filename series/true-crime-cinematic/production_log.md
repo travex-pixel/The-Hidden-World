@@ -115,3 +115,8 @@
 - 2026-10-12 03:26:44 tcv19-grim-sleeper-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_19_grim_sleeper_40s.mp4 (43.1s, 19.7 MB, sha256 e3c223e64626)
 - 2026-10-12 03:26:46 produce 22: regenerating episode data
 - 2026-10-12 03:26:46 tcv22-mcveigh-40: rendering (final, seed 1)
+- 2026-10-12 03:29:01 tcv18-gilgo-40: rendered in 784s
+- 2026-10-12 03:29:37 tcv18-gilgo-40: QA FAILED ['narration_intelligible_asr']; frames and details in series/true-crime-cinematic/qa/true_crime_18
+- 2026-10-12 03:30:28 produce 18: regenerating episode data
+- 2026-10-12 03:30:28 tcv18-gilgo-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 03:31:07 tcv18-gilgo-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_18_gilgo_40s.mp4 (43.5s, 18.6 MB, sha256 f68fa1b7d943)

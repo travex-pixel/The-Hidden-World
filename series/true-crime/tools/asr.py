@@ -18,13 +18,28 @@ def _load(p: Path):
     return (x.reshape(-1, 2).mean(1) if ch == 2 else x), sr
 
 
-def transcribe_file(wav: Path, model_dir: Path) -> str:
+def windows(dur: float, bounds=None, size: float = 25.0) -> list[tuple[float, float]]:
+    """Whisper works on <= 30 s windows. Without bounds, fixed 25 s windows; with bounds (scene starts, which sit in
+    pauses), windows are packed up to `size` seconds and cut only at those times, so no sentence is split mid-word
+    (a fixed cut at 25.0 s made tiny.en drop a whole sentence on Case File 18)."""
+    if not bounds:
+        return [(a, min(dur, a + size)) for a in np.arange(0, dur, size)]
+    edges = sorted({0.0, dur, *[b for b in bounds if 0 < b < dur]}); out = []; a = prev = edges[0]
+    for e in edges[1:]:
+        if e - a > size and prev > a:
+            out.append((a, prev)); a = prev
+        prev = e
+    out.append((a, prev))
+    return [w for a, b in out for w in ([(a, b)] if b - a <= 29 else [(t, min(b, t + size)) for t in np.arange(a, b, size)])]
+
+
+def transcribe_file(wav: Path, model_dir: Path, bounds=None) -> str:
     import sherpa_onnx
     rec = sherpa_onnx.OfflineRecognizer.from_whisper(encoder=str(model_dir / "tiny.en-encoder.onnx"), decoder=str(model_dir / "tiny.en-decoder.onnx"),
                                                     tokens=str(model_dir / "tiny.en-tokens.txt"), num_threads=4)
     x, sr = _load(wav); out = []
-    for i in range(0, len(x), 25 * sr):   # Whisper works on <= 30 s windows
-        s = rec.create_stream(); s.accept_waveform(sr, x[i:i + 25 * sr]); rec.decode_stream(s); out.append(s.result.text.strip())
+    for a, b in windows(len(x) / sr, bounds):
+        s = rec.create_stream(); s.accept_waveform(sr, x[int(a * sr):int(b * sr)]); rec.decode_stream(s); out.append(s.result.text.strip())
     return " ".join(out)
 
 

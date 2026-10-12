@@ -62,7 +62,7 @@ def asr_check(mp4: Path, tl: list, workdir: Path) -> dict | None:
     from asr import transcribe_file, wer
     wav = workdir / "asr_input.wav"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(mp4), "-vn", "-ac", "1", "-ar", "16000", str(wav)], check=True)
-    hyp = transcribe_file(wav, asr_dir)
+    hyp = transcribe_file(wav, asr_dir, bounds=[s["start"] for s in tl])   # cut at scene starts (pauses), never mid-sentence
     ref = " ".join(l["text"] for s in tl for l in s.get("lines", []))
     return {"engine": "sherpa-onnx whisper tiny.en", "word_error_rate": round(wer(ref, hyp), 3), "transcript": hyp}
 
