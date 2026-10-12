@@ -69,7 +69,7 @@ def build(h):
     for sc in scenes:
         sc["section"] = sections[sc["id"]]
     scenes[1]["music_gain_db"] = -3   # the stakes line: the score steps back
-    scenes[2]["music_drop"] = True    # what was inside the Volkswagen
+    scenes[2]["music_gain_db"] = -4   # what was inside the Volkswagen (a full drop inside the first 15 s fails the opening-holes check)
     scenes[5]["music_drop"] = True    # the reveal: the plate came back stolen
     # no fade to black: the final frame is the Beetle from behind, big and centred under the burned-in end question,
     # so the video loops cleanly back to its first frame

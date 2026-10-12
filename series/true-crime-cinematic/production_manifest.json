@@ -2315,7 +2315,20 @@
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
       "sha256": "a433704f40496169ba0e0c7c7d95d94fab50661af0525d4a2156065af5fb440a",
       "output": "series/true-crime-cinematic/output/true_crime_27_madoff_40s.mp4",
-      "verified": "2026-10-12T09:00:58"
+      "verified": "2026-10-12T09:00:58",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "'One big lie' is on a wording-as-reported card; $65 billion is labelled as statement value, with principal lost on the card. The sons appear only as silhouettes, are not named, and their deaths are not mentioned. First render failed audio_opening_no_holes (a full music drop inside the first 15 s); softened to -4 dB and the audio rebuilt."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "26": {
       "id": "tcv26-el-chapo-40",
@@ -2385,10 +2398,106 @@
       "sha256": "0e427331857b6bb89aa20e915e9b04e08a1a44b09f15376101a34c90a56a028e",
       "output": "series/true-crime-cinematic/output/true_crime_26_el_chapo_40s.mp4",
       "verified": "2026-10-12T09:10:13",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "The movie-plans clue is attributed on screen to Mexico's attorney general ('an important aspect'); the actor and actress he met are not named, drawn or alluded to; Guzman appears only as a silhouette; the closing figure at the tunnel is a generic investigator. 'Los Mochis' is misheard by the recogniser; listen."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
+    },
+    "28": {
+      "id": "tcv28-bundy-40",
+      "title": "Ted Bundy Escaped Jail Twice. A Traffic Stop Ended It #Shorts",
+      "file": "true_crime_28_bundy_40s.mp4",
+      "media": {
+        "duration": 43.833,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 20868286,
+        "mean_volume_db": -16.7,
+        "max_volume_db": -1.5
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 1315,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -16.8,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true,
+        "captions_in_safe_area": true,
+        "no_frozen_or_static_picture": true,
+        "audio_opening_speech_steady": true,
+        "audio_opening_no_holes": true,
+        "audio_narration_on_time": true,
+        "audio_music_never_masks": true,
+        "audio_music_audible": true,
+        "audio_no_clipping": true,
+        "audio_no_long_silence": true,
+        "audio_ending_intentional": true,
+        "audio_mono_compatible": true,
+        "audio_av_duration_match": true,
+        "shot_variety_and_character_action": true,
+        "every_shot_sourced_and_tagged": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.3,
+        "true_peak_dbtp": -1.5
+      },
+      "asr_word_error_rate": 0.075,
+      "frames_sampled": 8,
+      "qa_dir": "series/true-crime-cinematic/qa/true_crime_28",
+      "status": "verified_automated",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "sha256": "b97cc8ac9d1340ad90d141a6d3d8420dea651a6fbcc3093fe184261a906baf57",
+      "output": "series/true-crime-cinematic/output/true_crime_28_bundy_40s.mp4",
+      "verified": "2026-10-12T09:21:14",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "Told through the police work only: Bundy is a silhouette throughout, no victims shown or named, no weapons in use; the 1975 items appear on a typed card; '30 murders' is attributed to his confession with 'true total unknown' on the card. First render failed audio_opening_no_holes for the same reason as 27 and was fixed the same way; the brief now forbids music_drop before 15 s."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     }
   },
-  "updated": "2026-10-12T09:10:13",
+  "updated": "2026-10-12T09:21:14",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

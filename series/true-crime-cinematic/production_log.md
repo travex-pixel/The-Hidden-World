@@ -151,3 +151,8 @@
 - 2026-10-12 09:10:13 tcv26-el-chapo-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_26_el_chapo_40s.mp4 (40.5s, 16.8 MB, sha256 0e427331857b)
 - 2026-10-12 09:10:13 produce 28: regenerating episode data
 - 2026-10-12 09:10:13 tcv28-bundy-40: rendering (final, seed 1)
+- 2026-10-12 09:19:13 tcv28-bundy-40: rendered in 540s
+- 2026-10-12 09:19:50 tcv28-bundy-40: QA FAILED ['audio_opening_no_holes']; frames and details in series/true-crime-cinematic/qa/true_crime_28
+- 2026-10-12 09:20:38 produce 28: regenerating episode data
+- 2026-10-12 09:20:38 tcv28-bundy-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 09:21:14 tcv28-bundy-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_28_bundy_40s.mp4 (43.8s, 20.9 MB, sha256 b97cc8ac9d13)

@@ -27,6 +27,9 @@
 | 23 | `true_crime_23_hushpuppi_40s.mp4` (archived outside git) | Hushpuppi and his own Instagram (2020–2022), 40-second cut | see `production_manifest.json` |
 | 24 | `true_crime_24_jho_low_40s.mp4` (archived outside git) | 1MDB, Jho Low and the superyacht (2009–2026, never tried), 40-second cut | see `production_manifest.json` |
 | 25 | `true_crime_25_capone_40s.mp4` (archived outside git) | Al Capone and the ledger (1926–1931), 40-second cut with a burned-in end question | see `production_manifest.json` |
+| 26 | `true_crime_26_el_chapo_40s.mp4` (archived outside git) | El Chapo, the tunnel and the movie plans (2015–2019), 40-second cut | see `production_manifest.json` |
+| 27 | `true_crime_27_madoff_40s.mp4` (archived outside git) | Bernie Madoff and the confession to his sons (2008–2009), 40-second cut | see `production_manifest.json` |
+| 28 | `true_crime_28_bundy_40s.mp4` (archived outside git) | Ted Bundy and the traffic stops (1975–1978), 40-second cut | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

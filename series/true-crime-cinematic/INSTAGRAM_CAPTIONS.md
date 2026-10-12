@@ -306,3 +306,41 @@ Who really got Capone: Eliot Ness or the taxman? 👇 Follow for the next case.
 #AlCapone #TrueCrime #Chicago #Alcatraz #CaseFiles
 
 Illustrated representations, not likenesses.
+
+---
+
+# Case Files 26–28: household names, built to the Case File 16 rules (made 2026-10-12)
+**Posting.** Tonight, about 2 hours apart: Bundy or El Chapo first (the biggest names), Madoff last. Each ends on a burned-in two-option question; reply to the first comments quickly.
+
+## 26: El Chapo, 40 s (`true_crime_26_el_chapo_40s.mp4`)
+El Chapo escaped prison through a mile-long tunnel 🎬
+
+It opened in his cell's shower, with a motorcycle on rails inside.
+Six months later, his plans for a movie about his life helped investigators find him.
+
+What really caught him: the movie plans or the marines? 👇 Follow for the next case.
+
+#ElChapo #TrueCrime #Mexico #CrimeStory #CaseFiles
+
+## 27: Bernie Madoff, 40 s (`true_crime_27_madoff_40s.mp4`)
+The biggest Ponzi scheme in history. His own sons turned him in. 💼
+
+For years, his statements showed steady gains, month after month.
+An analyst kept warning the regulators.
+It ended in one night, inside his own family.
+
+Who failed the victims: Madoff or the regulators? 👇 Follow for the next case.
+
+#TrueCrime #BernieMadoff #PonziScheme #WallStreet #CaseFiles
+
+## 28: Ted Bundy, 40 s (`true_crime_28_bundy_40s.mp4`)
+Ted Bundy escaped custody twice 🚔
+
+Both times, the chase ended at the roadside.
+It started with a Volkswagen driving with its headlights off.
+
+What caught him: good policing or his own mistakes? 👇 Follow for the next case.
+
+#TedBundy #TrueCrime #ColdCase #PoliceWork #CaseFiles
+
+Victims are not shown or named. We remember them.
