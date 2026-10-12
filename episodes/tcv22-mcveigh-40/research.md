@@ -32,13 +32,13 @@
 | `M_verdict` | A federal jury found him guilty on all 11 counts on 2 June 1997. He was executed by lethal injection on 11 June 2001, the first federal execution since 1963 | FBI; CNN Fast Facts; History.com; News On 6 |
 | `M_nichols` | On screen only: Terry Nichols was also convicted, on federal conspiracy and involuntary manslaughter charges (23 Dec 1997, life) and on 161 state murder counts (2004) | CNN Fast Facts; News On 6 |
 
-### Narration (106 words, 9 scenes)
+### Narration (108 words, 9 scenes, 44.6 s; commas after "minutes" and "Meanwhile" were dropped to tighten Piper's pauses)
 
-1. "The Oklahoma City bomber was in a jail cell before the FBI even knew his name." / "Because of a missing license plate." (`M_hook`, `M_stop`)
+1. "The Oklahoma City bomber was in a jail cell before the FBI knew his name." / "Because of a missing license plate." (`M_hook`, `M_stop`)
 2. "His truck bomb killed 168 people, including 19 children." (`M_toll`)
-3. "Within about 90 minutes, a trooper stopped a car with no license plate." (`M_stop`)
+3. "Within about 90 minutes a trooper stopped a car with no license plate." (`M_stop`)
 4. "He was jailed on gun and traffic charges." (`M_jailed`)
-5. "Meanwhile, a truck axle's vehicle identification number led the FBI to Kansas." (`M_axle`, `M_kansas`)
+5. "Meanwhile a truck axle's vehicle identification number led the FBI to Kansas." (`M_axle`, `M_kansas`)
 6. "Sketches from a rental shop there led to a name: Timothy McVeigh." (`M_sketch`)
 7. "Agents ran the name. He was already in jail," / "about to be released." (`M_custody`)
 8. "He was convicted in 1997," / "and executed in 2001." (`M_verdict`, plus `M_nichols` on the card)
@@ -89,7 +89,7 @@ None are used. The case ended in convictions, and every narrated fact above is a
 
 ## Ethics decisions
 
-- **The toll is said once, plainly:** "His truck bomb killed 168 people, including 19 children." It appears on a quiet typed card in a task-force room, with the score dropped. The video closes with "And we remember the 168."
+- **The toll is said once, plainly:** "His truck bomb killed 168 people, including 19 children." It appears on a quiet typed card in a task-force room, with the score stepped back. The video closes with "And we remember the 168."
 - **What is never depicted:** the explosion, the Murrah Building, damage, victims, rescue scenes, injuries and famous photographs (including the firefighter photograph).
 - **McVeigh:**
   - He appears only as an anonymous rim-lit silhouette (`characters/figures/mc22_driver.json`, `real_person: true`) or as a dark head shape through a rear window.

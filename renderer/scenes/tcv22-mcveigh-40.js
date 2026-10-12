@@ -446,14 +446,14 @@
     mc22_end(ctx) {
       const t = ctx.t, pl = WT(ctx, 0, 3, 1.0), l1 = LS(ctx, 1, 2.4), end = ctx.T;
       const CARP = { x: 540, y: 1300, s: 0.9 };
-      const memo = tt => { const k = seg(tt, l1 - 0.1, l1 + 0.4) * (1 - seg(tt, end - 1.75, end - 1.5)); if (k <= 0) return ''; return `<g opacity="${f1(k)}">${panel(150, 400, 780, 150, 0.62)}<text x="540" y="496" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="56" fill="#f4efe4">WE REMEMBER THE 168</text></g>`; };
+      const memo = tt => { const k = seg(tt, l1 + 0.1, l1 + 0.5) * (1 - seg(tt, end - 1.75, end - 1.5)); if (k <= 0) return ''; return `<g opacity="${f1(k)}">${panel(150, 400, 780, 150, 0.62)}<text x="540" y="496" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="56" fill="#f4efe4">WE REMEMBER THE 168</text></g>`; };
       return E.cine.shot(ctx, {
         set: 'mc22_highway', setOpts: { view: 'rear' }, grade: 'warm', police: 0.22 * (1 - seg(t, end - 1.6, end - 0.4)),
         cam: { from: { x: 0, y: 70, z: 1.08 }, to: { x: 0, y: 40, z: 1.0 }, handheld: 0.6 },
         props: [{ depth: 1.0, svg: tt => carRear(CARP.x, CARP.y, CARP.s, tt, { driver: true, exhaust: true, glow: 0.8 * seg(tt, pl - 0.3, pl + 0.2) * (1 - seg(tt, end - 1.6, end - 0.6)) }) }],
         overlays: [
-          { type: 'funfact', at: 0.25, until: l1 - 0.3, y: 400, w: 920, fs: 38, rows: [{ text: 'The real car later went on display' }, { text: 'at the Oklahoma City National' }, { text: 'Memorial & Museum.', colour: YEL }] },
-          { type: 'svg', at: l1 - 0.1, svg: memo },
+          { type: 'funfact', at: WT(ctx, 0, 0, 0.25) - 0.05, until: l1 - 0.1, y: 400, w: 920, fs: 38, rows: [{ text: 'The real car later went on display' }, { text: 'at the Oklahoma City National' }, { text: 'Memorial & Museum.', colour: YEL }] },
+          { type: 'svg', at: l1 + 0.1, svg: memo },
           { type: 'nextcase', at: end - 1.55, y: 380, w: 900, rows: [{ text: "MORE 'CAUGHT BY…' CASES", fs: 44 }], sub: 'FOLLOW' }
         ],
         tag: ROAD

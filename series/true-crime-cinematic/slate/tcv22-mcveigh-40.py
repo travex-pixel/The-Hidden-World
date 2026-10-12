@@ -51,14 +51,14 @@ def build(h):
         # E - callback on the hero object, the memorial line, then a compact follow card (no extra narration)
         S("s09_end", "mc22_end", [N("A missing license plate held him."), N("And we remember the 168.", pause_before=0.5)],
           "aftermath", ["M_stop", "M_custody", "M_toll", "M_car_museum"],
-          sfx=[fx(0.0, "wind", 0.35), fw(0, 3, "sparkle", 0.6, -0.05)],
+          sfx=[fx(0.0, "wind", 0.35), fw(0, 0, "sparkle", 0.6, -0.05)],
           emph=["license", "plate", "168."], min_d=3.6, pad=1.6, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_toll": "A", "s03_stop": "B", "s04_jail": "B", "s05_axle": "B", "s06_rental": "B",
                 "s07_reveal": "C", "s08_verdict": "D", "s09_end": "E"}
     for sc in scenes:
         sc["section"] = sections[sc["id"]]
-    scenes[1]["music_drop"] = True    # the toll: the score falls away
+    scenes[1]["music_gain_db"] = -3   # the toll: the score steps back (a full drop here left a hole in the opening bed)
     scenes[6]["music_drop"] = True    # the reveal: "He was already in jail"
     # no fade to black on the last scene: the final frame is the hero car (plus the follow card), so the video loops
     # cleanly back to its first frame (short40 rule); the end card sits above the car, where the headline sits at t = 0
