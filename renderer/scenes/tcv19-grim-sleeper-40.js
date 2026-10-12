@@ -314,12 +314,12 @@
           { id: 'analyst', x: 330, y: 1790, scale: 1.16, dir: 1, turn: 0.5, pose: 'sit_type', expr: 'focused', gaze: [0.7, 0.2],
             keys: [...typing(0.2, flg - 0.2), { at: flg - 0.1, pose: 'sit', expr: 'realise', gaze: [0.9, 0], dur: 0.35 }] },
           { id: 'gr15_detective', x: 1360, y: 1800, scale: 1.1, dir: -1, turn: 0.45, pose: 'stand', expr: 'focused',
-            walk: { from: 1360, to: 1000, at: 0.2, dur: 1.1, cadence: 6 }, keys: [{ at: fam + 0.2, pose: 'read', dur: 0.4 }, { at: son, pose: 'stand_tense', expr: 'realise', dur: 0.4 }] }
+            walk: { from: 1360, to: 960, at: 0.2, dur: 1.1, cadence: 6 }, keys: [{ at: fam + 0.2, pose: 'read', dur: 0.4 }, { at: son, pose: 'stand_tense', expr: 'realise', dur: 0.4 }] }
         ],
         props: [{ depth: 1.04, svg: screen }],
         overlays: [
           { type: 'card', at: yr - 0.2, x: 80, y: 390, w: 920, rows: [{ text: 'CALIFORNIA · 2010', fs: 28, colour: '#6b665c' }, { text: 'A FAMILIAL DNA SEARCH', fs: 42, at: fam - 0.1 },
-            { text: 'FLAGGED A CLOSE RELATIVE: HIS SON', fs: 34, colour: '#8e1f18', at: flg - 0.1 }, { text: 'Not named here, and not a suspect.', fs: 28, colour: '#6b665c', at: son } ] }
+            { text: 'FLAGGED A CLOSE RELATIVE: HIS SON', fs: 34, colour: '#8e1f18', at: flg - 0.1 }, { text: 'Not named here, and not a suspect.', fs: 28, colour: '#6b665c', at: flg + 0.35 } ] }
         ],
         tag: 'ILLUSTRATION · GENERIC FIGURES'
       });
@@ -333,7 +333,7 @@
         cam: { keys: [{ at: 0, x: 60, y: 40, z: 1.04 }, { at: l2 - 0.2, x: -40, y: 20, z: 1.12, dur: 1.4 }], handheld: 1.8 },
         figures: [
           { id: 'gr15_franklin', x: 290, y: 1560, scale: 0.7, dir: 1, turn: 0.5, pose: 'sit', noChair: true, silhouette: 'warm',
-            keys: [{ at: lon, pose: 'hands_together', dur: 0.5 }, { at: piz + 0.3, pose: 'sit', dur: 0.5 }] },
+            keys: [{ at: lon, pose: 'sit_read', dur: 0.5 }, { at: piz + 0.3, pose: 'sit', dur: 0.5 }] },
           { id: 'gr15_detective', x: 1400, y: 1640, scale: 0.78, dir: -1, turn: 0.45, pose: 'stand', expr: 'focused',
             walk: { from: 1400, to: 860, at: l2 - 0.4, dur: 1.4, cadence: 6 }, keys: [{ at: fol + 0.9, pose: 'stand_tense', gaze: [-0.9, 0], dur: 0.4 }, { at: piz + 0.5, pose: 'sit', dur: 0.5 }] }
         ],
@@ -363,7 +363,7 @@
         set: 'gr15_pizzeria', setOpts: { balloons: true, balloonX: 140 }, grade: 'warm',
         cam: { keys: [{ at: 0, x: 40, y: -60, z: 1.08 }, { at: l2 - 0.3, x: -30, y: -90, z: 1.2, dur: 1.0 }], handheld: 2.2 },
         figures: [
-          { id: 'gr15_franklin', x: 190, y: 1700, scale: 0.95, dir: 1, turn: 0.45, pose: 'sit', noChair: true, silhouette: 'warm', keys: [{ at: lift, pose: 'hands_together', dur: 0.5 }] },
+          { id: 'gr15_franklin', x: 190, y: 1700, scale: 0.95, dir: 1, turn: 0.45, pose: 'sit', noChair: true, silhouette: 'warm', keys: [{ at: lift, pose: 'sit_read', dur: 0.5 }] },
           { id: 'gr15_busboy', x: 1420, y: B.y, scale: B.s, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused',
             walk: { from: 1420, to: B.x, at: 0.1, dur: arrive - 0.1, cadence: 6 }, keys: [{ at: lift, pose: 'present', expr: 'neutral', gaze: [0.8, 0.4], dur: 0.45 }, { at: crust, expr: 'determined', gaze: [0.3, 0.2], dur: 0.3 }] }
         ],

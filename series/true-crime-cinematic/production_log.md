@@ -101,3 +101,5 @@
 - 2026-10-12 02:17:49 tcv17-kohberger: VERIFIED -> series/true-crime-cinematic/output/true_crime_17_kohberger.mp4 (80.2s, 30.3 MB, sha256 edeccc9da786)
 - 2026-10-12 03:02:42 produce 20: regenerating episode data
 - 2026-10-12 03:02:42 tcv20-boston-strangler-40: rendering (final, seed 1)
+- 2026-10-12 03:03:44 produce 21: regenerating episode data
+- 2026-10-12 03:03:44 tcv21-kohberger-40: rendering (final, seed 1)

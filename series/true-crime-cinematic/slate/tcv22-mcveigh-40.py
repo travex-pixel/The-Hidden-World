@@ -18,41 +18,41 @@ def build(h):
 
     scenes = [
         # A - hook: the hero object (the rear of a yellow 1970s sedan with an EMPTY plate bracket), big and centred
-        S("s01_hook", "mc22_hook", [N("The Oklahoma City bomber was in a jail cell before the FBI even knew his name."),
-                                    N("Because of a missing license plate.", pause_before=0.3)],
+        S("s01_hook", "mc22_hook", [N("The Oklahoma City bomber was in a jail cell before the FBI knew his name."),
+                                    N("Because of a missing license plate.", pause_before=0.25)],
           "cold", ["M_hook", "M_stop"], sfx=[fx(0.0, "sub", 0.45), fx(0.15, "wind", 0.35), fw(0, 8, "thud", 0.4, 0.05),
                                              fw(1, 5, "hit", 0.5, -0.05)],
           emph=["jail", "cell", "name.", "missing", "plate."], min_d=5.6, pad=0.2),
         S("s02_toll", "mc22_toll", [N("His truck bomb killed 168 people, including 19 children.", pause_before=0.1)],
-          "hush", ["M_toll"], sfx=[fx(0.0, "wind", 0.35)], emph=["168", "19", "children."], min_d=3.6, pad=0.45, tr="fade"),
+          "hush", ["M_toll"], sfx=[fx(0.0, "wind", 0.35)], emph=["168", "19", "children."], min_d=3.6, pad=0.3, tr="fade"),
         # B - the two threads: the stop and the jail; the axle, the rental shop and the sketch
-        S("s03_stop", "mc22_stop", [N("Within about 90 minutes, a trooper stopped a car with no license plate.")],
+        S("s03_stop", "mc22_stop", [N("Within about 90 minutes a trooper stopped a car with no license plate.")],
           "tension", ["M_stop"], sfx=[fx(0.0, "whoosh", 0.4), fw(0, 6, "brake", 0.45, -0.1), fw(0, 10, "step", 0.3, 0.1)],
-          emph=["90", "minutes,", "no", "plate."], pad=0.2, tr="push"),
+          emph=["90", "minutes", "no", "plate."], pad=0.2, tr="push"),
         S("s04_jail", "mc22_jail", [N("He was jailed on gun and traffic charges.")],
           "tension", ["M_jailed"], sfx=[fw(0, 2, "gate", 0.45, -0.05), fw(0, 7, "stamp", 0.4, 0.05)],
           emph=["jailed"], min_d=2.8, pad=0.2, tr="push"),
-        S("s05_axle", "mc22_axle", [N("Meanwhile, a truck axle's vehicle identification number led the FBI to Kansas.")],
+        S("s05_axle", "mc22_axle", [N("Meanwhile a truck axle's vehicle identification number led the FBI to Kansas.")],
           "tension-rise", ["M_axle", "M_kansas"], sfx=[fx(0.05, "click", 0.4), fw(0, 4, "ping", 0.4, -0.05), fw(0, 11, "thump", 0.45)],
           emph=["axle's", "vehicle", "identification", "kansas."], pad=0.2, tr="push"),
         S("s06_rental", "mc22_rental", [N("Sketches from a rental shop there led to a name: Timothy McVeigh.")],
           "tension-rise", ["M_sketch"], sfx=[fx(0.1, "pen", 0.4), fw(0, 0, "paper", 0.4, -0.05), fw(0, 10, "hit", 0.5, -0.05)],
-          emph=["sketches", "name:", "mcveigh."], pad=0.25, tr="push"),
+          emph=["sketches", "name:", "mcveigh."], pad=0.2, tr="push"),
         # C - the HOW: he was already in the jail cell, about to be released
         S("s07_reveal", "mc22_reveal", [N("Agents ran the name. He was already in jail,"),
                                         N("about to be released.", pause_before=0.25)],
           "revelation", ["M_custody"], sfx=[fw(0, 1, "beep", 0.3, -0.05), fw(0, 5, "swell", 0.45, -0.3), fw(0, 8, "hit", 0.55, -0.05),
                                             fw(1, 3, "gate", 0.4, 0.05)],
-          emph=["already", "jail,", "released."], pad=0.35, tr="flash"),
+          emph=["already", "jail,", "released."], pad=0.25, tr="flash"),
         # D - the outcome; the cliff impact sits in the pause between the two lines
-        S("s08_verdict", "mc22_verdict", [N("He was convicted in 1997,"), N("and executed in 2001.", pause_before=0.45)],
+        S("s08_verdict", "mc22_verdict", [N("He was convicted in 1997,"), N("and executed in 2001.", pause_before=0.35)],
           "tension-peak", ["M_verdict", "M_nichols"], sfx=[fw(0, 2, "gavel", 0.8, -0.08)],
           emph=["convicted", "executed"], pad=0.3, tr="zoom"),
         # E - callback on the hero object, the memorial line, then a compact follow card (no extra narration)
         S("s09_end", "mc22_end", [N("A missing license plate held him."), N("We remember the 168.", pause_before=0.5)],
           "aftermath", ["M_stop", "M_custody", "M_toll", "M_car_museum"],
           sfx=[fx(0.0, "wind", 0.35), fw(0, 3, "sparkle", 0.6, -0.05)],
-          emph=["license", "plate", "168."], min_d=3.6, pad=2.0, tr="fade"),
+          emph=["license", "plate", "168."], min_d=3.6, pad=1.8, tr="fade"),
     ]
     sections = {"s01_hook": "A", "s02_toll": "A", "s03_stop": "B", "s04_jail": "B", "s05_axle": "B", "s06_rental": "B",
                 "s07_reveal": "C", "s08_verdict": "D", "s09_end": "E"}
