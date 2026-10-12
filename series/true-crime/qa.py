@@ -96,7 +96,7 @@ def main(argv=None) -> int:
     if not src.exists():
         rec.update(status="not_rendered", next_task=f"python series/true-crime/qa.py {a.n} --render" + (f" --series {a.series}" if a.series else "")); save(m); return 1
     verify = json.loads((out / "verify.json").read_text()); tl = json.loads((out / "timeline.json").read_text())
-    qa = series_qa(ep["id"], src, CFG["duration_limits_s"])
+    qa = series_qa(ep["id"], src, ep.get("duration_limits_s", CFG["duration_limits_s"]))   # short cuts carry their own window
     ld = loudness(src)
     qa["loudness_near_target"] = ld["integrated_lufs"] is not None and abs(ld["integrated_lufs"] - CFG["loudness_lufs"]) <= 1.5
     qa["true_peak_ok"] = ld["true_peak_dbtp"] is not None and ld["true_peak_dbtp"] <= -0.5

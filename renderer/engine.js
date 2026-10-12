@@ -408,6 +408,16 @@
       const cap = (useArt ? (ctx.scene.art.caption === false || (ctx.scene.caption_mode === 'card' && ctx.scene.art.caption !== true)) : ctx.scene.caption_mode === 'card') ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
       return body + cap;
     },
+    // big burned-in hook headline for the first seconds (episode.hook_title = {lines:[{text, colour, fs}], until, y, fs});
+    // most viewers scroll with the sound off, so the first frame has to say what the video is
+    hookTitle(t) {
+      const h = this.state.ep.hook_title; if (!h || !h.lines) return '';
+      const until = h.until ?? 2.8; if (t > until + 0.4) return '';
+      const k = ease.back(seg(t, 0, 0.32)), out = 1 - seg(t, until, until + 0.4), fs0 = h.fs || 96, y0 = h.y ?? 470, lh = fs0 * 1.14;
+      let s = `<rect x="0" y="${f1(y0 - fs0 - 34)}" width="${W}" height="${f1(h.lines.length * lh + 64)}" fill="#000" opacity="0.5"/>`;
+      h.lines.forEach((ln, i) => { const f0 = ln.fs || fs0, fsz = f1(Math.min(f0, f0 * 900 / Math.max(1, measure(ln.text, f0)))); s += `<text x="${W / 2}" y="${f1(y0 + i * lh)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fsz}" fill="${ln.colour || '#ffffff'}" stroke="#0b0b0d" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${esc(ln.text)}</text>`; });
+      return `<g opacity="${f1(out)}" transform="translate(${W / 2} ${y0}) scale(${f1(Math.max(0.001, k) * 1000) / 1000}) translate(${-W / 2} ${-y0})">${s}</g>`;
+    },
     frame(t) {
       const st = this.state; const tl = st.timeline;
       let i = tl.findIndex(s => t < s.end); if (i < 0) i = tl.length - 1;
@@ -425,7 +435,7 @@
       } else inner = this.renderScene(i, t);
       let fade = '';
       if ((sc.transition === 'fade' || sc.fade_out) && i === tl.length - 1) { const k = seg(t, st.total - 1.0, st.total - 0.05); if (k > 0) fade = `<rect width="${W}" height="${H}" fill="${PAL.ink}" opacity="${f1(k)}"/>`; }
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}<rect width="${W}" height="${H}" fill="url(#vig)"/>${fade}</svg>`;
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}<rect width="${W}" height="${H}" fill="url(#vig)"/>${this.hookTitle(t)}${fade}</svg>`;
       const stage = document.getElementById('stage'); stage.innerHTML = svg;
       // place moving coins along pipes (exact per-frame positions via getPointAtLength)
       stage.querySelectorAll('g[data-coins]').forEach(g => {

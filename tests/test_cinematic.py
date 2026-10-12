@@ -206,7 +206,11 @@ class SlateEpisodes(unittest.TestCase):
 
     def test_fun_facts_and_next_case_hook(self):
         for eid in self.SLATE:
-            js = _code(ROOT / "renderer" / "scenes" / f"{eid}.js")
+            js = _code(ROOT / "renderer" / "scenes" / f"{eid}.js"); ep = load_episode(eid)
+            if ep.get("format") == "short40":   # 40-second cuts: a burned-in hook headline instead of two fun-fact stops
+                self.assertTrue(ep.get("hook_title", {}).get("lines"), f"{eid}: short cut needs a hook_title")
+                self.assertLessEqual(ep["target_duration_seconds"][1], 50, eid)
+                continue
             self.assertGreaterEqual(js.count("type: 'funfact'"), 2, f"{eid}: at least two FUN FACT cards")
             self.assertIn("type: 'nextcase'", js, f"{eid}: end-of-video NEXT CASE hook")
 
