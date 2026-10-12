@@ -243,10 +243,16 @@ def main(argv=None) -> int:
     # 4. mux
     final = out_dir / f"{ep['id']}.mp4"
     log("mux: combining video and audio")
+    # cut to the silent video's exact length (audio padded if a few ms short). ffmpeg's -shortest with a copied video
+    # stream can end the video several frames early, which failed the A/V duration check on Case File 15.
+    vdur = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=duration", "-of", "csv=p=0", str(silent)],
+                          capture_output=True, text=True).stdout.strip()
+    vdur = float(vdur) if vdur else total
+
     def mux(gain_db: float = 0.0):
-        af = ["-af", f"volume={gain_db:.2f}dB"] if gain_db else []
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out_dir / "mix.wav"), *af, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
-                        "-movflags", "+faststart", "-shortest", str(final)], check=True)
+        af = "apad" + (f",volume={gain_db:.2f}dB" if gain_db else "")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out_dir / "mix.wav"), "-af", af, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+                        "-t", f"{vdur:.3f}", "-movflags", "+faststart", str(final)], check=True)
     mux()
     if ep.get("loudness_lufs"):
         # AAC can overshoot the mix's true peak (hard-edged tones such as alarm beeps): re-measure the encoded file and,

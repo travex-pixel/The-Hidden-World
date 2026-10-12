@@ -92,3 +92,8 @@
 - 2026-10-12 01:58:02 tcv16-boston-strangler: VERIFIED -> series/true-crime-cinematic/output/true_crime_16_boston_strangler.mp4 (79.7s, 33.1 MB, sha256 f26f6a42120d)
 - 2026-10-12 01:58:13 produce 17: regenerating episode data
 - 2026-10-12 01:58:13 tcv17-kohberger: rendering (final, seed 1)
+- 2026-10-12 02:04:28 tcv15-grim-sleeper: rendered in 1143s
+- 2026-10-12 02:05:37 tcv15-grim-sleeper: QA FAILED ['audio_av_duration_match']; frames and details in series/true-crime-cinematic/qa/true_crime_15
+- 2026-10-12 02:07:05 produce 15: regenerating episode data
+- 2026-10-12 02:07:05 tcv15-grim-sleeper: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 02:08:16 tcv15-grim-sleeper: VERIFIED -> series/true-crime-cinematic/output/true_crime_15_grim_sleeper.mp4 (78.5s, 33.9 MB, sha256 3391dda51769)
