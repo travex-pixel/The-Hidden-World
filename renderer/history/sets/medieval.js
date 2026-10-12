@@ -1015,7 +1015,7 @@
     build(rng, seed) {
       const set = X.SETS.field.build(rng, seed); set.name = 'field_dawn';
       set.dynamic = set.dynamic.filter(d => { const s = String(d.draw); return !(s.includes('drawStyled') || s.includes('wheatStrip') || s.includes('chaff')); });
-      set.finish = { bloom: 0.3, grade: ['#7a74b0', '#ffb47a'], gradeMode: 'soft-light', gradeAlpha: 0.34, vignette: 0.5, paper: 0.08, saturate: 1.1, exposure: -0.06 };
+      set.finish = { bloom: 0.24, grade: ['#7a74b0', '#ffb47a'], gradeMode: 'soft-light', gradeAlpha: 0.32, vignette: 0.52, paper: 0.08, saturate: 1.14, exposure: -0.1 };
       set.dynamic.push({ z: 39.5, draw: (g, t, ta, D) => { D.light(g, 1700, 560, 800, '#ffbe80', 0.2); D.light(g, 1700, 560, 140, '#fff0d0', 0.42); } });
       set.dynamic.push({ z: 6.05, draw: (g, t) => FX.mist(g, t, { x: 1400, y: HZ + 60, w: 3200, h: 90, n: 8, alpha: 0.2, speed: 5, key: 'dawn1' }) });
       set.dynamic.push({ z: 1.5, draw: (g, t) => FX.mist(g, t, { x: 1200, y: groundY(1.5) - 30, w: 3200, h: 70, n: 7, alpha: 0.12, speed: 7, key: 'dawn2' }) });
@@ -1162,6 +1162,12 @@
         txt('Roman numerals', 590, 200, 34, red, 'center'); txt('Hindu-Arabic numerals', 1320, 200, 34, red, 'center');
         L.forEach((s, i) => { const k = u * 5 - i; txt(s, 820, 300 + i * 92, 50, ink, 'right', k); txt(R[i], 1560, 300 + i * 92, 54, ink, 'right', k); });
         const tot = u * 5 - 4; if (tot > 0) { g.save(); g.globalAlpha = Math.min(1, tot); g.strokeStyle = ink; g.lineWidth = 3; g.beginPath(); g.moveTo(380, 680); g.lineTo(830, 680); g.moveTo(1120, 680); g.lineTo(1570, 680); g.stroke(); g.restore(); txt('MMCCCCXCV', 820, 760, 50, ink, 'right', tot); txt('2495', 1560, 760, 54, ink, 'right', tot); }
+        if (u > 0 && u < 1) {   // the quill, writing the Hindu-Arabic column line by line
+          const row = Math.min(4, Math.floor(u * 5)), f = u * 5 - row; const y = (row < 4 ? 300 + row * 92 : 760) - 8 + Math.cos(t * 23) * 3;
+          const x = 1560 - 130 * (1 - f) + Math.sin(t * 19) * 7;
+          g.save(); g.translate(x, y); g.rotate(-0.55); g.fillStyle = 'rgba(0,0,0,0.18)'; g.beginPath(); g.ellipse(30, 40, 26, 160, 0.1, 0, 7); g.fill();
+          g.strokeStyle = '#2a1a10'; g.lineWidth = 5; g.beginPath(); g.moveTo(0, 0); g.lineTo(0, -300); g.stroke();
+          g.fillStyle = '#f2ece0'; g.beginPath(); g.moveTo(0, -60); g.quadraticCurveTo(46, -170, 8, -320); g.quadraticCurveTo(-40, -180, 0, -60); g.fill(); g.strokeStyle = '#8a7a64'; g.lineWidth = 2; g.stroke(); g.restore(); }
         const chk = clamp((t - D.beat(q, 'check', 1e9)) / 0.6, 0, 1);
         if (chk > 0) { txt('carry the 1 · check by column', 1340, 830, 30, red, 'center', chk); txt('add it up without a counting board?', 600, 830, 30, red, 'center', chk); }
       } }];
