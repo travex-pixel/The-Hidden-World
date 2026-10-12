@@ -20,12 +20,12 @@ def build(h):
     scenes = [
         # A - hook: the hero object (a generic open ledger) big and centred on the counting-room table; Capone stands over it
         S("s01_hook", "ac25_hook", [N("Al Capone ruled Chicago's underworld."),
-                                    N("What finally put him away was a ledger.", pause_before=0.3)],
+                                    N("And what finally put him away was a ledger.", pause_before=0.3)],
           "cold", ["A_ran", "A_hook"], sfx=[fx(0.0, "sub", 0.45), fx(0.1, "rumble", 0.3), fw(0, 4, "thud", 0.4, 0.05),
-                                           fw(1, 7, "hit", 0.5, -0.05), fw(1, 7, "paper", 0.4, 0.1)],
+                                           fw(1, 8, "hit", 0.5, -0.05), fw(1, 8, "paper", 0.4, 0.1)],
           emph=["capone", "underworld.", "ledger."], min_d=5.1, pad=0.2),
         # A - the stakes by 0:10: Public Enemy No. 1 (April 1930) and the prosecution's tax figure
-        S("s02_enemy", "ac25_enemy", [N("Chicago's Crime Commission named him Public Enemy Number One."),
+        S("s02_enemy", "ac25_enemy", [N("Chicago's Crime Commission called him Public Enemy Number One."),
                                       N("Prosecutors said he owed $215,000.", pause_before=0.2)],
           "hush", ["A_enemy", "A_tax_owed"], sfx=[fx(0.0, "rain", 0.3), fx(0.0, "wind", 0.25), fw(0, 5, "stamp", 0.45, -0.05), fw(1, 4, "thump", 0.45, -0.05)],
           emph=["public", "enemy", "number", "one.", "$215,000"], min_d=5.0, pad=0.2, tr="push"),
@@ -47,8 +47,8 @@ def build(h):
           "revelation", ["A_al"], sfx=[fw(0, 1, "paper", 0.4, -0.1), fw(0, 7, "click", 0.4, -0.05), fw(1, 0, "swell", 0.45, -0.4), fw(1, 5, "hit", 0.55, -0.05)],
           emph=["split", "name.", "\"al\"."], pad=0.3, tr="flash"),
         # D - the outcome; the cliff impact sits in the pause between the two lines
-        S("s08_verdict", "ac25_verdict", [N("Guilty on five counts."), N("Eleven years. Then Alcatraz.", pause_before=0.4)],
-          "tension-peak", ["A_plea_jury", "A_verdict", "A_alcatraz", "A_ness"], sfx=[fw(0, 0, "gavel", 0.8, -0.1), fw(1, 3, "gate", 0.45, -0.05)],
+        S("s08_verdict", "ac25_verdict", [N("The jury found him guilty on five counts."), N("Eleven years. Then Alcatraz.", pause_before=0.4)],
+          "tension-peak", ["A_plea_jury", "A_verdict", "A_alcatraz", "A_ness"], sfx=[fw(0, 4, "gavel", 0.8, -0.1), fw(1, 3, "gate", 0.45, -0.05)],
           emph=["guilty", "five", "eleven", "years.", "alcatraz."], min_d=3.6, pad=0.3, tr="zoom"),
         # E - callback on the hero object; the engine burns the end question over the last 3.2 s
         S("s09_end", "ac25_end", [N("A ledger helped bring Capone down.", pause_before=0.2)],

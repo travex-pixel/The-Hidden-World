@@ -207,7 +207,7 @@
     //     y 380-720 until ~3.2 s, so nothing of ours sits there before that). Capone stands over the table, arms crossed;
     //     at "ledger" the book lights up and he looks down at it.
     ac25_hook(ctx) {
-      const t = ctx.t, under = WT(ctx, 0, 3, 1.2), l1 = LS(ctx, 1, 2.6), away = WT(ctx, 1, 3, 3.3), led = WT(ctx, 1, 7, 4.4);
+      const t = ctx.t, under = WT(ctx, 0, 3, 1.2), l1 = LS(ctx, 1, 2.6), away = WT(ctx, 1, 4, 3.3), led = WT(ctx, 1, 8, 4.4);
       const LP = { x: 540, y: 1040, s: 0.72 };
       return E.cine.shot(ctx, {
         set: 'ac25_backroom', grade: 'warm',
@@ -352,7 +352,7 @@
     // 8 - the outcome: a 1930s federal courtroom; guilty on five counts (17 Oct 1931), 11 years (24 Oct), Atlanta then
     //     Alcatraz. The judge's jury-panel swap and the Ness caveat are typed rows, not narration.
     ac25_verdict(ctx) {
-      const t = ctx.t, guilty = WT(ctx, 0, 0, 0.2), five = WT(ctx, 0, 2, 0.8), l1 = LS(ctx, 1, 2.0), yrs = WT(ctx, 1, 1, 2.3), alc = WT(ctx, 1, 3, 3.3), end = ctx.T;
+      const t = ctx.t, guilty = WT(ctx, 0, 4, 1.0), five = WT(ctx, 0, 6, 1.5), l1 = LS(ctx, 1, 2.6), yrs = WT(ctx, 1, 1, 2.3), alc = WT(ctx, 1, 3, 3.3), end = ctx.T;
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { dock: false }, grade: 'sepia', cam: { from: { x: 0, y: 30, z: 1.0 }, to: { x: 40, y: 10, z: 1.1 }, handheld: 0.6 },
         figures: [
