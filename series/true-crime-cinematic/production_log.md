@@ -162,3 +162,10 @@
 - 2026-10-12 11:30:16 tcv29-rudolph-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_29_rudolph_40s.mp4 (44.3s, 20.2 MB, sha256 38b79345ba1d)
 - 2026-10-12 21:11:01 produce 30: regenerating episode data
 - 2026-10-12 21:11:01 tcv30-boat-40: rendering (final, seed 1)
+- 2026-10-12 21:18:13 tcv30-boat-40: rendered in 432s
+- 2026-10-12 21:18:46 tcv30-boat-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_30_boat_40s.mp4 (45.4s, 19.6 MB, sha256 9e4075a4a335)
+- 2026-10-12 21:19:57 produce 30: regenerating episode data
+- 2026-10-12 21:19:57 tcv30-boat-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 21:20:29 tcv30-boat-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_30_boat_40s.mp4 (45.4s, 19.6 MB, sha256 888236d3c08b)
+- 2026-10-12 21:20:54 produce 30 --force: regenerating episode data
+- 2026-10-12 21:20:54 tcv30-boat-40: rendering (final, seed 1)
