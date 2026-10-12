@@ -20,7 +20,8 @@ HISTORY_SETS = {"cottage", "village", "coin", "field", "cottage_dusk", "abbey_fl
                 "field_dawn", "well_yard", "counting_house", "ledger_insert", "smithy", "great_hall", "map_england", "alt_town"}
 AMBIENCE = {"interior", "village", "market", "alehouse", "night", "forge", "hall", "none"}
 BADGE_CLAIM_TYPES = {"documented": {"established"}, "estimate": {"estimate"}, "disputed": {"disputed"},
-                     "reconstruction": {"plausible", "illustrative"}, "dramatised": None}
+                     "reconstruction": {"plausible", "illustrative"}, "dramatised": None,
+                     "hypothetical": None}   # alternate history, never presented as fact
 URL_RE = re.compile(r"^https://[\w.-]+(/[^\s]*)?$")
 
 

@@ -205,7 +205,7 @@
     },
     badges(g, i, tl) {
       const sc = this.state.ep.scenes[i]; const s = this.state.timeline[i];
-      const KIND = { documented: ['DOCUMENTED', '#2f6f5e'], reconstruction: ['RECONSTRUCTION', '#7a5a2e'], dramatised: ['DRAMATISED', '#6c3f6e'], disputed: ['DISPUTED', '#a3452e'], estimate: ['ESTIMATE', '#3d5f86'] };
+      const KIND = { documented: ['DOCUMENTED', '#2f6f5e'], reconstruction: ['RECONSTRUCTION', '#7a5a2e'], dramatised: ['DRAMATISED', '#6c3f6e'], disputed: ['DISPUTED', '#a3452e'], estimate: ['ESTIMATE', '#3d5f86'], hypothetical: ['HYPOTHETICAL', '#b0561e'] };
       let y = 60;
       for (const b of (sc.badges || [])) {
         const a = this.at({ start: s.start }, i, b.at ?? 0), e = a + (b.dur ?? 4); const tt = tl;

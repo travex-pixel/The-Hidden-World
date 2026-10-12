@@ -1,0 +1,823 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR) on the MP4's own audio track",
+ "lines": 44,
+ "corpus_wer": 0.121,
+ "lines_over_25pct": [
+  {
+   "scene": "s00_cold",
+   "who": "narrator_history",
+   "t": 8.857,
+   "script": "Touch him now, and you're in strife. With God.",
+   "asr": "Touch him now and you're in strife with guard with guard with guard with guard with guard with guard with guard",
+   "wer": 1.444,
+   "diffs": [
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "god",
+     "guard"
+    ]
+   ]
+  },
+  {
+   "scene": "s00_cold",
+   "who": "narrator_history",
+   "t": 12.946,
+   "script": "So how'd a few ales end up here? Rewind twelve hours.",
+   "asr": "So how do fuels end up here? Rewind 12 hours.",
+   "wer": 0.455,
+   "diffs": [
+    [
+     "how'd",
+     "∅"
+    ],
+    [
+     "a",
+     "how"
+    ],
+    [
+     "few",
+     "do"
+    ],
+    [
+     "ales",
+     "fuels"
+    ],
+    [
+     "twelve",
+     "12"
+    ]
+   ]
+  },
+  {
+   "scene": "s01_yakka",
+   "who": "narrator_history",
+   "t": 18.735,
+   "script": "Sunup to sundown, it's hard yakka in the lord's wheat.",
+   "asr": "Sun up to sundown, it's hard yakker in the lord's wheat",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "∅",
+     "sun"
+    ],
+    [
+     "sunup",
+     "up"
+    ],
+    [
+     "yakka",
+     "yakker"
+    ]
+   ]
+  },
+  {
+   "scene": "s02_wage",
+   "who": "simmo",
+   "t": 35.12,
+   "script": "That's against the law, you drongo.",
+   "asr": "That against the law you drown go.",
+   "wer": 0.5,
+   "diffs": [
+    [
+     "that's",
+     "that"
+    ],
+    [
+     "∅",
+     "drown"
+    ],
+    [
+     "drongo",
+     "go"
+    ]
+   ]
+  },
+  {
+   "scene": "s03_pub",
+   "who": "narrator_history",
+   "t": 54.183,
+   "script": "Sundown. Maud's hung the bush out on the ale-stake, so there's a fresh brew.",
+   "asr": "Sun down. Mord's hung the bush out on the ale steak so there's a fresh brew.",
+   "wer": 0.267,
+   "diffs": [
+    [
+     "∅",
+     "sun"
+    ],
+    [
+     "sundown",
+     "down"
+    ],
+    [
+     "maud's",
+     "mord's"
+    ],
+    [
+     "stake",
+     "steak"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_blue",
+   "who": "jacko",
+   "t": 72.148,
+   "script": "Rack off, you dobbing mongrel!",
+   "asr": "Rack off your darbing mongrel.",
+   "wer": 0.4,
+   "diffs": [
+    [
+     "you",
+     "your"
+    ],
+    [
+     "dobbing",
+     "darbing"
+    ]
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "scene": "s00_cold",
+   "who": "narrator_history",
+   "t": 0.65,
+   "script": "Harvest, 1351, when a pay rise is a crime.",
+   "asr": "Harvest 1351 when a pay rise is a crime.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s00_cold",
+   "who": "narrator_history",
+   "t": 4.453,
+   "script": "Your best mate's got blood on his hands, and he's bashing on the church door.",
+   "asr": "Your best mates got blood on his hands and he's bashing on the church door.",
+   "wer": 0.067,
+   "diffs": [
+    [
+     "mate's",
+     "mates"
+    ]
+   ]
+  },
+  {
+   "scene": "s00_cold",
+   "who": "narrator_history",
+   "t": 8.857,
+   "script": "Touch him now, and you're in strife. With God.",
+   "asr": "Touch him now and you're in strife with guard with guard with guard with guard with guard with guard with guard",
+   "wer": 1.444,
+   "diffs": [
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "∅",
+     "with"
+    ],
+    [
+     "∅",
+     "guard"
+    ],
+    [
+     "god",
+     "guard"
+    ]
+   ]
+  },
+  {
+   "scene": "s00_cold",
+   "who": "narrator_history",
+   "t": 12.946,
+   "script": "So how'd a few ales end up here? Rewind twelve hours.",
+   "asr": "So how do fuels end up here? Rewind 12 hours.",
+   "wer": 0.455,
+   "diffs": [
+    [
+     "how'd",
+     "∅"
+    ],
+    [
+     "a",
+     "how"
+    ],
+    [
+     "few",
+     "do"
+    ],
+    [
+     "ales",
+     "fuels"
+    ],
+    [
+     "twelve",
+     "12"
+    ]
+   ]
+  },
+  {
+   "scene": "s01_yakka",
+   "who": "narrator_history",
+   "t": 18.735,
+   "script": "Sunup to sundown, it's hard yakka in the lord's wheat.",
+   "asr": "Sun up to sundown, it's hard yakker in the lord's wheat",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "∅",
+     "sun"
+    ],
+    [
+     "sunup",
+     "up"
+    ],
+    [
+     "yakka",
+     "yakker"
+    ]
+   ]
+  },
+  {
+   "scene": "s01_yakka",
+   "who": "narrator_history",
+   "t": 22.23,
+   "script": "Three years back, the Black Death killed maybe half of England.",
+   "asr": "Three years back, the black death killed may be half of England.",
+   "wer": 0.182,
+   "diffs": [
+    [
+     "∅",
+     "may"
+    ],
+    [
+     "maybe",
+     "be"
+    ]
+   ]
+  },
+  {
+   "scene": "s01_yakka",
+   "who": "narrator_history",
+   "t": 26.394,
+   "script": "Now there aren't enough hands. And every pair of hands knows it.",
+   "asr": "Now there aren't enough hands. And every pair of hands knows it.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s02_wage",
+   "who": "jacko",
+   "t": 31.862,
+   "script": "Fair dinkum, the lord over the hill's paying double!",
+   "asr": "Fair Dinkham, the Lord over the hills paying double.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "dinkum",
+     "dinkham"
+    ],
+    [
+     "hill's",
+     "hills"
+    ]
+   ]
+  },
+  {
+   "scene": "s02_wage",
+   "who": "simmo",
+   "t": 35.12,
+   "script": "That's against the law, you drongo.",
+   "asr": "That against the law you drown go.",
+   "wer": 0.5,
+   "diffs": [
+    [
+     "that's",
+     "that"
+    ],
+    [
+     "∅",
+     "drown"
+    ],
+    [
+     "drongo",
+     "go"
+    ]
+   ]
+  },
+  {
+   "scene": "s02_wage",
+   "who": "narrator_history",
+   "t": 37.342,
+   "script": "He's right. The Statute of Labourers froze pay at the old, pre-plague rates.",
+   "asr": "He's right. The Statute of Labour as Froze pay at the old pre-plague rates.",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "∅",
+     "labour"
+    ],
+    [
+     "labourers",
+     "as"
+    ]
+   ]
+  },
+  {
+   "scene": "s02_wage",
+   "who": "narrator_history",
+   "t": 42.732,
+   "script": "Take more, and you could be fined or jailed.",
+   "asr": "Take more and you could be fined or jailed.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s02_wage",
+   "who": "narrator_history",
+   "t": 45.808,
+   "script": "Worse, the extra could go towards the village's tax bill.",
+   "asr": "Worse, the extra could go towards the village's tax bill.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s02_wage",
+   "who": "narrator_history",
+   "t": 49.98,
+   "script": "So every neighbour has a reason to dob you in.",
+   "asr": "So every neighbor has a reason to dab you in.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "neighbour",
+     "neighbor"
+    ],
+    [
+     "dob",
+     "dab"
+    ]
+   ]
+  },
+  {
+   "scene": "s03_pub",
+   "who": "narrator_history",
+   "t": 54.183,
+   "script": "Sundown. Maud's hung the bush out on the ale-stake, so there's a fresh brew.",
+   "asr": "Sun down. Mord's hung the bush out on the ale steak so there's a fresh brew.",
+   "wer": 0.267,
+   "diffs": [
+    [
+     "∅",
+     "sun"
+    ],
+    [
+     "sundown",
+     "down"
+    ],
+    [
+     "maud's",
+     "mord's"
+    ],
+    [
+     "stake",
+     "steak"
+    ]
+   ]
+  },
+  {
+   "scene": "s03_pub",
+   "who": "jacko",
+   "t": 59.13,
+   "script": "My shout, boys! On the lord!",
+   "asr": "My shout, boys, on the Lord.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s03_pub",
+   "who": "narrator_history",
+   "t": 62.191,
+   "script": "Watch Simmo. He's not drinking. He's counting.",
+   "asr": "Watch simo he's not drinking he's counting",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "simmo",
+     "simo"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_blue",
+   "who": "simmo",
+   "t": 67.729,
+   "script": "Flashing that money round? I'll dob you in to the justices.",
+   "asr": "Flashing that money round. I'll dab you in to the justices.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "dob",
+     "dab"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_blue",
+   "who": "jacko",
+   "t": 72.148,
+   "script": "Rack off, you dobbing mongrel!",
+   "asr": "Rack off your darbing mongrel.",
+   "wer": 0.4,
+   "diffs": [
+    [
+     "you",
+     "your"
+    ],
+    [
+     "dobbing",
+     "darbing"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_blue",
+   "who": "narrator_history",
+   "t": 74.641,
+   "script": "Pride, ale, and fourteen hours of hard yakka. Short fuse.",
+   "asr": "Pride ale and 14 hours of hard yakka. Short fuse.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "fourteen",
+     "14"
+    ]
+   ]
+  },
+  {
+   "scene": "s05_silence",
+   "who": "narrator_history",
+   "t": 83.996,
+   "script": "Simmo's not getting up.",
+   "asr": "Simmo's not getting up.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s05_silence",
+   "who": "narrator_history",
+   "t": 86.439,
+   "script": "Your heart's going like the clappers. And there's no police.",
+   "asr": "Your heart's going like the clappers. And there's no police.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s05_silence",
+   "who": "narrator_history",
+   "t": 91.374,
+   "script": "The police... were you.",
+   "asr": "The police were you.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s05_silence",
+   "who": "narrator_history",
+   "t": 93.35,
+   "script": "Whoever found a body had to raise the hue and cry, and everyone had to give chase.",
+   "asr": "Whoever found a body had to raise the hue and cry and everyone had to give chase.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s06_hue",
+   "who": "narrator_history",
+   "t": 99.155,
+   "script": "So you hunt your best mate through the dark, a horn wailing behind you.",
+   "asr": "So you hunt your best mate through the dark, a horn wailing behind you.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s06_hue",
+   "who": "narrator_history",
+   "t": 103.553,
+   "script": "Every step, you're praying you don't catch him.",
+   "asr": "Every step you're praying you don't catch him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s06_hue",
+   "who": "narrator_history",
+   "t": 106.829,
+   "script": "Let a killer get away, and the whole village gets fined.",
+   "asr": "Let a killer get away and the whole village gets fined.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s07_sanctuary",
+   "who": "narrator_history",
+   "t": 111.261,
+   "script": "He makes the church. Sanctuary.",
+   "asr": "He makes the church. Sanctuary.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s07_sanctuary",
+   "who": "narrator_history",
+   "t": 114.969,
+   "script": "For up to forty days, no one can drag him out. So the neighbours keep watch.",
+   "asr": "For up to 40 days, no one can drag him out. So the neighbors keep watch.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "forty",
+     "40"
+    ],
+    [
+     "neighbours",
+     "neighbors"
+    ]
+   ]
+  },
+  {
+   "scene": "s07_sanctuary",
+   "who": "narrator_history",
+   "t": 121.026,
+   "script": "Night after night, you hear your best mate breathing through the door.",
+   "asr": "Night after night, you hear your best mate breathing through the door.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s08_inquest",
+   "who": "narrator_history",
+   "t": 126.018,
+   "script": "Morning. Simmo can't be buried till the king's coroner has seen him.",
+   "asr": "Mording: Simmo can't be buried till the king's corner has seen him.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "morning",
+     "mording"
+    ],
+    [
+     "coroner",
+     "corner"
+    ]
+   ]
+  },
+  {
+   "scene": "s08_inquest",
+   "who": "coroner",
+   "t": 130.842,
+   "script": "Who struck the blow? Speak up, lad.",
+   "asr": "Who struck the blow speak up lad",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s08_inquest",
+   "who": "narrator_history",
+   "t": 134.452,
+   "script": "A jury of your neighbours, every eye on you.",
+   "asr": "A jury of your neighbors, every eye on you.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "neighbours",
+     "neighbors"
+    ]
+   ]
+  },
+  {
+   "scene": "s08_inquest",
+   "who": "narrator_history",
+   "t": 137.587,
+   "script": "Lie for your mate, or tell it straight and he could hang.",
+   "asr": "Lie for your mate or tell it straight and he could hang.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s08_inquest",
+   "who": "narrator_history",
+   "t": 141.608,
+   "script": "Even the jug's on the hook. It's a 'deodand', and Maud has to pay its value.",
+   "asr": "Even the jugs on the hook. It's a D-O-Dand and Maud has to pay its value.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "jug's",
+     "jugs"
+    ],
+    [
+     "dee",
+     "d"
+    ],
+    [
+     "oh",
+     "o"
+    ]
+   ]
+  },
+  {
+   "scene": "s09_abjure",
+   "who": "narrator_history",
+   "t": 148.451,
+   "script": "Jacko confesses, and swears to leave England. Forever.",
+   "asr": "Jacko confesses and swears to leave England forever forever",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "∅",
+     "forever"
+    ]
+   ]
+  },
+  {
+   "scene": "s09_abjure",
+   "who": "narrator_history",
+   "t": 153.519,
+   "script": "With his clothes and a wooden cross,",
+   "asr": "With his clothes and a wooden cross.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s09_abjure",
+   "who": "narrator_history",
+   "t": 156.253,
+   "script": "he must walk the king's highway to the port, by a set day.",
+   "asr": "He must walk the king's highway to the port by a set day.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s10_route",
+   "who": "narrator_history",
+   "t": 160.705,
+   "script": "Usually Dover. One abjurer in 1353 got twelve days.",
+   "asr": "Usually Dover. One Obgerra in 1353 got 12 days.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "abjurer",
+     "obgerra"
+    ],
+    [
+     "twelve",
+     "12"
+    ]
+   ]
+  },
+  {
+   "scene": "s10_route",
+   "who": "narrator_history",
+   "t": 166.437,
+   "script": "Stray off the road, and he could be killed.",
+   "asr": "Stray off the road and he could be killed.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s11_after",
+   "who": "narrator_history",
+   "t": 170.295,
+   "script": "One blue. One man dead, one exiled, and a village that can't look itself in the eye.",
+   "asr": "One blue, one man dead, one exiled, and a village that can't look itself in the eye.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s11_after",
+   "who": "narrator_history",
+   "t": 176.94,
+   "script": "And the labour laws got nastier. By 1361, runaways could be branded on the forehead.",
+   "asr": "and the labour laws got nastier. By 1361, runaways could be branded on the forehead.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s11_after",
+   "who": "narrator_history",
+   "t": 183.816,
+   "script": "With an F, for 'falsity'.",
+   "asr": "With an F for falsity.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s11_after",
+   "who": "narrator_history",
+   "t": 186.512,
+   "script": "Twenty years later, the anger exploded: the Peasants' Revolt.",
+   "asr": "20 years later the anger exploded, the peasants revolt.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "twenty",
+     "20"
+    ]
+   ]
+  },
+  {
+   "scene": "s11_after",
+   "who": "narrator_history",
+   "t": 191.147,
+   "script": "Next time: you become a Roman gladiator.",
+   "asr": "Next time you become a Roman Gladiator.",
+   "wer": 0.0,
+   "diffs": []
+  }
+ ],
+ "note": "ASR mistakes are expected on old words and names; a mismatch is a lead for a human listen, not proof of a defect."
+}

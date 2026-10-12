@@ -1,0 +1,4921 @@
+{
+  "id": "whatif001-modern-knowledge",
+  "number": 1,
+  "series": "what-if",
+  "profile": "history",
+  "title": "What If You Woke Up in 1340 Knowing the Future?",
+  "central_question": "Dropped into an English village in 1340 with modern knowledge and eight years until the Black Death, what could one person actually change?",
+  "template": "history-pov",
+  "narrator_voice": "en_GB-aru-medium",
+  "voice_engine": "kokoro",
+  "engine_version": 3,
+  "kokoro_speed": 1.15,
+  "kokoro_pause_scale": 0.78,
+  "pronounce": {
+    "1340": "thirteen forty",
+    "1344": "thirteen forty-four",
+    "1348": "thirteen forty-eight",
+    "1349": "thirteen forty-nine",
+    "1377": "thirteen seventy-seven",
+    "1299": "twelve ninety-nine",
+    "1240s": "twelve-forties",
+    "1490s": "fourteen-nineties",
+    "1542": "fifteen forty-two",
+    "1712": "seventeen twelve",
+    "1774": "seventeen seventy-four",
+    "1847": "eighteen forty-seven",
+    "1943": "nineteen forty-three",
+    "artow": "ar-too",
+    "Yersinia pestis": "yer-sinnia pestis",
+    "Ragusa": "ra-goo-za",
+    "Sluys": "slooce",
+    "Crécy": "kray-see",
+    "Peruzzi": "peh-root-see",
+    "Bardi": "bar-dee",
+    "Newcomen": "new-cummen",
+    "Melcombe": "mel-cum",
+    "Hamo": "hay-mo",
+    "Domesday": "doomsday"
+  },
+  "target_duration_seconds": [
+    360,
+    480
+  ],
+  "setting": "An English village and its manor, late summer 1340, eight years before the Black Death; a wool merchant's counting house, the smithy, the lord's hall.",
+  "cast": [
+    "pov_modern",
+    "villager_tom",
+    "villager_agnes",
+    "reeve_walter",
+    "merchant_hamo",
+    "smith_wat",
+    "lord_ralph",
+    "narrator_history"
+  ],
+  "character_style": "watercolour",
+  "music": {
+    "bpm": 88
+  },
+  "render_workers": 3,
+  "fiction_notice": "You, Tom, Agnes, Walter, Hamo, Wat, Sir Ralph and the village are fictional. The alternate-history branch near the end is speculation and is labelled on screen.",
+  "scenes": [
+    {
+      "id": "w00_wake",
+      "scene": "history",
+      "set": "field_dawn",
+      "ambience": "village",
+      "min_duration": 12,
+      "pad_after": 0.3,
+      "music_cue": "unease",
+      "transition": "cut",
+      "chapter": "Wrong century",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "You wake up face down in a wet field. No phone. No signal. No idea how you got here.",
+          "tone": "hook",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "And a man with a sickle is staring at your hoodie.",
+          "tone": "tense"
+        },
+        {
+          "who": "villager_tom",
+          "text": "What man artow?",
+          "tone": "tense",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "That's English. Just not yours.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "W0",
+        "W4"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "You, Tom and this village are fictional",
+          "at": {
+            "line": 1,
+            "off": 0.8
+          },
+          "dur": 3.2
+        },
+        {
+          "kind": "reconstruction",
+          "claim": "W4",
+          "text": "Tom's line: Chaucer's English, c.1390",
+          "at": {
+            "line": 2,
+            "off": 0.4
+          },
+          "dur": 3.6
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "rustle",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 2.4
+          },
+          "name": "gasp",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "sting",
+          "gain": 0.45
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "mudstep",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -330,
+            "y": 340,
+            "dolly": 620
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 2.2
+            },
+            "x": -320,
+            "y": 320,
+            "dolly": 560
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": 60,
+            "dolly": 200
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 300,
+            "y": 20,
+            "dolly": 330
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": -120,
+            "y": 30,
+            "dolly": 300
+          },
+          {
+            "t": "end",
+            "x": -100,
+            "y": 20,
+            "dolly": 320
+          }
+        ],
+        "shake": [
+          {
+            "t": {
+              "line": 0,
+              "off": 2.4
+            },
+            "dur": 0.35,
+            "amp": 0.18
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 820,
+          "h": 450,
+          "facing": 1,
+          "pose0": "lie",
+          "expr0": "asleep",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 0.8
+              },
+              "expr": "surprised",
+              "look": [
+                -0.6,
+                0.2
+              ],
+              "dur": 0.2
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.4
+              },
+              "pose": "sit",
+              "dur": 0.55
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.4
+              },
+              "expr": "shocked",
+              "look": [
+                -0.8,
+                0.1
+              ],
+              "dur": 0.15
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.3
+              },
+              "expr": "horrified",
+              "look": [
+                1,
+                -0.1
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.0
+              },
+              "expr": "startled"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.2
+              },
+              "pose": "rise",
+              "dur": 0.6
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.8
+              },
+              "pose": "stand",
+              "dur": 0.6
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.6
+              },
+              "expr": "nervous",
+              "look": [
+                1,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tom",
+          "char": "villager_tom",
+          "x": 1350,
+          "h": 465,
+          "facing": -1,
+          "expr0": "skeptical",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "sickle"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "look": [
+                -1,
+                0.25
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "stern"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.8
+              },
+              "expr": "curious"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w01_hook",
+      "scene": "history",
+      "set": "alt_town",
+      "ambience": "village",
+      "min_duration": 14,
+      "pad_after": 2.6,
+      "music_cue": "tension-rise",
+      "transition": "dissolve",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Eight years left",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "It's 1340. In about eight years, the Black Death will kill something like half of England.",
+          "tone": "hook",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "You know it's coming. Nobody else does.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "So could seven centuries of hindsight change history? Or would 1340 eat you alive?",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "W14",
+        "W14b"
+      ],
+      "badges": [
+        {
+          "kind": "estimate",
+          "claim": "W14b",
+          "text": "Deaths 1348-49: est. 40-60%",
+          "at": {
+            "line": 0,
+            "off": 3.6
+          },
+          "dur": 3.8
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "England, 1340",
+          "sub": "Eight years before the Black Death",
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "dur": 3.4
+        },
+        {
+          "kind": "title",
+          "title": "What If You Woke Up in 1340?",
+          "sub": "knowing the future",
+          "at": {
+            "line": 2,
+            "off": 3.0
+          },
+          "dur": 4.6
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "name": "churchbell",
+          "gain": 0.35
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 2.8
+          },
+          "name": "swell",
+          "gain": 0.8
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 120,
+            "y": -110,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 150,
+            "y": -80,
+            "dolly": 70
+          },
+          {
+            "t": "end",
+            "x": 170,
+            "y": -60,
+            "dolly": 120
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 250,
+          "h": 440,
+          "facing": 1,
+          "expr0": "awe",
+          "acts": [
+            {
+              "t": 0.3,
+              "walk": 470,
+              "dur": 5.0
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "expr": "worried",
+              "look": [
+                1,
+                -0.2
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.2
+              },
+              "expr": "determined"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 2.6
+              },
+              "expr": "nervous",
+              "look": [
+                -0.3,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w02_stranger",
+      "scene": "history",
+      "set": "village",
+      "ambience": "village",
+      "min_duration": 13,
+      "pad_after": 0.4,
+      "music_cue": "unease",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Act 1: You don't belong here",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Walking into the village is your first mistake.",
+          "tone": "tense",
+          "pause_before": 0.7
+        },
+        {
+          "who": "narrator_history",
+          "text": "Strangers are trouble.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Every man over twelve is meant to be in a tithing: neighbours who answer for each other.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "No lord, no family, no tithing. Nobody to vouch for you.",
+          "tone": "tense"
+        },
+        {
+          "who": "reeve_walter",
+          "text": "Who's your lord, stranger? Who answers for you?",
+          "tone": "tense",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "And the hoodie is not helping.",
+          "tone": "playful"
+        }
+      ],
+      "claims": [
+        "W7"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W7",
+          "text": "Tithings answered for their members",
+          "at": {
+            "line": 1,
+            "off": 1.4
+          },
+          "dur": 4.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "You don't belong here",
+          "sub": "Act one",
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "banner_off": 0
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 4,
+            "off": 0.0
+          },
+          "name": "stamp",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 1000,
+            "y": -60,
+            "dolly": 60
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 3.4
+            },
+            "x": 2100,
+            "y": 0,
+            "dolly": 140,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": 2240,
+            "y": 10,
+            "dolly": 270,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 5,
+              "off": 0.0
+            },
+            "x": 1960,
+            "y": 20,
+            "dolly": 330,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 1970,
+            "y": 20,
+            "dolly": 345
+          }
+        ],
+        "follow": [
+          {
+            "t": 0,
+            "w": 1,
+            "actor": "you",
+            "dx": 160,
+            "axes": "x"
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 2.6
+            },
+            "w": 1,
+            "actor": "you",
+            "dx": 160,
+            "axes": "x"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.6
+            },
+            "w": 0,
+            "actor": "you",
+            "axes": "x"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 1850,
+          "h": 440,
+          "facing": 1,
+          "expr0": "curious",
+          "acts": [
+            {
+              "t": 0.2,
+              "walk": 2900,
+              "until": {
+                "line": 1,
+                "off": 3.4
+              },
+              "speed": 210,
+              "ramp": 0.12
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.6
+              },
+              "look": [
+                0.5,
+                -0.3
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.0
+              },
+              "expr": "nervous"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.4
+              },
+              "expr": "startled",
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.3
+              },
+              "expr": "sheepish"
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.3
+              },
+              "gesture": "shrug",
+              "dur": 0.4,
+              "hold": 1.2
+            }
+          ]
+        },
+        {
+          "id": "walter",
+          "char": "reeve_walter",
+          "x": 3330,
+          "h": 480,
+          "facing": -1,
+          "expr0": "stern",
+          "acts": [
+            {
+              "t": {
+                "line": 3,
+                "off": 0.4
+              },
+              "walk": 3240,
+              "dur": 1.0
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.0
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.0
+              },
+              "expr": "angry"
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.5
+              },
+              "expr": "skeptical"
+            }
+          ]
+        },
+        {
+          "id": "agnes",
+          "char": "villager_agnes",
+          "x": 2480,
+          "z": 1.3,
+          "h": 450,
+          "facing": 1,
+          "expr0": "curious",
+          "acts": [
+            {
+              "t": {
+                "line": 3,
+                "off": 0.6
+              },
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.6
+              },
+              "expr": "happy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w03_broke",
+      "scene": "history",
+      "set": "village",
+      "ambience": "market",
+      "min_duration": 16,
+      "pad_after": 0.4,
+      "music_cue": "curious",
+      "transition": "cut",
+      "chapter": "Broke, and lost in translation",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Ordinary people speak a local English that sounds half foreign.",
+          "tone": "curious",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "Lords speak French. The records are in Latin. You catch words, not conversations.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "And you're broke. Money means silver pennies.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "England doesn't even have a regular gold coin yet.",
+          "tone": "tense"
+        },
+        {
+          "who": "villager_agnes",
+          "text": "Let the stranger work. I'll answer for this one.",
+          "tone": "playful",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "So you become a thatcher's helper, for about a penny and a half a day.",
+          "tone": "reflective"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Welcome to the bottom.",
+          "tone": "reflective"
+        }
+      ],
+      "claims": [
+        "W1",
+        "W3",
+        "W5",
+        "W6"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W1",
+          "text": "English, French and Latin",
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "dur": 3.4
+        },
+        {
+          "kind": "documented",
+          "claim": "W5",
+          "text": "Silver pennies; no regular gold coin till 1344",
+          "at": {
+            "line": 2,
+            "off": 1.6
+          },
+          "dur": 4.0
+        },
+        {
+          "kind": "documented",
+          "claim": "W6",
+          "text": "Thatcher's helper: about 1½d a day",
+          "at": {
+            "line": 5,
+            "off": 0.8
+          },
+          "dur": 4.0
+        }
+      ],
+      "beats": {
+        "banner_off": 0
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 1.2
+          },
+          "name": "coins",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 1970,
+            "y": 20,
+            "dolly": 345
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 1.8
+            },
+            "x": 2080,
+            "y": 0,
+            "dolly": 200
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": 1830,
+            "y": 10,
+            "dolly": 270
+          },
+          {
+            "t": {
+              "line": 5,
+              "off": 0.0
+            },
+            "x": 1880,
+            "y": 0,
+            "dolly": 230
+          },
+          {
+            "t": "end",
+            "x": 1900,
+            "y": -10,
+            "dolly": 210
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 0.6
+              },
+              "expr": "curious",
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.0
+              },
+              "expr": "worried"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.2
+              },
+              "gesture": "shrug",
+              "dur": 0.4,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "sad"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.2
+              },
+              "face": -1
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.25
+              },
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 1.2
+              },
+              "expr": "relieved"
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 1.6
+              },
+              "expr": "exhausted"
+            }
+          ]
+        },
+        {
+          "id": "walter",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 1.0
+              },
+              "expr": "stern"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 1.4
+              },
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 1.4
+              },
+              "gesture": "fold",
+              "dur": 0.4,
+              "hold": 4.0
+            }
+          ]
+        },
+        {
+          "id": "agnes",
+          "acts": [
+            {
+              "t": {
+                "line": 2,
+                "off": 2.0
+              },
+              "walk": 2700,
+              "dur": 1.6
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.0
+              },
+              "gesture": "offer",
+              "dur": 0.4,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.0
+              },
+              "expr": "determined"
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.6
+              },
+              "expr": "happy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w04_well",
+      "scene": "history",
+      "set": "well_yard",
+      "ambience": "village",
+      "min_duration": 24,
+      "pad_after": 0.5,
+      "music_cue": "curious",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Act 2: Your first advantage",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Your first real advantage is invisible. Germs.",
+          "tone": "confident",
+          "pause_before": 0.7
+        },
+        {
+          "who": "narrator_history",
+          "text": "Look at this yard.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The dung heap and the privy sit uphill, and their runoff trickles past the well.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Forget the myth that people only drank ale. They drank water.",
+          "tone": "curious"
+        },
+        {
+          "who": "narrator_history",
+          "text": "London had piped water from the 1240s.",
+          "tone": "curious"
+        },
+        {
+          "who": "narrator_history",
+          "text": "What nobody had was germ theory. Doctors blamed bad air and the stars.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "So you shift the dung heap downstream, cover the well, and boil the drinking water.",
+          "tone": "playful"
+        },
+        {
+          "who": "villager_agnes",
+          "text": "You're boiling water? For what, soup with nothing in it?",
+          "tone": "playful",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "It looks mad.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "But in 1847, in one Vienna maternity ward,",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "handwashing cut deaths from about eighteen percent to around two.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Maybe fewer children get sick this winter. Nobody will know why. Except you.",
+          "tone": "reflective"
+        }
+      ],
+      "claims": [
+        "W8",
+        "W9",
+        "W9s",
+        "W18"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W8",
+          "text": "Water was drunk; London's conduit, c.1245",
+          "at": {
+            "line": 3,
+            "off": 0.6
+          },
+          "dur": 4.0
+        },
+        {
+          "kind": "documented",
+          "claim": "W9",
+          "text": "Paris doctors, 1348: bad air and the planets",
+          "at": {
+            "line": 5,
+            "off": 1.8
+          },
+          "dur": 3.8
+        },
+        {
+          "kind": "documented",
+          "claim": "W9s",
+          "text": "Vienna, 1847: 18.3% to about 2%",
+          "at": {
+            "line": 8,
+            "off": 1.6
+          },
+          "dur": 4.4
+        },
+        {
+          "kind": "hypothetical",
+          "text": "Our guess, not a record",
+          "at": {
+            "line": 11,
+            "off": 0.2
+          },
+          "dur": 4.4
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "Your first advantage",
+          "sub": "Act two",
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "move_midden": {
+          "line": 6,
+          "off": 0.8
+        },
+        "clean_from": {
+          "line": 6,
+          "off": 1.2
+        },
+        "clean_to": {
+          "line": 8,
+          "off": 0.4
+        },
+        "cover": {
+          "line": 6,
+          "off": 2.4
+        },
+        "boil": {
+          "line": 6,
+          "off": 3.4
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "name": "buzz",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 6,
+            "off": 0.8
+          },
+          "name": "mudstep"
+        },
+        {
+          "at": {
+            "line": 6,
+            "off": 1.4
+          },
+          "name": "mudstep"
+        },
+        {
+          "at": {
+            "line": 6,
+            "off": 2.4
+          },
+          "name": "thud",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 6,
+            "off": 3.4
+          },
+          "name": "water",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 8,
+            "off": 0.4
+          },
+          "name": "splash",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -150,
+            "y": -120,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 380,
+            "y": -40,
+            "dolly": 160,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": -20,
+            "dolly": 90,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 6,
+              "off": 0.0
+            },
+            "x": -60,
+            "y": 0,
+            "dolly": 140,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 7,
+              "off": 0.0
+            },
+            "x": -470,
+            "y": 20,
+            "dolly": 230,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 8,
+              "off": 0.0
+            },
+            "x": -260,
+            "y": -80,
+            "dolly": 50,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 11,
+              "off": 0.0
+            },
+            "x": -380,
+            "y": 0,
+            "dolly": 200,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": -400,
+            "y": 0,
+            "dolly": 240
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 1120,
+          "h": 440,
+          "facing": 1,
+          "expr0": "skeptical",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 0.6
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 2.6
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.6
+              },
+              "look": [
+                1,
+                -0.3
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.2
+              },
+              "expr": "curious"
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 2.0
+              },
+              "expr": "determined"
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 0.4
+              },
+              "walk": 300,
+              "dur": 3.0
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 3.4
+              },
+              "face": 1
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 3.6
+              },
+              "expr": "proud"
+            },
+            {
+              "t": {
+                "line": 7,
+                "off": 1.2
+              },
+              "expr": "sheepish"
+            },
+            {
+              "t": {
+                "line": 8,
+                "off": 0.6
+              },
+              "expr": "determined"
+            },
+            {
+              "t": {
+                "line": 11,
+                "off": 0.6
+              },
+              "expr": "relieved"
+            }
+          ]
+        },
+        {
+          "id": "agnes",
+          "char": "villager_agnes",
+          "x": 640,
+          "z": 1.12,
+          "h": 450,
+          "facing": -1,
+          "expr0": "curious",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "jug"
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 1.0
+              },
+              "expr": "skeptical"
+            },
+            {
+              "t": {
+                "line": 7,
+                "off": 0.0
+              },
+              "gesture": "hips",
+              "dur": 0.4,
+              "hold": 2.6
+            },
+            {
+              "t": {
+                "line": 7,
+                "off": 0.0
+              },
+              "expr": "smug"
+            },
+            {
+              "t": {
+                "line": 8,
+                "off": 2.2
+              },
+              "expr": "curious"
+            },
+            {
+              "t": {
+                "line": 11,
+                "off": 0.8
+              },
+              "expr": "happy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w05_wool",
+      "scene": "history",
+      "set": "counting_house",
+      "ambience": "interior",
+      "min_duration": 15,
+      "pad_after": 0.4,
+      "music_cue": "market",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Act 3: Money",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "England's real wealth is wool, its great export.",
+          "tone": "confident",
+          "pause_before": 0.7
+        },
+        {
+          "who": "narrator_history",
+          "text": "And the king borrows against it from Italian bankers.",
+          "tone": "confident"
+        },
+        {
+          "who": "merchant_hamo",
+          "text": "Sixty sacks for Flanders. Mark the tally.",
+          "tone": "confident",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "Master Hamo keeps accounts like everyone else: Roman numerals,",
+          "tone": "curious"
+        },
+        {
+          "who": "narrator_history",
+          "text": "notched tally sticks, and counters slid across a cloth.",
+          "tone": "curious"
+        },
+        {
+          "who": "narrator_history",
+          "text": "So you pick up his quill and write the numbers you learned in primary school.",
+          "tone": "playful"
+        }
+      ],
+      "claims": [
+        "W11",
+        "W10"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W11",
+          "text": "Wool: England's key export",
+          "at": {
+            "line": 0,
+            "off": 0.4
+          },
+          "dur": 3.4
+        },
+        {
+          "kind": "documented",
+          "claim": "W11",
+          "text": "1340: wool licences to Italian bankers",
+          "at": {
+            "line": 0,
+            "off": 4.0
+          },
+          "dur": 3.4
+        },
+        {
+          "kind": "documented",
+          "claim": "W10",
+          "text": "Tallies, Roman numerals, counting boards",
+          "at": {
+            "line": 3,
+            "off": 1.2
+          },
+          "dur": 4.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "Money",
+          "sub": "Act three",
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "dur": 3.6
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "chop",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 1.6
+          },
+          "name": "coins",
+          "gain": 0.4
+        },
+        {
+          "at": {
+            "line": 5,
+            "off": 1.2
+          },
+          "name": "quill",
+          "gain": 0.7
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": -90,
+            "dolly": 50
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": -40,
+            "y": 0,
+            "dolly": 230,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 220,
+            "y": -20,
+            "dolly": 110,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 5,
+              "off": 0.0
+            },
+            "x": 280,
+            "y": 10,
+            "dolly": 250,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 290,
+            "y": 10,
+            "dolly": 290
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "hamo",
+          "char": "merchant_hamo",
+          "x": 930,
+          "z": 1.3,
+          "h": 480,
+          "facing": 1,
+          "expr0": "smug",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "tally"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "gesture": "hold_up",
+              "dur": 0.4,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "proud"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.6
+              },
+              "gesture": "tally",
+              "dur": 0.4,
+              "hold": 3.0
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.8
+              },
+              "expr": "skeptical"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 1560,
+          "h": 440,
+          "facing": -1,
+          "expr0": "curious",
+          "acts": [
+            {
+              "t": {
+                "line": 3,
+                "off": 1.0
+              },
+              "expr": "skeptical",
+              "look": [
+                1,
+                0.1
+              ]
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.0
+              },
+              "walk": 1430,
+              "dur": 0.9
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.9
+              },
+              "gesture": "reach",
+              "dur": 0.35,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.9
+              },
+              "expr": "eager"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w06_ledger",
+      "scene": "history",
+      "set": "ledger_insert",
+      "ambience": "none",
+      "min_duration": 14,
+      "pad_after": 0.5,
+      "music_cue": "curious",
+      "transition": "dissolve",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Roman against Arabic",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Roman numerals are fine for recording a sum. They're terrible for working one out.",
+          "tone": "confident",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "Hindu-Arabic numerals let you add, carry and check, column by column.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Italian merchants already know this.",
+          "tone": "curious"
+        },
+        {
+          "who": "narrator_history",
+          "text": "In 1299, Florence's money-changers even banned them from their account books.",
+          "tone": "curious"
+        },
+        {
+          "who": "narrator_history",
+          "text": "And in Genoa, right now,",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "clerks are keeping what was long called the oldest surviving double-entry ledger.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "W10f",
+        "W10g"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W10f",
+          "text": "Florence, 1299: banned in account books",
+          "at": {
+            "line": 2,
+            "off": 1.6
+          },
+          "dur": 4.0
+        },
+        {
+          "kind": "disputed",
+          "claim": "W10g",
+          "text": "'Oldest' double-entry ledger: now debated",
+          "at": {
+            "line": 4,
+            "off": 2.0
+          },
+          "dur": 4.0
+        }
+      ],
+      "beats": {
+        "write_from": {
+          "line": 0,
+          "off": 0.3
+        },
+        "write_to": {
+          "line": 1,
+          "off": 2.6
+        },
+        "check": {
+          "line": 2,
+          "off": 0.2
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 0.3
+          },
+          "name": "quill"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "name": "quill"
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.2
+          },
+          "name": "paper",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": -40,
+            "dolly": 30
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 0,
+            "y": -40,
+            "dolly": 70
+          },
+          {
+            "t": "end",
+            "x": 10,
+            "y": -40,
+            "dolly": 90
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "w07_profit",
+      "scene": "history",
+      "set": "counting_house",
+      "ambience": "interior",
+      "min_duration": 15,
+      "pad_after": 0.5,
+      "music_cue": "market",
+      "transition": "dissolve",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "A dangerous tip",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Faster sums mean fewer mistakes. Fewer mistakes mean money.",
+          "tone": "confident",
+          "pause_before": 0.4
+        },
+        {
+          "who": "merchant_hamo",
+          "text": "Teach my clerk this, and you'll eat meat on Sundays.",
+          "tone": "playful",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "Then you remember: the king's Florentine bankers,",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "the Bardi and the Peruzzi, are going to collapse.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "So you tell Hamo to call in every debt the Italians owe him. Now you're not a stranger.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "You're useful.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "W11c",
+        "W0"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W11c",
+          "text": "Both banks failed in the 1340s",
+          "at": {
+            "line": 2,
+            "off": 3.0
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "profit": {
+          "line": 1,
+          "off": 0.0
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "name": "coins",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "sting",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 190,
+            "y": 0,
+            "dolly": 180
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": -20,
+            "y": 10,
+            "dolly": 300,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 430,
+            "y": 20,
+            "dolly": 380,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": 230,
+            "y": 10,
+            "dolly": 220,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 240,
+            "y": 10,
+            "dolly": 250
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "hamo",
+          "char": "merchant_hamo",
+          "x": 930,
+          "z": 1.3,
+          "h": 480,
+          "facing": 1,
+          "expr0": "delighted",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "coin"
+            },
+            {
+              "t": 0.3,
+              "gesture": "rub",
+              "dur": 0.4,
+              "hold": 2.4
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "offer",
+              "dur": 0.4,
+              "hold": 1.8
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "laughing"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.4
+              },
+              "expr": "curious"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 1.4
+              },
+              "expr": "shocked"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 3.6
+              },
+              "expr": "sly"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 1430,
+          "h": 440,
+          "facing": -1,
+          "expr0": "proud",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 1.2
+              },
+              "expr": "happy"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "worried",
+              "look": [
+                0.2,
+                -0.4
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 3.0
+              },
+              "expr": "determined",
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.2
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 1.8
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 3.4
+              },
+              "expr": "smug"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w08_engine",
+      "scene": "history",
+      "set": "smithy",
+      "ambience": "forge",
+      "min_duration": 15,
+      "pad_after": 3.0,
+      "music_cue": "tension-rise",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Act 4: The idea that blows up",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Success goes to your head. Time for something big. A steam engine.",
+          "tone": "playful",
+          "pause_before": 0.7
+        },
+        {
+          "who": "smith_wat",
+          "text": "A pot that pushes a beam? With fire?",
+          "tone": "curious",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "You know the principle. Boil water in a sealed boiler, and let the steam drive a piston.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "But the cylinder must be smooth and tight.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Wat's hand-forged iron and hooped wooden barrel leak everywhere.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Pressure builds. And it has nowhere to go.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "W0"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "Wat and his machine are fictional",
+          "at": {
+            "line": 2,
+            "off": 0.6
+          },
+          "dur": 3.2
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "The idea that blows up",
+          "sub": "Act four",
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "run": {
+          "line": 2,
+          "off": 0.6
+        },
+        "leak": {
+          "line": 3,
+          "off": 1.6
+        },
+        "burst": "end-2.6"
+      },
+      "sfx": [
+        {
+          "at": 0.5,
+          "name": "anvil",
+          "gain": 0.6
+        },
+        {
+          "at": 1.3,
+          "name": "anvil",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.6
+          },
+          "name": "puff",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 1.6
+          },
+          "name": "hiss",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 5,
+            "off": 0.0
+          },
+          "name": "hiss",
+          "gain": 0.8
+        },
+        {
+          "at": {
+            "line": 5,
+            "off": 0.6
+          },
+          "name": "rumble",
+          "gain": 0.7
+        },
+        {
+          "at": "end-2.6",
+          "name": "burst"
+        },
+        {
+          "at": "end-2.5",
+          "name": "thud",
+          "gain": 0.8
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -320,
+            "y": -40,
+            "dolly": 120
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": -380,
+            "y": 0,
+            "dolly": 260,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 330,
+            "y": -70,
+            "dolly": 80,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 430,
+            "y": -80,
+            "dolly": 160,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 5,
+              "off": 0.0
+            },
+            "x": 400,
+            "y": -60,
+            "dolly": 250,
+            "ease": "inOut"
+          },
+          {
+            "t": "end-2.7",
+            "x": 380,
+            "y": -60,
+            "dolly": 290
+          },
+          {
+            "t": "end",
+            "x": 280,
+            "y": -40,
+            "dolly": 130,
+            "ease": "out"
+          }
+        ],
+        "shake": [
+          {
+            "t": "end-2.6",
+            "dur": 0.6,
+            "amp": 0.5
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "wat",
+          "char": "smith_wat",
+          "x": 560,
+          "h": 475,
+          "facing": 1,
+          "expr0": "grumpy",
+          "acts": [
+            {
+              "t": 0.2,
+              "gesture": "knock",
+              "dur": 0.1,
+              "hold": 1.6,
+              "period": 0.8
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "skeptical"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "shrug",
+              "dur": 0.4,
+              "hold": 1.4
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.4
+              },
+              "expr": "worried"
+            },
+            {
+              "t": "end-2.55",
+              "expr": "shocked"
+            },
+            {
+              "t": "end-2.55",
+              "gesture": "hands_up",
+              "dur": 0.25,
+              "hold": 2.0
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 980,
+          "h": 440,
+          "facing": 1,
+          "expr0": "eager",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 1.6
+              },
+              "look": [
+                -1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.2
+              },
+              "expr": "proud",
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.6
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 2.4
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.6
+              },
+              "expr": "nervous"
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.4
+              },
+              "expr": "horrified"
+            },
+            {
+              "t": "end-2.55",
+              "pose": "crouch",
+              "dur": 0.3
+            },
+            {
+              "t": "end-2.55",
+              "gesture": "hands_up",
+              "dur": 0.2,
+              "hold": 2.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w09_why",
+      "scene": "history",
+      "set": "smithy",
+      "ambience": "forge",
+      "min_duration": 16,
+      "pad_after": 0.5,
+      "music_cue": "aftermath",
+      "transition": "cut",
+      "chapter": "Why it failed",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "The idea wasn't wrong. Everything underneath it was missing.",
+          "tone": "reflective",
+          "pause_before": 0.9
+        },
+        {
+          "who": "narrator_history",
+          "text": "The first working steam engine arrives in 1712.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Even Watt's needed cylinders bored truly round, by a machine patented in 1774.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Knowing how something works is not the same as being able to make it.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "W13"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W13",
+          "text": "Newcomen's engine: 1712",
+          "at": {
+            "line": 1,
+            "off": 0.8
+          },
+          "dur": 3.4
+        },
+        {
+          "kind": "documented",
+          "claim": "W13",
+          "text": "Wilkinson's boring machine: 1774",
+          "at": {
+            "line": 1,
+            "off": 4.6
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "run": -30,
+        "leak": -30,
+        "burst": -15.6
+      },
+      "sfx": [
+        {
+          "at": 0.6,
+          "name": "hiss",
+          "gain": 0.3
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 280,
+            "y": -40,
+            "dolly": 130
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": -190,
+            "y": 20,
+            "dolly": 250,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 10,
+            "y": 40,
+            "dolly": 360,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 10,
+            "y": 40,
+            "dolly": 385
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": 0.4,
+              "pose": "slump",
+              "dur": 0.9
+            },
+            {
+              "t": 0.6,
+              "gesture": null
+            },
+            {
+              "t": 0.6,
+              "expr": "exhausted"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 5.0
+              },
+              "expr": "sad"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.6
+              },
+              "expr": "sheepish",
+              "look": [
+                -1,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wat",
+          "acts": [
+            {
+              "t": 0.5,
+              "gesture": "hips",
+              "dur": 0.5,
+              "hold": -1
+            },
+            {
+              "t": 0.5,
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 4.0
+              },
+              "look": [
+                1,
+                0.1
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.2
+              },
+              "expr": "sad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w10_rumour",
+      "scene": "history",
+      "set": "village",
+      "ambience": "village",
+      "min_duration": 15,
+      "pad_after": 0.4,
+      "music_cue": "unease",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "The village talks",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Now the village is talking.",
+          "tone": "tense",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "The stranger who boils water, talks about the future, and blew up the smithy.",
+          "tone": "tense"
+        },
+        {
+          "who": "reeve_walter",
+          "text": "Some say you're mad. Some say you're a liar.",
+          "tone": "tense",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "Good news: England has no law against witchcraft yet. That comes in 1542.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Bad news: a self-styled prophet could still be called mad,",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "a fraud or a troublemaker, and hauled before the church.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "You need protection. You need a lord.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "W15",
+        "W15p"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W15",
+          "text": "England's first witchcraft act: 1542",
+          "at": {
+            "line": 3,
+            "off": 0.6
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "banner_off": 0
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "gasp",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 1500,
+            "y": -40,
+            "dolly": 80
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 2250,
+            "y": 0,
+            "dolly": 250,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 2060,
+            "y": -20,
+            "dolly": 120,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": 2200,
+            "y": -10,
+            "dolly": 200,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 6,
+              "off": 0.0
+            },
+            "x": 2010,
+            "y": 10,
+            "dolly": 360,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 2010,
+            "y": 10,
+            "dolly": 390
+          }
+        ],
+        "follow": [
+          {
+            "t": 0,
+            "w": 1,
+            "actor": "you",
+            "dx": 120,
+            "axes": "x"
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 4.0
+            },
+            "w": 1,
+            "actor": "you",
+            "dx": 120,
+            "axes": "x"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.2
+            },
+            "w": 0,
+            "actor": "you",
+            "axes": "x"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 2300,
+          "h": 440,
+          "facing": 1,
+          "expr0": "nervous",
+          "acts": [
+            {
+              "t": 0.2,
+              "walk": 2970,
+              "until": {
+                "line": 0,
+                "off": 4.2
+              },
+              "speed": 180,
+              "ramp": 0.12
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.0
+              },
+              "look": [
+                -0.8,
+                -0.2
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "startled",
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.4
+              },
+              "expr": "relieved"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.6
+              },
+              "expr": "worried"
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 0.2
+              },
+              "expr": "determined",
+              "look": [
+                1,
+                -0.2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "walter",
+          "char": "reeve_walter",
+          "x": 3300,
+          "h": 480,
+          "facing": -1,
+          "expr0": "stern",
+          "acts": [
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 2.2
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "angry"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 1.4
+              },
+              "expr": "sly"
+            }
+          ]
+        },
+        {
+          "id": "tom",
+          "char": "villager_tom",
+          "x": 2420,
+          "z": 1.3,
+          "h": 465,
+          "facing": 1,
+          "expr0": "skeptical",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "sickle"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.4
+              },
+              "look": [
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w11_hall",
+      "scene": "history",
+      "set": "great_hall",
+      "ambience": "hall",
+      "min_duration": 18,
+      "pad_after": 0.4,
+      "music_cue": "power",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Act 5: The power play",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Sir Ralph has heard about the stranger. He wants one thing: an edge in the king's war.",
+          "tone": "confident",
+          "pause_before": 0.7
+        },
+        {
+          "who": "narrator_history",
+          "text": "This January, Edward the Third declared himself King of France.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "In June, his fleet smashed the French at Sluys.",
+          "tone": "tense"
+        },
+        {
+          "who": "lord_ralph",
+          "text": "They say you know what's coming. So tell me. How do we win?",
+          "tone": "confident",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "You could tell him about Crécy, six years from now. You could tell him about guns.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "A few early cannon were probably there.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "But you came to warn him about something deadlier than the French.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "W12",
+        "W12c"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W12",
+          "text": "26 Jan 1340: Edward claims France",
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "dur": 3.4
+        },
+        {
+          "kind": "documented",
+          "claim": "W12",
+          "text": "Battle of Sluys: 24 June 1340",
+          "at": {
+            "line": 1,
+            "off": 3.9
+          },
+          "dur": 3.2
+        },
+        {
+          "kind": "disputed",
+          "claim": "W12c",
+          "text": "Guns at Crécy: probably few, effect debated",
+          "at": {
+            "line": 4,
+            "off": 3.0
+          },
+          "dur": 4.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "The power play",
+          "sub": "Act five",
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "dur": 3.6
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "name": "doorslam",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 3.6
+          },
+          "name": "rumble",
+          "gain": 0.4
+        },
+        {
+          "at": {
+            "line": 4,
+            "off": 1.6
+          },
+          "name": "thump",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 100,
+            "y": -90,
+            "dolly": 30
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 130,
+            "y": -60,
+            "dolly": 110,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 290,
+            "y": -20,
+            "dolly": 320,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": -400,
+            "y": 0,
+            "dolly": 290,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 6,
+              "off": 0.0
+            },
+            "x": -200,
+            "y": -10,
+            "dolly": 200,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": -160,
+            "y": -10,
+            "dolly": 230
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "ralph",
+          "char": "lord_ralph",
+          "x": 1290,
+          "z": 1.2,
+          "h": 500,
+          "facing": -1,
+          "expr0": "stern",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cup"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.0
+              },
+              "gesture": "drink",
+              "dur": 0.5,
+              "hold": 1.0
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.0
+              },
+              "expr": "sly"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.0
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 1.8
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 1.0
+              },
+              "expr": "curious"
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 0.6
+              },
+              "expr": "skeptical"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 360,
+          "h": 440,
+          "facing": 1,
+          "expr0": "nervous",
+          "acts": [
+            {
+              "t": 0.4,
+              "walk": 470,
+              "dur": 1.6
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.0
+              },
+              "look": [
+                1,
+                -0.2
+              ]
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.0
+              },
+              "expr": "worried",
+              "look": [
+                0.6,
+                0.2
+              ]
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 0.0
+              },
+              "expr": "determined",
+              "look": [
+                1,
+                -0.1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w12_warning",
+      "scene": "history",
+      "set": "great_hall",
+      "ambience": "hall",
+      "min_duration": 13,
+      "pad_after": 0.5,
+      "music_cue": "tension",
+      "transition": "cut",
+      "chapter": "Nobody believes you",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So you tell him the truth.",
+          "tone": "tense",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "In eight summers, a pestilence will come off the ships in Dorset.",
+          "tone": "tense"
+        },
+        {
+          "who": "lord_ralph",
+          "text": "A fever? You'd have me fear a fever more than the French?",
+          "tone": "playful",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "He laughs. The whole hall laughs.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Being right is not the same as being believed.",
+          "tone": "reflective"
+        }
+      ],
+      "claims": [
+        "W14",
+        "W0"
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 3,
+            "off": 0.0
+          },
+          "name": "thump",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -160,
+            "y": -10,
+            "dolly": 230
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 1.2
+            },
+            "x": -380,
+            "y": 10,
+            "dolly": 340,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 290,
+            "y": -10,
+            "dolly": 360,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 0,
+            "y": -70,
+            "dolly": 90,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": -330,
+            "y": 0,
+            "dolly": 300,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": -340,
+            "y": 0,
+            "dolly": 330
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 0.4
+              },
+              "gesture": "plead",
+              "dur": 0.4,
+              "hold": 3.4
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.4
+              },
+              "expr": "pleading"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.0
+              },
+              "expr": "startled"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.4
+              },
+              "expr": "sad"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.2
+              },
+              "expr": "exhausted",
+              "look": [
+                0.2,
+                0.3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ralph",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 2.0
+              },
+              "expr": "surprised"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "laughing"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "gesture": "shrug",
+              "dur": 0.4,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.0
+              },
+              "gesture": "drink",
+              "dur": 0.5,
+              "hold": 1.4
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.4
+              },
+              "expr": "smug"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w13_plague",
+      "scene": "history",
+      "set": "map_england",
+      "ambience": "none",
+      "min_duration": 26,
+      "pad_after": 0.6,
+      "music_cue": "dread",
+      "transition": "dip",
+      "transition_dur": 0.7,
+      "new_shot": true,
+      "chapter": "Act 6: The timeline changes",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Midsummer, 1348. Plague comes ashore at Melcombe, in Dorset.",
+          "tone": "tense",
+          "pause_before": 0.8
+        },
+        {
+          "who": "narrator_history",
+          "text": "By November, it's in London. Through 1349, it reaches almost everywhere.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Somewhere between forty and sixty percent of people die.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "You know the killer: a bacterium, Yersinia pestis, probably carried by fleas.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Exactly how it spread is still argued about.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "You can't make antibiotics. Streptomycin won't exist until 1943.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "But one idea needs no technology at all: keep the sick and the strangers apart.",
+          "tone": "resolve"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Ragusa will try it in 1377, with thirty days of isolation.",
+          "tone": "resolve"
+        }
+      ],
+      "claims": [
+        "W14",
+        "W14b",
+        "W14y",
+        "W14c",
+        "W14s",
+        "W14d"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W14",
+          "text": "Melcombe, around midsummer 1348",
+          "at": {
+            "line": 0,
+            "off": 1.2
+          },
+          "dur": 3.6
+        },
+        {
+          "kind": "estimate",
+          "claim": "W14b",
+          "text": "Deaths: est. 40-60%",
+          "at": {
+            "line": 2,
+            "off": 0.4
+          },
+          "dur": 3.4
+        },
+        {
+          "kind": "disputed",
+          "claim": "W14c",
+          "text": "Rat fleas, or human fleas and lice? Debated",
+          "at": {
+            "line": 3,
+            "off": 3.4
+          },
+          "dur": 4.0
+        },
+        {
+          "kind": "documented",
+          "claim": "W14s",
+          "text": "Streptomycin: 1943",
+          "at": {
+            "line": 5,
+            "off": 1.6
+          },
+          "dur": 3.0
+        },
+        {
+          "kind": "documented",
+          "claim": "W14d",
+          "text": "Ragusa, 1377: 30 days' isolation",
+          "at": {
+            "line": 6,
+            "off": 4.4
+          },
+          "dur": 4.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "The timeline changes",
+          "sub": "Act six",
+          "at": {
+            "line": 0,
+            "off": 0.0
+          },
+          "dur": 3.2
+        }
+      ],
+      "beats": {
+        "spread_from": {
+          "line": 0,
+          "off": 0.8
+        },
+        "spread_to": {
+          "line": 2,
+          "off": 0.2
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 0.8
+          },
+          "name": "rumble",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "churchbell",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 6,
+            "off": 0.4
+          },
+          "name": "paper",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": 0,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 0,
+            "y": 0,
+            "dolly": 40,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": -40,
+            "y": 30,
+            "dolly": 110,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 6,
+              "off": 0.0
+            },
+            "x": 0,
+            "y": 0,
+            "dolly": 20,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 0,
+            "y": 0,
+            "dolly": 50
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "w14_branch",
+      "scene": "history",
+      "set": "alt_town",
+      "ambience": "village",
+      "min_duration": 24,
+      "pad_after": 0.5,
+      "music_cue": "revelation",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "One possible branch (hypothetical)",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So let's play it out. Everything from here is speculation.",
+          "tone": "curious",
+          "pause_before": 0.7
+        },
+        {
+          "who": "narrator_history",
+          "text": "Your village boils its water, isolates the sick, and shuts out travellers.",
+          "tone": "resolve"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Maybe more of it survives.",
+          "tone": "resolve"
+        },
+        {
+          "who": "narrator_history",
+          "text": "After the plague, workers are scarce, so wages rise. Hamo's bookkeeping spreads.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "A market town grows.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "A wall. A clock tower. A quay full of wool ships. A town that never was.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Or not. Plague moved by ship and road across a whole continent.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "One village can't wall it out.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "W18",
+        "W17"
+      ],
+      "badges": [
+        {
+          "kind": "hypothetical",
+          "text": "Alternate history: one possible branch, not a record",
+          "at": {
+            "line": 0,
+            "off": 0.0
+          },
+          "dur": 999
+        },
+        {
+          "kind": "documented",
+          "claim": "W17",
+          "text": "Post-plague: labour scarce, wages rose",
+          "at": {
+            "line": 3,
+            "off": 0.6
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "stage1": {
+          "line": 1,
+          "off": 1.2
+        },
+        "stage2": {
+          "line": 3,
+          "off": 2.2
+        },
+        "stage3": {
+          "line": 5,
+          "off": 0.2
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 1.2
+          },
+          "name": "chop",
+          "gain": 0.4
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 2.2
+          },
+          "name": "anvil",
+          "gain": 0.4
+        },
+        {
+          "at": {
+            "line": 5,
+            "off": 0.2
+          },
+          "name": "churchbell",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 6,
+            "off": 0.0
+          },
+          "name": "rumble",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 150,
+            "y": -100,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 190,
+            "y": -90,
+            "dolly": 50
+          },
+          {
+            "t": {
+              "line": 5,
+              "off": 0.0
+            },
+            "x": 230,
+            "y": -80,
+            "dolly": 110
+          },
+          {
+            "t": {
+              "line": 6,
+              "off": 0.0
+            },
+            "x": -330,
+            "y": 0,
+            "dolly": 260,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": -340,
+            "y": 0,
+            "dolly": 300
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 380,
+          "h": 440,
+          "facing": 1,
+          "expr0": "curious",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 0.6
+              },
+              "expr": "awe",
+              "look": [
+                1,
+                -0.4
+              ]
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.0
+              },
+              "expr": "delighted"
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 0.0
+              },
+              "expr": "worried",
+              "look": [
+                1,
+                -0.1
+              ]
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 2.4
+              },
+              "expr": "sad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w15_answer",
+      "scene": "history",
+      "set": "field_dawn",
+      "ambience": "village",
+      "min_duration": 26,
+      "pad_after": 2.6,
+      "music_cue": "resolve",
+      "transition": "dip",
+      "transition_dur": 0.7,
+      "new_shot": true,
+      "chapter": "The real answer",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So, could you really change history?",
+          "tone": "reflective",
+          "pause_before": 0.8
+        },
+        {
+          "who": "narrator_history",
+          "text": "Your superpower isn't inventions. It's ideas that need no new tools. Boil water.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Wash hands. Isolate the sick. Write numbers in columns.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "And medieval people weren't stupid.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "England had thousands of watermills by Domesday,",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "then windmills, spectacles, mechanical clocks.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "What they lacked wasn't brains. It was a few centuries of discoveries.",
+          "tone": "reflective"
+        },
+        {
+          "who": "narrator_history",
+          "text": "You might save some lives, make one merchant rich, and land yourself in serious trouble.",
+          "tone": "resolve"
+        },
+        {
+          "who": "narrator_history",
+          "text": "History might barely notice.",
+          "tone": "resolve"
+        },
+        {
+          "who": "narrator_history",
+          "text": "So what would you try first? Tell me in the comments.",
+          "tone": "playful",
+          "pause_before": 0.4
+        }
+      ],
+      "claims": [
+        "W16"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "W16",
+          "text": "Domesday, 1086: about 5,600 watermills",
+          "at": {
+            "line": 3,
+            "off": 1.2
+          },
+          "dur": 3.6
+        },
+        {
+          "kind": "documented",
+          "claim": "W16",
+          "text": "Spectacles: Italy, 1280s",
+          "at": {
+            "line": 3,
+            "off": 5.0
+          },
+          "dur": 3.2
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "The real answer",
+          "sub": "Final act",
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "dur": 3.6
+        },
+        {
+          "kind": "fact",
+          "title": "What would you try first? Tell me in the comments.",
+          "sub": "Your turn",
+          "at": {
+            "line": 9,
+            "off": 0.0
+          },
+          "dur": 5.6
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 6,
+            "off": 0.4
+          },
+          "name": "chime",
+          "gain": 0.3
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 320,
+            "y": -250,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 60,
+            "y": -90,
+            "dolly": 110,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 6,
+              "off": 0.0
+            },
+            "x": -100,
+            "y": -20,
+            "dolly": 250,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 9,
+              "off": 0.0
+            },
+            "x": -150,
+            "y": 0,
+            "dolly": 350,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": -150,
+            "y": 0,
+            "dolly": 375
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 820,
+          "h": 440,
+          "facing": 1,
+          "expr0": "dreamy",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 0.4
+              },
+              "look": [
+                1,
+                -0.3
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "expr": "determined"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.8
+              },
+              "expr": "awe"
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 0.4
+              },
+              "expr": "happy"
+            },
+            {
+              "t": {
+                "line": 7,
+                "off": 0.6
+              },
+              "expr": "sheepish"
+            },
+            {
+              "t": {
+                "line": 9,
+                "off": 0.0
+              },
+              "face": -1
+            },
+            {
+              "t": {
+                "line": 9,
+                "off": 0.05
+              },
+              "expr": "eager",
+              "look": [
+                0,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 9,
+                "off": 0.3
+              },
+              "gesture": "shrug",
+              "dur": 0.4,
+              "hold": 1.6
+            }
+          ]
+        },
+        {
+          "id": "tom",
+          "char": "villager_tom",
+          "x": 1460,
+          "z": 1.3,
+          "h": 465,
+          "facing": -1,
+          "pose0": "stoop",
+          "expr0": "determined",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "sickle"
+            },
+            {
+              "t": 0.2,
+              "gesture": "reap",
+              "dur": 0.2,
+              "hold": -1,
+              "period": 1.15
+            }
+          ]
+        },
+        {
+          "id": "agnes",
+          "char": "villager_agnes",
+          "x": 1720,
+          "z": 1.45,
+          "h": 450,
+          "facing": -1,
+          "pose0": "stoop",
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "sheaf"
+            },
+            {
+              "t": 0.5,
+              "gesture": "bind",
+              "dur": 0.2,
+              "hold": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "W0",
+      "type": "illustrative",
+      "text": "You, Tom, Agnes, Walter the reeve, Master Hamo, Wat the smith, Sir Ralph, the village and Wat's machine are fictional, as is everything they say and do.",
+      "sources": []
+    },
+    {
+      "id": "W1",
+      "type": "established",
+      "text": "Most people in 1340s England spoke regional Middle English; French was used by the elite and in law and government; Latin was the language of the Church and of most written records.",
+      "sources": [
+        "S4",
+        "S5",
+        "S2"
+      ]
+    },
+    {
+      "id": "W3",
+      "type": "plausible",
+      "text": "A modern English speaker would recognise words but struggle with speech: pronunciation, vowels and regional dialects differed greatly (expert judgement; no measured figure).",
+      "sources": [
+        "S3",
+        "S2"
+      ]
+    },
+    {
+      "id": "W4",
+      "type": "illustrative",
+      "text": "Tom's line 'What man artow?' ('What man are you?') is borrowed from Chaucer's Prologue to Sir Thopas, written in London English about 1387-1400, some fifty years after 1340.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "W5",
+      "type": "established",
+      "text": "The silver penny dominated English coinage; regular English gold coins began only in 1344 and the groat (4d) only in 1351.",
+      "sources": [
+        "S8",
+        "S8b"
+      ]
+    },
+    {
+      "id": "W6",
+      "type": "established",
+      "text": "The 1351 Statute of Labourers set thatchers at 3d a day and their helpers (knaves) at 1½d, the rates 'they were wont' to take, benchmarked to 1346-47; real pay varied by region and season.",
+      "sources": [
+        "S6",
+        "S7",
+        "S37b"
+      ]
+    },
+    {
+      "id": "W7",
+      "type": "established",
+      "text": "Under frankpledge, males aged twelve and over were meant to belong to a tithing that answered for its members; the Statute of Winchester (1285) had night watches arrest passing strangers, and a host had to answer for his guest.",
+      "sources": [
+        "S9",
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "id": "W8",
+      "type": "established",
+      "text": "The idea that medieval people avoided water and drank only ale is a myth or an oversimplification; London's Great Conduit, begun about 1245, piped spring water to Cheapside.",
+      "sources": [
+        "S12",
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "id": "W9",
+      "type": "established",
+      "text": "Soap existed in medieval England (Bristol soap-makers are mentioned c.1190s); medical theory blamed corrupted air and astrology, as in the Paris medical faculty's report of October 1348; germ theory came only in the 1860s-1880s.",
+      "sources": [
+        "S16",
+        "S17",
+        "S19"
+      ]
+    },
+    {
+      "id": "W9s",
+      "type": "established",
+      "text": "In 1847 Semmelweis introduced handwashing with chlorinated lime in a Vienna maternity clinic; maternal mortality there fell from 18.3% in April 1847 to about 1-2% in the following months.",
+      "sources": [
+        "S18"
+      ]
+    },
+    {
+      "id": "W10",
+      "type": "established",
+      "text": "English accounts around 1340 used Latin and Roman numerals, Exchequer tally sticks and counting boards with jettons; Hindu-Arabic numerals entered English records slowly after 1500.",
+      "sources": [
+        "S23",
+        "S24",
+        "S25"
+      ]
+    },
+    {
+      "id": "W10f",
+      "type": "established",
+      "text": "In 1299 Florence's money-changers' guild (Arte del Cambio) banned Hindu-Arabic numerals in account records (not in calculation); fear of forgery is the usual explanation.",
+      "sources": [
+        "S20"
+      ]
+    },
+    {
+      "id": "W10g",
+      "type": "disputed",
+      "text": "Genoa's Cartularium massariorum of 1340 has long been regarded as the earliest surviving double-entry ledger; that status is debated.",
+      "sources": [
+        "S21",
+        "S22"
+      ]
+    },
+    {
+      "id": "W11",
+      "type": "established",
+      "text": "Raw wool was England's key export and a major source of royal revenue; a March 1340 Close Roll licensed the Bardi and Peruzzi to export wool towards the king's debts.",
+      "sources": [
+        "S26",
+        "S27"
+      ]
+    },
+    {
+      "id": "W11c",
+      "type": "established",
+      "text": "The Peruzzi failed in 1343 and the Bardi in 1346 (some sources give 1344); the size of the English Crown's debts to them is disputed.",
+      "sources": [
+        "S28"
+      ]
+    },
+    {
+      "id": "W12",
+      "type": "established",
+      "text": "On 26 January 1340 Edward III proclaimed himself King of France at Ghent; on 24 June 1340 his fleet won at Sluys; Crécy was fought in 1346.",
+      "sources": [
+        "S29",
+        "S30",
+        "S30b"
+      ]
+    },
+    {
+      "id": "W12c",
+      "type": "disputed",
+      "text": "A few early guns were probably used by the English at Crécy (Villani; wardrobe accounts of 1345-46); their number and effect are debated.",
+      "sources": [
+        "S31"
+      ]
+    },
+    {
+      "id": "W13",
+      "type": "established",
+      "text": "The first recorded Newcomen engine worked near Dudley Castle in 1712; John Wilkinson patented his cylinder-boring method in 1774, and his machine bored Watt's cylinders accurately.",
+      "sources": [
+        "S32",
+        "S33"
+      ]
+    },
+    {
+      "id": "W14",
+      "type": "established",
+      "text": "Plague reached Melcombe, Dorset, around midsummer 1348, London by about November 1348, and most of England during 1349.",
+      "sources": [
+        "S36"
+      ]
+    },
+    {
+      "id": "W14b",
+      "type": "estimate",
+      "text": "The Black Death killed an estimated 40-60% of England's population; estimates vary.",
+      "sources": [
+        "S37",
+        "S38"
+      ]
+    },
+    {
+      "id": "W14y",
+      "type": "established",
+      "text": "Ancient DNA from London's East Smithfield plague cemetery identified Yersinia pestis as the cause (Bos et al., 2011).",
+      "sources": [
+        "S39"
+      ]
+    },
+    {
+      "id": "W14c",
+      "type": "disputed",
+      "text": "Whether the Black Death spread mainly through rat fleas or through human fleas and lice is debated.",
+      "sources": [
+        "S40",
+        "S40b"
+      ]
+    },
+    {
+      "id": "W14s",
+      "type": "established",
+      "text": "Streptomycin was isolated in 1943 and is still used against plague.",
+      "sources": [
+        "S43"
+      ]
+    },
+    {
+      "id": "W14d",
+      "type": "established",
+      "text": "Ragusa (Dubrovnik) decreed thirty days' isolation for arrivals from plague areas on 27 July 1377.",
+      "sources": [
+        "S41"
+      ]
+    },
+    {
+      "id": "W15",
+      "type": "established",
+      "text": "England had no witchcraft statute until 1542.",
+      "sources": [
+        "S44"
+      ]
+    },
+    {
+      "id": "W15p",
+      "type": "plausible",
+      "text": "In 1340 a self-styled prophet risked being thought mad, a fraud or a troublemaker, or facing church discipline (interpretation).",
+      "sources": [
+        "S44",
+        "S45"
+      ]
+    },
+    {
+      "id": "W16",
+      "type": "established",
+      "text": "Domesday (1086) records about 5,624 watermills; windmills appear in England from the 1180s; spectacles were made in Italy from the 1280s; Richard of Wallingford's astronomical clock at St Albans was finished after his death in 1336.",
+      "sources": [
+        "S46",
+        "S47",
+        "S48"
+      ]
+    },
+    {
+      "id": "W17",
+      "type": "established",
+      "text": "After the Black Death labour was scarce and wages rose, despite laws trying to hold them down.",
+      "sources": [
+        "S37",
+        "S37b"
+      ]
+    },
+    {
+      "id": "W18",
+      "type": "illustrative",
+      "text": "The alternate-history branch (fewer deaths in one village, a growing market town) and the guess that the yard changes would make fewer children sick are speculation, not history.",
+      "sources": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "The Prologue and Tale of Sir Thopas",
+      "publisher": "Harvard's Geoffrey Chaucer Website",
+      "url": "https://chaucer.fas.harvard.edu/pages/prologue-and-tale-sir-thopas-and-hosts-interruption.md",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S2",
+      "title": "John Trevisa on the languages of England",
+      "publisher": "Harvard's Geoffrey Chaucer Website",
+      "url": "https://chaucer.fas.harvard.edu/pages/john-trevisa.md",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S3",
+      "title": "Chaucer's language (introductory notes)",
+      "publisher": "Towson University",
+      "url": "https://tigerweb.towson.edu/duncan/chaucer/home.htm",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S4",
+      "title": "Ayenbite of Inwyt",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ayenbite_of_Inwyt",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S5",
+      "title": "Pleading in English Act 1362",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pleading_in_English_Act_1362",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S6",
+      "title": "Statute of Laborers, 1351 (translation)",
+      "publisher": "Fordham University Internet Medieval Sourcebook",
+      "url": "https://sourcebooks.web.fordham.edu/seth/statute-labourers.asp",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S7",
+      "title": "Ordinance of Laborers, 1349 (translation)",
+      "publisher": "Fordham University Internet Medieval Sourcebook",
+      "url": "https://sourcebooks.web.fordham.edu/seth/ordinance-labourers.asp",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S8",
+      "title": "Groat, fourth coinage, Edward III",
+      "publisher": "Aberdeen Art Gallery & Museums",
+      "url": "https://emuseum.aberdeencity.gov.uk/objects/22563/groat-fourth-coinage--edward-iii",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S8b",
+      "title": "Penny, florin issue, Edward III",
+      "publisher": "Aberdeen Art Gallery & Museums",
+      "url": "https://emuseum.aberdeencity.gov.uk/objects/22519/penny-florin-issue--edward-iii",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S9",
+      "title": "1285 (13 Edward 1) The Statute of Winchester",
+      "publisher": "statutes.org.uk",
+      "url": "https://statutes.org.uk/site/the-statutes/thirteenth-century/1285-13-edward-1-the-statute-of-winchester/",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S10",
+      "title": "Frankpledge",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Frankpledge",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S11",
+      "title": "Morden manor court, 1440",
+      "publisher": "Merton Historical Society",
+      "url": "https://mertonhistoricalsociety.org.uk/wp-content/uploads/2017/05/1440.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S12",
+      "title": "The medieval beverage of choice: alcohol or water?",
+      "publisher": "New Histories, University of Sheffield",
+      "url": "https://newhistories.sites.sheffield.ac.uk/volumes/2018-19/volume-8/the-medieval-beverage-of-choice-alcohol-or-water",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S13",
+      "title": "The Great Conduit (London)",
+      "publisher": "British History Online",
+      "url": "https://prod.british-history.ac.uk/node/2070",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S14",
+      "title": "Urban Bodies: Communal Health in Late Medieval English Towns and Cities (C. Rawcliffe)",
+      "publisher": "Boydell & Brewer",
+      "url": "https://boydellandbrewer.com/?p=50300",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S16",
+      "title": "The Paris medical faculty's report on the plague, 1348",
+      "publisher": "Martha Carlin, University of Wisconsin-Milwaukee",
+      "url": "https://sites.uwm.edu/carlin/?p=1011",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S17",
+      "title": "A medieval soap recipe",
+      "publisher": "Medievalists.net",
+      "url": "https://www.medievalists.net/2026/09/medieval-soap-recipe/",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S18",
+      "title": "Ignaz Philipp Semmelweis (1818-1865): herald of hygienic medicine",
+      "publisher": "Medical Journal of Australia (2018)",
+      "url": "https://www.mja.com.au/journal/2018/209/11/ignaz-philipp-semmelweis-1818-1865-herald-hygienic-medicine",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S19",
+      "title": "Germ theory",
+      "publisher": "Newcastle University, Health and the People",
+      "url": "https://healthandthepeople.ncl.ac.uk/germ-theory",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S20",
+      "title": "Mathematics of currency and exchange (N. Biggs)",
+      "publisher": "Gresham College (2008)",
+      "url": "https://www.gresham.ac.uk/sites/default/files/25apr08_-_mathematics_of_currency_and_exchange_-_norman_biggs_0.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S21",
+      "title": "Genoa's Cartularium massariorum of 1340",
+      "publisher": "De Computis (Spanish Journal of Accounting History)",
+      "url": "https://www.upo.es/revistas/index.php/decomputis/en/article/view/11927",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S22",
+      "title": "Summa de arithmetica (Pacioli, 1494)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Summa_de_arithmetica",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S23",
+      "title": "Exchequer tally sticks",
+      "publisher": "Science Museum Group Collection",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co60506",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S24",
+      "title": "Manorial records: the account",
+      "publisher": "Lancaster University",
+      "url": "https://www.lancaster.ac.uk/fass/projects/manorialrecords/gallery/account.htm",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S25",
+      "title": "The use of Arabic and Roman numerals in English archives",
+      "publisher": "The Antiquaries Journal (Cambridge University Press)",
+      "url": "https://resolve.cambridge.org/core/journals/antiquaries-journal/article/abs/use-of-arabic-and-roman-numerals-in-english-archives/21562CAE8FB0F40332B9BFD52C8FC625",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S26",
+      "title": "The Staple",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_Staple",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S27",
+      "title": "Calendar of Close Rolls, Edward III, vol. 5, March 1340",
+      "publisher": "British History Online",
+      "url": "https://www.british-history.ac.uk/cal-close-rolls/edw3/vol5/pp370-376",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S28",
+      "title": "The Medieval Super-Companies (E. S. Hunt)",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/medieval-supercompanies/introduction/ED84CB6808B41CFE1D63A8C924F4A0D5",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S29",
+      "title": "Hundred Years' War",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://britannica.com/event/Hundred-Years-War",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S30",
+      "title": "Battle of Sluys",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/print/article/549275",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S30b",
+      "title": "1340",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/1340",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S31",
+      "title": "Artillery of France in the Middle Ages",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Artillery_of_France_in_the_Middle_Ages",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S32",
+      "title": "Thomas Newcomen",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Newcomen",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S33",
+      "title": "John Wilkinson (biography)",
+      "publisher": "Dictionary of Welsh Biography",
+      "url": "https://biography.wales/article/s-WILK-JOH-1728",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S36",
+      "title": "The Black Death in England: chronicle sources",
+      "publisher": "Martha Carlin, University of Wisconsin-Milwaukee",
+      "url": "https://sites.uwm.edu/carlin/?p=887",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S37",
+      "title": "The economic impact of the Black Death",
+      "publisher": "EH.Net Encyclopedia",
+      "url": "https://eh.net/encyclopedia/the-economic-impact-of-the-black-death/",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S37b",
+      "title": "Before and after the Black Death: money, prices and wages in fourteenth-century England (J. Munro)",
+      "publisher": "Medievalists.net",
+      "url": "https://www.medievalists.net/2010/08/23/before-and-after-the-black-death-money-prices-and-wages-in-fourteenth-century-england/",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S38",
+      "title": "English medieval population (working paper)",
+      "publisher": "University of Warwick",
+      "url": "https://warwick.ac.uk/fac/soc/economics/seminars/seminars/conferences/venice3/programme/english_medieval_population.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S39",
+      "title": "Black Death genome (news, 2011)",
+      "publisher": "Nature",
+      "url": "https://www.nature.com/news/2011/111026/full/478444a.html",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S40",
+      "title": "Human ectoparasites and the spread of plague in Europe during the Second Pandemic (Dean et al., 2018)",
+      "publisher": "PNAS via PubMed Central",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5819418",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S40b",
+      "title": "Response on plague transmission models (Park et al., 2018)",
+      "publisher": "PubMed Central",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6112721/",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S41",
+      "title": "Lessons from the history of quarantine, from plague to influenza A (E. Tognotti)",
+      "publisher": "Emerging Infectious Diseases, CDC (2013)",
+      "url": "https://wwwnc.cdc.gov/eid/article/19/2/pdfs/12-0312.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S43",
+      "title": "Waksman discovers the antibiotic streptomycin",
+      "publisher": "EBSCO Research Starters",
+      "url": "https://www.ebsco.com/research-starters/history/waksman-discovers-antibiotic-streptomycin",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S44",
+      "title": "England's witch trials were lawful",
+      "publisher": "Smithsonian Magazine",
+      "url": "https://www.smithsonianmag.com/smart-news/englands-witch-trials-were-lawful-180964514/",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S45",
+      "title": "De heretico comburendo",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/De_heretico_comburendo",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S46",
+      "title": "Richard of Wallingford",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Richard_of_Wallingford",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S47",
+      "title": "Medieval spectacles",
+      "publisher": "Harry Ransom Center, University of Texas",
+      "url": "https://sites.utexas.edu/ransomcentermagazine/2012/04/17/medieval-spectacles/",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S48",
+      "title": "From quern to computer: the history of flour milling",
+      "publisher": "The Mills Archive",
+      "url": "https://new.millsarchive.org/from-quern-to-computer-the-history-of-flour-milling/7",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    }
+  ],
+  "publishing": {
+    "titles": [
+      "What If You Woke Up in 1340 Knowing the Future?",
+      "You Know the Plague Is Coming. Nobody Believes You",
+      "Could Modern Knowledge Survive Medieval England?"
+    ],
+    "description": "You wake up in a wet English field in 1340 with a hoodie, no money and seven centuries of hindsight. The Black Death is eight years away and nobody believes you. Could modern knowledge actually change anything? We test it: germs and clean water, Arabic numerals in a wool merchant's counting house, a steam engine that goes very wrong, a lord who wants weapons, and the plague itself. Then we play out one possible alternate timeline, clearly labelled as speculation.",
+    "whats_real": "What's real: the languages, money and wages of 1340s England, tithings and strangers, the water myth, medieval medicine, Roman numerals and tallies, Florence's 1299 rule and Genoa's 1340 ledger, wool and the Italian bankers, Edward III's claim to France and Sluys, the steam-engine and paper-mill dates, the plague's path and toll, and quarantine at Ragusa are documented (sources below; disputed points are marked). You, Tom, Agnes, Walter, Hamo, Wat, Sir Ralph and the village are fictional, and the alternate timeline near the end is speculation.",
+    "packages": [
+      {
+        "title": "What If You Woke Up in 1340 Knowing the Future?",
+        "thumbnail": "A",
+        "promise": "You know the plague is coming in eight years. What do you do?",
+        "proof": "0:00 waking in the field; 0:16 'in about eight years, the Black Death'; 5:00 the plague map."
+      },
+      {
+        "title": "You Know the Plague Is Coming. Nobody Believes You",
+        "thumbnail": "B",
+        "promise": "A warning nobody believes.",
+        "proof": "0:16 the eight-year clock; 4:20 the lord laughs; 5:00 the plague map."
+      },
+      {
+        "title": "Could Modern Knowledge Survive Medieval England?",
+        "thumbnail": "C",
+        "promise": "Which modern ideas work in 1340, and which blow up.",
+        "proof": "1:30 germs and water; 2:20 numbers; 3:10 the steam engine bursts."
+      }
+    ],
+    "thumbnails": [
+      {
+        "id": "A",
+        "layout": "L1",
+        "bg": "#5E1F24",
+        "text": "8 YEARS|LEFT",
+        "character": {
+          "char": "pov_modern",
+          "expr": "horrified",
+          "look": [
+            1,
+            -0.1
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.25,
+            0.42
+          ],
+          "mouth": 0.5
+        },
+        "object": {
+          "type": "plague_map",
+          "r": 210,
+          "c": [
+            0.75,
+            0.62
+          ]
+        }
+      },
+      {
+        "id": "B",
+        "layout": "L1",
+        "bg": "#2A2140",
+        "text": "THEY|LAUGHED",
+        "character": {
+          "char": "pov_modern",
+          "expr": "pleading",
+          "look": [
+            1,
+            -0.15
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.25,
+            0.42
+          ],
+          "mouth": 0.35
+        },
+        "object": {
+          "type": "hourglass",
+          "r": 200,
+          "c": [
+            0.76,
+            0.63
+          ]
+        }
+      },
+      {
+        "id": "C",
+        "layout": "L1",
+        "bg": "#3A2418",
+        "text": "BAD IDEA",
+        "text_fill": "#FFF8E7",
+        "character": {
+          "char": "pov_modern",
+          "expr": "horrified",
+          "look": [
+            1,
+            -0.2
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.24,
+            0.42
+          ],
+          "mouth": 0.55
+        },
+        "object": {
+          "type": "boiler_burst",
+          "r": 200,
+          "c": [
+            0.75,
+            0.64
+          ]
+        }
+      }
+    ]
+  }
+}

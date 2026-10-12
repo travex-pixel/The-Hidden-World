@@ -97,7 +97,42 @@
       g.strokeStyle = INK; g.lineWidth = 6; g.beginPath(); g.moveTo(-R * 0.55, R); g.lineTo(-R * 0.55, -R * 0.2); g.arc(0, -R * 0.2, R * 0.55, Math.PI, 0); g.lineTo(R * 0.55, R); g.stroke(); g.restore();
     },
     cross: (g, o) => { const s = o.r / 120; g.scale(s, s); g.fillStyle = '#7a5636'; g.fillRect(-14, -150, 28, 300); g.fillRect(-90, -90, 180, 26); g.strokeStyle = INK; g.lineWidth = 6; g.strokeRect(-14, -150, 28, 300); g.strokeRect(-90, -90, 180, 26); },
-    loaf: (g, o) => { X.ART.loafShape(g, 0, 0, o.r / 42, mulberry32(3), '#b07a3e'); }
+    loaf: (g, o) => { X.ART.loafShape(g, 0, 0, o.r / 42, mulberry32(3), '#b07a3e'); },
+    // What-If 001: the plague map, the eight-year hourglass, the steam engine that bursts
+    plague_map: (g, o) => {   // a parchment roundel of England and Wales, the plague staining outward from Dorset
+      const R = o.r, r = mulberry32(17); const pr = (lon, lat) => [(lon + 1.95) * R * 0.27, (52.9 - lat) * R * 0.43];
+      g.save(); g.rotate(-0.06); g.beginPath(); g.arc(0, 0, R, 0, 7); g.fillStyle = '#e8d8b0'; g.fill(); g.clip();
+      g.fillStyle = '#8aa4ae'; g.fillRect(-R, -R, R * 2, R * 2); P.granulate(g, -R, -R, R * 2, R * 2, 0.4);
+      const land = X.ART.ENG.map(([lo, la]) => pr(lo, la)); g.beginPath(); land.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.fillStyle = '#ecdcb4'; g.fill();
+      g.save(); g.clip(); const [mx, my] = pr(-2.46, 50.61); const gr = g.createRadialGradient(mx, my, 0, mx, my, R * 1.25); gr.addColorStop(0, 'rgba(150,20,30,0.95)'); gr.addColorStop(0.55, 'rgba(150,20,30,0.7)'); gr.addColorStop(1, 'rgba(150,20,30,0)'); g.fillStyle = gr; g.fillRect(-R, -R, R * 2, R * 2); g.restore();
+      g.strokeStyle = '#4a2e1e'; g.lineWidth = R * 0.025; g.beginPath(); land.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.stroke();
+      for (const [lo, la] of [[-2.46, 50.61], [-0.12, 51.5], [-2.59, 51.45], [-1.08, 53.96]]) { const [x, y] = pr(lo, la); g.fillStyle = '#3a0a10'; g.beginPath(); g.arc(x, y, R * 0.035, 0, 7); g.fill(); }
+      g.restore(); g.strokeStyle = '#e9b860'; g.lineWidth = R * 0.07; g.beginPath(); g.arc(0, 0, R, 0, 7); g.stroke(); g.strokeStyle = INK; g.lineWidth = 6; g.beginPath(); g.arc(0, 0, R + R * 0.045, 0, 7); g.stroke();
+      g.save(); g.translate(R * 0.55, R * 0.72); g.rotate(-0.12); g.fillStyle = '#C8312B'; g.beginPath(); g.roundRect(-R * 0.36, -R * 0.15, R * 0.72, R * 0.3, R * 0.05); g.fill(); g.fillStyle = '#FFF8E7'; g.font = `800 ${Math.round(R * 0.2)}px Nunito`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('1348', 0, R * 0.01); g.restore();
+    },
+    hourglass: (g, o) => {   // oak caps, glass bulbs, most of the sand still to fall
+      const s = o.r / 150; g.scale(s, s); g.rotate(0.08);
+      const bulb = (dir) => { g.beginPath(); g.moveTo(-90, dir * -150); g.bezierCurveTo(-95, dir * -60, -12, dir * -40, -10, 0); g.lineTo(10, 0); g.bezierCurveTo(12, dir * -40, 95, dir * -60, 90, dir * -150); g.closePath(); };
+      g.fillStyle = 'rgba(220,236,240,0.55)'; bulb(1); g.fill(); bulb(-1); g.fill();
+      g.save(); bulb(1); g.clip(); g.fillStyle = '#d8a24a'; g.fillRect(-100, -110, 200, 120); g.restore();
+      g.save(); bulb(-1); g.clip(); g.fillStyle = '#d8a24a'; g.beginPath(); g.moveTo(-90, 150); g.quadraticCurveTo(0, 105, 90, 150); g.fill(); g.restore();
+      g.strokeStyle = '#d8a24a'; g.lineWidth = 4; g.beginPath(); g.moveTo(0, 0); g.lineTo(0, 128); g.stroke();
+      g.strokeStyle = INK; g.lineWidth = 6; bulb(1); g.stroke(); bulb(-1); g.stroke();
+      g.strokeStyle = 'rgba(255,255,255,0.7)'; g.lineWidth = 8; g.beginPath(); g.moveTo(-62, -128); g.quadraticCurveTo(-70, -80, -40, -50); g.stroke();
+      for (const y of [-170, 150]) { g.fillStyle = '#6a4228'; g.fillRect(-120, y, 240, 24); g.strokeStyle = INK; g.lineWidth = 5; g.strokeRect(-120, y, 240, 24); }
+      for (const x of [-108, 96]) { g.fillStyle = '#7a5032'; g.fillRect(x, -150, 12, 302); g.strokeRect(x, -150, 12, 302); }
+    },
+    boiler_burst: (g, o) => {   // a sealed boiler on a firebox, its lid blown off in a cloud of steam
+      const s = o.r / 150; g.scale(s, s); const r = mulberry32(23);
+      for (let i = 0; i < 12; i++) { const a = r() * Math.PI * 2, d = 60 + r() * 110; P.bloom(g, Math.cos(a) * d * 1.1, -120 + Math.sin(a) * d * 0.7, 90 + r() * 70, '#ffffff', 0.55); }
+      g.fillStyle = '#7a4a34'; g.fillRect(-110, 40, 220, 100); g.strokeStyle = INK; g.lineWidth = 6; g.strokeRect(-110, 40, 220, 100);
+      g.fillStyle = '#ffb040'; g.beginPath(); g.ellipse(0, 100, 60, 24, 0, 0, 7); g.fill();
+      g.fillStyle = '#6a6a74'; g.beginPath(); g.moveTo(-100, 40); g.lineTo(100, 40); g.lineTo(88, -110); g.lineTo(-88, -110); g.closePath(); g.fill(); g.stroke();
+      for (const y of [-70, -10]) { g.strokeStyle = '#3a3a42'; g.lineWidth = 9; g.beginPath(); g.moveTo(-96, y); g.lineTo(96, y); g.stroke(); }
+      g.save(); g.translate(70, -230); g.rotate(0.9); g.fillStyle = '#7a7a84'; g.beginPath(); g.ellipse(0, 0, 92, 20, 0, 0, 7); g.fill(); g.strokeStyle = INK; g.lineWidth = 6; g.stroke(); g.restore();
+      g.strokeStyle = '#fff3c8'; g.lineWidth = 7; g.lineCap = 'round'; for (let i = 0; i < 9; i++) { const a = -Math.PI * (0.08 + i / 9 * 0.84); g.beginPath(); g.moveTo(Math.cos(a) * 120, -110 + Math.sin(a) * 90); g.lineTo(Math.cos(a) * 200, -110 + Math.sin(a) * 160); g.stroke(); }
+      for (let i = 0; i < 14; i++) { const a = -Math.PI * r(), d = 120 + r() * 120; g.fillStyle = r() < 0.5 ? '#ffcf60' : '#ff8a30'; g.beginPath(); g.arc(Math.cos(a) * d, -110 + Math.sin(a) * d * 0.8, 4 + r() * 5, 0, 7); g.fill(); }
+    }
   };
   function drawObjectLayer(spec, lay) {
     const layer = canvas(TW, TH), g = layer.getContext('2d');
