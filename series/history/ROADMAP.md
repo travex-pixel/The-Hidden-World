@@ -1,7 +1,7 @@
 # THE HIDDEN WORLD · History — first five episodes
 
-Status: **Episode 1** (95 s; v2 re-render in the watercolour style) and **Episode 2** (119 s, watercolour character style, engine v2)
-are rendered and waiting for your review. Episodes 3–5
+Status: **Episode 1** and **Episode 2** are rendered and waiting for your review. The newest cuts (engine v3:
+Kokoro narrator, new mix, more facial acting, sharper figures) are H01 v3 and H02 v2. Episodes 3–5
 are plans only. Packaging (titles and thumbnails) follows [docs/PACKAGING.md](../../docs/PACKAGING.md).
 
 Shared engine: `renderer/history` (camera, rig, effects, director) and the recurring point-of-view character

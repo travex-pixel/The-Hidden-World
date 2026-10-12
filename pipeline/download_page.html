@@ -1,0 +1,176 @@
+<title>Hidden World Downloads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@500;700;800&display=swap">
+<style>
+/* Layout: one reading column of episode cards (thumbnail beside text, stacked on phones), grouped by cut.
+   Palette from the channel's thumbnails: ink and saffron at night, cobalt on pale paper by day. */
+:root {
+  --bg: #eef0f6; --surface: #ffffff; --line: #d6d9e4; --fg: #1b1a1f; --muted: #575b6b;
+  --accent: #2e4bb0; --accent-ink: #ffffff; --chip: #e2e6f3; --ok: #1d7a3a; --err: #b3261e; --bar: #dde1ee;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141317; --surface: #1d1c22; --line: #2e2c35; --fg: #f3ecdc; --muted: #a8a191;
+    --accent: #ffc531; --accent-ink: #1b1a1f; --chip: #2a2830; --ok: #7fcf8a; --err: #ff8f80; --bar: #2c2a32; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141317; --surface: #1d1c22; --line: #2e2c35; --fg: #f3ecdc; --muted: #a8a191;
+  --accent: #ffc531; --accent-ink: #1b1a1f; --chip: #2a2830; --ok: #7fcf8a; --err: #ff8f80; --bar: #2c2a32; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 500 16px/1.55 var(--body); }
+.wrap { max-width: 920px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 56px; display: grid; gap: 34px; }
+header { display: grid; gap: 10px; }
+.eyebrow { margin: 0; font: 800 12px/1.2 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font: 800 clamp(30px, 6vw, 46px)/1.05 var(--display); text-wrap: balance; }
+.lead { margin: 0; color: var(--muted); max-width: 62ch; }
+.all { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 6px; }
+button { appearance: none; border: 0; border-radius: 10px; background: var(--accent); color: var(--accent-ink);
+  font: 800 16px/1 var(--body); padding: 14px 18px; cursor: pointer; font-variant-numeric: tabular-nums; }
+button:focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
+button:disabled { opacity: .55; cursor: default; }
+button.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+.hint { margin: 0; font-size: 14px; color: var(--muted); max-width: 62ch; }
+section { display: grid; gap: 16px; }
+h2 { margin: 0; font: 600 22px/1.2 var(--display); padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.card { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 18px; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+.card.tall { grid-template-columns: minmax(0, 150px) minmax(0, 1fr); }
+.thumb { aspect-ratio: var(--ar, 16 / 9); max-width: 100%; border-radius: 9px; overflow: hidden; background: var(--chip); align-self: start; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.body { min-width: 0; display: grid; gap: 8px; align-content: start; }
+h3 { margin: 0; font: 600 21px/1.2 var(--display); text-wrap: balance; }
+.meta { margin: 0; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.desc, .note { margin: 0; max-width: 64ch; }
+.note { font-size: 14px; color: var(--muted); }
+details { font-size: 14px; }
+summary { cursor: pointer; color: var(--muted); font-weight: 700; }
+details ol { margin: 8px 0 0; padding-left: 0; list-style: none; display: grid; gap: 2px; }
+details li { display: flex; gap: 10px; }
+details li span { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 3.2em; }
+.dl { display: grid; gap: 8px; margin-top: 4px; justify-items: start; }
+.bar { width: 100%; height: 8px; background: var(--bar); border-radius: 6px; overflow: hidden; }
+.bar > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.status { margin: 0; min-height: 1.4em; font-size: 14px; }
+.status.ok { color: var(--ok); font-weight: 700; }
+.status.err { color: var(--err); font-weight: 700; }
+.file { margin: 0; font: 500 12px/1.4 ui-monospace, Menlo, Consolas, monospace; color: var(--muted); overflow-wrap: anywhere; }
+footer { font-size: 14px; color: var(--muted); max-width: 64ch; }
+@media (max-width: 640px) {
+  .card, .card.tall { grid-template-columns: minmax(0, 1fr); }
+  .card.tall .thumb { max-width: 180px; }
+}
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+
+<main class="wrap">
+  <header>
+    <p class="eyebrow">The Hidden World</p>
+    <h1>Episode downloads</h1>
+    <p class="lead">{{LEAD}}</p>
+    <div class="all">
+      <button id="all" type="button" disabled>Connecting…</button>
+      <p class="hint" id="allstatus" role="status"></p>
+    </div>
+    <p class="hint">Each video saves as one MP4. Keep the screen on while it downloads. If the Claude app says a save is not available, open this page in Chrome.</p>
+  </header>
+{{SECTIONS}}
+  <footer>Every file is rebuilt on your phone from pieces stored with this page, and each piece is checked against its SHA-256 fingerprint before the MP4 is offered. Built {{BUILT}}.</footer>
+</main>
+
+<script>
+(() => {
+  const VIDEOS = {{VIDEOS_JSON}};
+  const ORDER = Object.keys(VIDEOS);
+  const $ = (s, r = document) => r.querySelector(s);
+  const mib = n => (n / 1048576).toFixed(1);
+  let downloads = null, busy = false;
+  const cache = {};   // id -> Blob (only the most recent one is kept)
+
+  function ui(id) {
+    const card = document.getElementById('v-' + id);
+    return { card, btn: $('.save', card), bar: $('.bar', card), fill: $('.bar > i', card), status: $('.status', card) };
+  }
+  function say(id, msg, cls) { const u = ui(id); u.status.textContent = msg; u.status.className = 'status' + (cls ? ' ' + cls : ''); }
+
+  async function sha256(blob) {
+    if (!(window.crypto && crypto.subtle)) return null;
+    const h = await crypto.subtle.digest('SHA-256', await blob.arrayBuffer());
+    return Array.from(new Uint8Array(h), b => b.toString(16).padStart(2, '0')).join('');
+  }
+  async function fetchChunk(c) {
+    let last;
+    for (let attempt = 0; attempt < 4; attempt++) {
+      try {
+        const r = await fetch(c.p, { cache: 'no-store' });
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        const b = await r.blob();
+        if (b.size !== c.n) throw new Error('piece is ' + b.size + ' bytes, expected ' + c.n);
+        const h = await sha256(b);
+        if (h && h !== c.h) throw new Error('piece failed its SHA-256 check');
+        return b;
+      } catch (e) { last = e; await new Promise(res => setTimeout(res, 1500 * (attempt + 1))); }
+    }
+    throw last;
+  }
+  async function fetchVideo(id) {
+    if (cache[id]) return cache[id];
+    const v = VIDEOS[id], u = ui(id), parts = []; let done = 0;
+    u.bar.hidden = false;
+    for (const c of v.chunks) {
+      say(id, 'Downloading… ' + mib(done) + ' of ' + mib(v.bytes) + ' MiB');
+      parts.push(await fetchChunk(c)); done += c.n; u.fill.style.width = (100 * done / v.bytes).toFixed(1) + '%';
+    }
+    const blob = new Blob(parts, { type: 'video/mp4' });
+    if (blob.size !== v.bytes) throw new Error('assembled ' + blob.size + ' bytes, expected ' + v.bytes);
+    for (const k of Object.keys(cache)) delete cache[k];
+    cache[id] = blob; return blob;
+  }
+  async function save(id, blob) {
+    const v = VIDEOS[id];
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        say(id, 'Confirm the save on the prompt…');
+        await downloads.save({ filename: v.filename, data: blob });
+        say(id, 'Saved as ' + v.filename + '. Look in your Downloads folder.', 'ok'); return 'saved';
+      } catch (e) {
+        const code = e && e.code;
+        if (code === 'rate_limited') { await new Promise(r => setTimeout(r, 2000)); continue; }
+        if (code === 'declined') { say(id, 'Save cancelled. Tap the button to try again.'); return 'declined'; }
+        if (code === 'too_large') { say(id, 'Too large for the Claude app. Open this page in Chrome and save it there.', 'err'); return 'failed'; }
+        say(id, 'Saving is not available in this view (' + (code || 'error') + '). Open this page in Chrome.', 'err'); return 'failed';
+      }
+    }
+    say(id, 'Another save prompt was still open. Tap the button again.', 'err'); return 'failed';
+  }
+  async function one(id) {
+    const u = ui(id); u.btn.disabled = true;
+    let lock = null; try { lock = await navigator.wakeLock.request('screen'); } catch (_) {}
+    try { const blob = await fetchVideo(id); return await save(id, blob); }
+    catch (e) { say(id, 'Download interrupted (' + e.message + '). Tap the button to resume.', 'err'); return 'failed'; }
+    finally { u.btn.disabled = false; u.btn.textContent = 'Save again'; try { lock && lock.release(); } catch (_) {} }
+  }
+  async function guard(fn) { if (busy || !downloads) return; busy = true; document.querySelectorAll('button').forEach(b => b.disabled = true); try { await fn(); } finally { busy = false; document.querySelectorAll('button').forEach(b => b.disabled = false); } }
+
+  (window.claude && claude.use ? claude.use('downloads') : Promise.resolve(null)).then(d => {
+    downloads = d;
+    const all = $('#all');
+    if (!d) { all.textContent = 'Saving is not available here'; $('#allstatus').textContent = 'Open this link in Chrome on your phone.'; return; }
+    all.disabled = false; all.textContent = 'Save all ' + ORDER.length + ' videos';
+    for (const id of ORDER) { const u = ui(id); u.btn.disabled = false; u.btn.addEventListener('click', () => guard(() => one(id))); }
+    all.addEventListener('click', () => guard(async () => {
+      const res = { saved: 0, declined: 0, failed: 0 };
+      for (let i = 0; i < ORDER.length; i++) {
+        $('#allstatus').textContent = 'Video ' + (i + 1) + ' of ' + ORDER.length + '…';
+        ui(ORDER[i]).card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        res[await one(ORDER[i])]++;
+      }
+      $('#allstatus').textContent = res.saved + ' saved' + (res.declined ? ', ' + res.declined + ' cancelled' : '') + (res.failed ? ', ' + res.failed + ' failed' : '') + '.';
+    }));
+  });
+})();
+</script>

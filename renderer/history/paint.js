@@ -145,5 +145,23 @@
     for (let i = 0; i < n * 0.08; i++) { const x = cx + (rng() - 0.6) * rx * 1.2, y = cy - ry * 0.3 + (rng() - 0.7) * ry; bloom(ctx, x, y, 14 + rng() * 22, light, 0.35); }
   }
 
-  root.HX = Object.assign(root.HX, { P: { canvas, deform, polyPath, rect, ellipse, wash, edge, flat, bbox, mottle, bloom, gradient, stroke, line, seg2, paper, granulate, paperOverlay, foliage, wcTextures, TEX } });
+  root.HX = Object.assign(root.HX, { P: { canvas, deform, polyPath, rect, ellipse, wash, edge, flat, bbox, mottle, bloom, gradient, stroke, line, seg2, paper, granulate, paperOverlay, foliage, wcTextures, sharpen, TEX } });
+
+  // 3x3 sharpening (centre 1+4k, edge neighbours -k) on a canvas region, in place. Neighbours outside the figure
+  // (alpha < 128) count as the centre pixel, so edges are not darkened or haloed.
+  function sharpen(ctx, w, h, k) {
+    if (w < 3 || h < 3) return;
+    const img = ctx.getImageData(0, 0, w, h), d = img.data, src = new Uint8ClampedArray(d), c = 1 + 4 * k, W4 = w * 4;
+    for (let y = 1; y < h - 1; y++) {
+      let i = (y * w + 1) * 4;
+      for (let x = 1; x < w - 1; x++, i += 4) {
+        if (src[i + 3] < 128) continue;
+        const l = src[i - 1] >= 128 ? i - 4 : i, r = src[i + 7] >= 128 ? i + 4 : i, u = src[i - W4 + 3] >= 128 ? i - W4 : i, dn = src[i + W4 + 3] >= 128 ? i + W4 : i;
+        d[i] = c * src[i] - k * (src[l] + src[r] + src[u] + src[dn]);
+        d[i + 1] = c * src[i + 1] - k * (src[l + 1] + src[r + 1] + src[u + 1] + src[dn + 1]);
+        d[i + 2] = c * src[i + 2] - k * (src[l + 2] + src[r + 2] + src[u + 2] + src[dn + 2]);
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+  }
 })(window);

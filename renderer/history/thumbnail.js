@@ -58,7 +58,7 @@
     const [fcx, fcy] = spec.face_c || lay.face_c; const headY = -(st.hip + 300 + 30) - hh * 0.38;
     const layer = canvas(TW, TH), g = layer.getContext('2d');
     g.translate(fcx * TW - 30 * K * (spec.facing || 1), fcy * TH - headY * K); g.scale(K, K);
-    X.Rig.drawCharacter(g, A, st, [-0.7, -0.7], { lw: 3.2 / K * 2.2, style: 'watercolour', softPx: 2.5, propDraw: (gg, prop) => X.PROPS[prop] && X.PROPS[prop](gg, 0, 4) });
+    X.Rig.drawCharacter(g, A, st, [-0.7, -0.7], { lw: 3.2 / K * 2.2, style: 'watercolour', softPx: 2.5, v3: (spec.engine_version || 2) >= 3, propDraw: (gg, prop) => X.PROPS[prop] && X.PROPS[prop](gg, 0, 4) });
     // pigment texture on the character layer only
     const T = P.wcTextures(seed); g.setTransform(1, 0, 0, 1, 0, 0); g.globalCompositeOperation = 'source-atop';
     g.globalAlpha = 0.4; g.fillStyle = g.createPattern(T.dark, 'repeat'); g.fillRect(0, 0, TW, TH); g.globalAlpha = 0.35; g.fillStyle = g.createPattern(T.light, 'repeat'); g.fillRect(0, 0, TW, TH);

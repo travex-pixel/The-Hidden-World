@@ -80,11 +80,20 @@
       return { x: p[p.length - 1].x, walking: false, facing: p[p.length - 1].facing || a.facing || 1 };
     },
     mouth(who, t) {
-      let v = 0;
-      for (const s of this.state.timeline) for (const l of (s.lines || [])) if (l.who === who && t >= l.start && t < l.end && l.env) {
-        const k = (t - l.start) * 30, i0 = Math.floor(k), fr = k - i0; const a = l.env[i0] || 0, b = l.env[i0 + 1] || 0; v = Math.max(v, a + (b - a) * fr);
+      // mouth openness from the line's loudness envelope; for lines with vowel data (engine v3) also the mouth's
+      // roundness and a phrase-level emphasis (louder than the line's average) that lifts the brows
+      let v = 0, r = 0, e = 0, rich = false;
+      const at = (arr, k) => { const i0 = Math.floor(k), fr = k - i0; const a = arr[i0] || 0, b = arr[i0 + 1] || 0; return a + (b - a) * fr; };
+      for (const s of this.state.timeline) for (const l of (s.lines || [])) if (l.who === who && l.env && t >= l.start - 0.3 && t < l.end + 0.3) {
+        const k = (t - l.start) * 30;
+        if (t >= l.start && t < l.end) { v = Math.max(v, at(l.env, k)); if (l.rnd) r = at(l.rnd, k); }
+        if (l.rnd) {
+          rich = true; l._mean = l._mean ?? (l.env.reduce((p, q) => p + q, 0) / Math.max(1, l.env.length));
+          let acc = 0, nn = 0; for (let j = Math.max(0, Math.floor(k - 8)); j <= Math.min(l.env.length - 1, Math.floor(k + 2)); j++) { acc += l.env[j]; nn++; }
+          e = Math.max(e, clamp(((nn ? acc / nn : 0) - l._mean) * 2.5, 0, 1));
+        }
       }
-      return Math.min(1, v);
+      return rich ? { open: Math.min(1, v), round: r, emph: e } : Math.min(1, v);
     },
     // ---------------------------------------------------------------- composition
     drawSeq(g, qi, tq) {
@@ -143,19 +152,29 @@
       let x1 = Math.ceil(Math.min(cv.width, Math.max(...corners.map(c => c[0])))), y1 = Math.ceil(Math.min(cv.height, Math.max(...corners.map(c => c[1]))));
       if (x1 - x0 < 2 || y1 - y0 < 2) return;
       const P = this.state.tmp; if (!P.char || P.char.width < x1 - x0 || P.char.height < y1 - y0) { P.char = X.P.canvas(Math.max(x1 - x0, P.char ? P.char.width : 0), Math.max(y1 - y0, P.char ? P.char.height : 0)); P.charB = X.P.canvas(P.char.width, P.char.height); }
-      const off = P.char, og = off.getContext('2d'); og.setTransform(1, 0, 0, 1, 0, 0); og.clearRect(0, 0, x1 - x0, y1 - y0);
+      const off = P.char, og = off.getContext('2d', { willReadFrequently: true }); og.setTransform(1, 0, 0, 1, 0, 0); og.clearRect(0, 0, x1 - x0, y1 - y0);
       og.setTransform(M.a, M.b, M.c, M.d, M.e - x0, M.f - y0);
       const heightPx = 1000 * scale; const softPx = heightPx < 520 ? 0 : clamp(heightPx * 0.004, 0.5, 3.5);   // no soft-shadow blur on distant figures
-      X.Rig.drawCharacter(og, A, stt, light, { ...opts, style: 'watercolour', softPx, lw: opts.lw });
+      X.Rig.drawCharacter(og, A, stt, light, { ...opts, style: 'watercolour', softPx, lw: opts.lw, v3: (this.state.ep.engine_version || 2) >= 3 });
       og.setTransform(1, 0, 0, 1, 0, 0);
       const w = x1 - x0, h = y1 - y0; const T = X.P.wcTextures(this.state.seed);
+      const v3 = (this.state.ep.engine_version || 2) >= 3;   // v3: crisper figures (less bleed and mottling, contour, sharpening)
       og.save(); og.globalCompositeOperation = 'source-atop';
-      og.globalAlpha = 0.5; og.fillStyle = og.createPattern(T.dark, 'repeat'); og.fillRect(0, 0, w, h);
-      og.globalAlpha = 0.45; og.fillStyle = og.createPattern(T.light, 'repeat'); og.fillRect(0, 0, w, h);
+      og.globalAlpha = v3 ? 0.36 : 0.5; og.fillStyle = og.createPattern(T.dark, 'repeat'); og.fillRect(0, 0, w, h);
+      og.globalAlpha = v3 ? 0.3 : 0.45; og.fillStyle = og.createPattern(T.light, 'repeat'); og.fillRect(0, 0, w, h);
       og.restore();
       g.save(); g.setTransform(1, 0, 0, 1, 0, 0);
-      const bleed = clamp(heightPx * 0.006, 1, 5);
-      g.globalAlpha = 0.32; g.filter = `blur(${bleed.toFixed(1)}px)`; g.drawImage(off, 0, 0, w, h, x0, y0, w, h); g.filter = 'none'; g.globalAlpha = 1;
+      const bleed = clamp(heightPx * (v3 ? 0.004 : 0.006), 1, v3 ? 3.5 : 5);
+      g.globalAlpha = v3 ? 0.2 : 0.32; g.filter = `blur(${bleed.toFixed(1)}px)`; g.drawImage(off, 0, 0, w, h, x0, y0, w, h); g.filter = 'none'; g.globalAlpha = 1;
+      if (v3) {
+        // a thin warm contour so the figure separates from the painted background: the figure's silhouette,
+        // tinted, drawn at four small offsets underneath it
+        const sil = P.charB, sg = sil.getContext('2d'); sg.setTransform(1, 0, 0, 1, 0, 0); sg.globalCompositeOperation = 'copy'; sg.drawImage(off, 0, 0, w, h, 0, 0, w, h);
+        sg.globalCompositeOperation = 'source-in'; sg.fillStyle = 'rgba(52,30,18,0.42)'; sg.fillRect(0, 0, w, h); sg.globalCompositeOperation = 'source-over';
+        const cw = clamp(heightPx * 0.0011, 0.6, 1.6);
+        for (const [dx, dy] of [[cw, 0], [-cw, 0], [0, cw], [0, -cw]]) g.drawImage(sil, 0, 0, w, h, x0 + dx, y0 + dy, w, h);
+        if (heightPx > 260) X.P.sharpen(og, w, h, 0.4);   // crisper lines and features on the figure's own layer
+      }
       g.drawImage(off, 0, 0, w, h, x0, y0, w, h);
       g.restore();
     },

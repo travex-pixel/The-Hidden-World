@@ -182,7 +182,28 @@ def validate_history(ep: dict, claim_ids: set) -> list:
         for a in s.get("actors", []):
             if a.get("char") and not (ROOT / "characters" / f"{a['char']}.json").exists():
                 errs.append(f"scene {sid}: actor '{a.get('id')}' uses unknown character '{a['char']}'")
+            for ac in a.get("acts", []):
+                if "expr" in ac and ac["expr"] is not None and ac["expr"] not in RIG_EXPRESSIONS:
+                    errs.append(f"scene {sid}: actor '{a.get('id')}' uses unknown expression '{ac['expr']}'")
+        for ln in s.get("lines", []):
+            if ln.get("tone") is not None and ln["tone"] not in KOKORO_TONES:
+                errs.append(f"scene {sid}: line tone must be one of {sorted(KOKORO_TONES)}")
+    if ep.get("voice_engine", "piper") not in ("piper", "kokoro"):
+        errs.append("voice_engine must be 'piper' or 'kokoro'")
+    if ep.get("voice_engine") == "kokoro":
+        import json as _json
+        for who in sorted({ln["who"] for s in ep["scenes"] for ln in s.get("lines", [])}):
+            f = ROOT / "characters" / f"{who}.json"
+            if f.exists() and not (_json.loads(f.read_text()).get("kokoro") or {}).get("voice"):
+                errs.append(f"character '{who}' speaks but has no 'kokoro' voice (voice_engine is kokoro)")
     return errs
+
+
+# names of the history rig's expressions (renderer/history/rig.js, EXPR) and Kokoro delivery tones (pipeline/kokoro.py)
+RIG_EXPRESSIONS = {"neutral", "sleepy", "asleep", "surprised", "shocked", "happy", "delighted", "worried", "determined", "curious",
+                   "smug", "nervous", "stern", "wince", "awe", "sly", "skeptical", "sheepish", "angry", "sad", "relieved", "proud",
+                   "exhausted", "laughing", "horrified", "dreamy", "pleading", "grumpy", "startled", "eager"}
+KOKORO_TONES = {"hook", "curious", "confident", "tense", "reveal", "reflective", "resolve", "playful"}
 
 
 if __name__ == "__main__":

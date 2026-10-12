@@ -97,6 +97,9 @@ def feed_mockup(dest: Path, pub: dict):
 
 def run(out_dir: Path) -> Path:
     plan = json.loads((out_dir / "plan.json").read_text()); ep = plan["episode"]; tl = plan["timeline"]; pub = ep.get("publishing", {})
+    src = ROOT / "episodes" / ep["id"] / "episode.json"   # titles and descriptions are editorial: take the latest wording
+    if src.exists():
+        pub = {**pub, **{k: v for k, v in json.loads(src.read_text()).get("publishing", {}).items() if k != "thumbnails"}}
     dest = out_dir / "publish"; dest.mkdir(exist_ok=True)
     total = tl[-1]["end"]
     ch = chapters(ep, tl)
@@ -105,8 +108,10 @@ def run(out_dir: Path) -> Path:
     desc = [pub.get("description", ep["central_question"]), ""]
     if len(ch) >= 3 and total >= 60:
         desc += ["Chapters"] + [f"{ts(a)} {name}" for a, name in ch] + [""]
-    desc += ["What's real: the coins, the law and the houses are documented history (sources below). You, the baker, the hen and the dialogue are fiction, and labelled on screen.", "",
-             "Sources"] + [f"- {s['title']} — {s['publisher']}: {s['url']}" for s in ep["sources"]] + ["", "Narration: Piper TTS (en_GB-aru-medium, CC BY 4.0 dataset). Music and sound: original, generated in code."]
+    real = pub.get("whats_real") or "What's real: the documented history is listed with its sources below. " + " ".join(c["text"] for c in ep["claims"] if c["type"] == "illustrative")
+    voice = ("Narration: Kokoro-82M v1.0 (Apache-2.0), synthesised offline." if ep.get("voice_engine") == "kokoro"
+             else f"Narration: Piper TTS ({ep.get('narrator_voice', 'en_GB-aru-medium')}, CC BY 4.0 dataset).")
+    desc += [real, "", "Sources"] + [f"- {s['title']} — {s['publisher']}: {s['url']}" for s in ep["sources"]] + ["", f"{voice} Music and sound: original, generated in code."]
     (dest / "description.txt").write_text("\n".join(desc))
     (dest / "sources.md").write_text(source_ledger(ep))
     shutil.copy(out_dir / f"{ep['id']}.srt", dest / f"{ep['id']}.en.srt")

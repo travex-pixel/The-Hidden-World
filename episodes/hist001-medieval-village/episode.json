@@ -7,9 +7,15 @@
   "central_question": "You have one silver penny and need a loaf that costs a quarter of it. How do you pay?",
   "template": "history-pov",
   "narrator_voice": "en_GB-aru-medium",
+  "voice_engine": "kokoro",
+  "engine_version": 3,
+  "kokoro_speed": 1.08,
+  "pronounce": {
+    "1260": "twelve sixty"
+  },
   "target_duration_seconds": [
-    85,
-    96
+    95,
+    115
   ],
   "setting": "A manorial village in the English Midlands, about 1260 (reign of Henry III). Autumn morning, market day.",
   "cast": [
@@ -35,15 +41,18 @@
         {
           "who": "narrator_history",
           "text": "You wake up to a hen pecking at your hand.",
+          "tone": "hook",
           "pause_before": 0.4
         },
         {
           "who": "narrator_history",
-          "text": "In your fist is all the money you have: one silver penny."
+          "text": "In your fist is all the money you have: one silver penny.",
+          "tone": "curious"
         },
         {
           "who": "narrator_history",
           "text": "And you need bread. Today.",
+          "tone": "tense",
           "pause_before": 0.15
         }
       ],
@@ -215,6 +224,13 @@
                 1,
                 0
               ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.8
+              },
+              "expr": "awe"
             }
           ]
         },
@@ -270,15 +286,18 @@
         {
           "who": "narrator_history",
           "text": "One room. Hens included.",
+          "tone": "playful",
           "pause_before": 0.3
         },
         {
           "who": "narrator_history",
-          "text": "No chimney: smoke from the hearth drifts out through the thatch."
+          "text": "No chimney: smoke from the hearth drifts out through the thatch.",
+          "tone": "curious"
         },
         {
           "who": "narrator_history",
-          "text": "Bread means the market. Time to go."
+          "text": "Bread means the market. Time to go.",
+          "tone": "confident"
         }
       ],
       "claims": [
@@ -417,6 +436,20 @@
               "walk": 2020,
               "until": "end-0.5",
               "speed": 240
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.8
+              },
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.2
+              },
+              "expr": "eager"
             }
           ]
         },
@@ -463,15 +496,18 @@
         {
           "who": "narrator_history",
           "text": "Welcome to England, around 1260.",
+          "tone": "confident",
           "pause_before": 0.6
         },
         {
           "who": "narrator_history",
-          "text": "Four in five people live like you: in villages, farming."
+          "text": "Four in five people live like you: in villages, farming.",
+          "tone": "curious"
         },
         {
           "who": "narrator_history",
-          "text": "Timber frames, wattle-and-clay walls, roofs of thatch."
+          "text": "Timber frames, wattle-and-clay walls, roofs of thatch.",
+          "tone": "confident"
         }
       ],
       "claims": [
@@ -577,6 +613,20 @@
                 1,
                 0
               ]
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.6
+              },
+              "expr": "awe"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.5
+              },
+              "expr": "curious"
             }
           ]
         },
@@ -618,19 +668,23 @@
         {
           "who": "baker_hugh",
           "text": "Fresh bread! A farthing a loaf!",
+          "tone": "playful",
           "pause_before": 0.5
         },
         {
           "who": "narrator_history",
-          "text": "It's market day, and bread is serious business."
+          "text": "It's market day, and bread is serious business.",
+          "tone": "confident"
         },
         {
           "who": "narrator_history",
-          "text": "By law, a loaf's weight was tied to the price of grain."
+          "text": "By law, a loaf's weight was tied to the price of grain.",
+          "tone": "curious"
         },
         {
           "who": "narrator_history",
-          "text": "Short-weight bakers were fined. Repeat offenders: the pillory."
+          "text": "Short-weight bakers were fined. Repeat offenders: the pillory.",
+          "tone": "tense"
         }
       ],
       "claims": [
@@ -769,6 +823,20 @@
                 "off": 4.4
               },
               "expr": "happy"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.5
+              },
+              "expr": "eager"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.2
+              },
+              "expr": "horrified"
             }
           ]
         },
@@ -854,6 +922,13 @@
               },
               "expr": "happy",
               "prop": null
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.0
+              },
+              "expr": "eager"
             }
           ]
         }
@@ -873,20 +948,24 @@
         {
           "who": "narrator_history",
           "text": "So you hold out your penny.",
+          "tone": "tense",
           "pause_before": 0.2
         },
         {
           "who": "baker_hugh",
           "text": "A whole penny? For one loaf? I've no change for that!",
+          "tone": "confident",
           "pause_before": 0.4
         },
         {
           "who": "narrator_history",
-          "text": "The problem: the silver penny is the only coin in everyday use."
+          "text": "The problem: the silver penny is the only coin in everyday use.",
+          "tone": "tense"
         },
         {
           "who": "narrator_history",
-          "text": "That's about a day's pay. Your loaf costs a quarter of it."
+          "text": "That's about a day's pay. Your loaf costs a quarter of it.",
+          "tone": "tense"
         }
       ],
       "claims": [
@@ -1033,6 +1112,20 @@
               "gesture": "offer",
               "dur": 0.5,
               "hold": -1
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.3
+              },
+              "expr": "sheepish"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.5
+              },
+              "expr": "pleading"
             }
           ]
         },
@@ -1077,6 +1170,20 @@
                 "off": 1.0
               },
               "expr": "curious"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.6
+              },
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 2.6
+              },
+              "expr": "sly"
             }
           ]
         }
@@ -1097,24 +1204,29 @@
         {
           "who": "narrator_history",
           "text": "So the baker does something wild.",
+          "tone": "reveal",
           "pause_before": 0.4
         },
         {
           "who": "narrator_history",
           "text": "He cuts your money in half. Then in half again.",
+          "tone": "reveal",
           "pause_after": 0.45
         },
         {
           "who": "narrator_history",
-          "text": "Cut halfpennies and farthings were everyday change."
+          "text": "Cut halfpennies and farthings were everyday change.",
+          "tone": "confident"
         },
         {
           "who": "narrator_history",
-          "text": "The cross runs to the coin's edge, and pieces were cut along it."
+          "text": "The cross runs to the coin's edge, and pieces were cut along it.",
+          "tone": "curious"
         },
         {
           "who": "narrator_history",
-          "text": "That's what 'farthing' means: a fourth part."
+          "text": "That's what 'farthing' means: a fourth part.",
+          "tone": "reflective"
         }
       ],
       "claims": [
@@ -1275,19 +1387,23 @@
         {
           "who": "narrator_history",
           "text": "One quarter buys the loaf. Three go back in your purse.",
+          "tone": "resolve",
           "pause_before": 0.4
         },
         {
           "who": "narrator_history",
-          "text": "Not bad for your first day."
+          "text": "Not bad for your first day.",
+          "tone": "playful"
         },
         {
           "who": "narrator_history",
-          "text": "But tomorrow at dawn, the lord's reeve expects you in his fields."
+          "text": "But tomorrow at dawn, the lord's reeve expects you in his fields.",
+          "tone": "tense"
         },
         {
           "who": "narrator_history",
-          "text": "Unpaid. That's your rent."
+          "text": "Unpaid. That's your rent.",
+          "tone": "reflective"
         }
       ],
       "claims": [
@@ -1414,6 +1530,27 @@
                 "off": 0.2
               },
               "expr": "wince"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.5
+              },
+              "expr": "proud"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 2.0
+              },
+              "expr": "horrified"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.0
+              },
+              "expr": "sad"
             }
           ]
         }
@@ -1796,7 +1933,8 @@
           ]
         }
       }
-    ]
+    ],
+    "whats_real": "What's real: the coins, the law and the houses are documented history (sources below). You, the baker, the hen and the dialogue are fiction, and labelled on screen."
   },
   "character_style": "watercolour"
 }

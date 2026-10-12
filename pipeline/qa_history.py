@@ -4,6 +4,7 @@ Checks (each PASS/WARN/FAIL with the measured number):
   model   - foot slip of planted feet (exact, from the rig), camera acceleration spikes, proportion drift
   video   - black frames, frozen stretches, unplanned hard jumps, motion present in every scene
   text    - subtitle durations / reading speed / overlap, subtitle-to-voice alignment in the final mix
+  sound   - loudness and true peak of the MP4, voice over music while speaking, ASR word error rate (mix v2)
   story   - dead air between spoken lines, claims that still need human verification
 Visual quality is NOT judged here: storyboard.png and transitions.png exist so a person can look.
 usage: python -m pipeline.qa_history out/<id>  (run after pipeline.build)
@@ -135,6 +136,25 @@ def run(out_dir: Path) -> dict:
     lead, tail = round(cues[0]["start"], 2), round(total - cues[-1]["end"], 2)
     worst_gap = max(gaps + [lead])
     res.append(check("dead_air_s", "PASS" if worst_gap <= 3.0 else "WARN" if worst_gap <= 4.5 else "FAIL", {"longest_gap": worst_gap, "opening_silence": lead, "outro_after_last_line": tail}, "gaps without speech (music/SFX and motion continue)"))
+
+    # ---------------- sound (mix v2 / Kokoro episodes): loudness of the delivered file, voice over the bed, ASR audit
+    if (out_dir / "audio_mix.json").exists():
+        am = json.loads((out_dir / "audio_mix.json").read_text())
+        err = subprocess.run(["ffmpeg", "-v", "info", "-i", str(mp4), "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
+        summ = err[err.rindex("Summary:"):]
+        I = float(re.search(r"I:\s+(-?[\d.]+) LUFS", summ).group(1)); LRA = float(re.search(r"LRA:\s+(-?[\d.]+) LU", summ).group(1))
+        TP = float(re.search(r"Peak:\s+(-?[\d.]+) dBFS", summ).group(1))
+        res.append(check("loudness", "PASS" if abs(I + 16) <= 1 and TP <= -1.0 else "WARN", {"integrated_lufs": I, "true_peak_dbfs": TP, "lra_lu": LRA},
+                         "target -16 LUFS integrated, true peak <= -1 dBFS (same targets as the true-crime documentaries)"))
+        vb = am["voice_to_bed"]
+        res.append(check("voice_over_music_db", "PASS" if (vb["median_db"] or 0) >= 20 and (vb["p5_db"] or 0) >= 12 else "WARN", vb,
+                         "voice level over score + ambience while someone speaks (50 ms windows); aim >= 20 dB median for phone speakers"))
+        asr = out_dir / "qa" / "asr_audit.json"
+        if asr.exists():
+            a = json.loads(asr.read_text())
+            res.append(check("asr_word_error_rate", "PASS" if a["corpus_wer"] <= 0.12 else "WARN",
+                             {"corpus_wer": a["corpus_wer"], "lines_over_25pct": [(r["script"], r["asr"]) for r in a["lines_over_25pct"]]},
+                             "offline recogniser on the MP4's audio vs the script; mismatches are leads for a listen, not proof of an error"))
 
     # ---------------- historical claims
     review = [{"id": c["id"], "type": c["type"], "text": c["text"][:120]} for c in ep["claims"] if c["type"] in ("estimate", "disputed", "plausible")]

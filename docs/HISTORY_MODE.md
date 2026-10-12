@@ -123,6 +123,65 @@ per scene: `quern` (turns while worked, flour sifting out), `meal`, `stook`, `sh
 **Packaging:** `renderer/history/thumbnail.js` draws thumbnails with the episode's own rig and artwork; rules and
 evidence are in [PACKAGING.md](PACKAGING.md).
 
+## 2c. Engine v3: narration, mix, acting, sharper figures
+
+Opt in per episode with `"voice_engine": "kokoro"` and `"engine_version": 3`. Episodes without them build exactly as
+before, and the crime, office-politics and short-form modes are not touched.
+
+**Narration** (`pipeline/kokoro.py`). It uses the same engine, voice chain and delivery presets as the true-crime
+documentary series (branch `claude/true-crime-documentary-vwz6m8`), so the channels share a sound:
+* **Engine and voices:** Kokoro-82M v1.0 through sherpa-onnx, offline, Apache-2.0, no account or API key. The house
+  narrator is `bm_fable`; characters get their own Kokoro voices (the `kokoro` key in `characters/*.json`).
+* **Synthesis:** every sentence is synthesised separately.
+* **Voice chain:** the same on every sentence: high-pass, low-mid cut, presence lift, de-esser and light compression,
+  then each sentence is matched to a speech-active RMS of −20 dB.
+* **Tones:** every line has a `tone` (`hook`, `curious`, `confident`, `tense`, `reveal`, `reflective`, `resolve`,
+  `playful`). The tone sets speed, the pause between sentences, a beat before reveals and a rest after reflective lines.
+* **Characters in the room:** on-screen characters get a small dark room around their voice; the narrator stays dry
+  and close.
+* **Pronunciation:** `pronounce` respells words for the voice only, so subtitles keep the written form (years,
+  "St Albans").
+
+**Mix v2** (`pipeline/mixdown.py`).
+* **Stereo score:** dry score in the centre plus a decorrelated stereo hall with no low end in the reverb.
+* **Ambience:** gets a short, wide tail.
+* **Effects:** each one panned slightly, with a small room.
+* **Voice:** resampled with an FFT resampler, not linear interpolation.
+* **Ducking follows the voice:** the bed drops 8 dB under speech, and further if needed so the voice stays 21 dB
+  above it. Gaps shorter than about 0.8 s are held, so the music does not pump.
+* **Loudness:** the master is normalised in two passes to −16 LUFS integrated with a −2 dBTP ceiling (a look-ahead
+  limiter trims the few peaks first, so the second pass stays a linear gain). Audio is AAC 192 kb/s at 48 kHz.
+* **QA:** `qa_history` measures loudness, true peak, voice over the bed while someone speaks, and runs
+  `pipeline/asr_audit.py` (offline Moonshine recogniser on the MP4's own audio vs the script).
+
+**Acting.**
+* **Expressions:** 30, up from 14. Every expression carries every face control, so any two blend cleanly.
+* **New controls:** squint, head tilt, raising one brow, smirk, pupil size, teeth, an O-shaped mouth, tears, extra
+  catch-lights, a shadow over the eyes for dread, and cheek hatching for embarrassment.
+* **Automatic layer:** a blink and a small head dip on every change of expression, idle eye darts, and brows that
+  lift on stressed phrases.
+* **Mouths:** shapes come from the dialogue audio. A per-frame vowel roundness from the spectral centroid makes the
+  mouth round on "oo/oh" and wide on "ee".
+* **Readable brows:** bolder brows, drawn faintly through the fringe so the brow acting is not lost under hair.
+* **Expression sheet:** `node pipeline/expression_sheet.mjs out/<id>/plan.json pov sheet.png` draws every expression
+  for review.
+
+**Sharper figures.**
+* **Less softening:** less pigment mottling and bleed on characters.
+* **Contour:** a thin warm outline (the figure's silhouette drawn at four 1 px offsets) separates figures from the
+  painted backgrounds.
+* **Sharpening:** a 3×3 kernel on each figure's own pixels; neighbours outside the figure do not count, so edges get
+  no halo.
+* **Encoding:** CRF 19 with `-tune animation`, which keeps flat colour and line art crisp.
+* **Cost:** about +50% render time per frame.
+
+**Delivery to a phone** (`python -m pipeline.download_page <dir>`).
+* **What it builds:** one private download page listing every video in `releases/catalog.json`, with thumbnails,
+  descriptions, chapters and title options.
+* **Pieces:** each MP4 is stored next to the page as SHA-256-checked pieces of at most 14 MB, and rebuilt on the
+  phone into one file.
+* **Publishing:** the same route the true-crime series uses (see its `CLAUDE.md`).
+
 ## 3. Writing an episode
 
 Scenes keep the existing fields (`id, scene, min_duration, pad_after, music_cue, sfx, claims, transition`) and add:
@@ -165,6 +224,8 @@ every sequence change). **Automated checks do not judge beauty — someone has t
   backgrounds; new periods need new set code (houses, props) or imported painted layers.
 * No generated imagery is used (no image service is configured). The layer system accepts imported PNG layers
   if a licensed painting pipeline is added later — see the cost note in `series/history/ROADMAP.md`.
-* Piper voices are clear but not a professional narrator; a recorded voice would lift the result the most.
+* The Kokoro narrator (engine v3) is the voice chosen for the true-crime series after an audition, but it is still
+  synthetic. The ASR audit flags rare words ("boons", "quern") as leads, and only a listen can confirm them; the
+  mix numbers are measurements, not a listening test. A recorded voice would still lift the result the most.
 * Sources were identified via search; this environment could not open the pages, so the ledger flags every
   source for human verification before publication.

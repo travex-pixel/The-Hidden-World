@@ -10,6 +10,8 @@ from pipeline import audio
 
 QUALITY = {"preview": {"width": 960, "height": 540, "fps": 15, "crf": 24, "preset": "veryfast"},
            "final": {"width": 1920, "height": 1080, "fps": 30, "crf": 21, "preset": "medium"}}
+# engine v3 episodes encode a little finer, tuned for flat colour and line art, so the sharpened figures survive
+QUALITY_V3 = {"final": {"crf": 19, "tune": "animation"}}
 PAGE = "renderer/history/index.html"
 
 
@@ -103,3 +105,27 @@ def write_srt(path, cues: list[dict]) -> None:
     for i, c in enumerate(cues, 1):
         out.append(f"{i}\n{srt_time(c['start'])} --> {srt_time(c['end'])}\n{c['text']}\n")
     path.write_text("\n".join(out))
+
+
+def mux_loudnorm(silent, mix_wav, final, I: float = -16.0, TP: float = -2.0, LRA: float = 11.0) -> dict:
+    """Copy the video stream; loudness-normalise the mix in two passes (measure, then linear gain) and encode
+    AAC 192k at 48 kHz. Same targets as the true-crime documentary series. If the gain needed would push peaks
+    over the true-peak ceiling, a transparent look-ahead limiter takes the few peaks off first, so the second
+    pass stays a plain linear gain (loudnorm would otherwise fall back to dynamic compression)."""
+    import json as _json, subprocess
+
+    def measure(pre: str) -> dict:
+        af = (pre + "," if pre else "") + f"loudnorm=I={I}:TP={TP}:LRA={LRA}:print_format=json"
+        err = subprocess.run(["ffmpeg", "-v", "info", "-i", str(mix_wav), "-af", af, "-f", "null", "-"], capture_output=True, text=True).stderr
+        return _json.loads(err[err.rindex("{"): err.rindex("}") + 1])
+    m = measure(""); pre = ""
+    gain = I - float(m["input_i"])
+    if float(m["input_tp"]) + gain > TP - 0.3:
+        pre = f"volume={gain:.2f}dB,alimiter=limit={10 ** ((TP - 1.0) / 20):.4f}:attack=5:release=60:level=0"
+        m = measure(pre); m["pre_limiter"] = pre
+    af = (pre + "," if pre else "") + (f"loudnorm=I={I}:TP={TP}:LRA={LRA}:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
+                                       f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(mix_wav), "-map", "0:v:0", "-map", "1:a:0",
+                    "-c:v", "copy", "-af", af, "-ar", "48000", "-c:a", "aac", "-b:a", "192k",
+                    "-movflags", "+faststart", "-shortest", str(final)], check=True)
+    return m

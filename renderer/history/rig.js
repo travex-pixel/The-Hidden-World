@@ -120,8 +120,30 @@
     smug:      { open: 0.6, brow: 0.2, browIn: 0.1, smile: 0.6, mouth: 0, blush: 0.2, sweat: 0, wide: 0 },
     nervous:   { open: 1, brow: 0.6, browIn: 0.6, smile: 0.3, mouth: 0.1, blush: 0.2, sweat: 1, wide: 0.3 },
     stern:     { open: 0.75, brow: -0.4, browIn: 0.9, smile: -0.3, mouth: 0, blush: 0, sweat: 0, wide: 0 },
-    wince:     { open: 0.3, brow: 0.3, browIn: 1, smile: -0.6, mouth: 0.2, blush: 0, sweat: 0.5, wide: 0 }
+    wince:     { open: 0.3, brow: 0.3, browIn: 1, smile: -0.6, mouth: 0.2, blush: 0, sweat: 0.5, wide: 0 },
+    // engine v3: finer face controls. squint raises the lower lid; tilt tips the head (+ = down/towards);
+    // browAsym raises the far brow; smirk lifts one mouth corner; iris < 1 shrinks the pupils (shock);
+    // teeth shows teeth in an open mouth; round makes an O; tear, shine (extra catch-lights), gloom (shadow
+    // over the upper face) and blush > 0.75 adds hatching on the cheeks.
+    awe:       { open: 1.15, brow: 0.8, browIn: -0.2, smile: 0.2, mouth: 0.35, blush: 0.3, wide: 0.5, round: 0.8, shine: 1 },
+    sly:       { open: 0.55, brow: 0.1, browAsym: 0.8, smile: 0.5, smirk: 0.9, squint: 0.5, blush: 0.1 },
+    skeptical: { open: 0.7, brow: 0.2, browAsym: 1, browIn: 0.2, smile: -0.15, smirk: 0.4, squint: 0.4, tilt: -0.4 },
+    sheepish:  { open: 0.7, brow: 0.4, browIn: -0.5, smile: 0.35, blush: 1, sweat: 0.5, tilt: 0.5, squint: 0.3 },
+    angry:     { open: 0.85, brow: -0.5, browIn: 1, smile: -0.6, mouth: 0.55, teeth: 0.9, blush: 0.35 },
+    sad:       { open: 0.75, brow: 0.3, browIn: -0.8, smile: -0.5, tear: 0.7, tilt: 0.35 },
+    relieved:  { open: 0.4, brow: 0.3, browIn: -0.4, smile: 0.5, mouth: 0.1, blush: 0.3, squint: 0.3, tilt: -0.2 },
+    proud:     { open: 0.6, brow: 0.15, smile: 0.7, squint: 0.35, tilt: -0.5, blush: 0.25 },
+    exhausted: { open: 0.45, brow: -0.1, browIn: -0.4, smile: -0.25, mouth: 0.15, sweat: 0.7, tilt: 0.45 },
+    laughing:  { open: 0, brow: 0.5, smile: 1, mouth: 0.85, teeth: 0.6, blush: 0.6, tilt: -0.3 },
+    horrified: { open: 1.25, brow: 1, browIn: -0.4, smile: -0.7, mouth: 0.7, round: 0.4, iris: 0.55, sweat: 1, wide: 1, gloom: 1 },
+    dreamy:    { open: 0.55, brow: 0.4, browIn: -0.3, smile: 0.45, blush: 0.6, shine: 1, tilt: 0.4 },
+    pleading:  { open: 1.1, brow: 0.6, browIn: -0.9, smile: -0.2, mouth: 0.15, shine: 1, wide: 0.3 },
+    grumpy:    { open: 0.65, brow: -0.35, browIn: 0.8, smile: -0.5, squint: 0.4 },
+    startled:  { open: 1.2, brow: 1, smile: -0.2, mouth: 0.4, round: 0.6, iris: 0.6, wide: 0.8 },
+    eager:     { open: 1.05, brow: 0.6, smile: 0.6, mouth: 0.3, shine: 1, blush: 0.3 }
   };
+  const EDEF = { open: 1, brow: 0, browIn: 0, smile: 0, mouth: 0, blush: 0.15, sweat: 0, wide: 0, squint: 0, tilt: 0, browAsym: 0, smirk: 0, iris: 1, teeth: 0, round: 0, tear: 0, shine: 0, gloom: 0 };
+  for (const k in EXPR) EXPR[k] = { ...EDEF, ...EXPR[k] };   // every expression carries every control, so any two blend cleanly
   const EKEYS = Object.keys(EXPR.neutral);
 
   // ------------------------------------------------------------------ actor state from an action list
@@ -282,11 +304,29 @@
     const bob = 0;
     // look target & head
     let look = [0, 0]; for (const ac of A.acts) if (ac.look && ac.t <= t) { const u = ease.out3((t - ac.t) / 0.3); look = [lerp(look[0], ac.look[0], u), lerp(look[1], ac.look[1], u)]; }
-    const talk = mouthFn ? mouthFn(A.char, t) : 0;
-    const blink = blinkAt(A.id, t, A.seed || 1);
+    const lip = mouthFn ? mouthFn(A.char, t) : 0;
+    const talk = typeof lip === 'object' ? lip.open : lip, round = (lip && lip.round) || 0, emph = (lip && lip.emph) || 0;
+    // acting layer: a blink and a small head dip with each change of expression (animators' "change on a blink"),
+    // brows that lift on stressed phrases while speaking, and small eye darts when the eyes are otherwise idle
+    let blink = blinkAt(A.id, t, A.seed || 1), dip = 0, lastLook = -1e9;
+    for (const ac of A.acts) {
+      if (ac.look && ac.t <= t) lastLook = ac.t;
+      if (ac.expr === undefined || ac.t > t + 0.05) continue; const d = t - ac.t + 0.05;
+      if (d >= 0 && d < 0.17) blink = Math.max(blink, Math.sin(d / 0.17 * Math.PI));
+      if (d >= 0 && d < 0.7) dip += Math.sin(Math.PI * d / 0.7) * Math.exp(-2.5 * d) * 4.5;
+    }
+    const Ex = { ...E, brow: E.brow + emph * 0.22 };
+    const dart = t - lastLook > 0.8 ? eyeDart(A.id, t, A.seed || 1) : [0, 0];
     let prop = null; for (const ac of A.acts) if (ac.prop !== undefined && ac.t <= t) prop = ac.prop;
-    const nod = talk * 3 * Math.sin(t * 9.5);
-    return { P, E, x: hipX, hip: hip + bob, lean, neck: P.neck + look[1] * 6 - strideTwist + nod, rot: P.rot, ik: P.ik, fN, fF, liftN, liftF, armN, armF, look, talk, blink, facing: dirF, squash: fc.squash, sway, jolt, t, prop, breath, speed };
+    const nod = talk * 3 * Math.sin(t * 9.5) + emph * 2.5 * Math.sin(t * 3.1);
+    const neck = P.neck + look[1] * 6 - strideTwist + nod + dip + E.tilt * 9;
+    return { P, E: Ex, x: hipX, hip: hip + bob, lean, neck, rot: P.rot, ik: P.ik, fN, fF, liftN, liftF, armN, armF, look, dart, talk, round, blink, facing: dirF, squash: fc.squash, sway, jolt, t, prop, breath, speed };
+  }
+  // idle eye movement: a glance to a new spot every 1.4-3.4 s (a fast 70 ms move, then a hold), deterministic per actor
+  function eyeDart(who, t, seed) {
+    const r = X.mulberry32((X.hashStr(who) ^ seed) + 991); let tb = r() * 1.5, prev = [0, 0], cur = [0, 0];
+    while (tb <= t) { prev = cur; cur = [(r() - 0.5) * 0.9, (r() - 0.5) * 0.5]; const nx = tb + 1.4 + r() * 2.0; if (nx > t) break; tb = nx; }
+    const u = smooth(clamp((t - tb) / 0.07, 0, 1)); return [lerp(prev[0], cur[0], u), lerp(prev[1], cur[1], u)];
   }
   function blinkAt(who, t, seed) {
     const r = X.mulberry32(X.hashStr(who) ^ seed); let tb = 0.6 + r() * 1.8;
@@ -339,7 +379,7 @@
     const Lf = [L[0] * st.facing, L[1]];   // light in facing frame
     CUR_L = Lf; STYLE = opts.style || 'anime'; SOFT = opts.softPx || 0;
     if (STYLE === 'watercolour' && !A._wcSpec) A._wcSpec = { ...S, eyeStyle: 'ghibli' };
-    if (STYLE === 'watercolour') { return drawCharacterBody(g, A, st, A._wcSpec, L, Lf, opts); }
+    if (STYLE === 'watercolour') { A._wcSpec.v3 = !!opts.v3; return drawCharacterBody(g, A, st, A._wcSpec, L, Lf, opts); }
     return drawCharacterBody(g, A, st, S, L, Lf, opts);
   }
   function drawCharacterBody(g, A, st, S, L, Lf, opts) {
@@ -501,32 +541,60 @@
     if (S.freckles) { g.fillStyle = rgba(shade(S.skinS, -0.25), 0.6); for (const [fx, fy] of [[0.0, 0.17], [0.05, 0.2], [0.1, 0.17], [0.03, 0.15], [0.28, 0.18], [0.32, 0.21], [0.36, 0.17]]) { g.beginPath(); g.arc(fx, fy, 0.009, 0, 7); g.fill(); } }
     // soft shadow cast by the hair onto the forehead
     g.fillStyle = rgba(S.skinS, 0.55); g.beginPath(); g.ellipse(0.12, -0.2, 0.36, 0.1, 0.05, 0, 7); g.fill();
+    if (E.blush > 0.75) {   // embarrassment: short hatching over the cheeks
+      g.strokeStyle = rgba(shade(S.cheek, -0.2), (E.blush - 0.75) * 2.4); g.lineWidth = lw * 0.7; g.lineCap = 'round';
+      for (const [cx, cy] of [[0.0, 0.2], [0.33, 0.2]]) for (let k = 0; k < 3; k++) { const x = cx + k * 0.035; g.beginPath(); g.moveTo(x, cy - 0.02); g.lineTo(x - 0.022, cy + 0.03); g.stroke(); }
+    }
+    if (E.gloom > 0.05) {   // dread: a cool shadow sliding down over the upper face, with a few fine vertical strokes
+      const gr = g.createLinearGradient(0, -0.16, 0, 0.16); gr.addColorStop(0, rgba('#3b3a6a', 0)); gr.addColorStop(0.35, rgba('#3b3a6a', 0.38 * E.gloom)); gr.addColorStop(1, rgba('#3b3a6a', 0));
+      g.fillStyle = gr; g.fillRect(-0.4, -0.16, 0.9, 0.32);
+      g.strokeStyle = rgba('#2c2b55', 0.45 * E.gloom); g.lineWidth = lw * 0.5;
+      for (let k = 0; k < 5; k++) { const x = 0.0 + k * 0.08; g.beginPath(); g.moveTo(x, -0.1); g.lineTo(x, -0.03 - (k % 2) * 0.025); g.stroke(); }
+    }
     g.restore();
     const ear = new Path2D(); ear.moveTo(-0.16, -0.04); ear.bezierCurveTo(-0.3, -0.1, -0.32, 0.13, -0.17, 0.14); ear.closePath();
     celPath(g, ear, S.skin, S.skinS, null, lw * 0.9, ink, { off: 0.03 });
     g.strokeStyle = rgba(ink, 0.6); g.lineWidth = lw * 0.6; g.beginPath(); g.moveTo(-0.2, 0.0); g.quadraticCurveTo(-0.25, 0.05, -0.2, 0.09); g.stroke();
     const blink = Math.max(st.blink, 0); const open = clamp(E.open * (1 - blink), 0, 1.25);
-    const lx = clamp(st.look[0], -1, 1) * 0.022, ly = clamp(st.look[1], -1, 1) * 0.02;
+    const dart = st.dart || [0, 0];
+    const lx = clamp(st.look[0] + dart[0], -1, 1) * 0.022, ly = clamp(st.look[1] + dart[1], -1, 1) * 0.02;
     const big = S.eyeStyle === 'big' ? 1 : 0.7;
     if (gh) { drawEyeGhibli(g, 0.09, 0.05, 0.068, 0.082, open, E, S, ink, lw, lx, ly, 1.0); drawEyeGhibli(g, 0.33, 0.05, 0.042, 0.078, open, E, S, ink, lw, lx * 0.6, ly, 0.85); }
     else {
       drawEye(g, 0.08, 0.04, 0.105 * big, 0.125 * big, open, E, S, ink, lw, lx, ly, 1.0);
       drawEye(g, 0.33, 0.04, 0.062 * big, 0.118 * big, open, E, S, ink, lw, lx * 0.6, ly, 0.85);
     }
-    const by = -0.11 - E.brow * 0.045 + (S.eyeStyle === 'big' ? 0 : 0.03) + (gh ? 0.0 : 0);
-    g.strokeStyle = gh ? mix(S.brows, S.skin, 0.15) : S.brows; g.lineCap = 'round'; g.lineWidth = lw * (gh ? 1.25 : S.eyeStyle === 'big' ? 2.0 : 3.0);
-    g.beginPath(); g.moveTo(-0.02, by + 0.012); g.quadraticCurveTo(0.07, by - 0.03 + E.browIn * 0.012, 0.16, by + E.browIn * 0.04); g.stroke();
-    g.beginPath(); g.moveTo(0.28, by + E.browIn * 0.04); g.quadraticCurveTo(0.34, by - 0.025 + E.browIn * 0.012, 0.39, by + 0.016); g.stroke();
+    const brows = (alpha, wk) => {
+      const v3 = !!S.v3, bk = v3 ? 0.055 : 0.04;   // v3: bolder brows with a wider range, so they act at video size
+      const by = -0.11 - E.brow * (v3 ? 0.055 : 0.045) + (S.eyeStyle === 'big' ? 0 : 0.03), byF = by - E.browAsym * 0.05;
+      g.strokeStyle = rgba(gh ? mix(S.brows, S.skin, v3 ? 0.05 : 0.15) : S.brows, alpha); g.lineCap = 'round'; g.lineWidth = lw * (gh ? (v3 ? 1.85 : 1.25) : S.eyeStyle === 'big' ? 2.0 : 3.0) * wk;
+      g.beginPath(); g.moveTo(-0.02, by + 0.012); g.quadraticCurveTo(0.07, by - 0.03 + E.browIn * 0.012, 0.16, by + E.browIn * bk); g.stroke();
+      g.beginPath(); g.moveTo(0.28, byF + E.browIn * bk); g.quadraticCurveTo(0.34, byF - 0.025 + E.browIn * 0.012 - E.browAsym * 0.015, 0.39, byF + 0.016); g.stroke();
+    };
+    brows(1, 1);
     if (gh) { g.strokeStyle = rgba(S.skinS, 0.9); g.lineWidth = lw * 0.7; g.beginPath(); g.moveTo(0.425, 0.15); g.quadraticCurveTo(0.44, 0.175, 0.415, 0.18); g.stroke(); }   // a soft hint of a nose
     else { g.strokeStyle = rgba(ink, 0.75); g.lineWidth = lw * 0.8; g.beginPath(); g.moveTo(0.41, 0.11); g.lineTo(0.435, 0.175); g.lineTo(0.405, 0.185); g.stroke(); }
     const mo = clamp(E.mouth + st.talk * 0.6, 0, 1); const sm = E.smile; const mx = 0.28, my = gh ? 0.32 : 0.31;
+    const rnd = clamp(E.round + (st.round || 0) * st.talk * 0.9, 0, 1), sk = E.smirk;   // O-shape: authored + from the vowel being spoken
     if (mo > 0.08) {
-      const mw = (gh ? 0.05 : 0.065) + sm * 0.02, mh = 0.02 + mo * (gh ? 0.065 : 0.075);
-      const m = new Path2D(); m.moveTo(mx - mw, my - sm * 0.012); m.quadraticCurveTo(mx, my - 0.012 - sm * 0.02, mx + mw * 0.8, my - sm * 0.012); m.quadraticCurveTo(mx + mw * 0.2, my + mh * 1.6, mx - mw, my - sm * 0.012); m.closePath();
-      g.fillStyle = '#7a2d2a'; g.fill(m); g.save(); g.clip(m); g.fillStyle = '#d0706a'; g.beginPath(); g.ellipse(mx - 0.005, my + mh * 1.25, mw * 0.6, mh * 0.6, 0, 0, 7); g.fill(); g.fillStyle = '#fff'; g.fillRect(mx - mw, my - 0.03, mw * 1.8, 0.022 + sm * 0.005); g.restore();
+      const mw = ((gh ? 0.066 : 0.065) + sm * 0.022) * (1 - 0.42 * rnd), mh = (0.02 + mo * (gh ? 0.088 : 0.075)) * (1 + 0.3 * rnd);
+      const yl = my - sm * 0.012 - sk * 0.025, yr = my - sm * 0.012 + sk * 0.004;
+      const m = new Path2D(); m.moveTo(mx - mw, yl); m.quadraticCurveTo(mx, my - 0.012 - sm * 0.02 - rnd * 0.012, mx + mw * 0.8, yr); m.quadraticCurveTo(mx + mw * (0.2 + 0.5 * rnd), my + mh * 1.6, mx - mw, yl); m.closePath();
+      g.fillStyle = '#7a2d2a'; g.fill(m); g.save(); g.clip(m); g.fillStyle = '#d0706a'; g.beginPath(); g.ellipse(mx - 0.005, my + mh * 1.25, mw * 0.6, mh * 0.6, 0, 0, 7); g.fill();
+      g.fillStyle = '#fff'; g.fillRect(mx - mw, my - 0.03, mw * 1.8, 0.022 + sm * 0.005 + E.teeth * 0.016);
+      if (E.teeth > 0.5 && sm < 0) { g.fillRect(mx - mw, my + mh * 1.6 - 0.02 - E.teeth * 0.012, mw * 1.8, 0.03); g.strokeStyle = rgba(ink, 0.35); g.lineWidth = lw * 0.4; g.beginPath(); g.moveTo(mx - mw, my + mh * 0.6); g.lineTo(mx + mw, my + mh * 0.6); g.stroke(); }
+      g.restore();
       g.strokeStyle = ink; g.lineWidth = lw * 0.8; g.stroke(m);
     } else {
-      g.strokeStyle = ink; g.lineWidth = lw * 0.9; g.beginPath(); g.moveTo(mx - 0.055, my - sm * 0.015); g.quadraticCurveTo(mx - 0.005, my + sm * 0.035, mx + 0.045, my - sm * 0.02); g.stroke();
+      const hw = gh ? 0.066 : 0.055;
+      g.strokeStyle = ink; g.lineWidth = lw * 0.9; g.beginPath(); g.moveTo(mx - hw, my - sm * 0.022 - sk * 0.03); g.quadraticCurveTo(mx - 0.005, my + sm * 0.045 - sk * 0.006, mx + hw * 0.82, my - sm * 0.026 + sk * 0.006); g.stroke();
+      if (sk > 0.3) { g.lineWidth = lw * 0.6; g.beginPath(); g.moveTo(mx - 0.062, my - sm * 0.015 - sk * 0.04); g.quadraticCurveTo(mx - 0.07, my - sm * 0.01 - sk * 0.025, mx - 0.062, my - sk * 0.01); g.stroke(); }
+    }
+    if (E.tear > 0.05) {   // a welling tear on the near eye, and one running down the cheek
+      g.save(); g.globalAlpha = Math.min(1, E.tear);
+      g.strokeStyle = rgba('#7fc0e6', 0.95); g.lineWidth = lw * 1.3; g.lineCap = 'round'; g.beginPath(); g.moveTo(0.035, 0.125); g.quadraticCurveTo(0.09, 0.145, 0.145, 0.12); g.stroke();
+      const dy = ((t * 0.35) % 1) * 0.14; const d = new Path2D(); d.moveTo(0.07, 0.15 + dy); d.quadraticCurveTo(0.1, 0.2 + dy, 0.07, 0.225 + dy); d.quadraticCurveTo(0.04, 0.2 + dy, 0.07, 0.15 + dy);
+      g.fillStyle = rgba('#cfeaf7', 0.95); g.fill(d); g.strokeStyle = rgba('#5b9cc4', 0.9); g.lineWidth = lw * 0.5; g.stroke(d); g.restore();
     }
     if (S.beard) {
       const bd = new Path2D(); bd.moveTo(-0.1, 0.22); bd.bezierCurveTo(-0.06, 0.5, 0.12, 0.6, 0.26, 0.54); bd.bezierCurveTo(0.38, 0.5, 0.44, 0.36, 0.42, 0.24); bd.quadraticCurveTo(0.36, 0.3, 0.33, 0.27); bd.quadraticCurveTo(0.28, 0.24, 0.22, 0.28); bd.quadraticCurveTo(0.24, 0.38, 0.29, 0.37); bd.quadraticCurveTo(0.24, 0.44, 0.16, 0.42); bd.quadraticCurveTo(0.02, 0.38, -0.02, 0.22); bd.closePath();
@@ -534,6 +602,8 @@
     }
     if (E.sweat > 0.05) { g.save(); g.globalAlpha = Math.min(1, E.sweat); g.translate(-0.08, -0.2 + Math.sin(t * 5) * 0.012); const d = new Path2D(); d.moveTo(0, -0.06); d.quadraticCurveTo(0.05, 0.02, 0, 0.04); d.quadraticCurveTo(-0.05, 0.02, 0, -0.06); celPath(g, d, '#bfe3f2', '#8ec3da', null, lw * 0.8, '#4a7a8f', { off: 0.01 }); g.restore(); }
     if (S.headwear === 'coif') drawCoif(g, S, ink, lw); else drawHairFront(g, S, ink, lw, hairSway, hairJolt, t);
+    // engine v3: brows read through the fringe (an anime convention), so the brow acting is never lost under hair
+    if (gh && S.v3 && S.headwear !== 'coif' && S.hairStyle !== 'bald_fringe') brows(0.55, 1.0);
   }
   function drawEye(g, cx, cy, rx, ry, open, E, S, ink, lw, lx, ly, k) {
     const wide = 1 + E.wide * 0.08; rx *= wide; ry *= wide;
@@ -579,19 +649,23 @@
       else { g.moveTo(cx - rx, cy + ry * 0.15); g.quadraticCurveTo(cx, cy + ry * 0.55, cx + rx, cy + ry * 0.1); }
       g.stroke(); return;
     }
-    const top = cy - ry * (0.2 + 0.8 * Math.min(open, 1)) - (open > 1 ? (open - 1) * ry * 0.35 : 0), bot = cy + ry * 0.85;
+    const top = cy - ry * (0.2 + 0.8 * Math.min(open, 1)) - (open > 1 ? (open - 1) * ry * 0.35 : 0) + E.squint * ry * 0.12, bot = cy + ry * 0.85 * (1 - 0.42 * E.squint);
     const white = new Path2D(); white.moveTo(cx - rx, cy + ry * 0.05); white.bezierCurveTo(cx - rx * 0.8, top, cx + rx * 0.7, top, cx + rx, cy - ry * 0.05); white.bezierCurveTo(cx + rx * 0.8, bot, cx - rx * 0.7, bot, cx - rx, cy + ry * 0.05); white.closePath();
     g.fillStyle = '#fbf6ee'; g.fill(white);
     g.save(); g.clip(white);
-    const ix = cx + lx * 1.2 + rx * 0.06, iy = cy + ly + ry * 0.12, ir = rx * 0.66, iry = ry * 0.92;
+    const ix = cx + lx * 1.2 + rx * 0.06, iy = cy + ly + ry * 0.12, ir = rx * 0.66 * E.iris, iry = ry * 0.92 * (0.4 + 0.6 * E.iris);
     const gr = g.createLinearGradient(0, iy - iry, 0, iy + iry); gr.addColorStop(0, shade(S.eye, -0.7)); gr.addColorStop(0.7, shade(S.eye, -0.45)); gr.addColorStop(1, shade(S.eye, -0.1));
     g.fillStyle = gr; g.beginPath(); g.ellipse(ix, iy, ir, iry, 0, 0, 7); g.fill();
     g.fillStyle = 'rgba(80,40,30,0.18)'; g.fillRect(cx - rx * 1.2, top - ry, rx * 2.4, ry * 1.2);
     g.fillStyle = '#ffffff'; g.beginPath(); g.ellipse(ix - ir * 0.3, iy - iry * 0.38, ir * 0.3, iry * 0.22, -0.3, 0, 7); g.fill();
+    if (E.shine > 0.05) {   // wet, shining eyes: a second catch-light and a soft glint on the lower iris
+      g.globalAlpha = Math.min(1, E.shine); g.beginPath(); g.arc(ix + ir * 0.32, iy + iry * 0.3, ir * 0.16, 0, 7); g.fill();
+      g.fillStyle = 'rgba(255,255,255,0.35)'; g.beginPath(); g.ellipse(ix, iy + iry * 0.55, ir * 0.55, iry * 0.18, 0, 0, 7); g.fill(); g.globalAlpha = 1;
+    }
     g.restore();
     g.strokeStyle = lid; g.lineCap = 'round'; g.lineWidth = lw * 1.5;
     g.beginPath(); g.moveTo(cx - rx * 1.05, cy + ry * 0.08); g.bezierCurveTo(cx - rx * 0.8, top - ry * 0.04, cx + rx * 0.7, top - ry * 0.04, cx + rx * 1.12, cy - ry * 0.12 * k); g.stroke();
-    g.strokeStyle = rgba(lid, 0.35); g.lineWidth = lw * 0.6; g.beginPath(); g.moveTo(cx - rx * 0.5, bot + ry * 0.02); g.quadraticCurveTo(cx, bot + ry * 0.08, cx + rx * 0.6, bot - ry * 0.05); g.stroke();
+    g.strokeStyle = rgba(lid, 0.35 + 0.4 * E.squint); g.lineWidth = lw * (0.6 + 0.4 * E.squint); g.beginPath(); g.moveTo(cx - rx * 0.5, bot + ry * 0.02); g.quadraticCurveTo(cx, bot + ry * 0.08 - E.squint * ry * 0.1, cx + rx * 0.6, bot - ry * 0.05); g.stroke();
   }
   function drawHairBack(g, S, ink, lw, sway, jolt) {
     const p = new Path2D(); const s = sway + jolt;

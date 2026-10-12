@@ -23,6 +23,14 @@ and `python -m pipeline.publish_history out/hist001-medieval-village`. Architect
 [docs/HISTORY_MODE.md](docs/HISTORY_MODE.md). Review pack and QA: [releases/hist001/](releases/hist001/) (v2 re-render in [releases/hist001/v2/](releases/hist001/v2/)). Five-episode plan: [series/history/ROADMAP.md](series/history/ROADMAP.md).
 **H02 — *Why Grinding Your Own Flour Was Banned*** (119 s, a day in the life of a medieval peasant) → [releases/hist002/](releases/hist002/), three title/thumbnail packages for YouTube Test & Compare.
 Titles and thumbnails follow [docs/PACKAGING.md](docs/PACKAGING.md) (rules distilled from [docs/research/packaging_research.md](docs/research/packaging_research.md)).
+**Engine v3** (H02 v2 in [releases/hist002/v2/](releases/hist002/v2/), H01 v3 in [releases/hist001/v3/](releases/hist001/v3/)):
+- **Narration and mix:** the true-crime series' narrator voice (Kokoro `bm_fable`, offline) and its mix standard
+  (voice ≥ 20 dB over the music, −16 LUFS).
+- **Acting:** 30 facial expressions and mouths driven by the audio.
+- **Picture:** sharper figures.
+
+See [docs/HISTORY_MODE.md §2c](docs/HISTORY_MODE.md). To get every video on a phone, run
+`python -m pipeline.download_page <dir>` ([releases/catalog.json](releases/catalog.json)).
 Selected per episode with `"profile": "history"`; every other episode builds exactly as before.
 
 ## How it works

@@ -7,9 +7,17 @@
   "central_question": "You owe the lord your harvest days and your flour. How much of your own life is actually yours?",
   "template": "history-pov",
   "narrator_voice": "en_GB-aru-medium",
+  "voice_engine": "kokoro",
+  "engine_version": 3,
+  "kokoro_speed": 1.08,
+  "pronounce": {
+    "1331": "thirteen thirty-one",
+    "1381": "thirteen eighty-one",
+    "St Albans": "Saint Albans"
+  },
   "target_duration_seconds": [
-    95,
-    120
+    110,
+    135
   ],
   "setting": "The same Midlands manor, c. 1260, at harvest (late August). Flash-forward to St Albans, 1331 and 1381.",
   "cast": [
@@ -40,11 +48,13 @@
         {
           "who": "narrator_history",
           "text": "In 1331, an abbot set his town's hand mills into his floor.",
+          "tone": "hook",
           "pause_before": 0.5
         },
         {
           "who": "narrator_history",
-          "text": "How does a hand mill end up underfoot? Start your day at dawn."
+          "text": "How does a hand mill end up underfoot? Start your day at dawn.",
+          "tone": "curious"
         }
       ],
       "claims": [
@@ -132,16 +142,19 @@
         {
           "who": "narrator_history",
           "text": "Dawn. Somebody is hammering on your door.",
+          "tone": "tense",
           "pause_before": 1.1
         },
         {
           "who": "reeve_walter",
           "text": "Up! It's a boon day. The whole household, in the lord's field!",
+          "tone": "confident",
           "pause_before": 0.2
         },
         {
           "who": "narrator_history",
-          "text": "Today you work for the lord. For free."
+          "text": "Today you work for the lord. For free.",
+          "tone": "confident"
         }
       ],
       "claims": [
@@ -284,6 +297,20 @@
                 "off": 0.2
               },
               "expr": "wince"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.6
+              },
+              "expr": "startled"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.5
+              },
+              "expr": "grumpy"
             }
           ]
         },
@@ -317,6 +344,20 @@
                 "off": 0.0
               },
               "prop": "tally"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "stern"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.6
+              },
+              "expr": "proud"
             }
           ]
         }
@@ -351,15 +392,18 @@
         {
           "who": "narrator_history",
           "text": "At harvest, every household owed the lord extra days of reaping.",
+          "tone": "confident",
           "pause_before": 0.8
         },
         {
           "who": "narrator_history",
-          "text": "Sickle in one hand, stalks in the other. Cut. Bind. Stack. All day."
+          "text": "Sickle in one hand, stalks in the other. Cut. Bind. Stack. All day.",
+          "tone": "playful"
         },
         {
           "who": "narrator_history",
-          "text": "Walter the reeve, a neighbour the village chose, notches it on his tally."
+          "text": "Walter the reeve, a neighbour the village chose, notches it on his tally.",
+          "tone": "curious"
         }
       ],
       "claims": [
@@ -499,6 +543,20 @@
                 -1,
                 -0.3
               ]
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.5
+              },
+              "expr": "determined"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 3.2
+              },
+              "expr": "exhausted"
             }
           ]
         },
@@ -535,6 +593,13 @@
                 "off": 0.6
               },
               "expr": "smug"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.4
+              },
+              "expr": "skeptical"
             }
           ]
         }
@@ -554,19 +619,23 @@
         {
           "who": "narrator_history",
           "text": "The good news? On boon days, the lord had to feed you.",
+          "tone": "playful",
           "pause_before": 0.3
         },
         {
           "who": "narrator_history",
-          "text": "Bread. Cheese. Bacon, if you were lucky. And ale."
+          "text": "Bread. Cheese. Bacon, if you were lucky. And ale.",
+          "tone": "playful"
         },
         {
           "who": "narrator_history",
-          "text": "Manor records literally sorted the days into 'ale' boons..."
+          "text": "Manor records literally sorted the days into 'ale' boons...",
+          "tone": "curious"
         },
         {
           "who": "narrator_history",
           "text": "...and 'dry' boons.",
+          "tone": "reveal",
           "pause_before": 0.15
         }
       ],
@@ -662,6 +731,24 @@
               "dur": 0.3,
               "hold": -1,
               "prop": "bread"
+            },
+            {
+              "t": 0.2,
+              "expr": "happy"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.0
+              },
+              "expr": "laughing"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.5
+              },
+              "expr": "happy"
             }
           ]
         },
@@ -681,6 +768,17 @@
               "dur": 0.3,
               "hold": -1,
               "prop": "bread"
+            },
+            {
+              "t": 0.3,
+              "expr": "relieved"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.4
+              },
+              "expr": "dreamy"
             }
           ]
         },
@@ -726,6 +824,20 @@
               "gesture": "facepalm",
               "dur": 0.3,
               "hold": 1.5
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.6
+              },
+              "expr": "eager"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.5
+              },
+              "expr": "curious"
             }
           ]
         }
@@ -748,11 +860,13 @@
         {
           "who": "narrator_history",
           "text": "Sunset. You've gleaned some grain of your own.",
+          "tone": "reflective",
           "pause_before": 0.6
         },
         {
           "who": "narrator_history",
-          "text": "So you grind it at home on your hand mill, the quern. What could go wrong?"
+          "text": "So you grind it at home on your hand mill, the quern. What could go wrong?",
+          "tone": "playful"
         }
       ],
       "claims": [
@@ -838,6 +952,20 @@
                 "off": 3.0
               },
               "expr": "smug"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.3
+              },
+              "expr": "relieved"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.5
+              },
+              "expr": "sly"
             }
           ]
         }
@@ -857,15 +985,18 @@
         {
           "who": "reeve_walter",
           "text": "Is that a hand mill? In this house?",
+          "tone": "tense",
           "pause_before": 0.3
         },
         {
           "who": "narrator_history",
-          "text": "On many manors, you had to grind at the lord's mill, and hand him a cut of your grain."
+          "text": "On many manors, you had to grind at the lord's mill, and hand him a cut of your grain.",
+          "tone": "tense"
         },
         {
           "who": "narrator_history",
-          "text": "Home grinding dodged his fee. So lords banned hand mills."
+          "text": "Home grinding dodged his fee. So lords banned hand mills.",
+          "tone": "reveal"
         }
       ],
       "claims": [
@@ -957,17 +1088,34 @@
               ]
             },
             {
-              "t": 0.3,
-              "gesture": "hands_up",
-              "dur": 0.25,
-              "hold": 1.6
-            },
-            {
               "t": {
                 "line": 1,
                 "off": 1.5
               },
               "expr": "worried"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.7
+              },
+              "expr": "sheepish"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.7
+              },
+              "gesture": "shrug",
+              "dur": 0.4,
+              "hold": 1.4
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.6
+              },
+              "expr": "pleading"
             }
           ]
         },
@@ -994,6 +1142,24 @@
               "gesture": "shake_fist",
               "dur": 0.3,
               "hold": 1.8
+            },
+            {
+              "t": 0.1,
+              "expr": "angry"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.0
+              },
+              "expr": "stern"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 2.0
+              },
+              "expr": "grumpy"
             }
           ]
         }
@@ -1014,11 +1180,13 @@
         {
           "who": "narrator_history",
           "text": "In 1331, the abbot of St Albans seized the town's hand mills...",
+          "tone": "tense",
           "pause_before": 0.5
         },
         {
           "who": "narrator_history",
-          "text": "...and set the millstones into the floor of his parlour. As a 'memorial'."
+          "text": "...and set the millstones into the floor of his parlour. As a 'memorial'.",
+          "tone": "reveal"
         }
       ],
       "claims": [
@@ -1116,6 +1284,7 @@
         {
           "who": "narrator_history",
           "text": "So the abbey walked on the town's querns. Every day.",
+          "tone": "reflective",
           "pause_before": 0.4
         }
       ],
@@ -1223,6 +1392,14 @@
                 0.3,
                 -0.4
               ]
+            },
+            {
+              "t": 0.2,
+              "expr": "smug"
+            },
+            {
+              "t": "end-2.6",
+              "expr": "proud"
             }
           ]
         }
@@ -1242,15 +1419,18 @@
         {
           "who": "narrator_history",
           "text": "Fifty years later came the revolt of 1381...",
+          "tone": "tense",
           "pause_before": 0.2
         },
         {
           "who": "narrator_history",
-          "text": "...the townsfolk prised up those stones and smashed them."
+          "text": "...the townsfolk prised up those stones and smashed them.",
+          "tone": "tense"
         },
         {
           "who": "narrator_history",
           "text": "Then they handed out the pieces like blessed bread at church.",
+          "tone": "reflective",
           "pause_before": 0.2
         }
       ],
@@ -1380,15 +1560,18 @@
         {
           "who": "narrator_history",
           "text": "Back home, you hide the quern under the straw.",
+          "tone": "resolve",
           "pause_before": 0.4
         },
         {
           "who": "narrator_history",
-          "text": "Your field. Your flour. Your rules. For tonight."
+          "text": "Your field. Your flour. Your rules. For tonight.",
+          "tone": "resolve"
         },
         {
           "who": "narrator_history",
           "text": "Next time: you become a Roman gladiator.",
+          "tone": "playful",
           "pause_before": 0.3
         }
       ],
@@ -1493,6 +1676,34 @@
               "gesture": "hips",
               "dur": 0.4,
               "hold": -1
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.2
+              },
+              "expr": "nervous"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "proud"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.6
+              },
+              "expr": "sly"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "startled"
             }
           ]
         }
@@ -1905,6 +2116,7 @@
           ]
         }
       }
-    ]
+    ],
+    "whats_real": "What's real: boon-work, the lord's mill and its fee, the ban on hand mills, and the St Albans floor of 1331 and its smashing in 1381 are documented history (sources below); the floor's exact look is a reconstruction. You, Walter the reeve, Agnes, Tom and the dialogue are fiction, and labelled on screen."
   }
 }

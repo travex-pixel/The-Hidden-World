@@ -16,6 +16,7 @@ await page.goto(pathToFileURL(resolve(here, '..', 'renderer/history/index.html')
 await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
 await page.addScriptTag({ path: resolve(here, '..', 'renderer/history/thumbnail.js') });
 for (const s of specs) {
+  if (s.character) s.character.engine_version = plan.episode.engine_version;
   await page.evaluate(async ({ s, cast, seed }) => window.THUMB.render(s, cast, seed), { s, cast: plan.cast, seed: plan.seed });
   const out = resolve(outDir, `thumbnail_${s.id}.jpg`);
   await page.locator('#c').screenshot({ path: out, type: 'jpeg', quality: 92 });

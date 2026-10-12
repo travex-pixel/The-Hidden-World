@@ -202,5 +202,65 @@ const R = c.HX.Rig, X = c.HX; const out = (()=>{ %s })(); console.log(JSON.strin
         self.assertTrue(res["same"])
 
 
+class EngineV3(unittest.TestCase):
+    """Expressions, acting layer, Kokoro delivery and mix v2 (engine v3)."""
+    node = RigAndCamera.node
+
+    def test_schema_lists_match_rig_and_voice(self):
+        from pipeline.schema import RIG_EXPRESSIONS, KOKORO_TONES
+        from pipeline import kokoro
+        names = self.node("return Object.keys(R.EXPR);")
+        self.assertEqual(set(names), RIG_EXPRESSIONS)
+        self.assertEqual(set(kokoro.DELIVERY), KOKORO_TONES)
+
+    def test_every_expression_carries_every_control(self):
+        res = self.node("""const keys = Object.keys(R.EXPR.neutral); return Object.entries(R.EXPR).filter(([k, v]) => Object.keys(v).length !== keys.length).map(([k]) => k);""")
+        self.assertEqual(res, [])
+
+    def test_expression_change_blinks_and_eyes_dart(self):
+        res = self.node("""
+          const A = R.compileActor({ id: 'a', x: 0, acts: [{ t: 2, expr: 'angry' }] });
+          const b = R.evaluate(A, 2.05, null).blink, far = R.evaluate(A, 4.0, null);
+          const darts = new Set(); for (let t = 0; t < 12; t += 0.5) darts.add(R.evaluate(A, t, null).dart.map(v => v.toFixed(3)).join(','));
+          return { b, tilt: far.E.tilt, darts: darts.size };""")
+        self.assertGreater(res["b"], 0.5)
+        self.assertGreater(res["darts"], 3)
+
+    def test_unknown_expression_and_tone_are_rejected(self):
+        ep = load_episode("hist002-peasant-day")
+        ep["scenes"][1]["actors"][0]["acts"].append({"t": 1, "expr": "furious"})
+        ep["scenes"][1]["lines"][0]["tone"] = "whisper"
+        with self.assertRaises(EpisodeError) as cm:
+            validate(ep)
+        self.assertIn("furious", str(cm.exception)); self.assertIn("tone", str(cm.exception))
+
+    def test_sentence_split_and_pronunciation(self):
+        from pipeline.narrate import split_sentences, tts_text
+        self.assertEqual(split_sentences("Bread. Cheese. Bacon, if you were lucky. And ale."), ["Bread.", "Cheese.", "Bacon, if you were lucky.", "And ale."])
+        self.assertEqual(tts_text({"pronounce": {"1331": "thirteen thirty-one", "St Albans": "Saint Albans"}}, "In 1331, the abbot of St Albans"),
+                         "In thirteen thirty-one, the abbot of Saint Albans")
+
+    def test_mix_keeps_voice_clear_of_the_bed(self):
+        import numpy as np
+        from pipeline import mixdown
+        sr = 24000; t = np.arange(int(3 * sr)) / sr
+        voice = (0.1 * np.sin(2 * np.pi * 180 * t) * (0.6 + 0.4 * np.sin(2 * np.pi * 4 * t))).astype(np.float32)
+        music = (0.3 * np.sin(2 * np.pi * 440 * np.arange(int(8 * audio.SR)) / audio.SR)).astype(np.float32)   # deliberately loud
+        mixed, st = mixdown.master_mix(8.0, [(2.0, voice, sr)], music, np.zeros_like(music), [], seed=1)
+        r = mixdown.voice_to_bed(st["voice"], st["bed"])
+        self.assertEqual(mixed.shape[1], 2)
+        self.assertGreaterEqual(r["median_db"], 20.0)
+        self.assertLess(float(np.max(np.abs(mixed))), 1.0)
+
+    def test_fft_resample_keeps_pitch_and_length(self):
+        import numpy as np
+        from pipeline.mixdown import fft_resample
+        sr = 24000; x = np.sin(2 * np.pi * 1000 * np.arange(sr) / sr).astype(np.float32)
+        y = fft_resample(x, sr, 44100)
+        self.assertEqual(len(y), 44100)
+        f = np.fft.rfftfreq(len(y), 1 / 44100)[np.argmax(np.abs(np.fft.rfft(y)))]
+        self.assertAlmostEqual(f, 1000, delta=2)
+
+
 if __name__ == "__main__":
     unittest.main()

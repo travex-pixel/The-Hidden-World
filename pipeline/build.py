@@ -96,7 +96,9 @@ def main(argv=None) -> int:
     except EpisodeError as e:
         log(f"ERROR {e}"); return 2
     seed = random.randrange(1, 10**6) if args.seed == "random" else int(args.seed)
-    q = (history.QUALITY if history.is_history(ep) else QUALITY)[args.quality]
+    q = dict((history.QUALITY if history.is_history(ep) else QUALITY)[args.quality])
+    if history.is_history(ep) and int(ep.get("engine_version", 2)) >= 3:
+        q.update(history.QUALITY_V3.get(args.quality, {}))
     out_dir = Path(args.out) if args.out else ROOT / "out" / ep["id"]
     out_dir.mkdir(parents=True, exist_ok=True)
     log(f"episode={ep['id']} seed={seed} quality={args.quality} -> {out_dir}")
@@ -106,7 +108,7 @@ def main(argv=None) -> int:
     (out_dir / "decisions.json").write_text(json.dumps(decisions, indent=2))
 
     # 1. narration (cached)
-    log("narration: synthesising with Piper (cached per line)")
+    log(f"narration: synthesising with {'Kokoro' if ep.get('voice_engine') == 'kokoro' else 'Piper'} (cached per line)")
     length_scale = round(1.0 / float(ep.get("narration_speed", 1.0)), 3)
     narr = narrate_episode(ep, length_scale)
     tl = build_timeline(ep, narr, args.target_duration)
@@ -129,7 +131,7 @@ def main(argv=None) -> int:
     cast_ids = sorted({l["who"] for s_ in tl for l in s_.get("lines", [])} | set(ep.get("cast", [])))
     from pipeline.narrate import load_character
     cast = {cid: load_character(cid) for cid in cast_ids}
-    (out_dir / "timeline.json").write_text(json.dumps([{k: v for k, v in s_.items() if k != "lines"} | ({"lines": [{k: v for k, v in l.items() if k != "env"} for l in s_["lines"]]} if s_.get("lines") else {}) for s_ in tl], indent=2))
+    (out_dir / "timeline.json").write_text(json.dumps([{k: v for k, v in s_.items() if k != "lines"} | ({"lines": [{k: v for k, v in l.items() if k not in ("env", "rnd")} for l in s_["lines"]]} if s_.get("lines") else {}) for s_ in tl], indent=2))
     def _script(s, sc):
         if s.get("lines"):
             body = "\n".join(f"  {l['who'].upper()} [{l['start']:.2f}s]: {l['text']}" for l in s["lines"])
@@ -165,11 +167,21 @@ def main(argv=None) -> int:
             env[a:b] = g
         k = np.ones(fade, np.float32) / fade
         music = (music * np.convolve(env, k, mode="same")).astype(np.float32)
-    if history.is_history(ep):
+    mix_v2 = history.is_history(ep) and (ep.get("voice_engine") == "kokoro" or ep.get("mix") == "v2")
+    if mix_v2:   # pipeline/mixdown.py: stereo space, voice-led ducking, stems for QA; loudness set at mux
+        from pipeline import mixdown
         amb = history.ambience_track(ep, tl, total, seed)
-        music = music[: len(amb)] if len(music) >= len(amb) else np.pad(music, (0, len(amb) - len(music)))
-        music = (music + amb * 10 ** (12 / 20)).astype(np.float32)   # ambience rides on the (ducked) music bus, lifted 12 dB over the score
-    mixed = audio.mix(total, clips, music, sfx_events, seed)
+        mixed, stems = mixdown.master_mix(total, clips, music, amb, sfx_events, seed, **ep.get("mix_levels", {}))
+        audio.write_wav(out_dir / "voice_stem.wav", stems["voice"]); audio.write_wav(out_dir / "bed_stem.wav", stems["bed"])
+        (out_dir / "audio_mix.json").write_text(json.dumps({"mix": "v2", "voice_to_bed": mixdown.voice_to_bed(stems["voice"], stems["bed"]),
+                                                            "levels": ep.get("mix_levels", {})}, indent=2))
+        n_ = min(len(music), len(amb)); music = (music[:n_] + amb[:n_] * 10 ** (12 / 20)).astype(np.float32)
+    else:
+        if history.is_history(ep):
+            amb = history.ambience_track(ep, tl, total, seed)
+            music = music[: len(amb)] if len(music) >= len(amb) else np.pad(music, (0, len(amb) - len(music)))
+            music = (music + amb * 10 ** (12 / 20)).astype(np.float32)   # ambience rides on the (ducked) music bus, lifted 12 dB over the score
+        mixed = audio.mix(total, clips, music, sfx_events, seed)
     timings["audio_s"] = round(time.time() - T0 - timings["narration_s"], 1)
     audio.write_wav(out_dir / "mix.wav", mixed)
     audio.write_wav(out_dir / "music_only.wav", music)
@@ -188,7 +200,7 @@ def main(argv=None) -> int:
         if missing:
             log(f"ERROR: missing art files {missing}"); return 4
     log(f"visual mode: {'history (painted 2.5D canvas)' if history.is_history(ep) else visual}")
-    plan = {"visual": visual, "art": art, "cast": cast, "width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed,
+    plan = {"visual": visual, "art": art, "cast": cast, "width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], **({"tune": q["tune"]} if q.get("tune") else {}), "seed": seed,
             "timeline": [{**s, "decisions": decisions["scenes"][s["id"]]} for s in tl], "episode": ep,
             "scenes_js": f"renderer/scenes/{ep['id']}.js"}
     if history.is_history(ep):
@@ -216,9 +228,15 @@ def main(argv=None) -> int:
 
     # 4. mux
     final = out_dir / f"{ep['id']}.mp4"
-    log("mux: combining video and audio")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out_dir / "mix.wav"), "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
-                    "-movflags", "+faststart", "-shortest", str(final)], check=True)
+    if mix_v2:
+        log("mux: H.264 + AAC 192k, two-pass loudnorm (-16 LUFS, -2 dBTP)")
+        m = history.mux_loudnorm(silent, out_dir / "mix.wav", final)
+        rep_ = json.loads((out_dir / "audio_mix.json").read_text()); rep_["loudnorm_input"] = m
+        (out_dir / "audio_mix.json").write_text(json.dumps(rep_, indent=2))
+    else:
+        log("mux: combining video and audio")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out_dir / "mix.wav"), "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+                        "-movflags", "+faststart", "-shortest", str(final)], check=True)
 
     # 5. verify
     log("verify: probing, decoding, contact sheet")
