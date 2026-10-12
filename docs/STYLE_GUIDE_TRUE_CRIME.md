@@ -21,6 +21,8 @@ On the owner's Instagram, this episode has done best so far. That is the owner's
 
 Since Case File 10, every episode follows these points. The NEXT CASE tease comes after the callback line.
 
+**Update, 2026-10-12.** Gilgo Beach (Case File 07) became the best performer: 1.6k views, 25 likes, 4 saves and 1 repost in 12 hours, as reported by the owner. It shares the BTK pattern in its first line: an **everyday object meets an infamous killer** ("A pizza crust thrown in a Manhattan trash can helped crack the Gilgo Beach killings"). It names the object and the case but holds back *how* the object worked, and that "how" becomes the payoff. It also has a recent, closed case (2026 plea and sentence), a justice ending, and a respectful memorial line. From Case File 15 onward, episodes lead with that pairing.
+
 ## Facts and fairness
 - Every narrated claim maps to a claim in `episode.json` with at least two independent sources. The episode's `research.md` separates established facts, allegations (attributed), defence positions, court procedure and unresolved questions.
 - **Ongoing cases:**
