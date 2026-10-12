@@ -1,0 +1,1254 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR) on the MP4's own audio track",
+ "lines": 105,
+ "corpus_wer": 0.047,
+ "lines_over_25pct": [
+  {
+   "scene": "w00_wake",
+   "who": "villager_tom",
+   "t": 11.787,
+   "script": "What man artow?",
+   "asr": "What man are to?",
+   "wer": 0.5,
+   "diffs": [
+    [
+     "ar",
+     "are"
+    ],
+    [
+     "too",
+     "to"
+    ]
+   ]
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 127.539,
+   "script": "handwashing cut deaths from about eighteen percent to around two.",
+   "asr": "Handwashing cut deaths from about 18% to around 2.",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "eighteen",
+     "∅"
+    ],
+    [
+     "percent",
+     "18"
+    ],
+    [
+     "two",
+     "2"
+    ]
+   ]
+  },
+  {
+   "scene": "w07_profit",
+   "who": "narrator_history",
+   "t": 201.879,
+   "script": "the Bardi and the Peruzzi, are going to collapse.",
+   "asr": "The bar D and the pay route C are going to collapse.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "dee",
+     "d"
+    ],
+    [
+     "peh",
+     "pay"
+    ],
+    [
+     "root",
+     "route"
+    ],
+    [
+     "see",
+     "c"
+    ]
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "scene": "w00_wake",
+   "who": "narrator_history",
+   "t": 0.718,
+   "script": "You wake up face down in a wet field. No phone. No signal. No idea how you got here.",
+   "asr": "You wake up face down in a wet field. No phone. No signal. No idea how you got here.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w00_wake",
+   "who": "narrator_history",
+   "t": 8.553,
+   "script": "And a man with a sickle is staring at your hoodie.",
+   "asr": "And a man with a sickle is staring at your hoodie.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w00_wake",
+   "who": "villager_tom",
+   "t": 11.787,
+   "script": "What man artow?",
+   "asr": "What man are to?",
+   "wer": 0.5,
+   "diffs": [
+    [
+     "ar",
+     "are"
+    ],
+    [
+     "too",
+     "to"
+    ]
+   ]
+  },
+  {
+   "scene": "w00_wake",
+   "who": "narrator_history",
+   "t": 13.956,
+   "script": "That's English. Just not yours.",
+   "asr": "That's English. Just not yours.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w01_hook",
+   "who": "narrator_history",
+   "t": 17.759,
+   "script": "It's 1340. In about eight years, the Black Death will kill something like half of England.",
+   "asr": "It's 1340. In about eight years, the Black Death will kill something like half of England.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w01_hook",
+   "who": "narrator_history",
+   "t": 23.897,
+   "script": "You know it's coming. Nobody else does.",
+   "asr": "You know it's coming nobody else does",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w01_hook",
+   "who": "narrator_history",
+   "t": 27.831,
+   "script": "So could seven centuries of hindsight change history? Or would 1340 eat you alive?",
+   "asr": "So could seven centuries of hindsight change history or would 1340 eat you alive?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w02_stranger",
+   "who": "narrator_history",
+   "t": 37.931,
+   "script": "Walking into the village is your first mistake.",
+   "asr": "Walking into the village is your first mistake.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w02_stranger",
+   "who": "narrator_history",
+   "t": 41.225,
+   "script": "Strangers are trouble.",
+   "asr": "Strangers are trouble.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w02_stranger",
+   "who": "narrator_history",
+   "t": 43.097,
+   "script": "Every man over twelve is meant to be in a tithing: neighbours who answer for each other.",
+   "asr": "Every man over 12 is meant to be in a tithing, neighbors who answer for each other.",
+   "wer": 0.118,
+   "diffs": [
+    [
+     "twelve",
+     "12"
+    ],
+    [
+     "neighbours",
+     "neighbors"
+    ]
+   ]
+  },
+  {
+   "scene": "w02_stranger",
+   "who": "narrator_history",
+   "t": 47.94,
+   "script": "No lord, no family, no tithing. Nobody to vouch for you.",
+   "asr": "No Lord, no family, no tithing. No body to vouch for you.",
+   "wer": 0.182,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "nobody",
+     "body"
+    ]
+   ]
+  },
+  {
+   "scene": "w02_stranger",
+   "who": "reeve_walter",
+   "t": 53.322,
+   "script": "Who's your lord, stranger? Who answers for you?",
+   "asr": "Who's your lord, stranger, who answers for you?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w02_stranger",
+   "who": "narrator_history",
+   "t": 56.879,
+   "script": "And the hoodie is not helping.",
+   "asr": "And the hoodie is not helping",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w03_broke",
+   "who": "narrator_history",
+   "t": 59.753,
+   "script": "Ordinary people speak a local English that sounds half foreign.",
+   "asr": "Ordinary people speak a local English that sounds half foreign.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w03_broke",
+   "who": "narrator_history",
+   "t": 63.798,
+   "script": "Lords speak French. The records are in Latin. You catch words, not conversations.",
+   "asr": "Lord speak French. The records are in Latin. You catch words, not conversations.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "lords",
+     "lord"
+    ]
+   ]
+  },
+  {
+   "scene": "w03_broke",
+   "who": "narrator_history",
+   "t": 70.316,
+   "script": "And you're broke. Money means silver pennies.",
+   "asr": "And you broke. Money means silver pennies.",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "you're",
+     "you"
+    ]
+   ]
+  },
+  {
+   "scene": "w03_broke",
+   "who": "narrator_history",
+   "t": 74.299,
+   "script": "England doesn't even have a regular gold coin yet.",
+   "asr": "England doesn't even have a regular gold coin yet.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w03_broke",
+   "who": "villager_agnes",
+   "t": 78.005,
+   "script": "Let the stranger work. I'll answer for this one.",
+   "asr": "Let the stranger work. I'll answer for this one.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w03_broke",
+   "who": "narrator_history",
+   "t": 81.173,
+   "script": "So you become a thatcher's helper, for about a penny and a half a day.",
+   "asr": "So you become a Thatcher's Helper for about a penny and a half a day.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w03_broke",
+   "who": "narrator_history",
+   "t": 85.557,
+   "script": "Welcome to the bottom.",
+   "asr": "Welcome to the bottom.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 88.647,
+   "script": "Your first real advantage is invisible. Germs.",
+   "asr": "Your first real advantage is invisible. Germs.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 92.811,
+   "script": "Look at this yard.",
+   "asr": "Look at this yard",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 94.637,
+   "script": "The dung heap and the privy sit uphill, and their runoff trickles past the well.",
+   "asr": "The dung heap in the privy sit uphill and their runoff trickles past the well.",
+   "wer": 0.067,
+   "diffs": [
+    [
+     "and",
+     "in"
+    ]
+   ]
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 99.196,
+   "script": "Forget the myth that people only drank ale. They drank water.",
+   "asr": "Forget the myths that people only drank ale. They drank water.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "myth",
+     "myths"
+    ]
+   ]
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 103.838,
+   "script": "London had piped water from the 1240s.",
+   "asr": "London had piped water from the 1240s.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 106.98,
+   "script": "What nobody had was germ theory. Doctors blamed bad air and the stars.",
+   "asr": "What nobody had was germ-sery. Doctors blamed bad air in the stars.",
+   "wer": 0.154,
+   "diffs": [
+    [
+     "theory",
+     "sery"
+    ],
+    [
+     "and",
+     "in"
+    ]
+   ]
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 112.64,
+   "script": "So you shift the dung heap downstream, cover the well, and boil the drinking water.",
+   "asr": "So you shift the dung heap downstream, cover the well and boil the drinking water.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_well",
+   "who": "villager_agnes",
+   "t": 117.255,
+   "script": "You're boiling water? For what, soup with nothing in it?",
+   "asr": "You're boiling water for what soup with nothing in it",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 121.064,
+   "script": "It looks mad.",
+   "asr": "It looks mad",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 123.076,
+   "script": "But in 1847, in one Vienna maternity ward,",
+   "asr": "But in 1847, in one Vienna maternity ward.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 127.539,
+   "script": "handwashing cut deaths from about eighteen percent to around two.",
+   "asr": "Handwashing cut deaths from about 18% to around 2.",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "eighteen",
+     "∅"
+    ],
+    [
+     "percent",
+     "18"
+    ],
+    [
+     "two",
+     "2"
+    ]
+   ]
+  },
+  {
+   "scene": "w04_well",
+   "who": "narrator_history",
+   "t": 131.963,
+   "script": "Maybe fewer children get sick this winter. Nobody will know why. Except you.",
+   "asr": "Maybe fewer children get sick this winter. Nobody will know why. Accept you.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "except",
+     "accept"
+    ]
+   ]
+  },
+  {
+   "scene": "w05_wool",
+   "who": "narrator_history",
+   "t": 139.769,
+   "script": "England's real wealth is wool, its great export.",
+   "asr": "England's real wealth is wool, it's great export.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "its",
+     "it's"
+    ]
+   ]
+  },
+  {
+   "scene": "w05_wool",
+   "who": "narrator_history",
+   "t": 143.193,
+   "script": "And the king borrows against it from Italian bankers.",
+   "asr": "and the King borrows against it from Italian bankers.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w05_wool",
+   "who": "merchant_hamo",
+   "t": 146.767,
+   "script": "Sixty sacks for Flanders. Mark the tally.",
+   "asr": "60 sacks for Flanders mark the tally",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "sixty",
+     "60"
+    ]
+   ]
+  },
+  {
+   "scene": "w05_wool",
+   "who": "narrator_history",
+   "t": 150.204,
+   "script": "Master Hamo keeps accounts like everyone else: Roman numerals,",
+   "asr": "Master Hemo keeps accounts like everyone else, Roman numerals.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "hamo",
+     "hemo"
+    ]
+   ]
+  },
+  {
+   "scene": "w05_wool",
+   "who": "narrator_history",
+   "t": 154.373,
+   "script": "notched tally sticks, and counters slid across a cloth.",
+   "asr": "Notch tally sticks and counters slid across a cloth.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "notched",
+     "notch"
+    ]
+   ]
+  },
+  {
+   "scene": "w05_wool",
+   "who": "narrator_history",
+   "t": 158.015,
+   "script": "So you pick up his quill and write the numbers you learned in primary school.",
+   "asr": "So you pick up his quill and write the numbers you learned in primary school.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w06_ledger",
+   "who": "narrator_history",
+   "t": 162.61,
+   "script": "Roman numerals are fine for recording a sum. They're terrible for working one out.",
+   "asr": "Roman numerals are fine for recording a sum. They are terrible for working one out.",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "∅",
+     "they"
+    ],
+    [
+     "they're",
+     "are"
+    ]
+   ]
+  },
+  {
+   "scene": "w06_ledger",
+   "who": "narrator_history",
+   "t": 168.64,
+   "script": "Hindu-Arabic numerals let you add, carry and check, column by column.",
+   "asr": "Hindu Arabic numerals let you add, carry and check, column by column.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w06_ledger",
+   "who": "narrator_history",
+   "t": 173.442,
+   "script": "Italian merchants already know this.",
+   "asr": "Italian merchants already know this.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w06_ledger",
+   "who": "narrator_history",
+   "t": 176.33,
+   "script": "In 1299, Florence's money-changers even banned them from their account books.",
+   "asr": "In 1299, Florence's money changers even banned them from their account books.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w06_ledger",
+   "who": "narrator_history",
+   "t": 182.047,
+   "script": "And in Genoa, right now,",
+   "asr": "And in chenowa right now",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "genoa",
+     "chenowa"
+    ]
+   ]
+  },
+  {
+   "scene": "w06_ledger",
+   "who": "narrator_history",
+   "t": 184.862,
+   "script": "clerks are keeping what was long called the oldest surviving double-entry ledger.",
+   "asr": "Clerks are keeping what was long called the oldest surviving double entry ledger.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w07_profit",
+   "who": "narrator_history",
+   "t": 190.307,
+   "script": "Faster sums mean fewer mistakes. Fewer mistakes mean money.",
+   "asr": "Faster sums mean fewer mistakes. Fewer mistakes mean money.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w07_profit",
+   "who": "merchant_hamo",
+   "t": 195.271,
+   "script": "Teach my clerk this, and you'll eat meat on Sundays.",
+   "asr": "Teach my clerk this and you'll eat meat on Sundays.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w07_profit",
+   "who": "narrator_history",
+   "t": 198.522,
+   "script": "Then you remember: the king's Florentine bankers,",
+   "asr": "Then you remember the king's Florentine bankers.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w07_profit",
+   "who": "narrator_history",
+   "t": 201.879,
+   "script": "the Bardi and the Peruzzi, are going to collapse.",
+   "asr": "The bar D and the pay route C are going to collapse.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "dee",
+     "d"
+    ],
+    [
+     "peh",
+     "pay"
+    ],
+    [
+     "root",
+     "route"
+    ],
+    [
+     "see",
+     "c"
+    ]
+   ]
+  },
+  {
+   "scene": "w07_profit",
+   "who": "narrator_history",
+   "t": 205.805,
+   "script": "So you tell Hamo to call in every debt the Italians owe him. Now you're not a stranger.",
+   "asr": "So you tell Hamo to call in every debt the Italians owe him. Now you're not a stranger.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w07_profit",
+   "who": "narrator_history",
+   "t": 212.761,
+   "script": "You're useful.",
+   "asr": "You're useful.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w08_engine",
+   "who": "narrator_history",
+   "t": 215.234,
+   "script": "Success goes to your head. Time for something big. A steam engine.",
+   "asr": "Success goes to your head. Time for something big. A steam engine.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w08_engine",
+   "who": "smith_wat",
+   "t": 220.682,
+   "script": "A pot that pushes a beam? With fire?",
+   "asr": "A part that pushes a beam with fire",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "pot",
+     "part"
+    ]
+   ]
+  },
+  {
+   "scene": "w08_engine",
+   "who": "narrator_history",
+   "t": 224.281,
+   "script": "You know the principle. Boil water in a sealed boiler, and let the steam drive a piston.",
+   "asr": "You know the principle. Boil water in a sealed boiler and let the steam drive a piston.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w08_engine",
+   "who": "narrator_history",
+   "t": 229.988,
+   "script": "But the cylinder must be smooth and tight.",
+   "asr": "But the cylinder must be smooth and tight.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w08_engine",
+   "who": "narrator_history",
+   "t": 233.072,
+   "script": "Wat's hand-forged iron and hooped wooden barrel leak everywhere.",
+   "asr": "Watts hand forged iron and hooped wooden barrel leak everywhere.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "wat's",
+     "watts"
+    ]
+   ]
+  },
+  {
+   "scene": "w08_engine",
+   "who": "narrator_history",
+   "t": 237.299,
+   "script": "Pressure builds. And it has nowhere to go.",
+   "asr": "Pressure builds and it has nowhere to go.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w09_why",
+   "who": "narrator_history",
+   "t": 244.602,
+   "script": "The idea wasn't wrong. Everything underneath it was missing.",
+   "asr": "The idea wasn't wrong. Everything underneath it was missing.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w09_why",
+   "who": "narrator_history",
+   "t": 249.991,
+   "script": "The first working steam engine arrives in 1712.",
+   "asr": "The first working steam engine arrives in 1712.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w09_why",
+   "who": "narrator_history",
+   "t": 253.828,
+   "script": "Even Watt's needed cylinders bored truly round, by a machine patented in 1774.",
+   "asr": "Even watts needed cylinders bored truly round by a machine patented in 1774.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "watt's",
+     "watts"
+    ]
+   ]
+  },
+  {
+   "scene": "w09_why",
+   "who": "narrator_history",
+   "t": 260.05,
+   "script": "Knowing how something works is not the same as being able to make it.",
+   "asr": "Knowing how something works is not the same as being able to make it.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w10_rumour",
+   "who": "narrator_history",
+   "t": 265.208,
+   "script": "Now the village is talking.",
+   "asr": "Now the village is talking.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w10_rumour",
+   "who": "narrator_history",
+   "t": 267.62,
+   "script": "The stranger who boils water, talks about the future, and blew up the smithy.",
+   "asr": "The stranger who boils water talks about the future and blew up the smithy.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w10_rumour",
+   "who": "reeve_walter",
+   "t": 272.465,
+   "script": "Some say you're mad. Some say you're a liar.",
+   "asr": "Some say you mad some say you're a liar",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "you're",
+     "you"
+    ]
+   ]
+  },
+  {
+   "scene": "w10_rumour",
+   "who": "narrator_history",
+   "t": 275.583,
+   "script": "Good news: England has no law against witchcraft yet. That comes in 1542.",
+   "asr": "Good news England has no law against witchcraft yet. That comes in 1542.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w10_rumour",
+   "who": "narrator_history",
+   "t": 281.819,
+   "script": "Bad news: a self-styled prophet could still be called mad,",
+   "asr": "Bad news: a self-styled prophet could still be called mad.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w10_rumour",
+   "who": "narrator_history",
+   "t": 285.684,
+   "script": "a fraud or a troublemaker, and hauled before the church.",
+   "asr": "A fraud or a troublemaker and hold before the church.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "hauled",
+     "hold"
+    ]
+   ]
+  },
+  {
+   "scene": "w10_rumour",
+   "who": "narrator_history",
+   "t": 289.577,
+   "script": "You need protection. You need a lord.",
+   "asr": "You need protection. You need a lord.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w11_hall",
+   "who": "narrator_history",
+   "t": 294.115,
+   "script": "Sir Ralph has heard about the stranger. He wants one thing: an edge in the king's war.",
+   "asr": "Sir Ralph has heard about the stranger. He wants one thing, an edge in the king's war.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w11_hall",
+   "who": "narrator_history",
+   "t": 299.923,
+   "script": "This January, Edward the Third declared himself King of France.",
+   "asr": "This January, Edward III declared himself king of France.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "the",
+     "∅"
+    ],
+    [
+     "third",
+     "iii"
+    ]
+   ]
+  },
+  {
+   "scene": "w11_hall",
+   "who": "narrator_history",
+   "t": 304.246,
+   "script": "In June, his fleet smashed the French at Sluys.",
+   "asr": "In June, his fleet smashed the French at Sleuss.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "slooce",
+     "sleuss"
+    ]
+   ]
+  },
+  {
+   "scene": "w11_hall",
+   "who": "lord_ralph",
+   "t": 307.697,
+   "script": "They say you know what's coming. So tell me. How do we win?",
+   "asr": "They say you know what's coming so tell me how do we win",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w11_hall",
+   "who": "narrator_history",
+   "t": 312.153,
+   "script": "You could tell him about Crécy, six years from now. You could tell him about guns.",
+   "asr": "You could tell him about crazy six years from now you could tell him about guns",
+   "wer": 0.118,
+   "diffs": [
+    [
+     "cr",
+     "∅"
+    ],
+    [
+     "cy",
+     "crazy"
+    ]
+   ]
+  },
+  {
+   "scene": "w11_hall",
+   "who": "narrator_history",
+   "t": 318.026,
+   "script": "A few early cannon were probably there.",
+   "asr": "A few early cannon were probably there.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w11_hall",
+   "who": "narrator_history",
+   "t": 321.336,
+   "script": "But you came to warn him about something deadlier than the French.",
+   "asr": "But you came to warn him about something deadlier than the French.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w12_warning",
+   "who": "narrator_history",
+   "t": 325.863,
+   "script": "So you tell him the truth.",
+   "asr": "So you tell him the truth.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w12_warning",
+   "who": "narrator_history",
+   "t": 327.979,
+   "script": "In eight summers, a pestilence will come off the ships in Dorset.",
+   "asr": "In eight summers, a pestilence will come off the ships in Dorset.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w12_warning",
+   "who": "lord_ralph",
+   "t": 332.216,
+   "script": "A fever? You'd have me fear a fever more than the French?",
+   "asr": "A fever you'd have me fear a fever more than the French",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w12_warning",
+   "who": "narrator_history",
+   "t": 336.477,
+   "script": "He laughs. The whole hall laughs.",
+   "asr": "He laughs. The whole whole laughs.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "hall",
+     "whole"
+    ]
+   ]
+  },
+  {
+   "scene": "w12_warning",
+   "who": "narrator_history",
+   "t": 339.856,
+   "script": "Being right is not the same as being believed.",
+   "asr": "Being right is not the same as being believed.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w13_plague",
+   "who": "narrator_history",
+   "t": 344.189,
+   "script": "Midsummer, 1348. Plague comes ashore at Melcombe, in Dorset.",
+   "asr": "Midsummer 1348. Plague comes ashore at Melcom in Dorset.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "melcombe",
+     "melcom"
+    ]
+   ]
+  },
+  {
+   "scene": "w13_plague",
+   "who": "narrator_history",
+   "t": 349.994,
+   "script": "By November, it's in London. Through 1349, it reaches almost everywhere.",
+   "asr": "By November it's in London. Through 1349 it reaches almost everywhere.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w13_plague",
+   "who": "narrator_history",
+   "t": 356.8,
+   "script": "Somewhere between forty and sixty percent of people die.",
+   "asr": "Somewhere between 40 and 60 percent of people die.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "forty",
+     "40"
+    ],
+    [
+     "sixty",
+     "60"
+    ]
+   ]
+  },
+  {
+   "scene": "w13_plague",
+   "who": "narrator_history",
+   "t": 360.762,
+   "script": "You know the killer: a bacterium, Yersinia pestis, probably carried by fleas.",
+   "asr": "You know the killer of bacterium, Yosinia pestis, probably carried by fleas.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "a",
+     "of"
+    ],
+    [
+     "yersinia",
+     "yosinia"
+    ]
+   ]
+  },
+  {
+   "scene": "w13_plague",
+   "who": "narrator_history",
+   "t": 365.572,
+   "script": "Exactly how it spread is still argued about.",
+   "asr": "Exactly how it's spread is still argued about.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "it",
+     "it's"
+    ]
+   ]
+  },
+  {
+   "scene": "w13_plague",
+   "who": "narrator_history",
+   "t": 368.611,
+   "script": "You can't make antibiotics. Streptomycin won't exist until 1943.",
+   "asr": "You can't make antibiotics. Streptomycin won't exist until 1943.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w13_plague",
+   "who": "narrator_history",
+   "t": 374.975,
+   "script": "But one idea needs no technology at all: keep the sick and the strangers apart.",
+   "asr": "But one idea needs no technology at all, keep the sick and the strangers apart.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w13_plague",
+   "who": "narrator_history",
+   "t": 380.298,
+   "script": "Ragusa will try it in 1377, with thirty days of isolation.",
+   "asr": "Raguzar will try it in 1377 with 30 days of isolation.",
+   "wer": 0.182,
+   "diffs": [
+    [
+     "ragusa",
+     "raguzar"
+    ],
+    [
+     "thirty",
+     "30"
+    ]
+   ]
+  },
+  {
+   "scene": "w14_branch",
+   "who": "narrator_history",
+   "t": 386.742,
+   "script": "So let's play it out. Everything from here is speculation.",
+   "asr": "So let's play it out. Everything from here is speculation.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w14_branch",
+   "who": "narrator_history",
+   "t": 391.688,
+   "script": "Your village boils its water, isolates the sick, and shuts out travellers.",
+   "asr": "Your village boils its water, isolates the sick and shuts out travellers.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w14_branch",
+   "who": "narrator_history",
+   "t": 396.55,
+   "script": "Maybe more of it survives.",
+   "asr": "Maybe more of it survives.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w14_branch",
+   "who": "narrator_history",
+   "t": 398.871,
+   "script": "After the plague, workers are scarce, so wages rise. Hamo's bookkeeping spreads.",
+   "asr": "After the plague, workers are scarce, so wages rise. Hamo's bookkeeping spreads.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w14_branch",
+   "who": "narrator_history",
+   "t": 404.85,
+   "script": "A market town grows.",
+   "asr": "A market town grows",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w14_branch",
+   "who": "narrator_history",
+   "t": 407.12,
+   "script": "A wall. A clock tower. A quay full of wool ships. A town that never was.",
+   "asr": "A wall A clock tower A keyfall of wall ships A town that never was",
+   "wer": 0.188,
+   "diffs": [
+    [
+     "quay",
+     "∅"
+    ],
+    [
+     "full",
+     "keyfall"
+    ],
+    [
+     "wool",
+     "wall"
+    ]
+   ]
+  },
+  {
+   "scene": "w14_branch",
+   "who": "narrator_history",
+   "t": 414.907,
+   "script": "Or not. Plague moved by ship and road across a whole continent.",
+   "asr": "Or not, plague moved by ship and rode across a whole continent.",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "road",
+     "rode"
+    ]
+   ]
+  },
+  {
+   "scene": "w14_branch",
+   "who": "narrator_history",
+   "t": 419.968,
+   "script": "One village can't wall it out.",
+   "asr": "One village can't wall it out.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 423.448,
+   "script": "So, could you really change history?",
+   "asr": "So could you really change history?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 426.399,
+   "script": "Your superpower isn't inventions. It's ideas that need no new tools. Boil water.",
+   "asr": "Your superpower isn't inventions. It's ideas that need no new tools. Boil water.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 433.194,
+   "script": "Wash hands. Isolate the sick. Write numbers in columns.",
+   "asr": "Wash hands, isolate the sick. Write numbers in columns.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 438.828,
+   "script": "And medieval people weren't stupid.",
+   "asr": "And medieval people weren't stupid.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 441.998,
+   "script": "England had thousands of watermills by Domesday,",
+   "asr": "England had thousands of watermills by doomsday.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 445.85,
+   "script": "then windmills, spectacles, mechanical clocks.",
+   "asr": "Then windmills spectacles mechanical clocks",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 449.576,
+   "script": "What they lacked wasn't brains. It was a few centuries of discoveries.",
+   "asr": "What they lacked wasn't brains. It was a few centuries of discoveries.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 455.365,
+   "script": "You might save some lives, make one merchant rich, and land yourself in serious trouble.",
+   "asr": "You might save some lives, make one merchant rich, and land yourself in serious trouble.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 460.959,
+   "script": "History might barely notice.",
+   "asr": "History might barely notice.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w15_answer",
+   "who": "narrator_history",
+   "t": 463.611,
+   "script": "So what would you try first? Tell me in the comments.",
+   "asr": "So what would you try first? Tell me in the comments.",
+   "wer": 0.0,
+   "diffs": []
+  }
+ ],
+ "note": "ASR mistakes are expected on old words and names; a mismatch is a lead for a human listen, not proof of a defect."
+}
