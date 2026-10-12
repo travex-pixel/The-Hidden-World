@@ -9,7 +9,7 @@ from pathlib import Path
 MAX_LINE = 42          # characters per caption row (broadcast convention ~37-42)
 
 
-def _wrap(text: str, width: int = MAX_LINE) -> list[str]:
+def _wrap(text: str, width: int = MAX_LINE, balanced: bool = False) -> list[str]:
     words, rows, cur = text.split(), [], ""
     for w in words:
         if cur and len(cur) + 1 + len(w) > width:
@@ -20,6 +20,8 @@ def _wrap(text: str, width: int = MAX_LINE) -> list[str]:
         rows.append(cur)
     if len(rows) > 2:   # balance into two rows instead of three short ones
         mid = len(words) // 2
+        if balanced:    # break where the longer row is shortest (keeps rows within the width when the text fits)
+            mid = min(range(1, len(words)), key=lambda i: max(len(" ".join(words[:i])), len(" ".join(words[i:]))))
         rows = [" ".join(words[:mid]), " ".join(words[mid:])]
     return rows
 
@@ -46,9 +48,9 @@ def _split_long(c: dict, limit: int = 90) -> list[dict]:
     return out
 
 
-def cues(ep: dict, timeline: list[dict], cast_names: dict | None = None) -> list[dict]:
+def cues(ep: dict, timeline: list[dict], cast_names: dict | None = None, limit: int = 90) -> list[dict]:
     """[{start, end, text, who}] in time order. Dialogue lines keep their own timing; narration-only scenes
-    (Shorts) use the scene's narration window."""
+    (Shorts) use the scene's narration window. Cues longer than `limit` characters are split."""
     out = []
     for s, sc in zip(timeline, ep["scenes"]):
         if s.get("lines"):
@@ -57,7 +59,7 @@ def cues(ep: dict, timeline: list[dict], cast_names: dict | None = None) -> list
         elif not sc.get("silent") and sc.get("narration"):
             out.append({"start": s["narration_at"], "end": s["narration_end"], "text": sc["narration"], "who": "narrator"})
     out.sort(key=lambda c: c["start"])
-    out = [piece for c in out for piece in _split_long(c)]
+    out = [piece for c in out for piece in _split_long(c, limit)]
     # keep a short minimum on screen without overlapping the next cue
     for a, b in zip(out, out[1:] + [None]):
         a["end"] = max(a["end"], a["start"] + 1.0)
@@ -77,18 +79,18 @@ def _ts(t: float, sep: str) -> str:
     return f"{h:02d}:{m:02d}:{s:02d}{sep}{ms:03d}"
 
 
-def srt(cs: list[dict], names: dict) -> str:
+def srt(cs: list[dict], names: dict, balanced: bool = False) -> str:
     blocks, prev = [], None
     for i, c in enumerate(cs, 1):
-        blocks.append(f"{i}\n{_ts(c['start'], ',')} --> {_ts(c['end'], ',')}\n" + "\n".join(_wrap(_label(c, prev, names))) + "\n")
+        blocks.append(f"{i}\n{_ts(c['start'], ',')} --> {_ts(c['end'], ',')}\n" + "\n".join(_wrap(_label(c, prev, names), balanced=balanced)) + "\n")
         prev = c["who"]
     return "\n".join(blocks)
 
 
-def vtt(cs: list[dict], names: dict) -> str:
+def vtt(cs: list[dict], names: dict, balanced: bool = False) -> str:
     blocks = ["WEBVTT\n"]
     for c in cs:
-        body = "\n".join(_wrap(c["text"]))
+        body = "\n".join(_wrap(c["text"], balanced=balanced))
         if c["who"] != "narrator":
             body = f"<v {names.get(c['who'], c['who'].title())}>{body}"
         blocks.append(f"{_ts(c['start'], '.')} --> {_ts(c['end'], '.')}\n{body}\n")
@@ -131,9 +133,12 @@ def write_all(ep: dict, timeline: list[dict], out_dir: Path) -> dict:
     names = {}
     for p in (root / "characters").glob("*.json"):
         c = json.loads(p.read_text()); names[c["id"]] = c["name"].split(" ")[0]
-    cs = cues(ep, timeline)
-    (out_dir / "captions.srt").write_text(srt(cs, names))
-    (out_dir / "captions.vtt").write_text(vtt(cs, names))
+    # voice engine v2 lines are whole sentences, so their cues are split to fit two 42-character rows including
+    # the speaker label; Piper episodes keep their original captions byte for byte
+    v2 = ep.get("voice_engine") == "kokoro"
+    cs = cues(ep, timeline, limit=74 if v2 else 90)
+    (out_dir / "captions.srt").write_text(srt(cs, names, balanced=v2))
+    (out_dir / "captions.vtt").write_text(vtt(cs, names, balanced=v2))
     (out_dir / "transcript.txt").write_text(transcript(ep, timeline, names))
     ch = chapters(ep, timeline)
     if ch:

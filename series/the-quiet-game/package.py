@@ -303,6 +303,8 @@ def build_stream(master: Path, dst: Path, ep: dict, tl: list) -> list[dict]:
 
 def page(template: str, data: dict, standalone: bool) -> str:
     body = template.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
+    name = data["episode_line"].split(" · ")[-1]     # the page title names the episode (it becomes the artifact's title)
+    body = body.replace("<title>The Quiet Game: The Favour</title>", f"<title>The Quiet Game: {name}</title>", 1)
     if standalone:   # a local file needs its own document skeleton; the artifact host adds one itself
         return "<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"></head><body>\n" + body + "\n</body></html>\n"
     return body
@@ -316,7 +318,7 @@ def write_pages(ep: dict, tl: list, v: dict, master: Path, hosted_info: dict | N
         {"label": "Title", "text": ep["youtube_title"], "open": True},
         {"label": "Description", "text": (DST / "description.md").read_text().split("---\n")[1].strip(), "save": "description.txt"},
         {"label": "Chapters", "text": (DST / "chapters.txt").read_text().strip()},
-        {"label": "Captions (SRT)", "text": (DST / "captions.srt").read_text(), "save": "the-favour-captions.srt.txt", "note": "YouTube Studio → Subtitles → Upload file. If you save it from here, rename the file to end in .srt."},
+        {"label": "Captions (SRT)", "text": (DST / "captions.srt").read_text(), "save": f"{CFG['folder']}-captions.srt.txt", "note": "YouTube Studio → Subtitles → Upload file. If you save it from here, rename the file to end in .srt."},
         {"label": "Transcript", "text": (DST / "transcript.txt").read_text()},
         {"label": "Pinned comment and community post", "text": (DST / "promo.md").read_text().split("## Short teaser")[0].split("\n", 2)[2].strip()},
         {"label": "Sources", "text": (DST / "references.md").read_text()},

@@ -189,6 +189,14 @@ class VoiceEngineV2(unittest.TestCase):
         self.assertEqual(" ".join(p["text"] for p in parts), c["text"])
         self.assertAlmostEqual(parts[0]["start"], 10.0); self.assertAlmostEqual(parts[-1]["end"], 20.0, places=2)
 
+    def test_v2_caption_rows_fit(self):
+        srt = ROOT / "series" / "the-quiet-game" / "the-invite" / "captions.srt"
+        if not srt.exists():
+            self.skipTest("not packaged yet")
+        blocks = srt.read_text().strip().split("\n\n")
+        self.assertTrue(all(len(b.split("\n")) - 2 <= 2 for b in blocks))
+        self.assertTrue(all(len(r) <= 42 for b in blocks for r in b.split("\n")[2:]))
+
 
 class Staging(unittest.TestCase):
     def test_every_ws_scene_type_is_registered(self):

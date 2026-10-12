@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"></head><body>
+<title>The Quiet Game: The Invite</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@500;700;800&display=swap">
+<style>
+/* Layout: one narrow column like a phone screening room; the player first, then the upload kit. Single deliberate night look (the series' own palette). */
+:root{
+  --night:#0b1020; --night2:#141a2e; --panel:#182038; --line:#2a3352;
+  --ink:#eef0f6; --muted:#a8b0c6; --gold:#ffd38a; --oxblood:#c46a7a; --steel:#7fa6d4; --ok:#7fe0a0; --bad:#ff8a7a;
+  --display:"Fraunces",Georgia,"Times New Roman",serif; --body:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 56px;display:grid;gap:22px}
+header{display:grid;gap:4px}
+.series{font-family:var(--display);font-weight:800;font-size:clamp(28px,7vw,44px);letter-spacing:.06em;line-height:1.05;text-wrap:balance}
+.ep{font-weight:800;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.yt{font-family:var(--display);font-weight:600;font-size:clamp(19px,4.6vw,24px);line-height:1.25;color:var(--ink);text-wrap:balance;margin-top:8px}
+.player{background:#000;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+video{display:block;width:100%;aspect-ratio:16/9;max-width:100%;background:#000}
+.bar{display:grid;gap:8px;padding:12px 14px;background:var(--night2)}
+.row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.time{font-variant-numeric:tabular-nums;font-weight:700;color:var(--muted);font-size:14px}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.status{padding:12px 14px;border-radius:12px;font-weight:700;font-size:15px;border:1px solid var(--line);background:var(--panel)}
+.status.bad{border-color:var(--bad);color:#ffd8d2}
+.status.ok{border-color:#3d6b52;color:#d8f7e4}
+.specs{display:flex;flex-wrap:wrap;gap:8px}
+.spec{font-size:13px;font-weight:800;letter-spacing:.04em;padding:6px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-variant-numeric:tabular-nums}
+.btn{appearance:none;border:0;border-radius:12px;padding:14px 18px;font:800 16px/1.1 var(--body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;min-height:48px}
+.btn.primary{background:var(--gold);color:#1a1406;width:100%}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--steel);outline-offset:2px}
+.btn[disabled]{opacity:.6;cursor:progress}
+progress{width:100%;height:10px;accent-color:var(--gold)}
+h2{font-family:var(--display);font-weight:800;font-size:22px;margin:0;letter-spacing:.01em}
+.label{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+section{display:grid;gap:12px}
+.chapters{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.chapters button{all:unset;cursor:pointer;display:grid;grid-template-columns:4.2em 1fr;gap:10px;padding:10px 12px;border-radius:10px;width:100%;box-sizing:border-box}
+.chapters button:hover,.chapters button:focus-visible{background:var(--panel);outline:none}
+.chapters .t{font-variant-numeric:tabular-nums;color:var(--gold);font-weight:800}
+.chapters .on{background:var(--panel)}
+details{background:var(--night2);border:1px solid var(--line);border-radius:12px}
+summary{cursor:pointer;padding:14px 16px;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-weight:800}
+details[open] summary::after{content:"–"}
+.box{padding:0 16px 16px;display:grid;gap:10px;min-width:0}
+pre{margin:0;white-space:pre-wrap;word-wrap:break-word;font:500 14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--night);border:1px solid var(--line);border-radius:10px;padding:12px;max-height:360px;overflow:auto;color:var(--ink)}
+.small{font-size:14px;color:var(--muted)}
+.notice{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+a{color:var(--steel)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="ep" id="epline">Episode 1 · The Favour</div>
+    <div class="series">THE QUIET GAME</div>
+    <div class="yt" id="ytitle"></div>
+  </header>
+
+  <div class="player">
+    <video id="v" controls playsinline preload="metadata"></video>
+    <div class="bar" id="bar">
+      <input type="range" id="scrub" min="0" step="0.1" value="0" aria-label="Episode position">
+      <div class="row"><span class="time" id="clock">0:00 / 0:00</span><span class="time" id="part"></span><span class="time" id="chapnow"></span></div>
+    </div>
+  </div>
+  <div class="status" id="status" hidden></div>
+
+  <div class="specs" id="specs"></div>
+
+  <section aria-labelledby="dl-h">
+    <h2 id="dl-h">Download the MP4</h2>
+    <a class="btn primary" id="dl-local" hidden>Download MP4</a>
+    <button class="btn primary" id="dl-hosted" type="button" hidden>Download full-quality MP4</button>
+    <progress id="dlprog" max="1" value="0" hidden></progress>
+    <div class="small" id="dlnote"></div>
+  </section>
+
+  <section aria-labelledby="ch-h">
+    <h2 id="ch-h">Chapters</h2>
+    <ul class="chapters" id="chapters"></ul>
+  </section>
+
+  <section aria-labelledby="kit-h">
+    <h2 id="kit-h">Upload kit</h2>
+    <div class="small">Everything YouTube asks for. Copy each block straight into YouTube Studio.</div>
+    <div id="kit"></div>
+  </section>
+
+  <div class="notice" id="notice"></div>
+</div>
+
+<script>
+const DATA = {"youtube_title": "They Quietly Removed Him From the Meeting. Here's What He Did Next.", "episode_line": "Episode 3 · The Invite", "specs": {"width": 1920, "height": 1080, "fps": 30.0, "duration": 437.933, "size": 68072203, "codecs": "H.264 · AAC"}, "chapters": [{"t": 0.0, "title": "Monday, 8:59"}, {"t": 18.084, "title": "The promotion"}, {"t": 51.706, "title": "The missing invite"}, {"t": 84.938, "title": "The story"}, {"t": 127.459, "title": "Why it hurts"}, {"t": 243.088, "title": "The question"}, {"t": 356.898, "title": "Holding the door"}, {"t": 405.263, "title": "What to do instead"}], "download_name": "The-Quiet-Game-E03-The-Invite-1080p.mp4", "kit": [{"label": "Title", "text": "They Quietly Removed Him From the Meeting. Here's What He Did Next.", "open": true}, {"label": "Description", "text": "A meeting disappeared from his calendar. His manager replied with one word. By midnight, he'd written a whole story about what it meant.\n\nTHE QUIET GAME is an animated psychological drama about the hidden games at work. In Episode 3, Leah has just been promoted, and Daniel is quietly removed from the weekly client meeting he used to be part of. Is he being frozen out, or is he frozen by the story he's telling himself?\n\nIn this episode:\n• Ostracism: why being left out hurts, even by strangers (the Cyberball studies)\n• Why a one-word email like \"Thanks.\" feels so much colder than it was meant\n• The spotlight effect: why fewer people noticed the empty chair than you think\n• Why we underestimate how often people say yes when we ask\n• Four moves for when you're quietly left out at work\n\nChapters\n0:00 Monday, 8:59\n0:18 The promotion\n0:51 The missing invite\n1:24 The story\n2:07 Why it hurts\n4:03 The question\n5:56 Holding the door\n6:45 What to do instead\n\nThis is a fictional story. Characters, companies and events are invented. The psychology is real; sources are below.\n\nSources\n• Williams, Cheung & Choi (2000), Cyberostracism: https://doi.org/10.1037/0022-3514.79.5.748\n• Zadro, Williams & Richardson (2004), Ostracism by a computer: https://www.researchgate.net/publication/222425729\n• O'Reilly, Robinson, Berdahl & Banki (2015), Ostracism vs harassment at work: https://doi.org/10.1287/orsc.2014.0900\n• Kruger, Epley, Parker & Ng (2005), Egocentrism over e-mail: https://pubmed.ncbi.nlm.nih.gov/16393025/\n• Gilovich, Medvec & Savitsky (2000), The spotlight effect: https://doi.org/10.1037/0022-3514.78.2.211\n• Flynn & Lake (2008), If you need help, just ask: https://doi.org/10.1037/0022-3514.95.1.128\n\nHave you ever been quietly left out of something at work? Did you ask why? Episodes 1 and 2 are on the channel.\n\n#OfficePolitics #WorkplacePsychology #TheQuietGame", "save": "description.txt"}, {"label": "Chapters", "text": "0:00 Monday, 8:59\n0:18 The promotion\n0:51 The missing invite\n1:24 The story\n2:07 Why it hurts\n4:03 The question\n5:56 Holding the door\n6:45 What to do instead"}, {"label": "Captions (SRT)", "text": "1\n00:00:00,850 --> 00:00:05,693\nAt 8:59 on Monday, a meeting disappeared\nfrom Daniel's calendar.\n\n2\n00:00:07,063 --> 00:00:08,742\nNobody told him why.\n\n3\n00:00:09,322 --> 00:00:12,984\nAnd by lunchtime, he had decided exactly\nwhat it meant.\n\n4\n00:00:19,534 --> 00:00:22,095\nA week earlier, Ruth had made her\ndecision.\n\n5\n00:00:22,575 --> 00:00:24,254\nLeah got the promotion.\n\n6\n00:00:25,424 --> 00:00:29,595\nDaniel: Senior Analyst Carter.\nCongratulations. You earned it.\n\n7\n00:00:30,395 --> 00:00:32,080\nLeah: You're really not annoyed?\n\n8\n00:00:32,880 --> 00:00:35,673\nDaniel: I'd have been annoyed if it was\nanyone else.\n\n9\n00:00:37,163 --> 00:00:40,397\nGraham: Congratulations, Leah. Ostrel's\nall yours now.\n\n10\n00:00:41,197 --> 00:00:44,820\nDon't worry about the meeting list. I'll\nsort it.\n\n11\n00:00:46,690 --> 00:00:47,781\nHe meant it.\n\n12\n00:00:48,261 --> 00:00:50,906\nWhich is what made the next week so\nstrange.\n\n13\n00:00:52,556 --> 00:00:56,955\nAt ten o'clock, three people walked into\nthe Ostrel meeting: Graham, Ruth,\n\n14\n00:00:56,975 --> 00:00:57,975\nand Leah.\n\n15\n00:00:58,093 --> 00:01:00,134\nDaniel watched them through the glass,\n\n16\n00:01:00,154 --> 00:01:02,106\nand pretended to read a spreadsheet.\n\n17\n00:01:03,976 --> 00:01:06,172\nLeah: Morning! Sorry, running to Ruth.\n\n18\n00:01:07,672 --> 00:01:10,837\nShe was busy. Daniel heard: she can't even\nlook at me.\n\n19\n00:01:12,807 --> 00:01:16,997\nSo Daniel sent a careful little message.\nEighteen minutes later,\n\n20\n00:01:17,017 --> 00:01:18,017\nGraham replied.\n\n21\n00:01:18,784 --> 00:01:20,738\nOne word. And a full stop.\n\n22\n00:01:25,788 --> 00:01:28,724\nBy midnight, Daniel had written a whole\nstory.\n\n23\n00:01:29,204 --> 00:01:33,002\nGraham was punishing him for correcting\nthe record. Twice.\n\n24\n00:01:33,482 --> 00:01:36,387\nLeah had asked for him to be taken off the\naccount,\n\n25\n00:01:36,407 --> 00:01:37,898\nnow that she was the boss.\n\n26\n00:01:38,378 --> 00:01:41,912\nAnd everyone in that meeting had looked at\nhis empty chair,\n\n27\n00:01:41,932 --> 00:01:42,932\nand understood.\n\n28\n00:01:46,606 --> 00:01:50,893\nAt fourteen minutes past midnight, he\nwrote a reply. Then, thankfully,\n\n29\n00:01:50,913 --> 00:01:52,020\nhe didn't send it.\n\n30\n00:01:54,070 --> 00:01:57,746\nHere's what he actually knew. His name\ncame off an invite.\n\n31\n00:01:57,766 --> 00:02:00,953\nGraham wrote one word. Leah leads the\naccount now.\n\n32\n00:02:01,633 --> 00:02:04,880\nEverything on the right was a story he'd\nbuilt on top.\n\n33\n00:02:04,900 --> 00:02:07,139\nSome of it might even have been true.\n\n34\n00:02:08,209 --> 00:02:11,418\nWhy does a missing calendar invite feel\nlike a punch?\n\n35\n00:02:11,438 --> 00:02:14,972\nPsychologists have spent decades on\nexactly that question.\n\n36\n00:02:15,842 --> 00:02:17,597\nIn one well-known experiment,\n\n37\n00:02:17,617 --> 00:02:21,474\npeople played a simple online game of\ncatch with two strangers.\n\n38\n00:02:21,954 --> 00:02:25,602\nAfter a few throws, the others quietly\nstopped passing them the ball.\n\n39\n00:02:26,182 --> 00:02:30,078\nBeing left out made people feel worse, and\nless like they belonged,\n\n40\n00:02:30,098 --> 00:02:33,137\neven in a game with strangers they would\nnever meet.\n\n41\n00:02:33,617 --> 00:02:37,693\nIn a later study, it still stung when\npeople were told the other players\n\n42\n00:02:37,713 --> 00:02:38,908\nwere just a computer.\n\n43\n00:02:39,488 --> 00:02:43,835\nAnd in the same research, people who had\nbeen left out were more likely to\n\n44\n00:02:43,855 --> 00:02:45,900\ngo along with the group afterwards.\n\n45\n00:02:45,920 --> 00:02:48,576\nExclusion makes us try harder to fit back\nin.\n\n46\n00:02:49,546 --> 00:02:52,838\nAt work, being ignored is often treated as\nharmless,\n\n47\n00:02:52,858 --> 00:02:54,768\nnothing like being shouted at.\n\n48\n00:02:55,248 --> 00:02:58,992\nBut one study found it was more strongly\nlinked to feeling you don't\n\n49\n00:02:59,012 --> 00:03:01,946\nbelong, and to people leaving their jobs\nyears later.\n\n50\n00:03:02,916 --> 00:03:04,845\nThen there's the word itself.\n\n51\n00:03:05,225 --> 00:03:10,187\nIn one study, people sending emails\nexpected readers to catch their tone,\n\n52\n00:03:10,207 --> 00:03:14,439\nserious or sarcastic, about seventy-eight\npercent of the time.\n\n53\n00:03:14,919 --> 00:03:18,666\nThe readers got it right about fifty-six\npercent of the time.\n\n54\n00:03:18,686 --> 00:03:20,601\nBarely better than a coin flip.\n\n55\n00:03:21,181 --> 00:03:24,497\nWithout a voice or a face, the reader\nfills in the tone.\n\n56\n00:03:24,517 --> 00:03:27,197\nAnd when we're worried, we fill it in\ndarker.\n\n57\n00:03:28,167 --> 00:03:29,479\nAnd that empty chair?\n\n58\n00:03:29,499 --> 00:03:32,860\nProbably fewer people noticed it than\nDaniel thought.\n\n59\n00:03:33,340 --> 00:03:37,630\nStudents made to wear an embarrassing\nT-shirt into a room guessed that\n\n60\n00:03:37,650 --> 00:03:41,714\nabout half the people there noticed. About\na quarter actually did.\n\n61\n00:03:42,294 --> 00:03:44,659\nWe are the main character in our own\nheads.\n\n62\n00:03:44,679 --> 00:03:47,841\nEveryone else is busy being the main\ncharacter in theirs.\n\n63\n00:03:49,011 --> 00:03:53,583\nNone of this proved Daniel wrong. Maybe he\nreally was being frozen out.\n\n64\n00:03:54,163 --> 00:03:56,698\nBut the facts were much thinner than the\nstory,\n\n65\n00:03:56,718 --> 00:03:58,675\nand the story was keeping him awake.\n\n66\n00:03:59,355 --> 00:04:02,288\nThere was only one way to find out which\none was true.\n\n67\n00:04:03,938 --> 00:04:08,347\nOn Tuesday morning, Daniel had two\noptions. Keep polishing the story,\n\n68\n00:04:08,367 --> 00:04:09,523\nor ask a question.\n\n69\n00:04:10,103 --> 00:04:13,016\nHe started with the person closest to the\nfacts.\n\n70\n00:04:14,186 --> 00:04:17,388\nDaniel: Can I ask you something, without\nit being weird?\n\n71\n00:04:17,408 --> 00:04:20,294\nWas I taken off the Ostrel call on\npurpose?\n\n72\n00:04:21,194 --> 00:04:24,744\nLeah: Graham set the list. He said you'd\nwant a break from Ostrel,\n\n73\n00:04:24,764 --> 00:04:25,775\nafter everything.\n\n74\n00:04:26,475 --> 00:04:28,486\nI assumed you'd asked for it.\n\n75\n00:04:29,486 --> 00:04:30,486\nDaniel: I didn't.\n\n76\n00:04:31,355 --> 00:04:34,128\nLeah: Then ask to come back. I want you in\nthat room.\n\n77\n00:04:35,618 --> 00:04:38,219\nFor what it's worth, I noticed you weren't\nthere.\n\n78\n00:04:38,239 --> 00:04:39,844\nI don't think anyone else did.\n\n79\n00:04:42,414 --> 00:04:44,121\nThen he wrote to Graham.\n\n80\n00:04:45,501 --> 00:04:47,720\nA fact. A request. And an open door,\n\n81\n00:04:47,740 --> 00:04:50,352\nin case there was a reason he didn't know.\n\n82\n00:04:51,132 --> 00:04:53,340\nNo accusation anywhere in it.\n\n83\n00:04:55,790 --> 00:04:58,080\nGraham: Daniel. I took you off to lighten\nthe load.\n\n84\n00:04:58,100 --> 00:04:59,927\nI thought you'd earned a breather.\n\n85\n00:05:00,827 --> 00:05:04,647\nDaniel: I appreciate that. I'd rather\ndecide my own load.\n\n86\n00:05:05,847 --> 00:05:08,578\nGraham: Fair enough. I'll add you back.\n\n87\n00:05:10,068 --> 00:05:14,566\nWas it kindness? Or a quiet way of moving\nDaniel to the edge of the room?\n\n88\n00:05:14,586 --> 00:05:16,319\nGraham's answer fitted both.\n\n89\n00:05:16,999 --> 00:05:19,139\nAnd Daniel didn't need to know which.\n\n90\n00:05:19,159 --> 00:05:21,378\nHe only needed to be back in the room.\n\n91\n00:05:22,828 --> 00:05:27,113\nHere's the part most of us get wrong. In a\nseries of studies, people\n\n92\n00:05:27,133 --> 00:05:31,735\nasking strangers for help expected to need\nabout twice as many asks as it\n\n93\n00:05:31,755 --> 00:05:32,755\nactually took.\n\n94\n00:05:33,221 --> 00:05:36,300\nWe focus on what helping costs the other\nperson,\n\n95\n00:05:36,320 --> 00:05:40,645\nand forget how awkward it is to say no to\na direct, polite request.\n\n96\n00:05:41,815 --> 00:05:44,958\nDaniel: Ruth, could I have fifteen minutes\nwith you once a month?\n\n97\n00:05:44,978 --> 00:05:47,142\nI'd like to know what you need from me.\n\n98\n00:05:48,142 --> 00:05:50,586\nRuth: Of course. I was wondering when\nyou'd ask.\n\n99\n00:05:51,386 --> 00:05:55,778\nAnd if something changes and you don't\nknow why, come and ask me first.\n\n100\n00:05:57,748 --> 00:06:01,207\nLeah: Good, everyone's here. Daniel, start\nus off with Carlton?\n\n101\n00:06:02,007 --> 00:06:06,610\nDaniel: Happy to. Carlton's evening runs\nlook a lot like Northfield's did.\n\n102\n00:06:08,100 --> 00:06:12,237\nThat afternoon, a new invite arrived.\nCarlton planning. Graham,\n\n103\n00:06:12,257 --> 00:06:13,257\nand Daniel.\n\n104\n00:06:13,663 --> 00:06:17,707\nThe whole evening-runs plan started with a\npattern Leah spotted.\n\n105\n00:06:17,727 --> 00:06:19,124\nHer name wasn't on it.\n\n106\n00:06:27,994 --> 00:06:31,204\nGraham: Leah. Good. I was just about to\nadd you.\n\n107\n00:06:33,574 --> 00:06:36,433\nMaybe Graham forgot Leah. Maybe he didn't.\n\n108\n00:06:37,213 --> 00:06:39,848\nExclusion rarely looks like a slammed\ndoor.\n\n109\n00:06:40,628 --> 00:06:43,463\nIt looks like a door that nobody holds\nopen.\n\n110\n00:06:46,113 --> 00:06:49,300\nSo if you're ever quietly left out of\nsomething at work,\n\n111\n00:06:49,320 --> 00:06:50,465\nhere are four moves.\n\n112\n00:06:50,845 --> 00:06:54,344\nFirst, separate what happened from the\nstory you're telling yourself.\n\n113\n00:06:54,524 --> 00:06:58,769\nAsk the person closest to the facts,\nbefore you decide what it means.\n\n114\n00:06:58,949 --> 00:07:03,576\nAsk for what you want, in writing. A fact,\na request, and an open door.\n\n115\n00:07:03,756 --> 00:07:06,733\nAnd when you notice someone else missing\nfrom the list,\n\n116\n00:07:06,753 --> 00:07:07,788\nforward the invite.\n\n117\n00:07:10,038 --> 00:07:13,174\nHave you ever been quietly left out of\nsomething at work?\n\n118\n00:07:13,954 --> 00:07:15,336\nDid you ask why?\n", "save": "the-invite-captions.srt.txt", "note": "YouTube Studio → Subtitles → Upload file. If you save it from here, rename the file to end in .srt."}, {"label": "Transcript", "text": "THE QUIET GAME — The Invite\n\nA fictional story. Characters, companies and events are invented. The psychology is real.\n\n\n== 0:00  MONDAY, 8:59 ==\n\n[0:00] NARRATOR: At 8:59 on Monday, a meeting disappeared from Daniel's calendar.\n[0:07] NARRATOR: Nobody told him why.\n[0:09] NARRATOR: And by lunchtime, he had decided exactly what it meant.\n[0:13] (Title card: The Quiet Game, Episode 3, The Invite.)\n\n== 0:18  THE PROMOTION ==\n\n[0:19] NARRATOR: A week earlier, Ruth had made her decision.\n[0:22] NARRATOR: Leah got the promotion.\n[0:25] DANIEL: Senior Analyst Carter. Congratulations. You earned it.\n[0:30] LEAH: You're really not annoyed?\n[0:32] DANIEL: I'd have been annoyed if it was anyone else.\n[0:37] GRAHAM: Congratulations, Leah. Ostrel's all yours now.\n[0:41] GRAHAM: Don't worry about the meeting list. I'll sort it.\n[0:46] NARRATOR: He meant it.\n[0:48] NARRATOR: Which is what made the next week so strange.\n\n== 0:51  THE MISSING INVITE ==\n\n[0:52] NARRATOR: At ten o'clock, three people walked into the Ostrel meeting: Graham, Ruth, and Leah.\n[0:58] NARRATOR: Daniel watched them through the glass, and pretended to read a spreadsheet.\n[1:03] LEAH: Morning! Sorry, running to Ruth.\n[1:07] NARRATOR: She was busy. Daniel heard: she can't even look at me.\n[1:12] NARRATOR: So Daniel sent a careful little message. Eighteen minutes later, Graham replied.\n[1:18] NARRATOR: One word. And a full stop.\n[1:21] (Daniel rereads the word Thanks.)\n\n== 1:24  THE STORY ==\n\n[1:25] NARRATOR: By midnight, Daniel had written a whole story.\n[1:29] NARRATOR: Graham was punishing him for correcting the record. Twice.\n[1:33] NARRATOR: Leah had asked for him to be taken off the account, now that she was the boss.\n[1:38] NARRATOR: And everyone in that meeting had looked at his empty chair, and understood.\n[1:46] NARRATOR: At fourteen minutes past midnight, he wrote a reply. Then, thankfully, he didn't send it.\n[1:54] NARRATOR: Here's what he actually knew. His name came off an invite. Graham wrote one word. Leah leads the account now.\n[2:01] NARRATOR: Everything on the right was a story he'd built on top. Some of it might even have been true.\n\n== 2:07  WHY IT HURTS ==\n\n[2:08] NARRATOR: Why does a missing calendar invite feel like a punch? Psychologists have spent decades on exactly that question.\n[2:15] NARRATOR: In one well-known experiment, people played a simple online game of catch with two strangers.\n[2:21] NARRATOR: After a few throws, the others quietly stopped passing them the ball.\n[2:26] NARRATOR: Being left out made people feel worse, and less like they belonged, even in a game with strangers they would never meet.\n[2:33] NARRATOR: In a later study, it still stung when people were told the other players were just a computer.\n[2:39] NARRATOR: And in the same research, people who had been left out were more likely to go along with the group afterwards. Exclusion makes us try harder to fit back in.\n[2:49] NARRATOR: At work, being ignored is often treated as harmless, nothing like being shouted at.\n[2:55] NARRATOR: But one study found it was more strongly linked to feeling you don't belong, and to people leaving their jobs years later.\n[3:02] NARRATOR: Then there's the word itself.\n[3:05] NARRATOR: In one study, people sending emails expected readers to catch their tone, serious or sarcastic, about seventy-eight percent of the time.\n[3:14] NARRATOR: The readers got it right about fifty-six percent of the time. Barely better than a coin flip.\n[3:21] NARRATOR: Without a voice or a face, the reader fills in the tone. And when we're worried, we fill it in darker.\n[3:28] NARRATOR: And that empty chair? Probably fewer people noticed it than Daniel thought.\n[3:33] NARRATOR: Students made to wear an embarrassing T-shirt into a room guessed that about half the people there noticed. About a quarter actually did.\n[3:42] NARRATOR: We are the main character in our own heads. Everyone else is busy being the main character in theirs.\n[3:49] NARRATOR: None of this proved Daniel wrong. Maybe he really was being frozen out.\n[3:54] NARRATOR: But the facts were much thinner than the story, and the story was keeping him awake.\n[3:59] NARRATOR: There was only one way to find out which one was true.\n\n== 4:03  THE QUESTION ==\n\n[4:03] NARRATOR: On Tuesday morning, Daniel had two options. Keep polishing the story, or ask a question.\n[4:10] NARRATOR: He started with the person closest to the facts.\n[4:14] DANIEL: Can I ask you something, without it being weird? Was I taken off the Ostrel call on purpose?\n[4:21] LEAH: Graham set the list. He said you'd want a break from Ostrel, after everything.\n[4:26] LEAH: I assumed you'd asked for it.\n[4:29] DANIEL: I didn't.\n[4:31] LEAH: Then ask to come back. I want you in that room.\n[4:35] LEAH: For what it's worth, I noticed you weren't there. I don't think anyone else did.\n[4:42] NARRATOR: Then he wrote to Graham.\n[4:45] NARRATOR: A fact. A request. And an open door, in case there was a reason he didn't know.\n[4:51] NARRATOR: No accusation anywhere in it.\n[4:55] GRAHAM: Daniel. I took you off to lighten the load. I thought you'd earned a breather.\n[5:00] DANIEL: I appreciate that. I'd rather decide my own load.\n[5:05] GRAHAM: Fair enough. I'll add you back.\n[5:10] NARRATOR: Was it kindness? Or a quiet way of moving Daniel to the edge of the room? Graham's answer fitted both.\n[5:16] NARRATOR: And Daniel didn't need to know which. He only needed to be back in the room.\n[5:22] NARRATOR: Here's the part most of us get wrong. In a series of studies, people asking strangers for help expected to need about twice as many asks as it actually took.\n[5:33] NARRATOR: We focus on what helping costs the other person, and forget how awkward it is to say no to a direct, polite request.\n[5:41] DANIEL: Ruth, could I have fifteen minutes with you once a month? I'd like to know what you need from me.\n[5:48] RUTH: Of course. I was wondering when you'd ask.\n[5:51] RUTH: And if something changes and you don't know why, come and ask me first.\n\n== 5:56  HOLDING THE DOOR ==\n\n[5:57] LEAH: Good, everyone's here. Daniel, start us off with Carlton?\n[6:02] DANIEL: Happy to. Carlton's evening runs look a lot like Northfield's did.\n[6:08] NARRATOR: That afternoon, a new invite arrived. Carlton planning. Graham, and Daniel.\n[6:13] NARRATOR: The whole evening-runs plan started with a pattern Leah spotted. Her name wasn't on it.\n[6:19] (Daniel forwards the Carlton invite to Leah. Leah: Thank you. Holding the door? Daniel: Someone held it for me.)\n[6:27] GRAHAM: Leah. Good. I was just about to add you.\n[6:33] NARRATOR: Maybe Graham forgot Leah. Maybe he didn't.\n[6:37] NARRATOR: Exclusion rarely looks like a slammed door.\n[6:40] NARRATOR: It looks like a door that nobody holds open.\n\n== 6:45  WHAT TO DO INSTEAD ==\n\n[6:46] NARRATOR: So if you're ever quietly left out of something at work, here are four moves.\n[6:50] NARRATOR: First, separate what happened from the story you're telling yourself.\n[6:54] NARRATOR: Ask the person closest to the facts, before you decide what it means.\n[6:58] NARRATOR: Ask for what you want, in writing. A fact, a request, and an open door.\n[7:03] NARRATOR: And when you notice someone else missing from the list, forward the invite.\n[7:10] NARRATOR: Have you ever been quietly left out of something at work?\n[7:13] NARRATOR: Did you ask why?\n"}, {"label": "Pinned comment and community post", "text": "## Pinned comment\nExclusion rarely looks like a slammed door. It looks like a door nobody holds open.\nIf it happens to you: separate the facts from the story, then ask the person closest to the facts.\n\nHave you ever been quietly left off a meeting? Did you ask why?\n(Daniel's four moves are at 6:45.)\n\n## Community post\nNew episode: THE QUIET GAME, \"The Invite\" 📅\nHis name disappeared from the meeting invite. His manager replied: \"Thanks.\"\nWhat would you do?\n• Say nothing and wait\n• Ask a colleague what happened\n• Email the manager and ask to be added back\n• Assume the worst"}, {"label": "Sources", "text": "# References and research notes: \"The Invite\"\n\nThe story is fiction; the psychology is real. Citations were checked on 2026-10-12 against bibliographic records, PubMed abstracts, quoted passages and reputable secondary sources. Full papers could not be opened from the research environment. Anything unconfirmed is marked **unverified**. All effects are **tendencies, not rules**, and most come from short lab studies with student samples.\n\n## 1. Ostracism and Cyberball (Chapter 5, \"Why it hurts\")\n- **Williams, K. D., Cheung, C. K. T., & Choi, W. (2000).** Cyberostracism: Effects of being ignored over the Internet. *JPSP, 79*(5), 748–762. https://doi.org/10.1037/0022-3514.79.5.748 · https://pubmed.ncbi.nlm.nih.gov/11079239/\n  - Online participants played a ball-toss game with two \"players\" who were computer-controlled. The more they were left out, the worse they felt and the less they felt they belonged (abstract). In Study 2, excluded participants conformed more on a later task.\n  - Study 1's sample of 1,486 people from 62 countries comes from secondary summaries. The abstract does not mention self-esteem for this paper, so the episode doesn't claim it.\n- **Zadro, L., Williams, K. D., & Richardson, R. (2004).** How low can you go? Ostracism by a computer is sufficient to lower self-reported levels of belonging, control, self-esteem, and meaningful existence. *JESP, 40*(4), 560–567. https://www.researchgate.net/publication/222425729\n  - People told the other players were a computer still reported lower belonging after being excluded. Study 2's design details and the DOI are **unverified**.\n- **Williams, K. D. (2007).** Ostracism. *Annual Review of Psychology, 58*, 425–452. https://doi.org/10.1146/annurev.psych.58.110405.085641. This review argues that people detect exclusion quickly and painfully because spotting it helped them survive.\n- **Caveat:** Hartgerink et al. (2015), a meta-analysis of 120 Cyberball studies (N = 11,869), found a large average effect. https://doi.org/10.1371/journal.pone.0127002 These are short games with feelings measured straight afterwards, so they don't show how big the effect is in an office.\n- **Narrated:**\n  - \"In one well-known experiment, people played a simple online game of catch with two strangers.\"\n  - \"Being left out made people feel worse, and less like they belonged…\"\n  - \"In a later study, it still stung when people were told the other players were just a computer.\"\n  - \"…people who had been left out were more likely to go along with the group afterwards.\"\n\n## 2. Ostracism at work (Chapter 5)\n- **O'Reilly, J., Robinson, S. L., Berdahl, J. L., & Banki, S. (2015).** Is negative attention better than no attention? The comparative effects of ostracism and harassment at work. *Organization Science, 26*(3), 774–793. https://doi.org/10.1287/orsc.2014.0900\n  - Employees rated ostracism as more socially acceptable and less harmful than harassment.\n  - Ostracism was more strongly linked to low belonging and worse well-being.\n  - Ostracism, but not harassment, predicted people actually leaving about three years later.\n  - **Caveats:** correlational and self-reported. The evidence that belonging explains the link to quitting was weak (p < .10).\n- **Narrated:** \"But one study found it was more strongly linked to feeling you don't belong, and to people leaving their jobs years later.\"\n\n## 3. Email tone (Chapter 5, \"Why it hurts\")\n- **Kruger, J., Epley, N., Parker, J., & Ng, Z.-W. (2005).** Egocentrism over e-mail: Can we communicate as well as we think? *JPSP, 89*(6), 925–936. https://pubmed.ncbi.nlm.nih.gov/16393025/\n  - **Study 2** (29 pairs, email vs. voice): senders predicted about 78% accuracy. Email readers managed about 56%, which the paper calls indistinguishable from chance. Voice listeners managed about 73%.\n  - The 78/56 figures come from secondary sources (NYU Stern, Psychology Today); the chance wording is the paper's. The bars on screen are labelled with the study, and \"coin flip\" marks the 50% line.\n  - Study 1 found much higher accuracy (97% expected, 84% achieved). The episode cites Study 2 only and doesn't claim email can't carry tone.\n  - **Caveats:** small student samples, only sarcastic vs. serious messages, 2005-era email with no emoji, and no direct replication found (**unverified**).\n- **Byron, K. (2008).** Carrying too heavy a load? The communication and miscommunication of emotion by email. *Academy of Management Review, 33*(2), 309–327. https://doi.org/10.5465/AMR.2008.31193163\n  - Argues that work emails tend to be read as more negative than the sender intended. This is a **theory paper, not an experiment**. It underpins \"when we're worried, we fill it in darker\", which the episode presents as a tendency.\n- **Narrated:** \"…expected readers to catch their tone, serious or sarcastic, about seventy-eight percent of the time. The readers got it right about fifty-six percent of the time. Barely better than a coin flip.\"\n\n## 4. Spotlight effect (Chapter 5)\n- **Gilovich, T., Medvec, V. H., & Savitsky, K. (2000).** The spotlight effect in social judgment. *JPSP, 78*(2), 211–222. https://doi.org/10.1037/0022-3514.78.2.211\n  - Students wore an embarrassing T-shirt into a room. They guessed about half the room noticed; about a quarter did.\n  - Secondary sources give figures between 46% vs. 23% and \"closer to 20 percent\". The exact numbers are **unverified** against the paper, so the narration says \"about\".\n  - **Caveats:** small Cornell samples. The study is about being noticed, not about anyone noticing someone's absence. Applying it to Daniel is an extrapolation, and the narration says so: \"the facts are thinner than the story.\"\n\n## 5. Asking for help (Chapter 6, \"The question\")\n- **Flynn, F. J., & Lake, V. K. B. (2008).** If you need help, just ask: Underestimating compliance with direct requests for help. *JPSP, 95*(1), 128–143. https://doi.org/10.1037/0022-3514.95.1.128 (Lake now publishes as Vanessa Bohns.)\n  - People expected to need about twice as many asks as it took. Study 6 suggests they focus on the cost of helping and overlook how awkward it is to say no.\n  - **Caveats:** the requests were to strangers and the samples were mostly students. Whether the result has been replicated is unconfirmed.\n- **Narrated:** \"In a series of studies, people asking strangers for help expected to need about twice as many asks as it actually took.\"\n\n## Deliberately left out\n- **\"Rejection hurts like physical pain.\"** Eisenberger, Lieberman & Williams (2003), *Science, 302*, 290–292, had 13 participants. Later work found the brain patterns for physical pain and rejection are distinct (Woo et al., 2014, *Nature Communications*). A 53-study meta-analysis found no reliable dorsal ACC activity (Mwilambwe-Tshilobo & Spreng, 2021, *NeuroImage*). The question is still debated, so the episode makes no brain claims.\n\n## What the episode deliberately does not do\n- It doesn't say Graham excluded Daniel on purpose. His answers \"fit both\" readings, and the episode never settles it.\n- It doesn't tell viewers their suspicions are wrong. The studies show people *tend* to over-read short emails, overestimate how much others notice them, and underestimate how willing others are to help.\n- It invents no statistics. Company figures (late deliveries \"down 38\") are fictional and consistent with Episode 2, and `tests/test_quiet_game.py` checks them.\n"}], "notice": "A fictional story; the psychology is real. This video has not been uploaded or published anywhere. Master file SHA-256 804276070a30ef70…", "mode": "local", "src": "../final.mp4", "vtt": "../captions.vtt", "poster": "../thumbnail.png"};
+(function () {
+  const $ = id => document.getElementById(id);
+  const v = $('v'), scrub = $('scrub'), status = $('status');
+  const fmt = s => { s = Math.max(0, Math.floor(s)); const m = Math.floor(s / 60); return m + ':' + String(s % 60).padStart(2, '0'); };
+  const mb = b => (b / 1e6).toFixed(1) + ' MB';
+  function say(msg, kind) { status.hidden = false; status.className = 'status' + (kind ? ' ' + kind : ''); status.textContent = msg; }
+  if (!DATA) { say('This page has no episode data. Rebuild it with series/the-quiet-game/package.py.', 'bad'); return; }
+
+  $('ytitle').textContent = DATA.youtube_title;
+  $('epline').textContent = DATA.episode_line;
+  $('notice').textContent = DATA.notice;
+  const sp = DATA.specs; const specs = [sp.width + '×' + sp.height, sp.fps + ' fps', fmt(sp.duration), mb(sp.size), sp.codecs];
+  specs.forEach(t => { const s = document.createElement('span'); s.className = 'spec'; s.textContent = t; $('specs').appendChild(s); });
+  v.poster = DATA.poster;
+  scrub.max = String(DATA.specs.duration);
+
+  // ---------- playback: one file (local) or a chain of ~1-minute parts (hosted)
+  const segs = DATA.mode === 'hosted' ? DATA.segments : [{ src: DATA.src, start: 0, dur: DATA.specs.duration, vtt: DATA.vtt }];
+  let cur = -1, pendingSeek = null, wantPlay = false;
+  function load(i, offset, play) {
+    if (i !== cur) {
+      cur = i; v.src = segs[i].src;
+      [...v.querySelectorAll('track')].forEach(t => t.remove());
+      if (segs[i].vtt) { const tr = document.createElement('track'); tr.kind = 'subtitles'; tr.srclang = 'en'; tr.label = 'English'; tr.src = segs[i].vtt; v.appendChild(tr); }
+      pendingSeek = offset || 0; wantPlay = play; v.load();
+    } else { v.currentTime = offset || 0; if (play) v.play().catch(() => {}); }
+    $('part').textContent = segs.length > 1 ? 'Part ' + (i + 1) + ' of ' + segs.length : '';
+  }
+  function seekGlobal(t, play) { let i = segs.findIndex(s => t < s.start + s.dur); if (i < 0) i = segs.length - 1; load(i, Math.max(0, t - segs[i].start), play); }
+  v.addEventListener('loadedmetadata', () => { if (pendingSeek !== null) { v.currentTime = pendingSeek; pendingSeek = null; } if (wantPlay) { v.play().catch(() => {}); wantPlay = false; } status.hidden = true; });
+  v.addEventListener('ended', () => { if (cur < segs.length - 1) load(cur + 1, 0, true); });
+  const chs = DATA.chapters;
+  v.addEventListener('timeupdate', () => {
+    const g = segs[cur].start + v.currentTime; if (!scrub.matches(':active')) scrub.value = g;
+    $('clock').textContent = fmt(g) + ' / ' + fmt(DATA.specs.duration);
+    let k = 0; chs.forEach((c, j) => { if (g >= c.t) k = j; }); $('chapnow').textContent = chs.length ? '· ' + chs[k].title : '';
+    document.querySelectorAll('.chapters button').forEach((b, j) => b.classList.toggle('on', j === k));
+  });
+  scrub.addEventListener('change', () => seekGlobal(parseFloat(scrub.value), !v.paused));
+  v.addEventListener('error', () => {
+    if (DATA.mode === 'local') say('The video did not play. Either final.mp4 is not in the episode folder (it is not stored in Git; see delivery/README.md), or this browser cannot play H.264 MP4. Chrome, Safari, Edge and Firefox on phones and desktops can.', 'bad');
+    else say('Part ' + (cur + 1) + ' of the video did not load. Check your connection, then tap a chapter to retry.', 'bad');
+  });
+  load(0, 0, false);
+
+  chs.forEach(c => { const li = document.createElement('li'); const b = document.createElement('button'); b.type = 'button';
+    b.innerHTML = '<span class="t"></span><span></span>'; b.children[0].textContent = fmt(c.t); b.children[1].textContent = c.title;
+    b.addEventListener('click', () => seekGlobal(c.t + 0.05, true)); li.appendChild(b); $('chapters').appendChild(li); });
+
+  // ---------- download
+  if (DATA.mode === 'local') {
+    const a = $('dl-local'); a.hidden = false; a.href = DATA.src; a.setAttribute('download', DATA.download_name);
+    a.textContent = 'Download MP4 (' + mb(DATA.specs.size) + ')';
+    $('dlnote').textContent = 'Saves ' + DATA.download_name + ' from this folder.';
+  } else {
+    const btn = $('dl-hosted'), prog = $('dlprog'), note = $('dlnote'); btn.hidden = false;
+    btn.textContent = 'Download full-quality MP4 (' + mb(DATA.specs.size) + ')';
+    note.textContent = DATA.download_hint;
+    let busy = false;
+    btn.addEventListener('click', async () => {
+      if (busy) return; busy = true; btn.disabled = true;
+      try {
+        const downloads = window.claude && window.claude.use ? await window.claude.use('downloads') : null;
+        if (!downloads) { note.textContent = 'Saving files is not available in this view. Open this page in the Claude app or claude.ai while signed in, then try again.'; return; }
+        const M = DATA.master; const buf = new Uint8Array(M.size); let off = 0; prog.hidden = false; prog.value = 0;
+        for (let i = 0; i < M.parts.length; i++) {
+          note.textContent = 'Fetching part ' + (i + 1) + ' of ' + M.parts.length + '…';
+          const r = await fetch(M.parts[i]); if (!r.ok) throw new Error('Part ' + (i + 1) + ' failed to load (HTTP ' + r.status + ').');
+          let b;
+          if (M.encoding === 'base64') { const t = (await r.text()).trim(); const bin = atob(t); b = new Uint8Array(bin.length); for (let k = 0; k < bin.length; k++) b[k] = bin.charCodeAt(k); }
+          else b = new Uint8Array(await r.arrayBuffer());
+          if (off + b.length > M.size) throw new Error('Part ' + (i + 1) + ' is larger than expected.');
+          buf.set(b, off); off += b.length; prog.value = off / M.size;
+        }
+        if (off !== M.size) throw new Error('Got ' + off + ' bytes, expected ' + M.size + '.');
+        note.textContent = 'Checking the file…';
+        const h = [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))].map(x => x.toString(16).padStart(2, '0')).join('');
+        if (h !== M.sha256) throw new Error('Checksum mismatch: the file is incomplete. Try again.');
+        note.textContent = 'Verified. Confirm the save in the prompt.';
+        const res = await downloads.save({ filename: DATA.download_name, data: new Blob([buf], { type: 'video/mp4' }) });
+        note.textContent = res.status === 'saved' ? 'Saved ' + DATA.download_name + ' (' + mb(M.size) + ', checksum verified). On Android it is in Downloads.' : 'Sent.';
+      } catch (e) {
+        const code = e && e.code;
+        note.textContent = code === 'declined' ? 'Save cancelled.' : code === 'too_large' ? 'This app could not save a file this large. Use the GitHub draft release described in the README instead.' : code === 'rate_limited' ? 'A save prompt is already open. Finish it, then try again.' : 'Download failed: ' + ((e && e.message) || e);
+      } finally { busy = false; btn.disabled = false; }
+    });
+  }
+
+  // ---------- upload kit
+  const kit = $('kit');
+  DATA.kit.forEach(item => {
+    const d = document.createElement('details'); if (item.open) d.open = true;
+    const s = document.createElement('summary'); s.textContent = item.label; d.appendChild(s);
+    const box = document.createElement('div'); box.className = 'box';
+    if (item.note) { const n = document.createElement('div'); n.className = 'small'; n.textContent = item.note; box.appendChild(n); }
+    const pre = document.createElement('pre'); pre.textContent = item.text; box.appendChild(pre);
+    const row = document.createElement('div'); row.className = 'row';
+    const copy = document.createElement('button'); copy.type = 'button'; copy.className = 'btn ghost'; copy.textContent = 'Copy';
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(item.text); copy.textContent = 'Copied'; }
+      catch (_) { const r = document.createRange(); r.selectNodeContents(pre); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); copy.textContent = 'Selected: press copy'; }
+      setTimeout(() => { copy.textContent = 'Copy'; }, 2200);
+    });
+    row.appendChild(copy);
+    if (item.save) {
+      const sv = document.createElement('button'); sv.type = 'button'; sv.className = 'btn ghost'; sv.textContent = 'Save ' + item.save;
+      sv.addEventListener('click', async () => {
+        if (DATA.mode === 'local') { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([item.text], { type: 'text/plain' })); a.download = item.save; a.click(); return; }
+        const dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null;
+        if (!dl) { sv.textContent = 'Saving unavailable here'; return; }
+        try { await dl.save({ filename: item.save, data: item.text }); sv.textContent = 'Saved'; } catch (e) { sv.textContent = e && e.code === 'declined' ? 'Cancelled' : 'Save failed'; }
+      });
+      row.appendChild(sv);
+    }
+    box.appendChild(row); d.appendChild(box); kit.appendChild(d);
+  });
+})();
+</script>
+
+</body></html>

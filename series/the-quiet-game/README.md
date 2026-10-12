@@ -32,6 +32,8 @@ A week after Leah's promotion, Daniel is quietly removed from the Ostrel weekly 
 
 This is the first episode voiced with **voice engine v2** (Kokoro-82M with Whisper speech checks; see [STYLE_GUIDE.md](STYLE_GUIDE.md#voice-engine-v2-kokoro-from-episode-3)). Run `bash scripts/setup-kokoro.sh` once before rebuilding it.
 
+To watch or download it on a phone, use the private delivery page in [`the-invite/delivery/README.md`](the-invite/delivery/README.md). A 61-second before/after voice sample is at [`the-invite/qa/voice-before-after.mp3`](the-invite/qa/voice-before-after.mp3).
+
 ## Get the MP4
 See [`the-favour/delivery/README.md`](the-favour/delivery/README.md) for the verified ways to get it onto an Android phone.
 
