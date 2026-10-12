@@ -128,12 +128,14 @@ class CinematicEpisodes(unittest.TestCase):
         if not m.exists():
             self.skipTest("no manifest yet")
         from pipeline.series import sha256
+        limits = {f"{e['n']:02d}": e.get("duration_limits_s", CFG["duration_limits_s"]) for e in CFG["episodes"]}   # 40-second cuts have their own window
         for key, rec in json.loads(m.read_text())["videos"].items():
             f = SERIES / "output" / rec.get("file", "")
             if rec.get("status", "").startswith("verified") and f.is_file():
                 self.assertEqual(sha256(f), rec["sha256"], f"{rec['file']} changed since verification")
                 self.assertEqual((rec["media"]["width"], rec["media"]["height"]), (1080, 1920))
-                self.assertTrue(45 <= rec["media"]["duration"] <= 90)
+                lo, hi = limits.get(key, CFG["duration_limits_s"])
+                self.assertTrue(lo <= rec["media"]["duration"] <= hi, f"{rec['file']}: {rec['media']['duration']} s outside {lo}-{hi} s")
 
 
 class EngineV3(unittest.TestCase):
