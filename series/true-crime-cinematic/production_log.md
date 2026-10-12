@@ -156,3 +156,5 @@
 - 2026-10-12 09:20:38 produce 28: regenerating episode data
 - 2026-10-12 09:20:38 tcv28-bundy-40: render cached (inputs unchanged), skipping to QA
 - 2026-10-12 09:21:14 tcv28-bundy-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_28_bundy_40s.mp4 (43.8s, 20.9 MB, sha256 b97cc8ac9d13)
+- 2026-10-12 11:20:23 produce 29: regenerating episode data
+- 2026-10-12 11:20:23 tcv29-rudolph-40: rendering (final, seed 1)
