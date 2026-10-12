@@ -1,0 +1,379 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR) on the MP4's own audio track",
+ "lines": 26,
+ "corpus_wer": 0.062,
+ "lines_over_25pct": [
+  {
+   "scene": "s03_village",
+   "who": "narrator_history",
+   "t": 26.602,
+   "script": "Four in five people live like you: in villages, farming.",
+   "asr": "4 and 5 people live like you in villages farming.",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "four",
+     "4"
+    ],
+    [
+     "in",
+     "and"
+    ],
+    [
+     "five",
+     "5"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_market",
+   "who": "baker_hugh",
+   "t": 35.652,
+   "script": "Fresh bread! A farthing a loaf!",
+   "asr": "Fresh bread, a farthing aloof.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "a",
+     "∅"
+    ],
+    [
+     "loaf",
+     "aloof"
+    ]
+   ]
+  },
+  {
+   "scene": "s06_reveal",
+   "who": "narrator_history",
+   "t": 78.63,
+   "script": "Cut halfpennies and farthings were everyday change.",
+   "asr": "Cut half bunnies and far things wherever they change.",
+   "wer": 0.857,
+   "diffs": [
+    [
+     "∅",
+     "half"
+    ],
+    [
+     "halfpennies",
+     "bunnies"
+    ],
+    [
+     "∅",
+     "far"
+    ],
+    [
+     "farthings",
+     "things"
+    ],
+    [
+     "were",
+     "wherever"
+    ],
+    [
+     "everyday",
+     "they"
+    ]
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "scene": "s01_wake",
+   "who": "narrator_history",
+   "t": 0.65,
+   "script": "You wake up to a hen pecking at your hand.",
+   "asr": "You wake up to a hen pecking at your hand.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s01_wake",
+   "who": "narrator_history",
+   "t": 3.43,
+   "script": "In your fist is all the money you have: one silver penny.",
+   "asr": "In your fist is all the money you have, one silver penny.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s01_wake",
+   "who": "narrator_history",
+   "t": 7.581,
+   "script": "And you need bread. Today.",
+   "asr": "And you need bread today",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s02_home",
+   "who": "narrator_history",
+   "t": 11.313,
+   "script": "One room. Hens included.",
+   "asr": "One room. Hens included.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s02_home",
+   "who": "narrator_history",
+   "t": 14.405,
+   "script": "No chimney: smoke from the hearth drifts out through the thatch.",
+   "asr": "No chimney smoke from the hearth drifts out through the thatch.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s02_home",
+   "who": "narrator_history",
+   "t": 18.376,
+   "script": "Bread means the market. Time to go.",
+   "asr": "Bread means the market. Time to go.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s03_village",
+   "who": "narrator_history",
+   "t": 23.317,
+   "script": "Welcome to England, around 1260.",
+   "asr": "Welcome to England around 1260.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s03_village",
+   "who": "narrator_history",
+   "t": 26.602,
+   "script": "Four in five people live like you: in villages, farming.",
+   "asr": "4 and 5 people live like you in villages farming.",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "four",
+     "4"
+    ],
+    [
+     "in",
+     "and"
+    ],
+    [
+     "five",
+     "5"
+    ]
+   ]
+  },
+  {
+   "scene": "s03_village",
+   "who": "narrator_history",
+   "t": 30.763,
+   "script": "Timber frames, wattle-and-clay walls, roofs of thatch.",
+   "asr": "Timber frames, while in clay walls, roofs of thatch.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "wattle",
+     "while"
+    ],
+    [
+     "and",
+     "in"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_market",
+   "who": "baker_hugh",
+   "t": 35.652,
+   "script": "Fresh bread! A farthing a loaf!",
+   "asr": "Fresh bread, a farthing aloof.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "a",
+     "∅"
+    ],
+    [
+     "loaf",
+     "aloof"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_market",
+   "who": "narrator_history",
+   "t": 38.962,
+   "script": "It's market day, and bread is serious business.",
+   "asr": "Its market day and bread is serious business.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "it's",
+     "its"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_market",
+   "who": "narrator_history",
+   "t": 42.241,
+   "script": "By law, a loaf's weight was tied to the price of grain.",
+   "asr": "By law, a loaf's weight was tied to the price of grain.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s04_market",
+   "who": "narrator_history",
+   "t": 46.161,
+   "script": "Short-weight bakers were fined. Repeat offenders: the pillory.",
+   "asr": "Short-weight bakers were fined. Repeat offenders the pillory.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s05_problem",
+   "who": "narrator_history",
+   "t": 52.099,
+   "script": "So you hold out your penny.",
+   "asr": "So you hold out your penny.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s05_problem",
+   "who": "baker_hugh",
+   "t": 54.906,
+   "script": "A whole penny? For one loaf? I've no change for that!",
+   "asr": "A whole penny for one loaf i've no change for that",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s05_problem",
+   "who": "narrator_history",
+   "t": 60.064,
+   "script": "The problem: the silver penny is the only coin in everyday use.",
+   "asr": "The problem the silver penny is the only coin in everyday use.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s05_problem",
+   "who": "narrator_history",
+   "t": 64.765,
+   "script": "That's about a day's pay. Your loaf costs a quarter of it.",
+   "asr": "That's about a day's pay. Your loaf costs a quarter of it.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s06_reveal",
+   "who": "narrator_history",
+   "t": 70.673,
+   "script": "So the baker does something wild.",
+   "asr": "So the baker does something wild.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s06_reveal",
+   "who": "narrator_history",
+   "t": 74.098,
+   "script": "He cuts your money in half. Then in half again.",
+   "asr": "He cuts your money in half. Then in half again.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s06_reveal",
+   "who": "narrator_history",
+   "t": 78.63,
+   "script": "Cut halfpennies and farthings were everyday change.",
+   "asr": "Cut half bunnies and far things wherever they change.",
+   "wer": 0.857,
+   "diffs": [
+    [
+     "∅",
+     "half"
+    ],
+    [
+     "halfpennies",
+     "bunnies"
+    ],
+    [
+     "∅",
+     "far"
+    ],
+    [
+     "farthings",
+     "things"
+    ],
+    [
+     "were",
+     "wherever"
+    ],
+    [
+     "everyday",
+     "they"
+    ]
+   ]
+  },
+  {
+   "scene": "s06_reveal",
+   "who": "narrator_history",
+   "t": 82.207,
+   "script": "The cross runs to the coin's edge, and pieces were cut along it.",
+   "asr": "The cross runs to the coin's edge and pieces were cut along it.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s06_reveal",
+   "who": "narrator_history",
+   "t": 86.513,
+   "script": "That's what 'farthing' means: a fourth part.",
+   "asr": "That's what farthing means a fourth part.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s07_payoff",
+   "who": "narrator_history",
+   "t": 90.677,
+   "script": "One quarter buys the loaf. Three go back in your purse.",
+   "asr": "One quarter buys the loaf. Three go back in your purse.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s07_payoff",
+   "who": "narrator_history",
+   "t": 95.997,
+   "script": "Not bad for your first day.",
+   "asr": "Not bad for your first day.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s07_payoff",
+   "who": "narrator_history",
+   "t": 98.378,
+   "script": "But tomorrow at dawn, the lord's reeve expects you in his fields.",
+   "asr": "But tomorrow at dawn, the Lord's Reeve expects you in his fields.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s07_payoff",
+   "who": "narrator_history",
+   "t": 102.775,
+   "script": "Unpaid. That's your rent.",
+   "asr": "Unpaid. That's your rent.",
+   "wer": 0.0,
+   "diffs": []
+  }
+ ],
+ "note": "ASR mistakes are expected on old words and names; a mismatch is a lead for a human listen, not proof of a defect."
+}
