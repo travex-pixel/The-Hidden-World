@@ -2,6 +2,8 @@
 
 Final rendered episodes, committed so they can be downloaded directly from GitHub on a phone (open the `.mp4`, tap **Download** / the raw-file button).
 
+**Phone download page (private to the owner):** https://claude.ai/artifact/WKBnvjdX6BFu7B6shdKVjY: every video below except H01 v1 and the uncommitted 004, with thumbnails, descriptions, chapters and title options. Each MP4 is rebuilt from SHA-256-checked pieces and saved as one file. Rebuild it with `python -m pipeline.download_page <dir>` (see `releases/catalog.json`).
+
 | Episode | File | Seed | Rendered | Verified |
 |---------|------|------|----------|----------|
 | 001 — Why a Billion-Dollar Company Can Run Out of Cash (illustrated panels) | `ep001-cash-vs-profit.mp4` (1080×1920, 30 fps, 71.3 s, H.264 + AAC) | 1 | 2026-10-10, local pipeline run | `ep001-cash-vs-profit.verify.json` — all 12 checks pass; contact sheet alongside |
