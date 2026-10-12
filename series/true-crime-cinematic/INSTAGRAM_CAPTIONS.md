@@ -6,6 +6,8 @@
 
 Agatha Christie, the last video, asks viewers to choose the next case in the comments.
 
+**Caption rules (from 12 Oct 2026).** At most 5 hashtags per caption, and no "Illustrated reconstruction · AI narration" line. When posting, switch on the platform's own AI label instead (Instagram: Advanced settings → AI label; TikTok: AI-generated content).
+
 **Files.** The videos are in `output/`. The chat copies were re-encoded to fit under 30 MiB and look the same.
 
 ---
@@ -18,10 +20,9 @@ Then, on the way out, they dropped something…
 
 Where do you think the missing jewels are? 👇 Follow for the next case.
 
-#TrueCrime #Louvre #LouvreHeist #CrownJewels #Paris #Heist #Mystery #CaseFiles
+#TrueCrime #Louvre #LouvreHeist #CrownJewels #Heist
 
 Several people are charged; none has been tried. All are presumed innocent.
-Illustrated reconstruction · AI narration
 
 ## 05: D.B. Cooper (`true_crime_05_db_cooper.mp4`)
 In 1971 a man jumped out of a jet with $200,000. No one has seen him since. 🪂
@@ -31,9 +32,7 @@ Years later, a kid on a riverbank found something that made it even stranger.
 
 Who do YOU think he was? 👇 Follow for the next case.
 
-#DBCooper #TrueCrime #UnsolvedMysteries #ColdCase #Hijacking #FBI #History #CaseFiles #TheHiddenWorld
-
-Illustrated reconstruction · AI narration
+#DBCooper #TrueCrime #UnsolvedMysteries #ColdCase #FBI
 
 ## 06: Whitey Bulger (`true_crime_06_whitey_bulger.mp4`)
 He hid from the FBI for 16 years. The tip that ended it began with a stray cat. 🐈
@@ -43,9 +42,7 @@ The next evening, a former neighbour called.
 
 Would you recognise your neighbour from a TV appeal? 👇 Follow for the next case.
 
-#TrueCrime #WhiteyBulger #FBI #MobHistory #Boston #SantaMonica #TrueCrimeCommunity #CaseFiles
-
-Illustrated reconstruction · AI narration
+#TrueCrime #WhiteyBulger #FBI #MobHistory #Boston
 
 ## 07: Gilgo Beach (`true_crime_07_gilgo_beach.mp4`)
 A pizza crust tossed in a Manhattan trash can helped crack the Gilgo Beach killings. 🍕🔎
@@ -55,10 +52,9 @@ In 2026 he pleaded guilty, and he will spend his life in prison.
 
 Which clue surprised you most? 👇 Follow for the next case.
 
-#TrueCrime #GilgoBeach #ColdCase #LongIsland #Forensics #TrueCrimeCommunity #CaseFiles #JusticeServed
+#TrueCrime #GilgoBeach #ColdCase #LongIsland #Forensics
 
 Remembering Melissa, Maureen, Amber, Sandra, Valerie, Jessica, Karen and Megan, and the families who never stopped waiting.
-Illustrated reconstruction · AI narration
 
 ## 08: Lizzie Borden (`true_crime_08_lizzie_borden.mp4`)
 Days after the killings, a friend watched Lizzie Borden burn a dress. A jury still acquitted her. 🔥
@@ -68,9 +64,7 @@ Excluded testimony. A "paint" excuse. A verdict in about 90 minutes.
 
 Guilty or innocent? 👇 Comment below, and follow for the next case.
 
-#LizzieBorden #Monster #TrueCrime #UnsolvedMysteries #History #FallRiver #TrueCrimeCommunity #CaseFiles
-
-Illustrated reconstruction · AI narration
+#LizzieBorden #Monster #TrueCrime #UnsolvedMysteries #History
 
 ## 09: Agatha Christie (`true_crime_09_agatha_christie.mp4`)
 The world's best-selling novelist vanished for 11 days. Then she checked into a spa hotel using her husband's mistress's surname. 🕵️‍♀️
@@ -80,9 +74,7 @@ She never fully explained it. This December marks 100 years.
 
 Where do YOU think she went? 👇 Follow for more cases.
 
-#AgathaChristie #UnsolvedMysteries #RealMystery #HistoryMystery #1920s #TrueCrime #CaseFiles #TheHiddenWorld
-
-Illustrated reconstruction · AI narration
+#AgathaChristie #UnsolvedMysteries #RealMystery #1920s #TrueCrime
 
 ---
 
@@ -101,10 +93,9 @@ A family tree, a car door handle, and one tissue later…
 
 Would you put your DNA on a family-tree website? 👇 Follow for the next case.
 
-#TrueCrime #GoldenStateKiller #ColdCase #DNA #GeneticGenealogy #Forensics #TrueCrimeCommunity #CaseFiles
+#TrueCrime #GoldenStateKiller #ColdCase #DNA #GeneticGenealogy
 
 He pleaded guilty in 2020 and is serving life without parole. Victims are not shown or named.
-Illustrated reconstruction · AI narration
 
 ## 11: The Great Train Robbery (`true_crime_11_great_train_robbery.mp4`)
 Britain's biggest train robbers got away with £2.6 million… then a board game gave them away. 🎲
@@ -115,10 +106,9 @@ Five days later, police arrive. What did the gang leave behind?
 
 Would you have spotted their mistake? 👇 Follow for the next case.
 
-#TrueCrime #GreatTrainRobbery #CrimeHistory #BritishHistory #Heist #RonnieBiggs #History #CaseFiles
+#TrueCrime #GreatTrainRobbery #CrimeHistory #BritishHistory #Heist
 
 The train driver, Jack Mills, was badly hurt in the robbery. Gang members are shown as illustrations, not likenesses.
-Illustrated reconstruction · AI narration
 
 ## 12: Son of Sam (`true_crime_12_son_of_sam.mp4`)
 A parking ticket ended a year of terror in New York. 🎫
@@ -129,10 +119,9 @@ A woman walking her dog noticed.
 
 Would you have come forward? 👇 Follow for the next case.
 
-#TrueCrime #SonOfSam #NewYorkHistory #CrimeHistory #1970s #TrueCrimeCommunity #CaseFiles
+#TrueCrime #SonOfSam #NewYorkHistory #CrimeHistory #1970s
 
 Six people were killed and seven wounded in 1976–77. We remember them, not him.
-Illustrated reconstruction · AI narration
 
 ## 13: Hatton Garden (`true_crime_13_hatton_garden.mp4`)
 Thieves drilled through a London vault wall over Easter. The ringleader was 76. 🕳️
@@ -143,10 +132,9 @@ So how did detectives finally catch them?
 
 Would you have spotted the clue? 👇 Follow for the next case.
 
-#TrueCrime #HattonGarden #Heist #London #CrimeStory #TrueCrimeCommunity #BritishCrime #CaseFiles
+#TrueCrime #HattonGarden #Heist #London #BritishCrime
 
 Convictions in 2016 and 2019. The gang are shown as generic illustrated figures, not likenesses.
-Illustrated reconstruction · AI narration
 
 ## 14: Litvinenko (`true_crime_14_litvinenko.mp4`)
 A man drank tea in a London hotel bar. Three weeks later, he was dead. ☕
@@ -156,10 +144,9 @@ Then investigators followed its trail across London, back to one teapot.
 
 Which case should we crack next? 👇 Tell us in the comments, and follow for more.
 
-#TrueCrime #Litvinenko #London #Polonium #ColdCase #Unsolved #CaseFiles #History
+#TrueCrime #Litvinenko #London #Polonium #Unsolved
 
 A UK public inquiry (2016) and the European Court of Human Rights (2021) made findings; no one has been tried. Andrei Lugovoi denies involvement, Dmitry Kovtun denied it before his death in 2022, and Russia denies any role.
-Illustrated reconstruction · AI narration
 
 ---
 
@@ -179,10 +166,9 @@ What happened at that table ended the case.
 
 Should police be allowed to take DNA from your plate? 👇 Follow for the next case.
 
-#TrueCrime #GrimSleeper #ColdCase #DNA #LosAngeles #Forensics #TrueCrimeCommunity #CaseFiles
+#TrueCrime #GrimSleeper #ColdCase #DNA #LosAngeles
 
 Remembering the ten victims and their families. The silhouette is an illustration, not a likeness.
-Illustrated reconstruction · AI narration
 
 ## 16: The Boston Strangler (`true_crime_16_boston_strangler.mp4`)
 A man confessed to being the Boston Strangler. For decades, many doubted him. Then someone threw away a water bottle. 🧴
@@ -193,10 +179,9 @@ Fifty years later, detectives quietly followed his relatives…
 
 Do you think one man committed all thirteen? 👇 Follow for the next case.
 
-#BostonStrangler #TrueCrime #ColdCase #DNA #Boston #UnsolvedMysteries #TrueCrimeCommunity #CaseFiles
+#BostonStrangler #TrueCrime #ColdCase #DNA #Boston
 
 The DNA links DeSalvo to Mary Sullivan's murder only; whether he killed all thirteen is still debated. His relative is not named.
-Illustrated reconstruction · AI narration
 
 ## 17: Kohberger (`true_crime_17_kohberger.mp4`)
 Investigators had the Idaho killer's DNA. What they didn't have was a name. 🗑️
@@ -206,10 +191,9 @@ Then investigators went to a curb in Pennsylvania.
 
 What clue should we cover next? 👇 Comment below, and follow for more cases.
 
-#TrueCrime #Idaho #Kohberger #DNA #GeneticGenealogy #ForensicScience #TrueCrimeCommunity #CaseFiles
+#TrueCrime #Kohberger #Idaho #DNA #GeneticGenealogy
 
 Clues as described in court filings; there was no trial. He pleaded guilty in 2025. In July 2026 he reportedly filed to withdraw his plea, and no ruling had been made as of 12 Oct 2026. In memory of Ethan, Kaylee, Xana and Madison.
-Illustrated reconstruction · AI narration
 
 ---
 
@@ -226,10 +210,9 @@ Then a new task force picked up one man's trail in Manhattan… and waited for h
 
 What everyday object do you think has cracked the most cases? 👇 Follow for the next case.
 
-#TrueCrime #GilgoBeach #ColdCase #DNA #Forensics #TrueCrimeStories #LongIsland #CaseFiles
+#TrueCrime #GilgoBeach #ColdCase #DNA #Forensics
 
 Clues as described in prosecutors' 2023 court filing; the crust gave a mitochondrial DNA link. He pleaded guilty in 2026. Victims are not shown. In memory of the eight women.
-Illustrated reconstruction · AI narration
 
 ## 19: The Grim Sleeper, 40 s (`true_crime_19_grim_sleeper_40s.mp4`)
 A detective posed as a busboy and kept a killer's pizza crust 🍕
@@ -240,10 +223,9 @@ Then came a birthday party at a pizza place…
 
 Would you have noticed the busboy? 👇 Follow for more cases.
 
-#TrueCrime #GrimSleeper #ColdCase #DNAEvidence #ForensicScience #LosAngeles #TrueCrimeCommunity #CaseFiles
+#TrueCrime #GrimSleeper #ColdCase #DNAEvidence #LosAngeles
 
 His son, flagged by the DNA search, was never a suspect. In memory of the ten victims.
-Illustrated reconstruction · AI narration
 
 ## 20: The Boston Strangler, 40 s (`true_crime_20_boston_strangler_40s.mp4`)
 A thrown-away water bottle and the Boston Strangler 💧
@@ -253,10 +235,9 @@ He was never tried. Then detectives quietly followed one of his nephews…
 
 Do you think one man killed all thirteen women? 👇 Follow for more cases.
 
-#TrueCrime #BostonStrangler #ColdCase #DNA #Forensics #TrueCrimeCommunity #Boston #CaseFiles
+#TrueCrime #BostonStrangler #ColdCase #DNA #Boston
 
 The DNA links DeSalvo to Mary Sullivan's murder only; whether he killed all 13 is still debated. In memory of the thirteen women.
-Illustrated reconstruction · AI narration
 
 ## 21: Kohberger, 40 s (`true_crime_21_kohberger_40s.mp4`)
 His family's trash helped catch the Idaho killer 🗑️
@@ -267,10 +248,9 @@ Then investigators took the trash from the curb.
 
 Would you have guessed what the lab found? 👇 Follow for more cases.
 
-#TrueCrime #Kohberger #IdahoFour #UniversityOfIdaho #DNA #GeneticGenealogy #TrueCrimeShorts #CaseFiles
+#TrueCrime #Kohberger #IdahoFour #DNA #GeneticGenealogy
 
 He pleaded guilty in 2025. In 2026 he reportedly asked to withdraw his plea, and there is no ruling yet. Clues are per court filings, and his family is not accused of anything. In memory of Ethan Chapin, Kaylee Goncalves, Xana Kernodle and Madison Mogen.
-Illustrated reconstruction · AI narration
 
 ## 22: Oklahoma City, 40 s (`true_crime_22_mcveigh_40s.mp4`)
 A missing license plate put the Oklahoma City bomber in a jail cell 🚔
@@ -281,7 +261,6 @@ Where was their suspect? Watch to the end.
 
 Would you have spotted it? 👇 Tell us below. Follow for the next case.
 
-#TrueCrime #OklahomaCity #CaughtBy #FBI #TrueCrimeCommunity #History #CaseFiles #Shorts
+#TrueCrime #OklahomaCity #FBI #CrimeHistory #TrueCrimeCommunity
 
 168 people were killed, including 19 children. We remember them.
-Illustrated reconstruction · AI narration
