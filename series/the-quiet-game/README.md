@@ -25,6 +25,13 @@ Recommended YouTube title: **He Stole Her Idea in the Meeting. He Didn't Even Kn
 
 Leah suggests a fix over coffee. Two days later, with a promotion on the line, Daniel pitches it to the director as his own idea, and genuinely believes it. The psychology: cryptomnesia, source memory, the egocentric bias, unequal credit and amplification. Deliverables live in [`the-credit/`](the-credit/) with the same layout as Episode 1 (`final.mp4` is not in Git). Source of truth: `make_the_credit.py`. Package with `python series/the-quiet-game/package.py --episode qg02-the-credit --hosted`.
 
+## Episode 3: "The Invite"
+Recommended YouTube title: **They Quietly Removed Him From the Meeting. Here's What He Did Next.**
+
+A week after Leah's promotion, Daniel is quietly removed from the Ostrel weekly at 08:59 on a Monday. His "All good?" gets a one-word reply 18 minutes later: "Thanks." He has to decide between the story in his head and a direct question. The psychology: Cyberball ostracism research, ostracism at work, tone lost in email, the spotlight effect, and how much we underestimate people's willingness to help. Deliverables live in [`the-invite/`](the-invite/) with the same layout (`final.mp4` is not in Git). Source of truth: `make_the_invite.py`. Package with `python series/the-quiet-game/package.py --episode qg03-the-invite --hosted`.
+
+This is the first episode voiced with **voice engine v2** (Kokoro-82M with Whisper speech checks; see [STYLE_GUIDE.md](STYLE_GUIDE.md#voice-engine-v2-kokoro-from-episode-3)). Run `bash scripts/setup-kokoro.sh` once before rebuilding it.
+
 ## Get the MP4
 See [`the-favour/delivery/README.md`](the-favour/delivery/README.md) for the verified ways to get it onto an Android phone.
 
@@ -46,9 +53,17 @@ The same seed (1) reproduces the same story decisions, music ornamentation and t
 - `pipeline/render.mjs`: `--workers N` renders contiguous frame ranges in parallel browsers and joins them losslessly. About 11 frames/s with 5 workers, against 2.4 frames/s single-threaded.
 - `pipeline/build.py`: `"format": "landscape"` presets, `--workers`, and SRT/VTT/transcript/chapters exported from the real audio timing (`pipeline/captions.py`).
 - `pipeline/thumbnail.py` (new): renders the thumbnail with the episode's own rig.
+- Voice engine v2 (Episode 3):
+  - `pipeline/narrate.py` adds Kokoro synthesis with gentle trimming, loudness matching and a shared room for dialogue.
+  - `pipeline/asr_check.py` runs a Whisper check on every line.
+  - `renderer/engine.js` pages long captions.
+  - `pipeline/captions.py` splits long SRT/VTT cues.
+  - `pipeline/build.py` adds a room-tone bed.
+  - The Piper path for Episodes 1–2 is unchanged and gives the same timeline.
 - Tests: `tests/test_quiet_game.py` covers story numbers, timeline order, caption/face clearance, line-locked cues, distinct cast, engine defaults and delivered files.
 
 ## Known limitations
-- The voices are offline Piper TTS. They are clear and consistent, but less expressive than a human actor or a premium neural voice. No paid TTS is used, by design of the pipeline.
+- Episodes 1 and 2 use offline Piper TTS, which is clear but flat. Episode 3 uses Kokoro-82M, which is offline and free but much more natural. Both are still less expressive than a human actor. No paid TTS is used, by design of the pipeline.
+- The speech check uses Whisper tiny, a small model. It mishears invented names ("Ostrel"), so its score is a floor, not a listening test.
 - Animation is 2D cutout: blended expressions, audio-driven mouths, blinks, gaze, head motion, arm gestures and walking bob. There are no full walk cycles or finger animation.
 - Audio was checked by measurement (loudness, silence, clipping, dialogue against music), not by ear, because the build environment has no speakers.

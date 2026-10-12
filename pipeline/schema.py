@@ -62,8 +62,9 @@ def validate(ep: dict, folder: Path | None = None) -> None:
                     errs.append(f"scene {s.get('id')} line {j}: text is empty")
                 if not (ROOT / "characters" / f"{ln.get('who')}.json").exists():
                     errs.append(f"scene {s.get('id')} line {j}: unknown character '{ln.get('who')}' (add characters/{ln.get('who')}.json)")
-                if len(ln.get("text", "")) > 90:
-                    errs.append(f"scene {s.get('id')} line {j}: line longer than 90 chars; split it so captions stay readable")
+                limit = 200 if ep.get("format") == "landscape" else 90   # widescreen captions page long sentences
+                if len(ln.get("text", "")) > limit:
+                    errs.append(f"scene {s.get('id')} line {j}: line longer than {limit} chars; split it so captions stay readable")
             if not s.get("caption"):
                 s["caption"] = " ".join(ln["text"] for ln in s["lines"])[:90]
             s.setdefault("narration", " ".join(ln["text"] for ln in s["lines"]))

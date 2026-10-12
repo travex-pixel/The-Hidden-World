@@ -8,7 +8,7 @@ from pipeline.schema import load_episode  # noqa: E402
 from pipeline import captions  # noqa: E402
 
 EP = "qg01-the-favour"
-EPISODES = ["qg01-the-favour", "qg02-the-credit"]
+EPISODES = ["qg01-the-favour", "qg02-the-credit", "qg03-the-invite"]
 WS = (ROOT / "renderer" / "widescreen.js").read_text()
 DST = ROOT / "series" / "the-quiet-game" / "the-favour"
 
@@ -121,6 +121,75 @@ class CreditInvariants(unittest.TestCase):
                 self.assertTrue(all(claims[c]["sources"] for c in s["claims"]) and s["claims"], s["id"])
 
 
+class InviteInvariants(unittest.TestCase):
+    """Episode 3, "The Invite"."""
+    def e3(self):
+        return load_episode("qg03-the-invite")
+
+    def test_generator_is_source_of_truth(self):
+        sys.path.insert(0, str(ROOT / "series" / "the-quiet-game"))
+        import importlib
+        mod = importlib.import_module("make_the_invite")
+        self.assertEqual(json.loads(json.dumps(mod.EPISODE)), json.loads((ROOT / "episodes" / "qg03-the-invite" / "episode.json").read_text()))
+
+    def test_timestamps(self):
+        e = self.e3(); sc = {s["id"]: s for s in e["scenes"]}
+        self.assertIn("08:59", sc["e01_cold_calendar"]["shot"]["chip"])
+        self.assertIn("You are no longer an attendee.", sc["e01_cold_calendar"]["shot"]["ui"]["body"])
+        chat = sc["e08_thanks"]["shot"]["ui"]["messages"]
+        h = lambda t: int(t[:2]) * 60 + int(t[3:])
+        self.assertEqual((chat[0]["time"], h(chat[1]["time"]) - h(chat[0]["time"]), chat[1]["text"]), ("11:02", 18, "Thanks."))
+
+    def test_continuity_with_episode_two(self):
+        text = json.dumps(self.e3()["scenes"], ensure_ascii=False)
+        self.assertIn("Late deliveries: down 38", text)
+        self.assertLessEqual(38, load_episode("qg02-the-credit")["figures"]["recovered_per_week"])
+        self.assertIn("pattern Leah spotted", text)
+        self.assertNotIn("Carlton was Leah's idea", text)    # Daniel suggested Carlton in Episode 2
+
+    def test_balance_and_sources(self):
+        e = self.e3(); lines = " ".join(l["text"] for s in e["scenes"] for l in s.get("lines", []))
+        self.assertIn("fitted both", lines); self.assertIn("Maybe Graham forgot Leah. Maybe he didn't.", lines)
+        self.assertNotIn("brain", lines.lower())             # social-pain imaging claims are deliberately left out
+        claims = {c["id"]: c for c in e["claims"]}
+        for s in e["scenes"]:
+            if s["scene"] == "ws_explainer" and s["shot"]["ex"]["kind"] in ("cyberball", "bars"):
+                self.assertTrue(s["claims"] and all(claims[c]["sources"] for c in s["claims"]), s["id"])
+        tone = next(s for s in e["scenes"] if s["id"] == "e15_tone")["shot"]["ex"]
+        self.assertEqual([r["value"] for r in tone["rows"]], [78, 56]); self.assertEqual(tone["chance"], 50)
+
+
+class VoiceEngineV2(unittest.TestCase):
+    """Kokoro episodes: whole-sentence lines (a fragment gets a mid-sentence 'full stop' intonation), unique voices."""
+    def test_lines_are_whole_sentences(self):
+        for eid in EPISODES:
+            e = load_episode(eid)
+            if e.get("voice_engine") != "kokoro":
+                continue
+            for s in e["scenes"]:
+                for l in s.get("lines", []):
+                    self.assertRegex(l["text"].rstrip("\u201d\"' "), r"[.?!:]$", f"{s['id']}: line should end a sentence: {l['text']!r}")
+                    self.assertFalse(l["text"][0].islower(), f"{s['id']}: line starts mid-sentence: {l['text']!r}")
+
+    def test_kokoro_cast_unique_and_complete(self):
+        specs = {c: json.loads((ROOT / "characters" / f"{c}.json").read_text())["voice_kokoro"] for c in ("daniel", "graham", "leah", "ruth", "narrator")}
+        self.assertEqual(len({v["id"] for v in specs.values()}), len(specs))
+        for c, v in specs.items():
+            self.assertTrue(0.75 <= v["speed"] <= 1.15 and 0.85 <= v["pitch"] <= 1.1, c)
+
+    def test_piper_episodes_untouched(self):
+        for eid in ("qg01-the-favour", "qg02-the-credit"):
+            self.assertNotIn("voice_engine", load_episode(eid))
+
+    def test_caption_cue_splitting(self):
+        c = {"start": 10.0, "end": 20.0, "who": "narrator", "text": "In one well-known experiment, people played a simple online game of catch with two strangers, and then something changed."}
+        parts = captions._split_long(c)
+        self.assertGreater(len(parts), 1)
+        self.assertTrue(all(len(p["text"]) <= 90 for p in parts))
+        self.assertEqual(" ".join(p["text"] for p in parts), c["text"])
+        self.assertAlmostEqual(parts[0]["start"], 10.0); self.assertAlmostEqual(parts[-1]["end"], 20.0, places=2)
+
+
 class Staging(unittest.TestCase):
     def test_every_ws_scene_type_is_registered(self):
         for s in [s for e in EPISODES for s in load_episode(e)["scenes"]]:
@@ -176,9 +245,11 @@ class Staging(unittest.TestCase):
             self.assertIn(c["look"]["outfit"]["style"], (ROOT / "renderer" / "cast.js").read_text())
 
     def test_dialogue_readable(self):
-        for s in [s for e in EPISODES for s in load_episode(e)["scenes"]]:
-            for l in s.get("lines", []):
-                self.assertLessEqual(len(l["text"]), 90, s["id"])
+        for eid in EPISODES:
+            e = load_episode(eid); limit = 200 if e.get("voice_engine") == "kokoro" else 90
+            for s in e["scenes"]:
+                for l in s.get("lines", []):
+                    self.assertLessEqual(len(l["text"]), limit, s["id"])
 
 
 class EngineUpgrades(unittest.TestCase):
@@ -266,6 +337,12 @@ class DeliveredCredit(Delivered):
     def tearDown(self):
         global DST
         DST = self._dst
+
+
+class DeliveredInvite(DeliveredCredit):
+    def setUp(self):
+        global DST
+        self._dst = DST; DST = ROOT / "series" / "the-quiet-game" / "the-invite"
 
 
 if __name__ == "__main__":

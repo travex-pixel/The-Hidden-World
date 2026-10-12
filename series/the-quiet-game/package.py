@@ -24,6 +24,8 @@ EPISODES = {
                         "line": "Episode 1 · The Favour", "teaser": [("start", "c03_cold_graham"), ("c19_trust", "c19_trust"), ("title", "c04_title")]},
     "qg02-the-credit": {"folder": "the-credit", "hosted": "qg02-delivery-hosted", "download": "The-Quiet-Game-E02-The-Credit-1080p.mp4",
                         "line": "Episode 2 · The Credit", "teaser": [("start", "d02_cold_leah"), ("d14_mine", "d15_leah_freezes"), ("title", "d03_title")]},
+    "qg03-the-invite": {"folder": "the-invite", "hosted": "qg03-delivery-hosted", "download": "The-Quiet-Game-E03-The-Invite-1080p.mp4",
+                        "line": "Episode 3 · The Invite", "teaser": [("start", "e02_cold_daniel"), ("e08_thanks", "e09_reads_it"), ("title", "e03_title")]},
 }
 EP = OUT = DST = HOSTED = DOWNLOAD_NAME = CFG = None
 
@@ -52,6 +54,8 @@ def probe(p: Path) -> dict:
 def description(ep: dict, ch: list) -> str:
     if EP == "qg02-the-credit":
         return description_credit(ep, ch)
+    if EP == "qg03-the-invite":
+        return description_invite(ep, ch)
     chap = "\n".join(f"{clock(t)} {title}" for t, title in ch)
     return f"""# YouTube description (paste everything below the line)
 
@@ -163,6 +167,71 @@ A rendered 16:9 teaser cut from the final episode is in this folder as teaser.mp
 """
 
 
+def description_invite(ep: dict, ch: list) -> str:
+    chap = "\n".join(f"{clock(t)} {title}" for t, title in ch)
+    return f"""# YouTube description (paste everything below the line)
+
+---
+A meeting disappeared from his calendar. His manager replied with one word. By midnight, he'd written a whole story about what it meant.
+
+THE QUIET GAME is an animated psychological drama about the hidden games at work. In Episode 3, Leah has just been promoted, and Daniel is quietly removed from the weekly client meeting he used to be part of. Is he being frozen out, or is he frozen by the story he's telling himself?
+
+In this episode:
+• Ostracism: why being left out hurts, even by strangers (the Cyberball studies)
+• Why a one-word email like "Thanks." feels so much colder than it was meant
+• The spotlight effect: why fewer people noticed the empty chair than you think
+• Why we underestimate how often people say yes when we ask
+• Four moves for when you're quietly left out at work
+
+Chapters
+{chap}
+
+This is a fictional story. Characters, companies and events are invented. The psychology is real; sources are below.
+
+Sources
+• Williams, Cheung & Choi (2000), Cyberostracism: https://doi.org/10.1037/0022-3514.79.5.748
+• Zadro, Williams & Richardson (2004), Ostracism by a computer: https://www.researchgate.net/publication/222425729
+• O'Reilly, Robinson, Berdahl & Banki (2015), Ostracism vs harassment at work: https://doi.org/10.1287/orsc.2014.0900
+• Kruger, Epley, Parker & Ng (2005), Egocentrism over e-mail: https://pubmed.ncbi.nlm.nih.gov/16393025/
+• Gilovich, Medvec & Savitsky (2000), The spotlight effect: https://doi.org/10.1037/0022-3514.78.2.211
+• Flynn & Lake (2008), If you need help, just ask: https://doi.org/10.1037/0022-3514.95.1.128
+
+Have you ever been quietly left out of something at work? Did you ask why? Episodes 1 and 2 are on the channel.
+
+#OfficePolitics #WorkplacePsychology #TheQuietGame
+---
+
+**Tags:** left out at work, excluded from meetings, office politics, workplace psychology, ostracism, cyberball, email tone, spotlight effect, asking for help, career advice, animated story, psychology explained
+
+**Category:** Education · **Audience:** not made for kids · **Altered or synthetic content:** animated, clearly fictional, synthetic (text-to-speech) voices; no real people or events depicted.
+"""
+
+
+PROMO_INVITE = """# Promotion pack: The Quiet Game, Episode 3
+
+## Pinned comment
+Exclusion rarely looks like a slammed door. It looks like a door nobody holds open.
+If it happens to you: separate the facts from the story, then ask the person closest to the facts.
+
+Have you ever been quietly left off a meeting? Did you ask why?
+(Daniel's four moves are at {moves}.)
+
+## Community post
+New episode: THE QUIET GAME, "The Invite" 📅
+His name disappeared from the meeting invite. His manager replied: "Thanks."
+What would you do?
+• Say nothing and wait
+• Ask a colleague what happened
+• Email the manager and ask to be added back
+• Assume the worst
+
+## Short teaser
+VO: "At 8:59 on Monday, a meeting disappeared from Daniel's calendar. Nobody told him why."
+Card: THE QUIET GAME · The Invite · full episode on the channel
+A rendered 16:9 teaser cut from the final episode is in this folder as teaser.mp4 (git-ignored; rebuilt by package.py).
+"""
+
+
 PROMO = """# Promotion pack: The Quiet Game, Episode 1
 
 ## Pinned comment
@@ -202,6 +271,13 @@ def longform_qa(master: Path) -> dict:
     ys = [float(x.split("=")[1]) for x in r.stderr.split() if x.startswith("lavfi.signalstats.YAVG=")]
     q["opening_luma_min"] = round(min(ys), 1) if ys else None
     q["opening_not_black"] = bool(ys) and min(ys) > 12
+    # speech check on the audio of the final MP4 (Whisper tiny.en): every line must be intelligible in the mix
+    from pipeline.asr_check import check as asr_check
+    wav = OUT / "final_audio_16k.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(master), "-vn", "-ac", "1", "-ar", "16000", str(wav)], check=True)
+    a = asr_check(OUT, wav); wav.unlink(missing_ok=True)
+    q["speech_mean_recall"] = a["mean_recall"]; q["speech_lines_below_0_6"] = a["lines_below_0_6"]
+    q["speech_intelligible"] = bool(a["passed"])
     q["all_passed"] = all(val for k, val in q.items() if isinstance(val, bool) and k != "all_passed")
     return q
 
@@ -290,7 +366,7 @@ def main() -> int:
     ch = chapter_list(ep, tl)
     (DST / "description.md").write_text(description(ep, ch))
     moves = next(clock(t) for t, title in ch if title == "What to do instead")
-    (DST / "promo.md").write_text((PROMO_CREDIT if EP == "qg02-the-credit" else PROMO).format(moves=moves))
+    (DST / "promo.md").write_text({"qg02-the-credit": PROMO_CREDIT, "qg03-the-invite": PROMO_INVITE}.get(EP, PROMO).format(moves=moves))
     # 16:9 teaser: the cold open, the episode's key line, then the end of the title card
     T = {s["id"]: s for s in tl}
     (a0, a1), (b0, b1), (c0, c1) = CFG["teaser"]

@@ -145,6 +145,12 @@ def main(argv=None) -> int:
     music = audio.compose(tl, total, seed, bpm=ep.get("music", {}).get("bpm", 96), key_semi=decisions["music_key_offset"])
     clips = [(s["narration_at"], *read_wav(Path(n["path"]))) for s, n in zip(tl, narr)]
     clips = [(at, x, sr) for at, (x, sr) in [(c[0], (c[1], c[2])) for c in clips]]
+    if ep.get("voice_engine") == "kokoro":
+        # a faint room-tone bed (about -52 dBFS) so there is never dead digital silence between lines
+        rng = np.random.default_rng(seed); n = int(total * audio.SR)
+        tone = audio.lowpass_fast(rng.standard_normal(n).astype(np.float32), 900)
+        tone *= 10 ** (-52 / 20) / (float(np.sqrt((tone ** 2).mean())) or 1)
+        clips.append((0.0, tone.astype(np.float32), audio.SR))
     sfx_events = [(s["start"] + fx["at"], fx["name"]) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] + fx["at"] < s["end"]]
     if "metronomes" in ep:
         ep["metronomes"] = metronome_model(ep["metronomes"])

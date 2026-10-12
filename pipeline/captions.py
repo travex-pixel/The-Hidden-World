@@ -24,6 +24,28 @@ def _wrap(text: str, width: int = MAX_LINE) -> list[str]:
     return rows
 
 
+def _split_long(c: dict, limit: int = 90) -> list[dict]:
+    """A cue longer than two caption rows becomes consecutive cues, cut at sentence or clause breaks and
+    timed in proportion to their length (long-form lines are whole sentences, so prosody stays unbroken)."""
+    if len(c["text"]) <= limit:
+        return [c]
+    import re
+    parts, cur = [], ""
+    for tok in re.split(r"(?<=[.!?;:,])\s+", c["text"]):
+        for w in ([tok] if len(tok) <= limit else tok.split(" ")):
+            if cur and len(cur) + 1 + len(w) > limit:
+                parts.append(cur); cur = w
+            else:
+                cur = f"{cur} {w}".strip()
+    if cur:
+        parts.append(cur)
+    total = sum(len(x) for x in parts); t = c["start"]; out = []
+    for x in parts:
+        d = (c["end"] - c["start"]) * len(x) / total
+        out.append({**c, "start": round(t, 3), "end": round(t + d, 3), "text": x}); t += d
+    return out
+
+
 def cues(ep: dict, timeline: list[dict], cast_names: dict | None = None) -> list[dict]:
     """[{start, end, text, who}] in time order. Dialogue lines keep their own timing; narration-only scenes
     (Shorts) use the scene's narration window."""
@@ -35,6 +57,7 @@ def cues(ep: dict, timeline: list[dict], cast_names: dict | None = None) -> list
         elif not sc.get("silent") and sc.get("narration"):
             out.append({"start": s["narration_at"], "end": s["narration_end"], "text": sc["narration"], "who": "narrator"})
     out.sort(key=lambda c: c["start"])
+    out = [piece for c in out for piece in _split_long(c)]
     # keep a short minimum on screen without overlapping the next cue
     for a, b in zip(out, out[1:] + [None]):
         a["end"] = max(a["end"], a["start"] + 1.0)

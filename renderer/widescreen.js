@@ -476,6 +476,35 @@
       if (t > ex.repeat_at + 0.3) { const [ax, ay] = pos(ex.amplifier), [bx, by] = pos(ex.speaker); const k = ease.inOut(seg(t, ex.repeat_at + 0.3, ex.repeat_at + 1.0)); s += `<path d="M${f1(ax)} ${f1(ay)} Q${C[0]} ${C[1]} ${f1(lerp(ax, bx, k))} ${f1(lerp(ay, by, k))}" stroke="#ffd38a" stroke-width="6" fill="none" stroke-dasharray="14 10"/>`; }
       return s + cite(ex.cite, t, ex.cite_at);
     },
+    facts(ex, t) {   // what happened vs the story we tell about it
+      let s = heading(ex.title || 'Facts and the story', t, ex.sub || 'TWO COLUMNS');
+      s += PANEL(220, 290, 700, 560) + PANEL(1000, 290, 700, 560);
+      s += `<text x="570" y="356" text-anchor="middle" ${SANS} font-size="28" fill="#7fe0a0" letter-spacing="5">${esc(ex.left || 'WHAT HAPPENED')}</text><text x="1350" y="356" text-anchor="middle" ${SANS} font-size="28" fill="#ff8a7a" letter-spacing="5">${esc(ex.right || 'THE STORY')}</text>`;
+      const col = (items, x, fill, stroke, ink) => items.forEach((it, i) => { const k = ease.back(seg(t, it.at, it.at + 0.4)); if (k <= 0) return; const ls = E.wrap(it.text, 30);
+        s += `<g opacity="${f1(clamp(k, 0, 1))}" transform="translate(${x} ${400 + i * 140})"><rect width="620" height="${36 + ls.length * 40}" rx="16" fill="${fill}" stroke="${stroke}" stroke-width="3"/>${ls.map((l, j) => `<text x="28" y="${50 + j * 40}" ${SANS} font-size="30" fill="${ink}">${esc(l)}</text>`).join('')}</g>`; });
+      col(ex.facts, 260, '#1f3a2a', '#7fe0a0', '#d8f7e4'); col(ex.story, 1040, '#3a1f24', '#ff7a8a', '#ffd0d6');
+      return s + cite(ex.cite, t, ex.cite_at);
+    },
+    cyberball(ex, t) {   // an online game of catch where one player stops receiving the ball
+      let s = heading(ex.title || 'Cyberball', t, ex.sub || 'A GAME OF CATCH');
+      const P = [[960, 330, '#e06a4f', ex.names?.[0] || 'Player'], [620, 700, '#4f7cac', ex.names?.[1] || 'You'], [1300, 700, '#5a8a6a', ex.names?.[2] || 'Player']];
+      P.forEach(([x, y, c, n], i) => { s += `<g transform="translate(${x} ${y})"><circle cy="-40" r="52" fill="${c}"/><path d="M-80 100 Q-80 10 0 4 Q80 10 80 100 Z" fill="${c}" opacity="0.85"/><text y="150" text-anchor="middle" ${SANS} font-size="30" fill="#f4e8d0">${esc(n)}</text></g>`; });
+      // throws: everyone included until exclude_at, then only between players 0 and 2
+      const T = 1.1; let k = Math.floor(t / T), u = (t % T) / T; const seq = i => { const tt = i * T; if (tt < ex.exclude_at) return [0, 1, 2, 1, 0, 2][i % 6]; return i % 2 ? 2 : 0; };
+      const a = P[seq(k)], b = P[seq(k + 1)]; const bx = lerp(a[0], b[0], ease.inOut(u)), by = lerp(a[1] - 40, b[1] - 40, ease.inOut(u)) - Math.sin(u * Math.PI) * 120;
+      s += `<circle cx="${f1(bx)}" cy="${f1(by)}" r="22" fill="#ffd38a" stroke="#0b0d14" stroke-width="4"/>`;
+      if (t > ex.exclude_at + 1.5) { const kk = ease.out(seg(t, ex.exclude_at + 1.5, ex.exclude_at + 2.1)); s += `<g opacity="${f1(kk)}" transform="translate(620 470)"><rect x="-170" y="-34" width="340" height="68" rx="34" fill="#3a1f24" stroke="#ff7a8a" stroke-width="3"/><text y="10" text-anchor="middle" ${SANS} font-size="28" fill="#ffd0d6">${esc(ex.label || 'No more throws')}</text></g>`; }
+      return s + cite(ex.cite, t, ex.cite_at);
+    },
+    bars(ex, t) {   // expected vs actual, drawn to one scale (0-100 unless ex.max)
+      let s = heading(ex.title, t, ex.sub || 'ONE STUDY');
+      const max = ex.max || 100, X0 = 560, X1 = 1440, sc = (X1 - X0) / max;
+      ex.rows.forEach((r, i) => { const k = ease.out(seg(t, r.at, r.at + 0.8)); if (k <= 0) return; const y = 340 + i * 150, w = r.value * sc * k;
+        s += `<text x="${X0 - 24}" y="${y + 52}" text-anchor="end" ${SANS} font-size="30" fill="#f4e8d0">${esc(r.label)}</text><rect x="${X0}" y="${y}" width="${X1 - X0}" height="80" rx="12" fill="#1f2a3a"/><rect x="${X0}" y="${y}" width="${f1(w)}" height="80" rx="12" fill="${r.colour}"/><text x="${f1(X0 + w + 20)}" y="${y + 54}" ${SERIF} font-size="44" fill="#f4e8d0">${esc(r.shown || (Math.round(r.value * k) + (ex.unit ?? '%')))}</text>`; });
+      if (ex.chance !== undefined) { const x = X0 + ex.chance * sc, k = ease.out(seg(t, ex.chance_at, ex.chance_at + 0.5)); s += `<g opacity="${f1(k)}"><line x1="${f1(x)}" y1="320" x2="${f1(x)}" y2="${340 + ex.rows.length * 150 - 50}" stroke="#f4f4f6" stroke-width="4" stroke-dasharray="10 8"/><text x="${f1(x)}" y="306" text-anchor="middle" ${SANS} font-size="24" fill="#f4f4f6">${esc(ex.chance_label || 'chance')}</text></g>`; }
+      if (ex.note) { const k = ease.out(seg(t, ex.note_at, ex.note_at + 0.5)); s += `<text x="960" y="800" text-anchor="middle" ${SERIF} font-size="40" fill="#f4e8d0" opacity="${f1(k)}">${esc(ex.note)}</text>`; }
+      return s + cite(ex.cite, t, ex.cite_at);
+    },
     moves(ex, t) {
       let s = heading(ex.title || 'Four moves', t, ex.sub || 'WHAT DANIEL DID');
       ex.items.forEach((it, i) => { const kk = ease.out(seg(t, it.at, it.at + 0.5)); if (kk <= 0) return; const y = 300 + i * 150;

@@ -291,7 +291,13 @@
   function thrillerCaption(text, name, colour, t, progress, y) {
     const words = text.split(' '); const shown = Math.max(1, Math.ceil(words.length * clamp(progress, 0, 1)));
     const LAND = W > H;   // widescreen long-form: compact lower-third captions
-    const lines = wrap(text, LAND ? 54 : 26); const fs = LAND ? 42 : 54, lh = LAND ? 54 : 66; let wi = 0; const op = ease.out(seg(t, 0, 0.18));
+    let lines = wrap(text, LAND ? 54 : 26); const fs = LAND ? 42 : 54, lh = LAND ? 54 : 66; let wi = 0; const op = ease.out(seg(t, 0, 0.18));
+    if (LAND && lines.length > 2) {   // long sentence: show two rows at a time, paging with the voice
+      const pages = []; for (let i = 0; i < lines.length; i += 2) pages.push(lines.slice(i, i + 2));
+      const total = text.split(' ').length; let shownW = Math.max(1, Math.ceil(total * clamp(progress, 0, 1))), acc = 0, pi = 0;
+      for (; pi < pages.length - 1; pi++) { const n = pages[pi].join(' ').split(' ').length; if (shownW <= acc + n) break; acc += n; }
+      lines = pages[pi]; text = lines.join(' '); progress = (shownW - acc) / text.split(' ').length;
+    }
     let s = `<g opacity="${f1(op)}">`;
     if (name) s += `<text x="${W / 2}" y="${f1(y - lines.length * lh / 2 - 34)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${LAND ? 24 : 30}" letter-spacing="5" fill="${colour}" stroke="#05040a" stroke-width="6" paint-order="stroke">${esc(name.toUpperCase())}</text>`;
     lines.forEach((l, i) => {
