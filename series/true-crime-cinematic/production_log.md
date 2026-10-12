@@ -126,3 +126,5 @@
 - 2026-10-12 05:39:07 tcv23-hushpuppi-40: rendering (final, seed 1)
 - 2026-10-12 05:48:39 tcv23-hushpuppi-40: rendered in 572s
 - 2026-10-12 05:49:14 tcv23-hushpuppi-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_23_hushpuppi_40s.mp4 (42.4s, 17.0 MB, sha256 64dbcb37fa02)
+- 2026-10-12 06:40:01 produce 24: regenerating episode data
+- 2026-10-12 06:40:01 tcv24-jho-low-40: rendering (final, seed 1)
