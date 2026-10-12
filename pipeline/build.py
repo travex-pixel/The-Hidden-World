@@ -4,7 +4,7 @@ usage: python -m pipeline.build <episode_id> [--seed N|random] [--quality previe
 Produces out/<episode>/<episode>.mp4 plus inspectable intermediates and a verify report.
 """
 from __future__ import annotations
-import argparse, json, random, shutil, subprocess, sys, time
+import argparse, json, os, random, shutil, subprocess, sys, time
 from pathlib import Path
 import numpy as np
 
@@ -116,7 +116,11 @@ def main(argv=None) -> int:
     ap.add_argument("--visual", choices=["art", "svg"], default=None, help="art = illustrated panels (episode default); svg = code-drawn scenes")
     ap.add_argument("--plan-only", action="store_true", help="stop after writing plan.json (for quick stills with pipeline/stills.mjs)")
     ap.add_argument("--reuse-video", action="store_true", help="skip frame rendering and reuse out/<id>/video_silent.mp4 (audio-only iteration)")
+    ap.add_argument("--tts", choices=["piper", "elevenlabs"], default=None,
+                    help="narration provider for this build; overrides every voice profile (default: the profile, i.e. Piper)")
     args = ap.parse_args(argv)
+    if args.tts:
+        os.environ["HW_TTS_PROVIDER"] = args.tts   # read by pipeline/narrate.provider_of; the key itself is never read here
 
     try:
         ep = load_episode(args.episode)
@@ -132,18 +136,32 @@ def main(argv=None) -> int:
     (out_dir / "decisions.json").write_text(json.dumps(decisions, indent=2))
 
     # 1. narration (cached)
-    log("narration: synthesising with Piper (cached per line)")
+    from pipeline.narrate import provider_of
+    from pipeline.tts_elevenlabs import TTSProviderError
+    provider = provider_of(ep.get("narrator_profile"))
+    log(f"narration: synthesising with {'ElevenLabs (API, cached per line)' if provider == 'elevenlabs' else 'Piper (cached per line)'}")
     length_scale = round(1.0 / float(ep.get("narration_speed", 1.0)), 3)
-    narr = narrate_episode(ep, length_scale)
-    tl = build_timeline(ep, narr, args.target_duration)
-    total = tl[-1]["end"]
-    if args.target_duration and abs(total - args.target_duration) > 2:
-        length_scale = float(np.clip(length_scale * args.target_duration / total, 0.8, 1.2))
-        log(f"adjusting narration speed x{length_scale:.3f} toward target {args.target_duration}s")
+    try:
         narr = narrate_episode(ep, length_scale)
-        tl = build_timeline(ep, narr, args.target_duration); total = tl[-1]["end"]
+        tl = build_timeline(ep, narr, args.target_duration)
+        total = tl[-1]["end"]
+        if args.target_duration and abs(total - args.target_duration) > 2:
+            length_scale = float(np.clip(length_scale * args.target_duration / total, 0.8, 1.2))
+            log(f"adjusting narration speed x{length_scale:.3f} toward target {args.target_duration}s")
+            narr = narrate_episode(ep, length_scale)
+            tl = build_timeline(ep, narr, args.target_duration); total = tl[-1]["end"]
+    except TTSProviderError as e:
+        # the user asked for ElevenLabs: say exactly why it failed and stop; never quietly build with Piper instead
+        log(f"ERROR narration provider '{provider}' failed ({e.kind}): {e}")
+        log("       nothing was rendered. Fix the cause and re-run, or build with --tts piper (free, offline).")
+        return 5
     lo, hi = ep["target_duration_seconds"]
     log(f"timeline: {len(tl)} scenes, {total:.2f}s (target {lo}-{hi}s)")
+    narr_meta = {"narration_provider": provider}   # the provider only; voice ids are in the episode, the key is never written
+    prop = [l["text"][:40] for s_ in narr for l in s_.get("lines", []) if l.get("timing") == "proportional"]
+    if prop:
+        narr_meta["proportional_word_timing"] = prop
+        log(f"WARNING: {len(prop)} line(s) have proportional (not measured) word timings; see docs/TTS_PROVIDERS.md")
     if not (lo <= total <= hi):
         log(f"ERROR: total duration {total:.2f}s outside target range {lo}-{hi}s. Edit narration/min_duration or pass --target-duration.")
         return 3
@@ -201,6 +219,7 @@ def main(argv=None) -> int:
         log(f"audio: structured score, sections {''.join(sc_['sections'])}")
     else:
         mixed = audio.mix(total, clips, music, sfx_events, seed)
+    report.update(narr_meta)
     audio.write_wav(out_dir / "mix.wav", mixed)
     if ep.get("loudness_lufs"):   # normalise the final mix (YouTube plays back at about -14 LUFS); linear, never dynamic
         from pipeline import mixdown

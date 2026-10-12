@@ -1,17 +1,49 @@
-"""Per-scene narration with Piper TTS, cached by (voice, text) hash."""
+"""Per-scene narration with Piper TTS (default, offline) or the optional ElevenLabs provider, cached by content hash.
+
+Provider selection (pipeline/tts_elevenlabs.py is only imported when ElevenLabs is chosen):
+  - a voice profile may say `"provider": "elevenlabs"` with `voice_id`, `model_id` and `voice_settings`;
+  - the HW_TTS_PROVIDER environment variable (set by `--tts` on build.py / produce.py) overrides every profile;
+  - anything else is Piper, exactly as before. Piper cache keys are unchanged; ElevenLabs clips live under `el_<hash>`
+    with the provider, voice id, model id, settings and text in the hash, so the two can never collide.
+"""
 from __future__ import annotations
-import hashlib, json, re, wave
+import hashlib, json, os, re, wave
 from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / ".cache" / "narration"
 SR = 22050
+PROVIDER_ENV = "HW_TTS_PROVIDER"
+PROVIDERS = ("piper", "elevenlabs")
+
+
+def provider_of(v: dict | None) -> str:
+    """'piper' unless the profile asks for ElevenLabs or HW_TTS_PROVIDER overrides it."""
+    p = (os.environ.get(PROVIDER_ENV, "").strip().lower() or (v or {}).get("provider") or "piper")
+    if p not in PROVIDERS:
+        raise ValueError(f"unknown TTS provider {p!r}; choose one of {PROVIDERS}")
+    return p
+
+
+def elevenlabs_config(v: dict | None) -> dict:
+    """Voice/model for an ElevenLabs profile; the environment fills gaps so `--tts elevenlabs` works on any episode."""
+    from pipeline.tts_elevenlabs import DEFAULT_MODEL
+    v = v or {}
+    return {"voice_id": v.get("voice_id") or os.environ.get("ELEVENLABS_VOICE_ID", ""),
+            "model_id": v.get("model_id") or os.environ.get("ELEVENLABS_MODEL_ID") or DEFAULT_MODEL,
+            "voice_settings": dict(v.get("voice_settings") or {})}
 
 
 def _key(voice: str, text: str, length_scale: float, speaker=None) -> str:
     sp = "" if speaker is None else f"|spk{speaker}"
     return hashlib.sha1(f"{voice}|{length_scale}|{text}{sp}".encode()).hexdigest()[:16]
+
+
+def _el_key(cfg: dict, text: str) -> str:
+    from pipeline.tts_elevenlabs import OUTPUT_FORMAT
+    s = json.dumps(cfg["voice_settings"], sort_keys=True)
+    return "el_" + hashlib.sha1(f"elevenlabs|{cfg['voice_id']}|{cfg['model_id']}|{s}|{OUTPUT_FORMAT}|{text}".encode()).hexdigest()[:16]
 
 
 def read_wav(path: Path) -> tuple[np.ndarray, int]:
@@ -79,10 +111,15 @@ def _phoneme_words(alignments, sr: int) -> list[tuple[float, float]]:
     return out
 
 
-def narrate_scene(voice_name: str, text: str, length_scale: float = 1.0, speaker=None, align: bool = False) -> Path:
+def narrate_scene(voice_name: str, text: str, length_scale: float = 1.0, speaker=None, align: bool = False,
+                  profile: dict | None = None, speed_mult: float = 1.0) -> Path:
     """Synthesise one clip (cached). align=True also writes <clip>.words.json: spoken-word timings from Piper's
-    phoneme alignments, relative to the trimmed clip (needs the free `onnx` package)."""
+    phoneme alignments, relative to the trimmed clip (needs the free `onnx` package).
+    With an ElevenLabs profile (or HW_TTS_PROVIDER=elevenlabs) the clip comes from the API instead; `length_scale`
+    is Piper-only there, and `speed_mult` scales the profile's voice_settings.speed."""
     CACHE.mkdir(parents=True, exist_ok=True)
+    if provider_of(profile) == "elevenlabs":
+        return _narrate_elevenlabs(profile, text, speed_mult)
     out = CACHE / f"{_key(voice_name, text, length_scale, speaker)}.wav"
     words_json = out.with_suffix(".words.json")
     if out.exists() and (not align or words_json.exists()):
@@ -141,6 +178,32 @@ def _narrate_aligned(voice_name, text, length_scale, speaker, out: Path, words_j
     return out
 
 
+def _narrate_elevenlabs(profile: dict | None, text: str, speed_mult: float = 1.0) -> Path:
+    """One ElevenLabs clip, cached as el_<hash>.wav + .words.json (word spans from the API's character alignment,
+    relative to the trimmed clip). Same trim and peak normalisation as the Piper path. Raises TTSProviderError on
+    any failure; it never falls back to Piper."""
+    from pipeline import tts_elevenlabs as tts
+    cfg = elevenlabs_config(profile)
+    if speed_mult != 1.0:
+        cfg["voice_settings"]["speed"] = round(float(cfg["voice_settings"].get("speed", 1.0)) * speed_mult, 3)
+    out = CACHE / f"{_el_key(cfg, text)}.wav"; words_json = out.with_suffix(".words.json")
+    if out.exists() and words_json.exists():
+        return out
+    res = tts.synthesize(text, cfg["voice_id"], cfg["model_id"], cfg["voice_settings"])
+    x, sr = res["audio"], res["sr"]
+    idx = np.where(np.abs(x) > 0.01)[0]
+    cut = max(0, idx[0] - int(0.08 * sr)) if len(idx) else 0
+    x = trim_silence(x, sr)
+    peak = float(np.max(np.abs(x))) or 1.0
+    x = x / peak * 0.89
+    with wave.open(str(out), "wb") as w:
+        w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
+        w.writeframes((x * 32767).astype(np.int16).tobytes())
+    dur = len(x) / sr
+    words_json.write_text(json.dumps([[round(max(0.0, a - cut / sr), 3), round(min(dur, b - cut / sr), 3)] for a, b in res["words"]]))
+    return out
+
+
 def pronounce(text: str, table: dict | None) -> str:
     """Whole-word spoken substitutions ({"D4vd": "David"}), case-insensitive, punctuation kept. Captions keep the
     written form; each written word maps to its spoken replacement, so word timings stay aligned."""
@@ -153,28 +216,46 @@ def pronounce(text: str, table: dict | None) -> str:
     return re.sub(r"\S+", sub, text)
 
 
-def map_words(display: str, spoken: str, spans: list, voice_name: str, table: dict | None = None) -> list[dict]:
-    """Assign spoken-word spans to the caption's words. A caption word can be several spoken words
-    ('1978' -> 'nineteen seventy eight'); counts come from the phonemiser. Falls back to proportional timing."""
-    from piper import PiperVoice  # noqa: F401  (voice already loaded by the caller)
+_WORD_SEP = r"[ ,.:;?!\"'()—…-]+"
+
+
+def map_counts(display: str, counts: list[int], spans: list) -> tuple[list[dict], bool]:
+    """Assign spoken-word spans to the caption's words given how many spoken words each caption word becomes.
+    Returns (words, exact). exact=False means the counts and spans disagreed and the timing is PROPORTIONAL to
+    word length between the first and last span: callers must flag that, never present it as measured timing."""
     disp = display.split()
-    v = _VOICES.get(voice_name + "|align")
-    counts = []
-    for w in disp:
-        sw = pronounce(speak_years(w), table) if spoken != display else w
-        ph = v.phonemize(sw) if v else [list(sw)]
-        groups = "".join("".join(p) for p in ph)
-        counts.append(max(1, len([g for g in re.split(r"[ ,.:;?!\"'()—…-]+", groups) if g])))
     if sum(counts) == len(spans) and spans:
         out, i = [], 0
         for w, c in zip(disp, counts):
             out.append({"w": w, "start": spans[i][0], "end": spans[i + c - 1][1]}); i += c
-        return out
+        return out, True
     a, b = (spans[0][0], spans[-1][1]) if spans else (0.0, 0.0)
     tot = sum(len(w) for w in disp) or 1; t, out = a, []
     for w in disp:
         d = (b - a) * len(w) / tot; out.append({"w": w, "start": round(t, 3), "end": round(t + d, 3)}); t += d
-    return out
+    return out, False
+
+
+def map_words(display: str, spoken: str, spans: list, voice_name: str, table: dict | None = None) -> tuple[list[dict], bool]:
+    """Piper: a caption word can be several spoken words ('1978' -> 'nineteen seventy eight'); the counts come from
+    the phonemiser. Returns (words, exact) as map_counts does."""
+    from piper import PiperVoice  # noqa: F401  (voice already loaded by the caller)
+    v = _VOICES.get(voice_name + "|align")
+    counts = []
+    for w in display.split():
+        sw = pronounce(speak_years(w), table) if spoken != display else w
+        ph = v.phonemize(sw) if v else [list(sw)]
+        groups = "".join("".join(p) for p in ph)
+        counts.append(max(1, len([g for g in re.split(_WORD_SEP, groups) if g])))
+    return map_counts(display, counts, spans)
+
+
+def map_words_elevenlabs(display: str, spoken: str, spans: list, table: dict | None = None) -> tuple[list[dict], bool]:
+    """ElevenLabs: spans come from the API's character alignment grouped on the same separators tokens() uses, so a
+    caption word's spoken-word count is simply the token count of its spoken form. No phonemiser needed."""
+    from pipeline.tts_elevenlabs import tokens
+    counts = [max(1, len(tokens(pronounce(speak_years(w), table) if spoken != display else w))) for w in display.split()]
+    return map_counts(display, counts, spans)
 
 
 def load_character(cid: str) -> dict:
@@ -204,17 +285,26 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
         v = narrator_voice if (narrator_voice and ln["who"] == "narrator") else load_character(ln["who"])["voice"]
         spoken = speak_years(ln["text"]) if v.get("year_words") else ln["text"]   # captions keep the digits
         spoken = pronounce(spoken, v.get("pronounce"))                              # and the written names
-        align = bool(v.get("word_timing"))
-        p = narrate_scene(v["model"], spoken, v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"), align=align)
+        prov = provider_of(v)
+        align = bool(v.get("word_timing")) or prov == "elevenlabs"   # ElevenLabs timings come free with the audio
+        p = narrate_scene(v.get("model", ""), spoken, v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"),
+                          align=align, profile=v, speed_mult=ln.get("speed", 1.0))
         x, sr_ = read_wav(p); sr = sr or sr_
-        words = None
+        words, exact = None, True
         if align:
             import json as _json
-            if (v["model"] + "|align") not in _VOICES:   # phonemiser needed for mapping even on a cache hit
-                from piper import PiperVoice
-                from pipeline.voices import voice_path
-                _VOICES[v["model"] + "|align"] = PiperVoice.load(str(voice_path(v["model"])), include_alignments=True)
-            words = map_words(ln["text"], spoken, _json.loads(p.with_suffix(".words.json").read_text()), v["model"], v.get("pronounce"))
+            spans = _json.loads(p.with_suffix(".words.json").read_text())
+            if prov == "elevenlabs":
+                words, exact = map_words_elevenlabs(ln["text"], spoken, spans, v.get("pronounce"))
+            else:
+                if (v["model"] + "|align") not in _VOICES:   # phonemiser needed for mapping even on a cache hit
+                    from piper import PiperVoice
+                    from pipeline.voices import voice_path
+                    _VOICES[v["model"] + "|align"] = PiperVoice.load(str(voice_path(v["model"])), include_alignments=True)
+                words, exact = map_words(ln["text"], spoken, spans, v["model"], v.get("pronounce"))
+            if not exact:
+                print(f"[narrate] WARNING: word timings for {ln['who']!r} line {ln['text'][:50]!r} are proportional "
+                      f"(spoken-word count did not match the {prov} alignment); captions may drift inside this line")
         if ln.get("fx") == "phone":   # small phone speaker: band-limited and slightly crunchy
             X = np.fft.rfft(x); f = np.fft.rfftfreq(len(x), 1 / sr_)
             X *= ((f > 320) & (f < 3400)).astype(float)
@@ -225,12 +315,14 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
         if pre:
             parts.append(np.zeros(pre, np.float32)); t += pre / sr
         lines.append({"who": ln["who"], "text": ln["text"], "start": round(t, 3), "end": round(t + len(x) / sr, 3), "env": lip_envelope(x, sr)}
-                     | ({"words": words} if words else {}))   # word times are relative to the line start
+                     | ({"words": words} if words else {}) | ({} if exact else {"timing": "proportional"}))   # word times are relative to the line start
         parts.append(x.astype(np.float32)); t += len(x) / sr
         gap = int(ln.get("pause_after", 0.3) * sr)
         parts.append(np.zeros(gap, np.float32)); t += gap / sr
     clip = np.concatenate(parts[:-1]) if len(parts) > 1 else parts[0]
-    key = hashlib.sha1(repr([(l["who"], l["text"]) for l in scene["lines"]] + ([sorted(narrator_voice.items())] if narrator_voice else []) + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]] + [ln.get("fx", "") for ln in scene["lines"]]).encode()).hexdigest()[:16]
+    prov = provider_of(narrator_voice)   # the resolved provider (and its voice/model) must separate the joined-clip keys too
+    prov_key = [prov] + ([sorted(elevenlabs_config(narrator_voice).items())] if prov == "elevenlabs" else [])
+    key = hashlib.sha1(repr([(l["who"], l["text"]) for l in scene["lines"]] + ([sorted(narrator_voice.items())] if narrator_voice else []) + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]] + [ln.get("fx", "") for ln in scene["lines"]] + prov_key).encode()).hexdigest()[:16]
     out = CACHE / f"dlg_{key}.wav"
     with wave.open(str(out), "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
@@ -254,7 +346,7 @@ def narrate_episode(ep: dict, length_scale: float = 1.0) -> list[dict]:
             d = narrate_dialogue(s, ep.get("narrator_profile"))
             res.append({"scene_id": s["id"], **d})
             continue
-        p = narrate_scene(ep["narrator_voice"], s["narration"], length_scale)
+        p = narrate_scene(ep["narrator_voice"], s["narration"], length_scale, profile={"model": ep["narrator_voice"]})
         x, sr = read_wav(p)
         res.append({"scene_id": s["id"], "path": str(p), "duration": round(len(x) / sr, 3)})
     return res

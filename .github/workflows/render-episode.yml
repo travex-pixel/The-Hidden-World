@@ -24,6 +24,12 @@ on:
         required: false
         default: ""
         type: string
+      tts:
+        description: "Narration provider: piper (free, default) or elevenlabs (needs the ELEVENLABS_API_KEY secret)"
+        required: false
+        default: "piper"
+        type: choice
+        options: [piper, elevenlabs]
 
 permissions:
   contents: read
@@ -73,9 +79,15 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Build video
+        env:
+          # optional premium narration; add the secret under Settings > Secrets and variables > Actions. Empty when unset,
+          # and only read when tts=elevenlabs. It is never printed by the pipeline.
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
         run: |
           EXTRA=""
           if [ -n "${{ inputs.target_duration }}" ]; then EXTRA="--target-duration ${{ inputs.target_duration }}"; fi
+          if [ "${{ inputs.tts }}" = "elevenlabs" ]; then EXTRA="$EXTRA --tts elevenlabs"; fi
           python -m pipeline.build "${{ inputs.episode }}" --seed "${{ inputs.seed }}" --quality "${{ inputs.quality }}" $EXTRA
 
       - name: Summary

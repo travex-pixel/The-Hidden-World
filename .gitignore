@@ -9,3 +9,7 @@ series/*/output/*
 !series/true-crime/output/true_crime_01.mp4
 !series/true-crime/output/true_crime_02.mp4
 series/*/qa/*/asr_input.wav
+
+# local secrets (never committed): export ELEVENLABS_API_KEY in your shell or use a GitHub Actions secret instead
+.env
+.env.*

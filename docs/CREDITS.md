@@ -24,7 +24,7 @@ Suggested on-platform credit line: *"Narration: Piper TTS, Alba voice (CC BY 4.0
 | Episode score (from Oct 2026): sectioned original score, motif, stems | original procedural composition by `pipeline/score.py` (sine/additive synthesis, filtered noise, convolution reverb from generated noise); **no samples, loops or third-party recordings**; mixed by `pipeline/mixdown.py` | yes | no |
 | Archival photos and footage | **none used** | n/a | n/a |
 
-No paid service, API key, trial or subscription is used anywhere in the Case Files pipeline.
+No paid service, API key, trial or subscription is needed to run the Case Files pipeline; the default narration is Piper. **Optional ElevenLabs narration** (`docs/TTS_PROVIDERS.md`, off by default) is a paid API: its output may be used commercially only on a paid ElevenLabs plan (the free tier excludes commercial rights), the key lives only in the environment or a GitHub Actions secret, and an episode made with it should credit *"Narration: ElevenLabs"* instead of the Piper line below.
 
 Suggested description credit line for Case Files videos: *"Narration: Piper TTS, LibriTTS-R voice (CC BY 4.0). Maps: Natural Earth. Illustrated reconstruction; characters are not likenesses."*
 

@@ -47,15 +47,17 @@ def run(cmd: list[str]) -> int:
     return subprocess.run(cmd, cwd=ROOT).returncode
 
 
-def produce(ep: dict, force: bool) -> bool:
+def produce(ep: dict, force: bool, tts: str | None = None) -> bool:
     eid, n = ep["id"], ep["n"]; quality = ep.get("quality", CFG["quality"]); seed = CFG["seed"]
     out = ROOT / "out" / eid; stamp = out / "inputs.sha256"; mp4 = out / f"{eid}.mp4"
     h = inputs_hash(eid, quality, seed)
+    if tts:   # a provider override changes the sound, so it is part of the inputs hash (the API key never is)
+        h = hashlib.sha256(f"{h}|tts={tts}".encode()).hexdigest()
     if not force and mp4.exists() and stamp.exists() and stamp.read_text().strip() == h:
         log(f"{eid}: render cached (inputs unchanged), skipping to QA")
     else:
-        log(f"{eid}: rendering ({quality}, seed {seed})"); t0 = time.time()
-        if run([sys.executable, "-m", "pipeline.build", eid, "--quality", quality, "--seed", str(seed)]) != 0:
+        log(f"{eid}: rendering ({quality}, seed {seed}{', tts ' + tts if tts else ''})"); t0 = time.time()
+        if run([sys.executable, "-m", "pipeline.build", eid, "--quality", quality, "--seed", str(seed), *(["--tts", tts] if tts else [])]) != 0:
             log(f"{eid}: RENDER FAILED, see out/{eid}/ and fix; re-run produce.py {n}"); return False
         stamp.write_text(h + "\n"); log(f"{eid}: rendered in {time.time() - t0:.0f}s")
     rc = run([sys.executable, "series/true-crime/qa.py", str(n), "--series", str(HERE.relative_to(ROOT))])
@@ -69,6 +71,7 @@ def produce(ep: dict, force: bool) -> bool:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("which", help="episode number from series.json, or 'all'"); ap.add_argument("--force", action="store_true")
+    ap.add_argument("--tts", choices=["piper", "elevenlabs"], default=None, help="narration provider override (default: each episode's profile, i.e. Piper)")
     a = ap.parse_args(argv)
     log(f"produce {a.which}{' --force' if a.force else ''}: regenerating episode data")
     eps = CFG["episodes"] if a.which == "all" else [e for e in CFG["episodes"] if str(e["n"]) == a.which]
@@ -76,7 +79,7 @@ def main(argv=None) -> int:
         print(f"no episode {a.which} in series.json"); return 2
     if run([sys.executable, str(HERE / "make_episodes.py"), *[e["id"] for e in eps]]) != 0:
         log("make_episodes.py failed"); return 1
-    ok = [produce(e, a.force) for e in eps]
+    ok = [produce(e, a.force, a.tts) for e in eps]
     return 0 if all(ok) else 1
 
 
