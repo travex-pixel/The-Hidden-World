@@ -353,7 +353,7 @@
 
     // 8 - the outcome: convicted on all 30 counts (April 2015); sentenced to death; appeals continue (card)
     bb30_verdict(ctx) {
-      const conv = WT(ctx, 0, 0, 0.3), thirty = WT(ctx, 0, 3, 1.1), l1 = LS(ctx, 1, 2.4), sent = WT(ctx, 1, 0, 2.5), death = WT(ctx, 1, 2, 3.1);
+      const conv = WT(ctx, 0, 2, 0.6), thirty = WT(ctx, 0, 5, 1.4), l1 = LS(ctx, 1, 2.7), sent = WT(ctx, 1, 2, 3.0), death = WT(ctx, 1, 4, 3.6);
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { modern: true, dock: false }, grade: 'cold', cam: { from: { x: 0, y: 30, z: 1.0 }, to: { x: 40, y: 10, z: 1.1 }, handheld: 0.5 },
         figures: [

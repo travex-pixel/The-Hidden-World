@@ -57,8 +57,8 @@ def build(h):
                                                                  fw(0, 10, "beep", 0.3, -0.05), fw(1, 3, "hit", 0.55, -0.05)],
           emph=["cover", "loose.", "looked", "blood,", "911.", "dzhokhar", "tsarnaev."], pad=0.25, tr="flash"),
         # D - the outcome; the cliff impact sits in the pause between the two lines
-        S("s08_verdict", "bb30_verdict", [N("Convicted on all thirty counts."), N("Sentenced to death.", pause_before=0.35)],
-          "tension-peak", ["B_verdict", "B_appeals"], sfx=[fw(0, 0, "gavel", 0.8, -0.08)],
+        S("s08_verdict", "bb30_verdict", [N("He was convicted on all thirty counts."), N("He was sentenced to death.", pause_before=0.35)],
+          "tension-peak", ["B_verdict", "B_appeals"], sfx=[fw(0, 2, "gavel", 0.8, -0.08)],
           emph=["convicted", "thirty", "counts.", "death."], min_d=3.2, pad=0.3, tr="zoom"),
         # E - callback on the hero object, the memorial as the last spoken line; the engine burns the end question
         S("s09_end", "bb30_end", [N("A backyard boat ended the manhunt."), N("We remember those who died.", pause_before=0.3)],
@@ -155,7 +155,7 @@ def build(h):
         "FBI": "F B I", "Dzhokhar": "Joh-har", "Tsarnaev": "Sar-nigh-ev", "911": "nine one one", "260": "two hundred sixty",
         "backyard": "back-yard"})
     ep["score"] = {"root_hz": 146.83, "bpm": 80,
-                   "cliff": {"scene": "s08_verdict", "word": [1, 0], "at": -0.35}}
+                   "cliff": {"scene": "s08_verdict", "word": [1, 2], "at": -0.35}}
     ep["content_notes"] = ("Closed at trial: Dzhokhar Tsarnaev was convicted on all 30 counts in April 2015 and sentenced to death; the sentence was "
                            "vacated in 2020, reinstated by the Supreme Court in 2022 and remains under appeal (stated as 'appeals continue'). The bombing, "
                            "the finish line, the victims, injuries, the carjacking, the shootout, the standoff and any weapon or explosion are never "

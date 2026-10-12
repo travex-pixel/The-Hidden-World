@@ -358,3 +358,17 @@ Was it just luck? YES or NO 👇 Follow for the next case.
 #TrueCrime #OlympicParkBombing #FBI #ColdCase #CaseFiles
 
 We remember his victims.
+
+## 30: The backyard boat, 40 s (`true_crime_30_boat_40s.mp4`)
+Built to the three-winners rules (object first, a 2013 manhunt, an irony beat, YES/NO end question). Post at the same time of day as 22.
+
+A backyard boat ended the Boston Marathon manhunt 🚤
+
+A city shut down. A 20-block search found nothing.
+Then the lockdown was lifted, and one man went outside to check his boat.
+
+Would you have looked inside? YES or NO 👇 Follow for the next case.
+
+#BostonMarathon #TrueCrime #Manhunt #Watertown #CaseFiles
+
+In memory of Krystle Campbell, Lu Lingzi, Martin Richard and Officer Sean Collier.
