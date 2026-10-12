@@ -1,0 +1,822 @@
+{
+ "id": "tcv22-mcveigh-40",
+ "number": 22,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Missing License Plate Caught the Oklahoma City Bomber",
+ "central_question": "How was the Oklahoma City bomber already in a jail cell before the FBI knew his name?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "McVeigh": "Mack-Vay",
+   "FBI": "F B I"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "22",
+  "label": "OKLAHOMA CITY · 1995-2001"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "mc22_driver",
+  "mc22_trooper",
+  "mc22_clerk",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "scientist",
+  "examiner",
+  "official",
+  "judge"
+ ],
+ "content_notes": "Closed case: McVeigh was convicted on 2 Jun 1997 and executed on 11 Jun 2001; Terry Nichols was also convicted. 168 people were killed, including 19 children: the explosion, the building, the victims, rescue scenes and injuries are never depicted, and no famous photograph is recreated. McVeigh appears only as an anonymous rim-lit silhouette (not a likeness, never his booking photo), is never posed heroically, and none of his statements or beliefs are quoted. The trooper is a generic figure and is not named. No weapon is shown. The car is a generic 1970s yellow sedan; the rental counter carries no brand name, colours or logo; the jail, highway and lab are generic. The axle's number is never shown (masked). No real photograph, police or court material, sketch or document is imitated: every card is our own typed graphic, and the composite sketch is shown only from the back of the pad. No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "mc22_hook",
+   "min_duration": 5.6,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.15,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "M_hook",
+    "M_stop"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The Oklahoma City bomber was in a jail cell before the FBI even knew his name."
+    },
+    {
+     "who": "narrator",
+     "text": "Because of a missing license plate.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "jail",
+    "cell",
+    "name.",
+    "missing",
+    "plate."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_toll",
+   "scene": "mc22_toll",
+   "min_duration": 3.6,
+   "pad_after": 0.45,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "M_toll"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His truck bomb killed 168 people, including 19 children.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "168",
+    "19",
+    "children."
+   ],
+   "section": "A",
+   "music_drop": true
+  },
+  {
+   "id": "s03_stop",
+   "scene": "mc22_stop",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "brake",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      10
+     ],
+     "name": "step",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_stop"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Within about 90 minutes, a trooper stopped a car with no license plate."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "90",
+    "minutes,",
+    "no",
+    "plate."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_jail",
+   "scene": "mc22_jail",
+   "min_duration": 2.8,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gate",
+     "gain": 0.45
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "M_jailed"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was jailed on gun and traffic charges."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "jailed"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_axle",
+   "scene": "mc22_axle",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "ping",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      11
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "M_axle",
+    "M_kansas"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Meanwhile, a truck axle's vehicle identification number led the FBI to Kansas."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "axle's",
+    "vehicle",
+    "identification",
+    "kansas."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_rental",
+   "scene": "mc22_rental",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pen",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "M_sketch"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sketches from a rental shop there led to a name: Timothy McVeigh."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sketches",
+    "name:",
+    "mcveigh."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_reveal",
+   "scene": "mc22_reveal",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.3
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      5
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.55
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "gate",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "M_custody"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Agents ran the name. He was already in jail,"
+    },
+    {
+     "who": "narrator",
+     "text": "about to be released.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "already",
+    "jail,",
+    "released."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "mc22_verdict",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "M_verdict",
+    "M_nichols"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was convicted in 1997,"
+    },
+    {
+     "who": "narrator",
+     "text": "and executed in 2001.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convicted",
+    "executed"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "mc22_end",
+   "min_duration": 3.6,
+   "pad_after": 2.0,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sparkle",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "M_stop",
+    "M_custody",
+    "M_toll",
+    "M_car_museum"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A missing license plate held him."
+    },
+    {
+     "who": "narrator",
+     "text": "We remember the 168.",
+     "pause_before": 0.5
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "license",
+    "plate",
+    "168."
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "M_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Timothy McVeigh was already in custody, after a traffic stop for a missing license plate on the morning of the bombing, when the FBI identified him by name on 20-21 April 1995.",
+   "sources": [
+    "fbi_case",
+    "fas_defense",
+    "famous_trials"
+   ]
+  },
+  {
+   "id": "M_toll",
+   "type": "established",
+   "nature": "fact",
+   "text": "The truck bomb that exploded outside the Alfred P. Murrah Federal Building in Oklahoma City at 9:02 a.m. on 19 April 1995 killed 168 people, including 19 children.",
+   "sources": [
+    "fbi_case",
+    "cnn_facts",
+    "history"
+   ]
+  },
+  {
+   "id": "M_stop",
+   "type": "established",
+   "nature": "fact",
+   "text": "Within about 90 minutes of the bombing (FBI: 'just 90 minutes'; the published 10:20 a.m. stop time makes it about 78), an Oklahoma Highway Patrol trooper stopped a pale yellow 1977 Mercury Marquis with no rear license plate on I-35 in Noble County, north of Oklahoma City.",
+   "sources": [
+    "fbi_case",
+    "tampabay",
+    "famous_trials",
+    "fas_defense"
+   ]
+  },
+  {
+   "id": "M_jailed",
+   "type": "established",
+   "nature": "fact",
+   "text": "The trooper found a concealed handgun; the driver was arrested on misdemeanor weapons and traffic/vehicle charges and booked into the Noble County Jail in Perry, Oklahoma. (No weapon is shown on screen.)",
+   "sources": [
+    "tampabay",
+    "famous_trials",
+    "fas_defense",
+    "history"
+   ]
+  },
+  {
+   "id": "M_axle",
+   "type": "established",
+   "nature": "fact",
+   "text": "The rental truck's rear axle housing, recovered from the wreckage, carried (part of) its vehicle identification number.",
+   "sources": [
+    "memorial_axle",
+    "fbi_case",
+    "ku_ap"
+   ]
+  },
+  {
+   "id": "M_kansas",
+   "type": "established",
+   "nature": "fact",
+   "text": "The number was traced to a truck rented on 17 April 1995 from Elliott's Body Shop, a truck-rental agent in Junction City, Kansas (the rental company is not named on screen).",
+   "sources": [
+    "fbi_case",
+    "fas_defense",
+    "ku_ap"
+   ]
+  },
+  {
+   "id": "M_sketch",
+   "type": "established",
+   "nature": "fact",
+   "text": "Shop staff helped the FBI make composite sketches; at a Junction City motel the sketch was matched to a guest registered as Tim McVeigh, which gave agents a name.",
+   "sources": [
+    "fbi_art",
+    "fas_defense",
+    "crf",
+    "memorial_sketch"
+   ]
+  },
+  {
+   "id": "M_custody",
+   "type": "established",
+   "nature": "fact",
+   "text": "A records check showed Timothy McVeigh was still in custody in the Noble County Jail; on 21 April the FBI asked for him to be held, shortly before he was due to be released (History.com, The Globe and Mail; the FBI says the hold kept him from being released).",
+   "sources": [
+    "fbi_case",
+    "history",
+    "globe_mail",
+    "fbi_art"
+   ]
+  },
+  {
+   "id": "M_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "A federal jury found McVeigh guilty on all 11 counts on 2 June 1997; he was sentenced to death and executed by lethal injection on 11 June 2001, the first federal execution since 1963.",
+   "sources": [
+    "fbi_case",
+    "cnn_facts",
+    "history",
+    "newson6_justice"
+   ]
+  },
+  {
+   "id": "M_nichols",
+   "type": "established",
+   "nature": "fact",
+   "text": "Terry Nichols was convicted on federal conspiracy and involuntary manslaughter charges in December 1997 (life sentence) and on 161 state murder counts in 2004. On screen only.",
+   "sources": [
+    "cnn_facts",
+    "newson6_justice"
+   ]
+  },
+  {
+   "id": "M_car_museum",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT (card only): the Mercury Marquis McVeigh was driving when he was arrested joined the Oklahoma City National Memorial & Museum's collection in 2013 and is displayed there.",
+   "sources": [
+    "prt_car",
+    "newson6_car",
+    "krmg_car",
+    "kgou_car"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fbi_case",
+   "publisher": "FBI (History: Famous Cases)",
+   "title": "Oklahoma City Bombing",
+   "url": "https://www.fbi.gov/history/cases-and-criminals/oklahoma-city-bombing",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_story",
+   "publisher": "FBI (stories.fbi.gov)",
+   "title": "The Oklahoma City Bombing",
+   "url": "https://stories.fbi.gov/oklahoma-bombing/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_art",
+   "publisher": "FBI (news story)",
+   "title": "The \"Art\" of Solving Crimes",
+   "url": "https://www.fbi.gov/news/stories/2005/june/ipgu060805",
+   "date": "2005-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_norman",
+   "publisher": "FBI (video)",
+   "title": "Jim Norman, Case Agent, Oklahoma City Bombing Investigation",
+   "url": "https://www.fbi.gov/video-repository/newss-jim-norman-case-agent-oklahoma-city-bombing-investigation/view",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "famous_trials",
+   "publisher": "Famous Trials (UMKC School of Law, Douglas Linder)",
+   "title": "The arrest of Timothy McVeigh (timeline)",
+   "url": "https://famous-trials.com/oklacity/714-mcveigharrest",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "tampabay",
+   "publisher": "Tampa Bay Times",
+   "title": "The trooper who caught Timothy McVeigh by a fluke",
+   "url": "https://www.tampabay.com/news/humaninterest/the-trooper-who-caught-timothy-mcveigh-by-a-fluke/2226275/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nleomf",
+   "publisher": "National Law Enforcement Officers Memorial Fund",
+   "title": "Second Lieutenant Charles J. Hanger",
+   "url": "https://nleomf.org/?p=1224",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fas_defense",
+   "publisher": "Federation of American Scientists (1997 defense filing, U.S. v. McVeigh)",
+   "title": "McVeigh defense filing, part 3",
+   "url": "https://irp.fas.org/threat/mcveigh/part03.htm",
+   "date": "1997",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history",
+   "publisher": "History.com",
+   "title": "Oklahoma City Bombing",
+   "url": "https://history.com/topics/1990s/oklahoma-city-bombing",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "globe_mail",
+   "publisher": "The Globe and Mail",
+   "title": "Key dates in case",
+   "url": "https://www.theglobeandmail.com/news/world/key-dates-in-case/article4149183",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_facts",
+   "publisher": "CNN (Oklahoma City Bombing Fast Facts, via KRDO)",
+   "title": "Oklahoma City Bombing Fast Facts",
+   "url": "https://krdo.com/news/national-world/2021/04/07/oklahoma-city-bombing-fast-facts/",
+   "date": "2021-04-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "newson6_justice",
+   "publisher": "News On 6",
+   "title": "Oklahoma City bombing: justice (McVeigh, Nichols, Fortier)",
+   "url": "https://www.newson6.com/oklahoma-city-bombing-justice",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "memorial_axle",
+   "publisher": "Oklahoma City National Memorial & Museum",
+   "title": "Rear axle housing with partial VIN (artifact)",
+   "url": "https://memorialmuseum.com/artifact/rear-axle-housing-with-partial-vin/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "memorial_sketch",
+   "publisher": "Oklahoma City National Memorial & Museum",
+   "title": "FBI Sketch of John Doe #1 (artifact)",
+   "url": "https://memorialmuseum.com/artifact/fbi-sketch-of-john-doe-1",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ku_ap",
+   "publisher": "AP (1997 trial report, via University Daily Kansan archive)",
+   "title": "Ryder executive testifies on truck rental (OCR page)",
+   "url": "https://digital.lib.ku.edu/islandora/object/ku-udk%3A64005/datastream/OCR/download",
+   "date": "1997",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "crf",
+   "publisher": "Constitutional Rights Foundation",
+   "title": "An Early Breakthrough (Bill of Rights in Action 11:4)",
+   "url": "https://www.crf-usa.org/bill-of-rights-in-action/bria-11-4-a-the-aftermath-of-terror",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "prt_car",
+   "publisher": "Public Radio Tulsa (AP)",
+   "title": "Oklahoma City memorial to add McVeigh's car",
+   "url": "https://www.publicradiotulsa.org/local-regional/2013-04-21/oklahoma-city-memorial-to-add-mcveighs-car",
+   "date": "2013-04-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "newson6_car",
+   "publisher": "News On 6",
+   "title": "McVeigh's car to go on display at OKC bombing memorial museum",
+   "url": "https://newson6.com/story/22045602/mcveighs-car-to-go-display-at-okc-national-memorial",
+   "date": "2013-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "krmg_car",
+   "publisher": "KRMG",
+   "title": "McVeigh car to find home at OKC memorial museum",
+   "url": "https://www.krmg.com/news/local/mcveigh-car-find-home-okc-memorial-museum/hca9HaZi1XpjuPoG5gUmKL/",
+   "date": "2013-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kgou_car",
+   "publisher": "KGOU",
+   "title": "Oklahoma City memorial previews new exhibits ahead of reopening",
+   "url": "https://www.kgou.org/post/oklahoma-city-memorial-previews-new-exhibits-ahead-reopening",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A MISSING LICENSE PLATE"
+   },
+   {
+    "text": "CAUGHT THE OKLAHOMA CITY BOMBER",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

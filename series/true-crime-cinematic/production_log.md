@@ -99,3 +99,5 @@
 - 2026-10-12 02:08:16 tcv15-grim-sleeper: VERIFIED -> series/true-crime-cinematic/output/true_crime_15_grim_sleeper.mp4 (78.5s, 33.9 MB, sha256 3391dda51769)
 - 2026-10-12 02:16:57 tcv17-kohberger: rendered in 1124s
 - 2026-10-12 02:17:49 tcv17-kohberger: VERIFIED -> series/true-crime-cinematic/output/true_crime_17_kohberger.mp4 (80.2s, 30.3 MB, sha256 edeccc9da786)
+- 2026-10-12 03:02:42 produce 20: regenerating episode data
+- 2026-10-12 03:02:42 tcv20-boston-strangler-40: rendering (final, seed 1)

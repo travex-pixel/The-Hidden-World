@@ -1,0 +1,945 @@
+{
+ "id": "tcv19-grim-sleeper-40",
+ "number": 19,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Detective Posed as a Busboy and Kept a Killer's Pizza Crust",
+ "central_question": "How did a familial DNA search and an undercover 'busboy' end the 25-year hunt for LA's Grim Sleeper?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {}
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "19",
+  "label": "THE GRIM SLEEPER · 1985-2020"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 78,
+  "hits": [
+   {
+    "scene": "s04_party",
+    "word": [
+     0,
+     3
+    ],
+    "at": -0.05,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.3
+  }
+ },
+ "figures": [
+  "gr15_franklin",
+  "gr15_busboy",
+  "gr15_detective",
+  "gr15_neighbour_a",
+  "gr15_criminalist",
+  "detective",
+  "agent_a",
+  "analyst",
+  "judge",
+  "examiner"
+ ],
+ "content_notes": "40-second cut of Case File 15 (same claims and sources). Closed case: Franklin was convicted on 5 May 2016, sentenced to death on 10 Aug 2016 and died on death row on 28 Mar 2020. He appears only as an anonymous rim-lit silhouette with no face or likeness (tag 'ILLUSTRATION · NOT A LIKENESS'). The crimes are referred to only in summary; the victims are never depicted or described. His son is never named or shown, and a card says he is not a suspect. The undercover detective and all police are generic figures with no badges or insignia. The pizza restaurant, the street, the house, the lab and the courtroom are generic illustrations: no restaurant name, brand, logo, police or court material is imitated. The 'first familial DNA arrest' is attributed to officials. No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "gr19_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.05,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      5
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GR_busboy",
+    "GR_verdict"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A detective posed as a busboy, and kept a killer's pizza crust."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "detective",
+    "busboy,",
+    "pizza",
+    "crust."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_south",
+   "scene": "gr19_south",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "beep",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "buzz",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "GR_span",
+    "GR_nickname",
+    "GR_nomatch"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "From 1985, the Grim Sleeper killed women in South Los Angeles."
+    },
+    {
+     "who": "narrator",
+     "text": "Police had the killer's DNA, but no name.",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "grim",
+    "sleeper",
+    "dna,",
+    "no",
+    "name."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_family",
+   "scene": "gr19_family",
+   "min_duration": 4.4,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "typing",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "ping",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "GR_familial"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2010, a familial DNA search flagged his son."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "familial",
+    "son."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_party",
+   "scene": "gr19_party",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      6
+     ],
+     "name": "door",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "GR_name",
+    "GR_party"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The father was Lonnie Franklin Junior."
+    },
+    {
+     "who": "narrator",
+     "text": "Detectives followed him to a pizza restaurant.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "lonnie",
+    "franklin",
+    "pizza"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_busboy",
+   "scene": "gr19_busboy",
+   "min_duration": 4.0,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "click",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "GR_busboy"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside, a detective posed as a busboy."
+    },
+    {
+     "who": "narrator",
+     "text": "He kept the pizza crust.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "busboy.",
+    "pizza",
+    "crust."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s06_match",
+   "scene": "gr19_match",
+   "min_duration": 2.6,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      2
+     ],
+     "name": "swell",
+     "gain": 0.5
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GR_match"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The DNA matched the crime scenes.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "matched"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s07_arrest",
+   "scene": "gr19_arrest",
+   "min_duration": 2.2,
+   "pad_after": 0.45,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GR_arrest"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Two days later, he was arrested."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "arrested."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "gr19_verdict",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    },
+    {
+     "at": -0.08,
+     "word": [
+      1,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "GR_verdict",
+    "GR_sentence",
+    "GR_died"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2016, a jury convicted him of ten murders."
+    },
+    {
+     "who": "narrator",
+     "text": "Sentenced to death, he died in prison in 2020.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convicted",
+    "ten",
+    "death,",
+    "died"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "gr19_end",
+   "min_duration": 3.0,
+   "pad_after": 2.0,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.45
+    },
+    {
+     "at": 0.5,
+     "word": [
+      0,
+      10
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "GR_span",
+    "GR_busboy",
+    "GR_match"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Twenty-five years without a name. A pizza crust helped end it.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "twenty-five",
+    "pizza",
+    "crust"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "GR_span",
+   "type": "established",
+   "nature": "fact",
+   "text": "Franklin was convicted of murdering nine women and a 15-year-old girl in South Los Angeles between 1985 and 2007 (first conviction count: August 1985). He was not identified until July 2010, about 25 years after the first of those killings. Summary only; no detail used.",
+   "sources": [
+    "ktvu_sentence",
+    "csm_verdict",
+    "cbc_verdict"
+   ]
+  },
+  {
+   "id": "GR_nickname",
+   "type": "established",
+   "nature": "fact",
+   "text": "The killer became known as the 'Grim Sleeper', a nickname coined by LA Weekly in 2008 (for an apparent gap in the killings) and later adopted by the LAPD and the press.",
+   "sources": [
+    "cjr_laurels",
+    "kqed_reporter",
+    "iol_reuters",
+    "nbcla_died"
+   ]
+  },
+  {
+   "id": "GR_nomatch",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators had crime-scene DNA from the killer, but it did not identically match anyone in California's offender DNA database; a first familial search for the case (2008) found no relative either.",
+   "sources": [
+    "kesq_arrest",
+    "oag_familial",
+    "staradv_policy"
+   ]
+  },
+  {
+   "id": "GR_familial",
+   "type": "established",
+   "nature": "fact",
+   "text": "A second familial DNA search of California's offender database, begun on 28 April 2010, found a partial match indicating a close male relative of the killer: Franklin's son. (Why the son's profile was on file is not narrated; he is not named or shown and is not suggested to have done anything wrong.)",
+   "sources": [
+    "oag_familial",
+    "nbc_arrest",
+    "cbs_why",
+    "staradv_policy",
+    "courttv_died"
+   ]
+  },
+  {
+   "id": "GR_name",
+   "type": "established",
+   "nature": "fact",
+   "text": "The son's father was Lonnie David Franklin Jr., then 57, who lived in South Los Angeles.",
+   "sources": [
+    "kesq_arrest",
+    "nbc_arrest",
+    "staradv_policy"
+   ]
+  },
+  {
+   "id": "GR_party",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 5 July 2010, LAPD detectives followed Franklin to a birthday party at a pizza restaurant in Buena Park, California.",
+   "sources": [
+    "aba_ruling",
+    "cgs_ruling",
+    "oxygen_dna"
+   ]
+  },
+  {
+   "id": "GR_busboy",
+   "type": "established",
+   "nature": "fact",
+   "text": "An undercover LAPD detective, in a restaurant uniform, posed as a busboy (some reports: a waiter or employee) and collected items Franklin used: napkins, a glass, a fork or silverware, and a partially eaten slice of pizza / leftover pizza crust. A judge later ruled the DNA was lawfully obtained. Headline wording 'and kept a killer's pizza crust': the crust was among the items he collected; Franklin was later convicted of ten murders.",
+   "sources": [
+    "nbc_pizza",
+    "aba_ruling",
+    "globe_spree",
+    "officer_crust",
+    "kesq_arrest"
+   ]
+  },
+  {
+   "id": "GR_match",
+   "type": "established",
+   "nature": "fact",
+   "text": "DNA from the items collected at the restaurant matched DNA evidence from the crime scenes. 'A pizza crust helped end it' = the crust was among those items; the familial search had already pointed to the family.",
+   "sources": [
+    "nbc_pizza",
+    "cgs_ruling",
+    "oxygen_dna"
+   ]
+  },
+  {
+   "id": "GR_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "Franklin was arrested on 7 July 2010, two days after the party, in front of his home in South Los Angeles.",
+   "sources": [
+    "kesq_arrest",
+    "nbc_arrest",
+    "aba_ruling"
+   ]
+  },
+  {
+   "id": "GR_verdict",
+   "type": "established",
+   "nature": "procedure",
+   "text": "On 5 May 2016 a Los Angeles jury convicted Franklin of 10 counts of first-degree murder (nine women and a 15-year-old girl) and one count of attempted murder.",
+   "sources": [
+    "cnn_verdict",
+    "csm_verdict",
+    "cbc_verdict"
+   ]
+  },
+  {
+   "id": "GR_sentence",
+   "type": "established",
+   "nature": "procedure",
+   "text": "The jury recommended death in June 2016; on 10 August 2016 Judge Kathleen Kennedy sentenced him to death.",
+   "sources": [
+    "abc7_sentence",
+    "ktvu_sentence",
+    "cnn_sentence",
+    "cbc_jury_death"
+   ]
+  },
+  {
+   "id": "GR_died",
+   "type": "established",
+   "nature": "fact",
+   "text": "Franklin died on 28 March 2020 at San Quentin State Prison, where he was on death row, aged 67; officials reported no signs of trauma.",
+   "sources": [
+    "cbsla_died",
+    "courttv_died",
+    "nashua_died"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "cnn_verdict",
+   "publisher": "CNN",
+   "title": "'Grim Sleeper' trial verdict",
+   "url": "https://amp.cnn.com/cnn/2016/05/05/us/grim-sleeper-trial-verdict",
+   "date": "2016-05-05",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "csm_verdict",
+   "publisher": "The Christian Science Monitor (AP)",
+   "title": "Los Angeles man guilty in 10 'Grim Sleeper' serial killings",
+   "url": "https://m.csmonitor.com/USA/Justice/2016/0505/Los-Angeles-man-guilty-in-10-Grim-Sleeper-serial-killings",
+   "date": "2016-05-05",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbc_verdict",
+   "publisher": "CBC News",
+   "title": "Lonnie Franklin convicted in 10 murders spanning decades in Los Angeles",
+   "url": "https://amp.cbc.ca/lite/story/1.3546222",
+   "date": "2016-05",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc7_sentence",
+   "publisher": "ABC7 Los Angeles",
+   "title": "'Grim Sleeper,' convicted serial killer Lonnie Franklin Jr., sentenced to death",
+   "url": "https://abc7.com/1373724/",
+   "date": "2016-08-10",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ktvu_sentence",
+   "publisher": "KTVU (AP)",
+   "title": "Man convicted of 'Grim Sleeper' killings sentenced to death",
+   "url": "https://www.ktvu.com/news/man-convicted-of-grim-sleeper-killings-sentenced-to-death",
+   "date": "2016-08-10",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_sentence",
+   "publisher": "CNN",
+   "title": "'Grim Sleeper' death sentence",
+   "url": "https://amp.cnn.com/cnn/2016/08/10/us/grim-sleeper-death-sentence",
+   "date": "2016-08-10",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbc_jury_death",
+   "publisher": "CBC News",
+   "title": "Jury recommends death sentence for 'Grim Sleeper' serial killer",
+   "url": "https://amp.cbc.ca/lite/story/1.3619234",
+   "date": "2016-06",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbsla_died",
+   "publisher": "CBS Los Angeles",
+   "title": "Convicted serial killer known as 'Grim Sleeper' dies at San Quentin State Prison at age 67",
+   "url": "https://www.cbsnews.com/losangeles/news/convicted-serial-killer-known-as-grim-sleeper-dies-at-san-quentin-state-prison-at-age-67/",
+   "date": "2020-03",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "courttv_died",
+   "publisher": "Court TV (AP)",
+   "title": "Serial killer dubbed 'Grim Sleeper' dies in California prison",
+   "url": "https://www.courttv.com/news/serial-killer-dubbed-grim-sleeper-dies-in-california-prison/",
+   "date": "2020-03",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nashua_died",
+   "publisher": "The Telegraph, Nashua (AP)",
+   "title": "Serial killer Grim Sleeper dies in prison",
+   "url": "https://www.nashuatelegraph.com/news/national-news-apwire/2020/03/30/grim-sleeper-dies-in-prison/",
+   "date": "2020-03-30",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbcla_died",
+   "publisher": "NBC Los Angeles",
+   "title": "'Grim Sleeper' serial killer dies on death row",
+   "url": "https://www.nbclosangeles.com/news/local/grim-sleeper-serial-killer-dies-on-death-row/2337376/",
+   "date": "2020-03",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "oag_familial",
+   "publisher": "California Department of Justice, Office of the Attorney General",
+   "title": "Brown's forensic experts identify Grim Sleeper serial killer suspect through unprecedented use of familial DNA",
+   "url": "https://oag.ca.gov/news/press-releases/browns-forensic-experts-identify-grim-sleeper-serial-killer-suspect-through",
+   "date": "2010-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_arrest",
+   "publisher": "NBC News",
+   "title": "Police make arrest in 'Grim Sleeper' killings",
+   "url": "https://www.nbcnews.com/id/38133825",
+   "date": "2010-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "staradv_policy",
+   "publisher": "Honolulu Star-Advertiser (AP)",
+   "title": "Arrest in 'Grim Sleeper' killings fans debate on DNA policy",
+   "url": "https://staradvertiser.com/?p=239980",
+   "date": "2010-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_why",
+   "publisher": "CBS News",
+   "title": "Grim Sleeper arrest: why did cops suspect Lonnie Franklin Jr.?",
+   "url": "https://www.cbsnews.com/news/grim-sleeper-arrest-why-did-cops-suspect-lonnie-franklin-jr",
+   "date": "2010-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kesq_arrest",
+   "publisher": "KESQ (CNN wire)",
+   "title": "Police make arrest in 'Grim Sleeper' serial killings",
+   "url": "https://kesq.com/news/2010/07/07/police-make-arrest-in-grim-sleeper-serial-killings/",
+   "date": "2010-07-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_pizza",
+   "publisher": "NBC News",
+   "title": "Pizza helped cops nab 'Grim Sleeper' suspect",
+   "url": "https://www.nbcnews.com/id/wbna38162451",
+   "date": "2010-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aba_ruling",
+   "publisher": "ABA Journal",
+   "title": "Judge in 'Grim Sleeper' serial murder case OKs use of DNA cop got by posing as restaurant busboy",
+   "url": "https://www.abajournal.com/news/article/judge_in_grim_sleeper_serial_murder_case_oks_use_of_dna_cop_got_by_posing_a",
+   "date": "date not in extract (pretrial ruling, 2015)",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cgs_ruling",
+   "publisher": "Center for Genetics and Society (aggregated news report)",
+   "title": "DNA evidence in Grim Sleeper case was taken legally, judge rules",
+   "url": "https://www.geneticsandsociety.org/article/dna-evidence-grim-sleeper-case-was-taken-legally-judge-rules",
+   "date": "date not in extract (2015)",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "globe_spree",
+   "publisher": "The Boston Globe",
+   "title": "LA's 'Grim Sleeper' in decades-long killing spree",
+   "url": "https://www.bostonglobe.com/news/nation/2016/05/05/grim-sleeper-decades-long-killing-spree/wL1CljW4Ls8czWhOCMZpDP/story.html",
+   "date": "2016-05-05",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "officer_crust",
+   "publisher": "Officer.com",
+   "title": "How to catch a criminal: the proof is in the crust",
+   "url": "https://www.officer.com/investigations/forensics/article/21280480/how-to-catch-a-criminal-the-proof-is-in-the-crust",
+   "date": "date not in extract",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "oxygen_dna",
+   "publisher": "Oxygen",
+   "title": "How DNA helped catch the 'Grim Sleeper,' the prolific serial killer who terrorized Los Angeles",
+   "url": "https://www.oxygen.com/the-dna-of-murder-with-paul-holes/crime-time/grim-sleeper-lonnie-david-franklin-dna-arrest",
+   "date": "date not in extract",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cjr_laurels",
+   "publisher": "Columbia Journalism Review",
+   "title": "Darts and laurels (Nov/Dec 2010): LA Weekly and the Grim Sleeper",
+   "url": "https://www.cjr.org/darts_and_laurels/darts_and_laurels_novdec10.php",
+   "date": "2010-11",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kqed_reporter",
+   "publisher": "KQED",
+   "title": "How a determined L.A. reporter helped expose the alleged Grim Sleeper killer",
+   "url": "https://kqed.org/news/10909050/how-a-determined-l-a-reporter-helped-expose-the-alleged-grim-sleeper-killer",
+   "date": "date not in extract",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "iol_reuters",
+   "publisher": "IOL (Reuters)",
+   "title": "'Grim Sleeper' hid in plain sight in order to kill",
+   "url": "https://iol.co.za/news/world/2016-05-03-grim-sleeper-hid-in-plain-sight-in-order-to-kill/",
+   "date": "2016-05-03",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A DETECTIVE POSED AS A BUSBOY"
+   },
+   {
+    "text": "AND KEPT A KILLER'S PIZZA CRUST",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520,
+  "fs": 72
+ },
+ "legal_status_verified": "2026-10-12"
+}
