@@ -2065,7 +2065,20 @@
       "sha256": "64dbcb37fa022a987e8a100899659583dc3a0e3a441acb201f085d49eee1fe40",
       "output": "series/true-crime-cinematic/output/true_crime_23_hushpuppi_40s.mp4",
       "verified": "2026-10-12T05:49:14",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline legibility checked on a full-size first frame"
+        ],
+        "notes": [
+          "Closed: guilty plea 2021, 135 months (Nov 2022). 'Posed with jets' not 'his private jets' (court papers say charter jets); Dubai expelled him, the FBI did not extradite; no cash figure narrated because outlets differ. Face shown only in silhouette or from behind; victims not named."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "24": {
       "id": "tcv24-jho-low-40",
@@ -2135,22 +2148,35 @@
       "sha256": "b4882c99b53a456b7e26001745a7b6dbea1a16ed4211ce2eeb54d5032ca13c58",
       "output": "series/true-crime-cinematic/output/true_crime_24_jho_low_40s.mp4",
       "verified": "2026-10-12T06:49:59",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline legibility checked on a full-size first frame"
+        ],
+        "notes": [
+          "Never tried: Low appears only as a silhouette; every claim is attributed to US prosecutors or the DOJ, and 'denies wrongdoing / never tried / whereabouts not confirmed' is on screen. Celebrities not named or drawn. Najib (2020, 2025), Ng and Leissner appear as typed text only."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "25": {
       "id": "tcv25-capone-40",
       "title": "Al Capone Ran Chicago. A Ledger Brought Him Down #Shorts",
       "file": "true_crime_25_capone_40s.mp4",
       "media": {
-        "duration": 44.6,
+        "duration": 45.767,
         "width": 1080,
         "height": 1920,
         "fps": 30.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 20712662,
+        "size_bytes": 21383874,
         "mean_volume_db": -16.6,
-        "max_volume_db": -1.8
+        "max_volume_db": -1.7
       },
       "media_checks": {
         "has_video_stream": true,
@@ -2170,7 +2196,7 @@
         "media_checks_pass": true,
         "duration_in_window": true,
         "dimensions_1080x1920": true,
-        "frames_checked": 1338,
+        "frames_checked": 1373,
         "no_black_frames": true,
         "captions_timed_within_scenes": true,
         "speech_db_min": -16.9,
@@ -2196,19 +2222,33 @@
       },
       "loudness": {
         "integrated_lufs": -14.3,
-        "true_peak_dbtp": -1.8
+        "true_peak_dbtp": -1.7
       },
-      "asr_word_error_rate": 0.132,
+      "asr_word_error_rate": 0.036,
       "frames_sampled": 8,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_25",
       "status": "verified_automated",
-      "sha256": "e4307ff85493dee745df75cacf506b51e4278765b85249cd1cdca0d4434904f4",
+      "sha256": "83a230b79f147379ebfc4668ff9ee6449ccfed8261517d1d4a3e61e307dfa775",
       "output": "series/true-crime-cinematic/output/true_crime_25_capone_40s.mp4",
-      "verified": "2026-10-12T08:05:05",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "verified": "2026-10-12T08:17:56",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline legibility checked on a full-size first frame"
+        ],
+        "notes": [
+          "First episode built to the Case File 16 analytics rules (contradiction hook, stakes by 0:10, outcome in the last 8 s, end question burned in; no NEXT CASE card). The McSwiggin link to the 1926 raid was not sourced and is not used; costs figure varies so the card says '+ costs'; Eliot Ness caveat is a card row only.",
+          "First render passed QA at WER 0.132 but the recogniser heard the bare 'Guilty on five counts' as 'you'll need it on 5 counts', in context and in isolation; three lines were given lead-ins and re-rendered, WER 0.036."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     }
   },
-  "updated": "2026-10-12T08:05:05",
+  "updated": "2026-10-12T08:17:56",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

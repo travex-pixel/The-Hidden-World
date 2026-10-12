@@ -264,3 +264,45 @@ Would you have spotted it? 👇 Tell us below. Follow for the next case.
 #TrueCrime #OklahomaCity #FBI #CrimeHistory #TrueCrimeCommunity
 
 168 people were killed, including 19 children. We remember them.
+
+---
+
+# Case Files 23–25: money, supercars and the first analytics-driven cut (made 2026-10-12)
+**What changed with 25.** Built to the Case File 16 analytics rules in `docs/STYLE_GUIDE_TRUE_CRIME.md`: a contradiction hook on a household name, a stakes number by 0:10, the outcome inside the last 8 s, and the closing question burned into the picture (`end_title`) instead of a NEXT CASE card.
+
+## 23: Hushpuppi, 40 s (`true_crime_23_hushpuppi_40s.mp4`)
+He posed with jets and supercars for over 2 million followers ✈️
+
+The posts made him famous.
+They also left a trail.
+Investigators were reading it.
+
+Would you have spotted the clue? 👇 Follow for the next case.
+
+#TrueCrime #Hushpuppi #CaughtBy #Instagram #FBI
+
+He pleaded guilty to conspiracy to launder money. Victims are not shown.
+
+## 24: 1MDB and Jho Low, 40 s (`true_crime_24_jho_low_40s.mp4`)
+Billions left a state fund, US prosecutors say, and some of it bought a superyacht 🛥️
+
+Private jets. Lavish parties. Even a Hollywood film, according to the US Justice Department.
+Then the yacht was seized in Bali.
+
+Where do you think the money trail ends? 👇 Follow for the next case.
+
+#TrueCrime #1MDB #JhoLow #Superyacht #MoneyLaundering
+
+Jho Low denies wrongdoing and has never been tried; allegations are those of US prosecutors.
+
+## 25: Al Capone, 40 s (`true_crime_25_capone_40s.mp4`)
+Al Capone ran Chicago's underworld. A ledger helped bring him down. 📒
+
+Federal agents dug an old gambling-house ledger out of storage, found the bookkeeper, and read Capone's own lawyer's letter to the jury.
+Guilty on five tax counts. Eleven years. Alcatraz.
+
+Who really got Capone: Eliot Ness or the taxman? 👇 Follow for the next case.
+
+#AlCapone #TrueCrime #Chicago #Alcatraz #CaseFiles
+
+Illustrated representations, not likenesses.

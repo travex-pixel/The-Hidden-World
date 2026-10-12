@@ -136,3 +136,5 @@
 - 2026-10-12 08:05:05 tcv25-capone-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_25_capone_40s.mp4 (44.6s, 20.7 MB, sha256 e4307ff85493)
 - 2026-10-12 08:06:47 produce 25: regenerating episode data
 - 2026-10-12 08:06:47 tcv25-capone-40: rendering (final, seed 1)
+- 2026-10-12 08:17:18 tcv25-capone-40: rendered in 631s
+- 2026-10-12 08:17:56 tcv25-capone-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_25_capone_40s.mp4 (45.8s, 21.4 MB, sha256 83a230b79f14)
