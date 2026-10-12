@@ -1,0 +1,136 @@
+{
+ "film": "tupac-keffe-d",
+ "findings": [
+  {
+   "id": "FC-01",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Every source was read as WebSearch result text; no article, court record or statute was opened. Many result summaries did not name their outlet, so the research filed those passages under the most likely result. 19 high-risk legal claims therefore cannot reach the DIRECTLY SUPPORTED level the gate requires.",
+   "evidence": "evidence/claims.json; tupac-research/raw-search-log.md (audit trail); gate G13.",
+   "recommendation": "Before publication, read in full: AP's verdict story (31 Aug 2026), AP's 'who was there' explainer, AP's 28 Jul 2026 ruling story, the KLAS arraignment story and the Oxygen/NBC sentencing preview. Confirm each passage's outlet and record full_text access.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  },
+  {
+   "id": "FC-02",
+   "stage": "C",
+   "severity": "HIGH",
+   "claims": [
+    "K-SENTENCING",
+    "K-MAX",
+    "C65",
+    "C66",
+    "K-IN-CUSTODY"
+   ],
+   "lines": [],
+   "problem": "Time-sensitive: Davis is due to be sentenced on 13 October 2026, the day after this cut. The film says sentencing is 'set for' that date and that he 'faces up to life without parole'. Once the hearing happens, those lines, the end card and the description are out of date.",
+   "evidence": "Lines in chapter 7, the cold open's 40–60 s beat and the end card.",
+   "recommendation": "Do not publish this cut after 13 October without re-checking. After the hearing, make a new versioned cut (run2) with the actual sentence, attributed to reporting, and re-run the gate.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-12"
+  },
+  {
+   "id": "FC-03",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "K-LEADER",
+    "C60",
+    "C47",
+    "C39",
+    "K-MAX",
+    "C69"
+   ],
+   "lines": [],
+   "problem": "Some claims rest on one outlet group: 'former leader of the South Side Compton Crips' (Sinclair; AP passage best-effort), Palal's closing quotes (AP), the July 2026 ruling (AP), the not-guilty plea (KLAS), 'up to life without parole' (Oxygen) and the DA's 'not enough evidence to charge anyone else' (KSNV). Each is attributed in the narration.",
+   "evidence": "Gate G13 lists them as REQUIRES REVIEW.",
+   "recommendation": "Confirm each against a second outlet or the court record, or soften the wording.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  },
+  {
+   "id": "LR-01",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "K-IN-COURT",
+    "K-IN-CUSTODY",
+    "K-BET",
+    "K-PROFFER",
+    "K-ARREST"
+   ],
+   "lines": [],
+   "problem": "Duane Davis is alive and is shown as an illustrated figure (not a likeness) only in a police interview, a TV interview, being arrested near his home, in court and in custody. He is never shown doing any act from the allegations.",
+   "evidence": "film.json depicts entries; gate G14 passes.",
+   "recommendation": "Keep.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  },
+  {
+   "id": "LR-02",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C20",
+    "C14",
+    "K-ANDERSON-DIED",
+    "K-ONLY-CHARGED"
+   ],
+   "lines": [],
+   "problem": "Orlando Anderson (never charged, denied involvement, died 1998) is named as the shooter only as Davis's 2008 claim, and every such mention is paired with his denial and that he was never charged. 'The four men prosecutors say were in the Cadillac' is attributed; Smith and Brown are not named.",
+   "evidence": "Script lines in chapters 1–3 and the close.",
+   "recommendation": "Keep the pairing in any Shorts or cut-downs.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  },
+  {
+   "id": "LR-03",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Do-not-use material is excluded everywhere: Davis's claims about Sean Combs, Combs's unrelated conviction, the IBTimes framing, Knight's claim about the shooter, the bullets from Davis's home, wound and round counts, memoir quotes and specific sentencing ranges.",
+   "evidence": "evidence/unused-claims.json; dossier section 8.",
+   "recommendation": "Keep them out of comments and community posts too.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  },
+  {
+   "id": "LR-04",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C49",
+    "K-VERDICT"
+   ],
+   "lines": [],
+   "problem": "The conviction is for first-degree murder as the planner, not the gunman. The film says 'Prosecutors never said he pulled the trigger' up front and in the record section; the title says 'convicted', not 'killer'.",
+   "evidence": "Cold open, chapter 5, the close, youtube-title.txt.",
+   "recommendation": "Keep that framing in every packaging surface.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  },
+  {
+   "id": "AUD-01",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Names whose pronunciation is set by respelling and not verified by ear: 'Keffe D' (said Keefy D), 'Shakur' (Sha-koor), 'Tupac' (Too-pock), 'Kading', 'Kierny', 'Palal', 'Sekyiwa'.",
+   "evidence": "film.json pronounce/spoken; audit/asr-audit.json.",
+   "recommendation": "Owner to listen to the names sample.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  }
+ ]
+}

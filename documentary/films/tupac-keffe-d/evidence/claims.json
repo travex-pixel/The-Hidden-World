@@ -1,0 +1,2898 @@
+{
+ "film": "tupac-keffe-d",
+ "as_of": "2026-10-11",
+ "status_vocabulary": [
+  "VERIFIED",
+  "DIRECTLY SUPPORTED",
+  "CORROBORATED",
+  "DISPUTED",
+  "UNVERIFIED",
+  "OUTDATED",
+  "REQUIRES REVIEW"
+ ],
+ "claims": [
+  {
+   "id": "C01",
+   "proposition": "Tupac Shakur was shot in Las Vegas on the night of 7 September 1996, at about 11:15 p.m., at Flamingo Road and Koval Lane.",
+   "lines": [
+    14
+   ],
+   "facts": [
+    "SEPT 7, 1996",
+    "11:15 P.M.",
+    "Flamingo Rd & Koval Ln",
+    "Las Vegas"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-LVRJ-2019",
+     "supports": "direct",
+     "passage": "The shooting happened around 11:15 p.m. on September 7, 1996, at Flamingo Road and Koval Lane in Las Vegas.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "partial",
+     "passage": "Shakur was shot on the night of Sept. 7, 1996, while driving home from a boxing match at the MGM Grand.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "partial",
+     "passage": "One AP account places the time around 11:15 p.m.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "shooting",
+   "notes": "Intersection named in one result set (Q12: Wikipedia / LV Sun / LVRJ); AP independently gives the date and time. Exact intersection should be rechecked against the LV Sun 1996 report before a map graphic."
+  },
+  {
+   "id": "C02",
+   "proposition": "Shakur was riding in the front passenger seat of a black BMW driven by Death Row Records head Marion \"Suge\" Knight.",
+   "lines": [
+    13
+   ],
+   "facts": [
+    "Black BMW",
+    "Suge Knight driving",
+    "Tupac in passenger seat"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Marion Knight"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "direct",
+     "passage": "He was in the passenger seat of a black BMW driven by Marion \"Suge\" Knight, who was the head of Death Row Records at the time.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-TRIAL-BEGINS-KOLD",
+     "supports": "direct",
+     "passage": "Shakur was in the passenger seat of a black BMW and Knight was driving.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-FADER-SUGE",
+     "supports": "partial",
+     "passage": "One source notes that Knight was driving the car in which rapper Tupac Shakur was shot and killed in Las Vegas in 1996.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-LVRJ-2019",
+     "supports": "partial",
+     "passage": "Police described the shooter as a white or cream-colored Cadillac that pulled up beside the BMW.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "shooting",
+   "notes": "Seat position and car colour are AP-only in this ledger; Knight as driver is corroborated in the 2018 sentencing coverage (source in that result set not pinned)."
+  },
+  {
+   "id": "C03",
+   "proposition": "A white (or cream-coloured) Cadillac pulled up beside the BMW, which was stopped at a red light, and someone inside it opened fire.",
+   "lines": [
+    14,
+    15
+   ],
+   "facts": [
+    "White Cadillac",
+    "Stopped at a red light",
+    "Drive-by shooting"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "direct",
+     "passage": "While stopped at a red light, a white Cadillac pulled up next to the vehicle and opened fire, shooting Shakur several times.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-LVRJ-2019",
+     "supports": "direct",
+     "passage": "Police described the shooter as a white or cream-colored Cadillac that pulled up beside the BMW.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-SINCLAIR-DEFRESTS",
+     "supports": "partial",
+     "passage": "including a cream- or white-colored Cadillac",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C03: Colour given as 'white' (AP) or 'white or cream-colored' (LVRJ / police description)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "shooting",
+   "notes": "Who was inside the Cadillac is a separate, contested matter (see C19-C25, C59).",
+   "conflict_handling": "Script says 'a white Cadillac' (AP); the 'cream' variant is recorded."
+  },
+  {
+   "id": "C07",
+   "proposition": "Shakur died of his wounds at University Medical Center in Las Vegas on 13 September 1996, six days after the shooting.",
+   "lines": [
+    17,
+    60
+   ],
+   "facts": [
+    "SEPT 13, 1996",
+    "University Medical Center",
+    "Six days later"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-LVRJ-2019",
+     "supports": "direct",
+     "passage": "Shakur would die several days later of his injuries at University Medical Center on Sept. 13, 1996.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "direct",
+     "passage": "The rapper died from his injuries six days later.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "shooting",
+   "notes": "Age at death (25) was not confirmed by any result; do not state it from this ledger."
+  },
+  {
+   "id": "C10",
+   "proposition": "Prosecutors argued the shooting was retaliation for the beating of Davis's nephew, Orlando Anderson, at the MGM Grand.",
+   "lines": [
+    11,
+    12,
+    43
+   ],
+   "facts": [
+    "Retaliation",
+    "Nephew beaten at MGM Grand"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis",
+    "Orlando Anderson"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-OPENING-KOB",
+     "supports": "direct",
+     "passage": "Chief Deputy District Attorney Binu Palal told jurors that Duane Davis did not pull the trigger. But he did plan the shooting in retaliation of the beating of his nephew, according to the same report.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-FOX5-TIMELINE",
+     "supports": "direct",
+     "passage": "Prosecutors argued the shooting was gang-related retaliation for his nephew's beating at the MGM Grand.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-CNS-KICKOFF",
+     "supports": "direct",
+     "passage": "They argue that Davis' anger over Shakur's involvement in the beating of his nephew led him to acquire a gun, encounter Shakur in Las Vegas and hand the firearm to the man who would fire the fatal shots.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "attributed_to": "Clark County District Attorney's Office (Binu Palal)",
+   "notes": "Always attribute: 'prosecutors said'. The jury's verdict (C62) accepted the State's case; the motive wording remains the prosecution's."
+  },
+  {
+   "id": "C12",
+   "proposition": "In 2018, after Davis's BET interview, Las Vegas police said they had reviewed the case for months, that reports of an imminent arrest were inaccurate, and that it remained an open homicide.",
+   "lines": [
+    21
+   ],
+   "facts": [
+    "2018",
+    "Case remains open"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-NYDN-2018",
+     "supports": "direct",
+     "passage": "The statement said reports of an imminent arrest warrant were inaccurate, and that the case still remains an open homicide case (Daily News, July 2018, via PressReader).",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-OXYGEN-2018",
+     "supports": "direct",
+     "passage": "The Las Vegas police response was cautious. They said they had spent several months reviewing the entire case. They also said reports of an imminent arrest warrant were inaccurate, and that the case remained an open homicide.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-ABS-2018",
+     "supports": "partial",
+     "passage": "Las Vegas Police Issue Statement After New Details In Tupac Shakur Murder Case Emerge",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "investigation",
+   "attributed_to": "Las Vegas Metropolitan Police Department"
+  },
+  {
+   "id": "C14",
+   "proposition": "Orlando Anderson denied any involvement in Shakur's killing.",
+   "lines": [
+    12,
+    18,
+    28,
+    62
+   ],
+   "facts": [
+    "Anderson denied involvement"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Orlando Anderson"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-HOMESEARCH",
+     "supports": "direct",
+     "passage": "Anderson denied involvement at the time and died two years later in an unrelated gang shooting in Compton, California.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-NYDN-2018",
+     "supports": "direct",
+     "passage": "Anderson denied being the gunman and died in a gang shootout in Compton, Calif., in 1998.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-WHO-WAS-THERE",
+     "supports": "direct",
+     "passage": "Anderson, who denied involvement in Shakur's killing, died two years later in what police said was an unrelated shooting at a Compton car wash.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "anderson",
+   "attributed_to": "Orlando Anderson",
+   "notes": "Must accompany any mention that Davis or police named Anderson."
+  },
+  {
+   "id": "C17",
+   "proposition": "Davis is Orlando Anderson's uncle.",
+   "lines": [],
+   "facts": [
+    "Uncle",
+    "Nephew 'Baby Lane'"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis",
+    "Orlando Anderson"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-HOMESEARCH",
+     "supports": "direct",
+     "passage": "Davis is the uncle of Orlando Anderson, one of Shakur's known rivals who authorities have long suspected in the rapper's death.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "anderson"
+  },
+  {
+   "id": "C20",
+   "proposition": "In the 2008 interview Davis named his nephew, Orlando Anderson, as the person who fired the shots.",
+   "lines": [
+    27,
+    62
+   ],
+   "facts": [
+    "Davis named his nephew"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis",
+    "Orlando Anderson"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-NEPHEW-13ABC",
+     "supports": "direct",
+     "passage": "On Thursday, August 20, 2026, jurors heard a 2008 police interview in which Duane \"Keffe D\" Davis said his nephew, Orlando \"Baby Lane\" Anderson, fired the shots that killed Shakur.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-SINCLAIR-DAY4",
+     "supports": "direct",
+     "passage": "Jurors heard a police interview from 2008 in which Duane \"Keffe D\" Davis named his nephew, Orlando Anderson, as the shooter.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-CNS-CONFLICTING",
+     "supports": "partial",
+     "passage": "In a 2008 interview with law enforcement, he gave a different account: he was in a car with his nephew, Orlando Anderson, and handed a gun to Deandre \"Dre\" Smith, who passed it to Anderson.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_statements",
+   "attributed_to": "Duane Davis (recorded 2008 interview)",
+   "notes": "Attribution is mandatory ('Davis told investigators...'). In the same breath: Anderson denied it, died in 1998, never charged (C14-C16)."
+  },
+  {
+   "id": "C22",
+   "proposition": "In BET's 'Death Row Chronicles' (aired 2018), Davis said the shots came from the back seat of the car he was in but refused to name the shooter, citing the street code.",
+   "lines": [
+    22,
+    30,
+    55
+   ],
+   "facts": [
+    "BET 'Death Row Chronicles'",
+    "2018",
+    "'Code of the streets'"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-OXYGEN-2018",
+     "supports": "direct",
+     "passage": "Keffe D, real name Duane Keith Davis, told BET he was in the car when the shots came from the backseat, but he declined to name the shooter, saying of the code of the streets that \"Going to keep it for the code of the streets,\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-NYDN-2018",
+     "supports": "direct",
+     "passage": "In the February 2018 BET docuseries Death Row Chronicles, Duane \"Keffe D\" Davis said the shot came from the backseat of the car he was riding in, and he declined to name the shooter.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C22: Courthouse News and Sinclair call it a '2017 documentary interview' (likely filming year); NYDN dates the broadcast February 2018."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_statements",
+   "attributed_to": "Duane Davis (BET interview)",
+   "notes": "Attribute. Quote wording from one result only; paraphrase in narration.",
+   "conflict_handling": "Script says broadcast in 2018."
+  },
+  {
+   "id": "C24",
+   "proposition": "Davis's accounts conflict with each other: in a 2017 documentary interview he said he ducked when shots were fired and did not know who had the gun, and a former FBI agent testified Davis once denied knowing who killed Shakur.",
+   "lines": [
+    31
+   ],
+   "facts": [
+    "Conflicting accounts"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-CNS-CONFLICTING",
+     "supports": "direct",
+     "passage": "In a 2017 documentary interview, Duane \"Keffe D\" Davis said he ducked after hearing shots fired on Sept. 7, 1996. When asked who had the gun, he said he didn't know.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-SINCLAIR-DAY4",
+     "supports": "direct",
+     "passage": "A former FBI agent testified that in an interview, Davis denied knowing who killed Shakur.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_statements",
+   "attributed_to": "Duane Davis; former FBI agent (trial testimony)",
+   "notes": "Strong, fair material: it supports the defence theme that he told different stories."
+  },
+  {
+   "id": "C25",
+   "proposition": "Davis's 2019 memoir 'Compton Street Legend' places him in the Cadillac and describes passing the gun into the back seat; he never claimed to have fired.",
+   "lines": [
+    5,
+    22,
+    32,
+    33,
+    55
+   ],
+   "facts": [
+    "'Compton Street Legend'",
+    "2019 memoir"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "direct",
+     "passage": "Duane \"Keffe D\" Davis has previously admitted in interviews and in his 2019 tell-all memoir, \"Compton Street Legend,\" that he was in the Cadillac.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-GULF-BOOK",
+     "supports": "direct",
+     "passage": "He claimed he was in the Cadillac that night and admitted to passing the gun into the backseat, though he never claimed to have fired it himself.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-TRIAL-BEGINS-KOLD",
+     "supports": "partial",
+     "passage": "He has said publicly in recent years and in a 2019 memoir that he orchestrated the drive-by shooting that killed Shakur and wounded rap music mogul Marion \"Suge\" Knight.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_statements",
+   "attributed_to": "Duane Davis (memoir)",
+   "notes": "Attribute to the book. Davis now says he did not write or review it (C66)."
+  },
+  {
+   "id": "C27",
+   "proposition": "Davis's own words were the core of the prosecution: prosecutors said his interviews, police statements and memoir were central, and a senior prosecutor said that without the book he probably would never have been charged.",
+   "lines": [
+    4
+   ],
+   "facts": [
+    "His own words",
+    "The book"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-KSNV-PROSECUTORS",
+     "supports": "direct",
+     "passage": "Prosecutors said his own statements in interviews, to police, and in his memoir were central to the case.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-GULF-BOOK",
+     "supports": "direct",
+     "passage": "Chief Deputy District Attorney Marc DiGiacomo has said that without the book, Davis probably would never have been prosecuted at all.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-STARWITNESS-CP24",
+     "supports": "direct",
+     "passage": "Some of the most damaging evidence against the only man ever charged came from the man himself.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-EVIDENCE-1NEWS",
+     "supports": "direct",
+     "passage": "Duane \"Keffe D\" Davis spent years talking about the 1996 shooting with many people, including investigators, filmmakers and interviewers and through his memoir, Compton Street Legend.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "attributed_to": "Clark County District Attorney's Office",
+   "notes": "Best thematic spine for the film."
+  },
+  {
+   "id": "C28",
+   "proposition": "Retired LAPD detective Greg Kading led a task force (formed 2006, with federal agents) investigating the Shakur and Notorious B.I.G. killings, and wrote the 2011 book 'Murder Rap'.",
+   "lines": [
+    24
+   ],
+   "facts": [
+    "Greg Kading",
+    "Task force",
+    "'Murder Rap' (2011)"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-RSAU-KADING",
+     "supports": "direct",
+     "passage": "The former Los Angeles police detective led a task force that investigated the unsolved killings of Shakur and Christopher \"Notorious B.I.G.\" Wallace, and he's widely credited with helping crack the decades-old Shakur case.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-POLLSTAR-2011",
+     "supports": "direct",
+     "passage": "Pollstar says a special LAPD task force, with DEA and FBI agents, launched an investigation into the murders in May 2006.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-POLLSTAR-2011",
+     "supports": "partial",
+     "passage": "Kading's 2011 book is titled Murder Rap.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "investigation"
+  },
+  {
+   "id": "C30",
+   "proposition": "Davis argued the task force had promised immunity and that Kading broke the proffer agreement; the judge found no proof of any immunity deal.",
+   "lines": [
+    40
+   ],
+   "facts": [
+    "Immunity claim rejected"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-FOX5-DISMISSDENIED",
+     "supports": "direct",
+     "passage": "Clark County District Judge Carli Kierny denied Duane \"Keffe D\" Davis's motion to dismiss on January 21, 2025.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-YAHOO-NOIMMUNITY",
+     "supports": "direct",
+     "passage": "The judge ruled that the state \"never gave [Keffe D] immunity.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-RSAU-KADING",
+     "supports": "partial",
+     "passage": "Davis's side argued Kading broke the proffer agreement.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-COURTTV-UPHELD",
+     "supports": "partial",
+     "passage": "She found he had not offered proof of the immunity deals he claimed",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "pretrial"
+  },
+  {
+   "id": "C31",
+   "proposition": "Las Vegas police served a search warrant at a home in Henderson, Nevada, linked to Davis, on 17 July 2023.",
+   "lines": [
+    34
+   ],
+   "facts": [
+    "July 17, 2023",
+    "Henderson, Nev."
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-HOMESEARCH",
+     "supports": "direct",
+     "passage": "Las Vegas Metropolitan Police confirmed they served a search warrant on Monday, July 17, 2023, in Henderson.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-HOMESEARCH",
+     "supports": "partial",
+     "passage": "Public records tie the house to Paula Clemons, who is married to Davis, also known as \"Keffe D.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-SCRIPPS-HOMESEARCH",
+     "supports": "partial",
+     "passage": "vegas home searched in tupac killing linked to uncle of dead suspect",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "arrest_charge",
+   "attributed_to": "LVMPD",
+   "notes": "Do not name Davis's wife on screen (private person, not accused)."
+  },
+  {
+   "id": "C35",
+   "proposition": "A Clark County grand jury indicted Davis on one count of open murder with use of a deadly weapon, with a gang enhancement.",
+   "lines": [
+    36
+   ],
+   "facts": [
+    "Open murder",
+    "Deadly weapon",
+    "Gang enhancement",
+    "Indicted Sept 2023"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-ABC-INDICTED2023",
+     "supports": "direct",
+     "passage": "(Davis was indicted on Thursday by a Clark County grand jury on one count of open murder with use of a deadly weapon with a gang enhancement, according to ABC News.)",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-SINCLAIR-INDICTED",
+     "supports": "direct",
+     "passage": "Clark County District Attorney Steve Wolfson announced that a grand jury had indicted Davis on a charge of open murder with a deadly weapon, plus a gang enhancement.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-USAT-GRANDJURY",
+     "supports": "partial",
+     "passage": "The grand jury met at least five times over the course of three months before voting to indict on murder with a deadly weapon and a gang enhancement.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C35: Indictment returned Thursday 28 Sept (ABC, 8 News Now) vs announced/unsealed Friday 29 Sept (FOX5 and others)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "arrest_charge",
+   "notes": "Say 'indicted in September 2023' unless the exact day is needed.",
+   "conflict_handling": "Script says only that a grand jury indicted him for murder with a deadly weapon; no date or gang element."
+  },
+  {
+   "id": "C36",
+   "proposition": "Announcing the charge, DA Steve Wolfson called it the indictment 'we've been waiting almost 3 decades for' and said 'Today we are taking that first step.'",
+   "lines": [
+    37
+   ],
+   "facts": [
+    "'Almost 3 decades'"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FOX5-INDICT2023",
+     "supports": "direct",
+     "passage": "'The indictment we've been waiting almost 3 decades for,' says DA on arrest in Tupac Shakur murder",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-SINCLAIR-INDICTED",
+     "supports": "direct",
+     "passage": "Wolfson said at the conference, \"Today we are taking that first step.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "arrest_charge",
+   "attributed_to": "Steve Wolfson (Clark County DA)",
+   "notes": "Quotes appear in two independent groups (Gray headline, Sinclair text)."
+  },
+  {
+   "id": "C39",
+   "proposition": "Davis pleaded not guilty on 2 November 2023, and prosecutors said they would not seek the death penalty.",
+   "lines": [
+    38
+   ],
+   "facts": [
+    "NOT GUILTY plea",
+    "Nov 2, 2023",
+    "No death penalty"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-KLAS-ARRAIGN",
+     "supports": "direct",
+     "passage": "Duane \"Keffe D\" Davis entered a not-guilty plea on Thursday, November 2, 2023, in a Las Vegas courtroom.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-KLAS-ARRAIGN",
+     "supports": "direct",
+     "passage": "The judge told Davis that prosecutors are not seeking the death penalty in the case",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-EURONEWS-ARRAIGN",
+     "supports": "partial",
+     "passage": "2pac killer suspect pleads not guilty",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "arrest_charge",
+   "notes": "Judge at arraignment: Tierra Jones."
+  },
+  {
+   "id": "C41",
+   "proposition": "Davis was never released on bail: a judge set $750,000 bail with possible house arrest in January 2024, but in June 2024 Judge Carli Kierny refused to accept the bail money put up by rap manager Cash 'Wack 100' Jones, finding it had not been shown to come from legal sources.",
+   "lines": [
+    39
+   ],
+   "facts": [
+    "$750,000 bail (Jan 2024)",
+    "Release refused (June 2024)",
+    "Wack 100"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-BAIL-THEGRIO",
+     "supports": "direct",
+     "passage": "A Las Vegas judge set bail at $750,000 for a former Los Angeles-area gang leader charged with orchestrating the killing of hip-hop legend Tupac Shakur and said he could serve house arrest with electronic monitoring.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-FOX5-HOUSEARREST2024",
+     "supports": "partial",
+     "passage": "The defense had asked for bail of not more than $100,000.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-BAIL-CLICKONDETROIT",
+     "supports": "direct",
+     "passage": "Clark County Judge Carli Kierny held the source hearing on June 25. Wack 100 (Cash Jones) testified by video that he put up 15% of the $750,000 bond, or $112,500, from his business accounts",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-COURTTV-BAIL",
+     "supports": "direct",
+     "passage": "A written ruling said \"Mr. Davis failed to make a prima facie showing the bond was obtained through legal sources.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-HOT97-BAIL",
+     "supports": "partial",
+     "passage": "Tupac: Judge Declines Keffe D's Release Over Source Of Bail Money",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-RS-BAILHEARING",
+     "supports": "partial",
+     "passage": "Kierny rejected house arrest with electronic monitoring.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C41: Hearing date 25 June (most) vs 26 June (Rolling Stone). Some outlets first reported only a delayed decision."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "custody_bail",
+   "notes": "Wack 100 is not accused of any crime; judge was not satisfied about story-rights profits and funds.",
+   "conflict_handling": "Script says the court refused to release him on the bail money in 2024; no exact day."
+  },
+  {
+   "id": "C47",
+   "proposition": "On 28 July 2026 Judge Carli Kierny ruled that the 2008 police interview could be played at trial, and refused to exclude the memoir, finding Davis had adopted it as his own.",
+   "lines": [
+    41
+   ],
+   "facts": [
+    "2008 interview admitted",
+    "Memoir admitted"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-RULING-KOLD",
+     "supports": "direct",
+     "passage": "Clark County District Judge Carli Kierny ruled on Tuesday, July 28, 2026, that a recording of Duane \"Keffe D\" Davis's 2008 police interview can be used at his trial.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-RULING-KOLD",
+     "supports": "direct",
+     "passage": "The judge determined Davis adopted the book as his own, citing an interview in which he described the book as the \"real truth.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-NPR-RULING",
+     "supports": "partial",
+     "passage": "Judge allows use of police interview in Tupac Shakur murder trial",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C47: Defence argued the interview was meant to stay confidential."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "pretrial",
+   "conflict_handling": "Script states the ruling; the defence's confidentiality argument is not needed."
+  },
+  {
+   "id": "C49",
+   "proposition": "The State's theory at trial was that Davis did not pull the trigger but planned the shooting and supplied the gun.",
+   "lines": [
+    3,
+    43,
+    61
+   ],
+   "facts": [
+    "Didn't pull the trigger",
+    "Planned it",
+    "Provided the gun"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-OPENING-KOB",
+     "supports": "direct",
+     "passage": "Chief Deputy District Attorney Binu Palal told jurors that Duane Davis did not pull the trigger.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-VERDICT-FOX5",
+     "supports": "direct",
+     "passage": "They argued the former leader of the South Side Compton Crips orchestrated the retaliatory attack and provided the gun.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-AP-VERDICT-LOCAL10",
+     "supports": "partial",
+     "passage": "They said he'd called for the gunfire as a powerful gang leader the younger men in the car, including his nephew, were going to listen to.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-FOX5-TIMELINE",
+     "supports": "direct",
+     "passage": "Although Davis did not fire the shots, they say he orchestrated the attack for revenge.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-CNS-KICKOFF",
+     "supports": "partial",
+     "passage": "hand the firearm to the man who would fire the fatal shots",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-FOX5-30YEARS",
+     "supports": "partial",
+     "passage": "Prosecutors argued he set the plan in motion and directed it from inside the car where the shots were fired.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "attributed_to": "Clark County District Attorney's Office"
+  },
+  {
+   "id": "C50",
+   "proposition": "The defence argued Davis fabricated or embellished his stories for money and notoriety, that nothing corroborated them, that the gun was never found, and that there was no proof he was even in Las Vegas.",
+   "lines": [
+    44
+   ],
+   "facts": [
+    "Stories for money",
+    "No physical evidence",
+    "Gun never found"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-VERDICT-THEGRIO",
+     "supports": "partial",
+     "passage": "Davis's lawyers argued that he had embellished or fabricated his stories for money and attention and pointed to the absence of physical evidence.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-NBCLA-RECAP",
+     "supports": "direct",
+     "passage": "Attorney Michael Sanft argued that Davis fabricated or embellished his accounts of the killing for money and notoriety and that investigators failed to independently corroborate his claims.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-WEEK-CONVICTED",
+     "supports": "direct",
+     "passage": "Davis's lawyer, Michael Sanft, argued that the murder weapon was never found, and there were no real facts or physical evidence to prove that Davis was actually at the crime scene.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-LVRJ-NOPROOF",
+     "supports": "partial",
+     "passage": "Attorney says 'no proof' Tupac murder suspect was in Vegas at time of killing",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-CNS-KICKOFF",
+     "supports": "partial",
+     "passage": "Davis' defense attorney has argued his client was known to embellish stories, adding the district attorney couldn't prove Davis was in Las Vegas at the time.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "attributed_to": "Defence (Michael Sanft; earlier Carl Arnold)",
+   "notes": "Must be given fair weight in the film."
+  },
+  {
+   "id": "C51",
+   "proposition": "In opening statements the defence called the prosecution's narrative 'fiction' and said Davis was 'full of crap' when he told stories about his involvement.",
+   "lines": [
+    45
+   ],
+   "facts": [
+    "'Fiction'",
+    "'Full of crap'"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-NEPHEW-13ABC",
+     "supports": "direct",
+     "passage": "His lawyer called the prosecution's narrative \"fiction\" and argued investigators failed to back up Davis's statements with evidence.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-GULF-BOOK",
+     "supports": "direct",
+     "passage": "Davis's lawyer has called the prosecution's narrative \"fiction\" and said Davis was \"full of crap\" when he told stories of his involvement.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-OXYGEN-DIDDY",
+     "supports": "partial",
+     "passage": "Davis's own attorney said in opening statements that his client was \"full of crap\" when he previously bragged about him having any involvement in Shakur's death.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "attributed_to": "Defence counsel (opening statement)",
+   "notes": "Attribute to the defence lawyer."
+  },
+  {
+   "id": "C55",
+   "proposition": "Suge Knight was on the prosecution's witness list but was never called; he had said in 2023 he would not testify. He has never been charged in Shakur's killing.",
+   "lines": [
+    46
+   ],
+   "facts": [
+    "Knight not called",
+    "'1000% I wouldn't go'"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Marion Knight"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-SINCLAIR-DEFRESTS",
+     "supports": "direct",
+     "passage": "Knight was on the prosecution's list but was never called to the stand to testify.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-FOX5-SUGE2023",
+     "supports": "direct",
+     "passage": "Suge Knight: 'I'm not going to be on the stand to testify' in Tupac Shakur murder trial",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-HOT97-SUGE",
+     "supports": "partial",
+     "passage": "\"1000% I wouldn't go,\" Knight said.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-FOX5-30YEARS",
+     "supports": "partial",
+     "passage": "Davis is still the only person ever charged in this case.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "knight",
+   "attributed_to": "Marion 'Suge' Knight",
+   "notes": "Knight was a shooting victim. 'Never charged' is derived from 'Davis is the only person ever charged'."
+  },
+  {
+   "id": "C58",
+   "proposition": "Davis did not testify; the defence rested on 27 August 2026 after calling three witnesses.",
+   "lines": [
+    48
+   ],
+   "facts": [
+    "Davis did not testify"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-GRAY-DEFRESTS-WALB",
+     "supports": "direct",
+     "passage": "Davis chose not to testify, and the defense rested on Thursday, August 27, 2026, with closing arguments set for the following Monday.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-SOURCE-NOTESTIFY",
+     "supports": "direct",
+     "passage": "Keefe D Refuses To Testify As Defense Rests In Tupac Murder Trial",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-NBCLA-RECAP",
+     "supports": "partial",
+     "passage": "Davis did not testify.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "notes": "The judge instructed that no inference may be drawn from his silence; say so if mentioned."
+  },
+  {
+   "id": "C60",
+   "proposition": "In closing arguments on 31 August 2026 prosecutor Binu Palal said Davis got a gun and 'went hunting' for Shakur and Knight, adding: 'It's a plan, not an impulse.'",
+   "lines": [
+    11,
+    49
+   ],
+   "facts": [
+    "'Went hunting'",
+    "'A plan, not an impulse'"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-LATEST-CLOSING",
+     "supports": "direct",
+     "passage": "Chief Deputy District Attorney Binu Palal told jurors in closing arguments that Davis acquired a gun and \"went hunting\" for Shakur and Death Row Records co-founder Marion \"Suge\" Knight after they beat up Davis' nephew earlier that night.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-AP-LATEST-CLOSING",
+     "supports": "direct",
+     "passage": "He also argued the shooting was planned, saying \"It's a plan, not an impulse.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-KSNV-PROSECUTORS",
+     "supports": "partial",
+     "passage": "told jurors in closing arguments earlier Monday that Davis acquired a gun and \"went hunting\" for Shakur.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "attributed_to": "Binu Palal (Chief Deputy DA)",
+   "notes": "Quotes are AP-only (one group) but on-the-record courtroom words."
+  },
+  {
+   "id": "C64",
+   "proposition": "After the verdict was read, Shakur's sister Sekyiwa 'Set' Shakur cried and hugged prosecutors; the family said it was elated and relieved and that the verdict was 'not the end of the story'.",
+   "lines": [
+    51
+   ],
+   "facts": [
+    "'Elated and relieved'",
+    "'Not the end of the story'"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-AP-VERDICT-FOX5",
+     "supports": "direct",
+     "passage": "After the verdict was read, Shakur's sister, Sekyiwa \"Set\" Shakur, cried and hugged the prosecutors.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-AP-30YR-KRDO",
+     "supports": "direct",
+     "passage": "Shakur's family said it was elated and relieved by the verdict and thanked the jury for weighing the evidence.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-BILLBOARD-FAMILY",
+     "supports": "partial",
+     "passage": "It also said the verdict was \"not the end of the story.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-GMA-FAMILY",
+     "supports": "partial",
+     "passage": "Shakur's family issued a statement saying they were elated and relieved by today's verdict and thanked the jury.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "verdict",
+   "attributed_to": "Shakur family (statement read by prosecutors)"
+  },
+  {
+   "id": "C65",
+   "proposition": "Davis told the judge he wanted to appeal; the judge said he could do so after sentencing, and his lawyer says he will appeal.",
+   "lines": [
+    53,
+    62
+   ],
+   "facts": [
+    "'I would like to appeal'"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-OXYGEN-NEXT",
+     "supports": "direct",
+     "passage": "At the verdict hearing, the judge assured him that he would have the opportunity to appeal after the sentencing hearing.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-COMPLEX-APPEAL",
+     "supports": "direct",
+     "passage": "Right after the verdict, Davis said \"I would like to appeal this matter.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    },
+    {
+     "source": "S-OXYGEN-NEXT",
+     "supports": "partial",
+     "passage": "His defense attorney, Michael Sanft, told NBC News his client intends to appeal the conviction.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-VERDICT-FOX5",
+     "supports": "partial",
+     "passage": "Prosecutors say they expect appeals to be filed, and they feel secure in their evidence should one be filed by Davis's lawyer, Michael Sanft.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [
+    "C65: Davis told The Hollywood Reporter an appeal was 'already filed before the trial' (probably the pre-trial Nevada Supreme Court petition, C45). No post-verdict appeal filing was found."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": true,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "appeal",
+   "conflict_handling": "Script says he told the judge he wanted to appeal and can do so after sentencing; no claim that an appeal is filed."
+  },
+  {
+   "id": "C66",
+   "proposition": "Davis now says he is innocent: in a 2025 ABC jailhouse interview he said he confessed only because he was paid, and after the verdict he told The Hollywood Reporter he was not in Las Vegas that night, disowned the memoir and accused police, prosecutors and witnesses of lying.",
+   "lines": [
+    6,
+    54,
+    55,
+    62
+   ],
+   "facts": [
+    "'I'm innocent'",
+    "Says he wasn't in Las Vegas",
+    "Says he was paid to talk"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-KHALEEJ-INNOCENT",
+     "supports": "direct",
+     "passage": "Davis said \"I'm innocent, man. They got an innocent man sitting in jail.\" He also accused police officers, prosecutors and other witnesses of lying about him during the trial.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-KHALEEJ-INNOCENT",
+     "supports": "direct",
+     "passage": "He disputed the core of the prosecution's timeline, claiming he was nowhere near Las Vegas the night of the shooting.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-COMPLEX-INNOCENT",
+     "supports": "partial",
+     "passage": "Davis has now distanced himself from the memoir, saying he did not write or review the book.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-USAT-NOTWORRIED",
+     "supports": "partial",
+     "passage": "Davis told The Hollywood Reporter he wasn't worried because he's getting out on an appeal, and the appeal was filed before the trial even started (per Complex, which quotes him directly).",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-ABC-JAILHOUSE2025",
+     "supports": "direct",
+     "passage": "In a 2025 jailhouse interview with ABC, Davis \"I'm innocent,\" Davis said and claimed he only confessed to his purported role in the crime because he was getting paid to lie.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-LVSUN-2025",
+     "supports": "partial",
+     "passage": "tupac-murder-suspect-keffe-d-says-hes-innocent-in",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C66: Directly contradicts his 2008 interview, BET interview and memoir (C19-C25)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": true,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_statements",
+   "attributed_to": "Duane Davis (ABC 2025; The Hollywood Reporter 2026, as reported)",
+   "notes": "THR article itself not opened; quotes come through Khaleej Times, Complex and USA Today.",
+   "conflict_handling": "Script sets his denial directly against his earlier accounts, each attributed."
+  },
+  {
+   "id": "C69",
+   "proposition": "After the verdict, DA Steve Wolfson said prosecutors do not yet have enough evidence to charge anyone else.",
+   "lines": [
+    58
+   ],
+   "facts": [
+    "No one else charged"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-KSNV-PROSECUTORS",
+     "supports": "direct",
+     "passage": "Wolfson also stressed on Tuesday that prosecutors do not yet have sufficient proof to charge anyone else.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-KSNV-PROSECUTORS",
+     "supports": "partial",
+     "passage": "Clark County prosecutors have left the door open to more charges, but they say they don't have enough evidence yet to charge anyone else.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C69: IBTimes framed the same remarks as Combs being 'not off the hook' (C72)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": true,
+   "checked": "2026-10-11",
+   "use": "onscreen_only",
+   "research_confidence": "medium",
+   "category": "verdict",
+   "attributed_to": "Steve Wolfson (Clark County DA)",
+   "conflict_handling": "Script attributes it to the district attorney; the IBTimes framing is not used."
+  },
+  {
+   "id": "C74",
+   "proposition": "The verdict came one week before the 30th anniversary of the shooting (7 September 2026).",
+   "lines": [
+    8,
+    52
+   ],
+   "facts": [
+    "30 years",
+    "Sept 7, 2026"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FOX5-30YEARS",
+     "supports": "direct",
+     "passage": "The landmark anniversary comes exactly one week after a Clark County jury deliberated for three hours, and the 30th anniversary fell on Monday, September 7.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-30YR-KRDO",
+     "supports": "partial",
+     "passage": "a 30 year wait for justice in tupacs killing ends with a murder conviction in under 3 hours",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "media",
+   "notes": "Also follows by date arithmetic from C01 (7 Sept 1996) and C62 (31 Aug 2026). Anniversary of the shooting; the anniversary of his death is 13 September."
+  },
+  {
+   "id": "K-IN-COURT",
+   "proposition": "Davis appeared in court in Las Vegas for his murder trial and when the verdict was read.",
+   "lines": [
+    2,
+    50
+   ],
+   "facts": [
+    "In court",
+    "Las Vegas"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-KSNV-PROSECUTORS",
+     "supports": "direct",
+     "passage": "A jury found Davis, 63, guilty Monday of first-degree murder with use of a deadly weapon after less than three hours of deliberation.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-OXYGEN-NEXT",
+     "supports": "direct",
+     "passage": "A Clark County, Nevada jury deliberated for nearly three hours before finding Keffe D guilty of a single count of first-degree murder with a deadly weapon, ending an 11-day trial.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-VERDICT-FOX5",
+     "supports": "direct",
+     "passage": "A Las Vegas jury convicted Davis, 63, on a single count of murder with a deadly weapon, which carries a possible life sentence.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-AP-VERDICT-THEGRIO",
+     "supports": "partial",
+     "passage": "A Las Vegas jury convicted him on Monday, August 31, of first-degree murder with a deadly weapon.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C62: Some non-US outlets date the verdict 1 September (time zones). Gang element: see C61."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "verdict",
+   "notes": "Used only to support drawing Davis's figure in a courtroom.",
+   "dossier_claims": [
+    "C62"
+   ],
+   "conflict_handling": "Script says 31 August 2026."
+  },
+  {
+   "id": "K-IN-CUSTODY",
+   "proposition": "Davis has been held in custody without bail since his arrest, at the Clark County Detention Center.",
+   "lines": [
+    39,
+    56
+   ],
+   "facts": [
+    "Clark County Detention Center",
+    "In custody"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-KLAS-ARRAIGN",
+     "supports": "direct",
+     "passage": "He was arrested on September 29 and has remained in jail without bail ever since.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-SUPREMECOURT-NEWS4JAX",
+     "supports": "direct",
+     "passage": "One report says Davis remains incarcerated at the Clark County Detention Center",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-OXYGEN-NEXT",
+     "supports": "direct",
+     "passage": "The judge ordered that Davis be held in jail without bond until his sentencing on Oct. 13, per NBC News.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": true,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "custody_bail",
+   "dossier_claims": [
+    "C43"
+   ],
+   "notes": "Used only to support drawing Davis's figure in custody."
+  },
+  {
+   "id": "K-BET",
+   "proposition": "Davis gave a televised interview for BET's 'Death Row Chronicles', broadcast in 2018.",
+   "lines": [
+    5,
+    29
+   ],
+   "facts": [
+    "BET",
+    "2018",
+    "Death Row Chronicles"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-OXYGEN-2018",
+     "supports": "direct",
+     "passage": "Keffe D, real name Duane Keith Davis, told BET he was in the car when the shots came from the backseat, but he declined to name the shooter, saying of the code of the streets that \"Going to keep it for the code of the streets,\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-NYDN-2018",
+     "supports": "direct",
+     "passage": "In the February 2018 BET docuseries Death Row Chronicles, Duane \"Keffe D\" Davis said the shot came from the backseat of the car he was riding in, and he declined to name the shooter.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C22: Courthouse News and Sinclair call it a '2017 documentary interview' (likely filming year); NYDN dates the broadcast February 2018."
+   ],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_statements",
+   "attributed_to": "Duane Davis (BET interview)",
+   "notes": "Used only to support drawing Davis's figure in an interview set.",
+   "dossier_claims": [
+    "C22"
+   ],
+   "conflict_handling": "Script says the interview was broadcast in 2018; filming year not stated."
+  },
+  {
+   "id": "K-ONLY-CHARGED",
+   "proposition": "No one was charged until Davis was indicted in 2023; he is the only person ever charged in the case.",
+   "lines": [
+    0,
+    8,
+    19,
+    20,
+    28,
+    61,
+    62
+   ],
+   "facts": [
+    "Only person ever charged",
+    "No arrests until 2023",
+    "2023"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-TRIAL-BEGINS-KOLD",
+     "supports": "direct",
+     "passage": "No one was charged until Davis was indicted in 2023.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-KLAS-ARRAIGN",
+     "supports": "direct",
+     "passage": "Davis is the only person still alive who was in the vehicle from which shots were fired and the only person ever charged with a crime in the case.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-FOX5-30YEARS",
+     "supports": "direct",
+     "passage": "Davis is still the only person ever charged in this case.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "investigation",
+   "notes": "Core legal frame. Every other person named in Davis's accounts was never charged.",
+   "dossier_claims": [
+    "C11"
+   ]
+  },
+  {
+   "id": "K-ACCOUNT",
+   "proposition": "In his recorded proffer ('queen for a day') interview, Davis said he rode in the Cadillac's front passenger seat and handed a gun to the men in the back seat.",
+   "lines": [
+    22,
+    25,
+    26,
+    55
+   ],
+   "facts": [
+    "Front passenger seat",
+    "Handed gun to back seat",
+    "'Queen for a day'"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-RSAU-KADING",
+     "supports": "direct",
+     "passage": "In the recording played for jurors, Davis said he was riding in the front passenger seat of the Cadillac involved in Shakur's shooting and handed a loaded .40-calibre Glock to the men in the back seat.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-RSAU-KADING",
+     "supports": "partial",
+     "passage": "That led to the secret Dec. 18, 2008, proffer interview, commonly known as a \"queen for a day\" session.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-NEPHEW-13ABC",
+     "supports": "direct",
+     "passage": "Davis, who said in the interview that he was also in the car with Anderson, is accused of orchestrating the 1996 killing.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C19: Date: 18 Dec 2008 (Rolling Stone AU) / 'late December 2008' (Pollstar) / one podcast summary says 2009. A separate 2009 police interview also exists (C54)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_statements",
+   "attributed_to": "Duane Davis (recorded 2008 interview)",
+   "notes": "Attribute to Davis's recorded words. Gun model ('.40-calibre Glock') from one source only: keep off screen.",
+   "dossier_claims": [
+    "C19"
+   ],
+   "conflict_handling": "Script gives his 2008 account only as what he said; the hand-off sequence beyond 'to the men in the back' is not used."
+  },
+  {
+   "id": "K-VERDICT",
+   "proposition": "On 31 August 2026 a Clark County jury found Davis guilty of first-degree murder with use of a deadly weapon.",
+   "lines": [
+    1,
+    2,
+    8,
+    50,
+    59,
+    61
+   ],
+   "facts": [
+    "GUILTY",
+    "AUG 31, 2026",
+    "31 August 2026",
+    "First-degree murder",
+    "Deadly weapon",
+    "2026"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-KSNV-PROSECUTORS",
+     "supports": "direct",
+     "passage": "A jury found Davis, 63, guilty Monday of first-degree murder with use of a deadly weapon after less than three hours of deliberation.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-OXYGEN-NEXT",
+     "supports": "direct",
+     "passage": "A Clark County, Nevada jury deliberated for nearly three hours before finding Keffe D guilty of a single count of first-degree murder with a deadly weapon, ending an 11-day trial.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-VERDICT-FOX5",
+     "supports": "direct",
+     "passage": "A Las Vegas jury convicted Davis, 63, on a single count of murder with a deadly weapon, which carries a possible life sentence.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-AP-VERDICT-THEGRIO",
+     "supports": "direct",
+     "passage": "A Las Vegas jury convicted him on Monday, August 31, of first-degree murder with a deadly weapon.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [
+    "C62: Some non-US outlets date the verdict 1 September (time zones). Gang element: see C61."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "verdict",
+   "notes": "Davis says he is innocent and plans to appeal (C65, C66); include that whenever the verdict is described.",
+   "dossier_claims": [
+    "C62"
+   ],
+   "conflict_handling": "Script uses 31 August 2026 (US date) and 'first-degree murder, with a deadly weapon'; the gang element is not mentioned."
+  },
+  {
+   "id": "K-OPENING",
+   "proposition": "Opening statements in Davis's trial began on Monday, 17 August 2026, after a jury was seated on 13 August.",
+   "lines": [
+    42
+   ],
+   "facts": [
+    "17 August 2026",
+    "August 2026",
+    "13 August 2026"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-SINCLAIR-JURYSEATED",
+     "supports": "direct",
+     "passage": "A jury of 6 men and 10 women was selected Thursday (August 13, 2026), with twelve jurors and four alternates chosen after about an hour of proceedings that day.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-OPENING-KOB",
+     "supports": "direct",
+     "passage": "These began Monday, August 17, 2026.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "dossier_claims": [
+    "C48"
+   ]
+  },
+  {
+   "id": "K-MAX",
+   "proposition": "Davis faces a maximum sentence of life in prison without the possibility of parole.",
+   "lines": [
+    7,
+    57
+   ],
+   "facts": [
+    "Up to life without parole",
+    "UP TO LIFE"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-OXYGEN-NEXT",
+     "supports": "direct",
+     "passage": "He will face a maximum sentence of life in prison without the possibility of parole at his sentencing on October 13.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C67: No report of the hearing itself (it is two days after the as-of date)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": true,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "sentencing",
+   "notes": "Must be re-checked on or after 13 Oct 2026 before release. Prosecutors are not seeking death (C39).",
+   "dossier_claims": [
+    "C67"
+   ],
+   "conflict_handling": "Script says he faces up to life without parole; the hearing outcome is not known as of this cut."
+  },
+  {
+   "id": "K-NIGHT",
+   "proposition": "Tupac Shakur was shot in Las Vegas on the night of 7 September 1996, at about 11:15 p.m.",
+   "lines": [
+    0,
+    9,
+    13,
+    60
+   ],
+   "facts": [
+    "SEPT 7, 1996",
+    "7 September 1996",
+    "11:15 P.M.",
+    "Las Vegas",
+    "September 1996",
+    "1996"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-LVRJ-2019",
+     "supports": "direct",
+     "passage": "The shooting happened around 11:15 p.m. on September 7, 1996, at Flamingo Road and Koval Lane in Las Vegas.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "direct",
+     "passage": "Shakur was shot on the night of Sept. 7, 1996, while driving home from a boxing match at the MGM Grand.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "direct",
+     "passage": "One AP account places the time around 11:15 p.m.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "shooting",
+   "notes": "Intersection named in one result set (Q12: Wikipedia / LV Sun / LVRJ); AP independently gives the date and time. Exact intersection should be rechecked against the LV Sun 1996 report before a map graphic.",
+   "dossier_claims": [
+    "C01"
+   ]
+  },
+  {
+   "id": "K-BOXING",
+   "proposition": "Shakur was shot while being driven home from a boxing match at the MGM Grand.",
+   "lines": [
+    10
+   ],
+   "facts": [
+    "MGM Grand",
+    "A boxing match"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "direct",
+     "passage": "while driving home from a boxing match at the MGM Grand",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "mgm_fight",
+   "notes": "Opponent's name comes only from the Wikipedia-led result set; AP confirms 'a boxing match at the MGM Grand'.",
+   "dossier_claims": [
+    "C08"
+   ]
+  },
+  {
+   "id": "K-WOUNDS",
+   "proposition": "Shakur was shot multiple times.",
+   "lines": [
+    16
+   ],
+   "facts": [
+    "Hit several times"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-AP-INSIDE-NIGHT",
+     "supports": "direct",
+     "passage": "One AP account places the time around 11:15 p.m., and says Shakur was hit twice in the chest, with one bullet entering his right lung.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-LVRJ-2019",
+     "supports": "direct",
+     "passage": "Accounts differ on the number of wounds. One source says Shakur was hit three times, while others say he was struck four times.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-AP-TRIAL-BEGINS-KOLD",
+     "supports": "direct",
+     "passage": "One account says the rapper was shot multiple times and died six days later",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [
+    "C04: Wound count differs: 'twice in the chest' (AP), three times, four times (other accounts). Not resolved."
+   ],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "shooting",
+   "notes": "Narrate 'several times'. Do not state a number.",
+   "dossier_claims": [
+    "C04"
+   ],
+   "conflict_handling": "Script says 'hit several times'; no count."
+  },
+  {
+   "id": "K-KNIGHT-WOUND",
+   "proposition": "Knight survived the shooting with minor injuries.",
+   "lines": [
+    16
+   ],
+   "facts": [
+    "Minor injuries"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Marion Knight"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-LVRJ-2019",
+     "supports": "direct",
+     "passage": "Knight was released from UMC at 11 a.m. Sunday in good condition, and he sustained only a graze wound from shrapnel.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-TRIAL-BEGINS-KOLD",
+     "supports": "direct",
+     "passage": "Knight survived with minor injuries",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-AP-TRIAL-BEGINS-KOLD",
+     "supports": "direct",
+     "passage": "orchestrated the drive-by shooting that killed Shakur and wounded rap music mogul Marion \"Suge\" Knight",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "shooting",
+   "notes": "Knight is a victim of the shooting, not an accused. He has never been charged in it (C55).",
+   "dossier_claims": [
+    "C06"
+   ]
+  },
+  {
+   "id": "K-HOURS",
+   "proposition": "The jury deliberated for under three hours (AP: 'less than three hours', 'in under 3 hours'; Oxygen: 'nearly three hours').",
+   "lines": [
+    1,
+    50
+   ],
+   "facts": [
+    "Under 3 hours",
+    "UNDER 3 HOURS",
+    "3 hours"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-AP-VERDICT-FOX5",
+     "supports": "direct",
+     "passage": "The jury deliberated for less than three hours after a weekslong trial in Las Vegas.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-OXYGEN-NEXT",
+     "supports": "direct",
+     "passage": "A Clark County, Nevada jury deliberated for nearly three hours",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-AP-30YR-KRDO",
+     "supports": "direct",
+     "passage": "a 30 year wait for justice in tupacs killing ends with a murder conviction in under 3 hours",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [
+    "C63: 'Less than three hours' (AP, KSNV), 'nearly three hours' (Oxygen; USA Today), 'three hours' (FOX5); one unidentified outlet in the Q43 result set said 'about 90 minutes'."
+   ],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "verdict",
+   "notes": "Say 'less than three hours'. Do not use 90 minutes.",
+   "dossier_claims": [
+    "C63"
+   ],
+   "conflict_handling": "Script says 'less than three hours' (AP); Oxygen's 'nearly three hours' agrees; the outlier '90 minutes' is not used."
+  },
+  {
+   "id": "K-SENTENCING",
+   "proposition": "Davis is due to be sentenced on 13 October.",
+   "lines": [
+    7,
+    57
+   ],
+   "facts": [
+    "SENTENCING OCT 13, 2026",
+    "13 October 2026",
+    "Oct 13"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-OXYGEN-NEXT",
+     "supports": "direct",
+     "passage": "He will face a maximum sentence of life in prison without the possibility of parole at his sentencing on October 13.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-HNHH-APPEAL",
+     "supports": "direct",
+     "passage": "Duane \"Keffe D\" Davis is scheduled to be sentenced for the 1996 murder of Tupac Shakur on October 13",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [
+    "C67: No report of the hearing itself (it is two days after the as-of date)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": true,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "sentencing",
+   "notes": "Must be re-checked on or after 13 Oct 2026 before release. Prosecutors are not seeking death (C39).",
+   "dossier_claims": [
+    "C67"
+   ],
+   "conflict_handling": "Script says sentencing is set for 13 October 2026; re-check and re-cut after the hearing."
+  },
+  {
+   "id": "K-ARREST",
+   "proposition": "Davis was arrested on the morning of 29 September 2023, while out on a walk near his home in Henderson, Nevada.",
+   "lines": [
+    35
+   ],
+   "facts": [
+    "SEPT 29, 2023",
+    "29 September 2023",
+    "Henderson",
+    "Arrested",
+    "2023"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-KLAS-ARREST",
+     "supports": "direct",
+     "passage": "(The team took Davis into custody around 7 a.m. near the end of his street in Henderson, per 8 News Now.)",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-ABC-INDICTED2023",
+     "supports": "direct",
+     "passage": "Las Vegas police arrested Duane \"Keffe D\" Davis, 60, early on Friday, September 29, 2023, while he was on a walk near his Henderson home.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-SINCLAIR-INDICTED",
+     "supports": "direct",
+     "passage": "Davis was arrested that morning near his home",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "arrest_charge",
+   "attributed_to": "LVMPD",
+   "dossier_claims": [
+    "C34"
+   ]
+  },
+  {
+   "id": "K-ONLY-SURVIVOR",
+   "proposition": "Of the four men prosecutors say were in the Cadillac, Davis is the only one still alive.",
+   "lines": [
+    47
+   ],
+   "facts": [
+    "Only survivor",
+    "4 men",
+    "1 alive"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-WHO-WAS-THERE",
+     "supports": "direct",
+     "passage": "With Anderson, Smith and Brown all dead, Davis is the only surviving occupant of the Cadillac.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-WHO-WAS-THERE",
+     "supports": "direct",
+     "passage": "Smith died of natural causes in 2004 at age 30, according to the Los Angeles County coroner's office.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-WHO-WAS-THERE",
+     "supports": "direct",
+     "passage": "He was killed in a 2015 shooting at a medical marijuana dispensary in Compton. The coroner identified him as Terry Tyrone Brown, though investigative records have also referred to him as \"Terrence\" and \"Terrance.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-KLAS-ARRAIGN",
+     "supports": "direct",
+     "passage": "Davis is the only person still alive who was in the vehicle from which shots were fired",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [
+    "C59: Davis now says he was not in Las Vegas (C66); the list of occupants is the prosecution's account, drawn from Davis's own earlier statements."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "anderson",
+   "notes": "Phrase as 'the men prosecutors say were in the car'. Smith and Brown were never charged.",
+   "dossier_claims": [
+    "C59"
+   ],
+   "conflict_handling": "Script says 'prosecutors say' and gives his current denial."
+  },
+  {
+   "id": "K-ANDERSON-DIED",
+   "proposition": "Orlando Anderson died in 1998 in an unrelated shooting in Compton.",
+   "lines": [
+    19,
+    28
+   ],
+   "facts": [
+    "1998",
+    "Died in 1998",
+    "Unrelated shooting"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Orlando Anderson"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-AP-HOMESEARCH",
+     "supports": "direct",
+     "passage": "Anderson denied involvement at the time and died two years later in an unrelated gang shooting in Compton, California.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-WHO-WAS-THERE",
+     "supports": "direct",
+     "passage": "died two years later in what police said was an unrelated shooting at a Compton car wash",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-NYDN-2018",
+     "supports": "direct",
+     "passage": "Anderson denied being the gunman and died in a gang shootout in Compton, Calif., in 1998.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C15: Place: Compton (AP, Daily News) vs Willowbrook (Wikipedia). Exact date (29 May 1998) only from Wikipedia. 'Car wash' only in the AP explainer and low-quality sites."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "anderson",
+   "notes": "Narrate '1998' and 'an unrelated shooting'. Keep date/place off screen unless verified.",
+   "dossier_claims": [
+    "C15"
+   ],
+   "conflict_handling": "Script says 'in 1998, in an unrelated shooting in Compton'; no date or car-wash detail."
+  },
+  {
+   "id": "K-LEADER",
+   "proposition": "Police and prosecutors described Davis as a former leader of the South Side Compton Crips; a retired Compton gang detective testified he was a leader.",
+   "lines": [
+    23
+   ],
+   "facts": [
+    "South Side Compton Crips",
+    "A former gang leader, police said"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-SINCLAIR-INDICTED",
+     "supports": "direct",
+     "passage": "Johansson walked press through the investigation and what led to the indictment of Davis, leader and \"shot caller\" for the South Side Compton Crips gang.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-SINCLAIR-DAY3",
+     "supports": "direct",
+     "passage": "Retired Compton gang detective Robert Ladd testified that Davis, also known as Keffe D, was a leader in the Southside Compton Crips.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-VERDICT-FOX5",
+     "supports": "direct",
+     "passage": "They argued the former leader of the South Side Compton Crips orchestrated the retaliatory attack and provided the gun.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null,
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result",
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_background",
+   "attributed_to": "LVMPD Lt. Jason Johansson; retired Compton detective Robert Ladd",
+   "notes": "Attribute: 'police called him...'.",
+   "dossier_claims": [
+    "C18"
+   ]
+  },
+  {
+   "id": "K-PROFFER",
+   "proposition": "Davis gave a recorded interview to a federal-local task force in 2008.",
+   "lines": [
+    5,
+    24
+   ],
+   "facts": [
+    "2008",
+    "2008 police interview",
+    "Recorded"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Duane Keith Davis"
+   ],
+   "matter": "killing of Tupac Shakur (Las Vegas, 1996)",
+   "evidence": [
+    {
+     "source": "S-RSAU-KADING",
+     "supports": "direct",
+     "passage": "In the recording played for jurors, Davis said he was riding in the front passenger seat of the Cadillac involved in Shakur's shooting and handed a loaded .40-calibre Glock to the men in the back seat.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-RSAU-KADING",
+     "supports": "partial",
+     "passage": "That led to the secret Dec. 18, 2008, proffer interview, commonly known as a \"queen for a day\" session.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-POLLSTAR-2011",
+     "supports": "partial",
+     "passage": "Pollstar says that in late December 2008 Kading, along with federal and local agents, met with Duane \"Keffe D\" Keith Davis in his lawyer's office.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-NEPHEW-13ABC",
+     "supports": "direct",
+     "passage": "Davis, who said in the interview that he was also in the car with Anderson, is accused of orchestrating the 1996 killing.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-RULING-KOLD",
+     "supports": "direct",
+     "passage": "Clark County District Judge Carli Kierny ruled on Tuesday, July 28, 2026, that a recording of Duane \"Keffe D\" Davis's 2008 police interview can be used at his trial.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    },
+    {
+     "source": "S-AP-RULING-KOLD",
+     "supports": "direct",
+     "passage": "The judge determined Davis adopted the book as his own, citing an interview in which he described the book as the \"real truth.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": null
+    }
+   ],
+   "contradictions": [
+    "C19: Date: 18 Dec 2008 (Rolling Stone AU) / 'late December 2008' (Pollstar) / one podcast summary says 2009. A separate 2009 police interview also exists (C54)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "davis_statements",
+   "attributed_to": "Duane Davis (recorded 2008 interview)",
+   "notes": "Used to support drawing Davis's figure in an interview room.",
+   "dossier_claims": [
+    "C19"
+   ],
+   "conflict_handling": "Script says 'in 2008'; no exact day."
+  },
+  {
+   "id": "K-27",
+   "proposition": "From the shooting in 1996 to Davis's indictment in 2023 was 27 years, with no one charged.",
+   "lines": [
+    0
+   ],
+   "facts": [
+    "27 years",
+    "27 YEARS",
+    "27"
+   ],
+   "assertion": "derived",
+   "subjects": [],
+   "matter": null,
+   "evidence": [],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "derived_from": [
+    "K-NIGHT",
+    "K-ONLY-CHARGED"
+   ],
+   "use": "narrate"
+  }
+ ]
+}

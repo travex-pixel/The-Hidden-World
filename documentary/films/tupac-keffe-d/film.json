@@ -1,0 +1,3142 @@
+{
+ "id": "tupac-keffe-d",
+ "title": "Tupac Murder Trial: Why Keffe D Was Convicted in Under 3 Hours",
+ "version": 2,
+ "voice": "kokoro:bm_fable",
+ "engine": "kokoro",
+ "narrator": "bm_fable",
+ "speed": 1.0,
+ "lead_in": 0.45,
+ "tail": 1.2,
+ "seed": 53,
+ "bpm": 72,
+ "key": -2,
+ "music_db": -22,
+ "sfx_db": -15,
+ "duck_db": -12,
+ "crf": 22,
+ "music_gain": [
+  [
+   0.0,
+   62.0,
+   -3.0
+  ]
+ ],
+ "pronounce": {
+  "Keffe": "Keefy",
+  "Shakur": "Sha-koor",
+  "Kading": "Kay-ding",
+  "Kierny": "Keer-nee",
+  "Palal": "Pa-lal",
+  "Sekyiwa": "Seh-kee-wah",
+  "Wolfson": "Wolf-son",
+  "Koval": "Ko-val"
+ },
+ "spoken": {
+  "1996": "nineteen ninety-six",
+  "1998": "nineteen ninety-eight",
+  "2008": "two thousand eight",
+  "2018": "twenty eighteen",
+  "2019": "twenty nineteen",
+  "2023": "twenty twenty-three",
+  "2024": "twenty twenty-four",
+  "2026": "twenty twenty-six",
+  "BMW": "B M W",
+  "BET's": "B E T's",
+  "ABC": "A B C",
+  "Tupac": "Too-pock"
+ },
+ "figures": [
+  "kd_davis",
+  "kd_interviewer",
+  "trw_detective",
+  "trw_officer",
+  "trw_defence",
+  "gb7_suit",
+  "judge",
+  "lb8_juror",
+  "lv4_crew_b",
+  "lv4_crew_c"
+ ],
+ "timeline": [],
+ "lines": [
+  {
+   "say": "For twenty-seven years, nobody was charged with killing Tupac Shakur.",
+   "claims": [
+    "K-27",
+    "K-ONLY-CHARGED",
+    "K-NIGHT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_intersection",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1060,
+      "w": 1200
+     },
+     "setOpts": {
+      "signal": "red",
+      "car": 0
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC LAS VEGAS INTERSECTION",
+     "lower": {
+      "p": 0.15,
+      "title": "Las Vegas",
+      "color": "red",
+      "kicker": "September 1996"
+     }
+    }
+   ],
+   "chapter": "Cold open",
+   "chapter_title": "Cold open",
+   "tag": "",
+   "cue": "cold",
+   "sfx": [
+    {
+     "name": "swell",
+     "at": 0.0,
+     "gain": 0.4
+    }
+   ],
+   "tone": "hook"
+  },
+  {
+   "say": "This summer, it took a jury less than three hours to convict.",
+   "claims": [
+    "K-HOURS",
+    "K-VERDICT"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "UNDER 3 HOURS",
+     "label": "Jury deliberations",
+     "note": "31 August 2026",
+     "size": 190,
+     "noCorner": true,
+     "claims": [
+      "K-HOURS",
+      "K-VERDICT"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.35
+    }
+   ],
+   "tone": "hook"
+  },
+  {
+   "say": "The man they convicted is Duane Davis, known as Keffe D.",
+   "claims": [
+    "K-VERDICT",
+    "K-IN-COURT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "gaze": [
+        0.4,
+        0
+       ],
+       "keys": [
+        {
+         "p": 0.55,
+         "headTurn": 0.3,
+         "gaze": [
+          0.6,
+          -0.1
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 360,
+      "cy": 1100,
+      "w": 950
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in court"
+     },
+     "lower": {
+      "p": 0.15,
+      "title": "Duane \"Keffe D\" Davis",
+      "color": "red",
+      "kicker": "Convicted · 31 August 2026",
+      "sub": "Illustration, not a likeness"
+     },
+     "claims": [
+      "K-IN-COURT"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Prosecutors never said he pulled the trigger. They said he planned the shooting, and supplied the gun.",
+   "claims": [
+    "C49"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "WHAT PROSECUTORS DID NOT SAY",
+      "WHAT THEY SAID"
+     ],
+     "big": [
+      "THE SHOOTER",
+      "THE PLANNER"
+     ],
+     "bigColor": [
+      "blue",
+      "red"
+     ],
+     "bigSize": 80,
+     "body": [
+      [
+       "he did not",
+       "pull the trigger"
+      ],
+      [
+       "planned it,",
+       "supplied the gun"
+      ]
+     ],
+     "vs": "NOT",
+     "claims": [
+      "C49"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "And the heart of the case, prosecutors said, was his own words.",
+   "claims": [
+    "C27"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_studio",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 320,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.25
+        }
+       ]
+      },
+      {
+       "id": "kd_interviewer",
+       "x": 780,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "focused"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 1060,
+      "w": 1100
+     },
+     "grade": "night",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "giving a TV interview"
+     },
+     "label": "ILLUSTRATION · GENERIC INTERVIEW SET, NOT A LIKENESS",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "The case, prosecutors said:"
+        },
+        {
+         "text": "his own words",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 720,
+       "kicker": "THE EVIDENCE"
+      }
+     ],
+     "claims": [
+      "K-BET"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "A police interview in 2008. Television. Even a memoir, in which he told the story himself.",
+   "claims": [
+    "K-PROFFER",
+    "K-BET",
+    "C25"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "IN HIS OWN WORDS",
+     "title": "What the jury heard",
+     "items": [
+      "2008 · a recorded police interview",
+      "2018 · BET's Death Row Chronicles",
+      "2019 · his memoir, Compton Street Legend"
+     ],
+     "claims": [
+      "K-PROFFER",
+      "K-BET",
+      "C25",
+      "C47"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Now he says he only told those stories because he was paid.",
+   "claims": [
+    "C66"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1400,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "jail",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.35,
+         "gaze": [
+          0.6,
+          -0.2
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1050,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1060,
+      "w": 950
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in custody"
+     },
+     "headline": {
+      "x": 1000,
+      "y": 140,
+      "rows": [
+       {
+        "text": "NOW HE SAYS",
+        "size": 90
+       },
+       {
+        "text": "HE WAS PAID",
+        "size": 90,
+        "color": "amber"
+       }
+      ]
+     },
+     "claims": [
+      "K-IN-CUSTODY"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "On the thirteenth of October, he's due to be sentenced. He faces up to life in prison, without parole.",
+   "claims": [
+    "K-SENTENCING",
+    "K-MAX"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1250
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "lower": {
+      "p": 0.12,
+      "title": "Sentencing",
+      "color": "red",
+      "kicker": "13 October 2026"
+     },
+     "stamps": [
+      {
+       "p": 0.6,
+       "text": "UP TO LIFE",
+       "color": "red",
+       "x": 1380,
+       "y": 320,
+       "size": 100
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.62
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "This is how a thirty-year-old case finally reached a verdict, and what the record still can't tell us.",
+   "claims": [
+    "K-ONLY-CHARGED",
+    "K-VERDICT",
+    "C74"
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "THE TUPAC SHAKUR MURDER TRIAL",
+     "text": "HIS OWN\nWORDS",
+     "sub": "The case against Duane \"Keffe D\" Davis",
+     "in": "glitch",
+     "chapterTag": "",
+     "claims": [
+      "K-VERDICT",
+      "C27"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.4
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Las Vegas. The seventh of September, 1996.",
+   "claims": [
+    "K-NIGHT"
+   ],
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "SATURDAY NIGHT",
+     "text": "SEPT 7, 1996",
+     "sub": "Las Vegas, Nevada",
+     "claims": [
+      "K-NIGHT"
+     ]
+    }
+   ],
+   "chapter": "The night",
+   "chapter_title": "1 · The night",
+   "tag": "Chapter 1 · The night",
+   "cue": "unease",
+   "tone": "confident"
+  },
+  {
+   "say": "Tupac Shakur had been at a boxing match at the MGM Grand.",
+   "claims": [
+    "K-BOXING"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_lobby",
+     "figures": [
+      {
+       "id": "lv4_crew_b",
+       "x": -200,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "walk": {
+        "from": -200,
+        "to": 1300,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 6.4
+       }
+      },
+      {
+       "id": "lv4_crew_c",
+       "x": 1300,
+       "y": 1530,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "walk": {
+        "from": 1300,
+        "to": -200,
+        "p0": 0.1,
+        "p1": 1.0,
+        "cadence": 6.6
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1000,
+      "w": 1350
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CASINO HOTEL, NOT THE MGM GRAND",
+     "lower": {
+      "p": 0.15,
+      "title": "The MGM Grand",
+      "color": "red",
+      "kicker": "A boxing match"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Prosecutors later told the jury that earlier that night, Tupac, Suge Knight and their group had beaten up Davis's nephew in the hotel.",
+   "claims": [
+    "C10",
+    "C60"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_lobby",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1010,
+      "w": 1250
+     },
+     "setOpts": {
+      "cctv": 1
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · NOT THE REAL SECURITY FOOTAGE",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "Prosecutors said:"
+        },
+        {
+         "text": "his nephew was beaten that night",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 740,
+       "kicker": "THE MGM GRAND"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "static",
+     "at": 0.0,
+     "gain": 0.3
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "His name was Orlando Anderson.",
+   "claims": [
+    "C10",
+    "C14"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Orlando Anderson",
+     "kicker": "DAVIS'S NEPHEW",
+     "kind": "m",
+     "lines": [
+      "Denied any involvement",
+      "Never charged"
+     ],
+     "rim": "amber",
+     "claims": [
+      "C10",
+      "C14",
+      "K-ONLY-CHARGED"
+     ]
+    }
+   ],
+   "attribution_context": true,
+   "tone": "reveal"
+  },
+  {
+   "say": "A few hours later, at about a quarter past eleven, Tupac was riding in the passenger seat of a black BMW. Suge Knight, the head of Death Row Records, was driving.",
+   "claims": [
+    "K-NIGHT",
+    "C02"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_intersection",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 1120,
+      "w": 1250
+     },
+     "setOpts": {
+      "signal": "green",
+      "car": 1
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC LAS VEGAS INTERSECTION",
+     "lower": {
+      "p": 0.15,
+      "title": "About 11:15 p.m.",
+      "color": "red",
+      "kicker": "7 September 1996"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "brake",
+     "at": 0.75,
+     "gain": 0.3
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "They stopped at a red light, near Flamingo Road and Koval Lane. A white Cadillac pulled up alongside.",
+   "claims": [
+    "C03",
+    "C01"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_intersection",
+     "figures": [],
+     "view": {
+      "cx": 500,
+      "cy": 1120,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 470,
+      "cy": 1130,
+      "w": 1050
+     },
+     "setOpts": {
+      "signal": "red",
+      "car": 1
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC LAS VEGAS INTERSECTION",
+     "lower": {
+      "p": 0.12,
+      "title": "Flamingo Road & Koval Lane",
+      "color": "red",
+      "kicker": "Las Vegas"
+     }
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Someone inside it opened fire.",
+   "claims": [
+    "C03"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_intersection",
+     "figures": [],
+     "view": {
+      "cx": 600,
+      "cy": 980,
+      "w": 720
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 900
+     },
+     "setOpts": {
+      "signal": "red",
+      "car": 1
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC LAS VEGAS INTERSECTION",
+     "cam": {
+      "handheld": 5
+     },
+     "claims": [
+      "C03"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "sting",
+     "at": 0.1,
+     "gain": 0.45
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Tupac was hit several times. Knight survived, with minor injuries.",
+   "claims": [
+    "K-WOUNDS",
+    "K-KNIGHT-WOUND"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_intersection",
+     "figures": [
+      {
+       "id": "trw_officer",
+       "x": 300,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -100,
+        "to": 380,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.8
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "stand",
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1100,
+      "w": 1350
+     },
+     "setOpts": {
+      "signal": "green",
+      "car": 0,
+      "police": 1,
+      "tape": 1
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC LAS VEGAS INTERSECTION"
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Six days later, on the thirteenth of September, Tupac Shakur died at University Medical Center.",
+   "claims": [
+    "C07"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_hospital",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 920,
+      "w": 1300
+     },
+     "setOpts": {
+      "police": 0.6
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC HOSPITAL",
+     "lower": {
+      "p": 0.25,
+      "title": "Tupac Shakur",
+      "color": "red",
+      "kicker": "Died 13 September 1996",
+      "sub": "University Medical Center, Las Vegas"
+     }
+    }
+   ],
+   "cue": "intimate",
+   "tone": "reflective"
+  },
+  {
+   "say": "Anderson denied any involvement.",
+   "claims": [
+    "C14"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_strip",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 920,
+      "w": 1300
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CITY SKYLINE",
+     "funfacts": [
+      {
+       "p": 0.25,
+       "rows": [
+        {
+         "text": "Orlando Anderson"
+        },
+        {
+         "text": "denied any involvement",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 700,
+       "kicker": "HIS ANSWER"
+      }
+     ]
+    }
+   ],
+   "chapter": "No one charged",
+   "chapter_title": "2 · No one charged",
+   "tag": "Chapter 2 · No one charged",
+   "cue": "aftermath",
+   "tone": "confident"
+  },
+  {
+   "say": "In 1998, he died in an unrelated shooting in Compton. He was never charged.",
+   "claims": [
+    "K-ANDERSON-DIED",
+    "K-ONLY-CHARGED"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "NEVER CHARGED"
+     ],
+     "em": [
+      "NEVER"
+     ],
+     "sub": "Orlando Anderson · died 1998",
+     "claims": [
+      "K-ANDERSON-DIED",
+      "K-ONLY-CHARGED"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Years went by. Then decades. Nobody was charged.",
+   "claims": [
+    "K-ONLY-CHARGED"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_strip",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1900
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CITY SKYLINE",
+     "rain": {
+      "n": 60,
+      "op": 0.15
+     }
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "In 2018, Las Vegas police said it was still an open homicide.",
+   "claims": [
+    "C12"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 380,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "examine"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 960,
+      "w": 1250
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC POLICE OFFICE",
+     "stamps": [
+      {
+       "p": 0.55,
+       "text": "OPEN CASE",
+       "color": "blue",
+       "x": 1400,
+       "y": 320,
+       "size": 96
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.57
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "But one man said, again and again, that he'd been there.",
+   "claims": [
+    "K-ACCOUNT",
+    "C22",
+    "C25"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_studio",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 320,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1060,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1070,
+      "w": 800
+     },
+     "grade": "night",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "giving a TV interview"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "claims": [
+      "K-BET"
+     ]
+    }
+   ],
+   "chapter": "His own words",
+   "chapter_title": "3 · His own words",
+   "tag": "Chapter 3 · His own words",
+   "cue": "tension",
+   "tone": "curious"
+  },
+  {
+   "say": "Duane Davis. Police and prosecutors said he was a former leader of the South Side Compton Crips.",
+   "claims": [
+    "K-LEADER"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Duane \"Keffe D\" Davis",
+     "kicker": "ORLANDO ANDERSON'S UNCLE",
+     "kind": "m",
+     "lines": [
+      "South Side Compton Crips",
+      "A former gang leader, police said"
+     ],
+     "rim": "red",
+     "claims": [
+      "K-LEADER",
+      "C17",
+      "C10"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "In 2008, he sat down with a federal and local task force investigating the killing, led by Los Angeles detective Greg Kading.",
+   "claims": [
+    "K-PROFFER",
+    "C28"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_interview",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.3
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 820,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit_type",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "sit",
+         "headTurn": -0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1040,
+      "w": 1300
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "giving a police interview"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "lower": {
+      "p": 0.2,
+      "title": "Greg Kading",
+      "color": "red",
+      "kicker": "LAPD task force · detective shown is generic"
+     },
+     "claims": [
+      "K-PROFFER"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "It was what's called a proffer, or a 'queen for a day' interview. And Davis told them a story.",
+   "claims": [
+    "K-ACCOUNT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_interview",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "sit_slumped"
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 820,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "focused"
+      }
+     ],
+     "view": {
+      "cx": 420,
+      "cy": 1040,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 400,
+      "cy": 1050,
+      "w": 900
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "giving a police interview"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "A proffer:"
+        },
+        {
+         "text": "'queen for a day'",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 640,
+       "kicker": "2008"
+      }
+     ],
+     "claims": [
+      "K-PROFFER"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "He said he was in the front passenger seat of the Cadillac, and that he handed a gun to the men in the back.",
+   "claims": [
+    "K-ACCOUNT"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "HIS 2008 ACCOUNT",
+     "title": "What Davis told investigators",
+     "lines": [
+      "Seat:   front passenger",
+      "Car:    the white Cadillac",
+      "Gun:    handed to the back seat"
+     ],
+     "hl": 2,
+     "stamp": "HIS ACCOUNT",
+     "claims": [
+      "K-ACCOUNT",
+      "K-PROFFER"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "And he named the man he said fired the shots: his own nephew, Orlando Anderson.",
+   "claims": [
+    "C20"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_interview",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.35,
+         "gaze": [
+          0.6,
+          0
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 360,
+      "cy": 1040,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 340,
+      "cy": 1050,
+      "w": 760
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "giving a police interview"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "funfacts": [
+      {
+       "p": 0.4,
+       "rows": [
+        {
+         "text": "Davis named his nephew."
+        },
+        {
+         "text": "Anderson denied it; never charged",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 740,
+       "kicker": "HIS CLAIM"
+      }
+     ],
+     "claims": [
+      "K-PROFFER"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Anderson had denied any involvement, and he was never charged. By then, he had been dead for a decade.",
+   "claims": [
+    "C14",
+    "K-ONLY-CHARGED",
+    "K-ANDERSON-DIED"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Orlando Anderson",
+     "kicker": "NEVER CHARGED",
+     "kind": "m",
+     "lines": [
+      "Denied any involvement",
+      "Died in 1998"
+     ],
+     "rim": "amber",
+     "claims": [
+      "C14",
+      "K-ONLY-CHARGED",
+      "K-ANDERSON-DIED"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "Ten years later, Davis went on television.",
+   "claims": [
+    "K-BET"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_studio",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 320,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.2
+        }
+       ]
+      },
+      {
+       "id": "kd_interviewer",
+       "x": 780,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "focused"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1060,
+      "w": 1350
+     },
+     "grade": "night",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "giving a TV interview"
+     },
+     "label": "ILLUSTRATION · GENERIC INTERVIEW SET, NOT A LIKENESS",
+     "lower": {
+      "p": 0.15,
+      "title": "BET · Death Row Chronicles",
+      "color": "red",
+      "kicker": "Broadcast 2018"
+     },
+     "claims": [
+      "K-BET"
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "He said the shots came from the back seat of the car he was in. But he wouldn't say who fired.",
+   "claims": [
+    "C22"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_studio",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 320,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.55,
+         "pose": "sit_slumped",
+         "headTurn": -0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1060,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1070,
+      "w": 820
+     },
+     "grade": "night",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "giving a TV interview"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "funfacts": [
+      {
+       "p": 0.4,
+       "rows": [
+        {
+         "text": "Shots from the back seat, he said."
+        },
+        {
+         "text": "He wouldn't name the shooter",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 760,
+       "kicker": "ON BET"
+      }
+     ],
+     "claims": [
+      "K-BET"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "His stories didn't always match. In one interview, he said he ducked when the shooting started, and didn't know who had the gun.",
+   "claims": [
+    "C24"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "2008 · TO INVESTIGATORS",
+      "IN ANOTHER INTERVIEW"
+     ],
+     "big": [
+      "HANDED IT BACK",
+      "DIDN'T KNOW"
+     ],
+     "bigColor": [
+      "amber",
+      "blue"
+     ],
+     "bigSize": 64,
+     "body": [
+      [
+       "passed the gun",
+       "to the back seat"
+      ],
+      [
+       "ducked; didn't know",
+       "who had the gun"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "K-ACCOUNT",
+      "K-PROFFER",
+      "C24"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Then, in 2019, he published a memoir, Compton Street Legend. In it, he said he was in the Cadillac, and passed the gun into the back seat.",
+   "claims": [
+    "C25"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "THE MEMOIR · 2019",
+     "title": "Compton Street Legend",
+     "lines": [
+      "Author:  Duane Davis",
+      "Places him: in the Cadillac",
+      "The gun: passed to the back seat"
+     ],
+     "hl": 1,
+     "stamp": "HIS ACCOUNT",
+     "claims": [
+      "C25"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "He never claimed to have fired a shot himself.",
+   "claims": [
+    "C25"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "HE NEVER CLAIMED",
+      "TO HAVE FIRED"
+     ],
+     "em": [
+      "NEVER"
+     ],
+     "sub": "In any of his accounts",
+     "claims": [
+      "C25"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "In July 2023, Las Vegas police searched a home in Henderson, Nevada, linked to Davis.",
+   "claims": [
+    "C31"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [
+      {
+       "id": "trw_officer",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 380,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 7.0
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "stand",
+         "headTurn": 0.3
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": -420,
+       "y": 1520,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -420,
+        "to": 180,
+        "p0": 0.08,
+        "p1": 0.8,
+        "cadence": 7.2
+       },
+       "keys": [
+        {
+         "p": 0.82,
+         "pose": "read"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 1110,
+      "w": 1450
+     },
+     "setOpts": {
+      "mode": "day",
+      "police": 0.6
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+     "lower": {
+      "p": 0.15,
+      "title": "Henderson, Nevada",
+      "color": "red",
+      "kicker": "July 2023 · search warrant"
+     }
+    }
+   ],
+   "chapter": "The arrest",
+   "chapter_title": "4 · The arrest",
+   "tag": "Chapter 4 · The arrest",
+   "cue": "tension",
+   "tone": "confident"
+  },
+  {
+   "say": "Two months later, on the twenty-ninth of September, police arrested him near his home, while he was out on a walk.",
+   "claims": [
+    "K-ARREST"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_suburb",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 1250,
+       "y": 1500,
+       "scale": 0.52,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 760,
+        "p0": 0.0,
+        "p1": 0.5,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.52,
+         "pose": "stand",
+         "expr": "worried"
+        }
+       ]
+      },
+      {
+       "id": "trw_officer",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 420,
+        "p0": 0.2,
+        "p1": 0.7,
+        "cadence": 7.0
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "point"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 620,
+      "cy": 1110,
+      "w": 1400
+     },
+     "setOpts": {
+      "mode": "day",
+      "police": 1
+     },
+     "grade": "day",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "being arrested near his home"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "lower": {
+      "p": 0.6,
+      "title": "Arrested",
+      "color": "red",
+      "kicker": "29 September 2023"
+     },
+     "claims": [
+      "K-ARREST"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.6,
+     "gain": 0.35
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "A grand jury had indicted him for murder, with a deadly weapon.",
+   "claims": [
+    "C35"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1250
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "stamps": [
+      {
+       "p": 0.5,
+       "text": "INDICTED",
+       "color": "red",
+       "x": 1400,
+       "y": 320,
+       "size": 110
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.52
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "District Attorney Steve Wolfson said: \"Today, we are taking that first step.\"",
+   "claims": [
+    "C36"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "Today we are taking that first step.",
+     "who": "District Attorney Steve Wolfson, announcing the charge",
+     "claims": [
+      "C36"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "Davis pleaded not guilty. Prosecutors did not seek the death penalty.",
+   "claims": [
+    "C39"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "outfit": "jail",
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1080,
+      "w": 1050
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in court"
+     },
+     "lower": {
+      "p": 0.15,
+      "title": "Not guilty plea",
+      "color": "red",
+      "kicker": "November 2023"
+     },
+     "claims": [
+      "K-IN-COURT"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "He was never released on bail. In 2024, the judge refused to accept bail money put up by a rap manager, finding it hadn't been shown to come from legal sources.",
+   "claims": [
+    "C41",
+    "K-IN-CUSTODY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1400,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "jail",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "sit_slumped",
+         "expr": "sad"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1050,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1060,
+      "w": 950
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in custody"
+     },
+     "cards": [
+      {
+       "p": 0.15,
+       "x": 1060,
+       "y": 170,
+       "w": 740,
+       "rows": [
+        {
+         "text": "BAIL"
+        },
+        {
+         "text": "$750,000 set (Jan 2024)",
+         "p": 0.3
+        },
+        {
+         "text": "Release refused (June 2024)",
+         "p": 0.55,
+         "color": "amber"
+        }
+       ]
+      }
+     ],
+     "claims": [
+      "K-IN-CUSTODY"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "His lawyers argued he'd been promised immunity, back in 2008. The judge found no proof of any immunity deal.",
+   "claims": [
+    "C30"
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "NO DEAL",
+     "color": "amber",
+     "lines": [
+      "Immunity claim rejected"
+     ],
+     "at": 0.4,
+     "claims": [
+      "C30"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.42
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "And in July 2026, Judge Carli Kierny ruled that the jury could hear the 2008 interview, and refused to exclude the memoir. She found Davis had adopted the book as his own.",
+   "claims": [
+    "C47"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34,
+       "keys": [
+        {
+         "p": 0.5,
+         "expr": "neutral"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 820,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 800,
+      "w": 700
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "lower": {
+      "p": 0.1,
+      "title": "Judge Carli Kierny",
+      "color": "red",
+      "kicker": "28 July 2026 · judge shown is generic"
+     },
+     "cards": [
+      {
+       "p": 0.2,
+       "x": 1060,
+       "y": 170,
+       "w": 700,
+       "rows": [
+        {
+         "text": "THE RULING"
+        },
+        {
+         "text": "2008 interview admitted",
+         "p": 0.3
+        },
+        {
+         "text": "Memoir admitted",
+         "p": 0.55,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "The trial opened in August 2026.",
+   "claims": [
+    "K-OPENING"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_juror",
+       "x": 120,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "default"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 330,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "grey"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 750,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "brown"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 960,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "default"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1300
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC JURY",
+     "lower": {
+      "p": 0.15,
+      "title": "Opening statements",
+      "color": "red",
+      "kicker": "17 August 2026"
+     }
+    }
+   ],
+   "chapter": "The trial",
+   "chapter_title": "5 · The trial",
+   "tag": "Chapter 5 · The trial",
+   "cue": "revelation",
+   "tone": "curious"
+  },
+  {
+   "say": "Prosecutors told jurors Davis didn't pull the trigger, but that he planned the shooting, in revenge for his nephew's beating, and supplied the gun.",
+   "claims": [
+    "C49",
+    "C10"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_defence",
+       "x": 780,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point_up"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1100,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1090,
+      "w": 860
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC PROSECUTOR",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 110,
+       "y": 170,
+       "w": 740,
+       "rows": [
+        {
+         "text": "THE STATE'S CASE"
+        },
+        {
+         "text": "Did not pull the trigger",
+         "p": 0.25
+        },
+        {
+         "text": "Planned it: revenge",
+         "p": 0.5
+        },
+        {
+         "text": "Supplied the gun",
+         "p": 0.72,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "His defence said he'd made up or embellished his stories, for money and notoriety. That nothing backed them up. That the gun was never found.",
+   "claims": [
+    "C50"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "gb7_suit",
+       "x": 780,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1100,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1090,
+      "w": 860
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC DEFENCE LAWYER",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 110,
+       "y": 170,
+       "w": 740,
+       "rows": [
+        {
+         "text": "THE DEFENCE"
+        },
+        {
+         "text": "Stories for money",
+         "p": 0.25
+        },
+        {
+         "text": "Nothing backs them up",
+         "p": 0.5
+        },
+        {
+         "text": "Gun never found",
+         "p": 0.72,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "His own lawyer told the jury that Davis was, quote, 'full of crap' when he told those stories.",
+   "claims": [
+    "C51"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "Full of crap.",
+     "who": "Davis's defence, in opening statements, on the stories Davis told",
+     "claims": [
+      "C51"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Suge Knight, who survived the shooting, was on the prosecution's witness list. He was never called.",
+   "claims": [
+    "C55"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Marion \"Suge\" Knight",
+     "kicker": "DRIVING THE BMW",
+     "kind": "m",
+     "lines": [
+      "Survived the shooting",
+      "Never called to testify"
+     ],
+     "rim": "amber",
+     "claims": [
+      "C55",
+      "C02",
+      "K-KNIGHT-WOUND"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Of the four men prosecutors say were in the Cadillac, Davis is the only one still alive.",
+   "claims": [
+    "K-ONLY-SURVIVOR"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "1 OF 4",
+     "label": "still alive, of the men prosecutors say were in the Cadillac",
+     "note": "Davis now says he wasn't there",
+     "size": 210,
+     "noCorner": true,
+     "claims": [
+      "K-ONLY-SURVIVOR",
+      "C66"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "Davis did not testify. His defence rested after calling three witnesses.",
+   "claims": [
+    "C58"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 360,
+      "cy": 1110,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 340,
+      "cy": 1110,
+      "w": 780
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in court"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "claims": [
+      "K-IN-COURT"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "In his closing argument, prosecutor Binu Palal said Davis got a gun and 'went hunting'. \"It's a plan,\" he said, \"not an impulse.\"",
+   "claims": [
+    "C60"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "It's a plan, not an impulse.",
+     "who": "Chief Deputy District Attorney Binu Palal, closing argument, 31 August 2026",
+     "claims": [
+      "C60"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "On the thirty-first of August, 2026, after less than three hours, the jury found Duane Davis guilty of first-degree murder, with a deadly weapon.",
+   "claims": [
+    "K-VERDICT",
+    "K-HOURS",
+    "K-IN-COURT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "gaze": [
+        0.4,
+        -0.1
+       ],
+       "keys": [
+        {
+         "p": 0.6,
+         "expr": "sad",
+         "headTurn": 0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1080,
+      "w": 1050
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in court"
+     },
+     "lower": {
+      "p": 0.1,
+      "title": "31 August 2026",
+      "color": "red",
+      "kicker": "The verdict"
+     },
+     "stamps": [
+      {
+       "p": 0.62,
+       "text": "GUILTY",
+       "color": "red",
+       "x": 1380,
+       "y": 320,
+       "size": 120
+      }
+     ],
+     "claims": [
+      "K-IN-COURT"
+     ]
+    }
+   ],
+   "chapter": "The verdict",
+   "chapter_title": "6 · The verdict",
+   "tag": "Chapter 6 · The verdict",
+   "cue": "revelation",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.64
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Tupac's sister, Sekyiwa Shakur, cried, and hugged the prosecutors. The family said it was elated, and relieved.",
+   "claims": [
+    "C64"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1350
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "Tupac Shakur's family:"
+        },
+        {
+         "text": "'elated and relieved'",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 700,
+       "kicker": "AFTER THE VERDICT"
+      }
+     ]
+    }
+   ],
+   "cue": "intimate",
+   "tone": "reflective"
+  },
+  {
+   "say": "The verdict came one week before the thirtieth anniversary of the shooting.",
+   "claims": [
+    "C74"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "30 YEARS",
+     "label": "since the shooting",
+     "note": "Anniversary: Sept 7, 2026, one week after the verdict",
+     "size": 200,
+     "noCorner": true,
+     "claims": [
+      "C74"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "Davis told the judge he wanted to appeal. He'll be able to, once he's sentenced.",
+   "claims": [
+    "C65"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.4,
+         "gaze": [
+          0.6,
+          -0.3
+         ]
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 440,
+      "cy": 1000,
+      "w": 1300
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in court"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "claims": [
+      "K-IN-COURT"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "And he now says he's innocent. In a jailhouse interview with ABC, he said he only confessed because he was paid. After the verdict, he told The Hollywood Reporter he wasn't even in Las Vegas that night.",
+   "claims": [
+    "C66"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1400,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "outfit": "jail",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.35
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 1040,
+      "w": 1250
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in custody"
+     },
+     "cards": [
+      {
+       "p": 0.08,
+       "x": 1060,
+       "y": 170,
+       "w": 760,
+       "rows": [
+        {
+         "text": "WHAT HE SAYS NOW"
+        },
+        {
+         "text": "'I'm innocent'",
+         "p": 0.15
+        },
+        {
+         "text": "Says he was paid to talk",
+         "p": 0.45
+        },
+        {
+         "text": "Says he wasn't in Las Vegas",
+         "p": 0.75,
+         "color": "amber"
+        }
+       ]
+      }
+     ],
+     "claims": [
+      "K-IN-CUSTODY"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Three times over the years, he said he was there. Now he says he wasn't.",
+   "claims": [
+    "K-ACCOUNT",
+    "C22",
+    "C25",
+    "C66"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "2008 · 2018 · 2019",
+      "NOW"
+     ],
+     "big": [
+      "\"I WAS THERE\"",
+      "\"I WASN'T\""
+     ],
+     "bigColor": [
+      "amber",
+      "blue"
+     ],
+     "bigSize": 70,
+     "body": [
+      [
+       "interview, TV, memoir"
+      ],
+      [
+       "after the verdict"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "K-ACCOUNT",
+      "K-PROFFER",
+      "K-BET",
+      "C22",
+      "C25",
+      "C66"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "Davis has been held in the Clark County Detention Center since his arrest.",
+   "claims": [
+    "K-IN-CUSTODY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "kd_davis",
+       "x": 300,
+       "y": 1400,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit_slumped",
+       "expr": "sad",
+       "outfit": "jail",
+       "noChair": true,
+       "depth": 0.8
+      }
+     ],
+     "view": {
+      "cx": 400,
+      "cy": 1050,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1060,
+      "w": 950
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "depicts": {
+      "person": "Duane Keith Davis",
+      "act": "in custody"
+     },
+     "lower": {
+      "p": 0.15,
+      "title": "Clark County Detention Center",
+      "color": "red",
+      "kicker": "In custody"
+     },
+     "claims": [
+      "K-IN-CUSTODY"
+     ]
+    }
+   ],
+   "chapter": "What comes next",
+   "chapter_title": "7 · What comes next",
+   "tag": "Chapter 7 · What comes next",
+   "cue": "aftermath",
+   "tone": "reflective"
+  },
+  {
+   "say": "On the thirteenth of October, 2026, he's due to be sentenced. He faces up to life in prison, without the possibility of parole.",
+   "claims": [
+    "K-SENTENCING",
+    "K-MAX"
+   ],
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "SENTENCING",
+     "text": "OCT 13, 2026",
+     "sub": "Up to life without parole",
+     "claims": [
+      "K-SENTENCING",
+      "K-MAX"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "After the verdict, the district attorney said there still isn't enough evidence to charge anyone else.",
+   "claims": [
+    "C69"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1900
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "The district attorney:"
+        },
+        {
+         "text": "not enough evidence to charge anyone else",
+         "color": "amber"
+        }
+       ],
+       "x": 1060,
+       "y": 240,
+       "w": 760,
+       "kicker": "ANYONE ELSE?"
+      }
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "So, here's where the record stands.",
+   "claims": [
+    "K-VERDICT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_intersection",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1040,
+      "w": 1900
+     },
+     "setOpts": {
+      "signal": "red",
+      "car": 0
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC LAS VEGAS INTERSECTION"
+    }
+   ],
+   "chapter": "The record",
+   "chapter_title": "The record",
+   "tag": "The record",
+   "cue": "outro",
+   "tone": "resolve"
+  },
+  {
+   "say": "Tupac Shakur was shot in Las Vegas in September 1996, and died six days later.",
+   "claims": [
+    "K-NIGHT",
+    "C07"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Tupac Shakur",
+     "kicker": "SEPTEMBER 1996",
+     "kind": "m",
+     "lines": [
+      "Shot on 7 September",
+      "Died on 13 September"
+     ],
+     "rim": "red",
+     "claims": [
+      "K-NIGHT",
+      "C07"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  },
+  {
+   "say": "Duane Davis is the only person ever charged. A jury convicted him of first-degree murder. Prosecutors never said he fired the gun.",
+   "claims": [
+    "K-ONLY-CHARGED",
+    "K-VERDICT",
+    "C49"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE LEGAL RECORD",
+     "title": "Duane \"Keffe D\" Davis",
+     "items": [
+      "2023 · INDICTED · the only person ever charged",
+      "2026 · CONVICTED · first-degree murder",
+      "Not accused of firing the shots"
+     ],
+     "claims": [
+      "K-ONLY-CHARGED",
+      "C35",
+      "K-VERDICT",
+      "C49"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  },
+  {
+   "say": "He says he's innocent, and he plans to appeal. And the man he once named as the shooter, Orlando Anderson, denied any involvement, and was never charged.",
+   "claims": [
+    "C66",
+    "C65",
+    "C20",
+    "C14",
+    "K-ONLY-CHARGED"
+   ],
+   "shots": [
+    {
+     "type": "endcard",
+     "kicker": "IN MEMORY OF TUPAC SHAKUR",
+     "lines": [
+      "Duane Davis: convicted 31 August 2026",
+      "Sentencing set for 13 October 2026",
+      "He says he is innocent and plans to appeal"
+     ],
+     "size": 52,
+     "sub": "Sources for every claim are listed in the description.",
+     "chapterTag": "",
+     "out": "dip",
+     "claims": [
+      "K-VERDICT",
+      "K-SENTENCING",
+      "C66",
+      "C65"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  }
+ ]
+}

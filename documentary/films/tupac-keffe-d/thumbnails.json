@@ -1,0 +1,25 @@
+{
+ "figures": ["kd_davis", "kd_interviewer", "judge"],
+ "concepts": [
+  {"name": "own-words", "note": "Selected candidate. An illustrated Davis (not a likeness) in a generic TV interview set; the hook is the case's core: his own words. GUILTY is the legal record.",
+   "shot": {"set": "kd_studio", "grade": "night", "view": {"cx": 520, "cy": 1100, "w": 1000},
+            "figures": [{"id": "kd_davis", "x": 700, "y": 1500, "scale": 0.62, "dir": -1, "turn": 0.4, "pose": "sit", "expr": "neutral", "gaze": [-0.3, 0]}]},
+   "post": {"contrast": 1.1, "saturation": 1.15, "vignette": 0.35, "sharpen": true},
+   "marks": [{"type": "text", "text": "HIS OWN", "x": 40, "y": 60, "size": 150, "color": "yellow"},
+             {"type": "text", "text": "WORDS", "x": 40, "y": 240, "size": 150, "color": "yellow"},
+             {"type": "text", "text": "GUILTY", "x": 52, "y": 470, "size": 96, "box": "red", "color": "white"}]},
+  {"name": "27-years", "note": "Alternative with no person: the generic Las Vegas intersection at a red light at night; the contrast carries the hook.",
+   "shot": {"set": "kd_intersection", "setOpts": {"signal": "red", "car": 1}, "grade": "night", "view": {"cx": 560, "cy": 1060, "w": 1150}, "figures": []},
+   "post": {"contrast": 1.12, "saturation": 1.2, "vignette": 0.35, "sharpen": true},
+   "marks": [{"type": "text", "text": "27 YEARS", "x": 40, "y": 60, "size": 170, "color": "yellow"},
+             {"type": "text", "text": "UNDER 3 HOURS", "x": 52, "y": 300, "size": 92, "box": "red", "color": "white"}]},
+  {"name": "verdict", "note": "Alternative. Courtroom with the illustrated defendant seated (not a likeness).",
+   "shot": {"set": "courtroom", "setOpts": {"modern": true, "dock": false}, "grade": "cold", "view": {"cx": 470, "cy": 1050, "w": 1250},
+            "figures": [{"id": "judge", "x": 540, "y": 790, "scale": 0.42, "dir": 1, "turn": 0.05, "pose": "sit", "expr": "stern", "noChair": true, "depth": 0.34},
+                        {"id": "kd_davis", "x": 200, "y": 1560, "scale": 0.6, "dir": 1, "turn": 0.4, "pose": "sit", "expr": "blank", "outfit": "court"}]},
+   "post": {"contrast": 1.1, "saturation": 1.15, "vignette": 0.35, "sharpen": true},
+   "marks": [{"type": "text", "text": "30 YEARS", "x": 520, "y": 60, "size": 130, "color": "yellow"},
+             {"type": "text", "text": "LATER", "x": 520, "y": 220, "size": 130, "color": "yellow"},
+             {"type": "text", "text": "GUILTY", "x": 540, "y": 420, "size": 96, "box": "red", "color": "white"}]}
+ ]
+}
