@@ -26,4 +26,4 @@ SOURCES (accessed 11 Oct 2026). Every claim in the film is backed by at least on
 - Yahoo Entertainment: https://www.yahoo.com/entertainment/tv/articles/pet-cemetery-murders-unearths-murder-170000439.html
 
 Spotted an error? Comment with a source and we will review it.
-#ThePetCemeteryMurders #TrueCrime #ColdCase
+#ThePetCemeteryMurders #TrueCrime #ColdCase #Louisiana #TrueCrimeDocumentary

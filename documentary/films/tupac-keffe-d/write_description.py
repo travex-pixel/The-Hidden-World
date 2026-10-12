@@ -66,7 +66,7 @@ def main(run: Path) -> None:
         if "repost" in srcs[sid]['publisher'].lower():
             name += " report, as reposted on a forum (the original page could not be reached)"
         lines.append(f"- {name}: {srcs[sid]['url']}")
-    lines += ["", "Spotted an error? Comment with a source and we will review it.", "#Tupac #KeffeD #TrueCrime"]
+    lines += ["", "Spotted an error? Comment with a source and we will review it.", "#Tupac #TupacShakur #KeffeD #TrueCrime #TrueCrimeDocumentary"]
     bib = ["# Bibliography: Tupac Murder Trial: Why Keffe D Was Convicted in Under 3 Hours", "",
            "All sources were read as search-result excerpts on 11 October 2026; no article, court record or statute was opened in full; many search summaries did not name their outlet. Claim-level passages are in `documentary/films/tupac-keffe-d/evidence/claims.json`.", ""]
     for s_ in sorted(srcs.values(), key=lambda x: (x["publisher"], x["id"])):

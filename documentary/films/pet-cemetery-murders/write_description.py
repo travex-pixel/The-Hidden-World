@@ -63,7 +63,7 @@ def main(run: Path) -> None:
         if "repost" in srcs[sid]['publisher'].lower():
             name += " report, as reposted on a forum (the original page could not be reached)"
         lines.append(f"- {name}: {srcs[sid]['url']}")
-    lines += ["", "Spotted an error? Comment with a source and we will review it.", "#ThePetCemeteryMurders #TrueCrime #ColdCase"]
+    lines += ["", "Spotted an error? Comment with a source and we will review it.", "#ThePetCemeteryMurders #TrueCrime #ColdCase #Louisiana #TrueCrimeDocumentary"]
     bib = ["# Bibliography: The Pet Cemetery Murders: The Real Case Behind HBO's Ghost Story", "",
            "All sources were read as search-result excerpts on 11 October 2026; nola.com, wdsu.com and reuters.com could not be reached, and no page was opened in full. Claim-level passages are in `documentary/films/pet-cemetery-murders/evidence/claims.json`.", ""]
     for s_ in sorted(srcs.values(), key=lambda x: (x["publisher"], x["id"])):
