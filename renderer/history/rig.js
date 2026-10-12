@@ -97,6 +97,9 @@
     carry: { armN: [30, 100] }, hips: { armN: [-30, 120], armF: [-28, 118] }, scratch: { armN: [150, 140] }, rub: { armN: [55, 75], armF: [45, 70] },
     fold: { armN: [24, 104], armF: [20, 100] },
     drink: { armN: [36, 142] }, tally: { armN: [48, 62] }, fist: { armN: [120, 70] }, facepalm: { armN: [40, 150] },
+    // engine v3 (H03): a brawl and its aftermath
+    windup: { armN: [168, 58], lean: -6 }, swing: { armN: [66, 6], armF: [-20, 30], lean: 10 }, shove: { armN: [84, 8], armF: [80, 14], lean: 8 },
+    clutch: { armN: [22, 150], armF: [16, 146] }, hold_torch: { armN: [104, 64] }, hold_cross: { armN: [44, 92] }, plead: { armN: [70, 40], armF: [64, 46] },
     // looping work actions: phase 0..1 per `period` seconds (fast stroke, slower recovery)
     reap:  { period: 1.1, loop: p => { const s = p < 0.35 ? X.smoother(p / 0.35) : 1 - X.smoother((p - 0.35) / 0.65); return { armN: [lerp(20, 112, s), lerp(70, 8, s)], armF: [72 + 8 * Math.sin(2 * Math.PI * p), 24], lean: 4 * s }; } },
     grind: { period: 1.4, loop: p => ({ armN: [56 + 16 * Math.cos(2 * Math.PI * p), 72 + 26 * Math.sin(2 * Math.PI * p)], armF: [52 + 6 * Math.sin(2 * Math.PI * p), 46], lean: 3 * Math.sin(2 * Math.PI * p) }) },

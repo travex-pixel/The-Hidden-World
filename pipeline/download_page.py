@@ -71,6 +71,8 @@ def build(out: Path) -> dict:
     out.mkdir(parents=True, exist_ok=True)
     videos, sections_html, chunks_all, total = {}, [], [], 0
     for sec in cat["sections"]:
+        if sec.get("on_page") is False:   # kept in Git only (e.g. superseded cuts), to stay inside one artifact version
+            continue
         cards = []
         for v in sec["videos"]:
             f = ROOT / v["file"]

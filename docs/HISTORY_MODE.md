@@ -182,6 +182,29 @@ documentary series (branch `claude/true-crime-documentary-vwz6m8`), so the chann
   phone into one file.
 * **Publishing:** the same route the true-crime series uses (see its `CLAUDE.md`).
 
+## 2d. Episode 3 additions (night, interiors, the brawl)
+
+* **Sets:**
+  * `alehouse`: a night interior with an open hearth, rushlights, trestles, barrels and an ale-stake over the door.
+    Drinkers react to a `fight` beat. A `smash` beat bursts a jug into shards and spills ale; a `tip` beat knocks a
+    stool over.
+  * `alehouse_day`: the morning after, with a lane outside the door, a covered body for the inquest and jurors.
+  * `village_night`: the hue and cry, with torch-bearing runners and lit shutters.
+  * `church_door` / `church_dawn`: a flint church with a slate roof, a bell-cote and a round-headed doorway; the
+    door opens on a `door_open` beat and the villagers' torches arrive on a `torches` beat.
+  * `map_dover`: an illustrative parchment map with an animated route between `route_from` and `route_to`.
+* **Light post-pass:** fires, torches, candles, the moon and stars record their position as they are drawn
+  (`D.light`). After the night or interior grade darkens the frame, their glow is added back, so flames stay bright
+  in the dark and the light follows the camera and parallax exactly.
+* **Gestures:** `windup`, `swing`, `shove`, `clutch`, `hold_torch`, `hold_cross` and `plead`. **Props:** `torch`
+  (it lights its surroundings), `cross`, `roll` and `cup`.
+* **Sound:**
+  * effects: `smash`, `punch`, `horn` (hue and cry), `roar`, `doorslam` and `run`;
+  * ambiences: `alehouse` and `night`;
+  * thriller music cues: `dread`, `brawl`, `chase`, `numb` and `pub`.
+* **Pacing:** `kokoro_pause_scale` tightens (below 1) or loosens the pauses between lines across a whole episode.
+  H03 uses 0.8.
+
 ## 3. Writing an episode
 
 Scenes keep the existing fields (`id, scene, min_duration, pad_after, music_cue, sfx, claims, transition`) and add:

@@ -2,16 +2,33 @@
   "about": "Every finished video committed in this repository, newest cut first, for the phone download page (python -m pipeline.download_page). Video files are only read, never changed.",
   "sections": [
     {
-      "title": "History: newest cuts",
+      "title": "History: newest",
       "videos": [
         {
-          "id": "h02-v2", "label": "H02 · new cut (v2)", "file": "releases/hist002/v2/hist002-peasant-day-v2.mp4",
-          "thumb": "releases/hist002/v2/thumbnail_A.jpg", "description_file": "releases/hist002/v2/description.txt", "titles_file": "releases/hist002/v2/titles.md",
+          "id": "h03",
+          "label": "H03 · new episode",
+          "file": "releases/hist003/hist003-pub-fight.mp4",
+          "thumb": "releases/hist003/thumbnail_A.jpg",
+          "description_file": "releases/hist003/description.txt",
+          "titles_file": "releases/hist003/titles.md",
+          "note": "Thriller cut: Aussie-slang narration, the 1351 wage law, sanctuary and exile."
+        },
+        {
+          "id": "h02-v2",
+          "label": "H02 · new cut (v2)",
+          "file": "releases/hist002/v2/hist002-peasant-day-v2.mp4",
+          "thumb": "releases/hist002/v2/thumbnail_A.jpg",
+          "description_file": "releases/hist002/v2/description.txt",
+          "titles_file": "releases/hist002/v2/titles.md",
           "note": "New narrator voice and mix, more facial acting, sharper characters."
         },
         {
-          "id": "h01-v3", "label": "H01 · new cut (v3)", "file": "releases/hist001/v3/hist001-medieval-village-v3.mp4",
-          "thumb": "releases/hist001/v3/thumbnail_A.jpg", "description_file": "releases/hist001/v3/description.txt", "titles_file": "releases/hist001/v3/titles.md",
+          "id": "h01-v3",
+          "label": "H01 · new cut (v3)",
+          "file": "releases/hist001/v3/hist001-medieval-village-v3.mp4",
+          "thumb": "releases/hist001/v3/thumbnail_A.jpg",
+          "description_file": "releases/hist001/v3/description.txt",
+          "titles_file": "releases/hist001/v3/titles.md",
           "note": "New narrator voice and mix, more facial acting, sharper characters."
         }
       ]
@@ -20,23 +37,51 @@
       "title": "History: earlier cuts",
       "videos": [
         {
-          "id": "h02-v1", "label": "H02 · first cut (v1)", "file": "releases/hist002/hist002-peasant-day.mp4",
-          "thumb": "releases/hist002/thumbnail_A.jpg", "description_file": "releases/hist002/description.txt", "titles_file": "releases/hist002/titles.md",
+          "id": "h02-v1",
+          "label": "H02 · first cut (v1)",
+          "file": "releases/hist002/hist002-peasant-day.mp4",
+          "thumb": "releases/hist002/thumbnail_A.jpg",
+          "description_file": "releases/hist002/description.txt",
+          "titles_file": "releases/hist002/titles.md",
           "note": "The first cut, with the earlier narrator."
         },
         {
-          "id": "h01-v2", "label": "H01 · previous cut (v2)", "file": "releases/hist001/v2/hist001-medieval-village-v2.mp4",
-          "thumb": "releases/hist001/v2/thumbnail_A.jpg", "description_file": "releases/hist001/v2/description.txt", "titles_file": "releases/hist001/v2/titles.md",
+          "id": "h01-v2",
+          "label": "H01 · previous cut (v2)",
+          "file": "releases/hist001/v2/hist001-medieval-village-v2.mp4",
+          "thumb": "releases/hist001/v2/thumbnail_A.jpg",
+          "description_file": "releases/hist001/v2/description.txt",
+          "titles_file": "releases/hist001/v2/titles.md",
           "note": "Watercolour restyle with the foot fix, earlier narrator. (v1 has a foot-slide bug and stays in Git only.)"
         }
-      ]
+      ],
+      "on_page": false,
+      "note": "Kept in Git (releases/), left off the phone page so it stays under one artifact's 256 MiB limit."
     },
     {
       "title": "Shorts",
       "videos": [
-        { "id": "ep003", "label": "Short 003", "file": "releases/ep003-metronome-bridge.mp4", "episode": "ep003-metronome-bridge", "thumb_at": 0.55 },
-        { "id": "ep002", "label": "Short 002", "file": "releases/ep002-mars-units.mp4", "episode": "ep002-mars-units", "thumb_at": 0.4 },
-        { "id": "ep001", "label": "Short 001", "file": "releases/ep001-cash-vs-profit.mp4", "episode": "ep001-cash-vs-profit", "thumb_at": 0.3 }
+        {
+          "id": "ep003",
+          "label": "Short 003",
+          "file": "releases/ep003-metronome-bridge.mp4",
+          "episode": "ep003-metronome-bridge",
+          "thumb_at": 0.55
+        },
+        {
+          "id": "ep002",
+          "label": "Short 002",
+          "file": "releases/ep002-mars-units.mp4",
+          "episode": "ep002-mars-units",
+          "thumb_at": 0.4
+        },
+        {
+          "id": "ep001",
+          "label": "Short 001",
+          "file": "releases/ep001-cash-vs-profit.mp4",
+          "episode": "ep001-cash-vs-profit",
+          "thumb_at": 0.3
+        }
       ]
     }
   ]

@@ -36,6 +36,12 @@ CUES = {
     "reveal":       {"chords": [[0, 4, 7, 11], [5, 9, 12], [2, 5, 9], [7, 11, 14]], "density": 0.42, "bright": 0.9, "tense": 0.0, "inst": "recorder", "drone": True, "scale": [0, 2, 4, 7, 9]},
     "resolve":      {"chords": [[0, 4, 7], [5, 9, 12], [-3, 0, 4], [-5, -1, 2]], "density": 0.55, "bright": 0.85, "tense": 0.0, "inst": "lute", "drone": True, "scale": [0, 2, 4, 5, 7, 9, 11]},
     "tease":        {"chords": [[0, 3, 7], [-4, 0, 3], [-2, 2, 5], [-5, -1, 2, 5]], "density": 0.25, "bright": 0.45, "tense": 0.25, "inst": "recorder", "drone": True, "scale": [0, 2, 3, 5, 7, 8, 10]},
+    # history thriller palette (H03): dread under a drone, a driving brawl, a chase, a numb aftermath
+    "dread":        {"chords": [[0, 3, 7], [1, 5, 8], [0, 3, 7], [-1, 3, 6]], "density": 0.12, "bright": 0.3, "tense": 0.55, "inst": "recorder", "drone": True, "pulse": True, "scale": [0, 1, 3, 5, 7, 8, 10]},
+    "brawl":        {"chords": [[0, 3, 7], [1, 4, 8], [0, 3, 7], [-2, 2, 5]], "density": 0.7, "bright": 0.35, "tense": 0.8, "inst": "lute", "drone": True, "tabor": True, "pulse": True, "scale": [0, 1, 3, 5, 7, 8, 10]},
+    "chase":        {"chords": [[0, 3, 7], [-2, 2, 5], [-4, 0, 3], [-5, -1, 2]], "density": 0.55, "bright": 0.4, "tense": 0.65, "inst": "lute", "drone": True, "tabor": True, "pulse": True, "scale": [0, 2, 3, 5, 7, 8, 10]},
+    "numb":         {"chords": [[0, 7], [0, 7], [-1, 6], [0, 7]], "density": 0.06, "bright": 0.25, "tense": 0.3, "inst": "recorder", "drone": True, "scale": [0, 2, 3, 5, 7, 8, 10]},
+    "pub":          {"chords": [[0, 4, 7], [5, 9, 12], [-2, 2, 5], [0, 4, 7]], "density": 0.7, "bright": 0.75, "tense": 0.05, "inst": "lute", "drone": True, "tabor": True, "scale": [0, 2, 4, 5, 7, 9, 10]},
 }
 PENTA = [0, 2, 4, 7, 9]
 
@@ -354,12 +360,55 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
         x = lowpass_fast(noise(1.0), 1100) - lowpass_fast(noise(1.0), 250)
         x = x * np.sin(np.pi * np.clip(t / 1.0, 0, 1)) ** 1.5
         return (x * 0.6).astype(np.float32)
+    # ---- H03: the brawl and the hue and cry
+    if name == "smash":   # a fired-clay jug bursting: sharp crack, a spray of high fragments, pieces skittering
+        t = tt(1.2)
+        crack = (noise(1.2) - lowpass_fast(noise(1.2), 2500)) * np.exp(-t * 30)
+        ring = sum(np.sin(2 * np.pi * f * t + rng.uniform(0, 6)) * np.exp(-t * d) for f, d in [(1730, 22), (2910, 28), (4170, 34), (5230, 40)]) * 0.25
+        x = crack * 0.9 + ring
+        for k in range(14):   # bits of jug landing on the floor
+            at = 0.08 + rng.uniform(0, 0.7); m = int(0.05 * SR); tk = np.arange(m) / SR
+            bit = (rng.standard_normal(m) - lowpass_fast(rng.standard_normal(m).astype(np.float32), 3000)) * np.exp(-tk * 90) * rng.uniform(0.1, 0.35)
+            add(x, bit.astype(np.float32), at)
+        return (x * 0.8).astype(np.float32)
+    if name == "punch":   # a blow landing: low body thump and a dull slap
+        t = tt(0.45)
+        x = np.sin(2 * np.pi * (70 + 60 * np.exp(-t * 30)) * t) * np.exp(-t * 14) * 0.9 + lowpass_fast(noise(0.45), 1800) * np.exp(-t * 45) * 0.6
+        return x.astype(np.float32)
+    if name == "horn":   # a cow-horn blown to raise the hue and cry: rough, wavering, two calls
+        out = np.zeros(int(2.6 * SR), np.float32)
+        for k, d in ((0.0, 1.0), (1.25, 1.2)):
+            t = tt(d); f = 196 * (1 + 0.012 * np.sin(2 * np.pi * 5.5 * t)) * (1 + 0.02 * np.minimum(t / 0.15, 1))
+            ph = 2 * np.pi * np.cumsum(f) / SR
+            x = sum(a * np.sin(n * ph) for n, a in [(1, 1), (2, 0.6), (3, 0.42), (4, 0.25), (5, 0.12)]) + lowpass_fast(noise(d), 2400) * 0.08
+            add(out, (np.tanh(x * 1.6) * env(len(t), 0.08, 0.1, 0.85, 0.25) * 0.28).astype(np.float32), k)
+        return out
+    if name == "roar":    # the alehouse erupts: many voices shouting at once, a bench scraping
+        t = tt(1.6)
+        x = np.zeros(len(t), np.float32)
+        for v in range(10):
+            band = lowpass_fast(noise(1.6), rng.uniform(900, 2200)) - lowpass_fast(noise(1.6), rng.uniform(180, 320))
+            syl = np.clip(np.sin(2 * np.pi * rng.uniform(4, 7) * t + rng.uniform(0, 6)), 0, None) ** 0.6
+            x += (band * syl * rng.uniform(0.15, 0.3)).astype(np.float32)
+        return (x * env(len(t), 0.05, 0.3, 0.7, 0.6) * 0.7).astype(np.float32)
+    if name == "doorslam":   # a heavy oak door banging shut in a stone porch
+        t = tt(1.4)
+        x = np.sin(2 * np.pi * (58 + 40 * np.exp(-t * 25)) * t) * np.exp(-t * 9) + lowpass_fast(noise(1.4), 1500) * np.exp(-t * 22) * 0.7
+        tail = lowpass_fast(noise(1.4), 900) * np.exp(-t * 3.2) * 0.12   # the porch answering
+        return ((x + tail) * 0.7).astype(np.float32)
+    if name == "run":   # several feet running on packed earth, passing
+        out = np.zeros(int(2.4 * SR), np.float32); k = 0.0
+        while k < 2.2:
+            m = int(0.12 * SR); tk = np.arange(m) / SR
+            step = np.sin(2 * np.pi * rng.uniform(60, 90) * tk) * np.exp(-tk * 30) * 0.5 + lowpass_fast(rng.standard_normal(m).astype(np.float32), 900) * np.exp(-tk * 26) * 0.4
+            add(out, (step * np.sin(np.pi * min(1, k / 2.2)) ** 0.7).astype(np.float32), k); k += rng.uniform(0.07, 0.15)
+        return out
     raise KeyError(name)
 
 
 # ---------------------------------------------------------------- ambience beds (history mode)
 def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
-    """Continuous background for a stretch of the episode. kinds: interior, village, market."""
+    """Continuous background for a stretch of the episode. kinds: interior, village, market, alehouse, night."""
     import zlib
     rng = np.random.default_rng(seed + zlib.crc32(kind.encode()) % 1000)
     n = int(dur * SR); t = np.arange(n) / SR
@@ -377,6 +426,31 @@ def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
                 f = rng.uniform(2600, 4200) + rng.uniform(-900, 900) * tt_ / d
                 ch = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.sin(np.pi * tt_ / d) ** 2
                 add(out, (ch * (0.03 if kind == "village" else 0.008)).astype(np.float32), k + j * rng.uniform(0.08, 0.16))
+    if kind == "alehouse":   # low talk around the boards, the fire crackling, now and then a cup set down
+        for v in range(7):
+            x = lowpass_fast(nz(), rng.uniform(600, 1200)) - lowpass_fast(nz(), 200)
+            syl = np.clip(np.sin(2 * np.pi * rng.uniform(2.5, 4.5) * t + rng.uniform(0, 6)) + 0.5 * np.sin(2 * np.pi * 0.21 * t + v), 0, None)
+            out += (x * syl * 0.03).astype(np.float32)
+        k = 0.0
+        while k < dur:   # fire: crackles and pops
+            k += rng.exponential(0.12); m = int(0.02 * SR)
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += (rng.standard_normal(m) * np.exp(-np.arange(m) / SR * 300) * rng.uniform(0.02, 0.09)).astype(np.float32)
+        k = 1.0
+        while k < dur:   # wooden cups on boards
+            k += rng.uniform(2.5, 6.0); m = int(0.08 * SR); tk = np.arange(m) / SR
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += (np.sin(2 * np.pi * rng.uniform(380, 520) * tk) * np.exp(-tk * 60) * 0.05).astype(np.float32)
+        out += lowpass_fast(nz(), 220) * 0.05
+    if kind == "night":   # still night air: a breath of wind, crickets in the grass, a dog far off
+        out += lowpass_fast(nz(), 400) * (0.5 + 0.5 * np.sin(2 * np.pi * 0.05 * t + rng.uniform(0, 6))) * 0.06
+        chirp = np.sin(2 * np.pi * 4400 * t) * (np.sin(2 * np.pi * 28 * t) > 0.3) * (np.sin(2 * np.pi * 1.3 * t) > -0.2)
+        out += (chirp * 0.008).astype(np.float32)
+        k = 3.0
+        while k < dur:   # a distant dog
+            k += rng.uniform(5, 10)
+            for j in range(int(rng.integers(1, 3))):
+                m = int(0.16 * SR); tk = np.arange(m) / SR
+                bark = np.sin(2 * np.pi * (520 - 300 * tk / 0.16) * tk) * np.exp(-tk * 18)
+                if (k + j * 0.3) * SR + m < n: out[int((k + j * 0.3) * SR): int((k + j * 0.3) * SR) + m] += lowpass_fast(bark.astype(np.float32), 1400) * 0.02
     if kind == "market":   # crowd murmur: several syllabic noise "voices" in the speech band
         for v in range(6):
             x = lowpass_fast(nz(), rng.uniform(700, 1400)) - lowpass_fast(nz(), 180)

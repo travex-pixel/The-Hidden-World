@@ -1,0 +1,2986 @@
+{
+  "id": "hist003-pub-fight",
+  "number": 3,
+  "series": "history",
+  "profile": "history",
+  "title": "The Pub Fight That Broke a Village",
+  "central_question": "After the Black Death, a pay rise was a crime and every neighbour was the police. What happened when a pub fight went wrong?",
+  "template": "history-pov",
+  "narrator_voice": "en_GB-aru-medium",
+  "voice_engine": "kokoro",
+  "engine_version": 3,
+  "kokoro_speed": 1.12,
+  "kokoro_pause_scale": 0.8,
+  "pronounce": {
+    "1351": "thirteen fifty-one",
+    "1353": "thirteen fifty-three",
+    "1361": "thirteen sixty-one",
+    "deodand": "dee-oh-dand"
+  },
+  "target_duration_seconds": [
+    150,
+    210
+  ],
+  "setting": "An English village, harvest 1351, three years after the Black Death; the alehouse, the parish church, the road to Dover.",
+  "cast": [
+    "pov",
+    "jacko",
+    "simmo",
+    "maud_alewife",
+    "coroner",
+    "narrator_history"
+  ],
+  "character_style": "watercolour",
+  "music": {
+    "bpm": 92
+  },
+  "render_workers": 3,
+  "dialogue_note": "Narration and dialogue use modern Australian slang on purpose; nobody in 1351 spoke like this.",
+  "scenes": [
+    {
+      "id": "s00_cold",
+      "scene": "history",
+      "set": "church_door",
+      "ambience": "night",
+      "min_duration": 9,
+      "pad_after": 0.4,
+      "music_cue": "dread",
+      "transition": "cut",
+      "chapter": "Bashing on the church door",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Harvest, 1351, when a pay rise is a crime.",
+          "tone": "hook",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Your best mate's got blood on his hands, and he's bashing on the church door.",
+          "tone": "hook"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Touch him now, and you're in strife. With God.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "So how'd a few ales end up here? Rewind twelve hours.",
+          "tone": "curious"
+        }
+      ],
+      "claims": [
+        "C0"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "You, Jacko, Simmo and this night are fictional",
+          "at": {
+            "line": 2,
+            "off": 0.2
+          },
+          "dur": 3.2
+        }
+      ],
+      "beats": {
+        "torches": {
+          "line": 2,
+          "off": 0.0
+        },
+        "door_open": {
+          "line": 3,
+          "off": 0.4
+        }
+      },
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "thud"
+        },
+        {
+          "at": 0.75,
+          "name": "thud"
+        },
+        {
+          "at": 1.1,
+          "name": "thud"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 3.4
+          },
+          "name": "thud"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 3.75
+          },
+          "name": "thud"
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "horn",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 0.4
+          },
+          "name": "creak"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 20,
+            "y": 80,
+            "dolly": 380
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": -40,
+            "y": 60,
+            "dolly": 300
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": -200,
+            "y": 40,
+            "dolly": 180
+          },
+          {
+            "t": "end",
+            "x": -240,
+            "y": 30,
+            "dolly": 120
+          }
+        ],
+        "shake": [
+          {
+            "t": 0.4,
+            "dur": 0.2,
+            "amp": 0.12
+          },
+          {
+            "t": 0.75,
+            "dur": 0.2,
+            "amp": 0.12
+          },
+          {
+            "t": 1.1,
+            "dur": 0.25,
+            "amp": 0.15
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "jacko",
+          "char": "jacko",
+          "x": 900,
+          "z": 1.62,
+          "h": 470,
+          "facing": 1,
+          "expr0": "horrified",
+          "acts": [
+            {
+              "t": 0,
+              "gesture": "knock",
+              "dur": 0.1,
+              "hold": 3.2
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.0
+              },
+              "gesture": "knock",
+              "dur": 0.1,
+              "hold": 1.4
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.2
+              },
+              "look": [
+                -1,
+                0
+              ],
+              "expr": "startled"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.4
+              },
+              "expr": "pleading"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.5
+              },
+              "walk": 1010,
+              "dur": 0.9
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.5
+              },
+              "look": [
+                1,
+                0
+              ],
+              "expr": "sad"
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "char": "pov",
+          "x": -120,
+          "h": 450,
+          "facing": 1,
+          "expr0": "horrified",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "torch"
+            },
+            {
+              "t": 0,
+              "gesture": "hold_torch",
+              "dur": 0.1,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.6
+              },
+              "walk": 300,
+              "dur": 2.6
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.6
+              },
+              "expr": "sad"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.2
+              },
+              "expr": "exhausted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s01_yakka",
+      "scene": "history",
+      "set": "field",
+      "ambience": "village",
+      "min_duration": 12,
+      "pad_after": 0.4,
+      "music_cue": "problem",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "chapter": "Hard yakka",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Sunup to sundown, it's hard yakka in the lord's wheat.",
+          "tone": "confident",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "Three years back, the Black Death killed maybe half of England.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Now there aren't enough hands. And every pair of hands knows it.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "badges": [
+        {
+          "kind": "estimate",
+          "claim": "C1",
+          "text": "Deaths 1348-49: roughly a third to 60%",
+          "at": {
+            "line": 1,
+            "off": 0.3
+          },
+          "dur": 4.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "England, 1351",
+          "sub": "Harvest · three years after the Black Death",
+          "at": {
+            "line": 0,
+            "off": 0.3
+          },
+          "dur": 3.4
+        }
+      ],
+      "beats": {
+        "reap_from": {
+          "line": 0,
+          "off": 0.0
+        },
+        "reap_to": "end",
+        "strip_x0": 800,
+        "strip_x1": 1500
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 0.2
+          },
+          "name": "rustle"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 160,
+            "y": -260,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 180,
+            "y": -40,
+            "dolly": 160
+          },
+          {
+            "t": "end",
+            "x": 200,
+            "y": 10,
+            "dolly": 260
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 700,
+          "h": 450,
+          "facing": 1,
+          "pose0": "stoop",
+          "expr0": "exhausted",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "sickle"
+            },
+            {
+              "t": 0,
+              "gesture": "reap",
+              "dur": 0.2,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.8
+              },
+              "expr": "determined"
+            }
+          ]
+        },
+        {
+          "id": "jacko",
+          "char": "jacko",
+          "x": 1250,
+          "h": 470,
+          "facing": -1,
+          "pose0": "stoop",
+          "expr0": "determined",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "sickle"
+            },
+            {
+              "t": 0.3,
+              "gesture": "reap",
+              "dur": 0.2,
+              "hold": -1,
+              "period": 1.1
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.4
+              },
+              "expr": "sly"
+            }
+          ]
+        },
+        {
+          "id": "simmo",
+          "char": "simmo",
+          "x": 1620,
+          "h": 470,
+          "facing": -1,
+          "pose0": "stoop",
+          "expr0": "grumpy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "sheaf"
+            },
+            {
+              "t": 0.5,
+              "gesture": "bind",
+              "dur": 0.2,
+              "hold": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02_wage",
+      "scene": "history",
+      "set": "field",
+      "ambience": "village",
+      "min_duration": 12,
+      "pad_after": 0.45,
+      "music_cue": "problem",
+      "transition": "cut",
+      "chapter": "Illegal pay",
+      "lines": [
+        {
+          "who": "jacko",
+          "text": "Fair dinkum, the lord over the hill's paying double!",
+          "tone": "playful",
+          "pause_before": 0.3
+        },
+        {
+          "who": "simmo",
+          "text": "That's against the law, you drongo.",
+          "tone": "tense",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "He's right. The Statute of Labourers froze pay at the old, pre-plague rates.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Take more, and you could be fined or jailed.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Worse, the extra could go towards the village's tax bill.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "So every neighbour has a reason to dob you in.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C4",
+          "text": "Legal max for reapers: 2d-3d a day",
+          "at": {
+            "line": 2,
+            "off": 0.3
+          },
+          "dur": 4.2
+        },
+        {
+          "kind": "documented",
+          "claim": "C5",
+          "text": "Excess pay went to the village's tax",
+          "at": {
+            "line": 3,
+            "off": 2.2
+          },
+          "dur": 4.0
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 0.0
+          },
+          "name": "chink"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 290,
+            "y": 30,
+            "dolly": 300
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 480,
+            "y": 20,
+            "dolly": 360
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 190,
+            "y": 0,
+            "dolly": 200
+          },
+          {
+            "t": "end",
+            "x": 200,
+            "y": 20,
+            "dolly": 330
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": 0.0,
+              "pose": "stand",
+              "dur": 0.6
+            },
+            {
+              "t": 0.1,
+              "gesture": null
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.0
+              },
+              "expr": "curious",
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.3
+              },
+              "expr": "worried"
+            },
+            {
+              "t": {
+                "line": 5,
+                "off": 0.2
+              },
+              "expr": "skeptical"
+            }
+          ]
+        },
+        {
+          "id": "jacko",
+          "acts": [
+            {
+              "t": 0.0,
+              "pose": "stand",
+              "dur": 0.6
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.0
+              },
+              "prop": "coin"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.0
+              },
+              "gesture": "hold_up",
+              "dur": 0.35,
+              "hold": 2.2
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 0.0
+              },
+              "expr": "proud"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "gesture": "hips",
+              "dur": 0.4,
+              "hold": 2.4
+            }
+          ]
+        },
+        {
+          "id": "simmo",
+          "acts": [
+            {
+              "t": 0.2,
+              "pose": "stand",
+              "dur": 0.6
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "point",
+              "dur": 0.25,
+              "hold": 1.8
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "angry"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.0
+              },
+              "expr": "smug"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03_pub",
+      "scene": "history",
+      "set": "alehouse",
+      "ambience": "alehouse",
+      "min_duration": 11,
+      "pad_after": 0.4,
+      "music_cue": "pub",
+      "transition": "dip",
+      "transition_dur": 0.7,
+      "chapter": "My shout",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Sundown. Maud's hung the bush out on the ale-stake, so there's a fresh brew.",
+          "tone": "playful",
+          "pause_before": 0.7
+        },
+        {
+          "who": "jacko",
+          "text": "My shout, boys! On the lord!",
+          "tone": "playful",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "Watch Simmo. He's not drinking. He's counting.",
+          "tone": "tense",
+          "pause_before": 0.3
+        }
+      ],
+      "claims": [
+        "C16"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C16",
+          "text": "Ale-stake: a sign that ale was for sale",
+          "at": {
+            "line": 0,
+            "off": 0.4
+          },
+          "dur": 3.6
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "chink"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.25
+          },
+          "name": "chink"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "name": "gasp",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": -110,
+            "dolly": 80
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": -140,
+            "y": 20,
+            "dolly": 260
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 280,
+            "y": 30,
+            "dolly": 380
+          },
+          {
+            "t": "end",
+            "x": 300,
+            "y": 30,
+            "dolly": 430
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 560,
+          "h": 450,
+          "facing": 1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cup"
+            },
+            {
+              "t": 0.4,
+              "gesture": "drink",
+              "dur": 0.5,
+              "hold": 1.2
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "expr": "laughing"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.2
+              },
+              "expr": "curious",
+              "look": [
+                1,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "id": "jacko",
+          "char": "jacko",
+          "x": 900,
+          "h": 470,
+          "facing": 1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "jug"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "hold_up",
+              "dur": 0.35,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "delighted"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.2
+              },
+              "expr": "proud"
+            }
+          ]
+        },
+        {
+          "id": "simmo",
+          "char": "simmo",
+          "x": 1240,
+          "h": 470,
+          "facing": -1,
+          "expr0": "grumpy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cup"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.0
+              },
+              "expr": "skeptical"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "sly",
+              "look": [
+                1,
+                0.1
+              ]
+            }
+          ]
+        },
+        {
+          "id": "maud",
+          "char": "maud_alewife",
+          "x": 1640,
+          "z": 1.25,
+          "h": 440,
+          "facing": -1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "jug"
+            },
+            {
+              "t": 0.6,
+              "gesture": "offer",
+              "dur": 0.5,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.5
+              },
+              "expr": "worried"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04_blue",
+      "scene": "history",
+      "set": "alehouse",
+      "ambience": "alehouse",
+      "min_duration": 12,
+      "pad_after": 3.6,
+      "music_cue": "brawl",
+      "transition": "cut",
+      "chapter": "The blue",
+      "lines": [
+        {
+          "who": "simmo",
+          "text": "Flashing that money round? I'll dob you in to the justices.",
+          "tone": "tense",
+          "pause_before": 0.2
+        },
+        {
+          "who": "jacko",
+          "text": "Rack off, you dobbing mongrel!",
+          "tone": "tense",
+          "pause_before": 0.15
+        },
+        {
+          "who": "narrator_history",
+          "text": "Pride, ale, and fourteen hours of hard yakka. Short fuse.",
+          "tone": "tense",
+          "pause_before": 0.2
+        }
+      ],
+      "claims": [],
+      "beats": {
+        "fight": "end-3.3",
+        "tip": "end-2.9",
+        "smash": "end-1.75",
+        "smash_x": 1150
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "gasp",
+          "gain": 0.6
+        },
+        {
+          "at": "end-3.3",
+          "name": "roar"
+        },
+        {
+          "at": "end-2.9",
+          "name": "thud"
+        },
+        {
+          "at": "end-1.75",
+          "name": "smash"
+        },
+        {
+          "at": "end-1.7",
+          "name": "punch"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 160,
+            "y": 20,
+            "dolly": 380
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": -20,
+            "y": 30,
+            "dolly": 420
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 0,
+            "y": 20,
+            "dolly": 260
+          },
+          {
+            "t": "end-1.9",
+            "x": 160,
+            "y": 40,
+            "dolly": 330
+          },
+          {
+            "t": "end",
+            "x": 200,
+            "y": 90,
+            "dolly": 300
+          }
+        ],
+        "shake": [
+          {
+            "t": "end-1.75",
+            "dur": 0.55,
+            "amp": 0.45
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": 0.1,
+              "expr": "worried",
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.3
+              },
+              "expr": "startled"
+            },
+            {
+              "t": "end-3.3",
+              "gesture": "plead",
+              "dur": 0.3,
+              "hold": 2.0
+            },
+            {
+              "t": "end-1.7",
+              "expr": "horrified"
+            }
+          ]
+        },
+        {
+          "id": "jacko",
+          "acts": [
+            {
+              "t": {
+                "line": 0,
+                "off": 1.0
+              },
+              "expr": "angry"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "fist",
+              "dur": 0.3,
+              "hold": 1.4
+            },
+            {
+              "t": "end-3.4",
+              "walk": 1000,
+              "dur": 0.5
+            },
+            {
+              "t": "end-3.35",
+              "gesture": "shove",
+              "dur": 0.25,
+              "hold": 0.5
+            },
+            {
+              "t": "end-2.4",
+              "gesture": "windup",
+              "dur": 0.4,
+              "hold": 0.1
+            },
+            {
+              "t": "end-1.9",
+              "gesture": "swing",
+              "dur": 0.12,
+              "hold": 0.9,
+              "snap": 1.4
+            },
+            {
+              "t": "end-1.75",
+              "prop": null
+            },
+            {
+              "t": "end-1.5",
+              "expr": "horrified"
+            }
+          ]
+        },
+        {
+          "id": "simmo",
+          "acts": [
+            {
+              "t": 0.1,
+              "gesture": "point",
+              "dur": 0.25,
+              "hold": 2.6
+            },
+            {
+              "t": 0.1,
+              "expr": "angry"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.5
+              },
+              "expr": "sly"
+            },
+            {
+              "t": "end-3.3",
+              "walk": 1290,
+              "dur": 0.5
+            },
+            {
+              "t": "end-3.25",
+              "expr": "startled"
+            },
+            {
+              "t": "end-2.4",
+              "expr": "horrified"
+            },
+            {
+              "t": "end-1.75",
+              "pose": "lie",
+              "dur": 0.45
+            },
+            {
+              "t": "end-1.75",
+              "expr": "asleep"
+            }
+          ]
+        },
+        {
+          "id": "maud",
+          "acts": [
+            {
+              "t": "end-3.2",
+              "expr": "shocked"
+            },
+            {
+              "t": "end-3.2",
+              "gesture": "hands_up",
+              "dur": 0.3,
+              "hold": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05_silence",
+      "scene": "history",
+      "set": "alehouse",
+      "ambience": "alehouse",
+      "min_duration": 13,
+      "pad_after": 0.4,
+      "music_cue": "numb",
+      "transition": "cut",
+      "chapter": "No police",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Simmo's not getting up.",
+          "tone": "reveal",
+          "pause_before": 1.0
+        },
+        {
+          "who": "narrator_history",
+          "text": "Your heart's going like the clappers. And there's no police.",
+          "tone": "tense",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "The police... were you.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Whoever found a body had to raise the hue and cry, and everyone had to give chase.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "C9",
+        "C11"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C9",
+          "text": "Hue and cry: a legal duty",
+          "at": {
+            "line": 3,
+            "off": 0.3
+          },
+          "dur": 4.0
+        }
+      ],
+      "beats": {
+        "fight": -20,
+        "smash": -20,
+        "after": 0.2
+      },
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "thump",
+          "gain": 0.9
+        },
+        {
+          "at": 1.3,
+          "name": "thump",
+          "gain": 0.9
+        },
+        {
+          "at": 2.2,
+          "name": "thump",
+          "gain": 0.8
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 1.6
+          },
+          "name": "run",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 0.4
+          },
+          "name": "doorslam",
+          "gain": 0.7
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 260,
+            "y": 110,
+            "dolly": 260
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": -400,
+            "y": 70,
+            "dolly": 520
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": -390,
+            "y": 60,
+            "dolly": 580
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 140,
+            "y": 20,
+            "dolly": 260
+          },
+          {
+            "t": "end",
+            "x": 200,
+            "y": 10,
+            "dolly": 220
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "acts": [
+            {
+              "t": 0.6,
+              "pose": "kneel",
+              "dur": 0.6
+            },
+            {
+              "t": 0.6,
+              "expr": "horrified"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "gesture": "clutch",
+              "dur": 0.4,
+              "hold": 3.0
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "sad",
+              "look": [
+                -0.4,
+                -0.2
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.2
+              },
+              "pose": "stand",
+              "dur": 0.6
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.4
+              },
+              "expr": "determined",
+              "look": [
+                1,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "id": "jacko",
+          "acts": [
+            {
+              "t": 0.2,
+              "expr": "horrified"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.0
+              },
+              "expr": "startled",
+              "look": [
+                1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.4
+              },
+              "walk": 2400,
+              "dur": 1.6,
+              "stride": 1.5
+            }
+          ]
+        },
+        {
+          "id": "simmo",
+          "acts": []
+        },
+        {
+          "id": "maud",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "clutch",
+              "dur": 0.4,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "sad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06_hue",
+      "scene": "history",
+      "set": "village_night",
+      "ambience": "night",
+      "min_duration": 12,
+      "pad_after": 0.4,
+      "music_cue": "chase",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "The hue and cry",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So you hunt your best mate through the dark, a horn wailing behind you.",
+          "tone": "tense",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "Every step, you're praying you don't catch him.",
+          "tone": "reflective"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Let a killer get away, and the whole village gets fined.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "C9"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C9",
+          "text": "Villages were fined for failing",
+          "at": {
+            "line": 2,
+            "off": 0.2
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "hue": 0.0
+      },
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "horn"
+        },
+        {
+          "at": 0.8,
+          "name": "run"
+        },
+        {
+          "at": 3.0,
+          "name": "run"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "thump",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "horn",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 200,
+            "y": 0,
+            "dolly": 160
+          },
+          {
+            "t": "end",
+            "x": 2400,
+            "y": -20,
+            "dolly": 220
+          }
+        ],
+        "follow": [
+          {
+            "actor": "you",
+            "from": 1.0,
+            "to": "end",
+            "axes": "x",
+            "offset": [
+              180,
+              0
+            ]
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 200,
+          "h": 450,
+          "facing": 1,
+          "expr0": "determined",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "torch"
+            },
+            {
+              "t": 0,
+              "gesture": "hold_torch",
+              "dur": 0.1,
+              "hold": -1
+            },
+            {
+              "t": 0.8,
+              "walk": 2900,
+              "dur": 8.5,
+              "stride": 1.45
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "expr": "sad"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "nervous"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07_sanctuary",
+      "scene": "history",
+      "set": "church_door",
+      "ambience": "night",
+      "min_duration": 13,
+      "pad_after": 0.45,
+      "music_cue": "dread",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Sanctuary",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "He makes the church. Sanctuary.",
+          "tone": "reveal",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "For up to forty days, no one can drag him out. So the neighbours keep watch.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Night after night, you hear your best mate breathing through the door.",
+          "tone": "reflective"
+        }
+      ],
+      "claims": [
+        "C13",
+        "C13w"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C13",
+          "text": "Sanctuary: up to 40 days",
+          "at": {
+            "line": 1,
+            "off": 0.3
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "torches": 0.5,
+        "door_open": 0.8
+      },
+      "sfx": [
+        {
+          "at": 0.8,
+          "name": "creak"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 1.6
+          },
+          "name": "doorslam"
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "thump",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 1.0
+          },
+          "name": "thump",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 60,
+            "y": 40,
+            "dolly": 220
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": -200,
+            "y": 30,
+            "dolly": 260
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": -420,
+            "y": 50,
+            "dolly": 420
+          },
+          {
+            "t": "end",
+            "x": -440,
+            "y": 60,
+            "dolly": 460
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "jacko",
+          "char": "jacko",
+          "x": 960,
+          "z": 1.66,
+          "h": 470,
+          "facing": 1,
+          "expr0": "horrified",
+          "acts": [
+            {
+              "t": 0.2,
+              "walk": 1040,
+              "dur": 0.6
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.0
+              },
+              "look": [
+                -1,
+                0
+              ],
+              "expr": "sad"
+            }
+          ],
+          "hide": [
+            [
+              3.2,
+              999
+            ]
+          ]
+        },
+        {
+          "id": "you",
+          "char": "pov",
+          "x": -200,
+          "h": 450,
+          "facing": 1,
+          "expr0": "exhausted",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "torch"
+            },
+            {
+              "t": 0,
+              "gesture": "hold_torch",
+              "dur": 0.1,
+              "hold": -1
+            },
+            {
+              "t": 0.3,
+              "walk": 520,
+              "dur": 3.2
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.5
+              },
+              "expr": "sad"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "pose": "slump",
+              "dur": 0.8
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "exhausted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08_inquest",
+      "scene": "history",
+      "set": "alehouse_day",
+      "ambience": "interior",
+      "min_duration": 14,
+      "pad_after": 0.45,
+      "music_cue": "problem",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "The inquest",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Morning. Simmo can't be buried till the king's coroner has seen him.",
+          "tone": "confident",
+          "pause_before": 0.6
+        },
+        {
+          "who": "coroner",
+          "text": "Who struck the blow? Speak up, lad.",
+          "tone": "tense",
+          "pause_before": 0.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "A jury of your neighbours, every eye on you.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Lie for your mate, or tell it straight and he could hang.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Even the jug's on the hook. It's a 'deodand', and Maud has to pay its value.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "C11",
+        "C12"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C11",
+          "text": "Coroner's inquest on the body",
+          "at": {
+            "line": 0,
+            "off": 0.4
+          },
+          "dur": 3.8
+        },
+        {
+          "kind": "documented",
+          "claim": "C12",
+          "text": "Deodand: its value was forfeit",
+          "at": {
+            "line": 4,
+            "off": 0.3
+          },
+          "dur": 4.0
+        }
+      ],
+      "beats": {
+        "body_x": 1060
+      },
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "churchbell",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "rustle",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 4,
+            "off": 1.6
+          },
+          "name": "chink"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 20,
+            "y": -40,
+            "dolly": 80
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 420,
+            "y": 20,
+            "dolly": 320
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": -420,
+            "y": 30,
+            "dolly": 440
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": 160,
+            "y": 20,
+            "dolly": 260
+          },
+          {
+            "t": "end",
+            "x": 200,
+            "y": 30,
+            "dolly": 290
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 520,
+          "h": 450,
+          "facing": 1,
+          "expr0": "exhausted",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 0.6
+              },
+              "expr": "startled"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.3
+              },
+              "expr": "pleading"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.3
+              },
+              "gesture": "plead",
+              "dur": 0.4,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 3.5
+              },
+              "expr": "sad"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.8
+              },
+              "expr": "skeptical"
+            }
+          ]
+        },
+        {
+          "id": "coroner",
+          "char": "coroner",
+          "x": 1500,
+          "h": 470,
+          "facing": -1,
+          "expr0": "stern",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "roll"
+            },
+            {
+              "t": 0.4,
+              "gesture": "hold_up",
+              "dur": 0.4,
+              "hold": 2.4
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 1.8
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.4
+              },
+              "expr": "skeptical"
+            }
+          ]
+        },
+        {
+          "id": "maud",
+          "char": "maud_alewife",
+          "x": 1760,
+          "z": 1.25,
+          "h": 440,
+          "facing": -1,
+          "expr0": "sad",
+          "acts": [
+            {
+              "t": {
+                "line": 4,
+                "off": 1.0
+              },
+              "expr": "grumpy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09_abjure",
+      "scene": "history",
+      "set": "church_dawn",
+      "ambience": "village",
+      "min_duration": 12,
+      "pad_after": 0.4,
+      "music_cue": "numb",
+      "transition": "dip",
+      "transition_dur": 0.7,
+      "new_shot": true,
+      "chapter": "Leave England. Forever.",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Jacko confesses, and swears to leave England. Forever.",
+          "tone": "reflective",
+          "pause_before": 0.8
+        },
+        {
+          "who": "narrator_history",
+          "text": "With his clothes and a wooden cross,",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "he must walk the king's highway to the port, by a set day.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "C13"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C13",
+          "text": "Abjuring the realm",
+          "at": {
+            "line": 0,
+            "off": 0.4
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "door_open": -10
+      },
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "churchbell",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.6
+          },
+          "name": "mudstep"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 1.4
+          },
+          "name": "mudstep"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 2.2
+          },
+          "name": "mudstep"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 60,
+            "y": -60,
+            "dolly": 80
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 200,
+            "y": 0,
+            "dolly": 200
+          },
+          {
+            "t": "end",
+            "x": 600,
+            "y": 10,
+            "dolly": 240
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "jacko",
+          "char": "jacko",
+          "x": 1020,
+          "z": 1.6,
+          "h": 470,
+          "facing": 1,
+          "expr0": "sad",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cross"
+            },
+            {
+              "t": 0,
+              "gesture": "hold_cross",
+              "dur": 0.1,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 1.5
+              },
+              "walk": 1150,
+              "dur": 1.2
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "walk": 2300,
+              "dur": 7.0
+            }
+          ]
+        },
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 200,
+          "h": 450,
+          "facing": 1,
+          "expr0": "sad",
+          "acts": [
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "look": [
+                1,
+                -0.1
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.8
+              },
+              "walk": 420,
+              "dur": 1.4
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 4.4
+              },
+              "expr": "exhausted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10_route",
+      "scene": "history",
+      "set": "map_dover",
+      "ambience": "none",
+      "min_duration": 9,
+      "pad_after": 0.6,
+      "music_cue": "numb",
+      "transition": "dissolve",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "The road to Dover",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Usually Dover. One abjurer in 1353 got twelve days.",
+          "tone": "tense",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "Stray off the road, and he could be killed.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "C13",
+        "C0"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C13",
+          "text": "Norfolk, 1353: 12 days to reach Dover",
+          "at": {
+            "line": 0,
+            "off": 1.6
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "route_from": 0.4,
+        "route_to": "end-0.6"
+      },
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "paper"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": 40,
+            "dolly": 0
+          },
+          {
+            "t": "end",
+            "x": 60,
+            "y": 20,
+            "dolly": 80
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "s11_after",
+      "scene": "history",
+      "set": "alehouse_day",
+      "ambience": "interior",
+      "min_duration": 13,
+      "pad_after": 1.4,
+      "music_cue": "tease",
+      "transition": "dip",
+      "transition_dur": 0.7,
+      "new_shot": true,
+      "chapter": "What it cost",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "One blue. One man dead, one exiled, and a village that can't look itself in the eye.",
+          "tone": "reflective",
+          "pause_before": 0.7
+        },
+        {
+          "who": "narrator_history",
+          "text": "And the labour laws got nastier. By 1361, runaways could be branded on the forehead.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "With an F, for 'falsity'.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Twenty years later, the anger exploded: the Peasants' Revolt.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Next time: you become a Roman gladiator.",
+          "tone": "playful",
+          "pause_before": 0.4
+        }
+      ],
+      "claims": [
+        "C7",
+        "C18"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "C7",
+          "text": "1361 law; no evidence it was used",
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "dur": 4.2
+        },
+        {
+          "kind": "documented",
+          "claim": "C18",
+          "text": "Labour laws: a grievance in 1381",
+          "at": {
+            "line": 3,
+            "off": 0.3
+          },
+          "dur": 3.4
+        }
+      ],
+      "beats": {
+        "body_x": -9999
+      },
+      "cards": [
+        {
+          "kind": "next",
+          "title": "You Become a Roman Gladiator",
+          "sub": "NEXT TIME",
+          "at": {
+            "line": 4,
+            "off": 0.0
+          },
+          "dur": 3.4
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 1.2
+          },
+          "name": "thud",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 0.2
+          },
+          "name": "churchbell",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -200,
+            "y": 20,
+            "dolly": 360
+          },
+          {
+            "t": "end",
+            "x": 40,
+            "y": -30,
+            "dolly": 120
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov",
+          "x": 700,
+          "h": 450,
+          "facing": 1,
+          "pose0": "lean_in",
+          "expr0": "sad",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cup"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.6
+              },
+              "gesture": "drink",
+              "dur": 0.5,
+              "hold": 1.0
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.6
+              },
+              "expr": "horrified",
+              "look": [
+                -0.6,
+                -0.2
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.4
+              },
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.0
+              },
+              "expr": "startled"
+            }
+          ]
+        },
+        {
+          "id": "maud",
+          "char": "maud_alewife",
+          "x": 1500,
+          "z": 1.25,
+          "h": 440,
+          "facing": -1,
+          "expr0": "sad",
+          "acts": [
+            {
+              "t": 0.5,
+              "gesture": "offer",
+              "dur": 0.5,
+              "hold": 2.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C0",
+      "type": "illustrative",
+      "text": "You, Jacko, Simmo, Maud, the coroner, the village, the dialogue and this night are fictional; the dialogue and narration use modern Australian slang on purpose. The map is not to scale.",
+      "sources": []
+    },
+    {
+      "id": "C1",
+      "type": "estimate",
+      "text": "The Black Death of 1348-49 killed perhaps around half of England's people; estimates run from about a third to 60% or more and historians still disagree.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "The Statute of Labourers (1351), following the Ordinance of 1349, pinned wages to the customary rates of 1346-47 or the years just before the plague, and obliged the able-bodied to work.",
+      "sources": [
+        "S4",
+        "S5",
+        "S6",
+        "S50"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "The 1351 statute's maximum for reapers was 2d a day in the first week of August and 3d in the second, without food or drink (translation).",
+      "sources": [
+        "S4"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "established",
+      "text": "Excess wages taken against the statutes were to be paid towards the township's share of the king's tax (the tenth and fifteenth), giving taxpayers an interest in enforcement.",
+      "sources": [
+        "S8",
+        "S4",
+        "S9"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "established",
+      "text": "Taking or paying wages above the legal rate could bring fines, forfeiture of the excess and imprisonment; enforcement was uneven.",
+      "sources": [
+        "S4",
+        "S5",
+        "S9",
+        "S12"
+      ]
+    },
+    {
+      "id": "C7",
+      "type": "established",
+      "text": "A statute of 1361 (34 Edw. III c.10) authorised branding runaway labourers on the forehead with an F 'for the falsity'; there is no evidence it was actually carried out.",
+      "sources": [
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "id": "C9",
+      "type": "established",
+      "text": "Everyone who heard the hue and cry had to follow it; villages that failed to pursue or capture offenders were fined (e.g. Oxford 1285, Kent 1241).",
+      "sources": [
+        "S14",
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "id": "C11",
+      "type": "established",
+      "text": "A sudden death had to be viewed by the coroner with a jury drawn from neighbouring vills; the first finder raised the hue; burying a body before the coroner's view was punished.",
+      "sources": [
+        "S21",
+        "S22",
+        "S23",
+        "S24"
+      ]
+    },
+    {
+      "id": "C12",
+      "type": "established",
+      "text": "An object that caused a death was a deodand: the jury valued it and its owner paid that value, in theory for pious uses, in practice usually to the Crown.",
+      "sources": [
+        "S25",
+        "S26"
+      ]
+    },
+    {
+      "id": "C13",
+      "type": "established",
+      "text": "A felon could take sanctuary in a church for up to 40 days, then confess to the coroner and abjure the realm: assigned a port (most often Dover), a set number of days, and the king's highway, carrying a wooden cross and stripped of goods but his clothes. Leaving the highway made him liable to be killed. In Norfolk in 1353 an abjurer was given 12 days to leave from Dover.",
+      "sources": [
+        "S27",
+        "S28",
+        "S29",
+        "S30",
+        "S31",
+        "S32",
+        "S34"
+      ]
+    },
+    {
+      "id": "C13w",
+      "type": "plausible",
+      "text": "Neighbours kept watch on the church so that a fugitive in sanctuary could not escape, and could be fined if he did (weaker attribution).",
+      "sources": [
+        "S33",
+        "S28"
+      ]
+    },
+    {
+      "id": "C16",
+      "type": "established",
+      "text": "Women brewed and sold most village ale; an ale-stake, a pole often with a bush, showed that ale was for sale.",
+      "sources": [
+        "S41",
+        "S43",
+        "S44"
+      ]
+    },
+    {
+      "id": "C18",
+      "type": "established",
+      "text": "Resentment of the labour laws was among the grievances behind the Peasants' Revolt of 1381.",
+      "sources": [
+        "S50",
+        "S1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "After the Black Death: society, economy and law in fourteenth-century England (M. Bailey)",
+      "publisher": "History Faculty, University of Oxford",
+      "url": "https://www.history.ox.ac.uk/after-black-death-society-economy-and-law-fourteenth-century-england",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S2",
+      "title": "Black Death in England",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Black_Death_in_England",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S4",
+      "title": "Statute of Laborers, 1351 (translation)",
+      "publisher": "Fordham University Internet Medieval Sourcebook",
+      "url": "https://sourcebooks.web.fordham.edu/seth/statute-labourers.asp",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S5",
+      "title": "Ordinance of Laborers, 1349 (translation)",
+      "publisher": "Fordham University Internet Medieval Sourcebook",
+      "url": "https://sourcebooks.web.fordham.edu/seth/ordinance-labourers.asp",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S6",
+      "title": "Plague",
+      "publisher": "The National Archives (UK)",
+      "url": "https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-time-period/early-modern/plague",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S8",
+      "title": "Labourers, Artificers, etc. Act 1349 (23 Edw. III)",
+      "publisher": "vLex",
+      "url": "https://vlex.co.uk/vid/861216522",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S9",
+      "title": "The Enforcement of the Statutes of Labourers, 1349-1359 (B. H. Putnam, 1908)",
+      "publisher": "Columbia University (via McMaster archive)",
+      "url": "https://historyofeconomicthought.mcmaster.ca/putnam/StatutesLabourers.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S10",
+      "title": "Masonic Mirror, 29 March 1862 (reprint of the 1361 labour statute)",
+      "publisher": "Masonic Periodicals Online",
+      "url": "https://masonicperiodicals.com/static/media/periodicals/119-MMR-1862-03-29-001-SINGLE.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S11",
+      "title": "History of labour law in the United Kingdom",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_labour_law_in_the_United_Kingdom",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S12",
+      "title": "Bailey, labour regulation after the Black Death",
+      "publisher": "Economic History Review 78:2 (2025), UEA repository",
+      "url": "https://ueaeprints.uea.ac.uk/id/eprint/95111",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S14",
+      "title": "Statute of Winchester",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Statute_of_Winchester",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S15",
+      "title": "Oxford crown pleas, 1285 (Florilegium Urbanum)",
+      "publisher": "ORB Online Reference Book for Medieval Studies",
+      "url": "https://www.the-orb.arlima.net/encyclop/culture/towns/florilegium/government/gvjust22.html",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S16",
+      "title": "Kent Eyre 1241 (transcription)",
+      "publisher": "durobrivis.net",
+      "url": "https://durobrivis.net/kent/eyres/eyre-1241.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S21",
+      "title": "Articles of Eyre (1194) and the coroner",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Articles_of_Eyre",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S22",
+      "title": "Coroner (Encyclopaedia Britannica, 3rd ed., 1797)",
+      "publisher": "Early Encyclopaedia Britannica project",
+      "url": "https://jimclifford.ca/early_encyclopedia_britannica/articles/1797/eb_3rd_1797_007076.html",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S23",
+      "title": "Medieval Crime in Upper Dean",
+      "publisher": "Bedfordshire Archives",
+      "url": "https://bedsarchives.bedford.gov.uk/CommunityHistories/UpperDean/MedievalCrimeInUpperDean.aspx",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S24",
+      "title": "1250 Crown Pleas General Eyre",
+      "publisher": "Binham Priory",
+      "url": "https://binhampriory.org/history-2/articles-documents-registers-burial-memorials/1250-crown-pleas-general-eyre/",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S25",
+      "title": "Deodand",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Deodand",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S26",
+      "title": "A Medieval Road Traffic Accident in Wyboston",
+      "publisher": "Bedfordshire Archives",
+      "url": "https://bedsarchives.bedford.gov.uk/CommunityHistories/Wyboston/AMedievalRoadTrafficAccidentInWyboston.aspx",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S27",
+      "title": "Bracton, De Legibus, vol. 2 p. 382 (sanctuary and abjuration)",
+      "publisher": "Ames Foundation, Harvard Law School",
+      "url": "https://amesfoundation.law.harvard.edu/Bracton/Unframed/English/v2/382.htm",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S28",
+      "title": "The Last Sussex Abjurations (R. F. Hunnisett)",
+      "publisher": "Sussex Archaeological Collections 102 (1964), Archaeology Data Service",
+      "url": "https://archaeologydataservice.ac.uk/catalogue/adsdata/arch-285-1/dissemination/pdf/Vol_102_1964/SAC102_Hunnisett.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S29",
+      "title": "The English Law of Sanctuary",
+      "publisher": "Ecclesiastical Law Journal, Cambridge University Press",
+      "url": "https://cambridge.org/core/services/aop-cambridge-core/content/view/B106C7BAE777ECBBEFCECB2B21AF8F40/S0956618X00000788a.pdf/english_law_of_sanctuary.pdf",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S30",
+      "title": "Taking the long and winding road to mercy: a Norfolk woman's route through medieval criminal justice",
+      "publisher": "University of Bristol, VIF gage blog (2021)",
+      "url": "https://vifgage.blogs.bristol.ac.uk/2021/02/10/taking-the-long-and-winding-road-to-mercy-a-norfolk-womans-route-through-medieval-criminal-justice",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S31",
+      "title": "Year Books case 18209 (abjurer leaving the highway)",
+      "publisher": "Boston University School of Law",
+      "url": "https://www.bu.edu/phpbin/lawyearbooks/display.php?id=18209",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S32",
+      "title": "From England to France: Felony and Exile in the High Middle Ages (W. C. Jordan)",
+      "publisher": "Princeton University, Department of History",
+      "url": "https://history.princeton.edu/about/publications/england-france-felony-and-exile-high-middle-ages",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S33",
+      "title": "Sanctuary and the vill's guard (Florilegium Urbanum)",
+      "publisher": "ORB Online Reference Book for Medieval Studies",
+      "url": "https://the-orb.arlima.net/encyclop/culture/towns/florilegium/government/gvjust11.html",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S34",
+      "title": "Sanctuary at All Saints",
+      "publisher": "Bedfordshire Archives",
+      "url": "https://bedsarchives.bedford.gov.uk/CommunityHistories/LeightonBuzzard/Sanctuary-at-All-Saints.aspx",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S41",
+      "title": "Ale, Beer, and Brewsters in England (J. M. Bennett)",
+      "publisher": "Oxford University Press (1996)",
+      "url": "https://academic.oup.com/book/47408",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S43",
+      "title": "Bread and Ale (manorial history)",
+      "publisher": "Meldreth History",
+      "url": "https://www.meldrethhistory.org.uk/topics/manorial_history/topcliffe_manor/bread_and_ale",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S44",
+      "title": "The Pardoner's Prologue ('at this alestake')",
+      "publisher": "Harvard's Geoffrey Chaucer Website",
+      "url": "https://chaucer.fas.harvard.edu/pages/pardoners-prologue-introduction-and-tale",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S50",
+      "title": "Statute of Labourers 1351",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Statute_of_Labourers_1351",
+      "accessed": "2026-10-12",
+      "note": "search snippet only; page not fetched"
+    }
+  ],
+  "publishing": {
+    "titles": [
+      "In 1351, Getting a Pay Rise Was a Crime",
+      "Why Medieval Killers Ran to the Church",
+      "One Pub Fight, One Death, One Walk to Dover"
+    ],
+    "description": "Harvest, 1351. Three years after the Black Death, workers are scarce, and taking a pay rise is against the law. After fourteen hours of hard yakka, your best mate flashes his illegal wage in the alehouse, someone threatens to dob him in, and a jug comes down. Then the real horror starts: no police, a whole village forced to hunt one of its own, forty nights of sanctuary, a coroner's inquest where even the jug has to be paid for, and a long walk to Dover with nothing but a wooden cross.",
+    "whats_real": "What's real: the 1351 Statute of Labourers and its wage limits, excess pay going to the village's tax, the hue and cry, the coroner's inquest, deodands, sanctuary and abjuring the realm (including a 1353 case with 12 days to reach Dover) are documented (sources below). You, Jacko, Simmo, Maud and the coroner are fictional, and the Aussie slang is ours, not 1351's.",
+    "packages": [
+      {
+        "title": "In 1351, Getting a Pay Rise Was a Crime",
+        "thumbnail": "A",
+        "promise": "A pay rise was illegal, and it ends in a killing.",
+        "proof": "0:00 'when a pay rise is a crime'; 0:28 the Statute of Labourers and the tax claw-back; 0:52 the alehouse."
+      },
+      {
+        "title": "Why Medieval Killers Ran to the Church",
+        "thumbnail": "B",
+        "promise": "Why a killer runs to a church, and what happens next.",
+        "proof": "0:00 bashing on the church door; 1:25 sanctuary, 40 days; 2:00 abjuring the realm."
+      },
+      {
+        "title": "One Pub Fight, One Death, One Walk to Dover",
+        "thumbnail": "C",
+        "promise": "A pub fight whose consequences end in exile.",
+        "proof": "0:52 the alehouse; 1:05 the fight; 2:10 the walk to Dover."
+      }
+    ],
+    "thumbnails": [
+      {
+        "id": "A",
+        "layout": "L1",
+        "bg": "#7A2E2A",
+        "text": "DOBBED IN",
+        "character": {
+          "char": "jacko",
+          "expr": "angry",
+          "gesture": "hold_up",
+          "prop": "coin",
+          "look": [
+            1,
+            -0.1
+          ],
+          "face_h": 0.44,
+          "face_c": [
+            0.25,
+            0.42
+          ],
+          "mouth": 0.4
+        },
+        "object": {
+          "type": "penny",
+          "r": 150,
+          "c": [
+            0.76,
+            0.62
+          ]
+        },
+        "stamp": {
+          "text": "ILLEGAL",
+          "c": [
+            0.74,
+            0.3
+          ],
+          "size": 56,
+          "rot": -0.14
+        }
+      },
+      {
+        "id": "B",
+        "layout": "L1",
+        "bg": "#1E2A4E",
+        "text": "SANCTUARY!",
+        "character": {
+          "char": "jacko",
+          "expr": "horrified",
+          "look": [
+            1,
+            -0.2
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.24,
+            0.42
+          ],
+          "mouth": 0.5
+        },
+        "object": {
+          "type": "church_door",
+          "r": 300,
+          "c": [
+            0.73,
+            0.62
+          ]
+        }
+      },
+      {
+        "id": "C",
+        "layout": "L1",
+        "bg": "#4A3A2A",
+        "text": "NO POLICE",
+        "text_fill": "#FFF8E7",
+        "character": {
+          "char": "pov",
+          "expr": "horrified",
+          "look": [
+            1,
+            0.2
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.24,
+            0.42
+          ],
+          "mouth": 0.4
+        },
+        "object": {
+          "type": "jug_smash",
+          "r": 145,
+          "c": [
+            0.75,
+            0.68
+          ]
+        }
+      }
+    ]
+  }
+}

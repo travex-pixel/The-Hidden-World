@@ -710,6 +710,299 @@
       return set;
     }
   };
+  // ================================================================== H03: the alehouse, the night, the church, the road
+  // An English village alehouse c. 1351: an ordinary house where the alewife sells her brew (an ale-stake with a bush
+  // hung out over the door when a brewing is ready). Unhopped ale, so no hops hanging anywhere. Trestle boards and
+  // benches, an open hearth, rushlights and a few tallow candles. Reconstruction: see episodes/hist003-*/research.md.
+  const NIGHT = { bloom: 0.36, grade: ['#16224a', '#2c3458'], gradeMode: 'multiply', gradeAlpha: 0.62, vignette: 0.82, paper: 0.07, saturate: 0.85, exposure: -0.3 };
+  function torchFlame(g, t, x, y, s, D, key) {
+    FX.flame(g, t, { x, y, size: s });
+    const fl = 0.8 + 0.2 * X.noise1(t * 7 + (key || 0), 5);
+    if (D && D.light) D.light(g, x, y - 40 * s, 520 * s, '#ff9440', 0.55 * fl);
+  }
+  Object.assign(X.PROPS, {
+    torch: (g, t, lw) => { g.save(); g.rotate(-0.15); g.strokeStyle = '#4a3222'; g.lineWidth = 14; g.lineCap = 'round'; g.beginPath(); g.moveTo(0, 60); g.lineTo(0, -120); g.stroke();
+      g.fillStyle = '#2a1c14'; g.fillRect(-12, -150, 24, 34); torchFlame(g, t, 0, -150, 0.7, root.HW, 1); g.restore(); },
+    cross: (g, t, lw) => { g.save(); g.rotate(-0.1); g.strokeStyle = '#7a5636'; g.lineWidth = 16; g.lineCap = 'square'; g.beginPath(); g.moveTo(0, 90); g.lineTo(0, -230); g.moveTo(-70, -150); g.lineTo(70, -150); g.stroke();
+      g.strokeStyle = INK; g.lineWidth = 3; g.strokeRect(-8, -230, 16, 320); g.strokeRect(-70, -158, 140, 16); g.restore(); },
+    roll: (g, t, lw) => { g.save(); g.rotate(-0.5); g.fillStyle = '#efe4c4'; g.fillRect(-14, -60, 28, 120); g.fillStyle = '#d8c89c'; g.beginPath(); g.ellipse(0, -60, 18, 8, 0, 0, 7); g.fill(); g.strokeStyle = INK; g.lineWidth = 3; g.strokeRect(-14, -60, 28, 120); g.restore(); },
+    cup: (g, t, lw) => { g.save(); g.fillStyle = '#8a5a34'; g.beginPath(); g.moveTo(-20, -26); g.lineTo(20, -26); g.lineTo(16, 24); g.lineTo(-16, 24); g.closePath(); g.fill(); g.strokeStyle = INK; g.lineWidth = 3.5; g.stroke(); g.fillStyle = '#c8a060'; g.fillRect(-20, -26, 40, 7); g.restore(); }
+  });
+  function trestle(g, r, x, y, w, h, top) {   // a board on two trestles
+    P.flat(g, [[x, y - h], [x + w, y - h], [x + w + 10, y - h + top], [x - 10, y - h + top]], '#6a4a2e', r, { mottle: 0.6 });
+    for (const lx of [x + 40, x + w - 60]) { P.stroke(g, [[lx - 30, y], [lx + 10, y - h + top]], '#4a3220', 14, r, { alpha: 1 }); P.stroke(g, [[lx + 50, y], [lx + 10, y - h + top]], '#4a3220', 14, r, { alpha: 1 }); }
+  }
+  function barrel(g, r, x, y, s) {
+    const w = 120 * s, h = 150 * s; P.flat(g, [[x - w / 2, y], [x + w / 2, y], [x + w / 2 + 10 * s, y - h / 2], [x + w / 2, y - h], [x - w / 2, y - h], [x - w / 2 - 10 * s, y - h / 2]], '#7a5232', r, { mottle: 0.7 });
+    for (const k of [0.18, 0.5, 0.82]) P.stroke(g, P.seg2(x - w / 2 - 6 * s, y - h * k, x + w / 2 + 6 * s, y - h * k, 3), '#3a2a20', 7 * s, r, { alpha: 0.9 });
+  }
+  function drinkerActors(D, q, defs, name) {
+    // background villagers at the trestles: sipping on a loop; at the brawl they freeze and stare
+    const key = '_dr' + name + q.start; if (q[key]) return q[key];
+    const fight = D.beat(q, 'fight', 1e9), after = D.beat(q, 'after', 1e9);
+    q[key] = defs.map(([x, z, f, sit], i) => {
+      const acts = [{ t: -1, prop: 'cup' }, { t: -1 + i * 0.37, gesture: sit === 'stand' ? 'hold_up' : 'eat', dur: 0.3, hold: -1, period: 2.6 + i * 0.31 }];
+      if (fight < 1e8) acts.push({ t: fight + 0.1 + i * 0.07, gesture: i % 2 ? 'hands_up' : 'plead', dur: 0.25, hold: -1 }, { t: fight + i * 0.05, expr: i % 3 ? 'shocked' : 'horrified', look: [f * 0.9, -0.1] });
+      if (after < 1e8) acts.push({ t: after + i * 0.2, expr: 'worried' });
+      const A = X.Rig.compileActor({ id: 'dr' + name + i, char: 'c' + (i % 4), x, h: 420, z, facing: f, pose0: sit === 'stand' ? 'stand' : 'sit', expr0: i % 2 ? 'happy' : 'neutral', acts, spec: { rig: CROWD[i % 4].rig }, seed: 300 + i * 13 });
+      A.z = z; A.lift = sit === 'stand' ? 0 : 150; return A;
+    });
+    return q[key];
+  }
+  function drawSeated(g, A, t, light) {
+    const st = X.Rig.evaluate(A, t, null); const gy = groundY(A.z) - A.lift / A.z * (A.h / 420); const k = A.h / A.z / 1000;
+    g.save(); g.translate(st.x, gy); g.scale(k, k); root.HW.drawStyled(g, A, st, light, { lw: 7, propDraw: (gg, prop) => X.PROPS[prop] && X.PROPS[prop](gg, t, 4) }); g.restore();
+  }
+  function shards(g, t, D, q, x, y) {
+    // the ale jug bursts: clay shards fly and settle, ale spreads into the rushes
+    const t0 = D.beat(q, 'smash', 1e9); const u = t - t0; if (u < 0) return;
+    const r = mulberry32(511);
+    const pool = Math.min(1, u / 1.6); g.fillStyle = rgba('#3a2412', 0.55 * pool); g.beginPath(); g.ellipse(x + 30, y + 6, 40 + 120 * pool, 10 + 22 * pool, 0, 0, 7); g.fill();
+    for (let i = 0; i < 16; i++) {
+      const vx = (r() - 0.5) * 700, vy = -200 - r() * 420, s = 8 + r() * 16, spin = (r() - 0.5) * 14; const T = Math.min(u, 0.9);
+      let px = x + vx * T, py = y - 40 + vy * T + 900 * T * T; if (py > y + r() * 14) py = y + r() * 14;
+      g.save(); g.translate(px, py); g.rotate(spin * T); g.fillStyle = i % 3 ? '#a0623a' : '#c8803e'; g.beginPath(); g.moveTo(-s, -s * 0.4); g.lineTo(s * 0.7, -s * 0.6); g.lineTo(s, s * 0.5); g.lineTo(-s * 0.4, s * 0.6); g.closePath(); g.fill(); g.strokeStyle = INK; g.lineWidth = 2.5; g.stroke(); g.restore();
+    }
+  }
+
+  X.SETS.alehouse = {
+    build(rng, seed, opts = {}) {
+      const day = !!opts.day;
+      const set = { name: day ? 'alehouse_day' : 'alehouse', seed, camX: [-500, 1300], camY: [-320, 160] };
+      const L = []; const wy1 = groundY(1.8);
+      L.push(makeLayer(set, 1.8, (g, r, b) => {
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#1c120c'], [0.5, '#4a3424'], [1, '#2a1c12']]);
+        P.wash(g, P.rect(b.x0, 170, b.x1 - b.x0, wy1 - 170), '#a07c54', r, { layers: 14, alpha: 0.12, spread: 0.03, edge: false });
+        P.mottle(g, { x: b.x0, y: 170, w: b.x1 - b.x0, h: wy1 - 170 }, '#7a5a3a', r, 1.4); P.granulate(g, b.x0, 170, b.x1 - b.x0, wy1 - 170, 0.3);
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, 420, [[0, '#0e0806', 0.92], [1, '#0e0806', 0]]);   // smoke-blackened roof space
+        for (let x = b.x0 + 60; x < b.x1; x += 330 + r() * 50) if (x < 820 || x > 1080) P.stroke(g, P.seg2(x, b.y0, x + gauss(r) * 4, wy1, 6), '#3e2818', 24, r, { alpha: 0.95 });
+        P.stroke(g, P.seg2(b.x0, 170, b.x1, 170, 10), '#3e2818', 28, r, { alpha: 0.95 });
+        // shelf of cups, jugs and a ladle; a tally board of who owes for ale
+        P.stroke(g, P.seg2(230, 470, 700, 470, 6), '#5a3c26', 14, r, { alpha: 0.95 });
+        for (let i = 0; i < 7; i++) { const px = 250 + i * 64; const tall = i % 3 === 1; P.flat(g, [[px, 462], [px + 40, 462], [px + 44, 462 - (tall ? 70 : 44)], [px - 4, 462 - (tall ? 70 : 44)]], i % 2 ? '#8a5a34' : '#a0623a', r, { mottle: 0.4 }); }
+        P.flat(g, P.rect(560, 520, 120, 150), '#6a4a30', r, { mottle: 0.5 }); for (let k = 0; k < 6; k++) P.line(g, P.seg2(575, 540 + k * 22, 575 + 20 + r() * 70, 540 + k * 22, 3), '#2a1a10', 3, r);
+        // the doorway to the lane: night outside (or morning light), the ale-stake's bush hanging over it
+        P.flat(g, P.rect(840, 300, 220, wy1 - 300), day ? '#e8ecdc' : '#16203c', r, { texture: false, edge: false });
+        if (!day) { P.bloom(g, 960, 380, 160, '#5a70a8', 0.4); for (let i = 0; i < 12; i++) P.flat(g, P.ellipse(850 + r() * 200, 310 + r() * 120, 1.6, 1.6, 6), '#e8eefc', r, { texture: false, edge: false }); }
+        else {
+          P.gradient(g, 840, 300, 220, 240, [[0, '#c8d4dc'], [1, '#e4e2d0']]);
+          P.flat(g, [[860, 560], [880, 470], [1000, 450], [1060, 500], [1060, 560]], '#c99a52', r, { mottle: 0.6 }); P.flat(g, P.rect(876, 540, 170, 90), '#e2cfa4', r, { mottle: 0.5 });   // a cottage across the lane
+          P.gradient(g, 840, 600, 220, wy1 - 600, [[0, '#9aa070'], [1, '#8a6a48']]);
+        }
+        P.stroke(g, P.seg2(830, 290, 830, wy1, 4), '#3e2818', 26, r, { alpha: 1 }); P.stroke(g, P.seg2(1070, 290, 1070, wy1, 4), '#3e2818', 26, r, { alpha: 1 }); P.stroke(g, P.seg2(820, 290, 1080, 290, 4), '#3e2818', 30, r, { alpha: 1 });
+        P.stroke(g, P.seg2(1060, 330, 1180, 300, 3), '#4a3222', 10, r, { alpha: 1 }); P.foliage(g, 1188, 330, 34, 44, ['#3a4a2a', '#5a6a3a', '#7a8a4a'], r, { dab: 8, n: 40 });   // ale-stake and bush
+        // barrels on a rack (the alewife's brewing), right of the door
+        P.stroke(g, P.seg2(1180, wy1 - 110, 1820, wy1 - 110, 4), '#4a3220', 16, r, { alpha: 1 });
+        for (const [bx, s] of [[1260, 1], [1420, 1.05], [1590, 0.95], [1740, 1]]) barrel(g, r, bx, wy1 - 110, s);
+        for (const [bx, s] of [[1340, 1.1], [1520, 1.15], [1700, 1.1]]) barrel(g, r, bx, wy1, s);
+        P.gradient(g, b.x0, wy1, b.x1 - b.x0, b.y1 - wy1, [[0, '#5a4028'], [0.5, '#6e5034'], [1, '#3a2818']]);
+        P.mottle(g, { x: b.x0, y: wy1, w: b.x1 - b.x0, h: b.y1 - wy1 }, '#5a4028', r, 1.2); P.granulate(g, b.x0, wy1, b.x1 - b.x0, b.y1 - wy1, 0.3);
+      }, { haze: 0.1, hazeColour: '#140c08' }));
+      // background trestles and the open hearth
+      L.push(makeLayer(set, 1.38, (g, r, b) => {
+        const gy = groundY(1.38);
+        trestle(g, r, -260, gy, 520, 150, 22); trestle(g, r, 1380, gy, 560, 150, 22);
+        for (const [x, w] of [[-240, 480], [1400, 520]]) P.flat(g, P.rect(x, gy - 64, w, 14), '#4a3220', r, {});   // benches
+        for (const x of [-140, 40, 1480, 1700]) { g.save(); g.translate(x, gy - 150); X.PROPS.jug(g, 0, 4); g.restore(); }
+        const hx = 160, hy = groundY(1.3) + 6;   // hearth: ring of stones and embers in the floor
+        P.wash(g, P.ellipse(hx, hy, 160, 40, 18), '#5a4a40', r, { layers: 8, alpha: 0.2, edge: false });
+        for (let i = 0; i < 14; i++) { const a = i / 14 * Math.PI * 2; P.flat(g, P.ellipse(hx + Math.cos(a) * 150, hy + Math.sin(a) * 36, 24, 14, 10), shade('#8a8278', (r() - 0.5) * 0.3), r, { mottle: 0.6 }); }
+        for (let i = 0; i < 5; i++) P.stroke(g, [[hx - 55 + i * 24, hy], [hx - 36 + i * 20, hy - 14]], '#1a120c', 9, r, { alpha: 0.9 });
+      }, {}));
+      // the board where you stand drinking with your mates
+      L.push(makeLayer(set, 1.12, (g, r, b) => {
+        const gy = groundY(1.12); trestle(g, r, 520, gy, 760, 190, 26);
+        for (const [x, s] of [[640, 1], [1150, 0.9]]) { g.save(); g.translate(x, gy - 190 - 44 * s); g.scale(s, s); X.PROPS.cup(g, 0, 4); g.restore(); }
+        g.save(); g.translate(880, gy - 190 - 50); X.PROPS.jug(g, 0, 4); g.restore();
+        for (const x of [760, 1210]) { P.flat(g, P.rect(x - 8, gy - 190 - 50, 16, 46), '#e8dcb8', r, { texture: false }); }   // tallow candles
+      }, {}));
+      L.push(makeLayer(set, 1.0, (g, r, b) => {   // rushes strewn on the floor (acting plane: transparent)
+        const fy = groundY(1.0);
+        for (let i = 0; i < 520; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = fy - 50 + r() * (b.y1 - fy + 50); P.stroke(g, [[x, y], [x + 26 + r() * 30, y + gauss(r) * 5]], r() < 0.5 ? '#8a7a4a' : '#6a5a34', 3, r, { alpha: 0.4, bristles: 1 }); }
+      }, { o: -1 }));
+      L.push(makeLayer(set, 0.62, (g, r, b) => {   // out-of-focus post and the end of a bench
+        P.stroke(g, P.seg2(-300, b.y0, -290, b.y1, 8), '#1e140c', 70, r, { alpha: 1, bristles: 5 });
+        P.flat(g, P.rect(2350, b.y1 - 260, 700, 40), '#3a2818', r, {}); P.stroke(g, P.seg2(2420, b.y1, 2420, b.y1 - 230, 3), '#2a1c10', 30, r, { alpha: 1 });
+      }, { blur: 8 }));
+      set.layers = L; set.bg = '#140c08'; set.groundY = groundY; set.light = [-0.85, -0.45];
+      set.finish = day ? { bloom: 0.18, grade: ['#8a9ab0', '#d8c8a8'], gradeMode: 'soft-light', gradeAlpha: 0.32, vignette: 0.62, paper: 0.07, saturate: 0.9, exposure: -0.1 }
+                       : { bloom: 0.26, grade: ['#1a1e40', '#ff9a50'], gradeMode: 'soft-light', gradeAlpha: 0.42, vignette: 0.85, paper: 0.06, saturate: 1.12, exposure: -0.3 };
+      set.drift = 0.7;
+      const drinkers = [[-180, 1.48, 1], [60, 1.5, -1], [1460, 1.5, 1], [1700, 1.48, -1], [1880, 1.52, -1]];
+      const jurors = [[-120, 1.45, 1, 'stand'], [80, 1.5, 1, 'stand'], [300, 1.48, 1, 'stand'], [1500, 1.45, -1, 'stand'], [1700, 1.5, -1, 'stand']];
+      set.dynamic = [
+        { z: 1.37, draw: (g, t, ta, D, q) => { for (const A of drinkerActors(D, q, day ? jurors : drinkers, day ? 'j' : 'd')) drawSeated(g, A, t, set.light); } },
+        { z: 1.79, draw: (g, t, ta, D) => {
+          if (day) { FX.rays(g, t, { x: 950, y: 360, angle: 2.2, n: 5, spread: 0.07, width: 0.05, len: 1300, alpha: 0.1, colour: '#eef2e0', key: 'door' }); D.light(g, 950, 520, 600, '#dfe8ff', 0.12); }
+          else { D.light(g, 950, 420, 420, '#5a78c8', 0.22); }
+        } },
+        { z: 1.29, draw: (g, t, ta, D) => {
+          const hx = 160, hy = groundY(1.3) + 6;
+          if (!day) { FX.flame(g, t, { x: hx, y: hy, size: 1.25 }); const fl = 0.85 + 0.15 * X.noise1(t * 6, 2) + 0.1 * Math.sin(t * 13); D.light(g, hx, hy - 90, 1150, '#ff8a3a', 0.5 * fl); }
+          FX.smoke(g, t, { x: hx, y: hy, n: day ? 6 : 10, life: 7, rise: 640, size: 22, alpha: day ? 0.1 : 0.14, wind: 14, key: 'aleh' });
+        } },
+        { z: 1.115, draw: (g, t, ta, D, q) => {
+          if (day) return; const gy = groundY(1.12) - 190 - 50; const k = clamp((t - D.beat(q, 'fight', 1e9)) / 0.4, 0, 1);
+          for (const [x, i] of [[760, 0], [1210, 1]]) { const wob = 1 + 0.5 * k * Math.sin(t * 30 + i); FX.flame(g, t, { x, y: gy, size: 0.32 * wob }); D.light(g, x, gy - 20, 330, '#ffb060', 0.42); }
+        } },
+        { z: 1.2, draw: (g, t) => FX.motes(g, t, { x: -200, y: 200, w: 1900, h: 700, n: day ? 40 : 24, alpha: day ? 0.45 : 0.3, colour: day ? '#f4f0e0' : '#ffc890', key: 'aleh' }) },
+        { z: 0.99, o: 3, draw: (g, t, ta, D, q) => shards(g, t, D, q, D.beat(q, 'smash_x', 1120), groundY(1.0) + 10) },
+        { z: 0.97, o: 3, draw: (g, t, ta, D, q) => {   // a stool goes over in the scuffle
+          const k = X.ease.out3(clamp((t - D.beat(q, 'tip', 1e9)) / 0.5, 0, 1)); const x = 1420, y = groundY(0.97);
+          g.save(); g.translate(x, y); g.rotate(k * 1.5); P.flat(g, [[-70, -120], [70, -120], [70, -100], [-70, -100]], '#5a3c26', mulberry32(3), {});
+          for (const lx of [-56, 50]) P.stroke(g, P.seg2(lx, -100, lx + (lx < 0 ? -8 : 8), 0, 3), '#4a3220', 14, mulberry32(4), { alpha: 1 }); g.restore();
+        } }
+      ];
+      if (day) set.dynamic.push({ z: 0.995, o: 2, draw: (g, t, ta, D, q) => {   // the body, covered, where it fell: the coroner must view it before burial
+        const x = D.beat(q, 'body_x', 1180), y = groundY(1.0) + 6;
+        const p = new Path2D(); p.moveTo(x - 330, y); p.bezierCurveTo(x - 320, y - 70, x - 200, y - 86, x - 60, y - 78); p.bezierCurveTo(x + 80, y - 70, x + 200, y - 60, x + 300, y - 50); p.lineTo(x + 320, y + 4); p.closePath();
+        g.fillStyle = '#d8d2c0'; g.fill(p); g.save(); g.clip(p); g.fillStyle = 'rgba(90,80,70,0.35)'; for (let i = 0; i < 5; i++) { g.beginPath(); g.ellipse(x - 240 + i * 120, y - 20, 50, 70, 0.3, 0, 7); g.fill(); } g.restore();
+        g.strokeStyle = INK; g.lineWidth = 3.5; g.stroke(p);
+        for (const dx of [318, 336]) { g.fillStyle = '#3a2a1c'; g.beginPath(); g.ellipse(x + dx, y - 22, 14, 26, 0.2, 0, 7); g.fill(); }   // feet showing at the end of the sheet
+      } });
+      return set;
+    }
+  };
+  X.SETS.alehouse_day = { build(rng, seed) { return X.SETS.alehouse.build(rng, seed, { day: true }); } };
+
+  // ------------------------------------------------------------------ the village at night: the hue and cry
+  X.SETS.village_night = {
+    build(rng, seed) {
+      const set = X.SETS.village.build(rng, seed); set.name = 'village_night'; set.bg = '#0a0e1c';
+      const keep = set.dynamic.filter(d => { const s = String(d.draw); return !(s.includes('birds') || s.includes('flame') || s.includes('shimmer') || s.includes('drawVillager')); });
+      set.finish = { ...NIGHT, exposure: -0.36, bloom: 0.25 };
+      const runners = (D, q) => {
+        if (q._run) return q._run; const t0 = D.beat(q, 'hue', 0.5);
+        q._run = [[-500, 1.32, 0], [-700, 1.42, 0.4], [-380, 1.55, 0.9], [-900, 1.38, 1.3], [-600, 1.6, 1.8]].map(([x, z, d], i) => {
+          const A = X.Rig.compileActor({ id: 'run' + i, char: 'c' + (i % 4), x, h: 420, z, facing: 1, expr0: i % 2 ? 'angry' : 'determined', acts: [{ t: -1, prop: 'torch' }, { t: -1, gesture: 'hold_torch', dur: 0.1, hold: -1 }, { t: t0 + d, walk: 4400 + i * 120, dur: 9 + i * 0.6, stride: 1.5 }], spec: { rig: CROWD[i % 4].rig }, seed: 700 + i * 11 });
+          A.z = z; return A;
+        });
+        return q._run;
+      };
+      set.dynamic = [
+        { z: 39, draw: (g, t, ta, D) => { const r = mulberry32(17); for (let i = 0; i < 70; i++) { const x = -400 + r() * 3200, y = 30 + r() * 420; D.light(g, x, y, 3 + r() * 3, '#f4f6ff', 0.5 + 0.4 * Math.sin(t * (1 + r() * 2) + i)); } D.light(g, 1500, 170, 260, '#c8d4ff', 0.5); D.light(g, 1500, 170, 46, '#ffffff', 0.9); } },
+        ...keep,
+        { z: 1.31, draw: (g, t, ta, D, q) => { for (const A of runners(D, q)) { const st = X.Rig.evaluate(A, t, null); const gy = groundY(A.z); const k = A.h / A.z / 1000; g.save(); g.translate(st.x, gy); g.scale(k, k); root.HW.drawStyled(g, A, st, set.light, { lw: 7, propDraw: (gg, prop) => X.PROPS[prop] && X.PROPS[prop](gg, t, 4) }); g.restore(); } } },
+        { z: 2.2, draw: (g, t, ta, D) => { for (const [x, i] of [[640, 0], [1980, 1], [3020, 2]]) D.light(g, x, groundY(2.2) - 220, 140, '#ffb060', 0.35 + 0.1 * Math.sin(t * 3 + i)); } }   // shutters lit from within
+      ];
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ the parish church: sanctuary
+  X.SETS.church_door = {
+    build(rng, seed, opts = {}) {
+      const dawn = !!opts.dawn;
+      const set = { name: dawn ? 'church_dawn' : 'church_door', seed, camX: [-500, 900], camY: [-360, 140] };
+      const L = [];
+      L.push(makeLayer(set, 30, (g, r, b) => {
+        if (dawn) P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#6a7ab0'], [0.55, '#e8b8a0'], [1, '#f8dcb0']]);
+        else {
+          P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#060a1a'], [0.6, '#141e3a'], [1, '#1e2644']]);
+          for (let i = 0; i < 160; i++) { g.fillStyle = rgba('#f4f6ff', 0.4 + r() * 0.6); g.beginPath(); g.arc(b.x0 + r() * (b.x1 - b.x0), b.y0 + r() * 520, 1 + r() * 1.6, 0, 7); g.fill(); }
+          P.bloom(g, 1560, 70, 240, '#c8d4ff', 0.5); g.fillStyle = '#f2f4ff'; g.beginPath(); g.arc(1560, 70, 34, 0, 7); g.fill();   // the moon
+        }
+        for (let i = 0; i < 5; i++) cloud(g, b.x0 + 200 + i * 520, 140 + r() * 160, 0.7, r);
+      }, { padY: 200 }));
+      L.push(makeLayer(set, 7, (g, r, b) => {   // dark ridge and trees
+        hills(g, r, b, HZ + 10, 90, dawn ? '#6a7890' : '#1a2234', { seed: 12 });
+        for (let x = b.x0; x < b.x1; x += 180 + r() * 220) tree(g, x, HZ + 30, 0.4 + r() * 0.2, r, { pal: dawn ? ['#4a5a5a', '#5e6e66', '#7a8a7a'] : ['#141c24', '#1c2630', '#26323c'] });
+      }, { haze: 0.2, hazeColour: dawn ? '#e0c8b8' : '#1a2234' }));
+      // the church: flint and stone walls, a round-headed doorway with chevron moulding, a heavy oak door
+      L.push(makeLayer(set, 1.7, (g, r, b) => {
+        const gy = groundY(1.7), wx0 = 320, wx1 = 1720, top = 250;
+        // nave roof of stone slates rising behind the wall, and a bell-cote on the west gable
+        P.flat(g, [[wx0 - 60, top + 10], [wx0 + 220, top - 150], [wx1 - 220, top - 150], [wx1 + 60, top + 10]], '#4a4a54', r, { mottle: 0.6 });
+        g.save(); g.beginPath(); g.moveTo(wx0 - 60, top + 10); g.lineTo(wx0 + 220, top - 150); g.lineTo(wx1 - 220, top - 150); g.lineTo(wx1 + 60, top + 10); g.closePath(); g.clip();
+        for (let k = 0; k < 7; k++) P.line(g, P.seg2(wx0 - 60, top - k * 22, wx1 + 60, top - k * 22, 6), '#2e2e36', 3, r, { alpha: 0.6 });   // slate courses
+        g.restore();
+        P.flat(g, P.rect(980, top - 300, 90, 160), '#8a8274', r, { mottle: 0.6 }); P.flat(g, [[968, top - 300], [1082, top - 300], [1025, top - 360]], '#5a5450', r, {});
+        P.flat(g, [[1000, top - 160], [1000, top - 240], [1025, top - 268], [1050, top - 240], [1050, top - 160]], '#1a1418', r, { texture: false });   // the bell opening
+        P.flat(g, [[wx0, gy], [wx0, top], [wx1, top], [wx1, gy]], '#7a7468', r, { mottle: 0.8 });
+        for (let i = 0; i < 1100; i++) { const x = wx0 + r() * (wx1 - wx0), y = top + 10 + r() * (gy - top - 10); P.flat(g, P.ellipse(x, y, 6 + r() * 10, 4 + r() * 7, 10), shade(r() < 0.5 ? '#3e3e46' : '#8a8478', (r() - 0.5) * 0.3), r, { texture: false, edge: false }); }   // knapped flints
+        for (const qx of [wx0, wx1 - 60]) for (let y = top + 10; y < gy; y += 70) P.flat(g, P.rect(qx + (y / 70 % 2) * 14, y, 60, 64), '#b8ae9a', r, { mottle: 0.5 });   // stone quoins
+        P.stroke(g, P.seg2(wx0 - 10, top, wx1 + 10, top, 6), '#5a544c', 18, r, { alpha: 1 });   // eaves course
+        const dx = 1020, dw = 300, dh = 420; const dtop = gy - dh;
+        for (let k = 0; k < 15; k++) { const a = Math.PI + k / 14 * Math.PI; const r0 = dw / 2 + 6, r1 = dw / 2 + 64; const cy = dtop + dw / 2; P.flat(g, [[dx + Math.cos(a) * r0, cy + Math.sin(a) * r0], [dx + Math.cos(a + 0.23) * r0, cy + Math.sin(a + 0.23) * r0], [dx + Math.cos(a + 0.23) * r1, cy + Math.sin(a + 0.23) * r1], [dx + Math.cos(a) * r1, cy + Math.sin(a) * r1]], k % 2 ? '#c8bea8' : '#a89e88', r, {}); }
+        for (const sx of [dx - dw / 2 - 64, dx + dw / 2]) P.flat(g, P.rect(sx, dtop + dw / 2, 64, dh - dw / 2), '#b8ae98', r, { mottle: 0.5 });
+        g.save(); g.beginPath(); g.moveTo(dx - dw / 2, gy); g.lineTo(dx - dw / 2, dtop + dw / 2); g.arc(dx, dtop + dw / 2, dw / 2, Math.PI, 0); g.lineTo(dx + dw / 2, gy); g.closePath(); g.fillStyle = '#120a06'; g.fill(); g.restore();
+        P.flat(g, P.rect(500, 440, 90, 160), dawn ? '#3a3040' : '#0e0a10', r, { texture: false }); g.save(); g.fillStyle = dawn ? '#3a3040' : '#0e0a10'; g.beginPath(); g.arc(545, 440, 45, Math.PI, 0); g.fill(); g.restore();   // a small round-headed window
+        P.gradient(g, b.x0, gy - 10, b.x1 - b.x0, b.y1 - gy, [[0, dawn ? '#6a7a50' : '#1e2a1c'], [1, dawn ? '#4a5a38' : '#121a12']]);
+      }, {}));
+      L.push(makeLayer(set, 1.25, (g, r, b) => {   // churchyard: a stone cross, long grass, an old yew
+        const gy = groundY(1.25);
+        P.flat(g, P.rect(140, gy - 330, 40, 330), '#9a9282', r, { mottle: 0.5 }); P.flat(g, P.rect(80, gy - 280, 160, 36), '#9a9282', r, { mottle: 0.5 }); P.flat(g, P.rect(110, gy - 30, 100, 30), '#8a8272', r, {});
+        P.foliage(g, 1900, gy - 380, 260, 300, dawn ? ['#2a3a2a', '#3a4a34', '#4e5e44'] : ['#0e140e', '#141c14', '#1a241a'], r, { dab: 26, n: 260 });
+        P.flat(g, [[1880, gy], [1900, gy - 160], [1940, gy - 160], [1960, gy]], '#3a2a20', r, {});
+        grassVerge(g, r, b.x0, b.x1, gy + 20, 70, 1.2);
+      }, { haze: dawn ? 0.08 : 0.15, hazeColour: dawn ? '#f0d8c0' : '#0e1428' }));
+      L.push(makeLayer(set, 0.6, (g, r, b) => { grassVerge(g, r, b.x0, b.x1, b.y1 - 20, 180, 1.4); }, { blur: 8 }));
+      set.layers = L; set.bg = dawn ? '#e8c0a8' : '#0a0e1c'; set.groundY = groundY; set.light = dawn ? [0.8, -0.4] : [-0.5, -0.8];
+      set.finish = dawn ? { bloom: 0.4, grade: ['#7a8ab8', '#ffc890'], gradeMode: 'soft-light', gradeAlpha: 0.3, vignette: 0.5, paper: 0.08, saturate: 1.05 } : { ...NIGHT, exposure: -0.4, bloom: 0.25 };
+      set.drift = 0.8;
+      const dx = 1020, gy = groundY(1.7), dw = 300, dh = 420;
+      set.dynamic = [
+        { z: 29, draw: (g, t, ta, D) => { if (dawn) D.light(g, 1800, 470, 700, '#ffd8a0', 0.3); } },
+        { z: 1.69, o: 2, draw: (g, t, ta, D, q) => {   // the door leaf swings in at beat door_open; candlelight from inside
+          const k = X.ease.inOut(clamp((t - D.beat(q, 'door_open', dawn ? -10 : 1e9)) / 0.9, 0, 1)); const r = mulberry32(5);
+          if (k > 0) { g.save(); g.beginPath(); g.moveTo(dx - dw / 2, gy); g.lineTo(dx - dw / 2, gy - dh + dw / 2); g.arc(dx, gy - dh + dw / 2, dw / 2, Math.PI, 0); g.lineTo(dx + dw / 2, gy); g.closePath(); g.clip();
+            P.gradient(g, dx - dw / 2, gy - dh, dw, dh, [[0, '#ffb060', 0.9], [1, '#c86a2a', 0.9]]); for (const cx of [dx - 70, dx + 60]) FX.flame(g, t, { x: cx, y: gy - 170, size: 0.3 }); g.restore(); D.light(g, dx, gy - 160, 520 * k + 40, '#ffb060', 0.5 * k); }
+          const w = dw * (1 - k * 0.85); g.save(); g.beginPath(); g.moveTo(dx - dw / 2, gy); g.lineTo(dx - dw / 2, gy - dh + dw / 2); g.arc(dx, gy - dh + dw / 2, dw / 2, Math.PI, 0); g.lineTo(dx + dw / 2, gy); g.closePath(); g.clip();
+          P.flat(g, P.rect(dx - dw / 2, gy - dh, w, dh), '#5a3a22', r, { mottle: 0.6 }); for (let i = 1; i < 5; i++) P.line(g, P.seg2(dx - dw / 2 + i * w / 5, gy - dh, dx - dw / 2 + i * w / 5, gy, 4), INK, 2.5, r, { alpha: 0.6 });
+          for (const yy of [gy - 340, gy - 140]) P.stroke(g, P.seg2(dx - dw / 2, yy, dx - dw / 2 + w * 0.9, yy, 3), '#2a2a2e', 12, r, { alpha: 1 });   // iron straps
+          g.restore();
+          if (k < 0.5) { g.strokeStyle = '#2a2a2e'; g.lineWidth = 9; g.beginPath(); g.arc(dx - dw / 2 + w * 0.78, gy - 250, 30, 0, 7); g.stroke(); }   // the door ring
+        } },
+        { z: 1.3, draw: (g, t) => FX.mist(g, t, { x: 900, y: groundY(1.3) - 20, w: 2600, h: 60, n: 6, alpha: dawn ? 0.12 : 0.16, speed: 6 }) },
+        { z: 0.98, draw: (g, t) => FX.grass(g, t, { x: -300, y: groundY(1.0) + 120, w: 2600, n: 60, h: 60 }) }
+      ];
+      if (!dawn) set.dynamic.push({ z: 1.5, draw: (g, t, ta, D, q) => {   // torches of the villagers arriving at the churchyard
+        const k = clamp((t - D.beat(q, 'torches', 1e9)) / 1.5, 0, 1); if (k <= 0) return;
+        for (const [x, y, i] of [[-280, 640, 0], [-120, 700, 1], [60, 660, 2], [-420, 720, 3]]) { const xx = x + (1 - X.ease.out3(k)) * -600; g.strokeStyle = '#2a1c14'; g.lineWidth = 12; g.beginPath(); g.moveTo(xx, y + 220); g.lineTo(xx, y); g.stroke(); torchFlame(g, t, xx, y, 0.8, D, i); }
+      } });
+      return set;
+    }
+  };
+  X.SETS.church_dawn = { build(rng, seed) { return X.SETS.church_door.build(rng, seed, { dawn: true }); } };
+
+  // ------------------------------------------------------------------ insert: the walk to the port (illustrative map)
+  X.SETS.map_dover = {
+    build(rng, seed) {
+      const set = { name: 'map_dover', seed, camX: [-500, 500], camY: [-260, 260] };
+      // stylised south-east England: the Thames estuary, London, the Kent coast, Dover. Not to scale.
+      const coast = [[-200, 120], [300, 150], [620, 230], [900, 300], [1150, 280], [1330, 330], [1480, 300], [1640, 360], [1760, 470], [1720, 600], [1560, 700], [1620, 820], [1500, 900], [1250, 960], [900, 1000], [500, 1010], [150, 1040], [-200, 1060]];
+      set.layers = [makeLayer(set, 1.0, (g, r, b) => {
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#8aa0a8'], [1, '#6e8890']]);   // the sea
+        for (let i = 0; i < 40; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = b.y0 + r() * (b.y1 - b.y0); P.line(g, P.seg2(x, y, x + 50, y + 4, 2), '#5a7078', 2, r, { alpha: 0.4 }); }   // wave strokes
+        const land = [...coast, [-600, 1400], [-600, -200]];
+        P.wash(g, land, '#e8d8b0', r, { layers: 14, alpha: 0.2, spread: 0.02, edge: true });
+        P.mottle(g, { x: -600, y: 100, w: 2400, h: 1000 }, '#d8c494', r, 1.2); P.granulate(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, 0.35);
+        P.stroke(g, [[-300, 330], [100, 360], [400, 330], [700, 300], [940, 296]], '#6e8890', 14, r, { alpha: 0.8 });   // the Thames to its estuary
+        for (let i = 0; i < 12; i++) P.foliage(g, 200 + r() * 1300, 500 + r() * 400, 30, 22, ['#8a9a60', '#9aaa70', '#7a8a50'], r, { dab: 8, n: 14 });   // woods (decorative)
+      })];
+      set.bg = '#6e8890'; set.groundY = groundY; set.light = [-0.6, -0.6];
+      set.finish = { bloom: 0.2, grade: ['#c8b890', '#8a6a40'], gradeMode: 'soft-light', gradeAlpha: 0.3, vignette: 0.6, paper: 0.18, saturate: 0.95 };
+      set.drift = 0.5;
+      const route = [[260, 640], [480, 660], [700, 620], [930, 640], [1150, 600], [1350, 560], [1560, 520], [1700, 520]];
+      const at = u => { const n = route.length - 1, f = clamp(u, 0, 1) * n, i = Math.min(n - 1, Math.floor(f)), k = f - i; return [lerp(route[i][0], route[i + 1][0], k), lerp(route[i][1], route[i + 1][1], k)]; };
+      set.dynamic = [{ z: 0.999, draw: (g, t, ta, D, q) => {
+        const u = X.smoother(clamp((t - D.beat(q, 'route_from', 0.8)) / Math.max(0.5, D.beat(q, 'route_to', 6) - D.beat(q, 'route_from', 0.8)), 0, 1));
+        const lab = (txt, x, y, s, col) => { g.font = `600 ${s}px Fraunces`; g.textAlign = 'center'; g.lineWidth = 6; g.strokeStyle = 'rgba(240,228,196,0.85)'; g.strokeText(txt, x, y); g.fillStyle = col || '#3a2418'; g.fillText(txt, x, y); };
+        g.fillStyle = '#3a2418'; for (const [x, y] of [[260, 640], [1700, 520], [180, 360]]) { g.beginPath(); g.arc(x, y, 9, 0, 7); g.fill(); }
+        lab('London', 180, 330, 30); lab('your village', 260, 690, 30); lab('Dover', 1700, 490, 38, '#7a1e14'); lab('to France', 1840, 400, 26, '#4a5a60');
+        g.save(); g.translate(520, 920); g.fillStyle = 'rgba(240,228,196,0.85)'; g.strokeStyle = '#3a2418'; g.lineWidth = 4; g.beginPath(); g.roundRect(-230, -56, 460, 92, 12); g.fill(); g.stroke(); g.restore();
+        lab('The road to the sea', 520, 908, 40); g.font = '600 22px Nunito'; g.fillStyle = '#5a4030'; g.textAlign = 'center'; g.fillText('abjurer\'s route, illustrative · not to scale', 520, 936);
+        g.save(); g.translate(1640, 860); g.strokeStyle = '#3a2418'; g.fillStyle = '#3a2418'; g.lineWidth = 3; g.beginPath(); g.arc(0, 0, 54, 0, 7); g.stroke();
+        g.beginPath(); g.moveTo(0, -70); g.lineTo(12, 0); g.lineTo(0, 70); g.lineTo(-12, 0); g.closePath(); g.fill(); g.font = '600 28px Fraunces'; g.textAlign = 'center'; g.fillText('N', 0, -80); g.restore();
+        g.save(); g.setLineDash([16, 14]); g.strokeStyle = '#7a1e14'; g.lineWidth = 6; g.lineCap = 'round'; g.beginPath();
+        const steps = 120; for (let i = 0; i <= steps * u; i++) { const [x, y] = at(i / steps); i ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke(); g.restore();
+        const [wx, wy] = at(u);   // a small walking figure with a cross
+        g.save(); g.translate(wx, wy - 40); g.fillStyle = '#3a2418'; g.beginPath(); g.arc(0, -36, 11, 0, 7); g.fill(); g.fillRect(-9, -26, 18, 40); g.strokeStyle = '#3a2418'; g.lineWidth = 5; const sw = Math.sin(t * 9) * 8 * (u < 1 ? 1 : 0); g.beginPath(); g.moveTo(-4, 12); g.lineTo(-4 - sw, 36); g.moveTo(4, 12); g.lineTo(4 + sw, 36); g.stroke();
+        g.strokeStyle = '#7a5636'; g.lineWidth = 5; g.beginPath(); g.moveTo(16, -60); g.lineTo(16, 10); g.moveTo(4, -44); g.lineTo(28, -44); g.stroke(); g.restore();
+      } }];
+      return set;
+    }
+  };
   // artwork reused by the thumbnail compositor
   X.ART = Object.assign(X.ART || {}, { penny, millstone, bigHand, loafShape, stook, WHEAT, groundY });
 })(window);

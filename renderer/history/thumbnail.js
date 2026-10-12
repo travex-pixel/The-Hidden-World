@@ -77,6 +77,26 @@
       g.restore(); g.strokeStyle = '#e9b860'; g.lineWidth = 18; g.beginPath(); g.arc(0, 0, R, 0, 7); g.stroke(); g.strokeStyle = INK; g.lineWidth = 6; g.beginPath(); g.arc(0, 0, R + 10, 0, 7); g.stroke();
     },
     jug: (g, o) => { g.scale(o.r / 50, o.r / 50); X.PROPS.jug(g, 0, 4); },
+    jug_smash: (g, o) => {   // the ale jug at the moment it breaks: a recognisable jug, cracked through, a chunk flying off, ale spraying
+      const s = o.r / 60; g.scale(s, s); const r = mulberry32(11);
+      g.fillStyle = 'rgba(214,150,62,0.8)'; for (let i = 0; i < 30; i++) { const a = -Math.PI * (0.15 + r() * 0.7), d = 50 + r() * 120; g.beginPath(); g.ellipse(Math.cos(a) * d, Math.sin(a) * d - 30, 3 + r() * 7, 2 + r() * 5, a, 0, 7); g.fill(); }
+      g.save(); g.rotate(-0.25); g.scale(1.25, 1.25); X.PROPS.jug(g, 0, 4);
+      g.strokeStyle = '#2a140a'; g.lineWidth = 3.5; g.lineJoin = 'round'; g.beginPath(); g.moveTo(-6, -40); g.lineTo(4, -18); g.lineTo(-10, 0); g.lineTo(8, 18); g.lineTo(-2, 34); g.lineTo(10, 50); g.stroke();
+      g.beginPath(); g.moveTo(4, -18); g.lineTo(26, -10); g.moveTo(-10, 0); g.lineTo(-30, 8); g.moveTo(8, 18); g.lineTo(30, 24); g.stroke(); g.restore();
+      g.save(); g.translate(58, -46); g.rotate(0.7); g.fillStyle = '#a0623a'; g.beginPath(); g.moveTo(-16, -10); g.lineTo(14, -14); g.lineTo(18, 10); g.lineTo(-10, 14); g.closePath(); g.fill(); g.strokeStyle = INK; g.lineWidth = 3; g.stroke(); g.restore();
+      for (let i = 0; i < 9; i++) { const a = -Math.PI * (0.1 + r() * 0.8), d = 80 + r() * 70, sz = 5 + r() * 8; g.save(); g.translate(Math.cos(a) * d, Math.sin(a) * d - 20); g.rotate(r() * 6); g.fillStyle = i % 2 ? '#a0623a' : '#c8803e'; g.beginPath(); g.moveTo(-sz, -sz * 0.4); g.lineTo(sz * 0.7, -sz * 0.6); g.lineTo(sz, sz * 0.5); g.lineTo(-sz * 0.4, sz * 0.6); g.closePath(); g.fill(); g.strokeStyle = INK; g.lineWidth = 2; g.stroke(); g.restore(); }
+      g.strokeStyle = '#fff3c8'; g.lineWidth = 5; g.lineCap = 'round'; for (let i = 0; i < 7; i++) { const a = -Math.PI * (0.05 + i / 7 * 0.9); g.beginPath(); g.moveTo(Math.cos(a) * 92, Math.sin(a) * 92 - 10); g.lineTo(Math.cos(a) * 128, Math.sin(a) * 128 - 10); g.stroke(); }
+    },
+    church_door: (g, o) => {   // a round-headed church doorway, door ajar, candlelight spilling out
+      const R = o.r; g.save();
+      for (let k = 0; k < 13; k++) { const a = Math.PI + k / 12 * Math.PI; g.fillStyle = k % 2 ? '#c8bea8' : '#a89e88'; g.beginPath(); g.arc(0, -R * 0.2, R * 0.78, a, a + Math.PI / 12 + 0.02); g.arc(0, -R * 0.2, R * 0.55, a + Math.PI / 12 + 0.02, a, true); g.closePath(); g.fill(); }
+      g.beginPath(); g.moveTo(-R * 0.55, R); g.lineTo(-R * 0.55, -R * 0.2); g.arc(0, -R * 0.2, R * 0.55, Math.PI, 0); g.lineTo(R * 0.55, R); g.closePath();
+      const gr = g.createLinearGradient(0, -R, 0, R); gr.addColorStop(0, '#ffd890'); gr.addColorStop(1, '#e07a2a'); g.fillStyle = gr; g.fill(); g.save(); g.clip();
+      g.fillStyle = '#4a2e1a'; g.fillRect(-R * 0.55, -R * 0.8, R * 0.62, R * 1.9); g.strokeStyle = '#2a2a2e'; g.lineWidth = R * 0.05; for (const yy of [-0.3, 0.5]) { g.beginPath(); g.moveTo(-R * 0.55, yy * R); g.lineTo(R * 0.05, yy * R); g.stroke(); }
+      g.beginPath(); g.arc(-R * 0.05, R * 0.12, R * 0.09, 0, 7); g.lineWidth = R * 0.035; g.stroke(); g.restore();
+      g.strokeStyle = INK; g.lineWidth = 6; g.beginPath(); g.moveTo(-R * 0.55, R); g.lineTo(-R * 0.55, -R * 0.2); g.arc(0, -R * 0.2, R * 0.55, Math.PI, 0); g.lineTo(R * 0.55, R); g.stroke(); g.restore();
+    },
+    cross: (g, o) => { const s = o.r / 120; g.scale(s, s); g.fillStyle = '#7a5636'; g.fillRect(-14, -150, 28, 300); g.fillRect(-90, -90, 180, 26); g.strokeStyle = INK; g.lineWidth = 6; g.strokeRect(-14, -150, 28, 300); g.strokeRect(-90, -90, 180, 26); },
     loaf: (g, o) => { X.ART.loafShape(g, 0, 0, o.r / 42, mulberry32(3), '#b07a3e'); }
   };
   function drawObjectLayer(spec, lay) {

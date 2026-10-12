@@ -155,7 +155,9 @@
       const off = P.char, og = off.getContext('2d', { willReadFrequently: true }); og.setTransform(1, 0, 0, 1, 0, 0); og.clearRect(0, 0, x1 - x0, y1 - y0);
       og.setTransform(M.a, M.b, M.c, M.d, M.e - x0, M.f - y0);
       const heightPx = 1000 * scale; const softPx = heightPx < 520 ? 0 : clamp(heightPx * 0.004, 0.5, 3.5);   // no soft-shadow blur on distant figures
+      this.state.lightOff = [x0, y0];   // props drawn on this layer (a torch) record their glow in frame coordinates
       X.Rig.drawCharacter(og, A, stt, light, { ...opts, style: 'watercolour', softPx, lw: opts.lw, v3: (this.state.ep.engine_version || 2) >= 3 });
+      this.state.lightOff = null;
       og.setTransform(1, 0, 0, 1, 0, 0);
       const w = x1 - x0, h = y1 - y0; const T = X.P.wcTextures(this.state.seed);
       const v3 = (this.state.ep.engine_version || 2) >= 3;   // v3: crisper figures (less bleed and mottling, contour, sharpening)
@@ -255,6 +257,7 @@
       const qi = st.seqs.findIndex(q => t < q.end) < 0 ? st.seqs.length - 1 : st.seqs.findIndex(q => t < q.end); const q = st.seqs[qi];
       const sc = st.ep.scenes[q.scenes[0]]; const tq = t - q.start;
       const nSub = this.subframes(qi, tq);
+      st.lights = []; st.lightW = 1 / Math.max(1, nSub);   // glows recorded while drawing, added back after the grade
       if (nSub <= 1) this.drawSeq(g, qi, tq);
       else {   // motion blur: average sub-frames across a 180° shutter (only when the image moves fast)
         const sub = st.tmp.sub || (st.tmp.sub = X.P.canvas(st.cv.width, st.cv.height)); const sg = sub.getContext('2d');
@@ -278,6 +281,7 @@
       const wd = q.world; const fin = { ...(wd.finish || {}), seed: st.seed };
       const flash = this.flashAt(t); if (flash) fin.exposure = flash;
       X.FX.finish(g, st.cv, t, fin, st.tmp);
+      this.drawLights(g);
       if (sc.transition === 'dip' && qi > 0 && tq < TR) { g.fillStyle = rgba('#120a06', 1 - smoother(tq / TR)); g.fillRect(0, 0, W, H); }
       // fade in from black at the very start, out at the end
       const fi = 1 - seg(t, 0, 0.6), fo = seg(t, st.total - 1.2, st.total - 0.05); if (fi > 0 || fo > 0) { g.fillStyle = rgba('#0e0805', Math.max(fi, fo)); g.fillRect(0, 0, W, H); }
@@ -285,6 +289,22 @@
       if (!this.clean) { this.cards(g, i, lt); this.badges(g, i, lt); this.subtitle(g, t); }
       g.restore();
       return i;
+    },
+    // light sources (fires, torches, candles) record where they are on screen while the world is drawn; after the
+    // night/interior grade darkens the frame, their glow is added back so flames stay bright against the dark
+    light(g, x, y, r, colour, alpha) {
+      const st = this.state; if (!st.lights) return; const m = g.getTransform(), sc = st.scale, o = st.lightOff || [0, 0];
+      st.lights.push({ x: (m.a * x + m.c * y + m.e + o[0]) / sc, y: (m.b * x + m.d * y + m.f + o[1]) / sc, r: r * Math.hypot(m.a, m.b) / sc, colour, alpha: alpha * g.globalAlpha * st.lightW });
+    },
+    drawLights(g) {
+      const st = this.state; if (!st.lights || !st.lights.length) return;
+      g.save(); g.globalCompositeOperation = 'screen';
+      for (const L of st.lights) {
+        if (L.x < -L.r || L.x > W + L.r || L.y < -L.r || L.y > H + L.r) continue;
+        const gr = g.createRadialGradient(L.x, L.y, 0, L.x, L.y, L.r); gr.addColorStop(0, rgba(L.colour, L.alpha)); gr.addColorStop(0.35, rgba(L.colour, L.alpha * 0.45)); gr.addColorStop(1, rgba(L.colour, 0));
+        g.fillStyle = gr; g.fillRect(L.x - L.r, L.y - L.r, L.r * 2, L.r * 2);
+      }
+      g.restore();
     },
     // how many motion-blur sub-frames this frame needs: a pure function of t (camera speed in screen pixels)
     subframes(qi, tq) {

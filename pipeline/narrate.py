@@ -113,7 +113,10 @@ def _kokoro_line(ep: dict, ln: dict, ch: dict) -> tuple[np.ndarray, int, float, 
     if not kv.get("voice"):
         raise ValueError(f"character {ch.get('id')!r} has no 'kokoro' voice for an episode with voice_engine=kokoro")
     narrator = ln["who"].startswith("narrator")
-    d = K.DELIVERY[ln.get("tone", "confident")]
+    d = dict(K.DELIVERY[ln.get("tone", "confident")])
+    ps = float(ep.get("kokoro_pause_scale", 1.0))   # tighter (<1) or looser (>1) breathing for the whole episode
+    for k_ in ("gap", "pre", "after"):
+        d[k_] *= ps
     speed = float(ep.get("kokoro_speed", 1.0)) * float(kv.get("speed", 1.0)) * d["speed"] * float(ln.get("speed", 1.0))
     sents = split_sentences(ln["text"]); clips, sr = [], 24000
     for k, sent in enumerate(sents):
@@ -125,7 +128,7 @@ def _kokoro_line(ep: dict, ln: dict, ch: dict) -> tuple[np.ndarray, int, float, 
     x = np.concatenate(clips)
     if not narrator and ep.get("dialogue_room", True):
         x = room(x, sr)
-    pre = float(ln.get("pause_before", d["pre"]))
+    pre = float(ln.get("pause_before", d["pre"])) * (ps if "pause_before" in ln else 1.0)
     after = float(ln.get("pause_after", d["after"] + K.jitter(ln["text"] + "|after", 0.06)))
     return x, sr, pre, after
 
