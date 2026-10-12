@@ -24,7 +24,7 @@ def build(h):
         # A - hook: the hero object (a generic tan Beetle-shaped car from behind, at night, headlights off) big and centred;
         #     a patrol officer's flashlight finds its licence plate on "traffic stop"
         S("s01_hook", "tb28_hook", [N("Ted Bundy escaped custody twice."),
-                                    N("Both times, a traffic stop caught him.", pause_before=0.3)],
+                                    N("Both times, a traffic stop caught him.", pause_before=0.25)],
           "cold", ["B_escapes", "B_stops", "B_hero"], sfx=[fx(0.0, "sub", 0.45), fx(0.1, "rumble", 0.3), fw(0, 2, "whoosh", 0.35, -0.05),
                                                           fw(1, 3, "brake", 0.4, -0.1), fw(1, 5, "hit", 0.5, -0.05), fw(1, 5, "click", 0.4, 0.05)],
           emph=["bundy", "escaped", "twice.", "traffic", "stop"], min_d=4.8, pad=0.2),
@@ -34,30 +34,30 @@ def build(h):
           emph=["confessed", "30", "murders."], min_d=2.6, pad=0.2, tr="push"),
         # B - stop one: Utah, August 1975 - the Volkswagen with no headlights, the chase, the gas station, the empty passenger side
         S("s03_utah", "tb28_utah", [N("In Utah, a trooper chased his Volkswagen. No headlights."),
-                                    N("Inside: a crowbar, a ski mask and handcuffs.", pause_before=0.25)],
+                                    N("Inside were a crowbar, a ski mask and handcuffs.", pause_before=0.2)],
           "tension", ["B_1975", "B_items"], sfx=[fw(0, 4, "whoosh", 0.4, -0.05), fw(0, 8, "brake", 0.45, 0.1), fw(1, 0, "door", 0.4, -0.2),
-                                                 fw(1, 2, "hit", 0.45, -0.05)],
+                                                 fw(1, 3, "hit", 0.45, -0.05)],
           emph=["utah,", "chased", "no", "headlights.", "crowbar,", "ski", "handcuffs."], pad=0.2, tr="push"),
         # B - escape one: the Aspen courthouse library window (June 1977); six days later, a stolen car pulled over
         S("s04_aspen", "tb28_aspen", [N("In Colorado, he jumped from a courthouse window."),
-                                      N("Six days later, police stopped him in a stolen car.", pause_before=0.25)],
+                                      N("Six days later, police stopped him in a stolen car.", pause_before=0.2)],
           "tension-rise", ["B_escapes", "B_stops"], sfx=[fw(0, 3, "whoosh", 0.45, -0.05), fw(0, 3, "thud", 0.4, 0.3), fw(1, 3, "brake", 0.4, -0.05),
                                                          fw(1, 8, "click", 0.4, -0.05)],
           emph=["colorado,", "jumped", "window.", "six", "stolen"], pad=0.2, tr="push"),
         # B - escape two: through the cell ceiling (December 1977); the FBI's Ten Most Wanted (10 Feb 1978)
         S("s05_ceiling", "tb28_ceiling", [N("Then he escaped through a jail ceiling."),
-                                          N("The FBI put him on its Ten Most Wanted list.", pause_before=0.25)],
+                                          N("The FBI added him to its Ten Most Wanted list.", pause_before=0.2)],
           "tension-rise", ["B_escapes", "B_tenmost"], sfx=[fw(0, 6, "thud", 0.35, -0.05), fw(0, 6, "step", 0.3, 0.3), fw(1, 6, "stamp", 0.45, -0.05)],
           emph=["ceiling.", "fbi", "ten", "most", "wanted"], pad=0.2, tr="push"),
         # C - THE HOW: Pensacola, 15 Feb 1978 - a plate check on a Volkswagen comes back stolen; the driver is Bundy
-        S("s06_plate", "tb28_plate", [N("In Pensacola, an officer checked a Volkswagen's plate."),
-                                      N("It was stolen. The driver was Bundy.", pause_before=0.4)],
-          "revelation", ["B_pensacola", "B_tenmost"], sfx=[fw(0, 4, "click", 0.4, -0.05), fw(0, 7, "swell", 0.45, -0.3), fw(1, 2, "hit", 0.55, -0.05),
+        S("s06_plate", "tb28_plate", [N("In Pensacola, an officer checked the plate of a Volkswagen."),
+                                      N("It was stolen. The driver was Bundy.", pause_before=0.35)],
+          "revelation", ["B_pensacola", "B_tenmost"], sfx=[fw(0, 4, "click", 0.4, -0.05), fw(0, 6, "swell", 0.45, -0.3), fw(1, 2, "hit", 0.55, -0.05),
                                                            fw(1, 6, "stamp", 0.45, -0.05)],
-          emph=["pensacola,", "plate.", "stolen.", "bundy."], pad=0.3, tr="flash"),
+          emph=["pensacola,", "plate", "volkswagen.", "stolen.", "bundy."], pad=0.3, tr="flash"),
         # D - the outcome, one line; the cliff impact sits in the pause before it
-        S("s07_verdict", "tb28_verdict", [N("Convicted in Florida, he was executed in 1989.", pause_before=0.4)],
-          "tension-peak", ["B_convicted"], sfx=[fw(0, 0, "gavel", 0.8, -0.1)],
+        S("s07_verdict", "tb28_verdict", [N("He was convicted in Florida and executed in 1989.", pause_before=0.4)],
+          "tension-peak", ["B_convicted"], sfx=[fw(0, 2, "gavel", 0.8, -0.1)],
           emph=["convicted", "executed", "1989."], min_d=3.2, pad=0.3, tr="zoom"),
         # E - callback on the hero object, then the memorial as the last spoken line; the engine burns in the end question
         S("s08_end", "tb28_end", [N("Two escapes. Two traffic stops."), N("We remember his victims.", pause_before=0.35)],
@@ -142,7 +142,7 @@ def build(h):
                         "until": 2.8, "y": 520}
     ep["end_title"] = {"lines": [{"text": "WHAT CAUGHT TED BUNDY?"}, {"text": "GOOD POLICING OR HIS OWN MISTAKES? \U0001F447", "colour": "#ffd23f"}],
                        "from": 3.2, "y": 520}
-    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"FBI": "F B I"})
+    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"FBI": "F B I", "Ted": "Tedde"})
     ep["score"] = {"root_hz": 138.59, "bpm": 78,
                    "cliff": {"scene": "s07_verdict", "word": [0, 0], "at": -0.35}}
     ep["content_notes"] = ("Closed case: Bundy was convicted in Florida (1979, 1980) and executed on 24 Jan 1989. He appears ONLY as an anonymous "

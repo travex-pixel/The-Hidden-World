@@ -286,7 +286,7 @@
     // 3 - Utah, August 1975 (side view): the Beetle rolls in with its headlights OFF, the patrol car right behind; they stop
     //     at a closed gas station; the trooper's flashlight goes to the empty passenger side. The items are a typed card only.
     tb28_utah(ctx) {
-      const t = ctx.t, chased = WT(ctx, 0, 4, 1.6), vw = WT(ctx, 0, 6, 2.2), hl = WT(ctx, 0, 8, 3.0), l1 = LS(ctx, 1, 3.6), crow = WT(ctx, 1, 2, 4.3), hc = WT(ctx, 1, 7, 5.4);
+      const t = ctx.t, chased = WT(ctx, 0, 4, 1.6), vw = WT(ctx, 0, 6, 2.2), hl = WT(ctx, 0, 8, 3.0), l1 = LS(ctx, 1, 3.6), crow = WT(ctx, 1, 3, 4.3), hc = WT(ctx, 1, 8, 5.4);
       const GY = 1330, VWX = 720, PCX = 150;
       const stopT = hl + 0.2;
       const roll = tt => 1 - ease.out(clamp(tt / Math.max(0.8, stopT), 0, 1));   // 1 = still rolling in, 0 = stopped
@@ -362,7 +362,7 @@
     // 6 - THE HOW: Pensacola, 15 February 1978. A stolen orange Beetle from behind under sodium light and palms; the officer
     //     runs the plate, his flashlight on it; STOLEN. The driver is a dark shape in the window; nothing else is shown.
     tb28_plate(ctx) {
-      const t = ctx.t, pen = WT(ctx, 0, 1, 0.3), off = WT(ctx, 0, 3, 1.2), chk = WT(ctx, 0, 4, 1.5), plate = WT(ctx, 0, 7, 2.3), l1 = LS(ctx, 1, 3.0), stol = WT(ctx, 1, 2, 3.4), bun = WT(ctx, 1, 6, 4.4);
+      const t = ctx.t, pen = WT(ctx, 0, 1, 0.3), off = WT(ctx, 0, 3, 1.2), chk = WT(ctx, 0, 4, 1.5), plate = WT(ctx, 0, 6, 2.3), l1 = LS(ctx, 1, 3.0), stol = WT(ctx, 1, 2, 3.4), bun = WT(ctx, 1, 6, 4.4);
       const CARP = { x: 500, y: 1360, s: 0.8 };
       return E.cine.shot(ctx, {
         set: 'tb28_street', setOpts: { fl: true }, grade: 'warm', police: 0.24 * seg(t, chk - 0.2, chk + 0.5),
@@ -383,7 +383,7 @@
 
     // 7 - the outcome: a Florida courtroom (generic); convicted (1979, 1980), executed (24 January 1989)
     tb28_verdict(ctx) {
-      const cv = WT(ctx, 0, 0, 0.3), fl = WT(ctx, 0, 2, 0.9), ex = WT(ctx, 0, 5, 1.6);
+      const cv = WT(ctx, 0, 2, 0.5), fl = WT(ctx, 0, 4, 1.0), ex = WT(ctx, 0, 6, 1.7);
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { modern: true, dock: false }, grade: 'cold', cam: { from: { x: 0, y: 30, z: 1.0 }, to: { x: 40, y: 10, z: 1.1 }, handheld: 0.5 },
         figures: [
