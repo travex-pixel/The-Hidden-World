@@ -147,3 +147,7 @@
 - 2026-10-12 09:00:16 produce 27: regenerating episode data
 - 2026-10-12 09:00:16 tcv27-madoff-40: render cached (inputs unchanged), skipping to QA
 - 2026-10-12 09:00:58 tcv27-madoff-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_27_madoff_40s.mp4 (43.5s, 18.7 MB, sha256 a433704f4049)
+- 2026-10-12 09:09:43 tcv26-el-chapo-40: rendered in 639s
+- 2026-10-12 09:10:13 tcv26-el-chapo-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_26_el_chapo_40s.mp4 (40.5s, 16.8 MB, sha256 0e427331857b)
+- 2026-10-12 09:10:13 produce 28: regenerating episode data
+- 2026-10-12 09:10:13 tcv28-bundy-40: rendering (final, seed 1)
