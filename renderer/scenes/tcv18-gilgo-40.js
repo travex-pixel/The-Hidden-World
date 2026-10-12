@@ -180,86 +180,102 @@
     }
   });
 
-  // ---------- the hero: a big pizza box (generic, no logo, no text) in a 3/4 top view, lid a little ajar so the crust shows
-  function heroBox(x, y, s, rot, gap = 9) {
-    const g = gap;
+  // ---------- the hero: a big plain pizza box (generic: no brand, no text) in a 3/4 top view, lid ajar so the crust shows,
+  // with a generic slice drawing on the lid so it reads as a pizza box at thumbnail size
+  function heroBox(x, y, s, rot, gap = 16) {
+    const g = gap, dv = 70 - g;
     let b = `<g transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(rot)}) scale(${f1(s * 1000) / 1000})">`;
-    b += `<ellipse cx="14" cy="34" rx="120" ry="12" fill="#000" opacity="0.25"/>`;
-    b += `<path d="M-100 0 L100 0 L100 24 L-100 24 Z" fill="#b89a70" stroke="${INK}" stroke-width="4"/>`;                       // front face
-    b += `<path d="M100 0 L130 -70 L130 -46 L100 24 Z" fill="#9c8060" stroke="${INK}" stroke-width="4"/>`;                       // side face
-    b += `<path d="M-100 0 L100 0 L130 -70 L-70 -70 Z" fill="#2a1c14"/>`;                                                       // inside (dark)
-    b += `<path d="M-88 -2 Q 10 -${f1(10 + g)} 104 -4 L100 0 L-100 0 Z" fill="#d08a3a" stroke="${INK}" stroke-width="3"/><path d="M-70 -5 Q 10 -${f1(9 + g * 0.8)} 90 -6" stroke="#f0b866" stroke-width="3" fill="none"/>`;   // the crust
-    b += `<path d="M-100 ${f1(-g)} L100 ${f1(-g)} L130 -70 L-70 -70 Z" fill="#e8d4ae" stroke="${INK}" stroke-width="4"/>`;      // lid
+    b += `<path d="M-100 0 L100 0 L100 24 L-100 24 Z" fill="#b89a70" stroke="${INK}" stroke-width="4"/>`;                        // front face
+    b += `<path d="M100 0 L130 -70 L130 -46 L100 24 Z" fill="#9c8060" stroke="${INK}" stroke-width="4"/>`;                        // side face
+    b += `<path d="M-100 0 L100 0 L130 -70 L-70 -70 Z" fill="#2a1c14"/>`;                                                        // inside (dark)
+    b += `<path d="M-92 0 Q -40 -${f1(g + 6)} 10 -${f1(g * 0.75)} Q 60 -${f1(g + 8)} 104 -2 L100 0 Z" fill="#d48a36" stroke="${INK}" stroke-width="3"/><path d="M-70 -4 Q -30 -${f1(g * 0.8)} 10 -${f1(g * 0.5)} Q 50 -${f1(g * 0.85)} 88 -5" stroke="#f6c070" stroke-width="3" fill="none"/>`;   // the crust
+    b += `<path d="M-100 ${f1(-g)} L100 ${f1(-g)} L130 -70 L-70 -70 Z" fill="#e8d4ae" stroke="${INK}" stroke-width="4"/>`;       // lid
+    // a generic slice on the lid, drawn in the lid plane (u along the front edge, v toward the back)
+    b += `<g transform="matrix(200 0 30 ${f1(-dv)} -100 ${f1(-g)})">` +
+      `<path d="M0.5 0.16 L0.33 0.84 Q0.5 0.92 0.67 0.84 Z" fill="#1a1410" opacity="0.35"/>` +
+      `<path d="M0.5 0.2 L0.35 0.8 Q0.5 0.88 0.65 0.8 Z" fill="#f0b84a"/>` +
+      `<path d="M0.34 0.78 Q0.5 0.88 0.66 0.78 L0.67 0.86 Q0.5 0.98 0.33 0.86 Z" fill="#b5652b"/>` +
+      `<ellipse cx="0.46" cy="0.5" rx="0.032" ry="0.12" fill="#b8322a"/><ellipse cx="0.55" cy="0.66" rx="0.03" ry="0.11" fill="#b8322a"/><ellipse cx="0.5" cy="0.34" rx="0.022" ry="0.08" fill="#b8322a"/></g>`;
     b += `<path d="M-100 ${f1(-g)} L100 ${f1(-g)} L100 ${f1(-g + 7)} L-100 ${f1(-g + 7)} Z" fill="#cdb38c" stroke="${INK}" stroke-width="3"/>`;   // lid lip
-    b += `<path d="M-76 ${f1(-g - 8)} L92 ${f1(-g - 8)} L114 -62 L-56 -62 Z" fill="none" stroke="#c4a87e" stroke-width="3"/>`;   // pressed rim on the lid
-    b += `<path d="M-20 ${f1(-g - 30)} q 12 -6 24 0" stroke="#d9b98a" stroke-width="4" fill="none" opacity="0.8"/><circle cx="58" cy="${f1(-g - 40)}" r="7" fill="#c9a072" opacity="0.6"/>`;   // a grease spot
     return b + '</g>';
   }
-  // world geometry of the hero shot (camera at HCAM at the loop point); the figure stands behind the can, facing us
-  const HF = { x: 548, y: 1760, scale: 1.2 }, HCAN = { x: 540, y: 1774, s: 1.4 };
-  const LOW = [540, 1010], HOLD = [540, 902], P0 = [536, 948], ROT0 = -7, BOXS = 1.6;   // held low / held out / just released (loop frame)
-  const REST = [548, 1084], ROTR = -38;                                                    // settled in the basket, sticking out
-  const HCAM = { x: 0, y: 0, z: 1.2 };
-  const streaks = (x, y, k) => k <= 0.05 ? '' : [-70, 0, 70].map((dx, i) => `<line x1="${f1(x + dx)}" y1="${f1(y - 120 - 40 * k)}" x2="${f1(x + dx)}" y2="${f1(y - 70)}" stroke="#f4efe4" stroke-opacity="${f1(0.45 * k)}" stroke-width="${5 - i % 2}" stroke-linecap="round"/>`).join('');
-  // hook: falls (slow motion, easing in) from P0 into the can at tCan, then settles. end: held low, lifted on tLift,
-  // released on tRel, then drifts (strong ease-out) into P0 exactly at the end of the scene: the loop frame.
+  // world geometry of the hero shot (the camera sits at HCAM at the loop point). The figure stands right of the can,
+  // facing it in 3/4; 'present' puts his hand at about (544, 980).
+  const HF = { x: 845, y: 1611, scale: 0.9 }, HCAN = { x: 520, y: 1620, s: 1.05 };
+  const CARRY = [777, 1242], HOLD = [532, 962], BOXS = 1.25;            // at his side / on his raised hand
+  const P0 = [500, 878], ROT0 = -16;                                     // top of the toss: the loop frame
+  const REST = [522, 1094], ROTR = -48;                                  // settled in the basket, sticking out
+  const HCAM = { x: 0, y: 0, z: 1.3 };
+  const curve = (a, c, b, k) => [(1 - k) * (1 - k) * a[0] + 2 * (1 - k) * k * c[0] + k * k * b[0], (1 - k) * (1 - k) * a[1] + 2 * (1 - k) * k * c[1] + k * k * b[1]];
+  const ARC = [HOLD[0] - 4, HOLD[1] - 110];                              // control point of the toss arc
+  // motion trail from his hand up to the box (k = how much of the arc has been travelled)
+  function trail(k, op) {
+    if (op <= 0.02 || k <= 0.02) return '';
+    let s = '';
+    [-14, 0, 14].forEach((o, i) => { let d = ''; for (let j = 0; j <= 10; j++) { const p = curve(HOLD, ARC, P0, k * j / 10); d += (j ? ' L' : 'M') + f1(p[0] + o + 40) + ' ' + f1(p[1] + 30 - o * 0.4); } s += `<path d="${d}" stroke="#f4efe4" stroke-opacity="${f1(op * (i === 1 ? 0.5 : 0.28))}" stroke-width="${i === 1 ? 6 : 4}" fill="none" stroke-linecap="round" stroke-dasharray="${i === 1 ? '0' : '18 14'}"/>`; });
+    return s;
+  }
+  const streaks = (x, y, k) => k <= 0.05 ? '' : [-60, 0, 60].map((dx, i) => `<line x1="${f1(x + dx)}" y1="${f1(y - 110 - 50 * k)}" x2="${f1(x + dx)}" y2="${f1(y - 70)}" stroke="#f4efe4" stroke-opacity="${f1(0.4 * k)}" stroke-width="${5 - i % 2}" stroke-linecap="round"/>`).join('');
+  // hook: from the top of the toss (P0) the box falls into the can, landing on "can", then settles.
+  // end: carried at his side, lifted on the hand (a), let go (b), then it rises along the arc and slows to a stop at
+  // P0 exactly at the end of the scene: the top of a toss is where it moves slowest, and where the hook begins.
   function heroProp(t, mode, a, b, T) {
     if (mode === 'hook') {
-      if (t < b) { const u = ease.in(clamp(t / b, 0, 1)), x = lerp(P0[0], REST[0], u), y = lerp(P0[1], REST[1] - 22, u);
-        return streaks(x, y, u > 0.25 ? (u - 0.25) * 1.3 : 0) + heroBox(x, y, BOXS, lerp(ROT0, ROTR - 6, u)); }
-      const k = seg(t, b, b + 0.35), bounce = Math.sin(k * Math.PI) * 14 * (1 - k);
-      return heroBox(REST[0], REST[1] - 22 + 22 * ease.out(k) + bounce, BOXS, lerp(ROTR - 6, ROTR, ease.out(k)));
+      const tr = trail(1, 1 - seg(t, 0.2, 0.9));
+      if (t < b) { const u = clamp(t / b, 0, 1), f = u * u * u, x = lerp(P0[0], REST[0], f), y = lerp(P0[1], REST[1] - 20, f);
+        return tr + streaks(x, y, u > 0.45 ? (u - 0.45) * 1.8 : 0) + heroBox(x, y, BOXS, lerp(ROT0, ROTR - 8, f)); }
+      const k = seg(t, b, b + 0.35), bounce = Math.sin(k * Math.PI) * 12 * (1 - k);
+      return heroBox(REST[0], REST[1] - 20 + 20 * ease.out(k) + bounce, BOXS, lerp(ROTR - 8, ROTR, ease.out(k)));
     }
-    if (t < a - 0.1) return heroBox(LOW[0], LOW[1], BOXS, 0, 2);
-    if (t < b) { const u = ease.inOut(seg(t, a - 0.1, a + 0.25)); return heroBox(lerp(LOW[0], HOLD[0], u), lerp(LOW[1], HOLD[1], u) + 3 * Math.sin(t * 5), BOXS, -2 * u, lerp(2, 9, u)); }
-    const u = clamp((t - b) / Math.max(0.3, T - b), 0, 1), k = 1 - Math.pow(1 - u, 4);
-    const cx = HOLD[0] - 8, cy = HOLD[1] - 70;   // a little up, then down into the freeze (quadratic curve)
-    const x = (1 - k) * (1 - k) * HOLD[0] + 2 * (1 - k) * k * cx + k * k * P0[0], y = (1 - k) * (1 - k) * HOLD[1] + 2 * (1 - k) * k * cy + k * k * P0[1];
-    return heroBox(x, y, BOXS, lerp(-2, ROT0, k));
+    if (t < a - 0.35) return heroBox(CARRY[0], CARRY[1], BOXS * 0.96, 2, 3);
+    if (t < b) { const u = ease.inOut(seg(t, a - 0.35, a)); return heroBox(lerp(CARRY[0], HOLD[0], u), lerp(CARRY[1], HOLD[1], u) + 3 * Math.sin(t * 5) * u, BOXS * lerp(0.96, 1, u), lerp(2, -3, u), lerp(3, 16, u)); }
+    const u = clamp((t - b) / Math.max(0.3, T - b), 0, 1), k = 1 - Math.pow(1 - u, 4), p = curve(HOLD, ARC, P0, k);
+    return trail(k, 1) + heroBox(p[0], p[1], BOXS, lerp(-3, ROT0, k));
   }
   // a generic camera-viewfinder lock-on (corner brackets; no text, no police material)
   function finder(t, c, at) {
     const k = seg(t, at, at + 0.3); if (k <= 0) return '';
-    const [x, y] = E.cine.project(c, 1.015, P0[0] + 14, P0[1] - 26), z = 1 + (c.z - 1) * 1.015, e = 1 - ease.out(k);
-    const w = (250 + 160 * e) * z, hh = (120 + 90 * e) * z, L = 54;
+    const [x, y] = E.cine.project(c, 1.015, P0[0] + 10, P0[1] - 20), z = 1 + (c.z - 1) * 1.015, e = 1 - ease.out(k);
+    const w = (190 + 140 * e) * z, hh = (100 + 80 * e) * z, L = 50;
     let s = `<g opacity="${f1(k)}" stroke="#ffd23f" stroke-width="7" fill="none" stroke-linecap="round">`;
     [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([sx, sy]) => { const px = x + sx * w, py = y + sy * hh; s += `<path d="M${f1(px - sx * L)} ${f1(py)} L${f1(px)} ${f1(py)} L${f1(px)} ${f1(py - sy * L)}"/>`; });
-    return s + `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(10 + 6 * Math.sin(t * 8))}" stroke-width="4"/></g>`;
+    return s + '</g>';
   }
 
   E.registerScenes({
-    // 1 + 9 - the hero shot. s01: the box falls into the can (hook). s09: he lifts it, lets go, and the box freezes
-    // mid-air above the can (callback), which is the hook's first frame.
+    // 1 + 9 - the hero shot. s01: the box falls from the top of the toss into the can (hook). s09: he lifts it, lets go,
+    // and the box slows to a stop at the top of the toss (callback), which is the hook's first frame: the video loops.
     gb18_hero(ctx) {
-      const t = ctx.t, end = ctx.scene.id === 's09_end';
+      const end = ctx.scene.id === 's09_end';
       let figures, props, overlays, cam;
       if (!end) {
-        const tos = WT(ctx, 0, 3, 0.8), can = WT(ctx, 0, 8, 1.9), walkAt = can + 0.75;
-        cam = { keys: [{ at: 0, ...HCAM }, { at: can - 0.1, x: -6, y: 70, z: 1.3, dur: 1.4 }], handheld: 1.5 };
+        const can = WT(ctx, 0, 8, 2.6), walkAt = can + 0.9;
+        cam = { keys: [{ at: 0, ...HCAM }, { at: can - 0.15, x: -10, y: 140, z: 1.46, dur: 1.3 }], handheld: 1.5 };
+        // he lowers his arm, turns to face us, and (swapped for a mirrored copy while frontal, so no ghosting) walks off right
         figures = [
-          { id: 'gb7_suit', x: HF.x, y: HF.y, scale: HF.scale, dir: 1, turn: 0.15, pose: 'present', silhouette: 'cool', show: [-1, walkAt + 0.3],
-            keys: [{ at: tos, pose: 'present', headTurn: 0.1, dur: 0.3 }, { at: can + 0.15, pose: 'stand', dur: 0.45 }, { at: walkAt - 0.25, turn: 0.5, dur: 0.3 }] },
-          { id: 'gb7_suit', x: HF.x, y: HF.y, scale: HF.scale, dir: 1, turn: 0.5, pose: 'stand', silhouette: 'cool', show: [walkAt],
-            walk: { from: HF.x, to: 1560, at: walkAt + 0.05, dur: 2.6, cadence: 6 } }
+          { id: 'gb7_suit', x: HF.x, y: HF.y, scale: HF.scale, dir: -1, turn: 0.5, pose: 'present', silhouette: 'cool', show: [-1, walkAt + 0.15],
+            keys: [{ at: can - 0.6, pose: 'stand', dur: 0.5 }, { at: walkAt - 0.5, turn: 0, dur: 0.3 }] },
+          { id: 'gb7_suit', x: HF.x, y: HF.y, scale: HF.scale, dir: 1, turn: 0, pose: 'stand', silhouette: 'cool', show: [walkAt - 0.15],
+            keys: [{ at: walkAt + 0.15, turn: 0.5, dur: 0.3 }], walk: { from: HF.x, to: 1700, at: walkAt + 0.2, dur: 2.4, cadence: 6 } }
         ];
-        props = [{ depth: 1.015, svg: tt => heroProp(tt, 'hook', tos, can) }];
+        props = [{ depth: 1.015, svg: tt => heroProp(tt, 'hook', 0, can) }];
         overlays = [
-          { type: 'circle', at: can + 0.05, target: [REST[0] + 10, REST[1] - 30], depth: 1.015, rx: 250, ry: 150, colour: '#ffd23f' },
+          { type: 'circle', at: can + 0.05, target: [REST[0] + 8, REST[1] - 34], depth: 1.015, rx: 230, ry: 150, colour: '#ffd23f' },
           { type: 'label', at: 3.3, x: 60, y: 422, text: 'FIFTH AVENUE · JANUARY 2023', fs: 40, sub: 'As described in a 2023 court filing' }
         ];
       } else {
-        const thr = WT(ctx, 0, 1, 0.3), away = WT(ctx, 0, 5, 1.3) + 0.12, wait = LS(ctx, 1, 2.0), done = LE(ctx, 1, 3.3);
-        cam = { from: { x: 24, y: -50, z: 1.06 }, to: HCAM, handheld: 1.5 };
-        figures = [{ id: 'gb7_suit', x: HF.x, y: HF.y, scale: HF.scale, dir: 1, turn: 0.15, pose: 'hands_together', silhouette: 'cool',
-          keys: [{ at: thr - 0.2, pose: 'present', dur: 0.35 }, { at: wait - 0.1, headTurn: 0.1, dur: 0.5 }] }];
-        props = [{ depth: 1.015, svg: tt => heroProp(tt, 'end', thr, away, ctx.T) }];
+        const lift = WT(ctx, 0, 2, 0.6) - 0.05, away = WT(ctx, 0, 5, 1.3) + 0.1, wait = LS(ctx, 1, 2.0), done = LE(ctx, 1, 3.3);
+        cam = { from: { x: 30, y: -40, z: 1.14 }, to: HCAM, handheld: 1.5 };
+        figures = [{ id: 'gb7_suit', x: HF.x, y: HF.y, scale: HF.scale, dir: -1, turn: 0.5, pose: 'stand', silhouette: 'cool',
+          keys: [{ at: lift - 0.35, pose: 'present', dur: 0.35 }] }];
+        props = [{ depth: 1.015, svg: tt => heroProp(tt, 'end', lift, away, ctx.T) }];
         overlays = [
           { type: 'svg', at: wait - 0.15, svg: (tt, c) => finder(tt, c, wait - 0.15) },
           { type: 'nextcase', at: done + 0.3, y: 400, fs: 46, rows: [{ text: 'MORE CASES CRACKED' }, { text: 'BY EVERYDAY THINGS', colour: '#ffd23f' }], sub: 'FOLLOW' }
         ];
       }
       return E.cine.shot(ctx, {
-        set: 'gb7_midtown', setOpts: { can: HCAN, lampX: 990 }, grade: 'night', cam, figures, props, overlays,
+        set: 'gb7_midtown', setOpts: { can: HCAN, lampX: -40 }, grade: 'night', cam, figures, props, overlays,
         tag: 'ILLUSTRATION · ANONYMOUS FIGURE'
       });
     },

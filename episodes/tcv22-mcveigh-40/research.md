@@ -42,7 +42,7 @@
 6. "Sketches from a rental shop there led to a name: Timothy McVeigh." (`M_sketch`)
 7. "Agents ran the name. He was already in jail," / "about to be released." (`M_custody`)
 8. "He was convicted in 1997," / "and executed in 2001." (`M_verdict`, plus `M_nichols` on the card)
-9. "A missing license plate held him." / "We remember the 168." (callback and memorial)
+9. "A missing license plate held him." / "And we remember the 168." (callback and memorial)
 
 **Hook headline (burned in):** "A MISSING LICENSE PLATE" / "CAUGHT THE OKLAHOMA CITY BOMBER". "Caught" means taken into custody, which is accurate: the stop for the missing plate is how he came to be in a cell. The narration does not claim that the plate identified him. The axle and the sketch did that, and the script says so.
 
@@ -89,7 +89,7 @@ None are used. The case ended in convictions, and every narrated fact above is a
 
 ## Ethics decisions
 
-- **The toll is said once, plainly:** "His truck bomb killed 168 people, including 19 children." It appears on a quiet typed card in a task-force room, with the score dropped. The video closes with "We remember the 168."
+- **The toll is said once, plainly:** "His truck bomb killed 168 people, including 19 children." It appears on a quiet typed card in a task-force room, with the score dropped. The video closes with "And we remember the 168."
 - **What is never depicted:** the explosion, the Murrah Building, damage, victims, rescue scenes, injuries and famous photographs (including the firefighter photograph).
 - **McVeigh:**
   - He appears only as an anonymous rim-lit silhouette (`characters/figures/mc22_driver.json`, `real_person: true`) or as a dark head shape through a rear window.

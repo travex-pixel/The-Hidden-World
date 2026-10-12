@@ -49,7 +49,7 @@ def build(h):
           "tension-peak", ["M_verdict", "M_nichols"], sfx=[fw(0, 2, "gavel", 0.8, -0.08)],
           emph=["convicted", "executed"], pad=0.3, tr="zoom"),
         # E - callback on the hero object, the memorial line, then a compact follow card (no extra narration)
-        S("s09_end", "mc22_end", [N("A missing license plate held him."), N("We remember the 168.", pause_before=0.5)],
+        S("s09_end", "mc22_end", [N("A missing license plate held him."), N("And we remember the 168.", pause_before=0.5)],
           "aftermath", ["M_stop", "M_custody", "M_toll", "M_car_museum"],
           sfx=[fx(0.0, "wind", 0.35), fw(0, 3, "sparkle", 0.6, -0.05)],
           emph=["license", "plate", "168."], min_d=3.6, pad=1.8, tr="fade"),
@@ -120,7 +120,7 @@ def build(h):
     ep["music"]["beat_snap"] = 0.5
     ep["hook_title"] = {"lines": [{"text": "A MISSING LICENSE PLATE"}, {"text": "CAUGHT THE OKLAHOMA CITY BOMBER", "colour": "#ffd23f"}],
                         "until": 2.8, "y": 520}
-    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"McVeigh": "Mack-Vay", "FBI": "F B I"})
+    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"McVeigh": "Mack-Vay", "FBI": "F B I", "168": "one hundred sixty eight"})
     ep["score"] = {"root_hz": 146.83, "bpm": 80,
                    "cliff": {"scene": "s08_verdict", "word": [1, 0], "at": -0.35}}
     ep["content_notes"] = ("Closed case: McVeigh was convicted on 2 Jun 1997 and executed on 11 Jun 2001; Terry Nichols was also convicted. "
