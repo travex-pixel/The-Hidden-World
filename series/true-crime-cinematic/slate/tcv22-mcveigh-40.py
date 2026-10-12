@@ -24,7 +24,7 @@ def build(h):
                                              fw(1, 5, "hit", 0.5, -0.05)],
           emph=["jail", "cell", "name.", "missing", "plate."], min_d=5.6, pad=0.2),
         S("s02_toll", "mc22_toll", [N("His truck bomb killed 168 people, including 19 children.", pause_before=0.1)],
-          "hush", ["M_toll"], sfx=[fx(0.0, "wind", 0.35)], emph=["168", "19", "children."], min_d=3.6, pad=0.3, tr="fade"),
+          "hush", ["M_toll"], sfx=[fx(0.0, "wind", 0.35)], emph=["168", "19", "children."], min_d=3.6, pad=0.2, tr="fade"),
         # B - the two threads: the stop and the jail; the axle, the rental shop and the sketch
         S("s03_stop", "mc22_stop", [N("Within about 90 minutes a trooper stopped a car with no license plate.")],
           "tension", ["M_stop"], sfx=[fx(0.0, "whoosh", 0.4), fw(0, 6, "brake", 0.45, -0.1), fw(0, 10, "step", 0.3, 0.1)],
@@ -52,7 +52,7 @@ def build(h):
         S("s09_end", "mc22_end", [N("A missing license plate held him."), N("And we remember the 168.", pause_before=0.5)],
           "aftermath", ["M_stop", "M_custody", "M_toll", "M_car_museum"],
           sfx=[fx(0.0, "wind", 0.35), fw(0, 3, "sparkle", 0.6, -0.05)],
-          emph=["license", "plate", "168."], min_d=3.6, pad=1.8, tr="fade"),
+          emph=["license", "plate", "168."], min_d=3.6, pad=1.6, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_toll": "A", "s03_stop": "B", "s04_jail": "B", "s05_axle": "B", "s06_rental": "B",
                 "s07_reveal": "C", "s08_verdict": "D", "s09_end": "E"}
@@ -60,7 +60,8 @@ def build(h):
         sc["section"] = sections[sc["id"]]
     scenes[1]["music_drop"] = True    # the toll: the score falls away
     scenes[6]["music_drop"] = True    # the reveal: "He was already in jail"
-    scenes[-1]["fade_out"] = True
+    # no fade to black on the last scene: the final frame is the hero car (plus the follow card), so the video loops
+    # cleanly back to its first frame (short40 rule); the end card sits above the car, where the headline sits at t = 0
 
     src = h.src
     sources = [

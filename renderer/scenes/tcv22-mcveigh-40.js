@@ -113,6 +113,11 @@
   // a small generic car for passing traffic (side view, front to the right; flip -1 = left); bottom centre (x, y)
   const traffic = (x, y, k, col, fl = 1) => `<g transform="translate(${f1(x)} ${f1(y)}) scale(${sc(k * fl)} ${sc(k)})"><path d="M-200 -16 L-200 -56 Q-190 -74 -150 -78 L-96 -82 L-56 -124 Q-36 -134 40 -134 L94 -130 Q136 -116 160 -80 L198 -70 L202 -16 Z" fill="${col}" stroke="#000" stroke-width="5"/>` +
     `<path d="M-46 -120 L-84 -84 L36 -84 L36 -126 Z M48 -126 L48 -84 L140 -84 Q126 -112 100 -122 Z" fill="#141a24"/><circle cx="-118" cy="-12" r="32" fill="#0a0a0c"/><circle cx="126" cy="-12" r="32" fill="#0a0a0c"/></g>`;
+  // a small generic car seen from behind (for traffic receding up the road in the rear view); bottom centre (x, y)
+  const trafficRear = (x, y, k, col) => `<g transform="translate(${f1(x)} ${f1(y)}) scale(${sc(k)})"><ellipse cx="0" cy="4" rx="230" ry="18" fill="#000" opacity="0.35"/>` +
+    `<rect x="-200" y="-150" width="400" height="120" rx="18" fill="${col}" stroke="#000" stroke-width="6"/><path d="M-160 -150 L-120 -250 L120 -250 L160 -150 Z" fill="${col}" stroke="#000" stroke-width="6"/>` +
+    `<path d="M-130 -158 L-100 -236 L100 -236 L130 -158 Z" fill="#141a24"/><rect x="-186" y="-122" width="90" height="30" rx="5" fill="#c8312b"/><rect x="96" y="-122" width="90" height="30" rx="5" fill="#c8312b"/>` +
+    `<rect x="-210" y="-58" width="420" height="30" rx="8" fill="#9aa0a6" stroke="#000" stroke-width="4"/><rect x="-190" y="-30" width="70" height="34" rx="8" fill="#0a0a0c"/><rect x="120" y="-30" width="70" height="34" rx="8" fill="#0a0a0c"/></g>`;
   // the rental truck's rear axle housing (generic drawing): a long tube, a central differential, flanged ends, grime;
   // a stamped area whose characters are MASKED (never a real number). Centre (x, y) on the bench; ~900 long at s = 1.
   function axle(x, y, s, t, o = {}) {
@@ -129,7 +134,7 @@
     for (let i = 0; i < 9; i++) g += `<rect x="${178 + i * 20}" y="-38" width="13" height="22" rx="2" fill="${k > 0.5 ? '#1a1814' : '#3a3730'}"/>`;
     if (k > 0) g += `<rect x="158" y="-56" width="220" height="58" rx="8" fill="none" stroke="${YEL}" stroke-width="7" opacity="${f1(k * (0.75 + 0.25 * Math.sin(t * 7)))}"/>`;
     // a plain evidence tag on a string (illegible lines; our own design)
-    g += `<path d="M-180 -20 Q-196 30 -214 56" stroke="#d9cfb6" stroke-width="3" fill="none"/><g transform="translate(-232 60) rotate(12)"><rect x="-40" y="0" width="80" height="120" rx="6" fill="#d9c79a" stroke="${INK}" stroke-width="3"/><circle cx="0" cy="12" r="6" fill="#8a7a5a"/>${[0, 1, 2, 3].map(i => `<rect x="-28" y="${34 + i * 18}" width="${56 - i * 8}" height="6" fill="#8b857a"/>`).join('')}</g>`;
+    g += `<g transform="translate(-250 -36) rotate(-8)"><path d="M70 0 L30 -6" stroke="#d9cfb6" stroke-width="3"/><rect x="-50" y="-30" width="80" height="54" rx="6" fill="#d9c79a" stroke="${INK}" stroke-width="3"/><circle cx="20" cy="-18" r="5" fill="#8a7a5a"/>${[0, 1].map(i => `<rect x="-40" y="${-10 + i * 16}" width="${50 - i * 12}" height="6" fill="#8b857a"/>`).join('')}</g>`;
     return g + '</g>';
   }
   // a desk phone (beige, 1990s); o.ring 0..1 shakes it and draws ring lines
@@ -184,7 +189,7 @@
       for (let i = 0; i < 14; i++) { const a = Math.pow(i / 14, 2.2), b = Math.pow((i + 0.42) / 14, 2.2); const y1 = VY + a * (BY - VY), y2 = VY + b * (BY - VY); road += `<line x1="${f1(at(-3200, y1))}" y1="${f1(y1)}" x2="${f1(at(-3200, y2))}" y2="${f1(y2)}" stroke="#f2ecd0" stroke-width="${f1(2 + 30 * a)}"/>`; }
       road += `<path d="M${VX + 8} ${VY} L2100 ${BY} L${W + 300} ${BY} L${W + 300} ${VY} Z" fill="#7a9846"/>`;
       for (let i = 0; i < 10; i++) { const a = Math.pow((i + 0.6) / 10, 2), y = VY + a * 900, x = at(3200, y); road += `<path d="M${f1(x)} ${f1(y)} L${f1(x)} ${f1(y - 8 - 70 * a)}" stroke="#5a4a36" stroke-width="${f1(2 + 8 * a)}"/>`; if (i) { const ap = Math.pow((i - 0.4) / 10, 2), yp = VY + ap * 900; road += `<path d="M${f1(at(3200, yp))} ${f1(yp - 6 - 50 * ap)} L${f1(x)} ${f1(y - 6 - 50 * a)}" stroke="#5a4a36" stroke-width="1.5"/>`; } }
-      for (let i = 0; i < 2; i++) { const u = ((t * 0.22 + i * 0.5) % 1), y = lerp(BY - 300, VY + 8, Math.pow(u, 0.55)), k = 0.03 + 1.1 * (y - VY) / (BY - VY); if (k > 0.03) road += traffic(at(i ? -2400 : -700, y), y, k, i ? '#3a4a6a' : '#8e2a2a', 1); }
+      for (let i = 0; i < 2; i++) { const u = ((t * 0.2 + i * 0.5) % 1), y = lerp(1320, VY + 6, Math.pow(u, 0.45)), k = 0.42 * (y - VY) / (1300 - VY); if (k > 0.02) road += trafficRear(at(i ? -4200 : -2300, y), y, k, i ? '#3a4a6a' : '#8e2a2a'); }
       let fg = ''; for (let i = 0; i < 7; i++) { const x = 820 + i * 90, y = 1960; fg += `<path d="M${x} ${y} q -20 -150 -50 -220 M${x} ${y} q 10 -170 30 -240 M${x} ${y} q 30 -120 80 -170" stroke="#3e5a24" stroke-width="10" fill="none" stroke-linecap="round"/>`; }
       return { light: { dir: 1, rim: '#fff0c8', key: '#fff4dc' }, layers: [[0.05, sky], [0.12, far], [0.85, road], [1.0, ''], [1.32, fg]] };
     },
@@ -281,8 +286,8 @@
         set: 'mc22_highway', setOpts: { view: 'rear' }, grade: 'warm', police: 0.22 * seg(t, 0.2, 1.2),
         cam: { from: { x: 0, y: 40, z: 1.0 }, to: { x: 0, y: 70, z: 1.08 }, handheld: 1.2 },
         shake: [{ at: plate, amp: 4 }],
-        figures: [{ id: 'mc22_trooper', x: -260, y: 1420, scale: 0.86, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', depth: 1.03, show: [l1 - 1.0],
-          walk: { from: -260, to: 70, at: l1 - 0.9, dur: Math.max(0.6, miss - l1 + 0.6), cadence: 6.2 }, keys: [{ at: plate - 0.3, pose: 'point', expr: 'stern', dur: 0.35 }] }],
+        figures: [{ id: 'mc22_trooper', x: -200, y: 1236, scale: 0.66, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', depth: 0.99, show: [l1 - 1.1],
+          walk: { from: -200, to: 120, at: l1 - 1.0, dur: Math.max(0.6, miss - l1 + 0.7), cadence: 6.2 }, keys: [{ at: plate - 0.3, pose: 'point', expr: 'stern', dur: 0.35 }] }],
         props: [{ depth: 1.0, svg: tt => carRear(CARP.x, CARP.y, CARP.s, tt, { driver: true, exhaust: true, brake: tt < 1.4, glow: seg(tt, plate - 0.2, plate + 0.3) }) }],
         overlays: [
           { type: 'label', at: 3.25, until: plate - 0.35, x: 60, y: 432, text: 'I-35, OKLAHOMA · 19 APRIL 1995', fs: 38, sub: 'The same morning as the bombing' },
@@ -313,20 +318,20 @@
     // 3 - the stop: the yellow car and the patrol car roll onto the shoulder; the trooper walks up (side view)
     mc22_stop(ctx) {
       const t = ctx.t, mins = WT(ctx, 0, 3, 1.0), stp = WT(ctx, 0, 6, 1.9), no = WT(ctx, 0, 10, 2.9), plate = WT(ctx, 0, 12, 3.4);
-      const GY = 1268, YC = { x: 720, k: 0.6 }, PC = { x: 160, k: 0.56 };
+      const GY = 1268, YC = { x: 790, k: 0.7 }, PC = { x: 70, k: 0.66 };
       const roll = tt => 1 - ease.out(clamp(tt / Math.max(0.6, stp + 0.1), 0, 1));   // 1 = still rolling in, 0 = stopped
       return E.cine.shot(ctx, {
-        set: 'mc22_highway', setOpts: { view: 'side' }, grade: 'warm',
-        cam: { from: { x: -30, y: 30, z: 1.0 }, to: { x: 60, y: 20, z: 1.07 }, handheld: 1.6 },
-        figures: [{ id: 'mc22_trooper', x: 250, y: 1288, scale: 0.6, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', depth: 1.01, show: [stp + 0.15],
-          walk: { from: 250, to: 470, at: stp + 0.25, dur: Math.max(0.6, plate - stp - 0.1), cadence: 6.4 }, keys: [{ at: plate + 0.1, pose: 'point', dur: 0.35 }] }],
+        set: 'mc22_highway', setOpts: { view: 'side' }, grade: 'warm', police: 0.16 * seg(t, 0.3, 1.0),
+        cam: { from: { x: 0, y: 120, z: 1.0 }, to: { x: 20, y: 110, z: 1.05 }, handheld: 1.6 },
+        figures: [{ id: 'mc22_trooper', x: 90, y: 1290, scale: 0.27, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', depth: 1.01, show: [stp + 0.1],
+          walk: { from: 90, to: 560, at: stp + 0.2, dur: Math.max(0.6, plate - stp), cadence: 6.4 }, keys: [{ at: plate + 0.15, pose: 'point', dur: 0.35 }] }],
         props: [
-          { depth: 1.0, svg: tt => patrolCar(PC.x - 700 * roll(tt), GY, PC.k, tt, { doorOpen: tt > stp + 0.05 }) },
-          { depth: 1.0, svg: tt => carSide(YC.x - 600 * roll(tt), GY, YC.k, tt, { driver: true, brake: tt > stp - 0.6 && tt < stp + 0.5, roll: -roll(tt) * 8 }) }
+          { depth: 1.0, svg: tt => patrolCar(PC.x - 760 * roll(tt), GY, PC.k, tt, { doorOpen: tt > stp + 0.05 }) },
+          { depth: 1.0, svg: tt => carSide(YC.x - 760 * roll(tt), GY, YC.k, tt, { driver: true, brake: tt > stp - 0.6 && tt < stp + 0.5, roll: -roll(tt) * 8 }) }
         ],
         overlays: [
           { type: 'label', at: 0.1, x: 60, y: 432, text: 'WITHIN ABOUT 90 MINUTES', fs: 40, sub: 'Per the FBI · I-35, north of Oklahoma City' },
-          { type: 'callout', at: no - 0.05, target: [YC.x - 296, GY - 80], depth: 1.0, r: 66, label: [470, 700], w: 470, text: 'NO LICENSE PLATE', colour: YEL }
+          { type: 'callout', at: no - 0.05, target: [YC.x - 500 * YC.k, GY - 90 * YC.k], depth: 1.0, r: 60, label: [500, 690], w: 470, text: 'NO LICENSE PLATE', colour: YEL }
         ],
         tag: LIKENESS
       });
@@ -340,11 +345,11 @@
         `<g transform="translate(420 1146) rotate(3)"><rect x="-60" y="-10" width="120" height="12" fill="#f2ede0" stroke="${INK}" stroke-width="2"/><rect x="-56" y="-18" width="112" height="10" fill="#ebe5d6" stroke="${INK}" stroke-width="2"/></g></g>`;
       return E.cine.shot(ctx, {
         set: 'mc22_jail', setOpts: { view: 'desk' }, grade: 'cold',
-        cam: { from: { x: 20, y: 0, z: 1.02 }, to: { x: -30, y: -20, z: 1.1 }, handheld: 1.4 },
+        cam: { from: { x: 20, y: 0, z: 1.0 }, to: { x: -30, y: -20, z: 1.07 }, handheld: 1.4 },
         figures: [
           { id: 'official', x: 300, y: 1640, scale: 0.86, dir: 1, turn: 0.4, pose: 'sit_type', expr: 'focused', depth: 0.98, keys: [...typing(0.05, chg - 0.2), { at: chg - 0.1, pose: 'sit_read', expr: 'stern', dur: 0.4 }] },
-          { id: 'mc22_driver', x: 690, y: 1690, scale: 0.84, dir: -1, turn: 0.45, pose: 'stand', silhouette: 'cool', keys: [{ at: jl - 0.2, pose: 'hands_behind', dur: 0.5 }, { at: chg + 0.2, pose: 'bowed', dur: 0.6 }] },
-          { id: 'mc22_trooper', x: 1290, y: 1720, scale: 0.88, dir: -1, turn: 0.5, pose: 'stand', expr: 'stern', walk: { from: 1290, to: 930, at: 0.05, dur: 1.0, cadence: 6.4 }, keys: [{ at: gun, pose: 'read', dur: 0.4 }, { at: chg - 0.1, pose: 'present', dur: 0.4 }] }
+          { id: 'mc22_driver', x: 690, y: 1660, scale: 0.8, dir: -1, turn: 0.45, pose: 'stand', silhouette: 'cool', keys: [{ at: jl - 0.2, pose: 'hands_behind', dur: 0.5 }, { at: chg + 0.2, pose: 'bowed', dur: 0.6 }] },
+          { id: 'mc22_trooper', x: 1290, y: 1690, scale: 0.83, dir: -1, turn: 0.5, pose: 'stand', expr: 'stern', walk: { from: 1290, to: 930, at: 0.05, dur: 1.0, cadence: 6.4 }, keys: [{ at: gun, pose: 'read', dur: 0.4 }, { at: chg - 0.1, pose: 'present', dur: 0.4 }] }
         ],
         props: [{ depth: 1.02, svg: desk }],
         overlays: [{ type: 'label', at: 0.1, x: 60, y: 432, text: 'BOOKED · NOBLE COUNTY JAIL', fs: 40, sub: 'Misdemeanor gun and traffic charges' }],
@@ -354,19 +359,19 @@
 
     // 5 - the axle from the wreckage, in the lab; its number (masked) points the FBI to Kansas
     mc22_axle(ctx) {
-      const t = ctx.t, ax = WT(ctx, 0, 3, 0.8), vin = WT(ctx, 0, 4, 1.1), fbi = WT(ctx, 0, 9, 2.6), ks = WT(ctx, 0, 11, 3.0);
+      const t = ctx.t, ax = WT(ctx, 0, 3, 0.8), vin = WT(ctx, 0, 4, 1.1), led = WT(ctx, 0, 7, 2.3), fbi = WT(ctx, 0, 9, 2.6), ks = WT(ctx, 0, 11, 3.0);
       const A = { x: 560, y: 1196, s: 0.78 };
       return E.cine.shot(ctx, {
         set: 'lab', setOpts: { microX: 980 }, grade: 'cold', cam: { from: { x: 0, y: -30, z: 1.04 }, to: { x: 30, y: -60, z: 1.14 }, handheld: 0.8 },
         figures: [
           { id: 'scientist', x: 230, y: 1800, scale: 1.0, dir: 1, turn: 0.45, pose: 'examine', expr: 'focused', gaze: [0.6, 0.7], keys: [{ at: vin - 0.2, pose: 'point', expr: 'realise', gaze: [0.7, 0.4], dur: 0.4 }, { at: ks + 0.2, pose: 'stand', dur: 0.4 }] },
-          { id: 'agent_a', x: 900, y: 1820, scale: 0.98, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused', keys: [{ at: ax - 0.1, pose: 'read', dur: 0.4 }, { at: fbi - 0.1, pose: 'point_up', expr: 'determined', dur: 0.4 }] }
+          { id: 'agent_a', x: 1010, y: 1820, scale: 0.98, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused', keys: [{ at: ax - 0.1, pose: 'read', dur: 0.4 }, { at: fbi - 0.1, pose: 'point', expr: 'determined', dur: 0.4 }] }
         ],
         props: [{ depth: 1.06, svg: tt => axle(A.x, A.y, A.s, tt, { glow: seg(tt, vin - 0.2, vin + 0.3) }) }],
         overlays: [
-          { type: 'label', at: 0.1, until: ks - 0.3, x: 60, y: 432, text: "FROM THE WRECKAGE: AN AXLE", fs: 40, sub: "The rental truck's rear axle housing" },
-          { type: 'callout', at: vin + 0.05, until: ks - 0.3, target: [A.x + 268 * A.s, A.y - 27 * A.s], depth: 1.06, r: 70, label: [420, 700], w: 600, h: 104, text: 'VEHICLE ID NUMBER', sub: 'digits masked here', colour: YEL },
-          { type: 'card', at: ks - 0.2, x: 80, y: 390, w: 920, rows: [{ text: 'TRACED TO A TRUCK-RENTAL SHOP', fs: 36 }, { text: 'JUNCTION CITY, KANSAS', fs: 50, colour: '#8e1f18' }] }
+          { type: 'label', at: 0.1, until: led - 0.3, x: 60, y: 432, text: "FROM THE WRECKAGE: AN AXLE", fs: 40, sub: "The rental truck's rear axle housing" },
+          { type: 'callout', at: vin + 0.05, target: [A.x + 268 * A.s, A.y - 27 * A.s], depth: 1.06, r: 70, label: [420, 760], w: 600, h: 104, text: 'VEHICLE ID NUMBER', sub: 'digits masked here', colour: YEL },
+          { type: 'card', at: led - 0.15, x: 80, y: 390, w: 920, rows: [{ text: 'TRACED TO A TRUCK-RENTAL SHOP', fs: 36 }, { text: 'JUNCTION CITY, KANSAS', fs: 50, colour: '#8e1f18', at: ks - 0.3 }] }
         ],
         tag: TAG
       });
@@ -381,7 +386,7 @@
         figures: [
           { id: 'mc22_clerk', x: 300, y: 1690, scale: 0.9, dir: 1, turn: 0.4, pose: 'stand', expr: 'focused', depth: 0.98, keys: [{ at: sk, pose: 'present', dur: 0.4 }, { at: shop, pose: 'hand_to_face', expr: 'focused', dur: 0.4 }, { at: led, pose: 'point', expr: 'realise', dur: 0.35 }] },
           { id: 'agent_b', x: 820, y: 1720, scale: 0.92, dir: -1, turn: 0.4, pose: 'read', expr: 'focused', keys: [{ at: nm - 0.1, pose: 'stand', expr: 'determined', dur: 0.4 }] },
-          { id: 'agent_a', x: 1300, y: 1760, scale: 0.95, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused', walk: { from: 1300, to: 1030, at: 0.2, dur: 1.0, cadence: 6.4 }, keys: [{ at: tm, pose: 'point_up', expr: 'determined', dur: 0.4 }] }
+          { id: 'agent_a', x: 1300, y: 1760, scale: 0.95, dir: -1, turn: 0.5, pose: 'stand', expr: 'focused', walk: { from: 1300, to: 1030, at: 0.2, dur: 1.0, cadence: 6.4 }, keys: [{ at: tm, pose: 'arms_crossed', expr: 'determined', dur: 0.45 }] }
         ],
         overlays: [
           { type: 'label', at: 0.1, until: nm - 0.25, x: 60, y: 432, text: 'JUNCTION CITY, KANSAS', fs: 40, sub: 'Shop staff helped make a sketch' },
@@ -394,21 +399,26 @@
     // 7 - THE HOW: he was already in a cell. A records check; the duty desk phone rings; HOLD (21 April)
     mc22_reveal(ctx) {
       const t = ctx.t, ran = WT(ctx, 0, 1, 0.3), alr = WT(ctx, 0, 6, 1.4), jail = WT(ctx, 0, 8, 1.8), l1 = LS(ctx, 1, 2.6), rel = WT(ctx, 1, 3, 3.3);
-      const CELL = { x0: 60, x1: 640 }, FS = 0.74, FY = 1560, bench = FY - 452 * FS;
-      const duty = tt => `<g><rect x="700" y="1330" width="700" height="30" fill="#8a7a62" stroke="${INK}" stroke-width="5"/><rect x="712" y="1358" width="676" height="${H}" fill="#5a4e40" stroke="${INK}" stroke-width="5"/>` +
-        phone(830, 1332, 0.8, tt, seg(tt, ran - 0.1, ran + 0.2) * (1 - seg(tt, alr - 0.2, alr))) + `<g transform="translate(1010 1326) rotate(-3)"><rect x="-70" y="-10" width="140" height="14" fill="#f2ede0" stroke="${INK}" stroke-width="2"/></g></g>`;
+      // a seated figure's feet sit ~208 units above its feet line, so the cell floor (FL) is FY - 208 * FS; the seat is at the hip
+      const CELL = { x0: 60, x1: 640 }, FS = 0.62, FL = 1206, FY = FL + 208 * FS, bench = FY - 440 * FS;
+      const benchSvg = `<rect x="${CELL.x0 + 40}" y="${f1(bench)}" width="${CELL.x1 - CELL.x0 - 80}" height="24" fill="#9aa0a4" stroke="${INK}" stroke-width="4"/><rect x="${CELL.x0 + 60}" y="${f1(bench + 24)}" width="16" height="${f1(FL - bench - 24)}" fill="#6a7074"/><rect x="${CELL.x1 - 76}" y="${f1(bench + 24)}" width="16" height="${f1(FL - bench - 24)}" fill="#6a7074"/>` +
+        `<ellipse cx="340" cy="${FL + 4}" rx="110" ry="10" fill="#000" opacity="0.3"/>`;
+      // repaint the corridor floor in front of the cell, over the figure's own ground shadow (which falls on its feet line)
+      const floorPatch = `<rect x="${CELL.x0 - 20}" y="1236" width="${CELL.x1 - CELL.x0 + 40}" height="140" fill="#7a7466"/><line x1="${CELL.x0 - 20}" y1="1320" x2="${CELL.x1 + 20}" y2="1320" stroke="#000" stroke-opacity="0.1" stroke-width="3"/>`;
+      const duty = tt => `<g><rect x="620" y="1330" width="780" height="30" fill="#8a7a62" stroke="${INK}" stroke-width="5"/><rect x="632" y="1358" width="756" height="${H}" fill="#5a4e40" stroke="${INK}" stroke-width="5"/>` +
+        phone(730, 1332, 0.8, tt, seg(tt, ran - 0.1, ran + 0.2) * (1 - seg(tt, alr - 0.2, alr))) + `<g transform="translate(960 1326) rotate(-3)"><rect x="-70" y="-10" width="140" height="14" fill="#f2ede0" stroke="${INK}" stroke-width="2"/></g></g>`;
       return E.cine.shot(ctx, {
-        set: 'mc22_jail', setOpts: { view: 'cells', cell: CELL, benchY: Math.round(bench) }, grade: 'cold',
+        set: 'mc22_jail', setOpts: { view: 'cells', cell: CELL, benchY: 2000 }, grade: 'cold',
         cam: { from: { x: 30, y: 10, z: 1.0 }, to: { x: -60, y: -10, z: 1.12 }, handheld: 2.2 },
         shake: [{ at: jail, amp: 5 }],
         figures: [
-          { id: 'mc22_driver', x: 350, y: FY, scale: FS, dir: 1, turn: 0.35, pose: 'sit_slumped', noChair: true, silhouette: 'cool', keys: [{ at: alr, pose: 'sit', dur: 0.5 }, { at: rel - 0.1, pose: 'hands_together', dur: 0.5 }] },
-          { id: 'official', x: 960, y: 1800, scale: 0.86, dir: -1, turn: 0.4, pose: 'sit_read', expr: 'focused', depth: 1.01, keys: [{ at: ran + 0.1, pose: 'present', expr: 'realise', gaze: [0.6, 0.6], dur: 0.35 }, { at: jail, pose: 'sit', expr: 'stern', gaze: [-0.9, -0.2], dur: 0.4 }] }
+          { id: 'mc22_driver', x: 340, y: FY, scale: FS, dir: 1, turn: 0.35, pose: 'sit_slumped', noChair: true, silhouette: 'cool', keys: [{ at: alr, pose: 'sit', dur: 0.5 }, { at: rel - 0.1, pose: 'sit_slumped', dur: 0.6 }] },
+          { id: 'official', x: 880, y: 1780, scale: 0.8, dir: -1, turn: 0.4, pose: 'sit_read', expr: 'focused', depth: 1.01, keys: [{ at: ran + 0.1, pose: 'present', expr: 'realise', gaze: [0.6, 0.6], dur: 0.35 }, { at: jail, pose: 'sit', expr: 'stern', gaze: [-0.9, -0.2], dur: 0.4 }] }
         ],
-        props: [{ depth: 1.04, svg: duty }],
+        props: [{ depth: 0.995, svg: benchSvg }, { depth: 1.005, svg: floorPatch }, { depth: 1.04, svg: duty }],
         overlays: [
           { type: 'label', at: 0.1, until: l1 - 0.1, x: 60, y: 432, text: '21 APRIL 1995 · RECORDS CHECK', fs: 38, sub: 'He was still in the county jail' },
-          { type: 'callout', at: alr - 0.05, target: [CELL.x1 - 170, 900], depth: 1.03, r: 80, label: [560, 640], w: 470, text: 'ALREADY IN CUSTODY', colour: YEL },
+          { type: 'callout', at: alr - 0.05, target: [345, 930], depth: 1.0, r: 84, label: [560, 640], w: 470, text: 'ALREADY IN CUSTODY', colour: YEL },
           { type: 'stamp', at: rel - 0.05, x: 540, y: 540, text: 'HOLD', scale: 1.5, colour: '#c8312b' }
         ],
         tag: LIKENESS
