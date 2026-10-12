@@ -53,7 +53,7 @@ def build(h):
           emph=["convicted", "ten", "death,", "died"], pad=0.35, tr="zoom"),
         # E - callback on the hero plate; a compact end card in the last ~1.5 s (no extra narration)
         S("s09_end", "gr19_end", [N("Twenty-five years without a name. A pizza crust helped end it.", pause_before=0.1)],
-          "aftermath", ["GR_span", "GR_busboy", "GR_match"], sfx=[fw(0, 6, "thud", 0.45), fw(0, 10, "whoosh", 0.4, 0.5)],
+          "aftermath", ["GR_span", "GR_busboy", "GR_match"], sfx=[fw(0, 6, "thud", 0.45), fw(0, 10, "whoosh", 0.4, 0.7)],
           emph=["twenty-five", "pizza", "crust"], min_d=3.0, pad=2.0, tr="zoom"),
     ]
     sections = ["A", "B", "B", "C", "C", "C", "D", "D", "E"]
