@@ -4,7 +4,7 @@ CLOSED (with one 2026 development): Bryan Kohberger pleaded guilty on 2 Jul 2025
 and one count of burglary; prosecutors dropped the death penalty in exchange and he waived his appeal. On 23 Jul 2025
 Judge Steven Hippler sentenced him to four consecutive life sentences plus 10 years. On 27 Jul 2026 he reportedly filed a
 post-conviction petition to withdraw the plea, claiming innocence; no ruling was found as of the verification date, and
-the narration says "reportedly". There was no trial, so every clue (the sheath and its DNA, the white car on video, the
+the narration says "reportedly asked to withdraw his plea". There was no trial, so every clue (the sheath and its DNA, the white car on video, the
 genetic genealogy, the trash, the paternity result, the phone records) is attributed to the probable-cause affidavit,
 prosecutors or court filings. The paternity reveal is held until the middle of the runtime.
 Research ledger: episodes/tcv17-kohberger/research.md. Shots: renderer/scenes/tcv17-kohberger.js."""
@@ -21,15 +21,15 @@ def build(h):
           "cold", ["K_snap", "K_trash"], sfx=[fx(0.0, "sub", 0.5), fx(0.1, "wind", 0.45), fw(0, 8, "thud", 0.5, 0.05),
                                               fw(1, 3, "step", 0.35, -0.3), fw(1, 6, "hit", 0.55, -0.05)],
           emph=["dna,", "no", "name.", "trash."], min_d=4.6, pad=0.25),
-        S("s02_case", "kb17_case", [N("Four University of Idaho students were killed in November 2022.")],
-          "unease", ["K_killings"], sfx=[fx(0.0, "wind", 0.5), fw(0, 4, "step", 0.3), fw(0, 6, "sub", 0.4, -0.05)],
+        S("s02_case", "kb17_case", [N("In November 2022, four University of Idaho students were killed.")],
+          "unease", ["K_killings"], sfx=[fx(0.0, "wind", 0.5), fw(0, 7, "step", 0.3), fw(0, 9, "sub", 0.4, -0.05)],
           emph=["four", "students"], min_d=3.4, pad=0.35, tr="fade"),
         # B - the clue chain, attributed: sheath -> car on video -> genealogy -> name -> phone
         S("s03_sheath", "kb17_sheath", [N("Prosecutors said the killer left a knife sheath behind."),
                                         N("On its snap was one man's DNA.", pause_before=0.2)],
           "tension", ["K_sheath", "K_snap"], sfx=[fx(0.1, "click", 0.4), fw(0, 7, "paper", 0.5, -0.1), fw(1, 6, "ping", 0.45)],
           emph=["sheath", "snap", "dna."], pad=0.3, tr="push"),
-        S("s04_car", "kb17_car", [N("Cameras caught a white car near the house that night.")],
+        S("s04_car", "kb17_car", [N("Cameras caught a white car near the house that night, prosecutors said.")],
           "tension", ["K_car_video"], sfx=[fx(0.0, "wind", 0.4), fw(0, 0, "beep", 0.3, -0.1), fw(0, 3, "whoosh", 0.45, -0.1)],
           emph=["white", "car"], min_d=3.2, pad=0.3, tr="push"),
         S("s05_tree", "kb17_tree", [N("Court filings said genetic genealogy led the FBI to one family.")],
@@ -61,16 +61,16 @@ def build(h):
         S("s12_deal", "kb17_deal", [N("Prosecutors dropped the death penalty. Some victims' families opposed the deal.")],
           "tension", ["K_deathpenalty", "K_families"], sfx=[fw(0, 4, "stamp", 0.45, 0.1), fw(0, 5, "sparkle", 0.8, -0.1)],
           emph=["dropped", "opposed"], pad=0.35, tr="push"),
-        S("s13_sentence", "kb17_sentence", [N("Four consecutive life sentences, plus ten years."),
+        S("s13_sentence", "kb17_sentence", [N("He got four consecutive life sentences, plus ten years."),
                                             N("In 2026, he reportedly asked to withdraw his plea.", pause_before=0.5)],
           "aftermath", ["K_sentence", "K_appeal", "K_petition"],
-          sfx=[fw(0, 2, "gavel", 0.9, -0.08), fw(0, 6, "stamp", 0.45, 0.35), fw(1, 4, "paper", 0.4, -0.1)],
+          sfx=[fw(0, 4, "gavel", 0.9, -0.08), fw(0, 8, "stamp", 0.45, 0.35), fw(1, 4, "paper", 0.4, -0.1)],
           emph=["life", "withdraw"], pad=0.4, tr="zoom"),
         # E - respect, then the callback on the hero object and the call to action
         S("s14_memory", "kb17_memory", [N("He gave no motive. Their families may never know why.", pause_before=0.2)],
           "aftermath", ["K_nomotive", "K_names"], sfx=[fx(0.0, "wind", 0.45), fx(3.0, "wind", 0.35)],
           emph=["no", "motive.", "why."], min_d=4.4, pad=0.8, tr="fade"),
-        S("s15_end", "kb17_end", [N("DNA, but no name. His family's trash helped prove it."),
+        S("s15_end", "kb17_end", [N("DNA, but no name. His family's trash helped name him."),
                                   N("Which case should we crack next? Tell us in the comments.", pause_before=0.4)],
           "aftermath", ["K_trash", "K_paternity"], sfx=[fx(0.0, "wind", 0.4), fw(0, 6, "thud", 0.4, 0.05), fw(1, 0, "whoosh", 0.45, -0.2), fw(1, 5, "ping", 0.45)],
           emph=["trash", "prove", "next?"], min_d=4.0, pad=1.8, tr="fade"),
@@ -90,27 +90,27 @@ def build(h):
         src("heraldnet_arrest", "The Herald (Everett, AP)", "Man arrested in Pennsylvania in connection with University of Idaho homicides", "https://www.heraldnet.com/2022/12/31/man-arrested-in-pennsylvania-in-connection-with-university-of-idaho-homicides/", "2022-12-31"),
         src("kuow_arrest", "KUOW", "Suspect arrested in case of University of Idaho murders", "https://kuow.org/stories/suspect-arrested-in-case-of-university-of-idaho-murders", "2022-12-30"),
         src("fox5ny_who", "FOX 5 New York", "Bryan Kohberger: What we know about suspect in Idaho college student murders", "https://www.fox5ny.com/news/bryan-christopher-kohberger-moscow-idaho-murders-suspect-arrest", "2022-12 / 2023-01"),
-        src("cbs_arrest", "CBS News", "Bryan Kohberger arrested as suspect in Idaho murders", "https://www.cbsnews.com/news/bryan-kohberger-arrested-suspect-idaho-murders/", "2022-12-30"),
+        src("cbs_arrest", "CBS News", "Bryan Kohberger arrested as suspect in Idaho murders [title from URL slug]", "https://www.cbsnews.com/news/bryan-kohberger-arrested-suspect-idaho-murders/", "2022-12-30"),
         src("cbsphilly_arrest", "CBS Philadelphia", "Family of fatal Idaho stabbings suspect releases statement", "https://www.cbsnews.com/philadelphia/news/bryan-kohberger-idaho-stabbings-suspect-arrested-poconos-pennsylvania/", "2023-01-01"),
         src("kxly_who", "KXLY", "What we know about Idaho murder suspect Bryan Kohberger", "https://www.kxly.com/what-we-know-about-idaho-murder-suspect-bryan-kohberger/", "2023-01"),
         src("fox_drive", "FOX 13 Seattle", "Idaho murders suspect pulled over twice on cross-country race home with dad, lawyer claims", "https://www.fox13seattle.com/news/idaho-murders-suspect-pulled-over-twice-on-cross-country-race-home-with-dad-lawyer-claims", "2023-01"),
         # the probable-cause affidavit (released 5 Jan 2023): sheath, snap DNA, car, phone, trash, paternity
         src("today_pca", "TODAY (NBC)", "Idaho slayings: Here's what to know from the probable cause affidavit", "https://www.today.com/today/amp/rcna64469", "2023-01-05"),
         src("nbc_sheath", "NBC News", "DNA left on knife sheath used to link Bryan Kohberger with Idaho slayings, court documents show", "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406", "2023-01-05"),
-        src("inquirer_pca", "The Philadelphia Inquirer", "Bryan Kohberger affidavit: what the Idaho court documents say", "https://www.inquirer.com/news/pennsylvania/bryan-kohberger-idaho-affidavit-court-20230105.html", "2023-01-05"),
-        src("wfla_pca", "WFLA (Nexstar)", "DNA, cell records, car link Kohberger to Idaho killings: affidavit", "https://www.wfla.com/news/national/dna-cell-records-car-link-kohberger-to-idaho-killings-affidavit/amp", "2023-01-05"),
+        src("inquirer_pca", "The Philadelphia Inquirer", "Bryan Kohberger affidavit: what the Idaho court documents say [title from URL slug]", "https://www.inquirer.com/news/pennsylvania/bryan-kohberger-idaho-affidavit-court-20230105.html", "2023-01-05"),
+        src("wfla_pca", "WFLA (Nexstar)", "DNA, cell records, car link Kohberger to Idaho killings: affidavit [title from URL slug]", "https://www.wfla.com/news/national/dna-cell-records-car-link-kohberger-to-idaho-killings-affidavit/amp", "2023-01-05"),
         src("abc_takeaways", "6abc / ABC News (AP)", "Key takeaways from court documents in case against Bryan Kohberger and some questions that remain", "https://6abc.com/post/bryan-kohberger-update-idaho-murders-affidavit-court-documents-killer/12661256/", "2023-01"),
-        src("cbs_pca", "CBS News", "Idaho murders: Bryan Kohberger affidavit (live updates)", "https://cbsnews.com/live-updates/idaho-murders-bryan-kohberger-affidavit", "2023-01-05"),
+        src("cbs_pca", "CBS News", "Idaho murders: Bryan Kohberger affidavit (live updates) [title from URL slug]", "https://cbsnews.com/live-updates/idaho-murders-bryan-kohberger-affidavit", "2023-01-05"),
         src("dnews_pca", "Moscow-Pullman Daily News", "Court document details Kohberger's alleged ties to murder", "https://dnews.com/stories/court-document-details-kohbergers-alleged-ties-to-murder146da478", "2023-01-05"),
         src("ktvz_timeline", "KTVZ", "TIMELINE: DNA, video lead officials to Idaho suspect", "https://ktvz.com/?p=1045706", "2023-01"),
         src("fox_video", "Fox News", "Surveillance video shows Bryan Kohberger car roaring away after Idaho student murders", "https://www.foxnews.com/us/surveillance-video-shows-bryan-kohberger-car-roaring-away-after-idaho-student-murders", "date not in extract"),
-        src("cbsphilly_elantra", "CBS Philadelphia", "University of Idaho students stabbings: Bryan Kohberger's white Hyundai Elantra searched", "https://www.cbsnews.com/amp/philadelphia/news/university-of-idaho-students-stabbings-bryan-kohberger-white-hyundai-elantra-car-vehicle-search", "2023-01"),
+        src("cbsphilly_elantra", "CBS Philadelphia", "University of Idaho students stabbings: Bryan Kohberger's white Hyundai Elantra searched [title from URL slug]", "https://www.cbsnews.com/amp/philadelphia/news/university-of-idaho-students-stabbings-bryan-kohberger-white-hyundai-elantra-car-vehicle-search", "2023-01"),
         # genetic genealogy (June 2023 filings) and the direct match after the arrest
         src("nbc_igg", "NBC News", "Genetic genealogy was used to link Bryan Kohberger, suspect in Idaho slayings, to crime scene, prosecutors say", "https://www.nbcnews.com/news/crime-courts/genetic-genealogy-used-link-bryan-kohberger-suspect-idaho-slayings-cri-rcna90344", "2023-06"),
         src("fox5ny_igg", "FOX 5 New York", "Idaho judge gives Bryan Kohberger win over genetic genealogy battle", "https://www.fox5ny.com/news/idaho-murders-bryan-kohberger-trial-genetic-genealogy-dna-evidence", "2023"),
         src("newsnation_dna", "NewsNation", "Idaho killings: How DNA led to the Kohberger arrest", "https://digital-release.newsnationnow.com/crime/idaho-college-killings/dna-kohberger-arrest/", "2023"),
         src("oxygen_swab", "Oxygen", "Cheek swab of Idaho murder suspect Bryan Kohberger directly links his DNA to found knife sheath, prosecutors say", "https://www.oxygen.com/crime-news/cheek-swab-links-bryan-kohberger-to-university-of-idaho-murders?amp", "2023-06"),
-        src("upi_swab", "UPI", "Bryan Kohberger murder suspect: DNA and the knife sheath (prosecutors' filing)", "https://www.upi.com/Top_News/US/2023/06/21/bryan-kohberger-murder-suspect-dna-knife/5611687379205/", "2023-06-21"),
+        src("upi_swab", "UPI", "Bryan Kohberger murder suspect: DNA and the knife sheath (prosecutors' filing) [title from URL slug]", "https://www.upi.com/Top_News/US/2023/06/21/bryan-kohberger-murder-suspect-dna-knife/5611687379205/", "2023-06-21"),
         src("yahoo_swab", "Yahoo News", "Prosecutors reveal bombshell DNA match in Kohberger case", "https://news.yahoo.com/prosecutors-reveal-bombshell-dna-match-161930757.html", "2023-06"),
         # the February 2025 suppression ruling
         src("kmvt_ruling", "KMVT", "Judge denies motions to suppress evidence in Kohberger case", "https://www.kmvt.com/2025/02/20/judge-denies-motions-suppress-evidence-kohberger-case", "2025-02-20"),
@@ -179,7 +179,7 @@ def build(h):
           ["san_sentence", "kvia_deal"], "procedure"),
         C("K_nomotive", "He declined to speak at sentencing ('I respectfully decline') and gave no motive; Judge Hippler said, 'What we don't know, and what we never may know, is why.'",
           ["abc17_nomotive", "courthouse_sentence", "idahopress_families", "san_sentence"]),
-        C("K_petition", "On 27 July 2026, as reported (citing a New York Times interview), Kohberger filed a post-conviction relief petition seeking to withdraw his guilty plea, claiming innocence. No ruling on it was found as of 12 October 2026 (search extracts only); his convictions and sentence stand unless a court rules otherwise. Narrated with 'reportedly'.",
+        C("K_petition", "On 27 July 2026, as reported (citing a New York Times interview), Kohberger filed a post-conviction relief petition seeking to withdraw his guilty plea, claiming innocence. No ruling on it was found as of 12 October 2026 (search extracts only); his convictions and sentence stand unless a court rules otherwise. Narrated as 'reportedly asked to withdraw his plea'; 'claiming innocence' is on the card.",
           ["kctv_petition", "cda_petition", "gazette_petition"], "procedure"),
         C("K_names", "The four students: Ethan Chapin, Kaylee Goncalves, Xana Kernodle and Madison Mogen. Named on screen only, on the memorial card.",
           ["san_sentence", "katv_plea", "idahopress_plea"]),
@@ -191,7 +191,7 @@ def build(h):
                 figures, scenes, claims, sources, "MOSCOW, IDAHO · 2022-2026", bpm=80)
     ep["music"]["beat_snap"] = 0.5   # cut on the half-beat: tighter pacing, still on the grid
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={
-        "Kohberger": "Koh-burger", "PhD": "P H D", "Hyundai": "Hun-day", "Elantra": "El-antra", "FBI": "F B I"})
+        "Kohberger": "Koh-burger", "PhD": "P H D", "Elantra": "El-antra", "FBI": "F B I"})
     ep["score"] = {"root_hz": 138.59, "bpm": 80,
                    "hits": [{"scene": "s06_name", "word": [0, 3], "at": -0.05, "gain": 0.4}],
                    "cliff": {"scene": "s13_sentence", "word": [1, 0], "at": -0.38}}

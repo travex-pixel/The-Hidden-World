@@ -272,12 +272,12 @@
 
     // 2 - the case, in summary: a generic college town in winter, wide and distant; a detective at a fence line
     kb17_case(ctx) {
-      const stu = WT(ctx, 0, 4, 1.4), kil = WT(ctx, 0, 6, 2.0), nov = WT(ctx, 0, 8, 2.6);
+      const nov = WT(ctx, 0, 1, 0.4), stu = WT(ctx, 0, 7, 2.4), kil = WT(ctx, 0, 9, 3.0);
       return E.cine.shot(ctx, {
         set: 'kb17_campus_town', setOpts: {}, grade: 'night',
         cam: { from: { x: 30, y: 40, z: 1.12 }, to: { x: -20, y: 10, z: 1.0 }, handheld: 1 },
         figures: [{ id: 'detective', x: 830, y: 1640, scale: 0.78, dir: -1, turn: 0.35, pose: 'stand', silhouette: 'warm',
-          keys: [{ at: stu - 0.3, pose: 'arms_crossed', dur: 0.5 }, { at: kil + 0.1, pose: 'bowed', dur: 0.6 }, { at: nov + 0.9, pose: 'stand', dur: 0.5 }] }],
+          keys: [{ at: nov, pose: 'arms_crossed', dur: 0.5 }, { at: kil + 0.1, pose: 'bowed', dur: 0.6 }] }],
         overlays: [{ type: 'label', at: 0.15, x: 60, y: 422, text: 'MOSCOW, IDAHO · 13 NOV 2022', fs: 40, sub: 'Four University of Idaho students' }],
         tag: TOWN
       });
@@ -503,7 +503,7 @@
 
     // 13 - the sentence (23 July 2025); appeal waived; the reported 2026 petition. The cliff sits in the pause after "years."
     kb17_sentence(ctx) {
-      const t = ctx.t, life = WT(ctx, 0, 2, 0.9), yrs = WT(ctx, 0, 6, 2.2), l1 = LS(ctx, 1, 3.4), wd = WT(ctx, 1, 6, 4.8);
+      const t = ctx.t, life = WT(ctx, 0, 4, 1.1), yrs = WT(ctx, 0, 8, 2.4), l1 = LS(ctx, 1, 3.6), wd = WT(ctx, 1, 6, 5.0);
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { modern: true, dock: false, table: false, benchDepth: 0.75 }, grade: 'cold',
         cam: { from: { x: 60, y: -630, z: 1.2 }, to: { x: 90, y: -660, z: 1.28 } },

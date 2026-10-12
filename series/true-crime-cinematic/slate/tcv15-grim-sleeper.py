@@ -5,7 +5,7 @@ Structure follows the proven formula (Gilgo Beach, Case File 07): line 1 pairs a
 ("A pizza crust helped catch the Gilgo Beach killer. But it wasn't the first time.") and WITHHOLDS the how. The hero
 object (a generic plate with a leftover pizza crust) is big and centred in the first and the last frame. Clue chain:
 the apparent gap, crime-scene DNA with no name, the familial search, the name, the pizza restaurant, the undercover
-busboy (the payoff, at about 57% of the runtime), the lab match, the arrest. Justice payoff: convicted of ten murders
+busboy (the payoff, at about 54-58% of the runtime), the lab match, the arrest. Justice payoff: convicted of ten murders
 (2016), sentenced to death, died in prison (2020). Respectful memorial, callback, NEXT CASE card (the Boston Strangler).
 
 CLOSED case. Franklin appears ONLY as an anonymous rim-lit silhouette (characters/figures/gr15_franklin.json). The
@@ -48,9 +48,9 @@ def build(h):
         S("s07_name", "gr15_name", [N("The son's father: Lonnie David Franklin Junior.", pause_before=0.1)],
           "tension-rise", ["GR_name"], sfx=[fx(0.0, "rumble", 0.35), fw(0, 3, "hit", 0.55, -0.05)],
           emph=["lonnie", "franklin", "junior."], min_d=3.4, pad=0.35, tr="push"),
-        S("s08_party", "gr15_party", [N("LAPD detectives needed his own DNA."),
+        S("s08_party", "gr15_party", [N("Detectives needed his own DNA."),
                                       N("They followed him to a pizza restaurant in Buena Park.", pause_before=0.2)],
-          "tension", ["GR_party"], sfx=[fw(0, 1, "step", 0.35), fw(0, 1, "step", 0.35, 0.4), fw(1, 5, "door", 0.4, -0.1)],
+          "tension", ["GR_party"], sfx=[fw(0, 0, "step", 0.35), fw(0, 0, "step", 0.35, 0.4), fw(1, 5, "door", 0.4, -0.1)],
           emph=["own", "dna.", "pizza", "buena", "park."], pad=0.25, tr="push"),
         S("s09_busboy", "gr15_busboy", [N("Inside, one detective posed as a busboy."),
                                         N("He cleared Franklin's plates, and kept the pizza crust.", pause_before=0.3)],
@@ -141,7 +141,7 @@ def build(h):
     claims = [
         C("GR_gilgo", "Gilgo Beach (Case File 07): prosecutors' July 2023 filing said DNA from a pizza crust Rex Heuermann discarded in Manhattan in January 2023 linked him to evidence in the case (a mitochondrial DNA link); he was arrested in July 2023 and pleaded guilty in April 2026. 'Helped catch' refers to that role in building the case.",
           ["cbs_gilgo_pizza", "nbcny_gilgo_pizza", "cnn_gilgo_plea"]),
-        C("GR_first_time", "Thirteen years before Gilgo, in July 2010, Los Angeles detectives used DNA from pizza and tableware Lonnie Franklin Jr. left at a restaurant to confirm him as the 'Grim Sleeper' suspect.",
+        C("GR_first_time", "About 13 years before Gilgo (2010 vs 2023), in July 2010, Los Angeles detectives used DNA from pizza and tableware Lonnie Franklin Jr. left at a restaurant to confirm him as the 'Grim Sleeper' suspect.",
           ["nbc_pizza", "aba_ruling", "globe_spree"]),
         C("GR_span", "Franklin was convicted of murdering nine women and a 15-year-old girl in South Los Angeles between 1985 and 2007 (first conviction count: August 1985). He was not identified until 2010, about 25 years after the first of those killings. Summary only; no detail used.",
           ["ktvu_sentence", "csm_verdict", "cbc_verdict"]),
@@ -186,7 +186,7 @@ def build(h):
     ep = h.base("tcv15-grim-sleeper", 15, "Police Posed as a Busboy to Get a Killer's Pizza Crust",
                 "How did a familial DNA search and an undercover 'busboy' end the 25-year hunt for LA's Grim Sleeper?",
                 figures, scenes, claims, sources, "THE GRIM SLEEPER · 1985-2020", bpm=78)
-    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"LAPD": "L A P D"})
+    ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"Buena": "Bewayna"})   # espeak reads "Buena" as "byoo-uh-nuh"
     ep["score"] = {"root_hz": 130.81, "bpm": 78,
                    "hits": [{"scene": "s07_name", "word": [0, 3], "at": -0.05, "gain": 0.4}],
                    "cliff": {"scene": "s13_verdict", "word": [1, 0], "at": -0.3}}

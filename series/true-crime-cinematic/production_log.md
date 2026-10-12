@@ -86,3 +86,5 @@
 - 2026-10-11 16:16:40 tcv14-litvinenko: VERIFIED -> series/true-crime-cinematic/output/true_crime_14_litvinenko.mp4 (78.6s, 31.6 MB, sha256 1f4243418239)
 - 2026-10-12 01:40:20 produce 16: regenerating episode data
 - 2026-10-12 01:40:20 tcv16-boston-strangler: rendering (final, seed 1)
+- 2026-10-12 01:45:26 produce 15: regenerating episode data
+- 2026-10-12 01:45:26 tcv15-grim-sleeper: rendering (final, seed 1)

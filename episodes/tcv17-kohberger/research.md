@@ -30,8 +30,8 @@ Base dossier: `series/true-crime/research_next_slate/producer_checks_2026-10-11.
   This was reported alongside his first interview since sentencing (New York Times). Post-conviction relief is not an
   appeal, so the appeal waiver does not bar it. Sources: KCTV5 (Gray) 2026-07-27; Coeur d'Alene Press 2026-07-27
   ("per NYT report"); The Gazette. **No ruling was found** in the 2026-10-12 search. The convictions and sentence stand
-  unless a court rules otherwise. Narration: "In 2026, he reportedly filed to withdraw his plea, claiming innocence."
-  On screen: "PETITION REPORTED · NO RULING FOUND (12 OCT 2026)".
+  unless a court rules otherwise. Narration: "In 2026, he reportedly asked to withdraw his plea." On screen (card):
+  "JULY 2026 · AS REPORTED / HE ASKED TO WITHDRAW / HIS PLEA, CLAIMING INNOCENCE / NO RULING FOUND AS OF 12 OCT 2026".
 - **Civil suit (not narrated):** the four victims' estates are suing Washington State University for wrongful death and
   negligence, alleging that it ignored warnings about him. WSU denies responsibility. A federal jury trial in Seattle
   is set for 13 Sep 2027. Sources: KIVI https://www.kivitv.com/university-of-idaho-murders/trial-set-for-2027-in-university-of-idaho-victims-families-lawsuit-against-washington-state-university ;
@@ -52,7 +52,7 @@ Base dossier: `series/true-crime/research_next_slate/producer_checks_2026-10-11.
 | K_deathpenalty | In exchange, prosecutors agreed not to seek death; he waived his appeal. | KVIA (CNN); KSL (CNN); Straight Arrow News; KATV |
 | K_sentence | 23 Jul 2025: four consecutive life sentences without parole plus 10 years. Extracts disagree on the fines ($270,000 or $290,000, or $50,000 per murder count), so no amount is used. | Straight Arrow News; NBC News; Coeur d'Alene Press; CBS News |
 | K_appeal | He waived his appeal under the plea agreement. | Straight Arrow News; KVIA (CNN) |
-| K_nomotive | He declined to speak at sentencing and gave no motive. Hippler: "What we don't know, and what we never may know, is why." Narration: "He ... gave no motive" and "Their families may never know why." | ABC17 (CNN); Courthouse News; Idaho Press; Straight Arrow News |
+| K_nomotive | He declined to speak at sentencing and gave no motive. Hippler: "What we don't know, and what we never may know, is why." Narration: "He gave no motive. Their families may never know why." | ABC17 (CNN); Courthouse News; Idaho Press; Straight Arrow News |
 | K_names | The four students were Ethan Chapin, Kaylee Goncalves, Xana Kernodle and Madison Mogen. They are named ON SCREEN ONLY, on the memorial card in alphabetical order. | Straight Arrow News; KATV; Idaho Press |
 | K_petition | (procedure) The July 2026 petition, as above. | KCTV5; Coeur d'Alene Press; The Gazette |
 
@@ -114,9 +114,13 @@ Base dossier: `series/true-crime/research_next_slate/producer_checks_2026-10-11.
 
 ## Pronunciation
 
-`narrator_profile.pronounce`: "Kohberger" → "Koh-burger", "PhD" → "P H D", "Hyundai" → "Hun-day", "Elantra" →
-"El-antra" (the recogniser heard "Lantra" without it), "FBI" → "F B I" (heard as "FB" without it). The hook opens on
-"Investigators" rather than "Police": the first consonant of "Police" was lost at the start of the clip ("Lee said...").
+`narrator_profile.pronounce`: "Kohberger" → "Koh-burger", "PhD" → "P H D", "Elantra" → "El-antra" (the recogniser
+heard "Lantra" without it), "FBI" → "F B I" (heard as "FB" without it). "Hun-day" for Hyundai was tried and dropped: the
+recogniser did worse with it than with Piper's default. "DNA" is left as written (spelling it out broke the payoff line);
+the small recogniser mishears it on some seeds after "killer's", which is a recogniser limit, not a Piper misreading.
+Lines no longer START on a hard consonant that Piper clips: the hook opens on "Investigators" (not "Police": "Lee
+said..."), the case line on "In November 2022, four..." (not "Four...": "Poor..."), and the sentence line on "He got four
+consecutive life sentences" (not "Four consecutive...": "or consecutive...").
 Names checked: Hippler, Goncalves, Mogen, Kernodle and Chapin are not narrated, only shown, so there is no risk of
 mispronouncing them. The victims' families publicly objected when a judge mispronounced the names (AOL/The Independent),
 which is one more reason to keep them on the card.
@@ -124,18 +128,19 @@ which is one more reason to keep them on the card.
 ## Ethics decisions
 
 - **Victims:** never depicted. Their house, the scene and the killings are not shown or described beyond "were killed".
-  The college town is a wide, distant, generic winter view, tagged "GENERIC TOWN, NOT THE REAL HOUSE". The names appear
+  The college town is a wide, distant, generic winter view, tagged "ILLUSTRATION · GENERIC TOWN". The names appear
   only on the memorial card near the end.
 - **Kohberger:** an anonymous rim-lit silhouette (`characters/figures/kb17_man.json`, `real_person: true`, "not a
   likeness"). Every shot he is in is tagged "ILLUSTRATION · NOT A LIKENESS". He is never shown near a victim, the house,
   a knife or any crime.
 - **His family:** his parents and sisters were never accused of anything. They are not named or shown. The narration says
   "his family's trash" and "his parents' home", and the father exists only as a line in a DNA result ("the father of
-  whoever left the sheath"). The Pennsylvania street is generic, with distant houses, and tagged "GENERIC STREET, NOT THE
-  REAL HOME".
+  whoever left the sheath"). The Pennsylvania street is generic, with small distant houses, and tagged "ILLUSTRATION · NOT
+  THE REAL STREET".
 - **No knife.** The sheath is described in words only. The lab shows a sealed, opaque, plain evidence envelope (our own
   design, no contents visible) and DNA bands.
 - **No sensational wording or motive speculation.** "He ... gave no motive" is a sourced fact. The memorial line follows
   the judge's own words ("may never know why").
-- **The 2026 petition** is stated, attributed ("reportedly"), because leaving it out would make "case closed" misleading.
+- **The 2026 petition** is stated, attributed ("reportedly asked to withdraw his plea"; the card adds "claiming innocence"
+  and "no ruling found"), because leaving it out would make "case closed" misleading.
 - No real photograph, video frame, filing, police or court material, logo or map is imitated.

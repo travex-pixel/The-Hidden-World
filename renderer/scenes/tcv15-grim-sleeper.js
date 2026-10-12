@@ -395,7 +395,7 @@
 
     // 8 - July 2010: detectives follow him to a birthday party at a generic pizza restaurant in Buena Park
     gr15_party(ctx) {
-      const own = WT(ctx, 0, 4, 1.2), l2 = LS(ctx, 1, 2.2), piz = WT(ctx, 1, 5, 3.2), bp = WT(ctx, 1, 8, 4.0);
+      const own = WT(ctx, 0, 3, 1.0), l2 = LS(ctx, 1, 2.0), piz = WT(ctx, 1, 5, 3.2), bp = WT(ctx, 1, 8, 4.0);
       return E.cine.shot(ctx, {
         set: 'gr15_pizzeria', setOpts: { balloons: true, balloonX: 330, fgBooth: true }, grade: 'warm',
         cam: { keys: [{ at: 0, x: 60, y: 40, z: 1.04 }, { at: l2 - 0.2, x: -40, y: 20, z: 1.12, dur: 1.4 }], handheld: 1.8 },

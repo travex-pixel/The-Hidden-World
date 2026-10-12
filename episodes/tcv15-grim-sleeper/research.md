@@ -23,9 +23,17 @@ Line 1 pairs an everyday object with our best-performing case and withholds the 
 Gilgo Beach killer. / But it wasn't the first time." The hero object is a generic plate with a leftover pizza crust,
 big and centred in the first and the last frame (no visual fade-out, so the video loops on it). Clue chain: the
 apparent gap and the nickname, crime-scene DNA with no name, the familial search, the name, the pizza restaurant, the
-undercover busboy (the payoff, about 57% of the runtime), the lab match, the arrest. Justice payoff: convicted of ten
+undercover busboy (the payoff, about 54-58% of the runtime), the lab match, the arrest. Justice payoff: convicted of ten
 murders, sentenced to death, died in prison. Memorial card (names only), callback ("Twenty-five years without a name. A
-pizza crust helped end it."), then the NEXT CASE card (the Boston Strangler).
+pizza crust helped end it."), then the NEXT CASE card (the Boston Strangler). Final cut: 190 words, 15 scenes,
+78.5 s (`out/tcv15-grim-sleeper/timeline.json`); the busboy line starts at about 51% and the crust is kept at about
+56-58% of the runtime.
+
+Pronunciation (checked with the phonemiser and the offline recogniser on 2026-10-12): espeak reads "Buena" as
+"byoo-uh-nuh", so `pronounce` maps it to "Bewayna" (buh-WAY-nuh; captions keep "Buena"). "LAPD" was dropped from the
+narration (the label still shows it): spelled forms either ran the letters together or turned "A" into "uh", and the
+recogniser could not confirm any of them. "Lonnie", "Franklin", "Gilgo", "familial" and "busboy" phonemise correctly.
+Full-mix recogniser word error rate on the plan mix: 0.086.
 
 ## Established facts (stated as fact in the narration or on cards)
 
@@ -80,7 +88,7 @@ The Boston Strangler: in July 2013, almost 50 years after Mary Sullivan's 1964 k
 of Albert DeSalvo until a nephew discarded a water bottle; its Y-DNA linked the family to crime-scene evidence, and after
 DeSalvo's remains were exhumed the Suffolk DA announced a match, applying to Sullivan's case only. Sources: Suffolk
 County DA (archive release, 19 Jul 2013); NBC News; Fox News ("50 years later, DNA found on discarded bottle"). Narration:
-"Next: almost fifty years later, a water bottle and the Boston Strangler." Card: "Almost 50 years later, a water bottle
+"Next: a water bottle and the Boston Strangler." Card: "Almost 50 years later, a water bottle
 linked him." ("named him" was avoided: DeSalvo had confessed decades earlier; the DNA linked him to one killing.)
 
 ## Myths and claims NOT used
