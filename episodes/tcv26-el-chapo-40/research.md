@@ -4,7 +4,7 @@ Date: 2026-10-12. Episode id `tcv26-el-chapo-40`, prefix `ec26`. Closed case (co
 Legal status verified on 2026-10-12.
 
 ## Method and limits
-- 8 WebSearch calls in "standard" mode. WebFetch and curl are blocked in the build environment, so only **search-result extracts** were read, never full pages; every source record in `episode.json` says so in `accessed`.
+- 9 WebSearch calls in "standard" mode. WebFetch and curl are blocked in the build environment, so only **search-result extracts** were read, never full pages; every source record in `episode.json` says so in `accessed`.
 - Primary: the U.S. Department of Justice (EDNY and Office of Public Affairs) release on the 17 July 2019 sentence. Wire copy: Associated Press (via WGN-TV, FOX 4, The Dallas Morning News, Fox News), AFP (via The Peninsula). Other outlets: Al Jazeera, PBS NewsHour, The Christian Science Monitor, CBS News, NBC News, NPR, ABC11/ABC News, TheWrap, TheJournal.ie, El Universal (English), VICE News, JURIST, Al Día News, Scripps News; Wikipedia (Manhunt of El Chapo Guzmán) for corroboration only.
 - Not surfaced in extracts: a Reuters or BBC page itself (searched; none appeared). AP is the main wire source.
 
