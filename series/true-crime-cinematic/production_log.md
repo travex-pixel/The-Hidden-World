@@ -103,3 +103,8 @@
 - 2026-10-12 03:02:42 tcv20-boston-strangler-40: rendering (final, seed 1)
 - 2026-10-12 03:03:44 produce 21: regenerating episode data
 - 2026-10-12 03:03:44 tcv21-kohberger-40: rendering (final, seed 1)
+- 2026-10-12 03:14:06 tcv20-boston-strangler-40: rendered in 684s
+- 2026-10-12 03:14:48 tcv20-boston-strangler-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_20_boston_strangler_40s.mp4 (43.4s, 18.8 MB, sha256 c3d085585758)
+- 2026-10-12 03:14:48 produce 19: regenerating episode data
+- 2026-10-12 03:14:48 tcv19-grim-sleeper-40: rendering (final, seed 1)
+- 2026-10-12 03:15:09 tcv21-kohberger-40: rendered in 684s
