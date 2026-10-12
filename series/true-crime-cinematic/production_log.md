@@ -111,3 +111,7 @@
 - 2026-10-12 03:15:48 tcv21-kohberger-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_21_kohberger_40s.mp4 (43.9s, 16.8 MB, sha256 db9890c006e4)
 - 2026-10-12 03:15:57 produce 18: regenerating episode data
 - 2026-10-12 03:15:57 tcv18-gilgo-40: rendering (final, seed 1)
+- 2026-10-12 03:26:08 tcv19-grim-sleeper-40: rendered in 680s
+- 2026-10-12 03:26:44 tcv19-grim-sleeper-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_19_grim_sleeper_40s.mp4 (43.1s, 19.7 MB, sha256 e3c223e64626)
+- 2026-10-12 03:26:46 produce 22: regenerating episode data
+- 2026-10-12 03:26:46 tcv22-mcveigh-40: rendering (final, seed 1)
