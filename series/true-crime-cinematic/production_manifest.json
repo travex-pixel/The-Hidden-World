@@ -1,1573 +1,1610 @@
 {
-  "series": "THE HIDDEN WORLD: Case Files (cinematic, engine v3)",
-  "videos": {
-    "01": {
-      "id": "tcv01-chamberlain",
-      "title": "She Got Life for Murder. The 'Blood' Was Sound-Deadener. #Shorts",
-      "file": "true_crime_01.mp4",
-      "status": "verified_automated",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "media": {
-        "duration": 84.286,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 31027798,
-        "mean_volume_db": -16.3,
-        "max_volume_db": -1.8
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2527,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.8,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.7
-      },
-      "asr_word_error_rate": 0.086,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_01",
-      "sha256": "3edd8f9144b4f1a4b0610b53e138546bab3b17c084b84f36b8e6d612cbbedb8b",
-      "output": "series/true-crime-cinematic/output/true_crime_01.mp4",
-      "verified": "2026-10-11T09:15:09",
-      "episode_summary": "Azaria Chamberlain (Uluru, 1980-2012): a mother jailed for life on 'baby's blood' that was factory sound-deadener; a jacket found by chance freed her; a 2012 inquest confirmed a dingo took her daughter.",
-      "editorial_review": {
-        "reviewed": "2026-10-11",
-        "status": "passed",
-        "animation_director": {
-          "defects_found_and_fixed": [
-            "hand-to-face gesture read as a wave -> rebuilt as hand-to-mouth",
-            "judge/coroner too small at the bench (scale 0.42 -> 0.5)",
-            "verdict shot opened on an empty wall -> tighter start on the bench, Lindy revealed by the tilt down",
-            "frontal walk read as a kick -> 3/4 walk with shorter stride",
-            "magnifier hidden by the bench -> aimed above it",
-            "label boxes collided with the judge's head -> bench figures moved off-centre",
-            "night search lacked tension -> subtle handheld camera"
-          ],
-          "notes": "Character continuity holds across shots by construction (same characters/figures/*.json): Lindy (court/release outfits), Michael, judge, scientist recur unchanged. Remaining limit: 2D cut-out rig, rigid limbs, simple hands."
-        },
-        "documentary_producer": {
-          "checks": [
-            "narration identical to the reviewed, sourced v1 script (tests/test_cinematic.py)",
-            "every shot's claims are 'established' with >=2 sources (shot_manifest validation)",
-            "no depiction of Azaria, the dingo, violence or blood; dashboard 'spray' drawn dark brown",
-            "real people are illustrated representations, not likenesses; others generic",
-            "every reconstruction tagged ILLUSTRATION; jacket shot tagged NOT THE ACTUAL JACKET",
-            "no invented dialogue; prosecution case labelled as a claim; no 'declared innocent'"
-          ],
-          "defects_found_and_fixed": []
-        },
-        "retention_strategist": {
-          "hook": "0-3.6 s: Lindy in the dock under the judge, 'A mother was jailed for life for murdering her baby', gavel hit; 2.9 s later the 'NOT BLOOD' reversal.",
-          "pacing": "14 shots, average 6.0 s, longest 10.7 s (science reveal, three staged callouts); payoff in the 2012 finding; memorial close with fade.",
-          "defects_found_and_fixed": [
-            "captions overflowed the Shorts UI (right 1039 px, bottom 1563 px) -> 800 px safe width at y 1380, long words scaled"
-          ]
-        },
-        "software_test_engineer": {
-          "result": "16/16 QA checks pass; 87 unit tests pass",
-          "defects_found_and_fixed": [
-            "motion-energy metric could not tell a slideshow from animation (v1 also passed) -> kept only as a frozen-picture detector; character action now probed from the renderer",
-            "test module name collision between the two make_episodes.py files -> loaded by path",
-            "self-matching pgrep in a wait loop -> waits on the real PID"
-          ]
-        }
-      },
-      "before_after": "series/true-crime-cinematic/qa/before_after_01.png"
+ "series": "THE HIDDEN WORLD: Case Files (cinematic, engine v3)",
+ "videos": {
+  "01": {
+   "id": "tcv01-chamberlain",
+   "title": "She Got Life for Murder. The 'Blood' Was Sound-Deadener. #Shorts",
+   "file": "true_crime_01.mp4",
+   "status": "verified_automated",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "media": {
+    "duration": 84.286,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 31027798,
+    "mean_volume_db": -16.3,
+    "max_volume_db": -1.8
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2527,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.8,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.7
+   },
+   "asr_word_error_rate": 0.086,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_01",
+   "sha256": "3edd8f9144b4f1a4b0610b53e138546bab3b17c084b84f36b8e6d612cbbedb8b",
+   "output": "series/true-crime-cinematic/output/true_crime_01.mp4",
+   "verified": "2026-10-11T09:15:09",
+   "episode_summary": "Azaria Chamberlain (Uluru, 1980-2012): a mother jailed for life on 'baby's blood' that was factory sound-deadener; a jacket found by chance freed her; a 2012 inquest confirmed a dingo took her daughter.",
+   "editorial_review": {
+    "reviewed": "2026-10-11",
+    "status": "passed",
+    "animation_director": {
+     "defects_found_and_fixed": [
+      "hand-to-face gesture read as a wave -> rebuilt as hand-to-mouth",
+      "judge/coroner too small at the bench (scale 0.42 -> 0.5)",
+      "verdict shot opened on an empty wall -> tighter start on the bench, Lindy revealed by the tilt down",
+      "frontal walk read as a kick -> 3/4 walk with shorter stride",
+      "magnifier hidden by the bench -> aimed above it",
+      "label boxes collided with the judge's head -> bench figures moved off-centre",
+      "night search lacked tension -> subtle handheld camera"
+     ],
+     "notes": "Character continuity holds across shots by construction (same characters/figures/*.json): Lindy (court/release outfits), Michael, judge, scientist recur unchanged. Remaining limit: 2D cut-out rig, rigid limbs, simple hands."
     },
-    "02": {
-      "id": "tcv02-unabomber",
-      "title": "How the Unabomber's Own Words Gave Him Away #Shorts",
-      "file": "true_crime_02.mp4",
-      "media": {
-        "duration": 87.632,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 31044356,
-        "mean_volume_db": -16.4,
-        "max_volume_db": -1.6
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2628,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -18.9,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.6
-      },
-      "asr_word_error_rate": 0.09,
-      "frames_sampled": 15,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_02",
-      "status": "verified_automated",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "sha256": "0c574d5aa4f2da0169e656ad3ba757c51130b0ac236049e6f0738f70f94d34ca",
-      "output": "series/true-crime-cinematic/output/true_crime_02.mp4",
-      "verified": "2026-10-11T09:16:25",
-      "episode_summary": "The Unabomber (USA, 1978-1998): seventeen years without a name, until the FBI published his manifesto and his own family recognised the writing - and a twisted old saying.",
-      "editorial_review": {
-        "reviewed": "2026-10-11",
-        "status": "passed",
-        "animation_director": {
-          "defects_found_and_fixed": [
-            "fog drawn over the arrest figures -> fog layer moved behind the figures' plane",
-            "newspaper prop read as held by David and Linda -> removed",
-            "sentence card covered Ted's head -> moved up",
-            "shot sizes monotonous (75 % medium) -> close-ups on the typing silhouette and on David, a wide of the press hall"
-          ],
-          "notes": "The bomber is a silhouette until he is named (cabin arrest), then the same Ted character appears unchanged at arrest and plea. David, Linda, agents and analyst recur unchanged."
-        },
-        "documentary_producer": {
-          "checks": [
-            "narration identical to the reviewed, sourced v1 script",
-            "every claim 'established' with >=2 sources",
-            "no explosion, injury or bomb construction: the device is a sealed parcel only",
-            "no real masthead, letter or FBI document imitated; page text illegible except verified quotes",
-            "the plea (Jan 1998) and sentence (May 1998) dated separately as sourced"
-          ],
-          "defects_found_and_fixed": [
-            "offer card in first person ('PUBLISH MY... I WILL') would have been a fabricated quote -> third person, only 'desist from terrorism' quoted",
-            "'Hired privately by the family' not supported (a family friend, PI Susan Swanson, took the letters to an outside analyst) -> 'Arranged via a family friend'"
-          ]
-        },
-        "retention_strategist": {
-          "hook": "0-7.9 s: 'For seventeen years, the FBI hunted a bomber it couldn't name' over a SUSPECT: UNKNOWN board; 'His own words. And his own brother.' land as two pinned cards.",
-          "pacing": "12 shots, average 7.3 s; the phrase reveal highlights EAT and HAVE on the spoken words; ending lands on 'His own family did.' with a two-shot and fade.",
-          "defects_found_and_fixed": [
-            "shot-size monotony flagged by the QA gate (blocked publishing) -> fixed"
-          ]
-        },
-        "software_test_engineer": {
-          "result": "16/16 QA checks pass after the fix; the first render was correctly refused by the gate (slideshow risk)",
-          "defects_found_and_fixed": [
-            "render inputs hashed so a verified render is reused instead of re-rendered (produce.py)"
-          ]
-        }
-      }
+    "documentary_producer": {
+     "checks": [
+      "narration identical to the reviewed, sourced v1 script (tests/test_cinematic.py)",
+      "every shot's claims are 'established' with >=2 sources (shot_manifest validation)",
+      "no depiction of Azaria, the dingo, violence or blood; dashboard 'spray' drawn dark brown",
+      "real people are illustrated representations, not likenesses; others generic",
+      "every reconstruction tagged ILLUSTRATION; jacket shot tagged NOT THE ACTUAL JACKET",
+      "no invented dialogue; prosecution case labelled as a claim; no 'declared innocent'"
+     ],
+     "defects_found_and_fixed": []
     },
-    "03": {
-      "id": "tcv03-d4vd-case",
-      "title": "A Teen Was Found in a Pop Star's Tesla. Where the D4vd Case Stands Now #Shorts",
-      "file": "true_crime_d4vd_case.mp4",
-      "media": {
-        "duration": 79.091,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 34022010,
-        "mean_volume_db": -16.6,
-        "max_volume_db": -1.6
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2371,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.4,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.6
-      },
-      "asr_word_error_rate": 0.077,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_03",
-      "status": "verified_automated",
-      "sha256": "65eec5eee0fee28fe908b4c323a0123227ed4f13e8976a22828cd8b23d59cb37",
-      "output": "series/true-crime-cinematic/output/true_crime_d4vd_case.mp4",
-      "verified": "2026-10-11T09:32:24",
-      "next_task": "Before publishing: re-check the 19 Oct 2026 hearing status; then upload (YouTube: altered/synthetic content = Yes).",
-      "episode_summary": "The D4vd case (Los Angeles, ongoing): remains found in a Tesla registered to the singer; his arrest, the charges (allegations), his not-guilty pleas, the July holding order, the change of counsel, and the next hearing. Presumption of innocence stated; no real person depicted.",
-      "legal_status_verified": "2026-10-11",
-      "research": "episodes/tcv03-d4vd-case/research.md",
-      "soundtrack": {
-        "engine": "pipeline/score.py (original, procedural; no samples or third-party audio)",
-        "mix": "pipeline/mixdown.py",
-        "sections": "A hook s01-s02 \u00b7 B investigation s03-s05 \u00b7 C questions s06-s09 \u00b7 D cliffhanger s10-s11 (impact on 'trial' at 70.4 s) \u00b7 E exit s12",
-        "licence": "original work generated in this repository; no attribution required (see docs/CREDITS.md)"
-      },
-      "editorial_review": {
-        "reviewed": "2026-10-11",
-        "method": "rendered artefact: 24 extracted frames + 12 re-render frames, measured audio (pipeline/audio_qa.py), offline ASR transcript; no human listening test was possible in this environment",
-        "round_1": {
-          "executive_producer": {
-            "decision": "pass with medium issues",
-            "findings": [
-              {
-                "t": "0-9 s",
-                "severity": "info",
-                "note": "Hook lands: tow yard, smell, remains, then the registration card and D4VD caption by ~9 s."
-              },
-              {
-                "t": "23.6-33.6 s",
-                "severity": "medium",
-                "note": "Press-room shot near-static for 10 s (only card rows change)."
-              },
-              {
-                "t": "33.6-42.7 s",
-                "severity": "medium",
-                "note": "Hills shot dark and static for 9 s; house partly under the timeline card in preview."
-              }
-            ]
-          },
-          "composer_sound_designer": {
-            "decision": "pass with low issues",
-            "findings": [
-              {
-                "t": "whole",
-                "severity": "low",
-                "note": "Restrained build: section phone-band medians A -41.9, B -45.4, C -43.5, D -40.9, E -41.8 dB; drops at 6 s and 51 s are intentional."
-              },
-              {
-                "t": "70.4 s",
-                "severity": "info",
-                "note": "Cliffhanger impact lands on 'trial'; unresolved cluster carries into the exit."
-              }
-            ]
-          },
-          "audio_engineer": {
-            "decision": "fail",
-            "findings": [
-              {
-                "t": "78.9-79.1 s",
-                "severity": "high",
-                "note": "Rain effect bed held at ~-32 dBFS and was chopped in the last 20 ms while the picture faded; the ending check (250 ms average) missed it."
-              },
-              {
-                "t": "0-15 s",
-                "severity": "info",
-                "note": "First word at 0.31 s (intended 0.25), gap bed 14.5 dB under speech, no holes; -14.2 LUFS, TP -1.6 dBTP, mono 0 LU."
-              }
-            ]
-          },
-          "legal_factual": {
-            "decision": "pass with low issues",
-            "findings": [
-              {
-                "t": "42.7-48.2 s",
-                "severity": "low",
-                "note": "Defence quote card should say the lawyers were former counsel (they withdrew 31 Aug 2026)."
-              },
-              {
-                "t": "whole",
-                "severity": "info",
-                "note": "All narration attributed and sourced (13 claims, >=2 sources each); 'pleaded not guilty', 'not a verdict', 'presumed innocent' present; next date 19 Oct as scheduled 31 Aug, re-searched 2026-10-11."
-              }
-            ]
-          },
-          "mobile_retention": {
-            "decision": "pass with medium issues",
-            "findings": [
-              {
-                "t": "23-43 s",
-                "severity": "medium",
-                "note": "Two longest shots back to back at the midpoint with little motion: drop-off risk."
-              },
-              {
-                "t": "23.6-33.6 s",
-                "severity": "low",
-                "note": "Charge card text 26-29 px is small on a phone."
-              }
-            ]
-          }
-        },
-        "fixes_applied": [
-          "master tail fade in pipeline/mixdown.py (all score and effects end with the picture) + stricter ending check (last 50 ms < -48 dBFS) + regression test",
-          "press room: keyed push-in wide -> medium -> close, handheld; podium extended to the floor",
-          "hills: stronger push toward the house, handheld; house moved clear of the timeline card",
-          "card text enlarged (31/29 px)",
-          "'DEFENCE (FORMER COUNSEL)'",
-          "Case Files 01/02 re-mixed with the same fix and re-verified"
-        ],
-        "round_2": {
-          "executive_producer": {
-            "decision": "pass",
-            "note": "Mid-video shots now move (push-ins); every scene adds a new fact; ending lands on the next hearing and the presumption of innocence."
-          },
-          "composer_sound_designer": {
-            "decision": "pass",
-            "note": "Score sections and drops unchanged; exit fades with the picture. Remaining: the build is deliberately restrained; louder D section is a taste call, not changed."
-          },
-          "audio_engineer": {
-            "decision": "pass",
-            "note": "Last 50 ms -95.5 dBFS, last 250 ms -66.2 dBFS; all 10 audio checks pass; full decode clean; A/V within 58 ms."
-          },
-          "legal_factual": {
-            "decision": "pass",
-            "note": "Former-counsel attribution added; no allegation presented as fact; no graphic or tabloid detail; no real person depicted."
-          },
-          "mobile_retention": {
-            "decision": "pass",
-            "note": "Captions inside the safe area (x 105-975, y 1281-1483); cards readable; first 10 s strong."
-          }
-        },
-        "outstanding": [
-          "No human listening test was possible here; levels are measured, not heard.",
-          "The 19 Oct 2026 hearing could be continued after publication; re-check the docket before posting and update the closing line if it moves.",
-          "ASR mishears proper names (Rivas, Elsinore) - the narration itself uses the correct names."
-        ]
-      }
+    "retention_strategist": {
+     "hook": "0-3.6 s: Lindy in the dock under the judge, 'A mother was jailed for life for murdering her baby', gavel hit; 2.9 s later the 'NOT BLOOD' reversal.",
+     "pacing": "14 shots, average 6.0 s, longest 10.7 s (science reveal, three staged callouts); payoff in the 2012 finding; memorial close with fade.",
+     "defects_found_and_fixed": [
+      "captions overflowed the Shorts UI (right 1039 px, bottom 1563 px) -> 800 px safe width at y 1380, long words scaled"
+     ]
     },
-    "08": {
-      "id": "tcv08-lizzie-borden",
-      "title": "Acquitted of Murder. So Why Did She Burn Her Dress? #Shorts",
-      "file": "true_crime_08_lizzie_borden.mp4",
-      "media": {
-        "duration": 79.733,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 35037692,
-        "mean_volume_db": -16.6,
-        "max_volume_db": -1.6
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2392,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -16.7,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.6
-      },
-      "asr_word_error_rate": 0.042,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_08",
-      "status": "verified_automated",
-      "sha256": "0ef027a14049ea08b6ca1dd310519875863eeb71b41d70e049622296a4457635",
-      "output": "series/true-crime-cinematic/output/true_crime_08_lizzie_borden.mp4",
-      "verified": "2026-10-11T11:27:05",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: no claim of guilt; acquitted and officially unsolved; no graphic detail and no weapon shown. The Netflix drama is mentioned, but the script follows the historical record."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "07": {
-      "id": "tcv07-gilgo-beach",
-      "title": "How a Pizza Crust Cracked the Gilgo Beach Case #Shorts",
-      "file": "true_crime_07_gilgo_beach.mp4",
-      "media": {
-        "duration": 77.692,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 32782692,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.2
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2329,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -16.6,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.2
-      },
-      "asr_word_error_rate": 0.094,
-      "frames_sampled": 13,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_07",
-      "status": "verified_automated",
-      "sha256": "a16f4723252c85cdb983f0ea0103e644bed4a408f23c7aa1452d413c2a84af08",
-      "output": "series/true-crime-cinematic/output/true_crime_07_gilgo_beach.mp4",
-      "verified": "2026-10-11T11:30:58",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: the clues are attributed to prosecutors' 2023 filing; 'a DNA link' (mitochondrial), never 'nuclear'. Plea and sentence are stated as fact. The defendant is a silhouette, the family is never mentioned, and the victims are named only on a memorial card."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "06": {
-      "id": "tcv06-whitey-bulger",
-      "title": "16 Years on the Run. A Stray Cat Gave Him Away #Shorts",
-      "file": "true_crime_06_whitey_bulger.mp4",
-      "media": {
-        "duration": 77.857,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 29432575,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.7
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2334,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -18.1,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.7
-      },
-      "asr_word_error_rate": 0.121,
-      "frames_sampled": 13,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_06",
-      "status": "verified_automated",
-      "sha256": "1fc55be1b0bec5beecd5ba96eb80acb05c5d11d51afccf49cb48027a4dbcc819",
-      "output": "series/true-crime-cinematic/output/true_crime_06_whitey_bulger.mp4",
-      "verified": "2026-10-11T11:45:44",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: the builder corrected the brief ('Ten Most Wanted for 16 years' is wrong; it was about 12 years, and 16 is time on the run). The tipster is 'reportedly' a former Miss Iceland and is never named or shown.",
-          "ASR heard 'FBI' as 'FB, yeah' in the opening line. In isolation the same recogniser mishears several spellings of FBI, so this is recogniser noise. It was left as is, with WER 0.121 (limit 0.25)."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "09": {
-      "id": "tcv09-agatha-christie",
-      "title": "The Queen of Mystery Vanished for 11 Days #Shorts",
-      "file": "true_crime_09_agatha_christie.mp4",
-      "media": {
-        "duration": 78.158,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 30945346,
-        "mean_volume_db": -16.6,
-        "max_volume_db": -1.7
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2344,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.7,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.3,
-        "true_peak_dbtp": -1.7
-      },
-      "asr_word_error_rate": 0.11,
-      "frames_sampled": 13,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_09",
-      "status": "verified_automated",
-      "sha256": "265141f63629d3e67e2dbb01aa856546617f92e6a1304aeaf81d70319eb8d8c8",
-      "output": "series/true-crime-cinematic/output/true_crime_09_agatha_christie.mp4",
-      "verified": "2026-10-11T11:49:26",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: not a crime. Search figures are worded 'reported' (a Surrey police letter says the press overstated them), and theories are attributed. The 100th anniversary falls on 3 Dec 2026."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "05": {
-      "id": "tcv05-db-cooper",
-      "title": "He Jumped From a Plane With $200,000 and Vanished #Shorts",
-      "file": "true_crime_05_db_cooper.mp4",
-      "media": {
-        "duration": 79.125,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 34675237,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.6
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2372,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.9,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.6
-      },
-      "asr_word_error_rate": 0.099,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_05",
-      "status": "verified_automated",
-      "sha256": "52aab85d5a380ed10fdfd6d5a5f83fd6eea670731e7bf1dd1d4272abc96db709",
-      "output": "series/true-crime-cinematic/output/true_crime_05_db_cooper.mp4",
-      "verified": "2026-10-11T12:19:48",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: unsolved; no suspect named; Cooper shown as an illustrated representation (not a likeness).",
-          "Fix: the ASR transcript showed Piper reading '$200,000' as 'dollar two, hundred thousand' in the hook. Amounts now have spoken forms, and a test checks every dollar amount."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "04": {
-      "id": "tcv04-louvre-heist",
-      "title": "They Stole France's Crown Jewels in About 7 Minutes #Shorts",
-      "file": "true_crime_04_louvre_heist.mp4",
-      "media": {
-        "duration": 79.5,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 34868573,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.7
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2385,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.9,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.6
-      },
-      "asr_word_error_rate": 0.123,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_04",
-      "status": "verified_automated",
-      "sha256": "9713b40e173fc34ca30a79573fd38c69c8cffb424855e194771e1ce63543c2c5",
-      "output": "series/true-crime-cinematic/output/true_crime_04_louvre_heist.mp4",
-      "verified": "2026-10-11T12:52:22",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script and legal read: ongoing case, so every figure is anonymous, 'charged, none tried, presumed innocent' is narrated, and the password claim is attributed to the 2014 audit, with its use in 2025 marked unconfirmed.",
-          "Fix: 'One year on' changed to 'Almost a year on' (the anniversary is 19 Oct).",
-          "Fix: the camera-shake argument crashed the first render. pipeline/dryrun.mjs was added and now runs every frame of every episode.",
-          "Fix: the ASR transcript showed 'CCTV' was swallowed by the voice. It is now spoken as letters, and the re-render transcript hears it."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "13": {
-      "id": "tcv13-hatton-garden",
-      "title": "The Pensioner Gang That Robbed a Vault #Shorts",
-      "file": "true_crime_13_hatton_garden.mp4",
-      "media": {
-        "duration": 76.923,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 33850012,
-        "mean_volume_db": -16.6,
-        "max_volume_db": -0.7
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2306,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.1,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": false,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.3,
-        "true_peak_dbtp": -0.7
-      },
-      "asr_word_error_rate": 0.074,
-      "frames_sampled": 13,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_13",
-      "status": "failed_qa",
-      "next_task": "inspect qa/ and fix; then re-run qa.py",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: details are attributed to prosecutors; 'largest burglary' appears only as a quote card credited to the prosecution.",
-          "Fix: the first QA run failed audio_no_clipping (AAC overshoot to -0.7 dBTP from an alarm-beep transient). The pipeline now re-measures the encoded true peak and trims; the beeps are also softer. Audio-only rebuild."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "14": {
-      "id": "tcv14-litvinenko",
-      "title": "The Cup of Tea That Left a Radioactive Trail #Shorts",
-      "file": "true_crime_14_litvinenko.mp4",
-      "media": {
-        "duration": 78.567,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 31606281,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.8
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2357,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -18.2,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.8
-      },
-      "asr_word_error_rate": 0.086,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_14",
-      "status": "verified_automated",
-      "sha256": "1f42434182396c0837ccfd722dd61735a8fb9bc55d95deb9044ea4cb8084817f",
-      "output": "series/true-crime-cinematic/output/true_crime_14_litvinenko.mp4",
-      "verified": "2026-10-11T16:16:40",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer and legal read: inquiry and ECHR findings are attributed; both men's denials and Russia's denial are stated; Kovtun's 2022 death was found by the builder and corrected in the brief; everyone is an anonymous silhouette.",
-          "Fix: the bare line 'Polonium-210.' lost its opening consonant in the ASR transcript, so the line became 'It was polonium-210.' and the episode was re-rendered."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "10": {
-      "id": "tcv10-golden-state-killer",
-      "title": "Caught 40 Years Later by a Genealogy Website #Shorts",
-      "file": "true_crime_10_golden_state_killer.mp4",
-      "media": {
-        "duration": 76.567,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 29809696,
-        "mean_volume_db": -16.4,
-        "max_volume_db": -1.7
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2297,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.6,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.7
-      },
-      "asr_word_error_rate": 0.048,
-      "frames_sampled": 13,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_10",
-      "status": "verified_automated",
-      "sha256": "94520e382efa108514afe254d60498ea385c0581a52345a1e9f1fb83c10db4e4",
-      "output": "series/true-crime-cinematic/output/true_crime_10_golden_state_killer.mp4",
-      "verified": "2026-10-11T15:49:17",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: the suspect appears only as a silhouette; crimes are summarised and never described; the plea, sentence and fired-for-shoplifting facts are sourced. BTK model: question hook, with the DNA vial in the first and last frames."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "12": {
-      "id": "tcv12-son-of-sam",
-      "title": "A Parking Ticket Caught the Son of Sam #Shorts",
-      "file": "true_crime_12_son_of_sam.mp4",
-      "media": {
-        "duration": 75.75,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 31452409,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.7
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2272,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -18.0,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.3,
-        "true_peak_dbtp": -1.7
-      },
-      "asr_word_error_rate": 0.052,
-      "frames_sampled": 13,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_12",
-      "status": "verified_automated",
-      "sha256": "ef1ca847cc5cc1dbd113e964ad36cbf1c3e64a70e344eaf47dc92f71076fa499",
-      "output": "series/true-crime-cinematic/output/true_crime_12_son_of_sam.mp4",
-      "verified": "2026-10-11T15:53:19",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: no shooting is described or shown; Berkowitz appears only as a silhouette; the witness is not named. The video ends on the parking ticket, so there is no picture fade-out; the audio still fades."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "11": {
-      "id": "tcv11-great-train-robbery",
-      "title": "Britain's Biggest Robbery, Undone by a Monopoly Board #Shorts",
-      "file": "true_crime_11_great_train_robbery.mp4",
-      "media": {
-        "duration": 74.6,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 30972552,
-        "mean_volume_db": -16.6,
-        "max_volume_db": -1.6
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2238,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -18.0,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.6
-      },
-      "asr_word_error_rate": 0.081,
-      "frames_sampled": 13,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_11",
-      "status": "verified_automated",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "sha256": "d840392743e3fb10f08ef5bb52f088087a15d77b5be7320e04da0f973aacb9d9",
-      "output": "series/true-crime-cinematic/output/true_crime_11_great_train_robbery.mp4",
-      "verified": "2026-10-11T16:14:39",
-      "editorial_review": {
-        "date": "2026-10-11",
-        "checks": [
-          "script and legal read by the producer",
-          "contact sheet and frame review",
-          "ASR transcript read for mispronunciations"
-        ],
-        "notes": [
-          "Producer script read: the 'real cash' Monopoly story is labelled a legend, never proven; the board game is generic with no trade dress; the driver is mentioned respectfully.",
-          "Fix: the first QA run failed music_never_masks (p5 8.9 dB) because the cliff impact landed on 'arrested'. Music drops under the return and callback lines, and a softer hit, brought it to p5 14.8 dB. Audio-only rebuild."
-        ],
-        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
-      }
-    },
-    "16": {
-      "id": "tcv16-boston-strangler",
-      "title": "50 Years Later, a Water Bottle Linked DeSalvo to a Boston Strangler Murder #Shorts",
-      "file": "true_crime_16_boston_strangler.mp4",
-      "media": {
-        "duration": 79.733,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 33134805,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.7
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2392,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.8,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.7
-      },
-      "asr_word_error_rate": 0.066,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_16",
-      "status": "verified_automated",
-      "sha256": "f26f6a42120da42c1d685c2042b6a9f38ad1115c54bded602eabf75db7a184f5",
-      "output": "series/true-crime-cinematic/output/true_crime_16_boston_strangler.mp4",
-      "verified": "2026-10-12T01:58:02",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
-    },
-    "15": {
-      "id": "tcv15-grim-sleeper",
-      "title": "Police Posed as a Busboy to Get a Killer's Pizza Crust #Shorts",
-      "file": "true_crime_15_grim_sleeper.mp4",
-      "media": {
-        "duration": 78.467,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 33879628,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.7
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2354,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.1,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.3,
-        "true_peak_dbtp": -1.7
-      },
-      "asr_word_error_rate": 0.071,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_15",
-      "status": "verified_automated",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
-      "sha256": "3391dda5176922c3d14447e563bc3b7cb3a6196445ffee73f518318d9b68648f",
-      "output": "series/true-crime-cinematic/output/true_crime_15_grim_sleeper.mp4",
-      "verified": "2026-10-12T02:08:16"
-    },
-    "17": {
-      "id": "tcv17-kohberger",
-      "title": "The Trash Bag That Led to the Idaho Killer #Shorts",
-      "file": "true_crime_17_kohberger.mp4",
-      "media": {
-        "duration": 80.25,
-        "width": 1080,
-        "height": 1920,
-        "fps": 30.0,
-        "video_codec": "h264",
-        "audio_codec": "aac",
-        "size_bytes": 30324870,
-        "mean_volume_db": -16.7,
-        "max_volume_db": -1.6
-      },
-      "media_checks": {
-        "has_video_stream": true,
-        "has_audio_stream": true,
-        "codec_h264": true,
-        "codec_aac": true,
-        "dimensions": true,
-        "fps": true,
-        "audio_video_duration_match": true,
-        "duration_matches_timeline": true,
-        "decodes_without_errors": true,
-        "audio_not_silent": true,
-        "no_long_silence_gaps": true,
-        "no_clipping": true
-      },
-      "series_qa": {
-        "media_checks_pass": true,
-        "duration_in_window": true,
-        "dimensions_1080x1920": true,
-        "frames_checked": 2406,
-        "no_black_frames": true,
-        "captions_timed_within_scenes": true,
-        "speech_db_min": -17.9,
-        "dialogue_clear_of_music": true,
-        "all_passed": true,
-        "loudness_near_target": true,
-        "true_peak_ok": true,
-        "narration_intelligible_asr": true,
-        "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": true,
-        "audio_opening_speech_steady": true,
-        "audio_opening_no_holes": true,
-        "audio_narration_on_time": true,
-        "audio_music_never_masks": true,
-        "audio_music_audible": true,
-        "audio_no_clipping": true,
-        "audio_no_long_silence": true,
-        "audio_ending_intentional": true,
-        "audio_mono_compatible": true,
-        "audio_av_duration_match": true,
-        "shot_variety_and_character_action": true,
-        "every_shot_sourced_and_tagged": true
-      },
-      "loudness": {
-        "integrated_lufs": -14.3,
-        "true_peak_dbtp": -1.6
-      },
-      "asr_word_error_rate": 0.044,
-      "frames_sampled": 14,
-      "qa_dir": "series/true-crime-cinematic/qa/true_crime_17",
-      "status": "verified_automated",
-      "sha256": "edeccc9da786c38bc195d8a95d751a4cd791cca070e23c3806782c706ef3b7e4",
-      "output": "series/true-crime-cinematic/output/true_crime_17_kohberger.mp4",
-      "verified": "2026-10-12T02:17:49",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+    "software_test_engineer": {
+     "result": "16/16 QA checks pass; 87 unit tests pass",
+     "defects_found_and_fixed": [
+      "motion-energy metric could not tell a slideshow from animation (v1 also passed) -> kept only as a frozen-picture detector; character action now probed from the renderer",
+      "test module name collision between the two make_episodes.py files -> loaded by path",
+      "self-matching pgrep in a wait loop -> waits on the real PID"
+     ]
     }
+   },
+   "before_after": "series/true-crime-cinematic/qa/before_after_01.png"
   },
-  "updated": "2026-10-12T02:17:49",
-  "project": {
-    "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
-    "audit": "docs/STUDIO_AUDIT.md",
-    "licences": "docs/CREDITS.md (Case Files table)",
-    "readme": "series/true-crime-cinematic/README.md",
-    "one_command": "python series/true-crime-cinematic/produce.py <n|all>   (resumable; render cached by input hash)",
-    "cost": "0 - no paid API, subscription, trial or cloud renderer; runs on CPU (this session: 4 cores, no GPU) or GitHub Actions",
-    "tools": [
-      "Piper TTS (piper-tts 1.3, voice en_US-libritts_r-medium CC BY 4.0)",
-      "onnx (word timing)",
-      "Playwright 1.56.1 + Chromium (SVG frames)",
-      "FFmpeg 6.1 (libx264/AAC, loudnorm, ebur128)",
-      "NumPy, Pillow",
-      "sherpa-onnx Whisper tiny.en (QA only)"
+  "02": {
+   "id": "tcv02-unabomber",
+   "title": "How the Unabomber's Own Words Gave Him Away #Shorts",
+   "file": "true_crime_02.mp4",
+   "media": {
+    "duration": 87.632,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 31044356,
+    "mean_volume_db": -16.4,
+    "max_volume_db": -1.6
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2628,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.9,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+   },
+   "asr_word_error_rate": 0.09,
+   "frames_sampled": 15,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_02",
+   "status": "verified_automated",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "sha256": "0c574d5aa4f2da0169e656ad3ba757c51130b0ac236049e6f0738f70f94d34ca",
+   "output": "series/true-crime-cinematic/output/true_crime_02.mp4",
+   "verified": "2026-10-11T09:16:25",
+   "episode_summary": "The Unabomber (USA, 1978-1998): seventeen years without a name, until the FBI published his manifesto and his own family recognised the writing - and a twisted old saying.",
+   "editorial_review": {
+    "reviewed": "2026-10-11",
+    "status": "passed",
+    "animation_director": {
+     "defects_found_and_fixed": [
+      "fog drawn over the arrest figures -> fog layer moved behind the figures' plane",
+      "newspaper prop read as held by David and Linda -> removed",
+      "sentence card covered Ted's head -> moved up",
+      "shot sizes monotonous (75 % medium) -> close-ups on the typing silhouette and on David, a wide of the press hall"
+     ],
+     "notes": "The bomber is a silhouette until he is named (cabin arrest), then the same Ted character appears unchanged at arrest and plea. David, Linda, agents and analyst recur unchanged."
+    },
+    "documentary_producer": {
+     "checks": [
+      "narration identical to the reviewed, sourced v1 script",
+      "every claim 'established' with >=2 sources",
+      "no explosion, injury or bomb construction: the device is a sealed parcel only",
+      "no real masthead, letter or FBI document imitated; page text illegible except verified quotes",
+      "the plea (Jan 1998) and sentence (May 1998) dated separately as sourced"
+     ],
+     "defects_found_and_fixed": [
+      "offer card in first person ('PUBLISH MY... I WILL') would have been a fabricated quote -> third person, only 'desist from terrorism' quoted",
+      "'Hired privately by the family' not supported (a family friend, PI Susan Swanson, took the letters to an outside analyst) -> 'Arranged via a family friend'"
+     ]
+    },
+    "retention_strategist": {
+     "hook": "0-7.9 s: 'For seventeen years, the FBI hunted a bomber it couldn't name' over a SUSPECT: UNKNOWN board; 'His own words. And his own brother.' land as two pinned cards.",
+     "pacing": "12 shots, average 7.3 s; the phrase reveal highlights EAT and HAVE on the spoken words; ending lands on 'His own family did.' with a two-shot and fade.",
+     "defects_found_and_fixed": [
+      "shot-size monotony flagged by the QA gate (blocked publishing) -> fixed"
+     ]
+    },
+    "software_test_engineer": {
+     "result": "16/16 QA checks pass after the fix; the first render was correctly refused by the gate (slideshow risk)",
+     "defects_found_and_fixed": [
+      "render inputs hashed so a verified render is reused instead of re-rendered (produce.py)"
+     ]
+    }
+   }
+  },
+  "03": {
+   "id": "tcv03-d4vd-case",
+   "title": "A Teen Was Found in a Pop Star's Tesla. Where the D4vd Case Stands Now #Shorts",
+   "file": "true_crime_d4vd_case.mp4",
+   "media": {
+    "duration": 79.091,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 34022010,
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.6
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2371,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.4,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+   },
+   "asr_word_error_rate": 0.077,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_03",
+   "status": "verified_automated",
+   "sha256": "65eec5eee0fee28fe908b4c323a0123227ed4f13e8976a22828cd8b23d59cb37",
+   "output": "series/true-crime-cinematic/output/true_crime_d4vd_case.mp4",
+   "verified": "2026-10-11T09:32:24",
+   "next_task": "Before publishing: re-check the 19 Oct 2026 hearing status; then upload (YouTube: altered/synthetic content = Yes).",
+   "episode_summary": "The D4vd case (Los Angeles, ongoing): remains found in a Tesla registered to the singer; his arrest, the charges (allegations), his not-guilty pleas, the July holding order, the change of counsel, and the next hearing. Presumption of innocence stated; no real person depicted.",
+   "legal_status_verified": "2026-10-11",
+   "research": "episodes/tcv03-d4vd-case/research.md",
+   "soundtrack": {
+    "engine": "pipeline/score.py (original, procedural; no samples or third-party audio)",
+    "mix": "pipeline/mixdown.py",
+    "sections": "A hook s01-s02 · B investigation s03-s05 · C questions s06-s09 · D cliffhanger s10-s11 (impact on 'trial' at 70.4 s) · E exit s12",
+    "licence": "original work generated in this repository; no attribution required (see docs/CREDITS.md)"
+   },
+   "editorial_review": {
+    "reviewed": "2026-10-11",
+    "method": "rendered artefact: 24 extracted frames + 12 re-render frames, measured audio (pipeline/audio_qa.py), offline ASR transcript; no human listening test was possible in this environment",
+    "round_1": {
+     "executive_producer": {
+      "decision": "pass with medium issues",
+      "findings": [
+       {
+        "t": "0-9 s",
+        "severity": "info",
+        "note": "Hook lands: tow yard, smell, remains, then the registration card and D4VD caption by ~9 s."
+       },
+       {
+        "t": "23.6-33.6 s",
+        "severity": "medium",
+        "note": "Press-room shot near-static for 10 s (only card rows change)."
+       },
+       {
+        "t": "33.6-42.7 s",
+        "severity": "medium",
+        "note": "Hills shot dark and static for 9 s; house partly under the timeline card in preview."
+       }
+      ]
+     },
+     "composer_sound_designer": {
+      "decision": "pass with low issues",
+      "findings": [
+       {
+        "t": "whole",
+        "severity": "low",
+        "note": "Restrained build: section phone-band medians A -41.9, B -45.4, C -43.5, D -40.9, E -41.8 dB; drops at 6 s and 51 s are intentional."
+       },
+       {
+        "t": "70.4 s",
+        "severity": "info",
+        "note": "Cliffhanger impact lands on 'trial'; unresolved cluster carries into the exit."
+       }
+      ]
+     },
+     "audio_engineer": {
+      "decision": "fail",
+      "findings": [
+       {
+        "t": "78.9-79.1 s",
+        "severity": "high",
+        "note": "Rain effect bed held at ~-32 dBFS and was chopped in the last 20 ms while the picture faded; the ending check (250 ms average) missed it."
+       },
+       {
+        "t": "0-15 s",
+        "severity": "info",
+        "note": "First word at 0.31 s (intended 0.25), gap bed 14.5 dB under speech, no holes; -14.2 LUFS, TP -1.6 dBTP, mono 0 LU."
+       }
+      ]
+     },
+     "legal_factual": {
+      "decision": "pass with low issues",
+      "findings": [
+       {
+        "t": "42.7-48.2 s",
+        "severity": "low",
+        "note": "Defence quote card should say the lawyers were former counsel (they withdrew 31 Aug 2026)."
+       },
+       {
+        "t": "whole",
+        "severity": "info",
+        "note": "All narration attributed and sourced (13 claims, >=2 sources each); 'pleaded not guilty', 'not a verdict', 'presumed innocent' present; next date 19 Oct as scheduled 31 Aug, re-searched 2026-10-11."
+       }
+      ]
+     },
+     "mobile_retention": {
+      "decision": "pass with medium issues",
+      "findings": [
+       {
+        "t": "23-43 s",
+        "severity": "medium",
+        "note": "Two longest shots back to back at the midpoint with little motion: drop-off risk."
+       },
+       {
+        "t": "23.6-33.6 s",
+        "severity": "low",
+        "note": "Charge card text 26-29 px is small on a phone."
+       }
+      ]
+     }
+    },
+    "fixes_applied": [
+     "master tail fade in pipeline/mixdown.py (all score and effects end with the picture) + stricter ending check (last 50 ms < -48 dBFS) + regression test",
+     "press room: keyed push-in wide -> medium -> close, handheld; podium extended to the floor",
+     "hills: stronger push toward the house, handheld; house moved clear of the timeline card",
+     "card text enlarged (31/29 px)",
+     "'DEFENCE (FORMER COUNSEL)'",
+     "Case Files 01/02 re-mixed with the same fix and re-verified"
     ],
-    "studio_checks": [
-      "pipeline/verify.py media + full decode",
-      "pipeline/series.series_qa",
-      "EBU R128 loudness",
-      "offline ASR WER",
-      "pipeline/caption_safe.py (Shorts safe area, real font metrics)",
-      "pipeline/motion_qa.py (frozen/static picture)",
-      "pipeline/shot_probe.mjs + pipeline/shot_manifest.py (per-shot manifest, slideshow risk, character action, sources, tags)"
+    "round_2": {
+     "executive_producer": {
+      "decision": "pass",
+      "note": "Mid-video shots now move (push-ins); every scene adds a new fact; ending lands on the next hearing and the presumption of innocence."
+     },
+     "composer_sound_designer": {
+      "decision": "pass",
+      "note": "Score sections and drops unchanged; exit fades with the picture. Remaining: the build is deliberately restrained; louder D section is a taste call, not changed."
+     },
+     "audio_engineer": {
+      "decision": "pass",
+      "note": "Last 50 ms -95.5 dBFS, last 250 ms -66.2 dBFS; all 10 audio checks pass; full decode clean; A/V within 58 ms."
+     },
+     "legal_factual": {
+      "decision": "pass",
+      "note": "Former-counsel attribution added; no allegation presented as fact; no graphic or tabloid detail; no real person depicted."
+     },
+     "mobile_retention": {
+      "decision": "pass",
+      "note": "Captions inside the safe area (x 105-975, y 1281-1483); cards readable; first 10 s strong."
+     }
+    },
+    "outstanding": [
+     "No human listening test was possible here; levels are measured, not heard.",
+     "The 19 Oct 2026 hearing could be continued after publication; re-check the docket before posting and update the closing line if it moves.",
+     "ASR mishears proper names (Rivas, Elsinore) - the narration itself uses the correct names."
+    ]
+   }
+  },
+  "08": {
+   "id": "tcv08-lizzie-borden",
+   "title": "Acquitted of Murder. So Why Did She Burn Her Dress? #Shorts",
+   "file": "true_crime_08_lizzie_borden.mp4",
+   "media": {
+    "duration": 79.733,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 35037692,
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.6
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2392,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -16.7,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+   },
+   "asr_word_error_rate": 0.042,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_08",
+   "status": "verified_automated",
+   "sha256": "0ef027a14049ea08b6ca1dd310519875863eeb71b41d70e049622296a4457635",
+   "output": "series/true-crime-cinematic/output/true_crime_08_lizzie_borden.mp4",
+   "verified": "2026-10-11T11:27:05",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
     ],
-    "reference_evaluated": "calesthio/OpenMontage (AGPL-3.0): no code copied; adopted ideas = slideshow-risk score, beat-change check, shot-language fields (see docs/STUDIO_AUDIT.md section 5)"
+    "notes": [
+     "Producer script read: no claim of guilt; acquitted and officially unsolved; no graphic detail and no weapon shown. The Netflix drama is mentioned, but the script follows the historical record."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "07": {
+   "id": "tcv07-gilgo-beach",
+   "title": "How a Pizza Crust Cracked the Gilgo Beach Case #Shorts",
+   "file": "true_crime_07_gilgo_beach.mp4",
+   "media": {
+    "duration": 77.692,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 32782692,
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.2
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2329,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -16.6,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.2
+   },
+   "asr_word_error_rate": 0.094,
+   "frames_sampled": 13,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_07",
+   "status": "verified_automated",
+   "sha256": "a16f4723252c85cdb983f0ea0103e644bed4a408f23c7aa1452d413c2a84af08",
+   "output": "series/true-crime-cinematic/output/true_crime_07_gilgo_beach.mp4",
+   "verified": "2026-10-11T11:30:58",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: the clues are attributed to prosecutors' 2023 filing; 'a DNA link' (mitochondrial), never 'nuclear'. Plea and sentence are stated as fact. The defendant is a silhouette, the family is never mentioned, and the victims are named only on a memorial card."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "06": {
+   "id": "tcv06-whitey-bulger",
+   "title": "16 Years on the Run. A Stray Cat Gave Him Away #Shorts",
+   "file": "true_crime_06_whitey_bulger.mp4",
+   "media": {
+    "duration": 77.857,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 29432575,
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.7
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2334,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.1,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.7
+   },
+   "asr_word_error_rate": 0.121,
+   "frames_sampled": 13,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_06",
+   "status": "verified_automated",
+   "sha256": "1fc55be1b0bec5beecd5ba96eb80acb05c5d11d51afccf49cb48027a4dbcc819",
+   "output": "series/true-crime-cinematic/output/true_crime_06_whitey_bulger.mp4",
+   "verified": "2026-10-11T11:45:44",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: the builder corrected the brief ('Ten Most Wanted for 16 years' is wrong; it was about 12 years, and 16 is time on the run). The tipster is 'reportedly' a former Miss Iceland and is never named or shown.",
+     "ASR heard 'FBI' as 'FB, yeah' in the opening line. In isolation the same recogniser mishears several spellings of FBI, so this is recogniser noise. It was left as is, with WER 0.121 (limit 0.25)."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "09": {
+   "id": "tcv09-agatha-christie",
+   "title": "The Queen of Mystery Vanished for 11 Days #Shorts",
+   "file": "true_crime_09_agatha_christie.mp4",
+   "media": {
+    "duration": 78.158,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 30945346,
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.7
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2344,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.7,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.3,
+    "true_peak_dbtp": -1.7
+   },
+   "asr_word_error_rate": 0.11,
+   "frames_sampled": 13,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_09",
+   "status": "verified_automated",
+   "sha256": "265141f63629d3e67e2dbb01aa856546617f92e6a1304aeaf81d70319eb8d8c8",
+   "output": "series/true-crime-cinematic/output/true_crime_09_agatha_christie.mp4",
+   "verified": "2026-10-11T11:49:26",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: not a crime. Search figures are worded 'reported' (a Surrey police letter says the press overstated them), and theories are attributed. The 100th anniversary falls on 3 Dec 2026."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "05": {
+   "id": "tcv05-db-cooper",
+   "title": "He Jumped From a Plane With $200,000 and Vanished #Shorts",
+   "file": "true_crime_05_db_cooper.mp4",
+   "media": {
+    "duration": 79.125,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 34675237,
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.6
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2372,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.9,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+   },
+   "asr_word_error_rate": 0.099,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_05",
+   "status": "verified_automated",
+   "sha256": "52aab85d5a380ed10fdfd6d5a5f83fd6eea670731e7bf1dd1d4272abc96db709",
+   "output": "series/true-crime-cinematic/output/true_crime_05_db_cooper.mp4",
+   "verified": "2026-10-11T12:19:48",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: unsolved; no suspect named; Cooper shown as an illustrated representation (not a likeness).",
+     "Fix: the ASR transcript showed Piper reading '$200,000' as 'dollar two, hundred thousand' in the hook. Amounts now have spoken forms, and a test checks every dollar amount."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "04": {
+   "id": "tcv04-louvre-heist",
+   "title": "They Stole France's Crown Jewels in About 7 Minutes #Shorts",
+   "file": "true_crime_04_louvre_heist.mp4",
+   "media": {
+    "duration": 79.5,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 34868573,
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.7
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2385,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.9,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+   },
+   "asr_word_error_rate": 0.123,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_04",
+   "status": "verified_automated",
+   "sha256": "9713b40e173fc34ca30a79573fd38c69c8cffb424855e194771e1ce63543c2c5",
+   "output": "series/true-crime-cinematic/output/true_crime_04_louvre_heist.mp4",
+   "verified": "2026-10-11T12:52:22",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script and legal read: ongoing case, so every figure is anonymous, 'charged, none tried, presumed innocent' is narrated, and the password claim is attributed to the 2014 audit, with its use in 2025 marked unconfirmed.",
+     "Fix: 'One year on' changed to 'Almost a year on' (the anniversary is 19 Oct).",
+     "Fix: the camera-shake argument crashed the first render. pipeline/dryrun.mjs was added and now runs every frame of every episode.",
+     "Fix: the ASR transcript showed 'CCTV' was swallowed by the voice. It is now spoken as letters, and the re-render transcript hears it."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "13": {
+   "id": "tcv13-hatton-garden",
+   "title": "The Pensioner Gang That Robbed a Vault #Shorts",
+   "file": "true_crime_13_hatton_garden.mp4",
+   "media": {
+    "duration": 76.923,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 33850012,
+    "mean_volume_db": -16.6,
+    "max_volume_db": -0.7
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2306,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.1,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": false,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.3,
+    "true_peak_dbtp": -0.7
+   },
+   "asr_word_error_rate": 0.074,
+   "frames_sampled": 13,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_13",
+   "status": "failed_qa",
+   "next_task": "inspect qa/ and fix; then re-run qa.py",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: details are attributed to prosecutors; 'largest burglary' appears only as a quote card credited to the prosecution.",
+     "Fix: the first QA run failed audio_no_clipping (AAC overshoot to -0.7 dBTP from an alarm-beep transient). The pipeline now re-measures the encoded true peak and trims; the beeps are also softer. Audio-only rebuild."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "14": {
+   "id": "tcv14-litvinenko",
+   "title": "The Cup of Tea That Left a Radioactive Trail #Shorts",
+   "file": "true_crime_14_litvinenko.mp4",
+   "media": {
+    "duration": 78.567,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 31606281,
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.8
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2357,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.2,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.8
+   },
+   "asr_word_error_rate": 0.086,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_14",
+   "status": "verified_automated",
+   "sha256": "1f42434182396c0837ccfd722dd61735a8fb9bc55d95deb9044ea4cb8084817f",
+   "output": "series/true-crime-cinematic/output/true_crime_14_litvinenko.mp4",
+   "verified": "2026-10-11T16:16:40",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer and legal read: inquiry and ECHR findings are attributed; both men's denials and Russia's denial are stated; Kovtun's 2022 death was found by the builder and corrected in the brief; everyone is an anonymous silhouette.",
+     "Fix: the bare line 'Polonium-210.' lost its opening consonant in the ASR transcript, so the line became 'It was polonium-210.' and the episode was re-rendered."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "10": {
+   "id": "tcv10-golden-state-killer",
+   "title": "Caught 40 Years Later by a Genealogy Website #Shorts",
+   "file": "true_crime_10_golden_state_killer.mp4",
+   "media": {
+    "duration": 76.567,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 29809696,
+    "mean_volume_db": -16.4,
+    "max_volume_db": -1.7
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2297,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.6,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.7
+   },
+   "asr_word_error_rate": 0.048,
+   "frames_sampled": 13,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_10",
+   "status": "verified_automated",
+   "sha256": "94520e382efa108514afe254d60498ea385c0581a52345a1e9f1fb83c10db4e4",
+   "output": "series/true-crime-cinematic/output/true_crime_10_golden_state_killer.mp4",
+   "verified": "2026-10-11T15:49:17",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: the suspect appears only as a silhouette; crimes are summarised and never described; the plea, sentence and fired-for-shoplifting facts are sourced. BTK model: question hook, with the DNA vial in the first and last frames."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "12": {
+   "id": "tcv12-son-of-sam",
+   "title": "A Parking Ticket Caught the Son of Sam #Shorts",
+   "file": "true_crime_12_son_of_sam.mp4",
+   "media": {
+    "duration": 75.75,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 31452409,
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.7
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2272,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.0,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.3,
+    "true_peak_dbtp": -1.7
+   },
+   "asr_word_error_rate": 0.052,
+   "frames_sampled": 13,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_12",
+   "status": "verified_automated",
+   "sha256": "ef1ca847cc5cc1dbd113e964ad36cbf1c3e64a70e344eaf47dc92f71076fa499",
+   "output": "series/true-crime-cinematic/output/true_crime_12_son_of_sam.mp4",
+   "verified": "2026-10-11T15:53:19",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: no shooting is described or shown; Berkowitz appears only as a silhouette; the witness is not named. The video ends on the parking ticket, so there is no picture fade-out; the audio still fades."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "11": {
+   "id": "tcv11-great-train-robbery",
+   "title": "Britain's Biggest Robbery, Undone by a Monopoly Board #Shorts",
+   "file": "true_crime_11_great_train_robbery.mp4",
+   "media": {
+    "duration": 74.6,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 30972552,
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.6
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2238,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.0,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+   },
+   "asr_word_error_rate": 0.081,
+   "frames_sampled": 13,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_11",
+   "status": "verified_automated",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "sha256": "d840392743e3fb10f08ef5bb52f088087a15d77b5be7320e04da0f973aacb9d9",
+   "output": "series/true-crime-cinematic/output/true_crime_11_great_train_robbery.mp4",
+   "verified": "2026-10-11T16:14:39",
+   "editorial_review": {
+    "date": "2026-10-11",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: the 'real cash' Monopoly story is labelled a legend, never proven; the board game is generic with no trade dress; the driver is mentioned respectfully.",
+     "Fix: the first QA run failed music_never_masks (p5 8.9 dB) because the cliff impact landed on 'arrested'. Music drops under the return and callback lines, and a softer hit, brought it to p5 14.8 dB. Audio-only rebuild."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "16": {
+   "id": "tcv16-boston-strangler",
+   "title": "50 Years Later, a Water Bottle Linked DeSalvo to a Boston Strangler Murder #Shorts",
+   "file": "true_crime_16_boston_strangler.mp4",
+   "media": {
+    "duration": 79.733,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 33134805,
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.7
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2392,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.8,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.7
+   },
+   "asr_word_error_rate": 0.066,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_16",
+   "status": "verified_automated",
+   "sha256": "f26f6a42120da42c1d685c2042b6a9f38ad1115c54bded602eabf75db7a184f5",
+   "output": "series/true-crime-cinematic/output/true_crime_16_boston_strangler.mp4",
+   "verified": "2026-10-12T01:58:02",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-12",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: the DNA is stated to link DeSalvo to Mary Sullivan's murder ONLY, and whether he killed all 13 is said to be debated; the nephew whose bottle was taken is unnamed; the series title was corrected so it does not overstate the finding."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "15": {
+   "id": "tcv15-grim-sleeper",
+   "title": "Police Posed as a Busboy to Get a Killer's Pizza Crust #Shorts",
+   "file": "true_crime_15_grim_sleeper.mp4",
+   "media": {
+    "duration": 78.467,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 33879628,
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.7
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2354,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.1,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.3,
+    "true_peak_dbtp": -1.7
+   },
+   "asr_word_error_rate": 0.071,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_15",
+   "status": "verified_automated",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "sha256": "3391dda5176922c3d14447e563bc3b7cb3a6196445ffee73f518318d9b68648f",
+   "output": "series/true-crime-cinematic/output/true_crime_15_grim_sleeper.mp4",
+   "verified": "2026-10-12T02:08:16",
+   "editorial_review": {
+    "date": "2026-10-12",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer script read: Franklin appears only as a silhouette; his son is unnamed and the card says 'not a suspect'; 'first familial DNA arrest' is attributed to officials; the community group that pressed for answers is acknowledged; victims are named only on a memorial card.",
+     "Fix: the first QA run failed av_duration_match because ffmpeg's -shortest cut the copied video 4 frames early. The pipeline now muxes to the silent video's exact length with padded audio. Re-mux only."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
+  },
+  "17": {
+   "id": "tcv17-kohberger",
+   "title": "The Trash Bag That Led to the Idaho Killer #Shorts",
+   "file": "true_crime_17_kohberger.mp4",
+   "media": {
+    "duration": 80.25,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "size_bytes": 30324870,
+    "mean_volume_db": -16.7,
+    "max_volume_db": -1.6
+   },
+   "media_checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+   },
+   "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2406,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.9,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+   },
+   "loudness": {
+    "integrated_lufs": -14.3,
+    "true_peak_dbtp": -1.6
+   },
+   "asr_word_error_rate": 0.044,
+   "frames_sampled": 14,
+   "qa_dir": "series/true-crime-cinematic/qa/true_crime_17",
+   "status": "verified_automated",
+   "sha256": "edeccc9da786c38bc195d8a95d751a4cd791cca070e23c3806782c706ef3b7e4",
+   "output": "series/true-crime-cinematic/output/true_crime_17_kohberger.mp4",
+   "verified": "2026-10-12T02:17:49",
+   "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+   "editorial_review": {
+    "date": "2026-10-12",
+    "checks": [
+     "script and legal read by the producer",
+     "contact sheet and frame review",
+     "ASR transcript read for mispronunciations"
+    ],
+    "notes": [
+     "Producer and legal read: the July 2026 post-conviction petition was verified independently (NBC, Spectrum, Quartz; dates set for June 2027, no ruling). The car-video clue is now attributed to prosecutors; the callback says 'helped name him'; Kohberger appears only as a silhouette; his family is not named; the victims are named only on a memorial card."
+    ],
+    "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+   }
   }
+ },
+ "updated": "2026-10-12T02:17:49",
+ "project": {
+  "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
+  "audit": "docs/STUDIO_AUDIT.md",
+  "licences": "docs/CREDITS.md (Case Files table)",
+  "readme": "series/true-crime-cinematic/README.md",
+  "one_command": "python series/true-crime-cinematic/produce.py <n|all>   (resumable; render cached by input hash)",
+  "cost": "0 - no paid API, subscription, trial or cloud renderer; runs on CPU (this session: 4 cores, no GPU) or GitHub Actions",
+  "tools": [
+   "Piper TTS (piper-tts 1.3, voice en_US-libritts_r-medium CC BY 4.0)",
+   "onnx (word timing)",
+   "Playwright 1.56.1 + Chromium (SVG frames)",
+   "FFmpeg 6.1 (libx264/AAC, loudnorm, ebur128)",
+   "NumPy, Pillow",
+   "sherpa-onnx Whisper tiny.en (QA only)"
+  ],
+  "studio_checks": [
+   "pipeline/verify.py media + full decode",
+   "pipeline/series.series_qa",
+   "EBU R128 loudness",
+   "offline ASR WER",
+   "pipeline/caption_safe.py (Shorts safe area, real font metrics)",
+   "pipeline/motion_qa.py (frozen/static picture)",
+   "pipeline/shot_probe.mjs + pipeline/shot_manifest.py (per-shot manifest, slideshow risk, character action, sources, tags)"
+  ],
+  "reference_evaluated": "calesthio/OpenMontage (AGPL-3.0): no code copied; adopted ideas = slideshow-risk score, beat-change check, shot-language fields (see docs/STUDIO_AUDIT.md section 5)"
+ }
 }

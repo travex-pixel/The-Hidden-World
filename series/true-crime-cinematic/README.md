@@ -16,6 +16,9 @@
 | 12 | `true_crime_12_son_of_sam.mp4` (archived outside git) | Son of Sam and the parking ticket (1976–77) | see `production_manifest.json` |
 | 13 | `true_crime_13_hatton_garden.mp4` (archived outside git) | The Hatton Garden pensioner heist (2015) | see `production_manifest.json` |
 | 14 | `true_crime_14_litvinenko.mp4` (archived outside git) | Litvinenko and the radioactive teapot (2006) | see `production_manifest.json` |
+| 15 | `true_crime_15_grim_sleeper.mp4` (archived outside git) | The Grim Sleeper and the pizza crust (1985–2016) | see `production_manifest.json` |
+| 16 | `true_crime_16_boston_strangler.mp4` (archived outside git) | The Boston Strangler and the water bottle (1962–2013) | see `production_manifest.json` |
+| 17 | `true_crime_17_kohberger.mp4` (archived outside git) | The Idaho case and the family's trash (2022–2026) | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

@@ -160,3 +160,53 @@ Which case should we crack next? 👇 Tell us in the comments, and follow for mo
 
 A UK public inquiry (2016) and the European Court of Human Rights (2021) made findings; no one has been tried. Andrei Lugovoi denies involvement, Dmitry Kovtun denied it before his death in 2022, and Russia denies any role.
 Illustrated reconstruction · AI narration
+
+---
+
+# Case Files 15–17: "Caught by…" (made 2026-10-12)
+**Posting order.** Post 15, 16, 17, one a day. Each video's ending teases the next one:
+
+> Grim Sleeper → Boston Strangler → Kohberger
+
+Kohberger, the last video, asks viewers to choose the next case. All three open the Gilgo Beach way: an everyday object meets an infamous killer.
+
+## 15: The Grim Sleeper (`true_crime_15_grim_sleeper.mp4`)
+A pizza crust helped catch the Gilgo Beach killer. It wasn't the first time. 🍕
+
+For 25 years, Los Angeles police had a killer's DNA but no name.
+A state DNA search flagged a relative. Detectives followed one man to a pizza restaurant.
+What happened at that table ended the case.
+
+Should police be allowed to take DNA from your plate? 👇 Follow for the next case.
+
+#TrueCrime #GrimSleeper #ColdCase #DNA #LosAngeles #Forensics #TrueCrimeCommunity #CaseFiles
+
+Remembering the ten victims and their families. The silhouette is an illustration, not a likeness.
+Illustrated reconstruction · AI narration
+
+## 16: The Boston Strangler (`true_crime_16_boston_strangler.mp4`)
+A man confessed to being the Boston Strangler. For decades, many doubted him. Then someone threw away a water bottle. 🧴
+
+Thirteen women were killed in Boston between 1962 and 1964.
+One man confessed, but he was never tried for the killings.
+Fifty years later, detectives quietly followed his relatives…
+
+Do you think one man committed all thirteen? 👇 Follow for the next case.
+
+#BostonStrangler #TrueCrime #ColdCase #DNA #Boston #UnsolvedMysteries #TrueCrimeCommunity #CaseFiles
+
+The DNA links DeSalvo to Mary Sullivan's murder only; whether he killed all thirteen is still debated. His relative is not named.
+Illustrated reconstruction · AI narration
+
+## 17: Kohberger (`true_crime_17_kohberger.mp4`)
+Investigators had the Idaho killer's DNA. What they didn't have was a name. 🗑️
+
+A knife sheath. A white car on camera. A family tree.
+Then investigators went to a curb in Pennsylvania.
+
+What clue should we cover next? 👇 Comment below, and follow for more cases.
+
+#TrueCrime #Idaho #Kohberger #DNA #GeneticGenealogy #ForensicScience #TrueCrimeCommunity #CaseFiles
+
+Clues as described in court filings; there was no trial. He pleaded guilty in 2025. In July 2026 he reportedly filed to withdraw his plea, and no ruling had been made as of 12 Oct 2026. In memory of Ethan, Kaylee, Xana and Madison.
+Illustrated reconstruction · AI narration
