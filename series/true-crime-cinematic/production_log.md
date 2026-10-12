@@ -140,3 +140,10 @@
 - 2026-10-12 08:17:56 tcv25-capone-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_25_capone_40s.mp4 (45.8s, 21.4 MB, sha256 83a230b79f14)
 - 2026-10-12 08:49:02 produce 27: regenerating episode data
 - 2026-10-12 08:49:02 tcv27-madoff-40: rendering (final, seed 1)
+- 2026-10-12 08:58:30 tcv27-madoff-40: rendered in 568s
+- 2026-10-12 08:59:04 tcv27-madoff-40: QA FAILED ['audio_opening_no_holes']; frames and details in series/true-crime-cinematic/qa/true_crime_27
+- 2026-10-12 08:59:04 produce 26: regenerating episode data
+- 2026-10-12 08:59:04 tcv26-el-chapo-40: rendering (final, seed 1)
+- 2026-10-12 09:00:16 produce 27: regenerating episode data
+- 2026-10-12 09:00:16 tcv27-madoff-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 09:00:58 tcv27-madoff-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_27_madoff_40s.mp4 (43.5s, 18.7 MB, sha256 a433704f4049)

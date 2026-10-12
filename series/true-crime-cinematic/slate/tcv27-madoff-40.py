@@ -68,7 +68,7 @@ def build(h):
     for sc in scenes:
         sc["section"] = sections[sc["id"]]
     scenes[1]["music_gain_db"] = -3   # the stakes card: the score steps back
-    scenes[2]["music_drop"] = True    # reveal: the trades were never made
+    scenes[2]["music_gain_db"] = -4   # reveal: the trades were never made (a full drop here left a hole inside the first 15 s)
     scenes[5]["music_drop"] = True    # reveal: the confession
     # no fade to black on the last scene: the final frame is the statement, big and centred, under the burned-in end question,
     # so the video loops cleanly back to its first frame
