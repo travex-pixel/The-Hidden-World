@@ -1,0 +1,175 @@
+{
+  "episode": "hist002-peasant-day",
+  "file": "out/hist002-peasant-day-v2/hist002-peasant-day.mp4",
+  "duration": 130.771,
+  "checks": [
+    {
+      "check": "foot_slip_planted_px",
+      "status": "PASS",
+      "value": 0.0,
+      "detail": "max movement of a planted foot as drawn, between frames, over 10560 samples (rest px); turns excluded"
+    },
+    {
+      "check": "camera_accel_px_per_frame2",
+      "status": "WARN",
+      "value": 4.65,
+      "detail": "peak at t=69.93s (excl. cuts/shakes); <2.5 reads as smooth"
+    },
+    {
+      "check": "dolly_scale_rate_per_frame",
+      "status": "WARN",
+      "value": 0.0226,
+      "detail": "max change of acting-plane scale per frame (fast punch-ins > 0.02)"
+    },
+    {
+      "check": "character_scale_consistency",
+      "status": "PASS",
+      "value": {
+        "pov": 0.022,
+        "reeve_walter": 0.021,
+        "villager_agnes": 0.0,
+        "villager_tom": 0.0,
+        "abbot": 0.0
+      },
+      "detail": "relative spread of each character's authored height across shots (same rig spec everywhere)"
+    },
+    {
+      "check": "black_frames",
+      "status": "PASS",
+      "value": 0,
+      "detail": "frames with mean luma < 16 outside the opening/closing fades"
+    },
+    {
+      "check": "longest_frozen_stretch_s",
+      "status": "PASS",
+      "value": 0.17,
+      "detail": "near-identical consecutive frames, ending t=115.50s"
+    },
+    {
+      "check": "unplanned_jumps",
+      "status": "PASS",
+      "value": [],
+      "detail": "frame differences > 18.0 away from planned transitions"
+    },
+    {
+      "check": "motion_in_every_scene",
+      "status": "PASS",
+      "value": {
+        "s00_cold": 1.45,
+        "s01_knock": 1.48,
+        "s02_reap": 0.69,
+        "s03_meal": 0.35,
+        "s04_grind": 0.57,
+        "s05_busted": 0.63,
+        "s06_abbey": 1.08,
+        "s06b_parlour": 1.23,
+        "s07_revolt": 0.62,
+        "s08_hide": 0.61
+      },
+      "detail": "mean frame difference per scene (0 = static image)"
+    },
+    {
+      "check": "subtitle_timing",
+      "status": "PASS",
+      "value": {
+        "cues": 26,
+        "max_chars_per_s": 17.6,
+        "too_short": [],
+        "overlaps": 0
+      },
+      "detail": "reading speed <= 22 chars/s, every cue >= 0.9 s"
+    },
+    {
+      "check": "subtitle_voice_alignment",
+      "status": "PASS",
+      "value": 2.53,
+      "detail": "speech-band energy inside subtitle cues vs outside (higher = voice sits under its subtitle)"
+    },
+    {
+      "check": "dead_air_s",
+      "status": "PASS",
+      "value": {
+        "longest_gap": 1.65,
+        "opening_silence": 0.75,
+        "outro_after_last_line": 1.1
+      },
+      "detail": "gaps without speech (music/SFX and motion continue)"
+    },
+    {
+      "check": "loudness",
+      "status": "PASS",
+      "value": {
+        "integrated_lufs": -16.0,
+        "true_peak_dbfs": -2.5,
+        "lra_lu": 4.3
+      },
+      "detail": "target -16 LUFS integrated, true peak <= -1 dBFS (same targets as the true-crime documentaries)"
+    },
+    {
+      "check": "voice_over_music_db",
+      "status": "PASS",
+      "value": {
+        "median_db": 23.4,
+        "p5_db": 17.2,
+        "windows": 1400
+      },
+      "detail": "voice level over score + ambience while someone speaks (50 ms windows); aim >= 20 dB median for phone speakers"
+    },
+    {
+      "check": "asr_word_error_rate",
+      "status": "PASS",
+      "value": {
+        "corpus_wer": 0.082,
+        "lines_over_25pct": [
+          [
+            "...and 'dry' boons.",
+            "And dry booze"
+          ]
+        ]
+      },
+      "detail": "offline recogniser on the MP4's audio vs the script; mismatches are leads for a listen, not proof of an error"
+    },
+    {
+      "check": "claims_flagged_for_review",
+      "status": "WARN",
+      "value": {
+        "non_established_claims": [
+          {
+            "id": "P9",
+            "type": "plausible",
+            "text": "The top-down layout of the floor, the number of stones shown and people walking over them are our reconstruction."
+          }
+        ],
+        "sources_verified_by_snippet_only": [
+          "S1",
+          "S3",
+          "S4",
+          "S6",
+          "S11",
+          "S17",
+          "S19",
+          "S20",
+          "S22",
+          "S24",
+          "S25",
+          "S27",
+          "S28",
+          "S31",
+          "S32",
+          "S35",
+          "S36",
+          "S37",
+          "S38",
+          "S53"
+        ]
+      },
+      "detail": "a historian/editor must confirm these before publishing"
+    }
+  ],
+  "summary": {
+    "PASS": 12,
+    "WARN": 3,
+    "FAIL": 0
+  },
+  "visual_review": "storyboard.png and transitions.png must be inspected by a person; automated checks do not judge beauty."
+}

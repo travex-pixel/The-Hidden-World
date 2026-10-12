@@ -1,0 +1,362 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR) on the MP4's own audio track",
+ "lines": 26,
+ "corpus_wer": 0.082,
+ "lines_over_25pct": [
+  {
+   "scene": "s03_meal",
+   "who": "narrator_history",
+   "t": 57.467,
+   "script": "...and 'dry' boons.",
+   "asr": "And dry booze",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "boons",
+     "booze"
+    ]
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "scene": "s00_cold",
+   "who": "narrator_history",
+   "t": 0.75,
+   "script": "In 1331, an abbot set his town's hand mills into his floor.",
+   "asr": "In 1331, an abbot set his town's hand mills into his floor.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s00_cold",
+   "who": "narrator_history",
+   "t": 5.44,
+   "script": "How does a hand mill end up underfoot? Start your day at dawn.",
+   "asr": "How does a hand mill end up underfoot? Start your day at dawn.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s01_knock",
+   "who": "narrator_history",
+   "t": 12.276,
+   "script": "Dawn. Somebody is hammering on your door.",
+   "asr": "Dawn, somebody is hammering on your door.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s01_knock",
+   "who": "reeve_walter",
+   "t": 16.634,
+   "script": "Up! It's a boon day. The whole household, in the lord's field!",
+   "asr": "Oh it's a boonday the whole household in the lord's field",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "up",
+     "oh"
+    ],
+    [
+     "boon",
+     "∅"
+    ],
+    [
+     "day",
+     "boonday"
+    ]
+   ]
+  },
+  {
+   "scene": "s01_knock",
+   "who": "narrator_history",
+   "t": 21.366,
+   "script": "Today you work for the lord. For free.",
+   "asr": "Today you work for the Lord. For free.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s02_reap",
+   "who": "narrator_history",
+   "t": 26.196,
+   "script": "At harvest, every household owed the lord extra days of reaping.",
+   "asr": "At harvest, every household owed the Lord extra days of reaping.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s02_reap",
+   "who": "narrator_history",
+   "t": 30.582,
+   "script": "Sickle in one hand, stalks in the other. Cut. Bind. Stack. All day.",
+   "asr": "Sickle in one hand stalks in the other. Cut and bind. Stark. All day.",
+   "wer": 0.154,
+   "diffs": [
+    [
+     "∅",
+     "and"
+    ],
+    [
+     "stack",
+     "stark"
+    ]
+   ]
+  },
+  {
+   "scene": "s02_reap",
+   "who": "narrator_history",
+   "t": 38.029,
+   "script": "Walter the reeve, a neighbour the village chose, notches it on his tally.",
+   "asr": "Walter the Reeve, a neighbor the village chose, notches it on his tally.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "neighbour",
+     "neighbor"
+    ]
+   ]
+  },
+  {
+   "scene": "s03_meal",
+   "who": "narrator_history",
+   "t": 43.302,
+   "script": "The good news? On boon days, the lord had to feed you.",
+   "asr": "The good news: on boondays the lord had to feed you.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "boon",
+     "∅"
+    ],
+    [
+     "days",
+     "boondays"
+    ]
+   ]
+  },
+  {
+   "scene": "s03_meal",
+   "who": "narrator_history",
+   "t": 47.754,
+   "script": "Bread. Cheese. Bacon, if you were lucky. And ale.",
+   "asr": "Bread, trees, bacon if you were lucky, and ale.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "cheese",
+     "trees"
+    ]
+   ]
+  },
+  {
+   "scene": "s03_meal",
+   "who": "narrator_history",
+   "t": 53.235,
+   "script": "Manor records literally sorted the days into 'ale' boons...",
+   "asr": "Manor records literally sorted the days into ale booms.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "boons",
+     "booms"
+    ]
+   ]
+  },
+  {
+   "scene": "s03_meal",
+   "who": "narrator_history",
+   "t": 57.467,
+   "script": "...and 'dry' boons.",
+   "asr": "And dry booze",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "boons",
+     "booze"
+    ]
+   ]
+  },
+  {
+   "scene": "s04_grind",
+   "who": "narrator_history",
+   "t": 60.192,
+   "script": "Sunset. You've gleaned some grain of your own.",
+   "asr": "Sunset, you've gleaned some grain of your own.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s04_grind",
+   "who": "narrator_history",
+   "t": 64.731,
+   "script": "So you grind it at home on your hand mill, the quern. What could go wrong?",
+   "asr": "So you grinded at home on your hand mill, the quern. What could go wrong?",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "grind",
+     "∅"
+    ],
+    [
+     "it",
+     "grinded"
+    ]
+   ]
+  },
+  {
+   "scene": "s05_busted",
+   "who": "reeve_walter",
+   "t": 70.401,
+   "script": "Is that a hand mill? In this house?",
+   "asr": "Is that a hand mill in this house",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s05_busted",
+   "who": "narrator_history",
+   "t": 73.832,
+   "script": "On many manors, you had to grind at the lord's mill, and hand him a cut of your grain.",
+   "asr": "On many manners you had to grind at the Lord's mill and hand him a cut of your grain.",
+   "wer": 0.053,
+   "diffs": [
+    [
+     "manors",
+     "manners"
+    ]
+   ]
+  },
+  {
+   "scene": "s05_busted",
+   "who": "narrator_history",
+   "t": 79.394,
+   "script": "Home grinding dodged his fee. So lords banned hand mills.",
+   "asr": "Home grinding dodged his fee. So Lord's band hand mills.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "lords",
+     "lord's"
+    ],
+    [
+     "banned",
+     "band"
+    ]
+   ]
+  },
+  {
+   "scene": "s06_abbey",
+   "who": "narrator_history",
+   "t": 85.79,
+   "script": "In 1331, the abbot of St Albans seized the town's hand mills...",
+   "asr": "In 1331, the abbot of St Albans sees the town's hand mills.",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "seized",
+     "sees"
+    ]
+   ]
+  },
+  {
+   "scene": "s06_abbey",
+   "who": "narrator_history",
+   "t": 91.226,
+   "script": "...and set the millstones into the floor of his parlour. As a 'memorial'.",
+   "asr": "and set the millstones into the floor of his parlor. As a memorial.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "parlour",
+     "parlor"
+    ]
+   ]
+  },
+  {
+   "scene": "s06b_parlour",
+   "who": "narrator_history",
+   "t": 97.433,
+   "script": "So the abbey walked on the town's querns. Every day.",
+   "asr": "So the abbey walked on the town's querns. Every day.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s07_revolt",
+   "who": "narrator_history",
+   "t": 103.233,
+   "script": "Fifty years later came the revolt of 1381...",
+   "asr": "50 years later came the revolt of 1381.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "fifty",
+     "50"
+    ]
+   ]
+  },
+  {
+   "scene": "s07_revolt",
+   "who": "narrator_history",
+   "t": 107.409,
+   "script": "...the townsfolk prised up those stones and smashed them.",
+   "asr": "The townsfolk prized up those stones and smashed them.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "prised",
+     "prized"
+    ]
+   ]
+  },
+  {
+   "scene": "s07_revolt",
+   "who": "narrator_history",
+   "t": 111.503,
+   "script": "Then they handed out the pieces like blessed bread at church.",
+   "asr": "Then they handed out the pieces like blessed bread at church.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "s08_hide",
+   "who": "narrator_history",
+   "t": 116.189,
+   "script": "Back home, you hide the quern under the straw.",
+   "asr": "Back home you hide the coin under the straw",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "quern",
+     "coin"
+    ]
+   ]
+  },
+  {
+   "scene": "s08_hide",
+   "who": "narrator_history",
+   "t": 119.71,
+   "script": "Your field. Your flour. Your rules. For tonight.",
+   "asr": "Your field your flower your rules for tonight",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "flour",
+     "flower"
+    ]
+   ]
+  },
+  {
+   "scene": "s08_hide",
+   "who": "narrator_history",
+   "t": 126.665,
+   "script": "Next time: you become a Roman gladiator.",
+   "asr": "Next time you become a Roman Gladiator.",
+   "wer": 0.0,
+   "diffs": []
+  }
+ ],
+ "note": "ASR mistakes are expected on old words and names; a mismatch is a lead for a human listen, not proof of a defect."
+}
