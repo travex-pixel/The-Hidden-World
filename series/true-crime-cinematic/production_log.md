@@ -130,3 +130,5 @@
 - 2026-10-12 06:40:01 tcv24-jho-low-40: rendering (final, seed 1)
 - 2026-10-12 06:49:24 tcv24-jho-low-40: rendered in 563s
 - 2026-10-12 06:49:59 tcv24-jho-low-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_24_jho_low_40s.mp4 (45.0s, 18.4 MB, sha256 b4882c99b53a)
+- 2026-10-12 07:54:02 produce 25: regenerating episode data
+- 2026-10-12 07:54:02 tcv25-capone-40: rendering (final, seed 1)
