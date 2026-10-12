@@ -124,3 +124,5 @@
 - 2026-10-12 03:34:56 tcv22-mcveigh-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_22_mcveigh_40s.mp4 (44.6s, 21.4 MB, sha256 1b116a009205)
 - 2026-10-12 05:39:07 produce 23: regenerating episode data
 - 2026-10-12 05:39:07 tcv23-hushpuppi-40: rendering (final, seed 1)
+- 2026-10-12 05:48:39 tcv23-hushpuppi-40: rendered in 572s
+- 2026-10-12 05:49:14 tcv23-hushpuppi-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_23_hushpuppi_40s.mp4 (42.4s, 17.0 MB, sha256 64dbcb37fa02)
