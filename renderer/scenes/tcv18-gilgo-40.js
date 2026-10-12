@@ -342,7 +342,7 @@
 
     // 5 - surveillance from an unmarked car: the toss on Fifth Avenue (2023 filing)
     gb18_watch(ctx) {
-      const wat = WT(ctx, 0, 1, 0.4), l2 = LS(ctx, 1, 1.3), tos = WT(ctx, 1, 4, 2.6), box = WT(ctx, 1, 7, 3.2), can = WT(ctx, 1, 11, 4.4);
+      const wat = WT(ctx, 0, 2, 0.5), l2 = LS(ctx, 1, 1.4), tos = WT(ctx, 1, 4, 2.6), box = WT(ctx, 1, 7, 3.2), can = WT(ctx, 1, 11, 4.4);
       const CAN = { x: 660, y: 1072, s: 0.4 }, walkEnd = tos - 0.45;
       const xAt = tt => lerp(250, 540, clamp((tt - 0.2) / (walkEnd - 0.2), 0, 1));
       return E.cine.shot(ctx, {
@@ -398,9 +398,7 @@
 
     // 8 - the guilty plea (8 April 2026, before any trial) and the sentence (17 June 2026); one line for the women
     gb18_plea(ctx) {
-      const t = ctx.t, pg = WT(ctx, 0, 3, 0.9), gu = WT(ctx, 0, 4, 1.2), sev = WT(ctx, 0, 6, 1.6), eig = WT(ctx, 0, 11, 3.0), life = WT(ctx, 1, 0, 3.8), par = WT(ctx, 1, 2, 4.4);
-      const memo = () => { const k = seg(t, eig + 0.2, eig + 0.7); if (k <= 0) return '';
-        return `<g opacity="${f1(k)}">${panel(150, 1150, 780, 84, 0.62)}<text x="540" y="1205" text-anchor="middle" ${TYPE} font-weight="700" font-size="32" letter-spacing="3" fill="#e8dcc0">IN MEMORY OF THE EIGHT WOMEN</text></g>`; };
+      const pg = WT(ctx, 0, 3, 0.9), gu = WT(ctx, 0, 4, 1.2), sev = WT(ctx, 0, 6, 1.6), eig = WT(ctx, 0, 11, 3.0), life = WT(ctx, 1, 0, 3.8), par = WT(ctx, 1, 2, 4.4);
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { modern: true, dock: false }, grade: 'cold', cam: { from: { x: 0, y: 30, z: 1.0 }, to: { x: 50, y: 10, z: 1.12 }, handheld: 1 },
         figures: [
@@ -410,8 +408,7 @@
           { id: 'gb7_suit', x: 650, y: 1770, scale: 0.95, dir: -1, turn: 0.15, pose: 'sit', silhouette: 'cool', keys: [{ at: pg - 0.5, pose: 'stand', dur: 0.5 }, { at: gu, pose: 'hands_together', dur: 0.4 }, { at: life, pose: 'bowed', dur: 0.5 }] }
         ],
         overlays: [
-          { type: 'card', at: 0.15, x: 80, y: 400, w: 920, h: 330, rows: [{ text: '8 APRIL 2026 · BEFORE ANY TRIAL', fs: 28, colour: '#6b665c' }, { text: 'GUILTY: 7 MURDERS', fs: 54, colour: '#8e1f18', at: gu - 0.1 }, { text: '+ ADMITTED AN 8TH', fs: 40, at: eig - 0.15 }, { text: 'LIFE WITHOUT PAROLE', fs: 46, colour: '#8e1f18', at: life - 0.1 }] },
-          { type: 'svg', at: eig + 0.2, svg: memo }
+          { type: 'card', at: 0.15, x: 80, y: 850, w: 920, h: 400, rows: [{ text: '8 APRIL 2026 · BEFORE ANY TRIAL', fs: 28, colour: '#6b665c' }, { text: 'GUILTY: 7 MURDERS', fs: 54, colour: '#8e1f18', at: gu - 0.1 }, { text: '+ ADMITTED AN 8TH', fs: 40, at: eig - 0.15 }, { text: 'LIFE WITHOUT PAROLE', fs: 46, colour: '#8e1f18', at: life - 0.1 }, { text: 'IN MEMORY OF THE EIGHT WOMEN', fs: 26, colour: '#6b665c', at: life + 0.3 }] }
         ],
         tag: 'ILLUSTRATION · ANONYMOUS FIGURES'
       });

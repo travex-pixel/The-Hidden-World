@@ -25,12 +25,12 @@ def build(h):
           emph=["decade,", "cold."], min_d=2.6, pad=0.2, tr="push"),
         # B - the clue chain (prosecutors' 2023 filing)
         S("s03_truck", "gb18_truck", [N("Prosecutors said a truck a witness saw led a 2022 task force to him.")],
-          "tension", ["G_task", "G_truck", "G_name"], sfx=[fx(0.1, "typing", 0.4), fw(0, 3, "click", 0.45), fw(0, 13, "hit", 0.45, -0.05)],
+          "tension", ["G_task", "G_truck", "G_name"], sfx=[fx(0.1, "typing", 0.4), fw(0, 3, "click", 0.45), fw(0, 13, "hit", 0.45, 0.22)],
           emph=["truck", "witness", "him."], pad=0.25, tr="push"),
         S("s04_phones", "gb18_phones", [N("Then, they said, burner phones that called victims pinged near his office.")],
           "tension-rise", ["G_phones", "G_name"], sfx=[fx(0.0, "rain", 0.3), fw(0, 3, "buzz", 0.4), fw(0, 8, "ping", 0.45)],
           emph=["burner", "phones", "pinged"], pad=0.2, tr="push"),
-        S("s05_watch", "gb18_watch", [N("Investigators watched him."),
+        S("s05_watch", "gb18_watch", [N("So investigators watched him."),
                                       N("In January 2023, he tossed a pizza box into a trash can.", pause_before=0.1)],
           "tension-rise", ["G_surveil", "G_pizza"], sfx=[fx(0.0, "rumble", 0.35), fw(1, 4, "whoosh", 0.45, -0.05), fw(1, 11, "thud", 0.5, 0.05)],
           emph=["watched", "pizza", "box"], pad=0.2, tr="push"),
@@ -45,7 +45,7 @@ def build(h):
         S("s08_plea", "gb18_plea", [N("In 2026, he pleaded guilty to seven murders and admitted an eighth."),
                                     N("Life without parole.", pause_before=0.3)],
           "tension-peak", ["G_plea", "G_sentence", "G_names"], sfx=[fx(0.2, "step", 0.3), fw(0, 4, "hit", 0.4, -0.05), fw(1, 2, "gavel", 0.5, 0.55)],
-          emph=["guilty", "seven", "eighth.", "life"], pad=0.4, tr="zoom"),
+          emph=["guilty", "seven", "eighth.", "life"], pad=0.7, tr="zoom"),
         # E - callback on the hero object; freezes where the first frame starts (loop)
         S("s09_end", "gb18_hero", [N("He threw that pizza box away."),
                                    N("Investigators were waiting.", pause_before=0.2)],
@@ -120,7 +120,7 @@ def build(h):
                         "until": 2.8, "y": 520}
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={"Heuermann": "Hewerman"})
     ep["score"] = {"root_hz": 138.59, "bpm": 78,
-                   "hits": [{"scene": "s03_truck", "word": [0, 13], "at": -0.05, "gain": 0.4}],
+                   "hits": [{"scene": "s03_truck", "word": [0, 13], "at": 0.22, "gain": 0.4}],
                    "cliff": {"scene": "s08_plea", "word": [1, 0], "at": -0.14}}
     ep["content_notes"] = ("40-second cut of Case File 07 (tcv07-gilgo-beach): same claims, sources, sets and characters. Closed case: "
                            "Heuermann pleaded guilty on 8 Apr 2026 and was sentenced on 17 Jun 2026. The trial never happened, so the clues "

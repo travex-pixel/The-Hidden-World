@@ -21,7 +21,7 @@ This cut makes no new factual claim. It reuses Case File 07's claims and sources
 | s02 | For over a decade, the case went cold. | G_cold | fact (first remains Dec 2010; first charge July 2023) |
 | s03 | Prosecutors said a truck a witness saw led a 2022 task force to him. | G_task, G_truck, G_name | fact + allegation (2023 filing) |
 | s04 | Then, they said, burner phones that called victims pinged near his office. | G_phones, G_name | allegation (2023 filing) |
-| s05 | Investigators watched him. / In January 2023, he tossed a pizza box into a trash can. (Screen: "FIFTH AVENUE · JAN 2023".) | G_surveil, G_pizza | fact + allegation (2023 filing) |
+| s05 | So investigators watched him. / In January 2023, he tossed a pizza box into a trash can. (Screen: "FIFTH AVENUE · JAN 2023".) | G_surveil, G_pizza | fact + allegation (2023 filing) |
 | s06 | Prosecutors said the crust's DNA linked him to a hair found with a victim. | G_pizza, G_dna | allegation (2023 filing) |
 | s07 | That July, he was arrested. | G_arrest | fact (13 July 2023) |
 | s08 | In 2026, he pleaded guilty to seven murders and admitted an eighth. / Life without parole. | G_plea, G_sentence, G_names | fact |
