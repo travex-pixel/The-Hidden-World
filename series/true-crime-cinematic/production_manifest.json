@@ -2584,13 +2584,13 @@
       "title": "A Backyard Boat Ended the Boston Marathon Bomber Manhunt #Shorts",
       "file": "true_crime_30_boat_40s.mp4",
       "media": {
-        "duration": 45.367,
+        "duration": 45.767,
         "width": 1080,
         "height": 1920,
         "fps": 30.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 19614398,
+        "size_bytes": 19626471,
         "mean_volume_db": -16.5,
         "max_volume_db": -1.7
       },
@@ -2612,7 +2612,7 @@
         "media_checks_pass": true,
         "duration_in_window": true,
         "dimensions_1080x1920": true,
-        "frames_checked": 1361,
+        "frames_checked": 1373,
         "no_black_frames": true,
         "captions_timed_within_scenes": true,
         "speech_db_min": -17.4,
@@ -2644,13 +2644,27 @@
       "frames_sampled": 8,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_30",
       "status": "verified_automated",
-      "sha256": "888236d3c08b13fc8c5b09f31f4a31e91b0028dca4ab589eb4b0964a17ca88c1",
+      "sha256": "5e40956b1874d6ea77bd1935eef04c195957474ca0c523b240721ca65bdc5e8e",
       "output": "series/true-crime-cinematic/output/true_crime_30_boat_40s.mp4",
-      "verified": "2026-10-12T21:20:29",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "verified": "2026-10-12T21:28:17",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "Built to the three-winners rules: object-first headline, a 2013 manhunt, an irony beat (lockdown lifted, then the boat), one-tap YES/NO end question. Tsarnaev appears only as a dark shape; the homeowner is unnamed; no explosion, injury or weapon shown; the victims and Officer Collier are named only on a memorial card. Legal status card: sentenced to death 2015, vacated 2020, reinstated 2022, appeals continue (no ruling found after the Aug 2025 en banc petition).",
+          "First render passed QA but the voice slurred the bare lines 'Convicted on all thirty counts' and 'Sentenced to death'; both given lead-ins and the episode fully re-rendered (an audio-only rebuild would have left the last scenes 0.4 s out of step). WER 0.051; 'Tsarnaev' remains unmatched by the recogniser."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     }
   },
-  "updated": "2026-10-12T21:20:29",
+  "updated": "2026-10-12T21:28:17",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",
