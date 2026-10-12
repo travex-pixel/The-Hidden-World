@@ -23,6 +23,16 @@ Since Case File 10, every episode follows these points. The NEXT CASE tease come
 
 **Update, 2026-10-12.** Gilgo Beach (Case File 07) became the best performer: 1.6k views, 25 likes, 4 saves and 1 repost in 12 hours, as reported by the owner. It shares the BTK pattern in its first line: an **everyday object meets an infamous killer** ("A pizza crust thrown in a Manhattan trash can helped crack the Gilgo Beach killings"). It names the object and the case but holds back *how* the object worked, and that "how" becomes the payoff. It also has a recent, closed case (2026 plea and sentence), a justice ending, and a respectful memorial line. From Case File 15 onward, episodes lead with that pairing.
 
+**Update, 2026-10-12 (first real analytics).** The owner shared Instagram's Insights for the Boston Strangler (Case File 16, 79 s): 1,558 views in 5 hours, 99.9 % non-followers, skip rate 31.5 % ("lower than typical"), like, share and repost rates "higher than typical", average watch time 23 s, 0 comments, 0 saves, 1 follow. Lined up against the timeline:
+- **The hook is a contradiction, not just an object.** "A man confessed to being the Boston Strangler. / For decades, many doubted him. / Then someone threw a water bottle away." Confessed-but-doubted is a question the viewer has to stay for; the bottle is on screen, unexplained. The biggest like spike (about 12 %) is at 0:02–0:05, before anyone has seen the story: a bold, paradoxical first line gets liked on its own.
+- **A stakes number by 0:10** ("thirteen women were killed"): second like spike at 0:10–0:15.
+- **Retention:** 100 → 50 % in the first 3 s, 30 % by 0:15, then a **flat plateau at 25 % from 0:15 to 1:00**: nobody left mid-story, so the clue chain holds. The leak is the **tail from 1:00 to 1:19 (25 → 8 %)**: the caveat ("links him to her murder only / still debated"), the memorial and the NEXT CASE card are 19 s of after-story. Keep the outcome inside the last 8 s; put caveats on a card, not in narration.
+- **Mid-video like spikes at 0:35, 0:48, 0:58** land on the named victim, the familial match and the exhumation: one concrete reveal every 10–12 s, each with `music_drop` or a pause, keeps the plateau flat.
+- **Comments 0, saves 0:** the question in the caption did nothing. From Case File 25, the closing question is burned into the picture (`end_title`, the mirror of `hook_title`) as a two-option choice.
+- **23 s average watch** on a 79 s video is 29 %. The same 23 s on a 42 s cut is 55 %, which is why the 40-second cuts remain the main format.
+- Distribution was flat for 3 hours, then broke out at 3–5 hours: Instagram's staged test. The first 3 seconds decide it; everything else decides whether it keeps going.
+The breakout cannot be separated from the topic (a household-name case) with one sample. The rules above are the parts that can be reproduced.
+
 ## Facts and fairness
 - Every narrated claim maps to a claim in `episode.json` with at least two independent sources. The episode's `research.md` separates established facts, allegations (attributed), defence positions, court procedure and unresolved questions.
 - **Ongoing cases:**
