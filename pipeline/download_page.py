@@ -5,7 +5,7 @@ documentaries): each MP4 is stored next to the page as pieces of at most 14 MB (
 artifact host serves only standard media types), and the page rebuilds the file on the phone, checks every
 piece's SHA-256, and hands one MP4 to the viewer through the `downloads` capability.
 
-usage: python -m pipeline.download_page <out_dir>
+usage: python -m pipeline.download_page <out_dir> [catalog.json]   (default releases/catalog.json)
   then publish <out_dir>/index.html with capabilities {"downloads": true}, root <out_dir>, and the files of
   publish-plan.json "artifact_files"[0]; publish the same file path again for every further batch; finally read
   the pieces back and compare their SHA-256 with publish-plan.json before sharing the link.
@@ -66,8 +66,8 @@ def thumb(src: Path | None, video: Path, at: float, secs: float, out: Path, vert
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{secs * at:.2f}", "-i", str(video), "-frames:v", "1", "-vf", scale, "-q:v", "4", str(out)], check=True)
 
 
-def build(out: Path) -> dict:
-    cat = json.loads((ROOT / "releases" / "catalog.json").read_text())
+def build(out: Path, catalog: Path | None = None) -> dict:
+    cat = json.loads((catalog or ROOT / "releases" / "catalog.json").read_text())
     out.mkdir(parents=True, exist_ok=True)
     videos, sections_html, chunks_all, total = {}, [], [], 0
     for sec in cat["sections"]:
@@ -125,7 +125,7 @@ def build(out: Path) -> dict:
         raise SystemExit(f"{total:,} bytes of video is over one artifact version ({VERSION_MAX:,}); drop a section from the catalog")
     n = len(videos)
     page = (ROOT / "pipeline" / "download_page.html").read_text()
-    fields = {"LEAD": f"{n} videos, {total / 1048576:.0f} MiB in all, newest cuts first. Tap a video to save it, or save them all one after another.",
+    fields = {"LEAD": (f"{n} videos, {total / 1048576:.0f} MiB in all, newest cuts first. Tap a video to save it, or save them all one after another." if n != 1 else f"1 video, {total / 1048576:.0f} MiB. Tap Save to download it."),
               "SECTIONS": "\n".join(sections_html), "BUILT": time.strftime("%d %b %Y"), "VIDEOS_JSON": json.dumps(videos)}
     for k, val in fields.items():
         page = page.replace("{{" + k + "}}", val)
@@ -147,7 +147,7 @@ def build(out: Path) -> dict:
 
 
 if __name__ == "__main__":
-    plan = build(Path(sys.argv[1]).resolve())
+    plan = build(Path(sys.argv[1]).resolve(), Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else None)
     print(f"{len(plan['videos'])} videos, {plan['total_bytes']:,} bytes; {len(plan['artifact_files'])} publish batches")
     for i, b in enumerate(plan["artifact_files"]):
         print(f"  batch {i + 1}: {len(b)} files")

@@ -4810,24 +4810,31 @@
     ],
     "description": "You wake up in a wet English field in 1340 with a hoodie, no money and seven centuries of hindsight. The Black Death is eight years away and nobody believes you. Could modern knowledge actually change anything? We test it: germs and clean water, Arabic numerals in a wool merchant's counting house, a steam engine that goes very wrong, a lord who wants weapons, and the plague itself. Then we play out one possible alternate timeline, clearly labelled as speculation.",
     "whats_real": "What's real: the languages, money and wages of 1340s England, tithings and strangers, the water myth, medieval medicine, Roman numerals and tallies, Florence's 1299 rule and Genoa's 1340 ledger, wool and the Italian bankers, Edward III's claim to France and Sluys, the steam-engine and paper-mill dates, the plague's path and toll, and quarantine at Ragusa are documented (sources below; disputed points are marked). You, Tom, Agnes, Walter, Hamo, Wat, Sir Ralph and the village are fictional, and the alternate timeline near the end is speculation.",
+    "cta": "What would you try first: clean water, numbers, or warning the king? Tell me in the comments, and tell me what I got wrong.",
+    "hashtags": [
+      "#history",
+      "#medievalhistory",
+      "#blackdeath",
+      "#whatif"
+    ],
     "packages": [
       {
         "title": "What If You Woke Up in 1340 Knowing the Future?",
         "thumbnail": "A",
         "promise": "You know the plague is coming in eight years. What do you do?",
-        "proof": "0:00 waking in the field; 0:16 'in about eight years, the Black Death'; 5:00 the plague map."
+        "proof": "0:00 waking in the field; 0:17 'in about eight years, the Black Death'; 5:43 the plague map."
       },
       {
         "title": "You Know the Plague Is Coming. Nobody Believes You",
         "thumbnail": "B",
         "promise": "A warning nobody believes.",
-        "proof": "0:16 the eight-year clock; 4:20 the lord laughs; 5:00 the plague map."
+        "proof": "0:17 the eight-year clock; 5:25 the lord laughs; 5:43 the plague map."
       },
       {
         "title": "Could Modern Knowledge Survive Medieval England?",
         "thumbnail": "C",
         "promise": "Which modern ideas work in 1340, and which blow up.",
-        "proof": "1:30 germs and water; 2:20 numbers; 3:10 the steam engine bursts."
+        "proof": "1:27 germs and water; 2:42 numbers; 3:34 the steam engine, which bursts at 4:00."
       }
     ],
     "thumbnails": [
@@ -4839,11 +4846,13 @@
         "character": {
           "char": "pov_modern",
           "expr": "horrified",
+          "gesture": "hold_up",
+          "prop": "phone",
           "look": [
             1,
             -0.1
           ],
-          "face_h": 0.46,
+          "face_h": 0.44,
           "face_c": [
             0.25,
             0.42
@@ -4852,10 +4861,10 @@
         },
         "object": {
           "type": "plague_map",
-          "r": 210,
+          "r": 180,
           "c": [
-            0.75,
-            0.62
+            0.77,
+            0.67
           ]
         }
       },

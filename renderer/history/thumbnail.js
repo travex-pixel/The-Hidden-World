@@ -100,7 +100,7 @@
     loaf: (g, o) => { X.ART.loafShape(g, 0, 0, o.r / 42, mulberry32(3), '#b07a3e'); },
     // What-If 001: the plague map, the eight-year hourglass, the steam engine that bursts
     plague_map: (g, o) => {   // a parchment roundel of England and Wales, the plague staining outward from Dorset
-      const R = o.r, r = mulberry32(17); const pr = (lon, lat) => [(lon + 1.95) * R * 0.27, (52.9 - lat) * R * 0.43];
+      const R = o.r, r = mulberry32(17); const pr = (lon, lat) => [(lon + 1.97) * R * 0.2, (52.9 - lat) * R * 0.3];
       g.save(); g.rotate(-0.06); g.beginPath(); g.arc(0, 0, R, 0, 7); g.fillStyle = '#e8d8b0'; g.fill(); g.clip();
       g.fillStyle = '#8aa4ae'; g.fillRect(-R, -R, R * 2, R * 2); P.granulate(g, -R, -R, R * 2, R * 2, 0.4);
       const land = X.ART.ENG.map(([lo, la]) => pr(lo, la)); g.beginPath(); land.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.fillStyle = '#ecdcb4'; g.fill();

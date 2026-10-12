@@ -205,6 +205,38 @@ documentary series (branch `claude/true-crime-documentary-vwz6m8`), so the chann
 * **Pacing:** `kokoro_pause_scale` tightens (below 1) or loosens the pauses between lines across a whole episode.
   H03 uses 0.8.
 
+## 2e. What-If additions (alternate history, eight new sets)
+
+What-If 001, *What If You Woke Up in 1340 Knowing the Future?* (`episodes/whatif001-modern-knowledge/`), is built on
+the same engine. Its output folder is `output/what-if-medieval-modern-knowledge-20261012/`.
+
+* **Labelling speculation:** a badge `kind: "hypothetical"` (orange, HYPOTHETICAL) marks alternate history and guesses.
+  It needs no evidence claim, and the schema rejects unknown badge kinds. Give it a long `dur` to keep it on screen
+  for a whole scene.
+* **Sets:**
+  * `field_dawn`: the field at sunrise, without reapers.
+  * `well_yard`: the well, privy and dung heap. Beats: `move_midden`, `clean_from`/`clean_to` (the ditch clears),
+    `cover` and `boil`.
+  * `counting_house`: wool sacks, tallies, a reckoning cloth with counters, and a street through the window. Beat:
+    `profit` (coin piles grow).
+  * `ledger_insert`: Roman against Hindu-Arabic numerals. Beats: `write_from`/`write_to` and `check`. The sums are
+    tested.
+  * `smithy`: a forge, plus a boiler-and-beam machine. Beats: `run`, `leak` and `burst`.
+  * `great_hall`: the lord's hall at night.
+  * `map_england`: England and Wales, with the plague spreading from Melcombe between `spread_from` and `spread_to`.
+  * `alt_town`: a village under a castle that grows in stages on `stage1`, `stage2` and `stage3`:
+    1. a hall and a watermill;
+    2. a wall, townhouses and a market hall;
+    3. a clock tower, a spire and a quay with cogs.
+* **Village:** the beat `banner_off` lowers the market-cross banner, which otherwise sits at head height behind the
+  lane.
+* **Cast:**
+  * `pov_modern`: a modern "you" in a blue top, jeans and trainers.
+  * `merchant_hamo`, `lord_ralph` and `smith_wat`.
+* **Thumbnail objects:** `plague_map`, `hourglass` and `boiler_burst`. **Prop:** `phone`.
+* **Download pages:** `python -m pipeline.download_page <dir> [catalog.json]` builds a page from any catalogue, so a
+  video too large to share one artifact with the others can get its own page.
+
 ## 3. Writing an episode
 
 Scenes keep the existing fields (`id, scene, min_duration, pad_after, music_cue, sfx, claims, transition`) and add:

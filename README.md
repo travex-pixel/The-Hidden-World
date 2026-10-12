@@ -20,7 +20,7 @@ Five verified episodes, 27–32 s each. Story bible, scripts, QA and render inst
 **H01 — *You Wake Up in a Medieval Village*** (95 s, 1920×1080 proof of concept). Build it with
 `python -m pipeline.build hist001-medieval-village --quality final`, then `python -m pipeline.qa_history out/hist001-medieval-village`
 and `python -m pipeline.publish_history out/hist001-medieval-village`. Architecture, audit, authoring guide and limitations:
-[docs/HISTORY_MODE.md](docs/HISTORY_MODE.md). Review pack and QA: [releases/hist001/](releases/hist001/) (v2 re-render in [releases/hist001/v2/](releases/hist001/v2/)). Five-episode plan: [series/history/ROADMAP.md](series/history/ROADMAP.md).
+[docs/HISTORY_MODE.md](docs/HISTORY_MODE.md). Review pack and QA: [releases/hist001/](releases/hist001/) (v2 re-render in [releases/hist001/v2/](releases/hist001/v2/)). Five-episode plan: [series/history/ROADMAP.md](series/history/ROADMAP.md). What-If 001 (*What If You Woke Up in 1340 Knowing the Future?*, 7:50): [output/what-if-medieval-modern-knowledge-20261012/](output/what-if-medieval-modern-knowledge-20261012/).
 **H02 — *Why Grinding Your Own Flour Was Banned*** (119 s, a day in the life of a medieval peasant) → [releases/hist002/](releases/hist002/), three title/thumbnail packages for YouTube Test & Compare.
 Titles and thumbnails follow [docs/PACKAGING.md](docs/PACKAGING.md) (rules distilled from [docs/research/packaging_research.md](docs/research/packaging_research.md)).
 **Engine v3** (H02 v2 in [releases/hist002/v2/](releases/hist002/v2/), H01 v3 in [releases/hist001/v3/](releases/hist001/v3/)):

@@ -727,6 +727,10 @@
     cross: (g, t, lw) => { g.save(); g.rotate(-0.1); g.strokeStyle = '#7a5636'; g.lineWidth = 16; g.lineCap = 'square'; g.beginPath(); g.moveTo(0, 90); g.lineTo(0, -230); g.moveTo(-70, -150); g.lineTo(70, -150); g.stroke();
       g.strokeStyle = INK; g.lineWidth = 3; g.strokeRect(-8, -230, 16, 320); g.strokeRect(-70, -158, 140, 16); g.restore(); },
     roll: (g, t, lw) => { g.save(); g.rotate(-0.5); g.fillStyle = '#efe4c4'; g.fillRect(-14, -60, 28, 120); g.fillStyle = '#d8c89c'; g.beginPath(); g.ellipse(0, -60, 18, 8, 0, 0, 7); g.fill(); g.strokeStyle = INK; g.lineWidth = 3; g.strokeRect(-14, -60, 28, 120); g.restore(); },
+    phone: (g, t, lw) => {   // What-If: a modern phone, no signal
+      g.save(); g.rotate(-0.12); g.fillStyle = '#1e2026'; g.beginPath(); g.roundRect(-26, -50, 52, 100, 10); g.fill(); g.strokeStyle = INK; g.lineWidth = 3.5; g.stroke();
+      g.fillStyle = '#bfe0ff'; g.beginPath(); g.roundRect(-20, -42, 40, 80, 5); g.fill(); g.strokeStyle = '#c8312b'; g.lineWidth = 4; g.beginPath(); g.moveTo(-9, -12); g.lineTo(9, 6); g.moveTo(9, -12); g.lineTo(-9, 6); g.stroke();
+      g.fillStyle = '#5a6a80'; for (let i = 0; i < 4; i++) g.fillRect(-14 + i * 7, -22 - i * 3, 4, 4 + i * 3); g.restore(); },
     cup: (g, t, lw) => { g.save(); g.fillStyle = '#8a5a34'; g.beginPath(); g.moveTo(-20, -26); g.lineTo(20, -26); g.lineTo(16, 24); g.lineTo(-16, 24); g.closePath(); g.fill(); g.strokeStyle = INK; g.lineWidth = 3.5; g.stroke(); g.fillStyle = '#c8a060'; g.fillRect(-20, -26, 40, 7); g.restore(); }
   });
   function trestle(g, r, x, y, w, h, top) {   // a board on two trestles

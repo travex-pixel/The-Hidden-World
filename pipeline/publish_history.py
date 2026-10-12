@@ -106,12 +106,16 @@ def run(out_dir: Path) -> Path:
     titles = pub.get("titles", [ep["title"]])
     (dest / "titles.md").write_text("# Title options\n\n" + "\n".join(f"{i}. {t}" for i, t in enumerate(titles, 1)) + "\n\nRecommended: option 1 (matches the thumbnail promise and the first ten seconds).\n")
     desc = [pub.get("description", ep["central_question"]), ""]
+    if pub.get("cta"):
+        desc += [pub["cta"], ""]
     if len(ch) >= 3 and total >= 60:
         desc += ["Chapters"] + [f"{ts(a)} {name}" for a, name in ch] + [""]
     real = pub.get("whats_real") or "What's real: the documented history is listed with its sources below. " + " ".join(c["text"] for c in ep["claims"] if c["type"] == "illustrative")
     voice = ("Narration: Kokoro-82M v1.0 (Apache-2.0), synthesised offline." if ep.get("voice_engine") == "kokoro"
              else f"Narration: Piper TTS ({ep.get('narrator_voice', 'en_GB-aru-medium')}, CC BY 4.0 dataset).")
     desc += [real, "", "Sources"] + [f"- {s['title']} — {s['publisher']}: {s['url']}" for s in ep["sources"]] + ["", f"{voice} Music and sound: original, generated in code."]
+    if pub.get("hashtags"):
+        desc += ["", " ".join(pub["hashtags"])]
     (dest / "description.txt").write_text("\n".join(desc))
     (dest / "sources.md").write_text(source_ledger(ep))
     shutil.copy(out_dir / f"{ep['id']}.srt", dest / f"{ep['id']}.en.srt")
@@ -136,7 +140,7 @@ def run(out_dir: Path) -> Path:
     prod = ["# Production log\n", f"- Duration: {total:.1f} s, {plan['width']}x{plan['height']} @ {plan['fps']} fps, seed {plan['seed']}",
             f"- Wall-clock build: {timings.get('total_s', '?')} s (render {timings.get('render_s', '?')} s with {plan.get('workers', 1)} parallel pages; narration {timings.get('narration_s', '?')} s; audio {timings.get('audio_s', '?')} s)",
             f"- Machine: {timings.get('cpus', '?')} CPU cores, software rasteriser (no GPU)",
-            "- Paid services: none. Narration Piper TTS (local), music/SFX NumPy, art procedural Canvas 2D, render headless Chromium + ffmpeg.",
+            f"- Paid services: none. Narration {'Kokoro-82M via sherpa-onnx' if ep.get('voice_engine') == 'kokoro' else 'Piper TTS'} (local), music/SFX NumPy, art procedural Canvas 2D, render headless Chromium + ffmpeg.",
             "- Marginal cost per episode: $0 on owned hardware. On GitHub Actions' standard 4-core runners the build fits easily in the free minutes of a public repository; on a private repo it uses roughly the wall-clock minutes above from the monthly allowance.",
             "- Human time still required: script and fact-check review, visual review of storyboard.png / transitions.png, listening pass."]
     (dest / "production.md").write_text("\n".join(prod))

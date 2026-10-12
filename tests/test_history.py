@@ -264,3 +264,47 @@ class EngineV3(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class WhatIf(unittest.TestCase):
+    """What-If 001: speculation is always labelled, and the on-screen arithmetic is right."""
+    def setUp(self):
+        self.ep = load_episode("whatif001-modern-knowledge")
+
+    def test_hypothetical_badge_needs_no_claim_but_is_a_known_kind(self):
+        ok = json.loads(json.dumps(self.ep)); ok["scenes"][0]["badges"].append({"kind": "hypothetical", "text": "a guess", "at": 1.0})
+        validate(ok)
+        bad = json.loads(json.dumps(self.ep)); bad["scenes"][0]["badges"].append({"kind": "speculative", "text": "x", "at": 1.0})
+        with self.assertRaises(EpisodeError): validate(bad)
+
+    def test_alternate_history_is_labelled_for_the_whole_branch(self):
+        branch = next(s for s in self.ep["scenes"] if s["set"] == "alt_town" and s.get("beats", {}).get("stage1") is not None)
+        hyp = [b for b in branch["badges"] if b["kind"] == "hypothetical"]
+        self.assertTrue(hyp and hyp[0]["dur"] >= 60, "the branch must carry a HYPOTHETICAL label from start to end")
+        self.assertIn("W18", branch["claims"])
+        self.assertEqual(next(c for c in self.ep["claims"] if c["id"] == "W18")["type"], "illustrative")
+
+    def test_fiction_and_disputes_are_labelled(self):
+        kinds = {b["kind"] for s in self.ep["scenes"] for b in s.get("badges", [])}
+        for k in ("dramatised", "hypothetical", "disputed", "estimate", "documented"):
+            self.assertIn(k, kinds)
+
+    def test_no_myths_in_the_script(self):
+        text = " ".join(l["text"].lower() for s in self.ep["scenes"] for l in s["lines"])
+        for myth in ("witch-hunt", "witch hunt", "burned at the stake", "forty days in 1377", "rats alone", "first cannon"):
+            self.assertNotIn(myth, text)
+
+    def test_ledger_sums_are_correct(self):
+        import re
+        src = (ROOT / "renderer" / "history" / "sets" / "medieval.js").read_text()
+        block = src[src.index("X.SETS.ledger_insert"):src.index("X.SETS.smithy")]
+        rom = re.findall(r"'([MDCLXVI]+)'", block); arab = [int(x) for x in re.findall(r"'(\d+)'", block)]
+        val = {"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
+        def roman(s):
+            n = 0
+            for i, ch in enumerate(s):
+                v = val[ch]; n += -v if i + 1 < len(s) and val[s[i + 1]] > v else v
+            return n
+        self.assertEqual(len(rom), 5); self.assertEqual(len(arab), 5)
+        self.assertEqual([roman(r) for r in rom], arab, "each Roman figure matches its Hindu-Arabic twin")
+        self.assertEqual(sum(arab[:4]), arab[4], "the column adds up")

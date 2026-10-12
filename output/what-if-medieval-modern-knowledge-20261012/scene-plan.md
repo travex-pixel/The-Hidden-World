@@ -1,0 +1,144 @@
+# Scene plan and engine audit: "What If You Woke Up in 1340 Knowing the Future?"
+
+Working title from the brief: *What If You Were Dropped Into Medieval Europe With Modern Knowledge?*
+* **Setting:** narrowed to one place and year, England in 1340. A specific clock (eight years to the Black Death) and a
+  specific village give the story stakes. The facts are checked for that place and time.
+* **Episode source:** `episodes/whatif001-modern-knowledge/episode.json`, generated from a builder script. The fact
+  ledger is `episodes/whatif001-modern-knowledge/research.md`.
+
+---
+
+## 1. Engine audit (done before writing the script)
+
+The repository already has a full production engine, and this video reuses it. Nothing was rebuilt, cloned or forked.
+
+| Stage | Existing module (reused) | What it does |
+|---|---|---|
+| Validate | `pipeline/schema.py` | Episode schema checks. Every claim needs sources, every badge must match its claim's evidence type, and captions are kept short. |
+| Narration | `pipeline/narrate.py`, `pipeline/kokoro.py` | Kokoro-82M (offline, Apache-2.0) via sherpa-onnx, cached per line. The narrator is `bm_fable`, the house voice shared with the true-crime series. Per-line tone sets pace and pauses, and there are pronunciation respellings. Characters have their own voices plus a small room sound. |
+| Timeline | `pipeline/build.py` | Scene lengths come from the real narration; line timings drive the captions and lip sync. |
+| Sound | `pipeline/audio.py`, `pipeline/mixdown.py` | Original procedural score cues, ambience and synthesised effects. Mix v2 ducks music under the voice and adds a stereo hall. |
+| Picture | `renderer/history/*` | Painted 2.5D canvas renderer: a parallax camera with dolly, follow-spring and shake; a puppet rig with 30 expressions and gestures, mouths driven by the audio; watercolour figures; badges, cards, captions and transitions; motion blur. Rendering uses Playwright and Chromium, with 3 parallel workers. |
+| Encode | `pipeline/render.mjs`, `pipeline/history.py` | H.264 (CRF 19, tune animation), 1920×1080, 30 fps. AAC 192k audio, normalised in two passes to −16 LUFS / −2 dBTP. |
+| Verify | `pipeline/verify.py` | 12 export checks (streams, codecs, size, fps, A/V length, full decode, silence, clipping) plus a contact sheet. |
+| QA | `pipeline/qa_history.py`, `pipeline/asr_audit.py` | 15 checks: motion, black frames, frozen stretches, jumps, foot slip, caption timing, caption-to-voice alignment, loudness, voice over music, and an offline speech recogniser compared with the script. Also a storyboard and transition sheets. |
+| Packaging | `pipeline/publish_history.py`, `pipeline/thumbnail.mjs`, `renderer/history/thumbnail.js` | Titles, a description with chapters and sources, 1280×720 thumbnails drawn with the same rig, and a feed test. |
+| Tests | `tests/` | 81 unit tests, run before and after this work. |
+
+### What the engine could not do for this brief, and what was added
+All additions are opt-in. Earlier episodes render exactly as before; the default behaviour is unchanged and tests pass.
+
+* **Alternate history had no label.** Added a `hypothetical` badge kind (orange, "HYPOTHETICAL") to the schema and the
+  renderer. It needs no evidence claim, so speculation can never pass for documented fact.
+* **Sets were missing.** Added eight painted sets to `renderer/history/sets/medieval.js`:
+  * `field_dawn`: the wake-up;
+  * `well_yard`: a well, privy and dung heap with a foul ditch that clears;
+  * `counting_house`: a wool merchant's office with tallies, a reckoning cloth and wool sacks;
+  * `ledger_insert`: Roman and Hindu-Arabic numerals side by side; the sums are correct (378 + 246 + 1059 + 812 =
+    2495 = MMCCCCXCV);
+  * `smithy`: a forge, plus a boiler-and-beam machine that leaks and bursts;
+  * `great_hall`: a lord's hall at night;
+  * `map_england`: England and Wales, with the plague spreading from Melcombe;
+  * `alt_town`: a village under a castle that can grow in four stages.
+* **Cast was missing.** Added a modern "you" (`pov_modern`: blue top, jeans, white trainers) and Master Hamo, Sir Ralph
+  and Wat the smith, each with their own Kokoro voice.
+* **Thumbnail art was missing.** Added three thumbnail objects (`plague_map`, `hourglass`, `boiler_burst`) and a
+  `phone` prop.
+* **One staging fix.** The village's market-cross banner sat at head height behind the lane; a per-scene beat
+  (`banner_off`) lowers it.
+
+### Known limitations (stated, not hidden)
+* **Animation:** cut-out puppetry on painted 2.5D sets: limbs, faces and camera. It is not frame-by-frame or 3D
+  animation, and I do not claim studio-quality animation.
+* **Characters:** they are seen side-on or three-quarter only. Walks run along a line, and mouths follow audio energy
+  and vowel roundness, not phonemes.
+* **Narration:** neural text-to-speech, not a human performance. I have not listened to the result; every audio claim
+  here is a measurement.
+* **Music and effects:** all generated by the pipeline. They are original, and no third-party library is used.
+* **Research:** the sandbox could not open web pages. Every source was checked through search-result snippets only,
+  and each one is labelled that way.
+* **"You":** the modern character's top reads as a plain blue top at video size, not clearly a hoodie. The narration
+  carries the joke.
+* **Length:** 7:50, near the top of the 6–8 minute range.
+
+---
+
+## 2. Story structure
+
+| Time | Scene | Chapter | Set | Music / ambience | Cast | Claims | On-screen labels |
+|---|---|---|---|---|---|---|---|
+| 0:00–0:17 | `w00_wake` | Wrong century | `field_dawn` | unease / village | you, Tom | W0, W4 | dramatised, reconstruction |
+| 0:17–0:37 | `w01_hook` | Eight years left | `alt_town` (1340) | tension-rise / village | you | W14, W14b | estimate |
+| 0:37–0:59 | `w02_stranger` | **Act 1: You don't belong here** | `village` | unease / village | you, Walter, Agnes | W7 | documented |
+| 0:59–1:27 | `w03_broke` | Broke, and lost in translation | `village` | curious / market | you, Walter, Agnes | W1, W3, W5, W6 | documented ×3 |
+| 1:27–2:18 | `w04_well` | **Act 2: Your first advantage** | `well_yard` | curious / village | you, Agnes | W8, W9, W9s, W18 | documented ×3, hypothetical |
+| 2:18–2:42 | `w05_wool` | **Act 3: Money** | `counting_house` | market / interior | you, Hamo | W11, W10 | documented ×3 |
+| 2:42–3:09 | `w06_ledger` | Roman against Arabic | `ledger_insert` | curious / none | none | W10f, W10g | documented, disputed |
+| 3:09–3:34 | `w07_profit` | A dangerous tip | `counting_house` | market / interior | you, Hamo | W11c | documented |
+| 3:34–4:03 | `w08_engine` | **Act 4: The idea that blows up** | `smithy` | tension-rise / forge | you, Wat | W0 | dramatised |
+| 4:03–4:24 | `w09_why` | Why it failed | `smithy` | aftermath / forge | you, Wat | W13 | documented ×2 |
+| 4:24–4:53 | `w10_rumour` | The village talks | `village` | unease / village | you, Walter, Tom | W15, W15p | documented |
+| 4:53–5:25 | `w11_hall` | **Act 5: The power play** | `great_hall` | power / hall | you, Sir Ralph | W12, W12c | documented ×2, disputed |
+| 5:25–5:43 | `w12_warning` | Nobody believes you | `great_hall` | tension / hall | you, Sir Ralph | W14 | none (fiction) |
+| 5:43–6:25 | `w13_plague` | **Act 6: The timeline changes** | `map_england` | dread / none | none | W14, W14b, W14y, W14c, W14s, W14d | documented ×3, estimate, disputed |
+| 6:25–7:02 | `w14_branch` | One possible branch (hypothetical) | `alt_town` (stages 1–3) | revelation / village | you | W18, W17 | **HYPOTHETICAL for the whole scene**, documented |
+| 7:02–7:50 | `w15_answer` | **Final act: The real answer** + comment CTA | `field_dawn` | resolve / village | you, Tom, Agnes | W16 | documented ×2 |
+
+## 3. The first 30 seconds
+* **0:00, a disorienting cold open:** you are face down in a wet field, with no phone and no signal. A man with a
+  sickle stares at you and asks, in genuine (if fifty-years-late) Chaucerian English, "What man artow?" The narrator
+  says: "That's English. Just not yours."
+* **0:17, the stakes:** a slow push over a village under a castle. "It's 1340. In about eight years, the Black Death
+  will kill something like half of England. You know it's coming. Nobody else does." The estimate badge sits on
+  screen.
+* **0:28, the question:** "So could seven centuries of hindsight change history? Or would 1340 eat you alive?" The
+  title card lands on "eat you alive".
+
+Every promise in the packaging is paid off on screen: the eight-year clock at 0:17, nobody believing you at 5:25 and
+the plague map at 5:43.
+
+## 4. Scene-by-scene direction (shots, performance, sound)
+* **w00:** a close shot on you lying in the stubble, then a sit-up with a camera jolt and a gasp. The pull-out reveals
+  Tom, who points and asks his line; a sting plays on "a man with a sickle".
+* **w01:** a wide establishing shot of the hillside village, the river and the castle, with a slow push-in. You walk
+  onto the crest. The location card reads "England, 1340"; the title card follows.
+* **w02:** the follow-camera tracks you down the lane past villagers. It settles on the two-shot as Walter the reeve
+  points and demands who answers for you, and you shrug sheepishly. The Act 1 card plays.
+* **w03:** a continuous move. Language, then money. Agnes steps in and vouches for you, then the thatcher's-helper
+  wage.
+* **w04:**
+  * A wide shot of the yard, then a pan to the dung heap and privy; flies buzz over the foul ditch.
+  * The myth is debunked: people did drink water.
+  * You move the heap downstream, and the ditch clears from scummy green to clear blue. The well is covered and water
+    boiled.
+  * Agnes mocks you ("soup with nothing in it").
+  * Then the Semmelweis fact, and a HYPOTHETICAL badge on "maybe fewer children get sick".
+* **w05:** the counting house: wool sacks with merchant marks, tally sticks and a chequered reckoning cloth with
+  sliding counters. Hamo holds up a tally, and you reach for the quill.
+* **w06:** an insert of the ledger. Roman numerals and Hindu-Arabic numerals write themselves line by line, then the
+  total, then the notes "add it up without a counting board?" and "carry the 1". Florence 1299 is labelled
+  documented; Genoa 1340 is labelled disputed.
+* **w07:** coins pile up on Hamo's table. A sting plays as you remember the bank failures, then you warn him.
+* **w08:**
+  * The forge glows and Wat hammers.
+  * You pitch the steam engine. The machine starts rocking, then leaks steam from every joint while a hiss and rumble
+    build.
+  * It bursts: the lid flies, the steam explodes, the camera shakes, and both of you throw up your hands.
+* **w09:** an aftermath in the lingering steam: you slump, and Wat stands hands on hips. The real dates follow
+  (Newcomen 1712, Wilkinson 1774), then the lesson.
+* **w10:** the walk of shame down the lane past staring villagers, with Walter accusing you. The witchcraft-law fact is
+  labelled with care: no statute until 1542, and no claim of witch-hunts.
+* **w11:** the lord's hall at night: a red hanging, a moonlit window and a candelabrum. Sir Ralph wants weapons; Sluys
+  and Crécy follow, with the guns at Crécy labelled disputed.
+* **w12:** you plead your warning; Sir Ralph laughs ("You'd have me fear a fever more than the French?"). "Being right
+  is not the same as being believed."
+* **w13:** the map. The stain spreads from Melcombe while towns turn red in order and a date panel steps from 1348 to
+  1349. The badges carry the cause (*Y. pestis*), the debated vectors, streptomycin in 1943 and Ragusa's thirty days.
+* **w14:** the HYPOTHETICAL badge stays up for the whole scene. The village grows in stages:
+  * a hall and a watermill;
+  * a town wall with red-tiled townhouses and a market hall;
+  * a clock tower, a church spire and a quay with wool cogs.
+
+  Then the counterpoint: "Or not." The camera pushes in on your worried face.
+* **w15:** dawn in the field, with Tom and Agnes at work. The real answer comes, then your direct look to camera and a
+  "Your turn" card: "What would you try first? Tell me in the comments."
