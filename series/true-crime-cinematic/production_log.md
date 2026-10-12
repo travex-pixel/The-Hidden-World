@@ -160,3 +160,5 @@
 - 2026-10-12 11:20:23 tcv29-rudolph-40: rendering (final, seed 1)
 - 2026-10-12 11:29:43 tcv29-rudolph-40: rendered in 560s
 - 2026-10-12 11:30:16 tcv29-rudolph-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_29_rudolph_40s.mp4 (44.3s, 20.2 MB, sha256 38b79345ba1d)
+- 2026-10-12 21:11:01 produce 30: regenerating episode data
+- 2026-10-12 21:11:01 tcv30-boat-40: rendering (final, seed 1)
