@@ -1647,7 +1647,20 @@
       "sha256": "c3d0855857580dc3fa09d88f9ab26e5d19514d221e4b3aad7967fa335c0cc82f",
       "output": "series/true-crime-cinematic/output/true_crime_20_boston_strangler_40s.mp4",
       "verified": "2026-10-12T03:14:48",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline legibility checked on a full-size first frame"
+        ],
+        "notes": [
+          "40-second cut of Case File 16. The DNA link is stated for Mary Sullivan's murder only; the narration and caption say whether he killed all 13 is still debated. The nephew who was followed is not named."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "21": {
       "id": "tcv21-kohberger-40",
@@ -1717,7 +1730,20 @@
       "sha256": "db9890c006e436614b9034a0122a79d2fc521efa6db9cf4085dd0b216a4e03f7",
       "output": "series/true-crime-cinematic/output/true_crime_21_kohberger_40s.mp4",
       "verified": "2026-10-12T03:15:48",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline legibility checked on a full-size first frame"
+        ],
+        "notes": [
+          "40-second cut of Case File 17. Title corrected from an overclaim to 'His Family's Trash Helped Catch the Idaho Killer'. The 2025 guilty plea and the July 2026 petition to withdraw it (no ruling yet) are stated; his family is not accused of anything; he appears only as a silhouette."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "19": {
       "id": "tcv19-grim-sleeper-40",
@@ -1787,7 +1813,21 @@
       "sha256": "e3c223e64626a7431403cb1b506ade59f9dc03d88f3584141dcfbd544fcb48ce",
       "output": "series/true-crime-cinematic/output/true_crime_19_grim_sleeper_40s.mp4",
       "verified": "2026-10-12T03:26:44",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline legibility checked on a full-size first frame"
+        ],
+        "notes": [
+          "40-second cut of Case File 15. Title corrected after the fact-check to match the narration: the detective posed as a busboy and kept the crust.",
+          "The caption states that the son flagged by the familial DNA search was never a suspect."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "18": {
       "id": "tcv18-gilgo-40",
@@ -1857,10 +1897,108 @@
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
       "sha256": "f68fa1b7d94326c16b090ae2377638c1c54b683b8197dd691e9c82651e694936",
       "output": "series/true-crime-cinematic/output/true_crime_18_gilgo_40s.mp4",
-      "verified": "2026-10-12T03:31:07"
+      "verified": "2026-10-12T03:31:07",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline legibility checked on a full-size first frame"
+        ],
+        "notes": [
+          "40-second cut of Case File 07. Same sourced facts; the crust is described as a mitochondrial DNA link, as in prosecutors' 2023 filing; victims are not shown.",
+          "The first QA run failed the speech check (WER 0.358) because the recogniser dropped a sentence that a fixed 25 s window split in two. qa.py now cuts its windows at scene starts; re-verified at WER 0.055."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
+    },
+    "22": {
+      "id": "tcv22-mcveigh-40",
+      "title": "A Missing License Plate Caught the Oklahoma City Bomber #Shorts",
+      "file": "true_crime_22_mcveigh_40s.mp4",
+      "media": {
+        "duration": 44.633,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 21404701,
+        "mean_volume_db": -16.6,
+        "max_volume_db": -1.7
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 1339,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -17.1,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true,
+        "captions_in_safe_area": true,
+        "no_frozen_or_static_picture": true,
+        "audio_opening_speech_steady": true,
+        "audio_opening_no_holes": true,
+        "audio_narration_on_time": true,
+        "audio_music_never_masks": true,
+        "audio_music_audible": true,
+        "audio_no_clipping": true,
+        "audio_no_long_silence": true,
+        "audio_ending_intentional": true,
+        "audio_mono_compatible": true,
+        "audio_av_duration_match": true,
+        "shot_variety_and_character_action": true,
+        "every_shot_sourced_and_tagged": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "true_peak_dbtp": -1.7
+      },
+      "asr_word_error_rate": 0.018,
+      "frames_sampled": 8,
+      "qa_dir": "series/true-crime-cinematic/qa/true_crime_22",
+      "status": "verified_automated",
+      "sha256": "1b116a009205d6624b6db88008eae78ff6399a58db68c80ddeed9dc3b1806528",
+      "output": "series/true-crime-cinematic/output/true_crime_22_mcveigh_40s.mp4",
+      "verified": "2026-10-12T03:34:56",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-12",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline legibility checked on a full-size first frame"
+        ],
+        "notes": [
+          "New case in the short format: the Oklahoma City bombing. Closed: convicted 1997, executed 2001. 'Within about 90 minutes' follows the FBI's wording (the published 10:20 a.m. stop time makes it about 78 minutes).",
+          "'About to be released' follows History.com and The Globe and Mail; the FBI says the hold kept him from being released. McVeigh appears only as an illustrated silhouette; no images of the building or victims; the toll is stated once and the memorial line closes the video."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     }
   },
-  "updated": "2026-10-12T03:31:07",
+  "updated": "2026-10-12T03:34:56",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

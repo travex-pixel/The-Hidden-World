@@ -210,3 +210,78 @@ What clue should we cover next? 👇 Comment below, and follow for more cases.
 
 Clues as described in court filings; there was no trial. He pleaded guilty in 2025. In July 2026 he reportedly filed to withdraw his plea, and no ruling had been made as of 12 Oct 2026. In memory of Ethan, Kaylee, Xana and Madison.
 Illustrated reconstruction · AI narration
+
+---
+
+# Case Files 18–22: 40-second cuts with an on-screen headline (made 2026-10-12)
+**What these test.** Each cut is about 43 seconds long and opens with a large headline burned into the first 3 seconds, for people scrolling with the sound off. Each one ends on its key object so it loops. Compare them with the full-length versions (07, 15, 16, 17) in Insights after 24 hours: average watch time, skip rate, shares and follows.
+
+**Posting.** All five can go out the same day, 3–4 hours apart, in any order. Each one stands alone, with no "next case" teaser. Cross-post each one to TikTok and YouTube Shorts.
+
+## 18: Gilgo Beach, 40 s (`true_crime_18_gilgo_40s.mp4`)
+This pizza crust helped catch a serial killer 🍕
+
+For more than a decade, the Gilgo Beach case went cold.
+Then a new task force picked up one man's trail in Manhattan… and waited for him to throw something away.
+
+What everyday object do you think has cracked the most cases? 👇 Follow for the next case.
+
+#TrueCrime #GilgoBeach #ColdCase #DNA #Forensics #TrueCrimeStories #LongIsland #CaseFiles
+
+Clues as described in prosecutors' 2023 court filing; the crust gave a mitochondrial DNA link. He pleaded guilty in 2026. Victims are not shown. In memory of the eight women.
+Illustrated reconstruction · AI narration
+
+## 19: The Grim Sleeper, 40 s (`true_crime_19_grim_sleeper_40s.mp4`)
+A detective posed as a busboy and kept a killer's pizza crust 🍕
+
+For 25 years, LA's "Grim Sleeper" had no name.
+Police had his DNA. They needed a match.
+Then came a birthday party at a pizza place…
+
+Would you have noticed the busboy? 👇 Follow for more cases.
+
+#TrueCrime #GrimSleeper #ColdCase #DNAEvidence #ForensicScience #LosAngeles #TrueCrimeCommunity #CaseFiles
+
+His son, flagged by the DNA search, was never a suspect. In memory of the ten victims.
+Illustrated reconstruction · AI narration
+
+## 20: The Boston Strangler, 40 s (`true_crime_20_boston_strangler_40s.mp4`)
+A thrown-away water bottle and the Boston Strangler 💧
+
+A man confessed to being the Boston Strangler. For decades, many doubted him.
+He was never tried. Then detectives quietly followed one of his nephews…
+
+Do you think one man killed all thirteen women? 👇 Follow for more cases.
+
+#TrueCrime #BostonStrangler #ColdCase #DNA #Forensics #TrueCrimeCommunity #Boston #CaseFiles
+
+The DNA links DeSalvo to Mary Sullivan's murder only; whether he killed all 13 is still debated. In memory of the thirteen women.
+Illustrated reconstruction · AI narration
+
+## 21: Kohberger, 40 s (`true_crime_21_kohberger_40s.mp4`)
+His family's trash helped catch the Idaho killer 🗑️
+
+Investigators had DNA from a knife sheath, but no name.
+Genetic genealogy pointed to one family in Pennsylvania.
+Then investigators took the trash from the curb.
+
+Would you have guessed what the lab found? 👇 Follow for more cases.
+
+#TrueCrime #Kohberger #IdahoFour #UniversityOfIdaho #DNA #GeneticGenealogy #TrueCrimeShorts #CaseFiles
+
+He pleaded guilty in 2025. In 2026 he reportedly asked to withdraw his plea, and there is no ruling yet. Clues are per court filings, and his family is not accused of anything. In memory of Ethan Chapin, Kaylee Goncalves, Xana Kernodle and Madison Mogen.
+Illustrated reconstruction · AI narration
+
+## 22: Oklahoma City, 40 s (`true_crime_22_mcveigh_40s.mp4`)
+A missing license plate put the Oklahoma City bomber in a jail cell 🚔
+
+Within about 90 minutes of the 1995 bombing, a trooper pulled over a yellow car with no plate.
+Meanwhile, a truck axle sent the FBI to Kansas.
+Where was their suspect? Watch to the end.
+
+Would you have spotted it? 👇 Tell us below. Follow for the next case.
+
+#TrueCrime #OklahomaCity #CaughtBy #FBI #TrueCrimeCommunity #History #CaseFiles #Shorts
+
+168 people were killed, including 19 children. We remember them.
+Illustrated reconstruction · AI narration

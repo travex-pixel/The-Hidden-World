@@ -120,3 +120,5 @@
 - 2026-10-12 03:30:28 produce 18: regenerating episode data
 - 2026-10-12 03:30:28 tcv18-gilgo-40: render cached (inputs unchanged), skipping to QA
 - 2026-10-12 03:31:07 tcv18-gilgo-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_18_gilgo_40s.mp4 (43.5s, 18.6 MB, sha256 f68fa1b7d943)
+- 2026-10-12 03:34:25 tcv22-mcveigh-40: rendered in 459s
+- 2026-10-12 03:34:56 tcv22-mcveigh-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_22_mcveigh_40s.mp4 (44.6s, 21.4 MB, sha256 1b116a009205)
