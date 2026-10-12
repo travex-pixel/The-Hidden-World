@@ -675,8 +675,8 @@
   }
   // ================================================================== SET: abbey parlour, side view (the abbot on his floor)
   X.SETS.abbey_parlour = {
-    build(rng, seed) {
-      const set = { name: 'abbey_parlour', seed, camX: [-400, 600], camY: [-200, 160] };
+    build(rng, seed, opts = {}) {
+      const set = { name: opts.hall ? 'great_hall' : 'abbey_parlour', seed, camX: [-400, 600], camY: [-200, 160] };
       const L = [];
       // back wall: ashlar stone, a round Romanesque arch with a glimpse of cloister garth, candle sconces
       L.push(makeLayer(set, 1.8, (g, r, b) => {
@@ -695,7 +695,7 @@
         const y0 = groundY(1.8);
         for (let row = 0; row < 9; row++) { const yA = y0 + Math.pow(row / 9, 1.6) * (b.y1 - y0), yB = y0 + Math.pow((row + 1) / 9, 1.6) * (b.y1 - y0); const w = 110 + row * 30;
           for (let x = b.x0 + (row % 2) * w / 2; x < b.x1; x += w) P.flat(g, [[x + 2, yA + 2], [x + w - 2, yA + 2], [x + w - 2, yB - 2], [x + 2, yB - 2]], shade('#8f887c', (r() - 0.5) * 0.22), r, { mottle: 0.4, edgeAlpha: 0.45 }); }
-        for (const [x, y, rx] of [[560, 860, 120], [880, 905, 130], [1220, 870, 125], [1500, 930, 135], [300, 940, 130], [1050, 1010, 150]]) {
+        if (!opts.hall) for (const [x, y, rx] of [[560, 860, 120], [880, 905, 130], [1220, 870, 125], [1500, 930, 135], [300, 940, 130], [1050, 1010, 150]]) {
           g.save(); g.translate(x, y); g.scale(1, 0.3); X.ART.millstone(g, 0, 0, rx, r, 0, 0); g.restore(); }
         P.granulate(g, b.x0, y0, b.x1 - b.x0, b.y1 - y0, 0.3);
       }, { o: -1 }));
@@ -1000,6 +1000,336 @@
         g.save(); g.translate(wx, wy - 40); g.fillStyle = '#3a2418'; g.beginPath(); g.arc(0, -36, 11, 0, 7); g.fill(); g.fillRect(-9, -26, 18, 40); g.strokeStyle = '#3a2418'; g.lineWidth = 5; const sw = Math.sin(t * 9) * 8 * (u < 1 ? 1 : 0); g.beginPath(); g.moveTo(-4, 12); g.lineTo(-4 - sw, 36); g.moveTo(4, 12); g.lineTo(4 + sw, 36); g.stroke();
         g.strokeStyle = '#7a5636'; g.lineWidth = 5; g.beginPath(); g.moveTo(16, -60); g.lineTo(16, 10); g.moveTo(4, -44); g.lineTo(28, -44); g.stroke(); g.restore();
       } }];
+      return set;
+    }
+  };
+  // ================================================================== WHAT IF? (England, 1340): a modern stranger in a medieval village
+  // Reuses the village kit. Reconstruction notes: episodes/whatif001-modern-knowledge/research.md.
+  const cached = (key, w, h, paint) => { const c = P.canvas(w, h); paint(c.getContext('2d')); return c; };
+
+  X.SETS.field_dawn = {
+    build(rng, seed) {
+      const set = X.SETS.field.build(rng, seed); set.name = 'field_dawn';
+      set.dynamic = set.dynamic.filter(d => { const s = String(d.draw); return !(s.includes('drawStyled') || s.includes('wheatStrip') || s.includes('chaff')); });
+      set.finish = { bloom: 0.45, grade: ['#7a74b0', '#ffb47a'], gradeMode: 'soft-light', gradeAlpha: 0.42, vignette: 0.48, paper: 0.08, saturate: 1.06, exposure: -0.08 };
+      set.dynamic.push({ z: 39.5, draw: (g, t, ta, D) => { D.light(g, 1700, 560, 1000, '#ffbe80', 0.38); D.light(g, 1700, 560, 160, '#fff0d0', 0.6); } });
+      set.dynamic.push({ z: 6.05, draw: (g, t) => FX.mist(g, t, { x: 1400, y: HZ + 60, w: 3200, h: 90, n: 8, alpha: 0.34, speed: 5, key: 'dawn1' }) });
+      set.dynamic.push({ z: 1.5, draw: (g, t) => FX.mist(g, t, { x: 1200, y: groundY(1.5) - 30, w: 3200, h: 70, n: 7, alpha: 0.2, speed: 7, key: 'dawn2' }) });
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ the yard: well, privy, midden, and the ditch between them
+  X.SETS.well_yard = {
+    build(rng, seed) {
+      const set = { name: 'well_yard', seed, camX: [-500, 1100], camY: [-300, 140] };
+      const L = [];
+      L.push(makeLayer(set, 30, (g, r, b) => sky(g, r, b), { padY: 200 }));
+      L.push(makeLayer(set, 6, (g, r, b) => { hills(g, r, b, HZ + 10, 70, C.hillMid, { seed: 6 }); for (let x = b.x0; x < b.x1; x += 240 + r() * 260) tree(g, x, HZ + 20, 0.35 + r() * 0.15, r); }, { haze: 0.22, hazeColour: '#dfe6e0' }));
+      L.push(makeLayer(set, 2.2, (g, r, b) => {
+        const gy = groundY(2.2); mudGround(g, r, b, gy - 12, { puddles: 1 });
+        house(g, -260, gy, 440, r, { doorAt: 0.5 }); house(g, 1500, gy, 400, r, { doorAt: 0.25 });
+        hurdle(g, 260, gy, 1100, 70, r);
+      }, { haze: 0.06 }));
+      L.push(makeLayer(set, 1.55, (g, r, b) => {   // upstream: the wattle privy and the dung heap
+        const gy = groundY(1.55);
+        P.flat(g, P.rect(1240, gy - 210, 150, 210), '#8a6a44', r, { mottle: 0.8 }); for (let i = 0; i < 6; i++) P.stroke(g, P.seg2(1250 + i * 26, gy, 1252 + i * 26, gy - 205, 3), '#5a4028', 6, r, { alpha: 0.8 });
+        thatchRoof(g, 1240, gy - 210, 150, 70, r, { overhang: 18 }); P.flat(g, P.rect(1290, gy - 150, 50, 150), '#2a1a10', r, { texture: false });
+      }, {}));
+      L.push(makeLayer(set, 1.0, (g, r, b) => { const fy = groundY(1.0); for (let i = 0; i < 360; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = fy - 40 + r() * (b.y1 - fy + 40); P.stroke(g, [[x, y], [x + gauss(r) * 14, y - 10 - r() * 12]], r() < 0.5 ? C.grassD : C.grass, 3, r, { alpha: 0.5, bristles: 1 }); } }, { o: -1 }));
+      L.push(makeLayer(set, 0.6, (g, r, b) => { grassVerge(g, r, b.x0, b.x1, b.y1 - 10, 160, 1.2); }, { blur: 8 }));
+      set.layers = L; set.bg = C.skyLow; set.groundY = groundY; set.light = [-0.8, -0.6];
+      set.finish = { bloom: 0.28, grade: ['#8ab0c8', '#ffd08a'], gradeMode: 'soft-light', gradeAlpha: 0.22, vignette: 0.4, paper: 0.08, saturate: 1.12 };
+      set.drift = 0.9;
+      const ditch = (u) => { const y0 = groundY(1.5) + 6, y1 = groundY(1.0) + 70; return [lerp(1700, -500, u), lerp(y0, y1, u * u * 0.6 + u * 0.4) + Math.sin(u * 7) * 12]; };
+      set.dynamic = [
+        { z: 39, draw: (g, t) => FX.birds(g, t, { x: 300, y: 180, n: 5, speed: 24 }) },
+        { z: 1.52, draw: (g, t, ta, D, q) => {   // the midden: moved downstream after beat move_midden
+          const k = clamp((t - D.beat(q, 'move_midden', 1e9)) / 1.2, 0, 1); const r = mulberry32(8);
+          for (const [x, a] of [[1520, 1 - k], [-380, k]]) { if (a <= 0) continue; g.save(); g.globalAlpha = a; const gy = groundY(1.55); g.fillStyle = '#4a3a24'; g.beginPath(); g.ellipse(x, gy - 30, 150, 60, 0, Math.PI, 0); g.fill(); for (let i = 0; i < 30; i++) { g.fillStyle = r() < 0.5 ? '#6a5434' : '#3a2c1a'; g.beginPath(); g.ellipse(x - 120 + r() * 240, gy - 20 - r() * 60, 10 + r() * 14, 6 + r() * 8, 0, 0, 7); g.fill(); } g.restore(); }
+        } },
+        { z: 1.2, draw: (g, t, ta, D, q) => {   // the ditch: foul and scummed, clearing once the midden and privy are moved
+          const c = clamp((t - D.beat(q, 'clean_from', 1e9)) / Math.max(0.5, D.beat(q, 'clean_to', 1e9) - D.beat(q, 'clean_from', 1e9)), 0, 1);
+          const col = mix('#5e6236', '#7aa4b0', c); const N = 60; g.lineCap = 'round';
+          g.strokeStyle = col; g.lineWidth = 46; g.beginPath(); for (let i = 0; i <= N; i++) { const [x, y] = ditch(i / N); i ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke();
+          g.strokeStyle = rgba('#3e3a20', 0.35 * (1 - c)); g.lineWidth = 14; g.stroke();
+          const r = mulberry32(19); for (let i = 0; i < 26; i++) { const u = (r() + t * 0.02) % 1; const [x, y] = ditch(u); g.fillStyle = rgba(c > 0.5 ? '#e8f4f8' : '#9a9a56', 0.6); g.beginPath(); g.ellipse(x + gauss(r) * 6, y + gauss(r) * 5, 9, 3, 0, 0, 7); g.fill(); }
+          if (c < 1) FX.motes(g, t, { x: 1300, y: groundY(1.5) - 160, w: 500, h: 200, n: 22, alpha: 0.8 * (1 - c), colour: '#1a1a1a', key: 'flies' });
+        } },
+        { z: 1.08, o: 2, draw: (g, t, ta, D, q) => {   // the well: stone ring, posts, windlass, bucket; covered at beat cover
+          const x = 820, gy = groundY(1.08), r = mulberry32(12);
+          P.flat(g, [[x - 130, gy], [x - 126, gy - 110], [x + 126, gy - 110], [x + 130, gy]], '#9a9282', r, { mottle: 0.7 });
+          for (let row = 0; row < 3; row++) for (let i = 0; i < 6; i++) P.line(g, P.seg2(x - 126 + i * 46 + (row % 2) * 22, gy - 110 + row * 37, x - 126 + i * 46 + (row % 2) * 22, gy - 74 + row * 37, 2), '#6a6458', 2, r, { alpha: 0.6 });
+          g.fillStyle = '#1a2a2a'; g.beginPath(); g.ellipse(x, gy - 110, 126, 22, 0, 0, 7); g.fill();
+          for (const px of [x - 110, x + 110]) P.stroke(g, P.seg2(px, gy - 110, px, gy - 330, 3), '#5a3c26', 18, r, { alpha: 1 });
+          P.stroke(g, P.seg2(x - 124, gy - 300, x + 124, gy - 300, 3), '#5a3c26', 16, r, { alpha: 1 });
+          const kc = X.ease.out3(clamp((t - D.beat(q, 'cover', 1e9)) / 0.8, 0, 1));
+          if (kc > 0) { g.save(); g.globalAlpha = kc; P.flat(g, [[x - 150, gy - 330], [x, gy - 420], [x + 150, gy - 330]], '#7a5636', r, { mottle: 0.4 }); g.fillStyle = '#6a4a2e'; g.beginPath(); g.ellipse(x, gy - 112 - (1 - kc) * 60, 132, 24, 0, 0, 7); g.fill(); g.strokeStyle = INK; g.lineWidth = 3; g.stroke(); g.restore(); }
+          const by = gy - 290 + Math.sin(t * 1.3) * 6; g.strokeStyle = '#3a2a1c'; g.lineWidth = 3; g.beginPath(); g.moveTo(x + 30, gy - 300); g.lineTo(x + 30, by + 20); g.stroke();
+          P.flat(g, [[x + 6, by + 20], [x + 54, by + 20], [x + 48, by + 70], [x + 12, by + 70]], '#7a5232', r, {});
+        } },
+        { z: 1.03, o: 2, draw: (g, t, ta, D, q) => {   // boiling water over a small fire from beat boil
+          const k = clamp((t - D.beat(q, 'boil', 1e9)) / 0.8, 0, 1); if (k <= 0) return; const x = 250, gy = groundY(1.03), r = mulberry32(14);
+          g.save(); g.globalAlpha = k; FX.flame(g, t, { x, y: gy - 6, size: 0.7 }); D.light(g, x, gy - 60, 300, '#ff9a40', 0.3 * k);
+          for (const px of [x - 70, x + 70]) P.stroke(g, P.seg2(px, gy, x, gy - 190, 3), '#3a2a1c', 9, r, { alpha: 1 });
+          P.flat(g, [[x - 60, gy - 150], [x + 60, gy - 150], [x + 50, gy - 70], [x - 50, gy - 70]], '#3a3430', r, {}); g.restore();
+          FX.smoke(g, t, { x, y: gy - 150, n: 10, life: 3, rise: 260, size: 18, alpha: 0.35 * k, wind: 8, colour: '#ffffff', key: 'steam' });
+        } },
+        { z: 0.97, draw: (g, t) => FX.grass(g, t, { x: -300, y: groundY(1.0) + 140, w: 2600, n: 60, h: 50 }) }
+      ];
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ the wool merchant's counting house
+  const SACK = (g, r, x, y, s, mark) => {
+    const p = [[x - 70 * s, y], [x - 82 * s, y - 60 * s], [x - 64 * s, y - 120 * s], [x, y - 132 * s], [x + 64 * s, y - 120 * s], [x + 82 * s, y - 60 * s], [x + 70 * s, y]];
+    P.flat(g, p, '#d8ccae', r, { mottle: 0.9 }); g.save(); P.polyPath(g, p); g.clip(); P.gradient(g, x - 90 * s, y - 132 * s, 180 * s, 132 * s, [[0, '#fff4dc', 0.2], [1, '#8a7a5a', 0.5]]); g.restore();
+    if (mark) { g.strokeStyle = '#5a2a1e'; g.lineWidth = 6 * s; g.beginPath(); g.moveTo(x, y - 100 * s); g.lineTo(x, y - 40 * s); g.moveTo(x - 20 * s, y - 80 * s); g.lineTo(x + 20 * s, y - 80 * s); g.moveTo(x, y - 40 * s); g.quadraticCurveTo(x + 22 * s, y - 40 * s, x + 20 * s, y - 56 * s); g.stroke(); }
+  };
+  X.SETS.counting_house = {
+    build(rng, seed) {
+      const set = { name: 'counting_house', seed, camX: [-400, 1000], camY: [-280, 160] };
+      const L = []; const wy1 = groundY(1.7);
+      L.push(makeLayer(set, 1.7, (g, r, b) => {
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#3a2a1e'], [0.5, '#6a5038'], [1, '#3a2a1c']]);
+        P.wash(g, P.rect(b.x0, 170, b.x1 - b.x0, wy1 - 170), '#dcc8a0', r, { layers: 14, alpha: 0.13, spread: 0.03, edge: false }); P.mottle(g, { x: b.x0, y: 170, w: b.x1 - b.x0, h: wy1 - 170 }, '#c4a878', r, 1.3); P.granulate(g, b.x0, 170, b.x1 - b.x0, wy1 - 170, 0.3);
+        for (let x = b.x0 + 60; x < b.x1; x += 300 + r() * 40) P.stroke(g, P.seg2(x, b.y0, x + gauss(r) * 3, wy1, 6), '#4a3020', 22, r, { alpha: 0.95 });
+        P.stroke(g, P.seg2(b.x0, 170, b.x1, 170, 10), '#4a3020', 26, r, { alpha: 0.95 });
+        P.flat(g, P.rect(250, 290, 240, 220), '#fff4d8', r, { texture: false, edge: false }); P.gradient(g, 250, 420, 240, 90, [[0, '#c8d8b0', 0], [1, '#a8b890', 0.6]]);   // an open window onto the street
+        for (const x of [240, 500]) P.stroke(g, P.seg2(x, 280, x, 520, 3), '#4a3020', 16, r, { alpha: 1 }); P.stroke(g, P.seg2(234, 285, 506, 285, 3), '#4a3020', 18, r, { alpha: 1 }); P.stroke(g, P.seg2(234, 515, 506, 515, 3), '#4a3020', 18, r, { alpha: 1 });
+        P.stroke(g, P.seg2(680, 430, 1180, 430, 5), '#5a3c26', 14, r, { alpha: 1 });   // shelf: rolls, a strongbox
+        for (let i = 0; i < 6; i++) P.flat(g, P.ellipse(720 + i * 46, 400, 20, 30, 10), i % 2 ? '#e8dcc0' : '#d8c8a0', r, {}); P.flat(g, P.rect(1010, 360, 130, 70), '#5a3a22', r, { mottle: 0.5 }); P.stroke(g, P.seg2(1010, 380, 1140, 380, 2), '#2a2a2e', 6, r, { alpha: 1 });
+        for (let i = 0; i < 7; i++) { const x = 1330 + i * 26; P.stroke(g, P.seg2(x, 300, x + 4, 470 - (i % 3) * 20, 2), '#c9a874', 9, r, { alpha: 1 }); for (let k = 0; k < 5; k++) P.line(g, P.seg2(x - 4, 320 + k * 26, x + 6, 324 + k * 26, 2), INK, 2, r, { alpha: 0.6 }); }   // tally sticks on a nail
+        const sx = 1620; P.stroke(g, P.seg2(sx, 240, sx, 330, 2), '#3a2a1c', 4, r, { alpha: 1 }); P.stroke(g, P.seg2(sx - 120, 330, sx + 120, 330, 2), '#6a4a2a', 9, r, { alpha: 1 });   // beam scales
+        for (const px of [sx - 110, sx + 110]) { P.stroke(g, P.seg2(px, 330, px - 30, 420, 2), '#3a2a1c', 2, r, { alpha: 0.8 }); P.stroke(g, P.seg2(px, 330, px + 30, 420, 2), '#3a2a1c', 2, r, { alpha: 0.8 }); P.flat(g, P.ellipse(px, 422, 44, 9, 10), '#8a6a3a', r, {}); }
+        P.gradient(g, b.x0, wy1, b.x1 - b.x0, b.y1 - wy1, [[0, '#6e5236'], [1, '#4a3420']]); P.mottle(g, { x: b.x0, y: wy1, w: b.x1 - b.x0, h: b.y1 - wy1 }, '#6a4e34', r, 1.2);
+      }, { haze: 0.05, hazeColour: '#2a1c14' }));
+      L.push(makeLayer(set, 1.35, (g, r, b) => {   // wool sacks stacked against the wall, each with the merchant's mark
+        const gy = groundY(1.35);
+        for (const [x, y, s] of [[1380, gy, 1.1], [1560, gy, 1.05], [1740, gy, 1.1], [1920, gy, 1.0], [1470, gy - 140, 1.0], [1650, gy - 136, 1.05], [1830, gy - 140, 1.0], [1560, gy - 276, 0.95]]) SACK(g, r, x, y, s, true);
+      }, {}));
+      L.push(makeLayer(set, 1.12, (g, r, b) => {   // the counting table: a chequered reckoning cloth, an ink pot and quill
+        const gy = groundY(1.12), top = gy - 200;
+        P.flat(g, [[360, top], [1320, top], [1336, top + 30], [344, top + 30]], '#5a3c24', r, { mottle: 0.5 });
+        for (const lx of [420, 1260]) P.stroke(g, P.seg2(lx, top + 30, lx, gy, 3), '#4a3020', 20, r, { alpha: 1 });
+        for (let i = 0; i < 12; i++) for (let k = 0; k < 2; k++) { g.fillStyle = (i + k) % 2 ? '#2e4a2e' : '#3e5e3a'; g.fillRect(480 + i * 50, top - 2 + k * 14, 50, 14); }
+        P.flat(g, P.ellipse(1200, top - 16, 22, 16, 12), '#1a1a22', r, {}); P.stroke(g, [[1200, top - 30], [1240, top - 120]], '#e8e0c8', 4, r, { alpha: 1 });
+      }, {}));
+      L.push(makeLayer(set, 1.0, (g, r, b) => { const fy = groundY(1.0); for (let i = 0; i < 300; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = fy - 40 + r() * (b.y1 - fy + 40); P.stroke(g, [[x, y], [x + 24 + r() * 26, y + gauss(r) * 4]], r() < 0.5 ? '#b89a5a' : '#8a7040', 3, r, { alpha: 0.35, bristles: 1 }); } }, { o: -1 }));
+      L.push(makeLayer(set, 0.62, (g, r, b) => { P.stroke(g, P.seg2(-280, b.y0, -270, b.y1, 8), '#2e1e14', 64, r, { alpha: 1, bristles: 5 }); SACK(g, r, 2500, b.y1 + 10, 2.2, false); }, { blur: 8 }));
+      set.layers = L; set.bg = '#3a2a1c'; set.groundY = groundY; set.light = [-0.85, -0.5];
+      set.finish = { bloom: 0.3, grade: ['#7a8aa8', '#ffcc88'], gradeMode: 'soft-light', gradeAlpha: 0.26, vignette: 0.55, paper: 0.08, saturate: 1.1 };
+      set.drift = 0.7;
+      set.dynamic = [
+        { z: 1.69, draw: (g, t, ta, D) => { FX.rays(g, t, { x: 370, y: 330, angle: 0.75, n: 5, spread: 0.08, width: 0.05, len: 1300, alpha: 0.13, key: 'win' }); D.light(g, 370, 400, 600, '#fff0d0', 0.14); } },
+        { z: 1.2, draw: (g, t) => FX.motes(g, t, { x: 200, y: 260, w: 1200, h: 600, n: 50, alpha: 0.55, key: 'ch' }) },
+        { z: 1.115, draw: (g, t, ta, D, q) => {   // jettons slid along the lines of the cloth while reckoning; coin piles grow with the profit beat
+          const top = groundY(1.12) - 200; const r = mulberry32(31);
+          for (let i = 0; i < 14; i++) { const lane = i % 2, base = 500 + (i * 83) % 560, ph = r() * 6; const x = base + Math.max(0, Math.sin(t * 0.9 + ph)) * 40; g.fillStyle = '#c9b070'; g.beginPath(); g.ellipse(x, top + 4 + lane * 14, 11, 5, 0, 0, 7); g.fill(); g.strokeStyle = '#6a5428'; g.lineWidth = 1.5; g.stroke(); }
+          const k = clamp((t - D.beat(q, 'profit', 1e9)) / 3, 0, 1);
+          for (const [x, n0] of [[1080, 4], [1130, 3], [1170, 5]]) { const n = n0 + Math.floor(k * 8); for (let j = 0; j < n; j++) { g.fillStyle = j % 2 ? '#d8d4c8' : '#c4c0b2'; g.beginPath(); g.ellipse(x, top - 4 - j * 5, 18, 6, 0, 0, 7); g.fill(); g.strokeStyle = '#6a665c'; g.lineWidth = 1.5; g.stroke(); } }
+        } }
+      ];
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ insert: the ledger, Roman numerals against Hindu-Arabic ones
+  X.SETS.ledger_insert = {
+    build(rng, seed) {
+      const set = { name: 'ledger_insert', seed, camX: [-300, 300], camY: [-200, 200] };
+      set.layers = [makeLayer(set, 1.0, (g, r, b) => {
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#4a3020'], [1, '#2e1e14']]);   // the table
+        for (const [x0, rot] of [[260, -0.02], [990, 0.02]]) { g.save(); g.translate(x0 + 330, 540); g.rotate(rot); P.flat(g, P.rect(-330, -420, 660, 840), '#efe2c0', r, { mottle: 1 }); P.granulate(g, -330, -420, 660, 840, 0.3); g.restore(); }
+        P.stroke(g, P.seg2(960, 110, 960, 970, 3), '#a89870', 10, r, { alpha: 0.6 });   // the gutter
+      })];
+      set.bg = '#2e1e14'; set.groundY = groundY; set.light = [-0.6, -0.6];
+      set.finish = { bloom: 0.22, grade: ['#8a7a60', '#ffd090'], gradeMode: 'soft-light', gradeAlpha: 0.26, vignette: 0.6, paper: 0.12, saturate: 1.0 };
+      set.drift = 0.4;
+      const L = ['CCCLXXVIII', 'CCXLVI', 'MLIX', 'DCCCXII'], R = ['378', '246', '1059', '812'];
+      set.dynamic = [{ z: 0.999, draw: (g, t, ta, D, q) => {
+        const w0 = D.beat(q, 'write_from', 0.5), w1 = D.beat(q, 'write_to', 6), u = clamp((t - w0) / Math.max(0.5, w1 - w0), 0, 1);
+        const ink = '#2a1a10', red = '#8a1e14';
+        const txt = (s, x, y, size, col, align, k = 1) => { if (k <= 0) return; g.save(); g.globalAlpha = Math.min(1, k); g.font = `600 ${size}px Fraunces`; g.textAlign = align; g.fillStyle = col; g.fillText(s, x, y); g.restore(); };
+        txt('Roman numerals', 590, 200, 34, red, 'center'); txt('Hindu-Arabic numerals', 1320, 200, 34, red, 'center');
+        L.forEach((s, i) => { const k = u * 5 - i; txt(s, 820, 300 + i * 92, 50, ink, 'right', k); txt(R[i], 1560, 300 + i * 92, 54, ink, 'right', k); });
+        const tot = u * 5 - 4; if (tot > 0) { g.save(); g.globalAlpha = Math.min(1, tot); g.strokeStyle = ink; g.lineWidth = 3; g.beginPath(); g.moveTo(380, 680); g.lineTo(830, 680); g.moveTo(1120, 680); g.lineTo(1570, 680); g.stroke(); g.restore(); txt('MMDCCCCXCV', 820, 760, 50, ink, 'right', tot); txt('2495', 1560, 760, 54, ink, 'right', tot); }
+        const chk = clamp((t - D.beat(q, 'check', 1e9)) / 0.6, 0, 1);
+        if (chk > 0) { txt('carry the 1 · check by column', 1340, 850, 30, red, 'center', chk); txt('add it up without a counting board?', 600, 850, 30, red, 'center', chk); }
+      } }];
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ the smithy, and the machine that does not work
+  X.SETS.smithy = {
+    build(rng, seed) {
+      const set = { name: 'smithy', seed, camX: [-400, 1100], camY: [-280, 160] };
+      const L = []; const wy1 = groundY(1.7);
+      L.push(makeLayer(set, 1.7, (g, r, b) => {
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#120a06'], [0.5, '#3a2a20'], [1, '#1e140e']]);
+        P.wash(g, P.rect(b.x0, 160, b.x1 - b.x0, wy1 - 160), '#6a5440', r, { layers: 12, alpha: 0.12, spread: 0.03, edge: false }); P.mottle(g, { x: b.x0, y: 160, w: b.x1 - b.x0, h: wy1 - 160 }, '#4a3a2a', r, 1.4);
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, 400, [[0, '#0a0604', 0.92], [1, '#0a0604', 0]]);
+        for (let x = b.x0 + 80; x < b.x1; x += 340 + r() * 40) P.stroke(g, P.seg2(x, b.y0, x + gauss(r) * 3, wy1, 6), '#2e1e12', 24, r, { alpha: 0.95 });
+        // the forge: a stone hearth with a hood, the bellows beside it
+        P.flat(g, P.rect(140, wy1 - 200, 420, 200), '#6a6258', r, { mottle: 0.8 }); P.flat(g, [[180, wy1 - 200], [520, wy1 - 200], [430, wy1 - 520], [270, wy1 - 520]], '#4a4440', r, { mottle: 0.6 });
+        P.flat(g, P.rect(270, b.y0, 160, wy1 - 520 - b.y0), '#3e3a36', r, { mottle: 0.5 }); P.flat(g, P.ellipse(350, wy1 - 205, 140, 24, 14), '#2a1a12', r, {});
+        P.flat(g, [[600, wy1 - 150], [800, wy1 - 190], [800, wy1 - 110], [600, wy1 - 90]], '#6a4a2e', r, { mottle: 0.5 });
+        // tools on the wall: tongs, hammers, a row of horseshoes
+        for (let i = 0; i < 6; i++) { const x = 900 + i * 60; P.stroke(g, P.seg2(x, 300, x + (i % 2 ? 8 : -8), 470, 2), '#2a2a2e', 8, r, { alpha: 1 }); }
+        for (let i = 0; i < 7; i++) { g.strokeStyle = '#3a3a40'; g.lineWidth = 7; g.beginPath(); g.arc(1320 + i * 46, 340, 16, 0.2, Math.PI - 0.2, true); g.stroke(); }
+        P.gradient(g, b.x0, wy1, b.x1 - b.x0, b.y1 - wy1, [[0, '#3a2c20'], [1, '#22180e']]); P.mottle(g, { x: b.x0, y: wy1, w: b.x1 - b.x0, h: b.y1 - wy1 }, '#3a2c20', r, 1.2);
+      }, { haze: 0.08, hazeColour: '#120a06' }));
+      L.push(makeLayer(set, 1.18, (g, r, b) => {   // the anvil on its stump, the quench tub
+        const gy = groundY(1.18); P.flat(g, P.rect(640, gy - 120, 100, 120), '#5a3c26', r, { mottle: 0.6 });
+        P.flat(g, [[580, gy - 120], [800, gy - 120], [840, gy - 150], [800, gy - 175], [600, gy - 175]], '#3a3a40', r, {}); P.stroke(g, P.seg2(600, gy - 172, 800, gy - 172, 2), '#7a7a84', 4, r, { alpha: 0.8 });
+        P.flat(g, [[880, gy], [1020, gy], [1030, gy - 110], [870, gy - 110]], '#6a4a2e', r, { mottle: 0.5 }); P.flat(g, P.ellipse(950, gy - 110, 80, 14, 12), '#1e2a30', r, {});
+      }, {}));
+      L.push(makeLayer(set, 1.0, (g, r, b) => { const fy = groundY(1.0); for (let i = 0; i < 200; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = fy - 30 + r() * (b.y1 - fy + 30); g.fillStyle = rgba(r() < 0.5 ? '#1a1410' : '#4a3a2a', 0.5); g.beginPath(); g.ellipse(x, y, 3 + r() * 6, 2 + r() * 3, 0, 0, 7); g.fill(); } }, { o: -1 }));
+      L.push(makeLayer(set, 0.62, (g, r, b) => { P.stroke(g, P.seg2(2700, b.y0, 2710, b.y1, 8), '#140c08', 70, r, { alpha: 1, bristles: 5 }); }, { blur: 8 }));
+      set.layers = L; set.bg = '#120a06'; set.groundY = groundY; set.light = [-0.9, -0.3];
+      set.finish = { bloom: 0.34, grade: ['#1e2240', '#ff9040'], gradeMode: 'soft-light', gradeAlpha: 0.42, vignette: 0.8, paper: 0.07, saturate: 1.1, exposure: -0.3 };
+      set.drift = 0.7;
+      const MX = 1250, gy = groundY(1.1);
+      set.dynamic = [
+        { z: 1.69, draw: (g, t, ta, D) => { const fy = groundY(1.7) - 205; FX.flame(g, t, { x: 350, y: fy, size: 1.1 }); const pump = 0.5 + 0.5 * Math.sin(t * 2.4); D.light(g, 350, fy - 60, 1000, '#ff8030', 0.42 + 0.18 * pump); FX.sparks(g, t, { x: 350, y: fy - 40, beat: 1.4, n: 8, key: 'forge' }); } },
+        { z: 1.17, draw: (g, t, ta, D) => FX.smoke(g, t, { x: 350, y: groundY(1.7) - 260, n: 10, life: 6, rise: 500, size: 24, alpha: 0.18, wind: 4, key: 'forge' }) },
+        { z: 1.1, o: 2, draw: (g, t, ta, D, q) => {   // the machine: a sealed boiler on a firebox, a pipe to a hooped wooden cylinder, a piston and a rocking beam
+          const run = D.beat(q, 'run', 1e9), leak = D.beat(q, 'leak', 1e9), burst = D.beat(q, 'burst', 1e9); const r = mulberry32(41);
+          const on = clamp((t - run) / 1, 0, 1), lk = clamp((t - leak) / 2.5, 0, 1), bu = t - burst;
+          const rock = on * (bu < 0 ? Math.sin((t - run) * 3.2) * 0.12 * (1 - lk * 0.7) : 0) - (bu > 0 ? Math.min(0.32, bu * 0.6) : 0);
+          FX.flame(g, t, { x: MX, y: gy - 10, size: 0.5 + 0.3 * on }); D.light(g, MX, gy - 60, 360, '#ff9040', 0.25 + 0.2 * on);
+          P.flat(g, P.rect(MX - 110, gy - 90, 220, 90), '#7a4a34', r, { mottle: 0.6 });   // brick firebox
+          P.flat(g, [[MX - 100, gy - 90], [MX + 100, gy - 90], [MX + 90, gy - 230], [MX - 90, gy - 230]], '#5a5a62', r, { mottle: 0.4 });   // boiler
+          if (bu < 0) { P.flat(g, P.ellipse(MX, gy - 232, 92, 18, 12), '#6a6a72', r, {}); }
+          P.stroke(g, [[MX + 40, gy - 232], [MX + 40, gy - 320], [MX + 230, gy - 320], [MX + 230, gy - 260]], '#4a4a52', 16, r, { alpha: 1 });   // steam pipe
+          P.flat(g, P.rect(MX + 180, gy - 260, 110, 260), '#8a6a44', r, { mottle: 0.5 }); for (const yy of [gy - 240, gy - 130, gy - 30]) P.stroke(g, P.seg2(MX + 176, yy, MX + 294, yy, 2), '#2a2a2e', 8, r, { alpha: 1 });   // hooped cylinder
+          g.save(); g.translate(MX + 420, gy - 360); g.rotate(rock); P.stroke(g, P.seg2(-260, 0, 200, 0, 3), '#5a3c26', 22, r, { alpha: 1 }); g.restore();   // the beam
+          P.stroke(g, P.seg2(MX + 420, gy, MX + 420, gy - 360, 3), '#4a3020', 26, r, { alpha: 1 });
+          const py = gy - 360 + Math.sin(rock) * 260; P.stroke(g, P.seg2(MX + 235, py, MX + 235, gy - 260, 2), '#3a3a40', 9, r, { alpha: 1 });
+          if (lk > 0 && bu < 0.2) for (const [lx, ly, i] of [[MX + 40, gy - 300, 0], [MX + 230, gy - 300, 1], [MX + 290, gy - 150, 2], [MX - 90, gy - 220, 3]]) FX.smoke(g, t, { x: lx, y: ly, n: Math.round(4 + 10 * lk), life: 1.2, rise: 200, size: 10 + 10 * lk, alpha: 0.5 * lk, wind: (i % 2 ? 60 : -60), colour: '#ffffff', key: 'leak' + i });
+          if (bu > 0) {
+            const u = Math.min(bu, 2.5); const lx = MX + 30 + u * 120, ly = gy - 260 - u * 520 + u * u * 300;   // the lid tumbles away
+            if (u < 2.2) { g.save(); g.translate(lx, ly); g.rotate(u * 7); P.flat(g, P.ellipse(0, 0, 92, 18, 12), '#6a6a72', r, {}); g.restore(); }
+            const puff = Math.min(1, bu / 0.3) * Math.max(0, 1 - (bu - 1.5) / 3);
+            if (puff > 0) { g.save(); g.globalAlpha = puff; for (let i = 0; i < 9; i++) { const a = i / 9 * Math.PI * 2, d = 40 + bu * 160; P.bloom(g, MX + Math.cos(a) * d * 0.8, gy - 260 + Math.sin(a) * d * 0.5 - bu * 60, 120 + bu * 90, '#f4f4f4', 0.5); } g.restore(); }
+            FX.smoke(g, t, { x: MX, y: gy - 240, n: 18, life: 4, rise: 500, size: 30, alpha: 0.4 * Math.max(0, 1 - bu / 6), wind: 20, colour: '#e8e8e8', key: 'burst' });
+          }
+        } }
+      ];
+      return set;
+    }
+  };
+
+  X.SETS.great_hall = {
+    build(rng, seed) {
+      const set = X.SETS.abbey_parlour.build(rng, seed, { hall: true });
+      set.finish = { bloom: 0.36, grade: ['#1a1e3a', '#ff9a50'], gradeMode: 'soft-light', gradeAlpha: 0.42, vignette: 0.82, paper: 0.07, saturate: 1.08, exposure: -0.34 };
+      set.dynamic = set.dynamic.filter(d => !String(d.draw).includes('rays'));
+      const gy = groundY(1.15);
+      set.dynamic.push({ z: 1.79, draw: (g, t, ta, D) => { // a red hanging on the wall
+        const r = mulberry32(61); P.flat(g, [[620, 300], [820, 300], [820, 640], [720, 600], [620, 640]], '#7a1a24', r, { mottle: 0.5 }); P.stroke(g, P.seg2(600, 296, 840, 296, 2), '#3a2a1c', 10, r, { alpha: 1 });
+        g.strokeStyle = '#d8b050'; g.lineWidth = 6; g.beginPath(); g.moveTo(720, 380); g.lineTo(720, 520); g.moveTo(670, 440); g.lineTo(770, 440); g.stroke();
+        for (const sx of [380, 1580]) D.light(g, sx, groundY(1.8) - 450, 420, '#ffb060', 0.35); } });
+      set.dynamic.push({ z: 1.15, o: 1, draw: (g, t, ta, D) => {   // the lord's table: cloth, goblets, a candelabrum
+        const r = mulberry32(62), top = gy - 190;
+        P.flat(g, [[700, top], [1500, top], [1516, top + 28], [684, top + 28]], '#e8dcc0', r, { mottle: 0.5 }); P.flat(g, P.rect(690, top + 28, 820, 160), '#4a3020', r, { mottle: 0.4 });
+        for (const x of [820, 1340]) { P.flat(g, [[x - 16, top - 60], [x + 16, top - 60], [x + 6, top - 20], [x + 14, top], [x - 14, top], [x - 6, top - 20]], '#c9a24a', r, {}); }
+        const cx = 1080; P.stroke(g, P.seg2(cx, top, cx, top - 120, 2), '#8a6a2a', 8, r, { alpha: 1 }); P.stroke(g, P.seg2(cx - 70, top - 120, cx + 70, top - 120, 2), '#8a6a2a', 8, r, { alpha: 1 });
+        for (const x of [cx - 70, cx, cx + 70]) { P.flat(g, P.rect(x - 8, top - 170, 16, 50), '#efe6d0', r, { texture: false }); FX.flame(g, t, { x, y: top - 170, size: 0.28 }); D.light(g, x, top - 190, 340, '#ffb060', 0.38); }
+      } });
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ insert: England and Wales, and the plague's arrival (1348-49)
+  const ENG = [[-5.7, 50.07], [-5.2, 49.96], [-4.14, 50.37], [-3.64, 50.22], [-3.4, 50.62], [-2.93, 50.72], [-2.46, 50.61], [-1.98, 50.71], [-1.3, 50.75], [-1.09, 50.8], [-0.79, 50.73], [-0.14, 50.82], [0.25, 50.74], [0.97, 50.91], [1.31, 51.13], [1.44, 51.38], [0.9, 51.45], [0.55, 51.5], [0.95, 51.62], [1.1, 51.8], [1.28, 51.94], [1.57, 52.08], [1.76, 52.48], [1.73, 52.6], [1.3, 52.93], [0.85, 52.97], [0.3, 52.85], [0.1, 52.9], [0.34, 53.14], [0.1, 53.6], [-0.08, 54.12], [-0.4, 54.28], [-0.61, 54.49], [-1.15, 54.65], [-1.38, 54.9], [-1.42, 55.0], [-2.0, 55.77], [-1.9, 56.6], [-4.8, 56.6], [-3.6, 55.0], [-3.4, 54.95], [-3.6, 54.5], [-3.2, 54.1], [-2.9, 54.07], [-3.05, 53.82], [-3.0, 53.4], [-3.5, 53.32], [-3.85, 53.33], [-4.55, 53.4], [-4.7, 53.25], [-4.75, 52.8], [-4.1, 52.6], [-4.08, 52.41], [-4.6, 52.1], [-5.3, 51.88], [-5.1, 51.7], [-4.7, 51.67], [-3.95, 51.6], [-3.17, 51.47], [-2.7, 51.55], [-2.6, 51.6], [-3.0, 51.2], [-3.48, 51.21], [-4.0, 51.22], [-4.52, 51.02], [-4.94, 50.54]];
+  const geo = (lon, lat) => [960 + (lon + 1.95) * 112, 1060 - (lat - 50) * 182];
+  X.SETS.map_england = {
+    build(rng, seed) {
+      const set = { name: 'map_england', seed, camX: [-500, 500], camY: [-300, 300] };
+      const land = ENG.map(([a, b]) => geo(a, b)); set.land = land;
+      set.layers = [makeLayer(set, 1.0, (g, r, b) => {
+        P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#7e98a2'], [1, '#62808a']]);
+        for (let i = 0; i < 60; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = b.y0 + r() * (b.y1 - b.y0); P.line(g, P.seg2(x, y, x + 50, y + 4, 2), '#4e6a74', 2, r, { alpha: 0.4 }); }
+        P.wash(g, land, '#e8d8b0', r, { layers: 14, alpha: 0.22, spread: 0.01, edge: true }); g.save(); P.polyPath(g, land); g.clip(); P.mottle(g, { x: 400, y: 0, w: 1100, h: 1100 }, '#d8c494', r, 1.2); g.restore();
+        P.edge(g, land, '#5a4030', r, { alpha: 0.7, width: 3 }); P.granulate(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, 0.35);
+      })];
+      set.bg = '#62808a'; set.groundY = groundY; set.light = [-0.6, -0.6];
+      set.finish = { bloom: 0.2, grade: ['#c8b890', '#8a6a40'], gradeMode: 'soft-light', gradeAlpha: 0.3, vignette: 0.6, paper: 0.18, saturate: 0.95 };
+      set.drift = 0.4;
+      const towns = [['Melcombe', -2.46, 50.61, 0], ['Bristol', -2.59, 51.45, 0.25], ['London', -0.12, 51.5, 0.45], ['York', -1.08, 53.96, 0.8]];
+      const village = geo(-1.8, 51.25);
+      set.dynamic = [{ z: 0.999, draw: (g, t, ta, D, q) => {
+        const u = clamp((t - D.beat(q, 'spread_from', 1e9)) / Math.max(0.5, D.beat(q, 'spread_to', 1e9) - D.beat(q, 'spread_from', 1e9)), 0, 1);
+        const [mx, my] = geo(-2.46, 50.61);
+        if (u > 0) { g.save(); P.polyPath(g, set.land); g.clip(); const R = 40 + u * 1100; const gr = g.createRadialGradient(mx, my, R * 0.55, mx, my, R); gr.addColorStop(0, rgba('#6a1a2a', 0.5)); gr.addColorStop(1, rgba('#6a1a2a', 0)); g.fillStyle = gr; g.fillRect(mx - R, my - R, R * 2, R * 2); g.restore(); }
+        const lab = (txt, x, y, s, col) => { g.font = `600 ${s}px Fraunces`; g.textAlign = 'center'; g.lineWidth = 6; g.strokeStyle = 'rgba(240,228,196,0.85)'; g.strokeText(txt, x, y); g.fillStyle = col || '#3a2418'; g.fillText(txt, x, y); };
+        for (const [name, lo, la, at] of towns) { const [x, y] = geo(lo, la); const hit = u > at; g.fillStyle = hit ? '#7a1e14' : '#3a2418'; g.beginPath(); g.arc(x, y, hit ? 11 : 8, 0, 7); g.fill(); lab(name, x, y - 20, 28, hit ? '#7a1e14' : '#3a2418'); }
+        g.fillStyle = '#2a5a3a'; g.beginPath(); g.arc(village[0], village[1], 9, 0, 7); g.fill(); lab('your village', village[0] + 70, village[1] + 34, 26, '#2a5a3a');
+        const yr = u < 0.05 ? '' : u < 0.5 ? 'summer–autumn 1348' : u < 0.85 ? 'winter 1348–49' : '1349';
+        if (yr) { g.save(); g.translate(1520, 940); g.fillStyle = 'rgba(240,228,196,0.88)'; g.strokeStyle = '#3a2418'; g.lineWidth = 4; g.beginPath(); g.roundRect(-200, -50, 400, 84, 12); g.fill(); g.stroke(); g.restore(); lab(yr, 1520, 1004 - 60, 36, '#7a1e14'); }
+      } }];
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ one possible branch: the settlement under the castle, growing in stages
+  X.SETS.alt_town = {
+    build(rng, seed) {
+      const set = { name: 'alt_town', seed, camX: [-400, 900], camY: [-300, 120] };
+      const L = [];
+      L.push(makeLayer(set, 40, (g, r, b) => { P.gradient(g, b.x0, b.y0, b.x1 - b.x0, HZ + 200 - b.y0, [[0, '#6a7ab0'], [0.55, '#e8b8a0'], [1, '#ffd8a0']]); P.bloom(g, 1500, 420, 600, '#fff0c8', 0.5); for (let i = 0; i < 6; i++) cloud(g, b.x0 + 300 + i * 480, 140 + r() * 180, 0.7, r); }, { padY: 200 }));
+      L.push(makeLayer(set, 12, (g, r, b) => hills(g, r, b, HZ - 20, 90, '#8a9aa8', { seed: 21 }), { haze: 0.3, hazeColour: '#e8d0c0' }));
+      L.push(makeLayer(set, 5, (g, r, b) => {   // the castle on its hill above the river
+        hills(g, r, b, HZ + 40, 40, C.hillMid, { seed: 22 });
+        P.wash(g, [[-300, HZ + 60], [100, HZ - 160], [520, HZ - 200], [900, HZ + 40], [900, HZ + 200], [-300, HZ + 200]], '#6e8a5e', r, { layers: 10, alpha: 0.18, edge: false });
+        const cx = 330, cy = HZ - 190;
+        P.flat(g, P.rect(cx - 170, cy - 120, 340, 130), '#a8a090', r, { mottle: 0.6 });
+        for (const tx of [cx - 190, cx + 150]) { P.flat(g, P.rect(tx, cy - 200, 60, 210), '#9a9282', r, { mottle: 0.6 }); for (let k = 0; k < 3; k++) P.flat(g, P.rect(tx + k * 22, cy - 220, 14, 22), '#9a9282', r, {}); }
+        P.flat(g, P.rect(cx - 50, cy - 260, 100, 160), '#b0a898', r, { mottle: 0.6 }); for (let k = 0; k < 4; k++) P.flat(g, P.rect(cx - 50 + k * 28, cy - 282, 16, 22), '#b0a898', r, {});
+        for (let k = 0; k < 9; k++) P.flat(g, P.rect(cx - 170 + k * 40, cy - 140, 22, 22), '#a8a090', r, {});
+        P.flat(g, [[cx + 40, cy - 260], [cx + 40, cy - 330], [cx + 100, cy - 312], [cx + 40, cy - 296]], '#a8322a', r, {});
+        P.stroke(g, [[b.x0, HZ + 150], [300, HZ + 130], [800, HZ + 170], [1400, HZ + 150], [b.x1, HZ + 170]], '#8aa8b8', 46, r, { alpha: 0.9 });   // the river
+      }, { haze: 0.12, hazeColour: '#e8d0c0' }));
+      L.push(makeLayer(set, 2.4, (g, r, b) => { const gy = groundY(2.4); P.gradient(g, b.x0, gy - 120, b.x1 - b.x0, b.y1 - gy + 120, [[0, '#7d9447'], [1, '#5e7536']]); P.mottle(g, { x: b.x0, y: gy - 120, w: b.x1 - b.x0, h: b.y1 - gy }, C.grass, r, 1); }, {}));
+      L.push(makeLayer(set, 0.6, (g, r, b) => grassVerge(g, r, b.x0, b.x1, b.y1 - 10, 200, 1.3), { blur: 8 }));
+      set.layers = L; set.bg = '#e8b8a0'; set.groundY = groundY; set.light = [0.8, -0.4];
+      set.finish = { bloom: 0.4, grade: ['#7a8ab8', '#ffc890'], gradeMode: 'soft-light', gradeAlpha: 0.3, vignette: 0.5, paper: 0.08, saturate: 1.08 };
+      set.drift = 0.6;
+      // buildings appear stage by stage: 0 = the village of 1340, 1-3 = a hypothetical branch
+      const r0 = mulberry32(seed ^ 777); const B = [];
+      const add = (stage, x, z, kind, w) => B.push({ stage, x, z, kind, w, img: null });
+      for (let i = 0; i < 7; i++) add(0, 420 + i * 170 + r0() * 40, 3.2, 'cottage', 150);
+      add(0, 1700, 3.3, 'church', 200);
+      for (let i = 0; i < 8; i++) add(1, 300 + i * 150 + r0() * 50, 2.8, 'cottage', 140);
+      add(1, 1180, 2.9, 'hall', 260); add(1, 2100, 3.4, 'mill', 120);
+      for (let i = 0; i < 9; i++) add(2, 150 + i * 200 + r0() * 50, 2.6, 'townhouse', 150);
+      add(2, -80, 2.7, 'wall', 2400); add(2, 2300, 3.6, 'mill', 120);
+      add(3, 900, 2.5, 'tower', 120); for (let i = 0; i < 6; i++) add(3, 260 + i * 260, 2.45, 'townhouse', 170); add(3, 1900, 2.5, 'quay', 500);
+      const paintB = (bd) => {
+        const W2 = bd.kind === 'wall' ? bd.w + 40 : bd.kind === 'quay' ? bd.w + 40 : 380, H2 = 520; const c = P.canvas(W2, H2), gg = c.getContext('2d'), r = mulberry32(Math.round(bd.x * 13 + bd.stage)); const y = H2 - 10;
+        if (bd.kind === 'cottage') house(gg, 60, y, bd.w, r, { wallH: 110, roofH: 120 });
+        else if (bd.kind === 'townhouse') { house(gg, 60, y, bd.w, r, { wallH: 230, roofH: 140, posts: 2, daub: '#ecdcb8' }); }
+        else if (bd.kind === 'hall') { P.flat(gg, P.rect(40, y - 160, bd.w, 160), '#c8bca0', r, { mottle: 0.5 }); for (let k = 0; k < 5; k++) P.flat(gg, P.rect(56 + k * 48, y - 100, 24, 60), '#3a2a20', r, {}); P.flat(gg, [[20, y - 160], [40 + bd.w / 2, y - 280], [60 + bd.w, y - 160]], '#8a4a30', r, {}); }
+        else if (bd.kind === 'church') { P.flat(gg, P.rect(40, y - 160, 200, 160), '#b8b0a0', r, { mottle: 0.6 }); P.flat(gg, P.rect(200, y - 330, 80, 330), '#a8a090', r, { mottle: 0.6 }); P.flat(gg, [[190, y - 330], [240, y - 420], [290, y - 330]], '#6a6260', r, {}); }
+        else if (bd.kind === 'mill') { P.flat(gg, [[120, y], [140, y - 220], [220, y - 220], [240, y]], '#8a6a48', r, { mottle: 0.6 }); }
+        else if (bd.kind === 'tower') { P.flat(gg, P.rect(130, y - 400, 110, 400), '#b8ae98', r, { mottle: 0.6 }); gg.fillStyle = '#f0e8d0'; gg.beginPath(); gg.arc(185, y - 330, 34, 0, 7); gg.fill(); gg.strokeStyle = INK; gg.lineWidth = 4; gg.stroke(); gg.beginPath(); gg.moveTo(185, y - 330); gg.lineTo(185, y - 356); gg.moveTo(185, y - 330); gg.lineTo(204, y - 322); gg.stroke(); P.flat(gg, [[120, y - 400], [185, y - 480], [250, y - 400]], '#5a5450', r, {}); }
+        else if (bd.kind === 'wall') { P.flat(gg, P.rect(20, y - 90, bd.w, 90), '#a8a090', r, { mottle: 0.6 }); for (let k = 0; k < bd.w / 40; k++) P.flat(gg, P.rect(20 + k * 40, y - 112, 22, 22), '#a8a090', r, {}); }
+        else if (bd.kind === 'quay') { P.flat(gg, P.rect(20, y - 40, bd.w, 40), '#8a7a60', r, { mottle: 0.5 }); for (let k = 0; k < 3; k++) { const sx = 80 + k * 150; P.flat(gg, [[sx, y - 40], [sx + 110, y - 40], [sx + 90, y - 10], [sx + 20, y - 10]], '#5a3c26', r, {}); P.stroke(gg, P.seg2(sx + 55, y - 40, sx + 55, y - 190, 3), '#4a3020', 6, r, { alpha: 1 }); P.flat(gg, [[sx + 58, y - 180], [sx + 110, y - 90], [sx + 58, y - 70]], '#e8dcc0', r, {}); } }
+        return c;
+      };
+      set.dynamic = [
+        { z: 39, draw: (g, t) => FX.birds(g, t, { x: 400, y: 220, n: 6, speed: 22 }) },
+        ...[3.6, 3.4, 3.3, 3.2, 2.9, 2.8, 2.7, 2.6, 2.5, 2.45].map(z => ({ z: z + 0.001, draw: (g, t, ta, D, q) => {
+          const st = [0, D.beat(q, 'stage1', 1e9), D.beat(q, 'stage2', 1e9), D.beat(q, 'stage3', 1e9)];
+          for (const bd of B) { if (Math.abs(bd.z - z) > 0.001) continue; const k = bd.stage === 0 ? 1 : X.ease.out3(clamp((t - st[bd.stage]) / 1.4, 0, 1)); if (k <= 0) continue;
+            if (!bd.img) bd.img = paintB(bd); const gy = groundY(bd.z); g.save(); g.globalAlpha = k; g.translate(0, (1 - k) * 40); g.drawImage(bd.img, bd.x - 60, gy - bd.img.height + 10); g.restore();
+            if (bd.kind !== 'wall' && bd.kind !== 'quay' && (t - st[Math.max(1, bd.stage)]) > 0 && bd.stage >= 1) FX.smoke(g, t, { x: bd.x + 60, y: gy - 260, n: 4, life: 5, rise: 200, size: 10, alpha: 0.12 * k, wind: 30, key: 'ch' + Math.round(bd.x) });
+          }
+        } }))
+      ];
       return set;
     }
   };

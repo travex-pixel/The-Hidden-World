@@ -13,11 +13,12 @@ CLAIM_TYPES = {"established", "plausible", "illustrative", "estimate", "disputed
 MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath",
              "dawn", "village", "market", "problem", "reveal", "resolve", "tease", "dread", "brawl", "chase", "numb", "pub"}
 SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain",
-             "hen", "creak", "chink", "chop", "churchbell", "anvil", "rustle", "mudstep", "gasp", "smash", "punch", "horn", "roar", "doorslam", "run"}
+             "hen", "creak", "chink", "chop", "churchbell", "anvil", "rustle", "mudstep", "gasp", "smash", "punch", "horn", "roar", "doorslam", "run", "hiss", "burst", "quill", "splash"}
 # history profile: painted 2.5D sets (renderer/history/sets) and on-screen evidence labels
 HISTORY_SETS = {"cottage", "village", "coin", "field", "cottage_dusk", "abbey_floor", "abbey_parlour",
-                "alehouse", "alehouse_day", "village_night", "church_door", "church_dawn", "map_dover"}
-AMBIENCE = {"interior", "village", "market", "alehouse", "night", "none"}
+                "alehouse", "alehouse_day", "village_night", "church_door", "church_dawn", "map_dover",
+                "field_dawn", "well_yard", "counting_house", "ledger_insert", "smithy", "great_hall", "map_england", "alt_town"}
+AMBIENCE = {"interior", "village", "market", "alehouse", "night", "forge", "hall", "none"}
 BADGE_CLAIM_TYPES = {"documented": {"established"}, "estimate": {"estimate"}, "disputed": {"disputed"},
                      "reconstruction": {"plausible", "illustrative"}, "dramatised": None}
 URL_RE = re.compile(r"^https://[\w.-]+(/[^\s]*)?$")

@@ -403,12 +403,40 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
             step = np.sin(2 * np.pi * rng.uniform(60, 90) * tk) * np.exp(-tk * 30) * 0.5 + lowpass_fast(rng.standard_normal(m).astype(np.float32), 900) * np.exp(-tk * 26) * 0.4
             add(out, (step * np.sin(np.pi * min(1, k / 2.2)) ** 0.7).astype(np.float32), k); k += rng.uniform(0.07, 0.15)
         return out
+    # ---- What If? (1340): the workshop, the ledger, the well
+    if name == "hiss":    # steam escaping from a bad joint, building up
+        t = tt(2.0)
+        x = (noise(2.0) - lowpass_fast(noise(2.0), 3500)) * np.clip(t / 1.6, 0, 1) ** 1.5
+        return (x * env(len(t), 0.3, 0.2, 0.9, 0.2) * 0.45).astype(np.float32)
+    if name == "burst":   # the boiler lid blows: a bang, a roar of steam, metal clattering down
+        t = tt(2.6)
+        bang = np.sin(2 * np.pi * (60 + 50 * np.exp(-t * 30)) * t) * np.exp(-t * 10) + lowpass_fast(noise(2.6), 2500) * np.exp(-t * 20) * 0.8
+        roar = (noise(2.6) - lowpass_fast(noise(2.6), 1800)) * np.exp(-t * 1.2) * 0.45
+        x = bang + roar
+        for k, a in ((1.1, 0.4), (1.45, 0.25), (1.7, 0.15)):
+            m = int(0.25 * SR); tk = np.arange(m) / SR
+            add(x, (sum(np.sin(2 * np.pi * f * tk) * np.exp(-tk * d) for f, d in [(1450, 16), (2380, 22), (3460, 30)]) * a * 0.3).astype(np.float32), k)
+        return (x * 0.75).astype(np.float32)
+    if name == "quill":   # a quill scratching across parchment: a few strokes
+        out = np.zeros(int(1.4 * SR), np.float32); k = 0.05
+        while k < 1.25:
+            d = rng.uniform(0.08, 0.22); m = int(d * SR); tk = np.arange(m) / SR
+            stroke = (rng.standard_normal(m) - lowpass_fast(rng.standard_normal(m).astype(np.float32), 2500)) * np.sin(np.pi * tk / d) ** 0.8
+            add(out, (stroke * 0.18).astype(np.float32), k); k += d + rng.uniform(0.04, 0.12)
+        return out
+    if name == "splash":  # a bucket of water tipped out
+        t = tt(1.2)
+        x = lowpass_fast(noise(1.2), 2600) * np.exp(-t * 4) * np.clip(t / 0.05, 0, 1)
+        for k in range(10):
+            at = 0.05 + rng.uniform(0, 0.8); m = int(0.04 * SR); tk = np.arange(m) / SR
+            add(x, (np.sin(2 * np.pi * rng.uniform(600, 1400) * tk * (1 + tk * 8)) * np.exp(-tk * 80) * 0.15).astype(np.float32), at)
+        return (x * 0.6).astype(np.float32)
     raise KeyError(name)
 
 
 # ---------------------------------------------------------------- ambience beds (history mode)
 def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
-    """Continuous background for a stretch of the episode. kinds: interior, village, market, alehouse, night."""
+    """Continuous background for a stretch of the episode. kinds: interior, village, market, alehouse, night, forge, hall."""
     import zlib
     rng = np.random.default_rng(seed + zlib.crc32(kind.encode()) % 1000)
     n = int(dur * SR); t = np.arange(n) / SR
@@ -451,6 +479,19 @@ def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
                 m = int(0.16 * SR); tk = np.arange(m) / SR
                 bark = np.sin(2 * np.pi * (520 - 300 * tk / 0.16) * tk) * np.exp(-tk * 18)
                 if (k + j * 0.3) * SR + m < n: out[int((k + j * 0.3) * SR): int((k + j * 0.3) * SR) + m] += lowpass_fast(bark.astype(np.float32), 1400) * 0.02
+    if kind == "forge":   # the forge breathing under the bellows, the odd ring of iron
+        breath = 0.6 + 0.4 * np.sin(2 * np.pi * t / 2.6)
+        out += (lowpass_fast(nz(), 500) * breath * 0.08).astype(np.float32)
+        k = 0.0
+        while k < dur:
+            k += rng.exponential(0.15); m = int(0.02 * SR)
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += (rng.standard_normal(m) * np.exp(-np.arange(m) / SR * 300) * rng.uniform(0.01, 0.05)).astype(np.float32)
+    if kind == "hall":   # a big stone room at night: low air, a fire across the hall
+        out += lowpass_fast(nz(), 260) * 0.05
+        k = 0.0
+        while k < dur:
+            k += rng.exponential(0.25); m = int(0.02 * SR)
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += (rng.standard_normal(m) * np.exp(-np.arange(m) / SR * 200) * rng.uniform(0.005, 0.03)).astype(np.float32)
     if kind == "market":   # crowd murmur: several syllabic noise "voices" in the speech band
         for v in range(6):
             x = lowpass_fast(nz(), rng.uniform(700, 1400)) - lowpass_fast(nz(), 180)
