@@ -33,6 +33,15 @@ Since Case File 10, every episode follows these points. The NEXT CASE tease come
 - Distribution was flat for 3 hours, then broke out at 3–5 hours: Instagram's staged test. The first 3 seconds decide it; everything else decides whether it keeps going.
 The breakout cannot be separated from the topic (a household-name case) with one sample. The rules above are the parts that can be reproduced.
 
+**Update, 2026-10-12 (evening): three winners and one miss.** The owner's top three are 07 (Gilgo, pizza crust), 16 (Boston, water bottle) and 22 (Oklahoma City, missing licence plate; 44 s, 1,779 views in 6 h, skip rate 30.4 %, 20 s average watch, retention flat at about 30 % to the end, 0 comments, 0 follows). Case File 25 (Al Capone, ledger) underperformed. What the winners share and 25 lacked:
+- **The object is something every viewer has touched this week.** A pizza crust, a water bottle, a licence plate. A ledger is not.
+- **The twist is not already famous trivia.** "Capone was jailed for tax" is common knowledge, so the headline answered its own question.
+- **A killer or bomber with a manhunt, from the 1990s on.** The audience is 84 % aged 18–34; a 1931 tax case has no danger and no hunt.
+- **An irony beat.** 22: "he was already in a jail cell before the FBI knew his name."
+- **The headline leads with the object** ("A MISSING LICENSE PLATE / CAUGHT THE OKLAHOMA CITY BOMBER"). 25 led with the name.
+- 22 held to the end with no end card and no question, so the tight ending matters more than the CTA. Comments are still zero on every video; the burned-in end question is now a one-tap YES/NO.
+One video is one sample: posting time and the algorithm's test audience also vary.
+
 ## Facts and fairness
 - Every narrated claim maps to a claim in `episode.json` with at least two independent sources. The episode's `research.md` separates established facts, allegations (attributed), defence positions, court procedure and unresolved questions.
 - **Ongoing cases:**
