@@ -1,0 +1,2894 @@
+{
+ "id": "pet-cemetery-murders",
+ "title": "The Pet Cemetery Murders: The Real Case Behind HBO's Ghost Story",
+ "version": 1,
+ "voice": "kokoro:bm_fable",
+ "engine": "kokoro",
+ "narrator": "bm_fable",
+ "speed": 1.0,
+ "lead_in": 0.45,
+ "tail": 1.2,
+ "seed": 47,
+ "bpm": 66,
+ "key": -3,
+ "music_db": -22,
+ "sfx_db": -15,
+ "duck_db": -12,
+ "crf": 22,
+ "music_gain": [
+  [
+   0.0,
+   62.0,
+   -3.0
+  ]
+ ],
+ "pronounce": {
+  "Nodier": "No-dee-ay",
+  "Plaquemines": "Plack-a-mins",
+  "Chalmette": "Shal-met",
+  "Toca": "Toe-ka",
+  "Pohlmann": "Pole-man",
+  "Nicosia": "Nick-o-see-a",
+  "Cairney": "Kair-nee",
+  "Slidell": "Sly-dell"
+ },
+ "spoken": {
+  "1950": "nineteen fifty",
+  "1985": "nineteen eighty-five",
+  "2009": "two thousand nine",
+  "2012": "twenty twelve",
+  "2014": "twenty fourteen",
+  "2026": "twenty twenty-six",
+  "HBO's": "H B O's",
+  "HBO": "H B O",
+  "RogerEbert.com": "Roger Ebert dot com",
+  "Biography.com": "Biography dot com",
+  "St. Bernard": "Saint Bernard",
+  "DNA": "D N A"
+ },
+ "figures": [
+  "pc_nodier_1985",
+  "pc_nodier",
+  "trw_detective",
+  "trw_officer",
+  "trw_defence",
+  "detective",
+  "judge",
+  "lv4_crew_a",
+  "lv4_crew_b",
+  "kd_interviewer"
+ ],
+ "timeline": [],
+ "lines": [
+  {
+   "say": "In April 1985, the woman who ran a pet cemetery in south Louisiana disappeared.",
+   "claims": [
+    "P-VANISH",
+    "P-CEMETERY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1180,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 1230,
+      "w": 1150
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE",
+     "lower": {
+      "p": 0.12,
+      "title": "April 1985",
+      "color": "red",
+      "kicker": "St. Bernard Parish, Louisiana"
+     }
+    }
+   ],
+   "chapter": "Cold open",
+   "chapter_title": "Cold open",
+   "tag": "",
+   "cue": "cold",
+   "sfx": [
+    {
+     "name": "swell",
+     "at": 0.0,
+     "gain": 0.4
+    }
+   ],
+   "tone": "hook"
+  },
+  {
+   "say": "She was due in court within days, in a lawsuit over her land.",
+   "claims": [
+    "P-VANISH"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "THE LAWSUIT",
+     "title": "Who owns her land?",
+     "lines": [
+      "Court:    Chalmette, Louisiana",
+      "Subject:  ownership of her land",
+      "Hearing:  days away"
+     ],
+     "hl": 2,
+     "stamp": "AS REPORTED",
+     "claims": [
+      "P-VANISH"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "hook"
+  },
+  {
+   "say": "Less than a month later, fishermen found her in the Mississippi River, weighted down with steel chains.",
+   "claims": [
+    "P-RIVER"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_bayou",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1120,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1150,
+      "w": 1050
+     },
+     "setOpts": {
+      "mode": "night",
+      "lights": 1
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC RIVERBANK",
+     "cam": {
+      "handheld": 2
+     },
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "Found in the Mississippi,"
+        },
+        {
+         "text": "weighted down with steel chains",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 740,
+       "kicker": "MAY 1985"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "water",
+     "at": 0.0,
+     "gain": 0.35
+    },
+    {
+     "name": "thud",
+     "at": 0.62,
+     "gain": 0.35
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "The sheriff said police had a prime suspect from the very start: her own groundskeeper.",
+   "claims": [
+    "P-PRIME",
+    "P-NODIER-JOB"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [
+      {
+       "id": "pc_nodier_1985",
+       "x": -200,
+       "y": 1520,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 420,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.6
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "examine",
+         "expr": "neutral",
+         "headTurn": 0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 1180,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "depicts": {
+      "person": "Brandon Nodier",
+      "act": "working on the cemetery grounds"
+     },
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE",
+     "lower": {
+      "p": 0.2,
+      "title": "The groundskeeper",
+      "color": "red",
+      "kicker": "Prime suspect, the sheriff said",
+      "sub": "Illustration, not a likeness"
+     },
+     "claims": [
+      "P-NODIER-JOB"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "But there was no physical evidence. No arrest. And the case went cold.",
+   "claims": [
+    "P-COLD"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1750
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE",
+     "rain": {
+      "n": 90,
+      "op": 0.18
+     },
+     "stamps": [
+      {
+       "p": 0.6,
+       "text": "COLD CASE",
+       "color": "blue",
+       "x": 1380,
+       "y": 300,
+       "size": 100
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.62
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "In 2009, a man went to the police. He said the groundskeeper had confessed to him.",
+   "claims": [
+    "P-WITNESS1"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.58,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "walk": {
+        "from": -200,
+        "to": 360,
+        "p0": 0.0,
+        "p1": 0.55,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.58,
+         "pose": "stand_tense"
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 900,
+       "y": 1500,
+       "scale": 0.58,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "stand",
+         "headTurn": -0.3,
+         "expr": "focused"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 960,
+      "w": 1350
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · ANONYMOUS WITNESS (SILHOUETTE)",
+     "lower": {
+      "p": 0.1,
+      "title": "2009",
+      "color": "red",
+      "kicker": "A man comes forward"
+     }
+    }
+   ],
+   "cue": "tension",
+   "tone": "tense"
+  },
+  {
+   "say": "And he said something else. Her ghost was haunting his dreams.",
+   "claims": [
+    "P-WITNESS1"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 560,
+       "y": 1480,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "depth": 1.4
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1200,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1220,
+      "w": 820
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · ANONYMOUS WITNESS (SILHOUETTE)",
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "Her ghost,"
+        },
+        {
+         "text": "haunting his dreams",
+         "color": "amber"
+        }
+       ],
+       "x": 1100,
+       "y": 260,
+       "w": 700,
+       "kicker": "WHAT HE SAID"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "sting",
+     "at": 0.2,
+     "gain": 0.4
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Three years later, a prison inmate came forward. He said he was there when she was killed.",
+   "claims": [
+    "P-WITNESS2"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 320,
+       "y": 1380,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.55,
+         "pose": "sit_slumped"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 420,
+      "cy": 1040,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 400,
+      "cy": 1050,
+      "w": 900
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL · ANONYMOUS WITNESS",
+     "lower": {
+      "p": 0.12,
+      "title": "2012",
+      "color": "red",
+      "kicker": "Witness two"
+     }
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "The case rested almost entirely on that one witness. And in 2014, the groundskeeper pleaded guilty. Not to murder. To manslaughter.",
+   "claims": [
+    "P-ONE-WITNESS",
+    "P-PLEA",
+    "P-IN-COURT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "pc_nodier",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "blank",
+       "gaze": [
+        0.4,
+        -0.1
+       ],
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "hands_together",
+         "expr": "neutral"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1080,
+      "w": 1000
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Brandon Nodier",
+      "act": "in court"
+     },
+     "stamps": [
+      {
+       "p": 0.78,
+       "text": "MANSLAUGHTER",
+       "color": "red",
+       "x": 1300,
+       "y": 320,
+       "size": 96
+      }
+     ],
+     "claims": [
+      "P-IN-COURT"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.8
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "This is the real case behind HBO's The Pet Cemetery Murders. What the record shows, and what it doesn't.",
+   "claims": [
+    "P-HBO"
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "THE REAL CASE · ST. BERNARD PARISH, 1985",
+     "text": "THE PET\nCEMETERY",
+     "sub": "What the record shows",
+     "in": "glitch",
+     "chapterTag": "",
+     "claims": [
+      "P-HBO",
+      "P-VANISH"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.4
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Dorothy Thompson was sixty-one.",
+   "claims": [
+    "P-AGE"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Dorothy Thompson",
+     "kicker": "OWNER OF THE PET CEMETERY",
+     "kind": "f",
+     "lines": [
+      "61",
+      "Toca, St. Bernard Parish"
+     ],
+     "rim": "red",
+     "claims": [
+      "P-AGE",
+      "P-CEMETERY"
+     ]
+    }
+   ],
+   "chapter": "The cemetery",
+   "chapter_title": "1 · The cemetery",
+   "tag": "Chapter 1 · The cemetery",
+   "cue": "unease",
+   "tone": "confident"
+  },
+  {
+   "say": "She owned the Azalea Original Pet Cemetery, out in Toca, in rural eastern St. Bernard Parish.",
+   "claims": [
+    "P-CEMETERY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1200,
+      "w": 1350
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE",
+     "lower": {
+      "p": 0.1,
+      "title": "Azalea Original Pet Cemetery",
+      "color": "red",
+      "kicker": "Toca, Louisiana",
+      "sub": "Illustration, not the real site"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Her mother, Grace, had opened it around 1950.",
+   "claims": [
+    "P-GRACE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [],
+     "view": {
+      "cx": 600,
+      "cy": 1260,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 640,
+      "cy": 1270,
+      "w": 760
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE",
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "Opened by her mother,"
+        },
+        {
+         "text": "Grace",
+         "color": "amber"
+        }
+       ],
+       "x": 1100,
+       "y": 260,
+       "w": 640,
+       "kicker": "ABOUT 1950"
+      }
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "And at the centre of this story is her land: fourteen acres in Toca.",
+   "claims": [
+    "P-ACRES"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "14 ACRES",
+     "label": "Toca, St. Bernard Parish",
+     "note": "The land at the centre of the dispute",
+     "size": 200,
+     "noCorner": true,
+     "claims": [
+      "P-ACRES"
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Brandon Nodier worked at the cemetery, as its groundskeeper and handyman.",
+   "claims": [
+    "P-NODIER-JOB"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [
+      {
+       "id": "pc_nodier_1985",
+       "x": 1250,
+       "y": 1530,
+       "scale": 0.55,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 620,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.6
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "examine",
+         "headTurn": -0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 1180,
+      "w": 1250
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "day",
+     "depicts": {
+      "person": "Brandon Nodier",
+      "act": "working on the cemetery grounds"
+     },
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE",
+     "lower": {
+      "p": 0.2,
+      "title": "Brandon Nodier",
+      "color": "red",
+      "kicker": "Groundskeeper and handyman",
+      "sub": "Illustration, not a likeness"
+     },
+     "claims": [
+      "P-NODIER-JOB"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "According to investigators, he tricked her into signing her land over to him.",
+   "claims": [
+    "P-LAND"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "WHAT INVESTIGATORS SAID",
+     "title": "The land transfer",
+     "lines": [
+      "Claim:    she was tricked",
+      "Transfer: her land, to Nodier",
+      "Her answer: a lawsuit"
+     ],
+     "hl": 0,
+     "stamp": "ALLEGED",
+     "claims": [
+      "P-LAND"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Dorothy said she'd been tricked, and she sued to get it back.",
+   "claims": [
+    "P-LAND"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "office_day",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 980,
+      "w": 1250
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC OFFICE",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 110,
+       "y": 170,
+       "w": 760,
+       "rows": [
+        {
+         "text": "HER LAWSUIT"
+        },
+        {
+         "text": "Tricked, she said",
+         "p": 0.3
+        },
+        {
+         "text": "She sued to get it back",
+         "p": 0.55,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "The case was heading for a courtroom in Chalmette.",
+   "claims": [
+    "P-VANISH"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1250
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "lower": {
+      "p": 0.15,
+      "title": "Chalmette",
+      "color": "red",
+      "kicker": "St. Bernard Parish"
+     }
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "In mid-April 1985, just days before that court date, Dorothy Thompson disappeared.",
+   "claims": [
+    "P-VANISH"
+   ],
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "MID-APRIL",
+     "text": "1985",
+     "sub": "St. Bernard Parish, Louisiana",
+     "claims": [
+      "P-VANISH"
+     ]
+    }
+   ],
+   "chapter": "Gone",
+   "chapter_title": "2 · Gone",
+   "tag": "Chapter 2 · Gone",
+   "cue": "tension",
+   "tone": "tense"
+  },
+  {
+   "say": "She was last seen at a bank in eastern St. Bernard.",
+   "claims": [
+    "P-VANISH"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_bayou",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1200,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC ROAD, EASTERN ST. BERNARD",
+     "lower": {
+      "p": 0.15,
+      "title": "Last seen",
+      "color": "red",
+      "kicker": "A bank in eastern St. Bernard"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "The Sheriff's Office later said it believed she was suffocated, inside her own home, on the thirteenth of April.",
+   "claims": [
+    "P-SUFFOCATED"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "SHERIFF'S OFFICE ESTIMATE",
+     "title": "13 April 1985",
+     "lines": [
+      "Where:   her home",
+      "Cause:   suffocated, officers said",
+      "Source:  St. Bernard Sheriff's Office"
+     ],
+     "hl": 1,
+     "stamp": "AS REPORTED",
+     "claims": [
+      "P-SUFFOCATED"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "On the second of May, fishermen found her body in the Mississippi River, on the east bank of Plaquemines Parish.",
+   "claims": [
+    "P-RIVER"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_bayou",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 500,
+      "cy": 1100,
+      "w": 1200
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC RIVERBANK",
+     "lower": {
+      "p": 0.15,
+      "title": "Mississippi River",
+      "color": "red",
+      "kicker": "2 May 1985",
+      "sub": "East bank, Plaquemines Parish"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "water",
+     "at": 0.0,
+     "gain": 0.3
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "She had been weighted down with steel chains.",
+   "claims": [
+    "P-RIVER"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "WEIGHTED DOWN",
+      "WITH STEEL CHAINS"
+     ],
+     "em": [
+      "STEEL CHAINS"
+     ],
+     "sub": "Sheriff's Office account",
+     "claims": [
+      "P-RIVER"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.3,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "From the start, the sheriff said, Brandon Nodier was the prime suspect.",
+   "claims": [
+    "P-PRIME"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 380,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "examine",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point",
+         "headTurn": 0.2
+        }
+       ]
+      },
+      {
+       "id": "trw_officer",
+       "x": 1250,
+       "y": 1500,
+       "scale": 0.58,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 820,
+        "p0": 0.1,
+        "p1": 0.6,
+        "cadence": 6.8
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "stand"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 920,
+      "w": 1350
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC POLICE OFFICE",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "The sheriff said:"
+        },
+        {
+         "text": "prime suspect from the start",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 740,
+       "kicker": "THE SHERIFF"
+      }
+     ]
+    }
+   ],
+   "chapter": "The suspect",
+   "chapter_title": "3 · The suspect",
+   "tag": "Chapter 3 · The suspect",
+   "cue": "unease",
+   "tone": "tense"
+  },
+  {
+   "say": "Investigators said he wanted her land. But there was no physical evidence tying him to her death, and not enough to arrest anyone.",
+   "claims": [
+    "P-LAND",
+    "P-COLD"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 380,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "worried",
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "hand_to_face"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 460,
+      "cy": 1040,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 440,
+      "cy": 1050,
+      "w": 900
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC DETECTIVE, NOT A LIKENESS",
+     "cards": [
+      {
+       "p": 0.3,
+       "x": 1060,
+       "y": 170,
+       "w": 700,
+       "rows": [
+        {
+         "text": "THE EVIDENCE"
+        },
+        {
+         "text": "Physical evidence: none",
+         "p": 0.4
+        },
+        {
+         "text": "Arrest: no",
+         "p": 0.65,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "In the early years, State Police detectives were so stumped, they brought in a psychic from Slidell.",
+   "claims": [
+    "P-PSYCHIC"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "office_day",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 320,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "worried",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "hand_to_face"
+        }
+       ]
+      },
+      {
+       "id": "detective",
+       "x": 1250,
+       "y": 1500,
+       "scale": 0.58,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 820,
+        "p0": 0.05,
+        "p1": 0.6,
+        "cadence": 6.6
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "present",
+         "expr": "focused"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1000,
+      "w": 1250
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC STATE POLICE OFFICE",
+     "funfacts": [
+      {
+       "p": 0.45,
+       "rows": [
+        {
+         "text": "Stumped, detectives"
+        },
+        {
+         "text": "called in a psychic",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 700,
+       "kicker": "STATE POLICE"
+      }
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "It didn't lead to an arrest. And for years, the case went cold.",
+   "claims": [
+    "P-COLD"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1180,
+      "w": 1400
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1120,
+      "w": 1800
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE",
+     "rain": {
+      "n": 120,
+      "op": 0.22
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "rain",
+     "at": 0.0,
+     "gain": 0.3
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "Then Hurricane Katrina hit, and the Sheriff's Office lost its files.",
+   "claims": [
+    "P-KATRINA"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_bayou",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1050,
+      "w": 1250
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC RIVERBANK",
+     "rain": {
+      "n": 300,
+      "op": 0.45
+     },
+     "cam": {
+      "handheld": 5
+     },
+     "funfacts": [
+      {
+       "p": 0.4,
+       "rows": [
+        {
+         "text": "Sheriff's Office files:"
+        },
+        {
+         "text": "lost",
+         "color": "red"
+        }
+       ],
+       "x": 1100,
+       "y": 260,
+       "w": 640,
+       "kicker": "HURRICANE KATRINA"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "rumble",
+     "at": 0.0,
+     "gain": 0.4
+    },
+    {
+     "name": "rain",
+     "at": 0.0,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "But one State Police file survived. It would help rebuild the case.",
+   "claims": [
+    "P-KATRINA"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "office_day",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 420,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.3,
+         "expr": "determined"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 470,
+      "cy": 1040,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 460,
+      "cy": 1050,
+      "w": 950
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC OFFICE",
+     "lower": {
+      "p": 0.25,
+      "title": "A State Police file survived",
+      "color": "red",
+      "kicker": "The case file"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "In 2009, Detective John Doran, of the St. Bernard Parish Sheriff's Office, reopened the case.",
+   "claims": [
+    "P-REOPEN"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": -200,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 400,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "examine",
+         "expr": "determined"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 940,
+      "w": 1350
+     },
+     "grade": "cold",
+     "lower": {
+      "p": 0.2,
+      "title": "Det. John Doran",
+      "color": "red",
+      "kicker": "Reopened the case · 2009",
+      "sub": "Illustration, not a likeness"
+     },
+     "stamps": [
+      {
+       "p": 0.7,
+       "text": "REOPENED",
+       "color": "amber",
+       "x": 1400,
+       "y": 300,
+       "size": 96
+      }
+     ]
+    }
+   ],
+   "chapter": "The witnesses",
+   "chapter_title": "4 · The witnesses",
+   "tag": "Chapter 4 · The witnesses",
+   "cue": "tension",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.72
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Doran said a man had come forward, and told police that Nodier had confessed to him.",
+   "claims": [
+    "P-WITNESS1"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_interview",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 300,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.3
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 820,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit_type",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "sit",
+         "headTurn": -0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1040,
+      "w": 1300
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · ANONYMOUS WITNESS (SILHOUETTE)"
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "And then, according to Doran, the man said something stranger. Dorothy's ghost, he said, was haunting his dreams.",
+   "claims": [
+    "P-WITNESS1"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 700,
+       "y": 1470,
+       "scale": 0.4,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "depth": 1.5,
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": -0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 620,
+      "cy": 1220,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 680,
+      "cy": 1220,
+      "w": 850
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · ANONYMOUS WITNESS (SILHOUETTE)",
+     "funfacts": [
+      {
+       "p": 0.5,
+       "rows": [
+        {
+         "text": "Witness one said:"
+        },
+        {
+         "text": "her ghost haunted his dreams",
+         "color": "amber"
+        }
+       ],
+       "x": 110,
+       "y": 240,
+       "w": 760,
+       "kicker": "2009"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "swell",
+     "at": 0.45,
+     "gain": 0.35
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "It still wasn't enough to charge anyone.",
+   "claims": [
+    "P-COLD"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1900
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING"
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "Then, in 2012, according to police, a man serving time in prison got in touch.",
+   "claims": [
+    "P-WITNESS2"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 320,
+       "y": 1380,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "sit_slumped"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 1040,
+      "w": 1150
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL · ANONYMOUS WITNESS",
+     "lower": {
+      "p": 0.15,
+      "title": "2012",
+      "color": "red",
+      "kicker": "Witness two"
+     }
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "He said he'd been Nodier's assistant groundskeeper. And he said he was there when Dorothy Thompson was killed.",
+   "claims": [
+    "P-WITNESS2"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 320,
+       "y": 1380,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit_slumped",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "noChair": true,
+       "depth": 0.8,
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "sit",
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 380,
+      "cy": 1060,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 360,
+      "cy": 1070,
+      "w": 760
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL · ANONYMOUS WITNESS",
+     "funfacts": [
+      {
+       "p": 0.4,
+       "rows": [
+        {
+         "text": "Nodier's assistant, he said."
+        },
+        {
+         "text": "Said he was there",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 720,
+       "kicker": "WITNESS TWO · 2012"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.7,
+     "gain": 0.35
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Police didn't name him. He was given immunity from prosecution, in exchange for his account.",
+   "claims": [
+    "P-WITNESS2",
+    "P-IMMUNITY"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "trw_interview",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 300,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "sit_slumped"
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 820,
+       "y": 1500,
+       "scale": 0.62,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "present"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1020,
+      "w": 1350
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · ANONYMOUS WITNESS (SILHOUETTE)",
+     "stamps": [
+      {
+       "p": 0.6,
+       "text": "IMMUNITY",
+       "color": "amber",
+       "x": 1420,
+       "y": 300,
+       "size": 100
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.62
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "So why did he come forward, after all that time?",
+   "claims": [
+    "P-WHY-GHOST"
+   ],
+   "shots": [
+    {
+     "type": "question",
+     "kicker": "THE QUESTION",
+     "lines": [
+      "Why did he",
+      "come forward?"
+     ],
+     "claims": [
+      "P-WHY-GHOST"
+     ]
+    }
+   ],
+   "attribution_context": true,
+   "tone": "curious"
+  },
+  {
+   "say": "He said Dorothy's ghost had started haunting him, too.",
+   "claims": [
+    "P-WHY-GHOST"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 420,
+       "y": 1490,
+       "scale": 0.45,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "depth": 1.3,
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": 0.4
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 480,
+      "cy": 1220,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 460,
+      "cy": 1230,
+      "w": 800
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · ANONYMOUS WITNESS (SILHOUETTE)",
+     "funfacts": [
+      {
+       "p": 0.4,
+       "rows": [
+        {
+         "text": "A ghost, he said"
+        }
+       ],
+       "x": 1100,
+       "y": 260,
+       "w": 600,
+       "kicker": "HIS REASON"
+      }
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "But The Advocate, in New Orleans, reported a more down-to-earth reason. It said he went to the authorities only after Nodier visited him in jail, and threatened him and his wife.",
+   "claims": [
+    "P-WHY-THREAT"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "WHAT HE SAID",
+      "WHAT THE ADVOCATE REPORTED"
+     ],
+     "big": [
+      "A GHOST",
+      "A THREAT"
+     ],
+     "bigColor": [
+      "blue",
+      "red"
+     ],
+     "bigSize": 84,
+     "body": [
+      [
+       "her ghost",
+       "was haunting him"
+      ],
+      [
+       "a jail visit",
+       "from Nodier"
+      ]
+     ],
+     "vs": "OR",
+     "claims": [
+      "P-WHY-GHOST",
+      "P-WHY-THREAT"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Two witnesses, and two ghost stories. But only one of them said he saw what happened.",
+   "claims": [
+    "P-WITNESS1",
+    "P-WITNESS2"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 160,
+       "y": 1480,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "depth": 1.4
+      },
+      {
+       "id": "lv4_crew_a",
+       "x": 940,
+       "y": 1500,
+       "scale": 0.44,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "depth": 1.4
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1200,
+      "w": 1350
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · ANONYMOUS WITNESS (SILHOUETTE)"
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "In April 2012, a St. Bernard Parish grand jury indicted Brandon Nodier, then fifty-eight, for second-degree murder.",
+   "claims": [
+    "P-INDICT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1250
+     },
+     "grade": "night",
+     "rain": {
+      "n": 80,
+      "op": 0.2
+     },
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "lower": {
+      "p": 0.1,
+      "title": "Grand jury indictment",
+      "color": "red",
+      "kicker": "April 2012"
+     },
+     "stamps": [
+      {
+       "p": 0.55,
+       "text": "INDICTED",
+       "color": "red",
+       "x": 1400,
+       "y": 320,
+       "size": 110
+      }
+     ]
+    }
+   ],
+   "chapter": "The plea",
+   "chapter_title": "5 · The plea",
+   "tag": "Chapter 5 · The plea",
+   "cue": "revelation",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.57
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "He turned himself in, and was freed on bond.",
+   "claims": [
+    "P-INDICT"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "SURRENDERED",
+      "FREED ON BOND"
+     ],
+     "em": [
+      "FREED"
+     ],
+     "sub": "April 2012",
+     "claims": [
+      "P-INDICT"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "It had taken twenty-seven years.",
+   "claims": [
+    "P-27"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "27 YEARS",
+     "label": "1985 to 2012",
+     "note": "From her death to the arrest",
+     "size": 200,
+     "noCorner": true,
+     "claims": [
+      "P-27"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "The case never went to a jury.",
+   "claims": [
+    "P-PLEA"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1300
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC COURTROOM"
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "In 2014, under a plea deal, Nodier pleaded guilty. Not to murder, but to manslaughter.",
+   "claims": [
+    "P-PLEA",
+    "P-IN-COURT"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "pc_nodier",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "blank",
+       "gaze": [
+        0.4,
+        -0.1
+       ],
+       "keys": [
+        {
+         "p": 0.55,
+         "pose": "hands_together",
+         "expr": "neutral"
+        }
+       ]
+      },
+      {
+       "id": "trw_defence",
+       "x": 620,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "stand",
+       "expr": "neutral",
+       "keys": [
+        {
+         "p": 0.5,
+         "headTurn": -0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 1060,
+      "w": 1100
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Brandon Nodier",
+      "act": "in court"
+     },
+     "lower": {
+      "p": 0.1,
+      "title": "Brandon Nodier",
+      "color": "red",
+      "kicker": "Chalmette · 2014",
+      "sub": "Illustration, not a likeness"
+     },
+     "stamps": [
+      {
+       "p": 0.7,
+       "text": "MANSLAUGHTER",
+       "color": "red",
+       "x": 1300,
+       "y": 320,
+       "size": 96
+      }
+     ],
+     "claims": [
+      "P-IN-COURT"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.72
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "He was sixty. He was sentenced to ten years in prison.",
+   "claims": [
+    "P-PLEA",
+    "P-SENTENCE"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "10 YEARS",
+     "label": "Manslaughter · 2014",
+     "note": "Plea agreement",
+     "size": 220,
+     "noCorner": true,
+     "claims": [
+      "P-SENTENCE",
+      "P-PLEA"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.3
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Judge Perry Nicosia accepted the plea. He said it was a bargain, 'in the truest sense of the word', and that a jury conviction would likely have meant a much harsher sentence.",
+   "claims": [
+    "P-JUDGE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34,
+       "keys": [
+        {
+         "p": 0.5,
+         "expr": "neutral"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 820,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 800,
+      "w": 700
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "lower": {
+      "p": 0.1,
+      "title": "Judge Perry Nicosia",
+      "color": "red",
+      "kicker": "34th Judicial District",
+      "sub": "Illustration, not a likeness"
+     },
+     "funfacts": [
+      {
+       "p": 0.45,
+       "rows": [
+        {
+         "text": "“A bargain in the"
+        },
+        {
+         "text": "truest sense of the word”",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 740,
+       "kicker": "THE JUDGE"
+      }
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "And Nodier's own lawyer said that, under the parole rules from 1985, he could expect to serve less than five years.",
+   "claims": [
+    "P-PAROLE"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "UNDER 5 YEARS",
+     "label": "Expected time served, his lawyer said",
+     "note": "1985 parole rules",
+     "size": 170,
+     "noCorner": true,
+     "claims": [
+      "P-PAROLE"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Sheriff James Pohlmann said he would have liked to see him spend the rest of his life in prison.",
+   "claims": [
+    "P-SHERIFF"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "I would have liked to see him spend the rest of his life in prison.",
+     "who": "Sheriff James Pohlmann, St. Bernard Parish",
+     "claims": [
+      "P-SHERIFF"
+     ]
+    }
+   ],
+   "cue": "intimate",
+   "tone": "reflective"
+  },
+  {
+   "say": "And John Doran, the detective who'd reopened the case, said: \"Some form of justice has been served. Ten years is better than none.\"",
+   "claims": [
+    "P-DORAN"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "Some form of justice has been served. Ten years is better than none.",
+     "who": "John Doran, St. Bernard Parish Sheriff's Office",
+     "claims": [
+      "P-DORAN"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "On the eleventh of October, 2026, HBO premiered a three-part series about the case: The Pet Cemetery Murders: A Ghost Story.",
+   "claims": [
+    "P-HBO"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_studio",
+     "figures": [
+      {
+       "id": "kd_interviewer",
+       "x": 780,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "sit_read"
+        }
+       ]
+      },
+      {
+       "id": "lv4_crew_b",
+       "x": 320,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1060,
+      "w": 1350
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC INTERVIEW SET",
+     "cards": [
+      {
+       "p": 0.15,
+       "x": 110,
+       "y": 170,
+       "w": 840,
+       "rows": [
+        {
+         "text": "HBO · 11 OCTOBER 2026"
+        },
+        {
+         "text": "The Pet Cemetery Murders:",
+         "p": 0.25,
+         "color": "amber"
+        },
+        {
+         "text": "A Ghost Story",
+         "p": 0.35,
+         "color": "amber"
+        },
+        {
+         "text": "3 parts",
+         "p": 0.5
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "chapter": "The ghost story",
+   "chapter_title": "6 · The ghost story",
+   "tag": "Chapter 6 · The ghost story",
+   "cue": "aftermath",
+   "tone": "confident"
+  },
+  {
+   "say": "It's a Lightbox production, written and directed by Philip Cairney. Parts two and three air on the eighteenth and twenty-fifth of October.",
+   "claims": [
+    "P-HBO"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_studio",
+     "figures": [
+      {
+       "id": "kd_interviewer",
+       "x": 780,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "focused"
+      }
+     ],
+     "view": {
+      "cx": 620,
+      "cy": 1050,
+      "w": 1200
+     },
+     "view_to": {
+      "cx": 640,
+      "cy": 1050,
+      "w": 1000
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC INTERVIEW SET",
+     "lower": {
+      "p": 0.12,
+      "title": "Philip Cairney",
+      "color": "red",
+      "kicker": "Writer and director · not shown"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Its title says 'murders'. The legal record says manslaughter.",
+   "claims": [
+    "P-HBO",
+    "P-PLEA"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE SERIES TITLE",
+      "THE LEGAL RECORD"
+     ],
+     "big": [
+      "MURDERS",
+      "MANSLAUGHTER"
+     ],
+     "bigColor": [
+      "amber",
+      "blue"
+     ],
+     "bigSize": 72,
+     "body": [
+      [
+       "HBO · 2026"
+      ],
+      [
+       "guilty plea · 2014"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "P-HBO",
+      "P-PLEA"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "One critic, at RogerEbert.com, found the case itself thin, and said the series centres people who earnestly believe a woman's ghost helped solve her murder.",
+   "claims": [
+    "P-CRITIC"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1180,
+      "w": 1150
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "One critic:"
+        },
+        {
+         "text": "a thin case, told through believers",
+         "color": "amber"
+        }
+       ],
+       "x": 1060,
+       "y": 240,
+       "w": 760,
+       "kicker": "THE REVIEWS"
+      }
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "No DNA breakthrough was ever reported here. The case was built on what witnesses said.",
+   "claims": [
+    "P-NO-FORENSICS"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "NO DNA",
+      "JUST WITNESSES"
+     ],
+     "em": [
+      "WITNESSES"
+     ],
+     "sub": "No physical evidence was reported",
+     "claims": [
+      "P-NO-FORENSICS"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "And Brandon Nodier today? Biography.com reports that his exact whereabouts are unknown. We found no public record of his release.",
+   "claims": [
+    "P-WHEREABOUTS"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cell",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1000,
+      "w": 1300
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC CELL",
+     "lower": {
+      "p": 0.2,
+      "title": "Whereabouts unknown",
+      "color": "red",
+      "kicker": "Brandon Nodier today"
+     }
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "So, here's where the record stands.",
+   "claims": [
+    "P-PLEA"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "pc_petcemetery",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1800
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC PET CEMETERY, NOT THE REAL SITE"
+    }
+   ],
+   "chapter": "The record",
+   "chapter_title": "The record",
+   "tag": "The record",
+   "cue": "outro",
+   "tone": "resolve"
+  },
+  {
+   "say": "Dorothy Thompson was sixty-one, and fighting in court for her land, when she disappeared.",
+   "claims": [
+    "P-AGE",
+    "P-VANISH"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Dorothy Thompson",
+     "kicker": "1985",
+     "kind": "f",
+     "lines": [
+      "61",
+      "Fighting for her land"
+     ],
+     "rim": "red",
+     "claims": [
+      "P-AGE",
+      "P-VANISH"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  },
+  {
+   "say": "Brandon Nodier, her groundskeeper, pleaded guilty to manslaughter in 2014, twenty-nine years after her death. He was sentenced to ten years.",
+   "claims": [
+    "P-PLEA",
+    "P-SENTENCE",
+    "P-27"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE LEGAL RECORD",
+     "title": "Brandon Nodier",
+     "items": [
+      "2012 · INDICTED · second-degree murder",
+      "2014 · PLEADED GUILTY · manslaughter",
+      "SENTENCED · 10 years"
+     ],
+     "claims": [
+      "P-INDICT",
+      "P-PLEA",
+      "P-SENTENCE"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  },
+  {
+   "say": "Two witnesses said her ghost haunted them. Whatever you believe about that, what ended this case was a witness who said he was there, and a guilty plea.",
+   "claims": [
+    "P-WITNESS1",
+    "P-WHY-GHOST",
+    "P-WITNESS2",
+    "P-PLEA"
+   ],
+   "shots": [
+    {
+     "type": "endcard",
+     "kicker": "IN MEMORY OF DOROTHY THOMPSON",
+     "lines": [
+      "Brandon Nodier pleaded guilty to manslaughter in 2014",
+      "Sentenced to 10 years",
+      "Never convicted of murder"
+     ],
+     "size": 52,
+     "sub": "Sources for every claim are listed in the description.",
+     "chapterTag": "",
+     "out": "dip",
+     "claims": [
+      "P-PLEA",
+      "P-SENTENCE"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  }
+ ]
+}

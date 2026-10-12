@@ -1,0 +1,173 @@
+{
+ "figures": [
+  "lv4_crew_a",
+  "pc_nodier",
+  "judge"
+ ],
+ "concepts": [
+  {
+   "name": "haunted-witness",
+   "note": "Selected candidate. A generic pet cemetery at night with one anonymous silhouette (the witness who said he was haunted). The question mark keeps the ghost a claim, not a fact.",
+   "shot": {
+    "set": "pc_petcemetery",
+    "setOpts": {
+     "mode": "night"
+    },
+    "grade": "night",
+    "view": {
+     "cx": 640,
+     "cy": 1230,
+     "w": 1150
+    },
+    "figures": [
+     {
+      "id": "lv4_crew_a",
+      "x": 1000,
+      "y": 1500,
+      "scale": 0.36,
+      "dir": -1,
+      "turn": 0.3,
+      "pose": "stand",
+      "expr": "neutral",
+      "silhouette": "cool",
+      "depth": 1.2
+     }
+    ]
+   },
+   "post": {
+    "contrast": 1.12,
+    "saturation": 1.2,
+    "vignette": 0.4,
+    "sharpen": true
+   },
+   "marks": [
+    {
+     "type": "text",
+     "text": "HAUNTED?",
+     "x": 40,
+     "y": 60,
+     "size": 190,
+     "color": "yellow"
+    },
+    {
+     "type": "text",
+     "text": "THE WITNESS",
+     "x": 52,
+     "y": 300,
+     "size": 96,
+     "box": "red",
+     "color": "white"
+    }
+   ]
+  },
+  {
+   "name": "chained-1985",
+   "note": "Alternative with no person: dark water and search torches; the two words carry the hook.",
+   "shot": {
+    "set": "pc_bayou",
+    "setOpts": {
+     "mode": "night",
+     "lights": 1
+    },
+    "grade": "night",
+    "view": {
+     "cx": 520,
+     "cy": 1150,
+     "w": 1000
+    },
+    "figures": []
+   },
+   "post": {
+    "contrast": 1.15,
+    "saturation": 1.2,
+    "vignette": 0.35,
+    "sharpen": true
+   },
+   "marks": [
+    {
+     "type": "text",
+     "text": "CHAINED",
+     "x": 40,
+     "y": 70,
+     "size": 200,
+     "color": "yellow"
+    },
+    {
+     "type": "text",
+     "text": "1985",
+     "x": 56,
+     "y": 320,
+     "size": 110,
+     "box": "red",
+     "color": "white"
+    }
+   ]
+  },
+  {
+   "name": "not-murder",
+   "note": "Alternative. Courtroom with the illustrated defendant (not a likeness); states the legal record against the series title.",
+   "shot": {
+    "set": "courtroom",
+    "setOpts": {
+     "modern": true,
+     "dock": false
+    },
+    "grade": "cold",
+    "view": {
+     "cx": 470,
+     "cy": 1050,
+     "w": 1250
+    },
+    "figures": [
+     {
+      "id": "judge",
+      "x": 540,
+      "y": 790,
+      "scale": 0.42,
+      "dir": 1,
+      "turn": 0.05,
+      "pose": "sit",
+      "expr": "stern",
+      "noChair": true,
+      "depth": 0.34
+     },
+     {
+      "id": "pc_nodier",
+      "x": 170,
+      "y": 1560,
+      "scale": 0.6,
+      "dir": 1,
+      "turn": 0.4,
+      "pose": "stand",
+      "expr": "blank"
+     }
+    ]
+   },
+   "post": {
+    "contrast": 1.1,
+    "saturation": 1.15,
+    "vignette": 0.35,
+    "sharpen": true
+   },
+   "marks": [
+    {
+     "type": "text",
+     "text": "NOT MURDER",
+     "x": 520,
+     "y": 70,
+     "size": 112,
+     "color": "yellow"
+    },
+    {
+     "type": "text",
+     "text": "MANSLAUGHTER",
+     "x": 540,
+     "y": 250,
+     "size": 76,
+     "box": "red",
+     "color": "white"
+    }
+   ]
+  }
+ ]
+}

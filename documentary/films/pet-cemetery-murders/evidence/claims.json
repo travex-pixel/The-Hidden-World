@@ -1,0 +1,2162 @@
+{
+ "film": "pet-cemetery-murders",
+ "as_of": "2026-10-11",
+ "status_vocabulary": [
+  "VERIFIED",
+  "DIRECTLY SUPPORTED",
+  "CORROBORATED",
+  "DISPUTED",
+  "UNVERIFIED",
+  "OUTDATED",
+  "REQUIRES REVIEW"
+ ],
+ "claims": [
+  {
+   "id": "P-CEMETERY",
+   "proposition": "Dorothy Thompson owned the Azalea Original Pet Cemetery in the community of Toca, in rural eastern St. Bernard Parish, Louisiana.",
+   "lines": [
+    0,
+    11
+   ],
+   "facts": [
+    "Azalea Original Pet Cemetery",
+    "Toca",
+    "St. Bernard Parish",
+    "Louisiana",
+    "St. Bernard Parish, Louisiana",
+    "Rural eastern St. Bernard Parish",
+    "A pet cemetery"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "It covers the case of Dorothy Thompson, the 61-year-old owner of a pet cemetery in eastern St. Bernard Parish.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C01"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "It says Brandon Nodier was arrested in April 2012 for the 1985 killing of Dorothy Thompson, who owned a pet cemetery in rural eastern St. Bernard Parish",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C01"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "Thompson, who owned Azalea Original Pet Cemetery, was suffocated according to officers.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C01"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "It covers the 1985 disappearance and death of Dorothy Thompson, owner of the Azalea Original Pet Cemetery in Toca.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C02"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "partial",
+     "passage": "The property is also known as the E.E. Matt Pet Cemetery, which the article says once served as a boarding house for live pets, including monkeys.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C02"
+    }
+   ],
+   "contradictions": [
+    "C02: Funeralwise places the cemetery 'on the grounds of the Toca Plantation'. It is consistent with the location but uses a different name. The Advocate also gives the name 'E.E. Matt Pet Cemetery'."
+   ],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C02"
+   ],
+   "conflict_handling": "Script uses the cemetery's name and Toca; no plantation name."
+  },
+  {
+   "id": "P-GRACE",
+   "proposition": "The cemetery had been opened around 1950 by Dorothy's mother, Grace.",
+   "lines": [
+    12
+   ],
+   "facts": [
+    "About 1950",
+    "1950",
+    "Her mother, Grace"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "The cemetery had been there since it was opened about 1950 by Thompson's mother, Grace Thompson, who died in 1978.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C03"
+    }
+   ],
+   "contradictions": [
+    "C03: Founding year: 'about 1950' (Advocate) vs 1948 (Mercure). Her surname is given as Grace Thompson (Advocate), Grace Wynne (Funeralwise) and Grace Matt Thompson (Mercure)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C03"
+   ],
+   "conflict_handling": "Script says 'around 1950' and 'her mother, Grace'; no surname variants or 1934 history."
+  },
+  {
+   "id": "P-AGE",
+   "proposition": "Dorothy Thompson was 61 when she was killed in 1985.",
+   "lines": [
+    10,
+    57
+   ],
+   "facts": [
+    "61",
+    "Dorothy Thompson, 61",
+    "Age 61"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "A grand jury indicted 58-year-old Brandon Nodier on second degree murder charges in the 1985 death of 61-year-old Dorothy Thompson, and he later turned himself in to authorities.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C05"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "It covers the case of Dorothy Thompson, the 61-year-old owner of a pet cemetery in eastern St. Bernard Parish.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C05"
+    },
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "The search turned up one main source, a news report on the case of Dorothy Thompson, a 61-year-old pet cemetery owner killed in 1985 in rural St. Bernard Parish, Louisiana.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C05",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    }
+   ],
+   "contradictions": [
+    "C05: The Advocate gives 63 in one passage and 61 in another. Abandoned Atlas also describes her as 63 and says she was born in 1924, which would make her 60 or 61 in April 1985.",
+    "The Advocate excerpt gives 63 in one passage and 61 in another; recorded, not counted as contradicting evidence."
+   ],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C05"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text.",
+   "conflict_handling": "Script uses 61 (Sheriff's Office, FOX 8, Reuters text); the Advocate's single 63 is recorded, not used."
+  },
+  {
+   "id": "P-ACRES",
+   "proposition": "The land at the centre of the dispute was Thompson's 14 acres in Toca.",
+   "lines": [
+    13
+   ],
+   "facts": [
+    "14 acres",
+    "14 ACRES"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "Investigators said Nodier murdered Thompson to get his hands on her 14 acres of land.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C11"
+    },
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "Investigators said Nodier wanted her 14 acres of land located in the Toca community.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C11"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "A handyman with a history of arrests and a burglary conviction, Nodier worked for Thompson at the 14-acre cemetery.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C11"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C11"
+   ]
+  },
+  {
+   "id": "P-NODIER-JOB",
+   "proposition": "Brandon Nodier worked at the cemetery as a groundskeeper and handyman.",
+   "lines": [
+    3,
+    14
+   ],
+   "facts": [
+    "Groundskeeper",
+    "THE GROUNDSKEEPER",
+    "Groundskeeper and handyman",
+    "BRANDON NODIER"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Brandon Nodier, a former Toca pet cemetery groundskeeper, was arrested in 2012 for Thompson's 1985 murder.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C19"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "The Advocate reports that Nodier, a former handyman at Dorothy Thompson's pet cemetery, accepted a plea bargain in St. Bernard Parish for the 1985 killing of Thompson.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C19"
+    },
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "A Louisiana man who had long been a suspect in the brutal 1985 slaying of woman at a secluded pet cemetery where he worked as a groundskeeper pleaded guilty on Friday to manslaughter in her death, authorities said.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C19",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "The Biography article identifies Brandon Nodier, the cemetery's groundskeeper as the person convicted of the 1985 killing of Dorothy Lou Thompson.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C19"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C19"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text."
+  },
+  {
+   "id": "P-LAND",
+   "proposition": "Investigators and the Sheriff's Office said Nodier had tricked Thompson into transferring her land to him; she sued to undo the transfer, saying she had been tricked.",
+   "lines": [
+    15,
+    16,
+    24
+   ],
+   "facts": [
+    "THE LAWSUIT",
+    "Her land",
+    "Tricked, she said",
+    "She sued to get it back"
+   ],
+   "assertion": "attributed_allegation",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "The killing occurred after Nodier duped Thompson into transferring possession of the property to him, then feared he would lose it after she sued to have the transaction voided, Doran said.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C10",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "The sheriff's office said Nodier had tried to cheat Thompson out of her land, and she had filed a lawsuit against him.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C10"
+    },
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "Thompson had sued to regain land she said she was tricked into selling, and ten days prior to it going to trial, she disappeared.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C10"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C10"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text."
+  },
+  {
+   "id": "P-VANISH",
+   "proposition": "Thompson disappeared in mid-April 1985, last seen at a bank in eastern St. Bernard, days before she was due in court in Chalmette in her lawsuit over the land.",
+   "lines": [
+    0,
+    1,
+    17,
+    18,
+    19,
+    57
+   ],
+   "facts": [
+    "April 1985",
+    "APRIL 1985",
+    "Mid-April 1985",
+    "Chalmette",
+    "Last seen: a bank in eastern St. Bernard",
+    "Days before her court date"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-AOL",
+     "supports": "direct",
+     "passage": "She disappeared in mid-April 1985, only a few days before she was scheduled to appear in court in Chalmette over a lawsuit concerning ownership of her property.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C06"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Thompson disappeared in mid-April 1985, last seen at a bank in eastern St. Bernard, just several days before she was to appear in court in Chalmette in a lawsuit involving ownership of her property.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C06"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Thompson disappeared in mid-April 1985, last seen at a bank in eastern St. Bernard, just several days before she was to appear in court in Chalmette in a lawsuit involving ownership of her property.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C07"
+    },
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "Thompson had sued to regain land she said she was tricked into selling, and ten days prior to it going to trial, she disappeared.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C09"
+    },
+    {
+     "source": "S-AOL",
+     "supports": "direct",
+     "passage": "She disappeared in mid-April 1985, only a few days before she was scheduled to appear in court in Chalmette over a lawsuit concerning ownership of her property.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C09"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Thompson disappeared in mid-April 1985, last seen at a bank in eastern St. Bernard, just several days before she was to appear in court in Chalmette in a lawsuit involving ownership of her property.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C09"
+    }
+   ],
+   "contradictions": [
+    "C09: Interval: 'ten days' (FOX 8), 'several days' (Advocate), 'a few days' (AOL)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C09"
+   ],
+   "conflict_handling": "Script says 'days before' her court date; no 'ten days'."
+  },
+  {
+   "id": "P-SUFFOCATED",
+   "proposition": "According to the Sheriff's Office and officers, Thompson was suffocated, which the Sheriff's Office estimated happened inside her home on 13 April 1985 (a Reuters report said strangled).",
+   "lines": [
+    20
+   ],
+   "facts": [
+    "13 April 1985",
+    "Suffocated, officers said"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "The article says that the Sheriff's Office estimated that Thompson had been suffocated inside her home on April 13, 1985.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C08"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "Thompson, who owned Azalea Original Pet Cemetery, was suffocated according to officers.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C17"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "partial",
+     "passage": "The source also describes the death inconsistently: one passage says she was suffocated and another says she was smothered.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C17"
+    },
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "contradicts",
+     "passage": "Thompson was strangled in rural St. Bernard Parish, and her chained body was dumped in the Mississippi River.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C17",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    }
+   ],
+   "contradictions": [
+    "C08: Reuters (via forum repost) says she was 'strangled in rural St. Bernard Parish' (see C17).",
+    "C17: Suffocated or smothered (SBSO, FOX 8, Advocate) vs strangled (Reuters)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C08",
+    "C17"
+   ],
+   "conflict_handling": "Attributed to the Sheriff's Office ('suffocated'); the Reuters 'strangled' is recorded, not narrated."
+  },
+  {
+   "id": "P-RIVER",
+   "proposition": "On 2 May 1985 fishermen found Thompson's body in the Mississippi River on the east bank of Plaquemines Parish, weighted down with steel chains, less than a month after she vanished.",
+   "lines": [
+    2,
+    21,
+    22
+   ],
+   "facts": [
+    "2 May 1985",
+    "MAY 2, 1985",
+    "May 1985",
+    "Mississippi River",
+    "Plaquemines Parish",
+    "Steel chains",
+    "STEEL CHAINS",
+    "Less than a month later"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "Thompson's body was found May 2, 1985, in the Mississippi River on the east bank of Plaquemines Parish, weighted down in steel chains.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C12"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "Her body was found in the Mississippi River in Plaquemines Parish by fishermen on May 2, 1985.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C12"
+    },
+    {
+     "source": "S-AOL",
+     "supports": "direct",
+     "passage": "A fisherman found her unclothed body on May 2, 1985, tied with steel chains, with a plastic bag fastened with wire around her head.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C12"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "Thompson's body was found May 2, 1985, in the Mississippi River on the east bank of Plaquemines Parish, weighted down in steel chains.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C13"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Her body was found weighted in chains on the east bank of Plaquemines Parish.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C13"
+    },
+    {
+     "source": "S-AOL",
+     "supports": "direct",
+     "passage": "The source places the body in the Mississippi River along the east bank of Plaquemines Parish, not St. Bernard.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C13"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "Thompson's body was found May 2, 1985, in the Mississippi River on the east bank of Plaquemines Parish, weighted down in steel chains.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C14"
+    },
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "A grand jury indicted Brandon Nodier, then 58, on second-degree murder charges in the 1985 death of Dorothy Thompson, whose body was found in the Mississippi River shackled by chains.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C14"
+    },
+    {
+     "source": "S-AOL",
+     "supports": "direct",
+     "passage": "A fisherman found her unclothed body on May 2, 1985, tied with steel chains, with a plastic bag fastened with wire around her head.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C14"
+    },
+    {
+     "source": "S-YAHOO-GHOST",
+     "supports": "direct",
+     "passage": "Thompson vanished from her home in 1985, and her body was found in the Mississippi River less than a month later.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C18"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "partial",
+     "passage": "Thompson's body was found May 2, 1985, in the Mississippi River on the east bank of Plaquemines Parish, weighted down in steel chains.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C18"
+    }
+   ],
+   "contradictions": [
+    "C12: 'Fishermen' (FOX 8) vs 'a fisherman' (AOL)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C12"
+   ],
+   "conflict_handling": "Script says 'fishermen' and 'steel chains'; the 200-pound figure (HBO material only) is not used."
+  },
+  {
+   "id": "P-PRIME",
+   "proposition": "Nodier was the prime suspect from the start of the investigation, according to the sheriff and the Sheriff's Office.",
+   "lines": [
+    3,
+    23
+   ],
+   "facts": [
+    "PRIME SUSPECT",
+    "Prime suspect from the start"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "Investigators said he wanted her land, and Sheriff Jack Stephens said at the outset Nodier was a prime suspect, but there was not enough evidence to arrest him in the past.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C20"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "The post reports that he was considered for years to be the No. 1 suspect because of his ties to her and a lawsuit over her property.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C20"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "Nodier had been the main suspect from the start, but there was no physical evidence tying him to the murder, and the case soon went cold.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C20"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C20"
+   ]
+  },
+  {
+   "id": "P-COLD",
+   "proposition": "There was no physical evidence and not enough evidence to arrest anyone, and the case went cold.",
+   "lines": [
+    4,
+    24,
+    26,
+    32
+   ],
+   "facts": [
+    "NO PHYSICAL EVIDENCE",
+    "No arrest",
+    "COLD CASE"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "Investigators said he wanted her land, and Sheriff Jack Stephens said at the outset Nodier was a prime suspect, but there was not enough evidence to arrest him in the past.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C21"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "Nodier had been the main suspect from the start, but there was no physical evidence tying him to the murder, and the case soon went cold.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C21"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Authorities framed the plea as a belated form of justice in a cold case with no physical evidence.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C21"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "The same source says detectives lacked enough evidence to seek an indictment until a witness came forward in the months before the arrest (a witness came forward with evidence involving the killing).",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C21"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C21"
+   ]
+  },
+  {
+   "id": "P-PSYCHIC",
+   "proposition": "In the early years, stumped State Police detectives brought in a psychic from Slidell.",
+   "lines": [
+    25
+   ],
+   "facts": [
+    "A psychic from Slidell",
+    "State Police"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "State Police detectives had been so stumped in the early years of the investigation that they enlisted the services of a Slidell psychic.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C22"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "During the early years, investigators reached a dead end, and a Slidell psychic was brought in, who reported that Thompson had been tortured there, according to sheriff's officials.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C22"
+    }
+   ],
+   "contradictions": [
+    "C22: The brief implied a psychic or medium prompted the 2009-2012 reopening. No source says so. The only psychic found is this one, in the early 1980s investigation (see C67)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C22"
+   ],
+   "conflict_handling": "Script places the psychic in the early years only; no psychic is linked to the reopening."
+  },
+  {
+   "id": "P-KATRINA",
+   "proposition": "The Sheriff's Office lost its files in Hurricane Katrina; a surviving State Police file helped rebuild the case.",
+   "lines": [
+    27,
+    28
+   ],
+   "facts": [
+    "Hurricane Katrina",
+    "Files lost",
+    "A State Police file survived"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Jurisdiction was complicated because the body was found in another parish, and the Sheriff's Office lost files during Hurricane Katrina. A surviving State Police file helped rebuild the case. The Sheriff's Office called it \"a bible of names and witnesses.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C24"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C24"
+   ]
+  },
+  {
+   "id": "P-REOPEN",
+   "proposition": "Detective John Doran of the St. Bernard Parish Sheriff's Office reopened the case in 2009.",
+   "lines": [
+    29
+   ],
+   "facts": [
+    "2009",
+    "Detective John Doran",
+    "REOPENED"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "Police reopened the case in 2009 after a witness came forward saying Nodier had told him he was the killer and that Thompson's ghost was haunting the witness's dreams, Doran said.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C25",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-YAHOO-GHOST",
+     "supports": "direct",
+     "passage": "Another says the investigation was reopened by detective John Doran in 2009, so the dates vary by source.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C25"
+    },
+    {
+     "source": "S-RE-REVIEW",
+     "supports": "direct",
+     "passage": "The case went cold until a detective reopened it in 2009.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C25"
+    }
+   ],
+   "contradictions": [
+    "C25: One outlet (unidentified) dates the reopening to 2012. FOX 8 (2012) dates the key witness to April 2012. Best reading: reopened 2009, broke open 2012.",
+    "Yahoo relays that an unnamed outlet dated the reopening to 2012; that second-hand date is recorded here, not counted as contradicting evidence."
+   ],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C25"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text.",
+   "conflict_handling": "Script uses 2009 for the reopening and 2012 for the second witness."
+  },
+  {
+   "id": "P-WITNESS1",
+   "proposition": "In 2009 a witness (described in some accounts as an anonymous caller) told police that Nodier had told him he was the killer, and said Thompson's ghost was haunting his dreams.",
+   "lines": [
+    5,
+    6,
+    30,
+    31,
+    39,
+    59
+   ],
+   "facts": [
+    "WITNESS ONE · 2009",
+    "He said the groundskeeper confessed",
+    "He said her ghost haunted his dreams",
+    "HAUNTED WITNESS"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "Police reopened the case in 2009 after a witness came forward saying Nodier had told him he was the killer and that Thompson's ghost was haunting the witness's dreams, Doran said.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C26",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "The case was reopened in 2009 after an anonymous caller, who said they were haunted by Thompson's ghost, claimed Nodier had confessed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C26"
+    },
+    {
+     "source": "S-YAHOO-GHOST",
+     "supports": "direct",
+     "passage": "In 2009, an anonymous caller, claiming to be haunted by Thompson's ghost, said the suspect confessed to her murder and bragged about dumping her body in the river.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C26"
+    },
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "Police reopened the case in 2009 after a witness came forward saying Nodier had told him he was the killer and that Thompson's ghost was haunting the witness's dreams, Doran said.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C27",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "The case was reopened in 2009 after an anonymous caller, who said they were haunted by Thompson's ghost, claimed Nodier had confessed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C27"
+    },
+    {
+     "source": "S-WWNO-20261007",
+     "supports": "partial",
+     "passage": "Decades later, a new witness came forward claiming that Dorothy's ghost prompted him to talk, according to the same report. The case has since been reopened.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C27"
+    }
+   ],
+   "contradictions": [
+    "C26: Reuters says 'a witness came forward'. Biography.com and Yahoo say 'an anonymous caller'. Whether the 2009 informant was ever identified is unknown."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C26"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text.",
+   "conflict_handling": "Script says 'a man contacted police' (Reuters: a witness; others: an anonymous caller); the ghost is his claim, as Doran described it."
+  },
+  {
+   "id": "P-WITNESS2",
+   "proposition": "In 2012 a prison inmate who said he had been Nodier's assistant groundskeeper told investigators, and later a grand jury, that he was present when Thompson was killed.",
+   "lines": [
+    7,
+    33,
+    34,
+    35,
+    39,
+    59
+   ],
+   "facts": [
+    "WITNESS TWO · 2012",
+    "A prison inmate",
+    "Said he was there"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "The man, who police have not named, told investigators and later a grand jury that as Nodier's assistant groundskeeper at the cemetery he was present at Thompson's killing and was intimidated by Nodier into 28 years of silence, Doran said.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C28",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "During the investigation, a man who was serving time in prison contacted police and said he had witnessed the slaying.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C28",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "The case relied almost solely on the testimony of a witness who came forward and said he saw Nodier kill Thompson.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C28"
+    },
+    {
+     "source": "S-FOX8-2012",
+     "supports": "partial",
+     "passage": "Someone with information came forward in April 2012 and testified before a grand jury in St. Bernard.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C28"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "In 2012, James J. Tregler, Nodier's former assistant groundskeeper, claimed to have witnessed Thompson's murder. Tregler, who was in prison at the time, said he was compelled to contact authorities after Thompson's ghost started haunting him.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C28"
+    }
+   ],
+   "contradictions": [
+    "C28: FOX 8 says the witness came forward in April 2012. SBSO says 'in the months before the arrest' (April 2012). This is a small timing mismatch."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C28"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text.",
+   "conflict_handling": "The witness is not named (police did not name him)."
+  },
+  {
+   "id": "P-SILENCE",
+   "proposition": "The second witness said Nodier had intimidated him into silence for decades (Reuters reported '28 years').",
+   "lines": [],
+   "facts": [
+    "Silent for decades"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "The man, who police have not named, told investigators and later a grand jury that as Nodier's assistant groundskeeper at the cemetery he was present at Thompson's killing and was intimidated by Nodier into 28 years of silence, Doran said.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C30",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    }
+   ],
+   "contradictions": [
+    "C30: '28 years' does not fit 1985 to 2012 exactly (27 years). Treat it as approximate."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C30"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text.",
+   "conflict_handling": "Not used in the script."
+  },
+  {
+   "id": "P-WHY-GHOST",
+   "proposition": "The second witness said Thompson's ghost had begun haunting him, and that this made him contact the authorities (Biography.com, Yahoo).",
+   "lines": [
+    36,
+    37,
+    59
+   ],
+   "facts": [
+    "A ghost, he said",
+    "WHY HE CAME FORWARD"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "Tregler, who was in prison at the time, said he was compelled to contact authorities after Thompson's ghost started haunting him.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C31"
+    },
+    {
+     "source": "S-YAHOO-GHOST",
+     "supports": "direct",
+     "passage": "In 2012, James J. Tregler, the suspect's former assistant groundskeeper, claimed to have witnessed Thompson's murder. He said he was compelled to contact authorities after Thompson's ghost started haunting him.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C31"
+    }
+   ],
+   "contradictions": [
+    "C31: The Advocate gives a different, earthly reason for coming forward: Nodier threatened him in jail (C32). Both accounts may be partly true. Present both."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C31"
+   ],
+   "conflict_handling": "Both reasons are given, each attributed."
+  },
+  {
+   "id": "P-WHY-THREAT",
+   "proposition": "The Advocate reported that the second witness contacted the authorities only after Nodier visited him in jail and threatened him and his wife.",
+   "lines": [
+    38
+   ],
+   "facts": [
+    "A threat, The Advocate reported",
+    "THE ADVOCATE"
+   ],
+   "assertion": "attributed_allegation",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "He contacted authorities and claimed to have witnessed Thompson's slaying only after Nodier visited him in jail and threatened him and his wife.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C32"
+    }
+   ],
+   "contradictions": [
+    "C32: Conflicts with the ghost explanation in C31 (Biography.com, Yahoo, HBO)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C32"
+   ],
+   "conflict_handling": "Both reasons are given side by side, each attributed (he said / The Advocate reported); the film does not choose between them."
+  },
+  {
+   "id": "P-IMMUNITY",
+   "proposition": "The second witness was given immunity from prosecution in exchange for his account.",
+   "lines": [
+    35
+   ],
+   "facts": [
+    "IMMUNITY"
+   ],
+   "assertion": "legal_status",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Tregler received immunity from prosecution in exchange for his account.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C33"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C33"
+   ]
+  },
+  {
+   "id": "P-ONE-WITNESS",
+   "proposition": "The case against Nodier relied almost solely on the testimony of that one witness.",
+   "lines": [
+    8
+   ],
+   "facts": [
+    "ONE WITNESS",
+    "Almost solely one witness"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "The case relied almost solely on the testimony of a witness who came forward and said he saw Nodier kill Thompson.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C35"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "Sheriff James Pohlmann said \"I would have liked to see him spend the rest of his life in prison\", and acknowledged the case had relied almost solely on the testimony of a witness.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C35"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Prosecutors saw the case as hinging largely on his testimony.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C35"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C35"
+   ]
+  },
+  {
+   "id": "P-INDICT",
+   "proposition": "In April 2012 a St. Bernard Parish grand jury indicted Nodier, then 58, for second-degree murder; he turned himself in and was later freed on bond.",
+   "lines": [
+    40,
+    41
+   ],
+   "facts": [
+    "INDICTED",
+    "April 2012",
+    "APRIL 2012",
+    "2012",
+    "Second-degree murder",
+    "58"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "A grand jury indicted 58-year-old Brandon Nodier on second degree murder charges in the 1985 death of 61-year-old Dorothy Thompson, and he later turned himself in to authorities.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C36"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "Brandon Nodier, 60, who had been free on bond since his 2012 indictment for second-degree murder, was remanded to St. Bernard Parish Prison after a judge accepted a plea to a reduced manslaughter charge.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C36"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Shortly after Tregler came forward, a St. Bernard Parish grand jury indicted Nodier for second-degree murder.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C36"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "Nodier was arrested in April 2012 and charged with second-degree murder.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C36"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "It says Brandon Nodier was arrested in April 2012 for the 1985 killing of Dorothy Thompson",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C37"
+    },
+    {
+     "source": "S-AOL",
+     "supports": "direct",
+     "passage": "He was arrested in April 2012. In 2014 he pleaded guilty to manslaughter under a plea agreement.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C37"
+    },
+    {
+     "source": "S-FOX8-2012",
+     "supports": "direct",
+     "passage": "A grand jury indicted Brandon Nodier, then 58, on second-degree murder in the 1985 death of Dorothy Thompson, 61, whose body was found in the Mississippi River chained up. Nodier surrendered to authorities",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C37"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "Brandon Nodier, 60, who had been free on bond since his 2012 indictment for second-degree murder, was remanded to St. Bernard Parish Prison after a judge accepted a plea to a reduced manslaughter charge.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C38"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "The judge said Nodier, who has been out on bond, received a bargain in the truest sense of the word.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C38"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C36"
+   ]
+  },
+  {
+   "id": "P-PLEA",
+   "proposition": "In 2014, under a plea agreement, Nodier (then 60) pleaded guilty to manslaughter, a charge reduced from second-degree murder.",
+   "lines": [
+    8,
+    43,
+    44,
+    45,
+    52,
+    56,
+    58,
+    59
+   ],
+   "facts": [
+    "PLEADED GUILTY",
+    "MANSLAUGHTER",
+    "Manslaughter",
+    "2014",
+    "Plea deal",
+    "Not murder: manslaughter",
+    "60"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "Brandon Nodier, 60, who had been free on bond since his 2012 indictment for second-degree murder, was remanded to St. Bernard Parish Prison after a judge accepted a plea to a reduced manslaughter charge.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C39"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "The defendant, Brandon Nodier, pleaded guilty to manslaughter in a Chalmette courtroom, under a plea deal that reduced the charge.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C39"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "It reports that Brandon Nodier, 60, of Arabi, pleaded guilty to manslaughter in the 1985 killing and received a 10-year sentence.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C39"
+    },
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "A Louisiana man who had long been a suspect in the brutal 1985 slaying of woman at a secluded pet cemetery where he worked as a groundskeeper pleaded guilty on Friday to manslaughter in her death, authorities said.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C39",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "He pleaded guilty in July 2014 and was sentenced to 10 years in prison.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C41"
+    },
+    {
+     "source": "S-AOL",
+     "supports": "direct",
+     "passage": "He was arrested in April 2012. In 2014 he pleaded guilty to manslaughter under a plea agreement.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C41"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "partial",
+     "passage": "A Fox 8 report says he was sentenced to 10 years in prison for the murder of a pet cemetery owner 29 years ago, which points to 2014.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C41"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "partial",
+     "passage": "The outcome is in the same post: Nodier pleaded guilty to manslaughter and was sentenced to 10 years in a Chalmette court (sentenced to 10 years in prison in a Chalmette court Friday).",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C41"
+    }
+   ],
+   "contradictions": [
+    "C39: The FOX 8 lead and a Ranker list say 'murder'. The charge pleaded to was manslaughter. Biography.com says 'convicted' without naming the charge.",
+    "C41: The apparent 2026 date comes from the date of a forum repost (about 2026-02-27) of an older Reuters story. Ages (58 in 2012, 60 at the plea), '29 years', Biography.com's 'July 2014' and AOL's '2014' all point to 2014. The exact day is NOT verified. July 2014 rests on Biography.com alone; SBSO and Reuters say only that it was a Friday."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C39",
+    "C41"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text.",
+   "conflict_handling": "Script says 'in 2014'; the exact day is not used."
+  },
+  {
+   "id": "P-IN-COURT",
+   "proposition": "Nodier appeared in a Chalmette courtroom, where he pleaded guilty and was remanded to prison.",
+   "lines": [
+    8,
+    44
+   ],
+   "facts": [
+    "Chalmette"
+   ],
+   "assertion": "fact",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "Brandon Nodier, 60, who had been free on bond since his 2012 indictment for second-degree murder, was remanded to St. Bernard Parish Prison after a judge accepted a plea to a reduced manslaughter charge.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C39"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "The defendant, Brandon Nodier, pleaded guilty to manslaughter in a Chalmette courtroom, under a plea deal that reduced the charge.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C39"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "It reports that Brandon Nodier, 60, of Arabi, pleaded guilty to manslaughter in the 1985 killing and received a 10-year sentence.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C39"
+    }
+   ],
+   "contradictions": [
+    "C39: The FOX 8 lead and a Ranker list say 'murder'. The charge pleaded to was manslaughter. Biography.com says 'convicted' without naming the charge."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C39"
+   ],
+   "conflict_handling": "Script says manslaughter, never murder, for the plea."
+  },
+  {
+   "id": "P-SENTENCE",
+   "proposition": "Nodier was sentenced to 10 years in prison.",
+   "lines": [
+    45,
+    58
+   ],
+   "facts": [
+    "10 YEARS",
+    "10 years",
+    "Ten years"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "He received a 10-year prison sentence.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C40"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "A 60-year-old man was sentenced to 10 years in prison for the murder of a pet cemetery owner 29 years ago.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C40"
+    },
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "Brandon Nodier, 60, agreed to a 10-year sentence as part of a plea agreement",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C40",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "He pleaded guilty in July 2014 and was sentenced to 10 years in prison.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C40"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C40"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text."
+  },
+  {
+   "id": "P-JUDGE",
+   "proposition": "Judge Perry Nicosia of the 34th Judicial District accepted the plea, called it a bargain 'in the truest sense of the word', and said Nodier would likely have faced a much harsher sentence had a jury convicted him.",
+   "lines": [
+    46
+   ],
+   "facts": [
+    "Judge Perry Nicosia",
+    "34th Judicial District",
+    "A bargain"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Judge Perry Nicosia, of the 34th Judicial District, accepted the plea and called the deal a bargain in the truest sense of the word. He also said Nodier would likely have faced a much harsher sentence had a jury convicted him at trial.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C42"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "The judge said Nodier, who has been out on bond, received a bargain in the truest sense of the word.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C42"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C42"
+   ]
+  },
+  {
+   "id": "P-PAROLE",
+   "proposition": "Nodier's defence attorney said that under the parole rules in force in 1985, Nodier could expect to serve less than five years.",
+   "lines": [
+    47
+   ],
+   "facts": [
+    "Less than five years",
+    "1985 parole rules",
+    "5"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Because of the parole rules in effect in 1985, his defense attorney said he would likely serve under five years.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C43"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "A defense attorney said under the parole calculation in effect at the time of the 1985 killing, Nodier can expect to serve less than five years behind bars.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C43"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C43"
+   ]
+  },
+  {
+   "id": "P-SHERIFF",
+   "proposition": "Sheriff James Pohlmann said: \"I would have liked to see him spend the rest of his life in prison.\"",
+   "lines": [
+    48
+   ],
+   "facts": [
+    "Sheriff James Pohlmann"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "Sheriff James Pohlmann said \"I would have liked to see him (Nodier) spend the rest of his life in prison\" but acknowledged the case's challenges.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C44"
+    },
+    {
+     "source": "S-FOX8-2014",
+     "supports": "direct",
+     "passage": "Sheriff James Pohlmann said \"I would have liked to see him spend the rest of his life in prison\", and acknowledged the case had relied almost solely on the testimony of a witness.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C44"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C44"
+   ]
+  },
+  {
+   "id": "P-DORAN",
+   "proposition": "John Doran said after the plea: \"Some form of justice has been served. Ten years is better than none.\"",
+   "lines": [
+    49
+   ],
+   "facts": [
+    "John Doran"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "\"Some form of justice has been served,\" Doran said. \"Ten years is better than none.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C45",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    },
+    {
+     "source": "S-REUTERS-VIA-TD",
+     "supports": "direct",
+     "passage": "Colonel John Doran of the St. Bernard Sheriff's Office said \"Ten years is better than none.\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C45",
+     "attribution": "best_effort: Reuters text as reposted on a forum (tigerdroppings.com); the original page was not seen"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C45"
+   ],
+   "notes": "Corroboration depends partly on the forum repost of Reuters text."
+  },
+  {
+   "id": "P-1970",
+   "proposition": "In November 1970 Dorothy Thompson fatally shot her husband at the rear of the cemetery; St. Bernard officials found she had acted in self-defence and she was never charged.",
+   "lines": [],
+   "facts": [
+    "November 1970",
+    "1970",
+    "Self-defence",
+    "Never charged"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "In November 1970, Thompson fatally shot her husband in the rear of the cemetery, the newspaper reported. She was never charged in the slaying, as St. Bernard officials determined she had acted in self-defense.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C49"
+    }
+   ],
+   "contradictions": [
+    "C49: RogerEbert.com's summary of the series mentions a death 'closed as a suicide despite the victim having been shot twice in the back' (C55). That does not match a self-defence finding and may refer to a different death."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C49"
+   ],
+   "notes": "Victim's own past: stated only with the official finding (self-defence, no charge).",
+   "conflict_handling": "Stated with the self-defence finding; the husband is not named (one source only)."
+  },
+  {
+   "id": "P-ROBINSON",
+   "proposition": "In 1976 Dorothy married a cemetery caretaker, Donald E. Robinson, who less than two years later was found fatally shot on the property; she reported finding him, and no charges were filed.",
+   "lines": [],
+   "facts": [
+    "1976",
+    "No charges were filed",
+    "Donald Robinson"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "A few years later, in 1976, she married a cemetery caretaker, Donald E. Robinson, who less than two years later was found fatally shot on the property. Thompson phoned police to report finding his body, and no charges were filed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C51"
+    },
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "A few years later, in 1976, she married a cemetery caretaker, Donald E. Robinson, who less than two years later was found fatally shot on the property. Thompson phoned police to report finding his body, and no charges were filed.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C52"
+    }
+   ],
+   "contradictions": [
+    "C52: The search tool, not the article, labelled this a '1978 death'. RogerEbert.com refers to a death 'closed as a suicide' (C55). Whether that is Robinson's death is unknown."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C52"
+   ],
+   "notes": "Victim's own past: stated only with the official outcome (no charges).",
+   "conflict_handling": "Stated with 'no charges were filed'; no manner-of-death claim; the review's 'suicide' line is not used."
+  },
+  {
+   "id": "P-HBO",
+   "proposition": "HBO's three-part documentary series The Pet Cemetery Murders: A Ghost Story (HBO Documentary Films, produced by Lightbox, written and directed by Philip Cairney) premiered on 11 October 2026, with parts two and three on 18 and 25 October.",
+   "lines": [
+    9,
+    50,
+    51,
+    52
+   ],
+   "facts": [
+    "HBO",
+    "The Pet Cemetery Murders: A Ghost Story",
+    "11 October 2026",
+    "October 2026",
+    "2026",
+    "3 parts",
+    "Philip Cairney",
+    "18 and 25 October"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-WBD-PRESS-OCT",
+     "supports": "direct",
+     "passage": "HBO Documentary Films presents THE PET CEMETERY MURDERS: A GHOST STORY, a Lightbox Production.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "quoted_in_result",
+     "dossier_claim": "C59"
+    },
+    {
+     "source": "S-WBD-PRESS-OCT",
+     "supports": "direct",
+     "passage": "It lists the show as an HBO Original documentary series that debuts October 11, and it confirms the three-part format.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C59"
+    },
+    {
+     "source": "S-SBJ",
+     "supports": "direct",
+     "passage": "Written and directed by Being Beethoven's Philip Cairney, part one premieres on Sunday, October 11, 2026 at 9pm ET/PT. Part two debuts on October 18, and the final chapter arrives on October 25.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-WBD-PRESS-OCT",
+     "supports": "partial",
+     "passage": "Episodes debut weekly on Sundays, and the series centers on a 1985 Louisiana murder case that was reopened.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C60"
+    },
+    {
+     "source": "S-RE-REVIEW",
+     "supports": "direct",
+     "passage": "The search turned up one relevant result: a Roger Ebert review of the HBO documentary The Pet Cemetery Murders: A Ghost Story (2026), directed by Philip Cairney.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C61"
+    },
+    {
+     "source": "S-SBJ",
+     "supports": "direct",
+     "passage": "Written and directed by Being Beethoven's Philip Cairney, part one premieres on Sunday, October 11, 2026 at 9pm ET/PT.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C61"
+    },
+    {
+     "source": "S-WWNO-20261007",
+     "supports": "partial",
+     "passage": "A WWNO interview with the director, Phillip Cairney, is headlined around \"the intersection of faith and AI,\"",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C61"
+    }
+   ],
+   "contradictions": [
+    "C60: The WBD listing also carried an unexplained 'October 13' line.",
+    "C61: Spelling: 'Philip' (most outlets) vs 'Phillip' (WWNO result)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C60",
+    "C61"
+   ],
+   "conflict_handling": "Spelling 'Philip Cairney' (most outlets)."
+  },
+  {
+   "id": "P-CRITIC",
+   "proposition": "RogerEbert.com's reviewer found the case thin, and said the series centres people who earnestly believe a woman's ghost helped solve her murder.",
+   "lines": [
+    53
+   ],
+   "facts": [
+    "One critic"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-RE-REVIEW",
+     "supports": "direct",
+     "passage": "The reviewer finds the three-episode run a bit long for the material, since this case has little meat on the bones, so the atmosphere and local legends carry much of it. The documentary leans on interviews where interview subjects linger in their conflicting beliefs and memories.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C66"
+    },
+    {
+     "source": "S-RE-REVIEW",
+     "supports": "direct",
+     "passage": "praised how it centers real-life oddballs, some of whom earnestly believe a woman's ghost helped solve her murder",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C66"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C66"
+   ]
+  },
+  {
+   "id": "P-WHEREABOUTS",
+   "proposition": "Biography.com reports that Nodier's exact whereabouts are unknown; no public record of his release or custody was found.",
+   "lines": [
+    55
+   ],
+   "facts": [
+    "Whereabouts unknown"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Brandon Nodier"
+   ],
+   "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+   "evidence": [
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "The article notes that his exact whereabouts remain unknown.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C46"
+    }
+   ],
+   "contradictions": [
+    "C46: No release record found. Unrelated people share the name Brandon Nodier: a college football player and a business-directory listing in Arabi. Do not conflate them."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C46"
+   ],
+   "conflict_handling": "Script says whereabouts unknown, attributed to Biography.com; no same-name records are used."
+  },
+  {
+   "id": "P-NO-FORENSICS",
+   "proposition": "No DNA, new forensic science or AI was reported in the reinvestigation; the case was built on witness testimony.",
+   "lines": [
+    54
+   ],
+   "facts": [
+    "No DNA",
+    "No physical evidence"
+   ],
+   "assertion": "negative",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ADV-2014",
+     "supports": "direct",
+     "passage": "Authorities framed the plea as a belated form of justice in a cold case with no physical evidence.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C64"
+    },
+    {
+     "source": "S-SBSO-PLEA",
+     "supports": "direct",
+     "passage": "The case relied almost solely on the testimony of a witness who came forward and said he saw Nodier kill Thompson.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C64"
+    },
+    {
+     "source": "S-BIO",
+     "supports": "direct",
+     "passage": "Nodier had been the main suspect from the start, but there was no physical evidence tying him to the murder, and the case soon went cold.",
+     "passage_type": "search_excerpt",
+     "locator": null,
+     "excerpt_kind": "result_summary",
+     "dossier_claim": "C64"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [
+    "C64"
+   ]
+  },
+  {
+   "id": "P-27",
+   "proposition": "Nodier was arrested 27 years after Thompson's death (1985 to 2012); the plea came 29 years after it (2014).",
+   "lines": [
+    42,
+    58
+   ],
+   "facts": [
+    "27 YEARS",
+    "27 years",
+    "29 years",
+    "1985",
+    "2012",
+    "2014"
+   ],
+   "assertion": "derived",
+   "subjects": [],
+   "matter": null,
+   "evidence": [],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "dossier_claims": [],
+   "derived_from": [
+    "P-VANISH",
+    "P-INDICT",
+    "P-PLEA"
+   ]
+  }
+ ]
+}

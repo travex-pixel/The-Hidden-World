@@ -1,0 +1,172 @@
+{
+ "as_of": "2026-10-11",
+ "status_vocabulary": [
+  "SUSPECTED",
+  "INVESTIGATED",
+  "ARRESTED",
+  "CHARGED_PENDING",
+  "CONVICTED",
+  "CONVICTION_VACATED",
+  "ACQUITTED",
+  "NOT_CHARGED",
+  "VICTIM",
+  "OFFICIAL",
+  "CIVIL_ONLY",
+  "DECEASED_NO_FINDING",
+  "WITNESS"
+ ],
+ "matters": {
+  "death of Dorothy Thompson (1985, St. Bernard Parish)": [
+   "Dorothy",
+   "Thompson",
+   "1985",
+   "cemetery",
+   "river",
+   "chains",
+   "land"
+  ],
+  "1970 shooting of Dorothy Thompson's husband (ruled self-defence)": [
+   "1970",
+   "self-defence",
+   "husband"
+  ]
+ },
+ "people": [
+  {
+   "name": "Brandon Nodier",
+   "aliases": [
+    "Brandon Nodier",
+    "Nodier",
+    "the groundskeeper"
+   ],
+   "role": "former groundskeeper and handyman at the cemetery",
+   "matters": [
+    {
+     "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+     "status": "CONVICTED",
+     "checked": "2026-10-11",
+     "claims": [
+      "P-INDICT",
+      "P-PLEA",
+      "P-SENTENCE"
+     ],
+     "history": [
+      {
+       "date": "2012-04",
+       "event": "CHARGED",
+       "detail": "indicted for second-degree murder; surrendered; freed on bond"
+      },
+      {
+       "date": "2014",
+       "event": "CONVICTED",
+       "detail": "guilty plea to manslaughter (reduced charge); sentenced to 10 years"
+      }
+     ],
+     "notes": "Convicted of MANSLAUGHTER by plea, never of murder. Never call him a murderer. Current whereabouts unknown."
+    }
+   ]
+  },
+  {
+   "name": "Dorothy Thompson",
+   "aliases": [
+    "Dorothy Thompson",
+    "Dorothy Lou Thompson",
+    "Dorothy",
+    "Lou Thompson"
+   ],
+   "role": "owner of the pet cemetery; killed in 1985",
+   "matters": [
+    {
+     "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+     "status": "VICTIM",
+     "checked": "2026-10-11",
+     "claims": [
+      "P-RIVER"
+     ]
+    },
+    {
+     "matter": "1970 shooting of Dorothy Thompson's husband (ruled self-defence)",
+     "status": "NOT_CHARGED",
+     "checked": "2026-10-11",
+     "claims": [
+      "P-1970"
+     ],
+     "notes": "Officials found self-defence; never charged."
+    }
+   ]
+  },
+  {
+   "name": "Donald E. Robinson",
+   "aliases": [
+    "Donald Robinson",
+    "Robinson"
+   ],
+   "role": "Dorothy's husband from 1976; found fatally shot on the property; no charges filed",
+   "matters": [
+    {
+     "matter": "1970 shooting of Dorothy Thompson's husband (ruled self-defence)",
+     "status": "DECEASED_NO_FINDING",
+     "checked": "2026-10-11",
+     "claims": [
+      "P-ROBINSON"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "John Doran",
+   "aliases": [
+    "John Doran",
+    "Doran",
+    "Detective Doran"
+   ],
+   "role": "St. Bernard Parish Sheriff's Office detective who reopened the case",
+   "matters": [
+    {
+     "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+     "status": "OFFICIAL",
+     "checked": "2026-10-11",
+     "claims": [
+      "P-REOPEN"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "James Pohlmann",
+   "aliases": [
+    "James Pohlmann",
+    "Pohlmann"
+   ],
+   "role": "St. Bernard Parish Sheriff (2014)",
+   "matters": [
+    {
+     "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+     "status": "OFFICIAL",
+     "checked": "2026-10-11",
+     "claims": [
+      "P-SHERIFF"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Perry Nicosia",
+   "aliases": [
+    "Perry Nicosia",
+    "Nicosia"
+   ],
+   "role": "Judge, 34th Judicial District",
+   "matters": [
+    {
+     "matter": "death of Dorothy Thompson (1985, St. Bernard Parish)",
+     "status": "OFFICIAL",
+     "checked": "2026-10-11",
+     "claims": [
+      "P-JUDGE"
+     ]
+    }
+   ]
+  }
+ ]
+}

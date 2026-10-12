@@ -1,0 +1,145 @@
+{
+ "film": "pet-cemetery-murders",
+ "findings": [
+  {
+   "id": "FC-01",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Every source was read as a search excerpt. nola.com, wdsu.com and reuters.com could not be reached, and no page was opened in full. 23 claims are CORROBORATED by two or more independent publishers; 7 high-risk legal claims therefore cannot reach the DIRECTLY SUPPORTED level the gate requires.",
+   "evidence": "evidence/claims.json; gate G13 lists the high-risk claims.",
+   "recommendation": "Before publication, read in full: The Advocate's 2014 plea story, the St. Bernard Parish Sheriff's Office plea post, and FOX 8's 2012 and 2014 reports. Record the passages with access level full_text.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-02",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "P-DORAN",
+    "P-WITNESS1",
+    "P-WITNESS2"
+   ],
+   "lines": [],
+   "problem": "Some Reuters text (Doran's quotes, the 'witness came forward' wording, 'police have not named') was seen only as reposted on a forum (TigerDroppings). The ledger marks those passages best-effort and does not count them towards corroboration; P-DORAN rests on them alone.",
+   "evidence": "Passages carry 'attribution: best_effort' in evidence/claims.json. The description labels the link as a forum repost.",
+   "recommendation": "Open the original Reuters story (2014) and confirm the two Doran quotes word for word, or cut the quote card.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "FC-03",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [
+    "P-WHY-THREAT"
+   ],
+   "lines": [],
+   "problem": "The Advocate's report that the second witness came forward only after Nodier visited him in jail and threatened him rests on one excerpt. It is an adverse claim about a living person and is attributed on screen and in narration ('The Advocate ... reported').",
+   "evidence": "Gate G13: P-WHY-THREAT (medium risk) is REQUIRES REVIEW.",
+   "recommendation": "Read The Advocate's 2014 story in full and confirm the wording, or drop the line and the right-hand side of the split card.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-01",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "P-NODIER-JOB",
+    "P-IN-COURT"
+   ],
+   "lines": [],
+   "problem": "Brandon Nodier is alive and is shown as an illustrated figure (not a likeness): at work on the grounds (as a 1985 groundskeeper) and standing in court in 2014. He is never shown doing any act, and he is never called a murderer or killer.",
+   "evidence": "film.json depicts entries; gate G14 passes.",
+   "recommendation": "Keep. If the owner prefers, swap his figure for a silhouette as well.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-02",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "P-WITNESS2",
+    "P-IMMUNITY"
+   ],
+   "lines": [],
+   "problem": "Police did not name the second witness; some outlets (Biography.com, Yahoo) do. The film does not name him and shows witnesses only as silhouettes.",
+   "evidence": "Script and on-screen text.",
+   "recommendation": "Keep it that way in the description, comments and any Shorts.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-03",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "P-1970",
+    "P-ROBINSON"
+   ],
+   "lines": [],
+   "problem": "Two events in the victim's own past (a 1970 shooting ruled self-defence; a later husband found shot with no charges) are in the research but single-source and adverse to her. They are not used.",
+   "evidence": "opening-concepts.md 'Rejected details'.",
+   "recommendation": "Use only if read in full from an official source, and with the official outcome attached.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "LR-04",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "P-HBO",
+    "P-PLEA"
+   ],
+   "lines": [],
+   "problem": "The title uses HBO's series name, 'The Pet Cemetery Murders'. The only conviction is for manslaughter. The film says so directly ('Its title says murders. The legal record says manslaughter.'), and the description and pinned comment state the plea.",
+   "evidence": "youtube-title.txt, youtube-description.md, line 52.",
+   "recommendation": "Keep the legal-status paragraph at the top of the description.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-11"
+  },
+  {
+   "id": "AUD-01",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [
+    14,
+    34,
+    40,
+    58
+   ],
+   "problem": "The pronunciation of 'Nodier' is not verified. The narration uses 'No-dee-ay' (French). Speech recognition heard 'No D.I.' or 'NoDI'. Locals may say it differently.",
+   "evidence": "audit/asr-audit.json.",
+   "recommendation": "Owner to listen to the names sample; if it is wrong, change the pronounce entry and make a new versioned cut.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  },
+  {
+   "id": "AUD-02",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "The voice-to-music ratio under speech is 19.4 dB over the whole film, just under the 20 dB aim; the opening minute is higher (see narration-qa.md).",
+   "evidence": "audit/voice-audit.json.",
+   "recommendation": "If the owner hears the music competing on a phone, lower music_db by 1–2 dB in the next cut.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-12"
+  }
+ ]
+}

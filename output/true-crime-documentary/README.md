@@ -2,6 +2,7 @@
 
 | Run | Status | Notes |
 |---|---|---|
+| `pet-cemetery-murders-20261011-run1/` | **FINAL: The Pet Cemetery Murders** | 6:39. The real case behind HBO's ghost-story series (Dorothy Thompson, 1985). Kokoro `bm_fable` narrator, three opening concepts, a tone per line. ASR WER 7.7% (mostly number formatting; "Nodier" needs a listen); voice 19.4 dB over the music, 21.7 dB in the opening. Gate: no critical findings; legal-language checks pass; 8 high findings open until The Advocate, Sheriff's Office and FOX 8 reports are read in full. DRAFT until human sign-off. Delivered as a private download page. |
 | `thomas-randolph-20261011-run2/` | **FINAL (v2): The Widower, new narration** | 9:11. Kokoro `bm_fable` narrator. The script was rewritten for the ear, with a new 60-second opening and a tone per line. ASR WER 2.4%; voice 19–22 dB over the music. Gate: no critical findings; legal-language checks pass; 14 high findings open until the court rulings are read in full. DRAFT until human sign-off and the owner's listening check (`audit/narration-qa.md`). Delivered as a private download page. |
 | `thomas-randolph-20261011-run1/` | Superseded by run2 (v1 narration) | 7:35. Piper narrator. Kept for reference; run2 has the same evidence with the new narration and opening. |
 | `lizzie-borden-20261011-run1/` | **FINAL: Lizzie Borden** | 8:41. 73 of the 111 shots are walking and acting character scenes from the Case Files rig. Gate: 0 critical, high or medium findings; DRAFT until human sign-off. Delivered as a private download page. |

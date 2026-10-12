@@ -1,0 +1,1 @@
+Brandon Nodier pleaded guilty to manslaughter in 2014 and was sentenced to 10 years; he was never convicted of murder. Two witnesses said Dorothy Thompson's ghost haunted them, and The Advocate reported a different reason for one of them coming forward. Which account do you find more convincing? Sources are in the description.

@@ -1,0 +1,1012 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR)",
+ "lines": 60,
+ "corpus_wer": 0.077,
+ "lines_over_20pct": [
+  {
+   "line": 10,
+   "t": 72.62,
+   "script": "Dorothy Thompson was sixty-one.",
+   "asr": "Dorothy Thompson was 61.",
+   "wer": 0.4,
+   "diffs": [
+    [
+     "sixty",
+     "∅"
+    ],
+    [
+     "one",
+     "61"
+    ]
+   ]
+  },
+  {
+   "line": 13,
+   "t": 85.819,
+   "script": "And at the centre of this story is her land: fourteen acres in Toca.",
+   "asr": "And at the center of this story is her land, 14 acres in Toka.",
+   "wer": 0.214,
+   "diffs": [
+    [
+     "centre",
+     "center"
+    ],
+    [
+     "fourteen",
+     "14"
+    ],
+    [
+     "toca",
+     "toka"
+    ]
+   ]
+  },
+  {
+   "line": 14,
+   "t": 90.565,
+   "script": "Brandon Nodier worked at the cemetery, as its groundskeeper and handyman.",
+   "asr": "Brandon NoDI worked at the cemetery as its ground skipper and handyman.",
+   "wer": 0.273,
+   "diffs": [
+    [
+     "nodier",
+     "nodi"
+    ],
+    [
+     "∅",
+     "ground"
+    ],
+    [
+     "groundskeeper",
+     "skipper"
+    ]
+   ]
+  },
+  {
+   "line": 34,
+   "t": 203.558,
+   "script": "He said he'd been Nodier's assistant groundskeeper. And he said he was there when Dorothy Thompson was killed.",
+   "asr": "He said he'd been no D.I.'s assistant groundskeeper. And he said he was there when Dorothy Thompson was killed.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "∅",
+     "d"
+    ],
+    [
+     "∅",
+     "i"
+    ],
+    [
+     "nodier's",
+     "s"
+    ]
+   ]
+  },
+  {
+   "line": 40,
+   "t": 245.889,
+   "script": "In April 2012, a St. Bernard Parish grand jury indicted Brandon Nodier, then fifty-eight, for second-degree murder.",
+   "asr": "In April 2012, a Saint Bernard Parish Grand jury indicted Brandon No D.I. then 58 for second-degree murder.",
+   "wer": 0.316,
+   "diffs": [
+    [
+     "st",
+     "saint"
+    ],
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "nodier",
+     "d"
+    ],
+    [
+     "then",
+     "i"
+    ],
+    [
+     "fifty",
+     "then"
+    ],
+    [
+     "eight",
+     "58"
+    ]
+   ]
+  },
+  {
+   "line": 42,
+   "t": 257.119,
+   "script": "It had taken twenty-seven years.",
+   "asr": "It had taken 27 years",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "seven",
+     "27"
+    ]
+   ]
+  },
+  {
+   "line": 51,
+   "t": 322.186,
+   "script": "It's a Lightbox production, written and directed by Philip Cairney. Parts two and three air on the eighteenth and twenty-fifth of October.",
+   "asr": "It's a light box production, written and directed by Philip Kairney. Parts 2 and 3 air on the 18th and 25th of October.",
+   "wer": 0.348,
+   "diffs": [
+    [
+     "∅",
+     "light"
+    ],
+    [
+     "lightbox",
+     "box"
+    ],
+    [
+     "cairney",
+     "kairney"
+    ],
+    [
+     "two",
+     "2"
+    ],
+    [
+     "three",
+     "3"
+    ],
+    [
+     "eighteenth",
+     "18th"
+    ],
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "fifth",
+     "25th"
+    ]
+   ]
+  },
+  {
+   "line": 58,
+   "t": 377.02,
+   "script": "Brandon Nodier, her groundskeeper, pleaded guilty to manslaughter in 2014, twenty-nine years after her death. He was sentenced to ten years.",
+   "asr": "Brandon No D.I. her groundskeeper pleaded guilty to manslaughter in 2014, 29 years after her death. He was sentenced to 10 years.",
+   "wer": 0.273,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "∅",
+     "d"
+    ],
+    [
+     "nodier",
+     "i"
+    ],
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "nine",
+     "29"
+    ],
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  }
+ ],
+ "name_mismatches": [],
+ "rows": [
+  {
+   "line": 0,
+   "t": 0.45,
+   "script": "In April 1985, the woman who ran a pet cemetery in south Louisiana disappeared.",
+   "asr": "In April 1985, the woman who ran a pet cemetery in South Louisiana disappeared.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 1,
+   "t": 6.661,
+   "script": "She was due in court within days, in a lawsuit over her land.",
+   "asr": "She was due in court within days in a lawsuit over her land.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 2,
+   "t": 11.264,
+   "script": "Less than a month later, fishermen found her in the Mississippi River, weighted down with steel chains.",
+   "asr": "Less than a month later, fishermen found her in the Mississippi River, waded down with steel chains.",
+   "wer": 0.059,
+   "diffs": [
+    [
+     "weighted",
+     "waded"
+    ]
+   ]
+  },
+  {
+   "line": 3,
+   "t": 17.809,
+   "script": "The sheriff said police had a prime suspect from the very start: her own groundskeeper.",
+   "asr": "The sheriff said police had a prime suspect from the very start, her own groundskeeper.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 4,
+   "t": 23.748,
+   "script": "But there was no physical evidence. No arrest. And the case went cold.",
+   "asr": "But there was no physical evidence, no arrest, and the case went cold.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 5,
+   "t": 31.439,
+   "script": "In 2009, a man went to the police. He said the groundskeeper had confessed to him.",
+   "asr": "In 2009, a man went to the police. He said the ground skipper had confessed to him.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "∅",
+     "ground"
+    ],
+    [
+     "groundskeeper",
+     "skipper"
+    ]
+   ]
+  },
+  {
+   "line": 6,
+   "t": 39.177,
+   "script": "And he said something else. Her ghost was haunting his dreams.",
+   "asr": "And he said something else. Her ghost was haunting his dreams.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 7,
+   "t": 45.117,
+   "script": "Three years later, a prison inmate came forward. He said he was there when she was killed.",
+   "asr": "Three years later, a prison inmate came forward. He said he was there when she was killed.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 8,
+   "t": 52.401,
+   "script": "The case rested almost entirely on that one witness. And in 2014, the groundskeeper pleaded guilty. Not to murder. To manslaughter.",
+   "asr": "The case rested almost entirely on that one witness. And in 2014, the groundskeeper pleaded guilty: \"Not to murder. To manslaughter.\"",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 9,
+   "t": 64.691,
+   "script": "This is the real case behind HBO's The Pet Cemetery Murders. What the record shows, and what it doesn't.",
+   "asr": "This is the real case behind HB owes the pet's cemetery murders. What the record shows and what it doesn't.",
+   "wer": 0.158,
+   "diffs": [
+    [
+     "∅",
+     "hb"
+    ],
+    [
+     "hbo's",
+     "owes"
+    ],
+    [
+     "pet",
+     "pet's"
+    ]
+   ]
+  },
+  {
+   "line": 10,
+   "t": 72.62,
+   "script": "Dorothy Thompson was sixty-one.",
+   "asr": "Dorothy Thompson was 61.",
+   "wer": 0.4,
+   "diffs": [
+    [
+     "sixty",
+     "∅"
+    ],
+    [
+     "one",
+     "61"
+    ]
+   ]
+  },
+  {
+   "line": 11,
+   "t": 75.356,
+   "script": "She owned the Azalea Original Pet Cemetery, out in Toca, in rural eastern St. Bernard Parish.",
+   "asr": "She owned the Azalea original pet cemetery out in Tokar in rural eastern Saint Bernard Parish.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "toca",
+     "tokar"
+    ],
+    [
+     "st",
+     "saint"
+    ]
+   ]
+  },
+  {
+   "line": 12,
+   "t": 81.836,
+   "script": "Her mother, Grace, had opened it around 1950.",
+   "asr": "Her mother Grace had opened it around 1950.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 13,
+   "t": 85.819,
+   "script": "And at the centre of this story is her land: fourteen acres in Toca.",
+   "asr": "And at the center of this story is her land, 14 acres in Toka.",
+   "wer": 0.214,
+   "diffs": [
+    [
+     "centre",
+     "center"
+    ],
+    [
+     "fourteen",
+     "14"
+    ],
+    [
+     "toca",
+     "toka"
+    ]
+   ]
+  },
+  {
+   "line": 14,
+   "t": 90.565,
+   "script": "Brandon Nodier worked at the cemetery, as its groundskeeper and handyman.",
+   "asr": "Brandon NoDI worked at the cemetery as its ground skipper and handyman.",
+   "wer": 0.273,
+   "diffs": [
+    [
+     "nodier",
+     "nodi"
+    ],
+    [
+     "∅",
+     "ground"
+    ],
+    [
+     "groundskeeper",
+     "skipper"
+    ]
+   ]
+  },
+  {
+   "line": 15,
+   "t": 95.711,
+   "script": "According to investigators, he tricked her into signing her land over to him.",
+   "asr": "According to investigators, he tricked her into signing her land over to him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 16,
+   "t": 100.832,
+   "script": "Dorothy said she'd been tricked, and she sued to get it back.",
+   "asr": "Dorothy said she'd been tricked and she sued to get it back.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 17,
+   "t": 104.614,
+   "script": "The case was heading for a courtroom in Chalmette.",
+   "asr": "The case was heading for a courtroom in Shalmet.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "chalmette",
+     "shalmet"
+    ]
+   ]
+  },
+  {
+   "line": 18,
+   "t": 108.32,
+   "script": "In mid-April 1985, just days before that court date, Dorothy Thompson disappeared.",
+   "asr": "In mid-April 1985, just days before that court date, Dorothy Thompson disappeared.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 19,
+   "t": 114.702,
+   "script": "She was last seen at a bank in eastern St. Bernard.",
+   "asr": "She was last seen at a bank in eastern Saint Bernard.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "st",
+     "saint"
+    ]
+   ]
+  },
+  {
+   "line": 20,
+   "t": 118.426,
+   "script": "The Sheriff's Office later said it believed she was suffocated, inside her own home, on the thirteenth of April.",
+   "asr": "The sheriff's office later said it believed she was suffocated inside her own home on the 13th of April.",
+   "wer": 0.053,
+   "diffs": [
+    [
+     "thirteenth",
+     "13th"
+    ]
+   ]
+  },
+  {
+   "line": 21,
+   "t": 125.748,
+   "script": "On the second of May, fishermen found her body in the Mississippi River, on the east bank of Plaquemines Parish.",
+   "asr": "On the 2nd of May, fishermen found her body in the Mississippi River on the east bank of Plaquemines Parish.",
+   "wer": 0.05,
+   "diffs": [
+    [
+     "second",
+     "2nd"
+    ]
+   ]
+  },
+  {
+   "line": 22,
+   "t": 132.516,
+   "script": "She had been weighted down with steel chains.",
+   "asr": "She had been weighted down with steel chains.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 23,
+   "t": 135.941,
+   "script": "From the start, the sheriff said, Brandon Nodier was the prime suspect.",
+   "asr": "From the start the sheriff said \"Brandon no di was the prime suspect\".",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "nodier",
+     "di"
+    ]
+   ]
+  },
+  {
+   "line": 24,
+   "t": 141.055,
+   "script": "Investigators said he wanted her land. But there was no physical evidence tying him to her death, and not enough to arrest anyone.",
+   "asr": "Investigators said he wanted her land, but there was no physical evidence tying him to her death and not enough to arrest anyone.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 25,
+   "t": 149.59,
+   "script": "In the early years, State Police detectives were so stumped, they brought in a psychic from Slidell.",
+   "asr": "In the early years, state police detectives were so stumped, they brought in a psychic from Slidell.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 26,
+   "t": 155.894,
+   "script": "It didn't lead to an arrest. And for years, the case went cold.",
+   "asr": "It didn't lead to an arrest. And for years the case went cold.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 27,
+   "t": 162.13,
+   "script": "Then Hurricane Katrina hit, and the Sheriff's Office lost its files.",
+   "asr": "Then Hurricane Katrina hit and the sheriff's office lost its files.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 28,
+   "t": 167.114,
+   "script": "But one State Police file survived. It would help rebuild the case.",
+   "asr": "But one state police file survived. It would help rebuild the case.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 29,
+   "t": 172.55,
+   "script": "In 2009, Detective John Doran, of the St. Bernard Parish Sheriff's Office, reopened the case.",
+   "asr": "In 2009, Detective John Doran of the St Bernard Parish Sheriff's Office reopened the case.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 30,
+   "t": 178.994,
+   "script": "Doran said a man had come forward, and told police that Nodier had confessed to him.",
+   "asr": "Doran said a man had come forward and told police that no di had confessed to him.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "nodier",
+     "di"
+    ]
+   ]
+  },
+  {
+   "line": 31,
+   "t": 185.066,
+   "script": "And then, according to Doran, the man said something stranger. Dorothy's ghost, he said, was haunting his dreams.",
+   "asr": "And then, according to Doran, the man said something stranger. Dorothy's ghost, he said, was haunting his dreams.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 32,
+   "t": 193.784,
+   "script": "It still wasn't enough to charge anyone.",
+   "asr": "It still wasn't enough to charge anyone.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 33,
+   "t": 197.355,
+   "script": "Then, in 2012, according to police, a man serving time in prison got in touch.",
+   "asr": "Then in 2012, according to police, a man serving time in prison got in touch.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 34,
+   "t": 203.558,
+   "script": "He said he'd been Nodier's assistant groundskeeper. And he said he was there when Dorothy Thompson was killed.",
+   "asr": "He said he'd been no D.I.'s assistant groundskeeper. And he said he was there when Dorothy Thompson was killed.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "∅",
+     "d"
+    ],
+    [
+     "∅",
+     "i"
+    ],
+    [
+     "nodier's",
+     "s"
+    ]
+   ]
+  },
+  {
+   "line": 35,
+   "t": 211.856,
+   "script": "Police didn't name him. He was given immunity from prosecution, in exchange for his account.",
+   "asr": "Police didn't name him. He was given immunity from prosecution in exchange for his account.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 36,
+   "t": 218.755,
+   "script": "So why did he come forward, after all that time?",
+   "asr": "So why did he come forward after all that time?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 37,
+   "t": 222.872,
+   "script": "He said Dorothy's ghost had started haunting him, too.",
+   "asr": "He said Dorothy's ghost had started haunting him, too.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 38,
+   "t": 227.136,
+   "script": "But The Advocate, in New Orleans, reported a more down-to-earth reason. It said he went to the authorities only after Nodier visited him in jail, and threatened him and his wife.",
+   "asr": "But the advocate in New Orleans reported a more down-to-earth reason. It said he went to the authorities only after no D.I. visited him in jail and threatened him and his wife.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "∅",
+     "d"
+    ],
+    [
+     "nodier",
+     "i"
+    ]
+   ]
+  },
+  {
+   "line": 39,
+   "t": 238.553,
+   "script": "Two witnesses, and two ghost stories. But only one of them said he saw what happened.",
+   "asr": "Two witnesses and two ghost stories. But only one of them said he saw what happened.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 40,
+   "t": 245.889,
+   "script": "In April 2012, a St. Bernard Parish grand jury indicted Brandon Nodier, then fifty-eight, for second-degree murder.",
+   "asr": "In April 2012, a Saint Bernard Parish Grand jury indicted Brandon No D.I. then 58 for second-degree murder.",
+   "wer": 0.316,
+   "diffs": [
+    [
+     "st",
+     "saint"
+    ],
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "nodier",
+     "d"
+    ],
+    [
+     "then",
+     "i"
+    ],
+    [
+     "fifty",
+     "then"
+    ],
+    [
+     "eight",
+     "58"
+    ]
+   ]
+  },
+  {
+   "line": 41,
+   "t": 253.697,
+   "script": "He turned himself in, and was freed on bond.",
+   "asr": "He turned himself in and was freed on bond.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 42,
+   "t": 257.119,
+   "script": "It had taken twenty-seven years.",
+   "asr": "It had taken 27 years",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "seven",
+     "27"
+    ]
+   ]
+  },
+  {
+   "line": 43,
+   "t": 260.508,
+   "script": "The case never went to a jury.",
+   "asr": "The case never went to a jury",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 44,
+   "t": 264.075,
+   "script": "In 2014, under a plea deal, Nodier pleaded guilty. Not to murder, but to manslaughter.",
+   "asr": "In 2014 under a plea deal, no DI pleaded guilty. Not to murder but to manslaughter.",
+   "wer": 0.133,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "nodier",
+     "di"
+    ]
+   ]
+  },
+  {
+   "line": 45,
+   "t": 272.373,
+   "script": "He was sixty. He was sentenced to ten years in prison.",
+   "asr": "He was 60. He was sentenced to 10 years in prison.",
+   "wer": 0.182,
+   "diffs": [
+    [
+     "sixty",
+     "60"
+    ],
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "line": 46,
+   "t": 277.232,
+   "script": "Judge Perry Nicosia accepted the plea. He said it was a bargain, 'in the truest sense of the word', and that a jury conviction would likely have meant a much harsher sentence.",
+   "asr": "Judge Perry Nicosia accepted the plea. He said it was a bargain in the truest sense of the word and that a jury conviction would likely have meant a much harsher sentence.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 47,
+   "t": 289.788,
+   "script": "And Nodier's own lawyer said that, under the parole rules from 1985, he could expect to serve less than five years.",
+   "asr": "And no D.I.'s own lawyer said that, under the parole rules from 1985, he could expect to serve less than five years.",
+   "wer": 0.19,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "∅",
+     "d"
+    ],
+    [
+     "∅",
+     "i"
+    ],
+    [
+     "nodier's",
+     "s"
+    ]
+   ]
+  },
+  {
+   "line": 48,
+   "t": 297.709,
+   "script": "Sheriff James Pohlmann said he would have liked to see him spend the rest of his life in prison.",
+   "asr": "Sheriff James Paul Mann said he would have liked to see him spend the rest of his life in prison.",
+   "wer": 0.105,
+   "diffs": [
+    [
+     "∅",
+     "paul"
+    ],
+    [
+     "pohlmann",
+     "mann"
+    ]
+   ]
+  },
+  {
+   "line": 49,
+   "t": 303.832,
+   "script": "And John Doran, the detective who'd reopened the case, said: \"Some form of justice has been served. Ten years is better than none.\"",
+   "asr": "And John Doran, the detective who'd reopened the case, said, \"Some form of justice has been served.\" Ten years is better than none.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 50,
+   "t": 313.441,
+   "script": "On the eleventh of October, 2026, HBO premiered a three-part series about the case: The Pet Cemetery Murders: A Ghost Story.",
+   "asr": "On the 11th of October 2026, HBO premiered a three-part series about the case, \"The Pet Cemetery Murders: A Ghost Story.\"",
+   "wer": 0.045,
+   "diffs": [
+    [
+     "eleventh",
+     "11th"
+    ]
+   ]
+  },
+  {
+   "line": 51,
+   "t": 322.186,
+   "script": "It's a Lightbox production, written and directed by Philip Cairney. Parts two and three air on the eighteenth and twenty-fifth of October.",
+   "asr": "It's a light box production, written and directed by Philip Kairney. Parts 2 and 3 air on the 18th and 25th of October.",
+   "wer": 0.348,
+   "diffs": [
+    [
+     "∅",
+     "light"
+    ],
+    [
+     "lightbox",
+     "box"
+    ],
+    [
+     "cairney",
+     "kairney"
+    ],
+    [
+     "two",
+     "2"
+    ],
+    [
+     "three",
+     "3"
+    ],
+    [
+     "eighteenth",
+     "18th"
+    ],
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "fifth",
+     "25th"
+    ]
+   ]
+  },
+  {
+   "line": 52,
+   "t": 331.407,
+   "script": "Its title says 'murders'. The legal record says manslaughter.",
+   "asr": "It's title says murders. The legal record says manslaughter.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "its",
+     "it's"
+    ]
+   ]
+  },
+  {
+   "line": 53,
+   "t": 337.6,
+   "script": "One critic, at RogerEbert.com, found the case itself thin, and said the series centres people who earnestly believe a woman's ghost helped solve her murder.",
+   "asr": "One critic at RogerEbert.com found the case itself thin and said the series centres people who earnestly believe a woman's ghost helped solve her murder.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 54,
+   "t": 347.407,
+   "script": "No DNA breakthrough was ever reported here. The case was built on what witnesses said.",
+   "asr": "No DN a breakthrough was ever reported here. The case was built on what witnesses said.",
+   "wer": 0.133,
+   "diffs": [
+    [
+     "∅",
+     "dn"
+    ],
+    [
+     "dna",
+     "a"
+    ]
+   ]
+  },
+  {
+   "line": 55,
+   "t": 355.414,
+   "script": "And Brandon Nodier today? Biography.com reports that his exact whereabouts are unknown. We found no public record of his release.",
+   "asr": "and Brandon NoDI today. Biography.com reports that his exact whereabouts are unknown. We found no public record of his release.",
+   "wer": 0.048,
+   "diffs": [
+    [
+     "nodier",
+     "nodi"
+    ]
+   ]
+  },
+  {
+   "line": 56,
+   "t": 367.827,
+   "script": "So, here's where the record stands.",
+   "asr": "So here's where the record stands.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 57,
+   "t": 371.12,
+   "script": "Dorothy Thompson was sixty-one, and fighting in court for her land, when she disappeared.",
+   "asr": "Dorothy Thompson was 61 and fighting in court for her land when she disappeared.",
+   "wer": 0.133,
+   "diffs": [
+    [
+     "sixty",
+     "∅"
+    ],
+    [
+     "one",
+     "61"
+    ]
+   ]
+  },
+  {
+   "line": 58,
+   "t": 377.02,
+   "script": "Brandon Nodier, her groundskeeper, pleaded guilty to manslaughter in 2014, twenty-nine years after her death. He was sentenced to ten years.",
+   "asr": "Brandon No D.I. her groundskeeper pleaded guilty to manslaughter in 2014, 29 years after her death. He was sentenced to 10 years.",
+   "wer": 0.273,
+   "diffs": [
+    [
+     "∅",
+     "no"
+    ],
+    [
+     "∅",
+     "d"
+    ],
+    [
+     "nodier",
+     "i"
+    ],
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "nine",
+     "29"
+    ],
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "line": 59,
+   "t": 387.642,
+   "script": "Two witnesses said her ghost haunted them. Whatever you believe about that, what ended this case was a witness who said he was there, and a guilty plea.",
+   "asr": "Two witnesses said a ghost haunted them. Whatever you believe about that, what ended this case was a witness who said he was there, and a guilty plea.",
+   "wer": 0.036,
+   "diffs": [
+    [
+     "her",
+     "a"
+    ]
+   ]
+  }
+ ],
+ "note": "ASR errors are expected on proper names and numbers; mismatches are leads for a human listen, not proof of a narration defect."
+}
