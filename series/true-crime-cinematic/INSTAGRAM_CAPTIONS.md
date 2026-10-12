@@ -344,3 +344,17 @@ What caught him: good policing or his own mistakes? 👇 Follow for the next cas
 #TedBundy #TrueCrime #ColdCase #PoliceWork #CaseFiles
 
 Victims are not shown or named. We remember them.
+
+## 29: Eric Rudolph, 40 s (`true_crime_29_rudolph_40s.mp4`)
+Built as a direct copy of 22's formula (object first, a 1990s bomber, a manhunt, an irony beat). Post at the same time of day as 22.
+
+The Olympic Park bomber vanished for five years. A grocery store dumpster ended it. 🗑️
+
+Ten Most Wanted. Hundreds of agents. Helicopters over the mountains.
+Then a 21-year-old rookie took a routine patrol behind a store.
+
+Was it just luck? YES or NO 👇 Follow for the next case.
+
+#TrueCrime #OlympicParkBombing #FBI #ColdCase #CaseFiles
+
+We remember his victims.

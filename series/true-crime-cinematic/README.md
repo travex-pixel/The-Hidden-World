@@ -30,6 +30,7 @@
 | 26 | `true_crime_26_el_chapo_40s.mp4` (archived outside git) | El Chapo, the tunnel and the movie plans (2015–2019), 40-second cut | see `production_manifest.json` |
 | 27 | `true_crime_27_madoff_40s.mp4` (archived outside git) | Bernie Madoff and the confession to his sons (2008–2009), 40-second cut | see `production_manifest.json` |
 | 28 | `true_crime_28_bundy_40s.mp4` (archived outside git) | Ted Bundy and the traffic stops (1975–1978), 40-second cut | see `production_manifest.json` |
+| 29 | `true_crime_29_rudolph_40s.mp4` (archived outside git) | Eric Rudolph and the grocery-store dumpster (1996–2005), 40-second cut | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.
