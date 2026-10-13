@@ -29,8 +29,8 @@ def build(h):
           "tension", ["B_victims", "B_where"], sfx=[fx(0.0, "whoosh", 0.4), fw(0, 7, "ping", 0.35, -0.02), fw(0, 9, "ping", 0.3, -0.02), fw(0, 13, "thump", 0.4, -0.05)],
           emph=["eleven", "women", "girls", "baiyin", "baotou,", "1988", "2002."], min_d=4.6, pad=0.15, tr="push"),
         # A - the stakes: the old evidence lab; DNA and fingerprints, but no match on file (the 28-year count-up)
-        S("s03_lab", "by39_lab", [N("Police had his DNA and fingerprints. But they matched nobody on file.")],
-          "tension-rise", ["B_evidence"], sfx=[fw(0, 3, "click", 0.35, -0.03), fw(0, 5, "beep", 0.25, 0.0), fw(0, 9, "buzz", 0.3, -0.03), fw(0, 11, "thud", 0.4, -0.05)],
+        S("s03_lab", "by39_lab", [N("The police had his DNA and fingerprints. But they matched nobody on file.")],
+          "tension-rise", ["B_evidence"], sfx=[fw(0, 4, "click", 0.35, -0.03), fw(0, 6, "beep", 0.25, 0.0), fw(0, 10, "buzz", 0.3, -0.03), fw(0, 12, "thud", 0.4, -0.05)],
           emph=["dna", "fingerprints.", "nobody", "file."], pad=0.15, tr="push"),
         # B - cold: the task-force wall; the killings stopped after 2002; the count-up to 28 years without a name
         S("s04_cold", "by39_cold", [N("After 2002, the killings stopped, and the trail went cold.")],
@@ -50,7 +50,7 @@ def build(h):
                                       N("So the killer was family.", pause_before=0.3)],
           "revelation", ["B_ystr", "B_fun"], sfx=[fw(0, 1, "beep", 0.25, 0.0), fw(0, 4, "typing", 0.3, -0.05), fw(0, 6, "ping", 0.4, -0.02),
                                                    fw(1, 4, "hit", 0.55, -0.05), fw(1, 4, "sparkle", 0.4, 0.3)],
-          emph=["y", "chromosome", "close", "killer's.", "family."], pad=0.6, tr="push"),
+          emph=["y", "chromosome", "close", "killer's.", "family."], pad=0.4, tr="push"),
         # D - the arrest at the shop (impact); 28 years after the first killing
         S("s08_arrest", "by39_arrest", [N("In August 2016, police arrested Gao Chengyong at his shop.")],
           "tension-peak", ["B_arrest"], sfx=[fw(0, 1, "brake", 0.35, -0.05), fw(0, 3, "door", 0.4, -0.05), fw(0, 4, "hit", 0.55, -0.05), fw(0, 9, "thump", 0.4, -0.05)],
@@ -63,7 +63,7 @@ def build(h):
         S("s10_end", "by39_end", [N("The lesson? Your DNA isn't only yours."),
                                   N("One sample from his uncle ended a 28 year hunt.", pause_before=0.3)],
           "aftermath", ["B_lesson", "B_uncle", "B_years"], sfx=[fw(0, 1, "chime", 0.35, -0.02), fw(1, 1, "ping", 0.35, -0.02), fw(1, 9, "thump", 0.4, -0.05)],
-          emph=["lesson?", "dna", "only", "yours.", "sample", "uncle", "28", "hunt."], min_d=4.8, pad=1.9, tr="zoom"),
+          emph=["lesson?", "dna", "only", "yours.", "sample", "uncle", "28", "hunt."], min_d=4.8, pad=1.7, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_map": "A", "s03_lab": "A", "s04_cold": "B", "s05_shop": "B",
                 "s06_uncle": "C", "s07_match": "C", "s08_arrest": "D", "s09_verdict": "D", "s10_end": "E"}

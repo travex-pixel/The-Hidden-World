@@ -279,7 +279,7 @@
 
     // 3 - the stakes: the old evidence lab; DNA and fingerprints on the bench, a search bar that finds nobody
     by39_lab(ctx) {
-      const t = ctx.t, dna = WT(ctx, 0, 3, 0.8), fp = WT(ctx, 0, 5, 1.3), but = WT(ctx, 0, 6, 2.2), nob = WT(ctx, 0, 9, 2.8), fil = WT(ctx, 0, 11, 3.4);
+      const t = ctx.t, dna = WT(ctx, 0, 4, 0.8), fp = WT(ctx, 0, 6, 1.3), but = WT(ctx, 0, 7, 2.2), nob = WT(ctx, 0, 10, 2.8), fil = WT(ctx, 0, 12, 3.4);
       const mon = tt => { const p = seg(tt, but - 0.3, nob); let g = `<g transform="translate(350 720)"><rect x="-10" y="-10" width="460" height="330" rx="14" fill="#1a2228" stroke="${INK}" stroke-width="6"/><rect x="10" y="10" width="420" height="290" fill="#06141a"/>`;
         // a generic fingerprint whorl
         for (let i = 0; i < 9; i++) g += `<ellipse cx="120" cy="150" rx="${18 + i * 11}" ry="${26 + i * 13}" fill="none" stroke="${TEAL}" stroke-width="4" opacity="0.7" stroke-dasharray="${30 + i * 6} 10"/>`;
