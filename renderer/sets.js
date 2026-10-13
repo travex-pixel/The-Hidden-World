@@ -228,8 +228,56 @@
     }
   };
 
+  // ---------- map fly-in (vivid look): filled Natural Earth land, glowing coasts, a highlighted country, a pulsing pin.
+  // ep.geo[o.geo] = {land:[ring], borders:[line], countries:{name:[ring]}} from series/true-crime/tools/extract_geo_poly.py.
+  // o = {geo, from:{center:[lon,lat], span}, to:{...}, t0, t1, country, hl, pin:{ll, label, at}, labels:[{ll, text, at}]}
+  SETS.mapflight = (ctx, o = {}) => {
+    const geo = ctx.ep.geo[o.geo || 'asia']; const t0 = o.t0 ?? 0, t1 = o.t1 ?? ctx.T;
+    const p = ease.inOut(clamp((ctx.t - t0) / Math.max(0.01, t1 - t0), 0, 1)); const A = o.from || o.to, B = o.to || o.from;
+    const span = Math.exp(lerp(Math.log(A.span), Math.log(B.span), p)), lon0 = lerp(A.center[0], B.center[0], p), lat0 = lerp(A.center[1], B.center[1], p);
+    const k = W / span, cl = Math.cos(lat0 * Math.PI / 180), cy = H * (o.cy ?? 0.44);
+    const P = ([lo, la]) => [W / 2 + (lo - lon0) * cl * k, cy - (la - lat0) * k];
+    const path = (r, close) => { let d = ''; r.forEach((q, i) => { const [x, y] = P(q); d += (i ? 'L' : 'M') + f1(x) + ' ' + f1(y); }); return d + (close ? 'Z' : ''); };
+    const hl = o.hl || '#ff3b5c', pulse = 0.5 + 0.5 * Math.sin(ctx.t * 4.2);
+    let s = `<defs><linearGradient id="mfSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#06122a"/><stop offset="1" stop-color="#0b2f4a"/></linearGradient>` +
+      `<filter id="mfGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter></defs><rect x="-200" y="-200" width="${W + 400}" height="${H + 400}" fill="url(#mfSea)"/>`;
+    const g = Math.max(1, Math.round(span / 8));   // graticule every ~1/8 of the view
+    for (let lo = Math.floor((lon0 - span) / g) * g; lo <= lon0 + span; lo += g) { const a = P([lo, lat0 - span]), b = P([lo, lat0 + span]); s += `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="#2fd3ff" stroke-opacity="0.07" stroke-width="2"/>`; }
+    for (let la = Math.floor((lat0 - span) / g) * g; la <= lat0 + span; la += g) { const a = P([lon0 - span * 2, la]), b = P([lon0 + span * 2, la]); s += `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="#2fd3ff" stroke-opacity="0.07" stroke-width="2"/>`; }
+    const land = geo.land.map(r => path(r, true)).join('');
+    s += `<path d="${land}" fill="none" stroke="#2fd3ff" stroke-width="10" opacity="0.35" filter="url(#mfGlow)"/><path d="${land}" fill="#16283a" stroke="#7fe3ff" stroke-width="2.6" stroke-linejoin="round"/>`;
+    if (geo.borders) s += `<path d="${geo.borders.map(l => path(l, false)).join('')}" fill="none" stroke="#9fb3c8" stroke-opacity="0.45" stroke-width="1.8" stroke-dasharray="8 7"/>`;
+    if (o.country && geo.countries[o.country]) {
+      const kc = seg(ctx.t, o.country_at ?? 0.3, (o.country_at ?? 0.3) + 0.7); const cd = geo.countries[o.country].map(r => path(r, true)).join('');
+      s += `<path d="${cd}" fill="${hl}" opacity="${f1(kc * (0.22 + 0.12 * pulse))}" filter="url(#mfGlow)"/><path d="${cd}" fill="${hl}" fill-opacity="${f1(kc * 0.42)}" stroke="${hl}" stroke-width="3.5" stroke-opacity="${f1(kc)}"/>`;
+    }
+    for (const lb of o.labels || []) { const [x, y] = P(lb.ll); const q = seg(ctx.t, lb.at ?? 0.5, (lb.at ?? 0.5) + 0.5); s += `<text x="${f1(x)}" y="${f1(y)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${lb.fs || 40}" letter-spacing="6" fill="#ffffff" opacity="${f1(q * 0.9)}" stroke="#06122a" stroke-width="8" paint-order="stroke">${esc(lb.text)}</text>`; }
+    if (o.pin) {
+      const [x, y] = P(o.pin.ll); const q = seg(ctx.t, o.pin.at ?? 1, (o.pin.at ?? 1) + 0.5);
+      if (q > 0) {
+        for (let i = 0; i < 3; i++) { const ph = ((ctx.t * 0.9 + i / 3) % 1); s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(20 + ph * 110)}" fill="none" stroke="${hl}" stroke-width="${f1(6 * (1 - ph))}" opacity="${f1(q * (1 - ph))}"/>`; }
+        s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(16 * ease.back(q))}" fill="${hl}" stroke="#fff" stroke-width="5"/>`;
+        if (o.pin.label) s += `<text x="${f1(x + (o.pin.dx ?? 40))}" y="${f1(y + (o.pin.dy ?? -30))}" text-anchor="${o.pin.anchor || 'start'}" font-family="Nunito" font-weight="800" font-size="${o.pin.fs || 46}" fill="#fff" stroke="#06122a" stroke-width="9" paint-order="stroke" opacity="${f1(seg(ctx.t, (o.pin.at ?? 1) + 0.2, (o.pin.at ?? 1) + 0.7))}">${esc(o.pin.label)}</text>`;
+      }
+    }
+    return { light: { dir: -1, rim: '#7fe3ff', key: '#bfefff' }, layers: [[0, s]] };
+  };
+
   // ---------- grades (colour script)
   const GRADES = { warm: ['#ff9a4a', 0.16], cold: ['#2f8fb0', 0.22], night: ['#1a2a6a', 0.25], dawn: ['#ff8a5a', 0.14], sepia: ['#a87a40', 0.18], none: ['#000', 0] };
+  // vivid look (episode.look = 'vivid'): richer tints, a teal/orange split, drifting light leaks; old episodes are unchanged
+  const VGRADES = { warm: ['#ff7a1f', 0.22, '#ffb347'], cold: ['#13a4e0', 0.24, '#5fd4ff'], night: ['#2f3fd0', 0.28, '#7a6bff'], dawn: ['#ff5f3a', 0.2, '#ffb26b'],
+    sepia: ['#c47a28', 0.2, '#ffc46b'], neon: ['#ff2fa0', 0.2, '#ff5ac8'], jungle: ['#19c46a', 0.2, '#9dff6a'], tokyo: ['#7a3cff', 0.24, '#ff4fd8'], none: ['#000', 0, '#ffd27a'] };
+  const VIVID_DEFS = `<filter id="vividF" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="1.65"/>` +
+    `<feComponentTransfer><feFuncR type="linear" slope="1.2" intercept="-0.075"/><feFuncG type="linear" slope="1.2" intercept="-0.08"/><feFuncB type="linear" slope="1.2" intercept="-0.07"/></feComponentTransfer></filter>` +
+    `<linearGradient id="vSplit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00b3c7"/><stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#ff7a1a"/></linearGradient>` +
+    `<radialGradient id="vLeak"><stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>` +
+    `<radialGradient id="vVig" cx="50%" cy="46%" r="78%"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#03030a" stop-opacity="0.5"/></radialGradient>`;
+  function lightLeak(t, col) {
+    const a = t * 0.35, x1 = W * (0.15 + 0.12 * Math.sin(a)), y1 = H * (0.18 + 0.06 * Math.cos(a * 1.3)), x2 = W * (0.9 + 0.08 * Math.cos(a * 0.8)), y2 = H * (0.62 + 0.08 * Math.sin(a * 1.1));
+    return `<g style="mix-blend-mode:screen"><ellipse cx="${f1(x1)}" cy="${f1(y1)}" rx="520" ry="380" fill="url(#vLeak)" opacity="0.08" style="mix-blend-mode:screen"/><ellipse cx="${f1(x1)}" cy="${f1(y1)}" rx="520" ry="380" fill="${col}" opacity="0.08"/>` +
+      `<ellipse cx="${f1(x2)}" cy="${f1(y2)}" rx="460" ry="560" fill="${col}" opacity="0.06"/></g>`;
+  }
 
   // ---------- compositor
   // subtle handheld drift: smooth, deterministic sum of sines (amplitude in px at the figures' plane)
@@ -273,14 +321,31 @@
     if (o.type === 'circle') { const [ax, ay] = project(c, o.depth || 1, o.target[0], o.target[1]); return `<g opacity="${op}">${E.doc.circleOn(f1(ax), f1(ay), o.rx || 120, o.ry || 70, ease.out(k), o.colour || '#e5372b', 8)}</g>`; }
     if (o.type === 'vote') { let s = ''; for (let i = 0; i < 5; i++) { const q = ease.back(seg(t, o.at + i * 0.15, o.at + i * 0.15 + 0.4)); const x = 200 + i * 170; s += `<g transform="translate(${x} ${o.y || 1180}) scale(${f1(Math.max(0.001, q) * 100) / 100})"><rect x="-76" y="-40" width="152" height="80" rx="10" fill="${i < 3 ? '#d23a2e' : '#e9e4d8'}" stroke="#000" stroke-opacity="0.5" stroke-width="3"/><text y="11" text-anchor="middle" ${TYPE} font-weight="700" font-size="28" fill="${i < 3 ? '#fff' : '#1a1915'}">${i < 3 ? 'DISMISS' : 'ALLOW'}</text></g>`; } return `<g opacity="${op}">${s}</g>`; }
     if (o.type === 'funfact') {   // "FUN FACT" pop-up: yellow badge over a dark card; rows: [{text, fs}] (pre-wrapped, verified facts only)
+      const BC = o.badgeColour || (o.badge === 'LESSON' ? '#3ee07a' : '#ffd23f'), BT = o.badge || 'FUN FACT!';
       const rows = o.rows || [], fs0 = o.fs || 42, w = o.w || 920, x = o.x ?? (W - w) / 2, y = o.y ?? 380;
       const lh = r_ => (r_.fs || fs0) * 1.28; const h = 64 + rows.reduce((a, r_) => a + lh(r_), 0) + 22;
       const pop = ease.back(seg(t, o.at || 0, (o.at || 0) + 0.42)); const cx = x + w / 2, cy = y + h / 2;
       let yy = y + 56, txt = ''; rows.forEach(r_ => { yy += lh(r_) * 0.86; txt += `<text x="${x + 40}" y="${f1(yy)}" font-family="Nunito" font-weight="800" font-size="${r_.fs || fs0}" fill="${r_.colour || '#f6f1e6'}">${esc(r_.text)}</text>`; yy += lh(r_) * 0.14; });
       const wob = 1 + 0.012 * Math.sin((t - (o.at || 0)) * 5);
       return `<g opacity="${op}" transform="translate(${f1(cx)} ${f1(cy)}) scale(${f1(Math.max(0.001, pop) * wob * 1000) / 1000}) translate(${f1(-cx)} ${f1(-cy)})"><rect x="${x + 10}" y="${y + 14}" width="${w}" height="${h}" rx="22" fill="#000" opacity="0.5" filter="url(#cineSoft)"/>` +
-        `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="22" fill="#111317" opacity="0.94" stroke="#ffd23f" stroke-width="5"/>` +
-        `<g transform="rotate(-4 ${x + 170} ${y})"><rect x="${x + 22}" y="${y - 40}" width="300" height="76" rx="38" fill="#ffd23f" stroke="#141414" stroke-width="4"/><text x="${x + 172}" y="${y + 12}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="42" fill="#141414">FUN FACT!</text></g>${txt}</g>`;
+        `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="22" fill="#111317" opacity="0.94" stroke="${BC}" stroke-width="5"/>` +
+        `<g transform="rotate(-4 ${x + 170} ${y})"><rect x="${x + 22}" y="${y - 40}" width="300" height="76" rx="38" fill="${BC}" stroke="#141414" stroke-width="4"/><text x="${x + 172}" y="${y + 12}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="42" fill="#141414">${esc(BT)}</text></g>${txt}</g>`;
+    }
+    if (o.type === 'lesson') return overlay({ ...o, type: 'funfact', badge: 'LESSON' }, ctx, c);
+    if (o.type === 'counter') {   // big count-up number with a neon glow: {at, dur, from, to, prefix, suffix, label, y, colour, fs}
+      const q = ease.out(seg(t, o.at || 0, (o.at || 0) + (o.dur || 1.2))); const v = Math.round(lerp(o.from || 0, o.to, q));
+      const txt = (o.prefix || '') + v.toLocaleString('en-US') + (o.suffix || ''); const y = o.y ?? 560, fs = o.fs || 120, col = o.colour || '#ffd23f';
+      const pop = ease.back(seg(t, o.at || 0, (o.at || 0) + 0.35));
+      return `<g opacity="${op}" transform="translate(${W / 2} ${y}) scale(${f1(Math.max(0.001, pop) * 1000) / 1000}) translate(${-W / 2} ${-y})"><rect x="60" y="${y - fs - 30}" width="${W - 120}" height="${fs + (o.label ? 110 : 60)}" rx="24" fill="#05060c" opacity="0.72"/>` +
+        `<text x="${W / 2}" y="${y}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${col}" opacity="0.55" filter="url(#cineSoft)">${esc(txt)}</text>` +
+        `<text x="${W / 2}" y="${y}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${col}" stroke="#0b0b0d" stroke-width="10" paint-order="stroke">${esc(txt)}</text>` +
+        (o.label ? `<text x="${W / 2}" y="${y + 66}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="44" letter-spacing="4" fill="#ffffff">${esc(o.label)}</text>` : '') + `</g>`;
+    }
+    if (o.type === 'impact') {   // a hit on a reveal: white flash, expanding speed lines, a ring (0.55 s)
+      const a = o.at || 0, q = seg(t, a, a + 0.55); if (q <= 0 || q >= 1) return '';
+      const cx = o.x ?? W / 2, cy = o.y ?? H * 0.45, fl = Math.pow(1 - seg(t, a, a + 0.16), 2) * 0.7; let lines = '';
+      for (let i = 0; i < 28; i++) { const ang = i / 28 * Math.PI * 2 + i * 0.37, r0 = 160 + q * 520, r1 = r0 + 140 + (i % 3) * 90; lines += `<line x1="${f1(cx + Math.cos(ang) * r0)}" y1="${f1(cy + Math.sin(ang) * r0)}" x2="${f1(cx + Math.cos(ang) * r1)}" y2="${f1(cy + Math.sin(ang) * r1)}" stroke="#fff" stroke-width="${f1(7 * (1 - q))}" stroke-linecap="round"/>`; }
+      return `<g style="mix-blend-mode:screen" opacity="${f1(1 - q)}">${lines}<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(120 + q * 600)}" fill="none" stroke="${o.colour || '#ffd23f'}" stroke-width="${f1(14 * (1 - q))}"/></g><rect width="${W}" height="${H}" fill="#fff" opacity="${f1(fl)}"/>`;
     }
     if (o.type === 'nextcase') {   // end-of-video open loop: "NEXT CASE" teaser + follow prompt; rows: [{text, fs}]
       const rows = o.rows || [], w = o.w || 940, x = o.x ?? (W - w) / 2, y = o.y ?? 360, fs0 = o.fs || 56;
@@ -311,6 +376,17 @@
     for (const L of layers) { const inner = L.svg(); if (!inner) continue; world += `<g transform="${layerT(c, L.d)}"${L.d > 1.2 ? ' filter="url(#fgBlur)"' : ''}>${inner}</g>`; }
     if (set.dust || spec.dust) world += `<g style="mix-blend-mode:screen">${E.doc.dust(ctx.t, 45, 7, [0, 0, W, H * 0.75], 0.45)}</g>`;
     if (spec.rain) world += rain(ctx.t, [-200, -200, W + 400, H + 400], spec.rain.n || 160, 21, spec.rain.op || 0.4);   // exterior rain over the whole frame
+    if (ctx.ep && ctx.ep.look === 'vivid') {
+      // vivid: saturation/contrast lift on the picture, a stronger tint, a teal/orange split, light leaks, a lighter vignette
+      const V = VGRADES[spec.grade || 'none'] || VGRADES.none;
+      s += `<defs>${VIVID_DEFS}</defs><g filter="url(#vividF)"><g transform="${shakeT}">${world}</g>` +
+        (V[1] > 0 ? `<rect width="${W}" height="${H}" fill="${V[0]}" opacity="${V[1]}" style="mix-blend-mode:soft-light"/>` : '') +
+        `<rect width="${W}" height="${H}" fill="url(#vSplit)" opacity="0.26" style="mix-blend-mode:soft-light"/></g>` + lightLeak(ctx.t + (ctx.sceneStart || 0), V[2]);
+      if (spec.police) s += E.doc.policeLights(ctx.t, spec.police);
+      s += `<rect width="${W}" height="${H}" fill="url(#vVig)"/>`;
+      for (const o of spec.overlays || []) s += overlay(o, ctx, c);
+      return s + E.doc.film(ctx.t, 0.35) + E.doc.tag(spec.tag || 'ILLUSTRATION · NOT A PHOTOGRAPH') + E.doc.bug(ctx.ep);
+    }
     s += `<g transform="${shakeT}">${world}</g>`;
     // grade + key light + vignette
     const G = GRADES[spec.grade || 'none'];
