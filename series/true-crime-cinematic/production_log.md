@@ -198,3 +198,5 @@
 - 2026-10-13 02:38:18 tcv35-escobar-40: rendering (final, seed 1)
 - 2026-10-13 02:48:18 tcv35-escobar-40: rendered in 600s
 - 2026-10-13 02:48:58 tcv35-escobar-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_35_escobar_40s.mp4 (45.4s, 20.0 MB, sha256 70e21fa78584)
+- 2026-10-13 21:15:02 produce 36: regenerating episode data
+- 2026-10-13 21:15:02 tcv36-yen-heist: rendering (final60, seed 1)
