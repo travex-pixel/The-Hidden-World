@@ -200,7 +200,8 @@
       road += `<path d="M-300 1620 L${W + 300} 1620" stroke="#d8c070" stroke-width="8" stroke-dasharray="70 50" opacity="0.4"/>`;
       for (let i = 0; i < 10; i++) road += `<ellipse cx="${f1(-200 + r() * 1500)}" cy="${f1(1300 + r() * 600)}" rx="${f1(40 + r() * 80)}" ry="${f1(8 + r() * 14)}" fill="#fff" opacity="0.05"/>`;
       if (po > 0) { const ph = (t * 2.4) % 1; road += `<rect x="-300" y="1200" width="${W + 600}" height="${H}" fill="${ph < 0.5 ? '#ff3a2a' : '#3a6aff'}" opacity="${f1(0.1 * po)}"/>`; }
-      return { light: { dir: 1, rim: '#ff9ad0', key: '#dfe8ff' }, layers: [[0.05, sky], [0.22, bld], [0.5, crowd], [1.0, road]] };
+      // the road rides with the crowd layer (depth 0.5) so props placed up the street (depth 0.85-0.99) draw on top of it
+      return { light: { dir: 1, rim: '#ff9ad0', key: '#dfe8ff' }, layers: [[0.05, sky], [0.22, bld], [0.5, crowd + road], [1.0, '']] };
     },
 
     // a police garage (generic): a block wall, fluorescent tubes, a roll door on the right, a lift column, a red tool chest,
@@ -323,7 +324,7 @@
         ],
         // the horse stands behind the officer, facing him (flipped); the smoking SUV sits up the street behind them
         props: [
-          { depth: 0.97, svg: tt => horse(480, 1690, 0.9, tt, -1) },
+          { depth: 0.97, svg: tt => horse(650, 1690, 0.8, tt, -1) },
           { depth: 0.88, svg: tt => suvFront(880, 1430, 0.5, tt, { smoke: 0.8 }) }
         ],
         overlays: [
@@ -367,13 +368,14 @@
         set: 'ts33_garage', grade: 'cold',
         cam: { keys: [{ at: 0, x: -20, y: 30, z: 1.0 }, { at: l1 - 0.2, x: 20, y: 60, z: 1.06, dur: 1.2 }], handheld: 1.0 },
         shake: [{ at: engine, amp: 3 }],
-        // the technician works in front of the SUV (the dashboard, then the engine bay); the agent stands on its far side
+        // the technician works on the far side of the SUV, seen above its body (at the windscreen, then over the open engine
+        // bay, so the lifted hood and the stamped strip stay in view); the agent stands in front, by the rear
         figures: [
-          { id: 'ts33_tech', x: 640, y: 1700, scale: 0.86, dir: 1, turn: 0.5, pose: 'examine', expr: 'focused', depth: 1.03, gaze: [0.6, -0.4],
-            walk: { from: 640, to: 830, at: l1 - 0.1, dur: Math.max(0.5, stamp - l1), cadence: 6.0 },
-            keys: [{ at: dash, pose: 'point_up', expr: 'focused', gaze: [0.4, -0.6], dur: 0.4 }, { at: gone, pose: 'stand_tense', expr: 'realise', dur: 0.4 }, { at: l1 - 0.1, pose: 'walk', expr: 'focused', dur: 0.3 },
-              { at: stamp, pose: 'torch_low', expr: 'focused', gaze: [0.6, 0.3], dur: 0.4 }, { at: engine, pose: 'point', expr: 'determined', gaze: [0.6, 0.2], dur: 0.4 }] },
-          { id: 'agent_a', x: 130, y: 1500, scale: 0.8, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', depth: 0.96, gaze: [0.8, -0.2], keys: [{ at: vin0, pose: 'stand_tense', dur: 0.4 }, { at: also, pose: 'point', expr: 'determined', dur: 0.4 }, { at: block + 0.3, pose: 'stand', expr: 'determined', dur: 0.4 }] }
+          { id: 'ts33_tech', x: 560, y: 1480, scale: 0.8, dir: 1, turn: 0.5, pose: 'examine', expr: 'focused', depth: 0.96, gaze: [0.6, -0.4],
+            walk: { from: 560, to: 770, at: l1 - 0.1, dur: Math.max(0.5, stamp - l1), cadence: 6.0 },
+            keys: [{ at: dash, pose: 'examine', expr: 'focused', gaze: [0.3, 0.6], dur: 0.4 }, { at: gone, pose: 'stand_tense', expr: 'realise', gaze: [0.3, 0.4], dur: 0.4 }, { at: l1 - 0.1, pose: 'walk', expr: 'focused', dur: 0.3 },
+              { at: stamp, pose: 'torch_low', expr: 'focused', gaze: [0.6, 0.5], dur: 0.4 }, { at: engine, pose: 'examine', expr: 'realise', gaze: [0.6, 0.5], dur: 0.4 }] },
+          { id: 'agent_a', x: 200, y: 1770, scale: 0.9, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', depth: 1.03, gaze: [0.8, -0.2], keys: [{ at: vin0, pose: 'stand_tense', dur: 0.4 }, { at: also, pose: 'point', expr: 'determined', dur: 0.4 }, { at: block + 0.3, pose: 'stand', expr: 'determined', dur: 0.4 }] }
         ],
         props: [{ depth: 1.0, svg: tt => suvSide(V.x, V.y, V.s, tt, { hood: seg(tt, stamp - 0.2, stamp + 0.5), glow: 0.9 * seg(tt, engine - 0.1, engine + 0.3) }) }],
         overlays: [
@@ -439,8 +441,8 @@
           { id: 'agent_a', x: 560, y: 1790, scale: 0.86, dir: -1, turn: 0.5, pose: 'walk', expr: 'determined', show: [it - 0.2],
             walk: { from: 1000, to: 560, at: it, dur: Math.max(0.8, taken - it - 0.2), cadence: 6.4 },
             keys: [{ at: taken, pose: 'point', expr: 'stern', gaze: [-0.8, -0.1], dur: 0.4 }, { at: plane2, pose: 'stand', dur: 0.4 }] },
-          { id: 'agent_b', x: 600, y: 1640, scale: 0.7, dir: -1, turn: 0.5, pose: 'walk', expr: 'focused', depth: 0.9, show: [called - 0.1],
-            walk: { from: 1100, to: 600, at: called, dur: Math.max(0.8, off - called), cadence: 6.4 },
+          { id: 'agent_b', x: 720, y: 1640, scale: 0.7, dir: -1, turn: 0.5, pose: 'walk', expr: 'focused', depth: 0.9, show: [called - 0.1],
+            walk: { from: 1100, to: 720, at: called, dur: Math.max(0.8, off - called), cadence: 6.4 },
             keys: [{ at: off, pose: 'stand_tense', dur: 0.4 }] }
         ],
         overlays: [
