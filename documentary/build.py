@@ -386,12 +386,14 @@ def main(argv=None) -> int:
     audio.write_wav(out / "mix.wav", mixed)
 
     # 5. plan + edit manifest
-    plan = {"fps": FPS, "width": W, "height": H, "crf": int(film.get("crf", 20)), "preset": film.get("preset", "medium"), "shots": shots, "timeline": film.get("timeline", []),
+    fps = int(film.get("fps", FPS))   # opt-in 60 fps for smoother camera moves; older films keep 30
+    plan = {"fps": fps, "width": W, "height": H, "crf": int(film.get("crf", 20)), "preset": film.get("preset", "medium"),
+            "frame_codec": film.get("frame_codec", "jpeg"), "tune": film.get("tune", "film"), "shots": shots, "timeline": film.get("timeline", []),
             "cast": {cid: json.loads((ROOT / path).read_text()) for cid, path in film.get("cast", {}).items()}, "seed": int(film.get("seed", 1))}
     if film.get("figures"):  # full-body Case Files figures for `cine` shots (documentary/cast/figures/<id>.json)
         plan["figures"] = {fid: json.loads((ROOT / "documentary" / "cast" / "figures" / f"{fid}.json").read_text()) for fid in film["figures"]}
     (out / "plan.json").write_text(json.dumps(plan))
-    manifest = {"film": film["id"], "title": film["title"], "duration_s": total, "fps": FPS, "resolution": [W, H],
+    manifest = {"film": film["id"], "title": film["title"], "duration_s": total, "fps": fps, "resolution": [W, H],
                 "visual_beats": len(shots), "chapters": chapters,
                 "lines": [{k: v for k, v in tl.items() if k != "wav"} for tl in timeline],
                 "shots": [{k: v for k, v in s.items() if k in ("i", "line", "type", "variant", "start", "end", "chapterTag", "source", "label", "text", "lines", "name", "caption")} for s in shots],
@@ -408,7 +410,7 @@ def main(argv=None) -> int:
     if args.reuse_video:
         silent = Path(args.reuse_video); log(f"render: reusing {silent}")
     else:
-        log(f"render: {W}x{H} @ {FPS}fps, {round(total * FPS)} frames, {args.workers} workers")
+        log(f"render: {W}x{H} @ {fps}fps, {round(total * fps)} frames, {args.workers} workers")
         r = subprocess.run(["node", str(ROOT / "documentary" / "render.mjs"), str(out / "plan.json"), str(silent), "--workers", str(args.workers)], cwd=ROOT)
         if r.returncode != 0:
             log("ERROR: frame rendering failed"); return 5
@@ -420,7 +422,7 @@ def main(argv=None) -> int:
 
     # 8. verify
     log("verify: streams, codecs, dimensions, fps, duration, full decode, loudness")
-    rep = verify(final, expected_duration=total, width=W, height=H, fps=FPS, contact_sheet=out / "contact_sheet.png")
+    rep = verify(final, expected_duration=total, width=W, height=H, fps=fps, contact_sheet=out / "contact_sheet.png")
     rep["visual_beats"] = len(shots); rep["caption_cues"] = len(cues)
     (out / "verify.json").write_text(json.dumps(rep, indent=2))
     for k, v in rep["checks"].items():

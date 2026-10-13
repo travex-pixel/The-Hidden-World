@@ -345,4 +345,61 @@
       return { light: { dir: 1, rim: night ? '#9ab8ff' : '#ffd8a0', key: night ? '#9ab8ff' : '#ffe6c0' }, layers: [[0.04, sky], [0.3, trees], [0.45, fence], [0.7, grass + stones], [0.95, mist + tape], [1.0, '']] };
     }
   });
+
+  // ---------------------------------------------------------------- North Carolina college town (Hedgepeth episode); generic, no real building, sign or landmark
+  const bigTree = (x, y, s, c, t = 0) => `<path d="M${x - 24 * s} ${y} L${x - 14 * s} ${y - 300 * s} L${x + 14 * s} ${y - 300 * s} L${x + 24 * s} ${y} Z" fill="#3a2a1e" stroke="${INK}" stroke-width="4"/>` +
+    [[-120, -380, 170], [90, -400, 180], [0, -520, 200], [-200, -300, 120], [200, -310, 130]].map(([dx, dy, rr], i) =>
+      `<circle cx="${f1(x + dx * s + 4 * Math.sin(t * 0.6 + i))}" cy="${f1(y + dy * s)}" r="${f1(rr * s)}" fill="${shade(c, 0.9 + 0.08 * (i % 3))}" stroke="${INK}" stroke-width="4"/>`).join('');
+  const brickHall = (x, y, w, h, night, lit, t, seed) => { const r = R(seed); const brick = night ? '#4a2622' : '#a8483a', trim = night ? '#8a8a86' : '#f2eee4';
+    let g = `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${brick}" stroke="${INK}" stroke-width="6"/>` + `<path d="M${x - 20} ${y} L${x + w / 2} ${y - 120} L${x + w + 20} ${y} Z" fill="${night ? '#2a2a30' : '#5a5a62'}" stroke="${INK}" stroke-width="6"/>`;
+    for (let row = 0; row < 3; row++) for (let c = 0; c < Math.floor(w / 110); c++) { const wx = x + 30 + c * 110, wy = y + 40 + row * 130, on = lit && r() < 0.55;
+      g += `<rect x="${wx}" y="${wy}" width="60" height="90" fill="${on ? '#ffd88a' : (night ? '#1a2230' : '#7a9ab4')}" stroke="${trim}" stroke-width="7"/><path d="M${wx + 30} ${wy} L${wx + 30} ${wy + 90} M${wx} ${wy + 45} L${wx + 60} ${wy + 45}" stroke="${trim}" stroke-width="4"/>` +
+        (on ? wash(wx + 30, wy + 45, 50, 60, '#ffc870', 0.3 * flick(t, wx)) : ''); }
+    g += `<rect x="${x + w / 2 - 70}" y="${y + h - 150}" width="140" height="150" fill="${night ? '#2a1a14' : '#5a3a2a'}" stroke="${trim}" stroke-width="8"/>`;
+    return g; };
+  const lamp = (x, y, on, t) => `<path d="M${x} ${y} L${x} ${y - 230}" stroke="#1a1a1e" stroke-width="10"/><rect x="${x - 16}" y="${y - 268}" width="32" height="40" rx="6" fill="${on ? '#ffe8b0' : '#3a3a40'}" stroke="${INK}" stroke-width="4"/>` +
+    (on ? wash(x, y - 240, 120, 120, '#ffd88a', 0.45 * flick(t, x)) + wash(x, y + 10, 160, 30, '#ffd88a', 0.25) : '');
+  E.registerSets({
+    // a generic brick college quad under big oaks: two halls, a brick walk, lamp posts; o.mode 'day'|'dusk'|'night'
+    fh_campus(ctx, o = {}) {
+      const t = ctx.t, m = o.mode || 'day', night = m === 'night', dusk = m === 'dusk', r = R(83);
+      const top = night ? '#060a18' : dusk ? '#3a2a4a' : '#7ab0dc', bot = night ? '#1a2234' : dusk ? '#f0a070' : '#e8eef0';
+      const sky = `<defs><linearGradient id="fhsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${bot}"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#fhsky)"/>` +
+        (night ? Array.from({ length: 40 }, () => `<circle cx="${f1(-400 + r() * 1900)}" cy="${f1(-100 + r() * 700)}" r="${f1(0.8 + r() * 1.4)}" fill="#fff" opacity="${f1(0.3 + 0.4 * r())}"/>`).join('') : wash(820, 300, 260, 140, '#fffbe8', 0.4));
+      const lit = night || dusk;
+      const halls = brickHall(-520, 640, 760, 480, night, lit, t, 3) + brickHall(820, 600, 820, 520, night, lit, t, 5);
+      const treeC = night ? '#0e1a12' : dusk ? '#3a4a24' : '#4a7a3a';
+      const trees = bigTree(-260, 1300, 1.0, treeC, t) + bigTree(1320, 1310, 1.1, treeC, t + 2) + bigTree(560, 1160, 0.55, shade(treeC, 0.85), t + 1);
+      const lawn = `<rect x="-600" y="1120" width="${W + 1200}" height="${H}" fill="${night ? '#16221a' : dusk ? '#4a5a2e' : '#6a9a4a'}"/>` +
+        `<path d="M420 1120 L660 1120 L1100 ${H + 100} L-20 ${H + 100} Z" fill="${night ? '#3a2420' : '#b4644e'}"/>` +
+        Array.from({ length: 14 }, (_, i) => `<path d="M${f1(420 - i * 32)} ${f1(1130 + i * 60)} L${f1(660 + i * 32)} ${f1(1130 + i * 60)}" stroke="${night ? '#2a1a16' : '#8a4a3a'}" stroke-width="3" opacity="0.6"/>`).join('');
+      const lamps = lamp(300, 1420, lit, t) + lamp(800, 1420, lit, t + 1);
+      return { light: { dir: 1, rim: night ? '#9ab8ff' : '#fff1cf', key: night ? '#9ab8ff' : '#fff1cf' }, layers: [[0.04, sky], [0.35, halls], [0.6, lawn], [0.75, trees], [0.9, lamps], [1.0, '']] };
+    },
+    // a generic three-storey apartment block at night with an open stairwell and a parking lot; o.police 0..1, o.tape 0/1, o.lit 0..1, o.mode 'night'|'day'
+    fh_apartments(ctx, o = {}) {
+      const t = ctx.t, night = o.mode !== 'day', r = R(97), lit = clamp(o.lit ?? (night ? 0.7 : 0), 0, 1);
+      const sky = night ? `<defs><linearGradient id="fhas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050812"/><stop offset="1" stop-color="#1e2236"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#fhas)"/>`
+        : `<defs><linearGradient id="fhad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ab8e0"/><stop offset="1" stop-color="#eef0ea"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#fhad)"/>`;
+      const pines = Array.from({ length: 12 }, (_, i) => { const x = -560 + i * 190, h = 300 + (i % 4) * 70; return `<path d="M${x} 1020 L${x + 60} ${1020 - h} L${x + 120} 1020 Z" fill="${night ? '#0a140e' : '#2e4a2e'}"/>`; }).join('');
+      const siding = night ? '#4a4a52' : '#c8c2b4', trim = night ? '#8a8a8e' : '#f4f2ec';
+      let bld = '';
+      for (const [bx, bw] of [[-520, 900], [500, 1060]]) {
+        bld += `<rect x="${bx}" y="560" width="${bw}" height="560" fill="${siding}" stroke="${INK}" stroke-width="6"/><rect x="${bx - 20}" y="530" width="${bw + 40}" height="40" fill="${night ? '#2a2a30' : '#5a5a60'}" stroke="${INK}" stroke-width="5"/>`;
+        for (let fl = 0; fl < 3; fl++) { const y = 600 + fl * 175;
+          bld += `<rect x="${bx}" y="${y + 120}" width="${bw}" height="14" fill="${trim}" stroke="${INK}" stroke-width="3"/>`;
+          for (let k = 0; k < Math.floor(bw / 170); k++) { const wx = bx + 40 + k * 170, on = r() < 0.5 * lit + (lit ? 0.1 : 0);
+            bld += `<rect x="${wx}" y="${y}" width="90" height="80" fill="${on ? '#ffd27a' : (night ? '#141a26' : '#7a9ab0')}" stroke="${trim}" stroke-width="6"/>` + (on ? wash(wx + 45, y + 40, 70, 50, '#ffc870', 0.3 * flick(t, wx + y)) : ''); } } }
+      // open stairwell (breezeway) between the blocks
+      let stair = `<rect x="380" y="560" width="120" height="560" fill="${night ? '#0e1016' : '#3a3a40'}" stroke="${INK}" stroke-width="6"/>`;
+      for (let fl = 0; fl < 3; fl++) stair += `<path d="M380 ${1100 - fl * 175} L500 ${960 - fl * 175}" stroke="${trim}" stroke-width="8"/>` + `<circle cx="440" cy="${600 + fl * 175}" r="8" fill="${night ? '#fff0c0' : '#ddd'}"/>` + (night ? wash(440, 610 + fl * 175, 60, 50, '#ffe8b0', 0.35) : '');
+      const lot = `<rect x="-600" y="1120" width="${W + 1200}" height="${H}" fill="${night ? '#14141a' : '#5a5a5e'}"/>` + Array.from({ length: 9 }, (_, i) => `<path d="M${-460 + i * 230} 1300 L${-500 + i * 230} 1560" stroke="${night ? '#5a5a52' : '#e8e4d8'}" stroke-width="7"/>`).join('') +
+        `<rect x="-600" y="1110" width="${W + 1200}" height="22" fill="${night ? '#2a2a2e' : '#9a968c'}" stroke="${INK}" stroke-width="3"/>`;
+      const cars = sedan(-180, 1440, 0.9, night ? '#2a3442' : '#6a7a8a', 0) + sedan(1180, 1460, 0.95, night ? '#3a2a2a' : '#8a4a3a', 0);
+      const lamps = lamp(100, 1300, night, t) + lamp(1000, 1300, night, t + 2);
+      const tape = o.tape ? `<path d="M-200 1250 Q 500 1280 1300 1240" stroke="#f2d22a" stroke-width="14" fill="none"/>` : '';
+      const pol = o.police ? policeLights(t, o.police) : '';
+      return { light: { dir: -1, rim: night ? '#9ab8ff' : '#fff1cf', key: night ? '#9ab8ff' : '#fff1cf' }, layers: [[0.04, sky], [0.2, pines], [0.45, bld + stair], [0.7, lot], [0.85, cars + lamps], [0.95, tape], [1.0, ''], [1.05, pol]] };
+    }
+  });
 })();

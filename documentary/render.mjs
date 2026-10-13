@@ -16,6 +16,7 @@ const planPath = args[0];
 const plan = JSON.parse(readFileSync(planPath, 'utf8'));
 const mapData = JSON.parse(readFileSync(resolve(here, 'assets/mo_region_counties.json'), 'utf8'));
 const { fps } = plan;
+const png = plan.frame_codec === 'png';   // lossless frames into the encoder (crisper flat art); default stays JPEG for older films
 const total = plan.shots[plan.shots.length - 1].end;
 
 async function openPage(browser) {
@@ -33,13 +34,14 @@ function decode(dataUrl) { return Buffer.from(dataUrl.slice(dataUrl.indexOf(',')
 async function renderRange(f0, f1, out, k) {
   const browser = await chromium.launch({ args: ['--font-render-hinting=none', '--disable-gpu', '--disable-lcd-text'] });
   const page = await openPage(browser);
-  const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-c:v', 'mjpeg', '-framerate', String(fps), '-i', '-', '-an',
-    '-c:v', 'libx264', '-preset', plan.preset || 'medium', '-crf', String(plan.crf ?? 19), '-tune', 'film', '-pix_fmt', 'yuv420p',
+  const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-c:v', png ? 'png' : 'mjpeg', '-framerate', String(fps), '-i', '-', '-an',
+    '-c:v', 'libx264', '-preset', plan.preset || 'medium', '-crf', String(plan.crf ?? 19), '-tune', plan.tune || 'film', '-pix_fmt', 'yuv420p',
     '-r', String(fps), '-g', String(fps * 2), '-threads', '2', out], { stdio: ['pipe', 'inherit', 'inherit'] });
   const done = new Promise((res, rej) => ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg exit ' + c))));
   const t0 = Date.now();
   for (let i = f0; i < f1; i++) {
-    const url = await page.evaluate(async t => { await window.DOC.prepare(t); window.DOC.frame(t); return window.DOC.jpeg(0.93); }, i / fps);
+    const url = await page.evaluate(async ([t, png]) => { await window.DOC.prepare(t); window.DOC.frame(t);
+      return png ? document.getElementById('c').toDataURL('image/png') : window.DOC.jpeg(0.93); }, [i / fps, png]);
     if (!ff.stdin.write(decode(url))) await new Promise(r => ff.stdin.once('drain', r));
     if ((i - f0) % 600 === 0 && i > f0) console.log(`[render w${k}] ${i - f0}/${f1 - f0} frames, ${((Date.now() - t0) / 1000).toFixed(0)}s`);
   }

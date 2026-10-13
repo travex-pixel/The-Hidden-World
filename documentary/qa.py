@@ -18,7 +18,8 @@ def main(argv=None) -> int:
     res = {}
     p = json.loads(run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",
                         "stream=nb_read_frames,width,height,r_frame_rate,pix_fmt,profile,display_aspect_ratio,sample_aspect_ratio", "-of", "json", str(mp4)]).stdout)["streams"][0]
-    expected = round(man["duration_s"] * 30)
+    fps = man.get("fps", 30)
+    expected = round(man["duration_s"] * fps)
     res["frames"] = {"decoded": int(p["nb_read_frames"]), "expected": expected, "ok": abs(int(p["nb_read_frames"]) - expected) <= 2}
     res["format"] = {"pix_fmt": p["pix_fmt"], "profile": p.get("profile"), "dar": p.get("display_aspect_ratio"), "sar": p.get("sample_aspect_ratio"),
                      "ok": p["pix_fmt"] == "yuv420p" and p.get("display_aspect_ratio") in ("16:9", None) and p.get("sample_aspect_ratio") in ("1:1", None)}
@@ -54,7 +55,7 @@ def main(argv=None) -> int:
     # sync spot-check: frames 0.5 s after the first three verdict stamps (thud SFX are timed to the stamp)
     stamps = [s for s in man["shots"] if s["type"] == "verdict"][:4]
     times = [round(s["start"] + 0.7, 2) for s in stamps]
-    sel = "+".join(f"eq(n\\,{round(t * 30)})" for t in times)
+    sel = "+".join(f"eq(n\\,{round(t * man.get('fps', 30))})" for t in times)
     run(["ffmpeg", "-v", "error", "-y", "-i", str(mp4), "-vf", f"select='{sel}',scale=640:360,tile={len(times)}x1", "-frames:v", "1", str(run_dir / "sync_check.png")])
     res["sync_spot_check"] = {"times": times, "expected": [s.get("text") for s in stamps], "image": "sync_check.png"}
     # thumbnails
