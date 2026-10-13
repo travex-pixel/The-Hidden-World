@@ -3,8 +3,9 @@
    Pure SVG string generation, deterministic in (t, seed). Independent of the documentary engine (renderer/engine.js). */
 (function () {
   const W = 1080, H = 1920;
-  const PAL = { bg: '#09090b', glow: '#17171c', white: '#f3f3f5', soft: '#d2d2d8', grey: '#8f8f98', dim: '#2c2c33',
-                gold: '#d9a84a', goldHi: '#f6d88a', goldDeep: '#9c6f1c', block: '#16161a', blockEdge: '#34343c' };
+  // THE HIDDEN PATTERN identity: obsidian, antique gold, warm ivory, graphite. An episode may override via episode.palette.
+  const PAL = { bg: '#080808', glow: '#151515', white: '#F3EFE6', soft: '#d9d4c8', grey: '#8d8a82', dim: '#292929',
+                gold: '#D8A84E', goldHi: '#f1cf86', goldDeep: '#8f6a25', block: '#141414', blockEdge: '#292929' };
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const lerp = (a, b, t) => a + (b - a) * t;
   const seg = (t, a, b) => clamp((t - a) / (b - a), 0, 1);
@@ -23,6 +24,7 @@
       <radialGradient id="bgGlow" cx="0.5" cy="0.56" r="0.62"><stop offset="0" stop-color="${PAL.glow}"/><stop offset="1" stop-color="${PAL.bg}"/></radialGradient>
       <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101014" stop-opacity="0"/><stop offset="0.35" stop-color="#121216" stop-opacity="0.9"/><stop offset="1" stop-color="#0a0a0c"/></linearGradient>
       <radialGradient id="sphere" cx="0.36" cy="0.32" r="0.75"><stop offset="0" stop-color="${PAL.goldHi}"/><stop offset="0.45" stop-color="${PAL.gold}"/><stop offset="1" stop-color="${PAL.goldDeep}"/></radialGradient>
+      <linearGradient id="band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${PAL.bg}" stop-opacity="0"/><stop offset="0.25" stop-color="${PAL.bg}" stop-opacity="0.85"/><stop offset="0.75" stop-color="${PAL.bg}" stop-opacity="0.85"/><stop offset="1" stop-color="${PAL.bg}" stop-opacity="0"/></linearGradient>
       <radialGradient id="vig" cx="0.5" cy="0.5" r="0.75"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.55"/></radialGradient>
       <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="22"/></filter>
       <filter id="glowSm" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
@@ -43,6 +45,17 @@
     return { joint: J, end: [S[0] + dx, S[1] + dy] };
   }
 
+  // leg forward kinematics in figure-local units (feet at y=0, forward +x). side: +1 left (back) leg, -1 right (front) leg.
+  function leg(phase, stride, crouch, side) {
+    const hipY = -166 + crouch * 56, L1 = 84, L2 = 82;
+    const ph = phase + (side > 0 ? 0 : Math.PI);
+    const th = (32 * stride * Math.sin(ph) + crouch * 42) * DEG;
+    const bend = (56 * stride * Math.max(0, Math.cos(ph)) + crouch * 84) * DEG;
+    const hip = [side * 4, hipY];
+    const knee = [hip[0] + Math.sin(th) * L1, hip[1] + Math.cos(th) * L1];
+    const foot = [knee[0] + Math.sin(th - bend) * L2, knee[1] + Math.cos(th - bend) * L2];
+    return { side, hip, knee, foot, swing: Math.cos(ph) > 0 };
+  }
   // ---------- featureless mannequin. Local units: feet at (0,0), forward = +x, up = -y. Height ~ 410.
   // o: {x, y, scale, dir, phase, stride, crouch, lean, arms: 'swing'|'hold'|'reach'|'rest', reach:[lx,ly], opacity, t}
   function figure(o) {
@@ -51,17 +64,7 @@
     const hipY = -166 + crouch * 56, hipW = 11;
     const shY = hipY - 118 + breath * 0.3, shW = 27;
     const headR = 36, headCy = shY - 66 - 10;
-    const L1 = 84, L2 = 82;
-    const legs = [];
-    for (const side of [1, -1]) {   // +1 left (drawn behind when dir=1), -1 right
-      const ph = phase + (side > 0 ? 0 : Math.PI);
-      const th = (32 * stride * Math.sin(ph) + crouch * 42) * DEG;
-      const bend = (56 * stride * Math.max(0, Math.cos(ph)) + crouch * 84) * DEG;
-      const hip = [side * 4, hipY];
-      const knee = [hip[0] + Math.sin(th) * L1, hip[1] + Math.cos(th) * L1];
-      const foot = [knee[0] + Math.sin(th - bend) * L2, knee[1] + Math.cos(th - bend) * L2];
-      legs.push({ side, hip, knee, foot });
-    }
+    const legs = [leg(phase, stride, crouch, 1), leg(phase, stride, crouch, -1)];   // +1 left (drawn behind when dir=1), -1 right
     const snap = -Math.max(legs[0].foot[1], legs[1].foot[1]);   // lowest foot sits exactly on the ground
     // arms
     const A1 = 70, A2 = 66; const arms = [];
@@ -69,7 +72,8 @@
       const S = [side * -15, shY + 8]; let E, J;   // back arm (side=+1) sits behind the torso, front arm ahead of it
       const ph = phase + (side > 0 ? 0 : Math.PI);
       if (o.arms === 'hold') { E = [52 + side * 5, hipY - 76 + side * 4]; ({ joint: J } = ik(S, E, A1, A2, 1)); }
-      else if (o.arms === 'reach' && o.reach) { E = [o.reach[0] + side * 6, o.reach[1] + side * 5]; ({ joint: J } = ik(S, E, A1, A2, 1)); }
+      else if ((o.arms === 'reach' || (o.arms === 'reach_one' && side < 0)) && o.reach) { E = [o.reach[0] + side * 6, o.reach[1] + side * 5]; ({ joint: J } = ik(S, E, A1, A2, 1)); }
+      else if (o.arms === 'reach_one') { const a = (15 - 5 * side) * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 14 * DEG) * A2, J[1] + Math.cos(a + 14 * DEG) * A2]; }
       else if (o.arms === 'rest') { const a = (15 - 5 * side) * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 14 * DEG) * A2, J[1] + Math.cos(a + 14 * DEG) * A2]; }
       else { const a = (-38 * stride * Math.sin(ph) + 6 * (1 - stride)) * DEG; const b = a + (16 + 30 * stride * Math.max(0, Math.sin(ph))) * DEG;
              J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(b) * A2, J[1] + Math.cos(b) * A2]; }
@@ -79,7 +83,7 @@
     const back = legs.find(l => l.side === 1), front = legs.find(l => l.side === -1);
     const backArm = arms.find(a => a.side === 1), frontArm = arms.find(a => a.side === -1);
     const torso = `<path d="M${-shW} ${f1(shY)} L${shW} ${f1(shY)} L${hipW + 10} ${f1(hipY + 8)} L${-hipW - 10} ${f1(hipY + 8)} Z" fill="${PAL.white}" stroke="${PAL.white}" stroke-width="22" stroke-linejoin="round"/>`;
-    const head = `<circle cx="0" cy="${f1(headCy)}" r="${headR}" fill="${PAL.white}"/><rect x="-9" y="${f1(headCy + headR - 6)}" width="18" height="18" fill="${PAL.white}"/>`;
+    const head = `<g transform="rotate(${f1(o.tilt ?? 0)} 0 ${f1(headCy + headR + 10)})"><circle cx="0" cy="${f1(headCy)}" r="${headR}" fill="${PAL.white}"/><rect x="-9" y="${f1(headCy + headR - 6)}" width="18" height="18" fill="${PAL.white}"/></g>`;
     const upper = `<g transform="translate(0 ${f1(hipY)}) rotate(${f1(lean)}) translate(0 ${f1(-hipY)})">${limb(backArm.S, backArm.J, backArm.E, PAL.soft, 22)}${torso}${head}${limb(frontArm.S, frontArm.J, frontArm.E, PAL.white, 22)}</g>`;
     const body = `${limb(back.hip, back.knee, back.foot, PAL.soft, 24)}${upper}${limb(front.hip, front.knee, front.foot, PAL.white, 24)}`;
     const shadowW = 95 * (1 - crouch * 0.1);
@@ -127,46 +131,66 @@
       ${[0, 90, 180, 270].map(a => `<line x1="${f1(x + Math.cos(a * DEG) * (r - 10))}" y1="${f1(y + Math.sin(a * DEG) * (r - 10))}" x2="${f1(x + Math.cos(a * DEG) * (r + 12))}" y2="${f1(y + Math.sin(a * DEG) * (r + 12))}" stroke="${PAL.white}" stroke-width="4" stroke-linecap="round"/>`).join('')}</g>`;
   }
   function hookText(lines, t, until, big = false) {
-    const fs = big ? 150 : 128, lh = fs * 1.08; const y0 = 470 - (lines.length - 1) * lh / 2;
+    const longest = Math.max(...lines.map(l => l.length));
+    const fs = Math.min(big ? 150 : 128, Math.floor(980 / (longest * 0.66))), lh = fs * 1.08; const y0 = 470 - (lines.length - 1) * lh / 2;
+    const band = big ? `<rect x="0" y="${f1(y0 - fs * 0.95 - 40)}" width="${W}" height="${f1(lines.length * lh + fs * 0.5 + 120)}" fill="url(#band)"/>` : '';
     const out = seg(t, until, until + 0.3); if (out >= 1) return '';
     const op = 1 - out, dy = -70 * ease.in(out);
     const pop = t < 0.3 ? 0.985 + 0.015 * ease.out(t / 0.3) : 1;   // present from frame 0, only a 1.5% settle
     const txt = lines.map((l, i) => `<text x="${W / 2}" y="${f1(y0 + i * lh)}" text-anchor="middle" class="f1" font-size="${fs}" letter-spacing="3" fill="${PAL.white}">${esc(l)}</text>`).join('');
     const bar = `<rect x="${W / 2 - 50}" y="${f1(y0 + (lines.length - 1) * lh + 40)}" width="100" height="7" fill="${PAL.gold}"/>`;
-    return `<g opacity="${f1(op)}" transform="translate(${W / 2} ${f1(470 + dy)}) scale(${f1(pop)}) translate(${-W / 2} -470)">${txt}${bar}</g>`;
+    return `<g opacity="${f1(op)}" transform="translate(${W / 2} ${f1(470 + dy)}) scale(${f1(pop)}) translate(${-W / 2} -470)">${band}${txt}${bar}</g>`;
   }
   function wrap(text, maxChars) {
     const words = text.split(' '); const lines = []; let cur = '';
     for (const w of words) { if ((cur + ' ' + w).trim().length > maxChars && cur) { lines.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); }
     if (cur) lines.push(cur); return lines;
   }
-  function caption(c, t) {
+  function caption(c, t, style) {
     if (t < c.at || t > c.until + 0.15) return '';
     const inn = ease.out(seg(t, c.at, c.at + 0.18)), out = seg(t, c.until, c.until + 0.15);
-    const op = inn * (1 - out); const lines = wrap(c.text, 24); const fs = 62, lh = fs * 1.2;
+    const op = inn * (1 - out);
+    if (style === 'line') {
+      const lines = wrap(c.text, 30); const fs = 50, lh = fs * 1.25; const cy = c.y || 1640;
+      const txt = lines.map((l, i) => `<text x="${W / 2}" y="${f1(cy - (lines.length - 1) * lh / 2 + i * lh + fs * 0.36)}" text-anchor="middle" class="f2" font-size="${fs}" fill="${PAL.white}">${esc(l)}</text>`).join('');
+      return `<g opacity="${f1(op * 0.92)}" transform="translate(0 ${f1(10 * (1 - inn))})">${txt}</g>`;
+    }
+    const lines = wrap(c.text, 24); const fs = 62, lh = fs * 1.2;
     const cy = c.y || 1470; const w = Math.max(...lines.map(l => l.length)) * fs * 0.56 + 90, h = lines.length * lh + 44;
     const txt = lines.map((l, i) => `<text x="${W / 2}" y="${f1(cy - (lines.length - 1) * lh / 2 + i * lh + fs * 0.36)}" text-anchor="middle" class="f1" font-size="${fs}" fill="${PAL.white}">${esc(l)}</text>`).join('');
     return `<g opacity="${f1(op)}" transform="translate(0 ${f1(14 * (1 - inn))})"><rect x="${f1(W / 2 - w / 2)}" y="${f1(cy - h / 2)}" width="${f1(w)}" height="${f1(h)}" rx="18" fill="#000" opacity="0.55"/>${txt}</g>`;
   }
 
+  function endCard(ec, t) {
+    const k = ease.smooth(seg(t, ec.at, ec.at + (ec.fade || 0.7))); if (k <= 0) return '';
+    const title = `<text x="${W / 2}" y="930" text-anchor="middle" class="f1" font-size="${Math.min(86, Math.floor(960 / (ec.title.length * 0.78)))}" letter-spacing="7" fill="${PAL.gold}">${esc(ec.title)}</text>`;
+    const rule = `<rect x="${W / 2 - 60}" y="968" width="120" height="4" fill="${PAL.gold}" opacity="0.8"/>`;
+    const tag = (ec.tagline || []).map((l, i) => `<text x="${W / 2}" y="${1052 + i * 56}" text-anchor="middle" class="f2" font-size="38" letter-spacing="5" fill="${PAL.white}" opacity="0.85">${esc(l)}</text>`).join('');
+    const k2 = ease.smooth(seg(t, ec.at + 0.35, ec.at + 1.1));
+    return `<g opacity="${f1(k)}"><rect width="${W}" height="${H}" fill="${PAL.bg}"/><g opacity="${f1(k2)}">${title}${rule}${tag}</g></g>`;
+  }
+
   const PS = {
-    W, H, PAL, clamp, lerp, seg, ease, f1, esc, DEG, mulberry32, hashStr, ik, figure, sphere, trail, step, thoughtDots, measureRing, hookText, caption, wrap,
+    W, H, PAL, clamp, lerp, seg, ease, f1, esc, DEG, mulberry32, hashStr, ik, leg, figure, sphere, trail, step, thoughtDots, measureRing, hookText, caption, wrap,
     stories: {}, state: null,
     registerStory(name, fn) { this.stories[name] = fn; },
     setup(plan) {
       this.state = { ep: plan.episode, anim: plan.episode.animation, seed: plan.seed, total: plan.total, orbit: plan.orbit };
-      const o = plan.orbit; this.state.orbitAngle = t => { const k = clamp(t * o.hz, 0, o.angles.length - 1); const i = Math.floor(k), fr = k - i; return lerp(o.angles[i], o.angles[Math.min(i + 1, o.angles.length - 1)], fr); };
+      Object.assign(PAL, plan.episode.palette || {});
+      const o = plan.orbit; this.state.orbitAngle = o ? (t => { const k = clamp(t * o.hz, 0, o.angles.length - 1); const i = Math.floor(k), fr = k - i; return lerp(o.angles[i], o.angles[Math.min(i + 1, o.angles.length - 1)], fr); }) : (() => 0);
     },
     async ready() { await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))); },
     compose(t, opts = {}) {
       const st = this.state; const ep = st.ep; const story = this.stories[ep.metaphor];
       if (!story) throw new Error('No story registered for metaphor "' + ep.metaphor + '"');
-      const ctx = { t, ep, anim: st.anim, seed: st.seed, orbitAngle: st.orbitAngle, rng: mulberry32(hashStr(ep.id) ^ st.seed), P: this };
+      const ctx = { t, ep, anim: st.anim, seed: st.seed, orbitAngle: st.orbitAngle, narration: st.ep.narration || [], rng: mulberry32(hashStr(ep.id) ^ st.seed), P: this };
       const items = story(t, ctx).sort((a, b) => a.z - b.z).map(i => i.svg).join('');
-      const hook = ep.hook ? hookText(opts.cover ? (ep.thumbnail.title || ep.hook.lines) : ep.hook.lines, opts.cover ? 0.5 : t, opts.cover ? 1e9 : ep.hook.until, !!opts.cover) : '';
-      const caps = opts.cover ? '' : (ep.captions || []).map(c => caption(c, t)).join('');
-      const kicker = opts.cover && ep.thumbnail.kicker ? `<text x="${W / 2}" y="1560" text-anchor="middle" class="f2" font-size="54" letter-spacing="6" fill="${PAL.gold}">${esc(String(ep.thumbnail.kicker).toUpperCase())}</text>` : '';
-      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs()}${background()}${items}<rect width="${W}" height="${H}" fill="url(#vig)"/>${hook}${caps}${kicker}</svg>`;
+      const hookLines = opts.cover ? ((ep.thumbnail || {}).title || (ep.hook || {}).lines) : (ep.hook || {}).lines;
+      const hook = hookLines ? hookText(hookLines, opts.cover ? 0.5 : t, opts.cover ? 1e9 : ep.hook.until, !!opts.cover) : '';
+      const caps = opts.cover ? '' : (ep.captions || []).map(c => caption(c, t, ep.caption_style)).join('');
+      const card = (!opts.cover && ep.end_card) ? endCard(ep.end_card, t) : '';
+      const kicker = opts.cover && ep.thumbnail.kicker ? `<text x="${W / 2}" y="${ep.thumbnail.kicker_y || 1560}" text-anchor="middle" class="f2" font-size="54" letter-spacing="6" fill="${PAL.gold}">${esc(String(ep.thumbnail.kicker).toUpperCase())}</text>` : '';
+      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs()}${background()}${items}<rect width="${W}" height="${H}" fill="url(#vig)"/>${hook}${caps}${card}${kicker}</svg>`;
     },
     frame(t) {
       document.getElementById('stage').innerHTML = this.compose(t);

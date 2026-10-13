@@ -1,4 +1,6 @@
-# Psychology shorts — production mode `psychology-shorts`
+# THE HIDDEN PATTERN — psychology shorts (production mode `psychology-shorts`)
+
+*Understand yourself. Understand people.* Palette: obsidian `#080808`, antique gold `#D8A84E`, warm ivory `#F3EFE6`, graphite `#292929`. Small human figures against oversized symbolic objects; gold light only for insight or change; fixed camera; one idea, one action.
 
 Minimalist animated psychology / self-improvement shorts for Reels, TikTok and YouTube Shorts.
 Black field, white featureless figures, geometric objects, restrained gold. 9:16, 1080×1920, 30 fps, H.264 + AAC, 18–22 s by default (12–30 s allowed).
@@ -8,12 +10,13 @@ Isolated from the documentary engine: its renderer is `renderer/psych/`, its bui
 ## Episodes
 | id | topic | hook | status |
 |----|-------|------|--------|
-| `overthinking-vs-action` | Overthinking vs action | A — "YOU'RE NOT MOVING." | rendered and verified 2026-10-13; MP4 committed as [`releases/psych-overthinking-vs-action.mp4`](../../releases/psych-overthinking-vs-action.mp4), package in `output/psychology-shorts/overthinking-vs-action/` |
+| `overthinking-vs-action` | Overthinking vs action | A — "YOU'RE NOT MOVING." | Episode 01. Rendered 2026-10-13; MP4 at [`releases/psych-overthinking-vs-action.mp4`](../../releases/psych-overthinking-vs-action.mp4). **Superseded in style**: too fast (3.7–6.4 footfalls/s), foot sliding, 20.95 s, two figures circling. Kept as the baseline the Episode 02 review fixed. |
+| `you-dont-need-more-time` | Waiting for the perfect moment vs one small action | none (silent opening on the door) | Episode 02. Rendered 2026-10-13, 17.8 s; MP4 at [`releases/psych-you-dont-need-more-time.mp4`](../../releases/psych-you-dont-need-more-time.mp4); package in `output/psychology-shorts/you-dont-need-more-time/` |
 
 ## Make the next episode (phone-friendly)
 1. Copy `shorts/psychology/overthinking-vs-action/episode.json` to `shorts/psychology/<new-id>/episode.json`.
 2. Change the fields that describe the episode: `id`, `title`, `topic`, `core_message`, `central_insight`, the three `hook_variants` (mark one `selected`), `hook.lines` (two short lines, ≤ 16 chars each), `narration` (≤ 45 words, each line with an `at` time), `captions` (short phrases with `at`/`until`), `music.cues`, `sfx`, `publishing` copy, `output.dir`.
-3. Keep `metaphor` as `loop-and-staircase` to reuse the existing choreography (the sphere, the ring, the staircase, both figures). The `animation` block holds every timing of that choreography, so a different pace is a config change. A new physical metaphor is a new file `renderer/psych/stories/<name>.js` that uses the primitives in `renderer/psych/engine.js` (`figure`, `sphere`, `trail`, `step`, `thoughtDots`, `measureRing`).
+3. Choose a `metaphor`: `door` (Episode 02: one figure, one oversized door, planted-foot walk, one touch, one reveal, end card) or `loop-and-staircase` (Episode 01). The `animation` block holds every timing of the choreography, so pace is a config change. Walking in `door` is kinematic: the body position is derived from the stance foot staying planted, so steps never slide; step length follows from `stride` and `figure_scale`, pace from the `steps` landing times and `step_duration` (keep ≥ 0.8 s between landings for a slow, deliberate walk). A new physical metaphor is a new file `renderer/psych/stories/<name>.js` that uses the primitives in `renderer/psych/engine.js` (`figure`, `sphere`, `trail`, `step`, `thoughtDots`, `measureRing`).
 4. Commit. The **Tests** workflow validates the config on every push. Pushing a new or changed `episode.json` also renders it automatically; or run the workflow by hand (below).
 
 ## Render from Android
@@ -39,7 +42,9 @@ Output: `output/psychology-shorts/<id>/`. A previous successful render is moved 
 ## Episode metadata and learning loop
 Every `episode.json` carries `topic`, `core_message`, `hook_variants`, `visual_metaphor`, `runtime`, `narration_style`, `caption_density`, `loop_design`, `output`, `publication` (platforms, date) and `performance` (views, average watch seconds, completion rate, shares, saves, comments, follows gained). Performance fields start as `null` and are filled only with real numbers after posting. Nothing in the pipeline predicts views; the hook assessment is a creative judgement.
 
-## Story rules
+## Story rules (KISS)
+- One character, one object, one decision, one payoff. Animation budget: one hesitation, one short straight approach, one touch, one object change, one hold.
+- Fixed camera, wide composition, generous negative space, no particles or floating props.
 - First frame already mid-action: no logo, no greeting, no fade-in, no blank frame, no explanation.
 - One central insight per episode, shown physically before the narrator finishes saying it.
 - Narration ≤ 45 words, conversational, no fake statistics or universal "laws".

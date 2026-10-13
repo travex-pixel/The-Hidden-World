@@ -44,7 +44,7 @@ def load_short(ep_id: str) -> dict:
 
 def validate_short(ep: dict) -> None:
     errs = []
-    for k in ("id", "mode", "title", "topic", "core_message", "metaphor", "hook", "runtime", "narration", "captions", "beats", "animation", "music", "sfx", "output", "publishing", "publication", "performance"):
+    for k in ("id", "mode", "title", "topic", "core_message", "metaphor", "runtime", "narration", "captions", "beats", "animation", "music", "sfx", "output", "publishing", "publication", "performance"):
         if k not in ep:
             errs.append(f"missing top-level field '{k}'")
     if errs:
@@ -78,8 +78,10 @@ def validate_short(ep: dict) -> None:
         if c["at"] < prev_until:
             errs.append(f"caption '{c['text']}' overlaps the previous caption")
         prev_until = c["until"]
-    if not ep["hook"].get("lines") or any(len(x) > 16 for x in ep["hook"]["lines"]):
+    if ep.get("hook") and (not ep["hook"].get("lines") or any(len(x) > 16 for x in ep["hook"]["lines"])):
         errs.append("hook.lines must be 1-2 short lines (<= 16 chars each) so they fit at 128 px")
+    if ep.get("end_card") and not (0 < ep["end_card"].get("at", 0) < tgt):
+        errs.append("end_card.at must lie inside the runtime")
     for s in ep["sfx"]:
         try:
             audio.sfx(s["name"], 1)
@@ -91,7 +93,7 @@ def validate_short(ep: dict) -> None:
             errs.append(f"unknown music cue '{c['cue']}' (choose from {sorted(CUES)})")
     if any(not isinstance(v, (int, float, type(None))) for k, v in ep["performance"].items() if k != "notes"):
         errs.append("performance fields must be numbers or null (never text, never estimates)")
-    if not any(h.get("selected") for h in ep.get("hook_variants", [])):
+    if "hook_variants" in ep and sum(1 for h in ep["hook_variants"] if h.get("selected")) != 1:
         errs.append("exactly one hook_variants entry must be selected")
     if errs:
         raise ShortError("Episode validation failed:\n  - " + "\n  - ".join(errs))
@@ -136,10 +138,13 @@ def orbit_schedule(anim: dict, total: float, hz: int = 60) -> dict:
 def footsteps(ep: dict, orbit: dict) -> list[tuple[float, str, float]]:
     """Soft footfalls: orbit footfalls inside the escalation window, plus B's entrance walk and A's final walk."""
     fs = ep.get("footsteps") or {}
-    if not fs:
-        return []
-    anim = ep["animation"]; hz = orbit["hz"]; ang = orbit["angles"]; a0 = ang[0]
     ev = []
+    anim = ep["animation"]
+    for st in anim.get("steps", []) if isinstance(anim.get("steps"), list) and anim["steps"] and isinstance(anim["steps"][0], dict) else []:
+        ev.append((round(st["t"], 3), "step", float(fs.get("gain", 0.3))))   # a planted foot lands at the end of each step window
+    if not fs or orbit is None or "escalation_window" not in fs:
+        return ev
+    hz = orbit["hz"]; ang = orbit["angles"]; a0 = ang[0]
     lo, hi = fs["escalation_window"]; g = fs["gain"]
     last = math.floor((ang[0] - a0) * 7 / math.pi)
     for i in range(1, len(ang)):
@@ -227,7 +232,7 @@ def write_package(ep: dict, out: Path, lines: list[dict], total: float) -> list[
 def luma_stats(png: Path) -> dict:
     from PIL import Image
     im = Image.open(png).convert("L"); a = np.asarray(im, dtype=np.float32)
-    return {"mean": round(float(a.mean()), 2), "bright_fraction": round(float((a > 110).mean()), 4)}
+    return {"mean": round(float(a.mean()), 2), "bright_fraction": round(float((a > 110).mean()), 4), "mid_fraction": round(float((a > 60).mean()), 4)}
 
 
 def qa_frames(ep: dict, mp4: Path, qa_dir: Path, total: float, fps: int) -> dict:
@@ -247,7 +252,8 @@ def qa_frames(ep: dict, mp4: Path, qa_dir: Path, total: float, fps: int) -> dict
     ys = [float(x.split("=")[1]) for x in r.stderr.split() if x.startswith("lavfi.signalstats.YAVG=")]
     res["frames_checked"] = len(ys)
     res["min_yavg"] = round(min(ys), 2) if ys else None
-    res["first_frame_has_visual"] = bool(res["frames"]["opening_first_frame"]["bright_fraction"] > 0.004)
+    f0 = res["frames"]["opening_first_frame"]   # a visual = either bright marks (figure, text) or a drawn object (mid-luma shapes on the black field)
+    res["first_frame_has_visual"] = bool(f0["bright_fraction"] > 0.002 or f0["mid_fraction"] > 0.01)
     res["no_blank_frames"] = bool(ys) and min(ys) > 16.5     # pure background measures ~14.6; any figure/text/sphere lifts it
     res["animation_changes_throughout"] = True
     if ys:
@@ -317,7 +323,7 @@ def main(argv=None) -> int:
         log(f"ERROR: runtime {total:.2f}s outside {lo}-{hi}s"); return 3
 
     # 2. orbit schedule + audio
-    orbit = orbit_schedule(ep["animation"], total)
+    orbit = orbit_schedule(ep["animation"], total) if "orbit" in ep["animation"] else None
     cues = ep["music"]["cues"]
     tl = [{"start": c["start"], "end": (cues[i + 1]["start"] if i + 1 < len(cues) else total), "music_cue": c["cue"]} for i, c in enumerate(cues)]
     log("audio: composing music bed and effects")

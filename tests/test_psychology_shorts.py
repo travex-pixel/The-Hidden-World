@@ -99,6 +99,42 @@ class Orbit(unittest.TestCase):
             self.assertTrue(lo <= t <= hi or an["b_enter"] <= t <= an["b_arrive"] or an["a_walk"][0] <= t <= an["a_walk"][1], t)
 
 
+class Episode02Door(unittest.TestCase):
+    """You Don't Need More Time: one character, one door, one approach, one touch, one opening, under 18 s."""
+    def setUp(self):
+        self.ep = load_short("you-dont-need-more-time"); self.a = self.ep["animation"]
+
+    def test_runtime_at_most_18s_and_end_card_inside(self):
+        self.assertLessEqual(self.ep["runtime"]["target_seconds"], 18.0); self.assertLessEqual(self.ep["runtime"]["range"][1], 18)
+        self.assertLess(self.ep["end_card"]["at"], self.ep["runtime"]["target_seconds"]); self.assertEqual(self.ep["end_card"]["title"], "THE HIDDEN PATTERN")
+
+    def test_single_straight_approach_few_slow_steps(self):
+        steps = [s["t"] for s in self.a["steps"]]
+        self.assertTrue(2 <= len(steps) <= 5, "a few steps, not a walk cycle loop")
+        self.assertEqual(steps, sorted(steps))
+        gaps = [b - a for a, b in zip(steps, steps[1:])]
+        self.assertTrue(all(g >= 0.8 for g in gaps), f"steps must be slow and deliberate (>= 0.8 s apart): {gaps}")
+        self.assertGreaterEqual(self.a["step_duration"], 0.7)
+        self.assertLess(self.a["start_x"], self.a["door"]["x"], "the figure walks toward the door in a straight line (+x only)")
+        self.assertNotIn("orbit", self.a, "no circling")
+
+    def test_sequence_order_hesitate_walk_touch_open_endcard(self):
+        a = self.a; h = a["hesitation"]
+        self.assertLess(h["tilt_at"], a["steps"][0]["t"] - a["step_duration"]); self.assertLess(h["lean_at"], h["tilt_at"])
+        self.assertLessEqual(a["steps"][-1]["t"], a["reach"][0] + 0.2); self.assertLess(a["reach"][1], a["open"][0])
+        self.assertLess(a["open"][1], self.ep["end_card"]["at"]); self.assertEqual(len(a["steps"]), len([s for s in a["steps"]]))
+        self.assertLess(self.ep["narration"][-1]["at"], a["open"][1], "the last line lands on the reveal, not the end card")
+
+    def test_budget_one_touch_one_reveal_sound(self):
+        names = [s["name"] for s in self.ep["sfx"]]
+        self.assertLessEqual(len(names), 3); self.assertNotIn("rise", names); self.assertNotIn("thump", names)
+        self.assertEqual(self.ep["metaphor"], "door"); self.assertTrue((ROOT / "renderer" / "psych" / "stories" / "door.js").exists())
+        self.assertEqual(len(self.ep["narration"]), 4); self.assertLessEqual(sum(len(l["text"].split()) for l in self.ep["narration"]), 30)
+
+    def test_brand_palette(self):
+        self.assertEqual(self.ep["palette"]["bg"].lower(), "#080808"); self.assertEqual(self.ep["palette"]["gold"].lower(), "#d8a84e"); self.assertEqual(self.ep["palette"]["white"].lower(), "#f3efe6")
+
+
 class Package(unittest.TestCase):
     def test_srt_format(self):
         self.assertEqual(srt_time(61.5), "00:01:01,500")

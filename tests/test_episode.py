@@ -177,7 +177,7 @@ class RenderedOutput(unittest.TestCase):
     """Runs only when an actual MP4 exists (local build or CI artifact)."""
     def test_mp4_if_present(self):
         candidates = list((ROOT / "out").glob(f"{EP}/*.mp4")) + list((ROOT / "releases").glob("*.mp4"))
-        candidates = [c for c in candidates if "silent" not in c.name]
+        candidates = [c for c in candidates if "silent" not in c.name and not c.name.startswith("psych-")]   # psychology shorts are 15-22 s and checked in tests/test_psychology_shorts.py
         if not candidates:
             self.skipTest("no rendered MP4 present")
         from pipeline.verify import probe
