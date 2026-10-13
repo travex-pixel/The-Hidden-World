@@ -1,0 +1,1184 @@
+{
+ "id": "tcv35-escobar-40",
+ "number": 35,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Phone Call to His Son Ended the Hunt for Pablo Escobar",
+ "central_question": "How did a phone call to his son end the 16-month hunt for Pablo Escobar?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "Medellín": "Med-eh-yeen",
+   "Medellin": "Med-eh-yeen",
+   "Olivos": "Oh-lee-vos",
+   "DEA": "D E A",
+   "107": "one hundred and seven",
+   "44th": "forty fourth",
+   "16": "sixteen",
+   "radiotelephone": "radio-telephone"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "35",
+  "label": "PABLO ESCOBAR · MEDELLÍN · 1992-1993"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s07_raid",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "pe35_escobar",
+  "pe35_officer",
+  "agent_a",
+  "agent_b",
+  "analyst"
+ ],
+ "content_notes": "Closed: Pablo Escobar died on 2 December 1993; there was no trial. Nothing of his death is depicted: the raid is officers at a door under police lights, the roof stays empty, and the death is one spoken summary line plus a typed card; who fired the fatal shot is a card ('still disputed'), not narration. No weapon, drug, cash, bomb, aircraft wreck, victim, body or blood is drawn anywhere; the jet bombing and the police bounties are a typed card in a quiet ops room. Escobar appears ONLY as an anonymous rim-lit silhouette (characters/figures/pe35_escobar.json; 'ILLUSTRATION · NOT A LIKENESS'), never a photo recreation, never posed heroically, none of his words quoted. His son is never drawn and is referred to only as 'his son' (he later changed his name); his account is attributed ('his son says', CNN 2016). The officers and agents are generic figures with no insignia; Col. Martínez and the convicted hitman are not named on screen. The radiotelephone is a generic 1990s brick handset with no brand; the room, street, van, house and hillside are generic drawings, not the real places. Every card is our own typed graphic; no real police, court, DEA or press material is imitated. No dialogue is invented. Facts verified 2026-10-13 from search-result extracts only.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "pe35_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.15,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "E_escape",
+    "E_hunt16",
+    "E_hook"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Pablo Escobar escaped prison and hid for 16 months."
+    },
+    {
+     "who": "narrator",
+     "text": "A phone call to his son ended the hunt.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "escobar",
+    "escaped",
+    "16",
+    "months.",
+    "phone",
+    "call",
+    "son",
+    "hunt."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_toll",
+   "scene": "pe35_toll",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "E_avianca",
+    "E_bounty"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His cartel bombed a jet, killing 107, and paid bounties on police.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bombed",
+    "jet,",
+    "107,",
+    "bounties",
+    "police."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s03_bloc",
+   "scene": "pe35_bloc",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      11
+     ],
+     "name": "ping",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "E_hunt16",
+    "E_us"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Colombia's Search Bloc hunted him, with DEA help and US tracking gear."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "search",
+    "bloc",
+    "dea",
+    "tracking",
+    "gear."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_calls",
+   "scene": "pe35_calls",
+   "min_duration": 3.4,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.2
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "beep",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "static",
+     "gain": 0.3
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "ping",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "E_radiotel"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But he kept phoning his family on a radiotelephone."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "kept",
+    "phoning",
+    "family",
+    "radiotelephone."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_plea",
+   "scene": "pe35_plea",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "typing",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "E_son_plea"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His son says he begged him: stop calling, they will kill you."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "son",
+    "begged",
+    "stop",
+    "calling,",
+    "kill"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_trace",
+   "scene": "pe35_trace",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "static",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "beep",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      0
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "ping",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "E_call",
+    "E_house"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "December 2nd, 1993. His first call was short."
+    },
+    {
+     "who": "narrator",
+     "text": "The second was long enough to trace.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "december",
+    "2nd,",
+    "first",
+    "short.",
+    "second",
+    "long",
+    "trace."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s07_raid",
+   "scene": "pe35_raid",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "door",
+     "gain": 0.45
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "E_death",
+    "E_dispute"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police raided the house."
+    },
+    {
+     "who": "narrator",
+     "text": "He fled onto the roof and was shot dead.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "raided",
+    "roof",
+    "shot",
+    "dead."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_over",
+   "scene": "pe35_over",
+   "min_duration": 3.2,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "E_birthday",
+    "E_hunt16"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The hunt ended the day after his 44th birthday.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ended",
+    "44th",
+    "birthday."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "pe35_end",
+   "min_duration": 4.2,
+   "pad_after": 1.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "E_hook",
+    "E_call",
+    "E_toll"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "One phone call ran too long."
+    },
+    {
+     "who": "narrator",
+     "text": "We remember everyone his cartel killed.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "phone",
+    "call",
+    "too",
+    "long.",
+    "remember"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "E_escape",
+   "type": "established",
+   "nature": "fact",
+   "text": "Escobar escaped from La Catedral prison (near Medellín) on 22 July 1992 as the army moved to transfer him; the DEA history says 28 guards were later charged with aiding the break-out. Narration: 'escaped prison'.",
+   "sources": [
+    "dea_history",
+    "dea_museum",
+    "wiki_catedral",
+    "ci_uk"
+   ]
+  },
+  {
+   "id": "E_hunt16",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was hunted for 16 months (July 1992 - December 1993; AP, quoting President Gaviria: 'hunted the drug trafficker for 16 months') by the Search Bloc, a Colombian National Police unit led by Col. Hugo Martínez, backed by US agencies; the DEA Museum calls it the largest manhunt in Colombia's history. Narration: 'hid for 16 months' / 'Colombia's Search Bloc hunted him'.",
+   "sources": [
+    "seattle_ap_1993",
+    "deseret_ap_1993",
+    "wiki_searchbloc",
+    "ci_uk",
+    "dea_museum",
+    "britannica_caught"
+   ]
+  },
+  {
+   "id": "E_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 2 December 1993 a phone call to his son, traced by police direction-finding, led the Search Bloc to the house in Medellín where he was killed the same day (Time: 'long enough for the Colombian police to trace the call'; Britannica: the Search Bloc 'traced a phone call'; the St. Petersburg Times headline: 'Final error: a phone call'). Headline: 'A PHONE CALL TO HIS SON / ENDED THE HUNT FOR ESCOBAR'.",
+   "sources": [
+    "time_1993",
+    "time_son",
+    "britannica_caught",
+    "cnn_kp_2000",
+    "pbs_frontline",
+    "tampabay_call"
+   ]
+  },
+  {
+   "id": "E_avianca",
+   "type": "established",
+   "nature": "fact",
+   "text": "Avianca Flight 203, a Boeing 727 from Bogotá to Cali, exploded and crashed on 27 November 1989, killing all 107 aboard; Colombian officials concluded a bomb caused it; the Medellín cartel's 'Extraditables' claimed it and Escobar was blamed; a US grand jury indicted Escobar in 1992 and the cartel hitman charged with the bombing was tried in New York in 1994 (not named on screen). Narration: 'His cartel bombed a jet, killing 107'.",
+   "sources": [
+    "wapo_avianca",
+    "upi_avianca",
+    "wapo_avianca_bomb",
+    "upi_indict",
+    "upi_avianca_jury",
+    "cnn_bombings"
+   ]
+  },
+  {
+   "id": "E_bounty",
+   "type": "established",
+   "nature": "fact",
+   "text": "The cartel offered money for each police officer killed (UPI, 1990: about $4,200 per officer; La FM: one to three million pesos by rank); by December 1993 Escobar and his gang were blamed for the deaths of at least 500 police officers in Medellín since 1989 (AP). Narration: 'paid bounties on police'. Card: '500+ OFFICERS KILLED SINCE 1989'.",
+   "sources": [
+    "upi_police_1990",
+    "upi_carbomb_1990",
+    "lafm_bounty",
+    "seattle_ap_1993",
+    "deseret_2012"
+   ]
+  },
+  {
+   "id": "E_us",
+   "type": "established",
+   "nature": "fact",
+   "text": "The DEA assisted the Colombian National Police in the pursuit; the DEA history says his location was determined with 'electronic, directional-finding equipment'; Time: a scanning operation set up outside Medellín 'with U.S.-donated equipment'; Frontline: 'radio directional-finding equipment'; US signals teams worked with the Search Bloc (Wikipedia). Narration: 'with DEA help and US tracking gear'.",
+   "sources": [
+    "dea_history",
+    "time_1993",
+    "pbs_frontline",
+    "wiki_searchbloc"
+   ]
+  },
+  {
+   "id": "E_radiotel",
+   "type": "established",
+   "nature": "fact",
+   "text": "In hiding he kept calling his family (his wife and, more often, his son) on a radiotelephone, which gave the direction-finding teams signals to find (Frontline; St. Petersburg Times: he 'could not resist the temptation of speaking to his family in Bogotá'). Narration: 'he kept phoning his family on a radiotelephone'.",
+   "sources": [
+    "pbs_frontline",
+    "tampabay_call",
+    "historycollection",
+    "time_son"
+   ]
+  },
+  {
+   "id": "E_son_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "ATTRIBUTED (his son's account, CNN 2016): the son, then Juan Pablo Escobar, says he told his father 'Papa, don't call anymore. They are going to kill you.' Narration: 'His son says he begged him: stop calling, they will kill you.' He is referred to only as 'his son' (he later changed his name).",
+   "sources": [
+    "cnn_son_2016",
+    "time_son",
+    "cnn_kp_2000"
+   ]
+  },
+  {
+   "id": "E_call",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 2 December 1993 Escobar phoned his son (16, in Bogotá); he kept the first call short and promised to call back; the second call was his last and was long enough to trace. Col. Hugo Martínez (CNN transcript): 'when the communication started, we begin looking for him, and in about five minutes it was done. We knew exactly where he was.' Time: the calls were traced 'within 90 minutes' through the scanning operation. Narration: 'His first call was short. The second was long enough to trace.' Card: 'SIGNAL LOCKED IN ABOUT 5 MINUTES'.",
+   "sources": [
+    "cnn_kp_2000",
+    "time_1993",
+    "time_son",
+    "pbs_frontline",
+    "britannica_locate"
+   ]
+  },
+  {
+   "id": "E_house",
+   "type": "established",
+   "nature": "fact",
+   "text": "The signal was pinpointed to a middle-class two-storey house in the western part of Medellín (Time; The Washington Post); secondary sources name the neighbourhood as Los Olivos. Card: 'A TWO-STOREY HOUSE · LOS OLIVOS, MEDELLÍN'. The drawn house and street are generic.",
+   "sources": [
+    "time_1993",
+    "wapo_1993",
+    "wiki_searchbloc",
+    "historycollection"
+   ]
+  },
+  {
+   "id": "E_death",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police raided the house; Escobar and his bodyguard tried to flee across the roofs of adjoining houses and were shot dead by the Colombian National Police (DEA history; Britannica; The Washington Post; UPI). Narration: 'Police raided the house. He fled onto the roof and was shot dead.' Summary only; nothing of it is drawn.",
+   "sources": [
+    "dea_history",
+    "britannica_die",
+    "wapo_1993",
+    "upi_1993",
+    "time_1993"
+   ]
+  },
+  {
+   "id": "E_dispute",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: who fired the fatal shot is still disputed: Britannica notes 'uncertainty about who fired the fatal shot'; police accounts name different officers; Los Pepes figures (Carlos Castaño; 'Don Berna', who credited his brother) claimed it; his son believes from the forensic report that his father, badly wounded, shot himself. Card: 'WHO FIRED THE FATAL SHOT IS STILL DISPUTED'.",
+   "sources": [
+    "britannica_die",
+    "aetv",
+    "colombiareports_berna",
+    "cnn_son_2016",
+    "yahoo_bi"
+   ]
+  },
+  {
+   "id": "E_birthday",
+   "type": "established",
+   "nature": "fact",
+   "text": "Escobar was born on 1 December 1949; 1 December 1993 was his 44th birthday (Britannica), and he was killed the next day, 2 December 1993, aged 44. Narration: 'The hunt ended the day after his 44th birthday.'",
+   "sources": [
+    "wiki_escobar",
+    "britannica_locate",
+    "wiki_death",
+    "upi_onthisday"
+   ]
+  },
+  {
+   "id": "E_toll",
+   "type": "established",
+   "nature": "fact",
+   "text": "MEMORIAL (card and last line): Escobar was accused of ordering the assassinations of presidential candidates, judges, journalists and police; hundreds of Colombians died in bombings of shopping centres, neighbourhoods and a passenger airplane (AP); the DEA history: the cartel was responsible for the assassinations of dozens of government officials. No reputable extract gives a verified total, so narration says 'everyone his cartel killed', not a number.",
+   "sources": [
+    "seattle_ap_1993",
+    "dea_history",
+    "csm_1990",
+    "britannica_rise"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "wapo_1993",
+   "publisher": "The Washington Post",
+   "title": "Escobar killed in Medellín",
+   "url": "https://www.washingtonpost.com/archive/politics/1993/12/03/escobar-killed-in-medellin/36339ba2-8021-4942-8c7a-00604b95070a/",
+   "date": "1993-12-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "tampabay_1993",
+   "publisher": "Tampa Bay Times (St. Petersburg Times archive)",
+   "title": "Police kill drug king Escobar",
+   "url": "https://www.tampabay.com/archive/1993/12/03/police-kill-drug-king-escobar/",
+   "date": "1993-12-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "tampabay_call",
+   "publisher": "Tampa Bay Times (St. Petersburg Times archive)",
+   "title": "Final error: a phone call",
+   "url": "https://www.tampabay.com/archive/1993/12/03/final-error-a-phone-call/",
+   "date": "1993-12-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "deseret_ap_1993",
+   "publisher": "Deseret News (Associated Press)",
+   "title": "Escobar death gives hope that age of terror is over",
+   "url": "https://www.deseret.com/1993/12/3/19079695/escobar-death-gives-hope-that-age-of-terror-is-over/",
+   "date": "1993-12-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "seattle_ap_1993",
+   "publisher": "The Seattle Times (Associated Press)",
+   "title": "Families to share bounty on Escobar: $6.2 million reward 'to ease the anguish'",
+   "url": "https://archive.seattletimes.com/archive/19931205/1735436/families-to-share-bounty-on-escobar----62-million-reward-to-ease-the-anguish",
+   "date": "1993-12-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "upi_1993",
+   "publisher": "UPI (archive)",
+   "title": "Slain druglord Escobar to be buried in Colombia",
+   "url": "https://www.upi.com/Archives/1993/12/03/Slain-druglord-Escobar-to-be-buried-in-Colombia/3089754894800/",
+   "date": "1993-12-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "upi_onthisday",
+   "publisher": "UPI",
+   "title": "On This Day, Dec. 2: Pablo Escobar killed in shootout",
+   "url": "https://www.upi.com/Top_News/2018/12/02/On-This-Day-Pablo-Escobar-killed-in-shootout/4501543692575/",
+   "date": "2018-12-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "time_1993",
+   "publisher": "Time (archive)",
+   "title": "Escobar's Dead End",
+   "url": "https://time.com/archive/6724425/escobars-dead-end/",
+   "date": "1993-12",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "time_son",
+   "publisher": "Time (archive)",
+   "title": "My Father, the Drug Lord: Pablo Escobar's Son",
+   "url": "https://time.com/archive/6948491/my-father-the-drug-lord-pablo-escobars-son/",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_kp_2000",
+   "publisher": "CNN (transcript, CNN Perspectives: 'Killing Pablo')",
+   "title": "CNN Perspectives: Killing Pablo",
+   "url": "https://www.cnn.com/TRANSCRIPTS/0011/12/cgs.00.html",
+   "date": "2000-11-12",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_son_2016",
+   "publisher": "CNN",
+   "title": "Pablo Escobar: Ruthless drug lord or loving father?",
+   "url": "https://edition.cnn.com/2016/09/01/world/pablo-escobar-son-tells-all",
+   "date": "2016-09-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "pbs_frontline",
+   "publisher": "PBS Frontline (archive)",
+   "title": "The Godfather of Cocaine",
+   "url": "https://www.pbs.org/wgbh/pages/frontline/shows/drugs/archive/godfathercocaine.html",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "britannica_caught",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "How Was Pablo Escobar Caught?",
+   "url": "https://www.britannica.com/topic/How-Was-Pablo-Escobar-Caught",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "britannica_die",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "How Did Pablo Escobar Die?",
+   "url": "https://www.britannica.com/topic/How-Did-Pablo-Escobar-Die",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "britannica_locate",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "How did Colombian authorities locate Pablo Escobar in 1993?",
+   "url": "https://www.britannica.com/biography/How-did-Colombian-authorities-locate-Pablo-Escobar-in-1993",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "britannica_rise",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "How did Pablo Escobar rise to power within the Medellín Cartel?",
+   "url": "https://www.britannica.com/biography/How-did-Pablo-Escobar-rise-to-power-within-the-Medellin-Cartel",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "dea_history",
+   "publisher": "U.S. Drug Enforcement Administration (history)",
+   "title": "The Drug Enforcement Administration 1990-1994 (pp. 67-76)",
+   "url": "https://www.dea.gov/sites/default/files/2021-04/1990-1994_p_67-76.pdf",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "dea_museum",
+   "publisher": "DEA Museum (collection spotlight)",
+   "title": "Pablo Escobar Life Mask",
+   "url": "https://museum.dea.gov/museum-collection/collection-spotlight/artifact/pablo-escobar-life-mask",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wiki_escobar",
+   "publisher": "Wikipedia",
+   "title": "Pablo Escobar",
+   "url": "https://en.wikipedia.org/wiki/Pablo_Escobar",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wiki_death",
+   "publisher": "Wikipedia",
+   "title": "Death of Pablo Escobar",
+   "url": "https://en.wikipedia.org/wiki/Death_of_Pablo_Escobar",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wiki_searchbloc",
+   "publisher": "Wikipedia",
+   "title": "Search Bloc",
+   "url": "https://en.wikipedia.org/wiki/Search_Bloc",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wiki_catedral",
+   "publisher": "Wikipedia",
+   "title": "La Catedral",
+   "url": "https://en.wikipedia.org/wiki/La_Catedral",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "ci_uk",
+   "publisher": "Crime+Investigation UK",
+   "title": "Pablo Escobar (crime files)",
+   "url": "https://www.crimeandinvestigation.co.uk/crime-files/pablo-escobar",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "historycollection",
+   "publisher": "History Collection (secondary)",
+   "title": "Pablo Escobar death 1993: how he was killed",
+   "url": "https://historycollection.com/pablo-escobar-death-1993-how-he-was-killed/",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "aetv",
+   "publisher": "A&E (Crime + Investigation)",
+   "title": "Pablo Escobar's death: murder or suicide?",
+   "url": "https://www.aetv.com/articles/pablo-escobar-death-murder-or-suicide",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "colombiareports_berna",
+   "publisher": "Colombia Reports",
+   "title": "Don Berna claims brother killed Pablo Escobar",
+   "url": "https://colombiareports.com/don-berna-claims-brother-killed-pablo-escobar/",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "yahoo_bi",
+   "publisher": "Yahoo News (Business Insider)",
+   "title": "23 years ago Pablo Escobar was gunned down in his hometown, but his killing remains shrouded in mystery",
+   "url": "https://ca.news.yahoo.com/23-years-ago-pablo-escobar-151443083.html",
+   "date": "2016-12",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wapo_avianca",
+   "publisher": "The Washington Post",
+   "title": "Colombian jet crashes, killing 107",
+   "url": "https://www.washingtonpost.com/archive/politics/1989/11/28/colombian-jet-crashes-killing-107/ce539685-91b9-4060-8763-76d0ed84e8f4/",
+   "date": "1989-11-28",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wapo_avianca_bomb",
+   "publisher": "The Washington Post",
+   "title": "Colombia lays crash to bomb",
+   "url": "https://www.washingtonpost.com/archive/politics/1989/12/06/colombia-lays-crash-to-bomb/d72374fb-298d-446e-9f89-afeb31e5cf68/",
+   "date": "1989-12-06",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "upi_avianca",
+   "publisher": "UPI (archive)",
+   "title": "107 die in explosion, crash of Colombia jet",
+   "url": "https://www.upi.com/Archives/1989/11/27/107-die-in-explosion-crash-of-Colombia-jet/9595628146000/",
+   "date": "1989-11-27",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "upi_indict",
+   "publisher": "UPI (archive)",
+   "title": "Drug boss Escobar indicted in plane bombing",
+   "url": "https://www.upi.com/Archives/1992/08/14/Drug-boss-Escobar-indicted-in-plane-bombing/5457713764800/",
+   "date": "1992-08-14",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "upi_avianca_jury",
+   "publisher": "UPI (archive)",
+   "title": "Jury in NYC gets Avianca bombing case",
+   "url": "https://www.upi.com/Archives/1994/07/07/Jury-in-NYC-gets-Avianca-bombing-case/3731773553600/",
+   "date": "1994-07-07",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_bombings",
+   "publisher": "CNN",
+   "title": "Notable airline bombings and foiled plots",
+   "url": "https://www.cnn.com/2015/11/04/world/airline-bombing-plots/index.html",
+   "date": "2015-11-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "upi_police_1990",
+   "publisher": "UPI (archive)",
+   "title": "Three police officers killed in Medellín",
+   "url": "https://www.upi.com/Archives/1990/05/10/Three-police-officers-killed-in-Medellin/5232642312000/",
+   "date": "1990-05-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "upi_carbomb_1990",
+   "publisher": "UPI (archive)",
+   "title": "Medellín car bomb kills nine",
+   "url": "https://www.upi.com/Archives/1990/04/25/Medellin-car-bomb-kills-nine/6529641016000/",
+   "date": "1990-04-25",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "lafm_bounty",
+   "publisher": "La FM (Colombia)",
+   "title": "Plan Pistola, la macabra estrategia criminal que maquinó Pablo Escobar",
+   "url": "https://www.lafm.com.co/colombia/plan-pistola-la-macabra-estrategia-criminal-que-maquino-pablo-escobar",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "deseret_2012",
+   "publisher": "Deseret News (Associated Press)",
+   "title": "Colombia's legendary police chief heads to Mexico",
+   "url": "https://www.deseret.com/2012/6/15/20418917/colombia-s-legendary-police-chief-heads-to-mexico/",
+   "date": "2012-06-15",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "csm_1990",
+   "publisher": "The Christian Science Monitor",
+   "title": "Medellín violence spurs Colombia",
+   "url": "https://www.csmonitor.com/1990/0716/omed.html",
+   "date": "1990-07-16",
+   "accessed": "search-result extract only, 2026-10-13"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A PHONE CALL TO HIS SON"
+   },
+   {
+    "text": "ENDED THE HUNT FOR ESCOBAR",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WOULD YOU HAVE MADE THE CALL?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-13"
+}
