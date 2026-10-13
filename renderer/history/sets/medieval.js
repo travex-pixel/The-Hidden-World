@@ -1393,6 +1393,190 @@
       return set;
     }
   };
+  // ================================================================== WHAT IF 002: Earth stops spinning for one second (modern day)
+  // A city street at 7:59 a.m., Earth seen from space, and the South Pole. Beats drive the catastrophe: `stop` (the
+  // ground halts and everything loose keeps going east, i.e. to screen right), `wind` (the atmosphere arrives),
+  // `clock0` (the street clock starts counting from 07:59:50). Everything here is a cartoon; the physics is in the script.
+  const CITY = { brick: '#b0644a', brickD: '#8a4a36', glass: '#9cc4d8', glassD: '#6a92aa', concrete: '#c8c2b6', asphalt: '#4a4a52', kerb: '#d8d2c6', pave: '#bdb6a8' };
+  const car = (g, x, y, s, col, r) => {   // a small side-view hatchback; y = road line
+    g.save(); g.translate(x, y); g.scale(s, s);
+    P.flat(g, [[-150, -30], [-146, -78], [-90, -84], [-60, -128], [50, -130], [92, -86], [146, -78], [152, -30]], col, r, { mottle: 0.3 });
+    g.fillStyle = '#cfe6f0'; g.beginPath(); g.moveTo(-50, -86); g.lineTo(-30, -120); g.lineTo(0, -120); g.lineTo(0, -86); g.closePath(); g.fill(); g.beginPath(); g.moveTo(12, -86); g.lineTo(12, -120); g.lineTo(44, -120); g.lineTo(74, -86); g.closePath(); g.fill();
+    g.fillStyle = '#ffe6a0'; g.fillRect(138, -70, 12, 14); g.fillStyle = '#d04030'; g.fillRect(-152, -70, 10, 14);
+    for (const wx of [-90, 92]) { g.fillStyle = '#26262c'; g.beginPath(); g.arc(wx, -30, 30, 0, 7); g.fill(); g.fillStyle = '#a8a8b0'; g.beginPath(); g.arc(wx, -30, 12, 0, 7); g.fill(); }
+    g.strokeStyle = INK; g.lineWidth = 4; g.beginPath(); g.moveTo(-150, -30); g.lineTo(-146, -78); g.lineTo(-90, -84); g.lineTo(-60, -128); g.lineTo(50, -130); g.lineTo(92, -86); g.lineTo(146, -78); g.lineTo(152, -30); g.stroke();
+    g.restore();
+  };
+  const block = (g, x, gy, w, h, r, o = {}) => {   // a city building facade with a window grid and a shopfront
+    const col = o.col || CITY.brick; P.flat(g, P.rect(x, gy - h, w, h), col, r, { mottle: 0.7 }); P.granulate(g, x, gy - h, w, h, 0.25);
+    const cols = Math.max(2, Math.round(w / 70)), rows = Math.max(2, Math.round((h - 150) / 80));
+    for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) { const wx = x + 18 + i * (w - 36) / cols, wy = gy - h + 24 + j * 80; const lit = r() < 0.18;
+      P.flat(g, P.rect(wx + 6, wy, (w - 36) / cols - 12, 54), lit ? '#ffe6a8' : (r() < 0.5 ? CITY.glass : CITY.glassD), r, { texture: false }); g.strokeStyle = shade(col, -0.35); g.lineWidth = 3; g.strokeRect(wx + 6, wy, (w - 36) / cols - 12, 54); }
+    if (o.shop) { P.flat(g, P.rect(x + 10, gy - 140, w - 20, 140), '#2e3a44', r, {}); P.flat(g, P.rect(x + 22, gy - 126, w - 44, 110), '#e8d8b0', r, { texture: false });
+      P.flat(g, [[x, gy - 140], [x + w, gy - 140], [x + w + 16, gy - 96], [x - 16, gy - 96]], o.awning || '#c84a3a', r, {}); for (let k = 0; k < w / 40; k++) P.flat(g, [[x - 16 + k * 40 + 20, gy - 96], [x - 16 + k * 40 + 40, gy - 96], [x - 16 + k * 40 + 30, gy - 140]], '#f4ecd8', r, { texture: false, edge: false });
+      if (o.sign) { g.fillStyle = '#1e2a34'; g.fillRect(x + w / 2 - 110, gy - h - 0 + h - 196, 220, 44); g.font = '800 32px Nunito'; g.textAlign = 'center'; g.fillStyle = '#ffd890'; g.fillText(o.sign, x + w / 2, gy - 163); } }
+    g.fillStyle = shade(col, -0.3); g.fillRect(x - 6, gy - h - 14, w + 12, 16);
+  };
+  X.SETS.city_street = {
+    build(rng, seed) {
+      const set = { name: 'city_street', seed, camX: [-400, 2400], camY: [-360, 120] };
+      const L = [];
+      L.push(makeLayer(set, 30, (g, r, b) => { P.gradient(g, b.x0, b.y0, b.x1 - b.x0, HZ + 200 - b.y0, [[0, '#8ab4d8'], [0.6, '#cfe0e8'], [1, '#f6dcc0']]); P.bloom(g, 300, 260, 520, '#fff2cf', 0.5); for (let i = 0; i < 7; i++) cloud(g, b.x0 + 200 + i * 420, 120 + r() * 160, 0.6, r); }, { padY: 200 }));
+      L.push(makeLayer(set, 8, (g, r, b) => { let x = b.x0; while (x < b.x1) { const w = 90 + r() * 120, h = 160 + r() * 300; P.flat(g, P.rect(x, HZ + 40 - h, w, h), r() < 0.5 ? '#9aa8b8' : '#8a98aa', r, { texture: false, edge: false }); for (let j = 0; j < h / 30 - 1; j++) for (let i = 0; i < w / 24 - 1; i++) if (r() < 0.35) { g.fillStyle = 'rgba(240,244,250,0.5)'; g.fillRect(x + 8 + i * 24, HZ + 52 - h + j * 30, 10, 14); } x += w + 6; } }, { haze: 0.35, hazeColour: '#d8e2ea' }));
+      L.push(makeLayer(set, 2.3, (g, r, b) => {   // the far side of the street
+        const gy = groundY(2.3); P.flat(g, P.rect(b.x0, gy - 6, b.x1 - b.x0, 40), CITY.pave, r, {});
+        const spec = [[-500, 360, 420, CITY.brick], [-120, 300, 520, '#c8b49a', 'BAKERY'], [200, 420, 380, '#7a8a9a'], [640, 380, 470, CITY.brick, 'COFFEE'], [1040, 300, 400, '#d8c8a8'], [1360, 440, 520, '#8a6a5a', 'PHARMACY'], [1820, 360, 430, '#a8b4b8'], [2200, 400, 480, CITY.brick, 'NEWS'], [2620, 380, 420, '#c8b49a']];
+        for (const [x, w, h, col, sign] of spec) block(g, x, gy, w, h, r, { col, shop: !!sign, sign, awning: ['#c84a3a', '#3a7a5a', '#3a5a8a'][Math.floor(r() * 3)] });
+      }, { haze: 0.05 }));
+      L.push(makeLayer(set, 1.45, (g, r, b) => {   // the road
+        const y0 = groundY(2.3) + 34, y1 = groundY(1.12); P.gradient(g, b.x0, y0, b.x1 - b.x0, y1 - y0, [[0, '#5a5a62'], [1, CITY.asphalt]]); P.granulate(g, b.x0, y0, b.x1 - b.x0, y1 - y0, 0.4);
+        for (let x = b.x0; x < b.x1; x += 220) { g.fillStyle = '#f0ece0'; g.beginPath(); g.moveTo(x, (y0 + y1) / 2 - 3); g.lineTo(x + 110, (y0 + y1) / 2 - 3); g.lineTo(x + 114, (y0 + y1) / 2 + 5); g.lineTo(x + 4, (y0 + y1) / 2 + 5); g.fill(); }
+        for (let i = 0; i < 12; i++) { const x = 700 + i * 40; g.fillStyle = 'rgba(240,236,224,0.85)'; g.fillRect(x, y0 + 6, 22, y1 - y0 - 12); }   // a zebra crossing
+      }, {}));
+      L.push(makeLayer(set, 1.0, (g, r, b) => {   // the near pavement and kerb
+        const ky = groundY(1.12) - 4; P.flat(g, P.rect(b.x0, ky, b.x1 - b.x0, 16), CITY.kerb, r, {}); P.gradient(g, b.x0, ky + 16, b.x1 - b.x0, b.y1 - ky, [[0, '#cfc8ba'], [1, '#a8a294']]);
+        for (let x = b.x0; x < b.x1; x += 150) P.line(g, P.seg2(x, ky + 16, x - 60, b.y1, 2), '#9a9486', 2, r, { alpha: 0.5 }); for (let y = ky + 60; y < b.y1; y += 70) P.line(g, P.seg2(b.x0, y, b.x1, y, 2), '#9a9486', 2, r, { alpha: 0.4 });
+      }, { o: -1 }));
+      set.layers = L; set.bg = '#cfe0e8'; set.groundY = groundY; set.light = [-0.8, -0.5];
+      set.finish = { bloom: 0.26, grade: ['#7a9ab8', '#ffd09a'], gradeMode: 'soft-light', gradeAlpha: 0.24, vignette: 0.42, paper: 0.07, saturate: 1.12 };
+      set.drift = 0.8;
+      const stopT = (D, q) => D.beat(q, 'stop', 1e9);
+      const fling = (t, t0, x, speed = 2600) => { const u = t - t0; return u <= 0 ? x : x + speed * u + 140 * u * u; };   // keeps going east
+      const things = [];   // loose street furniture flung at `stop`
+      set.dynamic = [
+        { z: 39, draw: (g, t, ta, D, q) => { const s = stopT(D, q); if (t < s) FX.birds(g, t, { x: 600, y: 200, n: 7, speed: 26 }); } },
+        { z: 1.46, draw: (g, t, ta, D, q) => {   // traffic: cars glide along the road until the stop, then are flung east, tumbling
+          const s = stopT(D, q), gy = groundY(1.46); const r = mulberry32(5);
+          const cars = [[-300, 1, '#c8483a', 0], [600, 1, '#3a6ab0', 1.3], [1400, -1, '#e8c040', 0.6], [2100, 1, '#e8e4dc', 2.2], [2900, -1, '#4a8a5a', 1.8]];
+          for (const [x0, dir, col, ph] of cars) { const v = 140 * dir; const tc = Math.min(t, s); let x = ((x0 + v * tc + ph * 300) % 3600 + 3600) % 3600 - 600;
+            let rot = 0, lift = 0; if (t > s) { const u = t - s; x = fling(t, s, x, 2200); rot = Math.min(1.4, u * 2.4) * (dir > 0 ? 1 : 1); lift = Math.min(160, 600 * u * u); }
+            g.save(); g.translate(x, gy - lift); g.rotate(rot); car(g, 0, 0, 0.9, col, r); g.restore(); }
+        } },
+        { z: 1.3, draw: (g, t, ta, D, q) => {   // street furniture: lamps bend east, a bin and a bus-stop sign tear loose
+          const s = stopT(D, q), gy = groundY(1.3), r = mulberry32(9); const k = clamp((t - s) / 0.25, 0, 1);
+          for (const lx of [-200, 520, 1240, 1960, 2680]) { g.save(); g.translate(lx, gy); g.rotate(k * 0.35); P.stroke(g, P.seg2(0, 0, 0, -460, 3), '#3a4048', 12, r, { alpha: 1 }); P.stroke(g, [[0, -450], [60, -470], [100, -450]], '#3a4048', 10, r, { alpha: 1 }); g.fillStyle = '#fff4c8'; g.beginPath(); g.ellipse(100, -444, 22, 10, 0, 0, 7); g.fill(); g.restore(); }
+          // the stop clock on its post
+          const cx = 1120, cy = gy - 380; g.save(); g.translate(cx, gy); g.rotate(k * 0.25); g.translate(-cx, -gy); P.stroke(g, P.seg2(cx, gy, cx, cy + 50, 3), '#2a3038', 12, r, { alpha: 1 });
+          g.fillStyle = '#1a1e24'; g.beginPath(); g.roundRect(cx - 120, cy - 40, 240, 90, 12); g.fill(); g.strokeStyle = '#4a525e'; g.lineWidth = 6; g.stroke();
+          const c0 = D.beat(q, 'clock0', -1e9); const secs = Math.min(10, Math.max(0, Math.floor(t - c0)));
+          const label = t >= s ? `08:00:${String(Math.min(59, Math.max(0, Math.floor(t - s) - 2))).padStart(2, '0')}` : c0 < -1e8 ? '08:00:12' : `07:59:${String(50 + Math.min(9, secs)).padStart(2, '0')}`;
+          g.font = '800 54px Nunito'; g.textAlign = 'center'; g.fillStyle = t >= s && t < s + 3 && Math.floor((t - s) * 4) % 2 ? '#ff6a50' : '#ffb84a'; g.fillText(label, cx, cy + 25); g.restore();
+          for (const [bx, kind] of [[300, 'bin'], [1600, 'bin'], [880, 'sign']]) { let x = bx, rot = 0, lift = 0; if (t > s) { const u = t - s; x = fling(t, s, bx, 2400); rot = u * 6; lift = Math.min(260, 900 * u * u); }
+            g.save(); g.translate(x, gy - lift - 50); g.rotate(rot); if (kind === 'bin') { P.flat(g, [[-34, -50], [34, -50], [28, 50], [-28, 50]], '#3a6a4a', r, {}); P.flat(g, P.rect(-38, -62, 76, 14), '#2a4a34', r, {}); } else { P.flat(g, P.rect(-60, -110, 120, 70), '#2a5a9a', r, {}); g.fillStyle = '#fff'; g.font = '800 30px Nunito'; g.textAlign = 'center'; g.fillText('BUS', 0, -63); P.stroke(g, P.seg2(0, -40, 0, 60, 2), '#5a626e', 8, r, { alpha: 1 }); } g.restore(); }
+        } },
+        { z: 1.02, draw: (g, t, ta, D, q) => {   // debris, papers and coffee cups streaking east after the stop; dust
+          const s = stopT(D, q); if (t < s) return; const u = t - s; const r = mulberry32(13);
+          for (let i = 0; i < 46; i++) { const y = 300 + r() * 620, x0 = -400 + r() * 2600, sp = 1800 + r() * 2200, ph = r() * 6, kind = r(); const x = x0 + sp * u; if (x > 3200) continue;
+            g.save(); g.translate(x, y + Math.sin(u * 5 + ph) * 30); g.rotate(u * (4 + r() * 8)); g.globalAlpha = Math.min(1, u * 4);
+            if (kind < 0.45) { g.fillStyle = '#f4f0e6'; g.fillRect(-18, -24, 36, 48); g.strokeStyle = '#9a9486'; g.lineWidth = 2; g.strokeRect(-18, -24, 36, 48); }
+            else if (kind < 0.7) { g.fillStyle = '#e8e0d0'; g.beginPath(); g.moveTo(-14, -22); g.lineTo(14, -22); g.lineTo(10, 22); g.lineTo(-10, 22); g.closePath(); g.fill(); g.fillStyle = '#7a4a2a'; g.fillRect(-16, -26, 32, 8); }
+            else { g.fillStyle = r() < 0.5 ? '#7a8a5a' : '#a8784a'; g.beginPath(); g.ellipse(0, 0, 16, 8, 0, 0, 7); g.fill(); }
+            g.restore(); }
+          g.save(); g.globalAlpha = Math.min(0.55, u * 0.8); for (let i = 0; i < 26; i++) { const y = 200 + r() * 800, len = 300 + r() * 500, x = -600 + ((r() * 3000 + u * 3600) % 3600); g.strokeStyle = 'rgba(240,236,228,0.6)'; g.lineWidth = 3 + r() * 5; g.beginPath(); g.moveTo(x, y); g.lineTo(x + len, y); g.stroke(); } g.restore();
+          FX.smoke(g, t, { x: 1000, y: groundY(1.2) - 20, n: 24, life: 2.4, rise: 120, size: 60, alpha: 0.35 * Math.min(1, u * 3), wind: 900, colour: '#d8cfc0', key: 'dust' });
+        } }
+      ];
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ Earth from space: a painted globe that spins, halts, and shows the speed at each latitude
+  const LAND = {
+    namerica: [[-168, 66], [-162, 70], [-140, 70], [-125, 70], [-95, 72], [-80, 73], [-62, 66], [-55, 52], [-66, 45], [-70, 42], [-76, 35], [-81, 31], [-80, 25], [-84, 30], [-90, 29], [-97, 26], [-97, 21], [-90, 21], [-87, 15], [-83, 9], [-79, 8], [-85, 11], [-92, 15], [-105, 20], [-112, 29], [-117, 33], [-124, 40], [-124, 48], [-133, 55], [-145, 60], [-158, 58], [-166, 62]],
+    greenland: [[-73, 78], [-60, 82], [-30, 83], [-20, 75], [-22, 70], [-42, 60], [-50, 64], [-55, 70], [-60, 76]],
+    samerica: [[-80, 9], [-75, 11], [-62, 10], [-50, 0], [-35, -6], [-39, -14], [-41, -23], [-48, -27], [-58, -35], [-63, -42], [-66, -47], [-69, -55], [-75, -50], [-73, -40], [-71, -30], [-70, -18], [-76, -14], [-81, -5], [-80, 1]],
+    eurasia: [[-10, 36], [-9, 43], [-2, 44], [-5, 48], [0, 50], [5, 53], [8, 57], [5, 62], [15, 69], [28, 71], [40, 67], [60, 69], [70, 73], [90, 76], [110, 77], [130, 72], [150, 71], [170, 70], [180, 66], [170, 60], [160, 55], [142, 52], [140, 46], [130, 42], [121, 40], [122, 31], [118, 24], [108, 21], [106, 10], [100, 13], [98, 8], [93, 16], [90, 22], [80, 15], [77, 8], [72, 20], [67, 25], [57, 25], [56, 22], [52, 16], [44, 12], [43, 16], [35, 28], [32, 31], [35, 36], [27, 37], [26, 40], [23, 36], [20, 40], [16, 38], [12, 44], [8, 44], [3, 43], [-1, 37], [-6, 36]],
+    africa: [[-17, 15], [-17, 21], [-10, 30], [-6, 35], [10, 37], [20, 32], [30, 31], [33, 28], [43, 12], [51, 11], [42, -1], [40, -11], [35, -20], [33, -27], [27, -34], [20, -35], [18, -30], [12, -17], [13, -6], [9, 4], [-3, 5], [-8, 4], [-15, 10]],
+    britain: [[-5, 50], [2, 52], [0, 55], [-3, 58.5], [-6, 57], [-5, 54], [-4.5, 52]],
+    australia: [[114, -22], [122, -18], [130, -12], [137, -12], [142, -11], [146, -19], [153, -26], [151, -34], [146, -39], [140, -38], [135, -35], [129, -32], [115, -34]],
+    antarctica: Array.from({ length: 37 }, (_, i) => [-180 + i * 10, -68 - 4 * Math.sin(i * 0.9)])
+  };
+  X.SETS.globe = {
+    build(rng, seed) {
+      const set = { name: 'globe', seed, camX: [-400, 400], camY: [-300, 300] };
+      set.layers = [makeLayer(set, 30, (g, r, b) => { P.gradient(g, b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, [[0, '#0a0e22'], [1, '#141a36']]);
+        for (let i = 0; i < 420; i++) { const s = r(); g.fillStyle = `rgba(240,240,255,${0.3 + s * 0.7})`; g.beginPath(); g.arc(b.x0 + r() * (b.x1 - b.x0), b.y0 + r() * (b.y1 - b.y0), 0.6 + s * 1.8, 0, 7); g.fill(); }
+        P.bloom(g, 1700, 140, 500, '#3a3a7a', 0.4); P.bloom(g, 200, 900, 600, '#3a2a5a', 0.35); }, { padY: 200 })];
+      set.bg = '#0a0e22'; set.groundY = groundY; set.light = [-0.7, -0.4];
+      set.finish = { bloom: 0.34, grade: ['#2a3a7a', '#ffd8a0'], gradeMode: 'soft-light', gradeAlpha: 0.2, vignette: 0.55, paper: 0.06, saturate: 1.1 };
+      set.drift = 0.5;
+      const CX = 960, CY = 520, R = 360, TILT = 23.4 * Math.PI / 180;
+      // rotation angle: spins at a fixed cartoon rate, decelerates to rest at `halt` (0.6 s), and resumes at `restart`
+      const RATE = 22;   // degrees per second, for the cartoon (the real Earth turns 15° an hour)
+      const angle = (t, D, q) => { const h = D.beat(q, 'halt', 1e9), rs = D.beat(q, 'restart', 1e9), lon0 = D.beat(q, 'lon0', -10);
+        const a = (tt) => tt < h ? RATE * tt : tt < h + 0.6 ? RATE * h + RATE * (tt - h) * (1 - (tt - h) / 1.2) : RATE * h + RATE * 0.3;
+        let v = a(Math.min(t, rs)); if (t > rs) v += RATE * Math.max(0, t - rs - 0.4) + RATE * 0.2 * Math.min(1, (t - rs) / 0.4) ** 2; return lon0 - v; };
+      const proj = (lon, lat, l0) => { const p = lat * Math.PI / 180, l = (lon - l0) * Math.PI / 180;
+        const x = Math.cos(p) * Math.sin(l), y0 = Math.sin(p), z0 = Math.cos(p) * Math.cos(l);
+        const y = y0 * Math.cos(TILT) - z0 * Math.sin(TILT) * 0.35, z = z0 * Math.cos(TILT) + y0 * Math.sin(TILT) * 0.35; return [CX + x * R, CY - y * R, z]; };
+      set.dynamic = [{ z: 1.0, draw: (g, t, ta, D, q) => {
+        const l0 = angle(t, D, q);
+        // atmosphere glow and ocean
+        P.bloom(g, CX, CY, R * 1.35, '#6aa8ff', 0.45);
+        const oc = g.createRadialGradient(CX - R * 0.35, CY - R * 0.35, R * 0.1, CX, CY, R); oc.addColorStop(0, '#5a9ad0'); oc.addColorStop(1, '#1e4a8a'); g.fillStyle = oc; g.beginPath(); g.arc(CX, CY, R, 0, 7); g.fill();
+        g.save(); g.beginPath(); g.arc(CX, CY, R, 0, 7); g.clip();
+        for (const [name, poly] of Object.entries(LAND)) {
+          const pts = poly.map(([lo, la]) => proj(lo, la, l0)); if (pts.every(p => p[2] < 0)) continue;
+          g.beginPath(); pts.forEach(([x, y, z], i) => { let px = x, py = y; if (z < 0) { const d = Math.hypot(x - CX, y - CY) || 1; px = CX + (x - CX) / d * R * 1.02; py = CY + (y - CY) / d * R * 1.02; } i ? g.lineTo(px, py) : g.moveTo(px, py); }); g.closePath();
+          g.fillStyle = name === 'antarctica' || name === 'greenland' ? '#eef2f4' : '#7a9a52'; g.fill(); g.strokeStyle = 'rgba(40,50,30,0.55)'; g.lineWidth = 2.5; g.stroke(); }
+        // clouds drift with the spin
+        const r = mulberry32(seed + 3); for (let i = 0; i < 18; i++) { const lo = r() * 360 - 180, la = -60 + r() * 120; const [x, y, z] = proj(lo, la, l0 - t * 3); if (z < 0.05) continue; g.fillStyle = `rgba(255,255,255,${0.5 * z})`; g.beginPath(); g.ellipse(x, y, 40 * z + 16, 12 * z + 5, 0, 0, 7); g.fill(); }
+        // the wind front: once the ground halts the air keeps going, streaking east (screen right)
+        const wb = D.beat(q, 'wind', 1e9); if (t > wb) { const u = Math.min(1, (t - wb) / 1.5); g.globalAlpha = 0.8 * u; for (let i = 0; i < 30; i++) { const la = -60 + i * 4; const s = Math.cos(la * Math.PI / 180); const y = CY - Math.sin(la * Math.PI / 180) * R * 0.94; const half = Math.sqrt(Math.max(0, R * R - (y - CY) ** 2)); const ph = ((t - wb) * 600 * s + i * 97) % (half * 2 + 300);
+          g.strokeStyle = 'rgba(255,255,255,0.75)'; g.lineWidth = 2 + 3 * s; g.beginPath(); g.moveTo(CX - half + ph - 300, y); g.lineTo(CX - half + ph, y); g.stroke(); } g.globalAlpha = 1; }
+        // the oceans slosh against east-facing coasts
+        const ob = D.beat(q, 'ocean', 1e9); if (t > ob) { const u = X.ease.out3(Math.min(1, (t - ob) / 2));   // surges heaped against east-facing coasts, with foam
+          for (let i = 0; i < 9; i++) { const la = -55 + i * 13; const c = Math.cos(la * Math.PI / 180); const y = CY - Math.sin(la * Math.PI / 180) * R * 0.95; const x = CX + R * (0.25 + 0.4 * ((i * 37) % 10) / 10) * c; const w = (40 + 60 * u) * c, h = 10 + 14 * u; const sw = Math.sin(t * 3 + i) * 6;
+            g.fillStyle = `rgba(170,225,255,${0.7 * u})`; g.beginPath(); g.ellipse(x + sw, y, w, h, 0, 0, 7); g.fill(); g.strokeStyle = `rgba(255,255,255,${0.9 * u})`; g.lineWidth = 3; g.beginPath(); g.ellipse(x + sw + w * 0.2, y - 2, w * 0.8, h * 0.7, 0, -1.4, 1.4); g.stroke(); } }
+        g.restore();
+        // terminator shading and rim
+        const sh = g.createLinearGradient(CX - R, 0, CX + R, 0); sh.addColorStop(0, 'rgba(0,0,0,0)'); sh.addColorStop(0.6, 'rgba(0,0,0,0)'); sh.addColorStop(1, 'rgba(6,10,30,0.6)'); g.fillStyle = sh; g.beginPath(); g.arc(CX, CY, R, 0, 7); g.fill();
+        g.strokeStyle = 'rgba(160,210,255,0.8)'; g.lineWidth = 4; g.beginPath(); g.arc(CX, CY, R + 2, 0, 7); g.stroke();
+        // speed bands: the equator, 45° N, and the pole, labelled
+        const bb = D.beat(q, 'bands', 1e9); if (t > bb) { const k = Math.min(1, (t - bb) / 0.8);
+          for (const [la, lab, col, d] of [[0, '1,670 km/h', '#ffcf5a', 0], [45, '1,180 km/h', '#ffa86a', 1.2], [90, 'about 0', '#ffffff', 2.4]]) { const kk = clamp((t - bb - d) / 0.6, 0, 1); if (kk <= 0) continue;
+            g.save(); g.globalAlpha = kk * k; const yy = CY - Math.sin(la * Math.PI / 180) * R * Math.cos(TILT * 0.35); const hw = Math.cos(la * Math.PI / 180) * R;
+            if (la < 89) { g.strokeStyle = col; g.lineWidth = 6; g.setLineDash([18, 12]); g.beginPath(); g.ellipse(CX, yy, hw, hw * 0.16, 0, 0, Math.PI); g.stroke(); g.setLineDash([]); }
+            else { g.fillStyle = col; g.beginPath(); g.arc(CX, CY - R * Math.cos(TILT * 0.35) + 8, 10, 0, 7); g.fill(); }
+            const lx = CX + R + 60, ly = la > 89 ? CY - R + 30 : yy; g.strokeStyle = col; g.lineWidth = 3; g.beginPath(); g.moveTo(la > 89 ? CX + 14 : CX + hw, la > 89 ? CY - R + 30 : yy); g.lineTo(lx - 10, ly); g.stroke();
+            g.font = '800 46px Nunito'; g.textAlign = 'left'; g.lineWidth = 8; g.strokeStyle = 'rgba(10,14,34,0.85)'; g.strokeText(lab, lx, ly + 16); g.fillStyle = col; g.fillText(lab, lx, ly + 16); g.restore(); } }
+        // the Moon and its tidal brake, for the twist
+        const mb = D.beat(q, 'moon', 1e9); if (t > mb) { const u = X.ease.out3(Math.min(1, (t - mb) / 1.5)); const mx = lerp(2300, 1640, u), my = 300; P.bloom(g, mx, my, 160, '#fff8e0', 0.35); const mg = g.createRadialGradient(mx - 30, my - 30, 10, mx, my, 90); mg.addColorStop(0, '#f4f0e4'); mg.addColorStop(1, '#a8a49a'); g.fillStyle = mg; g.beginPath(); g.arc(mx, my, 90, 0, 7); g.fill();
+          for (const [cx, cy, cr] of [[-20, -10, 14], [24, 20, 10], [10, -36, 8]]) { g.fillStyle = 'rgba(120,116,108,0.5)'; g.beginPath(); g.arc(mx + cx, my + cy, cr, 0, 7); g.fill(); }
+          g.save(); g.globalAlpha = u * 0.5; g.fillStyle = '#9ad0ff'; g.beginPath(); g.ellipse(CX, CY, R * 1.08, R * 0.98, -0.35, 0, 7); g.fill(); g.restore(); }
+      } }];
+      return set;
+    }
+  };
+
+  // ------------------------------------------------------------------ the South Pole: the plateau, the ceremonial pole, the station on stilts
+  X.SETS.south_pole = {
+    build(rng, seed) {
+      const set = { name: 'south_pole', seed, camX: [-400, 1100], camY: [-300, 120] };
+      const L = [];
+      L.push(makeLayer(set, 30, (g, r, b) => { P.gradient(g, b.x0, b.y0, b.x1 - b.x0, HZ + 200 - b.y0, [[0, '#5a7ab8'], [0.6, '#a8c4e0'], [1, '#f0e0d0']]); P.bloom(g, 1500, HZ - 30, 380, '#fff4d8', 0.7); }, { padY: 200 }));
+      L.push(makeLayer(set, 6, (g, r, b) => { P.wash(g, [[b.x0, HZ + 6], [b.x1, HZ + 2], [b.x1, b.y1], [b.x0, b.y1]], '#e8eef4', r, { layers: 8, alpha: 0.3, edge: false });
+        // the elevated station: a long building on stilts
+        const sx = 200, sy = HZ - 6; P.flat(g, P.rect(sx, sy - 120, 760, 80), '#c8ccd2', r, { mottle: 0.4 }); for (let i = 0; i < 12; i++) P.flat(g, P.rect(sx + 20 + i * 62, sy - 104, 34, 30), '#7a9ab0', r, { texture: false }); for (let i = 0; i < 9; i++) P.stroke(g, P.seg2(sx + 30 + i * 90, sy - 40, sx + 30 + i * 90, sy, 2), '#6a6e76', 8, r, { alpha: 1 }); }, { haze: 0.07, hazeColour: '#e8eef4' }));
+      L.push(makeLayer(set, 1.0, (g, r, b) => { const fy = groundY(2.6); P.gradient(g, b.x0, fy, b.x1 - b.x0, b.y1 - fy, [[0, '#eef2f6'], [1, '#d4dde8']]);
+        for (let i = 0; i < 160; i++) { const x = b.x0 + r() * (b.x1 - b.x0), y = fy + r() * (b.y1 - fy); P.stroke(g, [[x, y], [x + 60 + r() * 120, y + gauss(r) * 3]], '#c4d0de', 3, r, { alpha: 0.5, bristles: 1 }); } }, { o: -1 }));
+      set.layers = L; set.bg = '#a8c4e0'; set.groundY = groundY; set.light = [0.8, -0.3];
+      set.finish = { bloom: 0.18, grade: ['#4a6aa8', '#ffe0c0'], gradeMode: 'soft-light', gradeAlpha: 0.3, vignette: 0.5, paper: 0.07, saturate: 1.15, exposure: -0.12 };
+      set.drift = 0.7;
+      set.dynamic = [
+        { z: 1.6, draw: (g, t, ta, D, q) => {   // the ceremonial pole: a striped post with a mirror ball, ringed by flags
+          const gy = groundY(1.6), x = 1180, r = mulberry32(21);
+          for (let i = 0; i < 6; i++) { const fx = x - 420 + i * 170; if (Math.abs(fx - x) < 60) continue; P.stroke(g, P.seg2(fx, gy, fx, gy - 300, 2), '#8a8e96', 6, r, { alpha: 1 }); const wv = Math.sin(t * 3 + i) * 10;
+            g.fillStyle = ['#c83a3a', '#2a5aa8', '#f0c040', '#3a8a5a', '#e8e8e8', '#8a3aa8'][i]; g.beginPath(); g.moveTo(fx, gy - 300); g.quadraticCurveTo(fx + 50, gy - 290 + wv, fx + 100, gy - 296 + wv * 1.5); g.lineTo(fx + 100, gy - 236 + wv * 1.5); g.quadraticCurveTo(fx + 50, gy - 230 + wv, fx, gy - 240); g.fill(); }
+          for (let k = 0; k < 10; k++) { g.fillStyle = k % 2 ? '#c83a3a' : '#f4f4f4'; g.fillRect(x - 12, gy - 220 + k * 22, 24, 22); }
+          const mb = g.createRadialGradient(x - 14, gy - 250, 6, x, gy - 238, 40); mb.addColorStop(0, '#ffffff'); mb.addColorStop(0.5, '#b8c8d8'); mb.addColorStop(1, '#5a6a7a'); g.fillStyle = mb; g.beginPath(); g.arc(x, gy - 238, 36, 0, 7); g.fill(); g.strokeStyle = INK; g.lineWidth = 3; g.stroke();
+          D.light(g, x - 10, gy - 250, 120, '#ffffff', 0.25);
+        } },
+        { z: 1.05, draw: (g, t) => FX.mist(g, t, { x: 600, y: groundY(1.2) + 30, w: 3000, h: 40, n: 6, alpha: 0.1, speed: 40, key: 'drift' }) }
+      ];
+      return set;
+    }
+  };
   // artwork reused by the thumbnail compositor
   X.ART = Object.assign(X.ART || {}, { penny, millstone, bigHand, loafShape, stook, WHEAT, groundY, ENG });
 })(window);

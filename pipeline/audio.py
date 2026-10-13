@@ -436,7 +436,7 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
 
 # ---------------------------------------------------------------- ambience beds (history mode)
 def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
-    """Continuous background for a stretch of the episode. kinds: interior, village, market, alehouse, night, forge, hall."""
+    """Continuous background for a stretch of the episode. kinds: interior, village, market, alehouse, night, forge, hall, city, space, polar."""
     import zlib
     rng = np.random.default_rng(seed + zlib.crc32(kind.encode()) % 1000)
     n = int(dur * SR); t = np.arange(n) / SR
@@ -497,6 +497,25 @@ def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
             x = lowpass_fast(nz(), rng.uniform(700, 1400)) - lowpass_fast(nz(), 180)
             syl = np.clip(np.sin(2 * np.pi * rng.uniform(3, 5) * t + rng.uniform(0, 6)) + 0.4 * np.sin(2 * np.pi * 0.3 * t + v), 0, None)
             out += (x * syl * 0.045).astype(np.float32)
+    if kind == "city":   # a modern street: traffic hum, cars passing now and then, a far-off horn
+        out += lowpass_fast(nz(), 180) * 0.09 + lowpass_fast(nz(), 900) * 0.025
+        k = 0.5
+        while k < dur:
+            k += rng.uniform(1.6, 4.0); d = rng.uniform(1.6, 2.6); m = int(d * SR); tk = np.arange(m) / SR
+            env = np.exp(-((tk - d / 2) / (d / 5)) ** 2)
+            car = lowpass_fast(rng.standard_normal(m).astype(np.float32), rng.uniform(500, 900)) * env * rng.uniform(0.06, 0.12)
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += car
+        k = 4.0
+        while k < dur:
+            k += rng.uniform(7, 14); m = int(0.35 * SR); tk = np.arange(m) / SR
+            horn = (np.sign(np.sin(2 * np.pi * 410 * tk)) + 0.6 * np.sign(np.sin(2 * np.pi * 520 * tk))) * np.minimum(1, tk * 40) * np.exp(-np.maximum(0, tk - 0.25) * 30)
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += lowpass_fast(horn.astype(np.float32), 1500) * 0.012
+    if kind == "space":   # no sound in space: a low, slow drone so the cut is not dead air
+        out += (np.sin(2 * np.pi * 55 * t) * 0.02 + np.sin(2 * np.pi * 82.4 * t + 1) * 0.012) * (0.7 + 0.3 * np.sin(2 * np.pi * 0.05 * t))
+        out += lowpass_fast(nz(), 120) * 0.03
+    if kind == "polar":   # the high plateau: wind gusting over packed snow
+        gust = 0.5 + 0.5 * np.sin(2 * np.pi * 0.09 * t + rng.uniform(0, 6)) * np.sin(2 * np.pi * 0.023 * t)
+        out += (lowpass_fast(nz(), 700) - lowpass_fast(nz(), 150)) * gust * 0.12
     f = int(0.8 * SR)
     if n > 2 * f:
         out[:f] *= np.linspace(0, 1, f); out[-f:] *= np.linspace(1, 0, f)

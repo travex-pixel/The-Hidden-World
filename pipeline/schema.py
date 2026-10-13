@@ -17,8 +17,9 @@ SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "
 # history profile: painted 2.5D sets (renderer/history/sets) and on-screen evidence labels
 HISTORY_SETS = {"cottage", "village", "coin", "field", "cottage_dusk", "abbey_floor", "abbey_parlour",
                 "alehouse", "alehouse_day", "village_night", "church_door", "church_dawn", "map_dover",
-                "field_dawn", "well_yard", "counting_house", "ledger_insert", "smithy", "great_hall", "map_england", "alt_town"}
-AMBIENCE = {"interior", "village", "market", "alehouse", "night", "forge", "hall", "none"}
+                "field_dawn", "well_yard", "counting_house", "ledger_insert", "smithy", "great_hall", "map_england", "alt_town",
+                "city_street", "globe", "south_pole"}
+AMBIENCE = {"interior", "village", "market", "alehouse", "night", "forge", "hall", "city", "space", "polar", "none"}
 BADGE_CLAIM_TYPES = {"documented": {"established"}, "estimate": {"estimate"}, "disputed": {"disputed"},
                      "reconstruction": {"plausible", "illustrative"}, "dramatised": None,
                      "hypothetical": None}   # alternate history, never presented as fact

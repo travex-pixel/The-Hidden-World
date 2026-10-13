@@ -122,6 +122,25 @@
       for (const y of [-170, 150]) { g.fillStyle = '#6a4228'; g.fillRect(-120, y, 240, 24); g.strokeStyle = INK; g.lineWidth = 5; g.strokeRect(-120, y, 240, 24); }
       for (const x of [-108, 96]) { g.fillStyle = '#7a5032'; g.fillRect(x, -150, 12, 302); g.strokeRect(x, -150, 12, 302); }
     },
+    globe_stop: (g, o) => {   // What-If 002: the Earth braking hard, a red STOP sign, speed lines streaming off it
+      const R = o.r, r = mulberry32(31);
+      g.strokeStyle = 'rgba(255,255,255,0.85)'; g.lineCap = 'round'; for (let i = 0; i < 9; i++) { const y = -R * 0.8 + i * R * 0.2; g.lineWidth = 6 + r() * 6; g.beginPath(); g.moveTo(R * 1.1, y); g.lineTo(R * 1.1 + 80 + r() * 120, y); g.stroke(); }
+      const oc = g.createRadialGradient(-R * 0.35, -R * 0.35, R * 0.1, 0, 0, R); oc.addColorStop(0, '#6aaae0'); oc.addColorStop(1, '#1e4a8a'); g.fillStyle = oc; g.beginPath(); g.arc(0, 0, R, 0, 7); g.fill();
+      g.save(); g.beginPath(); g.arc(0, 0, R, 0, 7); g.clip(); g.fillStyle = '#7a9a52';
+      for (const [cx, cy, rx, ry, a] of [[-0.35, -0.35, 0.35, 0.22, 0.4], [-0.15, 0.2, 0.2, 0.38, -0.2], [0.35, -0.2, 0.3, 0.18, -0.3], [0.45, 0.35, 0.15, 0.2, 0.2]]) { g.beginPath(); g.ellipse(cx * R, cy * R, rx * R, ry * R, a, 0, 7); g.fill(); }
+      g.fillStyle = 'rgba(255,255,255,0.6)'; for (let i = 0; i < 6; i++) { g.beginPath(); g.ellipse((r() - 0.5) * R * 1.4, (r() - 0.5) * R * 1.4, R * 0.18, R * 0.05, 0, 0, 7); g.fill(); } g.restore();
+      g.strokeStyle = INK; g.lineWidth = 6; g.beginPath(); g.arc(0, 0, R, 0, 7); g.stroke();
+      g.save(); g.translate(R * 0.55, -R * 0.6); g.rotate(-0.12); const S = R * 0.42; g.beginPath(); for (let k = 0; k < 8; k++) { const a = Math.PI / 8 + k * Math.PI / 4; k ? g.lineTo(Math.cos(a) * S, Math.sin(a) * S) : g.moveTo(Math.cos(a) * S, Math.sin(a) * S); } g.closePath();
+      g.fillStyle = '#C8312B'; g.fill(); g.strokeStyle = '#FFF8E7'; g.lineWidth = S * 0.08; g.stroke(); g.fillStyle = '#FFF8E7'; g.font = `800 ${Math.round(S * 0.52)}px Nunito`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('STOP', 0, S * 0.04); g.restore();
+    },
+    pole_marker: (g, o) => {   // the South Pole: a striped post with a mirror ball on snow, flags around it
+      const s = o.r / 200; g.scale(s, s);
+      g.fillStyle = '#eef3f8'; g.beginPath(); g.ellipse(0, 190, 260, 50, 0, 0, 7); g.fill();
+      for (const [x, c] of [[-190, '#c83a3a'], [-110, '#2a5aa8'], [110, '#f0c040'], [190, '#3a8a5a']]) { g.fillStyle = '#8a8e96'; g.fillRect(x - 3, -40, 6, 230); g.fillStyle = c; g.beginPath(); g.moveTo(x, -40); g.quadraticCurveTo(x + 35, -30, x + 70, -36); g.lineTo(x + 70, 4); g.quadraticCurveTo(x + 35, 10, x, 0); g.fill(); }
+      for (let k = 0; k < 9; k++) { g.fillStyle = k % 2 ? '#c83a3a' : '#f4f4f4'; g.fillRect(-18, -10 + k * 22, 36, 22); } g.strokeStyle = INK; g.lineWidth = 4; g.strokeRect(-18, -10, 36, 198);
+      const mb = g.createRadialGradient(-18, -64, 8, 0, -48, 60); mb.addColorStop(0, '#ffffff'); mb.addColorStop(0.5, '#b8c8d8'); mb.addColorStop(1, '#5a6a7a'); g.fillStyle = mb; g.beginPath(); g.arc(0, -48, 54, 0, 7); g.fill(); g.stroke();
+      g.save(); g.translate(150, -150); g.rotate(0.15); g.font = '800 64px Nunito'; g.textAlign = 'center'; g.fillStyle = '#FFF8E7'; g.strokeStyle = INK; g.lineWidth = 8; g.strokeText('0 km/h', 0, 0); g.fillText('0 km/h', 0, 0); g.restore();
+    },
     boiler_burst: (g, o) => {   // a sealed boiler on a firebox, its lid blown off in a cloud of steam
       const s = o.r / 150; g.scale(s, s); const r = mulberry32(23);
       for (let i = 0; i < 12; i++) { const a = r() * Math.PI * 2, d = 60 + r() * 110; P.bloom(g, Math.cos(a) * d * 1.1, -120 + Math.sin(a) * d * 0.7, 90 + r() * 70, '#ffffff', 0.55); }

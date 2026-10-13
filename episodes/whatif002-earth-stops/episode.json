@@ -1,0 +1,2099 @@
+{
+  "id": "whatif002-earth-stops",
+  "number": 2,
+  "series": "what-if",
+  "profile": "history",
+  "title": "What If Earth Stopped Spinning for 1 Second?",
+  "central_question": "If Earth stopped spinning for one second and then started again, what would happen, and who would survive?",
+  "template": "history-pov",
+  "narrator_voice": "en_GB-aru-medium",
+  "voice_engine": "kokoro",
+  "engine_version": 3,
+  "kokoro_speed": 1.14,
+  "kokoro_pause_scale": 0.78,
+  "pronounce": {
+    "1,670": "one thousand six hundred and seventy",
+    "1,180": "one thousand one hundred and eighty",
+    "1,400": "fourteen hundred",
+    "47 g": "forty-seven gee",
+    "7:59": "seven fifty-nine"
+  },
+  "target_duration_seconds": [
+    150,
+    230
+  ],
+  "setting": "A city street at 7:59 on a Tuesday morning; Earth from space; the South Pole. A cartoon thought experiment.",
+  "cast": [
+    "pov_modern",
+    "commuter_sam",
+    "researcher_kai",
+    "narrator_history"
+  ],
+  "character_style": "watercolour",
+  "music": {
+    "bpm": 100
+  },
+  "render_workers": 3,
+  "fiction_notice": "A cartoon thought experiment: Earth cannot stop in one second. You, Sam and Kai are fictional; the physics numbers are real and sourced.",
+  "scenes": [
+    {
+      "id": "e00_cold",
+      "scene": "history",
+      "set": "city_street",
+      "ambience": "city",
+      "min_duration": 10,
+      "pad_after": 0.4,
+      "music_cue": "tension-peak",
+      "transition": "cut",
+      "chapter": "One second",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "This is what happens if Earth stops spinning. For one second.",
+          "tone": "hook",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "And trust me, this is the nice part of town.",
+          "tone": "playful",
+          "pause_before": 2.2
+        },
+        {
+          "who": "narrator_history",
+          "text": "Let's rewind ten seconds.",
+          "tone": "curious"
+        }
+      ],
+      "claims": [
+        "E0"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "Cartoon. You and Sam are fictional",
+          "at": {
+            "line": 1,
+            "off": 0.2
+          },
+          "dur": 3.0
+        }
+      ],
+      "beats": {
+        "stop": {
+          "line": 0,
+          "off": 4.0
+        },
+        "clock0": -5.5
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 4.0
+          },
+          "name": "burst"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 4.05
+          },
+          "name": "brake"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 4.1
+          },
+          "name": "whoosh"
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 4.3
+          },
+          "name": "smash",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 4.4
+          },
+          "name": "rumble"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 60,
+            "y": -60,
+            "dolly": 200
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 3.9
+            },
+            "x": 120,
+            "y": -40,
+            "dolly": 260
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 520,
+            "y": -120,
+            "dolly": 60,
+            "ease": "out"
+          },
+          {
+            "t": "end",
+            "x": 600,
+            "y": -140,
+            "dolly": 30
+          }
+        ],
+        "shake": [
+          {
+            "t": {
+              "line": 0,
+              "off": 4.0
+            },
+            "dur": 1.4,
+            "amp": 0.6
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 820,
+          "h": 440,
+          "facing": 1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cup"
+            },
+            {
+              "t": 0.6,
+              "gesture": "drink",
+              "dur": 0.5,
+              "hold": 1.2
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.6
+              },
+              "expr": "startled"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 4.0
+              },
+              "expr": "horrified"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 4.0
+              },
+              "gesture": "hands_up",
+              "dur": 0.15,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 4.0
+              },
+              "float": 300,
+              "drift": 1700,
+              "spin": 560,
+              "dur": 2.4
+            }
+          ]
+        },
+        {
+          "id": "sam",
+          "char": "commuter_sam",
+          "x": 1300,
+          "h": 460,
+          "facing": -1,
+          "expr0": "grumpy",
+          "acts": [
+            {
+              "t": 0.4,
+              "gesture": "chin",
+              "dur": 0.4,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.7
+              },
+              "expr": "shocked"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 4.0
+              },
+              "gesture": "hands_up",
+              "dur": 0.15,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 4.05
+              },
+              "float": 240,
+              "drift": 1600,
+              "spin": -460,
+              "dur": 2.4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e01_spin",
+      "scene": "history",
+      "set": "globe",
+      "ambience": "space",
+      "min_duration": 18,
+      "pad_after": 0.5,
+      "music_cue": "curious",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "You're already moving",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Right now, you are moving. Fast.",
+          "tone": "confident",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Earth spins,",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "and at the equator the ground carries you east at about 1,670 kilometres an hour.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "That's faster than the speed of sound.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Further north it's slower: about 1,180 at 45 degrees. At the poles, almost nothing.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "You just turn on the spot.",
+          "tone": "playful"
+        }
+      ],
+      "claims": [
+        "E1",
+        "E2"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "E1",
+          "text": "Equator: about 1,670 km/h (465 m/s)",
+          "at": {
+            "line": 1,
+            "off": 1.0
+          },
+          "dur": 4.0
+        },
+        {
+          "kind": "documented",
+          "claim": "E2",
+          "text": "Speed of sound: about 1,235 km/h",
+          "at": {
+            "line": 3,
+            "off": 0.4
+          },
+          "dur": 3.4
+        }
+      ],
+      "beats": {
+        "bands": {
+          "line": 1,
+          "off": 0.6
+        },
+        "lon0": -20
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 0.6
+          },
+          "name": "whoosh",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 0.2
+          },
+          "name": "sting",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -60,
+            "y": 40,
+            "dolly": -60
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": 0,
+            "dolly": 40,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": 160,
+            "y": -60,
+            "dolly": 90,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 120,
+            "y": -100,
+            "dolly": 140,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "e02_count",
+      "scene": "history",
+      "set": "city_street",
+      "ambience": "city",
+      "min_duration": 14,
+      "pad_after": 2.0,
+      "music_cue": "tension-rise",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Ten seconds",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So: Tuesday, 7:59 and fifty seconds. Coffee in hand.",
+          "tone": "confident",
+          "pause_before": 0.4
+        },
+        {
+          "who": "commuter_sam",
+          "text": "Is that clock fast?",
+          "tone": "curious",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "At eight o'clock exactly, the planet slams on the brakes.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The ground stops. You don't.",
+          "tone": "reveal",
+          "pause_before": 0.3
+        }
+      ],
+      "claims": [
+        "E0",
+        "E3"
+      ],
+      "badges": [
+        {
+          "kind": "hypothetical",
+          "text": "Impossible in reality: a thought experiment",
+          "at": {
+            "line": 2,
+            "off": 0.2
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "clock0": 0.0,
+        "stop": "end-2.4",
+        "banner_off": 0
+      },
+      "sfx": [
+        {
+          "at": 1.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": 2.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": 3.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": 4.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": 5.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": 6.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": 7.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": 8.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": 9.0,
+          "name": "tick",
+          "gain": 0.6
+        },
+        {
+          "at": "end-2.4",
+          "name": "burst"
+        },
+        {
+          "at": "end-2.35",
+          "name": "brake"
+        },
+        {
+          "at": "end-2.3",
+          "name": "whoosh"
+        },
+        {
+          "at": "end-2.1",
+          "name": "rumble"
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 260,
+            "y": -60,
+            "dolly": 120
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 330,
+            "y": -20,
+            "dolly": 300,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": -40,
+            "dolly": 220,
+            "ease": "inOut"
+          },
+          {
+            "t": "end-2.5",
+            "x": 60,
+            "y": -30,
+            "dolly": 330,
+            "ease": "in"
+          },
+          {
+            "t": "end",
+            "x": 500,
+            "y": -100,
+            "dolly": 80,
+            "ease": "out"
+          }
+        ],
+        "shake": [
+          {
+            "t": "end-2.4",
+            "dur": 1.6,
+            "amp": 0.6
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 780,
+          "h": 440,
+          "facing": 1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cup"
+            },
+            {
+              "t": 0.8,
+              "gesture": "drink",
+              "dur": 0.5,
+              "hold": 1.0
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.4
+              },
+              "look": [
+                1,
+                -0.3
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.6
+              },
+              "expr": "curious"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.0
+              },
+              "expr": "worried"
+            },
+            {
+              "t": "end-2.45",
+              "expr": "horrified"
+            },
+            {
+              "t": "end-2.4",
+              "gesture": "hands_up",
+              "dur": 0.15,
+              "hold": -1
+            },
+            {
+              "t": "end-2.4",
+              "float": 300,
+              "drift": 1700,
+              "spin": 560,
+              "dur": 2.4
+            }
+          ]
+        },
+        {
+          "id": "sam",
+          "char": "commuter_sam",
+          "x": 1330,
+          "h": 460,
+          "facing": -1,
+          "expr0": "grumpy",
+          "acts": [
+            {
+              "t": 0.5,
+              "gesture": "chin",
+              "dur": 0.4,
+              "hold": 2.4
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "gesture": "point",
+              "dur": 0.3,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "look": [
+                -1,
+                -0.5
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 1.4
+              },
+              "expr": "nervous"
+            },
+            {
+              "t": "end-2.45",
+              "expr": "shocked"
+            },
+            {
+              "t": "end-2.4",
+              "gesture": "hands_up",
+              "dur": 0.15,
+              "hold": -1
+            },
+            {
+              "t": "end-2.35",
+              "float": 230,
+              "drift": 1600,
+              "spin": -420,
+              "dur": 2.4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e03_loose",
+      "scene": "history",
+      "set": "globe",
+      "ambience": "space",
+      "min_duration": 15,
+      "pad_after": 0.4,
+      "music_cue": "dread",
+      "transition": "cut",
+      "new_shot": true,
+      "chapter": "Bolted down, or not",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Everything bolted to the bedrock stops with it. Buildings. Bridges. Mountains.",
+          "tone": "tense",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "Everything that isn't keeps going east at full speed. People. Cars. Oceans. The air.",
+          "tone": "reveal"
+        }
+      ],
+      "claims": [
+        "E3"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "E3",
+          "text": "Loose objects keep their speed (inertia)",
+          "at": {
+            "line": 1,
+            "off": 0.6
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "halt": 0.8,
+        "lon0": 30
+      },
+      "sfx": [
+        {
+          "at": 0.8,
+          "name": "rumble"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "name": "whoosh",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": 0,
+            "dolly": 160
+          },
+          {
+            "t": 0.9,
+            "x": 20,
+            "y": 10,
+            "dolly": 220
+          },
+          {
+            "t": "end",
+            "x": -40,
+            "y": 30,
+            "dolly": 60,
+            "ease": "inOut"
+          }
+        ],
+        "shake": [
+          {
+            "t": 0.8,
+            "dur": 0.8,
+            "amp": 0.4
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "e04_g",
+      "scene": "history",
+      "set": "city_street",
+      "ambience": "city",
+      "min_duration": 15,
+      "pad_after": 0.5,
+      "music_cue": "tension",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "47 g",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "How hard is that stop? Going from 465 metres a second to zero in one second is about 47 g.",
+          "tone": "tense",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Fighter pilots train to survive nine. Most of us black out long before that.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Whatever is bolted down feels all of it.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "E4",
+        "E5"
+      ],
+      "badges": [
+        {
+          "kind": "estimate",
+          "claim": "E4",
+          "text": "Our calculation: 465 m/s in 1 s is about 47 g",
+          "at": {
+            "line": 0,
+            "off": 3.0
+          },
+          "dur": 4.2
+        },
+        {
+          "kind": "documented",
+          "claim": "E5",
+          "text": "Fighter pilots: trained for 9 g",
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "dur": 3.4
+        }
+      ],
+      "cards": [
+        {
+          "kind": "fact",
+          "title": "47 g. A fighter pilot trains for 9.",
+          "sub": "The stop",
+          "at": {
+            "line": 0,
+            "off": 4.2
+          },
+          "dur": 6.0
+        }
+      ],
+      "beats": {
+        "stop": -3.0,
+        "banner_off": 0
+      },
+      "sfx": [
+        {
+          "at": 0.5,
+          "name": "whoosh",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.5
+          },
+          "name": "thud",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -200,
+            "y": -80,
+            "dolly": 40
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 300,
+            "y": -60,
+            "dolly": 120,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 700,
+            "y": -100,
+            "dolly": 200,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "e05_wind",
+      "scene": "history",
+      "set": "globe",
+      "ambience": "space",
+      "min_duration": 15,
+      "pad_after": 0.4,
+      "music_cue": "chase",
+      "transition": "dip",
+      "transition_dur": 0.4,
+      "new_shot": true,
+      "chapter": "Then the air arrives",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Then the air arrives. The atmosphere doesn't stop either.",
+          "tone": "tense",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "At the equator that's a wind of around 1,670 kilometres an hour.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The fastest tornado wind ever measured was about 480.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "E3",
+        "E6"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "E6",
+          "text": "Record tornado wind: about 301 mph (1999)",
+          "at": {
+            "line": 2,
+            "off": 0.4
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "halt": -10,
+        "wind": 0.6,
+        "lon0": 60
+      },
+      "sfx": [
+        {
+          "at": 0.6,
+          "name": "whoosh"
+        },
+        {
+          "at": 2.0,
+          "name": "whoosh",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "rumble",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -80,
+            "y": 0,
+            "dolly": 60
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 60,
+            "y": -30,
+            "dolly": 180,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 140,
+            "y": 20,
+            "dolly": 100,
+            "ease": "inOut"
+          }
+        ],
+        "shake": [
+          {
+            "t": 0.6,
+            "dur": 1.2,
+            "amp": 0.2
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "e06_ocean",
+      "scene": "history",
+      "set": "globe",
+      "ambience": "space",
+      "min_duration": 12,
+      "pad_after": 0.4,
+      "music_cue": "dread",
+      "transition": "cut",
+      "chapter": "The oceans",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "The oceans keep going too, piling up against every coast that faces east.",
+          "tone": "tense",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "How big are those waves? Nobody can say for sure. Let's just say: big.",
+          "tone": "playful"
+        }
+      ],
+      "claims": [
+        "E3",
+        "E10"
+      ],
+      "badges": [
+        {
+          "kind": "hypothetical",
+          "text": "Wave heights: nobody has modelled this",
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "halt": -10,
+        "wind": -5,
+        "ocean": 0.3,
+        "lon0": 60
+      },
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "splash"
+        },
+        {
+          "at": 2.2,
+          "name": "rumble",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 140,
+            "y": 20,
+            "dolly": 100
+          },
+          {
+            "t": "end",
+            "x": 260,
+            "y": 40,
+            "dolly": 260,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "e07_restart",
+      "scene": "history",
+      "set": "globe",
+      "ambience": "space",
+      "min_duration": 13,
+      "pad_after": 0.6,
+      "music_cue": "tension-peak",
+      "transition": "cut",
+      "chapter": "Then it starts again",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "And here's the part nobody mentions.",
+          "tone": "tense",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "One second later, Earth starts spinning again. A second lurch, the other way.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "One second. Two disasters.",
+          "tone": "reveal",
+          "pause_before": 0.3
+        }
+      ],
+      "claims": [
+        "E10"
+      ],
+      "badges": [
+        {
+          "kind": "hypothetical",
+          "text": "The restart is part of the thought experiment",
+          "at": {
+            "line": 1,
+            "off": 0.6
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "halt": -10,
+        "wind": -8,
+        "ocean": -6,
+        "restart": {
+          "line": 1,
+          "off": 1.6
+        },
+        "lon0": 60
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 1.6
+          },
+          "name": "burst"
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 1.7
+          },
+          "name": "rumble"
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "sting",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 260,
+            "y": 40,
+            "dolly": 260
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 1.5
+            },
+            "x": 0,
+            "y": 0,
+            "dolly": 60,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": -40,
+            "y": -20,
+            "dolly": 140,
+            "ease": "inOut"
+          }
+        ],
+        "shake": [
+          {
+            "t": {
+              "line": 1,
+              "off": 1.6
+            },
+            "dur": 1.0,
+            "amp": 0.45
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "e08_pole",
+      "scene": "history",
+      "set": "south_pole",
+      "ambience": "polar",
+      "min_duration": 20,
+      "pad_after": 0.6,
+      "music_cue": "playful",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Who survives?",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So who survives? Someone standing exactly on a pole.",
+          "tone": "curious",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "Meet Kai, at the South Pole. Kai was barely moving to begin with, so Kai just... wobbles.",
+          "tone": "playful"
+        },
+        {
+          "who": "researcher_kai",
+          "text": "Huh. Anyone else spill their tea?",
+          "tone": "playful",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "And no, there are no penguins to tell.",
+          "tone": "playful"
+        },
+        {
+          "who": "narrator_history",
+          "text": "They live on the coast, about 1,400 kilometres away.",
+          "tone": "playful"
+        }
+      ],
+      "claims": [
+        "E1",
+        "E8",
+        "E0"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "Kai is fictional",
+          "at": {
+            "line": 1,
+            "off": 0.8
+          },
+          "dur": 2.6
+        },
+        {
+          "kind": "documented",
+          "claim": "E8",
+          "text": "No penguins at the Pole; nearest colony ~1,400 km",
+          "at": {
+            "line": 3,
+            "off": 1.0
+          },
+          "dur": 4.2
+        }
+      ],
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 3.6
+          },
+          "name": "thud",
+          "gain": 0.4
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "splash",
+          "gain": 0.3
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 300,
+            "y": -120,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": -40,
+            "dolly": 200,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 60,
+            "y": -20,
+            "dolly": 340,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 260,
+            "y": -80,
+            "dolly": 120,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 300,
+            "y": -90,
+            "dolly": 160
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "kai",
+          "char": "researcher_kai",
+          "x": 1000,
+          "h": 430,
+          "facing": -1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cup"
+            },
+            {
+              "t": 0.8,
+              "gesture": "drink",
+              "dur": 0.5,
+              "hold": 1.2
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 3.4
+              },
+              "spin": 14,
+              "dur": 0.25
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 3.65
+              },
+              "spin": -8,
+              "dur": 0.3
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 3.95
+              },
+              "spin": 0,
+              "dur": 0.4
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 3.4
+              },
+              "expr": "startled"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "sheepish"
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "gesture": "hold_up",
+              "dur": 0.4,
+              "hold": 2.0
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.4
+              },
+              "expr": "curious",
+              "look": [
+                -1,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 3.2
+              },
+              "expr": "happy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e09_moon",
+      "scene": "history",
+      "set": "globe",
+      "ambience": "space",
+      "min_duration": 22,
+      "pad_after": 0.6,
+      "music_cue": "revelation",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Earth IS slowing down",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Good news: nothing in the universe is going to stop Earth in one second.",
+          "tone": "confident",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Bad news: something is slowing it down. Right now.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The Moon.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Its tides act like a brake,",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "and every century the day gets a couple of milliseconds longer.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Wait about 200 million years, and you get a 25-hour day.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Finally, time to finish that coffee.",
+          "tone": "playful",
+          "pause_before": 0.3
+        }
+      ],
+      "claims": [
+        "E9"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "E9",
+          "text": "Day lengthens ~1.8 ms per century (eclipse records)",
+          "at": {
+            "line": 2,
+            "off": 2.0
+          },
+          "dur": 4.2
+        },
+        {
+          "kind": "documented",
+          "claim": "E9",
+          "text": "25-hour day: about 200 million years away",
+          "at": {
+            "line": 5,
+            "off": 0.6
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "moon": {
+          "line": 1,
+          "off": 1.0
+        },
+        "lon0": 100
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 1,
+            "off": 1.0
+          },
+          "name": "swell",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 6,
+            "off": 0.2
+          },
+          "name": "chime",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": -40,
+            "y": 20,
+            "dolly": 80
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.6
+            },
+            "x": 200,
+            "y": -40,
+            "dolly": 20,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 5,
+              "off": 0.0
+            },
+            "x": 140,
+            "y": 0,
+            "dolly": 110,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 60,
+            "y": 20,
+            "dolly": 160,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "e10_cta",
+      "scene": "history",
+      "set": "city_street",
+      "ambience": "city",
+      "min_duration": 14,
+      "pad_after": 2.6,
+      "music_cue": "outro",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Where do you run?",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So. You get ten seconds' warning. Where on Earth do you run?",
+          "tone": "curious",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Tell me your city in the comments, and I'll tell you how fast you were going.",
+          "tone": "playful"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Next time: what if the Moon vanished tonight?",
+          "tone": "playful",
+          "pause_before": 0.4
+        }
+      ],
+      "claims": [
+        "E0"
+      ],
+      "cards": [
+        {
+          "kind": "fact",
+          "title": "Where would you run? Comment your city.",
+          "sub": "Your turn",
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "dur": 5.0
+        },
+        {
+          "kind": "next",
+          "title": "What If the Moon Vanished?",
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "banner_off": 0
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "chime",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 520,
+            "y": -120,
+            "dolly": 60
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 2.0
+            },
+            "x": 140,
+            "y": -40,
+            "dolly": 240,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 60,
+            "y": -20,
+            "dolly": 340,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 100,
+            "y": -60,
+            "dolly": 220,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 600,
+          "h": 440,
+          "facing": 1,
+          "expr0": "exhausted",
+          "acts": [
+            {
+              "t": 0.3,
+              "walk": 900,
+              "dur": 2.4
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.0
+              },
+              "expr": "skeptical",
+              "look": [
+                0,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "face": -1
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.1
+              },
+              "expr": "eager"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.3
+              },
+              "gesture": "shrug",
+              "dur": 0.4,
+              "hold": 1.8
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "happy"
+            }
+          ]
+        },
+        {
+          "id": "sam",
+          "char": "commuter_sam",
+          "x": 1420,
+          "h": 460,
+          "facing": -1,
+          "expr0": "exhausted",
+          "acts": [
+            {
+              "t": 0.6,
+              "walk": 1240,
+              "dur": 2.4
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.0
+              },
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.0
+              },
+              "gesture": "fold",
+              "dur": 0.4,
+              "hold": 3.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "E0",
+      "type": "illustrative",
+      "text": "The scenario is a cartoon thought experiment: nothing can stop Earth in one second. You, Sam and Kai, the street and the clock are fictional.",
+      "sources": []
+    },
+    {
+      "id": "E1",
+      "type": "established",
+      "text": "Earth's surface at the equator moves east at about 1,670 km/h (about 465 m/s); the speed falls with the cosine of latitude, to about 1,180 km/h at 45 degrees and almost zero at the poles.",
+      "sources": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "E2",
+      "type": "established",
+      "text": "The speed of sound in air at 20 degrees C is about 343 m/s, or about 1,235 km/h, so the equator's rotation speed is faster than sound.",
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "id": "E3",
+      "type": "established",
+      "text": "If the ground stopped, anything not attached to it (people, vehicles, oceans, the atmosphere) would keep moving east at the rotation speed (inertia).",
+      "sources": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "E4",
+      "type": "estimate",
+      "text": "Our calculation: slowing from 465 m/s to zero in one second is an average deceleration of 465 m/s squared, about 47 times the 9.81 m/s squared of gravity (about 47 g).",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "E5",
+      "type": "established",
+      "text": "Fighter pilots are trained to sustain about 9 g; untrained people often lose consciousness at much lower sustained g (sources vary, around 4 to 6 g).",
+      "sources": [
+        "S7",
+        "S8"
+      ]
+    },
+    {
+      "id": "E6",
+      "type": "established",
+      "text": "The fastest tornado wind ever measured was about 301 mph (about 484 km/h, plus or minus 20 mph), by mobile Doppler radar in the Bridge Creek-Moore tornado of 3 May 1999.",
+      "sources": [
+        "S9",
+        "S10"
+      ]
+    },
+    {
+      "id": "E8",
+      "type": "established",
+      "text": "Penguins do not live at the South Pole; they live on Antarctica's coasts. The most southern colony (Adelie penguins at Cape Royds) is about 1,400 km from the Pole.",
+      "sources": [
+        "S11",
+        "S12",
+        "S13"
+      ]
+    },
+    {
+      "id": "E9",
+      "type": "established",
+      "text": "Tidal friction from the Moon is slowing Earth's rotation: the tidal braking alone adds about 2.3 ms per century, and eclipse records show an observed average of about 1.7-1.8 ms per century; at that rate a 25-hour day is about 200 million years away.",
+      "sources": [
+        "S14",
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "id": "E10",
+      "type": "illustrative",
+      "text": "The size of the ocean surge and the effects of the spin restarting are speculation; no source models a one-second stop and restart.",
+      "sources": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "How fast does the Earth rotate?",
+      "publisher": "Space Centre NZ",
+      "url": "https://www.spacecentre.nz/resources/faq/solar-system/earth/rotation-speed.html",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S2",
+      "title": "How fast is the Earth moving?",
+      "publisher": "WorldAtlas",
+      "url": "https://www.worldatlas.com/space/how-fast-is-the-earth-moving.html",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S3",
+      "title": "What would happen if Earth stopped rotating?",
+      "publisher": "Maptive",
+      "url": "https://www.maptive.com/what-would-happen-if-the-earth-stopped-rotating/",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S4",
+      "title": "What would happen if Earth stopped spinning?",
+      "publisher": "Space.com",
+      "url": "https://www.space.com/what-would-happen-if-earth-stopped-spinning",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S5",
+      "title": "What would happen if the Earth stopped rotating?",
+      "publisher": "ScienceABC",
+      "url": "https://www.scienceabc.com/nature/what-would-happen-if-the-earth-stopped-rotating-spinning.html",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S6",
+      "title": "Speed of sound in air",
+      "publisher": "The Physics Factbook (hypertextbook.com)",
+      "url": "https://hypertextbook.com/facts/2000/CheukWong.shtml",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S7",
+      "title": "Captain Matthew Taranto (F-16 pilots must sustain 9 g)",
+      "publisher": "Las Vegas Sun (2009)",
+      "url": "https://m.lasvegassun.com/news/2009/oct/06/capt-matthew-taranto/",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S8",
+      "title": "How many g's do fighter pilots pull?",
+      "publisher": "AeroCorner",
+      "url": "https://aerocorner.com/blog/how-many-gs-do-fighter-pilots-pull/",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S9",
+      "title": "The strongest wind gusts ever recorded",
+      "publisher": "Surfertoday",
+      "url": "https://www.surfertoday.com/environment/the-strongest-wind-gusts-ever-recorded",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S10",
+      "title": "Bridge Creek-Moore tornado (1999)",
+      "publisher": "Tornado Archive wiki",
+      "url": "https://tornado-archive.fandom.com/wiki/(Bridge_Creek-Moore)_tornado_of_1999",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S11",
+      "title": "Arctic and Antarctica wildlife myths explained",
+      "publisher": "National Geographic",
+      "url": "https://www.nationalgeographic.com/animals/article/arctic-antarctica-wildlife-myths-explained",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S12",
+      "title": "Adelie penguin and chicks (the most southern colony, Cape Royds)",
+      "publisher": "Te Ara, the Encyclopedia of New Zealand",
+      "url": "https://teara.govt.nz/mi/photograph/6417/adelie-penguin-and-chicks",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S13",
+      "title": "Week 1 at the Pole (no wildlife at the South Pole)",
+      "publisher": "IceCube South Pole Neutrino Observatory",
+      "url": "https://icecube.wisc.edu/news/view/715",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S14",
+      "title": "Earth's days are getting longer by two milliseconds a century",
+      "publisher": "CORDIS, European Commission",
+      "url": "https://cordis.europa.eu/article/id/120604-trending-science-earths-days-are-getting-longer-by-two-milliseconds-a-century",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S15",
+      "title": "Tidal friction",
+      "publisher": "HyperPhysics, Georgia State University",
+      "url": "https://hyperphysics.gsu.edu/hbase/Astro/tidfrict.html",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S16",
+      "title": "Earth will not reach 25-hour days for about 200 million years",
+      "publisher": "Vozpopuli",
+      "url": "https://www.vozpopuli.com/indux/en/earth-will-not-reach-25-hour-days-for-about-200-million-years-but-the-reason-shows-how-tides-quietly-reshape-planetary-time/5961/",
+      "accessed": "2026-10-13",
+      "note": "search snippet only; page not fetched"
+    }
+  ],
+  "publishing": {
+    "titles": [
+      "What If Earth Stopped Spinning for 1 Second?",
+      "Earth Stops for 1 Second. You Don't.",
+      "The One Second That Would End the World"
+    ],
+    "description": "At 8:00 a.m. tomorrow, Earth stops spinning. For one second. Then it starts again. Sounds harmless? You're already moving at about 1,670 km/h, and the ground is about to stop without you. We follow one ordinary Tuesday morning through the physics: what keeps moving, how hard that stop really is, a wind faster than any tornado ever measured, the oceans, the restart nobody talks about, the one person who survives, and the real reason Earth IS slowing down right now.",
+    "whats_real": "What's real: the rotation speeds, the speed of sound, inertia, the g-force calculation, the record tornado wind, where penguins live, and the Moon's slow braking of Earth's spin are sourced below. What isn't: Earth cannot stop in one second, so the scenario is a cartoon thought experiment; you, Sam and Kai are fictional; the size of the ocean surge and the restart are labelled HYPOTHETICAL on screen.",
+    "cta": "You get ten seconds' warning. Where do you run? Comment your city and I'll tell you how fast you were going.",
+    "hashtags": [
+      "#whatif",
+      "#science",
+      "#earth",
+      "#physics",
+      "#space"
+    ],
+    "packages": [
+      {
+        "title": "What If Earth Stopped Spinning for 1 Second?",
+        "thumbnail": "A",
+        "promise": "What one second of a stopped Earth does to you.",
+        "proof": "0:00 the moment itself; 0:17 1,670 km/h; 0:52 the stop."
+      },
+      {
+        "title": "Earth Stops for 1 Second. You Don't.",
+        "thumbnail": "B",
+        "promise": "Who survives, and why.",
+        "proof": "0:00 the street; 0:52 'The ground stops. You don't.'; 2:20 the South Pole."
+      },
+      {
+        "title": "The One Second That Would End the World",
+        "thumbnail": "C",
+        "promise": "How hard a one-second stop really is.",
+        "proof": "1:06 47 g; 1:22 the wind; 1:50 the restart."
+      }
+    ],
+    "thumbnails": [
+      {
+        "id": "A",
+        "layout": "L1",
+        "bg": "#1E3A6E",
+        "text": "1,670 KM/H",
+        "character": {
+          "char": "pov_modern",
+          "expr": "horrified",
+          "look": [
+            1,
+            -0.1
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.25,
+            0.42
+          ],
+          "mouth": 0.6
+        },
+        "object": {
+          "type": "globe_stop",
+          "r": 190,
+          "c": [
+            0.75,
+            0.64
+          ]
+        }
+      },
+      {
+        "id": "B",
+        "layout": "L1",
+        "bg": "#3A5A8A",
+        "text": "WHO|SURVIVES?",
+        "character": {
+          "char": "researcher_kai",
+          "expr": "sheepish",
+          "prop": "cup",
+          "gesture": "hold_up",
+          "look": [
+            1,
+            -0.1
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.25,
+            0.42
+          ],
+          "mouth": 0.3
+        },
+        "object": {
+          "type": "pole_marker",
+          "r": 200,
+          "c": [
+            0.76,
+            0.64
+          ]
+        }
+      },
+      {
+        "id": "C",
+        "layout": "L1",
+        "bg": "#6E1E2A",
+        "text": "47 G",
+        "text_fill": "#FFF8E7",
+        "character": {
+          "char": "commuter_sam",
+          "expr": "shocked",
+          "look": [
+            1,
+            -0.2
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.24,
+            0.42
+          ],
+          "mouth": 0.6
+        },
+        "object": {
+          "type": "globe_stop",
+          "r": 190,
+          "c": [
+            0.75,
+            0.64
+          ]
+        }
+      }
+    ]
+  }
+}
