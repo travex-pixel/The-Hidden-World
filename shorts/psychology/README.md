@@ -11,12 +11,13 @@ Isolated from the documentary engine: its renderer is `renderer/psych/`, its bui
 | id | topic | hook | status |
 |----|-------|------|--------|
 | `overthinking-vs-action` | Overthinking vs action | A — "YOU'RE NOT MOVING." | Episode 01. Rendered 2026-10-13; MP4 at [`releases/psych-overthinking-vs-action.mp4`](../../releases/psych-overthinking-vs-action.mp4). **Superseded in style**: too fast (3.7–6.4 footfalls/s), foot sliding, 20.95 s, two figures circling. Kept as the baseline the Episode 02 review fixed. |
+| `the-weight-isnt-yours` | Carrying other people's expectations | "THE WEIGHT ISN'T YOURS." | Episode 03. Rendered 2026-10-13, 16.8 s, no walking (one lowering, one rise); MP4 at [`releases/psych-the-weight-isnt-yours.mp4`](../../releases/psych-the-weight-isnt-yours.mp4); package in `output/psychology-shorts/the-weight-isnt-yours/` |
 | `you-dont-need-more-time` | Waiting for the perfect moment vs one small action | none (silent opening on the door) | Episode 02. Rendered 2026-10-13 (third pass), 16.4 s; MP4 at [`releases/psych-you-dont-need-more-time.mp4`](../../releases/psych-you-dont-need-more-time.mp4); package in `output/psychology-shorts/you-dont-need-more-time/` |
 
 ## Make the next episode (phone-friendly)
 1. Copy `shorts/psychology/overthinking-vs-action/episode.json` to `shorts/psychology/<new-id>/episode.json`.
 2. Change the fields that describe the episode: `id`, `title`, `topic`, `core_message`, `central_insight`, the three `hook_variants` (mark one `selected`), `hook.lines` (two short lines, ≤ 16 chars each), `narration` (≤ 45 words, each line with an `at` time), `captions` (short phrases with `at`/`until`), `music.cues`, `sfx`, `publishing` copy, `output.dir`.
-3. Choose a `metaphor`: `door` (Episode 02: one figure, one oversized door, planted-foot walk, one touch, one reveal, end card) or `loop-and-staircase` (Episode 01). The `animation` block holds every timing of the choreography, so pace is a config change. Walking in `door` is kinematic: the body position is derived from the stance foot staying planted, so steps never slide; step length follows from `stride` and `figure_scale`, pace from the `steps` landing times and `step_duration` (keep ≥ 0.8 s between landings for a slow, deliberate walk). A new physical metaphor is a new file `renderer/psych/stories/<name>.js` that uses the primitives in `renderer/psych/engine.js` (`figure`, `sphere`, `trail`, `step`, `thoughtDots`, `measureRing`).
+3. Choose a `metaphor`: `stone` (Episode 03: one figure sets down a heavy stone and rises; no walking, every pose a continuous blend), `door` (Episode 02: one figure, one oversized door, planted-foot walk, one touch, one reveal, end card) or `loop-and-staircase` (Episode 01). The `animation` block holds every timing of the choreography, so pace is a config change. Walking in `door` is kinematic: the body position is derived from the stance foot staying planted, so steps never slide; step length follows from `stride` and `figure_scale`, pace from the `steps` landing times and `step_duration` (keep ≥ 0.8 s between landings for a slow, deliberate walk). A new physical metaphor is a new file `renderer/psych/stories/<name>.js` that uses the primitives in `renderer/psych/engine.js` (`figure`, `sphere`, `trail`, `step`, `thoughtDots`, `measureRing`).
 4. Commit. The **Tests** workflow validates the config on every push. Pushing a new or changed `episode.json` also renders it automatically; or run the workflow by hand (below).
 
 ## Render from Android
@@ -26,7 +27,7 @@ Isolated from the documentary engine: its renderer is `renderer/psych/`, its bui
 2. **Actions → Render psychology short → Run workflow**. Inputs: `episode` (folder name), `seed`, `quality` (`final` or `preview`).
 3. Wait for the green tick (≈ 4–6 minutes for a final render on free runners; the voice model is cached after the first run).
 4. Scroll to **Artifacts** and tap `psychology-short-<id>-seed<seed>-<quality>`. The ZIP contains `video.mp4`, `thumbnail.png`, `contact_sheet.png`, the platform captions (`instagram-caption.txt`, `tiktok-caption.txt`, `youtube-title.txt`, `youtube-description.txt`, `hashtags.txt`), `subtitles.srt`, `transcript.txt`, `episode.json`, `verify.json`, `production-report.txt` and the QA frames.
-5. Open the ZIP in the Files app and play or share `video.mp4`. Artifacts are kept for 30 days.
+5. Open the ZIP in the Files app and play or share `video.mp4`. `CAPTIONS.txt` holds every platform's caption in one file for copying. Artifacts are kept for 30 days.
 
 ## Render anywhere with a shell
 ```bash

@@ -1,0 +1,111 @@
+{
+  "file": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/video.mp4",
+  "size_bytes": 873895,
+  "checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+  },
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "duration": 16.8,
+  "audio_duration": 16.8,
+  "decode_stderr": "",
+  "mean_volume_db": -16.7,
+  "max_volume_db": -0.7,
+  "long_silences": [],
+  "contact_sheet": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/contact_sheet.png",
+  "all_passed": true,
+  "qa_visual": {
+    "frames": {
+      "opening_first_frame": {
+        "t": 0.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/qa/opening_first_frame.png",
+        "mean": 20.46,
+        "bright_fraction": 0.0361,
+        "mid_fraction": 0.037
+      },
+      "beat_opening": {
+        "t": 1.5,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/qa/beat_opening.png",
+        "mean": 21.49,
+        "bright_fraction": 0.0412,
+        "mid_fraction": 0.0426
+      },
+      "beat_conflict": {
+        "t": 5.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/qa/beat_conflict.png",
+        "mean": 14.81,
+        "bright_fraction": 0.0112,
+        "mid_fraction": 0.0119
+      },
+      "beat_decision": {
+        "t": 8.9,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/qa/beat_decision.png",
+        "mean": 15.03,
+        "bright_fraction": 0.0121,
+        "mid_fraction": 0.0131
+      },
+      "beat_payoff": {
+        "t": 12.6,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/qa/beat_payoff.png",
+        "mean": 14.69,
+        "bright_fraction": 0.0098,
+        "mid_fraction": 0.0106
+      },
+      "beat_ending": {
+        "t": 15.6,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/qa/beat_ending.png",
+        "mean": 10.25,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0138
+      },
+      "ending_last_frame": {
+        "t": "end",
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/the-weight-isnt-yours/qa/ending_last_frame.png",
+        "mean": 10.25,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0138
+      }
+    },
+    "frames_checked": 504,
+    "min_yavg": 23.48,
+    "first_frame_has_visual": true,
+    "no_blank_frames": true,
+    "animation_changes_throughout": true,
+    "all_passed": true
+  },
+  "qa_audio": {
+    "speech_rms_db": [
+      -14.3,
+      -13.7,
+      -14.8,
+      -15.0
+    ],
+    "bed_rms_db_between_lines": [
+      -33.8,
+      -30.6,
+      -33.2
+    ],
+    "narration_above_bed": true,
+    "narration_audible": true,
+    "ending_tail_db": -50.0,
+    "ending_not_abrupt": true,
+    "peak": 0.92,
+    "no_clipping": true,
+    "all_passed": true
+  },
+  "narration_warnings": []
+}

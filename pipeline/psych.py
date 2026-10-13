@@ -270,6 +270,12 @@ def write_package(ep: dict, out: Path, lines: list[dict], total: float) -> list[
     }
     if lines:
         texts["transcript.txt"] = "\n".join(f"[{l['at']:5.2f}s] {l['text']}" for l in lines) + "\n"
+    bar = "=" * 40
+    texts["CAPTIONS.txt"] = "\n".join([
+        f"{ep.get('brand', 'THE HIDDEN PATTERN')} — {ep['title']}", "", bar, "INSTAGRAM / REELS", bar, texts["instagram-caption.txt"].rstrip(), "",
+        bar, "TIKTOK", bar, texts["tiktok-caption.txt"].rstrip(), "",
+        bar, "YOUTUBE TITLE", bar, texts["youtube-title.txt"].rstrip(), "",
+        bar, "YOUTUBE DESCRIPTION", bar, texts["youtube-description.txt"].rstrip(), ""]) + "\n"
     for name, body in texts.items():
         (out / name).write_text(body, encoding="utf-8"); files.append(out / name)
     (out / "episode.json").write_text(json.dumps(ep, indent=2, ensure_ascii=False) + "\n"); files.append(out / "episode.json")

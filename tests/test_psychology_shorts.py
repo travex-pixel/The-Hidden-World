@@ -141,7 +141,41 @@ class Episode02Door(unittest.TestCase):
         self.assertEqual(self.ep["palette"]["bg"].lower(), "#080808"); self.assertEqual(self.ep["palette"]["gold"].lower(), "#d8a84e"); self.assertEqual(self.ep["palette"]["white"].lower(), "#f3efe6")
 
 
+class Episode03Stone(unittest.TestCase):
+    """The Weight Isn't Yours: one figure, one stone, no walking, one lowering, one rise, under 18 s."""
+    def setUp(self):
+        self.ep = load_short("the-weight-isnt-yours"); self.a = self.ep["animation"]
+
+    def test_runtime_and_end_card(self):
+        self.assertLessEqual(self.ep["runtime"]["target_seconds"], 18.0); self.assertLess(self.ep["end_card"]["at"], self.ep["runtime"]["target_seconds"])
+
+    def test_no_walking_single_lowering_then_rise(self):
+        self.assertNotIn("walk", self.a); self.assertNotIn("orbit", self.a)
+        a = self.a
+        self.assertLess(a["lower"][0], a["lower"][1]); self.assertLessEqual(a["lower"][1], a["rise"][0]); self.assertLess(a["rise"][1], self.ep["end_card"]["at"])
+        self.assertGreaterEqual(a["lower"][1] - a["lower"][0], 2.5, "the lowering is slow"); self.assertGreaterEqual(a["rise"][1] - a["rise"][0], 2.0, "the rise is slow")
+        self.assertLessEqual(a["lowered"]["crouch"], 0.75); self.assertGreater(a["lowered"]["lean"], a["carry"]["lean"])
+        self.assertGreaterEqual(a["glow"][0], a["rise"][0], "gold light only once the figure rises")
+
+    def test_budget_and_copy(self):
+        self.assertLessEqual(len(self.ep["sfx"]), 3); self.assertLessEqual(sum(len(l["text"].split()) for l in self.ep["narration"]), 30)
+        self.assertTrue((ROOT / "renderer" / "psych" / "stories" / "stone.js").exists())
+        for k in ("instagram", "tiktok", "youtube_title", "youtube_description"):
+            self.assertTrue(self.ep["publishing"][k].strip())
+
+
 class Package(unittest.TestCase):
+    def test_combined_captions_file(self):
+        import tempfile
+        from pipeline.psych import write_package
+        ep = load_short("the-weight-isnt-yours")
+        with tempfile.TemporaryDirectory() as d:
+            write_package(ep, Path(d), [{"at": 0.7, "end": 2.5, "text": "Hello."}], 16.8)
+            txt = (Path(d) / "CAPTIONS.txt").read_text()
+            for h in ("INSTAGRAM / REELS", "TIKTOK", "YOUTUBE TITLE", "YOUTUBE DESCRIPTION"):
+                self.assertIn(h, txt)
+            self.assertIn(ep["publishing"]["youtube_title"], txt)
+
     def test_srt_format(self):
         self.assertEqual(srt_time(61.5), "00:01:01,500")
         s = make_srt([{"at": 0.9, "end": 2.8, "text": "Hello."}, {"at": 5.4, "end": 8.8, "text": "Second line."}])
