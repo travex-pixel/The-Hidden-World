@@ -181,3 +181,10 @@
 - 2026-10-13 02:08:57 tcv32-silkroad-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_32_silkroad_40s.mp4 (44.6s, 18.3 MB, sha256 7e90e0c77806)
 - 2026-10-13 02:08:57 produce 34: regenerating episode data
 - 2026-10-13 02:08:57 tcv34-durst-40: rendering (final, seed 1)
+- 2026-10-13 02:18:51 tcv34-durst-40: rendered in 594s
+- 2026-10-13 02:19:24 tcv34-durst-40: QA FAILED ['audio_music_never_masks']; frames and details in series/true-crime-cinematic/qa/true_crime_34
+- 2026-10-13 02:19:24 produce 31: regenerating episode data
+- 2026-10-13 02:19:24 tcv31-sniper-40: rendering (final, seed 1)
+- 2026-10-13 02:20:22 produce 34: regenerating episode data
+- 2026-10-13 02:20:22 tcv34-durst-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-13 02:21:07 tcv34-durst-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_34_durst_40s.mp4 (45.8s, 17.3 MB, sha256 a954788932e9)

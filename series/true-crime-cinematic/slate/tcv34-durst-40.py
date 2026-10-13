@@ -74,6 +74,7 @@ def build(h):
         sc["section"] = sections[sc["id"]]
     scenes[1]["music_gain_db"] = -4   # the stakes: the score steps back (no full drop inside the first 15 s, rule 7)
     scenes[5]["music_drop"] = True    # the HOW: the bathroom and the live mic (starts well after 15 s)
+    scenes[7]["music_drop"] = True    # the verdict: the cliff riser under "a jury convicted him" masked the voice (p5 9.9 dB)
     # no fade to black: the final frame is the lapel microphone, big and centred under the burned-in end question, so the
     # video loops cleanly back to its first frame
 
