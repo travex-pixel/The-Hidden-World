@@ -185,7 +185,7 @@ class Episode04Clip(unittest.TestCase):
             ep = {"clip": {"src": str(src.relative_to(ROOT)) if str(src).startswith(str(ROOT)) else str(src), "at": 1.0}}
             # prepare_clip resolves relative to ROOT; an absolute path also works through ROOT / abs
             res = prepare_clip(ep, Path(d) / "work", 540, 960, 15)
-            self.assertIn(res["n_frames"], (17, 18), "motion interpolation may drop the final frame"); self.assertEqual(res["fps"], 15); self.assertAlmostEqual(res["duration"], 1.2, places=1)
+            self.assertIn(res["n_frames"], (17, 18), "motion interpolation may drop the final frame"); self.assertEqual(res["fps"], 15); self.assertAlmostEqual(res["duration"], 1.2, delta=1.5 / 15)
             from PIL import Image
             im = Image.open(Path(d) / "work" / "clip" / "00001.jpg"); self.assertEqual(im.size, (540, 960))
             with self.assertRaises(ShortError):
