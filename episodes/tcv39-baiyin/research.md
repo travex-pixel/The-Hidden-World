@@ -42,7 +42,7 @@ Research ledger, verified 2026-10-13. Episode id `tcv39-baiyin` (short cut, 44�
 - Victim ages and any detail of the method: never used.
 - "Bribery" (SCMP alone): not used; the offence is "minor" (BBC, CNN).
 - Exact killing split by city (sources differ); his age (51–54 in sources); the 2004 reward (¥200,000): not used.
-- "He ran the shop for 28 years": NOT claimed; narration says only "By 2016, he was running a small grocery shop".
+- "He ran the shop for 28 years": NOT claimed; narration says only "By 2016, he ran a small grocery shop".
 
 ## Ethics decisions
 - Gao (convicted, executed) is an anonymous rim-lit silhouette, NOT A LIKENESS; the uncle is never named and is a

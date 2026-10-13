@@ -220,7 +220,7 @@
       // pin board of blank notices, the clock
       wall += `<rect x="560" y="300" width="380" height="300" fill="#b08a5a" stroke="${INK}" stroke-width="6"/>` + [[590, 330, -3], [720, 320, 4], [830, 350, -2], [610, 460, 2], [760, 450, -4]].map(([x, y, a]) => `<g transform="rotate(${a} ${x + 50} ${y + 60})"><rect x="${x}" y="${y}" width="100" height="120" fill="#f4f0e4" stroke="${INK}" stroke-width="2"/><rect x="${x + 12}" y="${y + 18}" width="76" height="8" fill="#b8b2a4"/><rect x="${x + 12}" y="${y + 36}" width="56" height="8" fill="#b8b2a4"/><circle cx="${x + 50}" cy="${y + 6}" r="6" fill="#e5372b"/></g>`).join('');
       const mn = 40 + (t * 0.5) % 1; const rad = a => a * Math.PI / 180;
-      wall += `<circle cx="1000" cy="200" r="54" fill="#f4f0e4" stroke="${INK}" stroke-width="7"/><line x1="1000" y1="200" x2="${f1(1000 + Math.sin(rad(9 * 30 + mn * 0.5)) * 26)}" y2="${f1(200 - Math.cos(rad(9 * 30 + mn * 0.5)) * 26)}" stroke="${INK}" stroke-width="7" stroke-linecap="round"/><line x1="1000" y1="200" x2="${f1(1000 + Math.sin(rad(mn * 6)) * 40)}" y2="${f1(200 - Math.cos(rad(mn * 6)) * 40)}" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
+      wall += `<circle cx="900" cy="200" r="54" fill="#f4f0e4" stroke="${INK}" stroke-width="7"/><line x1="900" y1="200" x2="${f1(900 + Math.sin(rad(9 * 30 + mn * 0.5)) * 26)}" y2="${f1(200 - Math.cos(rad(9 * 30 + mn * 0.5)) * 26)}" stroke="${INK}" stroke-width="7" stroke-linecap="round"/><line x1="900" y1="200" x2="${f1(900 + Math.sin(rad(mn * 6)) * 40)}" y2="${f1(200 - Math.cos(rad(mn * 6)) * 40)}" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
       // the counter (foreground)
       const counter = `<rect x="-300" y="1330" width="${W + 600}" height="50" fill="#c8ccd0" stroke="${INK}" stroke-width="6"/><rect x="-300" y="1380" width="${W + 600}" height="${H}" fill="#6a7278"/>` +
         [0, 1, 2, 3, 4, 5].map(i => `<rect x="${-200 + i * 260}" y="1400" width="220" height="400" fill="#5a6268" stroke="${INK}" stroke-width="3"/>`).join('') + `<rect x="-300" y="1330" width="${W + 600}" height="10" fill="#ffffff" opacity="0.6"/>`;
@@ -330,7 +330,7 @@
 
     // 5 - the irony: the small grocery shop at night, warm and ordinary; the silhouette stacks the shelves in the doorway
     by39_shop(ctx) {
-      const t = ctx.t, y16 = WT(ctx, 0, 1, 0.4), run = WT(ctx, 0, 4, 1.9), gro = WT(ctx, 0, 7, 2.5), shop = WT(ctx, 0, 8, 3.0), wife = WT(ctx, 0, 11, 3.5);
+      const t = ctx.t, y16 = WT(ctx, 0, 1, 0.4), run = WT(ctx, 0, 3, 1.9), gro = WT(ctx, 0, 6, 2.5), shop = WT(ctx, 0, 7, 3.0), wife = WT(ctx, 0, 10, 3.5);
       return E.cine.shot(ctx, {
         set: 'by39_shop', grade: 'warm',
         cam: { keys: [{ at: 0, x: -40, y: 60, z: 1.0 }, { at: 0.2, x: 30, y: 90, z: 1.14, dur: Math.max(1, ctx.T - 0.2) }], handheld: 0.4 },

@@ -37,8 +37,8 @@ def build(h):
           "tension", ["B_cold", "B_years"], sfx=[fw(0, 1, "tick", 0.3, -0.03), fw(0, 4, "thud", 0.35, -0.05), fw(0, 9, "wind", 0.3, -0.1)],
           emph=["2002,", "stopped,", "trail", "cold."], pad=0.2, tr="push"),
         # B - the irony: the small grocery shop at night, lit, ordinary; the silhouette behind the counter
-        S("s05_shop", "by39_shop", [N("By 2016, he was running a small grocery shop with his wife.")],
-          "tension-rise", ["B_shop"], sfx=[fw(0, 1, "chime", 0.3, -0.03), fw(0, 8, "door", 0.35, -0.05), fw(0, 11, "coins", 0.3, -0.02)],
+        S("s05_shop", "by39_shop", [N("By 2016, he ran a small grocery shop with his wife.")],
+          "tension-rise", ["B_shop"], sfx=[fw(0, 1, "chime", 0.3, -0.03), fw(0, 7, "door", 0.35, -0.05), fw(0, 10, "coins", 0.3, -0.02)],
           emph=["2016,", "small", "grocery", "shop"], pad=0.2, tr="push"),
         # C - THE HOW, part 1 (about 55 %): a police station counter; the uncle (silhouette) gives a cheek swab. Music drop.
         S("s06_uncle", "by39_uncle", [N("Then his uncle was arrested over a minor crime, and gave police his DNA.")],
@@ -63,7 +63,7 @@ def build(h):
         S("s10_end", "by39_end", [N("The lesson? Your DNA isn't only yours."),
                                   N("One sample from his uncle ended a 28 year hunt.", pause_before=0.3)],
           "aftermath", ["B_lesson", "B_uncle", "B_years"], sfx=[fw(0, 1, "chime", 0.35, -0.02), fw(1, 1, "ping", 0.35, -0.02), fw(1, 9, "thump", 0.4, -0.05)],
-          emph=["lesson?", "dna", "only", "yours.", "sample", "uncle", "28", "hunt."], min_d=4.8, pad=1.7, tr="zoom"),
+          emph=["lesson?", "dna", "only", "yours.", "sample", "uncle", "28", "hunt."], min_d=4.8, pad=1.55, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_map": "A", "s03_lab": "A", "s04_cold": "B", "s05_shop": "B",
                 "s06_uncle": "C", "s07_match": "C", "s08_arrest": "D", "s09_verdict": "D", "s10_end": "E"}
@@ -104,7 +104,7 @@ def build(h):
           ["scmp_yp", "polprof_2016", "wiki"]),
         C("B_cold", "The killings stopped in 2002; the breakthrough came only years later.",
           ["bbc_2019", "cnn_2019", "wiki"]),
-        C("B_shop", "Gao ran a grocery shop/store with his wife in Baiyin, where he was arrested in 2016. 'By 2016' only; how long he ran it is not claimed.",
+        C("B_shop", "Gao ran a grocery shop/store with his wife in Baiyin, where he was arrested in 2016. 'By 2016, he ran' only; how long he ran it is not claimed.",
           ["bbc_2019", "malaymail_2016", "scmp_yp"]),
         C("B_uncle", "A relative (BBC, CNN, The Week: his uncle; SCMP: a distant relative, for bribery) was arrested for a minor offence and gave a DNA sample, which led police to Gao. The offence is called only 'minor'; the uncle is never named.",
           ["bbc_2019", "cnn_2019", "week_2019", "gulf_2016"]),
