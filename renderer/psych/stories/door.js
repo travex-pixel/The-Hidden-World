@@ -17,7 +17,8 @@ window.PS.registerStory('door', function (t, ctx) {
   const h = A.hesitation;
   const leanIn = ease.smooth(seg(t, h.lean_at, h.lean_at + 1.1)) * (1 - ease.smooth(seg(t, h.lean_at + 1.7, h.lean_at + 2.8)));
   const tilt = (ease.smooth(seg(t, h.tilt_at, h.tilt_at + 1.2)) * (1 - ease.smooth(seg(t, h.tilt_at + 1.8, h.tilt_at + 2.8)))) * 5;
-  const lean = leanIn * 4 + 2.5 * inWalk;
+  const toLight = A.lean_to_light ? ease.smooth(seg(t, A.lean_to_light.at, A.lean_to_light.at + 1.6)) * A.lean_to_light.deg : 0;
+  const lean = leanIn * 4 + 2.5 * inWalk + toLight;
 
   // ---------- the touch: the near arm rises to the seam and rests there
   const ru = ease.inOut(seg(t, A.reach[0], A.reach[1]));

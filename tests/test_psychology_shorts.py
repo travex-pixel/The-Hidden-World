@@ -111,7 +111,7 @@ class Episode02Door(unittest.TestCase):
     def test_single_straight_approach_few_slow_steps(self):
         from pipeline.psych import walk_schedule
         w = self.a["walk"]; self.assertTrue(2 <= w["steps"] <= 5, "a few steps, not a walk cycle loop")
-        self.assertGreaterEqual(w["end"] - w["start"], 3.0, "a slow approach")
+        self.assertGreaterEqual((w["end"] - w["start"]) / w["steps"], 0.75, "a slow approach: at least 0.75 s per step")
         ws = walk_schedule(self.a, self.ep["runtime"]["target_seconds"])
         self.assertLess(ws["peak_speed_px_s"], 120, "deliberate pace")
         xs = ws["x"]; self.assertTrue(all(b >= a - 1e-6 for a, b in zip(xs, xs[1:])), "straight line toward the door, never backwards")

@@ -16,7 +16,7 @@
     "dim": "#292929"
   },
   "runtime": {
-    "target_seconds": 17.4,
+    "target_seconds": 16.4,
     "range": [
       15,
       18
@@ -31,15 +31,15 @@
       "text": "You keep waiting for the perfect moment."
     },
     {
-      "at": 3.6,
+      "at": 3.5,
       "text": "One more plan. One more day."
     },
     {
-      "at": 7.0,
+      "at": 6.6,
       "text": "But clarity doesn't always come before action."
     },
     {
-      "at": 11.6,
+      "at": 10.8,
       "text": "Sometimes, it begins when you move."
     }
   ],
@@ -48,22 +48,22 @@
   "captions": [
     {
       "at": 0.7,
-      "until": 3.2,
+      "until": 3.1,
       "text": "You keep waiting for the perfect moment."
     },
     {
-      "at": 3.6,
-      "until": 6.4,
+      "at": 3.5,
+      "until": 6.2,
       "text": "One more plan. One more day."
     },
     {
-      "at": 7.0,
-      "until": 10.4,
+      "at": 6.6,
+      "until": 10.0,
       "text": "Clarity doesn't always come before action."
     },
     {
-      "at": 11.6,
-      "until": 14.4,
+      "at": 10.8,
+      "until": 13.4,
       "text": "Sometimes, it begins when you move."
     }
   ],
@@ -77,25 +77,25 @@
     {
       "id": "conflict",
       "start": 3.0,
-      "end": 7.0,
-      "note": "one slow lean that is withdrawn, one slow head tilt; door stays closed; camera still"
+      "end": 6.8,
+      "note": "one slow lean that is withdrawn, one slow head tilt"
     },
     {
       "id": "decision",
-      "start": 7.0,
-      "end": 11.4,
-      "note": "one smooth straight approach (four planted steps), then one touch"
+      "start": 6.8,
+      "end": 10.5,
+      "note": "two slow planted steps in a straight line, then one touch"
     },
     {
       "id": "payoff",
-      "start": 11.4,
-      "end": 15.0,
-      "note": "door opens a sliver; warm gold light; hold"
+      "start": 10.5,
+      "end": 14.0,
+      "note": "door opens a sliver; warm light; the figure leans toward it; hold"
     },
     {
       "id": "ending",
-      "start": 15.0,
-      "end": 17.4,
+      "start": 14.0,
+      "end": 16.4,
       "note": "end card"
     }
   ],
@@ -103,21 +103,25 @@
     "floor_y": 1460,
     "figure_scale": 0.62,
     "walk": {
-      "start": 7.1,
-      "end": 10.7,
-      "steps": 4,
-      "stride": 0.45,
+      "start": 6.9,
+      "end": 9.6,
+      "steps": 2,
+      "stride": 0.5,
       "end_x": 494
     },
     "hesitation": {
-      "lean_at": 3.3,
-      "tilt_at": 5.0
+      "lean_at": 3.1,
+      "tilt_at": 4.7
     },
     "reach": [
-      10.8,
-      11.4
+      9.7,
+      10.35
     ],
     "touch_y": 1300,
+    "lean_to_light": {
+      "at": 11.2,
+      "deg": 4
+    },
     "door": {
       "x": 540,
       "y_top": 700,
@@ -125,13 +129,13 @@
       "h": 760
     },
     "open": [
-      11.7,
-      14.2
+      10.7,
+      13.2
     ],
     "gap_px": 22
   },
   "end_card": {
-    "at": 15.0,
+    "at": 14.0,
     "fade": 0.7,
     "title": "THE HIDDEN PATTERN",
     "tagline": [
@@ -149,7 +153,7 @@
         "cue": "hush"
       },
       {
-        "start": 11.6,
+        "start": 10.7,
         "cue": "aftermath"
       }
     ]
@@ -160,19 +164,19 @@
   },
   "sfx": [
     {
-      "at": 11.4,
+      "at": 10.35,
       "name": "thud",
       "gain": 0.5,
       "note": "one soft touch on the door"
     },
     {
-      "at": 11.7,
+      "at": 10.7,
       "name": "swell",
       "gain": 0.5,
       "note": "gentle air as the light appears"
     },
     {
-      "at": 12.4,
+      "at": 11.4,
       "name": "chime",
       "gain": 0.4,
       "note": "golden-light reveal"
@@ -185,7 +189,7 @@
     "thumbnail": "thumbnail.png"
   },
   "thumbnail": {
-    "time": 13.6,
+    "time": 12.8,
     "title": [
       "YOU DON'T NEED",
       "MORE TIME."

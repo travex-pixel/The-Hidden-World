@@ -37,3 +37,6 @@ Changes:
 - Door 400×760 px (≈3× the figure), centred, more negative space; figure 0.62 scale.
 - Hook line "YOU DON'T NEED MORE TIME." on frame 0 for 2.7 s (scroll stop with sound off), then nothing but the scene.
 - Runtime 17.4 s. Checks: 20/20 pass; 74 tests pass; frames inspected at 12 timestamps.
+
+## Third pass (less movement)
+Two planted steps instead of four (114 px over 2.7 s, peak 63 px/s), one touch, then a 4° lean toward the light during the hold so the payoff is felt by the body, not just the door. Runtime 16.4 s. 20/20 checks pass, 74 tests pass, frames inspected at 10 timestamps.
