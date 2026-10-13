@@ -1,0 +1,124 @@
+name: Render psychology short
+
+# Renders one psychology short (shorts/psychology/<id>/episode.json) and uploads the MP4 plus the
+# publishing package as a downloadable artifact. Isolated from the documentary and series workflows.
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Short id (folder name under shorts/psychology/)"
+        required: true
+        default: "overthinking-vs-action"
+        type: string
+      seed:
+        description: "Seed (same number = same music ornamentation)"
+        required: true
+        default: "1"
+        type: string
+      quality:
+        description: "final = 1080x1920 @30fps; preview = 540x960 @15fps (fast check)"
+        required: true
+        default: "final"
+        type: choice
+        options: [final, preview]
+  push:
+    paths:
+      - "shorts/psychology/*/episode.json"
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pick the episode (input, or the config changed by this push)
+        id: pick
+        run: |
+          EP="${{ inputs.episode }}"; Q="${{ inputs.quality }}"; SEED="${{ inputs.seed }}"
+          if [ -z "$EP" ]; then
+            CHANGED=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" 2>/dev/null | grep -E '^shorts/psychology/[^/]+/episode.json$' | head -1 || true)
+            [ -z "$CHANGED" ] && CHANGED=$(git show --name-only --pretty=format: HEAD | grep -E '^shorts/psychology/[^/]+/episode.json$' | head -1 || true)
+            EP=$(basename "$(dirname "$CHANGED")"); Q="final"; SEED="1"
+          fi
+          [ -n "$EP" ] || { echo "No episode to render"; exit 1; }
+          echo "episode=$EP" >> "$GITHUB_OUTPUT"; echo "quality=$Q" >> "$GITHUB_OUTPUT"; echo "seed=$SEED" >> "$GITHUB_OUTPUT"
+          echo "Rendering $EP ($Q, seed $SEED)"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright Chromium
+        run: npm install --no-fund --no-audit && npx playwright install --with-deps chromium
+
+      - name: Cache narrator voice and narration
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: hw-psych-cache-${{ hashFiles('shorts/psychology/**/episode.json', 'pipeline/narrate.py', 'pipeline/voices.py') }}
+          restore-keys: |
+            hw-psych-cache-
+            hw-cache-
+
+      - name: Validate short and run tests
+        run: |
+          python -c "from pipeline.psych import load_short; e = load_short('${{ steps.pick.outputs.episode }}'); print('OK', e['id'], e['title'])"
+          python -m unittest tests.test_psychology_shorts -v
+
+      - name: Render, verify and package
+        run: python -m pipeline.psych "${{ steps.pick.outputs.episode }}" --seed "${{ steps.pick.outputs.seed }}" --quality "${{ steps.pick.outputs.quality }}"
+
+      - name: Summary
+        if: always()
+        run: |
+          EP="${{ steps.pick.outputs.episode }}"
+          echo "## Psychology short — $EP" >> $GITHUB_STEP_SUMMARY
+          if [ -f "output/psychology-shorts/$EP/production-report.txt" ]; then
+            echo '```' >> $GITHUB_STEP_SUMMARY; cat "output/psychology-shorts/$EP/production-report.txt" >> $GITHUB_STEP_SUMMARY; echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "Download the artifact **psychology-short-$EP-seed${{ steps.pick.outputs.seed }}-${{ steps.pick.outputs.quality }}** at the bottom of this page (ZIP with video.mp4, thumbnail.png, captions, subtitles, report)." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Build failed before the report was written. Open the 'Render, verify and package' step log for the first line starting with ERROR." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Upload video + publishing package
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: psychology-short-${{ steps.pick.outputs.episode }}-seed${{ steps.pick.outputs.seed }}-${{ steps.pick.outputs.quality }}
+          path: |
+            output/psychology-shorts/${{ steps.pick.outputs.episode }}/video.mp4
+            output/psychology-shorts/${{ steps.pick.outputs.episode }}/thumbnail.png
+            output/psychology-shorts/${{ steps.pick.outputs.episode }}/contact_sheet.png
+            output/psychology-shorts/${{ steps.pick.outputs.episode }}/*.txt
+            output/psychology-shorts/${{ steps.pick.outputs.episode }}/subtitles.srt
+            output/psychology-shorts/${{ steps.pick.outputs.episode }}/episode.json
+            output/psychology-shorts/${{ steps.pick.outputs.episode }}/verify.json
+            output/psychology-shorts/${{ steps.pick.outputs.episode }}/qa/
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Upload debug intermediates on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-psychology-short-${{ steps.pick.outputs.episode }}
+          path: output/
+          retention-days: 7
+          if-no-files-found: ignore

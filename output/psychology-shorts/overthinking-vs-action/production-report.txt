@@ -1,0 +1,55 @@
+PSYCHOLOGY SHORTS — production report
+episode: overthinking-vs-action  (Overthinking vs Action)
+rendered: 2026-10-13 10:12:42 UTC
+seed: 1  quality: final
+
+video: /home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/video.mp4
+  1080x1920 @ 30.0 fps, 20.95 s, h264 + aac, 1.89 MB
+  mean volume -17.3 dB, peak -0.7 dB
+
+hook selected: A — YOU'RE NOT MOVING.
+narration: 34 words / 4 lines
+  [ 0.90– 2.79] You've been thinking about it for weeks.
+  [ 5.40– 8.81] Every loop feels like progress. The problem hasn't moved.
+  [11.60–13.16] Then someone just starts.
+  [15.60–20.35] Planning helps. But at some point, the only way forward is one real step.
+
+checks:
+  PASS has_video_stream
+  PASS has_audio_stream
+  PASS codec_h264
+  PASS codec_aac
+  PASS dimensions
+  PASS fps
+  PASS audio_video_duration_match
+  PASS duration_matches_timeline
+  PASS decodes_without_errors
+  PASS audio_not_silent
+  PASS no_long_silence_gaps
+  PASS no_clipping
+  PASS visual.first_frame_has_visual
+  PASS visual.no_blank_frames
+  PASS visual.animation_changes_throughout
+  PASS audio.narration_above_bed
+  PASS audio.narration_audible
+  PASS audio.ending_not_abrupt
+  PASS audio.no_clipping
+warnings:
+  runtime extended to 20.95s so the narration is not cut off
+
+files:
+  video.mp4
+  thumbnail.png
+  contact_sheet.png
+  verify.json
+  instagram-caption.txt
+  tiktok-caption.txt
+  youtube-title.txt
+  youtube-description.txt
+  hashtags.txt
+  subtitles.srt
+  transcript.txt
+  episode.json
+  qa/ (opening, beat and ending frames)
+
+result: ALL CHECKS PASSED

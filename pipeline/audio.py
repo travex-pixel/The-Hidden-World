@@ -277,6 +277,11 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
     if name == "whoosh":
         t = tt(0.5)
         return (lowpass_fast(noise(0.5), 1500) * env(len(t), 0.15, 0.1, 0.5, 0.2) * 0.3).astype(np.float32)
+    if name == "rise":   # three ascending bell notes, 0.8 s apart (staircase building)
+        out = np.zeros(int(2.8 * SR), np.float32)
+        for i, s in enumerate([0, 4, 7]):
+            add(out, tone(note(s, 523.25), 1.3, "bell", 0.14 + 0.02 * i), i * 0.8)
+        return out
     raise KeyError(name)
 
 

@@ -39,3 +39,6 @@ Everything runs on GitHub. No computer, no paid services.
 - **Verified on GitHub Actions (2026-10-10):** the `Render episode` workflow was dispatched on branch `ccr-e2ef3d09-tm9f6h` with `episode=ep001-cash-vs-profit, seed=1, quality=preview`. It succeeded in 1 min 52 s and uploaded the artifact `ep001-cash-vs-profit-seed1-preview` (4.2 MB ZIP) containing the MP4 and verification files. The `Tests` workflow also passed on the same commit.
 - **Verified locally:** the full pipeline, the 1080p final MP4 checks, and visual inspection of frames.
 - **Not verified:** downloading the artifact ZIP on an actual Android phone, and the exact placement of the "Run workflow" button in the GitHub mobile app (use the mobile website if the app hides workflow inputs).
+
+## Psychology shorts (separate workflow)
+Same steps with the **Render psychology short** workflow: inputs `episode` (a folder under `shorts/psychology/`, e.g. `overthinking-vs-action`), `seed`, `quality`. The artifact is named `psychology-short-<episode>-seed<seed>-<quality>` and contains `video.mp4`, `thumbnail.png`, the platform caption text files, `subtitles.srt` and `production-report.txt`. Committing a new or edited `shorts/psychology/<id>/episode.json` renders it automatically. Details: [shorts/psychology/README.md](../shorts/psychology/README.md).

@@ -1,0 +1,318 @@
+{
+  "id": "overthinking-vs-action",
+  "mode": "psychology-shorts",
+  "title": "Overthinking vs Action",
+  "topic": "Overthinking vs action",
+  "core_message": "Thinking can feel like progress while the problem stays exactly where it was. Planning is useful; endless circling without a useful action is the trap.",
+  "central_insight": "Movement is not progress until it changes the problem.",
+  "metaphor": "loop-and-staircase",
+  "visual_metaphor": "A featureless figure circles a glowing gold sphere, wearing a ring into the floor without moving it. A second figure walks in, lifts the sphere and builds a staircase under it one deliberate step at a time. The first figure finally walks straight across its own circle and takes the first step.",
+  "hook_variants": [
+    {
+      "id": "A",
+      "text": "YOU'RE NOT MOVING.",
+      "concept": "A figure walks in a circle around the problem while a trail reveals it has gone nowhere.",
+      "assessment": "Strongest. Understood in under a second with sound off; the trail is an unresolved puzzle (why is it circling?) and the payoff is the straight line that breaks it.",
+      "selected": true
+    },
+    {
+      "id": "B",
+      "text": "THINKING ISN'T DOING.",
+      "concept": "A figure studies a finished staircase while another figure starts building one.",
+      "assessment": "Clear comparison but the staircase already exists in frame, so the reveal has nowhere to go; less novel first frame.",
+      "selected": false
+    },
+    {
+      "id": "C",
+      "text": "ONE STEP CHANGES EVERYTHING.",
+      "concept": "A tiny action snaps a repeating visual cycle.",
+      "assessment": "This is the payoff, not the hook; opening on it spends the reversal before the problem is felt. Kept for a future episode that starts at the turning point.",
+      "selected": false
+    }
+  ],
+  "hook": {
+    "lines": [
+      "YOU'RE NOT",
+      "MOVING."
+    ],
+    "until": 4.4
+  },
+  "runtime": {
+    "target_seconds": 20.8,
+    "range": [
+      18,
+      22
+    ]
+  },
+  "narration_style": "calm, conversational, unhurried; one idea per line; no motivational clichés",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.0,
+  "narration": [
+    {
+      "at": 0.9,
+      "text": "You've been thinking about it for weeks."
+    },
+    {
+      "at": 5.4,
+      "text": "Every loop feels like progress. The problem hasn't moved."
+    },
+    {
+      "at": 11.6,
+      "text": "Then someone just starts."
+    },
+    {
+      "at": 15.6,
+      "text": "Planning helps. But at some point, the only way forward is one real step."
+    }
+  ],
+  "caption_density": "sparse: one short phrase per beat, never a full sentence of narration",
+  "captions": [
+    {
+      "at": 1.0,
+      "until": 4.3,
+      "text": "Thinking about it for weeks."
+    },
+    {
+      "at": 5.4,
+      "until": 8.2,
+      "text": "Every loop feels like progress."
+    },
+    {
+      "at": 8.4,
+      "until": 10.9,
+      "text": "The problem hasn't moved."
+    },
+    {
+      "at": 11.6,
+      "until": 14.3,
+      "text": "Then someone just starts."
+    },
+    {
+      "at": 15.6,
+      "until": 17.6,
+      "text": "Planning helps."
+    },
+    {
+      "at": 18.3,
+      "until": 21.2,
+      "text": "One real step."
+    }
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "start": 0.0,
+      "end": 4.6,
+      "note": "scroll stopper: figure already mid-circle, trail forming, hook text on screen"
+    },
+    {
+      "id": "problem",
+      "start": 1.0,
+      "end": 4.6,
+      "note": "first study pause with thought dots and a measuring ring"
+    },
+    {
+      "id": "escalation",
+      "start": 4.6,
+      "end": 11.0,
+      "note": "faster laps, deeper trail, more thought dots, second study pause"
+    },
+    {
+      "id": "reversal",
+      "start": 11.0,
+      "end": 17.0,
+      "note": "second figure enters, lifts the sphere, builds three steps, places the sphere on top"
+    },
+    {
+      "id": "payoff",
+      "start": 17.0,
+      "end": 20.8,
+      "note": "first figure crosses its own circle and takes the first step; the step lights up"
+    }
+  ],
+  "animation": {
+    "orbit": {
+      "cx": 470,
+      "cy": 1150,
+      "rx": 235,
+      "ry": 62
+    },
+    "sphere_radius": 66,
+    "floor_y": 1180,
+    "study_pauses": [
+      [
+        3.0,
+        4.4
+      ],
+      [
+        8.7,
+        9.7
+      ]
+    ],
+    "stop_time": 12.6,
+    "b_enter": 11.0,
+    "b_arrive": 12.6,
+    "lift": [
+      12.7,
+      13.4
+    ],
+    "steps": [
+      13.7,
+      14.5,
+      15.3
+    ],
+    "place": [
+      15.9,
+      16.5
+    ],
+    "a_walk": [
+      16.9,
+      18.4
+    ],
+    "a_step": [
+      18.4,
+      19.0
+    ]
+  },
+  "music": {
+    "bpm": 76,
+    "key_offset": -5,
+    "level_db": -13,
+    "cues": [
+      {
+        "start": 0.0,
+        "cue": "hush"
+      },
+      {
+        "start": 4.6,
+        "cue": "unease"
+      },
+      {
+        "start": 11.0,
+        "cue": "intimate"
+      },
+      {
+        "start": 16.9,
+        "cue": "power"
+      }
+    ]
+  },
+  "sfx": [
+    {
+      "at": 3.0,
+      "name": "tick",
+      "gain": 0.6,
+      "repeat": 3,
+      "every": 0.5,
+      "note": "hesitation ticks during the first study pause"
+    },
+    {
+      "at": 8.7,
+      "name": "tick",
+      "gain": 0.7,
+      "repeat": 2,
+      "every": 0.5
+    },
+    {
+      "at": 12.9,
+      "name": "whoosh",
+      "gain": 0.45,
+      "note": "sphere lifted"
+    },
+    {
+      "at": 13.7,
+      "name": "thud",
+      "gain": 0.55,
+      "note": "step 1 rises"
+    },
+    {
+      "at": 14.5,
+      "name": "thud",
+      "gain": 0.6,
+      "note": "step 2 rises"
+    },
+    {
+      "at": 15.3,
+      "name": "thud",
+      "gain": 0.65,
+      "note": "step 3 rises"
+    },
+    {
+      "at": 13.7,
+      "name": "rise",
+      "gain": 0.8,
+      "note": "ascending three-note figure synced to the steps"
+    },
+    {
+      "at": 16.4,
+      "name": "chime",
+      "gain": 0.7,
+      "note": "sphere set down on top"
+    },
+    {
+      "at": 18.5,
+      "name": "thud",
+      "gain": 1.0,
+      "note": "the cycle breaks: first real step"
+    },
+    {
+      "at": 18.7,
+      "name": "chime",
+      "gain": 0.8
+    }
+  ],
+  "footsteps": {
+    "escalation_window": [
+      4.6,
+      11.0
+    ],
+    "gain": 0.28
+  },
+  "loop_design": "hold-ending: the final composition (figure on a step, sphere above, the circle gone) deliberately does not return to the opening, because looping back to the circling would undo the payoff.",
+  "output": {
+    "dir": "output/psychology-shorts/overthinking-vs-action",
+    "video": "video.mp4",
+    "thumbnail": "thumbnail.png"
+  },
+  "thumbnail": {
+    "time": 7.8,
+    "title": [
+      "YOU'RE NOT",
+      "MOVING."
+    ],
+    "kicker": "overthinking vs action"
+  },
+  "publishing": {
+    "instagram": "You can think about a problem for weeks and still leave it exactly where it was.\n\nThat loop feels like progress. It isn't, until something changes the problem itself.\n\nPlanning is useful. At some point, one small real step beats another lap.\n\nWhat is the step you keep circling?",
+    "tiktok": "Weeks of thinking. The problem never moved.\n\nPlanning helps, but a loop is not progress. Build one step instead.\n\nWhich step are you circling right now?",
+    "youtube_title": "Why Thinking About It Feels Like Progress (It Isn't)",
+    "youtube_description": "A short animated look at overthinking versus action. Circling a problem can feel productive while the problem itself never moves. Planning is useful. The way out is one small, real step.\n\nOriginal animation and sound from THE HIDDEN WORLD psychology shorts.",
+    "hashtags": [
+      "#overthinking",
+      "#psychology",
+      "#selfimprovement",
+      "#mindset",
+      "#productivity",
+      "#animation"
+    ]
+  },
+  "publication": {
+    "platforms": [
+      "instagram-reels",
+      "tiktok",
+      "youtube-shorts"
+    ],
+    "date": null,
+    "notes": "Fill in after posting."
+  },
+  "performance": {
+    "views": null,
+    "average_watch_seconds": null,
+    "completion_rate": null,
+    "shares": null,
+    "saves": null,
+    "comments": null,
+    "follows_gained": null,
+    "notes": "Real audience numbers only. Nothing here is predicted or estimated."
+  }
+}

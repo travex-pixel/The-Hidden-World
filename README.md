@@ -16,6 +16,9 @@ Five verified episodes, 27–32 s each. Story bible, scripts, QA and render inst
 ### Dark Psychology series (animated thrillers)
 **Episode 004 — *The Compliment With a Deadline*** → render it with the workflow (artifact `ep004-compliment-deadline-seed1-final`). Recurring cast in [`characters/`](characters/), rig in [`renderer/cast.js`](renderer/cast.js), design system in [docs/THRILLER_STYLE.md](docs/THRILLER_STYLE.md).
 
+### Psychology shorts (minimalist animation, 18–22 s)
+**Overthinking vs Action** → render it with **Actions → Render psychology short** (artifact `psychology-short-overthinking-vs-action-seed1-final`); publishing package in [`output/psychology-shorts/overthinking-vs-action/`](output/psychology-shorts/overthinking-vs-action/). Mode guide: [shorts/psychology/README.md](shorts/psychology/README.md). Isolated engine: `renderer/psych/`, `pipeline/psych.py`.
+
 ## How it works
 
 ```
@@ -68,6 +71,7 @@ Identical inputs + the same seed reproduce the same story decisions, music ornam
 - `templates/README.md` — the three story structures
 - `docs/` — Android instructions, research template, credits
 - `releases/` — committed final MP4s
+- `shorts/psychology/` — psychology shorts episode configs (mode `psychology-shorts`); outputs in `output/psychology-shorts/`
 
 ## Principles
 Mystery first, facts always. No fabricated quotes, figures or events. Fiction is labelled. Metaphors support the explanation; they never replace it. No paid services anywhere in the pipeline.
