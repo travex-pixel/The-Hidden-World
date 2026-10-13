@@ -171,3 +171,5 @@
 - 2026-10-12 21:20:54 tcv30-boat-40: rendering (final, seed 1)
 - 2026-10-12 21:27:47 tcv30-boat-40: rendered in 414s
 - 2026-10-12 21:28:17 tcv30-boat-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_30_boat_40s.mp4 (45.8s, 19.6 MB, sha256 5e40956b1874)
+- 2026-10-13 01:46:46 produce 35: regenerating episode data
+- 2026-10-13 01:46:46 tcv35-escobar-40: rendering (final, seed 1)

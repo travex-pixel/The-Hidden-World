@@ -1,0 +1,995 @@
+{
+ "id": "tcv31-sniper-40",
+ "number": 31,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Rest Stop Ended the DC Sniper Attacks",
+ "central_question": "How did the DC sniper manhunt end at a highway rest stop, after weeks of hunting a white truck?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "DC": "D C",
+   "Malvo": "Mal-vo",
+   "Muhammad": "Mohammad",
+   "Myersville": "My-ers-ville",
+   "FBI": "F B I",
+   "1990": "nineteen ninety",
+   "2009": "two thousand nine",
+   "911": "nine one one"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "31",
+  "label": "DC SNIPER ATTACKS · 2002-2009"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "ds31_trucker",
+  "ds31_officer",
+  "ds31_muhammad",
+  "ds31_malvo",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "official",
+  "judge"
+ ],
+ "content_notes": "Closed case: John Allen Muhammad was convicted in Virginia in 2003 and executed on 10 November 2009; Lee Boyd Malvo (17 at the time) was given life sentences, a Maryland resentencing ordered in 2022 has stalled and the Maryland Supreme Court refused his appeal in August 2026 (card: 'resentencing fights continue'). No shooting, weapon, victim, injury or crime scene is depicted: the toll is a typed card at a briefing; the Alabama beat is a storefront exterior at dusk with an evidence marker; the trunk is said only to have been 'modified'. Victims are not named; the memorial card says only 'the ten who died'. Muhammad and Malvo appear ONLY as anonymous rim-lit silhouettes (not likenesses, never photo recreations) and as dark shapes inside the car; none of their words, calls, notes or beliefs are quoted. The truck driver is a generic, unnamed figure; the officers are generic, with no insignia and no weapons. The sedan is a generic dark blue 1990s car with a BLANK plate; the rest stop, road, store and offices are generic drawings with no real name, number, sign or logo. Every card is our own typed graphic; no real police, court or FBI material is imitated. No dialogue is invented. Legal status verified 2026-10-13.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ds31_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.15,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "D_hook",
+    "D_rest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The DC snipers shot people at random for three weeks."
+    },
+    {
+     "who": "narrator",
+     "text": "Then a rest stop ended it.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "DC",
+    "snipers",
+    "random",
+    "three",
+    "weeks.",
+    "rest",
+    "stop",
+    "ended"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_toll",
+   "scene": "ds31_toll",
+   "min_duration": 3.0,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "D_toll"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Ten were killed and three wounded.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ten",
+    "killed",
+    "three",
+    "wounded."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s03_truck",
+   "scene": "ds31_truck",
+   "min_duration": 2.8,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "brake",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "D_truck"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "For weeks, the police hunted a white box truck."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "white",
+    "box",
+    "truck."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_call",
+   "scene": "ds31_call",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "D_call"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then a tip line caller claiming to be the sniper"
+    },
+    {
+     "who": "narrator",
+     "text": "pointed to a liquor store shooting in Alabama.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "caller",
+    "sniper",
+    "liquor",
+    "store",
+    "alabama."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_print",
+   "scene": "ds31_print",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "ping",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "D_print"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A fingerprint there matched a seventeen-year-old: Lee Boyd Malvo."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fingerprint",
+    "matched",
+    "lee",
+    "boyd",
+    "malvo."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_car",
+   "scene": "ds31_car",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "D_car",
+    "D_plate"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Malvo led to John Allen Muhammad, and a blue 1990 Chevrolet Caprice."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "muhammad,",
+    "blue",
+    "chevrolet",
+    "caprice."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_rest",
+   "scene": "ds31_rest",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.3
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      8
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      14
+     ],
+     "name": "hit",
+     "gain": 0.55
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "D_plate",
+    "D_rest",
+    "D_trunk"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police broadcast the plate. Hours later a trucker spotted the car at the rest stop."
+    },
+    {
+     "who": "narrator",
+     "text": "Both men were asleep inside.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "broadcast",
+    "plate.",
+    "trucker",
+    "spotted",
+    "rest",
+    "stop.",
+    "asleep"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "ds31_verdict",
+   "min_duration": 3.2,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "D_muhammad",
+    "D_malvo"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Muhammad was executed in 2009."
+    },
+    {
+     "who": "narrator",
+     "text": "Malvo was given life.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "executed",
+    "2009.",
+    "life."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "ds31_end",
+   "min_duration": 4.0,
+   "pad_after": 1.5,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "D_rest",
+    "D_memorial"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A rest stop ended the DC sniper attacks."
+    },
+    {
+     "who": "narrator",
+     "text": "We remember the ten who died.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "rest",
+    "stop",
+    "ended",
+    "remember",
+    "ten"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "D_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Over about three weeks in October 2002 (2-22 October) two snipers shot people at random in the Washington, DC area; the FBI calls it '23 days of random attacks'. The attacks ended with the arrests at the rest stop on 24 October 2002.",
+   "sources": [
+    "fbi_pt2",
+    "britannica",
+    "cbc",
+    "wtop_2026"
+   ]
+  },
+  {
+   "id": "D_toll",
+   "type": "established",
+   "nature": "fact",
+   "text": "In the October 2002 attacks ten people were killed and three wounded, in Maryland, Virginia and the District of Columbia (Travel Channel; CBC; Britannica: 'killed 10 people and injured 3'). Victims are not named or shown.",
+   "sources": [
+    "travel",
+    "cbc",
+    "britannica",
+    "nbcw_remember"
+   ]
+  },
+  {
+   "id": "D_truck",
+   "type": "established",
+   "nature": "fact",
+   "text": "The early lookout was for a white box truck (DC police chief Charles Ramsey, CNN) with one or two suspects; reports also described a white van. Police had conflicting sightings and even stopped the Caprice on 3 October and let it go (card: 'LOOKOUT: A WHITE BOX TRUCK').",
+   "sources": [
+    "cnn_1027",
+    "britannica",
+    "nbcw_remember"
+   ]
+  },
+  {
+   "id": "D_call",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 17 October 2002 a caller to the task-force tip line, claiming to be the sniper, told investigators to look into a liquor-store shooting in Montgomery, Alabama (21 September 2002, one woman killed and one wounded, first treated as a robbery). The FBI: the break came 'ironically, from the snipers themselves'. No words of the call are quoted.",
+   "sources": [
+    "fbi_pt2",
+    "fox_call",
+    "ids_ap",
+    "mg_ap"
+   ]
+  },
+  {
+   "id": "D_print",
+   "type": "established",
+   "nature": "fact",
+   "text": "A fingerprint on a magazine dropped at the Montgomery scene was sent to the FBI Laboratory and matched in the FBI's fingerprint database to Lee Boyd Malvo, then 17, whose prints were on file from an immigration arrest in Washington State (FBI; Nextgov; Fox/AP). Sources differ on whether the item was a gun magazine or catalogue; narration says 'a fingerprint from that scene'.",
+   "sources": [
+    "fbi_pt2",
+    "nextgov",
+    "fox_cracked",
+    "ids_ap"
+   ]
+  },
+  {
+   "id": "D_car",
+   "type": "established",
+   "nature": "fact",
+   "text": "Malvo's record led investigators to John Allen Muhammad (an earlier tip had named him); on 22 October 2002 an FBI records search found a blue 1990 Chevrolet Caprice registered to Muhammad in New Jersey.",
+   "sources": [
+    "fbi_pt2",
+    "cnn_killing",
+    "nova_timeline"
+   ]
+  },
+  {
+   "id": "D_plate",
+   "type": "established",
+   "nature": "fact",
+   "text": "A lookout for the blue (or burgundy) 1990 Chevrolet Caprice and its New Jersey plate went out on the night of Wednesday 23 October 2002 and was reported on radio and television; the plate itself is never shown on screen.",
+   "sources": [
+    "cnn_killing",
+    "nova_timeline",
+    "wtop_2026",
+    "cbs_trucker"
+   ]
+  },
+  {
+   "id": "D_rest",
+   "type": "established",
+   "nature": "fact",
+   "text": "At about 1 a.m. on 24 October 2002 a truck driver (Ron Lantz; not named on screen) saw the Caprice at a rest stop off Interstate 70 near Myersville, Maryland, and called 911; trucks were pulled across the exit; police found two men asleep in the car and arrested Muhammad and Malvo without incident (custody at about 3:19-3:30 a.m.). An early CNN transcript credited 'a motorist' and a rest-stop attendant; narration says 'a trucker'.",
+   "sources": [
+    "cnn_bn04",
+    "wtop_2026",
+    "nova_timeline",
+    "cbs_trucker",
+    "fox_trucker",
+    "trucknews",
+    "officer_com",
+    "nbc_court"
+   ]
+  },
+  {
+   "id": "D_trunk",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: a hole had been cut in the car's body above the rear plate so a rifle could be fired from inside the trunk (WTOP; NBC Washington; CNN). Said only as 'THE TRUNK HAD BEEN MODIFIED'; no weapon is shown.",
+   "sources": [
+    "wtop_2026",
+    "nbcw_remember",
+    "cnn_killing"
+   ]
+  },
+  {
+   "id": "D_muhammad",
+   "type": "established",
+   "nature": "fact",
+   "text": "John Allen Muhammad was convicted in Virginia in November 2003 of the murder of Dean Harold Meyers, sentenced to death in March 2004 and executed by lethal injection at Greensville Correctional Center on 10 November 2009.",
+   "sources": [
+    "abc_exec",
+    "nbc_exec",
+    "cbs_exec",
+    "abc7_exec"
+   ]
+  },
+  {
+   "id": "D_malvo",
+   "type": "established",
+   "nature": "fact",
+   "text": "Lee Boyd Malvo, 17 at the time, was sentenced to life without parole in Virginia (March 2004) and Maryland (2006). After Supreme Court rulings on juvenile life sentences, a federal judge ordered a Virginia resentencing in 2017 and Maryland's highest court ordered a Maryland resentencing in August 2022; that resentencing has stalled because Virginia will not transfer him, and on 25 August 2026 the Maryland Supreme Court refused to hear his appeal. Status as of 2026-10-13: serving life in Virginia; card: 'RESENTENCING FIGHTS CONTINUE'.",
+   "sources": [
+    "cnn_malvo",
+    "nbc_malvo_2017",
+    "npr_2022",
+    "wusa9_2022",
+    "mdmatters_2026",
+    "dailyrecord_2026"
+   ]
+  },
+  {
+   "id": "D_memorial",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY (memorial): ten people died in the October 2002 attacks in Maryland, Virginia and Washington, DC. They are not named or depicted.",
+   "sources": [
+    "travel",
+    "cbc",
+    "britannica"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fbi_pt2",
+   "publisher": "FBI (news story)",
+   "title": "The Beltway Snipers, Pt. 2",
+   "url": "https://www.fbi.gov/news/stories/2007/october/snipers_102407",
+   "date": "2007-10-24",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "britannica",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "Beltway sniper attacks",
+   "url": "https://britannica.com/print/article/1987489",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "travel",
+   "publisher": "Travel Channel (Hidden City crime file)",
+   "title": "Hidden City Crime File: Washington, DC",
+   "url": "https://www.travelchannel.com/shows/hidden-city/articles/hidden-city-crime-file-washington-dc",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbc",
+   "publisher": "CBC News (In Depth: Sniper attacks, archived)",
+   "title": "INDEPTH: SNIPER ATTACKS",
+   "url": "https://bac-lac.wayback.archive-it.org/web/20071123221247/http://www.cbc.ca/news/background/sniper",
+   "date": "2004",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbcw_remember",
+   "publisher": "NBC Washington",
+   "title": "Beltway Snipers: Law enforcement officers remember terror, pressure to find them",
+   "url": "https://www.nbcwashington.com/news/local/beltway-snipers-law-enforcement-officers-remember-terror-pressure-to-find-them/3182837/",
+   "date": "2022-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wtop_2026",
+   "publisher": "WTOP",
+   "title": "'Without Warning': Exhibit tells story of victims, takedown in 2002 DC sniper case",
+   "url": "https://wtop.com/local/2026/05/without-warning-exhibit-tells-story-of-victims-takedown-in-2002-dc-sniper-case/",
+   "date": "2026-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_1027",
+   "publisher": "CNN (transcript)",
+   "title": "Sniper investigation: Chief Ramsey on the white box truck lookout and the 3 October stop of the Caprice",
+   "url": "https://www.cnn.com/TRANSCRIPTS/0210/27/sm.04.html",
+   "date": "2002-10-27",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "fox_call",
+   "publisher": "Fox News (AP)",
+   "title": "Phone call to tip line was key to arrests",
+   "url": "https://www.foxnews.com/story/phone-call-to-tip-line-was-key-to-arrests",
+   "date": "2002-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "ids_ap",
+   "publisher": "Indiana Daily Student (AP)",
+   "title": "Suspects arrested after tip",
+   "url": "https://www.idsnews.com/article/2002/10/suspects-arrested-after-tip",
+   "date": "2002-10-25",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "fox_cracked",
+   "publisher": "Fox News",
+   "title": "How the cops cracked the case",
+   "url": "https://www.foxnews.com/story/how-the-cops-cracked-the-case",
+   "date": "2002-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nextgov",
+   "publisher": "Nextgov (Government Executive)",
+   "title": "Sniper leaves a mark",
+   "url": "https://www.nextgov.com/digital-government/2002/10/sniper-leaves-a-mark/205245/",
+   "date": "2002-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "mg_ap",
+   "publisher": "Mail & Guardian (agencies)",
+   "title": "Sniper team pounces after boastful call",
+   "url": "https://mg.co.za/article/2002-01-01-sniper-team-pounces-after-boastful-call/",
+   "date": "2002-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_bn02",
+   "publisher": "CNN (transcript)",
+   "title": "Breaking News: sniper suspects arrested at a Maryland rest stop",
+   "url": "https://www.cnn.com/TRANSCRIPTS/0210/24/bn.02.html",
+   "date": "2002-10-24",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_bn04",
+   "publisher": "CNN (transcript)",
+   "title": "Breaking News: FBI's Gary Bald on the 911 call and the arrests",
+   "url": "https://us.cnn.com/TRANSCRIPTS/0210/24/bn.04.html",
+   "date": "2002-10-24",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_killing",
+   "publisher": "CNN",
+   "title": "Sniper suspects' car: the lookout for the Caprice and the modified trunk",
+   "url": "https://edition.cnn.com/2002/US/South/10/24/sniper.killing.machine/index.html",
+   "date": "2002-10-24",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nova_timeline",
+   "publisher": "Northern Virginia Magazine",
+   "title": "A collective timeline of the DC sniper case from 2002 to 2019",
+   "url": "https://northernvirginiamag.com/culture/culture-features/2019/11/07/a-collective-timeline-of-the-dc-sniper-case-from-2002-to-2019/",
+   "date": "2019-11-07",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbc_court",
+   "publisher": "NBC News (AP)",
+   "title": "Court hears of sniper suspects' arrest",
+   "url": "https://www.nbcnews.com/news/amp/wbna3339881",
+   "date": "2003-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "officer_com",
+   "publisher": "Officer.com",
+   "title": "Officers Recall End to D.C. Snipers' Terror Grip",
+   "url": "https://www.officer.com/command-hq/supplies-services/public-awareness/news/10819850/officers-recall-end-to-dc-snipers-terror-grip",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_trucker",
+   "publisher": "CBS News",
+   "title": "Trucker: I'm No Hero",
+   "url": "https://cbsnews.com/news/trucker-im-no-hero",
+   "date": "2002-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "fox_trucker",
+   "publisher": "Fox News (AP)",
+   "title": "Sniper-spotting trucker a humble hero",
+   "url": "https://www.foxnews.com/story/sniper-spotting-trucker-a-humble-hero",
+   "date": "2002-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "trucknews",
+   "publisher": "Truck News",
+   "title": "Trucker instrumental in stopping D.C. sniper",
+   "url": "https://www.trucknews.com/transportation/trucker-instrumental-in-stopping-d-c-sniper/1000005972",
+   "date": "2002-10-25",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "abc_exec",
+   "publisher": "ABC News",
+   "title": "Executed: D.C. Sniper John Allen Muhammad Put to Death",
+   "url": "https://abcnews.go.com/Politics/washington-dc-sniper-scheduled-execution-tonight/story?id=9048956",
+   "date": "2009-11-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbc_exec",
+   "publisher": "NBC News (AP)",
+   "title": "D.C.-area sniper 'died very peacefully'",
+   "url": "https://www.nbcnews.com/news/amp/wbna33827106",
+   "date": "2009-11-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_exec",
+   "publisher": "CBS News",
+   "title": "DC Sniper John Allen Muhammad 'Died Better Than Victims'",
+   "url": "https://www.cbsnews.com/news/dc-sniper-john-allen-muhammad-died-better-than-victims",
+   "date": "2009-11",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "abc7_exec",
+   "publisher": "ABC7 Chicago (AP)",
+   "title": "DC sniper John Allen Muhammad executed",
+   "url": "https://abc7chicago.com/archive/7109705/",
+   "date": "2009-11-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_malvo",
+   "publisher": "CNN (Lee Boyd Malvo Fast Facts, via KTVQ)",
+   "title": "Lee Boyd Malvo Fast Facts",
+   "url": "https://ktvq.com/cnn-national/2019/07/03/lee-boyd-malvo-fast-facts",
+   "date": "2019-07-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbc_malvo_2017",
+   "publisher": "NBC News",
+   "title": "Judge Orders D.C. Sniper Lee Boyd Malvo Resentenced",
+   "url": "https://www.nbcnews.com/news/us-news/judge-orders-d-c-sniper-lee-boyd-malvo-resentenced-n765331",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "npr_2022",
+   "publisher": "NPR (via KPCW)",
+   "title": "D.C. sniper Lee Boyd Malvo must be resentenced, Maryland's highest court says",
+   "url": "https://www.kpcw.org/npr-news/2022-08-27/d-c-sniper-lee-boyd-malvo-must-be-resentenced-marylands-highest-court-says",
+   "date": "2022-08-27",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wusa9_2022",
+   "publisher": "WUSA9",
+   "title": "Maryland high court: D.C. sniper Malvo must be resentenced",
+   "url": "https://wusa9.com/article/news/local/maryland/maryland-high-court-resentence-dc-sniper-juvenile-offender/65-f5301d35-20bf-4039-aa98-6fcb5e818682",
+   "date": "2022-08",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "mdmatters_2026",
+   "publisher": "Maryland Matters",
+   "title": "Maryland Supreme Court refuses to hear appeal of D.C. sniper Lee Boyd Malvo",
+   "url": "https://marylandmatters.org/2026/08/25/maryland-supreme-court-refuses-to-hear-appeal-of-d-c-sniper-lee-boyd-malvo/",
+   "date": "2026-08-25",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "dailyrecord_2026",
+   "publisher": "The Daily Record",
+   "title": "MD Supreme Court refuses to hear appeal of DC sniper Lee Boyd Malvo",
+   "url": "https://thedailyrecord.com/2026/08/26/maryland-supreme-court-refuses-appeal-dc-sniper-lee-boyd-malvo/",
+   "date": "2026-08-26",
+   "accessed": "search-result extract only, 2026-10-13"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A REST STOP"
+   },
+   {
+    "text": "ENDED THE DC SNIPER ATTACKS",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WOULD YOU HAVE NOTICED THE CAR?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-13"
+}

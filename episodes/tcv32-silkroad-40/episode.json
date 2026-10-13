@@ -1,0 +1,1107 @@
+{
+ "id": "tcv32-silkroad-40",
+ "number": 32,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Fake Fight in a Library Caught the Silk Road Founder",
+ "central_question": "How did a staged argument in a public library bring down a dark-web empire built on anonymity?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "Ulbricht": "Ulbrikt",
+   "IRS": "I R S",
+   "FBI": "F B I",
+   "Tor": "Tor",
+   "Bitcoin": "Bit-coin",
+   "altoid": "Al-toyd",
+   "Gmail": "G mail",
+   "2011": "twenty eleven",
+   "2025": "twenty twenty-five",
+   "200": "two hundred",
+   "admin": "ad-min"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "32",
+  "label": "SILK ROAD · 2011-2025"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    1
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "sr32_ulbricht",
+  "sr32_irs",
+  "sr32_agent",
+  "sr32_patron",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "judge"
+ ],
+ "content_notes": "Closed: Ross Ulbricht was convicted on all seven counts in February 2015, sentenced to life without parole in May 2015, and pardoned by President Trump on 21 January 2025 (stated as fact; no opinion; the end question asks the viewer). The murder-for-hire allegations were never tried and are not mentioned. No drugs, listings, money, weapons or victims are drawn anywhere: the market is a dark room with a glowing screen and a typed card. Ulbricht is only an anonymous rim-lit silhouette seated at a laptop, in profile or from behind, and in court (not a likeness, never a photo recreation), never posed heroically; none of his words are quoted. The IRS investigator and the agents are generic, unnamed figures (not likenesses), with no badge or weapon. The library, office, street and courtroom are generic drawings; the laptop carries no logo; the forum page and the admin panel are illegible placeholder blocks; the Gmail address is never shown or spoken in full. Every card is our own typed graphic; no real police, court, FBI or IRS material is imitated. No dialogue is invented. Legal status verified 2026-10-13.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "sr32_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.1,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "S_market",
+    "S_fight"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Silk Road: a dark-web drug empire built on anonymity."
+    },
+    {
+     "who": "narrator",
+     "text": "A fake fight in a public library caught its founder.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "silk",
+    "road:",
+    "dark-web",
+    "anonymity.",
+    "fake",
+    "fight",
+    "library",
+    "founder."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_market",
+   "scene": "sr32_market",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "S_market",
+    "S_sales"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It ran on Tor and Bitcoin: over 200 million dollars in sales.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tor",
+    "bitcoin:",
+    "200",
+    "million",
+    "dollars"
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s03_google",
+   "scene": "sr32_google",
+   "min_duration": 2.8,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "beep",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "S_dpr",
+    "S_google"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "An IRS agent started with a Google search."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "irs",
+    "google",
+    "search."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_post",
+   "scene": "sr32_post",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "ping",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "S_google"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A 2011 forum post by altoid advertised Silk Road."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "2011",
+    "forum",
+    "post",
+    "altoid",
+    "silk",
+    "road."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_email",
+   "scene": "sr32_email",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "ping",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "S_email",
+    "S_ulbricht"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Later, altoid gave his own Gmail address: Ross Ulbricht.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "altoid",
+    "own",
+    "gmail",
+    "address:",
+    "ross",
+    "ulbricht."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_encrypt",
+   "scene": "sr32_encrypt",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "step",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "S_encrypt",
+    "S_fight"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Close the lid and it would encrypt. Agents needed it open."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "close",
+    "encrypt.",
+    "needed",
+    "open."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_fight",
+   "scene": "sr32_fight",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      1
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.55
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      5
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "S_fight",
+    "S_admin"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So two agents staged a loud fight behind him.",
+     "pause_before": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "He looked up. An agent grabbed the laptop,",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "still logged in as the admin.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "staged",
+    "loud",
+    "fight",
+    "looked",
+    "up.",
+    "grabbed",
+    "laptop,",
+    "logged",
+    "admin."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "sr32_verdict",
+   "min_duration": 3.4,
+   "pad_after": 0.2,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "gate",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "S_verdict",
+    "S_sentence",
+    "S_pardon"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was convicted on all seven counts: life without parole."
+    },
+    {
+     "who": "narrator",
+     "text": "In 2025 he was pardoned, and released.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convicted",
+    "seven",
+    "counts:",
+    "life",
+    "parole.",
+    "2025",
+    "pardoned,",
+    "released."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "sr32_end",
+   "min_duration": 4.0,
+   "pad_after": 1.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "S_fight",
+    "S_email",
+    "S_market"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Built on anonymity. Brought down by a fake fight."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "anonymity.",
+    "brought",
+    "down",
+    "fake",
+    "fight."
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "S_market",
+   "type": "established",
+   "nature": "fact",
+   "text": "Silk Road was an online black market that ran as a hidden service on the Tor network from early 2011 (the complaint: activity from about January/February 2011) until the FBI seized the site and arrested its operator on 1-2 October 2013; buyers paid in bitcoin. Narration: 'a dark-web drug empire built on anonymity' / 'It ran on Tor and Bitcoin'. No drugs or listings are drawn.",
+   "sources": [
+    "aljazeera_2013",
+    "techcrunch_2013",
+    "npr_2013",
+    "cnn_2013",
+    "register_2013"
+   ]
+  },
+  {
+   "id": "S_sales",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Justice Department's 2015 sentencing release says Silk Road's users bought and sold more than $200 million in illegal goods and that Ulbricht took commissions of more than $13 million; prosecutors' trial estimate was more than $213 million (2011-2013). The 2013 FBI complaint had converted about 9.5 million bitcoins of revenue to roughly $1.2 billion at then-current exchange rates (CBS; Fox): a conversion, not a measured dollar sum, so narration and the card use the DOJ figure 'over $200 million'.",
+   "sources": [
+    "doj_2015",
+    "dea_2015",
+    "networkworld_sent",
+    "cbs_2013",
+    "fox_2013"
+   ]
+  },
+  {
+   "id": "S_dpr",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: the site's operator was known to investigators only by the handle 'Dread Pirate Roberts' (DPR).",
+   "sources": [
+    "doj_2015",
+    "techcrunch_2013",
+    "npr_2013",
+    "ice_2015"
+   ]
+  },
+  {
+   "id": "S_google",
+   "type": "established",
+   "nature": "fact",
+   "text": "IRS criminal-investigation special agent Gary Alford (not named on screen), working with the DEA/strike force in New York, searched Google for the earliest mentions of Silk Road and found that in January 2011, shortly after the site started, a user called 'altoid' had posted about Silk Road on the Bitcointalk.org and Shroomery.org forums (NYT, Dec 2015; his trial testimony, Jan 2015). Narration: 'An IRS agent started with a Google search.' / 'A 2011 forum post by altoid advertised Silk Road.' The screen is a generic, illegible forum page.",
+   "sources": [
+    "nyt_alford",
+    "sophos_alford",
+    "vice_alford",
+    "networkworld_alford",
+    "techcrunch_week3"
+   ]
+  },
+  {
+   "id": "S_email",
+   "type": "established",
+   "nature": "fact",
+   "text": "In altoid's posting history, a later Bitcointalk post seeking a developer (its exact date not in any extract) told applicants to email an address at Gmail that was Ross Ulbricht's own name; with a search warrant the IRS then obtained the account's email from Google. Narration: 'Later, altoid gave his own Gmail address: Ross Ulbricht.' The address itself is never spoken or shown (card: 'A GMAIL ADDRESS · HIS OWN NAME').",
+   "sources": [
+    "nyt_alford",
+    "sophos_alford",
+    "vice_alford",
+    "networkworld_alford"
+   ]
+  },
+  {
+   "id": "S_ulbricht",
+   "type": "established",
+   "nature": "fact",
+   "text": "Ross William Ulbricht, then 29, of San Francisco (originally from Austin, Texas), was charged in Manhattan federal court as the site's operator; he is drawn only as an anonymous silhouette (characters/figures/sr32_ulbricht.json).",
+   "sources": [
+    "kqed_2013",
+    "officer_ap_2013",
+    "npr_2013",
+    "doj_2015"
+   ]
+  },
+  {
+   "id": "S_encrypt",
+   "type": "established",
+   "nature": "fact",
+   "text": "Agents wanted to arrest him with his laptop open and unencrypted: FBI computer scientist Thomas Kiernan testified 'We waited for an opportunity to arrest the defendant with his laptop open to avoid encryption'; the undercover agent (Jared Der-Yeghiayan) said the aim was to get the computer 'in an open, unencrypted state'; closing the lid would have encrypted its contents. Narration: 'Close the lid and it would encrypt. Agents needed it open.'",
+   "sources": [
+    "pcworld_kiernan",
+    "computerworld_kiernan",
+    "wired_undercover",
+    "yahoo_fight"
+   ]
+  },
+  {
+   "id": "S_fight",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 1 October 2013, in the science-fiction section of the Glen Park branch of the San Francisco Public Library, Kiernan stood behind Ulbricht to photograph his screen while two other agents posed as a bickering couple to create a diversion; when he looked up, agents grabbed the laptop before he could close it, and he was arrested without resisting. Narration: 'two agents staged a loud fight behind him' / 'He looked up. An agent grabbed the laptop'. Headline: 'A FAKE FIGHT IN A LIBRARY / CAUGHT THE SILK ROAD FOUNDER'. The agents are generic and unnamed on screen.",
+   "sources": [
+    "pcworld_kiernan",
+    "computerworld_kiernan",
+    "yahoo_fight",
+    "kqed_2013",
+    "officer_ap_2013",
+    "police1_2013",
+    "wired_undercover"
+   ]
+  },
+  {
+   "id": "S_admin",
+   "type": "established",
+   "nature": "fact",
+   "text": "Photographs of the screen showed him logged into Silk Road's 'mastermind' administrator panel as Dread Pirate Roberts; at that moment he was chatting with an undercover agent over the site's staff chat; the laptop's one account, 'Frosty', was signed in. Narration: 'still logged in as the admin.' Card: 'LOGGED IN AS THE ADMIN · DREAD PIRATE ROBERTS'. The screen drawn is a generic dark panel with illegible blocks.",
+   "sources": [
+    "vice_laptop",
+    "pcworld_kiernan",
+    "wired_undercover",
+    "cbc_caught"
+   ]
+  },
+  {
+   "id": "S_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "On Wednesday 4 February 2015 a federal jury in Manhattan convicted Ulbricht on all seven counts (including narcotics trafficking, continuing criminal enterprise, computer hacking and money-laundering conspiracies) after less than a day of deliberation.",
+   "sources": [
+    "nbc_reuters_verdict",
+    "npr_verdict",
+    "itv_verdict",
+    "doj_2015"
+   ]
+  },
+  {
+   "id": "S_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "On Friday 29 May 2015 U.S. District Judge Katherine B. Forrest sentenced him to life in prison without the possibility of parole (two life terms plus 20, 15 and 5 years, all concurrent). Narration: 'life without parole.'",
+   "sources": [
+    "doj_2015",
+    "wired_sent",
+    "coindesk_sent",
+    "siliconrepublic_sent",
+    "networkworld_sent"
+   ]
+  },
+  {
+   "id": "S_pardon",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 21 January 2025 President Donald Trump announced a 'full and unconditional pardon' of Ross Ulbricht (after 11 years in prison), and he was released from the federal prison in Tucson, Arizona. Narration states it as fact only: 'In 2025 he was pardoned, and released.' No opinion is given; the burned-in end question asks the viewer.",
+   "sources": [
+    "washtimes_pardon",
+    "ap_pardon",
+    "aljazeera_pardon",
+    "yahoo_release"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "doj_2015",
+   "publisher": "U.S. Department of Justice (U.S. Attorney, S.D.N.Y.)",
+   "title": "Ross Ulbricht, A/K/A 'Dread Pirate Roberts', Sentenced In Manhattan Federal Court To Life In Prison",
+   "url": "https://www.justice.gov/usao-sdny/pr/ross-ulbricht-aka-dread-pirate-roberts-sentenced-manhattan-federal-court-life-prison",
+   "date": "2015-05-29",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "dea_2015",
+   "publisher": "U.S. Drug Enforcement Administration (press release)",
+   "title": "Ross Ulbricht, A/k/a 'Dread Pirate Roberts,' Sentenced In Manhattan Federal Court To Life In Prison",
+   "url": "https://www.dea.gov/press-releases/2015/05/29/ross-ulbricht-aka-dread-pirate-roberts-sentenced-manhattan-federal-court",
+   "date": "2015-05-29",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "ice_2015",
+   "publisher": "U.S. Immigration and Customs Enforcement (press release)",
+   "title": "Ross Ulbricht, aka Dread Pirate Roberts, sentenced to life in federal prison for creating, operating 'Silk Road' website",
+   "url": "https://ice.gov/news/releases/ross-ulbricht-aka-dread-pirate-roberts-sentenced-life-federal-prison-creating",
+   "date": "2015-05-29",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "networkworld_sent",
+   "publisher": "Network World (IDG)",
+   "title": "Silk Road mastermind Ulbricht sentenced",
+   "url": "https://www.networkworld.com/article/939550/silk-road-mastermind-ulbricht-sentenced.html",
+   "date": "2015-05-29",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wired_sent",
+   "publisher": "Wired (Andy Greenberg)",
+   "title": "Silk Road Creator Ross Ulbricht Sentenced to Life in Prison",
+   "url": "https://www.wired.com/2015/05/silk-road-creator-ross-ulbricht-sentenced-life-prison/",
+   "date": "2015-05-29",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "coindesk_sent",
+   "publisher": "CoinDesk",
+   "title": "Silk Road Operator Ross Ulbricht Sentenced to Life in Prison",
+   "url": "https://www.coindesk.com/ross-ulbricht-sentenced",
+   "date": "2015-05-29",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "siliconrepublic_sent",
+   "publisher": "Silicon Republic (citing The Guardian)",
+   "title": "Silk Road founder sentenced to life in prison without parole",
+   "url": "https://siliconrepublic.com/?p=520249",
+   "date": "2015-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbc_reuters_verdict",
+   "publisher": "NBC News (Reuters)",
+   "title": "Accused Silk Road Operator Ross Ulbricht Convicted on All Counts",
+   "url": "https://www.nbcnews.com/news/amp/ncna299606",
+   "date": "2015-02-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "npr_verdict",
+   "publisher": "NPR (transcript)",
+   "title": "Silk Road founder Ross Ulbricht convicted on all seven counts",
+   "url": "https://www.npr.org/transcripts/383860501",
+   "date": "2015-02-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "itv_verdict",
+   "publisher": "ITV News",
+   "title": "Silk Road 'mastermind' facing life in jail",
+   "url": "https://itv.com/news/2015-02-04/silk-road-mastermind-facing-life-in-jail",
+   "date": "2015-02-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "aljazeera_2013",
+   "publisher": "Al Jazeera",
+   "title": "FBI shuts down online black market",
+   "url": "https://www.aljazeera.com/amp/news/2013/10/2/fbi-shuts-down-online-black-market",
+   "date": "2013-10-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "techcrunch_2013",
+   "publisher": "TechCrunch",
+   "title": "FBI Seizes Deep Web Black Market Silk Road, Arrests Owner",
+   "url": "https://techcrunch.com/2013/10/02/fbi-seize-deep-web-marketplace-silk-road-arrest-owner/",
+   "date": "2013-10-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "npr_2013",
+   "publisher": "NPR (The Two-Way)",
+   "title": "FBI Arrests Owner Of Black Market Site Silk Road",
+   "url": "https://www.npr.org/sections/thetwo-way/2013/10/02/228491496/fbi-arrests-owner-of-black-market-site-silk-road",
+   "date": "2013-10-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_2013",
+   "publisher": "CNN Money",
+   "title": "Silk Road shut down",
+   "url": "https://money.cnn.com/2013/10/02/technology/silk-road-shut-down/",
+   "date": "2013-10-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "register_2013",
+   "publisher": "The Register",
+   "title": "Silk Road shutdown: FBI complaint",
+   "url": "https://www.theregister.com/2013/10/02/silk_road_shutdown/",
+   "date": "2013-10-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_2013",
+   "publisher": "CBS News",
+   "title": "FBI seizes black market website Silk Road",
+   "url": "https://cbsnews.com/news/fbi-seizes-black-market-website-silk-road/",
+   "date": "2013-10-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "fox_2013",
+   "publisher": "Fox News",
+   "title": "Feds shut down $1.2 billion criminal Internet marketplace",
+   "url": "https://www.foxnews.com/tech/feds-shut-down-1-2-billion-criminal-internet-marketplace.print",
+   "date": "2013-10-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "kqed_2013",
+   "publisher": "KQED News",
+   "title": "The Digital Drug Lord Next Door: Feds Bust Alleged Silk Road Mastermind in San Francisco",
+   "url": "https://www.kqed.org/news/113690/the-digital-drug-lord-next-door-feds-bust-alleged-silk-road-mastermind-in-san-francisco",
+   "date": "2013-10-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "officer_ap_2013",
+   "publisher": "Officer.com (AP)",
+   "title": "Alleged online drug kingpin arrested at San Francisco library",
+   "url": "https://www.officer.com/investigations/news/11186192/alleged-online-drug-kingpin-arrested-at-san-francisco-library",
+   "date": "2013-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "police1_2013",
+   "publisher": "Police1",
+   "title": "FBI takes down online drug kingpin at Calif. library",
+   "url": "https://www.police1.com/federal-law-enforcement/articles/fbi-takes-down-online-drug-kingpin-at-calif-library-UypDoisx8eJVkyo2/",
+   "date": "2013-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nyt_alford",
+   "publisher": "The New York Times (Nathaniel Popper)",
+   "title": "The Tax Sleuth Who Took Down a Drug Lord",
+   "url": "https://www.nytimes.com/2015/12/27/business/dealbook/the-unsung-tax-agent-who-put-a-face-on-the-silk-road.html",
+   "date": "2015-12-25",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "sophos_alford",
+   "publisher": "Sophos Naked Security (citing The New York Times)",
+   "title": "Silk Road founder was tracked down by a googling tax agent",
+   "url": "https://news.sophos.com/en-us/2015/12/29/silk-road-founder-was-tracked-down-by-a-googling-tax-agent",
+   "date": "2015-12-29",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "vice_alford",
+   "publisher": "Vice (Motherboard)",
+   "title": "IRS Found Accused Silk Road Mastermind's Email by Googling 'Silk Road'",
+   "url": "https://www.vice.com/en/article/irs-found-accused-silk-road-masterminds-email-by-googling-silk-road/",
+   "date": "2015-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "networkworld_alford",
+   "publisher": "Network World (IDG, trial report)",
+   "title": "Simple Google search outed alleged Silk Road founder",
+   "url": "https://www.networkworld.com/article/934888/simple-google-search-outed-alleged-silk-road-founder.html",
+   "date": "2015-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "techcrunch_week3",
+   "publisher": "TechCrunch",
+   "title": "Recapping Week Three Of The Silk Road Trial",
+   "url": "https://techcrunch.com/2015/02/04/recapping-week-three-of-the-silk-road-trial",
+   "date": "2015-02-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "pcworld_kiernan",
+   "publisher": "PCWorld (IDG, trial report)",
+   "title": "Prosecutors tighten case against alleged Silk Road mastermind",
+   "url": "https://www.pcworld.com/article/2873572/prosecutors-tighten-case-against-alleged-silk-road-mastermind.html",
+   "date": "2015-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "computerworld_kiernan",
+   "publisher": "Computerworld (IDG, trial report)",
+   "title": "Prosecutors tighten case against alleged Silk Road mastermind",
+   "url": "https://www.computerworld.com/article/1619164/prosecutors-tighten-case-against-alleged-silk-road-mastermind-2.html",
+   "date": "2015-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "vice_laptop",
+   "publisher": "Vice (Motherboard)",
+   "title": "Journal and chat logs from Ross Ulbricht's laptop",
+   "url": "https://motherboard.vice.com/read/journal-and-chat-logs-from-ross-ulbrichts-laptop",
+   "date": "2015-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wired_undercover",
+   "publisher": "Wired (Andy Greenberg)",
+   "title": "Undercover Agent Reveals How He Helped the FBI Trap Silk Road's Ross Ulbricht",
+   "url": "https://www.wired.com/2015/01/undercover-agent-reveals-helped-fbi-trap-silk-roads-ross-ulbricht/",
+   "date": "2015-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "yahoo_fight",
+   "publisher": "Yahoo News (Business Insider)",
+   "title": "The FBI staged a lovers' fight to catch the kingpin of the web's biggest illegal drug marketplace",
+   "url": "https://malaysia.news.yahoo.com/fbi-staged-lovers-fight-catch-155108760.html",
+   "date": "2015-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbc_caught",
+   "publisher": "CBC News",
+   "title": "Silk Road's alleged mastermind: how the FBI caught him",
+   "url": "https://amp.cbc.ca/news/science/silk-road-s-alleged-mastermind-how-the-fbi-caught-him-1.1894067",
+   "date": "2013-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "washtimes_pardon",
+   "publisher": "The Washington Times",
+   "title": "Ross Ulbricht, Silk Road founder, gets pardon, fulfilling Trump campaign promise",
+   "url": "https://www.washingtontimes.com/news/2025/jan/21/ross-ulbricht-silk-road-founder-gets-pardon-fulfil/",
+   "date": "2025-01-21",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "ap_pardon",
+   "publisher": "News4Jax (AP)",
+   "title": "Trump pardons founder of Silk Road website",
+   "url": "https://www.news4jax.com/news/politics/2025/01/22/trump-pardons-founder-of-silk-road-website/",
+   "date": "2025-01-22",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "aljazeera_pardon",
+   "publisher": "Al Jazeera",
+   "title": "Drug marketplace founder Ross Ulbricht speaks out after Trump pardon",
+   "url": "https://www.aljazeera.com/news/2025/1/24/drug-marketplace-founder-ross-ulbricht-makes-first-remarks-on-trump-pardon",
+   "date": "2025-01-24",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "yahoo_release",
+   "publisher": "Yahoo News",
+   "title": "Silk Road founder pardoned by Trump 11 years into double life sentences lauds president as 'a man of his word'",
+   "url": "https://www.yahoo.com/news/silk-road-founder-pardoned-trump-171841976.html",
+   "date": "2025-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A FAKE FIGHT IN A LIBRARY"
+   },
+   {
+    "text": "CAUGHT THE SILK ROAD FOUNDER",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WAS THE PARDON RIGHT?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-13"
+}

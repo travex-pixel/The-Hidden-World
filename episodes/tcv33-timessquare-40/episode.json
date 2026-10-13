@@ -1,0 +1,1240 @@
+{
+ "id": "tcv33-timessquare-40",
+ "number": 33,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Smoking SUV and a Hidden VIN Caught the Times Square Bomber",
+ "central_question": "How did a smoking SUV with its VIN cut out lead police to a man already on a plane to Dubai?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "SUV": "S U V",
+   "VIN": "V I N",
+   "Shahzad": "Shahzahd",
+   "Faisal": "Fysal",
+   "JFK": "J F K",
+   "FBI": "F B I",
+   "Dubai": "Doo-bye"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "33",
+  "label": "TIMES SQUARE · 2010"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "ts33_shahzad",
+  "ts33_vendor",
+  "ts33_officer",
+  "ts33_tech",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "official",
+  "judge"
+ ],
+ "content_notes": "Closed case: Faisal Shahzad pleaded guilty to all ten counts on 21 June 2010 and was sentenced to life in prison on 5 October 2010. There were no victims. The device, its contents and any explosion are never depicted: only smoke seeping from a parked SUV; the contents are one typed card. Shahzad is only an anonymous rim-lit silhouette (not a likeness, never a photo recreation), never posed heroically; none of his words or beliefs are quoted. The vendors, the mounted officer, the technician and the agents are generic figures with no insignia and no weapon; the real vendors and officers are not named on screen. The SUV is a generic dark SUV with no plate, badge or logo; the make is never said. No airline, dealer, website or police logo or wordmark is drawn: the billboards are abstract colour panels with no text and every card is our own typed graphic. The VIN is never shown (masked characters). No dialogue is invented. Legal status verified 2026-10-13.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ts33_hook",
+   "min_duration": 5.2,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.15,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "T_hook",
+    "T_smoke"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A smoking SUV caught the Times Square bomber."
+    },
+    {
+     "who": "narrator",
+     "text": "Hazard lights on, engine running, smoke inside.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smoking",
+    "suv",
+    "times",
+    "square",
+    "bomber.",
+    "hazard",
+    "smoke"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_vendors",
+   "scene": "ts33_vendors",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "T_vendors",
+    "T_failed"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Two street vendors flagged a mounted officer."
+    },
+    {
+     "who": "narrator",
+     "text": "The device never went off.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "vendors",
+    "mounted",
+    "officer.",
+    "never",
+    "off."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_stakes",
+   "scene": "ts33_stakes",
+   "min_duration": 3.4,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "T_contents",
+    "T_officials"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Officials said it could have been very deadly.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "officials",
+    "very",
+    "deadly."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s04_vin",
+   "scene": "ts33_vin",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      5
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      8
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      9
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "T_vin_dash",
+    "T_vin_engine"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The dashboard VIN was gone."
+    },
+    {
+     "who": "narrator",
+     "text": "But a VIN is also stamped on the engine block.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dashboard",
+    "vin",
+    "gone.",
+    "stamped",
+    "engine",
+    "block."
+   ],
+   "section": "B",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s05_trail",
+   "scene": "ts33_trail",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "ping",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "beep",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      11
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "T_craigslist",
+    "T_phone",
+    "T_shahzad"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A Craigslist seller and a prepaid phone led to a name: Faisal Shahzad."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "craigslist",
+    "prepaid",
+    "phone,",
+    "name:",
+    "faisal",
+    "shahzad."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_gate",
+   "scene": "ts33_gate",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "T_nofly",
+    "T_ticket",
+    "T_boarded"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was put on the no-fly list."
+    },
+    {
+     "who": "narrator",
+     "text": "That night, he boarded a flight to Dubai anyway.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no-fly",
+    "list.",
+    "boarded",
+    "dubai",
+    "anyway."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_cabin",
+   "scene": "ts33_cabin",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "rumble",
+     "gain": 0.35
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      5
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.55
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "T_recalled",
+    "T_53"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The plane had left the gate. It was called back.",
+     "pause_before": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "He was taken off the plane.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "left",
+    "gate.",
+    "called",
+    "back.",
+    "taken",
+    "off",
+    "plane."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "ts33_verdict",
+   "min_duration": 3.2,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "T_plea",
+    "T_sentence"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He pleaded guilty to all ten counts."
+    },
+    {
+     "who": "narrator",
+     "text": "His sentence: life in prison.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty",
+    "ten",
+    "counts.",
+    "life"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "ts33_end",
+   "min_duration": 4.0,
+   "pad_after": 1.5,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "T_vin_dash",
+    "T_vin_engine",
+    "T_hook"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He removed the VIN from the dashboard."
+    },
+    {
+     "who": "narrator",
+     "text": "The engine kept the other.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "removed",
+    "vin",
+    "dashboard.",
+    "engine",
+    "kept",
+    "other."
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "T_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "A smoking Nissan Pathfinder SUV, left running with its hazard lights on in Times Square on Saturday 1 May 2010, led police to Faisal Shahzad: its VIN traced the vehicle to its seller and so to him, and he was arrested at JFK airport about 53 hours after the SUV was found. On screen the vehicle is a generic dark SUV with no plate, badge or logo; the make is never said.",
+   "sources": [
+    "wnyc_arrest",
+    "wbur_arrest",
+    "wbur_53",
+    "npr_charged"
+   ]
+  },
+  {
+   "id": "T_smoke",
+   "type": "established",
+   "nature": "fact",
+   "text": "The SUV was parked on West 45th Street just west of Broadway, in a no-standing zone, with its emergency flashers on and the engine running; a small amount of smoke was coming from it (card: 'Saturday 1 May 2010 · evening').",
+   "sources": [
+    "cbs_vendor",
+    "nbcny_vendors",
+    "nbcct_hero"
+   ]
+  },
+  {
+   "id": "T_vendors",
+   "type": "established",
+   "nature": "fact",
+   "text": "Two T-shirt street vendors, both military veterans (Lance Orton, Navy; Duane Jackson, Army; NOT named on screen), noticed the smoke and alerted a mounted police officer; police cleared the area and the NYPD bomb squad, with a robot, examined the SUV.",
+   "sources": [
+    "cbs_vendor",
+    "nbcny_vendors",
+    "legion_vendors",
+    "nbcct_hero"
+   ]
+  },
+  {
+   "id": "T_failed",
+   "type": "established",
+   "nature": "fact",
+   "text": "The device failed to detonate (the narration: 'The device never went off'); police described it as crude and amateurish.",
+   "sources": [
+    "mpr_taliban",
+    "timeslive",
+    "doj_plea",
+    "fbi_sentence"
+   ]
+  },
+  {
+   "id": "T_contents",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: police said the SUV held three propane tanks, two gasoline containers, fireworks, alarm clocks and wires; fertilizer found in a locker was not of an explosive grade. Nothing of the device is drawn.",
+   "sources": [
+    "wt_video",
+    "spokesman_video",
+    "mpr_taliban"
+   ]
+  },
+  {
+   "id": "T_officials",
+   "type": "established",
+   "nature": "fact",
+   "text": "Officials said the device could have been very deadly: Mayor Bloomberg spoke of avoiding 'what could have been a very deadly event' and Commissioner Kelly said it 'would have caused a significant fireball'. Narration: 'Officials said it could have been very deadly.'",
+   "sources": [
+    "tribune_pk",
+    "aljazeera_leads",
+    "voa_globalsecurity",
+    "wt_video"
+   ]
+  },
+  {
+   "id": "T_vin_dash",
+   "type": "established",
+   "nature": "fact",
+   "text": "The vehicle identification number had been removed from the SUV's dashboard.",
+   "sources": [
+    "wnyc_arrest",
+    "wbur_arrest",
+    "salon_ap_vin",
+    "vindy_ap"
+   ]
+  },
+  {
+   "id": "T_vin_engine",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators found the VIN stamped on the engine block (some reports: the engine and the axle) and used it to identify the registered owner; the NYPD's chief spokesman called the find 'pivotal'. The number itself is never shown (masked characters).",
+   "sources": [
+    "wnyc_arrest",
+    "wbur_arrest",
+    "computerworld",
+    "medill_nyt"
+   ]
+  },
+  {
+   "id": "T_craigslist",
+   "type": "established",
+   "nature": "fact",
+   "text": "The registered owner (not a suspect; not named on screen) had sold the Pathfinder about three weeks earlier for cash, after advertising it online including on Craigslist, with no paperwork; the seller described and identified the buyer. Reported prices differ, so no amount is said.",
+   "sources": [
+    "cnn_tr_0504",
+    "medill_nyt",
+    "salon_ap_vin",
+    "vindy_ap",
+    "volokh_reuters"
+   ]
+  },
+  {
+   "id": "T_phone",
+   "type": "established",
+   "nature": "fact",
+   "text": "The buyer's phone number was a prepaid cellphone; the FBI obtained the vendor's records and linked the phone to Shahzad (calls to Pakistan and to a fireworks store; a match against entry records).",
+   "sources": [
+    "volokh_reuters",
+    "computerworld",
+    "courthouse",
+    "abc7_charges"
+   ]
+  },
+  {
+   "id": "T_shahzad",
+   "type": "established",
+   "nature": "fact",
+   "text": "Faisal Shahzad, then 30, a naturalized U.S. citizen born in Pakistan and living in Connecticut.",
+   "sources": [
+    "wbur_arrest",
+    "npr_charged",
+    "doj_plea",
+    "fbi_sentence"
+   ]
+  },
+  {
+   "id": "T_nofly",
+   "type": "established",
+   "nature": "fact",
+   "text": "Shahzad was added to the no-fly list on 3 May 2010 after he was identified; the airline had not yet updated its copy of the list, so he was able to buy a ticket and board; a Customs and Border Protection check of the final passenger manifest caught his name. Airlines were afterwards required to check list updates within two hours.",
+   "sources": [
+    "aba_nofly",
+    "cbs_nofly",
+    "aljazeera_nofly",
+    "cbs_emirates"
+   ]
+  },
+  {
+   "id": "T_ticket",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: he reserved the flight on the way to the airport and paid for the ticket in cash.",
+   "sources": [
+    "fox_ticket",
+    "salon_ap_ticket"
+   ]
+  },
+  {
+   "id": "T_boarded",
+   "type": "established",
+   "nature": "fact",
+   "text": "On the night of Monday 3 May 2010 he boarded an Emirates flight to Dubai at JFK airport in New York (the airline is not named on screen; the aircraft and cabin are generic).",
+   "sources": [
+    "fox_passengers",
+    "cbs_audio",
+    "nycaviation",
+    "wbur_arrest"
+   ]
+  },
+  {
+   "id": "T_recalled",
+   "type": "established",
+   "nature": "fact",
+   "text": "The plane had left the gate and was taxiing (passengers: for about five minutes) when air traffic control ordered it back to the gate; Customs and Border Protection officers removed Shahzad from the plane and he was arrested, identified at about 11:45 p.m. Narration: 'The plane had left the gate. It was called back.' / 'He was taken off the plane.'",
+   "sources": [
+    "fox_passengers",
+    "cbs_audio",
+    "nycaviation",
+    "cbs_nofly",
+    "salon_ap_vin"
+   ]
+  },
+  {
+   "id": "T_53",
+   "type": "established",
+   "nature": "fact",
+   "text": "The arrest came about 53 hours after the SUV was discovered in Times Square (card: 'about 53 hours after the smoke').",
+   "sources": [
+    "wbur_53",
+    "mpr_53",
+    "npr_charged"
+   ]
+  },
+  {
+   "id": "T_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 21 June 2010 Shahzad pleaded guilty in Manhattan federal court, before Judge Miriam Goldman Cedarbaum, to all ten counts of the indictment; there was no plea agreement.",
+   "sources": [
+    "doj_plea",
+    "npr_plea",
+    "fbi_sentence"
+   ]
+  },
+  {
+   "id": "T_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 5 October 2010 he was sentenced to life in prison (a mandatory life term on the charges).",
+   "sources": [
+    "fbi_sentence",
+    "cbs_sentence",
+    "nbcny_sentence"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "cbs_vendor",
+   "publisher": "CBS News",
+   "title": "Times Square Vendor: We Dodged a Bullet",
+   "url": "https://www.cbsnews.com/news/times-square-vendor-we-dodged-a-bullet/",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbcny_vendors",
+   "publisher": "NBC New York",
+   "title": "Heroic Times Square Vendors Honored at Citi Field",
+   "url": "https://www.nbcnewyork.com/news/local/heroic-times-square-vendors-honored-at-citi-field/2118902/",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "legion_vendors",
+   "publisher": "The American Legion",
+   "title": "Times Square vendors given Patriot Awards by The American Legion",
+   "url": "https://www.legion.org/information-center/news/press-release/times-square-vendors-given-patriot-awards-by-the-american-legion",
+   "date": "2010",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbcct_hero",
+   "publisher": "NBC Connecticut",
+   "title": "Times Square Hero: 'I Wondered Why Nobody Noticed'",
+   "url": "https://www.nbcconnecticut.com/local/times_square_hero___i_wondered_why_nobody_noticed_/1863015/",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wnyc_arrest",
+   "publisher": "WNYC",
+   "title": "Man Tied to Pakistan Arrested in SUV Bomb Case",
+   "url": "https://wnyc.org/story/71686-man-tied-to-pakistan-arrested-in-suv-bomb-case/",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wbur_arrest",
+   "publisher": "WBUR (AP)",
+   "title": "Pakistani arrested in Times Square car bomb attack",
+   "url": "https://www.wbur.org/news/2010/05/04/pakistani-arrested-in-times-square-car-bomb-attack",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "salon_ap_vin",
+   "publisher": "Salon (AP)",
+   "title": "US Times Square car bomb (AP wire, 4 May 2010)",
+   "url": "https://www.salon.com/2010/05/04/us_times_square_car_bomb_3/",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "vindy_ap",
+   "publisher": "The Vindicator (AP)",
+   "title": "Suspect in Times Square bomb attempt being held",
+   "url": "https://vindyarchives.com/news/2010/may/04/associated-press",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_tr_0504",
+   "publisher": "CNN (transcript)",
+   "title": "American Morning, 4 May 2010",
+   "url": "https://www.cnn.com/TRANSCRIPTS/1005/04/ltm.03.html",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "npr_tr",
+   "publisher": "NPR (transcript)",
+   "title": "Suspect arrested in Times Square bomb attempt",
+   "url": "https://www.npr.org/transcripts/126511380",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "medill_nyt",
+   "publisher": "Northwestern Medill National Security Zone (citing The New York Times)",
+   "title": "Computer forensics (tag archive): the Times Square SUV",
+   "url": "https://nationalsecurityzone.medill.northwestern.edu/archives/blog/tag/computer-forensics/index.html",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "volokh_reuters",
+   "publisher": "The Volokh Conspiracy (citing Reuters)",
+   "title": "Reuters has the report here",
+   "url": "https://volokh.com/?p=30701",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "computerworld",
+   "publisher": "Computerworld",
+   "title": "Times Square suspect tracked through VIN and prepaid phone",
+   "url": "https://www.computerworld.com/?p=1555525",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "courthouse",
+   "publisher": "Courthouse News Service",
+   "title": "Times Square suspect charged",
+   "url": "https://www.courthousenews.com/?p=288539",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "abc7_charges",
+   "publisher": "ABC7 New York (AP)",
+   "title": "Suspect in Times Square plot faces terror charges",
+   "url": "https://abc7ny.com/archive/7421017/",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "fox_passengers",
+   "publisher": "Fox News",
+   "title": "Fellow passengers: No panic on plane after arrest of Times Square bomb suspect",
+   "url": "https://www.foxnews.com/world/fellow-passengers-no-panic-on-plane-after-arrest-of-times-square-bomb-suspect.amp",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "fox_ticket",
+   "publisher": "Fox News",
+   "title": "Times Square bombing suspect reserved flight on way to airport and paid for ticket in cash",
+   "url": "https://www.foxnews.com/us/times-square-bombing-suspect-reserved-flight-on-way-to-airport-and-paid-for-ticket-in-cash.amp",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "salon_ap_ticket",
+   "publisher": "Salon (AP)",
+   "title": "Bomb suspect made flight reservation on way to JFK",
+   "url": "https://salon.com/2010/05/04/us_times_square_car_bomb_arrest/",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "aba_nofly",
+   "publisher": "ABA Journal",
+   "title": "Times Square Car-Bomb Suspect Nearly Escaped Due to No-Fly-List Flaw",
+   "url": "https://abajournal.com/news/article/would-be_times_square_car-bomb_suspect_nearly_escaped_due_to_no-fly-list_fl",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_nofly",
+   "publisher": "CBS News",
+   "title": "No-fly list procedures changed following terror attempt",
+   "url": "https://www.cbsnews.com/news/no-fly-list-procedures-changed-following-terror-attempt",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "aljazeera_nofly",
+   "publisher": "Al Jazeera",
+   "title": "US tightens airline 'no fly' rules",
+   "url": "https://www.aljazeera.com/news/2010/5/6/us-tightens-airline-no-fly-rules",
+   "date": "2010-05-06",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_emirates",
+   "publisher": "CBS News",
+   "title": "Times Square terror plot: Emirates Airlines plays key role",
+   "url": "https://www.cbsnews.com/news/times-square-terror-plot-emirates-airlines-plays-key-role",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_audio",
+   "publisher": "CBS News",
+   "title": "Audio of pilot and ATC as Emirates flight is recalled to gate",
+   "url": "https://cbsnews.com/news/audio-of-pilot-and-act-as-emirates-flight-is-recalled-to-gate",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nycaviation",
+   "publisher": "NYCAviation",
+   "title": "Emirates flight recalled to the gate at JFK; Times Square suspect removed",
+   "url": "https://www.nycaviation.com/?p=8957",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "npr_charged",
+   "publisher": "NPR",
+   "title": "N.Y. bomb plot suspect charged with terrorism",
+   "url": "https://www.npr.org/2010/05/04/126493890/n-y-bomb-plot-suspect-charged-with-terrorism",
+   "date": "2010-05-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wbur_53",
+   "publisher": "WBUR",
+   "title": "Times Square car bomb: the 53-hour investigation",
+   "url": "https://www.wbur.org/news/2010/05/05/times-square-car-bomb",
+   "date": "2010-05-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "mpr_53",
+   "publisher": "MPR News (AP)",
+   "title": "NY car bomb suspect cooperates, but motive mystery",
+   "url": "https://www.mprnews.org/story/2010/05/05/nyc-bombing",
+   "date": "2010-05-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "doj_plea",
+   "publisher": "U.S. Department of Justice",
+   "title": "Faisal Shahzad pleads guilty in Manhattan federal court to 10 federal crimes arising from attempted car bombing in Times Square",
+   "url": "https://www.justice.gov/opa/pr/2010/June/10-ag-721.html",
+   "date": "2010-06-21",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "npr_plea",
+   "publisher": "NPR (transcript)",
+   "title": "Times Square bomb suspect pleads guilty",
+   "url": "https://www.npr.org/transcripts/128001176",
+   "date": "2010-06-21",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "fbi_sentence",
+   "publisher": "FBI New York (U.S. Attorney's Office press release)",
+   "title": "Faisal Shahzad Sentenced in Manhattan Federal Court to Life in Prison for Attempted Car Bombing in Times Square",
+   "url": "https://www.fbi.gov/newyork/press-releases/2010/nyfo100510.htm/",
+   "date": "2010-10-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_sentence",
+   "publisher": "CBS News",
+   "title": "Faisal Shahzad Sentenced to Life in Prison for Botched Times Square Bombing",
+   "url": "https://www.cbsnews.com/news/faisal-shahzad-sentenced-to-life-in-prison-for-botched-times-square-bombing/",
+   "date": "2010-10-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbcny_sentence",
+   "publisher": "NBC New York",
+   "title": "Times Square Attempted Bomber Sentenced to Life",
+   "url": "https://www.nbcnewyork.com/local/times-square-bomber-faces-sentencing/2115503/",
+   "date": "2010-10-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "wt_video",
+   "publisher": "The Washington Times",
+   "title": "NYPD: bomb suspect on video",
+   "url": "https://www.washingtontimes.com/news/2010/may/3/nypd-bomb-suspect-on-video/",
+   "date": "2010-05-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "spokesman_video",
+   "publisher": "The Spokesman-Review (AP)",
+   "title": "Police turn to video for clues",
+   "url": "https://spokesman.com/stories/2010/may/03/police-turn-to-video-for-clues",
+   "date": "2010-05-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "aljazeera_leads",
+   "publisher": "Al Jazeera",
+   "title": "US has 'good leads' in bomb probe",
+   "url": "https://www.aljazeera.com/news/2010/5/3/us-has-good-leads-in-bomb-probe",
+   "date": "2010-05-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "mpr_taliban",
+   "publisher": "MPR News (AP)",
+   "title": "NYPD: No evidence of a Taliban link to SUV bomb",
+   "url": "https://www.mprnews.org/story/2010/05/02/timessquare",
+   "date": "2010-05-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "timeslive",
+   "publisher": "Times Live",
+   "title": "Times Square car bombing foiled",
+   "url": "https://www.timeslive.co.za/news/world/2010-05-02-times-square-car-bombing-foiled/",
+   "date": "2010-05-02",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "voa_globalsecurity",
+   "publisher": "VOA (via GlobalSecurity.org)",
+   "title": "Officials: Times Square bomb could have been deadly",
+   "url": "https://www.globalsecurity.org/security/library/news/2010/05/sec-100503-voa02.htm",
+   "date": "2010-05-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "tribune_pk",
+   "publisher": "The Express Tribune (AFP)",
+   "title": "NY car bomb threatened deadly event: officials",
+   "url": "https://tribune.com.pk/story/10392/ny-car-bomb-threatened-deadly-event-officials",
+   "date": "2010-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A SMOKING SUV CAUGHT"
+   },
+   {
+    "text": "THE TIMES SQUARE BOMBER",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WOULD YOU HAVE REPORTED IT?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-13"
+}
