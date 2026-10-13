@@ -51,6 +51,10 @@ def validate_short(ep: dict) -> None:
         raise ShortError("; ".join(errs))
     if ep["mode"] != "psychology-shorts":
         errs.append("mode must be 'psychology-shorts'")
+    if ep.get("clip"):
+        for k in ("src", "at"):
+            if k not in ep["clip"]:
+                errs.append(f"clip needs '{k}'")
     if not (ROOT / "renderer" / "psych" / "stories" / f"{ep['metaphor']}.js").exists():
         errs.append(f"no choreography renderer/psych/stories/{ep['metaphor']}.js for metaphor '{ep['metaphor']}'")
     lo, hi = ep["runtime"]["range"]
@@ -207,6 +211,43 @@ def footsteps(ep: dict, orbit: dict) -> list[tuple[float, str, float]]:
         while t < t1 - 0.05:
             ev.append((round(t, 3), "step", g * 1.1)); t += 0.33
     return ev
+
+
+# ---------------------------------------------------------------- video clips (e.g. a generated Kling shot)
+GRADES = {
+    "none": "",
+    # obsidian/gold brand grade: crushed blacks, slightly desaturated, warm gold in the mids/highs, fine grain, soft vignette
+    "brand": "eq=contrast=1.08:brightness=-0.035:saturation=0.82,curves=all='0/0 0.12/0.06 0.5/0.47 1/0.98',"
+             "colorbalance=rm=0.06:gm=0.02:bm=-0.07:rh=0.05:gh=0.02:bh=-0.06:rs=0.0:gs=0.0:bs=-0.03,noise=alls=5:allf=t+u,vignette=PI/4.6",
+}
+
+
+def prepare_clip(ep: dict, work: Path, width: int, height: int, fps: int) -> dict | None:
+    """Conform the episode's clip to the output size (crop to fill), grade it, and write it as JPEG frames at the
+    render fps. Returns the plan entry the renderer uses. Fails loudly if the file is missing."""
+    c = ep.get("clip")
+    if not c:
+        return None
+    src = ROOT / c["src"]
+    if not src.exists():
+        raise ShortError(f"clip not found: {c['src']} (commit the file at that path, e.g. assets/clips/<name>.mp4)")
+    meta = json.loads(subprocess.run(["ffprobe", "-v", "error", "-print_format", "json", "-show_streams", "-show_format", str(src)], capture_output=True, text=True, check=True).stdout)
+    v = next(st for st in meta["streams"] if st["codec_type"] == "video")
+    src_dur = float(meta["format"]["duration"])
+    trim = float(c.get("trim_start", 0.0))
+    dur = float(c.get("duration") or (src_dur - trim))
+    dur = min(dur, src_dur - trim)
+    out = work / "clip"; shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
+    grade = GRADES[c.get("grade", "brand")]
+    vf = f"scale={width}:{height}:force_original_aspect_ratio=increase:flags=lanczos,crop={width}:{height},fps={fps}" + (("," + grade) if grade else "")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(trim), "-t", str(dur), "-i", str(src), "-vf", vf, "-q:v", "3", str(out / "%05d.jpg")], check=True)
+    n = len(list(out.glob("*.jpg")))
+    if n < 2:
+        raise ShortError("clip produced no frames")
+    log(f"clip: {src.name} {v['width']}x{v['height']} -> {n} graded frames at {fps} fps ({dur:.2f}s from {trim:.2f}s)")
+    return {"frames_dir": str(out.resolve()), "n_frames": n, "fps": fps, "at": float(c["at"]), "duration": round(n / fps, 3),
+            "hold_zoom": float(c.get("hold_zoom", 0.06)), "pre_dim": float(c.get("pre_dim", 0.55)), "fade_in": float(c.get("fade_in", 0.0)),
+            "source": {"file": c["src"], "width": v["width"], "height": v["height"], "fps": v.get("r_frame_rate"), "duration": round(src_dur, 3)}}
 
 
 # ---------------------------------------------------------------- narration
@@ -398,8 +439,12 @@ def main(argv=None) -> int:
     audio.write_wav(work / "mix.wav", mixed); audio.write_wav(work / "music_only.wav", music)
 
     # 3. plan + render
+    try:
+        clip = prepare_clip(ep, work, q["width"], q["height"], q["fps"])
+    except ShortError as e:
+        log(f"ERROR {e}"); return 4
     plan = {"width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed, "total": total,
-            "episode": ep, "orbit": orbit, "walk": walk, "story_js": f"renderer/psych/stories/{ep['metaphor']}.js",
+            "episode": ep, "orbit": orbit, "walk": walk, "clip": clip, "story_js": f"renderer/psych/stories/{ep['metaphor']}.js",
             "narration": [{k: v for k, v in l.items() if k != "path"} for l in lines], "sfx_events": sfx_events}
     (work / "plan.json").write_text(json.dumps(plan))
     silent = work / "video_silent.mp4"

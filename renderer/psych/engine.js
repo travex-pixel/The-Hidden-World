@@ -57,44 +57,62 @@
     return { side, hip, knee, foot, swing: Math.cos(ph) > 0 };
   }
   // ---------- featureless mannequin. Local units: feet at (0,0), forward = +x, up = -y. Height ~ 410.
-  // o: {x, y, scale, dir, phase, stride, crouch, lean, arms: 'swing'|'hold'|'reach'|'rest', reach:[lx,ly], opacity, t}
+  // o: {x, y, scale, dir, phase, stride, crouch, lean, tilt, arms: 'swing'|'hold'|'reach'|'reach_one'|'rest', reach:[lx,ly], opacity, t}
+  // Rig v2: pelvis fore/aft rock with the step, chest counter-rotates against the pelvis, feet with a soft heel roll,
+  // arms trail the legs by a few degrees, and a slow weight shift while standing. Leg geometry is unchanged (leg()),
+  // so the planted-foot walk schedule in pipeline/psych.py stays exact.
   function figure(o) {
     const scale = o.scale ?? 1, dir = o.dir ?? 1, phase = o.phase ?? 0, stride = o.stride ?? 0, crouch = clamp(o.crouch ?? 0, 0, 1), lean = o.lean ?? 0, t = o.t ?? 0;
     const breath = Math.sin(t * 1.9) * 2.5;
+    const idle = 1 - stride;                                     // standing: slow weight shift, nothing mechanical
+    const sway = Math.sin(t * 0.62) * 2.2 * idle;                 // hips drift fore/aft a couple of px
     const hipY = -166 + crouch * 56, hipW = 11;
     const shY = hipY - 118 + breath * 0.3, shW = 27;
     const headR = 36, headCy = shY - 66 - 10;
     const legs = [leg(phase, stride, crouch, 1), leg(phase, stride, crouch, -1)];   // +1 left (drawn behind when dir=1), -1 right
     const snap = -Math.max(legs[0].foot[1], legs[1].foot[1]);   // lowest foot sits exactly on the ground
-    // arms
+    const pelvis = 3.5 * stride * Math.sin(phase);               // deg: pelvis rocks with the stride
+    const chestCounter = -0.9 * pelvis;                          // the chest turns against it
+    const headTilt = (o.tilt ?? 0) + 0.8 * Math.sin(t * 0.9) * idle;
+    // arms: trail the legs slightly; elbows soften at the end of the swing
     const A1 = 70, A2 = 66; const arms = [];
     for (const side of [1, -1]) {
-      const S = [side * -15, shY + 8]; let E, J;   // back arm (side=+1) sits behind the torso, front arm ahead of it
-      const ph = phase + (side > 0 ? 0 : Math.PI);
+      const S = [side * -15, shY + 8]; let E, J;
+      const ph = phase - 0.3 + (side > 0 ? 0 : Math.PI);
       if (o.arms === 'hold') { E = [52 + side * 5, hipY - 76 + side * 4]; ({ joint: J } = ik(S, E, A1, A2, 1)); }
       else if ((o.arms === 'reach' || (o.arms === 'reach_one' && side < 0)) && o.reach) { E = [o.reach[0] + side * 6, o.reach[1] + side * 5]; ({ joint: J } = ik(S, E, A1, A2, 1)); }
-      else if (o.arms === 'reach_one') { const a = 6 * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 14 * DEG) * A2, J[1] + Math.cos(a + 14 * DEG) * A2]; }
-      else if (o.arms === 'rest') { const a = 6 * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 14 * DEG) * A2, J[1] + Math.cos(a + 14 * DEG) * A2]; }
-      else { const a = (-38 * stride * Math.sin(ph) + 6 * (1 - stride)) * DEG; const b = a + (16 + 30 * stride * Math.max(0, Math.sin(ph))) * DEG;
+      else if (o.arms === 'rest' || o.arms === 'reach_one') { const a = (6 + 1.2 * Math.sin(t * 0.62) * idle) * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 16 * DEG) * A2, J[1] + Math.cos(a + 16 * DEG) * A2]; }
+      else { const a = (-36 * stride * Math.sin(ph) + 6 * (1 - stride)) * DEG; const b = a + (16 + 26 * stride * Math.max(0, Math.sin(ph)) + 6 * stride * Math.max(0, -Math.sin(ph))) * DEG;
              J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(b) * A2, J[1] + Math.cos(b) * A2]; }
       arms.push({ side, S, J, E });
     }
     const limb = (a, b, c, col, w) => `<path d="M${f1(a[0])} ${f1(a[1])} L${f1(b[0])} ${f1(b[1])} L${f1(c[0])} ${f1(c[1])}" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`;
+    // feet: a short flat shape from the ankle, toes forward; swing foot dips a little, stance foot lifts its heel at toe-off
+    const footSvg = (L, col) => {
+      const ph = phase + (L.side > 0 ? 0 : Math.PI);
+      const swing = Math.max(0, Math.cos(ph)), back = Math.max(0, -Math.sin(ph)) * (1 - swing);
+      const ang = stride * (9 * swing + 7 * back);
+      return `<g transform="translate(${f1(L.foot[0])} ${f1(L.foot[1])}) rotate(${f1(ang)})"><path d="M-8 0 L26 0" stroke="${col}" stroke-width="15" stroke-linecap="round"/></g>`;
+    };
     const back = legs.find(l => l.side === 1), front = legs.find(l => l.side === -1);
     const backArm = arms.find(a => a.side === 1), frontArm = arms.find(a => a.side === -1);
-    const torso = `<path d="M${-shW} ${f1(shY)} L${shW} ${f1(shY)} L${hipW + 10} ${f1(hipY + 8)} L${-hipW - 10} ${f1(hipY + 8)} Z" fill="${PAL.white}" stroke="${PAL.white}" stroke-width="22" stroke-linejoin="round"/>`;
-    const head = `<g transform="rotate(${f1(o.tilt ?? 0)} 0 ${f1(headCy + headR + 10)})"><circle cx="0" cy="${f1(headCy)}" r="${headR}" fill="${PAL.white}"/><rect x="-9" y="${f1(headCy + headR - 6)}" width="18" height="18" fill="${PAL.white}"/></g>`;
-    const upper = `<g transform="translate(0 ${f1(hipY)}) rotate(${f1(lean)}) translate(0 ${f1(-hipY)})">${limb(backArm.S, backArm.J, backArm.E, PAL.soft, 22)}${torso}${head}${limb(frontArm.S, frontArm.J, frontArm.E, PAL.white, 22)}</g>`;
-    const body = `${limb(back.hip, back.knee, back.foot, PAL.soft, 24)}${upper}${limb(front.hip, front.knee, front.foot, PAL.white, 24)}`;
+    const waistY = hipY - 58;
+    const lower = `<path d="M${-shW + 4} ${f1(waistY)} L${shW - 4} ${f1(waistY)} L${hipW + 10} ${f1(hipY + 8)} L${-hipW - 10} ${f1(hipY + 8)} Z" fill="${PAL.white}" stroke="${PAL.white}" stroke-width="22" stroke-linejoin="round"/>`;
+    const chest = `<path d="M${-shW} ${f1(shY)} L${shW} ${f1(shY)} L${shW - 3} ${f1(waistY + 6)} L${-shW + 3} ${f1(waistY + 6)} Z" fill="${PAL.white}" stroke="${PAL.white}" stroke-width="22" stroke-linejoin="round"/>`;
+    const head = `<g transform="rotate(${f1(headTilt)} 0 ${f1(headCy + headR + 10)})"><circle cx="0" cy="${f1(headCy)}" r="${headR}" fill="${PAL.white}"/><rect x="-9" y="${f1(headCy + headR - 6)}" width="18" height="18" fill="${PAL.white}"/></g>`;
+    const chestGroup = `<g transform="rotate(${f1(chestCounter)} 0 ${f1(waistY)})">${limb(backArm.S, backArm.J, backArm.E, PAL.soft, 22)}${chest}${head}${limb(frontArm.S, frontArm.J, frontArm.E, PAL.white, 22)}</g>`;
+    const upper = `<g transform="translate(${f1(sway)} 0) rotate(${f1(lean + 0.35 * pelvis)} 0 ${f1(hipY)})">${lower}${chestGroup}</g>`;
+    const body = `${footSvg(back, PAL.soft)}${limb(back.hip, back.knee, back.foot, PAL.soft, 24)}${upper}${limb(front.hip, front.knee, front.foot, PAL.white, 24)}${footSvg(front, PAL.white)}`;
     const shadowW = 95 * (1 - crouch * 0.1);
     const svg = `<g transform="translate(${f1(o.x)} ${f1(o.y)}) scale(${f1(dir * scale)} ${f1(scale)}) translate(0 ${f1(snap)})" opacity="${o.opacity ?? 1}">
       <ellipse cx="0" cy="${f1(-snap + 4)}" rx="${shadowW}" ry="14" fill="#000" opacity="0.5" filter="url(#shadow)"/>${body}</g>`;
-    // world-space helpers (rotation of the upper body is ignored for hand targets; lean is small)
     const toWorld = p => [o.x + dir * scale * p[0], o.y + scale * (p[1] + snap)];
     const hands = toWorld([(frontArm.E[0] + backArm.E[0]) / 2, (frontArm.E[1] + backArm.E[1]) / 2]);
     const headTop = toWorld([0, headCy - headR]);
     return { svg, hands, headTop, headC: toWorld([0, headCy]) };
   }
+  // overlapping action helper: the value a function had `d` seconds ago (stories use it to let the head trail the body)
+  const lag = (fn, t, d = 0.12) => fn(Math.max(0, t - d));
 
   function sphere(x, y, r, glow = 1, op = 1) {
     return `<g opacity="${f1(op)}"><ellipse cx="${f1(x)}" cy="${f1(y + r + 6)}" rx="${f1(r * 1.1)}" ry="${f1(r * 0.22)}" fill="#000" opacity="0.6" filter="url(#shadow)"/>
@@ -171,22 +189,38 @@
   }
 
   const PS = {
-    W, H, PAL, clamp, lerp, seg, ease, f1, esc, DEG, mulberry32, hashStr, ik, leg, figure, sphere, trail, step, thoughtDots, measureRing, hookText, caption, wrap,
+    W, H, PAL, clamp, lerp, seg, ease, f1, esc, DEG, mulberry32, hashStr, ik, leg, lag, figure, sphere, trail, step, thoughtDots, measureRing, hookText, caption, wrap,
     stories: {}, state: null,
     registerStory(name, fn) { this.stories[name] = fn; },
     setup(plan) {
-      this.state = { ep: plan.episode, anim: plan.episode.animation, seed: plan.seed, total: plan.total, orbit: plan.orbit, walk: plan.walk };
+      this.state = { ep: plan.episode, anim: plan.episode.animation, seed: plan.seed, total: plan.total, orbit: plan.orbit, walk: plan.walk, clip: plan.clip };
       const wk = plan.walk; const samp = (arr, t) => { const k = clamp(t * wk.hz, 0, arr.length - 1); const i = Math.floor(k), fr = k - i; return lerp(arr[i], arr[Math.min(i + 1, arr.length - 1)], fr); };
       this.state.walkAt = wk ? (t => ({ x: samp(wk.x, t), phase: samp(wk.phase, t) })) : null;
       Object.assign(PAL, plan.episode.palette || {});
       const o = plan.orbit; this.state.orbitAngle = o ? (t => { const k = clamp(t * o.hz, 0, o.angles.length - 1); const i = Math.floor(k), fr = k - i; return lerp(o.angles[i], o.angles[Math.min(i + 1, o.angles.length - 1)], fr); }) : (() => 0);
     },
-    async ready() { await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))); },
+    async ready() {
+      const imgs = [...document.querySelectorAll('#stage image')];
+      await Promise.all(imgs.map(im => new Promise(res => { if (im.complete !== false) { const i = new Image(); i.onload = res; i.onerror = res; i.src = im.getAttribute('href'); setTimeout(res, 1500); } else res(); })));
+      await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+    },
+    clipLayer(t, cover) {
+      const c = this.state.clip; if (!c) return '';
+      const pad = n => String(n).padStart(5, '0');
+      const rel = clamp(t - c.at, -1e9, 1e9);
+      const idx = clamp(Math.round(rel * c.fps), 0, c.n_frames - 1);
+      const href = 'file://' + c.frames_dir + '/' + pad(idx + 1) + '.jpg';
+      const after = Math.max(0, t - (c.at + c.duration));
+      const holdLen = Math.max(0.5, this.state.total - (c.at + c.duration));
+      const z = 1 + c.hold_zoom * ease.smooth(after / holdLen);          // slow push-in on the frozen last frame
+      const dim = t < c.at ? c.pre_dim + (1 - c.pre_dim) * ease.smooth(seg(t, c.at - 0.6, c.at)) : 1;   // the first frame sits darker under the hook
+      return `<g transform="translate(${W / 2} ${H / 2}) scale(${f1(z)}) translate(${-W / 2} ${-H / 2})"><image href="${href}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/></g><rect width="${W}" height="${H}" fill="${PAL.bg}" opacity="${f1(1 - dim)}"/>`;
+    },
     compose(t, opts = {}) {
       const st = this.state; const ep = st.ep; const story = this.stories[ep.metaphor];
       if (!story) throw new Error('No story registered for metaphor "' + ep.metaphor + '"');
       const ctx = { t, ep, anim: st.anim, seed: st.seed, orbitAngle: st.orbitAngle, walkAt: st.walkAt, narration: st.ep.narration || [], rng: mulberry32(hashStr(ep.id) ^ st.seed), P: this };
-      const items = story(t, ctx).sort((a, b) => a.z - b.z).map(i => i.svg).join('');
+      const items = this.clipLayer(t, !!opts.cover) + story(t, ctx).sort((a, b) => a.z - b.z).map(i => i.svg).join('');
       const hookLines = opts.cover ? ((ep.thumbnail || {}).title || (ep.hook || {}).lines) : (ep.hook || {}).lines;
       const hook = hookLines ? hookText(hookLines, opts.cover ? 0.5 : t, opts.cover ? 1e9 : ep.hook.until, !!opts.cover) : '';
       const caps = opts.cover ? '' : (ep.captions || []).map(c => caption(c, t, ep.caption_style)).join('');

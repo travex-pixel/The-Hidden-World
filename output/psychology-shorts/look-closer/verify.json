@@ -1,0 +1,106 @@
+{
+  "file": "/home/user/The-Hidden-World/output/psychology-shorts/look-closer/video.mp4",
+  "size_bytes": 3824020,
+  "checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+  },
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "duration": 15.4,
+  "audio_duration": 15.4,
+  "decode_stderr": "",
+  "mean_volume_db": -16.6,
+  "max_volume_db": -0.7,
+  "long_silences": [],
+  "contact_sheet": "/home/user/The-Hidden-World/output/psychology-shorts/look-closer/contact_sheet.png",
+  "all_passed": true,
+  "qa_visual": {
+    "frames": {
+      "opening_first_frame": {
+        "t": 0.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/look-closer/qa/opening_first_frame.png",
+        "mean": 21.56,
+        "bright_fraction": 0.0218,
+        "mid_fraction": 0.0576
+      },
+      "beat_opening": {
+        "t": 1.2,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/look-closer/qa/beat_opening.png",
+        "mean": 22.59,
+        "bright_fraction": 0.0276,
+        "mid_fraction": 0.064
+      },
+      "beat_decision": {
+        "t": 4.9,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/look-closer/qa/beat_decision.png",
+        "mean": 30.77,
+        "bright_fraction": 0.0549,
+        "mid_fraction": 0.1618
+      },
+      "beat_payoff": {
+        "t": 10.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/look-closer/qa/beat_payoff.png",
+        "mean": 38.9,
+        "bright_fraction": 0.0855,
+        "mid_fraction": 0.2314
+      },
+      "beat_ending": {
+        "t": 14.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/look-closer/qa/beat_ending.png",
+        "mean": 10.25,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0138
+      },
+      "ending_last_frame": {
+        "t": "end",
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/look-closer/qa/ending_last_frame.png",
+        "mean": 10.25,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0138
+      }
+    },
+    "frames_checked": 462,
+    "min_yavg": 23.57,
+    "first_frame_has_visual": true,
+    "no_blank_frames": true,
+    "animation_changes_throughout": true,
+    "all_passed": true
+  },
+  "qa_audio": {
+    "speech_rms_db": [
+      -14.7,
+      -16.2,
+      -12.5,
+      -15.1
+    ],
+    "bed_rms_db_between_lines": [
+      -31.9,
+      -32.1,
+      -33.6
+    ],
+    "narration_above_bed": true,
+    "narration_audible": true,
+    "ending_tail_db": -51.2,
+    "ending_not_abrupt": true,
+    "peak": 0.921,
+    "no_clipping": true,
+    "all_passed": true
+  },
+  "narration_warnings": [
+    "line 1 ('Most things stay ordinary, bec\u2026') still runs 0.13s past its slot; shorten it or move the next line"
+  ]
+}

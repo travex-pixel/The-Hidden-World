@@ -15,10 +15,13 @@ window.PS.registerStory('door', function (t, ctx) {
 
   // ---------- hesitation: one slow lean that is withdrawn, then one slow head tilt. All continuous.
   const h = A.hesitation;
-  const leanIn = ease.smooth(seg(t, h.lean_at, h.lean_at + 1.1)) * (1 - ease.smooth(seg(t, h.lean_at + 1.7, h.lean_at + 2.8)));
-  const tilt = (ease.smooth(seg(t, h.tilt_at, h.tilt_at + 1.2)) * (1 - ease.smooth(seg(t, h.tilt_at + 1.8, h.tilt_at + 2.8)))) * 5;
-  const toLight = A.lean_to_light ? ease.smooth(seg(t, A.lean_to_light.at, A.lean_to_light.at + 1.6)) * A.lean_to_light.deg : 0;
-  const lean = leanIn * 4 + 2.5 * inWalk + toLight;
+  const leanAt = tt => { const li = ease.smooth(seg(tt, h.lean_at, h.lean_at + 1.1)) * (1 - ease.smooth(seg(tt, h.lean_at + 1.7, h.lean_at + 2.8)));
+    const iw = ease.smooth(seg(tt, Wk.start, Wk.start + 0.35)) * (1 - ease.smooth(seg(tt, Wk.end - 0.35, Wk.end)));
+    const tl = A.lean_to_light ? ease.smooth(seg(tt, A.lean_to_light.at, A.lean_to_light.at + 1.6)) * A.lean_to_light.deg : 0;
+    return li * 4 + 2.5 * iw + tl; };
+  const lean = leanAt(t);
+  const tiltBase = (ease.smooth(seg(t, h.tilt_at, h.tilt_at + 1.2)) * (1 - ease.smooth(seg(t, h.tilt_at + 1.8, h.tilt_at + 2.8)))) * 5;
+  const tilt = tiltBase + (P.lag(leanAt, t, 0.14) - lean) * 0.8;   // the head trails the body by a few frames
 
   // ---------- the touch: the near arm rises to the seam and rests there
   const ru = ease.inOut(seg(t, A.reach[0], A.reach[1]));

@@ -11,7 +11,10 @@ window.PS.registerStory('stone', function (t, ctx) {
   const rise = ease.smooth(seg(t, A.rise[0], A.rise[1]));             // the figure straightens
   const strain = 0.5 + 0.5 * Math.sin(t * 1.4);                        // slow sway under the load before it is set down
   const carryLean = A.carry.lean + strain * 1.5, carryCrouch = A.carry.crouch + strain * 0.04;
-  const lean = lerp(lerp(carryLean, A.lowered.lean, lower), 0, rise) - 1.5 * rise * (1 - rise);   // a tiny stretch back as it stands
+  const leanAt = tt => { const lo = ease.smooth(seg(tt, A.lower[0], A.lower[1])), ri = ease.smooth(seg(tt, A.rise[0], A.rise[1]));
+    const st = 0.5 + 0.5 * Math.sin(tt * 1.4); return lerp(lerp(A.carry.lean + st * 1.5, A.lowered.lean, lo), 0, ri) - 1.5 * ri * (1 - ri); };
+  const lean = leanAt(t);
+  const tilt = (P.lag(leanAt, t, 0.14) - lean) * 0.8;   // the head trails the body
   const crouch = lerp(lerp(carryCrouch, A.lowered.crouch, lower), 0, rise);
 
   // ---------- the stone: carried in front of the chest, then resting on the ground ahead of the feet
@@ -24,7 +27,7 @@ window.PS.registerStory('stone', function (t, ctx) {
   const holdLocal = [(sx - x) / S - dir * R * 0.25 / S, (sy - FLOOR) / S - 10];
   const hangLocal = [12, -36];
   const reach = [lerp(holdLocal[0], hangLocal[0], released), lerp(holdLocal[1], hangLocal[1], released)];
-  const F = P.figure({ x, y: FLOOR, scale: S, dir, phase: 0, stride: 0, crouch, lean, arms: 'reach', reach, t });
+  const F = P.figure({ x, y: FLOOR, scale: S, dir, phase: 0, stride: 0, crouch, lean, tilt, arms: 'reach', reach, t });
 
   // ---------- light: gold only when the figure stands up
   const glow = ease.smooth(seg(t, A.glow[0], A.glow[1]));

@@ -40,3 +40,6 @@ Changes:
 
 ## Third pass (less movement)
 Two planted steps instead of four (114 px over 2.7 s, peak 63 px/s), one touch, then a 4° lean toward the light during the hold so the payoff is felt by the body, not just the door. Runtime 16.4 s. 20/20 checks pass, 74 tests pass, frames inspected at 10 timestamps.
+
+## Fourth pass (rig v2)
+Re-rendered on the upgraded mannequin: pelvis rock with the stride, chest counter-rotation, feet with a heel roll, arms trailing the legs, head trailing the lean, slow weight shift while standing. Same timings as the third pass. 20/20 checks pass.

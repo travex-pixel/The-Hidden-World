@@ -164,6 +164,34 @@ class Episode03Stone(unittest.TestCase):
             self.assertTrue(self.ep["publishing"][k].strip())
 
 
+class Episode04Clip(unittest.TestCase):
+    """Look Closer: a generated clip is the hero; the engine adds hook, captions, hold and end card."""
+    def setUp(self):
+        self.ep = load_short("look-closer")
+
+    def test_config(self):
+        c = self.ep["clip"]; self.assertEqual(self.ep["metaphor"], "clip-feature")
+        self.assertTrue((ROOT / c["src"]).exists(), "the clip must be committed at clip.src")
+        self.assertLess(c["at"], 4.0); self.assertLessEqual(self.ep["runtime"]["target_seconds"], 18.0)
+        self.assertLess(self.ep["end_card"]["at"], self.ep["runtime"]["target_seconds"])
+        self.assertTrue((ROOT / "renderer" / "psych" / "stories" / "clip-feature.js").exists())
+
+    def test_prepare_clip_conforms_and_grades(self):
+        import subprocess, tempfile
+        from pipeline.psych import prepare_clip, ShortError
+        with tempfile.TemporaryDirectory() as d:
+            src = Path(d) / "synthetic.mp4"
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=s=720x1280:d=1.2:r=24", "-pix_fmt", "yuv420p", str(src)], check=True)
+            ep = {"clip": {"src": str(src.relative_to(ROOT)) if str(src).startswith(str(ROOT)) else str(src), "at": 1.0}}
+            # prepare_clip resolves relative to ROOT; an absolute path also works through ROOT / abs
+            res = prepare_clip(ep, Path(d) / "work", 540, 960, 15)
+            self.assertEqual(res["n_frames"], 18); self.assertEqual(res["fps"], 15); self.assertAlmostEqual(res["duration"], 1.2, places=1)
+            from PIL import Image
+            im = Image.open(Path(d) / "work" / "clip" / "00001.jpg"); self.assertEqual(im.size, (540, 960))
+            with self.assertRaises(ShortError):
+                prepare_clip({"clip": {"src": "assets/clips/does-not-exist.mp4", "at": 1.0}}, Path(d) / "w2", 540, 960, 15)
+
+
 class Package(unittest.TestCase):
     def test_combined_captions_file(self):
         import tempfile
