@@ -1,0 +1,1 @@
+Miguel Salguero-Olivares has pleaded not guilty and the trial is ongoing as of 13 October 2026; there is no verdict. We will update this when the jury decides. Which evidence do you think matters most: the note, the DNA or the lost bloodstain sample? Sources are in the description.

@@ -1,0 +1,727 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR)",
+ "lines": 51,
+ "corpus_wer": 0.054,
+ "lines_over_20pct": [
+  {
+   "line": 17,
+   "t": 120.54,
+   "script": "She came back around eleven that morning, with a friend. They found Faith, and called nine one one.",
+   "asr": "She came back around 11 that morning with a friend. They found faith and called 911.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "eleven",
+     "11"
+    ],
+    [
+     "nine",
+     "∅"
+    ],
+    [
+     "one",
+     "∅"
+    ],
+    [
+     "one",
+     "911"
+    ]
+   ]
+  },
+  {
+   "line": 26,
+   "t": 183.411,
+   "script": "On the sixteenth of September, 2021, Chapel Hill police announced an arrest.",
+   "asr": "On 16 September 2021, Chapel Hill Police announced an arrest.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "the",
+     "∅"
+    ],
+    [
+     "sixteenth",
+     "∅"
+    ],
+    [
+     "of",
+     "16"
+    ]
+   ]
+  },
+  {
+   "line": 27,
+   "t": 189.259,
+   "script": "Miguel Salguero-Olivares, then twenty-eight, of Durham.",
+   "asr": "Miguel Salgero Olives then 28th of Durham.",
+   "wer": 0.5,
+   "diffs": [
+    [
+     "salguero",
+     "salgero"
+    ],
+    [
+     "olivares",
+     "olives"
+    ],
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "eight",
+     "28th"
+    ]
+   ]
+  },
+  {
+   "line": 38,
+   "t": 259.336,
+   "script": "Jury selection began on the twenty-eighth of September, 2026. Twelve jurors and four alternates were chosen.",
+   "asr": "Jury selection began on 28 September 2026. 12 jurors and four alternates were chosen.",
+   "wer": 0.294,
+   "diffs": [
+    [
+     "the",
+     "∅"
+    ],
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "eighth",
+     "∅"
+    ],
+    [
+     "of",
+     "28"
+    ],
+    [
+     "twelve",
+     "12"
+    ]
+   ]
+  }
+ ],
+ "name_mismatches": [],
+ "rows": [
+  {
+   "line": 0,
+   "t": 0.45,
+   "script": "In September 2012, a nineteen-year-old student at the University of North Carolina was found dead in an apartment in Chapel Hill.",
+   "asr": "In September 2012, a 19-year-old student at the University of North Carolina was found dead in an apartment in Chapel Hill.",
+   "wer": 0.043,
+   "diffs": [
+    [
+     "nineteen",
+     "19"
+    ]
+   ]
+  },
+  {
+   "line": 1,
+   "t": 8.776,
+   "script": "On the bed near her, police found a note, written on a fast-food bag.",
+   "asr": "On the bed near her, police found a note written on a fast food bag.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 2,
+   "t": 13.626,
+   "script": "It said, \"I'm not stupid.\" And then, \"Jealous.\" Police believed her killer wrote it.",
+   "asr": "It said I'm not stupid. And then jealous. Police believed her killer wrote it.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 3,
+   "t": 21.518,
+   "script": "Her name was Faith Hedgepeth. For nine years, no one was arrested. Investigators had a man's DNA, and hundreds of samples that didn't match.",
+   "asr": "Her name was Faith Hedgepeth. For nine years no one was arrested. Investigators had a man's DNA and hundreds of samples that didn't match.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 4,
+   "t": 33.33,
+   "script": "Then, in 2021, police arrested a man from Durham. Investigators said his DNA matched the scene.",
+   "asr": "Then in 2021, police arrested a man from Durham. Investigators said his DNA matched the scene.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 5,
+   "t": 41.612,
+   "script": "Now, fourteen years after she died, he is on trial for her murder. He has pleaded not guilty.",
+   "asr": "Now, 14 years after she died, he is on trial for her murder. He has pleaded not guilty.",
+   "wer": 0.056,
+   "diffs": [
+    [
+     "fourteen",
+     "14"
+    ]
+   ]
+  },
+  {
+   "line": 6,
+   "t": 48.583,
+   "script": "A prosecutor told the jury, \"The evidence in this case is louder than the noise around it.\"",
+   "asr": "A prosecutor told the jury: \"The evidence in this case is louder than the noise around it.\"",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 7,
+   "t": 55.002,
+   "script": "His lawyer told them to ask something else: \"Where's the rest of the evidence?\"",
+   "asr": "His lawyer told them to ask something else, whereas the rest of the evidence.",
+   "wer": 0.071,
+   "diffs": [
+    [
+     "where's",
+     "whereas"
+    ]
+   ]
+  },
+  {
+   "line": 8,
+   "t": 59.984,
+   "script": "The jury hasn't decided. This is what it has heard so far, and what it won't hear.",
+   "asr": "The jury hasn't decided. This is what it has heard so far and what it won't hear.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 9,
+   "t": 66.492,
+   "script": "Faith Hedgepeth was nineteen, a biology student at UNC Chapel Hill.",
+   "asr": "Faith Hedgepeth was 19, a biology student at UNC Chapel Hill.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "nineteen",
+     "19"
+    ]
+   ]
+  },
+  {
+   "line": 10,
+   "t": 71.943,
+   "script": "She grew up in Warren County, North Carolina. She was a member of the Haliwa-Saponi tribe, and a Gates Millennium Scholar.",
+   "asr": "She grew up in Warren County, North Carolina. She was a member of the HALA WASAPONY tribe and a Gates Millennium scholar.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "haliwa",
+     "hala"
+    ],
+    [
+     "saponi",
+     "wasapony"
+    ]
+   ]
+  },
+  {
+   "line": 11,
+   "t": 80.202,
+   "script": "On campus, she sang with an American Indian a cappella group called Unheard Voices.",
+   "asr": "On campus, she sang with an American Indian, a cappella group called Unheard Voices.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 12,
+   "t": 86.609,
+   "script": "A friend told the jury she was goofy, full of joy, and gave great hugs.",
+   "asr": "A friend told the jury she was goofy, full of joy and gave great hugs.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 13,
+   "t": 92.26,
+   "script": "On the evening of the sixth of September, 2012, police say, Faith and her roommate studied at the campus library.",
+   "asr": "On the evening of the 6th of September, 2012, police say Faith and her roommate studied at the campus library.",
+   "wer": 0.05,
+   "diffs": [
+    [
+     "sixth",
+     "6th"
+    ]
+   ]
+  },
+  {
+   "line": 14,
+   "t": 99.214,
+   "script": "After midnight, they went to a nightclub in Chapel Hill called the Thrill. Video showed them leaving just after two.",
+   "asr": "After midnight they went to a nightclub in Chapel Hill called the thrill. Video showed them leaving just after two.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 15,
+   "t": 106.986,
+   "script": "Police said that by three in the morning, the two women were back at their apartment. That's the last time, police said, Faith was known to be alive.",
+   "asr": "Police said that by three in the morning, the two women were back at their apartment. That's the last time police said, \"Fath was known to be alive.\"",
+   "wer": 0.036,
+   "diffs": [
+    [
+     "faith",
+     "fath"
+    ]
+   ]
+  },
+  {
+   "line": 16,
+   "t": 116.571,
+   "script": "At about half past four, police said, the roommate left.",
+   "asr": "At about half past four, police said the roommate left.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 17,
+   "t": 120.54,
+   "script": "She came back around eleven that morning, with a friend. They found Faith, and called nine one one.",
+   "asr": "She came back around 11 that morning with a friend. They found faith and called 911.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "eleven",
+     "11"
+    ],
+    [
+     "nine",
+     "∅"
+    ],
+    [
+     "one",
+     "∅"
+    ],
+    [
+     "one",
+     "911"
+    ]
+   ]
+  },
+  {
+   "line": 18,
+   "t": 127.906,
+   "script": "A medical examiner has told the jury that she died of blunt force trauma to the head.",
+   "asr": "A medical examiner has told the jury that she died of blunt force trauma to the head.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 19,
+   "t": 133.96,
+   "script": "On the bed was a fast-food bag, with a note written on it.",
+   "asr": "On the bed was a fast food bag, with a note written on it.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 20,
+   "t": 138.765,
+   "script": "Police released it two years later. It read: \"I'm not stupid.\" Then a word we won't repeat. Then, \"Jealous.\"",
+   "asr": "Police released it two years later. It raid I'm not stupid. Then a word we won't repeat. Then jealous.",
+   "wer": 0.053,
+   "diffs": [
+    [
+     "read",
+     "raid"
+    ]
+   ]
+  },
+  {
+   "line": 21,
+   "t": 149.542,
+   "script": "Police said they believed the killer wrote it.",
+   "asr": "Police said they believed the killer wrote it",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 22,
+   "t": 152.669,
+   "script": "Early on, police also said they didn't believe this was a random crime.",
+   "asr": "Early on, police also said they didn't believe this was a random crime.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 23,
+   "t": 157.658,
+   "script": "In 2013, police and the FBI released a profile. It said the killer might have known Faith, and lived near her.",
+   "asr": "In 2013, police and the FB I released a profile. It said the killer might have known faith and lived near her.",
+   "wer": 0.095,
+   "diffs": [
+    [
+     "∅",
+     "fb"
+    ],
+    [
+     "fbi",
+     "i"
+    ]
+   ]
+  },
+  {
+   "line": 24,
+   "t": 166.226,
+   "script": "Investigators had DNA from the scene, from a man. They compared it with hundreds of samples. None matched.",
+   "asr": "Investigators had D-N from the scene from a man. They compared it with hundreds of samples. None matched.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "∅",
+     "d"
+    ],
+    [
+     "dna",
+     "n"
+    ]
+   ]
+  },
+  {
+   "line": 25,
+   "t": 175.3,
+   "script": "Years went by. In 2020, a national TV special was still calling it a mystery.",
+   "asr": "Years went by. In 2020, a national TV special was still calling it a mystery.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 26,
+   "t": 183.411,
+   "script": "On the sixteenth of September, 2021, Chapel Hill police announced an arrest.",
+   "asr": "On 16 September 2021, Chapel Hill Police announced an arrest.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "the",
+     "∅"
+    ],
+    [
+     "sixteenth",
+     "∅"
+    ],
+    [
+     "of",
+     "16"
+    ]
+   ]
+  },
+  {
+   "line": 27,
+   "t": 189.259,
+   "script": "Miguel Salguero-Olivares, then twenty-eight, of Durham.",
+   "asr": "Miguel Salgero Olives then 28th of Durham.",
+   "wer": 0.5,
+   "diffs": [
+    [
+     "salguero",
+     "salgero"
+    ],
+    [
+     "olivares",
+     "olives"
+    ],
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "eight",
+     "28th"
+    ]
+   ]
+  },
+  {
+   "line": 28,
+   "t": 193.612,
+   "script": "Investigators said they found him through genetic genealogy: the DNA from the scene led them to distant relatives.",
+   "asr": "Investigators said they found him through genetic genealogy, the Diana from the scene led them to distant relatives.",
+   "wer": 0.056,
+   "diffs": [
+    [
+     "dna",
+     "diana"
+    ]
+   ]
+  },
+  {
+   "line": 29,
+   "t": 200.678,
+   "script": "North Carolina's attorney general said a new DNA sample matched the profile from 2012.",
+   "asr": "North Carolina's Attorney General said a new DN, a sample matched the profile from 2012.",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "∅",
+     "dn"
+    ],
+    [
+     "dna",
+     "a"
+    ]
+   ]
+  },
+  {
+   "line": 30,
+   "t": 207.763,
+   "script": "And police said he had not been a person of interest early in the investigation.",
+   "asr": "And police said he had not been a person of interest early in the investigation.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 31,
+   "t": 213.361,
+   "script": "Faith's mother said she cried tears of joy.",
+   "asr": "Faith's mother said she cried tears of joy.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 32,
+   "t": 217.242,
+   "script": "He was charged with first-degree murder. Prosecutors later added rape, burglary and sexual offense charges. The State is not seeking the death penalty.",
+   "asr": "He was charged with first-degree murder. Prosecutors later added rape, burglary and sexual offense charges. The state is not seeking the death penalty.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 33,
+   "t": 228.591,
+   "script": "He has pleaded not guilty to all charges.",
+   "asr": "He has pleaded not guilty to all charges.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 34,
+   "t": 232.103,
+   "script": "Before the trial, his defence tried to have the case thrown out.",
+   "asr": "Before the trial, his defence tried to have the case thrown out.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 35,
+   "t": 236.779,
+   "script": "A swab of a bloodstain from the bathroom doorframe had been lost, and never tested.",
+   "asr": "A swab of a blood stain from the bathroom doorframe had been lost and never tested.",
+   "wer": 0.133,
+   "diffs": [
+    [
+     "∅",
+     "blood"
+    ],
+    [
+     "bloodstain",
+     "stain"
+    ]
+   ]
+  },
+  {
+   "line": 36,
+   "t": 242.643,
+   "script": "The judge called that \"absurd.\" Prosecutors called it negligence, not bad faith. And the case went ahead.",
+   "asr": "The judge called that absurd. Prosecutors called it negligence, not bad faith. And the case went ahead.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 37,
+   "t": 252.282,
+   "script": "The judge also ruled that the jury won't hear about the genealogy that investigators said led them to him.",
+   "asr": "The judge also ruled that the jury won't hear about the genealogy that investigators said led them to him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 38,
+   "t": 259.336,
+   "script": "Jury selection began on the twenty-eighth of September, 2026. Twelve jurors and four alternates were chosen.",
+   "asr": "Jury selection began on 28 September 2026. 12 jurors and four alternates were chosen.",
+   "wer": 0.294,
+   "diffs": [
+    [
+     "the",
+     "∅"
+    ],
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "eighth",
+     "∅"
+    ],
+    [
+     "of",
+     "28"
+    ],
+    [
+     "twelve",
+     "12"
+    ]
+   ]
+  },
+  {
+   "line": 39,
+   "t": 267.94,
+   "script": "In her opening, prosecutor Angela Garcia-Lamarca told jurors his DNA was on the bottle the State calls the weapon, and on the note.",
+   "asr": "In her opening, prosecutor Angela Garcia-Lamarka told jurors his DN was on the bottle the state calls the weapon, and on the note:",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "lamarca",
+     "lamarka"
+    ],
+    [
+     "dna",
+     "dn"
+    ]
+   ]
+  },
+  {
+   "line": 40,
+   "t": 276.175,
+   "script": "\"This defendant was a stranger to Faith,\" she said. \"The fact that he was a stranger is reason it took years to find him.\"",
+   "asr": "This defendant was a stranger to faith, she said. The fact that he was a stranger is reason it took years to find him.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 41,
+   "t": 285.326,
+   "script": "His lawyer, James Rainsford, told jurors a statistical likelihood is not the same as a match, and that the DNA has to be connected to the crime.",
+   "asr": "His lawyer, James Rainsford, told jurors a statistical likelihood is not the same as a match, and that the DN has to be connected to the crime.",
+   "wer": 0.037,
+   "diffs": [
+    [
+     "dna",
+     "dn"
+    ]
+   ]
+  },
+  {
+   "line": 42,
+   "t": 294.139,
+   "script": "The defence says his DNA wasn't found on the neck of the bottle, and that two bloody thumbprints on it weren't matched to him.",
+   "asr": "The defense says his DN wasn't found on the neck of the bottle and that two bloody thumbprints on it weren't matched to him.",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "defence",
+     "defense"
+    ],
+    [
+     "dna",
+     "dn"
+    ]
+   ]
+  },
+  {
+   "line": 43,
+   "t": 301.742,
+   "script": "Faith's roommate, testifying for the State, told the jury she had never known him, and never saw him in their apartment.",
+   "asr": "Faith's roommate, testifying for the state, told the jury she had never known him and never saw him in their apartment.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 44,
+   "t": 309.28,
+   "script": "And a forensic technician who worked the scene in 2012 admitted a mistake with that bloodstain. \"That step was missed,\" she said.",
+   "asr": "And a forensic technician who worked the scene in 2012 admitted a mistake with that bloodstain. \"That step was missed,\" she said.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 45,
+   "t": 318.583,
+   "script": "Faith's parents have been in court for the testimony.",
+   "asr": "Faith's parents have been in court for the testimony.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 46,
+   "t": 322.85,
+   "script": "Her family says they never knew the defendant, and knew of no link between him and Faith.",
+   "asr": "Her family says they never knew the defendant and knew of no link between him and faith.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "line": 47,
+   "t": 328.736,
+   "script": "So, here's where the case stands, as of the thirteenth of October, 2026.",
+   "asr": "So here's where the case stands as of the 13th of October 2026.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "thirteenth",
+     "13th"
+    ]
+   ]
+  },
+  {
+   "line": 48,
+   "t": 334.655,
+   "script": "Miguel Salguero-Olivares is on trial for first-degree murder, rape, sexual offense and burglary. He has pleaded not guilty, and he is presumed innocent.",
+   "asr": "Miguel Salgero Olives is on trial for first-degree murder, rape, sexual offense and burglary. He has pleaded not guilty and he has presumed innocent.",
+   "wer": 0.12,
+   "diffs": [
+    [
+     "salguero",
+     "salgero"
+    ],
+    [
+     "olivares",
+     "olives"
+    ],
+    [
+     "is",
+     "has"
+    ]
+   ]
+  },
+  {
+   "line": 49,
+   "t": 346.186,
+   "script": "Prosecutors say the DNA answers the question. His defence says it doesn't answer enough.",
+   "asr": "Prosecutors say the DN answers the question. His defense says it doesn't answer enough.",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "dna",
+     "dn"
+    ],
+    [
+     "defence",
+     "defense"
+    ]
+   ]
+  },
+  {
+   "line": 50,
+   "t": 353.701,
+   "script": "Fourteen years after Faith Hedgepeth died, a Durham jury will decide.",
+   "asr": "14 years after Faith Hedgepeth died, a Durham jury will decide.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "fourteen",
+     "14"
+    ]
+   ]
+  }
+ ],
+ "note": "ASR errors are expected on proper names and numbers; mismatches are leads for a human listen, not proof of a narration defect."
+}
