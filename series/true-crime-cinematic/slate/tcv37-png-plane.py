@@ -42,10 +42,10 @@ def build(h):
           emph=["dirt", "strip,", "28", "bags", "80", "million", "dollars,"], pad=0.15, tr="push"),
         # C - THE HOW (about 50 %): the take-off run, the plane veers into the trees (impact). Music drop (starts > 15 s).
         S("s05_crash", "pp37_crash", [N("Then the plane raced down the strip, and crashed into the trees."),
-                                      N("Police in Australia said the weight may have played a part.", pause_before=0.3)],
+                                      N("Australian police said the weight may be partly to blame.", pause_before=0.3)],
           "revelation", ["P_crash", "P_weight"], sfx=[fw(0, 3, "rumble", 0.45, -0.1), fw(0, 8, "hit", 0.55, -0.05),
                                                        fw(0, 10, "thud", 0.45, 0.0), fw(1, 4, "sting", 0.4, -0.05)],
-          emph=["raced", "strip,", "crashed", "trees.", "weight", "part."], pad=0.2, tr="flash"),
+          emph=["raced", "strip,", "crashed", "trees.", "weight", "blame."], pad=0.2, tr="flash"),
         # C - the wreck found empty: two PNG officers at the wreck at dawn, torches; the pilot is gone
         S("s06_empty", "pp37_empty", [N("The wreck was found empty. The pilot had vanished.")],
           "revelation", ["P_empty"], sfx=[fx(0.0, "wind", 0.3), fw(0, 4, "stamp", 0.4, -0.05), fw(0, 8, "sting", 0.35, -0.05)],
@@ -114,7 +114,7 @@ def build(h):
           ["afp_2020", "acic_2020", "newdaily_2020"]),
         C("P_crash", "The plane crashed while attempting to take off from the strip, into trees at the end of the runway; it never got airborne (failed to take off).",
           ["afp_2020", "afp_2026", "bbc_2020", "apr_2020"]),
-        C("P_weight", "The AFP said it 'cannot rule out that the weight of the cocaine had an impact on the plane's ability to take off'. Narration: 'Australian police said the weight may have played a part.'",
+        C("P_weight", "The AFP said it 'cannot rule out that the weight of the cocaine had an impact on the plane's ability to take off'. Narration: 'Australian police said the weight may be partly to blame.'",
           ["afp_2020", "ausav_2020", "newdaily_2020"]),
         C("P_empty", "The wrecked plane was found empty at the strip; the pilot was missing until he surrendered.",
           ["inqld_2020", "bbc_2020", "national_found"]),
