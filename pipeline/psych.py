@@ -135,13 +135,61 @@ def orbit_schedule(anim: dict, total: float, hz: int = 60) -> dict:
     return {"hz": hz, "angles": angles, "stop_angle": a_target}
 
 
+def _foot_x(phase: float, stride: float, side: int) -> float:
+    """Leg forward kinematics, figure-local x of a foot (mirrors renderer/psych/engine.js leg())."""
+    ph = phase + (0.0 if side > 0 else math.pi)
+    th = math.radians(32 * stride * math.sin(ph))
+    bend = math.radians(56 * stride * max(0.0, math.cos(ph)))
+    return side * 4 + math.sin(th) * 84 + math.sin(th - bend) * 82
+
+
+def walk_schedule(anim: dict, total: float, hz: int = 60) -> dict:
+    """A straight approach as ONE smooth motion. The body eases in once and out once over the whole walk; the leg
+    phase is solved from distance travelled so the stance foot stays planted (no sliding, no per-step lurch).
+    Returns 60 Hz samples of body x and phase, the computed start x, and the footfall times for the soundtrack."""
+    w = anim["walk"]; S = anim["figure_scale"]; stride = w["stride"]; n = int(w["steps"])
+    # distance(phase): advance the body while the stance leg (the straight one) stays planted
+    dp = 0.002; ph = 0.0; x = 0.0
+    stance = 1 if math.cos(0.0) <= 0 else -1          # left leg swings first (cos > 0 => left bent), right is stance
+    planted = x + S * _foot_x(0.0, stride, stance)
+    table_ph, table_x, handovers = [0.0], [0.0], []
+    while ph < n * math.pi - 1e-9:
+        nxt = ph + dp
+        k_old = math.floor((ph + math.pi / 2) / math.pi); k_new = math.floor((nxt + math.pi / 2) / math.pi)
+        if k_new != k_old:                              # stance change at phase = pi/2 + k*pi: plant the other foot
+            x = planted - S * _foot_x(nxt, stride, stance)
+            stance = -stance; planted = x + S * _foot_x(nxt, stride, stance); handovers.append(nxt)
+        else:
+            x = planted - S * _foot_x(nxt, stride, stance)
+        ph = nxt; table_ph.append(ph); table_x.append(x)
+    D = table_x[-1]
+    t0, t1 = w["start"], w["end"]
+    start_x = w["end_x"] - D
+    def ease(u):
+        u = min(max(u, 0.0), 1.0); return u * u * (3 - 2 * u)
+    xs, phs, footfalls = [], [], []
+    hand_i = 0; t = 0.0
+    n_samples = int(total * hz) + 2
+    for i in range(n_samples):
+        t = i / hz
+        d = D * ease((t - t0) / (t1 - t0))
+        j = int(np.searchsorted(table_x, d)); j = min(max(j, 0), len(table_ph) - 1)
+        phase = table_ph[j]
+        xs.append(round(start_x + d, 3)); phs.append(round(phase, 5))
+        while hand_i < len(handovers) and phase >= handovers[hand_i]:
+            footfalls.append(round(t, 3)); hand_i += 1
+    footfalls.append(round(t1, 3))                      # the last foot closes up at the stop
+    return {"hz": hz, "x": xs, "phase": phs, "start_x": round(start_x, 2), "distance": round(D, 2), "footfalls": footfalls,
+            "peak_speed_px_s": round(1.5 * D / (t1 - t0), 1)}
+
+
 def footsteps(ep: dict, orbit: dict) -> list[tuple[float, str, float]]:
     """Soft footfalls: orbit footfalls inside the escalation window, plus B's entrance walk and A's final walk."""
     fs = ep.get("footsteps") or {}
     ev = []
     anim = ep["animation"]
-    for st in anim.get("steps", []) if isinstance(anim.get("steps"), list) and anim["steps"] and isinstance(anim["steps"][0], dict) else []:
-        ev.append((round(st["t"], 3), "step", float(fs.get("gain", 0.3))))   # a planted foot lands at the end of each step window
+    for i, ft in enumerate(anim.get("_walk", {}).get("footfalls", [])):
+        ev.append((ft, "step", float(fs.get("gain", 0.3)) * (0.85 if i % 2 else 1.0)))
     if not fs or orbit is None or "escalation_window" not in fs:
         return ev
     hz = orbit["hz"]; ang = orbit["angles"]; a0 = ang[0]
@@ -324,6 +372,10 @@ def main(argv=None) -> int:
 
     # 2. orbit schedule + audio
     orbit = orbit_schedule(ep["animation"], total) if "orbit" in ep["animation"] else None
+    walk = walk_schedule(ep["animation"], total) if "walk" in ep["animation"] else None
+    if walk:
+        ep["animation"]["_walk"] = {"footfalls": walk["footfalls"], "start_x": walk["start_x"], "distance": walk["distance"], "peak_speed_px_s": walk["peak_speed_px_s"]}
+        log(f"walk: {walk['distance']}px in {len(walk['footfalls'])} footfalls, peak {walk['peak_speed_px_s']} px/s, starts at x={walk['start_x']}")
     cues = ep["music"]["cues"]
     tl = [{"start": c["start"], "end": (cues[i + 1]["start"] if i + 1 < len(cues) else total), "music_cue": c["cue"]} for i, c in enumerate(cues)]
     log("audio: composing music bed and effects")
@@ -341,7 +393,7 @@ def main(argv=None) -> int:
 
     # 3. plan + render
     plan = {"width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed, "total": total,
-            "episode": ep, "orbit": orbit, "story_js": f"renderer/psych/stories/{ep['metaphor']}.js",
+            "episode": ep, "orbit": orbit, "walk": walk, "story_js": f"renderer/psych/stories/{ep['metaphor']}.js",
             "narration": [{k: v for k, v in l.items() if k != "path"} for l in lines], "sfx_events": sfx_events}
     (work / "plan.json").write_text(json.dumps(plan))
     silent = work / "video_silent.mp4"

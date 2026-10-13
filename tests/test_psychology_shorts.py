@@ -109,21 +109,27 @@ class Episode02Door(unittest.TestCase):
         self.assertLess(self.ep["end_card"]["at"], self.ep["runtime"]["target_seconds"]); self.assertEqual(self.ep["end_card"]["title"], "THE HIDDEN PATTERN")
 
     def test_single_straight_approach_few_slow_steps(self):
-        steps = [s["t"] for s in self.a["steps"]]
-        self.assertTrue(2 <= len(steps) <= 5, "a few steps, not a walk cycle loop")
-        self.assertEqual(steps, sorted(steps))
-        gaps = [b - a for a, b in zip(steps, steps[1:])]
-        self.assertTrue(all(g >= 0.8 for g in gaps), f"steps must be slow and deliberate (>= 0.8 s apart): {gaps}")
-        self.assertGreaterEqual(self.a["step_duration"], 0.7)
-        self.assertLess(self.a["start_x"], self.a["door"]["x"], "the figure walks toward the door in a straight line (+x only)")
+        from pipeline.psych import walk_schedule
+        w = self.a["walk"]; self.assertTrue(2 <= w["steps"] <= 5, "a few steps, not a walk cycle loop")
+        self.assertGreaterEqual(w["end"] - w["start"], 3.0, "a slow approach")
+        ws = walk_schedule(self.a, self.ep["runtime"]["target_seconds"])
+        self.assertLess(ws["peak_speed_px_s"], 120, "deliberate pace")
+        xs = ws["x"]; self.assertTrue(all(b >= a - 1e-6 for a, b in zip(xs, xs[1:])), "straight line toward the door, never backwards")
+        self.assertLess(ws["start_x"], self.a["door"]["x"]); self.assertLess(w["end_x"], self.a["door"]["x"])
+        # one smooth motion: the body never stops inside the walk window
+        hz = ws["hz"]; v = [(b - a) * hz for a, b in zip(xs, xs[1:])]
+        inner = v[int((w["start"] + 0.5) * hz):int((w["end"] - 0.5) * hz)]
+        self.assertGreater(min(inner), 15, "no lurching: body keeps moving between the start and the stop")
+        self.assertEqual(len(ws["footfalls"]), w["steps"] + 1)
         self.assertNotIn("orbit", self.a, "no circling")
 
     def test_sequence_order_hesitate_walk_touch_open_endcard(self):
-        a = self.a; h = a["hesitation"]
-        self.assertLess(h["tilt_at"], a["steps"][0]["t"] - a["step_duration"]); self.assertLess(h["lean_at"], h["tilt_at"])
-        self.assertLessEqual(a["steps"][-1]["t"], a["reach"][0] + 0.2); self.assertLess(a["reach"][1], a["open"][0])
-        self.assertLess(a["open"][1], self.ep["end_card"]["at"]); self.assertEqual(len(a["steps"]), len([s for s in a["steps"]]))
+        a = self.a; h = a["hesitation"]; w = a["walk"]
+        self.assertLess(h["lean_at"], h["tilt_at"]); self.assertLess(h["tilt_at"] + 1.2, w["start"])
+        self.assertLessEqual(w["end"], a["reach"][0] + 0.2); self.assertLess(a["reach"][1], a["open"][0])
+        self.assertLess(a["open"][1], self.ep["end_card"]["at"])
         self.assertLess(self.ep["narration"][-1]["at"], a["open"][1], "the last line lands on the reveal, not the end card")
+        self.assertLessEqual(a["door"]["h"] / (a["figure_scale"] * 396), 3.6, "door reads as large, not absurd")
 
     def test_budget_one_touch_one_reveal_sound(self):
         names = [s["name"] for s in self.ep["sfx"]]

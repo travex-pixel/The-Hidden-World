@@ -8,7 +8,7 @@
   "core_message": "We keep thinking, planning and waiting for the perfect moment, when one small action would teach us more than another hour of overthinking.",
   "central_insight": "Clarity doesn't always come before action. Sometimes it begins when you move.",
   "metaphor": "door",
-  "visual_metaphor": "A tiny figure stands before an enormous closed golden door. It hesitates, takes four slow planted steps in a straight line, touches the door once, and a thin line of warm gold light opens. One character, one door, one decision, one payoff.",
+  "visual_metaphor": "A small figure stands before a large closed golden door. It hesitates, walks slowly toward it in one straight line, touches the door once, and a thin line of warm gold light opens. One character, one door, one decision, one payoff.",
   "palette": {
     "bg": "#080808",
     "white": "#F3EFE6",
@@ -16,7 +16,7 @@
     "dim": "#292929"
   },
   "runtime": {
-    "target_seconds": 17.8,
+    "target_seconds": 17.4,
     "range": [
       15,
       18
@@ -63,7 +63,7 @@
     },
     {
       "at": 11.6,
-      "until": 14.6,
+      "until": 14.4,
       "text": "Sometimes, it begins when you move."
     }
   ],
@@ -72,76 +72,78 @@
       "id": "opening",
       "start": 0.0,
       "end": 3.0,
-      "note": "tiny figure motionless before the enormous closed door"
+      "note": "hook line; small figure motionless before the closed door"
     },
     {
       "id": "conflict",
       "start": 3.0,
       "end": 7.0,
-      "note": "one lean that is withdrawn, one head tilt; the door stays closed; camera still"
+      "note": "one slow lean that is withdrawn, one slow head tilt; door stays closed; camera still"
     },
     {
       "id": "decision",
       "start": 7.0,
       "end": 11.4,
-      "note": "four slow planted steps in a straight line, then one touch"
+      "note": "one smooth straight approach (four planted steps), then one touch"
     },
     {
       "id": "payoff",
       "start": 11.4,
-      "end": 15.2,
+      "end": 15.0,
       "note": "door opens a sliver; warm gold light; hold"
     },
     {
       "id": "ending",
-      "start": 15.2,
-      "end": 17.8,
+      "start": 15.0,
+      "end": 17.4,
       "note": "end card"
     }
   ],
   "animation": {
-    "floor_y": 1560,
-    "figure_scale": 0.58,
-    "start_x": 262,
-    "stride": 0.55,
-    "step_duration": 0.85,
-    "steps": [
-      {
-        "t": 7.95
-      },
-      {
-        "t": 8.85
-      },
-      {
-        "t": 9.75
-      },
-      {
-        "t": 10.65
-      }
-    ],
+    "floor_y": 1460,
+    "figure_scale": 0.62,
+    "walk": {
+      "start": 7.1,
+      "end": 10.7,
+      "steps": 4,
+      "stride": 0.45,
+      "end_x": 494
+    },
     "hesitation": {
-      "lean_at": 3.4,
-      "tilt_at": 5.2
+      "lean_at": 3.3,
+      "tilt_at": 5.0
     },
     "reach": [
-      10.75,
-      11.45
+      10.8,
+      11.4
     ],
-    "touch_y": 1412,
+    "touch_y": 1300,
     "door": {
-      "x": 600,
-      "y_top": 330,
-      "w": 520,
-      "h": 1230
+      "x": 540,
+      "y_top": 700,
+      "w": 400,
+      "h": 760
     },
     "open": [
-      11.8,
-      14.4
+      11.7,
+      14.2
     ],
-    "gap_px": 26
+    "gap_px": 22,
+    "_walk": {
+      "footfalls": [
+        7.9,
+        8.6,
+        9.217,
+        9.917,
+        10.7
+      ],
+      "start_x": 289.13,
+      "distance": 204.87,
+      "peak_speed_px_s": 85.4
+    }
   },
   "end_card": {
-    "at": 15.2,
+    "at": 15.0,
     "fade": 0.7,
     "title": "THE HIDDEN PATTERN",
     "tagline": [
@@ -170,19 +172,19 @@
   },
   "sfx": [
     {
-      "at": 11.45,
+      "at": 11.4,
       "name": "thud",
       "gain": 0.5,
       "note": "one soft touch on the door"
     },
     {
-      "at": 11.8,
+      "at": 11.7,
       "name": "swell",
       "gain": 0.5,
       "note": "gentle air as the light appears"
     },
     {
-      "at": 12.5,
+      "at": 12.4,
       "name": "chime",
       "gain": 0.4,
       "note": "golden-light reveal"
@@ -195,7 +197,7 @@
     "thumbnail": "thumbnail.png"
   },
   "thumbnail": {
-    "time": 14.0,
+    "time": 13.6,
     "title": [
       "YOU DON'T NEED",
       "MORE TIME."
@@ -234,5 +236,12 @@
     "comments": null,
     "follows_gained": null,
     "notes": "Real audience numbers only."
+  },
+  "hook": {
+    "lines": [
+      "YOU DON'T NEED",
+      "MORE TIME."
+    ],
+    "until": 2.7
   }
 }

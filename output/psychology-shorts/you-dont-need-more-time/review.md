@@ -24,3 +24,16 @@ Removed: the second character, every prop except one, the hook title card at the
 20/20 build checks passed: streams, H.264 + AAC, 1080×1920, 30 fps, duration 17.8 s, full decode, loudness, no silence gaps, no clipping, first frame has a visual, no blank frames, animation changes throughout, narration ≥ 6 dB above the bed (speech −12 to −17 dB RMS vs bed −31 to −34 dB), narration audible, ending not abrupt (tail −52 dB), mix peak 0.92.
 Frames inspected at 0, 3.9, 4.2, 5.8, 7.6, 8.4, 9.3, 10.3, 11.4, 11.5, 12.6, 13.8, 14.2, 15.0, 16.5 and 16.8 s plus the contact sheet, first and last frames. Test suite: 74 tests pass.
 Not checked by ear: the narration was verified by level and timing only; this environment has no audio playback.
+
+## Second pass (after the first Episode 02 cut was watched)
+Feedback: movements robotic, head jolting forward, door too big. Causes measured in the code:
+- **Robotic walk:** the body came to a full stop 14 times across four steps. Each step's leg phase was eased on its own, and the planted-foot handover happens where the leg's local velocity is zero, so the body lurched 0 → fast → 0 → fast → 0 inside every step.
+- **Head jolt:** the upper-body lean switched by 2.5° within one frame, eight times, each time the "walking" flag flipped at a step boundary.
+- **Door:** 5.4× the figure's height.
+
+Changes:
+- `pipeline/psych.py walk_schedule()`: the approach is one smooth motion (one ease-in, one ease-out over 3.6 s); the leg phase is solved from distance travelled so feet stay planted. Measured velocity profile: 0 → 84 → 0 px/s, minimum 42 px/s inside the walk, zero lean discontinuities. Footfalls for the soundtrack come from the same schedule.
+- Continuous lean and a slower, smaller head tilt (5°, 1.2 s in / 1 s out).
+- Door 400×760 px (≈3× the figure), centred, more negative space; figure 0.62 scale.
+- Hook line "YOU DON'T NEED MORE TIME." on frame 0 for 2.7 s (scroll stop with sound off), then nothing but the scene.
+- Runtime 17.4 s. Checks: 20/20 pass; 74 tests pass; frames inspected at 12 timestamps.

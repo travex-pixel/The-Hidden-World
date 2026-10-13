@@ -11,7 +11,7 @@ Isolated from the documentary engine: its renderer is `renderer/psych/`, its bui
 | id | topic | hook | status |
 |----|-------|------|--------|
 | `overthinking-vs-action` | Overthinking vs action | A — "YOU'RE NOT MOVING." | Episode 01. Rendered 2026-10-13; MP4 at [`releases/psych-overthinking-vs-action.mp4`](../../releases/psych-overthinking-vs-action.mp4). **Superseded in style**: too fast (3.7–6.4 footfalls/s), foot sliding, 20.95 s, two figures circling. Kept as the baseline the Episode 02 review fixed. |
-| `you-dont-need-more-time` | Waiting for the perfect moment vs one small action | none (silent opening on the door) | Episode 02. Rendered 2026-10-13, 17.8 s; MP4 at [`releases/psych-you-dont-need-more-time.mp4`](../../releases/psych-you-dont-need-more-time.mp4); package in `output/psychology-shorts/you-dont-need-more-time/` |
+| `you-dont-need-more-time` | Waiting for the perfect moment vs one small action | none (silent opening on the door) | Episode 02. Rendered 2026-10-13 (second pass), 17.4 s; MP4 at [`releases/psych-you-dont-need-more-time.mp4`](../../releases/psych-you-dont-need-more-time.mp4); package in `output/psychology-shorts/you-dont-need-more-time/` |
 
 ## Make the next episode (phone-friendly)
 1. Copy `shorts/psychology/overthinking-vs-action/episode.json` to `shorts/psychology/<new-id>/episode.json`.

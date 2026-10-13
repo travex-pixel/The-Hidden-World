@@ -73,8 +73,8 @@
       const ph = phase + (side > 0 ? 0 : Math.PI);
       if (o.arms === 'hold') { E = [52 + side * 5, hipY - 76 + side * 4]; ({ joint: J } = ik(S, E, A1, A2, 1)); }
       else if ((o.arms === 'reach' || (o.arms === 'reach_one' && side < 0)) && o.reach) { E = [o.reach[0] + side * 6, o.reach[1] + side * 5]; ({ joint: J } = ik(S, E, A1, A2, 1)); }
-      else if (o.arms === 'reach_one') { const a = (15 - 5 * side) * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 14 * DEG) * A2, J[1] + Math.cos(a + 14 * DEG) * A2]; }
-      else if (o.arms === 'rest') { const a = (15 - 5 * side) * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 14 * DEG) * A2, J[1] + Math.cos(a + 14 * DEG) * A2]; }
+      else if (o.arms === 'reach_one') { const a = 6 * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 14 * DEG) * A2, J[1] + Math.cos(a + 14 * DEG) * A2]; }
+      else if (o.arms === 'rest') { const a = 6 * DEG; J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(a + 14 * DEG) * A2, J[1] + Math.cos(a + 14 * DEG) * A2]; }
       else { const a = (-38 * stride * Math.sin(ph) + 6 * (1 - stride)) * DEG; const b = a + (16 + 30 * stride * Math.max(0, Math.sin(ph))) * DEG;
              J = [S[0] + Math.sin(a) * A1, S[1] + Math.cos(a) * A1]; E = [J[0] + Math.sin(b) * A2, J[1] + Math.cos(b) * A2]; }
       arms.push({ side, S, J, E });
@@ -175,7 +175,9 @@
     stories: {}, state: null,
     registerStory(name, fn) { this.stories[name] = fn; },
     setup(plan) {
-      this.state = { ep: plan.episode, anim: plan.episode.animation, seed: plan.seed, total: plan.total, orbit: plan.orbit };
+      this.state = { ep: plan.episode, anim: plan.episode.animation, seed: plan.seed, total: plan.total, orbit: plan.orbit, walk: plan.walk };
+      const wk = plan.walk; const samp = (arr, t) => { const k = clamp(t * wk.hz, 0, arr.length - 1); const i = Math.floor(k), fr = k - i; return lerp(arr[i], arr[Math.min(i + 1, arr.length - 1)], fr); };
+      this.state.walkAt = wk ? (t => ({ x: samp(wk.x, t), phase: samp(wk.phase, t) })) : null;
       Object.assign(PAL, plan.episode.palette || {});
       const o = plan.orbit; this.state.orbitAngle = o ? (t => { const k = clamp(t * o.hz, 0, o.angles.length - 1); const i = Math.floor(k), fr = k - i; return lerp(o.angles[i], o.angles[Math.min(i + 1, o.angles.length - 1)], fr); }) : (() => 0);
     },
@@ -183,7 +185,7 @@
     compose(t, opts = {}) {
       const st = this.state; const ep = st.ep; const story = this.stories[ep.metaphor];
       if (!story) throw new Error('No story registered for metaphor "' + ep.metaphor + '"');
-      const ctx = { t, ep, anim: st.anim, seed: st.seed, orbitAngle: st.orbitAngle, narration: st.ep.narration || [], rng: mulberry32(hashStr(ep.id) ^ st.seed), P: this };
+      const ctx = { t, ep, anim: st.anim, seed: st.seed, orbitAngle: st.orbitAngle, walkAt: st.walkAt, narration: st.ep.narration || [], rng: mulberry32(hashStr(ep.id) ^ st.seed), P: this };
       const items = story(t, ctx).sort((a, b) => a.z - b.z).map(i => i.svg).join('');
       const hookLines = opts.cover ? ((ep.thumbnail || {}).title || (ep.hook || {}).lines) : (ep.hook || {}).lines;
       const hook = hookLines ? hookText(hookLines, opts.cover ? 0.5 : t, opts.cover ? 1e9 : ep.hook.until, !!opts.cover) : '';
