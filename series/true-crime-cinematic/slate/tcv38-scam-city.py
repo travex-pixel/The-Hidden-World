@@ -62,8 +62,8 @@ def build(h):
           emph=["army", "raided", "kk", "park", "blew", "buildings."], min_d=4.6, pad=1.15, tr="zoom"),
         # E - the lesson and the callback on the hero phone (the first frame's framing); the end question is burned in
         S("s10_end", "sc38_end", [N("The lesson? A stranger who texts by mistake, then talks crypto, is a scam."),
-                                  N("Don't reply to that wrong number.", pause_before=0.3)],
-          "aftermath", ["C_lesson", "C_text"], sfx=[fw(0, 1, "chime", 0.35, -0.02), fw(0, 13, "stamp", 0.35, -0.02), fw(1, 5, "ping", 0.4, -0.05)],
+                                  N("So never reply to that wrong number.", pause_before=0.3)],
+          "aftermath", ["C_lesson", "C_text"], sfx=[fw(0, 1, "chime", 0.35, -0.02), fw(0, 13, "stamp", 0.35, -0.02), fw(1, 6, "ping", 0.4, -0.05)],
           emph=["lesson?", "stranger", "mistake,", "crypto,", "scam.", "wrong", "number."], min_d=5.0, pad=1.9, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_map": "A", "s03_count": "A", "s04_lure": "B", "s05_floor": "B",

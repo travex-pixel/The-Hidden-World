@@ -429,7 +429,7 @@
     // 10 - the lesson card, then the callback on the hero phone in the first frame's framing; the end question is burned in
     //      over the last 3.2 s, so the lesson card has faded by then; the last frame loops to the first.
     sc38_end(ctx) {
-      const t = ctx.t, T = ctx.T, les = WT(ctx, 0, 1, 0.2), str = WT(ctx, 0, 3, 0.8), cry = WT(ctx, 0, 10, 2.8), scam = WT(ctx, 0, 13, 3.6), l1 = LS(ctx, 1, 4.7), wr = WT(ctx, 1, 4, 5.6), num = WT(ctx, 1, 5, 5.9);
+      const t = ctx.t, T = ctx.T, les = WT(ctx, 0, 1, 0.2), str = WT(ctx, 0, 3, 0.8), cry = WT(ctx, 0, 10, 2.8), scam = WT(ctx, 0, 13, 3.6), l1 = LS(ctx, 1, 4.7), wr = WT(ctx, 1, 5, 5.6), num = WT(ctx, 1, 6, 5.9);
       const v = { ...VIEWER, keys: [{ at: str, pose: 'stand_tense', expr: 'focused', dur: 0.4 }, { at: scam, pose: 'arms_crossed', expr: 'stern', dur: 0.4 }, { at: wr, pose: 'stand', expr: 'determined', dur: 0.5 }] };
       const msgs = [...HERO_MSGS, { lines: ['My uncle trades crypto.', 'Want me to show you? 📈'], side: 'in', at: cry - 0.1, fs: 28, hot: HL }];
       return E.cine.shot(ctx, {
