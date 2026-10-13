@@ -352,7 +352,7 @@
         ],
         props: [{ depth: 0.9, svg: tt => plane(760, 1520, 1.25, tt, { crash: 1, door: 1 }) }],
         overlays: [
-          { type: 'circle', at: emp - 0.05, until: van + 0.6, target: [590, 830], rx: 150, ry: 140, colour: HL },
+          { type: 'circle', at: emp - 0.05, until: van + 0.6, target: [575, 1070], rx: 150, ry: 140, colour: HL },
           { type: 'stamp', at: emp, x: 600, y: 600, text: 'EMPTY', scale: 1.4, colour: '#e5372b' },
           { type: 'label', at: pil - 0.1, x: 60, y: 432, text: 'THE PILOT WAS GONE', fs: 42, sub: 'Police began searching' }
         ],
