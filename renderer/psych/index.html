@@ -5,11 +5,11 @@
   @font-face{font-family:'Nunito';font-weight:700;src:url('../../assets/fonts/Nunito-Bold.ttf')}
   @font-face{font-family:'Nunito';font-weight:800;src:url('../../assets/fonts/Nunito-ExtraBold.ttf')}
   html,body{margin:0;padding:0;background:#09090b;overflow:hidden}
-  #stage{position:absolute;inset:0;width:100vw;height:100vh}
+  #clipcanvas,#stage{position:absolute;inset:0;width:100vw;height:100vh}
   #stage svg{display:block;width:100%;height:100%}
   .f1{font-family:Nunito;font-weight:800}.f2{font-family:Nunito;font-weight:700}.f3{font-family:Nunito;font-weight:500}
 </style></head>
-<body><div id="stage"></div>
+<body><canvas id="clipcanvas"></canvas><div id="stage"></div>
 <div style="position:absolute;left:-9999px"><span class="f1">a</span><span class="f2">a</span><span class="f3">a</span></div>
 <script src="engine.js"></script>
 </body></html>

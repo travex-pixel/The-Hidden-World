@@ -239,7 +239,12 @@ def prepare_clip(ep: dict, work: Path, width: int, height: int, fps: int) -> dic
     dur = min(dur, src_dur - trim)
     out = work / "clip"; shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
     grade = GRADES[c.get("grade", "brand")]
-    vf = f"scale={width}:{height}:force_original_aspect_ratio=increase:flags=lanczos,crop={width}:{height},fps={fps}" + (("," + grade) if grade else "")
+    # frame rate: motion-interpolate (e.g. Kling's 24 fps -> 30 fps) instead of duplicating every 4th frame, which judders
+    from fractions import Fraction
+    src_fps = float(Fraction(v.get("r_frame_rate") or f"{fps}/1"))
+    smooth = c.get("smooth", "interpolate")
+    rate = (f"minterpolate=fps={fps}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1" if smooth == "interpolate" and abs(src_fps - fps) > 0.01 else f"fps={fps}")
+    vf = f"{rate},scale={width}:{height}:force_original_aspect_ratio=increase:flags=lanczos,crop={width}:{height}" + (("," + grade) if grade else "")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(trim), "-t", str(dur), "-i", str(src), "-vf", vf, "-q:v", "3", str(out / "%05d.jpg")], check=True)
     n = len(list(out.glob("*.jpg")))
     if n < 2:

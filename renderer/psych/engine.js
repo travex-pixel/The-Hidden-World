@@ -200,33 +200,42 @@
       const o = plan.orbit; this.state.orbitAngle = o ? (t => { const k = clamp(t * o.hz, 0, o.angles.length - 1); const i = Math.floor(k), fr = k - i; return lerp(o.angles[i], o.angles[Math.min(i + 1, o.angles.length - 1)], fr); }) : (() => 0);
     },
     async ready() {
-      const imgs = [...document.querySelectorAll('#stage image')];
-      await Promise.all(imgs.map(im => new Promise(res => { if (im.complete !== false) { const i = new Image(); i.onload = res; i.onerror = res; i.src = im.getAttribute('href'); setTimeout(res, 1500); } else res(); })));
+      const req = this._clipReq; const cv = document.getElementById('clipcanvas');
+      if (req) {
+        if (cv.width !== innerWidth) { cv.width = innerWidth; cv.height = innerHeight; }
+        if (this._clipDrawn !== req.key) {
+          const img = new Image(); img.src = req.href; await img.decode();
+          const ctx = cv.getContext('2d'); const w = cv.width, h = cv.height;
+          ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = PAL.bg; ctx.fillRect(0, 0, w, h);
+          ctx.translate(w / 2, h / 2); ctx.scale(req.z, req.z); ctx.translate(-w / 2, -h / 2);
+          ctx.drawImage(img, 0, 0, w, h); this._clipDrawn = req.key;
+        }
+        cv.style.display = 'block';
+      } else if (cv) cv.style.display = 'none';
       await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
     },
     clipLayer(t, cover) {
-      const c = this.state.clip; if (!c) return '';
-      const pad = n => String(n).padStart(5, '0');
-      const rel = clamp(t - c.at, -1e9, 1e9);
-      const idx = clamp(Math.round(rel * c.fps), 0, c.n_frames - 1);
-      const href = 'file://' + c.frames_dir + '/' + pad(idx + 1) + '.jpg';
+      const c = this.state.clip; this._clipReq = null; if (!c) return '';
+      const idx = clamp(Math.round((t - c.at) * c.fps), 0, c.n_frames - 1);
       const after = Math.max(0, t - (c.at + c.duration));
       const holdLen = Math.max(0.5, this.state.total - (c.at + c.duration));
       const z = 1 + c.hold_zoom * ease.smooth(after / holdLen);          // slow push-in on the frozen last frame
+      const href = 'file://' + c.frames_dir + '/' + String(idx + 1).padStart(5, '0') + '.jpg';
+      this._clipReq = { href, z, key: href + '|' + z.toFixed(5) };
       const dim = t < c.at ? c.pre_dim + (1 - c.pre_dim) * ease.smooth(seg(t, c.at - 0.6, c.at)) : 1;   // the first frame sits darker under the hook
-      return `<g transform="translate(${W / 2} ${H / 2}) scale(${f1(z)}) translate(${-W / 2} ${-H / 2})"><image href="${href}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/></g><rect width="${W}" height="${H}" fill="${PAL.bg}" opacity="${f1(1 - dim)}"/>`;
+      return `<rect width="${W}" height="${H}" fill="${PAL.bg}" opacity="${f1(1 - dim)}"/>`;
     },
     compose(t, opts = {}) {
       const st = this.state; const ep = st.ep; const story = this.stories[ep.metaphor];
       if (!story) throw new Error('No story registered for metaphor "' + ep.metaphor + '"');
       const ctx = { t, ep, anim: st.anim, seed: st.seed, orbitAngle: st.orbitAngle, walkAt: st.walkAt, narration: st.ep.narration || [], rng: mulberry32(hashStr(ep.id) ^ st.seed), P: this };
-      const items = this.clipLayer(t, !!opts.cover) + story(t, ctx).sort((a, b) => a.z - b.z).map(i => i.svg).join('');
+      const clipSvg = this.clipLayer(t, !!opts.cover); const items = clipSvg + story(t, ctx).sort((a, b) => a.z - b.z).map(i => i.svg).join('');
       const hookLines = opts.cover ? ((ep.thumbnail || {}).title || (ep.hook || {}).lines) : (ep.hook || {}).lines;
       const hook = hookLines ? hookText(hookLines, opts.cover ? 0.5 : t, opts.cover ? 1e9 : ep.hook.until, !!opts.cover) : '';
       const caps = opts.cover ? '' : (ep.captions || []).map(c => caption(c, t, ep.caption_style)).join('');
       const card = (!opts.cover && ep.end_card) ? endCard(ep.end_card, t) : '';
       const kicker = opts.cover && ep.thumbnail.kicker ? `<text x="${W / 2}" y="${ep.thumbnail.kicker_y || 1560}" text-anchor="middle" class="f2" font-size="54" letter-spacing="6" fill="${PAL.gold}">${esc(String(ep.thumbnail.kicker).toUpperCase())}</text>` : '';
-      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs()}${background()}${items}<rect width="${W}" height="${H}" fill="url(#vig)"/>${hook}${caps}${card}${kicker}</svg>`;
+      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs()}${st.clip ? '' : background()}${items}${st.clip ? '' : `<rect width="${W}" height="${H}" fill="url(#vig)"/>`}${hook}${caps}${card}${kicker}</svg>`;
     },
     frame(t) {
       document.getElementById('stage').innerHTML = this.compose(t);
