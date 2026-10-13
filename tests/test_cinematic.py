@@ -23,7 +23,7 @@ def _keys(js: str, const: str) -> set[str]:
 
 
 POSES, EXPRS = _keys(FIG_JS, "POSES"), _keys(FIG_JS, "EXPR")
-SETS = set(re.findall(r"^\s{4}(\w+)\(ctx, o = \{\}\) \{", SETS_JS, flags=re.M))
+SETS = set(re.findall(r"^\s{4}(\w+)\(ctx, o = \{\}\) \{", SETS_JS, flags=re.M)) | set(re.findall(r"^\s{2}SETS\.(\w+) = ", SETS_JS, flags=re.M))
 
 
 def _code(path: Path) -> str:
@@ -211,7 +211,7 @@ class SlateEpisodes(unittest.TestCase):
             js = _code(ROOT / "renderer" / "scenes" / f"{eid}.js"); ep = load_episode(eid)
             if ep.get("format") == "short40":   # 40-second cuts: a burned-in hook headline instead of two fun-fact stops
                 self.assertTrue(ep.get("hook_title", {}).get("lines"), f"{eid}: short cut needs a hook_title")
-                self.assertLessEqual(ep["target_duration_seconds"][1], 50, eid)
+                self.assertLessEqual(ep["target_duration_seconds"][1], 55 if ep.get("look") == "vivid" else 50, eid)   # vivid Danger Zones cuts carry a fun fact and a lesson
                 continue
             self.assertGreaterEqual(js.count("type: 'funfact'"), 2, f"{eid}: at least two FUN FACT cards")
             self.assertIn("type: 'nextcase'", js, f"{eid}: end-of-video NEXT CASE hook")
