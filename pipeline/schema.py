@@ -11,7 +11,7 @@ TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "thriller"
 TRANSITIONS = {"cut", "wipe", "iris", "fade"}
 CLAIM_TYPES = {"established", "plausible", "illustrative", "estimate", "disputed", "metaphor"}
 MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath"}
-SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain", "rise"}
+SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain", "rise", "bounce", "bounce_hi"}
 URL_RE = re.compile(r"^https://[\w.-]+(/[^\s]*)?$")
 
 

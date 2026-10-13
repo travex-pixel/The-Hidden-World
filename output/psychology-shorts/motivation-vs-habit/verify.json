@@ -1,0 +1,112 @@
+{
+  "file": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/video.mp4",
+  "size_bytes": 1059368,
+  "checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+  },
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "duration": 17.2,
+  "audio_duration": 17.2,
+  "decode_stderr": "",
+  "mean_volume_db": -17.4,
+  "max_volume_db": -0.5,
+  "long_silences": [],
+  "contact_sheet": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/contact_sheet.png",
+  "all_passed": true,
+  "qa_visual": {
+    "frames": {
+      "opening_first_frame": {
+        "t": 0.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/qa/opening_first_frame.png",
+        "mean": 20.11,
+        "bright_fraction": 0.0358,
+        "mid_fraction": 0.0366
+      },
+      "beat_opening": {
+        "t": 1.2,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/qa/beat_opening.png",
+        "mean": 21.68,
+        "bright_fraction": 0.0439,
+        "mid_fraction": 0.0464
+      },
+      "beat_fade": {
+        "t": 4.8,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/qa/beat_fade.png",
+        "mean": 14.78,
+        "bright_fraction": 0.0123,
+        "mid_fraction": 0.0143
+      },
+      "beat_build": {
+        "t": 9.8,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/qa/beat_build.png",
+        "mean": 14.7,
+        "bright_fraction": 0.0132,
+        "mid_fraction": 0.015
+      },
+      "beat_payoff": {
+        "t": 13.6,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/qa/beat_payoff.png",
+        "mean": 14.82,
+        "bright_fraction": 0.014,
+        "mid_fraction": 0.0167
+      },
+      "beat_ending": {
+        "t": 16.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/qa/beat_ending.png",
+        "mean": 10.24,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0138
+      },
+      "ending_last_frame": {
+        "t": "end",
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/motivation-vs-habit/qa/ending_last_frame.png",
+        "mean": 10.24,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0138
+      }
+    },
+    "frames_checked": 516,
+    "min_yavg": 23.28,
+    "first_frame_has_visual": true,
+    "no_blank_frames": true,
+    "animation_changes_throughout": true,
+    "all_passed": true
+  },
+  "qa_audio": {
+    "speech_rms_db": [
+      -15.6,
+      -15.7,
+      -14.0,
+      -15.3
+    ],
+    "bed_rms_db_between_lines": [
+      -31.7,
+      -31.7,
+      -32.7,
+      -33.7
+    ],
+    "narration_above_bed": true,
+    "narration_audible": true,
+    "ending_tail_db": -30.7,
+    "ending_not_abrupt": true,
+    "peak": 0.919,
+    "no_clipping": true,
+    "all_passed": true
+  },
+  "narration_warnings": []
+}

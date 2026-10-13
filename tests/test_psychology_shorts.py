@@ -192,6 +192,39 @@ class Episode04Clip(unittest.TestCase):
                 prepare_clip({"clip": {"src": "assets/clips/does-not-exist.mp4", "at": 1.0}}, Path(d) / "w2", 540, 960, 15)
 
 
+class Episode05Physics(unittest.TestCase):
+    """Motivation vs Habit: exact bounce physics, the payoff crossing, and physics-synced sounds."""
+    def setUp(self):
+        self.ep = load_short("motivation-vs-habit"); self.a = self.ep["animation"]
+
+    def test_bounce_physics_is_exact(self):
+        from pipeline.psych import bounce_track
+        g = 2600.0; tr = bounce_track({"start": 0.0, "h0": 500, "restitution": 0.8}, 10, g)
+        t1 = math.sqrt(2 * 500 / g)
+        self.assertAlmostEqual(tr["impacts"][0][0], t1, places=3)
+        self.assertAlmostEqual(tr["impacts"][0][1], g * t1, delta=1.0)
+        # each rebound speed is e * impact speed, so apex heights fall by e^2
+        v1, v2 = tr["impacts"][0][1], tr["impacts"][1][1]; self.assertAlmostEqual(v2 / v1, 0.8, places=2)
+        self.assertIsNotNone(tr["rest_at"]); self.assertTrue(all(h >= 0 for h in tr["h"]))
+
+    def test_motivation_rests_and_habit_crosses_its_start(self):
+        from pipeline.psych import physics_tracks
+        T = self.ep["runtime"]["target_seconds"]; tr = physics_tracks(self.ep, T)
+        self.assertLess(tr["motivation"]["rest_at"], 8.0, "motivation comes to rest well before the payoff")
+        self.assertIsNone(tr["habit"]["rest_at"], "habit keeps moving to the end")
+        h0 = self.a["balls"]["motivation"]["h0"]; hz = tr["habit"]["hz"]
+        cross = next(i / hz for i, h in enumerate(tr["habit"]["h"]) if h >= h0)
+        self.assertTrue(11.6 <= cross <= 13.8, f"habit should cross on the last line, crossed at {cross:.2f}s")
+        self.assertLess(cross, self.ep["end_card"]["at"])
+
+    def test_budget(self):
+        self.assertLessEqual(self.ep["runtime"]["target_seconds"], 18.0); self.assertEqual(len(self.a["balls"]), 2)
+        self.assertTrue((ROOT / "renderer" / "psych" / "stories" / "two-balls.js").exists())
+        import numpy as np
+        for n in ("bounce", "bounce_hi"):
+            x = audio.sfx(n, 1); self.assertTrue(np.isfinite(x).all()); self.assertLessEqual(float(np.abs(x).max()), 1.0)
+
+
 class Package(unittest.TestCase):
     def test_combined_captions_file(self):
         import tempfile

@@ -195,6 +195,9 @@
     setup(plan) {
       this.state = { ep: plan.episode, anim: plan.episode.animation, seed: plan.seed, total: plan.total, orbit: plan.orbit, walk: plan.walk, clip: plan.clip };
       const wk = plan.walk; const samp = (arr, t) => { const k = clamp(t * wk.hz, 0, arr.length - 1); const i = Math.floor(k), fr = k - i; return lerp(arr[i], arr[Math.min(i + 1, arr.length - 1)], fr); };
+      const tr = plan.tracks || {};
+      this.state.track = (name, key, t) => { const T = tr[name]; if (!T) return 0; const arr = T[key]; const k = clamp(t * T.hz, 0, arr.length - 1); const i = Math.floor(k), fr = k - i; return lerp(arr[i], arr[Math.min(i + 1, arr.length - 1)], fr); };
+      this.state.tracks = tr;
       this.state.walkAt = wk ? (t => ({ x: samp(wk.x, t), phase: samp(wk.phase, t) })) : null;
       Object.assign(PAL, plan.episode.palette || {});
       const o = plan.orbit; this.state.orbitAngle = o ? (t => { const k = clamp(t * o.hz, 0, o.angles.length - 1); const i = Math.floor(k), fr = k - i; return lerp(o.angles[i], o.angles[Math.min(i + 1, o.angles.length - 1)], fr); }) : (() => 0);
@@ -228,7 +231,7 @@
     compose(t, opts = {}) {
       const st = this.state; const ep = st.ep; const story = this.stories[ep.metaphor];
       if (!story) throw new Error('No story registered for metaphor "' + ep.metaphor + '"');
-      const ctx = { t, ep, anim: st.anim, seed: st.seed, orbitAngle: st.orbitAngle, walkAt: st.walkAt, narration: st.ep.narration || [], rng: mulberry32(hashStr(ep.id) ^ st.seed), P: this };
+      const ctx = { t, ep, anim: st.anim, seed: st.seed, orbitAngle: st.orbitAngle, walkAt: st.walkAt, track: st.track, tracks: st.tracks, narration: st.ep.narration || [], rng: mulberry32(hashStr(ep.id) ^ st.seed), P: this };
       const clipSvg = this.clipLayer(t, !!opts.cover); const items = clipSvg + story(t, ctx).sort((a, b) => a.z - b.z).map(i => i.svg).join('');
       const hookLines = opts.cover ? ((ep.thumbnail || {}).title || (ep.hook || {}).lines) : (ep.hook || {}).lines;
       const hook = hookLines ? hookText(hookLines, opts.cover ? 0.5 : t, opts.cover ? 1e9 : ep.hook.until, !!opts.cover) : '';

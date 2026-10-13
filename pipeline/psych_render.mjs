@@ -31,18 +31,20 @@ if (mode === 'cover') {
   mkdirSync(outPath, { recursive: true });
   for (const ts of rest) { const t = parseFloat(ts); await page.evaluate(async t => { window.PS.frame(t); await window.PS.ready(); }, t); await page.screenshot({ path: resolve(outPath, `t${t.toFixed(2)}.png`), type: 'png' }); console.log('[render] still', t); }
 } else {
-  const nFrames = Math.round(total * fps);
-  const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-framerate', String(fps), '-i', '-', '-an',
+  const sub = plan.subframes || 1, rfps = fps * sub;          // motion blur: render sub x fps and average each group
+  const nFrames = Math.round(total * rfps);
+  const blur = sub > 1 ? ['-vf', `tmix=frames=${sub}:weights='${Array(sub).fill(1).join(' ')}',select='not(mod(n+1\\,${sub}))',setpts=N/${fps}/TB`] : [];
+  const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-framerate', String(rfps), '-i', '-', '-an', ...blur,
     '-c:v', 'libx264', '-preset', plan.preset || 'medium', '-crf', String(plan.crf ?? 20), '-pix_fmt', 'yuv420p', '-r', String(fps), outPath], { stdio: ['pipe', 'inherit', 'inherit'] });
   const ffDone = new Promise((res, rej) => ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg exit ' + c))));
   const t0 = Date.now(); let lastBeat = -1;
   for (let i = 0; i < nFrames; i++) {
-    const t = i / fps;
+    const t = i / rfps;
     const beat = await page.evaluate(async t => { const b = window.PS.frame(t); await window.PS.ready(); return b; }, t);
     if (beat !== lastBeat) { console.log(`[render] beat ${beat + 1}/${plan.episode.beats.length} (${plan.episode.beats[beat].id}) at ${t.toFixed(2)}s`); lastBeat = beat; }
     const img = await page.screenshot({ type: 'jpeg', quality: 96, animations: 'disabled', caret: 'hide' });
     if (!ff.stdin.write(img)) await new Promise(r => ff.stdin.once('drain', r));
-    if (i % 150 === 0 && i) console.log(`[render] ${i}/${nFrames} frames, ${((Date.now() - t0) / 1000).toFixed(0)}s elapsed`);
+    if (i % (150 * sub) === 0 && i) console.log(`[render] ${i}/${nFrames} frames, ${((Date.now() - t0) / 1000).toFixed(0)}s elapsed`);
   }
   ff.stdin.end(); await ffDone;
   console.log(`[render] done: ${nFrames} frames in ${((Date.now() - t0) / 1000).toFixed(0)}s -> ${outPath}`);

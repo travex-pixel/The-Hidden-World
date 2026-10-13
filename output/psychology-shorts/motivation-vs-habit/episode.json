@@ -1,0 +1,222 @@
+{
+  "id": "motivation-vs-habit",
+  "mode": "psychology-shorts",
+  "brand": "THE HIDDEN PATTERN",
+  "episode_number": 5,
+  "title": "Motivation vs Habit",
+  "topic": "Why motivation fades and habits compound",
+  "core_message": "Motivation arrives with a lot of energy and loses some every day. A habit starts small but gets a small push every day, so it keeps rising. Over time the small, repeated push beats the big start.",
+  "central_insight": "Small, every day, beats big, once.",
+  "metaphor": "two-balls",
+  "visual_metaphor": "Two balls side by side. Motivation (ivory) is dropped from a great height and bounces lower every time until it lies still. Habit (gold) starts with a small bounce, gets a small push each time, and climbs until it rises past the line where motivation started.",
+  "palette": {
+    "bg": "#080808",
+    "white": "#F3EFE6",
+    "gold": "#D8A84E",
+    "dim": "#292929"
+  },
+  "motion_blur": 8,
+  "hook": {
+    "lines": [
+      "MOTIVATION",
+      "VS HABIT."
+    ],
+    "until": 2.4
+  },
+  "runtime": {
+    "target_seconds": 17.2,
+    "range": [
+      15,
+      18
+    ]
+  },
+  "narration_style": "calm, matter-of-fact, a slight lift on the last line",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 0.95,
+  "narration": [
+    {
+      "at": 0.8,
+      "text": "Motivation drops you in from a great height."
+    },
+    {
+      "at": 4.2,
+      "text": "Every bounce, a little lower."
+    },
+    {
+      "at": 7.4,
+      "text": "Habit starts small. But it gets a push every day."
+    },
+    {
+      "at": 11.6,
+      "text": "Small, every day, beats big, once."
+    }
+  ],
+  "caption_style": "line",
+  "caption_density": "one short line per sentence; nothing during the end card",
+  "captions": [
+    {
+      "at": 0.8,
+      "until": 3.8,
+      "text": "Motivation drops you in from a great height.",
+      "y": 1770
+    },
+    {
+      "at": 4.2,
+      "until": 6.8,
+      "text": "Every bounce, a little lower.",
+      "y": 1770
+    },
+    {
+      "at": 7.4,
+      "until": 11.0,
+      "text": "Habit starts small. A push every day.",
+      "y": 1770
+    },
+    {
+      "at": 11.6,
+      "until": 14.4,
+      "text": "Small, every day, beats big, once.",
+      "y": 1770
+    }
+  ],
+  "beats": [
+    {
+      "id": "opening",
+      "start": 0.0,
+      "end": 2.4,
+      "note": "hook; both balls already moving"
+    },
+    {
+      "id": "fade",
+      "start": 2.4,
+      "end": 7.2,
+      "note": "motivation bounces lower each time and comes to rest"
+    },
+    {
+      "id": "build",
+      "start": 7.2,
+      "end": 12.4,
+      "note": "habit keeps climbing"
+    },
+    {
+      "id": "payoff",
+      "start": 12.4,
+      "end": 14.8,
+      "note": "habit crosses motivation's starting line; the line lights gold"
+    },
+    {
+      "id": "ending",
+      "start": 14.8,
+      "end": 17.2,
+      "note": "end card"
+    }
+  ],
+  "animation": {
+    "floor_y": 1560,
+    "ball_radius": 48,
+    "gravity": 2600,
+    "balls": {
+      "motivation": {
+        "x": 340,
+        "start": 0.35,
+        "h0": 740,
+        "restitution": 0.78,
+        "color": "ivory",
+        "label": "MOTIVATION",
+        "sound": "bounce",
+        "sound_gain": 0.7
+      },
+      "habit": {
+        "x": 740,
+        "start": 0.35,
+        "h0": 230,
+        "push": 1.114,
+        "cap": 810,
+        "color": "gold",
+        "label": "HABIT",
+        "sound": "bounce_hi",
+        "sound_gain": 0.55
+      }
+    }
+  },
+  "end_card": {
+    "at": 14.8,
+    "fade": 0.7,
+    "title": "THE HIDDEN PATTERN",
+    "tagline": [
+      "UNDERSTAND YOURSELF.",
+      "UNDERSTAND PEOPLE."
+    ]
+  },
+  "music": {
+    "bpm": 60,
+    "key_offset": -7,
+    "level_db": -14,
+    "cues": [
+      {
+        "start": 0.0,
+        "cue": "hush"
+      },
+      {
+        "start": 12.4,
+        "cue": "aftermath"
+      }
+    ]
+  },
+  "sfx_level_db": -12,
+  "sfx": [
+    {
+      "at": 12.6,
+      "name": "chime",
+      "gain": 0.45,
+      "note": "habit crosses the line"
+    }
+  ],
+  "loop_design": "no loop: ends on the brand card",
+  "output": {
+    "dir": "output/psychology-shorts/motivation-vs-habit",
+    "video": "video.mp4",
+    "thumbnail": "thumbnail.png"
+  },
+  "thumbnail": {
+    "time": 12.9,
+    "title": [
+      "MOTIVATION",
+      "VS HABIT."
+    ],
+    "kicker": "the hidden pattern",
+    "kicker_y": 1800
+  },
+  "publishing": {
+    "instagram": "Motivation drops you in from a great height. Every bounce, a little lower.\n\nHabit starts small. But it gets a push every day.\n\nSmall, every day, beats big, once.\n\nWhat is one small push you could give yourself today?",
+    "tiktok": "Motivation starts high and fades. Habit starts small and climbs.\n\nSmall, every day, beats big, once.",
+    "youtube_title": "Motivation Fades. Habits Climb.",
+    "youtube_description": "THE HIDDEN PATTERN, Episode 05. Two balls: one dropped from a great height, one pushed a little every day. Watch which one ends up higher.\n\nUnderstand yourself. Understand people.",
+    "hashtags": [
+      "#habits",
+      "#motivation",
+      "#psychology",
+      "#discipline",
+      "#thehiddenpattern"
+    ]
+  },
+  "publication": {
+    "platforms": [
+      "instagram-reels",
+      "tiktok",
+      "youtube-shorts"
+    ],
+    "date": null,
+    "notes": "Fill in after posting."
+  },
+  "performance": {
+    "views": null,
+    "average_watch_seconds": null,
+    "completion_rate": null,
+    "shares": null,
+    "saves": null,
+    "comments": null,
+    "follows_gained": null,
+    "notes": "Real audience numbers only."
+  }
+}

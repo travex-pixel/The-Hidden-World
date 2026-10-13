@@ -277,6 +277,12 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
     if name == "whoosh":
         t = tt(0.5)
         return (lowpass_fast(noise(0.5), 1500) * env(len(t), 0.15, 0.1, 0.5, 0.2) * 0.3).astype(np.float32)
+    if name in ("bounce", "bounce_hi"):   # rubber ball on a hard floor: pitched thump with a short body ring
+        t = tt(0.32); f0 = 150 if name == "bounce" else 230
+        body = np.sin(2 * np.pi * (f0 + 90 * np.exp(-t * 40)) * t) * np.exp(-t * 18)
+        ring = 0.25 * np.sin(2 * np.pi * f0 * 3.1 * t) * np.exp(-t * 30)
+        click = lowpass_fast(noise(0.32), 3500) * np.exp(-t * 160) * 0.35
+        return ((body + ring + click) * 0.7).astype(np.float32)
     if name == "rise":   # three ascending bell notes, 0.8 s apart (staircase building)
         out = np.zeros(int(2.8 * SR), np.float32)
         for i, s in enumerate([0, 4, 7]):

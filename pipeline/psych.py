@@ -187,6 +187,51 @@ def walk_schedule(anim: dict, total: float, hz: int = 60) -> dict:
             "peak_speed_px_s": round(1.5 * D / (t1 - t0), 1)}
 
 
+def bounce_track(b: dict, total: float, g: float, hz: int = 120) -> dict:
+    """Exact ballistic bounce. A ball starts at b['start'] from height b['h0'] (px above the floor), falls under g,
+    and on each impact leaves with speed e * v_in, plus an optional push so that the next apex is multiplied by
+    b['push'] (capped at b['cap']). Returns height samples, vertical velocity samples, and impact times/speeds."""
+    e = float(b.get("restitution", 1.0)); push = float(b.get("push", 1.0)); cap = float(b.get("cap", 1e9)); rest_v = float(b.get("rest_speed", 60.0))
+    t, h, v = float(b["start"]), float(b["h0"]), 0.0      # v is upward velocity (px/s)
+    events = []                                           # (t, v_impact)
+    segs = []                                             # (t0, h0, v0, t1) ballistic segments
+    resting_from = None
+    while t < total:
+        # time to hit the floor from height h with upward velocity v: h + v*T - g*T^2/2 = 0
+        T = (v + math.sqrt(v * v + 2 * g * h)) / g
+        segs.append((t, h, v, t + T)); t += T
+        v_in = v - g * T                                  # negative (downward)
+        events.append((round(t, 4), round(-v_in, 1)))
+        apex_prev = (v_in * v_in) / (2 * g)
+        if push != 1.0:
+            apex = min(cap, apex_prev * push) if push > 1 else apex_prev * push
+            v = math.sqrt(2 * g * apex)
+        else:
+            v = -v_in * e
+        h = 0.0
+        if v < rest_v:
+            resting_from = t; break
+    ys, vs = [], []
+    for i in range(int(total * hz) + 2):
+        tt = i / hz
+        if tt < b["start"]:
+            ys.append(float(b["h0"])); vs.append(0.0); continue
+        seg = next((sg for sg in segs if sg[0] <= tt < sg[3]), None)
+        if seg is None:
+            ys.append(0.0); vs.append(0.0); continue
+        dt = tt - seg[0]
+        ys.append(round(max(0.0, seg[1] + seg[2] * dt - 0.5 * g * dt * dt), 3)); vs.append(round(seg[2] - g * dt, 2))
+    return {"hz": hz, "h": ys, "v": vs, "impacts": events, "rest_at": resting_from}
+
+
+def physics_tracks(ep: dict, total: float) -> dict | None:
+    balls = ep["animation"].get("balls")
+    if not balls:
+        return None
+    g = float(ep["animation"].get("gravity", 2600.0))
+    return {name: bounce_track(b, total, g) for name, b in balls.items()}
+
+
 def footsteps(ep: dict, orbit: dict) -> list[tuple[float, str, float]]:
     """Soft footfalls: orbit footfalls inside the escalation window, plus B's entrance walk and A's final walk."""
     fs = ep.get("footsteps") or {}
@@ -425,6 +470,15 @@ def main(argv=None) -> int:
     # 2. orbit schedule + audio
     orbit = orbit_schedule(ep["animation"], total) if "orbit" in ep["animation"] else None
     walk = walk_schedule(ep["animation"], total) if "walk" in ep["animation"] else None
+    tracks = physics_tracks(ep, total)
+    if tracks:
+        for name, tr in tracks.items():
+            b = ep["animation"]["balls"][name]; vmax = max(v for _, v in tr["impacts"]) if tr["impacts"] else 1
+            for at, v in tr["impacts"]:
+                g_ = float(b.get("sound_gain", 0.6)) * (0.25 + 0.75 * (v / vmax))
+                if at < total - 0.2:
+                    ep.setdefault("_physics_sfx", []).append((round(at, 3), b.get("sound", "bounce"), round(g_, 3)))
+            log(f"physics: {name} {len(tr['impacts'])} impacts" + (f", rests at {tr['rest_at']:.2f}s" if tr["rest_at"] else ", still moving at the end"))
     if walk:
         ep["animation"]["_walk"] = {"footfalls": walk["footfalls"], "start_x": walk["start_x"], "distance": walk["distance"], "peak_speed_px_s": walk["peak_speed_px_s"]}
         log(f"walk: {walk['distance']}px in {len(walk['footfalls'])} footfalls, peak {walk['peak_speed_px_s']} px/s, starts at x={walk['start_x']}")
@@ -439,6 +493,7 @@ def main(argv=None) -> int:
             if at < total:
                 sfx_events.append((round(at, 3), s["name"], float(s.get("gain", 1.0))))
     sfx_events += footsteps(ep, orbit)
+    sfx_events += ep.pop("_physics_sfx", [])
     clips = [(l["at"], *read_wav(Path(l["path"]))) for l in lines]
     mixed = audio.mix(total, clips, music, sfx_events, seed, music_db=float(ep["music"].get("level_db", -12)), sfx_db=float(ep.get("sfx_level_db", -9)))
     audio.write_wav(work / "mix.wav", mixed); audio.write_wav(work / "music_only.wav", music)
@@ -449,7 +504,8 @@ def main(argv=None) -> int:
     except ShortError as e:
         log(f"ERROR {e}"); return 4
     plan = {"width": q["width"], "height": q["height"], "fps": q["fps"], "crf": q["crf"], "preset": q["preset"], "seed": seed, "total": total,
-            "episode": ep, "orbit": orbit, "walk": walk, "clip": clip, "story_js": f"renderer/psych/stories/{ep['metaphor']}.js",
+            "episode": ep, "orbit": orbit, "walk": walk, "clip": clip, "tracks": tracks,
+            "subframes": (4 if ep.get("motion_blur") is True else int(ep.get("motion_blur") or 1)), "story_js": f"renderer/psych/stories/{ep['metaphor']}.js",
             "narration": [{k: v for k, v in l.items() if k != "path"} for l in lines], "sfx_events": sfx_events}
     (work / "plan.json").write_text(json.dumps(plan))
     silent = work / "video_silent.mp4"
