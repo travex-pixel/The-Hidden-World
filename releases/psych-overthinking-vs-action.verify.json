@@ -1,0 +1,107 @@
+{
+  "file": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/video.mp4",
+  "size_bytes": 1890444,
+  "checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+  },
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "duration": 20.95,
+  "audio_duration": 20.95,
+  "decode_stderr": "",
+  "mean_volume_db": -17.3,
+  "max_volume_db": -0.7,
+  "long_silences": [],
+  "contact_sheet": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/contact_sheet.png",
+  "all_passed": true,
+  "qa_visual": {
+    "frames": {
+      "opening_first_frame": {
+        "t": 0.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/qa/opening_first_frame.png",
+        "mean": 22.74,
+        "bright_fraction": 0.0438
+      },
+      "beat_hook": {
+        "t": 2.3,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/qa/beat_hook.png",
+        "mean": 23.56,
+        "bright_fraction": 0.0525
+      },
+      "beat_problem": {
+        "t": 2.8,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/qa/beat_problem.png",
+        "mean": 23.84,
+        "bright_fraction": 0.0538
+      },
+      "beat_escalation": {
+        "t": 7.8,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/qa/beat_escalation.png",
+        "mean": 18.05,
+        "bright_fraction": 0.0281
+      },
+      "beat_reversal": {
+        "t": 14.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/qa/beat_reversal.png",
+        "mean": 20.86,
+        "bright_fraction": 0.0395
+      },
+      "beat_payoff": {
+        "t": 18.9,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/qa/beat_payoff.png",
+        "mean": 20.5,
+        "bright_fraction": 0.0349
+      },
+      "ending_last_frame": {
+        "t": "end",
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/overthinking-vs-action/qa/ending_last_frame.png",
+        "mean": 20.35,
+        "bright_fraction": 0.0335
+      }
+    },
+    "frames_checked": 628,
+    "min_yavg": 30.79,
+    "first_frame_has_visual": true,
+    "no_blank_frames": true,
+    "animation_changes_throughout": true,
+    "all_passed": true
+  },
+  "qa_audio": {
+    "speech_rms_db": [
+      -12.8,
+      -14.8,
+      -16.9,
+      -15.5
+    ],
+    "bed_rms_db_between_lines": [
+      -30.9,
+      -29.2,
+      -24.4,
+      -47.7
+    ],
+    "narration_above_bed": true,
+    "narration_audible": true,
+    "ending_tail_db": -51.3,
+    "ending_not_abrupt": true,
+    "peak": 0.92,
+    "no_clipping": true,
+    "all_passed": true
+  },
+  "narration_warnings": [
+    "runtime extended to 20.95s so the narration is not cut off"
+  ]
+}

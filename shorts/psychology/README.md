@@ -8,7 +8,7 @@ Isolated from the documentary engine: its renderer is `renderer/psych/`, its bui
 ## Episodes
 | id | topic | hook | status |
 |----|-------|------|--------|
-| `overthinking-vs-action` | Overthinking vs action | A — "YOU'RE NOT MOVING." | rendered and verified 2026-10-13 (package in `output/psychology-shorts/overthinking-vs-action/`) |
+| `overthinking-vs-action` | Overthinking vs action | A — "YOU'RE NOT MOVING." | rendered and verified 2026-10-13; MP4 committed as [`releases/psych-overthinking-vs-action.mp4`](../../releases/psych-overthinking-vs-action.mp4), package in `output/psychology-shorts/overthinking-vs-action/` |
 
 ## Make the next episode (phone-friendly)
 1. Copy `shorts/psychology/overthinking-vs-action/episode.json` to `shorts/psychology/<new-id>/episode.json`.
@@ -17,6 +17,8 @@ Isolated from the documentary engine: its renderer is `renderer/psych/`, its bui
 4. Commit. The **Tests** workflow validates the config on every push. Pushing a new or changed `episode.json` also renders it automatically; or run the workflow by hand (below).
 
 ## Render from Android
+**Status (2026-10-13):** the workflow file is committed, but GitHub Actions has not registered or run any workflow in this repository from the session that built the engine (zero runs exist for every workflow, including *Tests*). Check **Settings → Actions → General → Allow all actions** once; after that the steps below apply. Until then, the finished MP4 is downloadable from `releases/`.
+
 1. Open the repository on GitHub (mobile website in Chrome; request the desktop site if the *Run workflow* button is hidden).
 2. **Actions → Render psychology short → Run workflow**. Inputs: `episode` (folder name), `seed`, `quality` (`final` or `preview`).
 3. Wait for the green tick (≈ 4–6 minutes for a final render on free runners; the voice model is cached after the first run).
