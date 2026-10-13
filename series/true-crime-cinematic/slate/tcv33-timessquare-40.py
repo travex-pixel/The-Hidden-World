@@ -38,10 +38,10 @@ def build(h):
         # A - the stakes by 0:10: a typed card in a quiet task-force room; said only as officials said it
         S("s03_stakes", "ts33_stakes", [N("Officials said it could have been very deadly.", pause_before=0.1)],
           "hush", ["T_contents", "T_officials"], sfx=[fx(0.0, "wind", 0.3), fw(0, 0, "paper", 0.4, -0.05), fw(0, 6, "thump", 0.4, -0.05)],
-          emph=["officials", "very", "deadly."], min_d=3.4, pad=0.2, tr="fade"),
+          emph=["officials", "very", "deadly."], min_d=3.0, pad=0.15, tr="fade"),
         # B - the first HOW: the dashboard VIN gone; the hood lifts and the VIN on the engine block lights up
         S("s04_vin", "ts33_vin", [N("The dashboard VIN was gone."),
-                                  N("But a VIN is also stamped on the engine block.", pause_before=0.3)],
+                                  N("But a VIN is also stamped on the engine block.", pause_before=0.2)],
           "tension-rise", ["T_vin_dash", "T_vin_engine"], sfx=[fw(0, 1, "click", 0.35, -0.05), fw(0, 4, "thud", 0.4, -0.05),
                                                                fw(1, 5, "click", 0.4, -0.1), fw(1, 8, "swell", 0.45, -0.3), fw(1, 9, "hit", 0.5, -0.05)],
           emph=["dashboard", "vin", "gone.", "stamped", "engine", "block."], pad=0.25, tr="push"),
@@ -52,20 +52,20 @@ def build(h):
           emph=["craigslist", "prepaid", "phone,", "name:", "faisal", "shahzad."], pad=0.2, tr="push"),
         # C - the irony beat: on the no-fly list that day; that night he boards a flight to Dubai anyway (the airline's list lagged)
         S("s06_gate", "ts33_gate", [N("He was put on the no-fly list."),
-                                    N("That night, he boarded a flight to Dubai anyway.", pause_before=0.3)],
+                                    N("That night, he boarded a flight to Dubai anyway.", pause_before=0.2)],
           "tension-rise", ["T_nofly", "T_ticket", "T_boarded"], sfx=[fw(0, 2, "stamp", 0.4, -0.05), fw(0, 6, "click", 0.35, -0.05),
                                                                    fw(1, 3, "step", 0.3, 0.05), fw(1, 7, "thump", 0.4, -0.05), fw(1, 8, "hit", 0.45, -0.05)],
           emph=["no-fly", "list.", "boarded", "dubai", "anyway."], pad=0.2, tr="push"),
         # C - the HOW at ~70 %: the plane has left the gate; it is called back; he is taken off the plane (music drop)
         S("s07_cabin", "ts33_cabin", [N("The plane had left the gate. It was called back.", pause_before=0.1),
-                                      N("He was taken off the plane.", pause_before=0.3)],
+                                      N("He was taken off the plane.", pause_before=0.25)],
           "revelation", ["T_recalled", "T_53"], sfx=[fw(0, 1, "rumble", 0.35, -0.1), fw(0, 5, "swell", 0.45, -0.3), fw(0, 8, "hit", 0.55, -0.05),
                                                     fw(1, 2, "step", 0.3, -0.05), fw(1, 5, "thud", 0.45, -0.05)],
           emph=["left", "gate.", "called", "back.", "taken", "off", "plane."], pad=0.25, tr="flash"),
         # D - the outcome; the cliff impact sits in the pause between the two lines
         S("s08_verdict", "ts33_verdict", [N("He pleaded guilty to all ten counts."), N("His sentence: life in prison.", pause_before=0.35)],
           "tension-peak", ["T_plea", "T_sentence"], sfx=[fw(0, 2, "gavel", 0.8, -0.08)],
-          emph=["guilty", "ten", "counts.", "life"], min_d=3.2, pad=0.3, tr="zoom"),
+          emph=["guilty", "ten", "counts.", "life"], min_d=3.2, pad=0.2, tr="zoom"),
         # E - callback on the hero object; the engine burns the end question over the last 3.2 s
         S("s09_end", "ts33_end", [N("He removed the VIN from the dashboard."), N("The engine kept the other.", pause_before=0.3)],
           "aftermath", ["T_vin_dash", "T_vin_engine", "T_hook"], sfx=[fx(0.0, "wind", 0.25), fw(0, 3, "click", 0.35, -0.05), fw(1, 1, "thud", 0.35, -0.05)],

@@ -40,10 +40,13 @@
   const blink = t => ((t * 1.4) % 1) < 0.5;   // hazard flashers, about 1.4 Hz
 
   // thin smoke: n puffs rising from (x, y), drifting right; k 0..1 = density (in local car units)
-  function smoke(x, y, k, t, n = 5, seed = 0) {
+  function smoke(x, y, k, t, n = 5, seed = 0, rise = 320) {
     if (k <= 0) return '';
     let g = '';
-    for (let i = 0; i < n; i++) { const u = ((t * 0.32 + i / n + seed) % 1); g += `<circle cx="${f1(x + 40 * u + 18 * Math.sin(t * 1.3 + i))}" cy="${f1(y - 300 * u)}" r="${f1(18 + 70 * u)}" fill="#dfe3e6" opacity="${f1(0.3 * k * (1 - u))}"/>`; }
+    for (let i = 0; i < n; i++) {
+      const u = ((t * 0.3 + i / n + seed) % 1), cx = x + 60 * u + 22 * Math.sin(t * 1.3 + i * 1.7), cy = y - rise * u, r = 26 + 96 * u;
+      g += `<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(r)}" fill="#b4bcc4" opacity="${f1(0.6 * k * (1 - u))}"/><circle cx="${f1(cx - r * 0.3)}" cy="${f1(cy - r * 0.2)}" r="${f1(r * 0.6)}" fill="#d8dee2" opacity="${f1(0.35 * k * (1 - u))}"/>`;
+    }
     return g;
   }
 
@@ -53,7 +56,7 @@
   function suvFront(x, y, s, t, o = {}) {
     const on = (o.hazard !== false) && blink(t), sm = o.smoke || 0, k = o.glow || 0;
     let g = `<g transform="translate(${f1(x)} ${f1(y)}) scale(${sc(s)})"><ellipse cx="0" cy="8" rx="500" ry="40" fill="#000" opacity="0.45"/>`;
-    g += smoke(-250, -720, sm, t, 5, 0.13) + smoke(250, -720, sm, t, 5, 0.47) + smoke(0, -740, sm * 0.7, t, 4, 0.8);
+    g += smoke(-250, -700, sm, t, 6, 0.13) + smoke(250, -700, sm, t, 6, 0.47) + smoke(0, -730, sm * 0.8, t, 5, 0.8, 380);
     // tyres and the dark underbody
     g += `<rect x="-420" y="-170" width="840" height="60" fill="#0e0d0c"/>`;
     [-1, 1].forEach(d => { const x0 = d < 0 ? -440 : 330; g += `<rect x="${x0}" y="-160" width="110" height="160" rx="22" fill="#0c0c0e" stroke="${INK}" stroke-width="6"/>` + [-120, -80, -40].map(yy => `<path d="M${x0 + 14} ${yy} L${x0 + 96} ${yy}" stroke="#2a2a2e" stroke-width="7"/>`).join(''); });
@@ -79,6 +82,8 @@
     g += `<path d="M-460 -210 L460 -210 Q476 -240 460 -292 L-460 -292 Q-476 -240 -460 -210 Z" fill="#3a3e44" stroke="${INK}" stroke-width="6"/><rect x="-440" y="-210" width="880" height="46" fill="#1e2126" stroke="${INK}" stroke-width="5"/>`;
     g += `<rect x="-120" y="-276" width="240" height="50" rx="6" fill="#2a2e34" stroke="${INK}" stroke-width="3"/>`;
     g += `<path d="M-330 -270 L-250 -270 M250 -270 L330 -270" stroke="#111214" stroke-width="12"/>`;
+    // thin smoke also seeps from the hood seam and the window edges, in front of the body
+    g += smoke(-300, -500, sm * 0.5, t, 3, 0.3, 220) + smoke(300, -500, sm * 0.5, t, 3, 0.65, 220);
     if (k > 0) g += `<path d="M-500 -120 L-510 -340 L-460 -470 L-400 -540 L-340 -770 L340 -770 L400 -540 L460 -470 L510 -340 L500 -120 Z" fill="none" stroke="${YEL}" stroke-width="10" stroke-linejoin="round" opacity="${f1(k * (0.75 + 0.25 * Math.sin(t * 7)))}"/>`;
     return g + '</g>';
   }
@@ -118,17 +123,18 @@
   }
 
   // a generic dark police horse in profile, facing right, bottom centre (x, y); ~620 tall at s = 1 (no number, no insignia)
-  function horse(x, y, s, t) {
+  function horse(x, y, s, t, fl = 1) {
     const bob = 3 * Math.sin(t * 1.6);
-    let g = `<g transform="translate(${f1(x)} ${f1(y + bob)}) scale(${sc(s)})"><ellipse cx="0" cy="4" rx="230" ry="20" fill="#000" opacity="0.4"/>`;
-    const C = '#2e2219', D = '#1c140e';
+    let g = `<g transform="translate(${f1(x)} ${f1(y + bob)}) scale(${sc(s * fl)} ${sc(s)})"><ellipse cx="0" cy="4" rx="230" ry="20" fill="#000" opacity="0.4"/>`;
+    const C = '#6b4328', D = '#3e2616';
     [[-150, -1], [-96, 1], [92, -1], [150, 1]].forEach(([lx, d]) => { g += `<path d="M${lx - 16} -320 L${lx - 10 + d * 8} -140 L${lx - 12 + d * 10} -8 L${lx + 14 + d * 10} -8 L${lx + 12 + d * 8} -140 L${lx + 16} -320 Z" fill="${d < 0 ? D : C}" stroke="${INK}" stroke-width="4"/><rect x="${lx - 16 + d * 10}" y="-18" width="30" height="18" rx="4" fill="#0e0a08"/>`; });
     g += `<ellipse cx="0" cy="-360" rx="200" ry="92" fill="${C}" stroke="${INK}" stroke-width="5"/>`;
     g += `<path d="M-190 -400 Q-280 -330 -236 -140 Q-250 -120 -262 -140 Q-300 -340 -210 -420 Z" fill="${D}" stroke="${INK}" stroke-width="3"/>`;
     g += `<path d="M150 -420 L250 -600 L310 -596 L218 -380 Z" fill="${C}" stroke="${INK}" stroke-width="5"/><path d="M160 -430 Q220 -560 262 -600 L286 -598 Q236 -560 196 -420 Z" fill="${D}"/>`;
     g += `<path d="M246 -612 L338 -620 L372 -556 L336 -520 L262 -530 Z" fill="${C}" stroke="${INK}" stroke-width="5"/><path d="M296 -614 L312 -660 L330 -618 Z" fill="${C}" stroke="${INK}" stroke-width="3"/><circle cx="318" cy="-586" r="6" fill="#0a0806"/>`;
-    g += `<path d="M262 -536 L372 -556 M336 -520 L338 -540" stroke="#8a8f98" stroke-width="4" fill="none" opacity="0.8"/>`;
-    g += `<path d="M-70 -440 L90 -440 L80 -420 Q0 -400 -60 -420 Z" fill="#4a3220" stroke="${INK}" stroke-width="4"/><path d="M-60 -418 L-56 -330 M76 -418 L72 -330" stroke="#4a3220" stroke-width="10"/>`;
+    g += `<path d="M262 -536 L372 -556 M336 -520 L338 -540" stroke="#c9d0d6" stroke-width="4" fill="none" opacity="0.8"/>`;
+    g += `<path d="M-70 -440 L90 -440 L80 -420 Q0 -400 -60 -420 Z" fill="#2a1a10" stroke="${INK}" stroke-width="4"/><path d="M-60 -418 L-56 -330 M76 -418 L72 -330" stroke="#2a1a10" stroke-width="10"/>`;
+    g += `<path d="M-150 -410 Q0 -470 150 -420" stroke="#8a5c3a" stroke-width="6" fill="none" opacity="0.6"/><path d="M-190 -370 Q-120 -330 -60 -360" stroke="#000" stroke-width="5" fill="none" opacity="0.2"/>`;
     return g + '</g>';
   }
 
@@ -262,13 +268,16 @@
       // the floor and the aisle
       let floor = `<path d="M-300 1300 L380 1000 L700 1000 L${W + 300} 1300 L${W + 300} ${H + 300} L-300 ${H + 300} Z" fill="#2f2a3a"/><path d="M380 1000 L700 1000 L1000 ${H + 300} L80 ${H + 300} Z" fill="#3a3346"/>`;
       for (let i = 0; i < 6; i++) { const u = i / 6, y = lerp(1040, 1900, u * u), x0 = lerp(390, 120, u * u), x1 = lerp(690, 960, u * u); floor += `<path d="M${f1(x0)} ${f1(y)} L${f1(x1)} ${f1(y)}" stroke="#4a3f5a" stroke-width="4" opacity="0.6"/>`; }
-      // the seat rows: far to near, three seats each side of the aisle
-      let seats = '';
+      // the seat rows: far to near, three seats each side of the aisle; the four far rows sit behind the figures, the two
+      // nearest rows in front of them (so a figure in the aisle walks between seat backs). The floor is part of the far layer.
+      let farSeats = '', nearSeats = '';
       for (let i = 0; i < 6; i++) {
         const u = i / 5, k = 0.3 + 0.7 * Math.pow(u, 1.5), y = 1000 + 760 * Math.pow(u, 1.35);
-        for (let j = 0; j < 3; j++) { const dx = 110 * k + j * 170 * k; seats += seat(540 - dx - 40 * k, y, k) + seat(540 + dx + 40 * k, y, k); }
+        let row = '';
+        for (let j = 0; j < 3; j++) { const dx = 190 * k + j * 170 * k; row += seat(540 - dx, y, k) + seat(540 + dx, y, k); }
+        if (i < 4) farSeats += row; else nearSeats += row;
       }
-      return { light: { dir: -1, rim: '#ffe2b0', key: '#fff4d8' }, layers: [[0.3, far], [0.55, seats], [1.0, floor]], dust: true };
+      return { light: { dir: -1, rim: '#ffe2b0', key: '#fff4d8' }, layers: [[0.3, far + floor], [0.5, farSeats], [1.0, ''], [1.01, nearSeats]], dust: true };
     }
   });
 
@@ -308,13 +317,14 @@
         set: 'ts33_square', setOpts: { police: 0.6 * po }, grade: 'cold', police: 0.15 * po,
         cam: { keys: [{ at: 0, x: 60, y: 20, z: 1.1 }, { at: flg - 0.2, x: -40, y: 30, z: 1.16, dur: 1.2 }], handheld: 1.6 },
         figures: [
-          { id: 'ts33_vendor', x: 640, y: 1680, scale: 0.72, dir: -1, turn: 0.5, pose: 'walk', expr: 'worried', walk: { from: 860, to: 640, at: two, dur: Math.max(0.6, flg - two), cadence: 6.5 },
+          { id: 'ts33_vendor', x: 720, y: 1690, scale: 0.72, dir: -1, turn: 0.5, pose: 'walk', expr: 'worried', walk: { from: 960, to: 720, at: two, dur: Math.max(0.6, flg - two), cadence: 6.5 },
             keys: [{ at: flg, pose: 'point', expr: 'determined', gaze: [-0.8, -0.2], dur: 0.4 }, { at: l1, pose: 'stand_tense', expr: 'worried', headTurn: 0.6, gaze: [0.8, -0.2], dur: 0.5 }] },
-          { id: 'ts33_officer', x: 270, y: 1700, scale: 0.74, dir: 1, turn: 0.5, pose: 'stand', expr: 'neutral', keys: [{ at: mnt, pose: 'stand_tense', expr: 'focused', gaze: [0.8, -0.2], dur: 0.35 }, { at: off + 0.1, pose: 'point', expr: 'stern', dur: 0.4 }, { at: l1, pose: 'present', expr: 'determined', dur: 0.5 }] }
+          { id: 'ts33_officer', x: 210, y: 1700, scale: 0.74, dir: 1, turn: 0.5, pose: 'stand', expr: 'neutral', keys: [{ at: mnt, pose: 'stand_tense', expr: 'focused', gaze: [0.8, -0.2], dur: 0.35 }, { at: off + 0.1, pose: 'point', expr: 'stern', dur: 0.4 }, { at: l1, pose: 'present', expr: 'determined', dur: 0.5 }] }
         ],
+        // the horse stands behind the officer, facing him (flipped); the smoking SUV sits up the street behind them
         props: [
-          { depth: 0.99, svg: tt => horse(70, 1700, 0.92, tt) },
-          { depth: 0.9, svg: tt => suvFront(1000, 1470, 0.58, tt, { smoke: 0.6 }) }
+          { depth: 0.97, svg: tt => horse(480, 1690, 0.9, tt, -1) },
+          { depth: 0.88, svg: tt => suvFront(880, 1430, 0.5, tt, { smoke: 0.8 }) }
         ],
         overlays: [
           { type: 'label', at: 0.1, until: l1 - 0.1, x: 60, y: 432, text: 'TWO T-SHIRT VENDORS', fs: 40, sub: 'Both veterans · they flagged a mounted officer' },
@@ -352,17 +362,18 @@
     //     front on the second line; the hood lifts on "stamped" and the strip on the engine block lights on "engine" (card)
     ts33_vin(ctx) {
       const t = ctx.t, dash = WT(ctx, 0, 1, 0.3), vin0 = WT(ctx, 0, 2, 0.7), gone = WT(ctx, 0, 4, 1.3), l1 = LS(ctx, 1, 2.3), also = WT(ctx, 1, 4, 3.0), stamp = WT(ctx, 1, 5, 3.3), engine = WT(ctx, 1, 8, 4.0), block = WT(ctx, 1, 9, 4.3);
-      const V = { x: 520, y: 1540, s: 0.92 };
+      const V = { x: 400, y: 1540, s: 0.92 };
       return E.cine.shot(ctx, {
         set: 'ts33_garage', grade: 'cold',
-        cam: { keys: [{ at: 0, x: -30, y: 30, z: 1.0 }, { at: l1 - 0.2, x: 50, y: 60, z: 1.14, dur: 1.2 }], handheld: 1.0 },
+        cam: { keys: [{ at: 0, x: -20, y: 30, z: 1.0 }, { at: l1 - 0.2, x: 20, y: 60, z: 1.06, dur: 1.2 }], handheld: 1.0 },
         shake: [{ at: engine, amp: 3 }],
+        // the technician works in front of the SUV (the dashboard, then the engine bay); the agent stands on its far side
         figures: [
-          { id: 'ts33_tech', x: 760, y: 1700, scale: 0.86, dir: 1, turn: 0.5, pose: 'examine', expr: 'focused', depth: 1.03, gaze: [0.6, -0.4],
-            walk: { from: 760, to: 960, at: l1 - 0.1, dur: Math.max(0.5, stamp - l1), cadence: 6.0 },
+          { id: 'ts33_tech', x: 640, y: 1700, scale: 0.86, dir: 1, turn: 0.5, pose: 'examine', expr: 'focused', depth: 1.03, gaze: [0.6, -0.4],
+            walk: { from: 640, to: 830, at: l1 - 0.1, dur: Math.max(0.5, stamp - l1), cadence: 6.0 },
             keys: [{ at: dash, pose: 'point_up', expr: 'focused', gaze: [0.4, -0.6], dur: 0.4 }, { at: gone, pose: 'stand_tense', expr: 'realise', dur: 0.4 }, { at: l1 - 0.1, pose: 'walk', expr: 'focused', dur: 0.3 },
               { at: stamp, pose: 'torch_low', expr: 'focused', gaze: [0.6, 0.3], dur: 0.4 }, { at: engine, pose: 'point', expr: 'determined', gaze: [0.6, 0.2], dur: 0.4 }] },
-          { id: 'agent_a', x: 170, y: 1720, scale: 0.9, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', gaze: [0.8, -0.2], keys: [{ at: vin0, pose: 'stand_tense', dur: 0.4 }, { at: also, pose: 'point', expr: 'determined', dur: 0.4 }, { at: block + 0.3, pose: 'stand', expr: 'determined', dur: 0.4 }] }
+          { id: 'agent_a', x: 130, y: 1500, scale: 0.8, dir: 1, turn: 0.5, pose: 'stand', expr: 'focused', depth: 0.96, gaze: [0.8, -0.2], keys: [{ at: vin0, pose: 'stand_tense', dur: 0.4 }, { at: also, pose: 'point', expr: 'determined', dur: 0.4 }, { at: block + 0.3, pose: 'stand', expr: 'determined', dur: 0.4 }] }
         ],
         props: [{ depth: 1.0, svg: tt => suvSide(V.x, V.y, V.s, tt, { hood: seg(tt, stamp - 0.2, stamp + 0.5), glow: 0.9 * seg(tt, engine - 0.1, engine + 0.3) }) }],
         overlays: [
@@ -420,14 +431,16 @@
         set: 'ts33_cabin', grade: 'warm',
         cam: { keys: [{ at: 0, x: 0, y: 0, z: 1.0 }, { at: called - 0.2, x: -20, y: 20, z: 1.1, dur: 1.0 }], handheld: 1.4 },
         shake: [{ at: called, amp: 5 }, { at: taken, amp: 3 }],
+        // the silhouette sits in an aisle seat of a middle row (between the far and the near seat layers); the agents come
+        // down the aisle to him
         figures: [
-          { id: 'ts33_shahzad', x: 330, y: 1660, scale: 0.8, dir: 1, turn: 0.4, pose: 'sit', noChair: true, silhouette: 'cool', depth: 0.98,
+          { id: 'ts33_shahzad', x: 410, y: 1400, scale: 0.52, dir: 1, turn: 0.4, pose: 'sit', noChair: true, silhouette: 'cool', depth: 0.6,
             keys: [{ at: gate, pose: 'sit_slumped', dur: 0.4 }, { at: called, pose: 'sit', dur: 0.3 }, { at: taken - 0.1, pose: 'stand', dur: 0.4 }, { at: off + 0.2, pose: 'hands_behind', dur: 0.5 }] },
-          { id: 'agent_a', x: 640, y: 1780, scale: 0.86, dir: -1, turn: 0.5, pose: 'walk', expr: 'determined', show: [it - 0.2],
-            walk: { from: 1000, to: 640, at: it, dur: Math.max(0.8, taken - it - 0.2), cadence: 6.4 },
+          { id: 'agent_a', x: 560, y: 1790, scale: 0.86, dir: -1, turn: 0.5, pose: 'walk', expr: 'determined', show: [it - 0.2],
+            walk: { from: 1000, to: 560, at: it, dur: Math.max(0.8, taken - it - 0.2), cadence: 6.4 },
             keys: [{ at: taken, pose: 'point', expr: 'stern', gaze: [-0.8, -0.1], dur: 0.4 }, { at: plane2, pose: 'stand', dur: 0.4 }] },
-          { id: 'agent_b', x: 880, y: 1720, scale: 0.78, dir: -1, turn: 0.5, pose: 'walk', expr: 'focused', show: [called - 0.1],
-            walk: { from: 1200, to: 880, at: called, dur: Math.max(0.8, off - called), cadence: 6.4 },
+          { id: 'agent_b', x: 600, y: 1640, scale: 0.7, dir: -1, turn: 0.5, pose: 'walk', expr: 'focused', depth: 0.9, show: [called - 0.1],
+            walk: { from: 1100, to: 600, at: called, dur: Math.max(0.8, off - called), cadence: 6.4 },
             keys: [{ at: off, pose: 'stand_tense', dur: 0.4 }] }
         ],
         overlays: [

@@ -1,7 +1,7 @@
 {
  "episode": "tcv31-sniper-40",
  "title": "A Rest Stop Ended the DC Sniper Attacks",
- "duration": 44.625,
+ "duration": 45.0,
  "slideshow_risk": {
   "shots": 9,
   "composed_shots": 9,
@@ -10,11 +10,12 @@
   "distinct_sets": 7,
   "max_set_share": 0.33,
   "shot_sizes": {
-   "medium-wide": 6,
+   "wide": 3,
+   "medium-wide": 3,
    "medium": 3
   },
-  "max_shot_size_share": 0.67,
-  "ok": false
+  "max_shot_size_share": 0.33,
+  "ok": true
  },
  "production_status": {},
  "shots": [
@@ -124,7 +125,7 @@
     }
    ],
    "visual_description": "ds31 rest (night grade); ds31_trucker: walk -> stand_tense -> point (walks); camera push/pull, handheld; overlays: label 'MYERSVILLE, MARYLAND'.",
-   "shot_size": "medium-wide",
+   "shot_size": "wide",
    "set": "ds31_rest",
    "grade": "night",
    "camera": {
@@ -148,7 +149,7 @@
      "id": "ds31_trucker",
      "outfit": "default",
      "depth": 1.02,
-     "scale": 0.66,
+     "scale": 0.52,
      "start_pose": "walk",
      "start_expr": "focused",
      "actions": [
@@ -165,7 +166,7 @@
      ],
      "walk": {
       "from": 1180,
-      "to": 900,
+      "to": 940,
       "at": 3.62,
       "dur": 0.6460000000000002
      },
@@ -421,13 +422,13 @@
    "start": 8.25,
    "duration": 3.0,
    "narration": [
-    "For weeks, police hunted a white box truck."
+    "For weeks, the police hunted a white box truck."
    ],
    "caption_timings": [
     {
      "line": 0,
      "start": 8.5,
-     "end": 10.648,
+     "end": 10.799,
      "words": [
       {
        "w": "For",
@@ -436,44 +437,49 @@
       },
       {
        "w": "weeks,",
-       "start": 8.686,
+       "start": 8.674,
        "end": 8.941
       },
       {
+       "w": "the",
+       "start": 9.034,
+       "end": 9.115
+      },
+      {
        "w": "police",
-       "start": 9.011,
-       "end": 9.255
+       "start": 9.173,
+       "end": 9.452
       },
       {
        "w": "hunted",
-       "start": 9.289,
-       "end": 9.545
+       "start": 9.51,
+       "end": 9.777
       },
       {
        "w": "a",
-       "start": 9.591,
-       "end": 9.638
+       "start": 9.812,
+       "end": 9.847
       },
       {
        "w": "white",
-       "start": 9.673,
-       "end": 9.858
+       "start": 9.882,
+       "end": 10.044
       },
       {
        "w": "box",
-       "start": 9.905,
-       "end": 10.195
+       "start": 10.091,
+       "end": 10.381
       },
       {
        "w": "truck.",
-       "start": 10.241,
-       "end": 10.567
+       "start": 10.427,
+       "end": 10.741
       }
      ]
     }
    ],
    "visual_description": "ds31 road (warm grade); ds31_officer: walk -> examine -> stand_tense (walks); agent_a: stand -> point -> stand; camera push/pull, handheld; overlays: label 'THE FIRST LOOKOUT', card 'A WHITE BOX TRUCK / CONFLICTING WITNESS REPORTS'.",
-   "shot_size": "medium-wide",
+   "shot_size": "wide",
    "set": "ds31_road",
    "grade": "warm",
    "camera": {
@@ -498,43 +504,43 @@
      "id": "ds31_officer",
      "outfit": "default",
      "depth": 1.01,
-     "scale": 0.72,
+     "scale": 0.56,
      "start_pose": "walk",
      "start_expr": "focused",
      "actions": [
       {
-       "at": 1.66,
+       "at": 1.84,
        "pose": "examine",
        "expr": "focused"
       },
       {
-       "at": 2.39,
+       "at": 2.58,
        "pose": "stand_tense",
        "expr": "stern"
       }
      ],
      "walk": {
-      "from": 80,
-      "to": 300,
-      "at": 0.84,
-      "dur": 0.8159999999999998
+      "from": 40,
+      "to": 260,
+      "at": 1.06,
+      "dur": 0.7809999999999999
      }
     },
     {
      "id": "agent_a",
      "outfit": "default",
-     "depth": 0.99,
-     "scale": 0.6,
+     "depth": 1,
+     "scale": 0.5,
      "start_pose": "stand",
      "start_expr": "focused",
      "actions": [
       {
-       "at": 0.76,
+       "at": 0.92,
        "pose": "point",
        "expr": "determined"
       },
       {
-       "at": 1.99,
+       "at": 2.18,
        "pose": "stand",
        "expr": "stern"
       }
@@ -549,7 +555,7 @@
     },
     {
      "type": "card",
-     "at": 1.32,
+     "at": 1.53,
      "text": "A WHITE BOX TRUCK / CONFLICTING WITNESS REPORTS"
     }
    ],
@@ -578,20 +584,20 @@
      },
      {
       "name": "brake",
-      "at": 8.911,
+      "at": 9.073,
       "gain": 0.4,
       "word": [
        0,
-       2
+       3
       ]
      },
      {
       "name": "thud",
-      "at": 9.855,
+      "at": 10.041,
       "gain": 0.4,
       "word": [
        0,
-       6
+       7
       ]
      }
     ]
@@ -884,55 +890,60 @@
    "id": "s05_print",
    "scene_type": "ds31_print",
    "start": 17.25,
-   "duration": 3.75,
+   "duration": 4.125,
    "narration": [
-    "A fingerprint there matched seventeen-year-old Lee Boyd Malvo."
+    "A fingerprint there matched a seventeen-year-old: Lee Boyd Malvo."
    ],
    "caption_timings": [
     {
      "line": 0,
      "start": 17.5,
-     "end": 20.681,
+     "end": 21.111,
      "words": [
       {
        "w": "A",
-       "start": 17.581,
-       "end": 17.616
+       "start": 17.558,
+       "end": 17.604
       },
       {
        "w": "fingerprint",
        "start": 17.663,
-       "end": 18.092
+       "end": 18.173
       },
       {
        "w": "there",
-       "start": 18.127,
-       "end": 18.231
+       "start": 18.208,
+       "end": 18.324
       },
       {
        "w": "matched",
-       "start": 18.266,
-       "end": 18.545
+       "start": 18.359,
+       "end": 18.684
       },
       {
-       "w": "seventeen-year-old",
-       "start": 18.568,
-       "end": 19.729
+       "w": "a",
+       "start": 18.731,
+       "end": 18.777
+      },
+      {
+       "w": "seventeen-year-old:",
+       "start": 18.824,
+       "end": 19.903
       },
       {
        "w": "Lee",
-       "start": 19.752,
-       "end": 19.857
+       "start": 20.077,
+       "end": 20.275
       },
       {
        "w": "Boyd",
-       "start": 19.892,
-       "end": 20.112
+       "start": 20.321,
+       "end": 20.542
       },
       {
        "w": "Malvo.",
-       "start": 20.159,
-       "end": 20.577
+       "start": 20.588,
+       "end": 21.018
       }
      ]
     }
@@ -973,13 +984,13 @@
        "expr": "focused"
       },
       {
-       "at": 1.02,
+       "at": 1.11,
        "pose": "torch",
        "expr": "realise",
        "turn_head": true
       },
       {
-       "at": 2.91,
+       "at": 3.34,
        "pose": "stand_tense",
        "expr": "shocked"
       }
@@ -988,18 +999,18 @@
     {
      "id": "agent_a",
      "outfit": "default",
-     "depth": 0.99,
+     "depth": 1,
      "scale": 0.62,
      "start_pose": "walk",
      "start_expr": "focused",
      "actions": [
       {
-       "at": 1.12,
+       "at": 1.21,
        "pose": "point",
        "expr": "determined"
       },
       {
-       "at": 2.91,
+       "at": 3.34,
        "pose": "stand",
        "expr": "stern"
       }
@@ -1007,11 +1018,11 @@
      "walk": {
       "from": 1200,
       "to": 880,
-      "at": 0.68,
+      "at": 0.76,
       "dur": 0.6
      },
      "visible": [
-      0.58
+      0.66
      ]
     }
    ],
@@ -1023,7 +1034,7 @@
     },
     {
      "type": "card",
-     "at": 0.92,
+     "at": 1.01,
      "text": "A FINGERPRINT · FBI DATABASE MATCH / LEE BOYD MALVO · 17 / PRINTS ON FILE FROM A WASHINGTON STATE ARREST"
     }
    ],
@@ -1057,7 +1068,7 @@
      },
      {
       "name": "ping",
-      "at": 18.216,
+      "at": 18.309,
       "gain": 0.4,
       "word": [
        0,
@@ -1066,11 +1077,11 @@
      },
      {
       "name": "hit",
-      "at": 20.109,
+      "at": 20.538,
       "gain": 0.5,
       "word": [
        0,
-       7
+       8
       ]
      }
     ]
@@ -1092,76 +1103,76 @@
   {
    "id": "s06_car",
    "scene_type": "ds31_car",
-   "start": 21.0,
-   "duration": 4.5,
+   "start": 21.375,
+   "duration": 4.875,
    "narration": [
     "Malvo led to John Allen Muhammad, and a blue 1990 Chevrolet Caprice."
    ],
    "caption_timings": [
     {
      "line": 0,
-     "start": 21.25,
-     "end": 25.255,
+     "start": 21.625,
+     "end": 25.735,
      "words": [
       {
        "w": "Malvo",
-       "start": 21.296,
-       "end": 21.598
+       "start": 21.683,
+       "end": 21.997
       },
       {
        "w": "led",
-       "start": 21.656,
-       "end": 21.819
+       "start": 22.055,
+       "end": 22.194
       },
       {
        "w": "to",
-       "start": 21.854,
-       "end": 21.912
+       "start": 22.229,
+       "end": 22.287
       },
       {
        "w": "John",
-       "start": 21.935,
-       "end": 22.144
+       "start": 22.322,
+       "end": 22.554
       },
       {
        "w": "Allen",
-       "start": 22.19,
-       "end": 22.399
+       "start": 22.612,
+       "end": 22.844
       },
       {
        "w": "Muhammad,",
-       "start": 22.423,
-       "end": 23.061
+       "start": 22.879,
+       "end": 23.401
       },
       {
        "w": "and",
-       "start": 23.154,
-       "end": 23.282
+       "start": 23.657,
+       "end": 23.854
       },
       {
        "w": "a",
-       "start": 23.305,
-       "end": 23.351
+       "start": 23.889,
+       "end": 23.912
       },
       {
        "w": "blue",
-       "start": 23.398,
-       "end": 23.56
+       "start": 23.959,
+       "end": 24.11
       },
       {
        "w": "1990",
-       "start": 23.584,
-       "end": 24.199
+       "start": 24.144,
+       "end": 24.725
       },
       {
        "w": "Chevrolet",
-       "start": 24.257,
-       "end": 24.629
+       "start": 24.771,
+       "end": 25.131
       },
       {
        "w": "Caprice.",
-       "start": 24.687,
-       "end": 25.174
+       "start": 25.189,
+       "end": 25.642
       }
      ]
     }
@@ -1192,33 +1203,33 @@
      "id": "analyst",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.9,
+     "scale": 0.8,
      "start_pose": "sit_type",
      "start_expr": "focused",
      "actions": [
       {
-       "at": 0.56,
+       "at": 0.58,
        "pose": "sit_type"
       },
       {
-       "at": 0.8,
+       "at": 0.82,
        "pose": "sit_type_b"
       },
       {
-       "at": 1.04,
+       "at": 1.06,
        "pose": "sit_type"
       },
       {
-       "at": 1.28,
+       "at": 1.3,
        "pose": "sit_type_b"
       },
       {
-       "at": 1.42,
+       "at": 1.5,
        "pose": "sit",
        "expr": "realise"
       },
       {
-       "at": 2.4,
+       "at": 2.58,
        "pose": "point",
        "expr": "determined"
       }
@@ -1228,17 +1239,17 @@
      "id": "agent_a",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.98,
+     "scale": 0.9,
      "start_pose": "stand",
      "start_expr": "focused",
      "actions": [
       {
-       "at": 0.94,
+       "at": 0.95,
        "pose": "stand_tense",
        "expr": "stern"
       },
       {
-       "at": 3.26,
+       "at": 3.4,
        "pose": "point",
        "expr": "determined",
        "turn_head": true
@@ -1254,7 +1265,7 @@
     },
     {
      "type": "card",
-     "at": 0.84,
+     "at": 0.85,
      "text": "JOHN ALLEN MUHAMMAD / A BLUE 1990 CHEVROLET CAPRICE / REGISTERED IN NEW JERSEY"
     }
    ],
@@ -1289,12 +1300,12 @@
     "sfx": [
      {
       "name": "click",
-      "at": 21.05,
+      "at": 21.425,
       "gain": 0.4
      },
      {
       "name": "stamp",
-      "at": 22.14,
+      "at": 22.562,
       "gain": 0.4,
       "word": [
        0,
@@ -1303,7 +1314,7 @@
      },
      {
       "name": "thump",
-      "at": 24.207,
+      "at": 24.721,
       "gain": 0.45,
       "word": [
        0,
@@ -1329,7 +1340,7 @@
   {
    "id": "s07_rest",
    "scene_type": "ds31_rest",
-   "start": 25.5,
+   "start": 26.25,
    "duration": 7.125,
    "narration": [
     "Police broadcast the plate. Hours later a trucker spotted the car at the rest stop.",
@@ -1338,115 +1349,115 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 25.75,
-     "end": 30.011,
+     "start": 26.5,
+     "end": 30.761,
      "words": [
       {
        "w": "Police",
-       "start": 25.773,
-       "end": 26.017
+       "start": 26.523,
+       "end": 26.767
       },
       {
        "w": "broadcast",
-       "start": 26.075,
-       "end": 26.621
+       "start": 26.825,
+       "end": 27.371
       },
       {
        "w": "the",
-       "start": 26.644,
-       "end": 26.702
+       "start": 27.394,
+       "end": 27.452
       },
       {
        "w": "plate.",
-       "start": 26.737,
-       "end": 27.05
+       "start": 27.487,
+       "end": 27.8
       },
       {
        "w": "Hours",
-       "start": 27.166,
-       "end": 27.468
+       "start": 27.916,
+       "end": 28.218
       },
       {
        "w": "later",
-       "start": 27.503,
-       "end": 27.805
+       "start": 28.253,
+       "end": 28.555
       },
       {
        "w": "a",
-       "start": 27.875,
-       "end": 27.909
+       "start": 28.625,
+       "end": 28.659
       },
       {
        "w": "trucker",
-       "start": 27.956,
-       "end": 28.269
+       "start": 28.706,
+       "end": 29.019
       },
       {
        "w": "spotted",
-       "start": 28.327,
-       "end": 28.676
+       "start": 29.077,
+       "end": 29.426
       },
       {
        "w": "the",
-       "start": 28.711,
-       "end": 28.769
+       "start": 29.461,
+       "end": 29.519
       },
       {
        "w": "car",
-       "start": 28.827,
-       "end": 29.105
+       "start": 29.577,
+       "end": 29.855
       },
       {
        "w": "at",
-       "start": 29.198,
-       "end": 29.268
+       "start": 29.948,
+       "end": 30.018
       },
       {
        "w": "the",
-       "start": 29.303,
-       "end": 29.361
+       "start": 30.053,
+       "end": 30.111
       },
       {
        "w": "rest",
-       "start": 29.396,
-       "end": 29.581
+       "start": 30.146,
+       "end": 30.331
       },
       {
        "w": "stop.",
-       "start": 29.616,
-       "end": 29.976
+       "start": 30.366,
+       "end": 30.726
       }
      ]
     },
     {
      "line": 1,
-     "start": 30.611,
-     "end": 32.027,
+     "start": 31.361,
+     "end": 32.777,
      "words": [
       {
        "w": "Both",
-       "start": 30.646,
-       "end": 30.843
+       "start": 31.396,
+       "end": 31.593
       },
       {
        "w": "men",
-       "start": 30.89,
-       "end": 31.064
+       "start": 31.64,
+       "end": 31.814
       },
       {
        "w": "were",
-       "start": 31.087,
-       "end": 31.191
+       "start": 31.837,
+       "end": 31.941
       },
       {
        "w": "asleep",
-       "start": 31.226,
-       "end": 31.517
+       "start": 31.976,
+       "end": 32.267
       },
       {
        "w": "inside.",
-       "start": 31.54,
-       "end": 31.981
+       "start": 32.29,
+       "end": 32.731
       }
      ]
     }
@@ -1525,7 +1536,7 @@
     {
      "id": "agent_a",
      "outfit": "default",
-     "depth": 0.98,
+     "depth": 1.01,
      "scale": 0.5,
      "start_pose": "walk",
      "start_expr": "focused",
@@ -1538,7 +1549,7 @@
      ],
      "walk": {
       "from": 1300,
-      "to": 1060,
+      "to": 1040,
       "at": 5.15,
       "dur": 0.8800000000000001
      },
@@ -1610,7 +1621,7 @@
     "sfx": [
      {
       "name": "beep",
-      "at": 26.025,
+      "at": 26.775,
       "gain": 0.3,
       "word": [
        0,
@@ -1619,7 +1630,7 @@
      },
      {
       "name": "swell",
-      "at": 28.027,
+      "at": 28.777,
       "gain": 0.45,
       "word": [
        0,
@@ -1628,7 +1639,7 @@
      },
      {
       "name": "hit",
-      "at": 29.566,
+      "at": 30.316,
       "gain": 0.55,
       "word": [
        0,
@@ -1637,7 +1648,7 @@
      },
      {
       "name": "step",
-      "at": 31.276,
+      "at": 32.026,
       "gain": 0.3,
       "word": [
        1,
@@ -1646,7 +1657,7 @@
      },
      {
       "name": "hit",
-      "at": 31.49,
+      "at": 32.24,
       "gain": 0.5,
       "word": [
        1,
@@ -1673,8 +1684,8 @@
   {
    "id": "s08_verdict",
    "scene_type": "ds31_verdict",
-   "start": 32.625,
-   "duration": 5.25,
+   "start": 33.375,
+   "duration": 4.875,
    "narration": [
     "Muhammad was executed in 2009.",
     "Malvo was given life."
@@ -1682,65 +1693,65 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 32.875,
-     "end": 35.545,
+     "start": 33.625,
+     "end": 36.028,
      "words": [
       {
        "w": "Muhammad",
-       "start": 32.945,
-       "end": 33.723
+       "start": 33.683,
+       "end": 34.101
       },
       {
        "w": "was",
-       "start": 33.757,
-       "end": 33.862
+       "start": 34.136,
+       "end": 34.252
       },
       {
        "w": "executed",
-       "start": 33.92,
-       "end": 34.454
+       "start": 34.31,
+       "end": 34.867
       },
       {
        "w": "in",
-       "start": 34.477,
-       "end": 34.558
+       "start": 34.937,
+       "end": 35.018
       },
       {
        "w": "2009.",
-       "start": 34.616,
-       "end": 35.487
+       "start": 35.065,
+       "end": 35.97
       }
      ]
     },
     {
      "line": 1,
-     "start": 36.195,
-     "end": 37.426,
+     "start": 36.678,
+     "end": 37.909,
      "words": [
       {
        "w": "Malvo",
-       "start": 36.253,
-       "end": 36.59
+       "start": 36.736,
+       "end": 37.073
       },
       {
        "w": "was",
-       "start": 36.625,
-       "end": 36.741
+       "start": 37.108,
+       "end": 37.224
       },
       {
        "w": "given",
-       "start": 36.775,
-       "end": 37.019
+       "start": 37.258,
+       "end": 37.502
       },
       {
        "w": "life.",
-       "start": 37.054,
-       "end": 37.344
+       "start": 37.537,
+       "end": 37.827
       }
      ]
     }
    ],
-   "visual_description": "courtroom (cold grade); judge (silhouette): sit -> gavel -> sit -> sit_read; ds31_muhammad (silhouette): stand -> hands_together -> bowed; ds31_malvo (silhouette): stand -> hands_behind -> bowed; camera push/pull, handheld; overlays: card 'MUHAMMAD · CONVICTED 2003 · EXECUTED 10 NOV 2009 / MALVO, 17 · LIFE SENTENCES / RESENTENCING FIGHTS CONTINUE (2026)'.",
+   "visual_description": "courtroom (cold grade); judge (silhouette): sit -> gavel -> sit -> sit_read; ds31_muhammad (silhouette): stand -> hands_together -> bowed; ds31_malvo (silhouette): stand -> hands_behind -> bowed; camera push/pull, handheld; overlays: card 'MUHAMMAD · CONVICTED 2003 · EXECUTED 2009 / MALVO, 17 · LIFE SENTENCES / RESENTENCING FIGHTS CONTINUE (2026)'.",
    "shot_size": "medium",
    "set": "courtroom",
    "grade": "cold",
@@ -1772,15 +1783,15 @@
      "start_expr": "neutral",
      "actions": [
       {
-       "at": 0.99,
+       "at": 0.64,
        "pose": "gavel"
       },
       {
-       "at": 1.44,
+       "at": 1.08,
        "pose": "sit"
       },
       {
-       "at": 3.57,
+       "at": 3.3,
        "pose": "sit_read"
       }
      ],
@@ -1795,11 +1806,11 @@
      "start_expr": "neutral",
      "actions": [
       {
-       "at": 0.32,
+       "at": 0.31,
        "pose": "hands_together"
       },
       {
-       "at": 1.29,
+       "at": 0.94,
        "pose": "bowed"
       }
      ],
@@ -1809,16 +1820,16 @@
      "id": "ds31_malvo",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.9,
+     "scale": 0.92,
      "start_pose": "stand",
      "start_expr": "neutral",
      "actions": [
       {
-       "at": 3.63,
+       "at": 3.36,
        "pose": "hands_behind"
       },
       {
-       "at": 4.43,
+       "at": 4.16,
        "pose": "bowed"
       }
      ],
@@ -1829,7 +1840,7 @@
     {
      "type": "card",
      "at": 0.15,
-     "text": "MUHAMMAD · CONVICTED 2003 · EXECUTED 10 NOV 2009 / MALVO, 17 · LIFE SENTENCES / RESENTENCING FIGHTS CONTINUE (2026)"
+     "text": "MUHAMMAD · CONVICTED 2003 · EXECUTED 2009 / MALVO, 17 · LIFE SENTENCES / RESENTENCING FIGHTS CONTINUE (2026)"
     }
    ],
    "reconstruction_tag": "ILLUSTRATION · NOT A LIKENESS",
@@ -1866,7 +1877,7 @@
     "sfx": [
      {
       "name": "gavel",
-      "at": 33.84,
+      "at": 34.23,
       "gain": 0.8,
       "word": [
        0,
@@ -1893,7 +1904,7 @@
   {
    "id": "s09_end",
    "scene_type": "ds31_end",
-   "start": 37.875,
+   "start": 38.25,
    "duration": 6.75,
    "narration": [
     "A rest stop ended the DC sniper attacks.",
@@ -1902,91 +1913,91 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 38.125,
-     "end": 40.749,
+     "start": 38.5,
+     "end": 41.124,
      "words": [
       {
        "w": "A",
-       "start": 38.183,
-       "end": 38.253
+       "start": 38.558,
+       "end": 38.628
       },
       {
        "w": "rest",
-       "start": 38.288,
-       "end": 38.497
+       "start": 38.663,
+       "end": 38.872
       },
       {
        "w": "stop",
-       "start": 38.531,
-       "end": 38.822
+       "start": 38.906,
+       "end": 39.197
       },
       {
        "w": "ended",
-       "start": 38.88,
-       "end": 39.077
+       "start": 39.255,
+       "end": 39.452
       },
       {
        "w": "the",
-       "start": 39.123,
-       "end": 39.17
+       "start": 39.498,
+       "end": 39.545
       },
       {
        "w": "DC",
-       "start": 39.228,
-       "end": 39.599
+       "start": 39.603,
+       "end": 39.974
       },
       {
        "w": "sniper",
-       "start": 39.681,
-       "end": 40.052
+       "start": 40.056,
+       "end": 40.427
       },
       {
        "w": "attacks.",
-       "start": 40.087,
-       "end": 40.61
+       "start": 40.462,
+       "end": 40.985
       }
      ]
     },
     {
      "line": 1,
-     "start": 41.349,
-     "end": 42.881,
+     "start": 41.724,
+     "end": 43.256,
      "words": [
       {
        "w": "We",
-       "start": 41.384,
-       "end": 41.465
+       "start": 41.759,
+       "end": 41.84
       },
       {
        "w": "remember",
-       "start": 41.512,
-       "end": 41.86
+       "start": 41.887,
+       "end": 42.235
       },
       {
        "w": "the",
-       "start": 41.906,
-       "end": 41.999
+       "start": 42.281,
+       "end": 42.374
       },
       {
        "w": "ten",
-       "start": 42.046,
-       "end": 42.197
+       "start": 42.421,
+       "end": 42.572
       },
       {
        "w": "who",
-       "start": 42.231,
-       "end": 42.382
+       "start": 42.606,
+       "end": 42.757
       },
       {
        "w": "died.",
-       "start": 42.417,
-       "end": 42.812
+       "start": 42.792,
+       "end": 43.187
       }
      ]
     }
    ],
    "visual_description": "ds31 rest (night grade); ds31_trucker: stand_tense -> point -> stand -> hands_together; camera push/pull, handheld; overlays: svg.",
-   "shot_size": "medium-wide",
+   "shot_size": "wide",
    "set": "ds31_rest",
    "grade": "night",
    "camera": {
@@ -2010,7 +2021,7 @@
      "id": "ds31_trucker",
      "outfit": "default",
      "depth": 1.02,
-     "scale": 0.66,
+     "scale": 0.52,
      "start_pose": "stand_tense",
      "start_expr": "worried",
      "actions": [
@@ -2073,12 +2084,12 @@
     "sfx": [
      {
       "name": "wind",
-      "at": 37.875,
+      "at": 38.25,
       "gain": 0.3
      },
      {
       "name": "click",
-      "at": 38.238,
+      "at": 38.613,
       "gain": 0.35,
       "word": [
        0,

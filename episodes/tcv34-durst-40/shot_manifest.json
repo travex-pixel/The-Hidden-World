@@ -11,8 +11,8 @@
   "max_set_share": 0.33,
   "shot_sizes": {
    "wide": 2,
-   "medium": 4,
-   "medium-wide": 3
+   "medium": 3,
+   "medium-wide": 4
   },
   "max_shot_size_share": 0.44,
   "ok": true
@@ -25,106 +25,111 @@
    "start": 0.0,
    "duration": 5.625,
    "narration": [
-    "Robert Durst volunteered for a television interview.",
+    "Robert Durst offered to do a television interview.",
     "Then he went to the bathroom wearing a live mic."
    ],
    "caption_timings": [
     {
      "line": 0,
      "start": 0.25,
-     "end": 2.793,
+     "end": 2.595,
      "words": [
       {
        "w": "Robert",
        "start": 0.296,
-       "end": 0.611
+       "end": 0.61
       },
       {
        "w": "Durst",
-       "start": 0.611,
-       "end": 0.873
+       "start": 0.656,
+       "end": 0.935
       },
       {
-       "w": "volunteered",
-       "start": 0.873,
-       "end": 1.451
+       "w": "offered",
+       "start": 1.016,
+       "end": 1.283
       },
       {
-       "w": "for",
-       "start": 1.451,
-       "end": 1.609
+       "w": "to",
+       "start": 1.307,
+       "end": 1.376
+      },
+      {
+       "w": "do",
+       "start": 1.411,
+       "end": 1.527
       },
       {
        "w": "a",
-       "start": 1.609,
-       "end": 1.661
+       "start": 1.55,
+       "end": 1.585
       },
       {
        "w": "television",
-       "start": 1.661,
-       "end": 2.186
+       "start": 1.643,
+       "end": 2.131
       },
       {
        "w": "interview.",
-       "start": 2.186,
-       "end": 2.711
+       "start": 2.177,
+       "end": 2.502
       }
      ]
     },
     {
      "line": 1,
-     "start": 3.293,
-     "end": 5.324,
+     "start": 3.095,
+     "end": 5.127,
      "words": [
       {
        "w": "Then",
-       "start": 3.316,
-       "end": 3.432
+       "start": 3.118,
+       "end": 3.234
       },
       {
        "w": "he",
-       "start": 3.467,
-       "end": 3.548
+       "start": 3.269,
+       "end": 3.35
       },
       {
        "w": "went",
-       "start": 3.572,
-       "end": 3.723
+       "start": 3.374,
+       "end": 3.525
       },
       {
        "w": "to",
-       "start": 3.746,
-       "end": 3.815
+       "start": 3.548,
+       "end": 3.617
       },
       {
        "w": "the",
-       "start": 3.85,
-       "end": 3.908
+       "start": 3.652,
+       "end": 3.71
       },
       {
        "w": "bathroom",
-       "start": 3.932,
-       "end": 4.396
+       "start": 3.734,
+       "end": 4.198
       },
       {
        "w": "wearing",
-       "start": 4.431,
-       "end": 4.663
+       "start": 4.233,
+       "end": 4.465
       },
       {
        "w": "a",
-       "start": 4.686,
-       "end": 4.733
+       "start": 4.488,
+       "end": 4.535
       },
       {
        "w": "live",
-       "start": 4.767,
-       "end": 4.976
+       "start": 4.569,
+       "end": 4.778
       },
       {
        "w": "mic.",
-       "start": 5.034,
-       "end": 5.29
+       "start": 4.836,
+       "end": 5.092
       }
      ]
     }
@@ -159,16 +164,16 @@
      "start_expr": "focused",
      "actions": [
       {
-       "at": 0.77,
+       "at": 0.92,
        "pose": "point_up"
       },
       {
-       "at": 2.19,
+       "at": 2.18,
        "pose": "examine",
        "expr": "focused"
       },
       {
-       "at": 4.67,
+       "at": 4.47,
        "pose": "stand_tense",
        "expr": "realise"
       }
@@ -199,7 +204,7 @@
     {
      "claim": "R_interview",
      "type": "established",
-     "claim_text": "Durst approached the filmmaker after the 2010 feature 'All Good Things' and volunteered to be interviewed for the HBO series 'The Jinx' (THR: about 21 hours of interviews, not stated). Narration: 'Robert Durst volunteered for a television interview.'",
+     "claim_text": "Durst approached the filmmaker after the 2010 feature 'All Good Things' and volunteered to be interviewed for the HBO series 'The Jinx' (THR: about 21 hours of interviews, not stated). Narration: 'Robert Durst offered to do a television interview.'",
      "urls": [
       "https://www.hollywoodreporter.com/tv/tv-news/the-jinx-director-andrew-jarecki-safety-robert-durst-encounter-1235879470/",
       "https://www.pressreader.com/usa/greenwich-time-sunday/20210919/281818581967770",
@@ -234,7 +239,7 @@
      },
      {
       "name": "thud",
-      "at": 0.923,
+      "at": 1.066,
       "gain": 0.4,
       "word": [
        0,
@@ -243,7 +248,7 @@
      },
      {
       "name": "hit",
-      "at": 4.717,
+      "at": 4.519,
       "gain": 0.5,
       "word": [
        1,
@@ -252,7 +257,7 @@
      },
      {
       "name": "ping",
-      "at": 5.134,
+      "at": 4.936,
       "gain": 0.35,
       "word": [
        1,
@@ -573,7 +578,7 @@
     }
    ],
    "visual_description": "office day (cold grade); detective: read -> point -> arms_crossed -> point; analyst: stand -> examine -> point; camera push/pull, handheld; overlays: label 'BEVERLY HILLS POLICE · DECEMBER 2000', card 'ONE WORD: \"CADAVER\" / AND HER ADDRESS / THE ENVELOPE SPELT IT \"BEVERLEY\"'.",
-   "shot_size": "medium",
+   "shot_size": "medium-wide",
    "set": "office_day",
    "grade": "cold",
    "camera": {
@@ -598,7 +603,7 @@
      "id": "detective",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.95,
+     "scale": 0.86,
      "start_pose": "read",
      "start_expr": "focused",
      "actions": [
@@ -896,7 +901,7 @@
     {
      "claim": "R_interview",
      "type": "established",
-     "claim_text": "Durst approached the filmmaker after the 2010 feature 'All Good Things' and volunteered to be interviewed for the HBO series 'The Jinx' (THR: about 21 hours of interviews, not stated). Narration: 'Robert Durst volunteered for a television interview.'",
+     "claim_text": "Durst approached the filmmaker after the 2010 feature 'All Good Things' and volunteered to be interviewed for the HBO series 'The Jinx' (THR: about 21 hours of interviews, not stated). Narration: 'Robert Durst offered to do a television interview.'",
      "urls": [
       "https://www.hollywoodreporter.com/tv/tv-news/the-jinx-director-andrew-jarecki-safety-robert-durst-encounter-1235879470/",
       "https://www.pressreader.com/usa/greenwich-time-sunday/20210919/281818581967770",
@@ -1011,33 +1016,33 @@
     },
     {
      "line": 1,
-     "start": 20.673,
-     "end": 22.855,
+     "start": 20.623,
+     "end": 22.805,
      "words": [
       {
        "w": "Same",
-       "start": 20.777,
-       "end": 20.963
+       "start": 20.727,
+       "end": 20.913
       },
       {
        "w": "handwriting,",
-       "start": 20.998,
-       "end": 21.544
+       "start": 20.948,
+       "end": 21.494
       },
       {
        "w": "same",
-       "start": 21.625,
-       "end": 21.869
+       "start": 21.575,
+       "end": 21.819
       },
       {
        "w": "spelling",
-       "start": 21.927,
-       "end": 22.252
+       "start": 21.877,
+       "end": 22.202
       },
       {
        "w": "mistake.",
-       "start": 22.287,
-       "end": 22.774
+       "start": 22.237,
+       "end": 22.724
       }
      ]
     }
@@ -1059,7 +1064,7 @@
      "id": "rd34_filmmaker",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.95,
+     "scale": 0.86,
      "start_pose": "read",
      "start_expr": "focused",
      "actions": [
@@ -1073,7 +1078,7 @@
        "pose": "point"
       },
       {
-       "at": 3.62,
+       "at": 3.58,
        "pose": "hands_together",
        "expr": "determined"
       }
@@ -1083,7 +1088,7 @@
      "id": "examiner",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.9,
+     "scale": 0.84,
      "start_pose": "stand",
      "start_expr": "neutral",
      "actions": [
@@ -1093,12 +1098,12 @@
        "expr": "focused"
       },
       {
-       "at": 3,
+       "at": 2.95,
        "pose": "point",
        "expr": "realise"
       },
       {
-       "at": 4.59,
+       "at": 4.54,
        "pose": "stand",
        "expr": "determined"
       }
@@ -1113,7 +1118,7 @@
     },
     {
      "type": "card",
-     "at": 2.68,
+     "at": 2.63,
      "text": "SAME HANDWRITING / SAME \"BEVERLEY\" / THE KEY EVIDENCE AT HIS TRIAL"
     }
    ],
@@ -1167,7 +1172,7 @@
      },
      {
       "name": "swell",
-      "at": 20.477,
+      "at": 20.427,
       "gain": 0.4,
       "word": [
        1,
@@ -1176,7 +1181,7 @@
      },
      {
       "name": "hit",
-      "at": 22.237,
+      "at": 22.187,
       "gain": 0.5,
       "word": [
        1,
@@ -1263,48 +1268,48 @@
     },
     {
      "line": 1,
-     "start": 26.542,
-     "end": 28.748,
+     "start": 26.492,
+     "end": 28.698,
      "words": [
       {
        "w": "It",
-       "start": 26.6,
-       "end": 26.67
+       "start": 26.55,
+       "end": 26.62
       },
       {
        "w": "caught",
-       "start": 26.728,
-       "end": 26.972
+       "start": 26.678,
+       "end": 26.922
       },
       {
        "w": "him:",
-       "start": 27.018,
-       "end": 27.204
+       "start": 26.968,
+       "end": 27.154
       },
       {
        "w": "killed",
-       "start": 27.552,
-       "end": 27.761
+       "start": 27.502,
+       "end": 27.711
       },
       {
        "w": "them",
-       "start": 27.796,
-       "end": 27.9
+       "start": 27.746,
+       "end": 27.85
       },
       {
        "w": "all,",
-       "start": 27.935,
-       "end": 28.028
+       "start": 27.885,
+       "end": 27.978
       },
       {
        "w": "of",
-       "start": 28.098,
-       "end": 28.167
+       "start": 28.048,
+       "end": 28.117
       },
       {
        "w": "course.",
-       "start": 28.237,
-       "end": 28.62
+       "start": 28.187,
+       "end": 28.57
       }
      ]
     }
@@ -1359,7 +1364,7 @@
     },
     {
      "type": "card",
-     "at": 3.38,
+     "at": 3.33,
      "text": "\"WHAT THE HELL DID I DO? / KILLED THEM ALL, OF COURSE.\" / WORDING AS REPORTED · RECORDED ON HIS OWN MIC / THE AUDIO WAS LATER SHOWN TO BE RE-ORDERED IN EDITING"
     }
    ],
@@ -1444,7 +1449,7 @@
      },
      {
       "name": "swell",
-      "at": 26.428,
+      "at": 26.378,
       "gain": 0.45,
       "word": [
        1,
@@ -1453,7 +1458,7 @@
      },
      {
       "name": "hit",
-      "at": 27.502,
+      "at": 27.452,
       "gain": 0.55,
       "word": [
        1,
@@ -1802,7 +1807,7 @@
      ]
     }
    ],
-   "visual_description": "courtroom (cold grade); judge (silhouette): sit -> gavel -> sit -> sit_read; rd34_durst (silhouette): stand -> hands_together -> bowed; camera push/pull, handheld; overlays: card '17 SEPT 2021 · GUILTY · FIRST-DEGREE MURDER / 14 OCT 2021 · LIFE WITHOUT PAROLE / THE LETTER AND THE TAPE WERE BOTH IN EVIDENCE'.",
+   "visual_description": "courtroom (cold grade); judge (silhouette): sit -> gavel -> sit -> sit_read; rd34_durst (silhouette): stand -> hands_together -> bowed; camera push/pull, handheld; overlays: card '17 SEPT 2021 · GUILTY OF MURDER / 14 OCT 2021 · LIFE WITHOUT PAROLE / THE LETTER AND THE TAPE WERE BOTH IN EVIDENCE'.",
    "shot_size": "medium",
    "set": "courtroom",
    "grade": "cold",
@@ -1871,7 +1876,7 @@
     {
      "type": "card",
      "at": 0.15,
-     "text": "17 SEPT 2021 · GUILTY · FIRST-DEGREE MURDER / 14 OCT 2021 · LIFE WITHOUT PAROLE / THE LETTER AND THE TAPE WERE BOTH IN EVIDENCE"
+     "text": "17 SEPT 2021 · GUILTY OF MURDER / 14 OCT 2021 · LIFE WITHOUT PAROLE / THE LETTER AND THE TAPE WERE BOTH IN EVIDENCE"
     }
    ],
    "reconstruction_tag": "ILLUSTRATION · NOT A LIKENESS",

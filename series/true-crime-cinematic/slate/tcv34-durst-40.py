@@ -45,12 +45,12 @@ def build(h):
           emph=["denied", "HBO", "crew", "filming"], pad=0.2, tr="push"),
         # B/C - clue 3: the letter he had sent her; same handwriting, same misspelling (pause before the reveal)
         S("s05_letter", "rd34_letter", [N("The filmmakers found a letter he'd sent her."),
-                                        N("Same handwriting, same spelling mistake.", pause_before=0.3)],
+                                        N("Same handwriting, same spelling mistake.", pause_before=0.25)],
           "tension-rise", ["R_letter", "R_note"], sfx=[fw(0, 2, "paper", 0.4, -0.05), fw(0, 4, "click", 0.35, -0.05), fw(1, 0, "swell", 0.4, -0.3), fw(1, 4, "hit", 0.5, -0.05)],
           emph=["letter", "same", "handwriting,", "spelling", "mistake."], pad=0.25, tr="push"),
         # C - THE HOW: confronted, he went to the bathroom with the mic still on; the reported wording on a card (music drop)
         S("s06_mic", "rd34_mic", [N("Confronted, he went to the bathroom, mic still on."),
-                                  N("It caught him: killed them all, of course.", pause_before=0.35)],
+                                  N("It caught him: killed them all, of course.", pause_before=0.3)],
           "revelation", ["R_mic", "R_edit", "R_letter"], sfx=[fw(0, 0, "thud", 0.35, -0.05), fw(0, 2, "step", 0.3, 0.05), fw(0, 5, "door", 0.45, -0.05),
                                                               fw(0, 6, "ping", 0.35, -0.05), fw(1, 1, "swell", 0.45, -0.3), fw(1, 3, "hit", 0.55, -0.05)],
           emph=["confronted,", "bathroom,", "mic", "still", "on.", "killed", "them", "all,"], pad=0.25, tr="flash"),
@@ -66,7 +66,7 @@ def build(h):
         #     the engine burns the end question over the last 3.2 s
         S("s09_end", "rd34_end", [N("He died in custody in 2022, charged with his wife's murder too."), N("We remember them both.", pause_before=0.3)],
           "aftermath", ["R_death", "R_kathie_charge", "R_victims"], sfx=[fx(0.0, "wind", 0.3), fw(0, 1, "thud", 0.35, -0.05), fw(0, 6, "click", 0.35, -0.05)],
-          emph=["died", "custody", "2022,", "charged", "wife's", "remember"], min_d=4.0, pad=1.5, tr="zoom"),
+          emph=["died", "custody", "2022,", "charged", "wife's", "remember"], min_d=4.0, pad=1.3, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_stakes": "A", "s03_note": "B", "s04_jinx": "B", "s05_letter": "C",
                 "s06_mic": "C", "s07_arrest": "C", "s08_verdict": "D", "s09_end": "E"}

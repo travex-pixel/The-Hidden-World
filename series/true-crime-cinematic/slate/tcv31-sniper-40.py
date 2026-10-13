@@ -34,7 +34,7 @@ def build(h):
         # A - the stakes by 0:10, said once and plainly at a briefing; nothing of the shootings is shown
         S("s02_toll", "ds31_toll", [N("Ten were killed and three wounded.", pause_before=0.1)],
           "hush", ["D_toll"], sfx=[fx(0.0, "wind", 0.3), fw(0, 0, "thump", 0.4, -0.05)],
-          emph=["ten", "killed", "three", "wounded."], min_d=3.0, pad=0.2, tr="fade"),
+          emph=["ten", "killed", "three", "wounded."], min_d=2.6, pad=0.2, tr="fade"),
         # B - the wrong lead: for weeks the lookout was a white box truck
         S("s03_truck", "ds31_truck", [N("For weeks, the police hunted a white box truck.")],
           "tension", ["D_truck"], sfx=[fx(0.0, "whoosh", 0.35), fw(0, 3, "brake", 0.4, -0.1), fw(0, 7, "thud", 0.4, -0.05)],
@@ -65,7 +65,7 @@ def build(h):
         # E - callback on the hero object, the memorial as the last spoken line; the engine burns the end question
         S("s09_end", "ds31_end", [N("A rest stop ended the DC sniper attacks."), N("We remember the ten who died.", pause_before=0.3)],
           "aftermath", ["D_rest", "D_memorial"], sfx=[fx(0.0, "wind", 0.3), fw(0, 1, "click", 0.35, -0.05)],
-          emph=["rest", "stop", "ended", "remember", "ten"], min_d=4.0, pad=1.5, tr="zoom"),
+          emph=["rest", "stop", "ended", "remember", "ten"], min_d=4.0, pad=1.2, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_toll": "A", "s03_truck": "B", "s04_call": "B", "s05_print": "B", "s06_car": "B",
                 "s07_rest": "C", "s08_verdict": "D", "s09_end": "E"}

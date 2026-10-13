@@ -348,7 +348,7 @@
           { id: 'rd34_durst', x: 840, y: 1770, scale: 0.95, dir: -1, turn: 0.15, pose: 'stand', silhouette: 'cool', keys: [{ at: conv, pose: 'hands_together', dur: 0.4 }, { at: life, pose: 'bowed', dur: 0.6 }] }
         ],
         overlays: [
-          { type: 'card', at: 0.15, x: 30, y: 860, w: 680, rows: [{ text: '17 SEPT 2021 · GUILTY OF MURDER', fs: 30, colour: RED, at: conv - 0.05 }, { text: '14 OCT 2021 · LIFE WITHOUT PAROLE', fs: 32, at: life - 0.05 }, { text: 'THE LETTER AND THE TAPE WERE BOTH IN EVIDENCE', fs: 22, colour: MUTE, at: par + 0.3 }] }
+          { type: 'card', at: 0.15, x: 30, y: 860, w: 680, rows: [{ text: '17 SEPT 2021 · GUILTY OF MURDER', fs: 30, colour: RED, at: conv - 0.05 }, { text: '14 OCT 2021 · LIFE WITHOUT PAROLE', fs: 28, at: life - 0.05 }, { text: 'THE LETTER AND THE TAPE WERE BOTH IN EVIDENCE', fs: 22, colour: MUTE, at: par + 0.3 }] }
         ],
         tag: LIKENESS
       });
