@@ -118,7 +118,7 @@ def build(h):
           ["channels_2012", "fox_ap_2012", "rfa_2012"]),
         C("R_fled", "Lai fled to Canada (Vancouver) in 1999 as investigators closed in (over 1,000 investigators went to Xiamen).",
           ["aj_2011", "fox_ap_2012", "wiki"]),
-        C("R_purge", "About 300 people were punished/convicted in the case (Xinhua: 600 investigated, 300 punished); 14 were sentenced to death in the first trials, and some officials were executed (SCMP and the Globe and Mail: seven; the Guardian: at least two). Narration: 'About 300 people were punished. Some were executed.'",
+        C("R_purge", "About 300 people were punished/convicted in the case (Xinhua: 600 investigated, 300 punished); 14 were sentenced to death in the first trials, and some officials were executed (SCMP and the Globe and Mail: seven; the Guardian: at least two). Narration: 'About 300 people were punished. Some officials were executed.'",
           ["fox_ap_2012", "cdt_purge", "scmp_exec", "time_2000"]),
         C("R_wanted", "Lai was described as China's most wanted fugitive / man.",
           ["aj_2011", "rfa_2012", "ctv_odyssey"]),

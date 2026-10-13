@@ -51,6 +51,6 @@ Research ledger, verified 2026-10-13. Episode id `tcv41-red-mansion` (short cut,
 - Lai (convicted) appears only as a rim-lit silhouette; tag "SILHOUETTE · NOT A LIKENESS".
 - Officials, investigators, escorts and museum visitors are generic, unnamed, East Asian figures for Xiamen scenes; no
   stereotyped costume.
-- No execution, violence or victims shown; "some were executed" is said once, plainly, with the count attributed on a card.
+- No execution, violence or victims shown; "some officials were executed" is said once, plainly, with the count attributed on a card.
 - The "danger zone" angle is the scale of the case (court figures, attributed), not a claim about China or Chinese people.
 - All buildings, ships, cars, the jet and the courtroom are generic: no signs, logos, liveries, flags or real documents.
