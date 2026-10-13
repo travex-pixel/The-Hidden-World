@@ -1,0 +1,112 @@
+{
+  "file": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/video.mp4",
+  "size_bytes": 1449865,
+  "checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+  },
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "duration": 17.0,
+  "audio_duration": 17.0,
+  "decode_stderr": "",
+  "mean_volume_db": -18.5,
+  "max_volume_db": -0.8,
+  "long_silences": [],
+  "contact_sheet": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/contact_sheet.png",
+  "all_passed": true,
+  "qa_visual": {
+    "frames": {
+      "opening_first_frame": {
+        "t": 0.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/qa/opening_first_frame.png",
+        "mean": 19.04,
+        "bright_fraction": 0.0258,
+        "mid_fraction": 0.0265
+      },
+      "beat_opening": {
+        "t": 1.2,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/qa/beat_opening.png",
+        "mean": 19.75,
+        "bright_fraction": 0.0296,
+        "mid_fraction": 0.0307
+      },
+      "beat_start": {
+        "t": 4.7,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/qa/beat_start.png",
+        "mean": 15.74,
+        "bright_fraction": 0.0124,
+        "mid_fraction": 0.0137
+      },
+      "beat_climb": {
+        "t": 9.7,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/qa/beat_climb.png",
+        "mean": 16.19,
+        "bright_fraction": 0.0123,
+        "mid_fraction": 0.0135
+      },
+      "beat_payoff": {
+        "t": 13.5,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/qa/beat_payoff.png",
+        "mean": 17.02,
+        "bright_fraction": 0.0176,
+        "mid_fraction": 0.0195
+      },
+      "beat_ending": {
+        "t": 15.8,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/qa/beat_ending.png",
+        "mean": 10.24,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0137
+      },
+      "ending_last_frame": {
+        "t": "end",
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/qa/ending_last_frame.png",
+        "mean": 10.24,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0137
+      }
+    },
+    "frames_checked": 510,
+    "min_yavg": 23.52,
+    "first_frame_has_visual": true,
+    "no_blank_frames": true,
+    "animation_changes_throughout": true,
+    "all_passed": true
+  },
+  "qa_audio": {
+    "speech_rms_db": [
+      -15.9,
+      -16.1,
+      -15.5,
+      -16.4
+    ],
+    "bed_rms_db_between_lines": [
+      -31.6,
+      -31.5,
+      -31.3,
+      -31.8
+    ],
+    "narration_above_bed": true,
+    "narration_audible": true,
+    "ending_tail_db": -30.5,
+    "ending_not_abrupt": true,
+    "peak": 0.92,
+    "no_clipping": true,
+    "all_passed": true
+  },
+  "narration_warnings": []
+}

@@ -192,7 +192,8 @@ def bounce_track(b: dict, total: float, g: float, hz: int = 120) -> dict:
     and on each impact leaves with speed e * v_in, plus an optional push so that the next apex is multiplied by
     b['push'] (capped at b['cap']). Returns height samples, vertical velocity samples, and impact times/speeds."""
     e = float(b.get("restitution", 1.0)); push = float(b.get("push", 1.0)); cap = float(b.get("cap", 1e9)); rest_v = float(b.get("rest_speed", 60.0))
-    t, h, v = float(b["start"]), float(b["h0"]), 0.0      # v is upward velocity (px/s)
+    launch = bool(b.get("launch"))                        # launch: sits on the floor until start, then leaves it with the speed to reach h0
+    t, h, v = float(b["start"]), (0.0 if launch else float(b["h0"])), (math.sqrt(2 * g * float(b["h0"])) if launch else 0.0)
     events = []                                           # (t, v_impact)
     segs = []                                             # (t0, h0, v0, t1) ballistic segments
     resting_from = None
@@ -211,17 +212,30 @@ def bounce_track(b: dict, total: float, g: float, hz: int = 120) -> dict:
         h = 0.0
         if v < rest_v:
             resting_from = t; break
-    ys, vs = [], []
+    ys, vs, xs = [], [], []
+    vx0 = float(b.get("vx", 0.0)); x0 = float(b.get("x", 0.0)); fric = float(b.get("friction", 1.5))
+    move_from = float(b["start"]) if launch else float(b.get("move_from", 0.0))
+    xr = None                                             # x at the moment it comes to rest
     for i in range(int(total * hz) + 2):
         tt = i / hz
+        # horizontal: constant speed while moving; after it rests it rolls to a stop (exponential friction)
+        if tt < move_from:
+            xx = x0
+        elif resting_from is None or tt < resting_from:
+            xx = x0 + vx0 * (tt - move_from)
+        else:
+            if xr is None:
+                xr = x0 + vx0 * (resting_from - move_from)
+            xx = xr + vx0 / fric * (1 - math.exp(-fric * (tt - resting_from)))
+        xs.append(round(xx, 2))
         if tt < b["start"]:
-            ys.append(float(b["h0"])); vs.append(0.0); continue
+            ys.append(0.0 if launch else float(b["h0"])); vs.append(0.0); continue
         seg = next((sg for sg in segs if sg[0] <= tt < sg[3]), None)
         if seg is None:
             ys.append(0.0); vs.append(0.0); continue
         dt = tt - seg[0]
         ys.append(round(max(0.0, seg[1] + seg[2] * dt - 0.5 * g * dt * dt), 3)); vs.append(round(seg[2] - g * dt, 2))
-    return {"hz": hz, "h": ys, "v": vs, "impacts": events, "rest_at": resting_from}
+    return {"hz": hz, "h": ys, "v": vs, "x": xs, "impacts": events, "rest_at": resting_from}
 
 
 def physics_tracks(ep: dict, total: float) -> dict | None:
@@ -229,7 +243,30 @@ def physics_tracks(ep: dict, total: float) -> dict | None:
     if not balls:
         return None
     g = float(ep["animation"].get("gravity", 2600.0))
-    return {name: bounce_track(b, total, g) for name, b in balls.items()}
+    tracks = {name: bounce_track(b, total, g) for name, b in balls.items()}
+    cam = ep["animation"].get("camera")
+    if cam:
+        tracks["camera"] = camera_track(cam, tracks, total)
+    return tracks
+
+
+def camera_track(cam: dict, tracks: dict, total: float) -> dict:
+    """A camera operator: a critically damped spring follows the mean x of the followed balls (plus a lead offset),
+    so it eases into and out of motion with a slight lag. Zoom keys ease the push-in. Sampled like the ball tracks."""
+    follow = cam["follow"]; hz = tracks[follow[0]]["hz"]; n = len(tracks[follow[0]]["x"])
+    w = float(cam.get("stiffness", 2.4)); lead = float(cam.get("lead", 0.0))
+    target = [sum(tracks[f]["x"][i] for f in follow) / len(follow) + lead for i in range(n)]
+    x, v = target[0], 0.0; dt = 1 / hz; xs, zs = [], []
+    keys = cam.get("zoom", [])
+    for i in range(n):
+        a = w * w * (target[i] - x) - 2 * w * v           # critically damped spring
+        v += a * dt; x += v * dt; xs.append(round(x, 2))
+        t = i / hz; z = 1.0
+        for k in keys:
+            u = min(max((t - k["at"]) / k.get("dur", 2.0), 0.0), 1.0); u = u * u * (3 - 2 * u)
+            z = z + (k["to"] - z) * u
+        zs.append(round(z, 4))
+    return {"hz": hz, "x": xs, "z": zs, "impacts": [], "rest_at": None}
 
 
 def footsteps(ep: dict, orbit: dict) -> list[tuple[float, str, float]]:
@@ -473,9 +510,13 @@ def main(argv=None) -> int:
     tracks = physics_tracks(ep, total)
     if tracks:
         for name, tr in tracks.items():
+            if name not in ep["animation"]["balls"]:
+                continue                                  # e.g. the camera track
             b = ep["animation"]["balls"][name]; vmax = max(v for _, v in tr["impacts"]) if tr["impacts"] else 1
             for at, v in tr["impacts"]:
                 g_ = float(b.get("sound_gain", 0.6)) * (0.25 + 0.75 * (v / vmax))
+                if v < float(b.get("min_sound_ratio", 0.15)) * vmax:
+                    continue                                  # tiny settling bounces stay silent (no rattle)
                 if at < total - 0.2:
                     ep.setdefault("_physics_sfx", []).append((round(at, 3), b.get("sound", "bounce"), round(g_, 3)))
             log(f"physics: {name} {len(tr['impacts'])} impacts" + (f", rests at {tr['rest_at']:.2f}s" if tr["rest_at"] else ", still moving at the end"))

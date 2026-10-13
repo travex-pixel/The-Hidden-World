@@ -1,0 +1,256 @@
+{
+  "id": "same-fall",
+  "mode": "psychology-shorts",
+  "brand": "THE HIDDEN PATTERN",
+  "episode_number": 6,
+  "title": "Same Fall",
+  "topic": "Resilience",
+  "core_message": "Two people can take the same fall. What changes the ending is not the fall but how they meet the floor, and resilience can be built.",
+  "central_insight": "Resilience isn't avoiding the fall. It's the bounce after.",
+  "metaphor": "travel-balls",
+  "visual_metaphor": "Two balls dropped from the same height at the same moment, each rolling left to right in its own lane while the camera follows. The ivory one lands with a dead thud, rolls to a stop and is left behind as the camera keeps going; the gold one keeps bouncing back up as it travels.",
+  "palette": {
+    "bg": "#080808",
+    "white": "#F3EFE6",
+    "gold": "#D8A84E",
+    "dim": "#292929"
+  },
+  "motion_blur": 8,
+  "hook": {
+    "lines": [
+      "SAME FALL.",
+      "TWO ENDINGS."
+    ],
+    "until": 2.4
+  },
+  "runtime": {
+    "target_seconds": 16.6,
+    "range": [
+      15,
+      18
+    ]
+  },
+  "narration_style": "calm, steady, warm on the last line",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 0.95,
+  "narration": [
+    {
+      "at": 0.8,
+      "text": "Same fall. Same floor."
+    },
+    {
+      "at": 3.2,
+      "text": "One lands, and stays there."
+    },
+    {
+      "at": 6.2,
+      "text": "The other keeps coming back up."
+    },
+    {
+      "at": 9.8,
+      "text": "Resilience isn't avoiding the fall. It's the bounce after."
+    }
+  ],
+  "caption_style": "line",
+  "caption_density": "one short line per sentence; nothing during the end card",
+  "captions": [
+    {
+      "at": 0.8,
+      "until": 2.9,
+      "text": "Same fall. Same floor.",
+      "y": 1770
+    },
+    {
+      "at": 3.2,
+      "until": 5.8,
+      "text": "One lands, and stays there.",
+      "y": 1770
+    },
+    {
+      "at": 6.2,
+      "until": 9.4,
+      "text": "The other keeps coming back up.",
+      "y": 1770
+    },
+    {
+      "at": 9.8,
+      "until": 11.9,
+      "text": "Resilience isn't avoiding the fall.",
+      "y": 1770
+    },
+    {
+      "at": 12.0,
+      "until": 14.0,
+      "text": "It's the bounce after.",
+      "y": 1770
+    }
+  ],
+  "beats": [
+    {
+      "id": "opening",
+      "start": 0.0,
+      "end": 2.4,
+      "note": "hook; both balls dropped at the same moment"
+    },
+    {
+      "id": "split",
+      "start": 2.4,
+      "end": 6.0,
+      "note": "fragile lies still; resilient bounces"
+    },
+    {
+      "id": "endure",
+      "start": 6.0,
+      "end": 12.0,
+      "note": "resilient keeps coming back up"
+    },
+    {
+      "id": "payoff",
+      "start": 12.0,
+      "end": 14.2,
+      "note": "last line; resilient still moving"
+    },
+    {
+      "id": "ending",
+      "start": 14.2,
+      "end": 16.6,
+      "note": "end card"
+    }
+  ],
+  "animation": {
+    "ball_radius": 46,
+    "gravity": 1900,
+    "lanes": {
+      "top": {
+        "floor_y": 1140
+      },
+      "bottom": {
+        "floor_y": 1660
+      }
+    },
+    "camera": {
+      "follow": [
+        "resilient"
+      ],
+      "lead": 110,
+      "stiffness": 2.2,
+      "zoom": [
+        {
+          "at": 11.6,
+          "dur": 2.6,
+          "to": 1.07
+        }
+      ]
+    },
+    "balls": {
+      "fragile": {
+        "lane": "top",
+        "x": 0,
+        "start": 0.35,
+        "h0": 400,
+        "vx": 230,
+        "friction": 1.6,
+        "restitution": 0.18,
+        "rest_speed": 100,
+        "color": "ivory",
+        "label": "FRAGILE",
+        "sound": "thud",
+        "sound_gain": 0.9
+      },
+      "resilient": {
+        "lane": "bottom",
+        "x": 0,
+        "start": 0.35,
+        "h0": 400,
+        "vx": 230,
+        "friction": 1.2,
+        "restitution": 0.92,
+        "color": "gold",
+        "label": "RESILIENT",
+        "sound": "bounce_hi",
+        "sound_gain": 0.55,
+        "min_sound_ratio": 0.2
+      }
+    }
+  },
+  "end_card": {
+    "at": 14.2,
+    "fade": 0.7,
+    "title": "THE HIDDEN PATTERN",
+    "tagline": [
+      "UNDERSTAND YOURSELF.",
+      "UNDERSTAND PEOPLE."
+    ]
+  },
+  "music": {
+    "bpm": 60,
+    "key_offset": -7,
+    "level_db": -14,
+    "cues": [
+      {
+        "start": 0.0,
+        "cue": "hush"
+      },
+      {
+        "start": 9.8,
+        "cue": "aftermath"
+      }
+    ]
+  },
+  "sfx_level_db": -12,
+  "sfx": [
+    {
+      "at": 12.0,
+      "name": "chime",
+      "gain": 0.35,
+      "note": "the last line"
+    }
+  ],
+  "loop_design": "no loop: ends on the brand card",
+  "output": {
+    "dir": "output/psychology-shorts/same-fall",
+    "video": "video.mp4",
+    "thumbnail": "thumbnail.png"
+  },
+  "thumbnail": {
+    "time": 6.5,
+    "title": [
+      "SAME FALL.",
+      "TWO ENDINGS."
+    ],
+    "kicker": "the hidden pattern",
+    "kicker_y": 1800
+  },
+  "publishing": {
+    "instagram": "Same fall. Same floor.\n\nOne lands and stays there. The other keeps coming back up.\n\nResilience isn't avoiding the fall. It's the bounce after.\n\nWhat helped you bounce back last time?",
+    "tiktok": "Same fall. Two endings.\n\nResilience isn't avoiding the fall. It's the bounce after.",
+    "youtube_title": "Same Fall. Two Endings.",
+    "youtube_description": "THE HIDDEN PATTERN, Episode 06. Two balls dropped from the same height. One stays down. One keeps coming back up. Resilience isn't avoiding the fall. It's the bounce after.\n\nUnderstand yourself. Understand people.",
+    "hashtags": [
+      "#resilience",
+      "#psychology",
+      "#mentalstrength",
+      "#growth",
+      "#thehiddenpattern"
+    ]
+  },
+  "publication": {
+    "platforms": [
+      "instagram-reels",
+      "tiktok",
+      "youtube-shorts"
+    ],
+    "date": null,
+    "notes": "Fill in after posting."
+  },
+  "performance": {
+    "views": null,
+    "average_watch_seconds": null,
+    "completion_rate": null,
+    "shares": null,
+    "saves": null,
+    "comments": null,
+    "follows_gained": null,
+    "notes": "Real audience numbers only."
+  }
+}

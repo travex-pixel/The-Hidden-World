@@ -4,13 +4,14 @@
 window.PS.registerStory('two-balls', function (t, ctx) {
   const P = ctx.P, A = ctx.anim, { seg, ease, lerp, clamp, PAL, W, f1, esc } = P;
   const items = [], FLOOR = A.floor_y, R = A.ball_radius;
-  const markH = A.balls.motivation.h0;
-  // the faint line at motivation's starting height; it lights gold when habit crosses it
-  const crossT = (() => { const T = ctx.tracks.habit; if (!T) return 1e9; const i = T.h.findIndex(h => h >= markH); return i < 0 ? 1e9 : i / T.hz; })();
+  // the faint line (default: motivation's starting height, watched by habit); it lights gold when the watched ball reaches it
+  const L = A.line === null ? null : (A.line || { h: (A.balls.motivation || {}).h0, watch: 'habit' });
+  const markH = L ? L.h : 0;
+  const crossT = (() => { const T = L && ctx.tracks[L.watch]; if (!T) return 1e9; const i = T.h.findIndex(h => h >= markH - 1); return i < 0 ? 1e9 : i / T.hz; })();
   const lit = ease.smooth(seg(t, crossT - 0.05, crossT + 0.35)) * (1 - 0.6 * ease.smooth(seg(t, crossT + 1.2, crossT + 2.4)));
   const lineY = FLOOR - markH - R;
   const lineOp = 0.32 * ease.smooth(seg(t, 0.2, 1.0));
-  items.push({ z: -20, svg: `<line x1="150" y1="${f1(lineY)}" x2="${W - 150}" y2="${f1(lineY)}" stroke="${PAL.grey}" stroke-width="3" stroke-dasharray="14 14" opacity="${f1(lineOp * (1 - lit))}"/>
+  if (L) items.push({ z: -20, svg: `<line x1="150" y1="${f1(lineY)}" x2="${W - 150}" y2="${f1(lineY)}" stroke="${PAL.grey}" stroke-width="3" stroke-dasharray="14 14" opacity="${f1(lineOp * (1 - lit))}"/>
     <line x1="150" y1="${f1(lineY)}" x2="${W - 150}" y2="${f1(lineY)}" stroke="${PAL.gold}" stroke-width="4" opacity="${f1(lit)}"/>
     <line x1="150" y1="${f1(lineY)}" x2="${W - 150}" y2="${f1(lineY)}" stroke="${PAL.gold}" stroke-width="16" opacity="${f1(0.45 * lit)}" filter="url(#glowSm)"/>` });
   // floor line
@@ -31,7 +32,7 @@ window.PS.registerStory('two-balls', function (t, ctx) {
     const fill = gold ? 'url(#sphere)' : PAL.white;
     const glow = gold ? `<ellipse cx="${b.x}" cy="${f1(cy)}" rx="${f1(R * 1.5 * sx)}" ry="${f1(R * 1.5 * sy)}" fill="${PAL.gold}" opacity="0.28" filter="url(#glow)"/>` : '';
     const hi = `<ellipse cx="${f1(b.x - R * 0.32 * sx)}" cy="${f1(cy - R * 0.36 * sy)}" rx="${f1(R * 0.17 * sx)}" ry="${f1(R * 0.17 * sy)}" fill="#fff" opacity="${gold ? 0.55 : 0.35}"/>`;
-    const dimRest = !gold && T.rest_at && t > T.rest_at ? 1 - 0.35 * ease.smooth(seg(t, T.rest_at + 0.5, T.rest_at + 2.5)) : 1;
+    const dimRest = (b.dim_on_rest ?? !gold) && T.rest_at && t > T.rest_at ? 1 - 0.35 * ease.smooth(seg(t, T.rest_at + 0.5, T.rest_at + 2.5)) : 1;
     items.push({ z: 0, svg: `<g opacity="${f1(dimRest)}">${glow}<ellipse cx="${b.x}" cy="${f1(cy)}" rx="${f1(R * sx)}" ry="${f1(R * sy)}" fill="${fill}"/>${hi}</g>` });
     // label under the floor
     const lop = ease.smooth(seg(t, 0.4, 1.2));

@@ -1,0 +1,54 @@
+PSYCHOLOGY SHORTS — production report
+episode: they-just-started-earlier  (They Just Started Earlier)
+rendered: 2026-10-13 21:05:10 UTC
+seed: 1  quality: final
+
+video: /home/user/The-Hidden-World/output/psychology-shorts/they-just-started-earlier/video.mp4
+  1080x1920 @ 30.0 fps, 17.0 s, h264 + aac, 1.45 MB
+  mean volume -18.5 dB, peak -0.8 dB
+
+hook selected: n/a
+narration: 25 words / 4 lines
+  [ 0.80– 2.55] They look so far ahead.
+  [ 3.40– 5.81] But they started long before you did.
+  [ 7.20–10.33] Same effort. Same rhythm. Just later.
+  [11.00–12.90] Don't compare your start to their middle.
+
+checks:
+  PASS has_video_stream
+  PASS has_audio_stream
+  PASS codec_h264
+  PASS codec_aac
+  PASS dimensions
+  PASS fps
+  PASS audio_video_duration_match
+  PASS duration_matches_timeline
+  PASS decodes_without_errors
+  PASS audio_not_silent
+  PASS no_long_silence_gaps
+  PASS no_clipping
+  PASS visual.first_frame_has_visual
+  PASS visual.no_blank_frames
+  PASS visual.animation_changes_throughout
+  PASS audio.narration_above_bed
+  PASS audio.narration_audible
+  PASS audio.ending_not_abrupt
+  PASS audio.no_clipping
+
+files:
+  video.mp4
+  thumbnail.png
+  contact_sheet.png
+  verify.json
+  instagram-caption.txt
+  tiktok-caption.txt
+  youtube-title.txt
+  youtube-description.txt
+  hashtags.txt
+  subtitles.srt
+  transcript.txt
+  CAPTIONS.txt
+  episode.json
+  qa/ (opening, beat and ending frames)
+
+result: ALL CHECKS PASSED

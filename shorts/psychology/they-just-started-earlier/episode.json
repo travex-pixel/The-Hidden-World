@@ -1,0 +1,255 @@
+{
+  "id": "they-just-started-earlier",
+  "mode": "psychology-shorts",
+  "brand": "THE HIDDEN PATTERN",
+  "episode_number": 7,
+  "title": "They Just Started Earlier",
+  "topic": "Comparison",
+  "core_message": "When someone looks far ahead, often they simply started earlier. Comparing your beginning to their middle makes the gap look like a difference in ability when it is mostly a difference in time.",
+  "central_insight": "Don't compare your start to their middle.",
+  "metaphor": "travel-balls",
+  "visual_metaphor": "Two lanes, both balls rolling left to right while the camera follows. The ivory ball (them) is already bouncing high and travelling from the first frame. The gold ball (you) waits on the floor and only starts later. Same push every bounce, and the gold one climbs until both bounce at the same height.",
+  "palette": {
+    "bg": "#080808",
+    "white": "#F3EFE6",
+    "gold": "#D8A84E",
+    "dim": "#292929"
+  },
+  "motion_blur": 8,
+  "hook": {
+    "lines": [
+      "THEY JUST",
+      "STARTED EARLIER."
+    ],
+    "until": 2.4
+  },
+  "runtime": {
+    "target_seconds": 17.0,
+    "range": [
+      15,
+      18
+    ]
+  },
+  "narration_style": "reassuring, unhurried",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 0.95,
+  "narration": [
+    {
+      "at": 0.8,
+      "text": "They look so far ahead."
+    },
+    {
+      "at": 3.4,
+      "text": "But they started long before you did."
+    },
+    {
+      "at": 7.2,
+      "text": "Same effort. Same rhythm. Just later."
+    },
+    {
+      "at": 11.0,
+      "text": "Don't compare your start to their middle."
+    }
+  ],
+  "caption_style": "line",
+  "caption_density": "one short line per sentence; nothing during the end card",
+  "captions": [
+    {
+      "at": 0.8,
+      "until": 3.0,
+      "text": "They look so far ahead.",
+      "y": 1770
+    },
+    {
+      "at": 3.4,
+      "until": 6.6,
+      "text": "But they started long before you did.",
+      "y": 1770
+    },
+    {
+      "at": 7.2,
+      "until": 10.4,
+      "text": "Same effort. Same rhythm. Just later.",
+      "y": 1770
+    },
+    {
+      "at": 11.0,
+      "until": 14.2,
+      "text": "Don't compare your start to their middle.",
+      "y": 1770
+    }
+  ],
+  "beats": [
+    {
+      "id": "opening",
+      "start": 0.0,
+      "end": 2.4,
+      "note": "hook; them already bouncing high, you on the floor"
+    },
+    {
+      "id": "start",
+      "start": 2.4,
+      "end": 7.0,
+      "note": "you start small at 3.2 s"
+    },
+    {
+      "id": "climb",
+      "start": 7.0,
+      "end": 12.4,
+      "note": "same push, you climb"
+    },
+    {
+      "id": "payoff",
+      "start": 12.4,
+      "end": 14.6,
+      "note": "you reach the same height; line lights gold"
+    },
+    {
+      "id": "ending",
+      "start": 14.6,
+      "end": 17.0,
+      "note": "end card"
+    }
+  ],
+  "animation": {
+    "ball_radius": 46,
+    "gravity": 1900,
+    "lanes": {
+      "top": {
+        "floor_y": 1140
+      },
+      "bottom": {
+        "floor_y": 1660
+      }
+    },
+    "line": {
+      "h": 400,
+      "watch": "you"
+    },
+    "camera": {
+      "follow": [
+        "them",
+        "you"
+      ],
+      "lead": 0,
+      "stiffness": 2.0,
+      "zoom": [
+        {
+          "at": 12.0,
+          "dur": 2.4,
+          "to": 1.07
+        }
+      ]
+    },
+    "balls": {
+      "them": {
+        "lane": "top",
+        "x": 0,
+        "start": 0.0,
+        "h0": 300,
+        "vx": 120,
+        "push": 1.1,
+        "cap": 400,
+        "color": "ivory",
+        "label": "THEM",
+        "dim_on_rest": false,
+        "sound": "bounce",
+        "sound_gain": 0.45
+      },
+      "you": {
+        "lane": "bottom",
+        "x": 0,
+        "start": 3.2,
+        "h0": 60,
+        "launch": true,
+        "vx": 120,
+        "push": 1.232,
+        "cap": 400,
+        "color": "gold",
+        "label": "YOU",
+        "sound": "bounce_hi",
+        "sound_gain": 0.55
+      }
+    }
+  },
+  "end_card": {
+    "at": 14.6,
+    "fade": 0.7,
+    "title": "THE HIDDEN PATTERN",
+    "tagline": [
+      "UNDERSTAND YOURSELF.",
+      "UNDERSTAND PEOPLE."
+    ]
+  },
+  "music": {
+    "bpm": 60,
+    "key_offset": -7,
+    "level_db": -14,
+    "cues": [
+      {
+        "start": 0.0,
+        "cue": "hush"
+      },
+      {
+        "start": 12.4,
+        "cue": "aftermath"
+      }
+    ]
+  },
+  "sfx_level_db": -12,
+  "sfx": [
+    {
+      "at": 12.4,
+      "name": "chime",
+      "gain": 0.45,
+      "note": "same height"
+    }
+  ],
+  "loop_design": "no loop: ends on the brand card",
+  "output": {
+    "dir": "output/psychology-shorts/they-just-started-earlier",
+    "video": "video.mp4",
+    "thumbnail": "thumbnail.png"
+  },
+  "thumbnail": {
+    "time": 13.0,
+    "title": [
+      "THEY JUST",
+      "STARTED EARLIER."
+    ],
+    "kicker": "the hidden pattern",
+    "kicker_y": 1800
+  },
+  "publishing": {
+    "instagram": "They look so far ahead. But they started long before you did.\n\nSame effort. Same rhythm. Just later.\n\nDon't compare your start to their middle.\n\nWho do you need to stop comparing yourself to?",
+    "tiktok": "They're not better. They started earlier.\n\nDon't compare your start to their middle.",
+    "youtube_title": "They Didn't Get Ahead. They Started Earlier.",
+    "youtube_description": "THE HIDDEN PATTERN, Episode 07. One ball already bouncing high. One just starting. Same push, same rhythm, and eventually the same height. Don't compare your start to their middle.\n\nUnderstand yourself. Understand people.",
+    "hashtags": [
+      "#comparison",
+      "#psychology",
+      "#selfworth",
+      "#patience",
+      "#thehiddenpattern"
+    ]
+  },
+  "publication": {
+    "platforms": [
+      "instagram-reels",
+      "tiktok",
+      "youtube-shorts"
+    ],
+    "date": null,
+    "notes": "Fill in after posting."
+  },
+  "performance": {
+    "views": null,
+    "average_watch_seconds": null,
+    "completion_rate": null,
+    "shares": null,
+    "saves": null,
+    "comments": null,
+    "follows_gained": null,
+    "notes": "Real audience numbers only."
+  }
+}

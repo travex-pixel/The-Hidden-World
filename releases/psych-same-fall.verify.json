@@ -1,0 +1,112 @@
+{
+  "file": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/video.mp4",
+  "size_bytes": 1460891,
+  "checks": {
+    "has_video_stream": true,
+    "has_audio_stream": true,
+    "codec_h264": true,
+    "codec_aac": true,
+    "dimensions": true,
+    "fps": true,
+    "audio_video_duration_match": true,
+    "duration_matches_timeline": true,
+    "decodes_without_errors": true,
+    "audio_not_silent": true,
+    "no_long_silence_gaps": true,
+    "no_clipping": true
+  },
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "duration": 16.6,
+  "audio_duration": 16.6,
+  "decode_stderr": "",
+  "mean_volume_db": -17.5,
+  "max_volume_db": -0.7,
+  "long_silences": [],
+  "contact_sheet": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/contact_sheet.png",
+  "all_passed": true,
+  "qa_visual": {
+    "frames": {
+      "opening_first_frame": {
+        "t": 0.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/qa/opening_first_frame.png",
+        "mean": 21.45,
+        "bright_fraction": 0.0371,
+        "mid_fraction": 0.0385
+      },
+      "beat_opening": {
+        "t": 1.2,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/qa/beat_opening.png",
+        "mean": 22.14,
+        "bright_fraction": 0.0414,
+        "mid_fraction": 0.0438
+      },
+      "beat_split": {
+        "t": 4.2,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/qa/beat_split.png",
+        "mean": 15.68,
+        "bright_fraction": 0.0111,
+        "mid_fraction": 0.0129
+      },
+      "beat_endure": {
+        "t": 9.0,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/qa/beat_endure.png",
+        "mean": 15.31,
+        "bright_fraction": 0.0088,
+        "mid_fraction": 0.01
+      },
+      "beat_payoff": {
+        "t": 13.1,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/qa/beat_payoff.png",
+        "mean": 15.14,
+        "bright_fraction": 0.0072,
+        "mid_fraction": 0.0081
+      },
+      "beat_ending": {
+        "t": 15.4,
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/qa/beat_ending.png",
+        "mean": 10.24,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0137
+      },
+      "ending_last_frame": {
+        "t": "end",
+        "file": "/home/user/The-Hidden-World/output/psychology-shorts/same-fall/qa/ending_last_frame.png",
+        "mean": 10.24,
+        "bright_fraction": 0.0127,
+        "mid_fraction": 0.0137
+      }
+    },
+    "frames_checked": 498,
+    "min_yavg": 23.38,
+    "first_frame_has_visual": true,
+    "no_blank_frames": true,
+    "animation_changes_throughout": true,
+    "all_passed": true
+  },
+  "qa_audio": {
+    "speech_rms_db": [
+      -14.7,
+      -16.3,
+      -15.6,
+      -14.1
+    ],
+    "bed_rms_db_between_lines": [
+      -35.2,
+      -33.4,
+      -31.5,
+      -34.1
+    ],
+    "narration_above_bed": true,
+    "narration_audible": true,
+    "ending_tail_db": -51.9,
+    "ending_not_abrupt": true,
+    "peak": 0.926,
+    "no_clipping": true,
+    "all_passed": true
+  },
+  "narration_warnings": []
+}

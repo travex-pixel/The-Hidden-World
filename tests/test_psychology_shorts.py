@@ -225,6 +225,36 @@ class Episode05Physics(unittest.TestCase):
             x = audio.sfx(n, 1); self.assertTrue(np.isfinite(x).all()); self.assertLessEqual(float(np.abs(x).max()), 1.0)
 
 
+class TravelCamera(unittest.TestCase):
+    """Episodes 06-07: balls travel left to right, a spring camera follows."""
+    def test_same_fall_fragile_is_left_behind(self):
+        from pipeline.psych import physics_tracks
+        ep = load_short("same-fall"); T = ep["runtime"]["target_seconds"]; tr = physics_tracks(ep, T)
+        self.assertEqual(ep["metaphor"], "travel-balls")
+        self.assertLess(tr["fragile"]["rest_at"], 2.0)
+        xs_f, xs_r, cam = tr["fragile"]["x"], tr["resilient"]["x"], tr["camera"]["x"]
+        self.assertTrue(all(b >= a - 1e-6 for a, b in zip(xs_r, xs_r[1:])), "left to right only")
+        i = int(7.0 * tr["camera"]["hz"])
+        self.assertLess(xs_f[i] - cam[i], -540 - 46, "by 7 s the fragile ball has left the frame on the left")
+
+    def test_camera_is_smooth(self):
+        from pipeline.psych import physics_tracks
+        for e in ("same-fall", "they-just-started-earlier"):
+            ep = load_short(e); tr = physics_tracks(ep, ep["runtime"]["target_seconds"]); c = tr["camera"]; hz = c["hz"]
+            v = [(b - a) * hz for a, b in zip(c["x"], c["x"][1:])]; acc = [(b - a) * hz for a, b in zip(v, v[1:])]
+            self.assertLess(max(abs(a) for a in acc), 2500, f"{e}: camera never jerks")
+            self.assertTrue(all(1.0 <= z <= 1.1 for z in c["z"]))
+
+    def test_late_starter_waits_on_floor_then_reaches_the_line(self):
+        from pipeline.psych import physics_tracks
+        ep = load_short("they-just-started-earlier"); tr = physics_tracks(ep, ep["runtime"]["target_seconds"]); y = tr["you"]; hz = y["hz"]
+        start = ep["animation"]["balls"]["you"]["start"]
+        self.assertTrue(all(h == 0 for h in y["h"][: int(start * hz)]), "sits on the floor before it starts")
+        self.assertEqual(y["x"][int(start * hz) - 1], y["x"][0], "does not move before it starts")
+        cross = next(i / hz for i, h in enumerate(y["h"]) if h >= ep["animation"]["line"]["h"] - 1)
+        self.assertTrue(11.0 <= cross <= 13.6, cross); self.assertLess(cross, ep["end_card"]["at"])
+
+
 class Package(unittest.TestCase):
     def test_combined_captions_file(self):
         import tempfile
