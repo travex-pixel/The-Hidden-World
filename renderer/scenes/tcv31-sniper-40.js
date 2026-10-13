@@ -387,7 +387,7 @@
             keys: [{ at: trk - 0.1, pose: 'hand_to_face', expr: 'worried', gaze: [-0.8, -0.2], dur: 0.4 }, { at: saw, pose: 'point', expr: 'realise', gaze: [-0.9, -0.2], dur: 0.4 }, { at: rest, pose: 'hand_to_face', expr: 'worried', dur: 0.4 }, { at: both, pose: 'stand_tense', expr: 'relieved', gaze: [-0.5, 0], dur: 0.5 }] },
           { id: 'ds31_officer', x: 700, y: 1760, scale: 0.6, dir: -1, turn: 0.5, pose: 'walk', expr: 'focused', depth: 1.03, show: [both - 0.3], walk: { from: 1240, to: 700, at: both - 0.2, dur: Math.max(0.7, asleep - both + 0.4), cadence: 7.0, stride: 30 }, propOpts: { aim: 160, beamLen: 320 },
             keys: [{ at: asleep + 0.3, pose: 'torch', expr: 'stern', dur: 0.4 }] },
-          { id: 'agent_a', x: 1040, y: 1560, scale: 0.5, dir: -1, turn: 0.5, pose: 'walk', expr: 'focused', depth: 1.01, show: [both - 0.1], walk: { from: 1300, to: 1040, at: both, dur: Math.max(0.6, asleep - both + 0.3), cadence: 7.0, stride: 30 },
+          { id: 'agent_a', x: 960, y: 1560, scale: 0.5, dir: -1, turn: 0.5, pose: 'walk', expr: 'focused', depth: 1.01, show: [both - 0.1], walk: { from: 1250, to: 960, at: both, dur: Math.max(0.6, asleep - both + 0.3), cadence: 7.0, stride: 30 },
             keys: [{ at: asleep + 0.4, pose: 'stand_tense', expr: 'stern', dur: 0.4 }] }
         ],
         props: [
@@ -414,7 +414,7 @@
           { id: 'ds31_malvo', x: 280, y: 1760, scale: 0.92, dir: 1, turn: 0.15, pose: 'stand', silhouette: 'cool', keys: [{ at: mal, pose: 'hands_behind', dur: 0.4 }, { at: life, pose: 'bowed', dur: 0.6 }] }
         ],
         overlays: [
-          { type: 'card', at: 0.15, x: 40, y: 920, w: 760, rows: [{ text: 'MUHAMMAD · CONVICTED 2003 · EXECUTED 2009', fs: 28, colour: RED, at: exe - 0.05 }, { text: 'MALVO, 17 · LIFE SENTENCES', fs: 36, at: mal - 0.05 }, { text: 'RESENTENCING FIGHTS CONTINUE (2026)', fs: 24, colour: MUTE, at: life + 0.3 }] }
+          { type: 'card', at: 0.15, x: 40, y: 920, w: 760, rows: [{ text: 'MUHAMMAD · CONVICTED 2003 · EXECUTED 2009', fs: 26, colour: RED, at: exe - 0.05 }, { text: 'MALVO, 17 · LIFE SENTENCES', fs: 36, at: mal - 0.05 }, { text: 'RESENTENCING FIGHTS CONTINUE (2026)', fs: 24, colour: MUTE, at: life + 0.3 }] }
         ],
         tag: LIKENESS
       });
@@ -426,9 +426,9 @@
     ds31_end(ctx) {
       const t = ctx.t, rest = WT(ctx, 0, 1, 0.3), ended = WT(ctx, 0, 3, 0.9), att = WT(ctx, 0, 7, 1.9), l1 = LS(ctx, 1, 3.0), rem = WT(ctx, 1, 1, 3.2);
       const names = tt => { const k = seg(tt, l1 - 0.2, l1 + 0.3); if (k <= 0) return '';
-        return `<g opacity="${f1(k)}">${panel(90, 770, 900, 210, 0.66)}<text x="540" y="830" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="28" fill="#e8dcc0">IN MEMORY OF</text>` +
-          `<text x="540" y="892" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="40" fill="#f4efe4">THE TEN WHO DIED</text>` +
-          `<text x="540" y="948" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="24" fill="#bdb6a8">Maryland · Virginia · Washington, DC · October 2002</text></g>`; };
+        return `<g opacity="${f1(k)}">${panel(90, 740, 900, 200, 0.66)}<text x="540" y="796" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="28" fill="#e8dcc0">IN MEMORY OF</text>` +
+          `<text x="540" y="856" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="40" fill="#f4efe4">THE TEN WHO DIED</text>` +
+          `<text x="540" y="910" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="24" fill="#bdb6a8">Maryland · Virginia · Washington, DC · October 2002</text></g>`; };
       return E.cine.shot(ctx, {
         set: 'ds31_rest', setOpts: {}, grade: 'night',
         cam: { from: { x: 0, y: 70, z: 1.08 }, to: { x: 0, y: 40, z: 1.0 }, handheld: 0.6 },

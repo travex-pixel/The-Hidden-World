@@ -28,7 +28,7 @@ Alabama, a fingerprint there, a car registration, and a truck driver who saw the
   across Maryland, Virginia and DC." Card: "10 KILLED · 3 WOUNDED".
 - **D_truck** — the early lookout was for a white box truck with one or two suspects (DC police chief Charles Ramsey,
   CNN 27 Oct 2002); Britannica: conflicting reports of a white van, a white box truck and a dark Caprice; NBC Washington
-  (2022). Narration: "For weeks, police hunted a white box truck." Card: "LOOKOUT: A WHITE BOX TRUCK".
+  (2022). Narration: "For weeks, the police hunted a white box truck." Card: "THE FIRST LOOKOUT · A WHITE BOX TRUCK".
 - **D_call** (irony) — on 17 October 2002 a caller to the task-force tip line, claiming to be the sniper, told
   investigators to look into a shooting at a liquor store in Montgomery, Alabama (21 September 2002; one woman killed,
   one wounded; first treated as a robbery) (FBI: the break came "ironically, from the snipers themselves"; Fox/AP;
@@ -37,7 +37,7 @@ Alabama, a fingerprint there, a car registration, and a truck driver who saw the
 - **D_print** — a fingerprint on a magazine dropped at the Montgomery scene went to the FBI Laboratory and was matched
   in the FBI's fingerprint database to Lee Boyd Malvo, 17, whose prints were on file from an immigration arrest in
   Washington State (FBI; Nextgov; Fox "How the cops cracked the case"; IDS/AP). Narration: "A fingerprint from that
-  scene matched seventeen-year-old Lee Boyd Malvo." Card: "A FINGERPRINT · FBI DATABASE MATCH".
+  there matched a seventeen-year-old: Lee Boyd Malvo." Card: "A FINGERPRINT · FBI DATABASE MATCH".
 - **D_car** — Malvo's record led to John Allen Muhammad (an earlier tip had named him); on 22 October an FBI records
   search found a blue 1990 Chevrolet Caprice registered to Muhammad in New Jersey (FBI; CNN 24 Oct; NoVA timeline).
   Narration: "Malvo led to John Allen Muhammad, and a blue 1990 Chevrolet Caprice."
@@ -50,7 +50,10 @@ Alabama, a fingerprint there, a car registration, and a truck driver who saw the
   found two men asleep in the car and arrested Muhammad and Malvo without incident, in custody at about 3:19–3:30 a.m.
   (CNN transcript, FBI's Gary Bald: a 911 call "at approximately 1:00 a.m.", "two males sleeping inside", "without
   incident"; WTOP; NoVA timeline; CBS; Fox/AP; Truck News; Officer.com; NBC/AP court report). Narration: "Hours later a
-  trucker saw the car at a rest stop." / "Both men were asleep inside." Card: "MYERSVILLE, MARYLAND · ABOUT 1 A.M.".
+  trucker spotted the car at the rest stop." / "Both men were asleep inside." Card: "MYERSVILLE, MARYLAND · ABOUT 1 A.M.".
+  (Pronunciation notes: "Muhammad" is spoken as "Mohammad" and "Malvo" as "Mal-vo"; the line "Then a tip line caller
+  claiming to be the sniper" keeps proportional word timings because Piper returns one span fewer than the written words
+  for every phrasing of "…the sniper"; the recogniser reads every line correctly.)
 - **D_trunk** (card only) — a hole had been cut in the car's body above the rear plate so a rifle could be fired from
   inside the trunk (WTOP 2026; NBC Washington 2022; CNN 24 Oct 2002). Card: "THE TRUNK HAD BEEN MODIFIED". No weapon
   is shown or named on screen.
