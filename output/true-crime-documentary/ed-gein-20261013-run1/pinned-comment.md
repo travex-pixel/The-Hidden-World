@@ -1,0 +1,1 @@
+Ed Gein was found to have committed the murder of Bernice Worden and to be legally insane (1968); he was never imprisoned and died in 1984. He was never charged over his brother's death. Which part of Netflix's version surprised you most once you saw the record? Sources are in the description.
