@@ -1,0 +1,2385 @@
+{
+ "id": "faith-hedgepeth",
+ "title": "Faith Hedgepeth Trial: The Note, the DNA and 14 Years of Waiting",
+ "version": 1,
+ "voice": "kokoro:bm_fable",
+ "engine": "kokoro",
+ "narrator": "bm_fable",
+ "speed": 1.0,
+ "lead_in": 0.45,
+ "tail": 1.2,
+ "seed": 61,
+ "bpm": 68,
+ "key": -4,
+ "music_db": -23,
+ "sfx_db": -15,
+ "duck_db": -12,
+ "fps": 60,
+ "frame_codec": "png",
+ "tune": "animation",
+ "crf": 18,
+ "preset": "slow",
+ "music_gain": [
+  [
+   0.0,
+   62.0,
+   -3.0
+  ]
+ ],
+ "pronounce": {
+  "Haliwa-Saponi": "Hallawah Sapponee",
+  "Salguero-Olivares": "Sal-gairo Olee-varez",
+  "Garcia-Lamarca": "Garsia La-marka",
+  "Hedgepeth": "Hedge-peth"
+ },
+ "spoken": {
+  "2012": "twenty twelve",
+  "2013": "twenty thirteen",
+  "2014": "twenty fourteen",
+  "2020": "twenty twenty",
+  "2021": "twenty twenty-one",
+  "2026": "twenty twenty-six",
+  "UNC": "U N C",
+  "FBI": "F B I",
+  "DNA": "D N A"
+ },
+ "figures": [
+  "trw_detective",
+  "trw_officer",
+  "trw_prosecutor",
+  "trw_defence",
+  "judge",
+  "lb8_juror",
+  "lv4_visitor",
+  "lv4_crew_b",
+  "lv4_crew_c",
+  "lv4_crew_d"
+ ],
+ "timeline": [],
+ "lines": [
+  {
+   "say": "In September 2012, a nineteen-year-old student at the University of North Carolina was found dead in an apartment in Chapel Hill.",
+   "claims": [
+    "C01",
+    "C02"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_apartments",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1060,
+      "w": 1150
+     },
+     "setOpts": {
+      "mode": "night",
+      "lit": 0.6
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC APARTMENT COMPLEX, NOT THE REAL BUILDING",
+     "lower": {
+      "p": 0.12,
+      "title": "September 2012",
+      "color": "red",
+      "kicker": "Chapel Hill, North Carolina"
+     }
+    }
+   ],
+   "chapter": "Cold open",
+   "chapter_title": "Cold open",
+   "tag": "",
+   "cue": "cold",
+   "sfx": [
+    {
+     "name": "swell",
+     "at": 0.0,
+     "gain": 0.4
+    }
+   ],
+   "tone": "hook"
+  },
+  {
+   "say": "On the bed near her, police found a note, written on a fast-food bag.",
+   "claims": [
+    "H-NOTE"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "WHAT POLICE FOUND",
+     "title": "A note on a takeout bag",
+     "lines": [
+      "Where:   on the bed, near her",
+      "Written: by hand",
+      "Police:  written by the killer"
+     ],
+     "hl": 0,
+     "stamp": "AS REPORTED",
+     "claims": [
+      "H-NOTE"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "hook"
+  },
+  {
+   "say": "It said, \"I'm not stupid.\" And then, \"Jealous.\" Police believed her killer wrote it.",
+   "claims": [
+    "H-NOTE"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "\"I'M NOT STUPID\"",
+      "\"JEALOUS\""
+     ],
+     "em": [
+      "JEALOUS"
+     ],
+     "sub": "Part of the note, as police released it in 2014 · one word omitted",
+     "claims": [
+      "H-NOTE"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.55,
+     "gain": 0.35
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Her name was Faith Hedgepeth. For nine years, no one was arrested. Investigators had a man's DNA, and hundreds of samples that didn't match.",
+   "claims": [
+    "H-COLD",
+    "C01"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lab",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 980,
+      "w": 1150
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC LAB",
+     "funfacts": [
+      {
+       "p": 0.45,
+       "rows": [
+        {
+         "text": "Hundreds of DNA samples"
+        },
+        {
+         "text": "no match",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 680,
+       "kicker": "9 YEARS"
+      }
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Then, in 2021, police arrested a man from Durham. Investigators said his DNA matched the scene.",
+   "claims": [
+    "C23",
+    "C27"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_apartments",
+     "figures": [
+      {
+       "id": "trw_officer",
+       "x": -200,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 360,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 7.0
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "stand",
+         "headTurn": 0.3
+        }
+       ]
+      },
+      {
+       "id": "trw_detective",
+       "x": 1300,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1300,
+        "to": 760,
+        "p0": 0.1,
+        "p1": 0.65,
+        "cadence": 6.8
+       },
+       "keys": [
+        {
+         "p": 0.68,
+         "pose": "read"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1180,
+      "w": 1350
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC OFFICERS AND STREET",
+     "lower": {
+      "p": 0.12,
+      "title": "September 2021",
+      "color": "red",
+      "kicker": "An arrest"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.1,
+     "gain": 0.35
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Now, fourteen years after she died, he is on trial for her murder. He has pleaded not guilty.",
+   "claims": [
+    "H-ONTRIAL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "lb8_juror",
+       "x": 120,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "default"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 330,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "grey"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 750,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "brown"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 960,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "default"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 960,
+      "w": 1300
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC COURTROOM · DEFENDANT NOT SHOWN",
+     "lower": {
+      "p": 0.15,
+      "title": "On trial · Durham, North Carolina",
+      "color": "red",
+      "kicker": "October 2026",
+      "sub": "He has pleaded not guilty"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "A prosecutor told the jury, \"The evidence in this case is louder than the noise around it.\"",
+   "claims": [
+    "C42"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_prosecutor",
+       "x": 780,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point_up"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1100,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1090,
+      "w": 860
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC PROSECUTOR, NOT A LIKENESS",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "Prosecution:"
+        },
+        {
+         "text": "\"louder than the noise\"",
+         "color": "amber"
+        }
+       ],
+       "x": 110,
+       "y": 240,
+       "w": 700,
+       "kicker": "OPENING"
+      }
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "His lawyer told them to ask something else: \"Where's the rest of the evidence?\"",
+   "claims": [
+    "C44"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_defence",
+       "x": 780,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1100,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1090,
+      "w": 860
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC DEFENCE LAWYER, NOT A LIKENESS",
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "Defence:"
+        },
+        {
+         "text": "\"Where's the rest of the evidence?\"",
+         "color": "amber"
+        }
+       ],
+       "x": 110,
+       "y": 240,
+       "w": 760,
+       "kicker": "OPENING"
+      }
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "The jury hasn't decided. This is what it has heard so far, and what it won't hear.",
+   "claims": [
+    "H-ONTRIAL",
+    "C36"
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "THE FAITH HEDGEPETH CASE · ON TRIAL",
+     "text": "THE NOTE\nON THE BAG",
+     "sub": "Pleaded not guilty · trial ongoing (13 Oct 2026)",
+     "in": "glitch",
+     "chapterTag": "",
+     "claims": [
+      "H-ONTRIAL",
+      "H-NOTE"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.4
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Faith Hedgepeth was nineteen, a biology student at UNC Chapel Hill.",
+   "claims": [
+    "C02",
+    "C03"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Faith Hedgepeth",
+     "kicker": "UNC CHAPEL HILL",
+     "kind": "f",
+     "lines": [
+      "Age 19",
+      "Biology major"
+     ],
+     "rim": "amber",
+     "claims": [
+      "C02",
+      "C03"
+     ]
+    }
+   ],
+   "chapter": "Faith",
+   "chapter_title": "1 · Faith",
+   "tag": "Chapter 1 · Faith",
+   "cue": "intimate",
+   "tone": "confident"
+  },
+  {
+   "say": "She grew up in Warren County, North Carolina. She was a member of the Haliwa-Saponi tribe, and a Gates Millennium Scholar.",
+   "claims": [
+    "C03"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_campus",
+     "figures": [
+      {
+       "id": "lv4_visitor",
+       "x": -200,
+       "y": 1530,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "walk": {
+        "from": -200,
+        "to": 1300,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 6.2
+       }
+      },
+      {
+       "id": "lv4_crew_b",
+       "x": 1300,
+       "y": 1520,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "walk": {
+        "from": 1300,
+        "to": -200,
+        "p0": 0.05,
+        "p1": 1.0,
+        "cadence": 6.6
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1180,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC CAMPUS, NOT UNC'S BUILDINGS",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 110,
+       "y": 170,
+       "w": 700,
+       "rows": [
+        {
+         "text": "FAITH HEDGEPETH"
+        },
+        {
+         "text": "Warren County, NC",
+         "p": 0.25
+        },
+        {
+         "text": "Haliwa-Saponi",
+         "p": 0.45
+        },
+        {
+         "text": "Gates Millennium Scholar",
+         "p": 0.65,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "On campus, she sang with an American Indian a cappella group called Unheard Voices.",
+   "claims": [
+    "C04"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_campus",
+     "figures": [],
+     "view": {
+      "cx": 600,
+      "cy": 1120,
+      "w": 1200
+     },
+     "view_to": {
+      "cx": 620,
+      "cy": 1100,
+      "w": 950
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC CAMPUS, NOT UNC'S BUILDINGS",
+     "lower": {
+      "p": 0.2,
+      "title": "Unheard Voices",
+      "color": "red",
+      "kicker": "American Indian a cappella group"
+     }
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "A friend told the jury she was goofy, full of joy, and gave great hugs.",
+   "claims": [
+    "C50"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_campus",
+     "figures": [
+      {
+       "id": "lv4_visitor",
+       "x": 400,
+       "y": 1520,
+       "scale": 0.52,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "hands_together",
+       "expr": "neutral",
+       "silhouette": "warm"
+      },
+      {
+       "id": "lv4_crew_c",
+       "x": 700,
+       "y": 1520,
+       "scale": 0.52,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "silhouette": "warm"
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1200,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1210,
+      "w": 900
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC CAMPUS, NOT UNC'S BUILDINGS",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "A friend, in court:"
+        },
+        {
+         "text": "goofy, full of joy, great hugs",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 720,
+       "kicker": "WHO SHE WAS"
+      }
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "On the evening of the sixth of September, 2012, police say, Faith and her roommate studied at the campus library.",
+   "claims": [
+    "C07",
+    "C08"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_campus",
+     "figures": [
+      {
+       "id": "lv4_visitor",
+       "x": -200,
+       "y": 1530,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "walk": {
+        "from": -200,
+        "to": 520,
+        "p0": 0.0,
+        "p1": 0.8,
+        "cadence": 6.2
+       }
+      },
+      {
+       "id": "lv4_crew_d",
+       "x": -380,
+       "y": 1540,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "walk": {
+        "from": -380,
+        "to": 340,
+        "p0": 0.05,
+        "p1": 0.85,
+        "cadence": 6.4
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1350
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CAMPUS, NOT UNC'S BUILDINGS · FIGURES ANONYMOUS",
+     "lower": {
+      "p": 0.15,
+      "title": "6 September 2012",
+      "color": "red",
+      "kicker": "The campus library"
+     }
+    }
+   ],
+   "chapter": "The night",
+   "chapter_title": "2 · The night",
+   "tag": "Chapter 2 · The night",
+   "cue": "tension",
+   "tone": "confident"
+  },
+  {
+   "say": "After midnight, they went to a nightclub in Chapel Hill called the Thrill. Video showed them leaving just after two.",
+   "claims": [
+    "C07",
+    "C08"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE POLICE TIMELINE",
+     "title": "6–7 September 2012",
+     "items": [
+      "~8 p.m. · Davis Library",
+      "~12:40 a.m. · Thrill nightclub",
+      "2:06 a.m. · leaving, on video"
+     ],
+     "claims": [
+      "C07",
+      "C08"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Police said that by three in the morning, the two women were back at their apartment. That's the last time, police said, Faith was known to be alive.",
+   "claims": [
+    "C08"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_apartments",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 900,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 880,
+      "w": 800
+     },
+     "setOpts": {
+      "mode": "night",
+      "lit": 0.4
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC APARTMENT COMPLEX, NOT THE REAL BUILDING",
+     "funfacts": [
+      {
+       "p": 0.4,
+       "rows": [
+        {
+         "text": "Last known alive:"
+        },
+        {
+         "text": "3 a.m., 7 September 2012",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 700,
+       "kicker": "POLICE"
+      }
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "At about half past four, police said, the roommate left.",
+   "claims": [
+    "C09"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_apartments",
+     "figures": [
+      {
+       "id": "lv4_visitor",
+       "x": 440,
+       "y": 1180,
+       "scale": 0.32,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "walk": {
+        "from": 440,
+        "to": 900,
+        "p0": 0.1,
+        "p1": 0.9,
+        "cadence": 6.0
+       },
+       "depth": 1.4
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1000,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 600,
+      "cy": 1040,
+      "w": 1150
+     },
+     "setOpts": {
+      "mode": "night",
+      "lit": 0.3
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC APARTMENT COMPLEX, NOT THE REAL BUILDING · FIGURE ANONYMOUS",
+     "lower": {
+      "p": 0.2,
+      "title": "About 4:27 a.m.",
+      "color": "red",
+      "kicker": "Police timeline"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "She came back around eleven that morning, with a friend. They found Faith, and called nine one one.",
+   "claims": [
+    "C09",
+    "C11"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_apartments",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1100,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "day",
+      "police": 0.8
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC APARTMENT COMPLEX, NOT THE REAL BUILDING",
+     "lower": {
+      "p": 0.2,
+      "title": "About 11 a.m.",
+      "color": "red",
+      "kicker": "7 September 2012 · 911 call"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "beep",
+     "at": 0.6,
+     "gain": 0.3
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "A medical examiner has told the jury that she died of blunt force trauma to the head.",
+   "claims": [
+    "C13"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_apartments",
+     "figures": [
+      {
+       "id": "trw_officer",
+       "x": 300,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral"
+      },
+      {
+       "id": "trw_detective",
+       "x": 800,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "focused"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1450
+     },
+     "setOpts": {
+      "mode": "day",
+      "police": 1,
+      "tape": 1
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC OFFICERS, NOT LIKENESSES",
+     "lower": {
+      "p": 0.3,
+      "title": "Manner of death: homicide",
+      "color": "red",
+      "kicker": "Medical examiner's testimony"
+     }
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "On the bed was a fast-food bag, with a note written on it.",
+   "claims": [
+    "H-NOTE"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "THE NOTE",
+     "title": "Released by police in 2014",
+     "lines": [
+      "Line 1:  \"I'm not stupid\"",
+      "Line 2:  (a word we won't repeat)",
+      "Line 3:  \"Jealous\""
+     ],
+     "hl": 2,
+     "stamp": "AS RELEASED",
+     "claims": [
+      "H-NOTE"
+     ]
+    }
+   ],
+   "chapter": "The note",
+   "chapter_title": "3 · The note",
+   "tag": "Chapter 3 · The note",
+   "cue": "unease",
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Police released it two years later. It read: \"I'm not stupid.\" Then a word we won't repeat. Then, \"Jealous.\"",
+   "claims": [
+    "H-NOTE"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "\"I'M NOT STUPID\"",
+      "...",
+      "\"JEALOUS\""
+     ],
+     "em": [
+      "JEALOUS"
+     ],
+     "sub": "Released September 2014",
+     "claims": [
+      "H-NOTE"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Police said they believed the killer wrote it.",
+   "claims": [
+    "H-NOTE"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 380,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "examine",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point",
+         "headTurn": 0.2
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 960,
+      "w": 1250
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC POLICE OFFICE",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "Police:"
+        },
+        {
+         "text": "written by the killer",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 620,
+       "kicker": "THE NOTE"
+      }
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Early on, police also said they didn't believe this was a random crime.",
+   "claims": [
+    "C16"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "task_force",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 380,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "worried",
+       "keys": [
+        {
+         "p": 0.6,
+         "pose": "hand_to_face"
+        }
+       ]
+      },
+      {
+       "id": "trw_officer",
+       "x": 1250,
+       "y": 1500,
+       "scale": 0.58,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": 1250,
+        "to": 820,
+        "p0": 0.1,
+        "p1": 0.6,
+        "cadence": 6.8
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "stand"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 920,
+      "w": 1350
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC POLICE OFFICE",
+     "stamps": [
+      {
+       "p": 0.55,
+       "text": "\"NOT RANDOM\"",
+       "color": "amber",
+       "x": 1380,
+       "y": 300,
+       "size": 96
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.57
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "In 2013, police and the FBI released a profile. It said the killer might have known Faith, and lived near her.",
+   "claims": [
+    "C17"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "POLICE AND FBI PROFILE · 2013",
+     "title": "What the profile suggested",
+     "lines": [
+      "Might have known her",
+      "Might have lived nearby",
+      "A profile, not evidence"
+     ],
+     "hl": 0,
+     "stamp": "PROFILE",
+     "claims": [
+      "C17"
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Investigators had DNA from the scene, from a man. They compared it with hundreds of samples. None matched.",
+   "claims": [
+    "H-COLD"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lab",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1200
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 990,
+      "w": 950
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC LAB",
+     "stamps": [
+      {
+       "p": 0.6,
+       "text": "NO MATCH",
+       "color": "red",
+       "x": 1380,
+       "y": 320,
+       "size": 110
+      }
+     ]
+    }
+   ],
+   "chapter": "Nine years",
+   "chapter_title": "4 · Nine years",
+   "tag": "Chapter 4 · Nine years",
+   "cue": "aftermath",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.62
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Years went by. In 2020, a national TV special was still calling it a mystery.",
+   "claims": [
+    "C22"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_campus",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1900
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC CAMPUS, NOT UNC'S BUILDINGS",
+     "rain": {
+      "n": 90,
+      "op": 0.18
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "rain",
+     "at": 0.0,
+     "gain": 0.3
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "On the sixteenth of September, 2021, Chapel Hill police announced an arrest.",
+   "claims": [
+    "C23"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1250
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC BUILDING",
+     "lower": {
+      "p": 0.12,
+      "title": "16 September 2021",
+      "color": "red",
+      "kicker": "Chapel Hill police"
+     },
+     "stamps": [
+      {
+       "p": 0.55,
+       "text": "ARRESTED",
+       "color": "amber",
+       "x": 1400,
+       "y": 320,
+       "size": 110
+      }
+     ]
+    }
+   ],
+   "chapter": "The arrest",
+   "chapter_title": "5 · The arrest",
+   "tag": "Chapter 5 · The arrest",
+   "cue": "revelation",
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.57
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Miguel Salguero-Olivares, then twenty-eight, of Durham.",
+   "claims": [
+    "C23"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Miguel Salguero-Olivares",
+     "kicker": "CHARGED · PRESUMED INNOCENT",
+     "kind": "m",
+     "lines": [
+      "Age 28 (then) · Durham",
+      "Pleaded not guilty"
+     ],
+     "rim": "amber",
+     "claims": [
+      "C23",
+      "C32"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Investigators said they found him through genetic genealogy: the DNA from the scene led them to distant relatives.",
+   "claims": [
+    "C24"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lab",
+     "figures": [
+      {
+       "id": "trw_detective",
+       "x": 380,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "read",
+       "expr": "focused",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "examine"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 500,
+      "cy": 1020,
+      "w": 1200
+     },
+     "view_to": {
+      "cx": 480,
+      "cy": 1030,
+      "w": 1000
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC LAB",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "Investigators say:"
+        },
+        {
+         "text": "genetic genealogy",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 640,
+       "kicker": "HOW, THEY SAY"
+      }
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "North Carolina's attorney general said a new DNA sample matched the profile from 2012.",
+   "claims": [
+    "C27"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "press_room",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 980,
+      "w": 1200
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC PRESS CONFERENCE",
+     "funfacts": [
+      {
+       "p": 0.3,
+       "rows": [
+        {
+         "text": "Attorney General Josh Stein:"
+        },
+        {
+         "text": "a DNA match",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 680,
+       "kicker": "2021"
+      }
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "And police said he had not been a person of interest early in the investigation.",
+   "claims": [
+    "C27"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "NOT A PERSON",
+      "OF INTEREST"
+     ],
+     "em": [
+      "NOT"
+     ],
+     "sub": "Early in the investigation, police said",
+     "claims": [
+      "C27"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "Faith's mother said she cried tears of joy.",
+   "claims": [
+    "C59"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "Tears of joy.",
+     "who": "Connie Hedgepeth, Faith's mother, after the 2021 arrest",
+     "claims": [
+      "C59"
+     ]
+    }
+   ],
+   "cue": "intimate",
+   "tone": "reflective"
+  },
+  {
+   "say": "He was charged with first-degree murder. Prosecutors later added rape, burglary and sexual offense charges. The State is not seeking the death penalty.",
+   "claims": [
+    "C30",
+    "C29"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE CHARGES",
+     "title": "As amended in 2024",
+     "items": [
+      "First-degree murder",
+      "First-degree rape, sexual offense, burglary",
+      "No death penalty sought"
+     ],
+     "claims": [
+      "C30",
+      "C29"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "He has pleaded not guilty to all charges.",
+   "claims": [
+    "C32"
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "NOT GUILTY PLEA",
+     "color": "blue",
+     "lines": [
+      "To all charges"
+     ],
+     "at": 0.3,
+     "claims": [
+      "C32"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.32
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Before the trial, his defence tried to have the case thrown out.",
+   "claims": [
+    "C34"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 950,
+      "w": 1350
+     },
+     "grade": "night",
+     "rain": {
+      "n": 80,
+      "op": 0.2
+     },
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING"
+    }
+   ],
+   "chapter": "Before the trial",
+   "chapter_title": "6 · Before the trial",
+   "tag": "Chapter 6 · Before the trial",
+   "cue": "tension",
+   "tone": "tense"
+  },
+  {
+   "say": "A swab of a bloodstain from the bathroom doorframe had been lost, and never tested.",
+   "claims": [
+    "C34"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "THE LOST SAMPLE",
+     "title": "Bathroom doorframe swab",
+     "lines": [
+      "Stain:   bathroom door frame",
+      "Tested:  never",
+      "Status:  lost"
+     ],
+     "hl": 2,
+     "stamp": "LOST",
+     "claims": [
+      "C34"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "The judge called that \"absurd.\" Prosecutors called it negligence, not bad faith. And the case went ahead.",
+   "claims": [
+    "C34"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34,
+       "keys": [
+        {
+         "p": 0.5,
+         "expr": "neutral"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 820,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 800,
+      "w": 700
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC JUDGE, NOT A LIKENESS",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 1060,
+       "y": 170,
+       "w": 700,
+       "rows": [
+        {
+         "text": "THE RULING"
+        },
+        {
+         "text": "Judge: \"absurd\"",
+         "p": 0.2
+        },
+        {
+         "text": "State: negligence",
+         "p": 0.45
+        },
+        {
+         "text": "Motion to dismiss: denied",
+         "p": 0.7,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "The judge also ruled that the jury won't hear about the genealogy that investigators said led them to him.",
+   "claims": [
+    "C36",
+    "C24"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "THE JURY WON'T HEAR",
+      "ABOUT THE GENEALOGY"
+     ],
+     "em": [
+      "WON'T"
+     ],
+     "sub": "Excluded at the State's request",
+     "claims": [
+      "C36"
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Jury selection began on the twenty-eighth of September, 2026. Twelve jurors and four alternates were chosen.",
+   "claims": [
+    "C40"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "lb8_juror",
+       "x": 120,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "default"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 330,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": 1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "grey"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 750,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "brown"
+      },
+      {
+       "id": "lb8_juror",
+       "x": 960,
+       "y": 1420,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.3,
+       "pose": "sit",
+       "expr": "focused",
+       "noChair": true,
+       "depth": 0.9,
+       "outfit": "default"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1300
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC JURY",
+     "lower": {
+      "p": 0.15,
+      "title": "12 jurors · 4 alternates",
+      "color": "red",
+      "kicker": "Durham County"
+     }
+    }
+   ],
+   "chapter": "The trial",
+   "chapter_title": "7 · The trial",
+   "tag": "Chapter 7 · The trial",
+   "cue": "revelation",
+   "tone": "confident"
+  },
+  {
+   "say": "In her opening, prosecutor Angela Garcia-Lamarca told jurors his DNA was on the bottle the State calls the weapon, and on the note.",
+   "claims": [
+    "C42",
+    "C14"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_prosecutor",
+       "x": 780,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1100,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1090,
+      "w": 860
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC PROSECUTOR, NOT A LIKENESS",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 110,
+       "y": 170,
+       "w": 720,
+       "rows": [
+        {
+         "text": "THE STATE SAYS"
+        },
+        {
+         "text": "His DNA on the bottle",
+         "p": 0.3
+        },
+        {
+         "text": "His DNA on the note",
+         "p": 0.6,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "\"This defendant was a stranger to Faith,\" she said. \"The fact that he was a stranger is reason it took years to find him.\"",
+   "claims": [
+    "C43"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "This defendant was a stranger to Faith. The fact that he was a stranger is reason it took years to find him.",
+     "who": "ADA Angela Garcia-Lamarca, opening statement, October 2026",
+     "claims": [
+      "C43",
+      "C42"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "His lawyer, James Rainsford, told jurors a statistical likelihood is not the same as a match, and that the DNA has to be connected to the crime.",
+   "claims": [
+    "C44"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "trw_defence",
+       "x": 780,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "present",
+       "expr": "determined",
+       "keys": [
+        {
+         "p": 0.5,
+         "pose": "point"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 700,
+      "cy": 1100,
+      "w": 1000
+     },
+     "view_to": {
+      "cx": 720,
+      "cy": 1090,
+      "w": 860
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC DEFENCE LAWYER, NOT A LIKENESS",
+     "cards": [
+      {
+       "p": 0.1,
+       "x": 110,
+       "y": 170,
+       "w": 740,
+       "rows": [
+        {
+         "text": "THE DEFENCE SAYS"
+        },
+        {
+         "text": "Likelihood is not a match",
+         "p": 0.3
+        },
+        {
+         "text": "\"You have to connect them\"",
+         "p": 0.6,
+         "color": "amber"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "The defence says his DNA wasn't found on the neck of the bottle, and that two bloody thumbprints on it weren't matched to him.",
+   "claims": [
+    "C38"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE STATE SAYS",
+      "THE DEFENCE SAYS"
+     ],
+     "big": [
+      "HIS DNA",
+      "NOT ON THE NECK"
+     ],
+     "bigColor": [
+      "red",
+      "blue"
+     ],
+     "bigSize": 64,
+     "body": [
+      [
+       "on the bottle",
+       "and the note"
+      ],
+      [
+       "2 thumbprints",
+       "not matched to him"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "C42",
+      "C38"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Faith's roommate, testifying for the State, told the jury she had never known him, and never saw him in their apartment.",
+   "claims": [
+    "C47"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 980,
+      "w": 1200
+     },
+     "setOpts": {
+      "modern": true,
+      "dock": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · WITNESS NOT SHOWN",
+     "funfacts": [
+      {
+       "p": 0.35,
+       "rows": [
+        {
+         "text": "The roommate, for the State:"
+        },
+        {
+         "text": "never knew him",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 660,
+       "kicker": "TESTIMONY"
+      }
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "And a forensic technician who worked the scene in 2012 admitted a mistake with that bloodstain. \"That step was missed,\" she said.",
+   "claims": [
+    "C51"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "That step was missed.",
+     "who": "Tamika Price, forensic technician, testifying for the State",
+     "claims": [
+      "C51"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Faith's parents have been in court for the testimony.",
+   "claims": [
+    "C58"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1500
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING"
+    }
+   ],
+   "cue": "intimate",
+   "tone": "reflective"
+  },
+  {
+   "say": "Her family says they never knew the defendant, and knew of no link between him and Faith.",
+   "claims": [
+    "C46"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "THEY DID NOT",
+      "KNOW HIM"
+     ],
+     "em": [
+      "NOT"
+     ],
+     "sub": "What Faith Hedgepeth's family has said",
+     "claims": [
+      "C46"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "So, here's where the case stands, as of the thirteenth of October, 2026.",
+   "claims": [
+    "H-ONTRIAL"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "fh_campus",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1150,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1080,
+      "w": 1850
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC CAMPUS, NOT UNC'S BUILDINGS"
+    }
+   ],
+   "chapter": "Where it stands",
+   "chapter_title": "Where it stands",
+   "tag": "Where it stands",
+   "cue": "outro",
+   "tone": "resolve"
+  },
+  {
+   "say": "Miguel Salguero-Olivares is on trial for first-degree murder, rape, sexual offense and burglary. He has pleaded not guilty, and he is presumed innocent.",
+   "claims": [
+    "C30",
+    "H-ONTRIAL"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE LEGAL RECORD · 13 OCT 2026",
+     "title": "Miguel Salguero-Olivares",
+     "items": [
+      "2021 · ARRESTED and charged",
+      "PLEADED NOT GUILTY to all charges",
+      "2026 · TRIAL ONGOING · no verdict"
+     ],
+     "claims": [
+      "C23",
+      "C32",
+      "H-ONTRIAL"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  },
+  {
+   "say": "Prosecutors say the DNA answers the question. His defence says it doesn't answer enough.",
+   "claims": [
+    "C42",
+    "C44"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "PROSECUTION",
+      "DEFENCE"
+     ],
+     "big": [
+      "\"LOUDER\"",
+      "\"WHERE'S THE REST?\""
+     ],
+     "bigColor": [
+      "red",
+      "blue"
+     ],
+     "bigSize": 60,
+     "body": [
+      [
+       "than the noise"
+      ],
+      [
+       "of the evidence"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "C42",
+      "C44"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  },
+  {
+   "say": "Fourteen years after Faith Hedgepeth died, a Durham jury will decide.",
+   "claims": [
+    "H-ONTRIAL",
+    "C01"
+   ],
+   "shots": [
+    {
+     "type": "endcard",
+     "kicker": "IN MEMORY OF FAITH HEDGEPETH",
+     "lines": [
+      "Trial ongoing as of 13 October 2026",
+      "He has pleaded not guilty",
+      "No verdict yet"
+     ],
+     "size": 52,
+     "sub": "Sources for every claim are listed in the description.",
+     "chapterTag": "",
+     "out": "dip",
+     "claims": [
+      "H-ONTRIAL",
+      "C32"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  }
+ ]
+}

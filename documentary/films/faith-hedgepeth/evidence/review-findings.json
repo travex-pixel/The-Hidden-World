@@ -1,0 +1,93 @@
+{
+ "film": "faith-hedgepeth",
+ "findings": [
+  {
+   "id": "FC-01",
+   "stage": "C",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Every source was read as search-result text; three page fetches failed. Several ABC11 and WRAL summaries were filed under their outlet by inference and are not counted towards corroboration, so many claims are REQUIRES REVIEW.",
+   "evidence": "evidence/claims.json; gate G13.",
+   "recommendation": "Read in full: WRAL's opening-statement story, the Daily Tar Heel's opening story, CBS News's trial story and ABC11's 2021 arrest and 2014 note stories; record full_text access.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "FC-02",
+   "stage": "C",
+   "severity": "HIGH",
+   "claims": [
+    "H-ONTRIAL"
+   ],
+   "lines": [],
+   "problem": "Time-sensitive: the trial is ongoing as of 13 October 2026. When a verdict comes, the opening, the close, the end card and the description are out of date.",
+   "evidence": "Lines 5, 8, 47\u201350 and the end card.",
+   "recommendation": "Publish only while the trial is ongoing, or make a new versioned cut with the verdict, attributed to reporting, and re-run the gate.",
+   "needs_new_render": true,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "LR-01",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C23",
+    "C32",
+    "H-ONTRIAL"
+   ],
+   "lines": [],
+   "problem": "Pending trial: the defendant is presumed innocent. He is never drawn; his name card says 'charged \u00b7 presumed innocent'; every prosecution point is attributed and paired with the defence's answer; the not-guilty plea is stated in the cold open, chapter 5 and the close.",
+   "evidence": "Script; gate G7/G8 pass.",
+   "recommendation": "Keep the same balance in comments and any Shorts.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "LR-02",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C47",
+    "C16",
+    "C17"
+   ],
+   "lines": [],
+   "problem": "The roommate is a State witness and the judge barred the defence from presenting her as an alternative suspect. She is not named in narration, not drawn, and nothing implies suspicion of her; the 2012 'not random' statement and the 2013 profile are attributed to police and the FBI.",
+   "evidence": "Script and packaging (a title implying suspicion was rejected).",
+   "recommendation": "Keep.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "LR-03",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Excluded: injury and autopsy detail beyond the cause of death, sexual-assault forensics, the roommate smudge exchange, the roommate's medical history, all uncharged people, the 2016 DNA composite, the jail warrant, and the note's expletive.",
+   "evidence": "evidence/unused-claims.json; opening-concepts.md.",
+   "recommendation": "Keep them out of packaging and comments.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "AUD-01",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "Pronunciations set by respelling, not verified by ear: Haliwa-Saponi, Salguero-Olivares, Garcia-Lamarca.",
+   "evidence": "film.json pronounce.",
+   "recommendation": "Owner to listen to the names sample.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  }
+ ]
+}

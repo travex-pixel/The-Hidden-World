@@ -1,0 +1,2100 @@
+{
+ "film": "faith-hedgepeth",
+ "as_of": "2026-10-11",
+ "status_vocabulary": [
+  "VERIFIED",
+  "DIRECTLY SUPPORTED",
+  "CORROBORATED",
+  "DISPUTED",
+  "UNVERIFIED",
+  "OUTDATED",
+  "REQUIRES REVIEW"
+ ],
+ "claims": [
+  {
+   "id": "C01",
+   "proposition": "Faith Hedgepeth was found dead on 7 September 2012 in a bedroom of an off-campus apartment in Chapel Hill (Hawthorne at the View complex).",
+   "lines": [
+    0,
+    3,
+    50
+   ],
+   "facts": [
+    "SEPT 7, 2012",
+    "Chapel Hill, NC",
+    "Hawthorne at the View"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-ARREST-2021",
+     "supports": "direct",
+     "passage": "Hedgepeth, 19, was found beaten to death in her Chapel Hill apartment bedroom on Sept. 7, 2012.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q25",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "partial",
+     "passage": "She was a 19-year-old sophomore at the University of North Carolina at Chapel Hill when she was found beaten to death in her off-campus apartment in September 2012.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q60"
+    },
+    {
+     "source": "S-ABC11-TIMELINE",
+     "supports": "partial",
+     "passage": "And they went back to their residence at 'Hawthorne at the View,'\" Chapel Hill Police Lt. Celisa Lehew told ABC News.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q21"
+    },
+    {
+     "source": "S-DUKECHRON-2012",
+     "supports": "partial",
+     "passage": "One source conflict: the Duke Chronicle gives the address as 5639 Old Chapel Hill Road, while ABC11 places the apartment (unit 1502) at the View on Old Durham Road.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q3"
+    }
+   ],
+   "contradictions": [
+    "C01: Address: Duke Chronicle gives 5639 Old Chapel Hill Road; ABC11 places unit 1502 'at the View on Old Durham Road' (Q3). One WRAL summary calls it 'a friend's apartment near the Durham-Chapel Hill border' (Q11) while most call it her apartment."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "killing",
+   "notes": "Do not show a street address or unit number on screen; the address is disputed and the building is a private residence. Say 'her off-campus apartment'.",
+   "conflict_handling": "Script says 'an off-campus apartment in Chapel Hill'; no address."
+  },
+  {
+   "id": "C02",
+   "proposition": "Faith Hedgepeth was 19; outlets disagree on whether she was a sophomore or a junior.",
+   "lines": [
+    0,
+    9
+   ],
+   "facts": [
+    "AGE 19"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "direct",
+     "passage": "She was a 19-year-old sophomore at the University of North Carolina at Chapel Hill when she was found beaten to death in her off-campus apartment in September 2012.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q60"
+    },
+    {
+     "source": "S-DTH-2012",
+     "supports": "partial",
+     "passage": "Sources disagree on her class year. One calls her a sophomore, another a junior.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q50",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [
+    "C02: Sophomore (AP, N&O, WRAL 2021) vs junior (Wikipedia). A podcast says she was weeks from turning 20 (Q34) - not corroborated."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "victim",
+   "notes": "Narrate '19-year-old UNC student'; avoid class year until UNC records or family confirm.",
+   "conflict_handling": "Script says she was 19; no class year."
+  },
+  {
+   "id": "C03",
+   "proposition": "She was from Warren County, North Carolina, a member of the Haliwa-Saponi tribe, a biology major and a Gates Millennium Scholar.",
+   "lines": [
+    9,
+    10
+   ],
+   "facts": [
+    "Haliwa-Saponi",
+    "Warren County, NC",
+    "Gates Millennium Scholar",
+    "Biology major"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-TRIBE-2021",
+     "supports": "direct",
+     "passage": "Faith Hedgepeth was a UNC-Chapel Hill student from Warren County who was a member of the Haliwa-Saponi tribe.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q20 (attributed by inference)",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-DTH-2012",
+     "supports": "direct",
+     "passage": "She came to UNC on a Gates Millennium Scholarship and also received an Alston-Pleasants Scholarship. She was part of the Haliwa-Saponi American Indian Tribe in Warren County.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q50",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-DTH-2012",
+     "supports": "partial",
+     "passage": "The Daily Tar Heel describes her as a biology major from Warrenton, so the sources differ on her hometown.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q20",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-WUNC-2021",
+     "supports": "partial",
+     "passage": "WUNC says she grew up in Hollister, N.C.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q20"
+    }
+   ],
+   "contradictions": [
+    "C03: Hometown: Hollister (WUNC) vs Warrenton (Daily Tar Heel)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "victim",
+   "notes": "Say 'from Warren County'. Confirm hometown and tribal wording with the family/Haliwa-Saponi Tribe.",
+   "conflict_handling": "Script says Warren County; no town."
+  },
+  {
+   "id": "C04",
+   "proposition": "At UNC she was active in the American Indian Center, sang with the American Indian a cappella group Unheard Voices and belonged to the Carolina Indian Circle.",
+   "lines": [
+    11
+   ],
+   "facts": [
+    "Unheard Voices",
+    "Carolina Indian Circle"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-TRIBE-2021",
+     "supports": "direct",
+     "passage": "She also sang with Unheard Voices, the American Indian a cappella group at UNC, and was a member of the Carolina Indian Circle.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q20 (attributed by inference)",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-DTH-2012",
+     "supports": "partial",
+     "passage": "UNC-Chapel Hill's Carolina Indian Circle and the campus chapter of Alpha Pi Omega organized the vigil.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q50",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-DTH-2012",
+     "supports": "partial",
+     "passage": "the a cappella groups Unheard Voices and UNC Harmonyx provided music.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q50",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "medium",
+   "category": "victim",
+   "notes": "Single summary for membership; corroborated indirectly by the vigil organisers. Confirm with UNC AIC."
+  },
+  {
+   "id": "C07",
+   "proposition": "Police say that on the night of 6-7 September Hedgepeth and her roommate studied at Davis Library, went home, then went to the Thrill nightclub around 12:40 a.m.; video shows them leaving at 2:06 a.m.",
+   "lines": [
+    13,
+    14
+   ],
+   "facts": [
+    "DAVIS LIBRARY ~8 P.M.",
+    "THRILL NIGHTCLUB ~12:40 A.M.",
+    "LEFT 2:06 A.M."
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-TIMELINE",
+     "supports": "direct",
+     "passage": "Police said around 12:40 a.m., the two entered Thrill nightclub, which was a popular nightclub for undergraduate students.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q21"
+    },
+    {
+     "source": "S-ABC11-TIMELINE",
+     "supports": "direct",
+     "passage": "Video captured Rosario leaving Thrill followed by Hedgepeth at 2:06 a.m.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q21"
+    },
+    {
+     "source": "S-ABC11-TIMELINE",
+     "supports": "partial",
+     "passage": "Police say Hedgepeth and her roommate, Karena Rosario, went to Davis Library to study.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q21"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "timeline",
+   "attributed_to": "Chapel Hill Police (Lt. Celisa Lehew) via ABC11",
+   "notes": "Attribute to police. Avoid any commentary on drinking (prosecution excluded BAC evidence; see C39)."
+  },
+  {
+   "id": "C08",
+   "proposition": "Police said Faith Hedgepeth was last known to be alive at 3 a.m. on 7 September 2012, when the two women were back at the apartment.",
+   "lines": [
+    13,
+    14,
+    15
+   ],
+   "facts": [
+    "LAST KNOWN ALIVE: 3 A.M."
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-TIMELINE",
+     "supports": "direct",
+     "passage": "By 3 a.m., the women were back at their apartment, police said.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q21"
+    },
+    {
+     "source": "S-WRAL-TIMELINE-2021",
+     "supports": "direct",
+     "passage": "Police said Faith was last known to be alive at 3 a.m. on Sept. 7, 2012, per WRAL.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q59"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "timeline",
+   "attributed_to": "Chapel Hill Police",
+   "notes": "Strong hook fact (multi-source, police-attributed)."
+  },
+  {
+   "id": "C09",
+   "proposition": "Police said the roommate left the apartment at about 4:27 a.m. and returned around 11 a.m. with a friend, when Hedgepeth's body was found.",
+   "lines": [
+    16,
+    17
+   ],
+   "facts": [
+    "~4:27 A.M. roommate leaves",
+    "~11 A.M. body found"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-WRAL-DETAILS-2014",
+     "supports": "direct",
+     "passage": "Police said the roommate, Karena Rosario, left the Chapel Hill apartment at about 4:27 a.m. and came back around 11 a.m. with a friend, who helped find the body.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q22 (attributed by inference)",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-UNC-MEDIAHUB",
+     "supports": "partial",
+     "passage": "Its timeline puts Rosario leaving at 4:25 a.m. and her 911 call at 11:01 a.m., per UNC Media Hub.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q59"
+    },
+    {
+     "source": "S-WRAL-DETAILS-2014",
+     "supports": "partial",
+     "passage": "One WRAL report instead says the return came about seven hours after the roommate left, based on the autopsy report, so the exact timing varies slightly across coverage.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q22",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [
+    "C09: 4:27 a.m. (police/WRAL) vs 4:25 a.m. (UNC Media Hub); 911 call logged 11:01 a.m. per Media Hub."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "timeline",
+   "attributed_to": "Chapel Hill Police",
+   "notes": "Narrate as a neutral police timeline. Never use the gap to imply anything about the roommate (see C35).",
+   "conflict_handling": "Script gives 'about 4:30' and 'around 11' as police said."
+  },
+  {
+   "id": "C11",
+   "proposition": "Hedgepeth's roommate Karena Rosario and a friend, Marisol Rangel, found her body and called 911 on 7 September 2012.",
+   "lines": [
+    17
+   ],
+   "facts": [
+    "911 CALL, SEPT 7, 2012"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-911-2014",
+     "supports": "direct",
+     "passage": "Police logged a 911 call on September 7, 2012, from the roommate, Karena Rosario, who had come home and found Faith Hedgepeth unresponsive.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q15 (attributed by inference)",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-NANDO-FRIENDS",
+     "supports": "direct",
+     "passage": "Marisol Rangel, a friend of both Faith Hedgepeth and Karena Rosario, testified in the murder trial of Miguel Salguero-Olivares.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q43 (attributed by inference)",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-WRAL-911",
+     "supports": "partial",
+     "passage": "In the trial of Faith Hedgepeth, prosecutors played a 2012 911 call made by her roommate, Karena Rosario, after Rosario and a friend testified about finding her body.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q45"
+    }
+   ],
+   "contradictions": [
+    "C11: One summary (Q40) calls Rangel a 'Roommate'; most coverage calls her a friend of both women."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "discovery",
+   "conflict_handling": "Script says 'with a friend'."
+  },
+  {
+   "id": "C13",
+   "proposition": "The medical examiner who performed the autopsy, Dr. Lauren Scott, testified that the cause of death was blunt force trauma to the head and the manner was homicide.",
+   "lines": [
+    18
+   ],
+   "facts": [
+    "CAUSE: BLUNT FORCE TRAUMA TO THE HEAD",
+    "MANNER: HOMICIDE"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-LIVE-WK1",
+     "supports": "direct",
+     "passage": "Scott concluded that Hedgepeth died from blunt force trauma to the head.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q6 entry 19925487/19925619",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-9SJ-LIVE",
+     "supports": "direct",
+     "passage": "A few minutes later, Scott confirms the state determined Hedgepeth's cause of death to be \"blunt force trauma to the head\" and her manner of death to be \"homicide.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q32"
+    },
+    {
+     "source": "S-ABC11-911-2014",
+     "supports": "partial",
+     "passage": "An autopsy showed she died from blunt force trauma to the head in a beating.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q15",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "forensics",
+   "attributed_to": "Dr. Lauren Scott (NC OCME), trial testimony Oct 2026",
+   "notes": "Narrate cause of death in these words only. Injury detail is on the do-not-use list."
+  },
+  {
+   "id": "C14",
+   "proposition": "Investigators and prosecutors say the weapon was a Bacardi rum bottle; some warrant-based reports call it a wine bottle.",
+   "lines": [
+    39
+   ],
+   "facts": [
+    "Bacardi rum bottle (per prosecutors)"
+   ],
+   "assertion": "attributed_allegation",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-CBS17-DNA-KEYITEMS",
+     "supports": "direct",
+     "passage": "Investigators say Hedgepeth was beaten to death with a Bacardi rum bottle.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q48"
+    },
+    {
+     "source": "S-FOX-TRIAL",
+     "supports": "partial",
+     "passage": "Prosecutors say his DNA is on a rum bottle they identify as the murder weapon, and on a note written on a fast-food bag found at the scene.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q39"
+    },
+    {
+     "source": "S-ABC11-COURTDOCS",
+     "supports": "contradicts",
+     "passage": "ABC11 reports that a palm print on the murder weapon -- the wine bottle -- matches the suspect's left palm.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q47"
+    }
+   ],
+   "contradictions": [
+    "C14: Rum bottle (trial coverage, CBS17, DTH) vs 'wine bottle' (ABC11 warrant story, Fox genealogy line Q60). Treat 'rum bottle' as the State's description at trial."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "forensics",
+   "attributed_to": "Prosecution / investigators",
+   "notes": "Always attribute: 'prosecutors say the weapon was a rum bottle'. The link of the bottle to the defendant is contested (C38).",
+   "conflict_handling": "Script says 'a bottle, prosecutors say'; neither rum nor wine is asserted as fact."
+  },
+  {
+   "id": "C16",
+   "proposition": "Early on, Chapel Hill police said they did not believe Hedgepeth was the victim of a random crime.",
+   "lines": [
+    22
+   ],
+   "facts": [
+    "\"Not a random act\" - police, 2012"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-TRIBE-2021",
+     "supports": "direct",
+     "passage": "Police said they did not believe this was a random act.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q20",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-DTH-2012",
+     "supports": "direct",
+     "passage": "Police said they did not believe it was a random act.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q50",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [
+    "C16: Contrasts with the State's 2026 theory that the killer was a stranger (C43). This is a narrative tension, not a contradiction of the evidence."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "investigation",
+   "attributed_to": "Chapel Hill Police (2012)",
+   "notes": "Strong, safe hook: what police believed then vs what the State argues now.",
+   "conflict_handling": "Script sets the 2012 'not random' statement against the State's 2026 'stranger' theory, both attributed."
+  },
+  {
+   "id": "C17",
+   "proposition": "In January 2013 Chapel Hill police and the FBI's Behavioral Analysis Unit released a profile saying the killer might have been familiar with Hedgepeth and lived near her in the past.",
+   "lines": [
+    23
+   ],
+   "facts": [
+    "FBI PROFILE, JAN 2013"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-WRAL-ARCHIVE",
+     "supports": "direct",
+     "passage": "In a profile of the killer released in January 2013, Chapel Hill Police and the FBI's Behavioral Analysis Unit said they believe the person might have been familiar with Hedgepeth and lived near her in the past.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q35/Q41"
+    },
+    {
+     "source": "S-9SJ-QUESTIONS",
+     "supports": "direct",
+     "passage": "Early on, the FBI's Behavioral Analysis Unit believed that the killer knew Hedgepeth and may have lived near her.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q52"
+    }
+   ],
+   "contradictions": [
+    "C17: 9th Street Journal says 'knew'; WRAL says 'might have been familiar'. Use the hedged wording."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "investigation",
+   "attributed_to": "Chapel Hill Police & FBI BAU (Jan 2013)",
+   "notes": "Never imply the profile pointed at any specific person.",
+   "conflict_handling": "Script attributes the 2013 profile to police and the FBI."
+  },
+  {
+   "id": "C22",
+   "proposition": "For about nine years the case remained unsolved; in 2020 ABC11 reported no arrests eight years on, and an Investigation Discovery special treated it as a mystery.",
+   "lines": [
+    25
+   ],
+   "facts": [
+    "UNSOLVED 2012-2021"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-NOARREST-2020",
+     "supports": "direct",
+     "passage": "A 2020 ABC11 report said police still had made no arrests eight years on.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q15"
+    },
+    {
+     "source": "S-FOX-ID-2020",
+     "supports": "partial",
+     "passage": "Fox News reported on a new ID special, \"Who Killed the Co-Ed? An ID Murder Mystery,\" which features interviews with investigators and loved ones eager to finally solve the case.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q34"
+    },
+    {
+     "source": "S-NBC-DATELINE-2020",
+     "supports": "partial",
+     "passage": "A later NBC report, published nearly eight years after the killing, said male DNA was found at the scene, but her killer has never been found.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q3"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "cold_case"
+  },
+  {
+   "id": "C23",
+   "proposition": "On 16 September 2021 Chapel Hill police announced the arrest of Miguel Enrique Salguero-Olivares, 28, of Durham, saying he was arrested that morning without incident.",
+   "lines": [
+    4,
+    26,
+    27
+   ],
+   "facts": [
+    "ARRESTED SEPT 16, 2021",
+    "AGE 28 (then)",
+    "Durham"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-ABC11-ARREST-2021",
+     "supports": "direct",
+     "passage": "Miguel Enrique Salguero-Olivares, 28, of Durham. Assistant Chief Celisa Lehew said he was arrested that Thursday morning without incident.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q25",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-OXYGEN",
+     "supports": "direct",
+     "passage": "Police announced the arrest of Miguel Enrique Salguero-Olivares, then 28, on September 16, 2021, in the 2012 killing of UNC-Chapel Hill student Faith Hedgepeth.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q5 (attributed by inference)"
+    },
+    {
+     "source": "S-BI",
+     "supports": "partial",
+     "passage": "Chapel Hill police said on Thursday they have arrested a man on first-degree murder charges in connection to the 2012 murder.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q22"
+    },
+    {
+     "source": "S-WUNC-2021",
+     "supports": "partial",
+     "passage": "In 2021, officials from the Chapel Hill Police Department announced the arrest of a 28-year-old Durham male suspect.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q20"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "arrest",
+   "attributed_to": "Chapel Hill Police (Chief Chris Blue; Asst. Chief Celisa Lehew)",
+   "notes": "Name him with 'charged', 'accused' or 'on trial', never 'killer'."
+  },
+  {
+   "id": "C24",
+   "proposition": "Investigators say they identified him through investigative genetic genealogy: crime-scene DNA led to distant relatives, who gave interviews and DNA samples.",
+   "lines": [
+    28,
+    37
+   ],
+   "facts": [
+    "GENETIC GENEALOGY"
+   ],
+   "assertion": "attributed_allegation",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-ABC11-COURTDOCS",
+     "supports": "direct",
+     "passage": "The technique identified the suspect's distant family members, who share his genetic information, and those relatives gave interviews and samples of their DNA, which investigators said helped identify him.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q5"
+    },
+    {
+     "source": "S-WRAL-MONDAY",
+     "supports": "partial",
+     "passage": "Those relatives gave interviews and their DNA, which investigators say helped identify Salguero-Olivares.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q1 (attributed by inference)"
+    },
+    {
+     "source": "S-NANDO-TRIAL",
+     "supports": "partial",
+     "passage": "Investigators eventually turned to genetic genealogy, a technique that compares crime-scene DNA with profiles in public ancestry databases.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q42 (attributed by inference)",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [
+    "C24: Who ran the genealogy work is not public. The jury will not hear IGG evidence (C36)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "investigation",
+   "attributed_to": "Investigators / prosecution (2021 court documents)",
+   "notes": "Narrate as how investigators say they found him, not as proof of guilt. Do not name or locate the relatives.",
+   "conflict_handling": "Script says investigators say genealogy led to him, and that the jury will not hear that evidence."
+  },
+  {
+   "id": "C27",
+   "proposition": "At the 2021 announcement, Attorney General Josh Stein said a DNA sample submitted to the State Crime Lab matched the 2012 crime-scene profile; police said he had not been a person of interest early in the investigation.",
+   "lines": [
+    4,
+    29,
+    30
+   ],
+   "facts": [
+    "AG Josh Stein: DNA match (2021)"
+   ],
+   "assertion": "attributed_allegation",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-ABC11-ARREST-2021",
+     "supports": "direct",
+     "passage": "Stein said the arrest followed a DNA sample, provided by law enforcement, that matched DNA collected at the crime scene in 2012.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q25",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-WRAL-NOBOND",
+     "supports": "direct",
+     "passage": "Assistant Chief Celisa Lehew said Salguero-Olivares wasn't a person of interest in the beginning of the investigation.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q57"
+    },
+    {
+     "source": "S-CBS17-PARABON",
+     "supports": "partial",
+     "passage": "Law enforcement provided a sample on Wednesday to the State Crime Lab which was able to create a DNA profile derived from the original crime scene, Stein said.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q24",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "arrest",
+   "attributed_to": "NC Attorney General Josh Stein; Asst. Chief Celisa Lehew",
+   "notes": "Attribute 'match' to Stein/police; defence disputes what the DNA shows (C44)."
+  },
+  {
+   "id": "C29",
+   "proposition": "On 28 September 2021 District Attorney Satana Deberry filed notice that the case is non-capital: the State is not seeking the death penalty.",
+   "lines": [
+    32
+   ],
+   "facts": [
+    "NO DEATH PENALTY (filed Sept 28, 2021)"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-WECT-DP",
+     "supports": "direct",
+     "passage": "A notice signed by District Attorney Satana Deberry was filed in Superior Court on Tuesday declaring the case against Miguel Enrique Salguero-Olivares non-capital",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q17"
+    },
+    {
+     "source": "S-CHAPELBORO-DP",
+     "supports": "direct",
+     "passage": "The filing was made on September 28, 2021, about nine years after the 19-year-old UNC student's death.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q17"
+    },
+    {
+     "source": "S-ABC11-ARREST-2021",
+     "supports": "partial",
+     "passage": "Durham County District Attorney Satana Deberry's office filed a motion on September 28, 2021, seeking a \"non-capital\" punishment.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q25",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-FOX-TRIAL",
+     "supports": "partial",
+     "passage": "Prosecutors are not seeking the death penalty, and testimony from state forensic and medical experts was scheduled to continue.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q39"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "charges",
+   "attributed_to": "Durham County DA Satana Deberry"
+  },
+  {
+   "id": "C30",
+   "proposition": "In November 2024 prosecutors amended the indictment to add first-degree rape, first-degree burglary and first-degree sexual offense to first-degree murder.",
+   "lines": [
+    32,
+    48
+   ],
+   "facts": [
+    "CHARGES: 1st-degree murder, rape, sexual offense, burglary"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-ABC11-CHARGES-2024",
+     "supports": "direct",
+     "passage": "Prosecutors have amended the original indictment to include charges of first-degree rape, first-degree burglary and first-degree sexual offense.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q26"
+    },
+    {
+     "source": "S-FOX-TRIAL",
+     "supports": "direct",
+     "passage": "He is on trial in Durham County on first-degree murder, rape, sexual offense, and burglary charges.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q39"
+    },
+    {
+     "source": "S-DTH-OPENING",
+     "supports": "direct",
+     "passage": "The defendant is Miguel Salguero Olivares, who has pleaded not guilty to first-degree murder, first-degree burglary, first-degree rape, and first-degree sexual offense.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q2 (attributed by inference)"
+    },
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "partial",
+     "passage": "Miguel Salguero Olivares is charged with first-degree murder, rape and burglary in the death of Faith Hedgepeth.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q60"
+    }
+   ],
+   "contradictions": [
+    "C30: AP's trial-opening story lists murder, rape and burglary only, omitting the sexual offense count (Q26)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "charges",
+   "notes": "Name all four charges as charges. 'Charged with', never 'raped'.",
+   "conflict_handling": "Script lists the four charges in the indictment as amended in 2024 (most outlets)."
+  },
+  {
+   "id": "C32",
+   "proposition": "He pleaded not guilty to all charges at a hearing reported in early August 2026; his lawyer James Rainsford said 'Not guilty to all charges.'",
+   "lines": [
+    33
+   ],
+   "facts": [
+    "PLEA: NOT GUILTY"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-DTH-PLEA",
+     "supports": "direct",
+     "passage": "His attorney, James Rainsford, said \"Not guilty to all charges\" when asked how his client pleaded.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q14"
+    },
+    {
+     "source": "S-DTH-PLEA",
+     "supports": "partial",
+     "passage": "Miguel Salguero-Olivares entered a not guilty plea to the 2012 killing of UNC student Faith Hedgepeth at a Monday hearing reported in early August 2026.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q14"
+    },
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "partial",
+     "passage": "He pleaded not guilty.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q10"
+    },
+    {
+     "source": "S-EASTIDAHO",
+     "supports": "contradicts",
+     "passage": "A later East Idaho News report says he pleaded not guilty in November 2024.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q14"
+    }
+   ],
+   "contradictions": [
+    "C32: Plea date: early Aug 2026 (DTH, Tar Heel Times 8/4/2026) vs Nov 2024 (East Idaho News; possibly an earlier arraignment)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "charges",
+   "attributed_to": "Defence counsel James Rainsford",
+   "notes": "Not-guilty plea must appear early in the film and whenever charges are restated.",
+   "conflict_handling": "Script says he has pleaded not guilty; no plea date."
+  },
+  {
+   "id": "C34",
+   "proposition": "Before trial, Judge Gregory denied a defence motion to dismiss over a lost, untested bloodstain swab from the bathroom door frame, while calling the loss 'absurd'; prosecutors called it negligence, not bad faith.",
+   "lines": [
+    34,
+    35,
+    36
+   ],
+   "facts": [
+    "Motion to dismiss: DENIED",
+    "Judge: lost sample 'absurd'"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-WRAL-ABSURD",
+     "supports": "direct",
+     "passage": "A judge denied a defense request to dismiss the Faith Hedgepeth murder case over a lost blood sample, but called the missing evidence \"absurd.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q13"
+    },
+    {
+     "source": "S-WRAL-ABSURD",
+     "supports": "direct",
+     "passage": "The sample was a bloodstain taken from a bathroom door frame in Hedgepeth's Chapel Hill apartment, and it was never tested.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q13"
+    },
+    {
+     "source": "S-WRAL-ABSURD",
+     "supports": "partial",
+     "passage": "Prosecutors argued there was no evidence of the sample being lost in bad faith. They characterized it as negligence.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q13"
+    },
+    {
+     "source": "S-ABC11-PRETRIAL",
+     "supports": "partial",
+     "passage": "Faith Hedgepeth murder case pretrial hearings wrap; defense focused on missing blood sample",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q31 result title"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "pretrial",
+   "attributed_to": "Judge Keith Gregory (ruling); prosecution (argument)",
+   "notes": "Key, balanced storyline: both the State's DNA and the defence's lost-evidence argument."
+  },
+  {
+   "id": "C36",
+   "proposition": "Judge Gregory excluded evidence about the investigative genetic genealogy at the State's request, and barred testimony on the underlying data of inconclusive DNA results; prosecutors may argue a pen at the scene was used to write the note.",
+   "lines": [
+    8,
+    37
+   ],
+   "facts": [
+    "Jury will not hear genealogy evidence"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-ABC11-PRETRIAL",
+     "supports": "direct",
+     "passage": "Gregory further excluded evidence related to investigative genetic genealogy.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q46"
+    },
+    {
+     "source": "S-NANDO-TRIAL",
+     "supports": "direct",
+     "passage": "Before trial, the judge further excluded evidence related to investigative genetic genealogy.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q42",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-ABC11-PRETRIAL",
+     "supports": "partial",
+     "passage": "The judge also barred testimony and arguments regarding the underlying data behind inconclusive DNA results. Prosecutors may still argue that a pen found at the scene was used to write a message on a takeout bag.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q46"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "onscreen_only",
+   "research_confidence": "high",
+   "category": "pretrial",
+   "attributed_to": "Judge Keith Gregory (Aug 2026)",
+   "notes": "Film-craft note: the genealogy story is public record from 2021 but the jury will not hear it. Do not present it as trial evidence."
+  },
+  {
+   "id": "C38",
+   "proposition": "The defence says his DNA was not found on the neck of the bottle or on parts he would have had to grip, that two bloody thumbprints on it were not matched to him, and it sought to limit DNA evidence on fingernails, underwear and a pen.",
+   "lines": [
+    42
+   ],
+   "facts": [
+    "Defence: no DNA on bottle neck",
+    "Defence: 2 bloody thumbprints not his"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-CBS17-DNA-KEYITEMS",
+     "supports": "direct",
+     "passage": "Defense attorneys say Salguero Olivares' DNA was not found on parts of that bottle that he would have had to touch to beat someone with it. Two bloody thumbprints found on that bottle were not matched to the defendant, defense attorneys say.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q48"
+    },
+    {
+     "source": "S-CBS17-DNA-KEYITEMS",
+     "supports": "direct",
+     "passage": "Under this argument, his DNA was not found on the neck of the liquor bottle the state calls the murder weapon.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q48"
+    },
+    {
+     "source": "S-DTH-PLEA",
+     "supports": "partial",
+     "passage": "The defense has challenged DNA testing on fingernails, underwear and a pen found at the scene.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q14"
+    },
+    {
+     "source": "S-NANDO-TRIAL",
+     "supports": "partial",
+     "passage": "The defense says his DNA was not on key items, including the bottle's neck, and questions how conclusive the trace results are.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q58",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-CBS17-BLOODHAND",
+     "supports": "partial",
+     "passage": "Defense attorneys have said the DNA was not found on parts of the bottle he would have had to touch to strike someone with it",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q30"
+    },
+    {
+     "source": "S-CHAPELBORO-OPENING",
+     "supports": "partial",
+     "passage": "They also argued that only trace amounts of DNA point to him and that a potential blood sample was not collected or was mishandled",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q30"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "defence",
+   "attributed_to": "Defence (James Rainsford et al.)",
+   "notes": "Give the defence equal weight to the State's DNA claims in the same sequence."
+  },
+  {
+   "id": "C40",
+   "proposition": "Jury selection began in late September 2026 and took about two weeks; twelve jurors and four alternates were seated.",
+   "lines": [
+    38
+   ],
+   "facts": [
+    "Jury: 12 + 4 alternates",
+    "3 men, 9 women"
+   ],
+   "assertion": "legal_status",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-JURY",
+     "supports": "direct",
+     "passage": "The court confirmed the three men and nine women on the jury, then found its first alternate juror, and spent the rest of the day seeking a second alternate.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q12"
+    },
+    {
+     "source": "S-DTH-PLEA",
+     "supports": "partial",
+     "passage": "His trial began on Sept. 28 with jury selection, followed by opening arguments on Wednesday.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q14"
+    },
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "partial",
+     "passage": "The trial started Wednesday, Oct. 7, after the fourth and final alternate was seated.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q10"
+    },
+    {
+     "source": "S-ABC11-JURY",
+     "supports": "partial",
+     "passage": "The search results show jury selection in the Faith Hedgepeth murder trial (defendant Miguel Salguero-Olivares) ran about two weeks in Durham, with alternates the last open step.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q12"
+    }
+   ],
+   "contradictions": [
+    "C40: Some reports call 7 Oct the start of the trial; others count from jury selection on 28 Sept, which explains 'second week' (ABC) vs 'third week' (WRAL)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": true,
+   "checked": "2026-10-11",
+   "use": "onscreen_only",
+   "research_confidence": "high",
+   "category": "trial",
+   "notes": "Never film or describe jurors.",
+   "conflict_handling": "Script gives the jury-selection start date and 12 + 4; no week count."
+  },
+  {
+   "id": "C42",
+   "proposition": "In her opening on 7 October 2026, ADA Angela Garcia-Lamarca told jurors the defendant's DNA was on the bottle, inside Hedgepeth's body and on the note, and that the only complete DNA profile ever developed from the scene is his: 'The evidence in this case is louder than the noise around it.'",
+   "lines": [
+    6,
+    39,
+    49
+   ],
+   "facts": [
+    "Prosecution: 'louder than the noise'",
+    "Opening statements: Oct 7, 2026"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-WRAL-OPENING",
+     "supports": "direct",
+     "passage": "\"The evidence in this case is louder than the noise around it,\" Garcia-LaMarca told jurors.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q2"
+    },
+    {
+     "source": "S-DTH-OPENING",
+     "supports": "direct",
+     "passage": "She said only one complete DNA profile has ever been created using evidence from the scene, and that it belongs to Salguero Olivares.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q2"
+    },
+    {
+     "source": "S-CBSNEWS-TRIAL",
+     "supports": "direct",
+     "passage": "In her opening statement, Assistant District Attorney Angela Garcia-Lamarca said the DNA was on the bottle, which was covered in blood, and inside Hedgepeth's body, as well as on a note on a fast-food bag",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q30"
+    },
+    {
+     "source": "S-WUNC-2026",
+     "supports": "partial",
+     "passage": "A 2026 WUNC report says the prosecution's opening statement cited the defendant's DNA on a note written on a fast-food bag found at the scene, along with DNA on the murder weapon.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q4"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "prosecution",
+   "attributed_to": "ADA Angela Garcia-Lamarca (opening statement)",
+   "notes": "Always 'prosecutors say' / 'the State told jurors'."
+  },
+  {
+   "id": "C43",
+   "proposition": "The State's theory: the defendant was a stranger who killed Hedgepeth in a fit of rage, raped her, left a three-line note and walked out; 'The fact that he was a stranger is reason it took years to find him.'",
+   "lines": [
+    40
+   ],
+   "facts": [
+    "Prosecution: 'a stranger'"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-WRAL-OPENING",
+     "supports": "direct",
+     "passage": "She also argued that \"This defendant was a stranger to Faith. The fact that he was a stranger is reason it took years to find him.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q2"
+    },
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "direct",
+     "passage": "The trial of Miguel Salguero Olivares, charged with first-degree murder, rape and burglary, began with prosecutors arguing a stranger killed Faith Hedgepeth in a rage and left DNA across the scene.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q60"
+    },
+    {
+     "source": "S-DTH-OPENING",
+     "supports": "direct",
+     "passage": "According to the prosecution, he killed Hedgepeth with a Bacardi rum bottle, raped her, left a three-line note on a paper bag, and walked out of the apartment.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q49"
+    },
+    {
+     "source": "S-CBSNEWS-TRIAL",
+     "supports": "partial",
+     "passage": "CBS News reports that the prosecution's case is that she was killed in a fit of rage by a stranger who left his DNA all over the crime scene.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q48"
+    }
+   ],
+   "contradictions": [
+    "C43: Contrasts with the 2012-2013 police view (C16, C17) and with the defence's consent theory (C45)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "prosecution",
+   "attributed_to": "Prosecution (opening statement)",
+   "notes": "Argument, not fact. Pair with the defence response in the same scene.",
+   "conflict_handling": "Script gives the State's 'stranger' theory as the prosecutor's words, alongside the 2012 police statement and the defence's answer."
+  },
+  {
+   "id": "C44",
+   "proposition": "Defence lawyer James Rainsford told jurors the DNA must be connected to the crime, distinguished a statistical likelihood from a match, said prosecutors left out key details including Rosario's inconsistent statements, police mishandling and blood in the bathroom, and asked 'Where's the rest of the evidence?'",
+   "lines": [
+    7,
+    41,
+    49
+   ],
+   "facts": [
+    "Defence: 'Where's the rest of the evidence?'",
+    "Defence: 'You have to connect them'"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-CBSNEWS-TRIAL",
+     "supports": "direct",
+     "passage": "Defense attorney James Rainsford told jurors that prosecutors left out key details and asked \"Where's the rest of the evidence?\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q30"
+    },
+    {
+     "source": "S-CBSNEWS-TRIAL",
+     "supports": "direct",
+     "passage": "Defense attorney James Rainsford said of the DNA evidence, \"You have to connect them.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q48"
+    },
+    {
+     "source": "S-WRAL-OPENING",
+     "supports": "direct",
+     "passage": "He pushed back on its reliability, and he distinguished between testing for a likelihood and a DNA match.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q2"
+    },
+    {
+     "source": "S-DTH-OPENING",
+     "supports": "direct",
+     "passage": "He argued that the questionable collection and testing of evidence creates reasonable doubt.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q49"
+    },
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "partial",
+     "passage": "The defense says the evidence doesn't add up.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q60"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "defence",
+   "attributed_to": "James Rainsford (defence opening)",
+   "notes": "Defence lines may be narrated with attribution; do not repeat insinuations about Rosario beyond what is attributed and necessary."
+  },
+  {
+   "id": "C46",
+   "proposition": "Hedgepeth's family say they did not know the defendant and know of no prior interaction between him and Faith.",
+   "lines": [
+    46
+   ],
+   "facts": [],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-ABC11-FAMILY-COURT",
+     "supports": "direct",
+     "passage": "Family members of Hedgepeth said they did not know her alleged killer and the two had no known prior interactions.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q37",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-FOX-TRIAL",
+     "supports": "partial",
+     "passage": "Investigators had first used genetic genealogy, and the information pointed to a man who was a stranger to Hedgepeth's loved ones.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q39"
+    },
+    {
+     "source": "S-NANDO-TRIAL",
+     "supports": "partial",
+     "passage": "The information led to Salguero-Olivares, a stranger to Hedgepeth's loved ones.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q42",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [
+    "C46: Defence suggestion they may have known each other (C45)."
+   ],
+   "status": "REQUIRES REVIEW",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "family",
+   "attributed_to": "Hedgepeth family (to ABC11)",
+   "notes": "Phrase as 'the family says they had never heard of him'; avoid the source's phrase 'alleged killer'.",
+   "conflict_handling": "Script gives the family's statement; the defence's contrary suggestion (single source) is not used."
+  },
+  {
+   "id": "C47",
+   "proposition": "Testifying for the State, roommate Karena Rosario reaffirmed the account she first gave police and said she did not know the defendant, had never seen him in the apartment and never heard Hedgepeth mention him.",
+   "lines": [
+    43
+   ],
+   "facts": [
+    "Roommate: 'did not know him'"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-WRAL-DAY2",
+     "supports": "direct",
+     "passage": "She also said she did not know suspect Miguel Salguero Olivares nor did she ever hear Hedgepeth mention him to her.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q7 (attributed by inference)",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-9SJ-ROOMMATE",
+     "supports": "direct",
+     "passage": "Asked whether she knew the defendant, whether he had ever been in her apartment, or whether Hedgepeth had ever mentioned a man named Miguel, Rosario responded no to all three.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q52"
+    },
+    {
+     "source": "S-WRAL-DAY2",
+     "supports": "partial",
+     "passage": "On direct examination, Rosario reaffirmed the account she had given to police in the days following Hedgepeth's killing",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q7",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-9SJ-QUESTIONS",
+     "supports": "partial",
+     "passage": "Her roommate, Karena Rosario, has said in interviews with police that she didn't recognize Salguero-Olivares, but she also didn't know all of Hedgepeth's friends.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q52"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "high",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "testimony",
+   "attributed_to": "Karena Rosario (State witness)",
+   "notes": "Do NOT use the personal medical detail Rosario gave in testimony (on the do-not-use list)."
+  },
+  {
+   "id": "C50",
+   "proposition": "Friend Marisol Rangel testified that Faith and Karena were 'really close. Honestly like sisters', and described Faith as 'goofy', full of joy, someone who gave great hugs.",
+   "lines": [
+    12
+   ],
+   "facts": [
+    "\"Honestly like sisters\""
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-NANDO-FRIENDS",
+     "supports": "direct",
+     "passage": "She said of the two women: \"Faith and Karena were really close. Honestly like sisters.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q43",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-NANDO-FRIENDS",
+     "supports": "direct",
+     "passage": "Rangel described Hedgepeth as \"goofy,\" full of joy and someone who gave great hugs.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q43",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-ABC11-LIVE-WK1",
+     "supports": "partial",
+     "passage": "Marisol Rangel recalls friendship with Faith Hedgepeth, Karena Rosario - ABC11 Raleigh-Durham",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q31 result title",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "medium",
+   "category": "testimony",
+   "attributed_to": "Marisol Rangel (State witness)",
+   "notes": "Good, humanising, non-graphic. Use for the portrait of Faith."
+  },
+  {
+   "id": "C51",
+   "proposition": "Chapel Hill forensic technician Tamika Price testified that a separate clean swab should have been packaged from the bathroom doorframe stain that tested positive for blood: 'That step was missed.' She said she was newly hired and in training, could not locate the swab, and that no other evidence was missing.",
+   "lines": [
+    44
+   ],
+   "facts": [
+    "\"That step was missed\""
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-WRAL-STEP-MISSED",
+     "supports": "direct",
+     "passage": "She said \"That step was missed.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q11"
+    },
+    {
+     "source": "S-WRAL-STEP-MISSED",
+     "supports": "direct",
+     "passage": "Price testified that a clean swab should have been taken and packaged separately from a bathroom doorframe stain that tested positive for blood, and she admitted the omission was a mistake.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q11"
+    },
+    {
+     "source": "S-9SJ-LIVE",
+     "supports": "direct",
+     "passage": "Price testified she could not locate the swab in evidence storage and acknowledged she was newly hired and still in training at the time of the investigation.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q32"
+    },
+    {
+     "source": "S-FOX-TRIAL",
+     "supports": "partial",
+     "passage": "The forensic technician acknowledged processing mistakes and said she was still in training during the 2012 investigation.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q39"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "testimony",
+   "attributed_to": "Tamika Price (Chapel Hill PD forensic technician, State witness)",
+   "notes": "Strong, fair, documented. Avoid implying whose blood it was; it was never tested."
+  },
+  {
+   "id": "C58",
+   "proposition": "Hedgepeth's parents, siblings and friends have attended the trial; several jurors cried during the medical examiner's testimony; her father Roland said it was especially hard knowing the crime-scene images were being shown publicly. Haliwa-Saponi Chief Dr. Brucie Ogletree Richardson attended.",
+   "lines": [
+    45
+   ],
+   "facts": [],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-FAMILY-COURT",
+     "supports": "direct",
+     "passage": "Her parents, siblings, nieces, and close friends filled the courtroom and supported one another through the testimony.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q37",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-ABC11-FAMILY-COURT",
+     "supports": "direct",
+     "passage": "However, he said it was especially difficult knowing the images were now being shown publicly in court and viewed by jurors, attorneys and others in attendance.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q37",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-ABC11-LIVE-WK1",
+     "supports": "partial",
+     "passage": "The judge decided the jury needed a break after graphic testimony, and several jurors cried as the medical examiner described the extent of Faith Hedgepeth's injuries.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q6",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-NCBEAT",
+     "supports": "partial",
+     "passage": "Faith Hedgepeth Trial: Jurors Cry Over Graphic Evidence",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q37 result title"
+    },
+    {
+     "source": "S-ABC11-FAMILY-COURT",
+     "supports": "partial",
+     "passage": "Several community members attended Thursday's proceedings, including Dr. Brucie Ogletree Richardson, chief of the Haliwa-Saponi Tribe.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q37",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    }
+   ],
+   "contradictions": [],
+   "status": "REQUIRES REVIEW",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "family",
+   "notes": "Do not describe jurors individually."
+  },
+  {
+   "id": "C59",
+   "proposition": "After the 2021 arrest the family said they were relieved and thanked Chapel Hill police and the SBI; her mother Connie said she 'cried tears of joy'.",
+   "lines": [
+    31
+   ],
+   "facts": [
+    "\"Tears of joy\" - Connie Hedgepeth, 2021"
+   ],
+   "assertion": "attributed_statement",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-NBC-DATELINE-2021",
+     "supports": "direct",
+     "passage": "Her mother, Connie Hedgepeth, said she \"cried tears of joy\" after learning about the arrest.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q19"
+    },
+    {
+     "source": "S-ABC11-FAMILY-2021",
+     "supports": "direct",
+     "passage": "The family's written statement said they were relieved that someone had been arrested and thanked the Chapel Hill Police Department and the State Bureau of Investigation.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q19"
+    },
+    {
+     "source": "S-ABC11-FAMILY-2021",
+     "supports": "partial",
+     "passage": "Her father, Roland Hedgepeth, said his mind went right back to September 2012 when he heard the news.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q19"
+    },
+    {
+     "source": "S-ABC11-FAMILY-2021",
+     "supports": "partial",
+     "passage": "'We are relieved:' Family of Faith Hedgepeth releases statement after arrest in UNC student's murder",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q19 result title"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "low",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "family",
+   "attributed_to": "Hedgepeth family; Connie and Roland Hedgepeth",
+   "notes": "Family expressions of relief at an arrest are not evidence of guilt; frame accordingly."
+  },
+  {
+   "id": "H-ONTRIAL",
+   "proposition": "As of 13 October 2026 the defendant is on trial in Durham County Superior Court; he has pleaded not guilty; no verdict has been reached.",
+   "lines": [
+    5,
+    8,
+    47,
+    48,
+    50
+   ],
+   "facts": [
+    "AS OF OCT 13, 2026: TRIAL ONGOING",
+    "NO VERDICT",
+    "PLEADED NOT GUILTY",
+    "Durham County",
+    "OCT 13, 2026"
+   ],
+   "assertion": "legal_status",
+   "subjects": [
+    "Miguel Enrique Salguero-Olivares"
+   ],
+   "matter": "killing of Faith Hedgepeth (Chapel Hill, 2012)",
+   "evidence": [
+    {
+     "source": "S-CBS17-LIVE",
+     "supports": "direct",
+     "passage": "Yes, the trial of Miguel Salguero-Olivares for the 2012 killing of UNC student Faith Hedgepeth is ongoing, and testimony was scheduled for today, Tuesday, October 13.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q28"
+    },
+    {
+     "source": "S-CBS17-LIVE",
+     "supports": "direct",
+     "passage": "On Tuesday morning, testimony will continue with Chapel Hill Police Department Captain Johnnie Britt on the stand.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q28"
+    },
+    {
+     "source": "S-WRAL-MONDAY",
+     "supports": "partial",
+     "passage": "The Faith Hedgepeth murder trial of Miguel Salguero-Olivares is underway in Durham, and the latest coverage is from October 12, 2026.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q1"
+    },
+    {
+     "source": "S-CBS17-LIVE",
+     "supports": "partial",
+     "passage": "I found no verdict or report from later today, so these are the latest available updates rather than a live feed.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q28"
+    },
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "direct",
+     "passage": "He pleaded not guilty.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q10",
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-FOX-TRIAL",
+     "supports": "direct",
+     "passage": "He is on trial in Durham County on first-degree murder, rape, sexual offense, and burglary charges.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q39"
+    },
+    {
+     "source": "S-DTH-OPENING",
+     "supports": "direct",
+     "passage": "The defendant is Miguel Salguero Olivares, who has pleaded not guilty to first-degree murder, first-degree burglary, first-degree rape, and first-degree sexual offense.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q2 (attributed by inference)"
+    },
+    {
+     "source": "S-AP-TRIAL",
+     "supports": "direct",
+     "passage": "Miguel Salguero Olivares is charged with first-degree murder, rape and burglary in the death of Faith Hedgepeth.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q60",
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [
+    "C41: Week count: 'second week' (ABC, Fox) vs 'third week' (WRAL) vs 'fifth day of testimony' (CBS17)."
+   ],
+   "status": "CORROBORATED",
+   "risk": "high",
+   "time_sensitive": true,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "trial",
+   "notes": "Every status line in the film must carry 'as of' and be re-checked at lock.",
+   "dossier_claims": [
+    "C41"
+   ],
+   "conflict_handling": "Script says he has pleaded not guilty and the trial is ongoing as of 13 October 2026."
+  },
+  {
+   "id": "H-NOTE",
+   "proposition": "A handwritten note on a fast-food takeout bag was found on the bed near Hedgepeth's body; police said they believed the killer wrote it. It reads in part 'I'm not stupid', an expletive, and 'Jealous'.",
+   "lines": [
+    1,
+    2,
+    19,
+    20,
+    21
+   ],
+   "facts": [
+    "NOTE ON TAKEOUT BAG",
+    "\"I'm not stupid\" ... \"Jealous\"",
+    "Released Sept 2014",
+    "2014",
+    "Police: written by the killer"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-ABC11-NOTE-2014",
+     "supports": "direct",
+     "passage": "A handwritten note was on a take-out fast food bag on the bed near Hedgepeth's body.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q4"
+    },
+    {
+     "source": "S-ABC11-NOTE-2014",
+     "supports": "direct",
+     "passage": "Police believe the note was written by Hedgepeth's killer. Police released it in September 2014, two years after the 2012 killing.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q4"
+    },
+    {
+     "source": "S-CBSNEWS-NOTE-2014",
+     "supports": "direct",
+     "passage": "said the note read \"I'm Not Stupid (expletive) Jealous,\" citing WRAL.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q36"
+    },
+    {
+     "source": "S-FOX-TRIAL",
+     "supports": "direct",
+     "passage": "The note reads, in part, \"I'm not stupid\" followed by \"Jealous.\"",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q39",
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-WRAL-NOTE-2014",
+     "supports": "partial",
+     "passage": "(released the note as a photo in the 2014 disclosure) said it \"appears to read\" a version with \"(expletive)\" in place of the profanity, and it did not print the full text.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q36"
+    }
+   ],
+   "contradictions": [
+    "C15: The wording 'jk' given in the research brief could NOT be verified: 'None of the results contain \"jk,\"' (Q36). Every source renders the second line as 'Jealous'. Profanity is rendered variously."
+   ],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "evidence",
+   "attributed_to": "Chapel Hill Police (2014 release)",
+   "notes": "Show the 2014 police-released image only if rights cleared; on screen write 'I'm not stupid [expletive] / Jealous'. Never use 'jk'.",
+   "dossier_claims": [
+    "C15"
+   ],
+   "conflict_handling": "Script quotes only 'I'm not stupid' and 'Jealous'; the expletive is not spoken or shown."
+  },
+  {
+   "id": "H-COLD",
+   "proposition": "For about nine years no one was arrested; police analysed hundreds of DNA samples from men around Chapel Hill without a match.",
+   "lines": [
+    3,
+    24
+   ],
+   "facts": [
+    "9 YEARS",
+    "HUNDREDS OF SAMPLES - NO MATCH",
+    "No arrest"
+   ],
+   "assertion": "fact",
+   "subjects": [],
+   "matter": null,
+   "evidence": [
+    {
+     "source": "S-WRAL-DETAILS-2014",
+     "supports": "direct",
+     "passage": "It also said that DNA evidence found at the scene of her death pointed to a male killer.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q41",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-WRAL-DETAILS-2014",
+     "supports": "direct",
+     "passage": "DNA from the semen matched male DNA found elsewhere in the apartment, they said.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q41",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result"
+    },
+    {
+     "source": "S-ABC11-911-2014",
+     "supports": "direct",
+     "passage": "Police analyzed \"hundreds of DNA samples\" from men in and around Chapel Hill, with no match found.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q15",
+     "attribution": "best_effort: the search summary did not name its outlet; filed under the most likely result",
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-WRAL-TIMELINE-2021",
+     "supports": "direct",
+     "passage": "\"None of the samples have been found to match the DNA profile of the offender,\" the police statement said.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "quoted_in_result",
+     "locator": "Q41",
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    },
+    {
+     "source": "S-NBC-DATELINE-2020",
+     "supports": "direct",
+     "passage": "A later NBC report, published nearly eight years after the killing, said male DNA was found at the scene, but her killer has never been found.",
+     "passage_type": "search_excerpt",
+     "excerpt_kind": "result_summary",
+     "locator": "Q3",
+     "narrowed": "partial for the research claim; states this narrower proposition directly"
+    }
+   ],
+   "contradictions": [],
+   "status": "CORROBORATED",
+   "risk": "medium",
+   "time_sensitive": false,
+   "checked": "2026-10-11",
+   "use": "narrate",
+   "research_confidence": "high",
+   "category": "investigation",
+   "attributed_to": "Chapel Hill Police",
+   "notes": "Narrate 'male DNA'; avoid the word 'semen' in narration (dignity), keep for on-screen legal context only if essential.",
+   "dossier_claims": [
+    "C18"
+   ]
+  }
+ ]
+}

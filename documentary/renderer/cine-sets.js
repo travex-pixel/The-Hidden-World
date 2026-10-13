@@ -402,4 +402,91 @@
       return { light: { dir: -1, rim: night ? '#9ab8ff' : '#fff1cf', key: night ? '#9ab8ff' : '#fff1cf' }, layers: [[0.04, sky], [0.2, pines], [0.45, bld + stair], [0.7, lot], [0.85, cars + lamps], [0.95, tape], [1.0, ''], [1.05, pol]] };
     }
   });
+
+  // ---------------------------------------------------------------- 1950s rural Wisconsin (Ed Gein episode); generic, no real building, sign or grave
+  const bareTree = (x, y, s, c) => { let f = `<path d="M${x} ${y} L${x} ${y - 300 * s}" stroke="${c}" stroke-width="${f1(16 * s)}" stroke-linecap="round"/>`;
+    [[-1, 0.55, 140], [1, 0.45, 170], [-1, 0.8, 110], [1, 0.75, 120], [0.3, 0.95, 90]].forEach(([d, h, l]) => {
+      const yy = y - 300 * s * h; f += `<path d="M${x} ${f1(yy)} Q ${f1(x + d * l * 0.5 * s)} ${f1(yy - 40 * s)} ${f1(x + d * l * s)} ${f1(yy - 90 * s)}" stroke="${c}" stroke-width="${f1(7 * s)}" fill="none" stroke-linecap="round"/>`; });
+    return f; };
+  const fiftiesCar = (x, y, s, col) => `<g transform="translate(${x} ${y}) scale(${s})"><path d="M-170 0 L-170 -50 Q -160 -70 -110 -74 L-70 -118 Q -40 -132 40 -132 Q 90 -130 110 -84 L160 -78 Q 185 -70 185 -40 L185 0 Z" fill="${col}" stroke="${INK}" stroke-width="5"/>` +
+    `<path d="M-60 -112 L-20 -120 L-20 -82 L-90 -80 Z M0 -122 L60 -120 L90 -84 L0 -84 Z" fill="#9ab0c0" stroke="${INK}" stroke-width="4"/><rect x="-176" y="-24" width="365" height="12" fill="#c8c8c8" stroke="${INK}" stroke-width="3"/>` +
+    `<circle cx="-100" cy="0" r="30" fill="#1a1a1a" stroke="${INK}" stroke-width="4"/><circle cx="-100" cy="0" r="12" fill="#bbb"/><circle cx="110" cy="0" r="30" fill="#1a1a1a" stroke="${INK}" stroke-width="4"/><circle cx="110" cy="0" r="12" fill="#bbb"/></g>`;
+  E.registerSets({
+    // an isolated, run-down farmhouse on flat land in late autumn: bare trees, a shed, snow patches; o.mode 'dusk'|'night'|'day'; o.lights 0..1 searchers' lanterns; o.fire 0..1 a glow (the 1958 fire, seen from far off)
+    eg_farm(ctx, o = {}) {
+      const t = ctx.t, m = o.mode || 'dusk', night = m === 'night', dusk = m === 'dusk', r = R(19);
+      const top = night ? '#04060c' : dusk ? '#2a2a3a' : '#9aa6b0', bot = night ? '#141820' : dusk ? '#b07a5a' : '#d8d6cc';
+      let sky = `<defs><linearGradient id="egsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${bot}"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#egsky)"/>`;
+      if (night) sky += Array.from({ length: 50 }, () => `<circle cx="${f1(-400 + r() * 1900)}" cy="${f1(-100 + r() * 800)}" r="${f1(0.8 + r() * 1.4)}" fill="#fff" opacity="${f1(0.25 + 0.4 * r())}"/>`).join('');
+      const fire = o.fire ? wash(560, 980, 520, 260, '#ff7a2a', 0.55 * o.fire * flick(t, 3)) + wash(560, 900, 300, 200, '#ffd27a', 0.4 * o.fire * flick(t, 7)) : '';
+      const far = `<rect x="-600" y="1040" width="${W + 1200}" height="40" fill="${night ? '#0c0e12' : '#4a4436'}"/>` + Array.from({ length: 14 }, (_, i) => bareTree(-520 + i * 150 + r() * 40, 1050, 0.45 + r() * 0.2, night ? '#0a0a0c' : '#3a3228')).join('');
+      const wall = night ? '#3a3632' : '#8a8274', roof = night ? '#1e1c1c' : '#4a3e36', lit = o.lit ?? 0;
+      const win = (x, y) => `<rect x="${x}" y="${y}" width="70" height="90" fill="${lit ? '#d8a85a' : (night ? '#0c0c10' : '#2a2a2e')}" stroke="${INK}" stroke-width="5"/><path d="M${x + 35} ${y} L${x + 35} ${y + 90} M${x} ${y + 45} L${x + 70} ${y + 45}" stroke="${shade(wall, 0.7)}" stroke-width="4"/>` +
+        (r() < 0.5 ? `<path d="M${x - 6} ${y + 20} L${x + 76} ${y + 34} M${x - 6} ${y + 60} L${x + 76} ${y + 70}" stroke="#5a4a3a" stroke-width="10"/>` : '');
+      const house = `<rect x="250" y="760" width="560" height="380" fill="${wall}" stroke="${INK}" stroke-width="6"/>` + Array.from({ length: 12 }, (_, i) => `<path d="M250 ${790 + i * 30} L810 ${790 + i * 30}" stroke="${shade(wall, 0.85)}" stroke-width="3"/>`).join('') +
+        `<path d="M220 770 L530 560 L840 770 Z" fill="${roof}" stroke="${INK}" stroke-width="6"/><rect x="600" y="600" width="40" height="110" fill="${shade(roof, 1.3)}" stroke="${INK}" stroke-width="4"/>` +
+        win(310, 830) + win(680, 830) + win(310, 990) + `<rect x="520" y="980" width="90" height="160" fill="${night ? '#141010' : '#3a2a20'}" stroke="${INK}" stroke-width="5"/>` +
+        `<rect x="430" y="1110" width="270" height="30" fill="${shade(wall, 0.7)}" stroke="${INK}" stroke-width="4"/>`;
+      const shed = `<rect x="-380" y="900" width="420" height="240" fill="${night ? '#2a2420' : '#6a5440'}" stroke="${INK}" stroke-width="6"/><path d="M-400 910 L-170 800 L60 910 Z" fill="${shade(roof, 1.1)}" stroke="${INK}" stroke-width="6"/>` +
+        Array.from({ length: 9 }, (_, i) => `<path d="M${-360 + i * 46} 910 L${-360 + i * 46} 1140" stroke="${INK}" stroke-width="2" opacity="0.5"/>`).join('') + `<rect x="-230" y="1000" width="110" height="140" fill="${night ? '#0c0a0a' : '#2a2018'}" stroke="${INK}" stroke-width="4"/>`;
+      const ground = `<rect x="-600" y="1130" width="${W + 1200}" height="${H}" fill="${night ? '#1a1a16' : dusk ? '#5a4a36' : '#7a6a4e'}"/>` +
+        Array.from({ length: 26 }, () => `<ellipse cx="${f1(-500 + r() * 2000)}" cy="${f1(1160 + r() * 600)}" rx="${f1(30 + r() * 90)}" ry="${f1(6 + r() * 12)}" fill="${night ? '#5a5e66' : '#e8e8e4'}" opacity="${f1(0.5 + 0.3 * r())}"/>`).join('') +
+        `<path d="M480 1140 L620 1140 L900 ${H + 100} L200 ${H + 100} Z" fill="${night ? '#24221c' : '#8a7a5a'}" opacity="0.8"/>`;
+      const near = bareTree(-250, 1400, 1.4, night ? '#08080a' : '#2a221a') + bareTree(1300, 1420, 1.6, night ? '#08080a' : '#2a221a');
+      const lanterns = o.lights ? [120, 380, 980].map((x, i) => `<circle cx="${f1(x + 15 * Math.sin(t * 0.8 + i))}" cy="1230" r="7" fill="#fff0c0"/>` + wash(x + 15 * Math.sin(t * 0.8 + i), 1230, 70, 50, '#ffe0a0', 0.5 * o.lights * flick(t, i))).join('') : '';
+      return { light: { dir: 1, rim: night ? '#9ab8ff' : '#ffd8b0', key: night ? '#9ab8ff' : '#ffe6cc' }, layers: [[0.04, sky + fire], [0.2, far], [0.45, shed + house], [0.7, ground], [0.85, lanterns], [0.95, near], [1.0, '']] };
+    },
+    // a 1950s small-town main street in November: brick and clapboard storefronts (no readable signs), a parked 1950s car, a water tower; o.mode 'day'|'dusk'|'night'
+    eg_mainstreet(ctx, o = {}) {
+      const t = ctx.t, m = o.mode || 'day', night = m === 'night', dusk = m === 'dusk', r = R(23);
+      const top = night ? '#05070e' : dusk ? '#3a3040' : '#a8b4c0', bot = night ? '#1a1e2a' : dusk ? '#d08a60' : '#e4e2da';
+      const sky = `<defs><linearGradient id="egms" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${bot}"/></linearGradient></defs><rect x="-600" y="-600" width="${W + 1200}" height="${H + 1200}" fill="url(#egms)"/>`;
+      const tower = `<g transform="translate(1180 520)"><rect x="-6" y="0" width="12" height="360" fill="#3a3a3a"/><path d="M-70 360 L0 120 L70 360" stroke="#3a3a3a" stroke-width="10" fill="none"/><ellipse cx="0" cy="0" rx="110" ry="40" fill="${night ? '#2a2a30' : '#8a8e94'}" stroke="${INK}" stroke-width="5"/><rect x="-110" y="0" width="220" height="90" fill="${night ? '#2a2a30' : '#8a8e94'}" stroke="${INK}" stroke-width="5"/><ellipse cx="0" cy="90" rx="110" ry="30" fill="${night ? '#22222a' : '#7a7e84'}"/></g>`;
+      const cols = ['#8a3a2a', '#c8b89a', '#5a6a5a', '#a87a4a', '#7a2a2a', '#d0c8b0'];
+      let fronts = '';
+      for (let i = 0; i < 6; i++) { const x = -560 + i * 340, h = 420 + (i % 3) * 70, c = night ? shade(cols[i], 0.45) : cols[i], lit = (night || dusk) && r() < 0.6;
+        fronts += `<rect x="${x}" y="${1120 - h}" width="320" height="${h}" fill="${c}" stroke="${INK}" stroke-width="6"/><rect x="${x - 6}" y="${1120 - h}" width="332" height="26" fill="${shade(c, 0.7)}" stroke="${INK}" stroke-width="4"/>` +
+          `<rect x="${x + 30}" y="${1120 - h + 60}" width="260" height="48" fill="${shade(c, 0.75)}" stroke="${INK}" stroke-width="3"/>` +
+          [0, 1, 2].map(k => `<rect x="${x + 30 + k * 90}" y="${1120 - h + 140}" width="60" height="80" fill="${lit ? '#e8c47a' : (night ? '#141822' : '#5a6a7a')}" stroke="${INK}" stroke-width="4"/>`).join('') +
+          `<rect x="${x + 30}" y="900" width="170" height="200" fill="${lit ? '#f0d08a' : (night ? '#10141c' : '#6a7a88')}" stroke="${INK}" stroke-width="5"/><rect x="${x + 220}" y="930" width="70" height="190" fill="${shade(c, 0.5)}" stroke="${INK}" stroke-width="4"/>` +
+          `<path d="M${x + 10} 900 L${x + 310} 900 L${x + 290} 860 L${x + 30} 860 Z" fill="${['#2a5a3a', '#7a2a2a', '#2a3a6a'][i % 3]}" stroke="${INK}" stroke-width="4"/>` + (lit ? wash(x + 115, 1000, 120, 100, '#ffd27a', 0.3) : ''); }
+      const street = `<rect x="-600" y="1120" width="${W + 1200}" height="40" fill="${night ? '#3a3a3e' : '#9a968c'}" stroke="${INK}" stroke-width="3"/><rect x="-600" y="1160" width="${W + 1200}" height="${H}" fill="${night ? '#16161a' : '#5a5a5c'}"/>` +
+        Array.from({ length: 8 }, (_, i) => `<rect x="${-500 + i * 260}" y="1460" width="140" height="10" fill="${night ? '#5a5a3a' : '#d8d0a0'}" opacity="0.7"/>`).join('');
+      const car = fiftiesCar(1000, 1350, 1.1, night ? '#2a3a4a' : '#5a7a9a');
+      const lamp_ = [80, 760].map(x => `<path d="M${x} 1160 L${x} 880" stroke="#1a1a1a" stroke-width="10"/><path d="M${x} 880 Q ${x + 30} 860 ${x + 60} 880" stroke="#1a1a1a" stroke-width="8" fill="none"/><circle cx="${x + 60}" cy="890" r="12" fill="${night || dusk ? '#ffe8b0' : '#ddd'}"/>` + (night || dusk ? wash(x + 60, 900, 110, 90, '#ffd88a', 0.4 * flick(t, x)) : '')).join('');
+      return { light: { dir: -1, rim: night ? '#9ab8ff' : '#fff1cf', key: night ? '#9ab8ff' : '#fff1cf' }, layers: [[0.04, sky], [0.15, tower], [0.45, fronts], [0.7, street], [0.85, car + lamp_], [1.0, '']] };
+    },
+    // a small 1950s hardware store inside: shelves of tins and tools, a counter with a cash register (drawer open if o.open), a wood floor; no blood or body is ever drawn
+    eg_store(ctx, o = {}) {
+      const t = ctx.t, r = R(29), dim = o.dim ?? 0;
+      let back = BG(dim ? '#2a2620' : '#6a5a44') + planks(-460, W + 460, 300, 1140, 80, dim ? '#3a3024' : '#8a7050', 9);
+      for (let row = 0; row < 4; row++) { const y = 380 + row * 170;
+        back += `<rect x="-460" y="${y + 120}" width="${W + 920}" height="16" fill="#3a2a1a" stroke="${INK}" stroke-width="3"/>`;
+        for (let i = 0; i < 26; i++) { const x = -440 + i * 74 + r() * 10, h = 50 + r() * 60, c = ['#a83a2a', '#3a6a8a', '#c8a03a', '#5a7a4a', '#8a8a8a'][Math.floor(r() * 5)];
+          back += `<rect x="${f1(x)}" y="${f1(y + 120 - h)}" width="54" height="${f1(h)}" fill="${dim ? shade(c, 0.5) : c}" stroke="${INK}" stroke-width="3" rx="4"/>`; } }
+      back += `<rect x="760" y="300" width="160" height="200" fill="${dim ? '#2a3038' : '#c8d8e0'}" stroke="${INK}" stroke-width="8"/>` + wash(840, 400, 200, 180, '#fff6dc', dim ? 0.1 : 0.4);
+      const floor = `<rect x="-460" y="1140" width="${W + 920}" height="${H}" fill="${dim ? '#2a2018' : '#7a5a3a'}"/>` + Array.from({ length: 12 }, (_, i) => `<path d="M${-460 + i * 160} 1140 L${-560 + i * 200} ${H + 200}" stroke="${INK}" stroke-width="2" opacity="0.4"/>`).join('');
+      const open = o.open ? 1 : 0;
+      const counter = `<rect x="100" y="1080" width="880" height="230" fill="${dim ? '#3a2a1c' : '#7a4e2e'}" stroke="${INK}" stroke-width="6"/><rect x="80" y="1060" width="920" height="30" fill="${dim ? '#4a3626' : '#9a6a40'}" stroke="${INK}" stroke-width="5"/>` +
+        `<g transform="translate(640 1060)"><rect x="-90" y="-150" width="180" height="150" rx="10" fill="${dim ? '#4a4a40' : '#b8a878'}" stroke="${INK}" stroke-width="5"/><rect x="-70" y="-130" width="140" height="40" fill="#222" stroke="${INK}" stroke-width="3"/>` +
+        Array.from({ length: 12 }, (_, i) => `<circle cx="${-60 + (i % 6) * 24}" cy="${-70 + Math.floor(i / 6) * 26}" r="9" fill="#e8e0c8" stroke="${INK}" stroke-width="2"/>`).join('') +
+        `<rect x="-95" y="${f1(-8 + open * 50)}" width="190" height="40" fill="${dim ? '#3a3a30' : '#8a7a50'}" stroke="${INK}" stroke-width="4"/></g>`;
+      const light = wash(540, 600, 700, 400, '#fff2d0', dim ? 0.06 : 0.2);
+      return { light: { dir: 1, rim: '#ffe6c0', key: '#fff1dc' }, layers: [[0.2, back], [0.6, floor], [0.85, counter + light], [1.0, '']] };
+    }
+  });
+
+  E.registerSets({
+    // a plain mid-century state-hospital room: pale green walls, a tall window with a wire grille, an iron bed, a chair; generic, not a real institution
+    eg_ward(ctx, o = {}) {
+      const t = ctx.t, r = R(37);
+      let back = BG('#8aa094') + `<rect x="-500" y="980" width="${W + 1000}" height="160" fill="#6a7e72"/>` + `<rect x="-500" y="970" width="${W + 1000}" height="14" fill="#4a5a50"/>`;
+      back += `<rect x="600" y="300" width="300" height="420" fill="#dfe8e4" stroke="${INK}" stroke-width="10"/>` + Array.from({ length: 9 }, (_, i) => `<path d="M${600 + i * 37} 300 L${600 + i * 37} 720 M600 ${300 + i * 52} L900 ${300 + i * 52}" stroke="#7a8a84" stroke-width="3"/>`).join('') +
+        wash(750, 520, 360, 320, '#ffffe8', 0.45) + `<path d="M600 720 L460 1140 L1180 1140 L900 720 Z" fill="#fffff0" opacity="0.10"/>`;
+      const floor = `<rect x="-500" y="1140" width="${W + 1000}" height="${H}" fill="#7a7468"/>` + Array.from({ length: 10 }, (_, i) => `<path d="M-500 ${1180 + i * 60} L${W + 500} ${1180 + i * 60}" stroke="#6a645a" stroke-width="3"/>`).join('');
+      const bed = `<rect x="-300" y="1180" width="560" height="60" fill="#e8e8e0" stroke="${INK}" stroke-width="5"/><rect x="-300" y="1150" width="140" height="40" rx="12" fill="#f4f4ee" stroke="${INK}" stroke-width="4"/>` +
+        `<path d="M-310 1100 L-310 1320 M270 1160 L270 1320 M-310 1100 Q -300 1080 -280 1100 L-280 1180" stroke="#5a5e62" stroke-width="10" fill="none"/>`;
+      return { light: { dir: 1, rim: '#f4ffe8', key: '#f8fff0' }, layers: [[0.2, back], [0.6, floor], [0.8, bed], [1.0, '']] };
+    }
+  });
 })();

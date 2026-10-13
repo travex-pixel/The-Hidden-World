@@ -1,0 +1,23 @@
+{
+ "figures": ["judge", "lb8_juror", "trw_officer"],
+ "concepts": [
+  {"name": "jealous-note", "note": "Selected candidate. The generic apartment block at night with police lights; the one word from the note police released, and the trial status. No person shown.",
+   "shot": {"set": "fh_apartments", "setOpts": {"mode": "night", "police": 0.8, "lit": 0.5}, "grade": "night", "view": {"cx": 620, "cy": 1050, "w": 1150}, "figures": []},
+   "post": {"contrast": 1.12, "saturation": 1.18, "vignette": 0.4, "sharpen": true},
+   "marks": [{"type": "text", "text": "\"JEALOUS\"", "x": 40, "y": 60, "size": 170, "color": "yellow"},
+             {"type": "text", "text": "THE NOTE", "x": 52, "y": 290, "size": 96, "box": "red", "color": "white"}]},
+  {"name": "on-trial", "note": "Alternative. Generic courtroom with jurors; defendant not shown.",
+   "shot": {"set": "courtroom", "setOpts": {"modern": true, "dock": false}, "grade": "cold", "view": {"cx": 540, "cy": 1050, "w": 1250},
+            "figures": [{"id": "judge", "x": 540, "y": 790, "scale": 0.42, "dir": 1, "turn": 0.05, "pose": "sit", "expr": "stern", "noChair": true, "depth": 0.34},
+                        {"id": "lb8_juror", "x": 150, "y": 1420, "scale": 0.48, "dir": 1, "turn": 0.3, "pose": "sit", "noChair": true, "depth": 0.9, "expr": "focused"},
+                        {"id": "lb8_juror", "x": 930, "y": 1420, "scale": 0.48, "dir": -1, "turn": 0.3, "pose": "sit", "noChair": true, "depth": 0.9, "outfit": "grey", "expr": "focused"}]},
+   "post": {"contrast": 1.1, "saturation": 1.15, "vignette": 0.35, "sharpen": true},
+   "marks": [{"type": "text", "text": "14 YEARS", "x": 40, "y": 60, "size": 160, "color": "yellow"},
+             {"type": "text", "text": "ON TRIAL NOW", "x": 52, "y": 280, "size": 92, "box": "red", "color": "white"}]},
+  {"name": "no-match", "note": "Alternative. Generic lab; the nine cold years.",
+   "shot": {"set": "lab", "grade": "cold", "view": {"cx": 540, "cy": 1000, "w": 1150}, "figures": []},
+   "post": {"contrast": 1.12, "saturation": 1.15, "vignette": 0.35, "sharpen": true},
+   "marks": [{"type": "text", "text": "9 YEARS", "x": 40, "y": 60, "size": 170, "color": "yellow"},
+             {"type": "text", "text": "NO MATCH", "x": 52, "y": 290, "size": 100, "box": "red", "color": "white"}]}
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "figures": ["eg_gein", "judge", "eg_sheriff"],
+ "concepts": [
+  {"name": "whats-real", "note": "Selected candidate. The generic farmhouse at night with searchers' lanterns; the myth-vs-record angle against Netflix's version. No person shown.",
+   "shot": {"set": "eg_farm", "setOpts": {"mode": "night", "lights": 1}, "grade": "night", "view": {"cx": 600, "cy": 930, "w": 1150}, "figures": []},
+   "post": {"contrast": 1.15, "saturation": 1.15, "vignette": 0.4, "sharpen": true},
+   "marks": [{"type": "text", "text": "WHAT'S REAL?", "x": 40, "y": 60, "size": 150, "color": "yellow"},
+             {"type": "text", "text": "NOT NETFLIX", "x": 52, "y": 270, "size": 92, "box": "red", "color": "white"}]},
+  {"name": "the-receipt", "note": "Alternative. The generic hardware store, register open; the antifreeze receipt that led police to him.",
+   "shot": {"set": "eg_store", "setOpts": {"open": 1, "dim": 1}, "grade": "cold", "view": {"cx": 640, "cy": 980, "w": 1000}, "figures": []},
+   "post": {"contrast": 1.12, "saturation": 1.15, "vignette": 0.35, "sharpen": true},
+   "marks": [{"type": "text", "text": "1 RECEIPT", "x": 40, "y": 60, "size": 160, "color": "yellow"},
+             {"type": "text", "text": "LED TO HIM", "x": 52, "y": 280, "size": 92, "box": "red", "color": "white"}]},
+  {"name": "legally-insane", "note": "Alternative. Generic 1968 courtroom with the illustrated defendant (not a likeness).",
+   "shot": {"set": "courtroom", "setOpts": {"modern": false}, "grade": "cold", "view": {"cx": 470, "cy": 1050, "w": 1250},
+            "figures": [{"id": "judge", "x": 540, "y": 790, "scale": 0.42, "dir": 1, "turn": 0.05, "pose": "sit", "expr": "stern", "noChair": true, "depth": 0.34},
+                        {"id": "eg_gein", "x": 170, "y": 1560, "scale": 0.6, "dir": 1, "turn": 0.4, "pose": "sit", "expr": "blank", "outfit": "court"}]},
+   "post": {"contrast": 1.1, "saturation": 1.1, "vignette": 0.35, "sharpen": true},
+   "marks": [{"type": "text", "text": "NO PRISON", "x": 520, "y": 70, "size": 130, "color": "yellow"},
+             {"type": "text", "text": "LEGALLY INSANE", "x": 540, "y": 250, "size": 80, "box": "red", "color": "white"}]}
+ ]
+}

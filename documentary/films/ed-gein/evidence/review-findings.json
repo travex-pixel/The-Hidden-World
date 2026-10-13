@@ -1,0 +1,80 @@
+{
+ "film": "ed-gein",
+ "findings": [
+  {
+   "id": "FC-01",
+   "stage": "C",
+   "severity": "MEDIUM",
+   "claims": [],
+   "lines": [],
+   "problem": "No page could be opened (Wikipedia, Wisconsin Historical Society, HISTORY, UPI and others failed or were refused), so every passage is search-summary text, and many outlets were filed by inference. 14 medium-risk historical claims rest on one sure outlet group and are REQUIRES REVIEW.",
+   "evidence": "Gate G13 list.",
+   "recommendation": "Read in full: the Wisconsin Historical Society's Gein entries, the 1957 Wisconsin State Journal coverage, UPI's 1984 obituary and Judge Gollmar's 1981 book; record full_text access.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "LR-01",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C44",
+    "C45",
+    "C15",
+    "C16",
+    "C10"
+   ],
+   "lines": [],
+   "problem": "Legal record stated exactly: found to have committed first-degree murder of Bernice Worden and legally insane (1968), committed, never imprisoned; admitted the Hogan killing (per investigators) but never charged or tried; never charged over Henry's death, which the film calls speculation.",
+   "evidence": "Gate G7/G8 pass.",
+   "recommendation": "Keep in packaging.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "LR-02",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C26"
+   ],
+   "lines": [],
+   "problem": "Nothing found in the house is described beyond grave robbing and kept remains; no remains, body or weapon is drawn; victims appear only as silhouette cards; named missing people once checked against him are not named.",
+   "evidence": "Script; unused-claims.json (do-not-use list).",
+   "recommendation": "Keep the same restraint in comments and Shorts.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "LR-03",
+   "stage": "D",
+   "severity": "LOW",
+   "claims": [
+    "C67"
+   ],
+   "lines": [],
+   "problem": "Gate G9 flags the word 'Monster' in the title. It is the Netflix series' name (Monster: The Ed Gein Story), not our characterisation; the description gives the legal record directly.",
+   "evidence": "youtube-title.txt.",
+   "recommendation": "Keep, or use the alternative 'Ed Gein: Myth vs Fact, From the Record'.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  },
+  {
+   "id": "AUD-01",
+   "stage": "F",
+   "severity": "LOW",
+   "claims": [],
+   "lines": [],
+   "problem": "'Gein' is respelled 'Geen' (the usual pronunciation); Schley, Waupun, Waushara and Gollmar are respelled and not verified by ear.",
+   "evidence": "film.json pronounce.",
+   "recommendation": "Owner to listen to the names sample.",
+   "needs_new_render": false,
+   "state": "open",
+   "raised": "2026-10-13"
+  }
+ ]
+}

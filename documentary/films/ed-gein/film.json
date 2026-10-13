@@ -1,0 +1,2150 @@
+{
+ "id": "ed-gein",
+ "title": "Ed Gein: The Real Story Behind Netflix's Monster",
+ "version": 1,
+ "voice": "kokoro:bm_fable",
+ "engine": "kokoro",
+ "narrator": "bm_fable",
+ "speed": 1.0,
+ "lead_in": 0.45,
+ "tail": 1.2,
+ "seed": 71,
+ "bpm": 64,
+ "key": -5,
+ "music_db": -23,
+ "sfx_db": -15,
+ "duck_db": -12,
+ "fps": 60,
+ "frame_codec": "png",
+ "tune": "animation",
+ "crf": 18,
+ "preset": "slow",
+ "music_gain": [
+  [
+   0.0,
+   62.0,
+   -3.0
+  ]
+ ],
+ "pronounce": {
+  "Gein": "Geen",
+  "Gein's": "Geen's",
+  "Schley": "Shly",
+  "Waupun": "Wau-pun",
+  "Gollmar": "Goll-mar",
+  "Waushara": "Wau-shara",
+  "Hunnam": "Hunnum"
+ },
+ "spoken": {
+  "1906": "nineteen oh six",
+  "1944": "nineteen forty-four",
+  "1949": "nineteen forty-nine",
+  "1954": "nineteen fifty-four",
+  "1957": "nineteen fifty-seven",
+  "1958": "nineteen fifty-eight",
+  "1960": "nineteen sixty",
+  "1968": "nineteen sixty-eight",
+  "1984": "nineteen eighty-four",
+  "2000": "two thousand",
+  "2025": "twenty twenty-five",
+  "TIME": "Time"
+ },
+ "figures": [
+  "eg_gein",
+  "eg_sheriff",
+  "eg_deputy",
+  "judge",
+  "lv4_crew_a",
+  "lv4_crew_b",
+  "lv4_crew_c",
+  "lv4_crew_d"
+ ],
+ "timeline": [],
+ "lines": [
+  {
+   "say": "On the night of the sixteenth of November, 1957, a Wisconsin sheriff and his officers searched a farm outside the small town of Plainfield.",
+   "claims": [
+    "C24",
+    "C23",
+    "C19"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [
+      {
+       "id": "eg_sheriff",
+       "x": -200,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 300,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.6
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "torch"
+        }
+       ]
+      },
+      {
+       "id": "eg_deputy",
+       "x": -420,
+       "y": 1530,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -420,
+        "to": 120,
+        "p0": 0.05,
+        "p1": 0.7,
+        "cadence": 6.8
+       },
+       "keys": [
+        {
+         "p": 0.72,
+         "pose": "torch_low"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1080,
+      "w": 1250
+     },
+     "setOpts": {
+      "mode": "night",
+      "lights": 1
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM",
+     "lower": {
+      "p": 0.12,
+      "title": "16 November 1957",
+      "color": "red",
+      "kicker": "Plainfield, Wisconsin"
+     }
+    }
+   ],
+   "chapter": "Cold open",
+   "chapter_title": "Cold open",
+   "tag": "",
+   "cue": "cold",
+   "sfx": [
+    {
+     "name": "swell",
+     "at": 0.0,
+     "gain": 0.4
+    }
+   ],
+   "tone": "hook"
+  },
+  {
+   "say": "They were looking for a woman who had vanished from her hardware store that morning. In a shed on the farm, they found her. She had been shot.",
+   "claims": [
+    "C24",
+    "C19"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [],
+     "view": {
+      "cx": 240,
+      "cy": 1000,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 200,
+      "cy": 1010,
+      "w": 760
+     },
+     "setOpts": {
+      "mode": "night",
+      "lights": 0.8
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM",
+     "funfacts": [
+      {
+       "p": 0.5,
+       "rows": [
+        {
+         "text": "Bernice Worden,"
+        },
+        {
+         "text": "found in a shed on the farm",
+         "color": "amber"
+        }
+       ],
+       "x": 1080,
+       "y": 240,
+       "w": 700,
+       "kicker": "THAT NIGHT"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "thud",
+     "at": 0.7,
+     "gain": 0.35
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "The farm belonged to a quiet bachelor handyman named Ed Gein.",
+   "claims": [
+    "C04"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "ED GEIN"
+     ],
+     "em": [
+      "GEIN"
+     ],
+     "sub": "A bachelor handyman, Plainfield, Wisconsin",
+     "claims": [
+      "C04"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "What investigators found inside his house shocked the country. It would later inspire Psycho, The Texas Chain Saw Massacre and The Silence of the Lambs.",
+   "claims": [
+    "C26",
+    "C64",
+    "C65",
+    "C66"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "INSPIRED BY THE CASE",
+     "title": "On screen",
+     "items": [
+      "Psycho · 1960",
+      "The Texas Chain Saw Massacre",
+      "The Silence of the Lambs"
+     ],
+     "claims": [
+      "C64",
+      "C65",
+      "C66"
+     ]
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "According to investigators, he admitted killing two women. He was only ever tried for one.",
+   "claims": [
+    "C15",
+    "C16",
+    "C34"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "MARY HOGAN · 1954",
+      "BERNICE WORDEN · 1957"
+     ],
+     "big": [
+      "NEVER TRIED",
+      "TRIED · 1968"
+     ],
+     "bigColor": [
+      "blue",
+      "red"
+     ],
+     "bigSize": 66,
+     "body": [
+      [
+       "he admitted it;",
+       "never charged"
+      ],
+      [
+       "first-degree murder,",
+       "legally insane"
+      ]
+     ],
+     "vs": "2",
+     "claims": [
+      "C15",
+      "C16",
+      "C44"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "A judge found that he had committed murder. He never spent a day in prison.",
+   "claims": [
+    "C44",
+    "C45"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34,
+       "keys": [
+        {
+         "p": 0.5,
+         "expr": "neutral"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 820,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 800,
+      "w": 700
+     },
+     "setOpts": {
+      "modern": false
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC JUDGE, NOT A LIKENESS",
+     "stamps": [
+      {
+       "p": 0.55,
+       "text": "LEGALLY INSANE",
+       "color": "amber",
+       "x": 1300,
+       "y": 320,
+       "size": 90
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.57
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "And in 2025, more than twenty million people watched a Netflix version of his story in a single week. Some of it never happened.",
+   "claims": [
+    "C68",
+    "C70",
+    "C67"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "20.7M VIEWS",
+     "label": "Netflix's Monster, in one week (Oct 2025)",
+     "note": "Fact-checks: several scenes invented",
+     "size": 180,
+     "noCorner": true,
+     "claims": [
+      "C68",
+      "C70"
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "This is the real case: what the record shows, and what's legend.",
+   "claims": [
+    "C34",
+    "C70"
+   ],
+   "shots": [
+    {
+     "type": "title",
+     "kicker": "PLAINFIELD, WISCONSIN · 1957",
+     "text": "ED GEIN",
+     "sub": "The real story behind the legend",
+     "in": "glitch",
+     "chapterTag": "",
+     "claims": [
+      "C34",
+      "C24"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "at": 0.05,
+     "gain": 0.4
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Edward Gein was born in 1906, in La Crosse County, Wisconsin.",
+   "claims": [
+    "C01"
+   ],
+   "shots": [
+    {
+     "type": "date",
+     "kicker": "BORN",
+     "text": "AUG 27, 1906",
+     "sub": "La Crosse County, Wisconsin",
+     "claims": [
+      "C01"
+     ]
+    }
+   ],
+   "chapter": "The family",
+   "chapter_title": "1 · The family",
+   "tag": "Chapter 1 · The family",
+   "cue": "unease",
+   "tone": "confident"
+  },
+  {
+   "say": "He and his older brother, Henry, grew up to do odd jobs around Plainfield. People there thought of them as reliable and honest.",
+   "claims": [
+    "C04"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_mainstreet",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": -200,
+       "y": 1530,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "walk": {
+        "from": -200,
+        "to": 1300,
+        "p0": 0.0,
+        "p1": 1.0,
+        "cadence": 6.2
+       }
+      },
+      {
+       "id": "lv4_crew_c",
+       "x": 1300,
+       "y": 1520,
+       "scale": 0.48,
+       "dir": -1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "warm",
+       "walk": {
+        "from": 1300,
+        "to": -200,
+        "p0": 0.1,
+        "p1": 1.0,
+        "cadence": 6.6
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1070,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC 1950s MAIN STREET, NOT PLAINFIELD · FIGURES ANONYMOUS",
+     "lower": {
+      "p": 0.15,
+      "title": "Plainfield, Wisconsin",
+      "color": "red",
+      "kicker": "Waushara County"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Accounts describe their father as an alcoholic, and their mother, Augusta, as strict, deeply religious and domineering. She discouraged her sons from relationships with women.",
+   "claims": [
+    "C02"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "THE GEIN HOUSEHOLD",
+     "title": "As accounts describe it",
+     "lines": [
+      "Father:  an alcoholic",
+      "Mother:  strict, religious",
+      "Rule:    no girlfriends"
+     ],
+     "hl": 1,
+     "stamp": "AS REPORTED",
+     "claims": [
+      "C02"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "In 1944, Henry died during a brush fire near the farm.",
+   "claims": [
+    "C06"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1000,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "dusk",
+      "fire": 0.5
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM",
+     "lower": {
+      "p": 0.2,
+      "title": "Henry Gein",
+      "color": "red",
+      "kicker": "Died 16 May 1944"
+     }
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "The coroner listed the cause as asphyxiation. There was no autopsy, and no investigation.",
+   "claims": [
+    "C08"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "THE OFFICIAL RECORD · 1944",
+     "title": "Henry Gein",
+     "lines": [
+      "Cause:   asphyxiation",
+      "Ruling:  accident",
+      "Autopsy: none"
+     ],
+     "hl": 0,
+     "stamp": "AS RECORDED",
+     "claims": [
+      "C08",
+      "C06"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Some writers have since said that doesn't add up. But Ed was never charged over Henry's death, never confessed to it, and there's no direct evidence linking him to it.",
+   "claims": [
+    "C09",
+    "C10"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "NEVER CHARGED",
+      "NO EVIDENCE"
+     ],
+     "em": [
+      "NEVER",
+      "NO"
+     ],
+     "sub": "Henry's death: speculation only",
+     "claims": [
+      "C10"
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "A year later, his mother died. Ed lived alone on the farm, and sealed off the rooms she had used.",
+   "claims": [
+    "C12",
+    "C13"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 900,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 880,
+      "w": 760
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM",
+     "lower": {
+      "p": 0.2,
+      "title": "Augusta Gein",
+      "color": "red",
+      "kicker": "Died 29 December 1945"
+     }
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "On the morning of Saturday the sixteenth of November, 1957, Bernice Worden, who ran the hardware store in Plainfield, disappeared.",
+   "claims": [
+    "C19"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Bernice Worden",
+     "kicker": "THE HARDWARE STORE, PLAINFIELD",
+     "kind": "f",
+     "lines": [
+      "58",
+      "16 November 1957"
+     ],
+     "rim": "red",
+     "claims": [
+      "C19"
+     ]
+    }
+   ],
+   "chapter": "Plainfield, 1957",
+   "chapter_title": "2 · Plainfield, 1957",
+   "tag": "Chapter 2 · Plainfield, 1957",
+   "cue": "tension",
+   "tone": "tense"
+  },
+  {
+   "say": "Her son, Frank, was a deputy sheriff. When he came into the store that evening, he found the cash register open, and blood on the floor.",
+   "claims": [
+    "C21"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_store",
+     "figures": [
+      {
+       "id": "eg_deputy",
+       "x": -200,
+       "y": 1520,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 320,
+        "p0": 0.0,
+        "p1": 0.55,
+        "cadence": 6.4
+       },
+       "keys": [
+        {
+         "p": 0.58,
+         "pose": "stand_tense",
+         "expr": "worried"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1020,
+      "w": 1250
+     },
+     "setOpts": {
+      "open": 1,
+      "dim": 1
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC HARDWARE STORE, NOT THE WORDEN STORE · GENERIC DEPUTY",
+     "lower": {
+      "p": 0.6,
+      "title": "That evening",
+      "color": "red",
+      "kicker": "The register open"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "name": "door",
+     "at": 0.05,
+     "gain": 0.35
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "He told investigators that Ed Gein had been in the store the evening before, and was coming back for a gallon of antifreeze.",
+   "claims": [
+    "C22"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_store",
+     "figures": [],
+     "view": {
+      "cx": 640,
+      "cy": 1000,
+      "w": 900
+     },
+     "view_to": {
+      "cx": 640,
+      "cy": 960,
+      "w": 700
+     },
+     "setOpts": {
+      "open": 1,
+      "dim": 1
+     },
+     "grade": "cold",
+     "label": "ILLUSTRATION · GENERIC HARDWARE STORE, NOT THE WORDEN STORE",
+     "funfacts": [
+      {
+       "p": 0.4,
+       "rows": [
+        {
+         "text": "Coming back for:"
+        },
+        {
+         "text": "1 gallon of antifreeze",
+         "color": "amber"
+        }
+       ],
+       "x": 110,
+       "y": 240,
+       "w": 640,
+       "kicker": "WHAT HE TOLD POLICE"
+      }
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "The last sales slip his mother wrote that day was for antifreeze.",
+   "claims": [
+    "C22"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "THE LAST RECEIPT",
+     "title": "Worden's Hardware (illustrative)",
+     "lines": [
+      "Item:    antifreeze",
+      "Qty:     1 gallon",
+      "Led to:  Ed Gein"
+     ],
+     "hl": 0,
+     "stamp": "ILLUSTRATIVE",
+     "claims": [
+      "C22"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "paper",
+     "at": 0.1,
+     "gain": 0.4
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "That evening, Ed Gein was arrested at a grocery store in West Plainfield.",
+   "claims": [
+    "C23"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_mainstreet",
+     "figures": [
+      {
+       "id": "eg_sheriff",
+       "x": -200,
+       "y": 1520,
+       "scale": 0.55,
+       "dir": 1,
+       "turn": 0.5,
+       "pose": "walk",
+       "expr": "neutral",
+       "walk": {
+        "from": -200,
+        "to": 420,
+        "p0": 0.0,
+        "p1": 0.6,
+        "cadence": 6.8
+       },
+       "keys": [
+        {
+         "p": 0.62,
+         "pose": "point"
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 520,
+      "cy": 1060,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC 1950s MAIN STREET, NOT PLAINFIELD",
+     "stamps": [
+      {
+       "p": 0.6,
+       "text": "ARRESTED",
+       "color": "red",
+       "x": 1380,
+       "y": 320,
+       "size": 110
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.62
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "That night, Sheriff Art Schley and his officers searched the Gein farm. In a shed, they found Bernice Worden's body. She had been shot.",
+   "claims": [
+    "C24"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [
+      {
+       "id": "eg_sheriff",
+       "x": 300,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "torch",
+       "expr": "neutral"
+      },
+      {
+       "id": "eg_deputy",
+       "x": 800,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "torch_low",
+       "expr": "neutral"
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 420,
+      "cy": 1060,
+      "w": 1300
+     },
+     "setOpts": {
+      "mode": "night",
+      "lights": 1
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM · GENERIC OFFICERS",
+     "lower": {
+      "p": 0.15,
+      "title": "Sheriff Art Schley",
+      "color": "red",
+      "kicker": "Waushara County · officer shown is generic"
+     }
+    }
+   ],
+   "chapter": "The farmhouse",
+   "chapter_title": "3 · The farmhouse",
+   "tag": "Chapter 3 · The farmhouse",
+   "cue": "unease",
+   "tone": "tense"
+  },
+  {
+   "say": "Inside the house, investigators found that Gein had robbed graves, and kept human remains.",
+   "claims": [
+    "C26"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [],
+     "view": {
+      "cx": 530,
+      "cy": 900,
+      "w": 800
+     },
+     "view_to": {
+      "cx": 530,
+      "cy": 900,
+      "w": 620
+     },
+     "setOpts": {
+      "mode": "night",
+      "lights": 0.6
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM",
+     "cam": {
+      "handheld": 2
+     }
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "We won't describe what was found. Those details have been retold for decades, and they belong to the people whose graves were robbed, and to their families.",
+   "claims": [
+    "C26"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 980,
+      "w": 2000
+     },
+     "setOpts": {
+      "mode": "night"
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM",
+     "rain": {
+      "n": 60,
+      "op": 0.12
+     }
+    }
+   ],
+   "attribution_context": true,
+   "cue": "intimate",
+   "tone": "reflective"
+  },
+  {
+   "say": "Investigators said Gein admitted taking remains from local graves. Investigators opened test graves to check, and found them as he had described.",
+   "claims": [
+    "C32"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "INVESTIGATORS CHECKED",
+     "title": "His grave-robbing admission",
+     "lines": [
+      "He said:  remains taken from graves",
+      "Check:    test graves opened",
+      "Result:   as he described"
+     ],
+     "hl": 2,
+     "stamp": "CONFIRMED",
+     "claims": [
+      "C32"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Investigators said he also admitted killing a second woman, Mary Hogan, a tavern owner who had vanished three years earlier, though he was never charged over her death.",
+   "claims": [
+    "C15",
+    "C14",
+    "C16"
+   ],
+   "shots": [
+    {
+     "type": "profile",
+     "name": "Mary Hogan",
+     "kicker": "TAVERN OWNER, PINE GROVE",
+     "kind": "f",
+     "lines": [
+      "Last seen 8 December 1954",
+      "He admitted it; never charged"
+     ],
+     "rim": "red",
+     "claims": [
+      "C14",
+      "C15",
+      "C16"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "He said he had killed both women because they looked like his dead mother.",
+   "claims": [
+    "C31"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "THEY RESEMBLED",
+      "HIS MOTHER"
+     ],
+     "em": [
+      "MOTHER"
+     ],
+     "sub": "His explanation, as reported",
+     "claims": [
+      "C31"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "Over the years, the story grew.",
+   "claims": [
+    "C34"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_mainstreet",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1900
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC 1950s MAIN STREET, NOT PLAINFIELD"
+    }
+   ],
+   "chapter": "Myth and fact",
+   "chapter_title": "4 · Myth and fact",
+   "tag": "Chapter 4 · Myth and fact",
+   "cue": "aftermath",
+   "tone": "curious"
+  },
+  {
+   "say": "Only two killings are documented: Mary Hogan in 1954, and Bernice Worden in 1957.",
+   "claims": [
+    "C34"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "2",
+     "label": "documented killings",
+     "note": "Hogan 1954 · Worden 1957",
+     "size": 260,
+     "noCorner": true,
+     "claims": [
+      "C34",
+      "C14",
+      "C19"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Police checked him against other unsolved disappearances. He was cleared of three well-known cases, and no evidence tied him to any others.",
+   "claims": [
+    "C36"
+   ],
+   "shots": [
+    {
+     "type": "doc",
+     "kicker": "OTHER CASES",
+     "title": "What police checked",
+     "lines": [
+      "Cleared:  3 well-known cases",
+      "Evidence: none for others",
+      "Names:    not repeated here"
+     ],
+     "hl": 0,
+     "stamp": "CLEARED",
+     "claims": [
+      "C36"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "The bigger numbers you'll sometimes hear are counts of remains, which investigators said came mostly from graves. They are not counts of victims.",
+   "claims": [
+    "C34",
+    "C32"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE MYTH",
+      "THE RECORD"
+     ],
+     "big": [
+      "MANY VICTIMS",
+      "2 KILLINGS"
+     ],
+     "bigColor": [
+      "amber",
+      "blue"
+     ],
+     "bigSize": 70,
+     "body": [
+      [
+       "remains, mostly",
+       "from graves"
+      ],
+      [
+       "Hogan and Worden"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "C34",
+      "C32"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "And there's no evidence he ate anyone. A TIME magazine report in 1957 said he practised no cannibalism.",
+   "claims": [
+    "C38"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "CANNIBALISM:",
+      "NOT DOCUMENTED"
+     ],
+     "em": [
+      "NOT"
+     ],
+     "sub": "TIME, 1957, as reported",
+     "claims": [
+      "C38"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Was he a serial killer? Writers argue that it depends on the definition. Two documented killings fall short of the traditional threshold of three.",
+   "claims": [
+    "C39"
+   ],
+   "shots": [
+    {
+     "type": "question",
+     "kicker": "THE LABEL",
+     "lines": [
+      "A serial killer?",
+      "Depends on the definition"
+     ],
+     "claims": [
+      "C39"
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Gein was charged with the first-degree murder of Bernice Worden, and pleaded not guilty by reason of insanity.",
+   "claims": [
+    "C40"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courthouse_night",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1250
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC COURT BUILDING",
+     "lower": {
+      "p": 0.12,
+      "title": "Charged: first-degree murder",
+      "color": "red",
+      "kicker": "Waushara County, 1957"
+     },
+     "claims": [
+      "C40",
+      "C19"
+     ]
+    }
+   ],
+   "chapter": "The verdict",
+   "chapter_title": "5 · The verdict",
+   "tag": "Chapter 5 · The verdict",
+   "cue": "revelation",
+   "tone": "confident"
+  },
+  {
+   "say": "In early 1958 he was found incompetent to stand trial, and committed to Central State Hospital, at Waupun.",
+   "claims": [
+    "C41"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_ward",
+     "figures": [
+      {
+       "id": "eg_gein",
+       "x": 520,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "hospital",
+       "keys": [
+        {
+         "p": 0.6,
+         "headTurn": 0.3
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1040,
+      "w": 1300
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1050,
+      "w": 1100
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC HOSPITAL ROOM · NOT A LIKENESS",
+     "depicts": {
+      "person": "Edward Theodore Gein",
+      "act": "in hospital"
+     },
+     "lower": {
+      "p": 0.15,
+      "title": "Central State Hospital",
+      "color": "red",
+      "kicker": "Waupun, Wisconsin · 1958"
+     },
+     "claims": [
+      "C50"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Ten years later, he was found competent. In November 1968 his trial began, before Judge Robert Gollmar, with no jury.",
+   "claims": [
+    "G-COURT",
+    "C43"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "courtroom",
+     "figures": [
+      {
+       "id": "judge",
+       "x": 540,
+       "y": 790,
+       "scale": 0.42,
+       "dir": 1,
+       "turn": 0.05,
+       "pose": "sit",
+       "expr": "stern",
+       "noChair": true,
+       "depth": 0.34
+      },
+      {
+       "id": "eg_gein",
+       "x": 300,
+       "y": 1560,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit",
+       "expr": "blank",
+       "outfit": "court",
+       "keys": [
+        {
+         "p": 0.55,
+         "headTurn": 0.25
+        }
+       ]
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 900,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 380,
+      "cy": 1080,
+      "w": 1000
+     },
+     "setOpts": {
+      "modern": false
+     },
+     "grade": "cold",
+     "depicts": {
+      "person": "Edward Theodore Gein",
+      "act": "in court"
+     },
+     "label": "ILLUSTRATION · NOT A LIKENESS",
+     "lower": {
+      "p": 0.15,
+      "title": "Judge Robert H. Gollmar",
+      "color": "red",
+      "kicker": "7 November 1968 · no jury"
+     },
+     "claims": [
+      "G-COURT"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "The judge found that Gein had committed first-degree murder. Then he found him legally insane at the time.",
+   "claims": [
+    "C44"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE FINDING",
+      "AND"
+     ],
+     "big": [
+      "FIRST-DEGREE MURDER",
+      "LEGALLY INSANE"
+     ],
+     "bigColor": [
+      "red",
+      "amber"
+     ],
+     "bigSize": 56,
+     "body": [
+      [
+       "Bernice Worden",
+       "1968"
+      ],
+      [
+       "at the time",
+       "of the killing"
+      ]
+     ],
+     "vs": "+",
+     "claims": [
+      "C44"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.3
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "So he was not sent to prison. He was sent back to a mental hospital, and never served a day behind bars.",
+   "claims": [
+    "C45",
+    "C44"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_ward",
+     "figures": [
+      {
+       "id": "eg_gein",
+       "x": 520,
+       "y": 1500,
+       "scale": 0.6,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "sit_slumped",
+       "expr": "blank",
+       "outfit": "hospital"
+      }
+     ],
+     "view": {
+      "cx": 560,
+      "cy": 1040,
+      "w": 1100
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1050,
+      "w": 950
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC HOSPITAL ROOM · NOT A LIKENESS",
+     "depicts": {
+      "person": "Edward Theodore Gein",
+      "act": "in hospital"
+     },
+     "stamps": [
+      {
+       "p": 0.5,
+       "text": "COMMITTED",
+       "color": "blue",
+       "x": 1380,
+       "y": 320,
+       "size": 100
+      }
+     ],
+     "claims": [
+      "C50"
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "name": "stamp",
+     "at": 0.52
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "He was never tried for Mary Hogan's death.",
+   "claims": [
+    "C16"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "NEVER TRIED"
+     ],
+     "em": [
+      "NEVER"
+     ],
+     "sub": "Mary Hogan, 1954",
+     "claims": [
+      "C16",
+      "C14"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "He was later moved to the Mendota Mental Health Institute in Madison. He died there on the twenty-sixth of July, 1984, aged seventy-seven.",
+   "claims": [
+    "C49",
+    "C50"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_ward",
+     "figures": [],
+     "view": {
+      "cx": 560,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 560,
+      "cy": 1000,
+      "w": 1300
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC HOSPITAL ROOM",
+     "lower": {
+      "p": 0.2,
+      "title": "Died 26 July 1984",
+      "color": "red",
+      "kicker": "Mendota Mental Health Institute · age 77"
+     }
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "In March 1958, his farm was due to be auctioned. Ten days before the sale, the house burned down.",
+   "claims": [
+    "C53",
+    "C54"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1600
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 980,
+      "w": 1200
+     },
+     "setOpts": {
+      "mode": "night",
+      "fire": 1
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM",
+     "cam": {
+      "handheld": 2
+     },
+     "lower": {
+      "p": 0.4,
+      "title": "20 March 1958",
+      "color": "red",
+      "kicker": "The house burns"
+     }
+    }
+   ],
+   "chapter": "The legend",
+   "chapter_title": "6 · The legend",
+   "tag": "Chapter 6 · The legend",
+   "cue": "tension",
+   "sfx": [
+    {
+     "name": "rumble",
+     "at": 0.3,
+     "gain": 0.4
+    }
+   ],
+   "tone": "tense"
+  },
+  {
+   "say": "Arson was suspected, but no one was ever charged, and the cause was never officially determined.",
+   "claims": [
+    "C54"
+   ],
+   "shots": [
+    {
+     "type": "kinetic",
+     "lines": [
+      "ARSON SUSPECTED",
+      "NO ONE CHARGED"
+     ],
+     "em": [
+      "NO"
+     ],
+     "sub": "Cause never officially determined",
+     "claims": [
+      "C54"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Told his house had burned down, Gein reportedly said: \"Just as well.\"",
+   "claims": [
+    "C55"
+   ],
+   "shots": [
+    {
+     "type": "quote",
+     "text": "Just as well.",
+     "who": "Ed Gein, as reported, on the fire",
+     "claims": [
+      "C55"
+     ]
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "About two thousand people came to the auction. His 1949 Ford was sold to a carnival showman, who charged a quarter a look at what he called the Ghoul Car.",
+   "claims": [
+    "C57",
+    "G-CAR"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_mainstreet",
+     "figures": [
+      {
+       "id": "lv4_crew_a",
+       "x": 200,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "silhouette": "cool"
+      },
+      {
+       "id": "lv4_crew_b",
+       "x": 420,
+       "y": 1530,
+       "scale": 0.52,
+       "dir": -1,
+       "turn": 0.4,
+       "pose": "stand",
+       "expr": "neutral",
+       "silhouette": "cool"
+      },
+      {
+       "id": "lv4_crew_d",
+       "x": 1250,
+       "y": 1520,
+       "scale": 0.5,
+       "dir": 1,
+       "turn": 0.4,
+       "pose": "walk",
+       "expr": "neutral",
+       "silhouette": "cool",
+       "walk": {
+        "from": 1250,
+        "to": 700,
+        "p0": 0.0,
+        "p1": 0.7,
+        "cadence": 6.4
+       }
+      }
+     ],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 820,
+      "cy": 1120,
+      "w": 1250
+     },
+     "setOpts": {
+      "mode": "day"
+     },
+     "grade": "day",
+     "label": "ILLUSTRATION · GENERIC 1950s MAIN STREET, NOT PLAINFIELD · GENERIC CAR",
+     "funfacts": [
+      {
+       "p": 0.45,
+       "rows": [
+        {
+         "text": "1949 Ford · $760"
+        },
+        {
+         "text": "25 cents a look",
+         "color": "amber"
+        }
+       ],
+       "x": 110,
+       "y": 240,
+       "w": 600,
+       "kicker": "THE 'GHOUL CAR'"
+      }
+     ]
+    }
+   ],
+   "tone": "curious"
+  },
+  {
+   "say": "Even his gravestone was stolen from Plainfield Cemetery, in 2000.",
+   "claims": [
+    "C59"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "lzb_cemetery",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1100,
+      "w": 1500
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1120,
+      "w": 1150
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC CEMETERY",
+     "lower": {
+      "p": 0.2,
+      "title": "June 2000",
+      "color": "red",
+      "kicker": "The gravestone stolen"
+     }
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "And the case lived on in film. Writer Robert Bloch drew on it for his novel Psycho, which Alfred Hitchcock filmed in 1960.",
+   "claims": [
+    "C64"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE INFLUENCE",
+     "title": "Psycho",
+     "items": [
+      "1959 · Robert Bloch's novel",
+      "1960 · Hitchcock's film",
+      "Based on 'the situation', Bloch said"
+     ],
+     "claims": [
+      "C64"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Tobe Hooper said Gein was one of the inspirations for The Texas Chain Saw Massacre. And Buffalo Bill, in The Silence of the Lambs, has been described as a composite of several killers, Gein among them.",
+   "claims": [
+    "C65",
+    "C66"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "THE TEXAS CHAIN SAW MASSACRE",
+      "THE SILENCE OF THE LAMBS"
+     ],
+     "big": [
+      "LOOSELY BASED",
+      "A COMPOSITE"
+     ],
+     "bigColor": [
+      "amber",
+      "blue"
+     ],
+     "bigSize": 60,
+     "body": [
+      [
+       "one inspiration,",
+       "Hooper said"
+      ],
+      [
+       "Gein, Bundy",
+       "and Heidnik"
+      ]
+     ],
+     "vs": "&",
+     "claims": [
+      "C65",
+      "C66"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "On the third of October, 2025, Netflix released Monster: The Ed Gein Story, starring Charlie Hunnam.",
+   "claims": [
+    "C67"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "kd_studio",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1300
+     },
+     "grade": "night",
+     "label": "ILLUSTRATION · GENERIC STUDIO",
+     "cards": [
+      {
+       "p": 0.15,
+       "x": 110,
+       "y": 170,
+       "w": 760,
+       "rows": [
+        {
+         "text": "NETFLIX · 3 OCTOBER 2025"
+        },
+        {
+         "text": "Monster: The Ed Gein Story",
+         "p": 0.3,
+         "color": "amber"
+        },
+        {
+         "text": "8 episodes",
+         "p": 0.55
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "chapter": "Monster",
+   "chapter_title": "7 · Monster",
+   "tag": "Chapter 7 · Monster",
+   "cue": "aftermath",
+   "tone": "confident"
+  },
+  {
+   "say": "In its second week, it drew twenty point seven million views, and was number one on Netflix.",
+   "claims": [
+    "C68"
+   ],
+   "shots": [
+    {
+     "type": "stat",
+     "value": "20.7M",
+     "label": "views in week 2",
+     "note": "No. 1 on Netflix, as reported",
+     "size": 230,
+     "noCorner": true,
+     "claims": [
+      "C68"
+     ]
+    }
+   ],
+   "tone": "confident"
+  },
+  {
+   "say": "Fact-checks say several scenes were invented, including Ed killing Henry, and any link to the capture of Ted Bundy.",
+   "claims": [
+    "C70"
+   ],
+   "shots": [
+    {
+     "type": "split",
+     "head": [
+      "ON NETFLIX",
+      "IN THE RECORD"
+     ],
+     "big": [
+      "HE KILLED HENRY",
+      "NEVER CHARGED"
+     ],
+     "bigColor": [
+      "amber",
+      "blue"
+     ],
+     "bigSize": 60,
+     "body": [
+      [
+       "a dramatised scene"
+      ],
+      [
+       "no evidence"
+      ]
+     ],
+     "vs": "VS",
+     "claims": [
+      "C70",
+      "C10"
+     ]
+    }
+   ],
+   "tone": "reveal"
+  },
+  {
+   "say": "In Plainfield, a town of fewer than a thousand people, residents describe the new wave of visitors as intrusive. The farm site is private property.",
+   "claims": [
+    "C72"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_mainstreet",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1060,
+      "w": 1350
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC 1950s MAIN STREET, NOT PLAINFIELD",
+     "lower": {
+      "p": 0.2,
+      "title": "Plainfield today",
+      "color": "red",
+      "kicker": "Population 924 (2020)"
+     }
+    }
+   ],
+   "tone": "reflective"
+  },
+  {
+   "say": "So, here's what the record shows.",
+   "claims": [
+    "C44"
+   ],
+   "shots": [
+    {
+     "type": "cine",
+     "set": "eg_farm",
+     "figures": [],
+     "view": {
+      "cx": 540,
+      "cy": 1050,
+      "w": 1700
+     },
+     "view_to": {
+      "cx": 540,
+      "cy": 1000,
+      "w": 1900
+     },
+     "setOpts": {
+      "mode": "dusk"
+     },
+     "grade": "dusk",
+     "label": "ILLUSTRATION · GENERIC FARMHOUSE, NOT THE GEIN FARM"
+    }
+   ],
+   "chapter": "The record",
+   "chapter_title": "The record",
+   "tag": "The record",
+   "cue": "outro",
+   "tone": "resolve"
+  },
+  {
+   "say": "According to investigators, Ed Gein admitted killing two women. He was tried only for the murder of Bernice Worden.",
+   "claims": [
+    "C15",
+    "C16",
+    "C40"
+   ],
+   "shots": [
+    {
+     "type": "list",
+     "kicker": "THE LEGAL RECORD",
+     "title": "Ed Gein",
+     "items": [
+      "Bernice Worden, 1957 · tried 1968",
+      "Mary Hogan, 1954 · admitted; never tried",
+      "Henry Gein, 1944 · never charged"
+     ],
+     "claims": [
+      "C15",
+      "C16",
+      "C43",
+      "C10",
+      "C14",
+      "C06",
+      "C19"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  },
+  {
+   "say": "A judge found he committed that murder, and that he was legally insane. He spent the rest of his life in state hospitals.",
+   "claims": [
+    "C44",
+    "C45",
+    "C50"
+   ],
+   "shots": [
+    {
+     "type": "verdict",
+     "text": "LEGALLY INSANE",
+     "color": "amber",
+     "lines": [
+      "Committed for life · died 1984"
+     ],
+     "at": 0.3,
+     "claims": [
+      "C44",
+      "C50"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  },
+  {
+   "say": "The rest is legend: the bigger numbers, the cannibal, and the claim that he killed his brother.",
+   "claims": [
+    "C34",
+    "C38",
+    "C10"
+   ],
+   "shots": [
+    {
+     "type": "endcard",
+     "kicker": "IN MEMORY OF BERNICE WORDEN AND MARY HOGAN",
+     "lines": [
+      "2 documented killings",
+      "Found legally insane in 1968",
+      "Never imprisoned · died 1984"
+     ],
+     "size": 52,
+     "sub": "Sources for every claim are listed in the description.",
+     "chapterTag": "",
+     "out": "dip",
+     "claims": [
+      "C34",
+      "C44",
+      "C50"
+     ]
+    }
+   ],
+   "tone": "resolve"
+  }
+ ]
+}
