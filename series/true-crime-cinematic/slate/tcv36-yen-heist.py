@@ -62,7 +62,7 @@ def build(h):
           "tension-peak", ["Y_never"], sfx=[fw(0, 1, "tick", 0.35, -0.05), fw(0, 4, "thud", 0.35, -0.05), fw(1, 5, "gavel", 0.6, -0.05)],
           emph=["1975,", "time", "ran", "out", "never", "caught."], pad=0.25, tr="zoom"),
         # E - the lesson and the callback on the hero object (the first frame's framing); the end question is burned in
-        S("s10_end", "yh36_end", [N("The lesson? A uniform isn't proof."),
+        S("s10_end", "yh36_end", [N("The lesson? A uniform is not proof."),
                                   N("All he needed was a fake police motorcycle.", pause_before=0.3)],
           "aftermath", ["Y_lesson", "Y_bike"], sfx=[fx(0.0, "rain", 0.25), fw(0, 1, "chime", 0.35, -0.02), fw(1, 7, "thump", 0.4, -0.05)],
           emph=["lesson?", "uniform", "proof.", "fake", "police", "motorcycle."], min_d=4.6, pad=1.9, tr="zoom"),
