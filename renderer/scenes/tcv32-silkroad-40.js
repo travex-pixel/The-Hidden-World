@@ -262,8 +262,8 @@
     sr32_google(ctx) {
       const t = ctx.t, irs = WT(ctx, 0, 1, 0.3), agent = WT(ctx, 0, 2, 0.6), started = WT(ctx, 0, 3, 1.0), goog = WT(ctx, 0, 6, 1.9), srch = WT(ctx, 0, 7, 2.3);
       return E.cine.shot(ctx, {
-        set: 'office_day', grade: 'warm', cam: { from: { x: -20, y: 20, z: 1.0 }, to: { x: 20, y: 40, z: 1.08 }, handheld: 0.7 },
-        figures: [{ id: 'sr32_irs', x: 300, y: 1650, scale: 0.92, dir: 1, turn: 0.5, pose: 'sit_read', expr: 'focused', gaze: [0.6, 0.3],
+        set: 'office_day', grade: 'warm', cam: { from: { x: -20, y: 20, z: 0.98 }, to: { x: 20, y: 40, z: 1.04 }, handheld: 0.7 },
+        figures: [{ id: 'sr32_irs', x: 300, y: 1650, scale: 0.85, dir: 1, turn: 0.5, pose: 'sit_read', expr: 'focused', gaze: [0.6, 0.3],
           keys: [{ at: irs, pose: 'sit', expr: 'determined', gaze: [0.7, 0.2], dur: 0.3 }, ...typing(started, srch + 0.4), { at: srch + 0.5, pose: 'sit', expr: 'focused', gaze: [0.8, 0.1], dur: 0.4 }] }],
         props: [{ depth: 1.07, svg: tt => monitor(720, 1206, 0.9, tt, { page: 'search', fill: seg(tt, goog - 0.2, srch + 0.5) }) }],
         overlays: [
@@ -280,7 +280,7 @@
       const t = ctx.t, y2011 = WT(ctx, 0, 1, 0.3), post = WT(ctx, 0, 3, 0.9), alt = WT(ctx, 0, 5, 1.6), adv = WT(ctx, 0, 6, 2.1), silk = WT(ctx, 0, 7, 2.6);
       return E.cine.shot(ctx, {
         set: 'office_day', grade: 'warm', cam: { keys: [{ at: 0, x: 60, y: 90, z: 1.2 }, { at: alt - 0.2, x: 90, y: 110, z: 1.3, dur: 1.0 }], handheld: 0.9 },
-        figures: [{ id: 'sr32_irs', x: 330, y: 1660, scale: 0.98, dir: 1, turn: 0.55, pose: 'sit', expr: 'focused', gaze: [0.8, 0.2],
+        figures: [{ id: 'sr32_irs', x: 240, y: 1790, scale: 1.18, dir: 1, turn: 0.6, pose: 'sit', expr: 'focused', gaze: [0.8, -0.2],
           keys: [{ at: post, pose: 'sit_read', expr: 'focused', dur: 0.4 }, { at: alt - 0.1, pose: 'sit', expr: 'realise', gaze: [0.9, 0.1], dur: 0.3 }, { at: adv, pose: 'point', expr: 'realise', gaze: [0.9, 0.1], dur: 0.4 }] }],
         props: [{ depth: 1.07, svg: tt => monitor(760, 1206, 1.15, tt, { page: 'forum', hl: seg(tt, alt - 0.15, alt + 0.25) }) }],
         overlays: [
@@ -321,7 +321,7 @@
         ],
         overlays: [
           { type: 'label', at: 0.1, x: 60, y: 432, text: '1 OCTOBER 2013 · SAN FRANCISCO', fs: 40, sub: 'Outside a public library branch' },
-          { type: 'card', at: close - 0.05, x: 60, y: 600, w: 760, rows: [{ text: 'HIS LAPTOP: CLOSE THE LID', fs: 34, colour: RED }, { text: 'AND IT ENCRYPTS', fs: 34, colour: RED, at: enc - 0.1 }, { text: 'AGENTS NEEDED IT OPEN AND LOGGED IN', fs: 28, at: needed - 0.05 }] }
+          { type: 'card', at: close - 0.05, x: 60, y: 600, w: 660, rows: [{ text: 'HIS LAPTOP: CLOSE THE LID', fs: 34, colour: RED }, { text: 'AND IT ENCRYPTS', fs: 34, colour: RED, at: enc - 0.1 }, { text: 'AGENTS NEEDED IT OPEN AND LOGGED IN', fs: 28, at: needed - 0.05 }] }
         ],
         tag: TAG
       });

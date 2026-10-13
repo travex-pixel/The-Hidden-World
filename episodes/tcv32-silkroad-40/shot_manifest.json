@@ -10,11 +10,12 @@
   "distinct_sets": 6,
   "max_set_share": 0.33,
   "shot_sizes": {
-   "medium": 7,
-   "medium-wide": 2
+   "medium": 5,
+   "medium-wide": 3,
+   "close-up": 1
   },
-  "max_shot_size_share": 0.78,
-  "ok": false
+  "max_shot_size_share": 0.56,
+  "ok": true
  },
  "production_status": {},
  "shots": [
@@ -755,19 +756,19 @@
     }
    ],
    "visual_description": "office day (warm grade); sr32_irs: sit_read -> sit -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit; camera push/pull, handheld; overlays: label 'KNOWN ONLY AS 'DREAD PIRATE ROBERTS'', card 'IRS CRIMINAL INVESTIGATION / STEP ONE: A GOOGLE SEARCH'.",
-   "shot_size": "medium",
+   "shot_size": "medium-wide",
    "set": "office_day",
    "grade": "warm",
    "camera": {
     "from": {
      "x": -20,
      "y": 20,
-     "z": 1
+     "z": 0.98
     },
     "to": {
      "x": 20,
      "y": 40,
-     "z": 1.08
+     "z": 1.04
     },
     "handheld": 0.7
    },
@@ -779,7 +780,7 @@
      "id": "sr32_irs",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.92,
+     "scale": 0.85,
      "start_pose": "sit_read",
      "start_expr": "focused",
      "actions": [
@@ -964,7 +965,7 @@
     }
    ],
    "visual_description": "office day (warm grade); sr32_irs: sit -> sit_read -> sit -> point; keyed camera moves, handheld; overlays: card 'JANUARY 2011 · A FORUM POST / USERNAME: 'ALTOID' / ADVERTISING THE NEW SILK ROAD SITE'.",
-   "shot_size": "medium",
+   "shot_size": "close-up",
    "set": "office_day",
    "grade": "warm",
    "camera": {
@@ -979,7 +980,7 @@
      "id": "sr32_irs",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.98,
+     "scale": 1.18,
      "start_pose": "sit",
      "start_expr": "focused",
      "actions": [
