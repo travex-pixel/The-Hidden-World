@@ -1,0 +1,671 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR) on the MP4's own audio track",
+ "lines": 41,
+ "corpus_wer": 0.09,
+ "lines_over_25pct": [
+  {
+   "scene": "e02_count",
+   "who": "narrator_history",
+   "t": 38.297,
+   "script": "So: Tuesday, 7:59 and fifty seconds. Coffee in hand.",
+   "asr": "So Tuesday 7:59 and 50 seconds coffee in hand coffee in hand coffee in hand coffee in hand coffee in hand coffee in",
+   "wer": 1.5,
+   "diffs": [
+    [
+     "fifty",
+     "50"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ],
+    [
+     "∅",
+     "hand"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ],
+    [
+     "∅",
+     "hand"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ],
+    [
+     "∅",
+     "hand"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ],
+    [
+     "∅",
+     "hand"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ]
+   ]
+  },
+  {
+   "scene": "e05_wind",
+   "who": "narrator_history",
+   "t": 95.717,
+   "script": "At the equator that's a wind of around 1,670 kilometres an hour.",
+   "asr": "At the equator that's a wind of around 1600 and 70 kilometers an hour.",
+   "wer": 0.308,
+   "diffs": [
+    [
+     "∅",
+     "1600"
+    ],
+    [
+     "1",
+     "and"
+    ],
+    [
+     "670",
+     "70"
+    ],
+    [
+     "kilometres",
+     "kilometers"
+    ]
+   ]
+  },
+  {
+   "scene": "e08_pole",
+   "who": "narrator_history",
+   "t": 148.264,
+   "script": "They live on the coast, about 1,400 kilometres away.",
+   "asr": "They live on the coast about 1400 kilometers away.",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "1",
+     "∅"
+    ],
+    [
+     "400",
+     "1400"
+    ],
+    [
+     "kilometres",
+     "kilometers"
+    ]
+   ]
+  },
+  {
+   "scene": "e09_moon",
+   "who": "narrator_history",
+   "t": 163.169,
+   "script": "Its tides act like a brake,",
+   "asr": "It's tides act like a break.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "its",
+     "it's"
+    ],
+    [
+     "brake",
+     "break"
+    ]
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "scene": "e00_cold",
+   "who": "narrator_history",
+   "t": 0.484,
+   "script": "This is what happens if Earth stops spinning. For one second.",
+   "asr": "This is what happens if Earth stops spinning. For one second...",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e00_cold",
+   "who": "narrator_history",
+   "t": 6.696,
+   "script": "And trust me, this is the nice part of town.",
+   "asr": "And trust me this is the nice part of town.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e00_cold",
+   "who": "narrator_history",
+   "t": 9.66,
+   "script": "Let's rewind ten seconds.",
+   "asr": "Let's rewind 10 seconds.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "scene": "e01_spin",
+   "who": "narrator_history",
+   "t": 12.981,
+   "script": "Right now, you are moving. Fast.",
+   "asr": "Right now, you are moving. Fast.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e01_spin",
+   "who": "narrator_history",
+   "t": 16.375,
+   "script": "Earth spins,",
+   "asr": "Earth spins",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e01_spin",
+   "who": "narrator_history",
+   "t": 18.464,
+   "script": "and at the equator the ground carries you east at about 1,670 kilometres an hour.",
+   "asr": "And at the equator the ground carries you east at about 1600 and 70 kilometers an hour.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "∅",
+     "1600"
+    ],
+    [
+     "1",
+     "and"
+    ],
+    [
+     "670",
+     "70"
+    ],
+    [
+     "kilometres",
+     "kilometers"
+    ]
+   ]
+  },
+  {
+   "scene": "e01_spin",
+   "who": "narrator_history",
+   "t": 25.244,
+   "script": "That's faster than the speed of sound.",
+   "asr": "That's faster than the speed of sound.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e01_spin",
+   "who": "narrator_history",
+   "t": 27.997,
+   "script": "Further north it's slower: about 1,180 at 45 degrees. At the poles, almost nothing.",
+   "asr": "Further north it's slower, about 1180 at 45 degrees. At the poles almost nothing.",
+   "wer": 0.133,
+   "diffs": [
+    [
+     "1",
+     "∅"
+    ],
+    [
+     "180",
+     "1180"
+    ]
+   ]
+  },
+  {
+   "scene": "e01_spin",
+   "who": "narrator_history",
+   "t": 35.446,
+   "script": "You just turn on the spot.",
+   "asr": "You just turn on the spot.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e02_count",
+   "who": "narrator_history",
+   "t": 38.297,
+   "script": "So: Tuesday, 7:59 and fifty seconds. Coffee in hand.",
+   "asr": "So Tuesday 7:59 and 50 seconds coffee in hand coffee in hand coffee in hand coffee in hand coffee in hand coffee in",
+   "wer": 1.5,
+   "diffs": [
+    [
+     "fifty",
+     "50"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ],
+    [
+     "∅",
+     "hand"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ],
+    [
+     "∅",
+     "hand"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ],
+    [
+     "∅",
+     "hand"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ],
+    [
+     "∅",
+     "hand"
+    ],
+    [
+     "∅",
+     "coffee"
+    ],
+    [
+     "∅",
+     "in"
+    ]
+   ]
+  },
+  {
+   "scene": "e02_count",
+   "who": "commuter_sam",
+   "t": 43.719,
+   "script": "Is that clock fast?",
+   "asr": "Is that clock fast?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e02_count",
+   "who": "narrator_history",
+   "t": 45.591,
+   "script": "At eight o'clock exactly, the planet slams on the brakes.",
+   "asr": "At 8 o'clock exactly, the planet slams on the brakes.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "eight",
+     "8"
+    ]
+   ]
+  },
+  {
+   "scene": "e02_count",
+   "who": "narrator_history",
+   "t": 49.606,
+   "script": "The ground stops. You don't.",
+   "asr": "The ground stops. You don't.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e03_loose",
+   "who": "narrator_history",
+   "t": 54.919,
+   "script": "Everything bolted to the bedrock stops with it. Buildings. Bridges. Mountains.",
+   "asr": "Everything bolted to the bedrock stops with it. Buildings, bridges, mountains,",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e03_loose",
+   "who": "narrator_history",
+   "t": 62.503,
+   "script": "Everything that isn't keeps going east at full speed. People. Cars. Oceans. The air.",
+   "asr": "Everything that isn't keeps going east at full speed. People, cars, oceans, the air.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e04_g",
+   "who": "narrator_history",
+   "t": 71.76,
+   "script": "How hard is that stop? Going from 465 metres a second to zero in one second is about 47 g.",
+   "asr": "How hard is that stop? Going from 465 meters, a second to zero in one second, is about 47 G.",
+   "wer": 0.05,
+   "diffs": [
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "e04_g",
+   "who": "narrator_history",
+   "t": 80.772,
+   "script": "Fighter pilots train to survive nine. Most of us black out long before that.",
+   "asr": "Fighter pilots train to survive nine. Most of us black out long before that.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e04_g",
+   "who": "narrator_history",
+   "t": 86.96,
+   "script": "Whatever is bolted down feels all of it.",
+   "asr": "Whatever is bolted down feels all of it.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e05_wind",
+   "who": "narrator_history",
+   "t": 90.712,
+   "script": "Then the air arrives. The atmosphere doesn't stop either.",
+   "asr": "Then the air arrives. The atmosphere doesn't stop either.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e05_wind",
+   "who": "narrator_history",
+   "t": 95.717,
+   "script": "At the equator that's a wind of around 1,670 kilometres an hour.",
+   "asr": "At the equator that's a wind of around 1600 and 70 kilometers an hour.",
+   "wer": 0.308,
+   "diffs": [
+    [
+     "∅",
+     "1600"
+    ],
+    [
+     "1",
+     "and"
+    ],
+    [
+     "670",
+     "70"
+    ],
+    [
+     "kilometres",
+     "kilometers"
+    ]
+   ]
+  },
+  {
+   "scene": "e05_wind",
+   "who": "narrator_history",
+   "t": 101.28,
+   "script": "The fastest tornado wind ever measured was about 480.",
+   "asr": "The fastest tornado wind ever measured was about 480.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e06_ocean",
+   "who": "narrator_history",
+   "t": 106.446,
+   "script": "The oceans keep going too, piling up against every coast that faces east.",
+   "asr": "The oceans keep going too, piling up against every coast that faces east.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e06_ocean",
+   "who": "narrator_history",
+   "t": 111.358,
+   "script": "How big are those waves? Nobody can say for sure. Let's just say: big.",
+   "asr": "How big are those waves? Nobody can say for sure. Let's just say big.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e07_restart",
+   "who": "narrator_history",
+   "t": 118.524,
+   "script": "And here's the part nobody mentions.",
+   "asr": "And here's the part nobody mentions.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e07_restart",
+   "who": "narrator_history",
+   "t": 121.717,
+   "script": "One second later, Earth starts spinning again. A second lurch, the other way.",
+   "asr": "One second later, Earth starts spinning again. A second lurch the other way.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e07_restart",
+   "who": "narrator_history",
+   "t": 127.826,
+   "script": "One second. Two disasters.",
+   "asr": "One second two disasters",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e08_pole",
+   "who": "narrator_history",
+   "t": 132.103,
+   "script": "So who survives? Someone standing exactly on a pole.",
+   "asr": "So he survives, someone standing exactly on a pole.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "who",
+     "he"
+    ]
+   ]
+  },
+  {
+   "scene": "e08_pole",
+   "who": "narrator_history",
+   "t": 136.847,
+   "script": "Meet Kai, at the South Pole. Kai was barely moving to begin with, so Kai just... wobbles.",
+   "asr": "Meet Kai at the South Pole. Kai was barely moving to begin with, so Kai just wobbles.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e08_pole",
+   "who": "researcher_kai",
+   "t": 143.101,
+   "script": "Huh. Anyone else spill their tea?",
+   "asr": "Huh? Anyone else spill their tea?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e08_pole",
+   "who": "narrator_history",
+   "t": 145.649,
+   "script": "And no, there are no penguins to tell.",
+   "asr": "And no, there are no penguins to tell.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e08_pole",
+   "who": "narrator_history",
+   "t": 148.264,
+   "script": "They live on the coast, about 1,400 kilometres away.",
+   "asr": "They live on the coast about 1400 kilometers away.",
+   "wer": 0.3,
+   "diffs": [
+    [
+     "1",
+     "∅"
+    ],
+    [
+     "400",
+     "1400"
+    ],
+    [
+     "kilometres",
+     "kilometers"
+    ]
+   ]
+  },
+  {
+   "scene": "e09_moon",
+   "who": "narrator_history",
+   "t": 152.927,
+   "script": "Good news: nothing in the universe is going to stop Earth in one second.",
+   "asr": "Good news, nothing in the universe is going to start Earth in one second.",
+   "wer": 0.071,
+   "diffs": [
+    [
+     "stop",
+     "start"
+    ]
+   ]
+  },
+  {
+   "scene": "e09_moon",
+   "who": "narrator_history",
+   "t": 157.639,
+   "script": "Bad news: something is slowing it down. Right now.",
+   "asr": "Bad news, something is slowing it down. Right now.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e09_moon",
+   "who": "narrator_history",
+   "t": 162.118,
+   "script": "The Moon.",
+   "asr": "The moon",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e09_moon",
+   "who": "narrator_history",
+   "t": 163.169,
+   "script": "Its tides act like a brake,",
+   "asr": "It's tides act like a break.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "its",
+     "it's"
+    ],
+    [
+     "brake",
+     "break"
+    ]
+   ]
+  },
+  {
+   "scene": "e09_moon",
+   "who": "narrator_history",
+   "t": 165.237,
+   "script": "and every century the day gets a couple of milliseconds longer.",
+   "asr": "And every century the day gets a couple of milliseconds longer.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e09_moon",
+   "who": "narrator_history",
+   "t": 169.396,
+   "script": "Wait about 200 million years, and you get a 25-hour day.",
+   "asr": "Wait about 200 million years and you get a 25-hour day.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e09_moon",
+   "who": "narrator_history",
+   "t": 174.221,
+   "script": "Finally, time to finish that coffee.",
+   "asr": "Finally time to finish that coffee.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e10_cta",
+   "who": "narrator_history",
+   "t": 177.897,
+   "script": "So. You get ten seconds' warning. Where on Earth do you run?",
+   "asr": "So, you get 10 seconds warning. Where on earth do you run?",
+   "wer": 0.083,
+   "diffs": [
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "scene": "e10_cta",
+   "who": "narrator_history",
+   "t": 183.249,
+   "script": "Tell me your city in the comments, and I'll tell you how fast you were going.",
+   "asr": "Tell me your city in the comments, and I'll tell you how fast you were going.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "e10_cta",
+   "who": "narrator_history",
+   "t": 187.541,
+   "script": "Next time: what if the Moon vanished tonight?",
+   "asr": "Next time, what if the moon vanished tonight?",
+   "wer": 0.0,
+   "diffs": []
+  }
+ ],
+ "note": "ASR mistakes are expected on old words and names; a mismatch is a lead for a human listen, not proof of a defect."
+}
