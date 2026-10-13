@@ -177,3 +177,7 @@
 - 2026-10-13 01:57:17 tcv35-escobar-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_35_escobar_40s.mp4 (45.0s, 20.0 MB, sha256 8d5a5856896c)
 - 2026-10-13 01:57:18 produce 32: regenerating episode data
 - 2026-10-13 01:57:18 tcv32-silkroad-40: rendering (final, seed 1)
+- 2026-10-13 02:08:21 tcv32-silkroad-40: rendered in 663s
+- 2026-10-13 02:08:57 tcv32-silkroad-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_32_silkroad_40s.mp4 (44.6s, 18.3 MB, sha256 7e90e0c77806)
+- 2026-10-13 02:08:57 produce 34: regenerating episode data
+- 2026-10-13 02:08:57 tcv34-durst-40: rendering (final, seed 1)
