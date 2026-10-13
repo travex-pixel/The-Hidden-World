@@ -372,3 +372,69 @@ Would you have looked inside? YES or NO 👇 Follow for the next case.
 #BostonMarathon #TrueCrime #Manhunt #Watertown #CaseFiles
 
 In memory of Krystle Campbell, Lu Lingzi, Martin Richard and Officer Sean Collier.
+
+---
+
+# Case Files 31–35: built for the audience data (made 2026-10-13)
+**Audience (owner's Insights):** men, 50% US, 10% UK, 8% Germany, 5% Australia, 5% Canada, mostly 18–34. American cases, the police work and the technology of the catch as the story; object-first headlines; YES/NO end questions.
+**Posting:** ONE a day, at the time 22 went up, nothing else that day. The last batch went up eight in 24 hours and shared one audience test; the three winners each had a day to themselves. Cross-post to TikTok and YouTube Shorts.
+
+## 31: The DC snipers, 40 s (`true_crime_31_sniper_40s.mp4`)
+For three weeks the DC snipers shot people at random. The manhunt ended at a highway rest stop. 🚗
+
+Police spent weeks hunting a white box truck.
+The real clue came from the killers' own phone call about an earlier crime in Alabama.
+
+Would you have noticed the car? YES or NO 👇 Follow for the next case.
+
+#DCSniper #TrueCrime #Manhunt #CrimeHistory #CaseFiles
+
+No victims are depicted. We remember the ten who died.
+
+## 32: Silk Road, 40 s (`true_crime_32_silkroad_40s.mp4`)
+A fake argument in a public library brought down the Silk Road 💻
+
+He ran a dark-web drug empire on Tor and Bitcoin, hidden behind a fake name.
+An IRS agent started with a Google search and found an old forum post.
+Then agents needed his laptop open and unlocked. So they put on a show.
+
+Was the 2025 pardon right? YES or NO 👇 Follow for the next case.
+
+#SilkRoad #TrueCrime #FBI #DarkWeb #CaseFiles
+
+## 33: Times Square, 40 s (`true_crime_33_timessquare_40s.mp4`)
+A smoking SUV with its hazard lights on caught the Times Square bomber 🚙
+
+Two T-shirt vendors noticed it. The dashboard VIN was gone.
+53 hours later, a plane to Dubai was already rolling when it was called back.
+
+Would you have reported the smoke? YES or NO 👇 Follow for the next case.
+
+#TimesSquare #TrueCrime #NYPD #VIN #CaseFiles
+
+The bomber is shown as a silhouette; no device is depicted.
+
+## 34: Robert Durst, 40 s (`true_crime_34_durst_40s.mp4`)
+He agreed to the interview. The microphone did the rest. 🎙️
+
+A note sent to police in 2000. A letter he'd posted years earlier.
+Then an HBO crew left his mic switched on.
+
+Did the mic give him away? YES or NO 👇 Follow for the next case.
+
+#RobertDurst #TheJinx #TrueCrime #HotMic #CaseFiles
+
+In memory of Kathleen McCormack Durst and Susan Berman.
+
+## 35: Pablo Escobar, 40 s (`true_crime_35_escobar_40s.mp4`)
+One phone call ended the 16-month hunt for Pablo Escobar 📞
+
+He walked out of prison in July 1992 and vanished.
+The Search Bloc had radio direction-finding gear and one weakness to listen for.
+On 2 December 1993 he called his son.
+
+Would you have made the call? YES or NO 👇 Follow for the next case.
+
+#PabloEscobar #TrueCrime #Medellin #Manhunt #CaseFiles
+
+Escobar is shown only as a silhouette; no violence is depicted. We remember everyone his cartel killed.

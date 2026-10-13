@@ -32,6 +32,11 @@
 | 28 | `true_crime_28_bundy_40s.mp4` (archived outside git) | Ted Bundy and the traffic stops (1975–1978), 40-second cut | see `production_manifest.json` |
 | 29 | `true_crime_29_rudolph_40s.mp4` (archived outside git) | Eric Rudolph and the grocery-store dumpster (1996–2005), 40-second cut | see `production_manifest.json` |
 | 30 | `true_crime_30_boat_40s.mp4` (archived outside git) | The Boston Marathon manhunt and the backyard boat (2013–2015), 40-second cut | see `production_manifest.json` |
+| 31 | `true_crime_31_sniper_40s.mp4` (archived outside git) | The DC snipers and the rest stop (2002–2009), 40-second cut | see `production_manifest.json` |
+| 32 | `true_crime_32_silkroad_40s.mp4` (archived outside git) | Silk Road and the library laptop (2011–2025), 40-second cut | see `production_manifest.json` |
+| 33 | `true_crime_33_timessquare_40s.mp4` (archived outside git) | The Times Square bomber and the hidden VIN (2010), 40-second cut | see `production_manifest.json` |
+| 34 | `true_crime_34_durst_40s.mp4` (archived outside git) | Robert Durst and the live microphone (1982–2022), 40-second cut | see `production_manifest.json` |
+| 35 | `true_crime_35_escobar_40s.mp4` (archived outside git) | Pablo Escobar and the phone call (1992–1993), 40-second cut | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

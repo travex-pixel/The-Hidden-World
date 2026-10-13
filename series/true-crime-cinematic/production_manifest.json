@@ -2668,15 +2668,15 @@
       "title": "A Phone Call to His Son Ended the Hunt for Pablo Escobar #Shorts",
       "file": "true_crime_35_escobar_40s.mp4",
       "media": {
-        "duration": 45.0,
+        "duration": 45.367,
         "width": 1080,
         "height": 1920,
         "fps": 30.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 19976850,
-        "mean_volume_db": -16.5,
-        "max_volume_db": -1.7
+        "size_bytes": 19989754,
+        "mean_volume_db": -16.6,
+        "max_volume_db": -1.8
       },
       "media_checks": {
         "has_video_stream": true,
@@ -2696,7 +2696,7 @@
         "media_checks_pass": true,
         "duration_in_window": true,
         "dimensions_1080x1920": true,
-        "frames_checked": 1350,
+        "frames_checked": 1361,
         "no_black_frames": true,
         "captions_timed_within_scenes": true,
         "speech_db_min": -16.7,
@@ -2722,16 +2722,29 @@
       },
       "loudness": {
         "integrated_lufs": -14.2,
-        "true_peak_dbtp": -1.7
+        "true_peak_dbtp": -1.8
       },
       "asr_word_error_rate": 0.044,
       "frames_sampled": 8,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_35",
       "status": "verified_automated",
-      "sha256": "8d5a5856896cc32d35599e20de3ebc5743adf2eda29bcb8b18bafe67aa8d29b2",
+      "sha256": "70e21fa78584f99eb84c1f95d89f52c2a22e29ce4811ce0176b800dd01d4ab05",
       "output": "series/true-crime-cinematic/output/true_crime_35_escobar_40s.mp4",
-      "verified": "2026-10-13T01:57:17",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "verified": "2026-10-13T02:48:58",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-13",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "Escobar as a silhouette; the rooftop death in one summary line, the fatal-shot dispute on a card only; toll card lists the Avianca 107 and 500+ police (AP) rather than an unsourced 'thousands'. First render passed QA but the voice read 'US tracking gear' as 'us'; reworded to 'American tracking gear' and fully re-rendered."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "32": {
       "id": "tcv32-silkroad-40",
@@ -2801,7 +2814,20 @@
       "sha256": "7e90e0c778065527e201daa2b53337c6a04f09f7712d7375034e95be39fe85e4",
       "output": "series/true-crime-cinematic/output/true_crime_32_silkroad_40s.mp4",
       "verified": "2026-10-13T02:08:57",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-13",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "Ulbricht as a silhouette; the pardon stated as fact with no opinion; the murder-for-hire allegations (never tried) omitted; the Gmail address never shown in full. Sales figure uses the DOJ's 2015 'more than $200 million' rather than the 2013 complaint's $1.2 billion bitcoin conversion."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "34": {
       "id": "tcv34-durst-40",
@@ -2871,7 +2897,20 @@
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
       "sha256": "a954788932e9e0a4347ac6949c4d9bdebe6fbc9cc65af75cc6492e70553728aa",
       "output": "series/true-crime-cinematic/output/true_crime_34_durst_40s.mp4",
-      "verified": "2026-10-13T02:21:07"
+      "verified": "2026-10-13T02:21:07",
+      "editorial_review": {
+        "date": "2026-10-13",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "Durst as a silhouette; the bathroom quote on a wording-as-reported card with the editing caveat; victims named only on the memorial card; the 2001 Texas case omitted. First render failed audio_music_never_masks (p5 9.9 dB) under the verdict line; music_drop on that scene, audio rebuilt only, p5 12.5."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "31": {
       "id": "tcv31-sniper-40",
@@ -2941,7 +2980,20 @@
       "sha256": "652c594ed38c8934971fc2dda744664eaf8ae9e38b3d2b4d6313e73354dbdf9d",
       "output": "series/true-crime-cinematic/output/true_crime_31_sniper_40s.mp4",
       "verified": "2026-10-13T02:28:32",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-13",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "Both men as silhouettes; the trucker unnamed; the 1975-style modified trunk mentioned only as 'modified'; no shooting depicted. Malvo's status per 2026 extracts ('resentencing fights continue'). One line keeps proportional word timings ('Then a tip line caller claiming to be the sniper')."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     },
     "33": {
       "id": "tcv33-timessquare-40",
@@ -3011,10 +3063,23 @@
       "sha256": "c8c77f756409a00ebdfa7421e369600c1e26a7da65c597df2245467a9a0f33bb",
       "output": "series/true-crime-cinematic/output/true_crime_33_timessquare_40s.mp4",
       "verified": "2026-10-13T02:38:18",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "date": "2026-10-13",
+        "checks": [
+          "script and legal read by the producer",
+          "contact sheet and frame review",
+          "ASR transcript read for mispronunciations",
+          "headline and end question legibility checked"
+        ],
+        "notes": [
+          "Shahzad as a silhouette; the device only as a typed card quoting police; vendors unnamed; arrest wording 'taken off the plane' because sources differ on seat vs jet bridge. Four lines keep proportional word timings (VIN / no-fly expansions)."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the 10 measured audio checks and the ASR transcript."
+      }
     }
   },
-  "updated": "2026-10-13T02:38:18",
+  "updated": "2026-10-13T02:48:58",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",
