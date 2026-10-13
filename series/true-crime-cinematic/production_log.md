@@ -188,3 +188,7 @@
 - 2026-10-13 02:20:22 produce 34: regenerating episode data
 - 2026-10-13 02:20:22 tcv34-durst-40: render cached (inputs unchanged), skipping to QA
 - 2026-10-13 02:21:07 tcv34-durst-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_34_durst_40s.mp4 (45.8s, 17.3 MB, sha256 a954788932e9)
+- 2026-10-13 02:27:58 tcv31-sniper-40: rendered in 514s
+- 2026-10-13 02:28:32 tcv31-sniper-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_31_sniper_40s.mp4 (44.3s, 17.9 MB, sha256 652c594ed38c)
+- 2026-10-13 02:28:32 produce 33: regenerating episode data
+- 2026-10-13 02:28:32 tcv33-timessquare-40: rendering (final, seed 1)
