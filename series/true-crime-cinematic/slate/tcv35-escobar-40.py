@@ -38,7 +38,7 @@ def build(h):
           "hush", ["E_avianca", "E_bounty"], sfx=[fx(0.0, "wind", 0.3), fw(0, 2, "thump", 0.4, -0.05), fw(0, 6, "thud", 0.4, -0.05), fw(0, 9, "stamp", 0.4, -0.05)],
           emph=["bombed", "jet,", "107,", "bounties", "police."], min_d=3.6, pad=0.2, tr="fade"),
         # B - the hunters: the Search Bloc, US help, a plain van with a direction-finding mast on a Medellín street
-        S("s03_bloc", "pe35_bloc", [N("Colombia's Search Bloc hunted him, with DEA help and US tracking gear.")],
+        S("s03_bloc", "pe35_bloc", [N("Colombia's Search Bloc hunted him, with DEA help and American tracking gear.")],
           "tension", ["E_hunt16", "E_us"], sfx=[fx(0.0, "whoosh", 0.35), fw(0, 1, "step", 0.3, -0.1), fw(0, 2, "step", 0.3, 0.1), fw(0, 6, "click", 0.4, -0.05), fw(0, 11, "ping", 0.35, -0.05)],
           emph=["search", "bloc", "dea", "tracking", "gear."], pad=0.2, tr="push"),
         # B - the weak point: the radiotelephone calls to his family; every call puts a signal in the air
