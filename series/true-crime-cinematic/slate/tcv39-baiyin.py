@@ -20,10 +20,10 @@ def build(h):
         # A - hook: the HERO OBJECT (a DNA swab tube glowing in a test-tube rack on a lab bench), big and centred from the
         #     first frame; the headline is burned in by the engine. Line 1 = the stakes (28 years); line 2 = the object.
         S("s01_hook", "by39_hook", [N("For 28 years, a killer in northwest China was never found."),
-                                    N("Then his uncle's DNA sample gave him away.", pause_before=0.2)],
+                                    N("Then one test on his uncle gave him away.", pause_before=0.2)],
           "tension", ["B_years", "B_uncle"], sfx=[fx(0.0, "sub", 0.45), fw(0, 1, "tick", 0.3, -0.03), fw(0, 4, "whoosh", 0.35, -0.05),
-                                                   fw(1, 3, "hit", 0.5, -0.05), fw(1, 6, "ping", 0.35, 0.0)],
-          emph=["28", "years,", "killer", "never", "found.", "uncle's", "dna", "sample"], min_d=5.4, pad=0.15),
+                                                   fw(1, 2, "hit", 0.5, -0.05), fw(1, 5, "ping", 0.35, 0.0)],
+          emph=["28", "years,", "killer", "never", "found.", "test", "uncle"], min_d=5.4, pad=0.15),
         # A - where: the map fly-in from the Asia view to Gansu, China highlighted, a pin on Baiyin, a label on Baotou
         S("s02_map", "by39_map", [N("Eleven women and girls were killed, in Baiyin and Baotou, from 1988 to 2002.")],
           "tension", ["B_victims", "B_where"], sfx=[fx(0.0, "whoosh", 0.4), fw(0, 7, "ping", 0.35, -0.02), fw(0, 9, "ping", 0.3, -0.02), fw(0, 13, "thump", 0.4, -0.05)],
@@ -41,9 +41,9 @@ def build(h):
           "tension-rise", ["B_shop"], sfx=[fw(0, 1, "chime", 0.3, -0.03), fw(0, 8, "door", 0.35, -0.05), fw(0, 11, "coins", 0.3, -0.02)],
           emph=["2016,", "small", "grocery", "shop"], pad=0.2, tr="push"),
         # C - THE HOW, part 1 (about 55 %): a police station counter; the uncle (silhouette) gives a cheek swab. Music drop.
-        S("s06_uncle", "by39_uncle", [N("Then his uncle was arrested over a minor crime, and gave a DNA sample.")],
+        S("s06_uncle", "by39_uncle", [N("Then his uncle was arrested over a minor crime, and gave police his DNA.")],
           "revelation", ["B_uncle"], sfx=[fw(0, 4, "door", 0.35, -0.05), fw(0, 7, "stamp", 0.4, -0.05), fw(0, 11, "click", 0.35, -0.02), fw(0, 13, "hit", 0.5, -0.05)],
-          emph=["uncle", "arrested", "minor", "crime,", "dna", "sample."], pad=0.25, tr="flash"),
+          emph=["uncle", "arrested", "minor", "crime,", "police", "dna."], pad=0.25, tr="flash"),
         # C - THE HOW, part 2: the lab screen lines up two Y-chromosome profiles, near-identical; the killer was family.
         #     The fun fact (Y-STR passes father to son almost unchanged) pops after the line.
         S("s07_match", "by39_match", [N("Its Y chromosome markers were close to the killer's."),
@@ -61,9 +61,9 @@ def build(h):
           emph=["sentenced", "death", "2018,", "executed", "2019."], pad=0.3, tr="zoom"),
         # E - the lesson and the callback on the hero object (the first frame's framing); the end question is burned in
         S("s10_end", "by39_end", [N("The lesson? Your DNA isn't only yours."),
-                                  N("One uncle's sample ended a 28 year hunt.", pause_before=0.3)],
-          "aftermath", ["B_lesson", "B_uncle", "B_years"], sfx=[fw(0, 1, "chime", 0.35, -0.02), fw(1, 2, "ping", 0.35, -0.02), fw(1, 7, "thump", 0.4, -0.05)],
-          emph=["lesson?", "dna", "only", "yours.", "uncle's", "sample", "28", "hunt."], min_d=4.8, pad=1.9, tr="zoom"),
+                                  N("One sample from his uncle ended a 28 year hunt.", pause_before=0.3)],
+          "aftermath", ["B_lesson", "B_uncle", "B_years"], sfx=[fw(0, 1, "chime", 0.35, -0.02), fw(1, 1, "ping", 0.35, -0.02), fw(1, 9, "thump", 0.4, -0.05)],
+          emph=["lesson?", "dna", "only", "yours.", "sample", "uncle", "28", "hunt."], min_d=4.8, pad=1.9, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_map": "A", "s03_lab": "A", "s04_cold": "B", "s05_shop": "B",
                 "s06_uncle": "C", "s07_match": "C", "s08_arrest": "D", "s09_verdict": "D", "s10_end": "E"}

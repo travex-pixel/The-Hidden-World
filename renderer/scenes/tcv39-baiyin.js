@@ -244,7 +244,7 @@
     // 1 - hook: the glowing swab tube in the rack, a DNA helix rising; the scientist beside it reacts. The headline is
     //     burned in by the engine (until ~3.2 s); nothing else sits in y 380-720 before then.
     by39_hook(ctx) {
-      const t = ctx.t, yrs = WT(ctx, 0, 2, 1.3), kil = WT(ctx, 0, 4, 1.9), fnd = WT(ctx, 0, 10, 3.5), l1 = LS(ctx, 1, 4.4), unc = WT(ctx, 1, 2, 4.8), dna = WT(ctx, 1, 3, 5.1), gave = WT(ctx, 1, 5, 5.9);
+      const t = ctx.t, yrs = WT(ctx, 0, 2, 1.3), kil = WT(ctx, 0, 4, 1.9), fnd = WT(ctx, 0, 10, 3.5), l1 = LS(ctx, 1, 4.4), unc = WT(ctx, 1, 1, 4.6), dna = WT(ctx, 1, 2, 4.8), gave = WT(ctx, 1, 6, 5.6);
       const sci = { ...SCI, keys: [{ at: kil, pose: 'stand_tense', expr: 'worried', gaze: [0.8, -0.2], dur: 0.4 }, { at: fnd, pose: 'hands_together', expr: 'sad', dur: 0.5 }, { at: unc, pose: 'examine', expr: 'realise', gaze: [0.9, -0.3], dur: 0.4 }, { at: gave, pose: 'point', expr: 'determined', gaze: [0.9, -0.4], dur: 0.4 }] };
       return E.cine.shot(ctx, {
         set: 'by39_bench', grade: 'neon',
@@ -348,7 +348,7 @@
 
     // 6 - THE HOW, part 1: the police station counter; the uncle (silhouette) gives a cheek swab; the swab tube glows. Drop.
     by39_uncle(ctx) {
-      const t = ctx.t, unc = WT(ctx, 0, 2, 0.6), arr = WT(ctx, 0, 4, 1.0), min = WT(ctx, 0, 7, 1.7), gave = WT(ctx, 0, 10, 2.9), dna = WT(ctx, 0, 12, 3.2), smp = WT(ctx, 0, 13, 3.6);
+      const t = ctx.t, unc = WT(ctx, 0, 2, 0.6), arr = WT(ctx, 0, 4, 1.0), min = WT(ctx, 0, 7, 1.7), gave = WT(ctx, 0, 10, 2.9), dna = WT(ctx, 0, 11, 3.2), smp = WT(ctx, 0, 13, 3.6) + 0.15;
       const tube = tt => { const q = ease.out(seg(tt, gave - 0.2, dna + 0.2)); const x = lerp(760, 560, q), y = lerp(1180, 1330, q);
         return `<g transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(lerp(-30, 0, q))})">` + wash(0, -100, 90, 160, TEAL, f1(0.2 + 0.5 * seg(tt, dna - 0.1, smp))) +
           `<rect x="-22" y="-230" width="44" height="226" rx="22" fill="#dff8ff" fill-opacity="0.3" stroke="#e8fbff" stroke-width="4"/><path d="M-3 -210 L-3 -60" stroke="#f4efe2" stroke-width="7"/><ellipse cx="-3" cy="-42" rx="12" ry="22" fill="#fff"/>` +
@@ -365,7 +365,7 @@
         ],
         props: [{ depth: 1.06, svg: tube }],
         overlays: [
-          { type: 'card', at: arr - 0.1, x: 60, y: 390, w: 720, rows: [{ text: 'HIS UNCLE · A MINOR CRIME', fs: 36, colour: RED }, { text: 'A ROUTINE DNA SAMPLE', fs: 34, at: gave - 0.1 }] },
+          { type: 'card', at: arr - 0.1, x: 60, y: 390, w: 720, rows: [{ text: 'HIS UNCLE · A MINOR CRIME', fs: 36, colour: RED }, { text: 'HE GAVE A DNA SAMPLE', fs: 34, at: gave - 0.1 }] },
           { type: 'impact', at: smp, x: 560, y: 1200, colour: TEAL }
         ],
         tag: TAG
@@ -447,7 +447,7 @@
     // 10 - the lesson card, then the callback on the hero rack in the first frame's framing; the end question is burned in
     //      over the last 3.2 s, so the lesson card has faded by then; the last frame loops to the first.
     by39_end(ctx) {
-      const t = ctx.t, T = ctx.T, les = WT(ctx, 0, 1, 0.2), dna = WT(ctx, 0, 3, 0.8), l1 = LS(ctx, 1, 3.0), unc = WT(ctx, 1, 1, 3.2), hunt = WT(ctx, 1, 7, 4.9);
+      const t = ctx.t, T = ctx.T, les = WT(ctx, 0, 1, 0.2), dna = WT(ctx, 0, 3, 0.8), l1 = LS(ctx, 1, 3.0), unc = WT(ctx, 1, 1, 3.2), hunt = WT(ctx, 1, 9, 4.9);
       const sci = { ...SCI, keys: [{ at: dna, pose: 'present', expr: 'focused', gaze: [0.9, -0.3], dur: 0.4 }, { at: l1, pose: 'examine', expr: 'focused', gaze: [0.9, -0.3], dur: 0.5 }, { at: hunt, pose: 'stand', expr: 'neutral', gaze: [0.8, -0.2], dur: 0.6 }] };
       return E.cine.shot(ctx, {
         set: 'by39_bench', grade: 'neon',
