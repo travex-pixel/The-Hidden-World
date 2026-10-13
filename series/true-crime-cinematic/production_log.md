@@ -192,3 +192,7 @@
 - 2026-10-13 02:28:32 tcv31-sniper-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_31_sniper_40s.mp4 (44.3s, 17.9 MB, sha256 652c594ed38c)
 - 2026-10-13 02:28:32 produce 33: regenerating episode data
 - 2026-10-13 02:28:32 tcv33-timessquare-40: rendering (final, seed 1)
+- 2026-10-13 02:37:44 tcv33-timessquare-40: rendered in 552s
+- 2026-10-13 02:38:18 tcv33-timessquare-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_33_timessquare_40s.mp4 (45.0s, 20.0 MB, sha256 c8c77f756409)
+- 2026-10-13 02:38:18 produce 35 --force: regenerating episode data
+- 2026-10-13 02:38:18 tcv35-escobar-40: rendering (final, seed 1)
