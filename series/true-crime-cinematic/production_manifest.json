@@ -300,7 +300,7 @@
       "soundtrack": {
         "engine": "pipeline/score.py (original, procedural; no samples or third-party audio)",
         "mix": "pipeline/mixdown.py",
-        "sections": "A hook s01-s02 \u00b7 B investigation s03-s05 \u00b7 C questions s06-s09 \u00b7 D cliffhanger s10-s11 (impact on 'trial' at 70.4 s) \u00b7 E exit s12",
+        "sections": "A hook s01-s02 · B investigation s03-s05 · C questions s06-s09 · D cliffhanger s10-s11 (impact on 'trial' at 70.4 s) · E exit s12",
         "licence": "original work generated in this repository; no attribution required (see docs/CREDITS.md)"
       },
       "editorial_review": {
@@ -3644,7 +3644,18 @@
       "sha256": "d877e0c48f6fe290ce36ed8fe1b85fe07cf473351f7b3acffd2d3ad581bc80a7",
       "output": "series/true-crime-cinematic/output/true_crime_42_bali_van.mp4",
       "verified": "2026-10-14T14:55:47",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "reviewer": "Claude (frame and transcript review)",
+        "verdict": "approved",
+        "notes": [
+          "First episode on the premium look (Amber palette, LUT, grain) and premium character animation (overlap/overshoot, anticipation, idle weight shift, irregular and double blinks, saccades, contact shadows, body rim, hem follow-through).",
+          "Real people: Amrozi and the other bombers appear as silhouettes or under 'NOT A LIKENESS'; investigators are generic figures. The stamped number pad is abstract, not a real number.",
+          "Arrest dated 5 November 2002 (Wikipedia, CSM, CBS); some outlets imply 6 November. The narration does not say where on the van the number was read, because sources disagree (engine vs chassis).",
+          "ASR (whisper tiny) transcript matches the script apart from 'Kuta' and 'memorial lists', which the small model misheard; word error rate 0.065."
+        ],
+        "not_done": "No human listening test was performed; audio was judged by the measured audio checks and the ASR transcript."
+      }
     }
   },
   "updated": "2026-10-14T14:55:47",
