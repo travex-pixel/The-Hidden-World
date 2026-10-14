@@ -208,3 +208,5 @@
 - 2026-10-13 22:27:14 tcv38-scam-city: VERIFIED -> series/true-crime-cinematic/output/true_crime_38_scam_city.mp4 (51.8s, 43.7 MB, sha256 80a3fac76b6b)
 - 2026-10-13 22:27:14 produce 36 --force: regenerating episode data
 - 2026-10-13 22:27:14 tcv36-yen-heist: rendering (final60, seed 1)
+- 2026-10-14 01:03:29 produce 41: regenerating episode data
+- 2026-10-14 01:03:29 tcv41-red-mansion: rendering (final60, seed 1)
