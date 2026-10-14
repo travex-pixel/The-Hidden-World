@@ -29,6 +29,6 @@
 [ 37.88s –  43.12s] s09_raid
   NARRATOR [38.12s]: Then Myanmar's army raided KK Park and blew up buildings.
 
-[ 43.12s –  51.75s] s10_end
+[ 43.12s –  52.12s] s10_end
   NARRATOR [43.38s]: The lesson? A stranger who texts by mistake, then talks crypto, is a scam.
-  NARRATOR [48.07s]: Don't reply to that wrong number.
+  NARRATOR [48.07s]: So never reply to that wrong number.
