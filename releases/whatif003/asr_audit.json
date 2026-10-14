@@ -1,0 +1,759 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR) on the MP4's own audio track",
+ "lines": 46,
+ "corpus_wer": 0.109,
+ "lines_over_25pct": [
+  {
+   "scene": "g03_london",
+   "who": "narrator_history",
+   "t": 91.156,
+   "script": "The bearskin goes first. Then Harry.",
+   "asr": "The bear skin goes first then Harry",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "∅",
+     "bear"
+    ],
+    [
+     "bearskin",
+     "skin"
+    ]
+   ]
+  },
+  {
+   "scene": "g04_uluru",
+   "who": "narrator_history",
+   "t": 96.172,
+   "script": "Second seven. The Australian outback, at sunset.",
+   "asr": "2nd 7th, the Australian outback at sunset",
+   "wer": 0.286,
+   "diffs": [
+    [
+     "second",
+     "2nd"
+    ],
+    [
+     "seven",
+     "7th"
+    ]
+   ]
+  },
+  {
+   "scene": "g05_sea",
+   "who": "narrator_history",
+   "t": 126.206,
+   "script": "Eight seconds in, the sea surface is already three hundred metres up and climbing.",
+   "asr": "8 seconds in the sea surface is already 300 meters up and climbing.",
+   "wer": 0.286,
+   "diffs": [
+    [
+     "eight",
+     "8"
+    ],
+    [
+     "three",
+     "∅"
+    ],
+    [
+     "hundred",
+     "300"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "g06_moon",
+   "who": "narrator_history",
+   "t": 137.376,
+   "script": "It orbits at about one kilometre a second, held on a leash by Earth's gravity.",
+   "asr": "It orbits at about 1 km/s, held on a leash by Earth's gravity.",
+   "wer": 0.267,
+   "diffs": [
+    [
+     "one",
+     "∅"
+    ],
+    [
+     "kilometre",
+     "1"
+    ],
+    [
+     "a",
+     "km"
+    ],
+    [
+     "second",
+     "s"
+    ]
+   ]
+  },
+  {
+   "scene": "g06_moon",
+   "who": "narrator_history",
+   "t": 147.779,
+   "script": "Out of four hundred thousand.",
+   "asr": "Out of 400,000.",
+   "wer": 0.6,
+   "diffs": [
+    [
+     "four",
+     "∅"
+    ],
+    [
+     "hundred",
+     "400"
+    ],
+    [
+     "thousand",
+     "000"
+    ]
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "scene": "g00_cold",
+   "who": "narrator_history",
+   "t": 0.49,
+   "script": "At nine o'clock tonight, gravity switches off. For ten seconds.",
+   "asr": "At 9 o'clock tonight gravity switches off for 10 seconds",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "nine",
+     "9"
+    ],
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "scene": "g00_cold",
+   "who": "narrator_history",
+   "t": 5.359,
+   "script": "This is Times Square at 8:59. Enjoy the ground while you've got it.",
+   "asr": "This is time square at 8:59. Enjoy the ground while you've got it.",
+   "wer": 0.071,
+   "diffs": [
+    [
+     "times",
+     "time"
+    ]
+   ]
+  },
+  {
+   "scene": "g00_cold",
+   "who": "narrator_history",
+   "t": 11.278,
+   "script": "Three. Two. One.",
+   "asr": "Three two one",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g01_sydney",
+   "who": "narrator_history",
+   "t": 17.835,
+   "script": "Second one. Sydney, sunrise. A jogger, a dog, the gulls. Gravity's gone, and...",
+   "asr": "Second one, Sydney sunrise. A jogger, a dog, the gulls. Gravity's gone and...",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g01_sydney",
+   "who": "narrator_history",
+   "t": 25.879,
+   "script": "nothing happens.",
+   "asr": "Nothing happens.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g01_sydney",
+   "who": "jogger_lee",
+   "t": 27.783,
+   "script": "Was that it?",
+   "asr": "Was that it?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g01_sydney",
+   "who": "narrator_history",
+   "t": 29.048,
+   "script": "Nothing is pulling you down any more. But nothing's pushing you up, either.",
+   "asr": "Nothing is pulling you down anymore. But nothing's pushing you up either.",
+   "wer": 0.154,
+   "diffs": [
+    [
+     "any",
+     "∅"
+    ],
+    [
+     "more",
+     "anymore"
+    ]
+   ]
+  },
+  {
+   "scene": "g01_sydney",
+   "who": "narrator_history",
+   "t": 34.386,
+   "script": "Except the planet's spin. It's been trying to fling you off all along.",
+   "asr": "Accept the planet's spin. It's been trying to fling you off all along.",
+   "wer": 0.077,
+   "diffs": [
+    [
+     "except",
+     "accept"
+    ]
+   ]
+  },
+  {
+   "scene": "g01_sydney",
+   "who": "narrator_history",
+   "t": 39.91,
+   "script": "Without gravity, it finally can.",
+   "asr": "Without gravity it finally can.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g01_sydney",
+   "who": "narrator_history",
+   "t": 42.921,
+   "script": "Gently. About a metre in ten seconds. The slowest launch in history.",
+   "asr": "Gently, about a meter in 10 seconds, the slowest launch in history.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "metre",
+     "meter"
+    ],
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "scene": "g02_air",
+   "who": "narrator_history",
+   "t": 49.821,
+   "script": "Second three. San Francisco. The air is the problem.",
+   "asr": "2nd 3. San Francisco. The air is the problem.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "second",
+     "2nd"
+    ],
+    [
+     "three",
+     "3"
+    ]
+   ]
+  },
+  {
+   "scene": "g02_air",
+   "who": "narrator_history",
+   "t": 55.205,
+   "script": "Air has weight, and only gravity keeps it down.",
+   "asr": "Air has weight and only gravity keeps it down.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g02_air",
+   "who": "narrator_history",
+   "t": 58.528,
+   "script": "The pressure underneath never stops pushing up.",
+   "asr": "The pressure underneath never stops pushing up.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g02_air",
+   "who": "narrator_history",
+   "t": 62.069,
+   "script": "Switch gravity off, and the whole atmosphere takes off at one g.",
+   "asr": "Switch gravity off and the whole atmosphere takes off at 1G.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "one",
+     "∅"
+    ],
+    [
+     "g",
+     "1g"
+    ]
+   ]
+  },
+  {
+   "scene": "g02_air",
+   "who": "narrator_history",
+   "t": 66.733,
+   "script": "The famous fog goes first.",
+   "asr": "The famous fog goes first.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g02_air",
+   "who": "narrator_history",
+   "t": 69.324,
+   "script": "By second six, the updraft is faster than a skydiver falls.",
+   "asr": "By second six, the updraft is faster than a skydiver falls.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g02_air",
+   "who": "narrator_history",
+   "t": 73.647,
+   "script": "Now the air lifts you, your car, and the bridge traffic.",
+   "asr": "Now the air lifts you, your car, and the bridge traffic.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g03_london",
+   "who": "narrator_history",
+   "t": 78.172,
+   "script": "Second six. London. Everything not bolted down is going up.",
+   "asr": "2nd 6. London: Everything not bolted down is going up.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "second",
+     "2nd"
+    ],
+    [
+     "six",
+     "6"
+    ]
+   ]
+  },
+  {
+   "scene": "g03_london",
+   "who": "narrator_history",
+   "t": 83.991,
+   "script": "Tourists, taxis, a number 24 bus, and every pigeon in Westminster.",
+   "asr": "Tourists taxis are number 24 bus and every pigeon in Westminster.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "a",
+     "are"
+    ]
+   ]
+  },
+  {
+   "scene": "g03_london",
+   "who": "guard_harry",
+   "t": 88.907,
+   "script": "Not. Moving.",
+   "asr": "Not moving",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g03_london",
+   "who": "narrator_history",
+   "t": 91.156,
+   "script": "The bearskin goes first. Then Harry.",
+   "asr": "The bear skin goes first then Harry",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "∅",
+     "bear"
+    ],
+    [
+     "bearskin",
+     "skin"
+    ]
+   ]
+  },
+  {
+   "scene": "g04_uluru",
+   "who": "narrator_history",
+   "t": 96.172,
+   "script": "Second seven. The Australian outback, at sunset.",
+   "asr": "2nd 7th, the Australian outback at sunset",
+   "wer": 0.286,
+   "diffs": [
+    [
+     "second",
+     "2nd"
+    ],
+    [
+     "seven",
+     "7th"
+    ]
+   ]
+  },
+  {
+   "scene": "g04_uluru",
+   "who": "narrator_history",
+   "t": 100.688,
+   "script": "A red kangaroo can already clear about three metres.",
+   "asr": "A red kangaroo can already clear about 3 meters.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "three",
+     "3"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "g04_uluru",
+   "who": "narrator_history",
+   "t": 103.919,
+   "script": "Take away gravity, and one hop never ends.",
+   "asr": "Take away gravity and one hop never ends.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g04_uluru",
+   "who": "narrator_history",
+   "t": 107.111,
+   "script": "The emus have never flown in their lives. They're flying now. They are not happy about it.",
+   "asr": "The emus have never flown in their lives they're flying now they are not happy about it",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g05_sea",
+   "who": "narrator_history",
+   "t": 114.269,
+   "script": "Second eight. Back in Sydney, the harbour has noticed.",
+   "asr": "Second date: Back in Sydney the harbour has noticed.",
+   "wer": 0.111,
+   "diffs": [
+    [
+     "eight",
+     "date"
+    ]
+   ]
+  },
+  {
+   "scene": "g05_sea",
+   "who": "narrator_history",
+   "t": 118.981,
+   "script": "Water is held down by gravity too. So the whole ocean is rising at one g, like the air.",
+   "asr": "Water is held down by gravity too. So the whole ocean is rising at one g like the air.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g05_sea",
+   "who": "narrator_history",
+   "t": 126.206,
+   "script": "Eight seconds in, the sea surface is already three hundred metres up and climbing.",
+   "asr": "8 seconds in the sea surface is already 300 meters up and climbing.",
+   "wer": 0.286,
+   "diffs": [
+    [
+     "eight",
+     "8"
+    ],
+    [
+     "three",
+     "∅"
+    ],
+    [
+     "hundred",
+     "300"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "g05_sea",
+   "who": "narrator_history",
+   "t": 131.394,
+   "script": "The ferry is doing fine. Technically.",
+   "asr": "The ferry is doing fine technically",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g06_moon",
+   "who": "narrator_history",
+   "t": 135.517,
+   "script": "Meanwhile, the Moon.",
+   "asr": "Meanwhile the moon",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g06_moon",
+   "who": "narrator_history",
+   "t": 137.376,
+   "script": "It orbits at about one kilometre a second, held on a leash by Earth's gravity.",
+   "asr": "It orbits at about 1 km/s, held on a leash by Earth's gravity.",
+   "wer": 0.267,
+   "diffs": [
+    [
+     "one",
+     "∅"
+    ],
+    [
+     "kilometre",
+     "1"
+    ],
+    [
+     "a",
+     "km"
+    ],
+    [
+     "second",
+     "s"
+    ]
+   ]
+  },
+  {
+   "scene": "g06_moon",
+   "who": "narrator_history",
+   "t": 142.622,
+   "script": "Cut the leash for ten seconds, and it drifts ten kilometres off its curve.",
+   "asr": "Cut the leash for 10 seconds and it drifts 10 km off its curve.",
+   "wer": 0.214,
+   "diffs": [
+    [
+     "ten",
+     "10"
+    ],
+    [
+     "ten",
+     "10"
+    ],
+    [
+     "kilometres",
+     "km"
+    ]
+   ]
+  },
+  {
+   "scene": "g06_moon",
+   "who": "narrator_history",
+   "t": 147.779,
+   "script": "Out of four hundred thousand.",
+   "asr": "Out of 400,000.",
+   "wer": 0.6,
+   "diffs": [
+    [
+     "four",
+     "∅"
+    ],
+    [
+     "hundred",
+     "400"
+    ],
+    [
+     "thousand",
+     "000"
+    ]
+   ]
+  },
+  {
+   "scene": "g06_moon",
+   "who": "narrator_history",
+   "t": 150.333,
+   "script": "Nobody notices. The Moon has the easiest ten seconds of anyone.",
+   "asr": "Nobody notices. The moon has the easiest 10 seconds of anyone.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "scene": "g07_drop",
+   "who": "narrator_history",
+   "t": 156.271,
+   "script": "Second ten. Gravity's back. And everything comes down from wherever it got to.",
+   "asr": "2nd 10. Gravity's back and everything comes down from wherever it got to.",
+   "wer": 0.154,
+   "diffs": [
+    [
+     "second",
+     "2nd"
+    ],
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "scene": "g07_drop",
+   "who": "narrator_history",
+   "t": 163.211,
+   "script": "The crowd: a few metres. Bruises.",
+   "asr": "The crowd a few meters. Bruises.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "g07_drop",
+   "who": "narrator_history",
+   "t": 166.472,
+   "script": "The air: half a kilometre of it, all at once. A downdraft that beats any storm on record.",
+   "asr": "The air half a kilometer of it all at once a down draft that beats any storm on record",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "kilometre",
+     "kilometer"
+    ],
+    [
+     "∅",
+     "down"
+    ],
+    [
+     "downdraft",
+     "draft"
+    ]
+   ]
+  },
+  {
+   "scene": "g07_drop",
+   "who": "narrator_history",
+   "t": 173.131,
+   "script": "The sea: coming back down from five hundred metres up. Bring a towel.",
+   "asr": "The sea coming back down from 500 meters up. Bring a towel.",
+   "wer": 0.231,
+   "diffs": [
+    [
+     "five",
+     "∅"
+    ],
+    [
+     "hundred",
+     "500"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "g07_drop",
+   "who": "narrator_history",
+   "t": 178.907,
+   "script": "And the planet's own insides, which gravity also holds together? Let's not even go there.",
+   "asr": "And the planets own insides, which gravity also holds together. Let's not even go there.",
+   "wer": 0.067,
+   "diffs": [
+    [
+     "planet's",
+     "planets"
+    ]
+   ]
+  },
+  {
+   "scene": "g08_magnet",
+   "who": "narrator_history",
+   "t": 186.013,
+   "script": "Here's the strange part.",
+   "asr": "Here's the strange part.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g08_magnet",
+   "who": "narrator_history",
+   "t": 188.504,
+   "script": "Gravity, the thing that just dropped an ocean on Sydney, is the weakest force there is.",
+   "asr": "Gravity, the thing that just dropped an ocean on Sydney, is the weakest force there is.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g08_magnet",
+   "who": "narrator_history",
+   "t": 194.143,
+   "script": "This fridge magnet lifts a paperclip against the pull of the entire planet.",
+   "asr": "This fridge magnet lifts a paper clip against the pull of the entire planet.",
+   "wer": 0.154,
+   "diffs": [
+    [
+     "∅",
+     "paper"
+    ],
+    [
+     "paperclip",
+     "clip"
+    ]
+   ]
+  },
+  {
+   "scene": "g08_magnet",
+   "who": "narrator_history",
+   "t": 199.433,
+   "script": "The whole Earth, versus one magnet. The magnet wins.",
+   "asr": "The whole earth versus one magnet. The magnet wins.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g09_cta",
+   "who": "narrator_history",
+   "t": 204.973,
+   "script": "So. Ten seconds of zero gravity, anywhere on Earth. What's the first thing you do?",
+   "asr": "So, 10 seconds of zero gravity anywhere on Earth. What's the first thing you do?",
+   "wer": 0.067,
+   "diffs": [
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "scene": "g09_cta",
+   "who": "narrator_history",
+   "t": 211.63,
+   "script": "Tell me in the comments. Bonus points if it involves a kangaroo.",
+   "asr": "Tell me in the comments. Bonus points if it involves a kangaroo.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "g09_cta",
+   "who": "narrator_history",
+   "t": 216.575,
+   "script": "Next time: what if the Moon vanished tonight?",
+   "asr": "Next time, what if the moon vanished tonight?",
+   "wer": 0.0,
+   "diffs": []
+  }
+ ],
+ "note": "ASR mistakes are expected on old words and names; a mismatch is a lead for a human listen, not proof of a defect."
+}

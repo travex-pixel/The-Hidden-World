@@ -1,0 +1,191 @@
+{
+  "episode": "whatif003-gravity-off",
+  "file": "out/whatif003-gravity-off-r4/whatif003-gravity-off.mp4",
+  "duration": 221.8,
+  "checks": [
+    {
+      "check": "foot_slip_planted_px",
+      "status": "PASS",
+      "value": 0.0,
+      "detail": "max movement of a planted foot as drawn, between frames, over 8408 samples (rest px); turns excluded"
+    },
+    {
+      "check": "camera_accel_px_per_frame2",
+      "status": "PASS",
+      "value": 0.28,
+      "detail": "peak at t=27.87s (excl. cuts/shakes); <2.5 reads as smooth"
+    },
+    {
+      "check": "dolly_scale_rate_per_frame",
+      "status": "PASS",
+      "value": 0.0062,
+      "detail": "max change of acting-plane scale per frame (fast punch-ins > 0.02)"
+    },
+    {
+      "check": "character_scale_consistency",
+      "status": "PASS",
+      "value": {
+        "pov_modern": 0.0,
+        "commuter_sam": 0.0,
+        "jogger_lee": 0.0,
+        "guard_harry": 0.0
+      },
+      "detail": "relative spread of each character's authored height across shots (same rig spec everywhere)"
+    },
+    {
+      "check": "black_frames",
+      "status": "PASS",
+      "value": 0,
+      "detail": "frames with mean luma < 16 outside the opening/closing fades"
+    },
+    {
+      "check": "longest_frozen_stretch_s",
+      "status": "WARN",
+      "value": 1.2,
+      "detail": "near-identical consecutive frames, ending t=187.30s"
+    },
+    {
+      "check": "unplanned_jumps",
+      "status": "PASS",
+      "value": [],
+      "detail": "frame differences > 22.4 away from planned transitions"
+    },
+    {
+      "check": "motion_in_every_scene",
+      "status": "PASS",
+      "value": {
+        "g00_cold": 1.44,
+        "g01_sydney": 0.74,
+        "g02_air": 1.13,
+        "g03_london": 1.81,
+        "g04_uluru": 0.68,
+        "g05_sea": 0.84,
+        "g06_moon": 0.48,
+        "g07_drop": 1.08,
+        "g08_magnet": 0.71,
+        "g09_cta": 1.77
+      },
+      "detail": "mean frame difference per scene (0 = static image)"
+    },
+    {
+      "check": "subtitle_timing",
+      "status": "PASS",
+      "value": {
+        "cues": 46,
+        "max_chars_per_s": 17.7,
+        "too_short": [],
+        "overlaps": 0
+      },
+      "detail": "reading speed <= 22 chars/s, every cue >= 0.9 s"
+    },
+    {
+      "check": "subtitle_voice_alignment",
+      "status": "PASS",
+      "value": 2.38,
+      "detail": "speech-band energy inside subtitle cues vs outside (higher = voice sits under its subtitle)"
+    },
+    {
+      "check": "dead_air_s",
+      "status": "WARN",
+      "value": {
+        "longest_gap": 3.45,
+        "opening_silence": 0.49,
+        "outro_after_last_line": 2.4
+      },
+      "detail": "gaps without speech (music/SFX and motion continue)"
+    },
+    {
+      "check": "loudness",
+      "status": "PASS",
+      "value": {
+        "integrated_lufs": -16.0,
+        "true_peak_dbfs": -2.5,
+        "lra_lu": 3.9
+      },
+      "detail": "target -16 LUFS integrated, true peak <= -1 dBFS (same targets as the true-crime documentaries)"
+    },
+    {
+      "check": "voice_over_music_db",
+      "status": "PASS",
+      "value": {
+        "median_db": 23.8,
+        "p5_db": 16.8,
+        "windows": 2452
+      },
+      "detail": "voice level over score + ambience while someone speaks (50 ms windows); aim >= 20 dB median for phone speakers"
+    },
+    {
+      "check": "asr_word_error_rate",
+      "status": "PASS",
+      "value": {
+        "corpus_wer": 0.109,
+        "lines_over_25pct": [
+          [
+            "The bearskin goes first. Then Harry.",
+            "The bear skin goes first then Harry"
+          ],
+          [
+            "Second seven. The Australian outback, at sunset.",
+            "2nd 7th, the Australian outback at sunset"
+          ],
+          [
+            "Eight seconds in, the sea surface is already three hundred metres up and climbing.",
+            "8 seconds in the sea surface is already 300 meters up and climbing."
+          ],
+          [
+            "It orbits at about one kilometre a second, held on a leash by Earth's gravity.",
+            "It orbits at about 1 km/s, held on a leash by Earth's gravity."
+          ],
+          [
+            "Out of four hundred thousand.",
+            "Out of 400,000."
+          ]
+        ]
+      },
+      "detail": "offline recogniser on the MP4's audio vs the script; mismatches are leads for a listen, not proof of an error"
+    },
+    {
+      "check": "claims_flagged_for_review",
+      "status": "WARN",
+      "value": {
+        "non_established_claims": [
+          {
+            "id": "G3",
+            "type": "estimate",
+            "text": "Our calculation: with gravity gone, the spin's unbalanced centripetal demand (v squared over r, about 0.023 m/s squared "
+          },
+          {
+            "id": "G4",
+            "type": "estimate",
+            "text": "Our calculation from hydrostatic balance (dP/dz = -rho g): the upward pressure-gradient force on air and water is normal"
+          },
+          {
+            "id": "G7",
+            "type": "estimate",
+            "text": "Our calculation: a body accelerating upward at 9.8 m/s squared rises about 310 m in eight seconds and 490 m in ten; afte"
+          }
+        ],
+        "sources_verified_by_snippet_only": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11"
+        ]
+      },
+      "detail": "a historian/editor must confirm these before publishing"
+    }
+  ],
+  "summary": {
+    "PASS": 12,
+    "WARN": 3,
+    "FAIL": 0
+  },
+  "visual_review": "storyboard.png and transitions.png must be inspected by a person; automated checks do not judge beauty."
+}

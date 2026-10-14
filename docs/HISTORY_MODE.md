@@ -265,6 +265,8 @@ to use the v4 additions. Everything is opt-in; earlier episodes render as before
 * **Effects** (`fx.js`): `rain`, `lightning`, `fireworks`, `snow`, `fogBank` (with `lift`), `lensFlare`, `waves`
   (with `lift` and `chop`) and `confetti`.
 * **Ambiences:** `harbour` (water, gulls, a ferry horn) and `outback` (dry wind, cicadas, a crow).
+* **Release:** `releases/whatif003/` (parts, captions, thumbnails, QA, `REVIEW.md`); phone download page
+  https://claude.ai/artifact/CPx1n3TDEGrSnkBGkN7E3C.
 
 ## 3. Writing an episode
 
