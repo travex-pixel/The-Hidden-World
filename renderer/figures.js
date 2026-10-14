@@ -57,25 +57,68 @@
   const XKEYS = ['raise', 'knit', 'smile', 'open', 'lid', 'wide'];
   const NKEYS = ['x', 'y', 'turn', 'headTurn', 'scale'];
 
+  // premium motion: distal parts trail the body (overlapping action) and overshoot a touch before settling
+  const LAG = { tilt: 0.06, nUa: 0.04, fUa: 0.07, nFa: 0.09, fFa: 0.12 };
+  const OVR = { tilt: 0.08, nUa: 0.06, fUa: 0.06, nFa: 0.1, fFa: 0.1 };
+  const settle = (x, k) => ease.inOut(x) + k * Math.pow(Math.sin(Math.PI * clamp((x - 0.5) / 0.5, 0, 1)), 2);
+  const ANT_A = 0.16, ANT_B = 0.1, ARMS = ['nUa', 'fUa', 'nFa', 'fFa'];   // anticipation window around a pose key (s)
+
   // state at time t from keyframes: [{at, pose, expr, gaze:[x,y], turn, headTurn, x, y, dur}]
-  function stateAt(f, t) {
+  function stateAt(f, t, prem) {
     const keys = [{ at: -1e9, pose: f.pose || 'stand', expr: f.expr || 'neutral', gaze: f.gaze || [0.3, 0], turn: f.turn ?? 0.35, headTurn: f.headTurn ?? 0, x: f.x, y: f.y, scale: f.scale || 1 }, ...(f.keys || [])].sort((a, b) => a.at - b.at);
     const P = { ...POSES[keys[0].pose] }; PKEYS.forEach(k => { P[k] = P[k] || 0; }); P.prop = POSES[keys[0].pose].prop;
     const X = { ...EXPR[keys[0].expr] }; let g = keys[0].gaze.slice(); const N = {}; NKEYS.forEach(k => N[k] = keys[0][k]);
+    const ant = {}; let dip = 0;
+    const anticipate = (k, from) => {   // a small counter-move just before (and into) a pose change, plus a weight dip
+      const s = (t - (k.at - ANT_A)) / (ANT_A + ANT_B); if (s <= 0 || s >= 1) return;
+      const b = Math.pow(Math.sin(Math.PI * s), 2), tp = POSES[k.pose]; let mag = 0;
+      ARMS.concat(['lean']).forEach(q => { const d = (tp[q] || 0) - from[q]; ant[q] = (ant[q] || 0) - d * 0.07 * b; mag += Math.abs(d); });
+      dip = Math.max(dip, clamp(mag / 160, 0, 1) * 9 * b);
+    };
     for (let i = 1; i < keys.length; i++) {
-      const k = keys[i]; if (t < k.at) break; const u = ease.inOut(clamp((t - k.at) / (k.dur || 0.5), 0, 1));
-      if (k.pose) { const tp = POSES[k.pose]; PKEYS.forEach(q => P[q] = lerp(P[q], tp[q] || 0, u)); if (u > 0.5) P.prop = tp.prop; }
+      const k = keys[i];
+      if (t < k.at) { if (prem && k.pose) anticipate(k, P); break; }
+      const u = ease.inOut(clamp((t - k.at) / (k.dur || 0.5), 0, 1));
+      if (k.pose) {
+        const tp = POSES[k.pose];
+        if (prem) { anticipate(k, { ...P }); PKEYS.forEach(q => { const x = clamp((t - k.at - (LAG[q] || 0)) / (k.dur || 0.5), 0, 1); P[q] = lerp(P[q], tp[q] || 0, settle(x, OVR[q] || 0)); }); }
+        else PKEYS.forEach(q => P[q] = lerp(P[q], tp[q] || 0, u));
+        if (u > 0.5) P.prop = tp.prop;
+      }
       if (k.expr) { const tx = EXPR[k.expr]; XKEYS.forEach(q => X[q] = lerp(X[q], tx[q], u)); }
       if (k.gaze) g = [lerp(g[0], k.gaze[0], ease.out(clamp((t - k.at) / 0.25, 0, 1))), lerp(g[1], k.gaze[1], ease.out(clamp((t - k.at) / 0.25, 0, 1)))];
       NKEYS.forEach(q => { if (k[q] !== undefined) N[q] = lerp(N[q], k[q], u); });
     }
     if (f.propOverride !== undefined) P.prop = f.propOverride;
-    return { P, X, gaze: g, ...N };
+    Object.keys(ant).forEach(q => { P[q] += ant[q]; });
+    return { P, X, gaze: g, dip, ...N };
   }
   function blink(id, t) {
     const r = E.mulberry32(E.hashStr(id) ^ 77); let tb = 0.6 + r() * 1.4;
     while (tb < t + 0.2) { const d = t - tb; if (d >= 0 && d < 0.16) return Math.sin(d / 0.16 * Math.PI); tb += 2.2 + r() * 2.8; }
     return 0;
+  }
+
+  const blinkShape = d => d < 0.07 ? ease.inOut(d / 0.07) : d < 0.09 ? 1 : d < 0.21 ? 1 - ease.out((d - 0.09) / 0.12) : 0;   // fast close, slower open
+  function blinkP(id, t, extra) {
+    const r = E.mulberry32(E.hashStr(id) ^ 77); let tb = 0.5 + r() * 1.6, v = 0;
+    while (tb < t + 0.3) {
+      const d = t - tb, dbl = r() < 0.18;
+      if (d >= 0 && d < 0.21) v = Math.max(v, blinkShape(d));
+      if (dbl && d - 0.26 >= 0 && d - 0.26 < 0.21) v = Math.max(v, blinkShape(d - 0.26));
+      tb += 1.8 + r() * 3.6 + (r() < 0.2 ? 2.5 : 0);
+    }
+    extra.forEach(te => { const d = t - te; if (d >= 0 && d < 0.21) v = Math.max(v, blinkShape(d) * 0.9); });   // people blink as the head turns
+    return v;
+  }
+  function saccade(id, t) {   // small, quick gaze jumps every 0.7–2.4 s
+    const r = E.mulberry32(E.hashStr(id) ^ 313); let ts = r() * 0.8, px = 0, py = 0, gx = 0, gy = 0;
+    while (ts <= t) {
+      px = gx; py = gy; gx = (r() - 0.5) * 0.16; gy = (r() - 0.5) * 0.08; const nt = ts + 0.7 + r() * 1.7;
+      if (nt > t) { const u = ease.out(clamp((t - ts) / 0.05, 0, 1)); return [lerp(px, gx, u), lerp(py, gy, u)]; }
+      ts = nt;
+    }
+    return [0, 0];
   }
 
   // ---------- geometry helpers
@@ -205,30 +248,35 @@
   }
 
   // ---------- outfit pieces
-  function torsoShape(sp, o, S, H, turn, lean, sit) {
+  function torsoShape(sp, o, S, H, turn, lean, sit, sway = 0, rim = null) {
     // S: shoulders [far, near], H: hips [far, near] (figure facing right); returns {back, front} svg
     const top = o.top, tsh = o.top_shadow || shade(top, 0.7), mid = [(S[0][0] + S[1][0]) / 2, (S[0][1] + S[1][1]) / 2], hip = [(H[0][0] + H[1][0]) / 2, (H[0][1] + H[1][1]) / 2];
     const chestF = 26 * turn;   // chest pushes forward in profile
     const coatLen = o.style === 'coat' || o.style === 'labcoat' || o.style === 'robe' ? (sit ? 60 : (o.style === 'robe' ? 430 : 300)) : (o.style === 'dress' ? (sit ? 40 : (o.length || 250)) : 30);
+    const hs = coatLen > 100 ? sway * coatLen / 300 : 0;   // hem follow-through (premium): long clothing trails the body
     const female = sp.sex === 'female'; const nk = [mid[0] + 4 + turn * 10, Math.min(S[0][1], S[1][1]) - 26];
     const wy = hip[1] - 70, win = female ? 16 : 7;   // waist height and taper
     const flare = o.style === 'dress' ? 26 : (o.style === 'coat' || o.style === 'labcoat' || o.style === 'robe' ? 12 : 0);
     const body = `M${f1(S[0][0] - 20)} ${f1(S[0][1] + 14)} C${f1(S[0][0] - 16)} ${f1(S[0][1] - 10)} ${f1(nk[0] - 44)} ${f1(nk[1] + 4)} ${f1(nk[0])} ${f1(nk[1])}
       C${f1(nk[0] + 44)} ${f1(nk[1] + 4)} ${f1(S[1][0] + 16)} ${f1(S[1][1] - 10)} ${f1(S[1][0] + 22)} ${f1(S[1][1] + 14)}
       C${f1(S[1][0] + 24 + chestF)} ${f1(S[1][1] + 80)} ${f1(H[1][0] + 16 - win + chestF * 0.3)} ${f1(wy - 40)} ${f1(H[1][0] + 12 - win)} ${f1(wy)}
-      C${f1(H[1][0] + 10 - win)} ${f1(wy + 30)} ${f1(H[1][0] + 18)} ${f1(H[1][1] - 10)} ${f1(H[1][0] + 16 + flare)} ${f1(H[1][1] + coatLen)}
-      L${f1(H[0][0] - 18 - flare)} ${f1(H[0][1] + coatLen)} C${f1(H[0][0] - 18)} ${f1(H[0][1] - 10)} ${f1(H[0][0] - 12 + win)} ${f1(wy + 30)} ${f1(H[0][0] - 12 + win)} ${f1(wy)}
+      C${f1(H[1][0] + 10 - win)} ${f1(wy + 30)} ${f1(H[1][0] + 18)} ${f1(H[1][1] - 10)} ${f1(H[1][0] + 16 + flare + hs)} ${f1(H[1][1] + coatLen)}
+      L${f1(H[0][0] - 18 - flare + hs)} ${f1(H[0][1] + coatLen)} C${f1(H[0][0] - 18)} ${f1(H[0][1] - 10)} ${f1(H[0][0] - 12 + win)} ${f1(wy + 30)} ${f1(H[0][0] - 12 + win)} ${f1(wy)}
       C${f1(H[0][0] - 14 + win)} ${f1(wy - 40)} ${f1(S[0][0] - 24)} ${f1(S[0][1] + 80)} ${f1(S[0][0] - 20)} ${f1(S[0][1] + 14)} Z`;
     let s = `<path d="${body}" fill="${top}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>`;
+    if (rim) {   // premium: the scene's rim light catches the back edge of the body, like the head
+      const rid = uid('br'), bx = rim.side > 0 ? mid[0] - 2030 : mid[0] + 30;
+      s += `<clipPath id="${rid}"><rect x="${f1(bx)}" y="-2000" width="2000" height="4000"/></clipPath><path d="${body}" fill="none" stroke="${rim.col}" stroke-width="7" opacity="0.5" clip-path="url(#${rid})"/>`;
+    }
     // cel shadow on the far side + fold lines
-    s += `<path d="M${f1(S[0][0] - 14)} ${f1(S[0][1] + 10)} C${f1(S[0][0] - 20)} ${f1(S[0][1] + 90)} ${f1(H[0][0] - 20)} ${f1(H[0][1] - 60)} ${f1(H[0][0] - 16)} ${f1(H[0][1] + coatLen - 6)} L${f1(H[0][0] + 26)} ${f1(H[0][1] + coatLen - 6)} C${f1(H[0][0] + 20)} ${f1(H[0][1] - 40)} ${f1(mid[0] - 10)} ${f1(mid[1] + 80)} ${f1(mid[0] - 6)} ${f1(mid[1] + 6)} Z" fill="${tsh}" opacity="0.8"/>`;
+    s += `<path d="M${f1(S[0][0] - 14)} ${f1(S[0][1] + 10)} C${f1(S[0][0] - 20)} ${f1(S[0][1] + 90)} ${f1(H[0][0] - 20)} ${f1(H[0][1] - 60)} ${f1(H[0][0] - 16 + hs)} ${f1(H[0][1] + coatLen - 6)} L${f1(H[0][0] + 26 + hs)} ${f1(H[0][1] + coatLen - 6)} C${f1(H[0][0] + 20)} ${f1(H[0][1] - 40)} ${f1(mid[0] - 10)} ${f1(mid[1] + 80)} ${f1(mid[0] - 6)} ${f1(mid[1] + 6)} Z" fill="${tsh}" opacity="0.8"/>`;
     if (o.style === 'coat' || o.style === 'jacket' || o.style === 'labcoat') {
       const lap = o.style === 'labcoat' ? '#e9edf0' : (o.shirt || '#d9d4c8');
       const nx = mid[0] + 8 + turn * 18, ny = mid[1];
       s += `<path d="M${f1(nx - 22)} ${f1(ny + 4)} L${f1(nx + 2)} ${f1(ny + 120)} L${f1(nx + 26)} ${f1(ny + 4)} Z" fill="${lap}" stroke="${INK}" stroke-width="3"/>`;
       if (o.tie) s += `<path d="M${f1(nx)} ${f1(ny + 18)} L${f1(nx - 7)} ${f1(ny + 30)} L${f1(nx + 1)} ${f1(ny + 110)} L${f1(nx + 9)} ${f1(ny + 30)} Z" fill="${o.tie}" stroke="${INK}" stroke-width="2.5"/>`;
       s += `<path d="M${f1(nx - 24)} ${f1(ny + 2)} L${f1(nx - 4)} ${f1(ny + 124)} M${f1(nx + 28)} ${f1(ny + 2)} L${f1(nx + 8)} ${f1(ny + 124)}" stroke="${INK}" stroke-width="3.5" opacity="0.9"/>`;
-      s += `<path d="M${f1(nx + 2)} ${f1(ny + 124)} L${f1(hip[0] + 6 + turn * 10)} ${f1(hip[1] + coatLen - 8)}" stroke="${INK}" stroke-width="3" opacity="0.7"/>`;
+      s += `<path d="M${f1(nx + 2)} ${f1(ny + 124)} L${f1(hip[0] + 6 + turn * 10 + hs)} ${f1(hip[1] + coatLen - 8)}" stroke="${INK}" stroke-width="3" opacity="0.7"/>`;
     } else if (o.style === 'dress') {
       s += `<path d="M${f1(mid[0] - 18 + turn * 14)} ${f1(mid[1] + 6)} Q${f1(mid[0] + 4 + turn * 16)} ${f1(mid[1] + 34)} ${f1(mid[0] + 26 + turn * 14)} ${f1(mid[1] + 6)}" stroke="${o.accent || '#e8dcc0'}" stroke-width="7" fill="none"/>`;
       s += `<path d="M${f1(H[0][0] - 10)} ${f1(H[1][1] - 6)} L${f1(H[1][0] + 12)} ${f1(H[1][1] - 6)}" stroke="${o.accent || '#e8dcc0'}" stroke-width="6" opacity="0.8"/>`;
@@ -252,7 +300,8 @@
     const t = ctx.t, tg = t + (ctx.sceneStart || 0);
     const vis = f.show ? clamp((t - f.show[0]) / 0.3, 0, 1) * (f.show[1] !== undefined ? clamp((f.show[1] - t) / 0.3, 0, 1) : 1) : 1;   // show: [from, until] with 0.3 s fades
     if (vis <= 0) return '';
-    const st = stateAt(f, t); const P = st.P, X = st.X; const dir = f.dir || 1; const sc = (st.scale || 1) * (sp.height || 1);
+    const prem = !!(ctx.ep && ctx.ep.look === 'premium');
+    const st = stateAt(f, t, prem); const P = st.P, X = st.X; const dir = f.dir || 1; const sc = (st.scale || 1) * (sp.height || 1);
     const o = f.outfit && sp.outfit_variants && sp.outfit_variants[f.outfit] ? { ...sp.outfit, ...sp.outfit_variants[f.outfit] } : sp.outfit;
     const turn = clamp(st.turn, 0, 1), ht = clamp((st.headTurn ?? 0) + turn, 0, 1);
     const L = light || { dir: 1, rim: '#ffc27a' }; const lightSide = (L.dir || 1) * dir;  // +1: key light on the figure's facing side
@@ -261,22 +310,26 @@
     if (f.walk) { const w = f.walk; const u = clamp((t - w.at) / w.dur, 0, 1); x = lerp(w.from, w.to, u); ph = (t - w.at) * (w.cadence || 6.2); if (u <= 0 || u >= 1) ph = 0; bob = (u > 0 && u < 1) ? -Math.abs(Math.sin(ph)) * 8 : 0; }
     const walking = f.walk && t > f.walk.at && t < f.walk.at + f.walk.dur;
     const sw = walking ? Math.sin(ph) : 0, cw = walking ? Math.cos(ph) : 0;
-    const breathe = Math.sin(tg * 1.7 + f.id.length) * 3;
+    const seed = (E.hashStr(f.id) % 1000) / 160;
+    const breathe = prem ? (Math.sin(tg * 1.55 + seed) * 0.8 + Math.sin(tg * 0.71 + seed * 1.3) * 0.2) * 3 : Math.sin(tg * 1.7 + f.id.length) * 3;
+    const idle = prem && !walking && !P.sit && !P.kneel;
+    const shift = idle ? Math.sin(tg * 0.42 + seed) : 0;   // slow weight shift from foot to foot
     // skeleton (facing right before mirroring)
     const male = sp.sex !== 'female'; const shw = (male ? 86 : 72) * (sp.build === 'broad' ? 1.12 : sp.build === 'slim' ? 0.93 : 1);
     const FX = lerp(0.38, 1, turn);   // how much forward/back limb motion shows on screen (3/4 view foreshortening)
-    const hipH = P.sit ? 440 : (P.kneel ? 310 : 470); const lean = P.lean + (walking ? 4 : 0);
-    const hip = [0, -hipH + bob + (P.kneel ? 0 : 0)];
+    const hipH = P.sit ? 440 : (P.kneel ? 310 : 470); const lean = P.lean + (walking ? 4 : 0) + (idle ? Math.sin(tg * 0.42 + seed - 0.7) : 0);
+    const hip = [shift * 7, -hipH + bob + (P.kneel ? 0 : 0) + (prem ? st.dip || 0 : 0)];
     const spineLen = 280; const sh = pt(hip[0], hip[1], 180 - lean, spineLen, FX); sh[1] += breathe * 0.5;
     const neck = pt(sh[0], sh[1], 180 - lean * 1.2, 34, FX);
     const fw = 1 - 0.55 * turn;     // shoulder/hip spread shrinks toward profile (a body keeps some depth)
     const S = [[sh[0] - shw * fw, sh[1] + 24], [sh[0] + shw * fw + 6 * turn, sh[1] + 22]];   // shoulders sit below the neck line
+    if (prem) S.forEach(q => { q[1] -= Math.max(0, breathe) * 0.8; });   // shoulders rise on the in-breath
     const hipw = (male ? 56 : 62) * fw + 8;
     const Hh = [[hip[0] - hipw, hip[1]], [hip[0] + hipw + 4 * turn, hip[1]]];
     // legs: far uses Hh[0], near uses Hh[1]
     const legs = [];
     [[Hh[0], P.fTh, P.fSh, -1], [Hh[1], P.nTh, P.nSh, 1]].forEach(([hp, th, shn, side]) => {
-      let thA = th, shA = shn;
+      let thA = th - shift * 0.9, shA = shn;   // feet stay planted while the hips shift
       if (walking) { const s2 = side * sw; thA += (f.walk.stride ?? 26) * s2; shA += Math.max(0, 36 * (side * -cw)) + 6; }
       const knee = pt(hp[0], hp[1], thA, P.sit ? 205 : 225, P.sit || P.kneel ? Math.max(FX, 0.55) : FX);
       const ankle = pt(knee[0], knee[1], thA - shA, P.sit ? 225 : 222, FX);
@@ -312,21 +365,34 @@
       if (front && P.prop && a.side > 0) s += prop(P.prop, hd, (f.propOpts && f.propOpts.aim !== undefined) ? f.propOpts.aim : a.ang, t, f.propOpts || {});   // aim: torch direction override (deg)
       return s;
     };
-    // ground shadow
-    let out = `<ellipse cx="0" cy="6" rx="${f1(120 * (P.sit ? 1.3 : 1))}" ry="18" fill="#000" opacity="0.35"/>`;
+    // ground shadow (premium: soft ambient pool + a tight contact shadow under each foot that fades as it lifts)
+    let out = prem
+      ? `<ellipse cx="${f1(hip[0])}" cy="8" rx="${f1(165 * (P.sit ? 1.3 : 1))}" ry="30" fill="url(#figContact)"/>` + legs.map(l => { const lift = clamp(-(l.ankle[1] + 22) / 30, 0, 1); return `<ellipse cx="${f1(l.ankle[0] + 18)}" cy="4" rx="${f1(54 * (1 - 0.4 * lift))}" ry="9" fill="#000" opacity="${f1(0.5 * (1 - lift))}"/>`; }).join('')
+      : `<ellipse cx="0" cy="6" rx="${f1(120 * (P.sit ? 1.3 : 1))}" ry="18" fill="#000" opacity="0.35"/>`;
     if (P.sit && !f.noChair) out += `<g><path d="M-120 -760 L-96 -450" stroke="#2c2018" stroke-width="22" stroke-linecap="round"/><rect x="-150" y="-720" width="34" height="200" rx="8" fill="#3a2c22" stroke="${INK}" stroke-width="4" transform="rotate(-6 -133 -620)"/><rect x="-120" y="-452" width="230" height="30" rx="8" fill="#3a2c22" stroke="${INK}" stroke-width="4"/><path d="M-100 -424 L-108 0 M92 -424 L100 0" stroke="#2c2018" stroke-width="16" stroke-linecap="round"/></g>`;
     const farArmBehind = turn > 0.35;
     if (farArmBehind) out += drawArm(arms[0], false);
     out += drawLeg(legs[0]);
     if (!(o.style === 'dress' || o.style === 'robe') || P.sit) out += drawLeg(legs[1]);
-    out += torsoShape(sp, o, S, Hh, turn, lean, P.sit);
+    let sway = 0;
+    if (prem) {
+      const fwd = walking ? Math.sign(f.walk.to - f.walk.from) * dir : 0;
+      sway = walking ? -fwd * 12 + Math.sin(ph * 2) * 4 : Math.sin(tg * 0.42 + seed - 1.2) * 5 * (idle ? 1 : 0.3) - (st.dip || 0) * 0.6;
+    }
+    out += torsoShape(sp, o, S, Hh, turn, lean, P.sit, sway, prem ? { col: L.rim || '#ffc27a', side: lightSide } : null);
     if (o.style === 'dress' || o.style === 'robe') { if (!P.sit) out += drawLeg(legs[1]).replace(/^/, ''); }
     if (!farArmBehind) out += drawArm(arms[0], true);
     out += drawArm(arms[1], true);
     // head
     const hid = uid('fh'); const hp = pt(neck[0], neck[1], 180 - lean * 1.4, 84, FX);
-    const headTilt = P.tilt + Math.sin(tg * 0.8 + f.id.length) * 1.2;
-    out += `<g transform="translate(${f1(hp[0])} ${f1(hp[1] + 4)}) rotate(${f1(headTilt)}) scale(1.16)">${head(sp, X, st.gaze, ht, blink(f.id, tg), lightSide, L.rim || '#ffc27a', hid)}</g>`;
+    const headTilt = P.tilt + (prem ? Math.sin(tg * 0.53 + seed) * 1.4 + Math.sin(tg * 1.31 + seed * 2) * 0.5 - shift * 1.2 : Math.sin(tg * 0.8 + f.id.length) * 1.2);
+    let gaze = st.gaze, bl;
+    if (prem) {
+      const sc2 = saccade(f.id, tg); gaze = [gaze[0] + sc2[0], gaze[1] + sc2[1]];
+      const turns = (f.keys || []).filter(k => k.turn !== undefined || k.headTurn !== undefined).map(k => k.at + (ctx.sceneStart || 0) + 0.02);
+      bl = blinkP(f.id, tg, turns);
+    } else bl = blink(f.id, tg);
+    out += `<g transform="translate(${f1(hp[0])} ${f1(hp[1] + 4)}) rotate(${f1(headTilt)}) scale(1.16)">${head(sp, X, gaze, ht, bl, lightSide, L.rim || '#ffc27a', hid)}</g>`;
     // rim light on the body silhouette edge (back side)
     const flip = dir < 0 ? -1 : 1;
     let g = `<g transform="translate(${f1(x)} ${f1(y)}) scale(${f1(sc * flip * 1000) / 1000} ${f1(sc * 1000) / 1000})">${out}</g>`;
@@ -336,7 +402,7 @@
     return g;
   }
 
-  const figDefs = `<defs><linearGradient id="beamG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff4cf" stop-opacity="0.45"/><stop offset="1" stop-color="#fff4cf" stop-opacity="0"/></linearGradient>
+  const figDefs = `<defs><radialGradient id="figContact"><stop offset="0" stop-color="#000" stop-opacity="0.42"/><stop offset="0.6" stop-color="#000" stop-opacity="0.18"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient><linearGradient id="beamG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff4cf" stop-opacity="0.45"/><stop offset="1" stop-color="#fff4cf" stop-opacity="0"/></linearGradient>
     <filter id="figSil"><feColorMatrix type="matrix" values="0 0 0 0 0.03  0 0 0 0 0.03  0 0 0 0 0.05  0 0 0 1 0"/></filter>
     <filter id="figSilCool" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="4" result="d"/><feFlood flood-color="#a8c4ff" flood-opacity="0.75"/><feComposite in2="d" operator="in" result="rim"/><feGaussianBlur in="rim" stdDeviation="3" result="rimb"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.035  0 0 0 0 0.035  0 0 0 0 0.05  0 0 0 1 0" result="sil"/><feMerge><feMergeNode in="rimb"/><feMergeNode in="sil"/></feMerge></filter>
     <filter id="figSilWarm" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="4" result="d"/><feFlood flood-color="#ffbe6a" flood-opacity="0.75"/><feComposite in2="d" operator="in" result="rim"/><feGaussianBlur in="rim" stdDeviation="3" result="rimb"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.035  0 0 0 0 0.035  0 0 0 0 0.05  0 0 0 1 0" result="sil"/><feMerge><feMergeNode in="rimb"/><feMergeNode in="sil"/></feMerge></filter>

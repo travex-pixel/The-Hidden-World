@@ -211,7 +211,7 @@ class SlateEpisodes(unittest.TestCase):
             js = _code(ROOT / "renderer" / "scenes" / f"{eid}.js"); ep = load_episode(eid)
             if ep.get("format") == "short40":   # 40-second cuts: a burned-in hook headline instead of two fun-fact stops
                 self.assertTrue(ep.get("hook_title", {}).get("lines"), f"{eid}: short cut needs a hook_title")
-                self.assertLessEqual(ep["target_duration_seconds"][1], 55 if ep.get("look") == "vivid" else 50, eid)   # vivid Danger Zones cuts carry a fun fact and a lesson
+                self.assertLessEqual(ep["target_duration_seconds"][1], 55 if ep.get("look") in ("vivid", "premium") else 50, eid)   # vivid and premium cuts carry a fun fact and a lesson
                 continue
             self.assertGreaterEqual(js.count("type: 'funfact'"), 2, f"{eid}: at least two FUN FACT cards")
             self.assertIn("type: 'nextcase'", js, f"{eid}: end-of-video NEXT CASE hook")
