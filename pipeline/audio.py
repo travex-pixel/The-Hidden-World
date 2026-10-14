@@ -513,6 +513,26 @@ def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
     if kind == "space":   # no sound in space: a low, slow drone so the cut is not dead air
         out += (np.sin(2 * np.pi * 55 * t) * 0.02 + np.sin(2 * np.pi * 82.4 * t + 1) * 0.012) * (0.7 + 0.3 * np.sin(2 * np.pi * 0.05 * t))
         out += lowpass_fast(nz(), 120) * 0.03
+    if kind == "harbour":   # water lapping, gulls, a distant ferry horn
+        out += (lowpass_fast(nz(), 500) - lowpass_fast(nz(), 120)) * (0.5 + 0.5 * np.sin(2 * np.pi * 0.23 * t)) * 0.07
+        k = 1.0
+        while k < dur:   # gulls: a falling two-note cry
+            k += rng.uniform(2.0, 5.0); m = int(0.5 * SR); tk = np.arange(m) / SR
+            cry = np.sin(2 * np.pi * np.cumsum(1600 - 700 * np.minimum(1, tk / 0.5)) / SR) * np.sin(np.pi * tk / 0.5) * (np.sin(2 * np.pi * 9 * tk) > -0.4)
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += lowpass_fast(cry.astype(np.float32), 3000) * rng.uniform(0.01, 0.025)
+        k = 6.0
+        while k < dur:   # a ferry horn far off
+            k += rng.uniform(14, 22); m = int(1.2 * SR); tk = np.arange(m) / SR
+            horn = (np.sign(np.sin(2 * np.pi * 110 * tk)) + 0.5 * np.sign(np.sin(2 * np.pi * 165 * tk))) * np.minimum(1, tk * 6) * np.exp(-np.maximum(0, tk - 0.9) * 8)
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += lowpass_fast(horn.astype(np.float32), 600) * 0.012
+    if kind == "outback":   # dry wind over spinifex, cicadas, a crow
+        out += (lowpass_fast(nz(), 900) - lowpass_fast(nz(), 250)) * (0.4 + 0.6 * np.sin(2 * np.pi * 0.07 * t + 1) ** 2) * 0.05
+        out += (np.sin(2 * np.pi * 5200 * t) * (np.sin(2 * np.pi * 60 * t) > 0.2) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.3 * t)) * 0.006).astype(np.float32)
+        k = 3.0
+        while k < dur:
+            k += rng.uniform(6, 12); m = int(0.7 * SR); tk = np.arange(m) / SR
+            caw = np.sin(2 * np.pi * np.cumsum(520 - 180 * tk / 0.7) / SR) * np.sin(np.pi * tk / 0.7) ** 0.5 * (np.sin(2 * np.pi * 14 * tk) > -0.2)
+            if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += lowpass_fast(caw.astype(np.float32), 1600) * 0.02
     if kind == "polar":   # the high plateau: wind gusting over packed snow
         gust = 0.5 + 0.5 * np.sin(2 * np.pi * 0.09 * t + rng.uniform(0, 6)) * np.sin(2 * np.pi * 0.023 * t)
         out += (lowpass_fast(nz(), 700) - lowpass_fast(nz(), 150)) * gust * 0.12

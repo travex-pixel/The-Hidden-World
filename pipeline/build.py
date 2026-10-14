@@ -205,13 +205,14 @@ def main(argv=None) -> int:
             "scenes_js": f"renderer/scenes/{ep['id']}.js"}
     if history.is_history(ep):
         plan["page"] = history.PAGE
-        plan["scenes_js"] = ep.get("set_module", "renderer/history/sets/medieval.js")
+        plan["scenes_js"] = ep.get("set_module", "renderer/history/sets/medieval.js")   # a path, or a list of paths loaded in order
         plan["workers"] = int(ep.get("render_workers", 3))
         cues = history.subtitles(tl, cast)
         history.write_srt(out_dir / f"{ep['id']}.srt", cues)
         log(f"subtitles: {len(cues)} cues -> {ep['id']}.srt")
-    if not (ROOT / plan["scenes_js"]).exists():
-        log(f"ERROR: scene renderer {plan['scenes_js']} not found"); return 4
+    for mod in ([plan["scenes_js"]] if isinstance(plan["scenes_js"], str) else plan["scenes_js"]):
+        if not (ROOT / mod).exists():
+            log(f"ERROR: scene renderer {mod} not found"); return 4
     (out_dir / "plan.json").write_text(json.dumps(plan))
     if args.plan_only:
         log(f"plan written: {out_dir / 'plan.json'}"); return 0

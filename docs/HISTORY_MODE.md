@@ -237,6 +237,35 @@ the same engine. Its output folder is `output/what-if-medieval-modern-knowledge-
 * **Download pages:** `python -m pipeline.download_page <dir> [catalog.json]` builds a page from any catalogue, so a
   video too large to share one artifact with the others can get its own page.
 
+## 2f. Engine v4: world landmarks, crowds, animals, faces, effects (What-If 003)
+
+What-If 003, *What If Gravity Switched Off for 10 Seconds?* (`episodes/whatif003-gravity-off/`), is the first episode
+to use the v4 additions. Everything is opt-in; earlier episodes render as before.
+
+* **Several set modules per episode.** `"set_module"` may be a list, loaded in order. `medieval.js` now exports its
+  shared kit (`X.KIT`: `makeLayer`, `cloud`, `sky`, `hills`, `house`, `car`, `block`, `groundY` and the palette) so
+  further modules can build on it. The new `renderer/history/sets/world.js` holds the landmark sets.
+* **Landmark sets** (`world.js`): `times_square` (night, animated billboards, taxis, a countdown screen on beat
+  `count0`), `sydney_harbour` (sunrise, the bridge, the Opera House, a ferry, waves), `golden_gate` (fog bank, traffic
+  on the deck), `london_bigben` (the Palace of Westminster, a number 24 bus, a black cab, a phone box), `uluru`
+  (dusk, lens flare, red sand), `kitchen_insert` (a fridge magnet and a paperclip on beat `clip`) and `space_moon`
+  (the Moon's orbit, a label on beat `label`).
+* **Gravity beats.** Every landmark set reacts to `lift` (gravity off: everything loose rises with growing speed and
+  tumbles) and `drop` (gravity back: everything falls and bounces). `X.WORLD.liftAt` is the shared curve.
+* **Crowds.** `X.WORLD.crowd(set, {n, x0, x1, z, …})` builds a procedural crowd of rigged extras with random faces,
+  clothes and hats. They stroll, stop at `lift`, react with an expression, a gesture and a mark, rise with their own
+  delays, and land dazed. `X.WORLD.flock` does the same for animals.
+* **Animals.** The rig draws `dog`, `cat`, `kangaroo` (a hop cycle), `emu` and `pigeon` (walks, flaps when airborne).
+  Episode actors with `"kind"` now take `float`/`spin`/`drift` acts too.
+* **Faces.** Six new expressions: `scream` (a wide yell with the uvula showing), `panic`, `dizzy` (spiral eyes),
+  `ecstatic` (closed, upturned eyes), `dazed` and `gleeful`. Cartoon emphasis marks over the head come from acts
+  `{"mark": "shock" | "exclaim" | "question" | "hearts" | "stars" | "zzz" | "anger" | "music", "dur": 2.5}`.
+  Headwear: `cap`, `beanie`, `hardhat`, `bearskin` (with `colours.hat`).
+* **Float keys** accept `"ease": "in"` (accelerating), `"out"` or `"linear"`.
+* **Effects** (`fx.js`): `rain`, `lightning`, `fireworks`, `snow`, `fogBank` (with `lift`), `lensFlare`, `waves`
+  (with `lift` and `chop`) and `confetti`.
+* **Ambiences:** `harbour` (water, gulls, a ferry horn) and `outback` (dry wind, cicadas, a crow).
+
 ## 3. Writing an episode
 
 Scenes keep the existing fields (`id, scene, min_duration, pad_after, music_cue, sfx, claims, transition`) and add:

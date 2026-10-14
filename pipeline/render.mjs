@@ -26,7 +26,7 @@ async function openPage() {
   page.on('pageerror', e => { console.error('[page error]', e.message); process.exitCode = 1; });
   page.on('console', m => { if (m.type() === 'error') console.error('[page console]', m.text()); });
   await page.goto(pageUrl);
-  await page.addScriptTag({ path: resolve(here, '..', scenes_js) });
+  for (const f of [].concat(scenes_js)) await page.addScriptTag({ path: resolve(here, '..', f) });
   await page.evaluate(() => document.fonts.ready);
   await page.evaluate(({ episode, timeline, seed, visual, art, cast, fps }) => window.HW.setup(episode, timeline, seed, visual, art, cast, fps), { episode, timeline, seed, visual: plan.visual, art: plan.art, cast: plan.cast, fps: plan.fps });
   return page;

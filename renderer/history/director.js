@@ -132,7 +132,7 @@
       let lift = 0, spin = 0, dx = 0;
       for (const ac of (a.acts || [])) {
         if (ac.t > t || (ac.float === undefined && ac.spin === undefined && ac.drift === undefined)) continue;
-        const u = ease.inOut(clamp((t - ac.t) / Math.max(0.05, ac.dur ?? 1), 0, 1));
+        const u = (ease[ac.ease] || ease.inOut)(clamp((t - ac.t) / Math.max(0.05, ac.dur ?? 1), 0, 1));
         if (ac.float !== undefined) lift = lerp(lift, ac.float, u);
         if (ac.spin !== undefined) spin = lerp(spin, ac.spin, u);
         if (ac.drift !== undefined) dx = lerp(dx, ac.drift, u);
@@ -142,13 +142,15 @@
     },
     drawActor(g, q, a, tq, tAbs) {
       const wd = q.world; const z = a.z || 1; const gy = a.y ?? wd.groundY(z);
+      const fl = this.floatAt(a, tq);   // acts {float: px, spin: degrees, drift: px, dur, ease}: lift off the ground and tumble (opt-in)
       if (a._animal) {
-        const s = this.animalAt(a, tq); g.save(); g.translate(s.x, gy); g.scale((a.h || 120) / 120 / z, (a.h || 120) / 120 / z);
-        X.Rig[a.kind](g, tq, { ...a, walking: s.walking, facing: s.facing, peck: a.peck && !s.walking }); g.restore(); return;
+        const s = this.animalAt(a, tq); const hh = (a.h || 120) / z; g.save(); g.translate(s.x + fl.dx, gy - fl.lift);
+        if (fl.spin) { g.translate(0, -hh * 0.5); g.rotate(fl.spin * Math.PI / 180); g.translate(0, hh * 0.5); }
+        g.scale(hh / 120, hh / 120);
+        X.Rig[a.kind](g, tq, { ...a, walking: s.walking && fl.lift < 4, facing: s.facing, peck: a.peck && !s.walking, airborne: fl.lift > 4 }); g.restore(); return;
       }
       const stt = X.Rig.evaluate(a, tq, (who, tt) => this.mouth(who, tt + q.start));
       // h is the character's true height at the acting plane; further away (z > 1) it is drawn smaller
-      const fl = this.floatAt(a, tq);   // acts {float: px, spin: degrees, dur}: lift off the ground and tumble (opt-in)
       g.save(); g.translate(stt.x + fl.dx, gy - fl.lift); if (fl.spin) { g.translate(0, -(a.h || 420) / z * 0.5); g.rotate(fl.spin * Math.PI / 180); g.translate(0, (a.h || 420) / z * 0.5); }
       const k = (a.h || 420) / z / 1000; g.scale(k, k);
       const lw = clamp(6.5, 2.2 / (k * 1), 7.5);

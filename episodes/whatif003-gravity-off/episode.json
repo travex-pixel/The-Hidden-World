@@ -1,0 +1,2239 @@
+{
+  "id": "whatif003-gravity-off",
+  "number": 3,
+  "series": "what-if",
+  "profile": "history",
+  "title": "What If Gravity Switched Off for 10 Seconds?",
+  "central_question": "If gravity switched off everywhere for ten seconds and then came back, what would actually happen, where, and to whom?",
+  "template": "history-pov",
+  "narrator_voice": "en_GB-aru-medium",
+  "voice_engine": "kokoro",
+  "engine_version": 3,
+  "kokoro_speed": 1.13,
+  "kokoro_pause_scale": 0.8,
+  "set_module": [
+    "renderer/history/sets/medieval.js",
+    "renderer/history/sets/world.js"
+  ],
+  "pronounce": {
+    "8:59": "eight fifty-nine",
+    "24": "twenty-four"
+  },
+  "target_duration_seconds": [
+    160,
+    230
+  ],
+  "setting": "Ten seconds without gravity, followed around the world: Times Square, Sydney Harbour, the Golden Gate Bridge, Westminster, Uluru, the Moon, and a fridge door. A cartoon thought experiment.",
+  "cast": [
+    "pov_modern",
+    "commuter_sam",
+    "jogger_lee",
+    "guard_harry",
+    "narrator_history"
+  ],
+  "character_style": "watercolour",
+  "music": {
+    "bpm": 104
+  },
+  "render_workers": 3,
+  "fiction_notice": "A cartoon thought experiment: gravity cannot switch off. You, Sam, Lee and Harry are fictional. The physics numbers are real and sourced; the big ones are our own arithmetic and are labelled as such.",
+  "scenes": [
+    {
+      "id": "g00_cold",
+      "scene": "history",
+      "set": "times_square",
+      "ambience": "city",
+      "min_duration": 13,
+      "pad_after": 3.0,
+      "music_cue": "tension-rise",
+      "transition": "cut",
+      "chapter": "T-minus ten",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "At nine o'clock tonight, gravity switches off. For ten seconds.",
+          "tone": "hook",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "This is Times Square at 8:59. Enjoy the ground while you've got it.",
+          "tone": "playful"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Three. Two. One.",
+          "tone": "tense",
+          "pause_before": 0.6
+        }
+      ],
+      "claims": [
+        "G0"
+      ],
+      "badges": [
+        {
+          "kind": "dramatised",
+          "text": "A cartoon thought experiment. You and Sam are fictional",
+          "at": {
+            "line": 1,
+            "off": 0.4
+          },
+          "dur": 3.4
+        }
+      ],
+      "beats": {
+        "count0": 0.0,
+        "lift": "end-2.8"
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "tick",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.7
+          },
+          "name": "tick",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 1.4
+          },
+          "name": "tick",
+          "gain": 0.7
+        },
+        {
+          "at": "end-2.8",
+          "name": "swell",
+          "gain": 0.8
+        },
+        {
+          "at": "end-2.6",
+          "name": "gasp",
+          "gain": 0.6
+        },
+        {
+          "at": "end-1.8",
+          "name": "whoosh",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 200,
+            "y": -200,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 160,
+            "y": -60,
+            "dolly": 200,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": -20,
+            "dolly": 330,
+            "ease": "inOut"
+          },
+          {
+            "t": "end-2.8",
+            "x": 120,
+            "y": -20,
+            "dolly": 340
+          },
+          {
+            "t": "end",
+            "x": 100,
+            "y": -180,
+            "dolly": 160,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 760,
+          "h": 440,
+          "facing": 1,
+          "expr0": "happy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "phone"
+            },
+            {
+              "t": 0.4,
+              "gesture": "hold_up",
+              "dur": 0.4,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "nervous",
+              "look": [
+                0.6,
+                -0.6
+              ]
+            },
+            {
+              "t": "end-2.8",
+              "expr": "shocked"
+            },
+            {
+              "t": "end-2.7",
+              "mark": "exclaim",
+              "dur": 2.5
+            },
+            {
+              "t": "end-2.6",
+              "gesture": "hands_up",
+              "dur": 0.3,
+              "hold": -1
+            },
+            {
+              "t": "end-2.8",
+              "float": 420,
+              "spin": 40,
+              "dur": 3.0,
+              "ease": "in"
+            }
+          ]
+        },
+        {
+          "id": "sam",
+          "char": "commuter_sam",
+          "x": 1240,
+          "h": 460,
+          "facing": -1,
+          "expr0": "grumpy",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "cup"
+            },
+            {
+              "t": 0.8,
+              "gesture": "drink",
+              "dur": 0.5,
+              "hold": 1.2
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.2
+              },
+              "expr": "skeptical",
+              "look": [
+                -0.6,
+                -0.4
+              ]
+            },
+            {
+              "t": "end-2.7",
+              "expr": "scream"
+            },
+            {
+              "t": "end-2.6",
+              "mark": "shock",
+              "dur": 2.5
+            },
+            {
+              "t": "end-2.7",
+              "float": 380,
+              "spin": -60,
+              "dur": 3.0,
+              "ease": "in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g01_sydney",
+      "scene": "history",
+      "set": "sydney_harbour",
+      "ambience": "harbour",
+      "min_duration": 20,
+      "pad_after": 0.5,
+      "music_cue": "curious",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Second one: nothing",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Second one. Sydney, sunrise. A jogger, a dog, the gulls. Gravity's gone, and...",
+          "tone": "curious",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "nothing happens.",
+          "tone": "curious"
+        },
+        {
+          "who": "jogger_lee",
+          "text": "Was that it?",
+          "tone": "playful",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "Nothing is pulling you down any more. But nothing's pushing you up, either.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Except the planet's spin. It's been trying to fling you off all along.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Without gravity, it finally can.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Gently. About a metre in ten seconds. The slowest launch in history.",
+          "tone": "playful"
+        }
+      ],
+      "claims": [
+        "G1",
+        "G3"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "G1",
+          "text": "Sydney's ground moves east at ~1,390 km/h with the spin",
+          "at": {
+            "line": 4,
+            "off": 0.4
+          },
+          "dur": 4.0
+        },
+        {
+          "kind": "estimate",
+          "claim": "G3",
+          "text": "Our sum: the spin lifts you ~1 m in 10 s at Sydney",
+          "at": {
+            "line": 6,
+            "off": 0.2
+          },
+          "dur": 4.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "Sydney, 6:00 a.m.",
+          "sub": "Second one",
+          "at": 0.2,
+          "dur": 3.4
+        }
+      ],
+      "beats": {
+        "lift": {
+          "line": 3,
+          "off": 0.0
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 1.4
+          },
+          "name": "sparkle",
+          "gain": 0.4
+        },
+        {
+          "at": {
+            "line": 4,
+            "off": 0.2
+          },
+          "name": "whoosh",
+          "gain": 0.3
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 200,
+            "y": -200,
+            "dolly": -40
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 100,
+            "y": -30,
+            "dolly": 260,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 160,
+            "y": -60,
+            "dolly": 160,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 6,
+              "off": 0.0
+            },
+            "x": 40,
+            "y": -120,
+            "dolly": 60,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 0,
+            "y": -160,
+            "dolly": 20,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "lee",
+          "char": "jogger_lee",
+          "x": 300,
+          "h": 440,
+          "facing": 1,
+          "expr0": "determined",
+          "acts": [
+            {
+              "t": 0.2,
+              "walk": 760,
+              "dur": 3.6,
+              "stride": 1.3
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "curious",
+              "look": [
+                0.3,
+                -0.5
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "gesture": "shrug",
+              "dur": 0.4,
+              "hold": 1.6
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.2
+              },
+              "expr": "surprised",
+              "look": [
+                0,
+                -0.8
+              ]
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.4
+              },
+              "mark": "question",
+              "dur": 3
+            },
+            {
+              "t": {
+                "line": 6,
+                "off": 1.2
+              },
+              "expr": "nervous"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.0
+              },
+              "float": 220,
+              "spin": 30,
+              "dur": 14,
+              "ease": "in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g02_air",
+      "scene": "history",
+      "set": "golden_gate",
+      "ambience": "harbour",
+      "min_duration": 20,
+      "pad_after": 0.5,
+      "music_cue": "tension-rise",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Second three: the air",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Second three. San Francisco. The air is the problem.",
+          "tone": "tense",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Air has weight, and only gravity keeps it down.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The pressure underneath never stops pushing up.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Switch gravity off, and the whole atmosphere takes off at one g.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The famous fog goes first.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "By second six, the updraft is faster than a skydiver falls.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Now the air lifts you, your car, and the bridge traffic.",
+          "tone": "tense"
+        }
+      ],
+      "claims": [
+        "G4",
+        "G5"
+      ],
+      "badges": [
+        {
+          "kind": "estimate",
+          "claim": "G4",
+          "text": "Our sum: air accelerates up at ~9.8 m/s² (hydrostatic balance)",
+          "at": {
+            "line": 3,
+            "off": 0.4
+          },
+          "dur": 4.2
+        },
+        {
+          "kind": "documented",
+          "claim": "G5",
+          "text": "Skydiver's terminal velocity: ~55 m/s (200 km/h)",
+          "at": {
+            "line": 5,
+            "off": 0.8
+          },
+          "dur": 4.0
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "San Francisco",
+          "sub": "Second three",
+          "at": 0.2,
+          "dur": 3.2
+        }
+      ],
+      "beats": {
+        "lift": {
+          "line": 3,
+          "off": 0.0
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 3,
+            "off": 0.2
+          },
+          "name": "whoosh",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 5,
+            "off": 0.0
+          },
+          "name": "whoosh",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 5,
+            "off": 1.2
+          },
+          "name": "rumble",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 400,
+            "y": -260,
+            "dolly": -60
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 300,
+            "y": -120,
+            "dolly": 80,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 160,
+            "y": -60,
+            "dolly": 200,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 5,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": -160,
+            "dolly": 120,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 100,
+            "y": -300,
+            "dolly": 40,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "g03_london",
+      "scene": "history",
+      "set": "london_bigben",
+      "ambience": "city",
+      "min_duration": 18,
+      "pad_after": 0.5,
+      "music_cue": "chase",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Second six: London",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Second six. London. Everything not bolted down is going up.",
+          "tone": "tense",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Tourists, taxis, a number 24 bus, and every pigeon in Westminster.",
+          "tone": "playful"
+        },
+        {
+          "who": "guard_harry",
+          "text": "Not. Moving.",
+          "tone": "confident",
+          "pause_before": 0.3
+        },
+        {
+          "who": "narrator_history",
+          "text": "The bearskin goes first. Then Harry.",
+          "tone": "playful",
+          "pause_before": 0.5
+        }
+      ],
+      "claims": [
+        "G0",
+        "G4"
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "London",
+          "sub": "Second six",
+          "at": 0.2,
+          "dur": 3.0
+        }
+      ],
+      "beats": {
+        "lift": 0.6
+      },
+      "sfx": [
+        {
+          "at": 0.6,
+          "name": "whoosh",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.6
+          },
+          "name": "flutter",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 0.0
+          },
+          "name": "puff",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 1.6
+          },
+          "name": "gasp",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 300,
+            "y": -300,
+            "dolly": -40
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 200,
+            "y": -120,
+            "dolly": 160,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": -140,
+            "y": -40,
+            "dolly": 360,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 1.2
+            },
+            "x": -120,
+            "y": -200,
+            "dolly": 220,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": -100,
+            "y": -320,
+            "dolly": 120,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "harry",
+          "char": "guard_harry",
+          "x": 560,
+          "h": 470,
+          "facing": 1,
+          "expr0": "stern",
+          "acts": [
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "look": [
+                0.3,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.0
+              },
+              "expr": "determined"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.2
+              },
+              "expr": "nervous",
+              "look": [
+                0,
+                -0.9
+              ]
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.4
+              },
+              "expr": "scream"
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.5
+              },
+              "mark": "shock",
+              "dur": 3
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.5
+              },
+              "gesture": "hands_up",
+              "dur": 0.3,
+              "hold": -1
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.5
+              },
+              "float": 520,
+              "spin": 120,
+              "dur": 5.5,
+              "ease": "in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g04_uluru",
+      "scene": "history",
+      "set": "uluru",
+      "ambience": "outback",
+      "min_duration": 16,
+      "pad_after": 0.5,
+      "music_cue": "playful",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Second seven: the outback",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Second seven. The Australian outback, at sunset.",
+          "tone": "curious",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "A red kangaroo can already clear about three metres.",
+          "tone": "playful"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Take away gravity, and one hop never ends.",
+          "tone": "playful"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The emus have never flown in their lives. They're flying now. They are not happy about it.",
+          "tone": "playful"
+        }
+      ],
+      "claims": [
+        "G6",
+        "G0"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "G6",
+          "text": "Record kangaroo jump: 3.1 m (Guinness)",
+          "at": {
+            "line": 1,
+            "off": 0.6
+          },
+          "dur": 3.8
+        }
+      ],
+      "cards": [
+        {
+          "kind": "location",
+          "title": "Uluru",
+          "sub": "Second seven",
+          "at": 0.2,
+          "dur": 3.0
+        }
+      ],
+      "beats": {
+        "lift": 0.8
+      },
+      "sfx": [
+        {
+          "at": 0.8,
+          "name": "whoosh",
+          "gain": 0.4
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 0.4
+          },
+          "name": "flutter",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 2.6
+          },
+          "name": "gasp",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 200,
+            "y": -120,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": -40,
+            "dolly": 180,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 300,
+            "y": -160,
+            "dolly": 220,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 200,
+            "y": -300,
+            "dolly": 100,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "g05_sea",
+      "scene": "history",
+      "set": "sydney_harbour",
+      "ambience": "harbour",
+      "min_duration": 16,
+      "pad_after": 0.5,
+      "music_cue": "dread",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Second eight: the sea",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Second eight. Back in Sydney, the harbour has noticed.",
+          "tone": "tense",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Water is held down by gravity too. So the whole ocean is rising at one g, like the air.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Eight seconds in, the sea surface is already three hundred metres up and climbing.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The ferry is doing fine. Technically.",
+          "tone": "playful",
+          "pause_before": 0.3
+        }
+      ],
+      "claims": [
+        "G4",
+        "G7"
+      ],
+      "badges": [
+        {
+          "kind": "estimate",
+          "claim": "G7",
+          "text": "Our sum: ½ × 9.8 × 8² ≈ 310 m; labelled as a cartoon",
+          "at": {
+            "line": 2,
+            "off": 0.6
+          },
+          "dur": 4.0
+        }
+      ],
+      "beats": {
+        "lift": -12,
+        "sea": 0.3
+      },
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "water",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 1.0
+          },
+          "name": "rumble",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.4
+          },
+          "name": "splash",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 300,
+            "y": -60,
+            "dolly": 120
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 200,
+            "y": -160,
+            "dolly": 40,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 160,
+            "y": -320,
+            "dolly": -20,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 120,
+            "y": -380,
+            "dolly": -40,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "g06_moon",
+      "scene": "history",
+      "set": "space_moon",
+      "ambience": "space",
+      "min_duration": 12,
+      "pad_after": 0.5,
+      "music_cue": "hush",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Meanwhile, the Moon",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Meanwhile, the Moon.",
+          "tone": "confident",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "It orbits at about one kilometre a second, held on a leash by Earth's gravity.",
+          "tone": "confident"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Cut the leash for ten seconds, and it drifts ten kilometres off its curve.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Out of four hundred thousand.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Nobody notices. The Moon has the easiest ten seconds of anyone.",
+          "tone": "playful"
+        }
+      ],
+      "claims": [
+        "G8"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "G8",
+          "text": "Moon's mean orbital speed: 1.022 km/s (NASA)",
+          "at": {
+            "line": 0,
+            "off": 1.6
+          },
+          "dur": 3.8
+        }
+      ],
+      "beats": {
+        "lift": {
+          "line": 2,
+          "off": 0.2
+        },
+        "drop": {
+          "line": 4,
+          "off": 0.0
+        },
+        "label": {
+          "line": 4,
+          "off": 0.0
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 0.2
+          },
+          "name": "ping",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": 0,
+            "dolly": 0
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 60,
+            "y": -20,
+            "dolly": 60,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 0,
+            "y": 0,
+            "dolly": 20,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "g07_drop",
+      "scene": "history",
+      "set": "times_square",
+      "ambience": "city",
+      "min_duration": 20,
+      "pad_after": 0.6,
+      "music_cue": "tension-peak",
+      "transition": "dip",
+      "transition_dur": 0.5,
+      "new_shot": true,
+      "chapter": "Second ten: it's back",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Second ten. Gravity's back. And everything comes down from wherever it got to.",
+          "tone": "tense",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "The crowd: a few metres. Bruises.",
+          "tone": "confident",
+          "pause_before": 0.4
+        },
+        {
+          "who": "narrator_history",
+          "text": "The air: half a kilometre of it, all at once. A downdraft that beats any storm on record.",
+          "tone": "tense"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The sea: coming back down from five hundred metres up. Bring a towel.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "And the planet's own insides, which gravity also holds together? Let's not even go there.",
+          "tone": "playful",
+          "pause_before": 0.3
+        }
+      ],
+      "claims": [
+        "G4",
+        "G7",
+        "G9"
+      ],
+      "badges": [
+        {
+          "kind": "hypothetical",
+          "text": "The downdraft and the sea's return: our cartoon, not a model",
+          "at": {
+            "line": 2,
+            "off": 0.4
+          },
+          "dur": 4.4
+        },
+        {
+          "kind": "hypothetical",
+          "text": "What Earth's interior would do: not modelled here",
+          "at": {
+            "line": 4,
+            "off": 0.4
+          },
+          "dur": 4.4
+        }
+      ],
+      "beats": {
+        "lift": -8.5,
+        "drop": {
+          "line": 0,
+          "off": 2.6
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 0,
+            "off": 2.6
+          },
+          "name": "sting",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 3.2
+          },
+          "name": "thud",
+          "gain": 0.8
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 3.5
+          },
+          "name": "thud",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 0,
+            "off": 3.8
+          },
+          "name": "smash",
+          "gain": 0.5
+        },
+        {
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "name": "thump",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "rumble",
+          "gain": 0.7
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 1.4
+          },
+          "name": "whoosh",
+          "gain": 0.8
+        },
+        {
+          "at": {
+            "line": 3,
+            "off": 0.0
+          },
+          "name": "splash",
+          "gain": 0.6
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 200,
+            "y": -360,
+            "dolly": 20
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 2.6
+            },
+            "x": 200,
+            "y": -300,
+            "dolly": 60,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 140,
+            "y": -40,
+            "dolly": 260,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": 160,
+            "y": -120,
+            "dolly": 160,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 4,
+              "off": 0.0
+            },
+            "x": 120,
+            "y": -60,
+            "dolly": 240,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 110,
+            "y": -50,
+            "dolly": 270
+          }
+        ],
+        "shake": [
+          {
+            "t": {
+              "line": 0,
+              "off": 3.2
+            },
+            "dur": 0.6,
+            "amp": 0.35
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 1.4
+            },
+            "dur": 1.0,
+            "amp": 0.25
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 760,
+          "h": 440,
+          "facing": 1,
+          "expr0": "panic",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "phone"
+            },
+            {
+              "t": 0,
+              "gesture": "hands_up",
+              "dur": 0.1,
+              "hold": -1
+            },
+            {
+              "t": 0,
+              "float": 700,
+              "spin": 130,
+              "dur": 0.1
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.5
+              },
+              "expr": "scream"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.6
+              },
+              "float": 0,
+              "spin": 0,
+              "dur": 0.95,
+              "ease": "in"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.5
+              },
+              "expr": "dizzy"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.5
+              },
+              "gesture": null
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.6
+              },
+              "mark": "stars",
+              "dur": 4
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.5
+              },
+              "pose": "sit",
+              "dur": 0.3
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 0.0
+              },
+              "expr": "dazed"
+            },
+            {
+              "t": {
+                "line": 4,
+                "off": 0.4
+              },
+              "expr": "skeptical",
+              "look": [
+                0,
+                -0.6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sam",
+          "char": "commuter_sam",
+          "x": 1240,
+          "h": 460,
+          "facing": -1,
+          "expr0": "horrified",
+          "acts": [
+            {
+              "t": 0,
+              "gesture": "hands_up",
+              "dur": 0.1,
+              "hold": -1
+            },
+            {
+              "t": 0,
+              "float": 760,
+              "spin": -200,
+              "dur": 0.1
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.9
+              },
+              "float": 0,
+              "spin": 0,
+              "dur": 0.95,
+              "ease": "in"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.8
+              },
+              "expr": "dizzy"
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.8
+              },
+              "pose": "lie",
+              "dur": 0.3
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.8
+              },
+              "gesture": null
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.9
+              },
+              "mark": "stars",
+              "dur": 4
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.5
+              },
+              "pose": "sit",
+              "dur": 0.6
+            },
+            {
+              "t": {
+                "line": 3,
+                "off": 1.0
+              },
+              "expr": "exhausted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g08_magnet",
+      "scene": "history",
+      "set": "kitchen_insert",
+      "ambience": "interior",
+      "min_duration": 15,
+      "pad_after": 0.6,
+      "music_cue": "revelation",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "The weakest force",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "Here's the strange part.",
+          "tone": "reflective",
+          "pause_before": 0.6
+        },
+        {
+          "who": "narrator_history",
+          "text": "Gravity, the thing that just dropped an ocean on Sydney, is the weakest force there is.",
+          "tone": "reflective"
+        },
+        {
+          "who": "narrator_history",
+          "text": "This fridge magnet lifts a paperclip against the pull of the entire planet.",
+          "tone": "reveal"
+        },
+        {
+          "who": "narrator_history",
+          "text": "The whole Earth, versus one magnet. The magnet wins.",
+          "tone": "reveal",
+          "pause_before": 0.3
+        }
+      ],
+      "claims": [
+        "G10"
+      ],
+      "badges": [
+        {
+          "kind": "documented",
+          "claim": "G10",
+          "text": "Gravity is the weakest of the four fundamental forces",
+          "at": {
+            "line": 0,
+            "off": 2.8
+          },
+          "dur": 4.0
+        }
+      ],
+      "beats": {
+        "clip": {
+          "line": 2,
+          "off": 1.4
+        }
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 1.4
+          },
+          "name": "ping",
+          "gain": 0.6
+        },
+        {
+          "at": {
+            "line": 2,
+            "off": 1.5
+          },
+          "name": "chink",
+          "gain": 0.5
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": 40,
+            "dolly": -40
+          },
+          {
+            "t": {
+              "line": 2,
+              "off": 0.0
+            },
+            "x": -60,
+            "y": -60,
+            "dolly": 80,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 3,
+              "off": 0.0
+            },
+            "x": 20,
+            "y": -80,
+            "dolly": 140,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 40,
+            "y": -80,
+            "dolly": 170
+          }
+        ]
+      },
+      "actors": []
+    },
+    {
+      "id": "g09_cta",
+      "scene": "history",
+      "set": "times_square",
+      "ambience": "city",
+      "min_duration": 15,
+      "pad_after": 2.6,
+      "music_cue": "outro",
+      "transition": "dip",
+      "transition_dur": 0.6,
+      "new_shot": true,
+      "chapter": "Your ten seconds",
+      "lines": [
+        {
+          "who": "narrator_history",
+          "text": "So. Ten seconds of zero gravity, anywhere on Earth. What's the first thing you do?",
+          "tone": "curious",
+          "pause_before": 0.5
+        },
+        {
+          "who": "narrator_history",
+          "text": "Tell me in the comments. Bonus points if it involves a kangaroo.",
+          "tone": "playful"
+        },
+        {
+          "who": "narrator_history",
+          "text": "Next time: what if the Moon vanished tonight?",
+          "tone": "playful",
+          "pause_before": 0.4
+        }
+      ],
+      "claims": [
+        "G0"
+      ],
+      "cards": [
+        {
+          "kind": "fact",
+          "title": "Ten seconds of zero g: what do you do first? Comment below.",
+          "sub": "Your turn",
+          "at": {
+            "line": 1,
+            "off": 0.0
+          },
+          "dur": 5.0
+        },
+        {
+          "kind": "next",
+          "title": "What If the Moon Vanished?",
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "dur": 3.6
+        }
+      ],
+      "beats": {
+        "lift": 1000000.0
+      },
+      "sfx": [
+        {
+          "at": {
+            "line": 2,
+            "off": 0.0
+          },
+          "name": "chime",
+          "gain": 0.4
+        }
+      ],
+      "shot": {
+        "camera": [
+          {
+            "t": 0,
+            "x": 200,
+            "y": -200,
+            "dolly": 20
+          },
+          {
+            "t": {
+              "line": 0,
+              "off": 2.0
+            },
+            "x": 140,
+            "y": -40,
+            "dolly": 240,
+            "ease": "inOut"
+          },
+          {
+            "t": {
+              "line": 1,
+              "off": 0.0
+            },
+            "x": 80,
+            "y": -20,
+            "dolly": 330,
+            "ease": "inOut"
+          },
+          {
+            "t": "end",
+            "x": 120,
+            "y": -80,
+            "dolly": 220,
+            "ease": "inOut"
+          }
+        ]
+      },
+      "actors": [
+        {
+          "id": "you",
+          "char": "pov_modern",
+          "x": 600,
+          "h": 440,
+          "facing": 1,
+          "expr0": "dazed",
+          "acts": [
+            {
+              "t": 0,
+              "prop": "phone"
+            },
+            {
+              "t": 0.3,
+              "walk": 880,
+              "dur": 2.6
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 2.0
+              },
+              "expr": "curious",
+              "look": [
+                0,
+                0
+              ]
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.0
+              },
+              "face": -1
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.1
+              },
+              "expr": "gleeful"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 0.3
+              },
+              "gesture": "hold_up",
+              "dur": 0.4,
+              "hold": 2.2
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 2.4
+              },
+              "mark": "hearts",
+              "dur": 2.5
+            },
+            {
+              "t": {
+                "line": 2,
+                "off": 0.4
+              },
+              "expr": "happy"
+            }
+          ]
+        },
+        {
+          "id": "sam",
+          "char": "commuter_sam",
+          "x": 1420,
+          "h": 460,
+          "facing": -1,
+          "expr0": "exhausted",
+          "acts": [
+            {
+              "t": 0.6,
+              "walk": 1220,
+              "dur": 2.4
+            },
+            {
+              "t": {
+                "line": 0,
+                "off": 3.0
+              },
+              "expr": "grumpy"
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.0
+              },
+              "gesture": "fold",
+              "dur": 0.4,
+              "hold": 3.0
+            },
+            {
+              "t": {
+                "line": 1,
+                "off": 1.6
+              },
+              "expr": "sly"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "G0",
+      "type": "illustrative",
+      "text": "Gravity cannot switch off; the scenario is a cartoon thought experiment. You, Sam, Lee, Harry, the crowds, animals and vehicles are fictional.",
+      "sources": []
+    },
+    {
+      "id": "G1",
+      "type": "established",
+      "text": "Earth's surface moves east with the spin at about 1,670 km/h at the equator, falling with the cosine of latitude (about 1,390 km/h at Sydney's 34 degrees south).",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "G3",
+      "type": "estimate",
+      "text": "Our calculation: with gravity gone, the spin's unbalanced centripetal demand (v squared over r, about 0.023 m/s squared at Sydney) would lift a standing person about 1.2 m in ten seconds.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "G4",
+      "type": "estimate",
+      "text": "Our calculation from hydrostatic balance (dP/dz = -rho g): the upward pressure-gradient force on air and water is normally balanced by gravity, so without gravity both accelerate upward at about 9.8 m/s squared: 98 m/s and about 490 m after ten seconds.",
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "id": "G5",
+      "type": "established",
+      "text": "A belly-to-earth skydiver's terminal velocity is about 54-55 m/s (roughly 200 km/h); an updraft faster than that would carry a person upward.",
+      "sources": [
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "G6",
+      "type": "established",
+      "text": "The highest recorded kangaroo jump is 3.1 m (Guinness World Records); typical large males clear about 2-3 m.",
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "id": "G7",
+      "type": "estimate",
+      "text": "Our calculation: a body accelerating upward at 9.8 m/s squared rises about 310 m in eight seconds and 490 m in ten; after gravity returns it coasts higher before falling back. Presented as a cartoon, not a model of a real ocean.",
+      "sources": [
+        "S3"
+      ]
+    },
+    {
+      "id": "G8",
+      "type": "established",
+      "text": "The Moon's mean orbital speed is 1.022 km/s (NASA fact sheet); in ten seconds it travels about 10 km, so a straight-line drift over ten seconds is a negligible change to an orbit about 384,000 km across.",
+      "sources": [
+        "S8"
+      ]
+    },
+    {
+      "id": "G9",
+      "type": "illustrative",
+      "text": "The air crashing back down, the sea's return and anything the planet's interior would do are speculation; no source models a ten-second loss of gravity.",
+      "sources": []
+    },
+    {
+      "id": "G10",
+      "type": "established",
+      "text": "Gravity is the weakest of the four fundamental forces; a small magnet can lift a paperclip against the gravitational pull of the entire Earth.",
+      "sources": [
+        "S9",
+        "S10"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "How fast does the Earth rotate?",
+      "publisher": "Space Centre NZ",
+      "url": "https://www.spacecentre.nz/resources/faq/solar-system/earth/rotation-speed.html",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S2",
+      "title": "How fast is the Earth moving?",
+      "publisher": "WorldAtlas",
+      "url": "https://www.worldatlas.com/space/how-fast-is-the-earth-moving.html",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S3",
+      "title": "Hydrostatic equilibrium of atmosphere",
+      "publisher": "University of Texas at Austin (R. Fitzpatrick)",
+      "url": "https://farside.ph.utexas.edu/teaching/355/Surveyhtml/node206.html",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S4",
+      "title": "The atmosphere's pressure structure: hydrostatic equilibrium",
+      "publisher": "Penn State METEO 300 / LibreTexts",
+      "url": "https://geo.libretexts.org/Bookshelves/Meteorology_and_Climate_Science/Fundamentals_of_Atmospheric_Science_(Brune)/02%3A_Thermodynamics/2.02%3A_The_Atmospheres_Pressure_Structure_-_Hydrostatic_Equilibrium",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S5",
+      "title": "Speed of a skydiver (terminal velocity)",
+      "publisher": "The Physics Factbook (hypertextbook.com)",
+      "url": "https://hypertextbook.com/facts/1998/JianHuang.shtml",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S6",
+      "title": "Speed skydiving",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Speed_skydiving",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S7",
+      "title": "Highest jump by a kangaroo",
+      "publisher": "Guinness World Records",
+      "url": "https://www.guinnessworldrecords.com/world-records/70441-highest-jump-by-a-kangaroo",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S8",
+      "title": "Moon Fact Sheet",
+      "publisher": "NASA NSSDC",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S9",
+      "title": "How weak is gravity?",
+      "publisher": "ova.it.com (fundamental forces explainer)",
+      "url": "https://ova.it.com/fundamental-forces/how-weak-is-gravity",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S10",
+      "title": "Seeing how a magnet works",
+      "publisher": "Curriculum Visions",
+      "url": "https://www.curriculumvisions.com/newhome/science/yr3/3E/9detail2Text.html",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    },
+    {
+      "id": "S11",
+      "title": "Times Square Alliance annual report 2024 (pedestrian counts)",
+      "publisher": "Times Square Alliance",
+      "url": "https://www.timessquarenyc.org/sites/default/files/resource-pdfs/TSA_Annual%20Report_2024_COMPRESSED.pdf",
+      "accessed": "2026-10-14",
+      "note": "search snippet only; page not fetched"
+    }
+  ],
+  "publishing": {
+    "titles": [
+      "What If Gravity Switched Off for 10 Seconds?",
+      "10 Seconds of Zero Gravity Would Ruin Everything",
+      "Gravity Stops. The Ocean Leaves. Then It Comes Back"
+    ],
+    "description": "Tonight at nine, gravity switches off everywhere on Earth. For ten seconds. Then it comes back. We follow those ten seconds around the world: Times Square counting down, a Sydney jogger who barely leaves the ground, San Francisco's fog taking off, every pigeon in Westminster, kangaroos at Uluru who never land, an ocean rising at one g, a Moon that barely notices, and the moment it all comes back down. Then the twist: the force that just dropped an ocean on Sydney loses to a fridge magnet.",
+    "whats_real": "What's real: the rotation speeds, hydrostatic balance (why air and water would rise), a skydiver's terminal velocity, the kangaroo record, the Moon's orbital speed and gravity's weakness are sourced below. The big numbers (one metre, 300 m, 490 m) are our own arithmetic and are labelled ESTIMATE on screen; what the air and sea do when gravity returns, and what Earth's interior would do, are labelled HYPOTHETICAL. Gravity cannot switch off, and everyone in the film is fictional.",
+    "cta": "Ten seconds of zero gravity, anywhere on Earth. What's the first thing you'd do? Comment below.",
+    "hashtags": [
+      "#whatif",
+      "#science",
+      "#physics",
+      "#gravity",
+      "#space"
+    ],
+    "packages": [
+      {
+        "title": "What If Gravity Switched Off for 10 Seconds?",
+        "thumbnail": "A",
+        "promise": "Ten seconds of zero g, around the world.",
+        "proof": "0:00 the countdown; 0:16 Sydney; 1:16 London; 1:36 Uluru."
+      },
+      {
+        "title": "10 Seconds of Zero Gravity Would Ruin Everything",
+        "thumbnail": "B",
+        "promise": "Why ten seconds is enough for disaster.",
+        "proof": "0:40 the air leaves; 1:52 the sea rises; 2:22 it all comes down."
+      },
+      {
+        "title": "Gravity Stops. The Ocean Leaves. Then It Comes Back",
+        "thumbnail": "C",
+        "promise": "The ocean rises, then returns.",
+        "proof": "1:52 the harbour rises; 2:22 'bring a towel'."
+      }
+    ],
+    "thumbnails": [
+      {
+        "id": "A",
+        "layout": "L1",
+        "bg": "#2A2140",
+        "text": "EVERYTHING|FLOATS",
+        "character": {
+          "char": "pov_modern",
+          "expr": "scream",
+          "look": [
+            1,
+            -0.3
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.25,
+            0.42
+          ],
+          "mouth": 0.7
+        },
+        "object": {
+          "type": "floating_roo",
+          "r": 200,
+          "c": [
+            0.75,
+            0.62
+          ]
+        }
+      },
+      {
+        "id": "B",
+        "layout": "L1",
+        "bg": "#5E1F24",
+        "text": "UP WE GO",
+        "character": {
+          "char": "guard_harry",
+          "expr": "panic",
+          "look": [
+            1,
+            -0.3
+          ],
+          "face_h": 0.44,
+          "face_c": [
+            0.25,
+            0.46
+          ],
+          "mouth": 0.5
+        },
+        "object": {
+          "type": "floating_bus",
+          "r": 200,
+          "c": [
+            0.75,
+            0.62
+          ]
+        }
+      },
+      {
+        "id": "C",
+        "layout": "L1",
+        "bg": "#1E3A6E",
+        "text": "SEA GOES UP",
+        "text_fill": "#FFF8E7",
+        "character": {
+          "char": "jogger_lee",
+          "expr": "shocked",
+          "look": [
+            1,
+            -0.3
+          ],
+          "face_h": 0.46,
+          "face_c": [
+            0.25,
+            0.42
+          ],
+          "mouth": 0.6
+        },
+        "object": {
+          "type": "floating_roo",
+          "r": 200,
+          "c": [
+            0.75,
+            0.62
+          ]
+        }
+      }
+    ]
+  }
+}

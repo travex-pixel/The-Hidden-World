@@ -18,8 +18,9 @@ SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "
 HISTORY_SETS = {"cottage", "village", "coin", "field", "cottage_dusk", "abbey_floor", "abbey_parlour",
                 "alehouse", "alehouse_day", "village_night", "church_door", "church_dawn", "map_dover",
                 "field_dawn", "well_yard", "counting_house", "ledger_insert", "smithy", "great_hall", "map_england", "alt_town",
-                "city_street", "globe", "south_pole"}
-AMBIENCE = {"interior", "village", "market", "alehouse", "night", "forge", "hall", "city", "space", "polar", "none"}
+                "city_street", "globe", "south_pole",
+                "times_square", "sydney_harbour", "golden_gate", "london_bigben", "uluru", "kitchen_insert", "space_moon"}
+AMBIENCE = {"interior", "village", "market", "alehouse", "night", "forge", "hall", "city", "space", "polar", "harbour", "outback", "none"}
 BADGE_CLAIM_TYPES = {"documented": {"established"}, "estimate": {"estimate"}, "disputed": {"disputed"},
                      "reconstruction": {"plausible", "illustrative"}, "dramatised": None,
                      "hypothetical": None}   # alternate history, never presented as fact
@@ -206,7 +207,8 @@ def validate_history(ep: dict, claim_ids: set) -> list:
 # names of the history rig's expressions (renderer/history/rig.js, EXPR) and Kokoro delivery tones (pipeline/kokoro.py)
 RIG_EXPRESSIONS = {"neutral", "sleepy", "asleep", "surprised", "shocked", "happy", "delighted", "worried", "determined", "curious",
                    "smug", "nervous", "stern", "wince", "awe", "sly", "skeptical", "sheepish", "angry", "sad", "relieved", "proud",
-                   "exhausted", "laughing", "horrified", "dreamy", "pleading", "grumpy", "startled", "eager"}
+                   "exhausted", "laughing", "horrified", "dreamy", "pleading", "grumpy", "startled", "eager",
+                   "scream", "panic", "dizzy", "ecstatic", "dazed", "gleeful"}
 KOKORO_TONES = {"hook", "curious", "confident", "tense", "reveal", "reflective", "resolve", "playful"}
 
 

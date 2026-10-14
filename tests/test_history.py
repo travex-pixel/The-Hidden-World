@@ -308,3 +308,50 @@ class WhatIf(unittest.TestCase):
         self.assertEqual(len(rom), 5); self.assertEqual(len(arab), 5)
         self.assertEqual([roman(r) for r in rom], arab, "each Roman figure matches its Hindu-Arabic twin")
         self.assertEqual(sum(arab[:4]), arab[4], "the column adds up")
+
+
+class EngineV4(unittest.TestCase):
+    """What-If 003: several set modules per episode, world landmark sets, animals, richer faces, new effects."""
+    def setUp(self):
+        self.ep = load_episode("whatif003-gravity-off")
+        self.rig = (ROOT / "renderer" / "history" / "rig.js").read_text()
+        self.world = (ROOT / "renderer" / "history" / "sets" / "world.js").read_text()
+        self.fx = (ROOT / "renderer" / "history" / "fx.js").read_text()
+
+    def test_episode_loads_several_set_modules_that_exist(self):
+        mods = self.ep["set_module"]
+        self.assertIsInstance(mods, list); self.assertGreaterEqual(len(mods), 2)
+        for m in mods: self.assertTrue((ROOT / m).exists(), m)
+
+    def test_world_sets_are_registered_and_defined(self):
+        from pipeline.schema import HISTORY_SETS
+        for name in ("times_square", "sydney_harbour", "golden_gate", "london_bigben", "uluru", "kitchen_insert", "space_moon"):
+            self.assertIn(name, HISTORY_SETS); self.assertIn(f"X.SETS.{name} =", self.world)
+        used = {s["set"] for s in self.ep["scenes"]}
+        self.assertTrue(used <= HISTORY_SETS, used - HISTORY_SETS)
+
+    def test_new_expressions_exist_in_schema_and_rig(self):
+        from pipeline.schema import RIG_EXPRESSIONS
+        for e in ("scream", "panic", "dizzy", "ecstatic", "dazed", "gleeful"):
+            self.assertIn(e, RIG_EXPRESSIONS); self.assertRegex(self.rig, rf"\n\s+{e}:\s+\{{")
+        for ctrl in ("arc: 0", "spiral: 0", "shout: 0"):
+            self.assertIn(ctrl, self.rig)
+
+    def test_animals_marks_and_effects_are_exported(self):
+        for a in ("dog", "cat", "kangaroo", "emu", "pigeon"): self.assertIn(f"function {a}(g, t, o)", self.rig)
+        self.assertIn("kangaroo, emu, pigeon, walkFeet", self.rig)
+        for m in ("shock", "hearts", "question", "stars", "zzz", "anger"): self.assertIn(f"'{m}'", self.rig)
+        for f in ("rain", "lightning", "fireworks", "snow", "fogBank", "lensFlare", "waves", "confetti"): self.assertIn(f"function {f}(g, t, o)", self.fx)
+        self.assertIn("fogBank, lensFlare, waves, confetti }", self.fx)
+
+    def test_speculation_is_labelled_and_the_scenario_is_declared_fiction(self):
+        kinds = {b["kind"] for s in self.ep["scenes"] for b in s.get("badges", [])}
+        for k in ("dramatised", "estimate", "hypothetical", "documented"): self.assertIn(k, kinds)
+        ours = [c for c in self.ep["claims"] if c["type"] == "estimate"]
+        self.assertTrue(all("Our calculation" in c["text"] for c in ours), "every estimate says it is our own arithmetic")
+        self.assertIn("cannot switch off", self.ep["fiction_notice"])
+
+    def test_gravity_scenes_carry_lift_beats(self):
+        for s in self.ep["scenes"]:
+            if s["set"] in ("times_square", "sydney_harbour", "golden_gate", "london_bigben", "uluru"):
+                self.assertIn("lift", s.get("beats", {}), s["id"])

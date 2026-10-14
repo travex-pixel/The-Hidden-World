@@ -12,7 +12,7 @@ const page = await browser.newPage({ viewport: { width: plan.width, height: plan
 page.on('pageerror', e => { console.error('[page error]', e.message); process.exitCode = 1; });
 const url = pathToFileURL(resolve(here, '..', plan.page || 'renderer/index.html')).href + (plan.page ? `?w=${plan.width}&h=${plan.height}` : '');
 await page.goto(url);
-await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
+for (const f of [].concat(plan.scenes_js)) await page.addScriptTag({ path: resolve(here, '..', f) });
 await page.evaluate(() => document.fonts.ready);
 await page.evaluate(({ episode, timeline, seed, visual, art, cast, fps }) => window.HW.setup(episode, timeline, seed, visual, art, cast, fps), plan);
 if (process.env.CLEAN) await page.evaluate(() => { window.HW.clean = true; });

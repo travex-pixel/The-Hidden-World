@@ -13,7 +13,7 @@ const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
 const page = await browser.newPage({ viewport: { width: cols * cw, height: 1500 } });
 page.on('pageerror', e => { console.error('[page error]', e.message); process.exitCode = 1; });
 await page.goto(pathToFileURL(resolve(here, '..', 'renderer/history/index.html')).href + `?w=${cols * cw}&h=1500`);
-await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
+for (const f of [].concat(plan.scenes_js)) await page.addScriptTag({ path: resolve(here, '..', f) });
 await page.evaluate(() => document.fonts.ready);
 const size = await page.evaluate(({ who, cast, cols, cw, chh, only }) => {
   const X = window.HX, names = only || Object.keys(X.Rig.EXPR), rows = Math.ceil(names.length / cols);

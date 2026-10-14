@@ -147,5 +147,54 @@
     X.P.paperOverlay(g, W, H, o.seed || 1, o.paper ?? 0.16);
   }
 
-  root.HX = Object.assign(root.HX, { FX: { smoke, motes, rays, mist, leaves, sparks, flame, banner, grass, birds, shimmer, finish } });
+  // ---- engine v4 scenic effects (What-If 003)
+  function rain(g, t, o) {   // streaks falling at a slant across a box; o: {x, y, w, h, n, alpha, wind, key}
+    g.save(); g.strokeStyle = rgba(o.colour || '#dde8f0', o.alpha ?? 0.55); g.lineWidth = o.width ?? 2; g.lineCap = 'round';
+    const wind = o.wind ?? 120, sp = o.speed ?? 1400, len = o.len ?? 26;
+    for (let i = 0; i < (o.n ?? 160); i++) { const r = rngFor(o.key || 'rain', i); const x0 = o.x + r() * o.w, ph = r(); const y = o.y + ((ph * o.h + t * sp * (0.8 + r() * 0.4)) % o.h); const x = x0 + (y - o.y) * wind / sp;
+      g.beginPath(); g.moveTo(x, y); g.lineTo(x - wind / sp * len, y - len); g.stroke(); }
+    g.restore();
+  }
+  function lightning(g, t, o) {   // a forked bolt that lasts ~0.3 s from o.at, lighting the sky; call D.light yourself for the glow
+    const u = t - o.at; if (u < 0 || u > (o.dur ?? 0.35)) return 0; const k = u < 0.08 ? 1 : Math.max(0, 1 - (u - 0.08) / (o.dur ?? 0.35)) * (Math.sin(u * 90) > -0.3 ? 1 : 0.3);
+    const r = rngFor(o.key || 'bolt', Math.floor(o.at * 10)); g.save(); g.globalAlpha = k; g.strokeStyle = '#ffffff'; g.lineCap = 'round'; g.shadowColor = '#bcd8ff'; g.shadowBlur = 24;
+    const seg = (x, y, len, w, depth) => { g.lineWidth = w; g.beginPath(); g.moveTo(x, y); let cx = x, cy = y; for (let i = 0; i < 9; i++) { cx += (r() - 0.5) * len * 0.35; cy += len / 9; g.lineTo(cx, cy); if (depth > 0 && r() < 0.25) seg(cx, cy, len * 0.45, w * 0.5, depth - 1); } g.stroke(); };
+    seg(o.x, o.y, o.len ?? 700, 5, 2); g.restore(); return k;
+  }
+  function fireworks(g, t, o) {   // bursts at o.at + i * o.gap from random spots in the box: a shell rises, then a sphere of trailing sparks
+    for (let i = 0; i < (o.n ?? 4); i++) { const r = rngFor(o.key || 'fw', i); const t0 = (o.at ?? 0) + i * (o.gap ?? 0.9) + r() * 0.3, u = t - t0; if (u < -1.2 || u > 2.8) continue;
+      const x = o.x + r() * o.w, y = o.y + r() * o.h, col = ['#ffd24a', '#ff6a4a', '#7ad0ff', '#ff8ad8', '#a0ff8a'][i % 5];
+      if (u < 0) { g.strokeStyle = rgba('#ffe8a0', 0.8); g.lineWidth = 2; g.beginPath(); g.moveTo(x, y + 500 * (-u / 1.2)); g.lineTo(x, y + 500 * (-u / 1.2) + 30); g.stroke(); continue; }
+      const R = (o.r ?? 160) * (1 - Math.exp(-u * 3)), fade = Math.max(0, 1 - u / 2.6); g.save(); g.globalAlpha = fade; g.lineCap = 'round';
+      for (let k = 0; k < 28; k++) { const a = k / 28 * Math.PI * 2 + r() * 0.1, rr = R * (0.85 + r() * 0.15); const px = x + Math.cos(a) * rr, py = y + Math.sin(a) * rr + u * u * 40; g.strokeStyle = col; g.lineWidth = 3; g.beginPath(); g.moveTo(x + Math.cos(a) * rr * 0.6, y + Math.sin(a) * rr * 0.6 + u * u * 30); g.lineTo(px, py); g.stroke(); g.fillStyle = '#fff'; g.beginPath(); g.arc(px, py, 2.5, 0, 7); g.fill(); }
+      if (u < 0.25) { g.fillStyle = rgba('#ffffff', 0.9 - u * 3); g.beginPath(); g.arc(x, y, 40 + u * 200, 0, 7); g.fill(); } g.restore(); }
+  }
+  function snow(g, t, o) {
+    g.save(); for (let i = 0; i < (o.n ?? 200); i++) { const r = rngFor(o.key || 'snow', i); const s = 1.5 + r() * 3, sp = 40 + r() * 60; const y = o.y + ((r() * o.h + t * sp) % o.h), x = o.x + ((r() * o.w + Math.sin(t * 0.8 + i) * 30 + t * (o.wind ?? 20)) % o.w + o.w) % o.w;
+      g.fillStyle = rgba('#ffffff', (o.alpha ?? 0.8) * (0.5 + 0.5 * r())); g.beginPath(); g.arc(x, y, s, 0, 7); g.fill(); } g.restore();
+  }
+  function fogBank(g, t, o) {   // a thick rolling bank of fog: layered soft blobs drifting with o.speed; o.lift raises the whole bank (px)
+    g.save(); g.globalAlpha = o.alpha ?? 0.8; const lift = o.lift || 0;
+    for (let i = 0; i < (o.n ?? 14); i++) { const r = rngFor(o.key || 'fog', i); const w = (o.w / 4) * (0.8 + r() * 0.8), h = o.h * (0.5 + r() * 0.7); const x = o.x + (((r() * o.w + t * (o.speed ?? 30) * (0.6 + r() * 0.8)) % (o.w + w * 2)) + o.w + w * 2) % (o.w + w * 2) - w, y = o.y + r() * o.h * 0.5 - lift + Math.sin(t * 0.5 + i) * 8;
+      const gr = g.createRadialGradient(x, y, 0, x, y, w); gr.addColorStop(0, rgba(o.colour || '#f2f4f6', 0.75)); gr.addColorStop(1, rgba(o.colour || '#f2f4f6', 0)); g.fillStyle = gr; g.beginPath(); g.ellipse(x, y, w, h, 0, 0, 7); g.fill(); }
+    g.restore();
+  }
+  function lensFlare(g, t, o) {   // the low sun: a hot core, a ring of hexagonal ghosts along the line to frame centre
+    g.save(); g.globalCompositeOperation = 'screen'; const cx = o.x, cy = o.y, dx = 960 - cx, dy = 540 - cy;
+    const core = g.createRadialGradient(cx, cy, 0, cx, cy, o.r ?? 260); core.addColorStop(0, rgba('#fff6dc', 0.9 * (o.alpha ?? 1))); core.addColorStop(0.3, rgba('#ffc878', 0.45 * (o.alpha ?? 1))); core.addColorStop(1, rgba('#ff9a50', 0)); g.fillStyle = core; g.fillRect(cx - 600, cy - 600, 1200, 1200);
+    for (const [f, rr, col, a] of [[0.35, 40, '#ffd0a0', 0.25], [0.6, 70, '#a0e0ff', 0.18], [0.85, 26, '#ffe0a0', 0.3], [1.25, 110, '#c0ffd0', 0.12], [1.6, 50, '#ffb0c0', 0.2]]) { const x = cx + dx * f, y = cy + dy * f; g.fillStyle = rgba(col, a * (o.alpha ?? 1)); g.beginPath(); for (let k = 0; k < 6; k++) { const an = k * Math.PI / 3 + t * 0.1; k ? g.lineTo(x + Math.cos(an) * rr, y + Math.sin(an) * rr) : g.moveTo(x + Math.cos(an) * rr, y + Math.sin(an) * rr); } g.closePath(); g.fill(); }
+    g.strokeStyle = rgba('#fff2d0', 0.35 * (o.alpha ?? 1)); g.lineWidth = 2; g.beginPath(); g.moveTo(cx - 900, cy); g.lineTo(cx + 900, cy); g.stroke(); g.restore();
+  }
+  function waves(g, t, o) {   // a water surface: layered sine swells with foam caps, filled down to o.y + o.h; o.lift raises the surface, o.chop adds agitation
+    const lift = o.lift || 0, chop = 1 + (o.chop || 0) * 3; g.save();
+    for (let L = 0; L < (o.layers ?? 3); L++) { const y0 = o.y - lift + L * (o.spacing ?? 26), amp = (o.amp ?? 6) * (1 + L * 0.3) * chop, col = [o.colour || '#5a9ac8', o.colour2 || '#3f7fb0', o.colour3 || '#2f6a98'][L % 3];
+      g.fillStyle = col; g.beginPath(); g.moveTo(o.x, y0); for (let x = o.x; x <= o.x + o.w; x += 24) g.lineTo(x, y0 + Math.sin(x * 0.012 + t * (1.3 + L * 0.4) + L) * amp + Math.sin(x * 0.031 - t * 0.9) * amp * 0.5); g.lineTo(o.x + o.w, o.y + o.h); g.lineTo(o.x, o.y + o.h); g.closePath(); g.fill();
+      g.strokeStyle = rgba('#ffffff', 0.35 + 0.25 * (o.chop || 0)); g.lineWidth = 2; for (let x = o.x; x < o.x + o.w; x += 180) { const r = rngFor(o.key || 'wv', x + L * 7); const px = x + r() * 140, py = y0 + Math.sin(px * 0.012 + t * (1.3 + L * 0.4) + L) * amp; g.beginPath(); g.moveTo(px - 12, py); g.quadraticCurveTo(px, py - 4 * chop, px + 14, py + 1); g.stroke(); } }
+    g.restore();
+  }
+  function confetti(g, t, o) {
+    g.save(); for (let i = 0; i < (o.n ?? 120); i++) { const r = rngFor(o.key || 'cf', i); const col = ['#ffd24a', '#ff6a4a', '#7ad0ff', '#ff8ad8', '#a0ff8a'][i % 5]; const y = o.y + ((r() * o.h + t * (60 + r() * 80)) % o.h), x = o.x + r() * o.w + Math.sin(t * 2 + i) * 20;
+      g.save(); g.translate(x, y); g.rotate(t * 4 + i); g.fillStyle = col; g.fillRect(-5, -3, 10, 6); g.restore(); } g.restore();
+  }
+  root.HX = Object.assign(root.HX, { FX: { smoke, motes, rays, mist, leaves, sparks, flame, banner, grass, birds, shimmer, finish, rain, lightning, fireworks, snow, fogBank, lensFlare, waves, confetti } });
 })(window);

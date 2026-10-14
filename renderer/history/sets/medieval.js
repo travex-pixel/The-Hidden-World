@@ -1580,4 +1580,6 @@
   };
   // artwork reused by the thumbnail compositor
   X.ART = Object.assign(X.ART || {}, { penny, millstone, bigHand, loafShape, stook, WHEAT, groundY, ENG });
+  // shared kit for other set modules loaded after this one (e.g. renderer/history/sets/world.js)
+  X.KIT = { makeLayer, cloud, sky, hills, tree, house, grassVerge, mudGround, groundY, HZ, GY, INK, C, car, block, CITY };
 })(window);

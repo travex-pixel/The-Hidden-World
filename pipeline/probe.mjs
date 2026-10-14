@@ -11,7 +11,7 @@ const browser = await chromium.launch({ args: ['--disable-gpu'] });
 const page = await browser.newPage({ viewport: { width: 320, height: 180 } });
 page.on('pageerror', e => { console.error('[page error]', e.message); process.exitCode = 1; });
 await page.goto(pathToFileURL(resolve(here, '..', plan.page)).href + '?w=320&h=180');
-await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
+for (const f of [].concat(plan.scenes_js)) await page.addScriptTag({ path: resolve(here, '..', f) });
 await page.evaluate(({ episode, timeline, seed, visual, art, cast, fps }) => window.HW.setup(episode, timeline, seed, visual, art, cast, fps), plan);
 const total = plan.timeline[plan.timeline.length - 1].end;
 const samples = await page.evaluate(({ total, rate }) => {
