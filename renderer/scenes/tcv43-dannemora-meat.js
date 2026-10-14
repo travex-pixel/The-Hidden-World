@@ -301,7 +301,7 @@
             keys: [{ at: sav + 0.4, pose: 'stand', dur: 0.5 }] }
         ],
         overlays: [
-          { type: 'lesson', at: 0.05, save: true, checklist: true, y: 400, rows: [{ text: '1 TOOLS HIDDEN IN FOOD', fs: 40 }, { text: '2 A GUARD DOING FAVOURS', fs: 40 }, { text: '3 400 BED CHECKS SKIPPED', fs: 40 }, { text: 'NY Inspector General, 2016', fs: 26, colour: '#b9c3c8' }] }
+          { type: 'lesson', at: 0.05, save: true, checklist: true, y: 400, rows: [{ text: 'TOOLS HIDDEN IN FOOD', fs: 40 }, { text: 'A GUARD DOING FAVOURS', fs: 40 }, { text: '400 BED CHECKS SKIPPED', fs: 40 }, { text: 'NY Inspector General, 2016', fs: 26, colour: '#b9c3c8' }] }
         ],
         tag: LIKE
       });

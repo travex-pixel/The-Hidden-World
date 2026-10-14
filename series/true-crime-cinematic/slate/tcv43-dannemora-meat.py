@@ -27,8 +27,8 @@ def build(h):
         #     frame 1; the headline is burned in by the engine. Line 1 is the twist (6 words); the stakes number by 4.5 s.
         S("s01_hook", "dm43_hook", [N("Frozen hamburger meat freed two killers."),
                                     N("The manhunt took 23 days and 1,300 officers.", pause_before=0.1)],
-          "tension", ["M_meat", "M_hunt"], sfx=[fx(0.0, "glitch", 0.35), fx(0.0, "sub", 0.4), fw(0, 4, "thump", 0.35, -0.05),
-                                              fw(1, 3, "thump", 0.4, -0.05), fw(1, 6, "static", 0.3, -0.05)],
+          "tension", ["M_meat", "M_hunt"], sfx=[fx(0.0, "rasp", 0.4), fx(0.0, "sub", 0.4), fw(0, 4, "thump", 0.35, -0.05),
+                                              fw(1, 3, "thump", 0.4, -0.05), fw(1, 6, "radio", 0.3, -0.05)],
           emph=["frozen", "meat", "two", "killers.", "23", "days", "1,300", "officers."], min_d=4.8, pad=0.05),
         # A - where: the map fly-in over North America to Dannemora, NY; the outline draws itself in; the open loop (how?)
         S("s02_map", "dm43_map", [N("Dannemora, New York. So how did they do it?")],
@@ -36,11 +36,11 @@ def build(h):
           emph=["dannemora,", "how"], min_d=3.3, pad=0.0, tr="push"),
         # B - the tailor shop: Mitchell's silhouette at the fridge; the blades go into the meat (impact on 'blades')
         S("s03_tailor", "dm43_tailor", [N("Prison tailor Joyce Mitchell hid hacksaw blades inside.")],
-          "tension-rise", ["M_mitchell_blades"], sfx=[fw(0, 5, "glitch", 0.4, -0.1), fw(0, 7, "door", 0.35, 0.1)],
+          "tension-rise", ["M_mitchell_blades"], sfx=[fw(0, 5, "rasp", 0.4, -0.1), fw(0, 7, "door", 0.35, 0.1)],
           emph=["joyce", "mitchell", "hacksaw", "blades"], pad=0.1, tr="push"),
         # B - the guard: Palmer's silhouette hands the pack through the bars of the honour-block cell
         S("s04_guard", "dm43_guard", [N("A guard carried it to Matt and Sweat.")],
-          "tension-rise", ["M_palmer", "M_who"], sfx=[fw(0, 0, "tick", 0.35, -0.1), fw(0, 2, "step", 0.3, 0.0), fw(0, 5, "door", 0.3, 0.1)],
+          "tension-rise", ["M_palmer", "M_who"], sfx=[fw(0, 0, "keys", 0.35, -0.1), fw(0, 2, "step", 0.3, 0.0), fw(0, 5, "knock", 0.3, 0.1)],
           emph=["guard", "matt", "sweat."], pad=0.2, tr="push"),
         # B - the LESSON (save trigger): a three-item checklist from the Inspector General's findings, captions OFF,
         #     the short spoken cue; on screen >= 3 s
@@ -49,24 +49,24 @@ def build(h):
           emph=["three", "warning", "signs.", "save"], min_d=3.05, pad=0.25, tr="push"),
         # C - the cut: the steam tunnel; Sweat's silhouette at the pipe; sparks and steam; the fun fact (the note)
         S("s06_cut", "dm43_cut", [N("They cut through steel, then a steam pipe.")],
-          "tension", ["M_cut", "M_note"], sfx=[fw(0, 1, "glitch", 0.45, -0.1), fw(0, 5, "glitch", 0.4, -0.05), fw(0, 7, "sparkle", 0.3, 0.3)],
+          "tension", ["M_cut", "M_note"], sfx=[fw(0, 1, "rasp", 0.45, -0.1), fw(0, 5, "rasp", 0.4, -0.05), fw(0, 7, "sparkle", 0.3, 0.3)],
           emph=["cut", "steel,", "steam", "pipe."], min_d=3.3, pad=0.2, tr="push"),
         # C - the manhole, DAY 1: two silhouettes climb out into the night street; the getaway driver never came. Music drop.
         S("s07_manhole", "dm43_manhole", [N("June 6th: out through a manhole. Their driver never came.")],
           "revelation", ["M_escape", "M_driver"], sfx=[fw(0, 0, "thump", 0.4, -0.1), fw(0, 1, "door", 0.35, -0.05), fw(0, 5, "wind", 0.3, 0.0),
-                                                       fw(0, 7, "riser", 0.3, -0.3), fw(0, 9, "hit", 0.5, -0.05)],
+                                                       fw(0, 7, "riser", 0.3, -0.3), fw(0, 9, "hit", 0.45, -0.05)],
           emph=["june", "6th:", "manhole.", "driver", "never", "came."], pad=0.3, tr="flash"),
         # D - the manhunt, DAY 7: night woods, handheld; Mitchell arrested; the killers still out there
         S("s08_hunt", "dm43_hunt", [N("Mitchell was arrested. The killers? Gone.")],
-          "tension-peak", ["M_arrest", "M_hunt"], sfx=[fx(0.0, "swell", 0.3), fw(0, 2, "click", 0.4, -0.05), fw(0, 4, "static", 0.3, 0.0)],
+          "tension-peak", ["M_arrest", "M_hunt"], sfx=[fx(0.0, "siren", 0.3), fw(0, 2, "cuffs", 0.4, -0.05), fw(0, 4, "radio", 0.3, 0.0)],
           emph=["arrested.", "killers?", "gone."], min_d=3.0, pad=0.25, tr="push"),
         # D - DAY 21: Matt shot dead near Malone (a card and a line only; nothing depicted)
         S("s09_matt", "dm43_matt", [N("Day 21: Border Patrol shot Richard Matt dead.")],
-          "tension-peak", ["M_matt_dead"], sfx=[fw(0, 0, "tick", 0.3, -0.02), fw(0, 2, "static", 0.3, -0.1), fw(0, 7, "hit", 0.5, -0.05)],
+          "tension-peak", ["M_matt_dead"], sfx=[fw(0, 0, "tick", 0.3, -0.02), fw(0, 2, "radio", 0.3, -0.1), fw(0, 7, "hit", 0.45, -0.05)],
           emph=["21:", "border", "patrol", "dead."], pad=0.08, tr="push"),
         # D - DAY 23: Sweat caught two miles from Canada (impact on 'caught'; cuffs). Music drop; the cliff.
         S("s10_sweat", "dm43_sweat", [N("Day 23: Sweat was caught, two miles from Canada.")],
-          "revelation", ["M_sweat_caught"], sfx=[fw(0, 0, "tick", 0.3, -0.02), fw(0, 3, "riser", 0.3, -0.4), fw(0, 4, "hit", 0.5, -0.05), fw(0, 4, "click", 0.45, 0.25)],
+          "revelation", ["M_sweat_caught"], sfx=[fw(0, 0, "tick", 0.3, -0.02), fw(0, 3, "riser", 0.3, -0.4), fw(0, 4, "hit", 0.45, -0.05), fw(0, 4, "cuffs", 0.45, 0.25)],
           emph=["23:", "sweat", "caught,", "two", "miles", "canada."], pad=0.3, tr="flash"),
         # E - the outcome and the irony as the LAST line, on the hero object in the first frame's framing; the sentences
         #     card sits below the burned-in end question; pad 0.6, no fade (the reel loops to frame 1)
@@ -131,7 +131,7 @@ def build(h):
           ["ap_palmer", "cbsny_palmer", "wamc_palmer", "ap_plea"]),
         C("M_who", "Richard Matt was serving 25 years to life for a 1997 kidnapping and murder; David Sweat was serving life without parole for the 2002 killing of a sheriff's deputy. The crimes are never depicted; the card names them as convicted murderers.",
           ["cbs_note", "time_escape", "c4_escape"]),
-        C("M_lesson", "LESSON CARD (Inspector General, June 2016): tools reached the men hidden in food (frozen meat); Officer Palmer was won over with Matt's paintings and did favours in return (art supplies, catwalk access, warnings of cell searches, passing the meat); had any one of about 400 required night bed checks been done properly the scheme would have been foiled, and 15 required cell inspections were not done. Rows: '1 TOOLS HIDDEN IN FOOD', '2 A GUARD DOING FAVOURS', '3 400 BED CHECKS SKIPPED'.",
+        C("M_lesson", "LESSON CARD (Inspector General, June 2016): tools reached the men hidden in food (frozen meat); Officer Palmer was won over with Matt's paintings and did favours in return (art supplies, catwalk access, warnings of cell searches, passing the meat); had any one of about 400 required night bed checks been done properly the scheme would have been foiled, and 15 required cell inspections were not done. Rows: 'TOOLS HIDDEN IN FOOD', 'A GUARD DOING FAVOURS', '400 BED CHECKS SKIPPED'.",
           ["ig_report", "spectrum_ig", "global_ig"]),
         C("M_cut", "The two men cut through the steel at the back of their cells, worked their way through the prison's underground tunnels and cut a hole in a steam pipe to reach a sewer/manhole outside the walls; their beds were stuffed to look occupied during night checks.",
           ["cbs_note", "c4_escape", "spectrum_ig"]),
