@@ -98,6 +98,13 @@ A **dark graphic-novel look with a watercolour wash**: ink outlines, two-tone ce
 
 Older episodes render exactly as before. Their scene files never call the new code.
 
+## Engagement engine (from Case File 43)
+The owner's Insights for 16, 22 and 30 (all stopped at about 1.6k views, likes above typical, 0 comments, 40–45 % gone by second 6, a 10–17 point tail loss) set these rules; see `docs/STYLE_GUIDE_TRUE_CRIME.md`.
+- `pipeline/engage_qa.py` runs in the QA gate for every episode and is enforced when the episode sets `"engagement_rules": true`: stakes by 4.5 s, an open loop every 10 s, the outcome in the last 8 s, an opinion question on the picture, a fun fact and a lesson card, a progression marker, an effect at 0.0 s, the video ends within 1.6 s of the last word, pace under 150 wpm.
+- `series/true-crime/tools/score_case.py candidates.json` ranks candidate cases on the winning formula (object, known villain, manhunt, irony, 1990s+, a stakes number, US relevance, a known outcome) and prints ethics flags.
+- `series/true-crime/tools/retention.py <id> 0:100 3:75 ... --views N --save` maps Instagram's retention graph onto the timeline and names the line and scene at every drop; `--compare` averages the loss per second by section across saved runs (`retention/`).
+- Engine: `episode.progress` (a DAY/$/MILES chip that ticks under the captions), `cam.settle` (camera moves that overshoot and settle), `rack: {at, dur, from}` (rack focus, premium), `shafts`, `smoke`, `sparks` atmosphere layers, premium emphasis words 8 % larger, and eight new effects (`rasp`, `siren`, `shutter`, `cuffs`, `knock`, `radio`, `cash`, `keys`).
+
 ## Produce a video: one command (resumable)
 ```bash
 pip install -r requirements.txt && npm install && npx playwright install chromium   # once
