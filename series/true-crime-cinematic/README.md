@@ -44,6 +44,7 @@
 | 40 | `true_crime_40_aum_hideout.mp4` (archived outside git) | Danger Zones: the sarin cult leader's hidden room (1995–2018), vivid 60 fps | see `production_manifest.json` |
 | 41 | `true_crime_41_red_mansion.mp4` (archived outside git) | Danger Zones: the Red Mansion smuggling case (1990s–2012), vivid 60 fps | see `production_manifest.json` |
 | 42 | `true_crime_42_bali_van.mp4` (archived outside git) | Bali bombings (2002): the van traced by a filed-off number; first episode on the premium look + premium character animation, 60 fps | see `production_manifest.json` |
+| 43 | `true_crime_43_dannemora_meat.mp4` (archived outside git) | Dannemora escape (2015): hacksaw blades in frozen meat; first episode on the engagement engine (progress chip, checklist lesson with SAVE ribbon, opinion question), premium 60 fps | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

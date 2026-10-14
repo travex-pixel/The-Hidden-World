@@ -520,3 +520,16 @@ Would you have found the number? YES or NO 👇 Follow for the next case.
 #TrueCrime #Bali #Forensics #CaseFiles #ColdCase
 
 We remember the 202.
+
+## 43: Blades in frozen meat (`true_crime_43_dannemora_meat.mp4`)
+Two convicted killers broke out of a maximum-security prison in 2015. The hacksaw blades came in through the front gate, inside a pack of frozen hamburger meat. 🥩
+
+23 days, about 1,300 officers, and a getaway driver who never showed up.
+She served under five years.
+
+Too soft or fair? 👇 Follow for the next case.
+
+#truecrime #prisonbreak #dannemora #manhunt #casefiles
+
+Seed comment (post it yourself right after uploading): She got out in 2020. He will never get out. Does that feel right to you?
+Share line (second comment or story text): Send this to the friend who thinks Shawshank could never happen for real.
