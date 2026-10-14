@@ -210,3 +210,7 @@
 - 2026-10-13 22:27:14 tcv36-yen-heist: rendering (final60, seed 1)
 - 2026-10-14 01:03:29 produce 41: regenerating episode data
 - 2026-10-14 01:03:29 tcv41-red-mansion: rendering (final60, seed 1)
+- 2026-10-14 01:39:06 tcv41-red-mansion: rendered in 2136s
+- 2026-10-14 01:40:13 tcv41-red-mansion: VERIFIED -> series/true-crime-cinematic/output/true_crime_41_red_mansion.mp4 (51.8s, 40.1 MB, sha256 c0bc0db78862)
+- 2026-10-14 01:40:13 produce 40: regenerating episode data
+- 2026-10-14 01:40:13 tcv40-aum-hideout: rendering (final60, seed 1)
