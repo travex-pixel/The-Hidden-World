@@ -9,7 +9,7 @@
   // ------------------------------------------------------------------ gravity: how high a loose thing is at time t
   // lift: h = ½·a·u² (cartoon acceleration, px/s²) capped; drop: free fall from wherever it got to, then a bounce.
   function liftAt(D, q, t, o = {}) {
-    const t0 = D.beat(q, 'lift', 1e9) + (o.delay || 0), t1 = D.beat(q, 'drop', 1e9); const a = o.accel ?? 22, cap = o.cap ?? 820, spinRate = o.spinRate ?? 18;
+    const t0 = D.beat(q, 'lift', 1e9) + (o.delay || 0), t1 = D.beat(q, 'drop', 1e9); const a = o.accel ?? 16, cap = o.cap ?? 720, spinRate = o.spinRate ?? 18;
     if (t < t0) return { lift: 0, spin: 0, phase: 0 };
     const h = u => Math.min(cap, 0.5 * a * u * u);
     if (t < t1) { const u = t - t0; return { lift: h(u) + Math.sin(t * 2 + (o.ph || 0)) * Math.min(10, h(u) * 0.05), spin: spinRate * u * (o.spinDir || 1), phase: 1, u }; }
@@ -52,7 +52,7 @@
         const d0 = r() * 0.7; const react = tl + d0 * 0.6;
         acts.push({ t: react, expr: PANIC[Math.floor(r() * PANIC.length)], look: [r() - 0.5, -0.6] }, { t: react + 0.1, gesture: r() < 0.6 ? 'hands_up' : 'plead', dur: 0.25, hold: -1 }, { t: react + 0.2, mark: r() < 0.5 ? 'shock' : r() < 0.7 ? 'exclaim' : 'question', dur: 2.5 });
         if (r() < 0.5) acts.push({ t: react + 2 + r() * 3, expr: PANIC[Math.floor(r() * PANIC.length)] });
-        const land = td + Math.sqrt(2 * Math.min(820, 0.5 * 22 * Math.max(0, td - tl - d0) ** 2) / 900);
+        const land = td + Math.sqrt(2 * Math.min(o.cap ?? 720, 0.5 * (o.accel ?? 16) * Math.max(0, td - tl - d0) ** 2) / 900);
         acts.push({ t: land + 0.1, expr: AFTER[Math.floor(r() * AFTER.length)] }, { t: land + 0.15, gesture: null }, { t: land + 0.2, mark: r() < 0.5 ? 'stars' : null, dur: 3 });
         const A = X.Rig.compileActor({ id: key + i, char: 'x' + i, x, h, z, facing, expr0: ['neutral', 'happy', 'curious', 'smug', 'neutral'][i % 5], acts, spec: extraSpec(r, o), seed: i * 31 + (o.seed || 1) });
         out.push({ A, delay: d0, ph: r() * 6, spinDir: r() < 0.5 ? 1 : -1 });
@@ -63,7 +63,7 @@
     return { z: o.z ?? 1.0, o: 1, draw: (g, t, ta, D, q) => {
       const id = q.start; if (!cache[id]) cache[id] = build(D, q); const extras = cache[id];
       for (const e of extras) {
-        const st = X.Rig.evaluate(e.A, t, null); const gy = groundY(e.A.z); const k = e.A.h / e.A.z / 1000; const fl = liftAt(D, q, t, { delay: e.delay, ph: e.ph, spinDir: e.spinDir });
+        const st = X.Rig.evaluate(e.A, t, null); const gy = groundY(e.A.z); const k = e.A.h / e.A.z / 1000; const fl = liftAt(D, q, t, { delay: e.delay, ph: e.ph, spinDir: e.spinDir, accel: o.accel, cap: o.cap });
         withLift(g, fl, st.x, gy, e.A.h / e.A.z, gg => { gg.scale(k, k); root.HW.drawStyled(gg, e.A, st, set.light, { lw: 7, propDraw: (ggg, prop) => X.PROPS[prop] && X.PROPS[prop](ggg, t, 4) }); });
       }
     } };
@@ -77,7 +77,7 @@
       for (const it of items) {
         const span = o.x1 - o.x0; const tt = Math.min(t, tl); let x = it.x0 + it.dir * it.sp * tt; let facing = it.dir;
         const lap = Math.floor((x - o.x0) / span); x = x - lap * span; if (lap % 2) { x = o.x1 - (x - o.x0); facing = -it.dir; }   // ping-pong along the strip
-        const gy = groundY(it.z); const fl = liftAt(D, q, t, { delay: it.delay, ph: it.ph, spinRate: 26, spinDir: it.spinDir }); const hh = it.h / it.z;
+        const gy = groundY(it.z); const fl = liftAt(D, q, t, { delay: it.delay, ph: it.ph, spinRate: 26, spinDir: it.spinDir, accel: o.accel, cap: o.cap }); const hh = it.h / it.z;
         withLift(g, fl, x, gy, hh, gg => { gg.scale(hh / 120, hh / 120); X.Rig[o.kind](gg, t, { walking: t < tl && (o.walk ?? true), facing, colour: it.colour, ph: it.ph, airborne: fl.lift > 4, flying: o.kind === 'pigeon' && fl.lift > 4 }); });
       }
     } };
@@ -291,8 +291,8 @@
       set.dynamic = [
         { z: 29.5, draw: (g, t, ta, D) => { FX.lensFlare(g, t, { x: 300, y: HZ - 20, r: 240, alpha: 0.8 }); D.light(g, 300, HZ - 20, 700, '#ffb060', 0.35); } },
         { z: 2.4, draw: (g, t, ta, D, q) => { const r = mulberry32(9); const fl = liftAt(D, q, t, { delay: 1.8, spinRate: 5, accel: 10, cap: 500 }); withLift(g, fl, 1500, groundY(2.4), 180, gg => bus(gg, 0, 0, 0.8, r, { decks: 1, colour: '#e8e4dc', w: 560, sign: 'TOURS' })); } },
-        flock(set, { kind: 'kangaroo', n: 4, x0: -300, x1: 1700, z: 1.12, zSpread: 0.14, h: 150, seed: 5, speed: 90, key: 'roo', colours: ['#b8724a', '#a8603a', '#c88a5a', '#9a5a3a'] }),
-        flock(set, { kind: 'emu', n: 2, x0: 200, x1: 1800, z: 1.28, h: 190, seed: 8, speed: 70, key: 'emu' }),
+        flock(set, { kind: 'kangaroo', n: 4, x0: -300, x1: 1700, z: 1.12, zSpread: 0.14, h: 150, seed: 5, speed: 90, key: 'roo', accel: 9, cap: 560, colours: ['#b8724a', '#a8603a', '#c88a5a', '#9a5a3a'] }),
+        flock(set, { kind: 'emu', n: 2, x0: 200, x1: 1800, z: 1.28, h: 190, seed: 8, speed: 70, key: 'emu', accel: 9, cap: 560 }),
         { z: 1.0, draw: (g, t, ta, D, q) => { const tl = D.beat(q, 'lift', 1e9); FX.motes(g, t, { x: -400, y: groundY(1.2) - 200, w: 2800, h: 300, n: 30, alpha: 0.35, colour: '#ffd0a0', key: 'dust' }); if (t > tl) { const u = Math.min(1, (t - tl) / 3); g.save(); g.globalAlpha = 0.5 * u; for (let i = 0; i < 40; i++) { const r = mulberry32(i + 70); const x = -400 + r() * 2800, y = groundY(1.2) - (t - tl) * (30 + r() * 60) * (1 + r()); g.fillStyle = '#c86a40'; g.beginPath(); g.ellipse(x, y, 6 + r() * 10, 3 + r() * 5, 0, 0, 7); g.fill(); } g.restore(); } } }   // red sand lifting
       ];
       return set;
@@ -335,10 +335,11 @@
       set.finish = { bloom: 0.3, grade: ['#2a3a7a', '#ffd8a0'], gradeMode: 'soft-light', gradeAlpha: 0.2, vignette: 0.5, paper: 0.06, saturate: 1.1 };
       set.drift = 0.4;
       set.dynamic = [{ z: 1.0, draw: (g, t, ta, D, q) => {
-        const ex = 560, ey = 560, R = 110; P.bloom(g, ex, ey, R * 1.6, '#6aa8ff', 0.45); const oc = g.createRadialGradient(ex - 40, ey - 40, 10, ex, ey, R); oc.addColorStop(0, '#5a9ad0'); oc.addColorStop(1, '#1e4a8a'); g.fillStyle = oc; g.beginPath(); g.arc(ex, ey, R, 0, 7); g.fill();
-        g.fillStyle = '#7a9a52'; for (const [x, y, rr] of [[-30, -30, 44], [40, 20, 36], [-20, 50, 26]]) { g.beginPath(); g.ellipse(ex + x, ey + y, rr, rr * 0.7, 0.4, 0, 7); g.fill(); }
+        const ex = 560, ey = 560, R = 110; const rs = mulberry32(5); for (let i = 0; i < 60; i++) { const x = -300 + rs() * 2500, y = -200 + rs() * 1400, ph = rs() * 6; g.fillStyle = rgba('#ffffff', 0.5 + 0.5 * Math.sin(t * (2 + rs() * 3) + ph)); g.beginPath(); g.arc(x, y, 1.5 + rs() * 2, 0, 7); g.fill(); }   // twinkle
+        P.bloom(g, ex, ey, R * 1.6, '#6aa8ff', 0.45); const oc = g.createRadialGradient(ex - 40, ey - 40, 10, ex, ey, R); oc.addColorStop(0, '#5a9ad0'); oc.addColorStop(1, '#1e4a8a'); g.fillStyle = oc; g.beginPath(); g.arc(ex, ey, R, 0, 7); g.fill();
+        g.save(); g.beginPath(); g.arc(ex, ey, R, 0, 7); g.clip(); g.fillStyle = '#7a9a52'; for (const [x, y, rr] of [[-30, -30, 44], [40, 20, 36], [-20, 50, 26]]) { const px = ((x + t * 18 + 150) % 300) - 150; g.beginPath(); g.ellipse(ex + px, ey + y, rr * Math.max(0.2, Math.cos(px / R * 1.4)), rr * 0.7, 0.4, 0, 7); g.fill(); } g.fillStyle = 'rgba(255,255,255,0.55)'; for (let i = 0; i < 5; i++) { const px = ((i * 70 + t * 24) % 300) - 150; g.beginPath(); g.ellipse(ex + px, ey - 60 + i * 28, 26 * Math.max(0.2, Math.cos(px / R * 1.4)), 7, 0, 0, 7); g.fill(); } g.restore();
         const OR = 760; g.setLineDash([14, 14]); g.strokeStyle = 'rgba(200,220,255,0.35)'; g.lineWidth = 3; g.beginPath(); g.ellipse(ex, ey, OR, OR * 0.42, 0, 0, 7); g.stroke(); g.setLineDash([]);
-        const tl = D.beat(q, 'lift', 1e9), td = D.beat(q, 'drop', 1e9); const a0 = -0.3, w = 0.18; const a = a0 + w * t; const mx = ex + Math.cos(a) * OR, my = ey + Math.sin(a) * OR * 0.42;
+        const tl = D.beat(q, 'lift', 1e9), td = D.beat(q, 'drop', 1e9); const a0 = -0.3, w = 0.26; const a = a0 + w * t; const mx = ex + Math.cos(a) * OR, my = ey + Math.sin(a) * OR * 0.42;
         if (t > tl) { const u = Math.min(t, td) - tl; g.strokeStyle = 'rgba(255,120,120,0.8)'; g.lineWidth = 3; g.beginPath(); g.moveTo(ex + Math.cos(a0 + w * tl) * OR, ey + Math.sin(a0 + w * tl) * OR * 0.42); const tx = -Math.sin(a0 + w * tl), ty = Math.cos(a0 + w * tl) * 0.42; g.lineTo(ex + Math.cos(a0 + w * tl) * OR + tx * u * 140, ey + Math.sin(a0 + w * tl) * OR * 0.42 + ty * u * 140); g.stroke(); }
         const mg = g.createRadialGradient(mx - 14, my - 14, 4, mx, my, 44); mg.addColorStop(0, '#f4f0e4'); mg.addColorStop(1, '#a8a49a'); g.fillStyle = mg; g.beginPath(); g.arc(mx, my, 44, 0, 7); g.fill(); for (const [cx, cy, cr] of [[-10, -6, 7], [12, 10, 5], [5, -18, 4]]) { g.fillStyle = 'rgba(120,116,108,0.5)'; g.beginPath(); g.arc(mx + cx, my + cy, cr, 0, 7); g.fill(); }
         const lab = D.beat(q, 'label', 1e9); if (t > lab) { g.save(); g.globalAlpha = Math.min(1, (t - lab) / 0.5); g.font = '800 44px Nunito'; g.textAlign = 'center'; g.fillStyle = '#ffd0a0'; g.strokeStyle = 'rgba(10,14,34,0.85)'; g.lineWidth = 8; g.strokeText('10 km off course. Nobody notices.', 1180, 300); g.fillText('10 km off course. Nobody notices.', 1180, 300); g.restore(); }
