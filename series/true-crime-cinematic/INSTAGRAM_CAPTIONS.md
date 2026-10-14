@@ -508,3 +508,15 @@ Then its owner ran… to Canada.
 Should Canada have sent him back? YES or NO 👇 Follow for the next case.
 
 #TrueCrime #China #Smuggling #Corruption #CaseFiles
+
+## 42: The filed-off number (`true_crime_42_bali_van.mp4`)
+A filed-off number on a van. Investigators read it anyway. 🔦
+
+Bali, 2002. The bombers thought the van could never be traced.
+Within 24 days, police were at the door.
+
+Would you have found the number? YES or NO 👇 Follow for the next case.
+
+#TrueCrime #Bali #Forensics #CaseFiles #ColdCase
+
+We remember the 202.

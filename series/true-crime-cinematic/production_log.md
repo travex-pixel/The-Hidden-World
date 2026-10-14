@@ -236,3 +236,7 @@
 - 2026-10-14 04:37:52 tcv39-baiyin: rendering (final60, seed 1)
 - 2026-10-14 05:13:55 tcv39-baiyin: rendered in 2163s
 - 2026-10-14 05:15:05 tcv39-baiyin: VERIFIED -> series/true-crime-cinematic/output/true_crime_39_baiyin.mp4 (51.8s, 42.7 MB, sha256 f72bfe575dba)
+- 2026-10-14 14:10:10 produce 42 --force: regenerating episode data
+- 2026-10-14 14:10:10 tcv42-bali-van: rendering (final60, seed 1)
+- 2026-10-14 14:54:44 tcv42-bali-van: rendered in 2674s
+- 2026-10-14 14:55:47 tcv42-bali-van: VERIFIED -> series/true-crime-cinematic/output/true_crime_42_bali_van.mp4 (49.0s, 30.0 MB, sha256 d877e0c48f6f)

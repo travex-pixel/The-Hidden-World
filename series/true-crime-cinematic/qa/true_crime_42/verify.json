@@ -1,0 +1,159 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv42-bali-van/tcv42-bali-van.mp4",
+    "size_bytes": 30000014,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 48.95,
+    "audio_duration": 48.95,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.5,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv42-bali-van/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2937,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -16.5,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.5
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.065,
+    "transcript": "On the island of Bali, in 2002, bombs took 202 lives. The bombers thought they had erased their Vans identity. It was a Saturday night in the beach town of Kuta. Indonesian police let a joint hunt with Australia. One bomb had been packed into a white van, and its engine number had been filed off. But investigators still recovered the serial number. It led to the van's last buyer, a village mechanic named Amrozi. Police arrested him in East Java, just 20, 4 days after the attack. In 2008, Amrozi and two other bombers were executed. Today in Koutan, a memorialist the names of the dead. They filed off the number. It still led police to them. We remember the 202."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 57,
+      "extent": {
+        "left": 127.0,
+        "right": 953.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.4,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.48,
+      "frames": 490
+    },
+    "audio": {
+      "opening_speech_median_db": -19.9,
+      "opening_min_speech_window_db": -29.4,
+      "first_word_db": -15.2,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -39.7,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.311,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.9,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -36.1,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8418,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.5,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -91.3,
+      "end_before_db": -14.1,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 48.95,
+        "audio": 48.95
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 10,
+      "composed_shots": 10,
+      "shots_with_characters": 9,
+      "character_shot_share": 0.9,
+      "distinct_sets": 8,
+      "max_set_share": 0.3,
+      "shot_sizes": {
+        "medium": 5,
+        "insert/graphic": 1,
+        "medium-wide": 3,
+        "close-up": 1
+      },
+      "max_shot_size_share": 0.5,
+      "ok": true
+    }
+  }
+}
