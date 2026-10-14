@@ -134,7 +134,7 @@ def build(h):
     ep["look"] = "premium"
     ep["palette"] = {"shadow": "#0f2630", "mid": "#c8b89e", "accent": "#e2a13b"}
     ep["geo"] = {"asia": json.loads((h.ROOT / "series" / "true-crime" / "geo" / "asia.json").read_text())}
-    ep["target_duration_seconds"] = [30, 55]
+    ep["target_duration_seconds"] = [30, 50]
     ep["music"]["beat_snap"] = 0.5
     ep["hook_title"] = {"lines": [{"text": "A FILED-OFF VAN NUMBER"}, {"text": "HELPED CATCH BALI BOMBERS", "colour": "#e2a13b"}],
                         "until": 2.8, "y": 520}
@@ -145,7 +145,7 @@ def build(h):
         "202": "two hundred and two", "202.": "two hundred and two.", "2002,": "two thousand two,",
         "2008,": "two thousand eight,", "24": "twenty-four"})
     ep["score"] = {"root_hz": 130.81, "bpm": 76,
-                   "cliff": {"scene": "s08_verdict", "word": [0, 8], "at": 0.35}}
+                   "cliff": {"scene": "s08_verdict", "word": [0, 8], "at": 0.7}}
     ep["content_notes"] = ("Sober tone. No depiction of the explosions, the bomb, victims, injuries or the damaged sites; the attack is one "
                            "summary line. The convicted bombers appear only as faceless silhouettes tagged NOT A LIKENESS; no weapon. "
                            "Investigators, the judge and the memorial visitor are generic Indonesian and Australian figures (not likenesses, "
