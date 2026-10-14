@@ -3656,9 +3656,106 @@
         ],
         "not_done": "No human listening test was performed; audio was judged by the measured audio checks and the ASR transcript."
       }
+    },
+    "43": {
+      "id": "tcv43-dannemora-meat",
+      "title": "Hacksaw Blades in Frozen Meat Freed Two Killers #Shorts",
+      "file": "true_crime_43_dannemora_meat.mp4",
+      "media": {
+        "duration": 39.233,
+        "width": 1080,
+        "height": 1920,
+        "fps": 60.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 24364163,
+        "mean_volume_db": -16.6,
+        "max_volume_db": -1.7
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 2354,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -17.1,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true,
+        "captions_in_safe_area": true,
+        "no_frozen_or_static_picture": true,
+        "audio_opening_speech_steady": true,
+        "audio_opening_no_holes": true,
+        "audio_narration_on_time": true,
+        "audio_music_never_masks": true,
+        "audio_music_audible": true,
+        "audio_no_clipping": true,
+        "audio_no_long_silence": true,
+        "audio_ending_intentional": true,
+        "audio_mono_compatible": true,
+        "audio_av_duration_match": true,
+        "engage_hook_stakes_by_4s": true,
+        "engage_open_loop_every_10s": true,
+        "engage_outcome_in_last_8s": true,
+        "engage_end_question_on_picture": true,
+        "engage_fun_fact_and_lesson": true,
+        "engage_progression_marker": true,
+        "engage_cold_open_sfx": true,
+        "engage_ends_within_1s_of_last_word": true,
+        "engage_pace_under_150_wpm": true,
+        "shot_variety_and_character_action": true,
+        "every_shot_sourced_and_tagged": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.3,
+        "true_peak_dbtp": -1.7
+      },
+      "asr_word_error_rate": 0.115,
+      "frames_sampled": 7,
+      "qa_dir": "series/true-crime-cinematic/qa/true_crime_43",
+      "status": "verified_automated",
+      "sha256": "ca1b10a46c937a893c2e7a2ef1593ff79a7ebaeb6565b48c91de003b62aa8e1c",
+      "output": "series/true-crime-cinematic/output/true_crime_43_dannemora_meat.mp4",
+      "verified": "2026-10-14T22:07:42",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "reviewer": "Claude (frame and transcript review)",
+        "date": "2026-10-14",
+        "verdict": "approved",
+        "checks": [
+          "script and legal read",
+          "contact sheet and per-scene stills reviewed",
+          "ASR transcript read for mispronunciations",
+          "engagement checks (9) all pass in the gate"
+        ],
+        "notes": [
+          "First episode on the engagement engine: twist spoken by 2.5 s, stakes by 4.5 s, DAY chip 1 -> 7 -> 21 -> 23, checklist LESSON card with the SAVE ribbon (3.1 s, captions off), fun fact (the note on the pipe), opinion end question, video ends 0.98 s after the last word, hero object on the first and last frame.",
+          "Real people: Matt (deceased) and Sweat (in prison) are silhouettes tagged NOT A LIKENESS; Mitchell and Palmer are silhouettes; officers are generic figures. No depiction of the shootings or the 1997 murder.",
+          "'1,300 officers' is the peak-day figure reported by several outlets; AP's overall count is 1,100+; both are in the ledger. The Inspector General's findings were taken from the IG summary and press coverage, not the PDF itself.",
+          "ASR (whisper tiny) misheard only 'Dannemora', 'hacksaw' and 'through'; word error rate 0.115. No human listening test was performed."
+        ],
+        "not_done": "No human listening test; audio judged by the measured checks and the transcript."
+      }
     }
   },
-  "updated": "2026-10-14T14:55:47",
+  "updated": "2026-10-14T22:07:42",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",
