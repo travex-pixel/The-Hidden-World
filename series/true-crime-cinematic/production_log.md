@@ -214,3 +214,7 @@
 - 2026-10-14 01:40:13 tcv41-red-mansion: VERIFIED -> series/true-crime-cinematic/output/true_crime_41_red_mansion.mp4 (51.8s, 40.1 MB, sha256 c0bc0db78862)
 - 2026-10-14 01:40:13 produce 40: regenerating episode data
 - 2026-10-14 01:40:13 tcv40-aum-hideout: rendering (final60, seed 1)
+- 2026-10-14 02:14:30 tcv40-aum-hideout: rendered in 2056s
+- 2026-10-14 02:15:34 tcv40-aum-hideout: VERIFIED -> series/true-crime-cinematic/output/true_crime_40_aum_hideout.mp4 (51.5s, 39.7 MB, sha256 28f53eb3e64a)
+- 2026-10-14 02:15:34 produce 37: regenerating episode data
+- 2026-10-14 02:15:34 tcv37-png-plane: rendering (final60, seed 1)
