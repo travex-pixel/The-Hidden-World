@@ -348,7 +348,7 @@
       return q.actors.filter(a => !a._animal).map(a => { const s = X.Rig.evaluate(a, tq, () => 0); const w = X.Rig.walkAt(a, tq);
         // drawn: where the feet actually land on screen (rest px), i.e. hip + local offset × scale — what a viewer sees
         const drawn = [s.x + s.fN * a.K * s.facing, s.x + s.fF * a.K * s.facing];
-        return { id: a.id, char: a.char, h: a.h, x: s.x, hip: s.hip, feet: w.feet, drawn, lift: [s.liftN, s.liftF], facing: s.facing, squash: s.squash, walking: !!(w.walking || w.settled) }; });
+        return { id: a.id, char: a.char, h: a.h, x: s.x, hip: s.hip, feet: w.feet, drawn, lift: [s.liftN, s.liftF], facing: s.facing, squash: s.squash, ik: s.ik, walking: !!(w.walking || w.settled) }; });
     }
   };
   X.PROPS = X.PROPS || {};

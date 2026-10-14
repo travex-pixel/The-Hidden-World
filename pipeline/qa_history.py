@@ -63,6 +63,7 @@ def run(out_dir: Path) -> dict:
             if not x: continue
             # measure the feet as DRAWN (hip + local offset x scale), not the gait model; skip 2D turn frames
             if x.get("facing") != y.get("facing") or x.get("squash", 1) != 1 or y.get("squash", 1) != 1: continue
+            if x.get("ik", 1) < 0.5 or y.get("ik", 1) < 0.5: continue   # seated/lying poses: the feet are not planted
             fx, fy = x.get("drawn") or x["feet"], y.get("drawn") or y["feet"]
             if not fx or not fy: continue
             for i in (0, 1):
