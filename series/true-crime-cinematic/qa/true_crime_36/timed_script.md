@@ -32,5 +32,5 @@
   NARRATOR [42.86s]: And the fake cop was never caught.
 
 [ 45.00s –  51.95s] s10_end
-  NARRATOR [45.25s]: The lesson? A uniform isn't proof.
-  NARRATOR [47.77s]: All he needed was a fake police motorcycle.
+  NARRATOR [45.25s]: The lesson? A uniform is not proof.
+  NARRATOR [47.70s]: All he needed was a fake police motorcycle.
