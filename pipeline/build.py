@@ -247,6 +247,10 @@ def main(argv=None) -> int:
             "scenes_js": f"renderer/scenes/{ep['id']}.js"}
     if not (ROOT / plan["scenes_js"]).exists():
         log(f"ERROR: scene renderer {plan['scenes_js']} not found"); return 4
+    if ep.get("look") == "premium":   # colour finish at encode: a palette LUT (film curve, split tone, restrained saturation) + moving grain
+        from pipeline import look
+        plan["vf"] = look.encode_filter(look.write_cube(out_dir / "look.cube", ep.get("palette")))
+        log(f"look: premium LUT {out_dir / 'look.cube'}")
     (out_dir / "plan.json").write_text(json.dumps(plan))
     if args.plan_only:
         log(f"plan written: {out_dir / 'plan.json'}"); return 0

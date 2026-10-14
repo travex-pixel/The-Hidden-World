@@ -358,7 +358,8 @@
         const w = { ...w0, wd: w0.wd * k }; const shown = t >= w.s - 0.04; if (!shown) { x += w.wd + rgap; return; }
         const active = t < w.e + 0.05; const hot = emph && emph.has(capKey(w.w));
         const pop = active ? 1 + 0.07 * (1 - ease.out(seg(t, w.s - 0.04, w.s + 0.12))) : 1;
-        const fill = hot ? '#ff5b45' : active ? '#ffd84a' : '#ffffff'; const cx = x + w.wd / 2;
+        const prem = ctx.ep && ctx.ep.look === 'premium', acc = prem ? ((ctx.ep.palette || {}).accent || '#e2a13b') : null;
+        const fill = prem ? (active ? acc : '#f2ede4') : (hot ? '#ff5b45' : active ? '#ffd84a' : '#ffffff'); const cx = x + w.wd / 2;
         out += `<text x="${f1(cx)}" y="${f1(y)}" text-anchor="middle" transform="translate(${f1(cx)} ${f1(y - fs * 0.34)}) scale(${f1(pop * 100) / 100}) translate(${f1(-cx)} ${f1(-(y - fs * 0.34))})" font-family="Nunito" font-weight="800" font-size="${f1(rfs)}" fill="${fill}" stroke="#05050a" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${esc(w.txt)}</text>`;
         x += w.wd + rgap;
       });
@@ -426,7 +427,10 @@
     burnTitle(h, k, out) {
       const fs0 = h.fs || 96, y0 = h.y ?? 470, lh = fs0 * 1.14; k = ease.back(k);
       let s = `<rect x="0" y="${f1(y0 - fs0 - 34)}" width="${W}" height="${f1(h.lines.length * lh + 64)}" fill="#000" opacity="0.5"/>`;
-      h.lines.forEach((ln, i) => { const f0 = ln.fs || fs0, fsz = f1(Math.min(f0, f0 * 900 / Math.max(1, measure(ln.text, f0)))); s += `<text x="${W / 2}" y="${f1(y0 + i * lh)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fsz}" fill="${ln.colour || '#ffffff'}" stroke="#0b0b0d" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${esc(ln.text)}</text>`; });
+      const ep = this.state.ep, prem = ep.look === 'premium', acc = prem ? ((ep.palette || {}).accent || '#e2a13b') : null;
+      h.lines.forEach((ln, i) => { const f0 = ln.fs || fs0, fsz = f1(Math.min(f0, f0 * 900 / Math.max(1, measure(ln.text, f0))));
+        const col = prem ? (ln.colour ? acc : '#f4efe6') : (ln.colour || '#ffffff'), fam = prem && i === 0 ? 'Fraunces' : 'Nunito';
+        s += `<text x="${W / 2}" y="${f1(y0 + i * lh)}" text-anchor="middle" font-family="${fam}" font-weight="800" font-size="${fsz}" fill="${col}"${prem ? ' letter-spacing="1.5"' : ''} stroke="#0b0b0d" stroke-width="${prem ? 10 : 14}" stroke-linejoin="round" paint-order="stroke">${esc(ln.text)}</text>`; });
       return `<g opacity="${f1(out)}" transform="translate(${W / 2} ${y0}) scale(${f1(Math.max(0.001, k) * 1000) / 1000}) translate(${-W / 2} ${-y0})">${s}</g>`;
     },
     frame(t) {

@@ -238,18 +238,23 @@
     const k = W / span, cl = Math.cos(lat0 * Math.PI / 180), cy = H * (o.cy ?? 0.44);
     const P = ([lo, la]) => [W / 2 + (lo - lon0) * cl * k, cy - (la - lat0) * k];
     const path = (r, close) => { let d = ''; r.forEach((q, i) => { const [x, y] = P(q); d += (i ? 'L' : 'M') + f1(x) + ' ' + f1(y); }); return d + (close ? 'Z' : ''); };
-    const hl = o.hl || '#ff3b5c', pulse = 0.5 + 0.5 * Math.sin(ctx.t * 4.2);
-    let s = `<defs><linearGradient id="mfSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#06122a"/><stop offset="1" stop-color="#0b2f4a"/></linearGradient>` +
+    const PR = isPrem(ctx), PP = palOf(ctx.ep);
+    const hl = PR ? PP.accent : (o.hl || '#ff3b5c'), pulse = 0.5 + 0.5 * Math.sin(ctx.t * (PR ? 2.4 : 4.2));
+    const SEA = PR ? ['#061217', '#0c242b'] : ['#06122a', '#0b2f4a'], GRID = PR ? PP.mid : '#2fd3ff', COAST = PR ? PP.mid : '#7fe3ff', LAND = PR ? '#18242a' : '#16283a';
+    let s = `<defs><linearGradient id="mfSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${SEA[0]}"/><stop offset="1" stop-color="${SEA[1]}"/></linearGradient>` +
       `<filter id="mfGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter></defs><rect x="-200" y="-200" width="${W + 400}" height="${H + 400}" fill="url(#mfSea)"/>`;
     const g = Math.max(1, Math.round(span / 8));   // graticule every ~1/8 of the view
-    for (let lo = Math.floor((lon0 - span) / g) * g; lo <= lon0 + span; lo += g) { const a = P([lo, lat0 - span]), b = P([lo, lat0 + span]); s += `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="#2fd3ff" stroke-opacity="0.07" stroke-width="2"/>`; }
-    for (let la = Math.floor((lat0 - span) / g) * g; la <= lat0 + span; la += g) { const a = P([lon0 - span * 2, la]), b = P([lon0 + span * 2, la]); s += `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="#2fd3ff" stroke-opacity="0.07" stroke-width="2"/>`; }
+    for (let lo = Math.floor((lon0 - span) / g) * g; lo <= lon0 + span; lo += g) { const a = P([lo, lat0 - span]), b = P([lo, lat0 + span]); s += `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${GRID}" stroke-opacity="${PR ? 0.05 : 0.07}" stroke-width="2"/>`; }
+    for (let la = Math.floor((lat0 - span) / g) * g; la <= lat0 + span; la += g) { const a = P([lon0 - span * 2, la]), b = P([lon0 + span * 2, la]); s += `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${GRID}" stroke-opacity="${PR ? 0.05 : 0.07}" stroke-width="2"/>`; }
     const land = geo.land.map(r => path(r, true)).join('');
-    s += `<path d="${land}" fill="none" stroke="#2fd3ff" stroke-width="10" opacity="0.35" filter="url(#mfGlow)"/><path d="${land}" fill="#16283a" stroke="#7fe3ff" stroke-width="2.6" stroke-linejoin="round"/>`;
+    s += `<path d="${land}" fill="none" stroke="${COAST}" stroke-width="10" opacity="${PR ? 0.16 : 0.35}" filter="url(#mfGlow)"/><path d="${land}" fill="${LAND}" stroke="${COAST}" stroke-width="${PR ? 2 : 2.6}" stroke-opacity="${PR ? 0.75 : 1}" stroke-linejoin="round"/>`;
     if (geo.borders) s += `<path d="${geo.borders.map(l => path(l, false)).join('')}" fill="none" stroke="#9fb3c8" stroke-opacity="0.45" stroke-width="1.8" stroke-dasharray="8 7"/>`;
     if (o.country && geo.countries[o.country]) {
       const kc = seg(ctx.t, o.country_at ?? 0.3, (o.country_at ?? 0.3) + 0.7); const cd = geo.countries[o.country].map(r => path(r, true)).join('');
-      s += `<path d="${cd}" fill="${hl}" opacity="${f1(kc * (0.22 + 0.12 * pulse))}" filter="url(#mfGlow)"/><path d="${cd}" fill="${hl}" fill-opacity="${f1(kc * 0.42)}" stroke="${hl}" stroke-width="3.5" stroke-opacity="${f1(kc)}"/>`;
+      const kd = o.draw ? ease.inOut(seg(ctx.t, o.country_at ?? 0.3, (o.country_at ?? 0.3) + 1.6)) : 1;   // outline draws itself in
+      const fillK = o.draw ? seg(ctx.t, (o.country_at ?? 0.3) + 1.0, (o.country_at ?? 0.3) + 1.8) : kc;
+      s += `<path d="${cd}" fill="${hl}" opacity="${f1(fillK * (PR ? 0.1 + 0.06 * pulse : 0.22 + 0.12 * pulse))}" filter="url(#mfGlow)"/><path d="${cd}" fill="${hl}" fill-opacity="${f1(fillK * (PR ? 0.22 : 0.42))}" stroke="none"/>` +
+        geo.countries[o.country].map(r => `<path d="${path(r, true)}" pathLength="1" fill="none" stroke="${hl}" stroke-width="${PR ? 2.6 : 3.5}" stroke-dasharray="1 1" stroke-dashoffset="${f1(1 - kd)}" opacity="${f1(Math.max(kc, o.draw ? 1 : 0))}"/>`).join('');
     }
     for (const lb of o.labels || []) { const [x, y] = P(lb.ll); const q = seg(ctx.t, lb.at ?? 0.5, (lb.at ?? 0.5) + 0.5); s += `<text x="${f1(x)}" y="${f1(y)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${lb.fs || 40}" letter-spacing="6" fill="#ffffff" opacity="${f1(q * 0.9)}" stroke="#06122a" stroke-width="8" paint-order="stroke">${esc(lb.text)}</text>`; }
     if (o.pin) {
@@ -259,6 +264,10 @@
         s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(16 * ease.back(q))}" fill="${hl}" stroke="#fff" stroke-width="5"/>`;
         if (o.pin.label) s += `<text x="${f1(x + (o.pin.dx ?? 40))}" y="${f1(y + (o.pin.dy ?? -30))}" text-anchor="${o.pin.anchor || 'start'}" font-family="Nunito" font-weight="800" font-size="${o.pin.fs || 46}" fill="#fff" stroke="#06122a" stroke-width="9" paint-order="stroke" opacity="${f1(seg(ctx.t, (o.pin.at ?? 1) + 0.2, (o.pin.at ?? 1) + 0.7))}">${esc(o.pin.label)}</text>`;
       }
+    }
+    if (o.tilt) {   // a gentle 3D-like tilt that eases in: the map leans back like a table seen from above
+      const k = ease.inOut(clamp((ctx.t - t0) / Math.max(0.01, t1 - t0), 0, 1)), cx = W / 2, cyy = H * 0.5;
+      s = `<rect x="-400" y="-400" width="${W + 800}" height="${H + 800}" fill="${SEA[0]}"/><g transform="translate(${cx} ${cyy}) scale(1 ${f1((1 - 0.16 * k) * 1000) / 1000}) skewX(${f1(-7 * k)}) translate(${-cx} ${-cyy})">${s}</g>`;
     }
     return { light: { dir: -1, rim: '#7fe3ff', key: '#bfefff' }, layers: [[0, s]] };
   };
@@ -273,6 +282,17 @@
     `<linearGradient id="vSplit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00b3c7"/><stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#ff7a1a"/></linearGradient>` +
     `<radialGradient id="vLeak"><stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>` +
     `<radialGradient id="vVig" cx="50%" cy="46%" r="78%"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#03030a" stop-opacity="0.5"/></radialGradient>`;
+  // premium look (episode.look = 'premium'): restraint. Colour is finished by a palette LUT at encode (pipeline/look.py);
+  // here: soft glow on bright practical lights, atmospheric haze by depth, optional depth of field, subtle grades.
+  const PGRADES = { warm: ['#ffb070', 0.08], cold: ['#6fa8c8', 0.1], night: ['#2a3a6a', 0.14], dawn: ['#ff9a70', 0.08], sepia: ['#b08a5a', 0.1], none: ['#000', 0] };
+  const PREM_DEFS = `<filter id="pBloom" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">` +
+    `<feComponentTransfer in="SourceGraphic" result="hi"><feFuncR type="linear" slope="3.2" intercept="-2.35"/><feFuncG type="linear" slope="3.2" intercept="-2.35"/><feFuncB type="linear" slope="3.2" intercept="-2.35"/></feComponentTransfer>` +
+    `<feGaussianBlur in="hi" stdDeviation="16" result="b"/><feComponentTransfer in="b" result="b2"><feFuncA type="linear" slope="0.85"/></feComponentTransfer><feBlend in="SourceGraphic" in2="b2" mode="screen"/></filter>` +
+    `<filter id="pDof" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="6"/></filter>` +
+    `<radialGradient id="pVig" cx="50%" cy="46%" r="80%"><stop offset="0.62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#05070a" stop-opacity="0.55"/></radialGradient>`;
+  const PAL0 = { shadow: '#0f2630', mid: '#c8b89e', accent: '#e2a13b' };
+  const palOf = ep => ({ ...PAL0, ...((ep && ep.palette) || {}) });
+  const isPrem = ctx => !!(ctx.ep && ctx.ep.look === 'premium');
   function lightLeak(t, col) {
     const a = t * 0.35, x1 = W * (0.15 + 0.12 * Math.sin(a)), y1 = H * (0.18 + 0.06 * Math.cos(a * 1.3)), x2 = W * (0.9 + 0.08 * Math.cos(a * 0.8)), y2 = H * (0.62 + 0.08 * Math.sin(a * 1.1));
     return `<g style="mix-blend-mode:screen"><ellipse cx="${f1(x1)}" cy="${f1(y1)}" rx="520" ry="380" fill="url(#vLeak)" opacity="0.08" style="mix-blend-mode:screen"/><ellipse cx="${f1(x1)}" cy="${f1(y1)}" rx="520" ry="380" fill="${col}" opacity="0.08"/>` +
@@ -300,7 +320,23 @@
   function project(c, d, x, y) { const z = 1 + (c.z - 1) * d; return [W / 2 - c.x * d + (x - W / 2) * z, CY - c.y * d + (y - CY) * z]; }
 
   // evidence overlays (screen space, with optional world anchor)
+  // premium: map any loud overlay colour onto the palette (accent for emphasis, a cool grey for muted text)
+  function premColour(col, ctx, role) {
+    const P = palOf(ctx.ep); if (!col) return role === 'text' ? '#ece6da' : P.accent;
+    const h = col.replace('#', ''); if (h.length < 6) return P.accent;
+    const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+    if (mx - mn < 40) return mx < 140 ? '#9aa3a8' : '#ece6da';   // greys stay neutral
+    return P.accent;
+  }
   function overlay(o, ctx, c) {
+    if (isPrem(ctx) && !o._prem) {
+      const P = palOf(ctx.ep), q = { ...o, _prem: true };
+      if (['callout', 'circle', 'stamp', 'impact', 'label', 'counter'].includes(o.type)) q.colour = premColour(o.colour || P.accent, ctx);
+      if (o.type === 'funfact') q.badgeColour = o.badge === 'LESSON' ? '#9cc9a8' : P.accent;
+      if (o.type === 'card') { q.rows = (o.rows || []).map(r_ => ({ ...r_, colour: premColour(r_.colour, ctx, 'text') })); q.frosted = true; }
+      return overlay(q, ctx, c);
+    }
     const t = ctx.t; const k = seg(t, o.at || 0, (o.at || 0) + (o.dur || 0.5)); if (k <= 0) return ''; const out = o.until !== undefined ? 1 - seg(t, o.until, o.until + 0.4) : 1; if (out <= 0) return '';
     const op = f1(k * out);
     if (o.type === 'callout') {   // a line from a world point to a typed label
@@ -314,7 +350,9 @@
     if (o.type === 'card') {   // typed evidence/legal card (our own graphic, not a replica)
       const w = o.w || 820, rows = o.rows; const h = o.h || (rows.length * 66 + 70); const x = o.x ?? (W - w) / 2, y = o.y ?? 300;
       let inner = ''; rows.forEach((r_, i) => { const p = seg(t, (r_.at ?? o.at) , (r_.at ?? o.at) + 0.8); inner += E.doc.typed(x + 36, y + 64 + i * 66, r_.text, p, { fs: r_.fs || 36, color: r_.colour || '#1a1915', caret: false }); });
-      return `<g opacity="${op}" transform="translate(0 ${f1((1 - ease.out(k)) * 30)})"><rect x="${x + 10}" y="${y + 14}" width="${w}" height="${h}" fill="#000" opacity="0.45" filter="url(#cineSoft)"/><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="#ebe3cf" stroke="#b9ad90" stroke-width="3"/>${inner}</g>`;
+      const body = o.frosted ? `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="#0d1216" opacity="0.84"/><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="none" stroke="${palOf(ctx.ep).accent}" stroke-opacity="0.55" stroke-width="2"/><rect x="${x}" y="${y}" width="6" height="${h}" rx="3" fill="${palOf(ctx.ep).accent}"/>`
+        : `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="#ebe3cf" stroke="#b9ad90" stroke-width="3"/>`;
+      return `<g opacity="${op}" transform="translate(0 ${f1((1 - ease.out(k)) * 30)})"><rect x="${x + 10}" y="${y + 14}" width="${w}" height="${h}" fill="#000" opacity="0.45" filter="url(#cineSoft)"/>${body}${inner}</g>`;
     }
     if (o.type === 'stamp') return `<g opacity="${op}" transform="translate(${o.x} ${o.y}) scale(${o.scale || 1.6}) translate(${-o.x} ${-o.y})">${E.doc.stamp(o.x, o.y, o.text, k, o.rot ?? -10, o.colour || '#e5372b')}</g>`;
     if (o.type === 'label') return `<g opacity="${op}">${o.box === false ? '' : `<rect x="${(o.x ?? 60) - 18}" y="${(o.y ?? 380) - (o.fs || 44) - 8}" width="${f1(Math.max(o.text.length * (o.fs || 44), (o.sub || '').length * 30) * 0.61 + 40)}" height="${(o.fs || 44) + (o.sub ? 70 : 26)}" rx="6" fill="#000" opacity="0.55"/>`}${E.doc.typed(o.x ?? 60, o.y ?? 380, o.text, seg(t, o.at, o.at + (o.typeDur || 0.9)), { fs: o.fs || 44, color: o.colour || '#e7ae4f' })}${o.sub ? E.doc.typed(o.x ?? 60, (o.y ?? 380) + 52, o.sub, seg(t, o.at + 0.4, o.at + 1.4), { fs: 30, color: '#f4efe4', caret: false, weight: 400 }) : ''}</g>`;
@@ -343,7 +381,7 @@
     }
     if (o.type === 'impact') {   // a hit on a reveal: white flash, expanding speed lines, a ring (0.55 s)
       const a = o.at || 0, q = seg(t, a, a + 0.55); if (q <= 0 || q >= 1) return '';
-      const cx = o.x ?? W / 2, cy = o.y ?? H * 0.45, fl = Math.pow(1 - seg(t, a, a + 0.16), 2) * 0.7; let lines = '';
+      const cx = o.x ?? W / 2, cy = o.y ?? H * 0.45, fl = Math.pow(1 - seg(t, a, a + 0.16), 2) * (o._prem ? 0.32 : 0.7); let lines = '';
       for (let i = 0; i < 28; i++) { const ang = i / 28 * Math.PI * 2 + i * 0.37, r0 = 160 + q * 520, r1 = r0 + 140 + (i % 3) * 90; lines += `<line x1="${f1(cx + Math.cos(ang) * r0)}" y1="${f1(cy + Math.sin(ang) * r0)}" x2="${f1(cx + Math.cos(ang) * r1)}" y2="${f1(cy + Math.sin(ang) * r1)}" stroke="#fff" stroke-width="${f1(7 * (1 - q))}" stroke-linecap="round"/>`; }
       return `<g style="mix-blend-mode:screen" opacity="${f1(1 - q)}">${lines}<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(120 + q * 600)}" fill="none" stroke="${o.colour || '#ffd23f'}" stroke-width="${f1(14 * (1 - q))}"/></g><rect width="${W}" height="${H}" fill="#fff" opacity="${f1(fl)}"/>`;
     }
@@ -372,6 +410,23 @@
     const layers = set.layers.map(([d, svg]) => ({ d, svg: () => svg })).concat(items, fogL).sort((a, b) => a.d - b.d);
     let s = `<defs><filter id="cineSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter><filter id="fgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter></defs>` + E.fig.figDefs + E.doc.defs;
     const shakeT = spec.shake ? E.doc.shake(ctx.t, spec.shake) : '';
+    if (isPrem(ctx)) {
+      const P = palOf(ctx.ep), hz = spec.haze ?? 0.6; let pw = '';
+      for (const L of layers) {
+        const inner = L.svg(); if (!inner) continue;
+        const haze = L.d < 0.85 && hz > 0 ? `<rect x="-1500" y="-1500" width="${W + 3000}" height="${H + 3000}" fill="${P.mid}" opacity="${f1(Math.min(0.16, (0.85 - L.d) * 0.2 * hz))}"/>` : '';
+        const blur = L.d > 1.2 ? ' filter="url(#fgBlur)"' : (spec.dof && L.d < 0.6 ? ' filter="url(#pDof)"' : '');
+        pw += `<g transform="${layerT(c, L.d)}"${blur}>${inner}${haze}</g>`;
+      }
+      if (set.dust || spec.dust) pw += `<g style="mix-blend-mode:screen">${E.doc.dust(ctx.t, 30, 6, [0, 0, W, H * 0.75], 0.3)}</g>`;
+      if (spec.rain) pw += rain(ctx.t, [-200, -200, W + 400, H + 400], spec.rain.n || 140, 21, (spec.rain.op || 0.4) * 0.8);
+      const G = PGRADES[spec.grade || 'none'] || PGRADES.none;
+      s += `<defs>${PREM_DEFS}</defs><g filter="url(#pBloom)"><g transform="${shakeT}">${pw}</g>` + (G[1] > 0 ? `<rect width="${W}" height="${H}" fill="${G[0]}" opacity="${G[1]}" style="mix-blend-mode:soft-light"/>` : '') + `</g>`;
+      if (spec.police) s += `<g opacity="0.7">${E.doc.policeLights(ctx.t, spec.police)}</g>`;
+      s += `<rect width="${W}" height="${H}" fill="url(#pVig)"/>`;
+      for (const o of spec.overlays || []) s += overlay(o, ctx, c);
+      return s + E.doc.film(ctx.t, 0.18) + E.doc.tag(spec.tag || 'ILLUSTRATION · NOT A PHOTOGRAPH') + E.doc.bug(ctx.ep);
+    }
     let world = '';
     for (const L of layers) { const inner = L.svg(); if (!inner) continue; world += `<g transform="${layerT(c, L.d)}"${L.d > 1.2 ? ' filter="url(#fgBlur)"' : ''}>${inner}</g>`; }
     if (set.dust || spec.dust) world += `<g style="mix-blend-mode:screen">${E.doc.dust(ctx.t, 45, 7, [0, 0, W, H * 0.75], 0.45)}</g>`;
