@@ -37,6 +37,12 @@
 | 33 | `true_crime_33_timessquare_40s.mp4` (archived outside git) | The Times Square bomber and the hidden VIN (2010), 40-second cut | see `production_manifest.json` |
 | 34 | `true_crime_34_durst_40s.mp4` (archived outside git) | Robert Durst and the live microphone (1982–2022), 40-second cut | see `production_manifest.json` |
 | 35 | `true_crime_35_escobar_40s.mp4` (archived outside git) | Pablo Escobar and the phone call (1992–1993), 40-second cut | see `production_manifest.json` |
+| 36 | `true_crime_36_yen_heist.mp4` (archived outside git) | Danger Zones: Japan's 300 million yen heist (1968), vivid 60 fps | see `production_manifest.json` |
+| 37 | `true_crime_37_png_plane.mp4` (archived outside git) | Danger Zones: the PNG cocaine plane (2020–2026), vivid 60 fps | see `production_manifest.json` |
+| 38 | `true_crime_38_scam_city.mp4` (archived outside git) | Danger Zones: Myanmar's scam cities (ongoing), vivid 60 fps | see `production_manifest.json` |
+| 39 | `true_crime_39_baiyin.mp4` (archived outside git) | Danger Zones: the Baiyin killer and his uncle's DNA (1988–2019), vivid 60 fps | see `production_manifest.json` |
+| 40 | `true_crime_40_aum_hideout.mp4` (archived outside git) | Danger Zones: the sarin cult leader's hidden room (1995–2018), vivid 60 fps | see `production_manifest.json` |
+| 41 | `true_crime_41_red_mansion.mp4` (archived outside git) | Danger Zones: the Red Mansion smuggling case (1990s–2012), vivid 60 fps | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

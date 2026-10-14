@@ -234,3 +234,5 @@
 - 2026-10-14 04:37:37 tcv38-scam-city: VERIFIED -> series/true-crime-cinematic/output/true_crime_38_scam_city.mp4 (52.1s, 43.9 MB, sha256 e585439fd625)
 - 2026-10-14 04:37:51 produce 39 --force: regenerating episode data
 - 2026-10-14 04:37:52 tcv39-baiyin: rendering (final60, seed 1)
+- 2026-10-14 05:13:55 tcv39-baiyin: rendered in 2163s
+- 2026-10-14 05:15:05 tcv39-baiyin: VERIFIED -> series/true-crime-cinematic/output/true_crime_39_baiyin.mp4 (51.8s, 42.7 MB, sha256 f72bfe575dba)

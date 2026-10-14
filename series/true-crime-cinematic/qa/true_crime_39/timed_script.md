@@ -19,16 +19,16 @@
 [ 25.50s –  30.00s] s06_uncle
   NARRATOR [25.75s]: Then his uncle was arrested over a minor crime, and gave police his DNA.
 
-[ 30.00s –  35.25s] s07_match
-  NARRATOR [30.25s]: Its Y chromosome markers were close to the killer's.
-  NARRATOR [33.32s]: So the killer was family.
+[ 30.00s –  34.88s] s07_match
+  NARRATOR [30.25s]: Its male line markers were close to the killer's.
+  NARRATOR [33.09s]: So the killer was family.
 
-[ 35.25s –  40.12s] s08_arrest
-  NARRATOR [35.50s]: In August 2016, police arrested Gao Chengyong at his shop.
+[ 34.88s –  39.75s] s08_arrest
+  NARRATOR [35.12s]: In August 2016, police arrested Gao Chengyong at his shop.
 
-[ 40.12s –  44.62s] s09_verdict
-  NARRATOR [40.38s]: He was sentenced to death in 2018, and executed in 2019.
+[ 39.75s –  44.25s] s09_verdict
+  NARRATOR [40.00s]: He was sentenced to death in 2018, and executed in 2019.
 
-[ 44.62s –  52.12s] s10_end
-  NARRATOR [44.88s]: The lesson? Your DNA isn't only yours.
-  NARRATOR [47.59s]: One sample from his uncle ended a 28 year hunt.
+[ 44.25s –  51.75s] s10_end
+  NARRATOR [44.50s]: The lesson? Your DNA is not only yours.
+  NARRATOR [47.33s]: One sample from his uncle ended a 28 year hunt.

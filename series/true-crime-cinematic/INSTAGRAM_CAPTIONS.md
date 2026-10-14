@@ -438,3 +438,73 @@ Would you have made the call? YES or NO 👇 Follow for the next case.
 #PabloEscobar #TrueCrime #Medellin #Manhunt #CaseFiles
 
 Escobar is shown only as a silhouette; no violence is depicted. We remember everyone his cartel killed.
+
+---
+
+# Case Files 36–41: DANGER ZONES, on the upgraded engine (made 2026-10-13/14)
+**New look:** `ep.look = "vivid"` at 60 fps, map fly-in, count-ups, impact hits, a FUN FACT and a LESSON card in each. Japan, China, Myanmar and Papua New Guinea; danger framed by the case, never the country.
+**Posting:** one a day at the time 22 went up. Share copies are re-encoded to fit under 30 MiB (60 fps kept).
+
+## 36: The 300 million yen heist (`true_crime_36_yen_heist.mp4`)
+Japan is one of the safest countries on Earth. Then a "cop" on a white motorcycle stopped a bank car 🏍️
+
+Nearly 300 million yen in workers' bonuses. A bomb warning. A cloud of smoke.
+Nobody was hurt, and nobody was ever caught.
+
+Would you have fallen for it? YES or NO 👇 Follow for the next case.
+
+#TrueCrime #Japan #Heist #Unsolved #Tokyo
+
+## 37: The cocaine plane (`true_crime_37_png_plane.mp4`)
+A plane full of cocaine. One dirt runway. ✈️
+
+A smuggling run planned across two countries.
+It ended at a jungle airstrip near Port Moresby.
+
+Would you have flown it? YES or NO 👇 Follow for the next case.
+
+#TrueCrime #PapuaNewGuinea #Cocaine #Smuggling #CaseFiles
+
+## 38: Myanmar's scam cities (`true_crime_38_scam_city.mp4`)
+A "wrong number" text can lead to a scam city on Myanmar's border 📱
+
+Walled compounds near Myawaddy hold people lured by fake jobs, the UN says.
+Their job: befriend strangers, then talk crypto.
+
+Ever got one of these texts? YES or NO 👇 Follow for the next case.
+
+#TrueCrime #ScamAwareness #PigButchering #Myanmar #CryptoScam
+
+## 39: The uncle's DNA (`true_crime_39_baiyin.mp4`)
+For 28 years, a killer in northwest China was never found 🧬
+
+Police had his DNA and fingerprints, but matched nobody on file.
+He was running a small grocery shop.
+Then his uncle got arrested for something minor…
+
+Should police be allowed to use your relatives' DNA? YES or NO 👇 Follow for the next case.
+
+#TrueCrime #ColdCase #DNA #Forensics #China
+
+## 40: The secret compartment (`true_crime_40_aum_hideout.mp4`)
+Japan's sarin cult leader was hiding in a tiny secret space inside a wall 🔦
+
+1995: a cult releases sarin on Tokyo's rush-hour subway.
+Police raid the cult's compound under Mount Fuji, carrying canaries in cages.
+57 days later, they break through a ceiling and a wall…
+
+Would you have searched the walls? YES or NO 👇 Follow for the next case.
+
+#TrueCrime #Japan #Tokyo #History #CaseFiles
+
+In memory of the 14 who died.
+
+## 41: The Red Mansion (`true_crime_41_red_mansion.mp4`)
+One red mansion. China's biggest smuggling case. 🏮
+
+Oil, cars, cigarettes: worth 27.4 billion yuan, a court found.
+Then its owner ran… to Canada.
+
+Should Canada have sent him back? YES or NO 👇 Follow for the next case.
+
+#TrueCrime #China #Smuggling #Corruption #CaseFiles
