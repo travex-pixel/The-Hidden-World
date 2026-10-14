@@ -388,11 +388,20 @@
       const rows = o.rows || [], fs0 = o.fs || 42, w = o.w || 920, x = o.x ?? (W - w) / 2, y = o.y ?? 380;
       const lh = r_ => (r_.fs || fs0) * 1.28; const h = 64 + rows.reduce((a, r_) => a + lh(r_), 0) + 22;
       const pop = ease.back(seg(t, o.at || 0, (o.at || 0) + 0.42)); const cx = x + w / 2, cy = y + h / 2;
-      let yy = y + 56, txt = ''; rows.forEach(r_ => { yy += lh(r_) * 0.86; txt += `<text x="${x + 40}" y="${f1(yy)}" font-family="Nunito" font-weight="800" font-size="${r_.fs || fs0}" fill="${r_.colour || '#f6f1e6'}">${esc(r_.text)}</text>`; yy += lh(r_) * 0.14; });
+      // checklist: true draws a ticked box before each row (a list reads as something to keep); save: true adds a bookmark
+      // ribbon that pulses every 1.6 s (the explicit save cue; the card's practical value is what earns the save)
+      const tx = o.checklist ? x + 96 : x + 40;
+      let yy = y + 56, txt = ''; rows.forEach((r_, ri) => { yy += lh(r_) * 0.86; const fsr = r_.fs || fs0;
+        if (o.checklist && r_.text) { const bx = x + 40, by = yy - fsr * 0.78, bs = fsr * 0.8, tk = ease.out(seg(t, (o.at || 0) + 0.5 + ri * 0.35, (o.at || 0) + 0.8 + ri * 0.35));
+          txt += `<rect x="${f1(bx)}" y="${f1(by)}" width="${f1(bs)}" height="${f1(bs)}" rx="6" fill="none" stroke="${BC}" stroke-width="4"/>` + (tk > 0 ? `<path d="M${f1(bx + bs * 0.2)} ${f1(by + bs * 0.52)} L${f1(bx + bs * 0.42)} ${f1(by + bs * 0.74)} L${f1(bx + bs * 0.82)} ${f1(by + bs * 0.26)}" fill="none" stroke="${BC}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${f1(1 - tk)}"/>` : ''); }
+        txt += `<text x="${f1(tx)}" y="${f1(yy)}" font-family="Nunito" font-weight="800" font-size="${fsr}" fill="${r_.colour || '#f6f1e6'}">${esc(r_.text)}</text>`; yy += lh(r_) * 0.14; });
+      let ribbon = '';
+      if (o.save) { const rx = x + w - 150, ry = y - 14, ph = ((t - (o.at || 0) - 0.9) % 1.6 + 1.6) % 1.6, pu = t > (o.at || 0) + 0.9 ? 1 + 0.08 * Math.pow(Math.sin(Math.PI * clamp(ph / 0.5, 0, 1)), 2) : 1;
+        ribbon = `<g transform="translate(${f1(rx + 56)} ${f1(ry + 70)}) scale(${f1(pu * 1000) / 1000}) translate(${f1(-(rx + 56))} ${f1(-(ry + 70))})"><path d="M${rx} ${ry} h112 v150 l-56 -34 l-56 34 Z" fill="${BC}" stroke="#141414" stroke-width="4"/><path d="M${rx + 40} ${ry + 26} h32 v42 l-16 -10 l-16 10 Z" fill="#141414"/><text x="${rx + 56}" y="${ry + 104}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="30" letter-spacing="1" fill="#141414">SAVE</text></g>`; }
       const wob = 1 + 0.012 * Math.sin((t - (o.at || 0)) * 5);
       return `<g opacity="${op}" transform="translate(${f1(cx)} ${f1(cy)}) scale(${f1(Math.max(0.001, pop) * wob * 1000) / 1000}) translate(${f1(-cx)} ${f1(-cy)})"><rect x="${x + 10}" y="${y + 14}" width="${w}" height="${h}" rx="22" fill="#000" opacity="0.5" filter="url(#cineSoft)"/>` +
         `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="22" fill="#111317" opacity="0.94" stroke="${BC}" stroke-width="5"/>` +
-        `<g transform="rotate(-4 ${x + 170} ${y})"><rect x="${x + 22}" y="${y - 40}" width="300" height="76" rx="38" fill="${BC}" stroke="#141414" stroke-width="4"/><text x="${x + 172}" y="${y + 12}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="42" fill="#141414">${esc(BT)}</text></g>${txt}</g>`;
+        `<g transform="rotate(-4 ${x + 170} ${y})"><rect x="${x + 22}" y="${y - 40}" width="300" height="76" rx="38" fill="${BC}" stroke="#141414" stroke-width="4"/><text x="${x + 172}" y="${y + 12}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="42" fill="#141414">${esc(BT)}</text></g>${txt}${ribbon}</g>`;
     }
     if (o.type === 'lesson') return overlay({ ...o, type: 'funfact', badge: 'LESSON' }, ctx, c);
     if (o.type === 'counter') {   // big count-up number with a neon glow: {at, dur, from, to, prefix, suffix, label, y, colour, fs}
