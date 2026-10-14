@@ -240,3 +240,5 @@
 - 2026-10-14 14:10:10 tcv42-bali-van: rendering (final60, seed 1)
 - 2026-10-14 14:54:44 tcv42-bali-van: rendered in 2674s
 - 2026-10-14 14:55:47 tcv42-bali-van: VERIFIED -> series/true-crime-cinematic/output/true_crime_42_bali_van.mp4 (49.0s, 30.0 MB, sha256 d877e0c48f6f)
+- 2026-10-14 21:17:52 produce 43 --force: regenerating episode data
+- 2026-10-14 21:17:52 tcv43-dannemora-meat: rendering (final60, seed 1)
