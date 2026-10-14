@@ -46,11 +46,11 @@ def build(h):
           emph=["uncle", "arrested", "minor", "crime,", "police", "dna."], pad=0.25, tr="flash"),
         # C - THE HOW, part 2: the lab screen lines up two Y-chromosome profiles, near-identical; the killer was family.
         #     The fun fact (Y-STR passes father to son almost unchanged) pops after the line.
-        S("s07_match", "by39_match", [N("Its Y chromosome markers were close to the killer's."),
+        S("s07_match", "by39_match", [N("Its male line markers were close to the killer's."),
                                       N("So the killer was family.", pause_before=0.3)],
           "revelation", ["B_ystr", "B_fun"], sfx=[fw(0, 1, "beep", 0.25, 0.0), fw(0, 4, "typing", 0.3, -0.05), fw(0, 6, "ping", 0.4, -0.02),
                                                    fw(1, 4, "hit", 0.55, -0.05), fw(1, 4, "sparkle", 0.4, 0.3)],
-          emph=["y", "chromosome", "close", "killer's.", "family."], pad=0.4, tr="push"),
+          emph=["male", "line", "close", "killer's.", "family."], pad=0.4, tr="push"),
         # D - the arrest at the shop (impact); 28 years after the first killing
         S("s08_arrest", "by39_arrest", [N("In August 2016, police arrested Gao Chengyong at his shop.")],
           "tension-peak", ["B_arrest"], sfx=[fw(0, 1, "brake", 0.35, -0.05), fw(0, 3, "door", 0.4, -0.05), fw(0, 4, "hit", 0.55, -0.05), fw(0, 9, "thump", 0.4, -0.05)],
@@ -60,7 +60,7 @@ def build(h):
           "tension-peak", ["B_verdict", "B_executed"], sfx=[fw(0, 2, "gavel", 0.55, -0.05), fw(0, 8, "thud", 0.4, -0.05)],
           emph=["sentenced", "death", "2018,", "executed", "2019."], pad=0.3, tr="zoom"),
         # E - the lesson and the callback on the hero object (the first frame's framing); the end question is burned in
-        S("s10_end", "by39_end", [N("The lesson? Your DNA isn't only yours."),
+        S("s10_end", "by39_end", [N("The lesson? Your DNA is not only yours."),
                                   N("One sample from his uncle ended a 28 year hunt.", pause_before=0.3)],
           "aftermath", ["B_lesson", "B_uncle", "B_years"], sfx=[fw(0, 1, "chime", 0.35, -0.02), fw(1, 1, "ping", 0.35, -0.02), fw(1, 9, "thump", 0.4, -0.05)],
           emph=["lesson?", "dna", "only", "yours.", "sample", "uncle", "28", "hunt."], min_d=4.8, pad=1.55, tr="zoom"),

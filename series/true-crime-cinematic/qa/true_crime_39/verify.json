@@ -1,0 +1,159 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv39-baiyin/tcv39-baiyin.mp4",
+    "size_bytes": 42904537,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 52.133,
+    "audio_duration": 52.133,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.8,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv39-baiyin/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 3128,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.2,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.8
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.132,
+    "transcript": "For 20, 8 years, a killer in northwest China was never found. And one test on his uncle gave him away. Eleven women and girls were killed in Bayein and Boto from 1980, 8 to 2002. The police had his DNA and fingerprints, but they matched nobody on file. After 2002, the killings stopped and the trail went cold. By 2016, he ran a small grocery shop with his wife. Then his uncle was arrested over a minor crime and gave police his DNA. His white chromosome markers were close to the killers. So the killer was family. In August 2016, police arrested Gao Chiang, young at his shop. He was sentenced to death in 2018 and executed in 2019. The lesson, your DNA is an ole yours. One sample from his uncle ended a 20, 8-year hunt."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 60,
+      "extent": {
+        "left": 122.1,
+        "right": 957.9,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.4,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 2.49,
+      "frames": 521
+    },
+    "audio": {
+      "opening_speech_median_db": -21.0,
+      "opening_min_speech_window_db": -39.3,
+      "first_word_db": -20.0,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -39.8,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.297,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 12.6,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -36.5,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8089,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.8,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -93.1,
+      "end_before_db": -15.4,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 52.133333,
+        "audio": 52.132993
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 10,
+      "composed_shots": 10,
+      "shots_with_characters": 9,
+      "character_shot_share": 0.9,
+      "distinct_sets": 7,
+      "max_set_share": 0.3,
+      "shot_sizes": {
+        "medium": 6,
+        "insert/graphic": 1,
+        "wide": 1,
+        "medium-wide": 2
+      },
+      "max_shot_size_share": 0.6,
+      "ok": true
+    }
+  }
+}

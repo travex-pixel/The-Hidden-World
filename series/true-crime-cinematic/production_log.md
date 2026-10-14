@@ -222,3 +222,7 @@
 - 2026-10-14 02:49:56 tcv37-png-plane: VERIFIED -> series/true-crime-cinematic/output/true_crime_37_png_plane.mp4 (49.5s, 40.1 MB, sha256 6081b03f8dcd)
 - 2026-10-14 02:49:56 produce 39: regenerating episode data
 - 2026-10-14 02:49:56 tcv39-baiyin: rendering (final60, seed 1)
+- 2026-10-14 03:25:33 tcv39-baiyin: rendered in 2137s
+- 2026-10-14 03:26:39 tcv39-baiyin: VERIFIED -> series/true-crime-cinematic/output/true_crime_39_baiyin.mp4 (52.1s, 42.9 MB, sha256 69e8037ecb24)
+- 2026-10-14 03:26:39 produce 36 --force: regenerating episode data
+- 2026-10-14 03:26:39 tcv36-yen-heist: rendering (final60, seed 1)
