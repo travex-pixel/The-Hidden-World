@@ -67,6 +67,8 @@ One video is one sample: posting time and the algorithm's test audience also var
 - They sit inside the Shorts safe area (`caption_y` 1380, `caption_max_w` 800, checked with real font metrics).
 - Pronunciation fixes go in `narrator_profile.pronounce` (for example `{"D4vd": "David"}`), so captions keep the written name.
 
+**Update, 2026-10-14 (three reels at the same ceiling).** Case Files 16, 22 and 30 each stopped at about 1.6k views. Likes were above typical on all three (1.3–1.4 %); comments were 0 on all three; saves 0–0.1 %; and the retention curves match: 100 → 55–60 % by 0:06, a plateau near 30 % through the body, then a tail loss of 10–17 points in the last 4–5 s (the memorial line and the end pad). A like rate alone does not open the next distribution tier; comments, saves, shares and completion do. From Case File 43 the rules in `pipeline/engage_qa.py` apply (first spoken line is the twist by 2.5 s, an open loop every 10 s, a progress chip, the outcome as the last narration, the video ends within 1 s of the last word, an opinion question for comments, a LESSON card for saves, a SUCCESs fun fact for shares). Retention curves are logged with `series/true-crime/tools/retention.py`.
+
 ## Sound
 - **Score:** `episode.score` (`pipeline/score.py`). The sections are:
 

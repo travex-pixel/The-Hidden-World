@@ -294,6 +294,45 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
         x = noise(1.4) * (0.5 + 0.5 * (rng.random(len(t)) > 0.97))
         x = lowpass_fast(x, 5000) - lowpass_fast(x, 600)
         return (x * env(len(t), 0.05, 0.2, 0.7, 0.6) * 0.32).astype(np.float32)
+    if name == "rasp":    # a file on metal: four strokes of bright, gritty noise with a faint ring
+        out = np.zeros(int(1.0 * SR), np.float32)
+        for i in range(4):
+            n = int(0.2 * SR); x = noise(0.2); x = lowpass_fast(x - lowpass_fast(x, 1500), 6500) * np.sin(np.pi * np.arange(n) / n) ** 0.7
+            add(out, (x * 0.4).astype(np.float32), i * 0.24); add(out, tone(2400 + 300 * i, 0.25, "bell", 0.04), i * 0.24 + 0.02)
+        return out
+    if name == "siren":   # a distant two-tone wail, 2.6 s, low-passed so it sits behind the narration
+        t = tt(2.6); f = 700 + 180 * np.sign(np.sin(2 * np.pi * 0.7 * t))
+        x = np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.18 + np.sin(2 * np.pi * np.cumsum(f * 2) / SR) * 0.05
+        return (lowpass_fast(x.astype(np.float32), 1800) * env(len(t), 0.5, 0.2, 0.9, 0.8)).astype(np.float32)
+    if name == "shutter":  # a camera: two clicks and a short motor whirr
+        out = np.zeros(int(0.35 * SR), np.float32); t = tt(0.08)
+        for at_ in (0.0, 0.07): add(out, (lowpass_fast(noise(0.08), 5000) * np.exp(-t * 160) * 0.7).astype(np.float32), at_)
+        add(out, (lowpass_fast(noise(0.2), 900) * env(int(0.2 * SR), 0.02, 0.05, 0.6, 0.1) * 0.12).astype(np.float32), 0.12)
+        return out
+    if name == "cuffs":   # handcuffs: a quick ratchet of nine clicks, the last one heavier
+        out = np.zeros(int(0.6 * SR), np.float32); t = tt(0.04)
+        for i in range(9):
+            x = noise(0.04); x = (x - lowpass_fast(x, 2000)) * np.exp(-t * 260) * (0.5 + 0.06 * i)
+            add(out, x.astype(np.float32), i * 0.045)
+        add(out, (np.sin(2 * np.pi * 900 * tt(0.1)) * np.exp(-tt(0.1) * 70) * 0.3).astype(np.float32), 0.42)
+        return out
+    if name == "knock":   # three knocks on a wooden door
+        out = np.zeros(int(0.95 * SR), np.float32); t = tt(0.3)
+        for i in range(3): add(out, (np.sin(2 * np.pi * 115 * t) * np.exp(-t * 32) * 0.7 + lowpass_fast(noise(0.3), 1300) * np.exp(-t * 85) * 0.35).astype(np.float32), i * 0.23)
+        return out
+    if name == "radio":   # a police radio: squelch burst then a short tone
+        x = noise(0.45); x = lowpass_fast(x - lowpass_fast(x, 500), 3200) * env(int(0.45 * SR), 0.01, 0.08, 0.5, 0.2) * 0.3
+        out = np.zeros(int(0.65 * SR), np.float32); add(out, x.astype(np.float32), 0.0); add(out, tone(1000, 0.08, "pluck", 0.15), 0.5)
+        return out
+    if name == "cash":    # counting banknotes: a run of twelve paper flicks
+        out = np.zeros(int(0.8 * SR), np.float32); t = tt(0.06)
+        for i in range(12): add(out, (lowpass_fast(noise(0.06), 3500) * np.exp(-t * 120) * 0.35).astype(np.float32), i * 0.055)
+        return out
+    if name == "keys":    # a bunch of keys: a few short metallic rings over a click
+        out = np.zeros(int(0.6 * SR), np.float32)
+        for i in range(5): add(out, tone(float(rng.uniform(2800, 5200)), 0.2, "bell", 0.08), i * 0.05)
+        add(out, (lowpass_fast(noise(0.05), 4000) * np.exp(-tt(0.05) * 200) * 0.4).astype(np.float32), 0.0)
+        return out
     if name == "whoosh":
         t = tt(0.5)
         return (lowpass_fast(noise(0.5), 1500) * env(len(t), 0.15, 0.1, 0.5, 0.2) * 0.3).astype(np.float32)

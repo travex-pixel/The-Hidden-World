@@ -306,13 +306,38 @@
     const c = camBase(ctx, cam); if (!cam.handheld) return c;
     const h = handheld(ctx.t + (ctx.sceneStart || 0), cam.handheld); return { x: c.x + h.x, y: c.y + h.y, z: c.z };
   }
+  // a camera move that overshoots a touch and settles (settle: true = 4 %, or a number); plain ease otherwise
+  const settle = (x, k) => ease.inOut(x) + (k ? (k === true ? 0.04 : k) * Math.pow(Math.sin(Math.PI * clamp((x - 0.5) / 0.5, 0, 1)), 2) : 0);
+  // atmosphere layers any shot can switch on: light shafts, smoke, sparks (deterministic, time-driven)
+  function atmos(ctx, spec) {
+    const t = ctx.t + (ctx.sceneStart || 0), L = [];
+    if (spec.shafts) {   // {n, x, w, col, op, d}: soft angled light shafts from the top edge that sway slowly
+      const o = spec.shafts, n = o.n || 3, col = o.col || '#ffe9c4', x0 = o.x ?? 520; let s = '';
+      for (let i = 0; i < n; i++) { const sw = Math.sin(t * 0.21 + i * 1.9) * 40, x = x0 + (i - (n - 1) / 2) * (o.gap || 170) + sw, w = o.w || 90;
+        s += `<polygon points="${f1(x - w * 0.3)},-200 ${f1(x + w * 0.3)},-200 ${f1(x + w * 1.6 + 260)},${H + 100} ${f1(x - w * 1.2 + 260)},${H + 100}" fill="${col}" opacity="${f1((o.op || 0.16) * (0.8 + 0.2 * Math.sin(t * 0.5 + i)))}"/>`; }
+      L.push({ d: o.d ?? 0.55, svg: () => `<g filter="url(#cineSoft)" style="mix-blend-mode:screen">${s}</g>` });
+    }
+    if (spec.smoke) {    // {n, y, op, col, d}: soft puffs rising and drifting, wrapping every 9 s
+      const o = spec.smoke, n = o.n || 6, r = E.mulberry32(901); let s = '';
+      for (let i = 0; i < n; i++) { const sp = 0.6 + r() * 0.8, ph = r() * 9, x0 = r() * W, rx = 160 + r() * 160; const u = ((t * sp + ph) % 9) / 9;
+        s += `<ellipse cx="${f1(x0 + Math.sin(t * 0.3 + i) * 60 + u * 120)}" cy="${f1((o.y ?? 1100) - u * 900)}" rx="${f1(rx * (0.6 + u))}" ry="${f1(rx * 0.45 * (0.6 + u))}" fill="${o.col || '#aab2b8'}" opacity="${f1((o.op || 0.22) * Math.sin(Math.PI * u))}"/>`; }
+      L.push({ d: o.d ?? 0.9, svg: () => `<g filter="url(#cineSoft)">${s}</g>` });
+    }
+    if (spec.sparks) {   // {x, y, n, col, d}: bright specks thrown up from a point, falling back on arcs
+      const o = spec.sparks, n = o.n || 24, r = E.mulberry32(77); let s = '';
+      for (let i = 0; i < n; i++) { const life = 0.5 + r() * 0.7, ph = r() * life, vx = (r() - 0.5) * 520, vy = -(260 + r() * 420); const u = ((t + ph) % life) / life, tt_ = u * life;
+        s += `<circle cx="${f1(o.x + vx * tt_)}" cy="${f1(o.y + vy * tt_ + 900 * tt_ * tt_)}" r="${f1(2.2 * (1 - u) + 0.6)}" fill="${o.col || '#ffd27a'}" opacity="${f1(0.9 * (1 - u))}"/>`; }
+      L.push({ d: o.d ?? 1.05, svg: () => `<g style="mix-blend-mode:screen">${s}</g>` });
+    }
+    return L;
+  }
   function camBase(ctx, cam) {
     if (cam.keys) {   // piecewise moves: [{at, x, y, z, dur}] each eased from the previous key
       let c = { x: 0, y: 0, z: 1, ...cam.keys[0] };
-      for (const k of cam.keys.slice(1)) { const u = ease.inOut(clamp((ctx.t - k.at) / (k.dur || 0.8), 0, 1)); if (u <= 0) break; c = { x: lerp(c.x, k.x ?? c.x, u), y: lerp(c.y, k.y ?? c.y, u), z: lerp(c.z, k.z ?? c.z, u) }; }
+      for (const k of cam.keys.slice(1)) { const u = settle(clamp((ctx.t - k.at) / (k.dur || 0.8), 0, 1), k.settle ?? cam.settle); if (u <= 0) break; c = { x: lerp(c.x, k.x ?? c.x, u), y: lerp(c.y, k.y ?? c.y, u), z: lerp(c.z, k.z ?? c.z, u) }; }
       return c;
     }
-    const p = ease.inOut(clamp(ctx.t / ctx.T, 0, 1)); const a = cam.from || { x: 0, y: 0, z: 1 }, b = cam.to || a;
+    const p = settle(clamp(ctx.t / ctx.T, 0, 1), cam.settle); const a = cam.from || { x: 0, y: 0, z: 1 }, b = cam.to || a;
     return { x: lerp(a.x || 0, b.x || 0, p), y: lerp(a.y || 0, b.y || 0, p), z: lerp(a.z || 1, b.z || 1, p) };
   }
   const CY = H * 0.45;
@@ -407,21 +432,27 @@
       .concat((spec.props || []).map(p => ({ d: p.depth ?? 1, svg: () => (typeof p.svg === 'function' ? p.svg(ctx.t) : p.svg) })));
     const fogSvg = () => { const fx = (ctx.t * 18) % 400; return `<g opacity="0.35">${[0, 1, 2].map(i => `<ellipse cx="${f1(-200 + fx + i * 520)}" cy="${1060 + i * 30}" rx="420" ry="70" fill="#c9d6e0" filter="url(#cineSoft)"/>`).join('')}</g>`; };
     const fogL = (set.fog || spec.fog) ? [{ d: spec.fogDepth ?? 0.85, svg: fogSvg }] : [];   // ground fog sits behind the figures' plane
-    const layers = set.layers.map(([d, svg]) => ({ d, svg: () => svg })).concat(items, fogL).sort((a, b) => a.d - b.d);
+    const layers = set.layers.map(([d, svg]) => ({ d, svg: () => svg })).concat(items, fogL, atmos(ctx, spec)).sort((a, b) => a.d - b.d);
     let s = `<defs><filter id="cineSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter><filter id="fgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter></defs>` + E.fig.figDefs + E.doc.defs;
     const shakeT = spec.shake ? E.doc.shake(ctx.t, spec.shake) : '';
     if (isPrem(ctx)) {
       const P = palOf(ctx.ep), hz = spec.haze ?? 0.6; let pw = '';
+      // rack focus {at, dur, from:'bg'|'fg'}: the subject starts soft and snaps into focus (from 'bg'), or the reverse
+      let rk = null, rackDefs = '';
+      if (spec.rack) { const q = ease.inOut(clamp((ctx.t - (spec.rack.at || 0)) / (spec.rack.dur || 0.7), 0, 1)), rev = spec.rack.from === 'fg';
+        rk = { fg: (rev ? q : 1 - q) * 9, bg: (rev ? 1 - q : q) * 7 };
+        rackDefs = `<filter id="pRackF" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="${f1(rk.fg)}"/></filter><filter id="pRackB" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="${f1(rk.bg)}"/></filter>`; }
       for (const L of layers) {
         const inner = L.svg(); if (!inner) continue;
         const haze = L.d < 0.85 && hz > 0 ? `<rect x="-1500" y="-1500" width="${W + 3000}" height="${H + 3000}" fill="${P.mid}" opacity="${f1(Math.min(0.16, (0.85 - L.d) * 0.2 * hz))}"/>` : '';
-        const blur = L.d > 1.2 ? ' filter="url(#fgBlur)"' : (spec.dof && L.d < 0.6 ? ' filter="url(#pDof)"' : '');
+        let blur = L.d > 1.2 ? ' filter="url(#fgBlur)"' : (spec.dof && L.d < 0.6 ? ' filter="url(#pDof)"' : '');
+        if (rk) { if (L.d < 0.6 && rk.bg > 0.3) blur = ' filter="url(#pRackB)"'; else if (L.d >= 0.6 && L.d <= 1.2 && rk.fg > 0.3) blur = ' filter="url(#pRackF)"'; }
         pw += `<g transform="${layerT(c, L.d)}"${blur}>${inner}${haze}</g>`;
       }
       if (set.dust || spec.dust) pw += `<g style="mix-blend-mode:screen">${E.doc.dust(ctx.t, 30, 6, [0, 0, W, H * 0.75], 0.3)}</g>`;
       if (spec.rain) pw += rain(ctx.t, [-200, -200, W + 400, H + 400], spec.rain.n || 140, 21, (spec.rain.op || 0.4) * 0.8);
       const G = PGRADES[spec.grade || 'none'] || PGRADES.none;
-      s += `<defs>${PREM_DEFS}</defs><g filter="url(#pBloom)"><g transform="${shakeT}">${pw}</g>` + (G[1] > 0 ? `<rect width="${W}" height="${H}" fill="${G[0]}" opacity="${G[1]}" style="mix-blend-mode:soft-light"/>` : '') + `</g>`;
+      s += `<defs>${PREM_DEFS}${rackDefs}</defs><g filter="url(#pBloom)"><g transform="${shakeT}">${pw}</g>` + (G[1] > 0 ? `<rect width="${W}" height="${H}" fill="${G[0]}" opacity="${G[1]}" style="mix-blend-mode:soft-light"/>` : '') + `</g>`;
       if (spec.police) s += `<g opacity="0.7">${E.doc.policeLights(ctx.t, spec.police)}</g>`;
       s += `<rect width="${W}" height="${H}" fill="url(#pVig)"/>`;
       for (const o of spec.overlays || []) s += overlay(o, ctx, c);

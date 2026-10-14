@@ -357,9 +357,10 @@
       row.forEach(w0 => {
         const w = { ...w0, wd: w0.wd * k }; const shown = t >= w.s - 0.04; if (!shown) { x += w.wd + rgap; return; }
         const active = t < w.e + 0.05; const hot = emph && emph.has(capKey(w.w));
-        const pop = active ? 1 + 0.07 * (1 - ease.out(seg(t, w.s - 0.04, w.s + 0.12))) : 1;
         const prem = ctx.ep && ctx.ep.look === 'premium', acc = prem ? ((ctx.ep.palette || {}).accent || '#e2a13b') : null;
-        const fill = prem ? (active ? acc : '#f2ede4') : (hot ? '#ff5b45' : active ? '#ffd84a' : '#ffffff'); const cx = x + w.wd / 2;
+        // premium: the current word reads in the accent, emphasis words stay in the accent and sit 8 % larger (kinetic stress)
+        const pop = (active ? 1 + 0.07 * (1 - ease.out(seg(t, w.s - 0.04, w.s + 0.12))) : 1) * (prem && hot ? 1.08 : 1);
+        const fill = prem ? (active || hot ? acc : '#f2ede4') : (hot ? '#ff5b45' : active ? '#ffd84a' : '#ffffff'); const cx = x + w.wd / 2;
         out += `<text x="${f1(cx)}" y="${f1(y)}" text-anchor="middle" transform="translate(${f1(cx)} ${f1(y - fs * 0.34)}) scale(${f1(pop * 100) / 100}) translate(${f1(-cx)} ${f1(-(y - fs * 0.34))})" font-family="Nunito" font-weight="800" font-size="${f1(rfs)}" fill="${fill}" stroke="#05050a" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${esc(w.txt)}</text>`;
         x += w.wd + rgap;
       });
@@ -424,6 +425,19 @@
       const t0 = this.state.total - (h.from ?? 3.2); if (t < t0) return '';
       return this.burnTitle(h, seg(t, t0, t0 + 0.32), 1);
     },
+    // a running progress chip (episode.progress = {label, suffix, y, fs, until, keys:[{t, v}]}): "DAY 3" ... "DAY 23",
+    // so the viewer feels the story moving (a progression marker); it pops on every change
+    progressChip(t) {
+      const p = this.state.ep.progress; if (!p || !p.keys || !p.keys.length) return '';
+      const k = p.keys; if (t < k[0].t - 0.3) return '';
+      let v = k[0].v, last = k[0].t; for (const q of k) if (t >= q.t) { v = q.v; last = q.t; }
+      const intro = ease.back(seg(t, k[0].t - 0.3, k[0].t)) * (p.until !== undefined ? 1 - seg(t, p.until, p.until + 0.3) : 1); if (intro <= 0) return '';
+      const pop = 1 + 0.12 * (1 - ease.out(seg(t, last, last + 0.3)));
+      const ep = this.state.ep, acc = ep.look === 'premium' ? ((ep.palette || {}).accent || '#e2a13b') : '#ffd84a';
+      const txt = `${p.label ? p.label + ' ' : ''}${typeof v === 'number' ? v.toLocaleString('en-US') : v}${p.suffix || ''}`;
+      const fs = p.fs || 52, w = measure(txt, fs) + 64, cx = p.x ?? W / 2, y = p.y ?? 1545, x = cx - w / 2;
+      return `<g opacity="${f1(Math.min(1, intro))}" transform="translate(${f1(cx)} ${y}) scale(${f1(Math.max(0.001, intro) * pop * 1000) / 1000}) translate(${f1(-cx)} ${-y})"><rect x="${f1(x)}" y="${f1(y - fs * 0.92)}" width="${f1(w)}" height="${f1(fs * 1.32)}" rx="14" fill="#05070a" opacity="0.66" stroke="${acc}" stroke-opacity="0.55" stroke-width="2"/><text x="${f1(cx)}" y="${f1(y + fs * 0.08)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${acc}" letter-spacing="2">${esc(txt)}</text></g>`;
+    },
     burnTitle(h, k, out) {
       const fs0 = h.fs || 96, y0 = h.y ?? 470, lh = fs0 * 1.14; k = ease.back(k);
       let s = `<rect x="0" y="${f1(y0 - fs0 - 34)}" width="${W}" height="${f1(h.lines.length * lh + 64)}" fill="#000" opacity="0.5"/>`;
@@ -450,7 +464,7 @@
       } else inner = this.renderScene(i, t);
       let fade = '';
       if ((sc.transition === 'fade' || sc.fade_out) && i === tl.length - 1) { const k = seg(t, st.total - 1.0, st.total - 0.05); if (k > 0) fade = `<rect width="${W}" height="${H}" fill="${PAL.ink}" opacity="${f1(k)}"/>`; }
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}<rect width="${W}" height="${H}" fill="url(#vig)"/>${this.hookTitle(t)}${this.endTitle(t)}${fade}</svg>`;
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}<rect width="${W}" height="${H}" fill="url(#vig)"/>${this.hookTitle(t)}${this.endTitle(t)}${this.progressChip(t)}${fade}</svg>`;
       const stage = document.getElementById('stage'); stage.innerHTML = svg;
       // place moving coins along pipes (exact per-frame positions via getPointAtLength)
       stage.querySelectorAll('g[data-coins]').forEach(g => {
