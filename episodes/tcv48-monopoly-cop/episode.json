@@ -1,0 +1,964 @@
+{
+ "id": "tcv48-monopoly-cop",
+ "number": 48,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Ex-Cop Who Stole the Monopoly Prizes",
+ "central_question": "How did the security chief of McDonald's Monopoly game steal its top prizes for years, and how was he caught?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "20": "twenty",
+   "50,000": "fifty thousand",
+   "301": "three hundred and one",
+   "37": "thirty seven",
+   "FBI": "F B I"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "48",
+  "label": "THE MONOPOLY GAME FRAUD · 1989-2001"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s05_sting",
+   "word": [
+    1,
+    6
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "mc48_jacobson",
+  "mc48_customer",
+  "mc48_printer",
+  "mc48_recruit",
+  "mc48_agent",
+  "mc48_agent2",
+  "mc48_analyst"
+ ],
+ "content_notes": "Remarkable and ironic in tone. Jacobson (a real, convicted person) appears only as a faceless rim-lit silhouette tagged NOT A LIKENESS; no co-defendant or 'winner' is named or depicted as a real person. The customer, printer, recruit, agents and analyst are generic figures. McDonald's, Monopoly and Simon Marketing are named only in narration, captions and plain typed cards: the drinks cup and the game piece are generic drawings with no logo, no Monopoly artwork and no real branding; no badge or insignia of the FBI is drawn. No weapon, no force at the arrest. The statistic and the lesson card name the FTC as their source. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-15.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "mc48_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.05,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "paper",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "cash",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_hook",
+    "M_total"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The prize guard was the thief."
+    },
+    {
+     "who": "narrator",
+     "text": "Over 20 million dollars in prizes.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guard",
+    "thief.",
+    "20",
+    "million"
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_cop",
+   "scene": "mc48_cop",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "keys",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "stamp",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_cop",
+    "M_job"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was a former cop who guarded McDonald's Monopoly pieces."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "former",
+    "cop",
+    "guarded",
+    "monopoly"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_steal",
+   "scene": "mc48_steal",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "coins",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_steal",
+    "M_network"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But he stole the top winning pieces."
+    },
+    {
+     "who": "narrator",
+     "text": "Then handed them out, for a cut.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "stole",
+    "top",
+    "winning",
+    "cut."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_cash",
+   "scene": "mc48_cash",
+   "min_duration": 3.6,
+   "pad_after": 0.05,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "cash",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_cash",
+    "M_years"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Some paid him 50,000 dollars, upfront."
+    },
+    {
+     "who": "narrator",
+     "text": "For twelve years, nobody stopped him.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "50,000",
+    "upfront.",
+    "twelve",
+    "nobody"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_sting",
+   "scene": "mc48_sting",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "radio",
+     "gain": 0.3
+    },
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "shutter",
+     "gain": 0.4
+    },
+    {
+     "at": 0.25,
+     "word": [
+      1,
+      6
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_tip",
+    "M_crew"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Until someone tipped off the FBI."
+    },
+    {
+     "who": "narrator",
+     "text": "Agents posed as a McDonald's film crew.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tipped",
+    "fbi.",
+    "film",
+    "crew."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s06_arrest",
+   "scene": "mc48_arrest",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      0
+     ],
+     "name": "siren",
+     "gain": 0.25
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "cuffs",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "M_arrest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2001, they arrested him and seven others."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "2001,",
+    "arrested",
+    "seven"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "mc48_lesson",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "ping",
+     "gain": 0.3
+    },
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_lesson"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Got a prize message? Save these three rules."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "prize",
+    "message?",
+    "save",
+    "three"
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_stat",
+   "scene": "mc48_stat",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "typing",
+     "gain": 0.25
+    },
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      3
+     ],
+     "name": "riser",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "M_stat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Americans reported losing 301 million to fake prizes."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "301",
+    "million",
+    "fake",
+    "prizes."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_end",
+   "scene": "mc48_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      6
+     ],
+     "name": "door",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_sentence",
+    "M_hook"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He then got 37 months in prison."
+    },
+    {
+     "who": "narrator",
+     "text": "This time, someone else was the guard.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "37",
+    "months",
+    "prison.",
+    "guard."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "M_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Jerome P. 'Jerry' Jacobson, director of security at Simon Marketing (the firm that ran McDonald's promotional games), stole high-value winning game pieces that he was responsible for securing. Narration: 'The prize guard was the thief.' Last line: 'This time, someone else was the guard.'",
+   "sources": [
+    "doj_2001",
+    "wt_2001",
+    "wdun_2003",
+    "dailybeast"
+   ]
+  },
+  {
+   "id": "M_total",
+   "type": "established",
+   "nature": "fact",
+   "text": "The September 2001 indictment alleged that he embezzled more than $20 million worth of high-value winning game pieces; later reporting puts the total at more than $24 million. Narration: 'Over 20 million dollars in prizes.'",
+   "sources": [
+    "upi_2001",
+    "tampa_2001",
+    "dailybeast",
+    "wsb"
+   ]
+  },
+  {
+   "id": "M_cop",
+   "type": "established",
+   "nature": "fact",
+   "text": "Before corporate security he was briefly a police officer in Hollywood, Florida (reported as about a year, ending after an injury around 1980). Narration: 'He was a former cop who guarded McDonald's Monopoly pieces.'",
+   "sources": [
+    "dailybeast",
+    "newsweek"
+   ]
+  },
+  {
+   "id": "M_job",
+   "type": "established",
+   "nature": "fact",
+   "text": "As Simon Marketing's director of security he was in charge of the security of the McDonald's game pieces (Monopoly and other games), printed by Dittler Brothers in Georgia.",
+   "sources": [
+    "wt_2001",
+    "wdun_2003",
+    "dailybeast",
+    "axios"
+   ]
+  },
+  {
+   "id": "M_steal",
+   "type": "established",
+   "nature": "fact",
+   "text": "He took the high-value winning pieces; at sentencing he testified that he took most of the high-value pieces issued from 1995 to 2001; reporting dates the first thefts to 1989.",
+   "sources": [
+    "wdun_2003",
+    "yahoo_2003",
+    "dailybeast",
+    "axios"
+   ]
+  },
+  {
+   "id": "M_network",
+   "type": "established",
+   "nature": "fact",
+   "text": "He passed the pieces to relatives, friends and recruited 'winners', who redeemed them and gave him a cut.",
+   "sources": [
+    "upi_2001",
+    "dailybeast",
+    "axios",
+    "ajc"
+   ]
+  },
+  {
+   "id": "M_cash",
+   "type": "established",
+   "nature": "fact",
+   "text": "Some recruits paid him cash upfront for a piece, reported as upward of $50,000 (Axios: kickbacks of $45,000 or $50,000). Narration: 'Some paid him 50,000 dollars, upfront.'",
+   "sources": [
+    "dailybeast",
+    "axios",
+    "cnbc"
+   ]
+  },
+  {
+   "id": "M_years",
+   "type": "established",
+   "nature": "fact",
+   "text": "The scheme is reported to have run for about 12 years, 1989 to 2001 (the indictment: 'as far back as the late 1980s'), until the 2001 arrests. Narration: 'For twelve years, nobody stopped him.'",
+   "sources": [
+    "dailybeast",
+    "axios",
+    "wsb",
+    "upi_2001"
+   ]
+  },
+  {
+   "id": "M_tip",
+   "type": "established",
+   "nature": "fact",
+   "text": "The investigation began with a tip to the FBI's Jacksonville office in 2000.",
+   "sources": [
+    "wsb",
+    "ajc",
+    "cnbc"
+   ]
+  },
+  {
+   "id": "M_crew",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: during the investigation, FBI agents posed as a McDonald's film crew to visit and film one of the 'winners' at home. Narration: 'Agents posed as a McDonald's film crew.'",
+   "sources": [
+    "dailybeast",
+    "newsweek"
+   ]
+  },
+  {
+   "id": "M_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 21 August 2001 the Justice Department and FBI announced the arrests of eight people, Jacobson among them, in operation 'Final Answer', charged with conspiracy to commit mail fraud. Narration: 'In 2001, they arrested him and seven others.'",
+   "sources": [
+    "doj_2001",
+    "doj_speech",
+    "cnn_2001",
+    "abc_2001"
+   ]
+  },
+  {
+   "id": "M_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "He pleaded guilty to conspiracy to commit mail fraud and two counts of mail fraud and in January 2003, aged 59, was sentenced to 37 months in prison (restitution reported as more than $13.4 million). Narration: 'He then got 37 months in prison.'",
+   "sources": [
+    "wdun_2003",
+    "yahoo_2003",
+    "ajc"
+   ]
+  },
+  {
+   "id": "M_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (FTC consumer advice): real prizes are free, so paying to collect is a sign of a scam; scammers ask for gift cards, wire transfers, cash or crypto; there is no reason to give a bank account or card number to claim a prize. Rows: 'REAL PRIZES ARE FREE', 'NO GIFT CARDS OR WIRES', 'NEVER GIVE BANK DETAILS'.",
+   "sources": [
+    "ftc_prize",
+    "ftc_alert",
+    "sj_da"
+   ]
+  },
+  {
+   "id": "M_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): per the FTC's most recent data at the time of its April 2023 consumer alert, people reported losing $301 million to prize, sweepstakes and lottery fraud, an average of $907 each (the FTC counts reports to it from consumers in America). Narration: 'Americans reported losing 301 million to fake prizes.' (the counter shows the dollar sign)",
+   "sources": [
+    "ftc_alert",
+    "sj_da"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "doj_2001",
+   "publisher": "U.S. Department of Justice",
+   "title": "Attorney General remarks / press release on operation \"Final Answer\" (eight arrests)",
+   "url": "https://www.justice.gov/archive/opa/pr/2001/August/422ag.htm",
+   "date": "2001-08-21",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "doj_speech",
+   "publisher": "U.S. Department of Justice",
+   "title": "Remarks on Operation Final Answer",
+   "url": "https://www.justice.gov/archive/ag/speeches/2001/0821operationfinal.htm",
+   "date": "2001-08-21",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cnn_2001",
+   "publisher": "CNN (breaking news transcript)",
+   "title": "Eight charged in McDonald's game scheme",
+   "url": "https://www.cnn.com/TRANSCRIPTS/0108/21/bn.08.html",
+   "date": "2001-08-21",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "abc_2001",
+   "publisher": "ABC News",
+   "title": "Several Charged With Stealing McDonald's Prizes",
+   "url": "https://abcnews.go.com/US/story?id=92617",
+   "date": "2001-08",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "upi_2001",
+   "publisher": "UPI",
+   "title": "21 indicted in McDonald's scam",
+   "url": "https://www.upi.com/Archives/2001/09/10/21-indicted-in-McDonalds-scam/6191000094400/",
+   "date": "2001-09-10",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "tampa_2001",
+   "publisher": "Tampa Bay Times",
+   "title": "Twenty-one indicted in McDonald's scam",
+   "url": "https://www.tampabay.com/archive/2001/09/11/twenty-one-indicted-in-mcdonald-s-scam/",
+   "date": "2001-09-11",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "wt_2001",
+   "publisher": "The Washington Times",
+   "title": "McDonald's game indictment (Sept 2001)",
+   "url": "https://www.washingtontimes.com/news/2001/sep/11/20010911-025336-2557r/",
+   "date": "2001-09-11",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "wdun_2003",
+   "publisher": "AccessWDUN (AP)",
+   "title": "Former security chief sentenced in McDonald's game scam",
+   "url": "https://accesswdun.com/print/2003/1/185792",
+   "date": "2003-01",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "yahoo_2003",
+   "publisher": "Yahoo News (AP), via McSpotlight archive",
+   "title": "Ex-security chief gets 37 months in McDonald's game fraud",
+   "url": "https://www.mcspotlight.org/media/press/mcds/yahoonews100103.html",
+   "date": "2003-01",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "dailybeast",
+   "publisher": "The Daily Beast",
+   "title": "How an Ex-Cop Rigged McDonald's Monopoly Game and Stole Millions",
+   "url": "https://www.thedailybeast.com/how-an-ex-cop-rigged-mcdonalds-monopoly-game-and-stole-millions",
+   "date": "2018-07-28",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "newsweek",
+   "publisher": "Newsweek",
+   "title": "McDonald's Monopoly game was a scam: the truth revealed",
+   "url": "https://newsweek.com/mcdonalds-monopoly-game-was-scam-truth-revealed-new-movie-1057001",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "axios",
+   "publisher": "Axios",
+   "title": "The wild scheme to rig McDonald's Monopoly",
+   "url": "https://www.axios.com/2018/07/29/mcdonalds-monopoly-fraud-rigged-game",
+   "date": "2018-07-29",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ajc",
+   "publisher": "Atlanta Journal-Constitution (Cox)",
+   "title": "McDonald's Monopoly game was rigged once. Here's how it happened",
+   "url": "https://www.ajc.com/news/national/mcdonald-monopoly-game-was-rigged-once-here-how-happened/JaUZYlsf7memWDPdl9smlM/",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "wsb",
+   "publisher": "WSB-TV (Cox)",
+   "title": "McDonald's Monopoly game rigged for more than $24M, and it traces back to Georgia",
+   "url": "https://www.wsbtv.com/news/trending-now/mcdonalds-monopoly-game-rigged-for-more-than-24m-and-it-traces-back-to-georgia/803703218",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cnbc",
+   "publisher": "CNBC",
+   "title": "How the 'McMillions' scam rigged the McDonald's Monopoly game",
+   "url": "https://www.cnbc.com/2020/02/07/how-mcmillions-scam-rigged-the-mcdonalds-monopoly-game.html",
+   "date": "2020-02-07",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ftc_alert",
+   "publisher": "Federal Trade Commission (consumer alert)",
+   "title": "Are you really the lucky winner? Spot the prize scams",
+   "url": "https://consumer.ftc.gov/consumer-alerts/2023/04/are-you-really-lucky-winner-spot-prize-scams",
+   "date": "2023-04",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "sj_da",
+   "publisher": "San Joaquin County District Attorney (consumer alert, republishing the FTC alert)",
+   "title": "Are you really the lucky winner? Spot the prize scams",
+   "url": "https://www.sjgov.org/department/da/news/consumer-alerts/consumer-alerts/2023/04/21/are-you-really-the-lucky-winner-spot-the-prize-scams",
+   "date": "2023-04-21",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ftc_prize",
+   "publisher": "Federal Trade Commission (consumer advice)",
+   "title": "Fake Prize, Sweepstakes, and Lottery Scams",
+   "url": "https://consumer.ftc.gov/articles/fake-prize-sweepstakes-lottery-scams",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "aarp",
+   "publisher": "AARP (citing FTC data)",
+   "title": "Sweepstakes scams",
+   "url": "https://www.aarp.org/money/scams-fraud/info-2019/sweepstakes",
+   "date": "2024",
+   "accessed": "search-result extract only, 2026-10-15"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#14222c",
+  "mid": "#cbbca2",
+  "accent": "#e3a83a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "HE GUARDED THE PRIZES"
+   },
+   {
+    "text": "AND STOLE THE BIG ONES",
+    "colour": "#e3a83a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "THE EX-COP WAS THE THIEF."
+   },
+   {
+    "text": "GENIUS OR SNAKE? 👇",
+    "colour": "#e3a83a"
+   },
+   {
+    "text": "TAG THE MATE WHO'D DO THIS",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "YEAR",
+  "keys": [
+   {
+    "t": 8.57,
+    "v": "1989"
+   },
+   {
+    "t": 18.3,
+    "v": "2000"
+   },
+   {
+    "t": 23.15,
+    "v": "2001"
+   }
+  ],
+  "y": 330,
+  "until": 26.29
+ },
+ "legal_status_verified": "2026-10-15"
+}
