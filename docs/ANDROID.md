@@ -16,6 +16,7 @@ Everything runs on GitHub. No computer, no paid services.
    - **seed**: a number (same number = same creative choices) or `random`
    - **quality**: `final` (1080×1920, 30 fps) or `preview` (540×960, 15 fps, about 3× faster)
    - **target_duration**: leave blank unless you want the narration nudged faster/slower
+   - **voice**: leave blank for the episode's Piper narrator, or type a voice profile name from `voices/` (e.g. `sample-bria`) to use the cloned-voice engine
 6. Tap the green **Run workflow** button.
 7. Wait. The run appears at the top of the Actions list; tap it to watch. Measured on GitHub's free runners: a **preview** run took 1 min 52 s end to end; a **final** 1080p run takes roughly 5–8 minutes (the voice model, ~60 MB, is downloaded on the first run and cached afterwards).
 8. When the job shows a green tick, scroll to the bottom of the run page to **Artifacts**.

@@ -1,4 +1,5 @@
-"""Per-scene narration with Piper TTS, cached by (voice, text) hash."""
+"""Per-scene narration, cached by (voice, text) hash. Piper voices are synthesised here; voice profiles
+(voices/<name>/profile.json, e.g. a cloned narrator) are routed to pipeline/voice/."""
 from __future__ import annotations
 import hashlib, json, wave
 from pathlib import Path
@@ -36,6 +37,11 @@ _VOICES = {}
 
 
 def narrate_scene(voice_name: str, text: str, length_scale: float = 1.0, speaker=None) -> Path:
+    # Voice profiles (voices/<name>/profile.json) go through the shared voice engine; Piper voices are unchanged.
+    from pipeline.voice.profiles import profile_exists
+    if profile_exists(voice_name):
+        from pipeline.voice import synthesize
+        return synthesize(voice_name, text, length_scale)
     CACHE.mkdir(parents=True, exist_ok=True)
     out = CACHE / f"{_key(voice_name, text, length_scale, speaker)}.wav"
     if out.exists():

@@ -1,0 +1,14 @@
+{
+  "name": "sample-bria",
+  "version": 1,
+  "engine": "pocket",
+  "model": "pocket-tts",
+  "reference": "model://pocket-tts/test_wavs/bria.wav",
+  "notes": "PUBLIC sample voice shipped with the Pocket TTS package (Kyutai test clip). Used to prove the plumbing before any private voice exists. Not a real person's identity for the channel.",
+  "params": { "threads": 2, "num_steps": 5, "reference_seconds": 15 },
+  "sentence_gap": 0.28,
+  "min_words_per_chunk": 8,
+  "max_words_per_chunk": 60,
+  "lexicon": {},
+  "validation": { "asr": true, "max_wer": 0.08, "speaker": true, "min_speaker_sim": 0.45, "max_attempts": 3, "strict": false }
+}

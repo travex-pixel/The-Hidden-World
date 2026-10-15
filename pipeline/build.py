@@ -88,6 +88,7 @@ def main(argv=None) -> int:
     ap.add_argument("--visual", choices=["art", "svg"], default=None, help="art = illustrated panels (episode default); svg = code-drawn scenes")
     ap.add_argument("--plan-only", action="store_true", help="stop after writing plan.json (for quick stills with pipeline/stills.mjs)")
     ap.add_argument("--reuse-video", action="store_true", help="skip frame rendering and reuse out/<id>/video_silent.mp4 (audio-only iteration)")
+    ap.add_argument("--voice", default=None, help="override the episode's narrator voice: a Piper voice name or a profile under voices/ (e.g. sample-bria)")
     args = ap.parse_args(argv)
 
     try:
@@ -100,11 +101,18 @@ def main(argv=None) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     log(f"episode={ep['id']} seed={seed} quality={args.quality} -> {out_dir}")
 
+    if args.voice:
+        from pipeline.voice.profiles import profile_exists
+        from pipeline.voices import APPROVED
+        if not (profile_exists(args.voice) or args.voice in APPROVED):
+            log(f"ERROR: --voice {args.voice!r} is neither a profile under voices/ nor an approved Piper voice"); return 2
+        ep["narrator_voice"] = args.voice
+        log(f"narrator voice override: {args.voice}")
     decisions = make_decisions(ep, seed)
     (out_dir / "decisions.json").write_text(json.dumps(decisions, indent=2))
 
     # 1. narration (cached)
-    log("narration: synthesising with Piper (cached per line)")
+    log(f"narration: {ep['narrator_voice']} (cached per line)")
     length_scale = round(1.0 / float(ep.get("narration_speed", 1.0)), 3)
     narr = narrate_episode(ep, length_scale)
     tl = build_timeline(ep, narr, args.target_duration)
@@ -116,6 +124,12 @@ def main(argv=None) -> int:
         tl = build_timeline(ep, narr, args.target_duration); total = tl[-1]["end"]
     lo, hi = ep["target_duration_seconds"]
     log(f"timeline: {len(tl)} scenes, {total:.2f}s (target {lo}-{hi}s)")
+    from pipeline.voice import report_for
+    vrep = report_for([n["path"] for n in narr])
+    if vrep.get("clips"):
+        (out_dir / "voice_report.json").write_text(json.dumps(vrep, indent=2))
+        log(f"voice: {vrep['profile']} ({vrep['engine']}) {vrep['clips']} clips, rtf={vrep['rtf']}, wer mean/max={vrep['wer_mean']}/{vrep['wer_max']}, "
+            f"speaker sim mean/min={vrep['speaker_sim_mean']}/{vrep['speaker_sim_min']}, retries={vrep['retries']}, all_ok={vrep['all_ok']}")
     if not (lo <= total <= hi):
         log(f"ERROR: total duration {total:.2f}s outside target range {lo}-{hi}s. Edit narration/min_duration or pass --target-duration.")
         return 3

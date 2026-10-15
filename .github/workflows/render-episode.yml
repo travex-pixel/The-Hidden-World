@@ -24,6 +24,11 @@ on:
         required: false
         default: ""
         type: string
+      voice:
+        description: "Optional narrator override: a profile under voices/ (e.g. sample-bria) or an approved Piper voice. Blank = episode default"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: read
@@ -53,12 +58,23 @@ jobs:
       - name: Install Playwright Chromium
         run: npm install --no-fund --no-audit && npx playwright install --with-deps chromium
 
-      - name: Cache narrator voice and narration
+      - name: Cache voices, models and narration
         uses: actions/cache@v4
         with:
           path: .cache
-          key: hw-cache-${{ hashFiles('episodes/**/episode.json', 'pipeline/narrate.py', 'pipeline/voices.py') }}
+          key: hw-cache-${{ hashFiles('episodes/**/episode.json', 'characters/*.json', 'pipeline/narrate.py', 'pipeline/voices.py', 'pipeline/voice/**', 'voices/**/profile.json') }}-${{ inputs.voice }}
           restore-keys: hw-cache-
+
+      - name: Mount private voice vault (only if the secrets exist; never logged)
+        if: ${{ env.VAULT_REPO != '' }}
+        env:
+          VAULT_REPO: ${{ secrets.VOICE_VAULT_REPO }}
+          VAULT_TOKEN: ${{ secrets.VOICE_VAULT_TOKEN }}
+        run: |
+          set +x
+          git clone --quiet --depth 1 "https://x-access-token:${VAULT_TOKEN}@github.com/${VAULT_REPO}.git" voices/private
+          rm -rf voices/private/.git
+          echo "vault mounted: $(ls voices/private | wc -l) profile folder(s)"
 
       - name: Import illustration panels
         run: |
@@ -76,6 +92,7 @@ jobs:
         run: |
           EXTRA=""
           if [ -n "${{ inputs.target_duration }}" ]; then EXTRA="--target-duration ${{ inputs.target_duration }}"; fi
+          if [ -n "${{ inputs.voice }}" ]; then EXTRA="$EXTRA --voice ${{ inputs.voice }}"; fi
           python -m pipeline.build "${{ inputs.episode }}" --seed "${{ inputs.seed }}" --quality "${{ inputs.quality }}" $EXTRA
 
       - name: Summary
@@ -92,11 +109,12 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.episode }}-seed${{ inputs.seed }}-${{ inputs.quality }}
+          name: ${{ inputs.episode }}-seed${{ inputs.seed }}-${{ inputs.quality }}${{ inputs.voice != '' && format('-{0}', inputs.voice) || '' }}
           path: |
             out/${{ inputs.episode }}/${{ inputs.episode }}.mp4
             out/${{ inputs.episode }}/contact_sheet.png
             out/${{ inputs.episode }}/verify.json
+            out/${{ inputs.episode }}/voice_report.json
             out/${{ inputs.episode }}/script.md
             out/${{ inputs.episode }}/timeline.json
             out/${{ inputs.episode }}/decisions.json
@@ -108,6 +126,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: debug-${{ inputs.episode }}
-          path: out/
+          path: |
+            out/
+            !voices/
           retention-days: 7
           if-no-files-found: ignore
