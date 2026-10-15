@@ -314,6 +314,22 @@ def _narrate_recorded(text: str) -> tuple[np.ndarray, int]:
         raise RuntimeError(f"--tts recorded: no recorded take for line {text!r}; re-record it or re-run pipeline.voice_import")
     x, sr = read_wav(m["dir"] / ln["file"])
     x = trim_silence(x, sr, thresh=0.02)
+    # a dramatic pause inside a line ("How? ... He phoned staff") is kept but held to 0.35 s: long gaps read as dead air
+    hop = int(0.01 * sr); n = len(x) // hop
+    if n > 10:
+        quiet = 20 * np.log10(np.sqrt(np.mean(x[: n * hop].reshape(n, hop) ** 2, axis=1)) + 1e-12) < -42
+        keep, i = np.ones(len(x), bool), 0
+        while i < n:
+            if quiet[i]:
+                j = i
+                while j < n and quiet[j]:
+                    j += 1
+                if j - i > 45 and i > 0 and j < n:
+                    a0 = (i + 17) * hop; a1 = (j - 18) * hop; keep[a0:a1] = False
+                i = j
+            else:
+                i += 1
+        x = x[keep]
     peak = float(np.max(np.abs(x))) or 1.0
     return (x / peak * 0.89).astype(np.float32), sr
 
