@@ -297,3 +297,5 @@
 - 2026-10-15 21:43:53 tcv52-fake-invoices: RENDER FAILED, see out/tcv52-fake-invoices/ and fix; re-run produce.py 52
 - 2026-10-15 21:43:53 produce 49 --force: regenerating episode data
 - 2026-10-15 21:43:54 tcv49-twitter-teen: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 21:50:17 produce 49 --force: regenerating episode data
+- 2026-10-15 21:50:17 tcv49-twitter-teen: rendering (final60, seed 1, tts recorded)
