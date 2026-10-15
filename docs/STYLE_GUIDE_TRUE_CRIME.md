@@ -71,6 +71,8 @@ One video is one sample: posting time and the algorithm's test audience also var
 
 **Update, 2026-10-15 (Case File 44 at 5 h).** 640 views and still rising (typical ≈150 at this point), skip rate 29.8 % (the best so far), the first comments (rate 0.4 %, "higher"), and the end of the video held about 22 % (the old tail fell to 5–15 %). Still 0 shares and 0 saves; likes only on the hook and the end card. `retention.py` puts the worst post-hook loss on the map fly-in at 3–8 s (≈4 %/s). Rules from 48: no map in the first 10 s, save cards useful to the viewer himself, a mate-to-mate send line, and a payoff "like moment" every ~10 s.
 
+**Update, 2026-10-16 (45–47 at one hour).** Case File 47 hit a 9.3 % skip rate (best ever) and a 2.8 % comment rate: its frame 1 moves from 0.0 s and it has no map before 10 s. 46 lost about 70 % of viewers by 0:05 (its first line is an event, not a contradiction, and it cuts to a map at 0:05); 45 also cuts to a map at 0:05 and loses about 13 %/s at 4–5 s. Rules from 53: frame 1 moves from 0.0 s, the first line is a contradiction, and there is no map before 10 s.
+
 ## Sound
 - **Score:** `episode.score` (`pipeline/score.py`). The sections are:
 
