@@ -150,7 +150,7 @@ def build(h):
     ep["engagement_rules"] = True
     ep["palette"] = {"shadow": "#101a26", "mid": "#b4bcc4", "accent": "#52c4b4"}
     ep["geo"] = {"north_america": json.loads((h.ROOT / "series" / "true-crime" / "geo" / "north_america.json").read_text())}
-    ep["target_duration_seconds"] = [30, 50]
+    ep["target_duration_seconds"] = [30, 55]   # the owner's own read runs a little longer than the synthetic voice
     ep["music"]["beat_snap"] = 0.5
     ep["hook_title"] = {"lines": [{"text": "A 17-YEAR-OLD HIJACKED"}, {"text": "OBAMA, MUSK AND APPLE", "colour": "#52c4b4"}],
                         "until": 2.6, "y": 400}

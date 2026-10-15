@@ -135,7 +135,7 @@ def build(h):
     ep["look"] = "premium"
     ep["engagement_rules"] = True
     ep["palette"] = {"shadow": "#0f2630", "mid": "#c8b89e", "accent": "#e2a13b"}
-    ep["target_duration_seconds"] = [30, 50]
+    ep["target_duration_seconds"] = [30, 55]   # the owner's own read runs a little longer than the synthetic voice
     ep["music"]["beat_snap"] = 0.5
     ep["hook_title"] = {"lines": [{"text": "HE EMAILED FAKE INVOICES"}, {"text": "GOOGLE AND FACEBOOK PAID", "colour": "#e2a13b"}],
                         "until": 2.6, "y": 400}

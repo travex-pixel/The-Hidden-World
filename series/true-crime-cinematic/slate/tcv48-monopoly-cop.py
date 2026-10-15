@@ -138,7 +138,7 @@ def build(h):
     ep["look"] = "premium"
     ep["engagement_rules"] = True
     ep["palette"] = {"shadow": "#14222c", "mid": "#cbbca2", "accent": "#e3a83a"}
-    ep["target_duration_seconds"] = [30, 50]
+    ep["target_duration_seconds"] = [30, 55]   # the owner's own read runs a little longer than the synthetic voice
     ep["music"]["beat_snap"] = 0.5
     ep["hook_title"] = {"lines": [{"text": "HE GUARDED THE PRIZES"}, {"text": "AND STOLE THE BIG ONES", "colour": "#e3a83a"}],
                         "until": 2.6, "y": 400}

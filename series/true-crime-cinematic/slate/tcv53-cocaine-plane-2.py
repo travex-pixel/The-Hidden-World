@@ -153,7 +153,7 @@ def build(h):
     ep["engagement_rules"] = True
     # Part 1's family (jungle green shadow, red-dirt sand mid, Part 1's headline yellow as the one accent: the plane)
     ep["palette"] = {"shadow": "#0e2620", "mid": "#c9b08c", "accent": "#f2c14e"}
-    ep["target_duration_seconds"] = [30, 50]
+    ep["target_duration_seconds"] = [30, 55]   # the owner's own read runs a little longer than the synthetic voice
     ep["music"]["beat_snap"] = 0.5
     ep["hook_title"] = {"lines": [{"text": "PART 2: WHO SENT THE"}, {"text": "COCAINE PLANE TO PNG?", "colour": "#f2c14e"}],
                         "until": 2.8, "y": 400}
