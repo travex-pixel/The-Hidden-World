@@ -282,3 +282,5 @@
 - 2026-10-15 12:43:05 tcv51-syrup-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_51_syrup_heist.mp4 (39.2s, 21.4 MB, sha256 6a6555a4a1cf)
 - 2026-10-15 12:43:05 produce 49 --force: regenerating episode data
 - 2026-10-15 12:43:05 tcv49-twitter-teen: rendering (final60, seed 1)
+- 2026-10-15 13:02:42 produce 48 --force: regenerating episode data
+- 2026-10-15 13:02:42 tcv48-monopoly-cop: rendering (final60, seed 1, tts recorded)
