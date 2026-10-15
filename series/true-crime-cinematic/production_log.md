@@ -290,3 +290,10 @@
 - 2026-10-15 14:01:20 tcv51-syrup-heist: rendering (final60, seed 1, tts recorded)
 - 2026-10-15 20:47:14 produce 51 --force: regenerating episode data
 - 2026-10-15 20:47:15 tcv51-syrup-heist: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 21:43:08 tcv51-syrup-heist: rendered in 3354s
+- 2026-10-15 21:43:53 tcv51-syrup-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_51_syrup_heist.mp4 (46.5s, 24.3 MB, sha256 b74d1df72942)
+- 2026-10-15 21:43:53 produce 52 --force: regenerating episode data
+- 2026-10-15 21:43:53 tcv52-fake-invoices: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 21:43:53 tcv52-fake-invoices: RENDER FAILED, see out/tcv52-fake-invoices/ and fix; re-run produce.py 52
+- 2026-10-15 21:43:53 produce 49 --force: regenerating episode data
+- 2026-10-15 21:43:54 tcv49-twitter-teen: rendering (final60, seed 1, tts recorded)
