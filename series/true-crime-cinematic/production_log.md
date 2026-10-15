@@ -250,3 +250,13 @@
 - 2026-10-15 03:15:36 tcv44-oldest-robber: VERIFIED -> series/true-crime-cinematic/output/true_crime_44_oldest_robber.mp4 (40.8s, 21.8 MB, sha256 dea2cfe002ef)
 - 2026-10-15 05:22:36 produce 46 --force: regenerating episode data
 - 2026-10-15 05:22:36 tcv46-gentleman-robber: rendering (final60, seed 1)
+- 2026-10-15 05:57:49 tcv46-gentleman-robber: rendered in 2112s
+- 2026-10-15 05:58:42 tcv46-gentleman-robber: VERIFIED -> series/true-crime-cinematic/output/true_crime_46_gentleman_robber.mp4 (41.5s, 22.0 MB, sha256 e8a766d8b4e6)
+- 2026-10-15 05:58:42 produce 45 --force: regenerating episode data
+- 2026-10-15 05:58:42 tcv45-cartel-grandad: rendering (final60, seed 1)
+- 2026-10-15 06:40:12 tcv45-cartel-grandad: rendered in 2490s
+- 2026-10-15 06:41:00 tcv45-cartel-grandad: VERIFIED -> series/true-crime-cinematic/output/true_crime_45_cartel_grandad.mp4 (39.9s, 21.8 MB, sha256 a97f430e8f2a)
+- 2026-10-15 06:41:00 produce 47 --force: regenerating episode data
+- 2026-10-15 06:41:00 tcv47-barefoot-bandit: rendering (final60, seed 1)
+- 2026-10-15 07:21:55 tcv47-barefoot-bandit: rendered in 2454s
+- 2026-10-15 07:22:49 tcv47-barefoot-bandit: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_47

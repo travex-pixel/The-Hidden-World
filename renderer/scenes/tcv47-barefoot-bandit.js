@@ -203,10 +203,10 @@
       const t = ctx.t, T = ctx.T, l2 = LS(ctx, 1, 2.9);
       return E.cine.shot(ctx, {
         set: 'bb47_store', setOpts: { morning: 0 }, grade: 'night', dof: true, haze: 0.4,
-        cam: { from: { x: 0, y: 60, z: 1.04 }, to: { x: 10, y: 80, z: 1.13 }, settle: true },
+        cam: { from: { x: -30, y: 60, z: 1.0 }, to: { x: 10, y: 80, z: 1.13 }, settle: true },
         figures: [
           { id: 'bb47_colton', x: 150, y: 1730, scale: 0.9, dir: 1, turn: 0.4, pose: 'kneel', propOverride: null, silhouette: 'cool', depth: 1.0,
-            keys: [{ at: 1.1, pose: 'kneel', headTurn: 0.35, dur: 0.6 }, { at: l2 + 0.1, x: 205, headTurn: 0, dur: 1.0 }] }
+            keys: [{ at: 0.05, x: 185, headTurn: 0.35, dur: 0.9 }, { at: 1.1, pose: 'kneel', headTurn: 0.1, dur: 0.6 }, { at: l2 + 0.1, x: 215, headTurn: 0, dur: 1.0 }] }
         ],
         props: [
           { depth: 0.99, accent: true, svg: tt => trail(5.4 + 2.6 * seg(tt, 0.0, T - 0.3)) + puff(480, 1660, tt, 0.05) + puff(560, 1430, tt, l2) }
