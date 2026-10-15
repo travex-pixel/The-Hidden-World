@@ -16,7 +16,6 @@
    "17,": "seventeen,",
    "1,000": "a thousand",
    "19.": "nineteen.",
-   "90": "ninety",
    "2016.": "twenty sixteen."
   }
  },
@@ -441,7 +440,7 @@
      "at": -0.4,
      "word": [
       0,
-      5
+      3
      ],
      "name": "riser",
      "gain": 0.25
@@ -450,7 +449,7 @@
      "at": 0.0,
      "word": [
       0,
-      7
+      3
      ],
      "name": "thump",
      "gain": 0.4
@@ -464,16 +463,17 @@
    "lines": [
     {
      "who": "narrator",
-     "text": "For teenagers, burglary arrest rates fell over 90 percent."
+     "text": "Teenagers once had triple the adult burglary arrest rate.",
+     "pause_before": 0.25
     }
    ],
    "shot": {},
    "emphasis": [
-    "teenagers,",
-    "burglary",
-    "fell",
-    "90",
-    "percent."
+    "teenagers",
+    "once",
+    "triple",
+    "adult",
+    "burglary"
    ],
    "section": "C"
   },
@@ -780,11 +780,11 @@
    "id": "B_stat",
    "type": "established",
    "nature": "fact",
-   "text": "STATISTIC (counter): the under-18 (juvenile) burglary arrest rate fell 93 % from its 1980s average to 2020, while the adult rate fell 69 %; by 2020 the two rates were about the same (Council on Criminal Justice burglary fact sheet, July 2024, from OJJDP Statistical Briefing Book data). OJJDP's 'Juvenile Arrests, 2019' independently reports juvenile burglary arrest rates at their lowest since at least 1980, and 'Juvenile Arrests 2004' a 70 % fall from 1980 to 2004. Narration: 'For teenagers, burglary arrest rates fell over 90 percent.' (the card gives the years)",
+   "text": "STATISTIC (counter 1x to 3x): in the 1980s (and 1990s) the juvenile burglary arrest rate was more than three times the adult rate; it has fallen dramatically since the 1980s and is now about the same as the adult rate (Council on Criminal Justice burglary fact sheet, July 2024, from OJJDP data). OJJDP 'Juvenile Arrests 2004': the juvenile burglary arrest rate in 2004 was less than one-third of its 1980 level; OJJDP 'Juvenile Arrests, 2019': lowest since at least 1980. Narration: 'Teenagers once had triple the adult burglary arrest rate.' Card: 'NOW ABOUT EQUAL'. (A 93 % figure seen in one search extract could not be confirmed and is not used.)",
    "sources": [
     "ccj_burg",
-    "ojjdp_2019",
-    "ojjdp_2004"
+    "ojjdp_2004",
+    "ojjdp_2019"
    ]
   },
   {
@@ -36557,20 +36557,20 @@
   "label": "AGE",
   "keys": [
    {
-    "t": 3.33,
+    "t": 3.32,
     "v": 17
    },
    {
-    "t": 5.18,
+    "t": 4.81,
     "v": 18
    },
    {
-    "t": 18.79,
+    "t": 18.42,
     "v": 19
    }
   ],
   "y": 330,
-  "until": 26.75
+  "until": 26.38
  },
  "legal_status_verified": "2026-10-15"
 }

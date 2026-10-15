@@ -6,7 +6,7 @@
    the fun fact "C-YA!"); a cabin at night with a laptop flight simulator and a manual (how did he learn?); a crash-landed
    small plane in a wet clearing at dawn (at least five planes, three crashed); the map from Bloomington, Indiana, to Great
    Abaco, Bahamas (the route draws itself; the biggest reveal, the single impact); the night boat chase off Eleuthera (the
-   only handheld shot, the single shake); the statistic counter at a holiday cabin in the woods; the LESSON at a rural
+   only handheld shot, the single shake); the statistic counter (teen vs adult burglary arrest rate, 1980s: 3x) at a holiday cabin in the woods; the LESSON at a rural
    hangar (captions off); the outcome back on the chalk feet in the first frame's framing with the burned-in end question.
    Smoothness (owner, 44+): mostly cuts and dissolves, one push, one zoom (the end); one slow camera move per shot; settle
    only on the three hero dolly-ins; one shake and one impact in the whole video; screen direction left to right.
@@ -333,19 +333,19 @@
     },
 
     // 7 - the statistic: a holiday cabin in the firs at night; a deputy's torch on the door (she walks left to right); the
-    //     counter 0 -> 93 % with the source credit row beneath it
+    //     counter 1x -> 3x with the source credit row beneath it
     bb47_stat(ctx) {
-      const t = ctx.t, T = ctx.T, bg = WT(ctx, 0, 2, 0.8), nn = WT(ctx, 0, 7, 2.6);
+      const t = ctx.t, T = ctx.T, bg = WT(ctx, 0, 1, 0.5), nn = WT(ctx, 0, 3, 1.0);
       return E.cine.shot(ctx, {
         set: 'cabin_woods', setOpts: { cabinX: 700 }, grade: 'night', haze: 0.5,
         cam: { from: { x: 0, y: 30, z: 1.0 }, to: { x: 20, y: 40, z: 1.07 } },
         figures: [
-          { id: 'bb47_deputy', x: 120, y: 1640, scale: 0.86, dir: 1, turn: 0.45, pose: 'torch', expr: 'focused', depth: 1.02, propOpts: { beamLen: 700 },
+          { id: 'bb47_deputy', x: 120, y: 1760, scale: 0.8, dir: 1, turn: 0.45, pose: 'torch', expr: 'focused', depth: 1.02, propOpts: { beamLen: 700 },
             walk: { at: 0.1, dur: Math.max(1.4, T - 0.8), cadence: 4.2, stride: 12, from: 120, to: 360 } }
         ],
         overlays: [
-          { type: 'counter', at: bg - 0.1, dur: Math.max(1.2, nn - bg + 0.3), from: 0, to: 93, suffix: '%', label: 'UNDER-18 BURGLARY ARREST RATE', y: 600, fs: 170 },
-          { type: 'label', at: bg + 0.2, x: 90, y: 770, text: 'DOWN · 1980s AVERAGE TO 2020', fs: 34, sub: 'Council on Criminal Justice, from OJJDP data' }
+          { type: 'counter', at: bg - 0.1, dur: Math.max(1.0, nn - bg + 0.3), from: 1, to: 3, suffix: '×', label: 'TEEN VS ADULT BURGLARY, 1980s', y: 600, fs: 170 },
+          { type: 'label', at: nn + 0.3, x: 90, y: 770, text: 'NOW ABOUT EQUAL', fs: 36, sub: 'Arrest rates · Council on Criminal Justice, 2024' }
         ],
         tag: TAG
       });

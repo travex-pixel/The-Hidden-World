@@ -12,9 +12,9 @@ boat chase. He pleaded guilty in state court (Island County, sentenced 16 Dec 20
 20th Century Fox had paid more than $1 million towards it. In Sept 2016 he moved from prison to work release in Seattle
 and was later released from it under supervision. Nothing is said about his life now.
 
-The "wait, what?" statistic (a counter): the under-18 burglary arrest rate fell 93 % from its 1980s average to 2020 (Council
-on Criminal Justice fact sheet, from OJJDP Statistical Briefing Book data; OJJDP's "Juvenile Arrests, 2019": juvenile
-burglary arrest rates at their lowest since at least 1980). Narration: "over 90 percent".
+The "wait, what?" statistic (a counter 1x to 3x): in the 1980s teens were arrested for burglary at more than three times
+the adult rate; now the two rates are about the same (Council on Criminal Justice fact sheet, 2024, from OJJDP data; OJJDP
+"Juvenile Arrests 2004": the 2004 juvenile burglary arrest rate was under one-third of 1980's).
 
 Tone: remarkable and ironic, never glamorising theft and never mocking his childhood. No weapon is drawn (he had a gun at the
 capture; it is not shown or mentioned) and no one is hurt on screen. Harris-Moore (alive) appears only as a faceless
@@ -57,9 +57,9 @@ def build(h):
           "revelation", ["B_capture", "B_age19"], sfx=[fx(0.0, "water", 0.3), fw(0, 4, "siren", 0.25, -0.2), fw(0, 6, "thud", 0.4, -0.03), fw(1, 4, "cuffs", 0.35, 0.0)],
           emph=["week", "boat", "chase", "ended", "only", "19."], min_d=3.6, pad=0.1, tr="cut"),
         # C - the statistic (a counter): a holiday cabin in the woods at night, a deputy's torch on the door
-        S("s07_stat", "bb47_stat", [N("For teenagers, burglary arrest rates fell over 90 percent.")],
-          "tension", ["B_stat"], sfx=[fw(0, 0, "tick", 0.25, 0.0), fw(0, 5, "riser", 0.25, -0.4), fw(0, 7, "thump", 0.4, 0.0)],
-          emph=["teenagers,", "burglary", "fell", "90", "percent."], min_d=3.6, pad=0.2, tr="dissolve"),
+        S("s07_stat", "bb47_stat", [N("Teenagers once had triple the adult burglary arrest rate.", pause_before=0.25)],
+          "tension", ["B_stat"], sfx=[fw(0, 0, "tick", 0.25, 0.0), fw(0, 3, "riser", 0.25, -0.4), fw(0, 3, "thump", 0.4, 0.0)],
+          emph=["teenagers", "once", "triple", "adult", "burglary"], min_d=3.6, pad=0.2, tr="dissolve"),
         # B - the LESSON (save trigger): a rural hangar; an owner locks her plane; the checklist; captions OFF
         S("s08_lesson", "bb47_lesson", [N("Own a plane or cabin? Save these three.")],
           "tension-rise", ["B_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 4, "keys", 0.3, 0.0), fw(0, 6, "chime", 0.25, 0.0)],
@@ -147,8 +147,8 @@ def build(h):
         C("B_capture", "A week later, before dawn on 11 July 2010, Bahamian police caught him off Eleuthera (reported as Harbour Island / northern Eleuthera) after a high-speed boat chase in a stolen boat; police disabled the boat's motor. (He threw a gun into the water; not shown or mentioned.) Narration: 'A week later, a boat chase ended it.'",
           ["nbc_caught", "pdn", "salon_caught"]),
         C("B_age19", "He was 19 at his capture.", ["nbc_caught", "pdn", "salon_caught"]),
-        C("B_stat", "STATISTIC (counter): the under-18 (juvenile) burglary arrest rate fell 93 % from its 1980s average to 2020, while the adult rate fell 69 %; by 2020 the two rates were about the same (Council on Criminal Justice burglary fact sheet, July 2024, from OJJDP Statistical Briefing Book data). OJJDP's 'Juvenile Arrests, 2019' independently reports juvenile burglary arrest rates at their lowest since at least 1980, and 'Juvenile Arrests 2004' a 70 % fall from 1980 to 2004. Narration: 'For teenagers, burglary arrest rates fell over 90 percent.' (the card gives the years)",
-          ["ccj_burg", "ojjdp_2019", "ojjdp_2004"]),
+        C("B_stat", "STATISTIC (counter 1x to 3x): in the 1980s (and 1990s) the juvenile burglary arrest rate was more than three times the adult rate; it has fallen dramatically since the 1980s and is now about the same as the adult rate (Council on Criminal Justice burglary fact sheet, July 2024, from OJJDP data). OJJDP 'Juvenile Arrests 2004': the juvenile burglary arrest rate in 2004 was less than one-third of its 1980 level; OJJDP 'Juvenile Arrests, 2019': lowest since at least 1980. Narration: 'Teenagers once had triple the adult burglary arrest rate.' Card: 'NOW ABOUT EQUAL'. (A 93 % figure seen in one search extract could not be confirmed and is not used.)",
+          ["ccj_burg", "ojjdp_2004", "ojjdp_2019"]),
         C("B_lesson", "LESSON CARD (practical): do not leave or hide keys in or around the aircraft/hangar (AOPA) or a spare house key outside (LA County Sheriff); add an auxiliary/second lock (AOPA: throttle, prop or prop-control locks; LASD: dead-bolt locks); report anyone suspicious or lurking (AOPA Airport Watch 'Lock up, look out'; Ramsey County Sheriff). Rows: 'NEVER HIDE A SPARE KEY', 'ADD A SECOND LOCK', 'REPORT ANYONE LURKING'.",
           ["aopa_lock", "aopa_watch", "lasd", "ramsey"]),
         C("B_sentence", "State: pleaded guilty to some 30 counts in Island County Superior Court; sentenced 16 Dec 2011 to 7 years 3 months (AVweb; AP 'more than 7 years'). Federal: pleaded guilty 17 June 2011 to seven charges incl. interstate transportation of stolen aircraft; sentenced 27 Jan 2012 to 6 1/2 years, concurrent with the state term. Narration: 'He got over seven years'.",
@@ -194,7 +194,7 @@ def build(h):
     ep["progress"] = {"label": "AGE", "keys": keys, "y": 330,
                       "until": round(by["s06_chase"]["end"] - 0.25, 2) if "s06_chase" in by else 26.0}   # top of frame; gone after the capture
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={
-        "17,": "seventeen,", "1,000": "a thousand", "19.": "nineteen.", "90": "ninety", 
+        "17,": "seventeen,", "1,000": "a thousand", "19.": "nineteen.", 
         "2016.": "twenty sixteen."})
     ep["score"] = {"root_hz": 138.59, "bpm": 80,
                    "cliff": {"scene": "s05_bahamas", "word": [1, 7], "at": 0.45}}
