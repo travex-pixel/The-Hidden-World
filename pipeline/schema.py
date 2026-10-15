@@ -12,15 +12,17 @@ TRANSITIONS = {"cut", "wipe", "iris", "fade", "dissolve", "light", "dip", "match
 CLAIM_TYPES = {"established", "plausible", "illustrative", "estimate", "disputed", "metaphor"}
 MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath",
              "dawn", "village", "market", "problem", "reveal", "resolve", "tease", "dread", "brawl", "chase", "numb", "pub"}
-SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain",
+SFX_NAMES = {"clang", "foghorn", "baa", "whale", "sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain",
              "hen", "creak", "chink", "chop", "churchbell", "anvil", "rustle", "mudstep", "gasp", "smash", "punch", "horn", "roar", "doorslam", "run", "hiss", "burst", "quill", "splash"}
 # history profile: painted 2.5D sets (renderer/history/sets) and on-screen evidence labels
 HISTORY_SETS = {"cottage", "village", "coin", "field", "cottage_dusk", "abbey_floor", "abbey_parlour",
                 "alehouse", "alehouse_day", "village_night", "church_door", "church_dawn", "map_dover",
                 "field_dawn", "well_yard", "counting_house", "ledger_insert", "smithy", "great_hall", "map_england", "alt_town",
                 "city_street", "globe", "south_pole",
-                "times_square", "sydney_harbour", "golden_gate", "london_bigben", "uluru", "kitchen_insert", "space_moon"}
-AMBIENCE = {"interior", "village", "market", "alehouse", "night", "forge", "hall", "city", "space", "polar", "harbour", "outback", "none"}
+                "times_square", "sydney_harbour", "golden_gate", "london_bigben", "uluru", "kitchen_insert", "space_moon",
+                "liberty_island_night", "liberty_island_day", "ny_harbor", "paris_1884", "atlantic_map", "sea_shelf", "deep_titanic",
+                "ridge_vents", "mont_saint_michel", "paris_arc", "paris_eiffel", "ile_aux_cygnes", "landmark_lineup"}
+AMBIENCE = {"interior", "village", "market", "alehouse", "night", "forge", "hall", "city", "space", "polar", "harbour", "outback", "underwater", "deep", "meadow", "none"}
 BADGE_CLAIM_TYPES = {"documented": {"established"}, "estimate": {"estimate"}, "disputed": {"disputed"},
                      "reconstruction": {"plausible", "illustrative"}, "dramatised": None,
                      "hypothetical": None}   # alternate history, never presented as fact

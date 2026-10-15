@@ -149,6 +149,19 @@
       const s = o.r / 240; g.scale(s, s); g.strokeStyle = 'rgba(255,255,255,0.8)'; g.lineCap = 'round'; for (let i = 0; i < 7; i++) { g.lineWidth = 5 + (i % 3) * 3; g.beginPath(); g.moveTo(-240 + i * 80, 200); g.lineTo(-240 + i * 80, 280); g.stroke(); }
       g.save(); g.rotate(-0.35); g.translate(0, 150); if (X.WORLD) X.WORLD.bus(g, 0, 0, 1.0, mulberry32(3), { sign: '24' }); g.restore();
     },
+    liberty_wade: (g, o) => {   // What-If 004: the statue striding out of the sea, the Eiffel Tower on the horizon behind her
+      const s = o.r / 300; g.scale(s, s);
+      if (X.LIB) { g.save(); g.translate(260, 210); X.LIB.eiffel(g, mulberry32(4), 0, 0, 330, { sky: '#2a4a8a', col: '#5a4030', colD: '#2a1a10', beacon: true }); g.restore(); }
+      g.save(); g.translate(-40, 330); X.Rig.liberty(g, 1.2, { h: 1000, z: 1, px: 160, walking: true, mood0: 'determined', alive0: 1, lookX0: 0.9, glow0: 1, lw: 7, acts: [] }); g.restore();
+      g.fillStyle = '#2f6aa0'; g.beginPath(); g.moveTo(-340, 180); for (let x = -340; x <= 340; x += 20) g.lineTo(x, 180 + Math.sin(x * 0.05) * 10); g.lineTo(340, 330); g.lineTo(-340, 330); g.closePath(); g.fill();
+      g.strokeStyle = '#e8f6ff'; g.lineWidth = 7; g.lineCap = 'round'; for (let i = 0; i < 6; i++) { g.beginPath(); g.ellipse(-30, 186, 70 + i * 26, 12 + i * 4, 0, Math.PI * 1.05, Math.PI * 1.95); g.stroke(); }
+    },
+    liberty_heel: (g, o) => {   // What-If 004: her raised right heel, ringed in red
+      const s = o.r / 260; g.scale(s, s);
+      g.save(); g.translate(0, 640); g.scale(2.6, 2.6); X.Rig.liberty(g, 0.5, { h: 1000, z: 1, walking: false, mood0: 'stone', alive0: 0, glow0: 0, lw: 5, chain: true, acts: [] }); g.restore();
+      g.strokeStyle = '#ff3b30'; g.lineWidth = 16; g.beginPath(); g.ellipse(-30, 600, 120, 80, -0.2, 0, Math.PI * 2); g.stroke();
+      g.lineWidth = 18; g.lineCap = 'round'; g.beginPath(); g.moveTo(-260, 300); g.lineTo(-120, 520); g.stroke(); g.beginPath(); g.moveTo(-120, 520); g.lineTo(-190, 500); g.moveTo(-120, 520); g.lineTo(-115, 445); g.stroke();
+    },
     boiler_burst: (g, o) => {   // a sealed boiler on a firebox, its lid blown off in a cloud of steam
       const s = o.r / 150; g.scale(s, s); const r = mulberry32(23);
       for (let i = 0; i < 12; i++) { const a = r() * Math.PI * 2, d = 60 + r() * 110; P.bloom(g, Math.cos(a) * d * 1.1, -120 + Math.sin(a) * d * 0.7, 90 + r() * 70, '#ffffff', 0.55); }

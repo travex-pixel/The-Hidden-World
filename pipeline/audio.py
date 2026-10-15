@@ -431,6 +431,23 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
             at = 0.05 + rng.uniform(0, 0.8); m = int(0.04 * SR); tk = np.arange(m) / SR
             add(x, (np.sin(2 * np.pi * rng.uniform(600, 1400) * tk * (1 + tk * 8)) * np.exp(-tk * 80) * 0.15).astype(np.float32), at)
         return (x * 0.6).astype(np.float32)
+    if name == "clang":   # a giant hollow copper foot coming down: deep thump with a long metallic ring
+        t = tt(2.2)
+        body = np.sin(2 * np.pi * (48 + 30 * np.exp(-t * 20)) * t) * np.exp(-t * 6) * 0.8
+        ring = sum(np.sin(2 * np.pi * f * t + i) * np.exp(-t * d) * a for i, (f, d, a) in enumerate([(211, 2.2, 0.16), (347, 2.8, 0.1), (529, 3.5, 0.07), (811, 4.5, 0.04)]))
+        return (body + ring + lowpass_fast(noise(2.2), 600) * np.exp(-t * 25) * 0.3).astype(np.float32)
+    if name == "foghorn":   # a ship's horn across the water: two low notes, a slow attack
+        t = tt(2.4)
+        x = (np.sign(np.sin(2 * np.pi * 98 * t)) + 0.6 * np.sign(np.sin(2 * np.pi * 147 * t))) * np.minimum(1, t * 3) * np.exp(-np.maximum(0, t - 1.9) * 9)
+        return (lowpass_fast(x.astype(np.float32), 700) * 0.35).astype(np.float32)
+    if name == "baa":   # a sheep: a bleating vowel with a fast tremolo
+        t = tt(0.8)
+        f = 330 + 50 * np.sin(np.pi * t / 0.8); x = np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * (0.6 + 0.4 * np.sin(2 * np.pi * 26 * t)) * np.sin(np.pi * t / 0.8)
+        return (lowpass_fast(x.astype(np.float32), 1800) * 0.4).astype(np.float32)
+    if name == "whale":   # a humpback's rising, then falling moan
+        t = tt(2.6)
+        f = 160 + 220 * np.sin(np.pi * t / 2.6) + 18 * np.sin(2 * np.pi * 4 * t); x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.sin(np.pi * t / 2.6) ** 1.2
+        return (lowpass_fast(x.astype(np.float32), 1200) * 0.5).astype(np.float32)
     raise KeyError(name)
 
 
@@ -533,6 +550,36 @@ def ambience(kind: str, dur: float, seed: int = 0) -> np.ndarray:
             k += rng.uniform(6, 12); m = int(0.7 * SR); tk = np.arange(m) / SR
             caw = np.sin(2 * np.pi * np.cumsum(520 - 180 * tk / 0.7) / SR) * np.sin(np.pi * tk / 0.7) ** 0.5 * (np.sin(2 * np.pi * 14 * tk) > -0.2)
             if k * SR + m < n: out[int(k * SR): int(k * SR) + m] += lowpass_fast(caw.astype(np.float32), 1600) * 0.02
+    if kind in ("underwater", "deep"):   # muffled sea: a low swell, bubbles; whale song in the shallows, creaks in the deep
+        out += lowpass_fast(nz(), 140 if kind == "underwater" else 70) * (0.10 if kind == "underwater" else 0.08) * (0.7 + 0.3 * np.sin(2 * np.pi * 0.05 * t))
+        k = 0.5
+        while k < dur:   # bubble trains: short rising blips
+            k += rng.uniform(0.8, 2.5) if kind == "underwater" else rng.uniform(2.5, 6.0)
+            for j in range(int(rng.integers(2, 6))):
+                m = int(0.06 * SR); tk = np.arange(m) / SR; f0 = rng.uniform(500, 1100)
+                b = np.sin(2 * np.pi * np.cumsum(f0 + 2500 * tk) / SR) * np.exp(-tk * 50)
+                add(out, (lowpass_fast(b.astype(np.float32), 2200) * 0.02).astype(np.float32), k + j * rng.uniform(0.05, 0.12))
+        if kind == "underwater":
+            k = 2.0
+            while k < dur:   # humpback song: long, slow, sliding moans
+                k += rng.uniform(5, 9); d = rng.uniform(1.6, 2.8); m = int(d * SR); tk = np.arange(m) / SR
+                f = rng.uniform(180, 320) + rng.uniform(-120, 160) * np.sin(np.pi * tk / d) + 30 * np.sin(2 * np.pi * 3 * tk)
+                moan = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.sin(np.pi * tk / d) ** 1.5
+                add(out, (lowpass_fast(moan.astype(np.float32), 900) * 0.035).astype(np.float32), k)
+        else:
+            out += (np.sin(2 * np.pi * 41 * t) * 0.02 * (0.6 + 0.4 * np.sin(2 * np.pi * 0.04 * t))).astype(np.float32)
+            k = 3.0
+            while k < dur:   # the wreck groaning: a slow, low creak
+                k += rng.uniform(7, 13); d = rng.uniform(0.8, 1.5); m = int(d * SR); tk = np.arange(m) / SR
+                cr = np.sign(np.sin(2 * np.pi * np.cumsum(60 + 25 * np.sin(np.pi * tk / d)) / SR)) * np.sin(np.pi * tk / d) * (0.6 + 0.4 * np.sin(2 * np.pi * 23 * tk))
+                add(out, (lowpass_fast(cr.astype(np.float32), 400) * 0.02).astype(np.float32), k)
+    if kind == "meadow":   # an open bay at dawn: soft wind, distant surf, now and then a sheep
+        out += (lowpass_fast(nz(), 700) - lowpass_fast(nz(), 200)) * 0.04 + lowpass_fast(nz(), 300) * (0.5 + 0.5 * np.sin(2 * np.pi * 0.12 * t)) * 0.05
+        k = 2.0
+        while k < dur:
+            k += rng.uniform(4, 9); d = 0.6; m = int(d * SR); tk = np.arange(m) / SR
+            f = 340 + 40 * np.sin(np.pi * tk / d); baa = np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * (0.6 + 0.4 * np.sin(2 * np.pi * 28 * tk)) * np.sin(np.pi * tk / d)
+            add(out, (lowpass_fast(baa.astype(np.float32), 1800) * 0.015).astype(np.float32), k)
     if kind == "polar":   # the high plateau: wind gusting over packed snow
         gust = 0.5 + 0.5 * np.sin(2 * np.pi * 0.09 * t + rng.uniform(0, 6)) * np.sin(2 * np.pi * 0.023 * t)
         out += (lowpass_fast(nz(), 700) - lowpass_fast(nz(), 150)) * gust * 0.12

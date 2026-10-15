@@ -268,6 +268,39 @@ to use the v4 additions. Everything is opt-in; earlier episodes render as before
 * **Release:** `releases/whatif003/` (parts, captions, thumbnails, QA, `REVIEW.md`); phone download page
   https://claude.ai/artifact/CPx1n3TDEGrSnkBGkN7E3C.
 
+## 2g. Engine v5: hero landmarks and the walking statue (What-If 004)
+
+What-If 004, *What If the Statue of Liberty Walked Home?* (`episodes/whatif004-liberty-walks/`), adds
+`renderer/history/sets/liberty.js`. The owner's note on What-If 003 was that Times Square did not look like Times Square.
+The frames showed why: the camera cropped the landmarks, the screens were generic, and crowds in medieval tunics stood in
+front of everything. v5 changes the approach:
+
+* **Landmarks are hero elements.** Each is drawn whole, in true proportion, with the details people recognise it by:
+  One World Trade Center's chamfered shaft, the Empire State's setbacks and mast, the Brooklyn Bridge's twin pointed
+  arches, the orange Staten Island Ferry, the Titanic's bow rail closing to a V, Mont-Saint-Michel's spire, the Arc de
+  Triomphe with the tricolour in the arch, the Eiffel Tower's legs, great arch, platforms and lattice, Big Ben's clock
+  stage. Episodes frame them with `aim(t, u, v, z, s)` in the build script, which centres a rest-pixel point on depth z
+  at magnification s. The Eiffel Tower is drawn live, not baked, so it stays sharp in close-up.
+* **Blind recognition check.** Clean stills (`CLEAN=1 node pipeline/stills.mjs …`) are shuffled and shown to a fresh
+  agent with no context, which names what it sees. Its notes are fixed before the full render. For What-If 004 it
+  caught a clipped date on the tablet, an empty gap behind Paris that read as sea, a generic-looking Big Ben, stacked
+  cars and a confusing mast.
+* **The statue is an actor kind.** `{"kind": "liberty"}` is drawn by `X.Rig.liberty` in units where 1000 is sole to
+  flame tip, from the NPS proportions. It walks along `path` with a gait taken from the distance covered, and her
+  raised right heel shows when she stands. Act channels are `alive` (stone to living eyes), `mood` (stone, neutral,
+  determined, surprised, happy, joy, sad, tender, sheepish, alarmed, curious, solemn), `arm` (torch up 1, lowered 0),
+  `wave`, `kneel`, `tilt`, `lookX` and `lookY`, and `glow` (torch light). Palettes are `verdigris`, `copper` (1884),
+  `bronze` (the Paris replica), `sea` and `deep`. Optional fields are `chain` (the broken shackles) and `lit` (crown
+  windows).
+* **Modern clothes.** Set `"outfit": "modern"` in a character's rig for trousers, trainers, and a hip-length top or an
+  open jacket over a tee (`colours.tee`). `crowd({modern: true})` dresses extras the same way; it is opt-in, so older
+  episodes draw exactly as before. `crowd` and `flock` take `beat` (which beat they react to), `rise: false` (react
+  without floating) and `react` (the expressions to use). In `liberty.js`, `edgeCrowds` puts crowds at the frame edges.
+* **New creatures:** a humpback whale, shoals, jellyfish, an anglerfish, harbour seals and salt-meadow sheep.
+* **New sound:** ambiences `underwater` (with whale song), `deep` and `meadow`; effects `clang` (a hollow copper foot),
+  `foghorn`, `baa` and `whale`.
+* **Title cards** shrink to fit the frame.
+
 ## 3. Writing an episode
 
 Scenes keep the existing fields (`id, scene, min_duration, pad_after, music_cue, sfx, claims, transition`) and add:

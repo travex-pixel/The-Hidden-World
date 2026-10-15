@@ -383,7 +383,9 @@
       eye: c.eyes || '#6b4a22', eyeL: c.eyes_light || '#c99a4a', tunic: c.tunic || '#8a6a44', tunicS: c.tunic_shadow || '#6a4e32', tunicL: c.tunic_light || null,
       legs: c.legs || '#5b4a3a', shoes: c.shoes || '#3d2b1f', belt: c.belt || '#3b2a1c', apron: c.apron || null, hood: c.hood || null, cheek: c.cheek || '#e88a7a', lips: c.lips || '#b25b52',
       ink: c.ink || '#3a2418', hairStyle: r.hair_style || 'messy', eyeStyle: r.eye_style || 'big', headwear: r.headwear || null, freckles: r.freckles || false, beard: r.beard || null,
-      sleeves: r.sleeves || 'long', hem: r.hem ?? 170, brows: c.brows || c.hair || '#5a3420', ahoge: r.ahoge ?? false, skirt: r.skirt || false, hat: c.hat || null
+      sleeves: r.sleeves || 'long', hem: r.hem ?? 170, brows: c.brows || c.hair || '#5a3420', ahoge: r.ahoge ?? false, skirt: r.skirt || false, hat: c.hat || null,
+      // engine v5: 'modern' = trousers, trainers and a hip-length top (optionally an open jacket over a tee); default 'tunic'
+      outfit: r.outfit || 'tunic', tee: c.tee || null, sole: c.sole || '#f4f2ec'
     };
   }
 
@@ -469,11 +471,24 @@
     celPath(g, limb(L.hip[0], L.hip[1], L.knee[0], L.knee[1], 46, 37), leg, legS, null, lw, ink, { off: 12 });
     celPath(g, limb(L.knee[0], L.knee[1], L.foot[0], L.foot[1], 37, 27), leg, legS, null, lw, ink, { off: 10 });
     g.fillStyle = leg; g.fill(kneeP);
-    // hose bands (garters below the knee)
-    const a = Math.atan2(L.foot[1] - L.knee[1], L.foot[0] - L.knee[0]); const gx = L.knee[0] + Math.cos(a) * 40, gy = L.knee[1] + Math.sin(a) * 40;
-    g.strokeStyle = rgba(shade(leg, -0.4), 0.9); g.lineWidth = lw * 1.4; g.beginPath(); g.moveTo(gx + Math.cos(a + 1.57) * 34, gy + Math.sin(a + 1.57) * 34); g.lineTo(gx - Math.cos(a + 1.57) * 34, gy - Math.sin(a + 1.57) * 34); g.stroke();
+    const a = Math.atan2(L.foot[1] - L.knee[1], L.foot[0] - L.knee[0]);
+    if (S.outfit === 'modern') {   // trousers: a seam down the outside and a loose hem over the shoe
+      g.strokeStyle = rgba(shade(leg, -0.35), 0.7); g.lineWidth = lw * 0.5; g.beginPath(); g.moveTo(L.hip[0] + 10, L.hip[1] + 20); g.lineTo(L.knee[0] + 14, L.knee[1]); g.lineTo(L.foot[0] + 12, L.foot[1] - 30); g.stroke();
+      const hx = L.foot[0] - Math.cos(a) * 34, hy = L.foot[1] - Math.sin(a) * 34; g.strokeStyle = rgba(shade(leg, -0.45), 0.9); g.lineWidth = lw * 0.9; g.beginPath(); g.moveTo(hx + Math.cos(a + 1.57) * 36, hy + Math.sin(a + 1.57) * 36); g.lineTo(hx - Math.cos(a + 1.57) * 36, hy - Math.sin(a + 1.57) * 36); g.stroke();
+    } else {   // hose bands (garters below the knee)
+      const gx = L.knee[0] + Math.cos(a) * 40, gy = L.knee[1] + Math.sin(a) * 40;
+      g.strokeStyle = rgba(shade(leg, -0.4), 0.9); g.lineWidth = lw * 1.4; g.beginPath(); g.moveTo(gx + Math.cos(a + 1.57) * 34, gy + Math.sin(a + 1.57) * 34); g.lineTo(gx - Math.cos(a + 1.57) * 34, gy - Math.sin(a + 1.57) * 34); g.stroke();
+    }
     // turnshoe: soft leather, rounded toe, ankle wrap
     g.save(); g.translate(L.foot[0], L.foot[1]); g.rotate(L.pitch || 0);
+    if (S.outfit === 'modern') {   // a trainer: chunky white sole, rounded toe cap, laces
+      const up = new Path2D(); up.moveTo(-36, -26); up.bezierCurveTo(-48, 0, -44, 24, -30, 26); up.lineTo(84, 26); up.bezierCurveTo(108, 24, 106, 2, 82, -4); up.bezierCurveTo(54, -12, 34, -20, 24, -30); up.closePath();
+      celPath(g, up, far ? shade(S.shoes, -0.15) : S.shoes, shade(S.shoes, -0.3), null, lw, ink, { off: 8 });
+      const so = new Path2D(); so.moveTo(-44, 18); so.lineTo(106, 18); so.bezierCurveTo(112, 30, 108, 40, 96, 42); so.lineTo(-34, 42); so.bezierCurveTo(-46, 40, -50, 28, -44, 18); so.closePath();
+      celPath(g, so, far ? shade(S.sole, -0.12) : S.sole, shade(S.sole, -0.25), null, lw * 0.9, ink, { off: 5 });
+      g.strokeStyle = rgba(ink, 0.6); g.lineWidth = lw * 0.5; for (const k of [0, 1, 2]) { g.beginPath(); g.moveTo(14 + k * 14, -16 + k * 4); g.lineTo(30 + k * 14, -24 + k * 4); g.stroke(); }
+      g.restore(); return;
+    }
     const shoe = new Path2D(); shoe.moveTo(-34, -22); shoe.bezierCurveTo(-46, 10, -40, 36, -18, 36); shoe.lineTo(78, 36); shoe.bezierCurveTo(104, 34, 104, 10, 80, 4); shoe.bezierCurveTo(52, -6, 30, -14, 22, -26); shoe.closePath();
     celPath(g, shoe, far ? shade(S.shoes, -0.15) : S.shoes, shade(S.shoes, -0.35), null, lw, ink, { off: 8 });
     g.strokeStyle = rgba(ink, 0.55); g.lineWidth = lw * 0.6; g.beginPath(); g.moveTo(-30, -8); g.quadraticCurveTo(0, 2, 26, -14); g.stroke();
@@ -484,10 +499,11 @@
     const tr = (x, y) => { const r = rot(x, y, lean); return [r[0], hipY + r[1]]; };   // torso-local (origin hip, y up negative)
     // skirt hangs under gravity from the belt; hem follows the knees and trails behind motion
     const kN = legs[1].knee, kF = legs[0].knee; const sitting = st.ik < 0.5;
-    const hemY = hipY + S.hem;
+    const modern = S.outfit === 'modern'; const hemY = hipY + (modern ? Math.min(S.hem, 60) : S.hem);
     const trail = -st.sway * 30 + st.jolt * 20; const flutter = Math.sin(st.t * 7.3) * Math.min(1, st.speed / 150) * 7;
     const fK = Math.max(kN[0], kF[0]), bK = Math.min(kN[0], kF[0]);
     let front = [Math.max(fK + 10, 70 * gi + bel * 0.5) + 30 + trail * 0.4 + flutter, hemY + 4], back = [Math.min(bK - 10, -66 * gi) - 34 + trail, hemY - 6 - flutter];
+    if (modern) { front = [62 * gi + bel * 0.8 + 10, hemY + 2]; back = [-60 * gi - 6, hemY - 2]; }   // a top ends at the hips; it does not flare over the knees
     if (sitting) { const k = 1 - st.ik * 2; front = [lerp(front[0], kN[0] + 40, k), lerp(front[1], hipY + 10, k)]; back = [lerp(back[0], -70, k), lerp(back[1], hipY + 20, k)]; }
     const neck0 = tr(-26, -TORSO), neck1 = tr(30, -TORSO + 4);
     const shB = tr(-66 * gi, -TORSO + 26), shF = tr(56 * gi, -TORSO + 24);
@@ -515,6 +531,17 @@
       ap.moveTo(...a0); ap.lineTo(...a1); ap.quadraticCurveTo(bellyF[0] + 14, bellyF[1], front[0] - 6, front[1] - 26); ap.lineTo(lerp(back[0], front[0], 0.4), front[1] - 16); ap.quadraticCurveTo(waistB[0] + 50, waistB[1], a0[0], a0[1]); ap.closePath();
       celPath(g, ap, S.apron, shade(S.apron, -0.16), null, lw * 0.9, ink, { off: 16 });
       g.save(); g.clip(ap); g.fillStyle = 'rgba(255,255,255,0.45)'; for (let i = 0; i < 9; i++) { g.beginPath(); g.arc(a0[0] + 20 + (i * 37) % 90, a0[1] + 70 + (i * 53) % 200, 5 + i % 3 * 4, 0, 7); g.fill(); } g.restore();
+    }
+    if (modern) {
+      if (S.tee) {   // an open jacket: the tee shows down the front, between the lapels
+        const t0 = tr(4, -TORSO + 6), t1 = tr(46 * gi, -TORSO + 10), t2 = [front[0] - 2, hemY - 2], t3 = [front[0] - 40 * gi, hemY];
+        const tp = new Path2D(); tp.moveTo(...t0); tp.lineTo(...t1); tp.quadraticCurveTo(chestF[0] - 4, chestF[1], t2[0], t2[1]); tp.lineTo(...t3); tp.quadraticCurveTo(t0[0] + 20, (t0[1] + t3[1]) / 2, ...t0); tp.closePath();
+        g.save(); g.clip(p); celPath(g, tp, S.tee, shade(S.tee, -0.15), null, lw * 0.8, ink, { off: 10 }); g.restore();
+      } else {   // a hoodie/sweatshirt: ribbed waistband and a kangaroo pocket line
+        g.strokeStyle = rgba(S.tunicS, 0.95); g.lineWidth = lw * 0.7; g.beginPath(); g.moveTo(back[0] + 6, hemY - 22); g.lineTo(front[0] - 4, hemY - 20); g.stroke();
+      }
+      g.strokeStyle = ink; g.lineWidth = lw * 0.8; g.beginPath(); const c0 = tr(-18, -TORSO + 2), c1 = tr(30, -TORSO + 2); g.moveTo(...c0); g.quadraticCurveTo((c0[0] + c1[0]) / 2 + 4, c0[1] + 24, ...c1); g.stroke();
+      return;
     }
     // belt and purse
     const b0 = tr(-58 * gi, -84), b1 = tr(60 * gi + bel * 0.8, -88);

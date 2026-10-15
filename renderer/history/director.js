@@ -147,7 +147,7 @@
         const s = this.animalAt(a, tq); const hh = (a.h || 120) / z; g.save(); g.translate(s.x + fl.dx, gy - fl.lift);
         if (fl.spin) { g.translate(0, -hh * 0.5); g.rotate(fl.spin * Math.PI / 180); g.translate(0, hh * 0.5); }
         g.scale(hh / 120, hh / 120);
-        X.Rig[a.kind](g, tq, { ...a, walking: s.walking && fl.lift < 4, facing: s.facing, peck: a.peck && !s.walking, airborne: fl.lift > 4 }); g.restore(); return;
+        X.Rig[a.kind](g, tq, { ...a, px: s.x, walking: s.walking && fl.lift < 4, facing: s.facing, peck: a.peck && !s.walking, airborne: fl.lift > 4 }); g.restore(); return;
       }
       const stt = X.Rig.evaluate(a, tq, (who, tt) => this.mouth(who, tt + q.start));
       // h is the character's true height at the acting plane; further away (z > 1) it is drawn smaller
@@ -245,7 +245,7 @@
           const y = c.y ?? H * 0.42; g.textAlign = 'center';
           const band = g.createLinearGradient(0, y - 160, 0, y + 110); band.addColorStop(0, 'rgba(18,10,6,0)'); band.addColorStop(0.5, 'rgba(18,10,6,0.5)'); band.addColorStop(1, 'rgba(18,10,6,0)'); g.fillStyle = band; g.fillRect(0, y - 160, W, 270);
           g.font = '600 italic 34px Fraunces'; g.fillStyle = '#fff3dc'; g.shadowColor = 'rgba(20,10,4,0.7)'; g.shadowBlur = 18; g.fillText(c.sub || '', W / 2, y - 70);
-          g.font = '800 92px Fraunces'; g.letterSpacing = '2px'; g.fillText(c.title, W / 2, y + 20 + (1 - ease.out3(k)) * 20);
+          let fs = 92; g.font = `800 ${fs}px Fraunces`; g.letterSpacing = '2px'; while (g.measureText(c.title).width > W - 180 && fs > 44) { fs -= 2; g.font = `800 ${fs}px Fraunces`; } g.fillText(c.title, W / 2, y + 20 + (1 - ease.out3(k)) * 20);
           g.fillStyle = '#e9b860'; g.fillRect(W / 2 - 160 * ease.out3(k), y + 52, 320 * ease.out3(k), 4);
         } else if (c.kind === 'location') {
           const x = 96, y = c.y ?? H - 320; g.shadowColor = 'rgba(20,10,4,0.75)'; g.shadowBlur = 16;

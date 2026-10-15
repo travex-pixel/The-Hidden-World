@@ -355,3 +355,71 @@ class EngineV4(unittest.TestCase):
         for s in self.ep["scenes"]:
             if s["set"] in ("times_square", "sydney_harbour", "golden_gate", "london_bigben", "uluru"):
                 self.assertIn("lift", s.get("beats", {}), s["id"])
+
+
+class EngineV5(unittest.TestCase):
+    """What-If 004: the walking Statue of Liberty, hero landmarks, modern clothes, framing rules learned from QA."""
+    def setUp(self):
+        self.ep = load_episode("whatif004-liberty-walks")
+        self.lib = (ROOT / "renderer" / "history" / "sets" / "liberty.js").read_text()
+        self.rig = (ROOT / "renderer" / "history" / "rig.js").read_text()
+        self.world = (ROOT / "renderer" / "history" / "sets" / "world.js").read_text()
+
+    def test_liberty_sets_are_registered_and_defined(self):
+        from pipeline.schema import HISTORY_SETS
+        for name in ("liberty_island_night", "liberty_island_day", "ny_harbor", "paris_1884", "atlantic_map", "sea_shelf", "deep_titanic",
+                     "ridge_vents", "mont_saint_michel", "paris_arc", "paris_eiffel", "ile_aux_cygnes", "landmark_lineup"):
+            self.assertIn(name, HISTORY_SETS)
+        for name in ("ny_harbor", "paris_1884", "atlantic_map", "sea_shelf", "deep_titanic", "ridge_vents", "mont_saint_michel", "paris_arc", "paris_eiffel", "ile_aux_cygnes", "landmark_lineup"):
+            self.assertIn(f"X.SETS.{name} =", self.lib)
+        self.assertIn("X.SETS.liberty_island_night = libertyIsland('night')", self.lib)
+        used = {s["set"] for s in self.ep["scenes"]}
+        self.assertTrue(used <= HISTORY_SETS, used - HISTORY_SETS)
+        self.assertIn("renderer/history/sets/liberty.js", self.ep["set_module"])
+
+    def test_tablet_reads_1776_and_is_fitted(self):
+        # the blind review caught the date clipped to MDCCLXXV (1775); the text must be the real date and shrink to fit
+        self.assertIn("fillText('MDCCLXXVI'", self.lib)
+        self.assertIn("measureText('MDCCLXXVI').width", self.lib)
+        self.assertIn("JULY IV", self.lib)
+
+    def test_statue_is_an_actor_kind_with_its_own_channels(self):
+        self.assertIn("X.Rig.liberty = drawLiberty", self.lib)
+        for ch in ("'alive'", "'arm'", "'kneel'", "'wave'", "'tilt'", "'glow'"):
+            self.assertIn(ch, self.lib)
+        statues = [a for s in self.ep["scenes"] for a in s.get("actors", []) if a.get("kind") == "liberty"]
+        self.assertGreaterEqual(len(statues), 10)
+        self.assertTrue(all(a.get("palette", "verdigris") in ("verdigris", "copper", "bronze", "sea", "deep") for a in statues))
+
+    def test_modern_outfit_is_opt_in(self):
+        self.assertIn("outfit: r.outfit || 'tunic'", self.rig)
+        self.assertIn("spec: o.modern ? modernise(extraSpec(r, o), r) : extraSpec(r, o)", self.world)
+        for c in ("ranger_dee", "tourist_tony"):
+            spec = json.loads((ROOT / "characters" / f"{c}.json").read_text())
+            self.assertEqual(spec["rig"]["outfit"], "modern")
+            self.assertTrue(spec["kokoro"]["voice"].startswith("a"), "American voices for New Yorkers")
+
+    def test_liberty_crowds_never_float_and_stay_at_the_edges(self):
+        # crowds once stood in front of the landmarks; in this module every crowd goes through edgeCrowds
+        self.assertNotRegex(self.lib, r"WD\.crowd\(set, \{ n:")
+        self.assertIn("rise: false", self.lib)
+
+    def test_claims_estimates_and_fiction(self):
+        kinds = {b["kind"] for s in self.ep["scenes"] for b in s.get("badges", [])}
+        for k in ("documented", "estimate", "hypothetical", "dramatised", "disputed"): self.assertIn(k, kinds)
+        ours = [c for c in self.ep["claims"] if c["type"] == "estimate"]
+        self.assertTrue(ours and all("Our calculation" in c["text"] for c in ours))
+        self.assertIn("statues cannot walk", self.ep["fiction_notice"])
+        self.assertTrue((ROOT / "episodes" / "whatif004-liberty-walks" / "research.md").exists())
+
+    def test_walking_speed_estimate_arithmetic(self):
+        import math
+        v = math.sqrt(0.25 * 9.81 * 18.0)               # Froude 0.25, 18 m leg
+        self.assertAlmostEqual(v * 3.6, 24, delta=0.6)  # ~24 km/h
+        self.assertAlmostEqual(5837 / (v * 3.6) / 24, 10, delta=0.4)   # ~10 days
+        self.assertAlmostEqual(3800 / 10, 380)          # ~380 atm at the Titanic
+
+    def test_titles_and_thumbnails_follow_packaging_rules(self):
+        pub = self.ep["publishing"]
+        for t in pub["titles"]: self.assertTrue(28 <= len(t) <= 50, t)
+        for th in pub["thumbnails"]: self.assertLessEqual(len(th["text"].replace("|", " ").split()), 3)

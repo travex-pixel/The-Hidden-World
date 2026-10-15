@@ -9,7 +9,7 @@
   // ------------------------------------------------------------------ gravity: how high a loose thing is at time t
   // lift: h = ½·a·u² (cartoon acceleration, px/s²) capped; drop: free fall from wherever it got to, then a bounce.
   function liftAt(D, q, t, o = {}) {
-    const t0 = D.beat(q, 'lift', 1e9) + (o.delay || 0), t1 = D.beat(q, 'drop', 1e9); const a = o.accel ?? 16, cap = o.cap ?? 720, spinRate = o.spinRate ?? 18;
+    const t0 = D.beat(q, o.beat || 'lift', 1e9) + (o.delay || 0), t1 = D.beat(q, o.dropBeat || 'drop', 1e9); const a = o.accel ?? 16, cap = o.cap ?? 720, spinRate = o.spinRate ?? 18;
     if (t < t0) return { lift: 0, spin: 0, phase: 0 };
     const h = u => Math.min(cap, 0.5 * a * u * u);
     if (t < t1) { const u = t - t0; return { lift: h(u) + Math.sin(t * 2 + (o.ph || 0)) * Math.min(10, h(u) * 0.05), spin: spinRate * u * (o.spinDir || 1), phase: 1, u }; }
@@ -35,6 +35,15 @@
     return { rig: { heads: 5.8 + r() * 0.8, girth: 0.9 + r() * 0.35, hair_style: r() < 0.55 ? 'messy' : r() < 0.8 ? 'long_braid' : 'bald_fringe', eye_style: 'big', hem: r() < 0.3 ? 260 : 150, headwear: hw, ahoge: r() < 0.2,
       colours: { skin: sk[0], skin_shadow: sk[1], hair: hr[0], hair_light: hr[1], hair_shadow: hr[2], tunic: top, tunic_shadow: shade(top, -0.25), tunic_light: shade(top, 0.2), legs: LEGS[Math.floor(r() * LEGS.length)], shoes: r() < 0.5 ? '#2a1e16' : '#ecebe6', hat: TOPS[Math.floor(r() * TOPS.length)] } } };
   }
+  // engine v5: modern clothes for a crowd (opt-in with crowd({modern: true}); older episodes keep their exact draws)
+  const JEANS = ['#3a5a8a', '#2a3e66', '#4a6a9a', '#2e3038', '#6a5a4a', '#c8b89a', '#1e2a44'];
+  const TEES = ['#f4f2ec', '#e8e4dc', '#2a2a30', '#d8d0c0', '#f2e6a0', '#c8e0f0'];
+  function modernise(spec, r) {
+    const rr = spec.rig; rr.outfit = 'modern'; rr.hem = 60; rr.sleeves = r() < 0.35 ? 'short' : 'long';
+    rr.colours.legs = JEANS[Math.floor(r() * JEANS.length)]; rr.colours.shoes = ['#f4f2ec', '#2a2a30', '#c8302a', '#3a6ab0', '#e8e4dc'][Math.floor(r() * 5)];
+    if (r() < 0.5) rr.colours.tee = TEES[Math.floor(r() * TEES.length)];
+    return spec;
+  }
   const PANIC = ['scream', 'panic', 'horrified', 'shocked', 'dizzy', 'ecstatic', 'startled'];
   const AFTER = ['dazed', 'dizzy', 'exhausted', 'relieved', 'laughing', 'sheepish'];
   // crowd(set, {n, x0, x1, z, h, seed, key, props, stand}): extras stroll between x0 and x1 at depth z; at `lift` they stop,
@@ -42,7 +51,7 @@
   function crowd(set, o) {
     const key = o.key || 'crowd'; const cache = {};
     const build = (D, q) => {
-      const tl = D.beat(q, 'lift', 1e9), td = D.beat(q, 'drop', 1e9); const r = mulberry32((o.seed || 1) * 7919 + hashStr(key)); const out = [];
+      const tl = D.beat(q, o.beat || 'lift', 1e9), td = D.beat(q, 'drop', 1e9); const r = mulberry32((o.seed || 1) * 7919 + hashStr(key)); const out = []; const PAN = o.react || PANIC;
       for (let i = 0; i < o.n; i++) {
         const z = (o.z ?? 1.0) + (r() - 0.5) * (o.zSpread ?? 0.08); const x = o.x0 + r() * (o.x1 - o.x0); const facing = r() < 0.5 ? 1 : -1; const h = (o.h ?? 430) * (0.9 + r() * 0.2);
         const acts = []; const stand = r() < (o.stand ?? 0.4);
@@ -50,11 +59,11 @@
         if (stand) { if (r() < 0.5) acts.push({ t: -1, gesture: r() < 0.5 ? 'chin' : 'hold_up', dur: 0.3, hold: -1 }); }
         else { let cx = x, tt = r() * 2; while (tt < Math.min(tl, 80)) { const nx = clamp(cx + (r() - 0.5) * 900, o.x0, o.x1); const d = Math.abs(nx - cx) / (120 + r() * 60) + 0.6; acts.push({ t: tt, walk: nx, dur: d }); tt += d + r() * 2.5; cx = nx; } }
         const d0 = r() * 0.7; const react = tl + d0 * 0.6;
-        acts.push({ t: react, expr: PANIC[Math.floor(r() * PANIC.length)], look: [r() - 0.5, -0.6] }, { t: react + 0.1, gesture: r() < 0.6 ? 'hands_up' : 'plead', dur: 0.25, hold: -1 }, { t: react + 0.2, mark: r() < 0.5 ? 'shock' : r() < 0.7 ? 'exclaim' : 'question', dur: 2.5 });
-        if (r() < 0.5) acts.push({ t: react + 2 + r() * 3, expr: PANIC[Math.floor(r() * PANIC.length)] });
+        acts.push({ t: react, expr: PAN[Math.floor(r() * PAN.length)], look: [r() - 0.5, -0.6] }, { t: react + 0.1, gesture: o.rise === false ? (r() < 0.5 ? 'hold_up' : 'hands_up') : (r() < 0.6 ? 'hands_up' : 'plead'), dur: 0.25, hold: o.rise === false ? 3 + r() * 3 : -1 }, { t: react + 0.2, mark: r() < 0.5 ? 'shock' : r() < 0.7 ? 'exclaim' : 'question', dur: 2.5 });
+        if (r() < 0.5) acts.push({ t: react + 2 + r() * 3, expr: PAN[Math.floor(r() * PAN.length)] });
         const land = td + Math.sqrt(2 * Math.min(o.cap ?? 720, 0.5 * (o.accel ?? 16) * Math.max(0, td - tl - d0) ** 2) / 900);
         acts.push({ t: land + 0.1, expr: AFTER[Math.floor(r() * AFTER.length)] }, { t: land + 0.15, gesture: null }, { t: land + 0.2, mark: r() < 0.5 ? 'stars' : null, dur: 3 });
-        const A = X.Rig.compileActor({ id: key + i, char: 'x' + i, x, h, z, facing, expr0: ['neutral', 'happy', 'curious', 'smug', 'neutral'][i % 5], acts, spec: extraSpec(r, o), seed: i * 31 + (o.seed || 1) });
+        const A = X.Rig.compileActor({ id: key + i, char: 'x' + i, x, h, z, facing, expr0: ['neutral', 'happy', 'curious', 'smug', 'neutral'][i % 5], acts, spec: o.modern ? modernise(extraSpec(r, o), r) : extraSpec(r, o), seed: i * 31 + (o.seed || 1) });
         out.push({ A, delay: d0, ph: r() * 6, spinDir: r() < 0.5 ? 1 : -1 });
       }
       return out;
@@ -63,7 +72,7 @@
     return { z: o.z ?? 1.0, o: 1, draw: (g, t, ta, D, q) => {
       const id = q.start; if (!cache[id]) cache[id] = build(D, q); const extras = cache[id];
       for (const e of extras) {
-        const st = X.Rig.evaluate(e.A, t, null); const gy = groundY(e.A.z); const k = e.A.h / e.A.z / 1000; const fl = liftAt(D, q, t, { delay: e.delay, ph: e.ph, spinDir: e.spinDir, accel: o.accel, cap: o.cap });
+        const st = X.Rig.evaluate(e.A, t, null); const gy = groundY(e.A.z); const k = e.A.h / e.A.z / 1000; const fl = o.rise === false ? { lift: 0, spin: 0 } : liftAt(D, q, t, { delay: e.delay, ph: e.ph, spinDir: e.spinDir, accel: o.accel, cap: o.cap });
         withLift(g, fl, st.x, gy, e.A.h / e.A.z, gg => { gg.scale(k, k); root.HW.drawStyled(gg, e.A, st, set.light, { lw: 7, propDraw: (ggg, prop) => X.PROPS[prop] && X.PROPS[prop](ggg, t, 4) }); });
       }
     } };
@@ -73,11 +82,11 @@
     const r0 = mulberry32((o.seed || 3) * 131 + hashStr(o.key || 'flock')); const items = [];
     for (let i = 0; i < o.n; i++) items.push({ x0: o.x0 + r0() * (o.x1 - o.x0), dir: r0() < 0.5 ? 1 : -1, sp: (o.speed ?? 60) * (0.6 + r0() * 0.8), ph: r0() * 6, delay: r0() * 0.8, colour: o.colours ? o.colours[i % o.colours.length] : undefined, z: (o.z ?? 1.1) + (r0() - 0.5) * (o.zSpread ?? 0.1), h: (o.h ?? 110) * (0.85 + r0() * 0.3), spinDir: r0() < 0.5 ? 1 : -1 });
     return { z: o.z ?? 1.1, o: 1, draw: (g, t, ta, D, q) => {
-      const tl = D.beat(q, 'lift', 1e9);
+      const tl = D.beat(q, o.beat || 'lift', 1e9);
       for (const it of items) {
         const span = o.x1 - o.x0; const tt = Math.min(t, tl); let x = it.x0 + it.dir * it.sp * tt; let facing = it.dir;
         const lap = Math.floor((x - o.x0) / span); x = x - lap * span; if (lap % 2) { x = o.x1 - (x - o.x0); facing = -it.dir; }   // ping-pong along the strip
-        const gy = groundY(it.z); const fl = liftAt(D, q, t, { delay: it.delay, ph: it.ph, spinRate: 26, spinDir: it.spinDir, accel: o.accel, cap: o.cap }); const hh = it.h / it.z;
+        const gy = groundY(it.z); const fl = liftAt(D, q, t, { delay: it.delay, ph: it.ph, spinRate: o.beat ? 0 : 26, spinDir: it.spinDir, accel: o.accel, cap: o.cap, beat: o.beat }); const hh = it.h / it.z;
         withLift(g, fl, x, gy, hh, gg => { gg.scale(hh / 120, hh / 120); X.Rig[o.kind](gg, t, { walking: t < tl && (o.walk ?? true), facing, colour: it.colour, ph: it.ph, airborne: fl.lift > 4, flying: o.kind === 'pigeon' && fl.lift > 4 }); });
       }
     } };
