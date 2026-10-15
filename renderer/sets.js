@@ -337,7 +337,9 @@
       for (const k of cam.keys.slice(1)) { const u = settle(clamp((ctx.t - k.at) / (k.dur || 0.8), 0, 1), k.settle ?? cam.settle); if (u <= 0) break; c = { x: lerp(c.x, k.x ?? c.x, u), y: lerp(c.y, k.y ?? c.y, u), z: lerp(c.z, k.z ?? c.z, u) }; }
       return c;
     }
-    const p = settle(clamp(ctx.t / ctx.T, 0, 1), cam.settle); const a = cam.from || { x: 0, y: 0, z: 1 }, b = cam.to || a;
+    // engagement episodes, first shot: the move starts at full speed (ease-out) so frame 1 is already moving (47: 9.3 % skip)
+    const u0 = clamp(ctx.t / ctx.T, 0, 1), first = ctx.ep && ctx.ep.engagement_rules && !ctx.sceneStart;
+    const p = first ? ease.out(u0) : settle(u0, cam.settle); const a = cam.from || { x: 0, y: 0, z: 1 }, b = cam.to || a;
     return { x: lerp(a.x || 0, b.x || 0, p), y: lerp(a.y || 0, b.y || 0, p), z: lerp(a.z || 1, b.z || 1, p) };
   }
   const CY = H * 0.45;
