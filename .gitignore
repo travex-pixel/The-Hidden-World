@@ -15,3 +15,5 @@ series/*/qa/*/asr_input.wav
 .env.*
 # owner's raw recordings stay out of git (the per-line clips in episodes/<id>/voice/ are committed)
 *.m4a
+# voice_import temporaries
+episodes/*/voice/_*.wav
