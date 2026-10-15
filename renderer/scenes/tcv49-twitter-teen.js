@@ -236,7 +236,7 @@
           { depth: 1.08, accent: true, svg: tt => phone(HERO.x, HERO.y, HERO.s, tt, { k: 1, glow: 0.7 + 0.3 * Math.sin(tt * 3), rot: -3, hand: true, scroll: 0 }) }
         ],
         overlays: [
-          { type: 'label', at: l2 + 0.6, x: 60, y: 1500, text: 'JULY 15, 2020', fs: 38, sub: 'Also hit: Joe Biden, Jeff Bezos, Kanye West' }
+          { type: 'label', at: Math.max(3.2, l2 + 0.4), x: 60, y: 440, text: 'JULY 15, 2020', fs: 38, sub: 'Also hit: Joe Biden, Jeff Bezos, Kanye West' }
         ],
         tag: LIKE
       });
@@ -250,7 +250,6 @@
         set: 'tt49_office', setOpts: { screen: t > l2 - 0.4 ? 'login' : 'feed', k: seg(t, ty - 0.1, fk + 0.2), ring: 1 - seg(t, ph + 0.2, ph + 0.5), cy: 1250, monX: 120, phoneX: 870 },
         grade: 'night', haze: 0.5,
         cam: { from: { x: 20, y: 30, z: 1.0 }, to: { x: -20, y: 40, z: 1.07 } },
-        rack: { at: fk - 0.3, dur: 0.7, from: 'bg' },
         figures: [
           { id: 'tt49_staffer', x: 660, y: 1560, scale: 0.9, dir: -1, turn: 0.45, pose: 'sit_type', expr: 'focused', depth: 0.98, gaze: [0.4, 0.4],
             keys: [{ at: ph, pose: 'hand_to_face', expr: 'neutral', gaze: [0.6, 0.1], dur: 0.4 }, { at: ts, expr: 'relieved', dur: 0.4 }, { at: ty - 0.2, pose: 'sit_type_b', expr: 'focused', gaze: [-0.8, 0.2], dur: 0.4 }] }

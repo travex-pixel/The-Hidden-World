@@ -563,7 +563,7 @@
      ]
     }
    ],
-   "visual_description": "fi52 factory (cold grade); fi52_worker: examine -> present -> examine -> point; fi52_clerk2: read -> hands_together; camera push/pull; overlays: label 'QUANTA COMPUTER · TAIWAN'.",
+   "visual_description": "fi52 factory (cold grade); fi52_worker: examine -> present -> examine -> point; fi52_worker2: read -> hands_together; camera push/pull; overlays: label 'QUANTA COMPUTER · TAIWAN'.",
    "shot_size": "medium-wide",
    "set": "fi52_factory",
    "grade": "cold",
@@ -581,8 +581,8 @@
     "handheld": 0
    },
    "characters": [
-    "fi52_clerk2",
-    "fi52_worker"
+    "fi52_worker",
+    "fi52_worker2"
    ],
    "character_actions": [
     {
@@ -608,7 +608,7 @@
      ]
     },
     {
-     "id": "fi52_clerk2",
+     "id": "fi52_worker2",
      "outfit": "default",
      "depth": 0.9,
      "scale": 0.78,
@@ -678,8 +678,8 @@
     "shot_code": "renderer/scenes/tcv52-fake-invoices.js#fi52_supplier",
     "set_code": "renderer/sets.js#fi52_factory",
     "characters": [
-     "characters/figures/fi52_clerk2.json",
-     "characters/figures/fi52_worker.json"
+     "characters/figures/fi52_worker.json",
+     "characters/figures/fi52_worker2.json"
     ]
    },
    "validation": {
@@ -1220,7 +1220,7 @@
      ]
     }
    ],
-   "visual_description": "kitchen night (warm grade); fi52_mate: sit_read -> hand_to_face -> sit_read; camera push/pull; overlays: lesson 'CALL A NUMBER YOU KNOW / CHECK THE EXACT ADDRESS / URGENT? NEW BANK? STOP. / FBI · Action Fraud (UK police)'.",
+   "visual_description": "kitchen night (warm grade); fi52_mate: sit_read -> sit -> sit_read; camera push/pull; overlays: lesson 'CALL A NUMBER YOU KNOW / CHECK THE EXACT ADDRESS / URGENT? NEW BANK? STOP. / FBI · Action Fraud (UK police)'.",
    "shot_size": "medium-wide",
    "set": "kitchen_night",
    "grade": "warm",
@@ -1245,17 +1245,17 @@
      "id": "fi52_mate",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.9,
+     "scale": 0.92,
      "start_pose": "sit_read",
      "start_expr": "focused",
      "actions": [
       {
        "at": 1.64,
-       "pose": "hand_to_face",
+       "pose": "sit",
        "expr": "realise"
       },
       {
-       "at": 2.84,
+       "at": 2.64,
        "pose": "sit_read",
        "expr": "determined"
       }

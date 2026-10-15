@@ -202,9 +202,6 @@
           { depth: 0.99, accent: true, svg: tt => barrel(HERO.x, HERO.y, HERO.s, tt, { fill: 'syrup', glow: 0.75 + 0.25 * Math.sin(tt * 3) }) },
           { depth: 1.02, svg: tt => hose(HERO.x + 57 * HERO.s, HERO.y - 503 * HERO.s, 330 - 20 * Math.sin(tt * 1.6), 1180 + 10 * Math.sin(tt * 2), 120, tt, tt < still ? ACC : '#9fb8c4') }
         ],
-        overlays: [
-          { type: 'label', at: still + 0.1, x: 60, y: 640, text: 'QUEBEC, CANADA · 2011-2012', fs: 38, sub: 'The barrels never looked empty' }
-        ],
         tag: LIKE
       });
     },
@@ -293,7 +290,6 @@
       return E.cine.shot(ctx, {
         set: 'sh51_store', setOpts: { rows: false }, grade: 'none', haze: 0.5, dof: true,
         cam: { from: { x: 0, y: -20, z: 1.0 }, to: { x: 20, y: 0, z: 1.1 }, settle: true },
-        rack: { at: cl - 0.2, dur: 0.7, from: 'bg' },
         shake: [{ at: em, amp: 3 }],
         shafts: { x: 360, n: 3, op: 0.14, w: 90 },
         figures: [

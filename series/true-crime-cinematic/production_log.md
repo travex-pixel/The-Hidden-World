@@ -264,3 +264,5 @@
 - 2026-10-15 07:23:54 tcv47-barefoot-bandit: rendering (final60, seed 1)
 - 2026-10-15 08:05:40 tcv47-barefoot-bandit: rendered in 2506s
 - 2026-10-15 08:06:32 tcv47-barefoot-bandit: VERIFIED -> series/true-crime-cinematic/output/true_crime_47_barefoot_bandit.mp4 (41.6s, 22.1 MB, sha256 5159bba7e795)
+- 2026-10-15 09:34:09 produce 50 --force: regenerating episode data
+- 2026-10-15 09:34:09 tcv50-lottery-coder: rendering (final60, seed 1)
