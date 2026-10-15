@@ -46,6 +46,8 @@
 | 42 | `true_crime_42_bali_van.mp4` (archived outside git) | Bali bombings (2002): the van traced by a filed-off number; first episode on the premium look + premium character animation, 60 fps | see `production_manifest.json` |
 | 43 | `true_crime_43_dannemora_meat.mp4` (archived outside git) | Dannemora escape (2015): hacksaw blades in frozen meat; first episode on the engagement engine (progress chip, checklist lesson with SAVE ribbon, opinion question), premium 60 fps | see `production_manifest.json` |
 | 44 | `true_crime_44_oldest_robber.mp4` (archived outside git) | J.L. "Red" Rountree, oldest convicted bank robber (2003, age 91): hooks/rehooks playbook, share line on the end card, smoother premium transitions, 60 fps | see `production_manifest.json` |
+| 45 | `true_crime_45_cartel_grandad.mp4` (archived outside git) | Leo Sharp, 87-year-old WWII veteran and Sinaloa cartel courier (2011): unlikely-offender format, 60 fps | see `production_manifest.json` |
+| 46 | `true_crime_46_gentleman_robber.mp4` (archived outside git) | Forrest Tucker: the San Quentin kayak (1979) and bank robberies at 78 (1999): unlikely-offender format, 60 fps | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

@@ -544,3 +544,27 @@ A Texas teller asked him twice if he was joking.
 
 Seed comment (post it yourself right after uploading): He blamed a bank for going broke. 12 years at 92: too harsh, or fair?
 Pinned share line: Send this to your grandad who says he's too old to cause trouble.
+
+## 45: The cartel grandad (`true_crime_45_cartel_grandad.mp4`)
+At 87 he was a decorated WWII veteran and a champion daylily grower… and a cartel courier 🌼
+
+Michigan troopers found 104 bricks in his pickup. Prosecutors said his age helped him avoid detection.
+Three years on his 90th birthday: too soft or fair? 👇 Follow for the next case.
+
+#truecrime #casefiles #cartel #wwii #themule
+
+Seed comment (post it yourself right after uploading): Three years on his 90th birthday. Too soft, or fair?
+Pinned share line: Send this to the grandad who still drives cross-country 🛻
+
+## 46: The kayak out of San Quentin (`true_crime_46_gentleman_robber.mp4`)
+He built a kayak inside San Quentin… and paddled away 🚣
+
+Three inmates. One homemade boat. A name you won't forget.
+Twenty years later, he was still robbing banks.
+
+Genius or fool? 👇 Follow for the next case.
+
+#truecrime #sanquentin #prisonbreak #bankrobber #casefiles
+
+Seed comment (post it yourself right after uploading): Real story behind The Old Man & the Gun (2018). Genius or fool? I say both 👀
+Pinned share line: Send this to the mate who always bails early 🚣

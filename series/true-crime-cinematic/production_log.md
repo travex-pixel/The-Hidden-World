@@ -260,3 +260,5 @@
 - 2026-10-15 06:41:00 tcv47-barefoot-bandit: rendering (final60, seed 1)
 - 2026-10-15 07:21:55 tcv47-barefoot-bandit: rendered in 2454s
 - 2026-10-15 07:22:49 tcv47-barefoot-bandit: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_47
+- 2026-10-15 07:23:54 produce 47 --force: regenerating episode data
+- 2026-10-15 07:23:54 tcv47-barefoot-bandit: rendering (final60, seed 1)

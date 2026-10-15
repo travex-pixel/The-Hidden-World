@@ -300,7 +300,7 @@
       "soundtrack": {
         "engine": "pipeline/score.py (original, procedural; no samples or third-party audio)",
         "mix": "pipeline/mixdown.py",
-        "sections": "A hook s01-s02 \u00b7 B investigation s03-s05 \u00b7 C questions s06-s09 \u00b7 D cliffhanger s10-s11 (impact on 'trial' at 70.4 s) \u00b7 E exit s12",
+        "sections": "A hook s01-s02 · B investigation s03-s05 · C questions s06-s09 · D cliffhanger s10-s11 (impact on 'trial' at 70.4 s) · E exit s12",
         "licence": "original work generated in this repository; no attribution required (see docs/CREDITS.md)"
       },
       "editorial_review": {
@@ -3928,7 +3928,24 @@
       "sha256": "e8a766d8b4e614936d453a995eb278748ce767667fb6ed73b2c6392e69720a16",
       "output": "series/true-crime-cinematic/output/true_crime_46_gentleman_robber.mp4",
       "verified": "2026-10-15T05:58:42",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "reviewer": "Claude (frame and transcript review)",
+        "date": "2026-10-15",
+        "verdict": "approved",
+        "checks": [
+          "research ledger read",
+          "contact sheet reviewed",
+          "ASR transcript read",
+          "engagement checks (9) pass"
+        ],
+        "notes": [
+          "Corrected from the brief: 'Over-the-Hill Gang' was his 1980s crew (not used); the 13-year sentence is Wikipedia-only (not used); no source for the hearing aid; he was 59 at San Quentin; '18 escapes' is his own count and is labelled so.",
+          "Statistic: FBI Bank Crime Statistics 2023, 30 % of identified bank-crime offenders had a prior bank-crime conviction. Fun fact: the kayak was named 'Rub-a-Dub-Dub' (Tampa Bay Times 1999, Grann).",
+          "Tucker is a silhouette (NOT A LIKENESS); tellers and deputies are generic. ASR misheard 'San Quentin' and 'Rub-a-Dub-Dub'; WER 0.076."
+        ],
+        "not_done": "No human listening test."
+      }
     },
     "45": {
       "id": "tcv45-cartel-grandad",
@@ -4007,7 +4024,24 @@
       "sha256": "a97f430e8f2a7da1230ebc69097695a8d300aeedff98255cf8d76a0aa142b39b",
       "output": "series/true-crime-cinematic/output/true_crime_45_cartel_grandad.mp4",
       "verified": "2026-10-15T06:41:00",
-      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "reviewer": "Claude (frame and transcript review)",
+        "date": "2026-10-15",
+        "verdict": "approved",
+        "checks": [
+          "research ledger read",
+          "contact sheet reviewed",
+          "ASR transcript read",
+          "engagement checks (9) pass"
+        ],
+        "notes": [
+          "Leo Sharp lived in Michigan City, Indiana (not Michigan); stopped by Michigan State Police on I-94 on 21 Oct 2011 aged 87 with 104 bricks (~104 kg); 3 years on his 90th birthday (7 May 2014); freed early 2015; died Dec 2016.",
+          "Dropped as weakly sourced: the guideline range, the per-kilo pay and 'El Chapo's mule'. 'El Tata' nickname rests on secondary sources. Statistic: USSC 2022, 38.6 % of offenders sentenced at 70+ got terms longer than life expectancy.",
+          "Sharp is a silhouette (NOT A LIKENESS) throughout; no film imagery. ASR (whisper tiny) misheard 'daylilies', 'cartel' and 'Three years' ('for years'); WER 0.064."
+        ],
+        "not_done": "No human listening test."
+      }
     },
     "47": {
       "id": "tcv47-barefoot-bandit",
