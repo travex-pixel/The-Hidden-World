@@ -198,6 +198,8 @@ def match_fine(lines: list[str], regs, asr: SpanASR, max_len: float = 9.0, max_g
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("episode"); ap.add_argument("recording")
     ap.add_argument("--tempo", type=float, default=1.0, help="speed the read up/down slightly without changing pitch (e.g. 1.06)")
+    ap.add_argument("--override", action="append", default=[], metavar="N:START-END",
+                    help="set line N's clip to START-END seconds of the recording by hand (after checking the printed regions)")
     ap.add_argument("--chain", choices=["enhanced", "plain"], default="enhanced", help="voice processing for the clips (timing is identical either way)")
     a = ap.parse_args(argv)
     ep = json.loads((ROOT / "episodes" / a.episode / "episode.json").read_text())
@@ -242,15 +244,22 @@ def main(argv=None) -> int:
         while s0 - 1 >= prev_end and (s0 - 1) not in used0 and regs[s0][0] - regs[s0 - 1][1] <= 0.6:
             s0 -= 1; used0.add(s0)
         m[k] = (s0, s1, max(sc, score(lines[k], asr(s0, s1))))
+    ovr = {}
+    for o in a.override:
+        k_, span = o.split(":"); s_, e_ = span.split("-"); ovr[int(k_)] = (float(s_), float(e_))
     manifest, pad = {"episode": a.episode, "source": Path(a.recording).name, "tempo": a.tempo, "chain": a.chain, "lines": []}, int(0.08 * SR)
     for k, (line, (s0, s1, sc)) in enumerate(zip(lines, m), 1):
-        t0, t1 = regs[s0][0], regs[s1 - 1][1]
+        t0, t1 = ovr.get(k, (regs[s0][0], regs[s1 - 1][1]))
         clip = xe[max(0, int(t0 * SR) - pad): int(t1 * SR) + pad]
         f = vdir / f"{k:02d}.wav"
         with wave.open(str(f), "wb") as w:
             w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(clip, -1, 1) * 32767).astype(np.int16).tobytes())
         heard_txt = asr(s0, s1)
-        manifest["lines"].append({"n": k, "text": line, "file": f.name, "from_s": round(t0, 2), "to_s": round(t1, 2), "heard": heard_txt, "score": round(sc, 2)})
+        if k in ovr:
+            ka, kb = min(range(len(regs)), key=lambda q: abs(regs[q][0] - t0)), min(range(len(regs)), key=lambda q: abs(regs[q][1] - t1))
+            heard_txt, sc = asr(ka, kb + 1), score(line, asr(ka, kb + 1))
+        manifest["lines"].append({"n": k, "text": line, "file": f.name, "from_s": round(t0, 2), "to_s": round(t1, 2), "heard": heard_txt, "score": round(sc, 2)}
+                                 | ({"override": True} if k in ovr else {}))
         flag = "" if sc >= 0.7 else "   <-- check"
         print(f"{k:2d}. {t0:6.2f}-{t1:6.2f}s  score {sc:.2f}  \"{line}\"  heard: \"{heard_txt}\"{flag}")
     used = {i for s0, s1, _ in m for i in range(s0, s1)}
