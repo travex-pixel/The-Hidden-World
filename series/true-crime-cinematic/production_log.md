@@ -274,3 +274,7 @@
 - 2026-10-15 11:05:22 tcv48-monopoly-cop: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_48
 - 2026-10-15 11:05:22 produce 52 --force: regenerating episode data
 - 2026-10-15 11:05:22 tcv52-fake-invoices: rendering (final60, seed 1)
+- 2026-10-15 11:46:48 tcv52-fake-invoices: rendered in 2486s
+- 2026-10-15 11:47:32 tcv52-fake-invoices: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_52
+- 2026-10-15 11:47:32 produce 51 --force: regenerating episode data
+- 2026-10-15 11:47:32 tcv51-syrup-heist: rendering (final60, seed 1)

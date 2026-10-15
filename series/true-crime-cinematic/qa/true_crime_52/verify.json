@@ -1,0 +1,198 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv52-fake-invoices/tcv52-fake-invoices.mp4",
+    "size_bytes": 19038921,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 37.133,
+    "audio_duration": 37.133,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.8,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv52-fake-invoices/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2228,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.6,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": false,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.8
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.022,
+    "transcript": "He sent Google fake invoices. They paid. Then Facebook paid over 100 million. The sender was a Lithuanian man. So how did it work? Both bought hardware from a real supplier based in Taiwan. He emailed their staff fake invoices in its name. The money went to him. In Latvia, he registered a company with the same name. You pay bills by email, save these three checks. Last year, this scam cost victims $3 billion. He got five years in prison. His weapon, a copied name and an email."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 42,
+      "extent": {
+        "left": 115.3,
+        "right": 964.7,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "hardware from a"
+      ]
+    },
+    "motion": {
+      "ok": false,
+      "longest_still_s": 1.0,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [
+        {
+          "scene": "s01_hook",
+          "at": 0.2,
+          "text": "He sent Google fake invoices. They paid."
+        }
+      ],
+      "median_motion": 1.36,
+      "frames": 371
+    },
+    "audio": {
+      "opening_speech_median_db": -20.0,
+      "opening_min_speech_window_db": -28.9,
+      "first_word_db": -19.8,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -36.7,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.306,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.4,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -31.0,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8093,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.8,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -92.7,
+      "end_before_db": -17.6,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.6,
+      "ending_intentional": true,
+      "durations": {
+        "video": 37.133333,
+        "audio": 37.132993
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true
+      },
+      "notes": {
+        "hook": "He sent Google fake invoices. They paid. Then Facebook paid. Over $100",
+        "loop_gaps": [],
+        "tail": "3 billion dollars. He got five years in prison. His weapon? A copied name and an email.",
+        "end_title": "HE INVOICED GOOGLE. GENIUS OR CRIMINAL? \ud83d\udc47 TAG THE MATE WHO PAYS ANY BILL",
+        "tail_s": 1.23,
+        "wpm": 147.1
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 8,
+      "composed_shots": 8,
+      "shots_with_characters": 8,
+      "character_shot_share": 1.0,
+      "distinct_sets": 6,
+      "max_set_share": 0.38,
+      "shot_sizes": {
+        "wide": 4,
+        "medium": 2,
+        "medium-wide": 2
+      },
+      "max_shot_size_share": 0.5,
+      "ok": true
+    }
+  }
+}
