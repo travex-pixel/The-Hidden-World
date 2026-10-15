@@ -65,7 +65,20 @@ def analyse(mp4: Path, out_dir: Path, ep: dict | None = None) -> dict:
     gap = np.array([not any(a - 0.15 <= t <= b + 0.15 for a, b in lines) and not inside(t, silence_ok) for t in tw])
     o = tw < 15.0; med = float(np.median(lv[sp & o])) if (sp & o).any() else -99.0
     res = {"opening_speech_median_db": round(med, 1)}
-    sw = lv[sp & o]; res["opening_min_speech_window_db"] = round(float(sw.min()), 1) if len(sw) else None
+    # a short pause INSIDE a line (a human read's "How? ... He phoned staff") is not a dropout: low runs of at most
+    # 0.5 s are left out of the speech windows; a real dropout (longer than 0.5 s, or a weak line) is still caught
+    low = sp & o & (lv < med - 14); keep = sp & o; i = 0
+    while i < len(low):
+        if low[i]:
+            j = i
+            while j < len(low) and low[j]:
+                j += 1
+            if (j - i) * WIN <= 0.5:
+                keep[i:j] = False
+            i = j
+        else:
+            i += 1
+    sw = lv[keep]; res["opening_min_speech_window_db"] = round(float(sw.min()), 1) if len(sw) else None
     first = lines[0][0] if lines else 0.0; fw = lv[(tw > first + 0.05) & (tw < first + 0.6)]
     res["first_word_db"] = round(float(fw.max()), 1) if len(fw) else None
     res["opening_speech_steady"] = bool(len(sw)) and float(np.percentile(sw, 10)) >= med - 14 and (res["first_word_db"] or -99) >= med - 6

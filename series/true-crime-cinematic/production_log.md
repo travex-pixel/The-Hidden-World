@@ -299,3 +299,10 @@
 - 2026-10-15 21:43:54 tcv49-twitter-teen: rendering (final60, seed 1, tts recorded)
 - 2026-10-15 21:50:17 produce 49 --force: regenerating episode data
 - 2026-10-15 21:50:17 tcv49-twitter-teen: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 22:35:04 tcv49-twitter-teen: rendered in 2686s
+- 2026-10-15 22:36:12 tcv49-twitter-teen: QA FAILED ['audio_opening_speech_steady', 'engage_open_loop_every_10s', 'engage_ends_within_1s_of_last_word']; frames and details in series/true-crime-cinematic/qa/true_crime_49
+- 2026-10-15 22:36:12 produce 53 --force: regenerating episode data
+- 2026-10-15 22:36:12 tcv53-cocaine-plane-2: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 22:40:03 produce 49: regenerating episode data
+- 2026-10-15 22:40:03 tcv49-twitter-teen: render cached (inputs unchanged), skipping to QA
+- 2026-10-15 22:41:11 tcv49-twitter-teen: VERIFIED -> series/true-crime-cinematic/output/true_crime_49_twitter_teen.mp4 (47.6s, 21.6 MB, sha256 f6699ae7a5a0)

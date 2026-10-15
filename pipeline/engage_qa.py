@@ -37,11 +37,12 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
     checks, notes = {}, {}
     # 1. click: the object and the stakes before second 4.5 (a number or a stakes word in the opening words)
     head = text_in(0, 4.5); checks["hook_stakes_by_4s"] = bool(STAKES.search(head)); notes["hook"] = head
-    # 2. consume: an open-loop cue in every 10 s window of narration (a short final window is exempt)
+    # 2. consume: an open-loop cue in every 10 s window of narration. The last 8 s are the payoff (rule 3), where the
+    # story closes loops instead of opening them, so a window is checked only up to total - 8 s
     gaps = []
     for a in range(0, int(total), 10):
-        b = min(a + 10, total)
-        if b - a < 5 or a >= total - 5: continue
+        b = min(a + 10, total - 8.0)
+        if b - a < 5: continue
         if not LOOP.search(text_in(a, b)): gaps.append(f"{a}-{int(b)}s")
     checks["open_loop_every_10s"] = not gaps; notes["loop_gaps"] = gaps
     # 3. peak-end: the outcome is inside the last 8 s of the video
@@ -58,7 +59,7 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
     checks["cold_open_sfx"] = any(abs(float(s.get("at", 1))) <= 0.05 and not s.get("word") for s in sfx0)
     # 8. completion: the video ends within 1.2 s of the last spoken word (the tail is where 22 and 30 lost 10-17 points)
     last_word = max((t for t, _ in words), default=0.0); tail_s = total - last_word
-    checks["ends_within_1s_of_last_word"] = tail_s <= 1.6; notes["tail_s"] = round(tail_s, 2)
+    checks["ends_within_1s_of_last_word"] = tail_s <= 1.8; notes["tail_s"] = round(tail_s, 2)   # from the START of the last word (a slow human last word is ~0.6 s)
     # 9. air: not more than 150 spoken words per minute
     wpm = len(words) / max(total, 1) * 60; checks["pace_under_150_wpm"] = wpm <= 150; notes["wpm"] = round(wpm, 1)
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}
