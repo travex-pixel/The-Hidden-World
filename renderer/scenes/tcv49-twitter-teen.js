@@ -43,6 +43,7 @@
     let g = `<g transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(rot)}) scale(${sc(s)})">`;
     g += `<ellipse cx="18" cy="40" rx="240" ry="420" fill="#000" opacity="0.4" filter="url(#cineSoft)"/>`;
     if (gl > 0) g += wash(0, 0, 330, 520, ACC, f1(0.16 * gl));
+    if (o.hand) g += `<path d="M-236 60 C-262 260 -240 480 -170 640 L-120 760 L110 760 L150 600 C176 460 196 320 206 140 Z" fill="#06080b" stroke="#3e5262" stroke-width="3"/>`;   // the palm and wrist (behind)
     g += `<rect x="-190" y="-380" width="380" height="760" rx="56" fill="#0c0f13" stroke="${INK}" stroke-width="6"/>`;
     g += `<rect x="-184" y="-374" width="368" height="748" rx="52" fill="none" stroke="#5a6670" stroke-width="3" opacity="0.7"/>`;
     g += `<defs><clipPath id="tt49scr"><rect x="-172" y="-360" width="344" height="720" rx="40"/></clipPath></defs>`;
@@ -73,12 +74,11 @@
     if (o.paused > 0) { const q = ease.out(clamp(o.paused, 0, 1)); g += `<g transform="translate(0 ${f1(lerp(-460, 0, q))})"><rect x="-172" y="-262" width="344" height="110" fill="#0b1418" opacity="0.94"/><rect x="-172" y="-154" width="344" height="3" fill="${ACC}"/><text x="0" y="-198" text-anchor="middle" ${NUN} font-size="30" fill="#f2f5f7" letter-spacing="2">POSTING PAUSED</text></g>`; }
     g += `<rect x="-172" y="-360" width="344" height="720" fill="url(#tt49glare)" opacity="0.5"/></g>`;
     g += `<defs><linearGradient id="tt49glare" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/><stop offset="0.4" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>`;
-    if (o.hand) {   // a silhouetted hand holding the phone from below: palm and wrist under the phone, four fingertips on the
-      // right edge, the thumb on the screen's lower left moving slightly (scrolling)
+    if (o.hand) {   // a silhouetted left hand: the fingertips curl round the right edge, the thumb rests on the screen's
+      // lower left and moves slightly (scrolling); the palm itself is drawn behind the phone (handBack below)
       const th = 8 * Math.sin(t * 2.2), HC = '#06080b', HS = '#3e5262';
-      g += `<path d="M-120 330 C-150 400 -160 520 -150 640 L170 640 C190 520 220 420 214 330 Z" fill="${HC}" stroke="${HS}" stroke-width="3"/>`;
-      [[-20, 46], [70, 44], [160, 42], [246, 38]].forEach(([fy, fl]) => { g += `<rect x="${f1(178)}" y="${f1(fy)}" width="${fl}" height="62" rx="28" fill="${HC}" stroke="${HS}" stroke-width="3"/>`; });
-      g += `<path d="M-150 520 C-190 440 -200 360 -170 ${f1(250 + th)} C-150 ${f1(214 + th)} -104 ${f1(214 + th)} -96 ${f1(250 + th)} C-90 ${f1(290 + th)} -112 330 -120 380 Z" fill="${HC}" stroke="${HS}" stroke-width="3"/>`;
+      [[-10, 40], [74, 42], [158, 40], [238, 34]].forEach(([fy, fl]) => { g += `<rect x="178" y="${f1(fy)}" width="${fl}" height="60" rx="28" fill="${HC}" stroke="${HS}" stroke-width="3"/>`; });
+      g += `<path d="M-200 470 C-214 400 -206 ${f1(330 + th)} -170 ${f1(286 + th)} C-146 ${f1(258 + th)} -104 ${f1(262 + th)} -100 ${f1(296 + th)} C-98 ${f1(330 + th)} -128 370 -150 430 Z" fill="${HC}" stroke="${HS}" stroke-width="3"/>`;
     }
     return g + '</g>';
   }
