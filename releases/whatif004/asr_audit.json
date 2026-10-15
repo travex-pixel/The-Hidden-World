@@ -1,0 +1,842 @@
+{
+ "tool": "sherpa-onnx Moonshine base (offline ASR) on the MP4's own audio track",
+ "lines": 51,
+ "corpus_wer": 0.095,
+ "lines_over_25pct": [
+  {
+   "scene": "w03_map",
+   "who": "narrator_history",
+   "t": 65.04,
+   "script": "Paris is about five thousand eight hundred kilometres away.",
+   "asr": "Paris is about 5,800 kilometres away.",
+   "wer": 0.444,
+   "diffs": [
+    [
+     "five",
+     "∅"
+    ],
+    [
+     "thousand",
+     "∅"
+    ],
+    [
+     "eight",
+     "5"
+    ],
+    [
+     "hundred",
+     "800"
+    ]
+   ]
+  },
+  {
+   "scene": "w03_map",
+   "who": "narrator_history",
+   "t": 72.773,
+   "script": "That's ten days, nonstop. Statues don't need sleep.",
+   "asr": "That's 10 days non-stop. Statues don't need sleep.",
+   "wer": 0.375,
+   "diffs": [
+    [
+     "ten",
+     "10"
+    ],
+    [
+     "∅",
+     "non"
+    ],
+    [
+     "nonstop",
+     "stop"
+    ]
+   ]
+  },
+  {
+   "scene": "w05_titanic",
+   "who": "narrator_history",
+   "t": 92.263,
+   "script": "Day four. Three thousand eight hundred metres down. Pitch black, except for her torch.",
+   "asr": "Day 4: 3800 meters down. Pitch black except for her torch.",
+   "wer": 0.429,
+   "diffs": [
+    [
+     "four",
+     "∅"
+    ],
+    [
+     "three",
+     "∅"
+    ],
+    [
+     "thousand",
+     "∅"
+    ],
+    [
+     "eight",
+     "4"
+    ],
+    [
+     "hundred",
+     "3800"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "w07_montstmichel",
+   "who": "narrator_history",
+   "t": 141.563,
+   "script": "up to about fourteen metres.",
+   "asr": "Up to about 14 meters.",
+   "wer": 0.4,
+   "diffs": [
+    [
+     "fourteen",
+     "14"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "w08_arc",
+   "who": "narrator_history",
+   "t": 151.033,
+   "script": "Paris. The Arc de Triomphe is fifty metres tall. She's forty-six.",
+   "asr": "Paris, the Arc de Triomphe is 50 meters tall. She's 40 seconds.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "fifty",
+     "50"
+    ],
+    [
+     "metres",
+     "meters"
+    ],
+    [
+     "forty",
+     "40"
+    ],
+    [
+     "six",
+     "seconds"
+    ]
+   ]
+  },
+  {
+   "scene": "w10_tower",
+   "who": "narrator_history",
+   "t": 177.373,
+   "script": "Except the Eiffel Tower is three hundred and thirty metres tall.",
+   "asr": "Except the Eiffel Tower is 330 meters tall.",
+   "wer": 0.455,
+   "diffs": [
+    [
+     "three",
+     "∅"
+    ],
+    [
+     "hundred",
+     "∅"
+    ],
+    [
+     "and",
+     "∅"
+    ],
+    [
+     "thirty",
+     "330"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "scene": "w00_cold",
+   "who": "narrator_history",
+   "t": 0.57,
+   "script": "Look closely at the Statue of Liberty's feet.",
+   "asr": "Look closely at the statue of Liberty's feet.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w00_cold",
+   "who": "narrator_history",
+   "t": 3.868,
+   "script": "Her right heel is off the ground. She isn't standing still. She's mid-stride.",
+   "asr": "Her right heel is off the ground. She isn't standing still. She's mid-stride.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w00_cold",
+   "who": "narrator_history",
+   "t": 10.613,
+   "script": "She has been since 1886. So what if, one night, she finished the step?",
+   "asr": "She has been since 1886. So what if one night she finished the step?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w00_cold",
+   "who": "ranger_dee",
+   "t": 17.392,
+   "script": "Ma'am? Ma'am, you can't... Okay.",
+   "asr": "Ma'am, ma'am you can't, okay.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w01_paris1884",
+   "who": "narrator_history",
+   "t": 21.591,
+   "script": "Home is Paris. She was built there, from copper sheets about as thick as two pennies.",
+   "asr": "Home is Paris. She was built there from copper sheets about as thick as two pennies.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w01_paris1884",
+   "who": "narrator_history",
+   "t": 26.964,
+   "script": "In 1884 she stood finished above the Paris rooftops.",
+   "asr": "In 1884, she stood finished above the Paris rooftops.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w01_paris1884",
+   "who": "narrator_history",
+   "t": 31.912,
+   "script": "Then she was taken apart, packed into 214 crates, and shipped to New York.",
+   "asr": "Then she was taken apart, packed into 214 crates and shipped to New York.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w01_paris1884",
+   "who": "narrator_history",
+   "t": 36.958,
+   "script": "Her iron skeleton was engineered by Gustave Eiffel.",
+   "asr": "Her iron skeleton was engineered by Gustave Eiffel.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w01_paris1884",
+   "who": "narrator_history",
+   "t": 40.59,
+   "script": "A few years later, he built something taller.",
+   "asr": "A few years later he built something taller.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w02_harbor",
+   "who": "narrator_history",
+   "t": 44.62,
+   "script": "By sunrise, she's wading across New York Harbor, and the whole city is filming.",
+   "asr": "By sunrise she's wading across New York harbour and the whole city is filming.",
+   "wer": 0.071,
+   "diffs": [
+    [
+     "harbor",
+     "harbour"
+    ]
+   ]
+  },
+  {
+   "scene": "w02_harbor",
+   "who": "tourist_tony",
+   "t": 49.483,
+   "script": "I literally just bought the T-shirt!",
+   "asr": "I literally just bought the t-shirt",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w02_harbor",
+   "who": "narrator_history",
+   "t": 51.485,
+   "script": "The harbour seals dive. The gulls take off.",
+   "asr": "The harbor seals dive. The gulls take off.",
+   "wer": 0.125,
+   "diffs": [
+    [
+     "harbour",
+     "harbor"
+    ]
+   ]
+  },
+  {
+   "scene": "w02_harbor",
+   "who": "narrator_history",
+   "t": 55.047,
+   "script": "The Staten Island Ferry reverses, very, very carefully.",
+   "asr": "The state and island ferry reverses very, very carefully.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "∅",
+     "state"
+    ],
+    [
+     "staten",
+     "and"
+    ]
+   ]
+  },
+  {
+   "scene": "w02_harbor",
+   "who": "narrator_history",
+   "t": 59.414,
+   "script": "Where's she going? East. Home.",
+   "asr": "Where's she going? Iced. Home.",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "east",
+     "iced"
+    ]
+   ]
+  },
+  {
+   "scene": "w03_map",
+   "who": "narrator_history",
+   "t": 65.04,
+   "script": "Paris is about five thousand eight hundred kilometres away.",
+   "asr": "Paris is about 5,800 kilometres away.",
+   "wer": 0.444,
+   "diffs": [
+    [
+     "five",
+     "∅"
+    ],
+    [
+     "thousand",
+     "∅"
+    ],
+    [
+     "eight",
+     "5"
+    ],
+    [
+     "hundred",
+     "800"
+    ]
+   ]
+  },
+  {
+   "scene": "w03_map",
+   "who": "narrator_history",
+   "t": 68.735,
+   "script": "Something her size would stroll at about twenty-four kilometres an hour.",
+   "asr": "Something her size would stroll at about 24 kilometers an hour.",
+   "wer": 0.25,
+   "diffs": [
+    [
+     "twenty",
+     "∅"
+    ],
+    [
+     "four",
+     "24"
+    ],
+    [
+     "kilometres",
+     "kilometers"
+    ]
+   ]
+  },
+  {
+   "scene": "w03_map",
+   "who": "narrator_history",
+   "t": 72.773,
+   "script": "That's ten days, nonstop. Statues don't need sleep.",
+   "asr": "That's 10 days non-stop. Statues don't need sleep.",
+   "wer": 0.375,
+   "diffs": [
+    [
+     "ten",
+     "10"
+    ],
+    [
+     "∅",
+     "non"
+    ],
+    [
+     "nonstop",
+     "stop"
+    ]
+   ]
+  },
+  {
+   "scene": "w04_shelf",
+   "who": "narrator_history",
+   "t": 78.263,
+   "script": "Past the harbour mouth, the sea floor drops away.",
+   "asr": "Pass the harbor mouth the sea floor drops away.",
+   "wer": 0.222,
+   "diffs": [
+    [
+     "past",
+     "pass"
+    ],
+    [
+     "harbour",
+     "harbor"
+    ]
+   ]
+  },
+  {
+   "scene": "w04_shelf",
+   "who": "narrator_history",
+   "t": 81.714,
+   "script": "The water closes over her crown, then her torch.",
+   "asr": "The water closes over her crown, then her torch.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_shelf",
+   "who": "narrator_history",
+   "t": 84.937,
+   "script": "New York's humpback whales have been coming back in big numbers.",
+   "asr": "New York's humpback whales have been coming back in big numbers.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w04_shelf",
+   "who": "narrator_history",
+   "t": 88.767,
+   "script": "None of them expected this.",
+   "asr": "None of them expected this.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w05_titanic",
+   "who": "narrator_history",
+   "t": 92.263,
+   "script": "Day four. Three thousand eight hundred metres down. Pitch black, except for her torch.",
+   "asr": "Day 4: 3800 meters down. Pitch black except for her torch.",
+   "wer": 0.429,
+   "diffs": [
+    [
+     "four",
+     "∅"
+    ],
+    [
+     "three",
+     "∅"
+    ],
+    [
+     "thousand",
+     "∅"
+    ],
+    [
+     "eight",
+     "4"
+    ],
+    [
+     "hundred",
+     "3800"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "w05_titanic",
+   "who": "narrator_history",
+   "t": 99.309,
+   "script": "The pressure here is nearly four hundred times what it is at the surface.",
+   "asr": "The pressure here is nearly 400 times what it is at the surface.",
+   "wer": 0.143,
+   "diffs": [
+    [
+     "four",
+     "∅"
+    ],
+    [
+     "hundred",
+     "400"
+    ]
+   ]
+  },
+  {
+   "scene": "w05_titanic",
+   "who": "narrator_history",
+   "t": 103.848,
+   "script": "But she's hollow, and full of seawater, so it pushes back from inside just as hard.",
+   "asr": "But she's hollow and full of seawater, so it pushes back from inside just as hard.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w05_titanic",
+   "who": "narrator_history",
+   "t": 109.029,
+   "script": "And then, in the torchlight, a shape everyone knows.",
+   "asr": "And then in the torchlight, a shape everyone knows.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w05_titanic",
+   "who": "narrator_history",
+   "t": 113.104,
+   "script": "She lowers her torch for a moment. Then she keeps walking.",
+   "asr": "She lowers her torch for a moment. Then she keeps walking.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w06_ridge",
+   "who": "narrator_history",
+   "t": 119.18,
+   "script": "Day six. The Mid-Atlantic Ridge, part of the longest mountain range on Earth.",
+   "asr": "Day 6: The Mid-Atlantic Ridge, part of the longest mountain range on Earth.",
+   "wer": 0.071,
+   "diffs": [
+    [
+     "six",
+     "6"
+    ]
+   ]
+  },
+  {
+   "scene": "w06_ridge",
+   "who": "narrator_history",
+   "t": 124.628,
+   "script": "Almost all of it is underwater.",
+   "asr": "Almost all of it is underwater.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w06_ridge",
+   "who": "narrator_history",
+   "t": 127.183,
+   "script": "She climbs it in the dark. On the far side, the sea floor starts rising towards Europe.",
+   "asr": "She climbs it in the dark. On the far side, the seafloor starts rising towards Europe.",
+   "wer": 0.118,
+   "diffs": [
+    [
+     "sea",
+     "∅"
+    ],
+    [
+     "floor",
+     "seafloor"
+    ]
+   ]
+  },
+  {
+   "scene": "w07_montstmichel",
+   "who": "narrator_history",
+   "t": 134.113,
+   "script": "Day ten. Sunrise in Normandy.",
+   "asr": "Day 10 sunrise in Normandy",
+   "wer": 0.2,
+   "diffs": [
+    [
+     "ten",
+     "10"
+    ]
+   ]
+  },
+  {
+   "scene": "w07_montstmichel",
+   "who": "narrator_history",
+   "t": 138.007,
+   "script": "The tides at Mont-Saint-Michel are among the biggest in Europe,",
+   "asr": "The tides at Mons and Michel are among the biggest in Europe.",
+   "wer": 0.167,
+   "diffs": [
+    [
+     "mont",
+     "mons"
+    ],
+    [
+     "saint",
+     "and"
+    ]
+   ]
+  },
+  {
+   "scene": "w07_montstmichel",
+   "who": "narrator_history",
+   "t": 141.563,
+   "script": "up to about fourteen metres.",
+   "asr": "Up to about 14 meters.",
+   "wer": 0.4,
+   "diffs": [
+    [
+     "fourteen",
+     "14"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "w07_montstmichel",
+   "who": "narrator_history",
+   "t": 143.919,
+   "script": "The salt-meadow sheep are used to water coming in fast.",
+   "asr": "The salt-medo sheep are used to water coming in fast.",
+   "wer": 0.091,
+   "diffs": [
+    [
+     "meadow",
+     "medo"
+    ]
+   ]
+  },
+  {
+   "scene": "w07_montstmichel",
+   "who": "narrator_history",
+   "t": 147.678,
+   "script": "They are not used to this.",
+   "asr": "They are not used to this",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w08_arc",
+   "who": "narrator_history",
+   "t": 151.033,
+   "script": "Paris. The Arc de Triomphe is fifty metres tall. She's forty-six.",
+   "asr": "Paris, the Arc de Triomphe is 50 meters tall. She's 40 seconds.",
+   "wer": 0.333,
+   "diffs": [
+    [
+     "fifty",
+     "50"
+    ],
+    [
+     "metres",
+     "meters"
+    ],
+    [
+     "forty",
+     "40"
+    ],
+    [
+     "six",
+     "seconds"
+    ]
+   ]
+  },
+  {
+   "scene": "w08_arc",
+   "who": "narrator_history",
+   "t": 156.663,
+   "script": "In New York, she has a pedestal. Here, she has to stand on her toes.",
+   "asr": "In New York she has a pedestal. Here she has to stand on her toes.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w09_seine",
+   "who": "narrator_history",
+   "t": 163.453,
+   "script": "Parisians last saw her in 1884, the colour of a new penny. She's come back green.",
+   "asr": "Parisians last saw her in 1884, the colour of a new penny. She's come back green.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w09_seine",
+   "who": "narrator_history",
+   "t": 170.371,
+   "script": "And her skeleton and that tower came from the same engineer. Time for a family photo.",
+   "asr": "and Haskeliton and that tower came from the same engineer. Time for family photo.",
+   "wer": 0.188,
+   "diffs": [
+    [
+     "her",
+     "∅"
+    ],
+    [
+     "skeleton",
+     "haskeliton"
+    ],
+    [
+     "a",
+     "∅"
+    ]
+   ]
+  },
+  {
+   "scene": "w10_tower",
+   "who": "narrator_history",
+   "t": 177.373,
+   "script": "Except the Eiffel Tower is three hundred and thirty metres tall.",
+   "asr": "Except the Eiffel Tower is 330 meters tall.",
+   "wer": 0.455,
+   "diffs": [
+    [
+     "three",
+     "∅"
+    ],
+    [
+     "hundred",
+     "∅"
+    ],
+    [
+     "and",
+     "∅"
+    ],
+    [
+     "thirty",
+     "330"
+    ],
+    [
+     "metres",
+     "meters"
+    ]
+   ]
+  },
+  {
+   "scene": "w10_tower",
+   "who": "narrator_history",
+   "t": 182.044,
+   "script": "She doesn't even reach the first floor.",
+   "asr": "She doesn't even reach the first floor.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w11_sister",
+   "who": "narrator_history",
+   "t": 186.613,
+   "script": "And on a narrow island in the Seine, someone has been waiting.",
+   "asr": "And on a narrow island in the Seine, someone has been waiting.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w11_sister",
+   "who": "narrator_history",
+   "t": 190.716,
+   "script": "A quarter-size copy of her, put up in 1889.",
+   "asr": "A quarter-sized copy of her put up in 1889.",
+   "wer": 0.1,
+   "diffs": [
+    [
+     "size",
+     "sized"
+    ]
+   ]
+  },
+  {
+   "scene": "w11_sister",
+   "who": "narrator_history",
+   "t": 194.964,
+   "script": "Since 1937, she has faced west, towards New York.",
+   "asr": "Since 1937, she has faced West towards New York.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w11_sister",
+   "who": "narrator_history",
+   "t": 199.608,
+   "script": "Eighty-nine years of looking out to sea. And today, her big sister walked out of it.",
+   "asr": "89 years of looking out to sea. And today her big sister walked out of it.",
+   "wer": 0.118,
+   "diffs": [
+    [
+     "eighty",
+     "∅"
+    ],
+    [
+     "nine",
+     "89"
+    ]
+   ]
+  },
+  {
+   "scene": "w12_empty",
+   "who": "narrator_history",
+   "t": 207.033,
+   "script": "Back in New York, the pedestal is empty.",
+   "asr": "Back in New York, the pedestal is empty.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w12_empty",
+   "who": "tourist_tony",
+   "t": 210.331,
+   "script": "So... do I get a refund?",
+   "asr": "So do I get a refund?",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w12_empty",
+   "who": "ranger_dee",
+   "t": 212.317,
+   "script": "She'll be back. Probably.",
+   "asr": "She'll be back, probably.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w13_cta",
+   "who": "narrator_history",
+   "t": 215.533,
+   "script": "And she may not be the only wanderer.",
+   "asr": "And she may not be the only wanderer.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w13_cta",
+   "who": "narrator_history",
+   "t": 218.203,
+   "script": "Some archaeologists think Easter Island's statues were walked into place,",
+   "asr": "Some archaeologists think Easter Island's statues were walked into place.",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w13_cta",
+   "who": "narrator_history",
+   "t": 223.012,
+   "script": "rocked upright with ropes.",
+   "asr": "Rocked upright with ropes",
+   "wer": 0.0,
+   "diffs": []
+  },
+  {
+   "scene": "w13_cta",
+   "who": "narrator_history",
+   "t": 225.499,
+   "script": "So which landmark should walk next? Tell me in the comments.",
+   "asr": "So which landmark should walk next? Tell me in the comments.",
+   "wer": 0.0,
+   "diffs": []
+  }
+ ],
+ "note": "ASR mistakes are expected on old words and names; a mismatch is a lead for a human listen, not proof of a defect."
+}

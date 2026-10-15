@@ -300,6 +300,8 @@ front of everything. v5 changes the approach:
 * **New sound:** ambiences `underwater` (with whale song), `deep` and `meadow`; effects `clang` (a hollow copper foot),
   `foghorn`, `baa` and `whale`.
 * **Title cards** shrink to fit the frame.
+* **Release:** `releases/whatif004/` (MP4, caption, thumbnails, QA, `REVIEW.md`); phone download page
+  https://claude.ai/artifact/QEmrLJSeBxy9NczoL9QtzM.
 
 ## 3. Writing an episode
 
