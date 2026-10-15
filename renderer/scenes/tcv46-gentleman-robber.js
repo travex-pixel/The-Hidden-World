@@ -221,7 +221,7 @@
         props: [
           { depth: 1.01, accent: true, svg: tt => kayak(HERO.x, HERO.y, HERO.s, tt, { paddlers: [-270, 0, 270], glow: 0.7, deep: true }) }
         ],
-        overlays: [{ type: 'label', at: n18 + 0.3, x: 60, y: 760, text: 'AUGUST 1979 · SAN QUENTIN', fs: 38, sub: 'Three inmates, one homemade kayak' }],
+        overlays: [{ type: 'label', at: n18 + 0.3, x: 60, y: 440, text: 'AUGUST 1979 · SAN QUENTIN', fs: 38, sub: 'Three inmates, one homemade kayak' }],
         tag: LIKE
       });
     },

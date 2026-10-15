@@ -52,7 +52,7 @@ def build(h):
           "tension", ["G_tata"], sfx=[fx(0.0, "door", 0.3), fw(0, 2, "keys", 0.3, -0.05), fw(0, 5, "sparkle", 0.3, 0.0)],
           emph=["nickname?", "el", "tata:", "grandpa."], min_d=3.6, pad=0.2),
         # B - the LESSON (save trigger): package / money-mule scams aimed at older people; captions OFF; on screen >= 3 s
-        S("s07_lesson", "cg45_lesson", [N("Offered an easy delivery job? Save these three signs.")],
+        S("s07_lesson", "cg45_lesson", [N("Offered an easy delivery job? Save these three warning signs.")],
           "tension-rise", ["G_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 5, "chime", 0.25, 0.0)],
           emph=["offered", "delivery", "job?", "save", "three"], min_d=3.6, pad=0.25, tr="dissolve"),
         # C - the statistic (a counter): 38.6 % of federal offenders sentenced at 70+ got a term beyond life expectancy

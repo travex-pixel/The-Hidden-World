@@ -293,7 +293,7 @@
         set: 'mapflight', grade: 'none', haze: 0,
         setOpts: { geo: 'bahamas_route', ...MO, country: 'The Bahamas', country_at: bh - 1.2, draw: true,
           pin: { ll: ABACO, label: 'GREAT ABACO, BAHAMAS', at: bh - 0.2, dx: -30, dy: -46, anchor: 'end', fs: 44 },
-          labels: [{ ll: [-86.5, 40.3], text: 'BLOOMINGTON, IND.', at: ind - 0.1, fs: 40 }, { ll: [-89.6, 38.0], text: 'JULY 4, 2010', at: ind + 0.3, fs: 32 }, { ll: [-77.6, 31.8], text: 'OVER 1,000 MILES', at: mi, fs: 32 }, { ll: [-82.2, 28.6], text: 'FLORIDA', at: 0.5, fs: 34 }, { ll: [-80.5, 36.2], text: 'ATLANTIC', at: 0.8, fs: 32 }] },
+          labels: [{ ll: [-86.5, 40.3], text: 'BLOOMINGTON, IND.', at: ind - 0.1, fs: 40 }, { ll: [-89.6, 38.0], text: 'JULY 4, 2010', at: ind + 0.3, fs: 32 }, { ll: [-87.6, 31.6], text: 'OVER 1,000 MILES', at: mi, fs: 32 }, { ll: [-82.2, 28.6], text: 'FLORIDA', at: 0.5, fs: 34 }, { ll: [-80.5, 36.2], text: 'ATLANTIC', at: 0.8, fs: 32 }] },
         cam: { from: { x: 0, y: 0, z: 1.0 }, to: { x: 0, y: 0, z: 1.0 } },
         props: [{ depth: 0, svg: tt => routeSvg(ctx, MO, ease.inOut(seg(tt, fl - 0.1, bh)), seg(tt, fl - 0.3, fl)) }],
         overlays: [

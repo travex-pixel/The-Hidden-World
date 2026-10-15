@@ -50,7 +50,7 @@ Checked but not used: the same report's share of older offenders (13.7 % of fede
 Fun-fact candidate **not used on screen** (offered for the caption): his story inspired Clint Eastwood's 2018 film *The Mule* (ABC7 Chicago, Feb 2018; Wikipedia; nwitimes). No film imagery or actor is shown.
 
 ## Lesson (checklist card with SAVE ribbon, captions off)
-Spoken cue: "Offered an easy delivery job? Save these three signs."
+Spoken cue: "Offered an easy delivery job? Save these three warning signs." (the plain "three signs" version was misheard as "Often ... science" by the recogniser)
 Rows: "A 'JOB' FORWARDING PARCELS" / "MOVING CASH FOR STRANGERS" / "TOLD TO RUSH OR STAY QUIET"; credit row "FTC · FBI · Boston Police Dept."
 - Row 1: FTC consumer alert, "Can you unbox the signs of a reshipping scam?" (Dec 2025) https://consumer.ftc.gov/consumer-alerts/2025/12/can-you-unbox-signs-reshipping-scam (a job receiving goods and mailing them on is a reshipping scam; "reshipping is never a real job"); FBI red flags as reported by NBC Chicago https://www.nbcchicago.com/news/local/victims-used-as-money-mules-officials-warn/2710/ ("receiving packages and reshipping them to another location").
 - Row 2: FBI red flags (NBC Chicago: picking up money and sending it elsewhere; opening or sharing a bank account); FDIC OIG public service alert https://www.fdicoig.gov/public-service-alert-money-mules ; Boston Police (do not receive or transfer money at the instruction of someone met online or by phone).
