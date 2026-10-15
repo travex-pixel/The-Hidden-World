@@ -27,48 +27,49 @@ def build(h):
     VER = "2026-10-15"
 
     scenes = [
-        # A - hook: the HERO OBJECT (the envelope marked ROBBERY on a bank counter) big and centred from frame 1; the headline
-        #     is burned in by the engine. Line 1 is the twist with the stakes number (91) inside the first 2.5 s.
-        S("s01_hook", "or44_hook", [N("At 91, he robbed a bank with an envelope.")],
-          "tension", ["R_hook", "R_record"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "paper", 0.35), fw(0, 1, "thump", 0.35, -0.05), fw(0, 7, "paper", 0.3, 0.0)],
-          emph=["91,", "robbed", "bank", "envelope."], min_d=3.6, pad=0.15),
-        # A - where: the map fly-in to Abilene, Texas; the open loop (why?)
-        S("s02_map", "or44_map", [N("Abilene, Texas. So why rob banks at 91?")],
-          "tension", ["R_where"], sfx=[fx(0.0, "whoosh", 0.3), fw(0, 0, "ping", 0.3, -0.02)],
-          emph=["abilene,", "texas.", "why"], min_d=3.6, pad=0.1, tr="dissolve"),
+        # A - hook: frame 1 = the HERO OBJECT (the envelope marked ROBBERY on the counter) with his gloved-silhouette hand
+        #     already sliding it towards the teller, the camera already pushing in; the headline burned in at the top. Line 1
+        #     is the contradiction with the stakes number (done by 2.5 s); line 2 escalates at 3-5 s (it was his third).
+        S("s01_hook", "or44_hook", [N("At 91, he robbed a bank."), N("And it was not his first.", pause_before=0.25)],
+          "tension", ["R_hook", "R_record", "R_biloxi"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "paper", 0.35), fw(0, 4, "thump", 0.35, -0.03), fw(1, 4, "hit", 0.3, -0.03)],
+          emph=["91,", "robbed", "bank.", "not", "first."], min_d=3.6, pad=0.15),
+        # A - where: the map fly-in to Abilene, Texas; the open loop (why?) answered by the next line
+        S("s02_map", "or44_map", [N("So, why rob a bank at 91?")],
+          "tension", ["R_where"], sfx=[fx(0.0, "whoosh", 0.3), fw(0, 2, "ping", 0.3, -0.02)],
+          emph=["why", "91?"], min_d=3.6, pad=0.1, tr="dissolve"),
         # B - the grudge: a loan office (his own account: a bank forced him into bankruptcy); he wanted to get even
-        S("s03_grudge", "or44_grudge", [N("He said a bank bankrupted him."), N("He wanted to get even.", pause_before=0.1)],
-          "tension-rise", ["R_motive"], sfx=[fw(0, 4, "stamp", 0.4, -0.05), fw(1, 4, "door", 0.3, 0.1)],
-          emph=["bank", "bankrupted", "get", "even."], min_d=3.6, pad=0.15, tr="dissolve"),
+        S("s03_grudge", "or44_grudge", [N("He blamed a bank for his bankruptcy."), N("He wanted to get even.", pause_before=0.1)],
+          "tension-rise", ["R_motive"], sfx=[fw(0, 6, "stamp", 0.4, -0.05), fw(1, 4, "door", 0.3, 0.1)],
+          emph=["blamed", "bankruptcy.", "get", "even."], min_d=3.6, pad=0.15, tr="dissolve"),
         # B - robberies 1 and 2 (the ROBBERY chip ticks 1, 2): a Gulf Coast bank front; his silhouette walks left to right
-        S("s04_first", "or44_first", [N("Biloxi, 1998: probation. Pensacola, 1999: three years in prison.")],
-          "tension-rise", ["R_biloxi", "R_pensacola"], sfx=[fw(0, 0, "door", 0.3, -0.05), fw(0, 3, "door", 0.3, -0.05), fw(0, 8, "cuffs", 0.35, 0.0)],
+        S("s04_first", "or44_first", [N("First, Biloxi: probation."), N("Then Pensacola: three years in prison.", pause_before=0.1)],
+          "tension-rise", ["R_biloxi", "R_pensacola"], sfx=[fw(0, 1, "door", 0.3, -0.05), fw(1, 1, "door", 0.3, -0.05), fw(1, 5, "cuffs", 0.35, 0.0)],
           emph=["biloxi,", "probation.", "pensacola,", "prison."], min_d=3.6, pad=0.15, tr="dissolve"),
         # C - robbery 3: the bank interior in Abilene (light shafts); the envelope slides across the counter; the teller asks
         #     twice if he is joking (the fun fact card)
-        S("s05_envelope", "or44_envelope", [N("Then he handed a teller an envelope marked robbery."),
-                                            N("She asked twice if he was joking.", pause_before=0.15)],
-          "tension", ["R_envelope", "R_joking"], sfx=[fw(0, 2, "paper", 0.4, -0.05), fw(0, 7, "thump", 0.35, -0.05), fw(1, 5, "sparkle", 0.3, 0.2)],
+        S("s05_envelope", "or44_envelope", [N("In Abilene, he handed a teller an envelope marked robbery."),
+                                            N("She asked twice if he was joking.", pause_before=0.3)],
+          "tension", ["R_envelope", "R_joking", "R_where"], sfx=[fw(0, 3, "paper", 0.4, -0.05), fw(0, 9, "thump", 0.35, -0.03), fw(1, 5, "sparkle", 0.3, 0.2)],
           emph=["teller", "envelope", "robbery.", "twice", "joking."], min_d=3.6, pad=0.15, tr="push"),
         # D - the getaway (the only handheld shot): a car park; his car pulls out left to right; a customer writes the plate;
-        #     police stop him about 20 miles away (the single impact and shake)
-        S("s06_plate", "or44_plate", [N("But witnesses took his plate."), N("Police stopped him 20 miles away.", pause_before=0.1)],
+        #     officers stop him about 20 miles away (the single impact and shake; music drop: the biggest reveal)
+        S("s06_plate", "or44_plate", [N("But witnesses took his plate."), N("Officers stopped him 20 miles away.", pause_before=0.1)],
           "revelation", ["R_plate", "R_stop"], sfx=[fx(0.0, "keys", 0.3), fw(0, 3, "paper", 0.35, -0.05), fw(1, 0, "siren", 0.3, -0.2),
                                                    fw(1, 0, "riser", 0.25, -0.5), fw(1, 1, "hit", 0.45, -0.03)],
-          emph=["witnesses", "plate.", "police", "stopped", "20", "miles"], min_d=3.6, pad=0.2),
+          emph=["witnesses", "plate.", "officers", "stopped", "20", "miles"], min_d=3.6, pad=0.2),
         # B - the LESSON (save trigger): money warning signs in an older relative; captions OFF; on screen >= 3 s
-        S("s07_lesson", "or44_lesson", [N("Money trouble in old age? Three signs. Save this.")],
-          "tension-rise", ["R_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 7, "chime", 0.25, 0.0)],
-          emph=["money", "trouble", "three", "save"], min_d=3.6, pad=0.25, tr="dissolve"),
+        S("s07_lesson", "or44_lesson", [N("Grandparent short of money? Save these three signs.")],
+          "tension-rise", ["R_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 5, "chime", 0.25, 0.0)],
+          emph=["grandparent", "money?", "save", "three"], min_d=3.6, pad=0.25, tr="dissolve"),
         # C - the statistic (a counter): prisoners aged 55 and older quadrupled since 2000 (ACLU / UT Austin, 2025)
         S("s08_stat", "or44_stat", [N("America's prisoners 55 and older have quadrupled since 2000.")],
-          "tension", ["R_stat"], sfx=[fw(0, 0, "door", 0.3, -0.1), fw(0, 5, "riser", 0.25, -0.4), fw(0, 6, "thump", 0.4, -0.03), fw(0, 8, "step", 0.25, 0.1)],
+          "tension", ["R_stat"], sfx=[fw(0, 0, "door", 0.3, -0.1), fw(0, 6, "riser", 0.25, -0.4), fw(0, 6, "thump", 0.4, 0.0), fw(0, 8, "step", 0.25, 0.1)],
           emph=["55", "older", "quadrupled"], min_d=3.6, pad=0.2),
-        # E - the outcome and the irony as the LAST line, on the hero object in the first frame's framing; the burned-in end
+        # E - the setup and the outcome as the LAST line, on the hero object in the first frame's framing; the burned-in end
         #     question with the SEND line; pad 0.6, no fade (the reel loops to frame 1)
-        S("s09_end", "or44_end", [N("At 92, he got over twelve years."), N("He never got out. He died in prison within a year.", pause_before=0.15)],
-          "aftermath", ["R_sentence", "R_death", "R_hook"], sfx=[fw(0, 1, "gavel", 0.4, -0.05), fw(1, 3, "sub", 0.35, -0.05), fw(1, 6, "thump", 0.3, 0.0)],
-          emph=["92,", "twelve", "years.", "never", "died", "prison"], min_d=3.6, pad=0.6, tr="zoom"),
+        S("s09_end", "or44_end", [N("Then, at 92, he got over twelve years."), N("He died in prison within a year.", pause_before=0.3)],
+          "aftermath", ["R_sentence", "R_death", "R_hook"], sfx=[fw(0, 2, "gavel", 0.4, -0.05), fw(1, 2, "sub", 0.35, -0.05), fw(1, 6, "thump", 0.3, 0.0)],
+          emph=["92,", "twelve", "years.", "died", "prison"], min_d=3.6, pad=0.6, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_map": "A", "s03_grudge": "B", "s04_first": "B", "s05_envelope": "C", "s06_plate": "D",
                 "s07_lesson": "B", "s08_stat": "C", "s09_end": "E"}
@@ -101,12 +102,12 @@ def build(h):
     ]
     C = h.claim
     claims = [
-        C("R_hook", "On 12 August 2003 J.L. Hunter 'Red' Rountree, aged 91 (born December 1911), robbed a First American Bank branch in Abilene, Texas, by handing a teller an envelope marked 'Robbery'. Narration: 'At 91, he robbed a bank with an envelope.'",
+        C("R_hook", "On 12 August 2003 J.L. Hunter 'Red' Rountree, aged 91 (born December 1911), robbed a First American Bank branch in Abilene, Texas, by handing a teller an envelope marked 'Robbery'. Narration: 'At 91, he robbed a bank. And it was not his first.'",
           ["ap_sj", "ap_ljw", "gwr_news", "wiki"]),
         C("R_record", "Guinness World Records lists Rountree as the oldest convicted bank robber (91 at the robbery, 92 at sentencing).",
           ["gwr_record", "gwr_news", "nysun"]),
         C("R_where", "The third robbery was in Abilene, Texas, in August 2003.", ["ap_sj", "ap_ljw", "gwr_news"]),
-        C("R_motive", "REPORTED (his own account, Orlando Sentinel interview, 2001): Rountree said a Corpus Christi bank he did business with forced him into bankruptcy, that he had disliked banks since, and 'I decided I would get even'. Narration attributes it: 'He said a bank bankrupted him. He wanted to get even.'",
+        C("R_motive", "REPORTED (his own account, Orlando Sentinel interview, 2001): Rountree said a Corpus Christi bank he did business with forced him into bankruptcy, that he had disliked banks since, and 'I decided I would get even'. Narration: 'He blamed a bank for his bankruptcy. He wanted to get even.'",
           ["gwr_news", "wiki", "amban"], nature="reported"),
         C("R_biloxi", "His first robbery: a SouthTrust Bank in Biloxi, Mississippi, in 1998 (aged 86 per Wikipedia, 87 per Guinness; the episode states no age for it). He received three years' probation, was fined and was told to leave Mississippi.",
           ["wiki", "gwr_news", "nysun"]),
@@ -122,9 +123,9 @@ def build(h):
           ["wa_dfi", "ga_bank", "fhfcu"]),
         C("R_stat", "STATISTIC (counter): as of 2022, the latest year with data, people aged 55 and over made up nearly 1 in 6 people in American prisons, a fourfold increase since 2000 (ACLU and the UT Austin LBJ School's Prison and Jail Innovation Lab, 'Trapped in Time', 22 Sept 2025, reported by Stateline). Narration: 'America's prisoners 55 and older have quadrupled since 2000.' The age band is stated as the source states it (55 and older).",
           ["aclu_pr", "aclu_rep", "stateline"]),
-        C("R_sentence", "He pleaded guilty in October 2003 and on 23 January 2004, aged 92, was sentenced to 151 months (about 12 1/2 years) in federal prison. Narration: 'At 92, he got over twelve years.'",
+        C("R_sentence", "He pleaded guilty in October 2003 and on 23 January 2004, aged 92, was sentenced to 151 months (about 12 1/2 years) in federal prison. Narration: 'Then, at 92, he got over twelve years.'",
           ["gwr_news", "gwr_record", "kcbd", "nysun", "amban"]),
-        C("R_death", "He died in federal custody, at the U.S. Medical Center for Federal Prisoners in Springfield, Missouri, on 12 October 2004, less than a year after sentencing. Narration: 'He never got out. He died in prison within a year.'",
+        C("R_death", "He died in federal custody, at the U.S. Medical Center for Federal Prisoners in Springfield, Missouri, on 12 October 2004, less than a year after sentencing. Narration: 'He died in prison within a year.'",
           ["wiki", "nysun", "npr"]),
     ]
 
@@ -140,13 +141,13 @@ def build(h):
     ep["target_duration_seconds"] = [30, 50]
     ep["music"]["beat_snap"] = 0.5
     ep["hook_title"] = {"lines": [{"text": "HE ROBBED A BANK"}, {"text": "AT 91 YEARS OLD", "colour": "#e2a13b"}],
-                        "until": 2.6, "y": 520}
+                        "until": 2.6, "y": 400}
     ep["end_title"] = {"lines": [{"text": "12+ YEARS AT 92."}, {"text": "FAIR OR TOO HARSH? \U0001F447", "colour": "#e2a13b"},
                                  {"text": "SEND TO YOUR GRANDAD", "fs": 44}],
-                       "from": 3.6, "y": 500}
+                       "from": 3.6, "y": 420}
     # the ROBBERY chip: ticks on Biloxi (1), Pensacola (2) and the envelope in Abilene (3). Word-anchored from
     # out/<id>/timeline.json when a build exists (narration is cached, so they are stable); defaults are draft values.
-    anchors = [("s04_first", 0, 0, 11.3, 1), ("s04_first", 0, 3, 13.0, 2), ("s05_envelope", 0, 2, 15.6, 3)]
+    anchors = [("s04_first", 0, 1, 12.2, 1), ("s04_first", 1, 1, 14.6, 2), ("s05_envelope", 0, 3, 17.8, 3)]
     keys = []
     try:
         tl = json.loads((h.ROOT / "out" / EP / "timeline.json").read_text())
@@ -160,7 +161,8 @@ def build(h):
             ln = sc["lines"][li]; ws = ln.get("words") or []
             t = round(ln["start"] + (ws[wi]["start"] if wi < len(ws) else 0.0), 2)
         keys.append({"t": t, "v": v})
-    ep["progress"] = {"label": "ROBBERY", "keys": keys, "y": 1545}
+    ep["progress"] = {"label": "ROBBERY", "keys": keys, "y": 330,
+                      "until": round(by["s06_plate"]["end"] - 0.25, 2) if "s06_plate" in by else 26.3}   # top of frame (clear of Instagram's buttons); gone after the catch
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={
         "91,": "ninety-one,", "91?": "ninety-one?", "1998:": "nineteen ninety-eight:", "1999:": "nineteen ninety-nine:",
         "20": "twenty", "55": "fifty-five", "2000.": "two thousand.", "92,": "ninety-two,"})

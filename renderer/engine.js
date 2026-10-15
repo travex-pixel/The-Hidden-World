@@ -415,7 +415,8 @@
     hookTitle(t) {
       const h = this.state.ep.hook_title; if (!h || !h.lines) return '';
       const until = h.until ?? 2.8; if (t > until + 0.4) return '';
-      return this.burnTitle(h, seg(t, 0, 0.32), 1 - seg(t, until, until + 0.4));
+      const k0 = this.state.ep.engagement_rules ? 1 : seg(t, 0, 0.32);   // engagement episodes: the headline is fully on screen in frame 1
+      return this.burnTitle(h, k0, 1 - seg(t, until, until + 0.4));
     },
     // burned-in end question for the last seconds (episode.end_title = {lines, from, y, fs}); `from` is seconds before
     // the end. Case File 16's data: likes spike on the final payoff, but a question asked only in the caption drew no
