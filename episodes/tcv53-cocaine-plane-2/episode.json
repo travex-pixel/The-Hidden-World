@@ -1,0 +1,1042 @@
+{
+ "id": "tcv53-cocaine-plane-2",
+ "number": 53,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Part 2: The Men Behind the Cocaine Plane",
+ "central_question": "Who sent the plane that crashed in Papua New Guinea with over 500 kg of cocaine, how did police catch them, and what did they get?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "18": "eighteen",
+   "PNG": "P N G",
+   "500": "five hundred",
+   "6.8": "six point eight",
+   "54": "fifty-four"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "53",
+  "label": "COCAINE PLANE, PART 2 · AUSTRALIA & PNG"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s04_arrest",
+   "word": [
+    0,
+    4
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "pp37_cop_a",
+  "pp37_cop_b",
+  "pp37_helper",
+  "cp53_analyst",
+  "cp53_agent",
+  "cp53_member",
+  "cp53_tech",
+  "cp53_mate"
+ ],
+ "content_notes": "Part 2 of Case File 37. Everyone real appears only as a faceless rim-lit silhouette tagged NOT A LIKENESS: a syndicate member (convicted in 2026; the pilot, convicted in PNG, is mentioned but not shown or named, as in Part 1). No one is named anywhere: their names were not in the official releases' extracts and add nothing. The AFP's 'alleged links to Italian organised crime' is not used. Police, the analyst, the lab scientist and the young man on the lesson card are generic figures; no badge, crest, flag, logo, vehicle livery, aircraft registration or real business name is drawn. No drugs are shown: the bags are plain wrapped sacks. No weapon, no violence; the arrest shows a man led to a car, hands behind his back. The two-year surveillance is attributed ('Reportedly'). The statistic card names its source and period. Every card is our own typed graphic. No dialogue is invented. Legal status verified 2026-10-16 (sentenced 16 July 2026; no appeal found in searches).",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "cp53_hook",
+   "min_duration": 3.8,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_pilot",
+    "K_syndicate"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The pilot got 18 years. Who sent him?"
+    },
+    {
+     "who": "narrator",
+     "text": "A Melbourne crime syndicate.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pilot",
+    "18",
+    "years.",
+    "who",
+    "sent",
+    "melbourne",
+    "syndicate."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_watch",
+   "scene": "cp53_watch",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "click",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "shutter",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_watch",
+    "K_op"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police were already watching."
+    },
+    {
+     "who": "narrator",
+     "text": "Reportedly, for two years.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "already",
+    "watching.",
+    "two",
+    "years."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_crash",
+   "scene": "cp53_crash",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "rumble",
+     "gain": 0.35
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_flight",
+    "K_load",
+    "K_travel",
+    "K_crash"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Their plane flew up to PNG for over 500 kilos of cocaine."
+    },
+    {
+     "who": "narrator",
+     "text": "But it crashed on take-off.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "plane",
+    "png",
+    "500",
+    "kilos",
+    "cocaine.",
+    "crashed",
+    "take-off."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_arrest",
+   "scene": "cp53_arrest",
+   "min_duration": 3.8,
+   "pad_after": 0.35,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.25
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "siren",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "cuffs",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_arrest",
+    "K_never"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The same day, police arrested five men in Australia."
+    },
+    {
+     "who": "narrator",
+     "text": "Not one kilo of it got through.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "same",
+    "day,",
+    "arrested",
+    "five",
+    "men",
+    "australia.",
+    "not",
+    "one",
+    "kilo",
+    "through."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s05_stat",
+   "scene": "cp53_stat",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      2
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_stat",
+    "K_planeloads"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So why risk it?"
+    },
+    {
+     "who": "narrator",
+     "text": "Australians used 6.8 tonnes of cocaine in a year.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "why",
+    "risk",
+    "it?",
+    "6.8",
+    "tonnes",
+    "year."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_burn",
+   "scene": "cp53_burn",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.25
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "door",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_burn"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It did reach Australia, eventually."
+    },
+    {
+     "who": "narrator",
+     "text": "It went straight into a furnace.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "did",
+    "reach",
+    "australia,",
+    "eventually.",
+    "furnace."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "cp53_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "click",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "cash",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Offered easy cash to carry a bag? Save this."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "easy",
+    "cash",
+    "carry",
+    "bag?",
+    "save"
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "cp53_end",
+   "min_duration": 3.8,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "gavel",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_sentence",
+    "K_never_off"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Syndicate members got 54 years between them."
+    },
+    {
+     "who": "narrator",
+     "text": "All for a plane that never left the ground.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "54",
+    "years",
+    "never",
+    "ground."
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_pilot",
+   "type": "established",
+   "nature": "fact",
+   "text": "RECAP (Part 1): the Australian pilot pleaded guilty in PNG to money laundering (receiving criminal property: the cocaine) and was sentenced to 18 years by the PNG National Court in October 2022; his appeal was dismissed on 15 January 2025. He is not named. Narration: 'The pilot got 18 years.'",
+   "sources": [
+    "pina_2022",
+    "ib_2022",
+    "paclii_2025",
+    "rnz_2025"
+   ]
+  },
+  {
+   "id": "K_syndicate",
+   "type": "established",
+   "nature": "fact",
+   "text": "The AFP described the group as a Melbourne-based criminal syndicate (2020 charge release; 2026 sentencing release). Narration: 'A Melbourne crime syndicate.' The AFP's phrase 'alleged links to Italian organised crime' is NOT used in narration.",
+   "sources": [
+    "afp_2020",
+    "afp_2026",
+    "abf_2026",
+    "newdaily_2020"
+   ]
+  },
+  {
+   "id": "K_watch",
+   "type": "established",
+   "nature": "allegation",
+   "text": "REPORTED: PNG's police minister said in 2020 that the AFP had run a covert two-year surveillance operation on the syndicate before the bust; another outlet reported the gang was already being watched as part of a two-year investigation. Narration (attributed): 'Police were already watching. Reportedly, for two years.'",
+   "sources": [
+    "cairnspost_2020",
+    "vice_2020",
+    "apr_2020"
+   ]
+  },
+  {
+   "id": "K_op",
+   "type": "established",
+   "nature": "fact",
+   "text": "The investigation was Operation Weathers: AFP, Queensland Police (Queensland Joint Organised Crime Taskforce), Victoria Police, ABF, ACIC and the Royal PNG Constabulary. Card only.",
+   "sources": [
+    "afp_2020",
+    "acic_2020",
+    "afp_2026",
+    "ib_2024"
+   ]
+  },
+  {
+   "id": "K_travel",
+   "type": "established",
+   "nature": "allegation",
+   "text": "ALLEGED (2020): the Queensland Joint Organised Crime Taskforce alleged the group travelled from Melbourne and Sydney to Atherton, Queensland, between 19 and 25 July 2020, and arranged for the Cessna to fly illegally from Mareeba to PNG. Card only, attributed ('police alleged').",
+   "sources": [
+    "afp_2020",
+    "acic_2020",
+    "express_2020"
+   ]
+  },
+  {
+   "id": "K_flight",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 26 July 2020 the light aircraft (reported as a Cessna 402C) left Mareeba, Queensland, for PNG, flying at about 3,000 ft to avoid radar (AFP alleged). Narration: 'Their plane flew to PNG' (date on the card).",
+   "sources": [
+    "afp_2020",
+    "acic_2020",
+    "ausav_2020",
+    "inqld_2020"
+   ]
+  },
+  {
+   "id": "K_load",
+   "type": "established",
+   "nature": "fact",
+   "text": "The conspiracy was to import more than 500 kg of cocaine into Australia from PNG (AFP 2020 and 2026; 611.1 kg in the PNG court). Narration: 'for over 500 kilos of cocaine.'",
+   "sources": [
+    "afp_2020",
+    "afp_2026",
+    "pina_2022"
+   ]
+  },
+  {
+   "id": "K_crash",
+   "type": "established",
+   "nature": "fact",
+   "text": "RECAP (Part 1): the plane crashed while attempting to take off from a remote airstrip at Papa Lea Lea, north of Port Moresby, on 26 July 2020.",
+   "sources": [
+    "afp_2020",
+    "afp_2026",
+    "ausav_2020"
+   ]
+  },
+  {
+   "id": "K_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "The five men were arrested in Queensland and Victoria on 26 July 2020, the day the plane left Mareeba and crashed (AFP: 'arrested ... on 26 July'; the Tablelands' Express: arrests at Atherton on the Sunday, i.e. 26 July 2020). Narration: 'The same day, police arrested five men in Australia.'",
+   "sources": [
+    "afp_2020",
+    "acic_2020",
+    "express_2020",
+    "ct_2020"
+   ]
+  },
+  {
+   "id": "K_never",
+   "type": "established",
+   "nature": "fact",
+   "text": "The cocaine never reached Australia's streets: the AFP said it 'never made it to Australian shores' (2020) / 'never made it into the Australian community' (2026); PNG police found it five days after the crash. Narration: 'Not one kilo of it got through.'",
+   "sources": [
+    "afp_2020",
+    "afp_2026",
+    "abf_2026"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter to 6,800 kg): ACIC wastewater Report 24: Australians consumed an estimated 6.8 tonnes of cocaine in the year to August 2024, a record, up 69 % on the year before. Report 25 (year to Aug 2025): cocaine up a further 17 % (tonnage not used). Narration: 'Australians used 6.8 tonnes of cocaine in a year.'",
+   "sources": [
+    "acic_ww24",
+    "aljazeera_ww",
+    "indaily_ww",
+    "acic_ww25"
+   ]
+  },
+  {
+   "id": "K_planeloads",
+   "type": "established",
+   "nature": "fact",
+   "text": "Arithmetic on the card: 6,800 kg / 611.1 kg (the PNG court weight of the plane's load) = 11.1, so 'about 11 planeloads like this one'.",
+   "sources": [
+    "acic_ww24",
+    "pina_2022"
+   ]
+  },
+  {
+   "id": "K_burn",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the cocaine seized in PNG was later sent to the AFP for forensic testing and storage in Australia, and was incinerated at a secure facility in Queensland on 28 November 2024, monitored by senior PNG and Australian police (the PNG court had ordered its destruction). Narration: 'It did reach Australia, eventually. It went straight into a furnace.'",
+   "sources": [
+    "ahc_2024",
+    "ib_2024",
+    "pina_2024"
+   ]
+  },
+  {
+   "id": "K_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): the AFP and ABF warn young Australians that drug syndicates recruit couriers for cash (mostly under 30; instructions over encrypted apps; offered about $30,000-$60,000 to carry drugs in luggage); a big payment for a simple job should raise alarm bells (AFP 2021); the maximum penalty for importing border-controlled drugs is life imprisonment. Rows: 'BIG CASH TO CARRY A BAG', 'ORDERS VIA ENCRYPTED APP', 'MAX PENALTY: LIFE'. Crime Stoppers 1800 333 000.",
+   "sources": [
+    "afp_courier_nt",
+    "afp_courier_mn",
+    "afp_expats"
+   ]
+  },
+  {
+   "id": "K_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 16 July 2026 members of the Melbourne-based syndicate were sentenced for conspiring to import over 500 kg of cocaine, to a combined 54 years (AFP/ABF headline). Breakdown NOT used: extracts give a Niddrie man, 39, 22 years (13 non-parole) and a Maribyrnong man, 37, 21 years (12 non-parole); a third term (7 years in one extract) and whether the 54 years includes a fourth, earlier sentence are unresolved. Narration: 'Syndicate members got 54 years between them.' (2026 on the counter and the YEAR chip)",
+   "sources": [
+    "afp_2026",
+    "abf_2026",
+    "ausav_2026"
+   ]
+  },
+  {
+   "id": "K_never_off",
+   "type": "established",
+   "nature": "fact",
+   "text": "The plane never got airborne: it crashed while attempting to take off. Narration: 'All for a plane that never left the ground.'",
+   "sources": [
+    "afp_2020",
+    "afp_2026",
+    "ausav_2020"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "pina_2022",
+   "publisher": "PINA (Pacific Islands News Association)",
+   "title": "Australian pilot sentenced to 18 years in PNG",
+   "url": "https://pina.com.fj/2022/10/31/australian-pilot-sentenced-to-18-years-in-png/",
+   "date": "2022-10-31",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ib_2022",
+   "publisher": "Islands Business",
+   "title": "Australian pilot sentenced to 18 years in PNG",
+   "url": "https://islandsbusiness.com/?p=21019",
+   "date": "2022-10",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "paclii_2025",
+   "publisher": "PacLII (PNG Supreme Court)",
+   "title": "Cutmore v State [2025] PGSC 4; SC2684 (15 January 2025)",
+   "url": "https://rms.paclii.org/pg/cases/PGSC/2025/4.html",
+   "date": "2025-01-15",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "rnz_2025",
+   "publisher": "RNZ (via Kaniva Tonga)",
+   "title": "Drug plane pilot who crashed in Papua New Guinea loses appeal",
+   "url": "https://kanivatonga.co.nz/2025/01/drug-plane-pilot-who-crashed-in-papua-new-guinea-loses-appeal/",
+   "date": "2025-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "afp_2020",
+   "publisher": "Australian Federal Police (media release)",
+   "title": "Organised crime syndicate charged and more than 500kg of cocaine seized in PNG",
+   "url": "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+   "date": "2020-08-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "acic_2020",
+   "publisher": "Australian Criminal Intelligence Commission (joint release)",
+   "title": "Organised crime syndicate charged and more than 500kg of cocaine seized in PNG",
+   "url": "https://www.acic.gov.au/media-centre/media-releases-and-statements/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+   "date": "2020-08-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "newdaily_2020",
+   "publisher": "The New Daily (AAP)",
+   "title": "500kg cocaine drug syndicate PNG Australia",
+   "url": "https://thenewdaily.com.au/news/national/2020/08/01/500kg-cocaine-drug-syndicate-png-australia",
+   "date": "2020-08-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ct_2020",
+   "publisher": "The Canberra Times (AAP)",
+   "title": "Aussies charged in $80m PNG cocaine bust",
+   "url": "https://www.canberratimes.com.au/story/6859562/aussies-charged-in-80m-png-cocaine-bust/",
+   "date": "2020-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "express_2020",
+   "publisher": "The Express (Tablelands, Qld)",
+   "title": "Greedy drug dealers arrested on the Tablelands",
+   "url": "https://www.theexpressnewspaper.com.au/greedy-drug-dealers-arrested-on-the-tablelands-2020-08-01",
+   "date": "2020-08-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "inqld_2020",
+   "publisher": "InQueensland",
+   "title": "Aussie pilot, a jungle airstrip and Qld-bound plane flying half a tonne of cocaine",
+   "url": "https://inqld.com.au/news/2020/08/03/the-aussie-pilot-the-jungle-airstrip-and-the-plane-carrying-half-a-tonne-of-cocaine",
+   "date": "2020-08-03",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ausav_2020",
+   "publisher": "Australian Aviation",
+   "title": "500kg cocaine load caused Cessna crash, suggest police",
+   "url": "https://australianaviation.com.au/2020/08/500kg-cocaine-load-caused-cessna-crash-suggest-police/",
+   "date": "2020-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "cairnspost_2020",
+   "publisher": "The Cairns Post (via PressReader)",
+   "title": "Inside PNG coke bust",
+   "url": "https://www.pressreader.com/australia/the-cairns-post/20200814/281479278773363",
+   "date": "2020-08-14",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "vice_2020",
+   "publisher": "VICE",
+   "title": "Plane carrying 500kg of cocaine crashed on its way to Australia",
+   "url": "https://motherboard.vice.com/en/article/5dzjpq/plane-carrying-500kg-cocaine-crashed-on-its-way-to-australia",
+   "date": "2020-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "apr_2020",
+   "publisher": "Asia Pacific Report",
+   "title": "PNG investigation tracks down K200m 'biggest drug heist' - pilot fined",
+   "url": "https://asiapacificreport.nz/?p=48836",
+   "date": "2020-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "afp_2026",
+   "publisher": "Australian Federal Police (media release)",
+   "title": "Organised crime syndicate members sentenced to a combined 54 years jail over botched 500kg cocaine importation",
+   "url": "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-members-sentenced-combined-54-years-jail-over",
+   "date": "2026-07-16",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "abf_2026",
+   "publisher": "Australian Border Force (newsroom)",
+   "title": "Organised crime syndicate members sentenced to a combined 54 years jail over botched 500kg cocaine importation",
+   "url": "https://www.abf.gov.au/newsroom-subsite/Pages/Organised-crime-syndicate-members-sentenced-to-a-combined-54-years-jail-over-botched-500kg-cocaine-importation.aspx",
+   "date": "2026-07-16",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ausav_2026",
+   "publisher": "Australian Aviation",
+   "title": "Criminal syndicate sentenced for attempted drug importation black flight into Australia",
+   "url": "https://australianaviation.com.au/2026/07/criminal-syndicate-sentenced-for-attempted-drug-importation-black-flight-into-australia/",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ahc_2024",
+   "publisher": "Australian High Commission, Papua New Guinea",
+   "title": "Media release: cocaine seized after the 2020 PNG black flight destroyed",
+   "url": "https://png.embassy.gov.au/pmsb/1364.html",
+   "date": "2024-12",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ib_2024",
+   "publisher": "Islands Business",
+   "title": "Australian Federal Police incinerates 500kg of cocaine seized after alleged PNG import attempt",
+   "url": "https://islandsbusiness.com/?p=37303",
+   "date": "2024-12",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "pina_2024",
+   "publisher": "PINA (Pacific Islands News Association)",
+   "title": "AFP incinerates 500kg of cocaine seized after alleged PNG import attempt",
+   "url": "https://pina.com.fj/?p=46888",
+   "date": "2024-12",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "acic_ww24",
+   "publisher": "Australian Criminal Intelligence Commission",
+   "title": "National Wastewater Drug Monitoring Program, Report 24 (snapshot)",
+   "url": "https://www.acic.gov.au/sites/default/files/2025-08/Wastewater%2024%20Snapshot%20FA.PDF",
+   "date": "2025-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "aljazeera_ww",
+   "publisher": "Al Jazeera",
+   "title": "Australia finds record meth, cocaine, heroin use in wastewater analysis",
+   "url": "https://www.aljazeera.com/news/2025/8/15/australia-finds-record-meth-cocaine-heroin-use-in-wastewater-analysis",
+   "date": "2025-08-15",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "indaily_ww",
+   "publisher": "InDaily (AAP)",
+   "title": "Ice, cocaine, heroin consumption highest on record",
+   "url": "https://www.indailysa.com.au/news/just-in/2025/08/15/ice-cocaine-heroin-consumption-highest-on-record",
+   "date": "2025-08-15",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "acic_ww25",
+   "publisher": "Australian Criminal Intelligence Commission",
+   "title": "National Wastewater Drug Monitoring Program, Report 25",
+   "url": "https://www.acic.gov.au/publications/national-wastewater-drug-monitoring-program-reports/report-25-national-wastewater-drug-monitoring-program",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "afp_courier_nt",
+   "publisher": "National Tribune (AFP/ABF joint release)",
+   "title": "Authorities warn young Australians against acting as drug couriers for cash",
+   "url": "https://www.nationaltribune.com.au/authorities-warn-young-australians-against-acting-as-drug-couriers-for-cash/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "afp_courier_mn",
+   "publisher": "Mirage News (AFP/ABF joint release)",
+   "title": "Authorities caution youth on drug courier risks",
+   "url": "https://www.miragenews.com/authorities-caution-youth-on-drug-courier-risks-1595849/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "afp_expats",
+   "publisher": "Australian Federal Police (media release)",
+   "title": "Expats unwittingly recruited as drug mules for organised crime",
+   "url": "https://afp.gov.au/news-centre/media-release/expats-unwittingly-recruited-drug-mules-organised-crime",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-16"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#0e2620",
+  "mid": "#c9b08c",
+  "accent": "#f2c14e"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "PART 2: WHO SENT THE"
+   },
+   {
+    "text": "COCAINE PLANE TO PNG?",
+    "colour": "#f2c14e"
+   }
+  ],
+  "until": 2.8,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "54 YEARS FOR THE PLOTTERS."
+   },
+   {
+    "text": "FAIR OR TOO SOFT? 👇",
+    "colour": "#f2c14e"
+   },
+   {
+    "text": "SEND TO YOUR MATE IN MELBOURNE",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "YEAR",
+  "keys": [
+   {
+    "t": 8.9,
+    "v": "2020"
+   },
+   {
+    "t": 26.56,
+    "v": "2024"
+   },
+   {
+    "t": 35.57,
+    "v": "2026"
+   }
+  ],
+  "y": 345,
+  "until": 37.2
+ },
+ "legal_status_verified": "2026-10-16"
+}
