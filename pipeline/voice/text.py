@@ -74,8 +74,11 @@ def normalize_for_wer(s: str) -> list[str]:
         if "." in t:
             a, b = t.split(".", 1)
             return num2words(int(a)) + " point " + " ".join(_ONES[int(c)] for c in b if c.isdigit())
-        return num2words(int(t))
-    s = re.sub(r"\d[\d,]*(?:\.\d+)?", _num, s)
+        n = int(t)
+        if 1100 <= n <= 2999 and "," not in m.group(0) and n % 100 != 0 and not (2000 <= n <= 2009):   # a comma means a quantity, not a year
+            return num2words(n // 100) + " " + num2words(n % 100)   # years: 1999 -> nineteen ninety nine, 2024 -> twenty twenty four
+        return num2words(n)
+    s = re.sub(r"\d(?:[\d,]*\d)?(?:\.\d+)?", _num, s)
     s = re.sub(r"[^a-z' ]+", " ", s)
     return [w for w in s.split() if w not in ("and",)]
 

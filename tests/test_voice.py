@@ -31,6 +31,10 @@ class TextPrep(unittest.TestCase):
         b = normalize_for_wer("Customers owe six hundred thousand dollars and a bill for one hundred and twenty thousand is due. That is forty-two per cent.")
         self.assertEqual(wer(a, b), 0.0)
 
+    def test_years_normalise_like_speech(self):
+        from pipeline.voice.text import normalize_for_wer, wer
+        self.assertEqual(wer(normalize_for_wer("In 1999 and again in 2024, but 2008 and 2000."), normalize_for_wer("In nineteen ninety-nine and again in twenty twenty-four, but two thousand and eight and two thousand.")), 0.0)
+
     def test_wer_counts_substitutions(self):
         from pipeline.voice.text import wer
         self.assertAlmostEqual(wer("profit is an opinion".split(), "foffet is an opinion".split()), 0.25)
@@ -59,6 +63,21 @@ class Profiles(unittest.TestCase):
     def test_no_audio_is_committed_under_voices(self):
         bad = [p for p in (ROOT / "voices").rglob("*") if p.suffix.lower() in (".wav", ".flac", ".mp3", ".m4a") and "private" not in p.parts]
         self.assertEqual(bad, [])
+
+
+class Derive(unittest.TestCase):
+    def test_derive_runs_with_ffmpeg_and_keeps_duration(self):
+        import shutil, subprocess, tempfile, wave
+        if not shutil.which("ffmpeg"):
+            self.skipTest("ffmpeg not installed")
+        from pipeline.voice.derive import derive
+        with tempfile.TemporaryDirectory() as d:
+            src, dst = Path(d) / "src.wav", Path(d) / "dst.wav"
+            subprocess.run(["ffmpeg", "-v", "error", "-f", "lavfi", "-i", "sine=frequency=180:duration=3", "-ar", "24000", str(src)], check=True)
+            derive(src, dst, pitch_semitones=-3, formant_ratio=1.06)
+            with wave.open(str(dst)) as w:
+                self.assertAlmostEqual(w.getnframes() / w.getframerate(), 3.0, delta=0.3)
+                self.assertEqual(w.getnchannels(), 1)
 
 
 class RealSynthesis(unittest.TestCase):

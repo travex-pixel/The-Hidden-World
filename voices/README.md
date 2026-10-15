@@ -23,6 +23,17 @@ voices/
 | `validation` | Whisper round-trip `max_wer`, speaker-similarity `min_speaker_sim`, `max_attempts` re-generations, `strict` fails the build |
 | `version` | bump it whenever you change the reference clip or parameters: it is part of the narration cache key |
 
+## Deriving a distinct identity from your own recording
+`python -m pipeline.voice.derive session.wav narrator_v1.wav --pitch -3 --formant 1.06 --start 12 --length 15 --report`
+shifts pitch (semitones) and warps formants (ratio) with ffmpeg's rubberband filter, trims a 15 s window,
+denoises and level-normalises, and prints the speaker-embedding similarity between source and result.
+Run it where the recording lives (phone/Termux, laptop, or a workflow inside the private vault repo); the
+output clip is what a profile references. Measured on the public sample voice: a −3 st / +6 % warp
+moves similarity from 0.85 (same clip, processing only) to 0.62, but a Pocket TTS clone of the derived clip
+still scores 0.64 against the original speaker versus 0.69 for a clone of the untouched clip. Timbre shifts
+on the reference are a weak lever with a small zero-shot model; expect to need larger shifts or voice
+conversion, and to judge by ear and by people who know you.
+
 ## Privacy rules
 - Raw recordings and derived reference clips never enter this public repository, its logs or its artifacts.
   `voices/private/` and every `*.wav` under `voices/` are gitignored.
