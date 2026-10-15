@@ -533,3 +533,14 @@ Too soft or fair? 👇 Follow for the next case.
 
 Seed comment (post it yourself right after uploading): She got out in 2020. He will never get out. Does that feel right to you?
 Share line (second comment or story text): Send this to the friend who thinks Shawshank could never happen for real.
+
+## 44: He robbed a bank at 91 (`true_crime_44_oldest_robber.mp4`)
+He robbed a bank at 91 👴🏦 And it was not his first.
+
+A Texas teller asked him twice if he was joking.
+12+ years at 92: fair or too harsh? 👇 Follow for the next case.
+
+#truecrime #bankrobbery #texas #crimestory #guinnessworldrecords
+
+Seed comment (post it yourself right after uploading): He blamed a bank for going broke. 12 years at 92: too harsh, or fair?
+Pinned share line: Send this to your grandad who says he's too old to cause trouble.

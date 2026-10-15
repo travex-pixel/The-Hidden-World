@@ -3753,9 +3753,106 @@
         ],
         "not_done": "No human listening test; audio judged by the measured checks and the transcript."
       }
+    },
+    "44": {
+      "id": "tcv44-oldest-robber",
+      "title": "He Robbed a Bank at 91 #Shorts",
+      "file": "true_crime_44_oldest_robber.mp4",
+      "media": {
+        "duration": 40.767,
+        "width": 1080,
+        "height": 1920,
+        "fps": 60.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 21829848,
+        "mean_volume_db": -16.6,
+        "max_volume_db": -1.2
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 2446,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -17.6,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true,
+        "captions_in_safe_area": true,
+        "no_frozen_or_static_picture": true,
+        "audio_opening_speech_steady": true,
+        "audio_opening_no_holes": true,
+        "audio_narration_on_time": true,
+        "audio_music_never_masks": true,
+        "audio_music_audible": true,
+        "audio_no_clipping": true,
+        "audio_no_long_silence": true,
+        "audio_ending_intentional": true,
+        "audio_mono_compatible": true,
+        "audio_av_duration_match": true,
+        "engage_hook_stakes_by_4s": true,
+        "engage_open_loop_every_10s": true,
+        "engage_outcome_in_last_8s": true,
+        "engage_end_question_on_picture": true,
+        "engage_fun_fact_and_lesson": true,
+        "engage_progression_marker": true,
+        "engage_cold_open_sfx": true,
+        "engage_ends_within_1s_of_last_word": true,
+        "engage_pace_under_150_wpm": true,
+        "shot_variety_and_character_action": true,
+        "every_shot_sourced_and_tagged": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "true_peak_dbtp": -1.2
+      },
+      "asr_word_error_rate": 0.079,
+      "frames_sampled": 7,
+      "qa_dir": "series/true-crime-cinematic/qa/true_crime_44",
+      "status": "verified_automated",
+      "sha256": "dea2cfe002efb883912ac36cffcf18793d10ffc6b8ff046e27383b2e6e5f4834",
+      "output": "series/true-crime-cinematic/output/true_crime_44_oldest_robber.mp4",
+      "verified": "2026-10-15T03:15:36",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "editorial_review": {
+        "reviewer": "Claude (frame and transcript review)",
+        "date": "2026-10-15",
+        "verdict": "approved",
+        "checks": [
+          "script and legal read",
+          "contact sheet reviewed",
+          "ASR transcript read",
+          "engagement checks (9) pass in the gate"
+        ],
+        "notes": [
+          "Hook 'At 91, he robbed a bank.' + second hook at 2.5 s; ROBBERY 1/2/3 chip at the top; one shake and one impact; transitions mostly cut/dissolve, one glide, one zoom; headline fully on screen in frame 1.",
+          "Rountree appears only as a silhouette (NOT A LIKENESS); bank staff, witness and officers are generic figures; no weapon.",
+          "'Get even' comes from his own 2001 interview, narrated as his account with no quote card; the 55+ prisoner statistic is the ACLU / UT Austin LBJ School 2025 report (2000-2022).",
+          "ASR (whisper tiny) misheard 'Biloxi' as 'by Loxie' and 'marked' as 'Mark'; WER 0.079. No human listening test."
+        ],
+        "not_done": "No human listening test."
+      }
     }
   },
-  "updated": "2026-10-14T22:07:42",
+  "updated": "2026-10-15T03:15:36",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",
