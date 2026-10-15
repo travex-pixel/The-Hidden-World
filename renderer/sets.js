@@ -304,10 +304,10 @@
   function handheld(t, a) { return { x: a * (Math.sin(t * 1.31) + 0.6 * Math.sin(t * 2.73 + 1.7) + 0.3 * Math.sin(t * 5.1 + 0.4)), y: a * (0.8 * Math.sin(t * 1.07 + 2.1) + 0.5 * Math.sin(t * 3.19 + 0.9) + 0.25 * Math.sin(t * 6.3)) }; }
   function camAt(ctx, cam) {
     const c = camBase(ctx, cam); if (!cam.handheld) return c;
-    const h = handheld(ctx.t + (ctx.sceneStart || 0), cam.handheld); return { x: c.x + h.x, y: c.y + h.y, z: c.z };
+    const h = handheld(ctx.t + (ctx.sceneStart || 0), isPrem(ctx) ? Math.min(cam.handheld, 0.12) : cam.handheld); return { x: c.x + h.x, y: c.y + h.y, z: c.z };   // premium: a breath, not a wobble
   }
   // a camera move that overshoots a touch and settles (settle: true = 4 %, or a number); plain ease otherwise
-  const settle = (x, k) => ease.inOut(x) + (k ? (k === true ? 0.04 : k) * Math.pow(Math.sin(Math.PI * clamp((x - 0.5) / 0.5, 0, 1)), 2) : 0);
+  const settle = (x, k) => ease.inOut(x) + (k ? (k === true ? 0.015 : Math.min(k, 0.02)) * Math.pow(Math.sin(Math.PI * clamp((x - 0.5) / 0.5, 0, 1)), 2) : 0);   // a 1.5 % settle, never a bounce
   // atmosphere layers any shot can switch on: light shafts, smoke, sparks (deterministic, time-driven)
   function atmos(ctx, spec) {
     const t = ctx.t + (ctx.sceneStart || 0), L = [];
@@ -443,7 +443,7 @@
     const fogL = (set.fog || spec.fog) ? [{ d: spec.fogDepth ?? 0.85, svg: fogSvg }] : [];   // ground fog sits behind the figures' plane
     const layers = set.layers.map(([d, svg]) => ({ d, svg: () => svg })).concat(items, fogL, atmos(ctx, spec)).sort((a, b) => a.d - b.d);
     let s = `<defs><filter id="cineSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter><filter id="fgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter></defs>` + E.fig.figDefs + E.doc.defs;
-    const shakeT = spec.shake ? E.doc.shake(ctx.t, spec.shake) : '';
+    const shakeT = spec.shake ? E.doc.shake(ctx.t, isPrem(ctx) ? spec.shake.map(h => ({ ...h, amp: (h.amp || 1) * 0.3 })) : spec.shake) : '';   // premium: a nudge on impact, not a quake
     if (isPrem(ctx)) {
       const P = palOf(ctx.ep), hz = spec.haze ?? 0.6; let pw = '';
       // rack focus {at, dur, from:'bg'|'fg'}: the subject starts soft and snaps into focus (from 'bg'), or the reverse

@@ -59,7 +59,7 @@
 
   // premium motion: distal parts trail the body (overlapping action) and overshoot a touch before settling
   const LAG = { tilt: 0.06, nUa: 0.04, fUa: 0.07, nFa: 0.09, fFa: 0.12 };
-  const OVR = { tilt: 0.08, nUa: 0.06, fUa: 0.06, nFa: 0.1, fFa: 0.1 };
+  const OVR = { tilt: 0.04, nUa: 0.03, fUa: 0.03, nFa: 0.05, fFa: 0.05 };
   const settle = (x, k) => ease.inOut(x) + k * Math.pow(Math.sin(Math.PI * clamp((x - 0.5) / 0.5, 0, 1)), 2);
   const ANT_A = 0.16, ANT_B = 0.1, ARMS = ['nUa', 'fUa', 'nFa', 'fFa'];   // anticipation window around a pose key (s)
 

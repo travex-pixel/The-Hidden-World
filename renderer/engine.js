@@ -451,14 +451,22 @@
       const st = this.state; const tl = st.timeline;
       let i = tl.findIndex(s => t < s.end); if (i < 0) i = tl.length - 1;
       const sc = st.ep.scenes[i]; const s = tl[i]; const local = t - s.start;
-      const TR = 0.5; let inner = ''; const TX = { push: 0.34, zoom: 0.4, flash: 0.28 }[sc.transition];
-      if (i > 0 && TX && local < TX) {
+      const TR = 0.5; let inner = ''; const prem = st.ep.look === 'premium';
+      // premium: every motion transition is longer and gentler (a glide, a soft bloom, a slow push-in), and 'dissolve' cross-fades
+      const TX = (prem ? { push: 0.6, zoom: 0.6, flash: 0.5, dissolve: 0.55 } : { push: 0.34, zoom: 0.4, flash: 0.28, dissolve: 0.5 })[sc.transition];
+      if (i > 0 && TX && local < TX && (prem || sc.transition === 'dissolve')) {
+        const p = local / TX, e = ease.inOut(p), prevT = tl[i - 1].end - 0.001; const A = this.renderScene(i - 1, prevT), B = this.renderScene(i, t);
+        if (sc.transition === 'dissolve') inner = `<g>${A}</g><g opacity="${f1(e)}">${B}</g>`;
+        else if (sc.transition === 'flash') inner = `<g>${A}</g><g opacity="${f1(e)}">${B}</g><rect width="${W}" height="${H}" fill="#fff6e8" opacity="${f1(0.32 * Math.sin(Math.PI * p))}" style="mix-blend-mode:screen"/>`;
+        else if (sc.transition === 'zoom') inner = `<g transform="translate(${W / 2} ${H / 2}) scale(${f1((1 + 0.1 * e) * 1000) / 1000}) translate(${-W / 2} ${-H / 2})">${A}</g><g opacity="${f1(e)}" transform="translate(${W / 2} ${H / 2}) scale(${f1((0.96 + 0.04 * e) * 1000) / 1000}) translate(${-W / 2} ${-H / 2})">${B}</g>`;
+        else { const b = f1(7 * Math.sin(Math.PI * p)); inner = `<filter id="mblur" x="-10%" y="0" width="120%" height="100%"><feGaussianBlur stdDeviation="${b} 0"/></filter><g filter="url(#mblur)"><g transform="translate(${f1(-W * 0.14 * e)} 0)">${A}</g><g opacity="${f1(e)}" transform="translate(${f1(W * 0.14 * (1 - e))} 0)">${B}</g></g>`; }
+      } else if (i > 0 && TX && local < TX) {
         // motion transitions: push (whip with horizontal motion blur), zoom (scale-through), flash (white pop)
         const p = local / TX, e = ease.inOut(p); const prevT = tl[i - 1].end - 0.001;
         if (sc.transition === 'flash') inner = this.renderScene(i, t) + `<rect width="${W}" height="${H}" fill="#fff" opacity="${f1(Math.pow(1 - p, 2) * 0.9)}"/>`;
         else if (sc.transition === 'zoom') inner = `<g opacity="${f1(1 - e)}" transform="translate(${W / 2} ${H / 2}) scale(${f1((1 + 0.35 * e) * 100) / 100}) translate(${-W / 2} ${-H / 2})">${this.renderScene(i - 1, prevT)}</g><g opacity="${f1(e)}" transform="translate(${W / 2} ${H / 2}) scale(${f1((0.9 + 0.1 * e) * 1000) / 1000}) translate(${-W / 2} ${-H / 2})">${this.renderScene(i, t)}</g>`;
         else { const b = f1(55 * Math.sin(Math.PI * p)); inner = `<filter id="mblur" x="-10%" y="0" width="120%" height="100%"><feGaussianBlur stdDeviation="${b} 0"/></filter><g filter="url(#mblur)"><g transform="translate(${f1(-W * e)} 0)">${this.renderScene(i - 1, prevT)}</g><g transform="translate(${f1(W * (1 - e))} 0)">${this.renderScene(i, t)}</g></g>`; }
-      } else if (i > 0 && sc.transition !== 'cut' && sc.transition !== 'fade' && !TX && local < TR) {
+      } else if (i > 0 && sc.transition !== 'cut' && sc.transition !== 'fade' && sc.transition !== 'dissolve' && !TX && local < TR) {
         const p = local / TR; const prev = this.renderScene(i - 1, tl[i - 1].end - 0.001);
         inner = `<g>${prev}</g>${transitionMask(sc.transition, p)}<g clip-path="url(#tr)">${this.renderScene(i, t)}</g>`;
       } else inner = this.renderScene(i, t);
