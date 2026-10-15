@@ -251,7 +251,7 @@
         grade: 'night', haze: 0.5,
         cam: { from: { x: 20, y: 30, z: 1.0 }, to: { x: -20, y: 40, z: 1.07 } },
         figures: [
-          { id: 'tt49_staffer', x: 660, y: 1560, scale: 0.9, dir: -1, turn: 0.45, pose: 'sit_type', expr: 'focused', depth: 0.98, gaze: [0.4, 0.4],
+          { id: 'tt49_staffer', x: 660, y: 1560, scale: 0.9, dir: -1, turn: 0.45, pose: 'sit_type', expr: 'focused', depth: 1.0, gaze: [0.4, 0.4],
             keys: [{ at: ph, pose: 'hand_to_face', expr: 'neutral', gaze: [0.6, 0.1], dur: 0.4 }, { at: ts, expr: 'relieved', dur: 0.4 }, { at: ty - 0.2, pose: 'sit_type_b', expr: 'focused', gaze: [-0.8, 0.2], dur: 0.4 }] }
         ],
         overlays: [
@@ -293,7 +293,7 @@
         cam: { from: { x: 0, y: 30, z: 1.0 }, to: { x: 0, y: 40, z: 1.1 }, settle: true },
         shake: [{ at: mn, amp: 3 }],
         figures: [
-          { id: 'tt49_engineer', x: 330, y: 1640, scale: 0.92, dir: 1, turn: 0.4, pose: 'sit_type', expr: 'focused', depth: 0.98, gaze: [0.6, 0.2],
+          { id: 'tt49_engineer', x: 330, y: 1640, scale: 0.92, dir: 1, turn: 0.4, pose: 'sit_type', expr: 'focused', depth: 1.0, gaze: [0.6, 0.2],
             keys: [{ at: mn, pose: 'stand_tense', expr: 'shocked', dur: 0.4 }, { at: sl, pose: 'point', expr: 'determined', gaze: [0.9, 0.1], dur: 0.5 }] },
           { id: 'tt49_staffer', x: 880, y: 1600, scale: 0.84, dir: -1, turn: 0.45, pose: 'stand', expr: 'worried', depth: 0.94,
             keys: [{ at: mn + 0.1, pose: 'hand_to_face', expr: 'shocked', dur: 0.4 }, { at: sl + 0.4, pose: 'arms_crossed', expr: 'worried', dur: 0.5 }] }

@@ -10,12 +10,12 @@
   "distinct_sets": 5,
   "max_set_share": 0.38,
   "shot_sizes": {
-   "wide": 5,
-   "medium": 2,
+   "wide": 3,
+   "medium": 4,
    "insert/graphic": 1
   },
-  "max_shot_size_share": 0.62,
-  "ok": false
+  "max_shot_size_share": 0.5,
+  "ok": true
  },
  "production_status": {},
  "shots": [
@@ -332,7 +332,7 @@
     }
    ],
    "visual_description": "tt49 office (night grade); tt49_staffer: sit_type -> hand_to_face -> relieved -> sit_type_b; camera push/pull; overlays: label 'POSING AS THE IT HELP DESK', label 'A LOOK-ALIKE LOGIN PAGE'.",
-   "shot_size": "wide",
+   "shot_size": "medium",
    "set": "tt49_office",
    "grade": "night",
    "camera": {
@@ -355,7 +355,7 @@
     {
      "id": "tt49_staffer",
      "outfit": "default",
-     "depth": 0.98,
+     "depth": 1,
      "scale": 0.9,
      "start_pose": "sit_type",
      "start_expr": "focused",
@@ -812,7 +812,7 @@
     }
    ],
    "visual_description": "tt49 office (night grade); tt49_engineer: sit_type -> stand_tense -> point; tt49_staffer: stand -> hand_to_face -> arms_crossed; camera push/pull; overlays: impact, label '$100,000+ IN BITCOIN', funfact 'TWITTER BRIEFLY BLOCKED / EVERY VERIFIED ACCOUNT / FROM TWEETING.'.",
-   "shot_size": "wide",
+   "shot_size": "medium",
    "set": "tt49_office",
    "grade": "night",
    "camera": {
@@ -836,7 +836,7 @@
     {
      "id": "tt49_engineer",
      "outfit": "default",
-     "depth": 0.98,
+     "depth": 1,
      "scale": 0.92,
      "start_pose": "sit_type",
      "start_expr": "focused",
