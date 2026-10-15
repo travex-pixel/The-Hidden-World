@@ -270,3 +270,7 @@
 - 2026-10-15 10:17:45 tcv50-lottery-coder: VERIFIED -> series/true-crime-cinematic/output/true_crime_50_lottery_coder.mp4 (39.6s, 19.7 MB, sha256 016325a03ef9)
 - 2026-10-15 10:17:45 produce 48 --force: regenerating episode data
 - 2026-10-15 10:17:45 tcv48-monopoly-cop: rendering (final60, seed 1)
+- 2026-10-15 11:04:32 tcv48-monopoly-cop: rendered in 2807s
+- 2026-10-15 11:05:22 tcv48-monopoly-cop: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_48
+- 2026-10-15 11:05:22 produce 52 --force: regenerating episode data
+- 2026-10-15 11:05:22 tcv52-fake-invoices: rendering (final60, seed 1)
