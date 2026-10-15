@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / ".cache" / "narration"
 SR = 22050
 PROVIDER_ENV = "HW_TTS_PROVIDER"
-PROVIDERS = ("piper", "elevenlabs")
+PROVIDERS = ("piper", "elevenlabs", "recorded")   # recorded = the owner's own voice, imported by pipeline/voice_import.py
 
 
 def provider_of(v: dict | None) -> str:
@@ -276,6 +276,48 @@ def lip_envelope(x: np.ndarray, sr: int, fps: int = 30) -> list:
     return [round(float(v), 3) for v in np.clip(r / ref, 0, 1)]
 
 
+def _recorded_manifest() -> dict:
+    """The owner's imported narration for this build (HW_VOICE_DIR, set by build.py --tts recorded): line text -> clip."""
+    import json as _json
+    d = Path(os.environ.get("HW_VOICE_DIR", ""))
+    f = d / "manifest.json"
+    if not f.exists():
+        raise RuntimeError(f"--tts recorded: no {f}; run python -m pipeline.voice_import <episode> <recording> first")
+    m = _json.loads(f.read_text()); return {"dir": d, "lines": {l["text"]: l for l in m["lines"]}, "raw": f.read_bytes()}
+
+
+def estimate_words(x: np.ndarray, sr: int, display: str) -> list[dict]:
+    """Word timings for a recorded line: the clip's voiced stretches (10 ms RMS above -40 dB, gaps < 60 ms bridged) are
+    laid end to end and the caption's words are spread over that voiced time by length. Estimated, not measured."""
+    hop = int(0.01 * sr); n = max(1, len(x) // hop)
+    db = 20 * np.log10(np.sqrt(np.mean(x[: n * hop].reshape(n, hop) ** 2, axis=1) + 1e-12))
+    on = db > -40
+    for i in range(1, n - 6):   # bridge gaps shorter than 60 ms
+        if not on[i] and on[i - 1] and on[i:i + 6].any():
+            j = i
+            while j < n and not on[j]:
+                j += 1
+            if j - i < 6:
+                on[i:j] = True
+    t_on = np.where(on)[0] / 100.0
+    words = display.split()
+    if not len(t_on) or not words:
+        return [{"w": w, "start": 0.0, "end": round(len(x) / sr, 3)} for w in words]
+    wts = np.array([len(re.sub(r"[^A-Za-z0-9]", "", w)) + 1.5 for w in words], float); cum = np.concatenate([[0], np.cumsum(wts)]) / wts.sum()
+    idx = lambda f: t_on[min(len(t_on) - 1, int(f * (len(t_on) - 1)))]
+    return [{"w": w, "start": round(float(idx(cum[k])), 3), "end": round(float(idx(cum[k + 1])) + 0.01, 3)} for k, w in enumerate(words)]
+
+
+def _narrate_recorded(text: str) -> tuple[np.ndarray, int]:
+    m = _recorded_manifest(); ln = m["lines"].get(text)
+    if not ln:
+        raise RuntimeError(f"--tts recorded: no recorded take for line {text!r}; re-record it or re-run pipeline.voice_import")
+    x, sr = read_wav(m["dir"] / ln["file"])
+    x = trim_silence(x, sr, thresh=0.02)
+    peak = float(np.max(np.abs(x))) or 1.0
+    return (x / peak * 0.89).astype(np.float32), sr
+
+
 def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
     """Synthesise each line with its character's voice, join them with pauses into one scene clip,
     and return per-line timing plus a 30 fps mouth-openness envelope for lip sync.
@@ -286,6 +328,19 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
         spoken = speak_years(ln["text"]) if v.get("year_words") else ln["text"]   # captions keep the digits
         spoken = pronounce(spoken, v.get("pronounce"))                              # and the written names
         prov = provider_of(v)
+        if prov == "recorded" and ln["who"] == "narrator":   # the owner's own voice: no synthesis
+            x, sr_ = _narrate_recorded(ln["text"]); sr = sr or sr_
+            words, exact = estimate_words(x, sr_, ln["text"]), True
+            if sr_ != sr:
+                x = np.interp(np.linspace(0, len(x) - 1, int(len(x) * sr / sr_)), np.arange(len(x)), x)
+            pre = int(ln.get("pause_before", 0.0) * sr)
+            if pre:
+                parts.append(np.zeros(pre, np.float32)); t += pre / sr
+            lines.append({"who": ln["who"], "text": ln["text"], "start": round(t, 3), "end": round(t + len(x) / sr, 3), "env": lip_envelope(x, sr), "words": words, "timing": "estimated_from_recording"})
+            parts.append(x.astype(np.float32)); t += len(x) / sr
+            gap = int(ln.get("pause_after", 0.3) * sr)
+            parts.append(np.zeros(gap, np.float32)); t += gap / sr
+            continue
         align = bool(v.get("word_timing")) or prov == "elevenlabs"   # ElevenLabs timings come free with the audio
         p = narrate_scene(v.get("model", ""), spoken, v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"),
                           align=align, profile=v, speed_mult=ln.get("speed", 1.0))
@@ -321,7 +376,7 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
         parts.append(np.zeros(gap, np.float32)); t += gap / sr
     clip = np.concatenate(parts[:-1]) if len(parts) > 1 else parts[0]
     prov = provider_of(narrator_voice)   # the resolved provider (and its voice/model) must separate the joined-clip keys too
-    prov_key = [prov] + ([sorted(elevenlabs_config(narrator_voice).items())] if prov == "elevenlabs" else [])
+    prov_key = [prov] + ([sorted(elevenlabs_config(narrator_voice).items())] if prov == "elevenlabs" else []) + ([hashlib.sha1(_recorded_manifest()["raw"]).hexdigest()] if prov == "recorded" else [])
     key = hashlib.sha1(repr([(l["who"], l["text"]) for l in scene["lines"]] + ([sorted(narrator_voice.items())] if narrator_voice else []) + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]] + [ln.get("fx", "") for ln in scene["lines"]] + prov_key).encode()).hexdigest()[:16]
     out = CACHE / f"dlg_{key}.wav"
     with wave.open(str(out), "wb") as w:

@@ -116,11 +116,13 @@ def main(argv=None) -> int:
     ap.add_argument("--visual", choices=["art", "svg"], default=None, help="art = illustrated panels (episode default); svg = code-drawn scenes")
     ap.add_argument("--plan-only", action="store_true", help="stop after writing plan.json (for quick stills with pipeline/stills.mjs)")
     ap.add_argument("--reuse-video", action="store_true", help="skip frame rendering and reuse out/<id>/video_silent.mp4 (audio-only iteration)")
-    ap.add_argument("--tts", choices=["piper", "elevenlabs"], default=None,
+    ap.add_argument("--tts", choices=["piper", "elevenlabs", "recorded"], default=None,
                     help="narration provider for this build; overrides every voice profile (default: the profile, i.e. Piper)")
     args = ap.parse_args(argv)
     if args.tts:
         os.environ["HW_TTS_PROVIDER"] = args.tts   # read by pipeline/narrate.provider_of; the key itself is never read here
+        if args.tts == "recorded":   # the owner's own voice, imported by pipeline/voice_import.py
+            os.environ["HW_VOICE_DIR"] = str(ROOT / "episodes" / args.episode / "voice")
 
     try:
         ep = load_episode(args.episode)

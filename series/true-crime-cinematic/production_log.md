@@ -278,3 +278,7 @@
 - 2026-10-15 11:47:32 tcv52-fake-invoices: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_52
 - 2026-10-15 11:47:32 produce 51 --force: regenerating episode data
 - 2026-10-15 11:47:32 tcv51-syrup-heist: rendering (final60, seed 1)
+- 2026-10-15 12:42:12 tcv51-syrup-heist: rendered in 3280s
+- 2026-10-15 12:43:05 tcv51-syrup-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_51_syrup_heist.mp4 (39.2s, 21.4 MB, sha256 6a6555a4a1cf)
+- 2026-10-15 12:43:05 produce 49 --force: regenerating episode data
+- 2026-10-15 12:43:05 tcv49-twitter-teen: rendering (final60, seed 1)
