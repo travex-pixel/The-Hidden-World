@@ -248,3 +248,5 @@
 - 2026-10-15 02:44:54 tcv44-oldest-robber: rendering (final60, seed 1)
 - 2026-10-15 03:14:52 tcv44-oldest-robber: rendered in 1798s
 - 2026-10-15 03:15:36 tcv44-oldest-robber: VERIFIED -> series/true-crime-cinematic/output/true_crime_44_oldest_robber.mp4 (40.8s, 21.8 MB, sha256 dea2cfe002ef)
+- 2026-10-15 05:22:36 produce 46 --force: regenerating episode data
+- 2026-10-15 05:22:36 tcv46-gentleman-robber: rendering (final60, seed 1)
