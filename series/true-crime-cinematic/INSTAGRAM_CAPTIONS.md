@@ -568,3 +568,14 @@ Genius or fool? 👇 Follow for the next case.
 
 Seed comment (post it yourself right after uploading): Real story behind The Old Man & the Gun (2018). Genius or fool? I say both 👀
 Pinned share line: Send this to the mate who always bails early 🚣
+
+## 47: The Barefoot Bandit (`true_crime_47_barefoot_bandit.mp4`)
+A runaway teen with no flight training stole at least five planes ✈️
+
+He drew chalk bare feet on a shop floor. Then he flew to the Bahamas.
+Genius or criminal? 👇 Follow for the next case.
+
+#truecrime #barefootbandit #aviation #crimestory #casefiles
+
+Seed comment (post it yourself right after uploading): His movie money went to his victims. Does that change your answer?
+Pinned share line: Send this to the mate who's logged 500 hours on flight sim 🛩️

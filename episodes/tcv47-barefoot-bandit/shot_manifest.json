@@ -104,9 +104,9 @@
    "grade": "night",
    "camera": {
     "from": {
-     "x": 0,
+     "x": -30,
      "y": 60,
-     "z": 1.04
+     "z": 1
     },
     "to": {
      "x": 10,
@@ -127,6 +127,11 @@
      "start_pose": "kneel",
      "start_expr": "neutral",
      "actions": [
+      {
+       "at": 0.05,
+       "turn_head": true,
+       "move": true
+      },
       {
        "at": 1.1,
        "pose": "kneel",

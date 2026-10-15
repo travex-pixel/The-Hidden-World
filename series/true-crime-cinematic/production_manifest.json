@@ -4054,7 +4054,7 @@
         "fps": 60.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 21838921,
+        "size_bytes": 22053100,
         "mean_volume_db": -16.6,
         "max_volume_db": -1.7
       },
@@ -4086,7 +4086,7 @@
         "true_peak_ok": true,
         "narration_intelligible_asr": true,
         "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": false,
+        "no_frozen_or_static_picture": true,
         "audio_opening_speech_steady": true,
         "audio_opening_no_holes": true,
         "audio_narration_on_time": true,
@@ -4116,11 +4116,32 @@
       "asr_word_error_rate": 0.076,
       "frames_sampled": 7,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_47",
-      "status": "failed_qa",
-      "next_task": "inspect qa/ and fix; then re-run qa.py"
+      "status": "verified_automated",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "sha256": "5159bba7e795559dd73f42015b789192c0d38ddc9c4651968af00b8534bed93f",
+      "output": "series/true-crime-cinematic/output/true_crime_47_barefoot_bandit.mp4",
+      "verified": "2026-10-15T08:06:32",
+      "editorial_review": {
+        "reviewer": "Claude (frame and transcript review)",
+        "date": "2026-10-15",
+        "verdict": "approved",
+        "checks": [
+          "research ledger read",
+          "contact sheet reviewed",
+          "ASR transcript read",
+          "engagement checks (9) pass"
+        ],
+        "notes": [
+          "Corrected from the brief: first plane taken at 17 (Nov 2008, Orcas Island); 'at least five planes, three crashed'; the '100+ crimes' and state counts were dropped (sources disagree). Sentences: state 7 yrs 3 mos, federal 6.5 yrs concurrent; work release 2016. Fox paid over $1M in restitution.",
+          "The first statistic (a 93 % fall in teen burglary arrests) could not be verified and was replaced with the Council on Criminal Justice text: the juvenile burglary arrest rate was once three times the adult rate and is now about equal (OJJDP as second source).",
+          "First render failed the opening-beat motion check (too little change in the first second); the figure and camera now move from frame 1; re-rendered and passed.",
+          "He is alive and has served his sentence: silhouette only (NOT A LIKENESS), no speculation about his life now. ASR misheard 'three' and 'teenagers'; WER 0.076."
+        ],
+        "not_done": "No human listening test."
+      }
     }
   },
-  "updated": "2026-10-15T07:22:49",
+  "updated": "2026-10-15T08:06:32",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

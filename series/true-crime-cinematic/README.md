@@ -48,6 +48,7 @@
 | 44 | `true_crime_44_oldest_robber.mp4` (archived outside git) | J.L. "Red" Rountree, oldest convicted bank robber (2003, age 91): hooks/rehooks playbook, share line on the end card, smoother premium transitions, 60 fps | see `production_manifest.json` |
 | 45 | `true_crime_45_cartel_grandad.mp4` (archived outside git) | Leo Sharp, 87-year-old WWII veteran and Sinaloa cartel courier (2011): unlikely-offender format, 60 fps | see `production_manifest.json` |
 | 46 | `true_crime_46_gentleman_robber.mp4` (archived outside git) | Forrest Tucker: the San Quentin kayak (1979) and bank robberies at 78 (1999): unlikely-offender format, 60 fps | see `production_manifest.json` |
+| 47 | `true_crime_47_barefoot_bandit.mp4` (archived outside git) | Colton Harris-Moore, the Barefoot Bandit (2008-10): a teen who stole planes; unlikely-offender format, 60 fps | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.
