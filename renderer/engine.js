@@ -435,7 +435,7 @@
       const pop = 1 + 0.12 * (1 - ease.out(seg(t, last, last + 0.3)));
       const ep = this.state.ep, acc = ep.look === 'premium' ? ((ep.palette || {}).accent || '#e2a13b') : '#ffd84a';
       const txt = `${p.label ? p.label + ' ' : ''}${typeof v === 'number' ? v.toLocaleString('en-US') : v}${p.suffix || ''}`;
-      const fs = p.fs || 52, w = measure(txt, fs) + 64, cx = p.x ?? W / 2, y = p.y ?? 1545, x = cx - w / 2;
+      const fs = p.fs || 52, w = measure(txt, fs) + 64, cx = p.x ?? W / 2, y = p.y ?? 300, x = cx - w / 2;   // default high: the bottom ~400 px sit under Instagram's buttons
       return `<g opacity="${f1(Math.min(1, intro))}" transform="translate(${f1(cx)} ${y}) scale(${f1(Math.max(0.001, intro) * pop * 1000) / 1000}) translate(${f1(-cx)} ${-y})"><rect x="${f1(x)}" y="${f1(y - fs * 0.92)}" width="${f1(w)}" height="${f1(fs * 1.32)}" rx="14" fill="#05070a" opacity="0.66" stroke="${acc}" stroke-opacity="0.55" stroke-width="2"/><text x="${f1(cx)}" y="${f1(y + fs * 0.08)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${acc}" letter-spacing="2">${esc(txt)}</text></g>`;
     },
     burnTitle(h, k, out) {
