@@ -205,7 +205,8 @@
         set: 'bb47_store', setOpts: { morning: 0 }, grade: 'night', dof: true, haze: 0.4,
         cam: { from: { x: 0, y: 60, z: 1.04 }, to: { x: 10, y: 80, z: 1.13 }, settle: true },
         figures: [
-          { id: 'bb47_colton', x: 150, y: 1730, scale: 0.9, dir: 1, turn: 0.4, pose: 'kneel', propOverride: null, silhouette: 'cool', depth: 1.0 }
+          { id: 'bb47_colton', x: 150, y: 1730, scale: 0.9, dir: 1, turn: 0.4, pose: 'kneel', propOverride: null, silhouette: 'cool', depth: 1.0,
+            keys: [{ at: 1.1, pose: 'kneel', headTurn: 0.35, dur: 0.6 }, { at: l2 + 0.1, x: 205, headTurn: 0, dur: 1.0 }] }
         ],
         props: [
           { depth: 0.99, accent: true, svg: tt => trail(5.4 + 2.6 * seg(tt, 0.0, T - 0.3)) + puff(480, 1660, tt, 0.05) + puff(560, 1430, tt, l2) }
@@ -238,7 +239,7 @@
     // 3 - how did he learn? a holiday cabin at night: his silhouette at a laptop showing a flight-simulator horizon, an open
     //     manual with a plane diagram beside it; rack focus onto the screen on 'simulator'
     bb47_sim(ctx) {
-      const t = ctx.t, T = ctx.T, l2 = LS(ctx, 1, 2.1), man = WT(ctx, 1, 3, 2.9), sim = WT(ctx, 1, 6, 3.6);
+      const t = ctx.t, T = ctx.T, l2 = LS(ctx, 1, 2.1), man = WT(ctx, 1, 2, 2.9), sim = WT(ctx, 1, 5, 3.6);
       const screen = tt => { const roll = 8 * Math.sin(tt * 0.9), pitch = 14 * Math.sin(tt * 0.6);
         return `<g transform="translate(700 1172)"><path d="M-170 0 L170 0 L190 14 L-190 14 Z" fill="#3a3e3c" stroke="${INK}" stroke-width="4"/>` +
           `<g transform="skewX(-6)"><rect x="-150" y="-210" width="300" height="200" rx="8" fill="#1a1e1c" stroke="${INK}" stroke-width="5"/>` +
@@ -287,7 +288,7 @@
     // 5 - the biggest reveal: the map from Bloomington, Indiana to Great Abaco; the Bahamas draw themselves in; the route
     //     and a small plane trace the flight; the single impact on 'Bahamas'
     bb47_route(ctx) {
-      const t = ctx.t, T = ctx.T, ind = WT(ctx, 0, 1, 0.3), fl = WT(ctx, 1, 1, 2.6), mi = WT(ctx, 1, 3, 3.0), bh = WT(ctx, 1, 7, 4.1);
+      const t = ctx.t, T = ctx.T, ind = WT(ctx, 0, 4, 0.9), fl = WT(ctx, 1, 1, 2.6), mi = WT(ctx, 1, 3, 3.0), bh = WT(ctx, 1, 7, 4.1);
       const MO = { from: { center: [-86, 35], span: 26 }, to: { center: [-81.8, 33], span: 18 }, t0: 0.0, t1: T - 0.3, cy: 0.44, tilt: true };
       return E.cine.shot(ctx, {
         set: 'mapflight', grade: 'none', haze: 0,
@@ -306,7 +307,7 @@
     // 6 - the capture (the only handheld shot): night sea off Eleuthera; his boat crosses left to right, a police boat with a
     //     flashing blue light closes in behind; on 'ended' both slow (the single shake); on '19' he stands, hands behind
     bb47_chase(ctx) {
-      const t = ctx.t, T = ctx.T, ch = WT(ctx, 0, 5, 1.0), en = WT(ctx, 0, 6, 1.6), n19 = WT(ctx, 1, 2, 2.9);
+      const t = ctx.t, T = ctx.T, ch = WT(ctx, 0, 5, 1.0), en = WT(ctx, 0, 6, 1.6), n19 = WT(ctx, 1, 4, 2.9);
       const sp = tt => seg(tt, 0, en) * 0.8 + 0.2 * seg(tt, en, T);   // progress: fast until 'ended', then drifting
       const hx = tt => lerp(260, 640, ease.out(clamp(tt / Math.max(0.1, en + 0.4), 0, 1))), px = tt => lerp(-260, 300, ease.out(clamp(tt / Math.max(0.1, en + 0.6), 0, 1)));
       const bob = (tt, ph) => 6 * Math.sin(tt * 3 + ph);
@@ -353,7 +354,7 @@
     // 8 - the LESSON (save trigger): a rural hangar by day; an owner locks her plane's door and fits a second lock on the
     //     prop; the checklist card with the SAVE ribbon (captions off)
     bb47_lesson(ctx) {
-      const t = ctx.t, T = ctx.T, sv = WT(ctx, 0, 6, 1.5);
+      const t = ctx.t, T = ctx.T, sv = WT(ctx, 0, 5, 1.5);
       return E.cine.shot(ctx, {
         set: 'bb47_hangar', grade: 'cold', haze: 0.5, dof: true,
         cam: { from: { x: 20, y: 30, z: 1.06 }, to: { x: -10, y: 30, z: 1.0 } },

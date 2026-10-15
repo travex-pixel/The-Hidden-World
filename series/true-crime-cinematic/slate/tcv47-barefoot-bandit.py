@@ -33,15 +33,15 @@ def build(h):
         # A - hook: frame 1 = the HERO OBJECT (chalk bare footprints on a dark shop floor) with his silhouette crouched,
         #     chalk in hand, drawing the last foot; camera already pushing in; the headline burned in at the top. Line 1 =
         #     the contradiction with the number (done by 2.5 s); line 2 escalates at 3-5 s and names what is on screen.
-        S("s01_hook", "bb47_hook", [N("At 17, he started stealing planes."), N("And he left his bare footprints behind.", pause_before=0.1)],
-          "tension", ["B_firstplane", "B_age", "B_nickname"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.3), fw(0, 5, "whoosh", 0.3, -0.05), fw(1, 5, "step", 0.3, 0.0)],
+        S("s01_hook", "bb47_hook", [N("At 17, he started stealing planes."), N("He left bare footprints.", pause_before=0.1)],
+          "tension", ["B_firstplane", "B_age", "B_nickname"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.3), fw(0, 5, "whoosh", 0.3, -0.05), fw(1, 3, "step", 0.3, 0.0)],
           emph=["17,", "stealing", "planes.", "bare", "footprints"], min_d=3.6, pad=0.15),
         # A/B - the chalk feet (Orcas Island, Feb 2010): morning in the island grocery; the owner opens up and finds them; the FUN FACT ("C-YA!")
         S("s02_chalk", "bb47_chalk", [N("At one shop, he even drew them in chalk.")],
           "tension-rise", ["B_chalk", "B_cya", "B_islands", "B_runaway"], sfx=[fw(0, 0, "door", 0.3, -0.05), fw(0, 6, "rasp", 0.3, -0.05), fw(0, 8, "sparkle", 0.3, 0.25)],
           emph=["shop,", "drew", "chalk."], min_d=3.6, pad=0.5, tr="cut"),
         # B - how did he fly? a dark cabin at night; his silhouette at a laptop with a flight-simulator horizon; a manual
-        S("s03_sim", "bb47_sim", [N("How did a teenager learn to fly?"), N("He reportedly used manuals and flight simulator games.", pause_before=0.05)],
+        S("s03_sim", "bb47_sim", [N("How did a teenager learn to fly?"), N("Reportedly, from manuals and flight simulator games.", pause_before=0.05)],
           "tension-rise", ["B_selftaught", "B_notraining"], sfx=[fw(0, 0, "click", 0.25, 0.0), fw(1, 0, "typing", 0.3, 0.0), fw(1, 4, "whoosh", 0.25, -0.1)],
           emph=["how", "teenager", "fly?", "manuals", "simulator"], min_d=3.6, pad=0.05, tr="dissolve"),
         # C - the count: a crash-landed small plane in a wet clearing at dawn; a deputy walks up to it (nobody hurt)
@@ -49,26 +49,26 @@ def build(h):
           "tension", ["B_five", "B_three"], sfx=[fx(0.0, "wind", 0.25), fw(0, 4, "thump", 0.35, -0.03), fw(0, 6, "thud", 0.4, -0.03)],
           emph=["five", "planes.", "three", "crashed."], min_d=3.6, pad=0.2, tr="push"),
         # D - the biggest reveal (~50-60 %, music drop): the map from Indiana to the Bahamas; the route draws itself
-        S("s05_bahamas", "bb47_route", [N("In Indiana, he stole one more,"), N("and flew over 1,000 miles to the Bahamas.", pause_before=0.1)],
+        S("s05_bahamas", "bb47_route", [N("Then he stole one in Indiana,"), N("and flew over 1,000 miles to the Bahamas.", pause_before=0.3)],
           "revelation", ["B_indiana", "B_bahamas"], sfx=[fx(0.0, "whoosh", 0.3), fw(1, 0, "riser", 0.25, -0.4), fw(1, 7, "hit", 0.4, -0.03)],
-          emph=["indiana,", "stole", "1,000", "miles", "bahamas."], min_d=3.6, pad=0.2, tr="dissolve"),
+          emph=["stole", "indiana,", "1,000", "miles", "bahamas."], min_d=3.6, pad=0.2, tr="dissolve"),
         # D - the capture (the only handheld shot): night sea off Eleuthera; a police boat's lights close in on his boat
-        S("s06_chase", "bb47_chase", [N("A week later, a boat chase ended it."), N("He was 19 years old.", pause_before=0.2)],
-          "revelation", ["B_capture", "B_age19"], sfx=[fx(0.0, "water", 0.3), fw(0, 4, "siren", 0.25, -0.2), fw(0, 6, "thud", 0.4, -0.03), fw(1, 2, "cuffs", 0.35, 0.0)],
-          emph=["week", "boat", "chase", "ended", "19"], min_d=3.6, pad=0.1, tr="cut"),
+        S("s06_chase", "bb47_chase", [N("A week later, a boat chase ended it."), N("He was still only 19.", pause_before=0.2)],
+          "revelation", ["B_capture", "B_age19"], sfx=[fx(0.0, "water", 0.3), fw(0, 4, "siren", 0.25, -0.2), fw(0, 6, "thud", 0.4, -0.03), fw(1, 4, "cuffs", 0.35, 0.0)],
+          emph=["week", "boat", "chase", "ended", "only", "19."], min_d=3.6, pad=0.1, tr="cut"),
         # C - the statistic (a counter): a holiday cabin in the woods at night, a deputy's torch on the door
         S("s07_stat", "bb47_stat", [N("For teenagers, burglary arrest rates fell over 90 percent.")],
           "tension", ["B_stat"], sfx=[fw(0, 0, "tick", 0.25, 0.0), fw(0, 5, "riser", 0.25, -0.4), fw(0, 7, "thump", 0.4, 0.0)],
           emph=["teenagers,", "burglary", "fell", "90", "percent."], min_d=3.6, pad=0.2, tr="dissolve"),
         # B - the LESSON (save trigger): a rural hangar; an owner locks her plane; the checklist; captions OFF
-        S("s08_lesson", "bb47_lesson", [N("Own a plane, boat or cabin? Save these three.")],
-          "tension-rise", ["B_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 5, "keys", 0.3, 0.0), fw(0, 7, "chime", 0.25, 0.0)],
-          emph=["plane,", "boat", "cabin?", "save", "three."], min_d=3.6, pad=0.25, tr="cut"),
+        S("s08_lesson", "bb47_lesson", [N("Own a plane or cabin? Save these three.")],
+          "tension-rise", ["B_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 4, "keys", 0.3, 0.0), fw(0, 6, "chime", 0.25, 0.0)],
+          emph=["plane", "cabin?", "save", "three."], min_d=3.6, pad=0.25, tr="cut"),
         # E - the outcome as the LAST line, on the hero object in the first frame's framing; the burned-in end question with
         #     the SEND line; pad 0.6, no fade (the reel loops to frame 1)
         S("s09_end", "bb47_end", [N("He got over seven years and left prison in 2016."), N("His movie deal repaid victims over a million dollars.", pause_before=0.2)],
           "aftermath", ["B_sentence", "B_release", "B_movie"], sfx=[fw(0, 1, "gavel", 0.35, -0.05), fw(1, 2, "sub", 0.3, -0.05), fw(1, 3, "cash", 0.3, 0.0)],
-          emph=["seven", "years,", "2016.", "movie", "repaid", "million"], min_d=3.6, pad=0.6, tr="zoom"),
+          emph=["seven", "years", "2016.", "movie", "repaid", "million"], min_d=3.6, pad=0.6, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_chalk": "A", "s03_sim": "B", "s04_five": "B", "s05_bahamas": "D",
                 "s06_chase": "D", "s07_stat": "C", "s08_lesson": "B", "s09_end": "E"}
@@ -123,7 +123,7 @@ def build(h):
           ["aopa_could", "avweb_bf", "wiki"]),
         C("B_age", "Born 22 March 1991 (Wikipedia); described as 18 in October 2009 (AVweb) and 19 at his capture in July 2010 (AP). He was therefore 17 in November 2008 when the first plane was taken. The AGE chip reads 17 (2008), 18 (2009), 19 (2010).",
           ["wiki", "avweb_bf", "nbc_caught", "pdn"]),
-        C("B_nickname", "Bare footprints at several crime scenes earned him the nickname 'Barefoot Bandit' (earlier 'Barefoot Burglar'). Narration: 'And he left his bare footprints behind.'",
+        C("B_nickname", "Bare footprints at several crime scenes earned him the nickname 'Barefoot Bandit' (earlier 'Barefoot Burglar'). Narration: 'He left bare footprints.'",
           ["aopa_could", "wiki", "abc_chalk"]),
         C("B_runaway", "His two-year run began after he walked away from a halfway house (group home) in April 2008.",
           ["wiki", "nbc_caught", "fox_plea"]),
@@ -133,7 +133,7 @@ def build(h):
           ["abc_chalk", "cbs_vansant", "whidbey_chalk"]),
         C("B_cya", "FUN FACT CARD: next to the chalk feet leading out of the door he wrote 'C-YA!' (ABC spells it 'c yah'). Card: 'HE DREW CHALK BARE FEET / AND WROTE \"C-YA!\"'.",
           ["abc_chalk", "cbs_vansant", "whidbey_chalk"]),
-        C("B_selftaught", "REPORTED / BELIEVED: he had no known formal flight training and is believed to have learned to fly from aircraft manuals, a 'how to fly' DVD and flight-simulator computer games. .",
+        C("B_selftaught", "REPORTED / BELIEVED: he had no known formal flight training and is believed to have learned to fly from aircraft manuals, a 'how to fly' DVD and flight-simulator computer games. Narration: 'Reportedly, from manuals and flight simulator games.'",
           ["wiki", "aopa_could", "cbs_movie", "nbc_lone"], nature="reported"),
         C("B_notraining", "AOPA: no known formal flight training. Headline: 'TAUGHT HIMSELF TO FLY' (CBS: 'taught himself how to fly').",
           ["aopa_could", "cbs_movie", "wiki"], nature="reported"),
@@ -177,7 +177,7 @@ def build(h):
                        "from": 3.6, "y": 420}
     # the AGE chip: 17 (the first plane, Nov 2008), 18 (the chalk feet, Feb 2010), 19 (Indiana, July 2010). Word-anchored from
     # out/<id>/timeline.json when a build exists (narration is cached, so they are stable); defaults are draft values.
-    anchors = [("s01_hook", 1, 2, 3.4, 17), ("s02_chalk", 0, 0, 5.1, 18), ("s05_bahamas", 0, 1, 18.0, 19)]
+    anchors = [("s01_hook", 1, 2, 3.4, 17), ("s02_chalk", 0, 0, 5.1, 18), ("s05_bahamas", 0, 4, 18.0, 19)]
     keys = []
     try:
         tl = json.loads((h.ROOT / "out" / EP / "timeline.json").read_text())
@@ -194,7 +194,7 @@ def build(h):
     ep["progress"] = {"label": "AGE", "keys": keys, "y": 330,
                       "until": round(by["s06_chase"]["end"] - 0.25, 2) if "s06_chase" in by else 26.0}   # top of frame; gone after the capture
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={
-        "17,": "seventeen,", "1,000": "a thousand", "19": "nineteen", "90": "ninety", 
+        "17,": "seventeen,", "1,000": "a thousand", "19.": "nineteen.", "90": "ninety", 
         "2016.": "twenty sixteen."})
     ep["score"] = {"root_hz": 138.59, "bpm": 80,
                    "cliff": {"scene": "s05_bahamas", "word": [1, 7], "at": 0.45}}

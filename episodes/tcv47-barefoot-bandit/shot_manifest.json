@@ -1,7 +1,7 @@
 {
  "episode": "tcv47-barefoot-bandit",
  "title": "A Teen Taught Himself to Fly Stolen Planes",
- "duration": 42.0,
+ "duration": 41.625,
  "slideshow_risk": {
   "shots": 9,
   "composed_shots": 9,
@@ -16,7 +16,7 @@
    "insert/graphic": 1
   },
   "max_shot_size_share": 0.44,
-  "ok": false
+  "ok": true
  },
  "production_status": {},
  "shots": [
@@ -24,10 +24,10 @@
    "id": "s01_hook",
    "scene_type": "bb47_hook",
    "start": 0.0,
-   "duration": 4.875,
+   "duration": 4.5,
    "narration": [
     "At 17, he started stealing planes.",
-    "And he left his bare footprints behind."
+    "He left bare footprints."
    ],
    "caption_timings": [
     {
@@ -70,47 +70,32 @@
     {
      "line": 1,
      "start": 2.926,
-     "end": 4.644,
+     "end": 4.214,
      "words": [
       {
-       "w": "And",
-       "start": 2.949,
-       "end": 3.042
-      },
-      {
-       "w": "he",
-       "start": 3.065,
-       "end": 3.135
+       "w": "He",
+       "start": 2.961,
+       "end": 3.054
       },
       {
        "w": "left",
-       "start": 3.17,
-       "end": 3.356
-      },
-      {
-       "w": "his",
-       "start": 3.379,
-       "end": 3.46
+       "start": 3.112,
+       "end": 3.274
       },
       {
        "w": "bare",
-       "start": 3.518,
-       "end": 3.669
+       "start": 3.321,
+       "end": 3.506
       },
       {
-       "w": "footprints",
-       "start": 3.692,
-       "end": 4.087
-      },
-      {
-       "w": "behind.",
-       "start": 4.122,
-       "end": 4.586
+       "w": "footprints.",
+       "start": 3.553,
+       "end": 4.099
       }
      ]
     }
    ],
-   "visual_description": "bb47 store (night grade); bb47_colton (silhouette): kneel; camera push/pull.",
+   "visual_description": "bb47 store (night grade); bb47_colton (silhouette): kneel -> kneel; camera push/pull.",
    "shot_size": "medium",
    "set": "bb47_store",
    "grade": "night",
@@ -138,7 +123,18 @@
      "scale": 0.9,
      "start_pose": "kneel",
      "start_expr": "neutral",
-     "actions": [],
+     "actions": [
+      {
+       "at": 1.1,
+       "pose": "kneel",
+       "turn_head": true
+      },
+      {
+       "at": 3.03,
+       "turn_head": true,
+       "move": true
+      }
+     ],
      "silhouette": "cool"
     }
    ],
@@ -170,7 +166,7 @@
     {
      "claim": "B_nickname",
      "type": "established",
-     "claim_text": "Bare footprints at several crime scenes earned him the nickname 'Barefoot Bandit' (earlier 'Barefoot Burglar'). Narration: 'And he left his bare footprints behind.'",
+     "claim_text": "Bare footprints at several crime scenes earned him the nickname 'Barefoot Bandit' (earlier 'Barefoot Burglar'). Narration: 'He left bare footprints.'",
      "urls": [
       "https://www.aopa.org/news-and-media/all-news/2010/november/pilot/could-it-happen-to-you",
       "https://en.wikipedia.org/wiki/Colton_Harris_Moore",
@@ -203,11 +199,11 @@
      },
      {
       "name": "step",
-      "at": 3.692,
+      "at": 3.553,
       "gain": 0.3,
       "word": [
        1,
-       5
+       3
       ]
      }
     ]
@@ -222,13 +218,13 @@
    "validation": {
     "claims_sourced": true,
     "tagged_as_illustration": true,
-    "characters_act": false
+    "characters_act": true
    }
   },
   {
    "id": "s02_chalk",
    "scene_type": "bb47_chalk",
-   "start": 4.875,
+   "start": 4.5,
    "duration": 3.75,
    "narration": [
     "At one shop, he even drew them in chalk."
@@ -236,53 +232,53 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 5.125,
-     "end": 7.11,
+     "start": 4.75,
+     "end": 6.735,
      "words": [
       {
        "w": "At",
-       "start": 5.183,
-       "end": 5.276
+       "start": 4.808,
+       "end": 4.901
       },
       {
        "w": "one",
-       "start": 5.311,
-       "end": 5.497
+       "start": 4.936,
+       "end": 5.122
       },
       {
        "w": "shop,",
-       "start": 5.555,
-       "end": 5.868
+       "start": 5.18,
+       "end": 5.493
       },
       {
        "w": "he",
-       "start": 5.914,
-       "end": 6.065
+       "start": 5.539,
+       "end": 5.69
       },
       {
        "w": "even",
-       "start": 6.089,
-       "end": 6.274
+       "start": 5.714,
+       "end": 5.899
       },
       {
        "w": "drew",
-       "start": 6.309,
-       "end": 6.437
+       "start": 5.934,
+       "end": 6.062
       },
       {
        "w": "them",
-       "start": 6.46,
-       "end": 6.588
+       "start": 6.085,
+       "end": 6.213
       },
       {
        "w": "in",
-       "start": 6.611,
-       "end": 6.658
+       "start": 6.236,
+       "end": 6.283
       },
       {
        "w": "chalk.",
-       "start": 6.704,
-       "end": 7.041
+       "start": 6.329,
+       "end": 6.666
       }
      ]
     }
@@ -398,7 +394,7 @@
     "sfx": [
      {
       "name": "door",
-      "at": 5.133,
+      "at": 4.758,
       "gain": 0.3,
       "word": [
        0,
@@ -407,7 +403,7 @@
      },
      {
       "name": "rasp",
-      "at": 6.41,
+      "at": 6.035,
       "gain": 0.3,
       "word": [
        0,
@@ -416,7 +412,7 @@
      },
      {
       "name": "sparkle",
-      "at": 6.954,
+      "at": 6.579,
       "gain": 0.3,
       "word": [
        0,
@@ -441,99 +437,94 @@
   {
    "id": "s03_sim",
    "scene_type": "bb47_sim",
-   "start": 8.625,
+   "start": 8.25,
    "duration": 5.25,
    "narration": [
     "How did a teenager learn to fly?",
-    "He reportedly used manuals and flight simulator games."
+    "Reportedly, from manuals and flight simulator games."
    ],
    "caption_timings": [
     {
      "line": 0,
-     "start": 8.875,
-     "end": 10.454,
+     "start": 8.5,
+     "end": 10.079,
      "words": [
       {
        "w": "How",
-       "start": 8.91,
-       "end": 9.026
+       "start": 8.535,
+       "end": 8.651
       },
       {
        "w": "did",
-       "start": 9.049,
-       "end": 9.142
+       "start": 8.674,
+       "end": 8.767
       },
       {
        "w": "a",
-       "start": 9.177,
-       "end": 9.212
+       "start": 8.802,
+       "end": 8.837
       },
       {
        "w": "teenager",
-       "start": 9.258,
-       "end": 9.63
+       "start": 8.883,
+       "end": 9.255
       },
       {
        "w": "learn",
-       "start": 9.676,
-       "end": 9.827
+       "start": 9.301,
+       "end": 9.452
       },
       {
        "w": "to",
-       "start": 9.873,
-       "end": 9.943
+       "start": 9.498,
+       "end": 9.568
       },
       {
        "w": "fly?",
-       "start": 9.978,
-       "end": 10.326
+       "start": 9.603,
+       "end": 9.951
       }
      ]
     },
     {
      "line": 1,
-     "start": 10.804,
-     "end": 13.776,
+     "start": 10.429,
+     "end": 13.424,
      "words": [
       {
-       "w": "He",
-       "start": 10.839,
-       "end": 10.943
+       "w": "Reportedly,",
+       "start": 10.499,
+       "end": 11.033
       },
       {
-       "w": "reportedly",
-       "start": 10.967,
-       "end": 11.477
-      },
-      {
-       "w": "used",
-       "start": 11.501,
-       "end": 11.675
+       "w": "from",
+       "start": 11.16,
+       "end": 11.3
       },
       {
        "w": "manuals",
-       "start": 11.733,
-       "end": 12.197
+       "start": 11.346,
+       "end": 11.857
       },
       {
        "w": "and",
-       "start": 12.267,
-       "end": 12.348
+       "start": 11.95,
+       "end": 12.043
       },
       {
        "w": "flight",
-       "start": 12.383,
-       "end": 12.65
+       "start": 12.089,
+       "end": 12.345
       },
       {
        "w": "simulator",
-       "start": 12.743,
-       "end": 13.161
+       "start": 12.403,
+       "end": 12.832
       },
       {
        "w": "games.",
-       "start": 13.207,
-       "end": 13.672
+       "start": 12.879,
+       "end": 13.331
       }
      ]
     }
@@ -576,15 +567,15 @@
        "pose": "sit_type"
       },
       {
-       "at": 2.91,
+       "at": 2.9,
        "pose": "sit_read"
       },
       {
-       "at": 4.12,
+       "at": 4.15,
        "pose": "sit_type"
       },
       {
-       "at": 4.62,
+       "at": 4.65,
        "pose": "sit_type_b"
       }
      ],
@@ -604,7 +595,7 @@
     {
      "claim": "B_selftaught",
      "type": "established",
-     "claim_text": "REPORTED / BELIEVED: he had no known formal flight training and is believed to have learned to fly from aircraft manuals, a 'how to fly' DVD and flight-simulator computer games. .",
+     "claim_text": "REPORTED / BELIEVED: he had no known formal flight training and is believed to have learned to fly from aircraft manuals, a 'how to fly' DVD and flight-simulator computer games. Narration: 'Reportedly, from manuals and flight simulator games.'",
      "urls": [
       "https://en.wikipedia.org/wiki/Colton_Harris_Moore",
       "https://www.aopa.org/news-and-media/all-news/2010/november/pilot/could-it-happen-to-you",
@@ -629,7 +620,7 @@
     "sfx": [
      {
       "name": "click",
-      "at": 8.91,
+      "at": 8.535,
       "gain": 0.25,
       "word": [
        0,
@@ -638,7 +629,7 @@
      },
      {
       "name": "typing",
-      "at": 10.839,
+      "at": 10.499,
       "gain": 0.3,
       "word": [
        1,
@@ -647,7 +638,7 @@
      },
      {
       "name": "whoosh",
-      "at": 12.167,
+      "at": 11.989,
       "gain": 0.25,
       "word": [
        1,
@@ -672,7 +663,7 @@
   {
    "id": "s04_five",
    "scene_type": "bb47_five",
-   "start": 13.875,
+   "start": 13.5,
    "duration": 3.75,
    "narration": [
     "He took at least five planes. Three crashed."
@@ -680,48 +671,48 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 14.125,
-     "end": 16.435,
+     "start": 13.75,
+     "end": 16.06,
      "words": [
       {
        "w": "He",
-       "start": 14.16,
-       "end": 14.276
+       "start": 13.785,
+       "end": 13.901
       },
       {
        "w": "took",
-       "start": 14.322,
-       "end": 14.485
+       "start": 13.947,
+       "end": 14.11
       },
       {
        "w": "at",
-       "start": 14.508,
-       "end": 14.555
+       "start": 14.133,
+       "end": 14.18
       },
       {
        "w": "least",
-       "start": 14.578,
-       "end": 14.775
+       "start": 14.203,
+       "end": 14.4
       },
       {
        "w": "five",
-       "start": 14.798,
-       "end": 15.054
+       "start": 14.423,
+       "end": 14.679
       },
       {
        "w": "planes.",
-       "start": 15.089,
-       "end": 15.541
+       "start": 14.714,
+       "end": 15.166
       },
       {
        "w": "Three",
-       "start": 15.669,
-       "end": 15.832
+       "start": 15.294,
+       "end": 15.457
       },
       {
        "w": "crashed.",
-       "start": 15.901,
-       "end": 16.366
+       "start": 15.526,
+       "end": 15.991
       }
      ]
     }
@@ -806,12 +797,12 @@
     "sfx": [
      {
       "name": "wind",
-      "at": 13.875,
+      "at": 13.5,
       "gain": 0.25
      },
      {
       "name": "thump",
-      "at": 14.768,
+      "at": 14.393,
       "gain": 0.35,
       "word": [
        0,
@@ -820,7 +811,7 @@
      },
      {
       "name": "thud",
-      "at": 15.639,
+      "at": 15.264,
       "gain": 0.4,
       "word": [
        0,
@@ -845,94 +836,94 @@
   {
    "id": "s05_bahamas",
    "scene_type": "bb47_route",
-   "start": 17.625,
-   "duration": 5.25,
+   "start": 17.25,
+   "duration": 4.875,
    "narration": [
-    "In Indiana, he stole one more,",
+    "Then he stole one in Indiana,",
     "and flew over 1,000 miles to the Bahamas."
    ],
    "caption_timings": [
     {
      "line": 0,
-     "start": 17.875,
-     "end": 19.698,
+     "start": 17.5,
+     "end": 19.067,
      "words": [
       {
-       "w": "In",
-       "start": 17.945,
-       "end": 18.049
-      },
-      {
-       "w": "Indiana,",
-       "start": 18.084,
-       "end": 18.572
+       "w": "Then",
+       "start": 17.535,
+       "end": 17.686
       },
       {
        "w": "he",
-       "start": 18.723,
-       "end": 18.862
+       "start": 17.721,
+       "end": 17.825
       },
       {
        "w": "stole",
-       "start": 18.897,
-       "end": 19.152
+       "start": 17.872,
+       "end": 18.115
       },
       {
        "w": "one",
-       "start": 19.187,
-       "end": 19.338
+       "start": 18.15,
+       "end": 18.348
       },
       {
-       "w": "more,",
-       "start": 19.361,
-       "end": 19.582
+       "w": "in",
+       "start": 18.417,
+       "end": 18.487
+      },
+      {
+       "w": "Indiana,",
+       "start": 18.51,
+       "end": 18.963
       }
      ]
     },
     {
      "line": 1,
-     "start": 20.098,
-     "end": 22.327,
+     "start": 19.667,
+     "end": 21.896,
      "words": [
       {
        "w": "and",
-       "start": 20.121,
-       "end": 20.214
+       "start": 19.69,
+       "end": 19.783
       },
       {
        "w": "flew",
-       "start": 20.249,
-       "end": 20.435
+       "start": 19.818,
+       "end": 20.004
       },
       {
        "w": "over",
-       "start": 20.458,
-       "end": 20.609
+       "start": 20.027,
+       "end": 20.178
       },
       {
        "w": "1,000",
-       "start": 20.632,
-       "end": 21.062
+       "start": 20.201,
+       "end": 20.631
       },
       {
        "w": "miles",
-       "start": 21.096,
-       "end": 21.433
+       "start": 20.665,
+       "end": 21.002
       },
       {
        "w": "to",
-       "start": 21.48,
-       "end": 21.526
+       "start": 21.049,
+       "end": 21.095
       },
       {
        "w": "the",
-       "start": 21.549,
-       "end": 21.596
+       "start": 21.118,
+       "end": 21.165
       },
       {
        "w": "Bahamas.",
-       "start": 21.631,
-       "end": 22.211
+       "start": 21.2,
+       "end": 21.78
       }
      ]
     }
@@ -959,7 +950,7 @@
    "overlays": [
     {
      "type": "impact",
-     "at": 4.01
+     "at": 3.95
     }
    ],
    "reconstruction_tag": "ILLUSTRATION · MAP, NATURAL EARTH DATA",
@@ -994,12 +985,12 @@
     "sfx": [
      {
       "name": "whoosh",
-      "at": 17.625,
+      "at": 17.25,
       "gain": 0.3
      },
      {
       "name": "riser",
-      "at": 19.721,
+      "at": 19.29,
       "gain": 0.25,
       "word": [
        1,
@@ -1008,7 +999,7 @@
      },
      {
       "name": "hit",
-      "at": 21.601,
+      "at": 21.17,
       "gain": 0.4,
       "word": [
        1,
@@ -1031,89 +1022,89 @@
   {
    "id": "s06_chase",
    "scene_type": "bb47_chase",
-   "start": 22.875,
-   "duration": 4.125,
+   "start": 22.125,
+   "duration": 4.5,
    "narration": [
     "A week later, a boat chase ended it.",
-    "He was 19 years old."
+    "He was still only 19."
    ],
    "caption_timings": [
     {
      "line": 0,
-     "start": 23.125,
-     "end": 25.145,
+     "start": 22.375,
+     "end": 24.395,
      "words": [
       {
        "w": "A",
-       "start": 23.195,
-       "end": 23.241
+       "start": 22.445,
+       "end": 22.491
       },
       {
        "w": "week",
-       "start": 23.299,
-       "end": 23.473
+       "start": 22.549,
+       "end": 22.723
       },
       {
        "w": "later,",
-       "start": 23.531,
-       "end": 23.81
+       "start": 22.781,
+       "end": 23.06
       },
       {
        "w": "a",
-       "start": 24.019,
-       "end": 24.089
+       "start": 23.269,
+       "end": 23.339
       },
       {
        "w": "boat",
-       "start": 24.147,
-       "end": 24.309
+       "start": 23.397,
+       "end": 23.559
       },
       {
        "w": "chase",
-       "start": 24.356,
-       "end": 24.634
+       "start": 23.606,
+       "end": 23.884
       },
       {
        "w": "ended",
-       "start": 24.692,
-       "end": 24.925
+       "start": 23.942,
+       "end": 24.175
       },
       {
        "w": "it.",
-       "start": 24.994,
-       "end": 25.11
+       "start": 24.244,
+       "end": 24.36
       }
      ]
     },
     {
      "line": 1,
-     "start": 25.645,
-     "end": 26.853,
+     "start": 24.895,
+     "end": 26.195,
      "words": [
       {
        "w": "He",
-       "start": 25.668,
-       "end": 25.761
+       "start": 24.93,
+       "end": 25.034
       },
       {
        "w": "was",
-       "start": 25.784,
-       "end": 25.866
+       "start": 25.058,
+       "end": 25.127
       },
       {
-       "w": "19",
-       "start": 25.924,
-       "end": 26.26
+       "w": "still",
+       "start": 25.162,
+       "end": 25.371
       },
       {
-       "w": "years",
-       "start": 26.295,
-       "end": 26.481
+       "w": "only",
+       "start": 25.417,
+       "end": 25.638
       },
       {
-       "w": "old.",
-       "start": 26.527,
-       "end": 26.783
+       "w": "19.",
+       "start": 25.661,
+       "end": 26.149
       }
      ]
     }
@@ -1153,7 +1144,7 @@
        "pose": "stand"
       },
       {
-       "at": 2.85,
+       "at": 3.34,
        "pose": "hands_behind"
       }
      ],
@@ -1173,7 +1164,7 @@
        "expr": "stern"
       },
       {
-       "at": 3.05,
+       "at": 3.54,
        "pose": "stand",
        "expr": "focused"
       }
@@ -1217,12 +1208,12 @@
     "sfx": [
      {
       "name": "water",
-      "at": 22.875,
+      "at": 22.125,
       "gain": 0.3
      },
      {
       "name": "siren",
-      "at": 23.947,
+      "at": 23.197,
       "gain": 0.25,
       "word": [
        0,
@@ -1231,7 +1222,7 @@
      },
      {
       "name": "thud",
-      "at": 24.662,
+      "at": 23.912,
       "gain": 0.4,
       "word": [
        0,
@@ -1240,11 +1231,11 @@
      },
      {
       "name": "cuffs",
-      "at": 25.924,
+      "at": 25.661,
       "gain": 0.35,
       "word": [
        1,
-       2
+       4
       ]
      }
     ]
@@ -1266,7 +1257,7 @@
   {
    "id": "s07_stat",
    "scene_type": "bb47_stat",
-   "start": 27.0,
+   "start": 26.625,
    "duration": 4.125,
    "narration": [
     "For teenagers, burglary arrest rates fell over 90 percent."
@@ -1274,53 +1265,53 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 27.25,
-     "end": 30.663,
+     "start": 26.875,
+     "end": 30.288,
      "words": [
       {
        "w": "For",
-       "start": 27.273,
-       "end": 27.378
+       "start": 26.898,
+       "end": 27.003
       },
       {
        "w": "teenagers,",
-       "start": 27.413,
-       "end": 27.923
+       "start": 27.038,
+       "end": 27.548
       },
       {
        "w": "burglary",
-       "start": 28.028,
-       "end": 28.771
+       "start": 27.653,
+       "end": 28.396
       },
       {
        "w": "arrest",
-       "start": 28.829,
-       "end": 29.142
+       "start": 28.454,
+       "end": 28.767
       },
       {
        "w": "rates",
-       "start": 29.177,
-       "end": 29.433
+       "start": 28.802,
+       "end": 29.058
       },
       {
        "w": "fell",
-       "start": 29.479,
-       "end": 29.676
+       "start": 29.104,
+       "end": 29.301
       },
       {
        "w": "over",
-       "start": 29.711,
-       "end": 29.874
+       "start": 29.336,
+       "end": 29.499
       },
       {
        "w": "90",
-       "start": 29.92,
-       "end": 30.141
+       "start": 29.545,
+       "end": 29.766
       },
       {
        "w": "percent.",
-       "start": 30.164,
-       "end": 30.617
+       "start": 29.789,
+       "end": 30.242
       }
      ]
     }
@@ -1393,7 +1384,7 @@
     "sfx": [
      {
       "name": "tick",
-      "at": 27.273,
+      "at": 26.898,
       "gain": 0.25,
       "word": [
        0,
@@ -1402,7 +1393,7 @@
      },
      {
       "name": "riser",
-      "at": 29.079,
+      "at": 28.704,
       "gain": 0.25,
       "word": [
        0,
@@ -1411,7 +1402,7 @@
      },
      {
       "name": "thump",
-      "at": 29.92,
+      "at": 29.545,
       "gain": 0.4,
       "word": [
        0,
@@ -1436,61 +1427,56 @@
   {
    "id": "s08_lesson",
    "scene_type": "bb47_lesson",
-   "start": 31.125,
+   "start": 30.75,
    "duration": 3.75,
    "narration": [
-    "Own a plane, boat or cabin? Save these three."
+    "Own a plane or cabin? Save these three."
    ],
    "caption_timings": [
     {
      "line": 0,
-     "start": 31.375,
-     "end": 33.72,
+     "start": 31.0,
+     "end": 33.067,
      "words": [
       {
        "w": "Own",
-       "start": 31.445,
-       "end": 31.584
+       "start": 31.07,
+       "end": 31.209
       },
       {
        "w": "a",
-       "start": 31.619,
-       "end": 31.642
+       "start": 31.244,
+       "end": 31.279
       },
       {
-       "w": "plane,",
-       "start": 31.688,
-       "end": 31.886
-      },
-      {
-       "w": "boat",
-       "start": 31.955,
-       "end": 32.13
+       "w": "plane",
+       "start": 31.313,
+       "end": 31.557
       },
       {
        "w": "or",
-       "start": 32.188,
-       "end": 32.281
+       "start": 31.592,
+       "end": 31.708
       },
       {
        "w": "cabin?",
-       "start": 32.339,
-       "end": 32.733
+       "start": 31.743,
+       "end": 32.138
       },
       {
        "w": "Save",
-       "start": 32.931,
-       "end": 33.14
+       "start": 32.3,
+       "end": 32.498
       },
       {
        "w": "these",
-       "start": 33.175,
-       "end": 33.337
+       "start": 32.533,
+       "end": 32.695
       },
       {
        "w": "three.",
-       "start": 33.372,
-       "end": 33.616
+       "start": 32.73,
+       "end": 32.962
       }
      ]
     }
@@ -1529,7 +1515,7 @@
        "pose": "hands_together"
       },
       {
-       "at": 1.81,
+       "at": 1.55,
        "pose": "stand",
        "expr": "relieved"
       }
@@ -1564,35 +1550,35 @@
     "sfx": [
      {
       "name": "click",
-      "at": 31.675,
+      "at": 31.3,
       "gain": 0.3
      },
      {
       "name": "click",
-      "at": 32.025,
+      "at": 31.65,
       "gain": 0.3
      },
      {
       "name": "click",
-      "at": 32.375,
+      "at": 32.0,
       "gain": 0.3
      },
      {
       "name": "keys",
-      "at": 32.339,
+      "at": 31.743,
       "gain": 0.3,
       "word": [
        0,
-       5
+       4
       ]
      },
      {
       "name": "chime",
-      "at": 33.175,
+      "at": 32.533,
       "gain": 0.25,
       "word": [
        0,
-       7
+       6
       ]
      }
     ]
@@ -1613,7 +1599,7 @@
   {
    "id": "s09_end",
    "scene_type": "bb47_end",
-   "start": 34.875,
+   "start": 34.5,
    "duration": 7.125,
    "narration": [
     "He got over seven years and left prison in 2016.",
@@ -1622,110 +1608,110 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 35.125,
-     "end": 38.004,
+     "start": 34.75,
+     "end": 37.629,
      "words": [
       {
        "w": "He",
-       "start": 35.16,
-       "end": 35.253
+       "start": 34.785,
+       "end": 34.878
       },
       {
        "w": "got",
-       "start": 35.288,
-       "end": 35.415
+       "start": 34.913,
+       "end": 35.04
       },
       {
        "w": "over",
-       "start": 35.45,
-       "end": 35.636
+       "start": 35.075,
+       "end": 35.261
       },
       {
        "w": "seven",
-       "start": 35.717,
-       "end": 35.996
+       "start": 35.342,
+       "end": 35.621
       },
       {
        "w": "years",
-       "start": 36.054,
-       "end": 36.367
+       "start": 35.679,
+       "end": 35.992
       },
       {
        "w": "and",
-       "start": 36.449,
-       "end": 36.518
+       "start": 36.074,
+       "end": 36.143
       },
       {
        "w": "left",
-       "start": 36.553,
-       "end": 36.704
+       "start": 36.178,
+       "end": 36.329
       },
       {
        "w": "prison",
-       "start": 36.739,
-       "end": 37.017
+       "start": 36.364,
+       "end": 36.642
       },
       {
        "w": "in",
-       "start": 37.052,
-       "end": 37.11
+       "start": 36.677,
+       "end": 36.735
       },
       {
        "w": "2016.",
-       "start": 37.145,
-       "end": 37.935
+       "start": 36.77,
+       "end": 37.56
       }
      ]
     },
     {
      "line": 1,
-     "start": 38.504,
-     "end": 41.244,
+     "start": 38.129,
+     "end": 40.869,
      "words": [
       {
        "w": "His",
-       "start": 38.55,
-       "end": 38.69
+       "start": 38.175,
+       "end": 38.315
       },
       {
        "w": "movie",
-       "start": 38.725,
-       "end": 38.922
+       "start": 38.35,
+       "end": 38.547
       },
       {
        "w": "deal",
-       "start": 38.992,
-       "end": 39.189
+       "start": 38.617,
+       "end": 38.814
       },
       {
        "w": "repaid",
-       "start": 39.224,
-       "end": 39.549
+       "start": 38.849,
+       "end": 39.174
       },
       {
        "w": "victims",
-       "start": 39.584,
-       "end": 39.967
+       "start": 39.209,
+       "end": 39.592
       },
       {
        "w": "over",
-       "start": 40.025,
-       "end": 40.176
+       "start": 39.65,
+       "end": 39.801
       },
       {
        "w": "a",
-       "start": 40.199,
-       "end": 40.222
+       "start": 39.824,
+       "end": 39.847
       },
       {
        "w": "million",
-       "start": 40.257,
-       "end": 40.547
+       "start": 39.882,
+       "end": 40.172
       },
       {
        "w": "dollars.",
-       "start": 40.594,
-       "end": 41.116
+       "start": 40.219,
+       "end": 40.741
       }
      ]
     }
@@ -1817,7 +1803,7 @@
     "sfx": [
      {
       "name": "gavel",
-      "at": 35.238,
+      "at": 34.863,
       "gain": 0.35,
       "word": [
        0,
@@ -1826,7 +1812,7 @@
      },
      {
       "name": "sub",
-      "at": 38.942,
+      "at": 38.567,
       "gain": 0.3,
       "word": [
        1,
@@ -1835,7 +1821,7 @@
      },
      {
       "name": "cash",
-      "at": 39.224,
+      "at": 38.849,
       "gain": 0.3,
       "word": [
        1,
