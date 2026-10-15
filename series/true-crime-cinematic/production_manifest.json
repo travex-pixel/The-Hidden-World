@@ -4224,15 +4224,15 @@
       "title": "The Ex-Cop Who Stole McDonald's Monopoly Prizes #Shorts",
       "file": "true_crime_48_monopoly_cop.mp4",
       "media": {
-        "duration": 40.0,
+        "duration": 45.383,
         "width": 1080,
         "height": 1920,
         "fps": 60.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 21006222,
-        "mean_volume_db": -16.7,
-        "max_volume_db": -1.9
+        "size_bytes": 22911096,
+        "mean_volume_db": -17.4,
+        "max_volume_db": -1.7
       },
       "media_checks": {
         "has_video_stream": true,
@@ -4252,10 +4252,10 @@
         "media_checks_pass": true,
         "duration_in_window": true,
         "dimensions_1080x1920": true,
-        "frames_checked": 2400,
+        "frames_checked": 2723,
         "no_black_frames": true,
         "captions_timed_within_scenes": true,
-        "speech_db_min": -17.7,
+        "speech_db_min": -18.7,
         "dialogue_clear_of_music": true,
         "all_passed": true,
         "loudness_near_target": true,
@@ -4274,23 +4274,23 @@
         "audio_mono_compatible": true,
         "audio_av_duration_match": true,
         "engage_hook_stakes_by_4s": true,
-        "engage_open_loop_every_10s": true,
+        "engage_open_loop_every_10s": false,
         "engage_outcome_in_last_8s": true,
         "engage_end_question_on_picture": true,
         "engage_fun_fact_and_lesson": true,
         "engage_progression_marker": true,
         "engage_cold_open_sfx": true,
-        "engage_ends_within_1s_of_last_word": true,
+        "engage_ends_within_1s_of_last_word": false,
         "engage_pace_under_150_wpm": true,
         "shot_variety_and_character_action": true,
         "every_shot_sourced_and_tagged": true
       },
       "loudness": {
-        "integrated_lufs": -14.3,
-        "true_peak_dbtp": -1.9
+        "integrated_lufs": -14.1,
+        "true_peak_dbtp": -1.7
       },
       "asr_word_error_rate": 0.049,
-      "frames_sampled": 7,
+      "frames_sampled": 8,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_48",
       "status": "failed_qa",
       "next_task": "inspect qa/ and fix; then re-run qa.py"
@@ -4451,7 +4451,7 @@
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
     }
   },
-  "updated": "2026-10-15T12:43:05",
+  "updated": "2026-10-15T14:01:20",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

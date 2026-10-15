@@ -284,3 +284,7 @@
 - 2026-10-15 12:43:05 tcv49-twitter-teen: rendering (final60, seed 1)
 - 2026-10-15 13:02:42 produce 48 --force: regenerating episode data
 - 2026-10-15 13:02:42 tcv48-monopoly-cop: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 14:00:25 tcv48-monopoly-cop: rendered in 3463s
+- 2026-10-15 14:01:20 tcv48-monopoly-cop: QA FAILED ['no_frozen_or_static_picture', 'engage_open_loop_every_10s', 'engage_ends_within_1s_of_last_word']; frames and details in series/true-crime-cinematic/qa/true_crime_48
+- 2026-10-15 14:01:20 produce 51 --force: regenerating episode data
+- 2026-10-15 14:01:20 tcv51-syrup-heist: rendering (final60, seed 1, tts recorded)

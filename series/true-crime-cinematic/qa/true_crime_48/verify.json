@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv48-monopoly-cop/tcv48-monopoly-cop.mp4",
-    "size_bytes": 21006222,
+    "size_bytes": 22911096,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -21,11 +21,11 @@
     "width": 1080,
     "height": 1920,
     "fps": 60.0,
-    "duration": 40.0,
-    "audio_duration": 40.0,
+    "duration": 45.383,
+    "audio_duration": 45.383,
     "decode_stderr": "",
-    "mean_volume_db": -16.7,
-    "max_volume_db": -1.9,
+    "mean_volume_db": -17.4,
+    "max_volume_db": -1.7,
     "long_silences": [],
     "contact_sheet": "/home/user/The-Hidden-World/out/tcv48-monopoly-cop/contact_sheet.png",
     "all_passed": true
@@ -34,10 +34,10 @@
     "media_checks_pass": true,
     "duration_in_window": true,
     "dimensions_1080x1920": true,
-    "frames_checked": 2400,
+    "frames_checked": 2723,
     "no_black_frames": true,
     "captions_timed_within_scenes": true,
-    "speech_db_min": -17.7,
+    "speech_db_min": -18.7,
     "dialogue_clear_of_music": true,
     "all_passed": true,
     "loudness_near_target": true,
@@ -56,25 +56,25 @@
     "audio_mono_compatible": true,
     "audio_av_duration_match": true,
     "engage_hook_stakes_by_4s": true,
-    "engage_open_loop_every_10s": true,
+    "engage_open_loop_every_10s": false,
     "engage_outcome_in_last_8s": true,
     "engage_end_question_on_picture": true,
     "engage_fun_fact_and_lesson": true,
     "engage_progression_marker": true,
     "engage_cold_open_sfx": true,
-    "engage_ends_within_1s_of_last_word": true,
+    "engage_ends_within_1s_of_last_word": false,
     "engage_pace_under_150_wpm": true,
     "shot_variety_and_character_action": true,
     "every_shot_sourced_and_tagged": true
   },
   "loudness": {
-    "integrated_lufs": -14.3,
-    "true_peak_dbtp": -1.9
+    "integrated_lufs": -14.1,
+    "true_peak_dbtp": -1.7
   },
   "asr": {
     "engine": "sherpa-onnx whisper tiny.en",
     "word_error_rate": 0.049,
-    "transcript": "The prize guard was the thief. Over $20 million in prizes, he was a former cop who guarded McDonald's monopoly pieces. But he stole the top winning pieces. Then handed them out for a cut. Some paid him $50,000 upfront. For 12 years, nobody stopped him until someone tipped off the FBI. Agents posed as a McDonald's film crew. In 2001, they arrested him in seven others. At a prize message, save these three rules. Americans reported losing 301 million to fake prizes. He then got 37 months in prison. This time, someone else was the guard."
+    "transcript": "The prize guard was the thief. Over $20 million in prizes, he was a former club who guarded McDonald's monopoly pieces, but he stole the top winning pieces, then handed them out for a cut. Some paid him $50,000 upfront. For 12 years, nobody stopped him. Until someone tipped off the FBI. Agents posed as the McDonald's film crew. In 2001, they arrested him and seven others. Got a prize message? Save these three rules. Americans reported losing 301 million to fake prizes. He then got 37 months in prison. This time, someone else was the guard."
   },
   "studio": {
     "captions": {
@@ -96,48 +96,48 @@
     },
     "motion": {
       "ok": false,
-      "longest_still_s": 0.7,
+      "longest_still_s": 0.8,
       "still_spans_over_limit": [],
       "beats_without_visual_change": [
         {
-          "scene": "s01_hook",
-          "at": 0.2,
-          "text": "The prize guard was the thief."
+          "scene": "s09_end",
+          "at": 40.6,
+          "text": "This time, someone else was the guard."
         }
       ],
-      "median_motion": 1.42,
-      "frames": 400
+      "median_motion": 1.23,
+      "frames": 454
     },
     "audio": {
-      "opening_speech_median_db": -19.5,
-      "opening_min_speech_window_db": -31.8,
-      "first_word_db": -16.3,
+      "opening_speech_median_db": -19.4,
+      "opening_min_speech_window_db": -37.8,
+      "first_word_db": -13.7,
       "opening_speech_steady": true,
-      "opening_gap_min_db": -31.2,
+      "opening_gap_min_db": -32.0,
       "opening_no_holes": true,
-      "narration_onset_s": 0.294,
+      "narration_onset_s": 0.326,
       "narration_intended_s": 0.25,
       "narration_on_time": true,
-      "speech_to_music_db_p5": 10.7,
+      "speech_to_music_db_p5": 18.6,
       "music_never_masks": true,
-      "music_in_gaps_median_db": -33.1,
+      "music_in_gaps_median_db": -35.9,
       "music_audible": true,
       "longest_silence_s": 0.0,
       "no_long_silence": true,
-      "sample_peak": 0.8044,
-      "loudness_lufs": -14.3,
-      "true_peak_dbtp": -1.9,
-      "mono_lufs": -14.3,
+      "sample_peak": 0.8233,
+      "loudness_lufs": -14.1,
+      "true_peak_dbtp": -1.7,
+      "mono_lufs": -14.1,
       "no_clipping": true,
       "mono_compatible": true,
-      "end_last_db": -61.2,
-      "end_before_db": -17.7,
-      "end_last_50ms_db": -91.1,
-      "silent_tail_s": 0.2,
+      "end_last_db": -94.1,
+      "end_before_db": -13.7,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.6,
       "ending_intentional": true,
       "durations": {
-        "video": 40.0,
-        "audio": 40.0
+        "video": 45.383333,
+        "audio": 45.382993
       },
       "av_duration_match": true,
       "checks": {
@@ -158,24 +158,26 @@
       "enforced": true,
       "checks": {
         "hook_stakes_by_4s": true,
-        "open_loop_every_10s": true,
+        "open_loop_every_10s": false,
         "outcome_in_last_8s": true,
         "end_question_on_picture": true,
         "fun_fact_and_lesson": true,
         "progression_marker": true,
         "cold_open_sfx": true,
-        "ends_within_1s_of_last_word": true,
+        "ends_within_1s_of_last_word": false,
         "pace_under_150_wpm": true
       },
       "notes": {
         "hook": "The prize guard was the thief. Over 20 million dollars in prizes.",
-        "loop_gaps": [],
-        "tail": "million to fake prizes. He then got 37 months in prison. This time, someone else was the guard.",
+        "loop_gaps": [
+          "40-45s"
+        ],
+        "tail": "then got 37 months in prison. This time, someone else was the guard.",
         "end_title": "THE EX-COP WAS THE THIEF. GENIUS OR SNAKE? \ud83d\udc47 TAG THE MATE WHO'D DO THIS",
-        "tail_s": 1.19,
-        "wpm": 148.5
+        "tail_s": 3.13,
+        "wpm": 130.9
       },
-      "ok": true
+      "ok": false
     },
     "slideshow_risk": {
       "shots": 9,
