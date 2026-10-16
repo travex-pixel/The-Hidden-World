@@ -306,3 +306,5 @@
 - 2026-10-15 22:40:03 produce 49: regenerating episode data
 - 2026-10-15 22:40:03 tcv49-twitter-teen: render cached (inputs unchanged), skipping to QA
 - 2026-10-15 22:41:11 tcv49-twitter-teen: VERIFIED -> series/true-crime-cinematic/output/true_crime_49_twitter_teen.mp4 (47.6s, 21.6 MB, sha256 f6699ae7a5a0)
+- 2026-10-16 07:08:58 produce 53 --force: regenerating episode data
+- 2026-10-16 07:08:59 tcv53-cocaine-plane-2: rendering (final60, seed 1)
