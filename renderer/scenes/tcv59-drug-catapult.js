@@ -73,7 +73,7 @@
     // the front A-frame + cross brace + stop bar
     g += `<path d="M-170 -132 L-8 ${PIV - 10} L8 ${PIV - 10} L170 -132" stroke="${INK}" stroke-width="40" fill="none" stroke-linejoin="round"/><path d="M-170 -132 L-8 ${PIV - 10} L8 ${PIV - 10} L170 -132" stroke="#8a6a48" stroke-width="28" fill="none" stroke-linejoin="round"/>`;
     g += `<path d="M-100 -330 L100 -330" stroke="${INK}" stroke-width="26"/><path d="M-100 -330 L100 -330" stroke="#7a5c3e" stroke-width="16"/>`;
-    g += `<path d="M60 ${PIV - 40} L170 ${PIV - 200}" stroke="${INK}" stroke-width="24" stroke-linecap="round"/><path d="M60 ${PIV - 40} L170 ${PIV - 200}" stroke="#7a5c3e" stroke-width="14" stroke-linecap="round"/><rect x="150" y="${PIV - 232}" width="56" height="40" rx="12" fill="#3a3c3e" stroke="${INK}" stroke-width="5"/>`;
+    g += `<path d="M24 ${PIV - 8} L104 ${PIV - 150}" stroke="${INK}" stroke-width="22" stroke-linecap="round"/><path d="M24 ${PIV - 8} L104 ${PIV - 150}" stroke="#7a5c3e" stroke-width="12" stroke-linecap="round"/><rect x="84" y="${PIV - 176}" width="44" height="34" rx="10" fill="#3a3c3e" stroke="${INK}" stroke-width="5" transform="rotate(20 106 ${PIV - 159})"/>`;
     g += [-150, -110, 110, 150].map((xx, i) => `<circle cx="${xx * (i < 2 ? 1 : 1)}" cy="${-150 - (i % 2) * 60}" r="5" fill="#c8c0b0" opacity="0.6"/>`).join('');
     // the throwing arm (a heavy timber), the cup at its tip, the axle hub
     g += `<path d="M${f1(back[0])} ${f1(back[1])} L${f1(tip[0])} ${f1(tip[1])}" stroke="${INK}" stroke-width="36" stroke-linecap="round"/><path d="M${f1(back[0])} ${f1(back[1])} L${f1(tip[0])} ${f1(tip[1])}" stroke="#a07a50" stroke-width="24" stroke-linecap="round"/>`;
@@ -107,7 +107,6 @@
     const on = Math.sin(t * 6) > -0.2;
     g += `<circle cx="96" cy="640" r="12" fill="#e23b2e" opacity="${on ? 0.9 : 0.2}"/><text x="118" y="651" font-family="Nunito" font-weight="800" font-size="30" fill="#e6efe8" opacity="0.85" letter-spacing="2">REC</text>`;
     g += `<text x="1000" y="651" text-anchor="end" font-family="Nunito" font-weight="800" font-size="28" fill="#e6efe8" opacity="0.75" letter-spacing="2">CAM · IR</text>`;
-    g += `<text x="80" y="1244" font-family="Nunito" font-weight="700" font-size="24" fill="#e6efe8" opacity="0.6" letter-spacing="2">BORDER FENCE · NIGHT</text>`;
     g += `<path d="M540 900 L540 940 M540 980 L540 1020 M480 960 L520 960 M560 960 L600 960" stroke="#e6efe8" stroke-width="3" opacity="0.35"/>`;
     const sy = 590 + ((t * 120) % 680);
     g += `<rect x="50" y="${f1(sy)}" width="980" height="3" fill="#e6efe8" opacity="0.08"/>`;
@@ -125,7 +124,7 @@
   // an ultralight (a delta wing over a small open trike with a pusher propeller and a cargo basket); faces right
   function ultralight(x, y, s, t, drop = 1) {
     let g = `<g transform="translate(${f1(x)} ${f1(y)}) scale(${sc(s)}) rotate(${f1(-3 + 2 * Math.sin(t * 1.7))})">`;
-    g += `<path d="M-240 -110 L210 -150 L90 -110 Z" fill="#2a2e34" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/><path d="M-200 -112 L170 -142" stroke="#4a525c" stroke-width="5"/>`;
+    g += `<path d="M-250 -96 L220 -160 L110 -100 Z" fill="#8a7e68" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/><path d="M-210 -100 L180 -152" stroke="#c8b898" stroke-width="5"/>` + wash(0, -110, 260, 70, '#9ab4d0', 0.12);
     g += `<path d="M10 -120 L-30 10 M10 -120 L60 10" stroke="#3a3e44" stroke-width="7"/><path d="M-70 10 L90 10 Q110 30 70 40 L-40 40 Q-80 30 -70 10 Z" fill="#3a3e44" stroke="${INK}" stroke-width="5"/>`;
     g += `<ellipse cx="-92" cy="20" rx="8" ry="${f1(40 * Math.abs(Math.sin(t * 40)))}" fill="#8a9096" opacity="0.6"/><circle cx="-30" cy="58" r="14" fill="#1a1a1c"/><circle cx="70" cy="58" r="14" fill="#1a1a1c"/>`;
     g += `<rect x="-6" y="40" width="70" height="40" fill="none" stroke="#5a6068" stroke-width="5"/>` + (drop > 0 ? '' : '');
@@ -146,7 +145,7 @@
   function thermalImg(w, h, t, th, fly) {
     const cx = w * 0.4, gy = h * 0.82, s = h / 1500;
     let g = `<rect x="0" y="0" width="${w}" height="${h}" fill="#0c0e10"/><rect x="0" y="${f1(gy)}" width="${w}" height="${f1(h - gy)}" fill="#24282a"/>`;
-    g += `<g filter="url(#dcThermal)">` + catapult(cx, gy, s, th).replace(/fill="#(?!000)[0-9a-fA-F]{6}"/g, 'fill="#d8dcd8"').replace(/stroke="#(?!120f0c)[0-9a-fA-F]{6}"/g, 'stroke="#e8ece8"') + '</g>';
+    g += `<g>` + catapult(cx, gy, s, th).replace(/fill="#(?!000)[0-9a-fA-F]{6}"/g, 'fill="#d8dcd8"').replace(/stroke="#(?!120f0c)[0-9a-fA-F]{6}"/g, 'stroke="#e8ece8"') + '</g>';
     g += [w * 0.18, w * 0.62].map((px, i) => `<g transform="translate(${f1(px)} ${f1(gy)}) scale(${sc(s * 1.1)})"><ellipse cx="0" cy="-640" rx="46" ry="54" fill="#f4f6f4"/><rect x="-60" y="-590" width="120" height="330" rx="40" fill="#eef0ee"/><rect x="-50" y="-270" width="40" height="270" fill="#e0e4e0"/><rect x="10" y="-270" width="40" height="270" fill="#e0e4e0"/></g>`).join('');
     if (fly) { const u = (t * 0.6) % 1; g += `<rect x="${f1(lerp(cx + 60, w * 1.05, u))}" y="${f1(gy - 0.55 * h - 0.18 * h * 4 * u * (1 - u))}" width="${f1(w * 0.07)}" height="${f1(w * 0.045)}" rx="4" fill="#ffffff"/>`; }
     for (let i = 0; i < 8; i++) g += `<rect x="${f1(w * (0.8 + i * 0.03))}" y="${f1(gy - h * 0.5)}" width="${f1(w * 0.012)}" height="${f1(h * 0.5)}" fill="#3a3e3c"/>`;
@@ -177,8 +176,8 @@
       let sky = `<defs><linearGradient id="dccsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#060c16"/><stop offset="1" stop-color="#20303e"/></linearGradient></defs><rect x="-400" y="-300" width="${W + 800}" height="1800" fill="url(#dccsky)"/>` + E.cine.stars(t, 110, 5911, -200, 1300);
       sky += `<path d="M-400 1340 L-100 1260 L200 1300 L500 1240 L800 1290 L1100 1250 L1480 1300 L1480 1420 L-400 1420 Z" fill="#121a24"/>` + wash(1000, 1320, 400, 120, '#e0a060', 0.18);
       let fence = '';
-      for (let i = 0; i < 9; i++) { const x = 640 + i * 70; fence += `<rect x="${x}" y="${560 - i * 6}" width="44" height="${1300 - 560 + i * 6}" fill="#4a382a" stroke="${INK}" stroke-width="5"/><rect x="${x + 6}" y="${560 - i * 6}" width="8" height="${1300 - 560 + i * 6}" fill="#6a5040" opacity="0.6"/>`; }
-      fence += `<path d="M620 ${548} L1300 500" stroke="#2a221c" stroke-width="34"/><path d="M620 ${538} L1300 490" stroke="#6a5444" stroke-width="7" opacity="0.7"/>`;
+      for (let i = 0; i < 9; i++) { const x = 640 + i * 70; fence += `<rect x="${x}" y="${860 - i * 6}" width="44" height="${1300 - 860 + i * 6}" fill="#4a382a" stroke="${INK}" stroke-width="5"/><rect x="${x + 6}" y="${860 - i * 6}" width="8" height="${1300 - 860 + i * 6}" fill="#6a5040" opacity="0.6"/>`; }
+      fence += `<path d="M620 848 L1300 800" stroke="#2a221c" stroke-width="34"/><path d="M620 838 L1300 790" stroke="#6a5444" stroke-width="7" opacity="0.7"/>`;
       const ground = `<rect x="-400" y="1400" width="${W + 800}" height="${H}" fill="#2c2720"/>` + E.cine.scrub(1460, 16, 5913, '#3a3a2a', 0.9, -300, 1300);
       return { light: { dir: -1, rim: '#9ab4d0', key: '#b8c8dc' }, layers: [[0.05, sky], [0.55, fence], [0.75, ground]] };
     },
@@ -244,8 +243,8 @@
   });
 
   // the hero arrangement (frame 1 and the last frame): the catapult left of centre, the fence receding on the right
-  const HERO = { x: 440, y: 1600, s: 1.07 };
-  const heroP1 = [1240, 880];
+  const HERO = { x: 450, y: 1650, s: 0.92 };
+  const heroP1 = [1240, 900];
 
   E.registerScenes({
     // 1 - hook (frame 1): the arm has just slammed up against the stop bar and a taped bale is in flight over the fence; a
@@ -253,23 +252,23 @@
     //     arm down, load a second bale and fire it on '2011'. The surveillance-camera frame sits on top.
     dc59_hook(ctx) {
       const t = ctx.t, T = ctx.T, tB = WT(ctx, 1, 6, 3.7), l2 = LS(ctx, 1, 2.4);
-      const th = tt => tt < 0.95 ? fireTh(tt, -0.3) : (tt < tB - 0.3 ? lerp(290, 150, ease.inOut(seg(tt, 0.95, 2.4))) : fireTh(tt, tB));
+      const th = tt => tt < 0.95 ? fireTh(tt, -0.62) : (tt < tB - 0.3 ? lerp(290, 150, ease.inOut(seg(tt, 0.95, 2.4))) : fireTh(tt, tB));
       const p0 = cupAt(HERO.x, HERO.y, HERO.s, 280);
       return E.cine.shot(ctx, {
         set: 'dc59_border', grade: 'night', haze: 0.4,
         cam: { from: { x: 0, y: 30, z: 1.02 }, to: { x: 20, y: 40, z: 1.1 }, settle: true },
         figures: [
-          { id: 'dc59_smug2', x: 150, y: 1630, scale: 0.7, dir: 1, turn: 0.3, pose: 'stand_tense', silhouette: 'cool', depth: 1.0, hat: { style: 'cap', color: '#2a2a2a' },
+          { id: 'dc59_smug2', x: 150, y: 1680, scale: 0.66, dir: 1, turn: 0.3, pose: 'stand_tense', silhouette: 'cool', depth: 1.0, hat: { style: 'cap', color: '#2a2a2a' },
             keys: [{ at: 0.9, pose: 'hands_together', headTurn: 0.2, dur: 0.5 }, { at: 2.4, pose: 'present', dur: 0.5 }, { at: tB - 0.45, pose: 'stand_tense', dur: 0.35 }] },
-          { id: 'dc59_smug1', x: 700, y: 1660, scale: 0.72, dir: 1, turn: 0.35, pose: 'point_up', silhouette: 'cool', depth: 1.02,
+          { id: 'dc59_smug1', x: 720, y: 1700, scale: 0.68, dir: 1, turn: 0.35, pose: 'point_up', silhouette: 'cool', depth: 1.02,
             keys: [{ at: 1.3, pose: 'stand', headTurn: -0.3, dur: 0.6 }, { at: tB + 0.05, pose: 'point_up', headTurn: 0.2, dur: 0.35 }] }
         ],
         props: [
           { depth: 1.0, svg: tt => catapult(HERO.x, HERO.y, HERO.s, th(tt), { load: tt > 2.5 && tt < tB - 0.06 }) },
-          { depth: 1.01, accent: true, svg: tt => flight(tt, -0.25, 1.15, p0, heroP1, 100, 0.85) + flight(tt, tB - 0.05, tB + 1.3, p0, heroP1, 100, 0.85) }
+          { depth: 1.01, accent: true, svg: tt => flight(tt, -0.6, 0.95, p0, heroP1, 100, 0.85) + flight(tt, tB - 0.05, tB + 1.3, p0, heroP1, 100, 0.85) }
         ],
         overlays: [
-          { type: 'svg', at: 0, svg: tt => hud(tt) },
+          { type: 'svg', at: -1, svg: tt => hud(tt) },
           { type: 'label', at: Math.max(l2 + 0.1, 3.1), x: 60, y: 760, text: 'MEXICO → ARIZONA', fs: 38, sub: 'Over the border fence' }
         ],
         tag: TAG
@@ -281,24 +280,24 @@
     dc59_cams(ctx) {
       const t = ctx.t, T = ctx.T, ng = WT(ctx, 0, 1, 0.3), cam = WT(ctx, 0, 7, 2.0);
       const wall = tt => {
-        let g = `<defs><filter id="dcThermal"><feGaussianBlur stdDeviation="1.6"/></filter></defs>`;
-        const scr = (x, y, w, h, k, big) => `<g transform="translate(${x} ${y})"><rect x="-8" y="-8" width="${w + 16}" height="${h + 16}" rx="6" fill="#1a2024" stroke="${INK}" stroke-width="4"/><svg x="0" y="0" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${big ? thermalImg(w, h, tt, 150 + 140 * (0.5 + 0.5 * Math.sin(tt * 3.2)), true) : thermalImg(w, h, tt + k, 150, false)}</svg></g>`;
-        g += scr(240, 380, 600, 420, 0, true);
-        g += scr(70, 380, 140, 200, 1, false) + scr(70, 610, 140, 190, 2, false) + scr(870, 380, 140, 200, 3, false) + scr(870, 610, 140, 190, 4, false);
-        g += scr(70, 840, 290, 200, 5, false) + scr(395, 840, 290, 200, 6, false) + scr(720, 840, 290, 200, 7, false);
-        return g + wash(540, 590, 340, 240, '#e6efe8', f1(0.08 + 0.05 * seg(tt, cam, cam + 0.4))); };
+        let g = '';
+        const scr = (id, x, y, w, h, k, big) => `<g transform="translate(${x} ${y})"><rect x="-10" y="-10" width="${w + 20}" height="${h + 20}" rx="8" fill="#1a2024" stroke="${INK}" stroke-width="5"/><defs><clipPath id="dcscr${id}"><rect x="0" y="0" width="${w}" height="${h}"/></clipPath></defs><g clip-path="url(#dcscr${id})">${big ? thermalImg(w, h, tt, fireTh(tt % 2.6, 1.3), true) : thermalImg(w, h, tt + k, 150, false)}</g></g>`;
+        g += scr(0, 170, 560, 740, 460, 0, true);
+        g += scr(1, 10, 560, 130, 220, 1, false) + scr(2, 10, 800, 130, 220, 2, false) + scr(3, 940, 560, 130, 220, 3, false) + scr(4, 940, 800, 130, 220, 4, false);
+        g += `<text x="190" y="604" font-family="Nunito" font-weight="800" font-size="26" fill="#e6efe8" opacity="0.8" letter-spacing="2">CAM · IR · LIVE</text>`;
+        return g + wash(540, 790, 420, 260, '#e6efe8', f1(0.08 + 0.06 * seg(tt, cam, cam + 0.4))); };
       return E.cine.shot(ctx, {
         set: 'dc59_ops', grade: 'cold', haze: 0.4,
         cam: { from: { x: 10, y: 30, z: 1.0 }, to: { x: -10, y: 40, z: 1.07 } },
         figures: [
-          { id: 'dc59_guard1', x: 250, y: 1620, scale: 0.9, dir: 1, turn: 0.45, pose: 'sit_type', noChair: true, expr: 'focused', depth: 1.02,
+          { id: 'dc59_guard1', x: 250, y: 1640, scale: 0.9, dir: 1, turn: 0.45, pose: 'sit_type', expr: 'focused', depth: 1.02,
             keys: [{ at: 0.4, pose: 'sit_type_b', dur: 0.4 }, { at: ng, pose: 'sit_type', dur: 0.4 }, { at: cam - 0.2, pose: 'sit', expr: 'shocked', gaze: [0.5, -0.4], dur: 0.4 }] },
           { id: 'dc59_guard2', x: 850, y: 1640, scale: 0.95, dir: -1, turn: 0.45, pose: 'arms_crossed', expr: 'focused', depth: 1.02,
             keys: [{ at: ng, pose: 'stand', dur: 0.5 }, { at: cam, pose: 'point', expr: 'realise', gaze: [-0.6, -0.4], dur: 0.4 }] }
         ],
-        props: [{ depth: 0.5, svg: wall }],
+        props: [{ depth: 0.9, svg: wall }],
         overlays: [
-          { type: 'label', at: ng + 0.05, x: 60, y: 1180, text: 'NACO, ARIZONA · JAN 2011', fs: 40, sub: 'Guard troops on Border Patrol cameras' }
+          { type: 'label', at: ng + 0.05, x: 60, y: 470, text: 'NACO, ARIZONA · JAN 2011', fs: 40, sub: 'Guard troops on Border Patrol cameras' }
         ],
         tag: TAG
       });
@@ -308,20 +307,20 @@
     //     arm whips up on 'flung' and the bale sails off over the fence top; he points after it
     dc59_launch(ctx) {
       const t = ctx.t, T = ctx.T, ld = 0.45, fl = WT(ctx, 0, 1, 0.9), l2 = LS(ctx, 1, 2.6);
-      const C = { x: 820, y: 1920, s: 1.55 }, th = tt => fireTh(tt, fl + 0.1);
+      const C = { x: 800, y: 1880, s: 1.25 }, th = tt => fireTh(tt, fl + 0.1);
       const p0 = cupAt(C.x, C.y, C.s, 282);
       return E.cine.shot(ctx, {
         set: 'dc59_close', grade: 'night', haze: 0.4, dof: true,
         cam: { from: { x: -20, y: 30, z: 1.0 }, to: { x: 10, y: 40, z: 1.08 } },
         figures: [
-          { id: 'dc59_smug2', x: 300, y: 2000, scale: 1.25, dir: 1, turn: 0.35, pose: 'present', silhouette: 'cool', depth: 1.02, hat: { style: 'cap', color: '#2a2a2a' },
+          { id: 'dc59_smug2', x: 170, y: 2000, scale: 1.25, dir: 1, turn: 0.35, pose: 'present', silhouette: 'cool', depth: 1.02, hat: { style: 'cap', color: '#2a2a2a' },
             keys: [{ at: ld + 0.4, pose: 'hands_together', dur: 0.4 }, { at: fl - 0.35, pose: 'stand_tense', dur: 0.3 }, { at: fl + 0.4, pose: 'point_up', headTurn: 0.3, dur: 0.4 }] }
         ],
         props: [
           { depth: 1.0, svg: tt => catapult(C.x, C.y, C.s, th(tt)) },
-          { depth: 1.01, accent: true, svg: tt => { if (tt < ld + 0.25) { const k = ease.out(seg(tt, 0, ld + 0.25)); return bale(lerp(380, cupAt(C.x, C.y, C.s, 150)[0], k), lerp(1330, cupAt(C.x, C.y, C.s, 150)[1], k), 1.2, -10 + 40 * k, 0.8); }
+          { depth: 1.03, accent: true, svg: tt => { if (tt < ld + 0.25) { const k = ease.out(seg(tt, 0, ld + 0.25)); return bale(lerp(380, cupAt(C.x, C.y, C.s, 150)[0], k), lerp(1330, cupAt(C.x, C.y, C.s, 150)[1], k), 1.2, -10 + 40 * k, 0.8); }
             if (tt < fl + 0.04) { const th_ = th(tt), [bx, by] = cupAt(C.x, C.y, C.s, th_); return bale(bx, by, 1.2, th_ + 90, 0.8); }
-            return flight(tt, fl + 0.04, fl + 0.9, p0, [1300, 260], 60, 1.2, 300); } }
+            return flight(tt, fl + 0.04, fl + 1.3, p0, [1320, 640], 150, 1.1, 300); } }
         ],
         overlays: [
           { type: 'funfact', at: l2 - 0.05, y: 640, rows: [{ text: 'IT COULD FLING ABOUT' }, { text: '4.4 LB (2 KG) PER SHOT' }, { text: 'A Mexican army officer, via AP', fs: 26 }] }
@@ -397,8 +396,8 @@
             keys: [{ at: ul + 0.1, pose: 'point_up', gaze: [-0.4, -0.7], dur: 0.4 }] }
         ],
         props: [
-          { depth: 0.9, svg: tt => ultralight(X(tt), Y(tt), 0.75, tt) },
-          { depth: 0.9, accent: true, svg: tt => { if (tt < td) return bale(X(tt) + 22, Y(tt) + 46, 0.4, 0, 0.6); const u = seg(tt, td, td + 1.4), bx = X(td) + 22 + 160 * u, by = Y(td) + 46 + 520 * u * u;
+          { depth: 0.9, svg: tt => ultralight(X(tt), Y(tt), 1.0, tt) },
+          { depth: 0.9, accent: true, svg: tt => { if (tt < td) return bale(X(tt) + 29, Y(tt) + 60, 0.5, 0, 0.6); const u = seg(tt, td, td + 1.4), bx = X(td) + 29 + 160 * u, by = Y(td) + 60 + 520 * u * u;
             return by < 1400 ? bale(bx, by, 0.4, 200 * u, 0.7) : ''; } }
         ],
         overlays: [
@@ -439,15 +438,15 @@
         set: 'dc59_border', grade: 'night', haze: 0.4,
         cam: { from: { x: 0, y: 30, z: 1.03 }, to: { x: 20, y: 40, z: 1.12 }, settle: true },
         figures: [
-          { id: 'dc59_soldier1', x: 820, y: 1680, scale: 0.72, dir: -1, turn: 0.35, pose: 'torch', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#3a4232' }, propOpts: { beamLen: 760 },
+          { id: 'dc59_soldier1', x: 830, y: 1710, scale: 0.68, dir: -1, turn: 0.35, pose: 'torch', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#3a4232' }, propOpts: { beamLen: 760 },
             keys: [{ at: aw, pose: 'torch_low', dur: 0.6 }, { at: Math.max(aw + 1.0, T - 2.4), pose: 'torch', dur: 0.8 }] }
         ],
         props: [
           { depth: 1.0, accent: true, svg: tt => catapult(HERO.x, HERO.y, HERO.s, 290, { load: true }) + wash(HERO.x, HERO.y - 600, 300, 340, '#fff4cf', 0.1) }
         ],
         overlays: [
-          { type: 'svg', at: 0, svg: tt => hud(tt) },
-          { type: 'label', at: aw, until: Math.max(aw + 0.8, T - 3.9), x: 60, y: 760, text: 'SEIZED: CATAPULT, SUV, WEED', fs: 40, sub: 'About 45 lb (AP: 35) · no arrests reported' }
+          { type: 'svg', at: -1, svg: tt => hud(tt) },
+          { type: 'label', at: aw, x: 60, y: 1190, text: 'SEIZED: CATAPULT, SUV, WEED', fs: 40, sub: 'About 45 lb (AP: 35) · no arrests reported' }
         ],
         tag: TAG
       });

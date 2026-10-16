@@ -291,8 +291,8 @@
           { depth: 1.02, svg: tt => desk(330, 1600, 0.95) }
         ],
         overlays: [
-          { type: 'label', at: 0.15, until: sw - 0.2, x: 60, y: 440, text: 'LEXINGTON, KENTUCKY · NARCOTICS', fs: 38, sub: 'Andrew C. Thornton II · police officer 1968–77' },
-          { type: 'label', at: sw, x: 60, y: 440, text: 'LATER: A LAW DEGREE, THEN', fs: 38, sub: "Linked to a smuggling ring, 'The Company'" }
+          { type: 'label', at: 0.15, until: sw - 0.5, x: 60, y: 440, text: 'LEXINGTON, KENTUCKY · NARCOTICS', fs: 38, sub: 'Andrew C. Thornton II · police officer 1968–77' },
+          { type: 'label', at: sw, x: 60, y: 440, text: 'LATER EARNED A LAW DEGREE', fs: 38, sub: "Linked to a smuggling ring, 'The Company'" }
         ],
         tag: LIKE
       });
@@ -316,7 +316,7 @@
           { depth: 1.04, accent: true, svg: duffel(190, 1720, 0.7, 0, {}) }
         ],
         overlays: [
-          { type: 'label', at: 0.15, until: jp - 0.25, x: 60, y: 440, text: 'SEPTEMBER 1985 · OVER GEORGIA', fs: 38, sub: 'Duffel bags pushed out of the plane' },
+          { type: 'label', at: 0.15, until: jp - 0.6, x: 60, y: 440, text: 'SEPTEMBER 1985 · OVER GEORGIA', fs: 38, sub: 'Duffel bags pushed out of the plane' },
           { type: 'funfact', at: jp - 0.1, y: 430, rows: [{ text: 'HE WAS A FORMER' }, { text: 'PARATROOPER', fs: 52 }] }
         ],
         tag: LIKE

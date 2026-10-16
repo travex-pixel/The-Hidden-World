@@ -75,10 +75,10 @@
     } else if (part === 'hull') {
       // the submerged body (dim, seen through the water) and the low deck above the waterline
       g += `<path d="M-500 -20 Q-520 40 -470 70 L420 70 Q500 50 540 0 Z" fill="${HULL_D}"/>`;
-      g += `<path d="M-500 0 L-490 -46 Q-470 -62 -430 -64 L400 -60 Q470 -50 540 0 Z" fill="${HULL}" stroke="#0a0e10" stroke-width="6" stroke-linejoin="round"/>`;
-      g += `<path d="M-480 -48 L400 -46 Q460 -38 520 -6" stroke="${HULL_L}" stroke-width="6" fill="none" opacity="0.8"/>`;
+      g += `<path d="M-500 0 Q-504 -52 -440 -66 Q-20 -104 380 -66 Q470 -50 540 0 Z" fill="${HULL}" stroke="#0a0e10" stroke-width="6" stroke-linejoin="round"/>`;
+      g += `<path d="M-470 -54 Q-20 -92 380 -58 Q460 -40 520 -6" stroke="${HULL_L}" stroke-width="6" fill="none" opacity="0.8"/>`;
       // seams of the fibreglass lay-up, a few weather streaks
-      for (let i = 0; i < 7; i++) g += `<path d="M${-400 + i * 120} -60 L${-404 + i * 120} -4" stroke="#0e1416" stroke-width="3" opacity="0.5"/>`;
+      for (let i = 0; i < 7; i++) g += `<path d="M${-400 + i * 120} ${f1(-70 - 18 * Math.sin(Math.PI * i / 6))} L${-404 + i * 120} -4" stroke="#0e1416" stroke-width="3" opacity="0.5"/>`;
       g += `<path d="M-300 -40 q40 18 90 4 M120 -42 q50 16 110 2" stroke="#52624a" stroke-width="5" fill="none" opacity="0.45"/>`;
       // exhaust snorkel at the stern
       g += `<rect x="-372" y="-178" width="22" height="118" fill="${HULL}" stroke="#0a0e10" stroke-width="4"/><path d="M-372 -178 L-372 -196 L-330 -196 L-330 -178" fill="${HULL_L}" stroke="#0a0e10" stroke-width="4"/>`;
@@ -341,7 +341,7 @@
         ],
         overlays: [
           { type: 'impact', at: ws, x: 300, y: 1000 },
-          { type: 'label', at: aw - 0.2, until: l3 - 0.2, x: 60, y: 440, text: 'THE PILOT GOT AWAY', fs: 40, sub: 'He hid in a village near the coast' },
+          { type: 'label', at: aw - 0.2, until: l3 - 0.2, x: 60, y: 440, text: 'THE PILOT GOT AWAY', fs: 40, sub: 'He escaped as the others were arrested' },
           { type: 'label', at: ws + 0.05, x: 60, y: 440, text: 'STILL IN HIS WETSUIT', fs: 44, sub: 'Arrested 29 Nov 2019, five days on' }
         ],
         tag: LIKE
@@ -357,10 +357,10 @@
         set: 'ns57_quay', grade: 'cold', haze: 0.5,
         cam: { from: { x: 0, y: 40, z: 1.0 }, to: { x: 20, y: 30, z: 1.07 } },
         figures: [
-          { id: 'ns57_customs', x: 200, y: 1560, scale: 0.88, dir: 1, turn: 0.4, pose: 'walk', expr: 'focused', depth: 1.02,
+          { id: 'ns57_customs', x: 200, y: 1660, scale: 0.66, dir: 1, turn: 0.4, pose: 'walk', expr: 'focused', depth: 1.02,
             walk: { at: 0.1, dur: Math.max(1.0, hd - 0.2), cadence: 4.0, stride: 14, from: 120, to: 330 },
             keys: [{ at: hd, pose: 'point', gaze: [0.4, 0.5], dur: 0.4 }, { at: eu + 0.3, pose: 'examine', expr: 'shocked', dur: 0.6 }] },
-          { id: 'ns57_officer1', x: 950, y: 1600, scale: 0.86, dir: -1, turn: 0.4, pose: 'arms_crossed', expr: 'focused', depth: 1.03,
+          { id: 'ns57_officer1', x: 960, y: 1680, scale: 0.66, dir: -1, turn: 0.4, pose: 'arms_crossed', expr: 'focused', depth: 1.03,
             keys: [{ at: eu, pose: 'hand_to_face', expr: 'shocked', dur: 0.6 }] }
         ],
         props: [
@@ -369,7 +369,7 @@
         ],
         overlays: [
           { type: 'counter', at: hd - 0.1, dur: 1.5, from: 0, to: 100, prefix: '€', suffix: ' MILLION', label: 'OFFICIALS’ ESTIMATE', y: 640, fs: 128 },
-          { type: 'label', at: hd + 0.3, x: 90, y: 820, text: 'ABOUT 3,000 KG · 152 BALES', fs: 32, sub: 'Spanish Tax Agency · AFP, Nov 2019' }
+          { type: 'label', at: hd + 0.3, x: 90, y: 790, text: 'ABOUT 3,000 KG · 152 BALES', fs: 32, sub: 'Spanish Tax Agency · AFP, Nov 2019' }
         ],
         tag: TAG
       });

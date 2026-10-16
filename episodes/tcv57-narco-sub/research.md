@@ -15,7 +15,7 @@ Verified 2026-10-16. Builder: tcv57-narco-sub.
   the rest replaced by expulsion from Spain (10-year ban). Narration says only "Eleven years each" (true of the sentence).
 - **Where it was built:** El País (via InsightCrime) reported officials saying it was built in Guyana and sailed from Colombia; The
   Guardian (2022) and El Independiente place the departure at a clandestine shipyard on the Amazon in Brazil. Conflicting, so the
-  build location is NOT narrated. Narration says only "from the Amazon" (Guardian 2022 + El Independiente + Chilevisión).
+  build location is NOT narrated. Narration says "from Brazil's Amazon", the departure point given by the trial-era accounts (Guardian 2022: a shipyard in the Brazilian Amazon; El Independiente 2022: "desde Brasil"; MDZ: near Macapá or Manaus).
 - **"Cousins":** no source found calling the two Ecuadorians cousins. Dropped; they are "two crewmates".
 - **"Fume-filled":** no source found for fumes. Dropped. (Sources describe it as cramped, damp, cold, with a stale atmosphere.)
 - **"Swam ashore and hid":** the third man escaped the operation on 24 Nov, hid (judge's account: in a house in Hío) and was arrested
@@ -69,6 +69,9 @@ Verified 2026-10-16. Builder: tcv57-narco-sub.
 - Gulf Clan link (Guardian only), the vessel's name "Che" (Guardian + HI Sutton; not needed), the land team's sentences (later
   changed on appeal and at the Supreme Court), the Prime Video drama "Operación Marea Negra" (fiction; not shown).
 - Crimestoppers phone number in the Border Force campaign: only in a secondary summary; not on the card.
+
+## Narration (final, 37.9 s)
+A boxer sailed a homemade sub across the Atlantic. / With 3,000 kilos of cocaine on board. / How long at sea? Twenty-seven days, from Brazil's Amazon. / But police were warned. Europe's first narco-sub was coming. / So the crew sank their own sub. / But the boxer got away. / Five days later, the police found him. / He was still wearing his wetsuit. / Officials put the cargo at 100 million euros. / Offered a free trip for easy cash? Save these red flags. / Their sentence? Eleven years each. / Twenty-seven days at sea. Eleven years inside.
 
 ## Ethics decisions
 - All three crew members are real convicted people: silhouettes only, tagged ILLUSTRATION · NOT A LIKENESS; the two Ecuadorians are
