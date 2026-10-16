@@ -56,6 +56,11 @@
 | 52 | `true_crime_52_fake_invoices.mp4` (archived outside git) | The fake invoices that took $100M+ from Google and Facebook; AI voice | see `production_manifest.json` |
 | 53 | `true_crime_53_cocaine_plane_2.mp4` (archived outside git) | Part 2 of Case File 37: the Melbourne syndicate behind the cocaine plane; AI voice | see `production_manifest.json` |
 | 54 | `true_crime_54_stilton_dealer.mp4` (archived outside git) | The Liverpool dealer caught by fingerprints on a photo of Stilton (EncroChat); AI voice; read-aloud script in VOICE_SCRIPT_54.md | see `production_manifest.json` |
+| 55 | `true_crime_55_cocaine_bear.mp4` (archived outside git) | The real "Cocaine Bear": an ex-narcotics cop's 1985 airdrop and the bear that found it; AI voice | see `production_manifest.json` |
+| 56 | `true_crime_56_dog_bounty.mp4` (archived outside git) | Sombra, the Colombian police dog with a reported cartel bounty; AI voice | see `production_manifest.json` |
+| 57 | `true_crime_57_narco_sub.mp4` (archived outside git) | Europe's first narco-sub (Galicia, 2019) and the boxer caught in his wetsuit; AI voice | see `production_manifest.json` |
+| 58 | `true_crime_58_headphone_cocaine.mp4` (archived outside git) | Cassie Sainsbury's 18 headphone boxes at Bogota airport (2017); AI voice | see `production_manifest.json` |
+| 59 | `true_crime_59_drug_catapult.mp4` (archived outside git) | The 2011 Naco border catapult and the smugglers' other inventions; AI voice | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

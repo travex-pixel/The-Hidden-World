@@ -652,3 +652,53 @@ Smart cops or dumb dealer? 👇 Follow for the next case.
 
 Seed comment: Honestly, who poses with Stilton on a secret drug phone? 🧀
 Pinned share line: Send this to the mate who posts everything 👀
+
+## 55: The real Cocaine Bear (`true_crime_55_cocaine_bear.mp4`)
+A former narcotics cop threw cocaine out of a plane over Georgia in 1985. Three months later, agents found a dead black bear next to a ripped-open bag 🐻 The real story behind "Cocaine Bear".
+
+Who had the worse night: the cop or the bear? 👇
+
+#cocainebear #truecrime #truestory #georgia #1985
+
+Seed comment: The part I can't get over: he was a former paratrooper 🪂
+Pinned share line: Send this to the mate who eats anything 🐻
+
+## 56: The dog with a cartel bounty (`true_crime_56_dog_bounty.mp4`)
+A cartel put a price on a police dog's head 🐕 Sombra sniffed out tonnes of the Gulf Clan's cocaine, so the gang wanted her gone. What police did next is the best part.
+
+A medal or steak for life? 👇
+
+#truecrime #cartel #policedog #germanshepherd #colombia
+
+Seed comment: Reports said anywhere from $7k to $70k. Either way, that's a lot for a good girl 😂
+Pinned share line: Send this to the mate whose dog's only job is guarding the sofa 🛋️🐕
+
+## 57: The narco-sub (`true_crime_57_narco_sub.mp4`)
+An amateur boxer crossed the Atlantic in a homemade submarine 🌊 27 days, 3,000 kilos of cocaine, Europe's first narco-sub. Then Spain was waiting…
+
+Genius or insane? 👇
+
+#truecrime #narcosub #spain #smuggling #casefiles
+
+Seed comment: 27 days in a homemade sub… I'd last 27 minutes 😂
+Pinned share line: Tag the mate who gets seasick on a pedalo 🚤
+
+## 58: The headphone boxes (`true_crime_58_headphone_cocaine.mp4`)
+An Adelaide personal trainer. 18 headphone boxes. One airport X-ray in Bogotá 🎧 She told police they were wedding gifts. The judge gave her six years.
+
+Fair, or too soft? 👇
+
+#truecrime #australia #colombia #smuggling #casefiles
+
+Seed comment: "Wedding gifts" has to be the worst excuse ever told at an airport 😂
+Pinned share line: Send this to the mate who overpacks 🎧
+
+## 59: The drug catapult (`true_crime_59_drug_catapult.mp4`)
+In 2011, smugglers on the Mexican border built a catapult and launched weed into Arizona 🏰 National Guard troops watched it all on Border Patrol cameras. And it wasn't even their wildest idea.
+
+Genius or ridiculous? 👇
+
+#truecrime #smuggling #arizona #border #catapult
+
+Seed comment: Who in that crew said "what if we use a catapult" and everyone agreed? 😂
+Pinned share line: Tag the mate who'd build this 🏰
