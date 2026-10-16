@@ -344,3 +344,7 @@
 - 2026-10-16 22:28:12 tcv58-headphone-cocaine: VERIFIED -> series/true-crime-cinematic/output/true_crime_58_headphone_cocaine.mp4 (37.3s, 18.6 MB, sha256 41bec2feddfe)
 - 2026-10-16 22:28:20 produce 56 --force: regenerating episode data
 - 2026-10-16 22:28:20 tcv56-dog-bounty: rendering (final60, seed 1)
+- 2026-10-16 23:04:26 tcv56-dog-bounty: rendered in 2165s
+- 2026-10-16 23:05:10 tcv56-dog-bounty: VERIFIED -> series/true-crime-cinematic/output/true_crime_56_dog_bounty.mp4 (37.5s, 22.4 MB, sha256 9821b7130f92)
+- 2026-10-16 23:05:20 produce 57 --force: regenerating episode data
+- 2026-10-16 23:05:20 tcv57-narco-sub: rendering (final60, seed 1)
