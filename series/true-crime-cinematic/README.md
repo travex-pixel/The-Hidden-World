@@ -49,6 +49,13 @@
 | 45 | `true_crime_45_cartel_grandad.mp4` (archived outside git) | Leo Sharp, 87-year-old WWII veteran and Sinaloa cartel courier (2011): unlikely-offender format, 60 fps | see `production_manifest.json` |
 | 46 | `true_crime_46_gentleman_robber.mp4` (archived outside git) | Forrest Tucker: the San Quentin kayak (1979) and bank robberies at 78 (1999): unlikely-offender format, 60 fps | see `production_manifest.json` |
 | 47 | `true_crime_47_barefoot_bandit.mp4` (archived outside git) | Colton Harris-Moore, the Barefoot Bandit (2008-10): a teen who stole planes; unlikely-offender format, 60 fps | see `production_manifest.json` |
+| 48 | `true_crime_48_monopoly_cop.mp4` (archived outside git) | The McDonald's Monopoly prize fraud (1989-2001): the prize guard was the thief; AI voice, 60 fps | see `production_manifest.json` |
+| 49 | `true_crime_49_twitter_teen.mp4` (archived outside git) | The 2020 Twitter hack by a 17-year-old; AI voice and the owner's own-voice version | see `production_manifest.json` |
+| 50 | `true_crime_50_lottery_coder.mp4` (archived outside git) | Eddie Tipton, the lottery security boss who rigged it; AI voice | see `production_manifest.json` |
+| 51 | `true_crime_51_syrup_heist.mp4` (archived outside git) | The Great Canadian Maple Syrup Heist (2011-12); AI voice and the owner's own-voice version | see `production_manifest.json` |
+| 52 | `true_crime_52_fake_invoices.mp4` (archived outside git) | The fake invoices that took $100M+ from Google and Facebook; AI voice | see `production_manifest.json` |
+| 53 | `true_crime_53_cocaine_plane_2.mp4` (archived outside git) | Part 2 of Case File 37: the Melbourne syndicate behind the cocaine plane; AI voice | see `production_manifest.json` |
+| 54 | `true_crime_54_stilton_dealer.mp4` (archived outside git) | The Liverpool dealer caught by fingerprints on a photo of Stilton (EncroChat); AI voice; read-aloud script in VOICE_SCRIPT_54.md | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

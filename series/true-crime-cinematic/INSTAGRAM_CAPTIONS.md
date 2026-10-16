@@ -579,3 +579,76 @@ Genius or criminal? 👇 Follow for the next case.
 
 Seed comment (post it yourself right after uploading): His movie money went to his victims. Does that change your answer?
 Pinned share line: Send this to the mate who's logged 500 hours on flight sim 🛩️
+
+## 48: The Monopoly cop (`true_crime_48_monopoly_cop.mp4`)
+He was paid to guard the prizes 🍟 For years the top winning pieces went to his mates, not to you. The FBI ended it with a fake film crew.
+
+Genius or snake? 👇 Follow for the next case.
+
+#truecrime #mcdonalds #monopoly #scam #fbi
+
+Seed comment: Paying $50k upfront for a "lucky" win is wild. Who's buying that?
+Pinned share line: Tag the mate who'd 100% try this 👀
+
+## 49: The Twitter teen (`true_crime_49_twitter_teen.mp4`)
+A 17-year-old took over Obama's, Musk's and Apple's accounts… with phone calls 📱
+
+No virus. Just a voice and a fake login page.
+Genius or idiot? 👇 Save the 3 settings that stop it happening to you.
+
+#truecrime #cybersecurity #hacker #bitcoin #scam
+
+Seed comment: Three years and no computers. Too soft for 130 accounts, or fair for a 17-year-old?
+Pinned share line: Tag the mate who still gets his login codes by text 👇
+
+## 50: The lottery coder (`true_crime_50_lottery_coder.mp4`)
+He ran security for the lottery… then rigged it 🎰
+
+A secret code, his brother, a friend, five states. One ticket nobody would claim.
+Genius or greedy? 👇 Follow for the next case.
+
+#truecrime #lottery #jackpot #scam #casefiles
+
+Seed comment: Plot twist: he was paroled in 2022 after about five years. Fair?
+Pinned share line: Tag the mate who's "definitely winning this week" 👀
+
+## 51: The maple syrup heist (`true_crime_51_syrup_heist.mp4`)
+Quebec has a strategic reserve of maple syrup 🍁 Thieves emptied nearly 10,000 barrels of it and filled many back up with water. Nobody noticed for almost a year.
+
+Genius or sticky fingers? 👇 Follow for the next case.
+
+#truecrime #heist #maplesyrup #quebec #crimestory
+
+Seed comment: Nobody checked the barrels for almost a year. Genius or sticky fingers?
+Pinned share line: Tag the mate who'd try this with the office coffee ☕
+
+## 52: The fake invoices (`true_crime_52_fake_invoices.mp4`)
+He never hacked anything. He just sent invoices 🧾 Google and Facebook paid over $100 million to a company that only borrowed a name.
+
+Genius or criminal? 👇 Follow for the next case.
+
+#truecrime #scam #fraud #cybersecurity #casefiles
+
+Seed comment: Two of the biggest tech companies on earth paid fake invoices. Would your boss have caught it?
+Pinned share line: Send this to the mate who pays every bill without reading it 👀
+
+## 53: The cocaine plane, Part 2 (`true_crime_53_cocaine_plane_2.mp4`)
+✈️ Part 2: who sent the cocaine plane? Police arrested five men in Australia the same day it crashed in PNG. Part 1 linked.
+
+54 years between them: fair or too soft? 👇 Follow for the next case.
+
+#truecrime #australia #papuanewguinea #cocaineplane #casefiles
+
+Seed comment: The cocaine finally made it to Australia… straight into a furnace 😂
+Pinned share line: Send this to your mate in Melbourne who watched Part 1.
+(Link a Reel: Part 2 → 37 titled "Part 1"; and 37 → Part 2 titled "Part 2".)
+
+## 54: The Stilton dealer (`true_crime_54_stilton_dealer.mp4`)
+No face. No name. Just a block of Stilton 🧀 A Liverpool dealer posted one cheese pic on a "secret" phone network, and police read his fingerprints off it.
+
+Smart cops or dumb dealer? 👇 Follow for the next case.
+
+#truecrime #liverpool #encrochat #uk #crimestory
+
+Seed comment: Honestly, who poses with Stilton on a secret drug phone? 🧀
+Pinned share line: Send this to the mate who posts everything 👀
