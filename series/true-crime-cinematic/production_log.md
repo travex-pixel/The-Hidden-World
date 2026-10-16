@@ -338,3 +338,5 @@
 - 2026-10-16 13:54:17 tcv54-stilton-dealer: rendering (final60, seed 1)
 - 2026-10-16 14:35:38 tcv54-stilton-dealer: rendered in 2482s
 - 2026-10-16 14:36:27 tcv54-stilton-dealer: VERIFIED -> series/true-crime-cinematic/output/true_crime_54_stilton_dealer.mp4 (37.3s, 20.6 MB, sha256 4d690ac1d3e3)
+- 2026-10-16 21:48:00 produce 58 --force: regenerating episode data
+- 2026-10-16 21:48:00 tcv58-headphone-cocaine: rendering (final60, seed 1)
