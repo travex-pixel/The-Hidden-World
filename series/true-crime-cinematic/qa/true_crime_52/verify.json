@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv52-fake-invoices/tcv52-fake-invoices.mp4",
-    "size_bytes": 19038921,
+    "size_bytes": 19215656,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -44,7 +44,7 @@
     "true_peak_ok": true,
     "narration_intelligible_asr": true,
     "captions_in_safe_area": true,
-    "no_frozen_or_static_picture": false,
+    "no_frozen_or_static_picture": true,
     "audio_opening_speech_steady": true,
     "audio_opening_no_holes": true,
     "audio_narration_on_time": true,
@@ -97,17 +97,11 @@
       ]
     },
     "motion": {
-      "ok": false,
+      "ok": true,
       "longest_still_s": 1.0,
       "still_spans_over_limit": [],
-      "beats_without_visual_change": [
-        {
-          "scene": "s01_hook",
-          "at": 0.2,
-          "text": "He sent Google fake invoices. They paid."
-        }
-      ],
-      "median_motion": 1.36,
+      "beats_without_visual_change": [],
+      "median_motion": 1.37,
       "frames": 371
     },
     "audio": {
