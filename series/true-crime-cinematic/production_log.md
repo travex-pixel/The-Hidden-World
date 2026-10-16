@@ -340,3 +340,7 @@
 - 2026-10-16 14:36:27 tcv54-stilton-dealer: VERIFIED -> series/true-crime-cinematic/output/true_crime_54_stilton_dealer.mp4 (37.3s, 20.6 MB, sha256 4d690ac1d3e3)
 - 2026-10-16 21:48:00 produce 58 --force: regenerating episode data
 - 2026-10-16 21:48:00 tcv58-headphone-cocaine: rendering (final60, seed 1)
+- 2026-10-16 22:27:27 tcv58-headphone-cocaine: rendered in 2367s
+- 2026-10-16 22:28:12 tcv58-headphone-cocaine: VERIFIED -> series/true-crime-cinematic/output/true_crime_58_headphone_cocaine.mp4 (37.3s, 18.6 MB, sha256 41bec2feddfe)
+- 2026-10-16 22:28:20 produce 56 --force: regenerating episode data
+- 2026-10-16 22:28:20 tcv56-dog-bounty: rendering (final60, seed 1)
