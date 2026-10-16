@@ -1,0 +1,984 @@
+{
+ "id": "tcv56-dog-bounty",
+ "number": 56,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Cartel Put a Bounty on a Dog",
+ "central_question": "Why did a Colombian cartel put a price on the head of a police sniffer dog, and what did police do about it?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "$70,000": "seventy thousand dollars",
+   "Sombra": "Sohm-bra",
+   "245": "two hundred and forty-five",
+   "Bogotá's": "Bogotah's",
+   "2021": "twenty twenty-one",
+   "45": "forty five"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "56",
+  "label": "THE DOG WITH A BOUNTY · COLOMBIA 2018"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s06_move",
+   "word": [
+    1,
+    3
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "db56_handler",
+  "db56_officer",
+  "db56_officer2",
+  "db56_passenger",
+  "db56_gang1",
+  "db56_gang2",
+  "db56_viewer"
+ ],
+ "content_notes": "Tone: remarkable and ironic. No harm to the dog is shown or implied on screen; no weapon, no violence, no drugs (plain crates and suitcases only). Sombra is a stylised German Shepherd drawing. Her handler, the officers, the passenger and the young man in the lesson are generic figures, never named; no badge, crest or insignia of any real force. Gang members are faceless silhouettes; the gang leader is never depicted. The cartel is named in plain text only (no symbol). The WANTED poster is our own typed graphic, not a replica of any real document. The disputed bounty figure is attributed ('Reportedly up to') and its reported range is on a card. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-16.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "db56_hook",
+   "min_duration": 3.8,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "paper",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "cash",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "D_hook",
+    "D_amount"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A cartel put a bounty on a dog."
+    },
+    {
+     "who": "narrator",
+     "text": "Reportedly, up to $70,000.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "cartel",
+    "bounty",
+    "dog.",
+    "$70,000."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_meet",
+   "scene": "db56_meet",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "puff",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "D_meet",
+    "D_job",
+    "D_name"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This is Sombra, a German Shepherd."
+    },
+    {
+     "who": "narrator",
+     "text": "Her job? Sniffing out cocaine.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sombra,",
+    "german",
+    "shepherd.",
+    "job?",
+    "sniffing",
+    "cocaine."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_port",
+   "scene": "db56_port",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.2
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "D_port",
+    "D_clan"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At the port of Turbo, she found tonnes of it."
+    },
+    {
+     "who": "narrator",
+     "text": "Who owned much of it? The Gulf Clan.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "port",
+    "turbo,",
+    "tonnes",
+    "gulf",
+    "clan."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_stat",
+   "scene": "db56_stat",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      6
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "D_stat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At airports, her nose led to 245 arrests."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "airports,",
+    "nose",
+    "245",
+    "arrests."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_gang",
+   "scene": "db56_gang",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "knock",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "D_cost",
+    "D_range"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police said the price showed what she cost them."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "price",
+    "cost",
+    "them."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_move",
+   "scene": "db56_move",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.25
+    },
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      2
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "D_move",
+    "D_guards"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So the police moved her to Bogotá's airport."
+    },
+    {
+     "who": "narrator",
+     "text": "With her own bodyguards.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "moved",
+    "bogotá's",
+    "airport.",
+    "own",
+    "bodyguards."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "db56_lesson",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "D_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Flying soon? Save these three airport rules."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "flying",
+    "soon?",
+    "save",
+    "three",
+    "rules."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "db56_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "cuffs",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "D_boss",
+    "D_sentence"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Their boss was caught in 2021."
+    },
+    {
+     "who": "narrator",
+     "text": "She got bodyguards. He got 45 years.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "boss",
+    "caught",
+    "2021.",
+    "bodyguards.",
+    "45",
+    "years."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "D_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "In July 2018 Colombian police said the Gulf Clan (Clan del Golfo / Urabenos) had put a price on the head of Sombra, a police drug-detection dog. Narration: 'A cartel put a bounty on a dog.'",
+   "sources": [
+    "cbs",
+    "npr",
+    "wtkr",
+    "ap_fox",
+    "global",
+    "espect",
+    "heraldo"
+   ]
+  },
+  {
+   "id": "D_amount",
+   "type": "established",
+   "nature": "reported",
+   "text": "REPORTED, DISPUTED: CNN/CBS, NPR and BuzzFeed (citing Colombian police) reported a bounty of up to 200 million pesos, nearly $70,000; AP (NBC) and BBC Mundo/RPP (citing the anti-narcotics directorate) reported 20 million pesos, about $7,000. Narration: 'Reportedly up to $70,000.' The range is shown on a card in s05.",
+   "sources": [
+    "cbs",
+    "npr",
+    "buzz",
+    "espect",
+    "nbc",
+    "rpp",
+    "bbcm"
+   ]
+  },
+  {
+   "id": "D_meet",
+   "type": "established",
+   "nature": "fact",
+   "text": "Sombra is a female German Shepherd (six years old in 2018) of the Colombian National Police's anti-narcotics directorate, with the force since she was a puppy. Narration: 'This is Sombra, a German Shepherd.'",
+   "sources": [
+    "cbs",
+    "npr",
+    "wtkr",
+    "ap_fox",
+    "global",
+    "espect2"
+   ]
+  },
+  {
+   "id": "D_job",
+   "type": "established",
+   "nature": "fact",
+   "text": "She is a drug-detection (sniffer) dog that searches for cocaine. Narration: 'Her job? Sniffing out cocaine in Colombia.'",
+   "sources": [
+    "cbs",
+    "npr",
+    "wtkr",
+    "ap_fox",
+    "global"
+   ]
+  },
+  {
+   "id": "D_name",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: 'Sombra' means 'shadow' in Spanish (AP; Spanish dictionary meaning).",
+   "sources": [
+    "ap_fox",
+    "ap_arab",
+    "buzz"
+   ]
+  },
+  {
+   "id": "D_port",
+   "type": "established",
+   "nature": "fact",
+   "text": "At the port of Turbo (Uraba, Antioquia) she found tonnes of cocaine (Spanish press: about 5.3 tonnes bound for Europe, then about 4 tonnes hidden in car parts; police total over three years about nine tons; AP: over 2,000 kg). Narration: 'At the port of Turbo, she found tonnes of it.'",
+   "sources": [
+    "heraldo",
+    "eju",
+    "blu",
+    "espect",
+    "cbs_tx",
+    "cbs"
+   ]
+  },
+  {
+   "id": "D_clan",
+   "type": "established",
+   "nature": "fact",
+   "text": "Much of what she found belonged to the Gulf Clan (El Heraldo: 'more than 5 tonnes of the criminal group's cocaine'; eju: she 'made the Clan del Golfo lose tonnes of cocaine'). Narration: 'Who owned much of it? The Gulf Clan.'",
+   "sources": [
+    "heraldo",
+    "eju",
+    "espect",
+    "wtkr"
+   ]
+  },
+  {
+   "id": "D_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): police credited her work with 245 arrests, at the Jose Maria Cordova (Rionegro, serving Medellin) and El Dorado (Bogota) airports. Narration: 'At airports, her nose led to 245 arrests.'",
+   "sources": [
+    "cbs",
+    "wtkr",
+    "global",
+    "espect",
+    "heraldo"
+   ]
+  },
+  {
+   "id": "D_cost",
+   "type": "established",
+   "nature": "reported",
+   "text": "REPORTED: a police spokesperson told The Telegraph that the high reward showed the impact she had had on the gang's profits. Narration (paraphrase, no quote): 'Police said the price showed what she cost them.'",
+   "sources": [
+    "buzz",
+    "cbs_tx",
+    "cbs_phl"
+   ]
+  },
+  {
+   "id": "D_range",
+   "type": "established",
+   "nature": "fact",
+   "text": "Card: reported bounty $7,000 to $70,000 (20 to 200 million pesos); reports vary.",
+   "sources": [
+    "cbs",
+    "nbc",
+    "rpp",
+    "buzz"
+   ]
+  },
+  {
+   "id": "D_move",
+   "type": "established",
+   "nature": "fact",
+   "text": "Because of the threats she was moved from the Turbo / Uraba area to El Dorado International Airport in Bogota, away from the gang's stronghold. Narration: 'So the police moved her to Bogota's airport.'",
+   "sources": [
+    "cbs",
+    "npr",
+    "wtkr",
+    "ap_fox",
+    "global",
+    "espect2",
+    "heraldo"
+   ]
+  },
+  {
+   "id": "D_guards",
+   "type": "established",
+   "nature": "fact",
+   "text": "At El Dorado she works with her usual handler plus extra officers as an escort; AP: after her shift she is driven to her kennel in a van with tinted windows, usually with two armed guards. Narration: 'With her own bodyguards.'",
+   "sources": [
+    "cbs",
+    "wtkr",
+    "npr",
+    "ap_fox",
+    "ap_arab",
+    "blu"
+   ]
+  },
+  {
+   "id": "D_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer who flies): do not carry items across a border for anyone else, you are responsible for what you carry (UK FCDO/NCA Travel Aware; Smartraveller); pack your own bags and do not use bags that are not yours (Smartraveller; PNG Customs); an offer of money or a free trip to carry something is a warning sign (Travel Aware). Rows: 'CARRY NOTHING FOR ANYONE', 'PACK YOUR OWN BAG', 'PAID TO CARRY? WALK AWAY'.",
+   "sources": [
+    "fcdo",
+    "smart",
+    "pngc"
+   ]
+  },
+  {
+   "id": "D_boss",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Gulf Clan's leader at the time, Dairo Antonio Usuga ('Otoniel'), was captured on 23 October 2021 in a rural part of Uraba (Necocli, Antioquia) in Operation Osiris. Narration: 'Their boss was caught in 2021.'",
+   "sources": [
+    "aj_cap",
+    "reu_cap",
+    "sent_yh"
+   ]
+  },
+  {
+   "id": "D_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "Extradited to the United States in May 2022, he pleaded guilty in January 2023 and on 8 August 2023 a federal judge in Brooklyn sentenced him to 45 years. Narration: 'She got bodyguards. He got 45 years.'",
+   "sources": [
+    "sent_yh",
+    "sent_rcn",
+    "sent_cambio"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "cbs",
+   "publisher": "CBS News (CNN)",
+   "title": "Colombian drug cartel put a $70K bounty on this dog",
+   "url": "https://www.cbsnews.com/amp/news/sombra-dog-colombian-drug-cartel-puts-bounty-due-to-record-success",
+   "date": "2018-07-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "cbs_tx",
+   "publisher": "CBS Texas",
+   "title": "Colombian Cartel Puts Hit On Dog That Sniffed Out 9 Tons Of Cocaine",
+   "url": "https://www.cbsnews.com/amp/texas/news/cartel-wants-drug-dog-dead",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "cbs_phl",
+   "publisher": "CBS Philadelphia",
+   "title": "Colombian Gang Puts Bounty On Drug-Sniffing Dog",
+   "url": "https://www.cbsnews.com/philadelphia/news/colombian-gang-bounty-drug-sniffing-dog/",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "npr",
+   "publisher": "NPR (via WVPE / Public Radio East)",
+   "title": "Colombian Drug Traffickers Put A $70,000 Bounty On A Police Dog",
+   "url": "https://www.wvpe.org/world/2018-07-27/colombian-drug-traffickers-put-a-70-000-bounty-on-a-police-dog",
+   "date": "2018-07-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "wtkr",
+   "publisher": "WTKR (CNN)",
+   "title": "Colombian gang puts a $70,000 bounty on Sombra the drug-sniffing dog",
+   "url": "https://www.wtkr.com/2018/07/27/colombian-gang-puts-a-70000-bounty-on-sombra-the-drug-sniffing-dog",
+   "date": "2018-07-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "global",
+   "publisher": "Global News",
+   "title": "Colombian gang puts price on police dog's head",
+   "url": "https://globalnews.ca/news/4356207/colombian-gang-police-dog-price/amp",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "buzz",
+   "publisher": "BuzzFeed News",
+   "title": "A Drug Cartel Put A 200 Million Peso Bounty On A Police Dog Because She's Doing Such A Good Job",
+   "url": "https://www.buzzfeednews.com/article/tanyachen/colombian-drug-cartel-apparently-put-a-hit-bounty-on-sombra",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ap_fox",
+   "publisher": "Fox News (Associated Press)",
+   "title": "Extraordinary drug dog worries Colombian cartel",
+   "url": "https://www.foxnews.com/world/extraordinary-drug-dog-worries-colombian-cartel.amp",
+   "date": "2018-07-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ap_arab",
+   "publisher": "Arab News (Associated Press)",
+   "title": "Extraordinary drug dog worries Colombian cartel",
+   "url": "https://www.arabnews.com/node/1346831",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "nbc",
+   "publisher": "NBC News (Associated Press)",
+   "title": "Colombian cartel puts $7,000 bounty on drug dog",
+   "url": "https://www.nbcnews.com/news/world/colombian-cartel-puts-7-000-bounty-drug-dog-n895481",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "bbcm",
+   "publisher": "BBC Mundo (via T13)",
+   "title": "La perra colombiana por cuya cabeza ofrecen una recompensa",
+   "url": "https://www.t13.cl/noticia/mundo/bbc/la-perra-colombiana-por-cuya-cabeza-ofrecen-us70000",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "rpp",
+   "publisher": "RPP Noticias",
+   "title": "Sombra, la perra por cuya cabeza el Clan del Golfo ofrece unos 7 mil dolares",
+   "url": "https://rpp.pe/mundo/colombia/colombia-sombra-la-perra-por-cuya-cabeza-el-clan-del-golfo-ofrece-unos-7-mil-dolares-noticia-1139571",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "espect",
+   "publisher": "El Espectador",
+   "title": "Sombra, la perra que alias 'Otoniel' quiere asesinar",
+   "url": "https://www.elespectador.com/colombia/mas-regiones/sombra-la-perra-que-alias-otoniel-quiere-asesinar-article-800161/",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "espect2",
+   "publisher": "El Espectador (AFP)",
+   "title": "Sombra, la perra desplazada por recibir amenazas del Clan del Golfo",
+   "url": "https://www.elespectador.com/actualidad/sombra-la-perra-desplazada-por-recibir-amenazas-del-clan-del-golfo-article-803787/",
+   "date": "2018-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "heraldo",
+   "publisher": "El Heraldo",
+   "title": "Sombra, la perra antinarcoticos en la mira del Clan del Golfo",
+   "url": "https://www.elheraldo.co/colombia/sombra-la-perra-antinarcoticos-en-la-mira-del-clan-del-golfo-522392",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "blu",
+   "publisher": "Blu Radio (La Kalle)",
+   "title": "La mafia amenaza a Sombra, perrita policia que incauto cocaina en Uraba",
+   "url": "https://lakalle.bluradio.com/noticias/judiciales/la-mafia-amenaza-a-sombra-perrita-policia-que-incauto-cocaina-en-uraba",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "eju",
+   "publisher": "eju.tv",
+   "title": "El animal, un pastor aleman, ha hecho perder toneladas de cocaina al Clan del Golfo",
+   "url": "https://eju.tv/?p=1184088",
+   "date": "2018-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "aj_cap",
+   "publisher": "Al Jazeera",
+   "title": "Otoniel: Colombia's most wanted drug lord captured",
+   "url": "https://www.aljazeera.com/news/2021/10/24/otoniel-colombias-most-wanted-drug-lord-captured",
+   "date": "2021-10-24",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "reu_cap",
+   "publisher": "Reuters (via Inquirer)",
+   "title": "Colombia nabs Otoniel, drug kingpin and gang leader -government",
+   "url": "https://newsinfo.inquirer.net/?p=1505783",
+   "date": "2021-10-24",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "sent_yh",
+   "publisher": "Yahoo News (Associated Press)",
+   "title": "Colombian drug lord described as most violent since Pablo Escobar is jailed for 45 years in New York",
+   "url": "https://sg.news.yahoo.com/colombian-drug-lord-described-most-004253870.html",
+   "date": "2023-08-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "sent_rcn",
+   "publisher": "Noticias RCN",
+   "title": "'Otoniel' fue condenado a 45 anos de prision por narcotrafico",
+   "url": "https://www.noticiasrcn.com/estados-unidos/otoniel-condenado-a-45-anos-de-carcel-por-narcotrafico-451434",
+   "date": "2023-08-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "sent_cambio",
+   "publisher": "Cambio",
+   "title": "Alias Otoniel fue condenado a 45 anos de carcel",
+   "url": "https://cambiocolombia.com/pais/articulo/2023/8/alias-otoniel-fue-condenado-45-anos-de-carcel",
+   "date": "2023-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "fcdo",
+   "publisher": "UK Government (FCDO / NCA 'Travel Aware')",
+   "title": "Drug smuggling abroad",
+   "url": "https://travelaware.campaign.gov.uk/drug-smuggling-abroad/",
+   "date": "2025",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "smart",
+   "publisher": "Smartraveller (Australian Government, DFAT)",
+   "title": "Carrying or using drugs",
+   "url": "https://www.smartraveller.gov.au/travel-essentials/following-law/carrying-or-using-drugs",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "pngc",
+   "publisher": "PNG Customs Service",
+   "title": "Drugs & Illicit Substances (baggage security advice)",
+   "url": "https://customs.gov.pg/border/drugs",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#16212a",
+  "mid": "#d0bc9a",
+  "accent": "#e8a33c"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A CARTEL PUT A BOUNTY"
+   },
+   {
+    "text": "ON A POLICE DOG",
+    "colour": "#e8a33c"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHAT DOES SOMBRA DESERVE?"
+   },
+   {
+    "text": "A MEDAL OR STEAK FOR LIFE? 👇",
+    "colour": "#e8a33c"
+   },
+   {
+    "text": "TAG THE MATE WITH A LAZY DOG",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "POSTED AT",
+  "keys": [
+   {
+    "t": 10.58,
+    "v": "TURBO PORT"
+   },
+   {
+    "t": 24.94,
+    "v": "BOGOTA AIRPORT"
+   }
+  ],
+  "y": 330,
+  "until": 27.45
+ },
+ "legal_status_verified": "2026-10-16"
+}

@@ -1,0 +1,893 @@
+{
+ "id": "tcv57-narco-sub",
+ "number": 57,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "An Amateur Boxer Crossed the Atlantic in a Homemade Submarine",
+ "central_question": "How did a homemade submarine full of cocaine cross the Atlantic to Spain, and how was its boxer pilot caught?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "3,000": "three-thousand",
+   "100": "one-hundred",
+   "narco-sub": "narco sub"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "57",
+  "label": "THE NARCO-SUB · GALICIA 2019"
+ },
+ "music": {
+  "bpm": 76,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 76,
+  "cliff": {
+   "scene": "s05_wetsuit",
+   "word": [
+    2,
+    5
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "ns57_pilot",
+  "ns57_crew1",
+  "ns57_crew2",
+  "ns57_officer1",
+  "ns57_officer2",
+  "ns57_analyst",
+  "ns57_customs",
+  "ns57_viewer"
+ ],
+ "content_notes": "Tone: remarkable and ironic, never mocking poverty. No drugs are shown opened (plain wrapped bales only), no weapon, no violence. The three crew members (all convicted) appear ONLY as faceless silhouettes tagged NOT A LIKENESS; the two Ecuadorians are never named and get no national costume. Police, customs, the analyst and the young man are generic figures, never named; no badge, crest or insignia of any real force or agency. The semi-submersible is a generic drawing. The EUR 100 million value is attributed to officials. The lesson card names its source. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-16.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ns57_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "water",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "V_hook",
+    "V_coke"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A boxer sailed a homemade sub across the Atlantic."
+    },
+    {
+     "who": "narrator",
+     "text": "With 3,000 kilos of cocaine on board.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "boxer",
+    "homemade",
+    "sub",
+    "atlantic.",
+    "3,000",
+    "cocaine"
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_cabin",
+   "scene": "ns57_cabin",
+   "min_duration": 3.5,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.38
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "water",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "V_days"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "How long at sea? Twenty-seven days, from Brazil's Amazon."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "how",
+    "long",
+    "twenty-seven",
+    "days,",
+    "brazil's",
+    "amazon."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_tip",
+   "scene": "ns57_tip",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "radio",
+     "gain": 0.25
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      3
+     ],
+     "name": "ping",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "V_tip",
+    "V_first"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But police were warned. Europe's first narco-sub was coming."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "warned.",
+    "europe's",
+    "first",
+    "narco-sub"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_sink",
+   "scene": "ns57_sink",
+   "min_duration": 3.5,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "water",
+     "gain": 0.32
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.38
+    }
+   ],
+   "claims": [
+    "V_sank"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So the crew sank their own sub."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "crew",
+    "sank",
+    "own",
+    "sub."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_wetsuit",
+   "scene": "ns57_wetsuit",
+   "min_duration": 3.6,
+   "pad_after": 0.45,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "knock",
+     "gain": 0.35
+    },
+    {
+     "at": -0.5,
+     "word": [
+      2,
+      3
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      2,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "V_wetsuit"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But the boxer got away."
+    },
+    {
+     "who": "narrator",
+     "text": "Five days later, the police found him.",
+     "pause_before": 0.25
+    },
+    {
+     "who": "narrator",
+     "text": "He was still wearing his wetsuit.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "boxer",
+    "away.",
+    "five",
+    "days",
+    "found",
+    "still",
+    "wetsuit."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_stat",
+   "scene": "ns57_stat",
+   "min_duration": 3.6,
+   "pad_after": 0.45,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "cash",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "V_value",
+    "V_coke"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Officials put the cargo at 100 million euros."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "officials",
+    "cargo",
+    "100",
+    "million",
+    "euros."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "ns57_lesson",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "V_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Offered a free trip for easy cash? Save these red flags."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "free",
+    "trip",
+    "easy",
+    "cash?",
+    "save",
+    "red",
+    "flags."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "ns57_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "V_sentence",
+    "V_days"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Their sentence? Eleven years each."
+    },
+    {
+     "who": "narrator",
+     "text": "Twenty-seven days at sea. Eleven years inside.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sentence?",
+    "eleven",
+    "years",
+    "each.",
+    "twenty-seven",
+    "days",
+    "inside."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "V_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "The pilot, Agustin Alvarez of Vigo, was a former Spanish amateur boxer (Guardian: 'former Spanish amateur boxing champion'; Chilevision/Gestion: 'ex boxeador espanol'); with two Ecuadorian crewmates he crossed the Atlantic in a homemade fibreglass semi-submersible. Narration: 'A boxer sailed a homemade sub across the Atlantic.' (headline: AN AMATEUR BOXER)",
+   "sources": [
+    "guardian22",
+    "chv",
+    "gestion",
+    "elind22"
+   ]
+  },
+  {
+   "id": "V_coke",
+   "type": "established",
+   "nature": "fact",
+   "text": "It carried about 3,000 kg of cocaine (AEAT: about 3,000 kg in 152 bales; Guardian: 3,068 kg; El Independiente: over 3,000 kg). Narration: 'With 3,000 kilos of cocaine on board.'",
+   "sources": [
+    "aeat",
+    "interior",
+    "guardian22",
+    "elind22"
+   ]
+  },
+  {
+   "id": "V_days",
+   "type": "established",
+   "nature": "fact",
+   "text": "The voyage lasted 27 days (about 3,500 miles), from the Amazon (a clandestine shipyard in Brazil) to Galicia. Narration: 'How long at sea? Twenty-seven days, from Brazil's Amazon.' (early 2019 reports via El Pais said built in Guyana / sailed from Colombia; the trial-era accounts say a shipyard in the Brazilian Amazon)",
+   "sources": [
+    "guardian22",
+    "elind22",
+    "chv",
+    "mdz"
+   ]
+  },
+  {
+   "id": "V_tip",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Maritime Analysis and Operations Centre (MAOC-N, Lisbon) warned that a suspicious vessel loaded with cocaine would head to Spain across the Atlantic; the operation was run by the Agencia Tributaria, Guardia Civil and Policia Nacional. Narration: 'But police were warned.'",
+   "sources": [
+    "aeat",
+    "interior",
+    "moncloa"
+   ]
+  },
+  {
+   "id": "V_first",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: it was the first narco-submarine detected / intercepted in Europe. Narration: 'Europe's first narco-sub was coming.'",
+   "sources": [
+    "aeat",
+    "interior",
+    "occrp",
+    "insight"
+   ]
+  },
+  {
+   "id": "V_sank",
+   "type": "established",
+   "nature": "fact",
+   "text": "In bad weather, unable to transfer the cargo, the crew tried to sink (scuttled) the craft near the shore at the mouth of the Aldan estuary, Cangas (Pontevedra), on 24 November 2019; the two Ecuadorians were arrested; the craft was taken to the port of Aldan. Narration: 'So the crew sank their own sub.'",
+   "sources": [
+    "aeat",
+    "occrp",
+    "guardian22",
+    "janes"
+   ]
+  },
+  {
+   "id": "V_wetsuit",
+   "type": "established",
+   "nature": "fact",
+   "text": "The third crew member (the Spanish pilot) escaped the operation, stayed hidden and was arrested on Friday 29 November 2019 (five days later), still wearing his wetsuit. Narration: 'But the boxer got away. Five days later, the police found him. He was still wearing his wetsuit.'",
+   "sources": [
+    "elind19",
+    "guardian19"
+   ]
+  },
+  {
+   "id": "V_value",
+   "type": "established",
+   "nature": "reported",
+   "text": "STATISTIC (counter): officials put the cargo's value at about 100 million euros. Narration: 'Officials put the cargo at 100 million euros.'",
+   "sources": [
+    "thelocal",
+    "malaymail"
+   ]
+  },
+  {
+   "id": "V_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): UK Border Force warns that gangs target school and university leavers and first-time travellers with 'free' trips to recruit drug couriers. Its tips: refuse 'free' holidays, flights or luxury accommodation ('if it sounds too good to be true, it probably is'); know what is in your bag and never travel with a bag that is not yours. Rows: \"A 'FREE' TRIP OR FLIGHT\", 'A BAG THAT IS NOT YOURS', 'TOO GOOD TO BE TRUE'.",
+   "sources": [
+    "borderforce",
+    "v2radio",
+    "stratford"
+   ]
+  },
+  {
+   "id": "V_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "In 2022 the Audiencia Provincial de Pontevedra sentenced all three crew members to 11 years in prison (for the two Ecuadorians, 8 years served then expulsion); the Galician High Court (TSXG) confirmed the 11-year terms. Narration: 'Their sentence? Eleven years each. Twenty-seven days at sea. Eleven years inside.'",
+   "sources": [
+    "guardian22",
+    "tsxg",
+    "vigoe_tsxg",
+    "eldiarioec"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "aeat",
+   "publisher": "Agencia Tributaria (Spanish Tax Agency)",
+   "title": "First 'narcosubmarine' detected in Europe intercepted on Galician coast",
+   "url": "https://sede.agenciatributaria.gob.es/Sede/en_gb/notas-prensa/notas-prensa/2019/noviembre/27/interceptado-costa-gallega-primer-narcosubmarino-europa.html",
+   "date": "2019-11-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "interior",
+   "publisher": "Ministerio del Interior (Spain)",
+   "title": "Interceptado en la costa gallega el primer 'narcosubmarino' detectado en Europa",
+   "url": "https://www.interior.gob.es/opencms/es/detalle/articulo/Interceptado-en-la-costa-gallega-el-primer-narcosubmarino-detectado-en-Europa/",
+   "date": "2019-11",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "moncloa",
+   "publisher": "La Moncloa (Government of Spain)",
+   "title": "Operacion de Agencia Tributaria, Guardia Civil y Policia Nacional (narcosubmarino)",
+   "url": "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/hacienda/paginas/2019/271119-narcosubmarino.aspx",
+   "date": "2019-11-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "guardian19",
+   "publisher": "The Guardian (via PressReader)",
+   "title": "Spanish police arrest suspected pilot of 'narco-submarine'",
+   "url": "https://www.pressreader.com/usa/the-guardian-usa/20191202/281711206511586",
+   "date": "2019-12-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "guardian22",
+   "publisher": "The Guardian (via PressReader)",
+   "title": "In too deep: the epic, doomed journey of Europe's first narco-submarine",
+   "url": "https://www.pressreader.com/usa/the-guardian-usa/20220205/281878711779345",
+   "date": "2022-02-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "elind19",
+   "publisher": "El Independiente (Europa Press)",
+   "title": "Detenido un tripulante espanol que huyo del narcosubmarino de Pontevedra",
+   "url": "https://www.elindependiente.com/sociedad/2019/11/29/detenido-un-tripulante-espanol-que-huyo-del-narcosubmarino-de-pontevedra/",
+   "date": "2019-11-29",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "elind22",
+   "publisher": "El Independiente",
+   "title": "Mil leguas de viaje en narcosubmarino: la travesia kamikaze de Agustin desde el Amazonas hasta Galicia",
+   "url": "https://www.elindependiente.com/tendencias/cultura/2022/01/17/mil-leguas-de-viaje-en-narcosubmarino-la-travesia-kamikaze-de-agustin-desde-el-amazonas-hasta-galicia/",
+   "date": "2022-01-17",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "chv",
+   "publisher": "Chilevision",
+   "title": "De una operacion de drogas a un 'viaje suicida': la historia detras del narcosubmarino que acabo hundido en Galicia",
+   "url": "https://www.chilevision.cl/noticias/internacional/de-una-operacion-de-drogas-a-un-viaje-suicida-la-historia-detras-del-narcosubmarino-que-acabo-hundido-en-galicia/amp/",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "gestion",
+   "publisher": "Gestion (Peru)",
+   "title": "El viaje suicida por el Atlantico que acabo con un narcosubmarino hundido",
+   "url": "https://gestion.pe/mundo/el-viaje-suicida-por-el-atlantico-que-acabo-con-un-narcosubmarino-hundido-noticia/",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "mdz",
+   "publisher": "MDZ Online",
+   "title": "La increible historia del primer narcosubmarino apresado en Europa",
+   "url": "https://www.mdzol.com/mundo/2022/1/22/la-increible-historia-del-primer-narcosubmarino-apresado-en-europa-216781.html",
+   "date": "2022-01-22",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "insight",
+   "publisher": "InSight Crime",
+   "title": "Narco-sub seized off Galicia (El Pais: built in Guyana, sailed from Colombia)",
+   "url": "https://insightcrime.org/?p=110180",
+   "date": "2019-11",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "occrp",
+   "publisher": "OCCRP",
+   "title": "Police Seize First-Ever 'Narco Sub' off Spanish Coast",
+   "url": "https://occrp.org/en/news/police-seize-first-ever-narco-sub-off-spanish-coast",
+   "date": "2019-11",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "janes",
+   "publisher": "Janes",
+   "title": "First drugs submarine seized in Spain",
+   "url": "https://www.janes.com/defence-news/news-detail/first-drugs-submarine-seized-in-spain",
+   "date": "2019-11-29",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "hisutton",
+   "publisher": "H I Sutton (Covert Shores)",
+   "title": "Transatlantic narco-submarine, Galicia",
+   "url": "https://www.hisutton.com/Transatlantic-Narco-submarine-Galicia.html",
+   "date": "2019",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "thelocal",
+   "publisher": "The Local Spain",
+   "title": "Spain's 'first' narco-sub revealed to contain 100 million euro cargo of cocaine",
+   "url": "https://www.thelocal.es/20191128/spains-first-narco-sub-revealed-to-contain-100-million-cargo-of-cocaine",
+   "date": "2019-11-28",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "malaymail",
+   "publisher": "Malay Mail (AFP)",
+   "title": "Spain narco-sub reportedly carried 100m euros of cocaine",
+   "url": "https://www.malaymail.com/amp/news/world/2019/11/28/spain-narco-sub-reportedly-carried-100m-of-cocaine/1813999",
+   "date": "2019-11-28",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "tsxg",
+   "publisher": "Poder Judicial (TSXG press office)",
+   "title": "El TSXG confirma la condena de once anos de carcel impuesta a los tres tripulantes del narcosubmarino de Aldan",
+   "url": "https://www.poderjudicial.es/cgpj/es/Poder-Judicial/Tribunales-Superiores-de-Justicia/TSJ-Galicia/Oficina-de-Comunicacion/Archivo-de-notas-de-prensa/--El-TSXG-confirma-la-condena-de-once-anos-de-carcel-impuesta-a-los-tres-tripulantes-del-narcosubmarino-de-Aldan-",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "vigoe_tsxg",
+   "publisher": "VigoE",
+   "title": "El TSXG confirma la condena a los tripulantes del narcosubmarino",
+   "url": "https://vigoe.es/comarcas/morrazo/cangas/el-tsxg-confirma-la-condena-a-los-tripulantes-del-narcosubmarino-y-rebaja-la-pena-a-los-implicados-en-tierra",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "eldiarioec",
+   "publisher": "El Diario (Ecuador)",
+   "title": "Dos ecuatorianos sentenciados por narcosubmarino con 3 mil kilos de cocaina",
+   "url": "https://www.eldiario.ec/sin-categoria/dos-ecuatorianos-sentenciados-a-ocho-anos-por-narcosubmarino-con-3-mil-kilos-de-cocaina-12022022/",
+   "date": "2022-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "borderforce",
+   "publisher": "GOV.UK (Border Force)",
+   "title": "Border Force: don't let drug smugglers steal your future",
+   "url": "https://www.gov.uk/government/news/border-force-dont-let-drug-smugglers-steal-your-future",
+   "date": "2026-07-17",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "v2radio",
+   "publisher": "V2 Radio",
+   "title": "Young travellers across the south warned over free holiday drug smuggling offers",
+   "url": "https://www.v2radio.co.uk/news/west-sussex/young-travellers-across-the-south-warned-over-free-holiday-drug-smuggling-offers/",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "stratford",
+   "publisher": "Stratford Observer",
+   "title": "Border Force warns young holidaymakers over drug smuggling gangs",
+   "url": "https://stratfordobserver.co.uk/?p=118574",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#14232a",
+  "mid": "#c4bca6",
+  "accent": "#e8913a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "AN AMATEUR BOXER"
+   },
+   {
+    "text": "IN A HOMEMADE SUBMARINE",
+    "colour": "#e8913a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "27 DAYS IN A HOMEMADE SUB."
+   },
+   {
+    "text": "GENIUS OR INSANE? 👇",
+    "colour": "#e8913a"
+   },
+   {
+    "text": "TAG THE MATE WHO GETS SEASICK",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "DAY",
+  "keys": [
+   {
+    "t": 6.19,
+    "v": "1"
+   },
+   {
+    "t": 7.07,
+    "v": "27"
+   },
+   {
+    "t": 19.41,
+    "v": "32"
+   }
+  ],
+  "y": 330,
+  "until": 23.78
+ },
+ "legal_status_verified": "2026-10-16"
+}
