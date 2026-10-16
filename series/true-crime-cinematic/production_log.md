@@ -348,3 +348,7 @@
 - 2026-10-16 23:05:10 tcv56-dog-bounty: VERIFIED -> series/true-crime-cinematic/output/true_crime_56_dog_bounty.mp4 (37.5s, 22.4 MB, sha256 9821b7130f92)
 - 2026-10-16 23:05:20 produce 57 --force: regenerating episode data
 - 2026-10-16 23:05:20 tcv57-narco-sub: rendering (final60, seed 1)
+- 2026-10-16 23:46:59 tcv57-narco-sub: rendered in 2499s
+- 2026-10-16 23:47:43 tcv57-narco-sub: VERIFIED -> series/true-crime-cinematic/output/true_crime_57_narco_sub.mp4 (37.9s, 21.9 MB, sha256 1e9c5bba1654)
+- 2026-10-16 23:47:54 produce 55 --force: regenerating episode data
+- 2026-10-16 23:47:54 tcv55-cocaine-bear: rendering (final60, seed 1)
