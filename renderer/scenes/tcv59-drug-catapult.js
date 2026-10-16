@@ -101,12 +101,12 @@
   }
   // a generic surveillance-camera frame (our own graphic, not real footage): corner brackets, a blinking REC dot, a small
   // centre cross and a faint scanline drift
-  function hud(t) {
+  function hud(t, top = true) {
     const br = (x, y, dx, dy) => `<path d="M${x} ${y + dy * 80} L${x} ${y} L${x + dx * 80} ${y}" stroke="#e6efe8" stroke-width="6" fill="none" opacity="0.75" stroke-linecap="round"/>`;
     let g = br(50, 590, 1, 1) + br(1030, 590, -1, 1) + br(50, 1270, 1, -1) + br(1030, 1270, -1, -1);
     const on = Math.sin(t * 6) > -0.2;
-    g += `<circle cx="96" cy="640" r="12" fill="#e23b2e" opacity="${on ? 0.9 : 0.2}"/><text x="118" y="651" font-family="Nunito" font-weight="800" font-size="30" fill="#e6efe8" opacity="0.85" letter-spacing="2">REC</text>`;
-    g += `<text x="1000" y="651" text-anchor="end" font-family="Nunito" font-weight="800" font-size="28" fill="#e6efe8" opacity="0.75" letter-spacing="2">CAM · IR</text>`;
+    if (top) g += `<circle cx="96" cy="640" r="12" fill="#e23b2e" opacity="${on ? 0.9 : 0.2}"/><text x="118" y="651" font-family="Nunito" font-weight="800" font-size="30" fill="#e6efe8" opacity="0.85" letter-spacing="2">REC</text>`;
+    if (top) g += `<text x="1000" y="651" text-anchor="end" font-family="Nunito" font-weight="800" font-size="28" fill="#e6efe8" opacity="0.75" letter-spacing="2">CAM · IR</text>`;
     g += `<path d="M540 900 L540 940 M540 980 L540 1020 M480 960 L520 960 M560 960 L600 960" stroke="#e6efe8" stroke-width="3" opacity="0.35"/>`;
     const sy = 590 + ((t * 120) % 680);
     g += `<rect x="50" y="${f1(sy)}" width="980" height="3" fill="#e6efe8" opacity="0.08"/>`;
@@ -251,7 +251,7 @@
     //     smuggler (silhouette) points after it, a second waits at the arm; the camera already pushing in. Then they haul the
     //     arm down, load a second bale and fire it on '2011'. The surveillance-camera frame sits on top.
     dc59_hook(ctx) {
-      const t = ctx.t, T = ctx.T, tB = WT(ctx, 1, 6, 3.7), l2 = LS(ctx, 1, 2.4);
+      const t = ctx.t, T = ctx.T, tB = WT(ctx, 1, 1, 3.3), l2 = LS(ctx, 1, 2.4);
       const th = tt => tt < 0.95 ? fireTh(tt, -0.62) : (tt < tB - 0.3 ? lerp(290, 150, ease.inOut(seg(tt, 0.95, 2.4))) : fireTh(tt, tB));
       const p0 = cupAt(HERO.x, HERO.y, HERO.s, 280);
       return E.cine.shot(ctx, {
@@ -265,7 +265,7 @@
         ],
         props: [
           { depth: 1.0, svg: tt => catapult(HERO.x, HERO.y, HERO.s, th(tt), { load: tt > 2.5 && tt < tB - 0.06 }) },
-          { depth: 1.01, accent: true, svg: tt => flight(tt, -0.6, 0.95, p0, heroP1, 100, 0.85) + flight(tt, tB - 0.05, tB + 1.3, p0, heroP1, 100, 0.85) }
+          { depth: 1.01, accent: true, svg: tt => flight(tt, -0.6, 0.95, p0, heroP1, 100, 1.05) + flight(tt, tB - 0.05, tB + 1.3, p0, heroP1, 100, 1.05) }
         ],
         overlays: [
           { type: 'svg', at: -1, svg: tt => hud(tt) },
@@ -364,7 +364,7 @@
       return E.cine.shot(ctx, {
         set: 'dc59_field', grade: 'dawn', haze: 0.5,
         cam: { from: { x: 0, y: 30, z: 1.0 }, to: { x: 10, y: 40, z: 1.08 }, settle: true },
-        rack: { at: cn - 0.2, dur: 0.7, from: 'bg' },
+        rack: { at: 0.05, dur: 0.7, from: 'bg' },
         figures: [
           { id: 'dc59_agent', x: 760, y: 1700, scale: 0.8, dir: -1, turn: 0.4, pose: 'kneel', propOverride: null, expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#2e4636' },
             keys: [{ at: wi, pose: 'kneel', expr: 'realise', gaze: [-0.5, 0.3], dur: 0.4 }, { at: cn + 0.1, pose: 'stand_tense', expr: 'shocked', gaze: [-0.6, -0.5], dur: 0.45 }] }
@@ -445,7 +445,7 @@
           { depth: 1.0, accent: true, svg: tt => catapult(HERO.x, HERO.y, HERO.s, 290, { load: true }) + wash(HERO.x, HERO.y - 600, 300, 340, '#fff4cf', 0.1) }
         ],
         overlays: [
-          { type: 'svg', at: -1, svg: tt => hud(tt) },
+          { type: 'svg', at: -1, svg: tt => hud(tt, tt < T - 3.75) },
           { type: 'label', at: aw, x: 60, y: 1190, text: 'SEIZED: CATAPULT, SUV, WEED', fs: 40, sub: 'About 45 lb (AP: 35) · no arrests reported' }
         ],
         tag: TAG

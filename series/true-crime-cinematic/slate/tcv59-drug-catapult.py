@@ -30,8 +30,8 @@ def build(h):
         # A - hook: frame 1 = the HERO OBJECT (the catapult on its trailer, the arm whipping up, a taped bale already in
         #     flight over the border fence) with two smuggler silhouettes beside it, the camera already pushing, a
         #     surveillance-camera frame on top; the headline burned in. Line 1 = the absurd image, line 2 escalates (2011).
-        S("s01_hook", "dc59_hook", [N("Smugglers catapulted weed into America."), N("Not in the Middle Ages. In 2011.", pause_before=0.2)],
-          "tension", ["K_hook", "K_year"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "whoosh", 0.32), fw(0, 1, "thump", 0.35, -0.03), fw(1, 6, "hit", 0.32, -0.03)],
+        S("s01_hook", "dc59_hook", [N("Smugglers catapulted weed into America."), N("In 2011. Not the Middle Ages.", pause_before=0.2)],
+          "tension", ["K_hook", "K_year"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "whoosh", 0.32), fw(0, 1, "thump", 0.35, -0.03), fw(1, 1, "hit", 0.32, -0.03)],
           emph=["smugglers", "catapulted", "weed", "america.", "middle", "ages.", "2011."], min_d=3.6, pad=0.2),
         # A/B - who saw it: a dim surveillance room; two Guard troops at a wall of monitors (white-hot camera images of the
         #     catapult); one points on 'camera'
@@ -109,7 +109,7 @@ def build(h):
     claims = [
         C("K_hook", "In January 2011 smugglers on the Mexican side used a catapult to launch packages of marijuana over the border fence into Arizona near Naco. Narration: 'Smugglers catapulted weed into America.' (NPR: 'Drug smugglers get medieval'.)",
           case + ["npr", "politifact"]),
-        C("K_year", "The catapult was used and seized in January 2011 (Friday evening, 21 January 2011; reported 26-28 January 2011). Narration: 'Not in the Middle Ages. In 2011.'",
+        C("K_year", "The catapult was used and seized in January 2011 (Friday evening, 21 January 2011; reported 26-28 January 2011). Narration: 'In 2011. Not the Middle Ages.'",
           ["nbc", "csm", "register", "politifact"]),
         C("K_cams", "National Guard troops operating a remote video surveillance system at the Naco Border Patrol Station saw several people preparing a catapult and launching packages over the international border fence. Narration: 'But National Guard troops were watching on camera.'",
           ["nbc", "cbs", "csm", "popsci"]),
