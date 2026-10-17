@@ -78,7 +78,7 @@ class KokoroDeliveryAndMix(unittest.TestCase):
         from pipeline.mixdown import hold_gaps
         on = np.array([1, 1, 0, 0, 0, 1, 1] + [0] * 60 + [1], float)   # a 60 ms gap, then a 1.2 s gap
         h = hold_gaps(on, 0.8)
-        self.assertTrue((h[2:5] == 1).all()); self.assertTrue((h[10:60] == 0).all())
+        self.assertTrue((h[2:5] == 0.5).all()); self.assertTrue((h[10:60] == 0).all())
 
 
 class VersionFourEnding(unittest.TestCase):

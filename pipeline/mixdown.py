@@ -28,15 +28,17 @@ def highpass(x: np.ndarray, fc: float) -> np.ndarray:
     return np.fft.irfft(X, len(x)).astype(np.float32)
 
 
-def hold_gaps(on: np.ndarray, hold: float, frame: float = 0.02) -> np.ndarray:
-    """Fill dips shorter than `hold` seconds between two speech frames (the what-if engine's mix: the bed stays down
-    through the short pauses between lines instead of swelling and dropping again, which reads as pumping)."""
+def hold_gaps(on: np.ndarray, hold: float, frame: float = 0.02, depth: float = 0.5) -> np.ndarray:
+    """Part-fill dips shorter than `hold` seconds between two speech frames (after the what-if engine's mix): in a short
+    pause the bed comes back only to `depth` of the way, so it breathes without the full swell-and-drop that reads as
+    pumping. A full hold (depth 1) kept short-form beds ducked for the whole video (Case File 71: music in the gaps
+    -53 dB, opening holes), because nearly every gap in a fast read is under the hold."""
     if hold <= 0 or not len(on):
         return on
     out = on.copy(); sp = np.where(on > 0.5)[0]
     for a, b in zip(sp[:-1], sp[1:]):
         if 1 < b - a <= hold / frame:
-            out[a:b] = np.maximum(out[a:b], min(on[a], on[b]))
+            out[a:b] = np.maximum(out[a:b], depth * min(on[a], on[b]))
     return out
 
 

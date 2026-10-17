@@ -383,7 +383,7 @@
           { type: 'funfact', at: 0.3, y: 420, until: l2 - 0.2, rows: [{ text: 'THE FILM PORTRAYS HIM' }, { text: 'HE BROKE THE $16B STORY' }, { text: 'AND WON A 2026 PULITZER' },
             { text: 'Jeff Horwitz, Reuters (with Engen Tham)', fs: 26 }] },
           { type: 'label', at: l2 + 0.05, x: 60, y: 560, text: 'THE FILM: $5.5M OPENING', fs: 42, sub: 'Studio estimate, Oct 9-11, 2026 (AP)' },
-          { type: 'label', at: l2 + 0.5, x: 60, y: 760, text: 'AS OF OCT 2026', fs: 30, sub: 'Senators asked FTC and SEC to look; lawsuits pending' }
+          { type: 'label', at: l2 + 0.5, x: 60, y: 690, text: 'AS OF OCT 2026', fs: 30, sub: 'Senators asked FTC, SEC to look; suits pending' }
         ],
         tag: LIKE
       });
