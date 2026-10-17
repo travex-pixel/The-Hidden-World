@@ -1,0 +1,962 @@
+{
+ "id": "tcv62-abagnale-con",
+ "number": 62,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Conman Who May Have Conned Hollywood",
+ "central_question": "Frank Abagnale's teenage cons became 'Catch Me If You Can'. Do the records back his story?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "conman": "con man",
+   "conned": "conned,",
+   "Am": "Amm",
+   "2002": "two thousand two",
+   "$2.5": "two and a half",
+   "million": "million dollars",
+   "17": "seventeen",
+   "20.": "twenty."
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "62",
+  "label": "CATCH ME IF YOU CAN? · THE RECORDS"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s04_prison",
+   "word": [
+    0,
+    4
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "fa62_frank",
+  "fa62_crew",
+  "fa62_crew2",
+  "fa62_teller",
+  "fa62_researcher",
+  "fa62_fan1",
+  "fa62_fan2",
+  "fa62_viewer"
+ ],
+ "content_notes": "A debate, never a verdict: every doubt is attributed (a researcher, records) and Abagnale's rebuttal is on screen. Frank Abagnale (a living person) appears only as a faceless dark silhouette in a generic pilot's uniform tagged ILLUSTRATION · NOT A LIKENESS; nothing from the 2002 film is shown (no poster, still or actor likeness); the film and the airlines are named as plain text only, with no logo, livery or badge. The researcher, the flight attendants, the teller, the cinema-goers and the young man are generic figures; the researcher is never drawn as a portrait. The prison record card, the memoir and the check are our own generic graphics, not replicas of real documents. The $2.5 million figure is shown as HIS claim. No dialogue is invented. Status verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "fa62_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.05,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.02,
+     "word": [
+      1,
+      2
+     ],
+     "name": "click",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "F_hook",
+    "F_film"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Hollywood's favorite conman may have conned Hollywood."
+    },
+    {
+     "who": "narrator",
+     "text": "The 2002 hit Catch Me If You Can.",
+     "pause_before": 0.0
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "hollywood's",
+    "conman",
+    "conned",
+    "hollywood.",
+    "catch",
+    "can."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_claim",
+   "scene": "fa62_claim",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "step",
+     "gain": 0.25
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      7
+     ],
+     "name": "ping",
+     "gain": 0.3
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      10
+     ],
+     "name": "tick",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "F_claims"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He claimed he was a Pan Am pilot, then a doctor."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "claimed",
+    "pan",
+    "am",
+    "pilot,",
+    "doctor."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_checks",
+   "scene": "fa62_checks",
+   "min_duration": 3.6,
+   "pad_after": 0.62,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "cash",
+     "gain": 0.3
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "F_stat",
+    "F_logan"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He claimed $2.5 million in bad checks."
+    },
+    {
+     "who": "narrator",
+     "text": "So an author checked the records.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$2.5",
+    "million",
+    "bad",
+    "checks.",
+    "author",
+    "checked",
+    "records."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_prison",
+   "scene": "fa62_prison",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      3
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "F_prison",
+    "F_years"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "What did he find? Prison records, age 17 to 20."
+    },
+    {
+     "who": "narrator",
+     "text": "His famous con years.",
+     "pause_before": 0.0
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "find?",
+    "prison",
+    "records,",
+    "17",
+    "20.",
+    "famous",
+    "con",
+    "years."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s05_book",
+   "scene": "fa62_book",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "paper",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "F_book"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Even his own book says names and dates were changed."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "own",
+    "book",
+    "names",
+    "dates",
+    "changed."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_sides",
+   "scene": "fa62_sides",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      5
+     ],
+     "name": "swell",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "cuffs",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "F_fans",
+    "F_records",
+    "F_rebuttal"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His fans say: still a great story."
+    },
+    {
+     "who": "narrator",
+     "text": "Records say: he was behind bars.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fans",
+    "still",
+    "great",
+    "story.",
+    "records",
+    "behind",
+    "bars."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "fa62_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "F_lesson"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Overpaid by check? Save these three warning signs."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "overpaid",
+    "check?",
+    "save",
+    "three",
+    "warning"
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "fa62_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "cash",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "F_consult"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And the conman? He became a paid fraud consultant."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "conman?",
+    "became",
+    "paid",
+    "fraud",
+    "consultant."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "F_hook",
+   "type": "established",
+   "nature": "reported",
+   "text": "HOT TAKE (framing, attributed): Frank Abagnale, the best-known self-described con man, inspired a Spielberg film; a 2020 book by researcher Alan C. Logan, based on public records, argues much of his story was invented. Narration: 'Hollywood's favorite conman may have conned Hollywood.' ('may have': the doubts are the researcher's argument and Abagnale disputes them.)",
+   "sources": [
+    "whyy",
+    "boing",
+    "wiki",
+    "portland",
+    "goodreads",
+    "ati"
+   ]
+  },
+  {
+   "id": "F_film",
+   "type": "established",
+   "nature": "fact",
+   "text": "His 1980 memoir 'Catch Me If You Can' (written with Stan Redding) became Steven Spielberg's 2002 film of the same name. Narration: 'The 2002 hit Catch Me If You Can.'",
+   "sources": [
+    "wiki",
+    "wiki_book",
+    "cbs_film",
+    "wapo"
+   ]
+  },
+  {
+   "id": "F_claims",
+   "type": "established",
+   "nature": "reported",
+   "text": "HIS CLAIMS: he said that as a teenager he posed as a Pan Am pilot (co-pilot), a doctor and a lawyer. Narration: 'He claimed he was a Pan Am pilot, then a doctor.' Label: 'Pan Am pilot, doctor, lawyer (his account)'.",
+   "sources": [
+    "wiki",
+    "wapo",
+    "cbs_film",
+    "whyy",
+    "ati"
+   ]
+  },
+  {
+   "id": "F_stat",
+   "type": "established",
+   "nature": "reported",
+   "text": "STATISTIC (counter, HIS claim): Abagnale has said he passed about $2.5 million in forged checks (in 26 countries) between the ages of 16 and 21. Shown as a claim, credited 'His own claim · unverified'. Narration: 'He claimed $2.5 million in bad checks.'",
+   "sources": [
+    "lvsun",
+    "wgbh",
+    "whyy",
+    "wiki"
+   ]
+  },
+  {
+   "id": "F_logan",
+   "type": "established",
+   "nature": "fact",
+   "text": "Alan C. Logan, a researcher and science writer, spent years searching public records (prison, court, newspaper archives; letters) for his 2020 book 'The Greatest Hoax on Earth: Catching Truth, While We Can'. Narration: 'So an author checked the records.'",
+   "sources": [
+    "whyy",
+    "boing",
+    "portland",
+    "goodreads",
+    "wiki"
+   ]
+  },
+  {
+   "id": "F_prison",
+   "type": "established",
+   "nature": "reported",
+   "text": "RECORDS (via the researcher): New York State Archives records show Abagnale held at Great Meadow prison, Comstock, New York (inmate 25367) from 26 July 1965 to 24 December 1968, i.e. aged 17 to 20 (born 1948), with a brief parole in 1967 before he was returned. Logan: 'confined for the most part in prison during those years'. Narration: 'What did he find? Prison records, age 17 to 20.'",
+   "sources": [
+    "wiki",
+    "wiki_gm",
+    "pretend",
+    "attrition",
+    "whyy"
+   ]
+  },
+  {
+   "id": "F_years",
+   "type": "established",
+   "nature": "reported",
+   "text": "His claimed run of impersonations and check fraud spanned roughly ages 16 to 21 (1964-69), so the prison term covers most of those years (Logan's argument; Abagnale disputes it). Narration: 'His famous con years.'",
+   "sources": [
+    "whyy",
+    "wiki",
+    "wiki_gm",
+    "lvsun",
+    "attrition"
+   ]
+  },
+  {
+   "id": "F_book",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: the memoir carries its own disclaimer that some events were altered and names, dates and places were changed; Abagnale has said his co-writer dramatised and exaggerated parts of it (paraphrase; the exact website wording was found only second-hand, so it is not quoted). Narration: 'Even his own book says names and dates were changed.'",
+   "sources": [
+    "wiki",
+    "wiki_book",
+    "looper",
+    "attr_auto"
+   ]
+  },
+  {
+   "id": "F_fans",
+   "type": "established",
+   "nature": "reported",
+   "text": "Opinion beat (attributed to fans, not a fact claim): the film and the story remain popular (a hit film and a Broadway musical). Narration: 'His fans say: still a great story.'",
+   "sources": [
+    "wiki",
+    "cbs_film",
+    "wapo"
+   ]
+  },
+  {
+   "id": "F_records",
+   "type": "established",
+   "nature": "reported",
+   "text": "Opinion beat summarising F_prison: the archive records place him in prison (Great Meadow, 1965-68). Narration: 'Records say: he was behind bars.'",
+   "sources": [
+    "wiki",
+    "wiki_gm",
+    "pretend",
+    "attrition",
+    "whyy"
+   ]
+  },
+  {
+   "id": "F_rebuttal",
+   "type": "established",
+   "nature": "reported",
+   "text": "HIS SIDE (label): Abagnale has rejected the doubts; asked about journalists who debunked him, he said the people they spoke to were too embarrassed to admit they had been conned. Label paraphrase: 'He says doubters' sources were too embarrassed to admit being conned'.",
+   "sources": [
+    "whyy",
+    "boing"
+   ]
+  },
+  {
+   "id": "F_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): fake-check scams: a check for more than you are owed with a request to send some back is a scam; a deposited check can show as available and still bounce weeks later, leaving you to repay the bank; no legitimate payer asks you to return money by wire, gift cards, a payment app or crypto (FTC). Rows: 'OVERPAID? IT IS A SCAM', 'CLEARED CAN STILL BOUNCE', 'NEVER SEND THE EXTRA BACK'.",
+   "sources": [
+    "ftc_fake",
+    "ftc_biz",
+    "milcon"
+   ]
+  },
+  {
+   "id": "F_consult",
+   "type": "established",
+   "nature": "fact",
+   "text": "OUTCOME: Abagnale built a decades-long career as a paid fraud-prevention consultant and speaker (Washington Post 2002: 'now a fraud consultant'; CBS; AARP Fraud Watch Network ambassador from 2015). Narration: 'And the conman? He became a paid fraud consultant.'",
+   "sources": [
+    "wapo",
+    "cbs_tips",
+    "assoc",
+    "wpm",
+    "wiki"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "wiki",
+   "publisher": "Wikipedia",
+   "title": "Frank Abagnale",
+   "url": "https://en.wikipedia.org/wiki/Frank_Abagnale",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wiki_book",
+   "publisher": "Wikipedia",
+   "title": "Catch Me If You Can (book)",
+   "url": "https://en.wikipedia.org/wiki/Catch_Me_If_You_Can_(book)",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wiki_gm",
+   "publisher": "Wikipedia",
+   "title": "Great Meadow Correctional Facility",
+   "url": "https://en.wikipedia.org/wiki/Great_Meadow_Correctional_Facility",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "whyy",
+   "publisher": "WHYY (NPR member station)",
+   "title": "Is \"Catch Me If You Can\" a true story? This book suggests it isn't (interview with Alan C. Logan)",
+   "url": "https://whyy.org/segments/the-greatest-hoax-on-earth/",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "boing",
+   "publisher": "Boing Boing",
+   "title": "Catch Me If You Can was all made up",
+   "url": "https://boingboing.net/2021/05/29/catch-me-if-you-can-was-all-made-up.html",
+   "date": "2021-05-29",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pretend",
+   "publisher": "Pretend (Javier Leiva, investigative podcast)",
+   "title": "Ambush interview with Frank Abagnale / prison records",
+   "url": "https://pretendradio.org/?p=6402",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pretend_b",
+   "publisher": "Pretend (Javier Leiva, investigative podcast)",
+   "title": "Frank Abagnale series",
+   "url": "https://pretendradio.org/?p=6380",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "attrition",
+   "publisher": "Attrition.org (errata project)",
+   "title": "Abagnale vs reality",
+   "url": "https://attrition.org/errata/charlatan/frank_abagnale/abagnale_vs_reality.html",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "attr_auto",
+   "publisher": "Attrition.org (errata project)",
+   "title": "The autobiography that wasn't",
+   "url": "https://attrition.org/errata/charlatan/frank_abagnale/autobiography_that_wasnt.html",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "portland",
+   "publisher": "Portland Book Review",
+   "title": "The Greatest Hoax on Earth: Catching Truth, While We Can (review)",
+   "url": "https://portlandbookreview.com/?p=169511",
+   "date": "2020",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "goodreads",
+   "publisher": "Goodreads",
+   "title": "The Greatest Hoax on Earth, by Alan C. Logan (2020)",
+   "url": "https://www.goodreads.com/book/show/56125240",
+   "date": "2020",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ati",
+   "publisher": "All That's Interesting",
+   "title": "Is 'Catch Me If You Can' a true story?",
+   "url": "https://allthatsinteresting.com/catch-me-if-you-can-true-story",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "looper",
+   "publisher": "Looper",
+   "title": "Everything Catch Me If You Can doesn't tell you about the true story",
+   "url": "https://looper.com/884584/everything-catch-me-if-you-can-doesnt-tell-you-about-the-true-story",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wapo",
+   "publisher": "The Washington Post",
+   "title": "At 54, the 'Catch Me' scammer is now a fraud consultant",
+   "url": "https://www.washingtonpost.com/archive/lifestyle/2002/12/27/at-54-the-catch-me-scammer-is-now-a-fraud-consultant/e6769293-891e-4924-b41c-deb143c555f9/",
+   "date": "2002-12-27",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbs_film",
+   "publisher": "CBS News",
+   "title": "Spielberg's 'Catch'",
+   "url": "https://www.cbsnews.com/news/spielbergs-catch/",
+   "date": "2002-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbs_tips",
+   "publisher": "CBS News",
+   "title": "Crime prevention tips from famous thief",
+   "url": "https://www.cbsnews.com/news/crime-prevention-tips-from-famous-thief/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "lvsun",
+   "publisher": "Las Vegas Sun",
+   "title": "Be sure to check this out",
+   "url": "https://m.lasvegassun.com/news/1996/apr/04/be-sure-to-check-this-out/",
+   "date": "1996-04-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wgbh",
+   "publisher": "GBH (WGBH Boston)",
+   "title": "Frank Abagnale Jr. (speaker profile)",
+   "url": "https://wgbh.org/people/frank-abagnale-jr",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "assoc",
+   "publisher": "Associations Now",
+   "title": "Catch AARP's newest spokesperson if you can",
+   "url": "https://associationsnow.com/2017/09/catch-aarps-newest-spokesperson-can/",
+   "date": "2017-09",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wpm",
+   "publisher": "Wyoming Public Media",
+   "title": "Former con artist has tips for avoiding fraud",
+   "url": "https://www.wyomingpublicmedia.org/open-spaces/2018-08-24/former-con-artist-has-tips-for-avoiding-fraud",
+   "date": "2018-08-24",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ftc_fake",
+   "publisher": "Federal Trade Commission (Consumer Advice)",
+   "title": "Fake check scams",
+   "url": "https://consumer.ftc.gov/node/298411",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ftc_biz",
+   "publisher": "Federal Trade Commission (Business Blog)",
+   "title": "Fake check scams and your small business",
+   "url": "https://www.consumer.ftc.gov/blog/2020/09/fake-check-scams-and-your-small-business",
+   "date": "2020-09",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "milcon",
+   "publisher": "MilitaryConsumer.gov (FTC)",
+   "title": "Fake check scams",
+   "url": "https://www.militaryconsumer.gov/node/75336",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#16202c",
+  "mid": "#cdbb9c",
+  "accent": "#e3a23a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "THE CONMAN HOLLYWOOD LOVED"
+   },
+   {
+    "text": "MAY HAVE CONNED HOLLYWOOD",
+    "colour": "#e3a23a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "PILOT, DOCTOR, LAWYER?"
+   },
+   {
+    "text": "LEGEND OR LIAR? 👇",
+    "colour": "#e3a23a"
+   },
+   {
+    "text": "TAG THE MATE WHO EXAGGERATES",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "HIS STORY",
+  "keys": [
+   {
+    "t": 6.86,
+    "v": "PILOT"
+   },
+   {
+    "t": 7.51,
+    "v": "DOCTOR"
+   },
+   {
+    "t": 9.9,
+    "v": "$2.5M"
+   },
+   {
+    "t": 16.09,
+    "v": "RECORDS: PRISON"
+   }
+  ],
+  "y": 330,
+  "until": 20.19
+ },
+ "legal_status_verified": "2026-10-17"
+}
