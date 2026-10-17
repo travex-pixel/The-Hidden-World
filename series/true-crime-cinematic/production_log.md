@@ -404,3 +404,7 @@
 - 2026-10-17 13:10:45 tcv66-louvre-one-year: VERIFIED -> series/true-crime-cinematic/output/true_crime_66_louvre_one_year.mp4 (37.9s, 22.8 MB, sha256 66e221711a75)
 - 2026-10-17 13:16:35 produce 70 --force: regenerating episode data
 - 2026-10-17 13:16:35 tcv70-wendys-finger: rendering (final60, seed 1)
+- 2026-10-17 13:51:26 tcv70-wendys-finger: rendered in 2091s
+- 2026-10-17 13:52:08 tcv70-wendys-finger: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_70
+- 2026-10-17 13:52:20 produce 69 --force: regenerating episode data
+- 2026-10-17 13:52:20 tcv69-kfc-cases: rendering (final60, seed 1)

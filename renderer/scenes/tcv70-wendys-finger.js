@@ -269,7 +269,7 @@
           { depth: 0.92, svg: tt => { const x = tt < jb ? 830 : lerp(830, 1270, (tt - jb) / (T + 0.4 - jb)); return `<path d="M${f1(x - 30)} 1330 l70 0 l-6 70 l-58 0 Z" fill="#6a4a3a" stroke="${INK}" stroke-width="4"/>`; } }
         ],
         overlays: [
-          { type: 'counter', at: ls - 0.1, dur: 1.5, from: 0, to: 2500000, prefix: '$', suffix: '', label: 'LOSS, PER THE CHARGES', y: 660, fs: 140 },
+          { type: 'counter', at: l2 + 0.05, dur: 1.5, from: 0, to: 2500000, prefix: '$', suffix: '', label: 'LOSS, PER THE CHARGES', y: 660, fs: 140 },
           { type: 'label', at: ls + 0.3, x: 90, y: 830, text: 'SAN JOSE-AREA RESTAURANTS', fs: 32, sub: 'Felony complaint, as reported by AP' }
         ],
         tag: TAG
