@@ -60,9 +60,10 @@ def build(h):
         S("s06_deal", "wf70_deal", [N("Her husband bought it for $100.")],
           "tension", ["K_paid"], sfx=[fw(0, 2, "paper", 0.28, 0.0), fw(0, 5, "cash", 0.32, 0.0)],
           emph=["husband", "bought", "$100."], min_d=3.6, pad=0.2, tr="dissolve"),
-        # D - the SPOKEN SHARE LINE: the lab; a technician holds up an evidence bag (the object inside blurred) under the lamp
+        # D - the SPOKEN SHARE LINE: the lab; a technician holds up an evidence bag (the object inside blurred) under the lamp;
+        #     the sentencing label (so the end frame stays clean)
         S("s07_share", "wf70_share", [N("Send this to the mate who never finishes his food.")],
-          "tension", ["K_share", "K_lab"], sfx=[fx(0.1, "shutter", 0.25), fw(0, 9, "thump", 0.3, 0.0)],
+          "tension", ["K_share", "K_lab", "K_sentence"], sfx=[fx(0.1, "shutter", 0.25), fw(0, 9, "thump", 0.3, 0.0)],
           emph=["send", "mate", "never", "finishes", "food."], min_d=3.6, pad=0.25, tr="cut"),
         # E - the punchline back at the hero bowl in frame 1's framing (the loop): her silhouette sits where she sat; the
         #     camera pulls back to frame 1's start; in the last ~0.6 s her hand draws the napkin across again
@@ -130,9 +131,9 @@ def build(h):
         C("K_paid", "According to court documents, Plascencia paid the co-worker $100 for the fingertip. Narration: 'Her husband bought it for $100.' Label 'PAID FOR THE FINGERTIP: $100 / Court papers, as reported by AP'.",
           ["fox", "deseret", "rutland", "aj"]),
         C("K_share", "Share prompt (editorial). Narration: 'Send this to the mate who never finishes his food.'", ["fox", "upi"], nature="editorial"),
-        C("K_lab", "Police identified the fingertip's source in May 2005 (announced 13 May 2005). Shown only as a generic evidence bag with a blurred object; label 'SOURCE TRACED · MAY 2005'.",
+        C("K_lab", "Police identified the fingertip's source in May 2005 (announced 13 May 2005). Shown only as a generic evidence bag with a blurred object (s07, no label).",
           ["wiki", "nbc_husb", "cbs", "justfood"]),
-        C("K_sentence", "On 18 January 2006 in Santa Clara County, Judge Edward Davila sentenced Ayala to nine years and Plascencia to 12 years and 4 months; both had pleaded guilty. Narration (last line): 'The fingertip cost $100. She got nine years.' Label 'SENTENCED · JANUARY 2006 / Ayala 9 years · husband 12 years 4 months'.",
+        C("K_sentence", "On 18 January 2006 in Santa Clara County, Judge Edward Davila sentenced Ayala to nine years and Plascencia to 12 years and 4 months; both had pleaded guilty. Narration (last line): 'The fingertip cost $100. She got nine years.' Label in s07 'SENTENCED · JANUARY 2006 / Ayala 9 years · her husband 12 years 4 months'.",
           court),
     ]
 

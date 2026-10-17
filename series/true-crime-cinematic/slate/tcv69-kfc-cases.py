@@ -36,14 +36,14 @@ def build(h):
         # A - hook: frame 1 = the HERO (an empty red-and-white bucket on a dark fast-food counter under a heat lamp, a
         #     worker behind the counter turning his palms up, a hand in the foreground holding a phone that is calling 999;
         #     the camera already pushing); the headline. Line 1 = the absurd fact; line 2 = the deadpan escalation.
-        S("s01_hook", "kf69_hook", [N("KFC ran out of chicken."), N("So people called the police.", pause_before=0.15)],
-          "tension", ["K_hook", "K_called"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "beep", 0.18), fw(0, 3, "thud", 0.3, 0.0), fw(1, 4, "radio", 0.25, 0.0)],
-          emph=["KFC", "ran", "out", "chicken.", "called", "police."], min_d=3.5, pad=0.12),
+        S("s01_hook", "kf69_hook", [N("KFC ran out of chicken."), N("So people actually called 999.", pause_before=0.12)],
+          "tension", ["K_hook", "K_called"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "beep", 0.18), fw(0, 4, "thud", 0.3, 0.0), fw(1, 4, "radio", 0.25, 0.0)],
+          emph=["KFC", "ran", "out", "chicken.", "actually", "called", "999."], min_d=3.5, pad=0.12),
         # B - ITEM 1 + the statistic (a LIKE moment): a police control room at night; an officer at a desk of monitors
         #     reads a phone, then types; the 900 counter; then the tweet's wording as reported
-        S("s02_shut", "kf69_shut", [N("Most of its 900 UK restaurants shut."), N("Police tweeted: not a police matter.", pause_before=0.25)],
-          "tension-rise", ["K_shut", "K_tweet"], sfx=[fw(0, 3, "tick", 0.25, 0.0), fw(0, 5, "thump", 0.35, 0.0), fw(1, 1, "typing", 0.3, -0.1), fw(1, 5, "hit", 0.28, 0.0)],
-          emph=["most", "900", "restaurants", "shut", "tweeted:", "not", "police", "matter."], min_d=3.5, pad=0.3, tr="cut"),
+        S("s02_shut", "kf69_shut", [N("Most of its 900 UK restaurants shut."), N("Then police tweeted: not a police matter.", pause_before=0.05)],
+          "tension-rise", ["K_shut", "K_tweet"], sfx=[fw(0, 3, "tick", 0.25, 0.0), fw(0, 6, "thump", 0.35, 0.0), fw(1, 2, "typing", 0.3, -0.1), fw(1, 6, "hit", 0.28, 0.0)],
+          emph=["most", "900", "restaurants", "shut", "tweeted:", "not", "police", "matter."], min_d=3.5, pad=0.05, tr="cut"),
         # B - the FUN FACT (social currency): a closed shop front at night; the worker tapes a CLOSED sign to the glass
         #     door; a young man reads it; the fun-fact card (the apology ad)
         S("s03_fck", "kf69_fck", [N("KFC's apology? A bucket that spelled FCK.")],
@@ -66,9 +66,9 @@ def build(h):
         # D - ITEM 3 = THE BIGGEST REVEAL (music drop, the single impact): a city street at dusk; a plain armored van rolls
         #     left to right behind a patrol car with its lights on; at the kerb the former detective's silhouette (NOT A
         #     LIKENESS) holds a briefcase chained to his wrist
-        S("s07_recipe", "kf69_recipe", [N("The wildest? KFC's secret recipe."), N("It was cuffed to a former cop, in an armored car.", pause_before=0.25)],
-          "revelation", ["K_wild", "K_recipe"], sfx=[fw(0, 0, "riser", 0.22, -0.5), fw(0, 4, "hit", 0.42, -0.03), fw(1, 2, "cuffs", 0.3, 0.0), fw(1, 9, "brake", 0.22, 0.0)],
-          emph=["wildest?", "secret", "recipe.", "cuffed", "former", "cop,", "armored", "car."], min_d=3.5, pad=0.15, tr="push"),
+        S("s07_recipe", "kf69_recipe", [N("The wildest? KFC's secret recipe."), N("It was cuffed to a former cop, in an armored car.", pause_before=0.12)],
+          "revelation", ["K_wild", "K_recipe"], sfx=[fw(0, 0, "riser", 0.22, -0.5), fw(0, 3, "hit", 0.42, -0.03), fw(1, 2, "cuffs", 0.3, 0.0), fw(1, 10, "brake", 0.22, 0.0)],
+          emph=["wildest?", "secret", "recipe.", "cuffed", "former", "cop,", "armored", "car."], min_d=3.5, pad=0.1, tr="push"),
         # D - the SPOKEN SHARE LINE with the recipe's secrecy rule: a steel vault room; the briefcase on a table before a
         #     safe door; a guard stands by
         S("s08_share", "kf69_share", [N("Send this to the mate living on KFC.")],
@@ -76,9 +76,9 @@ def build(h):
           emph=["send", "mate", "living", "KFC."], min_d=3.5, pad=0.3, tr="cut"),
         # E - the punchline back at the hero counter in frame 1's framing (the loop): the empty bucket, the worker, the phone
         #     in the hand returns to frame 1's spot in the last ~0.6 s; the end card
-        S("s09_end", "kf69_end", [N("The recipe never went missing."), N("But the chicken did.", pause_before=0.4)],
-          "aftermath", ["K_punch"], sfx=[fw(0, 3, "sub", 0.3, -0.05), fw(1, 2, "thump", 0.35, 0.0)],
-          emph=["never", "missing.", "chicken", "did."], min_d=3.5, pad=0.6, tr="zoom"),
+        S("s09_end", "kf69_end", [N("The recipe never went missing."), N("But the chicken did.", pause_before=0.3)],
+          "aftermath", ["K_punch"], sfx=[fw(0, 2, "sub", 0.3, -0.05), fw(1, 3, "thump", 0.35, 0.0)],
+          emph=["never", "missing.", "chicken", "did."], min_d=3.5, pad=0.42, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_shut": "B", "s03_fck": "B", "s04_rat": "B", "s05_lab": "C", "s06_lesson": "B",
                 "s07_recipe": "D", "s08_share": "D", "s09_end": "E"}
@@ -133,11 +133,11 @@ def build(h):
     claims = [
         C("K_hook", "In February 2018 KFC's UK restaurants ran out of chicken after a switch of delivery contract to DHL. Narration: 'KFC ran out of chicken.' Headline 'KFC RAN OUT OF CHICKEN / SO PEOPLE CALLED POLICE'.",
           short + ["pa"]),
-        C("K_called", "People contacted the police about the closures: Tower Hamlets police (Metropolitan Police, London) asked people to stop; the Met called them nuisance calls; Greater Manchester Police released audio of a 999 call about a closed branch. Narration: 'So people called the police.' (frame 1 shows a phone calling 999).",
+        C("K_called", "People contacted the police about the closures: Tower Hamlets police (Metropolitan Police, London) asked people to stop; the Met called them nuisance calls; Greater Manchester Police released audio of a 999 call about a closed branch. Narration: 'So people actually called 999.' (frame 1 shows a phone calling 999).",
           calls + ["newshub999", "tribune"]),
         C("K_shut", "STATISTIC (counter): KFC had about 900 UK restaurants and most of them closed (AP: 'most of its 900 outlets'; Reuters: 'the majority of its 900 outlets'; closed counts quoted at different times: 562 (Fortune), more than 600 (PA), more than 700 (KFC via AFP)). Narration: 'Most of its 900 UK restaurants shut.' Counter '900 / KFC UK RESTAURANTS', label 'MOST OF THEM SHUT · FEB 2018'.",
           short),
-        C("K_tweet", "Tower Hamlets police tweeted (20 Feb 2018): 'Please do not contact us about the #KFCCrisis - it is not a police matter if your favourite eatery is not serving the menu that you desire.' (wording as reported by PA, East London Lines, The Week, Business Insider). Narration: 'Police tweeted: not a police matter.' Label: \"'IT IS NOT A POLICE MATTER'\".",
+        C("K_tweet", "Tower Hamlets police tweeted (20 Feb 2018): 'Please do not contact us about the #KFCCrisis - it is not a police matter if your favourite eatery is not serving the menu that you desire.' (wording as reported by PA, East London Lines, The Week, Business Insider). Narration: 'Then police tweeted: not a police matter.' Label: \"'IT IS NOT A POLICE MATTER'\".",
           ["pa", "ell", "week", "bi"]),
         C("K_fck", "FUN FACT: KFC apologised with full-page ads in The Sun and Metro showing an empty KFC bucket with its letters rearranged to read 'FCK' (agency Mother). Narration: 'KFC's apology? A bucket that spelled FCK.' Card 'KFC'S APOLOGY AD: ITS BUCKET / LETTERS REARRANGED TO \"FCK\"'. The ad is NOT reproduced: our card is plain text.",
           ["cnbc", "mweek", "newshubad", "fortunead"]),
@@ -194,7 +194,7 @@ def build(h):
     total = by[scenes[-1]["id"]]["end"] if scenes[-1]["id"] in by else 36.0
     ep["progress"] = {"label": "CASE", "keys": keys, "y": 360, "until": round(total - 3.4 - 0.35, 2)}
     ep["narrator_profile"] = dict(h.NARR, length_scale=1.0, pronounce={
-        "KFC": "K F C", "KFC's": "K F C's", "FCK": "F C K", "900": "nine hundred", "2018": "twenty eighteen"})
+        "KFC": "K F C", "KFC's": "K F C's", "FCK": "F C K", "900": "nine hundred", "999": "nine nine nine"})
     ep["score"] = {"root_hz": 130.81, "bpm": 80,
                    "cliff": {"scene": "s07_recipe", "word": [0, 4], "at": 0.45}}
     ep["content_notes"] = ("Tone: absurd-funny, never mocking. KFC is named only in narration and plain text: no logo, no Colonel "

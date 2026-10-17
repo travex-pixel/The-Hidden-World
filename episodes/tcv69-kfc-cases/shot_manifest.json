@@ -10,10 +10,12 @@
   "distinct_sets": 7,
   "max_set_share": 0.22,
   "shot_sizes": {
-   "wide": 9
+   "wide": 2,
+   "medium-wide": 4,
+   "medium": 3
   },
-  "max_shot_size_share": 1.0,
-  "ok": false
+  "max_shot_size_share": 0.44,
+  "ok": true
  },
  "production_status": {},
  "shots": [
@@ -21,10 +23,10 @@
    "id": "s01_hook",
    "scene_type": "kf69_hook",
    "start": 0.0,
-   "duration": 3.75,
+   "duration": 4.5,
    "narration": [
     "KFC ran out of chicken.",
-    "So people called the police."
+    "So people actually called 999."
    ],
    "caption_timings": [
     {
@@ -61,33 +63,33 @@
     },
     {
      "line": 1,
-     "start": 2.07,
-     "end": 3.417,
+     "start": 2.04,
+     "end": 4.176,
      "words": [
       {
        "w": "So",
-       "start": 2.116,
-       "end": 2.279
+       "start": 2.075,
+       "end": 2.226
       },
       {
        "w": "people",
-       "start": 2.314,
-       "end": 2.558
+       "start": 2.272,
+       "end": 2.528
+      },
+      {
+       "w": "actually",
+       "start": 2.586,
+       "end": 2.946
       },
       {
        "w": "called",
-       "start": 2.592,
-       "end": 2.79
+       "start": 2.992,
+       "end": 3.201
       },
       {
-       "w": "the",
-       "start": 2.825,
-       "end": 2.883
-      },
-      {
-       "w": "police.",
-       "start": 2.929,
-       "end": 3.335
+       "w": "999.",
+       "start": 3.271,
+       "end": 4.118
       }
      ]
     }
@@ -136,7 +138,7 @@
        "expr": "blank"
       },
       {
-       "at": 2.93,
+       "at": 3.27,
        "pose": "hand_to_face",
        "expr": "shocked",
        "turn_head": true
@@ -164,7 +166,7 @@
     {
      "claim": "K_called",
      "type": "established",
-     "claim_text": "People contacted the police about the closures: Tower Hamlets police (Metropolitan Police, London) asked people to stop; the Met called them nuisance calls; Greater Manchester Police released audio of a 999 call about a closed branch. Narration: 'So people called the police.' (frame 1 shows a phone calling 999).",
+     "claim_text": "People contacted the police about the closures: Tower Hamlets police (Metropolitan Police, London) asked people to stop; the Met called them nuisance calls; Greater Manchester Police released audio of a 999 call about a closed branch. Narration: 'So people actually called 999.' (frame 1 shows a phone calling 999).",
      "urls": [
       "https://guernseypress.com/news/viral-news/2018/02/20/metropolitan-police-called-as-chicken-shortage-causes-kfc-branches-to-close/",
       "https://www.theweek.co.uk/91809/police-tell-kfc-customers-to-stop-calling-999-about-chicken-shortage",
@@ -201,7 +203,7 @@
      },
      {
       "name": "radio",
-      "at": 2.929,
+      "at": 3.271,
       "gain": 0.25,
       "word": [
        1,
@@ -226,95 +228,100 @@
   {
    "id": "s02_shut",
    "scene_type": "kf69_shut",
-   "start": 3.75,
+   "start": 4.5,
    "duration": 5.25,
    "narration": [
     "Most of its 900 UK restaurants shut.",
-    "Police tweeted: not a police matter."
+    "Then police tweeted: not a police matter."
    ],
    "caption_timings": [
     {
      "line": 0,
-     "start": 4.0,
-     "end": 6.194,
+     "start": 4.75,
+     "end": 6.944,
      "words": [
       {
        "w": "Most",
-       "start": 4.058,
-       "end": 4.232
+       "start": 4.808,
+       "end": 4.982
       },
       {
        "w": "of",
-       "start": 4.267,
-       "end": 4.313
+       "start": 5.017,
+       "end": 5.063
       },
       {
        "w": "its",
-       "start": 4.348,
-       "end": 4.499
+       "start": 5.098,
+       "end": 5.249
       },
       {
        "w": "900",
-       "start": 4.546,
-       "end": 5.068
+       "start": 5.296,
+       "end": 5.818
       },
       {
        "w": "UK",
-       "start": 5.091,
-       "end": 5.347
+       "start": 5.841,
+       "end": 6.097
       },
       {
        "w": "restaurants",
-       "start": 5.382,
-       "end": 5.834
+       "start": 6.132,
+       "end": 6.584
       },
       {
        "w": "shut.",
-       "start": 5.881,
-       "end": 6.125
+       "start": 6.631,
+       "end": 6.875
       }
      ]
     },
     {
      "line": 1,
-     "start": 6.744,
-     "end": 8.579,
+     "start": 7.294,
+     "end": 9.581,
      "words": [
       {
-       "w": "Police",
-       "start": 6.779,
-       "end": 7.109
-      },
-      {
-       "w": "tweeted:",
-       "start": 7.109,
-       "end": 7.549
-      },
-      {
-       "w": "not",
-       "start": 7.549,
-       "end": 7.715
-      },
-      {
-       "w": "a",
-       "start": 7.715,
-       "end": 7.77
+       "w": "Then",
+       "start": 7.329,
+       "end": 7.574
       },
       {
        "w": "police",
-       "start": 7.77,
-       "end": 8.1
+       "start": 7.574,
+       "end": 7.943
+      },
+      {
+       "w": "tweeted:",
+       "start": 7.943,
+       "end": 8.434
+      },
+      {
+       "w": "not",
+       "start": 8.434,
+       "end": 8.618
+      },
+      {
+       "w": "a",
+       "start": 8.618,
+       "end": 8.679
+      },
+      {
+       "w": "police",
+       "start": 8.679,
+       "end": 9.047
       },
       {
        "w": "matter.",
-       "start": 8.1,
-       "end": 8.485
+       "start": 9.047,
+       "end": 9.477
       }
      ]
     }
    ],
    "visual_description": "kf69 control (cold grade); kf69_officer: sit_type -> hand_to_face -> sit -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b; camera push/pull; overlays: counter, label 'MOST OF THEM SHUT · FEB 2018', label ''IT IS NOT A POLICE MATTER''.",
-   "shot_size": "wide",
+   "shot_size": "medium-wide",
    "set": "kf69_control",
    "grade": "cold",
    "camera": {
@@ -337,7 +344,7 @@
     {
      "id": "kf69_officer",
      "outfit": "default",
-     "depth": 0.98,
+     "depth": 1,
      "scale": 0.86,
      "start_pose": "sit_type",
      "start_expr": "focused",
@@ -354,47 +361,47 @@
        "expr": "stern"
       },
       {
-       "at": 3.36,
+       "at": 3.44,
        "pose": "sit_type_b"
       },
       {
-       "at": 3.54,
+       "at": 3.62,
        "pose": "sit_type"
       },
       {
-       "at": 3.72,
+       "at": 3.8,
        "pose": "sit_type_b"
       },
       {
-       "at": 3.9,
+       "at": 3.98,
        "pose": "sit_type"
       },
       {
-       "at": 4.08,
+       "at": 4.16,
        "pose": "sit_type_b"
       },
       {
-       "at": 4.26,
+       "at": 4.34,
        "pose": "sit_type"
       },
       {
-       "at": 4.44,
+       "at": 4.52,
        "pose": "sit_type_b"
       },
       {
-       "at": 4.62,
+       "at": 4.7,
        "pose": "sit_type"
       },
       {
-       "at": 4.8,
+       "at": 4.88,
        "pose": "sit_type_b"
       },
       {
-       "at": 4.98,
+       "at": 5.06,
        "pose": "sit_type"
       },
       {
-       "at": 5.16,
+       "at": 5.24,
        "pose": "sit_type_b"
       }
      ]
@@ -412,7 +419,7 @@
     },
     {
      "type": "label",
-     "at": 3.56,
+     "at": 3.64,
      "text": "'IT IS NOT A POLICE MATTER'"
     }
    ],
@@ -434,7 +441,7 @@
     {
      "claim": "K_tweet",
      "type": "established",
-     "claim_text": "Tower Hamlets police tweeted (20 Feb 2018): 'Please do not contact us about the #KFCCrisis - it is not a police matter if your favourite eatery is not serving the menu that you desire.' (wording as reported by PA, East London Lines, The Week, Business Insider). Narration: 'Police tweeted: not a police matter.' Label: \"'IT IS NOT A POLICE MATTER'\".",
+     "claim_text": "Tower Hamlets police tweeted (20 Feb 2018): 'Please do not contact us about the #KFCCrisis - it is not a police matter if your favourite eatery is not serving the menu that you desire.' (wording as reported by PA, East London Lines, The Week, Business Insider). Narration: 'Then police tweeted: not a police matter.' Label: \"'IT IS NOT A POLICE MATTER'\".",
      "urls": [
       "https://guernseypress.com/news/viral-news/2018/02/20/metropolitan-police-called-as-chicken-shortage-causes-kfc-branches-to-close/",
       "https://www.eastlondonlines.co.uk/2018/02/drama-sweeps-london-among-nationwide-kfc-closures-due-chicken-shortage/",
@@ -449,7 +456,7 @@
     "sfx": [
      {
       "name": "tick",
-      "at": 4.546,
+      "at": 5.296,
       "gain": 0.25,
       "word": [
        0,
@@ -458,7 +465,7 @@
      },
      {
       "name": "thump",
-      "at": 5.382,
+      "at": 6.132,
       "gain": 0.35,
       "word": [
        0,
@@ -467,20 +474,20 @@
      },
      {
       "name": "typing",
-      "at": 7.009,
+      "at": 7.843,
       "gain": 0.3,
       "word": [
        1,
-       1
+       2
       ]
      },
      {
       "name": "hit",
-      "at": 8.1,
+      "at": 9.047,
       "gain": 0.28,
       "word": [
        1,
-       5
+       6
       ]
      }
     ]
@@ -501,7 +508,7 @@
   {
    "id": "s03_fck",
    "scene_type": "kf69_fck",
-   "start": 9.0,
+   "start": 9.75,
    "duration": 3.75,
    "narration": [
     "KFC's apology? A bucket that spelled FCK."
@@ -509,49 +516,49 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 9.25,
-     "end": 12.071,
+     "start": 10.0,
+     "end": 12.821,
      "words": [
       {
        "w": "KFC's",
-       "start": 9.296,
-       "end": 9.738
+       "start": 10.046,
+       "end": 10.488
       },
       {
        "w": "apology?",
-       "start": 9.784,
-       "end": 10.295
+       "start": 10.534,
+       "end": 11.045
       },
       {
        "w": "A",
-       "start": 10.481,
-       "end": 10.539
+       "start": 11.231,
+       "end": 11.289
       },
       {
        "w": "bucket",
-       "start": 10.597,
-       "end": 10.875
+       "start": 11.347,
+       "end": 11.625
       },
       {
        "w": "that",
-       "start": 10.91,
-       "end": 11.026
+       "start": 11.66,
+       "end": 11.776
       },
       {
        "w": "spelled",
-       "start": 11.084,
-       "end": 11.351
+       "start": 11.834,
+       "end": 12.101
       },
       {
        "w": "FCK.",
-       "start": 11.375,
-       "end": 11.955
+       "start": 12.125,
+       "end": 12.705
       }
      ]
     }
    ],
    "visual_description": "kf69 shop (night grade); kf69_worker: present -> point -> hands_together; kf69_viewer: walk -> walk -> stand -> hand_to_face -> arms_crossed; camera push/pull; overlays: funfact 'KFC'S APOLOGY AD: / AN EMPTY BUCKET READING 'FCK' / CNBC · Marketing Week · Feb 2018'.",
-   "shot_size": "wide",
+   "shot_size": "medium-wide",
    "set": "kf69_shop",
    "grade": "night",
    "camera": {
@@ -594,7 +601,7 @@
     {
      "id": "kf69_viewer",
      "outfit": "default",
-     "depth": 0.9,
+     "depth": 1,
      "scale": 0.86,
      "start_pose": "walk",
      "start_expr": "neutral",
@@ -650,12 +657,12 @@
     "sfx": [
      {
       "name": "paper",
-      "at": 9.1,
+      "at": 9.85,
       "gain": 0.25
      },
      {
       "name": "sparkle",
-      "at": 9.784,
+      "at": 10.534,
       "gain": 0.3,
       "word": [
        0,
@@ -664,7 +671,7 @@
      },
      {
       "name": "thump",
-      "at": 11.375,
+      "at": 12.125,
       "gain": 0.3,
       "word": [
        0,
@@ -690,7 +697,7 @@
   {
    "id": "s04_rat",
    "scene_type": "kf69_rat",
-   "start": 12.75,
+   "start": 13.5,
    "duration": 3.75,
    "narration": [
     "It gets stranger. A man posted a fried rat."
@@ -698,59 +705,59 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 13.0,
-     "end": 15.461,
+     "start": 13.75,
+     "end": 16.211,
      "words": [
       {
        "w": "It",
-       "start": 13.046,
-       "end": 13.128
+       "start": 13.796,
+       "end": 13.878
       },
       {
        "w": "gets",
-       "start": 13.151,
-       "end": 13.337
+       "start": 13.901,
+       "end": 14.087
       },
       {
        "w": "stranger.",
-       "start": 13.36,
-       "end": 13.836
+       "start": 14.11,
+       "end": 14.586
       },
       {
        "w": "A",
-       "start": 14.022,
-       "end": 14.057
+       "start": 14.772,
+       "end": 14.807
       },
       {
        "w": "man",
-       "start": 14.126,
-       "end": 14.3
+       "start": 14.876,
+       "end": 15.05
       },
       {
        "w": "posted",
-       "start": 14.324,
-       "end": 14.695
+       "start": 15.074,
+       "end": 15.445
       },
       {
        "w": "a",
-       "start": 14.73,
-       "end": 14.765
+       "start": 15.48,
+       "end": 15.515
       },
       {
        "w": "fried",
-       "start": 14.811,
-       "end": 15.067
+       "start": 15.561,
+       "end": 15.817
       },
       {
        "w": "rat.",
-       "start": 15.101,
-       "end": 15.403
+       "start": 15.851,
+       "end": 16.153
       }
      ]
     }
    ],
    "visual_description": "kf69 kitchen (night grade); kf69_customer (silhouette): examine -> present -> point; camera push/pull; overlays: label 'CALIFORNIA · JUNE 2015'.",
-   "shot_size": "wide",
+   "shot_size": "medium-wide",
    "set": "kf69_kitchen",
    "grade": "night",
    "camera": {
@@ -773,7 +780,7 @@
     {
      "id": "kf69_customer",
      "outfit": "default",
-     "depth": 0.96,
+     "depth": 1,
      "scale": 0.86,
      "start_pose": "examine",
      "start_expr": "neutral",
@@ -834,7 +841,7 @@
     "sfx": [
      {
       "name": "shutter",
-      "at": 14.324,
+      "at": 15.074,
       "gain": 0.3,
       "word": [
        0,
@@ -843,7 +850,7 @@
      },
      {
       "name": "thud",
-      "at": 15.101,
+      "at": 15.851,
       "gain": 0.3,
       "word": [
        0,
@@ -868,7 +875,7 @@
   {
    "id": "s05_lab",
    "scene_type": "kf69_lab",
-   "start": 16.5,
+   "start": 17.25,
    "duration": 3.75,
    "narration": [
     "The DNA test? KFC said it was chicken."
@@ -876,54 +883,54 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 16.75,
-     "end": 19.084,
+     "start": 17.5,
+     "end": 19.834,
      "words": [
       {
        "w": "The",
-       "start": 16.773,
-       "end": 16.854
+       "start": 17.523,
+       "end": 17.604
       },
       {
        "w": "DNA",
-       "start": 16.913,
-       "end": 17.214
+       "start": 17.663,
+       "end": 17.964
       },
       {
        "w": "test?",
-       "start": 17.284,
-       "end": 17.667
+       "start": 18.034,
+       "end": 18.417
       },
       {
        "w": "KFC",
-       "start": 17.772,
-       "end": 18.213
+       "start": 18.522,
+       "end": 18.963
       },
       {
        "w": "said",
-       "start": 18.271,
-       "end": 18.399
+       "start": 19.021,
+       "end": 19.149
       },
       {
        "w": "it",
-       "start": 18.433,
-       "end": 18.48
+       "start": 19.183,
+       "end": 19.23
       },
       {
        "w": "was",
-       "start": 18.503,
-       "end": 18.608
+       "start": 19.253,
+       "end": 19.358
       },
       {
        "w": "chicken.",
-       "start": 18.631,
-       "end": 19.002
+       "start": 19.381,
+       "end": 19.752
       }
      ]
     }
    ],
    "visual_description": "lab (cold grade); kf69_tech: examine -> point -> present; camera push/pull; overlays: label 'KFC: INDEPENDENT LAB, DNA TEST'.",
-   "shot_size": "wide",
+   "shot_size": "medium",
    "set": "lab",
    "grade": "cold",
    "camera": {
@@ -946,7 +953,7 @@
     {
      "id": "kf69_tech",
      "outfit": "default",
-     "depth": 0.98,
+     "depth": 1,
      "scale": 1,
      "start_pose": "examine",
      "start_expr": "focused",
@@ -993,12 +1000,12 @@
     "sfx": [
      {
       "name": "beep",
-      "at": 16.7,
+      "at": 17.45,
       "gain": 0.15
      },
      {
       "name": "ping",
-      "at": 18.631,
+      "at": 19.381,
       "gain": 0.3,
       "word": [
        0,
@@ -1007,7 +1014,7 @@
      },
      {
       "name": "thump",
-      "at": 18.681,
+      "at": 19.431,
       "gain": 0.3,
       "word": [
        0,
@@ -1032,7 +1039,7 @@
   {
    "id": "s06_lesson",
    "scene_type": "kf69_lesson",
-   "start": 20.25,
+   "start": 21.0,
    "duration": 3.75,
    "narration": [
     "Not sure when to call the police? Save this."
@@ -1040,59 +1047,59 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 20.5,
-     "end": 22.764,
+     "start": 21.25,
+     "end": 23.514,
      "words": [
       {
        "w": "Not",
-       "start": 20.546,
-       "end": 20.744
+       "start": 21.296,
+       "end": 21.494
       },
       {
        "w": "sure",
-       "start": 20.79,
-       "end": 20.953
+       "start": 21.54,
+       "end": 21.703
       },
       {
        "w": "when",
-       "start": 20.976,
-       "end": 21.069
+       "start": 21.726,
+       "end": 21.819
       },
       {
        "w": "to",
-       "start": 21.127,
-       "end": 21.173
+       "start": 21.877,
+       "end": 21.923
       },
       {
        "w": "call",
-       "start": 21.22,
-       "end": 21.417
+       "start": 21.97,
+       "end": 22.167
       },
       {
        "w": "the",
-       "start": 21.44,
-       "end": 21.51
+       "start": 22.19,
+       "end": 22.26
       },
       {
        "w": "police?",
-       "start": 21.545,
-       "end": 21.94
+       "start": 22.295,
+       "end": 22.69
       },
       {
        "w": "Save",
-       "start": 22.114,
-       "end": 22.346
+       "start": 22.864,
+       "end": 23.096
       },
       {
        "w": "this.",
-       "start": 22.381,
-       "end": 22.648
+       "start": 23.131,
+       "end": 23.398
       }
      ]
     }
    ],
    "visual_description": "kf69 shop (night grade); kf69_viewer: stand -> hand_to_face -> arms_crossed; camera push/pull; overlays: lesson 'LIFE AT RISK? 999 / 911 / CRIME HAPPENING NOW? SAME / NOT URGENT? 101 OR ONLINE / UK police forces · GOV.UK · King County 911'.",
-   "shot_size": "wide",
+   "shot_size": "medium",
    "set": "kf69_shop",
    "grade": "night",
    "camera": {
@@ -1115,7 +1122,7 @@
     {
      "id": "kf69_viewer",
      "outfit": "default",
-     "depth": 0.98,
+     "depth": 1,
      "scale": 1.05,
      "start_pose": "stand",
      "start_expr": "focused",
@@ -1162,22 +1169,22 @@
     "sfx": [
      {
       "name": "click",
-      "at": 20.8,
+      "at": 21.55,
       "gain": 0.3
      },
      {
       "name": "click",
-      "at": 21.15,
+      "at": 21.9,
       "gain": 0.3
      },
      {
       "name": "click",
-      "at": 21.5,
+      "at": 22.25,
       "gain": 0.3
      },
      {
       "name": "chime",
-      "at": 22.114,
+      "at": 22.864,
       "gain": 0.25,
       "word": [
        0,
@@ -1202,8 +1209,8 @@
   {
    "id": "s07_recipe",
    "scene_type": "kf69_recipe",
-   "start": 24.0,
-   "duration": 6.0,
+   "start": 24.75,
+   "duration": 5.625,
    "narration": [
     "The wildest? KFC's secret recipe.",
     "It was cuffed to a former cop, in an armored car."
@@ -1211,101 +1218,101 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 24.25,
-     "end": 26.456,
+     "start": 25.0,
+     "end": 27.206,
      "words": [
       {
        "w": "The",
-       "start": 24.273,
-       "end": 24.343
+       "start": 25.023,
+       "end": 25.093
       },
       {
        "w": "wildest?",
-       "start": 24.389,
-       "end": 24.935
+       "start": 25.139,
+       "end": 25.685
       },
       {
        "w": "KFC's",
-       "start": 25.051,
-       "end": 25.574
+       "start": 25.801,
+       "end": 26.324
       },
       {
        "w": "secret",
-       "start": 25.597,
-       "end": 25.922
+       "start": 26.347,
+       "end": 26.672
       },
       {
        "w": "recipe.",
-       "start": 25.957,
-       "end": 26.398
+       "start": 26.707,
+       "end": 27.148
       }
      ]
     },
     {
      "line": 1,
-     "start": 27.006,
-     "end": 29.653,
+     "start": 27.626,
+     "end": 30.273,
      "words": [
       {
        "w": "It",
-       "start": 27.041,
-       "end": 27.11
+       "start": 27.661,
+       "end": 27.73
       },
       {
        "w": "was",
-       "start": 27.134,
-       "end": 27.25
+       "start": 27.754,
+       "end": 27.87
       },
       {
        "w": "cuffed",
-       "start": 27.319,
-       "end": 27.517
+       "start": 27.939,
+       "end": 28.137
       },
       {
        "w": "to",
-       "start": 27.552,
-       "end": 27.633
+       "start": 28.172,
+       "end": 28.253
       },
       {
        "w": "a",
-       "start": 27.656,
-       "end": 27.679
+       "start": 28.276,
+       "end": 28.299
       },
       {
        "w": "former",
-       "start": 27.714,
-       "end": 27.993
+       "start": 28.334,
+       "end": 28.613
       },
       {
        "w": "cop,",
-       "start": 28.063,
-       "end": 28.411
+       "start": 28.683,
+       "end": 29.031
       },
       {
        "w": "in",
-       "start": 28.747,
-       "end": 28.84
+       "start": 29.367,
+       "end": 29.46
       },
       {
        "w": "an",
-       "start": 28.864,
-       "end": 28.945
+       "start": 29.484,
+       "end": 29.565
       },
       {
        "w": "armored",
-       "start": 28.968,
-       "end": 29.247
+       "start": 29.588,
+       "end": 29.867
       },
       {
        "w": "car.",
-       "start": 29.316,
-       "end": 29.583
+       "start": 29.936,
+       "end": 30.203
       }
      ]
     }
    ],
    "visual_description": "kf69 street (dawn grade); kf69_detective (silhouette): stand -> stand_tense; camera push/pull; overlays: impact, label 'LOUISVILLE · SEPT 2008'.",
-   "shot_size": "wide",
+   "shot_size": "medium-wide",
    "set": "kf69_street",
    "grade": "dawn",
    "camera": {
@@ -1328,7 +1335,7 @@
     {
      "id": "kf69_detective",
      "outfit": "default",
-     "depth": 0.97,
+     "depth": 1,
      "scale": 0.84,
      "start_pose": "stand",
      "start_expr": "neutral",
@@ -1339,7 +1346,7 @@
        "turn_head": true
       },
       {
-       "at": 3.52,
+       "at": 3.39,
        "turn_head": true
       }
      ],
@@ -1353,7 +1360,7 @@
     },
     {
      "type": "label",
-     "at": 3.21,
+     "at": 3.08,
      "text": "LOUISVILLE · SEPT 2008"
     }
    ],
@@ -1390,7 +1397,7 @@
     "sfx": [
      {
       "name": "riser",
-      "at": 24.0,
+      "at": 24.75,
       "gain": 0.22,
       "word": [
        0,
@@ -1399,7 +1406,7 @@
      },
      {
       "name": "hit",
-      "at": 25.927,
+      "at": 26.677,
       "gain": 0.42,
       "word": [
        0,
@@ -1408,7 +1415,7 @@
      },
      {
       "name": "cuffs",
-      "at": 27.319,
+      "at": 27.939,
       "gain": 0.3,
       "word": [
        1,
@@ -1417,7 +1424,7 @@
      },
      {
       "name": "brake",
-      "at": 28.968,
+      "at": 29.588,
       "gain": 0.22,
       "word": [
        1,
@@ -1442,7 +1449,7 @@
   {
    "id": "s08_share",
    "scene_type": "kf69_share",
-   "start": 30.0,
+   "start": 30.375,
    "duration": 3.75,
    "narration": [
     "Send this to the mate living on KFC."
@@ -1450,54 +1457,54 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 30.25,
-     "end": 32.317,
+     "start": 30.625,
+     "end": 32.692,
      "words": [
       {
        "w": "Send",
-       "start": 30.331,
-       "end": 30.552
+       "start": 30.706,
+       "end": 30.927
       },
       {
        "w": "this",
-       "start": 30.587,
-       "end": 30.749
+       "start": 30.962,
+       "end": 31.124
       },
       {
        "w": "to",
-       "start": 30.796,
-       "end": 30.865
+       "start": 31.171,
+       "end": 31.24
       },
       {
        "w": "the",
-       "start": 30.912,
-       "end": 30.97
+       "start": 31.287,
+       "end": 31.345
       },
       {
        "w": "mate",
-       "start": 31.005,
-       "end": 31.167
+       "start": 31.38,
+       "end": 31.542
       },
       {
        "w": "living",
-       "start": 31.214,
-       "end": 31.469
+       "start": 31.589,
+       "end": 31.844
       },
       {
        "w": "on",
-       "start": 31.504,
-       "end": 31.62
+       "start": 31.879,
+       "end": 31.995
       },
       {
        "w": "KFC.",
-       "start": 31.643,
-       "end": 32.247
+       "start": 32.018,
+       "end": 32.622
       }
      ]
     }
    ],
    "visual_description": "kf69 vault (cold grade); kf69_guard: hands_behind -> arms_crossed; camera push/pull; overlays: label 'ONLY 2 EXECUTIVES KNOW IT'.",
-   "shot_size": "wide",
+   "shot_size": "medium",
    "set": "kf69_vault",
    "grade": "cold",
    "camera": {
@@ -1520,8 +1527,8 @@
     {
      "id": "kf69_guard",
      "outfit": "default",
-     "depth": 0.9,
-     "scale": 0.8,
+     "depth": 1,
+     "scale": 0.9,
      "start_pose": "hands_behind",
      "start_expr": "stern",
      "actions": [
@@ -1571,12 +1578,12 @@
     "sfx": [
      {
       "name": "keys",
-      "at": 30.1,
+      "at": 30.475,
       "gain": 0.25
      },
      {
       "name": "thump",
-      "at": 31.643,
+      "at": 32.018,
       "gain": 0.3,
       "word": [
        0,
@@ -1601,8 +1608,8 @@
   {
    "id": "s09_end",
    "scene_type": "kf69_end",
-   "start": 33.75,
-   "duration": 4.125,
+   "start": 34.125,
+   "duration": 3.75,
    "narration": [
     "The recipe never went missing.",
     "But the chicken did."
@@ -1610,60 +1617,60 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 34.0,
-     "end": 35.498,
+     "start": 34.375,
+     "end": 35.873,
      "words": [
       {
        "w": "The",
-       "start": 34.035,
-       "end": 34.116
+       "start": 34.41,
+       "end": 34.491
       },
       {
        "w": "recipe",
-       "start": 34.174,
-       "end": 34.592
+       "start": 34.549,
+       "end": 34.967
       },
       {
        "w": "never",
-       "start": 34.627,
-       "end": 34.836
+       "start": 35.002,
+       "end": 35.211
       },
       {
        "w": "went",
-       "start": 34.871,
-       "end": 35.01
+       "start": 35.246,
+       "end": 35.385
       },
       {
        "w": "missing.",
-       "start": 35.045,
-       "end": 35.405
+       "start": 35.42,
+       "end": 35.78
       }
      ]
     },
     {
      "line": 1,
-     "start": 36.198,
-     "end": 37.103,
+     "start": 36.473,
+     "end": 37.378,
      "words": [
       {
        "w": "But",
-       "start": 36.221,
-       "end": 36.314
+       "start": 36.496,
+       "end": 36.589
       },
       {
        "w": "the",
-       "start": 36.349,
-       "end": 36.395
+       "start": 36.624,
+       "end": 36.67
       },
       {
        "w": "chicken",
-       "start": 36.43,
-       "end": 36.709
+       "start": 36.705,
+       "end": 36.984
       },
       {
        "w": "did.",
-       "start": 36.755,
-       "end": 37.011
+       "start": 37.03,
+       "end": 37.286
       }
      ]
     }
@@ -1703,12 +1710,12 @@
        "expr": "blank"
       },
       {
-       "at": 2.68,
+       "at": 2.58,
        "pose": "present",
        "expr": "worried"
       },
       {
-       "at": 3.52,
+       "at": 3.15,
        "pose": "hands_together"
       }
      ]
@@ -1736,7 +1743,7 @@
     "sfx": [
      {
       "name": "sub",
-      "at": 34.821,
+      "at": 35.196,
       "gain": 0.3,
       "word": [
        0,
@@ -1745,7 +1752,7 @@
      },
      {
       "name": "thump",
-      "at": 36.43,
+      "at": 36.705,
       "gain": 0.35,
       "word": [
        1,

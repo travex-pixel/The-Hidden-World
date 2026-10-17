@@ -268,13 +268,13 @@
     // 2 - ITEM 1 + the statistic: a police control room; the officer at the desk types, picks up the ringing phone, then
     //     types the reply; the 900 counter, then the tweet's reported wording
     kf69_shut(ctx) {
-      const t = ctx.t, T = ctx.T, n = WT(ctx, 0, 3, 0.8), l2 = LS(ctx, 1, 3.0), tw = WT(ctx, 1, 1, 3.3);
+      const t = ctx.t, T = ctx.T, n = WT(ctx, 0, 3, 0.8), l2 = LS(ctx, 1, 3.0), tw = WT(ctx, 1, 2, 3.3);
       const typing = (from, to) => { const k = []; let i = 0; for (let tt = from; tt < to; tt += 0.18, i++) k.push({ at: tt, pose: i % 2 ? 'sit_type' : 'sit_type_b', dur: 0.1 }); return k; };
       return E.cine.shot(ctx, {
         set: 'kf69_control', grade: 'cold', haze: 0.3,
         cam: { from: { x: -10, y: 30, z: 1.0 }, to: { x: 10, y: 40, z: 1.06 } },
         figures: [
-          { id: 'kf69_officer', x: 600, y: 1640, scale: 0.86, dir: -1, turn: 0.45, pose: 'sit_type', expr: 'focused', depth: 0.98,
+          { id: 'kf69_officer', x: 600, y: 1640, scale: 0.86, dir: -1, turn: 0.45, pose: 'sit_type', expr: 'focused', depth: 1.0,
             keys: [{ at: 0.6, pose: 'hand_to_face', expr: 'blank', headTurn: 0.3, dur: 0.4 }, { at: n + 1.2, pose: 'sit', expr: 'stern', dur: 0.4 }].concat(typing(tw, T)) }
         ],
         props: [
@@ -299,7 +299,7 @@
         figures: [
           { id: 'kf69_worker', x: 900, y: 1500, scale: 0.6, dir: -1, turn: 0.3, pose: 'present', expr: 'worried', depth: 0.62, hat: { style: 'cap', color: '#2a2422' },
             keys: [{ at: 0.3, pose: 'point', dur: 0.4 }, { at: bk, pose: 'hands_together', expr: 'blank', dur: 0.4 }] },
-          { id: 'kf69_viewer', x: 380, y: 1760, scale: 0.86, dir: 1, turn: 0.4, pose: 'walk', expr: 'neutral', depth: 0.9,
+          { id: 'kf69_viewer', x: 380, y: 1760, scale: 0.86, dir: 1, turn: 0.4, pose: 'walk', expr: 'neutral', depth: 1.0,
             keys: [{ at: 0, x: 240, pose: 'walk', dur: 0.01 }, { at: 0.9, x: 380, pose: 'stand', dur: 0.9 }, { at: ap, pose: 'hand_to_face', expr: 'shocked', dur: 0.4 }, { at: bk + 0.6, pose: 'arms_crossed', expr: 'stern', dur: 0.4 }] }
         ],
         props: [
@@ -321,7 +321,7 @@
         set: 'kf69_kitchen', grade: 'night', haze: 0.3, dof: true,
         cam: { from: { x: 0, y: 20, z: 1.0 }, to: { x: 10, y: 30, z: 1.07 } },
         figures: [
-          { id: 'kf69_customer', x: 780, y: 1640, scale: 0.86, dir: -1, turn: 0.35, pose: 'examine', silhouette: 'warm', depth: 0.96,
+          { id: 'kf69_customer', x: 780, y: 1640, scale: 0.86, dir: -1, turn: 0.35, pose: 'examine', silhouette: 'warm', depth: 1.0,
             keys: [{ at: 0.4, pose: 'present', headTurn: 0.2, dur: 0.4 }, { at: rt + 0.3, pose: 'point', dur: 0.4 }] }
         ],
         props: [
@@ -342,7 +342,7 @@
         set: 'lab', grade: 'cold', haze: 0.25,
         cam: { from: { x: 10, y: 30, z: 1.0 }, to: { x: -10, y: 40, z: 1.07 } },
         figures: [
-          { id: 'kf69_tech', x: 290, y: 1740, scale: 1.0, dir: 1, turn: 0.4, pose: 'examine', expr: 'focused', depth: 0.98,
+          { id: 'kf69_tech', x: 290, y: 1740, scale: 1.0, dir: 1, turn: 0.4, pose: 'examine', expr: 'focused', depth: 1.0,
             keys: [{ at: dn, pose: 'point', dur: 0.4 }, { at: ck, pose: 'present', expr: 'realise', dur: 0.4 }] }
         ],
         props: [
@@ -363,7 +363,7 @@
         set: 'kf69_shop', grade: 'night', haze: 0.4, dof: true,
         cam: { from: { x: 120, y: 160, z: 1.2 }, to: { x: 100, y: 150, z: 1.14 } },
         figures: [
-          { id: 'kf69_viewer', x: 760, y: 1900, scale: 1.05, dir: -1, turn: 0.4, pose: 'stand', expr: 'focused', depth: 0.98,
+          { id: 'kf69_viewer', x: 760, y: 1900, scale: 1.05, dir: -1, turn: 0.4, pose: 'stand', expr: 'focused', depth: 1.0,
             keys: [{ at: 0.5, pose: 'hand_to_face', expr: 'worried', dur: 0.5 }, { at: sv + 0.4, pose: 'arms_crossed', expr: 'determined', dur: 0.5 }] }
         ],
         props: [],
@@ -385,12 +385,12 @@
         set: 'kf69_street', grade: 'dawn', haze: 0.35,
         cam: { from: { x: 0, y: 60, z: 1.04 }, to: { x: 20, y: 70, z: 1.12 }, settle: true },
         figures: [
-          { id: 'kf69_detective', x: 700, y: 1780, scale: 0.84, dir: -1, turn: 0.3, pose: 'stand', silhouette: 'cool', depth: 0.97,
+          { id: 'kf69_detective', x: 700, y: 1780, scale: 0.84, dir: -1, turn: 0.3, pose: 'stand', silhouette: 'cool', depth: 1.0,
             keys: [{ at: sr, pose: 'stand_tense', headTurn: -0.3, dur: 0.4 }, { at: cf + 0.2, headTurn: 0.2, dur: 0.4 }] }
         ],
         props: [
           { depth: 0.86, svg: tt => armoredVan(vx(tt), 1500, 0.78, { doorOpen: tt > cf + 0.3 }) + patrolCar(px(tt), 1480, 0.6, tt) },
-          { depth: 0.97, svg: tt => { const up = seg(tt, cf - 0.2, cf + 0.3); return briefcase(800, 1600 - 30 * up, 0.62, { chainTo: [772, 1470 - 30 * up] }); } }
+          { depth: 1.01, svg: tt => { const up = seg(tt, cf - 0.2, cf + 0.3); return briefcase(800, 1600 - 30 * up, 0.62, { chainTo: [772, 1470 - 30 * up] }); } }
         ],
         overlays: [
           { type: 'impact', at: sr, x: 540, y: 1000 },
@@ -408,7 +408,7 @@
         set: 'kf69_vault', grade: 'cold', haze: 0.3,
         cam: { from: { x: -10, y: 60, z: 1.04 }, to: { x: 10, y: 70, z: 1.1 } },
         figures: [
-          { id: 'kf69_guard', x: 860, y: 1640, scale: 0.8, dir: -1, turn: 0.4, pose: 'hands_behind', expr: 'stern', depth: 0.9,
+          { id: 'kf69_guard', x: 860, y: 1700, scale: 0.9, dir: -1, turn: 0.4, pose: 'hands_behind', expr: 'stern', depth: 1.0,
             keys: [{ at: mt, pose: 'arms_crossed', expr: 'determined', dur: 0.5 }] }
         ],
         props: [

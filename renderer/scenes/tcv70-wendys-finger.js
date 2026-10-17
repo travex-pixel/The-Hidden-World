@@ -10,7 +10,7 @@
    apron; the $2,500,000 counter); the LESSON (a young man on his sofa frowning at a takeaway, captions off) BEFORE item 3;
    item 3 = the biggest reveal in an asphalt yard at dusk (a dump truck's tailgate swings shut; the husband's silhouette
    walks past); the $100 at a kitchen table at night; the spoken share line in the lab (an evidence bag, contents
-   blurred); the punchline back at the hero bowl in frame 1's framing (the loop).
+   blurred; the sentencing label); the punchline back at the hero bowl in frame 1's framing (the loop).
    Smoothness (owner, 44+): cuts and dissolves, one push, one zoom (the end); one slow camera move per shot; settle only on
    the hero dolly-ins (first frame, the reveal, the last frame); one impact, no shake, no handheld.
    Screen direction: people move left to right (the manager, the crew member, the husband); the napkin slides right to left
@@ -61,19 +61,28 @@
     g += `<path d="M150 -10 L300 -170" stroke="#f2f2ee" stroke-width="16" stroke-linecap="round"/><path d="M150 -10 L300 -170" stroke="#c8c8c2" stroke-width="4" stroke-linecap="round" transform="translate(4 2)"/>`;
     // steam
     for (let i = 0; i < 3; i++) { const sx = -120 + i * 110, ph = t * 0.6 + i * 0.37, op = 0.16 * (0.5 + 0.5 * Math.sin(ph * 3)); g += `<path d="M${sx} -40 q-30 -60 0 -120 q30 -60 0 -120" stroke="#ffffff" stroke-width="14" stroke-linecap="round" fill="none" opacity="${f1(op)}" filter="url(#cineSoft)" transform="translate(${f1(10 * Math.sin(ph * 2))} ${f1(-20 * ((ph % 1)))})"/>`; }
-    // the napkin: a folded paper napkin slid in from the right, draped over the rim; its left edge at ax
-    const ax = lerp(300, -236, clamp(nap, 0, 1));
-    g += `<path d="M${f1(ax)} -64 L${f1(ax + 360)} -86 L${f1(ax + 400)} 70 Q${f1(ax + 200)} 104 ${f1(ax + 6)} 86 Q${f1(ax - 18)} 10 ${f1(ax)} -64 Z" fill="#000" opacity="0.18" transform="translate(6 14)"/>`;
-    g += `<path d="M${f1(ax)} -64 L${f1(ax + 360)} -86 L${f1(ax + 400)} 70 Q${f1(ax + 200)} 104 ${f1(ax + 6)} 86 Q${f1(ax - 18)} 10 ${f1(ax)} -64 Z" fill="#f6f1e6" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>`;
-    g += `<path d="M${f1(ax + 120)} -72 Q${f1(ax + 110)} 10 ${f1(ax + 132)} 96 M${f1(ax + 250)} -80 Q${f1(ax + 262)} 0 ${f1(ax + 270)} 92" stroke="#d8d0be" stroke-width="5" fill="none"/>`;
-    g += `<path d="M${f1(ax + 10)} -40 L${f1(ax + 350)} -60" stroke="#ffffff" stroke-width="4" opacity="0.7"/>`;
+    // the napkin: a folded paper napkin lying on the chili, slid in from the right; its left edge at ax. The part past the
+    // rim (x > 236) droops down over the bowl's side, so it always reads as lying ON the bowl
+    const ax = lerp(70, -190, clamp(nap, 0, 1)), w = 300;
+    const ty_ = x => -52 + 0.02 * (x - ax), by_ = x => 58 + 0.02 * (x - ax);
+    const droop = x => x > 236 ? (x - 236) * 0.9 : 0;
+    const P = [];
+    for (let i = 0; i <= 6; i++) { const x = ax + w * i / 6; P.push([x, ty_(x) + droop(x)]); }
+    for (let i = 6; i >= 0; i--) { const x = ax + w * i / 6; P.push([x, by_(x) + droop(x) * 1.15]); }
+    const d = 'M' + P.map(([px, py]) => `${f1(px)} ${f1(py)}`).join(' L') + ' Z';
+    g += `<path d="${d}" fill="#000" opacity="0.2" transform="translate(5 12)"/><path d="${d}" fill="#f6f1e6" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>`;
+    [0.33, 0.66].forEach(k => { const x = ax + w * k; g += `<path d="M${f1(x)} ${f1(ty_(x) + droop(x) + 4)} L${f1(x + 6)} ${f1(by_(x) + droop(x) * 1.15 - 4)}" stroke="#d8d0be" stroke-width="5"/>`; });
+    g += `<path d="M${f1(ax + 12)} ${f1(ty_(ax) + 14)} L${f1(Math.min(ax + w - 20, 236))} ${f1(ty_(Math.min(ax + w - 20, 236)) + 12)}" stroke="#ffffff" stroke-width="4" opacity="0.7"/>`;
     return g + '</g>';
   }
-  // a dark silhouette hand + sleeve reaching in from the right to the napkin's right edge (her hand; no features)
-  function silHand(x, y, s, rot = 8) {
-    return `<g transform="translate(${f1(x)} ${f1(y)}) rotate(${rot}) scale(${sc(s)})"><path d="M60 -40 L520 -90 L540 70 L60 50 Z" fill="#1a1c22" stroke="#0a0b0e" stroke-width="5"/>` +
-      `<path d="M70 -46 Q20 -60 -40 -40 Q-80 -20 -70 0 Q-40 10 0 0 Q-30 30 -20 50 Q20 60 70 46 Z" fill="#20232a" stroke="#0a0b0e" stroke-width="5" stroke-linejoin="round"/>` +
-      `<path d="M540 -90 L540 70" stroke="#9ab0c8" stroke-width="3" opacity="0.4"/></g>`;
+  // a dark silhouette hand + sleeve reaching in from the right, fingertips pinching the napkin's right edge at (x, y)
+  // (her hand; no features)
+  function silHand(x, y, s, rot = -6) {
+    const F = '#1c1f26', K = '#0a0b0e';
+    return `<g transform="translate(${f1(x)} ${f1(y)}) rotate(${rot}) scale(${sc(s)})">` +
+      `<path d="M120 -40 L700 -70 L700 70 L120 44 Z" fill="${F}" stroke="${K}" stroke-width="5"/>` +
+      `<path d="M128 -46 Q80 -50 50 -30 L-10 -26 Q-30 -24 -30 -12 Q-30 -2 -10 -2 L20 -2 L-14 6 Q-32 10 -28 22 Q-24 32 -6 28 L36 20 Q60 44 100 44 L130 40 Z" fill="${F}" stroke="${K}" stroke-width="5" stroke-linejoin="round"/>` +
+      `<path d="M-6 -24 Q40 -40 120 -40 L700 -70" stroke="#9ab0c8" stroke-width="3" fill="none" opacity="0.45"/></g>`;
   }
   // a generic white takeaway box, open (lid up), food inside, a fork; centred (x, y); ~260 wide
   function takeaway(x, y, s) {
@@ -198,8 +207,8 @@
   const BX = 520, BY = 1060, BS = 1.0, TY = 1240;
   const HERO_CAM0 = { x: 0, y: 20, z: 1.03 };
   const napAt = tt => 0.25 + 0.45 * ease.inOut(seg(tt, 0.0, 2.0));
-  const handAt = (nap) => [BX + lerp(300, -236, nap) * BS + 380, BY + 6];
-  const ayalaSeat = (keys) => ({ id: 'wf70_ayala', x: 860, y: 1640, scale: 0.92, dir: -1, turn: 0.45, pose: 'present', silhouette: 'cool', depth: 0.9, keys });
+  const handAt = (nap) => { const ax = lerp(70, -190, clamp(nap, 0, 1)), xr = ax + 300; return [BX + (xr + 10) * BS, BY + (2 + (xr > 236 ? (xr - 236) * 0.9 : 0) + 0.02 * 300) * BS]; };
+  const ayalaSeat = (keys) => ({ id: 'wf70_ayala', x: 870, y: 1760, scale: 1.12, dir: -1, turn: 0.2, pose: 'present', silhouette: 'cool', depth: 0.9, keys });
 
   E.registerScenes({
     // 1 - hook (frame 1): the bowl big and centred, the napkin already sliding across it with her silhouette hand, the
@@ -212,10 +221,10 @@
         figures: [ayalaSeat([{ at: 0, pose: 'present', dur: 0.01 }, { at: th + 0.1, pose: 'hands_together', headTurn: -0.3, dur: 0.5 }, { at: l2 + 0.3, pose: 'arms_crossed', dur: 0.5 }])],
         props: [
           { depth: 1.0, accent: true, svg: tt => bowl(BX, BY, BS, tt, napAt(tt), 0.8) },
-          { depth: 1.02, svg: tt => { const n = napAt(tt), [hx, hy] = handAt(n); const away = seg(tt, th, th + 0.6); return away >= 1 ? '' : `<g opacity="${f1(1 - away)}">${silHand(hx + 260 * away, hy - 20, 0.9)}</g>`; } }
+          { depth: 1.02, svg: tt => { const n = napAt(tt), [hx, hy] = handAt(n); const away = seg(tt, th, th + 0.6); return away >= 1 ? '' : `<g opacity="${f1(1 - away)}">${silHand(hx + 260 * away, hy, 0.9)}</g>`; } }
         ],
         overlays: [
-          { type: 'label', at: Math.max(l2 + 0.2, 3.1), x: 60, y: 1180, text: 'WENDY\'S REWARD: $100,000', fs: 38, sub: 'For the finger\'s source · 2005' }
+          { type: 'label', at: Math.max(l2 + 0.2, 3.3), x: 60, y: 560, text: 'WENDY\'S REWARD: $100,000', fs: 38, sub: 'For the finger\'s source · 2005' }
         ],
         tag: LIKE
       });
@@ -253,7 +262,7 @@
         set: 'wf70_front', grade: 'night', haze: 0.4,
         cam: { from: { x: -10, y: 40, z: 1.0 }, to: { x: 10, y: 50, z: 1.06 } },
         figures: [
-          { id: 'wf70_worker', x: 800, y: 1560, scale: 0.62, dir: 1, turn: 0.4, pose: 'stand', expr: 'sad', depth: 0.9, hat: { style: 'cap', color: '#4a3a30' },
+          { id: 'wf70_worker', x: 800, y: 1560, scale: 0.62, dir: 1, turn: 0.4, pose: 'stand', expr: 'sad', depth: 1.0, hat: { style: 'cap', color: '#4a3a30' },
             keys: [{ at: 0.3, pose: 'bowed', expr: 'sad', dur: 0.5 }, { at: jb, x: 800, pose: 'walk', dur: 0.01 }, { at: T + 0.4, x: 1240, pose: 'walk', dur: T + 0.4 - jb }] }
         ],
         props: [
@@ -276,12 +285,12 @@
         set: 'wf70_room', grade: 'cold', haze: 0.35, dof: true,
         cam: { from: { x: 20, y: 40, z: 1.08 }, to: { x: -10, y: 30, z: 1.0 } },
         figures: [
-          { id: 'wf70_viewer', x: 700, y: 1600, scale: 0.92, dir: -1, turn: 0.4, pose: 'sit', expr: 'focused', depth: 0.98, gaze: [-0.6, 0.6],
+          { id: 'wf70_viewer', x: 700, y: 1780, scale: 0.9, dir: -1, turn: 0.4, pose: 'sit', expr: 'focused', depth: 1.0, gaze: [-0.6, 0.6],
             keys: [{ at: 0.5, pose: 'examine', expr: 'worried', dur: 0.5 }, { at: sv, pose: 'present', expr: 'focused', dur: 0.4 }] }
         ],
         props: [
           { depth: 1.05, accent: true, svg: takeaway(330, 1440, 1.1) },
-          { depth: 1.06, svg: tt => ph > 0 ? `<g opacity="${f1(ph)}">${phone(560, 1250, 0.8, Math.max(0, 1 - 4 * Math.abs(tt - sv - 0.6)) * 0.8)}</g>` : '' }
+          { depth: 1.06, svg: tt => ph > 0 ? `<g opacity="${f1(ph)}">${phone(452, 1050, 0.7, Math.max(0, 1 - 4 * Math.abs(tt - sv - 0.6)) * 0.8)}</g>` : '' }
         ],
         overlays: [
           { type: 'lesson', at: 0.05, save: true, checklist: true, y: 470, rows: [{ text: 'KEEP OBJECT + PACKAGING', fs: 42 }, { text: 'FREEZE WHAT IS LEFT', fs: 42 }, { text: 'REPORT IT TO A REGULATOR', fs: 42 }, { text: 'USDA FSIS · FDA · UK Food Standards Agency', fs: 24, colour: '#c8b89e' }] }
@@ -299,16 +308,16 @@
         set: 'wf70_yard', grade: 'dawn', haze: 0.45,
         cam: { from: { x: 0, y: 60, z: 1.06 }, to: { x: 20, y: 70, z: 1.14 }, settle: true },
         figures: [
-          { id: 'wf70_husband', x: 120, y: 1780, scale: 0.86, dir: 1, turn: 0.4, pose: 'walk', silhouette: 'cool', depth: 0.98,
-            walk: { at: 0.05, dur: Math.max(1.5, cw - 0.2), cadence: 4.2, stride: 14, from: 120, to: 420 },
-            keys: [{ at: cw, x: 420, pose: 'stand', headTurn: -0.5, dur: 0.4 }, { at: tg, pose: 'hands_behind', dur: 0.5 }] }
+          { id: 'wf70_husband', x: -60, y: 1820, scale: 0.8, dir: 1, turn: 0.4, pose: 'walk', silhouette: 'cool', depth: 1.0,
+            walk: { at: 0.05, dur: Math.max(1.5, cw - 0.2), cadence: 4.2, stride: 14, from: -60, to: 170 },
+            keys: [{ at: cw, x: 170, pose: 'stand', headTurn: 0.4, dur: 0.4 }, { at: tg, pose: 'hands_behind', dur: 0.5 }] }
         ],
         props: [
-          { depth: 0.8, accent: false, svg: tt => dumpTruck(620, 1420, 0.62, gate(tt)) }
+          { depth: 0.9, svg: tt => dumpTruck(700, 1520, 0.7, gate(tt)) }
         ],
         overlays: [
-          { type: 'impact', at: cw, x: 300, y: 1100 },
-          { type: 'label', at: l2 + 0.2, x: 60, y: 780, text: 'LAS VEGAS · DECEMBER 2004', fs: 38, sub: 'An accident at work, police said · he was never charged' }
+          { type: 'impact', at: cw, x: 320, y: 1150 },
+          { type: 'label', at: l2 + 0.2, x: 60, y: 780, text: 'LAS VEGAS · DECEMBER 2004', fs: 38, sub: 'An accident at work, police said' }
         ],
         tag: LIKE
       });
@@ -323,7 +332,7 @@
         set: 'kitchen_night', grade: 'night', haze: 0.4, dof: true,
         cam: { from: { x: 0, y: 60, z: 1.04 }, to: { x: -10, y: 70, z: 1.1 } },
         figures: [
-          { id: 'wf70_husband', x: 760, y: 1560, scale: 0.86, dir: -1, turn: 0.4, pose: 'stand', silhouette: 'cool', depth: 0.95,
+          { id: 'wf70_husband', x: 760, y: 1560, scale: 0.86, dir: -1, turn: 0.4, pose: 'stand', silhouette: 'cool', depth: 1.0,
             keys: [{ at: bo - 0.2, pose: 'present', dur: 0.4 }, { at: bo + 1.0, pose: 'arms_crossed', dur: 0.5 }] }
         ],
         props: [
@@ -337,7 +346,7 @@
     },
 
     // 7 - the spoken share line: the lab; a technician holds up an evidence bag (the object inside a soft blur) under the
-    //     lamp and turns it; the source label
+    //     lamp and turns it; the sentencing label
     wf70_share(ctx) {
       const t = ctx.t, T = ctx.T, md = WT(ctx, 0, 4, 1.0);
       return E.cine.shot(ctx, {
@@ -345,14 +354,14 @@
         cam: { from: { x: 0, y: 40, z: 1.06 }, to: { x: 10, y: 50, z: 1.12 } },
         rack: { at: 0.3, dur: 0.7, from: 'bg' },
         figures: [
-          { id: 'wf70_tech', x: 800, y: 1560, scale: 0.86, dir: -1, turn: 0.4, pose: 'examine', expr: 'focused', depth: 0.95,
+          { id: 'wf70_tech', x: 820, y: 1600, scale: 0.9, dir: -1, turn: 0.4, pose: 'examine', expr: 'focused', depth: 1.0,
             keys: [{ at: md, pose: 'present', expr: 'realise', dur: 0.5 }] }
         ],
         props: [
-          { depth: 1.0, svg: tt => evBag(560, 960 + 6 * Math.sin(tt * 1.6), 0.9, -4 + 3 * Math.sin(tt * 0.9)) }
+          { depth: 1.0, svg: tt => evBag(400, 990 + 6 * Math.sin(tt * 1.6), 1.05, -4 + 3 * Math.sin(tt * 0.9)) }
         ],
         overlays: [
-          { type: 'label', at: 0.2, x: 60, y: 780, text: 'SOURCE TRACED · MAY 2005', fs: 38, sub: 'San Jose police, with Las Vegas police' }
+          { type: 'label', at: 0.2, x: 60, y: 540, text: 'SENTENCED · JANUARY 2006', fs: 38, sub: 'Ayala 9 years · her husband 12 years 4 months' }
         ],
         tag: TAG
       });
@@ -369,10 +378,7 @@
         figures: [ayalaSeat([{ at: 0, pose: 'hands_together', dur: 0.01 }, { at: t0, pose: 'present', dur: 0.3 }])],
         props: [
           { depth: 1.0, accent: true, svg: tt => bowl(BX, BY, BS, tt, nap(tt), 0.8) },
-          { depth: 1.02, svg: tt => { if (tt < t0) return ''; const [hx, hy] = handAt(nap(tt)); return `<g opacity="${f1(seg(tt, t0, t0 + 0.2))}">${silHand(hx, hy - 20, 0.9)}</g>`; } }
-        ],
-        overlays: [
-          { type: 'label', at: 0.15, x: 60, y: 1180, text: 'SENTENCED · JANUARY 2006', fs: 38, sub: 'Ayala 9 years · her husband 12 years 4 months', until: T - 0.7 }
+          { depth: 1.02, svg: tt => { if (tt < t0) return ''; const [hx, hy] = handAt(nap(tt)); return `<g opacity="${f1(seg(tt, t0, t0 + 0.2))}">${silHand(hx, hy, 0.9)}</g>`; } }
         ],
         tag: LIKE
       });
