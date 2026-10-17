@@ -311,7 +311,7 @@
         cam: { from: { x: -20, y: 30, z: 1.0 }, to: { x: 10, y: 40, z: 1.07 } },
         figures: [
           { id: 'fj63_smug1', x: 330, y: 1750, scale: 0.42, dir: 1, turn: 0.35, pose: 'stand', silhouette: 'warm', depth: 1.02,
-            keys: [{ at: tk, pose: 'point_up', headTurn: 0.2, dur: 0.4 }, { at: fd + 0.8, pose: 'present', dur: 0.4 }] }
+            keys: [{ at: LS(ctx, 1, tk) + 0.05, pose: 'present', headTurn: -0.3, dur: 0.35 }, { at: tk, pose: 'point_up', headTurn: 0.2, dur: 0.4 }, { at: fd + 0.8, pose: 'present', dur: 0.4 }] }
         ],
         props: [
           { depth: 0.98, svg: () => fenceEnd(RF.x, RF.top, RF.gy, 940, 1215, 26, 34) },
@@ -319,7 +319,7 @@
           { depth: 1.0, svg: () => truck(240, RF.gy, 0.6) }
         ],
         overlays: [
-          { type: 'label', at: tk - 0.1, x: 60, y: 760, text: 'GOLDWATER RANGE · APRIL 2011', fs: 38, sub: 'East of Yuma, Arizona' }
+          { type: 'label', at: LS(ctx, 1, tk) + 0.05, x: 60, y: 760, text: 'GOLDWATER RANGE · APRIL 2011', fs: 38, sub: 'East of Yuma, Arizona' }
         ],
         tag: TAG
       });
@@ -399,7 +399,8 @@
           { depth: 0.95, svg: tt => heli(lerp(880, 790, seg(tt, 0, T)), 800, 0.85, tt, BX, BT + 80, 1) }
         ],
         overlays: [
-          { type: 'label', at: el + 0.1, x: 60, y: 820, text: 'CABEZA PRIETA, ARIZONA · FEB 2019', fs: 36, sub: 'All 11 ran back into Mexico on foot' }
+          { type: 'label', at: el + 0.1, x: 60, y: 820, text: 'CABEZA PRIETA, ARIZONA · FEB 2019', fs: 36, sub: 'All 11 ran back into Mexico on foot' },
+          { type: 'label', at: LS(ctx, 2, T - 2) + 0.05, x: 60, y: 1010, text: "SEND TO A MATE WHO CAN'T PARK", fs: 40, colour: '#f2c46b' }
         ],
         tag: TAG
       });

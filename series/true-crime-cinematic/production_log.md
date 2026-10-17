@@ -384,3 +384,6 @@
 - 2026-10-17 10:23:18 tcv64-pigeon-backpack: VERIFIED -> series/true-crime-cinematic/output/true_crime_64_pigeon_backpack.mp4 (37.0s, 20.1 MB, sha256 f0f2d01582cb)
 - 2026-10-17 10:23:29 produce 63 --force: regenerating episode data
 - 2026-10-17 10:23:29 tcv63-fence-jeep: rendering (final60, seed 1)
+- 2026-10-17 10:46:40 tcv63-fence-jeep: rendered in 1391s
+- 2026-10-17 10:47:24 tcv63-fence-jeep: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_63
+- 2026-10-17 10:48:42 produce 63 --force: regenerating episode data
