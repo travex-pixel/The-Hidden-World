@@ -374,3 +374,5 @@
 - 2026-10-17 07:33:56 tcv61-affluenza: rendering (final60, seed 1)
 - 2026-10-17 08:07:17 tcv61-affluenza: rendered in 2001s
 - 2026-10-17 08:08:00 tcv61-affluenza: VERIFIED -> series/true-crime-cinematic/output/true_crime_61_affluenza.mp4 (37.9s, 18.1 MB, sha256 f07ad4e6add9)
+- 2026-10-17 09:37:50 produce 65 --force: regenerating episode data
+- 2026-10-17 09:37:50 tcv65-prison-rat: rendering (final60, seed 1)

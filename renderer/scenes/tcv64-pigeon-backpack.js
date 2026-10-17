@@ -307,7 +307,7 @@
       const pos = tt => { const u = ease.inOut(seg(tt, -0.3, land)); return [lerp(P0[0], P1[0], u), lerp(P0[1], P1[1], u) + (u < 1 ? BOB(tt) * (1 - u) : 0)]; };
       return E.cine.shot(ctx, {
         set: 'pb64_post', grade: 'dawn', haze: 0.35,
-        cam: { from: { x: -30, y: 60, z: 1.12 }, to: { x: -10, y: 70, z: 1.18 } },
+        cam: { from: { x: 40, y: 60, z: 1.12 }, to: { x: 60, y: 70, z: 1.16 } },
         figures: [
           { id: 'pb64_officer', x: 1080, y: 1740, scale: 0.9, dir: -1, turn: 0.35, pose: 'stand', expr: 'focused', gaze: [-0.5, -0.4], depth: 1.02, hat: { style: 'cap', color: '#6a5e48' },
             walk: { at: 0.05, dur: 1.4, cadence: 3.4, stride: 14, from: 1080, to: 880 }, keys: [{ at: ca, pose: 'present', expr: 'realise', gaze: [-0.6, -0.2], dur: 0.45 }] }

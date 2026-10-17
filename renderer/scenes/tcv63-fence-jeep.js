@@ -310,7 +310,7 @@
         set: 'fj63_range', grade: 'dawn', haze: 0.45,
         cam: { from: { x: -20, y: 30, z: 1.0 }, to: { x: 10, y: 40, z: 1.07 } },
         figures: [
-          { id: 'fj63_smug1', x: 540, y: 1780, scale: 0.55, dir: 1, turn: 0.35, pose: 'stand', silhouette: 'warm', depth: 1.02,
+          { id: 'fj63_smug1', x: 330, y: 1750, scale: 0.42, dir: 1, turn: 0.35, pose: 'stand', silhouette: 'warm', depth: 1.02,
             keys: [{ at: tk, pose: 'point_up', headTurn: 0.2, dur: 0.4 }, { at: fd + 0.8, pose: 'present', dur: 0.4 }] }
         ],
         props: [
@@ -329,13 +329,13 @@
     //     the counter to 1,000 LB on '1,000' (the single impact); a smuggler silhouette scrambles back over the truck
     fj63_load(ctx) {
       const t = ctx.t, T = ctx.T, jp = WT(ctx, 0, 1, 0.4), n = WT(ctx, 0, 4, 1.2);
-      const P = tt => { const u = 0.62 * ease.inOut(seg(tt, -0.2, T)) + 0.06 * ease.out(seg(tt, -0.2, 0.6)); if (u < 0.12) { const k = u / 0.12; return [lerp(RF.hx, RF.ax, k), lerp(RF.hy, RF.ay, k), Math.atan2(RF.ay - RF.hy, RF.ax - RF.hx) / D2R]; }
+      const P = tt => { const u = 0.46 * ease.inOut(seg(tt, -0.2, T)) + 0.06 * ease.out(seg(tt, -0.2, 0.6)); if (u < 0.12) { const k = u / 0.12; return [lerp(RF.hx, RF.ax, k), lerp(RF.hy, RF.ay, k), Math.atan2(RF.ay - RF.hy, RF.ax - RF.hx) / D2R]; }
         const k = (u - 0.12) / 0.88; return [lerp(RF.ax, RF.ex, k), lerp(RF.ay, RF.ey, k), Math.atan2(RF.ey - RF.ay, RF.ex - RF.ax) / D2R]; };
       return E.cine.shot(ctx, {
         set: 'fj63_range', grade: 'dawn', haze: 0.45,
-        cam: { from: { x: 30, y: 40, z: 1.02 }, to: { x: 60, y: 50, z: 1.1 }, settle: true },
+        cam: { from: { x: 10, y: 40, z: 1.02 }, to: { x: 30, y: 50, z: 1.1 }, settle: true },
         figures: [
-          { id: 'fj63_smug2', x: 540, y: 1780, scale: 0.55, dir: 1, turn: 0.35, pose: 'present', silhouette: 'warm', depth: 1.02, hat: { style: 'cap', color: '#2a2a2a' },
+          { id: 'fj63_smug2', x: 330, y: 1750, scale: 0.42, dir: 1, turn: 0.35, pose: 'present', silhouette: 'warm', depth: 1.02, hat: { style: 'cap', color: '#2a2a2a' },
             keys: [{ at: n, pose: 'point_up', headTurn: 0.3, dur: 0.4 }] }
         ],
         props: [
@@ -386,10 +386,10 @@
         set: 'fj63_refuge', grade: 'dawn', haze: 0.35,
         cam: { from: { x: 10, y: 30, z: 1.0 }, to: { x: -10, y: 40, z: 1.07 } },
         figures: [
-          { id: 'fj63_smug1', x: 470, y: 1780, scale: 0.6, dir: -1, turn: 0.3, pose: 'stand_tense', silhouette: 'warm', depth: 1.03,
-            walk: { at: el + 0.2, dur: 1.6, cadence: 7.5, stride: 24, from: 470, to: -200 } },
-          { id: 'fj63_smug2', x: 600, y: 1800, scale: 0.62, dir: -1, turn: 0.3, pose: 'stand_tense', silhouette: 'warm', depth: 1.04, hat: { style: 'cap', color: '#2a2a2a' },
-            walk: { at: el + 0.45, dur: 1.6, cadence: 7.5, stride: 24, from: 600, to: -180 } }
+          { id: 'fj63_smug1', x: 420, y: 1740, scale: 0.46, dir: -1, turn: 0.3, pose: 'stand_tense', silhouette: 'warm', depth: 1.03,
+            walk: { at: el + 0.2, dur: 1.8, cadence: 7.5, stride: 22, from: 420, to: -200 } },
+          { id: 'fj63_smug2', x: 520, y: 1760, scale: 0.48, dir: -1, turn: 0.3, pose: 'stand_tense', silhouette: 'warm', depth: 1.04, hat: { style: 'cap', color: '#2a2a2a' },
+            walk: { at: el + 0.45, dur: 1.8, cadence: 7.5, stride: 22, from: 520, to: -180 } }
         ],
         props: [
           { depth: 0.9, svg: run },
