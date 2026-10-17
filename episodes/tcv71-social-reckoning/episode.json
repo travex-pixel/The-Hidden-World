@@ -1,0 +1,1116 @@
+{
+ "id": "tcv71-social-reckoning",
+ "number": 71,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Social Reckoning Flopped. The Scam Ads Did Not.",
+ "central_question": "Aaron Sorkin's Facebook film bombed at the box office, but Meta's own documents, as reported by Reuters, projected $16 billion from scam ads: the real story in three beats.",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "$16": "sixteen",
+   "Haugen": "Howgun"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "71",
+  "label": "THE SOCIAL RECKONING · META'S SCAM ADS"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s05_billions",
+   "word": [
+    0,
+    2
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "sr71_usher",
+  "sr71_haugen",
+  "sr71_analyst",
+  "sr71_reporter"
+ ],
+ "content_notes": "Tone: ironic and factual, never mocking. Frances Haugen and Jeff Horwitz are real people: drawn ONLY as dark rim-lit silhouettes tagged NOT A LIKENESS, named in plain text. Mark Zuckerberg and the film's actors are never depicted. Meta, Facebook, Instagram, Reuters and Sony are named only as plain text: no logos, no blue 'f', no app icons or interface artwork, no film poster or still; the cinema, phone feed, ad tiles and newsroom are generic illustrations in the series palette. Every revenue figure is attributed to Meta's own documents as reported by Reuters, and Meta's response ('rough and overly-inclusive'; it says it fights fraud) is on screen; nothing says Meta committed fraud; the lawsuits are described as allegations. The quote card is a slide wording reported by the WSJ and others. No dialogue is invented. Facts verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "sr71_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.32
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_tease"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The Social Reckoning bombed. The truth? Worse.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Make it $16 billion worse.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "social",
+    "reckoning",
+    "bombed.",
+    "worse.",
+    "$16",
+    "billion"
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_flop",
+   "scene": "sr71_flop",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "cash",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "K_flop",
+    "K_original"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It opened with $5.5 million.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "The original? Four times that.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "opened",
+    "$5.5",
+    "million.",
+    "original?",
+    "four",
+    "times"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_files",
+   "scene": "sr71_files",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "shutter",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "paper",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_haugen",
+    "K_slide"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2021, Frances Haugen leaked the Facebook Files.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "That part got the movie.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "2021,",
+    "Frances",
+    "Haugen",
+    "leaked",
+    "Facebook",
+    "Files.",
+    "movie."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_docs",
+   "scene": "sr71_docs",
+   "min_duration": 3.5,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      1
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "paper",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_reuters"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But Reuters reported on Meta's own documents.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "Reuters",
+    "Meta's",
+    "own",
+    "documents."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_billions",
+   "scene": "sr71_billions",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_16bn",
+    "K_denial"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They projected $16 billion from ads for scams and banned goods.",
+     "tone": "reveal",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "projected",
+    "$16",
+    "billion",
+    "scams",
+    "banned",
+    "goods."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_rates",
+   "scene": "sr71_rates",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "cash",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_95",
+    "K_rates",
+    "K_tip",
+    "K_daily"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Banning took 95 percent certainty of fraud.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Below that? Higher ad rates.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "banning",
+    "95",
+    "percent",
+    "certainty",
+    "fraud.",
+    "below",
+    "higher",
+    "rates."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s07_reporter",
+   "scene": "sr71_reporter",
+   "min_duration": 3.5,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "typing",
+     "gain": 0.2
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_horwitz",
+    "K_pulitzer",
+    "K_endfilm"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The film's reporter, Jeff Horwitz, broke this story.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "The film opened at $5.5 million.",
+     "tone": "resolve",
+     "pause_after": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "reporter,",
+    "Jeff",
+    "Horwitz,",
+    "broke",
+    "story.",
+    "opened",
+    "$5.5",
+    "million."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "sr71_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "cash",
+     "gain": 0.28
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_end16"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Scam ads paid a projected $16 billion.",
+     "tone": "reveal",
+     "pause_before": 0.1,
+     "pause_after": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "scam",
+    "ads",
+    "paid",
+    "projected",
+    "$16",
+    "billion."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Aaron Sorkin's 'The Social Reckoning' (Sony), about Facebook whistleblower Frances Haugen and the Facebook Files, opened in American theaters on 9 October 2026 to about $5.5 million, well below the $7-8 million forecast, and was widely called a flop/bomb. Narration: 'The Social Reckoning bombed. The truth? Worse.' (the second sentence is editorial framing for what follows). Headline 'THE SOCIAL RECKONING FLOP / THE TRUTH IS WORSE'.",
+   "sources": [
+    "ap_abc4",
+    "ap_wdiv",
+    "wrap",
+    "avclub",
+    "slash",
+    "variety"
+   ]
+  },
+  {
+   "id": "K_tease",
+   "type": "established",
+   "nature": "fact",
+   "text": "Tease of item 3 (the figure is attributed in s04 and on screen): Meta's internal documents, as reported by Reuters, projected about $16 billion of 2024 revenue from ads for scams and banned goods. Narration: 'Make it $16 billion worse.' Label 'META'S OWN PROJECTION, PER REUTERS'.",
+   "sources": [
+    "khaleej",
+    "dstar",
+    "mediapost",
+    "san",
+    "medianama"
+   ]
+  },
+  {
+   "id": "K_flop",
+   "type": "established",
+   "nature": "fact",
+   "text": "Opening weekend (9-11 October 2026): about $5.5 million from 2,606 North American theaters, fifth place (Sunday studio estimate; one outlet reported $5.3 million). Narration: 'It opened with $5.5 million.' Bar label '2026: $5.5M (studio estimate)'.",
+   "sources": [
+    "ap_abc4",
+    "ap_wdiv",
+    "wrap",
+    "avclub",
+    "slash"
+   ]
+  },
+  {
+   "id": "K_original",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Social Network opened to $22.4 million in October 2010 (initial estimate $23 million), about four times The Social Reckoning's opening. Narration: 'The original? Four times that.' Bar label '2010: $22.4M'.",
+   "sources": [
+    "numbers",
+    "hdroom",
+    "tc10",
+    "wrap"
+   ]
+  },
+  {
+   "id": "K_haugen",
+   "type": "established",
+   "nature": "fact",
+   "text": "In 2021 Frances Haugen, a former Facebook product manager, leaked thousands of internal documents (reported by the Wall Street Journal as 'The Facebook Files' from September 2021) and testified to a Senate subcommittee (5 October 2021). Narration: 'In 2021, Frances Haugen leaked the Facebook Files.' then 'That part got the movie.' (the film dramatises Haugen and the Facebook Files; editorial bridge to item 3)",
+   "sources": [
+    "aj21",
+    "npr21",
+    "aa21",
+    "wh21",
+    "variety"
+   ]
+  },
+  {
+   "id": "K_slide",
+   "type": "established",
+   "nature": "fact",
+   "text": "WORDING AS REPORTED (card): a 2019 internal Facebook research slide said 'We make body image issues worse for one in three teen girls' (WSJ, as reported by Al Jazeera and others); Facebook said its research was mischaracterised. Card 'WE MAKE BODY IMAGE ISSUES WORSE FOR ONE IN THREE TEEN GIRLS' / '2019 internal slide, via the WSJ (2021)'.",
+   "sources": [
+    "aj21",
+    "wh21",
+    "npr21"
+   ]
+  },
+  {
+   "id": "K_reuters",
+   "type": "established",
+   "nature": "fact",
+   "text": "A Reuters investigation (November 2025, Jeff Horwitz) was based on internal Meta documents. Narration: 'But Reuters reported on Meta's own documents.'",
+   "sources": [
+    "khaleej",
+    "dstar",
+    "mediapost",
+    "san",
+    "medianama"
+   ]
+  },
+  {
+   "id": "K_16bn",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): Meta's internal documents, as reported by Reuters, projected that about 10 % of its 2024 revenue, about $16 billion, would come from ads for scams and banned goods. Narration: 'They projected $16 billion from ads for scams and banned goods.' Counter '$16,000,000,000 / PROJECTED, SCAM + BANNED-GOODS ADS'.",
+   "sources": [
+    "khaleej",
+    "dstar",
+    "mediapost",
+    "san",
+    "medianama",
+    "blumenthal",
+    "bnn"
+   ]
+  },
+  {
+   "id": "K_denial",
+   "type": "established",
+   "nature": "fact",
+   "text": "META'S RESPONSE (on screen in s05 and s06): spokesman Andy Stone said the documents present a selective view that distorts Meta's approach, called the 10.1 % estimate 'rough and overly-inclusive' (Meta later found the figure was lower; no updated number given), and said Meta fights fraud aggressively. Label 'META: ESTIMATE WAS \"ROUGH AND OVERLY-INCLUSIVE\"'.",
+   "sources": [
+    "khaleej",
+    "dstar",
+    "bandt",
+    "san",
+    "bnn"
+   ]
+  },
+  {
+   "id": "K_95",
+   "type": "established",
+   "nature": "fact",
+   "text": "Per the documents as reported by Reuters, Meta banned advertisers only when its automated systems predicted at least 95 % certainty that they were committing fraud. Narration: 'Banning took 95 percent certainty of fraud.'",
+   "sources": [
+    "khaleej",
+    "dstar",
+    "mediapost",
+    "bnn",
+    "indaily"
+   ]
+  },
+  {
+   "id": "K_rates",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN-FACT-STYLE LIKE MOMENT: if Meta was less certain but still believed an advertiser was a likely scammer, it charged higher ad rates as a penalty, according to the documents (to dissuade them). Narration: 'Below that? Higher ad rates.' Meter tag 'AD PRICE ↑'.",
+   "sources": [
+    "khaleej",
+    "dstar",
+    "mediapost"
+   ]
+  },
+  {
+   "id": "K_daily",
+   "type": "established",
+   "nature": "fact",
+   "text": "A December 2024 document estimated Meta's platforms showed users about 15 billion 'higher-risk' scam ads a day (as reported by Reuters). Label in s06 '15 BILLION \"HIGHER-RISK\" SCAM ADS A DAY'.",
+   "sources": [
+    "khaleej",
+    "dstar",
+    "medianama",
+    "reuters_pz"
+   ]
+  },
+  {
+   "id": "K_tip",
+   "type": "established",
+   "nature": "fact",
+   "text": "SAVE TIP (overlay, official, for the viewer): the FTC says social media ads are not always vetted, prices much, much lower than elsewhere are probably a scam, and scammers ask for gift cards, wire transfers, payment apps or cryptocurrency; Action Fraud warns of investment ads using fake celebrity endorsements. Rows 'WAY TOO CHEAP? LIKELY SCAM', 'CELEB \"INVESTMENT\" AD? NO', 'GIFT CARD OR CRYPTO? NO'.",
+   "sources": [
+    "ftc_ads",
+    "ftc_low",
+    "ftc_top",
+    "af_crypto",
+    "af_celeb"
+   ]
+  },
+  {
+   "id": "K_horwitz",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: Jeff Horwitz, the Wall Street Journal reporter behind the Facebook Files, is portrayed in The Social Reckoning (by Jeremy Allen White; not shown); after joining Reuters in 2025 he reported the scam-ads investigation (the film does not draw on that later reporting). Narration: 'The film's reporter, Jeff Horwitz, broke this story.'",
+   "sources": [
+    "opc",
+    "pulitzer",
+    "reuters_pz",
+    "khaleej",
+    "variety"
+   ]
+  },
+  {
+   "id": "K_pulitzer",
+   "type": "established",
+   "nature": "fact",
+   "text": "Reuters (Jeff Horwitz with Engen Tham) won the 2026 Pulitzer Prize for Beat Reporting (announced 4 May 2026) for its investigations of Meta, including the fraudulent-ad revenue. Card row 'AND WON A 2026 PULITZER'.",
+   "sources": [
+    "pulitzer",
+    "reuters_pz",
+    "gma"
+   ]
+  },
+  {
+   "id": "K_endfilm",
+   "type": "established",
+   "nature": "fact",
+   "text": "Callback: the film's opening weekend, about $5.5 million (studio estimate). Narration (s07, second line): 'The film opened at $5.5 million.'",
+   "sources": [
+    "ap_abc4",
+    "ap_wdiv",
+    "wrap",
+    "avclub",
+    "slash"
+   ]
+  },
+  {
+   "id": "K_end16",
+   "type": "established",
+   "nature": "fact",
+   "text": "Punchline: Meta's own documents, as reported by Reuters, projected about $16 billion from ads for scams and banned goods (Meta disputes the estimate). Narration (last line): 'Scam ads paid a projected $16 billion.' (the ads' projected revenue to Meta) Status label: senators asked the FTC and SEC to investigate (Nov 2025); lawsuits by the U.S. Virgin Islands, the Consumer Federation of America and Santa Clara County are pending allegations.",
+   "sources": [
+    "khaleej",
+    "dstar",
+    "mediapost",
+    "san",
+    "medianama",
+    "blumenthal",
+    "nasdaq",
+    "bnn",
+    "fox9",
+    "bgov"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "ap_abc4",
+   "publisher": "ABC News 4 (Associated Press)",
+   "title": "'Other Mommy' tops the box office with $27.5M; 'The Social Reckoning' opens to $5.5M",
+   "url": "https://abcnews4.com/news/entertainment/other-mommy-tops-the-box-office-with-275m-the-social-reckoning-opens-to-55m",
+   "date": "2026-10-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ap_wdiv",
+   "publisher": "WDIV ClickOnDetroit (Associated Press)",
+   "title": "'Other Mommy' tops the box office with $27.5M; 'The Social Reckoning' opens to $5.5M",
+   "url": "https://www.clickondetroit.com/entertainment/2026/10/11/other-mommy-tops-the-box-office-with-275m-the-social-reckoning-opens-to-55m/",
+   "date": "2026-10-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wrap",
+   "publisher": "TheWrap",
+   "title": "Why Aaron Sorkin's 'The Social Reckoning' Flatlined at the Box Office",
+   "url": "https://thewrap.com/creative-content/movies/the-social-reckoning-box-office-bomb-explained",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "avclub",
+   "publisher": "The A.V. Club",
+   "title": "It's a bad weekend at the box office for The Social Reckoning",
+   "url": "https://www.avclub.com/weekend-box-office-social-reckoning-digger-other-mommy",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "slash",
+   "publisher": "/Film",
+   "title": "5 Reasons Why The Social Reckoning Flopped At The Box Office",
+   "url": "https://www.slashfilm.com/2284247/the-social-reckoning-box-office-flop-reasons/",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "tc26",
+   "publisher": "TechCrunch",
+   "title": "The Social Reckoning (opening weekend vs forecasts)",
+   "url": "https://techcrunch.com/?p=3176485",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "variety",
+   "publisher": "Variety",
+   "title": "'The Social Network' Follow-Up Sets 2026 Release Date and Official Title: 'The Social Reckoning'",
+   "url": "https://variety.com/2025/film/news/the-social-network-sequel-2026-release-date-and-official-title-the-social-reckoning-1236530356",
+   "date": "2025",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "opc",
+   "publisher": "Overseas Press Club Foundation",
+   "title": "Jeff Horwitz to be portrayed in major new film",
+   "url": "https://www.overseaspressclubfoundation.org/opc-blog/jeffhorwitz",
+   "date": "2025",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "numbers",
+   "publisher": "The Numbers",
+   "title": "The Social Network (2010) box office",
+   "url": "https://www.the-numbers.com/movie/Social-Network-The-(2010)",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "hdroom",
+   "publisher": "The HD Room",
+   "title": "The Social Network Atop Weekend Box Office Actuals",
+   "url": "https://thehdroom.com/news/the-social-network-atop-weekend-box-office-actuals-36526/",
+   "date": "2010-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "tc10",
+   "publisher": "TechCrunch",
+   "title": "Opening Weekend: The Social Network Tops Box Office With $23 Million In Ticket Sales",
+   "url": "https://techcrunch.com/2010/10/03/the-social-network-ticket-sales",
+   "date": "2010-10-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "aj21",
+   "publisher": "Al Jazeera",
+   "title": "Facebook knows Instagram is harmful to teen girls: WSJ",
+   "url": "https://www.aljazeera.com/economy/2021/9/14/facebook-knows-instagram-is-harmful-to-teen-girls-wsj",
+   "date": "2021-09-14",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "npr21",
+   "publisher": "NPR",
+   "title": "Transcript: Facebook whistleblower coverage",
+   "url": "https://www.npr.org/transcripts/1044830216",
+   "date": "2021-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "aa21",
+   "publisher": "Anadolu Agency",
+   "title": "Whistleblower says Facebook apps harm children, stoke division",
+   "url": "https://aa.com.tr/en/americas/whistleblower-says-facebook-apps-harm-children-stoke-division/2383766",
+   "date": "2021-10-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wh21",
+   "publisher": "Woman & Home",
+   "title": "Facebook whistleblower says 'eating disorder content' is targeted at teenage girls",
+   "url": "https://www.womanandhome.com/us/life/news-entertainment/facebook-whistleblower-says-eating-disorder-content-is-targeted-at-teenage-girls-to-make-them-use-the-site-more/",
+   "date": "2021-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "khaleej",
+   "publisher": "Khaleej Times (Reuters)",
+   "title": "Meta is earning a fortune on a deluge of fraudulent ads, internal documents show",
+   "url": "https://www.khaleejtimes.com/business/tech/meta-is-earning-a-fortune-on-a-deluge-of-fraudulent-ads-internal-documents-show?amp=1",
+   "date": "2025-11-06",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "dstar",
+   "publisher": "The Daily Star (Reuters)",
+   "title": "Meta is earning a fortune on a deluge of fraudulent ads, internal documents show",
+   "url": "https://www.thedailystar.net/tech-startup/news/meta-earning-fortune-deluge-fraudulent-ads-internal-documents-show-4028761",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "mediapost",
+   "publisher": "MediaPost",
+   "title": "Meta Reportedly Making Billions From Fraudulent Ads",
+   "url": "https://www.mediapost.com/publications/article/410536/meta-reportedly-making-billions-from-fraudulent-ad.html",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "san",
+   "publisher": "Straight Arrow News",
+   "title": "Meta projected 10% of its 2024 revenue would come from scam ads: Report",
+   "url": "https://san.com/cc/meta-projected-10-of-its-2024-revenue-would-come-from-scam-ads-report/",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "medianama",
+   "publisher": "MediaNama",
+   "title": "Meta made billions of dollars from scam ads, internal documents show",
+   "url": "https://www.medianama.com/2025/11/223-meta-billions-dollars-scam-ads-internal-documents/",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "bandt",
+   "publisher": "B&T",
+   "title": "Meta disputes 10% of the ads it serves are scams",
+   "url": "https://www.bandt.com.au/meta-disputes-10-of-the-ads-it-serves-are-scams/",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "blumenthal",
+   "publisher": "Office of Sen. Richard Blumenthal",
+   "title": "Blumenthal and Hawley call for federal investigation of Meta's profiting from scams, fraud",
+   "url": "https://www.blumenthal.senate.gov/newsroom/press/release/blumenthal-and-hawley-call-for-federal-investigation-of-metas-profiting-from-scams_fraud",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nasdaq",
+   "publisher": "Nasdaq (Reuters)",
+   "title": "U.S. senators press FTC and SEC to probe Meta over alleged scam ad revenue",
+   "url": "https://www.nasdaq.com/articles/us-senators-press-ftc-and-sec-probe-meta-over-alleged-scam-ad-revenue",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "bnn",
+   "publisher": "BNN Bloomberg",
+   "title": "Meta is sued by US Virgin Islands over ads for scams, dangers to children",
+   "url": "https://www.bnnbloomberg.ca/business/2025/12/31/meta-is-sued-by-us-virgin-islands-over-ads-for-scams-dangers-to-children/",
+   "date": "2025-12-31",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "indaily",
+   "publisher": "InDaily (AAP)",
+   "title": "Meta is sued over ads for scams, dangers to children",
+   "url": "https://www.indailysa.com.au/news/just-in/2025/12/31/meta-is-sued-over-ads-for-scams-dangers-to-children",
+   "date": "2025-12-31",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox9",
+   "publisher": "FOX 9",
+   "title": "Meta scam ad lawsuit alleges company profited billions while misleading users",
+   "url": "https://www.fox9.com/news/meta-lawsuit-2026-scam-ads-profit-mislead-facebook-instagram",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "bgov",
+   "publisher": "Bloomberg Government",
+   "title": "Meta Sued by California County Over 'Scam' Advertisements",
+   "url": "https://news.bgov.com/tech-and-telecom-law/meta-sued-by-california-county-over-scam-advertisements-1",
+   "date": "2026-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pulitzer",
+   "publisher": "The Pulitzer Prizes",
+   "title": "Jeff Horwitz and Engen Tham of Reuters (Beat Reporting, 2026)",
+   "url": "https://www.pulitzer.org/winners/jeff-horwitz-and-engen-tham-reuters",
+   "date": "2026-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "reuters_pz",
+   "publisher": "Internazionale (Reuters)",
+   "title": "Reuters wins beat reporting Pulitzer for Meta investigations",
+   "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/05/04/reuters-wins-beat-reporting-pulitzer-for-meta-investigations",
+   "date": "2026-05-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "gma",
+   "publisher": "GMA News",
+   "title": "Reuters wins Pulitzers for national and beat reporting",
+   "url": "https://www.gmanetwork.com/news/topstories/world/986414/reuters-pulitzer-national-and-beat-reporting/story/",
+   "date": "2026-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ftc_ads",
+   "publisher": "FTC Consumer Advice",
+   "title": "Are ads on social media vetted or checked for scams? Here's what to know",
+   "url": "https://consumer.ftc.gov/consumer-alerts/2026/08/are-ads-social-media-vetted-or-checked-scams-heres-what-know",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ftc_low",
+   "publisher": "FTC Consumer Advice",
+   "title": "Spot an ad on social for a low, low price on a brand name product? Think twice",
+   "url": "https://consumer.ftc.gov/consumer-alerts/2024/05/spot-ad-social-low-low-price-brand-name-product-think-twice",
+   "date": "2024-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ftc_top",
+   "publisher": "FTC Consumer Advice",
+   "title": "How to spot the top scams that started on social media",
+   "url": "https://consumer.ftc.gov/consumer-alerts/2026/04/how-spot-top-scams-started-social-media",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ftc_data",
+   "publisher": "Federal Trade Commission",
+   "title": "New FTC Data Show People Have Lost Billions to Social Media Scams",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/04/new-ftc-data-show-people-have-lost-billions-social-media-scams",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "af_crypto",
+   "publisher": "Action Fraud (UK)",
+   "title": "Cryptocurrency fraud",
+   "url": "https://www.actionfraud.police.uk/cryptocurrencyfraud",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "af_celeb",
+   "publisher": "Yahoo News (PA)",
+   "title": "Public warned over investment scams using fake celebrity endorsements",
+   "url": "https://news.yahoo.com/public-warned-over-investment-scams-using-fake-celebrity-endorsements-145721988.html",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 4,
+ "search_terms": [
+  "the social reckoning",
+  "facebook scams",
+  "meta scam ads"
+ ],
+ "palette": {
+  "shadow": "#141b26",
+  "mid": "#c8baa4",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "THE SOCIAL RECKONING FLOP"
+   },
+   {
+    "text": "THE TRUTH IS WORSE",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WOULD YOU QUIT FACEBOOK?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "TAG THE MATE WHO CLICKS ADS",
+    "fs": 44
+   }
+  ],
+  "from": 3.4,
+  "y": 420
+ },
+ "progress": {
+  "label": "THE STORY",
+  "keys": [
+   {
+    "t": 5.22,
+    "v": "1 · THE FLOP"
+   },
+   {
+    "t": 11.27,
+    "v": "2 · THE WHISTLEBLOWER"
+   },
+   {
+    "t": 19.62,
+    "v": "3 · $16 BILLION"
+   }
+  ],
+  "y": 360,
+  "until": 33.75
+ },
+ "legal_status_verified": "2026-10-17"
+}
