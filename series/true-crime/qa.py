@@ -132,6 +132,10 @@ def main(argv=None) -> int:
         rec.update(status="failed_qa", next_task="inspect qa/ and fix; then re-run qa.py"); save(m)
         print(json.dumps(rec, indent=2)); return 1
     dst = SERIES / "output" / ep["file"]; dst.parent.mkdir(exist_ok=True); shutil.copy2(src, dst)
+    # the Reels cover: frame 1 with the headline fully drawn (engagement headlines are complete at t = 0), saved next to
+    # the MP4 so the grid shows the hook, not a mid-sentence frame
+    cover = dst.with_name(dst.stem + "_cover.jpg")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.2", "-i", str(dst), "-frames:v", "1", "-q:v", "2", str(cover)], check=True)
     shutil.copy2(out / "script.md", qadir / "timed_script.md")
     rec.update(status="verified_automated", sha256=sha256(dst), output=str(dst.relative_to(ROOT)), verified=time.strftime("%Y-%m-%dT%H:%M:%S"),
                next_task="human-style frame review recorded in production_manifest.json 'editorial_review'")

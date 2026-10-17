@@ -62,4 +62,15 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
     checks["ends_within_1s_of_last_word"] = tail_s <= 1.8; notes["tail_s"] = round(tail_s, 2)   # from the START of the last word (a slow human last word is ~0.6 s)
     # 9. air: not more than 150 spoken words per minute
     wpm = len(words) / max(total, 1) * 60; checks["pace_under_150_wpm"] = wpm <= 150; notes["wpm"] = round(wpm, 1)
+    # version 2 (Case File 59's curve: the list held ~48 % flat, then the tail leaked through the save card and a
+    # two-line ending). Only episodes that set "engagement_version": 2 get these, so earlier episodes are not re-judged
+    if ep.get("engagement_version", 1) >= 2 and tl:
+        lines = [ln for sc in tl for ln in sc.get("lines", [])]
+        hook_end = lines[0]["end"] if lines else 0.0
+        checks["hook_line_done_by_2_6s"] = hook_end <= 2.6; notes["hook_end_s"] = round(hook_end, 2)
+        ids = [sc["id"] for sc in tl]; li = next((i for i, s in enumerate(ids) if "lesson" in s), None)
+        # the save card sits before the last story beat, so the best item is still to come when it appears
+        checks["save_card_before_last_beat"] = li is not None and li <= len(ids) - 3; notes["lesson_scene"] = ids[li] if li is not None else None
+        end_len = tl[-1]["end"] - tl[-1]["start"]
+        checks["single_punchline_ending"] = end_len <= 5.0 and len(tl[-1].get("lines", [])) <= 2; notes["end_scene_s"] = round(end_len, 2)
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}
