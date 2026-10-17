@@ -28,11 +28,24 @@ def highpass(x: np.ndarray, fc: float) -> np.ndarray:
     return np.fft.irfft(X, len(x)).astype(np.float32)
 
 
-def speech_envelope(nar: np.ndarray, attack: float = 0.04, release: float = 0.3, lookahead: float = 0.15) -> np.ndarray:
-    """0..1 'speech present' curve: RMS in 20 ms frames, smoothed attack/release, shifted earlier by the look-ahead."""
+def hold_gaps(on: np.ndarray, hold: float, frame: float = 0.02) -> np.ndarray:
+    """Fill dips shorter than `hold` seconds between two speech frames (the what-if engine's mix: the bed stays down
+    through the short pauses between lines instead of swelling and dropping again, which reads as pumping)."""
+    if hold <= 0 or not len(on):
+        return on
+    out = on.copy(); sp = np.where(on > 0.5)[0]
+    for a, b in zip(sp[:-1], sp[1:]):
+        if 1 < b - a <= hold / frame:
+            out[a:b] = np.maximum(out[a:b], min(on[a], on[b]))
+    return out
+
+
+def speech_envelope(nar: np.ndarray, attack: float = 0.04, release: float = 0.3, lookahead: float = 0.15, hold: float = 0.0) -> np.ndarray:
+    """0..1 'speech present' curve: RMS in 20 ms frames, gaps shorter than `hold` filled, smoothed attack/release,
+    shifted earlier by the look-ahead."""
     hop = int(0.02 * SR); m = len(nar) // hop
     rms = np.sqrt(np.mean(nar[: m * hop].reshape(m, hop) ** 2, axis=1) + 1e-12)
-    on = np.clip((20 * np.log10(rms) + 46) / 10, 0, 1)            # -46 dBFS = silence, -36 dBFS and above = speech
+    on = hold_gaps(np.clip((20 * np.log10(rms) + 46) / 10, 0, 1), hold)   # -46 dBFS = silence, -36 dBFS and above = speech
     out = np.zeros(m); acc = 0.0; ka = np.exp(-0.02 / attack); kr = np.exp(-0.02 / release)
     for i, v in enumerate(on):
         acc = v + (acc - v) * (ka if v > acc else kr); out[i] = acc
@@ -73,7 +86,7 @@ def mixdown(total: float, clips: list, stems: dict, sfx_events: list, tl: list, 
     for ev in sfx_events:
         at, name = ev[0], ev[1]; gain = ev[2] if len(ev) > 2 else 1.0
         cache.setdefault(name, make_sfx(name, seed)); add(fx, cache[name] * gain, at)
-    sp = speech_envelope(nar); drop = drop_curve(n, tl, ep)
+    sp = speech_envelope(nar, hold=0.8 if (ep.get("engagement_version") or 1) >= 4 else 0.0); drop = drop_curve(n, tl, ep)
     L = nar.copy(); R = nar.copy(); music = np.zeros(n, np.float32); ducked = {}
     for k, x in stems.items():
         x = x[:n] if len(x) >= n else np.pad(x, (0, n - len(x)))

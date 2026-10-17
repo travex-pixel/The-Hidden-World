@@ -331,7 +331,38 @@
     }
     return L;
   }
+  // engine v4 (engagement_version >= 4): camera keys on a monotone cubic spline (Fritsch-Carlson, as in the what-if
+  // engine): velocity carries through moving keys, a repeated value is a true hold, nothing overshoots. Each key's
+  // value is reached at at + dur. A plain from/to shot "cruises": 70 % linear, so it is still moving at the cut and the
+  // next shot picks the motion up instead of every shot easing to a stop (the stop-start feel).
+  function monotone(ts, vs, t) {
+    const n = ts.length; if (t <= ts[0]) return vs[0]; if (t >= ts[n - 1]) return vs[n - 1];
+    const d = [], m = new Array(n).fill(0);
+    for (let i = 0; i < n - 1; i++) d.push((vs[i + 1] - vs[i]) / Math.max(1e-6, ts[i + 1] - ts[i]));
+    for (let i = 1; i < n - 1; i++) m[i] = d[i - 1] * d[i] <= 0 ? 0 : (d[i - 1] + d[i]) / 2;
+    m[0] = d[0]; m[n - 1] = d[n - 2];
+    for (let i = 0; i < n - 1; i++) {
+      if (d[i] === 0) { m[i] = 0; m[i + 1] = 0; continue; }
+      const a = m[i] / d[i], b = m[i + 1] / d[i], h = a * a + b * b;
+      if (h > 9) { const s = 3 / Math.sqrt(h); m[i] = s * a * d[i]; m[i + 1] = s * b * d[i]; }
+    }
+    let k = 0; while (t > ts[k + 1]) k++;
+    const hh = ts[k + 1] - ts[k], u = (t - ts[k]) / hh, u2 = u * u, u3 = u2 * u;
+    return (2 * u3 - 3 * u2 + 1) * vs[k] + (u3 - 2 * u2 + u) * hh * m[k] + (-2 * u3 + 3 * u2) * vs[k + 1] + (u3 - u2) * hh * m[k + 1];
+  }
+  const v4 = ctx => !!(ctx.ep && (ctx.ep.engagement_version || 1) >= 4);
   function camBase(ctx, cam) {
+    if (cam.keys && v4(ctx)) {
+      const ks = cam.keys, ts = [ks[0].at || 0], c0 = { x: 0, y: 0, z: 1, ...ks[0] }, P = { x: [c0.x], y: [c0.y], z: [c0.z] };
+      for (const k of ks.slice(1)) { const p = { x: k.x ?? P.x[P.x.length - 1], y: k.y ?? P.y[P.y.length - 1], z: k.z ?? P.z[P.z.length - 1] };
+        ts.push(Math.max(ts[ts.length - 1] + 0.05, (k.at || 0) + (k.dur || 0.8))); P.x.push(p.x); P.y.push(p.y); P.z.push(p.z); }
+      return { x: monotone(ts, P.x, ctx.t), y: monotone(ts, P.y, ctx.t), z: monotone(ts, P.z, ctx.t) };
+    }
+    if (!cam.keys && v4(ctx)) {
+      const u0 = clamp(ctx.t / ctx.T, 0, 1), first = !ctx.sceneStart;
+      const p = first ? ease.out(u0) : 0.7 * u0 + 0.3 * ease.inOut(u0); const a = cam.from || { x: 0, y: 0, z: 1 }, b = cam.to || a;
+      return { x: lerp(a.x || 0, b.x || 0, p), y: lerp(a.y || 0, b.y || 0, p), z: lerp(a.z || 1, b.z || 1, p) };
+    }
     if (cam.keys) {   // piecewise moves: [{at, x, y, z, dur}] each eased from the previous key
       let c = { x: 0, y: 0, z: 1, ...cam.keys[0] };
       for (const k of cam.keys.slice(1)) { const u = settle(clamp((ctx.t - k.at) / (k.dur || 0.8), 0, 1), k.settle ?? cam.settle); if (u <= 0) break; c = { x: lerp(c.x, k.x ?? c.x, u), y: lerp(c.y, k.y ?? c.y, u), z: lerp(c.z, k.z ?? c.z, u) }; }

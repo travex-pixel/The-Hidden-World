@@ -70,6 +70,8 @@
 | 66 | `true_crime_66_louvre_one_year.mp4` (archived outside git) | Trending: the Louvre heist one year on (jewels still missing), the Renoir museum and the 330-lb Dalí theft; AI voice; post 19 Oct 2026 | see `production_manifest.json` |
 | 67 | `true_crime_67_underwear_birds.mp4` (archived outside git) | Trending: 10 live birds allegedly hidden in underwear at Miami airport (Oct 2026) and two other wildlife smuggling cases; AI voice | see `production_manifest.json` |
 | 68 | `true_crime_68_chicken_heist.mp4` (archived outside git) | Trending: the Memphis chicken heist (Sept 2026), 100,000 stolen eggs and the missing KitKat truck; AI voice | see `production_manifest.json` |
+| 69 | `true_crime_69_kfc_cases.mp4` (archived outside git) | KFC's strangest cases: the 2018 UK shortage 999 calls, the 'fried rat', the recipe in an armoured car; AI voice | see `production_manifest.json` |
+| 70 | `true_crime_70_wendys_finger.mp4` (archived outside git) | The 2005 Wendy's chili finger hoax and the $100 fingertip; AI voice | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

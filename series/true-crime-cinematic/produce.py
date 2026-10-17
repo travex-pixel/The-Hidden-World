@@ -71,7 +71,7 @@ def produce(ep: dict, force: bool, tts: str | None = None) -> bool:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("which", help="episode number from series.json, or 'all'"); ap.add_argument("--force", action="store_true")
-    ap.add_argument("--tts", choices=["piper", "elevenlabs", "recorded"], default=None, help="narration provider override (default: each episode's profile, i.e. Piper)")
+    ap.add_argument("--tts", choices=["piper", "elevenlabs", "recorded", "kokoro"], default=None, help="narration provider override (default: each episode's profile, i.e. Piper)")
     a = ap.parse_args(argv)
     log(f"produce {a.which}{' --force' if a.force else ''}: regenerating episode data")
     eps = CFG["episodes"] if a.which == "all" else [e for e in CFG["episodes"] if str(e["n"]) == a.which]

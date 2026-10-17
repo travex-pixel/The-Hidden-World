@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv70-wendys-finger/tcv70-wendys-finger.mp4",
-    "size_bytes": 15588048,
+    "size_bytes": 15580796,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -44,7 +44,7 @@
     "true_peak_ok": true,
     "narration_intelligible_asr": true,
     "captions_in_safe_area": true,
-    "no_frozen_or_static_picture": false,
+    "no_frozen_or_static_picture": true,
     "audio_opening_speech_steady": true,
     "audio_opening_no_holes": true,
     "audio_narration_on_time": true,
@@ -100,17 +100,11 @@
       "rows_scaled_to_fit": []
     },
     "motion": {
-      "ok": false,
-      "longest_still_s": 1.0,
+      "ok": true,
+      "longest_still_s": 1.2,
       "still_spans_over_limit": [],
-      "beats_without_visual_change": [
-        {
-          "scene": "s03_cost",
-          "at": 13.2,
-          "text": "The charges put the loss at $2.5 million"
-        }
-      ],
-      "median_motion": 0.88,
+      "beats_without_visual_change": [],
+      "median_motion": 0.87,
       "frames": 375
     },
     "audio": {

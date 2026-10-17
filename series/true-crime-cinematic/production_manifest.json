@@ -5834,7 +5834,7 @@
         "fps": 60.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 15588048,
+        "size_bytes": 15580796,
         "mean_volume_db": -16.5,
         "max_volume_db": -1.7
       },
@@ -5866,7 +5866,7 @@
         "true_peak_ok": true,
         "narration_intelligible_asr": true,
         "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": false,
+        "no_frozen_or_static_picture": true,
         "audio_opening_speech_steady": true,
         "audio_opening_no_holes": true,
         "audio_narration_on_time": true,
@@ -5901,8 +5901,11 @@
       "asr_word_error_rate": 0.021,
       "frames_sampled": 7,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_70",
-      "status": "failed_qa",
-      "next_task": "inspect qa/ and fix; then re-run qa.py"
+      "status": "verified_automated",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "sha256": "ad37cf80baf64fa39367d2cb04eb212f4ee62c9edac70f7239810345efe9b483",
+      "output": "series/true-crime-cinematic/output/true_crime_70_wendys_finger.mp4",
+      "verified": "2026-10-17T14:49:11"
     },
     "69": {
       "id": "tcv69-kfc-cases",
@@ -5989,7 +5992,7 @@
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
     }
   },
-  "updated": "2026-10-17T14:12:50",
+  "updated": "2026-10-17T14:49:11",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

@@ -116,7 +116,7 @@ def main(argv=None) -> int:
     ap.add_argument("--visual", choices=["art", "svg"], default=None, help="art = illustrated panels (episode default); svg = code-drawn scenes")
     ap.add_argument("--plan-only", action="store_true", help="stop after writing plan.json (for quick stills with pipeline/stills.mjs)")
     ap.add_argument("--reuse-video", action="store_true", help="skip frame rendering and reuse out/<id>/video_silent.mp4 (audio-only iteration)")
-    ap.add_argument("--tts", choices=["piper", "elevenlabs", "recorded"], default=None,
+    ap.add_argument("--tts", choices=["piper", "elevenlabs", "recorded", "kokoro"], default=None,
                     help="narration provider for this build; overrides every voice profile (default: the profile, i.e. Piper)")
     args = ap.parse_args(argv)
     if args.tts:

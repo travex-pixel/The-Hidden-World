@@ -7,7 +7,7 @@ Provider selection (pipeline/tts_elevenlabs.py is only imported when ElevenLabs 
     with the provider, voice id, model id, settings and text in the hash, so the two can never collide.
 """
 from __future__ import annotations
-import hashlib, json, os, re, wave
+import hashlib, json, os, re, subprocess, wave
 from pathlib import Path
 import numpy as np
 
@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / ".cache" / "narration"
 SR = 22050
 PROVIDER_ENV = "HW_TTS_PROVIDER"
-PROVIDERS = ("piper", "elevenlabs", "recorded")   # recorded = the owner's own voice, imported by pipeline/voice_import.py
+PROVIDERS = ("piper", "elevenlabs", "recorded", "kokoro")   # recorded = the owner's own voice (pipeline/voice_import.py); kokoro = Kokoro-82M (pipeline/kokoro.py)
 
 
 def provider_of(v: dict | None) -> str:
@@ -357,6 +357,19 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
             gap = int(ln.get("pause_after", 0.3) * sr)
             parts.append(np.zeros(gap, np.float32)); t += gap / sr
             continue
+        if prov == "kokoro":   # Kokoro-82M: one sentence per call, delivery from the line's tone (pipeline/kokoro.py)
+            x, sr_, d = _narrate_kokoro(spoken, v, ln); sr = sr or sr_
+            if sr_ != sr:
+                x = np.interp(np.linspace(0, len(x) - 1, int(len(x) * sr / sr_)), np.arange(len(x)), x)
+            pre = int(ln.get("pause_before", d["pre"]) * sr)
+            if pre:
+                parts.append(np.zeros(pre, np.float32)); t += pre / sr
+            lines.append({"who": ln["who"], "text": ln["text"], "start": round(t, 3), "end": round(t + len(x) / sr, 3), "env": lip_envelope(x, sr),
+                          "words": estimate_words(x, sr, ln["text"]), "timing": "estimated_from_audio", "tone": d["tone"]})
+            parts.append(x.astype(np.float32)); t += len(x) / sr
+            gap = int(ln.get("pause_after", d["after"]) * sr)
+            parts.append(np.zeros(gap, np.float32)); t += gap / sr
+            continue
         align = bool(v.get("word_timing")) or prov == "elevenlabs"   # ElevenLabs timings come free with the audio
         p = narrate_scene(v.get("model", ""), spoken, v.get("length_scale", 1.0) * ln.get("speed", 1.0), v.get("speaker"),
                           align=align, profile=v, speed_mult=ln.get("speed", 1.0))
@@ -393,12 +406,47 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
     clip = np.concatenate(parts[:-1]) if len(parts) > 1 else parts[0]
     prov = provider_of(narrator_voice)   # the resolved provider (and its voice/model) must separate the joined-clip keys too
     prov_key = [prov] + ([sorted(elevenlabs_config(narrator_voice).items())] if prov == "elevenlabs" else []) + ([hashlib.sha1(_recorded_manifest()["raw"]).hexdigest()] if prov == "recorded" else [])
-    key = hashlib.sha1(repr([(l["who"], l["text"]) for l in scene["lines"]] + ([sorted(narrator_voice.items())] if narrator_voice else []) + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]] + [ln.get("fx", "") for ln in scene["lines"]] + prov_key).encode()).hexdigest()[:16]
+    key = hashlib.sha1(repr([(l["who"], l["text"], l.get("tone", "")) for l in scene["lines"]] + ([sorted(narrator_voice.items())] if narrator_voice else []) + [ln.get("pause_after", 0.3) for ln in scene["lines"]] + [ln.get("pause_before", 0) for ln in scene["lines"]] + [ln.get("speed", 1.0) for ln in scene["lines"]] + [ln.get("fx", "") for ln in scene["lines"]] + prov_key).encode()).hexdigest()[:16]
     out = CACHE / f"dlg_{key}.wav"
     with wave.open(str(out), "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
         w.writeframes((np.clip(clip, -1, 1) * 32767).astype(np.int16).tobytes())
     return {"path": str(out), "duration": round(len(clip) / sr, 3), "lines": lines}
+
+
+# Kokoro delivery. The tone presets are the what-if/documentary engines' (pipeline/kokoro.py DELIVERY); "energy"
+# (0..1, profile key) lifts them for short-form: faster speech, tighter pauses, and an exclamation on the lines that
+# should land with a push (Kokoro reads "!" with more pitch movement). Captions keep the written punctuation.
+PUSH_TONES = {"hook", "reveal", "playful", "confident"}
+
+
+def kokoro_delivery(tone: str, energy: float = 0.0) -> dict:
+    from pipeline.kokoro import DELIVERY
+    base = DELIVERY.get(tone) or DELIVERY["confident"]; e = max(0.0, min(1.0, energy))
+    return {"tone": tone if tone in DELIVERY else "confident", "speed": base["speed"] * (1 + 0.12 * e),
+            "pre": base["pre"] * (1 - 0.45 * e), "after": base["after"] * (1 - 0.45 * e)}
+
+
+def kokoro_text(spoken: str, tone: str, energy: float) -> str:
+    if energy >= 0.5 and tone in PUSH_TONES:
+        return re.sub(r"\.(\s*)$", r"!\1", spoken.rstrip()) if spoken.rstrip().endswith(".") else spoken
+    return spoken
+
+
+def _narrate_kokoro(spoken: str, v: dict, ln: dict) -> tuple[np.ndarray, int, dict]:
+    from pipeline import kokoro
+    d = kokoro_delivery(ln.get("tone") or v.get("default_tone", "confident"), float(v.get("energy", 0.0)))
+    p = kokoro.say(kokoro_text(spoken, d["tone"], float(v.get("energy", 0.0))), v.get("kokoro_voice", "am_adam"),
+                   round(d["speed"] * float(v.get("speed", 1.0)) * float(ln.get("speed", 1.0)), 3))
+    x, sr = read_wav(p)
+    e = float(v.get("energy", 0.0))
+    if e > 0:   # a brighter, lifted read: pitch up to ~3 % (duration kept) and a little more presence
+        r = subprocess.run(["ffmpeg", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-", "-af",
+                            f"asetrate={sr * (1 + 0.03 * e):.0f},aresample={sr},atempo={1 / (1 + 0.03 * e):.5f},"
+                            f"equalizer=f=3200:t=q:w=1.0:g={1.5 * e:.2f}", "-f", "f32le", "-"],
+                           input=x.astype(np.float32).tobytes(), capture_output=True, check=True)
+        x = np.frombuffer(r.stdout, dtype=np.float32).copy()
+    return x, sr, d
 
 
 def narrate_episode(ep: dict, length_scale: float = 1.0) -> list[dict]:
