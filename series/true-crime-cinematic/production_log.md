@@ -356,3 +356,5 @@
 - 2026-10-17 00:14:42 tcv55-cocaine-bear: VERIFIED -> series/true-crime-cinematic/output/true_crime_55_cocaine_bear.mp4 (37.7s, 17.7 MB, sha256 23238d1c1e06)
 - 2026-10-17 00:14:50 produce 59 --force: regenerating episode data
 - 2026-10-17 00:14:50 tcv59-drug-catapult: rendering (final60, seed 1)
+- 2026-10-17 00:44:20 tcv59-drug-catapult: rendered in 1770s
+- 2026-10-17 00:45:01 tcv59-drug-catapult: VERIFIED -> series/true-crime-cinematic/output/true_crime_59_drug_catapult.mp4 (37.5s, 18.8 MB, sha256 0b4731006c12)
