@@ -78,7 +78,9 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
         else:
             checks["save_card_before_last_beat"] = li is not None and li <= len(ids) - 3; notes["lesson_scene"] = ids[li] if li is not None else None
         end_len = tl[-1]["end"] - tl[-1]["start"]
-        checks["single_punchline_ending"] = end_len <= 5.0 and len(tl[-1].get("lines", [])) <= 2; notes["end_scene_s"] = round(end_len, 2)
+        # v4 (Case Files 59 and 63: the two-line ending lost 3.5-9 %/s): ONE closing line, a scene of at most 4 s
+        one = (ep.get("engagement_version") or 1) >= 4
+        checks["single_punchline_ending"] = end_len <= (4.0 if one else 5.0) and len(tl[-1].get("lines", [])) <= (1 if one else 2); notes["end_scene_s"] = round(end_len, 2)
     # version 3 (search): Instagram indexes on-screen text, the spoken words (auto captions) and the caption, so the
     # phrase people are typing must be in the headline AND said in the first 4 s, not only in a hashtag
     if ep.get("engagement_version", 1) >= 3:

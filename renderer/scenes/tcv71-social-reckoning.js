@@ -66,17 +66,24 @@
     g += `<path d="M-120 -250 L-60 -250 L-150 160 Z" fill="#ffffff" opacity="0.04"/>`;
     return g + '</g>';
   }
-  // the viewer's hand holding the phone from below (generic, warm-lit by the screen): fingers over the left edge, the
-  // thumb resting on the right edge, the palm and wrist running off the bottom right. Phone centred (x, y) at scale s.
-  function hand(x, y, s) {
-    const SK = '#b88a6a', SD = '#8a6248', SL = '#d0a486';
+  // the viewer's hand holding the phone (generic, warm-lit by the screen), in two parts so it wraps the phone: the palm
+  // and wrist BEHIND the phone (running off the bottom right), and in FRONT three fingertips over the left bezel and the
+  // thumb on the screen, swiping up in time with the feed (one swipe every 1.2 s). Phone centred (x, y) at scale s.
+  const SK = '#b88a6a', SD = '#8a6248', SL = '#d0a486';
+  function handBack(x, y, s) {
     let g = `<g transform="translate(${f1(x)} ${f1(y)}) scale(${sc(s)})">`;
-    g += `<path d="M-60 250 Q-40 330 40 380 L240 760 L520 760 L300 300 Q250 220 150 210 L120 210 Z" fill="${SK}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
-    g += `<path d="M40 380 L240 760" stroke="${SD}" stroke-width="10" opacity="0.6"/><path d="M200 300 Q260 260 300 300" stroke="${SL}" stroke-width="8" fill="none" opacity="0.6"/>`;
-    [[-40], [40], [120]].forEach(([fy]) => { g += `<path d="M-150 ${fy} Q-196 ${fy + 4} -194 ${fy + 34} Q-192 ${fy + 62} -150 ${fy + 60}" fill="${SK}" stroke="${INK}" stroke-width="6"/>`; });
-    g += `<path d="M150 150 Q196 120 214 150 Q226 176 196 196 L150 214" fill="${SK}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
-    g += `<path d="M150 214 Q190 230 250 240 Q300 250 300 300" fill="none" stroke="${INK}" stroke-width="6"/>`;
-    g += `<path d="M-60 250 Q-120 300 -150 240 Q-170 200 -150 180" fill="${SK}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
+    g += `<path d="M-150 120 Q-176 250 -110 330 Q-20 420 60 470 L250 820 L560 820 L360 400 Q300 300 150 230 Z" fill="${SK}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
+    g += `<path d="M60 470 L250 820" stroke="${SD}" stroke-width="12" opacity="0.5"/><path d="M-120 320 Q-40 400 40 440" stroke="${SL}" stroke-width="8" fill="none" opacity="0.5"/>`;
+    return g + '</g>';
+  }
+  function handFront(x, y, s, t) {
+    let g = `<g transform="translate(${f1(x)} ${f1(y)}) scale(${sc(s)})">`;
+    [[-20], [70], [160]].forEach(([fy]) => { g += `<path d="M-176 ${fy} Q-194 ${fy + 34} -176 ${fy + 66} L-134 ${fy + 62} Q-120 ${fy + 33} -134 ${fy + 4} Z" fill="${SK}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/><path d="M-170 ${fy + 12} Q-180 ${fy + 33} -170 ${fy + 54}" stroke="${SL}" stroke-width="5" fill="none" opacity="0.6"/>`; });
+    const ph = (t % 1.2) / 1.2, sw = ph < 0.35 ? ease.inOut(ph / 0.35) : 1 - ease.inOut(clamp((ph - 0.35) / 0.65, 0, 1));
+    const tx = 90 - 10 * sw, ty = 230 - 80 * sw;
+    const d = `M230 330 Q190 250 ${f1(tx + 40)} ${f1(ty + 30)} L${f1(tx)} ${f1(ty)}`;
+    g += `<path d="${d}" stroke="${INK}" stroke-width="74" stroke-linecap="round" fill="none"/><path d="${d}" stroke="${SK}" stroke-width="62" stroke-linecap="round" fill="none"/>`;
+    g += `<ellipse cx="${f1(tx + 6)}" cy="${f1(ty - 4)}" rx="18" ry="14" fill="${SL}" opacity="0.8"/>`;
     return g + '</g>';
   }
   // a camera-flash-like burst on a phone held up (Haugen photographing the screen)
@@ -129,7 +136,7 @@
     let g = `<g transform="translate(${f1(x)} ${f1(y)})"><rect x="-20" y="-80" width="940" height="170" rx="18" fill="#0d1216" opacity="0.9" stroke="#3e4a58" stroke-width="3"/>`;
     g += `<text x="20" y="-34" ${FONT} font-size="32" letter-spacing="3" fill="#c8baa4">FRAUD CERTAINTY</text>`;
     g += `<rect x="20" y="0" width="860" height="54" rx="27" fill="#26303a"/><rect x="20" y="0" width="${f1(860 * clamp(fill, 0, 1))}" height="54" rx="27" fill="#c8483e"/>`;
-    g += `<text x="${f1(20 + 860 * clamp(fill, 0, 1) - 14)}" y="40" text-anchor="end" ${FONT} font-size="30" fill="#fff">${Math.round(fill * 100)}%</text>`;
+    if (fill > 0.1) g += `<text x="${f1(20 + 860 * clamp(fill, 0, 1) - 14)}" y="40" text-anchor="end" ${FONT} font-size="30" fill="#fff">${Math.round(fill * 100)}%</text>`;
     const nx = 20 + 860 * 0.95; g += `<path d="M${f1(nx)} -12 L${f1(nx)} 66" stroke="#f4efe4" stroke-width="5"/><text x="${f1(nx)}" y="-34" text-anchor="middle" ${FONT} font-size="28" fill="#f4efe4">BAN</text>`;
     return g + '</g>';
   }
@@ -210,13 +217,14 @@
 
   // the hero arrangement (frame 1 and the last frame): the phone big and centred, held from below; the usher walks the
   // aisle (left to right) with a torch in the background
-  const PX = 540, PY = 1000, PS = 1.06;
+  const PX = 540, PY = 990, PS = 1.12;
   const HERO_CAM0 = { x: 0, y: 10, z: 1.03 };
   const SPEED = 70;                         // feed scroll speed, px/s
   const USHER_X0 = 300, USHER_V = 70;       // the usher's frame-1 position and walking speed (px/s)
-  const heroProps = off => [
+  const heroProps = (off, t0 = 0) => [
+    { depth: 1.0, svg: handBack(PX, PY, PS) },
     { depth: 1.0, accent: true, svg: tt => phone(PX, PY, PS, off(tt), 0.9 + 0.1 * Math.sin(tt * 3)) },
-    { depth: 1.0, svg: hand(PX, PY, PS) }
+    { depth: 1.0, svg: tt => handFront(PX, PY, PS, tt + t0) }
   ];
   const usher = (x0, x1, T) => ({ id: 'sr71_usher', x: x0, y: 1150, scale: 0.5, dir: 1, turn: 0.3, pose: 'torch_low', expr: 'neutral', depth: 0.62,
     walk: { at: 0, dur: T, cadence: 3.6, stride: 10, from: x0, to: x1 } });
@@ -253,11 +261,11 @@
         props: [
           { depth: 0.95, svg: tt => popcorn(sw(tt)) },
           { depth: 0.95, svg: tt => broom(lerp(330, 450, sw(tt)) + 40, 1240, -18 + 6 * Math.sin(tt * 6)) },
-          { depth: 0.75, svg: tt => board(800, 1150, ease.out(seg(tt, og - 0.1, og + 0.8)), ease.out(seg(tt, m5 - 0.2, m5 + 0.5))) }
+          { depth: 0.75, svg: tt => board(850, 1180, ease.out(seg(tt, og - 0.1, og + 0.8)), ease.out(seg(tt, m5 - 0.2, m5 + 0.5))) }
         ],
         overlays: [
-          { type: 'label', at: 0.2, x: 60, y: 560, text: 'THE SOCIAL RECKONING', fs: 40, sub: 'Opened Oct 9, 2026 · studio estimate' },
-          { type: 'label', at: og + 0.3, x: 60, y: 720, text: 'THE SOCIAL NETWORK · 2010', fs: 34, sub: 'Opening weekend: $22.4 million' }
+          { type: 'label', at: 0.2, x: 60, y: 470, text: 'THE SOCIAL RECKONING', fs: 40, sub: 'Opened Oct 9, 2026 · studio estimate' },
+          { type: 'label', at: og + 0.3, x: 560, y: 1262, text: '2010: THE SOCIAL NETWORK', fs: 28, box: true }
         ],
         tag: TAG
       });
@@ -340,14 +348,11 @@
         set: 'sr71_adwall', setOpts: { flag: n => (n * 7) % 11 < 5 ? 1 : 0 }, grade: 'cold', haze: 0.3, dof: true,
         cam: { from: { x: 30, y: 90, z: 1.12 }, to: { x: 40, y: 100, z: 1.2 } },
         figures: [
-          { id: 'sr71_analyst', x: 840, y: 1820, scale: 0.86, dir: -1, turn: 0.45, pose: 'stand', expr: 'focused', depth: 1.0,
+          { id: 'sr71_analyst', x: 820, y: 1960, scale: 0.84, dir: -1, turn: 0.45, pose: 'stand', expr: 'focused', depth: 1.0,
             keys: [{ at: ft, pose: 'examine', expr: 'focused', dur: 0.5 }, { at: hi, pose: 'present', expr: 'realise', dur: 0.4 }] }
         ],
-        props: [
-          { depth: 1.04, svg: tt => meter(70, 1110, fill(tt), tt) },
-          { depth: 1.04, accent: true, svg: tt => tt < l2 ? '' : priceTag(330, 1060, seg(tt, hi - 0.2, hi + 0.5)) }
-        ],
         overlays: [
+          { type: 'svg', at: 0, svg: tt => meter(70, 900, fill(tt), tt) + (tt < l2 ? '' : priceTag(300, 1180, seg(tt, hi - 0.2, hi + 0.5))) },
           { type: 'lesson', at: 0.25, until: 2.65, save: true, checklist: true, y: 420, rows: [
             { text: 'WAY TOO CHEAP? LIKELY SCAM', fs: 40 }, { text: 'CELEB "INVESTMENT" AD? NO', fs: 40 }, { text: 'GIFT CARD OR CRYPTO? NO', fs: 40 },
             { text: 'FTC · Action Fraud', fs: 24, colour: '#c8baa4' }] },
@@ -389,7 +394,7 @@
         set: 'sr71_cinema', grade: 'cold', dof: true, haze: 0.4,
         cam: { from: { x: 0, y: 0, z: 0.97 }, to: HERO_CAM0 },
         figures: [usher(USHER_X0 - USHER_V * T, USHER_X0, T)],
-        props: heroProps(tt => SPEED * (tt - T)),
+        props: heroProps(tt => SPEED * (tt - T), 1.2 * Math.ceil(T / 1.2) - T),
         tag: TAG
       });
     }

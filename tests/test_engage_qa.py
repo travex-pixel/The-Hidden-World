@@ -79,3 +79,13 @@ class KokoroDeliveryAndMix(unittest.TestCase):
         on = np.array([1, 1, 0, 0, 0, 1, 1] + [0] * 60 + [1], float)   # a 60 ms gap, then a 1.2 s gap
         h = hold_gaps(on, 0.8)
         self.assertTrue((h[2:5] == 1).all()); self.assertTrue((h[10:60] == 0).all())
+
+
+class VersionFourEnding(unittest.TestCase):
+    def test_v4_wants_one_closing_line(self):
+        tl = timeline(["s01_hook", "s02", "s03", "s04_end"], [5, 15, 30, 33.5])
+        tl[-1]["lines"].append(dict(tl[-1]["lines"][0]))   # two lines in the last scene
+        ep = {"engagement_version": 4, "id": "none", "search_terms": [], "scenes": [{}]}
+        self.assertFalse(engage_qa.analyse({"episode": ep}, tl, None)["checks"]["single_punchline_ending"])
+        ep["engagement_version"] = 2
+        self.assertTrue(engage_qa.analyse({"episode": ep}, tl, None)["checks"]["single_punchline_ending"])
