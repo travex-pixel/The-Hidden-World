@@ -414,3 +414,5 @@
 - 2026-10-17 14:13:00 tcv70-wendys-finger: rendering (final60, seed 1)
 - 2026-10-17 14:48:20 tcv70-wendys-finger: rendered in 2120s
 - 2026-10-17 14:49:12 tcv70-wendys-finger: VERIFIED -> series/true-crime-cinematic/output/true_crime_70_wendys_finger.mp4 (37.5s, 15.6 MB, sha256 ad37cf80baf6)
+- 2026-10-17 15:38:21 produce 71 --force: regenerating episode data
+- 2026-10-17 15:38:21 tcv71-social-reckoning: rendering (final60, seed 1)
