@@ -408,3 +408,7 @@
 - 2026-10-17 13:52:08 tcv70-wendys-finger: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_70
 - 2026-10-17 13:52:20 produce 69 --force: regenerating episode data
 - 2026-10-17 13:52:20 tcv69-kfc-cases: rendering (final60, seed 1)
+- 2026-10-17 14:12:03 tcv69-kfc-cases: rendered in 1183s
+- 2026-10-17 14:12:50 tcv69-kfc-cases: VERIFIED -> series/true-crime-cinematic/output/true_crime_69_kfc_cases.mp4 (37.9s, 15.7 MB, sha256 9911fbaeb541)
+- 2026-10-17 14:13:00 produce 70 --force: regenerating episode data
+- 2026-10-17 14:13:00 tcv70-wendys-finger: rendering (final60, seed 1)
