@@ -73,4 +73,20 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
         checks["save_card_before_last_beat"] = li is not None and li <= len(ids) - 3; notes["lesson_scene"] = ids[li] if li is not None else None
         end_len = tl[-1]["end"] - tl[-1]["start"]
         checks["single_punchline_ending"] = end_len <= 5.0 and len(tl[-1].get("lines", [])) <= 2; notes["end_scene_s"] = round(end_len, 2)
+    # version 3 (search): Instagram indexes on-screen text, the spoken words (auto captions) and the caption, so the
+    # phrase people are typing must be in the headline AND said in the first 4 s, not only in a hashtag
+    if ep.get("engagement_version", 1) >= 3:
+        terms = [t.lower() for t in ep.get("search_terms", [])]
+        head_txt = " ".join(l.get("text", "") for l in (ep.get("hook_title") or {}).get("lines", [])).lower()
+        said = text_in(0, 4.0).lower()
+        hit = [t for t in terms if all(w in head_txt for w in t.split()) and all(w in said for w in t.split())]
+        checks["search_term_in_headline_and_first_4s"] = bool(hit); notes["search_terms_hit"] = hit
+        # the post file: the search phrase in the caption's first line (what the feed shows before "more"), at most 5
+        # hashtags, and an alt-text line (also indexed for search)
+        post = Path(__file__).resolve().parents[1] / "episodes" / ep.get("id", "") / "post.md"
+        txt = post.read_text() if post.exists() else ""
+        cap = re.search(r"^CAPTION:\s*(.+)$", txt, re.M)
+        first = cap.group(1).lower() if cap else ""
+        checks["post_file_ready"] = (bool(cap) and any(all(w in first for w in t.split()) for t in terms)
+                                     and len(re.findall(r"#\w+", txt)) <= 5 and bool(re.search(r"^ALT TEXT:", txt, re.M)))
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}

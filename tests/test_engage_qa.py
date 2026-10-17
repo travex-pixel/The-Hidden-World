@@ -40,3 +40,15 @@ class VersionTwoChecks(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class VersionThreeSearch(unittest.TestCase):
+    def test_search_term_must_be_in_headline_and_said_early(self):
+        tl = [{"id": "s01_hook", "start": 0.0, "end": 5.0, "lines": [{"start": 0.25, "end": 2.4, "text": "x",
+               "words": [{"start": 0.0, "w": "Louvre"}, {"start": 0.4, "w": "heist"}]}]}]
+        ep = {"engagement_version": 3, "id": "none", "search_terms": ["louvre heist"], "scenes": [{}],
+              "hook_title": {"lines": [{"text": "THE LOUVRE HEIST"}, {"text": "ONE YEAR LATER"}]}}
+        c = engage_qa.analyse({"episode": ep}, tl, None)["checks"]
+        self.assertTrue(c["search_term_in_headline_and_first_4s"]); self.assertFalse(c["post_file_ready"])   # no post.md
+        ep["hook_title"] = {"lines": [{"text": "ONE YEAR LATER"}]}
+        self.assertFalse(engage_qa.analyse({"episode": ep}, tl, None)["checks"]["search_term_in_headline_and_first_4s"])

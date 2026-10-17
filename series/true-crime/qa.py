@@ -136,6 +136,10 @@ def main(argv=None) -> int:
     # the MP4 so the grid shows the hook, not a mid-sentence frame
     cover = dst.with_name(dst.stem + "_cover.jpg")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.2", "-i", str(dst), "-frames:v", "1", "-q:v", "2", str(cover)], check=True)
+    # the ready-to-paste post (caption, alt text, seed and pinned comments) travels with the MP4 when the episode has one
+    post = ROOT / "episodes" / ep["id"] / "post.md"
+    if post.exists():
+        shutil.copy2(post, dst.with_name(dst.stem + "_post.txt"))
     shutil.copy2(out / "script.md", qadir / "timed_script.md")
     rec.update(status="verified_automated", sha256=sha256(dst), output=str(dst.relative_to(ROOT)), verified=time.strftime("%Y-%m-%dT%H:%M:%S"),
                next_task="human-style frame review recorded in production_manifest.json 'editorial_review'")
