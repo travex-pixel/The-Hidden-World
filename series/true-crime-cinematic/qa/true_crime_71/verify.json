@@ -1,0 +1,206 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv71-social-reckoning/tcv71-social-reckoning.mp4",
+    "size_bytes": 16487396,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 37.5,
+    "audio_duration": 37.5,
+    "decode_stderr": "",
+    "mean_volume_db": -17.0,
+    "max_volume_db": -1.7,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv71-social-reckoning/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2250,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -16.7,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "engage_hook_line_done_by_2_6s": true,
+    "engage_no_save_card_scene": true,
+    "engage_single_punchline_ending": true,
+    "engage_search_term_in_headline_and_first_4s": true,
+    "engage_post_file_ready": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.1,
+    "true_peak_dbtp": -1.7
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.056,
+    "transcript": "The social reckoning bombed, the truth worse, make it 16 billion worse. It opened with 5.5 million dollars, the original, four times that. In 2021, Francis Houghgan leaked the Facebook files. That part got the movie. But Reuters reported on meta's own documents. They projected 16 billion from ads for scams and banned goods. Banning took 95% certainty of fraud. Below that, higher ad rates. The film's reporter Jeff Horowitz broke this story. The film opened at $5.5 million. scam ads paid a projected $16 billion."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 45,
+      "extent": {
+        "left": 138.5,
+        "right": 941.5,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 1.5,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.21,
+      "frames": 375
+    },
+    "audio": {
+      "opening_speech_median_db": -19.2,
+      "opening_min_speech_window_db": -31.1,
+      "first_word_db": -16.7,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -35.9,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.277,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 17.9,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -44.4,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.819,
+      "loudness_lufs": -14.1,
+      "true_peak_dbtp": -1.7,
+      "mono_lufs": -14.1,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -67.3,
+      "end_before_db": -14.2,
+      "end_last_50ms_db": -91.2,
+      "silent_tail_s": 0.2,
+      "ending_intentional": true,
+      "durations": {
+        "video": 37.5,
+        "audio": 37.5
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true,
+        "hook_line_done_by_2_6s": true,
+        "no_save_card_scene": true,
+        "single_punchline_ending": true,
+        "search_term_in_headline_and_first_4s": true,
+        "post_file_ready": true
+      },
+      "notes": {
+        "hook": "The Social Reckoning bombed. The truth? Worse. Make it $16 billion worse.",
+        "loop_gaps": [],
+        "tail": "broke this story. The film opened at $5.5 million. Scam ads paid a projected $16 billion.",
+        "end_title": "WOULD YOU QUIT FACEBOOK? YES OR NO? \ud83d\udc47 TAG THE MATE WHO CLICKS ADS",
+        "tail_s": 1.43,
+        "wpm": 137.6,
+        "hook_end_s": 2.58,
+        "lesson_scene": null,
+        "end_scene_s": 3.75,
+        "search_terms_hit": [
+          "the social reckoning"
+        ]
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 8,
+      "composed_shots": 8,
+      "shots_with_characters": 8,
+      "character_shot_share": 1.0,
+      "distinct_sets": 5,
+      "max_set_share": 0.25,
+      "shot_sizes": {
+        "wide": 3,
+        "medium-wide": 1,
+        "medium": 4
+      },
+      "max_shot_size_share": 0.5,
+      "ok": true
+    }
+  }
+}
