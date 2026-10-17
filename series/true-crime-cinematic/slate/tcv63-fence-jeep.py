@@ -33,7 +33,7 @@ def build(h):
         # A - hook (frame 1): the HERO OBJECT, a generic silver SUV high-centered on top of a tall steel-slat fence between two
         #     homemade ramps at night, rocking; two smuggler silhouettes below on the Mexican side (left) push at the rear ramp;
         #     an agent's flashlight beam sweeps in from the right; the camera already pushing; the headline burned in.
-        S("s01_hook", "fj63_hook", [N("Smugglers drove their Jeep up the border fence."), N("It got stuck. On top. 14 feet up.", pause_before=0.25)],
+        S("s01_hook", "fj63_hook", [N("Smugglers drove their Jeep up the border fence."), N("It got stuck. On top. 14 feet up.", pause_before=0.4)],
           "tension", ["K_hook", "K_place"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.3), fw(1, 2, "thud", 0.35, -0.03), fw(1, 4, "hit", 0.3, -0.03)],
           emph=["smugglers", "jeep", "border", "fence.", "stuck.", "top.", "14", "feet"], min_d=3.6, pad=0.3),
         # A/B - item 1's outcome: two agents walk in from the right with flashlights; the two silhouettes run off left
@@ -61,10 +61,10 @@ def build(h):
           emph=["cash", "drive", "border?", "save", "this."], min_d=3.8, pad=0.3, tr="dissolve"),
         # C - ITEM 3 (the best): a stripped, dusty Jeep stuck nose-up on a homemade ramp over a low vehicle barrier; a
         #     helicopter's searchlight; a line of tiny silhouettes running south (left); the SPOKEN SHARE LINE
-        S("s07_eleven", "fj63_eleven", [N("In 2019, eleven people in one Jeep."), N("Its homemade ramp failed. Stuck again.", pause_before=0.15),
+        S("s07_eleven", "fj63_eleven", [N("In 2019, eleven people, one Jeep."), N("Its homemade ramp failed. Stuck again.", pause_before=0.15),
                                         N("Send this to the mate who cannot park.", pause_before=0.2)],
           "tension", ["K_eleven", "K_eleven_fled"], sfx=[fx(0.0, "buzz", 0.16), fw(0, 2, "tick", 0.25, 0.0), fw(1, 4, "thud", 0.38, -0.03), fw(2, 0, "whoosh", 0.2, -0.1)],
-          emph=["2019,", "eleven", "people", "one", "jeep.", "failed.", "stuck", "again.", "send", "mate", "park."], min_d=3.6, pad=0.3, tr="dissolve"),
+          emph=["2019,", "eleven", "people,", "one", "jeep.", "failed.", "stuck", "again.", "send", "mate", "park."], min_d=3.6, pad=0.3, tr="dissolve"),
         # E - the punchline as the LAST lines, back on the hero SUV in frame 1's framing (the loop); the camera eases back to
         #     frame 1's starting framing; the burned-in end question with the SEND line; pad 0.6, no fade
         S("s08_end", "fj63_end", [N("Every driver escaped."), N("The Jeeps never did.", pause_before=0.25)],
@@ -124,7 +124,7 @@ def build(h):
           ["swj", "hsnw", "cbs", "insight"]),
         C("K_1000", "STATISTIC (counter): a Jeep Cherokee had apparently just used the ramp to carry about 1,000 lb of marijuana across; over 1,000 lb was seized on the range (7 April 2011) and the two suspects fled back into Mexico, leaving the vehicle. Narration: 'A Jeep crossed with 1,000 pounds of weed.' Counter '1,000 LB'.",
           ["mcas", "swj", "hsnw"]),
-        C("K_eleven", "February 2019, Cabeza Prieta National Wildlife Refuge (Ajo station, Arizona): a heavily modified Jeep Cherokee carrying 11 people and suspected bundles of marijuana, spotted by a helicopter crew, tried a homemade ramp over the vehicle barrier and got stuck. Narration: 'In 2019, eleven people in one Jeep.' / 'Its homemade ramp failed. Stuck again.'",
+        C("K_eleven", "February 2019, Cabeza Prieta National Wildlife Refuge (Ajo station, Arizona): a heavily modified Jeep Cherokee carrying 11 people and suspected bundles of marijuana, spotted by a helicopter crew, tried a homemade ramp over the vehicle barrier and got stuck. Narration: 'In 2019, eleven people, one Jeep.' / 'Its homemade ramp failed. Stuck again.'",
           ["kxxv", "kgun", "ktar", "sentinel"]),
         C("K_eleven_fled", "All 11 fled into Mexico on foot; Mexican officials searched and found neither the people nor the drugs; agents seized the Jeep.",
           ["kxxv", "ktar", "sentinel"]),
