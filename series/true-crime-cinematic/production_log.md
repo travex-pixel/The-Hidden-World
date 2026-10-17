@@ -418,3 +418,5 @@
 - 2026-10-17 15:38:21 tcv71-social-reckoning: rendering (final60, seed 1)
 - 2026-10-17 16:12:39 tcv71-social-reckoning: rendered in 2058s
 - 2026-10-17 16:13:24 tcv71-social-reckoning: VERIFIED -> series/true-crime-cinematic/output/true_crime_71_social_reckoning.mp4 (37.5s, 16.5 MB, sha256 8c0179abd3cb)
+- 2026-10-17 16:14:56 produce 72 --force: regenerating episode data
+- 2026-10-17 16:14:56 tcv72-border-fails-3: rendering (final60, seed 1)
