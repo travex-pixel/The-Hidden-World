@@ -427,7 +427,7 @@
     kf69_end(ctx) {
       const t = ctx.t, T = ctx.T, ck = WT(ctx, 1, 2, 2.6);
       const t0 = T - 0.6;
-      const phY = tt => PH[1] + 360 * (1 - ease.out(seg(tt, t0 - 0.3, T - 0.05)));
+      const phY = tt => PH[1] + 820 * (1 - ease.out(seg(tt, t0 - 0.3, T - 0.05)));
       return E.cine.shot(ctx, {
         set: 'kf69_counter', grade: 'night', haze: 0.3,
         cam: { from: { x: 10, y: 40, z: 1.1 }, to: HERO_CAM0, settle: true },

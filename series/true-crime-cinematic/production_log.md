@@ -402,3 +402,5 @@
 - 2026-10-17 12:40:06 tcv66-louvre-one-year: rendering (final60, seed 1)
 - 2026-10-17 13:09:48 tcv66-louvre-one-year: rendered in 1782s
 - 2026-10-17 13:10:45 tcv66-louvre-one-year: VERIFIED -> series/true-crime-cinematic/output/true_crime_66_louvre_one_year.mp4 (37.9s, 22.8 MB, sha256 66e221711a75)
+- 2026-10-17 13:16:35 produce 70 --force: regenerating episode data
+- 2026-10-17 13:16:35 tcv70-wendys-finger: rendering (final60, seed 1)
