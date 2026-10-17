@@ -392,3 +392,7 @@
 - 2026-10-17 11:13:32 tcv63-fence-jeep: VERIFIED -> series/true-crime-cinematic/output/true_crime_63_fence_jeep.mp4 (37.3s, 20.6 MB, sha256 ceabf2065273)
 - 2026-10-17 11:41:39 produce 67 --force: regenerating episode data
 - 2026-10-17 11:41:39 tcv67-underwear-birds: rendering (final60, seed 1)
+- 2026-10-17 12:11:11 tcv67-underwear-birds: rendered in 1772s
+- 2026-10-17 12:12:00 tcv67-underwear-birds: VERIFIED -> series/true-crime-cinematic/output/true_crime_67_underwear_birds.mp4 (37.7s, 20.6 MB, sha256 8797da7142a2)
+- 2026-10-17 12:12:09 produce 68 --force: regenerating episode data
+- 2026-10-17 12:12:09 tcv68-chicken-heist: rendering (final60, seed 1)
