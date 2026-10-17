@@ -732,3 +732,33 @@ Legend or liar? 👇
 
 Seed comment: If those prison records are right, the Pan Am years never happened. Liar?
 Pinned comment: Comment 1 = legend, 2 = liar 👇 Tag the mate who exaggerates.
+
+## 63: The Jeep on the fence (`true_crime_63_fence_jeep.mp4`)
+Smugglers drove a Jeep up a 14-foot border fence. It got stuck. On top. 🚙 Then they tried a folding ramp… and 11 people in one Jeep.
+
+Worst drivers or best try? 👇
+
+#truecrime #smuggling #border #fail #arizona
+
+Seed comment: Border Patrol saying "not quite up to the task" is the most savage review a ramp has ever had 😂
+Pinned share line: Send this to the mate who can't park 🚙👇
+
+## 64: The pigeon with a backpack (`true_crime_64_pigeon_backpack.mp4`)
+Customs in Kuwait caught a pigeon wearing a tiny backpack. Inside: 178 pills 🐦 And it wasn't even the strangest animal smuggler.
+
+Genius or bird-brained? 👇
+
+#truecrime #smuggling #pigeon #weirdnews #casefiles
+
+Seed comment: Bird-brained. The cat is the only real criminal genius here.
+Pinned share line: Tag the mate who feeds pigeons 👇 Comment 1 = genius, 2 = bird-brained
+
+## 65: The prison rats (`true_crime_65_prison_rat.mp4`)
+Smugglers stuffed phones and drugs into dead rats… and threw them into a prison 🐀 Tennis balls and drones came first. The rats were next level.
+
+Genius or disgusting? 👇
+
+#truecrime #prison #smuggling #weirdnews #uk
+
+Seed comment: Genius. Disgusting, but genius. Who stitches a rat?!
+Pinned share line: Send this to the mate who's a rat 🐀

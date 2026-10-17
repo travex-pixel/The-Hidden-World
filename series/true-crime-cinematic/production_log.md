@@ -376,3 +376,7 @@
 - 2026-10-17 08:08:00 tcv61-affluenza: VERIFIED -> series/true-crime-cinematic/output/true_crime_61_affluenza.mp4 (37.9s, 18.1 MB, sha256 f07ad4e6add9)
 - 2026-10-17 09:37:50 produce 65 --force: regenerating episode data
 - 2026-10-17 09:37:50 tcv65-prison-rat: rendering (final60, seed 1)
+- 2026-10-17 10:03:27 tcv65-prison-rat: rendered in 1536s
+- 2026-10-17 10:04:08 tcv65-prison-rat: VERIFIED -> series/true-crime-cinematic/output/true_crime_65_prison_rat.mp4 (36.8s, 22.1 MB, sha256 2d53f87dd92e)
+- 2026-10-17 10:04:17 produce 64 --force: regenerating episode data
+- 2026-10-17 10:04:17 tcv64-pigeon-backpack: rendering (final60, seed 1)

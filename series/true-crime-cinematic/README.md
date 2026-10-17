@@ -64,6 +64,9 @@
 | 60 | `true_crime_60_snow_white_sentence.mp4` (archived outside git) | Hot take: 50 years to life for $153 of videotapes (Lockyer v. Andrade, 2003); AI voice | see `production_manifest.json` |
 | 61 | `true_crime_61_affluenza.mp4` (archived outside git) | Hot take: the "affluenza" probation sentence and the flight to Mexico; AI voice | see `production_manifest.json` |
 | 62 | `true_crime_62_abagnale_con.mp4` (archived outside git) | Hot take: records that question the Catch Me If You Can story; AI voice | see `production_manifest.json` |
+| 63 | `true_crime_63_fence_jeep.mp4` (archived outside git) | List format: smugglers' vehicles stuck on the border fence (2012, 2011, 2019); AI voice | see `production_manifest.json` |
+| 64 | `true_crime_64_pigeon_backpack.mp4` (archived outside git) | List format: animal smugglers (Kuwait pigeon, Colombia pigeon, Sri Lanka cat); AI voice | see `production_manifest.json` |
+| 65 | `true_crime_65_prison_rat.mp4` (archived outside git) | List format: prison contraband (tennis balls, drones, dead rats at HMP Guys Marsh); AI voice | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.
