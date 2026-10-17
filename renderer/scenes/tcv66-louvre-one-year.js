@@ -450,7 +450,7 @@
     //     'dropped' one frame falls from each onto the lawn; the label
     lv66_renoir(ctx) {
       const t = ctx.t, l0 = LS(ctx, 0, 0.25), fp = WT(ctx, 0, 5, 1.8), l2 = LS(ctx, 1, 2.8), dr = WT(ctx, 1, 2, 3.2);
-      const runA = { from: 120, to: 1350, at: 0.2, dur: Math.max(2.6, dr + 1.2), cadence: 10, stride: 30 }, runB = { from: -160, to: 1250, at: 0.3, dur: Math.max(2.8, dr + 1.4), cadence: 10, stride: 30 };
+      const runA = { from: 120, to: 1050, at: 0.2, dur: Math.max(2.6, dr + 1.4), cadence: 10, stride: 30 }, runB = { from: -160, to: 950, at: 0.3, dur: Math.max(2.8, dr + 1.5), cadence: 10, stride: 30 };
       const xA = tt => lerp(runA.from, runA.to, clamp((tt - runA.at) / runA.dur, 0, 1)), xB = tt => lerp(runB.from, runB.to, clamp((tt - runB.at) / runB.dur, 0, 1));
       const carry = tt => {   // frames under the runners' arms until the drop
         let s = '';
@@ -468,9 +468,9 @@
         cam: { from: { x: 20, y: 40, z: 1.0 }, to: { x: -10, y: 60, z: 1.07 } },
         figures: [
           { id: 'lv66_thief_a', x: runA.from, y: 1640, scale: 0.6, dir: 1, turn: 0.8, pose: 'stand_tense', silhouette: 'cool', depth: 0.98, walk: runA },
-          { id: 'lv66_thief_b', x: runB.from, y: 1700, scale: 0.64, dir: 1, turn: 0.8, pose: 'stand_tense', silhouette: 'cool', depth: 0.99, walk: runB, keys: [{ at: dr + 0.1, headTurn: -0.6, dur: 0.3 }] }
+          { id: 'lv66_thief_b', x: runB.from, y: 1700, scale: 0.64, dir: 1, turn: 0.8, pose: 'stand_tense', silhouette: 'cool', depth: 1.0, walk: runB, keys: [{ at: dr + 0.1, headTurn: -0.6, dur: 0.3 }] }
         ],
-        props: [{ depth: 0.995, svg: carry }, { depth: 1.01, svg: dropped }],
+        props: [{ depth: 1.005, svg: carry }, { depth: 1.01, svg: dropped }],
         overlays: [SCRIM,
           { type: 'label', at: fp, x: 60, y: 1160, text: 'RENOIR MUSEUM · FRENCH RIVIERA', fs: 36, sub: '8 Sept 2026 · 2 dropped in the garden, 2 missing' }
         ],
@@ -513,10 +513,10 @@
         cam: { from: { x: -20, y: 120, z: 1.08 }, to: { x: 0, y: 140, z: 1.15 }, settle: true },
         rack: { at: 0.05, dur: 0.7, from: 'bg' },
         figures: [
-          { id: 'lv66_thief_a', x: run.from, y: 1700, scale: 0.72, dir: 1, turn: 0.6, pose: 'present', silhouette: 'cool', depth: 0.98, walk: run },
-          { id: 'lv66_thief_b', x: run.from + 400, y: 1700, scale: 0.72, dir: -1, turn: 0.6, pose: 'present', silhouette: 'cool', depth: 0.98, walk: { ...run, from: run.from + 400, to: run.to + 400 } }
+          { id: 'lv66_thief_a', x: run.from, y: 1700, scale: 0.72, dir: 1, turn: 0.6, pose: 'present', silhouette: 'cool', depth: 1.0, walk: run },
+          { id: 'lv66_thief_b', x: run.from + 400, y: 1700, scale: 0.72, dir: -1, turn: 0.6, pose: 'present', silhouette: 'cool', depth: 1.0, walk: { ...run, from: run.from + 400, to: run.to + 400 } }
         ],
-        props: [{ depth: 0.99, svg: tt => bronze(xL(tt) + 200, 1310 + sag(tt), 0.9, 84 + 2 * Math.sin(tt * 2.3), tt, seg(tt, da - 0.2, da + 0.4)) }],
+        props: [{ depth: 1.01, svg: tt => bronze(xL(tt) + 200, 1310 + sag(tt), 0.9, 84 + 2 * Math.sin(tt * 2.3), tt, seg(tt, da - 0.2, da + 0.4)) }],
         overlays: [SCRIM,
           { type: 'label', at: da + 0.1, until: w330 - 0.3, x: 60, y: 600, text: 'ISSOIRE · CENTRAL FRANCE', fs: 38, sub: 'Night of 4-5 Oct 2026 · a gate forced' },
           { type: 'impact', at: w330, x: 540, y: 1300 },

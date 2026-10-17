@@ -38,7 +38,7 @@ def build(h):
           emph=["13", "arrested", "chicken", "heist.", "load?", "$250,000"], min_d=3.6, pad=0.12),
         # B - ITEM 1, the irony (a LIKE moment): the same motel lot, wider; a patrol car rolls in with its light bar on;
         #     the driver's silhouette by the cab; an officer walks up
-        S("s02_warrant", "ch68_warrant", [N("Police were only there for a different warrant."), N("And police say the driver was paying off a drug debt.", pause_before=0.25)],
+        S("s02_warrant", "ch68_warrant", [N("Police were only there on a different warrant."), N("And police say the driver was paying off a drug debt.", pause_before=0.25)],
           "tension-rise", ["K_warrant", "K_debt"], sfx=[fx(0.0, "radio", 0.22), fw(0, 4, "brake", 0.25, 0.0), fw(1, 10, "thump", 0.35, 0.0)],
           emph=["only", "different", "warrant.", "driver", "drug", "debt."], min_d=3.6, pad=0.12, tr="cut"),
         # B - ITEM 2 ("it gets worse"): a distribution trailer outside a farm building at night; two silhouettes wheel a
@@ -48,12 +48,12 @@ def build(h):
           emph=["worse.", "100,000", "eggs,", "stolen", "Pennsylvania."], min_d=3.6, pad=0.3, tr="dissolve"),
         # B - the LESSON (save trigger, for the viewer; BEFORE item 3): a quiet street at dusk; a seller at the open back of
         #     a plain van holds out a box of meat; the young man hesitates; checklist card, captions off
-        S("s04_lesson", "ch68_lesson", [N("Buying meat from a stranger's truck? Save this.")],
+        S("s04_lesson", "ch68_lesson", [N("Buying meat off a stranger's truck? Save this.")],
           "tension-rise", ["K_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 6, "chime", 0.25, 0.0)],
           emph=["meat", "stranger's", "truck?", "save"], min_d=3.8, pad=0.3, tr="cut"),
         # D - ITEM 3 = THE BIGGEST REVEAL (music drop, the single impact): a motorway at night through hills; a plain semi
         #     drives left to right and fades into the fog
-        S("s05_kitkat", "ch68_kitkat", [N("But the wildest one? A whole truck of KitKats."), N("Over twelve tonnes, gone between Italy and Poland.", pause_before=0.25)],
+        S("s05_kitkat", "ch68_kitkat", [N("And the wildest one? A whole truck of KitKats."), N("Over twelve tonnes, gone between Italy and Poland.", pause_before=0.25)],
           "revelation", ["K_wild", "K_kitkat"], sfx=[fw(0, 3, "riser", 0.22, -0.5), fw(0, 6, "hit", 0.42, -0.03), fw(1, 5, "whoosh", 0.25, 0.0)],
           emph=["wildest", "whole", "truck", "KitKats.", "twelve", "tonnes,", "gone", "Italy", "Poland."], min_d=3.6, pad=0.12, tr="push"),
         # C - the statistic (a counter, a LIKE moment): a depot's empty loading bay; a worker with a clipboard looks at the
@@ -113,7 +113,7 @@ def build(h):
           mem + ["ccj"], nature="allegation"),
         C("K_value", "The chicken was valued at $250,000 (the task force's figure, reported by WMC/Gray and WREG); FreightWaves reports the police affidavit and MPD put the shipment at about $110,000. Narration: 'The load? $250,000, officials say.' Label 'VALUED AT $250,000 BY THE TASK FORCE / Police affidavit: about $110,000'.",
           ["wmc", "wreg", "fw", "mw"], nature="allegation"),
-        C("K_warrant", "Officers were at the motel to serve an unrelated aggravated-robbery warrant on one man when they found him and 12 others unloading the chicken. Narration: 'Police were only there for a different warrant.'",
+        C("K_warrant", "Officers were at the motel to serve an unrelated aggravated-robbery warrant on one man when they found him and 12 others unloading the chicken. Narration: 'Police were only there on a different warrant.'",
           mem + ["fw"]),
         C("K_debt", "Police say the driver told investigators he had agreed to trade his shipment to pay off a drug debt owed to one of the men arrested (affidavit). Narration: 'And police say the driver was paying off a drug debt.' Label 'ACCUSED · NOT CONVICTED / Driver's account, per a police affidavit'.",
           ["wmc", "wreg", "fw", "pm"], nature="allegation"),
@@ -122,7 +122,7 @@ def build(h):
           ["nbc_eggs", "abc_eggs", "cbc_eggs", "scripps_eggs"]),
         C("K_lesson", "LESSON CARD (practical, for the viewer): before buying meat from a door-to-door or truck seller: the package must carry the USDA inspection mark / plant number (USDA FSIS; Arkansas AG); do not buy from a truck or car trunk that is not refrigerated (Arkansas AG; North Dakota); get a receipt with the seller's name and address (Arizona; North Dakota). Rows 'NO USDA INSPECTION MARK', 'NOT KEPT COLD? WALK AWAY', 'NO RECEIPT? NO DEAL'.",
           ["fsis", "ar_ag", "az", "nd"]),
-        C("K_wild", "Editorial bridge to item 3. Narration: 'But the wildest one? A whole truck of KitKats.'", kk, nature="editorial"),
+        C("K_wild", "Editorial bridge to item 3. Narration: 'And the wildest one? A whole truck of KitKats.'", kk, nature="editorial"),
         C("K_kitkat", "Nestle said a truck carrying over 12 tonnes (413,793 bars) of its new KitKat range was stolen in transit from central Italy to Poland (reported 28-29 March 2026). Narration: 'Over twelve tonnes, gone between Italy and Poland.' Label 'CENTRAL ITALY TO POLAND · MARCH 2026'.",
           kk),
         C("K_stat", "STATISTIC (counter): 413,793 bars (Nestle). Narration: 'That is over 413,000 chocolate bars.' Counter '413,793 / KITKAT BARS STOLEN'.", kk),
