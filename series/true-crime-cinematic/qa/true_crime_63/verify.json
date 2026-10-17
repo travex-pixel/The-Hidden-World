@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv63-fence-jeep/tcv63-fence-jeep.mp4",
-    "size_bytes": 20577025,
+    "size_bytes": 20628589,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -44,7 +44,7 @@
     "true_peak_ok": true,
     "narration_intelligible_asr": true,
     "captions_in_safe_area": true,
-    "no_frozen_or_static_picture": false,
+    "no_frozen_or_static_picture": true,
     "audio_opening_speech_steady": true,
     "audio_opening_no_holes": true,
     "audio_narration_on_time": true,
@@ -98,22 +98,11 @@
       "rows_scaled_to_fit": []
     },
     "motion": {
-      "ok": false,
+      "ok": true,
       "longest_still_s": 0.7,
       "still_spans_over_limit": [],
-      "beats_without_visual_change": [
-        {
-          "scene": "s04_truck",
-          "at": 15.5,
-          "text": "In 2011, a truck brought a folding ramp."
-        },
-        {
-          "scene": "s07_eleven",
-          "at": 31.5,
-          "text": "Send this to the mate who cannot park."
-        }
-      ],
-      "median_motion": 0.84,
+      "beats_without_visual_change": [],
+      "median_motion": 0.93,
       "frames": 373
     },
     "audio": {

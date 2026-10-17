@@ -764,7 +764,7 @@
      ]
     }
    ],
-   "visual_description": "fj63 range (dawn grade); fj63_smug1 (silhouette): stand -> point_up -> present; camera push/pull; overlays: label 'GOLDWATER RANGE · APRIL 2011'.",
+   "visual_description": "fj63 range (dawn grade); fj63_smug1 (silhouette): stand -> present -> point_up -> present; camera push/pull; overlays: label 'GOLDWATER RANGE · APRIL 2011'.",
    "shot_size": "wide",
    "set": "fj63_range",
    "grade": "dawn",
@@ -794,6 +794,11 @@
      "start_expr": "neutral",
      "actions": [
       {
+       "at": 2.41,
+       "pose": "present",
+       "turn_head": true
+      },
+      {
        "at": 3.53,
        "pose": "point_up",
        "turn_head": true
@@ -809,7 +814,7 @@
    "overlays": [
     {
      "type": "label",
-     "at": 3.43,
+     "at": 2.41,
      "text": "GOLDWATER RANGE · APRIL 2011"
     }
    ],
@@ -1353,7 +1358,7 @@
      ]
     }
    ],
-   "visual_description": "fj63 refuge (dawn grade); fj63_smug1 (silhouette): stand_tense (walks); fj63_smug2 (silhouette): stand_tense (walks); camera push/pull; overlays: label 'CABEZA PRIETA, ARIZONA · FEB 2019'.",
+   "visual_description": "fj63 refuge (dawn grade); fj63_smug1 (silhouette): stand_tense (walks); fj63_smug2 (silhouette): stand_tense (walks); camera push/pull; overlays: label 'CABEZA PRIETA, ARIZONA · FEB 2019', label 'SEND TO A MATE WHO CAN'T PARK'.",
    "shot_size": "medium-wide",
    "set": "fj63_refuge",
    "grade": "dawn",
@@ -1413,6 +1418,11 @@
      "type": "label",
      "at": 1.42,
      "text": "CABEZA PRIETA, ARIZONA · FEB 2019"
+    },
+    {
+     "type": "label",
+     "at": 5.58,
+     "text": "SEND TO A MATE WHO CAN'T PARK"
     }
    ],
    "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
