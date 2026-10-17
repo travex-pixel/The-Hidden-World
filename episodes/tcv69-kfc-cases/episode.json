@@ -1,0 +1,1071 @@
+{
+ "id": "tcv69-kfc-cases",
+ "number": 69,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "KFC's Strangest Cases",
+ "central_question": "KFC ran out of chicken and Britain called the police, a 'fried rat' went viral, and the secret recipe rode in an armored car: KFC's strangest cases.",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "KFC": "K F C",
+   "KFC's": "K F C's",
+   "FCK": "F C K",
+   "900": "nine hundred",
+   "2018": "twenty eighteen"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "69",
+  "label": "KFC'S STRANGEST CASES"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s07_recipe",
+   "word": [
+    0,
+    4
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "kf69_viewer",
+  "kf69_worker",
+  "kf69_officer",
+  "kf69_customer",
+  "kf69_tech",
+  "kf69_detective",
+  "kf69_guard"
+ ],
+ "content_notes": "Tone: absurd-funny, never mocking. KFC is named only in narration and plain text: no logo, no Colonel likeness or mascot, no trademarked packaging artwork; the bucket is a generic red-and-white striped tub with no lettering, and the apology ad is NOT reproduced (a plain text card only). The 'fried rat' customer is a real private person: never named, drawn only as a dark silhouette tagged NOT A LIKENESS; KFC's lab result is attributed to KFC and his own account is noted on screen. The former detective who carried the recipe is a real person: never named, silhouette only (NOT A LIKENESS). Police officers, the lab technician, the shop worker, the guard and the young man are generic figures with no badge, crest, insignia or company uniform. The tweet is shown only as its reported wording on our own card, never as a replica of a social-media post. No weapon is shown; no dialogue is invented. Status verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "kf69_hook",
+   "min_duration": 3.5,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "beep",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "radio",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_called"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "KFC ran out of chicken."
+    },
+    {
+     "who": "narrator",
+     "text": "So people called the police.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "KFC",
+    "ran",
+    "out",
+    "chicken.",
+    "called",
+    "police."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_shut",
+   "scene": "kf69_shut",
+   "min_duration": 3.5,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      1
+     ],
+     "name": "typing",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_shut",
+    "K_tweet"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Most of its 900 UK restaurants shut."
+    },
+    {
+     "who": "narrator",
+     "text": "Police tweeted: not a police matter.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "most",
+    "900",
+    "restaurants",
+    "shut",
+    "tweeted:",
+    "not",
+    "police",
+    "matter."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_fck",
+   "scene": "kf69_fck",
+   "min_duration": 3.5,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "paper",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_fck"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "KFC's apology? A bucket that spelled FCK."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "apology?",
+    "bucket",
+    "spelled",
+    "FCK."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_rat",
+   "scene": "kf69_rat",
+   "min_duration": 3.5,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "shutter",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_worse",
+    "K_rat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It gets stranger. A man posted a fried rat."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "stranger.",
+    "posted",
+    "fried",
+    "rat."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_lab",
+   "scene": "kf69_lab",
+   "min_duration": 3.5,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "beep",
+     "gain": 0.15
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "ping",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_lab"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The DNA test? KFC said it was chicken."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "DNA",
+    "test?",
+    "chicken."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_lesson",
+   "scene": "kf69_lesson",
+   "min_duration": 3.5,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_lesson"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Not sure when to call the police? Save this."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "when",
+    "call",
+    "police?",
+    "save"
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s07_recipe",
+   "scene": "kf69_recipe",
+   "min_duration": 3.5,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "cuffs",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      9
+     ],
+     "name": "brake",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_wild",
+    "K_recipe"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The wildest? KFC's secret recipe."
+    },
+    {
+     "who": "narrator",
+     "text": "It was cuffed to a former cop, in an armored car.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "wildest?",
+    "secret",
+    "recipe.",
+    "cuffed",
+    "former",
+    "cop,",
+    "armored",
+    "car."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s08_share",
+   "scene": "kf69_share",
+   "min_duration": 3.5,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "keys",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_two",
+    "K_share"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Send this to the mate living on KFC."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "send",
+    "mate",
+    "living",
+    "KFC."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "kf69_end",
+   "min_duration": 3.5,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_punch"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The recipe never went missing."
+    },
+    {
+     "who": "narrator",
+     "text": "But the chicken did.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "never",
+    "missing.",
+    "chicken",
+    "did."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "In February 2018 KFC's UK restaurants ran out of chicken after a switch of delivery contract to DHL. Narration: 'KFC ran out of chicken.' Headline 'KFC RAN OUT OF CHICKEN / SO PEOPLE CALLED POLICE'.",
+   "sources": [
+    "reuters",
+    "ap",
+    "fortune",
+    "arab",
+    "cnbc",
+    "pa"
+   ]
+  },
+  {
+   "id": "K_called",
+   "type": "established",
+   "nature": "fact",
+   "text": "People contacted the police about the closures: Tower Hamlets police (Metropolitan Police, London) asked people to stop; the Met called them nuisance calls; Greater Manchester Police released audio of a 999 call about a closed branch. Narration: 'So people called the police.' (frame 1 shows a phone calling 999).",
+   "sources": [
+    "pa",
+    "week",
+    "ell",
+    "bi",
+    "npr",
+    "newshub999",
+    "tribune"
+   ]
+  },
+  {
+   "id": "K_shut",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): KFC had about 900 UK restaurants and most of them closed (AP: 'most of its 900 outlets'; Reuters: 'the majority of its 900 outlets'; closed counts quoted at different times: 562 (Fortune), more than 600 (PA), more than 700 (KFC via AFP)). Narration: 'Most of its 900 UK restaurants shut.' Counter '900 / KFC UK RESTAURANTS', label 'MOST OF THEM SHUT · FEB 2018'.",
+   "sources": [
+    "reuters",
+    "ap",
+    "fortune",
+    "arab",
+    "cnbc"
+   ]
+  },
+  {
+   "id": "K_tweet",
+   "type": "established",
+   "nature": "fact",
+   "text": "Tower Hamlets police tweeted (20 Feb 2018): 'Please do not contact us about the #KFCCrisis - it is not a police matter if your favourite eatery is not serving the menu that you desire.' (wording as reported by PA, East London Lines, The Week, Business Insider). Narration: 'Police tweeted: not a police matter.' Label: \"'IT IS NOT A POLICE MATTER'\".",
+   "sources": [
+    "pa",
+    "ell",
+    "week",
+    "bi"
+   ]
+  },
+  {
+   "id": "K_fck",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: KFC apologised with full-page ads in The Sun and Metro showing an empty KFC bucket with its letters rearranged to read 'FCK' (agency Mother). Narration: 'KFC's apology? A bucket that spelled FCK.' Card 'KFC'S APOLOGY AD: ITS BUCKET / LETTERS REARRANGED TO \"FCK\"'. The ad is NOT reproduced: our card is plain text.",
+   "sources": [
+    "cnbc",
+    "mweek",
+    "newshubad",
+    "fortunead"
+   ]
+  },
+  {
+   "id": "K_worse",
+   "type": "established",
+   "nature": "editorial",
+   "text": "Editorial bridge to item 2. Narration: 'It gets stranger.'",
+   "sources": [
+    "abc7",
+    "fox2",
+    "fox6",
+    "wtvr",
+    "grio",
+    "katu"
+   ]
+  },
+  {
+   "id": "K_rat",
+   "type": "established",
+   "nature": "fact",
+   "text": "In June 2015 a California customer posted photos on Facebook of a breaded piece he said was a fried rat served at a KFC; the post was shared more than 100,000 times. Narration: 'A man posted a fried rat.' Label 'CALIFORNIA · JUNE 2015' / 'His claim · shared 100,000+ times'. He is not named and drawn only as a silhouette.",
+   "sources": [
+    "abc7",
+    "fox2",
+    "fox6",
+    "wtvr",
+    "grio",
+    "katu"
+   ]
+  },
+  {
+   "id": "K_lab",
+   "type": "established",
+   "nature": "fact",
+   "text": "KFC said the customer's attorney gave the piece to an independent lab and that its DNA test showed it was chicken; KFC called the claim a hoax; the customer had said a manager confirmed it was a rat, which KFC disputed. Narration: 'The DNA test? KFC said it was chicken.' Label 'KFC: INDEPENDENT LAB · DNA TEST' / 'Result: chicken, per KFC'.",
+   "sources": [
+    "abc7",
+    "fox2",
+    "fox6",
+    "wtvr",
+    "grio",
+    "katu"
+   ]
+  },
+  {
+   "id": "K_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): call 999 (UK) / 911 (US) when life is at risk or a crime is happening now; for non-urgent matters call 101 or report online (UK police forces, GOV.UK) or use the local non-emergency number (King County 911, Cal OES). Rows 'LIFE AT RISK? 999 / 911', 'CRIME HAPPENING NOW? SAME', 'NOT URGENT? 101 OR ONLINE'.",
+   "sources": [
+    "wyp",
+    "asp",
+    "govuk",
+    "kingco",
+    "caloes"
+   ]
+  },
+  {
+   "id": "K_wild",
+   "type": "established",
+   "nature": "editorial",
+   "text": "Editorial bridge to item 3. Narration: 'The wildest? KFC's secret recipe.'",
+   "sources": [
+    "nbc",
+    "nrn",
+    "kfcpr",
+    "potato"
+   ]
+  },
+  {
+   "id": "K_recipe",
+   "type": "established",
+   "nature": "fact",
+   "text": "In September 2008 KFC moved Colonel Sanders' handwritten Original Recipe from its Louisville headquarters for the first time in 68 years while it upgraded security; security consultant and former New York City police detective Bo Dietl carried it in a locked briefcase handcuffed to his wrist, riding in an armored car (Brink's), with an escort (Louisville Metro Police per KFC's release; off-duty police officers and private guards per AP). Narration: 'It was cuffed to a former cop, in an armored car.' Label 'LOUISVILLE · SEPT 2008'. He is not named; silhouette only.",
+   "sources": [
+    "nbc",
+    "nrn",
+    "kfcpr",
+    "potato",
+    "siw"
+   ]
+  },
+  {
+   "id": "K_two",
+   "type": "established",
+   "nature": "fact",
+   "text": "KFC said only two executives know the full recipe of 11 herbs and spices, a third knows the safe's combination, and they are not allowed to travel together on the same plane or in the same car. Label 'ONLY 2 EXECUTIVES KNOW IT' / 'They never travel together, KFC said (2008)'.",
+   "sources": [
+    "nbc",
+    "nrn",
+    "potato"
+   ]
+  },
+  {
+   "id": "K_share",
+   "type": "established",
+   "nature": "editorial",
+   "text": "Share prompt (editorial). Narration: 'Send this to the mate living on KFC.'",
+   "sources": [
+    "nbc",
+    "nrn",
+    "kfcpr",
+    "potato"
+   ]
+  },
+  {
+   "id": "K_punch",
+   "type": "established",
+   "nature": "editorial",
+   "text": "Punchline juxtaposing item 3 (the recipe was guarded and kept safe; no loss was ever reported) with item 1 (the 2018 chicken shortage). Narration: 'The recipe never went missing.' / 'But the chicken did.' ('missing' is colloquial for the shortage).",
+   "sources": [
+    "nbc",
+    "kfcpr",
+    "reuters",
+    "ap"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "reuters",
+   "publisher": "Reuters (via Manitoba Co-operator)",
+   "title": "KFC closes most U.K. stores due to chicken shortage",
+   "url": "https://www.manitobacooperator.ca/?p=147630",
+   "date": "2018-02-19",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ap",
+   "publisher": "Associated Press (Sinclair syndication, WJLA)",
+   "title": "Feathers fly as chicken shortage shuts KFCs across Britain",
+   "url": "https://www.wjla.com/news/offbeat/feathers-fly-as-chicken-shortage-shuts-kfcs-across-britain",
+   "date": "2018-02-19",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fortune",
+   "publisher": "Fortune",
+   "title": "KFC closed hundreds of UK restaurants over a chicken shortage",
+   "url": "https://www.fortune.com/2018/02/19/kfc-closed-chicken-shortage",
+   "date": "2018-02-19",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "arab",
+   "publisher": "Arab News (AFP)",
+   "title": "Chicken shortage shuts hundreds of KFC stores in UK",
+   "url": "https://arabnews.com/node/1250081",
+   "date": "2018-02-20",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pa",
+   "publisher": "Guernsey Press (PA)",
+   "title": "Metropolitan Police called as chicken shortage causes KFC branches to close",
+   "url": "https://guernseypress.com/news/viral-news/2018/02/20/metropolitan-police-called-as-chicken-shortage-causes-kfc-branches-to-close/",
+   "date": "2018-02-20",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "week",
+   "publisher": "The Week (UK)",
+   "title": "Police tell KFC customers to stop calling 999 about chicken shortage",
+   "url": "https://www.theweek.co.uk/91809/police-tell-kfc-customers-to-stop-calling-999-about-chicken-shortage",
+   "date": "2018-02-21",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ell",
+   "publisher": "East London Lines",
+   "title": "Drama sweeps London among nationwide KFC closures due to chicken shortage",
+   "url": "https://www.eastlondonlines.co.uk/2018/02/drama-sweeps-london-among-nationwide-kfc-closures-due-chicken-shortage/",
+   "date": "2018-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "bi",
+   "publisher": "Business Insider",
+   "title": "Brits are reporting the KFC chicken shortage to the police",
+   "url": "https://businessinsider.nl/brits-reporting-kfc-chicken-shortage-to-police-mps-2018-2/",
+   "date": "2018-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "npr",
+   "publisher": "NPR (via KUOW)",
+   "title": "KFC store closures in the U.K. prompt calls to police with complaints of chicken shortage",
+   "url": "https://archive.kuow.org/2018-02-21/kfc-store-closures-in-the-u-k-prompt-calls-to-police-with-complaints-of-chicken-shortage",
+   "date": "2018-02-21",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "newshub999",
+   "publisher": "Newshub (NZ)",
+   "title": "Man reports KFC chicken shortage to police",
+   "url": "https://www.newshub.co.nz/home/world/2018/03/man-reports-kfc-chicken-shortage-to-police.html",
+   "date": "2018-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "tribune",
+   "publisher": "The Express Tribune",
+   "title": "Man calls police over KFC chicken shortage",
+   "url": "https://tribune.com.pk/story/1648322/man-calls-police-kfc-chicken-shortage",
+   "date": "2018-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cnbc",
+   "publisher": "CNBC",
+   "title": "KFC issues tongue-in-cheek apology after UK chicken shortage causes restaurant closures",
+   "url": "https://www.cnbc.com/2018/02/23/kfc-issues-tongue-in-cheek-apology-after-uk-chicken-shortage-causes-restaurant-closures.html",
+   "date": "2018-02-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "mweek",
+   "publisher": "Marketing Week",
+   "title": "KFC uses cheeky print advert to apologise for chicken shortage",
+   "url": "https://www.marketingweek.com/kfc-print-advert-to-apologise-for-chicken-shortage/",
+   "date": "2018-02-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "newshubad",
+   "publisher": "Newshub (NZ)",
+   "title": "KFC's cheeky full-page newspaper ads say 'FCK' and apologise for running out of chicken",
+   "url": "https://www.newshub.co.nz/home/world/2018/02/kfc-s-cheeky-full-page-newspaper-ads-say-fck-and-apologise-to-running-out-of-chicken.html",
+   "date": "2018-02-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fortunead",
+   "publisher": "Fortune",
+   "title": "KFC chicken shortage apology",
+   "url": "https://fortune.com/2018/02/23/kfc-chicken-shortage-apology",
+   "date": "2018-02-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "abc7",
+   "publisher": "ABC7 Los Angeles (ABC syndication)",
+   "title": "KFC refutes customer's claim that he was served fried rat with chicken tenders",
+   "url": "https://abc7.com/kfc-kentucky-fried-chicken-california-watts/790292/",
+   "date": "2015-06",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox2",
+   "publisher": "FOX 2 Detroit",
+   "title": "KFC says DNA shows 'fried rat' was chicken",
+   "url": "https://www.fox2detroit.com/news/kfc-says-dna-shows-fried-rat-was-chicken",
+   "date": "2015-06-22",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox6",
+   "publisher": "FOX6 Milwaukee",
+   "title": "DNA test proves 'fried rat' was a chicken tender, KFC says",
+   "url": "https://www.fox6now.com/news/dna-test-proves-fried-rat-was-a-chicken-tender-kfc-says",
+   "date": "2015-06-22",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wtvr",
+   "publisher": "WTVR (CNN wire)",
+   "title": "DNA test proves 'fried rat' was a chicken tender, KFC says",
+   "url": "https://www.wtvr.com/2015/06/23/dna-test-proves-fried-rat-was-a-chicken-tender-kfc-says",
+   "date": "2015-06-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "grio",
+   "publisher": "theGrio",
+   "title": "KFC, lab results confirm 'fried rat' is actually chicken",
+   "url": "https://thegrio.com/2015/06/23/kfc-fried-rat-chicken-lab-results",
+   "date": "2015-06-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "katu",
+   "publisher": "KATU (Sinclair)",
+   "title": "KFC says deep-fried rat claim is a hoax",
+   "url": "https://katu.com/news/nation-world/kfc-says-deep-fried-rat-claim-is-a-hoax",
+   "date": "2015-06",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nbc",
+   "publisher": "NBC News (Associated Press)",
+   "title": "KFC shoring up security for its secret recipe",
+   "url": "https://www.nbcnews.com/id/wbna26622082",
+   "date": "2008-09-09",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nrn",
+   "publisher": "Nation's Restaurant News",
+   "title": "KFC bolsters security for secret recipe as new strips debut",
+   "url": "https://www.nrn.com/archive/kfc-bolsters-security-secret-recipe-new-strips-debut",
+   "date": "2008-09",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "kfcpr",
+   "publisher": "KFC press release (via Franchising.com)",
+   "title": "KFC to showcase historic safe & move Colonel Sanders' famed secret recipe via high-security motorcade",
+   "url": "https://www.franchising.com/news/20080909_kfc_to_showcase_historic_safe_amp_move_colonel_san.html",
+   "date": "2008-09-09",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "potato",
+   "publisher": "PotatoPro (news digest)",
+   "title": "KFC knows how to keep a secret",
+   "url": "https://www.potatopro.com/es/news/2008/kfc-knows-how-keep-secret",
+   "date": "2008-09",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "siw",
+   "publisher": "SecurityInfoWatch",
+   "title": "Security for secret recipes",
+   "url": "https://www.securityinfowatch.com/integrators/blog/10475216/security-for-secret-recipes",
+   "date": "2008-09",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wyp",
+   "publisher": "West Yorkshire Police",
+   "title": "999 or 101 - which number?",
+   "url": "https://www.westyorkshire.police.uk/advice/363",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "asp",
+   "publisher": "Avon and Somerset Police",
+   "title": "101 or 999 - which one should you call?",
+   "url": "https://www.avonandsomerset.police.uk/news/2015/03/101-or-999-which-one-should-you-call/",
+   "date": "2015-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "govuk",
+   "publisher": "GOV.UK",
+   "title": "Contact the police",
+   "url": "https://www.gov.uk/contact-police",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "kingco",
+   "publisher": "King County Sheriff's Office (911 Communications Center)",
+   "title": "When to call 911",
+   "url": "https://kingcounty.gov/en/dept/sheriff/courts-jails-legal-system/sheriff-services/911-communications-center/when-to-call-911",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "caloes",
+   "publisher": "California Governor's Office of Emergency Services",
+   "title": "When to call 911 and when not to call 911",
+   "url": "https://www.news.caloes.ca.gov/when-to-call-911-and-when-not-to-call-911/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 3,
+ "search_terms": [
+  "kfc",
+  "kfc secret recipe",
+  "kfc chicken"
+ ],
+ "palette": {
+  "shadow": "#161c24",
+  "mid": "#c6baa6",
+  "accent": "#d4553f"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "KFC RAN OUT OF CHICKEN"
+   },
+   {
+    "text": "SO PEOPLE CALLED POLICE",
+    "colour": "#d4553f"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "KFC SECRET RECIPE:"
+   },
+   {
+    "text": "OVERRATED OR WORTH IT? 👇",
+    "colour": "#d4553f"
+   },
+   {
+    "text": "TAG THE MATE WHO LIVES ON KFC",
+    "fs": 44
+   }
+  ],
+  "from": 3.4,
+  "y": 420
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 4.06,
+    "v": "1 · NO CHICKEN"
+   },
+   {
+    "t": 14.81,
+    "v": "2 · THE 'FRIED RAT'"
+   },
+   {
+    "t": 25.6,
+    "v": "3 · THE SECRET RECIPE"
+   }
+  ],
+  "y": 360,
+  "until": 34.12
+ },
+ "legal_status_verified": "2026-10-17"
+}

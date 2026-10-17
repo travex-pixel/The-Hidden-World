@@ -400,3 +400,5 @@
 - 2026-10-17 12:39:54 tcv68-chicken-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_68_chicken_heist.mp4 (37.5s, 18.3 MB, sha256 48ac45be8316)
 - 2026-10-17 12:40:06 produce 66 --force: regenerating episode data
 - 2026-10-17 12:40:06 tcv66-louvre-one-year: rendering (final60, seed 1)
+- 2026-10-17 13:09:48 tcv66-louvre-one-year: rendered in 1782s
+- 2026-10-17 13:10:45 tcv66-louvre-one-year: VERIFIED -> series/true-crime-cinematic/output/true_crime_66_louvre_one_year.mp4 (37.9s, 22.8 MB, sha256 66e221711a75)

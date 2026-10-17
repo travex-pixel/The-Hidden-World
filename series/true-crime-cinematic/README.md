@@ -67,6 +67,9 @@
 | 63 | `true_crime_63_fence_jeep.mp4` (archived outside git) | List format: smugglers' vehicles stuck on the border fence (2012, 2011, 2019); AI voice | see `production_manifest.json` |
 | 64 | `true_crime_64_pigeon_backpack.mp4` (archived outside git) | List format: animal smugglers (Kuwait pigeon, Colombia pigeon, Sri Lanka cat); AI voice | see `production_manifest.json` |
 | 65 | `true_crime_65_prison_rat.mp4` (archived outside git) | List format: prison contraband (tennis balls, drones, dead rats at HMP Guys Marsh); AI voice | see `production_manifest.json` |
+| 66 | `true_crime_66_louvre_one_year.mp4` (archived outside git) | Trending: the Louvre heist one year on (jewels still missing), the Renoir museum and the 330-lb Dalí theft; AI voice; post 19 Oct 2026 | see `production_manifest.json` |
+| 67 | `true_crime_67_underwear_birds.mp4` (archived outside git) | Trending: 10 live birds allegedly hidden in underwear at Miami airport (Oct 2026) and two other wildlife smuggling cases; AI voice | see `production_manifest.json` |
+| 68 | `true_crime_68_chicken_heist.mp4` (archived outside git) | Trending: the Memphis chicken heist (Sept 2026), 100,000 stolen eggs and the missing KitKat truck; AI voice | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

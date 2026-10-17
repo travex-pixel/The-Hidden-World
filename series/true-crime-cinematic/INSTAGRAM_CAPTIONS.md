@@ -762,3 +762,30 @@ Genius or disgusting? 👇
 
 Seed comment: Genius. Disgusting, but genius. Who stitches a rat?!
 Pinned share line: Send this to the mate who's a rat 🐀
+
+## 66 (`true_crime_66_louvre_one_year.mp4`)
+CAPTION: One year after the Louvre heist, the crown jewels are still missing. 💎 Then thieves hit a Renoir museum, and carried off a 330-lb Dalí cover. Will the Louvre jewels ever be found? YES or NO 👇
+HASHTAGS: #louvreheist #louvrejewels #museumheist #truecrime #paris
+ALT TEXT: Illustrated reel about the Louvre heist one year on: a furniture lift at the gallery window, the dropped crown, a Renoir museum theft and a 330-pound Dalí bronze book cover, with the Louvre jewels still missing as of October 2026.
+SEED COMMENT: No chance. I reckon they were broken up and sold months ago.
+PINNED: Send this to the mate with a van 🚐 Vote: 1 = they will be found, 2 = gone forever 👇
+POST WHEN: Monday 19 October 2026, 12:00–13:00 New York time (18:00–19:00 Paris): the first anniversary of the heist, when "louvre heist" searches and anniversary news peak; re-check for any recovery news that morning before posting.
+
+## 67 (`true_crime_67_underwear_birds.mp4`)
+CAPTION: 10 live birds in his underwear at Miami airport, prosecutors say 🐦 Six tubes. One customs form that said "no animals". And he was not even the wildest one. He is charged, not convicted. Genius or cruel?
+HASHTAGS: #birdsmuggling #miamiairport #truecrime #wildlife #customs
+ALT TEXT: Illustrated reel about birds in underwear at Miami airport: a customs officer lifts a clear tube with a small yellow-faced bird peeking out, then two other wildlife smuggling cases, reptiles at the San Ysidro border and 104 snakes in trouser pockets in Shenzhen.
+SEED COMMENT: Cruel. If prosecutors are right, ten birds sat in tubes for a whole flight, and "personal use" does not make that OK.
+PINNED: Send this to the mate who packs light 🧳 Vote: 1 = genius, 2 = cruel 👇
+POST WHEN: Today, Saturday 17 Oct 2026, 11:00-13:00 US Eastern (16:00-18:00 UK): the story is still trending this week (first reported 6-7 Oct) and weekend late mornings catch the US and UK audience together.
+
+## 68 (`true_crime_68_chicken_heist.mp4`)
+CAPTION: The $250,000 chicken heist: 13 arrested in Memphis, and police say the driver was paying off a drug debt 🍗
+Then 100,000 eggs vanished in Pennsylvania, and a whole truck of KitKats is still missing in Europe. All accused in Memphis are charged, not convicted (as of Oct 2026).
+Which food heist wins: chicken or KitKat? 👇
+HASHTAGS: #chickenheist #foodheist #memphis #truecrime #heist
+ALT TEXT: Illustrated reel about the Memphis chicken heist, where 13 people were arrested over a semi-trailer of chicken, plus a 100,000-egg theft in Pennsylvania and a stolen truck of 413,793 KitKat bars: three of the wildest food heists.
+SEED COMMENT: The KitKat one wins easily. 413,000 bars and nobody can find a whole truck? That is a pro job.
+PINNED: Tag the mate who always orders wings 🍗 Vote: 1 = chicken heist, 2 = KitKat heist 👇
+POST WHEN: Today, Saturday 17 Oct 2026, 7–9 pm US Eastern (6–8 pm Memphis): the story is still being searched one month on, and the American evening is when most of the 18–34 audience is on Reels.
+
