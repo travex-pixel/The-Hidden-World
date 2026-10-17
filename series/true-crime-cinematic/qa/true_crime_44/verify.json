@@ -1,0 +1,191 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv44-oldest-robber/tcv44-oldest-robber.mp4",
+    "size_bytes": 21829848,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 40.767,
+    "audio_duration": 40.767,
+    "decode_stderr": "",
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.2,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv44-oldest-robber/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2446,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.6,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.2
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.079,
+    "transcript": "At 91 he robbed a bank and it was not his first. So why rob a bank at 91? He blamed a bank for his bankruptcy. He wanted to get even. First by Loxie, probation, and Pensacola. Three years in prison. In Abilene, he handed a teller and envelope Mark Robbery. She asked twice if he was joking. But witnesses took his plate. Officers stopped him 20 miles away. Grandparent's short of money saved these three signs. America's prisoners, 55 and older, have quadrupled since 2000. Then, at 92, he got over 12 years. He died in prison within a year."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 48,
+      "extent": {
+        "left": 118.6,
+        "right": 961.4,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.5,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.88,
+      "frames": 408
+    },
+    "audio": {
+      "opening_speech_median_db": -19.0,
+      "opening_min_speech_window_db": -30.3,
+      "first_word_db": -18.3,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -36.7,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.303,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 16.8,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -33.3,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8715,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.2,
+      "mono_lufs": -14.3,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -77.8,
+      "end_before_db": -12.5,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.3,
+      "ending_intentional": true,
+      "durations": {
+        "video": 40.766667,
+        "audio": 40.767007
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true
+      },
+      "notes": {
+        "hook": "At 91, he robbed a bank. And it was not his first. So,",
+        "loop_gaps": [],
+        "tail": "have quadrupled since 2000. Then, at 92, he got over twelve years. He died in prison within a year.",
+        "end_title": "12+ YEARS AT 92. FAIR OR TOO HARSH? \ud83d\udc47 SEND TO YOUR GRANDAD",
+        "tail_s": 1.2,
+        "wpm": 147.2
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 9,
+      "composed_shots": 9,
+      "shots_with_characters": 8,
+      "character_shot_share": 0.89,
+      "distinct_sets": 7,
+      "max_set_share": 0.33,
+      "shot_sizes": {
+        "medium": 4,
+        "insert/graphic": 1,
+        "medium-wide": 3,
+        "wide": 1
+      },
+      "max_shot_size_share": 0.44,
+      "ok": true
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv36-yen-heist/tcv36-yen-heist.mp4",
+    "size_bytes": 45126245,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 51.95,
+    "audio_duration": 51.95,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.6,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv36-yen-heist/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 3117,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.2,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.06,
+    "transcript": "Japan is one of the safest countries on Earth. Yet there, a fake cop stole nearly 300 million yen. It was December 1968 in Fuchu, Tokyo. A bank car carried 290, 4 million yen, and bonuses for the Shiba workers. Then a policeman on a white motorcycle waved it down. He said their manager's house was bombed, and dynamite was planted in their car. He crawled underneath, smoke and flames poured out. Poor employees ran. It was only the flare. He got in and drove off cash and all. Even his police motorcycle was a fake. About 170,000 police officers worked the case. In 1975, time ran out to charge anyone. And the fake cop was never caught. The lesson, a uniform is not proof. All he needed was a fake police motorcycle."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 63,
+      "extent": {
+        "left": 123.3,
+        "right": 956.7,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.2,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 2.88,
+      "frames": 520
+    },
+    "audio": {
+      "opening_speech_median_db": -20.7,
+      "opening_min_speech_window_db": -33.6,
+      "first_word_db": -18.4,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -39.2,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.294,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 14.4,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -35.2,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8338,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.6,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -91.3,
+      "end_before_db": -15.5,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 51.95,
+        "audio": 51.95
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 10,
+      "composed_shots": 10,
+      "shots_with_characters": 8,
+      "character_shot_share": 0.8,
+      "distinct_sets": 6,
+      "max_set_share": 0.4,
+      "shot_sizes": {
+        "medium-wide": 3,
+        "insert/graphic": 2,
+        "medium": 5
+      },
+      "max_shot_size_share": 0.5,
+      "ok": true
+    }
+  }
+}

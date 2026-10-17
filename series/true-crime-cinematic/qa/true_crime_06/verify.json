@@ -1,0 +1,159 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv06-whitey-bulger/tcv06-whitey-bulger.mp4",
+    "size_bytes": 29432575,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 77.857,
+    "audio_duration": 77.857,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.7,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv06-whitey-bulger/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2334,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.1,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.7
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.121,
+    "transcript": "He hid from the FBE, yeah for 16 years. The tip that caught him began with a stray cat. Whitey Bulger, Boston mob boss, and secretly, an FBI informant. His FBE handler warned him charges were coming. Bulger vanished. That agent was later convicted. By 1999, he was on the FBE's 10 most wanted list. Fun fact, Jack Nicholson's departed role was reportedly inspired by him. In 2011, the FBA tried something new. Daytime for the ads about his girlfriend, Catherine Greg, aimed at women who might recognize her. The next evening, a tip came in. From a former neighbor in Santa Monica, California. She and Greg had bonded over a stray cat. Fun fact, she was reportedly a former Miss Iceland. A roost, he was told someone broke into a storage locker. He came down to the garage. Agents were waiting. Bulger, now 81, was under arrest. Inside, more than $800,000 in cash and 30 guns, much of it hidden in the walls. In 2013, he was convicted, including of involvement in 11 murders. He died in prison in 2018. 16 years on the run, ended by a neighbor who knew her face. Next, the piece across the helped crackers your yolkiller case."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 101,
+      "extent": {
+        "left": 116.2,
+        "right": 963.8,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.4,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.78,
+      "frames": 778
+    },
+    "audio": {
+      "opening_speech_median_db": -20.8,
+      "opening_min_speech_window_db": -41.8,
+      "first_word_db": -19.3,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -36.0,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.26,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 11.6,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -35.4,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8199,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.7,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -90.7,
+      "end_before_db": -15.3,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 77.8,
+        "audio": 77.857007
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 13,
+      "composed_shots": 13,
+      "shots_with_characters": 13,
+      "character_shot_share": 1.0,
+      "distinct_sets": 7,
+      "max_set_share": 0.23,
+      "shot_sizes": {
+        "wide": 3,
+        "medium": 4,
+        "close-up": 3,
+        "medium-wide": 3
+      },
+      "max_shot_size_share": 0.31,
+      "ok": true
+    }
+  }
+}

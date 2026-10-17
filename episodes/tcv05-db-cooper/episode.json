@@ -1,0 +1,1258 @@
+{
+ "id": "tcv05-db-cooper",
+ "number": 5,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "He Hijacked a Plane, Took $200,000 and Jumped. He Was Never Found.",
+ "central_question": "Who was 'Dan Cooper', and what happened after he jumped from Flight 305?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "727": "seven twenty seven",
+   "727s": "seven twenty sevens",
+   "$200,000": "two hundred thousand dollars",
+   "$20": "twenty dollar",
+   "$5,800": "five thousand eight hundred dollars"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "05",
+  "label": "THE D.B. COOPER HIJACKING · 1971"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "hits": [
+   {
+    "scene": "s07_jump",
+    "word": [
+     1,
+     1
+    ],
+    "at": 0.0,
+    "gain": 0.45
+   },
+   {
+    "scene": "s11_serials",
+    "word": [
+     0,
+     4
+    ],
+    "at": 0.0,
+    "gain": 0.5
+   }
+  ],
+  "cliff": {
+   "scene": "s13_fbi",
+   "word": [
+    1,
+    9
+   ],
+   "at": -0.1
+  }
+ },
+ "figures": [
+  "db5_cooper",
+  "db5_attendant",
+  "db5_boy",
+  "db5_passenger",
+  "agent_a",
+  "agent_b",
+  "detective",
+  "examiner",
+  "analyst",
+  "press_operator"
+ ],
+ "content_notes": "Unsolved case. 'Dan Cooper' is an illustrated representation, not a likeness (generic suit, tie and dark sunglasses from the widely published descriptions); no suspect is named, shown or implied. The boy who found the money in 1980, a living person, appears only as a small anonymous silhouette. Flight attendants, agents and the reporter are generic. No real photograph, document, logo, uniform or currency is imitated: cards are the series' own typed graphics and the bank notes are generic green notes with no portrait or real serial numbers. No dialogue or quotes are invented. Research verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "db5_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.25,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.7
+    },
+    {
+     "at": 3.8,
+     "name": "wind",
+     "gain": 0.7
+    },
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.25
+    },
+    {
+     "at": 3.5,
+     "name": "rain",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "flutter",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "whoosh",
+     "gain": 0.9
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "K_hijack",
+    "K_jump",
+    "K_unsolved"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A man hijacked a plane, took $200,000, and jumped out into the night."
+    },
+    {
+     "who": "narrator",
+     "text": "He has never been found.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$200,000,",
+    "jumped",
+    "never",
+    "found."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_board",
+   "scene": "db5_board",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.75,
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 1.3,
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "paper",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "K_ticket"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Thanksgiving eve, 1971. His plane ticket said: Dan Cooper."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dan",
+    "cooper."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_name",
+   "scene": "db5_name",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "curious",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.85
+    },
+    {
+     "at": 0.5,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "click",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_name"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Fun fact: he never called himself D.B."
+    },
+    {
+     "who": "narrator",
+     "text": "That came from a media mix-up.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "d.b.",
+    "mix-up."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_note",
+   "scene": "db5_note",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.7
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "K_note"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "After takeoff, he handed a flight attendant a note."
+    },
+    {
+     "who": "narrator",
+     "text": "It said he had a bomb.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "note.",
+    "bomb."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_demand",
+   "scene": "db5_demand",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pen",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "K_demand"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He demanded $200,000."
+    },
+    {
+     "who": "narrator",
+     "text": "And four parachutes.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$200,000.",
+    "four",
+    "parachutes."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_seattle",
+   "scene": "db5_seattle",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.35
+    },
+    {
+     "at": 3.5,
+     "name": "rain",
+     "gain": 0.35
+    },
+    {
+     "at": 0.4,
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.9,
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 1.4,
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "K_seattle"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In Seattle, he swapped the passengers for the cash and parachutes."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "passengers",
+    "cash"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_jump",
+   "scene": "db5_jump",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.9
+    },
+    {
+     "at": 3.8,
+     "name": "wind",
+     "gain": 0.9
+    },
+    {
+     "at": 7.6,
+     "name": "wind",
+     "gain": 0.9
+    },
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.4
+    },
+    {
+     "at": 3.5,
+     "name": "rain",
+     "gain": 0.4
+    },
+    {
+     "at": 7.0,
+     "name": "rain",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "rumble",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 1.0
+    }
+   ],
+   "claims": [
+    "K_jump"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A little after 8 p.m., he lowered the rear stairs,"
+    },
+    {
+     "who": "narrator",
+     "text": "and jumped into the dark.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "jumped"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_vane",
+   "scene": "db5_vane",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "curious",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.85
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "click",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "K_vane"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Fun fact: 727s got a device to block those stairs in flight:"
+    },
+    {
+     "who": "narrator",
+     "text": "the 'Cooper vane'.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "'cooper",
+    "vane'."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_manhunt",
+   "scene": "db5_manhunt",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.25
+    },
+    {
+     "at": 3.5,
+     "name": "rain",
+     "gain": 0.25
+    },
+    {
+     "at": 0.2,
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.4,
+     "word": [
+      1,
+      5
+     ],
+     "name": "swell",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "K_manhunt",
+    "K_find"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A huge manhunt found no trace of him."
+    },
+    {
+     "who": "narrator",
+     "text": "Then, in 1980, a kid went digging.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no",
+    "trace",
+    "digging."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s10_sandbar",
+   "scene": "db5_sandbar",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "water",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": 0.5,
+     "name": "thud",
+     "gain": 0.25
+    },
+    {
+     "at": 1.1,
+     "name": "thud",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "flutter",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "K_find"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "By the Columbia River, an 8-year-old uncovered bundles of rotting $20 bills."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$20",
+    "bills."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s11_serials",
+   "scene": "db5_serials",
+   "min_duration": 3.4,
+   "pad_after": 0.4,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.9
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "stamp",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "K_find",
+    "K_serials"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "$5,800. The serial numbers matched Cooper's ransom.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$5,800.",
+    "matched"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s12_rest",
+   "scene": "db5_rest",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "water",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "K_rest"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "How did it get there? No one knows."
+    },
+    {
+     "who": "narrator",
+     "text": "The rest of the cash? Never found.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "never",
+    "found."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s13_fbi",
+   "scene": "db5_fbi",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.6
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      6
+     ],
+     "name": "paper",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_2016"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2016, the FBI stopped actively investigating."
+    },
+    {
+     "who": "narrator",
+     "text": "It still wants evidence of the parachutes or the money.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "stopped",
+    "parachutes",
+    "money."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s14_end",
+   "scene": "db5_end",
+   "min_duration": 3.0,
+   "pad_after": 1.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.22
+    },
+    {
+     "at": 3.5,
+     "name": "rain",
+     "gain": 0.22
+    },
+    {
+     "at": 7.0,
+     "name": "rain",
+     "gain": 0.22
+    },
+    {
+     "at": 10.5,
+     "name": "rain",
+     "gain": 0.22
+    },
+    {
+     "at": -0.15,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      2,
+      2
+     ],
+     "name": "chime",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_unsolved",
+    "K_next"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Over 50 years later, no one knows who he was.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "Next: a most-wanted fugitive hid for 16 years.",
+     "pause_before": 0.35
+    },
+    {
+     "who": "narrator",
+     "text": "A stray cat helped give him away.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no",
+    "knows",
+    "16",
+    "cat"
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hijack",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 24 November 1971 a man calling himself Dan Cooper hijacked Northwest Orient Flight 305 (a Boeing 727, Portland to Seattle), claiming a bomb, and obtained $200,000 in ransom.",
+   "sources": [
+    "fbi_case",
+    "cbs_2011",
+    "historylink_1971"
+   ]
+  },
+  {
+   "id": "K_jump",
+   "type": "established",
+   "nature": "fact",
+   "text": "A little after 8 p.m., somewhere between Seattle and Reno, he jumped from the back of the plane, by the lowered rear (aft) airstair, with a parachute and the ransom money.",
+   "sources": [
+    "fbi_case",
+    "cbs_2011",
+    "officer_2011",
+    "historylink_1971"
+   ]
+  },
+  {
+   "id": "K_unsolved",
+   "type": "established",
+   "nature": "fact",
+   "text": "He has never been located or identified. The FBI's July 2016 statement says no tip has produced a definitive identification.",
+   "sources": [
+    "fbi_case",
+    "fbi_2016",
+    "npr_2016"
+   ]
+  },
+  {
+   "id": "K_ticket",
+   "type": "established",
+   "nature": "fact",
+   "text": "In Portland on 24 November 1971 (the day before Thanksgiving, which fell on 25 November 1971), he bought a ticket on Flight 305 under the name 'Dan Cooper'. The FBI describes him as a quiet man in a business suit.",
+   "sources": [
+    "fbi_case",
+    "cjr",
+    "historylink_1971"
+   ]
+  },
+  {
+   "id": "K_name",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: 'D.B. Cooper' is not the name he used. He bought the ticket as 'Dan Cooper'; 'D.B.' came from a media error (the FBI calls it a media mistake; reporter James Long said in 2016 'I got the name wrong'; CJR traces it to wire reporting).",
+   "sources": [
+    "fbi_case",
+    "latimes_2016",
+    "cjr"
+   ]
+  },
+  {
+   "id": "K_note",
+   "type": "established",
+   "nature": "fact",
+   "text": "Shortly after takeoff (a little after 3 p.m.) he handed a flight attendant a note saying he had a bomb.",
+   "sources": [
+    "fbi_case",
+    "cbs_2011",
+    "historylink_1971"
+   ]
+  },
+  {
+   "id": "K_demand",
+   "type": "established",
+   "nature": "fact",
+   "text": "He demanded $200,000 in $20 bills and four parachutes.",
+   "sources": [
+    "fbi_case",
+    "cbs_2011",
+    "coinworld"
+   ]
+  },
+  {
+   "id": "K_seattle",
+   "type": "established",
+   "nature": "fact",
+   "text": "When the plane landed in Seattle he exchanged the 36 passengers for the money and the parachutes, then the plane took off again.",
+   "sources": [
+    "fbi_case",
+    "cbs_2011",
+    "officer_2011"
+   ]
+  },
+  {
+   "id": "K_vane",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: after Cooper's jump and copycat hijackings in 1972, the FAA required Boeing 727s to be fitted with the 'Cooper vane', a spring-loaded aerodynamic paddle that stops the rear airstair being lowered in flight; it is named after the hijacker.",
+   "sources": [
+    "simpleflying_727",
+    "history_cooper",
+    "wiki_vane",
+    "aerocorner"
+   ]
+  },
+  {
+   "id": "K_manhunt",
+   "type": "established",
+   "nature": "fact",
+   "text": "Despite an extensive manhunt and a long FBI investigation, he was never located.",
+   "sources": [
+    "fbi_case",
+    "historylink_1971",
+    "fbi_2016"
+   ]
+  },
+  {
+   "id": "K_find",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 10 February 1980 an 8-year-old boy, smoothing sand for a campfire at Tena Bar on the Washington bank of the Columbia River, found three deteriorating packets of $20 bills totalling $5,800.",
+   "sources": [
+    "historylink_1980",
+    "kiro_1980",
+    "coinworld",
+    "fbi_2009"
+   ]
+  },
+  {
+   "id": "K_serials",
+   "type": "established",
+   "nature": "fact",
+   "text": "The serial numbers of the 1980 bills matched the ransom serial numbers recorded before the money was handed over.",
+   "sources": [
+    "fbi_case",
+    "seattletimes_1996",
+    "coinworld"
+   ]
+  },
+  {
+   "id": "K_rest",
+   "type": "established",
+   "nature": "fact",
+   "text": "How the money reached Tena Bar is unresolved (burial, river flow and dredging theories exist), and the rest of the ransom has never been found; the 1980 find is the only ransom money recovered.",
+   "sources": [
+    "kiro_1980",
+    "coinworld",
+    "seattletimes_1996"
+   ]
+  },
+  {
+   "id": "K_2016",
+   "type": "established",
+   "nature": "fact",
+   "text": "In July 2016 the FBI redirected the resources allocated to the case and stopped actively investigating; it still asks anyone with specific physical evidence related to the parachutes or the money to contact the FBI.",
+   "sources": [
+    "fbi_2016",
+    "npr_2016",
+    "cbs_sf_2016"
+   ]
+  },
+  {
+   "id": "K_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "NEXT-EPISODE TEASE: James 'Whitey' Bulger, on the FBI's Ten Most Wanted list, was arrested in Santa Monica on 22 June 2011 after about 16 years on the run; the tip came from a former neighbour who knew the couple through a stray cat that his partner Catherine Greig cared for.",
+   "sources": [
+    "fbi_bulger",
+    "history_bulger",
+    "cbs_bulger",
+    "nbc_bulger"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fbi_case",
+   "publisher": "FBI (History: Famous Cases)",
+   "title": "D.B. Cooper Hijacking",
+   "url": "https://www.fbi.gov/history/famous-cases/db-cooper-hijacking",
+   "date": "page updated 2016-07-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_2016",
+   "publisher": "FBI Seattle Field Office",
+   "title": "Update on Investigation of 1971 Hijacking by D.B. Cooper",
+   "url": "https://www.fbi.gov/contact-us/field-offices/seattle/news/press-releases/update-on-investigation-of-1971-hijacking-by-d.b.-cooper",
+   "date": "2016-07-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_2009",
+   "publisher": "FBI (archived news story)",
+   "title": "In Search of D.B. Cooper: New Developments in Unsolved Case",
+   "url": "https://archives.fbi.gov/archives/news/stories/2009/march/in-search-of-d.b.-cooper",
+   "date": "2009-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_2011",
+   "publisher": "CBS News",
+   "title": "'Credible lead' in D.B. Cooper hijacking case, says FBI",
+   "url": "https://www.cbsnews.com/news/credible-lead-in-db-cooper-hijacking-case-says-fbi",
+   "date": "2011-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "officer_2011",
+   "publisher": "Officer.com (wire report quoting the FBI)",
+   "title": "FBI: 'Credible Lead' in D.B. Cooper Case",
+   "url": "https://www.officer.com/investigations/news/10313189/fbi-credible-lead-in-db-cooper-case",
+   "date": "2011-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "historylink_1971",
+   "publisher": "HistoryLink.org",
+   "title": "Dan Cooper parachutes from skyjacked jetliner on November 24, 1971",
+   "url": "https://www.historylink.org/file/1997",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "historylink_1980",
+   "publisher": "HistoryLink.org",
+   "title": "$5,800 of airplane hijacker D. B. Cooper's ransom money is found near the Columbia River on February 10, 1980",
+   "url": "https://www.historylink.org/file/23059",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kiro_1980",
+   "publisher": "KIRO 7 News",
+   "title": "46 years ago today: boy finds $5,800 of D.B. Cooper's ransom money near Columbia River",
+   "url": "https://www.kiro7.com/news/local/46-years-ago-today-boy-finds-5800-d-b-coopers-ransom-money-near-columbia-river/RYDDPLUW4BEBZNY3GJGAREXYOU/",
+   "date": "2026-02-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "coinworld",
+   "publisher": "Coin World",
+   "title": "D.B. Cooper skyjacking: Boy, 8, unearths ransom notes",
+   "url": "https://www.coinworld.com/news/precious-metals/1971-skyjacking-cash-ransom-found-by-eight-year-old-in-1980.html",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "seattletimes_1996",
+   "publisher": "The Seattle Times",
+   "title": "D.B. Cooper -- Perfect Crime Or Perfect Folly?",
+   "url": "https://archive.seattletimes.com/archive/19961117/2360262/db-cooper----perfect-crime-or-perfect-folly",
+   "date": "1996-11-17",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "latimes_2016",
+   "publisher": "Los Angeles Times (via PressReader)",
+   "title": "A D.B. Cooper admission",
+   "url": "https://www.pressreader.com/usa/los-angeles-times/20160728/281539405323587",
+   "date": "2016-07-28",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cjr",
+   "publisher": "Columbia Journalism Review",
+   "title": "The D.B. Cooper case: how a media mistake named a hijacker",
+   "url": "https://www.cjr.org/the_feature/db_cooper_unsolved_hijacking_mystery.php",
+   "date": "2016",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "simpleflying_727",
+   "publisher": "Simple Flying",
+   "title": "The Problem With The Boeing 727's Rear Door",
+   "url": "https://simpleflying.com/boeing-727-rear-door-problem/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_cooper",
+   "publisher": "HISTORY (A&E)",
+   "title": "Who Was the Mysterious Hijacker D.B. Cooper?",
+   "url": "https://www.history.com/articles/who-was-d-b-cooper",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_vane",
+   "publisher": "Wikipedia (pointer only; cites Federal Register Vol. 37 No. 231, 30 Nov 1972)",
+   "title": "Cooper vane",
+   "url": "https://en.wikipedia.org/wiki/Cooper_vane",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aerocorner",
+   "publisher": "AeroCorner",
+   "title": "D.B. Cooper, the Boeing 727 and the Cooper vane",
+   "url": "https://aerocorner.com/blog/d-b-cooper-727-cooper-vane/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_2016",
+   "publisher": "NPR",
+   "title": "FBI Is Giving Up On Solving The Mystery Of D.B. Cooper",
+   "url": "https://www.npr.org/sections/thetwo-way/2016/07/13/485839902/fbi-is-giving-up-on-solving-the-mystery-of-d-b-cooper",
+   "date": "2016-07-13",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_sf_2016",
+   "publisher": "CBS San Francisco",
+   "title": "FBI No Longer Actively Investigating D.B. Cooper Case",
+   "url": "https://www.cbsnews.com/sanfrancisco/news/fbi-no-longer-actively-investigating-d-b-cooper-case/",
+   "date": "2016-07-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_bulger",
+   "publisher": "FBI Los Angeles",
+   "title": "Most Wanted Fugitive Bulger Captured in Santa Monica",
+   "url": "https://www.fbi.gov/losangeles/press-releases/2011/most-wanted-fugitive-bulger-captured-in-santa-monica",
+   "date": "2011-06-23",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_bulger",
+   "publisher": "HISTORY (A&E)",
+   "title": "Notorious Boston mobster Whitey Bulger is arrested",
+   "url": "https://www.history.com/this-day-in-history/june-22/notorious-boston-mobster-whitey-bulger-is-arrested",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_bulger",
+   "publisher": "CBS News",
+   "title": "\"Whitey\" Bulger taken down by ex-Miss Iceland",
+   "url": "https://www.cbsnews.com/news/whitey-bulger-taken-down-by-ex-miss-iceland",
+   "date": "2011-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_bulger",
+   "publisher": "NBC News (reporting The Boston Globe)",
+   "title": "Bulger tipster collected $2 million reward",
+   "url": "https://www.nbcnews.com/id/wbna44840737",
+   "date": "2011-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "research_verified": "2026-10-11"
+}

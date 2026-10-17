@@ -16,6 +16,12 @@ Five verified episodes, 27–32 s each. Story bible, scripts, QA and render inst
 ### Dark Psychology series (animated thrillers)
 **Episode 004 — *The Compliment With a Deadline*** → render it with the workflow (artifact `ep004-compliment-deadline-seed1-final`). Recurring cast in [`characters/`](characters/), rig in [`renderer/cast.js`](renderer/cast.js), design system in [docs/THRILLER_STYLE.md](docs/THRILLER_STYLE.md).
 
+### Case Files (true crime, illustrated documentary)
+**01 — *She Got Life for Murder. The 'Blood' Was Sound-Deadener.*** (Azaria Chamberlain) → [`series/true-crime/output/true_crime_01.mp4`](series/true-crime/output/true_crime_01.mp4)
+**02 — *How the Unabomber's Own Words Gave Him Away*** → [`series/true-crime/output/true_crime_02.mp4`](series/true-crime/output/true_crime_02.mp4)
+**03 — *He Asked Police One Question. Their Answer Was a Trap.*** (BTK, 60 fps, engine v2) → [`series/true-crime/output/true_crime_03.mp4`](series/true-crime/output/true_crime_03.mp4)
+Research dossiers, scripts, storyboards, sources, QA manifest and regeneration steps: [`series/true-crime/`](series/true-crime/README.md).
+
 ## How it works
 
 ```
@@ -39,7 +45,7 @@ episodes/<id>/research.md               │
 | Episode format | `episodes/<id>/episode.json` — scenes, narration, captions, SFX cues, claims ↔ sources, illustrative financials. Validated by `pipeline/schema.py`. |
 | Research | `episodes/<id>/research.md` — sources actually consulted, claim-level fact check, uncertainties, licences. |
 | Art | **Illustrated mode (Episode 001 default):** supplied panels are imported by `pipeline/import_panels.py`, then framed, animated with camera moves and crossfades, text-corrected and captioned (see [docs/ART.md](docs/ART.md)). **Code-drawn mode (`--visual svg`):** `renderer/engine.js` (palette, paper grain, watercolour blobs, ink filters, character rigs *Marigold*, *Pip*, the messenger bird, reservoirs, pipes, coins, charts, captions, transitions) + `renderer/scenes/<id>.js` (one function per scene, deterministic in `t` and seed). |
-| Narration | Piper TTS, `en_GB-alba-medium` (MIT engine, CC BY 4.0 dataset). Voice fetched from the GitHub release mirror, cached. |
+| Narration | Piper TTS, `en_GB-alba-medium` (MIT engine, CC BY 4.0 dataset). Voice fetched from the GitHub release mirror, cached. Optional per-episode or per-build **ElevenLabs** provider (`--tts elevenlabs`, key via environment only): see [docs/TTS_PROVIDERS.md](docs/TTS_PROVIDERS.md). |
 | Music & SFX | `pipeline/audio.py` — composed cue system (curious → playful → tension → revelation → warm) and synthesised effects; side-chain ducking; soft limiter. |
 | Render | `pipeline/render.mjs` — Playwright/Chromium screenshots every frame into ffmpeg. |
 | Verify | `pipeline/verify.py` — streams, codec, 1080×1920, 30 fps, duration, full decode, loudness, silence gaps, contact sheet. |

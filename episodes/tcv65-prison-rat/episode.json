@@ -1,0 +1,881 @@
+{
+ "id": "tcv65-prison-rat",
+ "number": 65,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Drugs Smuggled Into Prison Inside Dead Rats",
+ "central_question": "Tennis balls, drones, and then dead rats stitched shut: how far will smugglers go to get drugs into a prison?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "1,712": "seventeen hundred and twelve"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "65",
+  "label": "THE PRISON RATS · ENGLAND 2019"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s06_rats",
+   "word": [
+    0,
+    3
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "pr65_thrower",
+  "pr65_guard1",
+  "pr65_guard2",
+  "pr65_viewer"
+ ],
+ "content_notes": "Tone: gross-funny, never gory. The dead rats are a stylised, non-graphic drawing: grey fur, a stitched seam, no blood, no wound, no insides shown; the seized items are drawn as generic phones, chargers and plain packets beside the rat. The throwers were never identified: anonymous dark silhouettes only. The officers and the young man with the drone are generic figures, never named; no badge, crest or insignia of any real prison service; no inmate is shown or mocked. The prison is a generic illustration, not a replica of HMP Guys Marsh. Every card is our own typed graphic; no real photograph is imitated. No dialogue is invented. The teddy-bear comparison is the narrator's joke, not a source's. Status verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "pr65_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.32
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      1
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_stitch"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Dead rats full of drugs flew into a prison."
+    },
+    {
+     "who": "narrator",
+     "text": "With stitches. Like teddy bears.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dead",
+    "rats",
+    "drugs",
+    "prison.",
+    "stitches.",
+    "teddy",
+    "bears."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_balls",
+   "scene": "pr65_balls",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_first",
+    "K_balls"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But rats were not the first trick."
+    },
+    {
+     "who": "narrator",
+     "text": "First, tennis balls stuffed with drugs and phones.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "first",
+    "trick.",
+    "tennis",
+    "balls",
+    "drugs",
+    "phones."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_drone",
+   "scene": "pr65_drone",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": 0.18
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_wild",
+    "K_drone"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Still not the wildest one."
+    },
+    {
+     "who": "narrator",
+     "text": "Next, drones flying drugs over the walls.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "still",
+    "wildest",
+    "one.",
+    "drones",
+    "drugs",
+    "walls."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_stat",
+   "scene": "pr65_stat",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_stat"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That is 1,712 drone incidents in one year."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "1,712",
+    "drone",
+    "incidents",
+    "year."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_lesson",
+   "scene": "pr65_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Flying a drone? Save these rules."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "flying",
+    "drone?",
+    "save",
+    "rules."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s06_rats",
+   "scene": "pr65_rats",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      1
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_rats",
+    "K_inside"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then came the rats, thrown over the fence."
+    },
+    {
+     "who": "narrator",
+     "text": "Inside were five phones, chargers and drugs.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "rats,",
+    "thrown",
+    "fence.",
+    "inside",
+    "five",
+    "phones,",
+    "chargers",
+    "drugs."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_share",
+   "scene": "pr65_share",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "stamp",
+     "gain": 0.28
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_firstrat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Send this to the mate who is a rat."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "send",
+    "mate",
+    "rat."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_end",
+   "scene": "pr65_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_found",
+    "K_giveaway"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Staff found them on patrol."
+    },
+    {
+     "who": "narrator",
+     "text": "The giveaway? A line of stitches.",
+     "pause_before": 0.22
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "found",
+    "patrol.",
+    "giveaway?",
+    "line",
+    "stitches."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "In March 2019 the Ministry of Justice said dead rats stuffed with drugs and phones had been thrown over the perimeter fence of HMP Guys Marsh, Dorset, England, for an inmate to collect. Narration: 'Dead rats full of drugs flew into a prison.' Headline 'DEAD RATS FULL OF DRUGS / THROWN INTO A PRISON'.",
+   "sources": [
+    "cnn",
+    "itv",
+    "cbs",
+    "scotsman",
+    "guernsey",
+    "fox"
+   ]
+  },
+  {
+   "id": "K_stitch",
+   "type": "established",
+   "nature": "fact",
+   "text": "The rats had been stitched up along their stomachs (staff noticed the stitching and opened them). Narration: 'With stitches. Like teddy bears.' (the teddy-bear comparison is our own joke, not a source's).",
+   "sources": [
+    "cnn",
+    "itv",
+    "cbs",
+    "scotsman"
+   ]
+  },
+  {
+   "id": "K_first",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Ministry of Justice said rats were a new method; pigeons and tennis balls had been used before. Narration: 'But rats were not the first trick.'",
+   "sources": [
+    "cnn",
+    "itv",
+    "scotsman",
+    "cbs"
+   ]
+  },
+  {
+   "id": "K_balls",
+   "type": "established",
+   "nature": "fact",
+   "text": "Tennis balls packed with drugs and mobile phones have been thrown over prison walls and fences (HMP Doncaster and HMP Dovegate, England; Lakeland Correctional Facility, Michigan). Narration: 'First, tennis balls stuffed with drugs and phones.' Label 'THROWN OVER THE WALL / English and American prisons'.",
+   "sources": [
+    "doncaster",
+    "star",
+    "lakeland",
+    "cnn"
+   ]
+  },
+  {
+   "id": "K_wild",
+   "type": "established",
+   "nature": "fact",
+   "text": "Editorial bridge to item 2. Narration: 'Still not the wildest one.'",
+   "sources": [
+    "cnn",
+    "itv"
+   ]
+  },
+  {
+   "id": "K_drone",
+   "type": "established",
+   "nature": "fact",
+   "text": "Drones are used to fly drugs and other contraband over prison walls in England and Wales (Ministry of Justice). Narration: 'Next, drones flying drugs over the walls.'",
+   "sources": [
+    "gov_drones",
+    "gov_nfz",
+    "ch4",
+    "uas"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): 1,712 drone incidents at prisons in England and Wales between April 2024 and March 2025, up 43 % on the previous 12 months (HMPPS Annual Digest, published 31 July 2025). Narration: 'That is 1,712 drone incidents in one year.' (the place is on the label)",
+   "sources": [
+    "gov_drones",
+    "uas",
+    "ch4",
+    "sj"
+   ]
+  },
+  {
+   "id": "K_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): recreational drone flyers in the U.S. fly at or below 400 ft in uncontrolled airspace and keep the drone within visual line of sight (FAA); the UK Drone Code: never above 120 m (400 ft), always keep it in sight (CAA); flying within 400 m of a closed prison or young offender institution in England and Wales is an offence since 25 January 2024 (fines up to 2,500 pounds). Rows: 'STAY UNDER 400 FT (120 M)', 'KEEP IT IN YOUR SIGHT', 'PRISONS: 400 M NO-FLY (UK)'.",
+   "sources": [
+    "faa",
+    "caa",
+    "gov_nfz",
+    "gov_nfz2",
+    "gulf"
+   ]
+  },
+  {
+   "id": "K_rats",
+   "type": "established",
+   "nature": "fact",
+   "text": "Staff found three dead rats just inside the perimeter fence of HMP Guys Marsh; the ministry said they had been thrown over the fence. Narration: 'Then came the rats, thrown over the fence.' Label 'HMP GUYS MARSH · DORSET, ENGLAND · 2019'.",
+   "sources": [
+    "cnn",
+    "itv",
+    "cbs",
+    "scotsman",
+    "guernsey",
+    "fox"
+   ]
+  },
+  {
+   "id": "K_inside",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: inside the three rats: five mobile phones with chargers, three SIM cards, cigarette papers and drugs (Spice and cannabis). Narration: 'Inside were five phones, chargers and drugs.'",
+   "sources": [
+    "cnn",
+    "itv",
+    "scotsman",
+    "guernsey",
+    "fox"
+   ]
+  },
+  {
+   "id": "K_firstrat",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Ministry of Justice said it was the first time rats had been used to smuggle items into a prison. Label 'A FIRST, SAID THE MINISTRY OF JUSTICE'. Narration (share prompt, editorial): 'Send this to the mate who is a rat.'",
+   "sources": [
+    "cnn",
+    "itv",
+    "scotsman"
+   ]
+  },
+  {
+   "id": "K_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "Staff on a routine patrol at HMP Guys Marsh found the rats. Narration: 'Staff found them on patrol.'",
+   "sources": [
+    "cnn",
+    "itv",
+    "cbs",
+    "scotsman"
+   ]
+  },
+  {
+   "id": "K_giveaway",
+   "type": "established",
+   "nature": "fact",
+   "text": "Staff noticed a line of stitches along the rats' stomachs and opened them. Narration: 'The giveaway? A line of stitches.' Label 'NO ARRESTS REPORTED'.",
+   "sources": [
+    "cnn",
+    "itv",
+    "cbs",
+    "fox"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "cnn",
+   "publisher": "CNN",
+   "title": "Dead rats stuffed with drugs used by jail smugglers",
+   "url": "https://www.cnn.com/2019/03/25/uk/dead-rat-prison-drugs-scli-intl-gbr",
+   "date": "2019-03-25",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "itv",
+   "publisher": "ITV News",
+   "title": "Dead rats used to smuggle drugs and phones into Dorset prison",
+   "url": "https://www.itv.com/news/2019-03-25/dead-rats-filled-with-drugs-and-mobiles-found-at-prison",
+   "date": "2019-03-25",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbs",
+   "publisher": "CBS News Baltimore (CNN)",
+   "title": "Smugglers lobbed dead rats stuffed with drugs into prison yard",
+   "url": "https://www.cbsnews.com/amp/baltimore/news/dead-rats-stuffed-with-drugs-prison-yard",
+   "date": "2019-03-25",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "scotsman",
+   "publisher": "The Scotsman (PA)",
+   "title": "Criminals smuggling drugs and phones into prison in dead rats",
+   "url": "https://www.scotsman.com/news/uk-news/criminals-smuggling-drugs-and-phones-into-prison-in-dead-rats-549207",
+   "date": "2019-03-25",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "guernsey",
+   "publisher": "Guernsey Press (PA)",
+   "title": "Dead rats filled with drugs and mobiles found at prison",
+   "url": "https://guernseypress.com/news/uk-news/2019/03/25/dead-rats-filled-with-drugs-and-mobiles-found-at-prison",
+   "date": "2019-03-25",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox",
+   "publisher": "Fox News",
+   "title": "Criminal gangs use stuffed dead rodents to smuggle drugs into UK prison",
+   "url": "https://www.foxnews.com/world/criminal-gangs-use-stuffed-dead-rodents-to-smuggle-drugs-into-uk-prison",
+   "date": "2019-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "doncaster",
+   "publisher": "Doncaster Free Press",
+   "title": "Tennis balls filled with drugs and mobile phones thrown over prison wall in Doncaster",
+   "url": "https://www.doncasterfreepress.co.uk/news/tennis-balls-filled-drugs-and-mobile-phones-thrown-over-prison-wall-doncaster-149822",
+   "date": "2017",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "star",
+   "publisher": "Daily Star Sunday (PressReader)",
+   "title": "Guards foil cunning tennis ball smuggling plot",
+   "url": "https://www.pressreader.com/uk/daily-star-sunday/20170108/281767038905725",
+   "date": "2017-01-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "lakeland",
+   "publisher": "AOL (Detroit outlet)",
+   "title": "Detroit man goes to prison for plan to throw drugs over Lakeland Corrections fence",
+   "url": "https://www.aol.com/news/detroit-man-goes-prison-plan-174859888.html",
+   "date": "2024",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "gov_drones",
+   "publisher": "GOV.UK (Ministry of Justice)",
+   "title": "Counter-drone efforts rise as prison sightings revealed",
+   "url": "https://www.gov.uk/government/news/counter-drone-efforts-rise-as-prison-sightings-revealed",
+   "date": "2025-07-31",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ch4",
+   "publisher": "Channel 4 News",
+   "title": "Chilling rise in UK prison drone incursions bringing in contraband",
+   "url": "https://www.channel4.com/news/chilling-rise-in-uk-prison-drone-incursions-bringing-in-contraband",
+   "date": "2025-10-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "uas",
+   "publisher": "Unmanned Airspace",
+   "title": "UK Prison Services records 43 per cent annual increase in drone incidents",
+   "url": "https://www.unmannedairspace.info/counter-uas-systems-and-policies/uk-prison-services-records-43-per-cent-annual-increase-in-drone-incidents/",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "sj",
+   "publisher": "Solicitors Journal",
+   "title": "Counter-drone operations ramp up nationwide",
+   "url": "https://www.solicitorsjournal.com/sjarticle/counter-drone-operations-ramp-up-nationwide",
+   "date": "2025",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "gov_nfz",
+   "publisher": "GOV.UK (Ministry of Justice)",
+   "title": "New prison no-fly zones for drug-delivering drones",
+   "url": "https://www.gov.uk/government/news/new-prison-no-fly-zones-for-drug-delivering-drones",
+   "date": "2024-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "gov_nfz2",
+   "publisher": "GOV.UK (Ministry of Justice)",
+   "title": "Anti-drone no-fly zones to combat prison smuggling",
+   "url": "https://www.gov.uk/government/news/anti-drone-no-fly-zones-to-combat-prison-smuggling",
+   "date": "2023-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "gulf",
+   "publisher": "Gulf News",
+   "title": "UK announces 400m drone no-fly-zone around prisons",
+   "url": "https://gulfnews.com/world/europe/uk-announces-400m-drone-no-fly-zone-around-prisons-1.1706205892851",
+   "date": "2024-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "faa",
+   "publisher": "Federal Aviation Administration",
+   "title": "Recreational Flyers & Community-Based Organizations",
+   "url": "https://www.faa.gov/uas/recreational_flyers",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "caa",
+   "publisher": "UK Civil Aviation Authority",
+   "title": "Introduction to drone flying and the UK rules (The Drone and Model Aircraft Code)",
+   "url": "https://caa.co.uk/drones/rules-and-categories-of-drone-flying/introduction-to-drone-flying-and-the-uk-rules",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 2,
+ "palette": {
+  "shadow": "#16202a",
+  "mid": "#c4baa6",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "DEAD RATS FULL OF DRUGS"
+   },
+   {
+    "text": "THROWN INTO A PRISON",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DRUGS IN A DEAD RAT."
+   },
+   {
+    "text": "GENIUS OR DISGUSTING? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'S A RAT",
+    "fs": 44
+   }
+  ],
+  "from": 3.4,
+  "y": 420
+ },
+ "progress": {
+  "label": "METHOD",
+  "keys": [
+   {
+    "t": 7.5,
+    "v": "1 · TENNIS BALLS"
+   },
+   {
+    "t": 12.28,
+    "v": "2 · DRONES"
+   },
+   {
+    "t": 22.93,
+    "v": "3 · DEAD RATS"
+   }
+  ],
+  "y": 360,
+  "until": 33.0
+ },
+ "legal_status_verified": "2026-10-17"
+}

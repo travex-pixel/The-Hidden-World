@@ -4,7 +4,7 @@ usage: python -m pipeline.build <episode_id> [--seed N|random] [--quality previe
 Produces out/<episode>/<episode>.mp4 plus inspectable intermediates and a verify report.
 """
 from __future__ import annotations
-import argparse, json, random, shutil, subprocess, sys, time
+import argparse, json, os, random, shutil, subprocess, sys, time
 from pathlib import Path
 import numpy as np
 
@@ -15,7 +15,8 @@ from pipeline.verify import verify
 
 ROOT = Path(__file__).resolve().parent.parent
 QUALITY = {"preview": {"width": 540, "height": 960, "fps": 15, "crf": 26, "preset": "veryfast"},
-           "final": {"width": 1080, "height": 1920, "fps": 30, "crf": 20, "preset": "medium"}}
+           "final": {"width": 1080, "height": 1920, "fps": 30, "crf": 20, "preset": "medium"},
+           "final60": {"width": 1080, "height": 1920, "fps": 60, "crf": 19, "preset": "medium"}}
 
 
 def log(msg: str) -> None:
@@ -68,6 +69,10 @@ def build_timeline(ep: dict, narr: list[dict], target: float | None) -> list[dic
     for s, n in zip(ep["scenes"], narr):
         lead = 0.25  # small breath before narration starts in each scene
         dur = max(float(s["min_duration"]), lead + n["duration"] + float(s["pad_after"]))
+        snap = ep.get("music", {}).get("beat_snap")   # cut on the beat: scene ends land on the music grid
+        if snap:
+            step = 60.0 / float(ep["music"].get("bpm", 96)) * float(snap)
+            dur = float(np.ceil((t + dur) / step - 1e-6) * step - t)
         tl.append({"id": s["id"], "start": round(t, 3), "end": round(t + dur, 3), "narration_at": round(t + lead, 3),
                    "narration_end": round(t + lead + n["duration"], 3), "music_cue": s["music_cue"]})
         t += dur
@@ -76,6 +81,29 @@ def build_timeline(ep: dict, narr: list[dict], target: float | None) -> list[dic
         if not (lo - 5 <= target <= hi + 5):
             log(f"warning: requested target {target}s is outside the episode's range {lo}-{hi}s; using it anyway")
     return tl
+
+
+def fx_time(s, fx):
+    """Absolute time of a sound effect: scene start + at, or (with "word": [line, word]) that word's spoken start + at."""
+    if "word" in fx:
+        li, wi = fx["word"]; lines = s.get("lines") or []
+        if li < len(lines):
+            ws = lines[li].get("words") or []
+            return max(s["start"], lines[li]["start"] + (ws[wi]["start"] if wi < len(ws) else 0.0) + fx.get("at", 0.0))
+    return s["start"] + fx.get("at", 0.0)
+
+
+def resolve_score_times(ep: dict, tl: list) -> dict:
+    """Score hits and the cliffhanger impact may be anchored to spoken words: {"scene": id, "word": [line, word], "at": offset}.
+    Returns a copy of the episode whose score has absolute times ("at" in seconds, "cliff_at")."""
+    by_id = {s["id"]: s for s in tl}; cfg = dict(ep.get("score") or {})
+    def t_of(h):
+        s = by_id[h["scene"]] if h.get("scene") in by_id else None
+        return fx_time(s, h) if s else float(h.get("at", 0.0))
+    cfg["hits"] = [{"at": round(t_of(h), 3), "gain": h.get("gain", 0.5)} for h in cfg.get("hits", [])]
+    if isinstance(cfg.get("cliff"), dict):
+        cfg["cliff_at"] = round(t_of(cfg["cliff"]), 3)
+    return {**ep, "score": cfg}
 
 
 def main(argv=None) -> int:
@@ -88,7 +116,13 @@ def main(argv=None) -> int:
     ap.add_argument("--visual", choices=["art", "svg"], default=None, help="art = illustrated panels (episode default); svg = code-drawn scenes")
     ap.add_argument("--plan-only", action="store_true", help="stop after writing plan.json (for quick stills with pipeline/stills.mjs)")
     ap.add_argument("--reuse-video", action="store_true", help="skip frame rendering and reuse out/<id>/video_silent.mp4 (audio-only iteration)")
+    ap.add_argument("--tts", choices=["piper", "elevenlabs", "recorded", "kokoro"], default=None,
+                    help="narration provider for this build; overrides every voice profile (default: the profile, i.e. Piper)")
     args = ap.parse_args(argv)
+    if args.tts:
+        os.environ["HW_TTS_PROVIDER"] = args.tts   # read by pipeline/narrate.provider_of; the key itself is never read here
+        if args.tts == "recorded":   # the owner's own voice, imported by pipeline/voice_import.py
+            os.environ["HW_VOICE_DIR"] = str(ROOT / "episodes" / args.episode / "voice")
 
     try:
         ep = load_episode(args.episode)
@@ -104,18 +138,32 @@ def main(argv=None) -> int:
     (out_dir / "decisions.json").write_text(json.dumps(decisions, indent=2))
 
     # 1. narration (cached)
-    log("narration: synthesising with Piper (cached per line)")
+    from pipeline.narrate import provider_of
+    from pipeline.tts_elevenlabs import TTSProviderError
+    provider = provider_of(ep.get("narrator_profile"))
+    log(f"narration: synthesising with {'ElevenLabs (API, cached per line)' if provider == 'elevenlabs' else 'Piper (cached per line)'}")
     length_scale = round(1.0 / float(ep.get("narration_speed", 1.0)), 3)
-    narr = narrate_episode(ep, length_scale)
-    tl = build_timeline(ep, narr, args.target_duration)
-    total = tl[-1]["end"]
-    if args.target_duration and abs(total - args.target_duration) > 2:
-        length_scale = float(np.clip(length_scale * args.target_duration / total, 0.8, 1.2))
-        log(f"adjusting narration speed x{length_scale:.3f} toward target {args.target_duration}s")
+    try:
         narr = narrate_episode(ep, length_scale)
-        tl = build_timeline(ep, narr, args.target_duration); total = tl[-1]["end"]
+        tl = build_timeline(ep, narr, args.target_duration)
+        total = tl[-1]["end"]
+        if args.target_duration and abs(total - args.target_duration) > 2:
+            length_scale = float(np.clip(length_scale * args.target_duration / total, 0.8, 1.2))
+            log(f"adjusting narration speed x{length_scale:.3f} toward target {args.target_duration}s")
+            narr = narrate_episode(ep, length_scale)
+            tl = build_timeline(ep, narr, args.target_duration); total = tl[-1]["end"]
+    except TTSProviderError as e:
+        # the user asked for ElevenLabs: say exactly why it failed and stop; never quietly build with Piper instead
+        log(f"ERROR narration provider '{provider}' failed ({e.kind}): {e}")
+        log("       nothing was rendered. Fix the cause and re-run, or build with --tts piper (free, offline).")
+        return 5
     lo, hi = ep["target_duration_seconds"]
     log(f"timeline: {len(tl)} scenes, {total:.2f}s (target {lo}-{hi}s)")
+    narr_meta = {"narration_provider": provider}   # the provider only; voice ids are in the episode, the key is never written
+    prop = [l["text"][:40] for s_ in narr for l in s_.get("lines", []) if l.get("timing") == "proportional"]
+    if prop:
+        narr_meta["proportional_word_timing"] = prop
+        log(f"WARNING: {len(prop)} line(s) have proportional (not measured) word timings; see docs/TTS_PROVIDERS.md")
     if not (lo <= total <= hi):
         log(f"ERROR: total duration {total:.2f}s outside target range {lo}-{hi}s. Edit narration/min_duration or pass --target-duration.")
         return 3
@@ -126,6 +174,11 @@ def main(argv=None) -> int:
     cast_ids = sorted({l["who"] for s_ in tl for l in s_.get("lines", [])} | set(ep.get("cast", [])))
     from pipeline.narrate import load_character
     cast = {cid: load_character(cid) for cid in cast_ids}
+    for fid in ep.get("figures", []):   # full-body figure library (characters/figures/<id>.json), Case Files v3
+        fp = ROOT / "characters" / "figures" / f"{fid}.json"
+        if not fp.exists():
+            log(f"ERROR: figure '{fid}' has no characters/figures/{fid}.json"); return 4
+        cast[fid] = json.loads(fp.read_text())
     (out_dir / "timeline.json").write_text(json.dumps([{k: v for k, v in s_.items() if k != "lines"} | ({"lines": [{k: v for k, v in l.items() if k != "env"} for l in s_["lines"]]} if s_.get("lines") else {}) for s_ in tl], indent=2))
     def _script(s, sc):
         if s.get("lines"):
@@ -140,7 +193,7 @@ def main(argv=None) -> int:
     music = audio.compose(tl, total, seed, bpm=ep.get("music", {}).get("bpm", 96), key_semi=decisions["music_key_offset"])
     clips = [(s["narration_at"], *read_wav(Path(n["path"]))) for s, n in zip(tl, narr)]
     clips = [(at, x, sr) for at, (x, sr) in [(c[0], (c[1], c[2])) for c in clips]]
-    sfx_events = [(s["start"] + fx["at"], fx["name"]) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] + fx["at"] < s["end"]]
+    sfx_events = [(fx_time(s, fx), fx["name"], fx.get("gain", 1.0)) for s, sc in zip(tl, ep["scenes"]) for fx in sc["sfx"] if s["start"] <= fx_time(s, fx) < s["end"]]
     if "metronomes" in ep:
         ep["metronomes"] = metronome_model(ep["metronomes"])
         for s, sc in zip(tl, ep["scenes"]):
@@ -156,10 +209,25 @@ def main(argv=None) -> int:
             g = 10 ** (sc.get("music_gain_db", 0) / 20)
             a, b = int(s["start"] * audio.SR), min(len(music), int(s["end"] * audio.SR))
             env[a:b] = g
-        k = np.ones(fade, np.float32) / fade
-        music = (music * np.convolve(env, k, mode="same")).astype(np.float32)
-    mixed = audio.mix(total, clips, music, sfx_events, seed)
+        from pipeline.score import smooth
+        music = (music * smooth(env, fade)).astype(np.float32)
+    report = {"engine": "legacy cues"}
+    if ep.get("score") is not None:   # structured original score + narration-first ducking mix (pipeline/score.py, pipeline/mixdown.py)
+        from pipeline import score as score_mod, mixdown
+        sc_ = score_mod.compose_score(resolve_score_times(ep, tl), tl, total, seed)
+        mixed, rep = mixdown.mixdown(total, clips, sc_["stems"], sfx_events, tl, ep, seed, out_dir)
+        music = sum(sc_["stems"].values())
+        report = {"engine": "structured score", "sections": dict(zip([s["id"] for s in tl], sc_["sections"])), "root_hz": sc_["root_hz"], "bpm": sc_["bpm"], **rep}
+        log(f"audio: structured score, sections {''.join(sc_['sections'])}")
+    else:
+        mixed = audio.mix(total, clips, music, sfx_events, seed)
+    report.update(narr_meta)
     audio.write_wav(out_dir / "mix.wav", mixed)
+    if ep.get("loudness_lufs"):   # normalise the final mix (YouTube plays back at about -14 LUFS); linear, never dynamic
+        from pipeline import mixdown
+        report["loudness"] = mixdown.normalise_linear(out_dir / "mix.wav", float(ep["loudness_lufs"]))
+        log(f"audio: loudness {report['loudness']['before']['I']} -> {report['loudness']['after']['I']} LUFS, TP {report['loudness']['after']['TP']} dBTP (linear)")
+    (out_dir / "audio_report.json").write_text(json.dumps(report, indent=2))
     audio.write_wav(out_dir / "music_only.wav", music)
 
     # 3. render frames
@@ -181,6 +249,10 @@ def main(argv=None) -> int:
             "scenes_js": f"renderer/scenes/{ep['id']}.js"}
     if not (ROOT / plan["scenes_js"]).exists():
         log(f"ERROR: scene renderer {plan['scenes_js']} not found"); return 4
+    if ep.get("look") == "premium":   # colour finish at encode: a palette LUT (film curve, split tone, restrained saturation) + moving grain
+        from pipeline import look
+        plan["vf"] = look.encode_filter(look.write_cube(out_dir / "look.cube", ep.get("palette")))
+        log(f"look: premium LUT {out_dir / 'look.cube'}")
     (out_dir / "plan.json").write_text(json.dumps(plan))
     if args.plan_only:
         log(f"plan written: {out_dir / 'plan.json'}"); return 0
@@ -196,8 +268,25 @@ def main(argv=None) -> int:
     # 4. mux
     final = out_dir / f"{ep['id']}.mp4"
     log("mux: combining video and audio")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out_dir / "mix.wav"), "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
-                    "-movflags", "+faststart", "-shortest", str(final)], check=True)
+    # cut to the silent video's exact length (audio padded if a few ms short). ffmpeg's -shortest with a copied video
+    # stream can end the video several frames early, which failed the A/V duration check on Case File 15.
+    vdur = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=duration", "-of", "csv=p=0", str(silent)],
+                          capture_output=True, text=True).stdout.strip()
+    vdur = float(vdur) if vdur else total
+
+    def mux(gain_db: float = 0.0):
+        af = "apad" + (f",volume={gain_db:.2f}dB" if gain_db else "")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(silent), "-i", str(out_dir / "mix.wav"), "-af", af, "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+                        "-t", f"{vdur:.3f}", "-movflags", "+faststart", str(final)], check=True)
+    mux()
+    if ep.get("loudness_lufs"):
+        # AAC can overshoot the mix's true peak (hard-edged tones such as alarm beeps): re-measure the encoded file and,
+        # if it is above -1.2 dBTP, trim the whole track by the excess. One static gain, never dynamic.
+        tp = mixdown.measure(final)["TP"]
+        if tp > -1.2:
+            trim = -1.2 - tp - 0.2
+            log(f"mux: encoded true peak {tp:.1f} dBTP, trimming {trim:.1f} dB")
+            mux(trim)
 
     # 5. verify
     log("verify: probing, decoding, contact sheet")

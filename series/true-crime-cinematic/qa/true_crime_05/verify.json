@@ -1,0 +1,159 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv05-db-cooper/tcv05-db-cooper.mp4",
+    "size_bytes": 34675237,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 79.125,
+    "audio_duration": 79.125,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.6,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv05-db-cooper/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2372,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.9,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.099,
+    "transcript": "A man hijacked a plane, took $200,000 and jumped out into the night. He has never been found. Thanksgiving Eve, 1971, his plane ticket said, \"Dan Cooper.\" \"Unfact, he never called himself DB.\" That came from a medium mix-up. After takeoff, he handed a flight attendant to know. It said he had a bomb. He demanded $200,000 and four parachutes. In Seattle, he swapped the passengers for the cash and parachutes. A little after 8 p.m., he lowered the rear stairs and jumped into the dark. Fun fact, 727's got a device to block those stairs in flight. Cooper Vain, a huge manhunt found no trace of him. Then in 1980, a kid went digging. By the Columbia River, an eight-tier rolled uncovered bundles of rotting $20 bills. $5,800. A serial number is matched Cooper's ransom. How did it get there? No one knows. The rest of the cash never found. In 2016, the FBE stopped actively investigating. It still wants evidence of the parachutes with money. Over 50 years later, no one knows who he was. Next, a most wanted fugitive hid for 16 years. A stray cat helped give him away."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 91,
+      "extent": {
+        "left": 120.2,
+        "right": 959.8,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.3,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 2.1,
+      "frames": 791
+    },
+    "audio": {
+      "opening_speech_median_db": -21.2,
+      "opening_min_speech_window_db": -30.6,
+      "first_word_db": -17.5,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -34.0,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.313,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 12.2,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -35.7,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8279,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.6,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -68.5,
+      "end_before_db": -13.8,
+      "end_last_50ms_db": -95.9,
+      "silent_tail_s": 0.3,
+      "ending_intentional": true,
+      "durations": {
+        "video": 79.066667,
+        "audio": 79.125011
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 14,
+      "composed_shots": 14,
+      "shots_with_characters": 14,
+      "character_shot_share": 1.0,
+      "distinct_sets": 7,
+      "max_set_share": 0.21,
+      "shot_sizes": {
+        "wide": 4,
+        "medium-wide": 2,
+        "medium": 5,
+        "close-up": 3
+      },
+      "max_shot_size_share": 0.36,
+      "ok": true
+    }
+  }
+}

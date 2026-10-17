@@ -1,0 +1,2215 @@
+{
+ "episode": "tcv41-red-mansion",
+ "title": "China's Smuggling King and His Red Mansion",
+ "duration": 51.75,
+ "slideshow_risk": {
+  "shots": 10,
+  "composed_shots": 10,
+  "shots_with_characters": 9,
+  "character_shot_share": 0.9,
+  "distinct_sets": 8,
+  "max_set_share": 0.3,
+  "shot_sizes": {
+   "medium-wide": 5,
+   "insert/graphic": 1,
+   "medium": 3,
+   "close-up": 1
+  },
+  "max_shot_size_share": 0.5,
+  "ok": true
+ },
+ "production_status": {
+  "series_manifest": "series/true-crime-cinematic/production_manifest.json",
+  "video": "true_crime_41_red_mansion.mp4"
+ },
+ "shots": [
+  {
+   "id": "s01_hook",
+   "scene_type": "rm41_hook",
+   "start": 0.0,
+   "duration": 4.5,
+   "narration": [
+    "This red mansion sat at the heart of China's biggest smuggling case."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.25,
+     "end": 3.652,
+     "words": [
+      {
+       "w": "This",
+       "start": 0.285,
+       "end": 0.447
+      },
+      {
+       "w": "red",
+       "start": 0.494,
+       "end": 0.668
+      },
+      {
+       "w": "mansion",
+       "start": 0.714,
+       "end": 1.051
+      },
+      {
+       "w": "sat",
+       "start": 1.144,
+       "end": 1.492
+      },
+      {
+       "w": "at",
+       "start": 1.515,
+       "end": 1.597
+      },
+      {
+       "w": "the",
+       "start": 1.632,
+       "end": 1.69
+      },
+      {
+       "w": "heart",
+       "start": 1.724,
+       "end": 1.922
+      },
+      {
+       "w": "of",
+       "start": 1.945,
+       "end": 1.991
+      },
+      {
+       "w": "China's",
+       "start": 2.038,
+       "end": 2.409
+      },
+      {
+       "w": "biggest",
+       "start": 2.479,
+       "end": 2.746
+      },
+      {
+       "w": "smuggling",
+       "start": 2.769,
+       "end": 3.141
+      },
+      {
+       "w": "case.",
+       "start": 3.199,
+       "end": 3.559
+      }
+     ]
+    }
+   ],
+   "visual_description": "rm41 night (tokyo grade); rm41_lai (silhouette): stand -> present -> arms_crossed; keyed camera moves, handheld; overlays: impact.",
+   "shot_size": "medium-wide",
+   "set": "rm41_night",
+   "grade": "tokyo",
+   "camera": {
+    "keys": 3,
+    "handheld": 0.35
+   },
+   "characters": [
+    "rm41_lai"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_lai",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.66,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.71,
+       "pose": "present"
+      },
+      {
+       "at": 2.48,
+       "pose": "arms_crossed"
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "impact",
+     "at": 2.48
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "R_mansion",
+     "type": "established",
+     "claim_text": "Lai Changxing's 'Red Mansion' (Hong Lou, 'Red Chamber') in Xiamen was used to entertain officials. The building is drawn as a generic red multi-storey house (sources differ between six and seven storeys; the number is not spoken or typed).",
+     "urls": [
+      "https://en.wikipedia.org/wiki/Lai_Changxing",
+      "https://www.scmp.com/article/574048/welcome-house-sin",
+      "https://www.scmp.com/article/358990/inside-red-chamber",
+      "https://www.taipeitimes.com/News/feat/archives/2007/08/05/2003372876"
+     ]
+    },
+    {
+     "claim": "R_biggest",
+     "type": "established",
+     "claim_text": "The Yuanhua case is described as China's biggest smuggling case (AFP: 'China's biggest smuggling case'; Chinese state media: the largest since 1949). Headline: 'CHINA'S BIGGEST SMUGGLING CASE'.",
+     "urls": [
+      "https://www.theborneopost.com/2011/07/23/canada-repatriates-top-suspect-in-chinas-biggest-smuggling-case/",
+      "https://covid-19.chinadaily.com.cn/en/doc/2001-07/26/content_72459.htm",
+      "https://en.wikipedia.org/wiki/Lai_Changxing"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "sub",
+      "at": 0.0,
+      "gain": 0.45
+     },
+     {
+      "name": "whoosh",
+      "at": 0.664,
+      "gain": 0.35,
+      "word": [
+       0,
+       2
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 2.429,
+      "gain": 0.5,
+      "word": [
+       0,
+       9
+      ]
+     },
+     {
+      "name": "coins",
+      "at": 3.179,
+      "gain": 0.35,
+      "word": [
+       0,
+       11
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_hook",
+    "set_code": "renderer/sets.js#rm41_night",
+    "characters": [
+     "characters/figures/rm41_lai.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_map",
+   "scene_type": "rm41_map",
+   "start": 4.5,
+   "duration": 3.375,
+   "narration": [
+    "It stood in Xiamen, in the 1990s."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 4.75,
+     "end": 7.502,
+     "words": [
+      {
+       "w": "It",
+       "start": 4.831,
+       "end": 5.022
+      },
+      {
+       "w": "stood",
+       "start": 5.022,
+       "end": 5.499
+      },
+      {
+       "w": "in",
+       "start": 5.499,
+       "end": 5.69
+      },
+      {
+       "w": "Xiamen,",
+       "start": 5.69,
+       "end": 6.359
+      },
+      {
+       "w": "in",
+       "start": 6.359,
+       "end": 6.55
+      },
+      {
+       "w": "the",
+       "start": 6.55,
+       "end": 6.836
+      },
+      {
+       "w": "1990s.",
+       "start": 6.836,
+       "end": 7.409
+      }
+     ]
+    }
+   ],
+   "visual_description": "mapflight (neon grade); camera push/pull, handheld; overlays: label 'THE 1990s'.",
+   "shot_size": "insert/graphic",
+   "set": "mapflight",
+   "grade": "neon",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": 0,
+     "y": 0,
+     "z": 1.05
+    },
+    "handheld": 0.3
+   },
+   "characters": [],
+   "character_actions": [],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 2.14,
+     "text": "THE 1990s"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · MAP, NATURAL EARTH DATA",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "R_where",
+     "type": "established",
+     "claim_text": "Yuanhua Group was based in the Xiamen Special Economic Zone, Fujian province (founded 1994); the smuggling ran in the 1990s.",
+     "urls": [
+      "https://en.wikipedia.org/wiki/Lai_Changxing",
+      "https://www.rfa.org/english/news/china/jail-05182012065024.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 4.5,
+      "gain": 0.4
+     },
+     {
+      "name": "ping",
+      "at": 5.67,
+      "gain": 0.35,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 6.786,
+      "gain": 0.4,
+      "word": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_map",
+    "set_code": "renderer/sets.js#mapflight",
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_cash",
+   "scene_type": "rm41_cash",
+   "start": 7.875,
+   "duration": 7.5,
+   "narration": [
+    "His Yuanhua Group smuggled oil, cars and cigarettes.",
+    "Worth 27.4 billion yuan, a court found."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 8.125,
+     "end": 11.596,
+     "words": [
+      {
+       "w": "His",
+       "start": 8.171,
+       "end": 8.322
+      },
+      {
+       "w": "Yuanhua",
+       "start": 8.369,
+       "end": 9.263
+      },
+      {
+       "w": "Group",
+       "start": 9.309,
+       "end": 9.483
+      },
+      {
+       "w": "smuggled",
+       "start": 9.53,
+       "end": 9.913
+      },
+      {
+       "w": "oil,",
+       "start": 9.983,
+       "end": 10.319
+      },
+      {
+       "w": "cars",
+       "start": 10.401,
+       "end": 10.714
+      },
+      {
+       "w": "and",
+       "start": 10.737,
+       "end": 10.819
+      },
+      {
+       "w": "cigarettes.",
+       "start": 10.865,
+       "end": 11.469
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 11.896,
+     "end": 15.031,
+     "words": [
+      {
+       "w": "Worth",
+       "start": 11.942,
+       "end": 12.128
+      },
+      {
+       "w": "27.4",
+       "start": 12.186,
+       "end": 13.312
+      },
+      {
+       "w": "billion",
+       "start": 13.336,
+       "end": 13.672
+      },
+      {
+       "w": "yuan,",
+       "start": 13.707,
+       "end": 14.009
+      },
+      {
+       "w": "a",
+       "start": 14.23,
+       "end": 14.288
+      },
+      {
+       "w": "court",
+       "start": 14.369,
+       "end": 14.578
+      },
+      {
+       "w": "found.",
+       "start": 14.613,
+       "end": 14.984
+      }
+     ]
+    }
+   ],
+   "visual_description": "rm41 harbour (warm grade); rm41_lai (silhouette): stand -> present -> point -> arms_crossed; camera push/pull, handheld; overlays: label 'YUANHUA GROUP', counter, impact.",
+   "shot_size": "medium",
+   "set": "rm41_harbour",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": -40,
+     "y": 20,
+     "z": 1
+    },
+    "to": {
+     "x": 30,
+     "y": 50,
+     "z": 1.1
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "rm41_lai"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_lai",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.98,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.49,
+       "pose": "present"
+      },
+      {
+       "at": 2.11,
+       "pose": "point"
+      },
+      {
+       "at": 4.02,
+       "pose": "arms_crossed"
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.1,
+     "text": "YUANHUA GROUP"
+    },
+    {
+     "type": "counter",
+     "at": 4.21
+    },
+    {
+     "type": "impact",
+     "at": 6.49
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "R_goods",
+     "type": "established",
+     "claim_text": "The syndicate smuggled cigarettes, cars, refined oil, vegetable oil, chemicals, textiles and other goods.",
+     "urls": [
+      "https://www.rfa.org/english/news/china/jail-05182012065024.html",
+      "https://dailymirror.lk/print/asia/china-jails-smuggler-lai-changxing-for-life/81-18715",
+      "https://en.wikipedia.org/wiki/Lai_Changxing"
+     ]
+    },
+    {
+     "claim": "R_value",
+     "type": "established",
+     "claim_text": "The 2012 verdict (Xinhua): goods worth 27.395 billion yuan (about US$4.3 billion) smuggled from December 1995 to May 1999; duties evaded 13.999 billion yuan. Narration: '27.4 billion yuan, a court found'; counter ¥27,395,000,000. (A 2001 official report gave 53 billion yuan; not used.)",
+     "urls": [
+      "https://www.rfa.org/english/news/china/jail-05182012065024.html",
+      "https://www.channelstv.com/2012/05/18/china-jails-smuggling-kingpin-lai-for-life/",
+      "https://dailymirror.lk/print/asia/china-jails-smuggler-lai-changxing-for-life/81-18715"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": -4,
+    "sfx": [
+     {
+      "name": "riser",
+      "at": 8.269,
+      "gain": 0.35,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 9.933,
+      "gain": 0.35,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "door",
+      "at": 10.351,
+      "gain": 0.35,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "coins",
+      "at": 12.166,
+      "gain": 0.45,
+      "word": [
+       1,
+       1
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 14.319,
+      "gain": 0.45,
+      "word": [
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_cash",
+    "set_code": "renderer/sets.js#rm41_harbour",
+    "characters": [
+     "characters/figures/rm41_lai.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_hall",
+   "scene_type": "rm41_hall",
+   "start": 15.375,
+   "duration": 6.375,
+   "narration": [
+    "Inside, officials were entertained, reports said.",
+    "And a court found he bribed 64 officials."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 15.625,
+     "end": 18.179,
+     "words": [
+      {
+       "w": "Inside,",
+       "start": 15.683,
+       "end": 16.124
+      },
+      {
+       "w": "officials",
+       "start": 16.205,
+       "end": 16.635
+      },
+      {
+       "w": "were",
+       "start": 16.658,
+       "end": 16.763
+      },
+      {
+       "w": "entertained,",
+       "start": 16.798,
+       "end": 17.366
+      },
+      {
+       "w": "reports",
+       "start": 17.436,
+       "end": 17.819
+      },
+      {
+       "w": "said.",
+       "start": 17.854,
+       "end": 18.121
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 18.679,
+     "end": 21.21,
+     "words": [
+      {
+       "w": "And",
+       "start": 18.702,
+       "end": 18.807
+      },
+      {
+       "w": "a",
+       "start": 18.842,
+       "end": 18.876
+      },
+      {
+       "w": "court",
+       "start": 18.923,
+       "end": 19.12
+      },
+      {
+       "w": "found",
+       "start": 19.155,
+       "end": 19.445
+      },
+      {
+       "w": "he",
+       "start": 19.48,
+       "end": 19.561
+      },
+      {
+       "w": "bribed",
+       "start": 19.608,
+       "end": 19.863
+      },
+      {
+       "w": "64",
+       "start": 19.921,
+       "end": 20.49
+      },
+      {
+       "w": "officials.",
+       "start": 20.513,
+       "end": 21.105
+      }
+     ]
+    }
+   ],
+   "visual_description": "rm41 hall (neon grade); rm41_off_a: stand -> point_up -> present -> hand_to_face; rm41_off_b: stand -> point_up -> stand_tense; rm41_lai (silhouette): stand -> present -> hands_together; camera push/pull, handheld; overlays: label 'INSIDE THE RED MANSION', card '64 OFFICIALS BRIBED / CASH, FLATS AND CARS · THE COURT', impact.",
+   "shot_size": "medium",
+   "set": "rm41_hall",
+   "grade": "neon",
+   "camera": {
+    "from": {
+     "x": 30,
+     "y": 20,
+     "z": 1.02
+    },
+    "to": {
+     "x": -30,
+     "y": 50,
+     "z": 1.14
+    },
+    "handheld": 0.45
+   },
+   "characters": [
+    "rm41_lai",
+    "rm41_off_a",
+    "rm41_off_b"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_off_a",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.92,
+     "start_pose": "stand",
+     "start_expr": "relieved",
+     "actions": [
+      {
+       "at": 0.83,
+       "pose": "point_up",
+       "expr": "relieved"
+      },
+      {
+       "at": 2.06,
+       "pose": "present",
+       "expr": "neutral"
+      },
+      {
+       "at": 4.55,
+       "pose": "hand_to_face",
+       "expr": "worried"
+      }
+     ]
+    },
+    {
+     "id": "rm41_off_b",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.96,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.42,
+       "pose": "point_up",
+       "expr": "relieved"
+      },
+      {
+       "at": 4.23,
+       "pose": "stand_tense",
+       "expr": "shocked"
+      }
+     ]
+    },
+    {
+     "id": "rm41_lai",
+     "outfit": "default",
+     "depth": 1.005,
+     "scale": 0.78,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.41,
+       "pose": "present"
+      },
+      {
+       "at": 3.3,
+       "pose": "hands_together"
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.31,
+     "text": "INSIDE THE RED MANSION"
+    },
+    {
+     "type": "card",
+     "at": 4.13,
+     "text": "64 OFFICIALS BRIBED / CASH, FLATS AND CARS · THE COURT"
+    },
+    {
+     "type": "impact",
+     "at": 4.55
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "flash",
+   "sources": [
+    {
+     "claim": "R_entertained",
+     "type": "established",
+     "claim_text": "Officials were entertained at the Red Mansion, reports said (SCMP; Taipei Times; Wikipedia). Narration attributes it ('reports said'); no detail beyond a banquet table is shown.",
+     "urls": [
+      "https://www.scmp.com/article/574048/welcome-house-sin",
+      "https://www.taipeitimes.com/News/feat/archives/2007/08/05/2003372876",
+      "https://en.wikipedia.org/wiki/Lai_Changxing"
+     ]
+    },
+    {
+     "claim": "R_bribes",
+     "type": "established",
+     "claim_text": "The court found Lai bribed 64 officials (cash, property and vehicles worth about 39.1 million yuan).",
+     "urls": [
+      "https://www.channelstv.com/2012/05/18/china-jails-smuggling-kingpin-lai-for-life/",
+      "https://www.foxnews.com/world/china-sentences-fugitive-smuggler-lai-to-life-term",
+      "https://www.rfa.org/english/news/china/jail-05182012065024.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": -4,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 15.633,
+      "gain": 0.3,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "chime",
+      "at": 16.778,
+      "gain": 0.35,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "stamp",
+      "at": 19.558,
+      "gain": 0.45,
+      "word": [
+       1,
+       5
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 19.871,
+      "gain": 0.5,
+      "word": [
+       1,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_hall",
+    "set_code": "renderer/sets.js#rm41_hall",
+    "characters": [
+     "characters/figures/rm41_lai.json",
+     "characters/figures/rm41_off_a.json",
+     "characters/figures/rm41_off_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_fled",
+   "scene_type": "rm41_fled",
+   "start": 21.75,
+   "duration": 6.75,
+   "narration": [
+    "In 1999, he fled to Canada.",
+    "About 300 people were punished. Some officials were executed."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 22.0,
+     "end": 24.241,
+     "words": [
+      {
+       "w": "In",
+       "start": 22.07,
+       "end": 22.139
+      },
+      {
+       "w": "1999,",
+       "start": 22.174,
+       "end": 23.068
+      },
+      {
+       "w": "he",
+       "start": 23.184,
+       "end": 23.335
+      },
+      {
+       "w": "fled",
+       "start": 23.358,
+       "end": 23.556
+      },
+      {
+       "w": "to",
+       "start": 23.602,
+       "end": 23.649
+      },
+      {
+       "w": "Canada.",
+       "start": 23.707,
+       "end": 24.136
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 24.741,
+     "end": 27.933,
+     "words": [
+      {
+       "w": "About",
+       "start": 24.811,
+       "end": 25.043
+      },
+      {
+       "w": "300",
+       "start": 25.078,
+       "end": 25.461
+      },
+      {
+       "w": "people",
+       "start": 25.484,
+       "end": 25.751
+      },
+      {
+       "w": "were",
+       "start": 25.774,
+       "end": 25.89
+      },
+      {
+       "w": "punished.",
+       "start": 25.937,
+       "end": 26.378
+      },
+      {
+       "w": "Some",
+       "start": 26.482,
+       "end": 26.668
+      },
+      {
+       "w": "officials",
+       "start": 26.715,
+       "end": 27.098
+      },
+      {
+       "w": "were",
+       "start": 27.133,
+       "end": 27.237
+      },
+      {
+       "w": "executed.",
+       "start": 27.272,
+       "end": 27.852
+      }
+     ]
+    }
+   ],
+   "visual_description": "task force (cold grade); rm41_inv_b: examine -> point -> hand_to_face -> arms_crossed; rm41_inv_a: stand -> read -> stand_tense -> stand; camera push/pull, handheld; overlays: card 'FLED TO CANADA, 1999 / AS INVESTIGATORS CLOSED IN', counter, card 'SOME OFFICIALS WERE EXECUTED / REPORTS SAID AT LEAST SEVEN'.",
+   "shot_size": "close-up",
+   "set": "task_force",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": -20,
+     "y": -10,
+     "z": 1
+    },
+    "to": {
+     "x": 30,
+     "y": -30,
+     "z": 1.1
+    },
+    "handheld": 0.45
+   },
+   "characters": [
+    "rm41_inv_a",
+    "rm41_inv_b"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_inv_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.92,
+     "start_pose": "examine",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.42,
+       "pose": "point",
+       "expr": "determined"
+      },
+      {
+       "at": 1.61,
+       "pose": "hand_to_face",
+       "expr": "shocked"
+      },
+      {
+       "at": 4.19,
+       "pose": "arms_crossed",
+       "expr": "stern"
+      }
+     ]
+    },
+    {
+     "id": "rm41_inv_a",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 1.26,
+     "start_pose": "stand",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.42,
+       "pose": "read",
+       "expr": "focused"
+      },
+      {
+       "at": 1.96,
+       "pose": "stand_tense",
+       "expr": "shocked",
+       "turn_head": true
+      },
+      {
+       "at": 5.52,
+       "pose": "stand",
+       "expr": "stern"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 1.51,
+     "text": "FLED TO CANADA, 1999 / AS INVESTIGATORS CLOSED IN"
+    },
+    {
+     "type": "counter",
+     "at": 3.23
+    },
+    {
+     "type": "card",
+     "at": 4.63,
+     "text": "SOME OFFICIALS WERE EXECUTED / REPORTS SAID AT LEAST SEVEN"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "R_fled",
+     "type": "established",
+     "claim_text": "Lai fled to Canada (Vancouver) in 1999 as investigators closed in (over 1,000 investigators went to Xiamen).",
+     "urls": [
+      "https://www.aljazeera.com/news/2011/7/23/canada-deports-chinas-most-wanted-man",
+      "https://www.foxnews.com/world/china-sentences-fugitive-smuggler-lai-to-life-term",
+      "https://en.wikipedia.org/wiki/Lai_Changxing"
+     ]
+    },
+    {
+     "claim": "R_purge",
+     "type": "established",
+     "claim_text": "About 300 people were punished/convicted in the case (Xinhua: 600 investigated, 300 punished); 14 were sentenced to death in the first trials, and some officials were executed (SCMP and the Globe and Mail: seven; the Guardian: at least two). Narration: 'About 300 people were punished. Some officials were executed.'",
+     "urls": [
+      "https://www.foxnews.com/world/china-sentences-fugitive-smuggler-lai-to-life-term",
+      "https://chinadigitaltimes.net/?p=134653",
+      "https://www.scmp.com/article/340064/seven-executed-over-yuan-hua",
+      "https://us.cnn.com/ASIANOW/time/magazine/2000/0207/china.corruption.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "riser",
+      "at": 22.074,
+      "gain": 0.35,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "whoosh",
+      "at": 23.308,
+      "gain": 0.45,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "rumble",
+      "at": 23.607,
+      "gain": 0.4,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 25.028,
+      "gain": 0.4,
+      "word": [
+       1,
+       1
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 27.222,
+      "gain": 0.45,
+      "word": [
+       1,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_fled",
+    "set_code": "renderer/sets.js#task_force",
+    "characters": [
+     "characters/figures/rm41_inv_a.json",
+     "characters/figures/rm41_inv_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_van",
+   "scene_type": "rm41_van",
+   "start": 28.5,
+   "duration": 4.5,
+   "narration": [
+    "Yet China's most wanted man spent 12 years in Canada, fighting to stay."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 28.75,
+     "end": 32.477,
+     "words": [
+      {
+       "w": "Yet",
+       "start": 28.796,
+       "end": 28.959
+      },
+      {
+       "w": "China's",
+       "start": 28.994,
+       "end": 29.33
+      },
+      {
+       "w": "most",
+       "start": 29.365,
+       "end": 29.598
+      },
+      {
+       "w": "wanted",
+       "start": 29.632,
+       "end": 29.876
+      },
+      {
+       "w": "man",
+       "start": 29.934,
+       "end": 30.108
+      },
+      {
+       "w": "spent",
+       "start": 30.155,
+       "end": 30.375
+      },
+      {
+       "w": "12",
+       "start": 30.399,
+       "end": 30.631
+      },
+      {
+       "w": "years",
+       "start": 30.666,
+       "end": 30.863
+      },
+      {
+       "w": "in",
+       "start": 30.886,
+       "end": 30.968
+      },
+      {
+       "w": "Canada,",
+       "start": 31.014,
+       "end": 31.455
+      },
+      {
+       "w": "fighting",
+       "start": 31.594,
+       "end": 31.896
+      },
+      {
+       "w": "to",
+       "start": 31.931,
+       "end": 32.001
+      },
+      {
+       "w": "stay.",
+       "start": 32.047,
+       "end": 32.349
+      }
+     ]
+    }
+   ],
+   "visual_description": "rm41 van (cold grade); rm41_lai (silhouette): walk -> stand -> arms_crossed (walks); camera push/pull, handheld; overlays: label 'VANCOUVER, CANADA', counter.",
+   "shot_size": "medium-wide",
+   "set": "rm41_van",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": -40,
+     "y": 30,
+     "z": 1.02
+    },
+    "to": {
+     "x": 40,
+     "y": 50,
+     "z": 1.12
+    },
+    "handheld": 0.5
+   },
+   "characters": [
+    "rm41_lai"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_lai",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.78,
+     "start_pose": "walk",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 3.55,
+       "pose": "stand",
+       "turn_head": true
+      },
+      {
+       "at": 3.95,
+       "pose": "arms_crossed"
+      }
+     ],
+     "walk": {
+      "from": 160,
+      "to": 720,
+      "at": 0.05,
+      "dur": 3.447
+     },
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.1,
+     "text": "VANCOUVER, CANADA"
+    },
+    {
+     "type": "counter",
+     "at": 1.8
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "R_irony",
+     "type": "established",
+     "claim_text": "He spent 12 years in Canada fighting removal (refugee claims and deportation appeals), at times living free in the Vancouver area.",
+     "urls": [
+      "https://www.ctvnews.ca/chinese-fugitive-s-odyssey-could-be-coming-to-an-end-1.669121",
+      "https://www.theborneopost.com/2011/07/23/canada-repatriates-top-suspect-in-chinas-biggest-smuggling-case/",
+      "https://www.aljazeera.com/news/2011/7/23/canada-deports-chinas-most-wanted-man",
+      "https://www.theglobeandmail.com/news/world/lais-sentencing-marks-the-end-of-chinas-great-gatsby/article4186792/"
+     ]
+    },
+    {
+     "claim": "R_wanted",
+     "type": "established",
+     "claim_text": "Lai was described as China's most wanted fugitive / man.",
+     "urls": [
+      "https://www.aljazeera.com/news/2011/7/23/canada-deports-chinas-most-wanted-man",
+      "https://www.rfa.org/english/news/china/jail-05182012065024.html",
+      "https://www.ctvnews.ca/chinese-fugitive-s-odyssey-could-be-coming-to-an-end-1.669121"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rain",
+      "at": 28.5,
+      "gain": 0.3
+     },
+     {
+      "name": "sting",
+      "at": 29.315,
+      "gain": 0.45,
+      "word": [
+       0,
+       2
+      ]
+     },
+     {
+      "name": "tick",
+      "at": 30.646,
+      "gain": 0.35,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 31.997,
+      "gain": 0.4,
+      "word": [
+       0,
+       12
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_van",
+    "set_code": "renderer/sets.js#rm41_van",
+    "characters": [
+     "characters/figures/rm41_lai.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_deport",
+   "scene_type": "rm41_deport",
+   "start": 33.0,
+   "duration": 4.875,
+   "narration": [
+    "In 2011, Canada sent him back, after China promised no execution."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 33.25,
+     "end": 37.395,
+     "words": [
+      {
+       "w": "In",
+       "start": 33.32,
+       "end": 33.401
+      },
+      {
+       "w": "2011,",
+       "start": 33.436,
+       "end": 34.167
+      },
+      {
+       "w": "Canada",
+       "start": 34.423,
+       "end": 34.794
+      },
+      {
+       "w": "sent",
+       "start": 34.864,
+       "end": 35.026
+      },
+      {
+       "w": "him",
+       "start": 35.05,
+       "end": 35.142
+      },
+      {
+       "w": "back,",
+       "start": 35.166,
+       "end": 35.468
+      },
+      {
+       "w": "after",
+       "start": 35.537,
+       "end": 35.769
+      },
+      {
+       "w": "China",
+       "start": 35.816,
+       "end": 36.083
+      },
+      {
+       "w": "promised",
+       "start": 36.129,
+       "end": 36.478
+      },
+      {
+       "w": "no",
+       "start": 36.501,
+       "end": 36.629
+      },
+      {
+       "w": "execution.",
+       "start": 36.675,
+       "end": 37.348
+      }
+     ]
+    }
+   ],
+   "visual_description": "rm41 tarmac (night grade); rm41_escort: walk -> stand -> point (walks); rm41_lai (silhouette): walk -> stand -> bowed (walks); rm41_escort_b: walk -> hands_behind (walks); camera push/pull, handheld; overlays: label '22 JULY 2011 · DEPORTED', card 'CHINA'S PROMISE TO CANADA: / HE WILL NOT BE EXECUTED', stamp 'DEPORTED'.",
+   "shot_size": "medium-wide",
+   "set": "rm41_tarmac",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 40,
+     "y": 20,
+     "z": 1
+    },
+    "to": {
+     "x": -30,
+     "y": 50,
+     "z": 1.12
+    },
+    "handheld": 0.45
+   },
+   "characters": [
+    "rm41_escort",
+    "rm41_escort_b",
+    "rm41_lai"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_escort",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.8,
+     "start_pose": "walk",
+     "start_expr": "stern",
+     "actions": [
+      {
+       "at": 2.94,
+       "pose": "stand",
+       "expr": "stern"
+      },
+      {
+       "at": 3.13,
+       "pose": "point"
+      }
+     ],
+     "walk": {
+      "from": 900,
+      "to": 520,
+      "at": 0.1,
+      "dur": 2.8369999999999997
+     }
+    },
+    {
+     "id": "rm41_lai",
+     "outfit": "default",
+     "depth": 1.005,
+     "scale": 0.8,
+     "start_pose": "walk",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.99,
+       "pose": "stand"
+      },
+      {
+       "at": 3.5,
+       "pose": "bowed"
+      }
+     ],
+     "walk": {
+      "from": 1040,
+      "to": 680,
+      "at": 0.15,
+      "dur": 2.8369999999999997
+     },
+     "silhouette": "cool"
+    },
+    {
+     "id": "rm41_escort_b",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.8,
+     "start_pose": "walk",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 3.04,
+       "pose": "hands_behind",
+       "expr": "neutral"
+      }
+     ],
+     "walk": {
+      "from": 1180,
+      "to": 860,
+      "at": 0.2,
+      "dur": 2.8369999999999997
+     }
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.34,
+     "text": "22 JULY 2011 · DEPORTED"
+    },
+    {
+     "type": "card",
+     "at": 3.03,
+     "text": "CHINA'S PROMISE TO CANADA: / HE WILL NOT BE EXECUTED"
+    },
+    {
+     "type": "stamp",
+     "at": 1.96,
+     "text": "DEPORTED"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "R_deport",
+     "type": "established",
+     "claim_text": "Canada deported him on 22 July 2011, after China gave assurances that he would not be executed (or tortured).",
+     "urls": [
+      "https://www.aljazeera.com/news/2011/7/23/canada-deports-chinas-most-wanted-man",
+      "https://www.upi.com/Top_News/World-News/2011/07/23/Chinese-fugitive-leaves-Canada/UPI-28141311472255/",
+      "https://bc.ctvnews.ca/chinese-fugitive-will-be-deported-1.673375",
+      "https://en.wikipedia.org/wiki/Lai_Changxing"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rumble",
+      "at": 33.336,
+      "gain": 0.4,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "whoosh",
+      "at": 34.814,
+      "gain": 0.4,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "stamp",
+      "at": 36.079,
+      "gain": 0.45,
+      "word": [
+       0,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_deport",
+    "set_code": "renderer/sets.js#rm41_tarmac",
+    "characters": [
+     "characters/figures/rm41_escort.json",
+     "characters/figures/rm41_escort_b.json",
+     "characters/figures/rm41_lai.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s08_verdict",
+   "scene_type": "rm41_verdict",
+   "start": 37.875,
+   "duration": 2.625,
+   "narration": [
+    "In 2012, he got life in prison."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 38.125,
+     "end": 40.064,
+     "words": [
+      {
+       "w": "In",
+       "start": 38.195,
+       "end": 38.253
+      },
+      {
+       "w": "2012,",
+       "start": 38.276,
+       "end": 38.903
+      },
+      {
+       "w": "he",
+       "start": 38.984,
+       "end": 39.077
+      },
+      {
+       "w": "got",
+       "start": 39.112,
+       "end": 39.274
+      },
+      {
+       "w": "life",
+       "start": 39.309,
+       "end": 39.518
+      },
+      {
+       "w": "in",
+       "start": 39.541,
+       "end": 39.599
+      },
+      {
+       "w": "prison.",
+       "start": 39.646,
+       "end": 39.994
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (warm grade); rm41_lai (silhouette): stand_tense -> hands_together -> bowed; camera push/pull, handheld; overlays: label 'MAY 2012 · XIAMEN COURT', stamp 'LIFE IN PRISON', impact.",
+   "shot_size": "medium-wide",
+   "set": "courtroom",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -10,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": 20,
+     "z": 1.12
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "rm41_lai"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_lai",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.84,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.24,
+       "pose": "hands_together"
+      },
+      {
+       "at": 1.53,
+       "pose": "bowed"
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.3,
+     "text": "MAY 2012 · XIAMEN COURT"
+    },
+    {
+     "type": "stamp",
+     "at": 1.43,
+     "text": "LIFE IN PRISON"
+    },
+    {
+     "type": "impact",
+     "at": 1.43
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "R_life",
+     "type": "established",
+     "claim_text": "In May 2012 the Xiamen Intermediate People's Court sentenced him to life in prison for smuggling (plus 15 years for bribery, concurrent) and seized his property.",
+     "urls": [
+      "https://www.rfa.org/english/news/china/jail-05182012065024.html",
+      "https://www.aljazeera.com/news/2012/5/18/china-jails-fugitive-smuggler-for-life",
+      "https://bc.ctvnews.ca/chinese-fugitive-who-hid-in-b-c-gets-life-in-prison-1.828991",
+      "https://www.foxnews.com/world/china-sentences-fugitive-smuggler-lai-to-life-term"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "tick",
+      "at": 38.226,
+      "gain": 0.35,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "gavel",
+      "at": 39.259,
+      "gain": 0.6,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 39.309,
+      "gain": 0.5,
+      "word": [
+       0,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_verdict",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/rm41_lai.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s09_museum",
+   "scene_type": "rm41_museum",
+   "start": 40.5,
+   "duration": 3.375,
+   "narration": [
+    "His mansion briefly became an anti-corruption museum."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 40.75,
+     "end": 43.467,
+     "words": [
+      {
+       "w": "His",
+       "start": 40.785,
+       "end": 40.924
+      },
+      {
+       "w": "mansion",
+       "start": 40.994,
+       "end": 41.354
+      },
+      {
+       "w": "briefly",
+       "start": 41.4,
+       "end": 41.725
+      },
+      {
+       "w": "became",
+       "start": 41.795,
+       "end": 42.097
+      },
+      {
+       "w": "an",
+       "start": 42.12,
+       "end": 42.178
+      },
+      {
+       "w": "anti-corruption",
+       "start": 42.224,
+       "end": 42.968
+      },
+      {
+       "w": "museum.",
+       "start": 42.991,
+       "end": 43.409
+      }
+     ]
+    }
+   ],
+   "visual_description": "rm41 night (dawn grade); rm41_visitor: walk -> point -> hand_to_face (walks); rm41_visitor_b: stand -> read -> arms_crossed; camera push/pull, handheld; overlays: label 'AN ANTI-CORRUPTION MUSEUM', funfact 'IT SHUT IN LESS THAN / THREE WEEKS. / OFFICIAL REASON: SAFETY.'.",
+   "shot_size": "medium",
+   "set": "rm41_night",
+   "grade": "dawn",
+   "camera": {
+    "from": {
+     "x": 30,
+     "y": 30,
+     "z": 1
+    },
+    "to": {
+     "x": -20,
+     "y": 60,
+     "z": 1.1
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "rm41_visitor",
+    "rm41_visitor_b"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_visitor",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.86,
+     "start_pose": "walk",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.49,
+       "pose": "point",
+       "expr": "focused"
+      },
+      {
+       "at": 2.49,
+       "pose": "hand_to_face",
+       "expr": "realise"
+      }
+     ],
+     "walk": {
+      "from": 200,
+      "to": 360,
+      "at": 0.05,
+      "dur": 1
+     }
+    },
+    {
+     "id": "rm41_visitor_b",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.9,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.9,
+       "pose": "read",
+       "expr": "focused"
+      },
+      {
+       "at": 2.02,
+       "pose": "arms_crossed",
+       "expr": "stern"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.1,
+     "text": "AN ANTI-CORRUPTION MUSEUM"
+    },
+    {
+     "type": "funfact",
+     "at": 1.72,
+     "text": "IT SHUT IN LESS THAN / THREE WEEKS. / OFFICIAL REASON: SAFETY."
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "R_museum",
+     "type": "established",
+     "claim_text": "FUN FACT: the Red Mansion was opened as an anti-corruption museum (on Premier Zhu Rongji's order, SCMP) and shut in less than three weeks, officially for safety reasons.",
+     "urls": [
+      "https://www.scmp.com/article/358990/inside-red-chamber",
+      "https://www.frommers.com/destinations/xiamen/in-depth/",
+      "https://en.wikipedia.org/wiki/Lai_Changxing"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 40.944,
+      "gain": 0.3,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "sparkle",
+      "at": 42.1,
+      "gain": 0.4,
+      "word": [
+       0,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_museum",
+    "set_code": "renderer/sets.js#rm41_night",
+    "characters": [
+     "characters/figures/rm41_visitor.json",
+     "characters/figures/rm41_visitor_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s10_end",
+   "scene_type": "rm41_end",
+   "start": 43.875,
+   "duration": 7.875,
+   "narration": [
+    "The lesson? A gift that buys a favor is a bribe.",
+    "Billions smuggled, and one red mansion at its heart."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 44.125,
+     "end": 46.76,
+     "words": [
+      {
+       "w": "The",
+       "start": 44.148,
+       "end": 44.218
+      },
+      {
+       "w": "lesson?",
+       "start": 44.288,
+       "end": 44.659
+      },
+      {
+       "w": "A",
+       "start": 44.88,
+       "end": 44.938
+      },
+      {
+       "w": "gift",
+       "start": 44.996,
+       "end": 45.193
+      },
+      {
+       "w": "that",
+       "start": 45.216,
+       "end": 45.309
+      },
+      {
+       "w": "buys",
+       "start": 45.344,
+       "end": 45.623
+      },
+      {
+       "w": "a",
+       "start": 45.658,
+       "end": 45.692
+      },
+      {
+       "w": "favor",
+       "start": 45.716,
+       "end": 46.075
+      },
+      {
+       "w": "is",
+       "start": 46.157,
+       "end": 46.261
+      },
+      {
+       "w": "a",
+       "start": 46.296,
+       "end": 46.331
+      },
+      {
+       "w": "bribe.",
+       "start": 46.366,
+       "end": 46.714
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 47.36,
+     "end": 49.775,
+     "words": [
+      {
+       "w": "Billions",
+       "start": 47.395,
+       "end": 47.697
+      },
+      {
+       "w": "smuggled,",
+       "start": 47.755,
+       "end": 48.173
+      },
+      {
+       "w": "and",
+       "start": 48.219,
+       "end": 48.312
+      },
+      {
+       "w": "one",
+       "start": 48.335,
+       "end": 48.509
+      },
+      {
+       "w": "red",
+       "start": 48.533,
+       "end": 48.707
+      },
+      {
+       "w": "mansion",
+       "start": 48.753,
+       "end": 49.113
+      },
+      {
+       "w": "at",
+       "start": 49.148,
+       "end": 49.241
+      },
+      {
+       "w": "its",
+       "start": 49.264,
+       "end": 49.357
+      },
+      {
+       "w": "heart.",
+       "start": 49.392,
+       "end": 49.728
+      }
+     ]
+    }
+   ],
+   "visual_description": "rm41 night (tokyo grade); rm41_lai (silhouette): stand -> stand_tense -> present -> stand; keyed camera moves, handheld; overlays: lesson 'A \"GIFT\" THAT BUYS A FAVOR / IS A BRIBE. / 64 OFFICIALS TOOK HIS, A COURT FOUND.'.",
+   "shot_size": "medium-wide",
+   "set": "rm41_night",
+   "grade": "tokyo",
+   "camera": {
+    "keys": 3,
+    "handheld": 0.35
+   },
+   "characters": [
+    "rm41_lai"
+   ],
+   "character_actions": [
+    {
+     "id": "rm41_lai",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.66,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.41,
+       "pose": "stand_tense"
+      },
+      {
+       "at": 3.48,
+       "pose": "present"
+      },
+      {
+       "at": 6.28,
+       "pose": "stand"
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "lesson",
+     "at": 0.26,
+     "text": "A \"GIFT\" THAT BUYS A FAVOR / IS A BRIBE. / 64 OFFICIALS TOOK HIS, A COURT FOUND."
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "R_lesson",
+     "type": "established",
+     "claim_text": "LESSON CARD: a gift given to win an official's favour is a bribe; here the court found 64 officials took his bribes (cash, flats, cars).",
+     "urls": [
+      "https://www.channelstv.com/2012/05/18/china-jails-smuggling-kingpin-lai-for-life/",
+      "https://www.foxnews.com/world/china-sentences-fugitive-smuggler-lai-to-life-term"
+     ]
+    },
+    {
+     "claim": "R_bribes",
+     "type": "established",
+     "claim_text": "The court found Lai bribed 64 officials (cash, property and vehicles worth about 39.1 million yuan).",
+     "urls": [
+      "https://www.channelstv.com/2012/05/18/china-jails-smuggling-kingpin-lai-for-life/",
+      "https://www.foxnews.com/world/china-sentences-fugitive-smuggler-lai-to-life-term",
+      "https://www.rfa.org/english/news/china/jail-05182012065024.html"
+     ]
+    },
+    {
+     "claim": "R_mansion",
+     "type": "established",
+     "claim_text": "Lai Changxing's 'Red Mansion' (Hong Lou, 'Red Chamber') in Xiamen was used to entertain officials. The building is drawn as a generic red multi-storey house (sources differ between six and seven storeys; the number is not spoken or typed).",
+     "urls": [
+      "https://en.wikipedia.org/wiki/Lai_Changxing",
+      "https://www.scmp.com/article/574048/welcome-house-sin",
+      "https://www.scmp.com/article/358990/inside-red-chamber",
+      "https://www.taipeitimes.com/News/feat/archives/2007/08/05/2003372876"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "chime",
+      "at": 44.268,
+      "gain": 0.35,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 49.214,
+      "gain": 0.4,
+      "word": [
+       1,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv41-red-mansion.js#rm41_end",
+    "set_code": "renderer/sets.js#rm41_night",
+    "characters": [
+     "characters/figures/rm41_lai.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}

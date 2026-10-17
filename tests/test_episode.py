@@ -202,7 +202,7 @@ class AllEpisodes(unittest.TestCase):
         self.assertGreaterEqual(len(self.episodes()), 2)
         for eid in self.episodes():
             ep = load_episode(eid)
-            js = (ROOT / "renderer" / "scenes" / f"{eid}.js").read_text() + (ROOT / "renderer" / "cast.js").read_text()
+            js = (ROOT / "renderer" / "scenes" / f"{eid}.js").read_text() + (ROOT / "renderer" / "cast.js").read_text() + (ROOT / "renderer" / "doc.js").read_text()
             for s in ep["scenes"]:
                 self.assertIn(s["scene"] + "(", js, f"{eid}: no renderer for {s['scene']}")
             self.assertTrue((ROOT / "episodes" / eid / "research.md").exists())

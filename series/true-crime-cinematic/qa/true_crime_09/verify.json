@@ -1,0 +1,161 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv09-agatha-christie/tcv09-agatha-christie.mp4",
+    "size_bytes": 30945346,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 78.158,
+    "audio_duration": 78.158,
+    "decode_stderr": "",
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.7,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv09-agatha-christie/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2344,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.7,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.3,
+    "true_peak_dbtp": -1.7
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.11,
+    "transcript": "The world's best selling novelist vanished for 11 days. Thousands hunted for her, then she turned up at a spa hotel under a fake name. On December 3rd, 1926, Agatha Christie drove off into the night. Her husband had fallen for another woman. Next morning, her car was found abandoned beside a chalk pit. Her fur coat was still inside, Agatha was not. Over a thousand police were reported searching. with thousands of volunteers. Even airplanes, the paper said. Rumors flew, had she been murdered, was her husband to blame. Sherlock Holmes's creator, Arthur Conan Doyle, took her glove to a medium. Eleven days after she vanished, she was recognized at a Spaho tell and hair gay. She had checked in as Mrs. Theresa Neal from Cape Town. Neil, the surname of her husband's mistress. Her family blamed memory loss. A \"yagra\" for Andrew Norman suggests a few state, brought on by trauma. Other suspect revenge on Archie, or a publicity stunt. She never fully explained those 11 days. Her autobiography doesn't mention them at all. This December 3rd marks exactly one, hundred years. The mystery is still unsolved. Which mystery should we crack next? Next, tell us in the comments."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 99,
+      "extent": {
+        "left": 105.0,
+        "right": 975.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "autobiography"
+      ]
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.3,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.75,
+      "frames": 781
+    },
+    "audio": {
+      "opening_speech_median_db": -20.3,
+      "opening_min_speech_window_db": -34.6,
+      "first_word_db": -15.2,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -38.5,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.303,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 15.8,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -34.5,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8246,
+      "loudness_lufs": -14.3,
+      "true_peak_dbtp": -1.7,
+      "mono_lufs": -14.3,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -86.1,
+      "end_before_db": -15.8,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 78.133333,
+        "audio": 78.158005
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 12,
+      "composed_shots": 12,
+      "shots_with_characters": 12,
+      "character_shot_share": 1.0,
+      "distinct_sets": 7,
+      "max_set_share": 0.25,
+      "shot_sizes": {
+        "wide": 1,
+        "medium": 6,
+        "medium-wide": 3,
+        "close-up": 2
+      },
+      "max_shot_size_share": 0.5,
+      "ok": true
+    }
+  }
+}

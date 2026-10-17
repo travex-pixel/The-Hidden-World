@@ -1,0 +1,160 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv11-great-train-robbery/tcv11-great-train-robbery.mp4",
+    "size_bytes": 30972552,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 74.6,
+    "audio_duration": 74.582,
+    "decode_stderr": "",
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.6,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv11-great-train-robbery/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2238,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.0,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.081,
+    "transcript": "Britain's biggest train robbers got away with 2.6 million pounds and a board game gave them away. August 1963, the overnight male train from Glasgow to London. A signal turned red, it was a fake. The train stopped, the driver Jack Mills was attacked and badly hurt. At a bridge down the line, they unloaded the milebags. They vanished to a hideout called Leathersled Farm. There, they passed the time playing Monopoly. Legend says they used real cash, never proven. Five days later, our herdsmen tipped off police. The gang had fled early. Most of the money never recovered. But they left Melbagg's food and the board game. Then came the fingerprints. On the Monopoly board. And on the ketchup bottle. Some belonged to Ronnie Bates. In In 1964, the prince helped convict them, seven got 30 years. In 1965, Biggs escaped over the prison wall on a rope ladder. That cades on the run, then in 2001, he flew home and was arrested. Britain's biggest train robbery, given away by a board game. Next, how a parking ticket led police to the son of Sam."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 94,
+      "extent": {
+        "left": 116.4,
+        "right": 963.6,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.2,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 2.28,
+      "frames": 746
+    },
+    "audio": {
+      "opening_speech_median_db": -20.2,
+      "opening_min_speech_window_db": -31.4,
+      "first_word_db": -18.3,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -37.7,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.307,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 14.8,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -34.8,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.83,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.6,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -83.8,
+      "end_before_db": -12.1,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.3,
+      "ending_intentional": true,
+      "durations": {
+        "video": 74.6,
+        "audio": 74.581995
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 15,
+      "composed_shots": 15,
+      "shots_with_characters": 12,
+      "character_shot_share": 0.8,
+      "distinct_sets": 7,
+      "max_set_share": 0.4,
+      "shot_sizes": {
+        "medium-wide": 4,
+        "insert/graphic": 3,
+        "wide": 1,
+        "medium": 6,
+        "close-up": 1
+      },
+      "max_shot_size_share": 0.4,
+      "ok": true
+    }
+  }
+}

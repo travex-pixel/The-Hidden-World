@@ -1,0 +1,930 @@
+{
+ "id": "tcv59-drug-catapult",
+ "number": 59,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Fired Weed Over the Border With a Catapult",
+ "central_question": "In 2011, smugglers on the Mexican border launched marijuana into Arizona with a homemade catapult. How was it caught?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "2011.": "twenty-eleven.",
+   "Smugglers": "Smuggglers",
+   "smugglers": "smuggglers",
+   "228": "two hundred and twenty-eight"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "59",
+  "label": "THE DRUG CATAPULT · ARIZONA 2011"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s05_cannon",
+   "word": [
+    1,
+    3
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "dc59_smug1",
+  "dc59_smug2",
+  "dc59_guard1",
+  "dc59_guard2",
+  "dc59_soldier1",
+  "dc59_soldier2",
+  "dc59_agent",
+  "dc59_viewer"
+ ],
+ "content_notes": "Tone: absurd and ironic. No weapon is drawn or pointed and no violence is shown; the soldiers hold only torches. The smugglers were never identified: they appear only as anonymous dark silhouettes (no face, ethnicity or costume). The National Guard troops, the soldiers, the border agent and the young man in the lesson are generic figures, never named; no badge, flag, patch, crest or insignia of any real force or army; no agency logo. The marijuana is shown only as plain taped bundles and sealed cans. The camera frame in the hook is our own generic graphic, not real footage. The seized quantity is reported as 45 lb by NBC, Reuters and CSM and 35 lb by AP/CBS; the screen says so. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-16.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "dc59_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.32
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      1
+     ],
+     "name": "hit",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_year"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers catapulted weed into America."
+    },
+    {
+     "who": "narrator",
+     "text": "In 2011. Not the Middle Ages.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "catapulted",
+    "weed",
+    "america.",
+    "middle",
+    "ages.",
+    "2011."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_cams",
+   "scene": "dc59_cams",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "static",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_cams"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But National Guard troops were watching on camera."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "national",
+    "guard",
+    "watching",
+    "camera."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_launch",
+   "scene": "dc59_launch",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "thud",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_launch",
+    "K_fourlb"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Men flung bundles right over the fence."
+    },
+    {
+     "who": "narrator",
+     "text": "Each shot? Over four pounds.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "flung",
+    "bundles",
+    "fence.",
+    "shot?",
+    "four",
+    "pounds."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_raid",
+   "scene": "dc59_raid",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "rasp",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_raid",
+    "K_left"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Mexican soldiers moved in. The smugglers ran."
+    },
+    {
+     "who": "narrator",
+     "text": "And left their catapult behind.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "soldiers",
+    "moved",
+    "smugglers",
+    "ran.",
+    "left",
+    "catapult",
+    "behind."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_cannon",
+   "scene": "dc59_cannon",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      1
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_wild",
+    "K_cannon"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not their wildest idea."
+    },
+    {
+     "who": "narrator",
+     "text": "Next, a gas cannon firing cans of weed.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "wildest",
+    "idea.",
+    "gas",
+    "cannon",
+    "cans",
+    "weed."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_stat",
+   "scene": "dc59_stat",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_stat"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Ultralight planes? 228 crossings in one year."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ultralight",
+    "planes?",
+    "228",
+    "crossings",
+    "year."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "dc59_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Crossing a border? Save these three rules."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "crossing",
+    "border?",
+    "save",
+    "three",
+    "rules."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "dc59_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_outcome",
+    "K_seized"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The smugglers got away."
+    },
+    {
+     "who": "narrator",
+     "text": "Only the catapult got caught.",
+     "pause_before": 0.22
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "got",
+    "away.",
+    "only",
+    "catapult",
+    "caught."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "In January 2011 smugglers on the Mexican side used a catapult to launch packages of marijuana over the border fence into Arizona near Naco. Narration: 'Smugglers catapulted weed into America.' (NPR: 'Drug smugglers get medieval'.)",
+   "sources": [
+    "nbc",
+    "cbs",
+    "arab",
+    "csm",
+    "popsci",
+    "npr",
+    "politifact"
+   ]
+  },
+  {
+   "id": "K_year",
+   "type": "established",
+   "nature": "fact",
+   "text": "The catapult was used and seized in January 2011 (Friday evening, 21 January 2011; reported 26-28 January 2011). Narration: 'In 2011. Not the Middle Ages.'",
+   "sources": [
+    "nbc",
+    "csm",
+    "register",
+    "politifact"
+   ]
+  },
+  {
+   "id": "K_cams",
+   "type": "established",
+   "nature": "fact",
+   "text": "National Guard troops operating a remote video surveillance system at the Naco Border Patrol Station saw several people preparing a catapult and launching packages over the international border fence. Narration: 'But National Guard troops were watching on camera.'",
+   "sources": [
+    "nbc",
+    "cbs",
+    "csm",
+    "popsci"
+   ]
+  },
+  {
+   "id": "K_launch",
+   "type": "established",
+   "nature": "fact",
+   "text": "The people seen on the video loaded the device and launched packages over the fence (night-vision footage). Narration: 'Men flung bundles right over the fence.'",
+   "sources": [
+    "nbc",
+    "cbs",
+    "csm",
+    "npr"
+   ]
+  },
+  {
+   "id": "K_fourlb",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: a Mexican army officer said the catapult could launch about 4.4 lb (2 kg) of marijuana at a time. Narration: 'Each shot? Over four pounds.'",
+   "sources": [
+    "cbs",
+    "star",
+    "nbc",
+    "arab"
+   ]
+  },
+  {
+   "id": "K_raid",
+   "type": "established",
+   "nature": "fact",
+   "text": "Border Patrol alerted Mexican authorities; Mexican soldiers moved in and the smugglers fled. Narration: 'Mexican soldiers moved in. The smugglers ran.'",
+   "sources": [
+    "nbc",
+    "cbs",
+    "arab",
+    "csm"
+   ]
+  },
+  {
+   "id": "K_left",
+   "type": "established",
+   "nature": "fact",
+   "text": "The smugglers left the catapult behind: about three yards (9-10 ft) tall, elastic-powered, on a flatbed trailer towed by an SUV, about 20 yards from the border. Narration: 'And left their catapult behind.' Label 'LEFT BEHIND: A 3-YARD CATAPULT'.",
+   "sources": [
+    "cbs",
+    "nbc",
+    "arab",
+    "star",
+    "npr"
+   ]
+  },
+  {
+   "id": "K_wild",
+   "type": "established",
+   "nature": "fact",
+   "text": "Editorial bridge: smugglers at the same border later used other devices (see K_cannon); a Border Patrol spokesman said in 2012: 'We've seen catapults, but nothing like this.' Narration: 'But that was not their wildest idea.'",
+   "sources": [
+    "ktar",
+    "popsci_can",
+    "officer_can"
+   ]
+  },
+  {
+   "id": "K_cannon",
+   "type": "established",
+   "nature": "fact",
+   "text": "In December 2012 Border Patrol agents near San Luis, Arizona (Yuma Sector) found 33 cans of marijuana (about 85 lb) in a field and a CO2 tank by the fence; agents believed a pneumatic (compressed-gas) cannon fired them over the fence; no arrests. Narration: 'Next, a gas cannon firing cans of weed.'",
+   "sources": [
+    "ktar",
+    "popsci_can",
+    "officer_can",
+    "cpost"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): U.S. Customs and Border Protection counted 228 ultralight incursions along the Mexican border in fiscal 2010, up from 118 the year before (KPBS: 2009 to 2010). Narration: 'Ultralight planes? 228 crossings in one year.'",
+   "sources": [
+    "bend",
+    "officer_ul",
+    "kpbs",
+    "npr_ul"
+   ]
+  },
+  {
+   "id": "K_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): crossing a border: do not carry any items for someone else and be aware of the contents of your bags (Smartraveller); travellers carrying more than $10,000 in currency must report it to CBP (USA.gov; CBP Form 6059B; FinCEN 105). Rows: 'CARRY NOTHING FOR ANYONE', 'KNOW WHAT IS IN YOUR BAGS', 'DECLARE CASH OVER $10,000'.",
+   "sources": [
+    "smart",
+    "smart_d",
+    "usagov",
+    "cbp6059"
+   ]
+  },
+  {
+   "id": "K_outcome",
+   "type": "established",
+   "nature": "fact",
+   "text": "The smugglers fled and were not caught; no arrests were reported. Narration: 'The smugglers got away.'",
+   "sources": [
+    "nbc",
+    "cbs",
+    "arab",
+    "csm",
+    "popsci"
+   ]
+  },
+  {
+   "id": "K_seized",
+   "type": "established",
+   "nature": "fact",
+   "text": "Mexican soldiers seized the catapult, an SUV and the marijuana (about 45 lb per NBC, Reuters and CSM; 35 lb per AP/CBS). Narration: 'Only the catapult got caught.' Label 'SEIZED: CATAPULT, SUV, WEED'.",
+   "sources": [
+    "nbc",
+    "cbs",
+    "arab",
+    "csm",
+    "register"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "nbc",
+   "publisher": "NBC News (Associated Press)",
+   "title": "Drug catapult discovered on Mexico border",
+   "url": "https://www.nbcnews.com/news/amp/wbna41282726",
+   "date": "2011-01-26",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "cbs",
+   "publisher": "CBS News (Associated Press)",
+   "title": "Drug-hurling catapult found on Ariz.-Mex. border",
+   "url": "https://www.cbsnews.com/news/drug-hurling-catapult-found-on-ariz-mex-border",
+   "date": "2011-01-26",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "arab",
+   "publisher": "Arab News (Reuters)",
+   "title": "The Mexican military seized 45 pounds of marijuana, a sports utility vehicle and a catapult",
+   "url": "https://www.arabnews.com/node/366611",
+   "date": "2011-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "csm",
+   "publisher": "The Christian Science Monitor",
+   "title": "Lord of the Rings IV? No, just a pot catapult on US-Mexico border",
+   "url": "https://csmonitor.com/World/Americas/2011/0128/Lord-of-the-Rings-IV-No-just-a-pot-catapult-on-US-Mexico-border.-video",
+   "date": "2011-01-28",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "npr",
+   "publisher": "NPR (The Two-Way)",
+   "title": "Video: Drug smugglers get medieval; catapult launches pot over border",
+   "url": "https://www.npr.org/sections/thetwo-way/2011/01/27/133266020/video-drug-smugglers-get-medieval-catapult-launches-pot-over-border",
+   "date": "2011-01-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "popsci",
+   "publisher": "Popular Science",
+   "title": "Mexican authorities seize homemade marijuana-hurling catapult at the border",
+   "url": "https://www.popsci.com/diy/article/2011-01/mexican-authorities-seize-homemade-marijuana-hurling-catapult-border",
+   "date": "2011-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "register",
+   "publisher": "The Register",
+   "title": "Mexican soldiers seize marijuana catapult",
+   "url": "https://www.theregister.com/2011/01/27/catapult_interdiction/",
+   "date": "2011-01-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "star",
+   "publisher": "Honolulu Star-Advertiser (AP)",
+   "title": "Pot-firing catapult found at Arizona-Mexico border",
+   "url": "https://www.staradvertiser.com/?p=262849",
+   "date": "2011-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "politifact",
+   "publisher": "PolitiFact",
+   "title": "Trump largely accurate in claim about drugs catapulted over the border",
+   "url": "https://www.politifact.com/factchecks/2017/sep/27/donald-trump/trump-largely-accurate-claim-about-drugs-catapulte/",
+   "date": "2017-09-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ktar",
+   "publisher": "KTAR News",
+   "title": "Pot fired from cannon over border recovered by agents",
+   "url": "https://ktar.com/arizona-news/pot-fired-from-cannon-over-border-recovered-by-agents",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "popsci_can",
+   "publisher": "Popular Science",
+   "title": "Mexican drug smugglers are launching pot into the U.S. with a huge pneumatic cannon",
+   "url": "https://www.popsci.com/technology/article/2012-12/mexican-drug-smugglers-are-launching-pot-us-huge-pneumatic-cannon",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "officer_can",
+   "publisher": "Officer.com",
+   "title": "Border Patrol: Pot shot over fence with cannon",
+   "url": "https://www.officer.com/investigations/news/10841396/border-patrol-agents-say-cannon-used-to-shoot-marijuana-over-fence",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "cpost",
+   "publisher": "The Christian Post",
+   "title": "Marijuana cannon used to shoot drugs over border",
+   "url": "https://christianpost.com/news/marijuana-cannon-used-to-shoot-drugs-over-border.html",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "bend",
+   "publisher": "The Bulletin, Bend (Associated Press)",
+   "title": "As borders tighten, drug smugglers fly",
+   "url": "https://bendbulletin.com/?p=97156",
+   "date": "2011",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "officer_ul",
+   "publisher": "Officer.com (Associated Press)",
+   "title": "Smugglers learn to fly as border tightens",
+   "url": "https://www.officer.com/tactical/swat/news/10259535/drug-smugglers-learn-to-fly-as-border-tightens",
+   "date": "2011",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "kpbs",
+   "publisher": "KPBS / Fronteras Desk",
+   "title": "Flying marijuana over the border low and slow",
+   "url": "https://www.kpbs.org/news/2011/may/19/flying-marijuana-over-border-low-slow/",
+   "date": "2011-05-19",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "npr_ul",
+   "publisher": "NPR",
+   "title": "In risky twist, using ultralight planes to drop drugs",
+   "url": "https://www.npr.org/2011/05/26/136644297/in-risky-twist-using-ultralight-planes-to-drop-drugs",
+   "date": "2011-05-26",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "smart",
+   "publisher": "Smartraveller (Australian Government)",
+   "title": "Carrying or using drugs (luggage advice)",
+   "url": "https://www.smartraveller.gov.au/travel-essentials/following-law/carrying-or-using-drugs",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "smart_d",
+   "publisher": "Smartraveller (Australian Government)",
+   "title": "Drugs: before you go",
+   "url": "https://www.smartraveller.gov.au/before-you-go/laws/drugs",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "usagov",
+   "publisher": "USA.gov",
+   "title": "How much money can you bring into and out of the U.S.?",
+   "url": "https://cms.usa.gov/travel-money",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "cbp6059",
+   "publisher": "U.S. Customs and Border Protection",
+   "title": "CBP Form 6059B (Customs Declaration), English",
+   "url": "https://cbp.gov/sites/default/files/2024-07/cbp_form_6059b_english_0.pdf",
+   "date": "2024-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#14202a",
+  "mid": "#c9b89a",
+  "accent": "#e8a33c"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A MEDIEVAL CATAPULT"
+   },
+   {
+    "text": "FIRING WEED INTO AMERICA",
+    "colour": "#e8a33c"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "A CATAPULT. IN 2011."
+   },
+   {
+    "text": "GENIUS OR RIDICULOUS? 👇",
+    "colour": "#e8a33c"
+   },
+   {
+    "text": "TAG THE MATE WHO'D BUILD THIS",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "INVENTION",
+  "keys": [
+   {
+    "t": 9.53,
+    "v": "1 · CATAPULT"
+   },
+   {
+    "t": 23.19,
+    "v": "2 · GAS CANNON"
+   },
+   {
+    "t": 25.43,
+    "v": "3 · ULTRALIGHT"
+   }
+  ],
+  "y": 330,
+  "until": 28.95
+ },
+ "legal_status_verified": "2026-10-16"
+}

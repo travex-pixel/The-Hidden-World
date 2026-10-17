@@ -1,0 +1,159 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv38-scam-city/tcv38-scam-city.mp4",
+    "size_bytes": 43885451,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 52.133,
+    "audio_duration": 52.133,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.5,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv38-scam-city/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 3128,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.5,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.5
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.038,
+    "transcript": "On the border of Myanmar, whole towns were built for one crime, and it might have already texted you. These compounds sit near my alwadi across from Thailand. A UN report estimated at least 120,000 people may be trapped there. Many were lured by fake job ads then trapped inside. Their job, text strangers, act friendly, then talk crypto. It's called Pig butchery. Take profits on a fake app until you try to cash out. Americans reported losing $5.8 billion to crypto investment scams in 2024. In 2025, Thailand cut power to the hubs and thousands were freed. Then, Myanmar's Army rated KK Park and blew up buildings. The lesson, a stranger who texts by mistake then talks crypto is a scam. So never reply to that wrong number."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 60,
+      "extent": {
+        "left": 120.3,
+        "right": 959.7,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.2,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 2.57,
+      "frames": 521
+    },
+    "audio": {
+      "opening_speech_median_db": -19.6,
+      "opening_min_speech_window_db": -35.7,
+      "first_word_db": -15.2,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -36.4,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.312,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.9,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -36.8,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.838,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.5,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -93.1,
+      "end_before_db": -13.9,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 52.133333,
+        "audio": 52.132993
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 10,
+      "composed_shots": 10,
+      "shots_with_characters": 9,
+      "character_shot_share": 0.9,
+      "distinct_sets": 6,
+      "max_set_share": 0.4,
+      "shot_sizes": {
+        "wide": 2,
+        "insert/graphic": 1,
+        "medium-wide": 4,
+        "medium": 3
+      },
+      "max_shot_size_share": 0.4,
+      "ok": true
+    }
+  }
+}

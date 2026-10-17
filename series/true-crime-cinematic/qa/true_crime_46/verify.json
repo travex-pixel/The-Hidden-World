@@ -1,0 +1,193 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv46-gentleman-robber/tcv46-gentleman-robber.mp4",
+    "size_bytes": 22008216,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 41.533,
+    "audio_duration": 41.533,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.7,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv46-gentleman-robber/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2492,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.7,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.7
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.076,
+    "transcript": "A bank robber paddled out of Senkwen. He said he escaped 18 times. How do you build a boat in prison? He built it from plastic and duct tape. He named it rob a dub dub. Waves swamped it. He still got away. Twenty years later, at 78, he was still robbing banks. And he sometimes thanked the tellers. The police were already watching. After a chase, deputies arrested him. Ever caught in the bank robbery, saved these three rules. 30% of identified bank criminals were repeat offenders. No kayak this time. The man who escaped 18 times died in prison at 83."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 49,
+      "extent": {
+        "left": 105.0,
+        "right": 975.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "Rub-a-Dub-Dub."
+      ]
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 1.0,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.57,
+      "frames": 415
+    },
+    "audio": {
+      "opening_speech_median_db": -19.2,
+      "opening_min_speech_window_db": -27.6,
+      "first_word_db": -17.6,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -36.7,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.324,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 12.1,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -33.5,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8229,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.7,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -88.3,
+      "end_before_db": -14.5,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 41.533333,
+        "audio": 41.532993
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true
+      },
+      "notes": {
+        "hook": "A bank robber paddled out of San Quentin. He said he escaped 18 times.",
+        "loop_gaps": [],
+        "tail": "criminals were repeat offenders. No kayak, this time. The man who escaped 18 times died in prison, at 83.",
+        "end_title": "18 ESCAPES, BY HIS COUNT. GENIUS OR FOOL? \ud83d\udc47 SEND TO THE MATE WHO BAILS",
+        "tail_s": 1.52,
+        "wpm": 147.3
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 9,
+      "composed_shots": 9,
+      "shots_with_characters": 7,
+      "character_shot_share": 0.78,
+      "distinct_sets": 7,
+      "max_set_share": 0.33,
+      "shot_sizes": {
+        "medium-wide": 4,
+        "insert/graphic": 2,
+        "wide": 1,
+        "medium": 2
+      },
+      "max_shot_size_share": 0.44,
+      "ok": true
+    }
+  }
+}

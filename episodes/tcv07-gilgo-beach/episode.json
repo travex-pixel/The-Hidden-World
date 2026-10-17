@@ -1,0 +1,1141 @@
+{
+ "id": "tcv07-gilgo-beach",
+ "number": 7,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Pizza Crust Helped Crack the Gilgo Beach Killings",
+ "central_question": "How did investigators finally identify the Gilgo Beach killer, and how did the case end?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "Heuermann": "Hewerman"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "07",
+  "label": "GILGO BEACH · 2010-2026"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 78,
+  "hits": [
+   {
+    "scene": "s04_truck",
+    "word": [
+     1,
+     9
+    ],
+    "at": -0.05,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s11_sentence",
+   "word": [
+    0,
+    6
+   ],
+   "at": -0.08
+  }
+ },
+ "figures": [
+  "gb7_suit",
+  "detective",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "scientist",
+  "examiner",
+  "official",
+  "press_operator",
+  "searcher_b"
+ ],
+ "content_notes": "Closed case: Heuermann pleaded guilty on 8 Apr 2026 and was sentenced on 17 Jun 2026. The trial never happened, so the clues (the truck, the burner phones, the pizza crust) are attributed to prosecutors' July 2023 court filing; the crust gave a mitochondrial DNA link, not a nuclear match. Heuermann appears only as an anonymous silhouette with no likeness; his family is never shown, named or implied. The victims, the remains and the places where they were found are never depicted; the dune road is a generic illustration, not a crime scene. No deaths beyond the seven plus Karen Vergata are attributed to him. No real photograph, filing, police or court material, logo or document is imitated. No dialogue is invented. Legal status verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "gb7_hook",
+   "min_duration": 4.4,
+   "pad_after": 0.15,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "G_pizza",
+    "G_plea"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A pizza crust thrown in a Manhattan trash can helped crack the Gilgo Beach killings."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pizza",
+    "crust",
+    "gilgo"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_cold",
+   "scene": "gb7_cold",
+   "min_duration": 3.0,
+   "pad_after": 0.5,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.7
+    },
+    {
+     "at": 0.3,
+     "word": [
+      0,
+      8
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.75,
+     "word": [
+      0,
+      8
+     ],
+     "name": "step",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "G_cold"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "For more than a decade, the case went cold."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "decade,",
+    "cold."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_task",
+   "scene": "gb7_task",
+   "min_duration": 2.0,
+   "pad_after": 0.75,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "paper",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "G_task",
+    "G_weeks"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then, in 2022, a new task force reopened the files."
+    },
+    {
+     "who": "narrator",
+     "text": "Within weeks, it had a suspect.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "weeks,",
+    "suspect."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_truck",
+   "scene": "gb7_truck",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      9
+     ],
+     "name": "hit",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "G_truck",
+    "G_name"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Prosecutors said it began with a truck a witness saw in 2010."
+    },
+    {
+     "who": "narrator",
+     "text": "It led the task force to a Manhattan architect: Rex Heuermann.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "truck",
+    "heuermann."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_phones",
+   "scene": "gb7_phones",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      9
+     ],
+     "name": "ping",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "G_phones"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next, burner phones. Prosecutors said they reached victims and pinged near his office."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "burner",
+    "phones.",
+    "pinged"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_watch",
+   "scene": "gb7_watch",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      13
+     ],
+     "name": "thud",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "G_surveil",
+    "G_pizza"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So they watched him."
+    },
+    {
+     "who": "narrator",
+     "text": "In January 2023, he tossed a pizza box into a Fifth Avenue trash can.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "watched",
+    "pizza",
+    "box"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_lab",
+   "scene": "gb7_lab",
+   "min_duration": 4.6,
+   "pad_after": 0.9,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      4
+     ],
+     "name": "swell",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "G_pizza",
+    "G_dna"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Prosecutors said the crust's DNA linked him to a hair found with a victim.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dna",
+    "linked"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_arrest",
+   "scene": "gb7_arrest",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.5
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "G_arrest",
+    "G_ng"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In July 2023, officers arrested him near his Manhattan office."
+    },
+    {
+     "who": "narrator",
+     "text": "He pleaded not guilty.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "arrested",
+    "not",
+    "guilty."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_ruling",
+   "scene": "gb7_ruling",
+   "min_duration": 2.0,
+   "pad_after": 0.9,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      9
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "G_wgs"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2025, a judge allowed whole-genome DNA from hairs: reportedly a New York first."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "whole-genome",
+    "first."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s10_plea",
+   "scene": "gb7_plea",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "G_plea"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then in April 2026, before any trial, he pleaded guilty to seven murders."
+    },
+    {
+     "who": "narrator",
+     "text": "And admitted an eighth.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty",
+    "seven",
+    "eighth."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s11_sentence",
+   "scene": "gb7_sentence",
+   "min_duration": 2.0,
+   "pad_after": 1.0,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      7
+     ],
+     "name": "gavel",
+     "gain": 1.0
+    },
+    {
+     "at": 0.7,
+     "word": [
+      0,
+      9
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "G_sentence",
+    "G_appeal"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In June, he got three consecutive life sentences without parole."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "three",
+    "life"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s12_memory",
+   "scene": "gb7_memory",
+   "min_duration": 4.6,
+   "pad_after": 0.9,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.5
+    },
+    {
+     "at": 3.4,
+     "name": "wind",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "G_names",
+    "G_families"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Eight women. Their families waited years for that day.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "eight",
+    "women."
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s13_next",
+   "scene": "gb7_next",
+   "min_duration": 3.0,
+   "pad_after": 1.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      15
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "G_next"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next: she was acquitted of murder in 1893. So why did a friend see her burn a dress?"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "acquitted",
+    "burn",
+    "dress?"
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "G_pizza",
+   "type": "established",
+   "nature": "allegation",
+   "text": "According to prosecutors' July 2023 bail application, on or about 26 January 2023 a surveillance team recovered a pizza box Heuermann threw into a garbage can on Fifth Avenue in Manhattan; the leftover crust was swabbed for DNA. This is a court-filing allegation, never tested at trial (he later pleaded guilty).",
+   "sources": [
+    "cbs_pizza",
+    "nbcny_pizza",
+    "fox_pizza"
+   ]
+  },
+  {
+   "id": "G_cold",
+   "type": "established",
+   "nature": "fact",
+   "text": "The first remains in the case were found in December 2010; no one was charged until July 2023, more than a decade later.",
+   "sources": [
+    "cnn_timeline",
+    "globe_timeline",
+    "ksl_cnn"
+   ]
+  },
+  {
+   "id": "G_task",
+   "type": "established",
+   "nature": "fact",
+   "text": "A multi-agency Gilgo Beach task force (Suffolk County Police, Sheriff, New York State Police, FBI) was formed in early 2022.",
+   "sources": [
+    "ksl_cnn",
+    "nbcny_caught",
+    "ap_unsolved"
+   ]
+  },
+  {
+   "id": "G_weeks",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: within about six weeks of the task force forming (March 2022), a state investigator identified Heuermann as a possible suspect.",
+   "sources": [
+    "ksl_cnn",
+    "nbcny_caught",
+    "ap_unsolved"
+   ]
+  },
+  {
+   "id": "G_truck",
+   "type": "established",
+   "nature": "allegation",
+   "text": "According to the 2023 filing, a witness saw a first-generation Chevrolet Avalanche when one of the women (Amber Costello) disappeared in 2010; in March 2022 investigators linked Heuermann to that kind of truck, which he had owned. Allegation, attributed.",
+   "sources": [
+    "cbs_avalanche",
+    "sinclair_arrest",
+    "nbcny_caught"
+   ]
+  },
+  {
+   "id": "G_name",
+   "type": "established",
+   "nature": "fact",
+   "text": "Rex Heuermann was a Manhattan architect with an office on Fifth Avenue in Midtown.",
+   "sources": [
+    "nbcny_pizza",
+    "fox_pizza",
+    "sinclair_arrest"
+   ]
+  },
+  {
+   "id": "G_phones",
+   "type": "established",
+   "nature": "allegation",
+   "text": "Prosecutors alleged that burner phones were used to contact the victims and that phone records placed them near his Midtown Manhattan office. Allegation from the 2023 filing.",
+   "sources": [
+    "cbs_avalanche",
+    "sinclair_arrest"
+   ]
+  },
+  {
+   "id": "G_surveil",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators kept Heuermann under surveillance for more than a year before the arrest.",
+   "sources": [
+    "ksl_cnn",
+    "cbs_pizza",
+    "nbcny_pizza"
+   ]
+  },
+  {
+   "id": "G_dna",
+   "type": "established",
+   "nature": "allegation",
+   "text": "Prosecutors' 2023 filing said a lab compared mitochondrial DNA from the crust with a male hair recovered with victim Megan Waterman, and that Heuermann 'cannot be excluded'. This was a MITOCHONDRIAL DNA link, not a nuclear (unique) match; the defence said mitochondrial DNA is less precise.",
+   "sources": [
+    "cbs_pizza",
+    "nbcny_pizza",
+    "fox_pizza"
+   ]
+  },
+  {
+   "id": "G_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "Heuermann was arrested on 13 July 2023 in Midtown Manhattan, near his office.",
+   "sources": [
+    "sinclair_arrest",
+    "cbs_avalanche",
+    "ksl_cnn"
+   ]
+  },
+  {
+   "id": "G_ng",
+   "type": "established",
+   "nature": "procedure",
+   "text": "In July 2023 he pleaded not guilty (through his lawyer).",
+   "sources": [
+    "sinclair_arrest",
+    "cbs_avalanche"
+   ]
+  },
+  {
+   "id": "G_wgs",
+   "type": "established",
+   "nature": "procedure",
+   "text": "FUN FACT: on 3 September 2025 Judge Timothy Mazzei ruled, after a Frye hearing, that whole-genome-sequencing (nuclear) DNA results from rootless hairs were admissible; reports described it as the first time such evidence was allowed in a New York court. It was a ruling on admissibility, not a finding of guilt.",
+   "sources": [
+    "abc_wgs",
+    "law360_wgs",
+    "hoodline_wgs",
+    "justia_wgs"
+   ]
+  },
+  {
+   "id": "G_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 8 April 2026, before any trial, Heuermann pleaded guilty to seven murders (three counts of first-degree and four of second-degree murder) and admitted killing an eighth woman, Karen Vergata, with whose death he was never charged.",
+   "sources": [
+    "cnn_plea",
+    "newsnation_plea",
+    "hill_plea",
+    "globe_timeline"
+   ]
+  },
+  {
+   "id": "G_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 17 June 2026 he was sentenced to three consecutive terms of life without parole plus four consecutive terms of 25 years to life.",
+   "sources": [
+    "cnn_sentence",
+    "da_sentence",
+    "cbsny_sentence",
+    "pbs_sentence"
+   ]
+  },
+  {
+   "id": "G_appeal",
+   "type": "established",
+   "nature": "fact",
+   "text": "As part of the plea he waived his right to appeal.",
+   "sources": [
+    "fox_sentence",
+    "abc_sentence"
+   ]
+  },
+  {
+   "id": "G_names",
+   "type": "established",
+   "nature": "fact",
+   "text": "The eight women: Maureen Brainard-Barnes, Melissa Barthelemy, Megan Waterman, Amber Costello, Jessica Taylor, Sandra Costilla, Valerie Mack and Karen Vergata.",
+   "sources": [
+    "da_sentence",
+    "cnn_sentence",
+    "cnn_plea"
+   ]
+  },
+  {
+   "id": "G_families",
+   "type": "established",
+   "nature": "fact",
+   "text": "Victims' relatives spoke at the June 2026 sentencing, years (in some cases decades) after the women disappeared.",
+   "sources": [
+    "abc_sentence",
+    "cbsny_sentence"
+   ]
+  },
+  {
+   "id": "G_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "Next case tease: Lizzie Borden was acquitted of the murders of her father and stepmother on 20 June 1893; her friend Alice Russell said she saw Lizzie burn a dress in the kitchen stove after the killings.",
+   "sources": [
+    "bio_borden",
+    "enc_borden",
+    "oxygen_borden"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "cnn_plea",
+   "publisher": "CNN",
+   "title": "Rex Heuermann pleads guilty in Gilgo Beach killings",
+   "url": "https://www.cnn.com/2026/04/11/us/gilgo-beach-killings-rex-heuermann-guilty",
+   "date": "2026-04-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "newsnation_plea",
+   "publisher": "NewsNation",
+   "title": "Rex Heuermann pleads guilty in Gilgo Beach murders",
+   "url": "https://www.newsnationnow.com/crime/gilgo-beach-killings/rex-heuermann-plead-guilty-gilgo-beach-murders-hearing/",
+   "date": "2026-04-08 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "hill_plea",
+   "publisher": "The Hill",
+   "title": "Rex Heuermann pleads guilty to Gilgo Beach serial killings",
+   "url": "https://thehill.com/regulation/court-battles/5821815-rex-heuermann-pleads-guilty-to-gilgo-beach-serial-killings/",
+   "date": "2026-04-08 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "globe_timeline",
+   "publisher": "The Boston Globe (AP)",
+   "title": "Gilgo Beach killings timeline",
+   "url": "https://www.bostonglobe.com/2026/04/08/nation/gilgo-beach-killings-timeline/",
+   "date": "2026-04-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_sentence",
+   "publisher": "CNN",
+   "title": "Rex Heuermann sentenced to life in Gilgo Beach killings",
+   "url": "https://www.cnn.com/2026/06/17/us/rex-heuermann-life-sentence",
+   "date": "2026-06-17",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "da_sentence",
+   "publisher": "Suffolk County District Attorney's Office",
+   "title": "Gilgo serial killer sentenced to three consecutive life sentences plus 100 years for murdering eight women",
+   "url": "https://www.suffolkcountyda.org/gilgo-serial-killer-sentenced-to-three-consecutive-life-sentences-plus-100-years-for-murdering-eight-women/",
+   "date": "2026-06-17 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbsny_sentence",
+   "publisher": "CBS New York",
+   "title": "Rex Heuermann, Gilgo Beach serial killer, sentenced",
+   "url": "https://www.cbsnews.com/newyork/news/rex-heuermann-gilgo-beach-serial-killer-sentencing-long-island/",
+   "date": "2026-06-17 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pbs_sentence",
+   "publisher": "PBS NewsHour (AP)",
+   "title": "Rex Heuermann sentenced to life in prison for New York's Gilgo Beach serial killings",
+   "url": "https://www.pbs.org/newshour/nation/rex-heuermann-sentenced-to-life-in-prison-for-new-yorks-gilgo-beach-serial-killings",
+   "date": "2026-06-17 (event)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc_sentence",
+   "publisher": "ABC13 / ABC News",
+   "title": "Gilgo Beach sentencing: Killer briefly addresses court as angry families speak out",
+   "url": "https://abc13.com/post/gilgo-beach-serial-killer-rex-heuermann-sentenced-admitting-8-murders/19315064/",
+   "date": "2026-06 (event 17 June)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_sentence",
+   "publisher": "FOX 13 (Fox News)",
+   "title": "Rex Heuermann sentenced to life in prison without parole for Gilgo Beach murders",
+   "url": "https://www.fox13news.com/news/rex-heuermann-be-sentenced-after-pleading-guilty-7-murders-admitting-another",
+   "date": "2026-06 (event 17 June)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_avalanche",
+   "publisher": "CBS News",
+   "title": "\"Avalanche\" of evidence: How a Chevy, a strand of hair and a pizza box led police to the Gilgo Beach suspect",
+   "url": "https://www.cbsnews.com/news/gilgo-beach-murder-suspect-rex-heuermann-evidence-chevy-strand-of-hair-pizza-box/",
+   "date": "2023-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_pizza",
+   "publisher": "CBS News",
+   "title": "DNA from pizza crust linked Gilgo Beach murders suspect to victim, court documents say",
+   "url": "https://www.cbsnews.com/amp/news/gilgo-beach-murders-dna-pizza-crust-linked-rex-heuermann-to-victim-court-documents-say/",
+   "date": "2023-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbcny_pizza",
+   "publisher": "NBC New York",
+   "title": "How leftover pizza crust linked an architect to Gilgo Beach serial killings",
+   "url": "https://www.nbcnewyork.com/news/local/how-leftover-pizza-crust-linked-an-architect-to-gilgo-beach-serial-killings/4506598/",
+   "date": "2023-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_pizza",
+   "publisher": "Fox News",
+   "title": "Gilgo Beach murders: Pizza box DNA in Manhattan led police to Long Island serial killing suspect Rex Heuermann",
+   "url": "https://foxnews.com/us/gilgo-beach-murders-pizza-box-dna-manhattan-led-police-long-island-serial-killing-suspect-rex-heuermann.amp",
+   "date": "2023-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "sinclair_arrest",
+   "publisher": "WJLA / Sinclair National Desk",
+   "title": "Suspected serial killer arrested: Long Island architect linked to the Gilgo Four murders through burner phones and DNA evidence",
+   "url": "https://wjla.com/news/nation-world/suspected-serial-killer-arrested-long-island-architect-linked-to-the-gilgo-four-murders-through-burner-phones-and-dna-evidence-rex-andrew-heuermann-melissa-barthelemy-megan-waterman-amber-costello-maureen-brainard-barnes-netflix-film-lost-girls",
+   "date": "2023-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ksl_cnn",
+   "publisher": "KSL (CNN)",
+   "title": "A flood of evidence has come in since suspect's arrest in Gilgo Beach serial killings case, DA says",
+   "url": "https://www.ksl.com/article/50687701/a-flood-of-evidence-has-come-in-since-suspects-arrest-in-gilgo-beach-serial-killings-case-da-says",
+   "date": "2023-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbcny_caught",
+   "publisher": "NBC New York",
+   "title": "How was the Gilgo Beach killer caught?",
+   "url": "https://www.nbcnewyork.com/news/local/crime-and-courts/how-was-gilgo-beach-killer-caught/6486890/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_unsolved",
+   "publisher": "AP (via AOL)",
+   "title": "Arrest in Gilgo Beach killings isn't end of investigation, police say. Other deaths remain unsolved",
+   "url": "https://www.aol.com/police-investigating-gilgo-beach-killings-143329651.html",
+   "date": "2023-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_timeline",
+   "publisher": "CNN",
+   "title": "Gilgo Beach murder case timeline",
+   "url": "https://edition.cnn.com/2024/01/15/us/gilgo-beach-murder-case-timeline",
+   "date": "2024-01-15",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc_wgs",
+   "publisher": "ABC7 / ABC News",
+   "title": "Critical DNA evidence to be allowed in Gilgo Beach serial killer case, judge rules",
+   "url": "https://abc7news.com/post/critical-dna-evidence-allowed-gilgo-beach-serial-killer-case-judge-rules/17730897/",
+   "date": "2025-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "law360_wgs",
+   "publisher": "Law360",
+   "title": "Gilgo Beach DNA evidence ruling may propel new methods",
+   "url": "https://www.law360.com/articles/2385233/gilgo-beach-dna-evidence-ruling-may-propel-new-methods",
+   "date": "2025-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "hoodline_wgs",
+   "publisher": "Hoodline",
+   "title": "New York judge greenlights cutting-edge DNA as evidence in Gilgo Beach serial killer case",
+   "url": "https://hoodline.com/2025/09/new-york-judge-greenlights-cutting-edge-dna-as-evidence-in-gilgo-beach-serial-killer-case/",
+   "date": "2025-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "justia_wgs",
+   "publisher": "Justia (People v Heuermann, 2025 NY Slip Op 25203)",
+   "title": "People v Heuermann: decision on the Frye hearing",
+   "url": "https://law.justia.com/cases/new-york/other-courts/2025/2025-ny-slip-op-25203.html",
+   "date": "2025-09-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_borden",
+   "publisher": "Biography.com",
+   "title": "The Lizzie Borden trial",
+   "url": "https://www.biography.com/crime/a73581416/lizzie-borden-trial",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "enc_borden",
+   "publisher": "Encyclopedia.com (Great American Trials)",
+   "title": "Lizzie Borden Trial: 1893",
+   "url": "https://www.encyclopedia.com/law/law-magazines/lizzie-borden-trial-1893",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "oxygen_borden",
+   "publisher": "Oxygen",
+   "title": "The shocking evidence against Lizzie Borden in her parents' murders, and why she was acquitted",
+   "url": "https://www.oxygen.com/crime-news/lizzie-borden-the-real-story-of-andrew-borden-abby-bordens-murders",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "legal_status_verified": "2026-10-11"
+}

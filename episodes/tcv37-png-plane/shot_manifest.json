@@ -1,0 +1,2165 @@
+{
+ "episode": "tcv37-png-plane",
+ "title": "A Crashed Plane Full of Cocaine in Papua New Guinea",
+ "duration": 49.5,
+ "slideshow_risk": {
+  "shots": 10,
+  "composed_shots": 10,
+  "shots_with_characters": 8,
+  "character_shot_share": 0.8,
+  "distinct_sets": 7,
+  "max_set_share": 0.4,
+  "shot_sizes": {
+   "medium-wide": 4,
+   "insert/graphic": 2,
+   "wide": 1,
+   "medium": 3
+  },
+  "max_shot_size_share": 0.4,
+  "ok": true
+ },
+ "production_status": {
+  "series_manifest": "series/true-crime-cinematic/production_manifest.json",
+  "video": "true_crime_37_png_plane.mp4"
+ },
+ "shots": [
+  {
+   "id": "s01_hook",
+   "scene_type": "pp37_hook",
+   "start": 0.0,
+   "duration": 6.0,
+   "narration": [
+    "Police say this crashed plane held over 600 kilos of cocaine.",
+    "It was bound for Australia."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.25,
+     "end": 3.779,
+     "words": [
+      {
+       "w": "Police",
+       "start": 0.296,
+       "end": 0.575
+      },
+      {
+       "w": "say",
+       "start": 0.598,
+       "end": 0.772
+      },
+      {
+       "w": "this",
+       "start": 0.807,
+       "end": 0.947
+      },
+      {
+       "w": "crashed",
+       "start": 0.993,
+       "end": 1.318
+      },
+      {
+       "w": "plane",
+       "start": 1.376,
+       "end": 1.632
+      },
+      {
+       "w": "held",
+       "start": 1.678,
+       "end": 1.852
+      },
+      {
+       "w": "over",
+       "start": 1.899,
+       "end": 2.026
+      },
+      {
+       "w": "600",
+       "start": 2.096,
+       "end": 2.63
+      },
+      {
+       "w": "kilos",
+       "start": 2.676,
+       "end": 3.071
+      },
+      {
+       "w": "of",
+       "start": 3.141,
+       "end": 3.211
+      },
+      {
+       "w": "cocaine.",
+       "start": 3.269,
+       "end": 3.721
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 4.279,
+     "end": 5.649,
+     "words": [
+      {
+       "w": "It",
+       "start": 4.325,
+       "end": 4.407
+      },
+      {
+       "w": "was",
+       "start": 4.43,
+       "end": 4.534
+      },
+      {
+       "w": "bound",
+       "start": 4.592,
+       "end": 4.813
+      },
+      {
+       "w": "for",
+       "start": 4.848,
+       "end": 4.952
+      },
+      {
+       "w": "Australia.",
+       "start": 4.999,
+       "end": 5.544
+      }
+     ]
+    }
+   ],
+   "visual_description": "pp37 strip (jungle grade); pp37_cop_a: stand -> examine -> point -> stand; camera push/pull, handheld; overlays: impact, counter.",
+   "shot_size": "medium-wide",
+   "set": "pp37_strip",
+   "grade": "jungle",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 40,
+     "z": 1
+    },
+    "to": {
+     "x": 30,
+     "y": 80,
+     "z": 1.1
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "pp37_cop_a"
+   ],
+   "character_actions": [
+    {
+     "id": "pp37_cop_a",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.74,
+     "start_pose": "stand",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.89,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "at": 3.27,
+       "pose": "point",
+       "expr": "determined"
+      },
+      {
+       "at": 5,
+       "pose": "stand",
+       "expr": "stern",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "impact",
+     "at": 0.99
+    },
+    {
+     "type": "counter",
+     "at": 4.08
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "P_load",
+     "type": "established",
+     "claim_text": "The plane was loaded with 28 bags of cocaine: 611.1 kg in the PNG court allegations and per PNG's police minister ('over 600 kilos'); early AFP/police statements said more than 500 kg. Narration: 'Police say this crashed plane held over 600 kilos of cocaine'; '28 bags were loaded aboard'. The bags are drawn as plain wrapped sacks.",
+     "urls": [
+      "https://pina.com.fj/2022/10/31/australian-pilot-sentenced-to-18-years-in-png/",
+      "https://islandsbusiness.com/news-break/australian-pilot-pleads-guilty-for-png-drug-bust/",
+      "https://asiapacificreport.nz/?p=48836",
+      "https://bbc.in/3k4HCnN"
+     ]
+    },
+    {
+     "claim": "P_bound",
+     "type": "established",
+     "claim_text": "The cocaine was meant to be flown to Australia (AFP: a conspiracy to import it into Australia).",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://bbc.in/3k4HCnN",
+      "https://thenewdaily.com.au/news/national/2020/08/01/500kg-cocaine-drug-syndicate-png-australia"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "sub",
+      "at": 0.0,
+      "gain": 0.45
+     },
+     {
+      "name": "whoosh",
+      "at": 0.943,
+      "gain": 0.35,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 2.046,
+      "gain": 0.5,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 4.798,
+      "gain": 0.4,
+      "word": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_hook",
+    "set_code": "renderer/sets.js#pp37_strip",
+    "characters": [
+     "characters/figures/pp37_cop_a.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_map",
+   "scene_type": "pp37_map",
+   "start": 6.0,
+   "duration": 4.125,
+   "narration": [
+    "It was July 2020, near Port Moresby, Papua New Guinea."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 6.25,
+     "end": 9.315,
+     "words": [
+      {
+       "w": "It",
+       "start": 6.296,
+       "end": 6.378
+      },
+      {
+       "w": "was",
+       "start": 6.401,
+       "end": 6.494
+      },
+      {
+       "w": "July",
+       "start": 6.517,
+       "end": 6.842
+      },
+      {
+       "w": "2020,",
+       "start": 6.889,
+       "end": 7.457
+      },
+      {
+       "w": "near",
+       "start": 7.527,
+       "end": 7.655
+      },
+      {
+       "w": "Port",
+       "start": 7.713,
+       "end": 7.899
+      },
+      {
+       "w": "Moresby,",
+       "start": 7.933,
+       "end": 8.305
+      },
+      {
+       "w": "Papua",
+       "start": 8.409,
+       "end": 8.769
+      },
+      {
+       "w": "New",
+       "start": 8.816,
+       "end": 8.944
+      },
+      {
+       "w": "Guinea.",
+       "start": 8.99,
+       "end": 9.222
+      }
+     ]
+    }
+   ],
+   "visual_description": "mapflight (tokyo grade); camera push/pull, handheld; overlays: svg, label '26 JULY 2020'.",
+   "shot_size": "insert/graphic",
+   "set": "mapflight",
+   "grade": "tokyo",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": 0,
+     "y": 0,
+     "z": 1.04
+    },
+    "handheld": 0.3
+   },
+   "characters": [],
+   "character_actions": [],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0
+    },
+    {
+     "type": "label",
+     "at": 0.42,
+     "text": "26 JULY 2020"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · MAP, NATURAL EARTH DATA",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "P_where",
+     "type": "established",
+     "claim_text": "On 26 July 2020 the plane crashed at a remote makeshift airstrip at Papa Lea Lea, north (north-west) of Port Moresby, Central Province, Papua New Guinea.",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://australianaviation.com.au/2020/08/500kg-cocaine-load-caused-cessna-crash-suggest-police/",
+      "https://inqld.com.au/news/2020/08/03/the-aussie-pilot-the-jungle-airstrip-and-the-plane-carrying-half-a-tonne-of-cocaine",
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-members-sentenced-combined-54-years-jail-over"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 6.0,
+      "gain": 0.4
+     },
+     {
+      "name": "ping",
+      "at": 7.693,
+      "gain": 0.35,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 8.766,
+      "gain": 0.4,
+      "word": [
+       0,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_map",
+    "set_code": "renderer/sets.js#mapflight",
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_fly",
+   "scene_type": "pp37_fly",
+   "start": 10.125,
+   "duration": 4.5,
+   "narration": [
+    "Police say the pilot flew in from Queensland, low, to dodge radar."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 10.375,
+     "end": 13.846,
+     "words": [
+      {
+       "w": "Police",
+       "start": 10.398,
+       "end": 10.665
+      },
+      {
+       "w": "say",
+       "start": 10.7,
+       "end": 10.828
+      },
+      {
+       "w": "the",
+       "start": 10.863,
+       "end": 10.944
+      },
+      {
+       "w": "pilot",
+       "start": 10.979,
+       "end": 11.292
+      },
+      {
+       "w": "flew",
+       "start": 11.339,
+       "end": 11.571
+      },
+      {
+       "w": "in",
+       "start": 11.64,
+       "end": 11.722
+      },
+      {
+       "w": "from",
+       "start": 11.745,
+       "end": 11.884
+      },
+      {
+       "w": "Queensland,",
+       "start": 11.931,
+       "end": 12.453
+      },
+      {
+       "w": "low,",
+       "start": 12.697,
+       "end": 12.86
+      },
+      {
+       "w": "to",
+       "start": 12.952,
+       "end": 13.034
+      },
+      {
+       "w": "dodge",
+       "start": 13.08,
+       "end": 13.359
+      },
+      {
+       "w": "radar.",
+       "start": 13.382,
+       "end": 13.742
+      }
+     ]
+    }
+   ],
+   "visual_description": "pp37 cockpit (dawn grade); pp37_pilot (silhouette): sit -> sit_type -> sit -> sit; camera push/pull, handheld; overlays: label 'MAREEBA, QUEENSLAND → PNG', circle, funfact 'PNG'S CAPITAL, PORT MORESBY, / HAS NO ROAD TO LAE, / ITS SECOND-BIGGEST CITY.'.",
+   "shot_size": "wide",
+   "set": "pp37_cockpit",
+   "grade": "dawn",
+   "camera": {
+    "from": {
+     "x": -30,
+     "y": 0,
+     "z": 1.02
+    },
+    "to": {
+     "x": 30,
+     "y": 30,
+     "z": 1.12
+    },
+    "handheld": 0.5
+   },
+   "characters": [
+    "pp37_pilot"
+   ],
+   "character_actions": [
+    {
+     "id": "pp37_pilot",
+     "outfit": "default",
+     "depth": 0.98,
+     "scale": 1,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.85,
+       "pose": "sit_type"
+      },
+      {
+       "at": 2.57,
+       "pose": "sit"
+      },
+      {
+       "at": 3.26,
+       "pose": "sit",
+       "turn_head": true
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.1,
+     "text": "MAREEBA, QUEENSLAND → PNG"
+    },
+    {
+     "type": "circle",
+     "at": 2.57
+    },
+    {
+     "type": "funfact",
+     "at": 3.51,
+     "text": "PNG'S CAPITAL, PORT MORESBY, / HAS NO ROAD TO LAE, / ITS SECOND-BIGGEST CITY."
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · PILOT NOT A LIKENESS",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "P_flight",
+     "type": "established",
+     "claim_text": "The light aircraft (reported as a Cessna 402C) left Mareeba, Queensland, on 26 July 2020; the AFP alleged it flew at about 3,000 feet to avoid radar detection. Narration attributes: 'Police say'.",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://www.acic.gov.au/media-centre/media-releases-and-statements/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://australianaviation.com.au/2020/08/500kg-cocaine-load-caused-cessna-crash-suggest-police/"
+     ]
+    },
+    {
+     "claim": "P_fun",
+     "type": "established",
+     "claim_text": "FUN FACT CARD: Port Moresby, PNG's capital, has no road link to Lae, the country's second city (nor to the Highlands); air links much of the country.",
+     "urls": [
+      "https://en.wikipedia.org/wiki/Transport_in_Papua_New_Guinea",
+      "https://www.thenational.com.pg/?p=73442",
+      "https://oxfordbusinessgroup.com/reports/papua-new-guinea/2020-report/economy/path-to-prosperity-improving-transport-links-is-a-key-part-of-plans-to-encourage-sustainable-and-inclusive-growth"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rumble",
+      "at": 10.125,
+      "gain": 0.35
+     },
+     {
+      "name": "whoosh",
+      "at": 11.881,
+      "gain": 0.35,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "ping",
+      "at": 13.06,
+      "gain": 0.35,
+      "word": [
+       0,
+       10
+      ]
+     },
+     {
+      "name": "sparkle",
+      "at": 13.482,
+      "gain": 0.4,
+      "word": [
+       0,
+       11
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_fly",
+    "set_code": "renderer/sets.js#pp37_cockpit",
+    "characters": [
+     "characters/figures/pp37_pilot.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_load",
+   "scene_type": "pp37_load",
+   "start": 14.625,
+   "duration": 5.625,
+   "narration": [
+    "On a dirt strip, 28 bags were loaded aboard.",
+    "Worth over 80 million dollars, police said."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 14.875,
+     "end": 17.464,
+     "words": [
+      {
+       "w": "On",
+       "start": 14.91,
+       "end": 15.026
+      },
+      {
+       "w": "a",
+       "start": 15.049,
+       "end": 15.096
+      },
+      {
+       "w": "dirt",
+       "start": 15.13,
+       "end": 15.328
+      },
+      {
+       "w": "strip,",
+       "start": 15.397,
+       "end": 15.711
+      },
+      {
+       "w": "28",
+       "start": 15.839,
+       "end": 16.257
+      },
+      {
+       "w": "bags",
+       "start": 16.303,
+       "end": 16.593
+      },
+      {
+       "w": "were",
+       "start": 16.628,
+       "end": 16.721
+      },
+      {
+       "w": "loaded",
+       "start": 16.767,
+       "end": 17.0
+      },
+      {
+       "w": "aboard.",
+       "start": 17.046,
+       "end": 17.406
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 17.914,
+     "end": 20.039,
+     "words": [
+      {
+       "w": "Worth",
+       "start": 17.937,
+       "end": 18.111
+      },
+      {
+       "w": "over",
+       "start": 18.169,
+       "end": 18.344
+      },
+      {
+       "w": "80",
+       "start": 18.413,
+       "end": 18.564
+      },
+      {
+       "w": "million",
+       "start": 18.599,
+       "end": 18.854
+      },
+      {
+       "w": "dollars,",
+       "start": 18.889,
+       "end": 19.284
+      },
+      {
+       "w": "police",
+       "start": 19.365,
+       "end": 19.655
+      },
+      {
+       "w": "said.",
+       "start": 19.702,
+       "end": 19.969
+      }
+     ]
+    }
+   ],
+   "visual_description": "pp37 strip (warm grade); pp37_helper (silhouette): present -> stand_tense -> present -> stand_tense -> present -> stand_tense -> present; pp37_pilot (silhouette): stand -> present -> point -> present -> stand_tense; camera push/pull, handheld; overlays: card '28 BAGS / 611.1 KG, THE PNG COURT HEARD', counter, impact.",
+   "shot_size": "medium-wide",
+   "set": "pp37_strip",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": -40,
+     "y": 40,
+     "z": 1.02
+    },
+    "to": {
+     "x": 30,
+     "y": 70,
+     "z": 1.14
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "pp37_helper",
+    "pp37_pilot"
+   ],
+   "character_actions": [
+    {
+     "id": "pp37_helper",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.6,
+     "start_pose": "present",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.6,
+       "pose": "stand_tense"
+      },
+      {
+       "at": 1.1,
+       "pose": "present"
+      },
+      {
+       "at": 1.7,
+       "pose": "stand_tense"
+      },
+      {
+       "at": 2.2,
+       "pose": "present"
+      },
+      {
+       "at": 2.9,
+       "pose": "stand_tense"
+      },
+      {
+       "at": 3.4,
+       "pose": "present"
+      }
+     ],
+     "silhouette": "warm"
+    },
+    {
+     "id": "pp37_pilot",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.52,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.51,
+       "pose": "present"
+      },
+      {
+       "at": 1.21,
+       "pose": "point"
+      },
+      {
+       "at": 2.14,
+       "pose": "present"
+      },
+      {
+       "at": 4.74,
+       "pose": "stand_tense"
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 1.58,
+     "text": "28 BAGS / 611.1 KG, THE PNG COURT HEARD"
+    },
+    {
+     "type": "counter",
+     "at": 3.69
+    },
+    {
+     "type": "impact",
+     "at": 4.99
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · PILOT NOT A LIKENESS",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "P_load",
+     "type": "established",
+     "claim_text": "The plane was loaded with 28 bags of cocaine: 611.1 kg in the PNG court allegations and per PNG's police minister ('over 600 kilos'); early AFP/police statements said more than 500 kg. Narration: 'Police say this crashed plane held over 600 kilos of cocaine'; '28 bags were loaded aboard'. The bags are drawn as plain wrapped sacks.",
+     "urls": [
+      "https://pina.com.fj/2022/10/31/australian-pilot-sentenced-to-18-years-in-png/",
+      "https://islandsbusiness.com/news-break/australian-pilot-pleads-guilty-for-png-drug-bust/",
+      "https://asiapacificreport.nz/?p=48836",
+      "https://bbc.in/3k4HCnN"
+     ]
+    },
+    {
+     "claim": "P_value",
+     "type": "established",
+     "claim_text": "The AFP (2020) estimated the cocaine's value at more than $80 million (AUD). Narration: 'worth over 80 million dollars, police said'. Later figures (A$141 million in PNG court reporting; 'about $800 million' in the 2026 ABF release) are NOT used.",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://www.acic.gov.au/media-centre/media-releases-and-statements/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://thenewdaily.com.au/news/national/2020/08/01/500kg-cocaine-drug-syndicate-png-australia"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": -4,
+    "sfx": [
+     {
+      "name": "thud",
+      "at": 15.789,
+      "gain": 0.4,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 16.578,
+      "gain": 0.35,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "riser",
+      "at": 18.313,
+      "gain": 0.35,
+      "word": [
+       1,
+       2
+      ]
+     },
+     {
+      "name": "coins",
+      "at": 18.869,
+      "gain": 0.4,
+      "word": [
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_load",
+    "set_code": "renderer/sets.js#pp37_strip",
+    "characters": [
+     "characters/figures/pp37_helper.json",
+     "characters/figures/pp37_pilot.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_crash",
+   "scene_type": "pp37_crash",
+   "start": 20.25,
+   "duration": 7.125,
+   "narration": [
+    "Then the plane raced down the strip, and crashed into the trees.",
+    "Australian police said the weight may be partly to blame."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 20.5,
+     "end": 23.577,
+     "words": [
+      {
+       "w": "Then",
+       "start": 20.535,
+       "end": 20.686
+      },
+      {
+       "w": "the",
+       "start": 20.744,
+       "end": 20.813
+      },
+      {
+       "w": "plane",
+       "start": 20.86,
+       "end": 21.092
+      },
+      {
+       "w": "raced",
+       "start": 21.127,
+       "end": 21.382
+      },
+      {
+       "w": "down",
+       "start": 21.406,
+       "end": 21.58
+      },
+      {
+       "w": "the",
+       "start": 21.615,
+       "end": 21.684
+      },
+      {
+       "w": "strip,",
+       "start": 21.719,
+       "end": 22.067
+      },
+      {
+       "w": "and",
+       "start": 22.241,
+       "end": 22.346
+      },
+      {
+       "w": "crashed",
+       "start": 22.404,
+       "end": 22.741
+      },
+      {
+       "w": "into",
+       "start": 22.776,
+       "end": 22.915
+      },
+      {
+       "w": "the",
+       "start": 22.938,
+       "end": 22.996
+      },
+      {
+       "w": "trees.",
+       "start": 23.031,
+       "end": 23.472
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 24.177,
+     "end": 27.079,
+     "words": [
+      {
+       "w": "Australian",
+       "start": 24.247,
+       "end": 24.804
+      },
+      {
+       "w": "police",
+       "start": 24.839,
+       "end": 25.28
+      },
+      {
+       "w": "said",
+       "start": 25.442,
+       "end": 25.605
+      },
+      {
+       "w": "the",
+       "start": 25.64,
+       "end": 25.698
+      },
+      {
+       "w": "weight",
+       "start": 25.721,
+       "end": 25.895
+      },
+      {
+       "w": "may",
+       "start": 25.93,
+       "end": 26.023
+      },
+      {
+       "w": "be",
+       "start": 26.058,
+       "end": 26.162
+      },
+      {
+       "w": "partly",
+       "start": 26.197,
+       "end": 26.534
+      },
+      {
+       "w": "to",
+       "start": 26.592,
+       "end": 26.65
+      },
+      {
+       "w": "blame.",
+       "start": 26.685,
+       "end": 27.01
+      }
+     ]
+    }
+   ],
+   "visual_description": "pp37 strip (neon grade); keyed camera moves, handheld; overlays: impact, card 'IT NEVER GOT AIRBORNE / \"CANNOT RULE OUT\" THE WEIGHT / OF THE COCAINE, SAID THE AFP'.",
+   "shot_size": "insert/graphic",
+   "set": "pp37_strip",
+   "grade": "neon",
+   "camera": {
+    "keys": 4,
+    "handheld": 0.6
+   },
+   "characters": [],
+   "character_actions": [],
+   "overlays": [
+    {
+     "type": "impact",
+     "at": 2.15
+    },
+    {
+     "type": "card",
+     "at": 4.13,
+     "text": "IT NEVER GOT AIRBORNE / \"CANNOT RULE OUT\" THE WEIGHT / OF THE COCAINE, SAID THE AFP"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOBODY WAS HURT",
+   "transition_in": "flash",
+   "sources": [
+    {
+     "claim": "P_crash",
+     "type": "established",
+     "claim_text": "The plane crashed while attempting to take off from the strip, into trees at the end of the runway; it never got airborne (failed to take off).",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-members-sentenced-combined-54-years-jail-over",
+      "https://bbc.in/3k4HCnN",
+      "https://asiapacificreport.nz/?p=48836"
+     ]
+    },
+    {
+     "claim": "P_weight",
+     "type": "established",
+     "claim_text": "The AFP said it 'cannot rule out that the weight of the cocaine had an impact on the plane's ability to take off'. Narration: 'Australian police said the weight may be partly to blame.'",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://australianaviation.com.au/2020/08/500kg-cocaine-load-caused-cessna-crash-suggest-police/",
+      "https://thenewdaily.com.au/news/national/2020/08/01/500kg-cocaine-drug-syndicate-png-australia"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rumble",
+      "at": 21.027,
+      "gain": 0.45,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 22.354,
+      "gain": 0.55,
+      "word": [
+       0,
+       8
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 22.938,
+      "gain": 0.45,
+      "word": [
+       0,
+       10
+      ]
+     },
+     {
+      "name": "sting",
+      "at": 25.671,
+      "gain": 0.4,
+      "word": [
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_crash",
+    "set_code": "renderer/sets.js#pp37_strip",
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_empty",
+   "scene_type": "pp37_empty",
+   "start": 27.375,
+   "duration": 3.0,
+   "narration": [
+    "The wreck was found empty. The pilot had vanished."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 27.625,
+     "end": 29.982,
+     "words": [
+      {
+       "w": "The",
+       "start": 27.648,
+       "end": 27.729
+      },
+      {
+       "w": "wreck",
+       "start": 27.764,
+       "end": 27.95
+      },
+      {
+       "w": "was",
+       "start": 27.985,
+       "end": 28.113
+      },
+      {
+       "w": "found",
+       "start": 28.147,
+       "end": 28.38
+      },
+      {
+       "w": "empty.",
+       "start": 28.426,
+       "end": 28.716
+      },
+      {
+       "w": "The",
+       "start": 28.832,
+       "end": 28.914
+      },
+      {
+       "w": "pilot",
+       "start": 28.96,
+       "end": 29.285
+      },
+      {
+       "w": "had",
+       "start": 29.343,
+       "end": 29.436
+      },
+      {
+       "w": "vanished.",
+       "start": 29.471,
+       "end": 29.924
+      }
+     ]
+    }
+   ],
+   "visual_description": "pp37 wreck (cold grade); pp37_cop_a: torch -> torch_low -> point; pp37_cop_b: examine -> examine -> hand_to_face -> arms_crossed; camera push/pull, handheld; overlays: circle, stamp 'EMPTY', label 'THE PILOT WAS GONE'.",
+   "shot_size": "medium",
+   "set": "pp37_wreck",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 40,
+     "y": 20,
+     "z": 1
+    },
+    "to": {
+     "x": -30,
+     "y": 50,
+     "z": 1.12
+    },
+    "handheld": 0.45
+   },
+   "characters": [
+    "pp37_cop_a",
+    "pp37_cop_b"
+   ],
+   "character_actions": [
+    {
+     "id": "pp37_cop_a",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.92,
+     "start_pose": "torch",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.95,
+       "pose": "torch_low",
+       "expr": "realise"
+      },
+      {
+       "at": 2.1,
+       "pose": "point",
+       "expr": "determined"
+      }
+     ]
+    },
+    {
+     "id": "pp37_cop_b",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.98,
+     "start_pose": "examine",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.39,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "at": 1.58,
+       "pose": "hand_to_face",
+       "expr": "worried"
+      },
+      {
+       "at": 2.5,
+       "pose": "arms_crossed",
+       "expr": "stern"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "circle",
+     "at": 1
+    },
+    {
+     "type": "stamp",
+     "at": 1.05,
+     "text": "EMPTY"
+    },
+    {
+     "type": "label",
+     "at": 1.48,
+     "text": "THE PILOT WAS GONE"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "P_empty",
+     "type": "established",
+     "claim_text": "The wrecked plane was found empty at the strip; the pilot was missing until he surrendered.",
+     "urls": [
+      "https://inqld.com.au/news/2020/08/03/the-aussie-pilot-the-jungle-airstrip-and-the-plane-carrying-half-a-tonne-of-cocaine",
+      "https://bbc.in/3k4HCnN",
+      "https://www.thenational.com.pg/pilot-found-charged/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 27.375,
+      "gain": 0.3
+     },
+     {
+      "name": "stamp",
+      "at": 28.376,
+      "gain": 0.4,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "sting",
+      "at": 29.421,
+      "gain": 0.35,
+      "word": [
+       0,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_empty",
+    "set_code": "renderer/sets.js#pp37_wreck",
+    "characters": [
+     "characters/figures/pp37_cop_a.json",
+     "characters/figures/pp37_cop_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_gate",
+   "scene_type": "pp37_gate",
+   "start": 30.375,
+   "duration": 3.75,
+   "narration": [
+    "Two days later, he turned himself in."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 30.625,
+     "end": 32.471,
+     "words": [
+      {
+       "w": "Two",
+       "start": 30.671,
+       "end": 30.776
+      },
+      {
+       "w": "days",
+       "start": 30.799,
+       "end": 31.043
+      },
+      {
+       "w": "later,",
+       "start": 31.066,
+       "end": 31.31
+      },
+      {
+       "w": "he",
+       "start": 31.414,
+       "end": 31.542
+      },
+      {
+       "w": "turned",
+       "start": 31.577,
+       "end": 31.774
+      },
+      {
+       "w": "himself",
+       "start": 31.798,
+       "end": 32.227
+      },
+      {
+       "w": "in.",
+       "start": 32.262,
+       "end": 32.413
+      }
+     ]
+    }
+   ],
+   "visual_description": "pp37 gate (tokyo grade); pp37_pilot (silhouette): walk -> hands_together -> bowed (walks); pp37_cop_a: stand -> stand_tense -> present; camera push/pull, handheld; overlays: card '28 JULY 2020 · HE SURRENDERED / AT AUSTRALIA'S MISSION IN PORT MORESBY / ILLEGAL ENTRY: PLEADED GUILTY, FINED K3,000'.",
+   "shot_size": "medium",
+   "set": "pp37_gate",
+   "grade": "tokyo",
+   "camera": {
+    "from": {
+     "x": -50,
+     "y": 30,
+     "z": 1
+    },
+    "to": {
+     "x": 40,
+     "y": 60,
+     "z": 1.1
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "pp37_cop_a",
+    "pp37_pilot"
+   ],
+   "character_actions": [
+    {
+     "id": "pp37_pilot",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.86,
+     "start_pose": "walk",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.45,
+       "pose": "hands_together"
+      },
+      {
+       "at": 2.02,
+       "pose": "bowed"
+      }
+     ],
+     "walk": {
+      "from": 40,
+      "to": 420,
+      "at": 0,
+      "dur": 1.402
+     },
+     "silhouette": "cool"
+    },
+    {
+     "id": "pp37_cop_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.9,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1,
+       "pose": "stand_tense",
+       "expr": "realise"
+      },
+      {
+       "at": 1.72,
+       "pose": "present",
+       "expr": "stern"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 0.25,
+     "text": "28 JULY 2020 · HE SURRENDERED / AT AUSTRALIA'S MISSION IN PORT MORESBY / ILLEGAL ENTRY: PLEADED GUILTY, FINED K3,000"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · PILOT NOT A LIKENESS",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "P_surrender",
+     "type": "established",
+     "claim_text": "The pilot presented himself at Australia's mission in Port Moresby (reported as the High Commission / consulate) on 28 July 2020, two days after the crash; he was arrested and charged with illegal entry; he pleaded guilty and was fined K3,000.",
+     "urls": [
+      "https://inqld.com.au/news/2020/08/03/the-aussie-pilot-the-jungle-airstrip-and-the-plane-carrying-half-a-tonne-of-cocaine",
+      "https://pina.com.fj/2022/10/31/australian-pilot-sentenced-to-18-years-in-png/",
+      "https://www.thenational.com.pg/?p=306584",
+      "https://asiapacificreport.nz/?p=48836"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "step",
+      "at": 30.779,
+      "gain": 0.35,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "door",
+      "at": 31.527,
+      "gain": 0.4,
+      "word": [
+       0,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_gate",
+    "set_code": "renderer/sets.js#pp37_gate",
+    "characters": [
+     "characters/figures/pp37_cop_a.json",
+     "characters/figures/pp37_pilot.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s08_court",
+   "scene_type": "pp37_court",
+   "start": 34.125,
+   "duration": 4.125,
+   "narration": [
+    "He pleaded guilty, and a PNG court gave him 18 years."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 34.375,
+     "end": 37.603,
+     "words": [
+      {
+       "w": "He",
+       "start": 34.398,
+       "end": 34.526
+      },
+      {
+       "w": "pleaded",
+       "start": 34.572,
+       "end": 34.839
+      },
+      {
+       "w": "guilty,",
+       "start": 34.886,
+       "end": 35.223
+      },
+      {
+       "w": "and",
+       "start": 35.385,
+       "end": 35.524
+      },
+      {
+       "w": "a",
+       "start": 35.571,
+       "end": 35.606
+      },
+      {
+       "w": "PNG",
+       "start": 35.664,
+       "end": 36.151
+      },
+      {
+       "w": "court",
+       "start": 36.198,
+       "end": 36.384
+      },
+      {
+       "w": "gave",
+       "start": 36.418,
+       "end": 36.569
+      },
+      {
+       "w": "him",
+       "start": 36.616,
+       "end": 36.709
+      },
+      {
+       "w": "18",
+       "start": 36.755,
+       "end": 37.08
+      },
+      {
+       "w": "years.",
+       "start": 37.138,
+       "end": 37.486
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (cold grade); judge (silhouette): sit -> gavel -> sit -> sit_read; pp37_pilot (silhouette): stand -> hands_together -> bowed; camera push/pull, handheld; overlays: card 'OCT 2022 · PNG NATIONAL COURT / GUILTY PLEA: MONEY LAUNDERING / (RECEIVING COCAINE) / APPEAL DISMISSED · JAN 2025', stamp '18 YEARS', impact.",
+   "shot_size": "medium",
+   "set": "courtroom",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 30,
+     "z": 1
+    },
+    "to": {
+     "x": 40,
+     "y": 10,
+     "z": 1.1
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "judge",
+    "pp37_pilot"
+   ],
+   "character_actions": [
+    {
+     "id": "judge",
+     "outfit": "default",
+     "depth": 0.33,
+     "scale": 0.42,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.99,
+       "pose": "gavel"
+      },
+      {
+       "at": 2.44,
+       "pose": "sit"
+      },
+      {
+       "at": 3.13,
+       "pose": "sit_read"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "pp37_pilot",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.95,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.45,
+       "pose": "hands_together"
+      },
+      {
+       "at": 2.63,
+       "pose": "bowed"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 0.15,
+     "text": "OCT 2022 · PNG NATIONAL COURT / GUILTY PLEA: MONEY LAUNDERING / (RECEIVING COCAINE) / APPEAL DISMISSED · JAN 2025"
+    },
+    {
+     "type": "stamp",
+     "at": 2.63,
+     "text": "18 YEARS"
+    },
+    {
+     "type": "impact",
+     "at": 2.63
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · PILOT NOT A LIKENESS",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "P_verdict",
+     "type": "established",
+     "claim_text": "In October 2022 the PNG National Court (Waigani) sentenced the pilot to 18 years after he pleaded guilty to money laundering (receiving criminal property: cocaine); the PNG Supreme Court dismissed his appeal on 15 January 2025. Court reporting said he was promised A$1 million.",
+     "urls": [
+      "https://pina.com.fj/2022/10/31/australian-pilot-sentenced-to-18-years-in-png/",
+      "https://islandsbusiness.com/news-break/australian-pilot-pleads-guilty-for-png-drug-bust/",
+      "https://kanivatonga.co.nz/2025/01/drug-plane-pilot-who-crashed-in-papua-new-guinea-loses-appeal/",
+      "https://rms.paclii.org/pg/cases/PGSC/2025/4.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "thump",
+      "at": 34.522,
+      "gain": 0.4,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "gavel",
+      "at": 36.735,
+      "gain": 0.6,
+      "word": [
+       0,
+       9
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 37.188,
+      "gain": 0.45,
+      "word": [
+       0,
+       10
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_court",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/judge.json",
+     "characters/figures/pp37_pilot.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s09_aus",
+   "scene_type": "pp37_aus",
+   "start": 38.25,
+   "duration": 4.125,
+   "narration": [
+    "In Australia, syndicate members got 54 years between them."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 38.5,
+     "end": 41.902,
+     "words": [
+      {
+       "w": "In",
+       "start": 38.57,
+       "end": 38.651
+      },
+      {
+       "w": "Australia,",
+       "start": 38.686,
+       "end": 39.22
+      },
+      {
+       "w": "syndicate",
+       "start": 39.417,
+       "end": 39.882
+      },
+      {
+       "w": "members",
+       "start": 39.916,
+       "end": 40.23
+      },
+      {
+       "w": "got",
+       "start": 40.253,
+       "end": 40.462
+      },
+      {
+       "w": "54",
+       "start": 40.485,
+       "end": 41.112
+      },
+      {
+       "w": "years",
+       "start": 41.159,
+       "end": 41.356
+      },
+      {
+       "w": "between",
+       "start": 41.391,
+       "end": 41.704
+      },
+      {
+       "w": "them.",
+       "start": 41.739,
+       "end": 41.855
+      }
+     ]
+    }
+   ],
+   "visual_description": "press room (night grade); pp37_spokes: stand -> present -> point -> hands_together; camera push/pull, handheld; overlays: label 'AUSTRALIA · 16 JULY 2026', counter, impact.",
+   "shot_size": "medium-wide",
+   "set": "press_room",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 20,
+     "y": -20,
+     "z": 1
+    },
+    "to": {
+     "x": -30,
+     "y": -40,
+     "z": 1.1
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "pp37_spokes"
+   ],
+   "character_actions": [
+    {
+     "id": "pp37_spokes",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.72,
+     "start_pose": "stand",
+     "start_expr": "stern",
+     "actions": [
+      {
+       "at": 0.44,
+       "pose": "present",
+       "expr": "determined"
+      },
+      {
+       "at": 2.24,
+       "pose": "point",
+       "expr": "stern"
+      },
+      {
+       "at": 3.44,
+       "pose": "hands_together",
+       "expr": "neutral"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.1,
+     "text": "AUSTRALIA · 16 JULY 2026"
+    },
+    {
+     "type": "counter",
+     "at": 2.14
+    },
+    {
+     "type": "impact",
+     "at": 3.14
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "P_aus",
+     "type": "established",
+     "claim_text": "Five men were charged in Australia in 2020; on 16 July 2026 members of the Melbourne-based syndicate were sentenced for conspiring to import the cocaine, to a combined 54 years. Narration: 'syndicate members got 54 years between them'.",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-members-sentenced-combined-54-years-jail-over",
+      "https://www.abf.gov.au/newsroom-subsite/Pages/Organised-crime-syndicate-members-sentenced-to-a-combined-54-years-jail-over-botched-500kg-cocaine-importation.aspx",
+      "https://australianaviation.com.au/2026/07/criminal-syndicate-sentenced-for-attempted-drug-importation-black-flight-into-australia/",
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 38.636,
+      "gain": 0.35,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "riser",
+      "at": 40.385,
+      "gain": 0.3,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "gavel",
+      "at": 41.139,
+      "gain": 0.5,
+      "word": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_aus",
+    "set_code": "renderer/sets.js#press_room",
+    "characters": [
+     "characters/figures/pp37_spokes.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s10_end",
+   "scene_type": "pp37_end",
+   "start": 42.375,
+   "duration": 7.125,
+   "narration": [
+    "The lesson? A job that pays a fortune is bait.",
+    "And this plane never got off the ground."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 42.625,
+     "end": 45.11,
+     "words": [
+      {
+       "w": "The",
+       "start": 42.66,
+       "end": 42.729
+      },
+      {
+       "w": "lesson?",
+       "start": 42.788,
+       "end": 43.147
+      },
+      {
+       "w": "A",
+       "start": 43.345,
+       "end": 43.391
+      },
+      {
+       "w": "job",
+       "start": 43.438,
+       "end": 43.682
+      },
+      {
+       "w": "that",
+       "start": 43.705,
+       "end": 43.832
+      },
+      {
+       "w": "pays",
+       "start": 43.867,
+       "end": 44.158
+      },
+      {
+       "w": "a",
+       "start": 44.181,
+       "end": 44.204
+      },
+      {
+       "w": "fortune",
+       "start": 44.262,
+       "end": 44.61
+      },
+      {
+       "w": "is",
+       "start": 44.645,
+       "end": 44.715
+      },
+      {
+       "w": "bait.",
+       "start": 44.773,
+       "end": 45.063
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 45.71,
+     "end": 47.497,
+     "words": [
+      {
+       "w": "And",
+       "start": 45.745,
+       "end": 45.849
+      },
+      {
+       "w": "this",
+       "start": 45.884,
+       "end": 46.047
+      },
+      {
+       "w": "plane",
+       "start": 46.093,
+       "end": 46.314
+      },
+      {
+       "w": "never",
+       "start": 46.337,
+       "end": 46.534
+      },
+      {
+       "w": "got",
+       "start": 46.569,
+       "end": 46.755
+      },
+      {
+       "w": "off",
+       "start": 46.813,
+       "end": 46.952
+      },
+      {
+       "w": "the",
+       "start": 46.999,
+       "end": 47.045
+      },
+      {
+       "w": "ground.",
+       "start": 47.08,
+       "end": 47.451
+      }
+     ]
+    }
+   ],
+   "visual_description": "pp37 strip (jungle grade); pp37_cop_a: stand -> arms_crossed -> examine; camera push/pull, handheld; overlays: lesson 'BIG MONEY TO MOVE A PACKAGE? / THAT'S HOW SMUGGLERS RECRUIT. / \"TOO GOOD TO BE TRUE\" - AFP'.",
+   "shot_size": "medium-wide",
+   "set": "pp37_strip",
+   "grade": "jungle",
+   "camera": {
+    "from": {
+     "x": 30,
+     "y": 80,
+     "z": 1.1
+    },
+    "to": {
+     "x": 0,
+     "y": 40,
+     "z": 1
+    },
+    "handheld": 0.4
+   },
+   "characters": [
+    "pp37_cop_a"
+   ],
+   "character_actions": [
+    {
+     "id": "pp37_cop_a",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.74,
+     "start_pose": "stand",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.41,
+       "pose": "arms_crossed",
+       "expr": "stern"
+      },
+      {
+       "at": 3.34,
+       "pose": "examine",
+       "expr": "focused"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "lesson",
+     "at": 0.26,
+     "text": "BIG MONEY TO MOVE A PACKAGE? / THAT'S HOW SMUGGLERS RECRUIT. / \"TOO GOOD TO BE TRUE\" - AFP"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "P_lesson",
+     "type": "established",
+     "claim_text": "LESSON CARD: offers of big money to carry or move a package are how drug mules are recruited; the AFP warns 'if it's too good to be true, it probably is'.",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/afp-investigating-fake-united-nations-drug-mule-scam",
+      "https://aapnews.aap.com.au/news/travellers-warned-about-new-drug-mule-scam"
+     ]
+    },
+    {
+     "claim": "P_crash",
+     "type": "established",
+     "claim_text": "The plane crashed while attempting to take off from the strip, into trees at the end of the runway; it never got airborne (failed to take off).",
+     "urls": [
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png",
+      "https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-members-sentenced-combined-54-years-jail-over",
+      "https://bbc.in/3k4HCnN",
+      "https://asiapacificreport.nz/?p=48836"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 42.375,
+      "gain": 0.25
+     },
+     {
+      "name": "chime",
+      "at": 42.768,
+      "gain": 0.35,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 47.03,
+      "gain": 0.4,
+      "word": [
+       1,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv37-png-plane.js#pp37_end",
+    "set_code": "renderer/sets.js#pp37_strip",
+    "characters": [
+     "characters/figures/pp37_cop_a.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}

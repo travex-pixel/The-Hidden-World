@@ -39,3 +39,18 @@ Everything runs on GitHub. No computer, no paid services.
 - **Verified on GitHub Actions (2026-10-10):** the `Render episode` workflow was dispatched on branch `ccr-e2ef3d09-tm9f6h` with `episode=ep001-cash-vs-profit, seed=1, quality=preview`. It succeeded in 1 min 52 s and uploaded the artifact `ep001-cash-vs-profit-seed1-preview` (4.2 MB ZIP) containing the MP4 and verification files. The `Tests` workflow also passed on the same commit.
 - **Verified locally:** the full pipeline, the 1080p final MP4 checks, and visual inspection of frames.
 - **Not verified:** downloading the artifact ZIP on an actual Android phone, and the exact placement of the "Run workflow" button in the GitHub mobile app (use the mobile website if the app hides workflow inputs).
+
+## Case Files: cinematic edition (true_crime_01 / true_crime_02)
+
+**Get the finished videos on your phone (simplest):**
+1. In Chrome, open `https://github.com/travex-pixel/The-Hidden-World/tree/ccr-67645e21-nwgkaq/series/true-crime-cinematic/output` and sign in if the repo is private.
+2. Tap `true_crime_01.mp4`, then **⋯ → Download** (or **View raw**, which starts the download). Do the same for `true_crime_02.mp4`.
+3. The files land in your phone's *Downloads* folder and play in Google Photos, Files or VLC. If they were sent to you in a Claude chat, you can also save them straight from the chat.
+
+**Optional, cleaner sharing:** on github.com, open **Releases → Draft a new release**, attach the two MP4s, and publish. A release gives one tidy download page, and the videos don't have to live in the repository's history.
+
+**Re-render on GitHub (no computer):** run **Actions → Render episode → Run workflow** with episode `tcv01-chamberlain` or `tcv02-unabomber`, seed `1` and quality `final`. Then download the artifact ZIP from the run page.
+- The workflow runs the media checks (`pipeline/verify.py`). The full studio QA gate (speech recognition, safe-area captions, shot manifest) runs with `produce.py` on a computer or in a Claude Code session.
+- Render time is about 12 minutes on 4 CPU cores, as measured in a Claude Code cloud session. It was **not measured on GitHub's runners** (the workflow's timeout is 75 minutes). Expect it to take longer on a 2-core private-repo runner.
+
+**Upload as a Short:** in the YouTube app tap **+ → Upload a video**, pick the MP4, and paste the title and description from `series/true-crime/sources.md`. Under **Altered or synthetic content**, answer **Yes** (synthetic voice, illustrated reconstruction). Add the credit line from `docs/CREDITS.md`.

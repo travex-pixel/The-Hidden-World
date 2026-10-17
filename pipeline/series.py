@@ -39,7 +39,7 @@ def series_qa(ep_id: str, mp4: Path, limits) -> dict:
     # blank / black frames over the whole file
     r = subprocess.run(["ffmpeg", "-v", "info", "-i", str(mp4), "-vf", "signalstats,metadata=print:key=lavfi.signalstats.YAVG", "-an", "-f", "null", "-"], capture_output=True, text=True)
     ys = [float(x.split("=")[1]) for x in r.stderr.split() if x.startswith("lavfi.signalstats.YAVG=")]
-    end_fade = int(1.0 * 30)  # the final fade to black is intentional
+    end_fade = int(1.0 * round(v.get("fps", 30)))  # the final fade to black is intentional
     res["frames_checked"] = len(ys)
     res["no_black_frames"] = len(ys) > 0 and min(ys[:-end_fade] or ys) > 12
     # captions: every line starts and ends inside its scene; no overlap between lines

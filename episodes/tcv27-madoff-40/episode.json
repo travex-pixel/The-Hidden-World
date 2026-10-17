@@ -1,0 +1,1052 @@
+{
+ "id": "tcv27-madoff-40",
+ "number": 27,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Biggest Ponzi Scheme Ever Ended With a Confession to His Sons",
+ "central_question": "The SEC was warned about Bernie Madoff for years. Why did it end with a confession to his own sons?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "SEC": "S E C",
+   "SEC's": "S E C's",
+   "FBI": "F B I",
+   "$65": "sixty five",
+   "billion": "billion dollars",
+   "150": "one hundred fifty",
+   "Madoff": "Maydoff"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "27",
+  "label": "BERNIE MADOFF · NEW YORK · 2000-2009"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s08_outcome",
+   "word": [
+    0,
+    0
+   ],
+   "at": -0.3
+  }
+ },
+ "figures": [
+  "md27_madoff",
+  "md27_son_a",
+  "md27_son_b",
+  "md27_markopolos",
+  "official",
+  "examiner",
+  "agent_a",
+  "agent_b",
+  "judge"
+ ],
+ "content_notes": "Closed case: Madoff pleaded guilty on 12 Mar 2009, was sentenced to 150 years on 29 Jun 2009 and died in prison on 14 Apr 2021. He and Harry Markopolos appear only as illustrated representations (generic figures, no photo reference, 'ILLUSTRATION · NOT A LIKENESS'). His sons are drawn ONLY as anonymous silhouettes, never with faces; they are not accused of anything in the narration, and their later deaths are not mentioned. No victim or investor is named or depicted. The account statement is our own typed design with illustrative figures, no name, logo or real firm; every card is our own typed graphic; no SEC, FBI, court or trustee document is imitated. 'One big lie' is on a 'WORDING AS REPORTED' card. Dollar figures match the sources ($65 billion on statements vs about $17.5 billion principal lost, per the trustee). No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "md27_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "M_warned",
+    "M_confessed"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The SEC was warned about Bernie Madoff for years."
+    },
+    {
+     "who": "narrator",
+     "text": "In the end, he confessed to his own sons.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sec",
+    "warned",
+    "madoff",
+    "confessed",
+    "sons."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_stakes",
+   "scene": "md27_stakes",
+   "min_duration": 4.6,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "M_65bn",
+    "M_largest"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His clients' statements showed about $65 billion."
+    },
+    {
+     "who": "narrator",
+     "text": "Most of it was fake profit.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "statements",
+    "$65",
+    "billion.",
+    "fake",
+    "profit."
+   ],
+   "section": "A",
+   "music_gain_db": -3
+  },
+  {
+   "id": "s03_smooth",
+   "scene": "md27_smooth",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.4,
+     "word": [
+      1,
+      0
+     ],
+     "name": "swell",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "M_smooth",
+    "M_no_trades"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The gains were smooth, month after month."
+    },
+    {
+     "who": "narrator",
+     "text": "Yet the trades behind them were never made.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smooth,",
+    "month",
+    "trades",
+    "never",
+    "made."
+   ],
+   "section": "B",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s04_warning",
+   "scene": "md27_warning",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "M_markopolos"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "From 2000, Harry Markopolos kept warning the SEC.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "2000,",
+    "markopolos",
+    "warning",
+    "sec."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_watchdog",
+   "scene": "md27_watchdog",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "M_ig"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The SEC's own watchdog later said it missed the red flags.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "own",
+    "watchdog",
+    "missed",
+    "red",
+    "flags."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_confession",
+   "scene": "md27_confession",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      5
+     ],
+     "name": "swell",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      12
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "M_confessed",
+    "M_big_lie"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In December 2008, he told his sons the business was one big lie.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "december",
+    "sons",
+    "one",
+    "big",
+    "lie."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s07_arrest",
+   "scene": "md27_arrest",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      2
+     ],
+     "name": "door",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "step",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M_reported",
+    "M_arrest"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Through their lawyers, his sons reported him."
+    },
+    {
+     "who": "narrator",
+     "text": "The FBI arrested him the next morning.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "lawyers,",
+    "reported",
+    "fbi",
+    "arrested",
+    "morning."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_outcome",
+   "scene": "md27_outcome",
+   "min_duration": 3.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "gavel",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "gate",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "M_plea",
+    "M_sentence",
+    "M_died",
+    "M_recovery"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He pleaded guilty, and got 150 years.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty,",
+    "150",
+    "years."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "md27_end",
+   "min_duration": 3.4,
+   "pad_after": 1.5,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sparkle",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "M_smooth",
+    "M_no_trades"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Steady gains on paper. Nothing behind them.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "steady",
+    "paper.",
+    "nothing"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "M_largest",
+   "type": "established",
+   "nature": "fact",
+   "text": "Federal prosecutors and the Justice Department call Madoff's fraud the largest Ponzi scheme in history.",
+   "sources": [
+    "doj_distribution",
+    "axios_recovery",
+    "doj_arrest"
+   ]
+  },
+  {
+   "id": "M_warned",
+   "type": "established",
+   "nature": "fact",
+   "text": "The SEC received repeated warnings about Madoff's business, notably from Harry Markopolos from 2000 onward, and never uncovered the fraud (SEC inspector general, 2009).",
+   "sources": [
+    "accountingtoday_ig",
+    "claimsjournal_ig",
+    "senate_reed",
+    "propublica_memo"
+   ]
+  },
+  {
+   "id": "M_confessed",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 10 December 2008 Madoff confessed to his sons, Mark and Andrew, that his investment-advisory business was a fraud; the sons reported him to the authorities.",
+   "sources": [
+    "cityam",
+    "ap_dailyherald",
+    "propublica_lie",
+    "abc_charge"
+   ]
+  },
+  {
+   "id": "M_65bn",
+   "type": "established",
+   "nature": "fact",
+   "text": "Customer statements showed about $65 billion (a court described statements in which about $17.3 billion of investments had 'ballooned to more than $65 billion' as reflecting 'impossible transactions'); the principal actually lost is put at about $17.3-17.5 billion by the trustee (Bloomberg/DOJ-era reports cite about $19 billion). Spoken: 'statements showed about $65 billion'; card gives both figures.",
+   "sources": [
+    "fox_losses",
+    "toi_recovery",
+    "wiki_recovery"
+   ]
+  },
+  {
+   "id": "M_smooth",
+   "type": "established",
+   "nature": "fact",
+   "text": "Madoff's account statements showed steady, consistent positive returns (about 1% a month; 'hardly ever' a losing month), a pattern regulators and analysts call unrealistic. The statement drawn on screen is our own typed design with illustrative figures.",
+   "sources": [
+    "frontline",
+    "mass_sec",
+    "counterpunch"
+   ]
+  },
+  {
+   "id": "M_no_trades",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators found the trades shown on the monthly statements were not being made; the statements were falsified.",
+   "sources": [
+    "counterpunch",
+    "accountingtoday_ig",
+    "doj_arrest"
+   ]
+  },
+  {
+   "id": "M_markopolos",
+   "type": "established",
+   "nature": "fact",
+   "text": "Harry Markopolos, a financial analyst, first took his concerns to the SEC's Boston office in 2000 and warned again in later years, including a 2005 memo titled 'The World's Largest Hedge Fund Is a Fraud', which said it was 'highly likely' Madoff was running a Ponzi scheme.",
+   "sources": [
+    "propublica_memo",
+    "accountingtoday_ig",
+    "pbs_congress",
+    "cbs_markopolos"
+   ]
+  },
+  {
+   "id": "M_ig",
+   "type": "established",
+   "nature": "fact",
+   "text": "The SEC's inspector general (David Kotz, report released September 2009) found the agency missed numerous red flags and never conducted a thorough investigation; it found no evidence of improper ties between SEC staff and Madoff (card).",
+   "sources": [
+    "accountingtoday_ig",
+    "claimsjournal_ig",
+    "senate_reed"
+   ]
+  },
+  {
+   "id": "M_big_lie",
+   "type": "established",
+   "nature": "fact",
+   "text": "Wording as reported: the federal complaint says Madoff told two senior employees on 10 December 2008 that the business was 'all just one big lie' and 'basically, a giant Ponzi scheme'; the senior employees were widely reported to be his sons, and Andrew Madoff's own later account quotes 'It's all been one big lie'. Narrated only as 'one big lie'; card marked 'WORDING AS REPORTED'.",
+   "sources": [
+    "doj_complaint",
+    "lawfuel_complaint",
+    "abc_charge",
+    "propublica_lie",
+    "ap_dailyherald"
+   ]
+  },
+  {
+   "id": "M_reported",
+   "type": "established",
+   "nature": "fact",
+   "text": "The sons reported their father to federal authorities through their lawyers within hours of the confession; they said they had not known of the fraud and were never charged with any crime.",
+   "sources": [
+    "ap_dailyherald",
+    "cityam",
+    "cnn_interview"
+   ]
+  },
+  {
+   "id": "M_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "FBI agents arrested Madoff at his Manhattan home on the morning of 11 December 2008 and charged him with securities fraud.",
+   "sources": [
+    "doj_arrest",
+    "abc_charge",
+    "cityam"
+   ]
+  },
+  {
+   "id": "M_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 12 March 2009 Madoff pleaded guilty in Manhattan federal court to 11 felony counts, including securities fraud, mail fraud, wire fraud, money laundering and perjury, and was taken into custody.",
+   "sources": [
+    "abc_plea",
+    "jpost_plea",
+    "reuters_graphic"
+   ]
+  },
+  {
+   "id": "M_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 29 June 2009 Judge Denny Chin sentenced Madoff to 150 years in prison, the maximum.",
+   "sources": [
+    "cnn_sentence",
+    "nbc_sentence",
+    "mpr_sentence"
+   ]
+  },
+  {
+   "id": "M_died",
+   "type": "established",
+   "nature": "fact",
+   "text": "Madoff died in federal prison (FMC Butner, North Carolina) on 14 April 2021, aged 82 (card).",
+   "sources": [
+    "ap_death",
+    "ap_death_b"
+   ]
+  },
+  {
+   "id": "M_recovery",
+   "type": "established",
+   "nature": "fact",
+   "text": "Court-appointed trustee Irving Picard has recovered more than $14 billion for customers (about $14.6 billion by December 2023; $15.3 billion reported as of March 2026; aggregate customer payout nearly $15.38 billion after the 17th distribution in 2026). Card says 'MORE THAN $14 BILLION'.",
+   "sources": [
+    "toi_recovery",
+    "wiki_recovery",
+    "trustee_17th"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "doj_arrest",
+   "publisher": "US Attorney's Office, SDNY (press release)",
+   "title": "Bernard L. Madoff charged in eleven-count criminal information / arrest release, December 2008",
+   "url": "https://justice.gov/archive/usao/nys/pressreleases/December08/madoffarrestpr.pdf",
+   "date": "2008-12-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "doj_complaint",
+   "publisher": "US Attorney's Office, SDNY (court filing)",
+   "title": "United States v. Bernard L. Madoff: criminal complaint",
+   "url": "https://www.justice.gov/usao-sdny/file/762661/download",
+   "date": "2008-12-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "lawfuel_complaint",
+   "publisher": "LawFuel (reproduction of the US Attorney's release and complaint)",
+   "title": "Madoff arrest could be multibillion Ponzi scheme - US Attorney",
+   "url": "https://www.lawfuel.com/madoff-arrest-could-be-multibillion-ponzi-scheme-us-attorney-lawfuel-co-nz-for-online-legal-jobs",
+   "date": "2008-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc_charge",
+   "publisher": "ABC News",
+   "title": "Feds charge: the $50 billion scam: one man's amazing crime",
+   "url": "https://abcnews.go.com/Blotter/WallStreet/feds-charge-50-billion-scam-mans-amazing-crime/story?id=6444781",
+   "date": "2008-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "propublica_lie",
+   "publisher": "ProPublica",
+   "title": "Losses unknown from Madoff's 'one big lie'",
+   "url": "https://www.propublica.org/article/losses-unknown-from-madoffs-one-big-lie-1212",
+   "date": "2008-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_dailyherald",
+   "publisher": "Daily Herald (AP)",
+   "title": "Madoff wife, son said they didn't know about fraud",
+   "url": "https://www.dailyherald.com/20111105/business/madoff-wife-son-said-they-didnt-know-about-fraud/",
+   "date": "2011-11-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_interview",
+   "publisher": "CNN",
+   "title": "Madoffs interview (Ruth and Andrew Madoff)",
+   "url": "https://www.cnn.com/2011/10/31/us/madoffs-interview",
+   "date": "2011-10-31",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cityam",
+   "publisher": "City A.M.",
+   "title": "On this day: the arrest of Bernie Madoff",
+   "url": "https://www.cityam.com/on-this-day-the-arrest-of-bernie-madoff/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc_plea",
+   "publisher": "ABC News",
+   "title": "Bernie Madoff pleads guilty to Ponzi scheme, goes straight to jail",
+   "url": "https://abcnews.go.com/Blotter/WallStreet/story?id=7066715",
+   "date": "2009-03-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "jpost_plea",
+   "publisher": "The Jerusalem Post",
+   "title": "Madoff pleads guilty to all 11 felony charges",
+   "url": "https://m.jpost.com/international/madoff-pleads-guilty-to-all-11-felony-charges",
+   "date": "2009-03-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "reuters_graphic",
+   "publisher": "Thomson Reuters (graphics)",
+   "title": "Bernard Madoff",
+   "url": "https://graphics.thomsonreuters.com/15/madoff/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_sentence",
+   "publisher": "CNNMoney",
+   "title": "Madoff sentenced to 150 years",
+   "url": "https://money.cnn.com/2009/06/29/news/economy/madoff_prison_sentence/",
+   "date": "2009-06-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_sentence",
+   "publisher": "NBC News (AP)",
+   "title": "Madoff sentenced to 150 years in prison",
+   "url": "https://www.nbcnews.com/id/wbna31604191",
+   "date": "2009-06-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mpr_sentence",
+   "publisher": "MPR News",
+   "title": "Madoff sentenced to 150 years",
+   "url": "https://www.mprnews.org/story/2009/06/29/madoff-sentenced-to-150-years",
+   "date": "2009-06-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_death",
+   "publisher": "theGrio (AP)",
+   "title": "Ponzi schemer Bernie Madoff dies in prison",
+   "url": "https://thegrio.com/2021/04/14/bernie-madoff-dies/",
+   "date": "2021-04-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_death_b",
+   "publisher": "KOMO News (Sinclair, AP report)",
+   "title": "Ponzi schemer Bernie Madoff dies in prison at 82",
+   "url": "https://komonews.com/news/nation-world/source-ponzi-schemer-bernie-madoff-dies-in-prison",
+   "date": "2021-04-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "accountingtoday_ig",
+   "publisher": "Accounting Today",
+   "title": "Madoff report slams commission",
+   "url": "https://www.accountingtoday.com/news/madoff-report-slams-commission",
+   "date": "2009-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "claimsjournal_ig",
+   "publisher": "Claims Journal (Reuters/AP)",
+   "title": "SEC watchdog report on Madoff failures",
+   "url": "https://www.claimsjournal.com/news/national/2009/09/03/103505.htm",
+   "date": "2009-09-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "senate_reed",
+   "publisher": "US Senate (Sen. Jack Reed, press release)",
+   "title": "Senate Banking Committee examines SEC's failure to uncover Madoff scheme",
+   "url": "https://www.reed.senate.gov/news/releases/senate-banking-committee-examines-secs-failure-to-uncover-madoff-scheme",
+   "date": "2009-09-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "propublica_memo",
+   "publisher": "ProPublica",
+   "title": "The world's largest hedge fund is a fraud (Markopolos memo, 2005)",
+   "url": "https://www.propublica.org/article/the-worlds-largest-hedge-fund-is-a-fraud-1219",
+   "date": "2008-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pbs_congress",
+   "publisher": "PBS NewsHour",
+   "title": "Congress asks regulators for answers in Madoff scandal",
+   "url": "https://www.pbs.org/newshour/show/congress-asks-regulators-for-answers-in-madoff-scandal",
+   "date": "2009-02",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_markopolos",
+   "publisher": "CBS News",
+   "title": "Madoff whistleblower",
+   "url": "https://www.cbsnews.com/news/madoff-whistleblower-no-show-at-hearing",
+   "date": "2009",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_losses",
+   "publisher": "Fox News (AP)",
+   "title": "NYC court upholds trustee's calculation of losses",
+   "url": "https://www.foxnews.com/us/nyc-court-upholds-trustees-calculation-of-losses",
+   "date": "2010-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "toi_recovery",
+   "publisher": "The Times of Israel (JTA)",
+   "title": "Madoff's trustee recovers three-quarters of $17.5b he swindled",
+   "url": "https://www.timesofisrael.com/madoffs-trustee-recovers-three-quarters-of-17-5b-he-swindled/",
+   "date": "2018-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_recovery",
+   "publisher": "Wikipedia",
+   "title": "Recovery of funds from the Madoff investment scandal",
+   "url": "https://en.wikipedia.org/wiki/Recovery_of_funds_from_the_Madoff_investment_scandal",
+   "date": "as of March 2026",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "trustee_17th",
+   "publisher": "Madoff Recovery Initiative (trustee Irving H. Picard)",
+   "title": "Press release: seventeenth allocation and distribution",
+   "url": "https://www.madofftrustee.com/document/news/001444-press-release-seventeenth-allocation-distribution-motion-4906-2287-0144-v1.pdf",
+   "date": "2026-02",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "doj_distribution",
+   "publisher": "US Department of Justice",
+   "title": "Justice Department announces total distribution of over $4 billion to victims of Madoff Ponzi scheme",
+   "url": "https://www.justice.gov/opa/pr/justice-department-announces-total-distribution-over-4-billion-victims-madoff-ponzi-scheme",
+   "date": "2024-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "axios_recovery",
+   "publisher": "Axios",
+   "title": "Some Madoff victims recoup 94% of losses as process concludes",
+   "url": "https://www.axios.com/2024/12/30/madoff-fraud-recovery-victims-94-percent",
+   "date": "2024-12-30",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mass_sec",
+   "publisher": "Massachusetts Securities Division (investor brochure)",
+   "title": "Ponzi scheme",
+   "url": "https://www.sec.state.ma.us/divisions/securities/download/brochures/Ponzi_Scheme.pdf",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "frontline",
+   "publisher": "PBS Frontline",
+   "title": "The Madoff Affair: the financial side",
+   "url": "https://www.pbs.org/wgbh/pages/frontline/madoff/financial",
+   "date": "2009",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "counterpunch",
+   "publisher": "CounterPunch",
+   "title": "Investing with Madoff",
+   "url": "https://www.counterpunch.org/2009/01/21/investing-with-madoff/",
+   "date": "2009-01-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "THE BIGGEST PONZI SCHEME EVER"
+   },
+   {
+    "text": "ENDED WITH A CONFESSION TO HIS SONS",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHO FAILED THE VICTIMS?"
+   },
+   {
+    "text": "MADOFF OR THE REGULATORS? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

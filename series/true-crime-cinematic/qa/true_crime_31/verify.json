@@ -1,0 +1,161 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv31-sniper-40/tcv31-sniper-40.mp4",
+    "size_bytes": 17923147,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 44.267,
+    "audio_duration": 44.267,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.6,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv31-sniper-40/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 1328,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.2,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.6
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.096,
+    "transcript": "The DC sniper shot people at random for three weeks, then the rest stopped ended it. Ten were killed and three wounded. For weeks, the police hunted a white box truck. Then, a tip line collar claiming to be the sniper, pointed to a liquor store shooting in Alabama. A fingerprint there matched a 17-year-old, Lee Boytmoutheau. Malvo led to John Allen, Mohammed, and the blue 1990 Chevrolet Caprice. Police broadcast the plate, hours later, a trucker spotted the car at the rest stop. Both men were asleep inside. Mohammed was executed in 2009. Malvo was given life. A rest stop ended the DC sniper attacks. We remember the 10 who died."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 50,
+      "extent": {
+        "left": 105.0,
+        "right": 975.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "there matched a",
+        "seventeen-year-old:"
+      ]
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.3,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.9,
+      "frames": 443
+    },
+    "audio": {
+      "opening_speech_median_db": -20.3,
+      "opening_min_speech_window_db": -27.8,
+      "first_word_db": -20.8,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -36.7,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.295,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.2,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -35.8,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8357,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.6,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -91.7,
+      "end_before_db": -19.8,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 44.266667,
+        "audio": 44.267007
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 9,
+      "composed_shots": 9,
+      "shots_with_characters": 9,
+      "character_shot_share": 1.0,
+      "distinct_sets": 7,
+      "max_set_share": 0.33,
+      "shot_sizes": {
+        "wide": 3,
+        "medium-wide": 3,
+        "medium": 3
+      },
+      "max_shot_size_share": 0.33,
+      "ok": true
+    }
+  }
+}

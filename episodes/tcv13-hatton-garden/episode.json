@@ -1,0 +1,1426 @@
+{
+ "id": "tcv13-hatton-garden",
+ "number": 13,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Thieves Drilled Into a London Vault Over Easter. The Ringleader Was 76.",
+ "central_question": "How did an ageing gang get into a London vault over Easter 2015, and how were they caught?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "CCTV": "C C T V",
+   "jewellery": "jewelry"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "13",
+  "label": "HATTON GARDEN · 2015-2019"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 123.47,
+  "bpm": 78,
+  "hits": [
+   {
+    "scene": "s05_cabinet",
+    "word": [
+     0,
+     4
+    ],
+    "at": -0.05,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s12_loot",
+   "word": [
+    0,
+    6
+   ],
+   "at": -0.08
+  }
+ },
+ "figures": [
+  "hg13_reader",
+  "hg13_crew_a",
+  "hg13_crew_b",
+  "hg13_driver",
+  "hg13_basil",
+  "detective",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "judge",
+  "barrister",
+  "press_operator"
+ ],
+ "content_notes": "Closed case: four ringleaders pleaded guilty in 2015, three more men were convicted at trial in January 2016, and Michael Seed ('Basil') was convicted in 2019. The gang appears only as illustrated generic older men in flat caps and hi-vis workwear, tagged 'ILLUSTRATION · NOT A LIKENESS'; no real face is copied and no one is caricatured. 'Basil' is an anonymous silhouette. The acquitted trial defendant is never named or shown. The burglary is non-violent and is not glamorised; the missing loot and the box holders' losses are stated plainly. The street, building, vault, pub, car, van and bus are generic illustrations; no real company's logo or signage, CCTV still, police, court or press material is imitated. No dialogue or recording is invented: only the narrator speaks. Facts verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "hg13_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.25,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "buzz",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "rumble",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "HG_easter",
+    "HG_drill",
+    "HG_reader76",
+    "HG_largest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Over one Easter weekend, a gang of thieves drilled through a vault wall in London."
+    },
+    {
+     "who": "narrator",
+     "text": "The ringleader was 76.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "drilled",
+    "vault",
+    "76."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_bus",
+   "scene": "hg13_bus",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.35
+    },
+    {
+     "at": 3.5,
+     "name": "rain",
+     "gain": 0.3
+    },
+    {
+     "at": -0.12,
+     "word": [
+      0,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.85
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "brake",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "HG_buspass",
+    "HG_reader76"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Fun fact: prosecutors said he took the bus there, on a pensioner's free pass."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bus",
+    "pensioner's",
+    "pass."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_drill",
+   "scene": "hg13_drill",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "buzz",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "HG_easter",
+    "HG_drill"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The vault: in Hatton Garden, London's jewellery district."
+    },
+    {
+     "who": "narrator",
+     "text": "The tool: a diamond-tipped drill.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "hatton",
+    "garden,",
+    "diamond-tipped"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_alarm",
+   "scene": "hg13_alarm",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "beep",
+     "gain": 0.3
+    },
+    {
+     "at": 0.35,
+     "name": "beep",
+     "gain": 0.28
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "HG_alarm",
+    "HG_apology"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The alarm went off."
+    },
+    {
+     "who": "narrator",
+     "text": "The police never came.",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "The Met later apologised.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "alarm",
+    "never",
+    "came.",
+    "apologised."
+   ],
+   "section": "B",
+   "music_drop": true
+  },
+  {
+   "id": "s05_cabinet",
+   "scene": "hg13_cabinet",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.6
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "door",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "step",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "HG_cabinet",
+    "HG_quit"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But a bolted-down metal cabinet blocked the holes."
+    },
+    {
+     "who": "narrator",
+     "text": "Prosecutors said the ringleader quit that night.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "cabinet",
+    "quit"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_return",
+   "scene": "hg13_return",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.55
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.45
+    },
+    {
+     "at": 0.3,
+     "word": [
+      1,
+      7
+     ],
+     "name": "coins",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "HG_return",
+    "HG_boxes",
+    "HG_value"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Two nights later, the others came back and got through."
+    },
+    {
+     "who": "narrator",
+     "text": "They ransacked more than 70 safe deposit boxes.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "got",
+    "through.",
+    "70"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_cctv",
+   "scene": "hg13_cctv",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "static",
+     "gain": 0.3
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "typing",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "ping",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "HG_cctv"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Detectives scoured CCTV."
+    },
+    {
+     "who": "narrator",
+     "text": "One car stood out: a white Mercedes, black roof.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "cctv.",
+    "white",
+    "mercedes,"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_bug",
+   "scene": "hg13_bug",
+   "min_duration": 3.2,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.55
+    },
+    {
+     "at": 0.4,
+     "word": [
+      0,
+      3
+     ],
+     "name": "beep",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "HG_bugged"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Officers secretly bugged it."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bugged"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_pub",
+   "scene": "hg13_pub",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "static",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.28
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "sting",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "HG_pub"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Officers recorded them in a pub."
+    },
+    {
+     "who": "narrator",
+     "text": "After a few pints, police said, they got boastful.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "recorded",
+    "pub.",
+    "boastful."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s10_court",
+   "scene": "hg13_court",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.6
+    },
+    {
+     "at": -0.08,
+     "word": [
+      1,
+      3
+     ],
+     "name": "gavel",
+     "gain": 1.0
+    }
+   ],
+   "claims": [
+    "HG_pleas",
+    "HG_trial"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Four ringleaders pleaded guilty."
+    },
+    {
+     "who": "narrator",
+     "text": "Three more were convicted.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty.",
+    "convicted."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s11_basil",
+   "scene": "hg13_basil",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.12,
+     "word": [
+      0,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.85
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      13
+     ],
+     "name": "gavel",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "HG_basil"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Fun fact: 'Basil', the man who got them inside, stayed free for three years."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "basil,",
+    "three",
+    "years."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s12_loot",
+   "scene": "hg13_loot",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "HG_unrecovered",
+    "HG_reader_died"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Much of the loot was never recovered."
+    },
+    {
+     "who": "narrator",
+     "text": "The ringleader died in 2023.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "never",
+    "recovered.",
+    "died"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s13_end",
+   "scene": "hg13_end",
+   "min_duration": 3.0,
+   "pad_after": 1.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": -0.15,
+     "word": [
+      2,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "HG_largest",
+    "HG_callback",
+    "HG_next"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "One of Britain's biggest burglaries,"
+    },
+    {
+     "who": "narrator",
+     "text": "undone by a car, and a chat in the pub.",
+     "pause_before": 0.15
+    },
+    {
+     "who": "narrator",
+     "text": "Next: a cup of tea that left a radioactive trail across London.",
+     "pause_before": 0.5
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "biggest",
+    "car,",
+    "pub.",
+    "tea",
+    "radioactive"
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "HG_largest",
+   "type": "established",
+   "nature": "fact",
+   "text": "At the 2015-16 trial at Woolwich Crown Court, prosecutor Philip Evans QC described the Hatton Garden raid as 'the largest burglary in English legal history'. (The narration attributes the description to prosecutors.)",
+   "sources": [
+    "fox_largest",
+    "voa_largest",
+    "itv_planned",
+    "itv_convicted"
+   ]
+  },
+  {
+   "id": "HG_reader76",
+   "type": "established",
+   "nature": "fact",
+   "text": "Brian Reader, described by prosecutors and the press as the gang's leader ('the guv'nor'), was 76 at the time of the raid and trial; he pleaded guilty to conspiracy to commit burglary.",
+   "sources": [
+    "fox_buspass",
+    "malaymail_grandpa",
+    "itv_quit",
+    "itv_dadsarmy"
+   ]
+  },
+  {
+   "id": "HG_easter",
+   "type": "established",
+   "nature": "fact",
+   "text": "The burglary took place over the Easter bank holiday weekend of 2015 (2-5 April) at the Hatton Garden Safe Deposit company in Hatton Garden, London's jewellery district (often called its jewellery quarter).",
+   "sources": [
+    "npr_arrests",
+    "c4_arrests",
+    "ksl_arrests"
+   ]
+  },
+  {
+   "id": "HG_buspass",
+   "type": "established",
+   "nature": "allegation",
+   "text": "Prosecutors said Reader travelled to Hatton Garden by bus using a free older person's travel pass (a Freedom Pass; Fox/AP report it was in another man's name, so the episode does not say whose).",
+   "sources": [
+    "fox_buspass",
+    "itv_dadsarmy",
+    "camden_book"
+   ]
+  },
+  {
+   "id": "HG_drill",
+   "type": "established",
+   "nature": "fact",
+   "text": "The gang used a diamond-tipped industrial core drill to bore three holes through the vault's concrete wall (reported as about 50 cm / 20 in thick).",
+   "sources": [
+    "gulfnews_drill",
+    "dmail_hole",
+    "jlc_drill",
+    "nbc_police"
+   ]
+  },
+  {
+   "id": "HG_alarm",
+   "type": "established",
+   "nature": "fact",
+   "text": "Shortly after midnight on Good Friday (00:21, 3 April 2015) an alarm-monitoring company's call reached the Metropolitan Police; it was graded as requiring no police response, so no officers were sent (a security guard attended).",
+   "sources": [
+    "polprof_alarm",
+    "cityam_alarm",
+    "mayorwatch_alarm",
+    "ksl_arrests"
+   ]
+  },
+  {
+   "id": "HG_apology",
+   "type": "established",
+   "nature": "fact",
+   "text": "After an internal review the Met said its call-handling procedures had not been followed, and apologised that officers were not sent.",
+   "sources": [
+    "polprof_alarm",
+    "mayorwatch_alarm",
+    "ksl_arrests"
+   ]
+  },
+  {
+   "id": "HG_cabinet",
+   "type": "established",
+   "nature": "fact",
+   "text": "On the first night the gang drilled through the wall but found a metal cabinet on the other side, bolted to the floor, blocking the way; after several hours they left empty-handed.",
+   "sources": [
+    "itv_quit",
+    "npr_trial"
+   ]
+  },
+  {
+   "id": "HG_quit",
+   "type": "established",
+   "nature": "allegation",
+   "text": "According to the prosecution case reported at trial, Reader quit after the first night and did not return.",
+   "sources": [
+    "itv_quit",
+    "npr_trial"
+   ]
+  },
+  {
+   "id": "HG_return",
+   "type": "established",
+   "nature": "fact",
+   "text": "The others returned on the Saturday night (4 April), two nights later, with new equipment, dislodged the cabinet and got into the vault, leaving on the Sunday morning.",
+   "sources": [
+    "npr_trial",
+    "npr_arrests"
+   ]
+  },
+  {
+   "id": "HG_boxes",
+   "type": "established",
+   "nature": "fact",
+   "text": "They broke into more than 70 safe deposit boxes (reports say 72 or 73; the episode says 'more than 70').",
+   "sources": [
+    "ksl_arrests",
+    "fox_largest",
+    "voa_largest"
+   ]
+  },
+  {
+   "id": "HG_value",
+   "type": "established",
+   "nature": "fact",
+   "text": "Prosecutors put the value of the haul at around £14 million (other circulating figures are higher and are not used).",
+   "sources": [
+    "fox_largest",
+    "voa_largest",
+    "fox_value"
+   ]
+  },
+  {
+   "id": "HG_cctv",
+   "type": "established",
+   "nature": "fact",
+   "text": "Detectives reviewing CCTV after the raid spotted a distinctive car parked near the vault (BuzzFeed: footage from about 150 cameras): a white Mercedes E-class with a black roof, belonging to gang member John 'Kenny' Collins.",
+   "sources": [
+    "buzzfeed_caught",
+    "dmail_minute",
+    "cni_what"
+   ]
+  },
+  {
+   "id": "HG_bugged",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police then bugged Collins's Mercedes and a car belonging to another gang member, Terry Perkins.",
+   "sources": [
+    "buzzfeed_caught",
+    "dmail_minute",
+    "cni_what"
+   ]
+  },
+  {
+   "id": "HG_pub",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police also observed and recorded the men at the Castle pub in Islington; per the police account reported by NPR, 'after a few pints' they became 'more and more boastful'.",
+   "sources": [
+    "npr_guilty",
+    "buzzfeed_trial",
+    "itv_sentenced"
+   ]
+  },
+  {
+   "id": "HG_pleas",
+   "type": "established",
+   "nature": "procedure",
+   "text": "Four ringleaders (Brian Reader, John Collins, Daniel Jones and Terry Perkins) pleaded guilty to conspiracy to commit burglary in 2015.",
+   "sources": [
+    "npr_guilty",
+    "itv_convicted",
+    "itv_sentenced"
+   ]
+  },
+  {
+   "id": "HG_trial",
+   "type": "established",
+   "nature": "procedure",
+   "text": "On 14 January 2016 a jury at Woolwich Crown Court convicted three more men (Carl Wood, William Lincoln and Hugh Doyle). Sentences followed in March 2016. (One defendant was acquitted; he is not named or shown.)",
+   "sources": [
+    "npr_guilty",
+    "itv_convicted",
+    "courier_sentenced"
+   ]
+  },
+  {
+   "id": "HG_basil",
+   "type": "established",
+   "nature": "procedure",
+   "text": "The man known as 'Basil', who got the gang into the building and disabled security systems, evaded capture for about three years until his arrest in March 2018; Michael Seed was convicted at Woolwich Crown Court in March 2019 and jailed for 10 years.",
+   "sources": [
+    "fox_value",
+    "westminster_basil",
+    "telegraph_basil",
+    "qeb_seed"
+   ]
+  },
+  {
+   "id": "HG_unrecovered",
+   "type": "established",
+   "nature": "fact",
+   "text": "Much of the loot has never been recovered: reported recoveries are around £4 million of an estimated £14 million or more, and in 2018 cash, loose stones and bullion were said to be still outstanding.",
+   "sources": [
+    "kent_loot",
+    "buzzfeed_trial",
+    "polprof_confisc",
+    "benchpeg_confisc"
+   ]
+  },
+  {
+   "id": "HG_reader_died",
+   "type": "established",
+   "nature": "fact",
+   "text": "Brian Reader died in September 2023, aged 84, at home in Dartford, Kent; his death was reported in April 2024.",
+   "sources": [
+    "lbc_reader",
+    "kent_reader",
+    "nw_reader"
+   ]
+  },
+  {
+   "id": "HG_callback",
+   "type": "established",
+   "nature": "fact",
+   "text": "Callback summary (not a new fact): one of Britain's biggest burglaries (prosecutors: the largest in English legal history), whose gang was traced through a distinctive car spotted on CCTV and then bugged, and recorded boasting in a pub.",
+   "sources": [
+    "fox_largest",
+    "itv_convicted",
+    "buzzfeed_caught",
+    "npr_guilty"
+   ]
+  },
+  {
+   "id": "HG_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "Next episode tease (Litvinenko): in November 2006 Alexander Litvinenko drank tea laced with polonium-210 at a London hotel; investigators traced radioactive contamination across London.",
+   "sources": [
+    "cw_litvinenko",
+    "mt_litvinenko",
+    "voa_litvinenko"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fox_largest",
+   "publisher": "Fox News (AP)",
+   "title": "Heist prosecutors say Hatton Garden jewel raid was largest burglary in British history",
+   "url": "https://www.foxnews.com/world/heist-prosecutors-say-hatton-garden-jewel-raid-was-largest-burglary-in-british-history",
+   "date": "2015-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "voa_largest",
+   "publisher": "VOA News",
+   "title": "Prosecutors say jewel heist was largest in English history",
+   "url": "https://www.voanews.com/a/procesutors-says-jewel-heist-was-largest-in-english-history/3070188.html",
+   "date": "2015-11-23",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "itv_planned",
+   "publisher": "ITV News",
+   "title": "Hatton Garden raid 'planned since 2012', trial hears",
+   "url": "https://itv.com/news/2015-11-23/hatton-garden-raid-planned-since-2012-trial-hears",
+   "date": "2015-11-23",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "itv_convicted",
+   "publisher": "ITV News",
+   "title": "Hatton Garden: six men convicted of biggest burglary in English legal history",
+   "url": "https://www.itv.com/news/story/2016-01-14/hatton-garden-six-men-convicted-of-biggest-burglary-in-english-legal-history",
+   "date": "2016-01-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_buspass",
+   "publisher": "Fox News (AP)",
+   "title": "Prosecutors: London jewel theft suspect used free senior citizens bus pass to get to heist",
+   "url": "https://www.foxnews.com/world/prosecutors-london-jewel-theft-suspect-used-free-senior-citizens-bus-pass-to-get-to-heist",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "itv_dadsarmy",
+   "publisher": "ITV News",
+   "title": "Hatton Garden: The 'Dad's Army' masterminds behind the heist",
+   "url": "https://itv.com/news/2016-01-14/hatton-garden-the-dads-army-masterminds-behind-the-heist",
+   "date": "2016-01-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "malaymail_grandpa",
+   "publisher": "Malay Mail (wire report)",
+   "title": "Grandpa gang guilty of biggest burglary in English history",
+   "url": "https://www.malaymail.com/news/world/2016/01/15/grandpa-gang-guilty-of-biggest-burglary-in-english-history/1041113",
+   "date": "2016-01-15",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "camden_book",
+   "publisher": "Camden New Journal",
+   "title": "Diamond geezers: book about the Hatton Garden heist unearths new facts about the pensioners behind it",
+   "url": "https://www.camdennewjournal.co.uk/article/diamond-geezers-book-about-the-hatton-garden-heist-unearths-new-facts-about-the-pensioners-behind-it",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "itv_quit",
+   "publisher": "ITV News",
+   "title": "'Mastermind' of Hatton Garden heist 'quit on first night'",
+   "url": "https://itv.com/news/2015-11-24/hatton-garden-mastermind-quit-on-first-night",
+   "date": "2015-11-24",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_trial",
+   "publisher": "NPR (via WGBH)",
+   "title": "Britain's biggest heist case is on trial",
+   "url": "https://www.wgbh.org/news/2015-12-01/britains-biggest-heist-case-is-on-trial",
+   "date": "2015-12-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_arrests",
+   "publisher": "NPR",
+   "title": "British police arrest 7 over audacious Easter jewelry heist",
+   "url": "https://www.npr.org/sections/thetwo-way/2015/05/19/407945079/british-police-arrest-7-over-audacious-easter-jewelry-heist",
+   "date": "2015-05-19",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "c4_arrests",
+   "publisher": "Channel 4 News",
+   "title": "Hatton Garden: police make arrests and recover jewellery",
+   "url": "https://channel4.com/news/hatton-garden-police-make-arrests-and-recover-jewellery",
+   "date": "2015-05-19",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ksl_arrests",
+   "publisher": "KSL (AP)",
+   "title": "Scotland Yard arrests 9 in major London jewel heist",
+   "url": "https://www.ksl.com/article/34705541/scotland-yard-arrests-9-in-major-london-jewel-heist",
+   "date": "2015-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "gulfnews_drill",
+   "publisher": "Gulf News (via PressReader)",
+   "title": "Heist gang far from 'Ocean's Eleven'",
+   "url": "https://www.pressreader.com/uae/gulf-news/20151214/281844347579851",
+   "date": "2015-12-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "dmail_hole",
+   "publisher": "Daily Mail (via PressReader)",
+   "title": "£60m hole in the wall",
+   "url": "https://www.pressreader.com/uk/daily-mail/20150423/281676843452036",
+   "date": "2015-04-23",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_police",
+   "publisher": "NBC News",
+   "title": "London Heist: Images Show Suspects in Easter Weekend Safety Deposit Raid",
+   "url": "https://www.nbcnews.com/news/amp/ncna339831",
+   "date": "2015-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "jlc_drill",
+   "publisher": "Journal of Light Construction",
+   "title": "Tools of the Bank Robbing Trade",
+   "url": "https://www.jlconline.com/tools/power-tools/tools-of-the-bank-robbing-trade_o/",
+   "date": "2015",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_value",
+   "publisher": "Fox News",
+   "title": "Ringleader in London's Hatton Garden heist gets 10 years",
+   "url": "https://www.foxnews.com/world/ringleader-in-londons-hatton-garden-heist-gets-10-years.amp",
+   "date": "2019-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "polprof_alarm",
+   "publisher": "Police Professional",
+   "title": "MPS admits it did not respond to Hatton Garden intruder alarm",
+   "url": "https://policeprofessional.com/?p=111000",
+   "date": "2015-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cityam_alarm",
+   "publisher": "City A.M.",
+   "title": "Hatton Garden heist: Police admit a call was ignored after alarm was triggered by burglars",
+   "url": "https://cityam.com/?p=487141",
+   "date": "2015-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mayorwatch_alarm",
+   "publisher": "MayorWatch",
+   "title": "Met launches investigation after it emerges Hatton Garden alarm call went unattended",
+   "url": "https://www.mayorwatch.co.uk/met-launches-investigation-after-it-emerges-hatton-garden-alarm-call-went-unattended/",
+   "date": "2015-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "buzzfeed_caught",
+   "publisher": "BuzzFeed News",
+   "title": "This Is How The Hatton Garden Jewel Thieves Were Caught",
+   "url": "https://www.buzzfeed.com/patricksmith/this-is-how-the-hatton-garden-jewel-thieves-were-caught",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "dmail_minute",
+   "publisher": "Scottish Daily Mail (via PressReader)",
+   "title": "Minute by minute, how the £24m raid unfolded inside Aladdin's cave vault",
+   "url": "https://www.pressreader.com/uk/scottish-daily-mail/20160115/281629599269174",
+   "date": "2016-01-15",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cni_what",
+   "publisher": "Crime+Investigation (UK)",
+   "title": "What happened to the Hatton Garden burglars?",
+   "url": "https://crimeandinvestigation.co.uk/articles/what-happened-hatton-garden-burglars",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_guilty",
+   "publisher": "NPR",
+   "title": "Seven British men guilty of massive Easter gem heist",
+   "url": "https://www.npr.org/sections/thetwo-way/2016/01/14/463081162/seven-british-men-guilty-of-massive-easter-gem-heist",
+   "date": "2016-01-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "buzzfeed_trial",
+   "publisher": "BuzzFeed News",
+   "title": "£14 Million Hatton Garden Heist 'Biggest Burglary In English History', Court Hears",
+   "url": "https://www.buzzfeed.com/patricksmith/hatton-garden-trial",
+   "date": "2015-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "itv_sentenced",
+   "publisher": "ITV News",
+   "title": "Hatton Garden jewellery heist gang jailed for 34 years",
+   "url": "https://www.itv.com/news/2016-03-09/hatton-garden-jewellery-heist-gang-sentenced",
+   "date": "2016-03-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "courier_sentenced",
+   "publisher": "The Courier (PA)",
+   "title": "Six sentenced for roles in Hatton Garden raid",
+   "url": "https://thecourier.co.uk/news/uk-world/243873/six-sentenced-for-roles-in-hatton-garden-raid",
+   "date": "2016-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "westminster_basil",
+   "publisher": "Westminster Extra",
+   "title": "Ten years for the 'last' of the Hatton Garden gang",
+   "url": "https://www.westminsterextra.co.uk/article/ten-years-for-the-last-of-the-hatton-garden-gang",
+   "date": "2019-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "telegraph_basil",
+   "publisher": "The Daily Telegraph (via PressReader)",
+   "title": "Unmasked, Basil the mystery Hatton Garden raider",
+   "url": "https://www.pressreader.com/uk/the-daily-telegraph/20190316/281805695256910",
+   "date": "2019-03-16",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "qeb_seed",
+   "publisher": "QEB Hollis Whiteman (prosecution counsel's chambers)",
+   "title": "Final Hatton Garden suspect guilty of conspiracy to burgle",
+   "url": "https://www.qebholliswhiteman.co.uk/site/library/news/final-hatton-garden-suspect",
+   "date": "2019-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kent_loot",
+   "publisher": "Kent Online",
+   "title": "Hatton Garden raiders in court",
+   "url": "https://www.kentonline.co.uk/dartford/news/hatton-garden-raiders-in-court-158535/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "polprof_confisc",
+   "publisher": "Police Professional",
+   "title": "Pay £27m compensation or stay in jail, Hatton Garden gang told",
+   "url": "https://policeprofessional.com/?p=64673",
+   "date": "2018-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "benchpeg_confisc",
+   "publisher": "Professional Jeweller / Benchpeg",
+   "title": "Hatton Garden gang ordered to pay back £27.5 million",
+   "url": "https://benchpeg.com/news/hatton-garden-gang-ordered-to-pay-back-275-million",
+   "date": "2018-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "lbc_reader",
+   "publisher": "LBC",
+   "title": "Hatton Garden heist ringleader Brian 'The Guvnor' Reader dies aged 84",
+   "url": "https://lbc.co.uk/news/hatton-garden-heist-ringleader-brian-reader-dies-aged-84",
+   "date": "2024-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kent_reader",
+   "publisher": "Kent Online",
+   "title": "Mastermind of Hatton Garden heist Brian Reader has died aged 84",
+   "url": "https://www.kentonline.co.uk/dartford/news/hatton-garden-heist-mastermind-dies-aged-84-305589/",
+   "date": "2024-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nw_reader",
+   "publisher": "NationalWorld",
+   "title": "Brian Reader dead: mastermind behind the famous Hatton Garden heist dies aged 84 from cancer",
+   "url": "https://www.nationalworld.com/news/uk/brian-reader-dead-mastermind-behind-the-famous-hatton-garden-heist-dies-aged-84-from-cancer-4602334",
+   "date": "2024-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cw_litvinenko",
+   "publisher": "Chemistry World (Royal Society of Chemistry)",
+   "title": "Litvinenko inquiry unveils scientific sleuths at heart of investigation",
+   "url": "https://www.chemistryworld.com/news/litvinenko-inquiry-unveils-scientific-sleuths-at-heart-of-investigation/9385.article",
+   "date": "2015",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mt_litvinenko",
+   "publisher": "The Moscow Times",
+   "title": "Impact of Litvinenko poisoning equal to nuclear attack: inquiry",
+   "url": "https://themoscowtimes.com/articles/impact-of-litvinenko-poisoning-equal-to-nuclear-attack-inquiry-48644",
+   "date": "2015-07-30",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "voa_litvinenko",
+   "publisher": "VOA News",
+   "title": "Ex-KGB agent poisoning jeopardized London, says lawyer",
+   "url": "https://voanews.com/a/ex-kgb-agent-poisoning-jeopardized-london-says-lawyer/2886640.html",
+   "date": "2015-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "legal_status_verified": "2026-10-11"
+}

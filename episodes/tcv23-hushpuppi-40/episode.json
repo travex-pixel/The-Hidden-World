@@ -1,0 +1,774 @@
+{
+ "id": "tcv23-hushpuppi-40",
+ "number": 23,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "His Own Instagram Helped the FBI Identify Hushpuppi",
+ "central_question": "How did an influencer's own Instagram help the FBI identify him?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "FBI": "F B I",
+   "Hushpuppi": "Hush puppy",
+   "Ramon": "Rah-mone",
+   "Abbas": "Ah-bahs",
+   "Snapchat": "Snap chat",
+   "2020": "twenty twenty"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "23",
+  "label": "DUBAI · LOS ANGELES · 2020-2022"
+ },
+ "music": {
+  "bpm": 82,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 82,
+  "cliff": {
+   "scene": "s07_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "hp23_abbas",
+  "hp23_officer",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "official",
+  "judge"
+ ],
+ "content_notes": "Closed federal case: Abbas pleaded guilty (April 2021) to one count of conspiracy to engage in money laundering and was sentenced in November 2022 to 135 months; he is serving the sentence. Narration states only what he pleaded to. The victims (companies and individuals) are never shown or named; no co-conspirator, police officer or other person is named. Separate allegations (e.g. claims involving a Nigerian police officer) are omitted. Abbas appears only as an anonymous rim-lit silhouette or from behind (not a likeness, never one of his own photos or his booking photo). The phone feed, jet, cars, apartment and offices are generic drawings: no Instagram/Snapchat logo or interface, no car badges, no airline or police insignia, no real usernames, email addresses or phone numbers (masked). Every card is our own typed graphic. No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "hp23_hook",
+   "min_duration": 5.4,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "H_flex",
+    "H_records"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He posed with jets and luxury cars on Instagram."
+    },
+    {
+     "who": "narrator",
+     "text": "His own account helped the FBI identify him.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "jets",
+    "luxury",
+    "instagram.",
+    "own",
+    "identify"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_jet",
+   "scene": "hp23_jet",
+   "min_duration": 3.4,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "H_who",
+    "H_followers"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Ramon Abbas, Hushpuppi, had over two million followers.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "hushpuppi,",
+    "two",
+    "million"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_scam",
+   "scene": "hp23_scam",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "H_plea"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He later admitted conspiring to launder money from online scams."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "admitted",
+    "launder",
+    "scams."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_records",
+   "scene": "hp23_records",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "ping",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "ping",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "H_records"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Agents got his Instagram records: an email and a phone number."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "instagram",
+    "records:",
+    "email",
+    "phone"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_reveal",
+   "scene": "hp23_reveal",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      2
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "H_snap",
+    "H_passport"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They matched a Snapchat contact an accomplice had saved as Hush."
+    },
+    {
+     "who": "narrator",
+     "text": "And his posts matched his passport photos.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "snapchat",
+    "hush.",
+    "passport",
+    "photos."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s06_raid",
+   "scene": "hp23_raid",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      9
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "H_raid",
+    "H_foxhunt",
+    "H_handover"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In June 2020, Dubai Police raided his apartment and handed him to the FBI."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dubai",
+    "raided",
+    "fbi."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s07_verdict",
+   "scene": "hp23_verdict",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "H_plea",
+    "H_sentence"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He pleaded guilty to a money laundering conspiracy,"
+    },
+    {
+     "who": "narrator",
+     "text": "and got more than eleven years in prison.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty",
+    "eleven",
+    "years"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_end",
+   "scene": "hp23_end",
+   "min_duration": 3.6,
+   "pad_after": 1.7,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "H_flex",
+    "H_records"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His flex was public."
+    },
+    {
+     "who": "narrator",
+     "text": "Investigators were reading it.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "public.",
+    "reading"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "H_flex",
+   "type": "established",
+   "nature": "fact",
+   "text": "Ramon Abbas ('Hushpuppi') posted his lavish lifestyle on Instagram: court papers describe posts of him in designer clothes and expensive watches, posing in or with luxury cars and charter jets; CNN cites Rolls-Royces.",
+   "sources": [
+    "bbc_plea",
+    "cnn_syn",
+    "qz_fbi",
+    "register"
+   ]
+  },
+  {
+   "id": "H_who",
+   "type": "established",
+   "nature": "fact",
+   "text": "Ramon Abbas is known on social media as Hushpuppi (also 'Ray Hushpuppi').",
+   "sources": [
+    "doj_sentence",
+    "bbc_plea",
+    "nbc_sentence"
+   ]
+  },
+  {
+   "id": "H_followers",
+   "type": "established",
+   "nature": "fact",
+   "text": "His Instagram account had more than two million followers (BBC: 2.5 million; CNN: more than two million).",
+   "sources": [
+    "bbc_plea",
+    "cnn_syn"
+   ]
+  },
+  {
+   "id": "H_records",
+   "type": "established",
+   "nature": "fact",
+   "text": "Per the FBI affidavit (as reported), agents obtained Instagram's records for his verified account, which listed an email address and a verified phone number; the account helped investigators identify him. (Email and number are never shown.)",
+   "sources": [
+    "qz_fbi",
+    "register",
+    "ibtimes",
+    "cnn_syn"
+   ]
+  },
+  {
+   "id": "H_snap",
+   "type": "established",
+   "nature": "fact",
+   "text": "Per the affidavit, the same email was on the Snapchat account 'hushpuppi5', which was linked to a number an accomplice had saved in a phone as 'Hush'; his Instagram also mentioned that Snapchat name. (No co-conspirator is named.)",
+   "sources": [
+    "qz_fbi",
+    "register",
+    "ibtimes"
+   ]
+  },
+  {
+   "id": "H_passport",
+   "type": "established",
+   "nature": "fact",
+   "text": "Per the affidavit, agents matched photos posted on his accounts to photos from his passports and other identification documents.",
+   "sources": [
+    "qz_fbi",
+    "register"
+   ]
+  },
+  {
+   "id": "H_raid",
+   "type": "established",
+   "nature": "fact",
+   "text": "Dubai Police arrested Abbas in June 2020 after raids including his Dubai apartment; police said they seized cash and 13 luxury cars (amounts reported differently, so not narrated).",
+   "sources": [
+    "national",
+    "khaleej",
+    "cnn_syn",
+    "dubaieye"
+   ]
+  },
+  {
+   "id": "H_foxhunt",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT (card only): Dubai Police called the operation 'Fox Hunt 2'.",
+   "sources": [
+    "dubaieye",
+    "khaleej",
+    "national"
+   ]
+  },
+  {
+   "id": "H_handover",
+   "type": "established",
+   "nature": "fact",
+   "text": "Dubai Police handed him to the FBI, and FBI agents brought him to the United States in early July 2020 (DOJ: expelled, not extradited); he first appeared in court in Chicago on 3 July 2020.",
+   "sources": [
+    "gulfnews",
+    "graphic_bbc",
+    "channels"
+   ]
+  },
+  {
+   "id": "H_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "In April 2021 he pleaded guilty to one count of conspiracy to engage in money laundering, laundering money from business email compromise and other online fraud schemes.",
+   "sources": [
+    "doj_sentence",
+    "bbc_plea",
+    "nbc_sentence"
+   ]
+  },
+  {
+   "id": "H_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "In November 2022 U.S. District Judge Otis D. Wright II sentenced him to 135 months (over 11 years) in federal prison and ordered $1,732,841 in restitution.",
+   "sources": [
+    "doj_sentence",
+    "nbc_sentence",
+    "fox5_sentence"
+   ]
+  },
+  {
+   "id": "H_status",
+   "type": "established",
+   "nature": "fact",
+   "text": "Status (12 Oct 2026, research only): the Ninth Circuit dismissed his petition for review in January 2024; fact-checks in February 2026 found no release, with a projected release in 2029.",
+   "sources": [
+    "sahara_appeal",
+    "gazette_appeal",
+    "africacheck",
+    "thecable_fc"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "doj_sentence",
+   "publisher": "U.S. Attorney's Office, Central District of California (DOJ)",
+   "title": "Nigerian Man Sentenced to Over 11 Years in Federal Prison for Conspiring to Launder Tens of Millions of Dollars",
+   "url": "https://www.justice.gov/usao-cdca/pr/nigerian-man-sentenced-over-11-years-federal-prison-conspiring-launder-tens-millions",
+   "date": "2022-11-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_sentence",
+   "publisher": "NBC News",
+   "title": "Social media influencer 'Hushpuppi' sentenced to 11 years in prison over money laundering conspiracy",
+   "url": "https://www.nbcnews.com/news/us-news/social-media-influencer-hushpuppi-sentenced-11-years-prison-money-laun-rcna56136",
+   "date": "2022-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox5_sentence",
+   "publisher": "FOX 5 New York",
+   "title": "Instagram influencer 'Ray Hushpuppi' gets 11 years in prison for money laundering",
+   "url": "https://www.fox5ny.com/news/influencer-ray-hushpuppi-sentenced-prison-money-laundering",
+   "date": "2022-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bbc_plea",
+   "publisher": "BBC News",
+   "title": "Hushpuppi: Nigerian influencer pleads guilty to money laundering",
+   "url": "https://bbc.in/3yccV6J",
+   "date": "2021-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_syn",
+   "publisher": "CNN (syndicated via KTVZ / ABC17)",
+   "title": "Instagram influencer Hushpuppi: arrest, plea and FBI investigation (syndicated CNN wire)",
+   "url": "https://ktvz.com/?p=642190",
+   "date": "2021",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "qz_fbi",
+   "publisher": "Quartz",
+   "title": "How the FBI used Instagram and Snapchat to track down an alleged conman in Dubai",
+   "url": "https://qz.com/africa/1879261/fbi-use-",
+   "date": "2020-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "register",
+   "publisher": "The Register",
+   "title": "Instagram 'influencer' Hushpuppi busted over business email compromise (FBI affidavit)",
+   "url": "https://www.theregister.com/2020/07/06/hushpuppi_busted_bec/",
+   "date": "2020-07-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ibtimes",
+   "publisher": "International Business Times (India)",
+   "title": "How fraud billionaire Hushpuppi landed in FBI net; Instagram played vital role",
+   "url": "https://www.ibtimes.co.in/how-fraud-billionaire-hushpuppi-landed-fbi-net-instagram-played-vital-role-825368",
+   "date": "2020-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "national",
+   "publisher": "The National (UAE)",
+   "title": "Dubai Police reveal role in arrest of alleged fraudster Hushpuppi after Dh150 million seizure",
+   "url": "https://www.thenationalnews.com/uae/courts/dubai-police-reveal-role-in-arrest-of-alleged-fraudster-hushpuppi-after-dh150-million-seizure-1.1039144",
+   "date": "2020-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "khaleej",
+   "publisher": "Khaleej Times",
+   "title": "Dubai Police bust Dh1.6b online fraud plan, arrest 'Hushpuppi' among 12 cybercriminals",
+   "url": "https://www.khaleejtimes.com/uae/crime/video-dubai-police-bust-dh1-6b-online-fraud-plan-arrest-hushpuppi-among-12-cybercriminals",
+   "date": "2020-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "dubaieye",
+   "publisher": "Dubai Eye 103.8",
+   "title": "Nigerian fraudster Hushpuppi nabbed in Dubai Police operation 'Fox Hunt 2'",
+   "url": "https://www.dubaieye1038.com/news/local/international-online-scammer-hushpuppi-arrested-in-dubai",
+   "date": "2020-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "gulfnews",
+   "publisher": "Gulf News",
+   "title": "Dubai Police hands over Hushpuppi to FBI in the US",
+   "url": "https://gulfnews.com/uae/dubai-police-hands-over-hushpuppi-to-fbi-in-the-us-1.72374920",
+   "date": "2020-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "graphic_bbc",
+   "publisher": "Graphic Online (BBC report)",
+   "title": "Hushpuppi was 'kidnapped' by the FBI from Dubai - lawyer (DOJ: expelled, not extradited)",
+   "url": "https://www.graphic.com.gh/international/international-news/hushpuppi-s-was-kidnapped-by-the-fbi-from-dubai-lawyer.html",
+   "date": "2020-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "channels",
+   "publisher": "Channels TV",
+   "title": "Hushpuppi makes first appearance in court (Chicago)",
+   "url": "https://www.channelstv.com/2020/07/03/hushpuppi-makes-first-appearance-in-court/amp/",
+   "date": "2020-07-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "sahara_appeal",
+   "publisher": "Sahara Reporters",
+   "title": "US appeal court dismisses Hushpuppi's petition to review 11-year prison sentence",
+   "url": "https://saharareporters.com/2024/01/29/us-appeal-court-dismisses-hushpuppis-petition-review-11-year-prison-sentence",
+   "date": "2024-01-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "gazette_appeal",
+   "publisher": "Peoples Gazette",
+   "title": "U.S. appeals court dismisses Hushpuppi's petition to review 11-year prison sentence",
+   "url": "https://gazettengr.com/u-s-appeals-court-dismisses-hushpuppis-petition-to-review-11-year-prison-sentence/",
+   "date": "2024-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "africacheck",
+   "publisher": "Africa Check",
+   "title": "Popular Nigerian fraudster Hushpuppi has not been released",
+   "url": "https://www.africacheck.org/fact-checks/meta-programme-fact-checks/popular-nigerian-fraudster-hushpuppi-has-not-been-released",
+   "date": "2026-02",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "thecable_fc",
+   "publisher": "TheCable Fact Check",
+   "title": "Fact check: Has Hushpuppi been released from prison?",
+   "url": "https://factcheck.thecable.ng/fact-check-has-hushpuppi-been-released-from-prison",
+   "date": "2023 / 2026",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "HE POSED WITH JETS AND LUXURY CARS"
+   },
+   {
+    "text": "HIS OWN INSTAGRAM HELPED THE FBI",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

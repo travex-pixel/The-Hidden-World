@@ -1,0 +1,2812 @@
+{
+ "episode": "tcv01-chamberlain",
+ "title": "She Got Life for Murder. The 'Blood' Was Sound-Deadener.",
+ "duration": 84.286,
+ "slideshow_risk": {
+  "shots": 14,
+  "composed_shots": 13,
+  "shots_with_characters": 11,
+  "character_shot_share": 0.85,
+  "distinct_sets": 8,
+  "max_set_share": 0.38,
+  "shot_sizes": {
+   "close-up": 3,
+   "map/graphic": 1,
+   "medium": 6,
+   "insert/graphic": 2,
+   "wide": 2
+  },
+  "max_shot_size_share": 0.43,
+  "ok": true
+ },
+ "production_status": {
+  "series_manifest": "series/true-crime-cinematic/production_manifest.json",
+  "video": "true_crime_01.mp4"
+ },
+ "shots": [
+  {
+   "id": "s01_dock",
+   "scene_type": "tcv1_dock",
+   "start": 0.0,
+   "duration": 3.571,
+   "narration": [
+    "A mother was jailed for life for murdering her baby."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.25,
+     "end": 2.676,
+     "words": [
+      {
+       "w": "A",
+       "start": 0.331,
+       "end": 0.354
+      },
+      {
+       "w": "mother",
+       "start": 0.389,
+       "end": 0.633
+      },
+      {
+       "w": "was",
+       "start": 0.68,
+       "end": 0.807
+      },
+      {
+       "w": "jailed",
+       "start": 0.842,
+       "end": 1.144
+      },
+      {
+       "w": "for",
+       "start": 1.179,
+       "end": 1.307
+      },
+      {
+       "w": "life",
+       "start": 1.341,
+       "end": 1.539
+      },
+      {
+       "w": "for",
+       "start": 1.562,
+       "end": 1.69
+      },
+      {
+       "w": "murdering",
+       "start": 1.724,
+       "end": 2.026
+      },
+      {
+       "w": "her",
+       "start": 2.061,
+       "end": 2.154
+      },
+      {
+       "w": "baby.",
+       "start": 2.2,
+       "end": 2.56
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (warm grade); judge: gavel -> sit; lindy [court]: hands_together -> distraught -> hand_to_face; camera push/pull; overlays: label 'NT SUPREME COURT · 1982'.",
+   "shot_size": "close-up",
+   "set": "courtroom",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": 40,
+     "z": 1.08
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "judge",
+    "lindy"
+   ],
+   "character_actions": [
+    {
+     "id": "judge",
+     "outfit": "default",
+     "depth": 0.34,
+     "scale": 0.5,
+     "start_pose": "gavel",
+     "start_expr": "stern",
+     "actions": [
+      {
+       "at": 0.12,
+       "pose": "sit"
+      }
+     ]
+    },
+    {
+     "id": "lindy",
+     "outfit": "court",
+     "depth": 1,
+     "scale": 1.35,
+     "start_pose": "hands_together",
+     "start_expr": "blank",
+     "actions": [
+      {
+       "at": 1.34,
+       "expr": "distraught",
+       "turn_head": true
+      },
+      {
+       "at": 2.4,
+       "pose": "hand_to_face",
+       "expr": "sad"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.84,
+     "text": "NT SUPREME COURT · 1982"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "C_convicted",
+     "type": "established",
+     "claim_text": "On 29 October 1982 Lindy was convicted of murder and sentenced to life imprisonment with hard labour.",
+     "urls": [
+      "https://famous-trials.com/dingo/456-chronology",
+      "https://www.nma.gov.au/defining-moments/resources/azaria-chamberlain-inquest",
+      "https://www.odt.co.nz/node/119948"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "cold",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "hit",
+      "at": 0.0,
+      "gain": 0.7
+     },
+     {
+      "name": "gavel",
+      "at": 0.25,
+      "gain": 0.6
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_dock",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/judge.json",
+     "characters/figures/lindy.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_never",
+   "scene_type": "tcv1_never",
+   "start": 3.571,
+   "duration": 2.858,
+   "narration": [
+    "But the 'baby's blood' in her car was never blood."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 3.821,
+     "end": 5.957,
+     "words": [
+      {
+       "w": "But",
+       "start": 3.844,
+       "end": 3.937
+      },
+      {
+       "w": "the",
+       "start": 3.96,
+       "end": 4.018
+      },
+      {
+       "w": "'baby's",
+       "start": 4.053,
+       "end": 4.401
+      },
+      {
+       "w": "blood'",
+       "start": 4.471,
+       "end": 4.669
+      },
+      {
+       "w": "in",
+       "start": 4.703,
+       "end": 4.761
+      },
+      {
+       "w": "her",
+       "start": 4.796,
+       "end": 4.901
+      },
+      {
+       "w": "car",
+       "start": 4.947,
+       "end": 5.156
+      },
+      {
+       "w": "was",
+       "start": 5.179,
+       "end": 5.284
+      },
+      {
+       "w": "never",
+       "start": 5.33,
+       "end": 5.539
+      },
+      {
+       "w": "blood.",
+       "start": 5.597,
+       "end": 5.899
+      }
+     ]
+    }
+   ],
+   "visual_description": "lab (cold grade); scientist: examine -> realise; camera push/pull; overlays: callout 'NOT BLOOD'.",
+   "shot_size": "close-up",
+   "set": "lab",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 60,
+     "y": -20,
+     "z": 1.08
+    },
+    "to": {
+     "x": 120,
+     "y": -40,
+     "z": 1.2
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "scientist"
+   ],
+   "character_actions": [
+    {
+     "id": "scientist",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.35,
+     "start_pose": "examine",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 1.76,
+       "expr": "realise"
+      }
+     ],
+     "prop": "magnifier"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "callout",
+     "at": 1.66,
+     "text": "NOT BLOOD"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "flash",
+   "sources": [
+    {
+     "claim": "C_noblood",
+     "type": "established",
+     "claim_text": "The 'spray' under the dashboard was a sound-deadening compound applied by the manufacturer; the inquiry found no blood in the car.",
+     "urls": [
+      "https://www.nma.gov.au/about/media/media-releases-listing-by-year/2014/national-museum-acquires-michael-chamberlain-torana",
+      "https://www.abc.net.au/news/2014-08-19/chamberlain-torana-becomes-museum-piece-for-all-to-see/5674120",
+      "https://canberratimes.com.au/story/6869395/infamous-chamberlain-torana-part-of-our-lived-history-at-national-museum"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "cold",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "glitch",
+      "at": 3.571,
+      "gain": 0.25
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_never",
+    "set_code": "renderer/sets.js#lab",
+    "characters": [
+     "characters/figures/scientist.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_map",
+   "scene_type": "case_map",
+   "start": 6.429,
+   "duration": 3.571,
+   "narration": [
+    "August 1980. A campsite at Uluru."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 6.679,
+     "end": 9.21,
+     "words": [
+      {
+       "w": "August",
+       "start": 6.749,
+       "end": 7.109
+      },
+      {
+       "w": "1980.",
+       "start": 7.143,
+       "end": 7.724
+      },
+      {
+       "w": "A",
+       "start": 7.898,
+       "end": 7.944
+      },
+      {
+       "w": "campsite",
+       "start": 8.026,
+       "end": 8.548
+      },
+      {
+       "w": "at",
+       "start": 8.641,
+       "end": 8.734
+      },
+      {
+       "w": "Uluru.",
+       "start": 8.769,
+       "end": 9.14
+      }
+     ]
+    }
+   ],
+   "visual_description": "Animated map / graphic (Case Files kit).",
+   "shot_size": "map/graphic",
+   "set": null,
+   "grade": null,
+   "camera": null,
+   "characters": [],
+   "character_actions": [],
+   "overlays": [],
+   "reconstruction_tag": null,
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "C_aug1980",
+     "type": "established",
+     "claim_text": "Azaria disappeared on 17 August 1980 from the family's tent at the Uluru (Ayers Rock) campsite, Northern Territory.",
+     "urls": [
+      "https://www.nma.gov.au/defining-moments/resources/azaria-chamberlain-inquest",
+      "https://localcourt.nt.gov.au/sites/default/files/decisions/2012NTMC020.pdf",
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "unease",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 6.429,
+      "gain": 0.7
+     },
+     {
+      "name": "wind",
+      "at": 6.729,
+      "gain": 0.6
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/doc.js#case_map",
+    "set_code": null,
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_camp",
+   "scene_type": "tcv1_camp",
+   "start": 10.0,
+   "duration": 5.0,
+   "narration": [
+    "Lindy Chamberlain said a dingo took her nine week old daughter, Azaria, from their tent."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 10.25,
+     "end": 14.557,
+     "words": [
+      {
+       "w": "Lindy",
+       "start": 10.285,
+       "end": 10.529
+      },
+      {
+       "w": "Chamberlain",
+       "start": 10.587,
+       "end": 11.132
+      },
+      {
+       "w": "said",
+       "start": 11.19,
+       "end": 11.318
+      },
+      {
+       "w": "a",
+       "start": 11.353,
+       "end": 11.388
+      },
+      {
+       "w": "dingo",
+       "start": 11.434,
+       "end": 11.783
+      },
+      {
+       "w": "took",
+       "start": 11.841,
+       "end": 12.015
+      },
+      {
+       "w": "her",
+       "start": 12.061,
+       "end": 12.131
+      },
+      {
+       "w": "nine",
+       "start": 12.177,
+       "end": 12.409
+      },
+      {
+       "w": "week",
+       "start": 12.456,
+       "end": 12.618
+      },
+      {
+       "w": "old",
+       "start": 12.642,
+       "end": 12.758
+      },
+      {
+       "w": "daughter,",
+       "start": 12.793,
+       "end": 13.152
+      },
+      {
+       "w": "Azaria,",
+       "start": 13.361,
+       "end": 13.826
+      },
+      {
+       "w": "from",
+       "start": 13.919,
+       "end": 14.058
+      },
+      {
+       "w": "their",
+       "start": 14.093,
+       "end": 14.209
+      },
+      {
+       "w": "tent.",
+       "start": 14.267,
+       "end": 14.522
+      }
+     ]
+    }
+   ],
+   "visual_description": "camp night (night grade); lindy: torch -> torch_low -> torch (walks); michael [camp]: torch (walks); camera push/pull, handheld; overlays: label 'LINDY CHAMBERLAIN'.",
+   "shot_size": "medium",
+   "set": "camp_night",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 120,
+     "y": 30,
+     "z": 1.12
+    },
+    "to": {
+     "x": -30,
+     "y": 0,
+     "z": 1
+    },
+    "handheld": 5
+   },
+   "characters": [
+    "lindy",
+    "michael"
+   ],
+   "character_actions": [
+    {
+     "id": "lindy",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.95,
+     "start_pose": "torch",
+     "start_expr": "distraught",
+     "actions": [
+      {
+       "at": 1.43,
+       "pose": "torch_low"
+      },
+      {
+       "at": 3.36,
+       "pose": "torch",
+       "turn_head": true
+      }
+     ],
+     "walk": {
+      "from": 840,
+      "to": 600,
+      "at": 0.15,
+      "dur": 1.4
+     }
+    },
+    {
+     "id": "michael",
+     "outfit": "camp",
+     "depth": 1,
+     "scale": 0.92,
+     "start_pose": "torch",
+     "start_expr": "worried",
+     "actions": [],
+     "walk": {
+      "from": -180,
+      "to": 230,
+      "at": 1.78,
+      "dur": 1.7
+     }
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.3,
+     "text": "LINDY CHAMBERLAIN"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "C_lindy_said",
+     "type": "established",
+     "claim_text": "Lindy Chamberlain said a dingo had taken nine-week-old Azaria from the tent.",
+     "urls": [
+      "https://www.nma.gov.au/defining-moments/resources/azaria-chamberlain-inquest",
+      "https://www.aljazeera.com/news/2012/06/12/coroner-finds-dingo-took-australian-baby",
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "unease",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 10.0,
+      "gain": 0.8
+     },
+     {
+      "name": "wind",
+      "at": 13.6,
+      "gain": 0.5
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_camp",
+    "set_code": "renderer/sets.js#camp_night",
+    "characters": [
+     "characters/figures/lindy.json",
+     "characters/figures/michael.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_board",
+   "scene_type": "tcv1_board",
+   "start": 15.0,
+   "duration": 7.143,
+   "narration": [
+    "Azaria was never found. Her jumpsuit was, near the rock.",
+    "But not the matinee jacket Lindy said Azaria wore over it."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 15.25,
+     "end": 18.106,
+     "words": [
+      {
+       "w": "Azaria",
+       "start": 15.331,
+       "end": 15.772
+      },
+      {
+       "w": "was",
+       "start": 15.807,
+       "end": 15.912
+      },
+      {
+       "w": "never",
+       "start": 15.947,
+       "end": 16.156
+      },
+      {
+       "w": "found.",
+       "start": 16.202,
+       "end": 16.597
+      },
+      {
+       "w": "Her",
+       "start": 16.69,
+       "end": 16.794
+      },
+      {
+       "w": "jumpsuit",
+       "start": 16.829,
+       "end": 17.2
+      },
+      {
+       "w": "was,",
+       "start": 17.247,
+       "end": 17.456
+      },
+      {
+       "w": "near",
+       "start": 17.514,
+       "end": 17.63
+      },
+      {
+       "w": "the",
+       "start": 17.653,
+       "end": 17.711
+      },
+      {
+       "w": "rock.",
+       "start": 17.746,
+       "end": 18.048
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 18.606,
+     "end": 21.334,
+     "words": [
+      {
+       "w": "But",
+       "start": 18.629,
+       "end": 18.722
+      },
+      {
+       "w": "not",
+       "start": 18.745,
+       "end": 18.908
+      },
+      {
+       "w": "the",
+       "start": 18.943,
+       "end": 19.001
+      },
+      {
+       "w": "matinee",
+       "start": 19.024,
+       "end": 19.349
+      },
+      {
+       "w": "jacket",
+       "start": 19.384,
+       "end": 19.767
+      },
+      {
+       "w": "Lindy",
+       "start": 19.79,
+       "end": 20.011
+      },
+      {
+       "w": "said",
+       "start": 20.092,
+       "end": 20.278
+      },
+      {
+       "w": "Azaria",
+       "start": 20.324,
+       "end": 20.719
+      },
+      {
+       "w": "wore",
+       "start": 20.765,
+       "end": 20.94
+      },
+      {
+       "w": "over",
+       "start": 20.986,
+       "end": 21.183
+      },
+      {
+       "w": "it.",
+       "start": 21.218,
+       "end": 21.288
+      }
+     ]
+    }
+   ],
+   "visual_description": "task force (cold grade); detective: arms_crossed -> point_up -> stand -> hand_to_face; camera push/pull; overlays: label 'AUGUST 1980'.",
+   "shot_size": "medium",
+   "set": "task_force",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -40,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": -70,
+     "z": 1.06
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "detective"
+   ],
+   "character_actions": [
+    {
+     "id": "detective",
+     "outfit": "default",
+     "depth": 1.1,
+     "scale": 1.05,
+     "start_pose": "arms_crossed",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 1.63,
+       "pose": "point_up"
+      },
+      {
+       "at": 3.61,
+       "pose": "stand"
+      },
+      {
+       "at": 4.02,
+       "pose": "hand_to_face",
+       "expr": "worried",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.2,
+     "text": "AUGUST 1980"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "C_jumpsuit",
+     "type": "established",
+     "claim_text": "Azaria's body was never found; her jumpsuit was found near the base of the rock about a week later.",
+     "urls": [
+      "https://alicespringsnews.com.au/2020/09/30/the-dates-of-key-events-in-the-chamberlain-drama/",
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719"
+     ]
+    },
+    {
+     "claim": "C_jacket_missing",
+     "type": "established",
+     "claim_text": "The matinee jacket Lindy said Azaria wore over the jumpsuit was not found with it.",
+     "urls": [
+      "https://www.nma.gov.au/explore/blog/from-the-vault-chamberlain-collection",
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "unease",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 16.629,
+      "gain": 0.7,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "paper",
+      "at": 18.924,
+      "gain": 0.6,
+      "word": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_board",
+    "set_code": "renderer/sets.js#task_force",
+    "characters": [
+     "characters/figures/detective.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_case",
+   "scene_type": "tcv1_case",
+   "start": 22.143,
+   "duration": 7.857,
+   "narration": [
+    "Prosecutors said she killed Azaria in the family car,",
+    "and that tests found a baby's blood. Even a spray of it, under the dashboard."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 22.393,
+     "end": 25.168,
+     "words": [
+      {
+       "w": "Prosecutors",
+       "start": 22.428,
+       "end": 23.066
+      },
+      {
+       "w": "said",
+       "start": 23.066,
+       "end": 23.299
+      },
+      {
+       "w": "she",
+       "start": 23.299,
+       "end": 23.473
+      },
+      {
+       "w": "killed",
+       "start": 23.473,
+       "end": 23.821
+      },
+      {
+       "w": "Azaria",
+       "start": 23.821,
+       "end": 24.169
+      },
+      {
+       "w": "in",
+       "start": 24.169,
+       "end": 24.285
+      },
+      {
+       "w": "the",
+       "start": 24.285,
+       "end": 24.46
+      },
+      {
+       "w": "family",
+       "start": 24.46,
+       "end": 24.808
+      },
+      {
+       "w": "car,",
+       "start": 24.808,
+       "end": 25.04
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 25.568,
+     "end": 29.237,
+     "words": [
+      {
+       "w": "and",
+       "start": 25.591,
+       "end": 25.684
+      },
+      {
+       "w": "that",
+       "start": 25.707,
+       "end": 25.881
+      },
+      {
+       "w": "tests",
+       "start": 25.94,
+       "end": 26.195
+      },
+      {
+       "w": "found",
+       "start": 26.23,
+       "end": 26.45
+      },
+      {
+       "w": "a",
+       "start": 26.485,
+       "end": 26.52
+      },
+      {
+       "w": "baby's",
+       "start": 26.555,
+       "end": 26.892
+      },
+      {
+       "w": "blood.",
+       "start": 26.95,
+       "end": 27.24
+      },
+      {
+       "w": "Even",
+       "start": 27.402,
+       "end": 27.611
+      },
+      {
+       "w": "a",
+       "start": 27.635,
+       "end": 27.669
+      },
+      {
+       "w": "spray",
+       "start": 27.693,
+       "end": 27.971
+      },
+      {
+       "w": "of",
+       "start": 28.006,
+       "end": 28.064
+      },
+      {
+       "w": "it,",
+       "start": 28.111,
+       "end": 28.192
+      },
+      {
+       "w": "under",
+       "start": 28.262,
+       "end": 28.459
+      },
+      {
+       "w": "the",
+       "start": 28.494,
+       "end": 28.54
+      },
+      {
+       "w": "dashboard.",
+       "start": 28.563,
+       "end": 29.167
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (warm grade); judge: sit; barrister: stand -> present -> point; keyed camera moves.",
+   "shot_size": "medium",
+   "set": "courtroom",
+   "grade": "warm",
+   "camera": {
+    "keys": 2,
+    "handheld": 0
+   },
+   "characters": [
+    "barrister",
+    "judge"
+   ],
+   "character_actions": [
+    {
+     "id": "judge",
+     "outfit": "default",
+     "depth": 0.34,
+     "scale": 0.5,
+     "start_pose": "sit",
+     "start_expr": "stern",
+     "actions": []
+    },
+    {
+     "id": "barrister",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.05,
+     "start_pose": "stand",
+     "start_expr": "stern",
+     "actions": [
+      {
+       "at": 0.92,
+       "pose": "present"
+      },
+      {
+       "at": 5.45,
+       "pose": "point"
+      }
+     ]
+    }
+   ],
+   "overlays": [],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "C_prosecution",
+     "type": "established",
+     "claim_text": "The prosecution case was that Lindy killed Azaria in the family car.",
+     "urls": [
+      "https://famous-trials.com/dingo/456-chronology",
+      "https://www.nma.gov.au/about/media/media-releases-listing-by-year/2014/national-museum-acquires-michael-chamberlain-torana"
+     ]
+    },
+    {
+     "claim": "C_spray_claim",
+     "type": "established",
+     "claim_text": "Forensic evidence at trial alleged infant (foetal) blood in the car, including a 'spray' under the dashboard.",
+     "urls": [
+      "https://www.nma.gov.au/about/media/media-releases-listing-by-year/2014/national-museum-acquires-michael-chamberlain-torana",
+      "https://www.abc.net.au/news/2014-08-19/chamberlain-torana-becomes-museum-piece-for-all-to-see/5674120",
+      "https://newcastleherald.com.au/story/204737/blood-expert-remembers-azaria-case"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "step",
+      "at": 22.443,
+      "gain": 0.6
+     },
+     {
+      "name": "step",
+      "at": 22.843,
+      "gain": 0.5
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_case",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/barrister.json",
+     "characters/figures/judge.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_verdict",
+   "scene_type": "tcv1_verdict",
+   "start": 30.0,
+   "duration": 9.286,
+   "narration": [
+    "October 1982: guilty of murder. Life, with hard labour.",
+    "In 1984, the High Court rejected her appeal, three votes to two."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 30.25,
+     "end": 34.151,
+     "words": [
+      {
+       "w": "October",
+       "start": 30.296,
+       "end": 30.749
+      },
+      {
+       "w": "1982:",
+       "start": 30.807,
+       "end": 31.736
+      },
+      {
+       "w": "guilty",
+       "start": 32.073,
+       "end": 32.421
+      },
+      {
+       "w": "of",
+       "start": 32.456,
+       "end": 32.526
+      },
+      {
+       "w": "murder.",
+       "start": 32.572,
+       "end": 32.885
+      },
+      {
+       "w": "Life,",
+       "start": 33.036,
+       "end": 33.315
+      },
+      {
+       "w": "with",
+       "start": 33.361,
+       "end": 33.466
+      },
+      {
+       "w": "hard",
+       "start": 33.501,
+       "end": 33.698
+      },
+      {
+       "w": "labour.",
+       "start": 33.745,
+       "end": 34.046
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 34.651,
+     "end": 38.784,
+     "words": [
+      {
+       "w": "In",
+       "start": 34.721,
+       "end": 34.802
+      },
+      {
+       "w": "1984,",
+       "start": 34.837,
+       "end": 35.649
+      },
+      {
+       "w": "the",
+       "start": 36.102,
+       "end": 36.172
+      },
+      {
+       "w": "High",
+       "start": 36.195,
+       "end": 36.346
+      },
+      {
+       "w": "Court",
+       "start": 36.416,
+       "end": 36.601
+      },
+      {
+       "w": "rejected",
+       "start": 36.625,
+       "end": 37.019
+      },
+      {
+       "w": "her",
+       "start": 37.043,
+       "end": 37.159
+      },
+      {
+       "w": "appeal,",
+       "start": 37.182,
+       "end": 37.495
+      },
+      {
+       "w": "three",
+       "start": 37.855,
+       "end": 38.03
+      },
+      {
+       "w": "votes",
+       "start": 38.053,
+       "end": 38.308
+      },
+      {
+       "w": "to",
+       "start": 38.343,
+       "end": 38.436
+      },
+      {
+       "w": "two.",
+       "start": 38.482,
+       "end": 38.68
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (warm grade); judge: sit -> gavel -> sit; lindy [court]: hands_together -> shocked -> distraught -> hand_to_face; keyed camera moves; overlays: card 'NT SUPREME COURT · 29 OCT 1982 / GUILTY OF MURDER / LIFE, WITH HARD LABOUR', label 'HIGH COURT OF AUSTRALIA · 1984', vote.",
+   "shot_size": "medium",
+   "set": "courtroom",
+   "grade": "warm",
+   "camera": {
+    "keys": 2,
+    "handheld": 0
+   },
+   "characters": [
+    "judge",
+    "lindy"
+   ],
+   "character_actions": [
+    {
+     "id": "judge",
+     "outfit": "default",
+     "depth": 0.34,
+     "scale": 0.5,
+     "start_pose": "sit",
+     "start_expr": "stern",
+     "actions": [
+      {
+       "at": 1.52,
+       "pose": "gavel"
+      },
+      {
+       "at": 1.97,
+       "pose": "sit"
+      }
+     ],
+     "visible": [
+      -1,
+      4.45
+     ]
+    },
+    {
+     "id": "lindy",
+     "outfit": "court",
+     "depth": 1,
+     "scale": 1,
+     "start_pose": "hands_together",
+     "start_expr": "blank",
+     "actions": [
+      {
+       "at": 2.07,
+       "expr": "shocked"
+      },
+      {
+       "at": 2.87,
+       "expr": "distraught"
+      },
+      {
+       "at": 6.63,
+       "pose": "hand_to_face",
+       "expr": "sad"
+      }
+     ],
+     "visible": [
+      3.25
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 2.07,
+     "text": "NT SUPREME COURT · 29 OCT 1982 / GUILTY OF MURDER / LIFE, WITH HARD LABOUR"
+    },
+    {
+     "type": "label",
+     "at": 4.65,
+     "text": "HIGH COURT OF AUSTRALIA · 1984"
+    },
+    {
+     "type": "vote",
+     "at": 7.76
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "C_convicted",
+     "type": "established",
+     "claim_text": "On 29 October 1982 Lindy was convicted of murder and sentenced to life imprisonment with hard labour.",
+     "urls": [
+      "https://famous-trials.com/dingo/456-chronology",
+      "https://www.nma.gov.au/defining-moments/resources/azaria-chamberlain-inquest",
+      "https://www.odt.co.nz/node/119948"
+     ]
+    },
+    {
+     "claim": "C_michael",
+     "type": "established",
+     "claim_text": "Michael Chamberlain was convicted as an accessory after the fact (18-month suspended sentence).",
+     "urls": [
+      "https://famous-trials.com/dingo/456-chronology",
+      "https://www.odt.co.nz/node/119948"
+     ]
+    },
+    {
+     "claim": "C_highcourt",
+     "type": "established",
+     "claim_text": "The High Court dismissed the appeal 3-2 on 22 February 1984 (Chamberlain v R (No 2) [1984] HCA 7).",
+     "urls": [
+      "https://blogs.unimelb.edu.au/opinionsonhigh/?p=5064",
+      "https://au.vlex.com/vid/chamberlain-v-r-804816905"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "cold",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "gavel",
+      "at": 31.973,
+      "gain": 1.0,
+      "word": [
+       0,
+       2
+      ]
+     },
+     {
+      "name": "stamp",
+      "at": 37.805,
+      "gain": 0.5,
+      "word": [
+       1,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_verdict",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/judge.json",
+     "characters/figures/lindy.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s08_search",
+   "scene_type": "tcv1_search",
+   "start": 39.286,
+   "duration": 8.571,
+   "narration": [
+    "Then, in early 1986, a tourist fell to his death from Uluru.",
+    "Searching near dingo dens below the rock, police found something else."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 39.536,
+     "end": 43.658,
+     "words": [
+      {
+       "w": "Then,",
+       "start": 39.582,
+       "end": 39.768
+      },
+      {
+       "w": "in",
+       "start": 39.838,
+       "end": 39.942
+      },
+      {
+       "w": "early",
+       "start": 39.966,
+       "end": 40.175
+      },
+      {
+       "w": "1986,",
+       "start": 40.233,
+       "end": 41.312
+      },
+      {
+       "w": "a",
+       "start": 41.73,
+       "end": 41.777
+      },
+      {
+       "w": "tourist",
+       "start": 41.858,
+       "end": 42.183
+      },
+      {
+       "w": "fell",
+       "start": 42.206,
+       "end": 42.438
+      },
+      {
+       "w": "to",
+       "start": 42.508,
+       "end": 42.566
+      },
+      {
+       "w": "his",
+       "start": 42.589,
+       "end": 42.706
+      },
+      {
+       "w": "death",
+       "start": 42.752,
+       "end": 42.984
+      },
+      {
+       "w": "from",
+       "start": 43.007,
+       "end": 43.17
+      },
+      {
+       "w": "Uluru.",
+       "start": 43.216,
+       "end": 43.576
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 44.108,
+     "end": 47.463,
+     "words": [
+      {
+       "w": "Searching",
+       "start": 44.178,
+       "end": 44.526
+      },
+      {
+       "w": "near",
+       "start": 44.549,
+       "end": 44.7
+      },
+      {
+       "w": "dingo",
+       "start": 44.735,
+       "end": 45.002
+      },
+      {
+       "w": "dens",
+       "start": 45.06,
+       "end": 45.327
+      },
+      {
+       "w": "below",
+       "start": 45.385,
+       "end": 45.594
+      },
+      {
+       "w": "the",
+       "start": 45.617,
+       "end": 45.71
+      },
+      {
+       "w": "rock,",
+       "start": 45.733,
+       "end": 46.035
+      },
+      {
+       "w": "police",
+       "start": 46.117,
+       "end": 46.43
+      },
+      {
+       "w": "found",
+       "start": 46.465,
+       "end": 46.697
+      },
+      {
+       "w": "something",
+       "start": 46.743,
+       "end": 47.069
+      },
+      {
+       "w": "else.",
+       "start": 47.15,
+       "end": 47.405
+      }
+     ]
+    }
+   ],
+   "visual_description": "rock night (night grade); searcher_b: torch (walks); searcher: torch_low (walks); searcher_b: torch_low -> realise (walks); searcher: torch -> kneel (walks); keyed camera moves, handheld; overlays: label 'EARLY 1986'.",
+   "shot_size": "medium",
+   "set": "rock_night",
+   "grade": "night",
+   "camera": {
+    "keys": 3,
+    "handheld": 6
+   },
+   "characters": [
+    "searcher",
+    "searcher_b"
+   ],
+   "character_actions": [
+    {
+     "id": "searcher_b",
+     "outfit": "default",
+     "depth": 0.6,
+     "scale": 0.28,
+     "start_pose": "torch",
+     "start_expr": "focused",
+     "actions": [],
+     "walk": {
+      "from": 120,
+      "to": 330,
+      "at": 0.4,
+      "dur": 4.2
+     },
+     "visible": [
+      0.2,
+      4.62
+     ]
+    },
+    {
+     "id": "searcher",
+     "outfit": "default",
+     "depth": 0.6,
+     "scale": 0.28,
+     "start_pose": "torch_low",
+     "start_expr": "focused",
+     "actions": [],
+     "walk": {
+      "from": 760,
+      "to": 600,
+      "at": 0.6,
+      "dur": 4
+     },
+     "visible": [
+      0.2,
+      4.62
+     ]
+    },
+    {
+     "id": "searcher_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.9,
+     "start_pose": "torch_low",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 7.38,
+       "expr": "realise"
+      }
+     ],
+     "walk": {
+      "from": -380,
+      "to": 130,
+      "at": 4.62,
+      "dur": 2.6
+     },
+     "visible": [
+      4.42
+     ]
+    },
+    {
+     "id": "searcher",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.95,
+     "start_pose": "torch",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 6.98,
+       "pose": "kneel",
+       "expr": "realise"
+      }
+     ],
+     "walk": {
+      "from": -160,
+      "to": 380,
+      "at": 4.42,
+      "dur": 2.6
+     },
+     "visible": [
+      4.22
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.3,
+     "text": "EARLY 1986"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "C_fall",
+     "type": "established",
+     "claim_text": "In early 1986 a British tourist fell to his death from Uluru; searchers looked for his remains below the rock, in an area of dingo lairs. (Exact date of the fall varies by source; not named on screen.)",
+     "urls": [
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719",
+      "https://macaudailytimes.com.mo/?p=37928",
+      "https://www.nma.gov.au/explore/blog/from-the-vault-chamberlain-collection"
+     ]
+    },
+    {
+     "claim": "C_found",
+     "type": "established",
+     "claim_text": "Azaria's matinee jacket was found on 2 February 1986, partly buried near a dingo lair, during that search.",
+     "urls": [
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719",
+      "https://www.nma.gov.au/explore/blog/from-the-vault-chamberlain-collection",
+      "https://macaudailytimes.com.mo/?p=37928"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "hush",
+    "music_gain_db": -4,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 39.286,
+      "gain": 0.7
+     },
+     {
+      "name": "wind",
+      "at": 42.886,
+      "gain": 0.6
+     },
+     {
+      "name": "step",
+      "at": 43.978,
+      "gain": 0.4,
+      "word": [
+       1,
+       0
+      ]
+     },
+     {
+      "name": "step",
+      "at": 45.06,
+      "gain": 0.4,
+      "word": [
+       1,
+       3
+      ]
+     },
+     {
+      "name": "step",
+      "at": 46.565,
+      "gain": 0.5,
+      "word": [
+       1,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_search",
+    "set_code": "renderer/sets.js#rock_night",
+    "characters": [
+     "characters/figures/searcher.json",
+     "characters/figures/searcher_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s09_jacket",
+   "scene_type": "tcv1_jacket",
+   "start": 47.857,
+   "duration": 4.286,
+   "narration": [
+    "Azaria's matinee jacket."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 48.707,
+     "end": 50.274,
+     "words": [
+      {
+       "w": "Azaria's",
+       "start": 48.777,
+       "end": 49.311
+      },
+      {
+       "w": "matinee",
+       "start": 49.38,
+       "end": 49.705
+      },
+      {
+       "w": "jacket.",
+       "start": 49.752,
+       "end": 50.205
+      }
+     ]
+    }
+   ],
+   "visual_description": "sand close (none grade); camera push/pull; overlays: label '2 FEBRUARY 1986'.",
+   "shot_size": "insert/graphic",
+   "set": "sand_close",
+   "grade": "none",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1.16
+    },
+    "to": {
+     "x": 0,
+     "y": -20,
+     "z": 1
+    },
+    "handheld": 0
+   },
+   "characters": [],
+   "character_actions": [],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 1.6,
+     "text": "2 FEBRUARY 1986"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT THE ACTUAL JACKET",
+   "transition_in": "flash",
+   "sources": [
+    {
+     "claim": "C_found",
+     "type": "established",
+     "claim_text": "Azaria's matinee jacket was found on 2 February 1986, partly buried near a dingo lair, during that search.",
+     "urls": [
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719",
+      "https://www.nma.gov.au/explore/blog/from-the-vault-chamberlain-collection",
+      "https://macaudailytimes.com.mo/?p=37928"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "hush",
+    "music_gain_db": -8,
+    "sfx": [
+     {
+      "name": "hit",
+      "at": 47.857,
+      "gain": 0.8
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_jacket",
+    "set_code": "renderer/sets.js#sand_close",
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s10_release",
+   "scene_type": "tcv1_release",
+   "start": 52.143,
+   "duration": 4.286,
+   "narration": [
+    "Five days later, Lindy was released from prison."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 52.393,
+     "end": 55.214,
+     "words": [
+      {
+       "w": "Five",
+       "start": 52.416,
+       "end": 52.637
+      },
+      {
+       "w": "days",
+       "start": 52.672,
+       "end": 52.915
+      },
+      {
+       "w": "later,",
+       "start": 52.95,
+       "end": 53.299
+      },
+      {
+       "w": "Lindy",
+       "start": 53.751,
+       "end": 54.03
+      },
+      {
+       "w": "was",
+       "start": 54.076,
+       "end": 54.227
+      },
+      {
+       "w": "released",
+       "start": 54.274,
+       "end": 54.599
+      },
+      {
+       "w": "from",
+       "start": 54.622,
+       "end": 54.761
+      },
+      {
+       "w": "prison.",
+       "start": 54.796,
+       "end": 55.156
+      }
+     ]
+    }
+   ],
+   "visual_description": "gate dawn (dawn grade); lindy [release]: stand -> relieved (walks); camera push/pull; overlays: label '7 FEBRUARY 1986'.",
+   "shot_size": "wide",
+   "set": "gate_dawn",
+   "grade": "dawn",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": 0,
+     "y": 30,
+     "z": 1.05
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "lindy"
+   ],
+   "character_actions": [
+    {
+     "id": "lindy",
+     "outfit": "release",
+     "depth": 1,
+     "scale": 0.55,
+     "start_pose": "stand",
+     "start_expr": "blank",
+     "actions": [
+      {
+       "at": 1.3,
+       "move": true
+      },
+      {
+       "at": 2.13,
+       "expr": "relieved"
+      }
+     ],
+     "walk": {
+      "from": 520,
+      "to": 690,
+      "at": 1.3,
+      "dur": 2.8
+     },
+     "visible": [
+      0.9
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.4,
+     "text": "7 FEBRUARY 1986"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "C_release",
+     "type": "established",
+     "claim_text": "Lindy was released on 7 February 1986 (sentence remitted; not a pardon), five days after the jacket was found.",
+     "urls": [
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719",
+      "https://dynamic-rsnz.natlib.govt.nz/newspapers/CHP19860208.2.2",
+      "https://macaudailytimes.com.mo/?p=37928"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "door",
+      "at": 52.443,
+      "gain": 0.9
+     },
+     {
+      "name": "step",
+      "at": 53.743,
+      "gain": 0.4
+     },
+     {
+      "name": "step",
+      "at": 54.303,
+      "gain": 0.4
+     },
+     {
+      "name": "step",
+      "at": 54.863,
+      "gain": 0.4
+     },
+     {
+      "name": "step",
+      "at": 55.423,
+      "gain": 0.4
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_release",
+    "set_code": "renderer/sets.js#gate_dawn",
+    "characters": [
+     "characters/figures/lindy.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s11_science",
+   "scene_type": "tcv1_science",
+   "start": 56.429,
+   "duration": 10.714,
+   "narration": [
+    "Then a Royal Commission re-examined the science.",
+    "The 'blood spray' under the dashboard? Sound-deadening compound, applied at the factory.",
+    "No blood was found in the car at all."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 56.679,
+     "end": 59.28,
+     "words": [
+      {
+       "w": "Then",
+       "start": 56.714,
+       "end": 56.981
+      },
+      {
+       "w": "a",
+       "start": 57.062,
+       "end": 57.132
+      },
+      {
+       "w": "Royal",
+       "start": 57.167,
+       "end": 57.422
+      },
+      {
+       "w": "Commission",
+       "start": 57.492,
+       "end": 57.898
+      },
+      {
+       "w": "re-examined",
+       "start": 57.944,
+       "end": 58.525
+      },
+      {
+       "w": "the",
+       "start": 58.548,
+       "end": 58.629
+      },
+      {
+       "w": "science.",
+       "start": 58.676,
+       "end": 59.187
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 59.68,
+     "end": 64.184,
+     "words": [
+      {
+       "w": "The",
+       "start": 59.703,
+       "end": 59.75
+      },
+      {
+       "w": "'blood",
+       "start": 59.773,
+       "end": 59.912
+      },
+      {
+       "w": "spray'",
+       "start": 59.947,
+       "end": 60.237
+      },
+      {
+       "w": "under",
+       "start": 60.272,
+       "end": 60.4
+      },
+      {
+       "w": "the",
+       "start": 60.435,
+       "end": 60.493
+      },
+      {
+       "w": "dashboard?",
+       "start": 60.516,
+       "end": 61.166
+      },
+      {
+       "w": "Sound-deadening",
+       "start": 61.329,
+       "end": 62.339
+      },
+      {
+       "w": "compound,",
+       "start": 62.374,
+       "end": 63.0
+      },
+      {
+       "w": "applied",
+       "start": 63.14,
+       "end": 63.418
+      },
+      {
+       "w": "at",
+       "start": 63.453,
+       "end": 63.511
+      },
+      {
+       "w": "the",
+       "start": 63.546,
+       "end": 63.593
+      },
+      {
+       "w": "factory.",
+       "start": 63.616,
+       "end": 64.08
+      }
+     ]
+    },
+    {
+     "line": 2,
+     "start": 64.734,
+     "end": 66.476,
+     "words": [
+      {
+       "w": "No",
+       "start": 64.78,
+       "end": 64.891
+      },
+      {
+       "w": "blood",
+       "start": 64.891,
+       "end": 65.17
+      },
+      {
+       "w": "was",
+       "start": 65.17,
+       "end": 65.337
+      },
+      {
+       "w": "found",
+       "start": 65.337,
+       "end": 65.615
+      },
+      {
+       "w": "in",
+       "start": 65.615,
+       "end": 65.726
+      },
+      {
+       "w": "the",
+       "start": 65.726,
+       "end": 65.893
+      },
+      {
+       "w": "car",
+       "start": 65.893,
+       "end": 66.06
+      },
+      {
+       "w": "at",
+       "start": 66.06,
+       "end": 66.171
+      },
+      {
+       "w": "all.",
+       "start": 66.171,
+       "end": 66.394
+      }
+     ]
+    }
+   ],
+   "visual_description": "lab (cold grade); scientist: examine -> realise -> determined -> stand; keyed camera moves; overlays: label 'ROYAL COMMISSION · 1986-87', callout 'THE 'BLOOD SPRAY'', callout 'SOUND-DEADENING COMPOUND', card 'BLOOD FOUND IN THE CAR: / NONE'.",
+   "shot_size": "close-up",
+   "set": "lab",
+   "grade": "cold",
+   "camera": {
+    "keys": 3,
+    "handheld": 0
+   },
+   "characters": [
+    "scientist"
+   ],
+   "character_actions": [
+    {
+     "id": "scientist",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.35,
+     "start_pose": "examine",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 4.9,
+       "expr": "realise"
+      },
+      {
+       "at": 7.19,
+       "expr": "determined"
+      },
+      {
+       "at": 8.3,
+       "pose": "stand",
+       "turn_head": true
+      }
+     ],
+     "prop": "magnifier"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.25,
+     "text": "ROYAL COMMISSION · 1986-87"
+    },
+    {
+     "type": "callout",
+     "at": 3.34,
+     "text": "THE 'BLOOD SPRAY'"
+    },
+    {
+     "type": "callout",
+     "at": 4.9,
+     "text": "SOUND-DEADENING COMPOUND"
+    },
+    {
+     "type": "card",
+     "at": 8.36,
+     "text": "BLOOD FOUND IN THE CAR: / NONE"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "C_royal",
+     "type": "established",
+     "claim_text": "A Royal Commission (Justice Trevor Morling) re-examined the evidence; its 1987 report found serious doubts about the convictions.",
+     "urls": [
+      "https://www.famous-trials.com/dingo/468-morlingreport",
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719",
+      "https://parliament.nt.gov.au/__data/assets/pdf_file/0008/367730/PR02-Debates-2-June-25-June-1987.pdf"
+     ]
+    },
+    {
+     "claim": "C_noblood",
+     "type": "established",
+     "claim_text": "The 'spray' under the dashboard was a sound-deadening compound applied by the manufacturer; the inquiry found no blood in the car.",
+     "urls": [
+      "https://www.nma.gov.au/about/media/media-releases-listing-by-year/2014/national-museum-acquires-michael-chamberlain-torana",
+      "https://www.abc.net.au/news/2014-08-19/chamberlain-torana-becomes-museum-piece-for-all-to-see/5674120",
+      "https://canberratimes.com.au/story/6869395/infamous-chamberlain-torana-part-of-our-lived-history-at-national-museum"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": -2,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 56.629,
+      "gain": 0.6
+     },
+     {
+      "name": "click",
+      "at": 61.279,
+      "gain": 0.5,
+      "word": [
+       1,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_science",
+    "set_code": "renderer/sets.js#lab",
+    "characters": [
+     "characters/figures/scientist.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s12_quashed",
+   "scene_type": "tcv1_quashed",
+   "start": 67.143,
+   "duration": 4.286,
+   "narration": [
+    "In 1988, all the convictions were quashed."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 67.393,
+     "end": 70.017,
+     "words": [
+      {
+       "w": "In",
+       "start": 67.451,
+       "end": 67.532
+      },
+      {
+       "w": "1988,",
+       "start": 67.556,
+       "end": 68.426
+      },
+      {
+       "w": "all",
+       "start": 68.531,
+       "end": 68.693
+      },
+      {
+       "w": "the",
+       "start": 68.728,
+       "end": 68.786
+      },
+      {
+       "w": "convictions",
+       "start": 68.833,
+       "end": 69.285
+      },
+      {
+       "w": "were",
+       "start": 69.32,
+       "end": 69.413
+      },
+      {
+       "w": "quashed.",
+       "start": 69.46,
+       "end": 69.947
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (warm grade); judge: sit_read; michael: stand_tense -> stand; lindy [release]: hands_together -> relieved -> hand_to_face; camera push/pull; overlays: label '15 SEPTEMBER 1988', stamp 'QUASHED'.",
+   "shot_size": "medium",
+   "set": "courtroom",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 40,
+     "z": 1
+    },
+    "to": {
+     "x": 0,
+     "y": 70,
+     "z": 1.08
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "judge",
+    "lindy",
+    "michael"
+   ],
+   "character_actions": [
+    {
+     "id": "judge",
+     "outfit": "default",
+     "depth": 0.34,
+     "scale": 0.5,
+     "start_pose": "sit_read",
+     "start_expr": "neutral",
+     "actions": []
+    },
+    {
+     "id": "michael",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.02,
+     "start_pose": "stand_tense",
+     "start_expr": "worried",
+     "actions": [
+      {
+       "at": 2.32,
+       "pose": "stand",
+       "expr": "relieved"
+      },
+      {
+       "at": 2.82,
+       "turn_head": true
+      }
+     ]
+    },
+    {
+     "id": "lindy",
+     "outfit": "release",
+     "depth": 1,
+     "scale": 0.97,
+     "start_pose": "hands_together",
+     "start_expr": "worried",
+     "actions": [
+      {
+       "at": 2.32,
+       "expr": "relieved"
+      },
+      {
+       "at": 2.62,
+       "pose": "hand_to_face"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.3,
+     "text": "15 SEPTEMBER 1988"
+    },
+    {
+     "type": "stamp",
+     "at": 2.32,
+     "text": "QUASHED"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "C_quashed",
+     "type": "established",
+     "claim_text": "On 15 September 1988 the NT Court of Criminal Appeal quashed all convictions of Lindy and Michael Chamberlain.",
+     "urls": [
+      "https://famous-trials.com/dingo/469-reconviction",
+      "https://adb.anu.edu.au/biography/chamberlain-azaria-chantel-9719",
+      "https://www.ebsco.com/research-starters/law/death-azaria-chamberlain"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "gavel",
+      "at": 69.31,
+      "gain": 0.8,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "stamp",
+      "at": 69.51,
+      "gain": 1.0,
+      "word": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_quashed",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/judge.json",
+     "characters/figures/lindy.json",
+     "characters/figures/michael.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s13_coroner",
+   "scene_type": "tcv1_coroner",
+   "start": 71.429,
+   "duration": 6.428,
+   "narration": [
+    "But only in 2012 did a coroner finally rule how Azaria died:",
+    "attacked and taken by a dingo."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 71.679,
+     "end": 75.116,
+     "words": [
+      {
+       "w": "But",
+       "start": 71.702,
+       "end": 71.795
+      },
+      {
+       "w": "only",
+       "start": 71.818,
+       "end": 72.155
+      },
+      {
+       "w": "in",
+       "start": 72.19,
+       "end": 72.271
+      },
+      {
+       "w": "2012",
+       "start": 72.306,
+       "end": 72.886
+      },
+      {
+       "w": "did",
+       "start": 72.921,
+       "end": 73.026
+      },
+      {
+       "w": "a",
+       "start": 73.061,
+       "end": 73.084
+      },
+      {
+       "w": "coroner",
+       "start": 73.142,
+       "end": 73.42
+      },
+      {
+       "w": "finally",
+       "start": 73.467,
+       "end": 73.838
+      },
+      {
+       "w": "rule",
+       "start": 73.873,
+       "end": 74.059
+      },
+      {
+       "w": "how",
+       "start": 74.082,
+       "end": 74.233
+      },
+      {
+       "w": "Azaria",
+       "start": 74.28,
+       "end": 74.674
+      },
+      {
+       "w": "died:",
+       "start": 74.721,
+       "end": 75.058
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 75.766,
+     "end": 77.461,
+     "words": [
+      {
+       "w": "attacked",
+       "start": 75.847,
+       "end": 76.265
+      },
+      {
+       "w": "and",
+       "start": 76.288,
+       "end": 76.358
+      },
+      {
+       "w": "taken",
+       "start": 76.393,
+       "end": 76.672
+      },
+      {
+       "w": "by",
+       "start": 76.718,
+       "end": 76.857
+      },
+      {
+       "w": "a",
+       "start": 76.904,
+       "end": 76.962
+      },
+      {
+       "w": "dingo.",
+       "start": 76.997,
+       "end": 77.38
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (cold grade); official: sit_read -> sit; camera push/pull; overlays: label '2012 · FOURTH INQUEST', card 'CORONER'S FINDING · 12 JUNE 2012 / CAUSE OF DEATH: / 'ATTACKED AND TAKEN / BY A DINGO''.",
+   "shot_size": "wide",
+   "set": "courtroom",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 60,
+     "y": -300,
+     "z": 1.4
+    },
+    "to": {
+     "x": 90,
+     "y": -330,
+     "z": 1.5
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "official"
+   ],
+   "character_actions": [
+    {
+     "id": "official",
+     "outfit": "default",
+     "depth": 0.79,
+     "scale": 0.5,
+     "start_pose": "sit_read",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 4.04,
+       "pose": "sit",
+       "expr": "neutral"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.3,
+     "text": "2012 · FOURTH INQUEST"
+    },
+    {
+     "type": "card",
+     "at": 4.19,
+     "text": "CORONER'S FINDING · 12 JUNE 2012 / CAUSE OF DEATH: / 'ATTACKED AND TAKEN / BY A DINGO'"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "C_2012",
+     "type": "established",
+     "claim_text": "On 12 June 2012, at the fourth inquest, NT Coroner Elizabeth Morris found Azaria's death was caused by being 'attacked and taken by a dingo'.",
+     "urls": [
+      "https://localcourt.nt.gov.au/sites/default/files/decisions/2012NTMC020.pdf",
+      "https://www.aljazeera.com/news/2012/06/12/coroner-finds-dingo-took-australian-baby",
+      "https://m.csmonitor.com/World/Latest-News-Wires/2012/0612/Australia-s-Azaria-Chamberlain-mystery-solved-A-dingo-did-it"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 71.629,
+      "gain": 0.5
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_coroner",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/official.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s14_end",
+   "scene_type": "tcv1_end",
+   "start": 77.857,
+   "duration": 6.429,
+   "narration": [
+    "Just as her mother said, almost thirty-two years earlier."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 78.407,
+     "end": 81.402,
+     "words": [
+      {
+       "w": "Just",
+       "start": 78.442,
+       "end": 78.639
+      },
+      {
+       "w": "as",
+       "start": 78.662,
+       "end": 78.732
+      },
+      {
+       "w": "her",
+       "start": 78.779,
+       "end": 78.86
+      },
+      {
+       "w": "mother",
+       "start": 78.895,
+       "end": 79.115
+      },
+      {
+       "w": "said,",
+       "start": 79.208,
+       "end": 79.51
+      },
+      {
+       "w": "almost",
+       "start": 79.684,
+       "end": 79.963
+      },
+      {
+       "w": "thirty-two",
+       "start": 79.998,
+       "end": 80.683
+      },
+      {
+       "w": "years",
+       "start": 80.706,
+       "end": 80.903
+      },
+      {
+       "w": "earlier.",
+       "start": 80.95,
+       "end": 81.309
+      }
+     ]
+    }
+   ],
+   "visual_description": "rock dawn (dawn grade); camera push/pull; overlays: label '17 AUG 1980 - 12 JUN 2012', svg.",
+   "shot_size": "insert/graphic",
+   "set": "rock_dawn",
+   "grade": "dawn",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -40,
+     "z": 1.12
+    },
+    "to": {
+     "x": 0,
+     "y": 0,
+     "z": 1
+    },
+    "handheld": 0
+   },
+   "characters": [],
+   "character_actions": [],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 2.04,
+     "text": "17 AUG 1980 - 12 JUN 2012"
+    },
+    {
+     "type": "svg",
+     "at": 3.75
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "C_2012",
+     "type": "established",
+     "claim_text": "On 12 June 2012, at the fourth inquest, NT Coroner Elizabeth Morris found Azaria's death was caused by being 'attacked and taken by a dingo'.",
+     "urls": [
+      "https://localcourt.nt.gov.au/sites/default/files/decisions/2012NTMC020.pdf",
+      "https://www.aljazeera.com/news/2012/06/12/coroner-finds-dingo-took-australian-baby",
+      "https://m.csmonitor.com/World/Latest-News-Wires/2012/0612/Australia-s-Azaria-Chamberlain-mystery-solved-A-dingo-did-it"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 77.857,
+      "gain": 0.5
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv01-chamberlain.js#tcv1_end",
+    "set_code": "renderer/sets.js#rock_dawn",
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}

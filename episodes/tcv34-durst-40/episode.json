@@ -1,0 +1,1127 @@
+{
+ "id": "tcv34-durst-40",
+ "number": 34,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Hot Mic Helped Convict Robert Durst",
+ "central_question": "How did a microphone he agreed to wear, and a letter he had posted years earlier, help convict Robert Durst?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "HBO": "H B O",
+   "mic": "mike",
+   "filmmakers": "film makers",
+   "1982": "nineteen eighty two",
+   "2000": "two thousand",
+   "2021": "twenty twenty one",
+   "2022": "twenty twenty two"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "34",
+  "label": "ROBERT DURST · 1982-2022"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.3
+  }
+ },
+ "figures": [
+  "rd34_durst",
+  "rd34_filmmaker",
+  "rd34_crew",
+  "detective",
+  "analyst",
+  "examiner",
+  "agent_a",
+  "agent_b",
+  "judge"
+ ],
+ "content_notes": "Closed: Robert Durst was convicted of the first-degree murder of Susan Berman on 17 September 2021, sentenced to life without parole on 14 October 2021, charged in New York with the murder of Kathleen McCormack Durst (October-November 2021) and died in custody on 10 January 2022, so that case never went to trial. Durst is drawn only as an anonymous rim-lit silhouette (not a likeness, never a photo or interview recreation), never posed heroically; the only words of his are the reported bathroom remarks, on a 'wording as reported' card that also says the audio was later shown to be re-ordered in editing. The victims are named only on the memorial card and are never shown; no violence, weapon, body, home or crime scene is drawn; the 2001 Texas case is omitted entirely. The note, envelope and letter are generic drawings (tagged 'not the real note' / 'not the real letters'), showing only the reported word 'CADAVER' and the reported 'BEVERLEY' misspelling, with no address. The studio, corridor, bathroom door and hotel corridor are generic illustrations with no HBO branding, logo, room number or real set; the microphone is a generic lavalier with no brand. Every card is our own typed graphic; no real police, court or HBO material is imitated. No dialogue is invented. Legal status verified 2026-10-13.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "rd34_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.15,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      9
+     ],
+     "name": "ping",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "R_heir",
+    "R_interview",
+    "R_mic"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Robert Durst offered to do a television interview."
+    },
+    {
+     "who": "narrator",
+     "text": "Then he went to the bathroom wearing a live mic.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "durst",
+    "offered",
+    "interview.",
+    "bathroom",
+    "live",
+    "mic."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_stakes",
+   "scene": "rd34_stakes",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "R_wife",
+    "R_berman"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His wife vanished in 1982. His best friend was shot dead in 2000.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "wife",
+    "vanished",
+    "1982.",
+    "friend",
+    "shot",
+    "dead",
+    "2000."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s03_note",
+   "scene": "rd34_note",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "R_note"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police got an anonymous note: cadaver, and her address."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "anonymous",
+    "note:",
+    "cadaver,",
+    "address."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_jinx",
+   "scene": "rd34_jinx",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "R_denied",
+    "R_interview"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He denied writing it, even to the HBO crew filming him."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "denied",
+    "HBO",
+    "crew",
+    "filming"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_letter",
+   "scene": "rd34_letter",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      0
+     ],
+     "name": "swell",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "R_letter",
+    "R_note"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The filmmakers found a letter he'd sent her."
+    },
+    {
+     "who": "narrator",
+     "text": "Same handwriting, same spelling mistake.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "letter",
+    "same",
+    "handwriting,",
+    "spelling",
+    "mistake."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_mic",
+   "scene": "rd34_mic",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "door",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "ping",
+     "gain": 0.35
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      1
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "R_mic",
+    "R_edit",
+    "R_letter"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Confronted, he went to the bathroom, mic still on."
+    },
+    {
+     "who": "narrator",
+     "text": "It caught him: killed them all, of course.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "confronted,",
+    "bathroom,",
+    "mic",
+    "still",
+    "on.",
+    "killed",
+    "them",
+    "all,"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s07_arrest",
+   "scene": "rd34_arrest",
+   "min_duration": 2.6,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "R_arrest",
+    "R_letter"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was arrested the day before it aired."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "arrested",
+    "day",
+    "before",
+    "aired."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "rd34_verdict",
+   "min_duration": 3.4,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "R_verdict",
+    "R_sentence",
+    "R_tape_trial"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2021 a jury convicted him of his friend's murder."
+    },
+    {
+     "who": "narrator",
+     "text": "Sentence: life without parole.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "2021",
+    "convicted",
+    "murder.",
+    "life",
+    "without",
+    "parole."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s09_end",
+   "scene": "rd34_end",
+   "min_duration": 4.0,
+   "pad_after": 1.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "R_death",
+    "R_kathie_charge",
+    "R_victims"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He died in custody in 2022, charged with his wife's murder too."
+    },
+    {
+     "who": "narrator",
+     "text": "We remember them both.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "died",
+    "custody",
+    "2022,",
+    "charged",
+    "wife's",
+    "remember"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "R_heir",
+   "type": "established",
+   "nature": "fact",
+   "text": "Robert Durst was a New York real-estate heir ('scion' of the Durst family). Narration: 'Robert Durst'; label: 'NEW YORK REAL-ESTATE HEIR'.",
+   "sources": [
+    "bangor_wire",
+    "abc7_arrest",
+    "csm_arrest",
+    "nbc_jinx2"
+   ]
+  },
+  {
+   "id": "R_interview",
+   "type": "established",
+   "nature": "fact",
+   "text": "Durst approached the filmmaker after the 2010 feature 'All Good Things' and volunteered to be interviewed for the HBO series 'The Jinx' (THR: about 21 hours of interviews, not stated). Narration: 'Robert Durst offered to do a television interview.'",
+   "sources": [
+    "thr_jinx2",
+    "greenwich_verdict",
+    "nbc_jinx2"
+   ]
+  },
+  {
+   "id": "R_mic",
+   "type": "established",
+   "nature": "fact",
+   "text": "After the final interview (recorded 18 April 2012) he went to the bathroom still wearing a live microphone and was recorded saying, among other remarks, 'There it is. You're caught.' and 'What the hell did I do? Killed them all, of course.' The finale aired on 15 March 2015. Narration: 'Then he went to the bathroom wearing a live mic.' / 'It caught him: killed them all, of course.' The card says 'wording as reported'.",
+   "sources": [
+    "abc7_finale",
+    "abc7_arrest",
+    "cns_tape",
+    "ap_audio"
+   ]
+  },
+  {
+   "id": "R_edit",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: a 2019 New York Times report on the unedited transcript showed the bathroom remarks were pulled from a longer sequence of rambling remarks and re-ordered; the filmmakers said they put 'killed them all' last for dramatic effect; the editing came out at trial. Card: 'THE AUDIO WAS LATER SHOWN TO BE RE-ORDERED IN EDITING'.",
+   "sources": [
+    "spin_edit",
+    "newser_edit",
+    "buzzfeed_edit",
+    "dailybeast_edit",
+    "aol_refresher"
+   ]
+  },
+  {
+   "id": "R_wife",
+   "type": "established",
+   "nature": "fact",
+   "text": "Kathleen McCormack Durst, his first wife, 29 and a medical student, was last seen on 31 January 1982 (Durst said he put her on a train at South Salem, New York); she was never found. Narration: 'His wife vanished in 1982.' Card: '1982 · HIS WIFE VANISHED · NEVER FOUND'. She is named only on the memorial card.",
+   "sources": [
+    "nbc_kathie",
+    "cbs_kathie",
+    "news12_kathie",
+    "cnn_indict"
+   ]
+  },
+  {
+   "id": "R_berman",
+   "type": "established",
+   "nature": "fact",
+   "text": "Susan Berman, 55, a writer and his close friend (CBS: 'best friend'), was shot dead at her home near Beverly Hills in December 2000, as New York investigators prepared to question her about Kathleen's disappearance. Narration: 'His best friend was shot dead in 2000.' She is named only on the memorial card; nothing of the crime is shown.",
+   "sources": [
+    "abc7_berman",
+    "nbc_hearing",
+    "cbs_sentence"
+   ]
+  },
+  {
+   "id": "R_note",
+   "type": "established",
+   "nature": "fact",
+   "text": "An anonymous note mailed to Beverly Hills police gave only Berman's address and the word 'CADAVER', in block letters; the envelope misspelled Beverly as 'Beverley'. Narration: 'Police got an anonymous note: cadaver, and her address.' The drawn envelope and note are generic (tag 'NOT THE REAL NOTE'); no address is drawn.",
+   "sources": [
+    "ap_lawyers",
+    "ap_cadaver",
+    "ap_closing"
+   ]
+  },
+  {
+   "id": "R_denied",
+   "type": "established",
+   "nature": "fact",
+   "text": "Durst denied writing the note for years, to police and to the documentary filmmakers; at trial in August 2021 he admitted writing it but denied the killing. Narration: 'He denied writing it, even to the HBO crew filming him.'",
+   "sources": [
+    "ap_cadaver",
+    "ap_closing",
+    "ap_lawyers"
+   ]
+  },
+  {
+   "id": "R_letter",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Jinx filmmakers found an earlier letter Durst had sent Berman with nearly identical handwriting and the same 'Beverley' misspelling; confronted with the two side by side he could not tell them apart. A law-enforcement official told AP the handwriting analysis linking the letters was the key new evidence given to prosecutors before his arrest; the prosecutor called the note the 'smoking gun'. Narration: 'The filmmakers found a letter he'd sent her.' / 'Same handwriting, same spelling mistake.'",
+   "sources": [
+    "ap_lawyers",
+    "ap_cadaver",
+    "chn_arrest",
+    "fox_letter",
+    "ap_closing"
+   ]
+  },
+  {
+   "id": "R_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "FBI agents arrested Durst at a New Orleans hotel on Saturday 14 March 2015, the day before the finale aired, on a Los Angeles warrant for Berman's murder. Narration: 'He was arrested the day before it aired.' Card: 'NEW ORLEANS · 14 MARCH 2015'.",
+   "sources": [
+    "abc7_arrest",
+    "apr_arrest",
+    "csm_arrest",
+    "nbc_jinx2"
+   ]
+  },
+  {
+   "id": "R_tape_trial",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: the bathroom recording was played to the jury in Los Angeles during opening statements in March 2020; the trial was paused by the pandemic and resumed in May 2021 with the same jury. Card: 'THE LETTER AND THE TAPE WERE BOTH IN EVIDENCE'.",
+   "sources": [
+    "cns_tape",
+    "guardian_open",
+    "ap_audio"
+   ]
+  },
+  {
+   "id": "R_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "A Los Angeles jury convicted Durst of the first-degree murder of Susan Berman, with special circumstances, on 17 September 2021. Narration: 'In 2021 a jury convicted him of his friend's murder.'",
+   "sources": [
+    "cbs_sentence",
+    "rs_sentence",
+    "greenwich_verdict",
+    "abc13_timeline"
+   ]
+  },
+  {
+   "id": "R_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "Judge Mark Windham sentenced him to life without the possibility of parole on 14 October 2021. Narration: 'Sentence: life without parole.'",
+   "sources": [
+    "cbs_sentence",
+    "spectrum_sentence",
+    "rs_sentence"
+   ]
+  },
+  {
+   "id": "R_kathie_charge",
+   "type": "established",
+   "nature": "fact",
+   "text": "A second-degree murder complaint over Kathleen's death was filed in Lewisboro Town Court on 19 October 2021 and a Westchester County grand jury indictment was reported on 1 November 2021. Narration: 'charged with his wife's murder too'. Card: 'OCT-NOV 2021'.",
+   "sources": [
+    "cnn_indict",
+    "oxygen_charge",
+    "avpress_charge"
+   ]
+  },
+  {
+   "id": "R_death",
+   "type": "established",
+   "nature": "fact",
+   "text": "Durst died of natural causes in custody (at an outside hospital, per the California corrections department) on 10 January 2022, aged 78, while awaiting trial on the Kathleen charge; that case never went to trial. Narration: 'He died in custody in 2022'. Card: 'THAT CASE NEVER WENT TO TRIAL'.",
+   "sources": [
+    "abc6_death",
+    "abc30_death",
+    "cnn_indict"
+   ]
+  },
+  {
+   "id": "R_victims",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY (memorial): Kathleen McCormack Durst (29 when last seen in 1982) and Susan Berman (55, killed in 2000). Narration: 'We remember them both.'",
+   "sources": [
+    "nbc_kathie",
+    "abc7_berman",
+    "cbs_sentence"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "abc7_arrest",
+   "publisher": "ABC7 Los Angeles (AP)",
+   "title": "Robert Durst, subject of HBO series, arrested on murder charges in New Orleans",
+   "url": "https://abc7.com/robert-durst-murder-the-jinx/558780/",
+   "date": "2015-03-15",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "apr_arrest",
+   "publisher": "Alabama Public Radio (NPR)",
+   "title": "Robert Durst, Subject Of HBO's 'The Jinx,' Arrested In New Orleans",
+   "url": "https://www.apr.org/2015-03-15/robert-durst-subject-of-hbos-the-jinx-arrested-in-new-orleans",
+   "date": "2015-03-15",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "csm_arrest",
+   "publisher": "The Christian Science Monitor",
+   "title": "After HBO film, wealthy eccentric arrested for murder",
+   "url": "https://m.csmonitor.com/USA/2015/0315/After-HBO-film-wealthy-eccentric-arrested-for-murder",
+   "date": "2015-03-15",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "bangor_wire",
+   "publisher": "Bangor Daily News (wire)",
+   "title": "New York real estate scion Robert Durst agrees to extradition on murder charge",
+   "url": "https://www.bangordailynews.com/2015/03/16/news/new-york-real-estate-scion-robert-durst-agrees-to-extradition-on-murder-charge/",
+   "date": "2015-03-16",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "abc7_finale",
+   "publisher": "ABC7 News",
+   "title": "Robert Durst says in HBO finale he 'killed them all'",
+   "url": "https://abc7news.com/post/robert-durst-says-in-hbo-finale-he-killed-them-all/558878/",
+   "date": "2015-03-15",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbc_jinx2",
+   "publisher": "NBC News",
+   "title": "'The Jinx Part Two' revisits the Robert Durst saga of murder and mystery",
+   "url": "https://www.nbcnews.com/news/amp/rcna149001",
+   "date": "2024-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "thr_jinx2",
+   "publisher": "The Hollywood Reporter",
+   "title": "'The Jinx' director Andrew Jarecki on the Robert Durst encounter",
+   "url": "https://www.hollywoodreporter.com/tv/tv-news/the-jinx-director-andrew-jarecki-safety-robert-durst-encounter-1235879470/",
+   "date": "2024-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "greenwich_verdict",
+   "publisher": "Greenwich Time (via PressReader)",
+   "title": "HBO series helped lead to Durst murder conviction",
+   "url": "https://www.pressreader.com/usa/greenwich-time-sunday/20210919/281818581967770",
+   "date": "2021-09-19",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cns_tape",
+   "publisher": "City News Service (via KFI)",
+   "title": "Jury Hears Tape of Durst Saying 'Killed Them All'",
+   "url": "https://kfiam640.iheart.com/content/2020-03-05-jury-hears-tape-of-durst-saying-killed-them-all",
+   "date": "2020-03-05",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "guardian_open",
+   "publisher": "The Guardian (via PressReader)",
+   "title": "Robert Durst: Berman murder trial opens with jury watching The Jinx",
+   "url": "https://www.pressreader.com/usa/the-guardian-usa/20200306/281638192257721",
+   "date": "2020-03-06",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "ap_audio",
+   "publisher": "AP (via KTVU)",
+   "title": "Audio of Durst in bathroom could play 2 ways in murder case",
+   "url": "https://www.ktvu.com/news/audio-of-durst-in-bathroom-could-play-2-ways-in-murder-case",
+   "date": "2020-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "spin_edit",
+   "publisher": "Spin (reporting the New York Times transcript)",
+   "title": "Robert Durst's 'Jinx' confession was edited, trial evidence shows",
+   "url": "https://www.spinmagazine.com/2019/04/robert-durst-the-jinx-confession-murder-trial-evidence/",
+   "date": "2019-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "newser_edit",
+   "publisher": "Newser",
+   "title": "Durst's Final Jinx Words Seem 'Damning.' They Were Also Edited",
+   "url": "https://www.newser.com/story/274359/problematic-editing-altered-dursts-jinx-confession.html",
+   "date": "2019-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "buzzfeed_edit",
+   "publisher": "BuzzFeed News",
+   "title": "The Holes In 'The Jinx' Might Go Deeper Than We Thought",
+   "url": "https://www.buzzfeednews.com/article/kateaurthur/the-holes-in-the-jinx-might-go-deeper-than-we-thought",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "dailybeast_edit",
+   "publisher": "The Daily Beast",
+   "title": "How will HBO's The Jinx and Robert Durst's doctored confession factor into his murder trial",
+   "url": "https://www.thedailybeast.com/how-will-hbos-the-jinx-and-robert-dursts-doctored-confession-factor-into-his-murder-trial/",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "aol_refresher",
+   "publisher": "AOL / Yahoo News",
+   "title": "The Jinx Part Two is out Sunday. Here's a refresher on Robert Durst's story",
+   "url": "https://www.aol.com/jinx-happened-season-one-led-232659182.html",
+   "date": "2024-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "ap_lawyers",
+   "publisher": "AP (via KSL)",
+   "title": "Lawyers: Robert Durst wrote incriminating 'cadaver' note",
+   "url": "https://www.ksl.com/article/46697805/lawyers-robert-durst-wrote-incriminating-cadaver-note",
+   "date": "2020-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "ap_cadaver",
+   "publisher": "AP (via Fox 11)",
+   "title": "Robert Durst says he lied, penned 'cadaver' note to police",
+   "url": "https://fox11online.com/news/nation-world/robert-durst-says-he-lied-penned-cadaver-note-to-police",
+   "date": "2021-08",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "ap_closing",
+   "publisher": "AP, Brian Melley (via Court TV)",
+   "title": "Prosecutor says cadaver note proves Durst killed friend",
+   "url": "https://www.courttv.com/news/prosecutor-says-cadaver-note-proves-durst-killed-friend/",
+   "date": "2021-09",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "chn_arrest",
+   "publisher": "Courthouse News (AP)",
+   "title": "Durst arrest: handwriting analysis the key new evidence",
+   "url": "https://www.courthousenews.com/?p=536287",
+   "date": "2015-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "fox_letter",
+   "publisher": "Fox News",
+   "title": "Letter, not recording, led authorities to arrest Robert Durst for friend's murder",
+   "url": "https://www.foxnews.com/us/letter-not-recording-led-authorities-to-arrest-robert-durst-for-friends-murder",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_sentence",
+   "publisher": "CBS News",
+   "title": "Robert Durst sentenced to life in prison for killing best friend Susan Berman",
+   "url": "https://www.cbsnews.com/news/robert-durst-sentenced-to-life-in-prison-for-killing-best-friend-susan-berman/",
+   "date": "2021-10-14",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "spectrum_sentence",
+   "publisher": "Spectrum News 1 (AP)",
+   "title": "Robert Durst sentenced to life in California prison",
+   "url": "https://spectrumnews1.com/ca/la/crime/2021/10/14/robert-durst-sentenced-to-life-in-california-prison",
+   "date": "2021-10-14",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "rs_sentence",
+   "publisher": "Rolling Stone",
+   "title": "Robert Durst Sentenced To Life Without Parole in Susan Berman Murder",
+   "url": "https://www.rollingstone.com/culture/culture-news/robert-durst-sentence-susan-berman-murder-1242348/",
+   "date": "2021-10-14",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "abc13_timeline",
+   "publisher": "ABC13 Houston",
+   "title": "Robert Durst: A timeline of his life and alleged crimes",
+   "url": "https://abc13.com/robert-durst-murders-texas-who-is/5944699/",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cnn_indict",
+   "publisher": "CNN (via ABC17)",
+   "title": "New York grand jury indicts Robert Durst on murder charge",
+   "url": "https://abc17news.com/news/national-world/cnn-national/2021/11/01/new-york-grand-jury-indicts-robert-durst-on-murder-charge/",
+   "date": "2021-11-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "oxygen_charge",
+   "publisher": "Oxygen (NBCUniversal)",
+   "title": "Robert Durst Charged With The Murder Of His First Wife",
+   "url": "https://www.oxygen.com/crime-news/robert-durst-charged-with-the-murder-of-kathie-mccormack-durst",
+   "date": "2021-10-22",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "avpress_charge",
+   "publisher": "Antelope Valley Press (via PressReader)",
+   "title": "Robert Durst charged with 1982 murder of first wife",
+   "url": "https://avpress.pressreader.com/article/281578063866511",
+   "date": "2021-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "abc6_death",
+   "publisher": "6abc Philadelphia (AP)",
+   "title": "Convicted murderer Robert Durst dies in custody",
+   "url": "https://6abc.com/post/convicted-murderer-robert-durst-dies-in-custody/11452062/",
+   "date": "2022-01-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "abc30_death",
+   "publisher": "ABC30 Fresno",
+   "title": "Robert Durst, millionaire convicted of killing Susan Berman, has died at age 78",
+   "url": "https://abc30.com/robert-durst-death-dies-murders-texas/11449771/",
+   "date": "2022-01-10",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbc_kathie",
+   "publisher": "NBC News (Dateline)",
+   "title": "Thirty-six years after her disappearance, Kathie Durst's family still seeks answers",
+   "url": "https://www.nbcnews.com/dateline/thirty-six-years-after-her-disappearance-kathie-durst-s-family-n843401",
+   "date": "2018-02-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "cbs_kathie",
+   "publisher": "CBS New York",
+   "title": "Retired NYPD detective hopes for resolution in disappearance of Robert Durst's wife",
+   "url": "https://www.cbsnews.com/newyork/news/retired-nypd-detective-hopes-for-resolution-in-disappearance-of-robert-dursts-wife/",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "news12_kathie",
+   "publisher": "News 12 Westchester",
+   "title": "Monday to mark 40 years since disappearance of Kathie Durst",
+   "url": "https://westchester.news12.com/monday-to-mark-40-years-since-disappearance-of-kathie-durst",
+   "date": "2022-01",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "abc7_berman",
+   "publisher": "ABC7 Los Angeles",
+   "title": "What you need to know about alleged Durst victim Susan Berman",
+   "url": "https://abc7.com/news/what-you-need-to-know-about-alleged-durst-victim-susan-berman/559937/",
+   "date": "2015-03",
+   "accessed": "search-result extract only, 2026-10-13"
+  },
+  {
+   "id": "nbc_hearing",
+   "publisher": "NBC News",
+   "title": "Robert Durst, scowling, faces photos of slain friend at murder hearing",
+   "url": "https://www.nbcnews.com/news/crime-courts/robert-durst-scowling-faces-photos-slain-friend-murder-hearing-n866516",
+   "date": "2018-04",
+   "accessed": "search-result extract only, 2026-10-13"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A LIVE MICROPHONE"
+   },
+   {
+    "text": "HELPED CONVICT ROBERT DURST",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DID THE MIC GIVE HIM AWAY?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-13"
+}

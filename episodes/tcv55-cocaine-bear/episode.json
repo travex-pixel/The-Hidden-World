@@ -1,0 +1,1088 @@
+{
+ "id": "tcv55-cocaine-bear",
+ "number": 55,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Former Narcotics Cop's Cocaine, and the Bear That Found It",
+ "central_question": "How did a former narcotics officer's cocaine end up inside a black bear in a Georgia forest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "ex-narcotics": "ex narcotics",
+   "40": "forty",
+   "79": "seventy nine",
+   "Gucci": "Goochee"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "55",
+  "label": "THE REAL COCAINE BEAR · GEORGIA 1985"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s05_bear",
+   "word": [
+    1,
+    3
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "cb55_thornton",
+  "cb55_partner",
+  "cb55_resident",
+  "cb55_agent1",
+  "cb55_agent2",
+  "cb55_deputy",
+  "cb55_hiker"
+ ],
+ "content_notes": "Tone: remarkable and ironic. Andrew C. Thornton II (deceased 1985) appears only as a faceless silhouette tagged NOT A LIKENESS; his fall and his body are never shown (the resident's reaction is shown, not what he sees). The bear is shown alive (frames 1 and last) and is never shown dead, hurt or suffering; its death is stated in words only. No loose drugs (plain wrapped packets), no weapon, no violence. Investigators, the resident, the deputy, the partner and the hiker are generic figures, never named; no badge, crest or insignia of any real force or agency, no aircraft registration. 'Gucci' and the 2023 film 'Cocaine Bear' appear only as plain typed words: no logo, poster or artwork. The stuffed bear's authenticity is disputed, so the narration says 'said to be'. The statistic and lesson cards name their sources. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-16.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "cb55_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "B_hook",
+    "B_packets"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "An ex-narcotics cop dropped cocaine."
+    },
+    {
+     "who": "narrator",
+     "text": "A bear ripped open 40 packets.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ex-narcotics",
+    "cop",
+    "cocaine.",
+    "bear",
+    "ripped",
+    "40",
+    "packets."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_cop",
+   "scene": "cb55_cop",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "typing",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "door",
+     "gain": 0.3
+    },
+    {
+     "at": 0.02,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "B_cop",
+    "B_sides"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He used to chase drug dealers."
+    },
+    {
+     "who": "narrator",
+     "text": "Then he switched sides.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "chase",
+    "drug",
+    "dealers.",
+    "switched",
+    "sides."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_drop",
+   "scene": "cb55_drop",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "B_drop",
+    "B_para"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Over Georgia, he dumped the bags."
+    },
+    {
+     "who": "narrator",
+     "text": "Then he jumped too.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "georgia,",
+    "dumped",
+    "bags.",
+    "jumped",
+    "too."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_jump",
+   "scene": "cb55_jump",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.2
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": -0.02,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "B_fail",
+    "B_gucci",
+    "B_79"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His parachute failed."
+    },
+    {
+     "who": "narrator",
+     "text": "He wore Gucci loafers, and 79 pounds of cocaine.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "parachute",
+    "failed.",
+    "gucci",
+    "loafers,",
+    "79",
+    "pounds"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_bear",
+   "scene": "cb55_bear",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      2
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_found",
+    "B_stomach"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Three months later, agents found a dead bear."
+    },
+    {
+     "who": "narrator",
+     "text": "Its stomach was packed with cocaine.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "three",
+    "months",
+    "agents",
+    "dead",
+    "bear.",
+    "stomach",
+    "packed",
+    "cocaine."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_plane",
+   "scene": "cb55_plane",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.2
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "radio",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "B_plane"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And his empty plane? It crashed in North Carolina."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "empty",
+    "plane?",
+    "crashed",
+    "north",
+    "carolina."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "cb55_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "B_lesson"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Ever found a strange package? Save these three rules."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "found",
+    "strange",
+    "package?",
+    "save",
+    "three"
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "cb55_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": -0.02,
+     "word": [
+      1,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "B_stuffed",
+    "B_irony",
+    "B_film"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Today, its stuffed remains reportedly stand in Lexington."
+    },
+    {
+     "who": "narrator",
+     "text": "The same city the cop once policed.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "stuffed",
+    "remains",
+    "reportedly",
+    "lexington.",
+    "city",
+    "cop",
+    "policed."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "B_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Andrew C. Thornton II, a former Lexington, Kentucky police narcotics officer, dropped duffel bags of cocaine from a plane over north Georgia in September 1985; a black bear later got into one of the bags. Narration: 'An ex-narcotics cop dropped cocaine.'",
+   "sources": [
+    "wiki_t",
+    "bio",
+    "id",
+    "wate",
+    "adn",
+    "aol_hl",
+    "wiki_b",
+    "fox5"
+   ]
+  },
+  {
+   "id": "B_packets",
+   "type": "established",
+   "nature": "fact",
+   "text": "The bear was found beside a torn duffel bag and about 40 ripped-open (empty) packages of cocaine scattered over the hillside; GBI agent Gary Garner said the bear 'tore the duffel bag open'. Narration: 'A bear ripped open 40 packets.'",
+   "sources": [
+    "mfloss",
+    "yahoo",
+    "fox5",
+    "wsb"
+   ]
+  },
+  {
+   "id": "B_cop",
+   "type": "established",
+   "nature": "fact",
+   "text": "Thornton joined the Lexington Police Department as a narcotics officer in 1968 and resigned in 1977; he also earned a law degree. Narration: 'He used to chase drug dealers.'",
+   "sources": [
+    "aol_hl",
+    "wiki_t",
+    "id",
+    "wate"
+   ]
+  },
+  {
+   "id": "B_sides",
+   "type": "established",
+   "nature": "fact",
+   "text": "He became a drug smuggler; news reports in 1981-82 linked him (and other Lexington officers) to a smuggling ring known as 'The Company'; he had already served prison time in a marijuana-smuggling case. Narration: 'Then he switched sides.'",
+   "sources": [
+    "wiki_t",
+    "aol_hl",
+    "crimelib",
+    "wate",
+    "mil"
+   ]
+  },
+  {
+   "id": "B_drop",
+   "type": "established",
+   "nature": "fact",
+   "text": "In September 1985 he dumped duffel bags of cocaine from the plane over north Georgia. Narration: 'Over Georgia, he dumped the bags.'",
+   "sources": [
+    "wiki_t",
+    "bio",
+    "wate",
+    "fox5",
+    "hnn"
+   ]
+  },
+  {
+   "id": "B_para",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: he was a former (Army) paratrooper. Card: 'HE WAS A FORMER ARMY PARATROOPER'. Narration: 'Then he jumped too.' (he jumped from the plane over Knoxville, Tennessee)",
+   "sources": [
+    "mil",
+    "wate",
+    "wiki_t",
+    "bio"
+   ]
+  },
+  {
+   "id": "B_fail",
+   "type": "established",
+   "nature": "fact",
+   "text": "His parachute failed (opened too late / he became entangled; the GBI said he struck the plane's tail); he was found dead on 11 September 1985 by an elderly resident in a Knoxville yard / gravel driveway. Narration: 'His parachute failed.' Label: 'FOUND DEAD · KNOXVILLE, TENN.'",
+   "sources": [
+    "wiki_t",
+    "oxygen",
+    "adn",
+    "wate",
+    "bio"
+   ]
+  },
+  {
+   "id": "B_gucci",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was found wearing night-vision goggles, a bulletproof vest and Gucci loafers. Narration: 'He wore Gucci loafers ...'; label 'ALSO: NIGHT-VISION GOGGLES, A BULLETPROOF VEST'",
+   "sources": [
+    "adn",
+    "oxygen",
+    "hnn",
+    "id"
+   ]
+  },
+  {
+   "id": "B_79",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): about 79 lb of cocaine was strapped to him / in the bag at his side (the New York Times, Sept 1985: '79 pounds of cocaine at his side'; others round to 'about 75-80 lb'; reported street value about $15 million). Narration: '... and 79 pounds of cocaine.'",
+   "sources": [
+    "adn",
+    "wate",
+    "oxygen",
+    "bio",
+    "mil"
+   ]
+  },
+  {
+   "id": "B_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "About three months later (around 20 December 1985; reported by AP and the New York Times, 23 December 1985) Georgia Bureau of Investigation agents found a dead American black bear (reported 150-175 lb) in Fannin County, north Georgia (Chattahoochee National Forest). Narration: 'Three months later, agents found a dead bear.'",
+   "sources": [
+    "wiki_b",
+    "mfloss",
+    "yahoo",
+    "fox5",
+    "wsb",
+    "snopes"
+   ]
+  },
+  {
+   "id": "B_stomach",
+   "type": "established",
+   "nature": "fact",
+   "text": "The state's chief medical examiner, Dr Kenneth Alonso, said the bear's stomach was 'literally packed to the brim with cocaine' (and estimated 3-4 g reached its bloodstream; cause of death: acute cocaine intoxication). Narration: 'Its stomach was packed with cocaine.'; card: 'STATE MEDICAL EXAMINER, 1985'",
+   "sources": [
+    "wiki_b",
+    "aol_tox",
+    "wsb",
+    "snopes"
+   ]
+  },
+  {
+   "id": "B_plane",
+   "type": "established",
+   "nature": "fact",
+   "text": "After he jumped, the pilotless twin-engine plane flew on (on autopilot) and crashed in Hayesville, North Carolina, more than 60 miles away. Narration: 'And his empty plane? It crashed in North Carolina.'",
+   "sources": [
+    "wiki_t",
+    "tbs",
+    "looper",
+    "bio"
+   ]
+  },
+  {
+   "id": "B_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): if you find a suspicious package (possible drugs), do not touch, pick up or open it (Matagorda County, Texas, and Indian River County, Florida, sheriff's offices); Matagorda County: once a person picks up the package they are in possession of it and could be charged; note where it is and call law enforcement (Walton County, Florida, sheriff; Matagorda; FBI: on forest land, leave the area and report). Rows: 'DON'T TOUCH OR OPEN IT', 'PICKING IT UP = POSSESSION', 'NOTE THE SPOT, CALL POLICE'.",
+   "sources": [
+    "khou",
+    "nbcdfw",
+    "cbstx",
+    "vero",
+    "walton",
+    "fbi_mke"
+   ]
+  },
+  {
+   "id": "B_stuffed",
+   "type": "established",
+   "nature": "reported",
+   "text": "REPORTED: a taxidermied bear said to be the Cocaine Bear, nicknamed 'Pablo EskoBear', is on display at the Kentucky for Kentucky Fun Mall in Lexington, Kentucky; its chain of custody rests mainly on the shop's own account and its authenticity is disputed (WAVE 3; Saving Country Music). Narration: 'Today, its stuffed remains reportedly stand in Lexington.'",
+   "sources": [
+    "wiki_b",
+    "mfloss_mall",
+    "syfy",
+    "wave",
+    "scm",
+    "tifo"
+   ]
+  },
+  {
+   "id": "B_irony",
+   "type": "established",
+   "nature": "fact",
+   "text": "Lexington is the city whose police department Thornton served as a narcotics officer (1968-77). Narration: 'The same city the cop once policed.'",
+   "sources": [
+    "aol_hl",
+    "wiki_t",
+    "id"
+   ]
+  },
+  {
+   "id": "B_film",
+   "type": "established",
+   "nature": "fact",
+   "text": "Card (text only): the 2023 film 'Cocaine Bear' (directed by Elizabeth Banks) is loosely based on the story.",
+   "sources": [
+    "wrap",
+    "bio",
+    "wiki_b",
+    "mil"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "wiki_t",
+   "publisher": "Wikipedia",
+   "title": "Andrew C. Thornton II",
+   "url": "https://en.wikipedia.org/wiki/Andrew_C._Thornton_II",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "wiki_b",
+   "publisher": "Wikipedia",
+   "title": "Cocaine Bear (bear)",
+   "url": "https://en.wikipedia.org/wiki/Cocaine_Bear_(bear)",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "bio",
+   "publisher": "Biography.com",
+   "title": "The true story of Cocaine Bear and drug smuggler Andrew Thornton",
+   "url": "https://www.biography.com/movies-tv/a43047687/cocaine-bear-true-story-drug-smuggler-andrew-thornton",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "id",
+   "publisher": "Investigation Discovery (CrimeFeed)",
+   "title": "5 things to know about drug officer Andrew Thornton and the real story of the Cocaine Bear",
+   "url": "https://investigationdiscovery.com/crimefeed/news/5-things-to-know-about-drug-officer-andrew-thornton-and-the-real-story-of-the-cocaine-bear",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "wate",
+   "publisher": "WATE 6 (Knoxville)",
+   "title": "Cocaine Bear: who was the smuggler who died in Knoxville?",
+   "url": "https://digital-release.wate.com/news/knox-county-news/cocaine-bear-who-was-smuggler-who-died-in-knoxville/amp/",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "wate_sheriff",
+   "publisher": "WATE 6 (Knoxville)",
+   "title": "Former Knox County sheriff recalls Cocaine Bear case",
+   "url": "https://digital-release.wate.com/news/top-stories/former-knox-co-sheriff-recalls-cocaine-bear-case/amp/",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "adn",
+   "publisher": "Anchorage Daily News (AP / NYT wire)",
+   "title": "'Cocaine Bear': a drug smuggler and the very real story behind it all",
+   "url": "https://adn.com/arts/film-tv/2023/02/24/cocaine-bear-a-drug-smuggler-and-the-very-real-story-behind-it-all",
+   "date": "2023-02-24",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "oxygen",
+   "publisher": "Oxygen",
+   "title": "How drug smuggler Andrew Thornton died: 6 theories from Peacock's 'Cocaine Bear: The True Story'",
+   "url": "https://oxygen.com/true-crime-buzz/peacocks-cocaine-bear-true-story-how-andrew-thornton-death",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "hnn",
+   "publisher": "History News Network",
+   "title": "The real story behind Cocaine Bear",
+   "url": "https://www.historynewsnetwork.org/article/the-real-story-behind-cocaine-bear",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "aol_hl",
+   "publisher": "AOL (Lexington Herald-Leader)",
+   "title": "Who was Andrew Thornton, Ky. officer whose drug smuggling plays a role in 'Cocaine Bear'?",
+   "url": "https://www.aol.com/andrew-thornton-ky-officer-whose-164711695.html",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "crimelib",
+   "publisher": "Crime Library",
+   "title": "'The Company' drug smuggling ring: the fall of Andrew C. Thornton II",
+   "url": "https://crimelibrary.org/gangsters_outlaws/gang/dd_fall_of_andrew_c_thornton_ii_the_company/",
+   "date": "2014",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "mil",
+   "publisher": "Military Times",
+   "title": "Wild tale of 'Pablo Eskobear', a paratrooper turned drug kingpin, coming to big screen",
+   "url": "https://www.militarytimes.com/off-duty/military-culture/2021/08/04/wild-tale-of-pablo-eskobear-a-paratrooper-turned-drug-kingpin-coming-to-big-screen/",
+   "date": "2021-08-04",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "tbs",
+   "publisher": "The Business Standard",
+   "title": "Pablo Eskobear: story of a bear who consumed a bag full of cocaine",
+   "url": "https://www.tbsnews.net/world/pablo-eskobear-story-bear-who-consumed-bag-full-cocaine-214147",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "looper",
+   "publisher": "Looper",
+   "title": "Everything Cocaine Bear doesn't tell you about the true story",
+   "url": "https://www.looper.com/1214496/everything-cocaine-bear-doesnt-tell-you-about-the-true-story/",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "mfloss",
+   "publisher": "Mental Floss",
+   "title": "The wild and totally true story behind 'Cocaine Bear'",
+   "url": "https://www.mentalfloss.com/entertainment/movies/cocaine-bear-movie-real-history-true-crime",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "yahoo",
+   "publisher": "Yahoo News",
+   "title": "Cocaine Bear true story: what to know about the 1985 events behind the movie",
+   "url": "https://news.yahoo.com/cocaine-bear-true-story-know-203147414.html",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "fox5",
+   "publisher": "FOX 5 Atlanta",
+   "title": "What's the real 'Cocaine Bear' story?",
+   "url": "https://www.fox5atlanta.com/news/whats-the-real-cocaine-bear-story",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "wsb",
+   "publisher": "WSB-TV (Atlanta)",
+   "title": "Cocaine Bear movie is based on a true story: here's what really happened in the Georgia mountains",
+   "url": "https://www.wsbtv.com/news/local/cocaine-bear-movie-is-based-true-story-heres-what-really-happened-georgia-mountains/FKNPLLMQVRFPVMKCJQPIMLZQ7U",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "snopes",
+   "publisher": "Snopes",
+   "title": "Is 'Cocaine Bear' a true story?",
+   "url": "https://www.snopes.com/fact-check/cocaine-bear/",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "aol_tox",
+   "publisher": "AOL (McClatchy)",
+   "title": "'Acute cocaine intoxication.' How does the real cocaine bear's story compare to the movie?",
+   "url": "https://www.aol.com/acute-cocaine-intoxication-does-real-120000714.html",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "mfloss_mall",
+   "publisher": "Mental Floss",
+   "title": "How Cocaine Bear's taxidermied body ended up in a Kentucky mall",
+   "url": "https://www.mentalfloss.com/culture/cocaine-bear-taxidermy-kentucky-mall",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "syfy",
+   "publisher": "SYFY Wire",
+   "title": "Kentucky theater to host the 'real', stuffed 'Cocaine Bear' for premiere of the film",
+   "url": "https://www.syfy.com/index%2ephp/syfy-wire/kentucky-arthouse-theater-hosting-actual-cocaine-bear",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "wave",
+   "publisher": "WAVE 3 News (Gray)",
+   "title": "'Cocaine Bear' joins the National Bobblehead Hall of Fame",
+   "url": "https://www.wave3.com/2023/08/22/cocaine-bear-joins-national-bobblehead-hall-fame/",
+   "date": "2023-08-22",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "tifo",
+   "publisher": "Today I Found Out",
+   "title": "The curious case of Pablo EskoBear, the 'Cocaine Bear'",
+   "url": "https://www.todayifoundout.com/index.php/2017/08/amazing-tale-kentucky-folk-hero-pablo-eskobear-cocaine-bear/",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "scm",
+   "publisher": "Saving Country Music",
+   "title": "The real story behind Waylon Jennings and the Cocaine Bear",
+   "url": "https://savingcountrymusic.com/the-real-story-behind-waylon-jennings-and-the-cocaine-bear/",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "wrap",
+   "publisher": "TheWrap",
+   "title": "Is 'Cocaine Bear' a true story? Here's what's fact and fur-ction",
+   "url": "https://www.thewrap.com/cocaine-bear-true-story-movie/",
+   "date": "2023-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "khou",
+   "publisher": "KHOU 11 (Houston)",
+   "title": "Bundles of suspected cocaine are washing up on beaches in Matagorda County, sheriff's office says",
+   "url": "https://khou.com/article/news/crime/bundles-of-suspected-cocaine-are-washing-up-on-beaches-in-matagorda-county-sheriffs-office-says/285-f5b9f7d1-d2c4-4a04-b258-b62e3541cf03",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "nbcdfw",
+   "publisher": "NBC 5 Dallas-Fort Worth",
+   "title": "Bundles of cocaine wash up on Texas beaches",
+   "url": "https://www.nbcdfw.com/news/local/texas-news/bundles-of-cocaine-wash-up-on-texas-beaches/2642422/?amp=1",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "cbstx",
+   "publisher": "CBS News Texas",
+   "title": "Bundles of cocaine wash ashore along 2 different Texas coast beaches",
+   "url": "https://www.cbsnews.com/texas/news/cocaine-bundles-wash-ashore-texas-coast-beaches/",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "vero",
+   "publisher": "Vero News",
+   "title": "3-pound cocaine package washes ashore in Indian River County",
+   "url": "https://veronews.info/?p=188832",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "walton",
+   "publisher": "Get The Coast (Walton County Sheriff's Office release)",
+   "title": "Nearly half a million dollars of cocaine washes ashore on Walton County beach",
+   "url": "https://www.getthecoast.com/nearly-half-a-million-dollars-of-cocaine-washes-ashore-on-walton-county-beach/",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "fbi_mke",
+   "publisher": "FBI Milwaukee",
+   "title": "Large marijuana grow operation on U.S. forest land eradicated (leave the area and report it)",
+   "url": "https://www.fbi.gov/milwaukee/press-releases/2011/large-marijuana-grow-operation-on-u.s.-forest-land-eradicated",
+   "date": "2011",
+   "accessed": "search-result extract only, 2026-10-16"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#0f1d26",
+  "mid": "#c9bc9e",
+  "accent": "#e39a3b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "EX-NARCOTICS COP'S COCAINE"
+   },
+   {
+    "text": "A BEAR FOUND IT FIRST",
+    "colour": "#e39a3b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHO HAD THE WORSE NIGHT?"
+   },
+   {
+    "text": "THE COP OR THE BEAR? 👇",
+    "colour": "#e39a3b"
+   },
+   {
+    "text": "TAG THE MATE WHO EATS ANYTHING",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "STATE",
+  "keys": [
+   {
+    "t": 5.27,
+    "v": "KENTUCKY"
+   },
+   {
+    "t": 9.82,
+    "v": "GEORGIA"
+   },
+   {
+    "t": 13.57,
+    "v": "TENNESSEE"
+   },
+   {
+    "t": 20.96,
+    "v": "GEORGIA"
+   },
+   {
+    "t": 25.72,
+    "v": "N. CAROLINA"
+   }
+  ],
+  "y": 348,
+  "until": 27.39
+ },
+ "legal_status_verified": "2026-10-16"
+}

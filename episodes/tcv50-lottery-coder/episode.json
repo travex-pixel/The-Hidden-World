@@ -1,0 +1,1000 @@
+{
+ "id": "tcv50-lottery-coder",
+ "number": 50,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Lottery's Security Boss Rigged It",
+ "central_question": "How did the man in charge of lottery security rig jackpots in five states, and how was he caught?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "3": "three",
+   "2010,": "twenty ten,",
+   "$16.5": "sixteen point five",
+   "1": "one",
+   "292": "two hundred ninety-two",
+   "25": "twenty-five"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  55
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "50",
+  "label": "LOTTERY INSIDER · IOWA 2005-2017"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s05_voice",
+   "word": [
+    1,
+    3
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "lc50_tipton",
+  "lc50_clerk",
+  "lc50_brother",
+  "lc50_friend",
+  "lc50_official",
+  "lc50_lawyer",
+  "lc50_coworker",
+  "lc50_player"
+ ],
+ "content_notes": "Remarkable and ironic, never mocking. Eddie Tipton, Tommy Tipton and Robert Rhodes (all convicted) appear only as faceless silhouettes tagged NOT A LIKENESS. The clerk, co-worker, lawyer, lottery official and player are generic figures, never named. No logo, ticket design or artwork of any real lottery, game, store or company is drawn; names appear only as plain narration or card text. The camera/USB detail is a prosecutors' allegation and is attributed on its card. The jackpot is the advertised figure; disagreements are in the research ledger. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-15.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "lc50_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "paper",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.35
+    },
+    {
+     "at": -0.02,
+     "word": [
+      1,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "L_hook",
+    "L_code"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The lottery's own security boss rigged it."
+    },
+    {
+     "who": "narrator",
+     "text": "His secret code made 3 days a year predictable.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "own",
+    "security",
+    "boss",
+    "rigged",
+    "secret",
+    "code",
+    "3",
+    "predictable."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_crew",
+   "scene": "lc50_crew",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "door",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "cash",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "L_crew",
+    "L_states",
+    "L_tommy"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His brother and a friend claimed wins in five states."
+    },
+    {
+     "who": "narrator",
+     "text": "The brother was a Texas judge.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "brother",
+    "friend",
+    "five",
+    "states.",
+    "texas",
+    "judge."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_unclaimed",
+   "scene": "lc50_unclaimed",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "cash",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "L_ticket",
+    "L_unclaimed"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then one Iowa ticket hit a $16.5 million jackpot."
+    },
+    {
+     "who": "narrator",
+     "text": "But nobody claimed it.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "iowa",
+    "$16.5",
+    "million",
+    "nobody",
+    "claimed"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_belize",
+   "scene": "lc50_belize",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      2
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      5
+     ],
+     "name": "tick",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "L_belize",
+    "L_refused"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Lawyers tried claiming it for a trust in Belize."
+    },
+    {
+     "who": "narrator",
+     "text": "The lottery refused. Who bought it?",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "lawyers",
+    "trust",
+    "belize.",
+    "refused.",
+    "who",
+    "bought"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_voice",
+   "scene": "lc50_voice",
+   "min_duration": 3.6,
+   "pad_after": 0.22,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "shutter",
+     "gain": 0.35
+    },
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.25
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "L_video",
+    "L_voice"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A gas station camera filmed the buyer."
+    },
+    {
+     "who": "narrator",
+     "text": "Co-workers knew that voice. It was Eddie Tipton.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "camera",
+    "filmed",
+    "buyer.",
+    "voice.",
+    "eddie",
+    "tipton."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_odds",
+   "scene": "lc50_odds",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      3
+     ],
+     "name": "riser",
+     "gain": 0.25
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "L_odds"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Powerball jackpot odds? 1 in 292 million."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "powerball",
+    "odds?",
+    "1",
+    "292",
+    "million."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "lc50_lesson",
+   "min_duration": 4.2,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "L_lesson"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A text says you won? Save this."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "text",
+    "won?",
+    "save",
+    "this."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "lc50_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      7
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "L_sentence",
+    "L_plea",
+    "L_hook"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The judge cited greed, and gave him 25 years."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "judge",
+    "greed",
+    "25",
+    "years."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "L_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Eddie Tipton was the information security director of the Multi-State Lottery Association (MUSL), the Iowa-based association that runs multi-state lottery games; he admitted rigging lottery draws (guilty plea, June 2017). Narration: 'The lottery's own security boss rigged it.' Headline: 'LOTTERY SECURITY BOSS / RIGGED THE JACKPOTS'.",
+   "sources": [
+    "ap_cnn",
+    "ap_kshb",
+    "kcrg",
+    "fox_25"
+   ]
+  },
+  {
+   "id": "L_code",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators said code he added to the random number generator software let it work normally except on three days of the year, when it produced predictable numbers (for Wednesday or Saturday draws after 8 p.m.); he admitted rigging computer code to produce winning numbers. Narration: 'His secret code made 3 days a year predictable.'",
+   "sources": [
+    "ap_ksl",
+    "ap_inq",
+    "sophos16",
+    "ap_cnn"
+   ]
+  },
+  {
+   "id": "L_crew",
+   "type": "established",
+   "nature": "fact",
+   "text": "He conspired with his brother Tommy Tipton, his friend Robert Rhodes and others to buy and claim winning tickets. Narration: 'His brother and a friend claimed wins in five states.'",
+   "sources": [
+    "fox_scope",
+    "kcrg",
+    "ap_cnn"
+   ]
+  },
+  {
+   "id": "L_states",
+   "type": "established",
+   "nature": "fact",
+   "text": "The rigged prizes were in five states (Colorado, Wisconsin, Oklahoma, Kansas and Iowa) between 2005 and 2011; he agreed to about $2.2 million in restitution to Colorado, Oklahoma, Wisconsin and Kansas.",
+   "sources": [
+    "fox_scope",
+    "ap_cnn",
+    "ap_kshb",
+    "ap_ksl"
+   ]
+  },
+  {
+   "id": "L_tommy",
+   "type": "established",
+   "nature": "fact",
+   "text": "Tommy Tipton was a justice of the peace in Texas (AP: 'a former Texas judge'); he pleaded guilty in Iowa in 2017 to conspiracy to commit theft. Narration: 'The brother was a Texas judge.' The card says 'JUSTICE OF THE PEACE'.",
+   "sources": [
+    "ap_cnn",
+    "fox_scope",
+    "kcrg"
+   ]
+  },
+  {
+   "id": "L_ticket",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Hot Lotto ticket was bought on 23 Dec 2010 at a QuikTrip in Des Moines, Iowa, for the 29 Dec 2010 draw; the advertised jackpot was $16.5 million (cash value about $10.75 million). AP and other outlets also used '$14.3 million' (recorded as a disagreement). Narration: 'Then one Iowa ticket hit a $16.5 million jackpot.'",
+   "sources": [
+    "casino",
+    "rd",
+    "wiki",
+    "fox_myst",
+    "cnn11"
+   ]
+  },
+  {
+   "id": "L_unclaimed",
+   "type": "established",
+   "nature": "fact",
+   "text": "No one came forward to claim the jackpot for most of the one-year claim period. Narration: 'But nobody claimed it.'",
+   "sources": [
+    "fox_myst",
+    "cnn11",
+    "wiki"
+   ]
+  },
+  {
+   "id": "L_belize",
+   "type": "established",
+   "nature": "fact",
+   "text": "In late December 2011, less than two hours before the one-year deadline, a New York lawyer filed a claim on behalf of a trust tied to a Belize company (Hexham Investments Trust); earlier a Quebec lawyer had called. Narration: 'Lawyers tried claiming it for a trust in Belize.'",
+   "sources": [
+    "fox_myst",
+    "wiki",
+    "rd",
+    "cnn11"
+   ]
+  },
+  {
+   "id": "L_refused",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Iowa Lottery refused to pay because the trust would not identify who bought the ticket (anonymous claims were not allowed); the claim was withdrawn. Narration: 'The lottery refused. Who bought it?'",
+   "sources": [
+    "fox_myst",
+    "wiki",
+    "cnn11"
+   ]
+  },
+  {
+   "id": "L_video",
+   "type": "established",
+   "nature": "fact",
+   "text": "The store's surveillance camera recorded the buyer; Iowa officials released the footage in October 2014. Narration: 'A gas station camera filmed the buyer.'",
+   "sources": [
+    "fox_myst",
+    "rd",
+    "irishex",
+    "artful"
+   ]
+  },
+  {
+   "id": "L_voice",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: people who knew him, including an Iowa Lottery co-worker who had worked alongside him for years, recognised the buyer by his voice rather than his appearance, and named Eddie Tipton. Narration: 'Co-workers knew that voice. It was Eddie Tipton.' Card: 'CO-WORKERS KNEW HIS VOICE, / NOT HIS FACE.'",
+   "sources": [
+    "rd",
+    "artful",
+    "irishex"
+   ]
+  },
+  {
+   "id": "L_camera",
+   "type": "established",
+   "nature": "alleged",
+   "text": "ALLEGED by prosecutors (2015 trial; not narrated, card only, attributed): he set the draw-room camera to record one second per minute and used a USB drive to install software on the draw computer.",
+   "sources": [
+    "hackread",
+    "sophos16",
+    "bitdef"
+   ]
+  },
+  {
+   "id": "L_odds",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): the odds of winning the Powerball jackpot (grand prize) are 1 in 292,201,338 (Powerball prize chart; also stated by CNBC). Narration: 'Powerball jackpot odds? 1 in 292 million.'",
+   "sources": [
+    "pb_chart",
+    "ia_pb",
+    "cnbc"
+   ]
+  },
+  {
+   "id": "L_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (FTC consumer advice): never pay a fee to collect a prize (anyone who asks is a scammer); if you did not enter, you did not win; no one legitimate asks for payment by gift card, wire transfer or crypto. Rows: 'NEVER PAY TO GET A PRIZE', 'NO ENTRY? THEN NO WIN', 'NO GIFT CARDS OR WIRES'.",
+   "sources": [
+    "ftc_prize",
+    "sj_da"
+   ]
+  },
+  {
+   "id": "L_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was convicted by a jury in July 2015 (later reversed by the Iowa Supreme Court in June 2017 on statute-of-limitations grounds); in June 2017 he pleaded guilty to ongoing criminal conduct under a plea deal.",
+   "sources": [
+    "ap_cnn",
+    "kcrg",
+    "gazette17",
+    "fox_25"
+   ]
+  },
+  {
+   "id": "L_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "In August 2017 an Iowa judge, mentioning his greed, gave him the maximum: 25 years (an indeterminate Iowa term, 'up to 25 years'), concurrent with up to 5 1/2 years in Wisconsin. He was paroled in July 2022 (not narrated). Narration: 'The judge cited greed, and gave him 25 years.'",
+   "sources": [
+    "ap_cnn",
+    "ap_kshb",
+    "fox_25",
+    "ap_parole"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "ap_cnn",
+   "publisher": "AP (via CNN Money)",
+   "title": "Ex-lottery worker who rigged winnings gets 25 years in prison",
+   "url": "https://money.cnn.com/2017/08/22/news/iowa-lottery-sentencing/",
+   "date": "2017-08-22",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ap_kshb",
+   "publisher": "AP (via KSHB / Scripps)",
+   "title": "Ex-lottery worker who rigged winnings gets 25 years in prison",
+   "url": "https://www.kshb.com/news/national/ex-lottery-worker-who-rigged-winnings-gets-25-years-in-prison",
+   "date": "2017-08-22",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ap_ksl",
+   "publisher": "AP (via KSL)",
+   "title": "Code let lottery vendor predict winning numbers, police say",
+   "url": "https://www.ksl.com/article/news/business/code-let-lottery-vendor-predict-winning-numbers-police-say/39209103",
+   "date": "2016-04",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ap_inq",
+   "publisher": "AP (via Inquirer.net)",
+   "title": "Code let lottery vendor predict winning numbers, police say",
+   "url": "https://newsinfo.inquirer.net/778097/code-let-lottery-vendor-predict-winning-numbers-police-say",
+   "date": "2016-04",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "sophos16",
+   "publisher": "Sophos Naked Security",
+   "title": "Forensics uncover how brothers rigged the lottery",
+   "url": "https://news.sophos.com/en-us/2016/04/08/forensics-uncover-how-brothers-rigged-the-lottery/",
+   "date": "2016-04-08",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "bitdef",
+   "publisher": "Bitdefender HotForSecurity",
+   "title": "Lottery security chief found guilty of hacking Hot Lotto",
+   "url": "https://www.bitdefender.com/blog/hotforsecurity/lottery-security-chief-found-guilty-of-hacking-hot-lotto-to-win-14-3-million",
+   "date": "2015-07",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "fox_scope",
+   "publisher": "AP (via Fox News)",
+   "title": "Jackpot-rigging scandal grows in scope as trials near",
+   "url": "https://www.foxnews.com/us/jackpot-rigging-scandal-grows-in-scope-as-trials-near.print",
+   "date": "2016-11-29",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "kcrg",
+   "publisher": "KCRG (Cedar Rapids)",
+   "title": "Brothers plead guilty in Iowa to lottery rigging scheme",
+   "url": "https://www.kcrg.com/content/news/Brothers-plead-guilty-in-Iowa-to-lottery-rigging-scheme-431575663.html",
+   "date": "2017-06-29",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "fox_25",
+   "publisher": "AP (via Fox News)",
+   "title": "Mastermind of lottery fraud faces 25-year prison sentence",
+   "url": "https://www.foxnews.com/us/mastermind-of-lottery-fraud-faces-25-year-prison-sentence",
+   "date": "2017-06",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "wiki",
+   "publisher": "Wikipedia",
+   "title": "Hot Lotto fraud scandal",
+   "url": "https://en.wikipedia.org/wiki/Hot_Lotto_fraud_scandal",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "casino",
+   "publisher": "Casino.org",
+   "title": "Iowa Lottery Worker Arrested for Holding $16.5 Million Lottery Ticket",
+   "url": "https://www.casino.org/news/iowa-lottery-worker-illegal-winning-ticket",
+   "date": "2015-01",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cnn11",
+   "publisher": "CNN",
+   "title": "Iowa lottery deadline (unclaimed Hot Lotto jackpot)",
+   "url": "https://edition.cnn.com/2011/12/28/us/iowa-lottery-deadline",
+   "date": "2011-12-28",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "fox_myst",
+   "publisher": "AP (via Fox News)",
+   "title": "Investigators look to unravel mystery behind Iowa lotto winner",
+   "url": "https://www.foxnews.com/us/investigators-look-to-unravel-mystery-behind-iowa-lotto-winner",
+   "date": "2012",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "rd",
+   "publisher": "Reader's Digest",
+   "title": "This Man Rigged the Lottery Five Times Before He Got Caught",
+   "url": "https://rd.com/?p=808811",
+   "date": "2018",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "artful",
+   "publisher": "Artful Living",
+   "title": "How an Iowa man cracked the lottery",
+   "url": "https://artfulliving.com/how-an-iowa-man-cracked-the-lottery/",
+   "date": "2018",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "irishex",
+   "publisher": "Irish Examiner",
+   "title": "The Big Read: The man who cracked the lottery",
+   "url": "https://www.irishexaminer.com/opinion/commentanalysis/arid-30845121.html",
+   "date": "2018",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "hackread",
+   "publisher": "HackRead",
+   "title": "Dude hacked lottery computers for jackpot",
+   "url": "https://www.hackread.com/dude-hacked-lottery-computers-for-jackpot/",
+   "date": "2015",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "gazette17",
+   "publisher": "The Gazette (Cedar Rapids)",
+   "title": "Iowa Supreme Court reverses Tipton Hot Lotto conviction",
+   "url": "https://www.thegazette.com/?p=171929",
+   "date": "2017-06",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ap_parole",
+   "publisher": "AP (via KTTC)",
+   "title": "Iowa man convicted in lottery-rigging scheme is paroled",
+   "url": "https://www.kttc.com/2022/07/19/iowa-man-convicted-lottery-rigging-scheme-is-paroled",
+   "date": "2022-07-19",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "pb_chart",
+   "publisher": "Powerball (Multi-State Lottery Association)",
+   "title": "Powerball Prize Chart",
+   "url": "https://www.powerball.com/powerball-prize-chart",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ia_pb",
+   "publisher": "Iowa Lottery",
+   "title": "Powerball",
+   "url": "https://www.ialottery.com/Pages/Games-Online/Powerball.aspx",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cnbc",
+   "publisher": "CNBC",
+   "title": "These are the odds you'll win tonight's Powerball jackpot",
+   "url": "https://www.cnbc.com/2019/05/31/these-are-the-odds-youll-win-the-350-million-powerball-jackpot.html",
+   "date": "2019-05-31",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ftc_prize",
+   "publisher": "Federal Trade Commission (consumer advice)",
+   "title": "Fake prize offers? Don't pay",
+   "url": "https://consumer.ftc.gov/consumer-alerts/2021/03/fake-prize-offers-dont-pay",
+   "date": "2021-03",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "sj_da",
+   "publisher": "San Joaquin County District Attorney (consumer alert)",
+   "title": "Are you really the lucky winner? Spot the prize scams",
+   "url": "https://www.sjgov.org/department/da/news/consumer-alerts/consumer-alerts/2023/04/21/are-you-really-the-lucky-winner-spot-the-prize-scams",
+   "date": "2023-04-21",
+   "accessed": "search-result extract only, 2026-10-15"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#10222c",
+  "mid": "#c6bba6",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "LOTTERY SECURITY BOSS"
+   },
+   {
+    "text": "RIGGED THE JACKPOTS",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "THE SECURITY BOSS RIGGED IT."
+   },
+   {
+    "text": "GENIUS OR GREEDY? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "TAG THE MATE WHO PLAYS WEEKLY",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "YEAR",
+  "keys": [
+   {
+    "t": 6.29,
+    "v": "2005"
+   },
+   {
+    "t": 11.88,
+    "v": "2010"
+   },
+   {
+    "t": 16.82,
+    "v": "2011"
+   },
+   {
+    "t": 23.07,
+    "v": "2014"
+   }
+  ],
+  "y": 330,
+  "until": 27.44
+ },
+ "legal_status_verified": "2026-10-15"
+}
