@@ -324,10 +324,9 @@
     },
 
     // 6 - the flight + the FUN FACT: Puerto Vallarta old town at night; the two silhouettes walk left to right; a delivery
-    //     rider (generic) with a plain pizza box walks in from the right; the FUN FACT card
+    //     phone's glowing pizza-order screen rises (a phone used to order pizza was traced; there was no delivery); the FUN FACT card
     af61_mexico(ctx) {
       const t = ctx.t, T = ctx.T, fl = WT(ctx, 0, 2, 0.4), l2 = LS(ctx, 1, 2.3), pz = WT(ctx, 1, 1, 2.6);
-      const RX = tt => lerp(1160, 860, seg(tt, l2 - 0.4, l2 + 1.4));
       return E.cine.shot(ctx, {
         set: 'af61_town', grade: 'night', haze: 0.45,
         cam: { from: { x: -20, y: 30, z: 1.0 }, to: { x: 20, y: 40, z: 1.07 } },
@@ -336,11 +335,14 @@
             walk: { at: 0.0, dur: T + 0.5, cadence: 4.2, stride: 13, from: 300, to: 560 } },
           { id: 'af61_mother', x: 150, y: 1540, scale: 0.57, dir: 1, turn: 0.4, pose: 'walk', silhouette: 'warm', depth: 0.98,
             walk: { at: 0.0, dur: T + 0.5, cadence: 4.0, stride: 12, from: 150, to: 400 } },
-          { id: 'af61_rider', x: 1160, y: 1580, scale: 0.6, dir: -1, turn: 0.4, pose: 'present', expr: 'neutral', depth: 1.02,
-            walk: { at: l2 - 0.4, dur: 1.8, cadence: 4.0, stride: 12, from: 1160, to: 860 }, keys: [{ at: l2 + 1.4, pose: 'present', expr: 'focused', dur: 0.4 }] }
         ],
         props: [
-          { depth: 1.02, svg: tt => tt < l2 - 0.4 ? '' : pizzaBox(RX(tt) - 92, 1580 - 0.6 * 640, 0.6, -3) }
+          // the tip-off was a PHONE that had been used to order pizza (not a delivery): a glowing order screen rises in the dark
+          { depth: 1.02, svg: tt => { const a = seg(tt, l2 - 0.4, l2 + 0.4); if (a <= 0) return ''; const y = lerp(1080, 960, ease.out(a));
+            return `<g opacity="${f1(a * 100) / 100}" transform="translate(880 ${f1(y)}) scale(0.72)"><rect x="-150" y="-270" width="300" height="540" rx="38" fill="#14161c" stroke="${INK}" stroke-width="6"/>` +
+              `<rect x="-128" y="-236" width="256" height="470" rx="18" fill="#f2c46b" opacity="0.18"/><circle cx="0" cy="0" r="150" fill="#f2c46b" opacity="0.08"/>` +
+              `<text x="0" y="-170" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="34" fill="#f4efe4">ORDER</text>` +
+              `<text x="0" y="-130" text-anchor="middle" font-family="Nunito" font-size="24" fill="#d9d2c4">PUERTO VALLARTA</text>` + pizzaBox(0, 20, 1.1, 0) + `</g>`; } }
         ],
         overlays: [
           { type: 'label', at: fl, until: l2 - 0.1, x: 60, y: 470, text: 'DEC 2015: A PARTY VIDEO', fs: 40, sub: 'He fled with his mother' },

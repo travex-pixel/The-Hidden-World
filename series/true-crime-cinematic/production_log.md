@@ -368,3 +368,6 @@
 - 2026-10-17 06:58:20 tcv62-abagnale-con: VERIFIED -> series/true-crime-cinematic/output/true_crime_62_abagnale_con.mp4 (37.7s, 20.2 MB, sha256 073d0740e5bf)
 - 2026-10-17 06:58:30 produce 61 --force: regenerating episode data
 - 2026-10-17 06:58:30 tcv61-affluenza: rendering (final60, seed 1)
+- 2026-10-17 07:31:20 tcv61-affluenza: rendered in 1970s
+- 2026-10-17 07:32:03 tcv61-affluenza: VERIFIED -> series/true-crime-cinematic/output/true_crime_61_affluenza.mp4 (37.9s, 18.2 MB, sha256 e26e34b6570a)
+- 2026-10-17 07:33:56 produce 61 --force: regenerating episode data
