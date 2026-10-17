@@ -52,9 +52,9 @@ def build(h):
           emph=["prosecutors", "20", "years.", "ten", "probation.", "no", "jail."], min_d=3.6, pad=0.4, tr="push"),
         # C - BOTH SIDES in one beat: the courthouse steps at dusk; reporters' microphones at an empty podium; two typed cards
         #     (the judge's reasoning / a victim's father) - so either camp feels provoked to reply
-        S("s05_sides", "af61_sides", [N("The judge chose rehab over prison."), N("A victim's father blamed the money.", pause_before=0.25)],
+        S("s05_sides", "af61_sides", [N("The judge sent him to rehab, not prison."), N("A victim's father blamed the money.", pause_before=0.25)],
           "tension", ["A_judge", "A_father"], sfx=[fx(0.0, "shutter", 0.25), fw(0, 5, "thump", 0.3, -0.03), fw(1, 5, "cash", 0.3, 0.0)],
-          emph=["judge", "rehab", "prison.", "father", "blamed", "money."], min_d=3.6, pad=0.3, tr="cut"),
+          emph=["judge", "sent", "rehab,", "prison.", "father", "blamed", "money."], min_d=3.6, pad=0.3, tr="cut"),
         # B - the escape + the FUN FACT: Puerto Vallarta old town at night; the two silhouettes walk left to right; a delivery
         #     rider with a plain pizza box crosses; the FUN FACT card (a pizza order helped marshals find them)
         S("s06_mexico", "af61_mexico", [N("Then he fled to Mexico."), N("A pizza order helped give them away.", pause_before=0.3)],
@@ -145,7 +145,7 @@ def build(h):
         C("A_ask", "Prosecutors had asked for the maximum, 20 years. Narration: 'Prosecutors had asked for 20 years.'", ["fox13", "ap_sent", "wiki"]),
         C("A_sentence", "In December 2013 (reported 10-11 December) Judge Jean Boyd sentenced him to ten years' probation and ordered residential treatment; no jail time. Narration: 'But he got ten years' probation. No jail.'",
           sent + ["ap_rehab"]),
-        C("A_judge", "BOTH SIDES (judge): the judge chose probation with residential treatment (rehab) over the prison term prosecutors sought; she said 'affluenza' was not the basis of her decision; a juvenile-justice advocate said that, if the aim is rehabilitation, it was the right decision. Narration: 'The judge chose rehab over prison.'",
+        C("A_judge", "BOTH SIDES (judge): the judge chose probation with residential treatment (rehab) over the prison term prosecutors sought; she said 'affluenza' was not the basis of her decision; a juvenile-justice advocate said that, if the aim is rehabilitation, it was the right decision. Narration: 'The judge sent him to rehab, not prison.'",
           ["ap_rehab", "fox13", "wiki", "cbs_fam"]),
         C("A_father", "BOTH SIDES (families): Eric Boyles, who lost his wife Hollie and daughter Shelby, said the result would have been different had Couch not had money for the defense, the experts and the treatment, and that money and privilege cannot buy justice. Narration: 'A victim's father blamed the money.' (paraphrase; no quote is put on screen)",
           ["cbs_fam", "fox13", "ap_sent"]),

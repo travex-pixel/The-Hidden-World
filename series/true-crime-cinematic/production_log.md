@@ -358,3 +358,5 @@
 - 2026-10-17 00:14:50 tcv59-drug-catapult: rendering (final60, seed 1)
 - 2026-10-17 00:44:20 tcv59-drug-catapult: rendered in 1770s
 - 2026-10-17 00:45:01 tcv59-drug-catapult: VERIFIED -> series/true-crime-cinematic/output/true_crime_59_drug_catapult.mp4 (37.5s, 18.8 MB, sha256 0b4731006c12)
+- 2026-10-17 05:57:31 produce 60 --force: regenerating episode data
+- 2026-10-17 05:57:31 tcv60-snow-white-sentence: rendering (final60, seed 1)
