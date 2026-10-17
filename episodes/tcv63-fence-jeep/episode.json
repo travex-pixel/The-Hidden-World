@@ -1,0 +1,914 @@
+{
+ "id": "tcv63-fence-jeep",
+ "number": 63,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Got a Jeep Stuck on Top of the Border Fence",
+ "central_question": "In 2012, smugglers drove a Jeep up a ramp onto the U.S.-Mexico border fence, and it got stuck on top. Was it the worst attempt?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "Smugglers": "Smuggglers",
+   "14": "fourteen",
+   "2011,": "twenty-eleven,",
+   "2019,": "twenty-nineteen,",
+   "1,000": "one thousand"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "63",
+  "label": "THE FENCE JEEP · YUMA SECTOR 2012"
+ },
+ "music": {
+  "bpm": 82,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 82,
+  "cliff": {
+   "scene": "s05_load",
+   "word": [
+    0,
+    4
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "fj63_smug1",
+  "fj63_smug2",
+  "fj63_agent1",
+  "fj63_agent2",
+  "fj63_viewer"
+ ],
+ "content_notes": "Tone: absurd and ironic about failed ramps. No weapon is drawn or pointed and no violence is shown; the agents hold only flashlights. The smugglers and runners were never identified: they appear only as anonymous dark silhouettes (no face, ethnicity or costume). The agents and the young man in the lesson are generic figures, never named; no badge, flag, patch or insignia of any real agency; no logo. The vehicles are generic unbadged SUVs and a plain truck; 'Jeep' is said and never drawn as a logo or grille. Marijuana is shown only as plain taped bundles. The 2012 Jeep was empty when found; the narration does not say it carried drugs. Every card is our own typed graphic. The only quotation is the Border Patrol's statement as reported by NPR, RIA Novosti and CNN. Status verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "fj63_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_place"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers drove their Jeep up the border fence."
+    },
+    {
+     "who": "narrator",
+     "text": "It got stuck. On top. 14 feet up.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "jeep",
+    "border",
+    "fence.",
+    "stuck.",
+    "top.",
+    "14",
+    "feet"
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_fled",
+   "scene": "fj63_fled",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_fled",
+    "K_place"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Agents came. Both men ran back to Mexico."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "agents",
+    "came.",
+    "ran",
+    "mexico."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_verdict",
+   "scene": "fj63_verdict",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_verdict"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Border Patrol's verdict? Not quite up to the task."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "verdict?",
+    "not",
+    "quite",
+    "task."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_truck",
+   "scene": "fj63_truck",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.2,
+     "word": [
+      1,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "gate",
+     "gain": 0.3
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_truck"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not their wildest ramp."
+    },
+    {
+     "who": "narrator",
+     "text": "In 2011, a truck brought its own folding ramp.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "wildest",
+    "ramp.",
+    "truck",
+    "own",
+    "folding",
+    "ramp."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_load",
+   "scene": "fj63_load",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      1
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.15,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_1000"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A Jeep crossed with 1,000 pounds of weed."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "jeep",
+    "crossed",
+    "1,000",
+    "pounds",
+    "weed."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_lesson",
+   "scene": "fj63_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_lesson"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Offered cash to drive across a border? Save this."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "cash",
+    "drive",
+    "border?",
+    "save",
+    "this."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s07_eleven",
+   "scene": "fj63_eleven",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": 0.16
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.38
+    },
+    {
+     "at": -0.1,
+     "word": [
+      2,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_eleven",
+    "K_eleven_fled"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2019, eleven people in one Jeep."
+    },
+    {
+     "who": "narrator",
+     "text": "Its homemade ramp failed. Stuck again.",
+     "pause_before": 0.15
+    },
+    {
+     "who": "narrator",
+     "text": "Send this to the mate who cannot park.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "2019,",
+    "eleven",
+    "people",
+    "one",
+    "jeep.",
+    "failed.",
+    "stuck",
+    "again.",
+    "send",
+    "mate",
+    "park."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "fj63_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_punch",
+    "K_seized12"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The drivers all escaped."
+    },
+    {
+     "who": "narrator",
+     "text": "The Jeeps never did.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "drivers",
+    "escaped.",
+    "jeeps",
+    "never",
+    "did."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "In late October 2012 smugglers drove a Jeep Cherokee up a homemade ramp onto the roughly 14-foot border fence and it got stuck (high-centered) on top. Narration: 'Smugglers drove their Jeep up the border fence.' / 'It got stuck. On top. 14 feet up.'",
+   "sources": [
+    "npr",
+    "fox13",
+    "cbs",
+    "pnt",
+    "foxnews",
+    "ria",
+    "eidaho"
+   ]
+  },
+  {
+   "id": "K_place",
+   "type": "established",
+   "nature": "fact",
+   "text": "Yuma Sector: the Imperial Sand Dunes, California, about five miles west of the Colorado River and the Arizona line (AP caption and CNN: 'near Yuma, Ariz.'); spotted early on Tuesday 30 October 2012. Label 'YUMA SECTOR · OCT 2012'.",
+   "sources": [
+    "cbs",
+    "eidaho",
+    "ria",
+    "fox13",
+    "leadstories"
+   ]
+  },
+  {
+   "id": "K_fled",
+   "type": "established",
+   "nature": "fact",
+   "text": "Two men on the Mexican side who were trying to free the Jeep fled into Mexico when agents approached; no arrests. Narration: 'Agents came. Both men ran back to Mexico.'",
+   "sources": [
+    "cbs",
+    "fox13",
+    "ria",
+    "eidaho"
+   ]
+  },
+  {
+   "id": "K_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD (wording as reported in two independent outlets): Border Patrol said the smugglers 'fell prey to their own devices' with 'a make-shift ramp that was not quite up to the task.' Narration: 'Border Patrol's verdict? Not quite up to the task.'",
+   "sources": [
+    "npr",
+    "ria",
+    "fox13"
+   ]
+  },
+  {
+   "id": "K_seized12",
+   "type": "established",
+   "nature": "fact",
+   "text": "Agents removed the Jeep from the fence and seized it and both ramps; the Jeep was empty. End label 'SEIZED: THE JEEP + BOTH RAMPS'.",
+   "sources": [
+    "cbs",
+    "foxnews",
+    "eidaho",
+    "ria"
+   ]
+  },
+  {
+   "id": "K_truck",
+   "type": "established",
+   "nature": "fact",
+   "text": "April 2011, Barry M. Goldwater Range east of Yuma, Arizona: agents found a folding ramp extending over the border fence from a large truck parked on the Mexican side (AP: a truck with ramps built onto it). Narration: 'But that was not their wildest ramp.' / 'In 2011, a truck brought its own folding ramp.'",
+   "sources": [
+    "swj",
+    "hsnw",
+    "cbs",
+    "insight"
+   ]
+  },
+  {
+   "id": "K_1000",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): a Jeep Cherokee had apparently just used the ramp to carry about 1,000 lb of marijuana across; over 1,000 lb was seized on the range (7 April 2011) and the two suspects fled back into Mexico, leaving the vehicle. Narration: 'A Jeep crossed with 1,000 pounds of weed.' Counter '1,000 LB'.",
+   "sources": [
+    "mcas",
+    "swj",
+    "hsnw"
+   ]
+  },
+  {
+   "id": "K_eleven",
+   "type": "established",
+   "nature": "fact",
+   "text": "February 2019, Cabeza Prieta National Wildlife Refuge (Ajo station, Arizona): a heavily modified Jeep Cherokee carrying 11 people and suspected bundles of marijuana, spotted by a helicopter crew, tried a homemade ramp over the vehicle barrier and got stuck. Narration: 'In 2019, eleven people in one Jeep.' / 'Its homemade ramp failed. Stuck again.'",
+   "sources": [
+    "kxxv",
+    "kgun",
+    "ktar",
+    "sentinel"
+   ]
+  },
+  {
+   "id": "K_eleven_fled",
+   "type": "established",
+   "nature": "fact",
+   "text": "All 11 fled into Mexico on foot; Mexican officials searched and found neither the people nor the drugs; agents seized the Jeep.",
+   "sources": [
+    "kxxv",
+    "ktar",
+    "sentinel"
+   ]
+  },
+  {
+   "id": "K_punch",
+   "type": "established",
+   "nature": "fact",
+   "text": "In all three cases the people got away (2012: two men; April 2011: two suspects; 2019: eleven people) and the Jeep was left behind and seized. Narration: 'The drivers all escaped.' / 'The Jeeps never did.'",
+   "sources": [
+    "cbs",
+    "fox13",
+    "mcas",
+    "swj",
+    "kxxv",
+    "ktar",
+    "sentinel"
+   ]
+  },
+  {
+   "id": "K_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): cartel recruiters on social media promise 'quick, easy money' to drive across or near the border, and smuggling is a felony (CBP / Border Patrol); CBP 'blind mule' advice: inspect any vehicle you drive before and after every trip and never carry items of unknown content for others; UK FCDO: you are responsible for anything you carry across a border, even if it belongs to someone else. Rows: 'EASY MONEY' DM = RED FLAG / CHECK ANY CAR YOU DRIVE / YOU OWN WHAT YOU CARRY.",
+   "sources": [
+    "cbp_teens",
+    "scripps",
+    "borderreport",
+    "foxrgv",
+    "inews",
+    "fcdo"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "npr",
+   "publisher": "NPR",
+   "title": "This could happen to the best of drivers",
+   "url": "https://www.npr.org/2012/11/01/164082719/this-could-happen-to-the-best-of-drivers",
+   "date": "2012-11-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox13",
+   "publisher": "Fox13 (CNN)",
+   "title": "Jeep gets stuck on U.S.-Mexico border fence",
+   "url": "https://www.fox13now.com/2012/11/01/jeep-gets-stuck-on-u-s-mexico-border-fence",
+   "date": "2012-11-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbs",
+   "publisher": "CBS News (Associated Press)",
+   "title": "Suspected drug smugglers get stuck trying to drive over US-Mexico border fence",
+   "url": "https://cbsnews.com/news/suspected-drug-smugglers-get-stuck-trying-to-drive-over-us-mexico-border-fence",
+   "date": "2012-10-31",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pnt",
+   "publisher": "Phoenix New Times",
+   "title": "Border crossing gone wrong: Jeep gets stuck on top of 14-foot fence",
+   "url": "https://www.phoenixnewtimes.com/news/border-crossing-gone-wrong-jeep-gets-stuck-on-top-of-14-foot-fence-6651133/",
+   "date": "2012-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "foxnews",
+   "publisher": "Fox News",
+   "title": "Smugglers hit snag when Jeep gets caught on border fence",
+   "url": "https://foxnews.com/us/smugglers-hit-snag-when-jeep-gets-caught-on-border-fence.amp",
+   "date": "2012-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ria",
+   "publisher": "RIA Novosti (via GlobalSecurity.org)",
+   "title": "Caught in the act: Jeep snared on US-Mexico border wall",
+   "url": "https://www.globalsecurity.org/security/library/news/2012/11/sec-121102-rianovosti01.htm",
+   "date": "2012-11-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "eidaho",
+   "publisher": "East Idaho News (AP photo)",
+   "title": "Photo: drug smugglers' SUV stuck atop border fence",
+   "url": "https://www.eastidahonews.com/?p=52284",
+   "date": "2012-10-31",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "leadstories",
+   "publisher": "Lead Stories",
+   "title": "Fake news: suspected drug smugglers get stuck trying to drive over US-Mexico border fence (misdated CBS page; the event is 2012)",
+   "url": "https://leadstories.com/hoax-alert/2019/01/fake-news-suspected-drug-smugglers-get-stuck-trying-to-drive-over-us-mexico-border-fence.html",
+   "date": "2019-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "insight",
+   "publisher": "InSight Crime",
+   "title": "SUV stuck on border fence between Mexico and US",
+   "url": "https://insightcrime.org/news/briefs/suv-stuck-border-fence-mexico-us",
+   "date": "2012-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "swj",
+   "publisher": "Small Wars Journal (reprinting the Yuma Sun)",
+   "title": "Mexican Cartel Tactical Note #29: Vehicular ramps used to bypass border fencing",
+   "url": "https://smallwarsjournal.com/node/64833",
+   "date": "2011-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "hsnw",
+   "publisher": "Homeland Security Newswire",
+   "title": "Smugglers use portable ramp to jump border fence",
+   "url": "https://securitydebrief.com/2011/04/19/smugglers-use-portable-ramp-to-jump-border-fence/",
+   "date": "2011-04-19",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "mcas",
+   "publisher": "Marine Corps Air Station Yuma (marines.mil)",
+   "title": "Yuma air station alarm center helps Border Patrol prevent illegal activity",
+   "url": "https://www.mcasyuma.marines.mil/News/Article/Article/550218/yuma-air-station-alarm-center-border-patrol-prevent-illegal-activity",
+   "date": "2011",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "kxxv",
+   "publisher": "KXXV (Associated Press)",
+   "title": "Camouflaged car stuck on border fence; no arrests made",
+   "url": "https://www.kxxv.com/story/39976278/camouflaged-car-stuck-on-border-fence-no-arrests-made",
+   "date": "2019-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "kgun",
+   "publisher": "KGUN 9 (Associated Press)",
+   "title": "Camouflaged car stuck on border fence; no arrests made",
+   "url": "https://www.kgun9.com/news/local-news/camouflaged-car-stuck-on-border-fence-no-arrests-made",
+   "date": "2019-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ktar",
+   "publisher": "KTAR News",
+   "title": "Border Patrol agents seize modified drug smuggling vehicle in Arizona",
+   "url": "https://ktar.com/arizona-news/border-patrol-agents-seize-modified-drug-smuggling-vehicle-in-arizona",
+   "date": "2019-02-18",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "sentinel",
+   "publisher": "Tucson Sentinel",
+   "title": "Smuggling vehicle stuck on border barrier",
+   "url": "https://www.tucsonsentinel.com/local/report/021519_smuggling_vehicle_stuck/",
+   "date": "2019-02-15",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbp_teens",
+   "publisher": "Fox News (CBP release)",
+   "title": "CBP: criminal gangs recruiting teens on social media to smuggle migrants",
+   "url": "https://www.foxnews.com/politics/cbp-criminal-gangs-recruiting-teens-social-media-smuggle-migrants",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "scripps",
+   "publisher": "ABC15 / Scripps",
+   "title": "Teens promised quick cash through social media for human smuggling",
+   "url": "https://www.abc15.com/news/national/teens-promised-quick-cash-through-social-media-for-human-smuggling",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "borderreport",
+   "publisher": "Border Report",
+   "title": "Cartels take to social media to aggressively recruit teen smugglers in the U.S., Border Patrol says",
+   "url": "https://digital-release.borderreport.com/regions/california/cartels-take-to-social-media-to-aggressively-recruit-teen-smugglers-in-the-u-s-border-patrol-says/amp/",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "foxrgv",
+   "publisher": "Fox RGV (CBP)",
+   "title": "Blind mule alert: CBP warns against unknowingly smuggling drugs",
+   "url": "https://foxrgv.tv/blind-mule-alert-cbp-warns-against-unknowingly-smuggling-drugs",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "inews",
+   "publisher": "inewsource",
+   "title": "How to avoid becoming a blind mule",
+   "url": "https://inewsource.org/2023/05/25/how-to-avoid-blind-mules/",
+   "date": "2023-05-25",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fcdo",
+   "publisher": "UK FCDO Travel Aware",
+   "title": "Drug smuggling abroad",
+   "url": "https://travelaware.campaign.gov.uk/drug-smuggling-abroad/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 2,
+ "palette": {
+  "shadow": "#131d28",
+  "mid": "#c6b79c",
+  "accent": "#e6a23a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A JEEP STUCK ON TOP"
+   },
+   {
+    "text": "OF THE BORDER FENCE",
+    "colour": "#e6a23a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "3 JEEPS. 0 GOT AWAY."
+   },
+   {
+    "text": "WORST DRIVERS OR BEST TRY? 👇",
+    "colour": "#e6a23a"
+   },
+   {
+    "text": "SEND TO A MATE WHO CAN'T PARK",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "ATTEMPT",
+  "keys": [
+   {
+    "t": 3.41,
+    "v": "1 · STUCK ON TOP"
+   },
+   {
+    "t": 16.35,
+    "v": "2 · FOLDING RAMP"
+   },
+   {
+    "t": 27.29,
+    "v": "3 · 11 IN ONE JEEP"
+   }
+  ],
+  "y": 330,
+  "until": 33.36
+ },
+ "legal_status_verified": "2026-10-17"
+}
