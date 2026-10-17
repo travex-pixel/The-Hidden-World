@@ -210,7 +210,7 @@ def build(h):
     total = by[scenes[-1]["id"]]["end"] if scenes[-1]["id"] in by else 35.0
     ep["progress"] = {"label": "THE STORY", "keys": keys, "y": 360, "until": round(total - 3.4 - 0.35, 2)}
     ep["narrator_profile"] = {"provider": "kokoro", "kokoro_voice": "am_adam", "energy": 1.0,
-                              "pronounce": {"$16": "sixteen", "Haugen": "Howgun"}}
+                              "pronounce": {"$16": "sixteen", "$5.5": "five point five", "million": "million dollars", "Haugen": "Howgun"}}
     ep["score"] = {"root_hz": 130.81, "bpm": 80,
                    "cliff": {"scene": "s05_billions", "word": [0, 2], "at": 0.45}}
     ep["content_notes"] = ("Tone: ironic and factual, never mocking. Frances Haugen and Jeff Horwitz are real people: drawn ONLY as dark "
