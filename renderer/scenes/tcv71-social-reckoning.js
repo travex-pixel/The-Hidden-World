@@ -5,9 +5,10 @@
    of 2024 revenue from ads for scams and banned goods (Meta: "rough and overly-inclusive"); bans needed 95 % certainty of
    fraud, and suspected scammers below that paid higher ad rates. Fun fact: the reporter the film portrays, Jeff Horwitz,
    broke that story at Reuters (2026 Pulitzer).
-   Structure: frame 1 = the HERO (a phone big and centred in a viewer's hand in a near-empty cinema, its feed already
-   scrolling, an amber deal tile = the accent; an usher walking the aisle with a torch; the camera already pushing) with the
-   headline; item 1 in the empty lobby (the usher sweeps; two bars on a board: 2026 short, 2010 four times taller); item 2 in
+   Structure: frame 1 = the HERO, a sound-off picture of the headline (71+ JEEP BREAKOUT rule): a near-empty cinema with the
+   film's title as plain text on the blank screen, and in front a phone big and centred in a viewer's hand, its feed
+   FLOODED with amber scam-style deal tiles (the accent), already scrolling under his thumb; an usher walks the empty aisle;
+   the camera already pushing; the headline; item 1 in the empty lobby (the usher sweeps; two bars on a board: 2026 short, 2010 four times taller); item 2 in
    an office at night (Haugen's silhouette photographs a monitor; the slide quote card); item 3 = the biggest reveal at a wall
    of glowing ad tiles (tiles flag one by one; the analyst steps back; the $16,000,000,000 counter; Meta's response); the 95 %
    rule close on the wall (a fraud meter stops at 94 %, the ad price climbs; the save tip overlay, no spoken cue); the fun
@@ -20,7 +21,7 @@
    object is the amber scam-deal tile (on the phone and on the ad wall; props marked accent: true).
    Content rules: Haugen and Horwitz are real people: dark silhouettes only, tagged NOT A LIKENESS. Zuckerberg and the film's
    actors are never shown. Meta, Facebook, Instagram, Reuters and Sony appear only as plain text: no logos, no blue 'f', no
-   app interface, no film poster (the cinema screen and the lobby's poster frames are blank light). New environments
+   app interface, no film poster or still (the cinema screen shows only the title as plain text; the lobby's poster frames are blank light). New environments
    (E.registerSets): sr71_cinema, sr71_lobby, sr71_office, sr71_adwall; plus the engine's office_day (the newsroom). */
 (function () {
   const E = window.HW; const { W, H, ease, seg, clamp, lerp, f1 } = E;
@@ -40,14 +41,15 @@
   // grey placeholder cards; every third card is a 'Sponsored' deal tile with an amber price tag (the accent). off = scroll
   // offset in px (content moves up as off grows). Centred (x, y); body 300 x 600 at s = 1.
   const CARD = 210;
+  const OFFERS = ['90% OFF · $19', 'CRYPTO x10', 'FREE PHONE', 'CELEB "TIP"'];
   function feedCard(i, y, glow) {
-    const k = ((i % 3) + 3) % 3;
+    const k = 1, o = OFFERS[((i % 4) + 4) % 4];   // frame 1 = a feed FLOODED with scam-style ads: every card is a deal tile
     if (k === 1) {   // the scam-style deal tile
       let g = `<rect x="-128" y="${f1(y)}" width="256" height="${CARD - 14}" rx="12" fill="#2a2620" stroke="${ACC}" stroke-width="3" stroke-opacity="0.8"/>`;
       g += `<text x="-110" y="${f1(y + 26)}" font-family="Nunito" font-weight="700" font-size="17" fill="#c8baa4">Sponsored</text>`;
       g += `<rect x="-110" y="${f1(y + 38)}" width="220" height="96" rx="8" fill="#4a4036"/><path d="M-80 ${f1(y + 120)} l40 -50 l30 30 l24 -20 l46 40 Z" fill="#6a5a48"/>`;
       g += wash(54, y + 150, 90, 40, ACC, f1(0.35 * glow));
-      g += `<rect x="-110" y="${f1(y + 144)}" width="220" height="42" rx="21" fill="${ACC}"/><text x="0" y="${f1(y + 173)}" text-anchor="middle" ${FONT} font-size="24" fill="#1a1410">90% OFF · $19</text>`;
+      g += `<rect x="-110" y="${f1(y + 144)}" width="220" height="42" rx="21" fill="${ACC}"/><text x="0" y="${f1(y + 173)}" text-anchor="middle" ${FONT} font-size="24" fill="#1a1410">${o}</text>`;
       return g;
     }
     const sh = k === 0 ? '#3a3e46' : '#353a42';
@@ -168,6 +170,7 @@
       const t = ctx.t + (ctx.sceneStart || 0);
       let back = `<rect x="-400" y="-300" width="${W + 800}" height="${H + 600}" fill="#0c1018"/>`;
       back += `<path d="M-120 60 L1200 60 L1160 520 L-80 520 Z" fill="#cfd8e4" opacity="${f1(0.8 + 0.05 * Math.sin(t * 1.7))}"/>` + wash(540, 300, 900, 520, '#b8c8e0', 0.22);
+      if (o.title) back += `<text x="540" y="150" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="60" letter-spacing="6" fill="#1c2432" opacity="0.85">THE SOCIAL RECKONING</text><path d="M260 176 L820 176" stroke="#1c2432" stroke-width="3" opacity="0.5"/>`;
       back += `<path d="M-400 -300 L-120 60 L-80 520 L-400 900 Z" fill="#141a24"/><path d="M1480 -300 L1200 60 L1160 520 L1480 900 Z" fill="#141a24"/>`;
       back += `<path d="M540 300 L-300 1500 L1380 1500 Z" fill="#dfe8ff" opacity="0.035"/>`;
       const row = (y, sw, sh, col, n, x0) => { let s = ''; for (let i = 0; i < n; i++) { const x = x0 + i * sw; s += `<rect x="${f1(x)}" y="${f1(y)}" width="${f1(sw - 10)}" height="${f1(sh)}" rx="${f1(sw * 0.22)}" fill="${col}" stroke="#08090c" stroke-width="4"/><rect x="${f1(x + 6)}" y="${f1(y + 6)}" width="${f1(sw - 22)}" height="${f1(sh * 0.18)}" rx="6" fill="#ffffff" opacity="0.05"/>`; } return s; };
@@ -235,7 +238,7 @@
     sr71_hook(ctx) {
       const T = ctx.T, l2 = LS(ctx, 1, 2.6);
       return E.cine.shot(ctx, {
-        set: 'sr71_cinema', grade: 'cold', dof: true, haze: 0.4,
+        set: 'sr71_cinema', setOpts: { title: true }, grade: 'cold', dof: true, haze: 0.4,
         cam: { from: HERO_CAM0, to: { x: 0, y: 30, z: 1.12 } },
         figures: [usher(USHER_X0, USHER_X0 + USHER_V * T, T)],
         props: heroProps(tt => SPEED * tt),
@@ -255,12 +258,12 @@
         set: 'sr71_lobby', grade: 'warm', haze: 0.4,
         cam: { from: { x: 0, y: 20, z: 1.0 }, to: { x: 10, y: 30, z: 1.07 } },
         figures: [
-          { id: 'sr71_usher', x: 300, y: 1760, scale: 0.86, dir: 1, turn: 0.4, pose: 'bowed', expr: 'blank', depth: 0.95,
+          { id: 'sr71_usher', x: 300, y: 1760, scale: 0.86, dir: 1, turn: 0.4, pose: 'bowed', expr: 'blank', depth: 1.0,
             keys: [{ at: 0, x: 300, pose: 'bowed', dur: 0.01 }, { at: T, x: 420, pose: 'bowed', dur: T }, { at: l2 + 0.2, pose: 'stand', headTurn: 0.4, expr: 'sad', dur: 0.5 }] }
         ],
         props: [
-          { depth: 0.95, svg: tt => popcorn(sw(tt)) },
-          { depth: 0.95, svg: tt => broom(lerp(330, 450, sw(tt)) + 40, 1240, -18 + 6 * Math.sin(tt * 6)) },
+          { depth: 1.0, svg: tt => popcorn(sw(tt)) },
+          { depth: 1.0, svg: tt => broom(lerp(330, 450, sw(tt)) + 40, 1240, -18 + 6 * Math.sin(tt * 6)) },
           { depth: 0.75, svg: tt => board(850, 1180, ease.out(seg(tt, og - 0.1, og + 0.8)), ease.out(seg(tt, m5 - 0.2, m5 + 0.5))) }
         ],
         overlays: [
@@ -279,13 +282,13 @@
         set: 'sr71_office', setOpts: { desk: false }, grade: 'night', haze: 0.45, dof: true,
         cam: { from: { x: 0, y: 40, z: 1.02 }, to: { x: 10, y: 50, z: 1.1 } },
         figures: [
-          { id: 'sr71_haugen', x: 160, y: 1800, scale: 0.92, dir: 1, turn: 0.35, pose: 'walk', silhouette: 'cool', depth: 0.95,
+          { id: 'sr71_haugen', x: 160, y: 1800, scale: 0.92, dir: 1, turn: 0.35, pose: 'walk', silhouette: 'cool', depth: 1.0,
             walk: { at: 0, dur: Math.max(0.8, lk - 0.6), cadence: 3.8, stride: 12, from: 160, to: 300 },
             keys: [{ at: lk - 0.5, x: 300, pose: 'present', dur: 0.4 }, { at: lk + 0.8, pose: 'examine', dur: 0.5 }] }
         ],
         props: [
           { depth: 0.9, svg: tt => monitor(720, 1120, 0.95, tt) },
-          { depth: 0.98, svg: tt => tt < lk - 0.5 ? '' : `<g opacity="${f1(seg(tt, lk - 0.5, lk - 0.2))}">${smallPhone(500, 1250, 1.0, 8, Math.max(0, 1 - 4 * Math.abs(tt - lk)))}</g>` }
+          { depth: 1.0, svg: tt => tt < lk - 0.5 ? '' : `<g opacity="${f1(seg(tt, lk - 0.5, lk - 0.2))}">${smallPhone(500, 1250, 1.0, 8, Math.max(0, 1 - 4 * Math.abs(tt - lk)))}</g>` }
         ],
         overlays: [
           { type: 'card', frosted: true, at: 0.3, y: 400, w: 900, rows: [
@@ -391,7 +394,7 @@
     sr71_end(ctx) {
       const T = ctx.T;
       return E.cine.shot(ctx, {
-        set: 'sr71_cinema', grade: 'cold', dof: true, haze: 0.4,
+        set: 'sr71_cinema', setOpts: { title: true }, grade: 'cold', dof: true, haze: 0.4,
         cam: { from: { x: 0, y: 0, z: 0.97 }, to: HERO_CAM0 },
         figures: [usher(USHER_X0 - USHER_V * T, USHER_X0, T)],
         props: heroProps(tt => SPEED * (tt - T), 1.2 * Math.ceil(T / 1.2) - T),

@@ -41,8 +41,9 @@ def build(h):
     VER = "2026-10-17"
 
     scenes = [
-        # A - hook: frame 1 = the HERO (a phone big and centred in the viewer's hand in a near-empty cinema, its feed already
-        #     scrolling, one amber "sponsored" deal tile glowing = the accent), the camera already pushing; the headline.
+        # A - hook: frame 1 = the HERO, the headline as a sound-off picture: a near-empty cinema, the film's title as plain
+        #     text on the blank screen, and a phone big and centred in a viewer's hand, its feed flooded with amber scam-style
+        #     deal tiles (the accent), already scrolling; an usher walks the aisle; the camera already pushing; the headline.
         S("s01_hook", "sr71_hook", [N("The Social Reckoning bombed. The truth? Worse.", tone="hook"),
                                     N("Make it $16 billion worse.", tone="tense")],
           "tension", ["K_hook", "K_tease"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "whoosh", 0.3), fw(0, 3, "thump", 0.32, 0.0), fw(1, 2, "hit", 0.3, 0.0)],
@@ -216,7 +217,7 @@ def build(h):
     ep["content_notes"] = ("Tone: ironic and factual, never mocking. Frances Haugen and Jeff Horwitz are real people: drawn ONLY as dark "
                            "rim-lit silhouettes tagged NOT A LIKENESS, named in plain text. Mark Zuckerberg and the film's actors are never "
                            "depicted. Meta, Facebook, Instagram, Reuters and Sony are named only as plain text: no logos, no blue 'f', no app "
-                           "icons or interface artwork, no film poster or still; the cinema, phone feed, ad tiles and newsroom are generic "
+                           "icons or interface artwork, no film poster or still (the cinema screen shows only the title as plain text); the cinema, phone feed, ad tiles and newsroom are generic "
                            "illustrations in the series palette. Every revenue figure is attributed to Meta's own documents as reported by "
                            "Reuters, and Meta's response ('rough and overly-inclusive'; it says it fights fraud) is on screen; nothing says "
                            "Meta committed fraud; the lawsuits are described as allegations. The quote card is a slide wording reported by "
