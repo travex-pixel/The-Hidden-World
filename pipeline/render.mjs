@@ -15,10 +15,17 @@ const { width, height, fps, seed, timeline, episode, scenes_js } = plan;
 const total = timeline[timeline.length - 1].end;
 const nFrames = Math.round(total * fps);
 
-const browser = await chromium.launch({ args: ['--font-render-hinting=none', '--disable-gpu'] });
+// 3D episodes render WebGL in software (SwiftShader), so they need it enabled explicitly
+const gl = (plan.episode.libs || []).length ? ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] : ['--disable-gpu'];
+const browser = await chromium.launch({ args: ['--font-render-hinting=none', ...gl] });
 const page = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: 1 });
 page.on('pageerror', e => { console.error('[page error]', e.message); process.exitCode = 1; });
 await page.goto(pathToFileURL(resolve(here, '../renderer/index.html')).href);
+// extra libraries an episode asks for (CommonJS builds, exposed as window globals, e.g. three -> window.THREE)
+for (const lib of plan.episode.libs || []) {
+  const src = readFileSync(resolve(here, '..', lib.path), 'utf8');
+  await page.addScriptTag({ content: `(function(){var module={exports:{}},exports=module.exports;${src}\n;window[${JSON.stringify(lib.global)}]=module.exports;})();` });
+}
 await page.addScriptTag({ path: resolve(here, '..', scenes_js) });
 await page.evaluate(() => document.fonts.ready);
 await page.evaluate(({ episode, timeline, seed, visual, art, cast }) => window.HW.setup(episode, timeline, seed, visual, art, cast), { episode, timeline, seed, visual: plan.visual, art: plan.art, cast: plan.cast });

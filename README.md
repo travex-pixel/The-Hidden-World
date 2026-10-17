@@ -10,6 +10,9 @@ An original animated educational-mystery channel and the $0 production factory t
 
 **Episode 003 — *The Viral Metronome Trick That Shut a London Bridge*** → [`releases/ep003-metronome-bridge.mp4`](releases/ep003-metronome-bridge.mp4)
 
+### Invisible Tech (3D low-poly explainers)
+**Episode 005 — *The Speed Camera That Never Measures Your Speed*** → [`releases/ep005-average-speed-camera.mp4`](releases/ep005-average-speed-camera.mp4). It is built with three.js (a low-poly motorway rendered in software WebGL) under an SVG overlay with karaoke captions. The war-room script is in [war_room.md](episodes/ep005-average-speed-camera/war_room.md). The upload kit has post captions, a pinned comment, seed comments and an `.srt` file: [releases/ep005-average-speed-camera.upload.md](releases/ep005-average-speed-camera.upload.md).
+
 ### FIVE MESSAGES (five-part animated thriller, Season 1)
 Five verified episodes, 27–32 s each. Story bible, scripts, QA and render instructions: [series/five-messages/](series/five-messages/README.md). Get the MP4s from the draft release `five-messages-s1` (Releases) or run **Actions → Render series**.
 
@@ -41,7 +44,8 @@ episodes/<id>/research.md               │
 | Art | **Illustrated mode (Episode 001 default):** supplied panels are imported by `pipeline/import_panels.py`, then framed, animated with camera moves and crossfades, text-corrected and captioned (see [docs/ART.md](docs/ART.md)). **Code-drawn mode (`--visual svg`):** `renderer/engine.js` (palette, paper grain, watercolour blobs, ink filters, character rigs *Marigold*, *Pip*, the messenger bird, reservoirs, pipes, coins, charts, captions, transitions) + `renderer/scenes/<id>.js` (one function per scene, deterministic in `t` and seed). |
 | Narration | Piper TTS, `en_GB-alba-medium` (MIT engine, CC BY 4.0 dataset). Voice fetched from the GitHub release mirror, cached. |
 | Music & SFX | `pipeline/audio.py` — composed cue system (curious → playful → tension → revelation → warm) and synthesised effects; side-chain ducking; soft limiter. |
-| Render | `pipeline/render.mjs` — Playwright/Chromium screenshots every frame into ffmpeg. |
+| Render | `pipeline/render.mjs` — Playwright/Chromium screenshots every frame into ffmpeg. Episodes can declare `libs` (e.g. three.js) and take over the frame with `HW.custom` for 3D worlds (Episode 005). |
+| Captions file | `pipeline/captions.py` — `.srt` that matches the on-screen karaoke captions. |
 | Verify | `pipeline/verify.py` — streams, codec, 1080×1920, 30 fps, duration, full decode, loudness, silence gaps, contact sheet. |
 | Factory | `.github/workflows/render-episode.yml` — manual run from a phone, MP4 as a downloadable artifact (verified: preview run succeeded on GitHub Actions in under 2 minutes). |
 

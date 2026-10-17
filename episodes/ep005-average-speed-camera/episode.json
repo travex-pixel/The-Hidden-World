@@ -1,0 +1,421 @@
+{
+  "id": "ep005-average-speed-camera",
+  "number": 5,
+  "title": "The Speed Camera That Never Measures Your Speed",
+  "central_question": "If an average speed camera never measures your speed, how does it know you were speeding, and why doesn't braking at the camera help?",
+  "template": "counterintuitive-truth",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.32,
+  "target_duration_seconds": [
+    40,
+    60
+  ],
+  "visual_mode": "svg",
+  "libs": [
+    {
+      "path": "node_modules/three/build/three.cjs",
+      "global": "THREE"
+    }
+  ],
+  "fiction_notice": "Illustration. The plate, times and journey are invented examples.",
+  "music": {
+    "style": "pulse-to-reveal",
+    "bpm": 104
+  },
+  "journey": {
+    "plate": "AB26 CDE",
+    "distance_miles": 2.0,
+    "limit_mph": 50,
+    "time_a": "08:14:03",
+    "time_b": "08:16:03",
+    "elapsed_s": 120,
+    "fast_mph": 70,
+    "slow_mph": 40,
+    "hook_speed_mph": 48
+  },
+  "anpr": {
+    "reads_per_day_low": 25000000,
+    "reads_per_day_high": 35000000,
+    "retention_months": 12
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "hook_brake",
+      "min_duration": 4.8,
+      "pad_after": 0.3,
+      "narration": "Everyone brakes for the speed camera. But this one never measures your speed. It checks a clock. Twice.",
+      "caption": "This camera never measures your speed.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "whoosh"
+        },
+        {
+          "at": 0.9,
+          "name": "brake"
+        },
+        {
+          "at": 3.1,
+          "name": "sting"
+        },
+        {
+          "at": 5.3,
+          "name": "tick"
+        },
+        {
+          "at": 5.85,
+          "name": "ping"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s02_camera_a",
+      "scene": "camera_a_infrared",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "narration": "Two miles back, you passed this. It fires an infrared flash you can't see. Your number plate bounces it straight back. Plate read. Time stamped.",
+      "caption": "Invisible infrared. Plate read. Time stamped.",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 0.05,
+          "name": "whoosh"
+        },
+        {
+          "at": 2.1,
+          "name": "swell"
+        },
+        {
+          "at": 6.47,
+          "name": "beep"
+        },
+        {
+          "at": 7.45,
+          "name": "ping"
+        }
+      ],
+      "claims": [
+        "C2",
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s03_gap",
+      "scene": "gap_stopwatch",
+      "min_duration": 5.5,
+      "pad_after": 0.3,
+      "narration": "Now the clock runs. Two miles away, a second camera is waiting. At fifty, that takes at least two minutes twenty-four.",
+      "caption": "2 miles at 50 mph takes at least 2:24.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "tick"
+        },
+        {
+          "at": 1.3,
+          "name": "tick"
+        },
+        {
+          "at": 2.3,
+          "name": "tick"
+        },
+        {
+          "at": 3.3,
+          "name": "tick"
+        },
+        {
+          "at": 4.3,
+          "name": "tick"
+        },
+        {
+          "at": 5.3,
+          "name": "tick"
+        },
+        {
+          "at": 6.3,
+          "name": "tick"
+        },
+        {
+          "at": 4.0,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C1",
+        "C4"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s04_camera_b",
+      "scene": "camera_b_maths",
+      "min_duration": 5.5,
+      "pad_after": 0.4,
+      "narration": "Camera two reads your plate again. Two miles in two minutes flat. That's an average of sixty.",
+      "caption": "2 miles in 2:00 = average 60 mph.",
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "at": 0.75,
+          "name": "beep"
+        },
+        {
+          "at": 2.0,
+          "name": "whoosh"
+        },
+        {
+          "at": 4.58,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C1",
+        "C4"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s05_sceptic",
+      "scene": "sceptic_brake",
+      "min_duration": 8.0,
+      "pad_after": 0.4,
+      "narration": "\"So I'll just brake at the camera.\" Watch. Seventy most of the way. Forty for the camera. Same two minutes. Still sixty. The camera never saw your brakes.",
+      "caption": "Braking at the end can't undo the clock.",
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 4.0,
+          "name": "brake"
+        },
+        {
+          "at": 6.3,
+          "name": "stamp"
+        },
+        {
+          "at": 7.6,
+          "name": "sting"
+        }
+      ],
+      "claims": [
+        "C1",
+        "C4"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s06_evidence",
+      "scene": "evidence_pins",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "narration": "Every car gets the same treatment. Legal? Your record is deleted. Too fast? Both photos become evidence.",
+      "caption": "Legal: deleted. Too fast: both photos become evidence.",
+      "music_cue": "power",
+      "sfx": [
+        {
+          "at": 2.4,
+          "name": "ping"
+        },
+        {
+          "at": 3.83,
+          "name": "puff"
+        },
+        {
+          "at": 6.32,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C5"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s07_network",
+      "scene": "network_reveal",
+      "min_duration": 6.0,
+      "pad_after": 0.2,
+      "narration": "But a different police camera network keeps its reads. Around twenty-five million a day. Stored for up to a year.",
+      "caption": "Police ANPR: ~25 million reads a day, kept up to a year.",
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "swell"
+        },
+        {
+          "at": 1.0,
+          "name": "sparkle"
+        },
+        {
+          "at": 3.1,
+          "name": "sparkle"
+        }
+      ],
+      "claims": [
+        "C6",
+        "C7"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s08_threshold",
+      "scene": "threshold_freeze",
+      "min_duration": 2.6,
+      "pad_after": 0.9,
+      "narration": "So where was your car last Tuesday?",
+      "caption": "So where was your car last Tuesday?",
+      "music_cue": "hush",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "chime"
+        }
+      ],
+      "claims": [],
+      "transition": "cut"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "Average speed (point-to-point) cameras do not measure instantaneous speed. Cameras at two or more points read each vehicle's number plate (ANPR) with a time stamp; the system divides the known distance by the time taken.",
+      "sources": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "ANPR cameras use infrared illumination and imaging, which lets them read plates day and night; at least one widely used system takes an infrared image at the entry camera.",
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "UK number plates are retroreflective, returning light (including infrared) towards its source, which ANPR relies on.",
+      "sources": [
+        "S4"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "illustrative",
+      "text": "Worked example: 2.0 miles at a 50 mph limit takes at least 144 s (2:24). Covering it in 120 s is an average of 60 mph. 70 mph for 14/9 mile (about 1.56 mi) plus 40 mph for 4/9 mile (about 0.44 mi) also takes exactly 120 s, so braking for the last section still averages 60 mph.",
+      "sources": []
+    },
+    {
+      "id": "C5",
+      "type": "established",
+      "text": "For vehicles that do not exceed the average speed limit, the plate data and images are automatically deleted; for speeding vehicles an evidence record with ANPR data, images and time stamps from both cameras is produced.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "estimate",
+      "text": "Police ANPR cameras in the UK submit roughly 25 to 35 million read records a day to the national system (NPCC / Surveillance Camera Commissioner figures; capacity is higher).",
+      "sources": [
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "C7",
+      "type": "established",
+      "text": "Read records on the National ANPR Service are deleted 12 months after entry unless preserved for an investigation.",
+      "sources": [
+        "S7",
+        "S8"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Average speed enforcement cameras",
+      "publisher": "Highways England / National Highways",
+      "url": "https://highwaysengland.co.uk/road-safety/average-speed-enforcement-cameras/",
+      "date": "undated (current page)",
+      "accessed": "2026-10-17",
+      "access_method": "search-index excerpt (direct fetch blocked)"
+    },
+    {
+      "id": "S2",
+      "title": "How do average speed cameras work, and does changing lane help avoid speeding fines?",
+      "publisher": "Driving.co.uk (The Sunday Times)",
+      "url": "https://driving.co.uk/?p=69703",
+      "date": "undated",
+      "accessed": "2026-10-17",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S3",
+      "title": "Explained: Every type of speed camera",
+      "publisher": "Autocar",
+      "url": "https://www.autocar.co.uk/node/369591",
+      "date": "undated",
+      "accessed": "2026-10-17",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S4",
+      "title": "The Effect of Retro-reflectivity and Reflectance of UK Number Plates on ANPR Performance",
+      "publisher": "University of Hertfordshire (Gurney, Rhead et al.)",
+      "url": "https://uhra.herts.ac.uk/handle/2299/12526",
+      "date": "2013",
+      "accessed": "2026-10-17",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S5",
+      "title": "Police use of automatic number plate recognition",
+      "publisher": "Surveillance Camera Commissioner blog (GOV.UK)",
+      "url": "https://videosurveillance.blog.gov.uk/2016/08/23/police-use-of-automatic-number-plate-recognition/",
+      "date": "23 August 2016",
+      "accessed": "2026-10-17",
+      "access_method": "search-index excerpt (direct fetch blocked)"
+    },
+    {
+      "id": "S6",
+      "title": "Police to get new national ANPR system",
+      "publisher": "UKAuthority",
+      "url": "https://ukauthority.com/articles/police-to-get-new-national-anpr-system",
+      "date": "undated",
+      "accessed": "2026-10-17",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S7",
+      "title": "ANPR privacy notice",
+      "publisher": "West Yorkshire Police",
+      "url": "https://www.westyorkshire.police.uk/node/147888",
+      "date": "undated",
+      "accessed": "2026-10-17",
+      "access_method": "search-index excerpt (direct fetch blocked)"
+    },
+    {
+      "id": "S8",
+      "title": "How we use ANPR",
+      "publisher": "Lancashire Constabulary",
+      "url": "https://lancashire.police.uk/about-us/accessing-information/how-we-use-anpr",
+      "date": "undated",
+      "accessed": "2026-10-17",
+      "access_method": "search-index excerpt"
+    }
+  ]
+}

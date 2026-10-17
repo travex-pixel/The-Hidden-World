@@ -356,3 +356,50 @@ class ThrillerCast(unittest.TestCase):
                 self.assertGreater(len(ln["env"]), 5, f"{sc['id']}: no lip-sync envelope")
                 self.assertGreater(max(ln["env"]), 0.5, f"{sc['id']}: mouth never opens")
                 self.assertLessEqual(ln["end"], n["duration"] + 1e-6)
+
+
+class Episode005(unittest.TestCase):
+    """Average speed cameras: the worked maths on screen must be exact, and the script must follow the format rules."""
+    def setUp(self):
+        self.ep = load_episode("ep005-average-speed-camera")
+        self.j = self.ep["journey"]
+
+    def test_worked_example_maths(self):
+        j = self.j
+        self.assertAlmostEqual(j["distance_miles"] / j["limit_mph"] * 3600, 144.0)          # "at least two minutes twenty-four"
+        self.assertAlmostEqual(j["distance_miles"] / j["elapsed_s"] * 3600, 60.0)           # "an average of sixty"
+        fast = 14 / 9                                                                        # 70 mph most of the way, 40 for the camera
+        self.assertAlmostEqual(fast / j["fast_mph"] * 3600 + (j["distance_miles"] - fast) / j["slow_mph"] * 3600, j["elapsed_s"])
+        self.assertLess(j["hook_speed_mph"], j["limit_mph"])
+
+    def test_timestamps_match_elapsed_time(self):
+        to_s = lambda hms: sum(int(x) * m for x, m in zip(hms.split(":"), (3600, 60, 1)))
+        self.assertEqual(to_s(self.j["time_b"]) - to_s(self.j["time_a"]), self.j["elapsed_s"])
+
+    def test_narration_sentences_under_12_words(self):
+        import re
+        for sc in self.ep["scenes"]:
+            for sentence in re.split(r'(?<=[.?!])["”]?\s+', sc["narration"]):
+                self.assertLess(len(sentence.split()), 12, f"{sc['id']}: {sentence!r}")
+
+    def test_on_screen_figures_match_sources(self):
+        js = (ROOT / "renderer" / "scenes" / "ep005-average-speed-camera.js").read_text()
+        self.assertIn(f"{self.ep['anpr']['reads_per_day_low']:,}", js)
+        self.assertIn(f"{self.ep['anpr']['retention_months']} months", js)
+        self.assertIn("2:24", js)
+        claims = {c["id"]: c for c in self.ep["claims"]}
+        self.assertEqual(claims["C6"]["type"], "estimate")
+
+    def test_three_js_library_is_declared_and_installed(self):
+        for lib in self.ep["libs"]:
+            self.assertTrue((ROOT / lib["path"]).exists() or not (ROOT / "node_modules").exists(), lib["path"])
+        self.assertIn("three", json.loads((ROOT / "package.json").read_text())["dependencies"])
+
+    def test_srt_matches_narration(self):
+        from pipeline.captions import srt
+        tl, t = [], 0.0
+        for sc in self.ep["scenes"]:
+            tl.append({"start": t, "narration_at": t + 0.25, "narration_end": t + 4.0, "end": t + 5.0}); t += 5.0
+        out = srt(self.ep, tl)
+        words = " ".join(l for l in out.splitlines() if l and not l[0].isdigit())
+        self.assertEqual(words.split(), " ".join(sc["narration"] for sc in self.ep["scenes"]).split())

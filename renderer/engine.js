@@ -316,6 +316,8 @@
       document.getElementById('paper').innerHTML = paperOverlay(seed);
       // preload artwork so frames never capture a half-loaded image
       this._imgs = await Promise.all(Object.values(this.state.art.panels).map(p => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('cannot load ' + p.src)); im.src = '../' + p.src; })));
+      // an episode can take over the whole frame (e.g. a three.js world under an SVG overlay)
+      if (this.custom && this.custom.setup) await this.custom.setup(this.state, this);
     },
     async ready() {
       const imgs = [...document.querySelectorAll('#stage image')];
@@ -348,6 +350,7 @@
       return body + cap;
     },
     frame(t) {
+      if (this.custom) return this.custom.frame(t, this);
       const st = this.state; const tl = st.timeline;
       let i = tl.findIndex(s => t < s.end); if (i < 0) i = tl.length - 1;
       const sc = st.ep.scenes[i]; const s = tl[i]; const local = t - s.start;

@@ -55,3 +55,7 @@ Priority = sum. Ties broken by evidence quality.
 
 ## Pillar balance check
 Infrastructure 7 · Money 6 · Science 7. Target 40/35/25 — slightly science-heavy; swap in infrastructure topics (ports, air-traffic control, container tracking) as research allows.
+
+| 22 | The Speed Camera That Never Measures Your Speed | Infrastructure / tech | Counterintuitive truth | 5 | 4 | 5 | 5 | 5 | 4 | 3 | 5 | 36 | **DONE — Episode 005** (Invisible Tech, 3D). National Highways, Autocar, Univ. of Hertfordshire (plate retroreflectivity), NPCC/SCC ANPR figures |
+
+**Invisible Tech follow-ups (threshold hooks):** the national ANPR network ("where was your car last Tuesday?"); how Google Maps sees traffic without cameras; how contactless cards talk to the terminal; lane-changing under average speed cameras.

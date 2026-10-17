@@ -7,10 +7,16 @@ const here = dirname(fileURLToPath(import.meta.url));
 const [planPath, outDir, ...times] = process.argv.slice(2);
 const plan = JSON.parse(readFileSync(planPath, 'utf8'));
 mkdirSync(outDir, { recursive: true });
-const browser = await chromium.launch({ args: ['--font-render-hinting=none'] });
+const gl = (plan.episode.libs || []).length ? ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] : [];
+const browser = await chromium.launch({ args: ['--font-render-hinting=none', ...gl] });
 const page = await browser.newPage({ viewport: { width: plan.width, height: plan.height } });
 page.on('pageerror', e => { console.error('[page error]', e.message); process.exitCode = 1; });
 await page.goto(pathToFileURL(resolve(here, '../renderer/index.html')).href);
+// extra libraries an episode asks for (CommonJS builds, exposed as window globals, e.g. three -> window.THREE)
+for (const lib of plan.episode.libs || []) {
+  const src = readFileSync(resolve(here, '..', lib.path), 'utf8');
+  await page.addScriptTag({ content: `(function(){var module={exports:{}},exports=module.exports;${src}\n;window[${JSON.stringify(lib.global)}]=module.exports;})();` });
+}
 await page.addScriptTag({ path: resolve(here, '..', plan.scenes_js) });
 await page.evaluate(() => document.fonts.ready);
 await page.evaluate(({ episode, timeline, seed, visual, art, cast }) => window.HW.setup(episode, timeline, seed, visual, art, cast), plan);
