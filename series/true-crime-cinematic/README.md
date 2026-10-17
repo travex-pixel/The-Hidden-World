@@ -72,6 +72,8 @@
 | 68 | `true_crime_68_chicken_heist.mp4` (archived outside git) | Trending: the Memphis chicken heist (Sept 2026), 100,000 stolen eggs and the missing KitKat truck; AI voice | see `production_manifest.json` |
 | 69 | `true_crime_69_kfc_cases.mp4` (archived outside git) | KFC's strangest cases: the 2018 UK shortage 999 calls, the 'fried rat', the recipe in an armoured car; AI voice | see `production_manifest.json` |
 | 70 | `true_crime_70_wendys_finger.mp4` (archived outside git) | The 2005 Wendy's chili finger hoax and the $100 fingertip; AI voice | see `production_manifest.json` |
+| 71 | `true_crime_71_social_reckoning.mp4` (archived outside git) | Trending: The Social Reckoning flop and Meta's projected $16B from scam ads (Reuters); first engine v4 build (Kokoro am_adam) | see `production_manifest.json` |
+| 72 | `true_crime_72_border_fails_3.mp4` (archived outside git) | Border Fails Part 3: fake carrots, the Tijuana meth drone, the San Luis KFC tunnel; engine v4 | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

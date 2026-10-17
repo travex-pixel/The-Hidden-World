@@ -810,3 +810,24 @@ SEED COMMENT: Too soft if anything. The charges put the loss at $2.5 million and
 PINNED: Send this to the mate who never finishes his food 🌶️ Vote: 1 = fair, 2 = too harsh 👇
 POST WHEN: Today, Saturday 17 Oct 2026, 7–9 pm US Eastern (4–6 pm in San Jose): Saturday evening is when most of the 18–34 audience is on Reels, and it pairs with Case File 69 (KFC) as a fast-food weekend.
 
+
+## 71 (`true_crime_71_social_reckoning.mp4`)
+CAPTION: The Social Reckoning bombed at the box office, but the real Facebook story is worse 🎬
+Meta's own documents, as reported by Reuters, projected $16 billion from ads for scams and banned goods (Meta called the estimate "rough and overly-inclusive"). And the reporter the film portrays broke that story.
+Would you quit Facebook? Yes or no 👇
+HASHTAGS: #thesocialreckoning #facebookscams #metascamads #facebook #truecrime
+ALT TEXT: Illustrated reel about The Social Reckoning box office flop and Meta scam ads: Aaron Sorkin's Facebook film opened to about $5.5 million, while Meta's own documents, as reported by Reuters, projected $16 billion from ads for scams and banned goods, a figure Meta disputes.
+SEED COMMENT: Quit. When a company's own documents projected $16 billion from scam and banned-goods ads, the movie was never the scary part.
+PINNED: Tag the mate who clicks every ad 👀 Vote: 1 = quitting Facebook, 2 = staying 👇
+POST WHEN: Today, Saturday 17 Oct 2026, 7–9 pm US Eastern: the film's second-weekend box office lands on Sunday 18 Oct and will push "the social reckoning" searches again, so the reel should be up and collecting shares before that news cycle.
+
+## 72 (`true_crime_72_border_fails_3.mp4`)
+CAPTION: KFC tunnel: smugglers hid a drug tunnel in an old KFC's kitchen, 590 feet under the border to Mexico 🍗 Border Fails, Part 3.
+Before that: nearly 3,000 fake carrots full of weed, and a drone too heavy to fly its meth.
+Smartest or dumbest? 👇 Follow for Part 4.
+HASHTAGS: #kfctunnel #drugtunnel #bordersmugglers #borderfails #truecrime
+ALT TEXT: Illustrated reel, Border Fails Part 3: the KFC tunnel, a drug tunnel found in 2018 under the kitchen of a former KFC in San Luis, Arizona, running 22 feet down and 590 feet to a trap door under a bed in Mexico, plus fake carrots full of marijuana in Texas and a meth drone that crashed in Tijuana.
+SEED COMMENT: Dumbest. 590 feet of tunnel to Mexico and it starts in a KFC kitchen? 😂
+PINNED: Part 1 = the drug catapult, Part 2 = the Jeep stuck on the border fence (linked above). Which border fail was dumber? Vote 1 = the KFC tunnel, 2 = the Jeep on the fence 👇 Tag a mate who'd dig one.
+POST WHEN: Sunday 18 Oct 2026, 12–2 pm US Eastern (weekend lunch scroll for men 18–34 in the US): a day after Case File 71 so the two do not compete, and in time to link Parts 1 and 2 with "Link a reel". If it has to go out today, 7–9 pm US Eastern.
+
