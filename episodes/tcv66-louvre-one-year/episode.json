@@ -1,0 +1,1007 @@
+{
+ "id": "tcv66-louvre-one-year",
+ "number": 66,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Louvre Heist: One Year Later",
+ "central_question": "A year after the Louvre heist the crown jewels are still missing, and the museum thefts kept coming: which was the wildest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "88": "eighty-eight",
+   "330": "three hundred and thirty",
+   "Renoir": "Renn-wahr",
+   "Dalí": "Dah-lee"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "66",
+  "label": "THE LOUVRE HEIST · ONE YEAR ON"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s06_dali",
+   "word": [
+    0,
+    3
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "lv66_thief_a",
+  "lv66_thief_b",
+  "lv66_viewer",
+  "lv66_mate"
+ ],
+ "content_notes": "ONGOING CASES. Louvre: suspects have been charged in France; nobody has been tried; all are presumed innocent. Every thief is an anonymous dark rim-lit silhouette, tagged NOT A LIKENESS: they stand in for the people who carried out the thefts and do not depict any suspect or charged person. Nobody is hurt; no weapon is shown; the only tool is a cutter on glass, as reported. The facade, gallery, Riviera villa, art centre, crown, jewels, paintings (blank-toned canvases, no artwork reproduced) and the bronze cover (a generic studded slab, not a replica of Dali's design) are generic illustrations; no logo, museum branding, CCTV still, police or court document is imitated. The young man and the mate with a van are generic figures. No dialogue is invented. Status verified 2026-10-17; re-check on 18-19 Oct 2026 before posting.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "lv66_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_more"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A year after the Louvre heist: no jewels."
+    },
+    {
+     "who": "narrator",
+     "text": "Then more museums got robbed.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "year",
+    "louvre",
+    "heist:",
+    "no",
+    "jewels.",
+    "more",
+    "museums",
+    "robbed."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_louvre",
+   "scene": "lv66_louvre",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "cash",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_lift",
+    "K_haul",
+    "K_stat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "First, a furniture lift to a Louvre window."
+    },
+    {
+     "who": "narrator",
+     "text": "Eight crown jewels: 88 million euros.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "first,",
+    "furniture",
+    "lift",
+    "louvre",
+    "eight",
+    "crown",
+    "jewels:",
+    "88",
+    "million"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_crown",
+   "scene": "lv66_crown",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    },
+    {
+     "at": -0.4,
+     "word": [
+      1,
+      3
+     ],
+     "name": "riser",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_crown",
+    "K_ff"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They even dropped a crown on their way out."
+    },
+    {
+     "who": "narrator",
+     "text": "But it gets worse.",
+     "pause_before": 0.42
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dropped",
+    "crown",
+    "way",
+    "out.",
+    "worse."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_renoir",
+   "scene": "lv66_renoir",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.25
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_renoir",
+    "K_dropped"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next, the Renoir museum lost four paintings."
+    },
+    {
+     "who": "narrator",
+     "text": "Two got dropped on their way out.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "renoir",
+    "four",
+    "paintings.",
+    "two",
+    "dropped",
+    "out."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_lesson",
+   "scene": "lv66_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "shutter",
+     "gain": 0.28
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Got anything worth stealing? Save this."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "worth",
+    "stealing?",
+    "save",
+    "this."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s06_dali",
+   "scene": "lv66_dali",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      1
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.42
+    }
+   ],
+   "claims": [
+    "K_dali",
+    "K_weight"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then came the Dalí: a bronze book cover."
+    },
+    {
+     "who": "narrator",
+     "text": "All 330 pounds, stolen overnight.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dalí:",
+    "bronze",
+    "book",
+    "cover.",
+    "330",
+    "pounds,",
+    "stolen",
+    "overnight."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_share",
+   "scene": "lv66_share",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "door",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_share"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Send this to the mate with a van."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "send",
+    "mate",
+    "van."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_end",
+   "scene": "lv66_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_missing"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And the crown jewels? Still missing, a year on."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "crown",
+    "jewels?",
+    "still",
+    "missing,",
+    "year"
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "On Sunday 19 October 2025 thieves stole eight pieces of the French crown jewels from the Louvre's Apollo Gallery; one year on, no recovery of those eight pieces has been reported (latest dated status reports June-July 2026; none in the Sept-Oct 2026 coverage of later thefts). Narration: 'A year after the Louvre heist: no jewels.' Headline 'THE LOUVRE HEIST / A YEAR ON: STILL MISSING'.",
+   "sources": [
+    "aj_1019",
+    "nbcps",
+    "euronews_be",
+    "artnet_be",
+    "ap_reopen",
+    "sortir"
+   ]
+  },
+  {
+   "id": "K_more",
+   "type": "established",
+   "nature": "fact",
+   "text": "Since the Louvre theft, more French museums have been robbed (the Renoir Museum in Cagnes-sur-Mer, Sept 2026; the Dali book cover in Issoire, Oct 2026); outlets describe a rash/wave of French museum thefts. Narration: 'Then more museums got robbed.'",
+   "sources": [
+    "itv_renoir",
+    "adn_renoir",
+    "bg_dali",
+    "tan_dali"
+   ]
+  },
+  {
+   "id": "K_lift",
+   "type": "established",
+   "nature": "fact",
+   "text": "The thieves used a truck-mounted furniture lift to reach a balcony window of the Apollo Gallery and cut in with disc cutters (angle grinders). Narration: 'First, a furniture lift to a Louvre window.' Label 'THE APOLLO GALLERY · 19 OCT 2025'.",
+   "sources": [
+    "bglobe_tl",
+    "npr_1101",
+    "lvsun",
+    "abc7"
+   ]
+  },
+  {
+   "id": "K_haul",
+   "type": "established",
+   "nature": "fact",
+   "text": "Eight pieces of the French crown jewels were taken in about seven minutes (reports range from four minutes inside to under eight in all). Narration: 'Eight crown jewels...' Label 'ABOUT 7 MINUTES'.",
+   "sources": [
+    "lvsun",
+    "nbcps",
+    "yahoo_7min",
+    "aj_1019",
+    "npr_1101"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): the eight pieces are valued at about 88 million euros (about 102 million dollars), the official estimate. Narration: 'Eight crown jewels: 88 million euros.' Counter '€88 MILLION' with credit 'Official estimate · about $102M'.",
+   "sources": [
+    "aj_1019",
+    "npr_1101",
+    "euronews_be",
+    "lvsun"
+   ]
+  },
+  {
+   "id": "K_crown",
+   "type": "established",
+   "nature": "fact",
+   "text": "Fleeing, the thieves dropped Empress Eugenie's crown (a ninth piece they had targeted); it was recovered, damaged. Narration: 'They even dropped a crown on their way out.'",
+   "sources": [
+    "lvsun",
+    "aj_1019",
+    "pbs_crown",
+    "f24_crown"
+   ]
+  },
+  {
+   "id": "K_ff",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: Empress Eugenie's crown has 1,354 diamonds and 56 emeralds; the Louvre says it can be restored. Card 'THE DROPPED CROWN HAS / 1,354 DIAMONDS'.",
+   "sources": [
+    "pbs_crown",
+    "gulf_crown",
+    "f24_crown"
+   ]
+  },
+  {
+   "id": "K_renoir",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 8 September 2026 thieves broke into the Renoir Museum in Cagnes-sur-Mer on the French Riviera and took four paintings. Narration: 'Next, the Renoir museum lost four paintings.' Label 'RENOIR MUSEUM · FRENCH RIVIERA · 8 SEPT 2026'.",
+   "sources": [
+    "itv_renoir",
+    "adn_renoir",
+    "pa_renoir",
+    "irish_renoir"
+   ]
+  },
+  {
+   "id": "K_dropped",
+   "type": "established",
+   "nature": "fact",
+   "text": "Two of the four paintings were dropped in the museum garden as the thieves fled and were recovered; two are still missing. Narration: 'Two got dropped on their way out.' (a deliberate echo of the crown line) Label sub '2 recovered · 2 still missing'.",
+   "sources": [
+    "itv_renoir",
+    "adn_renoir",
+    "pa_renoir",
+    "irish_renoir"
+   ]
+  },
+  {
+   "id": "K_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): UK police and council crime-prevention advice: photograph your valuables (it helps police return recovered property), record makes, models and serial numbers, and mark property with a postcode using a police-approved UV marker. Rows: 'PHOTOGRAPH VALUABLES', 'WRITE DOWN SERIAL NUMBERS', 'MARK THEM WITH A UV PEN'.",
+   "sources": [
+    "essex",
+    "notts",
+    "lichfield",
+    "dover"
+   ]
+  },
+  {
+   "id": "K_dali",
+   "type": "established",
+   "nature": "fact",
+   "text": "Overnight on 4-5 October 2026 the bronze cover of the Livre de l'Apocalypse, sculpted by Salvador Dali, was stolen from the C. Karoutzos contemporary art centre in Issoire, central France; a large gate had been forced; the Clermont-Ferrand prosecutor opened an investigation. Narration: 'Then came the Dalí: a bronze book cover.' Label 'ISSOIRE · CENTRAL FRANCE · 4-5 OCT 2026'.",
+   "sources": [
+    "tan_dali",
+    "smith_dali",
+    "bg_dali",
+    "mm_dali",
+    "cp24_dali"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "The bronze cover alone weighs about 150 kg (330 lb); the whole book about 210 kg. Narration: 'All 330 pounds, stolen overnight.'",
+   "sources": [
+    "smith_dali",
+    "ukr_dali",
+    "tan_dali",
+    "bg_dali"
+   ]
+  },
+  {
+   "id": "K_share",
+   "type": "established",
+   "nature": "fact",
+   "text": "Share prompt (editorial joke, no factual claim): 'Send this to the mate with a van.' The Louvre thieves used a furniture-removal lift truck.",
+   "sources": [
+    "bglobe_tl",
+    "npr_1101"
+   ]
+  },
+  {
+   "id": "K_missing",
+   "type": "established",
+   "nature": "fact",
+   "text": "As of October 2026 no recovery of the eight Louvre pieces has been reported; suspects were charged in France (counts differ by outlet); nobody has been tried; all are presumed innocent. Narration: 'And the crown jewels? Still missing, a year on.' Label 'AS OF OCT 2026 · NO RECOVERY REPORTED' / 'Suspects charged · none tried'.",
+   "sources": [
+    "euronews_be",
+    "artnet_be",
+    "ap_reopen",
+    "sortir",
+    "aj_1128",
+    "f24_fourth",
+    "npr_1101",
+    "bluewin"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "aj_1019",
+   "publisher": "Al Jazeera",
+   "title": "Priceless jewels stolen from France's Louvre museum in four-minute heist",
+   "url": "https://www.aljazeera.com/amp/news/2025/10/19/priceless-jewels-stolen-from-frances-louvre-museum-in-four-minute-heist",
+   "date": "2025-10-19",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "lvsun",
+   "publisher": "Las Vegas Sun (AP)",
+   "title": "How did thieves pull off heist at the Louvre?",
+   "url": "https://lasvegassun.com/news/2025/oct/24/how-did-thieves-pull-off-heist-at-the-louvre/",
+   "date": "2025-10-24",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "bglobe_tl",
+   "publisher": "The Boston Globe (AP)",
+   "title": "A timeline of the jewel heist at the Louvre",
+   "url": "https://www.bostonglobe.com/2025/10/22/world/louvre-heist-timeline/",
+   "date": "2025-10-22",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "yahoo_7min",
+   "publisher": "Yahoo News",
+   "title": "Louvre robbery: how thieves pulled off daring daytime heist in 7 minutes",
+   "url": "https://www.yahoo.com/news/world/article/louvre-robbery-how-thieves-pulled-off-daring-daytime-heist-in-7-minutes-stealing-french-crown-jewels-worth-102-million-163641467.html",
+   "date": "2025-10",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "npr_1101",
+   "publisher": "NPR",
+   "title": "Suspects charged in Louvre jewel heist in Paris",
+   "url": "https://www.npr.org/2025/11/01/nx-s1-5594194/suspects-charged-louvre-jewel-heist-paris",
+   "date": "2025-11-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "aj_1128",
+   "publisher": "Al Jazeera",
+   "title": "Fourth suspect charged in Louvre jewel heist investigation",
+   "url": "https://www.aljazeera.com/news/2025/11/28/fourth-suspect-charged-in-louvre-jewel-heist-investigation",
+   "date": "2025-11-28",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "f24_fourth",
+   "publisher": "France 24",
+   "title": "French prosecutors charge fourth suspected member of Louvre jewel heist gang",
+   "url": "https://www.france24.com/en/france/20251128-french-prosecutors-charge-fourth-suspected-member-louvre-jewel-heist-gang",
+   "date": "2025-11-28",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "abc7",
+   "publisher": "ABC7 (AP)",
+   "title": "Two new suspects handed preliminary charges in Louvre jewels heist case, Paris prosecutor says",
+   "url": "https://abc7news.com/post/louvre-jewels-heist-new-suspects-handed-preliminary-charges-paris-prosecutor-laure-beccuau-says/18100044/",
+   "date": "2025-11-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nbcps",
+   "publisher": "NBC Palm Springs (AP)",
+   "title": "Thieves steal priceless French crown jewels in daring seven-minute Louvre heist",
+   "url": "https://www.nbcpalmsprings.com/2025/10/19/thieves-steal-priceless-french-crown-jewels-in-daring-sevenminute-louvre-heist",
+   "date": "2025-10-19",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pbs_crown",
+   "publisher": "PBS NewsHour (AP)",
+   "title": "Louvre promises to restore imperial crown dropped by thieves during museum heist",
+   "url": "https://www.pbs.org/newshour/world/louvre-promises-to-restore-imperial-crown-dropped-by-thieves-during-museum-heist",
+   "date": "2026-02",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "f24_crown",
+   "publisher": "France 24",
+   "title": "Empress's crown dropped by Louvre heist thieves to be fully restored",
+   "url": "https://www.france24.com/en/france/20260205-empress-crown-dropped-louvre-heist-thieves-fully-restored",
+   "date": "2026-02-05",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "gulf_crown",
+   "publisher": "Gulf News",
+   "title": "Crushed but not lost: Imperial crown damaged in Louvre heist set for full restoration",
+   "url": "https://gulfnews.com/world/europe/crushed-but-not-lost-imperial-crown-damaged-in-louvre-heist-set-for-full-restoration-1.500434343",
+   "date": "2026-02",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "euronews_be",
+   "publisher": "Euronews",
+   "title": "Louvre theft: Belgian lead revives investigation",
+   "url": "https://www.euronews.com/culture/2026/06/02/louvre-theft-belgian-lead-revives-investigation",
+   "date": "2026-06-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "bluewin",
+   "publisher": "blue News (dpa)",
+   "title": "Who is behind the spectacular Louvre coup?",
+   "url": "https://www.bluewin.ch/en/news/who-is-behind-the-spectacular-louvre-coup-3260485.html",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "artnet_be",
+   "publisher": "Artnet News",
+   "title": "Louvre Heist Investigation Reaches Belgium",
+   "url": "https://news.artnet.com/art-world/louvre-heist-investigation-belgium-suspects-2778384",
+   "date": "2026-06",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "ap_reopen",
+   "publisher": "AP (via Courthouse News Service)",
+   "title": "Louvre reopens Apollo Gallery after a brazen heist but no jewels are on display",
+   "url": "https://courthousenews.com/louvre-reopens-apollo-gallery-after-a-brazen-heist-but-no-jewels-are-on-display/",
+   "date": "2026-07-22",
+   "accessed": "via Case File 04 ledger (episodes/tcv04-louvre-heist/research.md), search-result extract only, 2026-10-11"
+  },
+  {
+   "id": "sortir",
+   "publisher": "Sortiraparis",
+   "title": "Have the Louvre's stolen jewels been recovered?",
+   "url": "https://www.sortiraparis.com/en/news/in-paris/articles/349408-have-the-stolen-jewels-from-the-louvre-museum-been-recovered",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "itv_renoir",
+   "publisher": "ITV News",
+   "title": "Thieves steal artworks worth millions from Renoir museum in France, dropping two as they fled",
+   "url": "https://www.itv.com/news/2026-09-08/artworks-worth-millions-stolen-from-renoir-museum-in-latest-art-heist",
+   "date": "2026-09-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "adn_renoir",
+   "publisher": "Anchorage Daily News (AP)",
+   "title": "Thieves steal 4 Renoir paintings from French Riviera museum, 2 of them still missing",
+   "url": "https://www.adn.com/nation-world/2026/09/08/thieves-steal-4-renoir-paintings-from-french-riviera-museum-2-of-them-still-missing/",
+   "date": "2026-09-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pa_renoir",
+   "publisher": "Shropshire Star (PA)",
+   "title": "Thieves steal four Renoir paintings from French museum, two still missing",
+   "url": "https://www.shropshirestar.com/world-news/renoir-paintings-worth-millions-stolen-from-french-museum-8982950",
+   "date": "2026-09-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "irish_renoir",
+   "publisher": "Irish News (PA)",
+   "title": "Thieves steal four Renoir paintings from French museum, two still missing",
+   "url": "https://www.irishnews.com/news/world/thieves-steal-four-renoir-paintings-from-french-museum-two-still-missing-TMTMZ3SKQZMADBFPRGM3AARHMM/",
+   "date": "2026-09-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "tan_dali",
+   "publisher": "The Art Newspaper",
+   "title": "Huge bronze book cover by Salvador Dali stolen in latest French museum theft",
+   "url": "https://www.theartnewspaper.com/2026/10/07/huge-bronze-book-cover-by-salvador-dali-stolen-in-latest-french-museum-theft",
+   "date": "2026-10-07",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "smith_dali",
+   "publisher": "Smithsonian Magazine",
+   "title": "Thieves pulled off another shocking art heist in France. This time, they took a 330-pound bronze book cover designed by Salvador Dali",
+   "url": "https://www.smithsonianmag.com/smart-news/thieves-pulled-off-another-shocking-art-heist-in-france-this-time-they-took-a-330-pound-bronze-book-cover-designed-by-salvador-dali-180989638/",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "bg_dali",
+   "publisher": "Boston Globe",
+   "title": "France loses more precious art with theft of Dali book cover",
+   "url": "https://www.bostonglobe.com/2026/10/14/world/france-loses-more-precious-art-with-theft-dal-book-cover/",
+   "date": "2026-10-14",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "mm_dali",
+   "publisher": "Malay Mail",
+   "title": "Salvador Dali's bronze Book of the Apocalypse stolen in French museum heist",
+   "url": "https://www.malaymail.com/news/life/2026/10/06/salvador-dalis-bronze-book-of-the-apocalypse-stolen-in-french-museum-heist/237851",
+   "date": "2026-10-06",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ukr_dali",
+   "publisher": "UkraNews",
+   "title": "A 210-kilogram copy of Apocalypse by Salvador Dali featuring a bronze cover was stolen in France",
+   "url": "https://ukranews.com/en/news/1179318-a-210-kilogram-copy-of-apocalypse-by-salvador-dali-featuring-a-bronze-cover-was-stolen-in-france",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cp24_dali",
+   "publisher": "CP24",
+   "title": "Priceless book designed by surrealist Dali stolen in France",
+   "url": "https://www.cp24.com/news/world/2026/10/05/priceless-book-designed-by-surrealist-dali-stolen-in-france/",
+   "date": "2026-10-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "essex",
+   "publisher": "Essex Police",
+   "title": "Make Your Mark (property marking)",
+   "url": "https://www.essex.police.uk/MakeYourMark",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "notts",
+   "publisher": "Nottinghamshire Police (property marking leaflet, via Orston Parish)",
+   "title": "Property marking",
+   "url": "https://orstonparish.co.uk/wp-content/uploads/2022/11/property_marking_jan-2014.pdf",
+   "date": "2014",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "lichfield",
+   "publisher": "Lichfield District Council",
+   "title": "Safes, property registration, photographs and marking",
+   "url": "https://www.lichfielddc.gov.uk/community/protect-home-resources/5",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "dover",
+   "publisher": "Dover District Council",
+   "title": "Property marking",
+   "url": "https://www.dover.gov.uk/Community/Community-Safety/Crime-safety-advice/Home-and-garden-security/Property-marking.aspx",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 3,
+ "search_terms": [
+  "louvre heist",
+  "louvre jewels",
+  "museum heist"
+ ],
+ "palette": {
+  "shadow": "#1a1e26",
+  "mid": "#cbbca2",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "THE LOUVRE HEIST"
+   },
+   {
+    "text": "A YEAR ON: STILL MISSING",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WILL THEY EVER BE FOUND?"
+   },
+   {
+    "text": "YES OR NO 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "SEND TO THE MATE WITH A VAN",
+    "fs": 44
+   }
+  ],
+  "from": 3.4,
+  "y": 420
+ },
+ "progress": {
+  "label": "HEIST",
+  "keys": [
+   {
+    "t": 4.8,
+    "v": "1 · THE LOUVRE"
+   },
+   {
+    "t": 15.44,
+    "v": "2 · THE RENOIRS"
+   },
+   {
+    "t": 24.76,
+    "v": "3 · THE DALÍ"
+   }
+  ],
+  "y": 360,
+  "until": 34.12
+ },
+ "legal_status_verified": "2026-10-17"
+}
