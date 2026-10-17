@@ -179,7 +179,7 @@ def build(h):
                         "until": 2.6, "y": 400}
     ep["end_title"] = {"lines": [{"text": "180 DAYS PER LIFE."}, {"text": "JUSTICE OR A JOKE? \U0001F447", "colour": "#e0a03a"},
                                  {"text": "TAG THE MATE WHO ALWAYS DRIVES", "fs": 44}],
-                       "from": 3.6, "y": 420}
+                       "from": 3.5, "y": 420}
     # the DATE chip: JUNE 2013 on '16' (s02), DEC 2013 on 'probation' (s04), DEC 2015 on 'fled' (s06). Word-anchored from
     # out/<id>/timeline.json when a build exists (narration is cached, so they are stable); defaults are draft values.
     anchors = [("s02_memorial", 0, 2, 5.6, "JUNE 2013"), ("s04_verdict", 1, 4, 17.0, "DEC 2013"), ("s06_mexico", 0, 2, 24.6, "DEC 2015")]
