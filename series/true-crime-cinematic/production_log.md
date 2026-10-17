@@ -380,3 +380,7 @@
 - 2026-10-17 10:04:08 tcv65-prison-rat: VERIFIED -> series/true-crime-cinematic/output/true_crime_65_prison_rat.mp4 (36.8s, 22.1 MB, sha256 2d53f87dd92e)
 - 2026-10-17 10:04:17 produce 64 --force: regenerating episode data
 - 2026-10-17 10:04:17 tcv64-pigeon-backpack: rendering (final60, seed 1)
+- 2026-10-17 10:22:37 tcv64-pigeon-backpack: rendered in 1099s
+- 2026-10-17 10:23:18 tcv64-pigeon-backpack: VERIFIED -> series/true-crime-cinematic/output/true_crime_64_pigeon_backpack.mp4 (37.0s, 20.1 MB, sha256 f0f2d01582cb)
+- 2026-10-17 10:23:29 produce 63 --force: regenerating episode data
+- 2026-10-17 10:23:29 tcv63-fence-jeep: rendering (final60, seed 1)
