@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>WHAT IF: THE PURGE · EP 1 · THE KNOCK</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+  #stage{position:absolute;left:50%;top:50%;width:1080px;height:1920px;transform-origin:0 0;background:#070b1c;overflow:hidden}
+  svg{display:block}
+  .txt{font-family:Impact,"Arial Black","Arial Narrow Bold",Arial,"Helvetica Neue",Helvetica,sans-serif;font-weight:900;paint-order:stroke fill;stroke:#000;stroke-linejoin:round;text-anchor:middle}
+  .spin{transform-box:view-box;transform-origin:0 0}
+  /* CSS keyframes: looped motion. The JS master clock owns their currentTime, so every frame is reproducible. */
+  @keyframes blink{0%,55%{opacity:1}56%,100%{opacity:.12}}
+  @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+  @keyframes sweep{0%,100%{transform:rotate(-30deg)}50%{transform:rotate(24deg)}}
+  @keyframes sweep2{0%,100%{transform:rotate(28deg)}50%{transform:rotate(-18deg)}}
+  @keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+  @keyframes curtain{0%,100%{transform:skewX(-1.5deg)}50%{transform:skewX(1.5deg)}}
+  @keyframes flare{0%{opacity:0;transform:scale(.3)}15%{opacity:.95;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
+  .rec{animation:blink 1s linear infinite}
+  .pulse{animation:pulse .9s ease-in-out infinite}
+  .beam1{animation:sweep 7s ease-in-out infinite}
+  .beam2{animation:sweep2 9s ease-in-out infinite}
+  .lamp{animation:sway 4.2s ease-in-out infinite}
+  .curtain{animation:curtain 5s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 0}
+  .flare{animation:flare 2.6s ease-out infinite;transform-box:fill-box;transform-origin:50% 50%}
+  #start{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:rgba(0,0,0,.82);color:#fff;font-family:Impact,"Arial Black",Arial,sans-serif;text-align:center;cursor:pointer;padding:16px;box-sizing:border-box}
+  #start h1{margin:0;font-size:min(9vw,54px);letter-spacing:1px;text-shadow:0 0 18px #ff2a2a}
+  #start .ep{font-size:min(5vw,26px);color:#ffb347}
+  #start .go{margin-top:10px;padding:16px 34px;border:4px solid #fff;border-radius:999px;font-size:min(7vw,38px);box-shadow:0 0 30px rgba(255,60,60,.7)}
+  #start p{margin:0;max-width:520px;font-family:Arial,sans-serif;font-weight:700;font-size:min(3.8vw,17px);color:#c9d0ea;line-height:1.4}
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop id="sk0" offset="0" stop-color="#2b1b4d"/><stop id="sk1" offset=".55" stop-color="#8a3a5a"/><stop id="sk2" offset="1" stop-color="#f08a4a"/>
+  </linearGradient>
+  <linearGradient id="beamG" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffe2d2" stop-opacity=".55"/><stop offset="1" stop-color="#ffe2d2" stop-opacity="0"/></linearGradient>
+  <linearGradient id="lampG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf80" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf80" stop-opacity="0"/></linearGradient>
+  <linearGradient id="phoneScr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0b2e"/><stop offset=".6" stop-color="#3a0a1a"/><stop offset="1" stop-color="#120414"/></linearGradient>
+  <radialGradient id="redHalo"><stop offset="0" stop-color="#ff3b30" stop-opacity=".85"/><stop offset=".4" stop-color="#ff2a20" stop-opacity=".3"/><stop offset="1" stop-color="#ff2a20" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ambHalo"><stop offset="0" stop-color="#ffb347" stop-opacity=".8"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+  <radialGradient id="blueHalo"><stop offset="0" stop-color="#5a7cff" stop-opacity=".45"/><stop offset="1" stop-color="#5a7cff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="whiteHalo"><stop offset="0" stop-color="#eef3ff" stop-opacity=".6"/><stop offset="1" stop-color="#eef3ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="vig" cx=".5" cy=".5" r=".72"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".82"/></radialGradient>
+  <radialGradient id="vigRed" cx=".5" cy=".5" r=".72"><stop offset=".45" stop-color="#ff0010" stop-opacity="0"/><stop offset="1" stop-color="#b0000c" stop-opacity=".95"/></radialGradient>
+  <radialGradient id="peepVig" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset=".9" stop-color="#000" stop-opacity=".75"/><stop offset="1" stop-color="#000" stop-opacity="1"/></radialGradient>
+  <radialGradient id="hallLight" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff6a4a" stop-opacity=".95"/><stop offset=".5" stop-color="#d0141e" stop-opacity=".45"/><stop offset="1" stop-color="#d0141e" stop-opacity="0"/></radialGradient>
+  <filter id="manGlow" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="b"/>
+    <feFlood flood-color="#dfe8ff" flood-opacity=".8"/>
+    <feComposite in2="b" operator="in" result="g"/>
+    <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="peepWarp" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency=".009 .014" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap id="peepDisp" in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <clipPath id="glass"><rect x="90" y="570" width="540" height="930"/></clipPath>
+  <clipPath id="dragClip"><rect x="135" y="1105" width="170" height="62"/></clipPath>
+  <clipPath id="tvClip"><rect x="772" y="752" width="356" height="196"/></clipPath>
+  <clipPath id="phoneClip"><rect x="-205" y="-440" width="410" height="880" rx="42"/></clipPath>
+  <clipPath id="peepClip"><circle id="peepCirc" cx="540" cy="880" r="0"/></clipPath>
+  <mask id="darkMask" maskUnits="userSpaceOnUse" x="-1500" y="-1500" width="5200" height="5000">
+    <rect x="-1500" y="-1500" width="5200" height="5000" fill="#fff"/>
+    <rect x="90" y="570" width="540" height="930" fill="#000"/>
+  </mask>
+  <g id="friendShape">
+    <path d="M300 1320 C305 1090 400 1012 560 1002 C720 1012 815 1090 820 1320 Z"/>
+    <rect x="512" y="930" width="96" height="90"/>
+    <circle cx="555" cy="872" r="96"/>
+    <circle cx="640" cy="884" r="19"/>
+    <path d="M456 862 C452 762 516 734 562 734 C628 734 668 778 664 852 Z"/>
+    <path d="M636 812 L772 834 C788 838 786 862 768 864 L646 860 Z"/>
+  </g>
+</defs>
+
+<!-- ======================= WORLD (one camera group) ======================= -->
+<g id="cam">
+  <!-- room shell -->
+  <rect x="-1500" y="-1500" width="5200" height="3000" fill="#121a3c"/>
+  <rect x="-1500" y="-1500" width="5200" height="1930" fill="#0a0f28"/>
+  <rect x="-1500" y="424" width="5200" height="10" fill="#1b2552"/>
+  <rect x="-1500" y="1500" width="5200" height="1800" fill="#0b1130"/>
+  <rect x="-1500" y="1478" width="5200" height="22" fill="#0e1636"/>
+  <g stroke="#0f173d" stroke-width="4"><line x1="-1500" y1="1580" x2="3700" y2="1580"/><line x1="-1500" y1="1700" x2="3700" y2="1700"/><line x1="-1500" y1="1860" x2="3700" y2="1860"/></g>
+  <ellipse cx="960" cy="1610" rx="430" ry="62" fill="#161f48"/>
+  <rect x="2040" y="1000" width="16" height="16" rx="8" fill="#2a3466"/>
+
+  <!-- balcony door: the city outside -->
+  <g clip-path="url(#glass)">
+    <rect x="90" y="570" width="540" height="930" fill="url(#sky)"/>
+    <circle class="flare" cx="190" cy="985" r="34" fill="url(#redHalo)" style="animation-delay:-.4s"/>
+    <circle class="flare" cx="520" cy="1040" r="46" fill="url(#redHalo)" style="animation-delay:-1.5s"/>
+    <circle class="flare" cx="360" cy="930" r="26" fill="url(#ambHalo)" style="animation-delay:-2.2s"/>
+    <g transform="translate(470 1500)"><g class="spin beam1"><polygon points="0,0 -70,-1000 70,-1000" fill="url(#beamG)" opacity=".5"/></g></g>
+    <g transform="translate(160 1500)"><g class="spin beam2"><polygon points="0,0 -55,-1000 55,-1000" fill="url(#beamG)" opacity=".35"/></g></g>
+    <path d="M90 1500 V960 h60 v-40 h50 v70 h70 v-110 h60 v60 h80 v-30 h70 v90 h60 v-20 h40 V1500 Z" fill="#1d0a1e" opacity=".85"/>
+    <rect x="40" y="1000" width="285" height="500" fill="#0a0d1f"/>
+    <rect x="370" y="1080" width="330" height="420" fill="#0b0e22"/>
+    <g id="oppWins"></g>
+    <rect id="dragWin" x="135" y="1105" width="170" height="62" fill="#ffb347"/>
+    <g clip-path="url(#dragClip)"><g id="drag" transform="translate(400 0)">
+      <g fill="#05030a" stroke="#05030a" stroke-linecap="round" stroke-width="9">
+        <circle cx="0" cy="1140" r="11" stroke="none"/>
+        <line x1="0" y1="1140" x2="-46" y2="1160"/><line x1="-46" y1="1160" x2="-80" y2="1150"/><line x1="-46" y1="1160" x2="-84" y2="1172"/>
+        <line x1="-6" y1="1146" x2="40" y2="1126"/><line x1="40" y1="1126" x2="80" y2="1130"/>
+        <line x1="80" y1="1130" x2="110" y2="1105"/><line x1="110" y1="1105" x2="140" y2="1100"/>
+        <circle cx="150" cy="1092" r="13" stroke="none"/>
+      </g>
+    </g></g>
+    <g stroke="#04060f" stroke-width="9"><line x1="90" y1="1292" x2="630" y2="1292" stroke-width="14"/>
+      <line x1="120" y1="1292" x2="120" y2="1500"/><line x1="165" y1="1292" x2="165" y2="1500"/><line x1="210" y1="1292" x2="210" y2="1500"/><line x1="255" y1="1292" x2="255" y2="1500"/><line x1="300" y1="1292" x2="300" y2="1500"/><line x1="345" y1="1292" x2="345" y2="1500"/><line x1="390" y1="1292" x2="390" y2="1500"/><line x1="435" y1="1292" x2="435" y2="1500"/><line x1="480" y1="1292" x2="480" y2="1500"/><line x1="525" y1="1292" x2="525" y2="1500"/><line x1="570" y1="1292" x2="570" y2="1500"/><line x1="615" y1="1292" x2="615" y2="1500"/></g>
+    <polygon points="140,570 260,570 90,900 90,780" fill="#fff" opacity=".05"/>
+  </g>
+  <rect x="90" y="570" width="540" height="930" fill="none" stroke="#050816" stroke-width="26"/>
+  <rect x="352" y="570" width="16" height="930" fill="#050816"/>
+  <rect x="380" y="1060" width="10" height="70" rx="5" fill="#2a3466"/>
+  <path class="curtain" d="M40 540 H130 C120 800 150 1150 120 1500 H40 Z" fill="#0d1434"/>
+  <path class="curtain" d="M590 540 H680 V1500 H600 C630 1150 580 800 590 540 Z" fill="#0d1434" style="animation-delay:-2s"/>
+  <rect x="20" y="530" width="680" height="16" rx="8" fill="#1d2758"/>
+  <polygon id="spill" points="90,1500 630,1500 860,1740 230,1740" fill="#ffa050" opacity=".08"/>
+
+  <!-- pendant lamp -->
+  <g transform="translate(960 434)"><g class="spin lamp">
+    <line x1="0" y1="0" x2="0" y2="128" stroke="#05081a" stroke-width="5"/>
+    <path d="M-60 128 H60 L82 180 H-82 Z" fill="#0a0f26" stroke="#1d2758" stroke-width="4"/>
+    <g id="lampOn"><ellipse cx="0" cy="184" rx="24" ry="10" fill="#ffd28a"/><polygon points="-76,182 76,182 300,1066 -300,1066" fill="url(#lampG)" opacity=".5"/></g>
+  </g></g>
+
+  <!-- sofa + coffee table + pizza -->
+  <rect x="740" y="1235" width="440" height="125" rx="26" fill="#1b2452"/>
+  <rect x="740" y="1345" width="440" height="85" rx="14" fill="#202b5e"/>
+  <rect x="716" y="1285" width="54" height="155" rx="20" fill="#18214b"/><rect x="1150" y="1285" width="54" height="155" rx="20" fill="#18214b"/>
+  <line x1="960" y1="1250" x2="960" y2="1345" stroke="#141c44" stroke-width="5"/>
+  <rect x="800" y="1418" width="330" height="20" rx="6" fill="#26326a"/>
+  <rect x="820" y="1438" width="16" height="62" fill="#1a2350"/><rect x="1094" y="1438" width="16" height="62" fill="#1a2350"/>
+  <polygon points="866,1405 1046,1405 1036,1298 876,1298" fill="#a07e4c"/><polygon points="878,1395 1034,1395 1026,1310 886,1310" fill="#86663a"/>
+  <polygon points="842,1420 1064,1420 1040,1394 866,1394" fill="#c9a46a"/>
+  <ellipse cx="952" cy="1407" rx="82" ry="11" fill="#e8a33c" stroke="#b8742a" stroke-width="5"/>
+  <polygon points="952,1407 1034,1404 1024,1414" fill="#c9a46a"/>
+  <circle cx="920" cy="1406" r="4" fill="#c0392b"/><circle cx="975" cy="1409" r="4" fill="#c0392b"/><circle cx="900" cy="1410" r="3.5" fill="#c0392b"/>
+
+  <!-- kitchen -->
+  <rect x="1220" y="760" width="360" height="140" fill="#18214a"/><line x1="1400" y1="760" x2="1400" y2="900" stroke="#101738" stroke-width="5"/>
+  <rect x="1205" y="1235" width="390" height="20" fill="#2a3770"/>
+  <rect x="1220" y="1255" width="360" height="245" fill="#151d44"/>
+  <g stroke="#0f1638" stroke-width="5"><line x1="1340" y1="1260" x2="1340" y2="1500"/><line x1="1460" y1="1260" x2="1460" y2="1500"/></g>
+  <rect x="1250" y="1300" width="40" height="8" rx="4" fill="#2a3770"/><rect x="1370" y="1300" width="40" height="8" rx="4" fill="#2a3770"/><rect x="1490" y="1300" width="40" height="8" rx="4" fill="#2a3770"/>
+  <rect x="1260" y="1118" width="190" height="117" rx="8" fill="#0d1330" stroke="#2a3770" stroke-width="4"/>
+  <rect x="1275" y="1135" width="105" height="84" rx="4" fill="#070b1c"/>
+  <rect x="1392" y="1140" width="48" height="26" rx="3" fill="#000"/>
+  <g fill="#2a3770"><rect x="1396" y="1178" width="18" height="8" rx="2"/><rect x="1418" y="1178" width="18" height="8" rx="2"/><rect x="1396" y="1192" width="18" height="8" rx="2"/><rect x="1418" y="1192" width="18" height="8" rx="2"/></g>
+  <path d="M1478 1235 V1180 C1478 1166 1530 1166 1530 1180 V1235 Z M1530 1192 C1552 1192 1552 1220 1530 1222" fill="#1f2a5c" stroke="#1f2a5c" stroke-width="6"/>
+  <rect x="1546" y="1056" width="32" height="42" rx="5" fill="#1c2552"/>
+  <rect x="1553" y="1066" width="18" height="24" rx="3" fill="#dfe5f7"/>
+  <path d="M1562 1090 C1590 1150 1540 1190 1566 1236" fill="none" stroke="#dfe5f7" stroke-width="4"/>
+  <!-- light switch -->
+  <rect x="1618" y="1123" width="30" height="46" rx="5" fill="#cfd6f0"/>
+  <rect id="switchT" x="1627" y="1131" width="12" height="15" rx="3" fill="#7f88ae"/>
+  <!-- dog bowl -->
+  <g id="bowl" transform="translate(1410 1500)">
+    <path d="M-42 -26 H42 L32 0 H-32 Z" fill="#2a3770" stroke="#3f4f96" stroke-width="3"/>
+    <circle cx="-14" cy="-28" r="5" fill="#8a6a3e"/><circle cx="2" cy="-30" r="5" fill="#8a6a3e"/><circle cx="16" cy="-28" r="5" fill="#8a6a3e"/>
+  </g>
+  <!-- front door (base) -->
+  <rect x="1675" y="885" width="330" height="615" fill="#0a0f26"/>
+  <g id="doorBase">
+    <rect x="1690" y="900" width="300" height="600" fill="#1c2656"/>
+    <rect x="1722" y="940" width="236" height="230" rx="6" fill="none" stroke="#263166" stroke-width="6"/>
+    <rect x="1722" y="1210" width="236" height="250" rx="6" fill="none" stroke="#263166" stroke-width="6"/>
+  </g>
+
+  <!-- ===== lights out ===== -->
+  <rect id="dark" x="-1500" y="-1500" width="5200" height="5000" fill="#02040d" opacity="0" mask="url(#darkMask)"/>
+  <rect id="redwash" x="-1500" y="-1500" width="5200" height="5000" fill="#c0101a" opacity="0"/>
+
+  <!-- ===== emissive layer (stays readable in the dark) ===== -->
+  <ellipse id="tvHalo" cx="950" cy="850" rx="330" ry="250" fill="url(#blueHalo)"/>
+  <g id="tv">
+    <rect x="760" y="740" width="380" height="220" rx="8" fill="#04060f" stroke="#222c58" stroke-width="6"/>
+    <g clip-path="url(#tvClip)">
+      <rect id="tvBg" x="772" y="752" width="356" height="196" fill="#0a1640"/>
+      <g id="tvNews">
+        <rect x="772" y="752" width="356" height="34" fill="#d0161e"/>
+        <text x="830" y="777" class="txt" font-size="22" fill="#fff" stroke-width="0">BREAKING</text>
+        <g transform="translate(1092 769)" fill="#fff" stroke="#fff" stroke-width="3"><polygon points="-14,-5 -8,-5 -1,-11 -1,11 -8,5 -14,5" stroke="none"/><line x1="4" y1="-6" x2="14" y2="6"/><line x1="14" y1="-6" x2="4" y2="6"/></g>
+        <text id="tvMain" x="950" y="842" class="txt" font-size="30" fill="#fff" stroke-width="0">PURGE BEGINS IN</text>
+        <text id="tvSub" x="950" y="898" class="txt" font-size="48" fill="#ffcf5a" stroke-width="0">00:00:03</text>
+        <rect x="772" y="918" width="356" height="30" fill="#000" opacity=".6"/>
+        <text id="tvTick" x="772" y="941" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#fff">ALL CRIME LEGAL FOR 12 HOURS • EMERGENCY SERVICES SUSPENDED • STAY INDOORS • LOCK YOUR DOORS • ALL CRIME LEGAL FOR 12 HOURS •</text>
+      </g>
+      <g id="tvStatic" opacity="0">
+        <rect x="772" y="752" width="356" height="196" fill="#15182a"/>
+        <g id="tvBars" fill="#3a3f5c"></g>
+        <text x="950" y="862" class="txt" font-size="38" fill="#c9cde0" stroke-width="0">NO SIGNAL</text>
+      </g>
+    </g>
+  </g>
+  <circle id="mwHalo" cx="1416" cy="1153" r="90" fill="url(#redHalo)" opacity=".25"/>
+  <text id="mwTime" x="1416" y="1161" class="txt" font-size="19" fill="#ff5a4a" stroke-width="0">6:59</text>
+  <circle cx="1562" cy="1074" r="4" fill="#7dff9a"/>
+  <!-- the hallway under the door -->
+  <polygon id="gapSpill" points="1692,1500 1988,1500 2050,1580 1630,1580" fill="#ffb347" opacity=".18"/>
+  <rect id="gap" x="1692" y="1493" width="296" height="7" fill="#ffb347"/>
+  <rect id="foot1" x="2000" y="1493" width="38" height="7" fill="#000"/>
+  <rect id="foot2" x="2050" y="1493" width="38" height="7" fill="#000"/>
+  <!-- door hardware -->
+  <g id="doorHW">
+    <circle id="peepHalo" cx="1840" cy="1060" r="120" fill="url(#redHalo)" opacity="0"/>
+    <g id="peepRings" fill="none" stroke="#ff6a5a" stroke-width="5"><circle cx="1840" cy="1060" r="10"/><circle cx="1840" cy="1060" r="10"/><circle cx="1840" cy="1060" r="10"/></g>
+    <circle cx="1840" cy="1060" r="12" fill="#0a0d1a" stroke="#8890b8" stroke-width="5"/>
+    <g id="peepGlowG" opacity="0"><circle class="pulse" cx="1840" cy="1060" r="9" fill="#ff3b30"/></g>
+    <circle cx="1712" cy="1150" r="11" fill="#8890b8" stroke="#3a4270" stroke-width="3"/>
+    <circle id="handleHalo" cx="1745" cy="1232" r="70" fill="url(#redHalo)" opacity="0"/>
+    <rect x="1704" y="1204" width="16" height="56" rx="7" fill="#8890b8"/>
+    <g id="handle" transform="translate(1712 1232)"><rect x="0" y="-7" width="62" height="14" rx="7" fill="#d4d9ee" stroke="#3a4270" stroke-width="2"/></g>
+    <rect x="1730" y="1126" width="62" height="10" rx="4" fill="#8890b8"/>
+    <rect x="1660" y="1127" width="14" height="28" rx="3" fill="#8890b8"/>
+    <path id="chain" d="M1667 1141 Q1707 1190 1748 1131" fill="none" stroke="#1a1f38" stroke-width="13" stroke-linecap="round"/>
+    <path id="chainL" d="M1667 1141 Q1707 1190 1748 1131" fill="none" stroke="#dfe4f6" stroke-width="7" stroke-dasharray="11 5" stroke-linecap="round"/>
+    <circle id="chainKnob" cx="1748" cy="1131" r="7" fill="#dfe4f6"/>
+  </g>
+  <!-- Biscuit the dog -->
+  <g id="dog" transform="translate(1255 1500)">
+    <g id="dogLegs" fill="#070a1a" stroke="#2f3c7a" stroke-width="4"><rect x="-62" y="-40" width="18" height="40" rx="6"/><rect x="-34" y="-40" width="18" height="40" rx="6"/><rect x="48" y="-40" width="18" height="40" rx="6"/><rect x="74" y="-40" width="18" height="40" rx="6"/></g>
+    <g id="dogBody">
+      <path d="M-86 -50 C-110 -60 -118 -86 -132 -92" fill="none" stroke="#2f3c7a" stroke-width="14" stroke-linecap="round"/>
+      <path d="M-86 -50 C-110 -60 -118 -86 -132 -92" fill="none" stroke="#070a1a" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="0" cy="-38" rx="90" ry="35" fill="#070a1a" stroke="#2f3c7a" stroke-width="4"/>
+      <path id="hackles" d="M-52 -70 l10 -15 l10 13 l10 -15 l10 13 l10 -15 l10 13" fill="none" stroke="#3f4f96" stroke-width="4" opacity="0"/>
+      <circle cx="88" cy="-80" r="31" fill="#070a1a" stroke="#2f3c7a" stroke-width="4"/>
+      <ellipse cx="117" cy="-70" rx="23" ry="13" fill="#070a1a" stroke="#2f3c7a" stroke-width="4"/>
+      <path d="M66 -102 L74 -142 L94 -108 Z" fill="#070a1a" stroke="#2f3c7a" stroke-width="4" stroke-linejoin="round"/>
+      <circle id="dogEyeH" cx="98" cy="-86" r="22" fill="url(#ambHalo)"/>
+      <circle id="dogEye" cx="98" cy="-86" r="5.5" fill="#ffb347"/>
+    </g>
+  </g>
+
+  <!-- the stickman -->
+  <g id="man" filter="url(#manGlow)">
+    <path id="mBackO" fill="none" stroke="#060a1a" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="mBack" fill="none" stroke="#d9dff2" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <g id="phoneB"><rect x="-13" y="-24" width="26" height="48" rx="6" fill="#0b0f20" stroke="#e8ecff" stroke-width="3"/><rect x="-8" y="-18" width="16" height="34" rx="2" fill="#ff5a4a"/></g>
+    <path id="mMainO" fill="none" stroke="#060a1a" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="mMain" fill="none" stroke="#f7f9ff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle id="mHead" r="42" fill="#f7f9ff" stroke="#060a1a" stroke-width="7"/>
+    <ellipse id="mEye1" rx="5.5" ry="6.5" fill="#0a1030"/>
+    <ellipse id="mEye2" rx="5.5" ry="6.5" fill="#0a1030"/>
+    <ellipse id="mMouth" rx="4" ry="4" fill="#0a1030"/>
+    <g id="slice"><polygon points="-4,-15 54,0 -4,15" fill="#f2b347" stroke="#3a1d05" stroke-width="3" stroke-linejoin="round"/><line x1="-4" y1="-13" x2="-4" y2="13" stroke="#b06a20" stroke-width="9" stroke-linecap="round"/><circle cx="16" cy="-3" r="4" fill="#c0392b"/><circle cx="30" cy="3" r="3.5" fill="#c0392b"/></g>
+    <g id="phoneF"><rect x="-13" y="-24" width="26" height="48" rx="6" fill="#0b0f20" stroke="#e8ecff" stroke-width="3"/><rect x="-8" y="-18" width="16" height="34" rx="2" fill="#ff5a4a"/></g>
+  </g>
+</g>
+
+<!-- ======================= SCREEN SPACE ======================= -->
+<rect id="abDim" x="0" y="0" width="1080" height="1920" fill="#000" opacity="0"/>
+<rect x="0" y="0" width="1080" height="1920" fill="url(#vig)"/>
+<rect id="vigRedR" x="0" y="0" width="1080" height="1920" fill="url(#vigRed)" opacity="0"/>
+<rect id="flash" x="0" y="0" width="1080" height="1920" fill="#ff1e1e" opacity="0"/>
+
+<!-- phone close-up -->
+<g id="phoneUI" transform="translate(540 3000)">
+  <g id="phoneShake">
+    <rect x="-262" y="-500" width="524" height="1000" rx="80" fill="url(#redHalo)" opacity=".5"/>
+    <rect x="-230" y="-470" width="460" height="940" rx="64" fill="#0b0f20" stroke="#f2f5ff" stroke-width="7" filter="url(#manGlow)"/>
+    <g clip-path="url(#phoneClip)">
+      <rect x="-205" y="-440" width="410" height="880" fill="url(#phoneScr)"/>
+      <circle cx="0" cy="260" r="260" fill="url(#redHalo)" opacity=".35"/>
+      <rect x="-60" y="-432" width="120" height="30" rx="15" fill="#000"/>
+      <g id="batt"><rect x="128" y="-424" width="50" height="24" rx="5" fill="none" stroke="#ff3b30" stroke-width="3"/><rect x="179" y="-416" width="4" height="9" fill="#ff3b30"/><rect id="battFill" x="132" y="-420" width="3" height="16" fill="#ff3b30"/>
+        <text id="battTxt" x="118" y="-404" class="txt" font-size="24" fill="#ff3b30" stroke-width="0" style="text-anchor:end">3%</text></g>
+      <text id="lockTime" x="0" y="-235" class="txt" font-size="140" fill="#f2f5ff" stroke-width="0">7:03</text>
+      <text x="0" y="-178" font-family="Arial,sans-serif" font-weight="700" font-size="26" fill="#ffb3a8" text-anchor="middle">PURGE NIGHT · STAY INDOORS</text>
+      <g id="lowBatt" opacity="0">
+        <rect x="-180" y="-40" width="360" height="190" rx="30" fill="#140208" stroke="#ff3b30" stroke-width="5"/>
+        <text x="0" y="40" class="txt" font-size="42" fill="#ff3b30" stroke-width="0">LOW BATTERY</text>
+        <text id="lowPct" x="0" y="112" class="txt" font-size="62" fill="#fff" stroke-width="0">3%</text>
+      </g>
+      <g id="note1" opacity="0">
+        <rect x="-190" y="-130" width="380" height="132" rx="28" fill="#1e2446" opacity=".96"/>
+        <circle cx="-138" cy="-64" r="36" fill="#2f3a74"/>
+        <g fill="#f2f5ff"><circle cx="-142" cy="-62" r="16"/><path d="M-160 -68 C-160 -88 -124 -88 -124 -68 Z" fill="#c0101a"/><path d="M-128 -76 L-102 -70 L-127 -66 Z" fill="#c0101a"/></g>
+        <text x="-88" y="-82" font-family="Arial,sans-serif" font-weight="900" font-size="30" fill="#fff">JAY</text>
+        <text x="160" y="-82" font-family="Arial,sans-serif" font-weight="700" font-size="20" fill="#9aa3c8" text-anchor="end">now</text>
+        <text x="-88" y="-40" font-family="Arial,sans-serif" font-weight="700" font-size="29" fill="#fff">don't open the door.</text>
+      </g>
+      <g id="note2" opacity="0">
+        <rect x="-190" y="18" width="380" height="104" rx="28" fill="#1e2446" opacity=".96"/>
+        <text x="-160" y="62" font-family="Arial,sans-serif" font-weight="900" font-size="24" fill="#9aa3c8">JAY</text>
+        <text x="-160" y="100" font-family="Arial,sans-serif" font-weight="900" font-size="33" fill="#ff6a5a">not even for me.</text>
+      </g>
+    </g>
+    <g filter="url(#manGlow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-360 700 L-262 300 L-180 175" stroke="#060a1a" stroke-width="46"/>
+      <path d="M-360 700 L-262 300 L-180 175" stroke="#f7f9ff" stroke-width="30"/>
+      <path d="M280 120 L226 112 M290 210 L226 200 M282 300 L226 288" stroke="#060a1a" stroke-width="40"/>
+      <path d="M280 120 L226 112 M290 210 L226 200 M282 300 L226 288" stroke="#f7f9ff" stroke-width="24"/>
+    </g>
+  </g>
+</g>
+
+<!-- peephole POV -->
+<g id="peep" opacity="0">
+  <rect x="0" y="0" width="1080" height="1920" fill="#000"/>
+  <g clip-path="url(#peepClip)">
+    <g id="peepScene" filter="url(#peepWarp)">
+      <rect x="100" y="440" width="880" height="880" fill="#1a0306"/>
+      <polygon points="100,440 380,690 380,1080 100,1320" fill="#3a0710"/>
+      <polygon points="980,440 700,690 700,1080 980,1320" fill="#2c050c"/>
+      <rect x="380" y="690" width="320" height="390" fill="#6a0d14"/>
+      <polygon points="380,1080 700,1080 980,1320 100,1320" fill="#22040a"/>
+      <g stroke="#14020a" stroke-width="6"><line x1="180" y1="512" x2="180" y2="1252"/><line x1="290" y1="610" x2="290" y2="1156"/><line x1="900" y1="512" x2="900" y2="1252"/><line x1="790" y1="610" x2="790" y2="1156"/></g>
+      <circle cx="560" cy="700" r="330" fill="url(#hallLight)"/>
+      <g id="friend">
+        <use href="#friendShape" fill="none" stroke="#ff4a3a" stroke-width="12" stroke-linejoin="round"/>
+        <use href="#friendShape" fill="#040106"/>
+      </g>
+    </g>
+    <g id="peepRipple" fill="none" stroke="#ff8070" stroke-width="4"><circle cx="540" cy="880" r="40"/><circle cx="540" cy="880" r="40"/><circle cx="540" cy="880" r="40"/></g>
+    <circle cx="540" cy="880" r="420" fill="url(#peepVig)"/>
+  </g>
+  <circle id="peepRing" cx="540" cy="880" r="420" fill="none" stroke="#1b1f33" stroke-width="40"/>
+  <circle id="peepRing2" cx="540" cy="880" r="398" fill="none" stroke="#5a6288" stroke-width="4"/>
+</g>
+
+<!-- text -->
+<g id="ui">
+  <g id="clockG" transform="translate(540 165)">
+    <rect x="-240" y="-50" width="480" height="100" rx="50" fill="#000" opacity=".55"/>
+    <circle class="rec" cx="-192" cy="0" r="18" fill="#ff2a2a"/>
+    <text id="clock" x="26" y="21" class="txt" font-size="58" fill="#fff" stroke-width="8">6:59:57 PM</text>
+  </g>
+  <text x="540" y="262" class="txt" font-size="32" fill="#ffd9a0" stroke-width="7" letter-spacing="2">WHAT IF: THE PURGE · EP 1</text>
+  <g id="sfxG" transform="translate(540 600)"><text id="sfx" class="txt" font-size="80" fill="#ff3b30" stroke-width="14"></text></g>
+  <g id="k1" transform="translate(290 560) rotate(-8)" opacity="0"><text class="txt" font-size="104" fill="#ff3b30" stroke-width="16">KNOCK</text></g>
+  <g id="k2" transform="translate(760 470) rotate(6)" opacity="0"><text class="txt" font-size="104" fill="#ff3b30" stroke-width="16">KNOCK</text></g>
+  <g id="k3" transform="translate(540 700) rotate(-3)" opacity="0"><text class="txt" font-size="128" fill="#ff3b30" stroke-width="18">KNOCK</text></g>
+  <g id="voG" transform="translate(540 1490)"><text id="vo" class="txt" font-size="64" fill="#fff" stroke-width="13"></text></g>
+  <g id="frG" transform="translate(540 1450)"><text id="fr" class="txt" font-size="80" fill="#cfe6ff" stroke-width="14" font-style="italic"></text></g>
+  <g id="titleG" transform="translate(540 820)"><text id="title" class="txt" font-size="112" fill="#fff" stroke-width="18"></text></g>
+  <g id="ab" opacity="0">
+    <g id="abT" transform="translate(540 560)"><text class="txt" font-size="190" fill="#fff" stroke-width="24">A <tspan fill="#ff3b30">OR</tspan> B?</text></g>
+    <g id="v2G" transform="translate(540 960)"><text id="v2" class="txt" font-size="62" fill="#ffd9a0" stroke-width="12" font-style="italic">IT'S JAY. ...RIGHT?</text></g>
+    <g id="cardA" transform="translate(540 1150)">
+      <rect x="-460" y="-78" width="920" height="156" rx="34" fill="#05081a" opacity=".86" stroke="#fff" stroke-width="6"/>
+      <circle cx="-372" cy="0" r="56" fill="#e0241f" stroke="#000" stroke-width="5"/>
+      <text x="-372" y="26" class="txt" font-size="76" fill="#fff" stroke-width="10">A</text>
+      <text id="optA" x="68" y="22" class="txt" font-size="60" fill="#fff" stroke-width="11">OPEN THE DOOR FOR JAY</text>
+    </g>
+    <g id="cardB" transform="translate(540 1335)">
+      <rect x="-460" y="-78" width="920" height="156" rx="34" fill="#05081a" opacity=".86" stroke="#fff" stroke-width="6"/>
+      <circle cx="-372" cy="0" r="56" fill="#ffb347" stroke="#000" stroke-width="5"/>
+      <text x="-372" y="26" class="txt" font-size="76" fill="#fff" stroke-width="10">B</text>
+      <text id="optB" x="68" y="22" class="txt" font-size="60" fill="#fff" stroke-width="11">ESCAPE OVER THE BALCONY</text>
+    </g>
+    <g id="voteG" transform="translate(540 1575)"><text class="txt" font-size="36" fill="#fff" stroke-width="9">COMMENT A OR B · YOU WRITE EP 2</text></g>
+  </g>
+</g>
+</svg>
+</div>
+<div id="start">
+  <h1>WHAT IF: THE PURGE</h1>
+  <div class="ep">EPISODE 1 · THE KNOCK</div>
+  <div class="go">▶ TAP TO START</div>
+  <p>Start your screen recording first. The episode runs once (30s) and freezes on the last frame. Press R or triple-tap to restart for a retake.</p>
+</div>
+<script>
+(() => {
+'use strict';
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = 30;
+const CAPTURE = new URLSearchParams(location.search).has('capture');
+const $ = id => document.getElementById(id);
+const stage = $('stage');
+
+/* ---------- maths ---------- */
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, k) => a + (b - a) * k;
+const io = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const oc = x => 1 - Math.pow(1 - x, 3);
+const ob = x => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const hash = i => { const s = Math.sin(i * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, k) => { const A = hex(a), B = hex(b); return 'rgb(' + A.map((v, i) => Math.round(lerp(v, B[i], k))).join(',') + ')'; };
+const pulseAt = (t, times, w) => times.reduce((m, x) => Math.max(m, t >= x ? Math.exp(-(t - x) / w) : 0), 0);
+const attr = (el, o) => { for (const k in o) el.setAttribute(k, o[k]); };
+
+/* ---------- fit the 1080x1920 stage to any screen (black letterbox) ---------- */
+function fit() {
+  const s = Math.min(innerWidth / 1080, innerHeight / 1920);
+  stage.style.transform = `translate(${-540 * s}px,${-960 * s}px) scale(${s})`;
+}
+addEventListener('resize', fit); fit();
+
+/* ---------- text helpers ---------- */
+function setLines(el, str, maxW) {
+  if (el._s === str) return;
+  el._s = str; el.textContent = '';
+  if (!str) return;
+  const lines = str.split('\n'), n = lines.length;
+  lines.forEach((ln, i) => {
+    const ts = document.createElementNS(NS, 'tspan');
+    ts.setAttribute('x', 0);
+    ts.setAttribute('dy', i === 0 ? (-(n - 1) * .56 + .36) + 'em' : '1.12em');
+    ts.textContent = ln; el.appendChild(ts);
+  });
+  if (!el._fs) el._fs = +el.getAttribute('font-size');
+  let fs = el._fs; el.setAttribute('font-size', fs);
+  const widest = () => Math.max(...[...el.children].map(c => c.getComputedTextLength()));
+  while (widest() > maxW && fs > 24) { fs -= 2; el.setAttribute('font-size', fs); }
+}
+function fitOne(el, maxW) {
+  let fs = +el.getAttribute('font-size');
+  while (el.getComputedTextLength() > maxW && fs > 24) { fs -= 2; el.setAttribute('font-size', fs); }
+}
+
+/* ---------- city windows across the street ---------- */
+const OPP = [];
+(() => {
+  const g = $('oppWins'); let i = 0;
+  const add = (x, y, w, h) => {
+    const r = document.createElementNS(NS, 'rect');
+    const red = hash(i + 50) > .82;
+    attr(r, { x, y, width: w, height: h, rx: 3, fill: red ? '#ff5a3a' : '#ffb347', opacity: .55 + hash(i + 9) * .4 });
+    g.appendChild(r); OPP.push({ el: r, off: 8.65 + hash(i) * 2.2, base: +r.getAttribute('opacity') }); i++;
+  };
+  for (const y of [1030, 1190, 1270]) for (const x of [70, 135, 200, 265]) add(x, y, 40, 50);
+  add(70, 1110, 40, 50);
+  for (const y of [1110, 1190, 1270, 1350]) for (const x of [400, 470, 540, 610]) if (hash(x * y) > .2) add(x, y, 44, 52);
+})();
+const BARS = [];
+(() => { const g = $('tvBars'); for (let i = 0; i < 9; i++) { const r = document.createElementNS(NS, 'rect'); attr(r, { x: 772, width: 356, height: 6 + hash(i) * 14 }); g.appendChild(r); BARS.push(r); } })();
+
+/* ---------- clock: one master time, with hard time-skips at the cuts ---------- */
+const H = (h, m, s) => h * 3600 + m * 60 + s;
+const CLK = [[0, H(18, 59, 57)], [4, H(19, 3, 12)], [8, H(20, 14, 5)], [11.3, H(21, 47, 30)], [14.6, H(23, 52, 8)], [18, H(23, 59, 53)]];
+function clockSec(t) { let c = CLK[0]; for (const k of CLK) if (t >= k[0]) c = k; return (c[1] + Math.floor(t - c[0] + 1e-6)) % 86400; }
+function fmt(sec, withSec) {
+  const h = Math.floor(sec / 3600) % 24, m = Math.floor(sec / 60) % 60, s = sec % 60;
+  const h12 = h % 12 || 12, p = n => String(n).padStart(2, '0');
+  return withSec ? `${h12}:${p(m)}:${p(s)} ${h >= 12 ? 'PM' : 'AM'}` : `${h12}:${p(m)}`;
+}
+const JUMPS = [4, 8, 11.3, 14.6, 18, 25];
+
+/* ---------- camera: one scene group, segment by segment ---------- */
+const CAM = [
+  [0, 1, [900, 1120, .70], [940, 1120, .79], oc],              // S1 hook push-in
+  [1, 3, [1060, 1140, 1.02], [1090, 1150, 1.10], io],          // S2 pizza
+  [3, 4, [1090, 1150, 1.10], [1030, 1120, 1.04], oc],          //    siren pull
+  [4, 5.6, [700, 1100, 1.10], [680, 1100, 1.14], io],          // S3 phone (behind overlay)
+  [5.6, 8, [430, 1060, 1.15], [380, 1040, 1.34], io],          //    the window
+  [8, 9.3, [1180, 1130, .74], [1200, 1130, .78], io],          // S4 wide, lights off
+  [9.3, 11.3, [1200, 1130, .78], [1350, 1170, 1.45], io],      //    push to microwave
+  [11.3, 14.6, [1460, 1370, 1.42], [1500, 1390, 1.68], io],    // S5 low: dog + door gap
+  [14.6, 18, [1300, 1150, 1.20], [1320, 1150, 1.28], io],      // S6 phone buzz
+  [18, 22.6, [1450, 1150, 1.00], [1620, 1130, 1.35], io],      // S7 the step
+  [22.6, 25, [1620, 1130, 1.35], [1700, 1220, 1.75], io],      //    the handle
+  [25, 26.4, [1640, 1150, 1.15], [1660, 1140, 1.22], oc],      // S8 knocks
+  [26.4, 28.6, [1660, 1140, 1.22], [1680, 1140, 1.30], io],    //    peephole (behind overlay)
+  [28.6, 30, [1628, 1170, 1.70], [1640, 1174, 1.78], io],      //    hand near the chain
+];
+const KNOCKS = [25.2, 25.7, 26.2];
+function camera(t) {
+  let c = CAM[CAM.length - 1], k = 1;
+  for (const s of CAM) if (t >= s[0] && t < s[1]) { c = s; k = s[4](seg(t, s[0], s[1])); break; }
+  const cx = lerp(c[2][0], c[3][0], k), cy = lerp(c[2][1], c[3][1], k), sc = lerp(c[2][2], c[3][2], k);
+  const amp = KNOCKS.reduce((a, x) => a + (t >= x ? 34 * Math.exp(-(t - x) * 8) : 0), 0);
+  const dx = amp * Math.sin(t * 93) + Math.sin(t * .8) * 5, dy = amp * Math.cos(t * 71) + Math.sin(t * .6 + 1) * 4;
+  const rot = amp * .05 * Math.sin(t * 57) + Math.sin(t * .5) * .25;
+  $('cam').setAttribute('transform', `translate(${540 + dx} ${960 + dy}) rotate(${rot}) scale(${sc}) translate(${-cx} ${-cy})`);
+}
+
+/* ---------- the stickman rig ---------- */
+const TH = 125, SH = 125, TORSO = 190, NH = 52, UA = 108, FA = 102, D = Math.PI / 180;
+const BASE = { x: 0, y: 1500, f: 1, lean: 0, ht: 0, ra: 10, re: 12, la: -10, le: 12, rh: 5, rk: -5, lh: -5, lk: -5, ex: .5, ey: 0, mo: 0, tr: 0, ik: 0, tx: 0, ty: 0, rel: 0 };
+const MK = [];
+(() => {
+  const K = [
+    // S1-S2: at the coffee table, slice in hand, facing left (the window)
+    [0, { cut: 1, x: 1200, f: -1, ra: 30, re: 70, la: -12, ex: 0 }],
+    [1.25, {}],
+    [1.75, { ik: 1, rel: 1, tx: 34, ty: 22, ht: -6 }],
+    [2.6, {}],
+    [2.85, { ik: 0, ra: 30, re: 70, ht: 0 }],
+    [3.0, {}],
+    [3.18, { lean: -7, ht: -10, ex: 1, ey: -.5, mo: 1, la: 24, le: 40, ra: 20, re: 45, tr: .45 }],
+    [4.0, {}],
+    // S3: at the balcony door, phone at 3%
+    [4.0, { cut: 1, x: 780, f: -1, ra: 42, re: 78, la: -8, ex: .5, ey: .8, tr: .2 }],
+    [5.6, { ra: 30, re: 60, ex: 1, ey: -.3, lean: 3 }],
+    [6.3, { lean: 7 }],
+    [6.55, { x: 815, lean: -13, ra: 75, re: 72, la: 62, le: 80, mo: 1, ex: 1, ey: -.2, tr: .7 }],
+    [7.05, { x: 820, lean: -8, ra: 60, re: 82, la: 46, le: 82, ex: 0, ey: 0, mo: .7, tr: .7 }],
+    [8.0, {}],
+    // S4: the light switch, then the microwave behind him
+    [8.0, { cut: 1, x: 1525, f: 1, ra: 10, re: 15, ex: 0, tr: .3 }],
+    [8.45, { ik: 1, tx: 1633, ty: 1140, ex: 1, ey: .2 }],
+    [8.6, { ty: 1158 }],
+    [9.0, { ik: 0, ex: 0, ey: 0 }],
+    [9.6, { ex: -1, ht: -8, ey: .1 }],
+    [10.2, { ht: -11, mo: .6, lean: -3, tr: .45 }],
+    [11.3, {}],
+    // S5: by the counter, the dog, the gap under the door
+    [11.3, { cut: 1, x: 1520, f: 1, la: -8, le: 22, ex: .3, ey: .3 }],
+    [12.1, { ex: 1, ey: .7, lean: -5, mo: .6, tr: .5, ht: 6 }],
+    [13.0, { ex: -1, ey: .6, ht: -6 }],
+    [13.8, { ex: 1, ey: .6, ht: 6, tr: .7 }],
+    [14.6, {}],
+    // S6: phone up
+    [14.6, { cut: 1, x: 1520, f: 1, ra: 45, re: 85, la: -8, ex: .6, ey: .9, tr: .4 }],
+    [18.0, {}],
+    // S7: THE STEP — one slow step with weight shift
+    [18.0, { cut: 1, x: 1440, f: 1, lean: -4, ra: 15, re: 20, la: -5, le: 28, ex: 1, ey: .1, tr: .5 }],
+    [18.7, { x: 1445, lean: -2 }],
+    [19.8, { x: 1472, lean: 6, rh: 38, rk: -64, lh: -10, lk: -4 }],
+    [21.0, { x: 1505, lean: 3, rh: 20, rk: -4, lh: -18, lk: -6 }],
+    [22.4, { x: 1508, lean: 7, ik: .9, tx: 1650, ty: 1080, ey: -.2, mo: .3 }],
+    [23.0, { lean: -4, ik: .6, tx: 1600, ty: 1125, mo: 1, tr: .9 }],
+    [25.0, {}],
+    // S8: the knocks, then the hand near the chain
+    [25.0, { cut: 1, x: 1505, f: 1, rh: 20, rk: -4, lh: -18, lk: -6, lean: -4, ra: 20, re: 30, ex: 1, mo: 1, tr: .6 }],
+    [25.32, { x: 1488, lean: -13, ra: 72, re: 86, la: 56, le: 86, tr: 1 }],
+    [26.4, {}],
+    [28.6, { cut: 1, x: 1560, f: 1, lean: 9, rh: 12, rk: -4, lh: -10, lk: -4, ik: 1, tx: 1636, ty: 1170, la: -6, le: 20, ex: 1, ey: .4, mo: .4, tr: .15 }],
+    [29.0, { tx: 1650, ty: 1164 }],
+    [30, {}],
+  ];
+  let cur = { ...BASE };
+  for (const [t, o] of K) {
+    cur = o.cut ? { ...BASE, ...o } : { ...cur, ...o };
+    MK.push([t, { ...cur }]); delete cur.cut;
+  }
+})();
+function poseAt(t) {
+  let i = 0; while (i < MK.length - 1 && MK[i + 1][0] <= t) i++;
+  const A = MK[i], B = MK[i + 1];
+  if (!B || B[1].cut) return { ...A[1] };
+  const k = io(seg(t, A[0], B[0])), o = {};
+  for (const key in A[1]) o[key] = lerp(A[1][key], B[1][key] ?? A[1][key], k);
+  o.f = A[1].f; o.rel = B[1].ik > 0 ? B[1].rel : A[1].rel;
+  return o;
+}
+function solveArm(S, T, f) {
+  const dx = (T[0] - S[0]) * f, dy = T[1] - S[1];
+  const d = clamp(Math.hypot(dx, dy), Math.abs(UA - FA) + 2, UA + FA - 2);
+  const base = Math.atan2(dx, dy) / D;
+  const a1 = Math.acos((UA * UA + d * d - FA * FA) / (2 * UA * d)) / D;
+  const a2 = Math.acos((FA * FA + d * d - UA * UA) / (2 * FA * d)) / D;
+  return [base - a1, a1 + a2];
+}
+const BLINKS = [.7, 4.9, 9.1, 13.4, 19.3, 24.1, 27.7];
+function man(t) {
+  const tm = Math.min(t, 29.0); // freeze on the hand near the chain
+  const p = poseAt(tm), f = p.f;
+  const trm = p.tr * (Math.sin(tm * 43) * .6 + Math.sin(tm * 31 + 1) * .4);
+  p.lean += Math.sin(tm * 2.4) * .9 + trm * 1.6;
+  p.ht += trm * 2.5 + (tm > 1.8 && tm < 2.6 ? Math.sin(tm * 26) * 3 : 0);
+  p.ra += Math.sin(tm * 2.4 + .6) * 2.5 + trm * 3;
+  p.la += Math.sin(tm * 2.4 + 1.2) * 2.5 + trm * 3;
+  p.tx += trm * 2; p.ty += trm * 2;
+  const v = (a, l) => [f * Math.sin(a * D) * l, Math.cos(a * D) * l];
+  const ad = (A, B) => [A[0] + B[0], A[1] + B[1]];
+  const fk = v(p.rh, TH), ff = ad(fk, v(p.rh + p.rk, SH));
+  const bk = v(p.lh, TH), bf = ad(bk, v(p.lh + p.lk, SH));
+  const hip = [p.x, p.y - Math.max(ff[1], bf[1])];
+  const FK = ad(hip, fk), FF = ad(hip, ff), BK = ad(hip, bk), BF = ad(hip, bf);
+  const neck = ad(hip, v(180 - p.lean, TORSO));
+  const neck2 = ad(neck, v(180 - p.lean, 12));
+  const head = ad(neck, v(180 - p.lean - p.ht, NH));
+  const sh = ad(neck, v(180 - p.lean, -14));
+  let ra = p.ra, re = p.re;
+  if (p.ik > 0) {
+    const T = p.rel ? [head[0] + f * p.tx, head[1] + p.ty] : [p.tx, p.ty];
+    const [a, e] = solveArm(sh, T, f); ra = lerp(ra, a, p.ik); re = lerp(re, e, p.ik);
+  }
+  const FE = ad(sh, v(ra, UA)), FH = ad(FE, v(ra + re, FA));
+  const BE = ad(sh, v(p.la, UA)), BH = ad(BE, v(p.la + p.le, FA));
+  const P = a => a[0].toFixed(1) + ' ' + a[1].toFixed(1);
+  const back = `M${P(BF)} L${P(BK)} L${P(hip)} M${P(sh)} L${P(BE)} L${P(BH)}`;
+  const main = `M${P(FF)} L${P(FK)} L${P(hip)} L${P(neck2)} M${P(sh)} L${P(FE)} L${P(FH)}`;
+  $('mBackO').setAttribute('d', back); $('mBack').setAttribute('d', back);
+  $('mMainO').setAttribute('d', main); $('mMain').setAttribute('d', main);
+  attr($('mHead'), { cx: head[0], cy: head[1] });
+  const blink = BLINKS.reduce((m, b) => Math.max(m, 1 - Math.abs(tm - b) / .07), 0);
+  const ox = f * p.ex * 13, oy = p.ey * 10 - 3;
+  for (const [id, s] of [['mEye1', -10], ['mEye2', 10]]) attr($(id), { cx: head[0] + ox + s, cy: head[1] + oy, ry: Math.max(.8, 6.5 * (1 - clamp(blink))) });
+  attr($('mMouth'), { cx: head[0] + f * p.ex * 10, cy: head[1] + 21 + p.ey * 4, rx: 3 + 4 * p.mo, ry: 1 + 8 * p.mo, opacity: p.mo > .12 ? 1 : 0 });
+  const ang = (A, B) => Math.atan2(B[1] - A[1], B[0] - A[0]) / D;
+  const showSlice = tm < 4, phF = (tm >= 4 && tm < 8) || (tm >= 14.6 && tm < 18), phB = (tm >= 11.3 && tm < 14.6) || (tm >= 18 && tm < 25);
+  $('slice').setAttribute('transform', `translate(${P(FH)}) rotate(${ang(FE, FH) + (tm > 3.1 ? 40 : 0)})`);
+  $('slice').setAttribute('opacity', showSlice ? 1 : 0);
+  $('phoneF').setAttribute('transform', `translate(${P(FH)}) rotate(${ang(FE, FH) - 90})`);
+  $('phoneF').setAttribute('opacity', phF ? 1 : 0);
+  $('phoneB').setAttribute('transform', `translate(${P(BH)}) rotate(${ang(BE, BH) - 90})`);
+  $('phoneB').setAttribute('opacity', phB ? 1 : 0);
+}
+
+/* ---------- the world ---------- */
+function world(t) {
+  // sky: dusk -> blood red after the siren
+  const r = io(seg(t, 2.7, 5.2));
+  $('sk0').setAttribute('stop-color', mix('#2b1b4d', '#250307', r));
+  $('sk1').setAttribute('stop-color', mix('#8a3a5a', '#8f0c14', r));
+  $('sk2').setAttribute('stop-color', mix('#f08a4a', '#e0281e', r));
+  attr($('spill'), { fill: mix('#ffa050', '#ff2a2a', r), opacity: .08 + r * .08 });
+  // lights off at 8.6 (with a flicker)
+  const off = t >= 8.6;
+  const flick = t >= 8.6 && t < 8.78 ? (Math.sin(t * 160) > 0 ? .25 : .62) : (off ? .62 : 0);
+  $('dark').setAttribute('opacity', flick);
+  $('lampOn').setAttribute('opacity', off ? 0 : 1);
+  $('switchT').setAttribute('y', off ? 1146 : 1131);
+  $('redwash').setAttribute('opacity', r * .07 + (t > 18 ? .04 : 0));
+  for (const w of OPP) w.el.setAttribute('opacity', t >= w.off ? .04 : w.base);
+  // the drag past the opposite window
+  const dk = seg(t, 5.85, 6.75);
+  $('drag').setAttribute('transform', `translate(${lerp(400, -220, io(dk)) + Math.sin(t * 60) * 3 * (dk > 0 && dk < 1)} 0)`);
+  $('dragWin').setAttribute('opacity', t >= 8 ? .05 : (dk > 0 && dk < 1 ? .75 + .25 * Math.sin(t * 50) : 1));
+  // TV on mute
+  const sec = clockSec(t);
+  if (t < 3) { $('tvMain').textContent = 'PURGE BEGINS IN'; $('tvSub').textContent = '00:00:0' + Math.max(0, 3 - Math.floor(t)); $('tvBg').setAttribute('fill', '#0a1640'); $('tvSub').setAttribute('fill', '#ffcf5a'); }
+  else if (t < 8) { $('tvMain').textContent = 'THE PURGE HAS BEGUN'; $('tvSub').textContent = 'STAY INDOORS'; $('tvBg').setAttribute('fill', Math.floor(t * 3) % 2 ? '#5a0610' : '#2a030a'); $('tvSub').setAttribute('fill', '#fff'); }
+  $('tvTick').setAttribute('x', 772 - ((t * 90) % 700));
+  const stat = t >= 8;
+  $('tvNews').setAttribute('opacity', stat ? 0 : 1);
+  $('tvStatic').setAttribute('opacity', stat ? 1 : 0);
+  if (stat) BARS.forEach((b, i) => attr(b, { y: 752 + hash(i + Math.floor(t * 12) * 13) * 190, opacity: .3 + hash(i * 3 + Math.floor(t * 12)) * .5 }));
+  $('tvHalo').setAttribute('opacity', stat ? .25 : (t >= 3 ? .9 : .7));
+  // microwave clock — the light he forgot
+  $('mwTime').textContent = fmt(sec, false);
+  $('mwHalo').setAttribute('opacity', off ? .85 + .15 * Math.sin(t * 6) : .25);
+  // under the door
+  const danger = io(seg(t, 11.9, 12.4));
+  $('gap').setAttribute('fill', mix('#ffb347', '#ff3b30', danger));
+  attr($('gapSpill'), { fill: mix('#ffb347', '#ff3b30', danger), opacity: .18 + danger * .12 });
+  const fk = oc(seg(t, 12.0, 12.9)), shuffle = t > 24.6 ? Math.sin((t - 24.6) * 9) * 6 * Math.exp(-(t - 24.6)) : 0;
+  $('foot1').setAttribute('x', lerp(2000, 1800, fk) + shuffle);
+  $('foot2').setAttribute('x', lerp(2050, 1858, fk) - shuffle);
+  // dog
+  const rise = oc(seg(t, 11.9, 12.35)), growl = t >= 11.9 && t < 14.5 ? 1 : (t >= 14.5 ? .35 : 0);
+  const jit = growl * Math.sin(t * 70) * 2.2;
+  $('dogBody').setAttribute('transform', `translate(${jit} ${-36 * rise})`);
+  [...$('dogLegs').children].forEach(l => attr(l, { y: -40 - 36 * rise, height: 40 + 36 * rise }));
+  $('hackles').setAttribute('opacity', rise);
+  $('dogEye').setAttribute('fill', rise > .5 ? '#ff3b30' : '#ffb347');
+  attr($('dogEyeH'), { fill: rise > .5 ? 'url(#redHalo)' : 'url(#ambHalo)', opacity: .7 + .3 * Math.sin(t * 7) });
+  $('bowl').setAttribute('transform', `translate(${1410 + growl * Math.sin(t * 55) * 3} 1500) rotate(${growl * Math.sin(t * 47) * 4})`);
+  // door: the step, the glow, the handle, the knocks
+  const knock = KNOCKS.reduce((a, x) => a + (t >= x ? Math.exp(-(t - x) * 10) * Math.sin((t - x) * 60) : 0), 0);
+  const dt = `translate(${knock * 7} 0)`;
+  $('doorBase').setAttribute('transform', dt); $('doorHW').setAttribute('transform', dt);
+  const glow = seg(t, 21.3, 21.8);
+  $('peepGlowG').setAttribute('opacity', glow);
+  $('peepHalo').setAttribute('opacity', glow * (.7 + .3 * Math.sin(t * 5)));
+  [...$('peepRings').children].forEach((c, i) => {
+    const ph = t >= 21.4 ? ((t - 21.4) / .9 + i / 3) % 1 : 0;
+    const on = t >= 21.4 + i * .3 && t < 25.0;
+    attr(c, { r: 10 + ph * 150, opacity: on ? (1 - ph) * .9 : 0 });
+  });
+  let hAng = 0;
+  if (t >= 22.8 && t < 24.5) hAng = 38 * io(seg(t, 22.8, 24.3)) + Math.sin(t * 40) * 1.2 * seg(t, 23, 24.3);
+  else if (t >= 24.5) hAng = 38 * Math.exp(-(t - 24.5) * 14) * Math.cos((t - 24.5) * 30);
+  $('handle').setAttribute('transform', `translate(1712 1232) rotate(${hAng})`);
+  $('handleHalo').setAttribute('opacity', clamp(Math.abs(hAng) / 30) * .9);
+  const sway = .3 * Math.sin(t * 2) + KNOCKS.reduce((a, x) => a + (t >= x ? 1.4 * Math.exp(-(t - x) * 2.6) * Math.sin((t - x) * 13) : 0), 0) + (t >= 23 && t < 24.5 ? .5 * Math.sin(t * 9) : 0);
+  const cd = `M1667 1141 Q${1707 + sway * 16} ${1192 - Math.abs(sway) * 6} 1748 1131`;
+  $('chain').setAttribute('d', cd); $('chainL').setAttribute('d', cd);
+}
+
+/* ---------- overlays ---------- */
+const CAPS = [
+  [1.05, 2.9, "MATE. IT'S 6:59.\nPIZZA, SOFA, DOOR'S LOCKED.\nEASY.", 'vo'],
+  [3.3, 4.0, "THAT'S THE SIREN.\nIT'S STARTED.", 'vo'],
+  [4.1, 5.6, "PHONE'S ON 3%.\nCHARGER'S IN THE KITCHEN.", 'vo'],
+  [6.8, 8.0, 'DID YOU SEE THAT?!', 'vo'],
+  [8.1, 9.7, "LIGHTS OFF.\nEVERYONE'S DOING IT.", 'vo'],
+  [9.8, 11.3, 'EXCEPT MY MICROWAVE.\nBRILLIANT.', 'vo'],
+  [12.2, 14.6, "BISCUIT NEVER GROWLS.\nWHO'S OUT THERE?", 'vo'],
+  [15.0, 16.0, 'JAY?', 'vo'],
+  [16.8, 18.0, 'WAIT. NOT EVEN YOU?', 'vo'],
+  [18.3, 20.6, "OKAY. I'M JUST\nGONNA LOOK.", 'vo'],
+  [21.5, 22.8, 'WHY IS IT GLOWING?', 'vo'],
+  [23.0, 25.0, "THE HANDLE.\nMATE, THE HANDLE'S MOVING.", 'vo'],
+  [3.0, 4.0, '[SIREN]', 'sfx'],
+  [5.85, 6.9, '[SCREAMING]', 'sfx'],
+  [11.9, 14.5, '[GRRRRR]', 'sfx'],
+  [14.75, 15.5, '[BZZT]', 'sfx'],
+  [15.95, 16.7, '[BZZT]', 'sfx'],
+  [22.8, 24.6, '[CREEEAK]', 'sfx'],
+  [26.85, 28.6, '“IT’S ME.\nOPEN UP.”', 'fr'],
+];
+const CAPEL = { vo: ['vo', 'voG', 1490, 960], sfx: ['sfx', 'sfxG', 600, 980], fr: ['fr', 'frG', 1450, 960] };
+function caption(t, kind) {
+  const [tid, gid, y, maxW] = CAPEL[kind];
+  let cur = null;
+  for (const c of CAPS) if (c[3] === kind && t >= c[0] && t < c[1]) cur = c;
+  const g = $(gid);
+  if (!cur) { g.setAttribute('opacity', 0); return; }
+  setLines($(tid), cur[2], maxW);
+  const k = seg(t, cur[0], cur[0] + .2), s = lerp(.55, 1, ob(k));
+  const rot = kind === 'sfx' ? -4 + Math.sin(t * 30) * 1.5 : 0;
+  const jx = kind === 'sfx' ? Math.sin(t * 47) * 4 : 0;
+  g.setAttribute('opacity', 1);
+  g.setAttribute('transform', `translate(${540 + jx} ${y}) rotate(${rot}) scale(${s})`);
+}
+const BEATS = []; (() => { let x = 18.0; while (x < 25) { BEATS.push(x); x += 60 / lerp(72, 140, (x - 18) / 7); } })();
+function overlays(t) {
+  // title card 0–1s (lingers to 1.6 for reading)
+  const tg = $('titleG');
+  if (t < 1.6) {
+    setLines($('title'), 'WHAT IF\nNOTHING WAS\nILLEGAL TILL 7AM?', 990);
+    const s = t < 1.4 ? lerp(.62, 1, ob(seg(t, 0, .32))) * (1 + .03 * Math.sin(t * 9)) : lerp(1, 1.3, seg(t, 1.4, 1.6));
+    tg.setAttribute('opacity', t < 1.4 ? 1 : 1 - seg(t, 1.4, 1.6));
+    tg.setAttribute('transform', `translate(540 820) scale(${s}) rotate(${-2 + Math.sin(t * 6)})`);
+  } else tg.setAttribute('opacity', 0);
+  // flashes: siren pulses + knocks
+  let fl = 0;
+  if (t >= 3 && t < 4.6) fl = .34 * Math.pow(.5 + .5 * Math.sin((t - 3) * Math.PI * 2 * 2.2 - Math.PI / 2), 2) * (1 - seg(t, 3.8, 4.6));
+  fl = Math.max(fl, .45 * pulseAt(t, KNOCKS, .09));
+  $('flash').setAttribute('opacity', fl);
+  // heartbeat vignette during the step
+  const hb = t >= 18 && t < 25 ? pulseAt(t, BEATS, .14) * (.35 + .5 * seg(t, 18, 25)) : 0;
+  $('vigRedR').setAttribute('opacity', Math.max(hb, t >= 25 ? .35 + .15 * Math.sin(t * 4) : 0, t >= 11.9 && t < 14.6 ? .25 : 0));
+  // phone close-ups (S3, S6)
+  let py = 3000, shake = '';
+  const sec = clockSec(t);
+  if (t >= 4 && t < 5.6) {
+    py = lerp(1500, 0, oc(seg(t, 4, 4.25))) + lerp(0, 1500, Math.pow(seg(t, 5.42, 5.6), 2));
+    $('lowBatt').setAttribute('opacity', seg(t, 4.35, 4.5) * (Math.floor(t * 4) % 2 ? 1 : .55));
+    $('note1').setAttribute('opacity', 0); $('note2').setAttribute('opacity', 0);
+    $('battTxt').textContent = '3%'; $('lowPct').textContent = '3%'; $('battFill').setAttribute('width', 3);
+  } else if (t >= 14.6 && t < 18) {
+    py = lerp(1500, 0, oc(seg(t, 14.6, 14.85))) + lerp(0, 1500, Math.pow(seg(t, 17.82, 18), 2));
+    $('lowBatt').setAttribute('opacity', 0);
+    const n1 = oc(seg(t, 15.0, 15.25)), n2 = oc(seg(t, 16.2, 16.45));
+    $('note1').setAttribute('opacity', n1); $('note1').setAttribute('transform', `translate(0 ${lerp(-60, 0, n1)})`);
+    $('note2').setAttribute('opacity', n2); $('note2').setAttribute('transform', `translate(0 ${lerp(-60, 0, n2)})`);
+    $('battTxt').textContent = '2%'; $('battFill').setAttribute('width', 2);
+    $('batt').setAttribute('opacity', Math.floor(t * 3) % 2 ? 1 : .3);
+    const bz = (t >= 14.75 && t < 15.2) || (t >= 15.95 && t < 16.4);
+    if (bz) shake = `translate(${Math.sin(t * 120) * 9} ${Math.cos(t * 97) * 4}) rotate(${Math.sin(t * 110) * 2.2})`;
+  }
+  $('lockTime').textContent = fmt(sec, false);
+  $('phoneUI').setAttribute('transform', `translate(540 ${930 + py}) rotate(${Math.sin(t * 1.7) * 1.2})`);
+  $('phoneShake').setAttribute('transform', shake);
+  // peephole POV
+  const pe = t >= 26.4 && t < 28.6;
+  $('peep').setAttribute('opacity', pe ? 1 : 0);
+  if (pe) {
+    const ir = oc(seg(t, 26.4, 26.62));
+    $('peepCirc').setAttribute('r', 420 * ir);
+    $('peepRing').setAttribute('r', 420 * ir); $('peepRing2').setAttribute('r', 398 * ir);
+    $('peepDisp').setAttribute('scale', lerp(80, 16, oc(seg(t, 26.4, 27.1))) + 7 * Math.sin(t * 5));
+    const lean = oc(seg(t, 26.9, 27.6));
+    $('friend').setAttribute('transform', `translate(560 1180) scale(${1 + .07 * lean}) rotate(${Math.sin(t * 1.4) * 1.6 - 3 * lean}) translate(-560 -1180)`);
+    [...$('peepRipple').children].forEach((c, i) => { const ph = ((t - 26.4) / 1.1 + i / 3) % 1; attr(c, { r: 40 + ph * 380, opacity: (1 - ph) * .5 }); });
+  }
+  // the ending: A or B
+  const ab = t >= 28.6;
+  $('ab').setAttribute('opacity', ab ? 1 : 0);
+  $('abDim').setAttribute('opacity', ab ? .1 : 0);
+  if (ab) {
+    const pop = (id, a, x, y, rot = 0) => { const k = seg(t, a, a + .22); $(id).setAttribute('opacity', k > 0 ? 1 : 0); $(id).setAttribute('transform', `translate(${x} ${y}) scale(${lerp(.5, 1, ob(k))}) rotate(${rot})`); };
+    pop('abT', 28.6, 540, 455, -3 + Math.sin(t * 5) * 1.2);
+    pop('v2G', 28.62, 540, 1495);
+    pop('cardA', 28.78, 540, 1170);
+    pop('cardB', 29.0, 540, 1345);
+    pop('voteG', 29.3, 540, 1575);
+  }
+  ['k1', 'k2', 'k3'].forEach((id, i) => {
+    const a = KNOCKS[i], on = t >= a && t < 26.4, k = seg(t, a, a + .12);
+    $(id).setAttribute('opacity', on ? 1 : 0);
+    const base = [[290, 560, -8], [790, 470, 6], [540, 720, -3]][i];
+    $(id).setAttribute('transform', `translate(${base[0]} ${base[1]}) rotate(${base[2]}) scale(${lerp(1.7, 1, oc(k))})`);
+  });
+  caption(t, 'vo'); caption(t, 'sfx'); caption(t, 'fr');
+}
+function ui(t) {
+  const sec = clockSec(t);
+  $('clock').textContent = fmt(sec, true);
+  const j = JUMPS.reduce((m, x) => (t >= x ? x : m), -9);
+  const k = seg(t, j, j + .35), midnight = t >= 25;
+  $('clock').setAttribute('fill', midnight ? '#ff3b30' : (k < 1 ? mix('#ffb347', '#ffffff', k) : '#fff'));
+  $('clockG').setAttribute('transform', `translate(540 165) scale(${k < 1 ? lerp(1.28, 1, oc(k)) : 1})`);
+}
+
+/* ---------- master clock ---------- */
+function syncCSS(t) { for (const a of document.getAnimations()) { a.pause(); a.currentTime = t * 1000; } }
+function render(t) {
+  t = clamp(t, 0, DUR);
+  syncCSS(t); camera(t); world(t); man(t); overlays(t); ui(t);
+}
+fitOne($('optA'), 700); fitOne($('optB'), 700);
+window.renderAt = render;
+
+let start = 0, running = false;
+function loop(now) {
+  const t = (now - start) / 1000;
+  render(Math.min(t, DUR));
+  if (t < DUR && running) requestAnimationFrame(loop); else running = false;
+}
+function play() { start = performance.now(); if (!running) { running = true; requestAnimationFrame(loop); } }
+render(0);
+if (CAPTURE) { $('start').remove(); window.READY = true; return; }
+$('start').addEventListener('pointerdown', e => { e.stopPropagation(); $('start').remove(); play(); }, { once: true });
+addEventListener('keydown', e => { if (e.key === 'r' || e.key === 'R') { if ($('start')) $('start').remove(); play(); } });
+let taps = [];
+addEventListener('pointerdown', () => { const n = performance.now(); taps = taps.filter(x => n - x < 700); taps.push(n); if (taps.length >= 3 && !$('start')) { taps = []; play(); } });
+})();
+</script>
+</body>
+</html>
