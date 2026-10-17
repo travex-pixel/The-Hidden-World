@@ -702,3 +702,33 @@ Genius or ridiculous? 👇
 
 Seed comment: Who in that crew said "what if we use a catapult" and everyone agreed? 😂
 Pinned share line: Tag the mate who'd build this 🏰
+
+## 60: 50 years for Snow White (`true_crime_60_snow_white_sentence.mp4`)
+50 years to life… for stealing Snow White 📼 Nine kids' tapes, about $153, two Kmarts, 1995. California's three strikes law did the rest, and the Supreme Court upheld it 5–4.
+
+Justice or insane? 👇
+
+#truecrime #threestrikes #supremecourt #california #justice
+
+Seed comment: Insane. Fifty years for videotapes. The law failed here.
+Pinned comment: Comment 1 = justice, 2 = insane 👇 Tag the mate with sticky hands.
+
+## 61: The affluenza teen (`true_crime_61_affluenza.mp4`)
+He killed 4 people driving drunk at 16. His defense blamed his rich upbringing ("affluenza"). The judge gave him probation. Then he ran to Mexico 🍕
+
+Justice or a joke? 👇
+
+#truecrime #affluenza #texas #drunkdriving #justice
+
+Seed comment: 10 years' probation for four lives is a joke. Would a poor kid have got the same?
+Pinned comment: Comment 1 = fair, 2 = a joke 👇 Tag the mate who always drives.
+
+## 62: The conman who conned Hollywood (`true_crime_62_abagnale_con.mp4`)
+Catch Me If You Can made him a legend 🎬 An author checked his prison records. The dates do not line up. He disputes it.
+
+Legend or liar? 👇
+
+#truecrime #catchmeifyoucan #conman #scam #hollywood
+
+Seed comment: If those prison records are right, the Pan Am years never happened. Liar?
+Pinned comment: Comment 1 = legend, 2 = liar 👇 Tag the mate who exaggerates.

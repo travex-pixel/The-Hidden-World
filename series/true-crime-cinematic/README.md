@@ -61,6 +61,9 @@
 | 57 | `true_crime_57_narco_sub.mp4` (archived outside git) | Europe's first narco-sub (Galicia, 2019) and the boxer caught in his wetsuit; AI voice | see `production_manifest.json` |
 | 58 | `true_crime_58_headphone_cocaine.mp4` (archived outside git) | Cassie Sainsbury's 18 headphone boxes at Bogota airport (2017); AI voice | see `production_manifest.json` |
 | 59 | `true_crime_59_drug_catapult.mp4` (archived outside git) | The 2011 Naco border catapult and the smugglers' other inventions; AI voice | see `production_manifest.json` |
+| 60 | `true_crime_60_snow_white_sentence.mp4` (archived outside git) | Hot take: 50 years to life for $153 of videotapes (Lockyer v. Andrade, 2003); AI voice | see `production_manifest.json` |
+| 61 | `true_crime_61_affluenza.mp4` (archived outside git) | Hot take: the "affluenza" probation sentence and the flight to Mexico; AI voice | see `production_manifest.json` |
+| 62 | `true_crime_62_abagnale_con.mp4` (archived outside git) | Hot take: records that question the Catch Me If You Can story; AI voice | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.
