@@ -396,3 +396,7 @@
 - 2026-10-17 12:12:00 tcv67-underwear-birds: VERIFIED -> series/true-crime-cinematic/output/true_crime_67_underwear_birds.mp4 (37.7s, 20.6 MB, sha256 8797da7142a2)
 - 2026-10-17 12:12:09 produce 68 --force: regenerating episode data
 - 2026-10-17 12:12:09 tcv68-chicken-heist: rendering (final60, seed 1)
+- 2026-10-17 12:39:11 tcv68-chicken-heist: rendered in 1622s
+- 2026-10-17 12:39:54 tcv68-chicken-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_68_chicken_heist.mp4 (37.5s, 18.3 MB, sha256 48ac45be8316)
+- 2026-10-17 12:40:06 produce 66 --force: regenerating episode data
+- 2026-10-17 12:40:06 tcv66-louvre-one-year: rendering (final60, seed 1)
