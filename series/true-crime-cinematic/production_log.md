@@ -387,3 +387,4 @@
 - 2026-10-17 10:46:40 tcv63-fence-jeep: rendered in 1391s
 - 2026-10-17 10:47:24 tcv63-fence-jeep: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_63
 - 2026-10-17 10:48:42 produce 63 --force: regenerating episode data
+- 2026-10-17 10:48:42 tcv63-fence-jeep: rendering (final60, seed 1)
