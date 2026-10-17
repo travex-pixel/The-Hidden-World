@@ -40,28 +40,28 @@ def build(h):
         # A/B - ITEM 1: the pigeon flutters down onto the barrier arm; the officer walks up and holds out his hand on 'caught'
         S("s02_catch", "pb64_catch", [N("Kuwaiti customs caught it near the Iraqi border.")],
           "tension-rise", ["K_catch"], sfx=[fx(0.0, "flutter", 0.3), fw(0, 1, "step", 0.25, 0.0), fw(0, 2, "thump", 0.32, 0.0)],
-          emph=["kuwaiti", "customs", "caught", "iraqi", "border."], min_d=3.6, pad=0.3, tr="cut"),
+          emph=["kuwaiti", "customs", "caught", "iraqi", "border."], min_d=3.6, pad=0.4, tr="cut"),
         # B - the statistic (a counter, a LIKE moment): the inspection table, the pills counted out, the pigeon in a carrier
         S("s03_pills", "pb64_pills", [N("What was in the backpack? 178 pills.")],
           "tension", ["K_pills"], sfx=[fw(0, 0, "click", 0.25, 0.0), fw(0, 5, "tick", 0.25, 0.0), fw(0, 6, "hit", 0.35, 0.0)],
           emph=["what", "backpack?", "178", "pills."], min_d=3.8, pad=0.45, tr="cut"),
         # B - ITEM 2 + the FUN FACT: a prison wall in Colombia; a pigeon labours in, low, a bundle under its belly
-        S("s04_colombia", "pb64_colombia", [N("But that was not the clumsiest one."), N("In Colombia, a pigeon tried flying drugs into a prison.", pause_before=0.3)],
+        S("s04_colombia", "pb64_colombia", [N("But that was not the clumsiest one."), N("In Colombia, one tried flying drugs into a prison.", pause_before=0.3)],
           "tension-rise", ["K_clumsy", "K_colombia", "K_sim"], sfx=[fx(0.1, "wind", 0.2), fw(1, 1, "flutter", 0.3, 0.0), fw(1, 2, "sparkle", 0.25, 0.6)],
-          emph=["not", "clumsiest", "colombia,", "pigeon", "drugs", "prison."], min_d=3.6, pad=0.3, tr="dissolve"),
+          emph=["not", "clumsiest", "colombia,", "drugs", "prison."], min_d=3.6, pad=0.3, tr="dissolve"),
         # D - THE BIGGEST REVEAL (~55 %, music drop, the single impact): close on the wall; it stalls short and flutters down
         S("s05_heavy", "pb64_heavy", [N("Police said it was too heavy to clear the wall.")],
           "revelation", ["K_heavy"], sfx=[fw(0, 0, "riser", 0.2, -0.5), fw(0, 5, "hit", 0.42, -0.03), fw(0, 9, "thud", 0.3, 0.3)],
-          emph=["police", "too", "heavy", "clear", "wall."], min_d=3.8, pad=0.5, tr="push"),
+          emph=["police", "too", "heavy", "clear", "wall."], min_d=3.8, pad=0.6, tr="push"),
         # B - the LESSON (save trigger, for the viewer): a departures hall; a young man looks at a parcel on his suitcase; the
         #     checklist card with the SAVE ribbon; captions off; on screen >= 3 s. Before the last item (engagement v2)
-        S("s06_lesson", "pb64_lesson", [N("Someone asks you to carry a parcel? Save this.")],
-          "tension-rise", ["K_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 8, "chime", 0.25, 0.0)],
-          emph=["carry", "parcel?", "save"], min_d=3.8, pad=0.3, tr="cut"),
+        S("s06_lesson", "pb64_lesson", [N("Carrying a stranger's parcel? Save this.")],
+          "tension-rise", ["K_lesson"], sfx=[fx(0.55, "click", 0.3), fx(0.9, "click", 0.3), fx(1.25, "click", 0.3), fw(0, 4, "chime", 0.25, 0.0)],
+          emph=["stranger's", "parcel?", "save"], min_d=3.8, pad=0.3, tr="cut"),
         # C - ITEM 3 (the best): a prison yard at night; a cat with a pouch at its neck in a guard's torch beam; the spoken
         #     share line
-        S("s07_cat", "pb64_cat", [N("Then Sri Lanka caught a cat smuggling heroin into prison."), N("Send this to the mate who feeds pigeons.", pause_before=0.3)],
-          "tension", ["K_cat", "K_share"], sfx=[fw(0, 1, "step", 0.25, 0.0), fw(0, 5, "thump", 0.35, 0.0), fw(1, 0, "whoosh", 0.2, -0.1)],
+        S("s07_cat", "pb64_cat", [N("Sri Lanka caught a cat smuggling heroin into prison."), N("Send this to the mate who feeds pigeons.", pause_before=0.3)],
+          "tension", ["K_cat", "K_share"], sfx=[fw(0, 0, "step", 0.25, 0.0), fw(0, 4, "thump", 0.35, 0.0), fw(1, 0, "whoosh", 0.2, -0.1)],
           emph=["sri", "lanka", "cat", "heroin", "prison.", "send", "mate", "pigeons."], min_d=3.8, pad=0.3, tr="dissolve"),
         # E - the punchline as the LAST lines, back on the hero in frame 1's framing (the loop); the burned-in end question
         #     with the SEND line; pad 0.6, no fade
@@ -119,7 +119,7 @@ def build(h):
           ["citi", "fox", "ifls", "vice"]),
         C("K_clumsy", "Editorial bridge to item 2 (another pigeon whose drug run failed because of its load). Narration: 'But that was not the clumsiest one.'",
           co),
-        C("K_colombia", "In January 2011 police in Bucaramanga, Colombia, found a pigeon carrying drugs (about 45 g: 40 g of marijuana and 5 g of cocaine paste, 'bazuco') about a block from a prison it was trying to reach. Narration: 'In Colombia, a pigeon tried flying drugs into a prison.'",
+        C("K_colombia", "In January 2011 police in Bucaramanga, Colombia, found a pigeon carrying drugs (about 45 g: 40 g of marijuana and 5 g of cocaine paste, 'bazuco') about a block from a prison it was trying to reach. Narration: 'In Colombia, one tried flying drugs into a prison.'",
           co + ["insight"]),
         C("K_sim", "FUN FACT CARD: police said pigeons had previously been used to smuggle SIM cards into the same jail. Card 'PIGEONS HAD ALREADY FLOWN SIM CARDS INTO THAT JAIL'.",
           ["time", "colrep", "register"]),
@@ -127,7 +127,7 @@ def build(h):
           co),
         C("K_lesson", "LESSON CARD (practical, for the viewer): criminal groups recruit people to carry drugs, sometimes offering money or a free trip to carry luggage or a parcel (UK Travel Aware, FCDO); do not carry items for someone else and be aware of the contents of your bags (Smartraveller). Rows: 'CARRY ONLY YOUR OWN BAGS', 'KNOW WHAT IS INSIDE THEM', 'PAID TO CARRY? RED FLAG'.",
           ["aware", "smart", "smart_d"]),
-        C("K_cat", "On 1 August 2020 jail intelligence officers at Welikada Prison, Sri Lanka, caught a cat with a small plastic bag tied around its neck holding nearly two grams of heroin, two SIM cards and a memory chip. Narration: 'Then Sri Lanka caught a cat smuggling heroin into prison.' Label 'WELIKADA PRISON, SRI LANKA · AUG 2020'.",
+        C("K_cat", "On 1 August 2020 jail intelligence officers at Welikada Prison, Sri Lanka, caught a cat with a small plastic bag tied around its neck holding nearly two grams of heroin, two SIM cards and a memory chip. Narration: 'Sri Lanka caught a cat smuggling heroin into prison.' Label 'WELIKADA PRISON, SRI LANKA · AUG 2020'.",
           sl),
         C("K_share", "Share prompt (no factual claim). Narration: 'Send this to the mate who feeds pigeons.'", ["citi", "colrep"]),
         C("K_caught", "All three animals were caught: the Kuwaiti pigeon by customs, the Colombian pigeon by police, the Sri Lankan cat by jail officials. Narration: 'All three got caught.'",
@@ -154,7 +154,7 @@ def build(h):
                        "from": 3.6, "y": 380}
     # the SMUGGLER chip: 1 on 'Kuwaiti' (s02), 2 on 'Colombia' (s04), 3 on 'cat' (s07). Word-anchored from
     # out/<id>/timeline.json when a build exists (narration is cached, so they are stable)
-    anchors = [("s02_catch", 0, 0, 6.2, "1 · KUWAIT PIGEON"), ("s04_colombia", 1, 1, 16.5, "2 · COLOMBIA PIGEON"), ("s07_cat", 0, 5, 29.0, "3 · SRI LANKA CAT")]
+    anchors = [("s02_catch", 0, 0, 6.2, "1 · KUWAIT PIGEON"), ("s04_colombia", 1, 1, 16.5, "2 · COLOMBIA PIGEON"), ("s07_cat", 0, 4, 29.0, "3 · SRI LANKA CAT")]
     keys = []
     try:
         tl = json.loads((h.ROOT / "out" / EP / "timeline.json").read_text())

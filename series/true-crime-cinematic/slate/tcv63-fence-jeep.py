@@ -37,18 +37,18 @@ def build(h):
           "tension", ["K_hook", "K_place"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.3), fw(1, 2, "thud", 0.35, -0.03), fw(1, 4, "hit", 0.3, -0.03)],
           emph=["smugglers", "jeep", "border", "fence.", "stuck.", "top.", "14", "feet"], min_d=3.6, pad=0.3),
         # A/B - item 1's outcome: two agents walk in from the right with flashlights; the two silhouettes run off left
-        S("s02_fled", "fj63_fled", [N("Agents came. Both men ran back to Mexico.")],
-          "tension-rise", ["K_fled", "K_place"], sfx=[fw(0, 0, "step", 0.3, 0.0), fw(0, 4, "whoosh", 0.3, -0.05)],
-          emph=["agents", "came.", "ran", "mexico."], min_d=3.6, pad=0.3, tr="cut"),
+        S("s02_fled", "fj63_fled", [N("But agents came. Both men fled into Mexico.")],
+          "tension-rise", ["K_fled", "K_place"], sfx=[fw(0, 1, "step", 0.3, 0.0), fw(0, 5, "whoosh", 0.3, -0.05)],
+          emph=["agents", "came.", "fled", "mexico."], min_d=3.6, pad=0.3, tr="cut"),
         # B - the FUN FACT (a LIKE moment): low angle under the stuck SUV, its belly on the fence top, a front wheel hanging in
         #     the air; an agent shines his light up at it; the Border Patrol's verdict card
         S("s03_verdict", "fj63_verdict", [N("Border Patrol's verdict? Not quite up to the task.")],
           "tension", ["K_verdict"], sfx=[fw(0, 2, "click", 0.3, 0.0), fw(0, 8, "sparkle", 0.3, 0.0)],
           emph=["verdict?", "not", "quite", "task."], min_d=3.6, pad=0.35, tr="cut"),
         # B - ITEM 2: desert range at dusk; a big truck on the Mexican side (left) unfolds a ramp over the fence on 'folding'
-        S("s04_truck", "fj63_truck", [N("But that was not their wildest ramp."), N("In 2011, a truck brought its own folding ramp.", pause_before=0.2)],
-          "tension-rise", ["K_truck"], sfx=[fw(1, 3, "rumble", 0.25, -0.2), fw(1, 7, "gate", 0.3, 0.0), fw(1, 8, "thump", 0.35, 0.1)],
-          emph=["not", "wildest", "ramp.", "truck", "own", "folding", "ramp."], min_d=3.6, pad=0.3, tr="push"),
+        S("s04_truck", "fj63_truck", [N("But that was not their wildest ramp."), N("In 2011, a truck brought a folding ramp.", pause_before=0.2)],
+          "tension-rise", ["K_truck"], sfx=[fw(1, 3, "rumble", 0.25, -0.2), fw(1, 6, "gate", 0.3, 0.0), fw(1, 7, "thump", 0.35, 0.1)],
+          emph=["not", "wildest", "ramp.", "truck", "folding", "ramp."], min_d=3.6, pad=0.3, tr="push"),
         # D - THE BIGGEST REVEAL (~52 %, music drop, the single impact): a Jeep loaded with taped bundles rolls down the
         #     ramp into America; the counter to 1,000 LB
         S("s05_load", "fj63_load", [N("A Jeep crossed with 1,000 pounds of weed.")],
@@ -67,9 +67,9 @@ def build(h):
           emph=["2019,", "eleven", "people", "one", "jeep.", "failed.", "stuck", "again.", "send", "mate", "park."], min_d=3.6, pad=0.3, tr="dissolve"),
         # E - the punchline as the LAST lines, back on the hero SUV in frame 1's framing (the loop); the camera eases back to
         #     frame 1's starting framing; the burned-in end question with the SEND line; pad 0.6, no fade
-        S("s08_end", "fj63_end", [N("The drivers all escaped."), N("The Jeeps never did.", pause_before=0.25)],
-          "aftermath", ["K_punch", "K_seized12"], sfx=[fw(0, 3, "step", 0.22, 0.0), fw(1, 3, "sub", 0.35, -0.05), fw(1, 3, "thump", 0.3, 0.0)],
-          emph=["drivers", "escaped.", "jeeps", "never", "did."], min_d=3.6, pad=0.6, tr="zoom"),
+        S("s08_end", "fj63_end", [N("Every driver escaped."), N("The Jeeps never did.", pause_before=0.25)],
+          "aftermath", ["K_punch", "K_seized12"], sfx=[fw(0, 2, "step", 0.22, 0.0), fw(1, 3, "sub", 0.35, -0.05), fw(1, 3, "thump", 0.3, 0.0)],
+          emph=["driver", "escaped.", "jeeps", "never", "did."], min_d=3.6, pad=0.6, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_fled": "A", "s03_verdict": "B", "s04_truck": "B", "s05_load": "D", "s06_lesson": "B",
                 "s07_eleven": "C", "s08_end": "E"}
@@ -114,13 +114,13 @@ def build(h):
           jeep12),
         C("K_place", "Yuma Sector: the Imperial Sand Dunes, California, about five miles west of the Colorado River and the Arizona line (AP caption and CNN: 'near Yuma, Ariz.'); spotted early on Tuesday 30 October 2012. Label 'YUMA SECTOR · OCT 2012'.",
           ["cbs", "eidaho", "ria", "fox13", "leadstories"]),
-        C("K_fled", "Two men on the Mexican side who were trying to free the Jeep fled into Mexico when agents approached; no arrests. Narration: 'Agents came. Both men ran back to Mexico.'",
+        C("K_fled", "Two men on the Mexican side who were trying to free the Jeep fled into Mexico when agents approached; no arrests. Narration: 'But agents came. Both men fled into Mexico.'",
           ["cbs", "fox13", "ria", "eidaho"]),
         C("K_verdict", "FUN FACT CARD (wording as reported in two independent outlets): Border Patrol said the smugglers 'fell prey to their own devices' with 'a make-shift ramp that was not quite up to the task.' Narration: 'Border Patrol's verdict? Not quite up to the task.'",
           ["npr", "ria", "fox13"]),
         C("K_seized12", "Agents removed the Jeep from the fence and seized it and both ramps; the Jeep was empty. End label 'SEIZED: THE JEEP + BOTH RAMPS'.",
           ["cbs", "foxnews", "eidaho", "ria"]),
-        C("K_truck", "April 2011, Barry M. Goldwater Range east of Yuma, Arizona: agents found a folding ramp extending over the border fence from a large truck parked on the Mexican side (AP: a truck with ramps built onto it). Narration: 'But that was not their wildest ramp.' / 'In 2011, a truck brought its own folding ramp.'",
+        C("K_truck", "April 2011, Barry M. Goldwater Range east of Yuma, Arizona: agents found a folding ramp extending over the border fence from a large truck parked on the Mexican side (AP: a truck with ramps built onto it). Narration: 'But that was not their wildest ramp.' / 'In 2011, a truck brought a folding ramp.'",
           ["swj", "hsnw", "cbs", "insight"]),
         C("K_1000", "STATISTIC (counter): a Jeep Cherokee had apparently just used the ramp to carry about 1,000 lb of marijuana across; over 1,000 lb was seized on the range (7 April 2011) and the two suspects fled back into Mexico, leaving the vehicle. Narration: 'A Jeep crossed with 1,000 pounds of weed.' Counter '1,000 LB'.",
           ["mcas", "swj", "hsnw"]),
@@ -128,7 +128,7 @@ def build(h):
           ["kxxv", "kgun", "ktar", "sentinel"]),
         C("K_eleven_fled", "All 11 fled into Mexico on foot; Mexican officials searched and found neither the people nor the drugs; agents seized the Jeep.",
           ["kxxv", "ktar", "sentinel"]),
-        C("K_punch", "In all three cases the people got away (2012: two men; April 2011: two suspects; 2019: eleven people) and the Jeep was left behind and seized. Narration: 'The drivers all escaped.' / 'The Jeeps never did.'",
+        C("K_punch", "In all three cases the people got away (2012: two men; April 2011: two suspects; 2019: eleven people) and the Jeep was left behind and seized. Narration: 'Every driver escaped.' / 'The Jeeps never did.'",
           ["cbs", "fox13", "mcas", "swj", "kxxv", "ktar", "sentinel"]),
         C("K_lesson", "LESSON CARD (practical, for the viewer): cartel recruiters on social media promise 'quick, easy money' to drive across or near the border, and smuggling is a felony (CBP / Border Patrol); CBP 'blind mule' advice: inspect any vehicle you drive before and after every trip and never carry items of unknown content for others; UK FCDO: you are responsible for anything you carry across a border, even if it belongs to someone else. Rows: 'EASY MONEY' DM = RED FLAG / CHECK ANY CAR YOU DRIVE / YOU OWN WHAT YOU CARRY.",
           ["cbp_teens", "scripps", "borderreport", "foxrgv", "inews", "fcdo"]),

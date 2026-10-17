@@ -402,7 +402,7 @@
     // 6 - the LESSON (save trigger, for the viewer): a young man in a departures hall looks down at a wrapped parcel on top of
     //     his suitcase; the checklist card with the SAVE ribbon (captions off)
     pb64_lesson(ctx) {
-      const t = ctx.t, T = ctx.T, sv = WT(ctx, 0, 7, 1.8);
+      const t = ctx.t, T = ctx.T, sv = WT(ctx, 0, 4, 1.4);
       return E.cine.shot(ctx, {
         set: 'pb64_hall', grade: 'warm', haze: 0.4, dof: true,
         cam: { from: { x: 20, y: 40, z: 1.08 }, to: { x: -10, y: 30, z: 1.0 } },
@@ -424,7 +424,7 @@
     // 7 - item 3 (the best): a prison yard at night; a cat sits under the wall lamp with a clear pouch tied at its neck; a
     //     guard steps in from the right with a torch and finds it; the cat looks round, unbothered
     pb64_cat(ctx) {
-      const t = ctx.t, T = ctx.T, ct = WT(ctx, 0, 5, 1.2), l2 = LS(ctx, 1, 3.2);
+      const t = ctx.t, T = ctx.T, ct = WT(ctx, 0, 4, 1.0), l2 = LS(ctx, 1, 3.2);
       return E.cine.shot(ctx, {
         set: 'pb64_yard', grade: 'night', haze: 0.45,
         cam: { from: { x: -20, y: 40, z: 1.0 }, to: { x: 0, y: 50, z: 1.07 } },

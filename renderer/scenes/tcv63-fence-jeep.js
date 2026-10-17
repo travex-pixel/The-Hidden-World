@@ -255,7 +255,7 @@
 
     // 2 - item 1's outcome: wider; two agents walk in from the right with flashlights; the two men run off left to Mexico
     fj63_fled(ctx) {
-      const t = ctx.t, T = ctx.T, ag = WT(ctx, 0, 0, 0.3), rn = WT(ctx, 0, 4, 1.3);
+      const t = ctx.t, T = ctx.T, ag = WT(ctx, 0, 1, 0.3), rn = WT(ctx, 0, 5, 1.3);
       return E.cine.shot(ctx, {
         set: 'fj63_dunes', grade: 'night', haze: 0.45,
         cam: { from: { x: 30, y: 60, z: 0.9 }, to: { x: 0, y: 60, z: 0.95 } },
@@ -305,7 +305,7 @@
     // 4 - ITEM 2: a desert range at dusk; a big truck on the Mexican side (left) unfolds a two-part ramp over the fence on
     //     'folding'; a smuggler silhouette by the truck guides it
     fj63_truck(ctx) {
-      const t = ctx.t, T = ctx.T, tk = WT(ctx, 1, 3, 2.4), fd = WT(ctx, 1, 7, 3.4);
+      const t = ctx.t, T = ctx.T, tk = WT(ctx, 1, 3, 2.4), fd = WT(ctx, 1, 6, 3.4);
       return E.cine.shot(ctx, {
         set: 'fj63_range', grade: 'dawn', haze: 0.45,
         cam: { from: { x: -20, y: 30, z: 1.0 }, to: { x: 10, y: 40, z: 1.07 } },
@@ -384,7 +384,7 @@
         if (x > -140) g += runner(x, y, 0.62 + (i % 3) * 0.06, tt, i * 1.7); } return g; };
       return E.cine.shot(ctx, {
         set: 'fj63_refuge', grade: 'dawn', haze: 0.35,
-        cam: { from: { x: 10, y: 30, z: 1.0 }, to: { x: -10, y: 40, z: 1.07 } },
+        cam: { from: { x: 10, y: 230, z: 1.12 }, to: { x: -10, y: 240, z: 1.19 } },
         figures: [
           { id: 'fj63_smug1', x: 420, y: 1740, scale: 0.46, dir: -1, turn: 0.3, pose: 'stand_tense', silhouette: 'warm', depth: 1.03,
             walk: { at: el + 0.2, dur: 1.8, cadence: 7.5, stride: 22, from: 420, to: -200 } },
@@ -396,7 +396,7 @@
           { depth: 0.98, svg: () => fenceEnd(BX, BT, BG, 680, 1250, 22, 40, '#5a5048') },
           { depth: 0.99, svg: () => ramp(BX + 150, BT + 40, BX + 620, BG, BG, 0.9) },
           { depth: 1.0, accent: true, svg: tt => suv(BX + 10, BT + 46 * 0.85, 0.85, { stripped: true, dir: -1, rot: 12 + (tt > stk - 0.1 ? 4 * Math.exp(-4 * (tt - stk + 0.1)) * Math.sin(12 * (tt - stk)) : 0) }) },
-          { depth: 0.95, svg: tt => heli(lerp(1000, 900, seg(tt, 0, T)), 640, 0.85, tt, BX, BT + 80, 1) }
+          { depth: 0.95, svg: tt => heli(lerp(880, 790, seg(tt, 0, T)), 800, 0.85, tt, BX, BT + 80, 1) }
         ],
         overlays: [
           { type: 'label', at: el + 0.1, x: 60, y: 820, text: 'CABEZA PRIETA, ARIZONA · FEB 2019', fs: 36, sub: 'All 11 ran back into Mexico on foot' }
@@ -408,7 +408,7 @@
     // 8 - the punchline on the hero SUV in frame 1's framing (the loop): an agent's light on it; the camera eases back to
     //     frame 1's starting framing for the last ~0.6 s; the seizure label low until the end question takes over
     fj63_end(ctx) {
-      const t = ctx.t, T = ctx.T, es = WT(ctx, 0, 3, 0.9);
+      const t = ctx.t, T = ctx.T, es = WT(ctx, 0, 2, 0.9);
       return E.cine.shot(ctx, {
         set: 'fj63_dunes', grade: 'night', haze: 0.35,
         cam: { keys: [{ at: 0, x: 20, y: 40, z: 1.1 }, { at: 0.1, x: 0, y: 30, z: 1.02, dur: Math.max(1.2, T - 0.7), settle: true }] },
