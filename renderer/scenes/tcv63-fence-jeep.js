@@ -335,7 +335,7 @@
         set: 'fj63_range', grade: 'dawn', haze: 0.45,
         cam: { from: { x: 10, y: 40, z: 1.02 }, to: { x: 30, y: 50, z: 1.1 }, settle: true },
         figures: [
-          { id: 'fj63_smug2', x: 330, y: 1750, scale: 0.42, dir: 1, turn: 0.35, pose: 'present', silhouette: 'warm', depth: 1.02, hat: { style: 'cap', color: '#2a2a2a' },
+          { id: 'fj63_smug2', x: 150, y: 1900, scale: 0.6, dir: 1, turn: 0.35, pose: 'present', silhouette: 'warm', depth: 1.03, hat: { style: 'cap', color: '#2a2a2a' },
             keys: [{ at: n, pose: 'point_up', headTurn: 0.3, dur: 0.4 }] }
         ],
         props: [
@@ -388,7 +388,7 @@
         figures: [
           { id: 'fj63_smug1', x: 420, y: 1740, scale: 0.46, dir: -1, turn: 0.3, pose: 'stand_tense', silhouette: 'warm', depth: 1.03,
             walk: { at: el + 0.2, dur: 1.8, cadence: 7.5, stride: 22, from: 420, to: -200 } },
-          { id: 'fj63_smug2', x: 520, y: 1760, scale: 0.48, dir: -1, turn: 0.3, pose: 'stand_tense', silhouette: 'warm', depth: 1.04, hat: { style: 'cap', color: '#2a2a2a' },
+          { id: 'fj63_smug2', x: 520, y: 1770, scale: 0.53, dir: -1, turn: 0.3, pose: 'stand_tense', silhouette: 'warm', depth: 1.04, hat: { style: 'cap', color: '#2a2a2a' },
             walk: { at: el + 0.45, dur: 1.8, cadence: 7.5, stride: 22, from: 520, to: -180 } }
         ],
         props: [
