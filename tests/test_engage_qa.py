@@ -52,3 +52,30 @@ class VersionThreeSearch(unittest.TestCase):
         self.assertTrue(c["search_term_in_headline_and_first_4s"]); self.assertFalse(c["post_file_ready"])   # no post.md
         ep["hook_title"] = {"lines": [{"text": "ONE YEAR LATER"}]}
         self.assertFalse(engage_qa.analyse({"episode": ep}, tl, None)["checks"]["search_term_in_headline_and_first_4s"])
+
+
+class VersionFour(unittest.TestCase):
+    def test_no_save_card_scene_and_lesson_optional(self):
+        tl = timeline(["s01_hook", "s02", "s03", "s04_end"], [5, 15, 30, 34])
+        ep = {"engagement_version": 4, "id": "none", "search_terms": [], "scenes": [{}]}
+        c = engage_qa.analyse({"episode": ep}, tl, None)["checks"]
+        self.assertTrue(c["no_save_card_scene"]); self.assertNotIn("save_card_before_last_beat", c)
+        tl2 = timeline(["s01_hook", "s02", "s03_lesson", "s04_end"], [5, 15, 30, 34])
+        self.assertFalse(engage_qa.analyse({"episode": ep}, tl2, None)["checks"]["no_save_card_scene"])
+
+
+class KokoroDeliveryAndMix(unittest.TestCase):
+    def test_energy_speeds_up_and_tightens_pauses(self):
+        from pipeline import narrate
+        calm, hype = narrate.kokoro_delivery("reveal", 0.0), narrate.kokoro_delivery("reveal", 1.0)
+        self.assertGreater(hype["speed"], calm["speed"]); self.assertLess(hype["pre"], calm["pre"]); self.assertLess(hype["after"], calm["after"])
+        self.assertEqual(narrate.kokoro_text("It got stuck.", "hook", 1.0), "It got stuck!")
+        self.assertEqual(narrate.kokoro_text("It got stuck.", "tense", 1.0), "It got stuck.")   # only push tones
+        self.assertEqual(narrate.kokoro_text("Whose finger?", "hook", 1.0), "Whose finger?")
+
+    def test_duck_hold_fills_short_gaps_only(self):
+        import numpy as np
+        from pipeline.mixdown import hold_gaps
+        on = np.array([1, 1, 0, 0, 0, 1, 1] + [0] * 60 + [1], float)   # a 60 ms gap, then a 1.2 s gap
+        h = hold_gaps(on, 0.8)
+        self.assertTrue((h[2:5] == 1).all()); self.assertTrue((h[10:60] == 0).all())

@@ -51,7 +51,8 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
     et = " ".join(l.get("text", "") for l in (ep.get("end_title") or {}).get("lines", []))
     checks["end_question_on_picture"] = "?" in et and bool(re.search(r"\b(YES|NO|OR)\b", et, re.I)); notes["end_title"] = et
     # 5. save trigger and social currency: one lesson card and one fun fact in the shots
-    checks["fun_fact_and_lesson"] = bool(re.search(r"type:\s*'funfact'", js)) and bool(re.search(r"type:\s*'lesson'", js))
+    v = ep.get("engagement_version", 1)
+    checks["fun_fact_and_lesson"] = bool(re.search(r"type:\s*'funfact'", js)) and (v >= 4 or bool(re.search(r"type:\s*'lesson'", js)))   # v4: the save card is optional
     # 6. progression: a running counter or a progress chip
     checks["progression_marker"] = bool(ep.get("progress")) or bool(re.search(r"type:\s*'counter'", js))
     # 7. a sound before the music settles: an effect at (or before) the first frame
@@ -70,7 +71,12 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
         checks["hook_line_done_by_2_6s"] = hook_end <= 2.6; notes["hook_end_s"] = round(hook_end, 2)
         ids = [sc["id"] for sc in tl]; li = next((i for i, s in enumerate(ids) if "lesson" in s), None)
         # the save card sits before the last story beat, so the best item is still to come when it appears
-        checks["save_card_before_last_beat"] = li is not None and li <= len(ids) - 3; notes["lesson_scene"] = ids[li] if li is not None else None
+        if (ep.get("engagement_version") or 1) >= 4:
+            # v4 (Case File 63: the save-card scene lost 46 % -> 29 % in 3 s for 0 saves): no cut-away save-card scene;
+            # a save tip, if any, is an overlay on a story shot
+            checks["no_save_card_scene"] = li is None; notes["lesson_scene"] = ids[li] if li is not None else None
+        else:
+            checks["save_card_before_last_beat"] = li is not None and li <= len(ids) - 3; notes["lesson_scene"] = ids[li] if li is not None else None
         end_len = tl[-1]["end"] - tl[-1]["start"]
         checks["single_punchline_ending"] = end_len <= 5.0 and len(tl[-1].get("lines", [])) <= 2; notes["end_scene_s"] = round(end_len, 2)
     # version 3 (search): Instagram indexes on-screen text, the spoken words (auto captions) and the caption, so the
