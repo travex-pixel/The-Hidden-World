@@ -1193,7 +1193,7 @@
      ]
     }
    ],
-   "visual_description": "af61 town (night grade); af61_couch (silhouette): walk (walks); af61_mother (silhouette): walk (walks); af61_rider: present -> present (walks); camera push/pull; overlays: label 'DEC 2015: A PARTY VIDEO', funfact 'A PHONE USED TO ORDER PIZZA / LED U.S. MARSHALS TO THEM / Domino's order · Jalisco prosecutors' report'.",
+   "visual_description": "af61 town (night grade); af61_couch (silhouette): walk (walks); af61_mother (silhouette): walk (walks); camera push/pull; overlays: label 'DEC 2015: A PARTY VIDEO', funfact 'A PHONE USED TO ORDER PIZZA / LED U.S. MARSHALS TO THEM / Domino's order · Jalisco prosecutors' report'.",
    "shot_size": "medium-wide",
    "set": "af61_town",
    "grade": "night",
@@ -1212,8 +1212,7 @@
    },
    "characters": [
     "af61_couch",
-    "af61_mother",
-    "af61_rider"
+    "af61_mother"
    ],
    "character_actions": [
     {
@@ -1247,27 +1246,6 @@
       "dur": 4.812000000000001
      },
      "silhouette": "warm"
-    },
-    {
-     "id": "af61_rider",
-     "outfit": "default",
-     "depth": 1.02,
-     "scale": 0.6,
-     "start_pose": "present",
-     "start_expr": "neutral",
-     "actions": [
-      {
-       "at": 3.53,
-       "pose": "present",
-       "expr": "focused"
-      }
-     ],
-     "walk": {
-      "from": 1160,
-      "to": 860,
-      "at": 1.73,
-      "dur": 1.8
-     }
     }
    ],
    "overlays": [
@@ -1353,8 +1331,7 @@
     "set_code": "renderer/sets.js#af61_town",
     "characters": [
      "characters/figures/af61_couch.json",
-     "characters/figures/af61_mother.json",
-     "characters/figures/af61_rider.json"
+     "characters/figures/af61_mother.json"
     ]
    },
    "validation": {
