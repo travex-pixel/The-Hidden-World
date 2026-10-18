@@ -442,3 +442,7 @@
 - 2026-10-18 15:49:25 tcv76-border-fails-5: rendering (final60, seed 1)
 - 2026-10-18 16:08:35 tcv76-border-fails-5: rendered in 1150s
 - 2026-10-18 16:09:30 tcv76-border-fails-5: VERIFIED -> series/true-crime-cinematic/output/true_crime_76_border_fails_5.mp4 (38.0s, 18.6 MB, sha256 abb25b449ce7)
+- 2026-10-18 16:12:12 produce 79 --force: regenerating episode data
+- 2026-10-18 16:12:12 tcv79-airport-fails-1: rendering (final60, seed 1)
+- 2026-10-18 16:38:33 tcv79-airport-fails-1: rendered in 1581s
+- 2026-10-18 16:39:22 tcv79-airport-fails-1: VERIFIED -> series/true-crime-cinematic/output/true_crime_79_airport_fails_1.mp4 (34.8s, 18.7 MB, sha256 c5ced4870e36)
