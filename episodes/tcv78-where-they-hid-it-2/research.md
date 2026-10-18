@@ -3,7 +3,7 @@
 Episode id: tcv78-where-they-hid-it-2 · built 18 October 2026 · engine v5 (Kokoro am_adam, energy 1.0), list format, series tag "WHERE THEY HID IT · PART 2". Delivers Part 1's tease (Case File 75: "PART 2: 2.3 TONNES ON A FISHING BOAT").
 
 ## Method and limits
-- Web search extracts only (14 searches, 18 October 2026). WebFetch could not reach the pages (DNS blocked), so every URL is a search-result page whose extract carried the fact. Accessed 18 Oct 2026.
+- Web search extracts only (15 searches, 18 October 2026). WebFetch could not reach the pages (DNS blocked), so every URL is a search-result page whose extract carried the fact. Accessed 18 Oct 2026.
 - Wire copy counted once: AP (ABC News US, Nordot) = one source; AAP (aapnews, The Leader, Otago Daily Times) = one source; AFP news agency (Inquirer, Daily Maverick) = one source. CNN copy also ran on KRDO / KTVZ / KEYT (one source).
 - ABC (AU) pages did not surface; the AFP joint release, AP, NBC, CNN and The Maritime Executive cover the hero facts.
 

@@ -418,8 +418,8 @@
           { depth: 1.02, svg: tt => (hole > 0.05 ? holeBeam(sx, sy, hole) : '') + (tt > dr - 0.05 && tt < dr + 1.2 ? wash(HX, HY, 420, 420, '#e8d8b8', f1(0.35 * (1 - seg(tt, dr, dr + 1.2)))) : '') }],
         overlays: [
           { type: 'impact', at: dr, x: HX, y: HY },
-          { type: 'counter', at: n3 - 0.1, dur: 1.0, from: 0, to: 300, prefix: '', suffix: '', label: 'BOTTLES · ABOUT €250,000', y: 1250, fs: 120 },
-          { type: 'label', at: l2 + 0.05, x: 60, y: 560, text: 'POLICE: THEY HAD SCOUTED IT', fs: 38, sub: 'Not that wall "by accident" (AFP)' }
+          { type: 'counter', at: n3 - 0.1, dur: 1.0, from: 0, to: 300, prefix: '', suffix: '', label: 'BOTTLES · ABOUT €250,000', y: 1100, fs: 120 },
+          { type: 'label', at: l2 + 0.05, x: 60, y: 560, text: 'POLICE: THEY HAD SCOUTED IT', fs: 38, sub: 'They picked that wall on purpose (AFP, AP)' }
         ],
         tag: LIKE
       });
