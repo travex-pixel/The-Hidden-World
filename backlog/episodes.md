@@ -66,3 +66,4 @@ Infrastructure 7 · Money 6 · Science 7. Target 40/35/25 — slightly science-h
 | 25 | You Can See Through Your Microwave Door. The Microwaves Can't. | Science / kitchen | Counterintuitive truth | 5 | 5 | 5 | 5 | 5 | 4 | 4 | 5 | 38 | **DONE — Episode 008.** FDA, HPS, Swinburne explainer |
 
 **Next:** microwave part 2, "why is the middle still frozen?" (standing waves, hot and cold spots, turntable); AI part 3, "who taught it what a finished answer looks like?" (fine-tuning and human feedback); robot vacuum lidar maps.
+| 26 | AI Just Beat an 80-Year-Old Maths Problem. It's About Dots. | Tech / maths news | Counterintuitive truth | 5 | 5 | 5 | 4 | 5 | 3 | 4 | 5 | 36 | **DONE — Episode 009.** Alon et al. 2026, SciAm, TechCrunch, Epoch AI; grid counts computed |

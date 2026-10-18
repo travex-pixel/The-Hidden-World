@@ -1,0 +1,513 @@
+{
+  "id": "ep009-ai-erdos-dots",
+  "number": 9,
+  "title": "AI Just Beat an 80-Year-Old Maths Problem. It's About Dots.",
+  "central_question": "What did an AI actually solve when it disproved Erdős's unit distance conjecture, and why does it matter outside maths?",
+  "template": "counterintuitive-truth",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.32,
+  "target_duration_seconds": [
+    40,
+    60
+  ],
+  "visual_mode": "svg",
+  "libs": [
+    {
+      "path": "node_modules/three/build/three.cjs",
+      "global": "THREE"
+    },
+    {
+      "path": "renderer/kit3d.js",
+      "global": "KIT3D"
+    }
+  ],
+  "fiction_notice": "The 'AI pattern' shown is an illustration, not the real construction (which uses algebraic number theory). Grid counts are exact.",
+  "music": {
+    "style": "pulse-to-reveal",
+    "bpm": 100
+  },
+  "facts": {
+    "posed": 1946,
+    "disproved": "20 May 2026",
+    "grid_n": 400,
+    "grid_side": 20,
+    "grid_pairs": 1744,
+    "grid_best_sq_dist": 65,
+    "small": [
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "ai_exponent": 1.014,
+    "reviewers": 9,
+    "lean_lines": 33000,
+    "erdos_total": 1217,
+    "erdos_open": 652,
+    "fiasco": "October 2025"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "hook_lookup",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "narration": "You think AI does maths by looking it up. Last October, that's all it did. In May, it found something nobody had seen in eighty years.",
+      "caption": "Last October: just lookups. This May: something new.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "paper"
+        },
+        {
+          "at": 2.66,
+          "name": "paper"
+        },
+        {
+          "at": 3.87,
+          "name": "stamp"
+        },
+        {
+          "at": 4.33,
+          "name": "swell"
+        },
+        {
+          "at": 4.73,
+          "name": "sparkle"
+        }
+      ],
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s02_puzzle",
+      "scene": "dots_puzzle",
+      "min_duration": 6.5,
+      "pad_after": 0.3,
+      "narration": "The puzzle is childish. Dots on a table. How many pairs sit exactly one inch apart? Three dots: three. Four dots: five. Now try a million.",
+      "caption": "Dots on a table. How many pairs exactly 1 inch apart?",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 1.62,
+          "name": "ping"
+        },
+        {
+          "at": 5.05,
+          "name": "chime"
+        },
+        {
+          "at": 6.24,
+          "name": "chime"
+        },
+        {
+          "at": 7.9,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s03_grid",
+      "scene": "grid_ceiling",
+      "min_duration": 6.5,
+      "pad_after": 0.3,
+      "narration": "In 1946, Erdős bet on the grid. Four hundred dots: one thousand seven hundred pairs. Nothing beats the grid, he said. For eighty years, nothing did.",
+      "caption": "Erdős, 1946: nothing beats the grid. For 80 years, nothing did.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.44,
+          "name": "paper"
+        },
+        {
+          "at": 2.33,
+          "name": "swell"
+        },
+        {
+          "at": 3.64,
+          "name": "sparkle"
+        },
+        {
+          "at": 5.4,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C3",
+        "C4"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s04_ai",
+      "scene": "ai_family",
+      "min_duration": 6.5,
+      "pad_after": 0.3,
+      "narration": "Then a general AI model built a new family of patterns. No hints. Not built for maths. They climb faster than any grid. Nine mathematicians checked it. Erdős was wrong.",
+      "caption": "A new family of patterns climbs faster than any grid. Erdős was wrong.",
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "at": 0.62,
+          "name": "ping"
+        },
+        {
+          "at": 2.04,
+          "name": "swell"
+        },
+        {
+          "at": 5.24,
+          "name": "sparkle"
+        },
+        {
+          "at": 6.75,
+          "name": "chime"
+        },
+        {
+          "at": 8.86,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C2",
+        "C5",
+        "C6"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s05_sceptic",
+      "scene": "sceptic_dots",
+      "min_duration": 7.0,
+      "pad_after": 0.4,
+      "narration": "\"It's dots. Who cares?\" Fair. Nobody is building anything with this. What matters: a computer checked every line. Tens of thousands of lines. It cannot be bluffed.",
+      "caption": "Nobody's building anything with this. What matters: a computer checked every line.",
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 2.22,
+          "name": "thud"
+        },
+        {
+          "at": 5.19,
+          "name": "whoosh"
+        },
+        {
+          "at": 5.69,
+          "name": "tick"
+        },
+        {
+          "at": 5.87,
+          "name": "tick"
+        },
+        {
+          "at": 6.05,
+          "name": "tick"
+        },
+        {
+          "at": 6.23,
+          "name": "tick"
+        },
+        {
+          "at": 6.41,
+          "name": "tick"
+        },
+        {
+          "at": 6.59,
+          "name": "tick"
+        },
+        {
+          "at": 6.77,
+          "name": "tick"
+        },
+        {
+          "at": 6.95,
+          "name": "tick"
+        },
+        {
+          "at": 7.13,
+          "name": "tick"
+        },
+        {
+          "at": 7.31,
+          "name": "tick"
+        },
+        {
+          "at": 9.06,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C7",
+        "C8"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s06_scale",
+      "scene": "todo_list",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "narration": "Erdős left a to-do list. Twelve hundred problems. Six hundred and fifty still open. This year, AI started crossing them off.",
+      "caption": "Erdős's list: 1,217 problems. About 650 still open.",
+      "music_cue": "power",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "paper"
+        },
+        {
+          "at": 1.8,
+          "name": "swell"
+        },
+        {
+          "at": 6.64,
+          "name": "chime"
+        },
+        {
+          "at": 7.04,
+          "name": "chime"
+        },
+        {
+          "at": 7.44,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C9",
+        "C10"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s07_threshold",
+      "scene": "threshold_next",
+      "min_duration": 2.8,
+      "pad_after": 0.9,
+      "narration": "So which eighty-year-old problem falls next?",
+      "caption": "So which eighty-year-old problem falls next?",
+      "music_cue": "hush",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "chime"
+        }
+      ],
+      "claims": [],
+      "transition": "cut"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "In October 2025 OpenAI staff claimed GPT-5 had solved 10 open Erdős problems; Thomas Bloom (erdosproblems.com) called it 'a dramatic misrepresentation': the model had only found existing papers. The posts were deleted.",
+      "sources": [
+        "S6",
+        "S7"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "On 20 May 2026 OpenAI announced that an internal general-purpose reasoning model had disproved Erdős's 1946 planar unit distance conjecture (Erdős problem 90), producing point sets with at least n^(1+ε) unit distances; a companion paper by nine mathematicians (Alon, Bloom, Gowers, Litt, Sawin, Shankar, Tsimerman, Wang, Wood) gives a human-verified version.",
+      "sources": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "The unit distance problem: among n points in the plane, how many pairs can be at distance exactly 1? Three points give 3; four points give 5 (two unit triangles sharing an edge). A square grid, scaled so a popular distance becomes 1, gives n^(1+c/log log n); for a 20×20 grid that is exactly 1,744 pairs among 400 points (squared distance 65). The best upper bound is O(n^(4/3)) (Spencer, Szemerédi, Trotter 1984).",
+      "sources": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "Erdős conjectured (1946) that the grid's n^(1+o(1)) growth is best possible; this stood for 80 years.",
+      "sources": [
+        "S2",
+        "S4"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "established",
+      "text": "The AI construction gives n^(1+ε) unit distances for a fixed ε>0, i.e. a growth rate that eventually beats any grid; Will Sawin later made it explicit at about n^1.014. The model was general-purpose and received no step-by-step guidance.",
+      "sources": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "metaphor",
+      "text": "The 'new family of patterns' shown on screen is an illustration. The real construction relies on algebraic number theory (ideas traced to Ellenberg–Venkatesh, Golod–Shafarevich, Hajir–Maire–Ramakrishna) and cannot be drawn faithfully in a short.",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "C7",
+      "type": "established",
+      "text": "The reviewing mathematicians describe the result's significance as methodological; no practical application of the unit distance count itself is claimed.",
+      "sources": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "C8",
+      "type": "estimate",
+      "text": "The disproof was formally verified in Lean 4 (Logical Intelligence's Aleph Prover, reported at roughly 33,000 lines; a separate formalisation reports about 14,800 lines). Lean checks proofs with a small trusted kernel, so a verified proof does not depend on trusting the AI.",
+      "sources": [
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "C9",
+      "type": "established",
+      "text": "erdosproblems.com lists 1,217 problems, of which 652 remain unsolved (about 565 solved).",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "id": "C10",
+      "type": "established",
+      "text": "During 2026 several Erdős problems (e.g. #728, #397, #124) were resolved with AI, some fully autonomously, with Lean proofs vouched for by Terence Tao and others.",
+      "sources": [
+        "S11",
+        "S12"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "OpenAI claims it solved an 80-year-old math problem, for real this time",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/",
+      "date": "20 May 2026",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt (direct fetch blocked)"
+    },
+    {
+      "id": "S2",
+      "title": "Remarks on the disproof of the unit distance conjecture (Alon, Bloom, Gowers, Litt, Sawin, Shankar, Tsimerman, Wang, Wood)",
+      "publisher": "arXiv 2605.20695",
+      "url": "https://arxiv.org/abs/2605.20695",
+      "date": "20 May 2026",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S3",
+      "title": "OpenAI announces AI's biggest math breakthrough yet",
+      "publisher": "Scientific American",
+      "url": "https://www.scientificamerican.com/article/ai-just-solved-an-80-year-old-erdos-problem-and-mathematicians-are-amazed/",
+      "date": "May 2026",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S4",
+      "title": "Erdős's unit distance problem and rigidity (Pach, Raz, Solymosi)",
+      "publisher": "arXiv 2507.15679",
+      "url": "https://arxiv.org/abs/2507.15679",
+      "date": "August 2025",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S5",
+      "title": "Erdős Problem #90 (unit distances)",
+      "publisher": "erdosproblems.com",
+      "url": "https://www.erdosproblems.com/90",
+      "date": "current",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt; grid counts computed locally"
+    },
+    {
+      "id": "S6",
+      "title": "Leading OpenAI researcher announced a GPT-5 math breakthrough that never happened",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/leading-openai-researcher-announced-a-gpt-5-math-breakthrough-that-never-happened/",
+      "date": "October 2025",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S7",
+      "title": "Why the legendary Erdős problems are falling to AI",
+      "publisher": "Quanta Magazine",
+      "url": "https://www.quantamagazine.org/why-the-legendary-erdos-problems-are-falling-to-ai-20260803/",
+      "date": "3 August 2026",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt (direct fetch blocked)"
+    },
+    {
+      "id": "S8",
+      "title": "Logical Intelligence open-sources a Lean 4 proof verifying OpenAI's disproof of the Erdős planar unit distance problem",
+      "publisher": "Digg (tech)",
+      "url": "https://digg.com/tech/9ud8f3ro",
+      "date": "2026",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S9",
+      "title": "The Lean Theorem Prover (system description)",
+      "publisher": "Lean / Microsoft Research",
+      "url": "https://lean-lang.org/papers/system.pdf",
+      "date": "2015",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S10",
+      "title": "Announcing FrontierMath: Erdős",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/latest/announcing-frontiermath-erdos",
+      "date": "September 2026",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S11",
+      "title": "Resolution of Erdős Problem #728: a writeup of Aristotle's Lean proof",
+      "publisher": "arXiv 2601.07421",
+      "url": "https://arxiv.org/abs/2601.07421",
+      "date": "January 2026",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S12",
+      "title": "List of conjectures by Paul Erdős",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_conjectures_by_Paul_Erd%C5%91s",
+      "date": "current",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    }
+  ]
+}

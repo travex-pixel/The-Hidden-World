@@ -19,6 +19,8 @@ An original animated educational-mystery channel and the $0 production factory t
 
 **Episode 008 — *You Can See Through Your Microwave Door. The Microwaves Can't.*** → [`releases/ep008-microwave-door.mp4`](releases/ep008-microwave-door.mp4) · [upload kit](releases/ep008-microwave-door.upload.md)
 
+**Episode 009 — *AI Just Beat an 80-Year-Old Maths Problem. It's About Dots.*** → [`releases/ep009-ai-erdos-dots.mp4`](releases/ep009-ai-erdos-dots.mp4) · [upload kit](releases/ep009-ai-erdos-dots.upload.md)
+
 New 3D episodes build on the shared kit [`renderer/kit3d.js`](renderer/kit3d.js), loaded as an episode lib.
 
 ### FIVE MESSAGES (five-part animated thriller, Season 1)

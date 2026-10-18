@@ -495,3 +495,37 @@ class Episode008(unittest.TestCase):
         for sc in self.ep["scenes"]:
             for sentence in re.split(r'(?<=[.?!])["”]?\s+', sc["narration"]):
                 self.assertLess(len(sentence.split()), 12, f"{sc['id']}: {sentence!r}")
+
+
+class Episode009(unittest.TestCase):
+    """The unit distance problem: every number on screen is exact or sourced."""
+    def setUp(self):
+        self.ep = load_episode("ep009-ai-erdos-dots"); self.f = self.ep["facts"]
+
+    def test_grid_count_is_exact(self):
+        N, d2 = self.f["grid_side"], self.f["grid_best_sq_dist"]
+        pts = [(x, y) for x in range(N) for y in range(N)]
+        pairs = sum(1 for i, (x1, y1) in enumerate(pts) for (x2, y2) in pts[i + 1:] if (x1 - x2) ** 2 + (y1 - y2) ** 2 == d2)
+        self.assertEqual(len(pts), self.f["grid_n"])
+        self.assertEqual(pairs, self.f["grid_pairs"])                       # 1,744: "one thousand seven hundred pairs"
+        best = max(set((x1 - x2) ** 2 + (y1 - y2) ** 2 for i, (x1, y1) in enumerate(pts) for (x2, y2) in pts[i + 1:]),
+                   key=lambda d: sum(1 for i, (x1, y1) in enumerate(pts) for (x2, y2) in pts[i + 1:] if (x1 - x2) ** 2 + (y1 - y2) ** 2 == d))
+        self.assertEqual(best, d2)                                           # 65 really is the most popular distance
+
+    def test_small_cases_and_list(self):
+        self.assertEqual(self.f["small"], [[3, 3], [4, 5]])
+        self.assertEqual(self.f["erdos_total"] - self.f["erdos_open"], 565)
+        self.assertGreater(self.f["ai_exponent"], 1.0)
+        claims = {c["id"]: c for c in self.ep["claims"]}
+        self.assertEqual(claims["C6"]["type"], "metaphor")                   # the on-screen "AI pattern" is labelled an illustration
+        self.assertEqual(claims["C8"]["type"], "estimate")                   # Lean line counts come from secondary sources
+
+    def test_narration_sentences_under_12_words(self):
+        import re
+        for sc in self.ep["scenes"]:
+            for sentence in re.split(r'(?<=[.?!])["”]?\s+', sc["narration"]):
+                self.assertLess(len(sentence.split()), 12, f"{sc['id']}: {sentence!r}")
+
+    def test_no_application_is_claimed(self):
+        text = " ".join(sc["narration"] for sc in self.ep["scenes"]).lower()
+        self.assertIn("nobody is building anything with this", text)

@@ -97,8 +97,8 @@ module.exports = function kit3d(E) {
     return row(ws.slice(0, half), y) + row(ws.slice(half), y + size * 1.2);
   };
   // HUD pill bottom-left (the reference's "15 mph · usual 65" slot)
-  K.hud = (value, unit, label, col, o = {}) => (o.op ?? 1) <= 0 ? '' : `<g opacity="${o.op ?? 1}"><rect x="40" y="1180" width="400" height="84" rx="16" fill="#1b2029" opacity="0.95"/><rect x="58" y="1196" width="11" height="52" rx="5.5" fill="${col}"/>
-    <text x="90" y="1240" ${NU} font-size="52" fill="#fff">${esc(value)}<tspan font-size="32" dx="8">${esc(unit)}</tspan></text>${K.txt(416, 1234, label, 32, '#9aa3b0', 'end')}</g>`;
+  K.hud = (value, unit, label, col, o = {}) => (o.op ?? 1) <= 0 ? '' : `<g opacity="${o.op ?? 1}"><rect x="40" y="1180" width="${o.w || 400}" height="84" rx="16" fill="#1b2029" opacity="0.95"/><rect x="58" y="1196" width="11" height="52" rx="5.5" fill="${col}"/>
+    <text x="90" y="1240" ${NU} font-size="52" fill="#fff">${esc(value)}<tspan font-size="32" dx="8">${esc(unit)}</tspan></text>${K.txt(40 + (o.w || 400) - 24, 1234, label, 32, '#9aa3b0', 'end')}</g>`;
   K.note = (s, op = 1) => op <= 0 ? '' : K.chip(540, 150, s, { size: 25, bg: 'rgba(20,26,36,0.7)', fg: '#eef2f6', op, px: 16, py: 8 });
 
   // ---------------------------------------------------------------- frame loop
