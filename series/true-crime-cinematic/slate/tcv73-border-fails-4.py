@@ -41,7 +41,7 @@ def build(h):
         #     and raises his flashlight; the camera already pushing; the headline burned in; the series tag in the bug.
         S("s01_hook", "bf73_hook", [N("Smugglers made a fake Border Patrol truck.", tone="hook"),
                                     N("It is number 3 on this list.", tone="playful")],
-          "tension", ["K_hook", "K_list"], sfx=[fx(0.0, "sub", 0.38), fx(0.0, "rasp", 0.3), fw(0, 6, "thump", 0.32, 0.12), fw(1, 3, "click", 0.3, 0.0)],
+          "tension", ["K_hook", "K_list"], sfx=[fx(0.0, "rasp", 0.36), fx(0.0, "sub", 0.2), fw(0, 6, "whoosh", 0.3, 0.12), fw(1, 3, "click", 0.36, 0.0)],
           emph=["smugglers", "made", "fake", "border", "patrol", "truck.", "number", "3"], min_d=3.6, pad=0.12),
         # B - ITEM 1, THE FAKE FEDEX VANS (a LIKE moment): a west El Paso street by day; two plain white vans pulled over
         #     at the kerb, a patrol car behind; an officer walks up with a flashlight and waves the driver out
@@ -60,12 +60,12 @@ def build(h):
         #     the copied plate is circled; then the garage door rolls up and two agents walk in with flashlights
         S("s04_plate", "bf73_plate", [N("It even copied a real unit's plate number.", tone="playful"),
                                       N("Agents simply followed it home.", tone="playful")],
-          "tension", ["K_plate", "K_home"], sfx=[fw(0, 6, "sparkle", 0.3, 0.0), fw(1, 2, "step", 0.26, 0.0), fw(1, 4, "door", 0.3, 0.05)],
+          "tension", ["K_plate", "K_home"], sfx=[fw(0, 6, "sparkle", 0.3, 0.0), fw(1, 2, "step", 0.32, 0.0), fw(1, 4, "door", 0.36, 0.05)],
           emph=["copied", "real", "plate", "number.", "simply", "followed", "home."], min_d=3.8, pad=0.3, tr="cut"),
         # C - ITEM 3 begins: close on the fence at dusk; an anonymous silhouette on the Mexican side cuts a bollard
         #     (sparks); the cut gap opens
         S("s05_cut", "bf73_cut", [N("Then, near Calexico, someone cut the border fence.", tone="tense")],
-          "tension-rise", ["K_cut"], sfx=[fw(0, 0, "riser", 0.2, -0.3), fw(0, 4, "rasp", 0.26, 0.0), fw(0, 7, "thud", 0.3, 0.05)],
+          "tension-rise", ["K_cut"], sfx=[fw(0, 0, "riser", 0.2, -0.3), fw(0, 4, "rasp", 0.32, 0.0), fw(0, 7, "gate", 0.34, 0.05)],
           emph=["calexico,", "someone", "cut", "border", "fence."], min_d=3.8, pad=0.15, tr="push"),
         # D - THE BIGGEST REVEAL (music drop, the single impact): the American side on a dark rise; two real agents by
         #     their vehicle, watching the far sparks through the dusk; a rack focus snaps onto them on 'watching'
@@ -75,12 +75,12 @@ def build(h):
         # C - the outcome: the Mexican side at night; a generic police pickup's lights; two officers with flashlights at
         #     the fake truck; the 17 counter (the people are never drawn as the joke and stay out of frame)
         S("s07_found", "bf73_found", [N("Mexican police found the fake truck, and 17 people.", tone="confident")],
-          "tension", ["K_found"], sfx=[fx(0.0, "siren", 0.12), fw(0, 4, "click", 0.28, 0.0), fw(0, 7, "tick", 0.24, 0.0)],
+          "tension", ["K_found"], sfx=[fx(0.0, "siren", 0.12), fw(0, 4, "click", 0.34, 0.0), fw(0, 7, "tick", 0.32, 0.0)],
           emph=["mexican", "police", "found", "fake", "truck,", "17", "people."], min_d=3.8, pad=0.3, tr="dissolve"),
         # E - the ONE closing line, back on frame 1's picture (the loop): the fake truck behind the cut fence, the agent;
         #     the camera eases back to frame 1's start framing; the end card; pad 0.6, no fade
         S("s08_end", "bf73_end", [N("That fake truck never even made it across.", tone="reveal")],
-          "aftermath", ["K_punch", "K_part5"], sfx=[fw(0, 1, "thump", 0.28, 0.0), fw(0, 7, "hit", 0.3, 0.0)],
+          "aftermath", ["K_punch", "K_part5"], sfx=[fw(0, 1, "whoosh", 0.26, -0.05), fw(0, 7, "sting", 0.32, 0.05)],
           emph=["fake", "truck", "never", "across."], min_d=3.4, pad=0.6, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_fedex": "B", "s03_k9": "B", "s04_plate": "B", "s05_cut": "C", "s06_watch": "D",
