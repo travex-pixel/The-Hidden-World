@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>WHAT IF: THE PURGE · EP 2 · THE LEDGE</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+  #stage{position:absolute;left:50%;top:50%;width:1080px;height:1920px;transform-origin:0 0;background:#070b1c;overflow:hidden}
+  svg{display:block}
+  .txt{font-family:Impact,"Arial Black","Arial Narrow Bold",Arial,"Helvetica Neue",Helvetica,sans-serif;font-weight:900;paint-order:stroke fill;stroke:#000;stroke-linejoin:round;text-anchor:middle}
+  .spin{transform-box:view-box;transform-origin:0 0}
+  /* CSS keyframes: looped motion. The JS master clock owns their currentTime, so every frame is reproducible. */
+  @keyframes blink{0%,55%{opacity:1}56%,100%{opacity:.12}}
+  @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+  @keyframes sweep{0%,100%{transform:rotate(-30deg)}50%{transform:rotate(24deg)}}
+  @keyframes sweep2{0%,100%{transform:rotate(28deg)}50%{transform:rotate(-18deg)}}
+  @keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+  @keyframes curtain{0%,100%{transform:skewX(-1.5deg)}50%{transform:skewX(1.5deg)}}
+  @keyframes flare{0%{opacity:0;transform:scale(.3)}15%{opacity:.95;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
+  .rec{animation:blink 1s linear infinite}
+  .pulse{animation:pulse .9s ease-in-out infinite}
+  .beam1{animation:sweep 7s ease-in-out infinite}
+  .beam2{animation:sweep2 9s ease-in-out infinite}
+  .lamp{animation:sway 4.2s ease-in-out infinite}
+  .curtain{animation:curtain 5s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 0}
+  .flare{animation:flare 2.6s ease-out infinite;transform-box:fill-box;transform-origin:50% 50%}
+  #start{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:rgba(0,0,0,.82);color:#fff;font-family:Impact,"Arial Black",Arial,sans-serif;text-align:center;cursor:pointer;padding:16px;box-sizing:border-box}
+  #start h1{margin:0;font-size:min(9vw,54px);letter-spacing:1px;text-shadow:0 0 18px #ff2a2a}
+  #start .ep{font-size:min(5vw,26px);color:#ffb347}
+  #start .go{margin-top:10px;padding:16px 34px;border:4px solid #fff;border-radius:999px;font-size:min(7vw,38px);box-shadow:0 0 30px rgba(255,60,60,.7)}
+  #start p{margin:0;max-width:520px;font-family:Arial,sans-serif;font-weight:700;font-size:min(3.8vw,17px);color:#c9d0ea;line-height:1.4}
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop id="sk0" offset="0" stop-color="#2b1b4d"/><stop id="sk1" offset=".55" stop-color="#8a3a5a"/><stop id="sk2" offset="1" stop-color="#f08a4a"/>
+  </linearGradient>
+  <linearGradient id="beamG" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffe2d2" stop-opacity=".55"/><stop offset="1" stop-color="#ffe2d2" stop-opacity="0"/></linearGradient>
+  <linearGradient id="lampG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf80" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf80" stop-opacity="0"/></linearGradient>
+  <linearGradient id="phoneScr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0b2e"/><stop offset=".6" stop-color="#3a0a1a"/><stop offset="1" stop-color="#120414"/></linearGradient>
+  <radialGradient id="redHalo"><stop offset="0" stop-color="#ff3b30" stop-opacity=".85"/><stop offset=".4" stop-color="#ff2a20" stop-opacity=".3"/><stop offset="1" stop-color="#ff2a20" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ambHalo"><stop offset="0" stop-color="#ffb347" stop-opacity=".8"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+  <radialGradient id="blueHalo"><stop offset="0" stop-color="#5a7cff" stop-opacity=".45"/><stop offset="1" stop-color="#5a7cff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="whiteHalo"><stop offset="0" stop-color="#eef3ff" stop-opacity=".6"/><stop offset="1" stop-color="#eef3ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="vig" cx=".5" cy=".5" r=".72"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".82"/></radialGradient>
+  <radialGradient id="vigRed" cx=".5" cy=".5" r=".72"><stop offset=".45" stop-color="#ff0010" stop-opacity="0"/><stop offset="1" stop-color="#b0000c" stop-opacity=".95"/></radialGradient>
+  <radialGradient id="peepVig" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset=".9" stop-color="#000" stop-opacity=".75"/><stop offset="1" stop-color="#000" stop-opacity="1"/></radialGradient>
+  <radialGradient id="hallLight" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff6a4a" stop-opacity=".95"/><stop offset=".5" stop-color="#d0141e" stop-opacity=".45"/><stop offset="1" stop-color="#d0141e" stop-opacity="0"/></radialGradient>
+  <filter id="manGlow" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="b"/>
+    <feFlood flood-color="#dfe8ff" flood-opacity=".8"/>
+    <feComposite in2="b" operator="in" result="g"/>
+    <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="peepWarp" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency=".009 .014" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap id="peepDisp" in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#120206"/><stop offset=".62" stop-color="#5a0a12"/><stop offset="1" stop-color="#d42018"/></linearGradient>
+  <clipPath id="ngGap"><rect x="3988" y="920" width="62" height="580"/></clipPath>
+  <clipPath id="glass"><rect x="90" y="570" width="540" height="930"/></clipPath>
+  <clipPath id="dragClip"><rect x="135" y="1105" width="170" height="62"/></clipPath>
+  <clipPath id="tvClip"><rect x="772" y="752" width="356" height="196"/></clipPath>
+  <clipPath id="phoneClip"><rect x="-205" y="-440" width="410" height="880" rx="42"/></clipPath>
+  <clipPath id="peepClip"><circle id="peepCirc" cx="540" cy="880" r="0"/></clipPath>
+  <mask id="darkMask" maskUnits="userSpaceOnUse" x="-1500" y="-1500" width="5200" height="5000">
+    <rect x="-1500" y="-1500" width="5200" height="5000" fill="#fff"/>
+    <rect x="90" y="570" width="540" height="930" fill="#000"/>
+    <rect x="2200" y="-1500" width="3000" height="5500" fill="#000"/>
+  </mask>
+  <g id="friendShape">
+    <path d="M300 1320 C305 1090 400 1012 560 1002 C720 1012 815 1090 820 1320 Z"/>
+    <rect x="512" y="930" width="96" height="90"/>
+    <circle cx="555" cy="872" r="96"/>
+    <circle cx="640" cy="884" r="19"/>
+    <path d="M456 862 C452 762 516 734 562 734 C628 734 668 778 664 852 Z"/>
+    <path d="M636 812 L772 834 C788 838 786 862 768 864 L646 860 Z"/>
+  </g>
+</defs>
+
+<!-- ======================= WORLD (one camera group) ======================= -->
+<g id="cam">
+  <!-- room shell -->
+  <rect x="-1500" y="-1500" width="5200" height="3000" fill="#121a3c"/>
+  <rect x="-1500" y="-1500" width="5200" height="1930" fill="#0a0f28"/>
+  <rect x="-1500" y="424" width="5200" height="10" fill="#1b2552"/>
+  <rect x="-1500" y="1500" width="5200" height="1800" fill="#0b1130"/>
+  <rect x="-1500" y="1478" width="5200" height="22" fill="#0e1636"/>
+  <g stroke="#0f173d" stroke-width="4"><line x1="-1500" y1="1580" x2="3700" y2="1580"/><line x1="-1500" y1="1700" x2="3700" y2="1700"/><line x1="-1500" y1="1860" x2="3700" y2="1860"/></g>
+  <ellipse cx="960" cy="1610" rx="430" ry="62" fill="#161f48"/>
+  <rect x="2040" y="1000" width="16" height="16" rx="8" fill="#2a3466"/>
+
+  <!-- balcony door: the city outside -->
+  <g clip-path="url(#glass)">
+    <rect x="90" y="570" width="540" height="930" fill="url(#sky)"/>
+    <circle class="flare" cx="190" cy="985" r="34" fill="url(#redHalo)" style="animation-delay:-.4s"/>
+    <circle class="flare" cx="520" cy="1040" r="46" fill="url(#redHalo)" style="animation-delay:-1.5s"/>
+    <circle class="flare" cx="360" cy="930" r="26" fill="url(#ambHalo)" style="animation-delay:-2.2s"/>
+    <g transform="translate(470 1500)"><g class="spin beam1"><polygon points="0,0 -70,-1000 70,-1000" fill="url(#beamG)" opacity=".5"/></g></g>
+    <g transform="translate(160 1500)"><g class="spin beam2"><polygon points="0,0 -55,-1000 55,-1000" fill="url(#beamG)" opacity=".35"/></g></g>
+    <path d="M90 1500 V960 h60 v-40 h50 v70 h70 v-110 h60 v60 h80 v-30 h70 v90 h60 v-20 h40 V1500 Z" fill="#1d0a1e" opacity=".85"/>
+    <rect x="40" y="1000" width="285" height="500" fill="#0a0d1f"/>
+    <rect x="370" y="1080" width="330" height="420" fill="#0b0e22"/>
+    <g id="oppWins"></g>
+    <rect id="dragWin" x="135" y="1105" width="170" height="62" fill="#ffb347"/>
+    <g clip-path="url(#dragClip)"><g id="drag" transform="translate(400 0)">
+      <g fill="#05030a" stroke="#05030a" stroke-linecap="round" stroke-width="9">
+        <circle cx="0" cy="1140" r="11" stroke="none"/>
+        <line x1="0" y1="1140" x2="-46" y2="1160"/><line x1="-46" y1="1160" x2="-80" y2="1150"/><line x1="-46" y1="1160" x2="-84" y2="1172"/>
+        <line x1="-6" y1="1146" x2="40" y2="1126"/><line x1="40" y1="1126" x2="80" y2="1130"/>
+        <line x1="80" y1="1130" x2="110" y2="1105"/><line x1="110" y1="1105" x2="140" y2="1100"/>
+        <circle cx="150" cy="1092" r="13" stroke="none"/>
+      </g>
+    </g></g>
+    <g stroke="#04060f" stroke-width="9"><line x1="90" y1="1292" x2="630" y2="1292" stroke-width="14"/>
+      <line x1="120" y1="1292" x2="120" y2="1500"/><line x1="165" y1="1292" x2="165" y2="1500"/><line x1="210" y1="1292" x2="210" y2="1500"/><line x1="255" y1="1292" x2="255" y2="1500"/><line x1="300" y1="1292" x2="300" y2="1500"/><line x1="345" y1="1292" x2="345" y2="1500"/><line x1="390" y1="1292" x2="390" y2="1500"/><line x1="435" y1="1292" x2="435" y2="1500"/><line x1="480" y1="1292" x2="480" y2="1500"/><line x1="525" y1="1292" x2="525" y2="1500"/><line x1="570" y1="1292" x2="570" y2="1500"/><line x1="615" y1="1292" x2="615" y2="1500"/></g>
+    <polygon points="140,570 260,570 90,900 90,780" fill="#fff" opacity=".05"/>
+  </g>
+  <rect x="90" y="570" width="540" height="930" fill="none" stroke="#050816" stroke-width="26"/>
+  <rect x="352" y="570" width="16" height="930" fill="#050816"/>
+  <rect x="380" y="1060" width="10" height="70" rx="5" fill="#2a3466"/>
+  <path class="curtain" d="M40 540 H130 C120 800 150 1150 120 1500 H40 Z" fill="#0d1434"/>
+  <path class="curtain" d="M590 540 H680 V1500 H600 C630 1150 580 800 590 540 Z" fill="#0d1434" style="animation-delay:-2s"/>
+  <rect x="20" y="530" width="680" height="16" rx="8" fill="#1d2758"/>
+  <polygon id="spill" points="90,1500 630,1500 860,1740 230,1740" fill="#ffa050" opacity=".08"/>
+
+  <!-- pendant lamp -->
+  <g transform="translate(960 434)"><g class="spin lamp">
+    <line x1="0" y1="0" x2="0" y2="128" stroke="#05081a" stroke-width="5"/>
+    <path d="M-60 128 H60 L82 180 H-82 Z" fill="#0a0f26" stroke="#1d2758" stroke-width="4"/>
+    <g id="lampOn"><ellipse cx="0" cy="184" rx="24" ry="10" fill="#ffd28a"/><polygon points="-76,182 76,182 300,1066 -300,1066" fill="url(#lampG)" opacity=".5"/></g>
+  </g></g>
+
+  <!-- sofa + coffee table + pizza -->
+  <rect x="740" y="1235" width="440" height="125" rx="26" fill="#1b2452"/>
+  <rect x="740" y="1345" width="440" height="85" rx="14" fill="#202b5e"/>
+  <rect x="716" y="1285" width="54" height="155" rx="20" fill="#18214b"/><rect x="1150" y="1285" width="54" height="155" rx="20" fill="#18214b"/>
+  <line x1="960" y1="1250" x2="960" y2="1345" stroke="#141c44" stroke-width="5"/>
+  <rect x="800" y="1418" width="330" height="20" rx="6" fill="#26326a"/>
+  <rect x="820" y="1438" width="16" height="62" fill="#1a2350"/><rect x="1094" y="1438" width="16" height="62" fill="#1a2350"/>
+  <polygon points="866,1405 1046,1405 1036,1298 876,1298" fill="#a07e4c"/><polygon points="878,1395 1034,1395 1026,1310 886,1310" fill="#86663a"/>
+  <polygon points="842,1420 1064,1420 1040,1394 866,1394" fill="#c9a46a"/>
+  <ellipse cx="952" cy="1407" rx="82" ry="11" fill="#e8a33c" stroke="#b8742a" stroke-width="5"/>
+  <polygon points="952,1407 1034,1404 1024,1414" fill="#c9a46a"/>
+  <circle cx="920" cy="1406" r="4" fill="#c0392b"/><circle cx="975" cy="1409" r="4" fill="#c0392b"/><circle cx="900" cy="1410" r="3.5" fill="#c0392b"/>
+
+  <!-- kitchen -->
+  <rect x="1220" y="760" width="360" height="140" fill="#18214a"/><line x1="1400" y1="760" x2="1400" y2="900" stroke="#101738" stroke-width="5"/>
+  <rect x="1205" y="1235" width="390" height="20" fill="#2a3770"/>
+  <rect x="1220" y="1255" width="360" height="245" fill="#151d44"/>
+  <g stroke="#0f1638" stroke-width="5"><line x1="1340" y1="1260" x2="1340" y2="1500"/><line x1="1460" y1="1260" x2="1460" y2="1500"/></g>
+  <rect x="1250" y="1300" width="40" height="8" rx="4" fill="#2a3770"/><rect x="1370" y="1300" width="40" height="8" rx="4" fill="#2a3770"/><rect x="1490" y="1300" width="40" height="8" rx="4" fill="#2a3770"/>
+  <rect x="1260" y="1118" width="190" height="117" rx="8" fill="#0d1330" stroke="#2a3770" stroke-width="4"/>
+  <rect x="1275" y="1135" width="105" height="84" rx="4" fill="#070b1c"/>
+  <rect x="1392" y="1140" width="48" height="26" rx="3" fill="#000"/>
+  <g fill="#2a3770"><rect x="1396" y="1178" width="18" height="8" rx="2"/><rect x="1418" y="1178" width="18" height="8" rx="2"/><rect x="1396" y="1192" width="18" height="8" rx="2"/><rect x="1418" y="1192" width="18" height="8" rx="2"/></g>
+  <path d="M1478 1235 V1180 C1478 1166 1530 1166 1530 1180 V1235 Z M1530 1192 C1552 1192 1552 1220 1530 1222" fill="#1f2a5c" stroke="#1f2a5c" stroke-width="6"/>
+  <rect x="1546" y="1056" width="32" height="42" rx="5" fill="#1c2552"/>
+  <rect x="1553" y="1066" width="18" height="24" rx="3" fill="#dfe5f7"/>
+  <path d="M1562 1090 C1590 1150 1540 1190 1566 1236" fill="none" stroke="#dfe5f7" stroke-width="4"/>
+  <!-- light switch -->
+  <rect x="1618" y="1123" width="30" height="46" rx="5" fill="#cfd6f0"/>
+  <rect id="switchT" x="1627" y="1131" width="12" height="15" rx="3" fill="#7f88ae"/>
+  <!-- dog bowl -->
+  <g id="bowl" transform="translate(1410 1500)">
+    <path d="M-42 -26 H42 L32 0 H-32 Z" fill="#2a3770" stroke="#3f4f96" stroke-width="3"/>
+    <circle cx="-14" cy="-28" r="5" fill="#8a6a3e"/><circle cx="2" cy="-30" r="5" fill="#8a6a3e"/><circle cx="16" cy="-28" r="5" fill="#8a6a3e"/>
+  </g>
+  <!-- front door (base) -->
+  <rect x="1675" y="885" width="330" height="615" fill="#0a0f26"/>
+  <g id="doorBase">
+    <rect x="1690" y="900" width="300" height="600" fill="#1c2656"/>
+    <rect x="1722" y="940" width="236" height="230" rx="6" fill="none" stroke="#263166" stroke-width="6"/>
+    <rect x="1722" y="1210" width="236" height="250" rx="6" fill="none" stroke="#263166" stroke-width="6"/>
+  </g>
+
+  <!-- ===== EXTERIOR: the building face, the balconies, the drop ===== -->
+  <g id="exterior">
+    <rect x="2200" y="-1500" width="3000" height="2800" fill="url(#sky2)"/>
+    <g transform="translate(2420 1300)"><g class="spin beam1"><polygon points="0,0 -90,-1500 90,-1500" fill="url(#beamG)" opacity=".45"/></g></g>
+    <g transform="translate(4420 1300)"><g class="spin beam2"><polygon points="0,0 -80,-1500 80,-1500" fill="url(#beamG)" opacity=".35"/></g></g>
+    <circle class="flare" cx="2380" cy="1180" r="80" fill="url(#redHalo)" style="animation-delay:-.7s"/>
+    <circle class="flare" cx="4500" cy="1150" r="95" fill="url(#redHalo)" style="animation-delay:-1.9s"/>
+    <circle class="flare" cx="4400" cy="1240" r="60" fill="url(#ambHalo)" style="animation-delay:-1.1s"/>
+    <path d="M2200 1300 V1060 h90 v-80 h70 v120 h110 v-170 h80 v90 h60 v-40 h1700 v40 h90 v-130 h120 v90 h100 v-60 h90 v150 h90 V1300 Z" fill="#1d0a1e"/>
+    <rect x="2200" y="1300" width="3000" height="2100" fill="#0a0612"/>
+    <g id="extWins"></g>
+    <rect x="2200" y="3300" width="3000" height="34" fill="#141a36"/>
+    <rect x="2200" y="3334" width="3000" height="500" fill="#07091a"/>
+    <g fill="#2a3060"><rect x="2300" y="3500" width="120" height="10"/><rect x="2600" y="3500" width="120" height="10"/><rect x="2900" y="3500" width="120" height="10"/><rect x="3200" y="3500" width="120" height="10"/><rect x="3500" y="3500" width="120" height="10"/><rect x="3800" y="3500" width="120" height="10"/><rect x="4100" y="3500" width="120" height="10"/><rect x="4400" y="3500" width="120" height="10"/></g>
+    <g id="runners" fill="#020208" stroke="#ff4a3a" stroke-width="2.5"></g>
+    <g transform="translate(3330 3450) scale(1.6)">
+      <circle id="carH1" cx="0" cy="-20" r="130" fill="url(#ambHalo)" opacity="0"/>
+      <circle id="carH2" cx="230" cy="-20" r="130" fill="url(#redHalo)" opacity="0"/>
+      <path d="M-20 -10 V-48 L40 -54 L80 -96 H170 L215 -54 L250 -48 V-10 Z" fill="#05070f" stroke="#2f3c7a" stroke-width="4"/>
+      <circle cx="35" cy="-8" r="20" fill="#000" stroke="#2f3c7a" stroke-width="4"/><circle cx="195" cy="-8" r="20" fill="#000" stroke="#2f3c7a" stroke-width="4"/>
+      <circle id="carL1" cx="-14" cy="-36" r="9" fill="#ffb347" opacity=".2"/><circle id="carL2" cx="244" cy="-36" r="9" fill="#ff3b30" opacity=".2"/>
+    </g>
+    <rect x="2560" y="420" width="1700" height="2880" fill="#121a3c"/>
+    <rect x="2540" y="400" width="1740" height="26" fill="#1d2758"/>
+    <g id="facWins"></g>
+    <g fill="#1a2350"><rect x="2680" y="2100" width="660" height="26"/><rect x="3460" y="2100" width="660" height="26"/><rect x="2680" y="2700" width="660" height="26"/><rect x="3460" y="2700" width="660" height="26"/></g>
+    <g stroke="#070b1c" stroke-width="7"><line x1="2680" y1="1930" x2="3340" y2="1930"/><line x1="3460" y1="1930" x2="4120" y2="1930"/><line x1="2680" y1="2530" x2="3340" y2="2530"/><line x1="3460" y1="2530" x2="4120" y2="2530"/></g>
+    <!-- his balcony door -->
+    <rect x="2785" y="905" width="380" height="595" fill="#050816"/>
+    <rect x="2800" y="920" width="350" height="580" fill="#0b0f26"/>
+    <circle cx="3080" cy="1180" r="60" fill="url(#redHalo)" opacity=".35"/>
+    <rect x="2800" y="920" width="175" height="580" fill="#3a4a8a" opacity=".14"/>
+    <path id="curtainOut" d="M2978 925 C3010 1050 2990 1250 3030 1420 L3080 1415 C3050 1240 3070 1060 3040 925 Z" fill="#0d1434" stroke="#1d2758" stroke-width="3" opacity="0"/>
+    <g id="slidePane"><rect x="2975" y="920" width="175" height="580" fill="#2a3a7a" opacity=".24"/><rect x="2975" y="920" width="175" height="580" fill="none" stroke="#050816" stroke-width="12"/><rect x="2990" y="1180" width="8" height="60" rx="4" fill="#2a3466"/></g>
+    <!-- the neighbour's door, ajar -->
+    <rect x="3685" y="905" width="380" height="595" fill="#050816"/>
+    <rect x="3700" y="920" width="350" height="580" fill="#04060f"/>
+    <g clip-path="url(#ngGap)">
+      <circle id="ngMw" cx="4022" cy="1150" r="70" fill="url(#redHalo)" opacity="0"/>
+      <rect id="ngMwD" x="4006" y="1144" width="34" height="14" rx="2" fill="#ff5a4a" opacity="0"/>
+      <polygon id="ngPizza" points="3994,1420 4050,1420 4050,1396 3998,1396" fill="none" stroke="#c9a46a" stroke-width="4" opacity="0"/>
+    </g>
+    <g id="ngRings" fill="none" stroke="#ff6a5a" stroke-width="4"><circle cx="4022" cy="1150" r="10"/><circle cx="4022" cy="1150" r="10"/><circle cx="4022" cy="1150" r="10"/></g>
+    <rect x="3700" y="920" width="175" height="580" fill="#3a4a8a" opacity=".1"/>
+    <rect x="3815" y="920" width="175" height="580" fill="#2a3a7a" opacity=".16" stroke="#050816" stroke-width="12"/>
+    <!-- slabs -->
+    <rect x="2680" y="1500" width="660" height="40" fill="#1d2758"/><rect x="2680" y="1540" width="660" height="16" fill="#0b1030"/>
+    <rect x="3460" y="1500" width="660" height="40" fill="#1d2758"/><rect x="3460" y="1540" width="660" height="16" fill="#0b1030"/>
+    <!-- laundry rack in the wind -->
+    <g stroke="#2a3466" stroke-width="6" fill="none"><path d="M2690 1500 L2738 1240 L2786 1500"/><line x1="2696" y1="1258" x2="2780" y2="1258"/></g>
+    <g id="lau1"><rect x="2700" y="1258" width="36" height="96" fill="#7a2b3a" stroke="#05070f" stroke-width="3"/><rect x="2700" y="1330" width="36" height="8" fill="#a8445a"/></g>
+    <g id="lau2"><path d="M2746 1258 h36 l10 18 l-8 6 v70 h-40 v-70 l-8 -6 Z" fill="#cfd6f0" stroke="#05070f" stroke-width="3"/></g>
+  </g>
+
+  <!-- ===== lights out ===== -->
+  <rect id="dark" x="-1500" y="-1500" width="5200" height="5000" fill="#02040d" opacity="0" mask="url(#darkMask)"/>
+  <rect id="redwash" x="-1500" y="-1500" width="5200" height="5000" fill="#c0101a" opacity="0"/>
+
+  <!-- ===== emissive layer (stays readable in the dark) ===== -->
+  <ellipse id="tvHalo" cx="950" cy="850" rx="330" ry="250" fill="url(#blueHalo)"/>
+  <g id="tv">
+    <rect x="760" y="740" width="380" height="220" rx="8" fill="#04060f" stroke="#222c58" stroke-width="6"/>
+    <g clip-path="url(#tvClip)">
+      <rect id="tvBg" x="772" y="752" width="356" height="196" fill="#0a1640"/>
+      <g id="tvNews">
+        <rect x="772" y="752" width="356" height="34" fill="#d0161e"/>
+        <text x="830" y="777" class="txt" font-size="22" fill="#fff" stroke-width="0">BREAKING</text>
+        <g transform="translate(1092 769)" fill="#fff" stroke="#fff" stroke-width="3"><polygon points="-14,-5 -8,-5 -1,-11 -1,11 -8,5 -14,5" stroke="none"/><line x1="4" y1="-6" x2="14" y2="6"/><line x1="14" y1="-6" x2="4" y2="6"/></g>
+        <text id="tvMain" x="950" y="842" class="txt" font-size="30" fill="#fff" stroke-width="0">PURGE BEGINS IN</text>
+        <text id="tvSub" x="950" y="898" class="txt" font-size="48" fill="#ffcf5a" stroke-width="0">00:00:03</text>
+        <rect x="772" y="918" width="356" height="30" fill="#000" opacity=".6"/>
+        <text id="tvTick" x="772" y="941" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#fff">ALL CRIME LEGAL FOR 12 HOURS • EMERGENCY SERVICES SUSPENDED • STAY INDOORS • LOCK YOUR DOORS • ALL CRIME LEGAL FOR 12 HOURS •</text>
+      </g>
+      <g id="tvStatic" opacity="0">
+        <rect x="772" y="752" width="356" height="196" fill="#15182a"/>
+        <g id="tvBars" fill="#3a3f5c"></g>
+        <text x="950" y="862" class="txt" font-size="38" fill="#c9cde0" stroke-width="0">NO SIGNAL</text>
+      </g>
+    </g>
+  </g>
+  <circle id="mwHalo" cx="1416" cy="1153" r="90" fill="url(#redHalo)" opacity=".25"/>
+  <text id="mwTime" x="1416" y="1161" class="txt" font-size="19" fill="#ff5a4a" stroke-width="0">6:59</text>
+  <circle cx="1562" cy="1074" r="4" fill="#7dff9a"/>
+  <!-- the hallway under the door -->
+  <polygon id="gapSpill" points="1692,1500 1988,1500 2050,1580 1630,1580" fill="#ffb347" opacity=".18"/>
+  <rect id="gap" x="1692" y="1493" width="296" height="7" fill="#ffb347"/>
+  <rect id="foot1" x="2000" y="1493" width="38" height="7" fill="#000"/>
+  <rect id="foot2" x="2050" y="1493" width="38" height="7" fill="#000"/>
+  <!-- door hardware -->
+  <g id="doorHW">
+    <circle id="peepHalo" cx="1840" cy="1060" r="120" fill="url(#redHalo)" opacity="0"/>
+    <g id="peepRings" fill="none" stroke="#ff6a5a" stroke-width="5"><circle cx="1840" cy="1060" r="10"/><circle cx="1840" cy="1060" r="10"/><circle cx="1840" cy="1060" r="10"/></g>
+    <circle cx="1840" cy="1060" r="12" fill="#0a0d1a" stroke="#8890b8" stroke-width="5"/>
+    <g id="peepGlowG" opacity="0"><circle class="pulse" cx="1840" cy="1060" r="9" fill="#ff3b30"/></g>
+    <circle cx="1712" cy="1150" r="11" fill="#8890b8" stroke="#3a4270" stroke-width="3"/>
+    <circle id="handleHalo" cx="1745" cy="1232" r="70" fill="url(#redHalo)" opacity="0"/>
+    <rect x="1704" y="1204" width="16" height="56" rx="7" fill="#8890b8"/>
+    <g id="handle" transform="translate(1712 1232)"><rect x="0" y="-7" width="62" height="14" rx="7" fill="#d4d9ee" stroke="#3a4270" stroke-width="2"/></g>
+    <rect x="1730" y="1126" width="62" height="10" rx="4" fill="#8890b8"/>
+    <rect x="1660" y="1127" width="14" height="28" rx="3" fill="#8890b8"/>
+    <path id="chain" d="M1667 1141 Q1707 1190 1748 1131" fill="none" stroke="#1a1f38" stroke-width="13" stroke-linecap="round"/>
+    <path id="chainL" d="M1667 1141 Q1707 1190 1748 1131" fill="none" stroke="#dfe4f6" stroke-width="7" stroke-dasharray="11 5" stroke-linecap="round"/>
+    <circle id="chainKnob" cx="1748" cy="1131" r="7" fill="#dfe4f6"/>
+  </g>
+  <g id="keysHang"><line x1="1600" y1="1030" x2="1600" y2="1042" stroke="#8890b8" stroke-width="4"/><circle cx="1600" cy="1052" r="10" fill="none" stroke="#e8c26a" stroke-width="4"/><rect x="1592" y="1060" width="7" height="28" rx="2" fill="#e8c26a"/><rect x="1602" y="1058" width="6" height="22" rx="2" fill="#cfd6f0"/></g>
+  <!-- Biscuit the dog -->
+  <g id="dog" transform="translate(1255 1500)">
+    <g id="dogLegs" fill="#070a1a" stroke="#2f3c7a" stroke-width="4"><rect x="-62" y="-40" width="18" height="40" rx="6"/><rect x="-34" y="-40" width="18" height="40" rx="6"/><rect x="48" y="-40" width="18" height="40" rx="6"/><rect x="74" y="-40" width="18" height="40" rx="6"/></g>
+    <g id="dogBody">
+      <path d="M-86 -50 C-110 -60 -118 -86 -132 -92" fill="none" stroke="#2f3c7a" stroke-width="14" stroke-linecap="round"/>
+      <path d="M-86 -50 C-110 -60 -118 -86 -132 -92" fill="none" stroke="#070a1a" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="0" cy="-38" rx="90" ry="35" fill="#070a1a" stroke="#2f3c7a" stroke-width="4"/>
+      <path id="hackles" d="M-52 -70 l10 -15 l10 13 l10 -15 l10 13 l10 -15 l10 13" fill="none" stroke="#3f4f96" stroke-width="4" opacity="0"/>
+      <circle cx="88" cy="-80" r="31" fill="#070a1a" stroke="#2f3c7a" stroke-width="4"/>
+      <ellipse cx="117" cy="-70" rx="23" ry="13" fill="#070a1a" stroke="#2f3c7a" stroke-width="4"/>
+      <path d="M66 -102 L74 -142 L94 -108 Z" fill="#070a1a" stroke="#2f3c7a" stroke-width="4" stroke-linejoin="round"/>
+      <circle id="dogEyeH" cx="98" cy="-86" r="22" fill="url(#ambHalo)"/>
+      <circle id="dogEye" cx="98" cy="-86" r="5.5" fill="#ffb347"/>
+    </g>
+  </g>
+
+  <!-- the stickman -->
+  <g id="man" filter="url(#manGlow)">
+    <path id="mBackO" fill="none" stroke="#060a1a" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="mBack" fill="none" stroke="#d9dff2" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <g id="phoneB"><rect x="-13" y="-24" width="26" height="48" rx="6" fill="#0b0f20" stroke="#e8ecff" stroke-width="3"/><rect x="-8" y="-18" width="16" height="34" rx="2" fill="#ff5a4a"/></g>
+    <path id="mMainO" fill="none" stroke="#060a1a" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="mMain" fill="none" stroke="#f7f9ff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle id="mHead" r="42" fill="#f7f9ff" stroke="#060a1a" stroke-width="7"/>
+    <ellipse id="mEye1" rx="5.5" ry="6.5" fill="#0a1030"/>
+    <ellipse id="mEye2" rx="5.5" ry="6.5" fill="#0a1030"/>
+    <ellipse id="mMouth" rx="4" ry="4" fill="#0a1030"/>
+    <g id="slice"><polygon points="-4,-15 54,0 -4,15" fill="#f2b347" stroke="#3a1d05" stroke-width="3" stroke-linejoin="round"/><line x1="-4" y1="-13" x2="-4" y2="13" stroke="#b06a20" stroke-width="9" stroke-linecap="round"/><circle cx="16" cy="-3" r="4" fill="#c0392b"/><circle cx="30" cy="3" r="3.5" fill="#c0392b"/></g>
+    <g id="keysP" opacity="0"><circle cx="0" cy="0" r="10" fill="none" stroke="#e8c26a" stroke-width="4"/><rect x="-4" y="6" width="7" height="26" rx="2" fill="#e8c26a"/><rect x="5" y="4" width="6" height="20" rx="2" fill="#cfd6f0"/></g>
+    <g id="phoneF"><rect x="-13" y="-24" width="26" height="48" rx="6" fill="#0b0f20" stroke="#e8ecff" stroke-width="3"/><rect x="-8" y="-18" width="16" height="34" rx="2" fill="#ff5a4a"/></g>
+  </g>
+  <!-- foreground: balcony railings (he stands behind them) -->
+  <g id="fg">
+    <g stroke="#050816" stroke-width="8" opacity=".92" id="balusters"></g>
+    <rect x="2680" y="1264" width="660" height="16" rx="4" fill="#1d2758" stroke="#050816" stroke-width="3"/>
+    <rect x="3460" y="1264" width="660" height="16" rx="4" fill="#1d2758" stroke="#050816" stroke-width="3"/>
+  </g>
+</g>
+
+<!-- ======================= SCREEN SPACE ======================= -->
+<rect id="abDim" x="0" y="0" width="1080" height="1920" fill="#000" opacity="0"/>
+<rect x="0" y="0" width="1080" height="1920" fill="url(#vig)"/>
+<rect id="vigRedR" x="0" y="0" width="1080" height="1920" fill="url(#vigRed)" opacity="0"/>
+<rect id="flash" x="0" y="0" width="1080" height="1920" fill="#ff1e1e" opacity="0"/>
+
+<!-- phone close-up -->
+<g id="phoneUI" transform="translate(540 3000)">
+  <g id="phoneShake">
+    <rect x="-262" y="-500" width="524" height="1000" rx="80" fill="url(#redHalo)" opacity=".5"/>
+    <rect x="-230" y="-470" width="460" height="940" rx="64" fill="#0b0f20" stroke="#f2f5ff" stroke-width="7" filter="url(#manGlow)"/>
+    <g clip-path="url(#phoneClip)">
+      <rect x="-205" y="-440" width="410" height="880" fill="url(#phoneScr)"/>
+      <circle cx="0" cy="260" r="260" fill="url(#redHalo)" opacity=".35"/>
+      <rect x="-60" y="-432" width="120" height="30" rx="15" fill="#000"/>
+      <g id="batt"><rect x="128" y="-424" width="50" height="24" rx="5" fill="none" stroke="#ff3b30" stroke-width="3"/><rect x="179" y="-416" width="4" height="9" fill="#ff3b30"/><rect id="battFill" x="132" y="-420" width="3" height="16" fill="#ff3b30"/>
+        <text id="battTxt" x="118" y="-404" class="txt" font-size="24" fill="#ff3b30" stroke-width="0" style="text-anchor:end">3%</text></g>
+      <text id="lockTime" x="0" y="-235" class="txt" font-size="140" fill="#f2f5ff" stroke-width="0">7:03</text>
+      <text x="0" y="-178" font-family="Arial,sans-serif" font-weight="700" font-size="26" fill="#ffb3a8" text-anchor="middle">PURGE NIGHT · STAY INDOORS</text>
+      <g id="lowBatt" opacity="0">
+        <rect x="-180" y="-40" width="360" height="190" rx="30" fill="#140208" stroke="#ff3b30" stroke-width="5"/>
+        <text x="0" y="40" class="txt" font-size="42" fill="#ff3b30" stroke-width="0">LOW BATTERY</text>
+        <text id="lowPct" x="0" y="112" class="txt" font-size="62" fill="#fff" stroke-width="0">3%</text>
+      </g>
+      <g id="note1" opacity="0">
+        <rect x="-190" y="-130" width="380" height="132" rx="28" fill="#1e2446" opacity=".96"/>
+        <circle cx="-138" cy="-64" r="36" fill="#2f3a74"/>
+        <g fill="#f2f5ff"><circle cx="-142" cy="-62" r="16"/><path d="M-160 -68 C-160 -88 -124 -88 -124 -68 Z" fill="#c0101a"/><path d="M-128 -76 L-102 -70 L-127 -66 Z" fill="#c0101a"/></g>
+        <text x="-88" y="-82" font-family="Arial,sans-serif" font-weight="900" font-size="30" fill="#fff">JAY</text>
+        <text x="160" y="-82" font-family="Arial,sans-serif" font-weight="700" font-size="20" fill="#9aa3c8" text-anchor="end">now</text>
+        <text x="-88" y="-40" font-family="Arial,sans-serif" font-weight="700" font-size="29" fill="#fff">where you going mate?</text>
+      </g>
+      <g id="note2" opacity="0">
+        <rect x="-190" y="18" width="380" height="104" rx="28" fill="#1e2446" opacity=".96"/>
+        <text x="-160" y="62" font-family="Arial,sans-serif" font-weight="900" font-size="24" fill="#9aa3c8">JAY</text>
+        <text x="-160" y="100" font-family="Arial,sans-serif" font-weight="900" font-size="33" fill="#ff6a5a">i can see you.</text>
+      </g>
+    </g>
+    <g filter="url(#manGlow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-360 700 L-262 300 L-180 175" stroke="#060a1a" stroke-width="46"/>
+      <path d="M-360 700 L-262 300 L-180 175" stroke="#f7f9ff" stroke-width="30"/>
+      <path d="M280 120 L226 112 M290 210 L226 200 M282 300 L226 288" stroke="#060a1a" stroke-width="40"/>
+      <path d="M280 120 L226 112 M290 210 L226 200 M282 300 L226 288" stroke="#f7f9ff" stroke-width="24"/>
+    </g>
+  </g>
+</g>
+
+<!-- peephole POV -->
+<g id="peep" opacity="0">
+  <rect x="0" y="0" width="1080" height="1920" fill="#000"/>
+  <g clip-path="url(#peepClip)">
+    <g id="peepScene" filter="url(#peepWarp)">
+      <rect x="100" y="440" width="880" height="880" fill="#1a0306"/>
+      <polygon points="100,440 380,690 380,1080 100,1320" fill="#3a0710"/>
+      <polygon points="980,440 700,690 700,1080 980,1320" fill="#2c050c"/>
+      <rect x="380" y="690" width="320" height="390" fill="#6a0d14"/>
+      <polygon points="380,1080 700,1080 980,1320 100,1320" fill="#22040a"/>
+      <g stroke="#14020a" stroke-width="6"><line x1="180" y1="512" x2="180" y2="1252"/><line x1="290" y1="610" x2="290" y2="1156"/><line x1="900" y1="512" x2="900" y2="1252"/><line x1="790" y1="610" x2="790" y2="1156"/></g>
+      <circle cx="560" cy="700" r="330" fill="url(#hallLight)"/>
+      <g id="friend">
+        <use href="#friendShape" fill="none" stroke="#ff4a3a" stroke-width="12" stroke-linejoin="round"/>
+        <use href="#friendShape" fill="#040106"/>
+      </g>
+    </g>
+    <g id="peepRipple" fill="none" stroke="#ff8070" stroke-width="4"><circle cx="540" cy="880" r="40"/><circle cx="540" cy="880" r="40"/><circle cx="540" cy="880" r="40"/></g>
+    <circle cx="540" cy="880" r="420" fill="url(#peepVig)"/>
+  </g>
+  <circle id="peepRing" cx="540" cy="880" r="420" fill="none" stroke="#1b1f33" stroke-width="40"/>
+  <circle id="peepRing2" cx="540" cy="880" r="398" fill="none" stroke="#5a6288" stroke-width="4"/>
+</g>
+
+<!-- text -->
+<g id="ui">
+  <g id="clockG" transform="translate(540 165)">
+    <rect x="-240" y="-50" width="480" height="100" rx="50" fill="#000" opacity=".55"/>
+    <circle class="rec" cx="-192" cy="0" r="18" fill="#ff2a2a"/>
+    <text id="clock" x="26" y="21" class="txt" font-size="58" fill="#fff" stroke-width="8">6:59:57 PM</text>
+  </g>
+  <text x="540" y="262" class="txt" font-size="32" fill="#ffd9a0" stroke-width="7" letter-spacing="2">WHAT IF: THE PURGE · EP 2</text>
+  <g id="sfxG" transform="translate(540 600)"><text id="sfx" class="txt" font-size="80" fill="#ff3b30" stroke-width="14"></text></g>
+  <g id="k1" transform="translate(290 560) rotate(-8)" opacity="0"><text class="txt" font-size="104" fill="#ff3b30" stroke-width="16">KNOCK</text></g>
+  <g id="k2" transform="translate(760 470) rotate(6)" opacity="0"><text class="txt" font-size="104" fill="#ff3b30" stroke-width="16">KNOCK</text></g>
+  <g id="k3" transform="translate(540 700) rotate(-3)" opacity="0"><text class="txt" font-size="128" fill="#ff3b30" stroke-width="18">KNOCK</text></g>
+  <g id="voG" transform="translate(540 1490)"><text id="vo" class="txt" font-size="64" fill="#fff" stroke-width="13"></text></g>
+  <g id="frG" transform="translate(540 1450)"><text id="fr" class="txt" font-size="80" fill="#cfe6ff" stroke-width="14" font-style="italic"></text></g>
+  <g id="titleG" transform="translate(540 820)"><text id="title" class="txt" font-size="112" fill="#fff" stroke-width="18"></text></g>
+  <g id="ab" opacity="0">
+    <g id="abT" transform="translate(540 560)"><text class="txt" font-size="190" fill="#fff" stroke-width="24">A <tspan fill="#ff3b30">OR</tspan> B?</text></g>
+    <g id="v2G" transform="translate(540 960)"><text id="v2" class="txt" font-size="62" fill="#ffd9a0" stroke-width="12" font-style="italic">IT'S JAY. ...RIGHT?</text></g>
+    <g id="cardA" transform="translate(540 1150)">
+      <rect x="-460" y="-78" width="920" height="156" rx="34" fill="#05081a" opacity=".86" stroke="#fff" stroke-width="6"/>
+      <circle cx="-372" cy="0" r="56" fill="#e0241f" stroke="#000" stroke-width="5"/>
+      <text x="-372" y="26" class="txt" font-size="76" fill="#fff" stroke-width="10">A</text>
+      <text id="optA" x="68" y="22" class="txt" font-size="60" fill="#fff" stroke-width="11">OPEN THE DOOR FOR JAY</text>
+    </g>
+    <g id="cardB" transform="translate(540 1335)">
+      <rect x="-460" y="-78" width="920" height="156" rx="34" fill="#05081a" opacity=".86" stroke="#fff" stroke-width="6"/>
+      <circle cx="-372" cy="0" r="56" fill="#ffb347" stroke="#000" stroke-width="5"/>
+      <text x="-372" y="26" class="txt" font-size="76" fill="#fff" stroke-width="10">B</text>
+      <text id="optB" x="68" y="22" class="txt" font-size="60" fill="#fff" stroke-width="11">ESCAPE OVER THE BALCONY</text>
+    </g>
+    <g id="voteG" transform="translate(540 1575)"><text class="txt" font-size="36" fill="#fff" stroke-width="9">COMMENT A OR B · YOU WRITE EP 2</text></g>
+  </g>
+</g>
+</svg>
+</div>
+<div id="start">
+  <h1>WHAT IF: THE PURGE</h1>
+  <div class="ep">EPISODE 2 · THE LEDGE</div>
+  <div class="go">▶ TAP TO START</div>
+  <p>Start your screen recording first. The episode runs once (30s) and freezes on the last frame. Press R or triple-tap to restart for a retake.</p>
+</div>
+<script>
+(() => {
+'use strict';
+/* =====================================================================
+   WHAT IF: THE PURGE — Episode 2 "THE LEDGE" — engine v2
+   (spring-baked motion, planted-feet IK, smooth-noise shakes, voiced)
+   New in EP2: an exterior set, a mirrored camera for the neighbour's flat.
+   ===================================================================== */
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = 30;
+const CAPTURE = new URLSearchParams(location.search).has('capture');
+const $ = id => document.getElementById(id);
+const stage = $('stage');
+
+/*VO-DATA*/const VO = {"fps":60,"voice":"en_GB-aru-medium","cast":{"me":{"speaker":2,"length_scale":0.82,"gain":1.0},"fr":{"speaker":9,"length_scale":1.18,"gain":0.8}},"lines":[{"a":0.55,"b":2.322,"who":"me","kind":"vo","text":"B. Balcony. Not opening that.","cap":"B. BALCONY.\nNOT OPENING THAT."},{"a":2.422,"b":3.223,"who":"me","kind":"vo","text":"...It stopped knocking.","cap":"...IT STOPPED KNOCKING."},{"a":3.45,"b":4.832,"who":"me","kind":"vo","text":"Come on, Biscuit. Outside.","cap":"COME ON, BISCUIT.\nOUTSIDE."},{"a":5.1,"b":7.027,"who":"me","kind":"vo","text":"Okay. Fresh air. Three floors up.","cap":"OKAY. FRESH AIR.\nTHREE FLOORS UP."},{"a":7.127,"b":8.196,"who":"me","kind":"vo","text":"That's a long way down.","cap":"THAT'S A LONG\nWAY DOWN."},{"a":9.9,"b":11.177,"who":"me","kind":"vo","text":"What was that? The chain?","cap":"WHAT WAS THAT?\nTHE CHAIN?"},{"a":11.6,"b":13.225,"who":"me","kind":"vo","text":"Next door's open. It's one step.","cap":"NEXT DOOR'S OPEN.\nIT'S ONE STEP."},{"a":13.4,"b":14.097,"who":"me","kind":"vo","text":"Don't look down.","cap":"DON'T LOOK DOWN."},{"a":15.35,"b":15.663,"who":"me","kind":"vo","text":"Jay?","cap":"JAY?"},{"a":16.75,"b":17.69,"who":"me","kind":"vo","text":"How can you see me?","cap":"HOW CAN YOU\nSEE ME?"},{"a":18.35,"b":20.057,"who":"me","kind":"vo","text":"Okay. One step. Don't think.","cap":"OKAY. ONE STEP.\nDON'T THINK."},{"a":21.9,"b":23.119,"who":"me","kind":"vo","text":"Why's their microwave on?","cap":"WHY'S THEIR\nMICROWAVE ON?"},{"a":23.35,"b":24.604,"who":"me","kind":"vo","text":"Same flat. Same pizza.","cap":"SAME FLAT.\nSAME PIZZA."},{"a":26.9,"b":28.413,"who":"fr","kind":"fr","text":"It's me. Open up.","cap":"“IT'S ME.\nOPEN UP.”"},{"a":28.6,"b":29.738,"who":"me","kind":"end","text":"How did he find me?","cap":"HOW DID HE FIND ME?"}],"env":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.16,1.0,1.0,1.0,1.0,1.0,0.99,0.91,0.77,0.61,0.44,0.31,0.23,0.16,0.12,0.08,0.06,0.04,0.03,0.02,0.39,1.0,1.0,1.0,1.0,1.0,0.84,0.63,0.46,0.33,0.24,0.17,0.12,0.12,0.19,0.18,0.17,0.16,0.14,0.12,0.11,0.08,0.06,0.04,0.03,0.02,0.02,0.01,0.01,0.01,0.69,1.0,1.0,1.0,1.0,1.0,0.93,0.7,0.51,0.46,0.44,0.36,1.0,1.0,1.0,1.0,0.84,0.63,0.46,0.33,0.26,0.72,0.83,0.82,0.81,0.79,0.78,0.73,0.7,0.66,0.58,0.54,0.51,0.5,0.46,0.4,0.29,0.21,0.15,0.11,0.08,0.06,0.04,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.37,0.69,0.66,0.55,0.48,0.45,0.43,0.36,0.31,1.0,1.0,1.0,0.87,0.69,0.55,0.39,0.28,0.2,0.47,0.84,0.84,0.88,0.86,0.79,0.65,0.49,0.35,0.28,0.2,0.14,0.1,0.18,0.23,0.21,0.2,0.18,0.17,0.16,0.15,0.11,0.08,0.05,0.04,0.03,0.02,0.01,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.65,1.0,1.0,0.99,0.91,0.83,0.79,0.75,0.82,1.0,0.98,0.95,0.92,0.84,0.8,0.75,0.68,0.57,0.41,0.29,0.21,0.22,0.73,0.72,0.58,0.46,0.38,0.31,0.22,0.16,0.12,0.08,0.06,0.18,0.13,0.09,0.07,0.05,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.51,1.0,1.0,0.99,0.82,0.59,0.47,0.43,0.43,0.41,0.35,0.72,1.0,0.99,0.94,0.89,0.81,0.77,0.68,0.57,0.49,0.42,0.36,0.26,0.19,0.14,0.1,0.07,0.05,0.04,0.03,0.02,0.01,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.27,0.74,0.63,0.46,0.33,0.28,0.23,0.2,0.47,0.89,1.0,0.98,0.94,0.84,0.69,0.54,0.39,0.28,0.2,0.15,0.1,0.08,0.05,0.04,0.03,0.02,0.01,0.01,0.01,0.37,0.98,1.0,1.0,1.0,0.82,0.65,0.55,0.48,0.42,0.36,0.26,0.5,0.58,0.56,0.54,0.52,0.48,0.43,0.39,0.33,0.28,0.23,0.17,0.12,0.09,0.06,0.04,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.08,0.11,0.11,0.83,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.84,0.63,0.48,0.37,0.29,0.23,0.52,0.97,1.0,1.0,1.0,0.97,0.93,0.86,0.71,0.56,0.45,0.36,0.31,0.32,0.3,0.25,0.18,0.13,0.09,0.07,0.05,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.22,1.0,1.0,1.0,1.0,0.88,0.71,0.55,0.46,0.4,0.37,0.31,0.62,1.0,0.98,0.95,0.94,0.93,0.91,0.9,0.97,0.95,0.93,0.92,0.9,0.9,0.89,0.88,0.86,0.83,0.98,1.0,1.0,1.0,1.0,0.96,0.95,0.89,0.77,0.61,0.44,0.35,0.58,0.71,0.7,0.66,0.63,0.56,0.52,0.45,0.38,0.31,0.26,0.22,0.18,0.13,0.1,0.07,0.05,0.04,0.03,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.37,1.0,1.0,1.0,1.0,1.0,0.89,0.73,0.56,0.4,0.29,0.21,0.15,0.11,0.08,0.58,0.78,0.79,0.7,0.56,0.43,0.31,0.22,0.22,0.57,0.55,0.51,0.46,0.4,0.32,0.23,0.16,0.12,0.09,0.06,0.04,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.45,1.0,0.91,0.69,0.53,0.45,0.55,0.67,0.59,0.5,1.0,1.0,1.0,0.98,0.93,0.86,0.75,0.63,0.54,0.43,0.36,0.29,0.24,0.21,0.18,0.13,0.09,0.07,0.05,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.42,0.84,0.87,0.82,0.73,0.61,0.44,0.32,0.23,0.19,0.22,0.27,0.28,0.26,0.19,0.13,0.1,0.24,0.92,1.0,1.0,1.0,1.0,1.0,1.0,0.96,0.79,0.64,0.53,0.45,0.49,0.77,0.98,0.94,0.85,0.69,0.5,0.36,0.26,0.19,0.13,0.1,0.07,0.11,0.18,0.16,0.11,0.08,0.06,0.04,0.03,0.02,0.02,0.01,0.01,0.01,0.57,0.89,0.78,0.62,0.48,0.42,0.35,0.25,0.18,0.13,0.79,1.0,1.0,1.0,1.0,0.99,0.97,0.85,0.67,0.56,0.49,0.43,0.35,0.25,0.18,0.23,0.58,0.55,0.48,0.38,0.27,0.2,0.14,0.1,0.07,0.05,0.04,0.03,0.02,0.01,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.13,0.49,1.0,1.0,0.94,0.82,0.68,0.56,0.47,0.38,0.32,0.3,0.3,0.41,0.5,0.5,0.46,0.37,0.27,0.19,0.14,0.1,0.09,0.27,0.39,0.38,0.4,0.39,0.35,0.3,0.25,0.21,0.18,0.16,0.11,0.08,0.06,0.04,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.17,0.21,0.23,0.96,1.0,1.0,1.0,1.0,0.97,0.89,0.76,0.64,0.52,0.41,0.29,0.21,0.15,0.11,0.08,0.06,0.04,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.13,0.71,1.0,1.0,1.0,1.0,1.0,0.9,0.72,0.52,0.37,0.3,0.24,0.2,0.39,0.74,0.81,0.8,0.77,0.73,0.73,0.71,0.75,0.73,0.69,0.57,0.48,0.42,0.38,0.32,0.27,0.93,0.94,0.92,0.87,0.81,0.78,0.77,0.75,0.82,0.97,0.94,0.91,0.89,0.86,0.8,0.71,0.6,0.49,0.35,0.25,0.18,0.13,0.09,0.07,0.05,0.04,0.03,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.56,0.56,0.45,0.32,0.23,0.2,0.18,0.16,0.6,0.91,1.0,0.96,0.92,0.88,0.82,0.72,0.6,0.48,0.34,0.25,0.18,0.13,0.09,0.07,0.05,0.03,0.02,0.02,0.01,0.19,0.77,0.96,1.0,1.0,1.0,1.0,1.0,1.0,0.79,0.68,0.6,0.56,0.5,0.39,0.28,0.2,0.18,1.0,0.99,0.91,0.74,0.53,0.38,0.28,0.2,0.17,0.12,0.09,0.06,0.05,0.03,0.02,0.02,0.01,0.15,0.63,1.0,1.0,1.0,0.91,0.79,0.68,0.56,0.49,0.4,0.29,0.21,0.15,0.11,0.08,0.09,0.43,0.42,0.41,0.37,0.32,0.26,0.18,0.13,0.1,0.07,0.05,0.04,0.03,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.45,0.96,1.0,1.0,1.0,1.0,1.0,0.99,1.0,1.0,0.9,0.75,0.64,0.56,0.46,0.33,0.24,0.17,0.28,0.87,0.85,0.81,0.78,0.84,0.82,0.78,0.77,0.95,1.0,1.0,0.97,0.96,0.92,0.79,0.57,0.41,0.34,0.24,0.18,0.13,0.26,0.7,0.69,0.66,0.62,0.62,0.61,0.72,0.72,0.7,0.64,0.59,0.49,0.4,0.34,0.31,0.27,0.26,0.23,0.22,0.19,0.14,0.13,0.09,0.07,0.05,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.11,0.17,0.22,0.27,0.31,0.28,0.27,1.0,1.0,0.96,0.94,0.89,0.85,0.82,0.81,0.72,0.54,0.42,0.3,0.22,0.16,0.31,0.81,0.8,0.75,0.72,0.56,0.4,0.29,0.21,0.17,0.12,0.09,0.06,0.05,0.03,0.02,0.02,0.15,0.19,0.25,0.21,0.86,1.0,0.94,0.88,0.84,0.84,0.83,0.81,0.75,0.57,0.41,0.32,0.23,0.19,0.65,0.77,0.73,0.6,0.43,0.31,0.22,0.16,0.15,0.11,0.08,0.19,0.17,0.15,0.11,0.08,0.05,0.04,0.03,0.02,0.01,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.23,0.74,1.0,1.0,1.0,0.99,1.0,1.0,0.97,0.76,0.55,0.43,0.51,0.85,0.84,0.83,0.88,0.84,0.7,0.5,0.39,0.32,0.23,0.16,0.15,0.32,0.49,0.77,0.74,0.63,0.48,0.37,0.27,0.19,0.14,0.49,1.0,0.99,1.0,0.96,0.89,0.83,0.76,0.73,0.7,0.59,0.48,0.37,0.3,0.41,0.7,0.78,0.75,0.71,0.66,0.6,0.52,0.43,0.34,0.24,0.17,0.13,0.09,0.07,0.05,0.03,0.02,0.02,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"fenv":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.09,0.11,0.5,0.66,0.63,0.58,0.49,0.44,0.37,0.29,0.24,0.18,0.13,0.09,0.11,0.69,0.97,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9,0.79,0.71,0.71,0.59,0.51,0.42,0.35,0.28,0.23,0.17,0.12,0.09,0.06,0.04,0.03,0.02,0.02,0.01,0.01,0.01,0.43,0.81,1.0,1.0,1.0,1.0,1.0,0.87,0.7,0.58,0.49,0.4,0.33,0.33,0.57,0.56,0.56,0.53,0.58,0.65,0.64,0.61,0.55,0.53,0.48,0.42,0.35,0.3,0.25,0.21,0.15,0.11,0.08,0.06,0.04,0.03,0.02,0.01,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]};/*END-VO-DATA*/
+
+/* ---------- maths ---------- */
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, k) => a + (b - a) * k;
+const io = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const oc = x => 1 - Math.pow(1 - x, 3);
+const ob = x => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const hash = i => { const s = Math.sin(i * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
+const vnoise = (x, s = 0) => { const i = Math.floor(x), f = x - i, u = f * f * (3 - 2 * f); return lerp(hash(i + s * 101.3), hash(i + 1 + s * 101.3), u) * 2 - 1; };
+const fbm = (x, s = 0) => vnoise(x, s) * .7 + vnoise(x * 2.13, s + 7) * .3;
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, k) => { const A = hex(a), B = hex(b); return 'rgb(' + A.map((v, i) => Math.round(lerp(v, B[i], k))).join(',') + ')'; };
+const pulseAt = (t, times, w) => times.reduce((m, x) => Math.max(m, t >= x ? Math.exp(-(t - x) / w) : 0), 0);
+const attr = (el, o) => { for (const k in o) el.setAttribute(k, o[k]); };
+const envAt = (arr, t) => { const x = t * VO.fps, i = Math.floor(x); if (i < 0 || i >= arr.length - 1) return 0; return lerp(arr[i], arr[i + 1], x - i); };
+const inR = (t, a, b) => t >= a && t < b;
+
+/* ---------- springs, baked once so any frame can be sought ---------- */
+const BHZ = 120, NB = DUR * BHZ + 1;
+function bake(channels, targetAt, cutTimes, omega, zeta) {
+  const out = {}; for (const c of channels) out[c] = new Float32Array(NB);
+  let pos = {}, vel = {}, prevT = -1;
+  for (let i = 0; i < NB; i++) {
+    const t = i / BHZ, tg = targetAt(t);
+    const cut = i === 0 || cutTimes.some(c => c > prevT && c <= t + 1e-9);
+    for (const c of channels) {
+      if (cut) { pos[c] = tg[c]; vel[c] = 0; }
+      else {
+        const w = omega[c] ?? omega.default, z = zeta[c] ?? zeta.default, h = 1 / BHZ / 4;
+        for (let k = 0; k < 4; k++) { vel[c] += (w * w * (tg[c] - pos[c]) - 2 * z * w * vel[c]) * h; pos[c] += vel[c] * h; }
+      }
+      out[c][i] = pos[c];
+    }
+    prevT = t;
+  }
+  return t => { const x = clamp(t, 0, DUR) * BHZ, i = Math.min(NB - 2, Math.floor(x)), k = x - i, o = {}; for (const c of channels) o[c] = lerp(out[c][i], out[c][i + 1], k); return o; };
+}
+
+function fit() {
+  const s = Math.min(innerWidth / 1080, innerHeight / 1920);
+  stage.style.transform = `translate(${-540 * s}px,${-960 * s}px) scale(${s})`;
+}
+addEventListener('resize', fit); fit();
+
+function setLines(el, str, maxW) {
+  if (el._s === str) return;
+  el._s = str; el.textContent = '';
+  if (!str) return;
+  const lines = str.split('\n'), n = lines.length;
+  lines.forEach((ln, i) => {
+    const ts = document.createElementNS(NS, 'tspan');
+    ts.setAttribute('x', 0);
+    ts.setAttribute('dy', i === 0 ? (-(n - 1) * .56 + .36) + 'em' : '1.12em');
+    ts.textContent = ln; el.appendChild(ts);
+  });
+  if (!el._fs) el._fs = +el.getAttribute('font-size');
+  let fs = el._fs; el.setAttribute('font-size', fs);
+  const widest = () => Math.max(...[...el.children].map(c => c.getComputedTextLength()));
+  while (widest() > maxW && fs > 24) { fs -= 2; el.setAttribute('font-size', fs); }
+}
+function setOne(el, str, maxW) {
+  if (el._s === str) return;
+  el._s = str; el.textContent = str;
+  if (!el._fs) el._fs = +el.getAttribute('font-size');
+  let fs = el._fs; el.setAttribute('font-size', fs);
+  while (el.getComputedTextLength() > maxW && fs > 24) { fs -= 2; el.setAttribute('font-size', fs); }
+}
+const mk = (parent, tag, o) => { const e = document.createElementNS(NS, tag); attr(e, o); parent.appendChild(e); return e; };
+
+/* ---------- generated set dressing ---------- */
+const OPP = [];
+(() => {
+  const g = $('oppWins'); let i = 0;
+  const add = (x, y, w, h) => {
+    const red = hash(i + 50) > .82;
+    const r = mk(g, 'rect', { x, y, width: w, height: h, rx: 3, fill: red ? '#ff5a3a' : '#ffb347' });
+    OPP.push({ el: r, red }); i++;
+  };
+  for (const y of [1030, 1190, 1270]) for (const x of [70, 135, 200, 265]) add(x, y, 40, 50);
+  add(70, 1110, 40, 50);
+  for (const y of [1110, 1190, 1270, 1350]) for (const x of [400, 470, 540, 610]) if (hash(x * y) > .2) add(x, y, 44, 52);
+  OPP.forEach(w => w.el.setAttribute('opacity', w.red ? .7 : .05));
+  $('dragWin').setAttribute('opacity', .05);
+  const ew = $('extWins');
+  for (let k = 0; k < 140; k++) {
+    const x = 2200 + hash(k * 3.1) * 3000, y = k < 70 ? 990 + hash(k * 7.7) * 300 : 1320 + hash(k * 5.3) * 1900;
+    const r = hash(k * 1.9);
+    if (r < .55) continue;
+    mk(ew, 'rect', { x, y, width: 10 + hash(k) * 8, height: 12 + hash(k + 3) * 6, fill: r > .9 ? '#ff4a3a' : '#ffb347', opacity: .35 + hash(k + 11) * .5 });
+  }
+  for (let k = 0; k < 6; k++) mk(ew, 'circle', { cx: 2300 + k * 520, cy: 3280, r: 70, fill: 'url(#ambHalo)', opacity: .45 });
+  const fw = $('facWins');
+  for (const y of [520, 1700, 2290, 2890]) for (let x = 2640; x < 4200; x += 165) {
+    const h = hash(x * .37 + y), lit = h > .78, red = h > .93;
+    mk(fw, 'rect', { x, y, width: 100, height: 150, rx: 4, fill: red ? '#ff4a3a' : lit ? '#ffb347' : '#070b1c', opacity: lit ? .55 : 1, stroke: '#050816', 'stroke-width': 8 });
+  }
+  const bl = $('balusters');
+  for (const [a, b] of [[2680, 3340], [3460, 4120]]) for (let x = a + 16; x < b; x += 40) mk(bl, 'line', { x1: x, y1: 1280, x2: x, y2: 1500 });
+  const rn = $('runners');
+  for (let k = 0; k < 4; k++) {
+    const g2 = mk(rn, 'g', {});
+    mk(g2, 'circle', { cx: 0, cy: -46, r: 8 });
+    mk(g2, 'path', { d: 'M-5 -38 L5 -38 L8 -14 L12 0 L4 0 L0 -14 L-4 0 L-12 0 L-8 -14 Z' });
+  }
+})();
+const BARS = [];
+(() => { const g = $('tvBars'); for (let i = 0; i < 9; i++) BARS.push(mk(g, 'rect', { x: 772, width: 356, height: 6 + hash(i) * 14 })); })();
+
+/* ---------- clock (it's past midnight now: always red) ---------- */
+const H = (h, m, s) => h * 3600 + m * 60 + s;
+const CLK = [[0, H(0, 0, 5)], [4.5, H(0, 1, 40)], [8, H(0, 2, 12)], [11.3, H(0, 3, 2)], [14.6, H(0, 4, 30)], [18, H(0, 5, 53)]];
+function clockSec(t) { let c = CLK[0]; for (const k of CLK) if (t >= k[0]) c = k; return (c[1] + Math.floor(t - c[0] + 1e-6)) % 86400; }
+function fmt(sec, withSec) {
+  const h = Math.floor(sec / 3600) % 24, m = Math.floor(sec / 60) % 60, s = sec % 60;
+  const h12 = h % 12 || 12, p = n => String(n).padStart(2, '0');
+  return withSec ? `${h12}:${p(m)}:${p(s)} ${h >= 12 ? 'PM' : 'AM'}` : `${h12}:${p(m)}`;
+}
+const JUMPS = [4.5, 8, 11.3, 14.6, 18, 25];
+
+/* ---------- camera (last field: 1 = mirrored world = the neighbour's flat) ---------- */
+const CAM = [
+  [0, 1, [1640, 1174, 1.78], [1560, 1165, 1.45], io, 0],       // S1 off the end of EP1
+  [1, 3, [1560, 1165, 1.45], [1450, 1150, 1.05], io, 0],       // S2 back away, grab the keys
+  [3, 4.5, [560, 1100, 1.05], [520, 1090, 1.14], io, 0],       //    balcony door
+  [4.5, 6.2, [3080, 1150, .82], [3150, 1170, .90], io, 0],     // S3 outside
+  [6.2, 8, [3150, 1170, .90], [3250, 2900, .62], io, 0],       //    look down: three floors
+  [8, 11.3, [1700, 1150, 1.60], [1712, 1160, 1.95], io, 0],    // S4 the chain, alone
+  [11.3, 14.6, [3330, 1250, .95], [3360, 1270, 1.12], io, 0],  // S5 the gap
+  [14.6, 18, [3300, 1200, 1.00], [3310, 1200, 1.06], io, 0],   // S6 phone
+  [18, 21.8, [3330, 1230, 1.08], [3420, 1220, 1.25], io, 0],   // S7 THE STEP
+  [21.8, 23.2, [3420, 1220, 1.25], [3800, 1200, 1.35], io, 0], //    their microwave
+  [23.2, 25, [1000, 1120, .78], [960, 1120, .86], io, 1],      //    inside: the same flat
+  [25, 26.4, [1640, 1150, 1.15], [1660, 1140, 1.22], oc, 1],   // S8 knocks
+  [26.4, 28.6, [1660, 1140, 1.22], [1680, 1140, 1.30], io, 1], //    peephole
+  [28.6, 30, [1628, 1170, 1.70], [1640, 1174, 1.78], io, 1],   //    hand near the chain
+];
+const KNOCKS = [25.2, 25.7, 26.2], SOFT = [0.6, 1.2];
+const CAMCUTS = CAM.filter((s, i) => i > 0 && ((s[2] + '') !== (CAM[i - 1][3] + '') || s[5] !== CAM[i - 1][5])).map(s => s[0]);
+const camSeg = t => { for (const s of CAM) if (t >= s[0] && t < s[1]) return s; return CAM[CAM.length - 1]; };
+const camTarget = t => { const c = camSeg(t), k = t >= c[1] ? 1 : c[4](seg(t, c[0], c[1])); return { cx: lerp(c[2][0], c[3][0], k), cy: lerp(c[2][1], c[3][1], k), sc: lerp(c[2][2], c[3][2], k) }; };
+const camAt = bake(['cx', 'cy', 'sc'], camTarget, CAMCUTS, { default: 7 }, { default: 1 });
+const mirrored = t => camSeg(t)[5] === 1;
+function camera(t) {
+  const { cx, cy, sc } = camAt(t), m = mirrored(t);
+  const amp = KNOCKS.reduce((a, x) => a + (t >= x ? 26 * Math.exp(-(t - x) * 7) : 0), 0) + SOFT.reduce((a, x) => a + (t >= x ? 8 * Math.exp(-(t - x) * 8) : 0), 0);
+  const wind = inR(t, 4.5, 8) || inR(t, 11.3, 23.2) ? 1 : 0;
+  const dx = amp * fbm(t * 11, 1) + fbm(t * .45, 2) * (6 + 5 * wind), dy = amp * fbm(t * 11, 3) + fbm(t * .4, 4) * (5 + 4 * wind);
+  const rot = amp * .06 * fbm(t * 9, 5) + fbm(t * .3, 6) * (.3 + .4 * wind);
+  $('cam').setAttribute('transform', `translate(${540 + dx} ${960 + dy}) rotate(${rot}) scale(${m ? -sc : sc} ${sc}) translate(${-cx} ${-cy})`);
+  // text inside the world reads the right way round even in the mirror flat
+  $('mwTime').setAttribute('transform', m ? 'matrix(-1 0 0 1 2832 0)' : '');
+  $('tv').setAttribute('transform', m ? 'matrix(-1 0 0 1 1900 0)' : '');
+}
+
+/* ---------- the stickman rig ---------- */
+const TH = 125, SH = 125, TORSO = 190, NH = 52, UA = 108, FA = 102, D = Math.PI / 180;
+const BASE = { x: 0, y: 1500, f: 1, lean: 0, ht: 0, ra: 10, re: 12, la: -10, le: 12, hh: 238, fa: null, fb: null, lfa: 0, lfb: 0, ex: .5, ey: 0, mo: 0, tr: 0, ik: 0, tx: 0, ty: 0, rel: 0 };
+const MK = [];
+(() => {
+  const K = [
+    // S1: EP1's last frame — hand near the chain — then he snatches it back
+    [0, { cut: 1, x: 1560, f: 1, lean: 9, ik: 1, tx: 1650, ty: 1164, la: -6, le: 20, ex: 1, ey: .4, mo: .4, tr: .15 }],
+    [0.3, { ik: 0, ra: 55, re: 115, lean: -6, mo: 1, ex: 1, ey: 0, tr: .6 }],
+    [0.9, {}],
+    // S2: one step back, grab the car keys off the hook
+    [1.25, { lfa: 30, x: 1548 }],
+    [1.6, { fa: 1540, lfa: 0, x: 1522, lean: -8 }],
+    [1.9, { lfb: 20, fb: 1500 }],
+    [2.15, { fb: 1480, lfb: 0, x: 1505 }],
+    [2.4, { ik: 1, tx: 1600, ty: 1052, ex: .8, ey: -.4, lean: -2 }],
+    [2.7, { ik: 0, ra: 25, re: 70, ex: -1, ht: -6, mo: .4 }],
+    [3.0, {}],
+    //    at the balcony door, silhouetted against the red sky
+    [3.0, { cut: 1, x: 520, f: -1, ra: 20, re: 30, la: -8, le: 40, ex: 1, tr: .4 }],
+    [3.5, { ik: 1, tx: 390, ty: 1095 }],
+    [3.9, { ex: -1, ht: -5 }],
+    [4.35, { tx: 330 }],
+    [4.5, {}],
+    // S3: outside, looking down
+    [4.5, { cut: 1, x: 2980, f: 1, ra: 15, re: 25, la: -10, le: 30, ex: .6, ey: -.2, tr: .3 }],
+    [5.3, { ex: 1, ey: -.1, lean: 2 }],
+    [6.3, { ey: 1, ex: .8, lean: 6, ht: 8, mo: .5, tr: .5 }],
+    [7.3, { lean: -4, ey: .6, mo: .8, tr: .7 }],
+    [8.0, {}],
+    // S5: the end of his balcony, the gap
+    [11.3, { cut: 1, x: 3240, f: 1, ra: 20, re: 30, la: -15, le: 35, ex: 1, ey: .7, lean: 4, tr: .4 }],
+    [12.0, { ik: .85, tx: 3328, ty: 1270, ey: -.1, ht: 4 }],
+    [13.4, { ey: 1, lean: 8, mo: .6, tr: .7, ht: 10 }],
+    [14.2, { ey: .2, ht: -4, lean: -3 }],
+    [14.6, {}],
+    // S6: phone at 1%
+    [14.6, { cut: 1, x: 3240, f: 1, ra: 45, re: 85, la: -8, ex: .6, ey: .9, tr: .5 }],
+    [18.0, {}],
+    // S7: THE STEP — across the gap, three floors up
+    [18.0, { cut: 1, x: 3250, f: 1, fa: 3285, fb: 3215, ra: 30, re: 20, la: -25, le: 20, lean: 2, ex: 1, ey: .6, tr: .6 }],
+    [18.8, { x: 3262, lean: 6 }],
+    [19.6, { x: 3292, fa: 3360, lfa: 55, lean: 9, ra: 58, re: 8, la: -42, le: 10 }],
+    [20.5, { x: 3360, fa: 3500, lfa: 0, lean: 5, hh: 195 }],
+    [21.1, { lfb: 40, fb: 3380, x: 3440, hh: 225 }],
+    [21.6, { fb: 3462, lfb: 0, x: 3482, hh: 236, ra: 20, re: 25, la: -10, le: 25, lean: 0 }],
+    [22.0, { ex: 1, ey: 0, lean: 4, mo: .3 }],
+    [23.2, {}],
+    //    inside the neighbour's flat (mirrored): the same flat
+    [23.2, { cut: 1, x: 700, f: 1, ra: 15, re: 25, la: -10, le: 30, ex: .5, tr: .4 }],
+    [24.0, { ex: 1, ey: .2, ht: -4, mo: .5 }],
+    [24.6, { ex: 0, ey: 0, mo: .7 }],
+    [25.0, {}],
+    // S8: the knocks, the peephole, the hand near the chain
+    [25.0, { cut: 1, x: 1505, f: 1, fa: 1562, fb: 1446, hh: 232, lean: -4, ra: 20, re: 30, ex: 1, mo: 1, tr: .6 }],
+    [25.32, { x: 1490, lean: -13, ra: 72, re: 86, la: 56, le: 86, tr: 1 }],
+    [26.4, {}],
+    [28.6, { cut: 1, x: 1560, f: 1, lean: 9, ik: 1, tx: 1636, ty: 1170, la: -6, le: 20, ex: 1, ey: .4, mo: .4, tr: .15 }],
+    [29.0, { tx: 1650, ty: 1164 }],
+    [30, {}],
+  ];
+  let cur = { ...BASE };
+  for (const [t, o] of K) {
+    cur = o.cut ? { ...BASE, ...o } : { ...cur, ...o };
+    if (cur.fa === null) cur.fa = cur.x + cur.f * 30;
+    if (cur.fb === null) cur.fb = cur.x - cur.f * 30;
+    MK.push([t, { ...cur }]); delete cur.cut;
+  }
+  let carry = null; // pre-place reach targets so only the reach weight animates
+  for (let i = MK.length - 1; i >= 0; i--) {
+    const k = MK[i][1];
+    if (k.ik > 0) carry = { tx: k.tx, ty: k.ty, rel: k.rel };
+    else if (carry) Object.assign(k, carry);
+    if (k.cut) carry = null;
+  }
+})();
+const CUTS = MK.filter(k => k[1].cut).map(k => k[0]);
+function poseRaw(t) {
+  let i = 0; while (i < MK.length - 1 && MK[i + 1][0] <= t) i++;
+  const A = MK[i], B = MK[i + 1];
+  if (!B || B[1].cut) return { ...A[1] };
+  const k = io(seg(t, A[0], B[0])), o = {};
+  for (const key in A[1]) o[key] = lerp(A[1][key], B[1][key] ?? A[1][key], k);
+  o.f = A[1].f; o.rel = B[1].ik > 0 ? B[1].rel : A[1].rel;
+  return o;
+}
+const PCH = ['x', 'lean', 'ht', 'ra', 're', 'la', 'le', 'hh', 'fa', 'fb', 'lfa', 'lfb', 'ex', 'ey', 'mo', 'tr', 'ik', 'tx', 'ty'];
+const poseAt = bake(PCH, poseRaw, CUTS,
+  { default: 13, x: 11, lean: 10, ht: 9, la: 9, le: 9, ex: 24, ey: 24, mo: 30, tr: 20, fa: 30, fb: 30, lfa: 30, lfb: 30, hh: 14 },
+  { default: .8, ht: .55, la: .6, le: .6, ra: .7, re: .7, fa: 1, fb: 1, lfa: 1, lfb: 1 });
+
+function solveArm(S, T, f) {
+  const dx = (T[0] - S[0]) * f, dy = T[1] - S[1];
+  const d = clamp(Math.hypot(dx, dy), Math.abs(UA - FA) + 2, UA + FA - 2);
+  const base = Math.atan2(dx, dy) / D;
+  const a1 = Math.acos((UA * UA + d * d - FA * FA) / (2 * UA * d)) / D;
+  const a2 = Math.acos((FA * FA + d * d - UA * UA) / (2 * FA * d)) / D;
+  return [base - a1, a1 + a2];
+}
+function solveLeg(Hp, Ft, f) {
+  const dx = (Ft[0] - Hp[0]) * f, dy = Ft[1] - Hp[1];
+  const d = clamp(Math.hypot(dx, dy), 20, TH + SH - .5);
+  const base = Math.atan2(dx, dy) / D;
+  const a1 = Math.acos(clamp((TH * TH + d * d - SH * SH) / (2 * TH * d), -1, 1)) / D;
+  const a2 = Math.acos(clamp((SH * SH + d * d - TH * TH) / (2 * SH * d), -1, 1)) / D;
+  return [base + a1, -(a1 + a2)];
+}
+const BLINKS = [1.9, 5.6, 10.2, 13.0, 17.2, 22.6, 27.7];
+function man(t) {
+  const tm = Math.min(t, 29.0);
+  const raw = poseRaw(tm), p = poseAt(tm), f = raw.f; p.rel = raw.rel; p.y = raw.y;
+  const vis = !inR(t, 8, 11.3); // S4 is the empty flat
+  $('man').setAttribute('opacity', vis ? 1 : 0);
+  const talk = envAt(VO.env, tm);
+  const trm = p.tr * fbm(tm * 5.5, 11);
+  p.lean += Math.sin(tm * 2.1) * .8 + trm * 1.4;
+  p.ht += trm * 2.2 + talk * 3.5 * fbm(tm * 3, 12);
+  p.ra += Math.sin(tm * 2.1 + .6) * 2 + trm * 2.5;
+  p.la += Math.sin(tm * 2.1 + 1.2) * 2 + trm * 2.5;
+  p.tx += trm * 2; p.ty += trm * 2;
+  const v = (a, l) => [f * Math.sin(a * D) * l, Math.cos(a * D) * l];
+  const ad = (A, B) => [A[0] + B[0], A[1] + B[1]];
+  const hip = [p.x, p.y - p.hh - Math.abs(Math.sin(tm * 2.1)) * 1.5];
+  const FF = [p.fa, p.y - p.lfa], BF = [p.fb, p.y - p.lfb];
+  const [fth, fsh] = solveLeg(hip, FF, f), [bth, bsh] = solveLeg(hip, BF, f);
+  const FK = ad(hip, v(fth, TH)), FFs = ad(FK, v(fth + fsh, SH));
+  const BK = ad(hip, v(bth, TH)), BFs = ad(BK, v(bth + bsh, SH));
+  const neck = ad(hip, v(180 - p.lean, TORSO));
+  const neck2 = ad(neck, v(180 - p.lean, 12));
+  const head = ad(neck, v(180 - p.lean - p.ht, NH));
+  const sh = ad(neck, v(180 - p.lean, -14));
+  let ra = p.ra, re = p.re;
+  if (p.ik > .001) {
+    const T = p.rel ? [head[0] + f * p.tx, head[1] + p.ty] : [p.tx, p.ty];
+    const [a, e] = solveArm(sh, T, f); ra = lerp(ra, a, clamp(p.ik)); re = lerp(re, e, clamp(p.ik));
+  }
+  const FE = ad(sh, v(ra, UA)), FH = ad(FE, v(ra + re, FA));
+  const BE = ad(sh, v(p.la, UA)), BH = ad(BE, v(p.la + p.le, FA));
+  const P = a => a[0].toFixed(2) + ' ' + a[1].toFixed(2);
+  const back = `M${P(BFs)} L${P(BK)} L${P(hip)} M${P(sh)} L${P(BE)} L${P(BH)}`;
+  const main = `M${P(FFs)} L${P(FK)} L${P(hip)} L${P(neck2)} M${P(sh)} L${P(FE)} L${P(FH)}`;
+  $('mBackO').setAttribute('d', back); $('mBack').setAttribute('d', back);
+  $('mMainO').setAttribute('d', main); $('mMain').setAttribute('d', main);
+  attr($('mHead'), { cx: head[0], cy: head[1] });
+  const blink = BLINKS.reduce((m, b) => Math.max(m, 1 - Math.abs(tm - b) / .07), 0);
+  const ox = f * p.ex * 13, oy = p.ey * 10 - 3;
+  for (const [id, s] of [['mEye1', -10], ['mEye2', 10]]) attr($(id), { cx: head[0] + ox + s, cy: head[1] + oy, ry: Math.max(.8, 6.5 * (1 - clamp(blink))) });
+  const open = Math.max(p.mo * .9, talk);
+  attr($('mMouth'), { cx: head[0] + f * p.ex * 10, cy: head[1] + 20 + p.ey * 4, rx: 3.5 + 3.5 * open, ry: 1.2 + 9 * open, opacity: open > .06 ? 1 : 0 });
+  const ang = (A, B) => Math.atan2(B[1] - A[1], B[0] - A[0]) / D;
+  $('slice').setAttribute('opacity', 0);
+  const keysF = inR(tm, 2.55, 3.0), keysB = inR(tm, 3.0, 8.0);
+  const KH = keysF ? [FE, FH] : [BE, BH];
+  $('keysP').setAttribute('transform', `translate(${P(KH[1])}) rotate(${ang(KH[0], KH[1]) - 90})`);
+  $('keysP').setAttribute('opacity', keysF || keysB ? 1 : 0);
+  const phF = inR(tm, 14.6, 18), phB = inR(tm, 11.3, 14.6);
+  $('phoneF').setAttribute('transform', `translate(${P(FH)}) rotate(${ang(FE, FH) - 90})`);
+  $('phoneF').setAttribute('opacity', phF ? 1 : 0);
+  $('phoneB').setAttribute('transform', `translate(${P(BH)}) rotate(${ang(BE, BH) - 90})`);
+  $('phoneB').setAttribute('opacity', phB ? 1 : 0);
+}
+
+/* ---------- the world ---------- */
+function world(t) {
+  const m = mirrored(t);
+  for (const [id, c] of [['sk0', '#250307'], ['sk1', '#8f0c14'], ['sk2', '#e0281e']]) $(id).setAttribute('stop-color', c);
+  attr($('spill'), { fill: '#ff2a2a', opacity: .16 });
+  $('dark').setAttribute('opacity', .62);
+  $('lampOn').setAttribute('opacity', 0);
+  $('switchT').setAttribute('y', 1146);
+  $('redwash').setAttribute('opacity', .1);
+  $('tvNews').setAttribute('opacity', 0);
+  $('tvStatic').setAttribute('opacity', 1);
+  BARS.forEach((b, i) => attr(b, { y: 752 + hash(i + Math.floor(t * 12) * 13) * 190, opacity: .3 + hash(i * 3 + Math.floor(t * 12)) * .5 }));
+  $('tvHalo').setAttribute('opacity', .25);
+  $('mwTime').textContent = fmt(clockSec(t), false);
+  $('mwHalo').setAttribute('opacity', .85 + .15 * Math.sin(t * 4));
+  $('keysHang').setAttribute('opacity', t < 2.5 || t >= 23.2 ? 1 : 0); // ...and their keys are on their hook too
+  // the hallway: feet leave when the knocking stops; they come back next door
+  $('gap').setAttribute('fill', '#ff3b30');
+  attr($('gapSpill'), { fill: '#ff3b30', opacity: .3 });
+  let fx = 0;
+  if (t < 23.2) fx = io(seg(t, 2.2, 2.9)) * 260;
+  else fx = 260 * (1 - io(seg(t, 24.4, 25.1)));
+  $('foot1').setAttribute('x', 1800 + fx); $('foot2').setAttribute('x', 1858 + fx);
+  // dog
+  const dog = $('dog');
+  let dpos = 'translate(1255 1500)', dvis = 1, rise = 1, growl = .35;
+  if (inR(t, 3, 4.5)) dpos = 'translate(860 1500) scale(-1 1)';
+  else if (inR(t, 4.5, 8) || inR(t, 11.3, 23.2)) dpos = `translate(${t < 8 ? 2860 : 3080} 1500)`;
+  else if (inR(t, 8, 11.3)) dvis = 0;
+  if (t < 2.2) growl = .8;
+  if (t >= 23.2) { rise = ob(seg(t, 25.2, 25.7)); growl = t >= 25.2 ? 1 : 0; }
+  dog.setAttribute('transform', dpos); dog.setAttribute('opacity', dvis);
+  const breathe = Math.sin(t * (growl > .5 ? 7 : 2.4)) * (growl > .5 ? 2 : 1.2);
+  $('dogBody').setAttribute('transform', `translate(${growl * fbm(t * 8, 31) * 1.8} ${-36 * rise + breathe})`);
+  [...$('dogLegs').children].forEach(l => attr(l, { y: -40 - 36 * rise + breathe, height: 40 + 36 * rise - breathe }));
+  $('hackles').setAttribute('opacity', clamp(rise));
+  $('dogEye').setAttribute('fill', rise > .5 ? '#ff3b30' : '#ffb347');
+  attr($('dogEyeH'), { fill: rise > .5 ? 'url(#redHalo)' : 'url(#ambHalo)', opacity: .75 + .25 * Math.sin(t * 4) });
+  // door: soft knocks (EP1's echo), then the three knocks next door
+  const knock = [...KNOCKS.map(x => [x, 1]), ...SOFT.map(x => [x, .4])].reduce((a, [x, g]) => a + (t >= x ? g * Math.exp(-(t - x) * 9) * Math.sin((t - x) * 52) : 0), 0);
+  const dt = `translate(${knock * 6} 0)`;
+  $('doorBase').setAttribute('transform', dt); $('doorHW').setAttribute('transform', dt);
+  const glow = t >= 23.2 ? io(seg(t, 24.0, 24.6)) : 0;
+  $('peepGlowG').setAttribute('opacity', glow);
+  $('peepHalo').setAttribute('opacity', glow * (.75 + .25 * Math.sin(t * 4)));
+  [...$('peepRings').children].forEach(c => c.setAttribute('opacity', 0));
+  $('handle').setAttribute('transform', 'translate(1712 1232)');
+  $('handleHalo').setAttribute('opacity', 0);
+  $('bowl').setAttribute('transform', `translate(${1410 + pulseAt(t, KNOCKS, .2) * fbm(t * 9, 32) * 3} 1500)`);
+  // the chain: latched... until it slides off by itself in the empty flat
+  const plate = [1667, 1141];
+  let end = [1748, 1131], sag = 50;
+  const swing = .3 * Math.sin(t * 1.8) + [...KNOCKS, ...SOFT].reduce((a, x) => a + (t >= x ? 1.2 * Math.exp(-(t - x) * 2.2) * Math.sin((t - x) * 11) : 0), 0);
+  let ctrl = [1707 + swing * 16, 1192 - Math.abs(swing) * 6];
+  if (inR(t, 8.6, 23.2)) {
+    const sl = io(seg(t, 8.6, 9.6));
+    end = [lerp(1748, 1790, sl) + (t < 9.6 ? fbm(t * 12, 71) * 1.5 : 0), 1131];
+    ctrl = [(plate[0] + end[0]) / 2, 1192 - 10 * sl];
+    if (t >= 9.6) {
+      const L = Math.hypot(1790 - plate[0], 1131 - plate[1]), th0 = Math.atan2(1790 - plate[0], 1131 - plate[1]);
+      const tau = t - 9.6, th = th0 * Math.exp(-2.2 * tau) * Math.cos(5.5 * tau);
+      end = [plate[0] + L * Math.sin(th), plate[1] + L * Math.cos(th)];
+      ctrl = [(plate[0] + end[0]) / 2 + Math.cos(th) * 10, (plate[1] + end[1]) / 2 + Math.sin(Math.abs(th)) * 14];
+    }
+    sag = 0;
+  }
+  const cd = `M${plate[0]} ${plate[1]} Q${ctrl[0]} ${ctrl[1]} ${end[0]} ${end[1]}`;
+  $('chain').setAttribute('d', cd); $('chainL').setAttribute('d', cd);
+  attr($('chainKnob'), { cx: end[0], cy: end[1] });
+  // exterior: wind, the open door, the car alarm, the neighbour's microwave
+  $('slidePane').setAttribute('transform', `translate(${-150 * io(seg(t, 4.5, 5.0))} 0)`);
+  $('curtainOut').setAttribute('opacity', t >= 4.6 ? 1 : 0);
+  $('curtainOut').setAttribute('transform', `translate(2978 925) skewX(${-8 + fbm(t * 1.4, 81) * 16}) translate(-2978 -925)`);
+  $('lau1').setAttribute('transform', `rotate(${8 + fbm(t * 1.7, 82) * 18} 2718 1258)`);
+  $('lau2').setAttribute('transform', `rotate(${6 + fbm(t * 1.5, 83) * 14} 2764 1258)`);
+  const blinkA = t >= 4.8 ? (Math.floor(t * 3) % 2) : 0;
+  $('carL1').setAttribute('opacity', blinkA ? 1 : .2); $('carL2').setAttribute('opacity', blinkA ? .2 : 1);
+  $('carH1').setAttribute('opacity', blinkA ? .9 : 0); $('carH2').setAttribute('opacity', t >= 4.8 && !blinkA ? .9 : 0);
+  [...$('runners').children].forEach((g, i) => {
+    const sp = [260, -340, 200, -280][i], x0 = [2400, 4700, 2900, 4200][i];
+    const x = 2200 + (((x0 - 2200 + sp * t) % 3000) + 3000) % 3000;
+    g.setAttribute('transform', `translate(${x} ${3470 + Math.abs(Math.sin(t * 9 + i)) * -6}) scale(${sp < 0 ? -1.6 : 1.6} 1.6)`);
+  });
+  const ng = io(seg(t, 21.6, 22.1));
+  $('ngMw').setAttribute('opacity', ng * (.8 + .2 * Math.sin(t * 5)));
+  $('ngMwD').setAttribute('opacity', ng);
+  $('ngPizza').setAttribute('opacity', .8 * io(seg(t, 22.3, 22.8)));
+  [...$('ngRings').children].forEach((c, i) => {
+    const ph = t >= 21.8 ? ((t - 21.8) / 1.1 + i / 3) % 1 : 0, on = inR(t, 21.8 + i * .35, 23.2);
+    attr(c, { r: 10 + oc(ph) * 160, opacity: on ? (1 - ph) * .9 : 0 });
+  });
+}
+
+/* ---------- overlays ---------- */
+const SFX = [
+  [0.6, 1.05, '[KNOCK]', 400], [1.2, 1.7, '[KNOCK]', 470], [2.2, 3.0, '[...SILENCE]', 420],
+  [4.5, 5.3, '[WHOOSH]', 380], [6.4, 8.0, '[CAR ALARM]', 420],
+  [8.6, 9.6, '[SCRAAAPE]', 470], [9.65, 10.6, '[CLINK]', 470],
+  [14.75, 15.4, '[BZZT]', 380], [15.95, 16.6, '[BZZT]', 380], [19.4, 20.6, '[WIND]', 380],
+];
+const CAPS = [...VO.lines.filter(l => l.kind !== 'end').map(l => [l.a, l.b + .25, l.cap, l.kind, 0]), ...SFX.map(s => [s[0], s[1], s[2], 'sfx', s[3]])];
+const CAPEL = { vo: ['vo', 'voG', 1490, 960], sfx: ['sfx', 'sfxG', 420, 980], fr: ['fr', 'frG', 1450, 960] };
+function caption(t, kind) {
+  const [tid, gid, y0, maxW] = CAPEL[kind];
+  let cur = null;
+  for (const c of CAPS) if (c[3] === kind && t >= c[0] && t < c[1]) cur = c;
+  const g = $(gid);
+  if (!cur) { g.setAttribute('opacity', 0); return; }
+  setLines($(tid), cur[2], maxW);
+  const y = cur[4] || y0, k = seg(t, cur[0], cur[0] + .22), s = lerp(.7, 1, ob(k));
+  const rot = kind === 'sfx' ? -4 + Math.sin(t * 2.5) * 1.2 : 0;
+  g.setAttribute('opacity', clamp(k * 3));
+  g.setAttribute('transform', `translate(540 ${y + (1 - oc(k)) * 18}) rotate(${rot}) scale(${s})`);
+}
+const BEATS = []; (() => { let x = 18.0; while (x < 23.2) { BEATS.push(x); x += 60 / lerp(80, 150, (x - 18) / 5.2); } })();
+function overlays(t) {
+  // 0–0.85: EP1's ending card; B wins, A falls away. Then the title.
+  const startCard = t < 0.85, endCard = t >= 28.6;
+  setOne($('optA'), startCard ? 'OPEN THE DOOR FOR JAY' : 'LET JAY IN', 700);
+  setOne($('optB'), startCard ? 'ESCAPE OVER THE BALCONY' : 'DROP TO THE STREET', 700);
+  $('v2').textContent = startCard ? "IT'S JAY. ...RIGHT?" : 'HOW DID HE FIND ME?';
+  const ab = $('ab');
+  ab.setAttribute('opacity', startCard ? 1 - seg(t, .55, .85) : endCard ? 1 : 0);
+  $('abDim').setAttribute('opacity', startCard ? .1 * (1 - seg(t, .55, .85)) : endCard ? .1 : 0);
+  if (startCard) {
+    const k = ob(seg(t, .05, .3)), fall = Math.pow(seg(t, .25, .7), 2);
+    attr($('abT'), { opacity: 1, transform: `translate(540 455) rotate(-3)` });
+    attr($('v2G'), { opacity: 1 - seg(t, .1, .3), transform: 'translate(540 1495)' });
+    attr($('cardA'), { opacity: 1 - seg(t, .25, .6), transform: `translate(${540 - 80 * fall} ${1170 + 500 * fall}) rotate(${-12 * fall})` });
+    attr($('cardB'), { opacity: 1, transform: `translate(540 1345) scale(${lerp(1, 1.12, k)})` });
+    attr($('voteG'), { opacity: 1 - seg(t, .1, .3), transform: 'translate(540 1575)' });
+  } else if (endCard) {
+    const pop = (id, a, x, y, rot = 0) => { const k = seg(t, a, a + .26); $(id).setAttribute('opacity', clamp(k * 3)); $(id).setAttribute('transform', `translate(${x} ${y}) scale(${lerp(.6, 1, ob(k))}) rotate(${rot})`); };
+    pop('abT', 28.6, 540, 455, -3 + Math.sin(t * 3) * 1);
+    pop('v2G', 28.62, 540, 1495);
+    pop('cardA', 28.78, 540, 1170);
+    pop('cardB', 29.0, 540, 1345);
+    pop('voteG', 29.3, 540, 1575);
+  }
+  const tg = $('titleG');
+  if (t >= .5 && t < 1.9) {
+    setLines($('title'), 'YOU SAID\nBALCONY.', 990);
+    const s = t < 1.7 ? lerp(.6, 1, ob(seg(t, .5, .85))) * (1 + .02 * Math.sin(t * 5)) : lerp(1, 1.25, io(seg(t, 1.7, 1.9)));
+    tg.setAttribute('opacity', t < 1.7 ? clamp((t - .5) * 8) : 1 - seg(t, 1.7, 1.9));
+    tg.setAttribute('transform', `translate(540 800) scale(${s}) rotate(${-2 + Math.sin(t * 3) * .8})`);
+  } else tg.setAttribute('opacity', 0);
+  let fl = Math.max(.42 * pulseAt(t, KNOCKS, .1), .12 * pulseAt(t, SOFT, .1), .18 * pulseAt(t, [4.5, 8.0, 11.3, 23.2], .12));
+  $('flash').setAttribute('opacity', fl);
+  const hb = inR(t, 18, 23.2) ? pulseAt(t, BEATS, .16) * (.35 + .55 * seg(t, 18, 23.2)) : 0;
+  $('vigRedR').setAttribute('opacity', Math.max(hb, t >= 25 ? .35 + .12 * Math.sin(t * 3) : 0, inR(t, 6.2, 8) ? .3 * seg(t, 6.2, 7) : 0));
+  let py = 3000, shake = '';
+  if (inR(t, 14.6, 18)) {
+    py = lerp(1500, 0, ob(seg(t, 14.6, 14.92))) + lerp(0, 1500, Math.pow(seg(t, 17.8, 18), 2));
+    $('lowBatt').setAttribute('opacity', 0);
+    const n1 = ob(seg(t, 15.0, 15.3)), n2 = ob(seg(t, 16.2, 16.5));
+    $('note1').setAttribute('opacity', clamp(n1)); $('note1').setAttribute('transform', `translate(0 ${lerp(-60, 0, n1)})`);
+    $('note2').setAttribute('opacity', clamp(n2)); $('note2').setAttribute('transform', `translate(0 ${lerp(-60, 0, n2)})`);
+    $('battTxt').textContent = '1%'; $('battFill').setAttribute('width', 1);
+    $('batt').setAttribute('opacity', .55 + .45 * Math.sin(t * 7));
+    if (inR(t, 14.75, 15.2) || inR(t, 15.95, 16.4)) shake = `translate(${fbm(t * 16, 51) * 9} ${fbm(t * 16, 52) * 4}) rotate(${fbm(t * 14, 53) * 2})`;
+  }
+  $('lockTime').textContent = fmt(clockSec(t), false);
+  $('phoneUI').setAttribute('transform', `translate(540 ${930 + py}) rotate(${Math.sin(t * 1.3) * 1})`);
+  $('phoneShake').setAttribute('transform', shake);
+  const pe = inR(t, 26.4, 28.6);
+  $('peep').setAttribute('opacity', pe ? 1 : 0);
+  if (pe) {
+    const ir = oc(seg(t, 26.4, 26.66));
+    $('peepCirc').setAttribute('r', 420 * ir);
+    $('peepRing').setAttribute('r', 420 * ir); $('peepRing2').setAttribute('r', 398 * ir);
+    $('peepDisp').setAttribute('scale', lerp(80, 16, oc(seg(t, 26.4, 27.2))) + 6 * Math.sin(t * 3.5));
+    const lean = io(seg(t, 26.8, 27.7)), speak = envAt(VO.fenv, t);
+    // the tell: this time the brim is on the OTHER side
+    $('friend').setAttribute('transform', `translate(1120 0) scale(-1 1) translate(560 1180) scale(${1 + .07 * lean + .01 * speak}) rotate(${Math.sin(t * 1.2) * 1.4 - 3 * lean + speak * 1.2}) translate(-560 -1180)`);
+    [...$('peepRipple').children].forEach((c, i) => { const ph = ((t - 26.4) / 1.3 + i / 3) % 1; attr(c, { r: 40 + oc(ph) * 380, opacity: (1 - ph) * .5 }); });
+  }
+  ['k1', 'k2', 'k3'].forEach((id, i) => {
+    const a = KNOCKS[i], on = t >= a && t < 26.4, k = seg(t, a, a + .14);
+    $(id).setAttribute('opacity', on ? 1 : 0);
+    const base = [[290, 560, -8], [790, 470, 6], [540, 720, -3]][i];
+    $(id).setAttribute('transform', `translate(${base[0]} ${base[1]}) rotate(${base[2]}) scale(${lerp(1.6, 1, oc(k))})`);
+  });
+  caption(t, 'vo'); caption(t, 'sfx'); caption(t, 'fr');
+}
+function ui(t) {
+  $('clock').textContent = fmt(clockSec(t), true);
+  const j = JUMPS.reduce((m, x) => (t >= x ? x : m), -9);
+  const k = seg(t, j, j + .4);
+  $('clock').setAttribute('fill', k < 1 ? mix('#ffb347', '#ff3b30', k) : '#ff3b30');
+  $('clockG').setAttribute('transform', `translate(540 165) scale(${k < 1 ? lerp(1.25, 1, ob(k)) : 1})`);
+}
+
+function syncCSS(t) { for (const a of document.getAnimations()) { a.pause(); a.currentTime = t * 1000; } }
+function render(t) {
+  t = clamp(t, 0, DUR);
+  syncCSS(t); camera(t); world(t); man(t); overlays(t); ui(t);
+}
+window.renderAt = render;
+
+let start = 0, running = false;
+function loop(now) {
+  const t = (now - start) / 1000;
+  render(Math.min(t, DUR));
+  if (t < DUR && running) requestAnimationFrame(loop); else running = false;
+}
+function play() { start = performance.now(); if (!running) { running = true; requestAnimationFrame(loop); } }
+render(0);
+if (CAPTURE) { $('start').remove(); window.READY = true; return; }
+$('start').addEventListener('pointerdown', e => { e.stopPropagation(); $('start').remove(); play(); }, { once: true });
+addEventListener('keydown', e => { if (e.key === 'r' || e.key === 'R') { if ($('start')) $('start').remove(); play(); } });
+let taps = [];
+addEventListener('pointerdown', () => { const n = performance.now(); taps = taps.filter(x => n - x < 700); taps.push(n); if (taps.length >= 3 && !$('start')) { taps = []; play(); } });
+})();
+</script>
+</body>
+</html>
