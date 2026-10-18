@@ -41,46 +41,46 @@ def build(h):
         #     and raises his flashlight; the camera already pushing; the headline burned in; the series tag in the bug.
         S("s01_hook", "bf73_hook", [N("Smugglers made a fake Border Patrol truck.", tone="hook"),
                                     N("It is number 3 on this list.", tone="playful")],
-          "tension", ["K_hook", "K_list"], sfx=[fx(0.0, "rasp", 0.36), fx(0.0, "sub", 0.2), fw(0, 6, "whoosh", 0.3, 0.12), fw(1, 3, "click", 0.36, 0.0)],
+          "tension", ["K_hook", "K_list"], sfx=[fx(0.0, "rasp", 0.16), fx(0.0, "sub", 0.2), fw(0, 6, "whoosh", 0.34, 0.32), fw(1, 6, "click", 0.4, 0.3)],
           emph=["smugglers", "made", "fake", "border", "patrol", "truck.", "number", "3"], min_d=3.6, pad=0.12),
         # B - ITEM 1, THE FAKE FEDEX VANS (a LIKE moment): a west El Paso street by day; two plain white vans pulled over
         #     at the kerb, a patrol car behind; an officer walks up with a flashlight and waves the driver out
         S("s02_fedex", "bf73_fedex", [N("First: two vans dressed as FedEx.", tone="confident"),
                                       N("Agents still stopped them. Four arrests.", tone="playful")],
-          "tension-rise", ["K_fedex"], sfx=[fw(0, 1, "whoosh", 0.24, -0.08), fw(1, 2, "brake", 0.28, 0.0), fw(1, 4, "cuffs", 0.34, 0.25)],
+          "tension-rise", ["K_fedex"], sfx=[fw(0, 0, "whoosh", 0.3, -0.22), fw(1, 3, "brake", 0.34, 0.28), fw(1, 5, "cuffs", 0.4, 0.45)],
           emph=["two", "vans", "fedex.", "still", "stopped", "four", "arrests."], min_d=3.8, pad=0.12, tr="cut"),
         # B - the rehook + ITEM 2, THE K-9 CLONE: the desert at night, the border wall far behind; the fake K-9 truck (a dog
         #     box in the bed) drives left to right along the dirt road; an agent by a parked car in the foreground turns to
         #     follow it with his eyes and points on 'K-9'
         S("s03_k9", "bf73_k9", [N("But the next fake was bolder.", tone="tense"),
                                 N("A cloned Border Patrol K-9 truck.", tone="confident")],
-          "tension-rise", ["K_k9"], sfx=[fw(0, 0, "whoosh", 0.22, -0.06), fw(1, 5, "radio", 0.26, 0.05)],
+          "tension-rise", ["K_k9"], sfx=[fw(0, 0, "whoosh", 0.3, -0.24), fw(1, 5, "radio", 0.34, 0.4)],
           emph=["next", "fake", "bolder.", "cloned", "k-9", "truck."], min_d=3.8, pad=0.12, tr="dissolve"),
         # B - the K-9 clone's payoff (a LIKE moment + the FUN FACT): the truck's tailgate at a house's garage at night;
         #     the copied plate is circled; then the garage door rolls up and two agents walk in with flashlights
         S("s04_plate", "bf73_plate", [N("It even copied a real unit's plate number.", tone="playful"),
                                       N("Agents simply followed it home.", tone="playful")],
-          "tension", ["K_plate", "K_home"], sfx=[fw(0, 6, "sparkle", 0.3, 0.0), fw(1, 2, "step", 0.32, 0.0), fw(1, 4, "door", 0.36, 0.05)],
+          "tension", ["K_plate", "K_home"], sfx=[fw(0, 7, "sparkle", 0.36, 0.38), fw(1, 0, "step", 0.34, -0.2), fw(1, 4, "door", 0.4, 0.4)],
           emph=["copied", "real", "plate", "number.", "simply", "followed", "home."], min_d=3.8, pad=0.3, tr="cut"),
         # C - ITEM 3 begins: close on the fence at dusk; an anonymous silhouette on the Mexican side cuts a bollard
         #     (sparks); the cut gap opens
         S("s05_cut", "bf73_cut", [N("Then, near Calexico, someone cut the border fence.", tone="tense")],
-          "tension-rise", ["K_cut"], sfx=[fw(0, 0, "riser", 0.2, -0.3), fw(0, 4, "rasp", 0.32, 0.0), fw(0, 7, "gate", 0.34, 0.05)],
+          "tension-rise", ["K_cut"], sfx=[fw(0, 0, "rasp", 0.16, -0.26), fw(0, 7, "gate", 0.4, 0.42)],
           emph=["calexico,", "someone", "cut", "border", "fence."], min_d=3.8, pad=0.15, tr="push"),
         # D - THE BIGGEST REVEAL (music drop, the single impact): the American side on a dark rise; two real agents by
         #     their vehicle, watching the far sparks through the dusk; a rack focus snaps onto them on 'watching'
         S("s06_watch", "bf73_watch", [N("But the real Border Patrol was watching.", tone="reveal")],
-          "revelation", ["K_watch"], sfx=[fw(0, 0, "riser", 0.2, -0.6), fw(0, 6, "hit", 0.4, -0.03), fw(0, 6, "radio", 0.24, 0.45)],
+          "revelation", ["K_watch"], sfx=[fw(0, 0, "riser", 0.2, -0.6), fw(0, 6, "hit", 0.4, -0.03), fw(0, 6, "radio", 0.34, 0.62)],
           emph=["real", "border", "patrol", "watching."], min_d=3.8, pad=0.25, tr="cut"),
         # C - the outcome: the Mexican side at night; a generic police pickup's lights; two officers with flashlights at
         #     the fake truck; the 17 counter (the people are never drawn as the joke and stay out of frame)
         S("s07_found", "bf73_found", [N("Mexican police found the fake truck, and 17 people.", tone="confident")],
-          "tension", ["K_found"], sfx=[fx(0.0, "siren", 0.12), fw(0, 4, "click", 0.34, 0.0), fw(0, 7, "tick", 0.32, 0.0)],
+          "tension", ["K_found"], sfx=[fx(0.0, "siren", 0.06), fw(0, 4, "click", 0.38, 0.32), fw(0, 7, "tick", 0.36, 0.45)],
           emph=["mexican", "police", "found", "fake", "truck,", "17", "people."], min_d=3.8, pad=0.3, tr="dissolve"),
         # E - the ONE closing line, back on frame 1's picture (the loop): the fake truck behind the cut fence, the agent;
         #     the camera eases back to frame 1's start framing; the end card; pad 0.6, no fade
         S("s08_end", "bf73_end", [N("That fake truck never even made it across.", tone="reveal")],
-          "aftermath", ["K_punch", "K_part5"], sfx=[fw(0, 1, "whoosh", 0.26, -0.05), fw(0, 7, "sting", 0.32, 0.05)],
+          "aftermath", ["K_punch", "K_part5"], sfx=[fw(0, 0, "whoosh", 0.3, -0.3), fw(0, 7, "sting", 0.36, 0.42)],
           emph=["fake", "truck", "never", "across."], min_d=3.4, pad=0.6, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_fedex": "B", "s03_k9": "B", "s04_plate": "B", "s05_cut": "C", "s06_watch": "D",
