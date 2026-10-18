@@ -1,0 +1,366 @@
+{
+  "id": "ep008-microwave-door",
+  "number": 8,
+  "title": "You Can See Through Your Microwave Door. The Microwaves Can't.",
+  "central_question": "If you can see straight through a microwave's door, why can't the microwaves get out?",
+  "template": "counterintuitive-truth",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.32,
+  "target_duration_seconds": [
+    36,
+    56
+  ],
+  "visual_mode": "svg",
+  "libs": [
+    {
+      "path": "node_modules/three/build/three.cjs",
+      "global": "THREE"
+    },
+    {
+      "path": "renderer/kit3d.js",
+      "global": "KIT3D"
+    }
+  ],
+  "fiction_notice": "Illustration. Waves drawn far larger than life; sizes are labelled.",
+  "music": {
+    "style": "pulse-to-reveal",
+    "bpm": 100
+  },
+  "physics": {
+    "frequency_ghz": 2.45,
+    "wavelength_cm": 12.2,
+    "hole_mm": [
+      1,
+      2
+    ],
+    "light_um": [
+      0.4,
+      0.7
+    ],
+    "leak_limit_mw_cm2": 5,
+    "leak_limit_distance": "about 2 inches (5 cm)"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "hook_glass",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "narration": "You think the glass door stops the microwaves. It doesn't. Glass lets them straight through. That dotted metal sheet does the work.",
+      "caption": "Glass lets microwaves through. The dotted metal sheet stops them.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.0,
+          "name": "buzz"
+        },
+        {
+          "at": 0.87,
+          "name": "ping"
+        },
+        {
+          "at": 2.56,
+          "name": "sting"
+        },
+        {
+          "at": 4.88,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s02_wave",
+      "scene": "wave_size",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "narration": "Inside, the oven fires waves about twelve centimetres long. They bounce off the metal walls.",
+      "caption": "Each microwave is about 12 cm long.",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 0.05,
+          "name": "whoosh"
+        },
+        {
+          "at": 1.95,
+          "name": "sparkle"
+        },
+        {
+          "at": 3.48,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C2"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s03_holes",
+      "scene": "mesh_holes",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "narration": "The holes in that sheet are one or two millimetres. Holes that small act like solid metal. The waves bounce back.",
+      "caption": "Holes far smaller than the wave act like solid metal.",
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "at": 0.05,
+          "name": "whoosh"
+        },
+        {
+          "at": 0.44,
+          "name": "ping"
+        },
+        {
+          "at": 5.18,
+          "name": "thud"
+        },
+        {
+          "at": 5.38,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s04_light",
+      "scene": "light_through",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "narration": "Light waves are thousands of times smaller. They slip straight through. That's how you see your food.",
+      "caption": "Light is thousands of times smaller. It slips through.",
+      "music_cue": "warm",
+      "sfx": [
+        {
+          "at": 0.25,
+          "name": "sparkle"
+        },
+        {
+          "at": 2.4,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C4"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s05_sceptic",
+      "scene": "sceptic_wifi",
+      "min_duration": 7.5,
+      "pad_after": 0.4,
+      "narration": "\"Then why does my Wi-Fi drop when it's on?\" Good catch. Wi-Fi uses the same band. A tiny leak, within safety limits, drowns it out.",
+      "caption": "Wi-Fi shares the 2.4 GHz band. A tiny legal leak drowns it out.",
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 2.58,
+          "name": "beep"
+        },
+        {
+          "at": 4.97,
+          "name": "static"
+        },
+        {
+          "at": 6.72,
+          "name": "static"
+        }
+      ],
+      "claims": [
+        "C5",
+        "C6"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s06_cage",
+      "scene": "faraday_cage",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "narration": "The whole oven is a metal cage. Walls, door, even the window. A Faraday cage you cook in.",
+      "caption": "The whole oven is a Faraday cage.",
+      "music_cue": "power",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "swell"
+        },
+        {
+          "at": 1.57,
+          "name": "gate"
+        },
+        {
+          "at": 3.91,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C7"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s07_threshold",
+      "scene": "threshold_frozen",
+      "min_duration": 2.8,
+      "pad_after": 0.9,
+      "narration": "So why is the middle of your food still frozen?",
+      "caption": "So why is the middle of your food still frozen?",
+      "music_cue": "hush",
+      "sfx": [
+        {
+          "at": 0.05,
+          "name": "beep"
+        },
+        {
+          "at": 0.35,
+          "name": "beep"
+        },
+        {
+          "at": 0.65,
+          "name": "beep"
+        }
+      ],
+      "claims": [],
+      "transition": "cut"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "Microwaves are reflected by metal; they pass through glass, paper and plastic and are absorbed by food (FDA).",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Household ovens run at about 2.45 GHz, so the wavelength is c/f ≈ 12.2 cm; the waves reflect off the metal interior.",
+      "sources": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "The door screen is a conducting mesh with holes of roughly 1–2 mm; a conducting surface with holes much smaller than the wavelength reflects the wave, as if solid.",
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "Visible light has wavelengths of about 0.4–0.7 µm, thousands of times smaller than the holes, so it passes through.",
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "established",
+      "text": "Common Wi-Fi (802.11b/g/n) uses the same 2.4 GHz band; ovens leak a small amount, within the legal limit, which can swamp nearby Wi-Fi.",
+      "sources": [
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "established",
+      "text": "US federal standard 21 CFR 1030.10 limits lifetime leakage to 5 mW/cm² at about 2 inches from the surface, far below levels known to harm people (FDA).",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C7",
+      "type": "established",
+      "text": "The metal cavity, door and mesh together form a Faraday cage that keeps the microwaves inside.",
+      "sources": [
+        "S4",
+        "S7"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Microwave Ovens (radiation-emitting products)",
+      "publisher": "US Food and Drug Administration",
+      "url": "https://www.fda.gov/radiation-emittingproducts/resourcesforyouradiationemittingproducts/ucm252762.htm",
+      "date": "current",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S2",
+      "title": "Microwave Ovens",
+      "publisher": "Health Physics Society",
+      "url": "https://hps.org/hpspublications/articles/microwaveovens.html",
+      "date": "current",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S3",
+      "title": "What keeps microwave radiation from leaking out the oven door?",
+      "publisher": "The Straight Dope",
+      "url": "https://www.straightdope.com/21343269/what-keeps-microwave-radiation-from-leaking-out-the-oven-door",
+      "date": "undated",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S4",
+      "title": "Physics explainer: microwave oven door screens",
+      "publisher": "Swinburne University (Sarawak)",
+      "url": "https://www.swinburne.edu.my/?p=4929",
+      "date": "23 July 2014",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S5",
+      "title": "Do microwaves interfere with WiFi signals?",
+      "publisher": "ScienceABC",
+      "url": "https://www.scienceabc.com/innovation/do-microwaves-interfere-with-wifi-signals.html",
+      "date": "undated",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S6",
+      "title": "Method and apparatus for avoiding interference between WiFi operation and microwave oven operation (US patent 10869274)",
+      "publisher": "USPTO",
+      "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10869274",
+      "date": "2020",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S7",
+      "title": "Why microwaves have that strange mesh on the door",
+      "publisher": "The Takeout",
+      "url": "https://www.thetakeout.com/2073815/why-microwaves-mesh-on-door-important/",
+      "date": "undated",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    }
+  ]
+}

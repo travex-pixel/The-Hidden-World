@@ -12,3 +12,5 @@ Final rendered episodes, committed so they can be downloaded directly from GitHu
 | 006 — ChatGPT's Answer Doesn't Exist Until You Watch It Appear (3D, three.js) | `ep006-ai-next-token.mp4` with `.srt`, `.script.md` and `.upload.md` | 1 | 2026-10-18, local pipeline run | `ep006-ai-next-token.verify.json` (13 checks, including the new flicker check); contact sheet alongside |
 
 **Known issue, Episode 005:** the road surface flashes on many frames in the 3D shots (z-fighting between the road strips and the ground plane). It was found after release and left unfixed on request; the new `no_frame_flicker` check fails on that file.
+| 007 — Every ChatGPT Answer Ends With a Word You Never See (AI part 2, 3D) | `ep007-ai-stop-token.mp4` (41.4 s) with `.srt`, `.script.md`, `.upload.md` | 1 | 2026-10-18 | `ep007-ai-stop-token.verify.json` — all 13 checks pass |
+| 008 — You Can See Through Your Microwave Door. The Microwaves Can't. (3D) | `ep008-microwave-door.mp4` (39.2 s) with `.srt`, `.script.md`, `.upload.md` | 1 | 2026-10-18 | `ep008-microwave-door.verify.json` — all 13 checks pass |

@@ -62,3 +62,7 @@ Infrastructure 7 · Money 6 · Science 7. Target 40/35/25 — slightly science-h
 | 23 | ChatGPT's Answer Doesn't Exist Until You Watch It Appear | Tech | Counterintuitive truth | 5 | 4 | 5 | 4 | 5 | 3 | 3 | 5 | 34 | **DONE — Episode 006.** OpenAI tokens/streaming/seed docs, tiktoken (splits computed locally), Anthropic planning-ahead research used to drop an overclaiming hook |
 
 **Next from the shortlist:** microwave door mesh ("You can see through it. The microwaves can't."); robot vacuum lidar maps; AI part 2, "how does it know when to stop?" (end-of-turn token).
+| 24 | Every ChatGPT Answer Ends With a Word You Never See (AI part 2) | Tech | Counterintuitive truth | 5 | 4 | 5 | 4 | 4 | 3 | 4 | 4 | 33 | **DONE — Episode 007.** Meta Llama 3 prompt format, OpenAI finish_reason |
+| 25 | You Can See Through Your Microwave Door. The Microwaves Can't. | Science / kitchen | Counterintuitive truth | 5 | 5 | 5 | 5 | 5 | 4 | 4 | 5 | 38 | **DONE — Episode 008.** FDA, HPS, Swinburne explainer |
+
+**Next:** microwave part 2, "why is the middle still frozen?" (standing waves, hot and cold spots, turntable); AI part 3, "who taught it what a finished answer looks like?" (fine-tuning and human feedback); robot vacuum lidar maps.

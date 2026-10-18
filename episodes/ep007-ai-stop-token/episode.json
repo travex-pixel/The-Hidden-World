@@ -1,0 +1,501 @@
+{
+  "id": "ep007-ai-stop-token",
+  "number": 7,
+  "title": "Every ChatGPT Answer Ends With a Word You Never See",
+  "central_question": "If a chatbot writes one token at a time, how does it know when to stop?",
+  "template": "counterintuitive-truth",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.32,
+  "target_duration_seconds": [
+    36,
+    56
+  ],
+  "visual_mode": "svg",
+  "libs": [
+    {
+      "path": "node_modules/three/build/three.cjs",
+      "global": "THREE"
+    },
+    {
+      "path": "renderer/kit3d.js",
+      "global": "KIT3D"
+    }
+  ],
+  "fiction_notice": "Illustration. Probabilities are invented for the example; the end token shown is Meta Llama 3's.",
+  "music": {
+    "style": "pulse-to-reveal",
+    "bpm": 100
+  },
+  "example": {
+    "question": "Why is the sky blue?",
+    "answer": [
+      "The",
+      " sky",
+      " looks",
+      " blue",
+      " because",
+      " air",
+      " sc",
+      "atters",
+      " blue",
+      " light",
+      " the",
+      " most",
+      "."
+    ],
+    "ramble": [
+      " Also",
+      ",",
+      " sun",
+      "sets",
+      " look",
+      " red",
+      " because",
+      " the",
+      " light",
+      " travels",
+      " further",
+      "."
+    ],
+    "cutoff": [
+      "Sun",
+      "light",
+      " hits",
+      " the",
+      " air",
+      ",",
+      " and",
+      " the",
+      " blue",
+      " part",
+      " b",
+      "ounces",
+      " around",
+      " far",
+      " more",
+      " than",
+      " the",
+      " red",
+      ",",
+      " which",
+      " travels"
+    ],
+    "end_token": "<|eot_id|>",
+    "end_token_model": "Meta Llama 3",
+    "mid_sentence_end_pct": 0.1,
+    "after_answer": [
+      [
+        "END",
+        90
+      ],
+      [
+        " Also",
+        6
+      ],
+      [
+        "(others)",
+        4
+      ]
+    ],
+    "limit_tokens": 21
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "hook_end",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "narration": "You think ChatGPT's answer ends at the last full stop. It doesn't. It ends on a hidden word you never see.",
+      "caption": "Every answer ends on a hidden word you never see.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "tick"
+        },
+        {
+          "at": 0.27,
+          "name": "tick"
+        },
+        {
+          "at": 0.44,
+          "name": "tick"
+        },
+        {
+          "at": 0.61,
+          "name": "tick"
+        },
+        {
+          "at": 0.78,
+          "name": "tick"
+        },
+        {
+          "at": 0.95,
+          "name": "tick"
+        },
+        {
+          "at": 1.12,
+          "name": "tick"
+        },
+        {
+          "at": 1.29,
+          "name": "tick"
+        },
+        {
+          "at": 1.46,
+          "name": "tick"
+        },
+        {
+          "at": 1.63,
+          "name": "tick"
+        },
+        {
+          "at": 1.8,
+          "name": "tick"
+        },
+        {
+          "at": 1.97,
+          "name": "tick"
+        },
+        {
+          "at": 2.14,
+          "name": "tick"
+        },
+        {
+          "at": 3.15,
+          "name": "sting"
+        },
+        {
+          "at": 4.4,
+          "name": "swell"
+        },
+        {
+          "at": 5.15,
+          "name": "ping"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s02_token",
+      "scene": "end_token",
+      "min_duration": 5.0,
+      "pad_after": 0.3,
+      "narration": "It's a special end token. Meta's Llama models use this one. Roll it, and the app hides it and stops.",
+      "caption": "A special end token. Roll it, and the app stops.",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 0.05,
+          "name": "whoosh"
+        },
+        {
+          "at": 1.89,
+          "name": "chime"
+        },
+        {
+          "at": 3.94,
+          "name": "whoosh"
+        },
+        {
+          "at": 5.97,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s03_menu",
+      "scene": "always_menu",
+      "min_duration": 5.5,
+      "pad_after": 0.3,
+      "narration": "Remember, every piece is a weighted roll. The end token is always on the menu. Mid-sentence, its chance is tiny.",
+      "caption": "The end token is always on the menu. Mid-sentence: tiny.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "whoosh"
+        },
+        {
+          "at": 3.02,
+          "name": "ping"
+        },
+        {
+          "at": 5.38,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C2",
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s04_rise",
+      "scene": "shoots_up",
+      "min_duration": 5.5,
+      "pad_after": 0.3,
+      "narration": "After a finished answer, it shoots up. Training did that. Every example answer ended with that token.",
+      "caption": "After a finished answer, it shoots up. Training did that.",
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "at": 0.4,
+          "name": "swell"
+        },
+        {
+          "at": 2.45,
+          "name": "paper"
+        },
+        {
+          "at": 3.56,
+          "name": "sparkle"
+        }
+      ],
+      "claims": [
+        "C3",
+        "C4"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s05_sceptic",
+      "scene": "sceptic_ramble",
+      "min_duration": 7.0,
+      "pad_after": 0.4,
+      "narration": "\"So it just knows when it's done?\" Watch. Ninety percent says stop. The roll lands on \"Also\". It keeps going.",
+      "caption": "90% says stop. The roll lands on \"Also\". It keeps going.",
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 4.42,
+          "name": "tick"
+        },
+        {
+          "at": 4.09,
+          "name": "tick"
+        },
+        {
+          "at": 3.82,
+          "name": "tick"
+        },
+        {
+          "at": 3.6,
+          "name": "tick"
+        },
+        {
+          "at": 3.42,
+          "name": "tick"
+        },
+        {
+          "at": 3.27,
+          "name": "tick"
+        },
+        {
+          "at": 3.14,
+          "name": "tick"
+        },
+        {
+          "at": 4.82,
+          "name": "ping"
+        },
+        {
+          "at": 6.01,
+          "name": "whoosh"
+        }
+      ],
+      "claims": [
+        "C3",
+        "C5"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s06_cutoff",
+      "scene": "hard_limit",
+      "min_duration": 5.5,
+      "pad_after": 0.3,
+      "narration": "And if it never rolls the end? The app has a hard limit. It cuts the answer mid-sentence.",
+      "caption": "Never rolls the end? A hard limit cuts it mid-sentence.",
+      "music_cue": "power",
+      "sfx": [
+        {
+          "at": 0.3,
+          "name": "tick"
+        },
+        {
+          "at": 0.7,
+          "name": "tick"
+        },
+        {
+          "at": 1.1,
+          "name": "tick"
+        },
+        {
+          "at": 1.5,
+          "name": "tick"
+        },
+        {
+          "at": 1.9,
+          "name": "tick"
+        },
+        {
+          "at": 2.3,
+          "name": "tick"
+        },
+        {
+          "at": 2.7,
+          "name": "tick"
+        },
+        {
+          "at": 3.1,
+          "name": "tick"
+        },
+        {
+          "at": 3.5,
+          "name": "tick"
+        },
+        {
+          "at": 3.9,
+          "name": "tick"
+        },
+        {
+          "at": 3.38,
+          "name": "brake"
+        },
+        {
+          "at": 3.48,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C6"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s07_threshold",
+      "scene": "threshold_teacher",
+      "min_duration": 2.8,
+      "pad_after": 0.9,
+      "narration": "So who taught it what a finished answer looks like?",
+      "caption": "So who taught it what a finished answer looks like?",
+      "music_cue": "hush",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "chime"
+        }
+      ],
+      "claims": [],
+      "transition": "cut"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "Chat models end their turn by generating a special end-of-turn token, which the app does not display; e.g. Meta documents that Llama 3 signals the end of the assistant message by generating <|eot_id|>. OpenAI's exact token for current ChatGPT models is not public; the mechanism is the same for chat LLMs.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "The end token is part of the model's vocabulary and is scored and sampled at each step like any other token; generation halts when it is produced.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "illustrative",
+      "text": "Probabilities shown (end token ~0.1% mid-sentence, ~90% after a complete answer, 'Also' 6%) are invented to show the shape.",
+      "sources": []
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "In chat-format training data, every assistant turn ends with the end-of-turn token, which is how the model learns where answers end.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "established",
+      "text": "With sampling, a high-probability token can still lose the draw, so a model can continue past a natural ending.",
+      "sources": [
+        "S3"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "established",
+      "text": "Apps and APIs also cap output length; when the cap is reached, generation stops even mid-sentence (finish_reason 'length' vs 'stop').",
+      "sources": [
+        "S4",
+        "S5"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Meta Llama 3: model cards and prompt formats",
+      "publisher": "Meta",
+      "url": "https://www.llama.com/docs/model-cards-and-prompt-formats/meta-llama-3/",
+      "date": "current",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S2",
+      "title": "Generation (eos_token_id stops generation)",
+      "publisher": "Hugging Face Transformers docs",
+      "url": "https://huggingface.co/docs/transformers/main_classes/text_generation",
+      "date": "current",
+      "accessed": "2026-10-18",
+      "access_method": "known reference"
+    },
+    {
+      "id": "S3",
+      "title": "How to make your completions outputs reproducible with the new seed parameter",
+      "publisher": "OpenAI Cookbook",
+      "url": "https://developers.openai.com/cookbook/examples/reproducible_outputs_with_the_seed_parameter",
+      "date": "2023, current",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S4",
+      "title": "CompletionChoice.finish_reason ('stop' vs 'length')",
+      "publisher": "LangChain mirror of OpenAI API types",
+      "url": "https://v02.api.js.langchain.com/interfaces/_langchain_openai.OpenAIClient.Completions.CompletionChoice-1.html",
+      "date": "current",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S5",
+      "title": "Through API: how to get the rest of an uncomplete completion",
+      "publisher": "OpenAI Developer Community",
+      "url": "https://community.openai.com/t/through-api-how-to-get-the-rest-of-an-uncomplete-completion/21173",
+      "date": "2022",
+      "accessed": "2026-10-18",
+      "access_method": "search-index excerpt"
+    }
+  ]
+}

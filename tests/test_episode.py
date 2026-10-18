@@ -457,3 +457,41 @@ class FlickerCheck(unittest.TestCase):
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=gray:s=270x480:r=30:d=3", "-vf", "geq=lum='if(lt(N,45),40+N*2,230)':cb=128:cr=128", *enc, str(fade)], check=True)
             self.assertGreaterEqual(len(flicker_frames(flash)), 5)
             self.assertEqual(flicker_frames(fade), [])
+
+
+class Episode007(unittest.TestCase):
+    def setUp(self):
+        self.ep = load_episode("ep007-ai-stop-token"); self.x = self.ep["example"]
+
+    def test_examples_and_numbers(self):
+        self.assertEqual("".join(self.x["answer"]), "The sky looks blue because air scatters blue light the most.")
+        self.assertEqual(sum(p for _, p in self.x["after_answer"]), 100)
+        self.assertEqual(len(self.x["cutoff"]), self.x["limit_tokens"])       # the cut lands exactly at the cap
+        self.assertFalse("".join(self.x["cutoff"]).rstrip().endswith("."))    # ...mid-sentence
+        self.assertIn("Llama", {c["id"]: c for c in self.ep["claims"]}["C1"]["text"])
+
+    def test_narration_sentences_under_12_words(self):
+        import re
+        for sc in self.ep["scenes"]:
+            for sentence in re.split(r'(?<=[.?!])["”]?\s+', sc["narration"]):
+                self.assertLess(len(sentence.split()), 12, f"{sc['id']}: {sentence!r}")
+
+
+class Episode008(unittest.TestCase):
+    def setUp(self):
+        self.ep = load_episode("ep008-microwave-door"); self.p = self.ep["physics"]
+
+    def test_wavelength_and_ratios(self):
+        lam_cm = 299_792_458 / (self.p["frequency_ghz"] * 1e9) * 100
+        self.assertAlmostEqual(lam_cm, self.p["wavelength_cm"], delta=0.1)                       # "about twelve centimetres"
+        self.assertGreater(lam_cm * 10 / max(self.p["hole_mm"]), 50)                              # holes far smaller than the wave
+        self.assertGreater(min(self.p["hole_mm"]) * 1000 / max(self.p["light_um"]), 1000)          # light "thousands of times smaller"
+        js = (ROOT / "renderer" / "scenes" / "ep008-microwave-door.js").read_text()
+        self.assertIn(f"WL = {self.p['wavelength_cm']}", js)                                      # the cavity waves are drawn at true size
+        self.assertIn(f"{self.p['leak_limit_mw_cm2']} mW/cm²", js)
+
+    def test_narration_sentences_under_12_words(self):
+        import re
+        for sc in self.ep["scenes"]:
+            for sentence in re.split(r'(?<=[.?!])["”]?\s+', sc["narration"]):
+                self.assertLess(len(sentence.split()), 12, f"{sc['id']}: {sentence!r}")

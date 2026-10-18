@@ -15,6 +15,12 @@ An original animated educational-mystery channel and the $0 production factory t
 
 **Episode 006 — *ChatGPT's Answer Doesn't Exist Until You Watch It Appear*** → [`releases/ep006-ai-next-token.mp4`](releases/ep006-ai-next-token.mp4). It shows how a chatbot writes one token at a time, using real GPT-4 tokenizer splits. See the [war room](episodes/ep006-ai-next-token/war_room.md) and [upload kit](releases/ep006-ai-next-token.upload.md).
 
+**Episode 007 — *Every ChatGPT Answer Ends With a Word You Never See*** (AI part 2) → [`releases/ep007-ai-stop-token.mp4`](releases/ep007-ai-stop-token.mp4) · [upload kit](releases/ep007-ai-stop-token.upload.md)
+
+**Episode 008 — *You Can See Through Your Microwave Door. The Microwaves Can't.*** → [`releases/ep008-microwave-door.mp4`](releases/ep008-microwave-door.mp4) · [upload kit](releases/ep008-microwave-door.upload.md)
+
+New 3D episodes build on the shared kit [`renderer/kit3d.js`](renderer/kit3d.js), loaded as an episode lib.
+
 ### FIVE MESSAGES (five-part animated thriller, Season 1)
 Five verified episodes, 27–32 s each. Story bible, scripts, QA and render instructions: [series/five-messages/](series/five-messages/README.md). Get the MP4s from the draft release `five-messages-s1` (Releases) or run **Actions → Render series**.
 
