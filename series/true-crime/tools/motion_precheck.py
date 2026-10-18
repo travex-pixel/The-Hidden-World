@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 from pipeline import motion_qa  # noqa: E402
 
+BEAT_MARGIN = 1.5
+
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("episode"); ap.add_argument("--seed", default="1")
@@ -26,6 +28,9 @@ def main(argv=None) -> int:
     mp4 = out / f"{a.episode}.mp4"
     if not mp4.exists():
         print(f"{a.episode}: preview render failed\n{r.stderr[-2000:]}"); return 2
+    # a safety margin over the gate's threshold: the preview (540x960, 15 fps) measures a borderline beat slightly
+    # differently from the final render (Case File 75 passed the preview at 7.5 s and failed the final gate there)
+    motion_qa.BEAT_CHANGE = BEAT_MARGIN * motion_qa.BEAT_CHANGE
     res = motion_qa.analyse(mp4, json.loads((out / "timeline.json").read_text()))
     if res["ok"]:
         print(f"{a.episode}: motion OK (longest still {res['longest_still_s']} s)"); return 0

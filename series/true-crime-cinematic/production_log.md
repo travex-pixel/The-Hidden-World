@@ -424,3 +424,7 @@
 - 2026-10-17 16:33:37 tcv72-border-fails-3: VERIFIED -> series/true-crime-cinematic/output/true_crime_72_border_fails_3.mp4 (34.9s, 16.7 MB, sha256 fe27620ae3e6)
 - 2026-10-18 01:03:20 produce 75 --force: regenerating episode data
 - 2026-10-18 01:03:20 tcv75-cocaine-bunkers: rendering (final60, seed 1)
+- 2026-10-18 01:20:16 tcv75-cocaine-bunkers: rendered in 1016s
+- 2026-10-18 01:20:59 tcv75-cocaine-bunkers: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_75
+- 2026-10-18 01:23:29 produce 74 --force: regenerating episode data
+- 2026-10-18 01:23:29 tcv74-wine-heist: rendering (final60, seed 1)

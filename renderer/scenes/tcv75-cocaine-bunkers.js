@@ -268,7 +268,7 @@
         cam: { from: { x: -20, y: 30, z: 1.0 }, to: { x: 10, y: 60, z: 1.07 } },
         figures: [
           { id: 'cb75_port', x: 250, y: 1600, scale: 0.72, dir: 1, turn: 0.3, pose: 'stand', expr: 'neutral', depth: 0.96,
-            keys: [{ at: it, pose: 'examine', expr: 'focused', dur: 0.5 }, { at: bn, pose: 'examine', expr: 'shocked', dur: 0.3 }, { at: lb + 0.6, pose: 'hand_to_face', expr: 'realise', dur: 0.5 }] }
+            keys: [{ at: it, pose: 'examine', expr: 'focused', dur: 0.5 }, { at: LS(ctx, 1, bn) + 0.05, pose: 'point', expr: 'focused', dur: 0.3 }, { at: bn + 0.4, pose: 'examine', expr: 'shocked', dur: 0.3 }, { at: lb + 0.6, pose: 'hand_to_face', expr: 'realise', dur: 0.5 }] }
         ],
         props: [
           { depth: 0.98, svg: () => pallet(930, 1240, 0.7, 3) },
@@ -277,7 +277,7 @@
         ],
         overlays: [
           { type: 'label', at: LS(ctx, 0, 0.1) + 0.15, x: 60, y: 560, text: 'VADO LIGURE, ITALY · JULY 2026', fs: 38, sub: 'Pallets of bananas from Ecuador' },
-          { type: 'label', at: lb + 0.3, x: 60, y: 760, text: '≈ 1,700 LB OF COCAINE', fs: 40, sub: '650 packages · about €250M (police, CBS)', typeDur: 0.6 }
+          { type: 'label', at: LS(ctx, 1, lb) + 0.1, x: 60, y: 760, text: '≈ 1,700 LB OF COCAINE', fs: 40, sub: '650 packages · about €250M (police, CBS)', typeDur: 0.6 }
         ],
         tag: TAG
       });
