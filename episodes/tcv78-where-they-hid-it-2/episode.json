@@ -1,0 +1,916 @@
+{
+ "id": "tcv78-where-they-hid-it-2",
+ "number": 78,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "2.3 Tonnes of Cocaine on a Fishing Boat",
+ "central_question": "Where They Hid It, Part 2: cocaine in waxed pineapples, in 400 plastic avocados, and 2.3 tonnes on a fishing boat that broke down off Australia. Bad luck or karma?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "2.3": "two point three",
+   "2.34": "two point three four"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "78",
+  "label": "WHERE THEY HID IT · PART 2"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_break",
+   "word": [
+    0,
+    3
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "wh78_cop1",
+  "wh78_cop2",
+  "wh78_guard",
+  "wh78_worker"
+ ],
+ "content_notes": "Tone: absurd and ironic. No weapon is drawn or pointed and no violence is shown; officers hold only torches. Nobody charged in any of the three cases is named or drawn (the Queensland crew, the Madrid suspects); the boat's crew is never shown. The Barendrecht company, reported to be unconnected to the drugs, is not named; its worker is a generic figure. Police and officers are generic figures with no badge, patch, flag or agency name. Drugs appear only as plain taped bricks and netted bales. Boats, ships, crates and the market are generic, with no names, logos or registration numbers. Every card is our own typed graphic. No dialogue or quotation. Facts verified 2026-10-18.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "wh78_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "water",
+     "gain": 0.3
+    },
+    {
+     "at": 0.12,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_hook"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A fishing boat full of cocaine.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "2.3 tonnes. Off Australia.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fishing",
+    "boat",
+    "full",
+    "cocaine.",
+    "2.3",
+    "tonnes.",
+    "australia."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_pine",
+   "scene": "wh78_pine",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.12,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "rasp",
+     "gain": 0.26
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      2
+     ],
+     "name": "puff",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_pine",
+    "K_wax"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But first, Madrid. Pineapples, stuffed with cocaine.",
+     "tone": "playful"
+    },
+    {
+     "who": "narrator",
+     "text": "The hole? Sealed with yellow wax.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "first,",
+    "madrid.",
+    "pineapples,",
+    "stuffed",
+    "cocaine.",
+    "hole?",
+    "yellow",
+    "wax."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_avo",
+   "scene": "wh78_avo",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      3
+     ],
+     "name": "click",
+     "gain": 0.26
+    },
+    {
+     "at": 0.08,
+     "word": [
+      1,
+      5
+     ],
+     "name": "ping",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_avo"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the weirdest one.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Near Rotterdam: 400 avocados. All fake.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "weirdest",
+    "rotterdam:",
+    "400",
+    "avocados.",
+    "fake."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_drop",
+   "scene": "wh78_drop",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.12,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "rasp",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_drop"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside? 80 kilos of cocaine.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "One fell and cracked. Real avocados squish.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "inside?",
+    "80",
+    "kilos",
+    "cocaine.",
+    "fell",
+    "cracked",
+    "real",
+    "squish."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_boat",
+   "scene": "wh78_boat",
+   "min_duration": 3.8,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "water",
+     "gain": 0.24
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      5
+     ],
+     "name": "radio",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_boat",
+    "K_mother"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then Australia, off Queensland.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Police say it met a mothership at sea.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "australia,",
+    "queensland.",
+    "police",
+    "mothership",
+    "sea."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_break",
+   "scene": "wh78_break",
+   "min_duration": 3.8,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "rasp",
+     "gain": 0.26
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.34
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.22
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "water",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_break"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then it broke down. Stranded, 18 kilometres out.",
+     "tone": "reveal"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "broke",
+    "down.",
+    "stranded,",
+    "18",
+    "kilometres"
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_bales",
+   "scene": "wh78_bales",
+   "min_duration": 3.8,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sparkle",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_bales",
+    "K_record"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "51 bales. 2.34 tonnes. A record, then.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "51",
+    "bales.",
+    "2.34",
+    "tonnes.",
+    "record,"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "wh78_end",
+   "min_duration": 3.4,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      2
+     ],
+     "name": "cuffs",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_punch",
+    "K_part3"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Thirteen were charged. Nobody caught a single fish.",
+     "tone": "reveal",
+     "pause_before": 0.0
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "thirteen",
+    "charged.",
+    "nobody",
+    "single",
+    "fish."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "An estimated 2.34 tonnes (gross) of cocaine was found on a fishing boat stranded about 18 km off K'gari, Queensland, on 30 November 2024 (AP: 'a record 2.3 tons of cocaine from a fishing boat'). Narration: 'A fishing boat full of cocaine.' / '2.3 tonnes. Off Australia.' Headline '2.3 TONNES OF COCAINE / ON A FISHING BOAT'.",
+   "sources": [
+    "afp",
+    "ap",
+    "nbc",
+    "cnn"
+   ]
+  },
+  {
+   "id": "K_pine",
+   "type": "established",
+   "nature": "fact",
+   "text": "August 2018: Spanish police seized 67 kg of cocaine hidden in hollowed-out pineapples at Mercamadrid, Madrid's wholesale fruit market; the fruit came from Costa Rica via the Portuguese port of Setubal; seven people arrested (three in Madrid, four in Barcelona). Narration: 'But first, Madrid. Pineapples, stuffed with cocaine.'",
+   "sources": [
+    "afpwire",
+    "local",
+    "euronews"
+   ]
+  },
+  {
+   "id": "K_wax",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police said the cocaine cylinders were covered in yellow wax to look like pineapple flesh and to mask the drugs' chemical smell. Narration: 'The hole? Sealed with yellow wax.'",
+   "sources": [
+    "afpwire",
+    "local",
+    "euronews"
+   ]
+  },
+  {
+   "id": "K_avo",
+   "type": "established",
+   "nature": "fact",
+   "text": "April 2025 (Easter weekend): about 80 kg of cocaine was found in about 400 plastic fake avocados delivered to a company in Barendrecht, near Rotterdam; the shipment came from the Dominican Republic; prosecutors said the receiving company is not connected to the drugs. Narration: 'But that was not the weirdest one.' (editorial rehook) / 'Near Rotterdam: 400 avocados. All fake.'",
+   "sources": [
+    "dutchnews",
+    "nltimes",
+    "portseu",
+    "insight"
+   ]
+  },
+  {
+   "id": "K_drop",
+   "type": "established",
+   "nature": "fact",
+   "text": "The fake avocados were discovered when one fell to the ground and broke open. Narration: 'Inside? 80 kilos of cocaine.' / 'One fell and cracked. Real avocados squish.' (the last sentence is an editorial joke).",
+   "sources": [
+    "dutchnews",
+    "nltimes",
+    "portseu"
+   ]
+  },
+  {
+   "id": "K_boat",
+   "type": "established",
+   "nature": "fact",
+   "text": "Late November 2024: police (AFP, Queensland Police, ABF; long under surveillance per AAP) intercepted a fishing boat off Queensland's Fraser Coast near K'gari. Narration: 'Then Australia, off Queensland.'",
+   "sources": [
+    "afp",
+    "ap",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_mother",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police allege the cocaine was transferred to the boat from a larger 'mothership' in international waters (CNN: the recreational fishing boat 'allegedly met a mothership in international waters'; the prosecutor in court, per AAP). Narration: 'Police say it met a mothership at sea.'",
+   "sources": [
+    "cnn",
+    "aap"
+   ]
+  },
+  {
+   "id": "K_break",
+   "type": "established",
+   "nature": "fact",
+   "text": "The boat suffered a suspected mechanical breakdown and was stranded about 18 km off the north-eastern tip of K'gari. Narration: 'Then it broke down. Stranded, 18 kilometres out.' Label '18 KM OFF K'GARI'.",
+   "sources": [
+    "afp",
+    "ap",
+    "cnn",
+    "marex"
+   ]
+  },
+  {
+   "id": "K_bales",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC: police found 51 bales wrapped in roped netting, each holding about 40 kg in 1 kg blocks; estimated gross weight 2.34 tonnes; street value about A$760 million. Narration: '51 bales. 2.34 tonnes.' Counter '2,340 KG'. FUN FACT card '51 BALES / ABOUT 40 KG EACH'.",
+   "sources": [
+    "afp",
+    "nightly",
+    "ap",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_record",
+   "type": "established",
+   "nature": "fact",
+   "text": "It was then the largest cocaine seizure in Australia's history (AFP; AP), overtaken by the 2.7-tonne Londonderry (Sydney) seizure of June 2026 (AP; NPR). Narration: 'A record, then.'",
+   "sources": [
+    "afp",
+    "ap",
+    "ap26",
+    "npr26"
+   ]
+  },
+  {
+   "id": "K_punch",
+   "type": "established",
+   "nature": "fact",
+   "text": "13 people were charged (AFP; AP). AAP reports two men, aged 17 at the time, pleaded guilty in the Queensland Supreme Court to attempting to possess a commercial quantity of imported drugs; no sentence was found in search as of 18 Oct 2026; the others are accused only. Narration: 'Thirteen were charged. Nobody caught a single fish.' (editorial joke). Label '13 CHARGED'.",
+   "sources": [
+    "afp",
+    "ap",
+    "aap"
+   ]
+  },
+  {
+   "id": "K_part3",
+   "type": "established",
+   "nature": "fact",
+   "text": "PART 3 TEASE (end card): March 2017, Spain: police found 57 fake bananas made of resin, stuffed with about 7 kg of cocaine, among real bananas (Valencia and Malaga; two Spanish men charged). End card 'PART 3: 57 FAKE BANANAS MADE OF RESIN'.",
+   "sources": [
+    "wish",
+    "anuk",
+    "pbuk"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "afp",
+   "publisher": "Australian Federal Police (joint media release)",
+   "title": "13 people charged over largest cocaine seizure in Australia",
+   "url": "https://www.afp.gov.au/news-centre/media-release/13-people-charged-over-largest-cocaine-seizure-australia",
+   "date": "2024-12-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ap",
+   "publisher": "Associated Press (via ABC News US)",
+   "title": "Australian police arrest 13 people and seize a record 2.3 tons of cocaine from a fishing boat",
+   "url": "https://abcnews.go.com/International/wireStory/australian-police-arrest-13-people-seize-record-23-116361529",
+   "date": "2024-12-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "nbc",
+   "publisher": "NBC News",
+   "title": "Australia police arrest 13, seize 2.3 tons of cocaine from boat",
+   "url": "https://www.nbcnews.com/news/world/australia-police-arrest-13-seize-23-tons-cocaine-boat-rcna182393",
+   "date": "2024-12-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "cnn",
+   "publisher": "CNN (also via KRDO / KTVZ)",
+   "title": "Australia's biggest cocaine bust seized from broken down boat at sea",
+   "url": "https://amp.cnn.com/cnn/2024/12/02/australia/australia-largest-cocaine-bust-intl-hnk",
+   "date": "2024-12-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "marex",
+   "publisher": "The Maritime Executive",
+   "title": "Australian police make biggest cocaine bust ever, valued at $500 million",
+   "url": "https://maritime-executive.com/article/australian-police-make-biggest-cocaine-bust-ever-valued-at-500-million",
+   "date": "2024-12",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "nightly",
+   "publisher": "The Nightly",
+   "title": "Australia's biggest cocaine bust: AFP charges 13 people alleged of trying to import 2.34 tonnes in Queensland",
+   "url": "https://thenightly.com.au/australia/australias-biggest-cocaine-bust-afp-charges-13-people-alleged-of-trying-to-import-234-tonnes-in-queensland-c-16944071",
+   "date": "2024-12",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "aap",
+   "publisher": "Australian Associated Press (via aapnews / The Leader / Otago Daily Times)",
+   "title": "Teens admit roles in Australia's biggest cocaine bust",
+   "url": "https://aapnews.aap.com.au/news/teens-admit-roles-in-australia-s-biggest-cocaine-bust",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ap26",
+   "publisher": "Associated Press (via Nordot)",
+   "title": "Australian police seize nearly 3 tonnes of cocaine in what has become the largest bust on record",
+   "url": "https://nordot.app/1441692822221587195",
+   "date": "2026-06-22",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "npr26",
+   "publisher": "NPR (via New Hampshire Public Radio)",
+   "title": "Australian police uncover 3 tons of cocaine",
+   "url": "https://www.nhpr.org/2026-06-22/australian-police-uncover-3-tons-of-cocaine",
+   "date": "2026-06-22",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "afpwire",
+   "publisher": "AFP news agency (via Inquirer / Daily Maverick)",
+   "title": "Spanish police seize pineapples stuffed with cocaine",
+   "url": "https://newsinfo.inquirer.net/1025412/spanish-police-seize-pineapples-stuffed-with-cocaine",
+   "date": "2018-08-27",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "local",
+   "publisher": "The Local Spain",
+   "title": "Spanish police seize cocaine-stuffed pineapples",
+   "url": "https://www.thelocal.es/20180828/spanish-police-seize-cocaine-stuffed-pineapples",
+   "date": "2018-08-28",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "euronews",
+   "publisher": "Euronews",
+   "title": "Watch: Spanish police find cocaine in hollowed pineapples",
+   "url": "https://www.euronews.com/video/2018/08/28/watch-spanish-police-find-cocaine-in-hollowed-pineapples",
+   "date": "2018-08-28",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "dutchnews",
+   "publisher": "DutchNews.nl",
+   "title": "Officials find 630 kilos of cocaine hidden among avocados",
+   "url": "https://www.dutchnews.nl/2025/04/officials-find-630-kilos-of-cocaine-hidden-among-avocados/",
+   "date": "2025-04",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "nltimes",
+   "publisher": "NL Times",
+   "title": "Cocaine found in real and fake avocados in and near Rotterdam",
+   "url": "https://nltimes.nl/node/80049",
+   "date": "2025-04",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "portseu",
+   "publisher": "Ports Europe",
+   "title": "Cocaine in fake and real avocados seized in and near Rotterdam port",
+   "url": "https://www.portseurope.com/cocaine-in-fake-and-real-avocados-seized-in-and-near-rotterdam-port/",
+   "date": "2025-04",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "insight",
+   "publisher": "InSight Crime",
+   "title": "5 new creative ways traffickers tried to smuggle cocaine",
+   "url": "https://insightcrime.org/news/5-new-creative-ways-traffickers-tried-smuggle-cocaine/",
+   "date": "2025",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "wish",
+   "publisher": "Associated Press (via WISH-TV)",
+   "title": "Drug dealers use fake bananas to transport cocaine",
+   "url": "https://www.wishtv.com/?p=171768",
+   "date": "2017-03-26",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "anuk",
+   "publisher": "And Now U Know",
+   "title": "Criminals use 57 fake bananas to smuggle drugs",
+   "url": "https://www.andnowuknow.com/node/53046",
+   "date": "2017-03",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "pbuk",
+   "publisher": "Produce Business UK",
+   "title": "Cocaine stashed inside fake bananas camouflaged in real fruit consignment",
+   "url": "https://producebusinessuk.com/cocaine-stashed-inside-fake-bananas-camouflaged-in-real-fruit-consignment",
+   "date": "2017-03",
+   "accessed": "search-result extract only, 2026-10-18"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 5,
+ "search_terms": [
+  "cocaine bust",
+  "australia cocaine",
+  "fishing boat cocaine"
+ ],
+ "palette": {
+  "shadow": "#12202a",
+  "mid": "#c0b8a2",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "2.3 TONNES OF COCAINE"
+   },
+   {
+    "text": "ON A FISHING BOAT",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "THE BOAT THAT BROKE DOWN:"
+   },
+   {
+    "text": "BAD LUCK OR KARMA? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "WHERE THEY HID IT · PART 2",
+    "fs": 38
+   },
+   {
+    "text": "PART 3: 57 FAKE BANANAS MADE OF RESIN",
+    "fs": 34
+   },
+   {
+    "text": "FOLLOW FOR PART 3",
+    "fs": 46,
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "TAG THE MATE WITH A BOAT",
+    "fs": 34
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "HIDING SPOT",
+  "keys": [
+   {
+    "t": 5.8,
+    "v": "1 · PINEAPPLES"
+   },
+   {
+    "t": 13.87,
+    "v": "2 · FAKE AVOCADOS"
+   },
+   {
+    "t": 21.63,
+    "v": "3 · THE FISHING BOAT"
+   }
+  ],
+  "y": 330,
+  "until": 33.04
+ },
+ "legal_status_verified": "2026-10-18"
+}

@@ -1,0 +1,936 @@
+{
+ "id": "tcv79-airport-fails-1",
+ "number": 79,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "200 Lizards in 22 Pairs of Socks: Airport Fails, Part 1",
+ "central_question": "Airport Fails, Part 1: painted gold under plane seats in Delhi, 2,000 ants in test tubes in Nairobi, and 200 lizards in 22 pairs of socks in Tokyo. Which was the worst hiding spot?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "200": "two hundred",
+   "2,000": "two thousand",
+   "22": "twenty-two",
+   "44": "forty-four"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "79",
+  "label": "AIRPORT FAILS · PART 1"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_socks",
+   "word": [
+    0,
+    5
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "af79_officer",
+  "af79_officer2",
+  "af79_traveller",
+  "af79_delhi",
+  "af79_kenya",
+  "af79_antman"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the hiding places, never on the animals. Lizards and ants are stylised, alive and unharmed (the one lizard reported dead is neither drawn nor narrated). The Haneda traveller and the eight Delhi passengers are accused only: never named; the traveller is a faceless silhouette tagged NOT A LIKENESS and the passengers are not drawn. The Nairobi man (pleaded guilty, sentenced) is a faceless silhouette, never named. Officers are generic figures with no badge, patch, flag, crest or agency logo; no weapon. The aircraft cabin and the airports are generic, with no airline livery or logo; airlines and airports are named only in plain text. Every card is our own typed graphic. No dialogue or quotation. Facts verified 2026-10-18.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "af79_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "flutter",
+     "gain": 0.26
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thump",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_hook"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Customs checked his socks. 200 lizards.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Stuffed in 22 pairs.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "customs",
+    "checked",
+    "socks.",
+    "200",
+    "lizards.",
+    "stuffed",
+    "22",
+    "pairs."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_delhi",
+   "scene": "af79_seats",
+   "min_duration": 3.8,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.12,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "puff",
+     "gain": 0.28
+    },
+    {
+     "at": 0.25,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "click",
+     "gain": 0.26
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      3
+     ],
+     "name": "coins",
+     "gain": 0.26
+    },
+    {
+     "at": 0.12,
+     "word": [
+      1,
+      6
+     ],
+     "name": "cuffs",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_delhi",
+    "K_paint",
+    "K_seats",
+    "K_eight"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In Delhi, gold chains, painted silver and black.",
+     "tone": "playful"
+    },
+    {
+     "who": "narrator",
+     "text": "Hidden beneath two seats. Eight passengers arrested.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "delhi,",
+    "gold",
+    "chains,",
+    "painted",
+    "silver",
+    "black.",
+    "hidden",
+    "beneath",
+    "two",
+    "seats.",
+    "eight",
+    "arrested."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_kenya",
+   "scene": "af79_nbo",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "beep",
+     "gain": 0.18
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_kenya",
+    "K_ants"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the strangest bag.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "In Kenya, over 2,000 ants.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "strangest",
+    "bag.",
+    "kenya,",
+    "2,000",
+    "ants."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_tubes",
+   "scene": "af79_tubes",
+   "min_duration": 3.8,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "tick",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.3
+    },
+    {
+     "at": 0.12,
+     "word": [
+      1,
+      3
+     ],
+     "name": "gavel",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_tubes",
+    "K_year"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In test tubes and tissue paper.",
+     "tone": "playful"
+    },
+    {
+     "who": "narrator",
+     "text": "He got a year in prison.",
+     "tone": "resolve"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "test",
+    "tubes",
+    "tissue",
+    "paper.",
+    "year",
+    "prison."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_tokyo",
+   "scene": "af79_hall",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.2
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_tokyo"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then Tokyo. His T-shirts had bulges.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tokyo.",
+    "t-shirts",
+    "bulges."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_socks",
+   "scene": "af79_reveal",
+   "min_duration": 3.8,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      3
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.34
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_inside"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside? Socks. Inside the socks? Lizards.",
+     "tone": "reveal"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "inside?",
+    "socks.",
+    "inside",
+    "socks?",
+    "lizards."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_count",
+   "scene": "af79_count",
+   "min_duration": 3.8,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      3
+     ],
+     "name": "cash",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_count",
+    "K_price"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "About 200. Some endangered.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "Cost? Under five dollars each.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "200.",
+    "endangered.",
+    "cost?",
+    "under",
+    "five",
+    "dollars"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "af79_end",
+   "min_duration": 3.4,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      2
+     ],
+     "name": "cuffs",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_punch",
+    "K_part2"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was arrested. 44 socks, and not one foot.",
+     "tone": "reveal",
+     "pause_before": 0.0
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "arrested.",
+    "44",
+    "socks,",
+    "not",
+    "one",
+    "foot."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 8 August 2026 customs at Haneda Airport, Tokyo, found about 200 lizards packed into 22 pairs of socks in the suitcase of a 23-year-old Mexican traveller arriving from South Korea. Narration: 'Customs checked his socks. 200 lizards.' / 'Stuffed in 22 pairs.' Headline '200 LIZARDS / IN 22 PAIRS OF SOCKS'.",
+   "sources": [
+    "fox",
+    "gulf",
+    "kyodo"
+   ]
+  },
+  {
+   "id": "K_delhi",
+   "type": "established",
+   "nature": "fact",
+   "text": "Customs searched Emirates flight EK-514 from Dubai after it landed at Indira Gandhi International Airport, Delhi, on 21 September 2026 (reported 14 October 2026). Narration: 'In Delhi, ...' (the line below).",
+   "sources": [
+    "national",
+    "jurishour"
+   ]
+  },
+  {
+   "id": "K_paint",
+   "type": "established",
+   "nature": "fact",
+   "text": "The gold, in the form of chains, had been sprayed with silver and black paint. Narration: 'In Delhi, gold chains, painted silver and black.'",
+   "sources": [
+    "national",
+    "jurishour"
+   ]
+  },
+  {
+   "id": "K_seats",
+   "type": "established",
+   "nature": "fact",
+   "text": "The painted chains, about 6.5 kg of gold (about Dh3.8 million / Rs 9 crore), were hidden beneath two seats, packed in three small bags. Narration: 'Hidden beneath two seats. Eight passengers arrested.' Label '6.5 KG OF GOLD'.",
+   "sources": [
+    "national",
+    "jurishour"
+   ]
+  },
+  {
+   "id": "K_eight",
+   "type": "established",
+   "nature": "fact",
+   "text": "Eight passengers from the flight, including a woman, were arrested (accused only; never named or drawn). Narration: '... Eight passengers arrested.'",
+   "sources": [
+    "national",
+    "jurishour"
+   ]
+  },
+  {
+   "id": "K_kenya",
+   "type": "established",
+   "nature": "fact",
+   "text": "Editorial rehook 'But that was not the strangest bag.' introducing: on 10 March 2026 a Chinese national was arrested at Jomo Kenyatta International Airport, Nairobi, trying to leave Kenya with live ants in his luggage.",
+   "sources": [
+    "reuters",
+    "eastafrican",
+    "timeslive"
+   ]
+  },
+  {
+   "id": "K_ants",
+   "type": "established",
+   "nature": "fact",
+   "text": "About 2,238 live garden ants were found (more than 2,000). Narration: 'In Kenya, over 2,000 ants.'",
+   "sources": [
+    "reuters",
+    "eastafrican",
+    "timeslive"
+   ]
+  },
+  {
+   "id": "K_tubes",
+   "type": "established",
+   "nature": "fact",
+   "text": "1,948 of the ants were packed in test tubes and the rest in three rolls of tissue paper. Narration: 'In test tubes and tissue paper.'",
+   "sources": [
+    "reuters",
+    "eastafrican"
+   ]
+  },
+  {
+   "id": "K_year",
+   "type": "established",
+   "nature": "fact",
+   "text": "He pleaded guilty and a Nairobi court sentenced him in April 2026 to one year in prison and a fine (about $7,700), with deportation afterwards. Narration: 'He got a year in prison.'",
+   "sources": [
+    "arabnews",
+    "standard",
+    "reuters"
+   ]
+  },
+  {
+   "id": "K_tokyo",
+   "type": "established",
+   "nature": "fact",
+   "text": "At Haneda, customs officers noticed unnatural bulges inside packed T-shirts in the traveller's suitcase during the baggage check (police had passed on a tip-off). Narration: 'Then Tokyo. His T-shirts had bulges.'",
+   "sources": [
+    "gulf",
+    "kyodo",
+    "dexerto"
+   ]
+  },
+  {
+   "id": "K_inside",
+   "type": "established",
+   "nature": "fact",
+   "text": "Inside the T-shirts were socks, and inside the socks the lizards (2 to 24 per sock, Kyodo). Narration: 'Inside? Socks. Inside the socks? Lizards.'",
+   "sources": [
+    "gulf",
+    "kyodo",
+    "fox"
+   ]
+  },
+  {
+   "id": "K_count",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC: about 200 lizards in 22 pairs of socks; at least nine were preliminarily identified as Mexican alligator lizards (Abronia graminea), an endangered, CITES-listed species. Narration: 'About 200. Some endangered.' Counter '200 LIZARDS'.",
+   "sources": [
+    "fox",
+    "gulf",
+    "kyodo"
+   ]
+  },
+  {
+   "id": "K_price",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: he told police he paid about 560-750 yen (about $3.50-5) per lizard in Mexico; some species sell for about 100,000 yen (about $640) each in Japan. Narration: 'Cost? Under five dollars each.' Card 'PAID UNDER $5 EACH / WORTH UP TO ~$640'.",
+   "sources": [
+    "kyodo",
+    "gulf"
+   ]
+  },
+  {
+   "id": "K_punch",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was arrested on suspicion of violating the Customs Act (attempted unauthorised import) and reportedly admitted the allegation; accused only, no verdict found as of 18 Oct 2026. Narration: 'He was arrested. 44 socks, and not one foot.' (22 pairs = 44 socks: editorial arithmetic joke.)",
+   "sources": [
+    "kyodo",
+    "gulf",
+    "fox"
+   ]
+  },
+  {
+   "id": "K_part2",
+   "type": "established",
+   "nature": "fact",
+   "text": "PART 2 TEASE (end card): June 2026, Mumbai airport: customs arrested a passenger from Bangkok with 29 live exotic animals, including a gibbon, in boxes in his bags; the animals were rescued. End card 'PART 2: A GIBBON IN HIS BAGS'.",
+   "sources": [
+    "uni",
+    "navbharat"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fox",
+   "publisher": "Fox News (via Fox Television Stations)",
+   "title": "Man busted after customs uncovers bizarre cargo hidden inside 22 pairs of socks",
+   "url": "https://www.fox13news.com/news/man-busted-after-customs-uncovers-bizarre-cargo-hidden-inside-22-pairs-socks",
+   "date": "2026-08-17",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "gulf",
+   "publisher": "Gulf News",
+   "title": "Japan arrests Mexican traveller after 200 lizards found hidden in socks at Tokyo airport",
+   "url": "https://gulfnews.com/world/asia/japan-arrests-mexican-traveller-after-200-lizards-found-hidden-in-socks-at-tokyo-airport-1.500644829",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "kyodo",
+   "publisher": "Kyodo News (via Kumamoto Nichinichi Shimbun)",
+   "title": "Lizards in socks: Mexican man arrested over attempted smuggling (Japanese)",
+   "url": "https://kumanichi.com/articles/2024458",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "dexerto",
+   "publisher": "Dexerto",
+   "title": "Man arrested at Tokyo airport after smuggling 200 lizards inside socks",
+   "url": "https://www.dexerto.com/entertainment/man-arrested-at-tokyo-airport-after-smuggling-200-lizards-inside-socks-3398805/",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "national",
+   "publisher": "The National (UAE)",
+   "title": "India gold smuggling: UAE passengers (Delhi Customs seizures)",
+   "url": "https://www.thenationalnews.com/news/uae/2026/10/14/india-gold-smuggling-uae-passengers/",
+   "date": "2026-10-14",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "jurishour",
+   "publisher": "Jurishour",
+   "title": "Gold smuggling gang busted at Delhi airport",
+   "url": "https://www.jurishour.in/indirect-taxes/gold-smuggling-gang-busted-at-delhi-airport/",
+   "date": "2026-09",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "reuters",
+   "publisher": "Reuters (via Yahoo News)",
+   "title": "Chinese national arrested over attempt to smuggle 2,000 queen ants from Kenya",
+   "url": "https://www.yahoo.com/news/articles/chinese-national-arrested-over-attempt-084316053.html",
+   "date": "2026-03",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "eastafrican",
+   "publisher": "The EastAfrican",
+   "title": "Kenya arrests Chinese man smuggling over 2,000 live ants in his luggage",
+   "url": "https://www.theeastafrican.co.ke/tea/news/east-africa/kenya-arrests-chinese-man-smuggling-over-2000-live-ants-5389092",
+   "date": "2026-03",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "timeslive",
+   "publisher": "TimesLIVE",
+   "title": "Watch: Kenya arrests man trying to smuggle over 2,000 live ants in his luggage",
+   "url": "https://www.timeslive.co.za/news/africa/2026-03-12-watch-kenya-arrests-man-trying-to-smuggle-over-2000-live-ants-in-his-luggage/",
+   "date": "2026-03-12",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "arabnews",
+   "publisher": "Arab News",
+   "title": "Kenya sentences Chinese ant smuggler to year in jail",
+   "url": "https://www.arabnews.com/node/2640038/offbeat",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "standard",
+   "publisher": "The Standard (Kenya)",
+   "title": "Kenya sentences Chinese ant smuggler to year in jail",
+   "url": "https://thestandard.ke/business/amp/national/article/2001545472/kenya-sentences-chinese-ant-smuggler-to-year-in-jail",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "uni",
+   "publisher": "United News of India",
+   "title": "29 exotic animals trafficked from Bangkok rescued, one held at Mumbai airport",
+   "url": "https://uniindia.com/29-exotic-animals-trafficked-from-bangkok-rescued-one-held-at-mumbai-airport/west/news/3870132.html",
+   "date": "2026-06-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "navbharat",
+   "publisher": "Navbharat Live",
+   "title": "Exotic wildlife smuggling: Mumbai airport Bangkok passenger arrested",
+   "url": "https://navbharatlive.com/maharashtra/mumbai/exotic-wildlife-smuggling-mumbai-airport-bangkok-passenger-arrested-1783613.html",
+   "date": "2026-06",
+   "accessed": "search-result extract only, 2026-10-18"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 5,
+ "search_terms": [
+  "lizards in socks",
+  "airport smuggling",
+  "customs"
+ ],
+ "palette": {
+  "shadow": "#14212a",
+  "mid": "#c8bca6",
+  "accent": "#3fbf9a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "200 LIZARDS"
+   },
+   {
+    "text": "IN 22 PAIRS OF SOCKS",
+    "colour": "#3fbf9a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WORST HIDING SPOT?"
+   },
+   {
+    "text": "GOLD, ANTS OR SOCKS? 👇",
+    "colour": "#3fbf9a"
+   },
+   {
+    "text": "AIRPORT FAILS · PART 1",
+    "fs": 38
+   },
+   {
+    "text": "PART 2: A GIBBON IN HIS BAGS",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR PART 2",
+    "fs": 46,
+    "colour": "#3fbf9a"
+   },
+   {
+    "text": "TAG THE MATE WHO PACKS LIGHT",
+    "fs": 34
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "AIRPORT FAIL",
+  "keys": [
+   {
+    "t": 4.72,
+    "v": "1 · PAINTED GOLD"
+   },
+   {
+    "t": 12.98,
+    "v": "2 · 2,000 ANTS"
+   },
+   {
+    "t": 19.4,
+    "v": "3 · SOCK LIZARDS"
+   }
+  ],
+  "y": 330,
+  "until": 30.9
+ },
+ "legal_status_verified": "2026-10-18"
+}
