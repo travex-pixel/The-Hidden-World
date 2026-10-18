@@ -430,3 +430,9 @@
 - 2026-10-18 01:23:29 tcv74-wine-heist: rendering (final60, seed 1)
 - 2026-10-18 01:53:46 tcv74-wine-heist: rendered in 1817s
 - 2026-10-18 01:54:30 tcv74-wine-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_74_wine_heist.mp4 (37.0s, 17.6 MB, sha256 bba0341193bd)
+- 2026-10-18 01:56:01 produce 73 --force: regenerating episode data
+- 2026-10-18 01:56:01 tcv73-border-fails-4: rendering (final60, seed 1)
+- 2026-10-18 02:15:42 tcv73-border-fails-4: rendered in 1181s
+- 2026-10-18 02:16:23 tcv73-border-fails-4: VERIFIED -> series/true-crime-cinematic/output/true_crime_73_border_fails_4.mp4 (33.8s, 15.7 MB, sha256 728e964e075f)
+- 2026-10-18 02:16:43 produce 75 --force: regenerating episode data
+- 2026-10-18 02:16:43 tcv75-cocaine-bunkers: rendering (final60, seed 1)
