@@ -99,6 +99,12 @@ def analyse(mp4: Path, out_dir: Path, ep: dict | None = None) -> dict:
         gm = lm[:k][gap[:k]]
         res["music_in_gaps_median_db"] = round(float(np.median(gm)), 1) if len(gm) else None
         res["music_audible"] = bool(len(gm)) and float(np.median(gm)) >= med - 26
+        if (ep or {}).get("engagement_version", 1) >= 5:   # v5: the bed and the effects must be heard on a phone speaker
+            res["music_heard_on_phone"] = bool(len(gm)) and float(np.median(gm)) >= med - 18
+            if (stems / "sfx.wav").exists():
+                fx = decode(stems / "sfx.wav", mono=True); lf = levels(phone(fx)); hits = lf[lf > lf.max() - 20] if len(lf) else lf
+                res["sfx_phone_db"] = round(float(np.median(hits)), 1) if len(hits) else None
+                res["sfx_heard_on_phone"] = (not len(hits)) or float(np.median(hits)) >= med - 12
     full = levels(mono, 0.1); tf = np.arange(len(full)) * 0.1; quiet = full < -50; run = longest = 0
     for q, t in zip(quiet, tf):
         run = run + 1 if (q and t < T - 3.5 and not inside(t, silence_ok)) else 0; longest = max(longest, run)
@@ -118,7 +124,7 @@ def analyse(mp4: Path, out_dir: Path, ep: dict | None = None) -> dict:
     d = durations(mp4); res["durations"] = d
     res["av_duration_match"] = "audio" in d and "video" in d and abs(d["audio"] - d["video"]) <= 0.1
     checks = ["opening_speech_steady", "opening_no_holes", "narration_on_time", "music_never_masks", "music_audible", "no_clipping",
-              "no_long_silence", "ending_intentional", "mono_compatible", "av_duration_match"]
+              "no_long_silence", "ending_intentional", "mono_compatible", "av_duration_match", "music_heard_on_phone", "sfx_heard_on_phone"]
     res = {k: (v.item() if isinstance(v, np.generic) else v) for k, v in res.items()}   # plain JSON types
     res["checks"] = {c: bool(res[c]) for c in checks if c in res}; res["ok"] = all(res["checks"].values())
     return res

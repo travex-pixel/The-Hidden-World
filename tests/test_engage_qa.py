@@ -89,3 +89,20 @@ class VersionFourEnding(unittest.TestCase):
         self.assertFalse(engage_qa.analyse({"episode": ep}, tl, None)["checks"]["single_punchline_ending"])
         ep["engagement_version"] = 2
         self.assertTrue(engage_qa.analyse({"episode": ep}, tl, None)["checks"]["single_punchline_ending"])
+
+
+class SoundV5(unittest.TestCase):
+    def test_phone_ready_moves_bass_energy_into_the_phone_band(self):
+        import numpy as np
+        from pipeline.mixdown import phone_ready, band_rms_db, SR
+        t = np.arange(int(2 * SR)) / SR; x = (0.3 * np.sin(2 * np.pi * 55 * t)).astype(np.float32)   # a pure sub-bass note
+        before, after = band_rms_db(x), band_rms_db(phone_ready(x))
+        self.assertGreater(after - before, 15.0)   # what a phone speaker plays rises by far more than 15 dB
+
+    def test_voice_guard_keeps_the_bed_under_the_voice(self):
+        import numpy as np
+        from pipeline.mixdown import voice_guard, band_rms_db, SR
+        r = np.random.default_rng(1); n = int(2 * SR)
+        voice = (0.1 * r.standard_normal(n)).astype(np.float32); bed = (0.1 * r.standard_normal(n)).astype(np.float32)   # same level
+        g = voice_guard(voice, bed, 12.5)
+        self.assertGreater(band_rms_db(voice) - band_rms_db(bed * g), 11.5)
