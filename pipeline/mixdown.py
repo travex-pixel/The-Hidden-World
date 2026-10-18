@@ -120,7 +120,8 @@ def top_layer(n: int, ep: dict, seed: int) -> np.ndarray:
     """A quiet hi-hat/shaker pulse on the score's tempo (8ths, accents on the beat): rhythm a phone speaker can play."""
     bpm = float((ep.get("score") or {}).get("bpm") or 90); step = 60.0 / bpm / 2
     r = np.random.default_rng(seed + 77); out = np.zeros(n, np.float32); L = int(0.06 * SR)
-    burst = bandpass(r.standard_normal(L).astype(np.float32), 5000, 11000) * np.exp(-np.arange(L) / (0.012 * SR)).astype(np.float32)
+    att = np.minimum(1.0, np.arange(L) / (0.003 * SR))   # a 3 ms attack: a soft tick, not a spike that AAC overshoots
+    burst = bandpass(r.standard_normal(L).astype(np.float32), 5000, 11000) * (att * np.exp(-np.arange(L) / (0.012 * SR))).astype(np.float32)
     t = 0.0; k = 0
     while t < n / SR:
         a = int(t * SR); m = min(L, n - a)
@@ -170,7 +171,7 @@ def mixdown(total: float, clips: list, stems: dict, sfx_events: list, tl: list, 
         y = (x * g).astype(np.float32); ducked[k] = y; music += y
     if v5:
         top = top_layer(n, ep, seed) * (1 - 0.6 * sp) * drop
-        top = 0.25 * top * (np.sqrt(np.mean(music ** 2)) or 1e-3) / (np.sqrt(np.mean(top ** 2)) or 1.0)
+        top = 0.18 * top * (np.sqrt(np.mean(music ** 2)) or 1e-3) / (np.sqrt(np.mean(top ** 2)) or 1.0)
         ducked["top"] = top; bus = music + top; talk = sp > 0.5
         gain_db = float(np.clip((band_rms_db(nar, talk) - MUSIC_UNDER_VOICE_DB) - band_rms_db(bus, talk), -6.0, 18.0))
         gm = 10 ** (gain_db / 20); music = bus * gm

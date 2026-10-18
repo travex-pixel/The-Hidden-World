@@ -225,7 +225,7 @@ def main(argv=None) -> int:
     audio.write_wav(out_dir / "mix.wav", mixed)
     if ep.get("loudness_lufs"):   # normalise the final mix (YouTube plays back at about -14 LUFS); linear, never dynamic
         from pipeline import mixdown
-        report["loudness"] = mixdown.normalise_linear(out_dir / "mix.wav", float(ep["loudness_lufs"]))
+        report["loudness"] = mixdown.normalise_linear(out_dir / "mix.wav", float(ep["loudness_lufs"]), -2.5 if (ep.get("engagement_version") or 1) >= 5 else -1.5)   # v5: brighter mix, more headroom for AAC overshoot
         log(f"audio: loudness {report['loudness']['before']['I']} -> {report['loudness']['after']['I']} LUFS, TP {report['loudness']['after']['TP']} dBTP (linear)")
     (out_dir / "audio_report.json").write_text(json.dumps(report, indent=2))
     audio.write_wav(out_dir / "music_only.wav", music)

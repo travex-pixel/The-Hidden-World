@@ -1,0 +1,1562 @@
+{
+ "episode": "tcv75-cocaine-bunkers",
+ "title": "Australia's Biggest Cocaine Bust Was Under Shipping Containers",
+ "duration": 37.857,
+ "slideshow_risk": {
+  "shots": 8,
+  "composed_shots": 8,
+  "shots_with_characters": 8,
+  "character_shot_share": 1.0,
+  "distinct_sets": 5,
+  "max_set_share": 0.38,
+  "shot_sizes": {
+   "wide": 4,
+   "medium-wide": 4
+  },
+  "max_shot_size_share": 0.5,
+  "ok": true
+ },
+ "production_status": {},
+ "shots": [
+  {
+   "id": "s01_hook",
+   "scene_type": "cb75_hook",
+   "start": 0.0,
+   "duration": 4.643,
+   "narration": [
+    "Australia's record cocaine bust? Buried.",
+    "Under 3 shipping containers."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.25,
+     "end": 2.508,
+     "words": [
+      {
+       "w": "Australia's",
+       "start": 0.28,
+       "end": 0.84
+      },
+      {
+       "w": "record",
+       "start": 0.83,
+       "end": 1.2
+      },
+      {
+       "w": "cocaine",
+       "start": 1.19,
+       "end": 1.61
+      },
+      {
+       "w": "bust?",
+       "start": 1.6,
+       "end": 1.87
+      },
+      {
+       "w": "Buried.",
+       "start": 1.86,
+       "end": 2.37
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 2.711,
+     "end": 4.432,
+     "words": [
+      {
+       "w": "Under",
+       "start": 2.741,
+       "end": 3.141
+      },
+      {
+       "w": "3",
+       "start": 3.131,
+       "end": 3.261
+      },
+      {
+       "w": "shipping",
+       "start": 3.251,
+       "end": 3.731
+      },
+      {
+       "w": "containers.",
+       "start": 3.721,
+       "end": 4.311
+      }
+     ]
+    }
+   ],
+   "visual_description": "cb75 cut (dawn grade); cb75_fed1: kneel -> kneel -> kneel; cb75_fed2: torch_low -> torch -> point; camera push/pull.",
+   "shot_size": "wide",
+   "set": "cb75_cut",
+   "grade": "dawn",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": -40,
+     "y": 70,
+     "z": 1.09
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "cb75_fed1",
+    "cb75_fed2"
+   ],
+   "character_actions": [
+    {
+     "id": "cb75_fed1",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.34,
+     "start_pose": "kneel",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.8,
+       "pose": "kneel",
+       "expr": "shocked",
+       "turn_head": true
+      },
+      {
+       "at": 2.71,
+       "pose": "kneel",
+       "expr": "focused",
+       "turn_head": true
+      }
+     ]
+    },
+    {
+     "id": "cb75_fed2",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.36,
+     "start_pose": "torch_low",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.4,
+       "pose": "torch"
+      },
+      {
+       "at": 3.72,
+       "pose": "point",
+       "expr": "realise"
+      }
+     ]
+    }
+   ],
+   "overlays": [],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_hook",
+     "type": "established",
+     "claim_text": "About 2.7 tonnes of cocaine, Australia's largest cocaine seizure on record, was found on 19 June 2026 in plastic tubs buried in underground bunkers concealed by false floors in three shipping containers on a semi-rural property in Londonderry, western Sydney. Narration: 'Australia's record cocaine bust was buried.' / 'Under 3 shipping containers.' Headline 'AUSTRALIA'S COCAINE BUST / UNDER THE CONTAINERS'.",
+     "urls": [
+      "https://www.abf.gov.au/newsroom-subsite/Pages/Australia%E2%80%99s-biggest-ever-cocaine-bust-as-police-seize-another-2-7-tonnes-under-Operation-Minjiang.aspx",
+      "https://nordot.app/1441599401871000015",
+      "https://www.nhpr.org/2026-06-22/australian-police-uncover-3-tons-of-cocaine",
+      "https://www.thedailyaus.com.au/news/afp-largest-cocaine-bust-seizes-2-7-tonnes-22-06-2026"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": -4,
+    "sfx": [
+     {
+      "name": "sub",
+      "at": 0.0,
+      "gain": 0.4
+     },
+     {
+      "name": "rumble",
+      "at": 0.0,
+      "gain": 0.28
+     },
+     {
+      "name": "thump",
+      "at": 3.841,
+      "gain": 0.3,
+      "word": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv75-cocaine-bunkers.js#cb75_hook",
+    "set_code": "renderer/sets.js#cb75_cut",
+    "characters": [
+     "characters/figures/cb75_fed1.json",
+     "characters/figures/cb75_fed2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_bananas",
+   "scene_type": "cb75_bananas",
+   "start": 4.643,
+   "duration": 6.071,
+   "narration": [
+    "But first, Italy. Bananas from Ecuador.",
+    "Among the bananas? 1,700 pounds of cocaine."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 4.893,
+     "end": 7.338,
+     "words": [
+      {
+       "w": "But",
+       "start": 4.923,
+       "end": 5.163
+      },
+      {
+       "w": "first,",
+       "start": 5.153,
+       "end": 5.513
+      },
+      {
+       "w": "Italy.",
+       "start": 5.503,
+       "end": 5.863
+      },
+      {
+       "w": "Bananas",
+       "start": 5.853,
+       "end": 6.473
+      },
+      {
+       "w": "from",
+       "start": 6.463,
+       "end": 6.763
+      },
+      {
+       "w": "Ecuador.",
+       "start": 6.753,
+       "end": 7.223
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 7.503,
+     "end": 10.562,
+     "words": [
+      {
+       "w": "Among",
+       "start": 7.533,
+       "end": 7.943
+      },
+      {
+       "w": "the",
+       "start": 7.933,
+       "end": 8.213
+      },
+      {
+       "w": "bananas?",
+       "start": 8.203,
+       "end": 8.913
+      },
+      {
+       "w": "1,700",
+       "start": 8.903,
+       "end": 9.253
+      },
+      {
+       "w": "pounds",
+       "start": 9.243,
+       "end": 9.713
+      },
+      {
+       "w": "of",
+       "start": 9.703,
+       "end": 9.933
+      },
+      {
+       "w": "cocaine.",
+       "start": 9.923,
+       "end": 10.463
+      }
+     ]
+    }
+   ],
+   "visual_description": "cb75 quay (warm grade); cb75_port: stand -> examine -> examine -> hand_to_face; camera push/pull; overlays: label 'VADO LIGURE, ITALY · JULY 2026', label '≈ 1,700 LB OF COCAINE'.",
+   "shot_size": "wide",
+   "set": "cb75_quay",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": -20,
+     "y": 30,
+     "z": 1
+    },
+    "to": {
+     "x": 10,
+     "y": 60,
+     "z": 1.07
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "cb75_port"
+   ],
+   "character_actions": [
+    {
+     "id": "cb75_port",
+     "outfit": "default",
+     "depth": 0.96,
+     "scale": 0.72,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.86,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "at": 3.56,
+       "pose": "examine",
+       "expr": "shocked"
+      },
+      {
+       "at": 4.86,
+       "pose": "hand_to_face",
+       "expr": "realise"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.4,
+     "text": "VADO LIGURE, ITALY · JULY 2026"
+    },
+    {
+     "type": "label",
+     "at": 4.56,
+     "text": "≈ 1,700 LB OF COCAINE"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_bananas",
+     "type": "established",
+     "claim_text": "July 2026, port of Vado Ligure, Italy: police (Guardia di Finanza) found about 1,700 lb (770 kg) of cocaine in 650 packages hidden among pallets of bananas in a refrigerated container from Ecuador; estimated value about EUR 250 million (CBS: about $285-286 million). Narration: 'But first, Italy. Bananas from Ecuador.' / 'Among the bananas? 1,700 pounds of cocaine.'",
+     "urls": [
+      "https://www.cbsnews.com/news/cocaine-hidden-banana-shipment-italy/",
+      "https://www.fox5ny.com/news/cocaine-haul-massive-banana-shipment",
+      "https://ground.news/article/770-kg-of-cocaine-hidden-in-banana-pallets-new-seizure-at-250-million-euros-in-italy"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 4.803,
+      "gain": 0.22,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "paper",
+      "at": 8.323,
+      "gain": 0.3,
+      "word": [
+       1,
+       2
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 10.073,
+      "gain": 0.26,
+      "word": [
+       1,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv75-cocaine-bunkers.js#cb75_bananas",
+    "set_code": "renderer/sets.js#cb75_quay",
+    "characters": [
+     "characters/figures/cb75_port.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_bus",
+   "scene_type": "cb75_bus",
+   "start": 10.714,
+   "duration": 4.465,
+   "narration": [
+    "But that was not the sneakiest one.",
+    "A bus pulled up to the American border."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 10.992,
+     "end": 12.685,
+     "words": [
+      {
+       "w": "But",
+       "start": 11.022,
+       "end": 11.212
+      },
+      {
+       "w": "that",
+       "start": 11.202,
+       "end": 11.422
+      },
+      {
+       "w": "was",
+       "start": 11.412,
+       "end": 11.612
+      },
+      {
+       "w": "not",
+       "start": 11.602,
+       "end": 11.792
+      },
+      {
+       "w": "the",
+       "start": 11.782,
+       "end": 11.972
+      },
+      {
+       "w": "sneakiest",
+       "start": 11.962,
+       "end": 12.392
+      },
+      {
+       "w": "one.",
+       "start": 12.382,
+       "end": 12.572
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 12.916,
+     "end": 14.985,
+     "words": [
+      {
+       "w": "A",
+       "start": 12.946,
+       "end": 13.056
+      },
+      {
+       "w": "bus",
+       "start": 13.046,
+       "end": 13.236
+      },
+      {
+       "w": "pulled",
+       "start": 13.226,
+       "end": 13.606
+      },
+      {
+       "w": "up",
+       "start": 13.596,
+       "end": 13.836
+      },
+      {
+       "w": "to",
+       "start": 13.826,
+       "end": 13.986
+      },
+      {
+       "w": "the",
+       "start": 13.976,
+       "end": 14.166
+      },
+      {
+       "w": "American",
+       "start": 14.156,
+       "end": 14.556
+      },
+      {
+       "w": "border.",
+       "start": 14.546,
+       "end": 14.866
+      }
+     ]
+    }
+   ],
+   "visual_description": "cb75 lane (night grade); cb75_lane: stand -> torch -> point; camera push/pull; overlays: label 'SAN YSIDRO, CALIFORNIA · SEPT 2026'.",
+   "shot_size": "medium-wide",
+   "set": "cb75_lane",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": -30,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": 20,
+     "z": 1.05
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "cb75_lane"
+   ],
+   "character_actions": [
+    {
+     "id": "cb75_lane",
+     "outfit": "default",
+     "depth": 1.03,
+     "scale": 0.6,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.33,
+       "pose": "torch",
+       "expr": "focused"
+      },
+      {
+       "at": 4.13,
+       "pose": "point",
+       "expr": "determined"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 2.23,
+     "text": "SAN YSIDRO, CALIFORNIA · SEPT 2026"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "dissolve",
+   "sources": [
+    {
+     "claim": "K_bus",
+     "type": "established",
+     "claim_text": "22 September 2026 (announced 7 October 2026), San Ysidro port of entry: a commercial passenger bus driven by a Mexican national was referred after an imaging system detected anomalies in its gas tank and a canine team alerted. Narration: 'But that was not the sneakiest one.' (editorial rehook) / 'A bus pulled up to the American border.'",
+     "urls": [
+      "https://www.cbp.gov/newsroom/local-media-release/cbp-officers-seize-over-262-pounds-cocaine-san-ysidro-port-entry",
+      "https://hoodline.com/2026/10/san-ysidro-border-agents-pull-more-than-262-pounds-of-cocaine-from-bus-fuel-tank/",
+      "https://patch.com/california/san-diego/5m-cocaine-found-hidden-bus-gas-tank-san-ysidro-border"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 10.942,
+      "gain": 0.2,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "brake",
+      "at": 13.276,
+      "gain": 0.26,
+      "word": [
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv75-cocaine-bunkers.js#cb75_bus",
+    "set_code": "renderer/sets.js#cb75_lane",
+    "characters": [
+     "characters/figures/cb75_lane.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_tank",
+   "scene_type": "cb75_tank",
+   "start": 15.179,
+   "duration": 5.357,
+   "narration": [
+    "Inside its fuel tank? 262 pounds of cocaine.",
+    "Wrong kind of fuel."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 15.429,
+     "end": 19.083,
+     "words": [
+      {
+       "w": "Inside",
+       "start": 15.459,
+       "end": 15.989
+      },
+      {
+       "w": "its",
+       "start": 15.979,
+       "end": 16.309
+      },
+      {
+       "w": "fuel",
+       "start": 16.299,
+       "end": 16.869
+      },
+      {
+       "w": "tank?",
+       "start": 16.859,
+       "end": 17.259
+      },
+      {
+       "w": "262",
+       "start": 17.249,
+       "end": 17.579
+      },
+      {
+       "w": "pounds",
+       "start": 17.569,
+       "end": 18.099
+      },
+      {
+       "w": "of",
+       "start": 18.089,
+       "end": 18.349
+      },
+      {
+       "w": "cocaine.",
+       "start": 18.339,
+       "end": 18.949
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 19.248,
+     "end": 20.371,
+     "words": [
+      {
+       "w": "Wrong",
+       "start": 19.268,
+       "end": 19.578
+      },
+      {
+       "w": "kind",
+       "start": 19.568,
+       "end": 19.838
+      },
+      {
+       "w": "of",
+       "start": 19.828,
+       "end": 19.998
+      },
+      {
+       "w": "fuel.",
+       "start": 19.988,
+       "end": 20.258
+      }
+     ]
+    }
+   ],
+   "visual_description": "cb75 lane (night grade); cb75_lane: kneel -> kneel -> hand_to_face; camera push/pull; overlays: label '110 PACKAGES · 262 LB', label 'DRIVER FACES PROSECUTION'.",
+   "shot_size": "medium-wide",
+   "set": "cb75_lane",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 40,
+     "z": 1.02
+    },
+    "to": {
+     "x": 20,
+     "y": 70,
+     "z": 1.09
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "cb75_lane"
+   ],
+   "character_actions": [
+    {
+     "id": "cb75_lane",
+     "outfit": "default",
+     "depth": 1.03,
+     "scale": 0.8,
+     "start_pose": "kneel",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 1.68,
+       "pose": "kneel",
+       "expr": "shocked"
+      },
+      {
+       "at": 4.07,
+       "pose": "hand_to_face",
+       "expr": "realise"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 2.27,
+     "text": "110 PACKAGES · 262 LB"
+    },
+    {
+     "type": "label",
+     "at": 4.17,
+     "text": "DRIVER FACES PROSECUTION"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_tank",
+     "type": "established",
+     "claim_text": "CBP officers found a non-factory compartment in the bus's gas tank holding 110 packages, 262.21 lb of cocaine (about $5 million); the driver faces state prosecution (accused only, not named). Narration: 'Inside its fuel tank? 262 pounds of cocaine.' / 'Wrong kind of fuel.' (editorial joke).",
+     "urls": [
+      "https://www.cbp.gov/newsroom/local-media-release/cbp-officers-seize-over-262-pounds-cocaine-san-ysidro-port-entry",
+      "https://hoodline.com/2026/10/san-ysidro-border-agents-pull-more-than-262-pounds-of-cocaine-from-bus-fuel-tank/",
+      "https://patch.com/california/san-diego/5m-cocaine-found-hidden-bus-gas-tank-san-ysidro-border",
+      "https://ggnorth.com/2026/10/262-pounds-of-cocaine-found-at-san-ysidro-crossing/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "click",
+      "at": 16.979,
+      "gain": 0.3,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 18.489,
+      "gain": 0.26,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "puff",
+      "at": 20.108,
+      "gain": 0.26,
+      "word": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv75-cocaine-bunkers.js#cb75_tank",
+    "set_code": "renderer/sets.js#cb75_lane",
+    "characters": [
+     "characters/figures/cb75_lane.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_raid",
+   "scene_type": "cb75_raid",
+   "start": 20.536,
+   "duration": 3.75,
+   "narration": [
+    "Then Sydney. Police raided a property out west."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 20.814,
+     "end": 23.721,
+     "words": [
+      {
+       "w": "Then",
+       "start": 20.844,
+       "end": 21.134
+      },
+      {
+       "w": "Sydney.",
+       "start": 21.124,
+       "end": 21.524
+      },
+      {
+       "w": "Police",
+       "start": 21.514,
+       "end": 22.084
+      },
+      {
+       "w": "raided",
+       "start": 22.074,
+       "end": 22.474
+      },
+      {
+       "w": "a",
+       "start": 22.464,
+       "end": 22.604
+      },
+      {
+       "w": "property",
+       "start": 22.594,
+       "end": 23.094
+      },
+      {
+       "w": "out",
+       "start": 23.084,
+       "end": 23.324
+      },
+      {
+       "w": "west.",
+       "start": 23.314,
+       "end": 23.614
+      }
+     ]
+    }
+   ],
+   "visual_description": "cb75 gate (night grade); cb75_fed1: torch (walks); cb75_fed2: torch_low (walks); camera push/pull; overlays: label 'LONDONDERRY, SYDNEY · JUNE 2026'.",
+   "shot_size": "medium-wide",
+   "set": "cb75_gate",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 30,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": 50,
+     "z": 1.07
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "cb75_fed1",
+    "cb75_fed2"
+   ],
+   "character_actions": [
+    {
+     "id": "cb75_fed1",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.6,
+     "start_pose": "torch",
+     "start_expr": "focused",
+     "actions": [],
+     "walk": {
+      "from": 420,
+      "to": 600,
+      "at": 0.1,
+      "dur": 3.35
+     }
+    },
+    {
+     "id": "cb75_fed2",
+     "outfit": "default",
+     "depth": 1.03,
+     "scale": 0.66,
+     "start_pose": "torch_low",
+     "start_expr": "determined",
+     "actions": [],
+     "walk": {
+      "from": 250,
+      "to": 400,
+      "at": 1.34,
+      "dur": 2.2120000000000015
+     }
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.59,
+     "text": "LONDONDERRY, SYDNEY · JUNE 2026"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_raid",
+     "type": "established",
+     "claim_text": "AFP investigators executed a search warrant at a semi-rural property in Londonderry, about 60 km north-west of Sydney's centre (western Sydney), on Friday 19 June 2026. Narration: 'Then Sydney. Police raided a property out west.'",
+     "urls": [
+      "https://www.abf.gov.au/newsroom-subsite/Pages/Australia%E2%80%99s-biggest-ever-cocaine-bust-as-police-seize-another-2-7-tonnes-under-Operation-Minjiang.aspx",
+      "https://nordot.app/1441599401871000015",
+      "https://www.thedailyaus.com.au/news/afp-largest-cocaine-bust-seizes-2-7-tonnes-22-06-2026"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "siren",
+      "at": 20.536,
+      "gain": 0.12
+     },
+     {
+      "name": "door",
+      "at": 22.124,
+      "gain": 0.26,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "radio",
+      "at": 23.464,
+      "gain": 0.2,
+      "word": [
+       0,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv75-cocaine-bunkers.js#cb75_raid",
+    "set_code": "renderer/sets.js#cb75_gate",
+    "characters": [
+     "characters/figures/cb75_fed1.json",
+     "characters/figures/cb75_fed2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_floor",
+   "scene_type": "cb75_floor",
+   "start": 24.286,
+   "duration": 3.928,
+   "narration": [
+    "The floors were fake. Below them? Bunkers."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 24.783,
+     "end": 27.216,
+     "words": [
+      {
+       "w": "The",
+       "start": 24.823,
+       "end": 25.043
+      },
+      {
+       "w": "floors",
+       "start": 25.033,
+       "end": 25.403
+      },
+      {
+       "w": "were",
+       "start": 25.393,
+       "end": 25.673
+      },
+      {
+       "w": "fake.",
+       "start": 25.663,
+       "end": 26.113
+      },
+      {
+       "w": "Below",
+       "start": 26.103,
+       "end": 26.423
+      },
+      {
+       "w": "them?",
+       "start": 26.413,
+       "end": 26.683
+      },
+      {
+       "w": "Bunkers.",
+       "start": 26.673,
+       "end": 27.103
+      }
+     ]
+    }
+   ],
+   "visual_description": "cb75 box (night grade); cb75_fed2: torch_low -> torch; cb75_fed1: kneel -> kneel -> kneel; camera push/pull; overlays: impact, label 'FALSE FLOORS · 3 CONTAINERS'.",
+   "shot_size": "medium-wide",
+   "set": "cb75_box",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 40,
+     "z": 1.02
+    },
+    "to": {
+     "x": 0,
+     "y": 90,
+     "z": 1.12
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "cb75_fed1",
+    "cb75_fed2"
+   ],
+   "character_actions": [
+    {
+     "id": "cb75_fed2",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.78,
+     "start_pose": "torch_low",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 2.39,
+       "pose": "torch",
+       "expr": "shocked"
+      }
+     ]
+    },
+    {
+     "id": "cb75_fed1",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.78,
+     "start_pose": "kneel",
+     "start_expr": "determined",
+     "actions": [
+      {
+       "at": 1.18,
+       "pose": "kneel",
+       "expr": "focused"
+      },
+      {
+       "at": 2.39,
+       "pose": "kneel",
+       "expr": "shocked",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "impact",
+     "at": 2.39
+    },
+    {
+     "type": "label",
+     "at": 2.79,
+     "text": "FALSE FLOORS · 3 CONTAINERS"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_floor",
+     "type": "established",
+     "claim_text": "In three shipping containers near the rear of the property, police found the cocaine in underground bunkers concealed by false container floors. Narration: 'The floors were fake. Below them? Bunkers.'",
+     "urls": [
+      "https://www.abf.gov.au/newsroom-subsite/Pages/Australia%E2%80%99s-biggest-ever-cocaine-bust-as-police-seize-another-2-7-tonnes-under-Operation-Minjiang.aspx",
+      "https://nordot.app/1441599401871000015",
+      "https://www.nhpr.org/2026-06-22/australian-police-uncover-3-tons-of-cocaine",
+      "https://www.indailyqld.com.au/news/just-in/2026/06/22/australias-biggest-cocaine-bust-linked-to-qld-find"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "riser",
+      "at": 25.263,
+      "gain": 0.22,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 26.643,
+      "gain": 0.42,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "sub",
+      "at": 26.673,
+      "gain": 0.3,
+      "word": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv75-cocaine-bunkers.js#cb75_floor",
+    "set_code": "renderer/sets.js#cb75_box",
+    "characters": [
+     "characters/figures/cb75_fed1.json",
+     "characters/figures/cb75_fed2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_bunker",
+   "scene_type": "cb75_bunker",
+   "start": 28.214,
+   "duration": 5.715,
+   "narration": [
+    "2.7 tonnes of cocaine, in plastic tubs.",
+    "Three million street deals, police said."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 28.464,
+     "end": 31.429,
+     "words": [
+      {
+       "w": "2.7",
+       "start": 28.484,
+       "end": 28.714
+      },
+      {
+       "w": "tonnes",
+       "start": 28.704,
+       "end": 29.184
+      },
+      {
+       "w": "of",
+       "start": 29.174,
+       "end": 29.404
+      },
+      {
+       "w": "cocaine,",
+       "start": 29.394,
+       "end": 29.944
+      },
+      {
+       "w": "in",
+       "start": 29.934,
+       "end": 30.374
+      },
+      {
+       "w": "plastic",
+       "start": 30.364,
+       "end": 30.974
+      },
+      {
+       "w": "tubs.",
+       "start": 30.964,
+       "end": 31.324
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 31.594,
+     "end": 33.566,
+     "words": [
+      {
+       "w": "Three",
+       "start": 31.624,
+       "end": 31.894
+      },
+      {
+       "w": "million",
+       "start": 31.884,
+       "end": 32.244
+      },
+      {
+       "w": "street",
+       "start": 32.234,
+       "end": 32.554
+      },
+      {
+       "w": "deals,",
+       "start": 32.544,
+       "end": 32.894
+      },
+      {
+       "w": "police",
+       "start": 32.884,
+       "end": 33.204
+      },
+      {
+       "w": "said.",
+       "start": 33.194,
+       "end": 33.434
+      }
+     ]
+    }
+   ],
+   "visual_description": "cb75 cut (night grade); cb75_fed1: torch -> torch_low; keyed camera moves; overlays: counter, funfact 'ABOUT 3 MILLION / STREET DEALS / A$816M street value · AFP, June 2026'.",
+   "shot_size": "wide",
+   "set": "cb75_cut",
+   "grade": "night",
+   "camera": {
+    "keys": 3,
+    "handheld": 0
+   },
+   "characters": [
+    "cb75_fed1"
+   ],
+   "character_actions": [
+    {
+     "id": "cb75_fed1",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.26,
+     "start_pose": "torch",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 3.68,
+       "pose": "torch_low",
+       "expr": "shocked"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "counter",
+     "at": 0.25
+    },
+    {
+     "type": "funfact",
+     "at": 3.43,
+     "text": "ABOUT 3 MILLION / STREET DEALS / A$816M street value · AFP, June 2026"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "dissolve",
+   "sources": [
+    {
+     "claim": "K_tonnes",
+     "type": "established",
+     "claim_text": "STATISTIC: about 2.7 tonnes of cocaine in plastic tubs, the largest cocaine seizure in Australia's history (previous record 2.34 tonnes, 2024); street value about A$816 million. Narration: '2.7 tonnes of cocaine, in plastic tubs.' Counter '2.7 TONNES'.",
+     "urls": [
+      "https://www.abf.gov.au/newsroom-subsite/Pages/Australia%E2%80%99s-biggest-ever-cocaine-bust-as-police-seize-another-2-7-tonnes-under-Operation-Minjiang.aspx",
+      "https://nordot.app/1441599401871000015",
+      "https://www.nhpr.org/2026-06-22/australian-police-uncover-3-tons-of-cocaine",
+      "https://www.thedailyaus.com.au/news/afp-largest-cocaine-bust-seizes-2-7-tonnes-22-06-2026"
+     ]
+    },
+    {
+     "claim": "K_deals",
+     "type": "established",
+     "claim_text": "FUN FACT: the AFP said the haul was equivalent to about three million street-level deals. Narration: 'Three million street deals, police said.'",
+     "urls": [
+      "https://www.thedailyaus.com.au/news/afp-largest-cocaine-bust-seizes-2-7-tonnes-22-06-2026",
+      "https://www.indailyqld.com.au/news/just-in/2026/06/22/australias-biggest-cocaine-bust-linked-to-qld-find",
+      "https://nordot.app/1441599401871000015"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "tick",
+      "at": 28.484,
+      "gain": 0.22,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 31.114,
+      "gain": 0.26,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "sparkle",
+      "at": 31.624,
+      "gain": 0.28,
+      "word": [
+       1,
+       0
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv75-cocaine-bunkers.js#cb75_bunker",
+    "set_code": "renderer/sets.js#cb75_cut",
+    "characters": [
+     "characters/figures/cb75_fed1.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s08_end",
+   "scene_type": "cb75_end",
+   "start": 33.929,
+   "duration": 3.928,
+   "narration": [
+    "Two men were arrested. The containers were just the lid."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 34.179,
+     "end": 37.136,
+     "words": [
+      {
+       "w": "Two",
+       "start": 34.199,
+       "end": 34.399
+      },
+      {
+       "w": "men",
+       "start": 34.389,
+       "end": 34.599
+      },
+      {
+       "w": "were",
+       "start": 34.589,
+       "end": 34.839
+      },
+      {
+       "w": "arrested.",
+       "start": 34.829,
+       "end": 35.259
+      },
+      {
+       "w": "The",
+       "start": 35.249,
+       "end": 35.629
+      },
+      {
+       "w": "containers",
+       "start": 35.619,
+       "end": 36.139
+      },
+      {
+       "w": "were",
+       "start": 36.129,
+       "end": 36.379
+      },
+      {
+       "w": "just",
+       "start": 36.369,
+       "end": 36.619
+      },
+      {
+       "w": "the",
+       "start": 36.609,
+       "end": 36.819
+      },
+      {
+       "w": "lid.",
+       "start": 36.809,
+       "end": 37.019
+      }
+     ]
+    }
+   ],
+   "visual_description": "cb75 cut (dawn grade); cb75_fed1: kneel -> kneel; cb75_fed2: torch_low -> torch -> torch_low; keyed camera moves; overlays: label '2 MEN CHARGED · ACCUSED ONLY'.",
+   "shot_size": "wide",
+   "set": "cb75_cut",
+   "grade": "dawn",
+   "camera": {
+    "keys": 2,
+    "handheld": 0
+   },
+   "characters": [
+    "cb75_fed1",
+    "cb75_fed2"
+   ],
+   "character_actions": [
+    {
+     "id": "cb75_fed1",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.34,
+     "start_pose": "kneel",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 2.88,
+       "pose": "kneel",
+       "expr": "realise",
+       "turn_head": true
+      }
+     ]
+    },
+    {
+     "id": "cb75_fed2",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.36,
+     "start_pose": "torch_low",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.3,
+       "pose": "torch"
+      },
+      {
+       "at": 2.93,
+       "pose": "torch_low"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 1,
+     "text": "2 MEN CHARGED · ACCUSED ONLY"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "K_punch",
+     "type": "established",
+     "claim_text": "Two men, aged 21 and 25, allegedly tried to flee on foot and were arrested; each is charged with possessing a commercial quantity of an unlawfully imported border-controlled drug (maximum life). Accused only; one was later granted bail; no plea or verdict found as of 18 Oct 2026. Narration: 'Two men were arrested. The containers were just the lid.' (the second sentence is wordplay on the false floors over the bunkers).",
+     "urls": [
+      "https://www.abf.gov.au/newsroom-subsite/Pages/Australia%E2%80%99s-biggest-ever-cocaine-bust-as-police-seize-another-2-7-tonnes-under-Operation-Minjiang.aspx",
+      "https://nordot.app/1441599401871000015",
+      "https://www.newcastleherald.com.au/story/9320672/no-evidence-arrested-man-knew-of-major-cocaine-haul/",
+      "https://www.nhpr.org/2026-06-22/australian-police-uncover-3-tons-of-cocaine"
+     ]
+    },
+    {
+     "claim": "K_part2",
+     "type": "established",
+     "claim_text": "PART 2 TEASE (end card): Australia's previous record cocaine seizure was 2.34 tonnes, found in 2024 on a fishing boat near K'gari (Fraser Island), Queensland. End card 'PART 2: 2.3 TONNES ON A FISHING BOAT'.",
+     "urls": [
+      "https://nordot.app/1441599401871000015",
+      "https://www.nhpr.org/2026-06-22/australian-police-uncover-3-tons-of-cocaine"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "cuffs",
+      "at": 34.949,
+      "gain": 0.22,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 36.859,
+      "gain": 0.3,
+      "word": [
+       0,
+       9
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv75-cocaine-bunkers.js#cb75_end",
+    "set_code": "renderer/sets.js#cb75_cut",
+    "characters": [
+     "characters/figures/cb75_fed1.json",
+     "characters/figures/cb75_fed2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}
