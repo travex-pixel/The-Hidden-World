@@ -10,6 +10,17 @@ def probe(path: Path) -> dict:
     return json.loads(out)
 
 
+def flicker_frames(path: Path, fps: float = 30, limit: int = 20) -> list[float]:
+    """Times of frames that jump in brightness and come straight back on the next frame (A-B-A), e.g. z-fighting.
+    Scene cuts and fades change brightness once and stay, so they don't count."""
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(path), "-vf", "scale=64:114,format=gray", "-f", "rawvideo", "-"], capture_output=True).stdout
+    m = np.frombuffer(raw, np.uint8).reshape(-1, 114 * 64).astype(np.float32).mean(axis=1)
+    d1, d2, back = m[1:-1] - m[:-2], m[2:] - m[1:-1], np.abs(m[2:] - m[:-2])
+    spikes = np.nonzero((np.abs(d1) > 8) & (np.abs(d2) > 8) & (np.sign(d1) != np.sign(d2)) & (back < 0.35 * np.abs(d1)))[0] + 1
+    return [round(float(i) / fps, 3) for i in spikes[:limit]]
+
+
 def verify(path: Path, expected_duration: float | None = None, width=1080, height=1920, fps=30, contact_sheet: Path | None = None) -> dict:
     if not path.exists() or path.stat().st_size < 100_000:
         raise SystemExit(f"[verify] {path} missing or too small")
@@ -54,6 +65,8 @@ def verify(path: Path, expected_duration: float | None = None, width=1080, heigh
     ok["audio_not_silent"] = report["mean_volume_db"] is not None and report["mean_volume_db"] > -30
     ok["no_long_silence_gaps"] = len(silences) == 0
     ok["no_clipping"] = report["max_volume_db"] is not None and report["max_volume_db"] <= 0.0
+    report["flicker_frames"] = flicker_frames(path, fps)
+    ok["no_frame_flicker"] = len(report["flicker_frames"]) == 0
     if contact_sheet:
         n = 12
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(path), "-vf",

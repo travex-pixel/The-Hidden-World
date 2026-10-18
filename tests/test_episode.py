@@ -187,7 +187,12 @@ class RenderedOutput(unittest.TestCase):
             self.assertEqual(kinds, ["audio", "video"], c)
             v = next(s for s in p["streams"] if s["codec_type"] == "video")
             self.assertEqual(v["width"] * 16, v["height"] * 9, "must be 9:16")
-            self.assertGreater(float(p["format"]["duration"]), 50)
+            dur, ep_dir = float(p["format"]["duration"]), ROOT / "episodes" / c.stem
+            if (ep_dir / "episode.json").exists():   # each release must sit in its own episode's target range
+                lo, hi = json.loads((ep_dir / "episode.json").read_text())["target_duration_seconds"]
+                self.assertTrue(lo - 1 <= dur <= hi + 1, f"{c.name}: {dur:.1f}s outside {lo}-{hi}s")
+            else:
+                self.assertGreater(dur, 15, c)
 
 
 if __name__ == "__main__":
@@ -403,3 +408,52 @@ class Episode005(unittest.TestCase):
         out = srt(self.ep, tl)
         words = " ".join(l for l in out.splitlines() if l and not l[0].isdigit())
         self.assertEqual(words.split(), " ".join(sc["narration"] for sc in self.ep["scenes"]).split())
+
+
+class Episode006(unittest.TestCase):
+    """AI chatbots: real token splits, consistent numbers, script rules, and the flicker check."""
+    def setUp(self):
+        self.ep = load_episode("ep006-ai-next-token")
+        self.x = self.ep["example"]
+
+    def test_token_splits_rebuild_the_text(self):
+        self.assertEqual("".join(self.x["question_tokens"]), self.x["question"])
+        self.assertEqual("".join(self.x["word_tokens"]), self.x["word"])
+        self.assertEqual(len(self.x["word_tokens"]), 3)                      # "Unbelievable is three of them"
+        self.assertEqual(self.x["answer_a"][:2], self.x["answer_b"][:2])     # same start, then one roll differs
+        self.assertNotEqual(self.x["answer_a"][2], self.x["answer_b"][2])
+        self.assertEqual(self.x["answer_a"][2], self.x["candidates"][1][0])  # the roll scene's winner
+        self.assertEqual(self.x["answer_b"][2], self.x["candidates"][0][0])
+
+    def test_probabilities_and_roll_count(self):
+        self.assertEqual(sum(p for _, p in self.x["candidates"]), 100)
+        self.assertEqual(max(self.x["candidates"], key=lambda c: c[1])[0], " is")   # the top pick does not win
+        self.assertAlmostEqual(self.x["words"] * 100 / 75, 666.7, places=1)          # OpenAI: 100 tokens ~ 75 words
+        self.assertEqual(round(self.x["words"] * 100 / 75, -2), self.x["rolls"])
+        self.assertEqual({c["id"]: c for c in self.ep["claims"]}["C4"]["type"], "illustrative")
+
+    def test_narration_sentences_under_12_words(self):
+        import re
+        for sc in self.ep["scenes"]:
+            for sentence in re.split(r'(?<=[.?!])["”]?\s+', sc["narration"]):
+                self.assertLess(len(sentence.split()), 12, f"{sc['id']}: {sentence!r}")
+
+    def test_no_overclaiming_hook(self):
+        text = " ".join(sc["narration"] for sc in self.ep["scenes"]).lower()
+        self.assertNotIn("one word ahead", text)   # contradicted by interpretability research (source S7)
+
+
+class FlickerCheck(unittest.TestCase):
+    def test_detects_a_frame_that_flashes_and_returns(self):
+        import shutil, tempfile
+        if not shutil.which("ffmpeg"):
+            self.skipTest("ffmpeg not installed")
+        from pipeline.verify import flicker_frames
+        with tempfile.TemporaryDirectory() as d:
+            flash, fade = Path(d) / "flash.mp4", Path(d) / "fade.mp4"
+            # grey video with a single white frame every 0.5 s (flicker) vs a smooth fade with one hard cut (fine)
+            enc = ["-c:v", "libx264", "-pix_fmt", "yuv420p"]
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=gray:s=270x480:r=30:d=3", "-vf", "geq=lum='if(eq(mod(N,15),7),255,128)':cb=128:cr=128", *enc, str(flash)], check=True)
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=gray:s=270x480:r=30:d=3", "-vf", "geq=lum='if(lt(N,45),40+N*2,230)':cb=128:cr=128", *enc, str(fade)], check=True)
+            self.assertGreaterEqual(len(flicker_frames(flash)), 5)
+            self.assertEqual(flicker_frames(fade), [])
