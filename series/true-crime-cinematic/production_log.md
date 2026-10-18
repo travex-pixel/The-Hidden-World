@@ -450,3 +450,7 @@
 - 2026-10-18 16:41:44 tcv78-where-they-hid-it-2: rendering (final60, seed 1)
 - 2026-10-18 17:02:42 tcv78-where-they-hid-it-2: rendered in 1258s
 - 2026-10-18 17:03:34 tcv78-where-they-hid-it-2: VERIFIED -> series/true-crime-cinematic/output/true_crime_78_where_they_hid_it_2.mp4 (37.3s, 19.0 MB, sha256 1e5db48c947a)
+- 2026-10-18 17:06:29 produce 77 --force: regenerating episode data
+- 2026-10-18 17:06:29 tcv77-wine-heists-2: rendering (final60, seed 1)
+- 2026-10-18 17:41:19 tcv77-wine-heists-2: rendered in 2090s
+- 2026-10-18 17:42:04 tcv77-wine-heists-2: QA FAILED ['loudness_near_target']; frames and details in series/true-crime-cinematic/qa/true_crime_77

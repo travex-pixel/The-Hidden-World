@@ -283,6 +283,18 @@ def main(argv=None) -> int:
         # AAC can overshoot the mix's true peak (hard-edged tones such as alarm beeps): re-measure the encoded file and,
         # if it is above -1.2 dBTP, trim the whole track by the excess. One static gain, never dynamic.
         tp = mixdown.measure(final)["TP"]
+        if tp > -1.2 and (ep.get("engagement_version") or 1) >= 5:
+            # v5's brighter mix can overshoot by 2+ dB after AAC (Case File 77: a whole-track trim of 3.7 dB left it at
+            # -17.8 LUFS). Lower the limiter ceiling by the excess instead, keeping the loudness, and re-encode
+            ceiling = -2.5
+            for _ in range(2):
+                ceiling -= (tp + 1.2) + 0.3
+                log(f"mux: encoded true peak {tp:.1f} dBTP, re-limiting the mix to {ceiling:.1f} dBTP")
+                report["loudness"] = mixdown.normalise_linear(out_dir / "mix.wav", float(ep["loudness_lufs"]), ceiling)
+                mux(); tp = mixdown.measure(final)["TP"]
+                if tp <= -1.2:
+                    break
+            (out_dir / "audio_report.json").write_text(json.dumps(report, indent=2))
         if tp > -1.2:
             trim = -1.2 - tp - 0.2
             log(f"mux: encoded true peak {tp:.1f} dBTP, trimming {trim:.1f} dB")

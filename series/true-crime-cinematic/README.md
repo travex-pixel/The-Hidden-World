@@ -77,6 +77,10 @@
 | 73 | `true_crime_73_border_fails_4.mp4` (archived outside git) | Border Fails Part 4: fake FedEx vans, a cloned K-9 truck, the fake Border Patrol truck near Calexico; engine v5 sound | see `production_manifest.json` |
 | 74 | `true_crime_74_wine_heist.mp4` (archived outside git) | Wine Heists Part 1: Antinori's 30,000 bottles (Oct 2026), the Atrio room-service theft, Virginia decoy bottles; engine v5 sound | see `production_manifest.json` |
 | 75 | `true_crime_75_cocaine_bunkers.mp4` (archived outside git) | Where They Hid It Part 1: bananas in Italy, a bus fuel tank, Australia's record 2.7 t in bunkers under containers; engine v5 sound | see `production_manifest.json` |
+| 76 | `true_crime_76_border_fails_5.mp4` (archived outside git) | Border Fails Part 5: the pool-table tunnel (1990), a railway tunnel, the 4,309-ft elevator tunnel (2020); engine v5 | see `production_manifest.json` |
+| 77 | `true_crime_77_wine_heists_2.mp4` (archived outside git) | Wine Heists Part 2: Formel B via the wine shop, the Taillevent rod, the Paris catacomb tunnel (2017); engine v5 | see `production_manifest.json` |
+| 78 | `true_crime_78_where_they_hid_it_2.mp4` (archived outside git) | Where They Hid It Part 2: waxed pineapples, plastic avocados, the 2.34 t fishing boat off K'gari (2024); engine v5 | see `production_manifest.json` |
+| 79 | `true_crime_79_airport_fails_1.mp4` (archived outside git) | Airport Fails Part 1: painted gold chains (Delhi), 2,238 ants (Nairobi), 200 lizards in socks (Tokyo); engine v5 | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

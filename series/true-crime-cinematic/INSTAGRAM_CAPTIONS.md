@@ -862,3 +862,44 @@ SEED COMMENT: Insane. You build a bunker under a shipping container and the fals
 PINNED: Tag the mate who'd build one. Vote: 1 = the bunkers under the containers, 2 = the bus fuel tank 👇 Part 2 (the old record: 2.3 tonnes on a fishing boat) is next.
 POST WHEN: Monday 19 Oct 2026, 7–8 am AEDT (Sunday 18 Oct, 4–5 pm US Eastern): catches Australian men on the Monday-morning commute while the US Sunday-afternoon scroll is still on, so both the AU audience (the hook) and the US majority see it in the first 3 hours.
 
+
+## 76 (`true_crime_76_border_fails_5.mp4`)
+CAPTION: Smuggling tunnel with an elevator: 4,309 feet from Tijuana to San Diego, 70 feet under the border 🚇 Border Fails, Part 5.
+Before that: a 1990 tunnel under a pool table on a hydraulic floor, and a 2022 tunnel with its own railway.
+Genius or pointless? 👇 Follow for Part 6.
+HASHTAGS: #smugglingtunnel #bordertunnel #borderfails #truecrime #smugglers
+ALT TEXT: Illustrated reel, Border Fails Part 5: the longest smuggling tunnel found on the U.S.-Mexico border, about 4,309 feet from Tijuana to Otay Mesa with rails, power and an elevator at the entrance, announced in January 2020, plus a 1990 border tunnel hidden under a pool table and a 2022 rail tunnel to a San Diego warehouse.
+SEED COMMENT: Pointless. You build an elevator 70 feet down and forget to finish the exit? 😂
+PINNED: Part 1 = the drug catapult, Part 2 = the Jeep stuck on the border fence, Part 3 = the KFC tunnel, Part 4 = the fake Border Patrol truck (linked above). Best tunnel? Vote 1 = the elevator tunnel, 2 = the pool-table tunnel 👇 Tag the mate who'd want a lift.
+POST WHEN: Tuesday 20 Oct 2026, 7–9 pm US Eastern (evening scroll for men 18–34 in the US), a day after Part 4 so the two do not compete and Parts 1–4 can be linked with "Link a reel". If it must go out sooner, Monday 19 Oct after Part 4 has had 24 h.
+
+## 77 (`true_crime_77_wine_heists_2.mp4`)
+CAPTION: Wine heist through the Paris catacombs: thieves drilled into a private wine cellar and took about 300 bottles 🍷 Wine Heists, Part 2.
+Before that: a Copenhagen gang who robbed a wine shop of nothing, and a Paris crew who fished bottles through a hole with a rod.
+The rod or the tunnel: which was smartest? 👇 Follow for Part 3.
+HASHTAGS: #wineheist #pariscatacombs #winecellar #heist #truecrime
+ALT TEXT: Illustrated reel, Wine Heists Part 2: the 2017 wine heist in Paris where thieves came through the catacombs and drilled into a private wine cellar near the Luxembourg Gardens, taking about 300 bottles, plus the 2020 Formel B cellar break-in in Copenhagen and the 2020 rod-through-a-hole theft at a Paris wine shop.
+SEED COMMENT: The rod. Fishing 50 grand of wine through a hole without ever going inside is elite. The tunnel guys just did cardio 😂
+PINNED: Part 1 was the 30,000-bottle Antinori heist (loaded with the winery's own forklifts). Smartest way in? Vote 1 = the rod through the wall, 2 = the catacomb tunnel 👇 Tag the mate who'd dig for it.
+POST WHEN: Tuesday 20 Oct 2026, 12–2 pm US Eastern (weekday lunch scroll for men 18–34 in the US), the day after Part 1 (Case File 74, planned Mon 19 Oct) so Part 1 has had its 2.5–3 h take-off and can be linked with "Link a reel"; keep it a few hours apart from Case Files 76, 78 and 79.
+
+## 78 (`true_crime_78_where_they_hid_it_2.mp4`)
+CAPTION: Fishing boat cocaine: 2.3 tonnes on one boat off Australia 🇦🇺 Where They Hid It, Part 2.
+Before that: cocaine sealed inside waxed pineapples in Madrid, and 400 plastic avocados near Rotterdam.
+Bad luck or karma? 👇 Follow for Part 3. (13 charged; two pleaded guilty, the rest accused only.)
+HASHTAGS: #cocainebust #australiacocaine #fishingboat #queensland #truecrime
+ALT TEXT: Illustrated reel about a fishing boat cocaine bust: in November 2024 a fishing boat carrying 2.34 tonnes of cocaine broke down 18 km off K'gari, Queensland, Australia, plus cocaine in hollowed-out pineapples in Madrid and in 400 plastic avocados near Rotterdam.
+SEED COMMENT: Karma. 2.3 tonnes on board and the engine quits 18 km from shore? 😂
+PINNED: Tag the mate with a boat. Part 1 = the cocaine bunkers under the shipping containers in Sydney. Vote: 1 = the bunkers, 2 = the broken-down fishing boat 👇
+POST WHEN: Monday 19 Oct 2026, 7–8 am AEDT (Sunday 18 Oct, 4–5 pm US Eastern), a few hours after Part 1 if it goes out the same day, otherwise the next morning: Australian men on the Monday commute (the hook is Australian) while the US Sunday-afternoon scroll is still on; link it to Part 1 with "Link a reel".
+
+## 79 (`true_crime_79_airport_fails_1.mp4`)
+CAPTION: 200 lizards in socks: Tokyo customs found them stuffed in 22 pairs in one suitcase 🦎 Airport Fails, Part 1.
+Before that: gold chains spray-painted silver under plane seats in Delhi, and 2,000+ ants in test tubes in Nairobi.
+Worst hiding spot: gold, ants or socks? 👇 Follow for Part 2. (Tokyo and Delhi: accused only.)
+HASHTAGS: #airportsmuggling #lizardsinsocks #customs #airportfails #truecrime
+ALT TEXT: Illustrated reel about airport smuggling fails: customs at Tokyo's Haneda Airport found about 200 lizards stuffed in 22 pairs of socks in a traveller's suitcase in August 2026, after gold chains painted silver and black were found under plane seats in Delhi and more than 2,000 ants in test tubes at Nairobi airport.
+SEED COMMENT: Socks, easily. 44 socks and he still didn't think customs would check one? 😂
+PINNED: Tag the mate who packs light 🧦 Vote: 1 = painted gold, 2 = ants in test tubes, 3 = lizards in socks 👇 Part 2 (a gibbon in his bags) is next.
+POST WHEN: Monday 19 Oct 2026, 6–7 pm US Eastern (Tuesday 7–8 am in Japan, 11 pm UK): the US evening scroll for the 18–34 majority, a day apart from Case Files 76–78 so the first reel of a new series gets its own 3-hour window; no anniversary applies.
+
