@@ -1,0 +1,212 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv76-border-fails-5/tcv76-border-fails-5.mp4",
+    "size_bytes": 18558013,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 38.033,
+    "audio_duration": 38.033,
+    "decode_stderr": "",
+    "mean_volume_db": -17.3,
+    "max_volume_db": -1.9,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv76-border-fails-5/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2282,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.2,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "audio_music_heard_on_phone": true,
+    "audio_sfx_heard_on_phone": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "engage_hook_line_done_by_2_6s": true,
+    "engage_no_save_card_scene": true,
+    "engage_single_punchline_ending": true,
+    "engage_search_term_in_headline_and_first_4s": true,
+    "engage_post_file_ready": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.7,
+    "true_peak_dbtp": -1.9
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.011,
+    "transcript": "Smugglers built a border tunnel with an elevator. It is number three on this list. First 1990, a secret tunnel under a pool table. Hydraulics lifted the floor, pool table and all. But the next tunnel had its own railway. 61 feet down to a San Diego warehouse. Agents just followed them there, almost a ton of cocaine. Then came the longest one ever found. 4,309 feet, 70 feet under the border. Rails power and an elevator at the entrance, the old exit, likely sealed with sandbags. The new exit was still not finished."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 46,
+      "extent": {
+        "left": 129.5,
+        "right": 950.5,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 1.2,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.01,
+      "frames": 380
+    },
+    "audio": {
+      "opening_speech_median_db": -20.5,
+      "opening_min_speech_window_db": -30.6,
+      "first_word_db": -19.2,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -33.1,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.278,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 11.9,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -26.0,
+      "music_audible": true,
+      "music_heard_on_phone": true,
+      "sfx_phone_db": -30.2,
+      "sfx_heard_on_phone": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8063,
+      "loudness_lufs": -14.7,
+      "true_peak_dbtp": -1.9,
+      "mono_lufs": -14.7,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -55.8,
+      "end_before_db": -20.3,
+      "end_last_50ms_db": -91.6,
+      "silent_tail_s": 0.1,
+      "ending_intentional": true,
+      "durations": {
+        "video": 38.033333,
+        "audio": 38.032993
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true,
+        "music_heard_on_phone": true,
+        "sfx_heard_on_phone": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true,
+        "hook_line_done_by_2_6s": true,
+        "no_save_card_scene": true,
+        "single_punchline_ending": true,
+        "search_term_in_headline_and_first_4s": true,
+        "post_file_ready": true
+      },
+      "notes": {
+        "hook": "Smugglers built a border tunnel with an elevator. It is number 3 on this list.",
+        "loop_gaps": [],
+        "tail": "elevator at the entrance. The old exit? Likely sealed with sandbags. The new exit was still not finished.",
+        "end_title": "THE ELEVATOR TUNNEL: GENIUS OR POINTLESS? \ud83d\udc47 BORDER FAILS \u00b7 PART 5 PART 6: WALL CUTS HIDDEN WITH PUTTY FOLLOW FOR PART 6 TAG THE MATE WHO'D WANT A LIFT",
+        "tail_s": 1.73,
+        "wpm": 148.3,
+        "hook_end_s": 2.59,
+        "lesson_scene": null,
+        "end_scene_s": 3.57,
+        "search_terms_hit": [
+          "border tunnel"
+        ]
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 8,
+      "composed_shots": 8,
+      "shots_with_characters": 8,
+      "character_shot_share": 1.0,
+      "distinct_sets": 6,
+      "max_set_share": 0.38,
+      "shot_sizes": {
+        "wide": 4,
+        "medium-wide": 4
+      },
+      "max_shot_size_share": 0.5,
+      "ok": true
+    }
+  }
+}

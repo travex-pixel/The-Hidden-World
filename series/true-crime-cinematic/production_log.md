@@ -440,3 +440,5 @@
 - 2026-10-18 02:33:50 tcv75-cocaine-bunkers: VERIFIED -> series/true-crime-cinematic/output/true_crime_75_cocaine_bunkers.mp4 (37.9s, 19.1 MB, sha256 e39f99da14fc)
 - 2026-10-18 15:49:25 produce 76 --force: regenerating episode data
 - 2026-10-18 15:49:25 tcv76-border-fails-5: rendering (final60, seed 1)
+- 2026-10-18 16:08:35 tcv76-border-fails-5: rendered in 1150s
+- 2026-10-18 16:09:30 tcv76-border-fails-5: VERIFIED -> series/true-crime-cinematic/output/true_crime_76_border_fails_5.mp4 (38.0s, 18.6 MB, sha256 abb25b449ce7)

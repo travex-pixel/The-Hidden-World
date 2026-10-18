@@ -1,7 +1,7 @@
 {
  "episode": "tcv76-border-fails-5",
  "title": "Smugglers Built a Border Tunnel With an Elevator",
- "duration": 37.679,
+ "duration": 38.036,
  "slideshow_risk": {
   "shots": 8,
   "composed_shots": 8,
@@ -16,7 +16,10 @@
   "max_shot_size_share": 0.5,
   "ok": true
  },
- "production_status": {},
+ "production_status": {
+  "series_manifest": "series/true-crime-cinematic/production_manifest.json",
+  "video": "true_crime_76_border_fails_5.mp4"
+ },
  "shots": [
   {
    "id": "s01_hook",
@@ -1300,10 +1303,10 @@
    "id": "s07_elev",
    "scene_type": "bf76_elev",
    "start": 28.75,
-   "duration": 5.357,
+   "duration": 5.714,
    "narration": [
     "Rails, power, and an elevator at the entrance.",
-    "The old exit? Blocked with sandbags."
+    "The old exit? Likely sealed with sandbags."
    ],
    "caption_timings": [
     {
@@ -1356,37 +1359,42 @@
     {
      "line": 1,
      "start": 31.571,
-     "end": 33.741,
+     "end": 34.091,
      "words": [
       {
        "w": "The",
        "start": 31.601,
-       "end": 31.821
+       "end": 31.831
       },
       {
        "w": "old",
-       "start": 31.811,
-       "end": 32.031
+       "start": 31.821,
+       "end": 32.051
       },
       {
        "w": "exit?",
-       "start": 32.021,
-       "end": 32.291
+       "start": 32.041,
+       "end": 32.331
       },
       {
-       "w": "Blocked",
-       "start": 32.281,
-       "end": 32.911
+       "w": "Likely",
+       "start": 32.321,
+       "end": 32.851
+      },
+      {
+       "w": "sealed",
+       "start": 32.841,
+       "end": 33.231
       },
       {
        "w": "with",
-       "start": 32.901,
-       "end": 33.181
+       "start": 33.221,
+       "end": 33.501
       },
       {
        "w": "sandbags.",
-       "start": 33.171,
-       "end": 33.631
+       "start": 33.491,
+       "end": 33.981
       }
      ]
     }
@@ -1432,7 +1440,7 @@
        "turn_head": true
       },
       {
-       "at": 4.35,
+       "at": 4.29,
        "pose": "hand_to_face",
        "expr": "realise"
       }
@@ -1468,7 +1476,7 @@
     {
      "claim": "K_sand",
      "type": "established",
-     "claim_text": "FUN FACT: agents found several hundred sandbags blocking the suspected former exit in the Otay Mesa warehouse district. Narration: 'The old exit? Blocked with sandbags.'",
+     "claim_text": "FUN FACT: agents found several hundred sandbags blocking the suspected former exit in the Otay Mesa warehouse district. Narration: 'The old exit? Likely sealed with sandbags.' (suspected, as reported)",
      "urls": [
       "https://abcnews4.com/news/nation-world/authorities-find-longest-southwest-border-smuggling-tunnel-01-30-2020-033303567",
       "https://digital-release.fox5sandiego.com/2020/01/29/longest-illegal-cross-border-tunnel-found/",
@@ -1500,7 +1508,7 @@
      },
      {
       "name": "thud",
-      "at": 32.281,
+      "at": 32.321,
       "gain": 0.4,
       "word": [
        1,
@@ -1509,7 +1517,7 @@
      },
      {
       "name": "sparkle",
-      "at": 33.471,
+      "at": 33.521,
       "gain": 0.36,
       "word": [
        1,
@@ -1534,7 +1542,7 @@
   {
    "id": "s08_end",
    "scene_type": "bf76_end",
-   "start": 34.107,
+   "start": 34.464,
    "duration": 3.572,
    "narration": [
     "The new exit was still not finished."
@@ -1542,43 +1550,43 @@
    "caption_timings": [
     {
      "line": 0,
-     "start": 34.604,
-     "end": 36.454,
+     "start": 34.961,
+     "end": 36.811,
      "words": [
       {
        "w": "The",
-       "start": 34.634,
-       "end": 34.824
+       "start": 34.991,
+       "end": 35.181
       },
       {
        "w": "new",
-       "start": 34.814,
-       "end": 35.004
+       "start": 35.171,
+       "end": 35.361
       },
       {
        "w": "exit",
-       "start": 34.994,
-       "end": 35.224
+       "start": 35.351,
+       "end": 35.581
       },
       {
        "w": "was",
-       "start": 35.214,
-       "end": 35.404
+       "start": 35.571,
+       "end": 35.761
       },
       {
        "w": "still",
-       "start": 35.394,
-       "end": 35.664
+       "start": 35.751,
+       "end": 36.021
       },
       {
        "w": "not",
-       "start": 35.654,
-       "end": 35.954
+       "start": 36.011,
+       "end": 36.311
       },
       {
        "w": "finished.",
-       "start": 35.944,
-       "end": 36.334
+       "start": 36.301,
+       "end": 36.691
       }
      ]
     }
@@ -1669,7 +1677,7 @@
     "sfx": [
      {
       "name": "whoosh",
-      "at": 34.334,
+      "at": 34.691,
       "gain": 0.3,
       "word": [
        0,
@@ -1678,7 +1686,7 @@
      },
      {
       "name": "sting",
-      "at": 36.364,
+      "at": 36.721,
       "gain": 0.36,
       "word": [
        0,
