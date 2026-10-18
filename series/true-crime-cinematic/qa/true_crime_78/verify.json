@@ -1,0 +1,215 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv78-where-they-hid-it-2/tcv78-where-they-hid-it-2.mp4",
+    "size_bytes": 18965254,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 37.317,
+    "audio_duration": 37.317,
+    "decode_stderr": "",
+    "mean_volume_db": -16.9,
+    "max_volume_db": -2.5,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv78-where-they-hid-it-2/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2239,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.1,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "audio_music_heard_on_phone": true,
+    "audio_sfx_heard_on_phone": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "engage_hook_line_done_by_2_6s": true,
+    "engage_no_save_card_scene": true,
+    "engage_single_punchline_ending": true,
+    "engage_search_term_in_headline_and_first_4s": true,
+    "engage_post_file_ready": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -2.4
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.059,
+    "transcript": "A fishing boat full of cocaine, 2.3 tons, off Australia. But first Madrid, pineapples stuffed with cocaine. The hole, sealed with yellow wax. But that was not the weirdest one. Near Rotterdam, 400 avocados, all fake. Inside, 80 kilos of cocaine, one fell and cracked, real avocado squish. Then Australia, off Queensland, police say it met a mothership at sea. Then it broke down, stranded 18 kilometers out. 51 bales 2.34 tons, a record then. 13 were charged, nobody caught a single fish."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 45,
+      "extent": {
+        "left": 114.1,
+        "right": 965.9,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "Nobody caught a"
+      ]
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.3,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.25,
+      "frames": 373
+    },
+    "audio": {
+      "opening_speech_median_db": -19.4,
+      "opening_min_speech_window_db": -32.5,
+      "first_word_db": -19.3,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -28.8,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.278,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.1,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -28.6,
+      "music_audible": true,
+      "music_heard_on_phone": true,
+      "sfx_phone_db": -30.4,
+      "sfx_heard_on_phone": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.754,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -2.4,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -55.3,
+      "end_before_db": -15.4,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.1,
+      "ending_intentional": true,
+      "durations": {
+        "video": 37.316667,
+        "audio": 37.317007
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true,
+        "music_heard_on_phone": true,
+        "sfx_heard_on_phone": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true,
+        "hook_line_done_by_2_6s": true,
+        "no_save_card_scene": true,
+        "single_punchline_ending": true,
+        "search_term_in_headline_and_first_4s": true,
+        "post_file_ready": true
+      },
+      "notes": {
+        "hook": "A fishing boat full of cocaine. 2.3 tonnes. Off Australia.",
+        "loop_gaps": [],
+        "tail": "51 bales. 2.34 tonnes. A record, then. Thirteen were charged. Nobody caught a single fish.",
+        "end_title": "THE BOAT THAT BROKE DOWN: BAD LUCK OR KARMA? \ud83d\udc47 WHERE THEY HID IT \u00b7 PART 2 PART 3: 57 FAKE BANANAS MADE OF RESIN FOLLOW FOR PART 3 TAG THE MATE WITH A BOAT",
+        "tail_s": 1.13,
+        "wpm": 133.4,
+        "hook_end_s": 1.93,
+        "lesson_scene": null,
+        "end_scene_s": 3.93,
+        "search_terms_hit": [
+          "fishing boat cocaine"
+        ]
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 8,
+      "composed_shots": 8,
+      "shots_with_characters": 6,
+      "character_shot_share": 0.75,
+      "distinct_sets": 5,
+      "max_set_share": 0.25,
+      "shot_sizes": {
+        "wide": 3,
+        "medium-wide": 3,
+        "insert/graphic": 2
+      },
+      "max_shot_size_share": 0.38,
+      "ok": true
+    }
+  }
+}

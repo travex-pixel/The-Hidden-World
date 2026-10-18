@@ -446,3 +446,7 @@
 - 2026-10-18 16:12:12 tcv79-airport-fails-1: rendering (final60, seed 1)
 - 2026-10-18 16:38:33 tcv79-airport-fails-1: rendered in 1581s
 - 2026-10-18 16:39:22 tcv79-airport-fails-1: VERIFIED -> series/true-crime-cinematic/output/true_crime_79_airport_fails_1.mp4 (34.8s, 18.7 MB, sha256 c5ced4870e36)
+- 2026-10-18 16:41:44 produce 78 --force: regenerating episode data
+- 2026-10-18 16:41:44 tcv78-where-they-hid-it-2: rendering (final60, seed 1)
+- 2026-10-18 17:02:42 tcv78-where-they-hid-it-2: rendered in 1258s
+- 2026-10-18 17:03:34 tcv78-where-they-hid-it-2: VERIFIED -> series/true-crime-cinematic/output/true_crime_78_where_they_hid_it_2.mp4 (37.3s, 19.0 MB, sha256 1e5db48c947a)
