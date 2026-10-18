@@ -428,3 +428,5 @@
 - 2026-10-18 01:20:59 tcv75-cocaine-bunkers: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_75
 - 2026-10-18 01:23:29 produce 74 --force: regenerating episode data
 - 2026-10-18 01:23:29 tcv74-wine-heist: rendering (final60, seed 1)
+- 2026-10-18 01:53:46 tcv74-wine-heist: rendered in 1817s
+- 2026-10-18 01:54:30 tcv74-wine-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_74_wine_heist.mp4 (37.0s, 17.6 MB, sha256 bba0341193bd)
