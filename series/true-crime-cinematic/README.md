@@ -74,6 +74,9 @@
 | 70 | `true_crime_70_wendys_finger.mp4` (archived outside git) | The 2005 Wendy's chili finger hoax and the $100 fingertip; AI voice | see `production_manifest.json` |
 | 71 | `true_crime_71_social_reckoning.mp4` (archived outside git) | Trending: The Social Reckoning flop and Meta's projected $16B from scam ads (Reuters); first engine v4 build (Kokoro am_adam) | see `production_manifest.json` |
 | 72 | `true_crime_72_border_fails_3.mp4` (archived outside git) | Border Fails Part 3: fake carrots, the Tijuana meth drone, the San Luis KFC tunnel; engine v4 | see `production_manifest.json` |
+| 73 | `true_crime_73_border_fails_4.mp4` (archived outside git) | Border Fails Part 4: fake FedEx vans, a cloned K-9 truck, the fake Border Patrol truck near Calexico; engine v5 sound | see `production_manifest.json` |
+| 74 | `true_crime_74_wine_heist.mp4` (archived outside git) | Wine Heists Part 1: Antinori's 30,000 bottles (Oct 2026), the Atrio room-service theft, Virginia decoy bottles; engine v5 sound | see `production_manifest.json` |
+| 75 | `true_crime_75_cocaine_bunkers.mp4` (archived outside git) | Where They Hid It Part 1: bananas in Italy, a bus fuel tank, Australia's record 2.7 t in bunkers under containers; engine v5 sound | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

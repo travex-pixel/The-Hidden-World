@@ -831,3 +831,34 @@ SEED COMMENT: Dumbest. 590 feet of tunnel to Mexico and it starts in a KFC kitch
 PINNED: Part 1 = the drug catapult, Part 2 = the Jeep stuck on the border fence (linked above). Which border fail was dumber? Vote 1 = the KFC tunnel, 2 = the Jeep on the fence 👇 Tag a mate who'd dig one.
 POST WHEN: Sunday 18 Oct 2026, 12–2 pm US Eastern (weekend lunch scroll for men 18–34 in the US): a day after Case File 71 so the two do not compete, and in time to link Parts 1 and 2 with "Link a reel". If it has to go out today, 7–9 pm US Eastern.
 
+
+## 73 (`true_crime_73_border_fails_4.mp4`)
+CAPTION: Fake Border Patrol truck: smugglers dressed a pickup up as Border Patrol near Calexico, and the real Border Patrol watched them cut the fence 🚨 Border Fails, Part 4.
+Before that: two fake FedEx vans in El Paso, and a cloned K-9 truck that even copied a real unit's plate number.
+Brilliant or brainless? 👇 Follow for Part 5.
+HASHTAGS: #fakeborderpatroltruck #bordersmugglers #borderfails #truecrime #smugglers
+ALT TEXT: Illustrated reel, Border Fails Part 4: a fake Border Patrol truck made by smugglers, found by Mexican police near Calexico, California in July 2023 after real Border Patrol agents saw the fence being cut, plus two fake FedEx vans stopped in El Paso and a cloned Border Patrol K-9 truck followed to a garage in Yuma.
+SEED COMMENT: Brainless. You copy the plate number and still drive it straight home? 😂
+PINNED: Part 1 = the drug catapult, Part 2 = the Jeep stuck on the border fence, Part 3 = the KFC tunnel (linked above). Which fake was dumbest? Vote 1 = the fake Border Patrol truck, 2 = the K-9 truck that drove home 👇 Tag the mate who'd get spotted.
+POST WHEN: Monday 19 Oct 2026, 7–9 pm US Eastern (evening scroll for men 18–34 in the US), a day after Part 3 so the two do not compete and Parts 1–3 can be linked with "Link a reel". If it must go out today (Sun 18 Oct), 7–9 pm US Eastern.
+
+## 74 (`true_crime_74_wine_heist.mp4`)
+CAPTION: Wine heist: thieves took 30,000 bottles from Antinori in Tuscany, Solaia included, using the winery's own forklifts 🍷 Wine Heists, Part 1.
+Then a room-service trick in Spain, and fake bottles left in a Virginia cellar.
+Forklifts or fakes: which was smartest? 👇 Follow for Part 2.
+HASHTAGS: #wineheist #antinori #solaia #heist #truecrime
+ALT TEXT: Illustrated reel, Wine Heists Part 1: the October 2026 Antinori wine heist in Tuscany, where thieves switched off the alarms and loaded about 30,000 bottles including Solaia with the winery's own forklifts, plus the 2021 Atrio hotel heist in Spain and the 2025 decoy-bottle theft at a Virginia restaurant.
+SEED COMMENT: Fakes, easy. Swapping the bottles mid-tour is cold. The forklift crew just brought trucks 😂
+PINNED: Part 2 is a tunnel into a Paris wine cellar (follow so you catch it). Smartest heist? Vote 1 = the forklifts, 2 = the room service, 3 = the fake bottles 👇 Tag the mate who'd drink it.
+POST WHEN: Monday 19 Oct 2026, 12–2 pm US Eastern (weekday lunch scroll for men 18–34 in the US), while the Antinori story is still being searched (made public 9 Oct; no arrests yet). Keep it a few hours apart from Case Files 73 and 75 so they do not compete. If it must go out today (Sun 18 Oct), 7–9 pm US Eastern.
+
+## 75 (`true_crime_75_cocaine_bunkers.mp4`)
+CAPTION: Australia's biggest cocaine bust: 2.7 tonnes buried in bunkers under 3 shipping containers in Sydney 🇦🇺 Where They Hid It, Part 1.
+Before that: 1,700 lb of cocaine among bananas in Italy, and 262 lb in a bus's fuel tank at the border.
+Genius or insane? 👇 Follow for Part 2. (Two men charged; accused only.)
+HASHTAGS: #cocainebust #australiacocaine #biggestcocaineseizure #sydney #truecrime
+ALT TEXT: Illustrated reel about Australia's biggest cocaine bust: police found 2.7 tonnes of cocaine in plastic tubs in underground bunkers hidden under the false floors of three shipping containers in Londonderry, Sydney, in June 2026, plus cocaine among bananas in Italy and in a bus fuel tank at San Ysidro.
+SEED COMMENT: Insane. You build a bunker under a shipping container and the false floor is what gives it away? 😂
+PINNED: Tag the mate who'd build one. Vote: 1 = the bunkers under the containers, 2 = the bus fuel tank 👇 Part 2 (the old record: 2.3 tonnes on a fishing boat) is next.
+POST WHEN: Monday 19 Oct 2026, 7–8 am AEDT (Sunday 18 Oct, 4–5 pm US Eastern): catches Australian men on the Monday-morning commute while the US Sunday-afternoon scroll is still on, so both the AU audience (the hook) and the US majority see it in the first 3 hours.
+

@@ -6170,7 +6170,7 @@
         "fps": 60.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 19068565,
+        "size_bytes": 19082978,
         "mean_volume_db": -17.2,
         "max_volume_db": -2.3
       },
@@ -6202,7 +6202,7 @@
         "true_peak_ok": true,
         "narration_intelligible_asr": true,
         "captions_in_safe_area": true,
-        "no_frozen_or_static_picture": false,
+        "no_frozen_or_static_picture": true,
         "audio_opening_speech_steady": true,
         "audio_opening_no_holes": true,
         "audio_narration_on_time": true,
@@ -6239,8 +6239,11 @@
       "asr_word_error_rate": 0.067,
       "frames_sampled": 7,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_75",
-      "status": "failed_qa",
-      "next_task": "inspect qa/ and fix; then re-run qa.py"
+      "status": "verified_automated",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "sha256": "e39f99da14fc682921ede9f75f768e846f8b8e9e775e3ab8cc5d43e725563d94",
+      "output": "series/true-crime-cinematic/output/true_crime_75_cocaine_bunkers.mp4",
+      "verified": "2026-10-18T02:33:50"
     },
     "74": {
       "id": "tcv74-wine-heist",
@@ -6415,7 +6418,7 @@
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
     }
   },
-  "updated": "2026-10-18T02:16:23",
+  "updated": "2026-10-18T02:33:50",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",
