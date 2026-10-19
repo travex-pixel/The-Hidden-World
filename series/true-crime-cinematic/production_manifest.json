@@ -7030,7 +7030,7 @@
         "fps": 60.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 16462655,
+        "size_bytes": 16594732,
         "mean_volume_db": -16.8,
         "max_volume_db": -2.9
       },
@@ -7097,7 +7097,7 @@
         "engage_callback_ending": true,
         "engage_under_32s": true,
         "engage_no_part_on_frame_1": true,
-        "shot_variety_and_character_action": false,
+        "shot_variety_and_character_action": true,
         "every_shot_sourced_and_tagged": true
       },
       "loudness": {
@@ -7107,8 +7107,11 @@
       "asr_word_error_rate": 0.045,
       "frames_sampled": 6,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_83",
-      "status": "failed_qa",
-      "next_task": "inspect qa/ and fix; then re-run qa.py"
+      "status": "verified_automated",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "sha256": "182b3c2393ce9e3923705802b0c4d015c01c7098954c5e4c3f9c3445a35c536a",
+      "output": "series/true-crime-cinematic/output/true_crime_83_fake_ambulance.mp4",
+      "verified": "2026-10-19T17:01:41"
     },
     "85": {
       "id": "tcv85-asleep-burglar",
@@ -7296,7 +7299,7 @@
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
     }
   },
-  "updated": "2026-10-19T16:30:22",
+  "updated": "2026-10-19T17:01:41",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

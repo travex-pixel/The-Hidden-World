@@ -484,3 +484,7 @@
 - 2026-10-19 16:01:22 tcv84-instagram-burglar: rendering (final60, seed 1)
 - 2026-10-19 16:29:38 tcv84-instagram-burglar: rendered in 1696s
 - 2026-10-19 16:30:22 tcv84-instagram-burglar: VERIFIED -> series/true-crime-cinematic/output/true_crime_84_instagram_burglar.mp4 (31.4s, 14.3 MB, sha256 4f2237c7d14b)
+- 2026-10-19 16:32:25 produce 83 --force: regenerating episode data
+- 2026-10-19 16:32:25 tcv83-fake-ambulance: rendering (final60, seed 1)
+- 2026-10-19 17:00:57 tcv83-fake-ambulance: rendered in 1712s
+- 2026-10-19 17:01:41 tcv83-fake-ambulance: VERIFIED -> series/true-crime-cinematic/output/true_crime_83_fake_ambulance.mp4 (31.2s, 16.6 MB, sha256 182b3c2393ce)

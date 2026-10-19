@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv83-fake-ambulance/tcv83-fake-ambulance.mp4",
-    "size_bytes": 16462655,
+    "size_bytes": 16594732,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -79,7 +79,7 @@
     "engage_callback_ending": true,
     "engage_under_32s": true,
     "engage_no_part_on_frame_1": true,
-    "shot_variety_and_character_action": false,
+    "shot_variety_and_character_action": true,
     "every_shot_sourced_and_tagged": true
   },
   "loudness": {
@@ -114,12 +114,12 @@
       "longest_still_s": 0.2,
       "still_spans_over_limit": [],
       "beats_without_visual_change": [],
-      "median_motion": 1.3,
+      "median_motion": 1.33,
       "frames": 313,
-      "opening_motion": 12.28,
+      "opening_motion": 12.44,
       "opening_motion_ok": true
     },
-    "loop_match": 1.2,
+    "loop_match": 0.82,
     "audio": {
       "opening_speech_median_db": -19.5,
       "opening_min_speech_window_db": -29.2,
@@ -238,11 +238,12 @@
       "distinct_sets": 5,
       "max_set_share": 0.29,
       "shot_sizes": {
-        "medium-wide": 6,
-        "medium": 1
+        "wide": 2,
+        "close-up": 1,
+        "medium-wide": 4
       },
-      "max_shot_size_share": 0.86,
-      "ok": false
+      "max_shot_size_share": 0.57,
+      "ok": true
     }
   }
 }
