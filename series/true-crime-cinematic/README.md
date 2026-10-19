@@ -81,6 +81,9 @@
 | 77 | `true_crime_77_wine_heists_2.mp4` (archived outside git) | Wine Heists Part 2: Formel B via the wine shop, the Taillevent rod, the Paris catacomb tunnel (2017); engine v5 | see `production_manifest.json` |
 | 78 | `true_crime_78_where_they_hid_it_2.mp4` (archived outside git) | Where They Hid It Part 2: waxed pineapples, plastic avocados, the 2.34 t fishing boat off K'gari (2024); engine v5 | see `production_manifest.json` |
 | 79 | `true_crime_79_airport_fails_1.mp4` (archived outside git) | Airport Fails Part 1: painted gold chains (Delhi), 2,238 ants (Nairobi), 200 lizards in socks (Tokyo); engine v5 | see `production_manifest.json` |
+| 80 | `true_crime_80_peoples_court_arrest.mp4` (archived outside git) | Michelle Parker: vanished after her People's Court episode (2011); ex-fiancé charged 14 Oct 2026, pleaded not guilty; respectful case update, engine v5 | see `production_manifest.json` |
+| 81 | `true_crime_81_where_they_hid_it_3.mp4` (archived outside git) | Where They Hid It Part 3: weed in plastic spools (Delhi, Oct 2026), drugs packed with used cars (Lagos), 57 resin fake bananas (Spain); engine v5 | see `production_manifest.json` |
+| 82 | `true_crime_82_lego_thief.mp4` (archived outside git) | LEGO Heists Part 1: the $18,000 Walmart LEGO theft flagged by plate cameras (Wisconsin, Oct 2026), 2,800 boxes in one house, pasta-filled returns; engine v5 | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

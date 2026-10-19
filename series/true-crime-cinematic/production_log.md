@@ -462,3 +462,7 @@
 - 2026-10-19 11:50:04 tcv82-lego-thief: rendering (final60, seed 1)
 - 2026-10-19 12:18:19 tcv82-lego-thief: rendered in 1695s
 - 2026-10-19 12:19:17 tcv82-lego-thief: VERIFIED -> series/true-crime-cinematic/output/true_crime_82_lego_thief.mp4 (37.9s, 22.0 MB, sha256 2c342ec17bc3)
+- 2026-10-19 12:21:57 produce 80 --force: regenerating episode data
+- 2026-10-19 12:21:57 tcv80-peoples-court-arrest: rendering (final60, seed 1)
+- 2026-10-19 12:57:42 tcv80-peoples-court-arrest: rendered in 2145s
+- 2026-10-19 12:58:34 tcv80-peoples-court-arrest: VERIFIED -> series/true-crime-cinematic/output/true_crime_80_peoples_court_arrest.mp4 (37.7s, 15.4 MB, sha256 13fa8d1b25c8)

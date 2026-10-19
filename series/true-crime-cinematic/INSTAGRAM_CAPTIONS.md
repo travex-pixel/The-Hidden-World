@@ -903,3 +903,30 @@ SEED COMMENT: Socks, easily. 44 socks and he still didn't think customs would ch
 PINNED: Tag the mate who packs light 🧦 Vote: 1 = painted gold, 2 = ants in test tubes, 3 = lizards in socks 👇 Part 2 (a gibbon in his bags) is next.
 POST WHEN: Monday 19 Oct 2026, 6–7 pm US Eastern (Tuesday 7–8 am in Japan, 11 pm UK): the US evening scroll for the 18–34 majority, a day apart from Case Files 76–78 so the first reel of a new series gets its own 3-hour window; no anniversary applies.
 
+## 80 (`true_crime_80_peoples_court_arrest.mp4`)
+CAPTION: Michelle Parker vanished in Orlando hours after her People's Court episode aired in 2011. Fifteen years later, police have charged her ex-fiancé with second-degree murder. He has pleaded not guilty.
+Her car was found the next day, her phone in a lake. She has never been found.
+Will 15-year-old evidence hold up in court? YES or NO 👇
+HASHTAGS: #michelleparker #peoplescourt #coldcase #orlando #truecrime
+ALT TEXT: Illustrated case update on the Michelle Parker cold case arrest: she vanished in Orlando in November 2011 hours after her People's Court episode aired; in October 2026 police charged her ex-fiancé Dale Smith Jr., who has pleaded not guilty, crediting new digital forensics.
+SEED COMMENT: Her family has waited 15 years for this. The affidavit is sealed, so none of the evidence is public yet. Whatever a jury decides, I hope they finally get answers.
+PINNED: Michelle deserves answers. Will 15-year-old evidence hold up? Comment YES or NO 👇 (He is charged, not convicted, and presumed innocent.)
+POST WHEN: Monday 19 Oct 2026, 7–9 pm US Eastern (evening scroll for men 18–34 in the US; the arrest broke Wed 14 Oct and "michelle parker" / "people's court" are still being searched). If it slips, Tuesday 20 Oct 12–2 pm Eastern; check first whether a detention-hearing date has been set and update the end-card status if the facts have moved.
+
+## 81 (`true_crime_81_where_they_hid_it_3.mp4`)
+CAPTION: Fake bananas cocaine: 57 resin "bananas" stuffed with cocaine in a real banana shipment to Spain 🍌 Where They Hid It, Part 3.
+First, this week: 148 kg of suspected weed in plastic spools at Delhi airport, and 1.2 tonnes of drugs packed with used cars in Lagos.
+Spools, cars or bananas: best hiding spot? 👇 Follow for Part 4. (Everyone arrested is accused only.)
+HASHTAGS: #cocainebust #drugsmuggling #fakebananas #customs #truecrime
+ALT TEXT: Illustrated reel about fake bananas cocaine smuggling: 57 resin bananas stuffed with cocaine among real bananas shipped to Spain, plus suspected weed hidden in plastic spools at Delhi airport and cannabis cookies and gummies hidden with used cars at Lagos port.
+SEED COMMENT: Bananas, easy. Someone sat in a workshop pouring resin into 57 banana moulds 😂
+PINNED: Tag your banana-loving mate. Part 1 = the cocaine bunkers under the shipping containers in Sydney; Part 2 = the 2.3-tonne fishing boat that broke down off Australia. Vote: 1 = spools, 2 = used cars, 3 = fake bananas 👇
+POST WHEN: Tuesday 20 Oct 2026, 12–2 pm US Eastern (weekday lunch scroll): the Delhi seizure is this week's news; link it to Part 2 (Case File 78) with "Link a reel". Case File 80 takes Monday evening because the Parker arrest is the most time-sensitive.
+
+## 82 (`true_crime_82_lego_thief.mp4`)
+CAPTION: LEGO theft, Part 1 of LEGO Heists: plate cameras flagged a man police link to $18,000 of LEGO from Walmarts in two states (accused, not tried). Then 2,800 boxes in one house, and LEGO boxes returned full of pasta. Dumbest LEGO heist: cameras, buyers or pasta?
+HASHTAGS: #legotheft #lego #truecrime #flockcamera #legoheists
+ALT TEXT: Illustrated LEGO theft reel: a car boot crammed with brick-set boxes under a flashing plate camera, a house walled with 2,800 boxes, and a returned box full of dried pasta.
+SEED COMMENT: Pasta wins. Who thinks a cashier would never open the box?
+PINNED: Tag the mate with a LEGO shelf 🧱 Vote: 1 = cameras, 2 = buyers, 3 = pasta 👇 Part 2: a tech exec's fake barcodes.
+POST WHEN: Tuesday 20 Oct 2026, 7–9 pm US Eastern (evening scroll): the Sun Prairie arrest (14 Oct) is still being searched this week; keep it several hours apart from Case File 81.
