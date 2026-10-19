@@ -37,10 +37,10 @@ def build(h):
         #     the sofa holds up a big glowing phone whose screen shows a generic grid of holiday photos (the accent object,
         #     a third of the frame wide, upper-middle), his thumb flicks the grid at 0.0 s, the camera already pushing in;
         #     on line 2 one tile is circled: TRIP POSTS
-        S("s01_hook", "ib84_hook", [N("He robbed his own Instagram friends.", tone="hook"),
+        S("s01_hook", "ib84_hook", [N("Police say he robbed his Instagram friends.", tone="hook"),
                                     N("Police say their vacation posts flagged empty homes.", tone="tense")],
-          "tension", ["K_hook", "K_posts"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "click", 0.26), fw(0, 1, "thump", 0.3, 0.0), fw(1, 4, "ping", 0.24, 0.0), fw(1, 5, "whoosh", 0.18, -0.05)],
-          emph=["robbed", "own", "instagram", "friends.", "vacation", "posts", "empty", "homes."], min_d=4.6, pad=0.12),
+          "tension", ["K_hook", "K_posts"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "click", 0.26), fw(0, 3, "thump", 0.3, 0.0), fw(1, 4, "ping", 0.24, 0.0), fw(1, 5, "whoosh", 0.18, -0.05)],
+          emph=["police", "robbed", "instagram", "friends.", "vacation", "posts", "empty", "homes."], min_d=4.6, pad=0.02),
         # B - THE GOTCHA (before 9 s): an office car park before dawn; the silhouette walks from his car toward the glass
         #     door; on "tracked" a patrol light bar glows from the right, two officers step in and their torch beams land on
         #     him (the single impact); on line 2 the 12+ HOMES counter
@@ -58,7 +58,7 @@ def build(h):
         #     "logged" the callout STILL LOGGED IN; the charged label; then the fun-fact card
         S("s04_logged", "ib84_logged", [N("He left it logged in.", tone="reveal", pause_before=0.3)],
           "tension", ["K_parker", "K_charged", "K_fact"], sfx=[fw(0, 0, "riser", 0.2, -0.5), fw(0, 3, "hit", 0.4, -0.03), fw(0, 4, "sparkle", 0.3, 0.9)],
-          emph=["left", "logged", "in."], min_d=3.7, pad=0.15, tr="cut"),
+          emph=["left", "logged", "in."], min_d=3.6, pad=0.15, tr="cut"),
         # C - REHOOK + CASE 3: a Washington rowhouse living room; the DC silhouette in a long coat holds a phone up for a
         #     selfie, a fan of cash in the other hand; the shutter flash on "selfie"
         S("s05_selfie", "ib84_selfie", [N("The strangest took a selfie with the cash.", tone="tense")],
@@ -74,7 +74,7 @@ def build(h):
         #     and the lamp blink out, then come back; the camera eases back to frame 1's start framing; the end card; no fade
         S("s07_end", "ib84_end", [N("Police say he cut their power first.", tone="reveal", pause_before=0.15)],
           "aftermath", ["K_power"], sfx=[fw(0, 5, "click", 0.3, -0.02), fw(0, 5, "sub", 0.32, 0.0), fw(0, 6, "thump", 0.24, 0.05)],
-          emph=["cut", "power", "first."], min_d=2.2, pad=0.5, tr="zoom"),
+          emph=["cut", "power", "first."], min_d=2.2, pad=0.45, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_office": "B", "s03_desk": "B", "s04_logged": "C", "s05_selfie": "C", "s06_posted": "D", "s07_end": "E"}
     cases = {"s01_hook": "scottsdale", "s02_office": "scottsdale", "s03_desk": "martinsburg", "s04_logged": "martinsburg",
@@ -114,7 +114,7 @@ def build(h):
     ]
     C = h.claim
     claims = [
-        C("K_hook", "Police say a 41-year-old Scottsdale man met wealthy people through the Scottsdale hospitality social scene, followed their accounts (court records via FOX 10: on Instagram; AZFamily: 'his social media feed') and targeted their homes. Narration: 'He robbed his own Instagram friends.' Headline 'HE ROBBED HIS OWN / INSTAGRAM FRIENDS'. Accused only.",
+        C("K_hook", "Police say a 41-year-old Scottsdale man met wealthy people through the Scottsdale hospitality social scene, followed their accounts (court records via FOX 10: on Instagram; AZFamily: 'his social media feed') and targeted their homes. Narration: 'Police say he robbed his Instagram friends.' Headline 'POLICE SAY HE ROBBED / HIS INSTAGRAM FRIENDS'. Accused only.",
           ["fox10", "fox10b", "azfamily", "kold", "yourvalley"]),
         C("K_posts", "Court records say that when the homeowners posted that they were travelling out of state or abroad, he used those posts to confirm the houses were empty before breaking in. Narration: 'Police say their vacation posts flagged empty homes.'",
           ["fox10", "azfamily", "kold", "yourvalley"]),
@@ -137,7 +137,7 @@ def build(h):
     ]
 
     figures = ["ib84_accused", "ib84_officer", "ib84_officer_b", "ib84_parker", "ib84_victim", "ib84_knight", "ib84_son"]
-    ep = h.base(EP, 84, "He Robbed His Own Instagram Friends",
+    ep = h.base(EP, 84, "Police Say He Robbed His Instagram Friends",
                 "Caught by their own phone: police say a Scottsdale man used friends' vacation posts to rob empty homes; a 2009 burglar left Facebook logged in; a DC burglar posted his selfie to the victim's son's page. Post your trip live?",
                 figures, scenes, claims, sources, "CAUGHT BY THEIR OWN PHONE · 1", bpm=84)
     ep["format"] = "short40"
@@ -148,7 +148,7 @@ def build(h):
     ep["palette"] = {"shadow": "#0f1a2a", "mid": "#bfb8ac", "accent": "#e8b34a"}
     ep["target_duration_seconds"] = [27, 32]
     ep["music"]["beat_snap"] = 0.25
-    ep["hook_title"] = {"lines": [{"text": "HE ROBBED HIS OWN"}, {"text": "INSTAGRAM FRIENDS", "colour": "#e8b34a"}],
+    ep["hook_title"] = {"lines": [{"text": "POLICE SAY HE ROBBED"}, {"text": "HIS INSTAGRAM FRIENDS", "colour": "#e8b34a"}],
                         "until": 2.6, "y": 400}
     # the CASE chip, word-anchored from out/<id>/timeline.json when a build exists (narration is cached, so stable)
     anchors = [("s01_hook", 1, 0, 3.2, "1 · SCOTTSDALE"), ("s03_desk", 1, 0, 13.0, "2 · WEST VIRGINIA"),

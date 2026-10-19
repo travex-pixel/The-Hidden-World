@@ -69,6 +69,14 @@
   // the torch sweep: aim in degrees (118 = up-right at the wall, 86 = level-right onto the sleeper)
   const sweepAim = k => lerp(118, 86, ease.inOut(k));
   const litX = k => lerp(520, 850, ease.inOut(k));
+  // the hook/end torch beam drawn from a FIXED origin at the torch tip (not from the swaying arm), so frame 1 and the
+  // last frame carry the identical wedge (the loop check); the figure's own beam is switched off in these two shots
+  const TIP = [372, 1242];
+  function beamProp(aimDeg) {
+    const a = aimDeg * Math.PI / 180, L = 860, sp = 0.32, dx = Math.sin(a), dy = Math.cos(a);
+    const l1 = [TIP[0] + Math.sin(a - sp) * L, TIP[1] + Math.cos(a - sp) * L], l2 = [TIP[0] + Math.sin(a + sp) * L, TIP[1] + Math.cos(a + sp) * L], end = [TIP[0] + dx * L, TIP[1] + dy * L];
+    return `<defs><linearGradient id="ab85bm" gradientUnits="userSpaceOnUse" x1="${f1(TIP[0])}" y1="${f1(TIP[1])}" x2="${f1(end[0])}" y2="${f1(end[1])}"><stop offset="0" stop-color="#fff4cf" stop-opacity="0.5"/><stop offset="1" stop-color="#fff4cf" stop-opacity="0"/></linearGradient></defs><path d="M${f1(TIP[0])} ${f1(TIP[1])} L${f1(l1[0])} ${f1(l1[1])} L${f1(l2[0])} ${f1(l2[1])} Z" fill="url(#ab85bm)" style="mix-blend-mode:screen"/>`;
+  }
 
   // a plain body-camera HUD (no department marking): corner brackets, REC, a plain date
   function hud(t, op = 1) {
@@ -210,11 +218,12 @@
         set: 'ab85_bedroom', grade: 'night', haze: 0.3,
         cam: { from: HERO_CAM0, to: HERO_CAM1 },
         figures: [
-          { ...OFFICER, propOpts: { beamLen: 860, aim },
+          { ...OFFICER, propOpts: { beam: false, aim },
             walk: { at: l2, dur: 0.7, cadence: 3.0, stride: 10, from: 190, to: 240 },
             keys: [{ at: l2 + 0.75, pose: 'torch', expr: 'stern', headTurn: 0.2, dur: 0.3 }, { at: lk, pose: 'torch_low', expr: 'focused', dur: 0.4 }, { at: up, pose: 'torch', expr: 'stern', headTurn: 0.3, dur: 0.4 }] }
         ],
-        props: [{ depth: 1.0, accent: true, svg: tt => bed(tt, { lit: 0.4 + 0.6 * seg(tt, 0.3, 1.4), litX: litX(seg(tt, 0.0, 1.4)) }) }],
+        props: [{ depth: 1.0, accent: true, svg: tt => bed(tt, { lit: 0.4 + 0.6 * seg(tt, 0.3, 1.4), litX: litX(seg(tt, 0.0, 1.4)) }) },
+          { depth: 1.0, svg: tt => beamProp(sweepAim(seg(tt, 0.0, 1.4)) + 2.5 * Math.sin(tt * 1.3)) }],
         overlays: [
           { type: 'label', at: Math.max(3.05, l2 + 0.25), x: 60, y: 560, text: 'CHILLICOTHE, OHIO · MON 12 OCT 2026', fs: 38, sub: 'Police say · accused of burglary, not tried · AS OF OCT 2026' },
           { type: 'label', at: lk + 0.1, x: 60, y: 1120, text: 'INNER BACK-DOOR LOCK: MISSING', fs: 34, sub: 'Found by the owner\'s relative (Scioto Post, Heritage Headlines)' }
@@ -360,8 +369,9 @@
       return E.cine.shot(ctx, {
         set: 'ab85_bedroom', grade: 'night', haze: 0.3,
         cam: { keys: [{ at: 0, ...HERO_CAM1 }, { at: 0.1, ...HERO_CAM0, dur: Math.max(1.2, T - 0.5) }] },
-        figures: [{ ...OFFICER, propOpts: { beamLen: 860, aim } }],
-        props: [{ depth: 1.0, accent: true, svg: tt => bed(tt, { lit: 0.4 + 0.6 * k, litX: litX(k) }) }],
+        figures: [{ ...OFFICER, propOpts: { beam: false, aim } }],
+        props: [{ depth: 1.0, accent: true, svg: tt => bed(Math.max(0, T - tt), { lit: 0.4 + 0.6 * k, litX: litX(k) }) },
+          { depth: 1.0, svg: tt => beamProp(aim) }],
         overlays: [],
         tag: TAG
       });

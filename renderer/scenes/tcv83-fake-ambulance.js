@@ -454,7 +454,7 @@
         ],
         props: [hero({ open: tt => 1 - 0.55 * ease.inOut(seg(tt, back, T - 0.05)), beam: tt => 1 - seg(tt, back, T) })],
         overlays: [
-          { type: 'label', at: 0.3, x: 60, y: 745, text: 'THE "PATIENT" ON CRUTCHES WAS ONE OF THE GANG (NCA)', fs: 28 }
+          { type: 'label', at: 0.3, x: 60, y: 728, text: 'THE "PATIENT" ON CRUTCHES WAS ONE OF THE GANG (NCA)', fs: 28 }
         ],
         tag: TAG
       });
