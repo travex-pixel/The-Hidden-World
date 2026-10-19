@@ -480,3 +480,7 @@
 - 2026-10-19 15:48:10 produce 85 --force: regenerating episode data
 - 2026-10-19 15:48:10 tcv85-asleep-burglar: rendering (final60, seed 1)
 - 2026-10-19 15:58:31 tcv85-asleep-burglar: RENDER FAILED, see out/tcv85-asleep-burglar/ and fix; re-run produce.py 85
+- 2026-10-19 16:01:22 produce 84 --force: regenerating episode data
+- 2026-10-19 16:01:22 tcv84-instagram-burglar: rendering (final60, seed 1)
+- 2026-10-19 16:29:38 tcv84-instagram-burglar: rendered in 1696s
+- 2026-10-19 16:30:22 tcv84-instagram-burglar: VERIFIED -> series/true-crime-cinematic/output/true_crime_84_instagram_burglar.mp4 (31.4s, 14.3 MB, sha256 4f2237c7d14b)
