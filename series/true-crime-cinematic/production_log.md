@@ -454,3 +454,5 @@
 - 2026-10-18 17:06:29 tcv77-wine-heists-2: rendering (final60, seed 1)
 - 2026-10-18 17:41:19 tcv77-wine-heists-2: rendered in 2090s
 - 2026-10-18 17:42:04 tcv77-wine-heists-2: QA FAILED ['loudness_near_target']; frames and details in series/true-crime-cinematic/qa/true_crime_77
+- 2026-10-19 11:29:20 produce 81 --force: regenerating episode data
+- 2026-10-19 11:29:20 tcv81-where-they-hid-it-3: rendering (final60, seed 1)
