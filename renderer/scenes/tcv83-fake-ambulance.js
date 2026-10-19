@@ -294,9 +294,9 @@
         set: 'fa83_yard', grade: 'night', haze: 0.3,
         cam: { from: HERO_CAM0, to: HERO_CAM1 },
         figures: [
-          { id: 'fa83_officer', x: 930, y: 1500, scale: 0.6, dir: -1, turn: 0.4, pose: 'torch', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1a2230' }, propOpts: { beamLen: 420, aim: 150 },
+          { id: 'fa83_officer', x: 930, y: 1500, scale: 0.51, dir: -1, turn: 0.4, pose: 'torch', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1a2230' }, propOpts: { beamLen: 420, aim: 150 },
             keys: [{ at: 0.9, pose: 'torch', expr: 'shocked', headTurn: -0.2, dur: 0.4 }, { at: l2 + 0.1, pose: 'point', expr: 'stern', dur: 0.4 }, { at: tr + 0.1, pose: 'torch', expr: 'focused', dur: 0.4 }] },
-          { id: 'fa83_medic', x: 190, y: 1500, scale: 0.58, dir: 1, turn: 0.4, pose: 'hands_behind', silhouette: 'cool', depth: 1.02,
+          { id: 'fa83_medic', x: 190, y: 1500, scale: 0.49, dir: 1, turn: 0.4, pose: 'hands_behind', silhouette: 'cool', depth: 1.02,
             keys: [{ at: l2 + 0.2, pose: 'hands_behind', headTurn: 0.5, dur: 0.4 }, { at: tr + 0.3, pose: 'bowed', dur: 0.4 }] }
         ],
         props: [hero({ open: tt => 0.45 + 0.55 * seg(tt, 0.0, 0.85), beam: tt => seg(tt, 0.3, 0.9) })],
@@ -315,7 +315,7 @@
       const PX = 300, PY = 700, PW = 480, PH = 400;
       return E.cine.shot(ctx, {
         set: 'fa83_inside', grade: 'cold', haze: 0.2, dof: true,
-        cam: { from: { x: 0, y: 20, z: 1.04 }, to: { x: 0, y: 30, z: 1.12 } },
+        cam: { from: { x: 0, y: 20, z: 1.04 }, to: { x: 0, y: 30, z: 1.22 } },
         rack: { at: 0.05, dur: 0.7, from: 'bg' },
         figures: [
           { id: 'fa83_officer', x: 1000, y: 2160, scale: 1.2, dir: -1, turn: 0.45, pose: 'examine', expr: 'focused', depth: 1.05, hat: { style: 'cap', color: '#1a2230' },
@@ -447,9 +447,9 @@
         set: 'fa83_yard', grade: 'night', haze: 0.3,
         cam: { keys: [{ at: 0, ...HERO_CAM1 }, { at: 0.1, ...HERO_CAM0, dur: Math.max(1.4, T - 0.5) }] },
         figures: [
-          { id: 'fa83_officer', x: 930, y: 1500, scale: 0.6, dir: -1, turn: 0.4, pose: 'torch', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1a2230' }, propOpts: { beamLen: 420, aim: 150 },
+          { id: 'fa83_officer', x: 930, y: 1500, scale: 0.51, dir: -1, turn: 0.4, pose: 'torch', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1a2230' }, propOpts: { beamLen: 420, aim: 150 },
             keys: [{ at: cr, pose: 'point', expr: 'stern', headTurn: -0.3, dur: 0.35 }, { at: Math.max(cr + 0.5, back - 0.2), pose: 'torch', expr: 'focused', dur: 0.4 }] },
-          { id: 'fa83_medic', x: 190, y: 1500, scale: 0.58, dir: 1, turn: 0.4, pose: 'hands_behind', silhouette: 'cool', depth: 1.02,
+          { id: 'fa83_medic', x: 190, y: 1500, scale: 0.49, dir: 1, turn: 0.4, pose: 'hands_behind', silhouette: 'cool', depth: 1.02,
             keys: [{ at: cr + 0.1, pose: 'hands_behind', headTurn: 0.5, dur: 0.4 }, { at: Math.max(cr + 0.6, back - 0.1), pose: 'hands_behind', headTurn: 0, dur: 0.4 }] }
         ],
         props: [hero({ open: tt => 1 - 0.55 * ease.inOut(seg(tt, back, T - 0.05)), beam: tt => 1 - seg(tt, back, T) })],
