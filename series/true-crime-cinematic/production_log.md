@@ -472,3 +472,7 @@
 - 2026-10-19 15:05:56 tcv83-fake-ambulance: QA FAILED ['shot_variety_and_character_action']; frames and details in series/true-crime-cinematic/qa/true_crime_83
 - 2026-10-19 15:08:14 produce 85 --force: regenerating episode data
 - 2026-10-19 15:08:14 tcv85-asleep-burglar: rendering (final60, seed 1)
+- 2026-10-19 15:27:25 tcv85-asleep-burglar: rendered in 1151s
+- 2026-10-19 15:28:10 tcv85-asleep-burglar: QA FAILED ['shot_variety_and_character_action']; frames and details in series/true-crime-cinematic/qa/true_crime_85
+- 2026-10-19 15:30:54 produce 84 --force: regenerating episode data
+- 2026-10-19 15:30:54 tcv84-instagram-burglar: rendering (final60, seed 1)

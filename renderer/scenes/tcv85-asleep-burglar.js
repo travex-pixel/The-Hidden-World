@@ -65,7 +65,7 @@
     return g;
   }
   const HERO_CAM0 = { x: 0, y: 0, z: 1.0 }, HERO_CAM1 = { x: 12, y: 16, z: 1.09 };
-  const OFFICER = { id: 'ab85_officer', x: 190, y: 1600, scale: 0.6, dir: 1, turn: 0.35, pose: 'torch', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1a2230' } };
+  const OFFICER = { id: 'ab85_officer', x: 190, y: 1600, scale: 0.51, dir: 1, turn: 0.35, pose: 'torch', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1a2230' } };
   // the torch sweep: aim in degrees (118 = up-right at the wall, 86 = level-right onto the sleeper)
   const sweepAim = k => lerp(118, 86, ease.inOut(k));
   const litX = k => lerp(520, 850, ease.inOut(k));
@@ -315,7 +315,7 @@
         set: 'ab85_vacant', setOpts: { view: 'wide' }, grade: 'cold', haze: 0.25,
         cam: { from: { x: -10, y: 20, z: 1.02 }, to: { x: 14, y: 30, z: 1.08 } },
         figures: [
-          { id: 'ab85_suspect_ok', x: 520, y: 1600, scale: 0.6, dir: 1, turn: 0.45, pose: 'examine', silhouette: 'cool', depth: 1.02,
+          { id: 'ab85_suspect_ok', x: 520, y: 1600, scale: 0.9, dir: 1, turn: 0.45, pose: 'examine', silhouette: 'cool', depth: 1.02,
             keys: [{ at: 0.2, pose: 'examine', headTurn: 0.2, dur: 0.4 }, { at: bc, pose: 'stand_tense', headTurn: 0.6, turn: 0.7, dur: 0.35 }, { at: l2, pose: 'hands_together', headTurn: 0.4, dur: 0.4 }, { at: cp, pose: 'stand_tense', dur: 0.3 }] }
         ],
         props: [
@@ -369,7 +369,9 @@
       return E.cine.shot(ctx, {
         set: 'ab85_bedroom', grade: 'night', haze: 0.3,
         cam: { keys: [{ at: 0, ...HERO_CAM1 }, { at: 0.1, ...HERO_CAM0, dur: Math.max(1.2, T - 0.5) }] },
-        figures: [{ ...OFFICER, propOpts: { beam: false, aim } }],
+        // the officer glances at the sleeper on the callback line and is back in frame 1's pose before the last frame (the loop)
+        figures: [{ ...OFFICER, propOpts: { beam: false, aim },
+          keys: [{ at: 0.25, pose: 'torch', headTurn: 0.45, dur: 0.4 }, { at: Math.max(1.0, T - 1.1), pose: 'torch', headTurn: 0, dur: 0.5 }] }],
         props: [{ depth: 1.0, accent: true, svg: tt => bed(Math.max(0, T - tt), { lit: 0.4 + 0.6 * k, litX: litX(k) }) },
           { depth: 1.0, svg: tt => beamProp(aim) }],
         overlays: [],
