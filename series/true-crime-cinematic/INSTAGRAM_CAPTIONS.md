@@ -954,3 +954,27 @@ ALT TEXT: Illustrated reel of the burglar who fell asleep in a stranger's bed, a
 SEED COMMENT: Window guy wins. Diving through glass and then leaving your licence on the floor is a whole new level.
 PINNED: Send this to the mate who'd nap mid-burglary 😴 Vote: 1 = bed, 2 = stairs, 3 = window 👇
 POST WHEN: Tuesday 20 Oct 2026, 7-9 pm US Eastern (evening scroll): the Chillicothe arrest (12 Oct) and the Oklahoma bodycam video (released 13-14 Oct) are both being searched this week; keep it several hours apart from Case Files 83 and 84.
+
+## 86 (`true_crime_86_watermelon_robbers.mp4`)
+CAPTION: Two thieves wore watermelon heads into a store, police say (Louisa, Virginia, 2020: one man charged, not tried). Then a thief who rode inside a suitcase in a coach's luggage hold, and a Brooklyn man who dressed as his dead mother for six years. Dumbest disguise: melon, suitcase or mum?
+HASHTAGS: #watermelonheads #disguisefails #truecrime #caughtoncamera #dumbcriminals
+ALT TEXT: Illustrated reel of the watermelon heads shoplifting case in Louisa, Virginia, a thief hidden inside a suitcase in a Spanish airport coach's hold, and a Brooklyn man who disguised himself as his dead mother until investigators produced a photo of her tombstone.
+SEED COMMENT: The suitcase guy wins. Ninety minutes curled up in a luggage hold, and what gave him away was that the bag was warm.
+PINNED: Send this to the mate who'd wear the melon 🍉 Vote: 1 = melon, 2 = suitcase, 3 = mum 👇
+POST WHEN: Thursday 22 Oct 2026, 7–9 pm US Eastern. Frame-0 experiment pair A with Case File 87 (same slot, next day).
+
+## 87 (`true_crime_87_dumbest_getaways_2.mp4`)
+CAPTION: Police say a man took an Uber to rob a bank and told the driver to wait (Southfield, Michigan, 2022, accused, not tried). Then a shoplifting crew's getaway car ran out of gas in the middle of the road in Colma, California, and a Pennsylvania bank robber wrote his demand note on a deposit slip and signed his own name, prosecutors say. Dumbest getaway: Uber, gas or signature?
+HASHTAGS: #uberbankrobbery #dumbestgetaway #truecrime #bankrobbery #dumbcriminals
+ALT TEXT: Illustrated reel of a gold ride-share car waiting outside a bank with its hazard lights on, a getaway car stopped in the middle of a road with its boot open on clothes still carrying security tags, and a bank deposit slip with a scribbled demand note and a signature.
+SEED COMMENT: If the deposit-slip story holds up in court, that one wins by a mile. The Uber plan was at least a plan. Just a terrible one.
+PINNED: Send this to the mate who'd book the getaway Uber 🚗 Vote: 1 = Uber, 2 = gas, 3 = signature 👇
+POST WHEN: Friday 23 Oct 2026, 7–9 pm US Eastern. Frame-0 experiment pair B, the day after Case File 86 in the same slot.
+
+## 88 (`true_crime_88_butt_dial_burglar.mp4`)
+CAPTION: Burglars butt-dialed 911 mid-break-in, police say, and a Fresno dispatcher listened for 35 minutes (charged, not tried, May 2013). Then a Maryland burglar who left his phone charging at the scene (26 years), and a California suspect who asked police for his phone back. Caught by their own phone, 2. Who was the dumbest: butt-dial, charger or walk-in?
+HASHTAGS: #buttdial #911 #truecrime #caughtbytheirownphone #burglary
+ALT TEXT: Illustrated reel about burglars who butt-dialled 911: a glowing phone showing 911 in a man's back pocket on a dark street, a dispatcher's screen spiking as a window smashes, a phone left charging in a wall socket, and a silhouette asking for his phone at a police station desk.
+SEED COMMENT: The charger guy is the dumbest by a mile. Butt-dialling is bad luck; plugging your phone in at the house you're robbing is a decision. Change my mind.
+PINNED: Send this to the mate who'd butt-dial 911 📱 Vote: 1 = the butt-dial, 2 = the charger, 3 = asking police for it back 👇 Caught By Their Own Phone, 2.
+POST WHEN: Saturday 24 Oct 2026, 12–2 pm US Eastern (weekend lunch scroll), clear of the 86/87 pair; the 28-second length test, partner (89) in the next batch.
