@@ -32,9 +32,18 @@ def main(argv=None) -> int:
     # differently from the final render (Case File 75 passed the preview at 7.5 s and failed the final gate there)
     motion_qa.BEAT_CHANGE = BEAT_MARGIN * motion_qa.BEAT_CHANGE
     res = motion_qa.analyse(mp4, json.loads((out / "timeline.json").read_text()))
-    if res["ok"]:
-        print(f"{a.episode}: motion OK (longest still {res['longest_still_s']} s)"); return 0
+    v6 = (json.loads((out / "plan.json").read_text())["episode"].get("engagement_version") or 1) >= 6
+    loop = motion_qa.loop_match(mp4) if v6 else None
+    extra = []
+    if v6 and not res["opening_motion_ok"]:
+        extra.append(f"  nothing moves in the first 0.5 s (change {res['opening_motion']}, needs {motion_qa.BEAT_CHANGE})")
+    if v6 and loop > motion_qa.LOOP_MAX:
+        extra.append(f"  the last frame does not return to frame 1 (difference {loop}, max {motion_qa.LOOP_MAX}): same set, poses and camera")
+    if res["ok"] and not extra:
+        print(f"{a.episode}: motion OK (longest still {res['longest_still_s']} s" + (f", opening {res['opening_motion']}, loop {loop})" if v6 else ")")); return 0
     print(f"{a.episode}: MOTION FAIL")
+    for e in extra:
+        print(e)
     for b in res["beats_without_visual_change"]:
         print(f"  {b['at']:5.1f}s [{b['scene']}] no visual change around: \"{b['text']}\"")
     for s in res["still_spans_over_limit"]:

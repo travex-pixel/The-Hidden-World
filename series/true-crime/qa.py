@@ -110,6 +110,10 @@ def main(argv=None) -> int:
     if plan["episode"].get("caption_style") == "punch":
         cs = caption_safe.check(plan); studio["captions"] = cs; qa["captions_in_safe_area"] = cs["ok"]
     mq = motion_qa.analyse(src, tl); studio["motion"] = mq; qa["no_frozen_or_static_picture"] = mq["ok"]
+    if (plan["episode"].get("engagement_version") or 1) >= 6:
+        # v6: moving at frame 0, and the last frame returns to frame 1 (the reel loops on the owner's instruction)
+        qa["moving_at_frame_0"] = mq["opening_motion_ok"]
+        lm = motion_qa.loop_match(src); studio["loop_match"] = lm; qa["loops_to_frame_1"] = lm <= motion_qa.LOOP_MAX
     aq = audio_qa.analyse(src, out, plan["episode"]); studio["audio"] = aq   # opening dropout, holes, masking, clipping, ending, mono
     for k, v in aq["checks"].items():
         qa[f"audio_{k}"] = v

@@ -43,8 +43,28 @@ def analyse(mp4: Path, timeline: list, tail_s: float = 3.0) -> dict:
             i0, i1 = max(0, int((l["start"] - 1.0) * FPS)), min(n, int((l["start"] + 1.0) * FPS))
             if i1 > i0 and d[i0:i1].max() < BEAT_CHANGE:
                 dead.append({"scene": s["id"], "at": round(l["start"], 1), "text": l["text"][:40]})
+    # engine v6: something must already be moving in the first half second (the Reels tab autoplays frame 0; the two
+    # lowest skip rates of Case Files 72-79 had a moving object in frame 1). Reported here, enforced by the v6 gate.
+    opening = float(d[:FPS // 2].max()) if n else 0.0
     return {"ok": not still and not dead, "longest_still_s": round(longest, 1), "still_spans_over_limit": still,
-            "beats_without_visual_change": dead, "median_motion": round(float(np.median(d)), 2), "frames": n + 1}
+            "beats_without_visual_change": dead, "median_motion": round(float(np.median(d)), 2), "frames": n + 1,
+            "opening_motion": round(opening, 2), "opening_motion_ok": opening >= BEAT_CHANGE}
+
+
+LOOP_MAX = 2.0   # Case File 80 (end card on frame 1's set and camera) measures 0.4, 73 1.2; a different set reads 5-8
+
+
+def loop_match(mp4: Path) -> float:
+    """How far the last frame is from the first (mean abs grey difference at 108x192) in the picture bands: rows 40-66 %
+    and 82-100 %, outside the headline/end-card area and the caption band. The owner's rule from Case Files 83 on: the
+    reel loops, so the end scene returns to frame 1's set, poses and camera."""
+    def grab(args):
+        raw = subprocess.run(["ffmpeg", "-v", "error", *args, "-frames:v", "1", "-vf", f"scale={W}:{H},format=gray", "-f", "rawvideo", "-"],
+                             capture_output=True, check=True).stdout
+        return np.frombuffer(raw[-W * H:], np.uint8).reshape(H, W).astype(np.float32)
+    a = grab(["-ss", "0.0", "-i", str(mp4)]); b = grab(["-sseof", "-0.08", "-i", str(mp4)])
+    mask = np.zeros((H, W), bool); mask[int(H * 0.40): int(H * 0.66)] = True; mask[int(H * 0.82):] = True
+    return round(float(np.abs(a - b)[mask].mean()), 2)
 
 
 if __name__ == "__main__":

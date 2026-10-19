@@ -106,3 +106,45 @@ class SoundV5(unittest.TestCase):
         voice = (0.1 * r.standard_normal(n)).astype(np.float32); bed = (0.1 * r.standard_normal(n)).astype(np.float32)   # same level
         g = voice_guard(voice, bed, 12.5)
         self.assertGreater(band_rms_db(voice) - band_rms_db(bed * g), 11.5)
+
+
+class VersionSix(unittest.TestCase):
+    """v6 (Case Files 72-79): the headline case fills the first 9 s with its gotcha inside them, every case has a gotcha,
+    the last line calls back to the headline case, 32 s cap, a 3 s end scene, no PART on frame 1."""
+    IDS = ["s01_hook", "s02_got", "s03", "s04", "s05_end"]
+
+    def ep(self):
+        return {"engagement_version": 6, "id": "none", "search_terms": [],
+                "hook_title": {"lines": [{"text": "THE FAKE"}, {"text": "AMBULANCE"}]},
+                "scenes": [{"id": "s01_hook", "case": "amb"}, {"id": "s02_got", "case": "amb"}, {"id": "s03", "case": "hearse"},
+                           {"id": "s04", "case": "van"}, {"id": "s05_end", "case": "amb"}]}
+
+    def tl(self, ends=(4.5, 9.2, 18, 28.5, 31.2), reveals=(1, 2, 3)):
+        tl = timeline(self.IDS, list(ends))
+        for i in reveals:
+            tl[i]["lines"][0]["tone"] = "reveal"
+        tl[-1]["lines"][0]["start"] = ends[-1] - 1.0   # the last word 1 s before the end
+        return tl
+
+    def test_payoff_first_shape_passes(self):
+        c = engage_qa.analyse({"episode": self.ep()}, self.tl(), None)["checks"]
+        for k in ("headline_case_first_9s", "headline_gotcha_by_9s", "gotcha_per_case", "callback_ending", "under_32s",
+                  "no_part_on_frame_1", "single_punchline_ending", "ends_within_1s_of_last_word"):
+            self.assertTrue(c[k], k)
+
+    def test_but_first_pivot_at_4s_fails(self):   # the leak on every v5 reel: a different case before 9 s
+        ep = self.ep(); ep["scenes"][1]["case"] = "hearse"
+        c = engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"]
+        self.assertFalse(c["headline_case_first_9s"]); self.assertFalse(c["headline_gotcha_by_9s"])
+
+    def test_missing_gotcha_long_cut_part_tag_and_slow_end_fail(self):
+        ep = self.ep(); ep["hook_title"]["lines"].append({"text": "DISGUISE FAILS · PART 2"})
+        c = engage_qa.analyse({"episode": ep}, self.tl(ends=(4.5, 9.2, 18, 28.5, 33.5), reveals=(1, 2)), None)["checks"]
+        self.assertFalse(c["gotcha_per_case"]); self.assertFalse(c["under_32s"]); self.assertFalse(c["no_part_on_frame_1"])
+        self.assertFalse(c["single_punchline_ending"])   # a 5 s end scene
+        ep["scenes"][-1]["case"] = "van"
+        self.assertFalse(engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"]["callback_ending"])
+
+    def test_v5_episodes_are_not_rejudged(self):
+        ep = self.ep(); ep["engagement_version"] = 5
+        self.assertNotIn("headline_case_first_9s", engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"])

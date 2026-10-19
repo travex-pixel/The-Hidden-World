@@ -60,7 +60,9 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
     checks["cold_open_sfx"] = any(abs(float(s.get("at", 1))) <= 0.05 and not s.get("word") for s in sfx0)
     # 8. completion: the video ends within 1.2 s of the last spoken word (the tail is where 22 and 30 lost 10-17 points)
     last_word = max((t for t, _ in words), default=0.0); tail_s = total - last_word
-    checks["ends_within_1s_of_last_word"] = tail_s <= 1.8; notes["tail_s"] = round(tail_s, 2)   # from the START of the last word (a slow human last word is ~0.6 s)
+    v6 = (ep.get("engagement_version") or 1) >= 6
+    # from the START of the last word (a slow human last word is ~0.6 s); v6: Case File 74 lost 30 % -> 5 % in a 1.4 s tail
+    checks["ends_within_1s_of_last_word"] = tail_s <= (1.4 if v6 else 1.8); notes["tail_s"] = round(tail_s, 2)
     # 9. air: not more than 150 spoken words per minute
     wpm = len(words) / max(total, 1) * 60; checks["pace_under_150_wpm"] = wpm <= 150; notes["wpm"] = round(wpm, 1)
     # version 2 (Case File 59's curve: the list held ~48 % flat, then the tail leaked through the save card and a
@@ -80,7 +82,7 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
         end_len = tl[-1]["end"] - tl[-1]["start"]
         # v4 (Case Files 59 and 63: the two-line ending lost 3.5-9 %/s): ONE closing line, a scene of at most 4 s
         one = (ep.get("engagement_version") or 1) >= 4
-        checks["single_punchline_ending"] = end_len <= (4.0 if one else 5.0) and len(tl[-1].get("lines", [])) <= (1 if one else 2); notes["end_scene_s"] = round(end_len, 2)
+        checks["single_punchline_ending"] = end_len <= (3.0 if v6 else 4.0 if one else 5.0) and len(tl[-1].get("lines", [])) <= (1 if one else 2); notes["end_scene_s"] = round(end_len, 2)
     # version 3 (search): Instagram indexes on-screen text, the spoken words (auto captions) and the caption, so the
     # phrase people are typing must be in the headline AND said in the first 4 s, not only in a hashtag
     if ep.get("engagement_version", 1) >= 3:
@@ -97,4 +99,26 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
         first = cap.group(1).lower() if cap else ""
         checks["post_file_ready"] = (bool(cap) and any(all(w in first for w in t.split()) for t in terms)
                                      and len(re.findall(r"#\w+", txt)) <= 5 and bool(re.search(r"^ALT TEXT:", txt, re.M)))
+    # version 6 (Case Files 72-79: every retention curve broke at 4-10 s, on the "but first" pivot away from the case
+    # frame 1 promised, whose payoff then landed at 22-29 s; the one mid-video like spike was a gotcha, not a tonnage;
+    # 33-34 s reels ended at 35-40 %, 37-38 s reels at 25-28 %). Each scene carries a "case" tag:
+    #   the headline case fills the first 9 s and has its gotcha (a reveal-tone line) inside them,
+    #   every case has a gotcha, the last line calls back to the headline case, 32 s cap, no "PART N" on frame 1
+    if v6 and tl:
+        case_of = {s["id"]: s.get("case") for s in ep.get("scenes", [])}
+        head_case = case_of.get(tl[0]["id"])
+        early = [s for s in tl if s["start"] < 9.0]
+        checks["headline_case_first_9s"] = head_case is not None and all(case_of.get(s["id"]) == head_case for s in early)
+        gotcha: dict = {}
+        for s in tl:
+            for ln in s.get("lines", []):
+                if ln.get("tone") == "reveal":
+                    gotcha.setdefault(case_of.get(s["id"]), []).append(round(ln["start"], 2))
+        checks["headline_gotcha_by_9s"] = any(t < 9.0 for t in gotcha.get(head_case, []))
+        cases = {c for c in case_of.values() if c}
+        checks["gotcha_per_case"] = bool(cases) and all(c in gotcha for c in cases); notes["cases"] = sorted(cases); notes["gotchas"] = gotcha
+        checks["callback_ending"] = case_of.get(tl[-1]["id"]) == head_case
+        checks["under_32s"] = total <= 32.5; notes["total_s"] = round(total, 2)
+        head_up = " ".join(l.get("text", "") for l in (ep.get("hook_title") or {}).get("lines", [])).upper()
+        checks["no_part_on_frame_1"] = not re.search(r"\bPART\b", head_up)
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}
