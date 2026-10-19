@@ -53,9 +53,9 @@ def build(h):
         # B - REHOOK + CASE 2 begins: an airport coach bay; the hold open; the accomplice (silhouette) drags a huge suitcase
         #     toward it, struggling; the driver watches; the 90-minute counter
         S("s03_coach", "wm86_coach", [N("That was not the strangest.", tone="tense"),
-                                      N("Spain: a thief rode in a suitcase.", tone="confident")],
-          "tension-rise", ["K_suitcase", "K_minutes"], sfx=[fw(0, 0, "whoosh", 0.22, -0.1), fw(0, 4, "brake", 0.18, 0.0), fw(1, 0, "thud", 0.26, 0.0), fw(1, 6, "tick", 0.22, 0.1)],
-          emph=["not", "strangest.", "spain:", "suitcase."], min_d=4.4, pad=0.1, tr="dissolve"),
+                                      N("In Spain, a thief hid inside a suitcase.", tone="confident")],
+          "tension-rise", ["K_suitcase", "K_minutes"], sfx=[fw(0, 0, "whoosh", 0.22, -0.1), fw(0, 4, "brake", 0.18, 0.0), fw(1, 1, "thud", 0.26, 0.0), fw(1, 7, "tick", 0.22, 0.1)],
+          emph=["not", "strangest.", "spain,", "inside", "suitcase."], min_d=4.4, pad=0.1, tr="dissolve"),
         # B - CASE 2's GOTCHA: the open hold; the officer kneels and knocks on the suitcase (the knock), the lid lifts and a
         #     sweating silhouette is curled inside; the accomplice puts his hands behind his back
         S("s04_hold", "wm86_hold", [N("Police knocked: the case was warm.", tone="reveal", pause_before=0.3),
@@ -130,7 +130,7 @@ def build(h):
           ["wric", "cbsbalt", "lawcrime", "nbcwash", "ctv"]),
         C("K_felony", "FUN FACT: in Virginia, wearing a mask or other device to conceal your identity in a public place (over the age of 16, outside the statutory exceptions) is a Class 6 felony under Code of Virginia s. 18.2-422; the law was suspended during the 2020-21 COVID emergency order and is tied by legal commentators to 1950s anti-Klan legislation.",
           ["vacode", "valawyer", "vadogwood"]),
-        C("K_suitcase", "June 2011, Spain: police said a thief rode inside a suitcase in the luggage hold of the airport coach between Girona and Barcelona, climbed out during the ride and stole from other passengers' bags (a laptop and a GPS unit were reported); an accomplice bought the ticket, loaded the case and collected it. Narration: 'Spain: a thief rode in a suitcase.'",
+        C("K_suitcase", "June 2011, Spain: police said a thief rode inside a suitcase in the luggage hold of the airport coach between Girona and Barcelona, climbed out during the ride and stole from other passengers' bags (a laptop and a GPS unit were reported); an accomplice bought the ticket, loaded the case and collected it. Narration: 'In Spain, a thief hid inside a suitcase.'",
           ["cbsnews", "foxnews", "abc7", "time"]),
         C("K_minutes", "COUNTER: the Girona-Barcelona coach ride is roughly 90 minutes (about 100 km). Counter '90' with the label 'MINUTES IN THE LUGGAGE HOLD'.",
           ["cbsnews", "foxnews"]),

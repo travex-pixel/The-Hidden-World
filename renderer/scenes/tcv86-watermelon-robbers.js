@@ -314,7 +314,7 @@
           { depth: 1.0, svg: tt => tt > ar ? wash(540, 820, 440, 320, '#fff4d0', f1(0.2 * seg(tt, ar, ar + 0.3))) : '' }
         ],
         overlays: [
-          { type: 'label', at: 0.3, x: 60, y: 1190, text: 'LOUISA POLICE POSTED THE PHOTOS ON FACEBOOK', fs: 32, sub: 'Commenters said they had seen the pair in town (Global News, WRIC)' },
+          { type: 'label', at: 0.3, until: ar + 0.55, x: 60, y: 1190, text: 'LOUISA POLICE POSTED THE PHOTOS ON FACEBOOK', fs: 32, sub: 'Commenters said they had seen the pair in town (Global News, WRIC)' },
           { type: 'callout', at: ar + 0.3, target: [540, 760], label: [600, 440], text: 'ONE MAN, 20, CHARGED', w: 460, r: 50 },
           { type: 'label', at: ar + 0.4, x: 60, y: 1000, text: 'MASK IN PUBLIC · PETIT LARCENY · UNDERAGE POSSESSION', fs: 28, sub: 'Accused, not tried · second man never identified · AS OF OCT 2026' },
           { type: 'funfact', at: ar + 0.9, y: 1240, rows: [{ text: 'IN VIRGINIA, HIDING YOUR FACE' }, { text: 'IN PUBLIC IS A FELONY' }, { text: 'Code of Virginia § 18.2-422 · Class 6', fs: 26 }] }
@@ -326,7 +326,7 @@
     // 3 - REHOOK + CASE 2: the coach bay; the accomplice (silhouette) drags a huge suitcase rightward toward the open hold,
     //     struggling; the driver by the hold turns and watches; the 90-minute counter
     wm86_coach(ctx) {
-      const t = ctx.t, T = ctx.T, nt = WT(ctx, 0, 3, 0.9), l2 = LS(ctx, 1, 2.2), sc = WT(ctx, 1, 6, 3.6);
+      const t = ctx.t, T = ctx.T, nt = WT(ctx, 0, 3, 0.9), l2 = LS(ctx, 1, 2.2), sc = WT(ctx, 1, 7, 3.6);
       const haul = seg(t, 0.0, Math.max(1.5, l2 + 0.6));
       const bx = lerp(140, 560, ease.inOut(haul));
       return E.cine.shot(ctx, {
