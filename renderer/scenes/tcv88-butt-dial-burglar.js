@@ -307,7 +307,7 @@
         ],
         overlays: [
           { type: 'callout', at: st, until: l2 + 0.3, target: [930, 1300], label: [1020, 760], anchor: 'end', w: 420, text: 'STILL CHARGING', sub: 'Found in the socket by police', r: 60, depth: 1.02 },
-          { type: 'label', at: co + 0.1, x: 60, y: 560, text: '26 YEARS · ADMITTED SEVEN BREAK-INS', fs: 32, sub: 'Sentenced July 2011, Montgomery County (UPI, NBC)' },
+          { type: 'label', at: co - 0.3, x: 60, y: 560, text: '26 YEARS · ADMITTED SEVEN BREAK-INS', fs: 32, sub: 'Sentenced July 2011, Montgomery County (UPI, NBC)' },
           { type: 'funfact', at: ff, x: 40, w: 760, y: 700, fs: 38, rows: [{ text: 'AN FCC COMMISSIONER’S ESTIMATE:' }, { text: '84 MILLION BUTT-DIALS' }, { text: 'TO 911 EVERY YEAR' }, { text: 'Michael O’Rielly, 2014; about half of mobile 911 calls', fs: 26 }] }
         ],
         tag: TAG
@@ -333,7 +333,7 @@
         ],
         overlays: [
           { type: 'label', at: 0.3, x: 60, y: 560, text: 'WALNUT CREEK, CALIFORNIA · POLICE SAY', fs: 34, sub: 'Caught on video; the reports give no date' },
-          { type: 'callout', at: lf + 0.4, target: [600, 1100], label: [1040, 820], anchor: 'end', w: 440, text: 'LEFT INSIDE', sub: 'Police say it led them to him', r: 70, depth: 1.02 }
+          { type: 'callout', at: lf + 0.4, target: [600, 1100], label: [1040, 820], anchor: 'end', w: 470, text: 'LEFT INSIDE', sub: 'Police say it identified him', r: 70, depth: 1.02 }
         ],
         tag: TAG
       });
@@ -370,7 +370,7 @@
     bd88_end(ctx) {
       const t = ctx.t, T = ctx.T, mn = WT(ctx, 0, 4, 1.4);
       const back = T - 0.55;
-      const dim = 0.35 * seg(t, mn, mn + 0.25) * (1 - seg(t, mn + 0.5, Math.min(mn + 0.9, back)));
+      const dim = 0.35 * seg(t, mn, mn + 0.25) * (1 - seg(t, Math.min(mn + 0.45, back - 0.35), back));   // the screen is back to frame 1's glow before the last frame
       const rise = 1 - ease.inOut(seg(t, 0.1, Math.max(0.9, back - 0.1)));
       return E.cine.shot(ctx, {
         set: 'bd88_street', grade: 'night', haze: 0.3,
