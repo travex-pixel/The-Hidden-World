@@ -488,3 +488,7 @@
 - 2026-10-19 16:32:25 tcv83-fake-ambulance: rendering (final60, seed 1)
 - 2026-10-19 17:00:57 tcv83-fake-ambulance: rendered in 1712s
 - 2026-10-19 17:01:41 tcv83-fake-ambulance: VERIFIED -> series/true-crime-cinematic/output/true_crime_83_fake_ambulance.mp4 (31.2s, 16.6 MB, sha256 182b3c2393ce)
+- 2026-10-19 17:04:01 produce 85 --force: regenerating episode data
+- 2026-10-19 17:04:01 tcv85-asleep-burglar: rendering (final60, seed 1)
+- 2026-10-19 17:23:18 tcv85-asleep-burglar: rendered in 1158s
+- 2026-10-19 17:24:02 tcv85-asleep-burglar: VERIFIED -> series/true-crime-cinematic/output/true_crime_85_asleep_burglar.mp4 (31.4s, 14.3 MB, sha256 da29ef9a6b8c)

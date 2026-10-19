@@ -7124,7 +7124,7 @@
         "fps": 60.0,
         "video_codec": "h264",
         "audio_codec": "aac",
-        "size_bytes": 14265021,
+        "size_bytes": 14299541,
         "mean_volume_db": -16.9,
         "max_volume_db": -4.7
       },
@@ -7191,7 +7191,7 @@
         "engage_callback_ending": true,
         "engage_under_32s": true,
         "engage_no_part_on_frame_1": true,
-        "shot_variety_and_character_action": false,
+        "shot_variety_and_character_action": true,
         "every_shot_sourced_and_tagged": true
       },
       "loudness": {
@@ -7201,8 +7201,11 @@
       "asr_word_error_rate": 0.101,
       "frames_sampled": 6,
       "qa_dir": "series/true-crime-cinematic/qa/true_crime_85",
-      "status": "failed_qa",
-      "next_task": "inspect qa/ and fix; then re-run qa.py"
+      "status": "verified_automated",
+      "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'",
+      "sha256": "da29ef9a6b8c1c023bfcb3ef8488f580d5fa63ca3979f86e5e88883d64beb901",
+      "output": "series/true-crime-cinematic/output/true_crime_85_asleep_burglar.mp4",
+      "verified": "2026-10-19T17:24:02"
     },
     "84": {
       "id": "tcv84-instagram-burglar",
@@ -7299,7 +7302,7 @@
       "next_task": "human-style frame review recorded in production_manifest.json 'editorial_review'"
     }
   },
-  "updated": "2026-10-19T17:01:41",
+  "updated": "2026-10-19T17:24:02",
   "project": {
     "goal": "Character-driven true-crime Shorts from the reviewed Case Files scripts, zero additional cost.",
     "audit": "docs/STUDIO_AUDIT.md",

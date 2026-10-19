@@ -1,7 +1,7 @@
 {
   "media": {
     "file": "/home/user/The-Hidden-World/out/tcv85-asleep-burglar/tcv85-asleep-burglar.mp4",
-    "size_bytes": 14265021,
+    "size_bytes": 14299541,
     "checks": {
       "has_video_stream": true,
       "has_audio_stream": true,
@@ -79,7 +79,7 @@
     "engage_callback_ending": true,
     "engage_under_32s": true,
     "engage_no_part_on_frame_1": true,
-    "shot_variety_and_character_action": false,
+    "shot_variety_and_character_action": true,
     "every_shot_sourced_and_tagged": true
   },
   "loudness": {
@@ -114,12 +114,12 @@
       "longest_still_s": 1.3,
       "still_spans_over_limit": [],
       "beats_without_visual_change": [],
-      "median_motion": 0.89,
+      "median_motion": 0.93,
       "frames": 314,
-      "opening_motion": 5.08,
+      "opening_motion": 5.06,
       "opening_motion_ok": true
     },
-    "loop_match": 0.74,
+    "loop_match": 0.63,
     "audio": {
       "opening_speech_median_db": -20.5,
       "opening_min_speech_window_db": -25.9,
@@ -238,10 +238,12 @@
       "distinct_sets": 5,
       "max_set_share": 0.29,
       "shot_sizes": {
-        "medium-wide": 7
+        "wide": 2,
+        "medium-wide": 4,
+        "medium": 1
       },
-      "max_shot_size_share": 1.0,
-      "ok": false
+      "max_shot_size_share": 0.57,
+      "ok": true
     }
   }
 }
