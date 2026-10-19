@@ -477,3 +477,6 @@
 - 2026-10-19 15:30:54 produce 84 --force: regenerating episode data
 - 2026-10-19 15:30:54 tcv84-instagram-burglar: rendering (final60, seed 1)
 - 2026-10-19 15:43:58 tcv84-instagram-burglar: RENDER FAILED, see out/tcv84-instagram-burglar/ and fix; re-run produce.py 84
+- 2026-10-19 15:48:10 produce 85 --force: regenerating episode data
+- 2026-10-19 15:48:10 tcv85-asleep-burglar: rendering (final60, seed 1)
+- 2026-10-19 15:58:31 tcv85-asleep-burglar: RENDER FAILED, see out/tcv85-asleep-burglar/ and fix; re-run produce.py 85
