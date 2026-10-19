@@ -1,0 +1,1591 @@
+{
+ "episode": "tcv81-where-they-hid-it-3",
+ "title": "57 Fake Bananas Full of Cocaine",
+ "duration": 37.5,
+ "slideshow_risk": {
+  "shots": 8,
+  "composed_shots": 8,
+  "shots_with_characters": 8,
+  "character_shot_share": 1.0,
+  "distinct_sets": 5,
+  "max_set_share": 0.38,
+  "shot_sizes": {
+   "medium": 2,
+   "medium-wide": 4,
+   "wide": 2
+  },
+  "max_shot_size_share": 0.5,
+  "ok": true
+ },
+ "production_status": {
+  "series_manifest": "series/true-crime-cinematic/production_manifest.json",
+  "video": "true_crime_81_where_they_hid_it_3.mp4"
+ },
+ "shots": [
+  {
+   "id": "s01_hook",
+   "scene_type": "wh81_hook",
+   "start": 0.0,
+   "duration": 5.0,
+   "narration": [
+    "They stuffed cocaine into fake bananas.",
+    "Made of resin. 7 kilos inside."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.25,
+     "end": 2.306,
+     "words": [
+      {
+       "w": "They",
+       "start": 0.28,
+       "end": 0.51
+      },
+      {
+       "w": "stuffed",
+       "start": 0.5,
+       "end": 0.93
+      },
+      {
+       "w": "cocaine",
+       "start": 0.92,
+       "end": 1.28
+      },
+      {
+       "w": "into",
+       "start": 1.27,
+       "end": 1.51
+      },
+      {
+       "w": "fake",
+       "start": 1.5,
+       "end": 1.84
+      },
+      {
+       "w": "bananas.",
+       "start": 1.83,
+       "end": 2.2
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 2.482,
+     "end": 4.845,
+     "words": [
+      {
+       "w": "Made",
+       "start": 2.512,
+       "end": 2.862
+      },
+      {
+       "w": "of",
+       "start": 2.852,
+       "end": 3.082
+      },
+      {
+       "w": "resin.",
+       "start": 3.072,
+       "end": 3.652
+      },
+      {
+       "w": "7",
+       "start": 3.642,
+       "end": 3.812
+      },
+      {
+       "w": "kilos",
+       "start": 3.802,
+       "end": 4.212
+      },
+      {
+       "w": "inside.",
+       "start": 4.202,
+       "end": 4.692
+      }
+     ]
+    }
+   ],
+   "visual_description": "wh81 bench (cold grade); wh81_cust1: present -> present -> present -> present; camera push/pull; overlays: label 'SPAIN · REPORTED MARCH 2017'.",
+   "shot_size": "medium",
+   "set": "wh81_bench",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": -30,
+     "z": 1.09
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "wh81_cust1"
+   ],
+   "character_actions": [
+    {
+     "id": "wh81_cust1",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.98,
+     "start_pose": "present",
+     "start_expr": "shocked",
+     "actions": [
+      {
+       "at": 0.5,
+       "pose": "present",
+       "expr": "realise",
+       "turn_head": true
+      },
+      {
+       "at": 2.48,
+       "pose": "present",
+       "expr": "focused",
+       "turn_head": true
+      },
+      {
+       "at": 3.74,
+       "pose": "present",
+       "expr": "shocked",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 3.05,
+     "text": "SPAIN · REPORTED MARCH 2017"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_hook",
+     "type": "established",
+     "claim_text": "Spain (reported 26-27 March 2017): police found 57 fake bananas made of resin, stuffed with about 7 kg of cocaine, among a shipment of real bananas (AP: 'Among the real bananas, police found 57 fake bananas made of resin that were stuffed with 7 kilograms (15.4 pounds) of cocaine'). Narration: 'They stuffed cocaine into fake bananas.' / 'Made of resin. 7 kilos inside.' Headline '57 FAKE BANANAS / FULL OF COCAINE'.",
+     "urls": [
+      "https://www.wishtv.com/?p=171768",
+      "https://www.thelocal.es/20170327/two-arrests-in-spain-after-cocaine-found-in-fake-bananas",
+      "https://producebusinessuk.com/cocaine-stashed-inside-fake-bananas-camouflaged-in-real-fruit-consignment",
+      "https://www.andnowuknow.com/node/53046"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": -4,
+    "sfx": [
+     {
+      "name": "sub",
+      "at": 0.0,
+      "gain": 0.4
+     },
+     {
+      "name": "thump",
+      "at": 2.952,
+      "gain": 0.28,
+      "word": [
+       1,
+       1
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv81-where-they-hid-it-3.js#wh81_hook",
+    "set_code": "renderer/sets.js#wh81_bench",
+    "characters": [
+     "characters/figures/wh81_cust1.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_delhi",
+   "scene_type": "wh81_cargo",
+   "start": 5.0,
+   "duration": 4.107,
+   "narration": [
+    "But first, this week: Delhi airport.",
+    "The label said plastic tubes."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 5.25,
+     "end": 7.125,
+     "words": [
+      {
+       "w": "But",
+       "start": 5.28,
+       "end": 5.48
+      },
+      {
+       "w": "first,",
+       "start": 5.47,
+       "end": 5.76
+      },
+      {
+       "w": "this",
+       "start": 5.75,
+       "end": 6.0
+      },
+      {
+       "w": "week:",
+       "start": 5.99,
+       "end": 6.35
+      },
+      {
+       "w": "Delhi",
+       "start": 6.34,
+       "end": 6.64
+      },
+      {
+       "w": "airport.",
+       "start": 6.63,
+       "end": 7.01
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 7.29,
+     "end": 8.986,
+     "words": [
+      {
+       "w": "The",
+       "start": 7.32,
+       "end": 7.54
+      },
+      {
+       "w": "label",
+       "start": 7.53,
+       "end": 7.84
+      },
+      {
+       "w": "said",
+       "start": 7.83,
+       "end": 8.1
+      },
+      {
+       "w": "plastic",
+       "start": 8.09,
+       "end": 8.57
+      },
+      {
+       "w": "tubes.",
+       "start": 8.56,
+       "end": 8.88
+      }
+     ]
+    }
+   ],
+   "visual_description": "wh81 cargo (night grade); wh81_cust2: stand -> stand -> point -> point (walks); camera push/pull; overlays: label 'DELHI AIRPORT · OCT 2026', label 'DECLARED: \"PU TUBES\"'.",
+   "shot_size": "medium-wide",
+   "set": "wh81_cargo",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": -20,
+     "y": 20,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": 50,
+     "z": 1.06
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "wh81_cust2"
+   ],
+   "character_actions": [
+    {
+     "id": "wh81_cust2",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.7,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.35,
+       "pose": "stand",
+       "expr": "focused",
+       "turn_head": true
+      },
+      {
+       "at": 2.29,
+       "pose": "point",
+       "expr": "focused"
+      },
+      {
+       "at": 3.76,
+       "pose": "point",
+       "expr": "realise"
+      }
+     ],
+     "walk": {
+      "from": 1000,
+      "to": 860,
+      "at": 0,
+      "dur": 1.4
+     }
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 1.34,
+     "text": "DELHI AIRPORT · OCT 2026"
+    },
+    {
+     "type": "label",
+     "at": 3.66,
+     "text": "DECLARED: \"PU TUBES\""
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_delhi",
+     "type": "established",
+     "claim_text": "This week (reported 16 Oct 2026): customs at the Air Cargo Complex of Indira Gandhi International Airport, Delhi, intercepted an air cargo consignment from Bangkok of 19 cartons declared as 'PU tubes' (polyurethane, i.e. plastic tubes). Narration: 'But first, this week: Delhi airport.' / 'The label said plastic tubes.'",
+     "urls": [
+      "https://www.thestatesman.com/india/customs-officers-detect-148-67-kg-hydroponic-weed-from-bangkok-at-air-cargo-complex-at-igi-airport-1503651570.html",
+      "https://www.newsbytesapp.com/news/india/delhi-customs-intercepts-bangkok-shipment-of-suspected-hydroponic-weed/tldr",
+      "https://english.newstrack.com/india-news/delhi-customs-seize-148-67-kg-suspected-cannabis-bangkok-cargo-640655",
+      "https://www.ssbcrack.com/2026/10/delhi-customs-seizes-148-kg-hydroponic-weed-worth-150-crore.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 5.16,
+      "gain": 0.22,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "beep",
+      "at": 6.44,
+      "gain": 0.2,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "paper",
+      "at": 7.58,
+      "gain": 0.28,
+      "word": [
+       1,
+       1
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv81-where-they-hid-it-3.js#wh81_cargo",
+    "set_code": "renderer/sets.js#wh81_cargo",
+    "characters": [
+     "characters/figures/wh81_cust2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_spool",
+   "scene_type": "wh81_spool",
+   "start": 9.107,
+   "duration": 3.929,
+   "narration": [
+    "Inside the spools? 148 kilos of weed."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 9.357,
+     "end": 12.712,
+     "words": [
+      {
+       "w": "Inside",
+       "start": 9.387,
+       "end": 9.947
+      },
+      {
+       "w": "the",
+       "start": 9.937,
+       "end": 10.277
+      },
+      {
+       "w": "spools?",
+       "start": 10.267,
+       "end": 10.987
+      },
+      {
+       "w": "148",
+       "start": 10.977,
+       "end": 11.317
+      },
+      {
+       "w": "kilos",
+       "start": 11.307,
+       "end": 11.877
+      },
+      {
+       "w": "of",
+       "start": 11.867,
+       "end": 12.137
+      },
+      {
+       "w": "weed.",
+       "start": 12.127,
+       "end": 12.547
+      }
+     ]
+    }
+   ],
+   "visual_description": "wh81 cargo (night grade); wh81_cust2: examine -> examine -> hand_to_face -> point; camera push/pull; overlays: label '148.67 KG OF SUSPECTED WEED'.",
+   "shot_size": "wide",
+   "set": "wh81_cargo",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 30,
+     "z": 1.02
+    },
+    "to": {
+     "x": -10,
+     "y": 60,
+     "z": 1.09
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "wh81_cust2"
+   ],
+   "character_actions": [
+    {
+     "id": "wh81_cust2",
+     "outfit": "default",
+     "depth": 0.98,
+     "scale": 0.86,
+     "start_pose": "examine",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.3,
+       "pose": "examine",
+       "expr": "focused",
+       "turn_head": true
+      },
+      {
+       "at": 1.46,
+       "pose": "hand_to_face",
+       "expr": "shocked"
+      },
+      {
+       "at": 3.02,
+       "pose": "point",
+       "expr": "realise"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 1.97,
+     "text": "148.67 KG OF SUSPECTED WEED"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_spool",
+     "type": "established",
+     "claim_text": "Officers found 148.67 kg of suspected hydroponic weed (cannabis; preliminary tests) concealed in 120 plastic spools in 15 of the 19 cartons; one person arrested under the NDPS Act; customs value about Rs 52 crore, street value about Rs 150 crore. Narration: 'Inside the spools? 148 kilos of weed.' Labels '148.67 KG OF SUSPECTED WEED' / '1 ARRESTED'.",
+     "urls": [
+      "https://www.thestatesman.com/india/customs-officers-detect-148-67-kg-hydroponic-weed-from-bangkok-at-air-cargo-complex-at-igi-airport-1503651570.html",
+      "https://www.newsbytesapp.com/news/india/delhi-customs-intercepts-bangkok-shipment-of-suspected-hydroponic-weed/tldr",
+      "https://english.newstrack.com/india-news/delhi-customs-seize-148-67-kg-suspected-cannabis-bangkok-cargo-640655",
+      "https://www.ssbcrack.com/2026/10/delhi-customs-seizes-148-kg-hydroponic-weed-worth-150-crore.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "click",
+      "at": 9.937,
+      "gain": 0.26,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 11.387,
+      "gain": 0.28,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "rasp",
+      "at": 12.227,
+      "gain": 0.22,
+      "word": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv81-where-they-hid-it-3.js#wh81_spool",
+    "set_code": "renderer/sets.js#wh81_cargo",
+    "characters": [
+     "characters/figures/wh81_cust2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_lagos",
+   "scene_type": "wh81_port",
+   "start": 13.036,
+   "duration": 3.928,
+   "narration": [
+    "It gets weirder.",
+    "Lagos: two containers of used cars."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 13.314,
+     "end": 14.356,
+     "words": [
+      {
+       "w": "It",
+       "start": 13.344,
+       "end": 13.524
+      },
+      {
+       "w": "gets",
+       "start": 13.514,
+       "end": 13.804
+      },
+      {
+       "w": "weirder.",
+       "start": 13.794,
+       "end": 14.244
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 14.587,
+     "end": 16.79,
+     "words": [
+      {
+       "w": "Lagos:",
+       "start": 14.617,
+       "end": 14.987
+      },
+      {
+       "w": "two",
+       "start": 14.977,
+       "end": 15.227
+      },
+      {
+       "w": "containers",
+       "start": 15.217,
+       "end": 15.867
+      },
+      {
+       "w": "of",
+       "start": 15.857,
+       "end": 16.067
+      },
+      {
+       "w": "used",
+       "start": 16.057,
+       "end": 16.367
+      },
+      {
+       "w": "cars.",
+       "start": 16.357,
+       "end": 16.677
+      }
+     ]
+    }
+   ],
+   "visual_description": "wh81 port (warm grade); wh81_cust3: walk -> walk -> stand -> point (walks); camera push/pull; overlays: label 'TIN CAN ISLAND PORT, LAGOS'.",
+   "shot_size": "medium-wide",
+   "set": "wh81_port",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": -30,
+     "y": 10,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": 40,
+     "z": 1.06
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "wh81_cust3"
+   ],
+   "character_actions": [
+    {
+     "id": "wh81_cust3",
+     "outfit": "default",
+     "depth": 1.02,
+     "scale": 0.6,
+     "start_pose": "walk",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.38,
+       "pose": "walk",
+       "expr": "focused",
+       "turn_head": true
+      },
+      {
+       "at": 2,
+       "pose": "stand",
+       "expr": "focused"
+      },
+      {
+       "at": 3.32,
+       "pose": "point",
+       "expr": "focused"
+      }
+     ],
+     "walk": {
+      "from": 60,
+      "to": 250,
+      "at": 0,
+      "dur": 1.951
+     }
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 1.6,
+     "text": "TIN CAN ISLAND PORT, LAGOS"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "dissolve",
+   "sources": [
+    {
+     "claim": "K_lagos",
+     "type": "established",
+     "claim_text": "This month (announced Friday 9 Oct 2026): Nigeria Customs at Tin Can Island Port, Lagos, intercepted two 40-foot containers (2 and 16 September 2026) carrying used vehicles (a 2008 Mercedes-Benz and a 2012 Infiniti; two Toyota Siennas and two Toyota Corollas) and used engine spare parts. Narration: 'It gets weirder.' (editorial rehook) / 'Lagos: two containers of used cars.'",
+     "urls": [
+      "https://pmnewsnigeria.com/2026/10/09/customs-busts-%E2%82%A63-67bn-drugs-hidden-in-imported-vehicles-spare-parts/",
+      "https://www.vanguardngr.com/2026/10/customs-uncovers-%E2%82%A63-67bn-drug-haul-in-imported-cars-spare-parts-2/",
+      "https://guardian.ng/news/customs-uncovers-n3-67b-cannabis-shipment-at-tin-can-port-hands-over-to-ndlea-2/",
+      "https://prnigeria.com/2026/10/09/customs-seize-cannabis/",
+      "https://businessday.ng/news/article/customs-finds-n3-6bn-drugs-hidden-in-imported-vehicles-at-tin-can-port/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 13.264,
+      "gain": 0.2,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "gate",
+      "at": 14.617,
+      "gain": 0.24,
+      "word": [
+       1,
+       0
+      ]
+     },
+     {
+      "name": "rumble",
+      "at": 15.907,
+      "gain": 0.2,
+      "word": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv81-where-they-hid-it-3.js#wh81_port",
+    "set_code": "renderer/sets.js#wh81_port",
+    "characters": [
+     "characters/figures/wh81_cust3.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_car",
+   "scene_type": "wh81_car",
+   "start": 16.964,
+   "duration": 5.536,
+   "narration": [
+    "Packed in with them: 1.2 tonnes of drugs.",
+    "Including cannabis cookies. And gummies."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 17.214,
+     "end": 19.643,
+     "words": [
+      {
+       "w": "Packed",
+       "start": 17.234,
+       "end": 17.674
+      },
+      {
+       "w": "in",
+       "start": 17.664,
+       "end": 17.844
+      },
+      {
+       "w": "with",
+       "start": 17.834,
+       "end": 18.234
+      },
+      {
+       "w": "them:",
+       "start": 18.224,
+       "end": 18.504
+      },
+      {
+       "w": "1.2",
+       "start": 18.494,
+       "end": 18.674
+      },
+      {
+       "w": "tonnes",
+       "start": 18.664,
+       "end": 19.044
+      },
+      {
+       "w": "of",
+       "start": 19.034,
+       "end": 19.214
+      },
+      {
+       "w": "drugs.",
+       "start": 19.204,
+       "end": 19.534
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 19.808,
+     "end": 22.096,
+     "words": [
+      {
+       "w": "Including",
+       "start": 19.838,
+       "end": 20.338
+      },
+      {
+       "w": "cannabis",
+       "start": 20.328,
+       "end": 20.778
+      },
+      {
+       "w": "cookies.",
+       "start": 20.768,
+       "end": 21.178
+      },
+      {
+       "w": "And",
+       "start": 21.168,
+       "end": 21.578
+      },
+      {
+       "w": "gummies.",
+       "start": 21.568,
+       "end": 21.978
+      }
+     ]
+    }
+   ],
+   "visual_description": "wh81 box (warm grade); wh81_cust3: stand -> examine -> examine -> point; camera push/pull; overlays: counter, label 'CANNABIS COOKIES + GUMMIES'.",
+   "shot_size": "medium-wide",
+   "set": "wh81_box",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 20,
+     "z": 1
+    },
+    "to": {
+     "x": -30,
+     "y": 50,
+     "z": 1.07
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "wh81_cust3"
+   ],
+   "character_actions": [
+    {
+     "id": "wh81_cust3",
+     "outfit": "default",
+     "depth": 1.03,
+     "scale": 0.78,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.35,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "at": 1.53,
+       "pose": "examine",
+       "expr": "shocked"
+      },
+      {
+       "at": 2.89,
+       "pose": "point",
+       "expr": "realise"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "counter",
+     "at": 1.43
+    },
+    {
+     "type": "label",
+     "at": 3.8,
+     "text": "CANNABIS COOKIES + GUMMIES"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_car",
+     "type": "established",
+     "claim_text": "STATISTIC: the two containers held 1,201.83 kg of suspected drugs (890 packs of Delta-8 cannabis-infused cookies and gummies, 598.08 kg; 1,207 packages of Cannabis Indica, 603.75 kg), about N3.67 billion, handed to the NDLEA. Narration: 'Packed in with them: 1.2 tonnes of drugs.' Counter '1,201 KG'.",
+     "urls": [
+      "https://pmnewsnigeria.com/2026/10/09/customs-busts-%E2%82%A63-67bn-drugs-hidden-in-imported-vehicles-spare-parts/",
+      "https://www.vanguardngr.com/2026/10/customs-uncovers-%E2%82%A63-67bn-drug-haul-in-imported-cars-spare-parts-2/",
+      "https://guardian.ng/news/customs-uncovers-n3-67b-cannabis-shipment-at-tin-can-port-hands-over-to-ndlea-2/",
+      "https://prnigeria.com/2026/10/09/customs-seize-cannabis/",
+      "https://businessday.ng/news/article/customs-finds-n3-6bn-drugs-hidden-in-imported-vehicles-at-tin-can-port/"
+     ]
+    },
+    {
+     "claim": "K_cookies",
+     "type": "established",
+     "claim_text": "The first container held cannabis-infused (Delta-8) cookies and gummies alongside the used cars. Narration: 'Including cannabis cookies. And gummies.'",
+     "urls": [
+      "https://pmnewsnigeria.com/2026/10/09/customs-busts-%E2%82%A63-67bn-drugs-hidden-in-imported-vehicles-spare-parts/",
+      "https://thesun.ng/customs-intercept-n3-6bn-drugs-cannabis-infused-cookies-at-lagos-port/",
+      "https://guardian.ng/news/customs-uncovers-n3-67b-cannabis-shipment-at-tin-can-port-hands-over-to-ndlea-2/",
+      "https://prnigeria.com/2026/10/09/customs-seize-cannabis/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "door",
+      "at": 17.184,
+      "gain": 0.24,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "tick",
+      "at": 18.664,
+      "gain": 0.22,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "ping",
+      "at": 21.268,
+      "gain": 0.24,
+      "word": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv81-where-they-hid-it-3.js#wh81_car",
+    "set_code": "renderer/sets.js#wh81_box",
+    "characters": [
+     "characters/figures/wh81_cust3.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_crate",
+   "scene_type": "wh81_crate",
+   "start": 22.5,
+   "duration": 6.25,
+   "narration": [
+    "Then Spain: a crate of real bananas.",
+    "Mixed in: 57 fakes. Zero potassium."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 22.778,
+     "end": 24.987,
+     "words": [
+      {
+       "w": "Then",
+       "start": 22.818,
+       "end": 23.108
+      },
+      {
+       "w": "Spain:",
+       "start": 23.098,
+       "end": 23.448
+      },
+      {
+       "w": "a",
+       "start": 23.438,
+       "end": 23.638
+      },
+      {
+       "w": "crate",
+       "start": 23.628,
+       "end": 23.978
+      },
+      {
+       "w": "of",
+       "start": 23.968,
+       "end": 24.158
+      },
+      {
+       "w": "real",
+       "start": 24.148,
+       "end": 24.438
+      },
+      {
+       "w": "bananas.",
+       "start": 24.428,
+       "end": 24.888
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 25.465,
+     "end": 28.452,
+     "words": [
+      {
+       "w": "Mixed",
+       "start": 25.495,
+       "end": 25.985
+      },
+      {
+       "w": "in:",
+       "start": 25.975,
+       "end": 26.245
+      },
+      {
+       "w": "57",
+       "start": 26.235,
+       "end": 26.505
+      },
+      {
+       "w": "fakes.",
+       "start": 26.495,
+       "end": 26.985
+      },
+      {
+       "w": "Zero",
+       "start": 26.975,
+       "end": 27.555
+      },
+      {
+       "w": "potassium.",
+       "start": 27.545,
+       "end": 28.345
+      }
+     ]
+    }
+   ],
+   "visual_description": "wh81 store (cold grade); wh81_cust1: stand -> examine -> present -> examine -> hand_to_face; camera push/pull; overlays: label 'VALENCIA PORT, SPAIN', impact, label '57 RESIN BANANAS'.",
+   "shot_size": "medium-wide",
+   "set": "wh81_store",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 30,
+     "z": 1
+    },
+    "to": {
+     "x": 10,
+     "y": 70,
+     "z": 1.08
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "wh81_cust1"
+   ],
+   "character_actions": [
+    {
+     "id": "wh81_cust1",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.84,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.6,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "at": 2.96,
+       "pose": "present",
+       "expr": "focused"
+      },
+      {
+       "at": 3.65,
+       "pose": "examine",
+       "expr": "stern"
+      },
+      {
+       "at": 4.2,
+       "pose": "hand_to_face",
+       "expr": "shocked"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.7,
+     "text": "VALENCIA PORT, SPAIN"
+    },
+    {
+     "type": "impact",
+     "at": 4
+    },
+    {
+     "type": "label",
+     "at": 4.47,
+     "text": "57 RESIN BANANAS"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_crate",
+     "type": "established",
+     "claim_text": "The shipment of real bananas came from South America to the Mediterranean port of Valencia; operations in Valencia and Malaga (Guardia Civil with the Tax Agency's customs service); the fake fruit was found in November 2016 and announced in March 2017. Narration: 'Then Spain: a crate of real bananas.'",
+     "urls": [
+      "https://www.thelocal.es/20170327/two-arrests-in-spain-after-cocaine-found-in-fake-bananas",
+      "https://www.wishtv.com/?p=171768",
+      "https://producebusinessuk.com/cocaine-stashed-inside-fake-bananas-camouflaged-in-real-fruit-consignment"
+     ]
+    },
+    {
+     "claim": "K_fakes",
+     "type": "established",
+     "claim_text": "57 of the 'bananas' were resin fakes. Narration: 'Mixed in: 57 fakes. Zero potassium.' (the last two words are an editorial joke).",
+     "urls": [
+      "https://www.wishtv.com/?p=171768",
+      "https://www.thelocal.es/20170327/two-arrests-in-spain-after-cocaine-found-in-fake-bananas",
+      "https://www.andnowuknow.com/node/53046"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 22.718,
+      "gain": 0.2,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 26.205,
+      "gain": 0.34,
+      "word": [
+       1,
+       2
+      ]
+     },
+     {
+      "name": "sub",
+      "at": 26.235,
+      "gain": 0.22,
+      "word": [
+       1,
+       2
+      ]
+     },
+     {
+      "name": "sting",
+      "at": 27.075,
+      "gain": 0.22,
+      "word": [
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv81-where-they-hid-it-3.js#wh81_crate",
+    "set_code": "renderer/sets.js#wh81_store",
+    "characters": [
+     "characters/figures/wh81_cust1.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_boxes",
+   "scene_type": "wh81_boxes",
+   "start": 28.75,
+   "duration": 5.0,
+   "narration": [
+    "Then police checked the boxes.",
+    "Ten more kilos. In the cardboard."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 29.028,
+     "end": 30.699,
+     "words": [
+      {
+       "w": "Then",
+       "start": 29.068,
+       "end": 29.308
+      },
+      {
+       "w": "police",
+       "start": 29.298,
+       "end": 29.638
+      },
+      {
+       "w": "checked",
+       "start": 29.628,
+       "end": 30.108
+      },
+      {
+       "w": "the",
+       "start": 30.098,
+       "end": 30.298
+      },
+      {
+       "w": "boxes.",
+       "start": 30.288,
+       "end": 30.588
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 31.177,
+     "end": 33.374,
+     "words": [
+      {
+       "w": "Ten",
+       "start": 31.197,
+       "end": 31.447
+      },
+      {
+       "w": "more",
+       "start": 31.437,
+       "end": 31.747
+      },
+      {
+       "w": "kilos.",
+       "start": 31.737,
+       "end": 32.097
+      },
+      {
+       "w": "In",
+       "start": 32.087,
+       "end": 32.447
+      },
+      {
+       "w": "the",
+       "start": 32.437,
+       "end": 32.687
+      },
+      {
+       "w": "cardboard.",
+       "start": 32.677,
+       "end": 33.257
+      }
+     ]
+    }
+   ],
+   "visual_description": "wh81 bench (cold grade); wh81_cust1: stand -> examine -> examine -> point; keyed camera moves; overlays: funfact '57 FAKE BANANAS · ~7 KG / + ~10 KG IN THE BOX FLAPS / About 17 kg in all · AP, AFP, March 2017'.",
+   "shot_size": "wide",
+   "set": "wh81_bench",
+   "grade": "cold",
+   "camera": {
+    "keys": 3,
+    "handheld": 0
+   },
+   "characters": [
+    "wh81_cust1"
+   ],
+   "character_actions": [
+    {
+     "id": "wh81_cust1",
+     "outfit": "default",
+     "depth": 0.98,
+     "scale": 0.9,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.33,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "at": 2.43,
+       "pose": "examine",
+       "expr": "shocked"
+      },
+      {
+       "at": 3.29,
+       "pose": "point",
+       "expr": "realise"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "funfact",
+     "at": 3.04,
+     "text": "57 FAKE BANANAS · ~7 KG / + ~10 KG IN THE BOX FLAPS / About 17 kg in all · AP, AFP, March 2017"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_boxes",
+     "type": "established",
+     "claim_text": "FUN FACT: police also found about 10 kg more cocaine hidden inside the flaps of the cardboard boxes (about 17 kg in all). Narration: 'Then police checked the boxes.' / 'Ten more kilos. In the cardboard.' Card '57 FAKE BANANAS · ~7 KG INSIDE / +10 KG IN THE BOX FLAPS'.",
+     "urls": [
+      "https://www.wishtv.com/?p=171768",
+      "https://www.thelocal.es/20170327/two-arrests-in-spain-after-cocaine-found-in-fake-bananas",
+      "https://producebusinessuk.com/cocaine-stashed-inside-fake-bananas-camouflaged-in-real-fruit-consignment"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 30.098,
+      "gain": 0.3,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 31.787,
+      "gain": 0.28,
+      "word": [
+       1,
+       2
+      ]
+     },
+     {
+      "name": "sparkle",
+      "at": 32.777,
+      "gain": 0.24,
+      "word": [
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv81-where-they-hid-it-3.js#wh81_boxes",
+    "set_code": "renderer/sets.js#wh81_bench",
+    "characters": [
+     "characters/figures/wh81_cust1.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s08_end",
+   "scene_type": "wh81_end",
+   "start": 33.75,
+   "duration": 3.75,
+   "narration": [
+    "Two men arrested. Not one banana could be peeled."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 34.0,
+     "end": 36.771,
+     "words": [
+      {
+       "w": "Two",
+       "start": 34.02,
+       "end": 34.24
+      },
+      {
+       "w": "men",
+       "start": 34.23,
+       "end": 34.45
+      },
+      {
+       "w": "arrested.",
+       "start": 34.44,
+       "end": 34.89
+      },
+      {
+       "w": "Not",
+       "start": 34.88,
+       "end": 35.27
+      },
+      {
+       "w": "one",
+       "start": 35.26,
+       "end": 35.48
+      },
+      {
+       "w": "banana",
+       "start": 35.47,
+       "end": 35.84
+      },
+      {
+       "w": "could",
+       "start": 35.83,
+       "end": 36.14
+      },
+      {
+       "w": "be",
+       "start": 36.13,
+       "end": 36.3
+      },
+      {
+       "w": "peeled.",
+       "start": 36.29,
+       "end": 36.66
+      }
+     ]
+    }
+   ],
+   "visual_description": "wh81 bench (cold grade); wh81_cust1: present -> present -> present; keyed camera moves; overlays: label '2 ARRESTED, 2017 · ACCUSED ONLY'.",
+   "shot_size": "medium",
+   "set": "wh81_bench",
+   "grade": "cold",
+   "camera": {
+    "keys": 2,
+    "handheld": 0
+   },
+   "characters": [
+    "wh81_cust1"
+   ],
+   "character_actions": [
+    {
+     "id": "wh81_cust1",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.98,
+     "start_pose": "present",
+     "start_expr": "shocked",
+     "actions": [
+      {
+       "at": 0.2,
+       "pose": "present",
+       "expr": "focused"
+      },
+      {
+       "at": 2.54,
+       "pose": "present",
+       "expr": "realise",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.79,
+     "text": "2 ARRESTED, 2017 · ACCUSED ONLY"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "K_punch",
+     "type": "established",
+     "claim_text": "Two Spanish men (aged 37 and 57) were arrested on suspicion of drug trafficking and belonging to a criminal group; an Italian man (56) was investigated. No later outcome was confirmed in two sources (a 2023 Ultima Hora report of a Malaga conviction over fake bananas could not be tied to this case), so they are described as arrested / accused only. Narration: 'Two men arrested. Not one banana could be peeled.' (the second sentence is an editorial joke). Label '2 ARRESTED, 2017 · ACCUSED ONLY'.",
+     "urls": [
+      "https://www.wishtv.com/?p=171768",
+      "https://www.thelocal.es/20170327/two-arrests-in-spain-after-cocaine-found-in-fake-bananas",
+      "https://producebusinessuk.com/cocaine-stashed-inside-fake-bananas-camouflaged-in-real-fruit-consignment"
+     ]
+    },
+    {
+     "claim": "K_part4",
+     "type": "established",
+     "claim_text": "PART 4 TEASE (end card): June 2009, Progreso, Yucatan, Mexico: the Mexican navy found cocaine stuffed inside dozens of frozen shark carcasses in two containers shipped from Costa Rica (AP: 893 kg; Reuters: more than a ton). End card 'PART 4: COCAINE IN FROZEN SHARKS'.",
+     "urls": [
+      "https://www.nbcnews.com/news/amp/wbna31401502",
+      "https://www.nbcsandiego.com/local/cocaine-found-stuffed-inside-frozen-sharks/2093986/",
+      "https://www.police1.com/drug-interdiction-narcotics/articles/almost-one-ton-of-cocaine-found-in-sharks-wwd0trL18N4se2zb"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "cuffs",
+      "at": 34.54,
+      "gain": 0.22,
+      "word": [
+       0,
+       2
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 36.34,
+      "gain": 0.3,
+      "word": [
+       0,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv81-where-they-hid-it-3.js#wh81_end",
+    "set_code": "renderer/sets.js#wh81_bench",
+    "characters": [
+     "characters/figures/wh81_cust1.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}
