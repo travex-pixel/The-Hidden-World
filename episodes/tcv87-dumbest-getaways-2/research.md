@@ -1,0 +1,68 @@
+# Case File 87 · DUMBEST GETAWAYS · 2 (tcv87-dumbest-getaways-2): research ledger
+
+Built 19 October 2026. All sources accessed 19 October 2026. Frame-0 experiment: VARIANT B ("the object": the ride-share car at rest, big, already moving, a figure beside it).
+
+## Method and limits
+- WebSearch result extracts only (about 20 searches). WebFetch could not resolve any news or government domain (cbsnews.com, fox9.com, fbi.gov, colma.ca.gov, ktvu.com all failed DNS), so no article page was read in full. Every claim below comes from at least two independent outlets' extracts; a detail found in only one extract is not used.
+- All three accused people are ACCUSED ONLY as far as the sources show: no plea, verdict or sentence was found for any of them (searches for each by name, place and year). None is named on screen or in narration; each is drawn only as a dark rim-lit silhouette tagged NOT A LIKENESS. The ride-share driver (not involved, police say), the officers and the teller are generic figures or, for the driver, a head shape in the car window.
+- "Uber" is spoken and typed as plain text; the car is a plain unbranded sedan (no logo, livery or placard).
+
+## Case selection (brief candidates checked)
+- **Taxi to the robbery, asked to wait:** verified as a type (Charles Town WV 2018 via NPR; Salisbury MD 2013 via CBS Baltimore; Worcester MA via American Banker; Somerville MA Jan 2025 via WILX/KY3/Local12) but each with a single extract or an older, thinner record. The Southfield, Michigan ride-share case (Nov 2022) has the same shape, four independent outlets, the richest verified detail (driver asked to wait, driven home, dye pack, suspended licence) and wide syndication, so it is the headline. The Long Island 2011 taxi case was dropped (a stolen handgun in the cab; the store was locked).
+- **Demand note on his own deposit slip / pay stub:** Bentleyville PA 2018 (deposit slip signed with his own name: Observer-Reporter, WPXI, Cox) is used as case 3. Cleveland 2019 (note on the back of a state motor-vehicle document bearing his name and address: Cleveland 19, News 5, Newsweek, Fox 8) and Michigan 2023 (pay stub) were verified but not used: one note case per reel.
+- **Getaway car ran out of fuel outside the store:** Colma CA, 14 April 2024 (KTVU, KRON 4, Hoodline, CrimeVoice/Colma PD) is case 2. Tukwila WA (KIRO 7) had no date in its extract; Modesto CA involved a gun drawn on a clerk (excluded).
+- **Nap in the getaway car / at a drive-through:** Sheffield 2025 (asleep in a stolen car, jailed 4 years 3 months) and Auckland 2025 were verified but NOT used: a second "asleep" reel after Case File 85.
+- **Stopped to cook a meal:** Madison WI 2024 (Gray stations), Safety Harbor FL 2019, Etten-Leur NL 2024 verified but not used: the circumstances reported risk making a person, not a scheme, the joke.
+
+## Corrections to the brief
+- The headline is a ride-share car, not a taxi: the best-documented "asked the driver to wait" case used an Uber. No meter is drawn; the headline says "GETAWAY CAR: AN UBER".
+- Bentleyville: one report says he "asked for" a deposit slip; the others say he wrote the note on one. The reel says only "a demand note on a deposit slip". The arrest: the Cox report says about four hours later in a casino parking garage; WPXI says "a short time after" at the casino after dinner; the reel says "that evening at a casino". The note said he had a weapon, none was shown (police); not mentioned or drawn.
+- Southfield: the outlets disagree on the date (16 vs 17 November 2022), his age (41 vs 42) and the bond ($500,000 vs $1 million cash). The reel says "November 2022" and none of the rest.
+- Colma: the stolen total is $1,454.33 (Colma PD via several outlets) or "more than $1,400" (Sacramento Bee version); not spoken; the label does not give a total. Rifle ammunition was also found in the car (police): not mentioned (no weapons).
+
+## Established facts and allegations (claims ledger)
+| id | claim (as used) | sources |
+|---|---|---|
+| K_hook | November 2022, Southfield, Michigan: police say a man took an Uber to a Huntington Bank branch on Greenfield Road and robbed it; charged with robbery; accused only, never named. Narration "Police say he robbed a bank. By Uber."; headline "GETAWAY CAR: AN UBER / TOLD TO WAIT, POLICE SAY". | fox2, cbsdet, cox_uber, blackent |
+| K_wait | Police say he asked the driver to wait outside while he robbed the bank and was driven home by the same driver, who did not know and was not involved ("Then told the driver to wait."). | fox2, cbsdet, cox_uber |
+| K_tracked | Police tracked the driver, who had dropped him at his apartment complex; he was seen walking on the property and arrested; the driver and bank employees identified him in a photo line-up ("Police tracked the driver. To his home."). | fox2, cbsdet, blackent |
+| K_dye | Arrested in the same clothes as in the robbery, red (like the cash) from a dye pack a teller put in the money; several hundred dollars from the bank on him ("Same clothes. Red dye."). | fox2, cbsdet, cox_uber |
+| K_colma | Sunday 14 April 2024, Colma, California: officers answering a reckless-driver report found a black Mercedes that had run two red lights stopped in the middle of the road near Junipero Serra Boulevard; the driver and two passengers had shoplifted from two stores on Serramonte Boulevard, Daly City; all three booked into San Mateo County Jail; accused only ("That was not the worst." / "California. A shoplifting spree."). | ktvu, kron4, hoodline, crimevoice |
+| K_stat | COUNTER: 1,263 bank robberies reported to the FBI in 2023 (of 1,362 bank crimes with 95 burglaries and 4 larcenies; lowest since before 1990). Counter "1,263" labelled "US BANK ROBBERIES REPORTED TO THE FBI · 2023". | fbi2023, yahoo_fri, asher |
+| K_gas | The driver told officers the car was out of gas and the two passengers were walking to get fuel; a records check showed he was a wanted fugitive from Texas ("The getaway car ran out of gas mid-road."). | ktvu, kron4, hoodline, crimevoice |
+| K_tags | Clothing from multiple stores with the security sensors still attached was found in the car; Colma PD joked online that anyone planning a shoplifting spree should "make sure your getaway car has a full tank of gas" (wording as reported; label) ("Tags still on the clothes."). | ktvu, kron4, hoodline |
+| K_slip | Thursday 15 March 2018, about 3:40 pm, Bentleyville, Pennsylvania: police say a man handed a CFS Bank teller a demand note written on a deposit slip and left with more than $1,300; charged with robbery and related counts; ordered to stand trial April 2018; no verdict found as of October 2026; accused only ("The dumbest? A demand note on a deposit slip."). | obsrep, obsrep2, wpxi, cox_slip |
+| K_friday | FUN FACT: Friday was the busiest day for US bank crimes in 2023, 280 of 1,362 incidents (Mon 249, Tue 252, Wed 212, Thu 232); 11 am-1 pm the busiest window (307). | fbi2023, yahoo_fri |
+| K_signed | Prosecutors said at the April 2018 preliminary hearing, where the note was shown, that he signed his own name to it; police identified him through the signature and surveillance video; the note's words were not reported (a scribble on screen) ("Then signed it. With his own name."). | obsrep, wpxi, cox_slip |
+| K_casino | A friend drove him and his girlfriend to the bank believing he was withdrawing his own money; the three had dinner and went to the Meadows Racetrack and Casino, where police found the driver's truck and arrested him (about four hours after the robbery) ("Arrested that evening at a casino."). | obsrep, wpxi2, cox_slip |
+| K_licence | CALLBACK: police said he used an Uber because his driver's licence was suspended and he feared being caught driving without one ("Why the Uber? Licence suspended."; the label reads POLICE SAY: HIS LICENCE WAS SUSPENDED). | fox2, cbsdet, cox_uber |
+
+## Sources (search-result extracts only)
+- fox2: FOX 2 Detroit (syndicated to FOX 5 NY, FOX 9, FOX 29, FOX 32, FOX LA, FOX 4, FOX 5 DC, FOX 5 Atlanta), "Police: Man uses Uber to rob bank, has driver wait to take him home", Nov 2022, https://www.fox2detroit.com/news/man-takes-uber-to-rob-bank-and-has-driver-wait-to-drive-him-home-southfield-police-say
+- cbsdet: CBS News Detroit, "Police: Man takes Uber to rob Southfield bank", Nov 2022, https://www.cbsnews.com/detroit/news/police-man-takes-uber-to-rob-southfield-bank/
+- cox_uber: Cox Media Group (KIRO 7, FOX 13 Memphis), "Michigan man asks Uber driver to wait while he robbed bank, police say", Nov 2022, https://www.kiro7.com/news/trending/michigan-man-asks-uber-driver-wait-while-he-robbed-bank-police-say/RWBIOT6UKRBWJOVEQWCMN3D2YI/
+- blackent: Black Enterprise, "42-Year-Old Michigan Man Takes An Uber To Rob a Bank", Nov 2022, https://www.blackenterprise.com/42-year-old-michigan-man-takes-an-uber-to-rob-bank/ (also BET, Face2Face Africa, WION)
+- ktvu: KTVU FOX 2, "Alleged shoplifters arrested after vehicle runs out of gas in Colma", Apr 2024, https://www.ktvu.com/news/alleged-shoplifters-arrested-after-vehicle-runs-out-of-gas-in-colma
+- kron4: KRON 4, "Thieves arrested after getaway car ran out of gas in Colma", Apr 2024, https://www.kron4.com/news/bay-area/thieves-arrested-after-getaway-car-ran-out-of-gas-in-colma/
+- hoodline: Hoodline, "Alleged California Shoplifting Spree Ends in Arrest of Texas Fugitive, Two Accomplices in Colma", Apr 2024, https://hoodline.com/2024/04/alleged-california-shoplifting-spree-ends-in-arrest-of-texas-fugitive-two-accomplices-in-colma/
+- crimevoice: CrimeVoice (Colma PD release), "Colma Police: Shoplifting Suspects Arrested After Getaway Vehicle Runs Out of Gas", 25 Apr 2024, https://www.crimevoice.com/2024/04/25/colma-shoplifting-suspects-arrested/ (Colma PD crime bulletin April 2024: https://www.colma.ca.gov/crime-bulletin-april-2024, not reachable)
+- obsrep: Observer-Reporter, "Marianna man wrote name on deposit slip in Bentleyville robbery", 22 Mar 2018, https://cs.observer-reporter.com/news/2018/mar/22/marianna-man-wrote-name-on-deposit-slip-in-bentleyville-robbery/
+- obsrep2: Observer-Reporter, "Alleged Bentleyville bank robber ordered held for court", 11 Apr 2018, https://www.observer-reporter.com/news/2018/apr/11/alleged-bentleyville-bank-robber-ordered-held-for-court/
+- wpxi: WPXI, "Man heads to trial for allegedly robbing bank; evidence includes deposit slip with his name", Apr 2018, https://www.wpxi.com/news/top-stories/man-heads-to-trial-for-allegedly-robbing-bank-evidence-includes-deposit-slip-with-his-name/730771194/
+- wpxi2: WPXI, "Bentleyville bank robbery: man who allegedly held up Washington County bank arrested near casino", Mar 2018, https://www.wpxi.com/news/top-stories/man-who-held-up-washington-county-bank-arrested-near-casino/717088699/
+- cox_slip: Cox Media Group (WSB-TV, WFTV, AJC, Springfield News-Sun), "Man accused of robbing bank wrote own name on deposit slip demanding money, prosecutors say", Apr 2018, https://www.wsbtv.com/news/trending-now/man-accused-of-robbing-bank-wrote-own-name-on-deposit-slip-demanding-money-prosecutors-say/731100196/
+- fbi2023: FBI, Bank Crime Statistics 2023 (released 17 Sep 2024), https://www.fbi.gov/file-repository/bank-crime-statistics-2023-091724.pdf
+- yahoo_fri: Yahoo News (syndicated), "It's Friday afternoon - put the cash in the bag", 2024, https://www.yahoo.com/news/friday-afternoon-put-cash-bag-233304585.html
+- asher: Jeff Asher, "The disappearing American bank robbery", 2024, https://jasher.substack.com/p/the-disappearing-american-bank-robbery
+
+## Myths and claims NOT used
+- Names, ages and bond amounts of the three accused men and of the Colma driver: not used (accused only; private individuals).
+- Southfield: "16 November" vs "17 November" (sources differ); the bank's name is not shown on screen (a plain BANK sign). The suspect's words to the driver: not reported, not invented.
+- Colma: the rifle ammunition found in the car; the fugitive driver's name and parole status; the exact stolen total: not spoken. The passengers gave false identities (police): not used.
+- Bentleyville: the note's wording (never reported; a scribble is drawn); the claim of a weapon; the parole detainer and earlier cases: not used. "Four hours later in a parking garage" vs "a short time after": the reel says "that evening at a casino".
+- Statistics: "1,362 bank robberies" (Substack wording) is the FBI's total of robberies, burglaries and larcenies; the reel's counter uses the robbery count 1,263 and the fun fact says "incidents". Pinkerton's "58 % of robberies use a written note (2019-23)" has one source and is not used. The claim that most 2023 robberies happened "on Friday afternoons" goes beyond the FBI table (Friday 280 is by day; 11 am-1 pm 307 is by hour, all days) and is not made.
+
+## Ethics decisions
+- Nobody is hurt in any case; no weapon and no force are shown or mentioned. The joke is on each scheme (a ride-share getaway, an empty tank, a signed demand note), never on a person's circumstances; nothing about addiction, poverty or mental health is said or implied.
+- Three accused men drawn only as silhouettes tagged NOT A LIKENESS; "police say" / "prosecutors said" on every allegation; ACCUSED, NOT TRIED and AS OF OCT 2026 labels; the seed comment never calls anyone guilty.
+- The ride-share driver is described as police described him (unaware, not involved) and appears only as a head shape in the window. The teller is a generic figure. No real bank, apartment complex, road or casino is depicted; no real document is imitated: the deposit slip is our own plain graphic. The Colma police joke is on a sourced label as reported, not spoken.

@@ -1,0 +1,1051 @@
+{
+ "id": "tcv86-watermelon-robbers",
+ "number": 86,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Watermelon-Head Thieves",
+ "central_question": "Disguise Fails: two thieves in hollowed-out watermelons, a thief who rode inside a suitcase, and a man who dressed as his dead mother for six years. Which disguise was dumbest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {}
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  27,
+  32
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "86",
+  "label": "DISGUISE FAILS · 2"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_room",
+   "word": [
+    0,
+    5
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "wm86_clerk",
+  "wm86_officer",
+  "wm86_driver",
+  "wm86_officer_es",
+  "wm86_accomplice",
+  "wm86_investigator",
+  "wm86_neighbour"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on each disguise, never on a person. Nobody is hurt in any case; no weapon and no force are shown (the Louisa case was a shoplifting, not a robbery, and is never called one). The two Louisa men (one arrested and charged in May 2020, accused only, no outcome found; the other never identified in the reports), the two men arrested in Spain in 2011 and the Brooklyn man convicted in 2012 are never named on screen or in narration and are drawn ONLY as dark rim-lit silhouettes tagged NOT A LIKENESS (the watermelon heads and the wig-and-sunglasses disguise are drawn over featureless silhouettes). Allegations are attributed ('police say', ACCUSED / CHARGED labels, AS OF OCT 2026); the conviction and sentence are stated only for the Brooklyn case. The clerk, officers, driver, investigator and passer-by are generic figures. The store is a generic shop (no chain name, sign or trade dress); the coach has no livery; the posted 'security image' and the tombstone photo are our own plain typed graphics, not real footage or documents. Facts verified 2026-10-19.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "wm86_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.08,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "cash",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_took"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police say two thieves wore watermelon heads.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Then they took alcohol.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "thieves",
+    "watermelon",
+    "heads.",
+    "took",
+    "alcohol."
+   ],
+   "section": "A",
+   "case": "louisa",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_post",
+   "scene": "wm86_post",
+   "min_duration": 3.8,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "typing",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "ping",
+     "gain": 0.24
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      7
+     ],
+     "name": "cuffs",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_posted",
+    "K_charged",
+    "K_felony"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police posted the pictures, then made an arrest.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "posted",
+    "pictures,",
+    "arrest."
+   ],
+   "section": "A",
+   "case": "louisa"
+  },
+  {
+   "id": "s03_coach",
+   "scene": "wm86_coach",
+   "min_duration": 4.4,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "brake",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thud",
+     "gain": 0.26
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      6
+     ],
+     "name": "tick",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_suitcase",
+    "K_minutes"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That was not the strangest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Spain: a thief rode in a suitcase.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "strangest.",
+    "spain:",
+    "suitcase."
+   ],
+   "section": "B",
+   "case": "spain"
+  },
+  {
+   "id": "s04_hold",
+   "scene": "wm86_hold",
+   "min_duration": 4.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "knock",
+     "gain": 0.4
+    },
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      2
+     ],
+     "name": "knock",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.28
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "cuffs",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_warm",
+    "K_arrested"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police knocked: the case was warm.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Inside, a sweating man. Both arrested.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "knocked:",
+    "warm.",
+    "inside,",
+    "sweating",
+    "both",
+    "arrested."
+   ],
+   "section": "B",
+   "case": "spain"
+  },
+  {
+   "id": "s05_stoop",
+   "scene": "wm86_stoop",
+   "min_duration": 4.4,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_mother",
+    "K_cheques"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The strangest lasted six years.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "A Brooklyn man dressed as his dead mother.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "strangest",
+    "six",
+    "years.",
+    "brooklyn",
+    "dressed",
+    "dead",
+    "mother."
+   ],
+   "section": "C",
+   "case": "brooklyn"
+  },
+  {
+   "id": "s06_room",
+   "scene": "wm86_room",
+   "min_duration": 4.8,
+   "pad_after": 0.08,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.26
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "gavel",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_gotcha",
+    "K_sentence"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Investigators met 'her' with her grave photo.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Convicted: up to forty-one years.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "met",
+    "'her'",
+    "grave",
+    "photo.",
+    "convicted:",
+    "forty-one",
+    "years."
+   ],
+   "section": "D",
+   "case": "brooklyn",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "wm86_end",
+   "min_duration": 2.4,
+   "pad_after": 0.25,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "cash",
+     "gain": 0.22
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_underage"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The haul? Alcohol, and he was twenty.",
+     "tone": "reveal",
+     "pause_before": 0.0
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "haul?",
+    "alcohol,",
+    "twenty."
+   ],
+   "section": "E",
+   "case": "louisa",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "5/6 May 2020 (the reports differ on the date), about 9:30 pm, Louisa, Virginia: police said two men wearing hollowed-out watermelons with eye holes cut out walked into a convenience store and committed a larceny (shoplifting), arriving in a lifted 2006 black Toyota Tacoma. Narration: 'Police say two thieves wore watermelon heads.' Headline 'POLICE SAY TWO THIEVES / WORE WATERMELON HEADS'. The store chain is not named on screen.",
+   "sources": [
+    "wric",
+    "cbsbalt",
+    "lawcrime",
+    "sixabc",
+    "fox5dc"
+   ]
+  },
+  {
+   "id": "K_took",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police said the pair took alcohol from the store. Narration: 'Then they took alcohol.'",
+   "sources": [
+    "wric",
+    "lawcrime",
+    "cbsbalt",
+    "globalnews"
+   ]
+  },
+  {
+   "id": "K_posted",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Louisa Police Department posted the security images on Facebook and asked for the public's help identifying the two; commenters said they had seen the pair elsewhere in town; about ten days later (announced 15-16 May 2020) police said one arrest had been made and thanked the community. Narration: 'Police posted the pictures, then made an arrest.'",
+   "sources": [
+    "lawcrime",
+    "wric",
+    "wvir",
+    "cbsbalt",
+    "globalnews"
+   ]
+  },
+  {
+   "id": "K_charged",
+   "type": "established",
+   "nature": "fact",
+   "text": "The arrested man, 20, was charged with wearing a mask in public while committing larceny, petit larceny of alcohol and underage possession of alcohol; police were still seeking the second man. ACCUSED only: no plea, conviction or sentence was found in any extract (AS OF OCT 2026). Label 'ONE MAN, 20, CHARGED'.",
+   "sources": [
+    "wric",
+    "cbsbalt",
+    "lawcrime",
+    "nbcwash",
+    "ctv"
+   ]
+  },
+  {
+   "id": "K_felony",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: in Virginia, wearing a mask or other device to conceal your identity in a public place (over the age of 16, outside the statutory exceptions) is a Class 6 felony under Code of Virginia s. 18.2-422; the law was suspended during the 2020-21 COVID emergency order and is tied by legal commentators to 1950s anti-Klan legislation.",
+   "sources": [
+    "vacode",
+    "valawyer",
+    "vadogwood"
+   ]
+  },
+  {
+   "id": "K_suitcase",
+   "type": "established",
+   "nature": "fact",
+   "text": "June 2011, Spain: police said a thief rode inside a suitcase in the luggage hold of the airport coach between Girona and Barcelona, climbed out during the ride and stole from other passengers' bags (a laptop and a GPS unit were reported); an accomplice bought the ticket, loaded the case and collected it. Narration: 'Spain: a thief rode in a suitcase.'",
+   "sources": [
+    "cbsnews",
+    "foxnews",
+    "abc7",
+    "time"
+   ]
+  },
+  {
+   "id": "K_minutes",
+   "type": "established",
+   "nature": "fact",
+   "text": "COUNTER: the Girona-Barcelona coach ride is roughly 90 minutes (about 100 km). Counter '90' with the label 'MINUTES IN THE LUGGAGE HOLD'.",
+   "sources": [
+    "cbsnews",
+    "foxnews"
+   ]
+  },
+  {
+   "id": "K_warm",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 3 June 2011 a driver noticed a passenger struggling with a very heavy suitcase and called police; officers knocked on the case, found it unusually warm and opened it on a sweating man. Narration: 'Police knocked: the case was warm.'",
+   "sources": [
+    "cbsnews",
+    "foxnews",
+    "abc7",
+    "time"
+   ]
+  },
+  {
+   "id": "K_arrested",
+   "type": "established",
+   "nature": "fact",
+   "text": "The man in the suitcase and his accomplice on board, both Polish nationals, were arrested on theft charges. Narration: 'Inside, a sweating man. Both arrested.' Neither is named in the reports; the accomplice is a silhouette tagged NOT A LIKENESS.",
+   "sources": [
+    "cbsnews",
+    "foxnews",
+    "time"
+   ]
+  },
+  {
+   "id": "K_mother",
+   "type": "established",
+   "nature": "fact",
+   "text": "Brooklyn, New York: after his mother died in 2003 (aged 73), a Park Slope man impersonated her for about six years in a blond wig, dress and oversized sunglasses. Narration: 'The strangest lasted six years.' / 'A Brooklyn man dressed as his dead mother.'",
+   "sources": [
+    "ap_ktar",
+    "ap_sowetan",
+    "nbcny",
+    "bkpaper",
+    "reuters_ttw"
+   ]
+  },
+  {
+   "id": "K_cheques",
+   "type": "established",
+   "nature": "fact",
+   "text": "Prosecutors said he cashed her Social Security cheques (reported as about $44,000 or $52,000; no figure is shown) and used the impersonation to hold on to her $2.2 million brownstone, even renewing her driver's licence in person. Label 'SOCIAL SECURITY CHEQUES · A $2.2M BROWNSTONE'.",
+   "sources": [
+    "ap_ktar",
+    "ap_sowetan",
+    "reuters_ttw",
+    "elderlaw"
+   ]
+  },
+  {
+   "id": "K_gotcha",
+   "type": "established",
+   "nature": "fact",
+   "text": "When investigators from the Brooklyn district attorney's office met 'her', he arrived in a red cardigan, lipstick and manicured nails, breathing through an oxygen tank; the investigators already had a photo of her tombstone. Narration: 'Investigators met \"her\" with her grave photo.'",
+   "sources": [
+    "ap_ktar",
+    "ap_sowetan",
+    "iol",
+    "reuters_ttw",
+    "elderlaw"
+   ]
+  },
+  {
+   "id": "K_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "Convicted by a jury on 3 May 2012 of grand larceny, mortgage fraud and forgery among other counts; sentenced on 21 May 2012 to 13 2/3 to 41 years in prison. Narration: 'Convicted: up to forty-one years.' Label 'SENTENCED: 13 2/3 TO 41 YEARS'.",
+   "sources": [
+    "ap_ktar",
+    "ap_sowetan",
+    "iol",
+    "elderlaw",
+    "reuters_ttw"
+   ]
+  },
+  {
+   "id": "K_underage",
+   "type": "established",
+   "nature": "fact",
+   "text": "CALLBACK: the haul was alcohol and the arrested man was 20: among his charges, underage possession of alcohol (accused only). Narration: 'The haul? Alcohol, and he was twenty.' (the end label adds 'underage possession of alcohol')",
+   "sources": [
+    "wric",
+    "cbsbalt",
+    "lawcrime",
+    "nbcwash"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "wric",
+   "publisher": "WRIC (Richmond)",
+   "title": "Melon-headed and malicious: Two suspects stole from Sheetz with watermelons on their heads",
+   "url": "https://www.wric.com/news/crime/melon-headed-and-malicious-two-suspects-rob-sheetz-with-watermelons-on-their-heads/",
+   "date": "2020-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cbsbalt",
+   "publisher": "CBS Baltimore",
+   "title": "Virginia Police Make Arrest After 2 Suspects In Hollowed Out Watermelons Masks Try To Allegedly Steal From A Sheetz",
+   "url": "https://www.cbsnews.com/baltimore/news/louisa-virginia-police-watermelon-heads-larceny-suspects-sheetz",
+   "date": "2020-05-18",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "lawcrime",
+   "publisher": "Law&Crime",
+   "title": "Police Make Arrest After Theft Suspects Wore Watermelons",
+   "url": "https://lawandcrime.com/crazy/two-people-wearing-watermelons-on-their-heads-stole-alcohol-from-convenience-store-cops/",
+   "date": "2020-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wvir",
+   "publisher": "29News / WVIR Charlottesville",
+   "title": "Louisa Police Department makes arrest in 'Melon Head' convenience store robbery",
+   "url": "https://www.29news.com/2020/05/16/louisa-police-department-makes-arrest-melon-head-convenience-store-robbery/",
+   "date": "2020-05-16",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "sixabc",
+   "publisher": "6abc / ABC",
+   "title": "Duo wearing watermelons on their heads steals from Sheetz in Virginia: Police",
+   "url": "https://6abc.com/post/duo-with-watermelons-on-their-heads-steals-from-sheetz-police/6195490/",
+   "date": "2020-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "fox5dc",
+   "publisher": "Fox 5 DC",
+   "title": "Virginia shoplifting suspects wore watermelon disguise: police",
+   "url": "https://www.fox5dc.com/news/virginia-shoplifting-suspects-wore-watermelon-disguise-police",
+   "date": "2020-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "globalnews",
+   "publisher": "Global News",
+   "title": "Watermelon mask theft: police share photo of suspects",
+   "url": "https://globalnews.ca/news/6958851/watermelon-mask-theft",
+   "date": "2020-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "nbcwash",
+   "publisher": "NBC Washington",
+   "title": "'Melon Head' shoplifters arrested in Virginia",
+   "url": "https://www.nbcwashington.com/news/local/melon-head-shoplifters-arrested-in-virginia/2305469/",
+   "date": "2020-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ctv",
+   "publisher": "CTV News",
+   "title": "A man who wore a watermelon on his head while allegedly stealing from store has been arrested",
+   "url": "https://ctvnews.ca/world/a-man-who-wore-a-watermelon-on-his-head-while-allegedly-stealing-from-store-has-been-arrested-1.4944159",
+   "date": "2020-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "vacode",
+   "publisher": "Code of Virginia (Virginia Law Library)",
+   "title": "s. 18.2-422. Prohibition of wearing of masks in certain places; exceptions (Class 6 felony)",
+   "url": "https://law.lis.virginia.gov/vacode/18.2-422",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "valawyer",
+   "publisher": "Virginia Lawyer (Virginia State Bar)",
+   "title": "Is Virginia's mask law constitutional?",
+   "url": "https://virginialawyer.vsb.org/articles/is-virginia-s-mask-law-constitutional-",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "vadogwood",
+   "publisher": "Dogwood (Virginia)",
+   "title": "After emergency order expires June 30, Virginia's face mask ban returns",
+   "url": "https://vadogwood.com/news/after-emergency-order-expires-june-30-virginias-face-mask-ban-returns/",
+   "date": "2021-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cbsnews",
+   "publisher": "CBS News",
+   "title": "Contortionist thief hides in luggage, steals from other bags, say police in Spain",
+   "url": "https://www.cbsnews.com/news/contortionist-thief-hides-in-luggage-steals-from-other-bags-say-police-in-spain/",
+   "date": "2011-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "foxnews",
+   "publisher": "Fox News",
+   "title": "Spanish Police Say Contortionist Hid Inside Suitcase to Raid Baggage on Bus",
+   "url": "https://www.foxnews.com/world/spanish-police-say-contortionist-hid-inside-suitcase-to-raid-baggage-on-bus.amp",
+   "date": "2011-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "abc7",
+   "publisher": "ABC7 Los Angeles",
+   "title": "Spain: Contortionist thief hid in suitcase",
+   "url": "https://abc7.com/archive/8180270",
+   "date": "2011-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "time",
+   "publisher": "TIME Newsfeed",
+   "title": "Polish Contortionists Arrested After Allegedly Stealing Items from Luggage",
+   "url": "https://newsfeed.time.com/?p=74118",
+   "date": "2011-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ap_ktar",
+   "publisher": "Associated Press (via KTAR)",
+   "title": "NY man who dressed as dead mom sentenced for fraud",
+   "url": "https://ktar.com/?p=105656",
+   "date": "2012-05-22",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ap_sowetan",
+   "publisher": "Associated Press (via Sowetan LIVE)",
+   "title": "NY man who dressed as dead mom sentenced for fraud",
+   "url": "https://www.sowetanlive.co.za/news/world/2012-05-22-ny-man-who-dressed-as-dead-mom-sentenced-for-fraud-/",
+   "date": "2012-05-22",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "iol",
+   "publisher": "IOL (South Africa)",
+   "title": "Fraudster dressed as dead mom",
+   "url": "https://iol.co.za/news/world/2012-05-22-fraudster-dressed-as-dead-mom/",
+   "date": "2012-05-22",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "reuters_ttw",
+   "publisher": "Reuters (via TickleTheWire)",
+   "title": "Brooklyn man who dressed as dead mother convicted",
+   "url": "https://ticklethewire.com/?p=75150",
+   "date": "2012-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "nbcny",
+   "publisher": "NBC New York",
+   "title": "Man Poses as Dead Mom to Collect Benefits",
+   "url": "https://www.nbcnewyork.com/news/national-international/man-poses-as-dead-mom-to-collect-benefits/1864201/",
+   "date": "2009-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "bkpaper",
+   "publisher": "Brooklyn Paper",
+   "title": "Local man busted for impersonating dead ma",
+   "url": "https://www.brooklynpaper.com/local-man-busted-for-impersonating-dead-ma",
+   "date": "2009-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "elderlaw",
+   "publisher": "ElderLawAnswers",
+   "title": "Man Who Dressed as His Elderly Mother to Regain Her Home Gets 13 Years",
+   "url": "https://attorney.elderlawanswers.com/man-who-dressed-as-his-elderly-mother-to-regain-her-home-gets-13-years-9894",
+   "date": "2012-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 6,
+ "search_terms": [
+  "watermelon heads",
+  "watermelon disguise",
+  "disguise fails"
+ ],
+ "palette": {
+  "shadow": "#121a1e",
+  "mid": "#c6bfb0",
+  "accent": "#9ccf3e"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "POLICE SAY TWO THIEVES"
+   },
+   {
+    "text": "WORE WATERMELON HEADS",
+    "colour": "#9ccf3e"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · VIRGINIA"
+   },
+   {
+    "t": 9.24,
+    "v": "2 · SPAIN"
+   },
+   {
+    "t": 18.87,
+    "v": "3 · BROOKLYN"
+   }
+  ],
+  "y": 330,
+  "until": 28.4
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DUMBEST DISGUISE?"
+   },
+   {
+    "text": "MELON, SUITCASE OR MUM? 👇",
+    "colour": "#9ccf3e"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D WEAR THE MELON",
+    "fs": 40
+   },
+   {
+    "text": "FOLLOW FOR DISGUISE FAILS",
+    "fs": 44,
+    "colour": "#9ccf3e"
+   },
+   {
+    "text": "DISGUISE FAILS · 2",
+    "fs": 34
+   }
+  ],
+  "from": 2.66,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-19"
+}
