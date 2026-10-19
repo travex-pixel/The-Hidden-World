@@ -460,3 +460,5 @@
 - 2026-10-19 11:47:07 tcv81-where-they-hid-it-3: VERIFIED -> series/true-crime-cinematic/output/true_crime_81_where_they_hid_it_3.mp4 (37.5s, 16.8 MB, sha256 8980054988d7)
 - 2026-10-19 11:50:04 produce 82 --force: regenerating episode data
 - 2026-10-19 11:50:04 tcv82-lego-thief: rendering (final60, seed 1)
+- 2026-10-19 12:18:19 tcv82-lego-thief: rendered in 1695s
+- 2026-10-19 12:19:17 tcv82-lego-thief: VERIFIED -> series/true-crime-cinematic/output/true_crime_82_lego_thief.mp4 (37.9s, 22.0 MB, sha256 2c342ec17bc3)
