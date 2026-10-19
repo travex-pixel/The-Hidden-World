@@ -1,0 +1,1024 @@
+{
+ "id": "tcv83-fake-ambulance",
+ "number": 83,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Fake Ambulance Full of Cocaine",
+ "central_question": "Disguise Fails, 1: a fake ambulance with fake medics and a patient on crutches, a fake Dakar Rally truck, and a van with two coffins. Which disguise was dumbest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "45": "forty-five",
+   "193": "one ninety-three",
+   "814": "eight hundred and fourteen",
+   "32": "thirty-two",
+   "Dakar": "Dakar",
+   "Bilbao": "Bil-bow"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  27,
+  32
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "83",
+  "label": "DISGUISE FAILS · 1"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_coffin",
+   "word": [
+    0,
+    3
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "fa83_officer",
+  "fa83_agent",
+  "fa83_medic",
+  "fa83_racer",
+  "fa83_driver"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the disguises, never on patients, the dead or the bereaved. No body, remains or mourner is drawn: the coffins hold only bags. No weapon and no force are shown. The convicted men (Birmingham 2015-16, Rotterdam 2025) and the people arrested with the rally truck (Spain 2010) are never named on screen or in narration and are drawn ONLY as dark rim-lit silhouettes tagged NOT A LIKENESS; officers and agents are generic figures. The ambulance is a plain white van with AMBULANCE in plain type and a plain blue/amber light bar: no cross, star, crest or real ambulance service's livery. The rally truck carries plain RALLY lettering and generic stripes, no event or sponsor logo. The patrol car is unmarked; every plate is blank. Frame 1's scrapyard is an illustration of the reported scene, not a photograph. Every card is our own typed graphic. No dialogue or quotation card. Facts verified 2026-10-19.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "fa83_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.02,
+     "name": "siren",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "door",
+     "gain": 0.3
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_trips"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A fake ambulance. Full of cocaine.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Fake medics. 45 trips into Britain.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fake",
+    "ambulance.",
+    "cocaine.",
+    "medics.",
+    "45",
+    "trips",
+    "britain."
+   ],
+   "section": "A",
+   "case": "ambulance",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_inside",
+   "scene": "fa83_inside",
+   "min_duration": 4.4,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "radio",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.26
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.24
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      1
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_scrap",
+    "K_193",
+    "K_fleet"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police tracked it to a scrapyard.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Inside: 193 kilos.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "tracked",
+    "scrapyard.",
+    "inside:",
+    "193",
+    "kilos."
+   ],
+   "section": "A",
+   "case": "ambulance"
+  },
+  {
+   "id": "s03_dock",
+   "scene": "fa83_dock",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": -0.2,
+     "word": [
+      1,
+      0
+     ],
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "brake",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_dakar"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the strangest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "A fake Dakar Rally truck.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "strangest.",
+    "fake",
+    "dakar",
+    "rally",
+    "truck."
+   ],
+   "section": "B",
+   "case": "dakar_truck"
+  },
+  {
+   "id": "s04_hatch",
+   "scene": "fa83_hatch",
+   "min_duration": 4.4,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.24
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thud",
+     "gain": 0.26
+    },
+    {
+     "at": -0.2,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_docked",
+    "K_dakar",
+    "K_funfact"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The race ended in January. Seized in Bilbao.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "814 kilos of cocaine.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "race",
+    "january.",
+    "seized",
+    "bilbao.",
+    "814",
+    "kilos",
+    "cocaine."
+   ],
+   "section": "B",
+   "case": "dakar_truck"
+  },
+  {
+   "id": "s05_road",
+   "scene": "fa83_road",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "siren",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "brake",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "radio",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_coffin",
+    "K_laissez"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then a van with two coffins. Two bodies, he said.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "van",
+    "two",
+    "coffins.",
+    "bodies,",
+    "said."
+   ],
+   "section": "C",
+   "case": "coffins"
+  },
+  {
+   "id": "s06_coffin",
+   "scene": "fa83_coffin",
+   "min_duration": 3.8,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.24
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "gavel",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_coffin",
+    "K_coffin_sent"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "No paperwork. No bodies. Cocaine. Four years.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no",
+    "paperwork.",
+    "bodies.",
+    "cocaine.",
+    "four",
+    "years."
+   ],
+   "section": "D",
+   "case": "coffins",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "fa83_end",
+   "min_duration": 2.3,
+   "pad_after": 0.35,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.32
+    },
+    {
+     "at": 0.45,
+     "word": [
+      0,
+      5
+     ],
+     "name": "door",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_crutches",
+    "K_sent"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The patient on crutches? A smuggler.",
+     "tone": "reveal",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "patient",
+    "crutches?",
+    "smuggler."
+   ],
+   "section": "E",
+   "case": "ambulance",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Oct 2014-Jun 2015: a Dutch-run company used second-hand ambulances, with men in paramedic uniforms, to smuggle cocaine, heroin and ecstasy from the Netherlands to Britain. Headline 'A FAKE AMBULANCE / FULL OF COCAINE'; narration 'A fake ambulance. Full of cocaine.' / 'Fake medics. Netherlands to Britain. 45 trips.'",
+   "sources": [
+    "dutchnews0615",
+    "exstar0615",
+    "foxap",
+    "rt",
+    "dutchnews1115"
+   ]
+  },
+  {
+   "id": "K_trips",
+   "type": "established",
+   "nature": "fact",
+   "text": "The National Crime Agency identified at least 45 trips over a 14-month period (one AP report says 44). Label '45 TRIPS IN 14 MONTHS · NCA'.",
+   "sources": [
+    "dutchnews1115",
+    "exstar0716",
+    "guardianng",
+    "ems1"
+   ]
+  },
+  {
+   "id": "K_scrap",
+   "type": "established",
+   "nature": "fact",
+   "text": "16 June 2015: NCA officers tracked an ambulance from Harwich, Essex, to a scrapyard in Smethwick, West Midlands, where two men in paramedic uniforms met two others; four were arrested. Narration (gotcha): 'Police tracked it. Straight to a scrapyard.'",
+   "sources": [
+    "exstar0716",
+    "pressreader_dm",
+    "rt",
+    "exstar0615"
+   ]
+  },
+  {
+   "id": "K_193",
+   "type": "established",
+   "nature": "fact",
+   "text": "The seized ambulance held 193 kg of cocaine, 74 kg of heroin and ecstasy behind riveted panels (about 270 kg in all). Counter '193 KG'; narration 'Inside: 193 kilos of cocaine.'",
+   "sources": [
+    "rt",
+    "foxap",
+    "exstar0615"
+   ]
+  },
+  {
+   "id": "K_fleet",
+   "type": "established",
+   "nature": "fact",
+   "text": "Dutch police then found about ten more ambulances in storage at two yards (Hoofddorp and Zwanenburg).",
+   "sources": [
+    "dutchnews0615",
+    "nltimes25613",
+    "exstar0716"
+   ]
+  },
+  {
+   "id": "K_sent",
+   "type": "established",
+   "nature": "fact",
+   "text": "Birmingham Crown Court: in December 2015 three Dutch men were jailed for 28, 24 and 18 years (a fourth was cleared); in July 2016 six more men were jailed, the ringleader for 20 years. Label 'Birmingham Crown Court, 2015-16'. Nobody is named on screen.",
+   "sources": [
+    "foxap",
+    "dutchnews1115",
+    "exstar1115",
+    "bbc_it",
+    "exstar0716",
+    "ems1"
+   ]
+  },
+  {
+   "id": "K_crutches",
+   "type": "established",
+   "nature": "fact",
+   "text": "One gang member posed as a tourist/patient on crutches to make the ambulance look genuine. Callback: 'The patient on crutches? One of the gang.' Label 'THE \"PATIENT\" ON CRUTCHES WAS A SMUGGLER'.",
+   "sources": [
+    "foxap",
+    "dutchnews1115",
+    "guardianng"
+   ]
+  },
+  {
+   "id": "K_dakar",
+   "type": "established",
+   "nature": "fact",
+   "text": "April 2010: Spanish police seized a truck modified to look like a Dakar Rally support vehicle, carrying the event's publicity and logos, with 814 kg of cocaine in 32 hidden compartments; seven people were arrested in Bilbao, Barcelona and Ibiza; the drugs were bound for Ibiza. Narration 'A fake Dakar Rally truck.' / '814 kilos in 32 hidden compartments.'",
+   "sources": [
+    "aeat",
+    "ultimahora",
+    "eluniverso",
+    "cooperativa"
+   ]
+  },
+  {
+   "id": "K_docked",
+   "type": "established",
+   "nature": "fact",
+   "text": "The truck had been shipped to Argentina for the January 2010 race (1-16 January), was loaded near Buenos Aires and shipped back to Bilbao, where police seized it when it arrived. Narration (gotcha): 'The race ended in January. Police met the truck in Bilbao.'",
+   "sources": [
+    "autoguide",
+    "jalopnik_dakar",
+    "cooperativa",
+    "eluniverso"
+   ]
+  },
+  {
+   "id": "K_coffin",
+   "type": "established",
+   "nature": "fact",
+   "text": "13 December 2024: police stopped a French-registered van on the A29 near Numansdorp for suspicious driving; the 30-year-old driver said the two coffins held bodies but could not show proper paperwork; opened at a funeral home, the coffins held no bodies, only sports bags of cocaine (police: more than 250 kg). Narration 'Then a van with two coffins. Two bodies, he said.' / 'No paperwork. No bodies. Just cocaine.'",
+   "sources": [
+    "nltimes77111",
+    "dutchnews1224",
+    "brusselstimes",
+    "rechtspraak"
+   ]
+  },
+  {
+   "id": "K_coffin_sent",
+   "type": "established",
+   "nature": "fact",
+   "text": "April 2025: the Rotterdam court sentenced the driver to four years in prison and found him guilty of using forged documents (the court gives just over 230 kg; the prosecutor had demanded six years). Narration 'Four years.' Label 'ROTTERDAM COURT, APRIL 2025: 4 YEARS'.",
+   "sources": [
+    "rechtspraak",
+    "om_nl"
+   ]
+  },
+  {
+   "id": "K_funfact",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the 2007 Dakar was the last run in Africa; the 2008 rally was cancelled days before the start after four French tourists were killed in Mauritania; from 2009 to 2019 it ran in South America and since 2020 in Saudi Arabia. Card: THE 'DAKAR' RALLY HAS NOT REACHED DAKAR SINCE 2007.",
+   "sources": [
+    "wiki_dakar",
+    "aljazeera",
+    "britannica"
+   ]
+  },
+  {
+   "id": "K_laissez",
+   "type": "established",
+   "nature": "fact",
+   "text": "A corpse crossing a border must travel with a 'laissez-passer for a corpse' issued by the state of departure (Council of Europe Agreement on the Transfer of Corpses, Strasbourg 1973, article 3). Label sub: a body needs a 'laissez-passer' (1973 treaty).",
+   "sources": [
+    "coe_ets80",
+    "wiki_corpses"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "dutchnews0615",
+   "publisher": "DutchNews",
+   "title": "Dutch gang used ambulances to smuggle drugs to Britain",
+   "url": "https://dutchnews.nl/2015/06/dutch-gang-used-ambulances-to-smuggle-drugs-to-britain",
+   "date": "2015-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "exstar0615",
+   "publisher": "Express & Star",
+   "title": "Pictured: fake ambulance used to smuggle 270kg of drugs into the West Midlands",
+   "url": "https://expressandstar.com/news/crime/2015/06/18/pictured-fake-ambulance-used-to-smuggle-270kg-of-drugs-into-the-west-midlands",
+   "date": "2015-06-18",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "nltimes25613",
+   "publisher": "NL Times",
+   "title": "Ambulance drug-smuggling raids in Hoofddorp and Zwanenburg",
+   "url": "https://nltimes.nl/node/25613",
+   "date": "2015-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "dutchnews1115",
+   "publisher": "DutchNews",
+   "title": "Dutchmen face jail in Britain for smuggling drugs in 'fake' ambulances",
+   "url": "https://dutchnews.nl/2015/11/dutchmen-face-jail-in-britain-for-smuggling-drugs-in-fake-ambulances",
+   "date": "2015-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "exstar1115",
+   "publisher": "Express & Star",
+   "title": "Fake ambulance drugs trial: I can't read, claims accused",
+   "url": "https://www.expressandstar.com/news/2015/11/21/fake-ambulance-drugs-trial-i-cant-read-claims-accused",
+   "date": "2015-11-21",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "foxap",
+   "publisher": "Fox News (Associated Press)",
+   "title": "Dutch man jailed for 24 years for smuggling $1.5 billion in drugs to Britain inside ambulances",
+   "url": "https://www.foxnews.com/world/dutch-man-jailed-for-24-years-for-smuggling-1-5-billion-in-drugs-to-britain-inside-ambulances.amp",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "rt",
+   "publisher": "RT (citing the National Crime Agency)",
+   "title": "Fake ambulances smuggle £1.6bn of cocaine & heroin into UK",
+   "url": "https://www.rt.com/uk/323807-fake-ambulance-drugs-smugglers/",
+   "date": "2015-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "guardianng",
+   "publisher": "The Guardian (Nigeria)",
+   "title": "Fake ambulances smuggled £1.6bn of drugs into UK, court finds",
+   "url": "https://m.guardian.ng/news/fake-ambulances-smuggled-1-6bn-of-drugs-into-uk-court-finds/",
+   "date": "2015-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "exstar0716",
+   "publisher": "Express & Star",
+   "title": "Dutch ambulance drugs plot: six jailed after £1.6bn smuggling gang smashed",
+   "url": "https://www.expressandstar.com/news/2016/07/04/six-jailed-over-fake-ambulance-drug-smuggling",
+   "date": "2016-07-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "bbc_it",
+   "publisher": "BBC News (via Inner Temple Library)",
+   "title": "Six jailed for 'drug ambulance' smuggling plot",
+   "url": "https://innertemplelibrary.com/2016/07/six-jailed-for-drug-ambulance-smuggling-plot-bbc-news",
+   "date": "2016-07",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ems1",
+   "publisher": "EMS1",
+   "title": "6 sentenced in ambulance drug smuggling operation",
+   "url": "https://www.ems1.com/ambulances-emergency-vehicles/articles/6-sentenced-in-ambulance-drug-smuggling-operation-HpGpKCfGBGVCI5y4",
+   "date": "2016-07",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "pressreader_dm",
+   "publisher": "Daily Mail (PressReader)",
+   "title": "Ambulance gang is jailed for smuggling in £1.6bn of drugs",
+   "url": "https://www.pressreader.com/uk/daily-mail/20160705/282050506385448",
+   "date": "2016-07-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "aeat",
+   "publisher": "Agencia Tributaria (Spain)",
+   "title": "Policía Nacional y Agencia Tributaria desarticulan una red que introducía cocaína en un camión del Dakar",
+   "url": "https://sede.agenciatributaria.gob.es/Sede/en_gb/notas-prensa/notas-prensa/2010/abril/13/policia-nacional-agencia-tributaria-desarticulan-cocaina.html",
+   "date": "2010-04-13",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ultimahora",
+   "publisher": "Ultima Hora",
+   "title": "Intervenidos 800 kilos de cocaína en un camión 'tuneado' para el rally París-Dakar rumbo a Eivissa",
+   "url": "https://www.ultimahora.es/sucesos/ultimas/2010/04/14/7605/intervenidos-800-kilos-de-cocaina-en-un-camion-tuneado-para-el-rally-paris-dakar-rumbo-a-eivissa.html",
+   "date": "2010-04-14",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "eluniverso",
+   "publisher": "El Universo",
+   "title": "Intervienen cocaína en un camión tuneado del rally Dakar",
+   "url": "https://www.eluniverso.com/2010/04/13/1/1361/intervienen-cocaina-un-camion-tuneado-rally-dakar.html",
+   "date": "2010-04-13",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cooperativa",
+   "publisher": "Cooperativa.cl",
+   "title": "Policía española incautó 814 kilos de cocaína en camión que participó en el Dakar",
+   "url": "https://cooperativa.cl/noticias/deportes/rally/dakar/policia-espanola-incauto-814-kilos-de-cocaina-en-camion-que-participo-en/2010-04-13/112731.html",
+   "date": "2010-04-13",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "autoguide",
+   "publisher": "AutoGuide",
+   "title": "Report: Police Seize Fake Dakar Rally Truck Loaded With Cocaine",
+   "url": "https://www.autoguide.com/auto-news/2010/04/report-police-seize-fake-dakar-rally-truck-loaded-with-cocaine.html",
+   "date": "2010-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "jalopnik_dakar",
+   "publisher": "Jalopnik",
+   "title": "Gang Moves 1,800 Lb Of Coke In Fake Dakar Rally Truck",
+   "url": "https://jalopnik.com/gang-moves-1-800-lb-of-coke-in-fake-dakar-rally-truck-5516121",
+   "date": "2010-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "nltimes77111",
+   "publisher": "NL Times",
+   "title": "French van with coffins full of cocaine stopped near Numansdorp",
+   "url": "https://nltimes.nl/node/77111",
+   "date": "2024-12",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "dutchnews1224",
+   "publisher": "DutchNews",
+   "title": "Dutch police stop French van, find coffins full of cocaine",
+   "url": "https://www.dutchnews.nl/2024/12/dutch-police-stop-french-van-find-coffins-full-of-cocaine/",
+   "date": "2024-12",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "brusselstimes",
+   "publisher": "The Brussels Times",
+   "title": "French man with cocaine in coffins arrested by Dutch police",
+   "url": "https://brusselstimes.com/1355125/french-man-with-cocaine-in-coffins-arrested-by-dutch-police",
+   "date": "2024-12",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "om_nl",
+   "publisher": "Openbaar Ministerie",
+   "title": "Begrafenisondernemer blijkt cocaïne-importeur: 6 jaar cel geëist",
+   "url": "https://www.om.nl/actueel/nieuws/2025/03/27/begrafenisondernemer-blijkt-cocaine-importeur-6-jaar-cel-geeist",
+   "date": "2025-03-27",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "rechtspraak",
+   "publisher": "Rechtbank Rotterdam (rechtspraak.nl)",
+   "title": "Gevangenisstraf voor man die cocaïne in lijkkisten vervoerde",
+   "url": "https://www.rechtspraak.nl/organisatie-en-contact/organisatie/rechtbanken/rechtbank-rotterdam/nieuws/2025/04/gevangenisstraf-voor-man-die-cocaine-in-lijkkisten-vervoerde",
+   "date": "2025-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wiki_dakar",
+   "publisher": "Wikipedia",
+   "title": "Dakar Rally",
+   "url": "https://en.wikipedia.org/wiki/Dakar_Rally",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "aljazeera",
+   "publisher": "Al Jazeera",
+   "title": "Dakar rally heads to South America",
+   "url": "https://www.aljazeera.com/sports/2008/2/11/dakar-rally-heads-to-south-america",
+   "date": "2008-02-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "britannica",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "Dakar Rally",
+   "url": "https://www.britannica.com/print/article/919313",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "coe_ets80",
+   "publisher": "Council of Europe",
+   "title": "Agreement on the Transfer of Corpses (ETS No. 80), Strasbourg, 26 October 1973",
+   "url": "https://rm.coe.int/168007617d",
+   "date": "1973-10-26",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wiki_corpses",
+   "publisher": "Wikipedia",
+   "title": "Agreement on the Transfer of Corpses",
+   "url": "https://en.wikipedia.org/wiki/Agreement_on_the_Transfer_of_Corpses",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-19"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 6,
+ "search_terms": [
+  "fake ambulance",
+  "cocaine ambulance",
+  "drug smuggling"
+ ],
+ "palette": {
+  "shadow": "#121a22",
+  "mid": "#c6bcaa",
+  "accent": "#e8a93a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A FAKE AMBULANCE"
+   },
+   {
+    "text": "FULL OF COCAINE",
+    "colour": "#e8a93a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · AMBULANCE"
+   },
+   {
+    "t": 10.12,
+    "v": "2 · RALLY TRUCK"
+   },
+   {
+    "t": 20.67,
+    "v": "3 · COFFINS"
+   }
+  ],
+  "y": 330,
+  "until": 28.04
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DUMBEST DISGUISE?"
+   },
+   {
+    "text": "AMBULANCE, TRUCK OR COFFINS? 👇",
+    "colour": "#e8a93a"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D FAKE A LIMP",
+    "fs": 44
+   },
+   {
+    "text": "FOLLOW FOR DISGUISE FAILS",
+    "fs": 46,
+    "colour": "#e8a93a"
+   },
+   {
+    "text": "DISGUISE FAILS · 1",
+    "fs": 34
+   }
+  ],
+  "from": 2.66,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-19"
+}

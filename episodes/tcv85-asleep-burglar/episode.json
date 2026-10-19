@@ -1,0 +1,858 @@
+{
+ "id": "tcv85-asleep-burglar",
+ "number": 85,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Burglar Who Fell Asleep in the Bed",
+ "central_question": "Dumbest Getaways: a burglar asleep in a stranger's bed, one who fell down the basement stairs, and one who dived through a closed window and left his licence. Which was dumbest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "head-first": "head-first",
+   "Chad": "Chad",
+   "licence": "license"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  27,
+  32
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "85",
+  "label": "DUMBEST GETAWAYS · 1"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_window",
+   "word": [
+    0,
+    2
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "ab85_officer",
+  "ab85_caller",
+  "ab85_homeowner",
+  "ab85_deputy",
+  "ab85_deputy_ok",
+  "ab85_intruder_mi",
+  "ab85_suspect_ok"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on each scheme, never on a person's circumstances. Nobody is hurt in any case; no weapon and no force are shown. The three men (Chillicothe 2026, Frenchtown Township, Oklahoma County 2026) are never named and are drawn ONLY as dark rim-lit silhouettes tagged NOT A LIKENESS (the sleeper is a drawn silhouette under a duvet); allegations are attributed ('police say', 'sheriff's office says', ACCUSED labels, AS OF OCT 2026). The complainant, the homeowners, the officers and the deputies are generic figures; the complainant and the owner are not named on screen. Every house is a generic illustration, not the real address. The body-camera framing is our own typed graphic with no department markings; no real footage is imitated. The sheriff's office joke is paraphrased on a sourced label, not spoken as a quote. Facts verified 2026-10-19.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ab85_hook",
+   "min_duration": 5.2,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "tick",
+     "gain": 0.24
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "whoosh",
+     "gain": 0.16
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_lock"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police say a burglar fell asleep in bed.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "The back-door lock? Missing. Upstairs: a stranger's house.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "burglar",
+    "fell",
+    "asleep",
+    "bed.",
+    "lock?",
+    "missing.",
+    "stranger's"
+   ],
+   "section": "A",
+   "case": "chillicothe",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_door",
+   "scene": "ab85_door",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.2,
+     "word": [
+      0,
+      0
+     ],
+     "name": "door",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "radio",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_found"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Until the owner's relative walked in and called police.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "relative",
+    "walked",
+    "called",
+    "police."
+   ],
+   "section": "A",
+   "case": "chillicothe"
+  },
+  {
+   "id": "s03_hall",
+   "scene": "ab85_hall",
+   "min_duration": 3.0,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_stat"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the clumsiest.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "clumsiest."
+   ],
+   "section": "B",
+   "case": "monroe"
+  },
+  {
+   "id": "s04_stairs",
+   "scene": "ab85_stairs",
+   "min_duration": 4.4,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.42
+    },
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "rumble",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      3
+     ],
+     "name": "radio",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_fall",
+    "K_hid"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Michigan: a burglar fell down the basement stairs.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "It woke the homeowners.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "michigan:",
+    "fell",
+    "basement",
+    "stairs.",
+    "woke",
+    "homeowners."
+   ],
+   "section": "B",
+   "case": "monroe"
+  },
+  {
+   "id": "s05_vacant",
+   "scene": "ab85_vacant",
+   "min_duration": 4.2,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "beep",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "radio",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_copper",
+    "K_day"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And the strangest was on bodycam.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Oklahoma. A suspected copper thief.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "strangest",
+    "bodycam.",
+    "oklahoma.",
+    "copper",
+    "thief."
+   ],
+   "section": "C",
+   "case": "oklahoma"
+  },
+  {
+   "id": "s06_window",
+   "scene": "ab85_window",
+   "min_duration": 4.8,
+   "pad_after": 0.12,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "glitch",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_dive",
+    "K_licence"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He dived head-first through a closed window.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "And left his backpack. Licence still inside.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dived",
+    "head-first",
+    "closed",
+    "window.",
+    "backpack.",
+    "licence",
+    "inside."
+   ],
+   "section": "D",
+   "case": "oklahoma",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "ab85_end",
+   "min_duration": 2.4,
+   "pad_after": 0.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_chad"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His story? Chad showed him the house.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "story?",
+    "chad",
+    "showed",
+    "house."
+   ],
+   "section": "E",
+   "case": "chillicothe",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Monday 12 October 2026, Chillicothe, Ohio: officers answering a reported active burglary found a man asleep in a bed in an upstairs (second-floor) bedroom of a house he had no permission to be in; booked into the Ross County Jail on a burglary charge (ORC 2911.12). Accused only. Narration: 'Police say a burglar fell asleep in bed.' Headline 'A BURGLAR FELL ASLEEP / IN A STRANGER'S BED'.",
+   "sources": [
+    "sciotopost",
+    "heritage"
+   ]
+  },
+  {
+   "id": "K_lock",
+   "type": "established",
+   "nature": "fact",
+   "text": "The complainant found the lock mechanism of the inner back door missing; the man told officers the back door was unlocked. Narration: 'The back-door lock? Missing. Upstairs: a stranger's house.'",
+   "sources": [
+    "sciotopost",
+    "heritage"
+   ]
+  },
+  {
+   "id": "K_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "The complainant reported an active burglary, met officers at the back door and pointed them upstairs; officers found the man asleep and handcuffed him as he woke; the owner confirmed nobody had permission to be inside or stay and asked for charges. Narration: 'Until the owner's relative walked in and called police.' (the complainant shares the owner's surname; neither is named)",
+   "sources": [
+    "sciotopost",
+    "heritage"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "COUNTER: 13.0 % of burglary offences in the US were cleared in 2022 (FBI Crime in the United States 2022, table 25; the Council on Criminal Justice gives the same 13 %, down from 23 % in 1964).",
+   "sources": [
+    "ccj",
+    "dpf"
+   ]
+  },
+  {
+   "id": "K_fall",
+   "type": "established",
+   "nature": "fact",
+   "text": "Frenchtown Township, Monroe County, Michigan: a man who broke into a house on Heiss Road fell down the basement stairs; the noise woke the homeowners, who called 911 at about 3:15 am. Narration: 'Michigan: a burglar fell down the basement stairs.' / 'It woke the homeowners.' No year is given in the extracts; none is shown.",
+   "sources": [
+    "wwj",
+    "wxyz"
+   ]
+  },
+  {
+   "id": "K_hid",
+   "type": "established",
+   "nature": "fact",
+   "text": "Deputies searched the house and found him hiding in the basement; taken into custody without further incident; jailed on a first-degree home-invasion charge; name withheld pending arraignment. Label 'FOUND HIDING IN THE BASEMENT'.",
+   "sources": [
+    "wwj",
+    "wxyz"
+   ]
+  },
+  {
+   "id": "K_copper",
+   "type": "established",
+   "nature": "fact",
+   "text": "1 October 2026, Oklahoma County, Oklahoma: a deputy investigating a burglary at a vacant house found a man the sheriff's office says was stripping copper from the appliances and walls; body-camera video released mid-October. Narration: 'And the strangest was on bodycam.' / 'Oklahoma. A suspected copper thief.'",
+   "sources": [
+    "koco_gray",
+    "kfor",
+    "foxnews",
+    "abc7"
+   ]
+  },
+  {
+   "id": "K_day",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: FBI 2024 data count 216,601 residential burglaries by day against 174,053 by night (15,122 unknown): more US home burglaries happen by day than by night.",
+   "sources": [
+    "safehome",
+    "moneygeek"
+   ]
+  },
+  {
+   "id": "K_dive",
+   "type": "established",
+   "nature": "fact",
+   "text": "Ordered to surrender, the man dived head-first through a closed window and got away on foot; a patrol-car and drone search did not find him. Narration: 'He dived head-first through a closed window.'",
+   "sources": [
+    "koco_gray",
+    "kfor",
+    "foxnews",
+    "police1"
+   ]
+  },
+  {
+   "id": "K_licence",
+   "type": "established",
+   "nature": "fact",
+   "text": "He left his backpack behind with his driver's licence inside, which identified him; charges of burglary, resisting arrest and obstructing an officer were filed; the sheriff's office joked he 'missed his calling as a Hollywood stuntman'. Accused only; the outlets differ on whether he has since been taken into custody, so the reel says only that the licence named him. Narration: 'And left his backpack. Licence still inside.'",
+   "sources": [
+    "koco_gray",
+    "foxnews",
+    "abc7"
+   ]
+  },
+  {
+   "id": "K_chad",
+   "type": "established",
+   "nature": "fact",
+   "text": "CALLBACK: the Chillicothe man told officers he was 'just sleeping' (wording as reported, both sources; label) and that an acquaintance called 'Chad' had shown him the house. Narration (attributed as his account): 'His story? Chad showed him the house.'",
+   "sources": [
+    "sciotopost",
+    "heritage"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "sciotopost",
+   "publisher": "Scioto Post",
+   "title": "Unwelcome Guest: Man Found Asleep in Upstairs Bedroom Charged with Burglary",
+   "url": "https://www.sciotopost.com/unwelcome-guest-man-found-asleep-in-upstairs-bedroom-charged-with-burglary/",
+   "date": "2026-10-13",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "heritage",
+   "publisher": "Hopewell Heritage Headlines",
+   "title": "Found Fast Asleep in a Stranger's Bed: Chillicothe Man Wakes Up to Police and a Burglary Charge",
+   "url": "https://heritageheadlines.com/found-fast-asleep-in-a-strangers-bed-chillicothe-man-wakes-up-to-police-and-a-burglary-charge/",
+   "date": "2026-10-13",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wwj",
+   "publisher": "CBS Detroit (WWJ)",
+   "title": "Police: Burglar Arrested After Falling Down Basement Steps, Waking Homeowner",
+   "url": "https://www.cbsnews.com/detroit/news/police-burglar-arrested-after-falling-down-basement-steps-waking-homeowner",
+   "date": "undated",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wxyz",
+   "publisher": "WXYZ Detroit",
+   "title": "Home invasion suspect caught after falling down basement stairs",
+   "url": "https://www.wxyz.com/news/home-invasion-suspect-caught-after-falling-down-basement-stairs",
+   "date": "undated",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "koco_gray",
+   "publisher": "KOCO (via Gray stations: 13abc, WAFB, KOLD)",
+   "title": "Burglary suspect jumps through closed window to escape deputy",
+   "url": "https://www.13abc.com/2026/10/14/burglary-suspect-jumps-through-closed-window-escape-deputy/",
+   "date": "2026-10-14",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "kfor",
+   "publisher": "KFOR Oklahoma City",
+   "title": "VIDEO: Man smashes through window running from Oklahoma County deputy",
+   "url": "https://kfor.com/news/local/video-man-smashes-through-window-running-from-oklahoma-county-deputy/",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "foxnews",
+   "publisher": "Fox News",
+   "title": "Oklahoma copper theft suspect caught on bodycam video diving through window",
+   "url": "https://www.foxnews.com/us/copper-theft-suspects-daring-escape-caught-bodycam-video-deputies-discover-left-behind",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "abc7",
+   "publisher": "ABC7 (KABC/KGO)",
+   "title": "Body camera video shows suspect smashing through window to evade deputy in Oklahoma County",
+   "url": "https://abc7.com/amp/post/body-camera-video-shows-suspect-smashing-window-evade-deputy-oklahoma-county/19938545/",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "police1",
+   "publisher": "Police1",
+   "title": "Bodycam video shows fleeing Oklahoma County suspect diving head-first through glass window",
+   "url": "https://www.police1.com/body-camera/oh-sh-bwc-video-shows-suspected-copper-thief-diving-head-first-through-glass-window",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ccj",
+   "publisher": "Council on Criminal Justice",
+   "title": "Burglary fact sheet (clearance 23 % in 1964 to 13 % in 2022)",
+   "url": "https://counciloncj.org/wp-content/uploads/2024/07/burglary-fact-sheet.pdf",
+   "date": "2024-07",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "dpf",
+   "publisher": "DrugPolicyFacts (citing FBI Crime in the United States 2022, table 25)",
+   "title": "Clearance rates for reported violent and property crimes in the US",
+   "url": "https://drugpolicyfacts.org/node/3493",
+   "date": "2024",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "safehome",
+   "publisher": "SafeHome.org (FBI 2024 table reproduced)",
+   "title": "Burglary statistics: residence day 216,601 / night 174,053 (2024)",
+   "url": "https://www.safehome.org/resources/burglary-statistics/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "moneygeek",
+   "publisher": "MoneyGeek (FBI 2024 data)",
+   "title": "Home burglary statistics: daytime residential burglaries outnumbered nighttime ones in 2024",
+   "url": "https://www.moneygeek.com/resources/home-burglary-statistics/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-19"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 6,
+ "search_terms": [
+  "burglar fell asleep",
+  "asleep burglar",
+  "dumbest getaway"
+ ],
+ "palette": {
+  "shadow": "#141a24",
+  "mid": "#c8bfae",
+  "accent": "#e6b04a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A BURGLAR FELL ASLEEP"
+   },
+   {
+    "text": "IN A STRANGER'S BED",
+    "colour": "#e6b04a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · OHIO"
+   },
+   {
+    "t": 10.13,
+    "v": "2 · MICHIGAN"
+   },
+   {
+    "t": 18.16,
+    "v": "3 · OKLAHOMA"
+   }
+  ],
+  "y": 330,
+  "until": 28.22
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DUMBEST GETAWAY?"
+   },
+   {
+    "text": "BED, STAIRS OR WINDOW? 👇",
+    "colour": "#e6b04a"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D NAP MID-BURGLARY",
+    "fs": 40
+   },
+   {
+    "text": "FOLLOW FOR DUMBEST GETAWAYS",
+    "fs": 44,
+    "colour": "#e6b04a"
+   },
+   {
+    "text": "DUMBEST GETAWAYS · 1",
+    "fs": 34
+   }
+  ],
+  "from": 2.66,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-19"
+}

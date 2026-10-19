@@ -40,41 +40,41 @@ def build(h):
         S("s01_hook", "ib84_hook", [N("He robbed his own Instagram friends.", tone="hook"),
                                     N("Police say their vacation posts flagged empty homes.", tone="tense")],
           "tension", ["K_hook", "K_posts"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "click", 0.26), fw(0, 1, "thump", 0.3, 0.0), fw(1, 4, "ping", 0.24, 0.0), fw(1, 5, "whoosh", 0.18, -0.05)],
-          emph=["robbed", "own", "instagram", "friends.", "vacation", "posts", "empty", "homes."], min_d=5.0, pad=0.12),
+          emph=["robbed", "own", "instagram", "friends.", "vacation", "posts", "empty", "homes."], min_d=4.6, pad=0.12),
         # B - THE GOTCHA (before 9 s): an office car park before dawn; the silhouette walks from his car toward the glass
         #     door; on "tracked" a patrol light bar glows from the right, two officers step in and their torch beams land on
         #     him (the single impact); on line 2 the 12+ HOMES counter
         S("s02_office", "ib84_office", [N("Then police tracked him. To his own office.", tone="reveal", pause_before=0.3),
                                         N("Suspected in at least a dozen homes.", tone="confident")],
-          "revelation", ["K_tracked", "K_dozen"], sfx=[fw(0, 0, "riser", 0.22, -0.6), fw(0, 2, "hit", 0.42, -0.03), fw(0, 4, "radio", 0.2, 0.0), fw(0, 7, "cuffs", 0.26, 0.1), fw(1, 4, "tick", 0.22, 0.05)],
-          emph=["tracked", "own", "office.", "dozen", "homes."], min_d=5.4, pad=0.15, tr="cut"),
+          "revelation", ["K_tracked", "K_dozen"], sfx=[fw(0, 0, "riser", 0.22, -0.6), fw(0, 2, "hit", 0.42, -0.03), fw(0, 4, "radio", 0.2, 0.0), fw(0, 7, "cuffs", 0.26, 0.1), fw(1, 5, "tick", 0.22, 0.05)],
+          emph=["tracked", "own", "office.", "dozen", "homes."], min_d=5.0, pad=0.15, tr="cut"),
         # B - REHOOK + CASE 2: a 2009 bedroom; a window ajar with the curtain blowing, a jewellery box open on the dresser; the
         #     Martinsburg silhouette sits at the bulky desktop and types; the monitor glows with a generic profile page
         S("s03_desk", "ib84_desk", [N("But that was not the dumbest.", tone="tense"),
                                     N("A 2009 burglar checked Facebook on the victim's computer.", tone="confident")],
           "tension-rise", ["K_parker"], sfx=[fw(0, 0, "whoosh", 0.2, -0.1), fw(1, 1, "wind", 0.18, 0.0), fw(1, 3, "typing", 0.3, 0.0), fw(1, 8, "click", 0.24, 0.05)],
-          emph=["not", "dumbest.", "2009", "facebook", "victim's", "computer."], min_d=5.0, pad=0.12, tr="dissolve"),
+          emph=["not", "dumbest.", "2009", "facebook", "victim's", "computer."], min_d=4.6, pad=0.12, tr="dissolve"),
         # C - CASE 2's GOTCHA + the FUN FACT: close on the desk; the homeowner (generic) looks at the glowing monitor; on
         #     "logged" the callout STILL LOGGED IN; the charged label; then the fun-fact card
         S("s04_logged", "ib84_logged", [N("He left it logged in.", tone="reveal", pause_before=0.3)],
           "tension", ["K_parker", "K_charged", "K_fact"], sfx=[fw(0, 0, "riser", 0.2, -0.5), fw(0, 3, "hit", 0.4, -0.03), fw(0, 4, "sparkle", 0.3, 0.9)],
-          emph=["left", "logged", "in."], min_d=4.3, pad=0.15, tr="cut"),
+          emph=["left", "logged", "in."], min_d=3.7, pad=0.15, tr="cut"),
         # C - REHOOK + CASE 3: a Washington rowhouse living room; the DC silhouette in a long coat holds a phone up for a
         #     selfie, a fan of cash in the other hand; the shutter flash on "selfie"
         S("s05_selfie", "ib84_selfie", [N("The strangest took a selfie with the cash.", tone="tense")],
           "tension-rise", ["K_knight"], sfx=[fw(0, 0, "whoosh", 0.2, -0.1), fw(0, 4, "shutter", 0.32, 0.0), fw(0, 7, "cash", 0.26, 0.0)],
-          emph=["strangest", "selfie", "cash."], min_d=3.4, pad=0.12, tr="push"),
+          emph=["strangest", "selfie", "cash."], min_d=2.8, pad=0.12, tr="push"),
         # D - THE BIGGEST GOTCHA (music drop): the family den; the son (generic) at a laptop; on "posted" the burglar's photo
         #     pops up on the screen in a generic post card; the guilty-plea label on line 2
         S("s06_posted", "ib84_posted", [N("And posted it on the victim's son's Facebook.", tone="reveal", pause_before=0.3),
                                         N("Guilty plea. Forty-four months.", tone="confident")],
           "revelation", ["K_knight", "K_plea"], sfx=[fw(0, 0, "riser", 0.22, -0.6), fw(0, 1, "hit", 0.42, -0.03), fw(0, 1, "ping", 0.24, 0.3), fw(1, 0, "gavel", 0.3, 0.0), fw(1, 2, "thump", 0.26, 0.0)],
-          emph=["posted", "victim's", "son's", "facebook.", "guilty", "forty-four", "months."], min_d=4.4, pad=0.15, tr="cut"),
+          emph=["posted", "victim's", "son's", "facebook.", "guilty", "forty-four", "months."], min_d=4.1, pad=0.15, tr="cut"),
         # E - THE CALLBACK (the loop): back on frame 1's lounge, the same silhouette and phone; on "power" the phone screen
         #     and the lamp blink out, then come back; the camera eases back to frame 1's start framing; the end card; no fade
         S("s07_end", "ib84_end", [N("Police say he cut their power first.", tone="reveal", pause_before=0.15)],
           "aftermath", ["K_power"], sfx=[fw(0, 5, "click", 0.3, -0.02), fw(0, 5, "sub", 0.32, 0.0), fw(0, 6, "thump", 0.24, 0.05)],
-          emph=["cut", "power", "first."], min_d=2.4, pad=0.6, tr="zoom"),
+          emph=["cut", "power", "first."], min_d=2.2, pad=0.5, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_office": "B", "s03_desk": "B", "s04_logged": "C", "s05_selfie": "C", "s06_posted": "D", "s07_end": "E"}
     cases = {"s01_hook": "scottsdale", "s02_office": "scottsdale", "s03_desk": "martinsburg", "s04_logged": "martinsburg",
@@ -168,7 +168,7 @@ def build(h):
         keys.append({"t": max(t, 3.2), "v": v})
     end_start = by["s07_end"]["start"] if "s07_end" in by else None
     total = tl[-1]["end"] if tl else None
-    ep["progress"] = {"label": "CASE", "keys": keys, "y": 330,
+    ep["progress"] = {"label": "CASE", "keys": keys, "y": 350,
                       "until": round(end_start - 0.35, 2) if end_start else 27.0}   # gone before the end scene
     # the end card from ~0.2 s into the end scene (`from` counts back from the end of the video)
     ep["end_title"] = {"lines": [{"text": "POST YOUR TRIP LIVE?"}, {"text": "YES OR WAIT TILL HOME? \U0001F447", "colour": "#e8b34a"},

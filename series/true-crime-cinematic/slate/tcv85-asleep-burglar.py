@@ -40,19 +40,19 @@ def build(h):
         #     frame with a silhouette fast asleep under the duvet; an officer's torch beam from the doorway already sweeping
         #     across him; the camera already pushing in. Line 2: the missing lock (the label)
         S("s01_hook", "ab85_hook", [N("Police say a burglar fell asleep in bed.", tone="hook"),
-                                    N("Upstairs, in a stranger's house. The lock? Missing.", tone="tense")],
-          "tension", ["K_hook", "K_lock"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "click", 0.3), fw(0, 4, "thump", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.1), fw(1, 7, "tick", 0.24, 0.0)],
-          emph=["burglar", "fell", "asleep", "bed.", "stranger's", "lock?", "missing."], min_d=5.2, pad=0.12),
+                                    N("The back-door lock? Missing. Upstairs: a stranger's house.", tone="tense")],
+          "tension", ["K_hook", "K_lock"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "click", 0.3), fw(0, 4, "thump", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.1), fw(1, 3, "tick", 0.24, 0.0), fw(1, 4, "whoosh", 0.16, -0.05)],
+          emph=["burglar", "fell", "asleep", "bed.", "lock?", "missing.", "stranger's"], min_d=5.2, pad=0.12),
         # A - THE HEADLINE GOTCHA (before 9 s): the back door of the house; the man who checks on it walks in, stops, phone to
         #     his ear, then points up the stairs as an officer arrives
         S("s02_door", "ab85_door", [N("Until the owner's relative walked in and called police.", tone="reveal", pause_before=0.3)],
           "tension-rise", ["K_found"], sfx=[fw(0, 0, "door", 0.3, -0.2), fw(0, 3, "hit", 0.4, -0.03), fw(0, 7, "radio", 0.22, 0.05)],
-          emph=["relative", "walked", "called", "police."], min_d=4.0, pad=0.3, tr="cut"),
+          emph=["relative", "walked", "called", "police."], min_d=3.6, pad=0.15, tr="cut"),
         # B - REHOOK + CASE 2 begins: a Michigan hallway at night; the basement door ajar; the intruder (silhouette) creeps
         #     right toward it; the 13 % counter
-        S("s03_hall", "ab85_hall", [N("And that was not the clumsiest.", tone="tense")],
+        S("s03_hall", "ab85_hall", [N("But that was not the clumsiest.", tone="tense")],
           "tension-rise", ["K_stat"], sfx=[fw(0, 0, "whoosh", 0.22, -0.1), fw(0, 1, "step", 0.22, 0.0), fw(0, 4, "step", 0.22, 0.0)],
-          emph=["not", "clumsiest."], min_d=3.4, pad=0.15, tr="dissolve"),
+          emph=["not", "clumsiest."], min_d=3.0, pad=0.15, tr="dissolve"),
         # B - CASE 2's GOTCHA: the top of the basement stairs; he steps through the door and tumbles down out of frame (thud,
         #     dust); the landing light snaps on and the homeowner appears in a dressing gown
         S("s04_stairs", "ab85_stairs", [N("Michigan: a burglar fell down the basement stairs.", tone="reveal", pause_before=0.3),
@@ -73,9 +73,9 @@ def build(h):
           emph=["dived", "head-first", "closed", "window.", "backpack.", "licence", "inside."], min_d=4.8, pad=0.12, tr="cut"),
         # E - THE CALLBACK (the loop): back on frame 1's bedroom, same figures and poses; the camera eases back to frame 1's
         #     start framing; the held-back detail (what he told police); the end card
-        S("s07_end", "ab85_end", [N("His story? Chad showed him the house.", tone="reveal", pause_before=0.15)],
+        S("s07_end", "ab85_end", [N("His story? Chad showed him the house.", tone="reveal", pause_before=0.05)],
           "aftermath", ["K_chad"], sfx=[fw(0, 1, "thump", 0.26, 0.0), fw(0, 2, "sub", 0.3, -0.05)],
-          emph=["story?", "chad", "showed", "house."], min_d=2.6, pad=0.45, tr="zoom"),
+          emph=["story?", "chad", "showed", "house."], min_d=2.4, pad=0.3, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_door": "A", "s03_hall": "B", "s04_stairs": "B", "s05_vacant": "C", "s06_window": "D", "s07_end": "E"}
     cases = {"s01_hook": "chillicothe", "s02_door": "chillicothe", "s03_hall": "monroe", "s04_stairs": "monroe",
@@ -109,7 +109,7 @@ def build(h):
     claims = [
         C("K_hook", "Monday 12 October 2026, Chillicothe, Ohio: officers answering a reported active burglary found a man asleep in a bed in an upstairs (second-floor) bedroom of a house he had no permission to be in; booked into the Ross County Jail on a burglary charge (ORC 2911.12). Accused only. Narration: 'Police say a burglar fell asleep in bed.' Headline 'A BURGLAR FELL ASLEEP / IN A STRANGER'S BED'.",
           ["sciotopost", "heritage"]),
-        C("K_lock", "The complainant found the lock mechanism of the inner back door missing; the man told officers the back door was unlocked. Narration: 'Upstairs, in a stranger's house. The lock? Missing.'",
+        C("K_lock", "The complainant found the lock mechanism of the inner back door missing; the man told officers the back door was unlocked. Narration: 'The back-door lock? Missing. Upstairs: a stranger's house.'",
           ["sciotopost", "heritage"]),
         C("K_found", "The complainant reported an active burglary, met officers at the back door and pointed them upstairs; officers found the man asleep and handcuffed him as he woke; the owner confirmed nobody had permission to be inside or stay and asked for charges. Narration: 'Until the owner's relative walked in and called police.' (the complainant shares the owner's surname; neither is named)",
           ["sciotopost", "heritage"]),
