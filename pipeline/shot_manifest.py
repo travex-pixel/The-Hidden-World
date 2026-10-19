@@ -23,6 +23,17 @@ def probe(ep_id: str) -> list:
     return json.loads((out / "shots_probe.json").read_text())
 
 
+def characters_act(sh: dict, loop_end: bool = False) -> bool:
+    """A shot with figures must show someone doing something (a pose or expression key, or a walk). The one exception is
+    the engine-v6 loop end scene: its camera is keyed back to frame 1 and its figures hold frame 1's pose on purpose, so a
+    keyed camera move counts as the action there (Case Files 84 and 85 failed the gate on this after a 40-minute render)."""
+    if not sh.get("figures"):
+        return True
+    if any(f.get("actions") or f.get("walk") for f in sh["figures"]):
+        return True
+    return bool(loop_end and "keys" in (sh.get("camera") or {}))
+
+
 def shot_size(sh: dict) -> str:
     figs = [f for f in sh.get("figures", []) if f.get("depth", 1) >= 1]
     if not figs:
@@ -53,8 +64,9 @@ def build(ep_id: str, series_status: dict | None = None) -> dict:
     shots = probe(ep_id)
     claims = {c["id"]: c for c in ep["claims"]}; srcs = {s["id"]: s for s in ep["sources"]}
     records = []
-    for sc, s, sh in zip(ep["scenes"], tl, shots):
-        acting = [f for f in sh.get("figures", []) if f["actions"] or f.get("walk")]
+    v6 = (ep.get("engagement_version") or 1) >= 6
+    for i, (sc, s, sh) in enumerate(zip(ep["scenes"], tl, shots)):
+        acting = characters_act(sh, loop_end=v6 and i == len(shots) - 1)
         rec = {
             "id": sc["id"], "scene_type": sc["scene"], "start": round(s["start"], 3), "duration": round(s["end"] - s["start"], 3),
             "narration": [l["text"] for l in s.get("lines", [])],
@@ -73,7 +85,7 @@ def build(ep_id: str, series_status: dict | None = None) -> dict:
                        "characters": [f"characters/figures/{c}.json" for c in sorted({f['id'] for f in sh.get('figures', [])})]},
             "validation": {"claims_sourced": all(len(claims[c]["sources"]) >= 2 and claims[c]["type"] == "established" for c in sc["claims"]),
                            "tagged_as_illustration": (sh.get("tag") or "ILLUSTRATION").startswith("ILLUSTRATION") or not sh.get("composed"),
-                           "characters_act": bool(acting) or not sh.get("figures")},
+                           "characters_act": acting},
         }
         records.append(rec)
     composed = [r for r in records if r["set"]]; with_chars = [r for r in composed if r["characters"]]
