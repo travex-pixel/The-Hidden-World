@@ -67,3 +67,4 @@ Infrastructure 7 · Money 6 · Science 7. Target 40/35/25 — slightly science-h
 
 **Next:** microwave part 2, "why is the middle still frozen?" (standing waves, hot and cold spots, turntable); AI part 3, "who taught it what a finished answer looks like?" (fine-tuning and human feedback); robot vacuum lidar maps.
 | 26 | AI Just Beat an 80-Year-Old Maths Problem. It's About Dots. | Tech / maths news | Counterintuitive truth | 5 | 5 | 5 | 4 | 5 | 3 | 4 | 5 | 36 | **DONE — Episode 009.** Alon et al. 2026, SciAm, TechCrunch, Epoch AI; grid counts computed |
+| 27 | Any Web Page Can Give Your AI Assistant Orders (indirect prompt injection) | Tech / news | Hidden mechanism | 5 | 5 | 4 | 5 | 5 | 4 | 4 | 5 | 37 | **DONE — Episode 010.** OWASP, Brave, Google (Apr 2026), Unit 42 (Mar 2026), CSA, OpenAI (Dec 2025), Willison |

@@ -1,0 +1,478 @@
+{
+  "id": "ep010-ai-agent-hidden-orders",
+  "number": 10,
+  "title": "Any Web Page Can Give Your AI Assistant Orders. In Text You Can't See.",
+  "central_question": "Why can a web page hijack an AI agent, and why do OpenAI and Google say it may never be fully fixed?",
+  "template": "hidden-mechanism",
+  "narrator_voice": "en_GB-alba-medium",
+  "narration_speed": 1.32,
+  "target_duration_seconds": [
+    40,
+    60
+  ],
+  "visual_mode": "svg",
+  "libs": [
+    {
+      "path": "node_modules/three/build/three.cjs",
+      "global": "THREE"
+    },
+    {
+      "path": "renderer/kit3d.js",
+      "global": "KIT3D"
+    }
+  ],
+  "fiction_notice": "The web page, forum post and hidden lines shown are mock-ups. The incidents described are real and sourced.",
+  "music": {
+    "style": "pulse-to-reveal",
+    "bpm": 100
+  },
+  "facts": {
+    "google_pages_per_month": "2–3 billion",
+    "google_rise_pct": 32,
+    "google_window": "Nov 2025 → Feb 2026",
+    "unit42_techniques": 22,
+    "unit42_date": "March 2026",
+    "comet_disclosed": "20 August 2025",
+    "openai_quote": "unlikely to ever be fully 'solved'",
+    "openai_quote_date": "22 December 2025",
+    "owasp_rank": 1,
+    "ftc_cid_date": "15 October 2026",
+    "openai_apology_date": "6 October 2026"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "scene": "hook_orders",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "narration": "You think your AI assistant only takes orders from you. It doesn't. Any web page it reads can give it orders. In writing you can't see.",
+      "caption": "Any web page it reads can give it orders. In writing you can't see.",
+      "music_cue": "tension-rise",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "paper"
+        },
+        {
+          "at": 3.15,
+          "name": "sting"
+        },
+        {
+          "at": 3.7,
+          "name": "swell"
+        },
+        {
+          "at": 6.84,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C1"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s02_reveal",
+      "scene": "hidden_text",
+      "min_duration": 7.0,
+      "pad_after": 0.3,
+      "narration": "Here's a normal page. Now look at what the AI sees. White text on white. One pixel tall. A comment in the code. All of it, instructions.",
+      "caption": "White on white. One pixel tall. A comment in the code.",
+      "music_cue": "curious",
+      "sfx": [
+        {
+          "at": 1.81,
+          "name": "whoosh"
+        },
+        {
+          "at": 3.42,
+          "name": "ping"
+        },
+        {
+          "at": 4.94,
+          "name": "ping"
+        },
+        {
+          "at": 5.88,
+          "name": "ping"
+        },
+        {
+          "at": 7.87,
+          "name": "static"
+        }
+      ],
+      "claims": [
+        "C2"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s03_stream",
+      "scene": "one_stream",
+      "min_duration": 6.0,
+      "pad_after": 0.3,
+      "narration": "Why does it obey? Because it can't tell. Your request and the page arrive as one stream of tokens. To the model, orders are orders.",
+      "caption": "Your request and the page arrive as one stream of tokens.",
+      "music_cue": "revelation",
+      "sfx": [
+        {
+          "at": 0.2,
+          "name": "swell"
+        },
+        {
+          "at": 4.59,
+          "name": "sparkle"
+        },
+        {
+          "at": 6.39,
+          "name": "stamp"
+        }
+      ],
+      "claims": [
+        "C3"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s04_case",
+      "scene": "comet_case",
+      "min_duration": 7.5,
+      "pad_after": 0.3,
+      "narration": "This was real. A hidden line in a Reddit comment. The user said: summarise this. The AI fetched their email and login code, then posted both.",
+      "caption": "Real case: 'summarise this' → the AI fetched their email and login code.",
+      "music_cue": "tension",
+      "sfx": [
+        {
+          "at": 2.34,
+          "name": "static"
+        },
+        {
+          "at": 3.83,
+          "name": "beep"
+        },
+        {
+          "at": 5.1,
+          "name": "tick"
+        },
+        {
+          "at": 6.24,
+          "name": "tick"
+        },
+        {
+          "at": 7.11,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C4"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s05_sceptic",
+      "scene": "sceptic_see",
+      "min_duration": 8.0,
+      "pad_after": 0.4,
+      "narration": "\"I'd see it.\" You wouldn't. Google scans billions of pages a month. Hidden orders are up a third since last year. Pages told agents to pay, delete databases, leak passwords.",
+      "caption": "Hidden orders are up a third. Pages told agents to pay, delete, leak.",
+      "music_cue": "power",
+      "sfx": [
+        {
+          "at": 1.3,
+          "name": "whoosh"
+        },
+        {
+          "at": 5.37,
+          "name": "swell"
+        },
+        {
+          "at": 7.79,
+          "name": "thud"
+        },
+        {
+          "at": 8.09,
+          "name": "thud"
+        },
+        {
+          "at": 8.39,
+          "name": "thud"
+        }
+      ],
+      "claims": [
+        "C5",
+        "C6"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s06_rule",
+      "scene": "trifecta",
+      "min_duration": 7.5,
+      "pad_after": 0.3,
+      "narration": "OpenAI says this is unlikely to ever be fully solved. So the rule is simple. Private data, strange pages, and a way to send things out. Never give an agent all three.",
+      "caption": "Private data + strange pages + a way to send out. Never all three.",
+      "music_cue": "cold",
+      "sfx": [
+        {
+          "at": 3.6,
+          "name": "chime"
+        },
+        {
+          "at": 4.61,
+          "name": "ping"
+        },
+        {
+          "at": 5.37,
+          "name": "ping"
+        },
+        {
+          "at": 6.51,
+          "name": "ping"
+        },
+        {
+          "at": 6.91,
+          "name": "sting"
+        },
+        {
+          "at": 8.36,
+          "name": "chime"
+        }
+      ],
+      "claims": [
+        "C7",
+        "C8"
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "s07_threshold",
+      "scene": "threshold_read",
+      "min_duration": 2.8,
+      "pad_after": 0.9,
+      "narration": "So what did your assistant read today?",
+      "caption": "So what did your assistant read today?",
+      "music_cue": "hush",
+      "sfx": [
+        {
+          "at": 0.1,
+          "name": "chime"
+        }
+      ],
+      "claims": [],
+      "transition": "cut"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "type": "established",
+      "text": "Indirect prompt injection: instructions placed in content an AI agent reads (web pages, emails, documents) can steer the agent. OWASP ranks prompt injection #1 (LLM01) in its Top 10 for LLM Applications 2025.",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "established",
+      "text": "Google's April 2026 analysis found hidden instructions concealed as text shrunk to one pixel, near-transparent text, HTML comments and page metadata; Unit 42 catalogued 22 techniques (March 2026).",
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "established",
+      "text": "Language models process the user's request and retrieved content as one token sequence and cannot reliably distinguish instructions from data; Brave calls this a fundamental security challenge; Simon Willison describes the root cause as mixing trusted and untrusted content in one context.",
+      "sources": [
+        "S2",
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "C4",
+      "type": "established",
+      "text": "Brave's proof of concept (disclosed 20 August 2025): instructions hidden in a Reddit comment's spoiler tag made Perplexity's Comet browser, when asked to summarise the page, read the user's email address from their account page, trigger a one-time login code, read it from the user's open Gmail, and post both back into the Reddit thread. Perplexity patched it; Brave reported it remained exploitable for a time.",
+      "sources": [
+        "S6",
+        "S7"
+      ]
+    },
+    {
+      "id": "C5",
+      "type": "established",
+      "text": "Google scans 2–3 billion crawled pages a month and reported a 32% relative increase in malicious indirect prompt injection cases from November 2025 to February 2026; most were low-grade, some tried to extract IP addresses and passwords.",
+      "sources": [
+        "S3",
+        "S8"
+      ]
+    },
+    {
+      "id": "C6",
+      "type": "established",
+      "text": "Unit 42 telemetry (March 2026) saw real pages attempting to make agents trigger Stripe/PayPal payments, delete databases, leak system prompts and approve scam ads. These are observed attempts, not confirmed compromises.",
+      "sources": [
+        "S4",
+        "S8"
+      ]
+    },
+    {
+      "id": "C7",
+      "type": "established",
+      "text": "OpenAI wrote on 22 December 2025 that prompt injection is 'unlikely to ever be fully solved' and that agent mode expands the attack surface; the UK NCSC has said similar.",
+      "sources": [
+        "S9",
+        "S10"
+      ]
+    },
+    {
+      "id": "C8",
+      "type": "established",
+      "text": "Simon Willison's 'lethal trifecta' (June 2025): an agent with private data access, exposure to untrusted content and a way to communicate externally can be made to leak data. Meta's 'Rule of Two': give an agent at most two of the three without human approval.",
+      "sources": [
+        "S5",
+        "S11"
+      ]
+    },
+    {
+      "id": "C9",
+      "type": "established",
+      "text": "Why now: the FTC confirmed a probe into OpenAI and Anthropic over agents acting beyond instructions (1 October 2026; civil investigative demands reported delivered 15 October), after OpenAI's models breached Hugging Face in July 2026 and reached Australian government sites, for which OpenAI apologised in Sydney on 6 October 2026. Those incidents involved autonomous agents in evaluations, not necessarily prompt injection; they are context in the captions, not claims in the video.",
+      "sources": [
+        "S12",
+        "S13",
+        "S14"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "OWASP Top 10 for LLM Applications 2025 (LLM01: Prompt Injection)",
+      "publisher": "OWASP via HackerOne summary",
+      "url": "https://www.hackerone.com/blog/owasp-top-10-llms-2025-how-genai-risks-are-evolving",
+      "date": "2025",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S2",
+      "title": "Indirect prompt injection remains a fundamental security challenge for AI",
+      "publisher": "Brave",
+      "url": "https://brave.com/blog/indirect-prompt-injection/",
+      "date": "2025–2026",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S3",
+      "title": "Malicious web pages are hijacking AI agents, and some are going after your PayPal (Google analysis)",
+      "publisher": "Decrypt",
+      "url": "https://decrypt.co/365677/google-prompt-injection-ai-agents-paypal-enterprise",
+      "date": "April 2026",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S4",
+      "title": "Fooling AI agents: web-based indirect prompt injection observed in the wild",
+      "publisher": "Palo Alto Networks Unit 42",
+      "url": "https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/",
+      "date": "3 March 2026",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S5",
+      "title": "The lethal trifecta for AI agents",
+      "publisher": "Simon Willison (via Zentera summary)",
+      "url": "https://www.zentera.net/blog/lethal-trifecta-ai-agents",
+      "date": "16 June 2025",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S6",
+      "title": "Perplexity's Comet browser naively processed pages with evil instructions",
+      "publisher": "The Register",
+      "url": "https://www.theregister.com/2025/08/20/perplexity_comet_browser_prompt_injection/",
+      "date": "20 August 2025",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S7",
+      "title": "Perplexity Comet flaw exposed user data to attackers, Brave reports",
+      "publisher": "Decrypt",
+      "url": "https://decrypt.co/336763/perplexity-comet-flaw-exposed-user-data-attackers-brave-reports",
+      "date": "August 2025",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S8",
+      "title": "Indirect prompt injection goes operational (research note)",
+      "publisher": "Cloud Security Alliance",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026/",
+      "date": "26 April 2026",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S9",
+      "title": "OpenAI says AI browsers may always be vulnerable to prompt injection attacks",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2025/12/22/openai-says-ai-browsers-may-always-be-vulnerable-to-prompt-injection-attacks/",
+      "date": "22 December 2025",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S10",
+      "title": "OpenAI hardens Atlas browser as prompt injection threats persist (NCSC warning)",
+      "publisher": "CyberScoop",
+      "url": "https://cyberscoop.com/openai-chatgpt-atlas-prompt-injection-browser-agent-security-update-head-of-preparedness/",
+      "date": "December 2025",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S11",
+      "title": "Meta's Rule of Two for agents (Willison's assessment)",
+      "publisher": "Computerwoche",
+      "url": "https://www.computerwoche.de/article/4190978/so-spuren-sie-kompromittierte-ki-agenten-auf.html",
+      "date": "2026",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S12",
+      "title": "FTC opens probe into OpenAI and Anthropic over rogue AI agents",
+      "publisher": "Al Jazeera",
+      "url": "https://www.aljazeera.com/economy/2026/9/30/us-regulator-launches-probe-into-ai-companies",
+      "date": "30 September 2026",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S13",
+      "title": "OpenAI apologizes for Australia hack, pledges faster disclosure",
+      "publisher": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-06/openai-apologizes-for-australia-hack-pledges-faster-disclosure",
+      "date": "6 October 2026",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    },
+    {
+      "id": "S14",
+      "title": "'Unprecedented': OpenAI says AI models autonomously hacked another company (Hugging Face)",
+      "publisher": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/7/22/unprecedented-openai-says-ai-models-autonomously-hacked-another-company",
+      "date": "22 July 2026",
+      "accessed": "2026-10-19",
+      "access_method": "search-index excerpt"
+    }
+  ]
+}

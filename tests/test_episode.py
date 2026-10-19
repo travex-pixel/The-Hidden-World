@@ -529,3 +529,32 @@ class Episode009(unittest.TestCase):
     def test_no_application_is_claimed(self):
         text = " ".join(sc["narration"] for sc in self.ep["scenes"]).lower()
         self.assertIn("nobody is building anything with this", text)
+
+
+class Episode010(unittest.TestCase):
+    """Indirect prompt injection: figures and wording match the research record."""
+    def setUp(self):
+        self.ep = load_episode("ep010-ai-agent-hidden-orders"); self.f = self.ep["facts"]
+
+    def test_figures_on_screen_match_facts(self):
+        js = (ROOT / "renderer" / "scenes" / "ep010-ai-agent-hidden-orders.js").read_text()
+        self.assertEqual(self.f["google_rise_pct"], 32)
+        self.assertIn("google_rise_pct", js)                       # the +32% counter reads the fact, not a literal
+        self.assertIn("2–3 BILLION PAGES A MONTH", js)
+        self.assertIn("attempts seen in the wild", js)             # Unit 42 / Google observed attempts, not confirmed compromises
+        self.assertEqual(self.f["owasp_rank"], 1)
+
+    def test_narration_rules(self):
+        import re
+        text = " ".join(sc["narration"] for sc in self.ep["scenes"])
+        for sc in self.ep["scenes"]:
+            for sentence in re.split(r'(?<=[.?!])["”]?\s+', sc["narration"]):
+                self.assertLess(len(sentence.split()), 12, f"{sc['id']}: {sentence!r}")
+        self.assertIn("unlikely to ever be fully solved", text.lower())   # OpenAI's wording, not "may never be"
+        self.assertIn("up a third", text.lower())                          # 32% relative increase
+
+    def test_news_context_is_not_a_video_claim(self):
+        claims = {c["id"]: c for c in self.ep["claims"]}
+        used = {cid for sc in self.ep["scenes"] for cid in sc["claims"]}
+        self.assertNotIn("C9", used)                                       # FTC / Australia / Hugging Face stay in the captions
+        self.assertIn("not necessarily prompt injection", claims["C9"]["text"])
