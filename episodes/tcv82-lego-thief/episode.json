@@ -1,0 +1,977 @@
+{
+ "id": "tcv82-lego-thief",
+ "number": 82,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The $18,000 LEGO Theft",
+ "central_question": "LEGO Heists, Part 1: plate cameras catch an alleged $18,000 LEGO thief, buyers turn up mid-raid, and LEGO boxes come back full of pasta. Which was dumbest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "$18,000": "eighteen-thousand-dollar",
+   "2,800": "twenty-eight hundred",
+   "70": "seventy",
+   "dente": "den-tay"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "82",
+  "label": "LEGO HEISTS · PART 1"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s07_pasta",
+   "word": [
+    0,
+    5
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "lg82_accused",
+  "lg82_officer",
+  "lg82_officer_b",
+  "lg82_buyer",
+  "lg82_returner",
+  "lg82_clerk"
+ ],
+ "content_notes": "Tone: absurd and ironic; nobody is mocked. No weapon and no force are shown. The three accused or arrested men (Sun Prairie 2026, Long Beach 2024, Irvine 2026) are never named and are drawn ONLY as dark rim-lit silhouettes tagged NOT A LIKENESS; allegations are attributed ('police say', ACCUSED labels, AS OF OCT 2026). Officers, the buyer and the clerk are generic figures. LEGO, Walmart and Target are named only as plain text: every box is a plain bright 'BRICKS' box with simple drawn bricks, every store generic; no logo, trade dress, minifigure, packaging artwork or real building is imitated. The plate camera is a generic pole camera and all plates are blank. Frame 1's packed boot is an illustration, not a reported scene. Every card is our own typed graphic. No dialogue or quotation card; the police joke is paraphrased and attributed. Facts verified 2026-10-19.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "lg82_hook",
+   "min_duration": 4.2,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "shutter",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "shutter",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "beep",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_plate"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "An $18,000 LEGO theft.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "But plate cameras had already flagged his car.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$18,000",
+    "lego",
+    "theft.",
+    "plate",
+    "cameras",
+    "flagged",
+    "car."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_aisle",
+   "scene": "lg82_aisle",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "cash",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_states"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police say he hit Walmarts in two states.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "walmarts",
+    "two",
+    "states."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_yard",
+   "scene": "lg82_yard",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "radio",
+     "gain": 0.2
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "cuffs",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_ran",
+    "K_charges"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He ran. Police caught him in a backyard.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ran.",
+    "caught",
+    "backyard."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_house",
+   "scene": "lg82_house",
+   "min_duration": 3.8,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_lb"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the biggest LEGO stash.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Near Los Angeles: 2,800 boxes. One house.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "biggest",
+    "stash.",
+    "los",
+    "angeles:",
+    "2,800",
+    "boxes.",
+    "one",
+    "house."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_door",
+   "scene": "lg82_porch",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "knock",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "coins",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_buyers",
+    "K_gold"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then buyers showed up. Mid-search.",
+     "tone": "playful"
+    },
+    {
+     "who": "narrator",
+     "text": "Why LEGO? Retired sets can beat gold.",
+     "tone": "curious"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "buyers",
+    "showed",
+    "mid-search.",
+    "why",
+    "lego?",
+    "retired",
+    "beat",
+    "gold."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_return",
+   "scene": "lg82_return",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "cash",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_pasta"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The strangest one bought sets and returned the boxes.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "strangest",
+    "bought",
+    "returned",
+    "boxes."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_pasta",
+   "scene": "lg82_pasta",
+   "min_duration": 4.0,
+   "pad_after": 0.12,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "cuffs",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_pasta",
+    "K_70"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The bricks? Replaced with dried pasta.",
+     "tone": "reveal"
+    },
+    {
+     "who": "narrator",
+     "text": "About 70 times, police say. Then: arrested.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bricks?",
+    "replaced",
+    "dried",
+    "pasta.",
+    "70",
+    "times,",
+    "arrested."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s08_end",
+   "scene": "lg82_end",
+   "min_duration": 3.0,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "K_dente",
+    "K_part2"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police joked his plan got cooked. Al dente.",
+     "tone": "reveal",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "joked",
+    "cooked.",
+    "al",
+    "dente."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police allege a 28-year-old Iowa City man is linked to thefts of more than $18,000 of LEGO products from Walmart stores. Narration: 'An $18,000 LEGO theft.' Headline 'THE $18,000 / LEGO THEFT'.",
+   "sources": [
+    "wfrv",
+    "wmtv",
+    "wkow",
+    "cbs58",
+    "c3k"
+   ]
+  },
+  {
+   "id": "K_plate",
+   "type": "established",
+   "nature": "fact",
+   "text": "Before the 14 October 2026 arrest, an automated licence-plate-reader alert had flagged his vehicle, linked to earlier retail-theft investigations (WFRV: 'Flock cameras'). Narration: 'But plate cameras had already flagged his car.'",
+   "sources": [
+    "wfrv",
+    "wmtv",
+    "wkow",
+    "cbs58"
+   ]
+  },
+  {
+   "id": "K_states",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police say he is connected to thefts at multiple Walmart locations in Wisconsin and Illinois. Narration: 'Police say he hit Walmarts in two states.'",
+   "sources": [
+    "wmtv",
+    "wkow",
+    "wxow",
+    "cbs58"
+   ]
+  },
+  {
+   "id": "K_ran",
+   "type": "established",
+   "nature": "fact",
+   "text": "14 October 2026, Sun Prairie, Wisconsin: Walmart staff on McCoy Road reported an active theft; the suspect fled on foot and officers caught him in a backyard after a chase. Narration: 'He ran. Police caught him in a backyard.'",
+   "sources": [
+    "wfrv",
+    "wmtv",
+    "cbs58",
+    "gazette"
+   ]
+  },
+  {
+   "id": "K_charges",
+   "type": "established",
+   "nature": "fact",
+   "text": "Reported charges: retail theft, resisting/obstructing an officer, bail jumping; also a nationwide extraditable warrant (two burglary, two theft counts); about $1,500 of LEGO recovered. Accused only. Label 'ACCUSED · RETAIL THEFT, RESISTING, BAIL JUMPING'.",
+   "sources": [
+    "wfrv",
+    "wmtv",
+    "wkow"
+   ]
+  },
+  {
+   "id": "K_lb",
+   "type": "established",
+   "nature": "fact",
+   "text": "June 2024: LAPD Harbor Area detectives recovered more than 2,800 boxes of LEGO at a Long Beach home; a man was arrested on suspicion of organized retail theft and a woman on suspicion of grand theft. Narration: 'Near Los Angeles: 2,800 boxes. One house.' Counter 2,800.",
+   "sources": [
+    "lapd",
+    "abc7",
+    "lbpost",
+    "nbcla"
+   ]
+  },
+  {
+   "id": "K_buyers",
+   "type": "established",
+   "nature": "fact",
+   "text": "While officers were still at the home, potential buyers arrived, drawn by online ads. Narration: 'Then buyers showed up. Mid-search.'",
+   "sources": [
+    "lapd",
+    "abc7",
+    "lbpost"
+   ]
+  },
+  {
+   "id": "K_gold",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: a Higher School of Economics study found retired, unopened LEGO sets rose about 10-11 % a year on the resale market, more than gold, large stocks and bonds (2,322 sets, 1987-2015). Narration: 'Why LEGO? Retired sets can beat gold.'",
+   "sources": [
+    "gizmodo",
+    "designboom",
+    "cheddar"
+   ]
+  },
+  {
+   "id": "K_pasta",
+   "type": "established",
+   "nature": "fact",
+   "text": "April 2026, Irvine, California: police say a 28-year-old man bought LEGO sets at Target stores, removed the pieces, filled the boxes with dried pasta and returned them for refunds. Narration: 'The strangest one bought sets and returned the boxes.' / 'The bricks? Replaced with dried pasta.'",
+   "sources": [
+    "gray_wbay",
+    "cp24",
+    "gdn",
+    "blackent"
+   ]
+  },
+  {
+   "id": "K_70",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police say he did this on at least 70 occasions, nearly $34,000 in total; he was arrested on suspicion of grand theft. Narration: 'About 70 times, police say. Then: arrested.'",
+   "sources": [
+    "gray_wbay",
+    "cp24",
+    "gdn"
+   ]
+  },
+  {
+   "id": "K_dente",
+   "type": "established",
+   "nature": "fact",
+   "text": "Irvine police joked on Facebook that a plan swapping LEGOs for linguine 'will be cooked al dente'. Narration (paraphrase, attributed): 'Police joked his plan got cooked. Al dente.'",
+   "sources": [
+    "gray_wbay",
+    "gdn",
+    "blackent"
+   ]
+  },
+  {
+   "id": "K_part2",
+   "type": "established",
+   "nature": "fact",
+   "text": "PART 2 TEASE (end card): 2012, an SAP Labs vice-president put his own barcode stickers on LEGO sets at Target to pay less and resold them online; he pleaded no contest to one felony count. End card 'PART 2: A TECH EXEC'S FAKE BARCODES'.",
+   "sources": [
+    "nbcbay",
+    "foxap",
+    "venturebeat",
+    "freebeacon"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "wfrv",
+   "publisher": "WFRV / WeAreGreenBay",
+   "title": "Flock cameras build case against multi-state LEGO thief that led to Wisconsin arrest",
+   "url": "https://www.wearegreenbay.com/news/local-news/man-arrested-lego-theft/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wmtv",
+   "publisher": "WMTV NBC15",
+   "title": "Sun Prairie Police Department arrest Iowa man accused of stealing $18,000 worth of LEGO products",
+   "url": "https://www.wmtv15news.com/2026/10/15/sun-prairie-police-department-arrest-iowa-man-accused-stealing-18000-worth-lego-products/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wkow",
+   "publisher": "WKOW",
+   "title": "Sun Prairie police arrest Iowa man suspected of stealing $18K in Lego sets across Wisconsin and Illinois",
+   "url": "https://www.wkow.com/news/crime/sun-prairie-police-arrest-iowa-man-suspected-of-stealing-18k-in-lego-sets-across-wisconsin/article_ed364af4-30b9-4ec5-862c-43022cac55f2.html",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wxow",
+   "publisher": "WXOW",
+   "title": "Police arrest Iowa man suspected of stealing $18K in Lego sets across Wisconsin and Illinois",
+   "url": "https://www.wxow.com/news/wisconsin-news/police-arrest-iowa-man-suspected-of-stealing-18k-in-lego-sets-across-wisconsin-and-illinois/article_040f7d6b-e68d-5f76-aeaf-c6fcb2e12ee4.html",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cbs58",
+   "publisher": "CBS 58",
+   "title": "Iowa man arrested in Sun Prairie, suspected in $18K LEGO theft spree across Wisconsin, Illinois",
+   "url": "https://www.cbs58.com/news/iowa-man-arrested-in-sun-prairie-suspected-in-18k-lego-theft-spree-across-wisconsin-illinois",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "c3k",
+   "publisher": "Channel3000",
+   "title": "Iowa man suspected of stealing $18K worth of Lego from Midwest Walmarts arrested in Sun Prairie",
+   "url": "https://www.channel3000.com/news/iowa-man-suspected-of-stealing-18k-worth-of-lego-from-midwest-walmarts-arrested-in-sun/article_93f54ec1-e568-4f0d-b52a-ae626c3e636a.html",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "gazette",
+   "publisher": "GazetteXtra (AP state wire)",
+   "title": "Sun Prairie Police arrests suspect for LEGO theft",
+   "url": "https://www.gazettextra.com/apgstate/sun-prairie-police-arrests-suspect-for-lego-theft/article_b042198b-a2c0-5fdd-8a53-3fa96ca6cfd1.html",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "lapd",
+   "publisher": "LAPD Newsroom",
+   "title": "LAPD Harbor Division Busts LEGO Theft Ring NR24167dc",
+   "url": "https://www.lapdonline.org/newsroom/lapd-harbor-division-busts-lego-theft-ring-nr24167dc/",
+   "date": "2024-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "abc7",
+   "publisher": "ABC7 Los Angeles",
+   "title": "LAPD seizes more than 2,800 boxes of LEGOs in massive retail theft bust",
+   "url": "https://abc7.com/post/police-seize-more-2800-boxes-lego-toys-massive/14919871/",
+   "date": "2024-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "lbpost",
+   "publisher": "Long Beach Post",
+   "title": "Police seize 2,800 boxes of stolen Legos from Long Beach home, LAPD says",
+   "url": "https://lbpost.com/news/crime/police-seize-2800-boxes-of-stolen-legos-from-long-beach-home-lapd-says",
+   "date": "2024-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "nbcla",
+   "publisher": "NBC Los Angeles",
+   "title": "LEGO retail theft ring (LAPD, Long Beach, San Pedro)",
+   "url": "https://nbclosangeles.com/news/business/lego-retail-theft-ring-lapd-long-beach-san-pedro/3431387",
+   "date": "2024-06",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "gizmodo",
+   "publisher": "Gizmodo",
+   "title": "Forget about gold: study says investing in LEGO sets ...",
+   "url": "https://gizmodo.com/forget-about-gold-study-says-investing-in-lego-sets-wi-1848198385",
+   "date": "2021-12",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "designboom",
+   "publisher": "designboom",
+   "title": "New study suggests that investing in LEGOs is more profitable than gold",
+   "url": "https://www.designboom.com/design/new-study-investing-legos-more-profitable-than-gold-12-15-2021/",
+   "date": "2021-12-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cheddar",
+   "publisher": "Cheddar",
+   "title": "Why LEGO could be a better investment than gold",
+   "url": "https://cheddar.com/media/why-lego-could-be-a-better-investment-than-gold",
+   "date": "2021-12",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "gray_wbay",
+   "publisher": "WBAY (Gray Television)",
+   "title": "Man bought $34K worth of Lego sets, took out the pieces and returned the boxes filled with pasta, police say",
+   "url": "https://www.wbay.com/2026/04/22/man-bought-34k-worth-lego-sets-took-out-pieces-returned-boxes-filled-with-pasta-police-say/",
+   "date": "2026-04-22",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cp24",
+   "publisher": "CP24",
+   "title": "Police arrest man who replaced US$34,000 worth of Lego pieces with pasta",
+   "url": "https://www.cp24.com/news/world/2026/04/19/police-arrest-man-who-replaced-us34000-worth-of-lego-pieces-with-pasta/",
+   "date": "2026-04-19",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "gdn",
+   "publisher": "Gulf Daily News",
+   "title": "Man arrested after replacing Lego worth $34,000 with pasta",
+   "url": "https://www.gdnonline.com/Details/1392140",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "blackent",
+   "publisher": "Black Enterprise",
+   "title": "Lego bandit allegedly filled boxes with pasta before returning",
+   "url": "https://www.blackenterprise.com/lego-bandit-allegedly-filled-boxes-with-pasta-before-returning/",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "nbcbay",
+   "publisher": "NBC Bay Area",
+   "title": "VP of Palo Alto's SAP Arrested in LEGO Bar Code Scam",
+   "url": "https://www.nbcbayarea.com/news/local/vp-of-palo-altos-sap-arrested-in-lego-scam/1916023/",
+   "date": "2012-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "foxap",
+   "publisher": "Fox News (Associated Press)",
+   "title": "Silicon Valley tech exec accused of Lego thefts",
+   "url": "https://www.foxnews.com/us/silicon-valley-tech-exec-accused-of-lego-thefts",
+   "date": "2012-05",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "venturebeat",
+   "publisher": "VentureBeat",
+   "title": "Former SAP exec faces 30 days in jail for stealing Legos",
+   "url": "https://venturebeat.com/technology/former-sap-exec-faces-30-days-in-jail-for-stealing-legos",
+   "date": "2012",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "freebeacon",
+   "publisher": "Washington Free Beacon",
+   "title": "Silicon Valley Executive Guilty Of Stealing Legos From Target",
+   "url": "https://freebeacon.com/?p=151114",
+   "date": "2012",
+   "accessed": "search-result extract only, 2026-10-19"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 5,
+ "search_terms": [
+  "lego theft",
+  "lego thief",
+  "flock camera"
+ ],
+ "palette": {
+  "shadow": "#121820",
+  "mid": "#c4bcae",
+  "accent": "#e8b830"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "THE $18,000"
+   },
+   {
+    "text": "LEGO THEFT",
+    "colour": "#e8b830"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DUMBEST LEGO HEIST?"
+   },
+   {
+    "text": "CAMERAS, BUYERS OR PASTA? 👇",
+    "colour": "#e8b830"
+   },
+   {
+    "text": "LEGO HEISTS · PART 1",
+    "fs": 38
+   },
+   {
+    "text": "PART 2: A TECH EXEC'S FAKE BARCODES",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR PART 2",
+    "fs": 46,
+    "colour": "#e8b830"
+   },
+   {
+    "text": "TAG THE MATE WITH A LEGO SHELF",
+    "fs": 34
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · WISCONSIN"
+   },
+   {
+    "t": 15.08,
+    "v": "2 · LONG BEACH"
+   },
+   {
+    "t": 24.43,
+    "v": "3 · IRVINE"
+   }
+  ],
+  "y": 330,
+  "until": 33.58
+ },
+ "legal_status_verified": "2026-10-19"
+}
