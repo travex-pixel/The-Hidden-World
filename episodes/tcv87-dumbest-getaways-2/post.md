@@ -1,6 +1,6 @@
 CAPTION: Police say a man took an Uber to rob a bank and told the driver to wait (Southfield, Michigan, 2022, accused, not tried). Then a shoplifting crew's getaway car ran out of gas in the middle of the road in Colma, California, and a Pennsylvania bank robber wrote his demand note on a deposit slip and signed his own name, prosecutors say. Dumbest getaway: Uber, gas or signature?
 HASHTAGS: #uberbankrobbery #dumbestgetaway #truecrime #bankrobbery #dumbcriminals
 ALT TEXT: Illustrated reel of a gold ride-share car waiting outside a bank with its hazard lights on, a getaway car stopped in the middle of a road with its boot open on clothes still carrying security tags, and a bank deposit slip with a scribbled demand note and a signature.
-SEED COMMENT: Signing the demand note has to win. The Uber guy at least had a plan, it was just a terrible one.
+SEED COMMENT: If the deposit-slip story holds up in court, that one wins by a mile. The Uber plan was at least a plan. Just a terrible one.
 PINNED: Send this to the mate who'd book the getaway Uber 🚗 Vote: 1 = Uber, 2 = gas, 3 = signature 👇
 POST WHEN: Wednesday 21 Oct 2026, 7-9 pm US Eastern (evening scroll), the day after Case File 86 in the same slot (the 86/87 frame-0 pair must post on consecutive days, same slot); keep it several hours apart from any other Case File that day.
