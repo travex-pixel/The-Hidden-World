@@ -502,3 +502,7 @@
 - 2026-10-19 22:23:30 tcv88-butt-dial-burglar: rendering (final60, seed 1)
 - 2026-10-19 22:41:50 tcv88-butt-dial-burglar: rendered in 1100s
 - 2026-10-19 22:42:25 tcv88-butt-dial-burglar: VERIFIED -> series/true-crime-cinematic/output/true_crime_88_butt_dial_burglar.mp4 (28.2s, 14.0 MB, sha256 48626be25599)
+- 2026-10-19 22:44:09 produce 86 --force: regenerating episode data
+- 2026-10-19 22:44:09 tcv86-watermelon-robbers: rendering (final60, seed 1)
+- 2026-10-19 22:59:15 tcv86-watermelon-robbers: rendered in 906s
+- 2026-10-19 22:59:51 tcv86-watermelon-robbers: QA FAILED ['audio_sfx_heard_on_phone']; frames and details in series/true-crime-cinematic/qa/true_crime_86

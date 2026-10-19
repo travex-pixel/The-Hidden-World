@@ -43,36 +43,36 @@ def build(h):
         #     melon-head at the door with bottles; the camera already pushing in. Line 2: the eye holes, the alcohol
         S("s01_hook", "wm86_hook", [N("Police say two men wore watermelon heads.", tone="hook"),
                                     N("Then they stole alcohol.", tone="tense")],
-          "tension", ["K_hook", "K_took"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.3), fw(0, 4, "thump", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.1), fw(1, 2, "tick", 0.24, 0.0), fw(1, 3, "cash", 0.22, 0.05)],
+          "tension", ["K_hook", "K_took"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.3), fw(0, 4, "thump", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.1), fw(1, 3, "cash", 0.22, 0.05)],
           emph=["men", "watermelon", "heads.", "stole", "alcohol."], min_d=5.0, pad=0.08),
         # A - THE HEADLINE GOTCHA (before 9 s): close on a police desk; the officer posts the security image (our own typed
         #     graphic) and comments pop up; on 'arrest' the ARRESTED stamp; the charges label; the FUN FACT (the mask felony)
         S("s02_post", "wm86_post", [N("Police posted the pictures, then made an arrest.", tone="reveal", pause_before=0.3)],
-          "tension-rise", ["K_posted", "K_charged", "K_felony"], sfx=[fw(0, 0, "click", 0.3, -0.1), fw(0, 1, "typing", 0.22, 0.0), fw(0, 4, "ping", 0.24, 0.05), fw(0, 7, "hit", 0.4, -0.03), fw(0, 7, "cuffs", 0.26, 0.12)],
+          "tension-rise", ["K_posted", "K_charged", "K_felony"], sfx=[fw(0, 0, "click", 0.3, -0.1), fw(0, 4, "ping", 0.24, 0.05), fw(0, 7, "hit", 0.4, -0.03), fw(0, 7, "cuffs", 0.26, 0.12)],
           emph=["posted", "pictures,", "arrest."], min_d=4.15, pad=0.1, tr="cut"),
         # B - REHOOK + CASE 2 begins: an airport coach bay; the hold open; the accomplice (silhouette) drags a huge suitcase
         #     toward it, struggling; the driver watches; the 90-minute counter
         S("s03_coach", "wm86_coach", [N("That was not the strangest.", tone="tense"),
                                       N("In Spain, a thief hid inside a suitcase.", tone="confident")],
-          "tension-rise", ["K_suitcase", "K_minutes"], sfx=[fw(0, 0, "whoosh", 0.22, -0.1), fw(0, 4, "brake", 0.18, 0.0), fw(1, 1, "thud", 0.26, 0.0), fw(1, 7, "tick", 0.22, 0.1)],
+          "tension-rise", ["K_suitcase", "K_minutes"], sfx=[fw(0, 0, "whoosh", 0.22, -0.1), fw(1, 1, "thud", 0.26, 0.0)],
           emph=["not", "strangest.", "spain,", "inside", "suitcase."], min_d=4.4, pad=0.1, tr="dissolve"),
         # B - CASE 2's GOTCHA: the open hold; the officer kneels and knocks on the suitcase (the knock), the lid lifts and a
         #     sweating silhouette is curled inside; the accomplice puts his hands behind his back
         S("s04_hold", "wm86_hold", [N("Police knocked: the case was warm.", tone="reveal", pause_before=0.3),
                                     N("A sweating man. Both arrested.", tone="playful")],
-          "tension", ["K_warm", "K_arrested"], sfx=[fw(0, 1, "knock", 0.4, 0.0), fw(0, 2, "knock", 0.3, 0.12), fw(0, 5, "thump", 0.28, 0.0), fw(1, 0, "whoosh", 0.18, -0.05), fw(1, 1, "rasp", 0.22, 0.0), fw(1, 4, "cuffs", 0.26, 0.05)],
+          "tension", ["K_warm", "K_arrested"], sfx=[fw(0, 1, "knock", 0.4, 0.0), fw(0, 2, "knock", 0.3, 0.12), fw(0, 5, "thump", 0.28, 0.0), fw(1, 0, "whoosh", 0.18, -0.05), fw(1, 4, "cuffs", 0.26, 0.05)],
           emph=["knocked:", "warm.", "sweating", "both", "arrested."], min_d=4.6, pad=0.1, tr="cut"),
         # C - REHOOK + CASE 3 begins: a Brooklyn brownstone stoop; the disguised silhouette (blond wig, big sunglasses, a
         #     cardigan, an oxygen tank on wheels) comes down the steps; a passer-by glances; the years label
         S("s05_stoop", "wm86_stoop", [N("The strangest lasted six years.", tone="tense"),
                                       N("A Brooklyn man dressed as his dead mother.", tone="confident")],
-          "tension-rise", ["K_mother", "K_cheques"], sfx=[fw(0, 0, "whoosh", 0.22, -0.1), fw(0, 3, "step", 0.22, 0.0), fw(1, 0, "step", 0.22, 0.0), fw(1, 4, "tick", 0.22, 0.05), fw(1, 7, "thump", 0.26, 0.0)],
+          "tension-rise", ["K_mother", "K_cheques"], sfx=[fw(0, 0, "whoosh", 0.22, -0.1), fw(1, 7, "thump", 0.26, 0.0)],
           emph=["strangest", "six", "years.", "brooklyn", "dressed", "dead", "mother."], min_d=4.4, pad=0.1, tr="push"),
         # D - CASE 3's GOTCHA (music drop, the single impact): the interview room; the disguised silhouette with the oxygen
         #     tank sits across the table; the investigator slides a photo of the tombstone across (the impact); the sentence
         S("s06_room", "wm86_room", [N("Investigators met 'her' with her grave photo.", tone="reveal", pause_before=0.3),
                                     N("Convicted: up to forty-one years.", tone="confident")],
-          "revelation", ["K_gotcha", "K_sentence"], sfx=[fw(0, 0, "riser", 0.22, -0.5), fw(0, 2, "rasp", 0.2, 0.0), fw(0, 3, "paper", 0.26, -0.1), fw(0, 5, "hit", 0.42, -0.02), fw(1, 0, "gavel", 0.3, 0.0), fw(1, 4, "thud", 0.26, 0.05)],
+          "revelation", ["K_gotcha", "K_sentence"], sfx=[fw(0, 0, "riser", 0.22, -0.5), fw(0, 3, "paper", 0.26, -0.1), fw(0, 5, "hit", 0.42, -0.02), fw(1, 0, "gavel", 0.3, 0.0), fw(1, 4, "thud", 0.26, 0.05)],
           emph=["met", "'her'", "grave", "photo.", "convicted:", "forty-one", "years."], min_d=4.8, pad=0.08, tr="cut"),
         # E - THE CALLBACK (the loop): back on frame 1's store, same figures and poses; the camera eases back to frame 1's
         #     start framing; the held-back detail (the haul, the age); the end card
