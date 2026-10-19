@@ -476,3 +476,4 @@
 - 2026-10-19 15:28:10 tcv85-asleep-burglar: QA FAILED ['shot_variety_and_character_action']; frames and details in series/true-crime-cinematic/qa/true_crime_85
 - 2026-10-19 15:30:54 produce 84 --force: regenerating episode data
 - 2026-10-19 15:30:54 tcv84-instagram-burglar: rendering (final60, seed 1)
+- 2026-10-19 15:43:58 tcv84-instagram-burglar: RENDER FAILED, see out/tcv84-instagram-burglar/ and fix; re-run produce.py 84

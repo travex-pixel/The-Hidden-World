@@ -15,7 +15,7 @@
    "wide": 1
   },
   "max_shot_size_share": 0.43,
-  "ok": false
+  "ok": true
  },
  "production_status": {
   "series_manifest": "series/true-crime-cinematic/production_manifest.json",
@@ -1478,7 +1478,7 @@
      ]
     }
    ],
-   "visual_description": "ib84 lounge (night grade); ib84_accused (silhouette): sit; keyed camera moves.",
+   "visual_description": "ib84 lounge (night grade); ib84_accused (silhouette): sit -> sit -> sit; keyed camera moves.",
    "shot_size": "medium",
    "set": "ib84_lounge",
    "grade": "night",
@@ -1497,7 +1497,18 @@
      "scale": 1,
      "start_pose": "sit",
      "start_expr": "neutral",
-     "actions": [],
+     "actions": [
+      {
+       "at": 0.3,
+       "pose": "sit",
+       "turn_head": true
+      },
+      {
+       "at": 1.91,
+       "pose": "sit",
+       "turn_head": true
+      }
+     ],
      "silhouette": "cool"
     }
    ],
@@ -1559,7 +1570,7 @@
    "validation": {
     "claims_sourced": true,
     "tagged_as_illustration": true,
-    "characters_act": false
+    "characters_act": true
    }
   }
  ]

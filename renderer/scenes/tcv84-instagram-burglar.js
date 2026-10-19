@@ -380,7 +380,8 @@
       return E.cine.shot(ctx, {
         set: 'ib84_lounge', setOpts: { lamp: 1 - blink }, grade: 'night', haze: 0.3,
         cam: { keys: [{ at: 0, ...HERO_CAM1 }, { at: 0.1, ...HERO_CAM0, dur: Math.max(1.4, T - 0.6) }] },
-        figures: [{ ...HERO_FIG }],
+        // he glances up on the callback line and is back in frame 1's pose before the last frame (the loop)
+        figures: [{ ...HERO_FIG, keys: [{ at: 0.3, pose: 'sit', headTurn: -0.35, dur: 0.4 }, { at: Math.max(1.0, back - 0.4), pose: 'sit', headTurn: 0, dur: 0.4 }] }],
         props: [{ depth: 1.001, accent: true, svg: tt => phone(tt, { scroll, dark: blink, thumb: 0 }) }],
         overlays: [],
         tag: TAG
