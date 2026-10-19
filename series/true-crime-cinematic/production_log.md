@@ -492,3 +492,5 @@
 - 2026-10-19 17:04:01 tcv85-asleep-burglar: rendering (final60, seed 1)
 - 2026-10-19 17:23:18 tcv85-asleep-burglar: rendered in 1158s
 - 2026-10-19 17:24:02 tcv85-asleep-burglar: VERIFIED -> series/true-crime-cinematic/output/true_crime_85_asleep_burglar.mp4 (31.4s, 14.3 MB, sha256 da29ef9a6b8c)
+- 2026-10-19 21:36:55 produce 87 --force: regenerating episode data
+- 2026-10-19 21:36:55 tcv87-dumbest-getaways-2: rendering (final60, seed 1)

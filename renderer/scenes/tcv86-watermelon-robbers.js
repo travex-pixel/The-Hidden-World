@@ -121,11 +121,11 @@
     let g = `<g transform="translate(${f1(cx)} ${f1(cy)})">`;
     g += `<rect x="-260" y="-150" width="520" height="150" rx="16" fill="#2e3642" stroke="${INK}" stroke-width="6"/>`;   // the base shell
     if (k > 0.05) {
-      g += `<rect x="-246" y="-140" width="492" height="130" fill="#0b0d12"/>`;
+      g += `<rect x="-246" y="-140" width="492" height="130" fill="#8a93a0"/><rect x="-246" y="-140" width="492" height="130" fill="#5a6470" opacity="${f1(0.6 * (1 - k))}"/>`;
       // the man curled on his side, head left, knees drawn up (a featureless dark silhouette)
       g += `<ellipse cx="-150" cy="-78" rx="56" ry="50" fill="${SIL}" stroke="${INK}" stroke-width="3"/><path d="M-100 -70 Q-20 -130 90 -110 Q190 -90 200 -40 Q120 -10 20 -20 Q-60 -20 -100 -70 Z" fill="${SIL}" stroke="${INK}" stroke-width="3"/><path d="M90 -100 Q150 -140 220 -110" stroke="${SIL}" stroke-width="26" stroke-linecap="round" fill="none"/>`;
       g += `<path d="M-190 -110 Q-200 -60 -170 -36" stroke="${RIM}" stroke-width="4" fill="none" opacity="0.55"/>`;
-      for (let i = 0; i < 5; i++) { const ph = (t * 0.9 + i * 0.37) % 1; g += `<path d="M${f1(-200 + i * 28)} ${f1(-120 + 30 * ph)} q6 -14 12 0 q-6 14 -12 0 Z" fill="#bfe0ff" opacity="${f1(sw * 0.9 * (1 - ph))}"/>`; }
+      for (let i = 0; i < 5; i++) { const ph = (t * 0.9 + i * 0.37) % 1; g += `<path d="M${f1(-210 + i * 34)} ${f1(-150 + 40 * ph)} q9 -20 18 0 q-9 20 -18 0 Z" fill="#dff2ff" stroke="#4a8ab8" stroke-width="2" opacity="${f1(sw * (1 - ph))}"/>`; }
     }
     g += `<g transform="translate(0 -150) rotate(${f1(lid)})"><rect x="-260" y="-130" width="520" height="130" rx="16" fill="#3a4250" stroke="${INK}" stroke-width="6"/><path d="M-230 -100 L230 -100" stroke="#4e5868" stroke-width="8"/></g>`;
     return g + '</g>';
@@ -145,11 +145,11 @@
     g += `<path d="M-60 -360 Q-140 -330 -150 -400" stroke="#5a2a2e" stroke-width="30" stroke-linecap="round" fill="none"/>`;   // the arm back to the trolley
     g += `<path d="M60 -370 Q110 -330 120 -290" stroke="#5a2a2e" stroke-width="30" stroke-linecap="round" fill="none"/>`;
     // the head: silhouette, the blond wig, the oversized sunglasses
+    g += `<path d="M-50 -440 Q-66 -370 -48 -340 L-26 -346 Q-40 -392 -38 -436 Z" fill="#d8b85a" stroke="${INK}" stroke-width="3"/><path d="M78 -440 Q94 -370 76 -340 L54 -346 Q68 -392 66 -436 Z" fill="#d8b85a" stroke="${INK}" stroke-width="3"/>`;   // the wig falling to the shoulders
     g += `<ellipse cx="14" cy="-440" rx="46" ry="52" fill="${SIL}" stroke="${INK}" stroke-width="4"/>`;
-    g += `<path d="M-40 -440 Q-50 -520 14 -510 Q78 -520 66 -440 Q60 -400 50 -380 L-30 -380 Q-44 -400 -40 -440 Z" fill="#d8b85a" stroke="${INK}" stroke-width="4"/><path d="M-30 -455 Q14 -470 60 -455" stroke="#e8d08a" stroke-width="4" fill="none"/>`;
-    g += `<path d="M-36 -460 Q-20 -500 14 -500 Q50 -500 64 -460" fill="#d8b85a"/>`;   // the fringe over the brow
-    g += `<rect x="-14" y="-452" width="34" height="26" rx="10" fill="#141618" stroke="#8a8070" stroke-width="3"/><rect x="26" y="-452" width="34" height="26" rx="10" fill="#141618" stroke="#8a8070" stroke-width="3"/><path d="M20 -440 L26 -440" stroke="#8a8070" stroke-width="3"/>`;
-    g += `<path d="M-8 -392 Q14 -382 36 -392" stroke="#c8d8e0" stroke-width="5" fill="none"/>`;   // the oxygen mask line
+    g += `<path d="M-44 -436 Q-58 -522 14 -518 Q86 -522 72 -436 Q62 -474 36 -484 Q14 -490 -8 -484 Q-34 -474 -44 -436 Z" fill="#d8b85a" stroke="${INK}" stroke-width="4"/><path d="M-26 -470 Q14 -492 54 -470" stroke="#e8d08a" stroke-width="4" fill="none"/>`;   // the crown and fringe
+    g += `<rect x="-20" y="-454" width="36" height="28" rx="11" fill="#1a1c22" stroke="#d8d2c4" stroke-width="4"/><rect x="24" y="-454" width="36" height="28" rx="11" fill="#1a1c22" stroke="#d8d2c4" stroke-width="4"/><path d="M16 -442 L24 -442" stroke="#d8d2c4" stroke-width="4"/>`;   // the oversized sunglasses
+    g += `<ellipse cx="22" cy="-404" rx="24" ry="15" fill="#dfe8ee" stroke="${INK}" stroke-width="3"/>`;   // the oxygen mask
     g += `<path d="M58 -300 Q70 -200 66 -40" stroke="${RIM}" stroke-width="4" fill="none" opacity="0.5"/>`;
     return g + '</g>';
   }
@@ -252,7 +252,8 @@
       let walk = `<rect x="-400" y="1260" width="${W + 800}" height="${H}" fill="#8a8a84"/>`;
       for (let i = 0; i < 8; i++) walk += `<path d="M${-400 + i * 260} 1260 L${-500 + i * 300} ${H + 100}" stroke="#6a6a66" stroke-width="4"/>`;
       walk += `<path d="M-400 1420 L${W + 400} 1420 M-400 1600 L${W + 400} 1600" stroke="#6a6a66" stroke-width="4"/>`;
-      return { light: { dir: 1, rim: '#fff4e0', key: '#f0ece4' }, layers: [[0.05, sky], [0.3, house], [0.55, stoop], [0.85, walk]] };
+      const M = s => `<g transform="translate(${W} 0) scale(-1 1)">${s}</g>`;
+      return { light: { dir: 1, rim: '#fff4e0', key: '#f0ece4' }, layers: [[0.05, sky], [0.3, M(house)], [0.55, M(stoop)], [0.85, walk]] };
     },
 
     // an interview room: a plain grey-green wall, a high window with blinds, a wall clock, a long table (drawn in the shot)
@@ -305,8 +306,8 @@
         cam: { from: { x: 0, y: 20, z: 1.1 }, to: { x: 10, y: 30, z: 1.2 } },
         rack: { at: 0.05, dur: 0.6, from: 'bg' },
         figures: [
-          { id: 'wm86_officer', x: 1180, y: 1760, scale: 1.15, dir: -1, turn: 0.45, pose: 'sit_type', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1a2230' },
-            keys: [{ at: pc, pose: 'sit_type_b', expr: 'focused', dur: 0.3 }, { at: th, pose: 'sit', expr: 'realise', headTurn: -0.2, dur: 0.35 }, { at: ar + 0.1, pose: 'sit_read', expr: 'stern', dur: 0.4 }] }
+          { id: 'wm86_officer', x: 1110, y: 1760, scale: 1.15, dir: -1, turn: 0.45, pose: 'sit_type', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1a2230' },
+            keys: [{ at: pc, pose: 'sit_type_b', expr: 'focused', dur: 0.3 }, { at: th, pose: 'sit', expr: 'realise', headTurn: -0.2, dur: 0.35 }, { at: ar + 0.1, pose: 'sit_type', expr: 'stern', dur: 0.4 }] }
         ],
         props: [
           { depth: 1.0, svg: tt => monitor(tt, seg(tt, pc - 0.1, th + 0.7)) },
@@ -315,6 +316,7 @@
         overlays: [
           { type: 'label', at: 0.3, x: 60, y: 1190, text: 'LOUISA POLICE POSTED THE PHOTOS ON FACEBOOK', fs: 32, sub: 'Commenters said they had seen the pair in town (Global News, WRIC)' },
           { type: 'callout', at: ar + 0.3, target: [540, 760], label: [600, 440], text: 'ONE MAN, 20, CHARGED', w: 460, r: 50 },
+          { type: 'label', at: ar + 0.4, x: 60, y: 1000, text: 'MASK IN PUBLIC · PETIT LARCENY · UNDERAGE POSSESSION', fs: 28, sub: 'Accused, not tried · second man never identified · AS OF OCT 2026' },
           { type: 'funfact', at: ar + 0.9, y: 1240, rows: [{ text: 'IN VIRGINIA, HIDING YOUR FACE' }, { text: 'IN PUBLIC IS A FELONY' }, { text: 'Code of Virginia § 18.2-422 · Class 6', fs: 26 }] }
         ],
         tag: GEN
@@ -358,19 +360,19 @@
         set: 'wm86_coach', setOpts: { view: 'hold' }, grade: 'cold', haze: 0.2,
         cam: { from: { x: 0, y: 30, z: 1.02 }, to: { x: 0, y: 10, z: 1.08 } },
         figures: [
-          { id: 'wm86_officer_es', x: 250, y: 1600, scale: 0.9, dir: 1, turn: 0.45, pose: 'kneel', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1c2a4a' },
+          { id: 'wm86_officer_es', x: 120, y: 1600, scale: 0.9, dir: 1, turn: 0.45, pose: 'kneel', expr: 'focused', depth: 1.02, hat: { style: 'cap', color: '#1c2a4a' },
             keys: [{ at: kn - 0.1, pose: 'examine', expr: 'focused', dur: 0.3 }, { at: kn + 0.2, pose: 'kneel', expr: 'focused', dur: 0.25 }, { at: wm, pose: 'hand_to_face', expr: 'shocked', headTurn: 0.2, dur: 0.4 }, { at: sw, pose: 'point', expr: 'stern', dur: 0.4 }] },
           { id: 'wm86_accomplice', x: 940, y: 1600, scale: 0.7, dir: -1, turn: 0.4, pose: 'stand_tense', silhouette: 'cool', depth: 1.02,
             keys: [{ at: wm + 0.3, pose: 'hand_to_face', headTurn: -0.3, dur: 0.4 }, { at: ar, pose: 'hands_behind', headTurn: -0.2, dur: 0.5 }] }
         ],
         props: [
-          { depth: 1.0, svg: tt => openCase(540, 1200, lid, sweat, tt) },
-          { depth: 1.01, svg: tt => { const k = seg(tt, kn, kn + 0.5); return k > 0 && k < 1 ? [0, 1, 2].map(i => `<path d="M${f1(400 + i * 24 - 60 * k)} ${f1(1040 - 40 * k - i * 10)} q${f1(14 + i * 6)} -12 ${f1(28 + i * 12)} 0" stroke="#e8eef4" stroke-width="4" fill="none" opacity="${f1(0.7 * (1 - k))}"/>`).join('') : ''; } },
-          { depth: 1.0, svg: tt => tt > wm ? wash(540, 1120, 300, 140, '#ffb070', f1(0.16 * seg(tt, wm, wm + 0.5))) : '' }
+          { depth: 1.0, svg: tt => openCase(620, 1200, lid, sweat, tt) },
+          { depth: 1.01, svg: tt => { const k = seg(tt, kn, kn + 0.5); return k > 0 && k < 1 ? [0, 1, 2].map(i => `<path d="M${f1(480 + i * 24 - 60 * k)} ${f1(1040 - 40 * k - i * 10)} q${f1(14 + i * 6)} -12 ${f1(28 + i * 12)} 0" stroke="#e8eef4" stroke-width="4" fill="none" opacity="${f1(0.7 * (1 - k))}"/>`).join('') : ''; } },
+          { depth: 1.0, svg: tt => tt > wm ? wash(620, 1120, 300, 140, '#ffb070', f1(0.16 * seg(tt, wm, wm + 0.5))) : '' }
         ],
         overlays: [
           { type: 'label', at: 0.3, x: 60, y: 560, text: 'A DRIVER NOTICED A VERY HEAVY SUITCASE', fs: 36, sub: 'He called police · the case felt unusually warm (CBS News, Fox News)' },
-          { type: 'callout', at: wm + 0.3, target: [400, 1120], label: [120, 900], text: 'WARM', w: 240, r: 50 },
+          { type: 'callout', at: wm + 0.3, target: [480, 1110], label: [560, 900], text: 'WARM', w: 240, r: 50 },
           { type: 'label', at: ar + 0.1, x: 60, y: 1190, text: 'TWO MEN ARRESTED · A LAPTOP AND A GPS REPORTED STOLEN', fs: 30, sub: 'Spanish police, June 2011 (CBS News, TIME)' }
         ],
         tag: TAG
@@ -382,13 +384,13 @@
     wm86_stoop(ctx) {
       const t = ctx.t, T = ctx.T, sx = WT(ctx, 0, 3, 1.2), l2 = LS(ctx, 1, 2.2), dr = WT(ctx, 1, 3, 3.0), mo = WT(ctx, 1, 7, 4.2);
       const down = ease.inOut(seg(t, 0.0, Math.max(2.0, l2 + 0.4)));
-      const gx = lerp(1080, 560, down), gy = lerp(920, 1260, down);
+      const gx = lerp(W - 1080, W - 560, down), gy = lerp(920, 1260, down);
       return E.cine.shot(ctx, {
         set: 'wm86_stoop', grade: 'warm', haze: 0.2,
         cam: { from: { x: 16, y: 10, z: 1.02 }, to: { x: -10, y: 20, z: 1.08 } },
         figures: [
-          { id: 'wm86_neighbour', x: 420, y: 1660, scale: 0.6, dir: 1, turn: 0.4, pose: 'walk', expr: 'neutral', depth: 1.03,
-            walk: { at: 0.0, dur: Math.max(1.8, dr), cadence: 3.0, stride: 12, from: -160, to: 420 },
+          { id: 'wm86_neighbour', x: 280, y: 1660, scale: 0.6, dir: 1, turn: 0.4, pose: 'walk', expr: 'neutral', depth: 1.03,
+            walk: { at: 0.0, dur: Math.max(1.8, dr), cadence: 3.0, stride: 12, from: -200, to: 280 },
             keys: [{ at: sx, pose: 'walk', expr: 'focused', headTurn: 0.5, dur: 0.3 }, { at: dr + 0.1, pose: 'stand_tense', expr: 'shocked', headTurn: 0.6, dur: 0.35 }, { at: mo, pose: 'hand_to_face', expr: 'worried', headTurn: 0.5, dur: 0.4 }] }
         ],
         props: [
@@ -413,11 +415,11 @@
         cam: { from: { x: 0, y: 20, z: 1.1 }, to: { x: 6, y: 30, z: 1.22 } },
         rack: { at: 0.05, dur: 0.7, from: 'bg' },
         figures: [
-          { id: 'wm86_investigator', x: 1140, y: 1760, scale: 1.15, dir: -1, turn: 0.45, pose: 'read', expr: 'neutral', depth: 1.02,
+          { id: 'wm86_investigator', x: 1000, y: 1760, scale: 1.15, dir: -1, turn: 0.45, pose: 'read', expr: 'neutral', depth: 1.02,
             keys: [{ at: mt, pose: 'present', expr: 'focused', headTurn: -0.2, dur: 0.4 }, { at: gv - 0.5, pose: 'point', expr: 'stern', dur: 0.4 }, { at: gv + 0.3, pose: 'arms_crossed', expr: 'stern', dur: 0.4 }, { at: cv, pose: 'hands_together', expr: 'determined', dur: 0.4 }, { at: yr, pose: 'arms_crossed', expr: 'stern', dur: 0.4 }] }
         ],
         props: [
-          { depth: 1.0, svg: tt => granny(300, 1560, 0.9, 0) + `<rect x="150" y="1300" width="300" height="300" fill="#4a5450" opacity="0"/>` },
+          { depth: 1.0, svg: tt => granny(330, 1330, 0.95, 0) },
           { depth: 1.01, svg: () => table(1180) },
           { depth: 1.015, svg: tt => tt > gv - 0.5 ? gravePhoto(lerp(980, 520, slide), lerp(1110, 1080, slide), lerp(6, -8, slide), 1.0) + (tt > gv ? wash(520, 1080, 220, 160, '#fff4d0', f1(0.25 * seg(tt, gv, gv + 0.4))) : '') : '' }
         ],
@@ -441,16 +443,14 @@
         cam: { keys: [{ at: 0, ...HERO_CAM1 }, { at: 0.1, ...HERO_CAM0, dur: back }] },
         // the clerk glances at the thief on the callback line and is back in frame 1's pose before the last frame (the loop)
         figures: [
-          { ...CLERK, pose: 'hand_to_face', expr: 'shocked', keys: [{ at: 0.25, pose: 'point_up', expr: 'worried', headTurn: -0.3, dur: 0.4 }, { at: Math.max(1.0, T - 1.1), pose: 'stand_tense', expr: 'worried', headTurn: 0, dur: 0.5 }] }
+          { ...CLERK, keys: [{ at: 0.25, pose: 'stand_tense', expr: 'worried', headTurn: -0.35, dur: 0.4 }, { at: Math.max(1.0, T - 1.1), pose: 'stand_tense', expr: 'worried', headTurn: 0, dur: 0.5 }] }
         ],
         props: [
           { depth: 1.0, svg: () => counter(1150) },
           { depth: 1.01, accent: true, svg: tt => melonMan(Math.max(0, T - tt), k) },
           { depth: 1.0, svg: tt => melonMan2(Math.max(0, T - tt)) }
         ],
-        overlays: [
-          { type: 'label', at: 0.3, x: 60, y: 1190, text: 'MAY 2020: ONE MAN, 20, CHARGED · UNDERAGE POSSESSION OF ALCOHOL', fs: 28, sub: 'Accused, not tried · AS OF OCT 2026' }
-        ],
+        overlays: [],
         tag: TAG
       });
     }

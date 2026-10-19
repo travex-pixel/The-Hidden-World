@@ -41,15 +41,15 @@ def build(h):
         # A - HOOK (frame 0, VARIANT A, the act in progress): a convenience store at night; a silhouette with a big green
         #     watermelon on his head leans over the counter, his hand closing on a bottle; the clerk recoils; a second
         #     melon-head at the door with bottles; the camera already pushing in. Line 2: the eye holes, the alcohol
-        S("s01_hook", "wm86_hook", [N("Police say two thieves wore watermelon heads.", tone="hook"),
-                                    N("Then they took alcohol.", tone="tense")],
+        S("s01_hook", "wm86_hook", [N("Police say two men wore watermelon heads.", tone="hook"),
+                                    N("Then they stole alcohol.", tone="tense")],
           "tension", ["K_hook", "K_took"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.3), fw(0, 4, "thump", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.1), fw(1, 2, "tick", 0.24, 0.0), fw(1, 3, "cash", 0.22, 0.05)],
-          emph=["thieves", "watermelon", "heads.", "took", "alcohol."], min_d=5.0, pad=0.08),
+          emph=["men", "watermelon", "heads.", "stole", "alcohol."], min_d=5.0, pad=0.08),
         # A - THE HEADLINE GOTCHA (before 9 s): close on a police desk; the officer posts the security image (our own typed
         #     graphic) and comments pop up; on 'arrest' the ARRESTED stamp; the charges label; the FUN FACT (the mask felony)
         S("s02_post", "wm86_post", [N("Police posted the pictures, then made an arrest.", tone="reveal", pause_before=0.3)],
           "tension-rise", ["K_posted", "K_charged", "K_felony"], sfx=[fw(0, 0, "click", 0.3, -0.1), fw(0, 1, "typing", 0.22, 0.0), fw(0, 4, "ping", 0.24, 0.05), fw(0, 7, "hit", 0.4, -0.03), fw(0, 7, "cuffs", 0.26, 0.12)],
-          emph=["posted", "pictures,", "arrest."], min_d=3.8, pad=0.1, tr="cut"),
+          emph=["posted", "pictures,", "arrest."], min_d=4.15, pad=0.1, tr="cut"),
         # B - REHOOK + CASE 2 begins: an airport coach bay; the hold open; the accomplice (silhouette) drags a huge suitcase
         #     toward it, struggling; the driver watches; the 90-minute counter
         S("s03_coach", "wm86_coach", [N("That was not the strangest.", tone="tense"),
@@ -59,9 +59,9 @@ def build(h):
         # B - CASE 2's GOTCHA: the open hold; the officer kneels and knocks on the suitcase (the knock), the lid lifts and a
         #     sweating silhouette is curled inside; the accomplice puts his hands behind his back
         S("s04_hold", "wm86_hold", [N("Police knocked: the case was warm.", tone="reveal", pause_before=0.3),
-                                    N("Inside, a sweating man. Both arrested.", tone="playful")],
-          "tension", ["K_warm", "K_arrested"], sfx=[fw(0, 1, "knock", 0.4, 0.0), fw(0, 2, "knock", 0.3, 0.12), fw(0, 5, "thump", 0.28, 0.0), fw(1, 0, "whoosh", 0.18, -0.05), fw(1, 1, "rasp", 0.22, 0.0), fw(1, 5, "cuffs", 0.26, 0.05)],
-          emph=["knocked:", "warm.", "inside,", "sweating", "both", "arrested."], min_d=4.6, pad=0.1, tr="cut"),
+                                    N("A sweating man. Both arrested.", tone="playful")],
+          "tension", ["K_warm", "K_arrested"], sfx=[fw(0, 1, "knock", 0.4, 0.0), fw(0, 2, "knock", 0.3, 0.12), fw(0, 5, "thump", 0.28, 0.0), fw(1, 0, "whoosh", 0.18, -0.05), fw(1, 1, "rasp", 0.22, 0.0), fw(1, 4, "cuffs", 0.26, 0.05)],
+          emph=["knocked:", "warm.", "sweating", "both", "arrested."], min_d=4.6, pad=0.1, tr="cut"),
         # C - REHOOK + CASE 3 begins: a Brooklyn brownstone stoop; the disguised silhouette (blond wig, big sunglasses, a
         #     cardigan, an oxygen tank on wheels) comes down the steps; a passer-by glances; the years label
         S("s05_stoop", "wm86_stoop", [N("The strangest lasted six years.", tone="tense"),
@@ -78,7 +78,7 @@ def build(h):
         #     start framing; the held-back detail (the haul, the age); the end card
         S("s07_end", "wm86_end", [N("The haul? Alcohol, and he was twenty.", tone="reveal", pause_before=0.0)],
           "aftermath", ["K_underage"], sfx=[fw(0, 1, "thump", 0.26, 0.0), fw(0, 2, "cash", 0.22, 0.0), fw(0, 6, "sub", 0.3, -0.05)],
-          emph=["haul?", "alcohol,", "twenty."], min_d=2.4, pad=0.25, tr="zoom"),
+          emph=["haul?", "alcohol,", "twenty."], min_d=2.4, pad=0.2, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_post": "A", "s03_coach": "B", "s04_hold": "B", "s05_stoop": "C", "s06_room": "D", "s07_end": "E"}
     cases = {"s01_hook": "louisa", "s02_post": "louisa", "s03_coach": "spain", "s04_hold": "spain",
@@ -120,9 +120,9 @@ def build(h):
     ]
     C = h.claim
     claims = [
-        C("K_hook", "5/6 May 2020 (the reports differ on the date), about 9:30 pm, Louisa, Virginia: police said two men wearing hollowed-out watermelons with eye holes cut out walked into a convenience store and committed a larceny (shoplifting), arriving in a lifted 2006 black Toyota Tacoma. Narration: 'Police say two thieves wore watermelon heads.' Headline 'POLICE SAY TWO THIEVES / WORE WATERMELON HEADS'. The store chain is not named on screen.",
+        C("K_hook", "5/6 May 2020 (the reports differ on the date), about 9:30 pm, Louisa, Virginia: police said two men wearing hollowed-out watermelons with eye holes cut out walked into a convenience store and committed a larceny (shoplifting), arriving in a lifted 2006 black Toyota Tacoma. Narration: 'Police say two men wore watermelon heads.' Headline 'POLICE SAY TWO MEN / WORE WATERMELON HEADS'. The store chain is not named on screen.",
           ["wric", "cbsbalt", "lawcrime", "sixabc", "fox5dc"]),
-        C("K_took", "Police said the pair took alcohol from the store. Narration: 'Then they took alcohol.'",
+        C("K_took", "Police said the pair took alcohol from the store. Narration: 'Then they stole alcohol.'",
           ["wric", "lawcrime", "cbsbalt", "globalnews"]),
         C("K_posted", "The Louisa Police Department posted the security images on Facebook and asked for the public's help identifying the two; commenters said they had seen the pair elsewhere in town; about ten days later (announced 15-16 May 2020) police said one arrest had been made and thanked the community. Narration: 'Police posted the pictures, then made an arrest.'",
           ["lawcrime", "wric", "wvir", "cbsbalt", "globalnews"]),
@@ -136,7 +136,7 @@ def build(h):
           ["cbsnews", "foxnews"]),
         C("K_warm", "On 3 June 2011 a driver noticed a passenger struggling with a very heavy suitcase and called police; officers knocked on the case, found it unusually warm and opened it on a sweating man. Narration: 'Police knocked: the case was warm.'",
           ["cbsnews", "foxnews", "abc7", "time"]),
-        C("K_arrested", "The man in the suitcase and his accomplice on board, both Polish nationals, were arrested on theft charges. Narration: 'Inside, a sweating man. Both arrested.' Neither is named in the reports; the accomplice is a silhouette tagged NOT A LIKENESS.",
+        C("K_arrested", "The man in the suitcase and his accomplice on board, both Polish nationals, were arrested on theft charges. Narration: 'A sweating man. Both arrested.' Neither is named in the reports; the accomplice is a silhouette tagged NOT A LIKENESS.",
           ["cbsnews", "foxnews", "time"]),
         C("K_mother", "Brooklyn, New York: after his mother died in 2003 (aged 73), a Park Slope man impersonated her for about six years in a blond wig, dress and oversized sunglasses. Narration: 'The strangest lasted six years.' / 'A Brooklyn man dressed as his dead mother.'",
           ["ap_ktar", "ap_sowetan", "nbcny", "bkpaper", "reuters_ttw"]),
@@ -162,7 +162,7 @@ def build(h):
     ep["palette"] = {"shadow": "#121a1e", "mid": "#c6bfb0", "accent": "#9ccf3e"}
     ep["target_duration_seconds"] = [27, 32]
     ep["music"]["beat_snap"] = 0.25
-    ep["hook_title"] = {"lines": [{"text": "POLICE SAY TWO THIEVES"}, {"text": "WORE WATERMELON HEADS", "colour": "#9ccf3e"}],
+    ep["hook_title"] = {"lines": [{"text": "POLICE SAY TWO MEN"}, {"text": "WORE WATERMELON HEADS", "colour": "#9ccf3e"}],
                         "until": 2.6, "y": 400}
     # the CASE chip, word-anchored from out/<id>/timeline.json when a build exists (narration is cached, so stable)
     anchors = [("s01_hook", 1, 0, 3.2, "1 · VIRGINIA"), ("s03_coach", 0, 0, 9.4, "2 · SPAIN"),
