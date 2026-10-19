@@ -496,3 +496,5 @@
 - 2026-10-19 21:36:55 tcv87-dumbest-getaways-2: rendering (final60, seed 1)
 - 2026-10-19 22:10:16 tcv87-dumbest-getaways-2: rendered in 2001s
 - 2026-10-19 22:10:54 tcv87-dumbest-getaways-2: VERIFIED -> series/true-crime-cinematic/output/true_crime_87_dumbest_getaways_2.mp4 (31.1s, 15.3 MB, sha256 856cf4280379)
+- 2026-10-19 22:12:47 produce 88 --force: regenerating episode data
+- 2026-10-19 22:12:47 tcv88-butt-dial-burglar: rendering (final60, seed 1)
