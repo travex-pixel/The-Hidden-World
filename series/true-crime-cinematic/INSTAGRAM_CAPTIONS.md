@@ -930,3 +930,27 @@ ALT TEXT: Illustrated LEGO theft reel: a car boot crammed with brick-set boxes u
 SEED COMMENT: Pasta wins. Who thinks a cashier would never open the box?
 PINNED: Tag the mate with a LEGO shelf 🧱 Vote: 1 = cameras, 2 = buyers, 3 = pasta 👇 Part 2: a tech exec's fake barcodes.
 POST WHEN: Tuesday 20 Oct 2026, 7–9 pm US Eastern (evening scroll): the Sun Prairie arrest (14 Oct) is still being searched this week; keep it several hours apart from Case File 81.
+
+## 83 (`true_crime_83_fake_ambulance.mp4`)
+CAPTION: A fake ambulance full of cocaine, with fake medics and a "patient" on crutches, made 45 trips before police followed it into a scrapyard. Then a fake Dakar Rally truck and a van with two coffins. Dumbest disguise: ambulance, rally truck or coffins?
+HASHTAGS: #fakeambulance #cocaineambulance #drugsmuggling #truecrime #disguisefails
+ALT TEXT: Illustrated true-crime reel about a fake ambulance full of cocaine: its back doors open on bricks of cocaine in a scrapyard, a truck disguised as a Dakar Rally support vehicle is seized at a port, and a coffin in a van holds sports bags of cocaine instead of a body.
+SEED COMMENT: The coffins would have worked if he had just printed the paperwork. Which disguise would YOU have waved through?
+PINNED: Send to the mate who'd fake a limp 🚑 Vote: 1 = ambulance, 2 = rally truck, 3 = coffins 👇 Disguise Fails, part 1.
+POST WHEN: Tuesday 20 Oct 2026, 7–9 pm UK (the ambulance case is a UK story and the headline search phrase is "fake ambulance"); keep it several hours apart from Case Files 84 and 85.
+
+## 84 (`true_crime_84_instagram_burglar.mp4`)
+CAPTION: He robbed his own Instagram friends, police say: a Scottsdale man used their vacation posts to pick empty homes (accused, not tried). Then a 2009 burglar who left Facebook logged in on the victim's PC, and a DC burglar who posted his cash selfie to the victim's son's page. Caught by their own phone, 1. Post your trip live: yes, or wait till you're home?
+HASHTAGS: #instagramburglar #scottsdale #truecrime #caughtbytheirownphone #burglary
+ALT TEXT: Illustrated reel about an Instagram burglar: a silhouette on a sofa scrolling a glowing phone grid of holiday photos in front of a mansion window, police torches finding a man at his office, a 2009 desktop left logged in, and a burglar's selfie popping up on a laptop.
+SEED COMMENT: Posting the beach pics while you're still on the beach is the real crime here. I post mine on the flight home. Who's with me?
+PINNED: Send this to the mate who'd post from the beach 🏖️ Vote: 1 = post it live, 2 = wait till home 👇 Caught By Their Own Phone, 1.
+POST WHEN: Tuesday 20 Oct 2026, 7–9 pm US Eastern (evening scroll; 50 % US audience): the Scottsdale arrest (7–8 Oct reports) is still being searched this month; keep it several hours apart from Case Files 83 and 85.
+
+## 85 (`true_crime_85_asleep_burglar.mp4`)
+CAPTION: A burglar fell asleep in a stranger's bed, police say (Chillicothe, Ohio, accused, not tried). Then a Michigan burglar fell down the basement stairs and woke the house, and an Oklahoma copper thief dived through a closed window and left his driver's licence behind. Dumbest getaway: bed, stairs or window?
+HASHTAGS: #burglarfellasleep #dumbestgetaway #truecrime #bodycam #caughtonbodycam
+ALT TEXT: Illustrated reel of the burglar who fell asleep in a stranger's bed, a burglar who fell down basement stairs, and a suspect who dived head-first through a closed window on bodycam and left his licence behind.
+SEED COMMENT: Window guy wins. Diving through glass and then leaving your licence on the floor is a whole new level.
+PINNED: Send this to the mate who'd nap mid-burglary 😴 Vote: 1 = bed, 2 = stairs, 3 = window 👇
+POST WHEN: Tuesday 20 Oct 2026, 7-9 pm US Eastern (evening scroll): the Chillicothe arrest (12 Oct) and the Oklahoma bodycam video (released 13-14 Oct) are both being searched this week; keep it several hours apart from Case Files 83 and 84.

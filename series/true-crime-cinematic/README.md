@@ -84,6 +84,9 @@
 | 80 | `true_crime_80_peoples_court_arrest.mp4` (archived outside git) | Michelle Parker: vanished after her People's Court episode (2011); ex-fiancé charged 14 Oct 2026, pleaded not guilty; respectful case update, engine v5 | see `production_manifest.json` |
 | 81 | `true_crime_81_where_they_hid_it_3.mp4` (archived outside git) | Where They Hid It Part 3: weed in plastic spools (Delhi, Oct 2026), drugs packed with used cars (Lagos), 57 resin fake bananas (Spain); engine v5 | see `production_manifest.json` |
 | 82 | `true_crime_82_lego_thief.mp4` (archived outside git) | LEGO Heists Part 1: the $18,000 Walmart LEGO theft flagged by plate cameras (Wisconsin, Oct 2026), 2,800 boxes in one house, pasta-filled returns; engine v5 | see `production_manifest.json` |
+| 83 | `true_crime_83_fake_ambulance.mp4` (archived outside git) | Disguise Fails 1 (engine v6, loops): the Dutch fake-ambulance cocaine ring tracked into a Smethwick scrapyard (2015, 193 kg), a fake Dakar Rally truck (Bilbao 2010), a van with two coffins (A29, Dec 2024) | see `production_manifest.json` |
+| 84 | `true_crime_84_instagram_burglar.mp4` (archived outside git) | Caught By Their Own Phone 1 (engine v6, loops): police say a Scottsdale man used friends' holiday posts to pick empty homes (Oct 2026, accused), the 2009 Facebook-left-logged-in burglar, the DC cash-selfie burglar | see `production_manifest.json` |
+| 85 | `true_crime_85_asleep_burglar.mp4` (archived outside git) | Dumbest Getaways 1 (engine v6, loops): a man found asleep upstairs in a stranger's house (Chillicothe, 12 Oct 2026, accused), the Michigan basement-stairs burglar, the Oklahoma bodycam window dive | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.
