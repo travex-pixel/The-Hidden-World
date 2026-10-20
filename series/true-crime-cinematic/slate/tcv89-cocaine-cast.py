@@ -37,14 +37,14 @@ def build(h):
         #     blue reagent stain on the plaster, crutches leaning at the bench's end, the camera already pushing in; the
         #     officer behind the bench with his clipboard, the passenger (silhouette) seated at the left
         S("s01_hook", "cc89_hook", [N("Police say his leg cast was made of cocaine.", tone="hook", speed=1.08),
-                                    N("5 kilos. Cocaine inside six beer cans.", tone="tense")],
+                                    N("5 kilos, cocaine inside six beer cans.", tone="tense")],
           "tension", ["K_hook", "K_total", "K_cans"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.26), fw(0, 4, "thump", 0.26, 0.0), fw(0, 8, "puff", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.05), fw(1, 2, "tick", 0.22, 0.0), fw(1, 6, "click", 0.26, 0.0)],
-          emph=["police", "leg", "cast", "cocaine.", "5", "kilos.", "inside", "six", "beer", "cans."], min_d=4.6, pad=0.35),   # the line ends before the cue change (the bed rises at the cut)
+          emph=["police", "leg", "cast", "cocaine.", "5", "kilos,", "inside", "six", "beer", "cans."], min_d=4.6, pad=0.35),   # the line ends before the cue change (the bed rises at the cut)
         # A - THE GOTCHA (before 9 s): close on the bench; the officer's spray bottle mists the cast on "spray"; on "blue"
         #     the blue stain blooms across the plaster (the single impact); the arrested label
-        S("s02_spray", "cc89_spray", [N("One spray test. The cast turned bright blue.", tone="reveal", pause_before=0.3)],
+        S("s02_spray", "cc89_spray", [N("One spray test turned the cast bright blue.", tone="reveal", pause_before=0.3)],
           "revelation", ["K_spray", "K_arrest"], sfx=[fw(0, 0, "riser", 0.22, -0.6), fw(0, 1, "puff", 0.3, 0.0), fw(0, 7, "hit", 0.42, -0.03), fw(0, 7, "glitch", 0.2, 0.02), fw(0, 7, "cuffs", 0.3, 0.9)],
-          emph=["one", "spray", "test.", "cast", "turned", "bright", "blue."], min_d=4.0, pad=0.15, tr="cut"),
+          emph=["one", "spray", "test", "cast", "bright", "blue."], min_d=4.0, pad=0.15, tr="cut"),
         # B - REHOOK + CASE 2: the Madrid wholesale market at night; pineapples on a pallet; the inspector walks in from the
         #     left and on "Hollowed" lifts the crown off the centre pineapple: white cylinders inside; the wax fun fact
         S("s03_pine", "cc89_pine", [N("But not the strangest.", tone="tense"),
@@ -53,9 +53,9 @@ def build(h):
           emph=["not", "strangest.", "pineapples.", "hollowed", "packed", "cocaine."], min_d=4.0, pad=0.12, tr="dissolve"),
         # B - CASE 2's GOTCHA: closer on the pallet; the inspector holds up the halved pineapple with the cylinders inside;
         #     the 67 KG counter on "67"; the seven-arrested label
-        S("s04_cut", "cc89_cut", [N("Caught at Madrid's market. 67 kilos. Seven arrested.", tone="reveal", pause_before=0.3)],
+        S("s04_cut", "cc89_cut", [N("Caught at Madrid's market: 67 kilos, seven arrested.", tone="reveal", pause_before=0.3)],
           "tension", ["K_seized", "K_route"], sfx=[fw(0, 0, "riser", 0.2, -0.5), fw(0, 0, "hit", 0.4, -0.03), fw(0, 3, "thud", 0.24, 0.0), fw(0, 4, "tick", 0.22, 0.0), fw(0, 7, "cuffs", 0.32, 0.0)],
-          emph=["caught", "madrid's", "market.", "67", "kilos.", "seven", "arrested."], min_d=4.2, pad=0.15, tr="cut"),
+          emph=["caught", "madrid's", "market:", "67", "kilos,", "seven", "arrested."], min_d=4.2, pad=0.15, tr="cut"),
         # C - REHOOK + CASE 3: the port at dusk; the open container; frozen sharks on a pallet; the navy inspector walks in
         #     from the right and on "sharks" crouches to the biggest one
         S("s05_dock", "cc89_dock", [N("Then Mexico. Frozen sharks.", tone="tense")],
@@ -110,11 +110,11 @@ def build(h):
     claims = [
         C("K_hook", "March 2009: Spanish police arrested a 66-year-old Chilean man at Barcelona's El Prat airport, arriving from Santiago, Chile, wearing a leg cast made of compressed cocaine (police: the first cast they had seen made entirely of the drug; it weighed about a kilogram). Narration: 'Police say his leg cast was made of cocaine.' Headline 'A LEG CAST / MADE OF COCAINE'. Accused only: never named, silhouette.",
           ["nbcap", "police1cast", "rnz", "rte", "emol"]),
-        C("K_total", "Altogether he carried about 5 kg of cocaine (AP: 'about 5 kilograms (11 pounds)'; RNZ: 4.85 kg). Narration: '5 kilos.'",
+        C("K_total", "Altogether he carried about 5 kg of cocaine (AP: 'about 5 kilograms (11 pounds)'; RNZ: 4.85 kg). Narration: '5 kilos, ...'",
           ["nbcap", "police1cast", "rnz", "rte"]),
         C("K_cans", "More cocaine was hidden in six beer cans that had been emptied, packed with the drug and resealed, and inside the legs of two small folding stools. Narration: 'Cocaine inside six beer cans.' (No report mentions seat covers.)",
           ["nbcap", "police1cast", "rte", "emol"]),
-        C("K_spray", "Police detected the drug by spraying the cast with a chemical reagent that turns bright blue on contact with cocaine. Narration (gotcha): 'One spray test. The cast turned bright blue.' Callout 'TURNED BRIGHT BLUE'.",
+        C("K_spray", "Police detected the drug by spraying the cast with a chemical reagent that turns bright blue on contact with cocaine. Narration (gotcha): 'One spray test turned the cast bright blue.' Callout 'TURNED BRIGHT BLUE'.",
           ["nbcap", "police1cast", "rnz", "abc6"]),
         C("K_arrest", "He was arrested at the airport (reported 6 March 2009); no plea, trial or sentence was found in any extract, so the reel says accused/arrested only. Label 'ARRESTED · EL PRAT, BARCELONA · MARCH 2009 · POLICE SAY', 'no court outcome found · as of Oct 2026'.",
           ["nbcap", "rte", "emol", "rnz"]),
@@ -122,7 +122,7 @@ def build(h):
           ["dailymav", "inquirer", "thelocal", "euronews", "ticotimes"]),
         C("K_wax", "FUN FACT: each pineapple held roughly 800 g to 1 kg of cocaine, and the fruit was sealed with wax to mask the chemical smell. Card 'EACH PINEAPPLE: ABOUT A KILO / SEALED WITH WAX / TO HIDE THE SMELL'.",
           ["inquirer", "thelocal", "dailymav", "eju"]),
-        C("K_seized", "STATISTIC (counter 67 KG): the seizure at the Madrid market was 67 kg (148 lb); seven people were arrested, three in Madrid and four in Barcelona. Narration (gotcha): 'Caught at Madrid's market. 67 kilos. Seven arrested.' Label 'SEVEN ARRESTED · 3 MADRID, 4 BARCELONA'. Accused only; nobody named.",
+        C("K_seized", "STATISTIC (counter 67 KG): the seizure at the Madrid market was 67 kg (148 lb); seven people were arrested, three in Madrid and four in Barcelona. Narration (gotcha): 'Caught at Madrid's market: 67 kilos, seven arrested.' Label 'SEVEN ARRESTED · 3 MADRID, 4 BARCELONA'. Accused only; nobody named.",
           ["dailymav", "inquirer", "thelocal", "ticotimes"]),
         C("K_route", "The pineapples came from Costa Rica by ship to the Portuguese port of Setubal and then overland to Madrid.",
           ["dailymav", "inquirer", "thelocal", "ticotimes"]),

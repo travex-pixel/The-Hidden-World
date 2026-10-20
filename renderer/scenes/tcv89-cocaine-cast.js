@@ -305,7 +305,7 @@
     // 2 - THE GOTCHA: close on the bench; the officer leans in with the spray bottle on "spray" (the mist); on "blue" the
     //     stain blooms across the plaster (the single impact) and he straightens up; the arrested label
     cc89_spray(ctx) {
-      const t = ctx.t, sp = WT(ctx, 0, 1, 0.5), cs = WT(ctx, 0, 4, 1.4), bl = WT(ctx, 0, 7, 2.3);
+      const t = ctx.t, sp = WT(ctx, 0, 1, 0.5), cs = WT(ctx, 0, 5, 1.5), bl = WT(ctx, 0, 7, 2.3);
       const mist = seg(t, sp, sp + 0.25) * (1 - seg(t, sp + 0.9, sp + 1.6));
       const stain = ease.out(seg(t, bl - 0.05, bl + 0.6));
       const flash = flashAt(t, bl);
