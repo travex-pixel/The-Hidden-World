@@ -516,3 +516,5 @@
 - 2026-10-20 13:31:55 tcv90-stolen-bridge: VERIFIED -> series/true-crime-cinematic/output/true_crime_90_stolen_bridge.mp4 (28.4s, 15.0 MB, sha256 d9abcc3c2bcd)
 - 2026-10-20 13:33:41 produce 89 --force: regenerating episode data
 - 2026-10-20 13:33:41 tcv89-cocaine-cast: rendering (final60, seed 1)
+- 2026-10-20 13:54:59 tcv89-cocaine-cast: rendered in 1278s
+- 2026-10-20 13:55:40 tcv89-cocaine-cast: VERIFIED -> series/true-crime-cinematic/output/true_crime_89_cocaine_cast.mp4 (27.7s, 15.3 MB, sha256 c52ac6eb22fb)

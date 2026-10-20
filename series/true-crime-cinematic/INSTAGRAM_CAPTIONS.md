@@ -978,3 +978,27 @@ ALT TEXT: Illustrated reel about burglars who butt-dialled 911: a glowing phone 
 SEED COMMENT: The charger guy is the dumbest by a mile. Butt-dialling is bad luck; plugging your phone in at the house you're robbing is a decision. Change my mind.
 PINNED: Send this to the mate who'd butt-dial 911 📱 Vote: 1 = the butt-dial, 2 = the charger, 3 = asking police for it back 👇 Caught By Their Own Phone, 2.
 POST WHEN: Saturday 24 Oct 2026, 12–2 pm US Eastern (weekend lunch scroll), clear of the 86/87 pair; the 28-second length test, partner (89) in the next batch.
+
+## 89 (`true_crime_89_cocaine_cast.mp4`)
+CAPTION: A cocaine cast: police say a passenger's leg cast at Barcelona airport was made of compressed cocaine, and his leg really was broken (arrested, not tried, March 2009). Then pineapples hollowed out and packed with 67 kg in Madrid, and frozen sharks stuffed with nearly a ton in Mexico. Where they hid it, 4. Which would you have spotted: the cast, the pineapple or the shark?
+HASHTAGS: #cocainecast #wheretheyhidit #truecrime #smuggling #customs
+ALT TEXT: Illustrated reel about a cocaine leg cast and other smuggling hiding places: a plaster leg cast cracked open on a customs bench with white powder pouring out, a spray test turning the cast blue, a pineapple opened on white cylinders at a Madrid market, and a frozen shark cut open on slabs of cocaine at a Mexican port.
+SEED COMMENT: The pineapples are the only one that nearly worked. A cast on a man with a real broken leg is clever until anyone with a test kit sprays it, and X-raying a container of frozen sharks was always going to end badly.
+PINNED: Send this to the mate who'd wear the cast 🦵 Vote: 1 = the cast, 2 = the pineapples, 3 = the sharks 👇 Where They Hid It, 4.
+POST WHEN: Friday 23 Oct 2026, 7–9 pm US Eastern, the day after Case File 90 in the same slot.
+
+## 90 (`true_crime_90_stolen_bridge.mp4`)
+CAPTION: They stole a bridge. Police say two Pennsylvania brothers cut up a 50-foot steel bridge with a torch and sold it for scrap (charged, not tried, Oct 2011). Then a Jamaican beach that left by the truckload, and five tons of glacier stopped on a Patagonian road, bound for cocktail glasses. They Stole What?, 1. Which thief was the dumbest: bridge, beach or glacier?
+HASHTAGS: #stolenbridge #theystolewhat #truecrime #scrapmetal #glacier
+ALT TEXT: Illustrated reel about a stolen bridge: a man kneeling on a steel bridge at night cutting it with a torch while a flatbed truck waits below with a section loaded, a scrapyard worker lifting a phone, a dump truck on a beach beside a scooped-out hole, and a refrigerated truck's doors opening on glowing blocks of glacier ice.
+SEED COMMENT: The bridge wins by a mile. A beach is sand and ice melts, but a bridge is a bridge. And if the scrapyard-photos part holds up in court, that is a whole other level. Change my mind.
+PINNED: Send this to the mate who'd steal a bridge 🌉 Vote: 1 = the bridge, 2 = the beach, 3 = the glacier 👇 They Stole What?, 1.
+POST WHEN: Thursday 22 Oct 2026, 7–9 pm US Eastern, the day after Case File 91 in the same slot.
+
+## 91 (`true_crime_91_scooter_getaway.mp4`)
+CAPTION: Getaway donkey: a Turkish gold thief rammed a jewellery shop with a forklift, rode off on a donkey, and got nine years seven months (Kayseri, 2026). Then a California bank robber who fled on a rental scooter (57 months), and an Austin teen who, police say, rented his getaway scooter on an app. Dumbest Getaways, 3. Which was the dumbest: donkey, scooter or app?
+HASHTAGS: #dumbestgetaway #donkey #truecrime #bankrobbery #dumbcriminals
+ALT TEXT: Illustrated reel about the dumbest getaways: a hooded silhouette riding a small donkey past a jewellery shop with a forklift stuck in its shutter, a sack of gold in his lap, the getaway donkey crossing police camera feeds, a bank robber riding off on a green rental scooter, and a detective's screen showing a scooter rental account.
+SEED COMMENT: If the Austin story holds up, the app rental wins. The donkey was a plan, a bad one, but a plan. Renting your getaway under your own account is handing the police your name. Change my mind.
+PINNED: Send this to the mate who'd ride a donkey 🫏 Vote: 1 = the donkey, 2 = the rental scooter, 3 = the app rental 👇 Dumbest Getaways, 3 (the Uber bank job was 2).
+POST WHEN: Wednesday 21 Oct 2026, 7–9 pm US Eastern (the evening slot that pushed 86 and 88).

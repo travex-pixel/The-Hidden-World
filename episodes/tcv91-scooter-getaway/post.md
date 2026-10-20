@@ -3,4 +3,4 @@ HASHTAGS: #dumbestgetaway #donkey #truecrime #bankrobbery #dumbcriminals
 ALT TEXT: Illustrated reel about the dumbest getaways: a hooded silhouette riding a small donkey past a jewellery shop with a forklift stuck in its shutter, a sack of gold in his lap, the getaway donkey crossing police camera feeds, a bank robber riding off on a green rental scooter, and a detective's screen showing a scooter rental account.
 SEED COMMENT: If the Austin story holds up, the app rental wins. The donkey was a plan, a bad one, but a plan. Renting your getaway under your own account is handing the police your name. Change my mind.
 PINNED: Send this to the mate who'd ride a donkey 🫏 Vote: 1 = the donkey, 2 = the rental scooter, 3 = the app rental 👇 Dumbest Getaways, 3 (the Uber bank job was 2).
-POST WHEN: Saturday 24 Oct 2026, 12–2 pm US Eastern (weekend lunch scroll), in the 90/91 end-card pair slot and not on the same day as 90; the donkey case is from February 2026, so there is no anniversary to wait for.
+POST WHEN: Wednesday 21 Oct 2026, 7–9 pm US Eastern (the evening slot that pushed 86 and 88).

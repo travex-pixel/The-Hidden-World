@@ -3,4 +3,4 @@ HASHTAGS: #cocainecast #wheretheyhidit #truecrime #smuggling #customs
 ALT TEXT: Illustrated reel about a cocaine leg cast and other smuggling hiding places: a plaster leg cast cracked open on a customs bench with white powder pouring out, a spray test turning the cast blue, a pineapple opened on white cylinders at a Madrid market, and a frozen shark cut open on slabs of cocaine at a Mexican port.
 SEED COMMENT: The pineapples are the only one that nearly worked. A cast on a man with a real broken leg is clever until anyone with a test kit sprays it, and X-raying a container of frozen sharks was always going to end badly.
 PINNED: Send this to the mate who'd wear the cast 🦵 Vote: 1 = the cast, 2 = the pineapples, 3 = the sharks 👇 Where They Hid It, 4.
-POST WHEN: Sunday 25 Oct 2026, 12–2 pm US Eastern (weekend lunch scroll), the day after 88's slot so the 28-second pair (88/89) posts in the same slot on consecutive days.
+POST WHEN: Friday 23 Oct 2026, 7–9 pm US Eastern, the day after Case File 90 in the same slot.
