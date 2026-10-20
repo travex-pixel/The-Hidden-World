@@ -10,9 +10,9 @@
    CASE 3 (best last): Chilean Patagonia, Feb 2012: a refrigerated truck stopped for a routine traffic violation held
    about five tonnes of ice from the Jorge Montt glacier, reportedly bound for Santiago bars as cocktail ice; the driver
    was charged with theft (accused only, silhouette).
-   Structure: frame 0 = THE IMPOSSIBLE PICTURE: a steel bridge over a creek at night filling the upper-middle, its far
-   third already gone, a silhouette kneeling at the cut edge with a torch, sparks pouring into the creek (the accent),
-   a flatbed on the bank with a cut section of the deck on it, the camera already pushing in. Then the gotcha (the
+   Structure: frame 0 = THE IMPOSSIBLE PICTURE: a steel bridge over a creek at night MISSING ITS MIDDLE (a gap over a
+   third of the span, the cut ends glowing, the far stub hanging), the flatbed below already carrying that section and
+   pulling away, the cutter on the remaining stub with the torch, sparks pouring into the creek, the camera pushing in. Then the gotcha (the
    scrapyard office: the phone with the bridge photo, the yard man lifts the desk phone: the impact; the 81 % counter),
    case 2 (the beach at night: a dump truck and a shoveller by the scooped-out sand; the rival resort by day: the officer
    scoops a sample jar), case 3 (the gravel road: the police pickup behind the box truck; the rear doors swing open on
@@ -45,8 +45,10 @@
   const flashAt = (tt, a) => (tt >= a && tt < a + 0.45 ? Math.pow(1 - (tt - a) / 0.45, 2) : 0);
 
   // ---------- the bridge geometry (shared by the set and the hero props so the loop frames match)
-  const DECK = { x0: 40, x1: 1040, y: 930, th: 24, gird: 78, cut: 740 };   // the deck is gone from cut to x1
-  const CUT = { x: DECK.cut, y: DECK.y + DECK.th + DECK.gird * 0.5 };    // where the torch bites (the near girder's cut face)
+  const DECK = { x0: 40, x1: 1040, y: 1000, th: 24, gird: 78, gapL: 400, gapR: 760 };   // the middle of the span is GONE: gapL..gapR
+  const CUT = { x: DECK.gapL, y: DECK.y + DECK.th + DECK.gird * 0.5 };    // where the torch bites (the left stub's cut face)
+  const SAG = 5;                                                           // the far stub hangs: degrees about the right abutment
+  const WATER = { y0: 1210, y1: 1330 };
 
   // steel grating: a hatched band (x, y, w, h)
   function grating(x, y, w, h, col = '#5a6470') {
@@ -69,27 +71,30 @@
     g += `<rect x="${f1(x - w / 2 - 18)}" y="${f1(y1 - 10)}" width="${f1(w + 36)}" height="26" fill="#6a6a62" stroke="${INK}" stroke-width="4"/>`;
     return g;
   }
-  // the flatbed truck on the near bank with the cut section loaded: nose to the RIGHT (generic, blank plate)
-  function flatbed(glow) {
-    let g = `<g transform="translate(820 1330)">`;
-    g += `<ellipse cx="0" cy="8" rx="300" ry="22" fill="#000" opacity="0.5"/>`;
-    g += `<rect x="-270" y="-96" width="380" height="26" fill="#2a2e34" stroke="${INK}" stroke-width="5"/>`;                   // the bed
-    g += `<rect x="-270" y="-70" width="380" height="30" fill="#1e2226" stroke="${INK}" stroke-width="4"/>`;                   // the chassis
+  // the flatbed truck on the near bank, already carrying the MISSING SECTION (a deck-length of grating and the girder
+  // with both cut ends glowing), pulling away to the right (dx); nose to the RIGHT (generic, blank plate)
+  function flatbed(glow, dx = 0) {
+    let g = `<g transform="translate(${f1(700 + dx)} 1430)">`;
+    g += `<ellipse cx="20" cy="8" rx="340" ry="22" fill="#000" opacity="0.5"/>`;
+    g += `<rect x="-310" y="-96" width="420" height="26" fill="#2a2e34" stroke="${INK}" stroke-width="5"/>`;                   // the bed
+    g += `<rect x="-310" y="-70" width="420" height="30" fill="#1e2226" stroke="${INK}" stroke-width="4"/>`;                   // the chassis
     g += `<path d="M110 -70 L110 -230 Q110 -250 130 -250 L220 -250 L262 -170 L270 -70 Z" fill="#3a4a5e" stroke="${INK}" stroke-width="5"/>`; // the cab
     g += `<path d="M130 -236 L212 -236 L246 -170 L130 -170 Z" fill="#111820"/>`;                                           // the windscreen
     g += `<rect x="190" y="-120" width="54" height="22" rx="4" fill="#e4e2da" stroke="${INK}" stroke-width="3"/>`;            // a blank plate
-    g += `<circle cx="-200" cy="-14" r="40" fill="#0c0d10" stroke="${INK}" stroke-width="5"/><circle cx="-120" cy="-14" r="40" fill="#0c0d10" stroke="${INK}" stroke-width="5"/><circle cx="200" cy="-14" r="40" fill="#0c0d10" stroke="${INK}" stroke-width="5"/>`;
-    g += `<circle cx="-200" cy="-14" r="14" fill="#3a3e46"/><circle cx="-120" cy="-14" r="14" fill="#3a3e46"/><circle cx="200" cy="-14" r="14" fill="#3a3e46"/>`;
-    g += `<ellipse cx="282" cy="-128" rx="12" ry="10" fill="#ffe9b0"/>` + wash(420, -150, 160, 60, '#ffd090', 0.14);           // the headlamp
-    // the load: a grating section and two I-beams with glowing cut ends
-    g += `<g transform="translate(-250 -96) rotate(-4)">${grating(0, -46, 300, 38)}</g>`;
-    g += `<rect x="-240" y="-166" width="260" height="24" fill="#3a4450" stroke="${INK}" stroke-width="4"/><rect x="-250" y="-200" width="230" height="24" fill="#3a4450" stroke="${INK}" stroke-width="4"/>`;
-    g += `<rect x="-240" y="-166" width="10" height="24" fill="#ffc06a" opacity="${f1(0.6 + 0.4 * glow)}"/><rect x="-250" y="-200" width="10" height="24" fill="#ffc06a" opacity="${f1(0.6 + 0.4 * glow)}"/>`;
+    g += `<circle cx="-240" cy="-14" r="40" fill="#0c0d10" stroke="${INK}" stroke-width="5"/><circle cx="-150" cy="-14" r="40" fill="#0c0d10" stroke="${INK}" stroke-width="5"/><circle cx="200" cy="-14" r="40" fill="#0c0d10" stroke="${INK}" stroke-width="5"/>`;
+    g += `<circle cx="-240" cy="-14" r="14" fill="#3a3e46"/><circle cx="-150" cy="-14" r="14" fill="#3a3e46"/><circle cx="200" cy="-14" r="14" fill="#3a3e46"/>`;
+    g += `<ellipse cx="282" cy="-128" rx="12" ry="10" fill="#ffe9b0"/>` + wash(440, -150, 180, 60, '#ffd090', 0.16);           // the headlamp, on
+    g += `<ellipse cx="-330" cy="-40" rx="26" ry="14" fill="#9aa0a8" opacity="0.35"/><ellipse cx="-368" cy="-56" rx="34" ry="18" fill="#9aa0a8" opacity="0.2"/>`;   // exhaust
+    // the load: the missing section (gapR - gapL wide) of grating and the girder, cut ends glowing at both ends
+    const L = DECK.gapR - DECK.gapL;
+    g += `<rect x="-286" y="-170" width="${L - 20}" height="${DECK.gird * 0.9}" fill="#2a323c" stroke="${INK}" stroke-width="4"/><rect x="-286" y="-160" width="${L - 20}" height="8" fill="#48525e"/><rect x="-286" y="${-170 + DECK.gird * 0.9 - 14}" width="${L - 20}" height="8" fill="#48525e"/>`;
+    g += `<g transform="translate(-300 -176) rotate(-4)">${grating(0, -40, L, 36)}</g>`;
+    g += `<rect x="-292" y="-172" width="14" height="${DECK.gird * 0.9}" fill="#ffc06a" opacity="${f1(0.6 + 0.4 * glow)}"/><rect x="${-290 + L - 24}" y="-172" width="14" height="${DECK.gird * 0.9}" fill="#ffc06a" opacity="${f1(0.6 + 0.4 * glow)}"/>` + wash(-290 + L / 2, -190, L * 0.6, 90, '#ff9a3a', f1(0.12 * glow));
     g += `</g>`;
     return g;
   }
   // THE HERO LIGHT: the torch flame at the kneeling figure's hands and the glow on the cut face. o.k 0..1 the flare
-  const HAND = { x: 706, y: 860 };
+  const HAND = { x: 378, y: 938 };
   function torchFire(t, o = {}) {
     const k = o.k ?? 0.5, fl = 0.75 + 0.25 * Math.sin(t * 23) * Math.sin(t * 7.3), a = 0.6 + 0.4 * k;
     let g = wash(CUT.x, CUT.y, 360 + 120 * k, 260 + 80 * k, '#ff9a3a', f1(0.26 * a * fl)) + wash(CUT.x, CUT.y, 180, 140, '#ffe2b0', f1(0.3 * a * fl));
@@ -99,19 +104,21 @@
     g += `<path d="M${f1(HAND.x + 10)} ${f1(HAND.y + 14)} L${f1(CUT.x - 10)} ${f1(CUT.y - 3)} L${f1(CUT.x - 10)} ${f1(CUT.y + 3)} Z" fill="#ffffff" opacity="${f1(0.9 * fl)}"/>`;
     g += `<circle cx="${f1(CUT.x - 4)}" cy="${f1(CUT.y)}" r="${f1(16 + 10 * k * fl)}" fill="#fff6e0" opacity="${f1(0.95 * fl)}"/>`;
     g += `<circle cx="${f1(CUT.x - 4)}" cy="${f1(CUT.y)}" r="${f1(40 + 20 * k)}" fill="#ffb24a" opacity="${f1(0.45 * fl)}"/>`;
-    g += cutEdge(DECK.cut, DECK.y - 2, DECK.y + DECK.th + DECK.gird, fl * a);
+    g += cutEdge(DECK.gapL, DECK.y - 2, DECK.y + DECK.th + DECK.gird, fl * a);
+    // the far stub's cut face, still warm (it hangs: rotated like the stub)
+    g += `<g transform="rotate(${SAG} ${DECK.x1} ${DECK.y})">${cutEdge(DECK.gapR, DECK.y - 2, DECK.y + DECK.th + DECK.gird, 0.35)}</g>` + wash(DECK.gapR + 10, CUT.y + 30, 140, 110, '#ff9a3a', f1(0.12 * fl));
     // the spark streaks: thrown from the cut face, arcing down into the creek (bigger than the atmos specks so they
     // read at thumbnail size); deterministic, time-driven
     const r = R(9077); let sp = '';
     for (let i = 0; i < 26; i++) {
       const life = 0.45 + r() * 0.5, ph = r() * life, vx = 60 + r() * 420, vy = -(40 + r() * 260), u = ((t + ph) % life) / life, tt = u * life;
       const x = CUT.x + vx * tt, y = CUT.y + vy * tt + 1500 * tt * tt, x2 = x - vx * 0.05, y2 = y - (vy + 3000 * tt) * 0.05;
-      if (y > 1245) continue;
+      if (y > WATER.y0 + 40) continue;
       sp += `<path d="M${f1(x2)} ${f1(y2)} L${f1(x)} ${f1(y)}" stroke="${i % 3 ? '#ffc46a' : '#fff1c8'}" stroke-width="${f1(3.5 * (1 - u) + 1.5)}" stroke-linecap="round" opacity="${f1(0.95 * (1 - u * 0.7))}"/>`;
     }
     g += `<g style="mix-blend-mode:screen">${sp}</g>`;
     // the reflection on the water
-    g += wash(CUT.x + 10, 1200, 260, 50, '#ff9a3a', f1(0.22 * a * fl)) + `<path d="M${f1(CUT.x - 120)} 1190 L${f1(CUT.x + 140)} 1190 M${f1(CUT.x - 90)} 1214 L${f1(CUT.x + 100)} 1214 M${f1(CUT.x - 60)} 1238 L${f1(CUT.x + 70)} 1238" stroke="#ffc270" stroke-width="5" opacity="${f1(0.4 * a * fl)}"/>`;
+    g += wash(CUT.x + 60, 1265, 300, 55, '#ff9a3a', f1(0.22 * a * fl)) + `<path d="M${f1(CUT.x - 80)} 1240 L${f1(CUT.x + 200)} 1240 M${f1(CUT.x - 50)} 1266 L${f1(CUT.x + 160)} 1266 M${f1(CUT.x - 20)} 1292 L${f1(CUT.x + 120)} 1292" stroke="#ffc270" stroke-width="5" opacity="${f1(0.4 * a * fl)}"/>`;
     return g;
   }
   // a generic phone held up, screen to camera, with our own drawn bridge thumbnail on it: top-left (x, y), size w x h
@@ -147,7 +154,7 @@
   }
 
   // the hero figure (the same in the hook and the end scene: the loop) and the camera it loops on
-  const HERO_FIG = { id: 'sb90_cutter', x: 640, y: DECK.y + 6, scale: 0.46, dir: 1, turn: 0.4, pose: 'torch_low', propOverride: null, silhouette: 'cool', depth: 1.0 };
+  const HERO_FIG = { id: 'sb90_cutter', x: 318, y: DECK.y + 6, scale: 0.42, dir: 1, turn: 0.4, pose: 'torch_low', propOverride: null, silhouette: 'cool', depth: 1.0 };
   const HERO_CAM0 = { x: 0, y: 0, z: 1.0 }, HERO_CAM1 = { x: 0, y: -14, z: 1.09 };
 
   // ---------- new environments (generic illustrations, not replicas of real places)
@@ -156,37 +163,39 @@
     // deck, the near girder, the far rail, two steel bents, a concrete abutment at each end), the creek, the near bank
     // with a dirt track, the flatbed with the cut section, a knocked-over "BRIDGE CLOSED" barrier. o.glow 0..1
     sb90_creek(ctx, o = {}) {
-      const t = ctx.t + (ctx.sceneStart || 0), glow = o.glow ?? 0.5;
-      let sky = `<defs><linearGradient id="sb90sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050a16"/><stop offset="1" stop-color="#14203a"/></linearGradient></defs><rect x="-400" y="-300" width="${W + 800}" height="1400" fill="url(#sb90sk)"/>` + E.cine.stars(t, 70, 9011, -200, 640) + `<circle cx="220" cy="300" r="40" fill="#f3ecd8" opacity="0.9"/><circle cx="220" cy="300" r="130" fill="#f3ecd8" opacity="0.05"/>`;
-      // the tree lines (far), the far bank
+      const t = ctx.t + (ctx.sceneStart || 0), glow = o.glow ?? 0.5, dx = o.dx || 0;
+      let sky = `<defs><linearGradient id="sb90sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050a16"/><stop offset="1" stop-color="#14203a"/></linearGradient></defs><rect x="-400" y="-300" width="${W + 800}" height="1500" fill="url(#sb90sk)"/>` + E.cine.stars(t, 70, 9011, -200, 700) + `<circle cx="220" cy="300" r="40" fill="#f3ecd8" opacity="0.9"/><circle cx="220" cy="300" r="130" fill="#f3ecd8" opacity="0.05"/>`;
+      // the tree lines (far), the far bank down to the water
       const r = R(9012); let trees = '';
-      for (let x = -300; x < W + 300; x += 44) { const h = 180 + r() * 220; trees += `<path d="M${x} 840 L${x + 22} ${f1(840 - h)} L${x + 44} 840 Z" fill="#0d1a22"/>`; }
-      trees += `<rect x="-400" y="820" width="${W + 800}" height="340" fill="#16231c"/>` + wash(540, 760, 900, 200, '#1e3a4a', 0.2);
-      // the far rail (behind the figure) on the remaining deck
-      let rail = '';
-      for (let x = DECK.x0 + 30; x < DECK.cut - 10; x += 110) rail += `<rect x="${x}" y="${DECK.y - 70}" width="12" height="70" fill="#3a4450" stroke="${INK}" stroke-width="3"/>`;
-      rail += `<rect x="${DECK.x0 + 20}" y="${DECK.y - 74}" width="${DECK.cut - DECK.x0 - 36}" height="10" fill="#4a5562" stroke="${INK}" stroke-width="3"/><rect x="${DECK.x0 + 20}" y="${DECK.y - 40}" width="${DECK.cut - DECK.x0 - 36}" height="6" fill="#4a5562"/>`;
-      // the bridge: the deck grating and the near girder from the left abutment to the cut; the bents; the abutments
-      let bridge = `<rect x="-60" y="${DECK.y - 30}" width="120" height="${DECK.th + DECK.gird + 60}" fill="#6a6a62" stroke="${INK}" stroke-width="5"/><rect x="${DECK.x1 - 20}" y="${DECK.y - 30}" width="140" height="${DECK.th + DECK.gird + 60}" fill="#6a6a62" stroke="${INK}" stroke-width="5"/>`;
-      bridge += bent(330, DECK.y + DECK.th + DECK.gird, 1150) + bent(700, DECK.y + DECK.th + DECK.gird, 1150) + bent(960, DECK.y + DECK.th + DECK.gird, 1150);
-      bridge += grating(DECK.x0, DECK.y, DECK.cut - DECK.x0, DECK.th);
-      bridge += `<rect x="${DECK.x0}" y="${DECK.y + DECK.th}" width="${DECK.cut - DECK.x0}" height="${DECK.gird}" fill="#2a323c" stroke="${INK}" stroke-width="5"/>`;
-      bridge += `<rect x="${DECK.x0}" y="${DECK.y + DECK.th + 8}" width="${DECK.cut - DECK.x0}" height="8" fill="#48525e"/><rect x="${DECK.x0}" y="${DECK.y + DECK.th + DECK.gird - 16}" width="${DECK.cut - DECK.x0}" height="8" fill="#48525e"/>`;
-      for (let x = DECK.x0 + 20; x < DECK.cut - 10; x += 40) bridge += `<circle cx="${x}" cy="${DECK.y + DECK.th + DECK.gird / 2}" r="4" fill="#48525e"/>`;
-      // the stub of girder left on the right abutment, its cut end glowing faintly
-      bridge += `<rect x="${DECK.x1 - 40}" y="${DECK.y + DECK.th}" width="60" height="${DECK.gird}" fill="#2a323c" stroke="${INK}" stroke-width="5"/><rect x="${DECK.x1 - 40}" y="${DECK.y}" width="60" height="${DECK.th}" fill="#2e3640" stroke="${INK}" stroke-width="4"/><rect x="${DECK.x1 - 44}" y="${DECK.y}" width="8" height="${DECK.th + DECK.gird}" fill="#c08a4a" opacity="0.7"/>`;
-      // the creek: dark water with slow ripples and the moon's broken reflection
-      let water = `<rect x="-400" y="1150" width="${W + 800}" height="120" fill="#0b1620"/>`;
-      for (let i = 0; i < 9; i++) { const y = 1162 + i * 12, ph = Math.sin(t * 0.8 + i) * 30; water += `<path d="M-400 ${y} Q${200 + ph} ${y - 4} ${600 + ph} ${y} T${W + 400} ${y}" fill="none" stroke="#1d3344" stroke-width="3" opacity="0.7"/>`; }
-      water += `<path d="M160 1172 L300 1172 M190 1196 L270 1196 M210 1220 L250 1220" stroke="#d8d4c4" stroke-width="4" opacity="0.18"/>`;
-      // the near bank: dark earth, grass tufts, a dirt track at the right, the barrier at the left
-      let ground = `<path d="M-400 1270 Q300 1240 700 1262 T${W + 400} 1250 L${W + 400} ${H + 300} L-400 ${H + 300} Z" fill="#1a2018"/>`;
-      ground += `<path d="M520 1300 Q800 1280 ${W + 400} 1292 L${W + 400} 1420 Q800 1400 520 1420 Z" fill="#2a2820" opacity="0.9"/>`;
+      for (let x = -300; x < W + 300; x += 44) { const h = 180 + r() * 220; trees += `<path d="M${x} 900 L${x + 22} ${f1(900 - h)} L${x + 44} 900 Z" fill="#0d1a22"/>`; }
+      trees += `<rect x="-400" y="880" width="${W + 800}" height="${WATER.y0 - 880 + 10}" fill="#16231c"/>` + wash(540, 840, 900, 200, '#1e3a4a', 0.2);
+      const Y = DECK.y, TH = DECK.th, GD = DECK.gird, L0 = DECK.x0, L1 = DECK.gapL, R0 = DECK.gapR, R1 = DECK.x1;
+      // a stub of the bridge from xa to xb: the far rail, the grating, the near girder with its rivets
+      const rail = (xa, xb) => { let g = ''; for (let x = xa + 30; x < xb - 10; x += 110) g += `<rect x="${x}" y="${Y - 70}" width="12" height="70" fill="#3a4450" stroke="${INK}" stroke-width="3"/>`;
+        return g + `<rect x="${xa + 20}" y="${Y - 74}" width="${xb - xa - 36}" height="10" fill="#4a5562" stroke="${INK}" stroke-width="3"/><rect x="${xa + 20}" y="${Y - 40}" width="${xb - xa - 36}" height="6" fill="#4a5562"/>`; };
+      const stub = (xa, xb) => { let g = grating(xa, Y, xb - xa, TH) + `<rect x="${xa}" y="${Y + TH}" width="${xb - xa}" height="${GD}" fill="#2a323c" stroke="${INK}" stroke-width="5"/>`;
+        g += `<rect x="${xa}" y="${Y + TH + 8}" width="${xb - xa}" height="8" fill="#48525e"/><rect x="${xa}" y="${Y + TH + GD - 16}" width="${xb - xa}" height="8" fill="#48525e"/>`;
+        for (let x = xa + 20; x < xb - 10; x += 40) g += `<circle cx="${x}" cy="${Y + TH + GD / 2}" r="4" fill="#48525e"/>`; return g; };
+      const hang = `transform="rotate(${SAG} ${R1} ${Y})"`;   // the far stub hangs from the right abutment
+      let railL = rail(L0, L1) + `<g ${hang}>${rail(R0, R1)}</g>`;
+      // the abutments, the bents (the middle one bare under the gap), the two stubs; the bare bent's cap glows faintly
+      let bridge = `<rect x="-60" y="${Y - 30}" width="120" height="${TH + GD + 60}" fill="#6a6a62" stroke="${INK}" stroke-width="5"/><rect x="${R1 - 20}" y="${Y - 30}" width="140" height="${TH + GD + 60}" fill="#6a6a62" stroke="${INK}" stroke-width="5"/>`;
+      bridge += bent(220, Y + TH + GD, WATER.y0) + bent(580, Y + TH + GD - 4, WATER.y0) + bent(900, Y + TH + GD + 30, WATER.y0);
+      bridge += `<rect x="${560}" y="${Y + TH + GD - 18}" width="40" height="14" fill="#c08a4a" opacity="0.7"/>`;
+      bridge += stub(L0, L1) + `<g ${hang}>${stub(R0, R1)}</g>`;
+      // the creek: dark water with slow ripples and the moon's broken reflection, seen THROUGH the gap
+      let water = `<rect x="-400" y="${WATER.y0}" width="${W + 800}" height="${WATER.y1 - WATER.y0}" fill="#0b1620"/>`;
+      for (let i = 0; i < 9; i++) { const y = WATER.y0 + 12 + i * 12, ph = Math.sin(t * 0.8 + i) * 30; water += `<path d="M-400 ${y} Q${200 + ph} ${y - 4} ${600 + ph} ${y} T${W + 400} ${y}" fill="none" stroke="#1d3344" stroke-width="3" opacity="0.7"/>`; }
+      water += `<path d="M160 ${WATER.y0 + 22} L300 ${WATER.y0 + 22} M190 ${WATER.y0 + 46} L270 ${WATER.y0 + 46} M210 ${WATER.y0 + 70} L250 ${WATER.y0 + 70}" stroke="#d8d4c4" stroke-width="4" opacity="0.18"/>`;
+      // the near bank: dark earth, grass tufts, a dirt track at the right, the barrier at the left, the flatbed pulling away
+      const G = WATER.y1;
+      let ground = `<path d="M-400 ${G + 10} Q300 ${G - 20} 700 ${G + 2} T${W + 400} ${G - 10} L${W + 400} ${H + 300} L-400 ${H + 300} Z" fill="#1a2018"/>`;
+      ground += `<path d="M380 ${G + 70} Q800 ${G + 50} ${W + 400} ${G + 62} L${W + 400} ${G + 190} Q800 ${G + 170} 380 ${G + 190} Z" fill="#2a2820" opacity="0.9"/>`;
       const r2 = R(9013);
-      for (let i = 0; i < 40; i++) { const x = -300 + r2() * (W + 600), y = 1280 + r2() * 500; ground += `<path d="M${f1(x)} ${f1(y)} l-8 -22 l8 6 l8 -8 l-2 24" fill="#26361e" opacity="0.8"/>`; }
-      ground += `<g transform="translate(150 1300) rotate(-18)"><rect x="-90" y="-60" width="180" height="40" rx="4" fill="#d8d4c4" stroke="${INK}" stroke-width="4"/><text x="0" y="-32" text-anchor="middle" ${TYPE} font-size="24" fill="#3a3a3a">BRIDGE CLOSED</text><path d="M-70 -20 L-90 40 M70 -20 L90 40" stroke="#a09a88" stroke-width="8"/></g>`;
-      ground += flatbed(glow);
-      return { light: { dir: 1, rim: '#ffb86a', key: '#c8d4e8' }, layers: [[0.05, sky], [0.3, trees], [0.9, rail], [0.97, bridge], [0.97, water], [0.98, ground]] };
+      for (let i = 0; i < 40; i++) { const x = -300 + r2() * (W + 600), y = G + 20 + r2() * 480; ground += `<path d="M${f1(x)} ${f1(y)} l-8 -22 l8 6 l8 -8 l-2 24" fill="#26361e" opacity="0.8"/>`; }
+      ground += `<g transform="translate(150 ${G + 50}) rotate(-18)"><rect x="-90" y="-60" width="180" height="40" rx="4" fill="#d8d4c4" stroke="${INK}" stroke-width="4"/><text x="0" y="-32" text-anchor="middle" ${TYPE} font-size="24" fill="#3a3a3a">BRIDGE CLOSED</text><path d="M-70 -20 L-90 40 M70 -20 L90 40" stroke="#a09a88" stroke-width="8"/></g>`;
+      ground += flatbed(glow, dx);
+      return { light: { dir: 1, rim: '#ffb86a', key: '#c8d4e8' }, layers: [[0.05, sky], [0.3, trees], [0.9, railL], [0.97, bridge], [0.97, water], [0.98, ground]] };
     },
 
     // a scrapyard office at night: a wall with a plain sign, a window onto a floodlit scrap pile and a crane claw, a
@@ -315,7 +324,7 @@
       const t = ctx.t, l2 = LS(ctx, 1, 2.5), fe = WT(ctx, 1, 0, 2.5), tc = WT(ctx, 1, 4, 3.6);
       const k = 0.5 + 0.5 * seg(t, fe, fe + 0.5) - 0.3 * seg(t, tc + 0.8, tc + 1.6);
       return E.cine.shot(ctx, {
-        set: 'sb90_creek', setOpts: { glow: k }, grade: 'night', haze: 0.3,
+        set: 'sb90_creek', setOpts: { glow: k, dx: 70 * seg(t, 0, Math.max(3.5, ctx.T)) }, grade: 'night', haze: 0.3,
         cam: { from: HERO_CAM0, to: HERO_CAM1 },
         sparks: { x: CUT.x - 4, y: CUT.y, n: 44, col: '#ffc46a', d: 1.06 },
         figures: [
@@ -323,8 +332,8 @@
         ],
         props: [{ depth: 1.04, accent: true, svg: tt => torchFire(tt, { k }) }],
         overlays: [
-          { type: 'label', at: Math.max(3.05, l2 + 0.25), x: 60, y: 1232, text: 'NORTH BEAVER TWP, PENNSYLVANIA · OCT 2011', fs: 28, sub: 'State police: about 50 ft, cut with a torch' },
-          { type: 'callout', at: Math.max(3.1, tc + 0.1), target: [700, 1180], label: [1040, 760], anchor: 'end', w: 460, fs: 30, text: '31,000 LB OF STEEL', sub: 'Per the criminal complaint', r: 70, depth: 0.98 }
+          { type: 'label', at: Math.max(3.05, l2 + 0.25), x: 60, y: 1180, text: 'NORTH BEAVER TWP, PENNSYLVANIA · OCT 2011', fs: 28, sub: 'State police: about 50 ft, cut with a torch' },
+          { type: 'callout', at: Math.max(3.1, tc + 0.1), target: [600, 1300], label: [1040, 800], anchor: 'end', w: 460, fs: 30, text: '31,000 LB OF STEEL', sub: 'Per the criminal complaint', r: 70, depth: 0.98 }
         ],
         tag: TAG
       });
