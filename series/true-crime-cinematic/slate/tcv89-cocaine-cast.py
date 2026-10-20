@@ -37,9 +37,9 @@ def build(h):
         #     blue reagent stain on the plaster, crutches leaning at the bench's end, the camera already pushing in; the
         #     officer behind the bench with his clipboard, the passenger (silhouette) seated at the left
         S("s01_hook", "cc89_hook", [N("Police say his leg cast was made of cocaine.", tone="hook", speed=1.08),
-                                    N("5 kilos. Six beer cans, cocaine inside.", tone="tense")],
-          "tension", ["K_hook", "K_total", "K_cans"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.26), fw(0, 4, "thump", 0.26, 0.0), fw(0, 8, "puff", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.05), fw(1, 2, "click", 0.26, 0.0), fw(1, 5, "tick", 0.22, 0.0)],
-          emph=["police", "leg", "cast", "cocaine.", "5", "kilos", "six", "beer", "cans,", "inside."], min_d=4.6, pad=0.35),   # the line ends before the cue change (the bed rises at the cut)
+                                    N("5 kilos. Cocaine inside six beer cans.", tone="tense")],
+          "tension", ["K_hook", "K_total", "K_cans"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.26), fw(0, 4, "thump", 0.26, 0.0), fw(0, 8, "puff", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.05), fw(1, 2, "tick", 0.22, 0.0), fw(1, 6, "click", 0.26, 0.0)],
+          emph=["police", "leg", "cast", "cocaine.", "5", "kilos.", "inside", "six", "beer", "cans."], min_d=4.6, pad=0.35),   # the line ends before the cue change (the bed rises at the cut)
         # A - THE GOTCHA (before 9 s): close on the bench; the officer's spray bottle mists the cast on "spray"; on "blue"
         #     the blue stain blooms across the plaster (the single impact); the arrested label
         S("s02_spray", "cc89_spray", [N("One spray test. The cast turned bright blue.", tone="reveal", pause_before=0.3)],
@@ -53,9 +53,9 @@ def build(h):
           emph=["not", "strangest.", "pineapples.", "hollowed", "packed", "cocaine."], min_d=4.0, pad=0.12, tr="dissolve"),
         # B - CASE 2's GOTCHA: closer on the pallet; the inspector holds up the halved pineapple with the cylinders inside;
         #     the 67 KG counter on "67"; the seven-arrested label
-        S("s04_cut", "cc89_cut", [N("Seized at Madrid's market. 67 kilos. Seven arrested.", tone="reveal", pause_before=0.3)],
+        S("s04_cut", "cc89_cut", [N("Caught at Madrid's market. 67 kilos. Seven arrested.", tone="reveal", pause_before=0.3)],
           "tension", ["K_seized", "K_route"], sfx=[fw(0, 0, "riser", 0.2, -0.5), fw(0, 0, "hit", 0.4, -0.03), fw(0, 3, "thud", 0.24, 0.0), fw(0, 4, "tick", 0.22, 0.0), fw(0, 7, "cuffs", 0.32, 0.0)],
-          emph=["seized", "madrid's", "market.", "67", "kilos.", "seven", "arrested."], min_d=4.2, pad=0.15, tr="cut"),
+          emph=["caught", "madrid's", "market.", "67", "kilos.", "seven", "arrested."], min_d=4.2, pad=0.15, tr="cut"),
         # C - REHOOK + CASE 3: the port at dusk; the open container; frozen sharks on a pallet; the navy inspector walks in
         #     from the right and on "sharks" crouches to the biggest one
         S("s05_dock", "cc89_dock", [N("Then Mexico. Frozen sharks.", tone="tense")],
@@ -72,7 +72,7 @@ def build(h):
           "aftermath", ["K_leg"], sfx=[fw(0, 2, "tick", 0.24, 0.0), fw(0, 4, "sub", 0.3, 0.0), fw(0, 4, "beep", 0.22, 0.05)],
           emph=["leg?", "really", "broken."], min_d=2.2, pad=0.2, tr="zoom"),
     ]
-    sections = {"s01_hook": "A", "s02_spray": "A", "s03_pine": "B", "s04_cut": "B", "s05_dock": "B", "s06_shark": "D", "s07_end": "E"}   # s05 on the pulse, not the metal swells: the bed stayed within 10 dB of "Mexico"
+    sections = {"s01_hook": "A", "s02_spray": "A", "s03_pine": "B", "s04_cut": "B", "s05_dock": "C", "s06_shark": "D", "s07_end": "E"}
     cases = {"s01_hook": "cast", "s02_spray": "cast", "s03_pine": "pineapples", "s04_cut": "pineapples",
              "s05_dock": "sharks", "s06_shark": "sharks", "s07_end": "cast"}
     for sc in scenes:
@@ -112,7 +112,7 @@ def build(h):
           ["nbcap", "police1cast", "rnz", "rte", "emol"]),
         C("K_total", "Altogether he carried about 5 kg of cocaine (AP: 'about 5 kilograms (11 pounds)'; RNZ: 4.85 kg). Narration: '5 kilos.'",
           ["nbcap", "police1cast", "rnz", "rte"]),
-        C("K_cans", "More cocaine was hidden in six beer cans that had been emptied, packed with the drug and resealed, and inside the legs of two small folding stools. Narration: 'Six beer cans, cocaine inside.' (No report mentions seat covers.)",
+        C("K_cans", "More cocaine was hidden in six beer cans that had been emptied, packed with the drug and resealed, and inside the legs of two small folding stools. Narration: 'Cocaine inside six beer cans.' (No report mentions seat covers.)",
           ["nbcap", "police1cast", "rte", "emol"]),
         C("K_spray", "Police detected the drug by spraying the cast with a chemical reagent that turns bright blue on contact with cocaine. Narration (gotcha): 'One spray test. The cast turned bright blue.' Callout 'TURNED BRIGHT BLUE'.",
           ["nbcap", "police1cast", "rnz", "abc6"]),
@@ -122,7 +122,7 @@ def build(h):
           ["dailymav", "inquirer", "thelocal", "euronews", "ticotimes"]),
         C("K_wax", "FUN FACT: each pineapple held roughly 800 g to 1 kg of cocaine, and the fruit was sealed with wax to mask the chemical smell. Card 'EACH PINEAPPLE: ABOUT A KILO / SEALED WITH WAX / TO HIDE THE SMELL'.",
           ["inquirer", "thelocal", "dailymav", "eju"]),
-        C("K_seized", "STATISTIC (counter 67 KG): the seizure at the Madrid market was 67 kg (148 lb); seven people were arrested, three in Madrid and four in Barcelona. Narration (gotcha): 'Seized at Madrid's market. 67 kilos. Seven arrested.' Label 'SEVEN ARRESTED · 3 MADRID, 4 BARCELONA'. Accused only; nobody named.",
+        C("K_seized", "STATISTIC (counter 67 KG): the seizure at the Madrid market was 67 kg (148 lb); seven people were arrested, three in Madrid and four in Barcelona. Narration (gotcha): 'Caught at Madrid's market. 67 kilos. Seven arrested.' Label 'SEVEN ARRESTED · 3 MADRID, 4 BARCELONA'. Accused only; nobody named.",
           ["dailymav", "inquirer", "thelocal", "ticotimes"]),
         C("K_route", "The pineapples came from Costa Rica by ship to the Portuguese port of Setubal and then overland to Madrid.",
           ["dailymav", "inquirer", "thelocal", "ticotimes"]),
