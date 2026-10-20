@@ -510,3 +510,5 @@
 - 2026-10-20 12:38:27 tcv91-scooter-getaway: rendering (final60, seed 1)
 - 2026-10-20 13:01:29 tcv91-scooter-getaway: rendered in 1382s
 - 2026-10-20 13:02:09 tcv91-scooter-getaway: VERIFIED -> series/true-crime-cinematic/output/true_crime_91_scooter_getaway.mp4 (28.0s, 15.1 MB, sha256 52b4b70a8144)
+- 2026-10-20 13:04:27 produce 90 --force: regenerating episode data
+- 2026-10-20 13:04:27 tcv90-stolen-bridge: rendering (final60, seed 1)
