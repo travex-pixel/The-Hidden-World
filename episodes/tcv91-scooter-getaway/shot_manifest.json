@@ -685,7 +685,7 @@
      ]
     }
    ],
-   "visual_description": "sg91 bank (warm grade); sg91_robber_cv (silhouette): stand_tense -> examine -> stand -> stand_tense (walks); camera push/pull; overlays: label 'CHULA VISTA, CALIFORNIA · OCT 2019', callout 'A RENTAL SCOOTER'.",
+   "visual_description": "sg91 bank (warm grade); sg91_robber_cv (silhouette): stand_tense -> examine (walks); sg91_robber_cv (silhouette): stand -> stand_tense; camera push/pull; overlays: label 'CHULA VISTA, CALIFORNIA · OCT 2019', callout 'A RENTAL SCOOTER'.",
    "shot_size": "medium-wide",
    "set": "sg91_bank",
    "grade": "warm",
@@ -718,18 +718,6 @@
        "at": 1.96,
        "pose": "examine",
        "turn_head": true
-      },
-      {
-       "at": 3.08,
-       "pose": "stand",
-       "turn_head": true,
-       "move": true
-      },
-      {
-       "at": 3.2,
-       "pose": "stand_tense",
-       "turn_head": true,
-       "move": true
       }
      ],
      "walk": {
@@ -738,7 +726,36 @@
       "at": 0.05,
       "dur": 1.8619999999999997
      },
-     "silhouette": "cool"
+     "silhouette": "cool",
+     "visible": [
+      -1,
+      3.08
+     ]
+    },
+    {
+     "id": "sg91_robber_cv",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.7,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 3.08,
+       "turn_head": true
+      },
+      {
+       "at": 3.2,
+       "pose": "stand_tense",
+       "turn_head": true,
+       "move": true
+      }
+     ],
+     "silhouette": "cool",
+     "visible": [
+      3.08,
+      5.29
+     ]
     }
    ],
    "overlays": [
@@ -1097,7 +1114,7 @@
      ]
     }
    ],
-   "visual_description": "sg91 downtown (dawn grade); sg91_teen_atx (silhouette): stand -> examine -> stand -> stand_tense (walks); camera push/pull; overlays: label 'AUSTIN, TEXAS · DEC 2018 · POLICE SAY', counter, label 'US and Canada, a record (NACTO, July 2024)'.",
+   "visual_description": "sg91 downtown (dawn grade); sg91_teen_atx (silhouette): stand -> examine (walks); sg91_teen_atx (silhouette): stand -> stand_tense; camera push/pull; overlays: label 'AUSTIN, TEXAS · DEC 2018 · POLICE SAY', counter, label 'US and Canada, a record (NACTO, July 2024)'.",
    "shot_size": "medium-wide",
    "set": "sg91_downtown",
    "grade": "dawn",
@@ -1130,17 +1147,6 @@
        "at": 1.37,
        "pose": "examine",
        "turn_head": true
-      },
-      {
-       "at": 1.97,
-       "pose": "stand",
-       "turn_head": true,
-       "move": true
-      },
-      {
-       "at": 2.21,
-       "pose": "stand_tense",
-       "move": true
       }
      ],
      "walk": {
@@ -1149,7 +1155,35 @@
       "at": 0,
       "dur": 1.2680000000000022
      },
-     "silhouette": "cool"
+     "silhouette": "cool",
+     "visible": [
+      -1,
+      1.97
+     ]
+    },
+    {
+     "id": "sg91_teen_atx",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.72,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.97,
+       "turn_head": true
+      },
+      {
+       "at": 2.21,
+       "pose": "stand_tense",
+       "move": true
+      }
+     ],
+     "silhouette": "cool",
+     "visible": [
+      1.97,
+      4.75
+     ]
     }
    ],
    "overlays": [

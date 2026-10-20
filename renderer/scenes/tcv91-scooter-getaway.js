@@ -337,9 +337,12 @@
         set: 'sg91_bank', setOpts: { view: 'wide' }, grade: 'warm', haze: 0.25,
         cam: { from: { x: -20, y: 20, z: 1.0 }, to: { x: 20, y: 30, z: 1.06 } },
         figures: [
-          { id: 'sg91_robber_cv', x: SX - 110, y: 1600, scale: 0.7, dir: 1, turn: 0.45, pose: 'stand_tense', silhouette: 'cool', depth: 1.0,
+          // on foot from the door to the kerb (a `walk` pins x, so the ride is a second entry of the same figure on the deck)
+          { id: 'sg91_robber_cv', x: SX - 110, y: 1600, scale: 0.7, dir: 1, turn: 0.45, pose: 'stand_tense', silhouette: 'cool', depth: 1.0, show: [-1, rn],
             walk: { at: 0.05, dur: Math.max(0.9, l2 - 0.1), cadence: 3.6, stride: 14, from: 600, to: SX - 110 },
-            keys: [{ at: l2, pose: 'examine', headTurn: 0.2, dur: 0.4 }, { at: rn, x: SX - 125, y: 1510, pose: 'stand', headTurn: 0.3, dur: 0.35 }, { at: sc, x: X1 - 125, y: 1510, pose: 'stand_tense', headTurn: 0.1, dur: D }] }
+            keys: [{ at: l2, pose: 'examine', headTurn: 0.2, dur: 0.4 }] },
+          { id: 'sg91_robber_cv', x: SX - 125, y: 1510, scale: 0.7, dir: 1, turn: 0.45, pose: 'stand', silhouette: 'cool', depth: 1.0, show: [rn, T + 1],
+            keys: [{ at: rn, headTurn: 0.3, dur: 0.3 }, { at: sc, x: X1 - 125, pose: 'stand_tense', headTurn: 0.1, dur: D }] }
         ],
         props: [
           // the scooter at the kerb, then under him as he rides off right
@@ -387,9 +390,12 @@
         set: 'sg91_downtown', grade: 'dawn', haze: 0.3,
         cam: { from: { x: -20, y: 20, z: 1.02 }, to: { x: 10, y: 30, z: 1.08 } },
         figures: [
-          { id: 'sg91_teen_atx', x: SX - 130, y: 1580, scale: 0.72, dir: 1, turn: 0.45, pose: 'stand', silhouette: 'cool', depth: 1.0,
+          // on foot to the dock, then (a second entry: a `walk` pins x) on the deck for the ride
+          { id: 'sg91_teen_atx', x: SX - 130, y: 1580, scale: 0.72, dir: 1, turn: 0.45, pose: 'stand', silhouette: 'cool', depth: 1.0, show: [-1, rn + 0.4],
             walk: { at: 0.0, dur: Math.max(0.8, rn - 0.3), cadence: 3.6, stride: 14, from: 200, to: SX - 130 },
-            keys: [{ at: rn - 0.2, pose: 'examine', headTurn: 0.2, dur: 0.3 }, { at: rn + 0.4, x: SX - 125, y: 1510, pose: 'stand', headTurn: 0.1, dur: 0.3 }, { at: gw, x: X1 - 125, y: 1510, pose: 'stand_tense', dur: D }] }
+            keys: [{ at: rn - 0.2, pose: 'examine', headTurn: 0.2, dur: 0.3 }] },
+          { id: 'sg91_teen_atx', x: SX - 125, y: 1510, scale: 0.72, dir: 1, turn: 0.45, pose: 'stand', silhouette: 'cool', depth: 1.0, show: [rn + 0.4, T + 1],
+            keys: [{ at: rn + 0.4, headTurn: 0.1, dur: 0.3 }, { at: gw, x: X1 - 125, pose: 'stand_tense', dur: D }] }
         ],
         props: [
           // the dock: two scooters stay, the third goes with him; the phone glow on "rented"
