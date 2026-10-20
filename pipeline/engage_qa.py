@@ -121,4 +121,13 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
         checks["under_32s"] = total <= 32.5; notes["total_s"] = round(total, 2)
         head_up = " ".join(l.get("text", "") for l in (ep.get("hook_title") or {}).get("lines", [])).upper()
         checks["no_part_on_frame_1"] = not re.search(r"\bPART\b", head_up)
+        if (ep.get("engagement_version") or 1) >= 7:
+            # v7 (the seed test on Case Files 83-88: the three reels whose headline opened on "POLICE SAY" over an ordinary
+            # picture skipped at 36-49 % and never left their first 200 viewers; the three that opened on the absurd object
+            # skipped at 21-29 % and were pushed): the headline's first line leads with the object, never the attribution
+            # (which stays in line 2, a label and the spoken line). And the 28-second cut is the standard (88: 2,214 views
+            # at 7 h, 57 % of its length watched, 38 % to the end).
+            first = (((ep.get("hook_title") or {}).get("lines") or [{}])[0].get("text") or "").upper()
+            checks["headline_leads_with_object"] = not re.match(r"\s*(?:(?:POLICE|PROSECUTORS|OFFICERS|DEPUTIES|AUTHORITIES|COPS|INVESTIGATORS)\s+SAY\b|ACCUSED\b|ALLEGED)", first)
+            checks["under_29_5s"] = total <= 29.5
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}

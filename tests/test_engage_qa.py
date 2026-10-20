@@ -148,3 +148,24 @@ class VersionSix(unittest.TestCase):
     def test_v5_episodes_are_not_rejudged(self):
         ep = self.ep(); ep["engagement_version"] = 5
         self.assertNotIn("headline_case_first_9s", engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"])
+
+
+class VersionSeven(VersionSix):
+    """v7: the headline leads with the object, not "POLICE SAY"; 29.5 s cap (the 28-second cut)."""
+    def ep(self):
+        e = super().ep(); e["engagement_version"] = 7; return e
+
+    def test_object_first_headline_and_28s_cut_pass(self):
+        c = engage_qa.analyse({"episode": self.ep()}, self.tl(ends=(4.5, 9.2, 17, 25.5, 28.2)), None)["checks"]
+        self.assertTrue(c["headline_leads_with_object"]); self.assertTrue(c["under_29_5s"]); self.assertTrue(c["under_32s"])
+
+    def test_police_say_first_and_31s_fail(self):
+        ep = self.ep(); ep["hook_title"]["lines"][0]["text"] = "POLICE SAY HE ROBBED"
+        c = engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"]   # 31.2 s
+        self.assertFalse(c["headline_leads_with_object"]); self.assertFalse(c["under_29_5s"])
+        ep["hook_title"]["lines"][0]["text"] = "ACCUSED OF ROBBING"
+        self.assertFalse(engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"]["headline_leads_with_object"])
+
+    def test_v6_episodes_are_not_rejudged_by_v7(self):
+        ep = self.ep(); ep["engagement_version"] = 6
+        self.assertNotIn("headline_leads_with_object", engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"])
