@@ -1,7 +1,7 @@
 {
  "episode": "tcv91-scooter-getaway",
  "title": "Getaway Vehicle: A Donkey",
- "duration": 28.393,
+ "duration": 28.036,
  "slideshow_risk": {
   "shots": 7,
   "composed_shots": 7,
@@ -10,12 +10,12 @@
   "distinct_sets": 5,
   "max_set_share": 0.29,
   "shot_sizes": {
-   "wide": 2,
+   "wide": 1,
    "close-up": 2,
-   "medium-wide": 2,
+   "medium-wide": 3,
    "medium": 1
   },
-  "max_shot_size_share": 0.29,
+  "max_shot_size_share": 0.43,
   "ok": true
  },
  "production_status": {},
@@ -140,7 +140,7 @@
      "id": "sg91_rider",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.5,
+     "scale": 0.54,
      "start_pose": "sit",
      "start_expr": "neutral",
      "actions": [
@@ -414,7 +414,7 @@
      ]
     }
    ],
-   "visual_description": "sg91 cctv room (cold grade); sg91_officer_tr: sit -> sit_type -> point_up -> arms_crossed -> arms_crossed; camera push/pull; overlays: impact, label 'SENTENCED · 9 YEARS 7 MONTHS', funfact 'THE INDICTMENT ASKED FOR / UP TO 16 YEARS / FOR THE DONKEY GETAWAY / Kayseri prosecutors, 2026 (NTV, CNN Türk, Diken)'.",
+   "visual_description": "sg91 cctv room (cold grade); sg91_officer_tr: stand -> examine -> point_up -> arms_crossed -> arms_crossed; camera push/pull; overlays: impact, label 'SENTENCED · 9 YEARS 7 MONTHS', funfact 'THE INDICTMENT ASKED FOR / UP TO 16 YEARS / FOR THE DONKEY GETAWAY / Kayseri prosecutors, 2026 (NTV, CNN Türk, Diken)'.",
    "shot_size": "close-up",
    "set": "sg91_cctv_room",
    "grade": "cold",
@@ -440,12 +440,12 @@
      "outfit": "default",
      "depth": 1,
      "scale": 1.15,
-     "start_pose": "sit",
+     "start_pose": "stand",
      "start_expr": "focused",
      "actions": [
       {
        "at": 0.1,
-       "pose": "sit_type",
+       "pose": "examine",
        "expr": "focused",
        "turn_head": true
       },
@@ -1514,71 +1514,61 @@
    "id": "s07_end",
    "scene_type": "sg91_end",
    "start": 25.179,
-   "duration": 3.214,
+   "duration": 2.857,
    "narration": [
-    "His way in? He rammed the shop with a forklift."
+    "His way in? A forklift, through the shutter."
    ],
    "caption_timings": [
     {
      "line": 0,
      "start": 25.479,
-     "end": 28.091,
+     "end": 27.932,
      "words": [
       {
        "w": "His",
-       "start": 25.519,
-       "end": 25.719
+       "start": 25.529,
+       "end": 25.739
       },
       {
        "w": "way",
-       "start": 25.709,
-       "end": 25.919
+       "start": 25.729,
+       "end": 25.939
       },
       {
        "w": "in?",
-       "start": 25.909,
-       "end": 26.069
+       "start": 25.929,
+       "end": 26.089
       },
       {
-       "w": "He",
-       "start": 26.059,
-       "end": 26.219
+       "w": "A",
+       "start": 26.079,
+       "end": 26.199
       },
       {
-       "w": "rammed",
-       "start": 26.209,
-       "end": 26.729
+       "w": "forklift,",
+       "start": 26.189,
+       "end": 26.809
+      },
+      {
+       "w": "through",
+       "start": 26.799,
+       "end": 27.249
       },
       {
        "w": "the",
-       "start": 26.719,
-       "end": 26.919
+       "start": 27.239,
+       "end": 27.449
       },
       {
-       "w": "shop",
-       "start": 26.909,
-       "end": 27.159
-      },
-      {
-       "w": "with",
-       "start": 27.149,
-       "end": 27.459
-      },
-      {
-       "w": "a",
-       "start": 27.449,
-       "end": 27.569
-      },
-      {
-       "w": "forklift.",
-       "start": 27.559,
-       "end": 27.989
+       "w": "shutter.",
+       "start": 27.439,
+       "end": 27.829
       }
      ]
     }
    ],
    "visual_description": "sg91 street (night grade); sg91_rider (silhouette): sit; keyed camera moves.",
-   "shot_size": "wide",
+   "shot_size": "medium-wide",
    "set": "sg91_street",
    "grade": "night",
    "camera": {
@@ -1593,7 +1583,7 @@
      "id": "sg91_rider",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.5,
+     "scale": 0.54,
      "start_pose": "sit",
      "start_expr": "neutral",
      "actions": [
@@ -1638,11 +1628,7 @@
        "move": true
       },
       {
-       "at": 2.5,
-       "move": true
-      },
-      {
-       "at": 2.91,
+       "at": 2.56,
        "move": true
       },
       {
@@ -1650,7 +1636,7 @@
        "turn_head": true
       },
       {
-       "at": 2.26,
+       "at": 1.91,
        "turn_head": true
       }
      ],
@@ -1664,7 +1650,7 @@
     {
      "claim": "K_forklift",
      "type": "established",
-     "claim_text": "He got into the shop by ramming its shutters and windows with a forklift he had found on the road (he told police he started it by touching its wires together). Narration: 'His way in? He rammed the shop with a forklift.'",
+     "claim_text": "He got into the shop by ramming its shutters and windows with a forklift he had found on the road (he told police he started it by touching its wires together). Narration: 'His way in? A forklift, through the shutter.'",
      "urls": [
       "https://www.dha.com.tr/foto-galeri/kuyumcu-dukkanindan-ziynet-esyasi-calip-esekle-kacan-sanigina-9-yil-7-ay-hapis-2869347",
       "https://www.ntv.com.tr/gundem/esekli-hirsiza-verilen-ceza-belli-oldu-1724153",
@@ -1681,7 +1667,7 @@
     "sfx": [
      {
       "name": "tick",
-      "at": 25.909,
+      "at": 25.929,
       "gain": 0.24,
       "word": [
        0,
@@ -1690,7 +1676,7 @@
      },
      {
       "name": "thud",
-      "at": 26.209,
+      "at": 26.189,
       "gain": 0.3,
       "word": [
        0,
@@ -1699,11 +1685,11 @@
      },
      {
       "name": "sub",
-      "at": 27.499,
+      "at": 27.489,
       "gain": 0.3,
       "word": [
        0,
-       8
+       7
       ]
      }
     ]

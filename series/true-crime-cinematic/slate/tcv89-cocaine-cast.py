@@ -39,7 +39,7 @@ def build(h):
         S("s01_hook", "cc89_hook", [N("Police say his leg cast was made of cocaine.", tone="hook", speed=1.08),
                                     N("5 kilos. Six beer cans, cocaine inside.", tone="tense")],
           "tension", ["K_hook", "K_total", "K_cans"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rasp", 0.26), fw(0, 4, "thump", 0.26, 0.0), fw(0, 8, "puff", 0.3, 0.0), fw(1, 0, "whoosh", 0.18, -0.05), fw(1, 2, "click", 0.26, 0.0), fw(1, 5, "tick", 0.22, 0.0)],
-          emph=["police", "leg", "cast", "cocaine.", "5", "kilos", "six", "beer", "cans,", "inside."], min_d=4.6, pad=0.02),
+          emph=["police", "leg", "cast", "cocaine.", "5", "kilos", "six", "beer", "cans,", "inside."], min_d=4.6, pad=0.35),   # the line ends before the cue change (the bed rises at the cut)
         # A - THE GOTCHA (before 9 s): close on the bench; the officer's spray bottle mists the cast on "spray"; on "blue"
         #     the blue stain blooms across the plaster (the single impact); the arrested label
         S("s02_spray", "cc89_spray", [N("One spray test. The cast turned bright blue.", tone="reveal", pause_before=0.3)],
@@ -72,7 +72,7 @@ def build(h):
           "aftermath", ["K_leg"], sfx=[fw(0, 2, "tick", 0.24, 0.0), fw(0, 4, "sub", 0.3, 0.0), fw(0, 4, "beep", 0.22, 0.05)],
           emph=["leg?", "really", "broken."], min_d=2.2, pad=0.2, tr="zoom"),
     ]
-    sections = {"s01_hook": "A", "s02_spray": "A", "s03_pine": "B", "s04_cut": "B", "s05_dock": "C", "s06_shark": "D", "s07_end": "E"}
+    sections = {"s01_hook": "A", "s02_spray": "A", "s03_pine": "B", "s04_cut": "B", "s05_dock": "B", "s06_shark": "D", "s07_end": "E"}   # s05 on the pulse, not the metal swells: the bed stayed within 10 dB of "Mexico"
     cases = {"s01_hook": "cast", "s02_spray": "cast", "s03_pine": "pineapples", "s04_cut": "pineapples",
              "s05_dock": "sharks", "s06_shark": "sharks", "s07_end": "cast"}
     for sc in scenes:
@@ -80,9 +80,7 @@ def build(h):
     for sc in scenes:
         sc["case"] = cases[sc["id"]]
     by_id = {sc["id"]: sc for sc in scenes}
-    by_id["s01_hook"]["music_gain_db"] = -6        # no full drop inside the first 15 s; the bed sits lower under the hook
-    by_id["s03_pine"]["music_gain_db"] = -3        # the rehook lines are quiet: keep the bed 10 dB under them
-    by_id["s05_dock"]["music_gain_db"] = -3
+    by_id["s01_hook"]["music_gain_db"] = -4        # no full drop inside the first 15 s (note: a no-op under the structured score, pipeline/build.py)
     by_id["s06_shark"]["music_drop"] = True        # the biggest gotcha (starts after 15 s)
     by_id["s07_end"]["music_drop"] = True          # the callback
 

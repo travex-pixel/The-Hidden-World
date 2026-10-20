@@ -1,6 +1,6 @@
 CAPTION: They stole a bridge. Police say two Pennsylvania brothers cut up a 50-foot steel bridge with a torch and sold it for scrap (charged, not tried, Oct 2011). Then a Jamaican beach that left by the truckload, and five tons of glacier stopped on a Patagonian road, bound for cocktail glasses. They Stole What?, 1. Which thief was the dumbest: bridge, beach or glacier?
 HASHTAGS: #stolenbridge #theystolewhat #truecrime #scrapmetal #glacier
 ALT TEXT: Illustrated reel about a stolen bridge: a man kneeling on a steel bridge at night cutting it with a torch while a flatbed truck waits below with a section loaded, a scrapyard worker lifting a phone, a dump truck on a beach beside a scooped-out hole, and a refrigerated truck's doors opening on glowing blocks of glacier ice.
-SEED COMMENT: The bridge wins by a mile. A beach is sand and ice melts, but showing the scrapyard photos of the bridge you just cut up is a whole other level. Change my mind.
+SEED COMMENT: The bridge wins by a mile. A beach is sand and ice melts, but a bridge is a bridge. And if the scrapyard-photos part holds up in court, that is a whole other level. Change my mind.
 PINNED: Send this to the mate who'd steal a bridge 🌉 Vote: 1 = the bridge, 2 = the beach, 3 = the glacier 👇 They Stole What?, 1.
 POST WHEN: Sunday 25 Oct 2026, 12–2 pm US Eastern (weekend lunch scroll), one day after Case File 89 in the same slot so the 90/91 end-card pair reads cleanly; Case File 91 (no send line) goes in the same slot on Monday 26 Oct.
