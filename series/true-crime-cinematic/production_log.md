@@ -506,3 +506,5 @@
 - 2026-10-19 22:44:09 tcv86-watermelon-robbers: rendering (final60, seed 1)
 - 2026-10-19 22:59:15 tcv86-watermelon-robbers: rendered in 906s
 - 2026-10-19 22:59:51 tcv86-watermelon-robbers: QA FAILED ['audio_sfx_heard_on_phone']; frames and details in series/true-crime-cinematic/qa/true_crime_86
+- 2026-10-20 12:38:27 produce 91 --force: regenerating episode data
+- 2026-10-20 12:38:27 tcv91-scooter-getaway: rendering (final60, seed 1)

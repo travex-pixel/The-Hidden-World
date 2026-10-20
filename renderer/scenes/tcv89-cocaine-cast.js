@@ -281,7 +281,7 @@
     //     blue stain already on the plaster; the camera already pushing in; the officer with his clipboard looks up on
     //     line 2; the passenger (silhouette) sits at the left with his hand to his face
     cc89_hook(ctx) {
-      const t = ctx.t, l2 = LS(ctx, 1, 2.5), cn = WT(ctx, 1, 4, 3.4);
+      const t = ctx.t, l2 = LS(ctx, 1, 2.5), cn = WT(ctx, 1, 5, 3.6);
       const open = OPEN0 + (1 - OPEN0) * ease.inOut(seg(t, 0.0, 1.0));
       return E.cine.shot(ctx, {
         set: 'cc89_customs', setOpts: { view: 'wide', xray: 0.35 }, grade: 'cold', haze: 0.3,
@@ -327,7 +327,7 @@
         overlays: [
           { type: 'impact', at: bl, x: 400, y: 960 },
           { type: 'callout', at: bl + 0.25, target: [CX + 190 * CS, CY + 150 * CS], label: [1040, 620], anchor: 'end', w: 460, text: 'TURNED BRIGHT BLUE', sub: 'A cocaine reagent spray (police)', r: 90, depth: 1.05 },
-          { type: 'label', at: 0.3, x: 60, y: 1250, text: 'ARRESTED · EL PRAT · MARCH 2009 · POLICE SAY', fs: 28, sub: 'No court outcome found · as of Oct 2026' }
+          { type: 'label', at: 0.3, x: 60, y: 480, text: 'ARRESTED · EL PRAT · MARCH 2009 · POLICE SAY', fs: 28, sub: 'No court outcome found · as of Oct 2026' }
         ],
         tag: GEN
       });
@@ -358,7 +358,7 @@
       });
     },
 
-    // 4 - CASE 2's GOTCHA: closer on the pallet; the inspector lifts the halved pineapple on "Seized" and holds it up to the
+    // 4 - CASE 2's GOTCHA: closer on the pallet; the inspector lifts the halved pineapple on "Caught" and holds it up to the
     //     lamp; the 67 KG counter on "67"; on "arrested" she turns to the hall; the seven-arrested label
     cc89_cut(ctx) {
       const t = ctx.t, sz = WT(ctx, 0, 0, 0.3), mk = WT(ctx, 0, 3, 1.2), sx = WT(ctx, 0, 4, 1.7), ar = WT(ctx, 0, 7, 3.0);
@@ -376,7 +376,7 @@
         ],
         overlays: [
           { type: 'counter', at: sx - 0.05, dur: 0.9, from: 0, to: 67, prefix: '', suffix: ' KG', label: 'COCAINE IN PINEAPPLES · MADRID', y: 540, fs: 120 },
-          { type: 'label', at: ar + 0.1, x: 60, y: 1250, text: 'SEVEN ARRESTED · 3 MADRID, 4 BARCELONA', fs: 28, sub: 'Spanish National Police, Aug 2018 · accused, not tried' }
+          { type: 'label', at: ar + 0.1, x: 60, y: 780, text: 'SEVEN ARRESTED · 3 MADRID, 4 BARCELONA', fs: 28, sub: 'Spanish National Police, Aug 2018 · accused, not tried' }
         ],
         tag: GEN
       });
@@ -421,7 +421,7 @@
         ],
         overlays: [
           { type: 'callout', at: xr, until: ca + 1.2, target: [700, 1040], label: [1040, 640], anchor: 'end', w: 440, text: 'FLAGGED BY X-RAY', sub: 'Routine container scan (navy, AP)', r: 60, depth: 1.02 },
-          { type: 'label', at: tn - 0.2, x: 60, y: 1250, text: '893 KG IN 870 PACKAGES · PROSECUTORS (AP)', fs: 28, sub: 'Reuters: "more than a ton" · more than 20 sharks' }
+          { type: 'label', at: tn - 0.2, x: 60, y: 800, text: '893 KG IN 870 PACKAGES · PROSECUTORS (AP)', fs: 28, sub: 'Reuters: "more than a ton" · more than 20 sharks' }
         ],
         tag: GEN
       });
