@@ -32,3 +32,19 @@ the frame-0 test: 85 (bed + torch) should skip lowest, 84 (phone on a sofa) high
 
 **Replays and the loop:** Instagram does not show replays directly. If average watch time ÷ reel length is above 1.0,
 people are watching past the end into the loop; log it as the loop's only real measure.
+
+**Batch 2 (posted together ~15:45 local on 20 Oct, read at 7 h):**
+
+| # | age | views | skip % | kept @4 s | kept @10 s | end % | avg watch s | shares/1k | saves/1k | follows/1k | likes/1k | comments |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 86 (frame-0 A) | 7 h | 1,950 | 21.3 | 65 | 48 | 30 | – | 0 | 0 | – | 8.0 | 2 |
+| 87 (frame-0 B) | 7 h | 157 | 39.5 | 55 | 35 | 15 | – | 0 | 0 | 0 | 0 | 3 |
+| 88 (28 s) | 7 h | 2,214 | 24.3 | 70 | 55 | 38 | 16 (57 % of length) | 0 | 0 | 0 | 10.0 | 3 |
+
+Reading (20 Oct, 22:48): every reel seeds to 150–250 viewers in hour 1; the ones under ~30 % skip were pushed on
+(86 continuously, 88 at 4 h, 83 at 12 h), the ones above ~35 % never left the seed (84, 85, 87 flat from hour 1).
+The three that passed all have something visibly wrong in frame 0 without reading (watermelon on a head, cocaine in an
+ambulance, 911 calling from a pocket); the three that failed show an ordinary picture whose wrongness is only in the
+text (man on a phone, sleeper in a bed, taxi outside a bank). The 86/87 frame-0 pair is confounded by this.
+v6 did lift the middle: kept @10 s 45–55 % on the pushed reels (v5: 42–52 %), with like spikes on the gotchas.
+Shares 0 on all six, follows 0.
