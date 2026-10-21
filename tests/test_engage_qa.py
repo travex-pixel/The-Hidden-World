@@ -169,3 +169,30 @@ class VersionSeven(VersionSix):
     def test_v6_episodes_are_not_rejudged_by_v7(self):
         ep = self.ep(); ep["engagement_version"] = 6
         self.assertNotIn("headline_leads_with_object", engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"])
+
+
+class VersionEight(VersionSeven):
+    """v8: the spoken hook is an agent-first statement with a lane word; the episode declares a proven lane."""
+    def ep(self):
+        e = super().ep(); e["engagement_version"] = 8; e["lane"] = "border"; return e
+
+    def tl8(self, hook):
+        tl = self.tl(ends=(4.5, 9.2, 17, 25.5, 28.2)); tl[0]["lines"][0]["text"] = hook; return tl
+
+    def test_smugglers_built_passes(self):
+        c = engage_qa.analyse({"episode": self.ep()}, self.tl8("Smugglers built a cannon to fire weed over the border."), None)["checks"]
+        self.assertTrue(c["hook_agent_first"]); self.assertTrue(c["hook_in_lane"]); self.assertTrue(c["lane_locked"])
+
+    def test_police_say_question_and_pronoun_hooks_fail(self):
+        for hook in ("Police say two brothers stole a bridge.", "His getaway vehicle? A donkey.", "Their plan was a tunnel.", "In 2011, smugglers built a tunnel."):
+            c = engage_qa.analyse({"episode": self.ep()}, self.tl8(hook), None)["checks"]
+            self.assertFalse(c["hook_agent_first"], hook)
+
+    def test_off_lane_hook_and_lane_fail(self):
+        ep = self.ep(); ep["lane"] = "getaways"
+        c = engage_qa.analyse({"episode": ep}, self.tl8("A burglar fell asleep in a stranger's bed."), None)["checks"]
+        self.assertTrue(c["hook_agent_first"]); self.assertFalse(c["hook_in_lane"]); self.assertFalse(c["lane_locked"])
+
+    def test_v7_episodes_are_not_rejudged_by_v8(self):
+        ep = self.ep(); ep["engagement_version"] = 7
+        self.assertNotIn("hook_agent_first", engage_qa.analyse({"episode": ep}, self.tl8("Police say x."), None)["checks"])

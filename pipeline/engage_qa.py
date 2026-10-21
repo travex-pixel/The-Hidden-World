@@ -17,6 +17,10 @@ LOOP = re.compile(r"\b(but|until|then|how|why|still|instead|except|nobody|no one
                   r"because|unless|turns out|what|who|where|inside|missing|vanished|disappeared|forgot|left behind)\b|\?", re.I)
 STAKES = re.compile(r"\d|\b(killed|lives|dead|died|murder|murdered|million|billion|stolen|stole|vanished|bomb|bombs|shot|"
                     r"kidnapped|victims|missing|escaped|robbed|hunt|manhunt)\b|[$£€]", re.I)
+# v8: the lane the account's seed audience was trained on (Border Fails, Where They Hid It, the big busts, the heists)
+LANES = {"smuggling", "border", "customs", "heist", "bust"}
+LANE_WORDS = re.compile(r"\b(smuggl\w*|cocaine|meth|heroin|cannabis|weed|marijuana|drugs?|border|customs|tunnel\w*|heists?|"
+                        r"stole|stolen|robbed|robbers?|thieves|thief|cartel|contraband|seized|bust|million|billion|tonnes?|tons?|kilos?|pounds)\b", re.I)
 OUTCOME = re.compile(r"\b(executed|sentenced|arrested|prison|life|years|died|dead|caught|freed|acquitted|convicted|guilty|"
                      r"jail|cell|never|still|found|remains|escaped|plea|pleaded|confessed|released|cleared|paid|lost)\b", re.I)
 
@@ -130,4 +134,17 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
             first = (((ep.get("hook_title") or {}).get("lines") or [{}])[0].get("text") or "").upper()
             checks["headline_leads_with_object"] = not re.match(r"\s*(?:(?:POLICE|PROSECUTORS|OFFICERS|DEPUTIES|AUTHORITIES|COPS|INVESTIGATORS)\s+SAY\b|ACCUSED\b|ALLEGED)", first)
             checks["under_29_5s"] = total <= 29.5
+        if (ep.get("engagement_version") or 1) >= 8:
+            # v8 (the 18-reel table in docs/V8_RESEARCH_2026-10-21.md): every spoken hook that opened with an agent doing
+            # something ("Smugglers built…", "Thieves tunnelled…", "Customs checked…") was pushed past the hour-1 seed,
+            # 10 of 10; hooks opening with "Police say…" or a question were pushed 2 of 8. And the smuggling/border/heist
+            # lane was pushed 8 of 9 while generic burglar/getaway stories were pushed 2 of 7. So: the first spoken line
+            # is an agent-first statement of a settled fact (a seizure, a conviction) with a lane word in it, and the
+            # episode declares a lane from the proven set.
+            first_line = (tl[0].get("lines") or [{}])[0].get("text", "") if tl else ""
+            first_sentence = re.split(r"(?<=[.!?])\s", first_line.strip(), maxsplit=1)[0]
+            attribution_first = bool(re.match(r"\s*(?:(?:police|prosecutors|officers|deputies|authorities|investigators|cops)\s+say|his\b|her\b|their\b|its\b|this\b|in\s+\d{4})", first_line, re.I))
+            checks["hook_agent_first"] = bool(first_line) and not attribution_first and not first_sentence.endswith("?")
+            checks["hook_in_lane"] = bool(LANE_WORDS.search(first_line)); notes["hook_first_line"] = first_line
+            checks["lane_locked"] = (ep.get("lane") or "") in LANES
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}
