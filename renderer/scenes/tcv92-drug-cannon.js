@@ -121,8 +121,9 @@
     const x = a * M.x + b * PC.x + c * P1.x, y = a * M.y + b * PC.y + c * P1.y;
     const k = 1 - 0.5 * Math.pow(s, 1.5), op = 1 - seg(s, 0.85, 1);
     // a short motion trail, then the package
-    let g = `<g opacity="${f1(op)}"><path d="M${f1(x - 70 * k * 0.9)} ${f1(y + 50 * k)} L${f1(x)} ${f1(y)}" stroke="${GLOW}" stroke-width="${f1(10 * k)}" stroke-linecap="round" opacity="0.35"/>`;
-    return g + pkg(x, y, 1.2 * k, -24 + tau * 200, 1) + '</g>';
+    let g = `<g opacity="${f1(op)}">`;
+    for (let i = -1; i <= 1; i++) g += `<path d="M${f1(x - 110 * k + i * 14)} ${f1(y + 90 * k - i * 12)} L${f1(x - 30 * k + i * 14)} ${f1(y + 20 * k - i * 12)}" stroke="${GLOW}" stroke-width="${f1(8 * k)}" stroke-linecap="round" opacity="${i ? 0.35 : 0.6}"/>`;
+    return g + pkg(x, y, 1.4 * k, -24 + tau * 200, 1) + '</g>';
   }
   // the launch effects at the muzzle: a flash, an expanding puff of air and dust along the barrel, dust off the hatch
   function blast(tau) {
@@ -136,11 +137,11 @@
     }
     const e2 = ease.out(clamp(tau / 1.2, 0, 1));
     sm += `<ellipse cx="${f1(EX.x - 20 * e2)}" cy="${f1(EX.y - 20 - 30 * e2)}" rx="${f1(40 + 110 * e2)}" ry="${f1(18 + 40 * e2)}" fill="#b8ad98" opacity="${f1(0.45 * (1 - e2))}"/>`;
-    const fl = tau < 0.8 ? Math.pow(1 - tau / 0.8, 1.3) : 0;
+    const fl = tau < 1.0 ? Math.pow(1 - tau / 1.0, 1.2) : 0;
     if (fl > 0) {
       const cx = M.x + D.x * 34, cy = M.y + D.y * 34;
-      g += wash(cx, cy, 260, 220, '#ffd890', f1(0.6 * fl)) + wash(cx, cy, 110, 100, '#ffffff', f1(0.85 * fl));
-      let rays = ''; for (let i = 0; i < 11; i++) { const a = Math.atan2(D.y, D.x) + (i - 5) * 0.2, L = (70 + (i % 3) * 40) * (0.5 + 0.5 * fl); rays += `<line x1="${f1(M.x + Math.cos(a) * 30)}" y1="${f1(M.y + Math.sin(a) * 30)}" x2="${f1(M.x + Math.cos(a) * (30 + L))}" y2="${f1(M.y + Math.sin(a) * (30 + L))}" stroke="${GLOW}" stroke-width="10" stroke-linecap="round"/>`; }
+      g += wash(cx, cy, 300, 260, '#ffd890', f1(0.75 * fl)) + wash(cx, cy, 130, 120, '#ffffff', f1(0.95 * fl));
+      let rays = ''; for (let i = 0; i < 11; i++) { const a = Math.atan2(D.y, D.x) + (i - 5) * 0.2, L = (70 + (i % 3) * 40) * (0.5 + 0.5 * fl); rays += `<line x1="${f1(M.x + Math.cos(a) * 30)}" y1="${f1(M.y + Math.sin(a) * 30)}" x2="${f1(M.x + Math.cos(a) * (30 + L))}" y2="${f1(M.y + Math.sin(a) * (30 + L))}" stroke="${GLOW}" stroke-width="13" stroke-linecap="round"/>`; }
       g += `<g opacity="${f1(fl)}">${rays}</g><circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(24 + 20 * fl)}" fill="#fffbe8" opacity="${f1(0.9 * fl)}"/>`;
     }
     return sm + `<g style="mix-blend-mode:screen">${g}</g>`;
@@ -211,7 +212,7 @@
 
   // the hero figure (the same in the hook and the end scene: the loop) and the camera it loops on
   const HERO_FIG = { id: 'dc92_operator', x: 296, y: 1346, scale: 0.4, dir: 1, turn: 0.45, pose: 'present', silhouette: 'warm', depth: 1.0 };
-  const HERO_CAM0 = { x: 0, y: 0, z: 1.0 }, HERO_CAM1 = { x: 22, y: -18, z: 1.08 };
+  const HERO_CAM0 = { x: 10, y: -30, z: 1.05 }, HERO_CAM1 = { x: 32, y: -50, z: 1.13 };
 
   // ---------- new environments (generic illustrations, not replicas of real places)
   E.registerSets({

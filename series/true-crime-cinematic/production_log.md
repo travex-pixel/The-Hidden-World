@@ -518,3 +518,5 @@
 - 2026-10-20 13:33:41 tcv89-cocaine-cast: rendering (final60, seed 1)
 - 2026-10-20 13:54:59 tcv89-cocaine-cast: rendered in 1278s
 - 2026-10-20 13:55:40 tcv89-cocaine-cast: VERIFIED -> series/true-crime-cinematic/output/true_crime_89_cocaine_cast.mp4 (27.7s, 15.3 MB, sha256 c52ac6eb22fb)
+- 2026-10-21 22:02:41 produce 93 --force: regenerating episode data
+- 2026-10-21 22:02:41 tcv93-billion-dollar-ship: rendering (final60, seed 1)

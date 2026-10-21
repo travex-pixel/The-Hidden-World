@@ -13,8 +13,8 @@ and among the real watermelons officers found 1,220 packages wrapped in paper co
 4,587 lb (2,080 kg) of methamphetamine, more than $5 million (CBP release via HSToday/Freshplaza; AP via ABC News; NPR;
 ABC7/CNN). THE GOTCHA as reported: the secondary inspection, the cargo unloaded (no dog or imaging is mentioned in any
 extract, so none is claimed). The driver was turned over to Homeland Security Investigations: unnamed, never drawn.
-The held-back detail (the callback): the shipment was "manifested for watermelons" ("On paper, the whole truck was
-watermelons").
+The held-back detail (the callback): the shipment was "manifested for watermelons" ("On paper, it was all
+watermelons.").
 CASE 2: 22 August 2026, Pharr International Bridge, Texas: a tractor-trailer from Reynosa declared as leeks; non-intrusive
 inspection equipment showed anomalies and a canine team alerted; 395 packages, 1,204.82 lb, about $10.75 million (CBP via
 FreightWaves, Fox RGV, KRGV, The Trucker). HSI opened an investigation; no arrest announced; nobody drawn as a suspect.
@@ -36,44 +36,44 @@ def build(h):
 
     scenes = [
         # A - HOOK (frame 0, the contraband in the act): the inspection table under a hard strip light; the fake melon fills
-        #     the upper-middle, its green-striped paper skin torn open on a white crystal brick, gloved hands peeling the
-        #     flaps wider from 0.0 s; a real melon cut open beside it (red); the camera already pushing in; an officer at the
-        #     open trailer behind turns on line 2
+        #     the upper-middle, its green-striped paper skin torn open on a taped white brick, blue-gloved hands peeling the
+        #     flaps wider from 0.0 s; a real melon cut open in front of it (red); the camera already pushing in; the officer
+        #     at the roller door reads the manifest, looks up on line 2 and points on "real"
         S("s01_hook", "wm94_hook", [N("Smugglers dressed meth up as watermelons.", tone="hook", speed=1.06),
                                     N("$5 million worth, among real ones.", tone="confident")],
           "tension", ["K_hook", "K_weight"], sfx=[fx(0.0, "sub", 0.4), fx(0.0, "click", 0.2), fw(0, 3, "thump", 0.24, 0.0), fw(0, 5, "rasp", 0.22, 0.5), fw(1, 4, "thud", 0.22, 0.0)],
           emph=["smugglers", "dressed", "meth", "watermelons.", "$5", "million", "real"], min_d=4.6, pad=0.1),
-        # A - THE GOTCHA (before 9 s): the secondary inspection dock; melons coming off the open trailer onto a pallet; on
-        #     "unloaded" the officer lifts one; on "paper" its skin tears in his hands on the white packet (the single
-        #     impact); the 4,587 LB counter; the driver-to-HSI label
+        # A - THE GOTCHA (before 9 s): the loading dock at the open trailer; the officer holds a melon in gloved hands and
+        #     on "unloaded" lifts it; on "paper" its skin tears on the white package (the single impact); the 4,587 LB
+        #     counter
         S("s02_unload", "wm94_unload", [N("But officers unloaded the truck. 1,220 had paper skins.", tone="reveal", pause_before=0.3)],
           "revelation", ["K_unload", "K_skins", "K_stat", "K_driver"], sfx=[fw(0, 0, "riser", 0.2, -0.6), fw(0, 7, "hit", 0.38, 0.0), fw(0, 8, "rasp", 0.22, 0.45), fw(0, 8, "tick", 0.18, 0.75)],
           emph=["officers", "unloaded", "truck.", "1,220", "paper", "skins."], min_d=4.0, pad=0.15, tr="cut"),
         # B - REHOOK + CASE 2: Pharr's cargo lanes by day; a tractor-trailer rolls left to right into the scanner portal;
-        #     on "Leeks" the trailer's side shows a stack of leek crates; the scanner arch lights
+        #     the K-9 handler waits with her dog; on "leeks" the portal lights up and she points; the fun-fact card
         S("s03_leeks", "wm94_leeks", [N("And that was not the biggest.", tone="tense"),
                                       N("Then leeks: nearly $11 million.", tone="confident")],
           "tension-rise", ["K_leeks"], sfx=[fw(0, 0, "whoosh", 0.2, -0.1), fw(0, 1, "rumble", 0.22, 0.0), fw(1, 1, "thud", 0.24, 0.0), fw(1, 4, "beep", 0.22, 0.0)],
           emph=["not", "biggest.", "leeks:", "nearly", "$11", "million."], min_d=3.8, pad=0.12, tr="dissolve"),
-        # B - CASE 2's GOTCHA: the trailer's rear doors open on leek crates; the scan monitor flashes amber on "flagged";
-        #     on "dog" the K-9 at the doors sits (the alert) and the handler points
+        # B - CASE 2's GOTCHA: the trailer's rear doors open on crates of leeks; the scan monitor flashes ANOMALY on
+        #     "flagged"; the dog sniffs along the doors and on "dog" sits (the alert); the handler points
         S("s04_dog", "wm94_dog", [N("The scanner flagged it. So did the dog.", tone="reveal", pause_before=0.3)],
           "tension", ["K_leekcatch", "K_celery"], sfx=[fw(0, 0, "riser", 0.2, -0.5), fw(0, 2, "beep", 0.28, 0.0), fw(0, 2, "hit", 0.36, -0.03), fw(0, 6, "step", 0.22, 0.0), fw(0, 7, "sparkle", 0.28, 0.5)],
           emph=["scanner", "flagged", "dog."], min_d=3.6, pad=0.15, tr="cut"),
-        # C - REHOOK + CASE 3: a cold dock at dusk; pallets of berry flats; the officer walks in from the left and on
-        #     "Blackberries" lifts a clamshell of berries off the stack
+        # C - REHOOK + CASE 3: a cold dock at dusk; pallets of berry flats; the inspector walks in from the left and on
+        #     "Blackberries" the top flat lifts off the pallet toward camera; the place and value labels
         S("s05_berries", "wm94_berries", [N("The biggest? Blackberries.", tone="tense"),
                                           N("$17 million inside.", tone="confident")],
           "tension-rise", ["K_berries"], sfx=[fw(0, 0, "whoosh", 0.2, -0.1), fw(0, 2, "thud", 0.24, 0.0), fw(1, 0, "cash", 0.22, 0.0), fw(1, 2, "tick", 0.22, 0.0)],
           emph=["biggest?", "blackberries.", "$17", "million", "inside."], min_d=3.6, pad=0.12, tr="push"),
         # D - THE BIGGEST GOTCHA (music drop): the scan room; close on the officer at the monitor; on "scan" the image
-        #     sweeps across the trailer; on "found" 862 package shapes light up in the berry pallets; the label
+        #     sweeps across the trailer; on "862" package shapes light up in the berry pallets; she points on "found"
         S("s06_scan", "wm94_scan", [N("One scan later: 862 packages found.", tone="reveal", pause_before=0.3)],
           "revelation", ["K_scan", "K_862"], sfx=[fw(0, 0, "riser", 0.22, -0.6), fw(0, 1, "beep", 0.24, 0.0), fw(0, 3, "hit", 0.4, -0.03), fw(0, 5, "thump", 0.3, 0.0), fw(0, 5, "glitch", 0.18, 0.05)],
           emph=["one", "scan", "862", "packages", "found."], min_d=3.4, pad=0.15, tr="cut"),
-        # E - THE CALLBACK (the loop): frame 1's inspection table, the same officer; on "paper" a manifest sheet slides out
-        #     from under the melon and back; the paper flaps settle back to frame 1's tear and the camera eases back to
-        #     frame 1's start; the end card; no fade
+        # E - THE CALLBACK (the loop): frame 1's inspection table, the same officer; on "paper" he looks up from the
+        #     manifest and points (a brief MANIFEST label); the paper flaps settle back to frame 1's tear and the camera eases
+        #     back to frame 1's start; the end card; no fade
         S("s07_end", "wm94_end", [N("On paper, it was all watermelons.", tone="reveal", pause_before=0.05)],
           "aftermath", ["K_manifest"], sfx=[fw(0, 1, "paper", 0.26, 0.0), fw(0, 4, "tick", 0.22, 0.0), fw(0, 5, "sub", 0.3, 0.05)],
           emph=["paper,", "all", "watermelons."], min_d=2.2, pad=0.2, tr="zoom"),
@@ -121,31 +121,31 @@ def build(h):
     ]
     C = h.claim
     claims = [
-        C("K_hook", "Friday 16 August 2024, Otay Mesa Commercial Facility (San Diego, the port of entry with Tijuana): CBP officers seized more than $5 million worth of methamphetamine disguised and concealed within a shipment of watermelons. Narration: 'Smugglers hid $5 million of meth in fake watermelons.' Headline 'FAKE WATERMELONS / FULL OF METH'. Label 'OTAY MESA, SAN DIEGO · AUG 2024'.",
+        C("K_hook", "Friday 16 August 2024, Otay Mesa Commercial Facility (San Diego, the port of entry with Tijuana): CBP officers seized more than $5 million worth of methamphetamine disguised and concealed within a shipment of watermelons. Narration: 'Smugglers dressed meth up as watermelons.' / '$5 million worth, ...' Headline 'FAKE WATERMELONS / FULL OF METH'. Label 'OTAY MESA, SAN DIEGO · AUG 2024'.",
           ["cbp", "hstoday", "apabc", "npr", "abc7news", "abc7"]),
-        C("K_weight", "The packages weighed 4,587 lb (2,080 kg) and were found among a real watermelon shipment (AP: 'among real watermelons'). Narration: 'Over two tons, mixed in with real ones.' (4,587 lb = 2.29 US tons = 2.08 tonnes.)",
+        C("K_weight", "The packages weighed 4,587 lb (2,080 kg) and were found among a real watermelon shipment (AP: 'among real watermelons'). Narration: '..., among real ones.' Counter 4,587 LB in the next shot.",
           ["apabc", "npr", "hstoday", "freshplaza", "mnd"]),
-        C("K_unload", "The 29-year-old driver's tractor-trailer was referred for additional examination at secondary inspection, where the watermelon shipment was offloaded for further examination (AP: 'unloaded for a detailed inspection'). No dog or imaging is mentioned in any extract, so none is claimed. Narration (gotcha): 'Officers unloaded it.'",
+        C("K_unload", "The 29-year-old driver's tractor-trailer was referred for additional examination at secondary inspection, where the watermelon shipment was offloaded for further examination (AP: 'unloaded for a detailed inspection'). No dog or imaging is mentioned in any extract, so none is claimed. Narration (gotcha): 'But officers unloaded the truck.'",
           ["apabc", "freshplaza", "hstoday", "npr"]),
-        C("K_skins", "Officers found 1,220 packages wrapped in paper coloured to look like watermelon skins (CBP: 'disguised as watermelons within the shipment'); the contents tested as methamphetamine. Narration: '1,220 melons had paper skins.' Callout 'PAPER SKIN · METH INSIDE'.",
+        C("K_skins", "Officers found 1,220 packages wrapped in paper coloured to look like watermelon skins (CBP: 'disguised as watermelons within the shipment'); the contents tested as methamphetamine. Narration: '1,220 had paper skins.' Callout 'PAPER SKIN · METH', 'Among real melons (CBP)'.",
           ["apabc", "hstoday", "freshplaza", "abc7news", "pa"]),
         C("K_stat", "STATISTIC (counter 4,587 LB): the total weight CBP gave for the 1,220 packages. Counter '4,587 LB' with the label 'METH · 1,220 FAKE MELONS'.",
           ["hstoday", "apabc", "npr", "freshplaza"]),
-        C("K_driver", "CBP seized the drugs and the tractor-trailer; the driver, a 29-year-old man, was turned over to Homeland Security Investigations. He was not named and no charge was reported in the extracts. Label 'DRIVER, 29, TURNED OVER TO HSI · NOT NAMED'. Never drawn.",
+        C("K_driver", "CBP seized the drugs and the tractor-trailer; the driver, a 29-year-old man, was turned over to Homeland Security Investigations. He was not named and no charge was reported in the extracts. Label sub 'Driver, 29, turned over to HSI · not named' (the hook's location label). Never drawn.",
           ["hstoday", "apabc", "npr", "abc7"]),
-        C("K_leeks", "22 August 2026, Pharr International Bridge cargo facility, Texas: CBP officers found suspected methamphetamine worth about $10.75 million (KRGV: $10.8 million) in a tractor-trailer from Reynosa, Mexico, whose shipment was declared as leeks. Narration: 'But that was not the biggest.' (editorial rehook) / 'Leeks hid nearly $11 million of meth.' Label 'PHARR, TEXAS · AUG 2026'.",
+        C("K_leeks", "22 August 2026, Pharr International Bridge cargo facility, Texas: CBP officers found suspected methamphetamine worth about $10.75 million (KRGV: $10.8 million) in a tractor-trailer from Reynosa, Mexico, whose shipment was declared as leeks. Narration: 'And that was not the biggest.' (editorial rehook, true: $10.75M > $5M) / 'Then leeks: nearly $11 million.' Label 'DECLARED: LEEKS · PHARR, TEXAS', 'Aug 2026 · about $10.75 million (CBP)'.",
           ["freightwaves", "foxrgv", "krgv", "trucker"]),
-        C("K_leekcatch", "At secondary inspection, non-intrusive inspection equipment showed anomalies in the trailer and a canine team alerted to narcotics; a physical search found 395 packages weighing 1,204.82 lb. CBP seized the drugs and the truck; HSI opened a criminal investigation; no arrest was announced and no driver named. Narration (gotcha): 'The scanner flagged it. So did the dog.' Label '395 PACKAGES · 1,204 LB · CBP'.",
+        C("K_leekcatch", "At secondary inspection, non-intrusive inspection equipment showed anomalies in the trailer and a canine team alerted to narcotics; a physical search found 395 packages weighing 1,204.82 lb. CBP seized the drugs and the truck; HSI opened a criminal investigation; no arrest was announced and no driver named. Narration (gotcha): 'The scanner flagged it. So did the dog.' Label '395 PACKAGES · 1,204 LB', 'Scanner anomalies + a K-9 alert (CBP)'.",
           ["freightwaves", "krgv", "trucker", "foxrgv"]),
-        C("K_celery", "FUN FACT: one week before the watermelons, on 9 August 2024, officers at the same Otay Mesa facility found 629.72 lb of methamphetamine (508 packages, about $755,000) in a celery shipment, after a K-9 alert. Card 'SAME PORT, ONE WEEK EARLIER: / 629 LB OF METH / IN A CELERY SHIPMENT'.",
+        C("K_celery", "FUN FACT: one week before the watermelons, on 9 August 2024, officers at the same Otay Mesa facility found 629.72 lb of methamphetamine (508 packages, about $755,000) in a celery shipment, after a K-9 alert. Card 'SAME PORT AS THE MELONS, / ONE WEEK EARLIER: / 629 LB OF METH IN CELERY'.",
           ["abccelery", "tosd", "10news"]),
-        C("K_berries", "23 March 2026, Pharr International Bridge cargo facility: a tractor-trailer from Reynosa carrying a shipment of blackberries held suspected methamphetamine with an estimated street value of $17,737,200 (HSToday headline: 'Meth Labelled as Blackberries'). Narration: 'And the biggest? Blackberries.' / 'Over $17 million of meth inside.' Label 'PHARR, TEXAS · MARCH 2026'.",
+        C("K_berries", "23 March 2026, Pharr International Bridge cargo facility: a tractor-trailer from Reynosa carrying a shipment of blackberries held suspected methamphetamine with an estimated street value of $17,737,200 (HSToday headline: 'Meth Labelled as Blackberries'). Narration: 'The biggest? Blackberries.' / '$17 million inside.' Labels 'PHARR, TEXAS · MARCH 2026', '$17,737,200 · CBP'.",
           ["hstoday26", "fox7", "fox4", "freshplaza26", "producenews"]),
-        C("K_scan", "Officers referred the truck to a secondary inspection dock, where they used non-intrusive scanning equipment to examine the fruit shipment, then extracted the packages. Narration (gotcha): 'One scan later, officers found 862 packages.' Label 'NON-INTRUSIVE SCAN, THEN A SEARCH'.",
+        C("K_scan", "Officers referred the truck to a secondary inspection dock, where they used non-intrusive scanning equipment to examine the fruit shipment, then extracted the packages. Narration (gotcha): 'One scan later: 862 packages found.' Label 'NON-INTRUSIVE SCAN, THEN A SEARCH'.",
           ["hstoday26", "fox7", "freshplaza26"]),
         C("K_862", "Officers extracted 862 packages of suspected methamphetamine weighing 1,984.16 lb (900 kg); CBP seized the drugs and the vehicle and HSI opened a criminal investigation; no arrest announced in the extracts. Label '862 PACKAGES · 1,984 LB · $17.7M'.",
           ["hstoday26", "fox7", "fox4", "freshplaza26"]),
-        C("K_manifest", "CBP said the driver was seeking entry from Mexico 'hauling a shipment manifested for watermelons'. Narration (callback): 'On paper, the whole truck was watermelons.' Label 'MANIFEST: WATERMELONS · CBP'.",
+        C("K_manifest", "CBP said the driver was seeking entry from Mexico 'hauling a shipment manifested for watermelons'. Narration (callback): 'On paper, it was all watermelons.' Label 'MANIFEST: WATERMELONS · CBP'.",
           ["apabc", "npr", "hstoday"]),
     ]
 

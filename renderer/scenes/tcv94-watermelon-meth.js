@@ -83,12 +83,16 @@
   }
   // a white brick of crystal meth in clear plastic: centre (cx, cy), w x h; t for the glint
   function brick(cx, cy, w, h, t) {
-    let g = `<rect x="${f1(cx - w / 2)}" y="${f1(cy - h / 2)}" width="${f1(w)}" height="${f1(h)}" rx="${f1(h * 0.2)}" fill="${XTAL}"/>`;
+    let g = `<rect x="${f1(cx - w / 2)}" y="${f1(cy - h / 2)}" width="${f1(w)}" height="${f1(h)}" rx="${f1(h * 0.2)}" fill="${XTAL}" stroke="#8e9aa6" stroke-width="5"/>` +
+      `<rect x="${f1(cx - w / 2)}" y="${f1(cy + h * 0.18)}" width="${f1(w)}" height="${f1(h * 0.32)}" rx="${f1(h * 0.12)}" fill="#b4c0cc" opacity="0.45"/>`;
     const r = R(9403);
     for (let i = 0; i < 30; i++) { const x = cx + (r() - 0.5) * w * 0.88, y = cy + (r() - 0.5) * h * 0.8, s = 9 + r() * 15;
       g += `<path d="M${f1(x)} ${f1(y - s)} L${f1(x + s * 0.7)} ${f1(y)} L${f1(x)} ${f1(y + s * 0.8)} L${f1(x - s * 0.6)} ${f1(y + s * 0.1)} Z" fill="${i % 3 ? XTAL_S : '#ffffff'}" opacity="${i % 3 ? 0.75 : 0.95}"/>`; }
     g += `<path d="M${f1(cx - w * 0.42)} ${f1(cy - h * 0.28)} L${f1(cx + w * 0.05)} ${f1(cy - h * 0.4)}" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity="0.85"/>`;
     g += `<path d="M${f1(cx + w * 0.1)} ${f1(cy + h * 0.3)} L${f1(cx + w * 0.38)} ${f1(cy + h * 0.22)}" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity="0.6"/>`;
+    // packing tape: one band across, one down (it is a package)
+    g += `<rect x="${f1(cx - w / 2)}" y="${f1(cy - h * 0.06)}" width="${f1(w)}" height="${f1(h * 0.16)}" fill="${ACC}" opacity="0.78"/><rect x="${f1(cx - w * 0.09)}" y="${f1(cy - h / 2)}" width="${f1(w * 0.16)}" height="${f1(h)}" fill="${ACC}" opacity="0.62"/>`;
+    g += `<path d="M${f1(cx - w / 2)} ${f1(cy - h * 0.06)} L${f1(cx + w / 2)} ${f1(cy - h * 0.06)}" stroke="#fff4d0" stroke-width="3" opacity="0.7"/>`;
     const gl = 0.5 + 0.5 * Math.sin(t * 3.1), gx = cx + w * 0.22, gy = cy - h * 0.18;
     g += `<path d="M${f1(gx)} ${f1(gy - 22 * gl)} L${f1(gx + 5)} ${f1(gy - 5)} L${f1(gx + 22 * gl)} ${f1(gy)} L${f1(gx + 5)} ${f1(gy + 5)} L${f1(gx)} ${f1(gy + 22 * gl)} L${f1(gx - 5)} ${f1(gy + 5)} L${f1(gx - 22 * gl)} ${f1(gy)} L${f1(gx - 5)} ${f1(gy - 5)} Z" fill="#fff" opacity="${f1(0.4 + 0.6 * gl)}"/>`;
     return g;
@@ -120,7 +124,7 @@
   // going off frame to the lower corners, in the table shots).
   const FM = { rx: 262, ry: 180 };
   function fakeMelon(k, t, o = {}) {
-    const id = o.id || 'a', rx = FM.rx, ry = FM.ry, kk = clamp(k, 0, 1);
+    const id = o.cid || 'a', rx = FM.rx, ry = FM.ry, kk = clamp(k, 0, 1);
     const hw = 64 + 106 * kk, hh = 48 + 68 * kk, hx = 8, hy = -16;
     const r = R(9401), pts = [];
     for (let i = 0; i < 20; i++) { const a = i / 20 * Math.PI * 2, f = i % 2 ? 0.8 + r() * 0.08 : 0.97 + r() * 0.06; pts.push([hx + Math.cos(a) * hw * f, hy + Math.sin(a) * hh * f]); }
@@ -162,7 +166,7 @@
     return g;
   }
   const HERO = { x: 560, y: 790 };
-  const heroMelon = (k, t, id = 'h') => `<g transform="translate(${HERO.x} ${HERO.y})">${fakeMelon(k, t, { id, hands: true, arms: [[-90 - HERO.x, 1250 - HERO.y], [1170 - HERO.x, 1230 - HERO.y]] })}</g>`;
+  const heroMelon = (k, t, id = 'h') => `<g transform="translate(${HERO.x} ${HERO.y})">${fakeMelon(k, t, { cid: id, hands: true, arms: [[-90 - HERO.x, 1250 - HERO.y], [1170 - HERO.x, 1230 - HERO.y]] })}</g>`;
   // the steel inspection table (screen space; the hero's back edge at y 930, front edge 1190)
   const TABLE = () => `<path d="M-300 930 L1380 930 L1500 1190 L-420 1190 Z" fill="#a4acae" stroke="${INK}" stroke-width="6"/>` +
     [0, 1, 2, 3, 4, 5].map(i => `<path d="M${-260 + i * 60} ${940 + i * 40} L${1340 + i * 26} ${940 + i * 40}" stroke="#b8c0c2" stroke-width="3" opacity="0.6"/>`).join('') +
@@ -384,7 +388,7 @@
         ],
         props: [
           { depth: 1.0, accent: true, svg: tt => { const kk = ease.out(seg(tt, pp - 0.05, pp + 0.4)) * 0.8, dy = lift(tt);
-            return `<g transform="translate(${MX} ${f1(MY + dy)}) rotate(${f1(12 + 2 * Math.sin(tt * 1.4))}) scale(0.62)">${fakeMelon(kk, tt, { id: 'u' })}</g>` +
+            return `<g transform="translate(${MX} ${f1(MY + dy)}) rotate(${f1(12 + 2 * Math.sin(tt * 1.4))}) scale(0.62)">${fakeMelon(kk, tt, { cid: 'u' })}</g>` +
               glove(HF[0], HF[1] + dy, 0.55, 1, -55) + glove(HN[0], HN[1] + dy, 0.55, -1, 50) + wash(MX, MY + dy, 300, 200, GLOW, f1(0.25 * flashAt(tt, pp))); } }
         ],
         overlays: [
