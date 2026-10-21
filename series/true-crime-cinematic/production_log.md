@@ -522,3 +522,7 @@
 - 2026-10-21 22:02:41 tcv93-billion-dollar-ship: rendering (final60, seed 1)
 - 2026-10-21 22:23:42 tcv93-billion-dollar-ship: rendered in 1261s
 - 2026-10-21 22:24:17 tcv93-billion-dollar-ship: VERIFIED -> series/true-crime-cinematic/output/true_crime_93_billion_dollar_ship.mp4 (28.2s, 16.5 MB, sha256 e8ebd2bbac46)
+- 2026-10-21 22:26:13 produce 92 --force: regenerating episode data
+- 2026-10-21 22:26:13 tcv92-drug-cannon: rendering (final60, seed 1)
+- 2026-10-21 22:48:01 tcv92-drug-cannon: rendered in 1307s
+- 2026-10-21 22:48:32 tcv92-drug-cannon: VERIFIED -> series/true-crime-cinematic/output/true_crime_92_drug_cannon.mp4 (27.7s, 15.1 MB, sha256 4d11d2759c34)
