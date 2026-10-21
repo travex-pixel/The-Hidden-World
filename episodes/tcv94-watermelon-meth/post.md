@@ -1,6 +1,6 @@
 CAPTION: Meth watermelons: U.S. Customs found 1,220 fake melons with paper skins in a truck of real ones at San Diego's Otay Mesa crossing, 4,587 lb of meth worth over $5 million (Aug 2024). Then nearly $11 million in a leek shipment and $17.7 million in blackberries at Pharr, Texas. Where they hid it, 5. Which disguise was best: melons, leeks or berries?
 HASHTAGS: #methwatermelons #wheretheyhidit #smuggling #customs #truecrime
 ALT TEXT: Illustrated reel about meth watermelons: gloved hands peel the paper skin of a fake watermelon open on a white brick of meth beside a real cut watermelon on a border inspection table, then a truck of leeks flagged by a scanner and a sniffer dog, and a scan revealing 862 packages in a blackberry shipment.
-SEED COMMENT: The paper watermelons are the only one that nearly worked. Leeks never stood a chance once the dog agreed with the scanner, and 862 packages under blackberries was always going to show up on a scan.
+SEED COMMENT: The paper watermelons are the only one that nearly worked. Leeks never stood a chance once the dog agreed with the scanner, and 862 packages in a blackberry truck was always going to show up on a scan.
 PINNED: Send this to the mate who'd pick the fake melon 🍉 Vote: 1 = the watermelons, 2 = the leeks, 3 = the blackberries 👇 Where They Hid It, 5.
 POST WHEN: The day after Case File 93, in the same evening slot as 92 and 93 (7–9 pm US Eastern): one v8 reel per day, so the three lane reels are read against each other at 6 h.
