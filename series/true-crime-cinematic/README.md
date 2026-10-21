@@ -93,6 +93,9 @@
 | 89 | `true_crime_89_cocaine_cast.mp4` (archived outside git) | Where They Hid It 4 (engine v7, 28 s, object-first headline): the Barcelona cocaine leg cast (2009, arrested), cocaine pineapples at Mercamadrid (2018, 67 kg), frozen sharks at Progreso (2009) | see `production_manifest.json` |
 | 90 | `true_crime_90_stolen_bridge.mp4` (archived outside git) | They Stole What? 1 (engine v7): the 50-foot Pennsylvania bridge cut up for scrap (2011, charged), the stolen Jamaican beach (2008), five tons of glacier ice (Chile 2012) | see `production_manifest.json` |
 | 91 | `true_crime_91_scooter_getaway.mp4` (archived outside git) | Dumbest Getaways 3 (engine v7): the Kayseri donkey getaway after a forklift ram-raid (2026, sentenced), the Chula Vista rental-scooter bank robber (2019, 57 months), the Austin app-rental getaway (2018, accused) | see `production_manifest.json` |
+| 92 | `true_crime_92_drug_cannon.mp4` (archived outside git) | Border Fails 6 (engine v8, lane-locked, agent-first hook): the Agua Prieta cannon van (Nov 2017, 1,800 lb seized), the San Luis cannon cans (2012), the Marana ultralight (2008, pleaded guilty) | see `production_manifest.json` |
+| 93 | `true_crime_93_billion_dollar_ship.mp4` (archived outside git) | Record Busts 1 (engine v8): the MSC Gayane, Philadelphia 2019 (39,525 lb, 8 crew pleaded guilty, ship seized), Hamburg wall-filler tins (2021, 16 t), Ecuador pigsty (2024, ~22 t) | see `production_manifest.json` |
+| 94 | `true_crime_94_watermelon_meth.mp4` (archived outside git) | Where They Hid It 5 (engine v8): meth in paper-skinned fake watermelons at Otay Mesa (Aug 2024, 4,587 lb), the Pharr leeks and blackberries seizures (2026) | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

@@ -1002,3 +1002,27 @@ ALT TEXT: Illustrated reel about the dumbest getaways: a hooded silhouette ridin
 SEED COMMENT: If the Austin story holds up, the app rental wins. The donkey was a plan, a bad one, but a plan. Renting your getaway under your own account is handing the police your name. Change my mind.
 PINNED: Send this to the mate who'd ride a donkey 🫏 Vote: 1 = the donkey, 2 = the rental scooter, 3 = the app rental 👇 Dumbest Getaways, 3 (the Uber bank job was 2).
 POST WHEN: Wednesday 21 Oct 2026, 7–9 pm US Eastern (the evening slot that pushed 86 and 88).
+
+## 92 (`true_crime_92_drug_cannon.mp4`)
+CAPTION: A drug cannon built into a van, aimed at Arizona 💥 Seized with 1,800 lb of weed in Agua Prieta (2017), the town's second one. Plus canned weed fired near Yuma, and an ultralight pilot caught by a helicopter. Border Fails, 6: cannon, cans or ultralight?
+HASHTAGS: #drugcannon #borderfails #smugglers #border #truecrime
+ALT TEXT: Illustrated reel about a drug cannon: a van at the US-Mexico border fence with an air-cannon barrel through its open roof firing a package over the fence, the seized packages, cans of weed flying into an Arizona field, and an ultralight pilot caught by a helicopter.
+SEED COMMENT: The van cannon is genius until it gets seized with 1,800 pounds still in it. The ultralight guy at least made it across. Ultralight wins.
+PINNED: Send this to the mate who'd build a cannon 💥 Vote: 1 = the cannon van, 2 = the canned weed, 3 = the ultralight 👇 Border Fails, 6.
+POST WHEN: Thursday 22 Oct 2026, 7–9 pm US Eastern (one v8 reel a day, same slot; Border Fails is the account's strongest lane).
+
+## 93 (`true_crime_93_billion_dollar_ship.mp4`)
+CAPTION: Cocaine ship: smugglers craned a billion dollars of cocaine onto a cargo ship at sea, and a swab on the second mate's hands caught the crew (Philadelphia, 2019; 8 pleaded guilty). Then 16 tonnes in tins of wall filler in Hamburg, and nearly 22 tonnes under a pigsty in Ecuador. Record Busts, 1. Worst hiding spot: ship, tins or pigsty?
+HASHTAGS: #cocaine #recordbust #smuggling #customs #truecrime
+ALT TEXT: Illustrated reel about record cocaine busts: a cocaine ship at night with a container's doors open on taped bricks and the ship's crane swinging a net of bricks above it, a swab test turning amber at a sailor's hands, a customs officer prising open a tin of wall filler full of bricks in Hamburg, and a soldier lifting a hatch under a pigsty in Ecuador onto a lit underground stash.
+SEED COMMENT: The ship's own crane is the boldest move here by a mile. The pigsty is just a basement with extra steps, and wall-filler tins only work until somebody opens one. Change my mind.
+PINNED: Send this to the mate who'd trust this crew 🚢 Vote: 1 = the ship's crane, 2 = the wall-filler tins, 3 = the pigsty 👇 Record Busts, 1.
+POST WHEN: Friday 23 Oct 2026, 7–9 pm US Eastern, the day after Case File 92 in the same slot.
+
+## 94 (`true_crime_94_watermelon_meth.mp4`)
+CAPTION: Meth watermelons: U.S. Customs found 1,220 fake melons with paper skins in a truck of real ones at San Diego's Otay Mesa crossing, 4,587 lb of meth worth over $5 million (Aug 2024). Then nearly $11 million in a leek shipment and $17.7 million in blackberries at Pharr, Texas. Where they hid it, 5. Which disguise was best: melons, leeks or berries?
+HASHTAGS: #methwatermelons #wheretheyhidit #smuggling #customs #truecrime
+ALT TEXT: Illustrated reel about meth watermelons: gloved hands peel the paper skin of a fake watermelon open on a white brick of meth beside a real cut watermelon on a border inspection table, then a truck of leeks flagged by a scanner and a sniffer dog, and a scan revealing 862 packages in a blackberry shipment.
+SEED COMMENT: The paper watermelons are the only one that nearly worked. Leeks never stood a chance once the dog agreed with the scanner, and 862 packages in a blackberry truck was always going to show up on a scan.
+PINNED: Send this to the mate who'd pick the fake melon 🍉 Vote: 1 = the watermelons, 2 = the leeks, 3 = the blackberries 👇 Where They Hid It, 5.
+POST WHEN: Saturday 24 Oct 2026, 7–9 pm US Eastern, the day after Case File 93 in the same slot.

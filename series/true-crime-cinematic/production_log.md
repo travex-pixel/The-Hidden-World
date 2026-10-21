@@ -526,3 +526,7 @@
 - 2026-10-21 22:26:13 tcv92-drug-cannon: rendering (final60, seed 1)
 - 2026-10-21 22:48:01 tcv92-drug-cannon: rendered in 1307s
 - 2026-10-21 22:48:32 tcv92-drug-cannon: VERIFIED -> series/true-crime-cinematic/output/true_crime_92_drug_cannon.mp4 (27.7s, 15.1 MB, sha256 4d11d2759c34)
+- 2026-10-21 22:50:02 produce 94 --force: regenerating episode data
+- 2026-10-21 22:50:02 tcv94-watermelon-meth: rendering (final60, seed 1)
+- 2026-10-21 23:01:48 tcv94-watermelon-meth: rendered in 706s
+- 2026-10-21 23:02:22 tcv94-watermelon-meth: VERIFIED -> series/true-crime-cinematic/output/true_crime_94_watermelon_meth.mp4 (28.2s, 16.1 MB, sha256 66db4fd32991)
