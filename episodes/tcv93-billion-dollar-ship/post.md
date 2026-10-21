@@ -1,0 +1,6 @@
+CAPTION: Cocaine ship: smugglers craned a billion dollars of cocaine onto a cargo ship at sea, and a swab on the second mate's hands caught the crew (Philadelphia, 2019; 8 pleaded guilty). Then 16 tonnes in tins of wall filler in Hamburg, and nearly 22 tonnes under a pigsty in Ecuador. Record Busts, 1. Worst hiding spot: ship, tins or pigsty?
+HASHTAGS: #cocaine #recordbust #smuggling #customs #truecrime
+ALT TEXT: Illustrated reel about record cocaine busts: a cocaine ship at night with a container's doors open on taped bricks and the ship's crane swinging a net of bricks above it, a swab test turning amber at a sailor's hands, a customs officer prising open a tin of wall filler full of bricks in Hamburg, and a soldier lifting a hatch under a pigsty in Ecuador onto a lit underground stash.
+SEED COMMENT: The ship's own crane is the boldest move here by a mile. The pigsty is just a basement with extra steps, and wall-filler tins only work until somebody opens one. Change my mind.
+PINNED: Send this to the mate who'd trust this crew 🚢 Vote: 1 = the ship's crane, 2 = the wall-filler tins, 3 = the pigsty 👇 Record Busts, 1.
+POST WHEN: Thursday 22 Oct 2026, 7–9 pm US Eastern (one v8 reel a day, in the evening slot that pushed 86 and 88; Case File 92 the day before).
