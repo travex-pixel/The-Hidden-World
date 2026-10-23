@@ -532,3 +532,5 @@
 - 2026-10-21 23:02:22 tcv94-watermelon-meth: VERIFIED -> series/true-crime-cinematic/output/true_crime_94_watermelon_meth.mp4 (28.2s, 16.1 MB, sha256 66db4fd32991)
 - 2026-10-23 13:53:40 produce 97 --force: regenerating episode data
 - 2026-10-23 13:53:40 tcv97-cocaine-jacket: rendering (final60, seed 1)
+- 2026-10-23 14:13:57 tcv97-cocaine-jacket: rendered in 1216s
+- 2026-10-23 14:14:34 tcv97-cocaine-jacket: VERIFIED -> series/true-crime-cinematic/output/true_crime_97_cocaine_jacket.mp4 (27.5s, 15.4 MB, sha256 2c64e099cf1a)
