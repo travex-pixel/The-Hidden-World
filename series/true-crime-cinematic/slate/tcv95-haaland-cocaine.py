@@ -38,7 +38,7 @@ def build(h):
 
     scenes = [
         # A - HOOK (frame 0, the made thing in the act): night on the Pan-American Highway; the open rear of a cargo truck;
-        #     a police officer's gloved hands lift the false floor (already open on frame 0, still rising) on a cavity
+        #     a police officer's gloved hand lifts the false floor (already open on frame 0, still rising) on a cavity
         #     packed with green bricks, each with a plain green sticker (a generic footballer silhouette and a "9");
         #     bricks spill over the tailgate; a second officer's torch from the right; the camera already pushing in
         S("s01_hook", "hc95_hook", [N("Smugglers branded their cocaine with Haaland.", tone="hook", speed=1.06),
@@ -124,7 +124,7 @@ def build(h):
     ]
     C = h.claim
     claims = [
-        C("K_hook", "August 2026, near Tulcan (the Guagua Negro area), Ecuador, by the Colombian border: Ecuador's police seized a cocaine shipment from a truck; the green rectangular packages carried stickers of Manchester City and Norway striker Erling Haaland's face. Narration: 'Smugglers branded their cocaine with Haaland's face.' (the traffickers' marking; 'branded' = marked) Headline 'COCAINE BRICKS / WITH HAALAND'S FACE'. Label 'NEAR TULCAN, ECUADOR · AUG 2026'.",
+        C("K_hook", "August 2026, near Tulcan (the Guagua Negro area), Ecuador, by the Colombian border: Ecuador's police seized a cocaine shipment from a truck; the green rectangular packages carried stickers of Manchester City and Norway striker Erling Haaland's face. Narration: 'Smugglers branded their cocaine with Haaland.' (the traffickers' marking; 'branded' = marked with his image) Headline 'COCAINE BRICKS / WITH HAALAND'S FACE'. Label 'NEAR TULCAN, ECUADOR · AUG 2026'.",
           ["apabc", "aplanacion", "outkick", "lbc", "ibt", "sabah", "onenews"]),
         C("K_weight", "The shipment weighed 469 kg, 1,034 lb (AP; OutKick 'just over 1,000 pounds'; Earlygame 1,034 lb; zamin.uz 469 kg). LBC and MyJoyOnline give 369 kg; the reel says only 'over 1,000 pounds' and shows the AP figure. Seized from a truck near the Colombian border. Narration: 'Over 1,000 pounds, hidden in a truck near Colombia.'",
           ["apabc", "aplanacion", "outkick", "earlygame", "zamin"]),
@@ -136,7 +136,7 @@ def build(h):
           ["apabc", "aplanacion", "lbc", "outkick"]),
         C("K_nolink", "Haaland has no connection to the shipment: no report links him to it (IBTimes: 'reportedly no connection to the cocaine shipment or the trafficking operation'; other outlets: nothing indicates any connection between the footballer and the drugs); police gave no explanation for the stickers. He is named, never drawn. Narration (callback): 'Haaland had no part.' Label sub 'Haaland has no link to it'.",
           ["ibt", "blueprint", "zamin", "apabc"]),
-        C("K_why", "Traffickers commonly mark their shipments with the images or names of well-known sports figures and celebrities to signal which criminal network produced the batch and for which client (AP); in the 2026 Costa del Sol case, Spanish police said the watch logo stamped on the bricks was a branding trick to mark which shipment a batch belonged to (Euro Weekly News). Narration (callback): 'Gangs use famous faces as labels.'",
+        C("K_why", "Traffickers commonly mark their shipments with the images or names of well-known sports figures and celebrities to signal which criminal network produced the batch and for which client (AP); in the 2026 Costa del Sol case, Spanish police said the watch logo stamped on the bricks was a branding trick to mark which shipment a batch belonged to (Euro Weekly News). Narration (callback): 'It's a gang's label.'",
           ["apabc", "aplanacion", "ewn", "gray"]),
         C("K_messi", "FUN FACT: the image of Lionel Messi has also appeared on another seized cocaine package (AP; Ynet). Card 'HAALAND'S NOT THE FIRST STAR: / MESSI'S FACE TURNED UP / ON SEIZED COCAINE TOO'.",
           ["aplanacion", "apabc", "ynet"]),

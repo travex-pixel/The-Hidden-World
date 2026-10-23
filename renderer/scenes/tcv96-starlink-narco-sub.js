@@ -60,76 +60,86 @@
     return `<path d="${d}" fill="${col}" opacity="${f1(op)}"/>` + (foam > 0 ? `<path d="${fd}" stroke="#d8e2e2" stroke-width="5" fill="none" opacity="${f1(foam * op)}"/>` : '');
   }
 
-  // ---------- THE HERO: the uncrewed semi-submersible, profile facing RIGHT (bow at +520, stern at -470), waterline at local
-  // y = 0, seen from slightly above (the deck shows), low and shark-like: a long pointed hull riding awash, a raked fin-like
-  // cabin, the white flat antenna on a mast on the foredeck. o.lit 0..1 the searchlight on it; o.hatch 0..1 the hatch lid
-  // open (s02); o.run 0..1 under way (bow spray, wake, water over the deck); o.bob the swell motion; o.sig the satellite
-  // signal arcs from the antenna
+  // ---------- THE HERO: the uncrewed semi-submersible, profile facing RIGHT (bow at +520, stern at -480), waterline at local
+  // y = 0. It rides AWASH: the long hull lies just under the surface (its deck at the waterline, waves washing over it);
+  // only a low conning hump shows, with a lit cockpit window and an EMPTY seat, and on top of the hump the white flat
+  // satellite dish on a short mast, angled up, with a blinking green light. o.lit 0..1 the searchlight on it; o.hatch 0..1
+  // the hatch on the hump open (s02); o.run 0..1 under way (bow wave, long wake, wash over the deck); o.bob the swell;
+  // o.sig the satellite signal arcs from the dish
+  const DISH = { x: -60, y: -220 };          // the dish centre (local), for the callout, the beam and the satellite link
   function semiSub(x, y, s, t, o = {}) {
     const bb = o.bob ?? 1, run = o.run ?? 1, lit = o.lit ?? 0, hatch = clamp(o.hatch || 0, 0, 1), sig = o.sig ?? 0;
-    const bob = bb * (5 * Math.sin(t * 1.4) + 2.5 * Math.sin(t * 2.9 + 1)), pitch = bb * 0.9 * Math.sin(t * 1.4 + 0.6);
+    const bob = bb * (4 * Math.sin(t * 1.4) + 2 * Math.sin(t * 2.9 + 1)), pitch = bb * 0.7 * Math.sin(t * 1.4 + 0.6);
     let g = `<g transform="translate(${f1(x)} ${f1(y + bob * s)}) scale(${sc(s)})">`;
-    // the wake: foam streaks trailing off the stern, sliding left
+    // the long wake: a V of foam spreading behind the stern far off to the left, and churned water along its centre
     if (run > 0) {
       let wk = '';
-      for (let i = 0; i < 9; i++) { const u = ((t * 0.9 + i / 9) % 1), xx = -480 - u * 700, sp = 20 + u * 120;
-        wk += `<path d="M${f1(xx)} ${f1(-4 - sp * 0.35)} q-60 ${f1(-10 - u * 10)} -130 ${f1(-sp * 0.15)}" stroke="#e6eeee" stroke-width="${f1(7 - u * 4)}" fill="none" opacity="${f1(0.55 * (1 - u) * run)}"/>` +
-          `<path d="M${f1(xx)} ${f1(10 + sp * 0.3)} q-60 ${f1(12 + u * 10)} -140 ${f1(sp * 0.18)}" stroke="#e6eeee" stroke-width="${f1(8 - u * 4)}" fill="none" opacity="${f1(0.5 * (1 - u) * run)}"/>`; }
-      g += wk + wash(-660, 6, 300, 40, '#dfe9e9', f1(0.18 * run));
+      for (let i = 0; i < 16; i++) { const u = ((t * 0.55 + i / 16) % 1), xx = -470 - u * 1300, sp = 14 + u * 200;
+        wk += `<path d="M${f1(xx)} ${f1(-6 - sp * 0.22)} q-70 ${f1(-6 - u * 8)} -150 ${f1(-u * 20)}" stroke="#e6eeee" stroke-width="${f1(8 - u * 5)}" fill="none" stroke-linecap="round" opacity="${f1(0.6 * (1 - u) * run)}"/>` +
+          `<path d="M${f1(xx)} ${f1(12 + sp * 0.5)} q-70 ${f1(10 + u * 10)} -160 ${f1(u * 40)}" stroke="#e6eeee" stroke-width="${f1(9 - u * 5)}" fill="none" stroke-linecap="round" opacity="${f1(0.55 * (1 - u) * run)}"/>`; }
+      for (let i = 0; i < 12; i++) { const u = ((t * 0.9 + i / 12) % 1), xx = -480 - u * 900;
+        wk += `<ellipse cx="${f1(xx)}" cy="${f1(6 + 6 * Math.sin(i * 1.7 + t * 2))}" rx="${f1(46 + u * 80)}" ry="${f1(9 + u * 8)}" fill="#dfeaea" opacity="${f1(0.45 * (1 - u) * run)}"/>`; }
+      g += wk + wash(-760, 10, 520, 70, '#dfe9e9', f1(0.16 * run));
     }
     g += `<g transform="rotate(${f1(pitch)})">`;
-    // the side band above the water (dark blue-grey fibreglass), the long pointed bow
-    g += `<path d="M-472 10 L-466 -70 Q-300 -88 -40 -92 L300 -84 Q450 -70 524 -16 L520 10 Z" fill="${SIDE}" stroke="${INK}" stroke-width="7" stroke-linejoin="round"/>`;
-    g += `<path d="M-460 -30 Q0 -42 490 -16" stroke="#3a454b" stroke-width="6" fill="none" opacity="0.8"/>`;
-    // the deck, seen from slightly above, converging to the bow point
-    g += `<path d="M-466 -70 Q-456 -112 -392 -122 Q-40 -140 300 -126 Q450 -104 524 -16 Q450 -70 300 -84 L-40 -92 Q-300 -88 -466 -70 Z" fill="${DECK}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
-    g += `<path d="M-436 -100 Q-40 -126 300 -112 Q410 -96 486 -40" stroke="${DECK_L}" stroke-width="7" fill="none" opacity="0.75"/>`;
-    for (let i = 0; i < 8; i++) g += `<path d="M${-380 + i * 105} ${f1(-88 - 34 * Math.sin(Math.PI * (i + 0.5) / 8))} L${-384 + i * 105} -6" stroke="#2e383e" stroke-width="3" opacity="0.4"/>`;
+    // the deck at the waterline: a long low lens barely above the surface, the bow point at the right
+    g += `<path d="M-482 4 Q-472 -18 -400 -24 L380 -24 Q470 -20 526 2 Q470 12 380 14 L-400 14 Q-472 12 -482 4 Z" fill="${SIDE}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
+    g += `<path d="M-446 -14 Q0 -26 486 -6" stroke="${DECK_L}" stroke-width="6" fill="none" opacity="0.7"/>`;
     // the exhaust stack at the stern
-    g += `<rect x="-420" y="-196" width="24" height="96" fill="${SIDE}" stroke="${INK}" stroke-width="4"/><rect x="-428" y="-206" width="40" height="14" rx="3" fill="#2e363a" stroke="${INK}" stroke-width="3"/>`;
-    // the raked, fin-like cabin with a camera dome at its front (remote cameras) and the hatch on top (opens in s02)
-    g += `<path d="M-290 -112 Q-250 -210 -150 -222 L30 -222 Q110 -214 170 -118 Z" fill="${SIDE}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
-    g += `<path d="M-262 -150 Q-230 -206 -150 -214 L30 -214 Q94 -206 136 -158 Q30 -180 -70 -180 Q-190 -178 -262 -150 Z" fill="${DECK}" opacity="0.9"/>`;
-    g += `<path d="M-30 -170 L120 -150" stroke="#141a1e" stroke-width="12" stroke-linecap="round" opacity="0.85"/>`;
-    g += `<circle cx="152" cy="-134" r="17" fill="#141a1e" stroke="${INK}" stroke-width="3"/><circle cx="157" cy="-139" r="6" fill="#9ab4c0" opacity="0.85"/>`;
-    if (hatch > 0) g += `<ellipse cx="-90" cy="-214" rx="${f1(50 * hatch)}" ry="${f1(11 * hatch)}" fill="#050708"/>`;
-    g += `<g transform="rotate(${f1(-105 * ease.inOut(hatch))} -140 -216)"><ellipse cx="-90" cy="-216" rx="52" ry="12" fill="${DECK_L}" stroke="${INK}" stroke-width="4"/></g>`;
-    // the searchlight's warm pool on the hull (the accent)
-    if (lit > 0) g += `<g style="mix-blend-mode:screen">${wash(180, -100, 380, 120, '#ffbe6a', f1(0.5 * lit))}${wash(300, -80, 160, 60, '#fff0d0', f1(0.3 * lit))}</g>`;
-    // THE ANTENNA: a white flat panel tilted to the sky on a mast on the foredeck (generic; no logo); its light blinks
-    g += `<path d="M262 -112 L262 -196" stroke="#20282c" stroke-width="12"/><path d="M244 -114 L280 -114" stroke="#20282c" stroke-width="10"/>`;
-    g += `<path d="M178 -272 L346 -258 L338 -198 L170 -212 Z" fill="#eef1f0" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
-    g += `<path d="M186 -262 L338 -248" stroke="#ffffff" stroke-width="6" opacity="0.85"/><path d="M174 -216 L338 -202" stroke="#aeb6b8" stroke-width="6" opacity="0.9"/>`;
-    if (lit > 0) g += `<path d="M178 -272 L346 -258 L338 -198 L170 -212 Z" fill="#fff4dc" opacity="${f1(0.4 * lit)}"/>`;
-    const bl = Math.pow(Math.max(0, Math.sin(t * 5.2)), 6);
-    g += wash(262, -196, 50, 36, '#ffd890', f1(0.2 + 0.7 * bl)) + `<circle cx="262" cy="-196" r="${f1(7 + 5 * bl)}" fill="${bl > 0.3 ? '#fff4d6' : '#d8a050'}" stroke="${INK}" stroke-width="2"/>`;
-    // the signal: arcs rising off the panel toward the sky, cycling
-    if (sig > 0) { let sg = ''; for (let i = 0; i < 3; i++) { const u = ((t * 0.8 + i / 3) % 1), r = 60 + u * 220; sg += `<path d="M${f1(258 - r * 0.7)} ${f1(-250 - r * 0.45)} Q258 ${f1(-250 - r * 1.05)} ${f1(258 + r * 0.7)} ${f1(-250 - r * 0.45)}" stroke="#fff0c8" stroke-width="${f1(8 - u * 5)}" fill="none" stroke-linecap="round" opacity="${f1(0.75 * sig * Math.sin(Math.PI * u))}"/>`; } g += `<g style="mix-blend-mode:screen">${sg}</g>`; }
-    // water washing over the deck and along the waterline
+    g += `<rect x="-438" y="-92" width="18" height="76" fill="${SIDE}" stroke="${INK}" stroke-width="4"/><rect x="-444" y="-100" width="30" height="12" rx="3" fill="#2e363a" stroke="${INK}" stroke-width="3"/>`;
+    // the low conning hump, raked forward
+    g += `<path d="M-250 -16 Q-236 -102 -150 -126 L40 -130 Q124 -122 172 -16 Z" fill="${SIDE}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
+    g += `<path d="M-222 -74 Q-194 -116 -146 -120 L40 -124 Q100 -118 134 -76" stroke="${DECK_L}" stroke-width="6" fill="none" opacity="0.8"/>`;
+    // the cockpit window on the hump's flank, lit warm from inside: an EMPTY seat, a glowing autopilot screen, nobody
+    g += wash(76, -76, 150, 80, '#ffc070', 0.32);
+    g += `<defs><clipPath id="ns96win"><rect x="10" y="-108" width="128" height="64" rx="18"/></clipPath></defs>`;
+    let win = `<rect x="0" y="-120" width="150" height="90" fill="#5a3418"/>` + wash(74, -76, 90, 50, '#ffd08a', 0.85) + wash(74, -76, 40, 24, '#fff2d0', 0.6);
+    win += `<path d="M40 -44 L44 -94 Q46 -104 58 -104 L70 -104 Q80 -104 80 -94 L78 -62 L100 -60 L100 -44 Z" fill="#20140c" opacity="0.92"/>`;
+    win += `<rect x="50" y="-118" width="26" height="12" rx="5" fill="#20140c" opacity="0.92"/>`;
+    win += `<rect x="112" y="-90" width="22" height="18" rx="3" fill="#7ff0c8"/>` + wash(123, -81, 26, 20, '#7ff0c8', 0.6);
+    g += `<g clip-path="url(#ns96win)">${win}</g><rect x="10" y="-108" width="128" height="64" rx="18" fill="none" stroke="${INK}" stroke-width="6"/><path d="M22 -100 L60 -100" stroke="#fff6e0" stroke-width="4" opacity="0.6"/>`;
+    // the hatch on top of the hump (opens in s02)
+    if (hatch > 0) g += `<ellipse cx="-150" cy="-124" rx="${f1(40 * hatch)}" ry="${f1(9 * hatch)}" fill="#050708"/>`;
+    g += `<g transform="rotate(${f1(-105 * ease.inOut(hatch))} -192 -126)"><ellipse cx="-150" cy="-126" rx="42" ry="10" fill="${DECK_L}" stroke="${INK}" stroke-width="4"/></g>`;
+    // the searchlight's warm pool on the hump (the accent)
+    if (lit > 0) g += `<g style="mix-blend-mode:screen">${wash(-20, -80, 300, 110, '#ffbe6a', f1(0.5 * lit))}${wash(40, -60, 140, 60, '#fff0d0', f1(0.3 * lit))}</g>`;
+    // THE SATELLITE DISH: a short mast on the hump; a flat white rectangular panel angled up to the sky (generic, no
+    // logo), its thickness showing underneath; a small green status light blinking on the mast
+    g += `<path d="M-60 -124 L-60 -176" stroke="#20282c" stroke-width="14"/><path d="M-82 -126 L-38 -126" stroke="#20282c" stroke-width="10"/>`;
+    g += `<path d="M-136 -170 L44 -196 L44 -184 L-136 -158 Z" fill="#8e989a" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>`;
+    g += `<path d="M-164 -240 L18 -268 L44 -196 L-136 -170 Z" fill="#f2f4f3" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
+    g += `<path d="M-150 -234 L18 -260" stroke="#ffffff" stroke-width="7" opacity="0.9"/><path d="M-140 -180 L38 -206" stroke="#c4ccce" stroke-width="7" opacity="0.9"/><path d="M-150 -205 L30 -232" stroke="#e2e6e6" stroke-width="3" opacity="0.8"/>`;
+    if (lit > 0) g += `<path d="M-164 -240 L18 -268 L44 -196 L-136 -170 Z" fill="#fff4dc" opacity="${f1(0.35 * lit)}"/>`;
+    const bl = Math.pow(Math.max(0, Math.sin(t * 4.6)), 5);
+    g += wash(-40, -156, 44, 34, '#6dff9a', f1(0.15 + 0.75 * bl)) + `<circle cx="-40" cy="-156" r="${f1(7 + 4 * bl)}" fill="${bl > 0.3 ? '#b8ffcc' : '#2a8a4a'}" stroke="${INK}" stroke-width="2"/>`;
+    // the signal: arcs rising off the dish toward the sky, cycling
+    if (sig > 0) { let sg = ''; for (let i = 0; i < 3; i++) { const u = ((t * 0.8 + i / 3) % 1), r = 60 + u * 220; sg += `<path d="M${f1(-60 - r * 0.7)} ${f1(-270 - r * 0.45)} Q-60 ${f1(-270 - r * 1.05)} ${f1(-60 + r * 0.7)} ${f1(-270 - r * 0.45)}" stroke="#fff0c8" stroke-width="${f1(8 - u * 5)}" fill="none" stroke-linecap="round" opacity="${f1(0.75 * sig * Math.sin(Math.PI * u))}"/>`; } g += `<g style="mix-blend-mode:screen">${sg}</g>`; }
+    // waves washing over the deck: translucent sheets and foam sliding back along the hull, white water round the hump
     if (run > 0) {
       let fm = '';
-      for (let i = 0; i < 12; i++) { const u = ((t * 1.3 + i / 12) % 1), xx = 480 - u * 950; fm += `<path d="M${f1(xx)} ${f1(-4 + 4 * Math.sin(i))} q-30 -8 -76 -2" stroke="#eef4f4" stroke-width="7" fill="none" opacity="${f1(0.55 * Math.sin(Math.PI * u) * run)}"/>`; }
-      fm += `<path d="M520 -14 Q440 -70 300 -92 Q380 -60 430 -30 Z" fill="#dfeaea" opacity="${f1((0.35 + 0.15 * Math.sin(t * 3.1)) * run)}"/>`;
-      for (let i = 0; i < 5; i++) { const u = ((t * 0.9 + i / 5) % 1), xx = 420 - u * 560; fm += `<path d="M${f1(xx)} ${f1(-96 - 10 * u)} q-40 -6 -90 4" stroke="#e8f0f0" stroke-width="5" fill="none" opacity="${f1(0.4 * Math.sin(Math.PI * u) * run)}"/>`; }
+      for (let i = 0; i < 14; i++) { const u = ((t * 1.2 + i / 14) % 1), xx = 500 - u * 980; fm += `<path d="M${f1(xx)} ${f1(-14 + 6 * Math.sin(i * 2.1))} q-34 -10 -86 -2" stroke="#eef4f4" stroke-width="8" fill="none" stroke-linecap="round" opacity="${f1(0.6 * Math.sin(Math.PI * u) * run)}"/>`; }
+      fm += `<path d="M180 -10 Q120 -46 60 -20 Q120 -24 170 4 Z" fill="#e8f0f0" opacity="${f1((0.4 + 0.2 * Math.sin(t * 3.3)) * run)}"/>`;
+      fm += `<path d="M-250 -8 Q-300 -30 -360 -14 Q-300 -14 -250 6 Z" fill="#e8f0f0" opacity="${f1((0.35 + 0.15 * Math.sin(t * 2.7)) * run)}"/>`;
+      for (let i = 0; i < 3; i++) { const u = ((t * 0.7 + i / 3) % 1), xx = 420 - u * 820; fm += `<ellipse cx="${f1(xx)}" cy="-8" rx="${f1(90 + 40 * u)}" ry="12" fill="#cfe0e2" opacity="${f1(0.35 * Math.sin(Math.PI * u) * run)}"/>`; }
       g += fm;
     }
-    g += `<path d="M-474 2 Q0 14 524 2" stroke="#dfe8e8" stroke-width="8" fill="none" opacity="0.6"/>`;
+    g += `<path d="M-484 0 Q0 8 528 0" stroke="#dfe8e8" stroke-width="8" fill="none" opacity="0.55"/>`;
     g += '</g>';
-    // the bow spray: droplets thrown forward and up off the bow, cycling
+    // the bow wave: a white curl folding off the bow, spray thrown forward and up
     if (run > 0) {
       let sp = '';
       const r = R(9611);
-      for (let i = 0; i < 30; i++) { const ph = r(), v = 0.7 + r() * 0.6, ang = -0.35 - r() * 0.9, u = ((t * 1.7 * v + ph) % 1);
-        const px = 510 + Math.cos(ang) * 280 * u, py = -14 + Math.sin(ang) * 240 * u + 280 * u * u, rr = 5 + r() * 10;
+      for (let i = 0; i < 34; i++) { const ph = r(), v = 0.7 + r() * 0.6, ang = -0.3 - r() * 0.9, u = ((t * 1.7 * v + ph) % 1);
+        const px = 500 + Math.cos(ang) * 260 * u, py = -10 + Math.sin(ang) * 200 * u + 260 * u * u, rr = 5 + r() * 10;
         sp += `<circle cx="${f1(px)}" cy="${f1(py)}" r="${f1(rr * (1 - u * 0.4))}" fill="#eef4f4" opacity="${f1(0.8 * (1 - u) * run)}"/>`; }
-      g += sp + `<path d="M450 6 Q540 -50 620 -38 Q580 -8 660 12" stroke="#eef4f4" stroke-width="12" fill="none" opacity="${f1(0.65 * run)}"/>` + wash(560, -24, 140, 70, '#eef4f4', f1(0.28 * run));
+      g += sp + `<path d="M420 10 Q500 -50 590 -40 Q560 -10 640 14 Q540 26 420 10 Z" fill="#eef4f4" opacity="${f1(0.7 * run)}"/>` + wash(540, -14, 160, 70, '#eef4f4', f1(0.3 * run));
     }
     return g + '</g>';
   }
-  // the hull below the waterline, seen through the water (drawn over the near swell, translucent)
+  // the long hull just under the surface, seen through the water (drawn over the near swell, translucent)
   function subUnder(x, y, s, t) {
-    const bob = 5 * Math.sin(t * 1.4) + 2.5 * Math.sin(t * 2.9 + 1);
-    return `<g transform="translate(${f1(x)} ${f1(y + bob * s)}) scale(${sc(s)})"><path d="M-472 8 Q-490 70 -420 96 L420 96 Q500 70 522 10 Z" fill="#0c161c" opacity="0.42"/></g>`;
+    const bob = 4 * Math.sin(t * 1.4) + 2 * Math.sin(t * 2.9 + 1);
+    return `<g transform="translate(${f1(x)} ${f1(y + bob * s)}) scale(${sc(s)})"><path d="M-482 6 Q-500 64 -430 92 L440 92 Q520 64 528 6 Z" fill="#0a1418" opacity="0.5"/><path d="M-482 6 Q-500 64 -430 92 L440 92 Q520 64 528 6" stroke="#6a8a94" stroke-width="5" fill="none" opacity="0.3"/></g>`;
   }
   // a generic satellite (body and two panels, no marking), small, high in the sky; and a dashed link down to the antenna
   function satellite(x, y, s, t) {
@@ -173,19 +183,19 @@
 
   // ---------- frame 1: the sub, the swell around it, the patrol boat and its beam. tau = seconds since frame 0; the beam's
   // sweep runs on its own clock (sw) so the end scene can play it backwards
-  const SUB = { x: 500, y: 990, s: 0.96 };
+  const SUB = { x: 480, y: 990, s: 1.04 };
   const SAT = { x: 930, y: 640 };
   // the satellite and a dashed link from it down to the antenna (frame-1 coordinates; the dashes travel down)
-  const satLink = tau => { const ax = SUB.x + 258 * SUB.s, ay = SUB.y - 300 * SUB.s; return `<path d="M${f1(SAT.x - 20)} ${f1(SAT.y + 30)} L${f1(ax + 10)} ${f1(ay)}" stroke="#fff0c8" stroke-width="5" stroke-dasharray="14 18" stroke-dashoffset="${f1(-tau * 60)}" opacity="0.5"/>` + satellite(SAT.x, SAT.y, 0.7, tau); };
-  const B0 = { x: 1010, y: 1010 }, B1 = { x: 560, y: 900 };
+  const satLink = tau => { const ax = SUB.x + (DISH.x - 6) * SUB.s, ay = SUB.y + (DISH.y - 46) * SUB.s; return `<path d="M${f1(SAT.x - 20)} ${f1(SAT.y + 30)} L${f1(ax + 10)} ${f1(ay)}" stroke="#fff0c8" stroke-width="5" stroke-dasharray="14 18" stroke-dashoffset="${f1(-tau * 60)}" opacity="0.5"/>` + satellite(SAT.x, SAT.y, 0.7, tau); };
+  const B0 = { x: 1010, y: 1010 }, B1 = { x: 470, y: 930 };
   const sweepAt = sw => { const e = ease.inOut(clamp((sw + 0.3) / 1.9, 0, 1)); return { x: lerp(B0.x, B1.x, e), y: lerp(B0.y, B1.y, e), e }; };
   function heroAt(tau, sw) {
     const b = sweepAt(sw);
-    const lit = clamp(1 - Math.abs(b.x - 740) / 520, 0.15, 1);
+    const lit = clamp(1 - Math.abs(b.x - 470) / 560, 0.15, 1);
     return {
       back: crest(SUB.y - 34, tau, 9, 380, '#20323c', 0.7, 0.9, 0.4, 0.25),
       sub: satLink(tau) + semiSub(SUB.x, SUB.y, SUB.s, tau, { lit, run: 1, sig: 1 }),
-      front: crest(SUB.y + 26, tau, 13, 460, '#1c2c36', 0.82, 1.1, 1.7, 0.3) + subUnder(SUB.x, SUB.y, SUB.s, tau) + crest(SUB.y + 170, tau, 20, 560, '#18262f', 0.9, 1.2, 0.9, 0.3),
+      front: crest(SUB.y + 8, tau, 9, 460, '#1c2c36', 0.72, 1.1, 1.7, 0.4) + subUnder(SUB.x, SUB.y, SUB.s, tau) + crest(SUB.y + 170, tau, 20, 560, '#18262f', 0.9, 1.2, 0.9, 0.3),
       beam: beamCone(LAMP.x + 30, LAMP.y - 6, b.x, b.y, 120, 1),
       deck: patrolDeck(),
       boat: patrolFront(tau, b.x, b.y, 1),
@@ -410,8 +420,8 @@
           { depth: 1.01, svg: tt => heroM(tt, tt).boat }
         ],
         overlays: [
-          { type: 'callout', at: Math.max(3.05, l2 + 0.3), target: [748, 764], label: [620, 640], anchor: 'end', w: 560, fs: 30, text: 'STARLINK ANTENNA, NO CREW', sub: 'A commercial terminal, as reported', r: 62, depth: 0.95 },
-          { type: 'label', at: Math.max(3.05, l2 + 0.55), x: 60, y: 1160, text: "COLOMBIA'S CARIBBEAN COAST · 2025", fs: 28, sub: 'Capacity: 1.5 tonnes, per the navy' }
+          { type: 'callout', at: Math.max(3.05, l2 + 0.3), target: [418, 762], label: [620, 600], anchor: 'end', w: 560, fs: 30, text: 'STARLINK ANTENNA, NO CREW', sub: 'A commercial terminal, as reported', r: 70, depth: 0.95 },
+          { type: 'label', at: Math.max(3.05, l2 + 0.55), x: 60, y: 1170, text: "COLOMBIA'S CARIBBEAN COAST · 2025", fs: 28, sub: 'Capacity: 1.5 tonnes, per the navy' }
         ],
         tag: TAG
       });
@@ -427,22 +437,22 @@
         set: 'ns96_sea', setOpts: { view: 'day' }, grade: 'none', haze: 0.4,
         cam: { from: { x: -10, y: 20, z: 1.0 }, to: { x: 14, y: 10, z: 1.07 } },
         figures: [
-          { id: 'ns96_sailor', x: 430, y: 952, scale: 0.3, dir: 1, turn: 0.4, pose: 'kneel', expr: 'focused', depth: 0.955, propOpts: { beamLen: 160, aim: 20 },
-            keys: [{ at: 0.1, headTurn: 0.25, dur: 0.4 }, { at: sz, pose: 'examine', dur: 0.35 }, { at: em, pose: 'torch_low', expr: 'realise', headTurn: 0.1, dur: 0.35 }, { at: tr + 0.3, pose: 'kneel', headTurn: 0.4, dur: 0.4 }] },
+          { id: 'ns96_sailor', x: 330, y: 1052, scale: 0.3, dir: 1, turn: 0.4, pose: 'stand', expr: 'focused', depth: 0.955, propOpts: { beamLen: 160, aim: 40 },
+            keys: [{ at: 0.1, headTurn: 0.25, dur: 0.4 }, { at: sz, pose: 'examine', dur: 0.35 }, { at: em, pose: 'torch_low', expr: 'realise', headTurn: 0.1, dur: 0.35 }, { at: tr + 0.3, pose: 'stand', headTurn: 0.4, dur: 0.4 }] },
           { id: 'ns96_navy', x: 210, y: 1720, scale: 0.98, dir: 1, turn: 0.45, pose: 'stand', expr: 'focused', depth: 1.0, hat: { style: 'cap', color: '#2a3442' },
             keys: [{ at: 0.1, headTurn: 0.2, dur: 0.4 }, { at: sz, pose: 'point', expr: 'determined', dur: 0.3 }, { at: tr, pose: 'arms_crossed', expr: 'stern', headTurn: 0.1, dur: 0.4 }] }
         ],
         props: [
           // the far patrol boat (left, behind the sub) and the sub itself, stopped, lying low in the calm
           { depth: 0.9, svg: tt => { let g = `<g transform="translate(-40 920) scale(0.55)"><path d="M-300 0 L700 0 L640 70 L-260 70 Z" fill="#6a767e" stroke="${INK}" stroke-width="7"/><path d="M-120 0 L-100 -110 L300 -110 L340 0 Z" fill="#8a969e" stroke="${INK}" stroke-width="6"/><rect x="-60" y="-90" width="300" height="34" fill="#2a343c"/><path d="M120 -110 L120 -220 M80 -180 L160 -180" stroke="#2a343c" stroke-width="8"/></g>`; return g + crest(985, tt, 4, 400, '#2c4652', 0.8, 0.5, 0.3, 0.2); } },
-          { depth: 0.95, accent: true, svg: tt => semiSub(560, 1050, 0.86, tt, { run: 0, bob: 0.5, hatch, lit: 0.3 }) + crest(1058, tt, 5, 420, '#2a4450', 0.8, 0.6, 1.1, 0.25) },
+          { depth: 0.95, accent: true, svg: tt => semiSub(560, 1050, 0.86, tt, { run: 0, bob: 0.5, hatch, lit: 0.3 }) + crest(1056, tt, 5, 420, '#2a4450', 0.72, 0.6, 1.1, 0.3) + subUnder(560, 1050, 0.86, 0) },
           // the near patrol boat's deck (the officer stands on it) and its rail, lower foreground
           { depth: 0.98, svg: tt => `<path d="M-200 1560 Q500 1500 1300 1540 L1300 2100 L-200 2100 Z" fill="#6a767e" stroke="${INK}" stroke-width="7"/><path d="M-200 1600 Q500 1544 1300 1584" stroke="#8a969e" stroke-width="8" fill="none"/>` },
           { depth: 1.02, svg: tt => `<path d="M-200 1640 Q500 1580 1300 1620" stroke="#2a3238" stroke-width="9" fill="none"/>` + Array.from({ length: 8 }, (_, i) => `<path d="M${-100 + i * 180} ${f1(1624 - i * 4)} L${-96 + i * 180} ${f1(1730 - i * 4)}" stroke="#2a3238" stroke-width="7"/>`).join('') }
         ],
         overlays: [
           { type: 'impact', at: sz, x: 520, y: 950 },
-          { type: 'callout', at: em + 0.1, target: [483, 862], label: [1040, 700], anchor: 'end', w: 470, fs: 30, text: 'NO DRUGS ABOARD', sub: 'A trial run, per the navy', r: 50, depth: 0.95 },
+          { type: 'callout', at: em + 0.1, target: [431, 942], label: [1040, 760], anchor: 'end', w: 470, fs: 30, text: 'NO DRUGS ABOARD', sub: 'A trial run, per the navy', r: 50, depth: 0.95 },
           { type: 'stamp', at: tr, x: 760, y: 1210, text: 'TEST RUN', rot: -8, scale: 1.3 },
           { type: 'label', at: 0.3, x: 60, y: 436, text: 'COLOMBIAN NAVY · FOUND APRIL 2025', fs: 28, sub: 'Spotted from the air, per MIT Tech Review' }
         ],

@@ -6,7 +6,7 @@ is a settled fact (the drugs exist and were found). Nobody accused is named or d
 
 ## Method and limits
 
-- Web search (standard mode), 12 queries, 23 Oct 2026. Full pages could not be opened from the build environment
+- Web search (standard mode), 11 queries, 23 Oct 2026. Full pages could not be opened from the build environment
   (WebFetch returned DNS errors for abcnews.com and lanacion.com.ar), so every claim below rests on **search-result
   extracts**, cross-checked between at least two outlets. Access date for every URL: 2026-10-23.
 - The Haaland story is overwhelmingly one Associated Press wire story republished by many outlets (ABC News, La Nación,
@@ -20,14 +20,14 @@ is a settled fact (the drugs exist and were found). Nobody accused is named or d
 
 | Claim | Narration / on screen | Sources |
 |---|---|---|
-| Ecuador's police seized a cocaine shipment from a truck near the Colombian border; the green rectangular packages carried stickers of Erling Haaland's face (Manchester City, Norway). | Hook: "Smugglers branded their cocaine with Haaland's face." Headline COCAINE BRICKS / WITH HAALAND'S FACE | AP (ABC News, La Nación, Santa Maria Times); Fox News/OutKick; LBC; IBTimes; Daily Sabah; 1News |
+| Ecuador's police seized a cocaine shipment from a truck near the Colombian border; the green rectangular packages carried stickers of Erling Haaland's face (Manchester City, Norway). | Hook: "Smugglers branded their cocaine with Haaland." Headline COCAINE BRICKS / WITH HAALAND'S FACE | AP (ABC News, La Nación, Santa Maria Times); Fox News/OutKick; LBC; IBTimes; Daily Sabah; 1News |
 | Place: the Guagua Negro area near the border city of Tulcán. | Label NEAR TULCÁN, ECUADOR · AUG 2026 | AP (La Nación extract); LBC |
 | Date: announced Wednesday 12 August 2026 (AP); the tip came in early on the Tuesday. The reel shows only AUG 2026. | Label | AP (ABC News, La Nación); 1News (13 Aug) |
 | Weight 469 kg = 1,034 lb (AP); "just over 1,000 pounds" (OutKick); 1,034 lb (Earlygame); 469 kg (zamin.uz). | "Over 1,000 pounds, hidden in a truck near Colombia." Counter 469 KG, label COCAINE · ABOUT 1,034 LB (AP) | AP; OutKick; Earlygame; zamin.uz |
 | Anti-narcotics agents acting on an anonymous tip on the Pan-American Highway noticed a suspicious truck, searched it and found the packages hidden in a false bottom. Police video shows the packages spilling out of the false bottom with the stickers visible. | Gotcha (before 9 s): "A tip led police to the false bottom." Labels ANONYMOUS TIP · PAN-AMERICAN HIGHWAY, FALSE BOTTOM | AP (ABC News, La Nación, Santa Maria Times); Fox News/OutKick; Gray/CNN Newsource (Hawaii News Now) |
 | One person was arrested (AP: the driver; LBC: a Colombian woman). | Label sub "1 arrested · not named" | AP; LBC; OutKick (citing the New York Post: the driver) |
 | Police gave no explanation for the stickers. Haaland has no connection to the shipment (IBTimes: "reportedly no connection to the cocaine shipment or the trafficking operation"; other outlets: nothing indicates any connection between the footballer and the drugs). | Label sub "Haaland has no link to it"; callback "Haaland had no part." | IBTimes; Blueprint; zamin.uz; AP (no explanation given) |
-| Traffickers commonly label shipments with well-known sports figures and celebrities to signal which criminal network produced the merchandise and which client it belongs to. In the September 2026 Costa del Sol case, Spanish police said the watch logo on the bricks was a branding trick to mark which shipment a batch belonged to. | Callback: "Gangs use famous faces as labels." | AP (ABC News, La Nación); Gray/CNN Newsource; Euro Weekly News |
+| Traffickers commonly label shipments with well-known sports figures and celebrities to signal which criminal network produced the merchandise and which client it belongs to. In the September 2026 Costa del Sol case, Spanish police said the watch logo on the bricks was a branding trick to mark which shipment a batch belonged to. | Callback: "Haaland had no part. It's a gang's label." | AP (ABC News, La Nación); Gray/CNN Newsource; Euro Weekly News |
 
 URLs:
 - AP via ABC News: https://abcnews.com/International/wireStory/ecuadors-police-seize-cocaine-shipment-stickers-norways-soccer-135596418
