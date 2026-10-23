@@ -1026,3 +1026,27 @@ ALT TEXT: Illustrated reel about meth watermelons: gloved hands peel the paper s
 SEED COMMENT: The paper watermelons are the only one that nearly worked. Leeks never stood a chance once the dog agreed with the scanner, and 862 packages in a blackberry truck was always going to show up on a scan.
 PINNED: Send this to the mate who'd pick the fake melon 🍉 Vote: 1 = the watermelons, 2 = the leeks, 3 = the blackberries 👇 Where They Hid It, 5.
 POST WHEN: Saturday 24 Oct 2026, 7–9 pm US Eastern, the day after Case File 93 in the same slot.
+
+## 95 (`true_crime_95_haaland_cocaine.mp4`)
+CAPTION: Haaland cocaine: Ecuador's police found over 1,000 lb of cocaine wearing Erling Haaland stickers in a truck's false bottom near Colombia (Aug 2026). Haaland has no link to it: gangs use famous faces to mark their batches. Then bricks stamped The Godfather, and bricks marked YouTube, dropped by plane. Cartel Brands, 1. Which brand was dumbest?
+HASHTAGS: #haaland #cocaine #cartelbrands #smuggling #truecrime
+ALT TEXT: Illustrated reel about the Haaland cocaine seizure: a police officer's gloved hand lifts a truck's false floor on green cocaine bricks with plain footballer-silhouette stickers, then bricks stamped The Godfather caught at a road stop in Spain, and bricks marked YouTube dropped by plane in Uruguay and found in a firewood truck.
+SEED COMMENT: YouTube is the dumbest by miles. A footballer's face at least says "winners", and The Godfather is just honest advertising.
+PINNED: Send this to the mate who'd brand everything ⚽ Vote: 1 = the Haaland stickers, 2 = The Godfather, 3 = YouTube 👇 Cartel Brands, 1.
+POST WHEN: Friday 23 Oct 2026, 7–9 pm US Eastern (tonight; one v8 reel a day in the slot that pushed 92 and 94).
+
+## 96 (`true_crime_96_starlink_narco_sub.mp4`)
+CAPTION: A drone submarine run by Starlink: the first narco sub with no crew, seized empty off Colombia on a test run 🛰️ Plus a cocaine torpedo clamped under a ship in Peru, and a real submarine found in Ecuador's jungle before it ever sailed. Smuggler Tech, 1: drone, torpedo or sub?
+HASHTAGS: #narcosub #starlink #smugglers #drugbust #truecrime
+ALT TEXT: Illustrated reel about a drone submarine run by Starlink: a grey uncrewed narco sub with a white satellite antenna caught in a navy searchlight off Colombia, the sub seized empty between patrol boats, a police diver finding a cocaine torpedo under a ship in Peru, and a submarine hidden in Ecuador's jungle.
+SEED COMMENT: The torpedo is the smartest by miles. Nobody looks under a ship. The drone sub got caught on its test drive.
+PINNED: Send this to the mate who'd build a sub 🛰️ Vote: 1 = the drone sub, 2 = the torpedo, 3 = the jungle sub 👇 Smuggler Tech, 1.
+POST WHEN: Saturday 24 Oct 2026, 7–9 pm US Eastern, the day after Case File 95 in the same slot.
+
+## 97 (`true_crime_97_cocaine_jacket.mp4`)
+CAPTION: Cocaine jacket: Nepal's narcotics bureau found cocaine mixed with silicone and shaped into a jacket, blankets and neck pillows (July 2026). Then Manila's towels and Spain's cocaine pallets. Where they hid it, 6. Which fake was best?
+HASHTAGS: #cocainejacket #wheretheyhidit #smuggling #customs #truecrime
+ALT TEXT: Illustrated reel about a cocaine jacket: gloved hands cut open a red jacket to show a white layer of cocaine mixed with silicone, then towels flagged by an X-ray in Manila and shipping pallets in Spain made of cocaine.
+SEED COMMENT: The pallets are the genius one. Nobody checks the wood under the cargo. A jacket is still just clothes in a suitcase.
+PINNED: Send this to the mate who'd wear the jacket 🧥 Vote: 1 = jacket, 2 = towels, 3 = pallets 👇 Where They Hid It, 6.
+POST WHEN: Sunday 25 Oct 2026, 7–9 pm US Eastern, the day after Case File 96 in the same slot.
