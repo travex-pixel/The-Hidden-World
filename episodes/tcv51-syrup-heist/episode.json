@@ -1,0 +1,972 @@
+{
+ "id": "tcv51-syrup-heist",
+ "number": 51,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "They Stole $18 Million of Syrup",
+ "central_question": "How did thieves empty Quebec's strategic maple syrup reserve without anyone noticing, and how were they caught?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "18": "eighteen",
+   "2012,": "twenty twelve,",
+   "9": "nine"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "51",
+  "label": "MAPLE SYRUP HEIST · QUEBEC 2012"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s05_empty",
+   "word": [
+    1,
+    5
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "sh51_valli",
+  "sh51_thief",
+  "sh51_inspector",
+  "sh51_worker",
+  "sh51_buyer",
+  "sh51_officer",
+  "sh51_farmer"
+ ],
+ "content_notes": "Remarkable and ironic, never glamorising theft. No weapon, threat or violence is depicted. Richard Vallieres appears only as a faceless silhouette tagged NOT A LIKENESS and is not named in narration; accomplices are faceless generic silhouettes; the inspector, workers, the officer, the producer and the buyer are generic figures, never named. No logo or name of the producers' federation or of any police force is drawn; the warehouse, dock, sugar shack and sugar bush are generic illustrations. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-15.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "sh51_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "drain",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "H_value",
+    "H_water",
+    "H_where"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They stole 18 million dollars of syrup."
+    },
+    {
+     "who": "narrator",
+     "text": "And the barrels still looked full.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "stole",
+    "18",
+    "million",
+    "syrup.",
+    "still",
+    "full."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_reserve",
+   "scene": "sh51_reserve",
+   "min_duration": 3.6,
+   "pad_after": 0.45,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "H_reserve",
+    "H_where"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It was Quebec's strategic reserve of syrup."
+    },
+    {
+     "who": "narrator",
+     "text": "Yes, that is real.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "quebec's",
+    "strategic",
+    "reserve",
+    "real"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_how",
+   "scene": "sh51_how",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "door",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "H_night",
+    "H_span"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "How do you steal that much?"
+    },
+    {
+     "who": "narrator",
+     "text": "Slowly, at night, for almost a year.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "how",
+    "steal",
+    "much?",
+    "slowly,",
+    "night,",
+    "year."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_swap",
+   "scene": "sh51_swap",
+   "min_duration": 3.6,
+   "pad_after": 0.45,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "drain",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "water",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "door",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "H_shack",
+    "H_water"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They emptied barrels at a sugar shack,"
+    },
+    {
+     "who": "narrator",
+     "text": "added water, and brought them back.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "emptied",
+    "sugar",
+    "shack,",
+    "water,",
+    "back."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_empty",
+   "scene": "sh51_empty",
+   "min_duration": 3.6,
+   "pad_after": 0.5,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.25
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "H_found",
+    "H_empty",
+    "H_barrels"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2012, an inspector climbed up the barrels."
+    },
+    {
+     "who": "narrator",
+     "text": "And the barrel under him? Empty.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "inspector",
+    "climbed",
+    "barrel",
+    "him?",
+    "empty."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_stat",
+   "scene": "sh51_stat",
+   "min_duration": 4.2,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.2
+    },
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      2
+     ],
+     "name": "riser",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "H_stat"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Canada makes over three quarters of the world's syrup.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "canada",
+    "three",
+    "quarters",
+    "world's"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "sh51_lesson",
+   "min_duration": 4.4,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "H_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Buying second-hand online? Save these three red flags.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "second-hand",
+    "online?",
+    "save",
+    "red",
+    "flags."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "sh51_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "cash",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "H_sentence",
+    "H_fine"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then the ringleader got eight years."
+    },
+    {
+     "who": "narrator",
+     "text": "And a fine of over 9 million dollars.",
+     "pause_before": 0.5
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ringleader",
+    "eight",
+    "years",
+    "9",
+    "million"
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "H_value",
+   "type": "established",
+   "nature": "fact",
+   "text": "Over several months in 2011-2012 thieves stole maple syrup valued at about C$18.7 million (Wikipedia, CJAD; CBC, Mental Floss, CP24: about $18 million). Narration: 'They stole 18 million dollars of syrup.' (Canadian dollars; the headline card says $18M.)",
+   "sources": [
+    "wiki",
+    "cjad",
+    "mfloss",
+    "cp24",
+    "tce"
+   ]
+  },
+  {
+   "id": "H_water",
+   "type": "established",
+   "nature": "fact",
+   "text": "Emptied barrels were refilled with water so the stock still looked full. Narration: 'And the barrels still looked full.' / 'added water, and brought them back.' Headline: 'SWAPPED FOR WATER'.",
+   "sources": [
+    "wiki",
+    "mfloss",
+    "star",
+    "cjad"
+   ]
+  },
+  {
+   "id": "H_where",
+   "type": "established",
+   "nature": "fact",
+   "text": "The syrup was the Federation of Quebec Maple Syrup Producers' reserve, stored in a rented warehouse in Saint-Louis-de-Blandford, Quebec (on a label; the town is not spoken).",
+   "sources": [
+    "wiki",
+    "bloomberg",
+    "mfloss",
+    "tce"
+   ]
+  },
+  {
+   "id": "H_reserve",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: Quebec's producers' federation keeps a strategic reserve of maple syrup (the 'Global Strategic Maple Syrup Reserve') to keep supply and prices stable. Narration: 'It was Quebec's strategic reserve of syrup.'",
+   "sources": [
+    "bloomberg",
+    "mfloss",
+    "wiki",
+    "cbc_guilty"
+   ]
+  },
+  {
+   "id": "H_night",
+   "type": "established",
+   "nature": "fact",
+   "text": "Barrels were taken out at night (Toronto Star: over about ten months) and trucked away. Narration: 'Slowly, at night, for almost a year.'",
+   "sources": [
+    "star",
+    "wiki",
+    "tce"
+   ]
+  },
+  {
+   "id": "H_span",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police dated the theft from about August 2011 to July 2012 (just under a year). Progress chip: AUG 2011 -> JULY 2012 -> 2017.",
+   "sources": [
+    "mfloss",
+    "wiki",
+    "cnn"
+   ]
+  },
+  {
+   "id": "H_shack",
+   "type": "established",
+   "nature": "fact",
+   "text": "The barrels were taken to a sugar shack, emptied and refilled with (stream/lake) water, then returned to the warehouse; later the syrup was drained on site. Narration: 'They emptied barrels at a sugar shack, added water, and brought them back.'",
+   "sources": [
+    "wiki",
+    "star",
+    "tce"
+   ]
+  },
+  {
+   "id": "H_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 30 July 2012 an inventory audit of the reserve began (Bloomberg; Wikipedia: July 2012); the inspector, climbing the stacked barrels, nearly fell. Narration: 'In 2012, an inspector climbed up the barrels.' (He is not named or depicted as a likeness.)",
+   "sources": [
+    "bloomberg",
+    "mfloss",
+    "wiki"
+   ]
+  },
+  {
+   "id": "H_empty",
+   "type": "established",
+   "nature": "fact",
+   "text": "The barrel was empty (Mental Floss: the barrel he climbed onto nearly tipped over; it was empty. Wikipedia: he expected 600-lb barrels and found them empty); many others that looked full held water. Narration: 'And the barrel under him? Empty.'",
+   "sources": [
+    "mfloss",
+    "wiki",
+    "cbc_guilty"
+   ]
+  },
+  {
+   "id": "H_barrels",
+   "type": "established",
+   "nature": "fact",
+   "text": "About 9,600 barrels were emptied (CBC: 9,571; Guardian via student press: over 9,500; CNN/others: 9,600; law newsletter: about 10,000). Label: 'NEARLY 10,000 BARRELS EMPTIED'.",
+   "sources": [
+    "cbc_guilty",
+    "cnn",
+    "wiki"
+   ]
+  },
+  {
+   "id": "H_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): Canada produced more than 75 % of the world's maple syrup in 2025 (73 % in 2024), with 90.0 % of Canadian production from Quebec (Agriculture and Agri-Food Canada 2025 overview; Statistics Canada 2025). Narration: 'Canada makes over three quarters of the world's syrup.' Counter 'OVER 75%'.",
+   "sources": [
+    "aafc25",
+    "aafc24",
+    "statcan"
+   ]
+  },
+  {
+   "id": "H_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (police guidance on not buying stolen goods online): a price far below normal (ACT Policing; Winnipeg Police), no receipt / proof of purchase or serial number (Winnipeg Police Service), and a seller who wants to meet somewhere you are not comfortable (Winnipeg Police; ACT Policing advises a busy, well-lit public place). Buying stolen property can mean it is seized without refund. Rows: 'WAY BELOW MARKET PRICE', 'NO RECEIPT OR SERIAL NO.', 'WON'T MEET IN PUBLIC'.",
+   "sources": [
+    "wps_ctv",
+    "wps_chvn",
+    "act_scoot",
+    "act_vig"
+   ]
+  },
+  {
+   "id": "H_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "Richard Vallieres, described as a ringleader, was found guilty of theft, fraud and trafficking (2016) and in 2017 sentenced to eight years in prison. Narration: 'Then the ringleader got eight years.'",
+   "sources": [
+    "cbc_sent",
+    "ctv_sent",
+    "reuters_scc",
+    "wiki"
+   ]
+  },
+  {
+   "id": "H_fine",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was also fined about C$9.4 million (2017); the Quebec Court of Appeal cut it to about C$1 million; on 31 March 2022 the Supreme Court of Canada restored a fine of about C$9.17 million ($10M less $828,602 restitution), with 10 years to pay or six more years in prison. Narration: 'And a fine of over 9 million dollars.'",
+   "sources": [
+    "cbc_sent",
+    "scc",
+    "cbc_scc",
+    "reuters_scc",
+    "wiki"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "wiki",
+   "publisher": "Wikipedia",
+   "title": "Great Canadian Maple Syrup Heist",
+   "url": "https://en.wikipedia.org/wiki/Great_Canadian_Maple_Syrup_Heist",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "tce",
+   "publisher": "The Canadian Encyclopedia",
+   "title": "Great Canadian Maple Syrup Heist",
+   "url": "https://thecanadianencyclopedia.ca/en/article/great-canadian-maple-syrup-heist",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "bloomberg",
+   "publisher": "Bloomberg Businessweek",
+   "title": "The Great Canadian Maple Syrup Heist",
+   "url": "https://brp-prod-bcc.bloomberg.com/news/articles/2013-01-02/the-great-canadian-maple-syrup-heist",
+   "date": "2013-01-02",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "mfloss",
+   "publisher": "Mental Floss",
+   "title": "The World's Greatest Maple Syrup Heist",
+   "url": "https://www.mentalfloss.com/article/63848/worlds-greatest-maple-syrup-heist",
+   "date": "2015",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cnn",
+   "publisher": "CNN",
+   "title": "Police arrest 3 in Canadian maple syrup heist",
+   "url": "https://edition.cnn.com/2012/12/18/world/americas/maple-syrup-heist",
+   "date": "2012-12-18",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "star",
+   "publisher": "Toronto Star (via PressReader)",
+   "title": "Cash flow in maple country",
+   "url": "https://www.pressreader.com/canada/toronto-star/20131006/281509338901276",
+   "date": "2013-10-06",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cbc_guilty",
+   "publisher": "CBC News",
+   "title": "Maple syrup heist: men found guilty",
+   "url": "https://amp.cbc.ca/news/canada/montreal/maple-syrup-heist-quebec-canada-guilty-1.3848431",
+   "date": "2016-11",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cbc_sent",
+   "publisher": "CBC News",
+   "title": "Ringleader in maple syrup heist gets 8 years in prison, $9.4M fine",
+   "url": "https://amp.cbc.ca/lite/story/1.4090811",
+   "date": "2017",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "ctv_sent",
+   "publisher": "CTV News Montreal",
+   "title": "Maple syrup heist mastermind receives 8-yr sentence",
+   "url": "https://montreal.ctvnews.ca/maple-syrup-heist-mastermind-receives-8-yr-sentence-1.3390130",
+   "date": "2017",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cjad",
+   "publisher": "CJAD 800",
+   "title": "Men arrested in great maple syrup heist found guilty of $18.7 million syrup theft",
+   "url": "https://cjad800.com/news/men-arrested-in-great-maple-syrup-heist-found-guilty-of-18-7-million-syrup-theft-1.2183735.html",
+   "date": "2016-11",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cp24",
+   "publisher": "CP24",
+   "title": "Slew of arrests made in Quebec syrup heist",
+   "url": "https://www.cp24.com/news/slew-of-arrests-made-in-quebec-syrup-heist-1.1087540",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "gazette",
+   "publisher": "Montreal Gazette (via PressReader)",
+   "title": "Maple syrup thief handed five-year sentence",
+   "url": "https://www.pressreader.com/canada/montreal-gazette/20170424/281539405842700",
+   "date": "2017-04-24",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "reuters_scc",
+   "publisher": "Reuters (via Grainews)",
+   "title": "Top court affirms hefty fine for man behind Quebec maple syrup heist",
+   "url": "https://www.grainews.ca/daily/top-court-affirms-hefty-fine-for-man-behind-quebec-maple-syrup-heist",
+   "date": "2022-03-31",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "cbc_scc",
+   "publisher": "CBC News",
+   "title": "Maple syrup thief must pay $9.1M fine, Supreme Court rules",
+   "url": "https://amp.cbc.ca/lite/story/1.6403757",
+   "date": "2022-03-31",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "scc",
+   "publisher": "Supreme Court of Canada",
+   "title": "Case in Brief: R. v. Vallieres (2022 SCC 10), file 39162",
+   "url": "https://www.scc-csc.ca/judgments-jugements/cb/2022/39162/",
+   "date": "2022-03-31",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "aafc25",
+   "publisher": "Agriculture and Agri-Food Canada",
+   "title": "Statistical overview of the Canadian maple industry, 2025",
+   "url": "https://agriculture.canada.ca/en/sector/horticulture/reports/statistical-overview-canadian-maple-industry-2025",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "aafc24",
+   "publisher": "Agriculture and Agri-Food Canada",
+   "title": "Statistical overview of the Canadian maple industry, 2024",
+   "url": "https://agriculture.canada.ca/en/sector/horticulture/reports/statistical-overview-canadian-maple-industry-2024",
+   "date": "2025-03",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "statcan",
+   "publisher": "Statistics Canada (The Daily)",
+   "title": "Production and value of maple products, 2025",
+   "url": "https://www150.statcan.gc.ca/daily-quotidien/251211/dq251211f-eng.htm",
+   "date": "2025-12-11",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "wps_ctv",
+   "publisher": "CTV News Winnipeg (Winnipeg Police Service)",
+   "title": "Winnipeg police warn about shoplifted items ending up online",
+   "url": "https://winnipeg.ctvnews.ca/winnipeg-police-warn-about-shoplifted-items-ending-up-online-1.4309434",
+   "date": "2019",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "wps_chvn",
+   "publisher": "CHVN Radio (Winnipeg Police Service)",
+   "title": "Winnipeg police urge shoppers to ask questions when buying second hand",
+   "url": "https://chvnradio.com/articles/winnipeg-police-urge-shoppers-to-ask-questions-when-buying-second-hand",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "act_scoot",
+   "publisher": "ACT Policing (Australian Federal Police)",
+   "title": "Police advise online scooter buyers to beware",
+   "url": "https://www.policenews.act.gov.au/node/12631",
+   "date": "2022",
+   "accessed": "search-result extract only, 2026-10-15"
+  },
+  {
+   "id": "act_vig",
+   "publisher": "ACT Policing (Australian Federal Police)",
+   "title": "Police urge vigilance when buying and selling goods online",
+   "url": "https://www.policenews.act.gov.au/node/5726",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-15"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#14222b",
+  "mid": "#c9b79a",
+  "accent": "#e09a2e"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "$18M OF MAPLE SYRUP"
+   },
+   {
+    "text": "SWAPPED FOR WATER",
+    "colour": "#e09a2e"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "THEY STOLE $18M OF SYRUP."
+   },
+   {
+    "text": "GENIUS OR STICKY FINGERS? 👇",
+    "colour": "#e09a2e"
+   },
+   {
+    "text": "TAG THE MATE WHO'D SCHEME THIS",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "",
+  "keys": [
+   {
+    "t": 11.91,
+    "v": "AUG 2011"
+   },
+   {
+    "t": 19.25,
+    "v": "JULY 2012"
+   },
+   {
+    "t": 34.12,
+    "v": "2017"
+   }
+  ],
+  "y": 330,
+  "until": 35.48
+ },
+ "legal_status_verified": "2026-10-15"
+}

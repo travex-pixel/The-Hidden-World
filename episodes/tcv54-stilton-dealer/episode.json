@@ -1,0 +1,1000 @@
+{
+ "id": "tcv54-stilton-dealer",
+ "number": 54,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Photo of Cheese Caught a UK Drug Dealer",
+ "central_question": "How did a photo of a block of Stilton, with no face in it, put a Liverpool drug dealer in prison?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "13": "thirteen",
+   "EncroChat": "Encro chat",
+   "Toffeeforce": "Toffee force",
+   "UK": "U K",
+   "fifty-four": "fifty four"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "54",
+  "label": "THE STILTON DEALER · LIVERPOOL 2020"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s05_prints",
+   "word": [
+    1,
+    6
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "sd54_stewart",
+  "sd54_cyber1",
+  "sd54_cyber2",
+  "sd54_officer",
+  "sd54_analyst",
+  "sd54_viewer"
+ ],
+ "content_notes": "Tone: remarkable and ironic. No drugs are shown (plain packages only), no weapon, no violence. Carl Stewart (convicted, sentenced May 2021) appears only as a faceless silhouette tagged NOT A LIKENESS; the big hand holding the cheese is a generic illustrated hand, not his. The investigators, exhibits officer, fingerprint analyst and the young man in the lesson are generic figures, never named; no badge, crest or insignia of any real force. The cheese wrapper is plain (no logo); 'M&S' appears only as typed text attributed to police. No banknote is imitated (plain banded bundles). The statistic card names its source and date. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-16.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "sd54_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "shutter",
+     "gain": 0.32
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "J_hook",
+    "J_noface"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A photo of cheese got him 13 years."
+    },
+    {
+     "who": "narrator",
+     "text": "His face was not even in it.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "photo",
+    "cheese",
+    "13",
+    "years.",
+    "face",
+    "not"
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_dealer",
+   "scene": "sd54_dealer",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "click",
+     "gain": 0.28
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "glitch",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "J_dealer",
+    "J_encro"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was a Liverpool drug dealer."
+    },
+    {
+     "who": "narrator",
+     "text": "He used EncroChat, a secret phone network.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "liverpool",
+    "drug",
+    "dealer.",
+    "encrochat,",
+    "secret"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_cracked",
+   "scene": "sd54_cracked",
+   "min_duration": 3.6,
+   "pad_after": 0.45,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "typing",
+     "gain": 0.2
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "glitch",
+     "gain": 0.28
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "J_cracked",
+    "J_venetic"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But French and Dutch police had cracked it."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "french",
+    "dutch",
+    "police",
+    "cracked"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_photo",
+   "scene": "sd54_photo",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.15
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "shutter",
+     "gain": 0.38
+    }
+   ],
+   "claims": [
+    "J_toffee",
+    "J_photo",
+    "J_mands"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His username? Toffeeforce, after Everton."
+    },
+    {
+     "who": "narrator",
+     "text": "He shared a photo of Stilton.",
+     "pause_before": 0.5
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "username?",
+    "toffeeforce,",
+    "everton.",
+    "shared",
+    "photo",
+    "stilton."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_prints",
+   "scene": "sd54_prints",
+   "min_duration": 3.6,
+   "pad_after": 0.4,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.25
+    },
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      2
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "J_prints"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But look at the hand holding it."
+    },
+    {
+     "who": "narrator",
+     "text": "Then police matched his palm and fingerprints.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "look",
+    "hand",
+    "matched",
+    "palm",
+    "fingerprints."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_stat",
+   "scene": "sd54_stat",
+   "min_duration": 3.6,
+   "pad_after": 0.5,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "cash",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "J_stat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The hack's first haul? Over fifty-four million in cash."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "first",
+    "haul?",
+    "fifty-four",
+    "million",
+    "cash."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "sd54_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "J_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Save this before your next post."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "save",
+    "next",
+    "post."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_end",
+   "scene": "sd54_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "J_sentence",
+    "J_caught"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His sentence? Thirteen and a half years."
+    },
+    {
+     "who": "narrator",
+     "text": "Brought down by one block of cheese.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sentence?",
+    "thirteen",
+    "half",
+    "years.",
+    "brought",
+    "down",
+    "block",
+    "cheese."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "J_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Carl Stewart, 39, of Liverpool was identified from a photo he shared on EncroChat of a block of Stilton in his hand, and was sentenced to 13 years and six months. Narration: 'A photo of cheese got him 13 years.' (the photo identified him; the sentence was for the drug conspiracies; '13' rounds down 13 years 6 months; the last line gives the full term).",
+   "sources": [
+    "ap_rep",
+    "cbs",
+    "register",
+    "fox",
+    "kcrg",
+    "abc6"
+   ]
+  },
+  {
+   "id": "J_noface",
+   "type": "established",
+   "nature": "fact",
+   "text": "Merseyside Police: the photo did not show any facial features; analysts identified him from the palm and fingerprints. Narration: 'His face was not even in it.'",
+   "sources": [
+    "pedestrian",
+    "irishlegal",
+    "cbs",
+    "fox"
+   ]
+  },
+  {
+   "id": "J_dealer",
+   "type": "established",
+   "nature": "fact",
+   "text": "He pleaded guilty to conspiracy to supply cocaine, conspiracy to supply heroin, MDMA and ketamine, and transferring criminal property; DI Lee Wilkinson said he was involved in supplying large amounts of Class A and B drugs. Narration: 'He was a Liverpool drug dealer.'",
+   "sources": [
+    "cbs",
+    "ap_rep",
+    "register",
+    "fox",
+    "mentalfloss"
+   ]
+  },
+  {
+   "id": "J_encro",
+   "type": "established",
+   "nature": "fact",
+   "text": "He used EncroChat, an encrypted phone network, under the handle 'Toffeeforce'. Narration: 'He used EncroChat, a secret phone network.'",
+   "sources": [
+    "cbs",
+    "ap_rep",
+    "pedestrian",
+    "nca_2020"
+   ]
+  },
+  {
+   "id": "J_cracked",
+   "type": "established",
+   "nature": "fact",
+   "text": "In April 2020 Eurojust set up a joint investigation team between France and the Netherlands (with Europol), which put 'a technical device' in place to get past EncroChat's encryption; the interception ended on 13 June 2020 when EncroChat realised it had been penetrated. Narration: 'But French and Dutch police had cracked it.'",
+   "sources": [
+    "eurojust",
+    "govinfo",
+    "secaff"
+   ]
+  },
+  {
+   "id": "J_venetic",
+   "type": "established",
+   "nature": "fact",
+   "text": "The UK response was Operation Venetic, led by the National Crime Agency with police forces; the Stewart case came from it (Merseyside Police had arrested more than 60 people under it by May 2021). Card only.",
+   "sources": [
+    "nca_2020",
+    "nca_venetic",
+    "cbs",
+    "pedestrian"
+   ]
+  },
+  {
+   "id": "J_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): announcing the first results on 2 July 2020, the NCA said UK law enforcement had arrested 746 suspects and seized over £54 million in criminal cash, 77 firearms and over two tonnes of Class A and B drugs so far. Narration: 'The hack's first haul? Over fifty-four million in cash.'",
+   "sources": [
+    "nca_2020",
+    "lbc",
+    "express",
+    "computing"
+   ]
+  },
+  {
+   "id": "J_toffee",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: his EncroChat handle was 'Toffeeforce', a nod / reference to Everton Football Club (nicknamed the Toffees). Narration: 'His username? Toffeeforce, after Everton.'",
+   "sources": [
+    "pedestrian",
+    "kcrg",
+    "cbs",
+    "ap_rep"
+   ]
+  },
+  {
+   "id": "J_photo",
+   "type": "established",
+   "nature": "fact",
+   "text": "He shared on EncroChat a photo of a block of Stilton cheese in his hand. Narration: 'He shared a photo of Stilton.'",
+   "sources": [
+    "ap_rep",
+    "cbs",
+    "register",
+    "fox",
+    "kcrg",
+    "abc6"
+   ]
+  },
+  {
+   "id": "J_mands",
+   "type": "established",
+   "nature": "fact",
+   "text": "Label: Merseyside Police said the Stilton was from Marks & Spencer (typed text only; no logo or packaging is drawn).",
+   "sources": [
+    "cbs",
+    "fox",
+    "mixmag"
+   ]
+  },
+  {
+   "id": "J_prints",
+   "type": "established",
+   "nature": "fact",
+   "text": "Merseyside Police: his palm and fingerprints were analysed from the picture and it was established they belonged to Stewart. Narration: 'But look at the hand holding it. Then police matched his palm and fingerprints.'",
+   "sources": [
+    "cbs",
+    "register",
+    "fox",
+    "irishlegal",
+    "pedestrian"
+   ]
+  },
+  {
+   "id": "J_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): what a posted photo can give away. (1) Fingerprints: Japan's National Institute of Informatics (Isao Echizen, Jan 2017) copied fingerprints from photos taken about 3 m away when the fingers were in focus and well lit. (2) Location: photo files can carry GPS coordinates (EXIF); the FBI warns that posted images can reveal a 'pattern of life', and the U.S. Army warns embedded photo data can tip off criminals. (3) Reflections: in 2019 a man in Tokyo found a singer's home from a station/bus stop reflected in her eyes in selfies (police account, widely reported). Rows: 'FINGERTIPS IN SHARP FOCUS', 'HIDDEN LOCATION DATA', 'REFLECTIONS IN YOUR EYES'.",
+   "sources": [
+    "nii_arab",
+    "nii_malay",
+    "nii_reuters",
+    "fbi",
+    "patch_fbi",
+    "army",
+    "eyes_cbs",
+    "eyes_reg",
+    "eyes_tnw"
+   ]
+  },
+  {
+   "id": "J_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was sentenced to 13 years and six months at Liverpool Crown Court (reported 24-30 May 2021). Narration: 'His sentence? Thirteen and a half years.'",
+   "sources": [
+    "ap_rep",
+    "cbs",
+    "register",
+    "fox",
+    "kcrg",
+    "abc6",
+    "irishlegal"
+   ]
+  },
+  {
+   "id": "J_caught",
+   "type": "established",
+   "nature": "fact",
+   "text": "DI Lee Wilkinson (Merseyside Police) said Stewart was 'caught out by his love of Stilton cheese'. Narration: 'Brought down by one block of cheese.'",
+   "sources": [
+    "cbs",
+    "ap_rep",
+    "fox",
+    "mentalfloss"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "ap_rep",
+   "publisher": "The Republic (Associated Press)",
+   "title": "Big cheese no more: UK drug dealer caught out by cheese pic",
+   "url": "https://www.therepublic.com/?p=446438",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "cbs",
+   "publisher": "CBS News",
+   "title": "Drug dealer identified by photo of cheese he posted on encrypted messaging service",
+   "url": "https://www.cbsnews.com/amp/news/carl-stewart-drug-dealer-identified-cheese-photo-encrochat",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "register",
+   "publisher": "The Register",
+   "title": "Drug dealer jailed after police spot his fingerprints on a photo of cheese",
+   "url": "https://www.theregister.com/2021/05/25/cheese_fingerprint_prison",
+   "date": "2021-05-25",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "fox",
+   "publisher": "FOX Television Stations (FOX 29)",
+   "title": "Cheese-loving drug dealer nabbed after posting picture, exposing his fingerprints, police say",
+   "url": "https://www.fox29.com/news/cheese-loving-drug-dealer-nabbed-after-posting-picture-exposing-his-fingerprints",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "wsvn",
+   "publisher": "WSVN 7News",
+   "title": "Drug dealer jailed after sharing a photo of cheese that included his fingerprints",
+   "url": "https://wsvn.com/news/us-world/drug-dealer-jailed-after-sharing-a-photo-of-cheese-that-included-his-fingerprints/",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "kcrg",
+   "publisher": "KCRG (Gray / CNN)",
+   "title": "Drug dealer arrested after sending photo of cheese",
+   "url": "https://www.kcrg.com/2021/05/30/drug-dealer-arrested-after-sending-photo-of-cheese",
+   "date": "2021-05-30",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "abc6",
+   "publisher": "ABC6",
+   "title": "Cheese-loving drug dealer jailed after police spot his fingerprints in a picture of a block of Stilton",
+   "url": "https://www.abc6.com/?p=565316",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "irishlegal",
+   "publisher": "Irish Legal News",
+   "title": "And finally... hard cheese",
+   "url": "https://www.irishlegal.com/articles/and-finally-hard-cheese-2",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "pedestrian",
+   "publisher": "PEDESTRIAN.TV",
+   "title": "A UK drug dealer wanted by the cops was foiled after trying to run an illicit cheese racket",
+   "url": "https://www.pedestrian.tv/news/drug-dealer-illicit-cheese-trading-liverpool/",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "mentalfloss",
+   "publisher": "Mental Floss",
+   "title": "Drug dealer arrested after sharing Stilton cheese photo",
+   "url": "https://www.mentalfloss.com/article/647008/drug-dealer-arrested-after-sharing-stilton-cheese-photo",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "mixmag",
+   "publisher": "Mixmag",
+   "title": "Drug dealer arrested after posting a picture of Stilton cheese",
+   "url": "https://mixmag.net/read/picture-of-a-block-of-stilton-leads-to-the-arrest-of-a-drug-dealer-news",
+   "date": "2021-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "eurojust",
+   "publisher": "Eurojust",
+   "title": "Dismantling of an encrypted network sends shockwaves through organised crime groups across Europe",
+   "url": "https://www.eurojust.europa.eu/it/node/2381",
+   "date": "2020-07-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "govinfo",
+   "publisher": "GovInfoSecurity",
+   "title": "European police hack encrypted communication system",
+   "url": "https://www.govinfosecurity.com/european-police-hack-encrypted-communication-system-a-14553",
+   "date": "2020-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "secaff",
+   "publisher": "Security Affairs",
+   "title": "European police infiltrate and dismantled EncroChat chat network",
+   "url": "https://securityaffairs.com/105517/cyber-crime/european-police-dismantled-encrochat.html",
+   "date": "2020-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "nca_2020",
+   "publisher": "National Crime Agency (newsroom)",
+   "title": "NCA and police smash thousands of criminal conspiracies after infiltration of encrypted communication platform in UK's biggest ever law enforcement operation",
+   "url": "https://nca-newsroom.prgloo.com/news/nca-and-police-smash-thousands-of-criminal-conspiracies-after-infiltration-of-encrypted-communication-platform-in-uks-biggest-ever-law-enforcement-operation",
+   "date": "2020-07-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "nca_venetic",
+   "publisher": "National Crime Agency",
+   "title": "Operation Venetic",
+   "url": "https://nationalcrimeagency.gov.uk/news/operation-venetic",
+   "date": "2020",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "lbc",
+   "publisher": "LBC",
+   "title": "746 arrests made in UK's biggest ever law enforcement operation",
+   "url": "https://www.lbc.co.uk/article/746-arrests-made-in-uks-biggest-ever-law-enforcement-operation-DWyZmh_2/",
+   "date": "2020-07-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "express",
+   "publisher": "Daily Express (via PressReader)",
+   "title": "746 arrested in record sting after police crack criminals' secret code",
+   "url": "https://www.pressreader.com/uk/daily-express/20200703/281732681764688",
+   "date": "2020-07-03",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "computing",
+   "publisher": "Computing",
+   "title": "Operation Venetic: Police bust crime chat network in UK's biggest ever law enforcement operation",
+   "url": "https://www.computing.co.uk/news/4017324/operation-venetic-police-bust-crime-chat-network-uk-biggest-law-enforcement-operation",
+   "date": "2020-07",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "nii_arab",
+   "publisher": "Arab News (AFP/Jiji)",
+   "title": "Japan researchers warn of fingerprint theft from 'peace' sign",
+   "url": "https://www.arabnews.com/node/1037351",
+   "date": "2017-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "nii_malay",
+   "publisher": "Malay Mail",
+   "title": "Japan researchers warn of fingerprint theft from 'peace' sign",
+   "url": "https://www.malaymail.com/amp/news/life/2017/01/12/japan-researchers-warn-of-fingerprint-theft-from-peace-sign/1290881",
+   "date": "2017-01-12",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "nii_reuters",
+   "publisher": "Reuters (Screenocean archive)",
+   "title": "'Peace' signs risk fingerprint theft, says Japanese study",
+   "url": "https://reuters.screenocean.com/record/164471",
+   "date": "2017-01",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "fbi",
+   "publisher": "FBI",
+   "title": "Cyber alerts for parents and kids (geotagged photos and 'pattern of life')",
+   "url": "https://www.fbi.gov/resolveuid/0f5ea92c08fe475cac1915a95a6ac351",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "patch_fbi",
+   "publisher": "Patch (FBI release)",
+   "title": "FBI warns about location data in posted photos",
+   "url": "https://patch.com/pennsylvania/pottstown/fbi-warns",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "army",
+   "publisher": "U.S. Army (army.mil)",
+   "title": "Mapping your life: Embedded data in photos could tip off criminals",
+   "url": "https://www.army.mil/article/51268/",
+   "date": "2010",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "eyes_cbs",
+   "publisher": "CBS News",
+   "title": "Japan man accused of assaulting pop star tracked her using selfies and Google Street View",
+   "url": "https://www.cbsnews.com/news/japan-man-accused-assault-pop-star-tracked-using-social-media-selfies-google-street-view-today-2019-10-09/",
+   "date": "2019-10-09",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "eyes_reg",
+   "publisher": "The Register",
+   "title": "Stalker found pop star's home from the reflection in her eyes",
+   "url": "https://www.theregister.co.uk/2019/10/10/stalker_japan_eyes",
+   "date": "2019-10-10",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "eyes_tnw",
+   "publisher": "The Next Web",
+   "title": "Stalker used reflection in eyes in a photo to find a Japanese idol's home",
+   "url": "https://thenextweb.com/news/stalker-japan-reflection-eye-camera-phone",
+   "date": "2019-10-09",
+   "accessed": "search-result extract only, 2026-10-16"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#131c24",
+  "mid": "#cfc2a8",
+  "accent": "#5fb0d6"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A PHOTO OF CHEESE"
+   },
+   {
+    "text": "CAUGHT A UK DRUG DEALER",
+    "colour": "#5fb0d6"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "13½ YEARS. ONE CHEESE PIC."
+   },
+   {
+    "text": "SMART COPS OR DUMB DEALER? 👇",
+    "colour": "#5fb0d6"
+   },
+   {
+    "text": "TAG THE MATE WHO OVERSHARES",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "CLUES",
+  "keys": [
+   {
+    "t": 11.2,
+    "v": "1 OF 3"
+   },
+   {
+    "t": 17.92,
+    "v": "2 OF 3"
+   },
+   {
+    "t": 22.42,
+    "v": "3 OF 3"
+   }
+  ],
+  "y": 330,
+  "until": 27.39
+ },
+ "legal_status_verified": "2026-10-16"
+}

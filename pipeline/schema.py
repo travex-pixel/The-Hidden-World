@@ -7,11 +7,11 @@ ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_TOP = ["id", "number", "title", "central_question", "template", "narrator_voice",
                 "target_duration_seconds", "scenes", "claims", "sources"]
 REQUIRED_SCENE = ["id", "scene", "min_duration", "pad_after", "music_cue", "sfx", "claims", "transition"]
-TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "thriller"}
-TRANSITIONS = {"cut", "wipe", "iris", "fade"}
+TEMPLATES = {"hidden-mechanism", "cascade", "counterintuitive-truth", "thriller", "true-crime"}
+TRANSITIONS = {"cut", "wipe", "iris", "fade", "push", "zoom", "flash", "dissolve"}
 CLAIM_TYPES = {"established", "plausible", "illustrative", "estimate", "disputed", "metaphor"}
-MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath"}
-SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain"}
+MUSIC_CUES = {"curious", "playful", "tension-rise", "tension", "tension-peak", "revelation", "warm", "outro", "intimate", "unease", "cold", "hush", "power", "aftermath", "drive", "drive-peak"}
+SFX_NAMES = {"sparkle", "flutter", "paper", "thud", "stamp", "coins", "drain", "water", "gate", "brake", "sting", "chime", "ping", "rumble", "whoosh", "puff", "beep", "static", "tick", "buzz", "thump", "step", "pen", "door", "swell", "rain", "typing", "wind", "gavel", "hit", "riser", "sub", "click", "glitch", "rasp", "siren", "shutter", "cuffs", "knock", "radio", "cash", "keys"}
 URL_RE = re.compile(r"^https://[\w.-]+(/[^\s]*)?$")
 
 
@@ -85,7 +85,12 @@ def validate(ep: dict, folder: Path | None = None) -> None:
         for fx in s.get("sfx", []):
             if fx.get("name") not in SFX_NAMES:
                 errs.append(f"scene {s.get('id')}: unknown sfx '{fx.get('name')}'")
-            if not isinstance(fx.get("at"), (int, float)) or fx["at"] < 0:
+            if "word" in fx:   # anchored to a narration word: at is an offset (may be negative)
+                if not (isinstance(fx["word"], list) and len(fx["word"]) == 2 and all(isinstance(v, int) and v >= 0 for v in fx["word"])):
+                    errs.append(f"scene {s.get('id')}: sfx 'word' must be [line_index, word_index]")
+                if not isinstance(fx.get("at", 0), (int, float)):
+                    errs.append(f"scene {s.get('id')}: sfx 'at' must be a number")
+            elif not isinstance(fx.get("at"), (int, float)) or fx["at"] < 0:
                 errs.append(f"scene {s.get('id')}: sfx 'at' must be a non-negative number")
         for c in s.get("claims", []):
             if c not in claim_ids:

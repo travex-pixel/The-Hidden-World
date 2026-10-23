@@ -1,0 +1,261 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv94-watermelon-meth/tcv94-watermelon-meth.mp4",
+    "size_bytes": 16104803,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 28.217,
+    "audio_duration": 28.217,
+    "decode_stderr": "",
+    "mean_volume_db": -16.8,
+    "max_volume_db": -2.7,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv94-watermelon-meth/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 1693,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.2,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "moving_at_frame_0": true,
+    "loops_to_frame_1": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "audio_music_heard_on_phone": true,
+    "audio_sfx_heard_on_phone": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "engage_hook_line_done_by_2_6s": true,
+    "engage_no_save_card_scene": true,
+    "engage_single_punchline_ending": true,
+    "engage_search_term_in_headline_and_first_4s": true,
+    "engage_post_file_ready": true,
+    "engage_headline_case_first_9s": true,
+    "engage_headline_gotcha_by_9s": true,
+    "engage_gotcha_per_case": true,
+    "engage_callback_ending": true,
+    "engage_under_32s": true,
+    "engage_no_part_on_frame_1": true,
+    "engage_headline_leads_with_object": true,
+    "engage_under_29_5s": true,
+    "engage_hook_agent_first": true,
+    "engage_hook_in_lane": true,
+    "engage_lane_locked": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.1,
+    "true_peak_dbtp": -2.3
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.119,
+    "transcript": "Smuggler's dressed myth up as watermelon, $5 million worth among real ones. But officers unloaded the truck 1220 had paper skins, and that was not the biggest, then leaks nearly $11 million. The scanner flagged it, so did the dog. The biggest, blackberries, $17 million inside. One scan later, 862 packages found. On paper, it was all watermelons."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 32,
+      "extent": {
+        "left": 126.0,
+        "right": 954.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.6,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.49,
+      "frames": 282,
+      "opening_motion": 5.88,
+      "opening_motion_ok": true
+    },
+    "loop_match": 0.44,
+    "audio": {
+      "opening_speech_median_db": -20.1,
+      "opening_min_speech_window_db": -30.0,
+      "first_word_db": -18.3,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -29.6,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.278,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 12.1,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -22.9,
+      "music_audible": true,
+      "music_heard_on_phone": true,
+      "sfx_phone_db": -28.0,
+      "sfx_heard_on_phone": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.7299,
+      "loudness_lufs": -14.1,
+      "true_peak_dbtp": -2.3,
+      "mono_lufs": -14.1,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -61.3,
+      "end_before_db": -17.2,
+      "end_last_50ms_db": -92.8,
+      "silent_tail_s": 0.1,
+      "ending_intentional": true,
+      "durations": {
+        "video": 28.216667,
+        "audio": 28.217007
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true,
+        "music_heard_on_phone": true,
+        "sfx_heard_on_phone": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true,
+        "hook_line_done_by_2_6s": true,
+        "no_save_card_scene": true,
+        "single_punchline_ending": true,
+        "search_term_in_headline_and_first_4s": true,
+        "post_file_ready": true,
+        "headline_case_first_9s": true,
+        "headline_gotcha_by_9s": true,
+        "gotcha_per_case": true,
+        "callback_ending": true,
+        "under_32s": true,
+        "no_part_on_frame_1": true,
+        "headline_leads_with_object": true,
+        "under_29_5s": true,
+        "hook_agent_first": true,
+        "hook_in_lane": true,
+        "lane_locked": true
+      },
+      "notes": {
+        "hook": "Smugglers dressed meth up as watermelons. $5 million worth, among real",
+        "loop_gaps": [],
+        "tail": "inside. One scan later: 862 packages found. On paper, it was all watermelons.",
+        "end_title": "WHICH DISGUISE WAS BEST? MELONS OR LEEKS OR BERRIES? \ud83d\udc47 SEND TO THE MATE WHO'D PICK THE FAKE MELON FOLLOW FOR WHERE THEY HID IT WHERE THEY HID IT \u00b7 5",
+        "tail_s": 1.14,
+        "wpm": 123.3,
+        "hook_end_s": 2.4,
+        "lesson_scene": null,
+        "end_scene_s": 2.68,
+        "search_terms_hit": [
+          "meth watermelons",
+          "watermelon meth"
+        ],
+        "cases": [
+          "blackberries",
+          "leeks",
+          "watermelons"
+        ],
+        "gotchas": {
+          "watermelons": [
+            5.73,
+            25.84
+          ],
+          "leeks": [
+            14.3
+          ],
+          "blackberries": [
+            22.34
+          ]
+        },
+        "total_s": 28.21,
+        "hook_first_line": "Smugglers dressed meth up as watermelons."
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 7,
+      "composed_shots": 7,
+      "shots_with_characters": 7,
+      "character_shot_share": 1.0,
+      "distinct_sets": 6,
+      "max_set_share": 0.29,
+      "shot_sizes": {
+        "wide": 2,
+        "close-up": 2,
+        "medium-wide": 2,
+        "medium": 1
+      },
+      "max_shot_size_share": 0.29,
+      "ok": true
+    }
+  }
+}

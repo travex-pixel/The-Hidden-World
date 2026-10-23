@@ -1,0 +1,191 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv45-cartel-grandad/tcv45-cartel-grandad.mp4",
+    "size_bytes": 21795511,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 39.867,
+    "audio_duration": 39.867,
+    "decode_stderr": "",
+    "mean_volume_db": -16.6,
+    "max_volume_db": -1.7,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv45-cartel-grandad/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2392,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.8,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.7
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.064,
+    "transcript": "At 87, he ran Cartel cocaine. He was also a decorated war hero. Then, in 2011, Michigan troopers pulled him over. A police dog found 104 bricks of cocaine. Back home, he bred champion dailies. So why would a cartel want him? Prosecutors said his age helped him avoid detection. And he had already hauled over a ton. His cartoon nickname, El Tada, Grandpa offered an easy delivery job, saved these three warning signs. At 70-plus, nearly four in 10 federal sentences outlast life expectancy, his sentence for years, on his 90th birthday."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 49,
+      "extent": {
+        "left": 142.8,
+        "right": 937.2,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 1.2,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.32,
+      "frames": 399
+    },
+    "audio": {
+      "opening_speech_median_db": -20.9,
+      "opening_min_speech_window_db": -35.5,
+      "first_word_db": -19.2,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -34.4,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.26,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.7,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -33.0,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8206,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.7,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -67.4,
+      "end_before_db": -11.9,
+      "end_last_50ms_db": -97.0,
+      "silent_tail_s": 0.2,
+      "ending_intentional": true,
+      "durations": {
+        "video": 39.866667,
+        "audio": 39.867007
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true
+      },
+      "notes": {
+        "hook": "At 87, he ran cartel cocaine. He was also a decorated war hero.",
+        "loop_gaps": [],
+        "tail": "nearly 4 in 10 federal sentences outlast life expectancy. His sentence? Three years. On his 90th birthday.",
+        "end_title": "3 YEARS AT 90. TOO SOFT OR FAIR? \ud83d\udc47 SEND TO YOUR GRANDAD",
+        "tail_s": 1.17,
+        "wpm": 140.0
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 9,
+      "composed_shots": 9,
+      "shots_with_characters": 7,
+      "character_shot_share": 0.78,
+      "distinct_sets": 8,
+      "max_set_share": 0.22,
+      "shot_sizes": {
+        "close-up": 2,
+        "insert/graphic": 2,
+        "medium-wide": 3,
+        "medium": 2
+      },
+      "max_shot_size_share": 0.33,
+      "ok": true
+    }
+  }
+}

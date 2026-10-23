@@ -1,0 +1,1150 @@
+{
+ "id": "tcv06-whitey-bulger",
+ "number": 6,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "How a Stray Cat Helped End a 16-Year FBI Manhunt",
+ "central_question": "How did the sixteen-year hunt for James \"Whitey\" Bulger end with a tip from a former neighbour?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "$800,000": "eight hundred thousand dollars",
+   "Greig": "Greg"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "06",
+  "label": "WHITEY BULGER · 1994-2011"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 84,
+  "hits": [
+   {
+    "scene": "s03_vanish",
+    "word": [
+     1,
+     1
+    ],
+    "at": 0.0,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s11_walls",
+   "word": [
+    0,
+    15
+   ],
+   "at": -0.05
+  }
+ },
+ "figures": [
+  "wb6_bulger",
+  "wb6_greig",
+  "wb6_neighbour",
+  "wb6_viewer",
+  "agent_a",
+  "agent_b",
+  "detective",
+  "official",
+  "judge"
+ ],
+ "content_notes": "Closed case. Bulger and Catherine Greig are illustrated representations, not likenesses (labelled on screen); the tipster is an anonymous silhouette and is never named; agents and officials are generic. No violence, weapon handling, victim or injury is shown; the murders are referred to only in summary. No real FBI poster, seal, PSA, newspaper or document is imitated: 'wanted' and appeal cards are our own typed graphics. No dialogue is invented. Greig is living and served her sentence: no mocking framing. Facts verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "wb6_hook",
+   "min_duration": 4.5,
+   "pad_after": 0.05,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "hit",
+     "gain": 0.8
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      9
+     ],
+     "name": "sub",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "W_16years",
+    "W_cat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He hid from the FBI for sixteen years."
+    },
+    {
+     "who": "narrator",
+     "text": "The tip that caught him began with a stray cat.",
+     "pause_before": 0.12
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sixteen",
+    "cat."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_who",
+   "scene": "wb6_who",
+   "min_duration": 2.0,
+   "pad_after": 0.05,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.15,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thump",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "W_who"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "\"Whitey\" Bulger: Boston mob boss, and secretly an FBI informant."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "informant."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_vanish",
+   "scene": "wb6_vanish",
+   "min_duration": 2.0,
+   "pad_after": 0.05,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.15,
+     "word": [
+      1,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      4
+     ],
+     "name": "stamp",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "W_tipoff",
+    "W_16years"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His FBI handler warned him charges were coming."
+    },
+    {
+     "who": "narrator",
+     "text": "Bulger vanished.",
+     "pause_before": 0.12
+    },
+    {
+     "who": "narrator",
+     "text": "That agent was later convicted.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "warned",
+    "vanished.",
+    "convicted."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_list",
+   "scene": "wb6_list",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "stamp",
+     "gain": 0.6
+    },
+    {
+     "at": -0.15,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.9
+    }
+   ],
+   "claims": [
+    "W_list",
+    "W_departed"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "By 1999, he was on the FBI's Ten Most Wanted list."
+    },
+    {
+     "who": "narrator",
+     "text": "Fun fact: Jack Nicholson's Departed role was reportedly inspired by him.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ten",
+    "most",
+    "wanted",
+    "departed"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_ads",
+   "scene": "wb6_ads",
+   "min_duration": 2.0,
+   "pad_after": 0.05,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "static",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "ping",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "W_campaign"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2011, the FBI tried something new."
+    },
+    {
+     "who": "narrator",
+     "text": "Daytime TV ads about his girlfriend, Catherine Greig.",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "new.",
+    "girlfriend,"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_target",
+   "scene": "wb6_target",
+   "min_duration": 2.4,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "tick",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "W_campaign"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Aimed at women who might recognise her."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "women",
+    "recognise"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_tip",
+   "scene": "wb6_tip",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "beep",
+     "gain": 0.5
+    },
+    {
+     "at": 0.25,
+     "word": [
+      0,
+      4
+     ],
+     "name": "beep",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "W_tip"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The next evening, a tip came in."
+    },
+    {
+     "who": "narrator",
+     "text": "From a former neighbour, in Santa Monica, California.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tip",
+    "santa",
+    "monica,"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_cat",
+   "scene": "wb6_cat",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "intimate",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": -0.15,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.9
+    }
+   ],
+   "claims": [
+    "W_cat",
+    "W_iceland"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She and Greig had bonded over a stray cat."
+    },
+    {
+     "who": "narrator",
+     "text": "Fun fact: she was reportedly a former Miss Iceland.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "cat.",
+    "miss",
+    "iceland."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_lure",
+   "scene": "wb6_lure",
+   "min_duration": 2.0,
+   "pad_after": 0.05,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      1
+     ],
+     "name": "door",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      6
+     ],
+     "name": "step",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "step",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "W_lure"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A ruse: he was told someone broke into his storage locker."
+    },
+    {
+     "who": "narrator",
+     "text": "He came down to the garage. Agents were waiting.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ruse:",
+    "storage",
+    "waiting."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s10_arrest",
+   "scene": "wb6_arrest",
+   "min_duration": 2.6,
+   "pad_after": 0.3,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "W_arrest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Bulger, now 81, was under arrest."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "81,",
+    "arrest."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s11_walls",
+   "scene": "wb6_walls",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      5
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "W_cash"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside: more than $800,000 in cash and 30 guns, much of it hidden in the walls."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$800,000",
+    "walls."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s12_verdict",
+   "scene": "wb6_verdict",
+   "min_duration": 2.0,
+   "pad_after": 0.05,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      4
+     ],
+     "name": "gavel",
+     "gain": 1.0
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "W_verdict",
+    "W_died"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2013, he was convicted, including of involvement in eleven murders."
+    },
+    {
+     "who": "narrator",
+     "text": "He died in prison in 2018.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convicted,",
+    "eleven"
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s13_end",
+   "scene": "wb6_end",
+   "min_duration": 3.0,
+   "pad_after": 1.55,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": -0.12,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sting",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "W_16years",
+    "W_tip",
+    "W_next"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sixteen years on the run, ended by a neighbour who knew her face."
+    },
+    {
+     "who": "narrator",
+     "text": "Next: the pizza crust that helped crack a serial killer case.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "face.",
+    "pizza",
+    "crust"
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "W_16years",
+   "type": "established",
+   "nature": "fact",
+   "text": "Bulger was a fugitive for about 16 years: he fled shortly before his federal indictment (late 1994 per HISTORY.com; the FBI dates Greig's flight with him to 1995) and was arrested on 22 June 2011; the FBI said its task force had sought him for 16 years.",
+   "sources": [
+    "fbi_arrest",
+    "fbi_statement",
+    "history_arrest"
+   ]
+  },
+  {
+   "id": "W_who",
+   "type": "established",
+   "nature": "fact",
+   "text": "Bulger led a Boston organised-crime gang and had secretly been an FBI informant, protected by a corrupt FBI handler.",
+   "sources": [
+    "cbs_scandal",
+    "fox_scandal",
+    "nbc_connolly"
+   ]
+  },
+  {
+   "id": "W_tipoff",
+   "type": "established",
+   "nature": "fact",
+   "text": "His FBI handler, John Connolly, tipped Bulger off to the coming indictment, and Bulger fled. Connolly was convicted in federal court in 2002 of racketeering and obstruction of justice over his dealings with Bulger.",
+   "sources": [
+    "nbc_connolly",
+    "wbur_connolly",
+    "cbs_scandal"
+   ]
+  },
+  {
+   "id": "W_list",
+   "type": "established",
+   "nature": "fact",
+   "text": "Bulger was on the FBI's Ten Most Wanted Fugitives list from 1999 until his 2011 arrest.",
+   "sources": [
+    "fbi_campaign",
+    "wbur_campaign",
+    "fbi_arrest"
+   ]
+  },
+  {
+   "id": "W_departed",
+   "type": "established",
+   "nature": "fact",
+   "text": "Jack Nicholson's mob boss Frank Costello in The Departed (2006) is widely reported to have been inspired, loosely, by Bulger (the character's name comes from a different gangster).",
+   "sources": [
+    "bostonmag_departed",
+    "mpr_departed",
+    "aetv_departed"
+   ]
+  },
+  {
+   "id": "W_campaign",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 20 June 2011 the FBI announced a publicity campaign built around Bulger's longtime girlfriend Catherine Greig: a 30-second PSA bought on daytime TV shows with a high share of female viewers (about 350 slots in 14 markets), aimed at people such as a neighbour, hair stylist or dentist who might recognise her.",
+   "sources": [
+    "fbi_campaign",
+    "wbur_campaign",
+    "bdn_campaign"
+   ]
+  },
+  {
+   "id": "W_tip",
+   "type": "established",
+   "nature": "fact",
+   "text": "A tip reached the FBI on the evening of 21 June 2011, the day after the campaign was announced; the FBI called the arrest a direct result of the campaign. The tipster was a former neighbour of the couple in Santa Monica, California, where they had lived as 'Charlie and Carol Gasko'.",
+   "sources": [
+    "globe_captured",
+    "nbc_tip",
+    "fbi_arrest",
+    "cbs_iceland"
+   ]
+  },
+  {
+   "id": "W_cat",
+   "type": "established",
+   "nature": "fact",
+   "text": "According to the Boston Globe's October 2011 reporting, repeated by CBS News, TIME and PRI, the tipster had got to know the couple when they came out to feed a stray cat, and she and Greig bonded over the animal. The FBI never publicly confirmed the tipster's identity.",
+   "sources": [
+    "cbs_iceland",
+    "time_iceland",
+    "pri_iceland"
+   ]
+  },
+  {
+   "id": "W_iceland",
+   "type": "established",
+   "nature": "fact",
+   "text": "The tipster was reported (Boston Globe, October 2011; repeated by CBS News, CBS Boston, TIME and PRI) to be a former Miss Iceland, who saw news coverage of the search while in Iceland and called the FBI. She reportedly received the $2 million reward. Not confirmed by the FBI; she is not named in this episode.",
+   "sources": [
+    "cbs_iceland",
+    "cbsboston_iceland",
+    "time_iceland",
+    "pri_iceland"
+   ]
+  },
+  {
+   "id": "W_lure",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 22 June 2011 FBI agents had the building manager tell Bulger that his storage locker had been broken into; he came down to the garage, where agents were waiting and arrested him (Special Agent Scott Garriola's trial testimony).",
+   "sources": [
+    "smdp_trial",
+    "pressherald_trial"
+   ]
+  },
+  {
+   "id": "W_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "Bulger, 81, was arrested with Catherine Greig in Santa Monica on 22 June 2011.",
+   "sources": [
+    "fbi_arrest",
+    "cnbc_arrest",
+    "history_arrest"
+   ]
+  },
+  {
+   "id": "W_cash",
+   "type": "established",
+   "nature": "fact",
+   "text": "In the apartment agents found nearly $822,000 in cash (a court filing gives $822,198, much of it in bundles hidden inside a wall) and 30 guns, most hidden in holes cut into the walls, plus false IDs.",
+   "sources": [
+    "smdp_trial",
+    "pressherald_trial",
+    "cbs_auction"
+   ]
+  },
+  {
+   "id": "W_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 12 August 2013 a federal jury convicted Bulger on 31 of 32 counts, including racketeering, and found him involved in 11 of the 19 murders charged. He was sentenced to two life terms plus five years in November 2013.",
+   "sources": [
+    "cnn_verdict",
+    "globe_verdict",
+    "wgbh_verdict",
+    "voa_sentence"
+   ]
+  },
+  {
+   "id": "W_died",
+   "type": "established",
+   "nature": "fact",
+   "text": "Bulger died in federal prison in 2018 (October 2018, aged 89).",
+   "sources": [
+    "cbs_death",
+    "pbs_death"
+   ]
+  },
+  {
+   "id": "W_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "Next episode tease (Gilgo Beach): prosecutors said DNA from a pizza crust that Rex Heuermann threw into a Manhattan trash can was linked to a hair found with a victim, which led to his 2023 arrest in the Gilgo Beach serial killings.",
+   "sources": [
+    "aljazeera_gilgo",
+    "nbcny_gilgo"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fbi_campaign",
+   "publisher": "FBI Boston (press release)",
+   "title": "FBI Announces a Unique Publicity Campaign to Locate a Top Ten Fugitive",
+   "url": "https://www.fbi.gov/boston/press-releases/2011/fbi-announces-a-unique-publicity-campaign-to-locate-a-top-ten-fugitive/",
+   "date": "2011-06-20",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wbur_campaign",
+   "publisher": "WBUR",
+   "title": "FBI turns to daytime TV in hunt for Bulger's girlfriend",
+   "url": "https://www.wbur.org/news/2011/06/20/fbi-bulger-girlfriend",
+   "date": "2011-06-20",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bdn_campaign",
+   "publisher": "Bangor Daily News (AP)",
+   "title": "FBI turns to TV to find Whitey Bulger's girlfriend",
+   "url": "https://www.bangordailynews.com/2011/06/20/news/fbi-turns-to-tv-to-find-whitey-bulgers-girlfriend/",
+   "date": "2011-06-20",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_arrest",
+   "publisher": "FBI (news story)",
+   "title": "Top Ten Fugitive James 'Whitey' Bulger Arrested",
+   "url": "https://www.fbi.gov/news/stories/top-ten-fugitive-james-whitey-bulger-arrested",
+   "date": "2011-06-23",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_statement",
+   "publisher": "FBI Boston (press release)",
+   "title": "Statement by Special Agent in Charge Rick DesLauriers Regarding Fugitive Bulger's Capture",
+   "url": "https://www.fbi.gov/boston/press-releases/2011/fbi-arrests-top-ten-fugitive-james-j.-201cwhitey201d-bulger",
+   "date": "2011-06-23",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_arrest",
+   "publisher": "HISTORY.com (A&E Television Networks)",
+   "title": "Notorious Boston mobster Whitey Bulger is arrested",
+   "url": "https://www.history.com/this-day-in-history/june-22/notorious-boston-mobster-whitey-bulger-is-arrested",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnbc_arrest",
+   "publisher": "CNBC (Reuters/AP)",
+   "title": "Whitey Bulger is arrested in California",
+   "url": "https://www.cnbc.com/2011/06/23/whitey-bulger-is-arrested-in-california.html",
+   "date": "2011-06-23",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "globe_captured",
+   "publisher": "The Boston Globe",
+   "title": "Whitey Bulger captured (archive)",
+   "url": "https://www.bostonglobe.com/2011/06/24/archive-whiteybulger-captured/q28y9NixQqNe9VhCcIAt1K/story.html",
+   "date": "2011-06-24",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_tip",
+   "publisher": "NBC News",
+   "title": "Tip from publicity campaign led to Bulger's capture",
+   "url": "https://www.nbcnews.com/id/wbna43504992",
+   "date": "2011-06-23",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_iceland",
+   "publisher": "CBS News",
+   "title": "\"Whitey\" Bulger taken down by ex-Miss Iceland",
+   "url": "https://cbsnews.com/news/whitey-bulger-taken-down-by-ex-miss-iceland",
+   "date": "2011-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbsboston_iceland",
+   "publisher": "CBS Boston",
+   "title": "Report: Whitey Bulger tipster was former Miss Iceland",
+   "url": "https://cbsnews.com/boston/news/report-whitey-bulger-tipster-was-former-miss-iceland",
+   "date": "2011-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "time_iceland",
+   "publisher": "TIME (NewsFeed)",
+   "title": "Ex-Miss Iceland Wins $2 Million Reward for Helping Nab James \"Whitey\" Bulger",
+   "url": "https://newsfeed.time.com/?p=100228",
+   "date": "2011-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pri_iceland",
+   "publisher": "PRI (The World)",
+   "title": "Former Miss Iceland tipped FBI to Whitey Bulger",
+   "url": "https://www.pri.org/stories/2011-10-10/former-miss-iceland-tipped-fbi-whitey-bulger",
+   "date": "2011-10-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "smdp_trial",
+   "publisher": "Santa Monica Daily Press (AP trial coverage)",
+   "title": "FBI agent details Bulger arrest in Santa Monica",
+   "url": "https://www.smdp.com/fbi-agent-details-bulger-arrest-in-santa-monica/",
+   "date": "2013-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pressherald_trial",
+   "publisher": "Portland Press Herald (AP)",
+   "title": "Prosecution rests in Bulger trial (agent's testimony on the arrest)",
+   "url": "https://www.pressherald.com/?p=132029",
+   "date": "2013-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_auction",
+   "publisher": "CBS News (AP)",
+   "title": "Mobster Bulger's possessions to be sold at auction",
+   "url": "https://www.cbsnews.com/amp/news/mobster-bulgers-possessions-to-be-sold-at-auction",
+   "date": "2016",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_scandal",
+   "publisher": "CBS News",
+   "title": "Whitey Bulger arrest may revive old scandals",
+   "url": "https://cbsnews.com/news/whitey-bulger-arrest-may-revive-old-scandals",
+   "date": "2011-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_scandal",
+   "publisher": "Fox News (AP)",
+   "title": "Capture of Boston gangster could mean more scandal",
+   "url": "https://www.foxnews.com/us/capture-of-boston-gangster-could-mean-more-scandal.amp",
+   "date": "2011-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_connolly",
+   "publisher": "NBC News",
+   "title": "Jury convicts former FBI agent in mob killing",
+   "url": "https://www.nbcnews.com/id/wbna27579928",
+   "date": "2008-11-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wbur_connolly",
+   "publisher": "WBUR",
+   "title": "Miami jury convicts ex-FBI agent in 1982 killing",
+   "url": "https://www.wbur.org/news/2008/11/06/miami-jury-convicts-ex-fbi-agent-in-1982-killing",
+   "date": "2008-11-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bostonmag_departed",
+   "publisher": "Boston Magazine",
+   "title": "Whitey Bulger and Hollywood: Books, TV Shows, and Movies Inspired by the South Boston Crime Boss",
+   "url": "https://www.bostonmagazine.com/?p=547821",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mpr_departed",
+   "publisher": "MPR News (NewsCut)",
+   "title": "Big-screen villains and real-life crooks",
+   "url": "https://newscut.mprnews.org/2011/06/big-screen_villains_and_real-l/index.html",
+   "date": "2011-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aetv_departed",
+   "publisher": "A&E",
+   "title": "How Whitey Bulger inspired movie and TV mob bosses",
+   "url": "https://www.aetv.com/articles/how-whitey-bulger-inspired-movie-and-tv-mob-bosses",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_verdict",
+   "publisher": "CNN",
+   "title": "Whitey Bulger found guilty (trial verdict)",
+   "url": "https://edition.cnn.com/2013/08/12/us/whitey-bulger-trial-verdict/index.html",
+   "date": "2013-08-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "globe_verdict",
+   "publisher": "The Boston Globe",
+   "title": "Bulger verdict puts end to historic saga",
+   "url": "https://www.bostonglobe.com/2013/08/12/bulgerverdict/3vP29WkTkRtUEJ7cyCv5FL/story.html",
+   "date": "2013-08-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wgbh_verdict",
+   "publisher": "WGBH News",
+   "title": "Bulger found guilty of racketeering, murder",
+   "url": "https://www.wgbh.org/news/local/2013-08-12/bulger-found-guilty-of-racketeering-murder",
+   "date": "2013-08-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "voa_sentence",
+   "publisher": "VOA (Reuters)",
+   "title": "Mobster 'Whitey' Bulger gets life sentence for 'unfathomable' crimes",
+   "url": "https://www.voanews.com/a/reu-mobster-whitey-bulger-life-sentence-unfathomable-crimes/1790660.html",
+   "date": "2013-11-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_death",
+   "publisher": "CBS News",
+   "title": "Inmate sentenced in prison killing of Boston gangster James \"Whitey\" Bulger",
+   "url": "https://www.cbsnews.com/news/inmate-sentenced-prison-killing-boston-gangster-james-whitey-bulger/",
+   "date": "2024",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pbs_death",
+   "publisher": "PBS NewsHour (AP)",
+   "title": "Former hitman sentenced to 25 years for prison slaying of crime boss Whitey Bulger",
+   "url": "https://www.pbs.org/newshour/nation/former-hitman-sentenced-to-25-years-for-prison-slaying-of-crime-boss-whitey-bulger",
+   "date": "2024",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aljazeera_gilgo",
+   "publisher": "Al Jazeera",
+   "title": "DNA from pizza crust leads to arrest in US Gilgo Beach murders",
+   "url": "https://www.aljazeera.com/news/2023/7/15/dna-from-pizza-crust-leads-to-arrest-in-us-gilgo-beach-murders",
+   "date": "2023-07-15",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbcny_gilgo",
+   "publisher": "NBC New York",
+   "title": "How leftover pizza crust linked an architect to the Gilgo Beach serial killings",
+   "url": "https://nbcnewyork.com/news/local/how-leftover-pizza-crust-linked-an-architect-to-gilgo-beach-serial-killings/4506598",
+   "date": "2023-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "legal_status_verified": "2026-10-11"
+}

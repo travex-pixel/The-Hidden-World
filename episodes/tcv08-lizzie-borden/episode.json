@@ -1,0 +1,1177 @@
+{
+ "id": "tcv08-lizzie-borden",
+ "number": 8,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Friend Watched Lizzie Borden Burn a Dress. The Jury Still Acquitted Her.",
+ "central_question": "Why was Lizzie Borden acquitted, and what does the historical record actually say?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "08",
+  "label": "LIZZIE BORDEN · 1892-1893"
+ },
+ "music": {
+  "bpm": 76,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 76,
+  "hits": [
+   {
+    "scene": "s01_hook",
+    "word": [
+     0,
+     11
+    ],
+    "at": 0.0,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s11_verdict",
+   "word": [
+    1,
+    8
+   ],
+   "at": -0.1
+  }
+ },
+ "figures": [
+  "lb8_lizzie",
+  "lb8_alice",
+  "lb8_juror",
+  "lb8_officer",
+  "lb8_lawyer",
+  "lb8_neighbour",
+  "judge"
+ ],
+ "content_notes": "Closed historical case (1892-1893); Lizzie Borden was acquitted and the killings are officially unsolved. Scripted only from the historical record, not from the Netflix drama. Real people (Lizzie Borden, Alice Russell) are illustrated representations, not likenesses; jurors, police, lawyers and neighbours are generic period figures. Non-graphic: the victims, the killings, blood and any axe or hatchet are never shown or described; no blow counts. No dialogue or quotes are invented; no court document, newspaper masthead or photograph is imitated. Lizzie is never shown with a sinister expression. Research verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "lb8_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      9
+     ],
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "gavel",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "LB_burned",
+    "LB_acquitted"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Days after the killings, a friend watched Lizzie Borden burn a dress."
+    },
+    {
+     "who": "narrator",
+     "text": "A jury still acquitted her.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "burn",
+    "dress.",
+    "acquitted"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_record",
+   "scene": "lb8_record",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "paper",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "LB_monster"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "You've seen the Netflix show. Here's what the record says."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "record"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_house",
+   "scene": "lb8_house_day",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "sub",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "LB_killed"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In August 1892, Andrew and Abby Borden were killed in their Fall River home."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "killed"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_step",
+   "scene": "lb8_step",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      3
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "LB_stepmother",
+    "LB_rhyme"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Abby wasn't Lizzie's mother. She was her stepmother."
+    },
+    {
+     "who": "narrator",
+     "text": "So that famous rhyme gets it wrong.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "stepmother.",
+    "wrong."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_arrest",
+   "scene": "lb8_arrest",
+   "min_duration": 2.6,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": 0.7,
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "door",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "LB_arrest"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A week later, police arrested Lizzie."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "arrested"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_trial",
+   "scene": "lb8_trial",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "rumble",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "gavel",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "LB_trial"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In June 1893, she stood trial for murder in New Bedford."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "murder"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_press",
+   "scene": "lb8_press",
+   "min_duration": 2.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "LB_press"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Newspapers across the country followed every day."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "every"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s08_excluded",
+   "scene": "lb8_excluded",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.7
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      12
+     ],
+     "name": "stamp",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "LB_inquest",
+    "LB_poison"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then the court excluded her own inquest testimony,"
+    },
+    {
+     "who": "narrator",
+     "text": "and a clerk who said she tried to buy poison the day before.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "excluded",
+    "poison"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s09_alice",
+   "scene": "lb8_alice",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "step",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      8
+     ],
+     "name": "whoosh",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "LB_burned"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But her friend Alice Russell testified."
+    },
+    {
+     "who": "narrator",
+     "text": "The Sunday after the killings, she saw Lizzie burning a dress in the stove.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "alice",
+    "russell",
+    "burning"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s10_paint",
+   "scene": "lb8_paint",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "LB_paint",
+    "LB_prosecution"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Lizzie said it was stained with paint."
+    },
+    {
+     "who": "narrator",
+     "text": "Prosecutors said she was destroying evidence.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "paint.",
+    "evidence."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s11_verdict",
+   "scene": "lb8_verdict",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      7
+     ],
+     "name": "gavel",
+     "gain": 1.0
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      8
+     ],
+     "name": "stamp",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "LB_noweapon",
+    "LB_90min",
+    "LB_acquitted"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "No weapon was ever conclusively tied to her."
+    },
+    {
+     "who": "narrator",
+     "text": "After about ninety minutes, the jury said: not guilty.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no",
+    "weapon",
+    "not",
+    "guilty."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s12_after",
+   "scene": "lb8_after",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": 0.6,
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 1.1,
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 1.6,
+     "name": "step",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "LB_maplecroft",
+    "LB_shunned"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She stayed in Fall River, in a grand house she named Maplecroft."
+    },
+    {
+     "who": "narrator",
+     "text": "Many shunned her until her death in 1927.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "maplecroft.",
+    "shunned"
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s13_bnb",
+   "scene": "lb8_bnb",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      9
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "door",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "LB_bnb"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And the house where it happened is now a bed and breakfast."
+    },
+    {
+     "who": "narrator",
+     "text": "Yes, you can stay the night.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bed",
+    "breakfast.",
+    "night."
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s14_end",
+   "scene": "lb8_end",
+   "min_duration": 3.0,
+   "pad_after": 2.0,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.15,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "LB_unsolved",
+    "LB_acquitted",
+    "LB_next"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Officially unsolved. Would you have acquitted her?"
+    },
+    {
+     "who": "narrator",
+     "text": "Next: the world's most famous mystery writer vanished for 11 days. Where did she go?",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "unsolved.",
+    "you",
+    "11",
+    "days."
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "LB_burned",
+   "type": "established",
+   "nature": "fact",
+   "text": "Family friend Alice Russell testified at the 1893 trial that on the Sunday after the killings (7 Aug 1892) she saw Lizzie burn a dress in the kitchen stove.",
+   "sources": [
+    "bio_alice",
+    "smithsonian",
+    "britannica",
+    "bio_trial"
+   ]
+  },
+  {
+   "id": "LB_acquitted",
+   "type": "established",
+   "nature": "procedure",
+   "text": "On 20 June 1893 a jury in New Bedford acquitted Lizzie Borden of the murders.",
+   "sources": [
+    "history_acquit",
+    "bio_trial",
+    "ae_acquitted"
+   ]
+  },
+  {
+   "id": "LB_monster",
+   "type": "established",
+   "nature": "fact",
+   "text": "Netflix's Monster: The Lizzie Borden Story (a dramatisation) premiered on 17 Sept 2026 and topped Netflix's English TV chart. The episode is scripted from the historical record, not the drama.",
+   "sources": [
+    "mediaplay_monster",
+    "won_monster",
+    "bio_monster"
+   ]
+  },
+  {
+   "id": "LB_killed",
+   "type": "established",
+   "nature": "fact",
+   "text": "Andrew Borden and his second wife, Abby, were killed in their home in Fall River, Massachusetts, on 4 Aug 1892.",
+   "sources": [
+    "bio_trial",
+    "history_acquit",
+    "ae_casefile"
+   ]
+  },
+  {
+   "id": "LB_stepmother",
+   "type": "established",
+   "nature": "fact",
+   "text": "Abby Borden was Andrew's second wife and Lizzie's stepmother, not her mother.",
+   "sources": [
+    "ae_casefile",
+    "history_rhyme",
+    "cni_rhyme"
+   ]
+  },
+  {
+   "id": "LB_rhyme",
+   "type": "established",
+   "nature": "fact",
+   "text": "The anonymous playground rhyme calls Abby Lizzie's 'mother'; she was her stepmother. (The rhyme's other details are also inaccurate; they are not repeated in the episode.)",
+   "sources": [
+    "history_rhyme",
+    "cni_rhyme"
+   ]
+  },
+  {
+   "id": "LB_arrest",
+   "type": "established",
+   "nature": "procedure",
+   "text": "Lizzie Borden was arrested on 11 Aug 1892, one week after the killings.",
+   "sources": [
+    "ae_casefile",
+    "bio_timeline",
+    "heinonline"
+   ]
+  },
+  {
+   "id": "LB_trial",
+   "type": "established",
+   "nature": "procedure",
+   "text": "Her murder trial opened in New Bedford, Massachusetts, on 5 June 1893.",
+   "sources": [
+    "ae_acquitted",
+    "bio_trial",
+    "history_acquit",
+    "womanhome"
+   ]
+  },
+  {
+   "id": "LB_press",
+   "type": "established",
+   "nature": "fact",
+   "text": "The trial was a national press sensation: newspapers from across the country covered it, carried nationwide by wire services.",
+   "sources": [
+    "ae_truecrime",
+    "natgeo",
+    "bio_trial"
+   ]
+  },
+  {
+   "id": "LB_inquest",
+   "type": "established",
+   "nature": "procedure",
+   "text": "The court excluded Lizzie's own inquest testimony from the trial.",
+   "sources": [
+    "ae_acquitted",
+    "ebsco",
+    "grazia"
+   ]
+  },
+  {
+   "id": "LB_poison",
+   "type": "established",
+   "nature": "procedure",
+   "text": "A drugstore clerk (Eli Bence) said Lizzie tried to buy prussic acid, a poison, on 3 Aug 1892, the day before the killings; the court excluded this testimony from the trial.",
+   "sources": [
+    "ae_acquitted",
+    "ebsco",
+    "history_rhyme"
+   ]
+  },
+  {
+   "id": "LB_paint",
+   "type": "established",
+   "nature": "defence",
+   "text": "According to Alice Russell's testimony, Lizzie said she was burning the dress because it was stained (covered) with paint.",
+   "sources": [
+    "bio_alice",
+    "smithsonian",
+    "womanhome"
+   ]
+  },
+  {
+   "id": "LB_prosecution",
+   "type": "established",
+   "nature": "allegation",
+   "text": "Prosecutors argued the burning was the destruction of evidence. This was the prosecution's argument; the jury acquitted her.",
+   "sources": [
+    "smithsonian",
+    "bio_alice"
+   ]
+  },
+  {
+   "id": "LB_noweapon",
+   "type": "established",
+   "nature": "fact",
+   "text": "No murder weapon was ever conclusively tied to Lizzie; the case against her was circumstantial.",
+   "sources": [
+    "ae_acquitted",
+    "womanhome",
+    "bio_trial"
+   ]
+  },
+  {
+   "id": "LB_90min",
+   "type": "established",
+   "nature": "procedure",
+   "text": "The jury deliberated for about 90 minutes before returning its not-guilty verdict (HISTORY.com and Biography.com; one outlet gives 65 minutes, so the episode says 'about').",
+   "sources": [
+    "history_acquit",
+    "bio_trial"
+   ]
+  },
+  {
+   "id": "LB_maplecroft",
+   "type": "established",
+   "nature": "fact",
+   "text": "After the trial she stayed in Fall River and, with her sister Emma, bought a large house they named Maplecroft.",
+   "sources": [
+    "bio_after",
+    "mentalfloss"
+   ]
+  },
+  {
+   "id": "LB_shunned",
+   "type": "established",
+   "nature": "fact",
+   "text": "She was widely shunned in Fall River for the rest of her life and died there on 1 June 1927.",
+   "sources": [
+    "bio_after",
+    "mentalfloss",
+    "womanhome"
+   ]
+  },
+  {
+   "id": "LB_unsolved",
+   "type": "established",
+   "nature": "fact",
+   "text": "Lizzie Borden was acquitted and no one else was ever tried: the killings remain officially unsolved.",
+   "sources": [
+    "bio_trial",
+    "womanhome"
+   ]
+  },
+  {
+   "id": "LB_bnb",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Second Street house where the killings happened is now the Lizzie Borden House, a museum and bed and breakfast where guests can stay overnight.",
+   "sources": [
+    "foxnews_bnb",
+    "bostonmag_bnb",
+    "untapped_bnb"
+   ]
+  },
+  {
+   "id": "LB_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "Agatha Christie disappeared on 3 Dec 1926 and was found 11 days later at a hotel in Harrogate (next episode tease).",
+   "sources": [
+    "tna_christie",
+    "historyhit_christie",
+    "countryfile_christie"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "bio_trial",
+   "publisher": "Biography.com",
+   "title": "Lizzie Borden Was Acquitted of Her Parents' Murders. The Case Was Never Solved.",
+   "url": "https://www.biography.com/crime/a73581416/lizzie-borden-trial",
+   "date": "2026",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_alice",
+   "publisher": "Biography.com",
+   "title": "Alice Russell and the Burned Dress That Shaped Lizzie Borden's Trial",
+   "url": "https://www.biography.com/crime/a73772110/alice-russell-lizzie-borden-testimony",
+   "date": "2026",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_timeline",
+   "publisher": "Biography.com",
+   "title": "The Complete Timeline of the Lizzie Borden Murder Trial, Plus Her Life After Acquittal",
+   "url": "https://www.biography.com/crime/a73687951/lizzie-borden-murder-timeline",
+   "date": "2026",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_after",
+   "publisher": "Biography.com",
+   "title": "Lizzie Borden's life after the murder trial",
+   "url": "https://www.biography.com/crime/lizzie-borden-life-after-murder-trial",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_monster",
+   "publisher": "Biography.com",
+   "title": "Monster season 4: The Lizzie Borden Story",
+   "url": "https://www.biography.com/movies-tv/a73346578/monster-season-4-the-lizzie-borden-story",
+   "date": "2026-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "smithsonian",
+   "publisher": "Smithsonian Magazine",
+   "title": "How Lizzie Borden Got Away With Murder",
+   "url": "https://www.smithsonianmag.com/history/how-lizzie-borden-got-away-with-murder-180972707/",
+   "date": "2019",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "britannica",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "Was Lizzie Borden guilty?",
+   "url": "https://www.britannica.com/topic/Was-Lizzie-Borden-Guilty",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_acquit",
+   "publisher": "HISTORY.com",
+   "title": "Lizzie Borden acquitted (This Day in History, June 20)",
+   "url": "https://www.history.com/this-day-in-history/june-20/lizzie-borden-acquitted",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_rhyme",
+   "publisher": "HISTORY.com (Betsy Golden Kellem)",
+   "title": "The Lizzie Borden rhyme and its legacy",
+   "url": "https://www.history.com/articles/lizzie-borden-rhyme-legacy",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cni_rhyme",
+   "publisher": "Crime+Investigation (UK)",
+   "title": "The 'Lizzie Borden took an axe' rhyme",
+   "url": "https://www.crimeandinvestigation.co.uk/articles/lizzie-borden-took-axe-rhyme",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ae_acquitted",
+   "publisher": "A&E (aetv.com)",
+   "title": "Why Was Lizzie Borden Acquitted?",
+   "url": "https://www.aetv.com/articles/why-was-lizzie-borden-acquitted",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ae_casefile",
+   "publisher": "A&E (aetv.com)",
+   "title": "Case File: Lizzie Borden",
+   "url": "https://www.aetv.com/articles/lizzie-borden",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ae_truecrime",
+   "publisher": "A&E (aetv.com)",
+   "title": "How the Lizzie Borden murders changed American true crime",
+   "url": "https://www.aetv.com/articles/how-lizzie-borden-murders-changed-american-true-crime",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "natgeo",
+   "publisher": "National Geographic",
+   "title": "The Lizzie Borden trial",
+   "url": "https://www.nationalgeographic.com/premium/article/lizzie-borden-trial-axe-murder",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ebsco",
+   "publisher": "EBSCO Research Starters",
+   "title": "Lizzie Borden",
+   "url": "https://www.ebsco.com/research-starters/history/lizzie-borden",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "heinonline",
+   "publisher": "HeinOnline blog",
+   "title": "Heinous Histories: The Arrest and Trial of Lizzie Borden",
+   "url": "https://home.heinonline.org/blog/2023/09/heinous-histories-the-arrest-and-trial-of-lizzie-borden",
+   "date": "2023-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mentalfloss",
+   "publisher": "Mental Floss",
+   "title": "How Lizzie Borden Spent Her Life After Being Acquitted",
+   "url": "https://www.mentalfloss.com/article/81765/how-lizzie-borden-spent-her-life-after-being-acquitted",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "womanhome",
+   "publisher": "Woman & Home",
+   "title": "Lizzie Borden: Why was she acquitted and what happened to her after the trial?",
+   "url": "https://www.womanandhome.com/life/news-entertainment/lizzie-borden-why-was-she-acquitted/",
+   "date": "2026-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "grazia",
+   "publisher": "Grazia",
+   "title": "Why Was Lizzie Borden Acquitted? The True Story Behind Netflix's Monster Season Four",
+   "url": "https://graziadaily.co.uk/life/tv-and-film/why-was-lizzie-borden-acquitted/",
+   "date": "2026-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "foxnews_bnb",
+   "publisher": "Fox News (Travel)",
+   "title": "Inside the Lizzie Borden house, where guests stay overnight",
+   "url": "https://www.foxnews.com/travel/inside-lizzie-borden-house-guests-stay-overnight-people-brutally-ax-murdered.print",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bostonmag_bnb",
+   "publisher": "Boston Magazine",
+   "title": "I Slept with Lizzie Borden, AMA",
+   "url": "https://www.bostonmagazine.com/2015/10/30/i-slept-with-lizzie-borden",
+   "date": "2015-10-30",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "untapped_bnb",
+   "publisher": "Untapped Cities",
+   "title": "Sleep at the Lizzie Borden Bed and Breakfast Museum in Fall River, MA",
+   "url": "https://untappedcities.com/sleep-at-the-lizzie-borden-bed-and-breakfast-museum-in-fall-river-ma",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mediaplay_monster",
+   "publisher": "Media Play News",
+   "title": "Netflix's 'Monster: The Lizzie Borden Story' topped weekly streaming through Sept. 20",
+   "url": "https://www.mediaplaynews.com/netflix-monster-the-lizzie-borden-story-topped-weekly-streaming-through-sept-20/",
+   "date": "2026-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "won_monster",
+   "publisher": "What's on Netflix",
+   "title": "'Monster: The Lizzie Borden Story' debuts with 12.1M views on Netflix",
+   "url": "https://www.whats-on-netflix.com/news/monster-the-lizzie-borden-story-debuts-with-12-1m-views-on-netflix-heres-how-it-compares-to-prior-seasons/",
+   "date": "2026-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "tna_christie",
+   "publisher": "The National Archives (UK) blog",
+   "title": "20s People: investigating the strange disappearance of Mrs Agatha Christie",
+   "url": "https://blog.nationalarchives.gov.uk/20speople-investigating-the-strange-disappearance-of-mrs-agatha-christie/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "historyhit_christie",
+   "publisher": "History Hit",
+   "title": "The enduring mystery of Agatha Christie's disappearance",
+   "url": "https://www.historyhit.com/the-enduring-mystery-of-agatha-christies-disappearance/",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "countryfile_christie",
+   "publisher": "Countryfile",
+   "title": "Agatha Christie's disappearance",
+   "url": "https://www.countryfile.com/famous-people/agatha-christie-disappearance",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ]
+}

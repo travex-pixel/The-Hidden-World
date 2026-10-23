@@ -1,0 +1,1093 @@
+{
+ "id": "tcv25-capone-40",
+ "number": 25,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Al Capone Ran Chicago. A Ledger Brought Him Down",
+ "central_question": "How did paperwork, not Eliot Ness, put Al Capone in prison?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "$215,000": "two hundred fifteen thousand dollars",
+   "Cicero": "Sis-ero"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "25",
+  "label": "AL CAPONE · CHICAGO · 1930-1931"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "ac25_capone",
+  "ac25_wilson",
+  "ac25_bookkeeper",
+  "ac25_lawyer",
+  "ac25_hood",
+  "gb7_suit",
+  "agent_a",
+  "analyst",
+  "judge"
+ ],
+ "content_notes": "Closed case: Capone was convicted on 17 Oct 1931 and died on 25 Jan 1947. He and Frank Wilson appear only as illustrated representations (generic period figures, no scar, no photo reference, 'ILLUSTRATION · NOT A LIKENESS'); the bookkeeper, the lawyer and the associates are generic or anonymous silhouettes and are not named on screen. No violence, weapon, victim, massacre, drinking or cash is depicted: the backroom is a counting room, the street a generic 1920s Chicago street. The ledger is a generic drawing with illegible marks; the 'Al' reveal is our own typed callout; the lawyer's letter is a blank sheet; every card is our own typed graphic. No real document, newspaper, court or police material is imitated. The Eliot Ness caveat is a typed card, not narration. Dollar figures match the sources (prosecution's $215,080.48; $50,000 fine). No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ac25_hook",
+   "min_duration": 5.1,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      8
+     ],
+     "name": "paper",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_ran",
+    "A_hook"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Al Capone ruled Chicago's underworld."
+    },
+    {
+     "who": "narrator",
+     "text": "And what finally put him away was a ledger.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "capone",
+    "underworld.",
+    "ledger."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_enemy",
+   "scene": "ac25_enemy",
+   "min_duration": 5.0,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "A_enemy",
+    "A_tax_owed"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Chicago's Crime Commission called him Public Enemy Number One."
+    },
+    {
+     "who": "narrator",
+     "text": "Prosecutors said he owed $215,000.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "public",
+    "enemy",
+    "number",
+    "one.",
+    "$215,000"
+   ],
+   "section": "A",
+   "music_gain_db": -3
+  },
+  {
+   "id": "s03_wilson",
+   "scene": "ac25_wilson",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_never_filed"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He had never filed a tax return."
+    },
+    {
+     "who": "narrator",
+     "text": "Agent Frank Wilson followed the money.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "never",
+    "filed",
+    "wilson",
+    "money."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_storage",
+   "scene": "ac25_storage",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.45
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      3
+     ],
+     "name": "swell",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "paper",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_ledger_found"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He found a ledger seized in a 1926 raid on a Cicero gambling house.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ledger",
+    "1926",
+    "raid",
+    "cicero"
+   ],
+   "section": "B",
+   "music_drop": true
+  },
+  {
+   "id": "s05_bookkeeper",
+   "scene": "ac25_bookkeeper",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "pen",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.6,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.2,
+     "word": [
+      0,
+      6
+     ],
+     "name": "door",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "A_bookkeeper"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Its handwriting led agents to the bookkeeper."
+    },
+    {
+     "who": "narrator",
+     "text": "And he testified.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "handwriting",
+    "bookkeeper.",
+    "testified."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_letter",
+   "scene": "ac25_letter",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "A_letter"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Capone's own lawyer had written to the taxman, conceding income.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "own",
+    "lawyer",
+    "conceding",
+    "income."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_reveal",
+   "scene": "ac25_reveal",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.4,
+     "word": [
+      1,
+      0
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "A_al"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The ledger split the gambling profits by name."
+    },
+    {
+     "who": "narrator",
+     "text": "One of them was simply \"Al\".",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "split",
+    "name.",
+    "\"al\"."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "ac25_verdict",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "gate",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "A_plea_jury",
+    "A_verdict",
+    "A_alcatraz",
+    "A_ness"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The jury found him guilty on five counts."
+    },
+    {
+     "who": "narrator",
+     "text": "Eleven years. Then Alcatraz.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty",
+    "five",
+    "eleven",
+    "years.",
+    "alcatraz."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "ac25_end",
+   "min_duration": 3.6,
+   "pad_after": 1.7,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sparkle",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "A_hook",
+    "A_verdict"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A ledger helped bring Capone down.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ledger",
+    "capone",
+    "down."
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "A_ran",
+   "type": "established",
+   "nature": "fact",
+   "text": "Al Capone (1899-1947) was the most famous American gangster of the Prohibition era and dominated organized crime in Chicago from the mid-1920s until his 1931 conviction.",
+   "sources": [
+    "britannica",
+    "history_capone",
+    "fbi_capone"
+   ]
+  },
+  {
+   "id": "A_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Capone was convicted not of violence or bootlegging but of federal income-tax evasion, in a case built by Treasury agents on financial records, including a seized gambling-house ledger, witnesses and his own lawyer's letter.",
+   "sources": [
+    "fbi_capone",
+    "fbi_2005",
+    "famous_trials_home",
+    "mobmuseum_trial"
+   ]
+  },
+  {
+   "id": "A_enemy",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 24 April 1930 the Chicago Crime Commission (chairman Frank J. Loesch) published its first 'public enemies' list of 28 men, with Al Capone at the head: 'Public Enemy No. 1'.",
+   "sources": [
+    "wiki_ccc",
+    "wiki_loesch",
+    "deseret_pe",
+    "wbez"
+   ]
+  },
+  {
+   "id": "A_tax_owed",
+   "type": "established",
+   "nature": "fact",
+   "text": "At the 1931 trial the prosecution put Capone's unpaid tax at $215,080.48 on income of $1,038,654.84 for 1924-1929; the back taxes due at sentencing were reported as about $215,000 plus interest. Spoken as '$215,000' (rounded, 'prosecutors said').",
+   "sources": [
+    "mobmuseum_trial",
+    "encyclopedia",
+    "yahoo_timeline",
+    "famous_trials_chron"
+   ]
+  },
+  {
+   "id": "A_never_filed",
+   "type": "established",
+   "nature": "fact",
+   "text": "Capone had never filed a federal income-tax return; the Treasury's Intelligence Unit (chief Elmer Irey), with special agent Frank J. Wilson leading the Capone investigation from 1930, built the tax case.",
+   "sources": [
+    "wiki_wilson",
+    "mobmuseum_trial",
+    "grant_thornton",
+    "irs_docs",
+    "history_wilson"
+   ]
+  },
+  {
+   "id": "A_ledger_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "In 1930 Wilson found, among stored records, bound ledgers seized in a 1926 raid on a Capone gambling house in Cicero (the Hawthorne Smoke Shop); one ledger recorded the house's takings and profit shares for 1924-1926.",
+   "sources": [
+    "famous_trials_home",
+    "crimelib_pay",
+    "dailybeast",
+    "wiki_hawthorne",
+    "wikisource_wilson"
+   ]
+  },
+  {
+   "id": "A_bookkeeper",
+   "type": "established",
+   "nature": "fact",
+   "text": "The ledger's handwriting was traced to bookkeeper Leslie Shumway, who was located and testified for the prosecution in 1931 (as did cashier Fred Ries, who told of cashier's cheques bought for Capone). The bookkeeper is not named on screen.",
+   "sources": [
+    "crimelib_pay",
+    "dailybeast",
+    "wiki_hawthorne",
+    "mobmuseum_prohib",
+    "famous_trials_home"
+   ]
+  },
+  {
+   "id": "A_letter",
+   "type": "established",
+   "nature": "fact",
+   "text": "In 1930 Capone's tax lawyer, Lawrence Mattingly, gave the Treasury a letter conceding that Capone had taxable income for 1926-1929; at trial Judge Wilkerson admitted the letter over the defence's objection.",
+   "sources": [
+    "famous_trials_wilson",
+    "crimelib_plea",
+    "wiki_wilkerson",
+    "abq"
+   ]
+  },
+  {
+   "id": "A_al",
+   "type": "established",
+   "nature": "fact",
+   "text": "The seized ledger split the gambling house's net profits among names and initials, including 'Al' (also recorded as 'A'), which investigators and the prosecution tied to Capone's income. Shown as our own typed callout over an illegible drawn ledger.",
+   "sources": [
+    "wiki_hawthorne",
+    "dailybeast",
+    "famous_trials_home",
+    "grant_thornton"
+   ]
+  },
+  {
+   "id": "A_plea_jury",
+   "type": "established",
+   "nature": "fact",
+   "text": "Indicted in June 1931 on 22 tax counts, Capone pleaded guilty expecting a short sentence; Judge James H. Wilkerson refused to be bound by any deal, the plea was withdrawn, and when the trial opened in October 1931 the judge exchanged his entire jury panel with another judge's after a report that Capone's organisation had the names of the prospective jurors. On screen only.",
+   "sources": [
+    "wiki_wilkerson",
+    "crimelib_plea",
+    "famous_trials_chron",
+    "ganglandwire",
+    "fbi_capone"
+   ]
+  },
+  {
+   "id": "A_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 17 October 1931 the jury found Capone guilty on five counts (tax evasion for 1925-27 and failing to file for 1928-29); on 24 October 1931 he was sentenced to 11 years in federal prison, a $50,000 fine and court costs, plus the back taxes.",
+   "sources": [
+    "fbi_2005",
+    "encyclopedia",
+    "history_prison",
+    "famous_trials_chron",
+    "mobmuseum_trial"
+   ]
+  },
+  {
+   "id": "A_alcatraz",
+   "type": "established",
+   "nature": "fact",
+   "text": "Capone served in the Atlanta federal penitentiary, was transferred to Alcatraz in August 1934, was released on 16 November 1939 (after time at Terminal Island) and died at Palm Island, Florida, on 25 January 1947.",
+   "sources": [
+    "fbi_capone",
+    "mobmuseum_alcatraz",
+    "britannica",
+    "history_capone"
+   ]
+  },
+  {
+   "id": "A_ness",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: Eliot Ness's Prohibition squad (the 'Untouchables') was not part of the income-tax case that sent Capone to prison; the popular Ness legend is largely fiction.",
+   "sources": [
+    "wapo_ness",
+    "ktar_eig",
+    "wiki_ness"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fbi_capone",
+   "publisher": "FBI (History: Famous Cases)",
+   "title": "Al Capone",
+   "url": "https://www.fbi.gov/history/famous-cases/al-capone",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_2005",
+   "publisher": "FBI (news story)",
+   "title": "How the Law Finally Caught Al Capone",
+   "url": "https://www.fbi.gov/news/stories/2005/march/capone_032805",
+   "date": "2005-03-28",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "irs_docs",
+   "publisher": "IRS",
+   "title": "Historical Documents relating to Alphonse (Al) Capone, Chicago",
+   "url": "https://www.irs.gov/node/5464",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "irs_wilson_report",
+   "publisher": "IRS (FOIA reading room)",
+   "title": "Report dated 12/21/1933 in re Alphonse Capone by SA Frank Wilson",
+   "url": "https://www.irs.gov/pub/foia/file-2-report-dated-12211933-in-re-alphonse-capone-by-sa-frank-wilson.pdf",
+   "date": "1933-12-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wikisource_wilson",
+   "publisher": "Wikisource (transcription of Wilson's 1933 Bureau of Internal Revenue summary report)",
+   "title": "Summary report of Al Capone for the Bureau of Internal Revenue",
+   "url": "https://en.wikisource.org/wiki/Summary_report_of_Al_Capone_for_the_Bureau_of_Internal_Revenue",
+   "date": "1933",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "britannica",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "Al Capone (summary)",
+   "url": "https://www.britannica.com/summary/Al-Capone",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_capone",
+   "publisher": "History.com",
+   "title": "Al Capone",
+   "url": "https://www.history.com/topics/crime/al-capone",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_prison",
+   "publisher": "History.com (This Day in History)",
+   "title": "Capone goes to prison (October 17)",
+   "url": "https://www.history.com/this-day-in-history/October-17/capone-goes-to-prison",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_wilson",
+   "publisher": "History.com",
+   "title": "Frank Wilson",
+   "url": "https://www.history.com/topics/us-government/frank-wilson",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "famous_trials_home",
+   "publisher": "Famous Trials (UMKC School of Law, Douglas Linder)",
+   "title": "The Al Capone Trial (1931): an account",
+   "url": "https://famous-trials.com/alcapone/1474-home",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "famous_trials_chron",
+   "publisher": "Famous Trials (UMKC School of Law)",
+   "title": "Al Capone trial: chronology",
+   "url": "https://famous-trials.com/alcapone/1475-chronology",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "famous_trials_wilson",
+   "publisher": "Famous Trials (UMKC School of Law)",
+   "title": "Testimony of Frank Wilson (trial transcript excerpt)",
+   "url": "https://famous-trials.com/alcapone/1495-wilsontranscript",
+   "date": "1931",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "encyclopedia",
+   "publisher": "Encyclopedia.com (Great American Trials)",
+   "title": "Al Capone Trial: 1931",
+   "url": "https://www.encyclopedia.com/law/law-magazines/al-capone-trial-1931",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mobmuseum_trial",
+   "publisher": "The Mob Museum",
+   "title": "Capone tax evasion trial: 90 years ago, the T-Men had the goods on Mob chief",
+   "url": "https://themobmuseum.org/blog/capone-tax-evasion-trial-90-years-ago-the-t-men-had-the-goods-on-mob-chief/",
+   "date": "2021-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mobmuseum_alcatraz",
+   "publisher": "The Mob Museum",
+   "title": "Chicago crime boss Al Capone transferred to Alcatraz 90 years ago this month",
+   "url": "https://themobmuseum.org/blog/chicago-crime-boss-al-capone-transferred-to-alcatraz-90-years-ago-this-month/",
+   "date": "2024-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mobmuseum_prohib",
+   "publisher": "The Mob Museum (Prohibition: An Interactive History)",
+   "title": "Prohibition mob bosses tripped by tax laws",
+   "url": "https://prohibition.themobmuseum.org/the-history/enforcing-the-prohibition-laws/prohibition-mob-bosses-tripped-tax-laws/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "dailybeast",
+   "publisher": "The Daily Beast",
+   "title": "The Bean Counter Who Put Al Capone in the Slammer",
+   "url": "https://www.thedailybeast.com/the-bean-counter-who-put-al-capone-in-the-slammer",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "crimelib_pay",
+   "publisher": "Crime Library (Court TV / truTV archive)",
+   "title": "Al Capone: Made Him Pay",
+   "url": "https://crimelibrary.org/gangsters_outlaws/mob_bosses/capone/pay_23.html",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "crimelib_plea",
+   "publisher": "Crime Library (Court TV / truTV archive)",
+   "title": "Al Capone: the plea",
+   "url": "https://crimelibrary.org/gangsters_outlaws/mob_bosses/capone/plea_25.html",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_wilson",
+   "publisher": "Wikipedia",
+   "title": "Frank J. Wilson",
+   "url": "https://en.wikipedia.org/wiki/Frank_J._Wilson",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_hawthorne",
+   "publisher": "Wikipedia",
+   "title": "Hawthorne Smoke Shop",
+   "url": "https://en.wikipedia.org/wiki/Hawthorne_Smoke_Shop",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_wilkerson",
+   "publisher": "Wikipedia",
+   "title": "James Herbert Wilkerson",
+   "url": "https://en.wikipedia.org/wiki/James_Herbert_Wilkerson",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_ccc",
+   "publisher": "Wikipedia",
+   "title": "Chicago Crime Commission",
+   "url": "https://en.wikipedia.org/wiki/Chicago_Crime_Commission",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_loesch",
+   "publisher": "Wikipedia",
+   "title": "Frank J. Loesch",
+   "url": "https://en.wikipedia.org/wiki/Frank_J._Loesch",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "deseret_pe",
+   "publisher": "Deseret News",
+   "title": "'Public enemy No. 1' appeared in 1930s",
+   "url": "https://www.deseret.com/1997/8/31/19331701/public-enemy-no-1-appeared-in-1930s/",
+   "date": "1997-08-31",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wbez",
+   "publisher": "WBEZ Chicago",
+   "title": "The other Capone",
+   "url": "https://www.wbez.org/stories/the-other-capone/efdf6559-6e16-4e64-8666-78f1f51bea2c",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abq",
+   "publisher": "Albuquerque Journal (Hamill, On the Money)",
+   "title": "The Treasury agent who finally got Al Capone",
+   "url": "https://www.abqjournal.com/business/hamill-the-treasury-agent-who-finally-got-al-capone/3132269",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "grant_thornton",
+   "publisher": "Grant Thornton UK (insight)",
+   "title": "The accountant and Al Capone",
+   "url": "https://www.grantthornton.co.uk/en/insights/the-accountant-and-al-capone",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ganglandwire",
+   "publisher": "Gangland Wire (Gary Jenkins)",
+   "title": "The Trial of Al Capone, Part 1",
+   "url": "https://ganglandwire.com/the-trial-of-al-capone-part-1/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yahoo_timeline",
+   "publisher": "Yahoo News",
+   "title": "The real-life 'Scarface': a timeline of Al Capone's life and crimes",
+   "url": "https://news.yahoo.com/real-life-scarface-timeline-al-010000735.html",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wapo_ness",
+   "publisher": "The Washington Post (via Teaching Cleveland)",
+   "title": "Myths surround 'Untouchable' lawman Eliot Ness. What's the truth?",
+   "url": "https://teachingcleveland.org/myths-surround-untouchable-lawman-eliot-ness-whats-the-truth-washington-post-june-1-2022/",
+   "date": "2022-06-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ktar_eig",
+   "publisher": "KTAR News (AP)",
+   "title": "Eliot Ness: myth vs. the record (Jonathan Eig, 'Get Capone')",
+   "url": "https://ktar.com/?p=123031",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_ness",
+   "publisher": "Wikipedia",
+   "title": "Eliot Ness",
+   "url": "https://en.wikipedia.org/wiki/Eliot_Ness",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "AL CAPONE RULED CHICAGO'S UNDERWORLD"
+   },
+   {
+    "text": "A LEDGER HELPED BRING HIM DOWN",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHO REALLY GOT CAPONE?"
+   },
+   {
+    "text": "ELIOT NESS OR THE TAXMAN? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

@@ -1,0 +1,940 @@
+{
+ "id": "tcv60-snow-white-sentence",
+ "number": 60,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "50 Years to Life for Stealing Snow White",
+ "central_question": "In 1995 a California man took nine videotapes worth about $153 from two Kmarts. Under three strikes he got 50 years to life, and the Supreme Court upheld it 5-4. Justice or insane?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "50": "fifty",
+   "150": "a hundred and fifty",
+   "87": "eighty seven",
+   "theft": "thefft",
+   "Kmarts.": "K marts.",
+   "Kmart": "K mart"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "60",
+  "label": "THE SNOW WHITE SENTENCE · CALIFORNIA 1995"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s05_reveal",
+   "word": [
+    1,
+    4
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "sw60_andrade",
+  "sw60_guard",
+  "sw60_judge",
+  "sw60_lawyer",
+  "sw60_critic",
+  "sw60_reporter",
+  "sw60_viewer",
+  "sw60_officer"
+ ],
+ "content_notes": "Tone: outrage at the system, never at the man; no mockery of poverty or addiction. Leandro Andrade (convicted; Lockyer v. Andrade, 2003) appears only as a faceless silhouette tagged NOT A LIKENESS. The guard, trial judge, lawyers, reporter, police officer and the young man in the lesson are generic figures, never named; the nine Supreme Court justices are never drawn (nine empty chairs). Kmart is named only as typed text: no logo, sign or store livery. The tape boxes are plain with typed titles only: no Disney or studio artwork or logos. No court seal, badge or insignia. The 'critics' line paraphrases the Ninth Circuit and the Souter dissent; no quote is used. His later release is not claimed (unconfirmed); the parole age is labelled AS SENTENCED. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "sw60_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "W_hook",
+    "W_nine"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He got 50 years to life for Snow White."
+    },
+    {
+     "who": "narrator",
+     "text": "Plus eight other videotapes.",
+     "pause_before": 0.12
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "50",
+    "years",
+    "life",
+    "snow",
+    "white.",
+    "eight",
+    "other",
+    "videotapes."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_caught",
+   "scene": "sw60_caught",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "door",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "cash",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "W_waist",
+    "W_stopped",
+    "W_stat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He hid them in his waistband at two Kmarts."
+    },
+    {
+     "who": "narrator",
+     "text": "Total value? About 150 dollars.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "hid",
+    "waistband",
+    "two",
+    "kmarts.",
+    "total",
+    "value?",
+    "150",
+    "dollars."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s04_strikes",
+   "scene": "sw60_strikes",
+   "min_duration": 4.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "W_priors"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But he had prior burglary convictions."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "but",
+    "prior",
+    "burglary",
+    "convictions."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_reveal",
+   "scene": "sw60_reveal",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.04,
+     "word": [
+      1,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "W_law",
+    "W_each",
+    "W_sentence"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So under three strikes, each theft counted as strike three."
+    },
+    {
+     "who": "narrator",
+     "text": "Twenty-five to life, times two.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "three",
+    "strikes,",
+    "each",
+    "theft",
+    "strike",
+    "three.",
+    "twenty-five",
+    "life,",
+    "times",
+    "two."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_sides",
+   "scene": "sw60_sides",
+   "min_duration": 3.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      9
+     ],
+     "name": "hit",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "W_lawside",
+    "W_critics"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The law was clear: three strikes."
+    },
+    {
+     "who": "narrator",
+     "text": "The critics said: the punishment did not fit the crime.",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "law",
+    "three",
+    "strikes.",
+    "critics",
+    "punishment",
+    "not",
+    "fit",
+    "crime."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_court",
+   "scene": "sw60_court",
+   "min_duration": 3.8,
+   "pad_after": 0.45,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.32
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": 0.3,
+     "word": [
+      0,
+      8
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "W_scotus",
+    "W_golf"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then the Supreme Court upheld it, five to four."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "supreme",
+    "court",
+    "upheld",
+    "five",
+    "four."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_lesson",
+   "scene": "sw60_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "W_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Getting arrested? Save these three rules."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "getting",
+    "arrested?",
+    "save",
+    "three",
+    "rules."
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s09_end",
+   "scene": "sw60_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "W_parole"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His first shot at parole? At 87 years old."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "first",
+    "shot",
+    "parole?",
+    "87",
+    "years",
+    "old."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "W_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Leandro Andrade was sentenced under California's three strikes law to two consecutive terms of 25 years to life (50 years to life) for two petty thefts of videotapes; one of the tapes in the first theft was 'Snow White'. Narration: 'He got 50 years to life for Snow White.' (hot-take framing; line 2 immediately adds the other eight tapes).",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "csm",
+    "bas",
+    "ljw"
+   ]
+  },
+  {
+   "id": "W_nine",
+   "type": "established",
+   "nature": "fact",
+   "text": "Nine videotapes in all: five at a Kmart in Ontario, California (4 November 1995) and four at a Kmart in Montclair, California (18 November 1995). Narration: 'Plus eight other videotapes.'",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "csm",
+    "wiki"
+   ]
+  },
+  {
+   "id": "W_waist",
+   "type": "established",
+   "nature": "fact",
+   "text": "At the Montclair Kmart he placed four videotapes in the rear waistband of his pants (opinion); both thefts were at Kmart stores in San Bernardino County. Narration: 'He hid them in his waistband at two Kmarts.'",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "csm",
+    "bas"
+   ]
+  },
+  {
+   "id": "W_stopped",
+   "type": "established",
+   "nature": "fact",
+   "text": "Store security personnel stopped him as he was leaving each store. Shown: the guard steps in at the exit; label 'STOPPED AT THE DOOR · BOTH TIMES'.",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "bas"
+   ]
+  },
+  {
+   "id": "W_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): the tapes were worth $84.70 and $68.84, $153.54 in all (reported as about $150 / $153). Narration: 'Total value? About 150 dollars.' Counter: $153.",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "npr",
+    "csm",
+    "ljw"
+   ]
+  },
+  {
+   "id": "W_priors",
+   "type": "established",
+   "nature": "fact",
+   "text": "His prior record included three counts of first-degree residential burglary (1983), which counted as strikes. Narration: 'But he had prior burglary convictions.'",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "wiki",
+    "seattle"
+   ]
+  },
+  {
+   "id": "W_law",
+   "type": "established",
+   "nature": "fact",
+   "text": "California's three strikes law: a third felony after two prior serious or violent felony convictions brings 25 years to life; petty theft with a prior can be charged as a felony. Narration: 'So under three strikes, ...' (s05 line 1).",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "csm",
+    "npr"
+   ]
+  },
+  {
+   "id": "W_each",
+   "type": "established",
+   "nature": "fact",
+   "text": "Each of his two petty-theft-with-a-prior convictions triggered a separate application of the three strikes law. Narration: '... each theft counted as strike three.'",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "npr",
+    "ljw"
+   ]
+  },
+  {
+   "id": "W_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "The judge imposed two consecutive terms of 25 years to life. Narration: 'Twenty-five to life, times two.' On screen: 25 + 25 = 50 YEARS TO LIFE.",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "npr",
+    "ljw",
+    "mg"
+   ]
+  },
+  {
+   "id": "W_lawside",
+   "type": "established",
+   "nature": "fact",
+   "text": "The State of California defended the sentence under the three strikes law and the Supreme Court majority (O'Connor) upheld it. Narration: 'The law was clear: three strikes.'",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "ljw",
+    "police1"
+   ]
+  },
+  {
+   "id": "W_critics",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Ninth Circuit had held the sentence to be cruel and unusual punishment; Justice Souter's dissent (with Stevens, Ginsburg and Breyer) argued the consecutive sentences were grossly disproportionate to two minor thefts. Narration: 'The critics said: the punishment did not fit the crime.' (paraphrase; no direct quote used).",
+   "sources": [
+    "lii_d",
+    "justia",
+    "ljw",
+    "csm",
+    "wiki"
+   ]
+  },
+  {
+   "id": "W_scotus",
+   "type": "established",
+   "nature": "fact",
+   "text": "The U.S. Supreme Court reversed the Ninth Circuit and upheld the sentence 5-4 in Lockyer v. Andrade, decided 5 March 2003. Narration: 'Then the Supreme Court upheld it, five to four.'",
+   "sources": [
+    "justia",
+    "lii",
+    "loc",
+    "ljw",
+    "police1",
+    "semo",
+    "mg"
+   ]
+  },
+  {
+   "id": "W_golf",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: the same day (5 March 2003) the Court upheld, in Ewing v. California, a sentence of 25 years to life for stealing three golf clubs.",
+   "sources": [
+    "ljw",
+    "police1",
+    "semo"
+   ]
+  },
+  {
+   "id": "W_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): if arrested or questioned: you may remain silent (say clearly that you are using that right); ask for a lawyer (a public defender if you cannot afford one) and do not talk without one; say clearly 'I do not consent to a search' and do not physically resist. Sources: county public defender offices (Santa Clara County CA, Solano County CA, Dutchess County NY, Lancaster County NE). Rows: 'SAY YOU WILL STAY SILENT', 'ASK FOR A LAWYER', 'DO NOT CONSENT TO SEARCHES'.",
+   "sources": [
+    "pd_sc",
+    "pd_sol",
+    "pd_dut",
+    "pd_lan"
+   ]
+  },
+  {
+   "id": "W_parole",
+   "type": "established",
+   "nature": "fact",
+   "text": "As sentenced, he would not be eligible for parole until 2046, when he would be 87. Narration: 'His first shot at parole? At 87 years old.' Card: AS SENTENCED. (A later release after Proposition 36 of 2012 is reported by one source only and contradicted by an older one, so it is NOT claimed.)",
+   "sources": [
+    "wiki",
+    "bas",
+    "csm"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "justia",
+   "publisher": "Justia (U.S. Supreme Court)",
+   "title": "Lockyer v. Andrade, 538 U.S. 63 (2003)",
+   "url": "https://supreme.justia.com/cases/federal/us/538/63/",
+   "date": "2003-03-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "lii",
+   "publisher": "Cornell Law School, Legal Information Institute",
+   "title": "Lockyer v. Andrade (01-1127), opinion of the Court",
+   "url": "https://www.law.cornell.edu/supct/html/01-1127.ZO.html",
+   "date": "2003-03-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "lii_d",
+   "publisher": "Cornell Law School, Legal Information Institute",
+   "title": "Lockyer v. Andrade (01-1127), Souter, J., dissenting",
+   "url": "https://www.law.cornell.edu/supct/html/01-1127.ZD.html",
+   "date": "2003-03-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "loc",
+   "publisher": "Library of Congress",
+   "title": "U.S. Reports: Lockyer v. Andrade, 538 U.S. 63 (2003)",
+   "url": "https://www.loc.gov/item/usrep538063/",
+   "date": "2003",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wiki",
+   "publisher": "Wikipedia",
+   "title": "Lockyer v. Andrade",
+   "url": "https://en.wikipedia.org/wiki/Lockyer_v._Andrade",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "csm",
+   "publisher": "The Christian Science Monitor",
+   "title": "Is 'Three Strikes' law cruel and unusual?",
+   "url": "https://csmonitor.com/2002/1105/p01s02-usju.html",
+   "date": "2002-11-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "npr",
+   "publisher": "NPR",
+   "title": "Cases show disparity of California's 3 strikes law",
+   "url": "https://www.npr.org/2009/10/30/114301025/cases-show-disparity-of-californias-3-strikes-law",
+   "date": "2009-10-30",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ljw",
+   "publisher": "Lawrence Journal-World (AP)",
+   "title": "Supreme Court upholds '3-strikes' law",
+   "url": "https://www2.ljworld.com/news/2003/mar/06/supreme_court_upholds/",
+   "date": "2003-03-06",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "semo",
+   "publisher": "Southeast Missourian (AP)",
+   "title": "Court backs law on repeat felons",
+   "url": "https://www.semissourian.com/news/court-backs-law-on-repeat-felons-103368",
+   "date": "2003-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "police1",
+   "publisher": "Police1",
+   "title": "Supreme Court upholds three strikes sentencing",
+   "url": "https://www.police1.com/archive/articles/supreme-court-upholds-three-strikes-sentencing-f0dchno9ZyrdtypD/",
+   "date": "2003-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "mg",
+   "publisher": "Mail & Guardian (AFP)",
+   "title": "50 years jail for video thefts upheld",
+   "url": "https://mg.co.za/article/2003-03-06-50-years-jail-for-video-thefts-upheld/",
+   "date": "2003-03-06",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "bas",
+   "publisher": "Balls and Strikes",
+   "title": "Lockyer v. Andrade at 20",
+   "url": "https://ballsandstrikes.org/legal-culture/lockyer-v-andrade-20th-anniversary",
+   "date": "2023-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "seattle",
+   "publisher": "The Seattle Times",
+   "title": "Controversy over three-strikes laws triggers Supreme Court review",
+   "url": "https://archive.seattletimes.com/archive/20020402/scotus02/controversy-over-three-strikes-laws-triggers-supreme-court-review",
+   "date": "2002-04-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pd_sc",
+   "publisher": "County of Santa Clara, Alternate Defender Office",
+   "title": "Know Your Rights",
+   "url": "https://ado.santaclaracounty.gov/know-your-rights",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pd_sol",
+   "publisher": "Solano County Public Defender",
+   "title": "Know Your Rights",
+   "url": "https://admin.solanocounty.com/depts/pubdefender/know_your_rights/default.asp",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pd_dut",
+   "publisher": "Dutchess County (NY) Public Defender",
+   "title": "Public Defender: Know Your Rights",
+   "url": "https://www.dutchessny.gov/Departments/Public-Defender/Public-Defender-Know-Your-Rights.htm",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "pd_lan",
+   "publisher": "Lancaster County (NE) Public Defender",
+   "title": "Know Your Rights",
+   "url": "https://www.lancaster.ne.gov/1003/Know-Your-Rights",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#161c26",
+  "mid": "#cbbfa8",
+  "accent": "#d9a441"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "50 YEARS TO LIFE"
+   },
+   {
+    "text": "FOR STEALING SNOW WHITE",
+    "colour": "#d9a441"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "$153 OF TAPES. 50 YEARS."
+   },
+   {
+    "text": "JUSTICE OR INSANE? 👇",
+    "colour": "#d9a441"
+   },
+   {
+    "text": "TAG THE MATE WITH STICKY HANDS",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 420
+ },
+ "progress": {
+  "label": "THE PRICE:",
+  "keys": [
+   {
+    "t": 5.53,
+    "v": "$84.70"
+   },
+   {
+    "t": 8.99,
+    "v": "$153.54"
+   },
+   {
+    "t": 18.83,
+    "v": "25 YRS TO LIFE"
+   },
+   {
+    "t": 20.12,
+    "v": "50 YRS TO LIFE"
+   }
+  ],
+  "y": 330,
+  "until": 29.7
+ },
+ "legal_status_verified": "2026-10-17"
+}

@@ -1,0 +1,1401 @@
+{
+ "id": "tcv14-litvinenko",
+ "number": 14,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Cup of Tea That Left a Radioactive Trail",
+ "central_question": "How did investigators trace the polonium that killed Alexander Litvinenko, and why has no one stood trial?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "polonium-210": "polonium two ten",
+   "FSB": "F S B",
+   "UK": "U K",
+   "Lugovoi": "Lugovoy",
+   "Kovtun": "Kovtoon",
+   "Patrushev": "Patrooshev",
+   "Litvinenko": "Litvinyenko"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "14",
+  "label": "ALEXANDER LITVINENKO · 2006-2026"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "hits": [
+   {
+    "scene": "s04_poison",
+    "word": [
+     2,
+     2
+    ],
+    "at": -0.05,
+    "gain": 0.45
+   }
+  ],
+  "cliff": {
+   "scene": "s12_end",
+   "word": [
+    0,
+    7
+   ],
+   "at": -0.08
+  }
+ },
+ "figures": [
+  "lt14_guest",
+  "lt14_visitor_a",
+  "lt14_visitor_b",
+  "lt14_tech",
+  "lt14_barman",
+  "scientist",
+  "analyst",
+  "detective",
+  "official",
+  "agent_b",
+  "press_operator",
+  "judge"
+ ],
+ "content_notes": "No trial has taken place. The killers are named only as the findings of a UK public inquiry (2016) and the European Court of Human Rights (2021), always attributed; Lugovoi's denial, Kovtun's denial and his death in 2022, and Russia's denial are stated. Nobody is called a murderer in the narrator's voice. Everyone on screen, Litvinenko included, is an anonymous rim-lit silhouette; no real person's likeness, no flags, emblems or leaders are shown. The illness, the hospital bed and the death are never depicted. The hotel bar, the London streets and the trail map are generic illustrations, not replicas; the map names only verified places. No real document, photograph, logo or court material is imitated. No dialogue is invented. Legal status verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "lt14_hook",
+   "min_duration": 4.0,
+   "pad_after": 0.25,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.6
+    },
+    {
+     "at": -0.1,
+     "word": [
+      2,
+      0
+     ],
+     "name": "static",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "L_tea",
+    "L_meet",
+    "L_died",
+    "L_sweep",
+    "L_teapot"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A man drank tea in a London hotel bar."
+    },
+    {
+     "who": "narrator",
+     "text": "Three weeks later, he was dead.",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Investigators found the teapot was radioactive.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tea",
+    "dead.",
+    "teapot",
+    "radioactive."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_who",
+   "scene": "lt14_who",
+   "min_duration": 3.0,
+   "pad_after": 0.25,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.35
+    },
+    {
+     "at": 3.0,
+     "name": "rain",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "step",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "L_who"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Alexander Litvinenko. Former Russian security officer. Kremlin critic."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "litvinenko.",
+    "kremlin",
+    "critic."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_meet",
+   "scene": "lt14_meet",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "L_meet",
+    "L_ill"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "November 1st, 2006: he had met two Russian men there."
+    },
+    {
+     "who": "narrator",
+     "text": "That night, he fell ill.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "two",
+    "russian",
+    "ill."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_poison",
+   "scene": "lt14_poison",
+   "min_duration": 2.0,
+   "pad_after": 0.45,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "tick",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      5
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      2,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": 0.3,
+     "word": [
+      2,
+      2
+     ],
+     "name": "swell",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "L_mystery",
+    "L_po"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "For three weeks, doctors couldn't name the poison."
+    },
+    {
+     "who": "narrator",
+     "text": "Hours before he died, scientists found it.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "It was polonium-210.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "three",
+    "weeks,",
+    "hours",
+    "polonium-210."
+   ],
+   "section": "B",
+   "music_drop": true
+  },
+  {
+   "id": "s05_detect",
+   "scene": "lt14_detect",
+   "min_duration": 4.0,
+   "pad_after": 0.4,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "beep",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "L_alpha"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Its radiation can't even get through skin.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "can't",
+    "skin."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_trail",
+   "scene": "lt14_trail",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "ping",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "ping",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      10
+     ],
+     "name": "ping",
+     "gain": 0.45
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      1
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "L_trail",
+    "L_planes",
+    "L_stadium"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They traced it across London: a sushi bar, offices, his home."
+    },
+    {
+     "who": "narrator",
+     "text": "Even Arsenal's stadium, where the two men watched a match.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "london:",
+    "home.",
+    "arsenal's",
+    "stadium,"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_hottest",
+   "scene": "lt14_hottest",
+   "min_duration": 3.0,
+   "pad_after": 0.4,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "beep",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.7
+    }
+   ],
+   "claims": [
+    "L_teapot"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And the hottest spot? The teapot."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "hottest",
+    "teapot."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_charge",
+   "scene": "lt14_charge",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "stamp",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "L_charge",
+    "L_refuse"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Britain charged Lugovoi with murder."
+    },
+    {
+     "who": "narrator",
+     "text": "Russia refused to extradite him.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "charged",
+    "refused"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_inquiry",
+   "scene": "lt14_inquiry",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      11
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sub",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "L_inquiry",
+    "L_approved"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2016, a UK public inquiry concluded Lugovoi and Dmitry Kovtun poisoned him."
+    },
+    {
+     "who": "narrator",
+     "text": "Probably approved, it said, by President Putin and FSB chief Patrushev.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "concluded",
+    "poisoned",
+    "probably",
+    "approved,"
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s10_deny",
+   "scene": "lt14_deny",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.35
+    },
+    {
+     "at": 3.0,
+     "name": "rain",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      2,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "L_deny",
+    "L_kovtun",
+    "L_russia"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Both men denied it."
+    },
+    {
+     "who": "narrator",
+     "text": "Kovtun died in 2022.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "Russia denies any role.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "denied",
+    "died",
+    "role."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s11_echr",
+   "scene": "lt14_echr",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "stamp",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "L_echr"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2021, the European Court of Human Rights held Russia responsible."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "european",
+    "responsible."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s12_end",
+   "scene": "lt14_end",
+   "min_duration": 4.0,
+   "pad_after": 1.7,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": -0.2,
+     "word": [
+      2,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      2,
+      2
+     ],
+     "name": "ping",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "L_anniv",
+    "L_notrial",
+    "L_teapot"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Twenty years on, no one has stood trial.",
+     "pause_before": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "It all comes back to one teapot.",
+     "pause_before": 0.45
+    },
+    {
+     "who": "narrator",
+     "text": "Which case next?",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no",
+    "trial.",
+    "teapot.",
+    "next?"
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "L_sweep",
+   "type": "established",
+   "nature": "fact",
+   "text": "After Litvinenko's death, investigators surveyed the Millennium Hotel's Pine Bar for polonium-210 contamination; the contamination map ran from lower readings across the bar to the highest at the table where the group sat.",
+   "sources": [
+    "vice_inquiry",
+    "dailymail_teapot",
+    "cai_poisoning"
+   ]
+  },
+  {
+   "id": "L_teapot",
+   "type": "established",
+   "nature": "fact",
+   "text": "The highest readings in the bar came from the teapot Litvinenko drank from (the largest reading from its spout), as described in reporting on the 2016 inquiry; the inquiry released images of the teapot.",
+   "sources": [
+    "vice_inquiry",
+    "dailymail_teapot",
+    "itv_teapot"
+   ]
+  },
+  {
+   "id": "L_tea",
+   "type": "established",
+   "nature": "fact",
+   "text": "At the Pine Bar meeting on 1 November 2006 Litvinenko drank green tea from the pot; the two other men had gin.",
+   "sources": [
+    "vice_inquiry",
+    "dailymail_teapot"
+   ]
+  },
+  {
+   "id": "L_who",
+   "type": "established",
+   "nature": "fact",
+   "text": "Alexander Litvinenko was a former officer of Russia's FSB security service who came to Britain in 2000, became a prominent Kremlin critic, and lived in London.",
+   "sources": [
+    "mt_onthisday",
+    "aa_inquiry",
+    "ctv_duma",
+    "ukhrb_inquiry"
+   ]
+  },
+  {
+   "id": "L_meet",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 1 November 2006 Litvinenko met Andrei Lugovoi and Dmitry Kovtun at the Pine Bar of the Millennium Hotel, Grosvenor Square, London.",
+   "sources": [
+    "vice_inquiry",
+    "hurriyet_inquiry",
+    "stabroek_inquiry"
+   ]
+  },
+  {
+   "id": "L_ill",
+   "type": "established",
+   "nature": "fact",
+   "text": "Litvinenko fell ill on 1 November 2006 and was taken to hospital.",
+   "sources": [
+    "mt_onthisday",
+    "nbc_who"
+   ]
+  },
+  {
+   "id": "L_mystery",
+   "type": "established",
+   "nature": "fact",
+   "text": "For about three weeks the cause of his illness was not identified: the early clinical picture resembled infection or chemical poisoning such as thallium.",
+   "sources": [
+    "ucl_lancet",
+    "nbc_who"
+   ]
+  },
+  {
+   "id": "L_po",
+   "type": "established",
+   "nature": "fact",
+   "text": "Polonium-210 was identified only hours before he died (NBC: about two hours; EUvsDisinfo: six hours after the urine result); the Health Protection Agency announced it on 24 November. Polonium-210 is described as a rare, radioactive element.",
+   "sources": [
+    "nbc_who",
+    "euvsdisinfo_po",
+    "rferl_hpa",
+    "ctv_duma"
+   ]
+  },
+  {
+   "id": "L_died",
+   "type": "established",
+   "nature": "fact",
+   "text": "Litvinenko died in London on 23 November 2006.",
+   "sources": [
+    "mt_onthisday",
+    "rferl_hpa",
+    "nbc_who"
+   ]
+  },
+  {
+   "id": "L_alpha",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: polonium-210 emits alpha radiation, which is stopped by a thin layer of matter such as skin; ordinary Geiger counters pick up beta and gamma radiation, and alpha radiation needs special detectors (Aldermaston identified it by its 5.3 MeV alpha signature).",
+   "sources": [
+    "lrb_dombey",
+    "guardian_aldermaston",
+    "chemworld_sleuths"
+   ]
+  },
+  {
+   "id": "L_trail",
+   "type": "established",
+   "nature": "fact",
+   "text": "Investigators traced polonium contamination to sites across London, including the Itsu sushi restaurant near Piccadilly, an office block and a Mayfair address, and Litvinenko's north London home; by 30 November traces had been found at 12 sites, and dozens of scenes were assessed.",
+   "sources": [
+    "nbc_more",
+    "cbs_haunts",
+    "nbc_12sites",
+    "fox_traces",
+    "chemworld_sleuths"
+   ]
+  },
+  {
+   "id": "L_planes",
+   "type": "established",
+   "nature": "fact",
+   "text": "Two British Airways Boeing 767s at Heathrow showed traces of radioactive material at very low levels (late November 2006); officials did not then say whether it was polonium-210, and the health risk was called low.",
+   "sources": [
+    "ap_planes",
+    "cbs_planes",
+    "rferl_planes"
+   ]
+  },
+  {
+   "id": "L_stadium",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: traces of polonium-210 were found at Arsenal's Emirates Stadium, where Lugovoi and Kovtun watched Arsenal v CSKA Moscow on the evening of 1 November 2006; the Health Protection Agency called the levels barely detectable and no risk to the public.",
+   "sources": [
+    "ap_stadium",
+    "chinadaily_afp",
+    "chemworld_sleuths"
+   ]
+  },
+  {
+   "id": "L_charge",
+   "type": "established",
+   "nature": "procedure",
+   "text": "In May 2007 the Director of Public Prosecutions said there was sufficient evidence to charge Andrei Lugovoi with Litvinenko's murder, and Britain requested his extradition.",
+   "sources": [
+    "cnn_charge",
+    "jurist_refuse",
+    "rferl_refuse"
+   ]
+  },
+  {
+   "id": "L_refuse",
+   "type": "established",
+   "nature": "procedure",
+   "text": "On 5 July 2007 Russia formally refused to extradite Lugovoi, citing article 61 of its constitution (a Russian citizen cannot be handed over to another state).",
+   "sources": [
+    "ria_refuse",
+    "jurist_refuse",
+    "rferl_refuse"
+   ]
+  },
+  {
+   "id": "L_inquiry",
+   "type": "established",
+   "nature": "finding",
+   "text": "The UK public inquiry chaired by Sir Robert Owen reported on 21 January 2016 that Lugovoi and Kovtun deliberately poisoned Litvinenko with polonium-210 at the Pine Bar on 1 November 2006 (placing it in the teapot), probably under the direction of the FSB. This is an inquiry finding, not a criminal verdict; neither man has been tried.",
+   "sources": [
+    "vice_inquiry",
+    "hurriyet_inquiry",
+    "buzzfeed_inquiry",
+    "scotlegal_inquiry",
+    "aa_inquiry"
+   ]
+  },
+  {
+   "id": "L_approved",
+   "type": "established",
+   "nature": "finding",
+   "text": "The inquiry concluded that the FSB operation to kill Litvinenko was 'probably approved' by Nikolai Patrushev, then director of the FSB, and also by President Putin.",
+   "sources": [
+    "vice_inquiry",
+    "hurriyet_inquiry",
+    "buzzfeed_inquiry",
+    "aa_inquiry"
+   ]
+  },
+  {
+   "id": "L_deny",
+   "type": "established",
+   "nature": "defence",
+   "text": "Lugovoi has denied any involvement since 2007, calling the accusations politically motivated, and disputed the 2016 findings; Kovtun also denied it (in 2015 he suggested the death was an accident).",
+   "sources": [
+    "jurist_refuse",
+    "buzzfeed_inquiry",
+    "sputnik_lugovoi",
+    "gulfnews_kovtun",
+    "itv_kovtun"
+   ]
+  },
+  {
+   "id": "L_kovtun",
+   "type": "established",
+   "nature": "fact",
+   "text": "Dmitry Kovtun died in Moscow in June 2022 (reported as COVID-19, citing TASS).",
+   "sources": [
+    "arabnews_kovtun",
+    "lalibre_kovtun",
+    "rtbf_kovtun"
+   ]
+  },
+  {
+   "id": "L_russia",
+   "type": "established",
+   "nature": "defence",
+   "text": "Russia rejected the inquiry's findings and denies involvement; its ambassador called the inquiry a 'blatant provocation'.",
+   "sources": [
+    "hurriyet_inquiry",
+    "ukhrb_inquiry",
+    "sputnik_lugovoi"
+   ]
+  },
+  {
+   "id": "L_echr",
+   "type": "established",
+   "nature": "finding",
+   "text": "On 21 September 2021 the European Court of Human Rights (Carter v Russia) held Russia responsible for Litvinenko's killing, finding a strong prima facie case that Lugovoi and Kovtun acted as agents of the Russian state.",
+   "sources": [
+    "irishlegal_echr",
+    "asil_echr",
+    "nam_echr"
+   ]
+  },
+  {
+   "id": "L_anniv",
+   "type": "established",
+   "nature": "fact",
+   "text": "Litvinenko died on 23 November 2006: November 2026 marks 20 years (this episode is published in October 2026).",
+   "sources": [
+    "mt_onthisday",
+    "rferl_hpa"
+   ]
+  },
+  {
+   "id": "L_notrial",
+   "type": "established",
+   "nature": "procedure",
+   "text": "No one has been tried for Litvinenko's death: Russia refused extradition, Kovtun died in 2022, and no trial or new legal step was found on 2026-10-11 (Lugovoi remains under UK sanctions, notice amended March 2025).",
+   "sources": [
+    "jurist_refuse",
+    "arabnews_kovtun",
+    "irishlegal_echr",
+    "ukgov_sanctions"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "vice_inquiry",
+   "publisher": "VICE News",
+   "title": "Putin accused of ordering former Russian secret agent to be poisoned in London",
+   "url": "https://www.vice.com/en/article/putin-accused-of-ordering-former-russian-secret-agent-to-be-poisoned-in-london/",
+   "date": "2016-01-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "hurriyet_inquiry",
+   "publisher": "Hurriyet Daily News (AFP)",
+   "title": "Putin 'probably' approved Polonium murder of Litvinenko: British inquiry",
+   "url": "https://www.hurriyetdailynews.com/putin-probably-approved-polonium-murder-of-litvinenko-british-inquiry-94147",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "stabroek_inquiry",
+   "publisher": "Stabroek News (AFP)",
+   "title": "Putin 'probably' approved Polonium murder of Litvinenko - British inquiry",
+   "url": "https://stabroeknews.com/?p=364760",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "buzzfeed_inquiry",
+   "publisher": "BuzzFeed News",
+   "title": "Putin \"Probably Ordered\" The Murder Of Alexander Litvinenko, Inquiry Finds",
+   "url": "https://www.buzzfeednews.com/article/matthewchampion/vladimir-putin-personally-ordered-the-murder-of-alexander-li",
+   "date": "2016-01-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "scotlegal_inquiry",
+   "publisher": "Scottish Legal News",
+   "title": "Public inquiry implicates Putin in Litvinenko murder",
+   "url": "https://www.scottishlegal.com/articles/public-inquiry-implicates-putin-in-litvinenko-murder",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aa_inquiry",
+   "publisher": "Anadolu Agency",
+   "title": "UK report names Putin in ex-spy's London murder",
+   "url": "https://aa.com.tr/en/world/uk-report-names-putin-in-ex-spy-s-london-murder/508285",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ukhrb_inquiry",
+   "publisher": "UK Human Rights Blog",
+   "title": "Litvinenko: When real life is more fantastic than fiction",
+   "url": "https://ukhumanrightsblog.com/2016/01/25/litvinenko-when-real-life-is-more-fantastic-than-fiction/",
+   "date": "2016-01-25",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "dailymail_teapot",
+   "publisher": "Daily Mail (via PressReader)",
+   "title": "Daily Mail, 22 January 2016 (inquiry report coverage)",
+   "url": "https://www.pressreader.com/uk/daily-mail/20160122/281784218104483",
+   "date": "2016-01-22",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "itv_teapot",
+   "publisher": "ITV News",
+   "title": "Images released of teapot used to poison Litvinenko",
+   "url": "https://itv.com/news/update/2016-01-21/images-released-of-teapot-used-to-poison-litvinenko",
+   "date": "2016-01-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cai_poisoning",
+   "publisher": "Crime+Investigation UK",
+   "title": "Poisoning Alexander Litvinenko",
+   "url": "https://crimeandinvestigation.co.uk/articles/poisoning-alexander-litvinenko",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "mt_onthisday",
+   "publisher": "The Moscow Times",
+   "title": "On This Day in 2006 Alexander Litvinenko Died of Polonium Poisoning",
+   "url": "https://www.themoscowtimes.com/all/75644?amp=1",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ctv_duma",
+   "publisher": "CTV News (AP)",
+   "title": "Suspect in ex-KGB poisoning tops election list",
+   "url": "https://www.ctvnews.ca/suspect-in-ex-kgb-poisoning-tops-election-list-1.256685",
+   "date": "2007",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_who",
+   "publisher": "NBC News",
+   "title": "Who killed Alexander Litvinenko?",
+   "url": "https://www.nbcnews.com/id/wbna17332541",
+   "date": "2007",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "euvsdisinfo_po",
+   "publisher": "EUvsDisinfo (EEAS East StratCom)",
+   "title": "DISINFO: UK may have poisoned Litvinenko with thallium and used polonium marker to shift blame",
+   "url": "https://euvsdisinfo.eu/report/uk-may-have-poisoned-litvinenko-with-thallium-and-used-polonium-marker-to-shift-blame/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ucl_lancet",
+   "publisher": "UCL Discovery (Lancet manuscript, clinical account)",
+   "title": "Revised Litvinenko Lancet manuscript",
+   "url": "https://discovery-pp.ucl.ac.uk/id/eprint/10046853/1/Revised%20Litvinenko%20Lancet%20manuscript%20Nov%206%202015.pdf",
+   "date": "2015-11-06 (manuscript)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "rferl_hpa",
+   "publisher": "RFE/RL (via GlobalSecurity)",
+   "title": "Polonium-210 found in Litvinenko's urine, Health Protection Agency says",
+   "url": "https://www.globalsecurity.org/intell/library/news/2006/intell-061124-rferl02.htm",
+   "date": "2006-11-24",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "lrb_dombey",
+   "publisher": "London Review of Books (Norman Dombey)",
+   "title": "Po-210 as a poison",
+   "url": "https://www.lrb.co.uk/v29/n15/norman-dombey/po-210-as-a-poison",
+   "date": "2007-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "guardian_aldermaston",
+   "publisher": "The Guardian (via UNIAN)",
+   "title": "How UK scientists solved Alexander Litvinenko riddle",
+   "url": "https://www.unian.info/world/1238802-the-guardian-how-uk-scientists-solved-alexander-litvinenko-riddle.html",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "chemworld_sleuths",
+   "publisher": "Chemistry World",
+   "title": "Litvinenko inquiry unveils scientific sleuths at heart of investigation",
+   "url": "https://www.chemistryworld.com/news/litvinenko-inquiry-unveils-scientific-sleuths-at-heart-of-investigation/9385.article",
+   "date": "2015 (date not in extract)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_more",
+   "publisher": "NBC News (AP)",
+   "title": "More radioactive traces found in London",
+   "url": "https://www.nbcnews.com/news/amp/wbna15917680",
+   "date": "2006-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_haunts",
+   "publisher": "CBS News (AP)",
+   "title": "Radiation found in ex-spy's home, haunts",
+   "url": "https://www.cbsnews.com/news/radiation-found-in-ex-spys-home-haunts",
+   "date": "2006-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_12sites",
+   "publisher": "NBC News",
+   "title": "Radioactive traces found at 12 sites in Britain",
+   "url": "https://www.nbcnews.com/id/wbna15969441",
+   "date": "2006-11-30",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_traces",
+   "publisher": "Fox News (AP)",
+   "title": "More traces of radiation connected to former spy's death",
+   "url": "https://foxnews.com/story/more-traces-of-radiation-connected-to-former-spys-death",
+   "date": "2006-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_planes",
+   "publisher": "AP (via News On 6)",
+   "title": "Radiation found on British planes; authorities seek thousands of passengers",
+   "url": "https://newson6.com/story/5e368a152f69d76f620a0baa/white",
+   "date": "2006-11-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_planes",
+   "publisher": "CBS News",
+   "title": "Radiation traces found on UK planes",
+   "url": "https://www.cbsnews.com/news/radiation-traces-found-on-uk-planes",
+   "date": "2006-11-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "rferl_planes",
+   "publisher": "RFE/RL",
+   "title": "Police found radiation in this London building on November 27 (BA aircraft report)",
+   "url": "https://www.rferl.org/a/1073100.html",
+   "date": "2006-11-30",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_stadium",
+   "publisher": "AP (via News On 6)",
+   "title": "Former Russian spy's Italian contact released from hospital after radiation tests",
+   "url": "https://newson6.com/story/5e368a012f69d76f620a0a04/white",
+   "date": "2006-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "chinadaily_afp",
+   "publisher": "China Daily (AFP)",
+   "title": "Russia should conduct own probe into ex-spy's death",
+   "url": "https://www.chinadaily.com.cn/world/2006-12/06/content_752223_2.htm",
+   "date": "2006-12-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_charge",
+   "publisher": "CNN",
+   "title": "UK seeks Russian's extradition over Litvinenko death",
+   "url": "https://edition.cnn.com/2007/WORLD/europe/05/22/uk.spy/index.html",
+   "date": "2007-05-22",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "jurist_refuse",
+   "publisher": "JURIST",
+   "title": "Russia formally rejects UK extradition request of Litvinenko poisoning suspect",
+   "url": "https://www.jurist.org/news/2007/07/russia-formally-rejects-uk-extradition",
+   "date": "2007-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ria_refuse",
+   "publisher": "RIA Novosti (via GlobalSecurity)",
+   "title": "Russian prosecutors formally refuse to extradite Lugovoi",
+   "url": "https://www.globalsecurity.org/intell/library/news/2007/intell-070705-rianovosti02.htm",
+   "date": "2007-07-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "rferl_refuse",
+   "publisher": "RFE/RL (via GlobalSecurity)",
+   "title": "U.K. Slams Russia's Refusal To Extradite Murder Suspect",
+   "url": "https://www.globalsecurity.org/intell/library/news/2007/intell-070710-rferl02.htm",
+   "date": "2007-07-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "arabnews_kovtun",
+   "publisher": "Arab News (AFP)",
+   "title": "Suspect in Litvinenko poisoning dies in Moscow",
+   "url": "https://arabnews.com/node/2096461",
+   "date": "2022-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "lalibre_kovtun",
+   "publisher": "La Libre Belgique",
+   "title": "Russie: mort d'un suspect cle dans l'assassinat de l'ex-espion Litvinenko",
+   "url": "https://www.lalibre.be/international/europe/2022/06/04/russie-mort-dun-suspect-cle-dans-lassassinat-de-lex-espion-litvinenko-4WL5XF3UWBHJ5NBVA5ML6XJU44/",
+   "date": "2022-06-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "rtbf_kovtun",
+   "publisher": "RTBF",
+   "title": "Russie: mort d'un suspect cle dans l'assassinat de l'ex-espion Litvinenko",
+   "url": "https://www.rtbf.be/article/russie-mort-d-un-suspect-cle-dans-l-assassinat-de-l-ex-espion-litvinenko-11006433",
+   "date": "2022-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "gulfnews_kovtun",
+   "publisher": "Gulf News (AFP)",
+   "title": "Litvinenko suspect says death was 'accidental suicide'",
+   "url": "https://gulfnews.com/world/europe/litvinenko-suspect-says-death-was-accidental-suicide-1.1488631",
+   "date": "2015",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "itv_kovtun",
+   "publisher": "ITV News",
+   "title": "Litvinenko suspect claims spy 'may have killed himself'",
+   "url": "https://itv.com/news/2015-04-08/litvinenko-suspect-claims-spy-may-have-killed-himself",
+   "date": "2015-04-08",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "sputnik_lugovoi",
+   "publisher": "Sputnik (via GlobalSecurity)",
+   "title": "Lugovoy Possibly Exposed to Polonium Together With Litvinenko",
+   "url": "https://www.globalsecurity.org/intell/library/news/2016/intell-160122-sputnik01.htm",
+   "date": "2016-01-22",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "irishlegal_echr",
+   "publisher": "Irish Legal News",
+   "title": "ECtHR: Russia responsible for assassination of Aleksandr Litvinenko in the UK",
+   "url": "https://www.irishlegal.com/articles/ecthr-russia-was-responsible-for-assassination-of-aleksandr-litvinenko-in-the-uk",
+   "date": "2021-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "asil_echr",
+   "publisher": "American Society of International Law (ASIL)",
+   "title": "European Human Rights Court Issues Judgment in Litvinenko Case",
+   "url": "https://www.asil.org/ILIB/european-human-rights-court-issues-judgment-litvinenko-case",
+   "date": "2021-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nam_echr",
+   "publisher": "Noticias ao Minuto",
+   "title": "Tribunal Europeu considera Russia responsavel pela morte de Litvinenko",
+   "url": "https://www.noticiasaominuto.com/mundo/1836284/tribunal-europeu-considera-russia-responsavel-pela-morte-de-litvinenko",
+   "date": "2021-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ukgov_sanctions",
+   "publisher": "Government of Jersey (UK sanctions notice, Global Human Rights)",
+   "title": "Notice: Global Human Rights sanctions, amended 19 March 2025",
+   "url": "https://www.gov.je/SiteCollectionDocuments/Industry%20and%20finance/Notice_Global_Human_Rights_190325.pdf",
+   "date": "2025-03-19",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "legal_status_verified": "2026-10-11"
+}

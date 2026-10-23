@@ -1,0 +1,973 @@
+{
+ "id": "tcv94-watermelon-meth",
+ "number": 94,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Hid Meth in Fake Watermelons",
+ "central_question": "Where they hid it: CBP found $5 million of meth in paper 'watermelons' at Otay Mesa (2024), nearly $11 million in a leek shipment and $17.7 million in a blackberry shipment at Pharr, Texas (2026). Which disguise was best?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "$5": "five",
+   "$11": "eleven",
+   "$17": "seventeen",
+   "million": "million dollars",
+   "1,220": "twelve hundred twenty",
+   "862": "eight hundred sixty-two"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  25,
+  29
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "94",
+  "label": "WHERE THEY HID IT · 5"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_scan",
+   "word": [
+    0,
+    5
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "wm94_officer",
+  "wm94_handler",
+  "wm94_inspector",
+  "wm94_analyst"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the disguises, never on a victim (none appears). Every case is a seizure announced by U.S. Customs and Border Protection (a settled fact); the hook states the seizure. Nobody accused is named or drawn: the Otay Mesa driver (29, turned over to Homeland Security Investigations, no charge reported) appears only as a typed label; no arrest was announced in the two Pharr cases and no driver appears. Officers are generic figures in plain dark navy work uniforms with no badge, patch, flag, agency name or insignia; no weapon shown or mentioned; no force shown. The K-9 is shown sitting calmly beside its handler (an alert), unharmed. Trucks, trailers, crates and berry flats carry no company name, logo or plate; the scanner image is a generic grey silhouette with our own typed boxes, not any real system's interface; the manifest is our own blank form with the single typed word WATERMELONS. The inspection table, the dock, the cargo lanes and the scan room are illustrations, not reported scenes. Every card is our own typed graphic; no dialogue or quotation card. Facts verified 2026-10-21.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "wm94_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "click",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.24
+    },
+    {
+     "at": 0.5,
+     "word": [
+      0,
+      5
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_weight"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers dressed meth up as watermelons.",
+     "tone": "hook",
+     "speed": 1.06
+    },
+    {
+     "who": "narrator",
+     "text": "$5 million worth, among real ones.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "dressed",
+    "meth",
+    "watermelons.",
+    "$5",
+    "million",
+    "real"
+   ],
+   "section": "A",
+   "case": "watermelons",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_unload",
+   "scene": "wm94_unload",
+   "min_duration": 4.0,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.38
+    },
+    {
+     "at": 0.45,
+     "word": [
+      0,
+      8
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.75,
+     "word": [
+      0,
+      8
+     ],
+     "name": "tick",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_unload",
+    "K_skins",
+    "K_stat",
+    "K_driver"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But officers unloaded the truck. 1,220 had paper skins.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "officers",
+    "unloaded",
+    "truck.",
+    "1,220",
+    "paper",
+    "skins."
+   ],
+   "section": "A",
+   "case": "watermelons"
+  },
+  {
+   "id": "s03_leeks",
+   "scene": "wm94_leeks",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "rumble",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "beep",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_leeks"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And that was not the biggest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Then leeks: nearly $11 million.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "biggest.",
+    "leeks:",
+    "nearly",
+    "$11",
+    "million."
+   ],
+   "section": "B",
+   "case": "leeks"
+  },
+  {
+   "id": "s04_dog",
+   "scene": "wm94_dog",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "beep",
+     "gain": 0.28
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.36
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.5,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_leekcatch",
+    "K_celery"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The scanner flagged it. So did the dog.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "scanner",
+    "flagged",
+    "dog."
+   ],
+   "section": "B",
+   "case": "leeks"
+  },
+  {
+   "id": "s05_berries",
+   "scene": "wm94_berries",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "cash",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_berries"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The biggest? Blackberries.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "$17 million inside.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "biggest?",
+    "blackberries.",
+    "$17",
+    "million",
+    "inside."
+   ],
+   "section": "C",
+   "case": "blackberries"
+  },
+  {
+   "id": "s06_scan",
+   "scene": "wm94_scan",
+   "min_duration": 3.4,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.24
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "glitch",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_scan",
+    "K_862"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "One scan later: 862 packages found.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "one",
+    "scan",
+    "862",
+    "packages",
+    "found."
+   ],
+   "section": "D",
+   "case": "blackberries",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "wm94_end",
+   "min_duration": 2.2,
+   "pad_after": 0.2,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_manifest"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On paper, it was all watermelons.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "paper,",
+    "all",
+    "watermelons."
+   ],
+   "section": "E",
+   "case": "watermelons",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Friday 16 August 2024, Otay Mesa Commercial Facility (San Diego, the port of entry with Tijuana): CBP officers seized more than $5 million worth of methamphetamine disguised and concealed within a shipment of watermelons. Narration: 'Smugglers dressed meth up as watermelons.' / '$5 million worth, ...' Headline 'FAKE WATERMELONS / FULL OF METH'. Label 'OTAY MESA, SAN DIEGO · AUG 2024'.",
+   "sources": [
+    "cbp",
+    "hstoday",
+    "apabc",
+    "npr",
+    "abc7news",
+    "abc7"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "The packages weighed 4,587 lb (2,080 kg) and were found among a real watermelon shipment (AP: 'among real watermelons'). Narration: '..., among real ones.' Counter 4,587 LB in the next shot.",
+   "sources": [
+    "apabc",
+    "npr",
+    "hstoday",
+    "freshplaza",
+    "mnd"
+   ]
+  },
+  {
+   "id": "K_unload",
+   "type": "established",
+   "nature": "fact",
+   "text": "The 29-year-old driver's tractor-trailer was referred for additional examination at secondary inspection, where the watermelon shipment was offloaded for further examination (AP: 'unloaded for a detailed inspection'). No dog or imaging is mentioned in any extract, so none is claimed. Narration (gotcha): 'But officers unloaded the truck.'",
+   "sources": [
+    "apabc",
+    "freshplaza",
+    "hstoday",
+    "npr"
+   ]
+  },
+  {
+   "id": "K_skins",
+   "type": "established",
+   "nature": "fact",
+   "text": "Officers found 1,220 packages wrapped in paper coloured to look like watermelon skins (CBP: 'disguised as watermelons within the shipment'); the contents tested as methamphetamine. Narration: '1,220 had paper skins.' Callout 'PAPER SKIN · METH', 'Among real melons (CBP)'.",
+   "sources": [
+    "apabc",
+    "hstoday",
+    "freshplaza",
+    "abc7news",
+    "pa"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 4,587 LB): the total weight CBP gave for the 1,220 packages. Counter '4,587 LB' with the label 'METH · 1,220 FAKE MELONS'.",
+   "sources": [
+    "hstoday",
+    "apabc",
+    "npr",
+    "freshplaza"
+   ]
+  },
+  {
+   "id": "K_driver",
+   "type": "established",
+   "nature": "fact",
+   "text": "CBP seized the drugs and the tractor-trailer; the driver, a 29-year-old man, was turned over to Homeland Security Investigations. He was not named and no charge was reported in the extracts. Label sub 'Driver, 29, turned over to HSI · not named' (the hook's location label). Never drawn.",
+   "sources": [
+    "hstoday",
+    "apabc",
+    "npr",
+    "abc7"
+   ]
+  },
+  {
+   "id": "K_leeks",
+   "type": "established",
+   "nature": "fact",
+   "text": "22 August 2026, Pharr International Bridge cargo facility, Texas: CBP officers found suspected methamphetamine worth about $10.75 million (KRGV: $10.8 million) in a tractor-trailer from Reynosa, Mexico, whose shipment was declared as leeks. Narration: 'And that was not the biggest.' (editorial rehook, true: $10.75M > $5M) / 'Then leeks: nearly $11 million.' Label 'DECLARED: LEEKS · PHARR, TEXAS', 'Aug 2026 · about $10.75 million (CBP)'.",
+   "sources": [
+    "freightwaves",
+    "foxrgv",
+    "krgv",
+    "trucker"
+   ]
+  },
+  {
+   "id": "K_leekcatch",
+   "type": "established",
+   "nature": "fact",
+   "text": "At secondary inspection, non-intrusive inspection equipment showed anomalies in the trailer and a canine team alerted to narcotics; a physical search found 395 packages weighing 1,204.82 lb. CBP seized the drugs and the truck; HSI opened a criminal investigation; no arrest was announced and no driver named. Narration (gotcha): 'The scanner flagged it. So did the dog.' Label '395 PACKAGES · 1,204 LB', 'Scanner anomalies + a K-9 alert (CBP)'.",
+   "sources": [
+    "freightwaves",
+    "krgv",
+    "trucker",
+    "foxrgv"
+   ]
+  },
+  {
+   "id": "K_celery",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: one week before the watermelons, on 9 August 2024, officers at the same Otay Mesa facility found 629.72 lb of methamphetamine (508 packages, about $755,000) in a celery shipment, after a K-9 alert. Card 'SAME PORT AS THE MELONS, / ONE WEEK EARLIER: / 629 LB OF METH IN CELERY'.",
+   "sources": [
+    "abccelery",
+    "tosd",
+    "10news"
+   ]
+  },
+  {
+   "id": "K_berries",
+   "type": "established",
+   "nature": "fact",
+   "text": "23 March 2026, Pharr International Bridge cargo facility: a tractor-trailer from Reynosa carrying a shipment of blackberries held suspected methamphetamine with an estimated street value of $17,737,200 (HSToday headline: 'Meth Labelled as Blackberries'). Narration: 'The biggest? Blackberries.' / '$17 million inside.' Labels 'PHARR, TEXAS · MARCH 2026', '$17,737,200 · CBP'.",
+   "sources": [
+    "hstoday26",
+    "fox7",
+    "fox4",
+    "freshplaza26",
+    "producenews"
+   ]
+  },
+  {
+   "id": "K_scan",
+   "type": "established",
+   "nature": "fact",
+   "text": "Officers referred the truck to a secondary inspection dock, where they used non-intrusive scanning equipment to examine the fruit shipment, then extracted the packages. Narration (gotcha): 'One scan later: 862 packages found.' Label 'NON-INTRUSIVE SCAN, THEN A SEARCH'.",
+   "sources": [
+    "hstoday26",
+    "fox7",
+    "freshplaza26"
+   ]
+  },
+  {
+   "id": "K_862",
+   "type": "established",
+   "nature": "fact",
+   "text": "Officers extracted 862 packages of suspected methamphetamine weighing 1,984.16 lb (900 kg); CBP seized the drugs and the vehicle and HSI opened a criminal investigation; no arrest announced in the extracts. Label '862 PACKAGES · 1,984 LB · $17.7M'.",
+   "sources": [
+    "hstoday26",
+    "fox7",
+    "fox4",
+    "freshplaza26"
+   ]
+  },
+  {
+   "id": "K_manifest",
+   "type": "established",
+   "nature": "fact",
+   "text": "CBP said the driver was seeking entry from Mexico 'hauling a shipment manifested for watermelons'. Narration (callback): 'On paper, it was all watermelons.' Label 'MANIFEST: WATERMELONS · CBP'.",
+   "sources": [
+    "apabc",
+    "npr",
+    "hstoday"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "cbp",
+   "publisher": "U.S. Customs and Border Protection (newsroom)",
+   "title": "CBP officers discover $5 million worth of methamphetamine disguised as watermelons",
+   "url": "https://cbp.gov/newsroom/local-media-release/cbp-officers-discover-5-million-worth-methamphetamine-disguised",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "hstoday",
+   "publisher": "Homeland Security Today (CBP release)",
+   "title": "CBP Officers Discover $5 Million Worth of Methamphetamine Disguised as Watermelons",
+   "url": "https://www.hstoday.us/subject-matter-areas/border-security/cbp-officers-discover-5-million-worth-of-methamphetamine-disguised-as-watermelons/",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "freshplaza",
+   "publisher": "FreshPlaza (CBP release)",
+   "title": "CBP officers discover $5 million worth of methamphetamine disguised as watermelons",
+   "url": "https://www.freshplaza.com/asia/article/9651512/cbp-officers-discover-5-million-worth-of-methamphetamine-disguised-as-watermelons/",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "apabc",
+   "publisher": "ABC News (Associated Press)",
+   "title": "Methamphetamine disguised as shipment of watermelons seized at US-Mexico border in San Diego",
+   "url": "https://abcnews.go.com/US/wireStory/methamphetamine-disguised-shipment-watermelons-seized-us-mexico-border-113070777",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "npr",
+   "publisher": "NPR",
+   "title": "Customs officers find $5M worth of meth disguised as watermelons at Mexico border",
+   "url": "https://www.npr.org/2024/08/27/nx-s1-5090995/watermelon-meth-5-million-san-diego-border-checkpoint",
+   "date": "2024-08-27",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "abc7",
+   "publisher": "ABC7 Los Angeles",
+   "title": "More than $5 million worth of meth disguised as watermelons is seized in San Diego, CPB says",
+   "url": "https://abc7.com/post/more-5-million-worth-methamphetamine-seized-san-diego-cpb-says/15213361/",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "abc7news",
+   "publisher": "ABC7 News (CNN)",
+   "title": "Customs officers in California seize $5M worth of methamphetamine disguised as watermelons",
+   "url": "https://abc7news.com/post/meth-watermelon-customs-officers-san-diego-california-seize-5m-methamphetamine-disguised-watermelons-mexico/15232515/",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "mnd",
+   "publisher": "Mexico News Daily",
+   "title": "A 'seedy situation': US border agents seize US $5M of meth disguised as watermelons",
+   "url": "https://mexiconewsdaily.com/news/meth-filled-watermelons-us-border-agents-drugs-seized",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "pa",
+   "publisher": "Express & Star (PA)",
+   "title": "Fake watermelons stuffed with drugs seized at US-Mexico border",
+   "url": "https://expressandstar.com/news/world-news/2024/08/22/fake-watermelons-stuffed-with-drugs-seized-at-us-mexico-border",
+   "date": "2024-08-22",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "abccelery",
+   "publisher": "6abc (ABC News)",
+   "title": "Over 600 pounds of methamphetamine found inside celery shipment",
+   "url": "https://6abc.com/over-600-pounds-of-methamphetamine-found-inside-celery-shipment/15207815/",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "tosd",
+   "publisher": "Times of San Diego",
+   "title": "Customs and Border Protection seizes over 600 pounds of meth in celery shipment",
+   "url": "https://timesofsandiego.com/crime/2024/08/19/customs-and-border-protection-seizes-over-600-pounds-of-meth-in-celery-shipment/",
+   "date": "2024-08-19",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "10news",
+   "publisher": "10News San Diego (City News Service)",
+   "title": "Over 600 pounds of meth found in celery shipment in Otay Mesa",
+   "url": "https://www.10news.com/news/local-news/over-600-pounds-of-meth-found-in-celery-shipment-in-otay-mesa",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "freightwaves",
+   "publisher": "FreightWaves",
+   "title": "$10.75 million in meth found inside leek shipment at Texas border bridge",
+   "url": "https://www.freightwaves.com/news/10-75-million-in-meth-found-inside-leek-shipment-at-texas-border-bridge",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "foxrgv",
+   "publisher": "Fox RGV",
+   "title": "CBP officers seize $10.75 million worth of alleged methamphetamine hidden in shipment of leeks",
+   "url": "https://foxrgv.tv/cbp-officers-seize-10-75-million-worth-of-alleged-methamphetamine-hidden-in-shipment-of-leeks/",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "krgv",
+   "publisher": "KRGV",
+   "title": "More than $10 million worth of meth seized at Pharr International Bridge",
+   "url": "https://www.krgv.com/news/more-than-10-million-worth-of-meth-seized-at-pharr-international-bridge",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "trucker",
+   "publisher": "The Trucker",
+   "title": "CBP finds more than $10 million in meth",
+   "url": "https://www.thetrucker.com/trucking-news/the-nation/cbp-finds-more-than-10-million-in-meth",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "hstoday26",
+   "publisher": "Homeland Security Today (CBP release)",
+   "title": "CBP Officers Seize More Than $17M in Meth Labelled as Blackberries at Pharr International Bridge",
+   "url": "https://www.hstoday.us/subject-matter-areas/border-security/cbp-officers-seize-more-than-17m-in-meth-labelled-as-blackberries-at-pharr-international-bridge",
+   "date": "2026-03",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "fox7",
+   "publisher": "FOX 7 Austin",
+   "title": "$17 million in methamphetamine hidden in blackberry shipment found at Texas-Mexico border",
+   "url": "https://www.fox7austin.com/news/17-million-methamphetamine-hidden-blackberry-shipment-texas-mexico-border",
+   "date": "2026-03-29",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "fox4",
+   "publisher": "FOX 4 Dallas-Fort Worth",
+   "title": "$17 million in methamphetamine hidden in blackberry shipment found at Texas-Mexico border",
+   "url": "https://www.fox4news.com/news/17-million-methamphetamine-hidden-blackberry-shipment-texas-mexico-border",
+   "date": "2026-03",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "freshplaza26",
+   "publisher": "FreshPlaza",
+   "title": "CBP seizes $17.7 million meth hidden in blackberry shipment",
+   "url": "https://www.freshplaza.com/north-america/article/9825569/cbp-seizes-17-7-million-meth-hidden-in-blackberry-shipment/",
+   "date": "2026-03",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "producenews",
+   "publisher": "The Produce News",
+   "title": "Smuggler in berry big trouble for $17M meth shipment",
+   "url": "https://www.theproducenews.com/node/43569",
+   "date": "2026-03",
+   "accessed": "search-result extract only, 2026-10-21"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 8,
+ "lane": "customs",
+ "search_terms": [
+  "meth watermelons",
+  "watermelon meth",
+  "where they hid it"
+ ],
+ "palette": {
+  "shadow": "#10222a",
+  "mid": "#b9b6a8",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "FAKE WATERMELONS"
+   },
+   {
+    "text": "FULL OF METH",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · WATERMELONS"
+   },
+   {
+    "t": 11.72,
+    "v": "2 · LEEKS"
+   },
+   {
+    "t": 18.47,
+    "v": "3 · BLACKBERRIES"
+   }
+  ],
+  "y": 350,
+  "until": 25.19
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHICH DISGUISE WAS BEST?"
+   },
+   {
+    "text": "MELONS OR LEEKS OR BERRIES? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D PICK THE FAKE MELON",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR WHERE THEY HID IT",
+    "fs": 36,
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "WHERE THEY HID IT · 5",
+    "fs": 34
+   }
+  ],
+  "from": 2.48,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-21"
+}

@@ -1,0 +1,950 @@
+{
+ "id": "tcv92-drug-cannon",
+ "number": 92,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Drug Cannon Aimed at Arizona",
+ "central_question": "Border Fails: smugglers built an air cannon into a van to fire drugs into Arizona (seized in Agua Prieta with 1,800 lb of weed, the town's second cannon van); a CO2 cannon fired 33 cans of weed into a field near Yuma; an ultralight pilot landed, ran and was caught by a helicopter. Which idea was smartest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "1,800": "eighteen hundred",
+   "33": "thirty-three"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  25,
+  29
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "92",
+  "label": "BORDER FAILS · 6"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_caught",
+   "word": [
+    0,
+    6
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "dc92_operator",
+  "dc92_soldier",
+  "dc92_fedpol",
+  "dc92_agent",
+  "dc92_crew",
+  "dc92_pilot"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the smugglers' contraptions (a cannon in a van, canned weed, an ultralight), never on anyone hurt; nobody is hurt in any case used. The 2017 van: no arrest is reported, so nobody is identified; the operator at the door is an illustrated reconstruction of how the device was meant to work, an anonymous dark silhouette, never named. The San Luis cannon (2012): no arrests; only the agents and the cans are shown. The Marana pilot (2008) pleaded guilty and was sentenced to 33 months: a silhouette tagged NOT A LIKENESS, never named. Soldiers, federal police, the border agent and the helicopter crew are generic figures with no badge, flag, crest, patch or insignia, holding only flashlights; no weapon is drawn, carried, pointed or mentioned (the ammunition reported with the 2017 van is left out). The van, the helicopter and the ultralight are generic drawings with no logo, livery, plate or registration. The border fence, the lot, the field, the desert and the landing site are illustrations, not replicas of the real places. Every card is our own typed graphic; no document, release or photograph is imitated. Facts verified 2026-10-21.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "dc92_hook",
+   "min_duration": 4.4,
+   "pad_after": 0.02,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "puff",
+     "gain": 0.34
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "door",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_roof"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers built a drug cannon into a van.",
+     "tone": "hook",
+     "speed": 1.06
+    },
+    {
+     "who": "narrator",
+     "text": "The roof opened, for a shot at Arizona.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "drug",
+    "cannon",
+    "van.",
+    "roof",
+    "opened",
+    "shot",
+    "arizona."
+   ],
+   "section": "A",
+   "case": "agua_prieta",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_seized",
+   "scene": "dc92_seized",
+   "min_duration": 4.5,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      1
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "stamp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.2
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_seized",
+    "K_stat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Soldiers seized it, with 1,800 pounds of weed.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "soldiers",
+    "seized",
+    "1,800",
+    "pounds",
+    "weed."
+   ],
+   "section": "B",
+   "case": "agua_prieta"
+  },
+  {
+   "id": "s03_cans",
+   "scene": "dc92_cans",
+   "min_duration": 4.0,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "puff",
+     "gain": 0.3
+    },
+    {
+     "at": 0.15,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_cans"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the strangest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Near Yuma, a cannon shot cans of weed.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "strangest.",
+    "yuma,",
+    "cannon",
+    "shot",
+    "cans",
+    "weed."
+   ],
+   "section": "B",
+   "case": "san_luis"
+  },
+  {
+   "id": "s04_found",
+   "scene": "dc92_found",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.26
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.36
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_found"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Agents found 33 cans in a field.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "agents",
+    "found",
+    "33",
+    "cans",
+    "field."
+   ],
+   "section": "C",
+   "case": "san_luis"
+  },
+  {
+   "id": "s05_flight",
+   "scene": "dc92_flight",
+   "min_duration": 3.5,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "buzz",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "rumble",
+     "gain": 0.24
+    },
+    {
+     "at": 0.35,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_flight",
+    "K_fact"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But the boldest flew in. By ultralight.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "boldest",
+    "flew",
+    "ultralight."
+   ],
+   "section": "C",
+   "case": "marana"
+  },
+  {
+   "id": "s06_caught",
+   "scene": "dc92_caught",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "cuffs",
+     "gain": 0.34
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_caught",
+    "K_sentence"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He landed, ran, and a helicopter caught him.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "landed,",
+    "ran,",
+    "helicopter",
+    "caught",
+    "him."
+   ],
+   "section": "D",
+   "case": "marana",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "dc92_end",
+   "min_duration": 2.2,
+   "pad_after": 0.2,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_second"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It was the town's second cannon van.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "town's",
+    "second",
+    "cannon",
+    "van."
+   ],
+   "section": "E",
+   "case": "agua_prieta",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Agua Prieta, Sonora (across from Douglas, Arizona), November 2017: Mexican authorities seized a van with a homemade air cannon ('bazooka') built into it, which they believed was meant to fire drug packages over the border fence into Arizona. Narration: 'Smugglers built a drug cannon into a van.' Headline 'A DRUG CANNON / AIMED AT ARIZONA'.",
+   "sources": [
+    "npr17",
+    "tsent17",
+    "ads17",
+    "ktar17"
+   ]
+  },
+  {
+   "id": "K_roof",
+   "type": "established",
+   "nature": "fact",
+   "text": "The van's roof could be raised and lowered (hinged per the Tucson Sentinel; a sliding roof per El Universal, via NPR) so the cannon could be raised to fire from inside the vehicle; an air compressor, a gasoline engine and a compressed-air tank were found with it. Narration: 'The roof opened, for a shot at Arizona.' (purpose as reported by the authorities: a shot = firing over the fence). Callout 'AIR CANNON IN THE ROOF / Compressor, engine, air tank'.",
+   "sources": [
+    "npr17",
+    "tsent17",
+    "ads17"
+   ]
+  },
+  {
+   "id": "K_seized",
+   "type": "established",
+   "nature": "fact",
+   "text": "Mexico's Attorney General's Office (PGR) said in a 15 November 2017 release that the military and federal police found the cannon van, with about 1,800 pounds of marijuana (about 200 packages); the reports do not describe how it was found and name no one arrested for the van. Narration: 'Soldiers seized it, with 1,800 pounds of weed.' Label 'SEIZED · AGUA PRIETA, SONORA · NOV 2017'.",
+   "sources": [
+    "npr17",
+    "tsent17",
+    "ads17",
+    "ktar17"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 1,800 LB): about 1,800 pounds of marijuana were seized with the 2017 Agua Prieta cannon van (PGR via NPR and the Tucson Sentinel / Arizona Daily Star).",
+   "sources": [
+    "npr17",
+    "tsent17",
+    "ads17"
+   ]
+  },
+  {
+   "id": "K_cans",
+   "type": "established",
+   "nature": "fact",
+   "text": "December 2012, near San Luis, Arizona (Yuma Sector; a field near County 22nd Street and the Colorado River): Border Patrol said smugglers used a pneumatic (CO2-powered) cannon to fire cans of marijuana over the border fence, about 500 feet into Arizona. Narration: 'Near Yuma, a cannon shot cans of weed.' Label 'SAN LUIS, ARIZONA (NEAR YUMA) · DEC 2012'.",
+   "sources": [
+    "ktar12",
+    "officer12",
+    "nbcsd12",
+    "npr12",
+    "popsci12",
+    "cpost12"
+   ]
+  },
+  {
+   "id": "K_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "Agents recovered 33 cans of marijuana, about 85 pounds (valued at about $42,500), in the field, and found the CO2 tank used to power the cannon near the fence; nobody was arrested and the cannon itself was not recovered. Narration: 'Agents found 33 cans in a field.' Callout '33 CANS · ABOUT 85 LB'; label 'BORDER PATROL · NO ARRESTS'.",
+   "sources": [
+    "ktar12",
+    "officer12",
+    "nbcsd12",
+    "cpost12",
+    "popsci12"
+   ]
+  },
+  {
+   "id": "K_flight",
+   "type": "established",
+   "nature": "fact",
+   "text": "October 2008: a CBP Air and Marine Operations Center radar picked up a low-flying aircraft near Nogales and a CBP surveillance helicopter from Tucson identified it as an ultralight carrying marijuana north into Arizona. Narration: 'But the boldest flew in. By ultralight.'",
+   "sources": [
+    "cbp08",
+    "apbull",
+    "apofficer",
+    "ads09"
+   ]
+  },
+  {
+   "id": "K_fact",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: in the US, flying a Part 103 ultralight (single seat, under 254 lb empty) needs no pilot certificate, no medical certificate and no FAA registration. Card 'IN THE US, AN ULTRALIGHT / NEEDS NO PILOT'S LICENSE / FAA Part 103 · one seat, under 254 lb empty'.",
+   "sources": [
+    "aopa",
+    "pilotinst"
+   ]
+  },
+  {
+   "id": "K_caught",
+   "type": "established",
+   "nature": "fact",
+   "text": "The ultralight landed about three miles southwest of Marana Regional Airport, Arizona; the pilot tried to run on foot; the CBP helicopter landed at the scene and its crew apprehended him; about 223 lb of marijuana in 10 bundles was found strapped to the aircraft (CBP; AP and Fox give 222 lb, the Arizona Daily Star about 210 lb). Narration: 'He landed, ran, and a helicopter caught him.' Label 'MARANA, ARIZONA · OCT 2008 / About 223 lb of marijuana on board (CBP)'.",
+   "sources": [
+    "cbp08",
+    "apbull",
+    "apofficer",
+    "foxfly",
+    "ads09"
+   ]
+  },
+  {
+   "id": "K_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "The pilot, a 25-year-old from Nogales, pleaded guilty to possession with intent to distribute marijuana and was sentenced to 33 months in federal prison (Arizona Daily Star; AP: a plea deal and about three years). Convicted: outcome on a label only; never named; silhouette. Label sub 'Pleaded guilty · 33 months'.",
+   "sources": [
+    "ads09",
+    "apbull",
+    "apofficer"
+   ]
+  },
+  {
+   "id": "K_second",
+   "type": "established",
+   "nature": "fact",
+   "text": "The 2017 van was the second air-cannon van found in Agua Prieta: in September 2016 Mexican federal police found a van, reported stolen in Hermosillo, parked on a street with a roughly 3-metre (10-ft) launch tube through a hole cut in its roof, an air compressor, a gasoline engine and an air tank. Narration: 'It was the town's second cannon van.'",
+   "sources": [
+    "npr17",
+    "tsent17",
+    "abc15",
+    "krwg",
+    "kgun",
+    "ads16",
+    "fox16",
+    "tenn16",
+    "quad16"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "npr17",
+   "publisher": "NPR (The Two-Way)",
+   "title": "Drug-Shooting 'Bazooka' Seized In Mexico As Smugglers Aim Skyward",
+   "url": "https://www.npr.org/sections/thetwo-way/2017/11/14/564050813/drug-shooting-bazooka-seized-in-mexico-as-smugglers-aim-skyward",
+   "date": "2017-11-14",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "tsent17",
+   "publisher": "Tucson Sentinel",
+   "title": "Mexican officials seize van with air cannon used to launch drugs over the border",
+   "url": "https://www.tucsonsentinel.com/local/report/111617_drug_cannon/",
+   "date": "2017-11-16",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "ads17",
+   "publisher": "Arizona Daily Star (tucson.com)",
+   "title": "Agua Prieta air-cannon van seized with 1,800 pounds of marijuana",
+   "url": "https://tucson.com/news/local/article_393f70cc-caff-11e7-81a6-23d948b26ce8.html",
+   "date": "2017-11",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "ktar17",
+   "publisher": "KTAR News",
+   "title": "Air cannon van seized in Agua Prieta, across from Douglas",
+   "url": "https://ktar.com/?p=1836607",
+   "date": "2017-11",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "abc15",
+   "publisher": "ABC15 Arizona (AP)",
+   "title": "Mexican police: van with cannon used to shoot drugs to US",
+   "url": "https://www.abc15.com/news/state/mexican-police-van-with-cannon-used-to-shoot-drugs-to-us",
+   "date": "2016-09",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "krwg",
+   "publisher": "KRWG (AP)",
+   "title": "Mexican police: van with cannon may have been used to shoot drugs to US",
+   "url": "https://www.krwg.org/regional/2016-09-20/mexican-police-van-with-cannon-may-have-been-used-to-shoot-drugs-to-us",
+   "date": "2016-09-20",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "kgun",
+   "publisher": "KGUN 9",
+   "title": "Smugglers had cannon to launch drugs into US",
+   "url": "https://www.kgun9.com/news/local-news/smugglers-had-cannon-to-launch-drugs-into-us",
+   "date": "2016-09",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "ads16",
+   "publisher": "Arizona Daily Star (tucson.com)",
+   "title": "Van with launch tube found in Agua Prieta",
+   "url": "https://tucson.com/news/local/border/article_fbf568ec-7f5b-11e6-beaf-eb9f4e154a0b.html",
+   "date": "2016-09",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "fox16",
+   "publisher": "Fox News",
+   "title": "Mexican police find van with homemade bazooka for launching drugs into U.S.",
+   "url": "https://www.foxnews.com/world/mexican-police-find-van-with-homemade-bazooka-for-launching-drugs-into-u-s.amp",
+   "date": "2016-09",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "tenn16",
+   "publisher": "10News (ABC San Diego)",
+   "title": "Mexican authorities: Cannon used to launch drugs from Mexico into Arizona",
+   "url": "https://www.10news.com/news/mexican-authorities-cannon-used-to-launch-drugs-from-mexico-into-arizona-092016",
+   "date": "2016-09-20",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "quad16",
+   "publisher": "Quadratin Mexico",
+   "title": "Halla PF vehiculo con bazuca lanza paquetes en Sonora",
+   "url": "https://mexico.quadratin.com.mx/halla-pf-vehiculo-bazuca-lanza-paquetes-sonora/",
+   "date": "2016-09",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "ktar12",
+   "publisher": "KTAR News",
+   "title": "Pot fired from cannon over border recovered by agents",
+   "url": "https://ktar.com/arizona-news/pot-fired-from-cannon-over-border-recovered-by-agents",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "officer12",
+   "publisher": "Officer.com",
+   "title": "Border Patrol: Pot Shot Over Fence With Cannon",
+   "url": "https://www.officer.com/investigations/news/10841396/border-patrol-agents-say-cannon-used-to-shoot-marijuana-over-fence",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "nbcsd12",
+   "publisher": "NBC San Diego",
+   "title": "Canned marijuana fired from cannon into US",
+   "url": "https://www.nbcsandiego.com/news/local/canned-marijuana-fired-from-cannon-into-us/1944086/",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "npr12",
+   "publisher": "NPR (via KUNC)",
+   "title": "Flying High: Cannon Fires Cans Filled With Marijuana Across Mexican Border",
+   "url": "https://www.kunc.org/npr-news/2012-12-12/flying-high-cannon-fires-cans-filled-with-marijuana-across-mexican-border",
+   "date": "2012-12-12",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "popsci12",
+   "publisher": "Popular Science",
+   "title": "Mexican Drug Smugglers Are Launching Pot Into The U.S. With A Huge Pneumatic Cannon",
+   "url": "https://www.popsci.com/technology/article/2012-12/mexican-drug-smugglers-are-launching-pot-us-huge-pneumatic-cannon",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "cpost12",
+   "publisher": "The Christian Post",
+   "title": "Marijuana Cannon Used to Shoot Drugs Over Border",
+   "url": "https://www.christianpost.com/trends/marijuana-cannon-used-to-shoot-drugs-over-border.html",
+   "date": "2012-12",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "cbp08",
+   "publisher": "U.S. Customs and Border Protection (press release, archived copy)",
+   "title": "Ultralight interdicted near Marana, Arizona",
+   "url": "https://corpora.tika.apache.org/base/docs/govdocs1/572/572149.html",
+   "date": "2008-10-10",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "ads09",
+   "publisher": "Arizona Daily Star (tucson.com)",
+   "title": "Nogales man sentenced to 33 months for ultralight marijuana flight",
+   "url": "https://tucson.com/news/article_b64d3b45-33ca-5bba-ac1b-7825ce094721.html",
+   "date": "2009",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "apbull",
+   "publisher": "The Bulletin (AP)",
+   "title": "As borders tighten, drug smugglers fly",
+   "url": "https://bendbulletin.com/?p=97156",
+   "date": "undated in the extract (c. 2009)",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "apofficer",
+   "publisher": "Officer.com (AP)",
+   "title": "Smugglers Learn to Fly as Border Tightens",
+   "url": "https://www.officer.com/tactical/swat/news/10259535/drug-smugglers-learn-to-fly-as-border-tightens",
+   "date": "undated in the extract (c. 2009)",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "foxfly",
+   "publisher": "Fox News",
+   "title": "With US land borders tightening, smugglers float, burrow or fly",
+   "url": "https://www.foxnews.com/world/with-us-land-borders-tightening-smugglers-float-burrow-or-fly",
+   "date": "undated in the extract",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "aopa",
+   "publisher": "AOPA",
+   "title": "Just Aircraft offers ultralight",
+   "url": "https://www.aopa.org/news-and-media/all-news/2018/may/16/just-aircraft-offers-ultralight",
+   "date": "2018-05-16",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "pilotinst",
+   "publisher": "Pilot Institute",
+   "title": "Planes You Can Fly Without a Pilot's License",
+   "url": "https://pilotinstitute.com/flying-without-a-license/",
+   "date": "undated in the extract",
+   "accessed": "search-result extract only, 2026-10-21"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 8,
+ "lane": "border",
+ "search_terms": [
+  "drug cannon",
+  "border fails",
+  "smugglers cannon"
+ ],
+ "palette": {
+  "shadow": "#111a26",
+  "mid": "#c4b59c",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A DRUG CANNON"
+   },
+   {
+    "text": "AIMED AT ARIZONA",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · AGUA PRIETA"
+   },
+   {
+    "t": 11.54,
+    "v": "2 · SAN LUIS, AZ"
+   },
+   {
+    "t": 18.16,
+    "v": "3 · MARANA, AZ"
+   }
+  ],
+  "y": 350,
+  "until": 24.83
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "SMARTEST WAY OVER?"
+   },
+   {
+    "text": "CANNON, CANS OR ULTRALIGHT? 👇",
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D BUILD A CANNON",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR BORDER FAILS",
+    "fs": 36,
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "BORDER FAILS · 6",
+    "fs": 34
+   }
+  ],
+  "from": 2.3,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-21"
+}

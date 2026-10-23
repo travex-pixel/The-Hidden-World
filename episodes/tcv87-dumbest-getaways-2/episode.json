@@ -1,0 +1,934 @@
+{
+ "id": "tcv87-dumbest-getaways-2",
+ "number": 87,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Bank Robber Who Took an Uber",
+ "central_question": "Dumbest Getaways 2: a bank robber who took an Uber and told it to wait, a getaway car that ran out of gas in the road, and a demand note signed with the robber's own name. Which was dumbest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "Uber": "Oober",
+   "licence": "license",
+   "mid-road": "mid road"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  27,
+  32
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "87",
+  "label": "DUMBEST GETAWAYS · 2"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_slip",
+   "word": [
+    0,
+    6
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "dg87_suspect_mi",
+  "dg87_officer_mi",
+  "dg87_walker_a",
+  "dg87_walker_b",
+  "dg87_officer_ca",
+  "dg87_robber_pa",
+  "dg87_teller"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on each scheme (a ride-share getaway, an empty tank, a signed demand note), never on a person's circumstances. Nobody is hurt in any case; no weapon and no force are shown (the Bentleyville note's claim of a weapon is not mentioned or drawn). The accused (Southfield 2022, Colma 2024, Bentleyville 2018) are never named and are drawn ONLY as dark rim-lit silhouettes tagged NOT A LIKENESS; every allegation is attributed ('police say', 'prosecutors said', ACCUSED labels, AS OF OCT 2026). The ride-share driver, the officers and the teller are generic figures; the driver is drawn only as a head shape in the car window. 'Uber' appears as plain spoken and typed text; the car is a plain unbranded sedan with no logo, livery or placard. Banks, the apartment complex, the road and the casino are generic illustrations, not the real places; no real document is imitated: the deposit slip is our own plain graphic and its demand line is a scribble because the wording was never reported. The Colma police joke is shown on a sourced label as reported, not spoken as a quote. Facts verified 2026-10-19.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "dg87_hook",
+   "min_duration": 5.2,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "tick",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "beep",
+     "gain": 0.2
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "door",
+     "gain": 0.28
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "step",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_wait"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police say he robbed a bank. By Uber.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Then told the driver to wait.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "robbed",
+    "bank.",
+    "uber.",
+    "told",
+    "driver",
+    "wait."
+   ],
+   "section": "A",
+   "case": "southfield",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_court",
+   "scene": "dg87_court",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "radio",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "cuffs",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "sparkle",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_tracked",
+    "K_dye"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police tracked the driver. To his home.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Same clothes. Red dye.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tracked",
+    "driver.",
+    "home.",
+    "same",
+    "clothes.",
+    "red",
+    "dye."
+   ],
+   "section": "A",
+   "case": "southfield"
+  },
+  {
+   "id": "s03_road",
+   "scene": "dg87_road",
+   "min_duration": 3.4,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "siren",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "brake",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_colma",
+    "K_stat"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That was not the worst.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "California. A shoplifting spree.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "worst.",
+    "california.",
+    "shoplifting",
+    "spree."
+   ],
+   "section": "B",
+   "case": "colma"
+  },
+  {
+   "id": "s04_boot",
+   "scene": "dg87_boot",
+   "min_duration": 4.4,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "click",
+     "gain": 0.26
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_gas",
+    "K_tags"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The getaway car ran out of gas mid-road.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Tags still on the clothes.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "getaway",
+    "ran",
+    "out",
+    "gas",
+    "mid-road.",
+    "tags",
+    "still",
+    "clothes."
+   ],
+   "section": "B",
+   "case": "colma"
+  },
+  {
+   "id": "s05_bank",
+   "scene": "dg87_bank",
+   "min_duration": 3.9,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "pen",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_slip",
+    "K_friday"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The dumbest? A demand note on a deposit slip.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dumbest?",
+    "demand",
+    "note",
+    "deposit",
+    "slip."
+   ],
+   "section": "C",
+   "case": "bentleyville"
+  },
+  {
+   "id": "s06_slip",
+   "scene": "dg87_slip",
+   "min_duration": 4.8,
+   "pad_after": 0.12,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "pen",
+     "gain": 0.3
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "glitch",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "radio",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "coins",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_signed",
+    "K_casino"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then signed it. With his own name.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Arrested that evening at a casino.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "signed",
+    "own",
+    "name.",
+    "arrested",
+    "evening",
+    "casino."
+   ],
+   "section": "D",
+   "case": "bentleyville",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "dg87_end",
+   "min_duration": 2.4,
+   "pad_after": 0.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_licence"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Why the Uber? Licence suspended.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "uber?",
+    "licence",
+    "suspended."
+   ],
+   "section": "E",
+   "case": "southfield",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "November 2022, Southfield, Michigan: police say a man took an Uber to a Huntington Bank branch on Greenfield Road and robbed it; charged with robbery; accused only, never named. Narration: 'Police say he robbed a bank. By Uber.' Headline 'GETAWAY CAR: AN UBER / TOLD TO WAIT, POLICE SAY'. The outlets differ on the date (16 vs 17 Nov) and his age (41 vs 42), so neither is stated.",
+   "sources": [
+    "fox2",
+    "cbsdet",
+    "cox_uber",
+    "blackent"
+   ]
+  },
+  {
+   "id": "K_wait",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police say he asked the ride-share driver to wait outside while he robbed the bank and was driven home by the same driver, who did not know what had happened and was not involved. Narration: 'Then told the driver to wait.'",
+   "sources": [
+    "fox2",
+    "cbsdet",
+    "cox_uber"
+   ]
+  },
+  {
+   "id": "K_tracked",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police tracked the driver, who had dropped him at his apartment complex; he was seen walking on the property and arrested; the driver and bank employees identified him in a photo line-up. Narration: 'Police tracked the driver. To his home.'",
+   "sources": [
+    "fox2",
+    "cbsdet",
+    "blackent"
+   ]
+  },
+  {
+   "id": "K_dye",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was arrested in the same clothes worn in the robbery, which, like the cash, were red from a dye pack a teller had put in the money; he was carrying several hundred dollars from the bank. Narration: 'Same clothes. Red dye.' Label 'A DYE PACK IN THE CASH'.",
+   "sources": [
+    "fox2",
+    "cbsdet",
+    "cox_uber"
+   ]
+  },
+  {
+   "id": "K_colma",
+   "type": "established",
+   "nature": "fact",
+   "text": "Sunday 14 April 2024, Colma, California: officers answering a reckless-driver report found a black Mercedes that had run two red lights stopped in the middle of the road near Junipero Serra Boulevard; its driver and two passengers had shoplifted from two stores on Serramonte Boulevard in Daly City (police say $1,454.33 of goods); all three booked into San Mateo County Jail; accused only, never named. Narration: 'That was not the worst.' / 'California. A shoplifting spree.'",
+   "sources": [
+    "ktvu",
+    "kron4",
+    "hoodline",
+    "crimevoice"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "COUNTER: 1,263 bank robberies were reported to the FBI in 2023 (of 1,362 bank crimes including 95 burglaries and 4 larcenies; the lowest total since before 1990).",
+   "sources": [
+    "fbi2023",
+    "yahoo_fri",
+    "asher"
+   ]
+  },
+  {
+   "id": "K_gas",
+   "type": "established",
+   "nature": "fact",
+   "text": "The driver told officers the car was out of gas and that the two passengers were walking to get fuel; a records check showed he was a wanted fugitive from Texas. Narration: 'The getaway car ran out of gas mid-road.'",
+   "sources": [
+    "ktvu",
+    "kron4",
+    "hoodline",
+    "crimevoice"
+   ]
+  },
+  {
+   "id": "K_tags",
+   "type": "established",
+   "nature": "fact",
+   "text": "A search of the car found clothing from multiple stores with the security sensors still attached. Colma PD joked on social media that anyone planning a shoplifting spree should 'make sure your getaway car has a full tank of gas' (wording as reported in several outlets). Narration: 'Tags still on the clothes.'",
+   "sources": [
+    "ktvu",
+    "kron4",
+    "hoodline"
+   ]
+  },
+  {
+   "id": "K_slip",
+   "type": "established",
+   "nature": "fact",
+   "text": "Thursday 15 March 2018, about 3:40 pm, Bentleyville, Pennsylvania: police say a man handed a CFS Bank teller a demand note written on a deposit slip and left with more than $1,300; charged with robbery and related counts; ordered to stand trial in April 2018; no verdict found as of October 2026, so accused only, never named. Narration: 'The dumbest? A demand note on a deposit slip.'",
+   "sources": [
+    "obsrep",
+    "obsrep2",
+    "wpxi",
+    "cox_slip"
+   ]
+  },
+  {
+   "id": "K_friday",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: Friday was the busiest day for US bank crimes in 2023 with 280 of the 1,362 incidents (Monday 249, Tuesday 252, Wednesday 212, Thursday 232); 11 am to 1 pm was the busiest window (307).",
+   "sources": [
+    "fbi2023",
+    "yahoo_fri"
+   ]
+  },
+  {
+   "id": "K_signed",
+   "type": "established",
+   "nature": "fact",
+   "text": "Prosecutors said at the April 2018 preliminary hearing, where the note was shown, that he had signed his own name to it; police said they identified him through the signature and the surveillance video. The note's wording was not reported (the slip on screen shows a scribble, not words). Narration: 'Then signed it. With his own name.'",
+   "sources": [
+    "obsrep",
+    "wpxi",
+    "cox_slip"
+   ]
+  },
+  {
+   "id": "K_casino",
+   "type": "established",
+   "nature": "fact",
+   "text": "A friend had driven him and his girlfriend to the bank believing he was withdrawing his own money; the three went to dinner and then to the Meadows Racetrack and Casino, where police found the driver's truck and arrested him about four hours after the robbery (one outlet: 'a short time after'; the Cox report: a casino parking garage). Narration: 'Arrested that evening at a casino.'",
+   "sources": [
+    "obsrep",
+    "wpxi2",
+    "cox_slip"
+   ]
+  },
+  {
+   "id": "K_licence",
+   "type": "established",
+   "nature": "fact",
+   "text": "CALLBACK: police said he used an Uber because his driver's licence was suspended and he was worried about being caught driving without one. Narration: 'Why the Uber? Licence suspended.' (the attribution is on the screen label 'POLICE SAY')",
+   "sources": [
+    "fox2",
+    "cbsdet",
+    "cox_uber"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fox2",
+   "publisher": "FOX 2 Detroit (WJBK; syndicated to FOX stations)",
+   "title": "Police: Man uses Uber to rob bank, has driver wait to take him home",
+   "url": "https://www.fox2detroit.com/news/man-takes-uber-to-rob-bank-and-has-driver-wait-to-drive-him-home-southfield-police-say",
+   "date": "2022-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cbsdet",
+   "publisher": "CBS News Detroit",
+   "title": "Police: Man takes Uber to rob Southfield bank",
+   "url": "https://www.cbsnews.com/detroit/news/police-man-takes-uber-to-rob-southfield-bank/",
+   "date": "2022-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cox_uber",
+   "publisher": "Cox Media Group (KIRO 7 / FOX 13 Memphis)",
+   "title": "Michigan man asks Uber driver to wait while he robbed bank, police say",
+   "url": "https://www.kiro7.com/news/trending/michigan-man-asks-uber-driver-wait-while-he-robbed-bank-police-say/RWBIOT6UKRBWJOVEQWCMN3D2YI/",
+   "date": "2022-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "blackent",
+   "publisher": "Black Enterprise",
+   "title": "42-Year-Old Michigan Man Takes An Uber To Rob a Bank",
+   "url": "https://www.blackenterprise.com/42-year-old-michigan-man-takes-an-uber-to-rob-bank/",
+   "date": "2022-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ktvu",
+   "publisher": "KTVU FOX 2 (San Francisco)",
+   "title": "Alleged shoplifters arrested after vehicle runs out of gas in Colma",
+   "url": "https://www.ktvu.com/news/alleged-shoplifters-arrested-after-vehicle-runs-out-of-gas-in-colma",
+   "date": "2024-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "kron4",
+   "publisher": "KRON 4",
+   "title": "Thieves arrested after getaway car ran out of gas in Colma",
+   "url": "https://www.kron4.com/news/bay-area/thieves-arrested-after-getaway-car-ran-out-of-gas-in-colma/",
+   "date": "2024-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "hoodline",
+   "publisher": "Hoodline",
+   "title": "Alleged California Shoplifting Spree Ends in Arrest of Texas Fugitive, Two Accomplices in Colma",
+   "url": "https://hoodline.com/2024/04/alleged-california-shoplifting-spree-ends-in-arrest-of-texas-fugitive-two-accomplices-in-colma/",
+   "date": "2024-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "crimevoice",
+   "publisher": "CrimeVoice (Colma PD release)",
+   "title": "Colma Police: Shoplifting Suspects Arrested After Getaway Vehicle Runs Out of Gas",
+   "url": "https://www.crimevoice.com/2024/04/25/colma-shoplifting-suspects-arrested/",
+   "date": "2024-04-25",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "obsrep",
+   "publisher": "Observer-Reporter (Washington, PA)",
+   "title": "Marianna man wrote name on deposit slip in Bentleyville robbery",
+   "url": "https://cs.observer-reporter.com/news/2018/mar/22/marianna-man-wrote-name-on-deposit-slip-in-bentleyville-robbery/",
+   "date": "2018-03-22",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "obsrep2",
+   "publisher": "Observer-Reporter (Washington, PA)",
+   "title": "Alleged Bentleyville bank robber ordered held for court",
+   "url": "https://www.observer-reporter.com/news/2018/apr/11/alleged-bentleyville-bank-robber-ordered-held-for-court/",
+   "date": "2018-04-11",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wpxi",
+   "publisher": "WPXI Pittsburgh",
+   "title": "Man heads to trial for allegedly robbing bank; evidence includes deposit slip with his name",
+   "url": "https://www.wpxi.com/news/top-stories/man-heads-to-trial-for-allegedly-robbing-bank-evidence-includes-deposit-slip-with-his-name/730771194/",
+   "date": "2018-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wpxi2",
+   "publisher": "WPXI Pittsburgh",
+   "title": "Bentleyville bank robbery: man who allegedly held up Washington County bank arrested near casino",
+   "url": "https://www.wpxi.com/news/top-stories/man-who-held-up-washington-county-bank-arrested-near-casino/717088699/",
+   "date": "2018-03",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "cox_slip",
+   "publisher": "Cox Media Group (WSB-TV / WFTV / AJC)",
+   "title": "Man accused of robbing bank wrote own name on deposit slip demanding money, prosecutors say",
+   "url": "https://www.wsbtv.com/news/trending-now/man-accused-of-robbing-bank-wrote-own-name-on-deposit-slip-demanding-money-prosecutors-say/731100196/",
+   "date": "2018-04",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "fbi2023",
+   "publisher": "FBI",
+   "title": "Bank Crime Statistics 2023 (federally insured financial institutions)",
+   "url": "https://www.fbi.gov/file-repository/bank-crime-statistics-2023-091724.pdf",
+   "date": "2024-09-17",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "yahoo_fri",
+   "publisher": "Yahoo News (syndicated)",
+   "title": "It's Friday afternoon - put the cash in the bag (FBI 2023 bank crime figures)",
+   "url": "https://www.yahoo.com/news/friday-afternoon-put-cash-bag-233304585.html",
+   "date": "2024",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "asher",
+   "publisher": "Jeff Asher, Jasher Substack",
+   "title": "The disappearing American bank robbery (FBI 2023 total 1,362, lowest since before 1990)",
+   "url": "https://jasher.substack.com/p/the-disappearing-american-bank-robbery",
+   "date": "2024",
+   "accessed": "search-result extract only, 2026-10-19"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 6,
+ "search_terms": [
+  "uber",
+  "uber bank robbery",
+  "dumbest getaway"
+ ],
+ "palette": {
+  "shadow": "#141a24",
+  "mid": "#c8bfae",
+  "accent": "#e6b04a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "GETAWAY CAR: AN UBER"
+   },
+   {
+    "text": "TOLD TO WAIT, POLICE SAY",
+    "colour": "#e6b04a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · MICHIGAN"
+   },
+   {
+    "t": 10.49,
+    "v": "2 · CALIFORNIA"
+   },
+   {
+    "t": 19.59,
+    "v": "3 · PENNSYLVANIA"
+   }
+  ],
+  "y": 330,
+  "until": 27.86
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DUMBEST GETAWAY?"
+   },
+   {
+    "text": "UBER, GAS OR SIGNATURE? 👇",
+    "colour": "#e6b04a"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D BOOK THE GETAWAY UBER",
+    "fs": 38
+   },
+   {
+    "text": "FOLLOW FOR DUMBEST GETAWAYS",
+    "fs": 44,
+    "colour": "#e6b04a"
+   },
+   {
+    "text": "DUMBEST GETAWAYS · 2",
+    "fs": 34
+   }
+  ],
+  "from": 2.66,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-19"
+}

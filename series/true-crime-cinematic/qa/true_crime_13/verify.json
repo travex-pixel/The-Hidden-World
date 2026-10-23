@@ -1,0 +1,161 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv13-hatton-garden/tcv13-hatton-garden.mp4",
+    "size_bytes": 33850825,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 76.923,
+    "audio_duration": 76.923,
+    "decode_stderr": "",
+    "mean_volume_db": -17.3,
+    "max_volume_db": -2.2,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv13-hatton-garden/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2306,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.1,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -15.0,
+    "true_peak_dbtp": -2.0
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.074,
+    "transcript": "Over one Easter weekend, a gang of thieves drilled through a vault wall in London. The ringleader was 76. On fact, prosecutor said he took the bus there on a pinch of his free pass. The vault in Hatton Garden London's jewelry district. The tool, a diamond, tipped drill. The alarm went off. The police never came. The Met later apologized. They were bolted down metal cabinet blocks. holes. Prosecutors said the ringleader quit that night. Two nights later, the others came back and got through. They ransacked more than 70 safe deposit boxes. Detectives scoured CCTV. One car stood out. A white Mercedes black roof. Officers secretly bugged it. Officers recorded them in a pub. After a few pints police said they got boastful, or ringleaders pleaded guilty. Three more were convicted. Fun fact, Basil, the man who got them inside, stayed free for three years. Much of the loot was never recovered. The ringleader died in 2023. One of Britain's biggest burglaries, undone by a car and a chat in the pub. Next, a cup of tea that left a radioactive trail across London. [MUSIC PLAYING]"
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 98,
+      "extent": {
+        "left": 105.0,
+        "right": 975.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "diamond-tipped"
+      ]
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.3,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.85,
+      "frames": 769
+    },
+    "audio": {
+      "opening_speech_median_db": -21.6,
+      "opening_min_speech_window_db": -35.9,
+      "first_word_db": -17.1,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -40.3,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.316,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.3,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -35.2,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.7733,
+      "loudness_lufs": -15.0,
+      "true_peak_dbtp": -2.0,
+      "mono_lufs": -15.0,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -89.7,
+      "end_before_db": -13.7,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 76.866667,
+        "audio": 76.922993
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 13,
+      "composed_shots": 13,
+      "shots_with_characters": 13,
+      "character_shot_share": 1.0,
+      "distinct_sets": 6,
+      "max_set_share": 0.46,
+      "shot_sizes": {
+        "medium-wide": 6,
+        "wide": 1,
+        "close-up": 1,
+        "medium": 5
+      },
+      "max_shot_size_share": 0.46,
+      "ok": true
+    }
+  }
+}

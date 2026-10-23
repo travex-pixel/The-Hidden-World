@@ -1,0 +1,6 @@
+CAPTION: He robbed his own Instagram friends, police say: a Scottsdale man used their vacation posts to pick empty homes (accused, not tried). Then a 2009 burglar who left Facebook logged in on the victim's PC, and a DC burglar who posted his cash selfie to the victim's son's page. Caught by their own phone, 1. Post your trip live: yes, or wait till you're home?
+HASHTAGS: #instagramburglar #scottsdale #truecrime #caughtbytheirownphone #burglary
+ALT TEXT: Illustrated reel about an Instagram burglar: a silhouette on a sofa scrolling a glowing phone grid of holiday photos in front of a mansion window, police torches finding a man at his office, a 2009 desktop left logged in, and a burglar's selfie popping up on a laptop.
+SEED COMMENT: Posting the beach pics while you're still on the beach is the real crime here. I post mine on the flight home. Who's with me?
+PINNED: Send this to the mate who'd post from the beach 🏖️ Vote: 1 = post it live, 2 = wait till home 👇 Caught By Their Own Phone, 1.
+POST WHEN: Tuesday 20 Oct 2026, 7–9 pm US Eastern (evening scroll; 50 % US audience): the Scottsdale arrest (7–8 Oct reports) is still being searched this month; keep it several hours apart from Case Files 83 and 85.

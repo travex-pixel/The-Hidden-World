@@ -1,0 +1,1012 @@
+{
+ "id": "tcv26-el-chapo-40",
+ "number": 26,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "El Chapo Escaped Through a Tunnel. His Movie Plans Helped Catch Him",
+ "central_question": "How did a planned film about his life help Mexico find El Chapo?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "Chapo": "Chah-po",
+   "Los": "Lohs",
+   "Mochis": "Moh-chees",
+   "Guzmán": "Goos-mahn",
+   "Altiplano": "Ahl-tee-plah-no",
+   "Sinaloa": "See-nah-loh-ah"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "26",
+  "label": "EL CHAPO · MEXICO · 2015-2019"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s07_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "ec26_guzman",
+  "hp23_officer",
+  "agent_a",
+  "analyst",
+  "gb7_suit",
+  "judge"
+ ],
+ "content_notes": "Closed case: Guzmán was convicted on 12 Feb 2019 and sentenced on 17 Jul 2019 to life plus 30 years; the conviction was upheld in Jan 2022. He appears only as a rim-lit SILHOUETTE (illustrated representation, 'ILLUSTRATION · NOT A LIKENESS'): no face, no mugshot or escape-footage frame recreated. The actor and actress who met him in Oct 2015 are not named, drawn or alluded to beyond the attorney general's 'actresses and producers'. No violence, weapon, drug, cash or victim is shown: the 2016 raid is summarised (marines approach a house; no gunfire), the capture is a stopped car under police lights. The cell, tunnel, hideout, house and highway are generic illustrations, not the real places; the clapperboard is our own symbolic prop with blank chalk fields (no real film, title or company). Every card is our own typed graphic; the attorney general's words are attributed and paraphrased except the two-word phrase 'important aspect' (as translated by AP). No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ec26_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.02,
+     "word": [
+      1,
+      2
+     ],
+     "name": "click",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "C_escape",
+    "C_hook"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "El Chapo escaped prison through a mile-long tunnel."
+    },
+    {
+     "who": "narrator",
+     "text": "But his movie plans helped catch him.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "chapo",
+    "mile-long",
+    "tunnel.",
+    "movie",
+    "catch"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_tunnel",
+   "scene": "ec26_tunnel",
+   "min_duration": 4.2,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "drain",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.2
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "C_escape",
+    "C_tunnel",
+    "C_2001"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The tunnel opened in his cell's shower."
+    },
+    {
+     "who": "narrator",
+     "text": "Inside was a motorcycle on rails.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "shower.",
+    "motorcycle",
+    "rails."
+   ],
+   "section": "A",
+   "music_gain_db": -3
+  },
+  {
+   "id": "s03_hideout",
+   "scene": "ec26_hideout",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.2,
+     "word": [
+      1,
+      0
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "C_run",
+    "C_film"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he wanted a movie about his life."
+    },
+    {
+     "who": "narrator",
+     "text": "He reached out to actresses and producers.",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "movie",
+    "life.",
+    "actresses",
+    "producers."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_how",
+   "scene": "ec26_how",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "typing",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "pen",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.4,
+     "word": [
+      1,
+      0
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.55
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "C_tracked",
+    "C_ag"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Investigators tracked his lawyers meeting with them."
+    },
+    {
+     "who": "narrator",
+     "text": "Mexico's attorney general said that helped locate him.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tracked",
+    "lawyers",
+    "attorney",
+    "general",
+    "locate"
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s05_raid",
+   "scene": "ec26_raid",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.25,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "door",
+     "gain": 0.45
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "drain",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "water",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "C_raid",
+    "C_drain"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Marines raided a house in Los Mochis."
+    },
+    {
+     "who": "narrator",
+     "text": "He fled through a storm drain.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "marines",
+    "raided",
+    "los",
+    "mochis.",
+    "storm",
+    "drain."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_caught",
+   "scene": "ec26_caught",
+   "min_duration": 3.0,
+   "pad_after": 0.25,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "brake",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "C_caught"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then the police caught him on a highway.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "caught",
+    "highway."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_verdict",
+   "scene": "ec26_verdict",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "gate",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "C_extradited",
+    "C_verdict",
+    "C_sentence",
+    "C_appeal"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A Brooklyn jury convicted him on all ten counts."
+    },
+    {
+     "who": "narrator",
+     "text": "He got life, plus thirty years.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convicted",
+    "ten",
+    "life,",
+    "thirty",
+    "years."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_end",
+   "scene": "ec26_end",
+   "min_duration": 4.2,
+   "pad_after": 1.7,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "drain",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      11
+     ],
+     "name": "sparkle",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "C_hook",
+    "C_ag"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The tunnel got him out. His movie plans helped bring him back.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tunnel",
+    "movie",
+    "back."
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C_escape",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 11 July 2015 Joaquín 'El Chapo' Guzmán escaped from the Altiplano maximum-security prison (State of Mexico) through a tunnel about 1.5 km long (about a mile; AP: '1-mile'), his second prison escape. Spoken as 'a mile-long tunnel'.",
+   "sources": [
+    "aljazeera_escape",
+    "wgn_ap_escape",
+    "fox4_ap_escape",
+    "pbs_escape",
+    "csm_tunnel"
+   ]
+  },
+  {
+   "id": "C_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Mexican officials said his contacts about a planned film of his life helped them locate him before his recapture on 8 January 2016 (attributed: Attorney General Arely Gómez). Spoken as 'his movie plans helped catch him' / 'helped bring him back'.",
+   "sources": [
+    "dallas_ap_film",
+    "nbc_biopic",
+    "thewrap_biopic",
+    "journal_ie"
+   ]
+  },
+  {
+   "id": "C_tunnel",
+   "type": "established",
+   "nature": "fact",
+   "text": "The tunnel opened into the shower area of his cell (a small opening in the shower floor); it was lit and ventilated, about 1.7 m high and 80 cm wide, with rails, and a motorcycle adapted to run on the rails (used to move earth) was found in it.",
+   "sources": [
+    "aljazeera_escape",
+    "wgn_ap_escape",
+    "csm_tunnel",
+    "cbs_tunnel",
+    "vice_2015"
+   ]
+  },
+  {
+   "id": "C_2001",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: it was his second escape; in 2001 he escaped from the Puente Grande prison, reportedly hidden in a laundry cart (accounts vary; 'reported').",
+   "sources": [
+    "fox4_ap_escape",
+    "wiki_manhunt",
+    "wgn_ap_escape"
+   ]
+  },
+  {
+   "id": "C_run",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was on the run for about six months (July 2015 - January 2016), described as Mexico's most-wanted man.",
+   "sources": [
+    "csm_tunnel",
+    "wiki_manhunt",
+    "npr_capture"
+   ]
+  },
+  {
+   "id": "C_film",
+   "type": "established",
+   "nature": "fact",
+   "text": "Mexico's attorney general Arely Gómez said investigators discovered Guzmán's intention to make a biographical film, for which he established contact with actresses and producers. (The individuals are not named or drawn.)",
+   "sources": [
+    "dallas_ap_film",
+    "nbc_biopic",
+    "thewrap_biopic",
+    "journal_ie",
+    "eluniversal_film"
+   ]
+  },
+  {
+   "id": "C_tracked",
+   "type": "established",
+   "nature": "fact",
+   "text": "Gómez said follow-up work allowed investigators to document meetings between Guzmán's lawyers and those actresses and producers.",
+   "sources": [
+    "dallas_ap_film",
+    "journal_ie",
+    "thewrap_biopic"
+   ]
+  },
+  {
+   "id": "C_ag",
+   "type": "established",
+   "nature": "fact",
+   "text": "Gómez said that discovering the film plan was 'an important aspect' that allowed authorities to locate him (one lead among several, including surveillance of the Los Mochis property).",
+   "sources": [
+    "dallas_ap_film",
+    "nbc_biopic",
+    "journal_ie",
+    "thewrap_biopic"
+   ]
+  },
+  {
+   "id": "C_raid",
+   "type": "established",
+   "nature": "fact",
+   "text": "Before dawn on 8 January 2016 Mexican marines raided a house in Los Mochis, Sinaloa, where Guzmán was hiding (the operation is described in summary only; no violence is shown).",
+   "sources": [
+    "abc11_raid",
+    "npr_capture",
+    "fox_capture",
+    "peninsula_afp"
+   ]
+  },
+  {
+   "id": "C_drain",
+   "type": "established",
+   "nature": "fact",
+   "text": "Guzmán and a lieutenant escaped the house through a hidden passage behind a closet mirror into the city's storm-drain system and emerged through a manhole.",
+   "sources": [
+    "npr_capture",
+    "fox_capture",
+    "peninsula_afp",
+    "abc11_raid"
+   ]
+  },
+  {
+   "id": "C_caught",
+   "type": "established",
+   "nature": "fact",
+   "text": "After leaving the drains and taking cars, he was stopped and caught on a highway outside Los Mochis (reported as by federal police) the same day.",
+   "sources": [
+    "npr_capture",
+    "fox_capture",
+    "abc11_raid"
+   ]
+  },
+  {
+   "id": "C_extradited",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: Mexico extradited Guzmán to the United States in January 2017.",
+   "sources": [
+    "jurist_appeal",
+    "aldia_appeal",
+    "doj_sentence"
+   ]
+  },
+  {
+   "id": "C_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 12 February 2019, after a three-month trial in federal court in Brooklyn, a jury convicted him on all 10 counts of the superseding indictment.",
+   "sources": [
+    "doj_sentence",
+    "doj_sentence_opa",
+    "jurist_appeal",
+    "nbc_sentence"
+   ]
+  },
+  {
+   "id": "C_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 17 July 2019 Judge Brian Cogan sentenced him to life imprisonment plus 30 years and ordered $12.6 billion in forfeiture.",
+   "sources": [
+    "doj_sentence",
+    "doj_sentence_opa",
+    "scripps_sentence"
+   ]
+  },
+  {
+   "id": "C_appeal",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: in January 2022 the Second Circuit upheld the conviction; he is held at ADX Florence, Colorado.",
+   "sources": [
+    "jurist_appeal",
+    "aldia_appeal"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "doj_sentence",
+   "publisher": "U.S. Department of Justice (EDNY / Office of Public Affairs)",
+   "title": "Joaquin \"El Chapo\" Guzman, Sinaloa Cartel Leader, Sentenced to Life in Prison Plus 30 Years",
+   "url": "https://www.justice.gov/usao-edny/pr/joaquin-el-chapo-guzman-sinaloa-cartel-leader-sentenced-life-prison-plus-30-years",
+   "date": "2019-07-17",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "doj_sentence_opa",
+   "publisher": "U.S. Department of Justice (Office of Public Affairs, archived)",
+   "title": "Joaquin \"El Chapo\" Guzman, Sinaloa Cartel Leader, Sentenced to Life in Prison Plus 30 Years",
+   "url": "https://www.justice.gov/opa/pr/joaquin-el-chapo-guzman-sinaloa-cartel-leader-sentenced-life-prison-plus-30-years",
+   "date": "2019-07-17",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_sentence",
+   "publisher": "NBC News",
+   "title": "Prosecutors seek life sentence for Joaquín 'El Chapo' Guzmán",
+   "url": "https://www.nbcnews.com/news/crime-courts/prosecutors-seek-life-sentence-joaquin-el-chapo-guzm-n-n1028601",
+   "date": "2019-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "scripps_sentence",
+   "publisher": "Scripps News",
+   "title": "El Chapo sentenced to life in prison",
+   "url": "https://scrippsnews.com/us-news/el-chapo-sentenced-to-life-in-prison",
+   "date": "2019-07-17",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "jurist_appeal",
+   "publisher": "JURIST",
+   "title": "Federal appeals court upholds El Chapo conviction",
+   "url": "https://www.jurist.org/news/2022/01/federal-appeals-court-upholds-el-chapo-conviction",
+   "date": "2022-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aldia_appeal",
+   "publisher": "Al Día News",
+   "title": "Life sentence confirmed for 'El Chapo' Guzmán",
+   "url": "https://aldianews.com/politics/policy/el-chapo-conviction-held",
+   "date": "2022-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aljazeera_escape",
+   "publisher": "Al Jazeera",
+   "title": "Mexican kingpin in brazen escape via elaborate tunnel",
+   "url": "https://www.aljazeera.com/news/2015/7/13/mexican-kingpin-in-brazen-escape-via-elaborate-tunnel",
+   "date": "2015-07-13",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wgn_ap_escape",
+   "publisher": "WGN-TV (Associated Press)",
+   "title": "Mexico's top drug lord escapes through tunnel (AP)",
+   "url": "https://digital-release.wgntv.com/?p=930249",
+   "date": "2015-07-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox4_ap_escape",
+   "publisher": "FOX 4 (Associated Press)",
+   "title": "Mexico: Drug lord 'El Chapo' Guzman escapes through tunnel",
+   "url": "https://www.fox4news.com/news/mexico-drug-lord-el-chapo-guzman-escapes-through-tunnel",
+   "date": "2015-07-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pbs_escape",
+   "publisher": "PBS NewsHour",
+   "title": "Tracing the escape route of Mexico's notorious drug lord",
+   "url": "https://www.pbs.org/newshour/world/tracing-escape-route-mexicos-notorious-drug-lord",
+   "date": "2015-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "csm_tunnel",
+   "publisher": "The Christian Science Monitor",
+   "title": "Inside El Chapo's tunnel: How Mexico's most-wanted man escaped",
+   "url": "https://www.csmonitor.com/World/Global-News/2015/0715/Inside-El-Chapo-s-tunnel-How-Mexico-s-most-wanted-man-escaped",
+   "date": "2015-07-15",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_tunnel",
+   "publisher": "CBS News (photos)",
+   "title": "Mexican drug lord's brazen tunnel escape",
+   "url": "https://www.cbsnews.com/pictures/drug-lord-joaquin-el-chapos-prison-tunnel-escape/",
+   "date": "2015-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "vice_tunnel",
+   "publisher": "VICE News",
+   "title": "El Chapo witness reveals new details about the epic motorcycle tunnel escape",
+   "url": "https://vice.com/en/article/el-chapo-witness-reveals-new-details-about-the-epic-motorcycle-tunnel-escape",
+   "date": "2019-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "vice_2015",
+   "publisher": "VICE News (photo: Eduardo Verdugo/AP)",
+   "title": "Mexican drug lord El Chapo escapes prison through elaborate tunnel with motorcycle",
+   "url": "https://news.vice.com/article/mexican-drug-lord-el-chapo-escapes-prison-through-elaborate-tunnel-with-motorcycle",
+   "date": "2015-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_manhunt",
+   "publisher": "Wikipedia",
+   "title": "Manhunt of El Chapo Guzmán",
+   "url": "https://en.wikipedia.org/wiki/Manhunt_of_El_Chapo_Guzm%C3%A1n",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "dallas_ap_film",
+   "publisher": "The Dallas Morning News (Associated Press)",
+   "title": "El Chapo's quest for fame was his undoing, official says",
+   "url": "https://dallasnews.com/news/2016/01/10/el-chapos-quest-for-fame-was-his-undoing-official-says",
+   "date": "2016-01-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_biopic",
+   "publisher": "NBC News",
+   "title": "Mexican drug kingpin 'El Chapo' was trying to make biopic: official",
+   "url": "https://www.nbcnews.com/news/world/mexican-drug-kingpin-el-chapo-was-trying-make-biopic-official-n493326",
+   "date": "2016-01-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "thewrap_biopic",
+   "publisher": "TheWrap",
+   "title": "'El Chapo' Captured After Contacting Actors and Producers About Potential Biopic",
+   "url": "https://thewrap.com/joaquin-el-chapo-guzman-biopic-mexico-drug-cartel",
+   "date": "2016-01-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "journal_ie",
+   "publisher": "TheJournal.ie",
+   "title": "El Chapo was caught because he wanted to make a film about his life",
+   "url": "https://jrnl.ie/2539214",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "eluniversal_film",
+   "publisher": "El Universal (English)",
+   "title": "El Chapo linked to cinema productions",
+   "url": "https://eluniversal.com.mx/articulo/english/2016/01/9/el-chapo-linked-cinema-productions",
+   "date": "2016-01-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_capture",
+   "publisher": "NPR (The Two-Way)",
+   "title": "Using another secret tunnel, El Chapo almost evaded capture",
+   "url": "https://www.npr.org/sections/thetwo-way/2016/01/12/462797405/using-another-secret-tunnel-el-chapo-almost-evaded-capture",
+   "date": "2016-01-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc11_raid",
+   "publisher": "ABC11 (ABC News)",
+   "title": "Inside the dramatic raid that took down 'El Chapo'",
+   "url": "https://abc11.com/post/inside-the-dramatic-raid-that-took-down-el-chapo/1154853/",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_capture",
+   "publisher": "Fox News (Associated Press)",
+   "title": "During dramatic capture, drug lord 'Chapo' Guzmán nearly tunneled to freedom. Again",
+   "url": "https://www.foxnews.com/world/during-dramatic-capture-drug-lord-chapo-guzman-nearly-tunneled-to-freedom-again",
+   "date": "2016-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "peninsula_afp",
+   "publisher": "The Peninsula (AFP)",
+   "title": "Drug lord's last tunnel hidden behind mirror",
+   "url": "https://thepeninsulaqatar.com/article/12/01/2016/Drug-lord-s-last-tunnel-hidden-behind-mirror",
+   "date": "2016-01-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "EL CHAPO ESCAPED THROUGH A TUNNEL"
+   },
+   {
+    "text": "HIS MOVIE PLANS HELPED CATCH HIM",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHAT REALLY CAUGHT EL CHAPO?"
+   },
+   {
+    "text": "THE MOVIE PLANS OR THE MARINES? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

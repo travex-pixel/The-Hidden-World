@@ -1,0 +1,915 @@
+{
+ "id": "tcv72-border-fails-3",
+ "number": 72,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Hid a Drug Tunnel Under a KFC",
+ "central_question": "Border Fails, Part 3: fake carrots, a drone that was too heavy, and a drug tunnel from an old KFC's kitchen to a bed in Mexico. Smartest or dumbest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {}
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "72",
+  "label": "BORDER FAILS · PART 3"
+ },
+ "music": {
+  "bpm": 82,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 82,
+  "cliff": {
+   "scene": "s06_kitchen",
+   "word": [
+    0,
+    5
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "bf72_agent1",
+  "bf72_agent2",
+  "bf72_officer",
+  "bf72_cop",
+  "bf72_owner",
+  "bf72_local"
+ ],
+ "content_notes": "Tone: absurd and ironic. No weapon is drawn or pointed and no violence is shown; agents and officers hold only flashlights. The building's owner is a real person (arrested, no plea or sentence reported): never named, drawn ONLY as a dark rim-lit silhouette tagged NOT A LIKENESS. Agents, officers and the bystander are generic figures with no badge, patch, flag or agency name. KFC is named only as plain text: no logo, no mascot, no Colonel, no bucket or packaging artwork; the building is a generic closed restaurant with plain roof panels and a blank sign; nothing implies the company had any part in the crime. Drugs appear only as plain taped packets; the fake carrots as plain orange packages. The drone is a generic six-rotor drone with no markings. Every card is our own typed graphic. No dialogue or quotation. Facts verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "bf72_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.32
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "whoosh",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_590"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers hid a drug tunnel in a KFC.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "It ran 590 feet to Mexico.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "drug",
+    "tunnel",
+    "kfc.",
+    "590",
+    "feet",
+    "mexico."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_carrots",
+   "scene": "bf72_carrots",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.28
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "puff",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_carrots"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But first, a truck full of carrots.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "Nearly 3,000 were fake. Stuffed with weed.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "first,",
+    "truck",
+    "carrots.",
+    "3,000",
+    "fake.",
+    "weed."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_drone",
+   "scene": "bf72_drone",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": 0.18
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "tick",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_drone"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not their wildest one.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "A drone carried six pounds of meth.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "wildest",
+    "drone",
+    "six",
+    "pounds",
+    "meth."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_crash",
+   "scene": "bf72_crash",
+   "min_duration": 3.8,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.38
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "glitch",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "step",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_crash"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Too heavy. It crashed in a supermarket parking lot.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "too",
+    "heavy.",
+    "crashed",
+    "supermarket",
+    "parking",
+    "lot."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_stop",
+   "scene": "bf72_stop",
+   "min_duration": 3.8,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "siren",
+     "gain": 0.12
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      2
+     ],
+     "name": "brake",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_stop"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then police stopped an old KFC's owner.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "stopped",
+    "old",
+    "kfc's",
+    "owner."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_kitchen",
+   "scene": "bf72_kitchen",
+   "min_duration": 4.0,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      1
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_kitchen"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Under the kitchen floor? A tunnel.",
+     "tone": "reveal"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "kitchen",
+    "floor?",
+    "tunnel."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_tunnel",
+   "scene": "bf72_tunnel",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "thump",
+     "gain": 0.28
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      1
+     ],
+     "name": "door",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_590",
+    "K_bed"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "22 feet down. Right under the border.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "The other end? Found under a bed.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "22",
+    "feet",
+    "down.",
+    "under",
+    "border.",
+    "other",
+    "end?",
+    "found",
+    "bed."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "bf72_end",
+   "min_duration": 3.4,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.28
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_punch",
+    "K_part4"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The kitchen was closed. The tunnel was not.",
+     "tone": "reveal"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "kitchen",
+    "closed.",
+    "tunnel",
+    "not."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "A cross-border drug-smuggling tunnel ran from a former (vacant) KFC restaurant in San Luis, Arizona, about 200 yards north of the border, to a house in San Luis Rio Colorado, Sonora, Mexico (found August 2018). Narration: 'Smugglers hid a drug tunnel in a KFC.' Headline 'A DRUG TUNNEL / UNDER A KFC'.",
+   "sources": [
+    "ap_wt",
+    "nbcnews",
+    "foxnews",
+    "fox10",
+    "global"
+   ]
+  },
+  {
+   "id": "K_590",
+   "type": "established",
+   "nature": "fact",
+   "text": "The tunnel was 22 feet deep and about 590 feet long, ending at a residence in San Luis Rio Colorado. Narration: 'It ran 590 feet to Mexico.' / '22 feet down. Right under the border.' Counter '590 FT'.",
+   "sources": [
+    "ap_nbcsd",
+    "12news",
+    "wtvr",
+    "abc15",
+    "ktar"
+   ]
+  },
+  {
+   "id": "K_carrots",
+   "type": "established",
+   "nature": "fact",
+   "text": "January 2016, Pharr International Bridge, Texas: CBP officers found 2,817 carrot-shaped packages of marijuana (about 2,493 lb, about $499,000) mixed into a commercial shipment of carrots. Narration: 'But first, a truck full of carrots.' / 'Nearly 3,000 were fake. Stuffed with weed.' Label 'PHARR, TEXAS · JAN 2016'.",
+   "sources": [
+    "nbcdfw",
+    "cbs16",
+    "fox13",
+    "anuk"
+   ]
+  },
+  {
+   "id": "K_drone",
+   "type": "established",
+   "nature": "fact",
+   "text": "Night of 20 January 2015, Tijuana, near the San Ysidro crossing: a six-rotor drone carried more than six pounds (about 3 kg) of methamphetamine in six taped packets. Narration: 'But that was not their wildest one.' (editorial rehook) / 'A drone carried six pounds of meth.'",
+   "sources": [
+    "ap_pbs",
+    "ap_csm",
+    "foxdrone",
+    "tnw"
+   ]
+  },
+  {
+   "id": "K_crash",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police said the drone could not withstand the weight of its load and crashed in a supermarket parking lot. Narration: 'Too heavy. It crashed in a supermarket parking lot.'",
+   "sources": [
+    "ap_pbs",
+    "ap_csm",
+    "foxdrone",
+    "tnw"
+   ]
+  },
+  {
+   "id": "K_stop",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 13 August 2018 San Luis police stopped the building's owner (a vehicle violation); a K-9 alerted to two toolboxes in the truck holding methamphetamine, cocaine, heroin and fentanyl. He was arrested and held without bond; no plea or sentence was found, so he is not named. Narration: 'Then police stopped an old KFC's owner.' Label 'HIS TOOLBOXES: METH, HEROIN, FENTANYL'.",
+   "sources": [
+    "abc15",
+    "foxnews",
+    "ap_wt",
+    "12news"
+   ]
+  },
+  {
+   "id": "K_kitchen",
+   "type": "established",
+   "nature": "fact",
+   "text": "Agents with search warrants found the tunnel's entrance in the kitchen of the former restaurant. Narration: 'Under the kitchen floor? A tunnel.'",
+   "sources": [
+    "12news",
+    "abc15",
+    "wtvr",
+    "foxnews"
+   ]
+  },
+  {
+   "id": "K_bed",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: at the Mexican end the tunnel came up through a trap door under a bed in the house. Narration: 'The other end? Found under a bed.'",
+   "sources": [
+    "ap_nbcsd",
+    "12news",
+    "abc15"
+   ]
+  },
+  {
+   "id": "K_punch",
+   "type": "established",
+   "nature": "fact",
+   "text": "The restaurant was closed/vacant; authorities said the tunnel was used to smuggle drugs. Narration (the closing line, wordplay on those facts): 'The kitchen was closed. The tunnel was not.'",
+   "sources": [
+    "fox10",
+    "nbcnews",
+    "global",
+    "ap_wt"
+   ]
+  },
+  {
+   "id": "K_part4",
+   "type": "established",
+   "nature": "fact",
+   "text": "PART 4 TEASE (end card): 22 July 2023, near Calexico, Mexican authorities, alerted by Border Patrol agents who saw the fence being cut, found a white truck cloned to look like a U.S. Border Patrol vehicle and 17 migrants. End card 'PART 4: A FAKE BORDER PATROL TRUCK'.",
+   "sources": [
+    "wt23",
+    "kold",
+    "fox23"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "nbcnews",
+   "publisher": "NBC News",
+   "title": "Border tunnel discovered under old Kentucky Fried Chicken used to smuggle drugs",
+   "url": "https://www.nbcnews.com/news/us-news/border-tunnel-discovered-under-old-kentucky-fried-chicken-used-smuggle-n903371",
+   "date": "2018-08-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ap_wt",
+   "publisher": "Washington Times (Associated Press)",
+   "title": "Agency: Tunnel under old restaurant used to smuggle",
+   "url": "https://www.washingtontimes.com/news/2018/aug/23/agency-tunnel-under-old-restaurant-used-to-smuggle/",
+   "date": "2018-08-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ap_nbcsd",
+   "publisher": "NBC San Diego (Associated Press)",
+   "title": "Tunnel under old restaurant used to smuggle drugs",
+   "url": "https://www.nbcsandiego.com/news/national-international/tunnel-under-old-restaurant-used-to-smuggle-drugs/2041378/?amp=1",
+   "date": "2018-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "foxnews",
+   "publisher": "Fox News",
+   "title": "KFC restaurant hid Arizona-Mexico drug smuggling tunnel, officials say",
+   "url": "https://www.foxnews.com/us/kfc-restaurant-hid-arizona-mexico-drug-smuggling-tunnel-officials-say",
+   "date": "2018-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox10",
+   "publisher": "FOX 10 Phoenix",
+   "title": "Drug tunnel to Mexico found below vacant Arizona KFC restaurant",
+   "url": "https://www.fox10phoenix.com/news/drug-tunnel-to-mexico-found-below-vacant-arizona-kfc-restaurant",
+   "date": "2018-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "12news",
+   "publisher": "12 News Phoenix",
+   "title": "Cross-border drug tunnel found under former KFC restaurant in Arizona",
+   "url": "https://12news.com/article/news/local/arizona/cross-border-drug-tunnel-found-under-former-kfc-restaurant-in-arizona/75-587000210",
+   "date": "2018-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wtvr",
+   "publisher": "WTVR (CNN)",
+   "title": "Authorities find drug tunnel running from old KFC restaurant to home in Mexico",
+   "url": "https://www.wtvr.com/2018/08/23/authorities-find-drug-tunnel-running-from-old-kfc-restaurant-to-home-in-mexico",
+   "date": "2018-08-23",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "abc15",
+   "publisher": "ABC15 Arizona (Scripps)",
+   "title": "Traffic stop leads police to Mexico-Arizona drug tunnel under former KFC",
+   "url": "https://www.abc15.com/news/national/traffic-stop-leads-police-to-mexico-arizona-drug-tunnel-under-former-kfc",
+   "date": "2018-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ktar",
+   "publisher": "KTAR News",
+   "title": "Cross-border drug tunnel found under former KFC in San Luis",
+   "url": "https://ktar.com/?p=2187215",
+   "date": "2018-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "global",
+   "publisher": "Global News",
+   "title": "Mexico border tunnel discovered under abandoned KFC restaurant",
+   "url": "https://globalnews.ca/news/4406139/mexico-border-tunnel-discovered-under-abandoned-kfc-restaurant/amp/",
+   "date": "2018-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nbcdfw",
+   "publisher": "NBC DFW",
+   "title": "$500K in marijuana disguised as carrots: CBP",
+   "url": "https://www.nbcdfw.com/news/local/500k-in-marijuana-disguised-as-carrots-cbp/194351/",
+   "date": "2016-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbs16",
+   "publisher": "CBS News",
+   "title": "Customs officials intercept pot shipment disguised as carrots",
+   "url": "https://www.cbsnews.com/amp/news/customs-officials-intercept-pot-shipment-disguised-as-carrots",
+   "date": "2016-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox13",
+   "publisher": "Fox 13",
+   "title": "Marijuana-filled 'carrots' nabbed at Mexican border",
+   "url": "https://www.fox13news.com/news/marijuana-filled-carrots-nabbed-at-mexican-border",
+   "date": "2016-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "anuk",
+   "publisher": "AndNowUKnow",
+   "title": "Over one ton of marijuana smuggled in carrot shipment",
+   "url": "https://andnowuknow.com/node/48126",
+   "date": "2016-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ap_pbs",
+   "publisher": "PBS NewsHour (Associated Press)",
+   "title": "Meth-laden drone crashes near Mexico-U.S. border",
+   "url": "https://www.pbs.org/newshour/nation/meth-laden-drone-crashes-mexico-u-s-border",
+   "date": "2015-01-22",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ap_csm",
+   "publisher": "Christian Science Monitor (Associated Press)",
+   "title": "Drone carrying meth crashes in Mexican supermarket parking lot",
+   "url": "https://proof.csmonitor.com/World/Latest-News-Wires/2015/0122/Drone-carrying-meth-crashes-in-Mexican-supermarket-parking-lot",
+   "date": "2015-01-22",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "foxdrone",
+   "publisher": "Fox News",
+   "title": "Drone overloaded with meth crashes in Mexican border city",
+   "url": "https://www.foxnews.com/world/drone-overloaded-with-meth-crashes-in-mexican-border-city",
+   "date": "2015-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "tnw",
+   "publisher": "The Next Web",
+   "title": "Drone carrying drugs crashes near US-Mexico border",
+   "url": "https://thenextweb.com/news/drone-carrying-drugs-crashes-near-us-mexico-border",
+   "date": "2015-01-22",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wt23",
+   "publisher": "Washington Times",
+   "title": "Mexican authorities discover truck cloned to look like U.S. Border Patrol vehicle",
+   "url": "https://www.washingtontimes.com/news/2023/jul/29/mexican-authorities-discover-truck-cloned-look-us-/",
+   "date": "2023-07-29",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "kold",
+   "publisher": "KOLD",
+   "title": "Cloned Border Patrol truck recovered near Mexico-California border",
+   "url": "https://www.kold.com/2023/08/01/cloned-border-patrol-truck-recovered-near-mexico-california-border/",
+   "date": "2023-08-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox23",
+   "publisher": "Fox News",
+   "title": "Mexican authorities capture cloned US Border Patrol vehicle in suspected smuggling attempt, 17 detained",
+   "url": "https://www.foxnews.com/us/mexican-authorities-capture-cloned-us-border-patrol-vehiclsuspected-smuggling-attempt-17-detained",
+   "date": "2023-07",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 4,
+ "search_terms": [
+  "kfc tunnel",
+  "drug tunnel",
+  "border smugglers"
+ ],
+ "palette": {
+  "shadow": "#131b26",
+  "mid": "#c8b9a0",
+  "accent": "#e6a23a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A DRUG TUNNEL"
+   },
+   {
+    "text": "UNDER A KFC",
+    "colour": "#e6a23a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "THE KFC TUNNEL:"
+   },
+   {
+    "text": "SMARTEST OR DUMBEST? 👇",
+    "colour": "#e6a23a"
+   },
+   {
+    "text": "BORDER FAILS · PART 3",
+    "fs": 38
+   },
+   {
+    "text": "PART 4: A FAKE BORDER PATROL TRUCK",
+    "fs": 38
+   },
+   {
+    "text": "FOLLOW FOR PART 4",
+    "fs": 46,
+    "colour": "#e6a23a"
+   },
+   {
+    "text": "TAG A MATE WHO'D DIG ONE",
+    "fs": 34
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "BORDER FAIL",
+  "keys": [
+   {
+    "t": 6.57,
+    "v": "1 · FAKE CARROTS"
+   },
+   {
+    "t": 12.51,
+    "v": "2 · NARCO-DRONE"
+   },
+   {
+    "t": 19.87,
+    "v": "3 · KFC TUNNEL"
+   }
+  ],
+  "y": 330,
+  "until": 30.93
+ },
+ "legal_status_verified": "2026-10-17"
+}

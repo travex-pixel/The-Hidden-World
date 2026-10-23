@@ -1,0 +1,1044 @@
+{
+ "id": "tcv30-boat-40",
+ "number": 30,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Backyard Boat Ended the Boston Marathon Bomber Manhunt",
+ "central_question": "How did a man checking the cover on his boat end the biggest manhunt in Boston's history?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "FBI": "F B I",
+   "Dzhokhar": "Joh-har",
+   "Tsarnaev": "Sar-nigh-ev",
+   "911": "nine one one",
+   "260": "two hundred sixty",
+   "backyard": "back-yard"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "30",
+  "label": "BOSTON MARATHON BOMBING · 2013-2015"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    2
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "bb30_homeowner",
+  "bb30_officer",
+  "bb30_tsarnaev",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "official",
+  "judge",
+  "searcher"
+ ],
+ "content_notes": "Closed at trial: Dzhokhar Tsarnaev was convicted on all 30 counts in April 2015 and sentenced to death; the sentence was vacated in 2020, reinstated by the Supreme Court in 2022 and remains under appeal (stated as 'appeals continue'). The bombing, the finish line, the victims, injuries, the carjacking, the shootout, the standoff and any weapon or explosion are never depicted: the bombing is one spoken line, the toll a typed card in a quiet room, the shootout a card over a dark street with police lights. Victims are named only on the memorial card; the memorial is the last spoken line. Tsarnaev is only a dark shape inside the boat and, in court, an anonymous rim-lit silhouette (not a likeness, never a photo recreation), never posed heroically; none of his words, the note's content or his beliefs are quoted. The homeowner is a generic, unnamed figure (not a likeness); the officers are generic, with no insignia and no weapons. The boat, trailer, house, yard, street and city are generic drawings with no name, number, sign or logo (no boat name, no real street). Every card is our own typed graphic; no real police, court or FBI material is imitated. No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "bb30_hook",
+   "min_duration": 5.0,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.15,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "B_shutdown",
+    "B_found"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Boston was shut down to find the marathon bomber."
+    },
+    {
+     "who": "narrator",
+     "text": "A man checking his boat found him.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "shut",
+    "down",
+    "marathon",
+    "bomber.",
+    "boat",
+    "found"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_toll",
+   "scene": "bb30_toll",
+   "min_duration": 3.4,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "B_toll"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The bombs killed three people and injured over 260.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "three",
+    "260."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s03_photos",
+   "scene": "bb30_photos",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_photos"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Three days later, the FBI released photos of two suspects."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "three",
+    "FBI",
+    "photos",
+    "suspects."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_night",
+   "scene": "bb30_night",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "rumble",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      14
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_night"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That night a campus police officer was killed, and one suspect died in a shootout."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "campus",
+    "police",
+    "officer",
+    "killed,",
+    "died",
+    "shootout."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_lockdown",
+   "scene": "bb30_lockdown",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      10
+     ],
+     "name": "step",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "B_shutdown",
+    "B_search"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A million people were asked to stay in while police searched Watertown."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "million",
+    "stay",
+    "in",
+    "searched",
+    "watertown."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_lifted",
+   "scene": "bb30_lifted",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "door",
+     "gain": 0.45
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "step",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "B_shutdown",
+    "B_hour"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "By evening: nothing. The lockdown was lifted."
+    },
+    {
+     "who": "narrator",
+     "text": "An hour later a homeowner went to check his boat.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "nothing.",
+    "lifted.",
+    "hour",
+    "homeowner",
+    "check",
+    "boat."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_cover",
+   "scene": "bb30_cover",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      7
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "beep",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "B_found",
+    "B_capture",
+    "B_note"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The cover was loose. He looked in, saw blood, called 911.",
+     "pause_before": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "Inside was Dzhokhar Tsarnaev.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "cover",
+    "loose.",
+    "looked",
+    "blood,",
+    "911.",
+    "dzhokhar",
+    "tsarnaev."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "bb30_verdict",
+   "min_duration": 3.2,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "B_verdict",
+    "B_appeals"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was convicted on all thirty counts."
+    },
+    {
+     "who": "narrator",
+     "text": "He was sentenced to death.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convicted",
+    "thirty",
+    "counts.",
+    "death."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "bb30_end",
+   "min_duration": 4.0,
+   "pad_after": 1.5,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "B_found",
+    "B_toll",
+    "B_night"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A backyard boat ended the manhunt."
+    },
+    {
+     "who": "narrator",
+     "text": "We remember those who died.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "backyard",
+    "boat",
+    "ended",
+    "manhunt.",
+    "remember"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "B_shutdown",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 19 April 2013 Gov. Deval Patrick asked more than a million greater Boston residents to shelter in place (a voluntary order; NBC/CBS: close to 1 million), mass transit was suspended, and the order was lifted at about 6 p.m. after the search of the Watertown neighbourhood was 'not fruitful'. The Globe itself calls it the 'decision to shut down Boston for manhunt'.",
+   "sources": [
+    "globe_2014",
+    "nbc_hayes",
+    "cbs_capture",
+    "npr_hunt"
+   ]
+  },
+  {
+   "id": "B_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "After the order was lifted, a Watertown homeowner (David Henneberry; not named on screen) noticed something amiss with the boat in his backyard, went out to check it, found the cover's strap looser than usual, lifted the wrap, saw blood inside and called 911. The drawn boat is generic, with no name, number or make.",
+   "sources": [
+    "cnn_owner",
+    "nbc_owner",
+    "cbs_capture",
+    "nbc_dies"
+   ]
+  },
+  {
+   "id": "B_toll",
+   "type": "established",
+   "nature": "fact",
+   "text": "Two bombs near the marathon finish line on Boylston Street on 15 April 2013 killed three people and injured more than 260 (FBI: 'killing three and injuring scores more'; DOJ: 'killing three people, maiming 17, and injuring hundreds more'). The victims are named only on the memorial card and are never shown.",
+   "sources": [
+    "aljazeera_2015",
+    "wbur_2015",
+    "scripps_2015",
+    "fbi_case",
+    "doj_2015"
+   ]
+  },
+  {
+   "id": "B_photos",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 18 April 2013, three days after the bombing, the FBI released images of two suspects (Suspect 1 and Suspect 2); its website crashed under the demand.",
+   "sources": [
+    "abc7_photos",
+    "salon_photos",
+    "time_photos"
+   ]
+  },
+  {
+   "id": "B_night",
+   "type": "established",
+   "nature": "fact",
+   "text": "That night (about 10:20-10:30 p.m. on 18 April) MIT police officer Sean Collier was shot and killed in Cambridge; the suspects carjacked an SUV; in a shootout with police in Watertown in the early hours of 19 April the older brother, Tamerlan Tsarnaev, died. Narration: 'a campus police officer was killed' and 'one suspect died in a shootout' (summary only).",
+   "sources": [
+    "nbc_collier",
+    "cbs_collier",
+    "cbs_collier_id",
+    "fbi_case",
+    "npr_hunt"
+   ]
+  },
+  {
+   "id": "B_search",
+   "type": "established",
+   "nature": "fact",
+   "text": "A 20-block area of Watertown was cordoned off and searched by police and SWAT teams during 19 April; the search found nothing (card: 'A 20-BLOCK SEARCH · NOTHING').",
+   "sources": [
+    "salon_custody",
+    "nbc_owner",
+    "globe_2014"
+   ]
+  },
+  {
+   "id": "B_hour",
+   "type": "established",
+   "nature": "fact",
+   "text": "About an hour after the shelter-in-place order was lifted, the homeowner went out to his boat (NBC: 'About an hour after the order lifted'; CNN; UPI citing the Globe).",
+   "sources": [
+    "nbc_owner",
+    "cnn_owner",
+    "upi_globe",
+    "nbc_hayes"
+   ]
+  },
+  {
+   "id": "B_capture",
+   "type": "established",
+   "nature": "fact",
+   "text": "Dzhokhar Tsarnaev was found hiding inside the boat, wounded, and was taken into custody at about 8:45 p.m. on 19 April 2013 (Long Island Press: about 8:45 p.m.; Salon: cheers at 8:43; CBS: just before 9 p.m.) after a standoff of about an hour; police helicopters' thermal imaging confirmed someone inside. Nothing of the standoff is depicted.",
+   "sources": [
+    "lip_arrest",
+    "salon_custody",
+    "cbs_standoff",
+    "cbs_capture",
+    "fbi_case"
+   ]
+  },
+  {
+   "id": "B_note",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: a note he had written in pencil inside the boat was shown to jurors at his trial in March 2015; its content is not quoted.",
+   "sources": [
+    "npr_note",
+    "cbs_note",
+    "globe_note"
+   ]
+  },
+  {
+   "id": "B_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "A federal jury convicted Dzhokhar Tsarnaev on all 30 counts in April 2015; the jury returned a death verdict on 15 May 2015, and Judge George A. O'Toole Jr. formally imposed the death sentence (plus consecutive life terms) in June 2015.",
+   "sources": [
+    "wbur_2015",
+    "scripps_2015",
+    "aljazeera_2015",
+    "npr_verdict",
+    "doj_2015"
+   ]
+  },
+  {
+   "id": "B_appeals",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY: the First Circuit vacated the death sentence in July 2020; the Supreme Court reinstated it in March 2022; in March 2024 the First Circuit sent the case back to the trial judge to investigate alleged juror bias; in July-August 2025 a panel refused to remove the judge and the defence sought en banc rehearing. No later ruling found in extracts as of 2026-10-12: stated as 'sentenced to death; appeals continue'.",
+   "sources": [
+    "nbc_2020",
+    "nbc_2024",
+    "globe_2025",
+    "wbur_2025",
+    "globe_enbanc"
+   ]
+  },
+  {
+   "id": "B_victims",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD ONLY (memorial): Krystle Campbell (29), Lu Lingzi (23) and Martin Richard (8) were killed by the bombs; MIT police officer Sean Collier (26) was killed on 18 April 2013.",
+   "sources": [
+    "bpl_victims",
+    "upi_memorial",
+    "boston25_garden",
+    "cbs_collier_id",
+    "doj_2015"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fbi_case",
+   "publisher": "FBI (History: Famous Cases)",
+   "title": "Boston Marathon Bombing",
+   "url": "https://www.fbi.gov/history/cases-and-criminals/boston-marathon-bombing",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "doj_2015",
+   "publisher": "U.S. Department of Justice",
+   "title": "Dzhokhar Tsarnaev sentenced (press release, June 2015)",
+   "url": "https://www.justice.gov/ht/node/332621",
+   "date": "2015-06",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cbs_capture",
+   "publisher": "CBS News",
+   "title": "Boston Marathon Bombings Update: Dzhokhar Tsarnaev, second bombing suspect, captured alive in backyard boat",
+   "url": "https://www.cbsnews.com/news/boston-marathon-bombings-update-dzhokhar-tsarnaev-second-bombing-suspect-captured-alive-in-backyard-boat/",
+   "date": "2013-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cbs_standoff",
+   "publisher": "CBS News",
+   "title": "Boston Marathon bomb suspect in custody after standoff",
+   "url": "https://cbsnews.com/news/boston-marathon-bomb-suspect-in-custody-after-standoff",
+   "date": "2013-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "npr_hunt",
+   "publisher": "NPR (The Two-Way)",
+   "title": "'The Hunt Is Over:' Police Apprehend Marathon Bombing Suspect",
+   "url": "https://www.npr.org/sections/thetwo-way/2013/04/19/177885868/shots-explosions-heard-as-boston-manhunt-continues",
+   "date": "2013-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cnn_owner",
+   "publisher": "CNN",
+   "title": "Boat owner tells of discovering Boston bombing suspect",
+   "url": "https://edition.cnn.com/2013/04/23/us/boston-attacks-boat-owner",
+   "date": "2013-04-23",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "nbc_owner",
+   "publisher": "NBC News",
+   "title": "Boston Bombing Trial: Boat Owner Recalls Finding Dzhokhar Tsarnaev in Backyard",
+   "url": "https://www.nbcnews.com/news/amp/ncna324991",
+   "date": "2015-03",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "nbc_dies",
+   "publisher": "NBC Boston",
+   "title": "Man who found Boston Marathon bomber in his boat passes away",
+   "url": "https://www.nbcboston.com/news/local/man-who-found-boston-marathon-bomber-in-his-boat-passes-away/29091/",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "globe_2014",
+   "publisher": "The Boston Globe",
+   "title": "Patrick reflects on decision to shut down Boston for manhunt",
+   "url": "https://www.bostonglobe.com/metro/2014/04/19/patrick-reflects-decision-shut-down-boston-for-manhunt/HXbsrtnzSKxRDTIyMFWrMM/amp.html",
+   "date": "2014-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "nbc_hayes",
+   "publisher": "NBC News (MSNBC transcript)",
+   "title": "All In With Chris Hayes, Friday, April 19th, 2013",
+   "url": "https://www.nbcnews.com/news/amp/wbna51619643",
+   "date": "2013-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "salon_custody",
+   "publisher": "Salon (AP / live blog)",
+   "title": "Dzhokhar Tsarnaev in custody and alive",
+   "url": "https://salon.com/2013/04/20/dzhokhar_tsarnaev_in_custody_and_alive",
+   "date": "2013-04-20",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "lip_arrest",
+   "publisher": "Long Island Press",
+   "title": "Boston Marathon bombing suspect Dzhokhar Tsarnaev arrested",
+   "url": "https://longislandpress.com/2013/04/19/boston-marathon-bombing-suspect-dzhokhar-tsarnaev-arrested",
+   "date": "2013-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "upi_globe",
+   "publisher": "UPI (citing The Boston Globe)",
+   "title": "Boston Marathon bomber: alleged suspect vehicle found",
+   "url": "https://www.upi.com/Top_News/US/2013/04/19/Boston-Marathon-bomber-Alleged-suspect-vehicle-found/UPI-65251366351810/",
+   "date": "2013-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "abc7_photos",
+   "publisher": "ABC7 Chicago (AP)",
+   "title": "Boston Marathon bombings suspects photos released by FBI",
+   "url": "https://abc7chicago.com/archive/9070923",
+   "date": "2013-04-18",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "salon_photos",
+   "publisher": "Salon (AP)",
+   "title": "FBI releases images of 2 bombing suspects",
+   "url": "https://salon.com/2013/04/18/fbi_releases_images_of_2_bombing_suspects_ap",
+   "date": "2013-04-18",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "time_photos",
+   "publisher": "Time (Swampland)",
+   "title": "FBI Releases Photos of Boston Bombing Suspects",
+   "url": "https://swampland.time.com/?p=93377",
+   "date": "2013-04-18",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "nbc_collier",
+   "publisher": "NBC News",
+   "title": "Officials: 'Dedicated' officer gunned down by Boston Marathon suspects at MIT",
+   "url": "https://www.nbcnews.com/news/us-news/officials-dedicated-officer-gunned-down-boston-marathon-suspects-mit-flna1B9520106",
+   "date": "2013-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cbs_collier",
+   "publisher": "CBS News",
+   "title": "Officers shot, one fatally, in Boston bombing manhunt were friends",
+   "url": "https://cbsnews.com/news/officers-shot-one-fatally-in-boston-bombing-manhunt-were-friends",
+   "date": "2013-04",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cbs_collier_id",
+   "publisher": "CBS Boston",
+   "title": "Slain MIT police officer identified as 26-year-old from Somerville",
+   "url": "https://www.cbsnews.com/boston/news/slain-mit-police-officer-identified-as-26-year-old-from-somerville/",
+   "date": "2013-04-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "aljazeera_2015",
+   "publisher": "Al Jazeera",
+   "title": "US court sentences Boston bomber Tsarnaev to death",
+   "url": "https://www.aljazeera.com/amp/news/2015/5/16/us-court-sentences-boston-bomber-tsarnaev-to-death",
+   "date": "2015-05-16",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "wbur_2015",
+   "publisher": "WBUR",
+   "title": "Tsarnaev sentenced to death",
+   "url": "https://www.wbur.org/news/2015/05/16/tsarnaev-sentenced-to-death",
+   "date": "2015-05-16",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "scripps_2015",
+   "publisher": "Scripps News",
+   "title": "Jury gives Dzhokhar Tsarnaev death penalty",
+   "url": "https://www.scrippsnews.com/us-news/jury-gives-dzhokhar-tsarnaev-death-penalty",
+   "date": "2015-05",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "npr_verdict",
+   "publisher": "NPR (transcript)",
+   "title": "Tsarnaev guilty on all 30 counts (April 2015)",
+   "url": "https://www.npr.org/transcripts/407071595",
+   "date": "2015-04",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "npr_note",
+   "publisher": "NPR (The Two-Way)",
+   "title": "Reports: Note Found In Boat Where Boston Suspect Hid",
+   "url": "https://www.npr.org/sections/thetwo-way/2013/05/16/184455202/reports-note-found-in-boat-where-boston-suspect-hid",
+   "date": "2013-05-16",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cbs_note",
+   "publisher": "CBS Boston",
+   "title": "Jurors see note left by Tsarnaev in Watertown boat",
+   "url": "https://cbsnews.com/boston/news/jurors-see-note-left-by-tsarnaev-in-watertown-boat",
+   "date": "2015-03-10",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "globe_note",
+   "publisher": "The Boston Globe",
+   "title": "Tsarnaev's own words from inside boat shown in court",
+   "url": "https://www.bostonglobe.com/metro/2015/03/10/fbi-agent-expected-continue-twitter-testimony-marathon-bombing-trial/nLnZIzfc1qmkGuyLdV7tSO/story.html",
+   "date": "2015-03-10",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "nbc_2020",
+   "publisher": "NBC News",
+   "title": "Federal court overturns death sentence of Dzhokhar Tsarnaev, Boston Marathon bomber",
+   "url": "https://www.nbcnews.com/news/us-news/federal-court-overturns-death-sentence-dzhokhar-tsarnaev-boston-marathon-bomber-n1235528",
+   "date": "2020-07-31",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "nbc_2024",
+   "publisher": "NBC News",
+   "title": "Judge ordered to probe claims of juror bias in Boston Marathon bomber's case",
+   "url": "https://www.nbcnews.com/news/us-news/judge-ordered-probe-claims-juror-bias-boston-marathon-bombers-case-rcna144586",
+   "date": "2024-03",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "globe_2025",
+   "publisher": "The Boston Globe",
+   "title": "Boston Marathon bombing: where the case stands in 2025",
+   "url": "https://www.bostonglobe.com/2025/04/20/metro/boston-marathon-bomber-dzhokhar-tsarnaev-status",
+   "date": "2025-04-20",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "wbur_2025",
+   "publisher": "WBUR",
+   "title": "Federal court denies appeal by Boston bomber for new judge in death sentence case",
+   "url": "https://www.wbur.org/news/2025/08/01/federal-court-denies-appeal-boston-bombers-new-judge-death-sentence",
+   "date": "2025-08-01",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "globe_enbanc",
+   "publisher": "The Boston Globe",
+   "title": "Dzhokhar Tsarnaev's lawyers seek en banc rehearing to remove judge",
+   "url": "https://www.bostonglobe.com/2025/08/14/metro/marathon-bomber-rehearing-remove-judge",
+   "date": "2025-08-14",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "bpl_victims",
+   "publisher": "Boston Public Library (research guide)",
+   "title": "Boston Marathon 2013",
+   "url": "https://guides.bpl.org/bostonmarathon/2013",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "upi_memorial",
+   "publisher": "UPI",
+   "title": "Memorial completed for three killed in Boston Marathon bombing",
+   "url": "https://www.upi.com/Top_News/US/2019/08/19/Memorial-completed-for-three-killed-in-Boston-Marathon-bombing/4721566259183/",
+   "date": "2019-08-19",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "boston25_garden",
+   "publisher": "Boston 25 News",
+   "title": "Krystle Campbell Peace Garden dedicated in Medford",
+   "url": "https://www.boston25news.com/news/krystle-campbell-peace-garden-dedicated-in-medford/450243754",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A BACKYARD BOAT"
+   },
+   {
+    "text": "ENDED THE MARATHON MANHUNT",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WOULD YOU HAVE LOOKED INSIDE?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

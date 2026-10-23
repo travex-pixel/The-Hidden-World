@@ -1,0 +1,1352 @@
+{
+ "id": "tcv04-louvre-heist",
+ "number": 4,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "They Stole France's Crown Jewels in About Seven Minutes",
+ "central_question": "How did thieves take the French crown jewels from the Louvre in minutes, and where are they now?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "Eugénie's": "Yoozhaynee's",
+   "des": "day",
+   "Cars": "Car",
+   "$200,000": "two hundred thousand dollars",
+   "CCTV": "C C T V"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "04",
+  "label": "THE LOUVRE HEIST · 2025-2026"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "hits": [
+   {
+    "scene": "s04_haul",
+    "word": [
+     1,
+     2
+    ],
+    "at": -0.05,
+    "gain": 0.45
+   },
+   {
+    "scene": "s08_password",
+    "word": [
+     1,
+     10
+    ],
+    "at": -0.05,
+    "gain": 0.4
+   }
+  ],
+  "cliff": {
+   "scene": "s14_missing",
+   "word": [
+    1,
+    3
+   ],
+   "at": -0.05
+  }
+ },
+ "figures": [
+  "lv4_crew_a",
+  "lv4_crew_b",
+  "lv4_crew_c",
+  "lv4_crew_d",
+  "lv4_visitor",
+  "detective",
+  "agent_b",
+  "official",
+  "analyst",
+  "examiner",
+  "searcher_b",
+  "press_operator"
+ ],
+ "content_notes": "Ongoing case: several people have been charged in France; none has been tried; all are presumed innocent, and every allegation is attributed. No real person is depicted: everyone on screen is an anonymous silhouette, including the museum's former director. The museum facade, gallery, street, crown and jewels are generic illustrations, not replicas; no real photograph, CCTV still, police, court or museum document, logo or floor plan is imitated. Tools appear only as cutting a glass case; no weapon, violence or injury is shown. The 2014 password is attributed to the audit as reported by Liberation, and the script says its 2025 use is unconfirmed. Legal status verified 2026-10-11.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "lv4_hook",
+   "min_duration": 4.0,
+   "pad_after": 0.1,
+   "music_cue": "drive",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": 0.7
+    },
+    {
+     "at": 0.05,
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "tick",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      5
+     ],
+     "name": "rumble",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "L_minutes",
+    "L_haul",
+    "L_lift"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Thieves stole France's crown jewels from the Louvre in about seven minutes."
+    },
+    {
+     "who": "narrator",
+     "text": "Their way in? A furniture lift on a truck.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "crown",
+    "seven",
+    "lift"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_balcony",
+   "scene": "lv4_balcony",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "drive",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "buzz",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      13
+     ],
+     "name": "glitch",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "L_date",
+    "L_entry"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In broad daylight, two of them rode it up and cut open a window."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "daylight,",
+    "window."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_cases",
+   "scene": "lv4_cases",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "buzz",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      10
+     ],
+     "name": "glitch",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "L_entry"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside the Apollo Gallery, they took disc cutters to two display cases."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "disc",
+    "cutters"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_haul",
+   "scene": "lv4_haul",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "coins",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "L_haul"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They took eight pieces of the crown jewels,"
+    },
+    {
+     "who": "narrator",
+     "text": "worth about 88 million euros.",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "eight",
+    "88",
+    "million"
+   ],
+   "section": "B",
+   "music_drop": true
+  },
+  {
+   "id": "s05_drop",
+   "scene": "lv4_drop",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.6
+    },
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      6
+     ],
+     "name": "ping",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "L_crown"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then it got stranger. Fleeing, they dropped Empress Eugénie's crown."
+    },
+    {
+     "who": "narrator",
+     "text": "It was found, badly damaged.",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "stranger.",
+    "crown."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_ff_crown",
+   "scene": "lv4_ff_crown",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.9
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "chime",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "L_ff_crown"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Fun fact: that crown has 1,354 diamonds."
+    },
+    {
+     "who": "narrator",
+     "text": "It lost only ten.",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "1,354",
+    "ten."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s07_escape",
+   "scene": "lv4_escape",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "tick",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "tick",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "L_escape30"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They escaped on scooters, with about 30 seconds to spare, one inquiry found."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "scooters,",
+    "30",
+    "seconds"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s10_charged",
+   "scene": "lv4_charged",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "paper",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "paper",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "L_charged"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Ten days later, two men were charged. More followed."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "charged."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s11_untried",
+   "scene": "lv4_untried",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "L_untried"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But none has been tried. All are presumed innocent."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "none",
+    "presumed",
+    "innocent."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s08_password",
+   "scene": "lv4_password",
+   "min_duration": 2.0,
+   "pad_after": 0.15,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "typing",
+     "gain": 0.35
+    },
+    {
+     "at": -0.15,
+     "word": [
+      1,
+      10
+     ],
+     "name": "glitch",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      10
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "L_password"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then it got embarrassing."
+    },
+    {
+     "who": "narrator",
+     "text": "A 2014 audit reportedly found the museum's CCTV password was... LOUVRE.",
+     "pause_before": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "Still in use in 2025? Unconfirmed.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "reportedly",
+    "louvre.",
+    "unconfirmed."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s09_ff_mona",
+   "scene": "lv4_ff_mona",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.9
+    },
+    {
+     "at": -0.2,
+     "word": [
+      0,
+      4
+     ],
+     "name": "swell",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "L_ff_mona"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Fun fact: the Mona Lisa was stolen from the Louvre too, in 1911."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "mona",
+    "lisa",
+    "1911."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s12_resign",
+   "scene": "lv4_resign",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "door",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "L_resign"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In February, the director, Laurence des Cars, resigned."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "resigned."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s13_reopen",
+   "scene": "lv4_reopen",
+   "min_duration": 2.0,
+   "pad_after": 0.1,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.75,
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.2,
+     "word": [
+      0,
+      6
+     ],
+     "name": "swell",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "L_reopen"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In July, the gallery reopened, with no jewels on display."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no",
+    "jewels"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s14_missing",
+   "scene": "lv4_missing",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "wind",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.6
+    }
+   ],
+   "claims": [
+    "L_missing",
+    "L_untried"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Almost a year on, the seven other pieces are still missing."
+    },
+    {
+     "who": "narrator",
+     "text": "So where are they?",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "seven",
+    "missing.",
+    "where"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s15_next",
+   "scene": "lv4_next",
+   "min_duration": 3.0,
+   "pad_after": 1.55,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": 0.4,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.2,
+     "word": [
+      0,
+      6
+     ],
+     "name": "swell",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "L_next"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next: a man hijacked a plane, jumped out with $200,000, and was never found.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$200,000,",
+    "never",
+    "found."
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "L_date",
+   "type": "established",
+   "nature": "fact",
+   "text": "The theft took place on the morning of Sunday 19 October 2025 (about 9:30 a.m.), in broad daylight, at the Louvre's Apollo Gallery (Galerie d'Apollon), Paris.",
+   "sources": [
+    "aj_1019",
+    "globe_timeline",
+    "euronews_reopen"
+   ]
+  },
+  {
+   "id": "L_lift",
+   "type": "established",
+   "nature": "fact",
+   "text": "The thieves reached the gallery with a truck-mounted furniture (basket) lift. The Paris prosecutor said the lift truck was obtained on 10 Oct 2025 under a false pretext.",
+   "sources": [
+    "npr_1101",
+    "globe_timeline",
+    "euronews_reopen"
+   ]
+  },
+  {
+   "id": "L_minutes",
+   "type": "established",
+   "nature": "fact (approximate)",
+   "text": "The raid lasted minutes: 'about seven by most accounts'. Reported figures vary (under four minutes inside per the culture minister; six to seven, under seven or under eight minutes in other reports). The script never says 'exactly'.",
+   "sources": [
+    "yahoo_7min",
+    "aol_timeline",
+    "pbs_4min",
+    "globe_timeline"
+   ]
+  },
+  {
+   "id": "L_entry",
+   "type": "established",
+   "nature": "fact",
+   "text": "Per the AP timeline and the prosecutor: two people went up to a balcony and opened a window with a disc cutter; inside the Apollo Gallery they used disc cutters on two display cases; two others waited on two scooters.",
+   "sources": [
+    "globe_timeline",
+    "yahoo_ap_timeline",
+    "fox_commando"
+   ]
+  },
+  {
+   "id": "L_haul",
+   "type": "established",
+   "nature": "fact",
+   "text": "Eight items of the French crown jewels were taken, valued at about EUR 88 million (about $102 million), the official estimate.",
+   "sources": [
+    "npr_1101",
+    "aj_1019",
+    "euronews_reopen",
+    "pbs_crown"
+   ]
+  },
+  {
+   "id": "L_crown",
+   "type": "established",
+   "nature": "fact",
+   "text": "Empress Eugenie's crown was dropped during the escape and recovered, badly damaged ('badly deformed' but 'nearly intact', per the Louvre).",
+   "sources": [
+    "pbs_crown",
+    "f24_crown",
+    "gulf_crown"
+   ]
+  },
+  {
+   "id": "L_ff_crown",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT. Empress Eugenie's crown has 1,354 diamonds and 56 emeralds; after the heist it kept all its emeralds and all but 10 of its diamonds, and the Louvre says it can be restored without reconstruction.",
+   "sources": [
+    "pbs_crown",
+    "gulf_crown",
+    "es_crown"
+   ]
+  },
+  {
+   "id": "L_escape30",
+   "type": "established",
+   "nature": "fact",
+   "text": "The thieves escaped on scooters. Official inquiry findings reported in Dec 2025 say they got away about 30 seconds before police and guards arrived ('would have been foiled if police had been alerted 30 seconds earlier').",
+   "sources": [
+    "abc_30s",
+    "smithsonian_30s",
+    "asis_30s",
+    "globe_timeline"
+   ]
+  },
+  {
+   "id": "L_password",
+   "type": "established",
+   "nature": "reported (attributed; dated to the 2014 audit)",
+   "text": "As reported by Liberation and relayed by CNN (6 Nov 2025) and others, a 2014 audit by France's cybersecurity agency (ANSSI) found the password for the server running the Louvre's CCTV network was 'LOUVRE'. ANSSI said the audit cannot be considered representative of current security. Whether it was still in use in Oct 2025 has not been confirmed.",
+   "sources": [
+    "cnn_password",
+    "lbc_password",
+    "techradar_password",
+    "toms_password"
+   ]
+  },
+  {
+   "id": "L_ff_mona",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT. The Mona Lisa was stolen from the Louvre on 21 Aug 1911 (discovered 22 Aug) and recovered in Florence in Dec 1913, more than two years later.",
+   "sources": [
+    "history_mona",
+    "britannica_mona",
+    "npr_history"
+   ]
+  },
+  {
+   "id": "L_charged",
+   "type": "established",
+   "nature": "procedure",
+   "text": "On 29 Oct 2025, ten days after the theft, two men (34 and 39) were charged with organised theft and criminal conspiracy; further people were charged on 1 Nov and 28 Nov 2025. Charges are allegations.",
+   "sources": [
+    "aj_1029",
+    "abc7_1029",
+    "abc7_1101",
+    "f24_fourth"
+   ]
+  },
+  {
+   "id": "L_untried",
+   "type": "established",
+   "nature": "procedure",
+   "text": "Several people have been charged (counts differ by outlet); none has been tried or convicted, and all are presumed innocent. No trial date was found in any report up to 2026-10-11.",
+   "sources": [
+    "f24_jan",
+    "abc_jul",
+    "artnet_belgium"
+   ]
+  },
+  {
+   "id": "L_resign",
+   "type": "established",
+   "nature": "fact",
+   "text": "Louvre president-director Laurence des Cars resigned on 24 Feb 2026, citing the heist among other problems.",
+   "sources": [
+    "cnn_resign",
+    "npr_resign",
+    "tan_resign"
+   ]
+  },
+  {
+   "id": "L_reopen",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Apollo Gallery reopened on 22 Jul 2026 with no jewels on display.",
+   "sources": [
+    "ap_reopen",
+    "euronews_reopen",
+    "gulf_reopen"
+   ]
+  },
+  {
+   "id": "L_missing",
+   "type": "established",
+   "nature": "fact",
+   "text": "Apart from Eugenie's crown, the seven other items had not been recovered in any report found up to 2026-10-11 (latest dated reports: June-July 2026).",
+   "sources": [
+    "ap_reopen",
+    "artnet_belgium",
+    "euronews_belgium",
+    "abc_jul"
+   ]
+  },
+  {
+   "id": "L_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "NEXT-CASE TEASE. On 24 Nov 1971 a man calling himself Dan Cooper hijacked a Northwest Orient flight, received $200,000 in ransom, jumped from the plane and was never found or identified.",
+   "sources": [
+    "fbi_cooper",
+    "npr_cooper",
+    "cnn_cooper"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "aj_1019",
+   "publisher": "Al Jazeera",
+   "title": "Priceless jewels stolen from France's Louvre museum in four-minute heist",
+   "url": "https://www.aljazeera.com/amp/news/2025/10/19/priceless-jewels-stolen-from-frances-louvre-museum-in-four-minute-heist",
+   "date": "2025-10-19",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pbs_4min",
+   "publisher": "PBS NewsHour (AP)",
+   "title": "Crown jewels stolen from Louvre in '4-minute operation' by thieves in broad daylight",
+   "url": "https://www.pbs.org/newshour/world/crown-jewels-stolen-from-louvre-in-4-minute-operation-by-thieves-in-broad-daylight",
+   "date": "2025-10-19",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "globe_timeline",
+   "publisher": "The Boston Globe (AP)",
+   "title": "A timeline of the jewel heist at the Louvre",
+   "url": "https://www.bostonglobe.com/2025/10/22/world/louvre-heist-timeline/",
+   "date": "2025-10-22",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yahoo_ap_timeline",
+   "publisher": "Yahoo News (AP)",
+   "title": "A timeline of the jewel heist at the Louvre in Paris",
+   "url": "https://www.yahoo.com/news/articles/timeline-jewel-heist-louvre-paris-152635303.html",
+   "date": "2025-10 (date not shown in extract)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox_commando",
+   "publisher": "FOX 11 Los Angeles (FOX TV Stations)",
+   "title": "Louvre heist: What's known about 'commando' team suspects",
+   "url": "https://www.foxla.com/news/louvre-heist-suspects-mugshots-arrests-commando-team",
+   "date": "2025-10/11 (date not shown in extract)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yahoo_7min",
+   "publisher": "Yahoo News",
+   "title": "Louvre robbery: how thieves pulled off daring daytime heist in 7 minutes",
+   "url": "https://www.yahoo.com/news/world/article/louvre-robbery-how-thieves-pulled-off-daring-daytime-heist-in-7-minutes-stealing-french-crown-jewels-worth-102-million-163641467.html",
+   "date": "2025-10 (date not shown in extract)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aol_timeline",
+   "publisher": "AOL",
+   "title": "Louvre heist timeline: how thieves stole the jewels",
+   "url": "https://www.aol.com/news/louvre-heist-timeline-thieves-stole-161619631.html",
+   "date": "2025-10 (date not shown in extract)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_1101",
+   "publisher": "NPR",
+   "title": "Suspects charged in Louvre jewel heist in Paris",
+   "url": "https://www.npr.org/2025/11/01/nx-s1-5594194/suspects-charged-louvre-jewel-heist-paris",
+   "date": "2025-11-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "euronews_reopen",
+   "publisher": "Euronews",
+   "title": "Louvre's Apollo Gallery reopens after crown jewels theft scandal",
+   "url": "https://www.euronews.com/2026/07/22/louvres-apollo-gallery-reopens-after-crown-jewels-theft-scandal",
+   "date": "2026-07-22",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_reopen",
+   "publisher": "AP (via Courthouse News Service)",
+   "title": "Louvre reopens Apollo Gallery after a brazen heist but no jewels are on display",
+   "url": "https://courthousenews.com/louvre-reopens-apollo-gallery-after-a-brazen-heist-but-no-jewels-are-on-display/",
+   "date": "2026-07-22",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "gulf_reopen",
+   "publisher": "Gulf News",
+   "title": "The Louvre Museum's Apollo Gallery reopens to public following October 2025 burglary",
+   "url": "https://gulfnews.com/amp/story/world%2Fthe-louvre-museums-apollo-gallery-reopens-to-public-following-october-2025-burglary-1.500616644",
+   "date": "2026-07-22",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "pbs_crown",
+   "publisher": "PBS NewsHour (AP)",
+   "title": "Louvre promises to restore imperial crown dropped by thieves during museum heist",
+   "url": "https://www.pbs.org/newshour/world/louvre-promises-to-restore-imperial-crown-dropped-by-thieves-during-museum-heist",
+   "date": "2026-02",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "gulf_crown",
+   "publisher": "Gulf News",
+   "title": "Crushed but not lost: Imperial crown damaged in Louvre heist set for full restoration",
+   "url": "https://gulfnews.com/world/europe/crushed-but-not-lost-imperial-crown-damaged-in-louvre-heist-set-for-full-restoration-1.500434343",
+   "date": "2026-02",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "es_crown",
+   "publisher": "Express & Star (PA Media)",
+   "title": "Crown damaged in Louvre heist to be restored in 'renaissance'",
+   "url": "https://www.expressandstar.com/world-news/2025/11/07/crown-damaged-in-louvre-heist-to-be-restored-in-renaissance",
+   "date": "2025-11-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "f24_crown",
+   "publisher": "France 24",
+   "title": "Empress's crown dropped by Louvre heist thieves to be fully restored",
+   "url": "https://www.france24.com/en/france/20260205-empress-crown-dropped-louvre-heist-thieves-fully-restored",
+   "date": "2026-02-05",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc_30s",
+   "publisher": "ABC News",
+   "title": "Louvre robbery would have been foiled if police had been alerted 30 seconds earlier: Report",
+   "url": "https://abcnews.com/International/french-watchdog-details-uncertainty-louvre-security-cameras-heist/story?id=128277660",
+   "date": "2025-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "smithsonian_30s",
+   "publisher": "Smithsonian Magazine",
+   "title": "Louvre Robbers Escaped With Less Than a Minute to Spare Due to Major Security Fumbles",
+   "url": "https://www.smithsonianmag.com/smart-news/louvre-robbers-escaped-with-less-than-a-minute-to-spare-due-to-major-security-fumbles-180987870/",
+   "date": "2025-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "asis_30s",
+   "publisher": "ASIS Security Management",
+   "title": "Avoidable Security Failures Enabled Louvre Heist",
+   "url": "https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2025/december/Avoidable-Security-Failures-Enabled-Louvre-Heist/",
+   "date": "2025-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_password",
+   "publisher": "CNN",
+   "title": "You'll never guess the Louvre's onetime CCTV password. (You absolutely will)",
+   "url": "https://www.cnn.com/2025/11/06/europe/louvre-password-cctv-security-intl",
+   "date": "2025-11-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "lbc_password",
+   "publisher": "LBC",
+   "title": "Louvre's video surveillance password? 'LOUVRE' - post-heist report reveals security blunder",
+   "url": "https://www.lbc.co.uk/article/louvres-video-surveillance-password-security-5HjdGRf_2/",
+   "date": "2025-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "techradar_password",
+   "publisher": "TechRadar",
+   "title": "Report claims password for the Louvre's video surveillance system was 'LOUVRE'",
+   "url": "https://www.techradar.com/pro/security/no-wonder-it-got-hit-report-claims-password-for-the-louvres-video-surveillance-system-was-louvre",
+   "date": "2025-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "toms_password",
+   "publisher": "Tom's Hardware",
+   "title": "Louvre heist reveals glaring security weaknesses: previous reports say museum used 'Louvre' as password for its video surveillance",
+   "url": "https://www.tomshardware.com/tech-industry/cyber-security/louvre-heist-reveals-glaring-security-weaknesses-previous-reports-say-museum-used-louvre-as-password-for-its-video-surveillance-still-has-workstations-with-windows-2000",
+   "date": "2025-11",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_mona",
+   "publisher": "History.com",
+   "title": "Theft of 'Mona Lisa' is discovered (This Day in History, Aug 22)",
+   "url": "https://www.history.com/this-day-in-history/august-22/theft-of-mona-lisa-is-discovered",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "britannica_mona",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "Today in History, August 21: The Mona Lisa theft",
+   "url": "https://www.britannica.com/today-in-history/August-21-The-Mona-Lisa-Theft",
+   "date": "n.d.",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_history",
+   "publisher": "NPR",
+   "title": "This isn't the Louvre's first high-profile heist. Here's a history of earlier thefts",
+   "url": "https://www.npr.org/2025/10/20/nx-s1-5580221/louvre-museum-robbery-history",
+   "date": "2025-10-20",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aj_1029",
+   "publisher": "Al Jazeera",
+   "title": "Two suspects in Louvre heist partially admit involvement: Paris prosecutor",
+   "url": "https://www.aljazeera.com/news/2025/10/29/two-suspects-in-louvre-heist-partially-admit-involvement-paris-prosecutor",
+   "date": "2025-10-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc7_1029",
+   "publisher": "ABC7 (AP)",
+   "title": "Louvre heist suspects to be charged, jewels not recovered: Paris prosecutor",
+   "url": "https://abc7news.com/post/louvre-heist-suspects-charged-jewels-not-recovered-paris-prosecutor/18086590/",
+   "date": "2025-10-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc7_1101",
+   "publisher": "ABC7 (AP)",
+   "title": "Two new suspects handed preliminary charges in Louvre jewels heist case, Paris prosecutor says",
+   "url": "https://abc7news.com/post/louvre-jewels-heist-new-suspects-handed-preliminary-charges-paris-prosecutor-laure-beccuau-says/18100044/",
+   "date": "2025-11-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "f24_fourth",
+   "publisher": "France 24",
+   "title": "French prosecutors charge fourth suspected member of Louvre jewel heist gang",
+   "url": "https://www.france24.com/en/france/20251128-french-prosecutors-charge-fourth-suspected-member-louvre-jewel-heist-gang",
+   "date": "2025-11-28",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "f24_jan",
+   "publisher": "France 24 (AFP)",
+   "title": "Louvre heist probe: what we know",
+   "url": "https://www.france24.com/en/live-news/20260119-louvre-heist-probe-what-we-know",
+   "date": "2026-01-19",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "abc_jul",
+   "publisher": "ABC News",
+   "title": "Louvre gallery reopens to public after brazen heist",
+   "url": "https://abcnews.com/International/louvre-gallery-reopens-public-after-brazen-heist-year/story?id=134979910",
+   "date": "2026-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "artnet_belgium",
+   "publisher": "Artnet News",
+   "title": "Louvre Heist Investigation Reaches Belgium",
+   "url": "https://news.artnet.com/art-world/louvre-heist-investigation-belgium-suspects-2778384",
+   "date": "2026-06",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "euronews_belgium",
+   "publisher": "Euronews",
+   "title": "Louvre theft: Belgian lead revives investigation",
+   "url": "https://www.euronews.com/culture/2026/06/02/louvre-theft-belgian-lead-revives-investigation",
+   "date": "2026-06-02",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bluewin_6m",
+   "publisher": "blue News (Switzerland)",
+   "title": "Six months after the robbery: where are the Louvre jewels?",
+   "url": "https://www.bluewin.ch/en/news/international/six-months-after-the-robbery-where-are-the-louvre-jewels-3196140.html",
+   "date": "2026-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_resign",
+   "publisher": "CNN",
+   "title": "Louvre museum chief resigns months after jewel theft",
+   "url": "https://www.cnn.com/2026/02/24/europe/louvre-museum-chief-resignation-jewel-theft-intl",
+   "date": "2026-02-24",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_resign",
+   "publisher": "NPR",
+   "title": "Louvre museum director resigns after jewel heist",
+   "url": "https://www.npr.org/2026/02/24/g-s1-111343/france-paris-louvre-museum-heist-director-resigns",
+   "date": "2026-02-24",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "tan_resign",
+   "publisher": "The Art Newspaper",
+   "title": "Louvre director Laurence des Cars resigns amid heist, strikes and ticket scandal",
+   "url": "https://www.theartnewspaper.com/2026/02/24/louvre-director-laurence-des-cars-resigns-heist-strikes-ticket-scandal",
+   "date": "2026-02-24",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_cooper",
+   "publisher": "FBI",
+   "title": "D.B. Cooper Hijacking (Famous Cases and Criminals)",
+   "url": "https://www.fbi.gov/history/famous-cases/db-cooper-hijacking",
+   "date": "n.d. (2016 update)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_cooper",
+   "publisher": "NPR",
+   "title": "FBI is giving up on solving the mystery of D.B. Cooper",
+   "url": "https://www.npr.org/sections/thetwo-way/2016/07/13/485839902/fbi-is-giving-up-on-solving-the-mystery-of-d-b-cooper",
+   "date": "2016-07-13",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_cooper",
+   "publisher": "CNN",
+   "title": "D.B. Cooper: FBI closes case",
+   "url": "https://www.cnn.com/2016/07/12/world/d-b-cooper-fbi-closes-case",
+   "date": "2016-07-12",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "legal_status_verified": "2026-10-11"
+}

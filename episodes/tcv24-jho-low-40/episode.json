@@ -1,0 +1,947 @@
+{
+ "id": "tcv24-jho-low-40",
+ "number": 24,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Billions Vanished From a State Fund. Then Came the Parties, the Jets and a Superyacht",
+ "central_question": "Where did the 1MDB money go, according to US prosecutors?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "US": "U S",
+   "$4.5": "four point five",
+   "billion": "billion dollars",
+   "1MDB": "one M D B",
+   "Jho": "Joe",
+   "$700": "seven hundred",
+   "million": "million dollars",
+   "Gogh": "Go"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "24",
+  "label": "1MDB · 2009-2026"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s08_outcome",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "jl24_low",
+  "jl24_guest",
+  "jl24_police",
+  "lt14_guest",
+  "gb7_suit",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "official",
+  "judge",
+  "barrister"
+ ],
+ "content_notes": "Low Taek Jho has NOT been tried or convicted, is a fugitive whose whereabouts are not officially confirmed, and denies wrongdoing: every allegation is attributed (US prosecutors / the US Justice Department), the settlement is stated with 'admitting no guilt', and his denial is narrated and shown on a card. He appears only as an anonymous rim-lit silhouette (not a likeness), never handling money, never in a dock or cell. No celebrity is named or depicted; party guests are anonymous silhouettes. The film is named only as attributed to the Justice Department (and the Red Granite settlement). Najib Razak, Roger Ng and Tim Leissner appear only as typed names on a card, never drawn. The yacht, jet, mansion and harbour are generic drawings: no names, flags, logos, liveries or registration numbers; police uniforms carry no insignia. No real document, court material, banknote or photograph is imitated. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "jl24_hook",
+   "min_duration": 6.0,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "J_hook",
+    "J_yacht"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "US prosecutors say over $4.5 billion was siphoned from a Malaysian state fund."
+    },
+    {
+     "who": "narrator",
+     "text": "And some of it, they say, bought a superyacht.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$4.5",
+    "billion",
+    "siphoned",
+    "state",
+    "fund.",
+    "superyacht."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_fund",
+   "scene": "jl24_fund",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "J_fund",
+    "J_low"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The fund was 1MDB. Prosecutors put financier Jho Low at its centre."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "1MDB.",
+    "Jho",
+    "Low"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_jet",
+   "scene": "jl24_jet",
+   "min_duration": 2.8,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "J_jet"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They say the money paid for a private jet,"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "private",
+    "jet,"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_party",
+   "scene": "jl24_party",
+   "min_duration": 3.2,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "swell",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sparkle",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "J_party",
+    "J_assets"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "lavish parties, mansions, diamonds and a Van Gogh."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "lavish",
+    "parties,",
+    "diamonds",
+    "Gogh."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_film",
+   "scene": "jl24_film",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "ping",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "J_film",
+    "J_redgranite"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Even The Wolf of Wall Street, the Justice Department says."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "Wolf",
+    "Wall",
+    "Street,"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_seize",
+   "scene": "jl24_seize",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      1
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.55
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "stamp",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "J_seize",
+    "J_sold"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2018, at US request, Indonesia seized the superyacht in Bali."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "seized",
+    "superyacht",
+    "Bali."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s07_settle",
+   "scene": "jl24_settle",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      11
+     ],
+     "name": "paper",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "J_settle"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 2019 Low gave up over $700 million in assets, admitting no guilt."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$700",
+    "million",
+    "no",
+    "guilt."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_outcome",
+   "scene": "jl24_outcome",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "J_najib",
+    "J_bankers",
+    "J_status"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Others were convicted, including a former prime minister."
+    },
+    {
+     "who": "narrator",
+     "text": "Low has never been tried, and he denies wrongdoing.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convicted,",
+    "prime",
+    "minister.",
+    "never",
+    "denies"
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "jl24_end",
+   "min_duration": 3.6,
+   "pad_after": 1.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "J_hook",
+    "J_yacht",
+    "J_sold"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Billions, prosecutors say. And one superyacht."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "Billions,",
+    "superyacht."
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "J_hook",
+   "type": "established",
+   "nature": "allegation",
+   "text": "The US Justice Department said high-level 1MDB officials and associates, including Low Taek Jho, siphoned more than $4.5 billion from Malaysia's state fund 1MDB (2009-2015). Attributed on screen and in narration to US prosecutors.",
+   "sources": [
+    "aljazeera_2019",
+    "npr_2019",
+    "doj_2019",
+    "fmt_2026"
+   ]
+  },
+  {
+   "id": "J_yacht",
+   "type": "established",
+   "nature": "allegation",
+   "text": "US prosecutors alleged that the superyacht Equanimity (about $250 million, per DOJ officials in 2017) was bought with money misappropriated from 1MDB. The yacht on screen is a generic drawing, not a replica.",
+   "sources": [
+    "benar_2018",
+    "fmt_2018",
+    "dockwalk_2018"
+   ]
+  },
+  {
+   "id": "J_fund",
+   "type": "established",
+   "nature": "fact",
+   "text": "1MDB (1Malaysia Development Berhad) is a Malaysian state fund; the DOJ describes it as a sovereign wealth fund.",
+   "sources": [
+    "doj_2016",
+    "aljazeera_2019",
+    "cnn_najib"
+   ]
+  },
+  {
+   "id": "J_low",
+   "type": "established",
+   "nature": "allegation",
+   "text": "US prosecutors place financier Low Taek Jho ('Jho Low') at the centre of the alleged scheme: he faces criminal charges in the US and Malaysia, is described as wanted for a leading role, and denies wrongdoing.",
+   "sources": [
+    "aljazeera_pras",
+    "fmt_2026",
+    "doj_2019",
+    "fortune_2022"
+   ]
+  },
+  {
+   "id": "J_jet",
+   "type": "established",
+   "nature": "allegation",
+   "text": "The DOJ alleged Low bought a Bombardier Global 5000 private jet for $35.4 million (2010) with misappropriated 1MDB funds; its 2016 actions sought 17 assets including a jet. The jet on screen is generic (no make, livery or registration).",
+   "sources": [
+    "arabnews_jet",
+    "malaysiakini_2016"
+   ]
+  },
+  {
+   "id": "J_party",
+   "type": "established",
+   "nature": "allegation",
+   "text": "Prosecution evidence at the 2022 Ng trial described lavish Las Vegas parties hosted by Low (including invoices of about $3.6 million for one party); the DOJ said he gambled away millions in allegedly misappropriated funds. No celebrity is named or depicted.",
+   "sources": [
+    "tmi_party",
+    "fortune_2022",
+    "vice_low"
+   ]
+  },
+  {
+   "id": "J_assets",
+   "type": "established",
+   "nature": "allegation",
+   "text": "DOJ forfeiture actions targeted luxury real estate, art (including works by Van Gogh and Monet) and diamond jewellery allegedly bought with 1MDB funds.",
+   "sources": [
+    "doj_2016",
+    "doj_2024",
+    "edge_2016"
+   ]
+  },
+  {
+   "id": "J_film",
+   "type": "established",
+   "nature": "allegation",
+   "text": "The DOJ (Attorney General Lynch, July 2016) said associates allegedly used 1MDB proceeds to help fund the production of The Wolf of Wall Street. Attributed to the Justice Department.",
+   "sources": [
+    "doj_2016",
+    "edge_2016",
+    "cnbc_rg"
+   ]
+  },
+  {
+   "id": "J_redgranite",
+   "type": "established",
+   "nature": "fact",
+   "text": "Red Granite Pictures, the film's producer, agreed in March 2018 to pay the US government $60 million to settle the civil forfeiture suit, without admitting wrongdoing. On screen only.",
+   "sources": [
+    "cnbc_rg",
+    "inquirer_rg"
+   ]
+  },
+  {
+   "id": "J_seize",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 28 February 2018 Indonesian police, at the request of US authorities (with the FBI), seized the Equanimity at Benoa, Bali. Low was not on board.",
+   "sources": [
+    "benar_2018",
+    "fmt_2018",
+    "dockwalk_2018"
+   ]
+  },
+  {
+   "id": "J_sold",
+   "type": "established",
+   "nature": "fact",
+   "text": "After the yacht was handed to Malaysia (2018), Malaysia sold it in April 2019 to Genting for $126 million.",
+   "sources": [
+    "inquirer_sale",
+    "edge_sale"
+   ]
+  },
+  {
+   "id": "J_settle",
+   "type": "established",
+   "nature": "fact",
+   "text": "In October 2019 Low and his family settled the US civil forfeiture cases (13 cases; assets in the US, UK and Switzerland worth more than $700 million). The settlement is not an admission of guilt or liability and does not resolve the criminal charges.",
+   "sources": [
+    "doj_2019",
+    "aljazeera_2019",
+    "npr_2019",
+    "malaymail_2019"
+   ]
+  },
+  {
+   "id": "J_najib",
+   "type": "established",
+   "nature": "fact",
+   "text": "Former prime minister Najib Razak was convicted in the SRC International case (July 2020; 12 years, later halved by a pardons board) and, on 26 December 2025, in the main 1MDB trial (4 abuse-of-power and 21 money-laundering counts; 15 years). He denies wrongdoing; his lawyer said he would appeal.",
+   "sources": [
+    "cnn_najib",
+    "ap_najib",
+    "occrp_najib"
+   ]
+  },
+  {
+   "id": "J_bankers",
+   "type": "established",
+   "nature": "fact",
+   "text": "Former Goldman banker Roger Ng was convicted by a Brooklyn jury in April 2022 (10 years, March 2023); Tim Leissner pleaded guilty in 2018 and was sentenced to 2 years in May 2025. On screen only. (Pras Michel, convicted 2023 and sentenced to 14 years in Nov 2025, is in the ledger but not on screen.)",
+   "sources": [
+    "aljazeera_ng",
+    "ap_ng",
+    "aljazeera_leissner",
+    "scmp_leissner"
+   ]
+  },
+  {
+   "id": "J_status",
+   "type": "established",
+   "nature": "fact",
+   "text": "Low has never been tried; he is a fugitive whose whereabouts are not officially confirmed (police still verifying claims in 2026) and he denies wrongdoing.",
+   "sources": [
+    "fmt_2026",
+    "sun_2026",
+    "vibes_2025",
+    "fortune_2022"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "doj_2019",
+   "publisher": "US Department of Justice (USAO Central District of California)",
+   "title": "U.S. Reaches Settlement to Recover More Than $700 Million in Assets Allegedly Traceable to Corruption Involving 1MDB",
+   "url": "https://www.justice.gov/usao-cdca/pr/us-reaches-settlement-recover-more-700-million-assets-allegedly-traceable-corruption",
+   "date": "2019-10-30",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "doj_2016",
+   "publisher": "US Department of Justice (Office of Public Affairs)",
+   "title": "United States Seeks to Recover More Than $1 Billion Obtained from Corruption Involving Malaysian Sovereign Wealth Fund",
+   "url": "https://www.justice.gov/opa/pr/united-states-seeks-recover-more-1-billion-obtained-corruption-involving-malaysian-sovereign",
+   "date": "2016-07-20",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "doj_2024",
+   "publisher": "US Department of Justice (Office of Public Affairs)",
+   "title": "Justice Department to Recover Over $100 Million in Additional Funds Linked to 1MDB Scheme",
+   "url": "https://www.justice.gov/opa/pr/justice-department-recover-over-100-million-additional-funds-linked-1mdb-scheme",
+   "date": "2024",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aljazeera_2019",
+   "publisher": "Al Jazeera",
+   "title": "US agrees $1bn 1MDB recovery deal with Malaysian fugitive Jho Low",
+   "url": "https://www.aljazeera.com/ajimpact/agrees-1bn-1mdb-recovery-deal-malaysian-fugitive-jho-191031032357706.html",
+   "date": "2019-10-31",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_2019",
+   "publisher": "NPR (via KAXE)",
+   "title": "U.S. Recovers More Than $700 Million From Malaysian Financier In Slush Fund Scandal",
+   "url": "https://www.kaxe.org/2019-10-31/u-s-recovers-more-than-700-million-from-malaysian-financier-in-slush-fund-scandal",
+   "date": "2019-10-31",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "malaymail_2019",
+   "publisher": "Malay Mail",
+   "title": "US prosecutors say settlement forces Jho Low, family to give up ill-gotten gains",
+   "url": "https://www.malaymail.com/news/malaysia/2019/10/31/us-prosecutors-say-settlement-forces-jho-low-family-to-give-up-ill-gotten-g/1805461",
+   "date": "2019-10-31",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnbc_rg",
+   "publisher": "CNBC (Reuters)",
+   "title": "'The Wolf of Wall Street' producers pay $60 million to settle US lawsuit linked to 1MDB",
+   "url": "https://www.cnbc.com/2018/03/07/the-wolf-of-wall-street-producers-pay-60-million-to-settle-us-lawsuit-linked-to-1mdb.html",
+   "date": "2018-03-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "inquirer_rg",
+   "publisher": "Inquirer (AP)",
+   "title": "'Wolf of Wall Street' film company to pay $60M settlement",
+   "url": "https://entertainment.inquirer.net/?p=265199",
+   "date": "2018-03",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "edge_2016",
+   "publisher": "The Edge Malaysia (Bloomberg)",
+   "title": "'Wolf of Wall Street' sued as US seeks 1MDB-tied assets",
+   "url": "https://theedgemalaysia.com/article/‘wolf-wall-street’-sued-us-seeks-1mdb-tied-assets-0",
+   "date": "2016-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "benar_2018",
+   "publisher": "BenarNews",
+   "title": "Malaysian Tycoon's Whereabouts Unknown after Indonesia Seizes Luxury Yacht",
+   "url": "https://www.benarnews.org/english/news/indonesian/yacht-seized-02282018153447.html",
+   "date": "2018-02-28",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fmt_2018",
+   "publisher": "Free Malaysia Today",
+   "title": "Indonesian police seize luxury yacht linked to 1MDB probe",
+   "url": "https://fmtv5.freemalaysiatoday.com/category/nation/2018/02/28/indonesian-police-seize-luxury-yacht-linked-to-1mdb-probe",
+   "date": "2018-02-28",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "dockwalk_2018",
+   "publisher": "Dockwalk (citing the Wall Street Journal)",
+   "title": "M/Y Equanimity seized in assets investigation",
+   "url": "https://www.dockwalk.com/news/m-y-equanimity-seized-in-assets-investigation",
+   "date": "2018",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "inquirer_sale",
+   "publisher": "Inquirer (AP)",
+   "title": "Malaysia to sell 1MDB-linked yacht for $126M",
+   "url": "https://newsinfo.inquirer.net/1102756/malaysia-to-sell-1mdb-linked-yacht-for-126m",
+   "date": "2019-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "edge_sale",
+   "publisher": "The Edge Singapore",
+   "title": "Equanimity superyacht sold to Genting for 'very satisfactory' US$126 mil",
+   "url": "https://www.theedgesingapore.com/issues/1mdb-watch/equanimity-superyacht-sold-genting-very-satisfactory-us126-mil",
+   "date": "2019-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "arabnews_jet",
+   "publisher": "Arab News (Reuters)",
+   "title": "Malaysia seeks $35 million private jet linked to 1MDB scandal",
+   "url": "https://www.arabnews.pk/node/1355446",
+   "date": "2018",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "malaysiakini_2016",
+   "publisher": "Malaysiakini",
+   "title": "DOJ seeks to seize 17 assets including properties and a jet (2016 report)",
+   "url": "https://www.malaysiakini.com/news/349266",
+   "date": "2016-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fortune_2022",
+   "publisher": "Fortune",
+   "title": "Jho Low, the fugitive 1MDB financier (biography)",
+   "url": "https://fortune.com/2022/03/07/jho-low-fugitive-1mdb-financier-biography",
+   "date": "2022-03-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "tmi_party",
+   "publisher": "The Malaysian Insight",
+   "title": "Ng trial testimony: Low's Las Vegas parties",
+   "url": "https://www.themalaysianinsight.com/s/55766",
+   "date": "2022",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "vice_low",
+   "publisher": "Vice",
+   "title": "Jho Low: billions stolen from 1MDB",
+   "url": "https://www.vice.com/en/article/jho-low-billions-stolen-1mdb/",
+   "date": "2022",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cnn_najib",
+   "publisher": "CNN (via KVIA/KEYT)",
+   "title": "Malaysia court finds jailed former leader Najib Razak guilty of abuse of power in biggest 1MDB trial",
+   "url": "https://kvia.com/news/us-world/cnn-world/2025/12/26/malaysia-court-finds-jailed-former-leader-najib-razak-guilty-of-abuse-of-power-in-biggest-1mdb-trial/",
+   "date": "2025-12-26",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_najib",
+   "publisher": "AP (via Yahoo News)",
+   "title": "Former Malaysian leader Najib Razak sentenced to 15 years and hefty fine in 1MDB corruption trial",
+   "url": "https://www.yahoo.com/news/articles/former-malaysian-prime-minister-najib-080150190.html",
+   "date": "2025-12-26",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "occrp_najib",
+   "publisher": "OCCRP",
+   "title": "Former Malaysian PM Sentenced to 12 years in 1MDB Case",
+   "url": "https://www.occrp.org/en/news/former-malaysian-pm-sentenced-to-12-years-in-1mdb-case",
+   "date": "2020-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aljazeera_ng",
+   "publisher": "Al Jazeera",
+   "title": "Ex-Goldman banker Ng sentenced to 10 years over 1MDB scandal",
+   "url": "https://www.aljazeera.com/economy/2023/3/10/ex-goldman-banker-ng-sentenced-to-10-year-over-1mdb-scandal",
+   "date": "2023-03-10",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ap_ng",
+   "publisher": "AP (via News4Jax)",
+   "title": "Ex-Goldman Sachs banker gets 10-year sentence for fraud",
+   "url": "https://www.news4jax.com/news/national/2023/03/09/ex-goldman-sachs-banker-gets-10-year-sentence-for-fraud/",
+   "date": "2023-03-09",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aljazeera_leissner",
+   "publisher": "Al Jazeera",
+   "title": "Sentence for ex-Goldman banker in 1MDB case 'too short': Malaysian minister",
+   "url": "https://www.aljazeera.com/news/2025/5/30/sentence-for-ex-goldman-banker-in-1mdb-case-too-short-malaysian-minister",
+   "date": "2025-05-30",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "scmp_leissner",
+   "publisher": "South China Morning Post",
+   "title": "Ex-Goldman banker Tim Leissner gets 2 years in 1MDB fraud case",
+   "url": "https://www.scmp.com/news/asia/southeast-asia/article/3312360/ex-goldman-banker-tim-leissner-gets-2-years-1mdb-fraud-case",
+   "date": "2025-05-29",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aljazeera_pras",
+   "publisher": "Al Jazeera",
+   "title": "Fugees rapper sentenced to 14 years in prison over illegal Obama donations",
+   "url": "https://www.aljazeera.com/news/2025/11/21/fugees-rapper-sentenced-to-14-years-in-prison-over-illegal-obama-donations",
+   "date": "2025-11-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "malaymail_pras",
+   "publisher": "Malay Mail",
+   "title": "Fugees star Pras gets 14 years over Jho Low's 1MDB-linked scheme",
+   "url": "https://malaymail.com/news/world/2025/11/21/fugees-star-pras-gets-14-years-over-jho-lows-1mdb-linked-scheme-to-secure-photo-with-obama/199219",
+   "date": "2025-11-21",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fmt_2026",
+   "publisher": "Free Malaysia Today",
+   "title": "Cops probe claim Jho Low was in Malaysia late last year",
+   "url": "https://www.freemalaysiatoday.com/category/nation/2026/05/16/cops-probe-claim-jho-low-was-in-malaysia-late-last-year",
+   "date": "2026-05-16",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "sun_2026",
+   "publisher": "The Sun (Malaysia)",
+   "title": "Jho Low investigation continues, says IGP",
+   "url": "https://thesun.my/news/malaysia-news/crime/jho-low-investigation-continues-says-igp",
+   "date": "2026 (page date 22 Jul 2026; publication date unclear)",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "vibes_2025",
+   "publisher": "The Vibes",
+   "title": "No verified evidence Jho Low is in Shanghai, says Saifuddin",
+   "url": "https://www.thevibes.com/articles/news/110884/no-verified-evidence-jho-low-is-in-shanghai-says-saifuddin",
+   "date": "2025-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "PROSECUTORS: BILLIONS TAKEN FROM A STATE FUND"
+   },
+   {
+    "text": "AND SOME BOUGHT A SUPERYACHT",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

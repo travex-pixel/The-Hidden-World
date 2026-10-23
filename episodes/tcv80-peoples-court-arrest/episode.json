@@ -1,0 +1,961 @@
+{
+ "id": "tcv80-peoples-court-arrest",
+ "number": 80,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Vanished After Her People's Court Episode",
+ "central_question": "Michelle Parker vanished hours after her People's Court episode aired in 2011. Fifteen years later, police have charged her ex-fiance. Will the evidence hold up?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "$5,000": "five thousand dollar"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "80",
+  "label": "CASE FILE 80 · COLD CASE"
+ },
+ "music": {
+  "bpm": 76,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 76,
+  "cliff": {
+   "scene": "s06_arrest",
+   "word": [
+    0,
+    2
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "pc80_smith",
+  "pc80_officer",
+  "pc80_tech",
+  "pc80_searcher",
+  "pc80_detective",
+  "pc80_lawyer"
+ ],
+ "content_notes": "Tone: a respectful case update, not a comedy list; no joke is ever about the victim. Michelle Parker is a real victim and is NEVER drawn: she appears only as an empty armchair, an empty lectern and a framed silhouette (tagged NOT A LIKENESS), with one memorial card. Dale Smith Jr. is accused and presumed innocent: a dark rim-lit silhouette tagged NOT A LIKENESS; the narration says 'police say' / 'charged' / 'pleaded not guilty', and his lawyer's position is on screen. No violence, no weapon, no body; the arrest shows an officer walking beside him, no force. Their children are never shown (an empty stroller only). 'The People's Court' is named as plain text only: the TV shows a generic courtroom in silhouette and the studio is generic; no logo, set, judge or show likeness. Officers, technician, detective, searcher and lawyer are generic figures. Every card is our own typed graphic. No dialogue or quotation. Facts verified 2026-10-19.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "pc80_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.14,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "static",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "cuffs",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_arrest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "After her People's Court episode, she vanished.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Fifteen years later, police made an arrest.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "people's",
+    "court",
+    "vanished.",
+    "fifteen",
+    "years",
+    "arrest."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_ring",
+   "scene": "pc80_ring",
+   "min_duration": 4.0,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "chime",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_ring",
+    "K_verdict"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Her ex-fiancé had sued her over a $5,000 ring.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ex-fiancé",
+    "sued",
+    "$5,000",
+    "ring."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_door",
+   "scene": "pc80_door",
+   "min_duration": 3.6,
+   "pad_after": 0.14,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "wind",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.15,
+     "word": [
+      0,
+      9
+     ],
+     "name": "door",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_twins"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That day, Michelle Parker dropped their twins at his home.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "that",
+    "day,",
+    "michelle",
+    "parker",
+    "twins",
+    "his",
+    "home."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_evidence",
+   "scene": "pc80_evidence",
+   "min_duration": 3.9,
+   "pad_after": 0.14,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "keys",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "water",
+     "gain": 0.28
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      2
+     ],
+     "name": "shutter",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_car",
+    "K_phone"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Next day, her car was found abandoned.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Her phone turned up in a lake.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "next",
+    "day,",
+    "car",
+    "abandoned.",
+    "phone",
+    "lake."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_lake",
+   "scene": "pc80_lake",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "water",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_never",
+    "K_years"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Her body has never been found.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "never",
+    "found."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_arrest",
+   "scene": "pc80_arrest",
+   "min_duration": 4.6,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.38
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      2
+     ],
+     "name": "siren",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "cuffs",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_arrest",
+    "K_charge"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then police arrested the man who sued her.",
+     "tone": "reveal"
+    },
+    {
+     "who": "narrator",
+     "text": "The charge? Second-degree murder.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "arrested",
+    "man",
+    "who",
+    "sued",
+    "her.",
+    "second-degree",
+    "murder."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_forensics",
+   "scene": "pc80_forensics",
+   "min_duration": 3.6,
+   "pad_after": 0.14,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "typing",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "ping",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "click",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_tech"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police credit new forensics on old phone and car data.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "new",
+    "forensics",
+    "phone",
+    "car",
+    "data."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_court",
+   "scene": "pc80_court",
+   "min_duration": 3.5,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "gavel",
+     "gain": 0.28
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_plea",
+    "K_defence",
+    "K_bond"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He has pleaded not guilty.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pleaded",
+    "not",
+    "guilty."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_end",
+   "scene": "pc80_end",
+   "min_duration": 3.0,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "static",
+     "gain": 0.16
+    }
+   ],
+   "claims": [
+    "K_close"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Fifteen years later, a courtroom again. A real one.",
+     "tone": "resolve"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "courtroom",
+    "again.",
+    "real",
+    "one."
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Michelle Parker, 33, vanished on 17 November 2011, hours after a pre-taped episode of 'The People's Court' featuring her and her ex-fiance aired. Narration: 'After her People's Court episode, she vanished.' Headline 'VANISHED AFTER HER / PEOPLE'S COURT EPISODE'.",
+   "sources": [
+    "ap_abc30",
+    "ap_wcax",
+    "tvinsider",
+    "gray_wcax"
+   ]
+  },
+  {
+   "id": "K_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "Orlando police arrested Dale Smith Jr., 55, on Wednesday 14 October 2026, nearly 15 years after the disappearance. Narration: 'Fifteen years later, police made an arrest.' / 'Then police arrested the man who sued her.' Label 'DALE SMITH JR., 55 · CHARGED'.",
+   "sources": [
+    "ap_abc30",
+    "tvinsider",
+    "gray_wcax",
+    "fox"
+   ]
+  },
+  {
+   "id": "K_ring",
+   "type": "established",
+   "nature": "fact",
+   "text": "On the show, Smith had sued Parker over a $5,000 engagement ring he said was lost when she threw it at him during an argument. Narration: 'Her ex-fiance had sued her over a $5,000 ring.'",
+   "sources": [
+    "ap_abc30",
+    "ap_boston",
+    "tvinsider"
+   ]
+  },
+  {
+   "id": "K_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "The TV judge found both responsible for the ring's loss and ordered Parker to pay Smith $2,500, half its value. On screen only (the TV-verdict card).",
+   "sources": [
+    "ap_boston",
+    "ap_wcax",
+    "ap_abc30"
+   ]
+  },
+  {
+   "id": "K_twins",
+   "type": "established",
+   "nature": "reported",
+   "text": "On 17 November 2011 Parker dropped off their 3-year-old twins at Smith's home; police say he was the last known person to see or hear from her. Narration: 'That day, Michelle Parker dropped their twins at his home.' Label sub 'Police: the last known to see her'.",
+   "sources": [
+    "gray_wcax",
+    "tvinsider",
+    "fox",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_car",
+   "type": "established",
+   "nature": "fact",
+   "text": "Her vehicle was found abandoned the next day. Narration: 'Next day, her car was found abandoned.'",
+   "sources": [
+    "ap_abc30",
+    "nbc",
+    "ap_boston"
+   ]
+  },
+  {
+   "id": "K_phone",
+   "type": "established",
+   "nature": "fact",
+   "text": "Her cellphone was later recovered from a lake south of Orlando. Narration: 'Her phone turned up in a lake.'",
+   "sources": [
+    "ap_abc30",
+    "nbc",
+    "ap_boston"
+   ]
+  },
+  {
+   "id": "K_never",
+   "type": "established",
+   "nature": "fact",
+   "text": "Her body has never been found; police continue to search. Narration: 'Her body has never been found.' Memorial card 'REMEMBERING MICHELLE PARKER, 33'.",
+   "sources": [
+    "ap_abc30",
+    "gray_wcax",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_years",
+   "type": "established",
+   "nature": "fact",
+   "text": "Smith was long considered a suspect (police named him a prime suspect in 2011) but was not arrested or charged until October 2026. Counter '15 YEARS' with label 'NOV 2011 - OCT 2026 · NO CHARGE'.",
+   "sources": [
+    "fox",
+    "wokv_2011",
+    "gray_wcax"
+   ]
+  },
+  {
+   "id": "K_charge",
+   "type": "established",
+   "nature": "allegation",
+   "text": "The charge is second-degree murder; police say the evidence points to Smith. He is presumed innocent. Narration: 'The charge? Second-degree murder.'",
+   "sources": [
+    "ap_abc30",
+    "fox",
+    "tvinsider"
+   ]
+  },
+  {
+   "id": "K_tech",
+   "type": "established",
+   "nature": "reported",
+   "text": "Police credit an expanded team's fresh look over the past year and advances in digital forensics; a detective said technology now better interprets older data from cars, phones and computers, revealing more detailed location data and communications. Narration: 'Police credit new forensics on old phone and car data.'",
+   "sources": [
+    "nbc",
+    "gray_wcax",
+    "tvinsider",
+    "fox"
+   ]
+  },
+  {
+   "id": "K_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "Smith pleaded not guilty at his first appearance on Thursday 15 October 2026. Narration: 'He has pleaded not guilty.'",
+   "sources": [
+    "wftv",
+    "courttv"
+   ]
+  },
+  {
+   "id": "K_defence",
+   "type": "established",
+   "nature": "reported",
+   "text": "His attorney, Rajan Joshi, said the state may not meet its burden of proof and that the investigation focused almost exclusively on Smith from the beginning; he maintains his innocence. On screen (defence card).",
+   "sources": [
+    "ap_abc30",
+    "ns13",
+    "gray_wcax"
+   ]
+  },
+  {
+   "id": "K_bond",
+   "type": "established",
+   "nature": "fact",
+   "text": "A judge ordered him held without bond pending a detention hearing, not yet scheduled as of the latest reports. Labels 'HELD WITHOUT BOND' and 'AS OF OCT 2026'.",
+   "sources": [
+    "ap_abc30",
+    "ns13",
+    "tvinsider",
+    "wftv"
+   ]
+  },
+  {
+   "id": "K_close",
+   "type": "established",
+   "nature": "editorial",
+   "text": "Closing line (editorial, about the TV-show coincidence only): 'Fifteen years later, a courtroom again. A real one.' The case now moves through a real criminal court (the TV case was a small-claims show).",
+   "sources": [
+    "ap_abc30",
+    "wftv"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "ap_abc30",
+   "publisher": "ABC30 Fresno (Associated Press)",
+   "title": "Florida man killed ex-fiancee hours after their 'People's Court' episode aired, police say",
+   "url": "https://abc30.com/post/michelle-parker-cold-case-florida-man-dale-smith-killed-ex-fiance-peoples-court-episode-aired-orlando-police-say/19941050/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ap_wcax",
+   "publisher": "WCAX (Associated Press)",
+   "title": "Florida man killed ex-fiancee hours after their 'People's Court' episode aired, police say",
+   "url": "https://www.wcax.com/2026/10/15/florida-man-killed-ex-fiancee-hours-after-their-peoples-court-episode-aired-police-say/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ap_boston",
+   "publisher": "Boston.com (Associated Press)",
+   "title": "Florida man killed ex-fiancee hours after their 'People's Court' episode aired, police say",
+   "url": "https://www.boston.com/news/crime/2026/10/15/florida-man-killed-ex-fiancee-hours-after-their-peoples-court-episode-aired-police-say/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "gray_wcax",
+   "publisher": "WCAX (Gray News)",
+   "title": "Ex-fiance charged nearly 15 years after mother who was on 'People's Court' vanished",
+   "url": "https://www.wcax.com/2026/10/15/ex-fianc-charged-nearly-15-years-after-mother-who-was-peoples-court-vanished/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "tvinsider",
+   "publisher": "TV Insider",
+   "title": "'People's Court' Star Michelle Parker's Ex-Fiance Arrested 15 Years After Her Disappearance",
+   "url": "https://www.tvinsider.com/1297357/peoples-court-michelle-parker-ex-fiance-dale-smith-jr-arrested-15-years-after-disappearance/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "nbc",
+   "publisher": "NBC Washington",
+   "title": "Mom's ex-fiance arrested in 'People's Court' case",
+   "url": "https://www.nbcwashington.com/news/national-international/mom-ex-fiance-the-peoples-court-murder-arrest/4167588/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "fox",
+   "publisher": "FOX 4 / FOX 35 Orlando",
+   "title": "Michelle Parker's ex-fiance arrested in Orlando mom's disappearance, death, police say",
+   "url": "https://www.fox4news.com/news/michelle-parker-case-orlando-police-provide-update-case-investigation",
+   "date": "2026-10-14",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "ns13",
+   "publisher": "Spectrum News 13",
+   "title": "Dale Smith Jr. is held without bond in Orange County jail in the disappearance of Michelle Parker",
+   "url": "https://mynews13.com/fl/orlando/news/2026/10/15/dale-smith-jr-is-held-without-bond-in-orange-county-jail-in-the-disapperance-of-michelle-parker",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wftv",
+   "publisher": "WFTV",
+   "title": "Dale Smith Jr. pleads not guilty in Michelle Parker murder case, remains jailed without bond",
+   "url": "https://www.wftv.com/news/local/dale-smith-jr-pleads-not-guilty-michelle-parker-murder-case-remains-jailed-without-bond/B7A3CWHE4ZA5RDAC7RJZ2LWM5Q/",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "courttv",
+   "publisher": "Court TV",
+   "title": "Dale Smith Jr. first appearance (Michelle Parker case)",
+   "url": "https://www.courttv.com/?p=162714",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "oxygen",
+   "publisher": "Oxygen",
+   "title": "Ex-Fiance of Missing Mom Who Appeared on 'The People's Court' Charged with Murder 15 Years Later",
+   "url": "https://www.oxygen.com/crime-news/dale-smith-jr-charged-with-murder-of-michelle-parker",
+   "date": "2026-10-15",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "fox_2011",
+   "publisher": "Fox News",
+   "title": "Authorities search Florida lake for missing mother Michelle Parker",
+   "url": "https://www.foxnews.com/us/authorities-search-florida-lake-for-missing-mother-michelle-parker.amp",
+   "date": "2011-12",
+   "accessed": "search-result extract only, 2026-10-19"
+  },
+  {
+   "id": "wokv_2011",
+   "publisher": "WOKV",
+   "title": "Police name fiance prime suspect in the disappearance of Michelle Parker",
+   "url": "https://www.wokv.com/news/local/police-name-fiance-prime-suspect-the-disappearance-michelle-parker/fY2dUFgQiSc84hDPJ4hbwL",
+   "date": "2011-12",
+   "accessed": "search-result extract only, 2026-10-19"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 5,
+ "search_terms": [
+  "michelle parker",
+  "people's court",
+  "cold case arrest"
+ ],
+ "palette": {
+  "shadow": "#121a24",
+  "mid": "#c2b8a8",
+  "accent": "#d8a64a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "VANISHED AFTER HER"
+   },
+   {
+    "text": "PEOPLE'S COURT EPISODE",
+    "colour": "#d8a64a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WILL 15-YEAR-OLD"
+   },
+   {
+    "text": "EVIDENCE HOLD UP?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#d8a64a"
+   },
+   {
+    "text": "CASE FILE 80 · COLD CASE",
+    "fs": 38
+   },
+   {
+    "text": "FOLLOW FOR THE COURT UPDATES",
+    "fs": 40,
+    "colour": "#d8a64a"
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "YEAR",
+  "keys": [
+   {
+    "t": 5.41,
+    "v": "2011"
+   },
+   {
+    "t": 17.66,
+    "v": "2011–2026"
+   },
+   {
+    "t": 22.2,
+    "v": "2026"
+   }
+  ],
+  "y": 330,
+  "until": 33.4
+ },
+ "legal_status_verified": "2026-10-19"
+}

@@ -1,0 +1,6 @@
+CAPTION: A cocaine cast: police say a passenger's leg cast at Barcelona airport was made of compressed cocaine, and his leg really was broken (arrested, not tried, March 2009). Then pineapples hollowed out and packed with 67 kg in Madrid, and frozen sharks stuffed with nearly a ton in Mexico. Where they hid it, 4. Which would you have spotted: the cast, the pineapple or the shark?
+HASHTAGS: #cocainecast #wheretheyhidit #truecrime #smuggling #customs
+ALT TEXT: Illustrated reel about a cocaine leg cast and other smuggling hiding places: a plaster leg cast cracked open on a customs bench with white powder pouring out, a spray test turning the cast blue, a pineapple opened on white cylinders at a Madrid market, and a frozen shark cut open on slabs of cocaine at a Mexican port.
+SEED COMMENT: The pineapples are the only one that nearly worked. A cast on a man with a real broken leg is clever until anyone with a test kit sprays it, and X-raying a container of frozen sharks was always going to end badly.
+PINNED: Send this to the mate who'd wear the cast 🦵 Vote: 1 = the cast, 2 = the pineapples, 3 = the sharks 👇 Where They Hid It, 4.
+POST WHEN: Friday 23 Oct 2026, 7–9 pm US Eastern, the day after Case File 90 in the same slot.
