@@ -534,3 +534,5 @@
 - 2026-10-23 13:53:40 tcv97-cocaine-jacket: rendering (final60, seed 1)
 - 2026-10-23 14:13:57 tcv97-cocaine-jacket: rendered in 1216s
 - 2026-10-23 14:14:34 tcv97-cocaine-jacket: VERIFIED -> series/true-crime-cinematic/output/true_crime_97_cocaine_jacket.mp4 (27.5s, 15.4 MB, sha256 2c64e099cf1a)
+- 2026-10-23 14:16:40 produce 95 --force: regenerating episode data
+- 2026-10-23 14:16:40 tcv95-haaland-cocaine: rendering (final60, seed 1)
