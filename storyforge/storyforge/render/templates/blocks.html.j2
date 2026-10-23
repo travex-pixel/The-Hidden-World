@@ -1,0 +1,88 @@
+{#- Block macros. Every macro receives the block dict `b` (with b.dom_id) and its section `s`. -#}
+
+{%- macro chapter(s) -%}
+{%- if theme.chapter_style == "sign" %}
+<div class="cs-sign"><div class="wires"></div><div class="board"><div class="num">{{ s.number }}</div><div class="txt"><span class="noun">{{ s.noun }}</span><span class="ttl">{{ s.label }}</span>{% if s.stamp %}<span class="ts">{{ s.stamp }}</span>{% endif %}</div></div></div>
+{%- elif theme.chapter_style == "tab" %}
+<div class="cs-tab"><span class="num">{{ s.noun }} {{ s.number }}</span><span class="ttl">{{ s.label }}</span>{% if s.stamp %}<span class="ts">{{ s.stamp }}</span>{% endif %}</div>
+{%- else %}
+<div class="cs-plate"><span class="num">{{ s.number }}</span><span class="noun">{{ s.noun }}{% if s.stamp %} · <span class="ts">{{ s.stamp }}</span>{% endif %}</span><span class="ttl">{{ s.label }}</span></div>
+{%- endif %}
+{%- endmacro %}
+
+{%- macro img(id, cls="", cap="") -%}
+{%- set im = images.get(id) -%}
+{%- if im -%}
+<figure class="plate {{ cls }}{% if im.treatment == 'photo' %} photo{% endif %}">
+  <img src="{{ im.file }}" alt="{{ im.alt }}" width="{{ im.width }}" height="{{ im.height }}" loading="lazy">
+  {%- if cap or im.credit %}<figcaption>{% if cap %}<span>{{ cap|md }}</span>{% endif %}{% if im.credit %}<span class="credit">{{ im.credit }}</span>{% endif %}</figcaption>{% endif %}
+</figure>
+{%- endif -%}
+{%- endmacro %}
+
+{%- macro head(b) -%}
+{%- if b.title %}<p class="fig-h">{{ b.title }}</p>{% endif %}
+{%- if b.subtitle %}<p class="fig-sub">{{ b.subtitle|md }}</p>{% endif %}
+{%- endmacro %}
+
+{%- macro note(b) -%}{% if b.note %}<p class="note">{{ b.note|md }}</p>{% endif %}{%- endmacro %}
+
+{%- macro block(b, s) -%}
+{%- set t = b.type -%}
+{%- if t == "p" -%}
+  {%- if b.note %}
+<p class="has-mn{% if b.lede %} lede{% endif %}"><span class="mn"><b>{{ b.note.term }}</b>{{ b.note.definition }}</span>{{ b.text|md }}</p>
+  {%- else %}
+<p{% if b.lede %} class="lede"{% endif %}>{{ b.text|md }}</p>
+  {%- endif %}
+{%- elif t == "h3" %}
+<h3>{{ b.text }}</h3>
+{%- elif t == "quote" %}
+  {%- if b.style == "pull" %}
+<figure class="pq"><blockquote>{{ b.text }}</blockquote><figcaption>{{ b.who }}{% if b.stamp %} · {{ b.stamp }}{% endif %}</figcaption></figure>
+  {%- else %}
+<figure class="iq"><blockquote>“{{ b.text }}”</blockquote><figcaption>{{ b.who }}{% if b.stamp %} · {{ b.stamp }}{% endif %}</figcaption></figure>
+  {%- endif %}
+{%- elif t == "figure" %}
+{{ img(b.image, b.layout if b.layout in ("float-right", "float-left") else "", b.caption) }}
+{%- elif t == "figures" %}
+  {%- if b["items"]|selectattr("image", "in", images)|list|length == 2 %}
+<div class="duo {{ b.layout }}">{% for it in b["items"] %}{{ img(it.image, "", it.caption) }}{% endfor %}</div>
+  {%- else %}{% for it in b["items"] %}{{ img(it.image, "", it.caption) }}{% endfor %}{% endif %}
+{%- elif t == "stats" %}
+<div class="stats {{ b.layout }}">{% for it in b["items"] %}<div><div class="n tnum t-{{ it.tone }}">{{ it.value }}</div><div class="l">{{ it.label }}</div></div>{% endfor %}</div>
+{%- elif t == "takeaway" %}
+<aside class="tag" id="{{ b.dom_id }}" data-title="{{ b.title }}" data-sec="{{ s.number }}">
+  <div class="tag-top"><span class="l">{{ b.label }}</span><span class="r">{{ s.noun }} {{ s.number }}{% if s.stamp %} · {{ s.stamp }}{% endif %}</span></div>
+  <div class="tag-main"><p class="tag-head">{{ b.title }}</p><p class="tag-body">{{ b.body|md }}</p></div>
+  <div class="tag-foot"><span class="barcode" aria-hidden="true"></span><span class="sku">{{ b.sku }}</span></div>
+</aside>
+{%- elif t == "split" %}
+<div class="split" role="img" aria-label="{{ b.caption }}">{% for p in b.parts %}<div style="width:{{ (p.value / (b.parts|sum(attribute='value') or 1) * 100)|round(2) }}%;background:var(--{{ tone_var(p.tone) }});color:var(--{{ on_tone(p.tone) }})">{{ p.label }}</div>{% endfor %}</div>
+<p class="fig-cap"><span>{{ b.caption|md }}</span></p>
+{%- elif t == "people" %}
+<div class="crew">{% for it in b["items"] %}{% set im = images.get(it.image) %}
+  <div class="crew-card"><div class="face">{% if im %}<img src="{{ im.file }}" alt="" loading="lazy" width="{{ im.width }}" height="{{ im.height }}">{% if im.fallback %}<span class="ini">{{ initials(it.name) }}</span>{% endif %}{% else %}<span class="ini" style="color:var(--ink2)">{{ initials(it.name) }}</span>{% endif %}</div>
+  <span class="role">{{ it.role }}</span><span class="nm">{{ it.name }}</span><span class="ds">{{ it.description|md }}</span></div>{% endfor %}
+</div>
+{%- elif t == "gallery" %}
+<div class="fig">{{ head(b) }}
+  <div class="grave">{% for it in b["items"] %}{% set im = images.get(it.image) %}
+    <figure>{% if im %}<img src="{{ im.file }}" alt="{{ im.alt }}" loading="lazy" width="{{ im.width }}" height="{{ im.height }}">{% else %}<div class="stone"><div><b>{{ it.title }}</b>{% for l in it.lines %}<span>{{ l }}</span>{% endfor %}</div></div>{% endif %}
+    <figcaption><b>{{ it.title }}</b> · {{ it.caption|md }}</figcaption></figure>{% endfor %}
+  </div>{{ note(b) }}
+</div>
+{%- elif t == "scorecard" %}
+<div class="fig">{{ head(b) }}
+  <div class="powers">{% for it in b["items"] %}{% set sc = it.score %}
+    <div class="power {{ 'na' if sc is none else 's' ~ sc }}"><div class="nm">{{ it.name }}</div>
+    <div class="meter" aria-label="{{ 'not argued' if sc is none else sc ~ ' of 3' }}">{% for k in range(1, 4) %}<i class="{{ 'on' if sc is not none and k <= sc else '' }}"></i>{% endfor %}</div>
+    <div class="df">{{ it.definition }}</div><div class="vd">{{ it.verdict|md }}</div></div>{% endfor %}
+  </div>{{ note(b) }}
+</div>
+{%- elif t in ("bars", "lines", "slope", "growth", "scenarios", "calculator", "cycle", "layers", "sorter", "equation") %}
+<div class="fig sf-{{ t }}" id="{{ b.dom_id }}" data-kind="{{ t }}">{{ head(b) }}
+  <div class="sf-mount"><noscript><p>{{ b.title }}: this interactive figure needs JavaScript.</p></noscript></div>{{ note(b) }}
+</div>
+{%- endif -%}
+{%- endmacro %}

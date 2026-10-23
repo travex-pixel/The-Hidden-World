@@ -1,0 +1,111 @@
+{%- import "blocks.html.j2" as B with context -%}
+{%- if standalone %}<!doctype html>
+<html lang="{{ lang }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{%- endif %}
+<title>{{ meta.title }}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="{{ meta.description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="{{ theme.fonts.css_url }}">
+<style>
+/* Layout: one reading column walked section by section, plates and charts breaking out wider, takeaways collected to a {{ theme.collector }} at the end. */
+{{ tokens }}
+{{ css }}
+</style>
+{%- if standalone %}</head><body>{% endif %}
+
+<nav id="sf-scrub" aria-label="Progress">
+  <div class="scrub-in">
+    <span class="scrub-chip" id="sf-chip">{{ theme.section_noun }} 01</span>
+    <div class="scrub-mid">
+      <div class="scrub-title" id="sf-stitle">{{ sections[0].label if sections else "" }}</div>
+      <div class="track" id="sf-track"><div class="fill" id="sf-fill"></div><div class="head" id="sf-head"></div></div>
+    </div>
+    <span class="scrub-time"><span id="sf-now">{{ "00:00:00" if timed else "0%" }}</span>{% if timed %}<span class="tot"> / {{ duration_label }}</span>{% endif %}</span>
+    <a class="scrub-cart" href="#sf-checkout" aria-label="{{ theme.collection_noun|capitalize }} collected"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">{% if theme.collector == "receipt" %}<path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/>{% else %}<path d="M6 3h11a2 2 0 0 1 2 2v16l-7-4-7 4V4a1 1 0 0 1 1-1z"/>{% endif %}</svg><span id="sf-cart-n">0</span><span class="lbl">/ {{ takeaway_count }} {{ theme.collection_noun }}</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wide">
+    <div class="hero-top{% if hero.stats %} has-stats{% endif %}">
+      <div>
+        <div class="kicker">{% for k in meta.kicker %}<span>{{ k }}</span>{% endfor %}</div>
+        <h1>{{ title_html }}</h1>
+        <p class="dek">{{ meta.dek|md }}</p>
+        <div class="byline">{{ meta.byline }}</div>
+      </div>
+      {%- if hero.stats %}
+      <div class="hero-stat">
+        {%- for s in hero.stats %}
+        <div><div class="l">{{ s.label }}</div><div class="n tnum t-{{ s.tone }}">{{ s.value }}</div></div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+    {%- if hero.image and images[hero.image] %}
+    {%- set im = images[hero.image] %}
+    <figure class="hero-art">
+      <img src="{{ im.file }}" alt="{{ im.alt }}" width="{{ im.width }}" height="{{ im.height }}">
+      {%- if im.credit %}<figcaption class="fig-cap"><span class="credit">{{ im.credit }}</span></figcaption>{% endif %}
+    </figure>
+    {%- endif %}
+  </div>
+  {%- if intro %}
+  <div class="col">
+    <div class="howto">
+      <svg viewBox="0 0 54 40" aria-hidden="true"><rect x="1" y="1" width="52" height="38" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="1" width="52" height="10" rx="2" fill="var(--accent)"/><rect x="8" y="18" width="30" height="3" fill="currentColor"/><rect x="8" y="25" width="22" height="3" fill="currentColor" opacity=".5"/></svg>
+      <div>{{ intro|md }}</div>
+    </div>
+  </div>
+  {%- endif %}
+</header>
+
+<main class="collect-{{ theme.collector }}">
+{%- for s in sections %}
+<section class="sec" id="{{ s.anchor }}" data-i="{{ loop.index0 }}">
+  <div class="col">
+    {{ B.chapter(s) }}
+    <h2>{{ s.headline }}</h2>
+  </div>
+  {%- for run in s.runs %}
+  {%- if run.wide %}
+  <div class="wide">{% for b in run.blocks %}{{ B.block(b, s) }}{% endfor %}</div>
+  {%- else %}
+  <div class="col">{% for b in run.blocks %}{{ B.block(b, s) }}{% endfor %}<div class="clear"></div></div>
+  {%- endif %}
+  {%- endfor %}
+</section>
+{%- endfor %}
+
+<section class="sec checkout" id="sf-checkout">
+  <div class="col">
+    <h2>{{ closing.headline }}</h2>
+    <p>{{ closing.text|md }}{% if closing.cta_url %} <a href="{{ closing.cta_url }}" target="_blank" rel="noopener">{{ closing.cta_label or "Go to the source" }}</a>.{% endif %}</p>
+  </div>
+  <div class="receipt-wrap"><div class="{{ theme.collector }}" id="sf-collector" aria-label="{{ theme.collection_noun|capitalize }} collected"></div></div>
+</section>
+</main>
+
+<footer class="sources">
+  <div class="col">
+    <h3>About this page</h3>
+    <p>{{ about|md }}</p>
+    {%- if sources %}
+    <h3>Sources</h3>
+    <ol>{% for src in sources %}<li>{% if src.url %}<a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.label }}</a>{% else %}{{ src.label }}{% endif %}</li>{% endfor %}</ol>
+    {%- endif %}
+    {%- if credits %}
+    <h3>Illustrations and photographs</h3>
+    <p>Illustrations were painted for this page by an OpenCV watercolor and ink pipeline from the photographs credited below. Adaptations of CC BY-SA images are shared under the same license.</p>
+    <ul class="credits">{% for c in credits %}<li><b>{{ c.where }}</b>: {{ c.desc }}{% if c.author %}. {{ c.author }}{% endif %}. {{ c.license }}.{% if c.url %} <a href="{{ c.url }}" target="_blank" rel="noopener">Source</a>.{% endif %}</li>{% endfor %}</ul>
+    {%- endif %}
+    <p class="foot-note">{{ footnote }}</p>
+  </div>
+</footer>
+
+<script type="application/json" id="sf-data">{{ data_json }}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="{{ runtime_src }}"></script>
+{%- if standalone %}</body></html>{% endif %}

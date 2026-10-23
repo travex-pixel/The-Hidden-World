@@ -15,3 +15,22 @@ jobs:
       - run: pip install numpy pillow
       - run: for e in episodes/*/; do python -m pipeline.schema "$(basename "$e")"; done
       - run: python -m unittest discover -s tests -v
+  storyforge:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: storyforge
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - run: npm i playwright@1.56.1 && npx playwright install --with-deps chromium
+      - name: Render both examples and run browser QA
+        run: |
+          for ex in home-depot moon-speech; do
+            python -m storyforge render examples/$ex/spec.json --media examples/$ex/media.json -o /tmp/$ex --clean
+            PLAYWRIGHT_MODULE=$PWD/node_modules/playwright python -m storyforge qa /tmp/$ex -o /tmp/qa-$ex
+          done

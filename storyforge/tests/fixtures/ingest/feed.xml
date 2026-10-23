@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Hidden Ledger</title>
+    <link>https://hiddenledger.example.com/</link>
+    <language>en-us</language>
+    <itunes:author>Hidden Ledger Media</itunes:author>
+    <description>Stories behind the receipts of famous companies.</description>
+    <itunes:image href="https://hiddenledger.example.com/art/show.jpg"/>
+    <atom:link href="https://feeds.example.com/hidden-ledger.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Episode 12: The Orange Apron</title>
+      <guid isPermaLink="false">hl-012</guid>
+      <link>https://hiddenledger.example.com/episodes/12</link>
+      <pubDate>Tue, 09 Sep 2025 10:00:00 GMT</pubDate>
+      <itunes:duration>3125</itunes:duration>
+      <description><![CDATA[<p>Why a uniform became a promise.</p>]]></description>
+      <enclosure url="https://cdn.example.com/audio/hl-012.mp3" length="50000000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Episode 11: Two Founders and a Warehouse</title>
+      <guid isPermaLink="false">hl-011</guid>
+      <link>https://hiddenledger.example.com/episodes/11</link>
+      <pubDate>Tue, 02 Sep 2025 10:00:00 GMT</pubDate>
+      <itunes:duration>00:58:20</itunes:duration>
+      <itunes:episode>11</itunes:episode>
+      <itunes:image href="https://hiddenledger.example.com/art/ep11.jpg"/>
+      <description><![CDATA[<p>Fired on a Friday, they sketched a store on a napkin. Bernie &amp; Arthur&#8217;s first bet.</p>]]></description>
+      <enclosure url="https://cdn.example.com/audio/hl-011.mp3" length="56000000" type="audio/mpeg"/>
+      <podcast:transcript url="https://hiddenledger.example.com/episodes/11/transcript.html" type="text/html"/>
+      <podcast:transcript url="https://hiddenledger.example.com/episodes/11/transcript.json" type="application/json" language="en"/>
+      <podcast:transcript url="https://hiddenledger.example.com/episodes/11/transcript.vtt" type="text/vtt" language="en" rel="captions"/>
+      <podcast:chapters url="https://hiddenledger.example.com/episodes/11/chapters.json" type="application/json+chapters"/>
+    </item>
+  </channel>
+</rss>
