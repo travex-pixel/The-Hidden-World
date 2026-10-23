@@ -1,0 +1,978 @@
+{
+ "id": "tcv96-starlink-narco-sub",
+ "number": 96,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Built a Drone Submarine Run by Starlink",
+ "central_question": "Smuggler Tech: the Colombian Navy seized an uncrewed drone semi-submersible with a Starlink antenna (empty, a test run, built for 1.5 tonnes of cocaine, the Gulf Clan's per the navy); Peruvian police divers found a torpedo with 113 kg of cocaine clamped under a ship; a DEA tip led Ecuadorian troops to a real submarine in the jungle before it ever sailed. Which machine was smartest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "113": "a hundred and thirteen",
+   "DEA": "D.E.A."
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  25,
+  29
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "96",
+  "label": "SMUGGLER TECH · 1"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_tip",
+   "word": [
+    0,
+    8
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "ns96_sailor",
+  "ns96_navy",
+  "ns96_police",
+  "ns96_trooper",
+  "ns96_detainee"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the smugglers' machines (a drone sub caught empty, a torpedo under a ship, a submarine that never left the jungle), never on anyone hurt; nobody is hurt in any case used. Every case is a seizure by a named navy or police force (a settled fact). The drone semi-submersible had no crew and no arrest is reported: nobody is drawn aboard or named; the Gulf Clan attribution is the navy's and is said as such. Starlink is named in plain words only, as reported (a commercial satellite terminal the navy found on the vessel); the antenna is a generic white flat panel with no logo, and nothing suggests the company was involved. Callao (2011): three arrests per InSight Crime; nobody named or drawn as a suspect; the diver is a generic police diver. Ecuador (2010): the one person detained at the site is a dark silhouette tagged NOT A LIKENESS, never named. Sailors, police and troops are generic figures with no badge, flag, crest, patch or insignia, holding only flashlights; no weapon is drawn, carried, pointed or mentioned. Boats, ships and the submarines are generic drawings with no name, hull number, flag, logo or livery. The sea, the harbour and the jungle are illustrations, not replicas of the real places. Every card is our own typed graphic; no document, release or photograph is imitated. Facts verified 2026-10-23.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ns96_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.05,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "water",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "beep",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_crew",
+    "K_capacity"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers built a drone sub run by Starlink.",
+     "tone": "hook",
+     "speed": 1.08
+    },
+    {
+     "who": "narrator",
+     "text": "Nobody aboard. Room for 1.5 tonnes of cocaine.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "built",
+    "drone",
+    "sub",
+    "starlink.",
+    "nobody",
+    "aboard.",
+    "1.5",
+    "tonnes",
+    "cocaine."
+   ],
+   "section": "A",
+   "case": "colombia",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_seized",
+   "scene": "ns96_seized",
+   "min_duration": 3.9,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "door",
+     "gain": 0.2
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "stamp",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_seized",
+    "K_empty",
+    "K_spotted"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The navy seized it, empty. A test run.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "navy",
+    "seized",
+    "empty.",
+    "test",
+    "run."
+   ],
+   "section": "A",
+   "case": "colombia"
+  },
+  {
+   "id": "s03_torpedo",
+   "scene": "ns96_torpedo",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      7
+     ],
+     "name": "water",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_torpedo"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That was not the sneakiest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "In Peru, a torpedo hid under a ship.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "sneakiest.",
+    "peru,",
+    "torpedo",
+    "under",
+    "ship."
+   ],
+   "section": "B",
+   "case": "callao"
+  },
+  {
+   "id": "s04_divers",
+   "scene": "ns96_divers",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.24
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_divers",
+    "K_stat",
+    "K_arrests"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police divers found it: 113 kilos.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "divers",
+    "found",
+    "113",
+    "kilos."
+   ],
+   "section": "B",
+   "case": "callao"
+  },
+  {
+   "id": "s05_jungle",
+   "scene": "ns96_jungle",
+   "min_duration": 3.5,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "rumble",
+     "gain": 0.24
+    },
+    {
+     "at": 0.3,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_real",
+    "K_fact"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But the boldest was a real submarine.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "boldest",
+    "real",
+    "submarine."
+   ],
+   "section": "C",
+   "case": "ecuador"
+  },
+  {
+   "id": "s06_tip",
+   "scene": "ns96_tip",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.24
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.36
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "cuffs",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_tip",
+    "K_never",
+    "K_detained"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A DEA tip led troops there. It never sailed.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "dea",
+    "tip",
+    "troops",
+    "never",
+    "sailed."
+   ],
+   "section": "D",
+   "case": "ecuador",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "ns96_end",
+   "min_duration": 2.2,
+   "pad_after": 0.2,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_owner"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Its owner, says the navy: the Gulf Clan.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "owner,",
+    "navy:",
+    "gulf",
+    "clan."
+   ],
+   "section": "E",
+   "case": "colombia",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Colombian Navy seized an uncrewed (unmanned), remote-controlled semi-submersible fitted with a Starlink satellite antenna off Colombia's Caribbean coast, near Santa Marta / Tayrona National Park; it was announced on 2 July 2025 as the first such drone narco sub found in South American waters. A navy spokeswoman confirmed to AFP that the antenna was Starlink's; the navy said the link let traffickers operate it remotely. Narration: 'Smugglers built a drone sub run by Starlink.' Headline 'A DRONE SUBMARINE / RUN BY STARLINK'. Label 'COLOMBIA'S CARIBBEAN COAST · 2025'; the antenna callout says 'a commercial terminal, as reported'.",
+   "sources": [
+    "cbs",
+    "scmp",
+    "elpais",
+    "gestion",
+    "marineinsight",
+    "mittr"
+   ]
+  },
+  {
+   "id": "K_crew",
+   "type": "established",
+   "nature": "fact",
+   "text": "The vessel had no crew: it was unmanned / uncrewed (navy; AFP; El Pais; Marine Insight). Narration: 'Nobody aboard.'",
+   "sources": [
+    "cbs",
+    "elpais",
+    "marineinsight",
+    "ntn24"
+   ]
+  },
+  {
+   "id": "K_capacity",
+   "type": "established",
+   "nature": "fact",
+   "text": "The navy said the semi-submersible could carry 1.5 tonnes of cocaine (MIT Technology Review and Boing Boing give three tonnes; the reel uses the navy's figure, attributed). Narration: 'Room for 1.5 tonnes of cocaine.' Label sub 'Capacity per the navy'.",
+   "sources": [
+    "cbs",
+    "scmp",
+    "elpais"
+   ]
+  },
+  {
+   "id": "K_seized",
+   "type": "established",
+   "nature": "fact",
+   "text": "Colombian Navy and coast guard boats intercepted and seized it off Tayrona National Park (an AFP photo of 2 July 2025 shows it between two navy boats off Tayrona near Santa Marta). It was found in April 2025 (La Estrella: 1 April; MIT Technology Review: 'last April'; Marine Insight: April) and announced on 2 July 2025. Narration (gotcha): 'The navy seized it, ...' Label 'COLOMBIAN NAVY · OFF TAYRONA · FOUND APRIL 2025'.",
+   "sources": [
+    "cbs",
+    "scmp",
+    "mittr",
+    "estrella",
+    "marineinsight",
+    "eldiario"
+   ]
+  },
+  {
+   "id": "K_empty",
+   "type": "established",
+   "nature": "fact",
+   "text": "The vessel was empty: it carried no drugs; the navy and Western security sources in the region told AFP they believed it was a trial (test) run by a cocaine trafficking cartel; 'It was being tested and was empty,' a naval spokeswoman told AFP (the quote is not used on screen). Narration: '... empty. A test run.' Stamp 'NO DRUGS · TRIAL RUN'.",
+   "sources": [
+    "cbs",
+    "scmp",
+    "elpais",
+    "gestion"
+   ]
+  },
+  {
+   "id": "K_spotted",
+   "type": "established",
+   "nature": "fact",
+   "text": "MIT Technology Review (Feb 2026): a Colombian military surveillance plane spotted the 40-foot vessel off Tayrona National Park and coast guard boats intercepted it; aboard: autopilot gear, remote cameras and a pair of Starlink antennas. SINGLE SOURCE for the plane: on a label with the source named ('Spotted from the air · MIT Technology Review'), not narrated.",
+   "sources": [
+    "mittr",
+    "marineinsight"
+   ]
+  },
+  {
+   "id": "K_torpedo",
+   "type": "established",
+   "nature": "fact",
+   "text": "Callao, Peru, June 2011: police found cocaine in a fake torpedo-shaped container sealed with cement and clamped to a boat's hull below the waterline, reportedly bound for Europe. Narration: 'That was not the sneakiest.' (editorial rehook) / 'In Peru, a torpedo hid under a ship.' Label 'CALLAO, PERU · JUNE 2011'.",
+   "sources": [
+    "insight11",
+    "pana11"
+   ]
+  },
+  {
+   "id": "K_divers",
+   "type": "established",
+   "nature": "fact",
+   "text": "Divers of Peru's anti-drug police (DIRANDRO) found the torpedo under the hull (InSight Crime: about 20 m down; not narrated), with 113 kg of cocaine. Narration (gotcha): 'Police divers found it: 113 kilos.' (the counter label says OF COCAINE IN THE TORPEDO)",
+   "sources": [
+    "insight11",
+    "pana11"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 113 KG): the cocaine in the Callao narco-torpedo (InSight Crime; Panamericana 24 Horas, 23 June 2011).",
+   "sources": [
+    "insight11",
+    "pana11"
+   ]
+  },
+  {
+   "id": "K_arrests",
+   "type": "established",
+   "nature": "fact",
+   "text": "Three Peruvian men were arrested (InSight Crime). On a label with the source named ('3 arrested · InSight Crime'); nobody named or drawn as a suspect.",
+   "sources": [
+    "insight11",
+    "pana11"
+   ]
+  },
+  {
+   "id": "K_real",
+   "type": "established",
+   "nature": "fact",
+   "text": "The 2010 Ecuador vessel was a fully submersible submarine (diesel-electric, twin screws, conning tower, periscope; about 30 m per the DEA, about 100 ft in other reports), which the DEA called the first seizure of a clandestinely built, fully operational submarine for transoceanic trafficking; earlier narco vessels (like the 2025 drone) were semi-submersibles that cannot fully dive (Marine Insight). Narration: 'But the boldest was a real submarine.' Label 'ECUADOR · JULY 2010 · ABOUT 30 M, FULLY SUBMERSIBLE'.",
+   "sources": [
+    "dea10",
+    "register10",
+    "colrep10",
+    "policemag10",
+    "dallas10"
+   ]
+  },
+  {
+   "id": "K_fact",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the 2010 jungle submarine had a periscope and an air-conditioning system (DEA release: 'a conning tower, periscope and air conditioning system'; Colombia Reports: conning tower and periscope; Dallas News/POLICE Magazine on the seizure). Card 'THE JUNGLE SUB HAD / A PERISCOPE AND / AIR CONDITIONING · DEA'.",
+   "sources": [
+    "dea10",
+    "colrep10",
+    "dallas10",
+    "policemag10"
+   ]
+  },
+  {
+   "id": "K_tip",
+   "type": "established",
+   "nature": "fact",
+   "text": "Acting on a tip / intelligence from the U.S. DEA, Ecuadorian anti-narcotics police and military raided a smugglers' camp in the jungle near the Colombian border (near San Lorenzo, Esmeraldas) on 2 July 2010, where the submarine lay half-submerged in a muddy channel. Narration (gotcha): 'A DEA tip led troops there.'",
+   "sources": [
+    "dea10",
+    "wpr10",
+    "npr10",
+    "mundomar10",
+    "universo10"
+   ]
+  },
+  {
+   "id": "K_never",
+   "type": "established",
+   "nature": "fact",
+   "text": "It was seized before it could make its maiden voyage (DEA: 'before it was able to make its maiden voyage'; police said it never made a voyage). Narration: 'It never sailed.'",
+   "sources": [
+    "dea10",
+    "mundomar10",
+    "register10"
+   ]
+  },
+  {
+   "id": "K_detained",
+   "type": "established",
+   "nature": "fact",
+   "text": "One individual was taken into custody at the site (DEA). Drawn as a silhouette tagged NOT A LIKENESS, never named; label sub '1 detained at the site · DEA'.",
+   "sources": [
+    "dea10",
+    "policemag10"
+   ]
+  },
+  {
+   "id": "K_owner",
+   "type": "established",
+   "nature": "fact",
+   "text": "The navy said the drone semi-submersible belonged to the Gulf Clan (Clan del Golfo), Colombia's largest drug trafficking group (AFP; El Pais; MIT Technology Review: a Clan del Golfo prototype). Narration (callback): 'Its owner, says the navy: the Gulf Clan.'",
+   "sources": [
+    "cbs",
+    "scmp",
+    "elpais",
+    "mittr"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "cbs",
+   "publisher": "CBS News (AFP)",
+   "title": "Drone \"narco sub\" — equipped with Starlink antenna — seized for the first time in the Caribbean",
+   "url": "https://www.cbsnews.com/news/drone-narco-sub-seized-first-time-caribbean-colombia/",
+   "date": "2025-07-03",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "scmp",
+   "publisher": "South China Morning Post (AFP)",
+   "title": "Colombia seizes first unmanned narco-sub fitted with Starlink",
+   "url": "https://www.scmp.com/news/world/americas/article/3316729/colombia-seizes-first-unmanned-narco-sub-equipped-starlink",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "yahoo",
+   "publisher": "Yahoo News (CBS/AFP)",
+   "title": "Drone \"narco sub\" — equipped with Starlink antenna — seized for first time",
+   "url": "https://www.yahoo.com/news/drone-narco-sub-equipped-starlink-102921451.html",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "elpais",
+   "publisher": "El Pais (Cali, Colombia)",
+   "title": "Colombia incauta por primera vez un narcosubmarino no tripulado",
+   "url": "https://www.elpais.com.co/colombia/colombia-incauta-por-primera-vez-un-narcosubmarino-no-tripulado-0215.html",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "ntn24",
+   "publisher": "NTN24",
+   "title": "Armada de Colombia anuncio que incauto por primera vez un narcosubmarino no tripulado en el mar Caribe",
+   "url": "https://www.ntn24.com/noticias-actualidad/armada-de-colombia-anuncio-que-incauto-por-primera-vez-un-narcosubmarino-no-tripulado-en-el-mar-caribe-565990",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "gestion",
+   "publisher": "Gestion (Peru, AFP)",
+   "title": "Trafico de drogas se moderniza: incautan primer narcosubmarino no tripulado en Colombia",
+   "url": "https://gestion.pe/mundo/internacional/trafico-de-drogas-se-moderniza-incautan-primer-narcosubmarino-no-tripulado-en-colombia-noticia/",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "eldiario",
+   "publisher": "El Diario (Ecuador)",
+   "title": "La Armada colombiana incauta primer narcosubmarino no tripulado",
+   "url": "https://www.eldiario.ec/mundo/la-armada-colombiana-incauta-primer-narcosubmarino-no-tripulado-02072025/",
+   "date": "2025-07-02",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "marineinsight",
+   "publisher": "Marine Insight",
+   "title": "Colombia Seizes First Unmanned Narco-Sub Equipped With Starlink Connection",
+   "url": "https://www.marineinsight.com/colombia-seizes-first-unmanned-narco-sub-equipped-with-starlink-connection/",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "maritimeexec",
+   "publisher": "The Maritime Executive",
+   "title": "Colombian Navy captures unmanned narco sub with Starlink connection",
+   "url": "https://maritime-executive.com/article/colombian-navy-captures-unmanned-nacro-sub-with-starlink-connection",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "estrella",
+   "publisher": "La Estrella de Panama",
+   "title": "Colombia detecta submarino no tripulado usado por narcos con tecnologia satelital y camaras de vigilancia",
+   "url": "https://www.laestrella.com.pa/mundo/colombia-detecta-submarino-no-tripulado-usado-por-narcos-con-tecnologia-satelital-y-camaras-de-vigilancia-AD14179955",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "mittr",
+   "publisher": "MIT Technology Review",
+   "title": "Uncrewed narco subs transform the Colombian drug trade",
+   "url": "https://www.technologyreview.com/2026/02/19/1132619/uncrewed-narco-subs-transform-columbian-drug-trade/",
+   "date": "2026-02-19",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "san",
+   "publisher": "Straight Arrow News",
+   "title": "Drone narco-sub captured off coast of Colombia",
+   "url": "https://san.com/cc/drone-narco-sub-captured-off-coast-of-colombia/",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "insight11",
+   "publisher": "InSight Crime",
+   "title": "Peru Finds 'Narco-Torpedo' on Boat",
+   "url": "https://insightcrime.org/news/briefs/peru-finds-narco-torpedo-on-boat",
+   "date": "2011-06",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "pana11",
+   "publisher": "Panamericana TV (24 Horas)",
+   "title": "24 Horas: narco-torpedo with 113 kilos of cocaine found under a boat in Callao",
+   "url": "https://panamericana.pe/24horas/locales/87331",
+   "date": "2011-06-23",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "dea10",
+   "publisher": "U.S. Drug Enforcement Administration (news release)",
+   "title": "DEA and Ecuadorian partners seize fully submersible vessel",
+   "url": "https://www.dea.gov/sites/default/files/divisions/hq/2010/pr070310p.html",
+   "date": "2010-07-03",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "dallas10",
+   "publisher": "The Dallas Morning News",
+   "title": "First-ever operational narco sub seized",
+   "url": "https://www.dallasnews.com/news/crime/2010/07/04/first-ever-operational-narco-sub-seized",
+   "date": "2010-07-04",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "register10",
+   "publisher": "The Register",
+   "title": "True sub captured from drug smugglers",
+   "url": "https://www.theregister.com/2010/07/06/true_sub_captured_from_drug_smugglers/",
+   "date": "2010-07-06",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "wpr10",
+   "publisher": "World Politics Review",
+   "title": "Technology issue (the Ecuador jungle submarine raid)",
+   "url": "https://www.worldpoliticsreview.com/issue/technology/2010/08/",
+   "date": "2010-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "colrep10",
+   "publisher": "Colombia Reports",
+   "title": "Uribe: Ecuador's seizure of narco-submarine thanks to Colombia",
+   "url": "https://archief.colombiareports.com/uribe-ecuadors-seizure-of-narco-submarine-thanks-to-colombia",
+   "date": "2010-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "policemag10",
+   "publisher": "POLICE Magazine",
+   "title": "DEA Helps Ecuadorian Police Seize Drug Sub",
+   "url": "https://www.policemag.com/news/dea-helps-ecuadorian-police-seize-drug-sub",
+   "date": "2010-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "npr10",
+   "publisher": "NPR (transcript)",
+   "title": "Narco submarine seized in Ecuador",
+   "url": "https://www.npr.org/transcripts/135574444",
+   "date": "2010",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "universo10",
+   "publisher": "El Universo (Ecuador)",
+   "title": "Armada busca narcos que tenian astillero ilegal",
+   "url": "https://www.eluniverso.com/2010/08/15/1/1447/armada-busca-narcos-tenian-astillero-ilegal.html",
+   "date": "2010-08-15",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "mundomar10",
+   "publisher": "Mundo Maritimo",
+   "title": "Ecuador: narcosubmarino incautado en San Lorenzo",
+   "url": "https://www.mundomaritimo.cl/noticias/editor/10443",
+   "date": "2010-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 8,
+ "lane": "smuggling",
+ "search_terms": [
+  "drone sub",
+  "starlink narco sub",
+  "narco sub",
+  "drone submarine"
+ ],
+ "palette": {
+  "shadow": "#0e1c26",
+  "mid": "#b6b4a8",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A DRONE SUBMARINE"
+   },
+   {
+    "text": "RUN BY STARLINK",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · COLOMBIA"
+   },
+   {
+    "t": 12.04,
+    "v": "2 · CALLAO, PERU"
+   },
+   {
+    "t": 18.34,
+    "v": "3 · ECUADOR"
+   }
+  ],
+  "y": 350,
+  "until": 25.01
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "SMARTEST SMUGGLING MACHINE?"
+   },
+   {
+    "text": "DRONE, TORPEDO OR SUB? 👇",
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D BUILD A SUB",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR SMUGGLER TECH",
+    "fs": 36,
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "SMUGGLER TECH · 1",
+    "fs": 34
+   }
+  ],
+  "from": 2.66,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-23"
+}

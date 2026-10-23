@@ -1,0 +1,928 @@
+{
+ "id": "tcv97-cocaine-jacket",
+ "number": 97,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Turned Cocaine Into a Jacket",
+ "central_question": "Where they hid it: Nepal's narcotics bureau found cocaine mixed with silicone and shaped into a jacket, blankets and neck pillows (2026); Manila customs found towels and duvets soaked in meth (2026); Spanish police found shipping pallets made of 1.4 tonnes of cocaine (2015). Which was the best fake?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "4": "four",
+   "1.4": "one point four",
+   "duvets": "doovays"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  25,
+  29
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "97",
+  "label": "WHERE THEY HID IT · 6"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_lab",
+   "word": [
+    0,
+    9
+   ],
+   "at": 0.5
+  }
+ },
+ "figures": [
+  "cj97_officer",
+  "cj97_courier",
+  "cj97_collector",
+  "cj97_examiner",
+  "cj97_agent",
+  "cj97_chemist"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the fakes (a cocaine jacket, soaked towels, pallets made of cocaine), never on a victim (none appears). Every case is a seizure by a named agency (Nepal's Narcotics Control Bureau; the Philippine Bureau of Customs with PDEA; Spanish police with the UK National Crime Agency), a settled fact; the hook states the seizure. The two women arrested in Kathmandu are arrested, not convicted: never named, drawn only as dark rim-lit silhouettes with no face (NOT A LIKENESS), and 'police say' carries the allegation that one came to collect it. No arrest was reported in the Manila case and nobody is drawn as a suspect there; the Valencia arrests appear only as a typed label. Officers, the examiner and the chemist are generic figures in plain clothing with no badge, patch, flag, agency name or insignia; no weapon; no force shown. Boxes, the container and the pallets carry no company name, logo or plate; the X-ray image is our own false-colour drawing with typed boxes, not any real system's interface; the test tube is a generic lab illustration. The evidence table, the searched room, the warehouse, the X-ray bay, the port and the lab are illustrations, not reported scenes. Every card is our own typed graphic; no dialogue or quotation card. Facts verified 2026-10-23.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "cj97_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "click",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "flutter",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_weight",
+    "K_items",
+    "K_new"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Drug smugglers turned cocaine into a jacket.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Over 4 kilos, shaped into blankets and aprons.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "drug",
+    "smugglers",
+    "turned",
+    "cocaine",
+    "jacket.",
+    "4",
+    "kilos,",
+    "blankets",
+    "aprons."
+   ],
+   "section": "A",
+   "case": "jacket",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_search",
+   "scene": "cj97_search",
+   "min_duration": 4.2,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.38
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "door",
+     "gain": 0.2
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "cuffs",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_search",
+    "K_arrest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But drug police searched her bags. Two women arrested.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "drug",
+    "police",
+    "searched",
+    "bags.",
+    "two",
+    "women",
+    "arrested."
+   ],
+   "section": "A",
+   "case": "jacket"
+  },
+  {
+   "id": "s03_towels",
+   "scene": "cj97_towels",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "flutter",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "water",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_biggest",
+    "K_towels"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And that was not the biggest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "In Manila: towels and duvets soaked in meth.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "biggest.",
+    "manila:",
+    "towels",
+    "duvets",
+    "soaked",
+    "meth."
+   ],
+   "section": "B",
+   "case": "towels"
+  },
+  {
+   "id": "s04_xray",
+   "scene": "cj97_xray",
+   "min_duration": 3.2,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "beep",
+     "gain": 0.26
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.36
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_xray"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The X-ray flagged the boxes.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "x-ray",
+    "flagged",
+    "boxes."
+   ],
+   "section": "B",
+   "case": "towels"
+  },
+  {
+   "id": "s05_pallets",
+   "scene": "cj97_pallets",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.24
+    },
+    {
+     "at": 0.45,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sparkle",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_pallets",
+    "K_charcoal"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The biggest? Shipping pallets made of cocaine.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "biggest?",
+    "shipping",
+    "pallets",
+    "cocaine."
+   ],
+   "section": "C",
+   "case": "pallets"
+  },
+  {
+   "id": "s06_lab",
+   "scene": "cj97_lab",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "knock",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_tip",
+    "K_stat",
+    "K_arrests3"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "On a tip, lab tests found the wood was cocaine.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tip,",
+    "lab",
+    "tests",
+    "found",
+    "wood",
+    "cocaine."
+   ],
+   "section": "D",
+   "case": "pallets",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "cj97_end",
+   "min_duration": 2.2,
+   "pad_after": 0.2,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "puff",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_pillow"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Even the neck pillow was cocaine.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "even",
+    "neck",
+    "pillow",
+    "cocaine."
+   ],
+   "section": "E",
+   "case": "jacket",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "July 2026, Kathmandu: Nepal's Narcotics Control Bureau (Nepal Police) arrested two foreign women and seized liquid cocaine mixed with silicone and prepared in the shape and size of clothes; jackets are among the items. Narration: 'Drug smugglers turned cocaine into a jacket.' Headline 'A JACKET / MADE OF COCAINE'. Label 'KATHMANDU, NEPAL · JULY 2026'.",
+   "sources": [
+    "ht",
+    "ratopati",
+    "hamropatro",
+    "kantipur"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "The seizure weighed over 4 kg (The Himalayan Times 4.28 kg; Ratopati 4.258 kg; Kantipur about 4 kg). Narration: 'Over 4 kilos, ...'.",
+   "sources": [
+    "ht",
+    "ratopati",
+    "kantipur"
+   ]
+  },
+  {
+   "id": "K_items",
+   "type": "established",
+   "nature": "fact",
+   "text": "The cocaine-silicone material was shaped into blankets, mats, jackets, aprons and neck pillows, and a false bottom in a suitcase was also used. Narration: '..., shaped into blankets and aprons.' Callout 'COCAINE + SILICONE'.",
+   "sources": [
+    "ht",
+    "ratopati",
+    "hamropatro",
+    "kantipur"
+   ]
+  },
+  {
+   "id": "K_new",
+   "type": "established",
+   "nature": "fact",
+   "text": "The bureau said it appears to be a new method: liquid cocaine mixed with silicone and prepared in the shape and size of clothes. Callout sub 'A new method, the bureau says'.",
+   "sources": [
+    "ht",
+    "ratopati"
+   ]
+  },
+  {
+   "id": "K_search",
+   "type": "established",
+   "nature": "fact",
+   "text": "The first woman, a 62-year-old foreign national, landed at Tribhuvan International Airport on 15 July 2026; the bureau searched her belongings in Thamel, Kathmandu, where she was arrested. Narration (gotcha): 'But drug police searched her bags.' Label 'SEARCHED IN THAMEL, KATHMANDU'. Not named; silhouette only.",
+   "sources": [
+    "ht",
+    "ratopati",
+    "kantipur"
+   ]
+  },
+  {
+   "id": "K_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "A second woman, 37, who police say came to Kathmandu to collect the consignment, was also arrested. Neither woman is named on screen; both are arrested, not convicted. Narration: 'Two women arrested.' Label 'TWO WOMEN ARRESTED · NOT NAMED', sub 'Police say one came to collect it'.",
+   "sources": [
+    "ht",
+    "ratopati",
+    "kantipur"
+   ]
+  },
+  {
+   "id": "K_biggest",
+   "type": "established",
+   "nature": "fact",
+   "text": "Editorial rehook, true by size: the Manila shipment (15 boxes: about 28.3 kg of suspected shabu, 4.7 kg of kush and 40 soaked towels and duvets) is bigger than the Kathmandu seizure (over 4 kg). Narration: 'And that was not the biggest.'",
+   "sources": [
+    "tribune",
+    "manilatimes",
+    "ht",
+    "ratopati"
+   ]
+  },
+  {
+   "id": "K_towels",
+   "type": "established",
+   "nature": "fact",
+   "text": "Announced 14 September 2026: the Philippine Bureau of Customs intercepted 15 boxes from Canada declared as personal effects at a warehouse in Pasay City (Metro Manila); among them, 20 towels and 20 duvets suspected to be soaked with liquid methamphetamine; the shipment's total value was over P199.7 million, and PDEA lab tests on samples confirmed methamphetamine and cannabis. No arrest reported. Narration: 'In Manila: towels and duvets soaked in meth.' Label 'MANILA · SEPT 2026 · CUSTOMS', sub '20 towels + 20 duvets · suspected liquid meth'.",
+   "sources": [
+    "tribune",
+    "tribune2",
+    "manilatimes"
+   ]
+  },
+  {
+   "id": "K_xray",
+   "type": "established",
+   "nature": "fact",
+   "text": "The boxes were flagged by X-ray screening after suspicious images were detected, which led to an Alert Order and a 100 percent physical examination. Narration (gotcha): 'The X-ray flagged the boxes.' Label 'X-RAY FLAG · THEN A FULL SEARCH', sub 'Declared as personal effects (BOC)'.",
+   "sources": [
+    "tribune",
+    "tribune2",
+    "manilatimes"
+   ]
+  },
+  {
+   "id": "K_pallets",
+   "type": "established",
+   "nature": "fact",
+   "text": "December 2015, Valencia, Spain: a shipping container from Colombia (arrived 30 November) held 40 pallets made of compressed cocaine made to look like wood: 1.4 tonnes (AFP, BBC); the UK National Crime Agency gave 1.5 tonnes, DC Velocity about 3,300 lb. Narration: 'The biggest? Shipping pallets made of cocaine.' Label 'VALENCIA, SPAIN · DEC 2015', sub 'A container from Colombia'.",
+   "sources": [
+    "thelocal",
+    "bbcpa",
+    "national",
+    "dcvelocity"
+   ]
+  },
+  {
+   "id": "K_charcoal",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the container was declared as charcoal on wooden pallets, and some of its charcoal sacks also held cocaine disguised as charcoal; police suspected a charcoal company was a front for a lab that extracted the cocaine. Card 'SAME CONTAINER: / SOME OF THE CHARCOAL / WAS COCAINE TOO'.",
+   "sources": [
+    "thelocal",
+    "bbcpa",
+    "national"
+   ]
+  },
+  {
+   "id": "K_tip",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police acted on intelligence (DC Velocity: police intelligence and sniffer dogs; The National: intelligence from the UK National Crime Agency), and a forensic examination found the pallets were made of compressed cocaine powder made to look like wood. Narration (gotcha): 'On a tip, lab tests found the wood was cocaine.'",
+   "sources": [
+    "dcvelocity",
+    "national",
+    "thelocal"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 1,400 KG): the weight of the cocaine pallets as Spanish police gave it (AFP; BBC); the NCA's figure was 1.5 tonnes. Counter '1,400 KG' with the label 'PALLETS MADE OF COCAINE'.",
+   "sources": [
+    "thelocal",
+    "bbcpa",
+    "national"
+   ]
+  },
+  {
+   "id": "K_arrests3",
+   "type": "established",
+   "nature": "fact",
+   "text": "The operation led to 11-12 arrests (sources differ) in Spain, Britain and Dubai, including two Colombian chemistry specialists per AFP. Nobody is named or drawn. Label 'ARRESTS IN SPAIN, BRITAIN, DUBAI'.",
+   "sources": [
+    "thelocal",
+    "national",
+    "dcvelocity"
+   ]
+  },
+  {
+   "id": "K_pillow",
+   "type": "established",
+   "nature": "fact",
+   "text": "Neck pillows were among the clothes-shaped items made from the cocaine-silicone mix in the Kathmandu case. Narration (callback): 'Even the neck pillow was cocaine.' Callout 'NECK PILLOW · COCAINE + SILICONE'.",
+   "sources": [
+    "ht",
+    "ratopati",
+    "hamropatro"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "ht",
+   "publisher": "The Himalayan Times",
+   "title": "Two foreign women arrested with 4.28kg cocaine hidden in clothing",
+   "url": "https://thehimalayantimes.com/kathmandu/two-foreign-women-arrested-with-428kg-cocaine-hidden-in-clothing",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "htamp",
+   "publisher": "The Himalayan Times (AMP edition of the same report)",
+   "title": "Two foreign women arrested with cocaine hidden in clothing",
+   "url": "https://thehimalayantimes.com/ampArticle/1039424",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "ratopati",
+   "publisher": "Ratopati (English)",
+   "title": "Two foreign women arrested with 4.258 kg cocaine in Nepal",
+   "url": "https://english.ratopati.com/story/71056/new-style-of-smuggling-45-kg-of-cocaine-mixed-with-silicone-inside-a-shirt-and-jacket-seized",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "hamropatro",
+   "publisher": "Hamro Patro (republishing Ratopati)",
+   "title": "Two foreign women arrested with 4.258 kg cocaine in Nepal",
+   "url": "https://www.hamropatro.com/en/news/detail/2131643255893329",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "kantipur",
+   "publisher": "Kantipur (ekantipur, English)",
+   "title": "The style of cocaine trafficking has changed",
+   "url": "https://ekantipur.com/news/2026/07/23/en/nepal-is-becoming-a-transit-point-for-cocaine-smuggling-54-13.html",
+   "date": "2026-07-23",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "tribune",
+   "publisher": "Daily Tribune",
+   "title": "BOC seizes over P199.7-M illegal drugs at Pasay warehouse",
+   "url": "https://tribune.net.ph/2026/09/14/boc-seizes-over-p1997-m-illegal-drugs-at-pasay-warehouse",
+   "date": "2026-09-14",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "tribune2",
+   "publisher": "Daily Tribune",
+   "title": "BOC intercepts Canadian parcel containing illegal drugs",
+   "url": "https://tribune.net.ph/2026/09/14/boc-intercepts-canadian-parcel-containing-illegal-drugs",
+   "date": "2026-09-14",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "manilatimes",
+   "publisher": "The Manila Times (via Newswav)",
+   "title": "P199.7M drug shipment seized at NAIA",
+   "url": "https://newswav.com/article/p199-7m-drug-shipment-seized-at-naia-A2609_7xIVCP",
+   "date": "2026-09",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "thelocal",
+   "publisher": "The Local Spain (AFP)",
+   "title": "Spanish police seize 1,400 kgs of cocaine disguised as wooden pallets",
+   "url": "https://www.thelocal.com/20151212/spain-seizes-14-tonnes/",
+   "date": "2015-12-12",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "thelocales",
+   "publisher": "The Local Spain (AFP, .es edition)",
+   "title": "Spain seizes 1.4 tonnes of cocaine disguised as pallets",
+   "url": "https://www.thelocal.es/20151212/spain-seizes-14-tonnes",
+   "date": "2015-12-12",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "bbcpa",
+   "publisher": "PanArmenian (BBC report)",
+   "title": "Spain seizes cocaine pallets",
+   "url": "https://panarmenian.net/m/eng/news/202219/",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "national",
+   "publisher": "The National (UAE), citing the UK National Crime Agency",
+   "title": "Two arrested in Dubai over cocaine shipment to Spain",
+   "url": "https://thenationalnews.com/uae/-1.98764",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "dcvelocity",
+   "publisher": "DC Velocity",
+   "title": "Spanish cops seize cocaine pallets",
+   "url": "https://www.dcvelocity.com/articles/27741-spanish-cops-seize-cocaine-pallets",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-23"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 8,
+ "lane": "customs",
+ "search_terms": [
+  "cocaine jacket",
+  "cocaine clothes",
+  "where they hid it"
+ ],
+ "palette": {
+  "shadow": "#13202a",
+  "mid": "#bab4a6",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A JACKET"
+   },
+   {
+    "text": "MADE OF COCAINE",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · JACKET"
+   },
+   {
+    "t": 12.04,
+    "v": "2 · TOWELS"
+   },
+   {
+    "t": 19.22,
+    "v": "3 · PALLETS"
+   }
+  ],
+  "y": 350,
+  "until": 24.83
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHICH FAKE WAS BEST?"
+   },
+   {
+    "text": "JACKET OR TOWELS OR PALLETS? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D WEAR THE JACKET",
+    "fs": 34
+   },
+   {
+    "text": "FOLLOW FOR WHERE THEY HID IT",
+    "fs": 34,
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "WHERE THEY HID IT · 6",
+    "fs": 32
+   }
+  ],
+  "from": 2.12,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-23"
+}
