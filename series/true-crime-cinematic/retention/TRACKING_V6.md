@@ -48,3 +48,17 @@ ambulance, 911 calling from a pocket); the three that failed show an ordinary pi
 text (man on a phone, sleeper in a bed, taxi outside a bank). The 86/87 frame-0 pair is confounded by this.
 v6 did lift the middle: kept @10 s 45–55 % on the pushed reels (v5: 42–52 %), with like spikes on the gotchas.
 Shares 0 on all six, follows 0.
+
+**Batch 4: engine v8 (lane-locked, agent-first spoken hook), posted 22 Oct, read 23 Oct 00:07:**
+
+| # | views | skip % | kept @4 s | kept @10 s | end % | shares | reposts | likes % | comments | hook |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 92 drug cannon | 2,980 | 23.1 | ~80 | ~55 | ~40 | **1** | 1 | 0.9 | 4 | Smugglers built a drug cannon into a van. |
+| 93 cocaine ship | 1,534 (still climbing) | 32.7 | ~85 | ~55 | ~35 | 0 | 1 | 1.0 | 2 | Smugglers loaded a ship with a billion in cocaine. |
+| 94 meth watermelons | 2,462 | 23.1 | ~80 | ~55 | ~35 | 0 | 0 | 0.7 | 2 | Smugglers dressed meth up as watermelons. |
+
+v8 confirmed 3 of 3 pushed (after 2 of 12 in the previous three batches); 92 is the first reel with a share. The weakest
+of the three (93, 32.7 %) is the only quantity hook ("a billion in cocaine", a pile of bricks); the two at 23 % are a
+DEVICE (a cannon built into a van) and a DISGUISE (meth dressed as watermelons). Same split as before: 75 bunkers 27.7,
+74 30,000 bottles 33.9 vs 63 Jeep on the fence 16.0, 59 catapult 20.4, 73 fake Border Patrol truck 22.6.
+
