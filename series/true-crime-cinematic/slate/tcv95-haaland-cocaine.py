@@ -73,10 +73,11 @@ def build(h):
         S("s06_truck", "hc95_truck", [N("Police stopped the firewood truck. Three arrested.", tone="reveal", pause_before=0.3)],
           "revelation", ["K_firewood", "K_three"], sfx=[fw(0, 0, "riser", 0.22, -0.6), fw(0, 1, "brake", 0.24, 0.0), fw(0, 3, "knock", 0.26, 0.0), fw(0, 4, "hit", 0.38, -0.03), fw(0, 6, "cuffs", 0.32, 0.0)],
           emph=["police", "stopped", "firewood", "truck.", "three", "arrested."], min_d=3.4, pad=0.15, tr="cut"),
+        # (the sub lands ON "label.", not 0.35 s after it: later, its boom rang into the cut and failed audio_ending_intentional)
         # E - THE CALLBACK (the loop): frame 1's truck; the torch officer turns on "Haaland"; the label; the false floor eases
         #     back to frame 1's opening and the camera eases back to frame 1's start; the end card; no fade
         S("s07_end", "hc95_end", [N("Haaland had no part. It's a gang's label.", tone="reveal", pause_before=0.05, speed=1.06)],
-          "aftermath", ["K_nolink", "K_why"], sfx=[fw(0, 0, "tick", 0.22, 0.0), fw(0, 4, "stamp", 0.22, 0.0), fw(0, 7, "sub", 0.3, 0.35)],
+          "aftermath", ["K_nolink", "K_why"], sfx=[fw(0, 0, "tick", 0.22, 0.0), fw(0, 4, "stamp", 0.22, 0.0), fw(0, 7, "sub", 0.24, 0.0)],
           emph=["haaland", "no", "part.", "gang's", "label."], min_d=2.2, pad=0.1, tr="zoom"),
     ]
     sections = {"s01_hook": "A", "s02_bottom": "A", "s03_godfather": "B", "s04_stop": "B", "s05_plane": "C", "s06_truck": "D", "s07_end": "E"}

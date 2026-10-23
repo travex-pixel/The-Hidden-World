@@ -536,3 +536,7 @@
 - 2026-10-23 14:14:34 tcv97-cocaine-jacket: VERIFIED -> series/true-crime-cinematic/output/true_crime_97_cocaine_jacket.mp4 (27.5s, 15.4 MB, sha256 2c64e099cf1a)
 - 2026-10-23 14:16:40 produce 95 --force: regenerating episode data
 - 2026-10-23 14:16:40 tcv95-haaland-cocaine: rendering (final60, seed 1)
+- 2026-10-23 14:35:14 tcv95-haaland-cocaine: rendered in 1114s
+- 2026-10-23 14:35:54 tcv95-haaland-cocaine: QA FAILED ['audio_ending_intentional']; frames and details in series/true-crime-cinematic/qa/true_crime_95
+- 2026-10-23 14:38:54 produce 96 --force: regenerating episode data
+- 2026-10-23 14:38:54 tcv96-starlink-narco-sub: rendering (final60, seed 1)
