@@ -62,3 +62,21 @@ of the three (93, 32.7 %) is the only quantity hook ("a billion in cocaine", a p
 DEVICE (a cannon built into a van) and a DISGUISE (meth dressed as watermelons). Same split as before: 75 bunkers 27.7,
 74 30,000 bottles 33.9 vs 63 Jeep on the fence 16.0, 59 catapult 20.4, 73 fake Border Patrol truck 22.6.
 
+
+**Batch 5: engine v8 + the making-verb hook, posted together 23 Oct, read 24 Oct 10:44 (~18 h):**
+
+| # | views | skip % | kept @10 s | end % | shares | saves | likes % | comments | curve | hook |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 95 Haaland bricks | 1,103 (climbing) | 28.6 | ~50 | ~45 | 0 | 0 | 1.2 (higher) | 4 | steady, above typical from 4 h | Smugglers branded their cocaine with Haaland. |
+| 96 Starlink sub | 2,777 (climbing) | 30.4 | ~50 | ~45 | 0 | 0 | 1.2 (higher) | 2 | steady push all day | Smugglers built a drone sub run by Starlink. |
+| 97 cocaine jacket | 2,630 (flat since 4 h) | **17.0** | **~75** | ~45 | 0 | 0 | 0.9 (lower) | 2 | burst to 2.3k by 4 h, then flat | Drug smugglers turned cocaine into a jacket. |
+
+Pushed 3 of 3 (6 of 6 on v8). 97 is the second-lowest skip the account has had (63 Jeep: 16.0) and the only reel ever to
+hold 75 % at 10 s (everything else 42–55 %). What 97 did that 95 and 96 did not: frame 0 is a CLOSE shot of hands cutting the
+object open with the inside still hidden, and the cut finishes on the gotcha line. 95 opened on bricks already spilling
+(nothing left to reveal: 50 % by 8 s), 96 on a sub sitting in the water, wide (50 % by 7 s). Same split as batch 4
+(94 melon being peeled 23.1 vs 93 pile of bricks 32.7). The famous name (95) was not a shortcut: slowest ramp, most comments.
+
+The ceiling is not skip: 97 (17 %) went flat at 2.3k while 96 (30 %) kept climbing; 97 had the lowest like rate and
+shares/saves are 0 on all three (1 share in the last 9 reels). Likes land at the hook, the first gotcha, and the END CARD
+(25 % of 97's likes in its last second): the vote line earns likes, the "send to the mate" line earns no sends.

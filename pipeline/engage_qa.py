@@ -21,6 +21,14 @@ STAKES = re.compile(r"\d|\b(killed|lives|dead|died|murder|murdered|million|billi
 LANES = {"smuggling", "border", "customs", "heist", "bust"}
 LANE_WORDS = re.compile(r"\b(smuggl\w*|cocaine|meth|heroin|cannabis|weed|marijuana|drugs?|border|customs|tunnel\w*|heists?|"
                         r"stole|stolen|robbed|robbers?|thieves|thief|cartel|contraband|seized|bust|million|billion|tonnes?|tons?|kilos?|pounds)\b", re.I)
+# v9: the hook names what the smugglers MADE. Hooks whose verb makes or alters the absurd object ("built a drug cannon",
+# "dressed meth up as watermelons", "turned cocaine into a jacket") skipped at 16–23 %; hooks that led with a quantity
+# ("a billion in cocaine", "30,000 bottles") skipped at 28–34 %, on every batch since Case File 59.
+MAKING_VERBS = re.compile(r"\b(built|turned|dressed|branded|stamped|rigged|sewed|sewn|moulded|molded|baked|packed|stuffed|wrapped|"
+                          r"carved|welded|painted|printed|glued|hid|hollowed|filled|disguised|made|shaped|cast|converted|soaked|dyed|"
+                          r"dissolved|pressed|folded|fitted|wired|bolted|strapped|taped|froze|melted|cooked|grew|drove|flew|dug|"
+                          r"tunnelled|tunneled|catapulted|fired|launched|floated|sailed|strapped|towed|buried|planted|cloned|faked)\b", re.I)
+NUMBER_WORDS = re.compile(r"\d|\b(hundred|thousand|million|billion|tonnes?|tons?|kilos?|kilograms?|pounds|dozen)\b", re.I)
 OUTCOME = re.compile(r"\b(executed|sentenced|arrested|prison|life|years|died|dead|caught|freed|acquitted|convicted|guilty|"
                      r"jail|cell|never|still|found|remains|escaped|plea|pleaded|confessed|released|cleared|paid|lost)\b", re.I)
 
@@ -147,4 +155,10 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
             checks["hook_agent_first"] = bool(first_line) and not attribution_first and not first_sentence.endswith("?")
             checks["hook_in_lane"] = bool(LANE_WORDS.search(first_line)); notes["hook_first_line"] = first_line
             checks["lane_locked"] = (ep.get("lane") or "") in LANES
+            if (ep.get("engagement_version") or 1) >= 9:
+                # v9 (batch 5, 95–97: skip 17.0 / 28.6 / 30.4, all pushed): the first sentence is the thing they MADE,
+                # ≤ 8 words, with a making verb and no number; the number comes in the second line.
+                words = re.findall(r"[\w'’-]+", first_sentence)
+                checks["hook_making_verb"] = bool(words) and len(words) <= 8 and bool(MAKING_VERBS.search(first_sentence)) \
+                    and not NUMBER_WORDS.search(first_sentence)
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}

@@ -196,3 +196,25 @@ class VersionEight(VersionSeven):
     def test_v7_episodes_are_not_rejudged_by_v8(self):
         ep = self.ep(); ep["engagement_version"] = 7
         self.assertNotIn("hook_agent_first", engage_qa.analyse({"episode": ep}, self.tl8("Police say x."), None)["checks"])
+
+
+class VersionNine(VersionEight):
+    """v9: the first sentence is what the smugglers made: <= 8 words, a making verb, no number (batch 5: 17.0 / 28.6 / 30.4 % skip)."""
+    def ep(self):
+        e = super().ep(); e["engagement_version"] = 9; e["lane"] = "smuggling"; return e
+
+    def test_making_verb_hooks_pass(self):
+        for hook in ("Drug smugglers turned cocaine into a jacket. Seized in Nepal.", "Smugglers built a drone sub run by Starlink.",
+                     "Smugglers dressed meth up as watermelons.", "Smugglers drove their Jeep up the border fence."):
+            c = engage_qa.analyse({"episode": self.ep()}, self.tl8(hook), None)["checks"]
+            self.assertTrue(c["hook_making_verb"], hook); self.assertTrue(c["hook_agent_first"], hook)
+
+    def test_quantity_long_and_verbless_hooks_fail(self):
+        for hook in ("Smugglers loaded a ship with a billion in cocaine.", "Smugglers built a cannon to fire 1,800 pounds of weed.",
+                     "Smugglers built a cannon into a van and fired it over the fence.", "A fake ambulance. Full of cocaine."):
+            c = engage_qa.analyse({"episode": self.ep()}, self.tl8(hook), None)["checks"]
+            self.assertFalse(c["hook_making_verb"], hook)
+
+    def test_v8_episodes_are_not_rejudged_by_v9(self):
+        ep = self.ep(); ep["engagement_version"] = 8
+        self.assertNotIn("hook_making_verb", engage_qa.analyse({"episode": ep}, self.tl8("Smugglers loaded a ship with a billion in cocaine."), None)["checks"])
