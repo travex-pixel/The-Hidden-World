@@ -369,15 +369,20 @@
     const n = b.layers.length, top = 20, h = 300, half = 180, cx = 200, wAt = (y) => half * (1 - y / h);
     const step = h / n;
     let s = `<g class="flipper">`;
+    const key = [];  // labels too long for their band are numbered in the band and listed under the pyramid
     b.layers.forEach((L, i) => {
       const y0 = i * step, y1 = (i + 1) * step, a = wAt(y0), z = wAt(y1);
       const fill = i === n - 1 ? "var(--ink)" : `color-mix(in srgb, var(--accent) ${Math.round(100 - i * (60 / Math.max(1, n - 2)))}%, var(--ink))`;
       s += `<path class="lvl" fill="${fill}" d="M ${cx - a} ${top + y0} L ${cx + a} ${top + y0} L ${cx + z} ${top + y1} L ${cx - z} ${top + y1} Z"/>`;
       const fs = Math.max(11, Math.min(15, (a + z) / Math.max(6, L.label.length) * 1.4));
-      s += `<text class="t" x="${cx}" y="${top + (y0 + y1) / 2 + (i === n - 1 ? -10 : 6)}" style="font-size:${fs.toFixed(0)}px;fill:${i === 0 ? "var(--on-accent)" : "var(--paper)"}">${esc(L.label)}</text>`;
+      const fits = L.label.length * fs * 0.62 <= 2 * Math.min(a, z) - 16;
+      if (!fits) key.push(L.label);
+      const label = fits ? L.label : String(key.length), size = fits ? fs : 16;
+      s += `<text class="t" x="${cx}" y="${top + (y0 + y1) / 2 + (i === n - 1 ? -10 : 6)}" style="font-size:${size.toFixed(0)}px;fill:${i === 0 ? "var(--on-accent)" : "var(--paper)"}">${esc(label)}</text>`;
     });
     s += `</g>`;
-    mount.innerHTML = `<div class="two-up"><svg class="pyr" viewBox="0 0 400 340" role="img" aria-label="${esc(b.title)}">${s}</svg><div><p class="lt" style="font-size:18px;margin:0 0 14px">${esc(b.text)}</p><button type="button" class="btn o" aria-pressed="false">${esc(b.button)}</button></div></div>`;
+    const legend = key.length ? `<ol class="pyr-key">${key.map((t, i) => `<li><b>${i + 1}</b>${esc(t)}</li>`).join("")}</ol>` : "";
+    mount.innerHTML = `<div class="two-up"><div><svg class="pyr" viewBox="0 0 400 340" role="img" aria-label="${esc(b.title)}">${s}</svg>${legend}</div><div><p class="lt" style="font-size:18px;margin:0 0 14px">${esc(b.text)}</p><button type="button" class="btn o" aria-pressed="false">${esc(b.button)}</button></div></div>`;
     const svg = $("svg", mount), btn = $("button", mount), txt = $(".lt", mount);
     btn.addEventListener("click", () => {
       const f = svg.classList.toggle("flipped"); btn.setAttribute("aria-pressed", f);

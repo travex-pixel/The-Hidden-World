@@ -89,7 +89,7 @@ def build_context(spec: dict, media: dict, *, standalone: bool = False, runtime_
     sections, data_blocks, tk = [], {}, 0
     for si, s in enumerate(spec["sections"]):
         stamp = " · ".join(x for x in (hms(s.get("time_s")) if timed else "", s.get("date_label") or "") if x)
-        sec = dict(s, noun=noun, stamp=stamp, anchor=f"s-{re.sub(r'[^a-z0-9-]', '', s['id'].lower()) or si + 1}")
+        sec = dict(s, noun=noun, stamp=stamp, anchor=f"s-{re.sub(r'[^a-z0-9_-]', '', s['id'].lower()) or si + 1}")
         blocks = []
         first_p = True
         for bi, b in enumerate(s["blocks"]):

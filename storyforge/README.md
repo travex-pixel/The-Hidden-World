@@ -2,12 +2,13 @@
 
 Turn any podcast, video, article or file into an illustrated, interactive story page: a narrated walk through the source, section by section, with watercolor and ink plates, live charts and small interactive models, and a takeaway card per section that the reader collects into a receipt or notebook at the end.
 
-Two pages made with it live in `examples/`:
+Three pages made with it live in `examples/`:
 
 | Example | Source | Theme |
 |---|---|---|
 | `home-depot/` | Acquired’s Home Depot episode (3 h 35 min podcast) | signage · Aisle · receipt |
 | `moon-speech/` | JFK’s 1962 Rice University speech (Commons subtitles) | lab · Stage · notebook |
+| `knicks-speech/` | Mayor Mamdani’s 2026 Knicks championship speech (Commons video, transcribed offline) | field · Beat · receipt |
 
 ## How it works
 

@@ -43,6 +43,7 @@ def _usage(spec: dict) -> dict[str, list[str]]:
 
 def credit_line(treatment: str, author: str, lic: str) -> str:
     author = re.sub(r"\s+from\s+.*$", "", author or "").strip()
+    author = re.sub(r"(?i)(unknown author)+", "", author).strip()  # Commons renders the unknown-author template twice
     if treatment == "photo":
         return ", ".join(x for x in (author, lic) if x)
     verb = VERB.get(treatment, "After")

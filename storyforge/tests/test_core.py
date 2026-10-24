@@ -30,7 +30,7 @@ def moon():
 
 # ---------------------------------------------------------------- schema
 
-@pytest.mark.parametrize("name", ["home-depot", "moon-speech"])
+@pytest.mark.parametrize("name", ["home-depot", "moon-speech", "knicks-speech"])
 def test_examples_validate(name):
     assert validate_spec(load(name, "spec.json")) == []
 
@@ -181,7 +181,7 @@ def test_inline_markup_is_escaped_and_linked():
     assert 'href="https://e.com"' in out and "javascript:" not in out.split("[bad]")[0] and 'href="javascript' not in out
 
 
-@pytest.mark.parametrize("name", ["home-depot", "moon-speech"])
+@pytest.mark.parametrize("name", ["home-depot", "moon-speech", "knicks-speech"])
 def test_render_example(name, tmp_path):
     spec, media = load(name, "spec.json"), load(name, "media.json")
     page = render(spec, media, str(tmp_path), media_base=os.path.join(EX, name))

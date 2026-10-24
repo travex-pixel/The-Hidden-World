@@ -225,6 +225,9 @@ input[type="range"] { accent-color: var(--accent); width: 100%; }
 .pyr .lvl { stroke: var(--paper2); stroke-width: 3; }
 .pyr .t { font-family: var(--f-label); font-weight: 800; letter-spacing: .05em; text-transform: uppercase; font-size: 15px; text-anchor: middle; transition: transform .9s cubic-bezier(.6,.05,.3,1); transform-box: fill-box; transform-origin: center; }
 .pyr.flipped .t { transform: rotate(180deg); }
+.pyr-key { list-style: none; margin: 4px 0 0; padding: 0; font-family: var(--f-label); font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink2); }
+.pyr-key li { display: flex; gap: 10px; padding: 4px 0; border-top: 1px solid var(--rule); }
+.pyr-key li b { flex: 0 0 1.4em; color: var(--accent-ink); }
 
 /* sorter */
 .cards { display: grid; gap: 12px; }
