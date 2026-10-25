@@ -420,8 +420,8 @@
           { depth: 1.01, accent: true, svg: tt => bump(PAS, ctx, tt) + wash(560, 1150, 120, 140, ACC, f1(0.12 + 0.3 * seg(tt, bl - 0.1, bl + 0.3) * (1 - seg(tt, bl + 1.0, bl + 1.8)))) }
         ],
         overlays: [
-          { type: 'label', at: Math.max(0.3, l1 + 0.1), x: 60, y: 560, text: 'BOGOTÁ AIRPORT · SEPT 2013', fs: 34, typeDur: 0.6, sub: 'Leaving for Toronto · anti-narcotics police' },
-          { type: 'funfact', at: Math.max(0.5, l1 + 0.35), y: 760, fs: 38, rows: [{ text: 'SHE SAID SHE WAS' }, { text: 'SEVEN MONTHS PREGNANT' }, { text: 'Colombian police via AFP', fs: 26 }] }
+          { type: 'label', at: Math.max(0.3, l1 + 0.1), x: 60, y: 1230, text: 'BOGOTÁ AIRPORT · SEPT 2013', fs: 34, typeDur: 0.6, sub: 'Leaving for Toronto · anti-narcotics police' },
+          { type: 'funfact', at: Math.max(0.5, l1 + 0.35), y: 470, fs: 38, rows: [{ text: 'SHE SAID SHE WAS' }, { text: 'SEVEN MONTHS PREGNANT' }, { text: 'Colombian police via AFP', fs: 26 }] }
         ],
         tag: TAG_SIL
       });
@@ -453,8 +453,8 @@
         ],
         overlays: [
           { type: 'impact', at: cd, x: HX - 40, y: HY },
-          { type: 'label', at: cd + 0.1, x: 60, y: 560, text: 'COLD + HARD · IN THE PAT-DOWN', fs: 32, typeDur: 0.6, sub: 'A latex belly, police say' },
-          { type: 'label', at: fd + 0.1, x: 60, y: 760, text: 'TWO KILOS OF COCAINE', fs: 34, typeDur: 0.5, sub: 'Two 1 kg bags inside' }
+          { type: 'label', at: cd + 0.1, x: 60, y: 480, text: 'COLD + HARD · IN THE PAT-DOWN', fs: 32, typeDur: 0.6, sub: 'A latex belly, police say' },
+          { type: 'label', at: fd + 0.1, x: 60, y: 650, text: 'TWO KILOS OF COCAINE', fs: 34, typeDur: 0.5, sub: 'Two 1 kg bags inside' }
         ],
         tag: TAG_SIL
       });
@@ -475,7 +475,7 @@
         figures: [{ ...OFFICER, keys: [{ at: op, pose: 'point', expr: 'realise', headTurn: 0.35, dur: 0.35 }, { at: Math.max(1.0, back - 0.45), pose: 'read', expr: 'focused', headTurn: 0, dur: 0.4 }] }],
         props: [heroProp(u, w, lit, 'e')],
         overlays: [
-          { type: 'stamp', at: op, until: back - 0.45, x: 540, y: 1250, text: 'OPERATION TOUPEE', rot: -8, scale: 1.4 }
+          { type: 'stamp', at: op, until: back - 0.45, x: 540, y: 1250, text: 'OPERATION TOUPEE', rot: -8, scale: 1.05 }
         ],
         tag: TAG_SIL
       });

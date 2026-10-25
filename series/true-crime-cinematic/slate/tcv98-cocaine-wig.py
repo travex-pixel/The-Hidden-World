@@ -161,7 +161,7 @@ def build(h):
                         "until": 2.6, "y": 400}
     # the CASE chip, word-anchored from out/<id>/timeline.json when a build exists (narration is cached, so stable)
     anchors = [("s01_hook", 1, 0, 3.2, "1 · WIG"), ("s03_butt", 1, 1, 12.0, "2 · BUTTOCKS"),
-               ("s05_belly", 0, 4, 19.0, "3 · BELLY")]
+               ("s05_belly", 0, 1, 19.0, "3 · BELLY")]
     keys = []
     try:
         tl = json.loads((h.ROOT / "out" / EP / "timeline.json").read_text())
