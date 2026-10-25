@@ -1,0 +1,265 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv100-border-fails-7/tcv100-border-fails-7.mp4",
+    "size_bytes": 15448795,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 27.317,
+    "audio_duration": 27.317,
+    "decode_stderr": "",
+    "mean_volume_db": -16.8,
+    "max_volume_db": -2.7,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv100-border-fails-7/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 1639,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -18.5,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "moving_at_frame_0": true,
+    "loops_to_frame_1": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "audio_music_heard_on_phone": true,
+    "audio_sfx_heard_on_phone": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "engage_hook_line_done_by_2_6s": true,
+    "engage_no_save_card_scene": true,
+    "engage_single_punchline_ending": true,
+    "engage_search_term_in_headline_and_first_4s": true,
+    "engage_post_file_ready": true,
+    "engage_headline_case_first_9s": true,
+    "engage_headline_gotcha_by_9s": true,
+    "engage_gotcha_per_case": true,
+    "engage_callback_ending": true,
+    "engage_under_32s": true,
+    "engage_no_part_on_frame_1": true,
+    "engage_headline_leads_with_object": true,
+    "engage_under_29_5s": true,
+    "engage_hook_agent_first": true,
+    "engage_hook_in_lane": true,
+    "engage_lane_locked": true,
+    "engage_hook_making_verb": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -2.5
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.043,
+    "transcript": "Smugglers built a tunnel under a fake store, nearly 2,000 feet all the way to Tijuana. But agents noticed it had barely any customers. That was not the strangest. In Arizona, Smugglers ziplined weed over the border. Agents caught a man hiding in a vacant lock. The strangest, a tunnel from Canada into a living room. Agents had already hidden cameras inside. Deputies found cocaine packed in freezers."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 31,
+      "extent": {
+        "left": 119.6,
+        "right": 960.4,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": [
+        "Agents caught a"
+      ]
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.3,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.2,
+      "frames": 273,
+      "opening_motion": 4.73,
+      "opening_motion_ok": true
+    },
+    "loop_match": 0.43,
+    "audio": {
+      "opening_speech_median_db": -20.2,
+      "opening_min_speech_window_db": -33.4,
+      "first_word_db": -17.3,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -29.0,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.278,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 12.6,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -25.7,
+      "music_audible": true,
+      "music_heard_on_phone": true,
+      "sfx_phone_db": -28.5,
+      "sfx_heard_on_phone": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.7295,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -2.5,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -51.4,
+      "end_before_db": -16.9,
+      "end_last_50ms_db": -79.9,
+      "silent_tail_s": 0.1,
+      "ending_intentional": true,
+      "durations": {
+        "video": 27.316667,
+        "audio": 27.317007
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true,
+        "music_heard_on_phone": true,
+        "sfx_heard_on_phone": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true,
+        "hook_line_done_by_2_6s": true,
+        "no_save_card_scene": true,
+        "single_punchline_ending": true,
+        "search_term_in_headline_and_first_4s": true,
+        "post_file_ready": true,
+        "headline_case_first_9s": true,
+        "headline_gotcha_by_9s": true,
+        "gotcha_per_case": true,
+        "callback_ending": true,
+        "under_32s": true,
+        "no_part_on_frame_1": true,
+        "headline_leads_with_object": true,
+        "under_29_5s": true,
+        "hook_agent_first": true,
+        "hook_in_lane": true,
+        "lane_locked": true,
+        "hook_making_verb": true
+      },
+      "notes": {
+        "hook": "Smugglers built a tunnel under a fake store. Nearly 2,000 feet, all the way to",
+        "loop_gaps": [],
+        "tail": "Canada into a living room. Agents had already hidden cameras inside. Deputies found cocaine packed in freezers.",
+        "end_title": "WHICH HIDEOUT WAS SMARTER? FAKE STORE OR LIVING ROOM? \ud83d\udc47 SEND TO THE MATE WHO'D DIG IT FOLLOW FOR BORDER FAILS BORDER FAILS \u00b7 7",
+        "tail_s": 0.79,
+        "wpm": 149.3,
+        "hook_end_s": 2.43,
+        "lesson_scene": null,
+        "end_scene_s": 2.86,
+        "search_terms_hit": [
+          "fake store tunnel",
+          "tunnel"
+        ],
+        "cases": [
+          "lynden",
+          "store",
+          "zipline"
+        ],
+        "gotchas": {
+          "store": [
+            5.91,
+            24.76
+          ],
+          "zipline": [
+            14.84
+          ],
+          "lynden": [
+            21.98
+          ]
+        },
+        "total_s": 27.32,
+        "hook_first_line": "Smugglers built a tunnel under a fake store."
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 7,
+      "composed_shots": 7,
+      "shots_with_characters": 7,
+      "character_shot_share": 1.0,
+      "distinct_sets": 5,
+      "max_set_share": 0.43,
+      "shot_sizes": {
+        "wide": 3,
+        "close-up": 1,
+        "medium-wide": 1,
+        "medium": 2
+      },
+      "max_shot_size_share": 0.43,
+      "ok": true
+    }
+  }
+}

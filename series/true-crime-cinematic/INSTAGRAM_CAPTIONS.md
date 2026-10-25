@@ -1050,3 +1050,28 @@ ALT TEXT: Illustrated reel about a cocaine jacket: gloved hands cut open a red j
 SEED COMMENT: The pallets are the genius one. Nobody checks the wood under the cargo. A jacket is still just clothes in a suitcase.
 PINNED: Send this to the mate who'd wear the jacket 🧥 Vote: 1 = jacket, 2 = towels, 3 = pallets 👇 Where They Hid It, 6.
 POST WHEN: Sunday 25 Oct 2026, 7–9 pm US Eastern, the day after Case File 96 in the same slot.
+
+## 98 (`true_crime_98_cocaine_wig.mp4`)
+CAPTION: A smuggler taped cocaine under his wig: Spain's National Police found half a kilo (503 g) under a passenger's toupee at Barcelona airport, announced July 2019 ("Operation Toupee"). Then Lisbon's fake buttocks (Feb 2018) and Bogotá's fake pregnancy belly (Sept 2013).
+Where they hid it, 7. Dumbest hiding spot: the wig or the belly?
+HASHTAGS: #cocainewig #wheretheyhidit #smuggling #customs #truecrime
+ALT TEXT: Illustrated reel about a cocaine wig: gloved hands lift a chestnut toupee off the back of a man's head to show a white packet taped to his scalp, then fake buttocks on swimming trunks in Lisbon and a fake pregnancy belly that felt cold in a Bogotá pat-down.
+SEED COMMENT: The wig is not even the dumbest. A toupee can pass as hair, but a belly that's cold and hard to the touch was never getting through a pat-down.
+PINNED: Send this to the mate who'd try it at the airport ✈️ Vote: 1 = wig, 2 = buttocks, 3 = belly 👇 Where They Hid It, 7.
+POST WHEN: Monday 26 Oct 2026, 10 am–12 noon AEDT (= Sun 25 Oct 7–9 pm US Eastern), the first of the three; or as soon as it arrives.
+
+## 99 (`true_crime_99_where_they_hid_it_7.mp4`)
+CAPTION: Cocaine saddle: smugglers stuffed cocaine in a horse saddle posted from Colombia to Spain, and the Guardia Civil let it arrive (August 2026). Then Montreal's Halloween pumpkins and a horse head in New Zealand. Where they hid it, 8. Saddle or pumpkin?
+HASHTAGS: #cocainesaddle #wheretheyhidit #smuggling #halloween #truecrime
+ALT TEXT: Illustrated reel about a cocaine saddle: gloved hands cut open a tan western saddle on a parcel bench to show taped white bricks inside, then pumpkins full of cocaine on an airport X-ray in Montreal and a jewelled horse-head sculpture in New Zealand.
+SEED COMMENT: Pumpkin wins and it's not close. Nobody looks twice at pumpkins on Halloween; a saddle in the post from Colombia is basically asking to be opened.
+PINNED: Send this to the mate who'd carve the pumpkin 🎃 Vote: 1 = saddle, 2 = pumpkins, 3 = horse head 👇 Where They Hid It, 8.
+POST WHEN: Wednesday 28 Oct 2026, 10 am–12 noon AEDT (= Tue 27 Oct 7–9 pm US Eastern), Halloween week; or as soon as it arrives, after 98 and 100.
+
+## 100 (`true_crime_100_border_fails_7.mp4`)
+CAPTION: Fake store tunnel: smugglers built a tunnel from Tijuana up under the storeroom floor of a fake San Diego shop; HSI and deputies found it in May 2026 with over a ton of cocaine. Then Arizona's zip line and Canada's living-room tunnel. Border Fails, 7. Which hideout was smarter?
+HASHTAGS: #bordertunnel #borderfails #smuggling #truecrime #sandiego
+ALT TEXT: Illustrated reel about a fake store tunnel: gloved hands lift a tiled floor hatch in a storeroom on a lit tunnel shaft, then a zip line carrying bundles over the border fence in Arizona and a tunnel from Canada into a living room in Washington.
+SEED COMMENT: Living room wins. A shop with no customers is a giveaway; a house with a living room is just a house.
+PINNED: Send this to the mate who'd dig it ⛏️ Vote: 1 = fake store, 2 = zip line, 3 = living room 👇 Border Fails, 7.
+POST WHEN: Tuesday 27 Oct 2026, 10 am–12 noon AEDT (= Mon 26 Oct 7–9 pm US Eastern), the day after Case File 98; or as soon as it arrives.
