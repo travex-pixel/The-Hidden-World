@@ -1075,3 +1075,36 @@ ALT TEXT: Illustrated reel about a fake store tunnel: gloved hands lift a tiled 
 SEED COMMENT: Living room wins. A shop with no customers is a giveaway; a house with a living room is just a house.
 PINNED: Send this to the mate who'd dig it ⛏️ Vote: 1 = fake store, 2 = zip line, 3 = living room 👇 Border Fails, 7.
 POST WHEN: Tuesday 27 Oct 2026, 10 am–12 noon AEDT (= Mon 26 Oct 7–9 pm US Eastern), the day after Case File 98; or as soon as it arrives.
+
+## 101 (`true_crime_101_soap_grandad.mp4`)
+CAPTION: The screw from his mobility scooter's seat panel was in his pocket.
+Border Force X-rayed Ronald Lord's scooter at Gatwick in February 2025 and found about 8 kg of cocaine behind the seat back; he said he'd had a week in Barbados, the airline said three days. He pleaded guilty and was jailed for six years at Croydon Crown Court in September 2025 (NCA).
+What gave him away: the screw or the three days?
+HASHTAGS: #mobilityscooter #gatwick #borderforce #cocaine #smuggling
+ALT TEXT: Illustrated reel about cocaine in a mobility scooter: blue-gloved hands unscrew and lift the red rear panel of a scooter seat at an airport search bay, an X-ray sweep shows wrapped blocks and the panel comes away; a silhouette at an interview desk, a travel record reading 7 days struck through and 3 days circled, a court dock, and the empty screw hole circled at the end.
+SEED COMMENT: The three days gave him away, not the screw. A loose screw in your pocket you can talk round; a week in Barbados that the airline says was three days, you can't.
+PINNED: Send this to the mate who'd blame the airline ✈️ Vote: 1 = the screw, 2 = the three days, 3 = the X-ray 👇 Next file: The Teenage Mule.
+POST WHEN: Monday 26 Oct 2026, 4 pm Sydney (AEDT), the first of the 101–103 run; or as soon as it arrives.
+Switch on Instagram's AI label before posting.
+
+## 102 (`true_crime_102_young_mule.mp4`)
+CAPTION: Reported missing in Thailand, she turned up at a Georgian airport with a suitcase of cannabis.
+Georgia's Interior Ministry says a luggage check at Tbilisi airport on 10 May 2025 found about 12 kg of marijuana and 2 kg of hashish in Bella Culley's bag; she said a gang forced her to carry it, and Thailand released airport CCTV and called that baseless. In November 2025 she pleaded guilty under a plea deal and was sentenced to time served plus a fine her family paid.
+Forced or guilty: her story or the CCTV?
+HASHTAGS: #bellaculley #tbilisi #customs #smuggling #truecrime
+ALT TEXT: Illustrated reel: blue-gloved hands unzip a plain teal canvas holdall on an airport inspection bench and the lid opens on wrapped green bricks and dark slabs; a silhouette (not a likeness) in a night departures lounge, then walking through passport gates seen on CCTV, then standing in a courtroom dock; the bag is zipped back to where it began.
+SEED COMMENT: Her story, for me. Walking calmly past a camera doesn't prove nobody was pressuring her, and a plea deal is the quickest way out of a foreign jail either way.
+PINNED: Send this to the mate who's off to Thailand 🧳 Vote: 1 = forced, 2 = guilty, 3 = a bit of both 👇 Next file: The Captain Who Left.
+POST WHEN: The day after Case File 101, 4 pm Sydney (AEDT), the account's usual slot; the second of the 101–103 run.
+Switch on Instagram's AI label before posting.
+
+## 103 (`true_crime_103_ship_captain.mp4`)
+CAPTION: The captain left his cocaine ship a day before the Rangers dropped in.
+Irish Army Rangers boarded the MV Matthew off Ireland's south coast in September 2023 and found 2,253 kg of cocaine, Ireland's biggest seizure; its captain had been airlifted off in what the Special Criminal Court accepted was a fake emergency. He pleaded guilty and got 17½ years in July 2025, and this July the ship was towed out of Cork.
+Captain in name only, or did he fake it to flee?
+HASHTAGS: #mvmatthew #cocaineship #drugbust #smuggling #irishnews
+ALT TEXT: Illustrated reel about the captain of a cocaine ship: black-gloved hands lift an amber steel hatch on a rain-soaked deck at night, Army Rangers slide down ropes from a helicopter and the hatch swings open on dark wrapped bales, an empty captain's chair on the bridge, a hospital tray with phones and cash, a silhouette in a courtroom dock and a 17½-year sentence.
+SEED COMMENT: Fled, not faked. If his barrister's right that he was captain in name only and the orders came from Dubai, getting off that ship was the only move he had left.
+PINNED: Send this to the mate who'd call in sick 🤒 Vote: 1 = faked it, 2 = fled it, 3 = captain in name only 👇 NEXT FILE: The Scooter Run, back to Case File 101.
+POST WHEN: The third of the run (101 → 102 → 103), 4 pm Sydney (AEDT) on its day, the day after Case File 102; or as soon as it arrives.
+NOTE: Switch on Instagram's AI label before posting.

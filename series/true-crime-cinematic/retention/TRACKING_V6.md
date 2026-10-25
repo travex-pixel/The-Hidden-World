@@ -89,3 +89,13 @@ shares/saves are 0 on all three (1 share in the last 9 reels). Likes land at the
 
 The fastest hour 1 on the account (97 took 4 h to reach 2.3k). 1.58 views per viewer: the first clear replay signal (the loop).
 Skip rate not captured in this reading. Shares, saves and follows still 0 at 1 h.
+
+**Batch 7: engine v10 "ONE SMUGGLER" (101 scooter pensioner, 102 missing teenager's suitcase, 103 the captain who left), to post one a day at 4 pm AEDT from Mon 26 Oct. Read at 48 h and 7 d with the five-screenshot recipe (analytics/README.md), then `python3 analytics/compile_reels.py` and `python3 analytics/postmortem.py <n>`.**
+
+| # | age | views | viewers | avg watch | skip % | kept @10 s | end % | shares | saves | follows | comments | like % |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 101 | 48 h | | | | | | | | | | | |
+| 102 | 48 h | | | | | | | | | | | |
+| 103 | 48 h | | | | | | | | | | | |
+
+Targets (docs/CHANNEL_BRIEF_2026-10-26.md): skip ≤ 23 %, ≥ 65 % at 10 s, average watch > 50 % of length, and the first non-zero shares since 92.

@@ -33,8 +33,14 @@ def frame(mp4: Path, t: float, w: int = 270) -> Image.Image:
     im = Image.open(io.BytesIO(r.stdout)).convert("RGB"); return im.resize((w, int(w * im.height / im.width)))
 
 
+def duration(mp4: Path) -> float:
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(mp4)], capture_output=True, text=True)
+    try: return float(r.stdout.strip())
+    except ValueError: return 30.0
+
+
 def strip(eid: str, times, w=200, name="strip") -> str:
-    mp4 = mp4_of(eid); tiles = [frame(mp4, t, w) for t in times]
+    mp4 = mp4_of(eid); d = duration(mp4); tiles = [frame(mp4, min(t, d - 0.15), w) for t in times if t <= d]
     sheet = Image.new("RGB", (w * len(tiles) + 6 * (len(tiles) - 1), tiles[0].height), (14, 15, 18))
     for i, t in enumerate(tiles): sheet.paste(t, (i * (w + 6), 0))
     p = OUT / f"{name}_{eid}.jpg"; sheet.save(p, quality=88); return p.name

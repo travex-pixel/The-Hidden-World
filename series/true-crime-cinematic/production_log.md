@@ -566,3 +566,7 @@
 - 2026-10-25 14:00:04 tcv101-soap-grandad: rendering (final, seed 1)
 - 2026-10-25 14:13:07 tcv101-soap-grandad: rendered in 783s
 - 2026-10-25 14:13:35 tcv101-soap-grandad: VERIFIED -> series/true-crime-cinematic/output/true_crime_101_soap_grandad.mp4 (29.1s, 12.4 MB, sha256 7865a2d3a963)
+- 2026-10-25 14:16:21 produce 103 --force: regenerating episode data
+- 2026-10-25 14:16:21 tcv103-jungle-pilot: rendering (final, seed 1)
+- 2026-10-25 14:32:13 tcv103-jungle-pilot: rendered in 952s
+- 2026-10-25 14:32:41 tcv103-jungle-pilot: VERIFIED -> series/true-crime-cinematic/output/true_crime_103_ship_captain.mp4 (29.3s, 14.5 MB, sha256 a69e37a98581)
