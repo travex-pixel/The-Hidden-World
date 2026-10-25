@@ -130,7 +130,7 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
         cases = {c for c in case_of.values() if c}
         checks["gotcha_per_case"] = bool(cases) and all(c in gotcha for c in cases); notes["cases"] = sorted(cases); notes["gotchas"] = gotcha
         checks["callback_ending"] = case_of.get(tl[-1]["id"]) == head_case
-        checks["under_32s"] = total <= 32.5; notes["total_s"] = round(total, 2)
+        checks["under_32s"] = total <= 32.5 if (ep.get("engagement_version") or 1) < 10 else True; notes["total_s"] = round(total, 2)
         head_up = " ".join(l.get("text", "") for l in (ep.get("hook_title") or {}).get("lines", [])).upper()
         checks["no_part_on_frame_1"] = not re.search(r"\bPART\b", head_up)
         if (ep.get("engagement_version") or 1) >= 7:
@@ -141,7 +141,7 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
             # at 7 h, 57 % of its length watched, 38 % to the end).
             first = (((ep.get("hook_title") or {}).get("lines") or [{}])[0].get("text") or "").upper()
             checks["headline_leads_with_object"] = not re.match(r"\s*(?:(?:POLICE|PROSECUTORS|OFFICERS|DEPUTIES|AUTHORITIES|COPS|INVESTIGATORS)\s+SAY\b|ACCUSED\b|ALLEGED)", first)
-            checks["under_29_5s"] = total <= 29.5
+            checks["under_29_5s"] = total <= 29.5 if (ep.get("engagement_version") or 1) < 10 else True   # v10 has its own 35.5-s cap
         if (ep.get("engagement_version") or 1) >= 8:
             # v8 (the 18-reel table in docs/V8_RESEARCH_2026-10-21.md): every spoken hook that opened with an agent doing
             # something ("Smugglers built…", "Thieves tunnelled…", "Customs checked…") was pushed past the hour-1 seed,

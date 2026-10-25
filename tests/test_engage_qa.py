@@ -238,3 +238,18 @@ class VersionTen(VersionNine):
         ep = self.ep(); ep["scenes"][2].pop("beat"); ep["end_title"]["lines"][1]["text"] = "FOLLOW FOR MORE"
         c = engage_qa.analyse({"episode": ep}, self.tl8("A smuggler taped cocaine under his wig."), None)["checks"]
         self.assertFalse(c["person_turn_by_12s"]); self.assertFalse(c["next_file_signoff"])
+
+    def test_v10_allows_34s_cuts(self):
+        c = engage_qa.analyse({"episode": self.ep()}, self.tl(ends=(4.5, 9.2, 18, 28.5, 34.0)), None)["checks"]
+        self.assertTrue(c["under_29_5s"]); self.assertTrue(c["under_32s"]); self.assertTrue(c["under_35_5s"])
+
+    def test_missing_gotcha_long_cut_part_tag_and_slow_end_fail(self):
+        # v10: the v6/v7 caps are replaced by under_35_5s; everything else from v6 still applies
+        ep = self.ep(); ep["hook_title"]["lines"].append({"text": "DISGUISE FAILS · PART 2"})
+        c = engage_qa.analyse({"episode": ep}, self.tl(ends=(4.5, 9.2, 18, 28.5, 36.0), reveals=(1, 2)), None)["checks"]
+        self.assertFalse(c["gotcha_per_case"]); self.assertTrue(c["under_32s"]); self.assertFalse(c["under_35_5s"]); self.assertFalse(c["no_part_on_frame_1"])
+
+    def test_police_say_first_and_31s_fail(self):
+        ep = self.ep(); ep["hook_title"]["lines"][0]["text"] = "POLICE SAY HE ROBBED"
+        c = engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"]   # 31.2 s is fine on v10
+        self.assertFalse(c["headline_leads_with_object"]); self.assertTrue(c["under_29_5s"]); self.assertTrue(c["under_35_5s"])
