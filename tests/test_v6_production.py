@@ -50,3 +50,17 @@ class DiskGuard(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DirectedDelivery(unittest.TestCase):
+    """v10: directed delivery varies tempo per line, slows numbers and breathes before reveals; plain delivery is unchanged."""
+    def test_directed_varies_and_plain_does_not(self):
+        from pipeline.narrate import kokoro_delivery
+        a = kokoro_delivery("confident", 0.0, directed=True, text="Eight kilos of cocaine sat behind the seat.", key="1")
+        b = kokoro_delivery("confident", 0.0, directed=True, text="He said he had no idea.", key="2")
+        plain = kokoro_delivery("confident", 0.0)
+        self.assertNotEqual(a["speed"], b["speed"]); self.assertLess(a["speed"], b["speed"] * 1.0 + 0.2)
+        self.assertLess(a["speed"], 1.0)                       # the number line is slower than 1.0
+        self.assertEqual(plain["speed"], 1.0); self.assertEqual(plain["pre"], 0.0)
+        r = kokoro_delivery("reveal", 0.0, directed=True, text="Then police lifted it.", key="3")
+        self.assertGreaterEqual(r["pre"], 0.45 + 0.12)         # a breath before the reveal

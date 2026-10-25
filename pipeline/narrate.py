@@ -420,11 +420,22 @@ def narrate_dialogue(scene: dict, narrator_voice: dict | None = None) -> dict:
 PUSH_TONES = {"hook", "reveal", "playful", "confident"}
 
 
-def kokoro_delivery(tone: str, energy: float = 0.0) -> dict:
-    from pipeline.kokoro import DELIVERY
+NUMBERISH = re.compile(r"\b(half|hundred|thousand|million|billion|kilo|kilos|tonnes?|point|one|two|three|four|five|six|seven|eight|nine|ten|twelve|first)\b|\d", re.I)
+
+
+def kokoro_delivery(tone: str, energy: float = 0.0, directed: bool = False, text: str = "", key: str = "") -> dict:
+    """Tone preset, scaled by energy. With directed=True (engine v10, docs/VOICE_TEST_2026-10-26.md): no two lines at the
+    same tempo (deterministic +/-3.5 % per line), numbers and names 5 % slower, a breath before every reveal, and the
+    pauses vary a little, so the read has the rhythm of a person rather than a metronome."""
+    from pipeline.kokoro import DELIVERY, jitter
     base = DELIVERY.get(tone) or DELIVERY["confident"]; e = max(0.0, min(1.0, energy))
-    return {"tone": tone if tone in DELIVERY else "confident", "speed": base["speed"] * (1 + 0.12 * e),
-            "pre": base["pre"] * (1 - 0.45 * e), "after": base["after"] * (1 - 0.45 * e)}
+    d = {"tone": tone if tone in DELIVERY else "confident", "speed": base["speed"] * (1 + 0.12 * e),
+         "pre": base["pre"] * (1 - 0.45 * e), "after": base["after"] * (1 - 0.45 * e)}
+    if directed:
+        d["speed"] *= (0.95 if NUMBERISH.search(text or "") else 1.0) * (1 + jitter(f"spd|{key}|{text}", 0.035))
+        d["pre"] += (0.12 if d["tone"] in ("reveal", "curious") else 0.0) + abs(jitter(f"pre|{key}|{text}", 0.06))
+        d["after"] += abs(jitter(f"aft|{key}|{text}", 0.10)) + (0.1 if (text or "").rstrip().endswith("?") else 0.0)
+    return d
 
 
 def kokoro_text(spoken: str, tone: str, energy: float) -> str:
@@ -435,7 +446,8 @@ def kokoro_text(spoken: str, tone: str, energy: float) -> str:
 
 def _narrate_kokoro(spoken: str, v: dict, ln: dict) -> tuple[np.ndarray, int, dict]:
     from pipeline import kokoro
-    d = kokoro_delivery(ln.get("tone") or v.get("default_tone", "confident"), float(v.get("energy", 0.0)))
+    d = kokoro_delivery(ln.get("tone") or v.get("default_tone", "confident"), float(v.get("energy", 0.0)),
+                        directed=bool(v.get("directed")), text=spoken, key=str(ln.get("id") or ln.get("start") or ""))
     p = kokoro.say(kokoro_text(spoken, d["tone"], float(v.get("energy", 0.0))), v.get("kokoro_voice", "am_adam"),
                    round(d["speed"] * float(v.get("speed", 1.0)) * float(ln.get("speed", 1.0)), 3))
     x, sr = read_wav(p)

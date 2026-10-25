@@ -125,6 +125,12 @@ def main(argv=None) -> int:
         sm = shot_manifest.build(ep["id"], {"series_manifest": str(MANIFEST.relative_to(ROOT)), "video": ep["file"]})
         studio["slideshow_risk"] = sm["slideshow_risk"]; qa["shot_variety_and_character_action"] = sm["slideshow_risk"]["ok"]
         qa["every_shot_sourced_and_tagged"] = all(r["validation"]["claims_sourced"] and r["validation"]["tagged_as_illustration"] for r in sm["shots"])
+    if (plan["episode"].get("engagement_version") or 1) >= 10:   # v10: the safety policy runs as checks before export
+        from pipeline import safety_qa
+        post = ROOT / "episodes" / ep["id"] / "post.md"
+        sq = safety_qa.analyse(plan, post.read_text() if post.exists() else None); studio["safety"] = sq
+        for k, v in sq["checks"].items():
+            qa[f"safety_{k}"] = v
     sampled = frames(src, verify["duration"], qadir)
     shutil.copy2(out / "contact_sheet.png", qadir / "contact_sheet.png")
     (qadir / "verify.json").write_text(json.dumps({"media": verify, "series_qa": qa, "loudness": ld, "asr": asr, "studio": studio}, indent=2))

@@ -218,3 +218,23 @@ class VersionNine(VersionEight):
     def test_v8_episodes_are_not_rejudged_by_v9(self):
         ep = self.ep(); ep["engagement_version"] = 8
         self.assertNotIn("hook_making_verb", engage_qa.analyse({"episode": ep}, self.tl8("Smugglers loaded a ship with a billion in cocaine."), None)["checks"])
+
+
+class VersionTen(VersionNine):
+    """v10 (ONE SMUGGLER): the person turn by 12 s, a NEXT FILE sign-off, <= 35.5 s."""
+    def ep(self):
+        e = super().ep(); e["engagement_version"] = 10
+        e["end_title"] = {"lines": [{"text": "DUPED OR GUILTY?"}, {"text": "NEXT FILE: THE JUNGLE PILOT"}]}
+        for sc in e["scenes"]:
+            sc.pop("beat", None)
+        e["scenes"][2]["beat"] = "person"
+        return e
+
+    def test_v10_passes_when_person_turn_early_and_signoff_named(self):
+        c = engage_qa.analyse({"episode": self.ep()}, self.tl8("A smuggler taped cocaine under his wig."), None)["checks"]
+        self.assertTrue(c["person_turn_by_12s"]); self.assertTrue(c["next_file_signoff"]); self.assertTrue(c["under_35_5s"])
+
+    def test_v10_fails_without_person_beat_or_signoff(self):
+        ep = self.ep(); ep["scenes"][2].pop("beat"); ep["end_title"]["lines"][1]["text"] = "FOLLOW FOR MORE"
+        c = engage_qa.analyse({"episode": ep}, self.tl8("A smuggler taped cocaine under his wig."), None)["checks"]
+        self.assertFalse(c["person_turn_by_12s"]); self.assertFalse(c["next_file_signoff"])

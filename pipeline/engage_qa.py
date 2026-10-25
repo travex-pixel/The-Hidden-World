@@ -161,4 +161,14 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
                 words = re.findall(r"[\w'’-]+", first_sentence)
                 checks["hook_making_verb"] = bool(words) and len(words) <= 8 and bool(MAKING_VERBS.search(first_sentence)) \
                     and not NUMBER_WORDS.search(first_sentence)
+            if (ep.get("engagement_version") or 1) >= 10:
+                # v10 (docs/CHANNEL_BRIEF_2026-10-26.md, ONE SMUGGLER): the only shared reels (45: 13 shares, 37: 11) were
+                # one-person stories; so the person turn lands by 12 s, a named "NEXT FILE" sign-off earns the follow
+                # (viewers are 100 % non-followers), and the cut stays at or under 35 s.
+                starts = {s["id"]: s["start"] for s in tl}
+                person = [sc for sc in ep.get("scenes", []) if sc.get("beat") == "person"]
+                checks["person_turn_by_12s"] = bool(person) and min(starts.get(sc["id"], 1e9) for sc in person) <= 12.0
+                et = " ".join((l.get("text") or "") for l in ((ep.get("end_title") or {}).get("lines") or []))
+                checks["next_file_signoff"] = bool(re.search(r"NEXT FILE:\s*\S", et, re.I))
+                checks["under_35_5s"] = total <= 35.5
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}
