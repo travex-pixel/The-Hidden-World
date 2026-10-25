@@ -1,0 +1,834 @@
+{
+ "id": "tcv102-young-mule",
+ "number": 102,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Missing Teenager's Suitcase Was Full of Cannabis",
+ "central_question": "An 18-year-old reported missing in Thailand was arrested at Tbilisi airport with about 12 kg of marijuana and 2 kg of hashish in her bag; she said a gang forced her, Thailand released CCTV and called that baseless; she pleaded guilty and got time served plus a fine. Forced, or guilty?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_fenrir",
+  "energy": 0.6,
+  "directed": true,
+  "pronounce": {
+   "Tbilisi": "Tibilisi",
+   "Culley": "Cully",
+   "CCTV": "C C T V"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  28,
+  34
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "102",
+  "label": "THE HIDDEN WORLD · CASE FILE 102"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s05_court",
+   "word": [
+    0,
+    2
+   ],
+   "at": 0.0
+  }
+ },
+ "figures": [
+  "ym102_officer",
+  "ym102_traveller",
+  "ym102_judge"
+ ],
+ "content_notes": "Tone: serious and respectful; the irony is in the facts (a missing-person search that ended at an airport bench in Georgia), never in her. One person, convicted on her own guilty plea and widely named in reputable press (AP, Reuters, Sky, PA, RFE/RL): named once, drawn ONLY as a dark rim-lit silhouette (NOT A LIKENESS), never labelled 'the mule'. Her coercion claim is always presented as her account ('She said...') and immediately followed by Thailand's response (the CCTV, 'baseless'); no torture or injury is shown or described in detail. The pregnancy is not mentioned. No family member is named, drawn or quoted; 'her family' only. The officer and the judge are generic figures in plain clothing/robe with no badge, patch, flag, agency name or insignia; no weapon; no force. The bench, lounge, passport gates and courtroom are illustrations, not reported scenes; the bag is a plain dark bag (colour and brand not sourced) and the wrapped bricks/slabs inside are illustrative (the packing is not sourced); the CCTV frame is our own drawing, not the released footage; the travel card is our own typed graphic, not a boarding pass; no airline, airport sign or logo is copied. No dialogue or quotation card. Facts verified 2026-10-25.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "ym102_hook",
+   "min_duration": 5.3,
+   "pad_after": 0.05,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "click",
+     "gain": 0.2
+    },
+    {
+     "at": 0.42,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.2
+    },
+    {
+     "at": -0.32,
+     "word": [
+      1,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.18
+    },
+    {
+     "at": 0.42,
+     "word": [
+      1,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_kilos"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A missing teenager stuffed her suitcase with cannabis.",
+     "tone": "hook",
+     "pause_before": 0.0,
+     "speed": 1.192
+    },
+    {
+     "who": "narrator",
+     "text": "12 kilos of weed. 2 of hashish.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "missing",
+    "teenager",
+    "stuffed",
+    "cannabis.",
+    "12",
+    "kilos",
+    "hashish."
+   ],
+   "section": "A",
+   "case": "suitcase",
+   "beat": "hook",
+   "music_gain_db": -7
+  },
+  {
+   "id": "s02_open",
+   "scene": "ym102_open",
+   "min_duration": 3.2,
+   "pad_after": 0.08,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.36,
+     "word": [
+      0,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.38
+    },
+    {
+     "at": 0.45,
+     "word": [
+      0,
+      7
+     ],
+     "name": "paper",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_check",
+    "K_kilos"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A bag check unzipped it. Tbilisi airport, Georgia.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bag",
+    "check",
+    "unzipped",
+    "tbilisi",
+    "georgia."
+   ],
+   "section": "A",
+   "case": "suitcase",
+   "beat": "gotcha"
+  },
+  {
+   "id": "s03_person",
+   "scene": "ym102_person",
+   "min_duration": 4.6,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.16
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thump",
+     "gain": 0.18
+    },
+    {
+     "at": 0.5,
+     "word": [
+      1,
+      6
+     ],
+     "name": "paper",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_person",
+    "K_missing",
+    "K_route"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Bella Culley. 18, from England.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "Her family thought she'd vanished in Thailand.",
+     "tone": "curious"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bella",
+    "culley.",
+    "18,",
+    "family",
+    "vanished",
+    "thailand."
+   ],
+   "section": "B",
+   "case": "suitcase",
+   "beat": "person"
+  },
+  {
+   "id": "s04_claim",
+   "scene": "ym102_claim",
+   "min_duration": 5.6,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.16
+    },
+    {
+     "at": 0.4,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.2
+    },
+    {
+     "at": -0.28,
+     "word": [
+      1,
+      0
+     ],
+     "name": "beep",
+     "gain": 0.2
+    },
+    {
+     "at": 0.5,
+     "word": [
+      1,
+      8
+     ],
+     "name": "click",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_claim",
+    "K_cctv"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She said a gang forced her to carry it.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "But Thailand released airport CCTV, and called that baseless.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "gang",
+    "forced",
+    "carry",
+    "thailand",
+    "cctv,",
+    "baseless."
+   ],
+   "section": "C",
+   "case": "suitcase",
+   "beat": "person"
+  },
+  {
+   "id": "s05_court",
+   "scene": "ym102_court",
+   "min_duration": 5.4,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "stamp",
+     "gain": 0.24
+    },
+    {
+     "at": -0.25,
+     "word": [
+      1,
+      0
+     ],
+     "name": "click",
+     "gain": 0.18
+    },
+    {
+     "at": 0.4,
+     "word": [
+      1,
+      9
+     ],
+     "name": "cash",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_plea",
+    "K_sentence",
+    "K_life",
+    "K_fine"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She pleaded guilty.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "Nearly six months served, plus a fine her family paid.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pleaded",
+    "guilty.",
+    "six",
+    "months",
+    "fine",
+    "paid."
+   ],
+   "section": "D",
+   "case": "suitcase",
+   "beat": "consequence",
+   "music_drop": true
+  },
+  {
+   "id": "s06_end",
+   "scene": "ym102_end",
+   "min_duration": 2.4,
+   "pad_after": 0.12,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_home"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The next day, she flew home.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "next",
+    "day,",
+    "home."
+   ],
+   "section": "E",
+   "case": "suitcase",
+   "beat": "callback",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "An 18-year-old British woman who had been reported missing in Thailand was found to have cannabis in her travel bag on arrival in Georgia (marijuana and hashish in her luggage). Narration (the owner's chosen opening #1): 'A missing teenager stuffed her suitcase with cannabis.' Headline 'A SUITCASE OF CANNABIS / FROM A MISSING TEEN'. Who packed the bag is not established; she pleaded guilty to smuggling the drugs.",
+   "sources": [
+    "mia",
+    "ap",
+    "reuters",
+    "indep",
+    "nightly"
+   ]
+  },
+  {
+   "id": "K_kilos",
+   "type": "established",
+   "nature": "fact",
+   "text": "A luggage inspection found about 12 kg of marijuana and about 2 kg (2.068 kg) of hashish in her travel bag. Narration: 'Twelve kilos of weed. Two of hashish.' Label '12 KG MARIJUANA · 2 KG HASHISH'. The wrapped bricks and slabs are an illustration; the packing is not sourced.",
+   "sources": [
+    "mia",
+    "ap",
+    "reuters",
+    "civil"
+   ]
+  },
+  {
+   "id": "K_check",
+   "type": "established",
+   "nature": "fact",
+   "text": "The drugs were found during a luggage inspection at Tbilisi International Airport, Georgia, on her arrival on 10 May 2025. Narration (gotcha): 'A bag check unzipped it. Tbilisi airport, Georgia.' Label 'TBILISI AIRPORT, GEORGIA' / 'Luggage inspection · 10 May 2025'.",
+   "sources": [
+    "mia",
+    "ap",
+    "civil",
+    "khaosod"
+   ]
+  },
+  {
+   "id": "K_person",
+   "type": "established",
+   "nature": "fact",
+   "text": "Bella May Culley, 18 at arrest (born 2006), from Billingham, Teesside, England; named by AP, Reuters, Sky, PA and RFE/RL; she pleaded guilty and was convicted (an adult). Narration: 'Bella Culley. Eighteen, from England.' Label 'BELLA CULLEY, 18' / 'Pleaded guilty · silhouette, not a likeness'.",
+   "sources": [
+    "ap",
+    "reuters",
+    "pa",
+    "indep",
+    "nightly"
+   ]
+  },
+  {
+   "id": "K_missing",
+   "type": "established",
+   "nature": "fact",
+   "text": "Her family reported her missing in Thailand (last seen around Pattaya) before learning she was in custody in Georgia. Narration: 'Her family thought she'd vanished in Thailand.' Label 'REPORTED MISSING IN THAILAND'.",
+   "sources": [
+    "indep",
+    "lbc",
+    "nightly"
+   ]
+  },
+  {
+   "id": "K_route",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 10 May 2025 she flew from Bangkok's Suvarnabhumi Airport to Sharjah, UAE, and on to Tbilisi, where she was arrested on arrival. Typed travel card 'BANGKOK -> SHARJAH -> TBILISI · 10 MAY 2025 · ARRESTED ON ARRIVAL' (our own graphic, not a replica of any document).",
+   "sources": [
+    "khaosod",
+    "rferl",
+    "bbcaol"
+   ]
+  },
+  {
+   "id": "K_claim",
+   "type": "established",
+   "nature": "allegation",
+   "text": "She told the court she had been tortured in Thailand and forced (by a criminal group) to carry the drugs: her account, disputed. Narration: 'She said a gang forced her to carry it.' Label 'HER ACCOUNT: FORCED BY A GANG'.",
+   "sources": [
+    "ap",
+    "reuters",
+    "civil",
+    "khaosod"
+   ]
+  },
+  {
+   "id": "K_cctv",
+   "type": "established",
+   "nature": "allegation",
+   "text": "Thailand's Immigration Bureau released airport CCTV showing her passing the automated passport channel at Suvarnabhumi normally on 10 May 2025 without asking for help, and said her claims had no factual basis. Narration: 'But Thailand released airport CCTV, and called that baseless.' Label 'THAILAND: CLAIM BASELESS' / 'Immigration police CCTV · 10 May 2025'.",
+   "sources": [
+    "khaosod",
+    "pattaya",
+    "mustshare"
+   ]
+  },
+  {
+   "id": "K_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "Under a plea agreement she pleaded guilty and the Tbilisi court found her guilty on 3 November 2025. Narration: 'She pleaded guilty.' Label 'GUILTY PLEA · 3 NOV 2025'.",
+   "sources": [
+    "ap",
+    "rferl",
+    "civil",
+    "onetv"
+   ]
+  },
+  {
+   "id": "K_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "Sentence: the time already served, nearly six months (five months and 24 or 25 days). Narration: 'Nearly six months served, ...'.",
+   "sources": [
+    "ap",
+    "reuters",
+    "pa"
+   ]
+  },
+  {
+   "id": "K_life",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the charge carried up to 20 years in prison or life. Card 'THE CHARGE CARRIED / UP TO 20 YEARS OR LIFE'.",
+   "sources": [
+    "mia",
+    "rferl",
+    "civil"
+   ]
+  },
+  {
+   "id": "K_fine",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 500,000 LARI): plus a fine of 500,000 lari (about GBP 137,000-138,000; about USD 184,000-187,000), paid by her family. Narration: '... plus a fine her family paid.'",
+   "sources": [
+    "ap",
+    "reuters",
+    "pa",
+    "ocmedia"
+   ]
+  },
+  {
+   "id": "K_home",
+   "type": "established",
+   "nature": "fact",
+   "text": "She was freed on 3 November 2025 and flew home to the UK (London Luton) the next day, 4 November 2025. Narration (callback): 'The next day, she flew home.'",
+   "sources": [
+    "gazette",
+    "georgiatoday",
+    "pa"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "mia",
+   "publisher": "Georgian Ministry of Internal Affairs",
+   "title": "Particularly large quantity of narcotics illegally imported into Georgia: foreign citizen arrested",
+   "url": "https://www.police.ge/en/politsiam-gansakutrebit-didi-odenobit-narkotikuli-sashualebis-saqartveloshi-ukanonod-shemotanis-braldebit-utskho-qveknis-moqalaqe-daakava/16693",
+   "date": "2025-05",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "ap",
+   "publisher": "AP (via KSAT)",
+   "title": "Pregnant British teen arrested for drug smuggling in Georgia released after guilty verdict",
+   "url": "https://www.ksat.com/news/world/2025/11/03/pregnant-british-teen-arrested-for-drug-smuggling-in-georgia-released-after-guilty-verdict/",
+   "date": "2025-11-03",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "reuters",
+   "publisher": "Reuters (via Yahoo News)",
+   "title": "Georgia frees pregnant UK teenager who smuggled drugs",
+   "url": "https://www.yahoo.com/news/articles/georgia-frees-pregnant-uk-teenager-115053421.html",
+   "date": "2025-11-03",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "rferl",
+   "publisher": "RFE/RL",
+   "title": "Georgian court releases British teenager in Thailand drugs case",
+   "url": "https://www.rferl.org/a/georgia-british-teenager-court-release-drugs-thailand-culley/33580139.html",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "sky",
+   "publisher": "Sky News",
+   "title": "British teen arrested at Tbilisi airport (post)",
+   "url": "https://x.com/SkyNews/status/1923018003861434500",
+   "date": "2025-05",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "pa",
+   "publisher": "PA Media (via Express & Star)",
+   "title": "Pregnant teenager accused of drug smuggling in Georgia happy to be freed",
+   "url": "https://www.expressandstar.com/uk-news/pregnant-teenager-accused-of-drug-smuggling-in-georgia-happy-to-be-freed-5657269",
+   "date": "2025-11-03",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "civil",
+   "publisher": "Civil.ge",
+   "title": "British national arrested at Tbilisi airport with narcotics; released under plea agreement",
+   "url": "https://civil.ge/archives/709375",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "ocmedia",
+   "publisher": "OC Media",
+   "title": "Pregnant teenage drug smuggler from UK released from Georgian prison in $185,000 plea deal",
+   "url": "https://oc-media.org/pregnant-teenage-drug-smuggler-from-uk-released-from-georgian-prison-in-185-000-plea-deal",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "onetv",
+   "publisher": "1TV (Georgian Public Broadcaster)",
+   "title": "British national arrested in Georgia drug smuggling case released under plea bargain",
+   "url": "https://1tv.ge/lang/en/news/british-national-arrested-in-georgia-drug-smuggling-case-released-under-plea-bargain/",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "khaosod",
+   "publisher": "Khaosod English",
+   "title": "Thai Immigration Refutes British Woman's Forced Drug Trafficking Claims",
+   "url": "https://www.khaosodenglish.com/news/2025/07/02/thai-immigration-refutes-british-womans-forced-drug-trafficking-claims/",
+   "date": "2025-07-02",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "pattaya",
+   "publisher": "Pattaya Mail",
+   "title": "Ex Thailand drugs suspect Bella Culley tries kitchen sink defence",
+   "url": "https://www.pattayamail.com/latestnews/news/ex-thailand-drugs-suspect-bella-culley-tries-kitchen-sink-defence-509281",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "mustshare",
+   "publisher": "MustShareNews",
+   "title": "British teen claims she was tortured to smuggle drugs from Thailand, authorities say CCTV footage contradicts claims",
+   "url": "https://mustsharenews.com/teen-smuggle-drugs/",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "indep",
+   "publisher": "The Independent (via AOL)",
+   "title": "British teenager reported missing in Thailand",
+   "url": "https://www.aol.com/news/british-teenager-reported-missing-thailand-103754108.html",
+   "date": "2025-05",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "lbc",
+   "publisher": "LBC",
+   "title": "Bella May Culley: British teenager faces life in jail after arrest for drug smuggling",
+   "url": "https://www.lbc.co.uk/world-news/bella-may-culley-british-teenager-faces-life-in-jail-arrest-drug-smuggling/",
+   "date": "2025-05",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "nightly",
+   "publisher": "The Nightly (West Australian)",
+   "title": "British teenager who vanished in Thailand is found in Georgia, arrested on drug offences",
+   "url": "https://thenightly.com.au/world/bella-may-culley-british-teenager-who-vanished-in-thailand-is-found-in-georgia-arrested-on-drug-offences-c-18689533",
+   "date": "2025-05",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "bbcaol",
+   "publisher": "BBC (via AOL)",
+   "title": "Bella Culley case delay to 'finalise plea bargain'",
+   "url": "https://www.aol.com/articles/bella-culley-case-delay-finalise-100430285.html",
+   "date": "2025-10",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "gazette",
+   "publisher": "Teesside Gazette",
+   "title": "Bella Culley back in the UK",
+   "url": "https://www.gazettelive.co.uk/news/bella-culley-billingham-back-uk-32810367",
+   "date": "2025-11-04",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "georgiatoday",
+   "publisher": "Georgia Today",
+   "title": "British teenager Bella Culley returns home after Georgian jail sentence",
+   "url": "https://georgiatoday.ge/british-teenager-bella-culley-returns-home-after-georgian-jail-sentence/",
+   "date": "2025-11-04",
+   "accessed": "search-result extract only, 2026-10-25"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 10,
+ "lane": "customs",
+ "search_terms": [
+  "suitcase cannabis",
+  "missing teen",
+  "bella culley"
+ ],
+ "palette": {
+  "shadow": "#141b22",
+  "mid": "#aeb2ac",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A SUITCASE OF CANNABIS"
+   },
+   {
+    "text": "FROM A MISSING TEEN",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "FILE 102 ·",
+  "keys": [
+   {
+    "t": 5.93,
+    "v": "THE FIND"
+   },
+   {
+    "t": 9.44,
+    "v": "WHO SHE IS"
+   },
+   {
+    "t": 14.45,
+    "v": "HER STORY"
+   },
+   {
+    "t": 21.64,
+    "v": "THE VERDICT"
+   }
+  ],
+  "y": 350,
+  "until": 26.26
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "FORCED OR GUILTY? 👇"
+   },
+   {
+    "text": "HER STORY OR THE CCTV?",
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D CARRY A STRANGER'S BAG",
+    "fs": 30
+   },
+   {
+    "text": "NEXT FILE: THE CAPTAIN WHO LEFT",
+    "fs": 34,
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "THE HIDDEN WORLD · CASE FILE 102",
+    "fs": 30
+   }
+  ],
+  "from": 2.3,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-25"
+}

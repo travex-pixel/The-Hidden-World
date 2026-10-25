@@ -167,3 +167,14 @@ says cameras show her passing through normally. She pleaded guilty: time served,
 - **Torture claim:** always framed as *her* claim ("She said…"), and always followed by Thailand's response (the CCTV, "no factual basis").
 - **Family:** no family names on screen or in the voice-over. Say "her family" or "her mum" only.
 - **Likeness:** a dark silhouette only (NOT A LIKENESS). No face, no reconstruction of the reunion or of the family.
+
+## Builder additions (verified 25 Oct 2026, web search extracts)
+
+| id | Claim used in the reel | Sources (search-result extracts, accessed 2026-10-25) |
+|---|---|---|
+| C6b | Route Bangkok (Suvarnabhumi) -> Sharjah, UAE -> Tbilisi on 10 May 2025 (the typed travel card). Second source for Sharjah, beyond S4 | S10 Khaosod English (left Suvarnabhumi on a flight to Sharjah, UAE); S4 RFE/RL (via Sharjah); BBC via AOL, https://www.aol.com/articles/bella-culley-case-delay-finalise-100430285.html ("arrived in Tbilisi on a flight from Sharjah") |
+| C12b | Thailand's response: immigration police released airport CCTV showing her passing the automated passport channel normally, and said her claims had no factual basis. Narrated as "Thailand released airport CCTV, and called that baseless" (paraphrase, no quote card) | S10 Khaosod English; Pattaya Mail, https://www.pattayamail.com/latestnews/news/ex-thailand-drugs-suspect-bella-culley-tries-kitchen-sink-defence-509281; MustShareNews, https://mustsharenews.com/teen-smuggle-drugs/ |
+
+Noted, not narrated: Pattaya Mail (July 2025) reports her later claim that the suitcase was packed by a third party. The
+owner's chosen spoken hook ("A missing teenager stuffed her suitcase with cannabis.") states the packing as her act; the
+packing itself is not established (see "What could NOT be verified"). Flagged to the owner in the build report.

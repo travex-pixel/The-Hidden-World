@@ -136,3 +136,11 @@ Everyone has a friend who would bail first; nobody is sure whether he is a cowar
 [0–3 s, hatch half-open] "A cargo ship hid a fortune in cocaine." [by 9 s, hatch opens] "In heavy seas, Rangers dropped from a helicopter. Over two tonnes, worth a hundred and fifty-seven million euros." [by 12 s] "But the captain was gone. A day earlier he'd faked an emergency and been airlifted off, with cash and phones." [20 s] "Soheil Jelveh's lawyer said he was captain in name only. The court said he knew. Seventeen and a half years." [27 s] "This July, the ship sailed. He didn't."
 
 End card (text only): VICTIM OR SMUGGLER? 👇 · SEND TO THE MATE WHO'D BAIL FIRST · NEXT FILE: THE BIBLE RUN (swap to THE INSIDE MAN if 104 fails verification).
+
+## Added by the Case File 103 builder (25 Oct 2026, web search, two sources each)
+| id | claim | status | sources |
+|---|---|---|---|
+| M18b_tow | The MV Matthew left Cork Harbour (Marino Point) on Fri 17 July 2026 **under tow** (a "dead ship tow" by tugs, bound for Varna, Bulgaria); Revenue confirmed the departure on 18 July. It did not sail under its own power, so the callback says **"the ship left"**, not "sailed". | established | revenue; https://maritime-executive.com/article/ireland-finally-gets-rid-of-seized-bulker-after-three-years-and-16m-cost (Maritime Executive, Jul 2026); https://afloat.ie/port-news/cork-harbour-news/item/72229-ireland-s-largest-tug-assists-cork-s-cocaine-busted-bulker-mv-matthew (Afloat) |
+| M18c_dollar | Revenue sold the ship to an international shipping company for a nominal **$1**. Not narrated (caption material only). | established | revenue; https://www.irishtimes.com/crime-law/2026/07/18/seized-drug-smuggling-ship-mv-matthew-sold-for-one-dollar/ (Irish Times, 18 Jul 2026); https://www.echolive.ie/nationalnews/arid-41881888.html (Echo Live) |
+| M18d_cost | Cost to the State: about **€16m** (Irish Times headline, Maritime Executive); Revenue puts it at about €17m. The ledger's "€16m" stands; not narrated. | established (range) | it_depart; mex (above); revenue |
+| M16b_noappeal | No report of an appeal, reduction or release for Jelveh was found (searches 25 Oct 2026), so "He didn't" (leave) rests on the 17½-year sentence of 4 July 2025. | negative search | — |
