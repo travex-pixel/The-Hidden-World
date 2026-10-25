@@ -29,7 +29,7 @@ def build(h):
     scenes = [
         # HOOK (frame 0, the half-reveal): the hatch on the wet deck, two gloved hands lifting its near edge a hand's width,
         #     a torch beam slipping into the black gap; on line 2 they heave it a little higher (still dark inside)
-        S("s01_hook", "sc103_hook", [N("A ship's captain carried a fortune in cocaine.", tone="hook", speed=1.13, pause_before=0.0),
+        S("s01_hook", "sc103_hook", [N("A ship's captain carried a fortune in cocaine.", tone="hook", speed=1.10, pause_before=0.0),
                                      N("Over 2 tonnes, worth a hundred and fifty-seven million euros.", tone="confident")],
           "tension", ["M1_ship", "M2_load", "M3_value"],
           sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rain", 0.16), fw(0, 3, "rasp", 0.2, 0.0), fw(0, 7, "thump", 0.22, 0.0), fw(1, 8, "cash", 0.15, 0.0)],
