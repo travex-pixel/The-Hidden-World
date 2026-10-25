@@ -562,3 +562,5 @@
 - 2026-10-25 13:46:01 tcv102-young-mule: rendering (final, seed 1)
 - 2026-10-25 13:57:41 tcv102-young-mule: rendered in 701s
 - 2026-10-25 13:58:08 tcv102-young-mule: VERIFIED -> series/true-crime-cinematic/output/true_crime_102_young_mule.mp4 (29.1s, 11.9 MB, sha256 59148c0acec7)
+- 2026-10-25 14:00:04 produce 101 --force: regenerating episode data
+- 2026-10-25 14:00:04 tcv101-soap-grandad: rendering (final, seed 1)
