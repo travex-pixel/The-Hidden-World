@@ -80,3 +80,12 @@ object open with the inside still hidden, and the cut finishes on the gotcha lin
 The ceiling is not skip: 97 (17 %) went flat at 2.3k while 96 (30 %) kept climbing; 97 had the lowest like rate and
 shares/saves are 0 on all three (1 share in the last 9 reels). Likes land at the hook, the first gotcha, and the END CARD
 (25 % of 97's likes in its last second): the vote line earns likes, the "send to the mate" line earns no sends.
+
+**Batch 6: engine v9 (half-reveal opening), 98 posted 25 Oct ~16:00 AEDT, read at 1 h (17:06):**
+
+| # | age | views | viewers | avg watch | kept @10 s | end % | shares | saves | follows | comments | curve |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 98 cocaine wig | 1 h | 1,723 | 1,091 | 16 s (57 % of 28.4 s) | ~62 | ~45 | 0 | 0 | 0 | 2 (0.2 %, "higher") | near-vertical from 40 min: 1,723 at 1 h vs ~300 typical |
+
+The fastest hour 1 on the account (97 took 4 h to reach 2.3k). 1.58 views per viewer: the first clear replay signal (the loop).
+Skip rate not captured in this reading. Shares, saves and follows still 0 at 1 h.
