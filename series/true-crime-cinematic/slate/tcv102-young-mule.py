@@ -1,7 +1,7 @@
 """Case File 102 (cinematic, premium look, ENGINE V10 "ONE SMUGGLER": one case, one person, beats hook -> gotcha ->
 person -> consequence -> callback; the half-reveal opening and the making-verb hook from v9; the loop; Kokoro am_fenrir
 with directed delivery; the NEXT FILE sign-off). Lane: customs (an airport luggage inspection).
-Frame 0 = THE HALF-REVEAL: close on a plain dark travel bag lying on a steel inspection bench under a lamp; two blue
+Frame 0 = THE HALF-REVEAL: close on a plain teal canvas holdall (colour not sourced) lying on a steel inspection bench under a lamp; two blue
 gloved hands are unzipping it, the zip a third of the way along, the flap lifted on a dark gap (the inside hidden); the
 camera already pushing in. On line 2 the zip runs on to two thirds; on the gotcha ("unzipped", before 9 s) the lid flips
 open on wrapped green bricks and dark slabs (ILLUSTRATION: the packing is not sourced) with the single impact.
@@ -32,12 +32,12 @@ def build(h):
         # HOOK (frame 0, the half-reveal): the inspection bench; close on the travel bag; the gloved hands draw the zip
         # from a third open, the flap lifted on darkness, the camera already pushing in; on line 2 the zip runs on to two
         # thirds and the officer looks up; the place label
-        S("s01_hook", "ym102_hook", [N("A missing teenager stuffed her suitcase with cannabis.", tone="hook", pause_before=0.0, speed=1.192),
+        S("s01_hook", "ym102_hook", [N("A missing teenager's suitcase was stuffed with cannabis.", tone="hook", pause_before=0.0, speed=1.2213),
                                      N("12 kilos of weed. 2 of hashish.", tone="confident")],
           "tension", ["K_hook", "K_kilos"],
           sfx=[fx(0.0, "sub", 0.4), fx(0.0, "click", 0.2), fw(0, 7, "thump", 0.2, 0.42),
-               fw(1, 0, "rasp", 0.18, -0.32), fw(1, 6, "thud", 0.2, 0.42)],
-          emph=["missing", "teenager", "stuffed", "cannabis.", "12", "kilos", "hashish."], min_d=5.3, pad=0.05),
+               fw(1, 0, "click", 0.16, -0.2), fw(1, 6, "thud", 0.2, 0.42)],
+          emph=["missing", "teenager's", "suitcase", "stuffed", "cannabis.", "12", "kilos", "hashish."], min_d=5.3, pad=0.05),
         # GOTCHA: the same bench, closer; the zip reaches the corner and on "unzipped" the lid flips open on the wrapped
         # green bricks and dark slabs (the single impact); the find label
         S("s02_open", "ym102_open", [N("A bag check unzipped it. Tbilisi airport, Georgia.", tone="reveal", pause_before=0.3)],
@@ -111,7 +111,7 @@ def build(h):
     ]
     C = h.claim
     claims = [
-        C("K_hook", "An 18-year-old British woman who had been reported missing in Thailand was found to have cannabis in her travel bag on arrival in Georgia (marijuana and hashish in her luggage). Narration (the owner's chosen opening #1): 'A missing teenager stuffed her suitcase with cannabis.' Headline 'A SUITCASE OF CANNABIS / FROM A MISSING TEEN'. Who packed the bag is not established; she pleaded guilty to smuggling the drugs.",
+        C("K_hook", "An 18-year-old British woman who had been reported missing in Thailand was found to have cannabis in her travel bag on arrival in Georgia (marijuana and hashish in her luggage). Narration (revised opening, passive so it does not say who packed the bag): 'A missing teenager's suitcase was stuffed with cannabis.' Headline 'A SUITCASE OF CANNABIS / FROM A MISSING TEEN'. Who packed the bag is not established; she pleaded guilty to smuggling the drugs.",
           ["mia", "ap", "reuters", "indep", "nightly"]),
         C("K_kilos", "A luggage inspection found about 12 kg of marijuana and about 2 kg (2.068 kg) of hashish in her travel bag. Narration: 'Twelve kilos of weed. Two of hashish.' Label '12 KG MARIJUANA · 2 KG HASHISH'. The wrapped bricks and slabs are an illustration; the packing is not sourced.",
           ["mia", "ap", "reuters", "civil"]),
@@ -176,12 +176,12 @@ def build(h):
                       "until": round(end_start - 0.35, 2) if end_start else 26.0}   # gone before the end scene
     # the end card from ~0.2 s into the end scene (`from` counts back from the end of the video)
     ep["end_title"] = {"lines": [{"text": "FORCED OR GUILTY? \U0001F447"}, {"text": "HER STORY OR THE CCTV?", "colour": "#e8a33a"},
-                                 {"text": "SEND TO THE MATE WHO'D CARRY A STRANGER'S BAG", "fs": 30},
+                                 {"text": "SEND TO THE MATE WHO'S OFF TO THAILAND", "fs": 30},
                                  {"text": "NEXT FILE: THE CAPTAIN WHO LEFT", "fs": 34, "colour": "#e8a33a"},
                                  {"text": "THE HIDDEN WORLD · CASE FILE 102", "fs": 30}],
                        "from": round(total - end_start - 0.2, 2) if (total and end_start) else 2.4, "y": 300, "fs": 60}
     ep["narrator_profile"] = {"provider": "kokoro", "kokoro_voice": "am_fenrir", "energy": 0.6, "directed": True,
-                              "pronounce": {"Tbilisi": "Tibilisi", "Culley": "Cully", "CCTV": "C C T V"}}
+                              "pronounce": {"A": "Uh", "Tbilisi": "Tibilisi", "Culley": "Cully", "CCTV": "C C T V"}}
     ep["score"] = {"root_hz": 138.59, "bpm": 84,
                    "cliff": {"scene": "s05_court", "word": [0, 2], "at": 0.0}}
     ep["content_notes"] = ("Tone: serious and respectful; the irony is in the facts (a missing-person search that ended at an airport "
@@ -191,8 +191,8 @@ def build(h):
                            "by Thailand's response (the CCTV, 'baseless'); no torture or injury is shown or described in detail. The pregnancy "
                            "is not mentioned. No family member is named, drawn or quoted; 'her family' only. The officer and the judge are "
                            "generic figures in plain clothing/robe with no badge, patch, flag, agency name or insignia; no weapon; no force. "
-                           "The bench, lounge, passport gates and courtroom are illustrations, not reported scenes; the bag is a plain dark bag "
-                           "(colour and brand not sourced) and the wrapped bricks/slabs inside are illustrative (the packing is not sourced); "
+                           "The bench, lounge, passport gates and courtroom are illustrations, not reported scenes; the bag is a plain teal canvas holdall "
+                           "(colour and brand not sourced; chosen for readability) and the wrapped bricks/slabs inside are illustrative (the packing is not sourced); "
                            "the CCTV frame is our own drawing, not the released footage; the travel card is our own typed graphic, not a "
                            "boarding pass; no airline, airport sign or logo is copied. No dialogue or quotation card. Facts verified " + VER + ".")
     ep["legal_status_verified"] = VER

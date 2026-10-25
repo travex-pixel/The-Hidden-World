@@ -5,7 +5,7 @@
    (she had flown from Bangkok via Sharjah). She said a gang forced her to carry it; Thailand released airport CCTV and
    called that baseless. On 3 Nov 2025 she pleaded guilty under a plea agreement: time served (nearly six months) plus a
    500,000-lari fine her family paid. She flew home the next day.
-   Structure: frame 0 = THE HALF-REVEAL: close on a plain dark travel bag lying on a steel inspection bench under a
+   Structure: frame 0 = THE HALF-REVEAL: close on a plain teal canvas holdall (colour not sourced) lying on a steel inspection bench under a
    hanging lamp; two blue gloved hands (sleeves from the bottom corners) are unzipping it: the brass pull a third of the
    way along the front edge, the flap behind it lifted on a dark gap (the inside hidden); the camera already pushing in;
    a generic officer at the left behind the bench. On line 2 the zip runs on to two thirds. GOTCHA (cut closer): the zip
@@ -22,7 +22,7 @@
    brass pull and, once open, the green bricks.
    Content rules: she is a dark rim-lit silhouette only (NOT A LIKENESS), never labelled "the mule"; no family member is
    drawn; the officer and the judge are generic figures with no badge, patch, flag, emblem, agency name or insignia; no
-   weapon; no force. The bag's colour and brand are not sourced (a plain dark bag); the CCTV frame is our own drawing; the
+   weapon; no force. The bag's colour and brand are not sourced (a plain teal canvas holdall, chosen for readability); the CCTV frame is our own drawing; the
    travel card is our own typed graphic, not a boarding pass; no airline, airport sign, livery or logo.
    New environments (E.registerSets): ym102_bench (an airport inspection room), ym102_lounge (a departures lounge at
    night), ym102_gates (automated passport gates, high angle), ym102_court (a courtroom). */
@@ -37,7 +37,7 @@
   const TAG = 'ILLUSTRATION · GENERIC FIGURES';
   const TAG_SIL = 'ILLUSTRATION · SILHOUETTE · NOT A LIKENESS';
   const ACC = '#e8a33a', GLOW = '#fff1d6';
-  const BAG = '#36435c', BAG_D = '#232c3e', BAG_L = '#53658a', BAG_H = '#8ea2c8', LINING = '#1b2028';
+  const BAG = '#1f8580', BAG_D = '#135753', BAG_L = '#2fb0a8', BAG_H = '#9ae6dc', LINING = '#1b2028';
   const GLOVE = '#5b90d8', GLOVE_D = '#3a67ad', GLOVE_L = '#a6c8f2', SLEEVE = '#1f2630';
   const BRICK = '#7fae5a', BRICK_D = '#4c7a36', BRICK_L = '#c4e3a2', SLAB = '#3e2a1c', SLAB_L = '#6a4a32';
   const rad = d => d * Math.PI / 180;
@@ -151,6 +151,7 @@
     g += wash(pz[0], pz[1], 50, 30, ACC, 0.35) + `<rect x="${f1(pz[0] - 18)}" y="${f1(pz[1] - 12)}" width="36" height="22" rx="5" fill="#c9922c" stroke="${INK}" stroke-width="4"/>` +
       `<path d="M${f1(pz[0] - 9)} ${f1(pz[1] + 8)} L${f1(pz[0] - 12)} ${f1(pz[1] + 48)} L${f1(pz[0] + 12)} ${f1(pz[1] + 48)} L${f1(pz[0] + 9)} ${f1(pz[1] + 8)} Z" fill="${ACC}" stroke="${INK}" stroke-width="4"/>`;
     if (lit > 0.01) g += wash(0, -60, 420, 240, GLOW, f1(0.22 * lit));
+    g += wash(0, 20, 470, 230, '#fff2d8', 0.16);   // the lamp pool on the holdall: the one bright thing in the frame
     // the hands: the left one holds the lifted flap's corner (and lifts the lid when it opens), the right one the pull
     const j = Math.sin(t * 7) * 2;
     const lc = lidEdge(-FX + 40, zz, L, oo);
@@ -177,7 +178,7 @@
     // an airport inspection room: grey-green wall panels, a dark luggage belt behind, a blank notice board, a hanging
     // lamp throwing a warm cone onto the bench (the bench, bag and hands are props)
     ym102_bench(ctx, o = {}) {
-      let back = `<rect x="-500" y="-400" width="${W + 1000}" height="2400" fill="#26312f"/>`;
+      let back = `<rect x="-500" y="-400" width="${W + 1000}" height="2400" fill="#1d2524"/>`;
       for (let x = -500; x < W + 500; x += 180) back += `<path d="M${x} -400 L${x} 2000" stroke="#1f2927" stroke-width="5"/>`;
       back += `<rect x="-500" y="600" width="${W + 1000}" height="16" fill="#1d2624"/>`;
       let belt = `<rect x="-500" y="720" width="${W + 1000}" height="70" fill="#15191c" stroke="${INK}" stroke-width="5"/>`;
@@ -185,7 +186,7 @@
       belt += `<rect x="740" y="300" width="300" height="200" rx="8" fill="#344240" stroke="${INK}" stroke-width="4"/><rect x="770" y="330" width="240" height="140" fill="#3e4e4b" opacity="0.8"/>`;
       const lamp = `<path d="M590 -400 L590 140" stroke="#151a1e" stroke-width="6"/><path d="M524 206 L656 206 L626 140 L554 140 Z" fill="#3c4a44" stroke="${INK}" stroke-width="5"/>` +
         `<ellipse cx="590" cy="208" rx="60" ry="12" fill="#fff4d8"/>` + wash(590, 222, 170, 60, '#fff1cf', 0.5) +
-        `<path d="M536 210 L644 210 L1080 1300 L100 1300 Z" fill="#fff1cf" opacity="0.06"/>` + wash(590, 900, 480, 380, '#ffe8c0', 0.16);
+        `<path d="M536 210 L644 210 L1180 1300 L0 1300 Z" fill="#fff1cf" opacity="0.08"/>` + wash(590, 980, 620, 420, '#ffe8c0', 0.3);
       return { light: { dir: -1, rim: '#fff1cf', key: '#ece4d4' }, layers: [[0.1, back], [0.35, belt], [0.9, lamp]] };
     },
     // a departures lounge at night: tall windows on a dark apron (runway lights, a plain unmarked tail far off), a row
