@@ -546,3 +546,7 @@
 - 2026-10-25 00:26:42 tcv99-where-they-hid-it-7: rendering (final60, seed 1)
 - 2026-10-25 00:44:16 tcv99-where-they-hid-it-7: rendered in 1054s
 - 2026-10-25 00:44:46 tcv99-where-they-hid-it-7: VERIFIED -> series/true-crime-cinematic/output/true_crime_99_where_they_hid_it_7.mp4 (27.5s, 15.2 MB, sha256 b715eeb99316)
+- 2026-10-25 00:46:25 produce 98 --force: regenerating episode data
+- 2026-10-25 00:46:25 tcv98-cocaine-wig: rendering (final60, seed 1)
+- 2026-10-25 01:02:55 tcv98-cocaine-wig: rendered in 990s
+- 2026-10-25 01:03:28 tcv98-cocaine-wig: VERIFIED -> series/true-crime-cinematic/output/true_crime_98_cocaine_wig.mp4 (28.4s, 14.8 MB, sha256 a29b766bdc55)
