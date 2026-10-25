@@ -1,0 +1,895 @@
+{
+ "id": "tcv99-where-they-hid-it-7",
+ "number": 99,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Stuffed Cocaine Inside a Horse Saddle",
+ "central_question": "Where they hid it: Spain's Guardia Civil found cocaine inside a horse saddle posted from Colombia (2026); Montreal border officers found cocaine in hollowed-out Halloween pumpkins (2013); New Zealand customs found 35 kg inside a horse-head sculpture (2016). Which was the smartest hiding place?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "5": "five"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  25,
+  29
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "99",
+  "label": "WHERE THEY HID IT · 8"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_flight",
+   "word": [
+    0,
+    2
+   ],
+   "at": 0.5
+  }
+ },
+ "figures": [
+  "wh99_officer",
+  "wh99_border",
+  "wh99_traveller",
+  "wh99_customs",
+  "wh99_flyer1",
+  "wh99_flyer2"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the hiding places (a horse saddle in the post, Halloween pumpkins, a jewelled horse head), never on a victim (none appears). Every case is a seizure by a named agency (Spain's Guardia Civil; the Canada Border Services Agency; New Zealand Customs and Police), a settled fact; the hook states the seizure. Everyone arrested is arrested or charged, not convicted, as reported: never named; the Montreal traveller and the two men at Auckland airport are drawn only as dark rim-lit silhouettes with no face (NOT A LIKENESS); the three people arrested in Spain are not drawn at all, only a typed label, and 'police say' carries the allegation that one was told the parcel was not theirs. The shooting during one Spanish house search is not shown or narrated. Officers are generic figures in plain clothing with no badge, patch, flag, tricorn, agency name or insignia; no weapon; no force shown (the airport arrest is an officer stepping into the path, nothing more). Parcels, suitcases, the crate and the departures board carry no company name, airline, logo or plate; the X-ray image is our own false-colour drawing with typed boxes, not any real system's interface. The parcel bench, the baggage bench, the X-ray bay, the freight shed and the departures hall are illustrations, not reported scenes; the taped bricks in the saddle illustrate 'inside' (the packing was not described). Every card is our own typed graphic; no dialogue or quotation card. Facts verified 2026-10-24.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "wh99_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "click",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_weight",
+    "K_post"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers stuffed cocaine in a horse saddle.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Over 5 kilos, posted from Colombia to Spain.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "stuffed",
+    "cocaine",
+    "horse",
+    "saddle.",
+    "5",
+    "kilos,",
+    "colombia",
+    "spain."
+   ],
+   "section": "A",
+   "case": "saddle",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_open",
+   "scene": "wh99_open",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "hit",
+     "gain": 0.38
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "door",
+     "gain": 0.2
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "cuffs",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_open",
+    "K_watch",
+    "K_arrest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But police let it arrive, and arrested whoever collected it.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "arrive,",
+    "arrested",
+    "whoever",
+    "collected"
+   ],
+   "section": "A",
+   "case": "saddle"
+  },
+  {
+   "id": "s03_pumpkins",
+   "scene": "wh99_pumpkins",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "click",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_strange",
+    "K_pumpkins"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That wasn't even the strangest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "In Montreal: cocaine inside Halloween pumpkins.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "wasn't",
+    "strangest.",
+    "montreal:",
+    "cocaine",
+    "halloween",
+    "pumpkins."
+   ],
+   "section": "B",
+   "case": "pumpkins"
+  },
+  {
+   "id": "s04_xray",
+   "scene": "wh99_xray",
+   "min_duration": 3.2,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "beep",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.36
+    }
+   ],
+   "claims": [
+    "K_heavy",
+    "K_woman"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They seemed too heavy, so officers X-rayed them.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "too",
+    "heavy,",
+    "officers",
+    "x-rayed"
+   ],
+   "section": "B",
+   "case": "pumpkins"
+  },
+  {
+   "id": "s05_horse",
+   "scene": "wh99_horse",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sparkle",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_horse",
+    "K_weight400"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The biggest? Cocaine inside a giant horse's head.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "biggest?",
+    "cocaine",
+    "giant",
+    "horse's",
+    "head."
+   ],
+   "section": "C",
+   "case": "horse"
+  },
+  {
+   "id": "s06_flight",
+   "scene": "wh99_flight",
+   "min_duration": 3.4,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      2
+     ],
+     "name": "cuffs",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "beep",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_airport",
+    "K_stat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Two were arrested at the airport, leaving for Hawaii.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "two",
+    "arrested",
+    "airport,",
+    "hawaii."
+   ],
+   "section": "D",
+   "case": "horse",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "wh99_end",
+   "min_duration": 2.2,
+   "pad_after": 0.2,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "click",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_told"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "One was told it wasn't even theirs.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "told",
+    "wasn't",
+    "even",
+    "theirs."
+   ],
+   "section": "E",
+   "case": "saddle",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Announced 29 August 2026: the Guardia Civil (Operation 'Gavilanes') seized cocaine hidden inside a horse saddle sent by post from Colombia to Azuqueca de Henares (Guadalajara, Spain). Narration: 'Smugglers stuffed cocaine in a horse saddle.' Headline 'A HORSE SADDLE / STUFFED WITH COCAINE'. Label 'GUADALAJARA, SPAIN · AUG 2026'.",
+   "sources": [
+    "interior",
+    "ewn",
+    "eldebate",
+    "publicoclm"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "The seizure weighed 5.34-5.347 kg (headline: 'cinco kilos'; text: 5.347 kg; Público CLM 'más de cinco kilos'). Narration: 'Over 5 kilos, ...'.",
+   "sources": [
+    "interior",
+    "ewn",
+    "publicoclm"
+   ]
+  },
+  {
+   "id": "K_post",
+   "type": "established",
+   "nature": "fact",
+   "text": "The saddle was sent by mail (postal shipment) from Colombia to Azuqueca de Henares. Narration: '..., posted from Colombia to Spain.' Label sub 'Posted from Colombia · Guardia Civil'.",
+   "sources": [
+    "interior",
+    "ewn",
+    "publicoclm",
+    "guadiario"
+   ]
+  },
+  {
+   "id": "K_open",
+   "type": "established",
+   "nature": "fact",
+   "text": "The cocaine was inside the saddle (\"ocultos en el interior de una silla de montar\"). The opened leather and the taped bricks are our illustration of 'inside'; the reports do not describe the packing. Callout 'COCAINE INSIDE THE SADDLE'.",
+   "sources": [
+    "eldebate",
+    "publicoclm",
+    "interior"
+   ]
+  },
+  {
+   "id": "K_watch",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Guardia Civil's EDOA team in Guadalajara set up a covert operation to let the shipment continue and catch the receivers (a controlled delivery). Narration (gotcha): 'But police let it arrive, ...'.",
+   "sources": [
+    "interior",
+    "ewn"
+   ]
+  },
+  {
+   "id": "K_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "A person who tried to collect the parcel was arrested; investigators then found and arrested the addressee; data from the seized phones led to a third person. Three people arrested in all; nobody named or drawn. Narration: '..., and arrested whoever collected it.' Label 'THREE ARRESTED · NOT NAMED' sub 'Operation Gavilanes, police say'.",
+   "sources": [
+    "interior",
+    "ewn",
+    "eldebate"
+   ]
+  },
+  {
+   "id": "K_strange",
+   "type": "established",
+   "nature": "fact",
+   "text": "Editorial rehook (opinion, not a ranking anyone published): the next case is introduced as stranger. Narration: 'That wasn't even the strangest.'",
+   "sources": [
+    "nbc",
+    "ctv",
+    "nzpolice"
+   ]
+  },
+  {
+   "id": "K_pumpkins",
+   "type": "established",
+   "nature": "fact",
+   "text": "Around Halloween 2013 (arrest early on Thursday 31 October 2013; reported 31 Oct-1 Nov) border officers at Montreal-Trudeau airport found about 2 kg of cocaine inside three pumpkins in a female traveller's luggage; the CBSA said the pumpkins were hollowed out, filled with bags of white powder and recapped. Narration: 'In Montreal: cocaine inside Halloween pumpkins.' Label 'MONTREAL AIRPORT · HALLOWEEN 2013', sub 'About 2 kg in three pumpkins (CBSA)'.",
+   "sources": [
+    "nbc",
+    "ctv",
+    "cnn",
+    "inquirer"
+   ]
+  },
+  {
+   "id": "K_heavy",
+   "type": "established",
+   "nature": "fact",
+   "text": "A border agency spokesperson said the pumpkins seemed a little too heavy, so they were sent through an X-ray scanner, which showed masses inside (bags of powder). Narration (gotcha): 'They seemed too heavy, so officers X-rayed them.'",
+   "sources": [
+    "nbc",
+    "inquirer",
+    "ctv"
+   ]
+  },
+  {
+   "id": "K_woman",
+   "type": "established",
+   "nature": "fact",
+   "text": "A 26-year-old woman was arrested and charged with importing and possession; the RCMP took over the investigation. Not named on screen; silhouette only. Label 'WOMAN, 26, ARRESTED · NOT NAMED', sub 'Hollowed out, filled, recapped (CBSA)'.",
+   "sources": [
+    "ctv",
+    "cnn",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_horse",
+   "type": "established",
+   "nature": "fact",
+   "text": "New Zealand, 2016: Customs focused on a diamante-encrusted horse sculpture freighted in from Mexico in early May; inside the horse's head were 35 bricks of high-grade cocaine (police: an estimated NZ$14 million street value). Narration: 'The biggest? Cocaine inside a giant horse's head.' (biggest of the three by weight: 35 kg vs about 5.3 kg and 2 kg). Label 'AUCKLAND, NEW ZEALAND · 2016', sub 'A sculpture shipped from Mexico'.",
+   "sources": [
+    "nzpolice",
+    "cnnnz",
+    "sunlive",
+    "foxnz"
+   ]
+  },
+  {
+   "id": "K_weight400",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the horse sculpture weighed about 400 kg (NZ Police via SunLive: 400 kg; Fox/AP: 880 pounds). Card 'THE HORSE WEIGHED / 400 KG / COCAINE IN ITS HEAD'.",
+   "sources": [
+    "sunlive",
+    "foxnz",
+    "nzpolice"
+   ]
+  },
+  {
+   "id": "K_airport",
+   "type": "established",
+   "nature": "fact",
+   "text": "Two men were arrested at Auckland International Airport as they tried to leave the country on tickets to Hawaii; a third man was arrested in Christchurch. Arrested and charged (2016); not named, silhouettes only. Narration (gotcha): 'Two were arrested at the airport, leaving for Hawaii.' Label 'ARRESTED AT AUCKLAND AIRPORT · NOT NAMED', sub 'A third in Christchurch (NZ Police)'.",
+   "sources": [
+    "nzpolice",
+    "cnnnz",
+    "odt",
+    "foxnz"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 35 KG): 35 bricks of cocaine, about 35 kg, inside the horse's head (CNN: 35 kilograms; NZ Police: 35 bricks). Counter '35 KG' with the label 'INSIDE THE HORSE'S HEAD'.",
+   "sources": [
+    "cnnnz",
+    "nzpolice",
+    "sunlive"
+   ]
+  },
+  {
+   "id": "K_told",
+   "type": "established",
+   "nature": "fact",
+   "text": "The first person arrested had been told the parcel was not addressed to them and still tried to collect it (Interior note: 'una persona que había sido advertida de que no era la destinataria'; Euro Weekly News). Narration (callback): 'One was told it wasn't even theirs.' Callout 'TOLD IT WASN'T THEIRS' sub 'Still tried to collect it, police say'.",
+   "sources": [
+    "interior",
+    "ewn"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "interior",
+   "publisher": "Ministerio del Interior (Guardia Civil note)",
+   "title": "Intervenidos en Guadalajara cinco kilos de cocaína escondidos en una silla de montar a caballo",
+   "url": "https://www.interior.gob.es/opencms/es/detalle/articulo/Intervenidos-en-Guadalajara-cinco-kilos-de-cocaina-escondidos-en-una-silla-de-montar-a-caballo/",
+   "date": "2026-08-29",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "ewn",
+   "publisher": "Euro Weekly News",
+   "title": "'Blazing Saddles': bizarre discovery sparks major police operation in Spain",
+   "url": "https://euroweeklynews.com/2026/08/29/blazing-saddles-bizarre-discovery-sparks-major-police-operation-in-spain/",
+   "date": "2026-08-29",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "eldebate",
+   "publisher": "El Debate",
+   "title": "La Guardia Civil detiene a tres personas e interviene más de cinco kilos de cocaína en una silla de montar",
+   "url": "https://www.eldebate.com/espana/20260829/guardia-civil-detiene-tres-personas-e-interviene-cinco-kilos-cocaina-silla-montar_453330.html",
+   "date": "2026-08-29",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "publicoclm",
+   "publisher": "Público (Castilla-La Mancha)",
+   "title": "Más de cinco kilos de cocaína ocultos en una silla de montar viajan desde Colombia hasta Guadalajara",
+   "url": "https://periodicoclm.publico.es/articulo/guadalajara/cocaina-silla-montar-colombia-azuqueca-henares/20260829131250031330.html",
+   "date": "2026-08-29",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "guadiario",
+   "publisher": "GuadalajaraDiario.es",
+   "title": "Cinco kilos de cocaína ocultos en una silla de montar con destino Azuqueca",
+   "url": "https://www.guadalajaradiario.es/provincia/70982-cinco-kilos-de-cocaina-ocultos-en-una-silla-de-montar-con-destino-azuqueca.html",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "nbc",
+   "publisher": "NBC News (AP)",
+   "title": "Halloween themed drug bust: Suspected cocaine smuggled in pumpkins at Montreal airport",
+   "url": "https://www.nbcnews.com/news/world/halloween-themed-drug-bust-suspected-cocaine-smuggled-pumpkins-montreal-airport-flna8c11507466",
+   "date": "2013-11-01",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "ctv",
+   "publisher": "CTV News Montreal",
+   "title": "Powder-filled pumpkins lead to airport arrest",
+   "url": "https://montreal.ctvnews.ca/powder-filled-pumpkins-lead-to-airport-arrest-1.1522119",
+   "date": "2013-10-31",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "cnn",
+   "publisher": "CNN",
+   "title": "Canada: cocaine found in pumpkins",
+   "url": "https://edition.cnn.com/2013/11/01/world/americas/canada-cocaine-pumpkins/index.html",
+   "date": "2013-11-01",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "inquirer",
+   "publisher": "Philippine Daily Inquirer (AP)",
+   "title": "Pumpkins apparently filled with cocaine",
+   "url": "https://newsinfo.inquirer.net/518573/pumpkins-apparently-filled-with-cocaine",
+   "date": "2013-11-01",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "nzpolice",
+   "publisher": "New Zealand Police",
+   "title": "Two arrested over NZ's largest ever cocaine seizure found hidden inside diamante horse",
+   "url": "https://www.police.govt.nz/news/release/two-arrested-nzs-largest-ever-cocaine-seizure-found-hidden-inside-diamante-horse",
+   "date": "2016-07-02",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "cnnnz",
+   "publisher": "CNN",
+   "title": "New Zealand cocaine seizure: drugs found in horse sculpture",
+   "url": "https://amp.cnn.com/cnn/2016/07/04/asia/new-zealand-cocaine-seizure-horse",
+   "date": "2016-07-04",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "odt",
+   "publisher": "Otago Daily Times",
+   "title": "Third arrest after record cocaine bust",
+   "url": "https://www.odt.co.nz/node/388964",
+   "date": "2016-07",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "sunlive",
+   "publisher": "SunLive",
+   "title": "$14 million cocaine seizure",
+   "url": "https://www.sunlive.co.nz/news/129931-14-million-cocaine-seizure.html",
+   "date": "2016-07",
+   "accessed": "search-result extract only, 2026-10-24"
+  },
+  {
+   "id": "foxnz",
+   "publisher": "Fox News (AP)",
+   "title": "American among 3 arrested after massive cocaine haul found in horse's head sculpture",
+   "url": "https://www.foxnews.com/world/american-among-3-arrested-after-massive-cocaine-haul-found-in-horses-head-sculpture.amp",
+   "date": "2016-07",
+   "accessed": "search-result extract only, 2026-10-24"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 9,
+ "lane": "smuggling",
+ "search_terms": [
+  "cocaine saddle",
+  "cocaine pumpkins",
+  "where they hid it"
+ ],
+ "palette": {
+  "shadow": "#16202a",
+  "mid": "#b8b2a4",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A HORSE SADDLE"
+   },
+   {
+    "text": "STUFFED WITH COCAINE",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · SADDLE"
+   },
+   {
+    "t": 11.7,
+    "v": "2 · PUMPKINS"
+   },
+   {
+    "t": 19.0,
+    "v": "3 · HORSE HEAD"
+   }
+  ],
+  "y": 350,
+  "until": 24.83
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "SMARTEST HIDING PLACE?"
+   },
+   {
+    "text": "SADDLE OR PUMPKIN? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D CARVE THE PUMPKIN",
+    "fs": 34
+   },
+   {
+    "text": "FOLLOW FOR WHERE THEY HID IT",
+    "fs": 34,
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "WHERE THEY HID IT · 8",
+    "fs": 32
+   }
+  ],
+  "from": 2.12,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-24"
+}
