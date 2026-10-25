@@ -1,0 +1,954 @@
+{
+ "id": "tcv100-border-fails-7",
+ "number": 100,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Built a Tunnel Under a Fake Store",
+ "central_question": "Border fails: a cross-border tunnel came up under the storeroom floor of a fake discount store in San Diego (2026); smugglers zip-lined marijuana over the fence into Douglas, Arizona (2017); a tunnel from British Columbia ended under a living-room floor in Washington (2005). Which hideout was smarter?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "2,000": "two thousand",
+   "zip-lined": "zip lined"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  25,
+  29
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "100",
+  "label": "BORDER FAILS · 7"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_living",
+   "word": [
+    0,
+    3
+   ],
+   "at": 0.5
+  }
+ },
+ "figures": [
+  "bf100_agent",
+  "bf100_bpagent",
+  "bf100_runner",
+  "bf100_carrier"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the builds (a tunnel under a shop nobody shopped in, a zip line over the fence, a tunnel into a living room), never on a victim (none appears). Every case is a seizure by a named agency (a Homeland Security Task Force with San Diego County deputies; the US Border Patrol; US and Canadian agents with the U.S. Attorney in Seattle), a settled fact; the hook states the build. The four men charged in San Diego are charged, not convicted: never named and never drawn; prosecutors carry the freezer allegation ('Prosecutors say'). The man arrested in Douglas and the three men arrested in Lynden are never named and are drawn only as dark rim-lit silhouettes with no face (NOT A LIKENESS). Agents are generic figures in plain clothing with no badge, patch, flag, agency name or insignia; no weapon; no force shown; a torch only. The store, its signs, the freezer and the boxes carry no real company name, logo or livery (the store is shown as a plain 'SALE' shop, its real name only in the research ledger); the fence, the buildings, the hut and the house are generic illustrations, not replicas of the real places; the hidden-camera frame is our own typed graphic, not any real system's footage. Every card is our own typed graphic; no dialogue or quotation card. Facts verified 2026-10-25.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "bf100_hook",
+   "min_duration": 4.8,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "rumble",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_length",
+    "K_store"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers built a tunnel under a fake store.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Nearly 2,000 feet, all the way to Tijuana.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "built",
+    "tunnel",
+    "fake",
+    "store.",
+    "2,000",
+    "feet,",
+    "tijuana."
+   ],
+   "section": "A",
+   "case": "store",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_reveal",
+   "scene": "bf100_reveal",
+   "min_duration": 3.75,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "rumble",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "door",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_noticed",
+    "K_lift",
+    "K_charged"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But agents noticed it had barely any customers.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "agents",
+    "noticed",
+    "barely",
+    "customers."
+   ],
+   "section": "A",
+   "case": "store"
+  },
+  {
+   "id": "s03_zip",
+   "scene": "bf100_zip",
+   "min_duration": 3.8,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "click",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.26
+    },
+    {
+     "at": 0.2,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_strange1",
+    "K_zip"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That was not the strangest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "In Arizona, smugglers zip-lined weed over the border.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "strangest.",
+    "arizona,",
+    "zip-lined",
+    "weed",
+    "border."
+   ],
+   "section": "B",
+   "case": "zipline"
+  },
+  {
+   "id": "s04_lot",
+   "scene": "bf100_lot",
+   "min_duration": 3.2,
+   "pad_after": 0.22,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "click",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      1
+     ],
+     "name": "hit",
+     "gain": 0.36
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "flutter",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_caught"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Agents caught a man hiding in a vacant lot.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "caught",
+    "hiding",
+    "vacant",
+    "lot."
+   ],
+   "section": "B",
+   "case": "zipline"
+  },
+  {
+   "id": "s05_cutaway",
+   "scene": "bf100_cutaway",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.24
+    },
+    {
+     "at": 0.45,
+     "word": [
+      0,
+      8
+     ],
+     "name": "sparkle",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_lynden",
+    "K_first"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The strangest? A tunnel from Canada into a living room.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "strangest?",
+    "tunnel",
+    "canada",
+    "living",
+    "room."
+   ],
+   "section": "C",
+   "case": "lynden"
+  },
+  {
+   "id": "s06_living",
+   "scene": "bf100_living",
+   "min_duration": 3.0,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "beep",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_cameras",
+    "K_arrests3"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Agents had already hidden cameras inside.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "already",
+    "hidden",
+    "cameras",
+    "inside."
+   ],
+   "section": "D",
+   "case": "lynden",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "bf100_end",
+   "min_duration": 2.3,
+   "pad_after": 0.2,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_freezers"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Deputies found cocaine packed in freezers.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "deputies",
+    "found",
+    "cocaine",
+    "freezers."
+   ],
+   "section": "E",
+   "case": "store",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "A cross-border tunnel ran from Tijuana to a supposed retail store, 'Buy 4 Less', in Otay Mesa, San Diego, near the Otay Mesa Port of Entry; investigators say the store was a front. Charges announced 1-2 June 2026. Narration: 'Smugglers built a tunnel under a fake store.' Headline 'A TUNNEL UNDER / A FAKE STORE'. Label 'OTAY MESA, SAN DIEGO · MAY 2026'.",
+   "sources": [
+    "usao",
+    "ktla",
+    "fox5sd",
+    "patch",
+    "wtimes"
+   ]
+  },
+  {
+   "id": "K_length",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 1,933 FT): the tunnel was about 1,933 feet long (prosecutors), about 55 feet deep and 4.5 feet high at points, into Tijuana; some outlets round it to 'nearly 2,000 feet'. Narration: 'Nearly 2,000 feet, all the way to Tijuana.' Counter '1,933 FT' with the label 'TUNNEL TO TIJUANA'.",
+   "sources": [
+    "usao",
+    "foxtv",
+    "fox5sd",
+    "kesq"
+   ]
+  },
+  {
+   "id": "K_store",
+   "type": "established",
+   "nature": "fact",
+   "text": "The tunnel's exit was concealed under the floor of a storage room in the building; the store posed as a liquidated-goods retailer (appliances, luggage, household items). Label sub 'Exit under the storeroom floor'; illustration: boxed stock and suitcases on the shelves.",
+   "sources": [
+    "usao",
+    "foxtv",
+    "wtimes",
+    "tn10"
+   ]
+  },
+  {
+   "id": "K_noticed",
+   "type": "established",
+   "nature": "fact",
+   "text": "Homeland Security Task Force investigators watched the store from December 2025 to May 2026 after noticing suspicious activity: few customers but frequent movement by apparent employees, who moved apparently empty suitcases. Narration (gotcha): 'But agents noticed it had barely any customers.' Label 'ALMOST NO CUSTOMERS', sub 'Watched Dec 2025 - May 2026 (HSI)'.",
+   "sources": [
+    "ktla",
+    "patch",
+    "fox5sd",
+    "ice"
+   ]
+  },
+  {
+   "id": "K_lift",
+   "type": "established",
+   "nature": "fact",
+   "text": "The tunnel had its own hydraulic lift, electricity, ventilation and reinforced walls; reports also describe a rail system. The open hatch in the illustration is the lift's floor panel (drawn, not a reported image).",
+   "sources": [
+    "foxtv",
+    "tn10",
+    "usao",
+    "kesq"
+   ]
+  },
+  {
+   "id": "K_charged",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 29 May 2026 deputies stopped three vehicles linked to the store and found 1,029.6 kg (2,269.87 lb) of cocaine, about $45 million; four men were charged (conspiracy to distribute; one also with tunnel and import counts). Charged, not convicted; none named or drawn. Label 'OVER A TON OF COCAINE · 4 CHARGED', sub 'Charged, not convicted (US Attorney)'.",
+   "sources": [
+    "usao",
+    "ice",
+    "ktla",
+    "fox5sd"
+   ]
+  },
+  {
+   "id": "K_strange1",
+   "type": "established",
+   "nature": "fact",
+   "text": "Editorial rehook: the next case (a zip line over the border) is odder in kind than a tunnel. Narration: 'That was not the strangest.'",
+   "sources": [
+    "ads",
+    "hightimes"
+   ]
+  },
+  {
+   "id": "K_zip",
+   "type": "established",
+   "nature": "fact",
+   "text": "Wednesday 29 November 2017, Douglas, Arizona: Border Patrol agents seized more than 240 pounds of marijuana (10 bundles) sent across by a zip line fixed to a tall building in Agua Prieta, Sonora; Mexican authorities searched the line's origin and found no suspects. Narration: 'In Arizona, smugglers zip-lined weed over the border.' Label 'DOUGLAS, ARIZONA · NOV 2017', sub 'A zip line from a building in Agua Prieta'.",
+   "sources": [
+    "ads",
+    "hightimes",
+    "kgun",
+    "pnt"
+   ]
+  },
+  {
+   "id": "K_caught",
+   "type": "established",
+   "nature": "fact",
+   "text": "Agents using surveillance technology detected a person trying to hide in a vacant lot on the east side of Douglas; they found the bundles and an 18-year-old Douglas resident, who was taken into custody on drug smuggling charges. Not named; silhouette only. Narration (gotcha): 'Agents caught a man hiding in a vacant lot.' Label 'ARRESTED, 18 · NOT NAMED', sub 'Over 240 lb of marijuana (Border Patrol)'.",
+   "sources": [
+    "ads",
+    "hightimes",
+    "kgun"
+   ]
+  },
+  {
+   "id": "K_lynden",
+   "type": "established",
+   "nature": "fact",
+   "text": "July 2005: a tunnel about 360 feet long ran from under a Quonset hut in Aldergrove, British Columbia, to beneath the living-room floor of a house on East Boundary Road in Lynden, Washington. Narration: 'The strangest? A tunnel from Canada into a living room.' Label 'LYNDEN, WASHINGTON · JULY 2005', sub 'About 360 ft, from a hut in British Columbia'.",
+   "sources": [
+    "doj05",
+    "cnn05",
+    "nbc05",
+    "hlink"
+   ]
+  },
+  {
+   "id": "K_first",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: it was the first tunnel found under the US-Canada border (after many on the Mexican border). Card 'THE FIRST TUNNEL EVER / FOUND UNDER THE / US-CANADA BORDER'.",
+   "sources": [
+    "cnn05",
+    "globe05",
+    "hlink"
+   ]
+  },
+  {
+   "id": "K_cameras",
+   "type": "established",
+   "nature": "fact",
+   "text": "Tipped while the tunnel was being dug, US and Canadian agents monitored it; agents entered the Lynden house on a delayed-notice warrant and a federal judge authorised cameras and listening devices inside it; agents then watched three men make trips through the tunnel carrying large bags. Narration (gotcha): 'Agents had already hidden cameras inside.'",
+   "sources": [
+    "doj05",
+    "globe05",
+    "cnn05"
+   ]
+  },
+  {
+   "id": "K_arrests3",
+   "type": "established",
+   "nature": "fact",
+   "text": "Three men from Surrey, BC, were arrested on 20 July 2005 and charged with conspiracy to import and distribute marijuana; agents seized about 42 kg (93 lb) of marijuana. Not named; silhouettes only. Label 'THREE MEN ARRESTED · JULY 2005', sub 'A judge approved the cameras (DOJ)'.",
+   "sources": [
+    "doj05",
+    "globe05",
+    "nbc05",
+    "hlink"
+   ]
+  },
+  {
+   "id": "K_freezers",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 29 May 2026, prosecutors say, agents watched a van loaded at the store; three deep freezers were moved onto a truck and loaded with packages; San Diego County deputies stopped that truck (a K-9 alerted) and agents seized 173 packages from it, part of the 2,269.87 lb found in three vehicles. Narration (callback): 'Deputies found cocaine packed in freezers.' Inset card 'DEEP FREEZERS, PROSECUTORS SAY' (our own drawing of a generic chest freezer).",
+   "sources": [
+    "ktla",
+    "fox5sd",
+    "foxtv",
+    "usao"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "usao",
+   "publisher": "U.S. Attorney's Office, Southern District of California (DOJ)",
+   "title": "Four charged with trafficking more than $45 million worth of cocaine through sophisticated cross-border tunnel",
+   "url": "https://www.justice.gov/usao-sdca/pr/four-charged-trafficking-more-45-million-worth-cocaine-through-sophisticated-cross",
+   "date": "2026-06-01",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "ice",
+   "publisher": "U.S. Immigration and Customs Enforcement (HSI)",
+   "title": "Homeland Security Task Force uncovers sophisticated cross-border tunnel, seizes $45 million worth of cocaine",
+   "url": "https://www.ice.gov/news/releases/homeland-security-task-force-uncovers-sophisticated-cross-border-tunnel-seizes-45",
+   "date": "2026-06",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "ktla",
+   "publisher": "KTLA 5 (Los Angeles)",
+   "title": "Massive drug smuggling tunnel found connecting SoCal, Mexico",
+   "url": "https://ktla.com/news/california/drug-smuggling-tunnel-found-connecting-socal-mexico/",
+   "date": "2026-06-02",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "fox5sd",
+   "publisher": "FOX 5 San Diego",
+   "title": "Feds find 2,000-foot tunnel under fake San Diego store",
+   "url": "https://fox5sandiego.com/news/local-news/feds-find-2000-foot-tunnel-under-fake-san-diego-store/",
+   "date": "2026-06-02",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "foxtv",
+   "publisher": "FOX Television Stations (LiveNOW from FOX, KTVU and others)",
+   "title": "$45M cocaine bust uncovers massive tunnel to Mexico under supposed discount store",
+   "url": "https://www.livenowfox.com/news/45m-cocaine-bust-uncovers-massive-tunnel-mexico-under-bogus-discount-store",
+   "date": "2026-06-02",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "patch",
+   "publisher": "Patch (San Diego)",
+   "title": "Massive drug tunnel from Tijuana discovered under fake SoCal 'Buy For Less' store",
+   "url": "https://patch.com/california/san-diego/buy-4-less-drug-tunnel-discovery-san-diego-county-leads-multiple-arrests",
+   "date": "2026-06",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "kesq",
+   "publisher": "KESQ News Channel 3 (Palm Springs, via City News Service)",
+   "title": "Four charged in connection with cross-border tunnel into fake Otay Mesa store",
+   "url": "https://kesq.com/news/california/2026/06/01/four-charged-in-connection-with-cross-border-tunnel-into-fake-otay-mesa-store/",
+   "date": "2026-06-01",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "tn10",
+   "publisher": "10News San Diego (KGTV)",
+   "title": "Four charged after suspected cartel tunnel found beneath store near Otay Mesa border crossing",
+   "url": "https://www.10news.com/news/local-news/four-charged-after-suspected-cartel-tunnel-found-beneath-store-near-otay-mesa-border-crossing",
+   "date": "2026-06",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "wtimes",
+   "publisher": "The Washington Times",
+   "title": "Four charged with smuggling cocaine via tunnel that connected fake San Diego storefront to Mexico",
+   "url": "https://www.washingtontimes.com/news/2026/jun/2/four-charged-smuggling-cocaine-via-tunnel-connected-fake-san-diego/",
+   "date": "2026-06-02",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "ads",
+   "publisher": "Arizona Daily Star (tucson.com)",
+   "title": "Border Patrol: Zip line used to smuggle marijuana into Arizona",
+   "url": "https://tucson.com/news/local/border-patrol-zip-line-used-to-smuggle-marijuana-into-arizona/article_db401bc6-d57a-11e7-9d1c-97c4a7dae601.html",
+   "date": "2017-11-30",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "hightimes",
+   "publisher": "High Times",
+   "title": "Man arrested in cross-border zip line drug smuggling attempt",
+   "url": "https://hightimes.com/news/man-arrested-cross-border-zip-line-drug-smuggling-attempt/",
+   "date": "2017-12",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "kgun",
+   "publisher": "KGUN 9 (Tucson)",
+   "title": "Smugglers caught using zipline to ship drugs across border",
+   "url": "https://www.kgun9.com/news/local-news/smugglers-caught-using-zipline-to-ship-drugs-across-border",
+   "date": "2017-11",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "pnt",
+   "publisher": "Phoenix New Times",
+   "title": "The five best failed drug-smuggling attempts at the Arizona border in 2017",
+   "url": "https://www.phoenixnewtimes.com/news/the-five-best-drug-smuggling-fails-at-the-arizona-border-in-2017-9966341/",
+   "date": "2017-12",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "doj05",
+   "publisher": "U.S. Attorney's Office, Western District of Washington (DOJ archive)",
+   "title": "Three charged in cross-border tunnel case (press release, July 2005)",
+   "url": "https://www.justice.gov/archive/usao/waw/press/2005/jul/raj.html",
+   "date": "2005-07-21",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "cnn05",
+   "publisher": "CNN",
+   "title": "Drug tunnel found under Canada border",
+   "url": "https://www.cnn.com/2005/US/07/21/border.tunnel/",
+   "date": "2005-07-22",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "globe05",
+   "publisher": "The Globe and Mail",
+   "title": "B.C. trio had tunnel vision, but police saw through it",
+   "url": "https://www.theglobeandmail.com/news/national/bc-trio-had-tunnel-vision-but-police-saw-through-it/article18241511/",
+   "date": "2005-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "nbc05",
+   "publisher": "NBC News (Associated Press)",
+   "title": "Feds shut down cross-border drug tunnel",
+   "url": "https://www.nbcnews.com/id/wbna8661624",
+   "date": "2005-07-21",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "deseret05",
+   "publisher": "Deseret News (AP)",
+   "title": "U.S. busts smuggling tunnel",
+   "url": "https://www.deseret.com/2005/7/22/19903418/u-s-busts-smuggling-tunnel/",
+   "date": "2005-07-22",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "hlink",
+   "publisher": "HistoryLink.org (Essay 7928)",
+   "title": "Federal agents shut down a drug-smuggling tunnel on the U.S.-Canadian border and arrest three men on July 20, 2005",
+   "url": "https://www.historylink.org/File/7928",
+   "date": "2006",
+   "accessed": "search-result extract only, 2026-10-25"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 9,
+ "lane": "border",
+ "search_terms": [
+  "fake store tunnel",
+  "border tunnel",
+  "tunnel"
+ ],
+ "palette": {
+  "shadow": "#161c22",
+  "mid": "#b4b0a4",
+  "accent": "#f0a640"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A TUNNEL UNDER"
+   },
+   {
+    "text": "A FAKE STORE",
+    "colour": "#f0a640"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · FAKE STORE"
+   },
+   {
+    "t": 11.19,
+    "v": "2 · ZIP LINE"
+   },
+   {
+    "t": 18.84,
+    "v": "3 · LIVING ROOM"
+   }
+  ],
+  "y": 350,
+  "until": 24.11
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHICH HIDEOUT WAS SMARTER?"
+   },
+   {
+    "text": "FAKE STORE OR LIVING ROOM? 👇",
+    "colour": "#f0a640"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D DIG IT",
+    "fs": 34
+   },
+   {
+    "text": "FOLLOW FOR BORDER FAILS",
+    "fs": 34,
+    "colour": "#f0a640"
+   },
+   {
+    "text": "BORDER FAILS · 7",
+    "fs": 32
+   }
+  ],
+  "from": 2.66,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-25"
+}
