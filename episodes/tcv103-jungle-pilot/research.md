@@ -1,158 +1,138 @@
-# Case File 103 · ONE SMUGGLER (tcv103-jungle-pilot): research ledger
+# Case File 103 · ONE SMUGGLER (tcv103-jungle-pilot): research ledger: the MV Matthew captain
 
-Verified 25 October 2026 (legal status as of that date). Format v10 "ONE SMUGGLER" (docs/CHANNEL_BRIEF_2026-10-26.md, row 103).
-
-**Decision: the pilot of the Papua New Guinea cocaine plane, David John Cutmore, told as his own story.** This is the
-"genuinely new person-angle" the brief allows: Case File 37 told the crash and Case File 53 told the Melbourne syndicate,
-and both kept the pilot an unnamed "the pilot". His case is fully concluded (guilty plea, 18 years, appeal dismissed), he is
-named in the court record and across Pacific press, and his own moment (walking into Australia's consulate two days after
-the crash and giving himself up) is the human beat 37 never used.
-
-**Flag for the owner:** this is the third Reel on the same crash (37, 53, 103). The brief says a case gets one Reel; it also
-names this exact option for 103. Cold-start viewers will not know 37, but if a different crash is preferred, the strongest
-verified alternative is the MV Matthew captain (see "Candidates checked").
+Verified 25 October 2026 (legal status as of that date). Format v10 "ONE SMUGGLER" (docs/CHANNEL_BRIEF_2026-10-26.md).
+Episode id kept as `tcv103-jungle-pilot` at the coordinator's request; the story is no longer a pilot or a jungle: it is
+**Soheil Jelveh, the Iranian captain of the cargo ship MV Matthew**, which Irish Army Rangers boarded from a helicopter off
+the south coast of Ireland in September 2023. (The earlier PNG-pilot draft was dropped: that crash already had Reels 37 and 53.)
 
 ## Method and limits
-- 17 WebSearch calls (standard mode), 25 October 2026. WebFetch was not used; everything rests on **search-result extracts**,
-  not full pages. Every narrated claim below has at least two independent sources, or is attributed / dropped.
-- The two earlier ledgers on this case (episodes/tcv37-png-plane/research.md, episodes/tcv53-cocaine-plane-2/research.md)
-  were read and are consistent with what follows; they add AFP 2026, ABF 2026 and PacLII (SC2684) as sources.
-- Caveat on independence: PINA (Fiji) and Islands Business carry the same sentencing story word for word (one original,
-  probably PNG press). They count as ONE source; the sentence is independently confirmed by RNZ (2025) and PacLII.
-- The PacLII judgment page itself was not opened; the citation Cutmore v The State [2025] PGSC 4 / SC2684 comes from the 37
-  and 53 ledgers. RNZ's report of the appeal is the extract used here.
+- WebSearch result extracts only (about 14 searches on this story, 25 Oct 2026). Pages were not opened in full.
+- **BBC, The Guardian, Reuters and independent.ie are not reachable by the search tool** (it returns an "access denied"
+  error for those domains), so none is cited. The coordinator's preferred outlets that *were* reachable are cited:
+  **The Irish Times, RTÉ, TheJournal.ie**, plus the Irish Examiner, Echo Live, BreakingNews.ie (syndicated as Donegal Live,
+  Western People, Laois Nationalist), LBC, ITV/UTV, CBS News, Maritime Executive, Wikipedia (orientation only) and Revenue.
+- Independence caveat: Irish Examiner, Echo Live and BreakingNews.ie belong to the same group, and the regional titles
+  carry the BreakingNews.ie wire copy word for word. In the ledger they count as **one** source between them. Every
+  narrated claim also has the Irish Times, RTÉ or TheJournal, or is attributed.
+- Court reporting is from the Special Criminal Court sentencing hearing (June 2025) and sentencing (4 July 2025); the
+  court's written judgment was not found.
 
-## Sources (accessed 25 Oct 2026 unless noted)
+## Sources
 | id | source | publisher / date |
 |---|---|---|
-| afp20 | https://afp.gov.au/news-centre/media-release/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png | Australian Federal Police, 1 Aug 2020 |
-| acic20 | https://www.acic.gov.au/media-centre/media-releases-and-statements/organised-crime-syndicate-charged-and-more-500kg-cocaine-seized-png | ACIC (joint release), 1 Aug 2020 |
-| aviation20 | https://australianaviation.com.au/2020/08/500kg-cocaine-load-caused-cessna-crash-suggest-police/ | Australian Aviation, Aug 2020 |
-| newdaily20 | https://www.thenewdaily.com.au/news/national/2020/08/01/500kg-cocaine-drug-syndicate-png-australia | The New Daily (AAP), 1 Aug 2020 |
-| inqld20 | https://inqld.com.au/news/2020/08/03/the-aussie-pilot-the-jungle-airstrip-and-the-plane-carrying-half-a-tonne-of-cocaine | InQueensland, 3 Aug 2020 |
-| bbc20 | https://bbc.in/3k4HCnN (also via FBC: https://www.fbcnews.com.fj/?p=274547) | BBC News, Aug 2020 |
-| vice20 | https://motherboard.vice.com/en/article/5dzjpq/plane-carrying-500kg-cocaine-crashed-on-its-way-to-australia | VICE, Aug 2020 |
-| finexp20 | https://thefinancialexpress.com.bd/world/asia/australian-png-police-arrest-five-over-cocaine-haul-1596264381 | The Financial Express (wire), Aug 2020 |
-| apr20 | https://asiapacificreport.nz/?p=48836 | Asia Pacific Report, 2020 ("pilot fined") |
-| natl_fined | https://www.thenational.com.pg/?p=306584 | The National (PNG), 2020, "Aust pilot fined K3,000" |
-| natl_found | https://www.thenational.com.pg/pilot-found-charged/ | The National (PNG), 2020, "Pilot found, charged" |
-| natl_plea | https://www.thenational.com.pg/?p=401302 | The National (PNG), 2022, "Cutmore pleads guilty" (Clarissa Moi) |
-| ib_plea | https://islandsbusiness.com/news-break/australian-pilot-pleads-guilty-for-png-drug-bust/ | Islands Business, 2022 |
-| pina22 | https://pina.com.fj/2022/10/31/australian-pilot-sentenced-to-18-years-in-png/ (= https://islandsbusiness.com/?p=21019) | PINA / Islands Business, 31 Oct 2022 |
-| rnz25 | https://kanivatonga.co.nz/2025/01/drug-plane-pilot-who-crashed-in-papua-new-guinea-loses-appeal/ | RNZ, republished by Kaniva Tonga, Jan 2025 |
-| paclii | Cutmore v The State [2025] PGSC 4; SC2684 (cited in the 37/53 ledgers; page not opened) | PNG Supreme Court, 15 Jan 2025 |
-| samchui | https://samchui.com/2020/08/01/australian-aircraft-crashed-due-to-excess-cocaine-onboard | Sam Chui (aviation blog), 1 Aug 2020: low tier, colour only |
-| tokaut | https://pngicentral.org/reports/key-facts-behind-mysterious-plane-crash/ | The Tokaut Blog (PNG): low tier, not used for facts |
+| it_sent | https://www.irishtimes.com/crime-law/courts/2025/07/04/eight-men-sentenced-to-jail-over-irelands-biggest-ever-drug-seizure/ | The Irish Times, 4 Jul 2025 |
+| it_df | https://www.irishtimes.com/crime-law/courts/2025/07/06/how-with-minimal-resources-the-defence-forces-carried-its-most-daring-operation-in-decades/ | The Irish Times, 6 Jul 2025 |
+| it_go | https://www.irishtimes.com/crime-law/courts/2025/06/05/go-like-fk-mate-how-the-mv-matthew-ship-and-a-157-million-drugs-haul-was-seized/ | The Irish Times, 5 Jun 2025 |
+| it_hiz | https://www.irishtimes.com/crime-law/2025/07/05/hizbullah-and-iran-suspected-of-involvement-in-mv-matthew-smuggling-operation/ | The Irish Times, 5 Jul 2025 |
+| it_remand | https://www.irishtimes.com/crime-law/courts/2023/10/02/captain-of-ship-from-which-huge-haul-of-cocaine-was-seized-remanded-in-custody/ | The Irish Times, 2 Oct 2023 |
+| it_depart | https://www.irishtimes.com/crime-law/2026/07/17/mv-matthew-to-depart-cork-having-cost-state-16m-in-berthing-crew-and-maintenance-fees/ | The Irish Times, 17 Jul 2026 |
+| rte_sent | https://www.rte.ie/news/courts/2025/0704/1521808-mv-matthew-court/ | RTÉ News, 4 Jul 2025 |
+| rte_dubai | https://www.rte.ie/news/2025/0603/1516505-mv-matthew-court/ | RTÉ News, 3 Jun 2025 |
+| rte_charge | https://www.rte.ie/news/munster/2023/1002/1408420-mv-matthew-court/ | RTÉ News, 2 Oct 2023 |
+| tj_sent | https://www.thejournal.ie/mv-matthew-sentencing-special-criminal-court-operation-piano-6752742-Jul2025/ | TheJournal.ie, Jul 2025 |
+| tj_inside | https://www.thejournal.ie/the-inside-story-of-the-raid-on-the-mv-matthew-6747937-Jul2025/ | TheJournal.ie, Jul 2025 |
+| tj_texts | https://www.thejournal.ie/iranian-smugglers-dubai-gangsters-and-the-frantic-crew-texts-as-irish-special-forces-boarded-mv-matthew-6722584-Jun2025/ | TheJournal.ie, Jun 2025 |
+| tj_burn | https://www.thejournal.ie/messages-were-sent-to-mv-matthew-to-burn-e157m-of-cocaine-to-prevent-interception-trial-6621198-Feb2025/ | TheJournal.ie, Feb 2025 |
+| tj_two | https://www.thejournal.ie/mv-matthew-two-men-essential-part-drug-trafficking-state-6620214-Feb2025/ | TheJournal.ie, Feb 2025 |
+| ie_sent | https://www.irishexaminer.com/news/courtandcrime/arid-+41663603.html | Irish Examiner, Jul 2025 |
+| ie_burn | https://www.irishexaminer.com/news/munster/arid-41235124.html | Irish Examiner, Sep 2023 |
+| echo_fear | https://www.echolive.ie/corknews/arid-41644867.html | Echo Live (Irish Examiner group), Jun 2025 |
+| bn_fear | https://www.westernpeople.ie/captain-of-mv-matthew-carrying-2-2-tonnes-of-cocaine-feared-for-his-life-court-hears_arid-60082.html (= https://www.donegallive.ie/national/captain-of-mv-matthew-carrying-22-tonnes-of-cocaine-feared-for-his-life-6825057) | BreakingNews.ie wire, Jun 2025 |
+| bn_rangers | https://www.letterkennylive.ie/national/irish-army-rangers-risked-their-lives-to-board-cargo-vessel-transporting-cocaine-haul-6824871 | BreakingNews.ie wire, Jun 2025 |
+| bn_sent | https://www.breakingnews.ie/ireland/eight-men-jailed-over-irelands-largest-ever-cocaine-seizure-1780233.html | BreakingNews.ie, 4 Jul 2025 |
+| lbc | https://www.lbc.co.uk/crime/eight-men-jailed-ireland-drugs/ | LBC, Jul 2025 |
+| itv | https://www.itv.com/news/utv/2023-09-27/elite-irish-army-unit-storms-cargo-ship-suspected-of-drug-trafficking | ITV / UTV, 27 Sep 2023 |
+| cbs | https://www.cbsnews.com/amp/news/ireland-seizes-2-tons-cocaine-international-cartel-drug-raid | CBS News, Sep 2023 |
+| mex_medevac | https://maritime-executive.com/article/after-medevac-captain-of-cocaine-laden-bulker-held-without-bail | The Maritime Executive, 3 Oct 2023 |
+| mex_board | https://maritime-executive.com/article/video-irish-army-boards-drug-smuggling-bulker-in-rough-seas | The Maritime Executive, Sep 2023 |
+| revenue | https://www.revenue.ie/en/corporate/press-office/press-releases/2026/pr-071826-mv-matthew.aspx | Revenue (Irish Tax and Customs), Jul 2026 |
+| ss_castlemore | https://www.southernstar.ie/news/trawler-at-centre-of-drugs-case-stuck-on-sandbank-4274305 | The Southern Star, Sep 2023 |
+| wiki | https://en.wikipedia.org/wiki/Interdiction_of_MV_Matthew | Wikipedia (orientation only, never sole source) |
 
 ## Claims ledger
 | id | claim as it could be narrated / shown | status | sources |
 |---|---|---|---|
-| C1_hook | "An Aussie pilot packed a plane with cocaine." An Australian pilot flew a light aircraft from Mareeba, north Queensland, to PNG on 26 July 2020 to collect cocaine for Australia; 28 bags (611.1 kg in the PNG court) were loaded at the strip. | established | afp20; aviation20; pina22; rnz25; natl_plea |
-| C2_strip | The pickup was a remote, makeshift airstrip at Papa Lea Lea, north / north-west of Port Moresby, Central Province. | established | afp20; aviation20; rnz25; inqld20 |
-| C3_crash | "It never cleared the trees." The plane (reported as a Cessna 402C light twin) crashed while trying to take off, falling short of the runway into trees at its end. | established | afp20; aviation20; pina22; rnz25; bbc20 |
-| C4_weight | The AFP "cannot rule out" that the weight of the cocaine affected take-off. ATTRIBUTED ONLY; never "it was too heavy". | attributed | aviation20; newdaily20 |
-| C5_empty | "Police found the wreck empty, the pilot gone." The plane was found abandoned and empty; the pilot was missing. | established | finexp20; inqld20; bbc20 |
-| C6_bags | The cocaine was taken off the plane by PNG members of the group (Police Commissioner David Manning, per VICE); police with the AFP recovered the 28 bags days later (53 ledger: five days after the crash). | established (who moved it: attributed) | vice20; inqld20; afp20 |
-| C7_surrender | "Two days later he walked into Australia's consulate and gave himself up." About 11.45 am on 28 July 2020 the pilot "presented himself to the Australian Consulate in PNG", was arrested and charged with an immigration offence. (RNZ reports the defence citing his "surrender to the Australian High Commission"; AFP says consulate; narration says consulate.) | established | afp20; newdaily20; rnz25 |
-| C8_entry | He had entered PNG illegally (no passport / visa reported), pleaded guilty to illegal entry and was fined K3,000; he was also convicted under the Civil Aviation Act. | established (the K37,000 total and "detained at Bomana for being unable to pay" are RNZ only: label at most) | natl_fined; apr20; rnz25 |
-| C9_name | His name is David John Cutmore, an Australian; reported as of Williams Landing (Victoria per some, Queensland per others); "from Melbourne". | established (name); suburb/state disputed: not used | pina22; natl_plea; rnz25; ib_plea; paclii |
-| C10_plea | "David Cutmore pleaded guilty." He pleaded guilty in the National Court at Waigani to money laundering by receiving criminal property (the cocaine). (The National describes the count as dealing with criminal property; same plea.) | established | natl_plea; ib_plea; pina22; rnz25 |
-| C11_million | "He'd reportedly been promised a million dollars." Court reporting: promised A$1 million (about K3 million) for flying the cocaine into Australia. ONE ORIGINAL STORY (PINA = Islands Business): narrate only as "reportedly"; the 37 ledger relied on the same text. | attributed, single-origin | pina22 (= islandsbusiness ?p=21019) |
-| C12_sentence | "Eighteen years, in a Papua New Guinea jail." Justice Teresa Berrigan sentenced him in October 2022 to 18 years. | established | pina22; rnz25; paclii |
-| C13_health | His lawyers asked for a suspended sentence because of his deteriorating health and for him to serve in Australia; the judge said suspension would not reform or deter, and transfer "is not a matter for this court". | established (general); specifics single-source (see Could not verify) | pina22; rnz25 |
-| C14_appeal | "His appeal failed." On 15 Jan 2025 a three-judge Supreme Court bench (Chief Justice Sir Gibbs Salika, Justices Kariko and Narokobi) dismissed his appeal; the CJ: "The sentence of 18 years was not excessive in the circumstances." | established | rnz25; paclii |
-| C15_never | The cocaine never reached Australia. | established | afp20; 53 ledger (AFP 2026, ABF 2026) |
-| C16_others | Syndicate members in Australia: a combined 54 years (16 July 2026). Four PNG men: 18–19 years (Sept 2024, per the 53 ledger). Context only, not narrated. | established (from earlier ledgers) | 53 ledger: AFP 2026; ABF 2026; RNZ |
+| M1_ship | The MV Matthew was a Panamanian-flagged (Panama-registered) bulk carrier. Draw a generic bulker, no name, flag or livery. | established | wiki; cbs; mex_medevac; it_depart |
+| M2_load | "Over two tonnes": 2,253 kg of cocaine (reported as 2.2 / 2.25 tonnes). One Irish Examiner headline says 2.5 tonnes: not used. | established | it_sent; tj_sent; echo/ie; cbs; wiki |
+| M3_value | "Worth a hundred and fifty-seven million euros", as reported (about €157m; CBS: about $165m). Say "worth", from the gardaí's estimate. | established (estimate) | it_sent; ie_sent; lbc; cbs; itv |
+| M4_record | Ireland's largest-ever drug seizure. | established | it_sent; rte_sent; bn_sent; itv |
+| M5_pickup | The plan was to hand the cocaine to a trawler, the Castlemore (bought in Castletownbere); it missed the rendezvous and ran aground on a sandbank off Co Wexford on 24–25 Sept 2023; its two crew were airlifted and arrested. Context, not narrated. | established | ss_castlemore; ie_sent; tj_two |
+| M6_medevac | **Before the boarding:** on 25 Sept 2023 the captain was airlifted off the ship (reported as a Coast Guard medical evacuation, after reports he was injured / ill), taken to hospital in Waterford and searched by gardaí; he was found with phones and cash. The ship was then commanded by Vlasoi. Narration: "A day earlier he'd faked an emergency and been airlifted off, with cash and phones." | established | tj_sent; tj_two; mex_medevac; bn_fear; ie_sent; wiki |
+| M7_fake | The Special Criminal Court accepted he fled the Matthew in a **fake medical emergency** but found he knew what was going on; gardaí suggested he was trying to evade arrest. The word "faked" is the court's finding as reported. | established | tj_sent; bn_fear (gardaí's suggestion); it_sent |
+| M8_cash | The amount of cash differs: $53,000 (BreakingNews wire), $57,000 with four phones incl. a satellite and an encrypted phone (one extract), $40,000 in two suitcases (another). He said it was his own wages. **No amount is narrated or shown**; "cash and phones" only. | disputed amount | bn_fear; tj/it extracts |
+| M9_shots | 26 Sept 2023: the ship ignored the Naval Service; LÉ William Butler Yeats fired warning shots across its bow. Context. | established | wiki; itv; it_df; Leinster Leader / Longford Leader (wire) |
+| M10_boarding | Army Ranger Wing soldiers boarded from an Air Corps helicopter in heavy seas / treacherous weather while the crew manoeuvred to reach the high seas. Narration: "In heavy seas, Rangers dropped from a helicopter." (Method reported as fast-rope by the Defence Forces and most outlets; one extract says rope ladders, so the verb is "dropped".) | established | it_df; tj_inside; bn_rangers; mex_board; itv |
+| M11_storm | The raid came "while Storm Agnes bore down" (one extract only). Say "heavy seas", not "Storm Agnes". | single source | it_df / tj_inside extract |
+| M12_burn | The crew had been messaged to burn the cocaine; some bales were allegedly burned; the Rangers stopped the destruction. Optional label, not narration. | established (amount burned unknown) | tj_burn; ie_burn; it_df |
+| M13_name | The captain: **Soheil Jelveh**, Iranian, 51 (52 in one Irish Times line), married father of two; not on board when the ship was intercepted. | established | it_sent; tj_sent; rte_sent; bn_sent; lbc |
+| M14_plea | He pleaded guilty at the Special Criminal Court to possession of cocaine for sale or supply aboard the ship (24–26 Sept 2023); he admitted he knew the cargo was not "spare parts". | established | bn_fear; echo_fear; it_sent; tj_sent |
+| M15_namecap | **"Captain in name only."** His barrister (Mr Bowman) told the court he was captain in name but followed orders like everyone else; he said he feared he and his family (in Dubai) would be killed. Narration: "His lawyer said he was captain in name only." | established, attributed to defence | bn_fear; echo_fear (same group: treat as one) + rte_sent (his defence blamed Ozgen, said to be running the operation) + it_go / tj_texts (orders from a Dubai figure, "Captain Noah"; family at risk) |
+| M16_sentence | **4 July 2025**, Special Criminal Court, Ms Justice Melanie Greally: **17½ years**. | established | it_sent; rte_sent; tj_sent; bn_sent; lbc |
+| M17_others | The other seven are reported by name: Cumali Ozgen (Dutch) 20 years; Harold Estoesta (Filipino second officer) 18; Vitaliy Vlasoi (Ukrainian) 16½; Saeid Hassani (Iranian third officer) 15; Mykhailo Gavryk (Ukrainian) 14; and the Castlemore pair, Lapa 14½ (TheJournal: 14) and Harbron 13½. Combined **129 years** (headline terms 203, reduced for pleas). Not narrated; at most a label "8 MEN · 129 YEARS". | established | it_sent; tj_sent; ie_sent; echo; lbc |
+| M18_depart | The ship left Cork in July 2026 after costing the State about €16m in berthing, crew and maintenance fees; Revenue disposed of it (reportedly bound for Varna, Bulgaria: Irish Times "understands", not used). Narration callback: "This July, the ship sailed. He didn't." | established (departure); destination single source | it_depart; revenue |
+| M19_hezbollah | Gardaí reportedly suspect the two Iranians are linked to Hizbullah / Iran. **Allegation: never narrated, shown or captioned.** | allegation | it_hiz; TheJournal |
 
-Numbers on screen: one counter only. Use **18 YEARS** (C12). The 611 kg load may sit on the case chip ("611 KG · NEVER ARRIVED"),
-not in the hook (brief: no tonnage-first hooks). No dollar value of the cocaine is used (A$80m / A$141m / ~A$800m all disagree).
+Number on screen (one counter): **€157M** or **2,253 KG**, but the consequence lands better on **17½ YEARS**. Pick one per the
+QA pass; the case_spec uses "two tonnes" as the spoken figure.
 
 ## His story, in order
-1. **26 July 2020.** An Australian pilot takes off from Mareeba, north Queensland, in a light twin and flies to PNG
-   without a passport (C1, C8).
-2. Lands at a bush strip at Papa Lea Lea outside Port Moresby. Local helpers load 28 bags of cocaine (C1, C2).
-3. On take-off the plane falls short and ploughs into the trees at the end of the strip. The AFP later says it "cannot rule
-   out" the load's weight (C3, C4).
-4. He gets out. The wreck is found empty; the cocaine has gone with the helpers; the pilot has vanished (C5, C6).
-5. **28 July, 11.45 am.** He walks into Australia's consulate in Port Moresby and gives himself up; arrested, fined
-   K3,000 for illegal entry (C7, C8).
-6. Days later PNG police and the AFP recover the 28 bags; five men are arrested in Queensland and Victoria (C6, C16).
-7. **2022.** He pleads guilty at Waigani to receiving the cocaine. Court reporting: he had been promised A$1 million (C10, C11).
-8. **Oct 2022.** His lawyers plead his health and ask to serve in Australia. Justice Berrigan: 18 years, in PNG (C12, C13).
-9. **15 Jan 2025.** The Supreme Court dismisses his appeal: "not excessive" (C14).
-10. The cocaine never reached Australia; the men who sent him got 54 years between them in July 2026 (C15, C16).
+1. A Dubai-based gang hires an experienced crew; Jelveh, an Iranian master mariner, father of two, is made captain of the
+   Panamanian-flagged bulker MV Matthew (rte_dubai; it_go; M13).
+2. Over two tonnes of cocaine are aboard as it crosses to Ireland; the crew are told it is "spare parts" (M2, M14).
+3. 24–25 Sept 2023: the pickup trawler Castlemore misses every rendezvous and runs aground off Wexford (M5). Jelveh
+   argues with his contacts ashore about the weather (ie_sent extract).
+4. **25 Sept:** he is airlifted off the ship in what the court later accepted was a fake medical emergency, carrying
+   phones and cash; gardaí search him in Waterford (M6–M8).
+5. **26 Sept:** the Naval Service fires warning shots; in heavy seas Army Rangers drop onto the ship from a helicopter as
+   the crew try to make the high seas and burn the bales; the ship is taken to Cork (M9–M12).
+6. Oct 2023: Jelveh is charged and remanded without bail (it_remand; rte_charge; mex_medevac).
+7. 2025: he pleads guilty. His lawyer: captain in name only, following orders, terrified for his family in Dubai (M14, M15).
+8. **4 July 2025:** 17½ years. Eight men, 129 years between them (M16, M17).
+9. July 2026: the ship itself leaves Cork, sold off after costing the State €16m. He stays in prison (M18).
 
 ## The ONE object (frame 0 half-reveal)
-**The cabin/cargo door of the crashed light twin, nose-down at the tree line, being pulled open from outside by a hand;
-inside still black.** On the gotcha line (C5) it swings fully open: the cabin is **empty**. The impact is the absence: no
-bags, no pilot. This is truthful (the wreck really was found empty) and inverts the usual reveal, which is the hook's
-twist. Do not show bags inside the plane at any point after the crash; the bags, if shown, are only in the loading beat,
-as plain wrapped sacks. Draw a generic light twin (no registration, livery or logo), grass and scrub, a broken treeline.
-Evidence close-up for the person beat: a court line generated from the script, e.g. "THE STATE v DAVID JOHN CUTMORE ·
-NATIONAL COURT, WAIGANI · 18 YEARS" (our typography, no crest).
+**A steel cargo hatch on a ship's deck being lifted / cut open in rain and spray, a slice of black inside; the bales still
+hidden.** On the gotcha line (M2/M10) it swings open: black-plastic-wrapped bales (wrapping per one 2023 report; draw
+generic dark wrapped bales, no drugs visible). **Caution:** no extract says where aboard the cocaine was stored (one says
+"concealed spots within the vessel"), so the hatch is an illustrative device: no caption may say "in the hold" or
+"under the hatch". Evidence close-up for the person beat: a court line, "THE PEOPLE (DPP) v SOHEIL JELVEH · SPECIAL
+CRIMINAL COURT · 17½ YEARS", in our typography, no crest; or a hospital wristband next to a stack of phones (illustrative).
 
 ## End card: two-sided question
-**"18 YEARS: FAIR OR TOO HARSH? 👇"** Grounded: he crashed, came forward himself, pleaded guilty and pleaded ill health
-(C7, C10, C13); against that, he flew 611 kg of cocaine for a promised A$1 million and PNG's Chief Justice said the
-sentence was "not excessive" and that using PNG as a transit point must meet stiff penalties (C11, C14).
-Alternative: "BRAVE OR DESPERATE? 👇" (on walking into the consulate).
-"SEND TO THE MATE WHO'D FLY ANYTHING FOR A MILLION."
+**"VICTIM OR SMUGGLER? 👇"**. Grounded on both sides: he said he was captain in name only, took orders from Dubai, and
+feared for his family (M15); the court accepted the illness was fake, said he knew what was going on, and he left with cash
+and phones while his crew stayed aboard (M7, M8, M16). "SEND TO THE MATE WHO'D BAIL FIRST."
 
 ## The human beat that makes someone send it
-He survived the crash, walked out of the bush, and **went to his own country's consulate for help**, and that is where
-the arrest happened. Australia could not take him home: the judge said serving his time in Australia "is not a matter for
-this court". A man in his fifties, in poor health, serving 18 years in a PNG prison for a promise of a million dollars
-he never got and cocaine that never landed. The irony line for the consequence beat: "He went to his own country for
-help. He got eighteen years in someone else's."
+The captain is the one man who is supposed to go down with the ship, and he got off first: faking an emergency, taking a
+helicopter out the day before Special Forces took a helicopter in, leaving twenty-odd crew aboard. Then the twist on the
+twist: in court he said he was never really in charge, only "captain in name", afraid a gang knew where his family lived.
+Everyone has a friend who would bail first; nobody is sure whether he is a coward or a hostage.
 
 ## What I could NOT verify (not narrated)
-- **The 1995 "bumbling birdman".** One source (Sam Chui) says he was jailed in 1995 for smuggling wild birds from
-  Australia to New Zealand; the Tokaut Blog says only that a man *with the same name* was jailed in NZ in 1995 after a
-  bird-smuggling flight with a fuel problem near Lord Howe Island. The identity link is unconfirmed. **Do not use**,
-  however tempting.
-- **"Former flying instructor from Melbourne"**: attributed to the AFP by Sam Chui only; not in the AFP extract. Not used.
-- **How he got from the wreck to Port Moresby**: one account (The National via the Cairns Post) says local men took him
-  to the city and booked him into a lodge; single-sourced. Narration says only "two days later".
-- **Was he hurt?** One low-tier outlet says he escaped unharmed; not confirmed. Do not show injury or say unhurt.
-- **Health specifics** (type 2 diabetes, two stents after a 2018 heart attack, psoriatic disease) and **"the defence asked
-  for six years"**: RNZ extract only. Say at most "he pleaded ill health".
-- **Age**: 51, 52, 57 (and 39 in one blog) across sources. Not used.
-- **The K37,000 fine and detention at Bomana for non-payment; a "20-month" term**: RNZ / one report only; unreconciled.
-- **Consulate vs High Commission**: AFP says consulate; RNZ (defence submission) says High Commission. Narration follows AFP.
-- **Whether he was ever charged in Australia**: not found.
-- **The A$1 million**: one original story (PINA/Islands Business); kept only as "reportedly".
-
-## Candidates checked and rejected (for later files)
-- **MV Matthew, Ireland (Sept 2023): captain Soheil Jelveh, Iranian, 51, 17½ years** (Special Criminal Court; eight men
-  jailed 13½–20 years; 2.2 t cocaine; Army Ranger Wing stormed the ship as the crew steered for open sea; he said he was
-  "captain in name" and "in fear for his family"). Two+ sources (breakingnews.ie; LBC; Echo Live; Western People). The
-  best *different* story: a hatch-lift half-reveal and a ready-made DUPED OR GUILTY question. Not a pilot/crash.
-  https://www.breakingnews.ie/ireland/eight-men-jailed-over-irelands-largest-ever-cocaine-seizure-1780233.html ;
-  https://www.echolive.ie/corknews/arid-41644867.html
-- **Providencia, Colombia (May 2021): pilot Juan Camilo Cadena Botero, 10 years 9 months on a plea (Feb 2022)**: cocaine
-  hidden among "humanitarian aid" and face-mask boxes on a hurricane-hit island (El Espectador, Semana, El País Cali,
-  Noticias RCN, RTVC). Superb object (an aid box), but no crash and the person is little known outside Colombia.
-- **Majahual, Mexico (Jan 2020): Bolivian airline pilots Aldo López Matienzo and Miguel Ángel Blásquez Vallejos, 9 years
-  2 months**: the sentence is in Milenio only; two people, not one. Not used.
-- **Rupert De Las Casas (US, sentenced May 2024, ~85 months)**: jet crash-landed short of a Venezuelan strip in 2016; DOJ /
-  DEA releases only, few visual specifics. Not used.
-- **Belize, Mountain Pine Ridge crash (Nov 2021)** and other Belize/Guatemala/Honduras/Quintana Roo narco-plane crashes:
-  no conviction found. Not usable.
-- **Galicia narco-sub (Agustín Álvarez, 11 years)**: already Case File 57.
+- **Where aboard the cocaine was** (hold, hatch, deck): not in any extract. The hatch is illustrative.
+- **The cash amount** ($40k / $53k / $57k) and **the number of phones** (four in one extract).
+- **The airlift method:** "Irish Coast Guard medical evacuation" (TheJournal Feb 2025, Wikipedia); one report says he was
+  winched into a lifeboat. Narration says only "airlifted off".
+- **"Storm Agnes":** one extract. Use "heavy seas".
+- **Fast-rope vs rope ladders:** reports differ; narration says "dropped".
+- **Where the ship loaded the cocaine / its route:** not established in extracts; not used.
+- **Hizbullah links:** a garda suspicion reported by the Irish Times and TheJournal; not proven in court; excluded.
+- **That Ozgen "was put aboard to kill him"**: the defence's claim (RTÉ); excluded.
+- **BBC, Guardian, Reuters coverage:** not reachable by the search tool.
+- Ages differ by a year across outlets (Jelveh 51/52; Vlasoi 32/33; Lapa 14 or 14½ years).
 
 ## Ethics notes
-- **Naming:** he pleaded guilty, was sentenced, and lost his appeal; he is named in the PNG court record and by The
-  National, PINA/Islands Business, RNZ and Asia Pacific Report. That meets the brief's rule (convicted AND widely named),
-  so the name may be used once in narration and on the court-line close-up. He is still drawn only as a faceless
-  silhouette tagged NOT A LIKENESS. (37 and 53 did not name him; this is a deliberate change for the person angle.)
-- No one died or was reported hurt in the crash; show no fire, no injury. No dead victims anywhere in this story.
-- The PNG helpers and the four PNG men later jailed are not named or characterised; anonymous silhouettes at most. The
-  "danger" is the scheme, not PNG or its people.
-- Health is not mocked and not detailed beyond "pleaded ill health". The million is "reportedly". The weight cause is
-  attributed to the AFP or omitted.
-- No drugs shown (plain wrapped sacks only, and only before the crash). No real registration, livery, crest or flag.
+- **Naming:** Jelveh pleaded guilty and was sentenced; he is named by the Irish Times, RTÉ, TheJournal, the Irish
+  Examiner and the PA/BreakingNews wire. That meets the brief's rule (convicted AND widely named): name once in narration
+  and on the court line. He is drawn only as a faceless silhouette tagged NOT A LIKENESS.
+- His fear for his family is his defence, not a finding: always "his lawyer said". The Hizbullah suspicion is not used.
+- No one died; no weapons are shown aimed at anyone; the warning shots are not drawn as hitting the ship. The Rangers
+  and Naval Service are generic figures with no insignia; the ship has no name, flag or real livery.
+- His nationality is stated only as "Iranian" in the ledger, not in narration (it adds nothing and invites stereotyping).
+- No drugs visible: dark wrapped bales only. No dead victims, no jokes about anyone harmed.
 
-## Proposed script outline (62 spoken words, about 29–31 s)
-[0–3 s, door half-open] "An Aussie pilot packed a plane with cocaine." [by 8 s, door opens: empty] "It never cleared the trees. Police found the wreck empty, the pilot gone." [by 12 s] "Two days later he walked into Australia's consulate and gave himself up. David Cutmore had reportedly been promised a million dollars." [20 s] "He pleaded guilty. Eighteen years, in a Papua New Guinea jail. His appeal failed." [27 s] "The plane never left the strip."
+## Proposed script outline (73 spoken words, about 29–32 s)
+[0–3 s, hatch half-open] "A cargo ship hid a fortune in cocaine." [by 9 s, hatch opens] "In heavy seas, Rangers dropped from a helicopter. Over two tonnes, worth a hundred and fifty-seven million euros." [by 12 s] "But the captain was gone. A day earlier he'd faked an emergency and been airlifted off, with cash and phones." [20 s] "Soheil Jelveh's lawyer said he was captain in name only. The court said he knew. Seventeen and a half years." [27 s] "This July, the ship sailed. He didn't."
 
-End card (text only): 18 YEARS: FAIR OR TOO HARSH? 👇 · SEND TO THE MATE WHO'D FLY ANYTHING FOR A MILLION · NEXT FILE: THE BIBLE RUN (swap to THE INSIDE MAN if 104 fails verification).
+End card (text only): VICTIM OR SMUGGLER? 👇 · SEND TO THE MATE WHO'D BAIL FIRST · NEXT FILE: THE BIBLE RUN (swap to THE INSIDE MAN if 104 fails verification).
