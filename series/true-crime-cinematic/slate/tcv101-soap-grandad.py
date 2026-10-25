@@ -167,7 +167,7 @@ def build(h):
         keys.append({"t": max(t, 3.2), "v": v})
     end_start = by["s07_end"]["start"] if "s07_end" in by else None
     total = tl[-1]["end"] if tl else None
-    ep["progress"] = {"label": "FILE 101 ·", "keys": keys, "y": 260, "fs": 44,
+    ep["progress"] = {"label": "FILE 101 ·", "keys": keys, "y": 350, "fs": 44,
                       "until": round(end_start - 0.35, 2) if end_start else 25.5}   # gone before the end scene
     # the end card from ~0.2 s into the end scene (`from` counts back from the end of the video)
     ep["end_title"] = {"lines": [{"text": "WHAT GAVE HIM AWAY?"}, {"text": "THE SCREW OR THE THREE DAYS? \U0001F447", "colour": "#e8a33a", "fs": 50},
