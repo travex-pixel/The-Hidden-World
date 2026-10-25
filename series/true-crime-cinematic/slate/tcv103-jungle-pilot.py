@@ -29,11 +29,11 @@ def build(h):
     scenes = [
         # HOOK (frame 0, the half-reveal): the hatch on the wet deck, two gloved hands lifting its near edge a hand's width,
         #     a torch beam slipping into the black gap; on line 2 they heave it a little higher (still dark inside)
-        S("s01_hook", "sc103_hook", [N("A ship's captain loaded a fortune in cocaine.", tone="hook", speed=1.13, pause_before=0.0),
+        S("s01_hook", "sc103_hook", [N("A ship's captain carried a fortune in cocaine.", tone="hook", speed=1.13, pause_before=0.0),
                                      N("Over 2 tonnes, worth a hundred and fifty-seven million euros.", tone="confident")],
           "tension", ["M1_ship", "M2_load", "M3_value"],
           sfx=[fx(0.0, "sub", 0.4), fx(0.0, "rain", 0.16), fw(0, 3, "rasp", 0.2, 0.0), fw(0, 7, "thump", 0.22, 0.0), fw(1, 8, "cash", 0.15, 0.0)],
-          emph=["captain", "loaded", "fortune", "cocaine.", "2", "tonnes,", "million"], min_d=5.6, pad=0.06),
+          emph=["captain", "carried", "fortune", "cocaine.", "2", "tonnes,", "million"], min_d=5.6, pad=0.06),
         # GOTCHA: wider, from the bridge wing: the helicopter over the heaving deck, its searchlight on the hatch; two
         #     Rangers slide down the ropes; on "dropped" the hatch swings up on the stacked bales (the one impact)
         S("s02_rangers", "sc103_rangers", [N("Then, in heavy seas, Rangers dropped from a helicopter.", tone="reveal", pause_before=0.3)],
@@ -115,7 +115,7 @@ def build(h):
     ]
     C = h.claim
     claims = [
-        C("M1_ship", "The MV Matthew was a Panamanian-flagged bulk carrier. Drawn as a generic bulker: no name, flag or livery. The hook's 'A ship's captain loaded a fortune in cocaine' states the case: its captain pleaded guilty to possession of the cocaine aboard for sale or supply.",
+        C("M1_ship", "The MV Matthew was a Panamanian-flagged bulk carrier. Drawn as a generic bulker: no name, flag or livery. The hook's 'A ship's captain carried a fortune in cocaine' states the case: its captain pleaded guilty to possession of the cocaine aboard for sale or supply.",
           ["cbs", "mex_medevac", "it_depart", "bn_fear"]),
         C("M2_load", "2,253 kg of cocaine (reported as 2.2 / 2.25 tonnes). Narration: 'Over 2 tonnes' (the digit on the caption, spoken 'two'). Headline 'TWO TONNES OF COCAINE / AND NO CAPTAIN'.",
           ["it_sent", "tj_sent", "cbs"]),
