@@ -17,7 +17,7 @@ MAP = {1: 30, 2: 16, 3: 22, 4: 35, 5: "44?", 6: 35, 7: 44, 8: 44, 9: 44, 10: "45
        50: 73, 51: 76, 52: 73, 53: 72, 54: 77, 55: 72, 56: 72, 57: 76, 58: 74, 59: 76, 60: 74, 61: 74, 62: 75, 63: 73, 64: 79, 65: 77, 66: 77, 67: 79, 68: 75, 69: 75,
        70: 84, 71: 86, 72: 87, 73: 87, 74: 88, 75: 85, 76: 85, 77: 83, 78: 86, 79: 85, 80: 83, 81: 84, 82: 87, 83: 84, 84: 86, 85: 83, 86: 88, 87: 88, 88: 88,
        89: 92, 90: 94, 91: 93, 92: 94, 93: 93, 94: 92, 95: 93, 96: 92, 97: 94, 98: 97, 99: 95, 100: 97, 101: 96, 102: 95, 103: 96, 104: 95, 105: 97, 106: 96,
-       107: 98, 108: 98, 109: 98}
+       107: 98, 108: 98, 109: 98, 110: 98, 111: 97, 112: 97, 113: 98, 114: 98, 115: 98}
 UNSURE_LINK = {5, 10, 13, 14, 6, 16, 39, 46, 73}   # linked by adjacency only (no thumbnail on the screen itself)
 POSTED = {72: "2026-10-18", 73: "2026-10-18", 74: "2026-10-18", 75: "2026-10-19", 76: "2026-10-19", 77: "2026-10-19", 79: "2026-10-19",
           83: "2026-10-20", 84: "2026-10-20", 85: "2026-10-20", 86: "2026-10-20", 87: "2026-10-20", 88: "2026-10-20",
@@ -60,7 +60,9 @@ for f in sorted(T.glob("*.json")):
     src = d.get("sources") or {}
     for k in ("reels_tab", "explore", "profile"):
         if src.get(k) is not None and r.get("src_" + k) is None: r["src_" + k] = src[k]
-    if d.get("audience") and any(v for v in d["audience"].values()): r["audience"] = json.dumps(d["audience"])
+    if d.get("audience") and any(v for v in d["audience"].values()):
+        a = json.loads(r["audience"]) if r.get("audience") else {}
+        a.update({k: v for k, v in d["audience"].items() if v is not None}); r["audience"] = json.dumps(a)
 
 # owner-reported readings that predate the screenshot set (docs/STYLE_GUIDE_TRUE_CRIME.md), kept apart and flagged
 extra = [{"reel": 16, "read_date_utc_file": "2026-10-12", "views": 1558, "skip_rate_pct": 31.5, "average_watch_time_s": 23, "reel_length_label": "1:19", "screenshots": ["(owner report in docs/STYLE_GUIDE_TRUE_CRIME.md, 5 h)"], "uncertain": {"owner_report"}, "link_uncertain": False},
