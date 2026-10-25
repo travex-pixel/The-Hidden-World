@@ -542,3 +542,5 @@
 - 2026-10-23 14:38:54 tcv96-starlink-narco-sub: rendering (final60, seed 1)
 - 2026-10-23 15:09:34 tcv96-starlink-narco-sub: rendered in 1840s
 - 2026-10-23 15:10:17 tcv96-starlink-narco-sub: VERIFIED -> series/true-crime-cinematic/output/true_crime_96_starlink_narco_sub.mp4 (28.2s, 14.8 MB, sha256 b96a15ffe304)
+- 2026-10-25 00:26:42 produce 99 --force: regenerating episode data
+- 2026-10-25 00:26:42 tcv99-where-they-hid-it-7: rendering (final60, seed 1)

@@ -95,9 +95,9 @@
   }
 
   // ---------- THE HERO: the floor hatch over the tunnel shaft. th = lift (deg); glowK = how hot the light is; o.hands
-  // draws the two gloved hands on the near edge with sleeves to the bottom of the frame; o.id keeps the clip ids unique
+  // draws the two gloved hands on the near edge with sleeves to the bottom of the frame; o.cid keeps the clip ids unique
   function hatch(P, th, t, o = {}) {
-    const id = o.id || 'a', r = th * Math.PI / 180, sy = PL * Math.sin(r), sz = ZF - PL * Math.cos(r);
+    const id = o.cid || 'a', r = th * Math.PI / 180, sy = PL * Math.sin(r), sz = ZF - PL * Math.cos(r);
     const hn0 = P(-HW, 0, ZN), hn1 = P(HW, 0, ZN), hf0 = P(-HW, 0, ZF), hf1 = P(HW, 0, ZF);
     const open = clamp((th - TH0) / 70, 0, 1);
     let g = `<defs><clipPath id="bf100h${id}"><path d="M${pt(hn0)} L${pt(hn1)} L${pt(hf1)} L${pt(hf0)} Z"/></clipPath>` +
@@ -304,7 +304,7 @@
   const HERO_CAM0 = { x: 0, y: 0, z: 1.0 }, HERO_CAM1 = { x: 0, y: -16, z: 1.08 };
   const AGENT = { id: 'bf100_agent', x: 120, y: 760, scale: 0.5, dir: 1, turn: 0.35, pose: 'torch', expr: 'focused', depth: 1.0 };
   const heroProps = (th, fr, id) => [
-    { depth: 1.0, accent: true, svg: tt => hatch(CAM_TOP, th(tt), tt, { id, hands: true }) }
+    { depth: 1.0, accent: true, svg: tt => hatch(CAM_TOP, th(tt), tt, { cid: id, hands: true }) }
   ].concat(fr ? [{ depth: 1.1, accent: true, svg: tt => freezerInset(fr(tt), tt) }] : []);
   // the callback's inset: a framed picture of a chest freezer, its lid up on taped packages (u 0..1 pops it in and out)
   function freezerInset(u, t) {
@@ -360,7 +360,7 @@
             keys: [{ at: l1, pose: 'kneel', expr: 'focused', headTurn: 0.2, dur: 0.35 }, { at: nt, expr: 'shocked', headTurn: 0.05, dur: 0.25 }, { at: nb, expr: 'realise', headTurn: 0.4, dur: 0.4 }, { at: th_, expr: 'determined', dur: 0.35 }] }
         ],
         props: [
-          { depth: 1.0, accent: true, svg: tt => hatch(CAM_LOW, th(tt), tt, { id: 'r' }) + `<g style="mix-blend-mode:screen">${wash(640, 900, 420, 300, HOT, f1(0.4 * flashAt(tt, nt)))}</g>` }
+          { depth: 1.0, accent: true, svg: tt => hatch(CAM_LOW, th(tt), tt, { cid: 'r' }) + `<g style="mix-blend-mode:screen">${wash(640, 900, 420, 300, HOT, f1(0.4 * flashAt(tt, nt)))}</g>` }
         ],
         overlays: [
           { type: 'impact', at: nt, x: 650, y: 960 },
