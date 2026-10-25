@@ -161,8 +161,8 @@ def build(h):
     ep["hook_title"] = {"lines": [{"text": "TWO TONNES OF COCAINE"}, {"text": "AND NO CAPTAIN", "colour": "#e8a33a"}],
                         "until": 2.6, "y": 400}
     # the CASE chip, word-anchored from out/<id>/timeline.json when a build exists (narration is cached, so stable)
-    anchors = [("s01_hook", 1, 1, 3.2, "THE SHIP"), ("s03_gone", 0, 2, 10.0, "THE CAPTAIN"),
-               ("s06_court", 0, 2, 18.0, "THE COURT")]
+    anchors = [("s01_hook", 1, 1, 3.2, "1/3 · THE SHIP"), ("s03_gone", 0, 2, 10.0, "2/3 · THE CAPTAIN"),
+               ("s06_court", 0, 2, 18.0, "3/3 · THE COURT")]
     keys = []
     try:
         tl = json.loads((h.ROOT / "out" / EP / "timeline.json").read_text())
@@ -178,7 +178,7 @@ def build(h):
         keys.append({"t": max(t, 3.2), "v": v})
     end_start = by["s08_end"]["start"] if "s08_end" in by else None
     total = tl[-1]["end"] if tl else None
-    ep["progress"] = {"label": "CASE", "keys": keys, "y": 350,
+    ep["progress"] = {"label": "", "keys": keys, "y": 350,
                       "until": round(end_start - 0.35, 2) if end_start else 26.0}   # gone before the end scene
     # the end card from ~0.2 s into the end scene (`from` counts back from the end of the video)
     ep["end_title"] = {"lines": [{"text": "CAPTAIN IN NAME ONLY?"}, {"text": "FAKED IT OR FLED IT? \U0001F447", "colour": "#e8a33a"},

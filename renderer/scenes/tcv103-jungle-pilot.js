@@ -46,7 +46,7 @@
   const LID = '#d9822b', LID_D = '#9a5418', LID_L = '#f0a85a', LID_U = '#5a3a20';
   const STEEL = '#3a4650', STEEL_D = '#27313a', STEEL_L = '#5c6a74';
   const GLOVE = '#26292d', GLOVE_D = '#141619', GLOVE_L = '#5a6068', SLEEVE = '#2a322e';
-  const BALE = '#24282d', BALE_L = '#5a626c', TAPE = '#b89464';
+  const BALE = '#1e2226', BALE_L = '#7a848e', TAPE = '#8a6c46';
   const rad = d => d * Math.PI / 180;
   const flashAt = (tt, a) => (tt >= a && tt < a + 0.45 ? Math.pow(1 - (tt - a) / 0.45, 2) : 0);
   const mod = (a, n) => ((a % n) + n) % n;
@@ -135,17 +135,17 @@
     let g = '';
     const cols = 4, rows = 3, r = R(10311);
     for (let j = rows - 1; j >= 0; j--) for (let i = 0; i < cols; i++) {
-      const x0 = -330 + i * 165 + 8, x1 = x0 + 150, z0 = 0.08 + j * 0.29, z1 = z0 + 0.25, hb = 0.05 + 0.02 * r();
+      const jx = (r() - 0.5) * 14, x0 = -334 + i * 167 + 10 + jx, x1 = x0 + 146, z0 = 0.07 + j * 0.3 + (r() - 0.5) * 0.02, z1 = z0 + 0.24, hb = 0.05 + 0.03 * r();
       const top = [PT(x0, z1, hb), PT(x1, z1, hb), PT(x1, z0, hb), PT(x0, z0, hb)];
       const front = [PT(x0, z0, hb), PT(x1, z0, hb), PT(x1, z0, -0.06), PT(x0, z0, -0.06)];
       g += `<path d="${poly(front)}" fill="#15181c" stroke="${INK}" stroke-width="3"/>`;
-      g += `<path d="${poly(top)}" fill="${BALE}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`;
+      g += `<path d="${poly(top)}" fill="${BALE}" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>` + `<path d="${poly(top.map(q => [q[0] * 0.97 + 0, q[1]]))}" fill="none" stroke="#3a4048" stroke-width="10" opacity="0.5" stroke-linejoin="round"/>`;
       // the plastic's sheen and creases, the tape cross
       const c = PT((x0 + x1) / 2, (z0 + z1) / 2, hb), A = PT(x0 + 20, z1 - 0.04, hb), B = PT(x1 - 30, z0 + 0.06, hb);
       g += `<path d="M${f1(A[0])} ${f1(A[1])} Q${f1(c[0] + 10)} ${f1(c[1] - 14)} ${f1(B[0])} ${f1(B[1])}" stroke="${BALE_L}" stroke-width="6" fill="none" opacity="0.6" stroke-linecap="round"/>`;
       const t1 = [PT(x0, (z0 + z1) / 2 - 0.02, hb), PT(x1, (z0 + z1) / 2 - 0.02, hb), PT(x1, (z0 + z1) / 2 + 0.02, hb), PT(x0, (z0 + z1) / 2 + 0.02, hb)];
       const xm = (x0 + x1) / 2, t2 = [PT(xm - 9, z1, hb), PT(xm + 9, z1, hb), PT(xm + 9, z0, hb), PT(xm - 9, z0, hb)];
-      g += `<path d="${poly(t1)}" fill="${TAPE}" opacity="0.85"/><path d="${poly(t2)}" fill="${TAPE}" opacity="0.85"/>`;
+      g += `<path d="${poly(t1)}" fill="${TAPE}" opacity="0.55"/><path d="${poly(t2)}" fill="${TAPE}" opacity="0.55"/>`;
     }
     return `<g opacity="${f1(clamp(lit, 0, 1))}">${g}</g>`;
   }
@@ -162,9 +162,11 @@
     const hole = [PT(-372, 0.985), PT(372, 0.985), PT(372, 0.015), PT(-372, 0.015)];
     g += `<path d="${poly(hole)}" fill="#05080b"/>`;
     g += `<defs><clipPath id="sc103hole${o.id || ''}"><path d="${poly(hole)}"/></clipPath></defs><g clip-path="url(#sc103hole${o.id || ''})">${bales(open, t)}` +
-      (open > 0.01 ? wash(0, 0, 360, 220, '#ffd8a0', f1(0.22 * open)) : '') + `</g>`;
+      (open > 0.01 ? wash(0, 0, 360, 220, '#ffd8a0', f1(0.12 * open)) : '') + `</g>`;
     // the lid (top face when below vertical, its ribbed underside past it)
     const a = th;
+    if (a > 1 && a < 60) { const n0 = lidPt(-372, 0, a, -THK), n1 = lidPt(372, 0, a, -THK), h0 = PT(-372, 0.015), h1 = PT(372, 0.015);
+      g += `<path d="${poly([n0, n1, h1, h0])}" fill="#020406"/>` + `<path d="M${f1(h0[0])} ${f1(h0[1] - 3)} L${f1(h1[0])} ${f1(h1[1] - 3)}" stroke="#6a7a86" stroke-width="5" opacity="0.6"/>`; }
     const top = [lidPt(-380, 0, a), lidPt(380, 0, a), lidPt(380, 1, a), lidPt(-380, 1, a)];
     const under = [lidPt(-380, 0, a, -THK), lidPt(380, 0, a, -THK), lidPt(380, 1, a, -THK), lidPt(-380, 1, a, -THK)];
     const edge = [lidPt(-380, 0, a), lidPt(380, 0, a), lidPt(380, 0, a, -THK), lidPt(-380, 0, a, -THK)];
@@ -198,7 +200,7 @@
   // ---------- frame 1: the deck from above (set) + the hatch + the two gloved hands + the torch beam (props)
   const HERO = { x: 540, y: 930 };
   const HERO_CAM0 = { x: 0, y: 0, z: 1.0 }, HERO_CAM1 = { x: 0, y: -22, z: 1.08 };
-  const U0 = 0.14, U1 = 0.19, U2 = 0.24;     // 7, 9.5, 12 degrees: a hand's width, then a little more
+  const U0 = 0.2, U1 = 0.26, U2 = 0.32;      // 10, 13, 16 degrees: a hand's width, then a little more
   function heroHands(th, tau, w) {
     const L = lidPt(-250, 0, th), Rr = lidPt(250, 0, th);
     const j = Math.sin(tau * 7) * 2 * (1 - w), off = (1 - w);
@@ -350,7 +352,7 @@
         cam: { from: HERO_CAM0, to: HERO_CAM1 },
         props: [heroProp(u, w, open, tau, 'h'), heroRain(tau)],
         overlays: [
-          { type: 'label', at: Math.max(3.05, tn), x: 60, y: 1206, text: 'OVER TWO TONNES OF COCAINE', fs: 34, typeDur: 0.6, sub: 'Worth about €157m, as reported' }
+          { type: 'label', at: Math.max(3.05, tn), x: 60, y: 1206, text: 'OVER TWO TONNES OF COCAINE', fs: 34, typeDur: 0.6, sub: 'Worth about €157m · off Ireland, Sept 2023' }
         ],
         tag: TAG
       });
@@ -360,33 +362,33 @@
     //     the ropes from the upper left; on "dropped" the hatch swings up on the stacked bales (the one impact)
     sc103_rangers(ctx) {
       const t = ctx.t, l1 = LS(ctx, 0, 0.5), rg = WT(ctx, 0, 4, 1.6), dp = WT(ctx, 0, 5, 2.0), hc = WT(ctx, 0, 8, 2.8);
-      const HX = 640, HY = 1190, HSC = 0.6;
+      const HX = 700, HY = 1200, HSC = 0.56;
       const w = tt => ease.out(seg(tt, dp - 0.02, dp + 0.5)), open = tt => seg(tt, dp + 0.05, dp + 0.5);
-      const hp = tt => ({ x: 260 + 30 * Math.sin(tt * 0.7), y: 300 + 10 * Math.sin(tt * 1.3) });
-      const ropeTop = tt => { const p = hp(tt); return [p.x + 10, p.y + 40]; };
-      const R1 = { id: 'sc103_ranger', x: 300, y: 820, scale: 0.6, dir: 1, turn: 0.5, pose: 'point_up', expr: 'determined', depth: 1.0,
-        keys: [{ at: l1, y: 1000, headTurn: 0.2, dur: Math.max(0.4, rg - l1) }, { at: rg, y: 1260, pose: 'point_up', dur: Math.max(0.3, dp - rg) }, { at: dp + 0.05, pose: 'torch_low', expr: 'focused', headTurn: 0.4, dur: 0.4 }] };
-      const R2 = { id: 'sc103_ranger2', x: 430, y: 560, scale: 0.56, dir: 1, turn: 0.5, pose: 'point_up', expr: 'determined', depth: 1.0,
-        keys: [{ at: l1 + 0.1, y: 780, dur: 0.6 }, { at: rg + 0.1, y: 1060, dur: Math.max(0.4, hc - rg) }, { at: hc + 0.1, pose: 'point', headTurn: 0.3, dur: 0.4 }] };
+      const hp = tt => ({ x: 330 + 12 * Math.sin(tt * 0.7), y: 540 + 8 * Math.sin(tt * 1.3) });
+      const RX1 = 290, RX2 = 400;   // the two ropes (screen x); each Ranger's raised hand grips his rope
+      const R1 = { id: 'sc103_ranger', x: RX1 - 236 * 0.46, y: 1090, scale: 0.46, dir: 1, turn: 0.5, pose: 'point_up', expr: 'determined', depth: 1.0,
+        keys: [{ at: l1, y: 1200, headTurn: 0.2, dur: Math.max(0.4, rg - l1) }, { at: rg, y: 1400, pose: 'point_up', dur: Math.max(0.3, dp - rg) }, { at: dp + 0.15, pose: 'torch_low', expr: 'focused', headTurn: 0.4, dur: 0.4 }] };
+      const R2 = { id: 'sc103_ranger2', x: RX2 - 236 * 0.44, y: 990, scale: 0.44, dir: 1, turn: 0.5, pose: 'point_up', expr: 'determined', depth: 1.0,
+        keys: [{ at: l1 + 0.1, y: 1060, dur: 0.6 }, { at: rg + 0.1, y: 1330, dur: Math.max(0.4, hc - rg) }, { at: hc + 0.1, pose: 'point', headTurn: 0.3, dur: 0.4 }] };
       return E.cine.shot(ctx, {
         set: 'sc103_bow', grade: 'cold', haze: 0.3,
         cam: { from: { x: -10, y: 10, z: 1.02 }, to: { x: 10, y: 20, z: 1.07 } },
         figures: [R1, R2],
         props: [
           // the helicopter and its searchlight cone onto the hatch
-          { depth: 0.96, svg: tt => { const p = hp(tt); return `<g transform="translate(${f1(p.x)} ${f1(p.y)}) scale(0.62) rotate(-6)">${heli(tt, { light: true, door: true })}</g>`; } },
-          { depth: 0.97, svg: tt => { const p = hp(tt); return beamCone(p.x - 110, p.y + 74, HX + 20, HY - 40, 230, 0.9); } },
+          { depth: 0.96, svg: tt => { const p = hp(tt); return `<g transform="translate(${f1(p.x)} ${f1(p.y)}) scale(0.8) rotate(-4)">${heli(tt, { light: true, door: true })}</g>`; } },
+          { depth: 0.97, svg: tt => { const p = hp(tt); return beamCone(p.x - 142, p.y + 94, HX + 10, HY - 20, 230, 0.9); } },
           // the hatch on the foredeck (the same hatch as frame 0, wider)
           { depth: 0.99, accent: true, svg: tt => `<g transform="translate(${HX} ${HY}) scale(${HSC})">${hatch(angle(U2, w(tt)), open(tt), tt, { id: 'g' })}</g>` + wash(HX, HY - 40, 300, 160, '#ffe6b8', f1(0.25 * open(tt))) },
           // the two ropes from the door to the deck (behind the Rangers)
-          { depth: 0.995, svg: tt => { const [x0, y0] = ropeTop(tt); return `<path d="M${f1(x0)} ${f1(y0)} Q${f1(x0 + 30)} 800 330 1300" stroke="#1a1c1e" stroke-width="7" fill="none"/><path d="M${f1(x0 + 20)} ${f1(y0)} Q${f1(x0 + 120)} 700 460 1090" stroke="#1a1c1e" stroke-width="6" fill="none"/>`; } },
+          { depth: 0.995, svg: tt => { const p = hp(tt); return [RX1, RX2].map((x, i) => `<path d="M${f1(p.x - 30 + i * 60)} ${f1(p.y + 36)} Q${f1(x + 6 * Math.sin(tt * 2 + i))} 1000 ${x} 1420" stroke="#0e1012" stroke-width="7" fill="none"/>`).join(''); } },
           // spray off the bow
           { depth: 1.04, svg: tt => { const k = Math.pow(Math.max(0, Math.sin(tt * 1.6)), 3); return wash(540, 640, 420 * (0.6 + k), 90, '#e8f0f2', f1(0.18 + 0.25 * k)); } },
           { depth: 1.06, svg: tt => rainT(tt, [-300, -400, W + 600, H + 600], 110, 10381, 0.45) }
         ],
         overlays: [
           { type: 'impact', at: dp, x: HX, y: HY - 120 },
-          { type: 'label', at: Math.max(0.3, l1 + 0.1), x: 60, y: 600, text: "OFF IRELAND'S SOUTH COAST · SEPT 2023", fs: 30, typeDur: 0.6, sub: "Ireland's biggest drug seizure" }
+          { type: 'label', at: dp + 0.35, x: 540, y: 760, text: 'BIGGEST SEIZURE', fs: 32, typeDur: 0.5, sub: "In Ireland, ever" }
         ],
         tag: TAG
       });
@@ -412,7 +414,7 @@
               wash(CH.x, CH.y - 260, 220, 200, '#ffe8c0', f1(0.15 + 0.3 * seg(tt, cp - 0.05, cp + 0.4))); } }
         ],
         overlays: [
-          { type: 'label', at: Math.max(0.3, cp + 0.05), x: 60, y: 560, text: 'THE CAPTAIN · NOT ON BOARD', fs: 36, typeDur: 0.5, sub: 'Soheil Jelveh, the ship’s master' }
+          { type: 'label', at: Math.max(0.2, l1 + 0.05), x: 60, y: 560, text: 'THE CAPTAIN · NOT ON BOARD', fs: 36, typeDur: 0.5, sub: 'Soheil Jelveh, the ship’s master' }
         ],
         tag: TAG
       });

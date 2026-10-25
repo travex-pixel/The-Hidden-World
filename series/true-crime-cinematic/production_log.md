@@ -554,3 +554,5 @@
 - 2026-10-25 01:05:23 tcv100-border-fails-7: rendering (final60, seed 1)
 - 2026-10-25 01:25:00 tcv100-border-fails-7: rendered in 1177s
 - 2026-10-25 01:25:32 tcv100-border-fails-7: VERIFIED -> series/true-crime-cinematic/output/true_crime_100_border_fails_7.mp4 (27.3s, 15.4 MB, sha256 53fe05754bd1)
+- 2026-10-25 13:29:51 produce 101 --force: regenerating episode data
+- 2026-10-25 13:29:51 tcv101-soap-grandad: rendering (final, seed 1)
