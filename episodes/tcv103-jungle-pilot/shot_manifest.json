@@ -11,10 +11,10 @@
   "max_set_share": 0.25,
   "shot_sizes": {
    "insert/graphic": 2,
-   "medium-wide": 2,
+   "wide": 2,
    "medium": 1,
-   "wide": 1,
-   "close-up": 2
+   "close-up": 2,
+   "medium-wide": 1
   },
   "max_shot_size_share": 0.25,
   "ok": true
@@ -315,8 +315,8 @@
      ]
     }
    ],
-   "visual_description": "sc103 bow (cold grade); sc103_ranger: point_up -> point_up -> torch_low; sc103_ranger2: point_up -> point; camera push/pull; overlays: impact, label 'OFF IRELAND'S SOUTH COAST · SEPT 2023'.",
-   "shot_size": "medium-wide",
+   "visual_description": "sc103 bow (cold grade); sc103_ranger: point_up -> point_up -> torch_low; sc103_ranger2: point_up -> point; camera push/pull; overlays: impact, label 'BIGGEST SEIZURE'.",
+   "shot_size": "wide",
    "set": "sc103_bow",
    "grade": "cold",
    "camera": {
@@ -341,7 +341,7 @@
      "id": "sc103_ranger",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.6,
+     "scale": 0.46,
      "start_pose": "point_up",
      "start_expr": "determined",
      "actions": [
@@ -356,7 +356,7 @@
        "move": true
       },
       {
-       "at": 2.14,
+       "at": 2.24,
        "pose": "torch_low",
        "expr": "focused",
        "turn_head": true
@@ -367,7 +367,7 @@
      "id": "sc103_ranger2",
      "outfit": "default",
      "depth": 1,
-     "scale": 0.56,
+     "scale": 0.44,
      "start_pose": "point_up",
      "start_expr": "determined",
      "actions": [
@@ -394,8 +394,8 @@
     },
     {
      "type": "label",
-     "at": 0.65,
-     "text": "OFF IRELAND'S SOUTH COAST · SEPT 2023"
+     "at": 2.44,
+     "text": "BIGGEST SEIZURE"
     }
    ],
    "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES",
@@ -583,7 +583,7 @@
    "overlays": [
     {
      "type": "label",
-     "at": 0.7,
+     "at": 0.34,
      "text": "THE CAPTAIN · NOT ON BOARD"
     }
    ],

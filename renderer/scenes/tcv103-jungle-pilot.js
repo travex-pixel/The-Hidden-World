@@ -161,7 +161,7 @@
     // the opening: black, with the bales in it once open
     const hole = [PT(-372, 0.985), PT(372, 0.985), PT(372, 0.015), PT(-372, 0.015)];
     g += `<path d="${poly(hole)}" fill="#05080b"/>`;
-    g += `<defs><clipPath id="sc103hole${o.id || ''}"><path d="${poly(hole)}"/></clipPath></defs><g clip-path="url(#sc103hole${o.id || ''})">${bales(open, t)}` +
+    g += `<defs><clipPath id="sc103hole${o.uid || ''}"><path d="${poly(hole)}"/></clipPath></defs><g clip-path="url(#sc103hole${o.uid || ''})">${bales(open, t)}` +
       (open > 0.01 ? wash(0, 0, 360, 220, '#ffd8a0', f1(0.12 * open)) : '') + `</g>`;
     // the lid (top face when below vertical, its ribbed underside past it)
     const a = th;
@@ -173,8 +173,8 @@
     if (a < 90) {
       // the near-edge thickness and the top face: amber paint, rust streaks, stiffener ribs, the rain sheen
       g += `<path d="${poly(edge)}" fill="${LID_D}" stroke="${INK}" stroke-width="5"/>`;
-      g += `<defs><linearGradient id="sc103lid${o.id || ''}" gradientUnits="userSpaceOnUse" x1="0" y1="${f1(top[2][1])}" x2="0" y2="${f1(top[0][1])}"><stop offset="0" stop-color="${LID_D}"/><stop offset="0.55" stop-color="${LID}"/><stop offset="1" stop-color="${LID_L}"/></linearGradient></defs>`;
-      g += `<path d="${poly(top)}" fill="url(#sc103lid${o.id || ''})" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
+      g += `<defs><linearGradient id="sc103lid${o.uid || ''}" gradientUnits="userSpaceOnUse" x1="0" y1="${f1(top[2][1])}" x2="0" y2="${f1(top[0][1])}"><stop offset="0" stop-color="${LID_D}"/><stop offset="0.55" stop-color="${LID}"/><stop offset="1" stop-color="${LID_L}"/></linearGradient></defs>`;
+      g += `<path d="${poly(top)}" fill="url(#sc103lid${o.uid || ''})" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/>`;
       for (let k = 1; k < 4; k++) { const z = k / 4, p1 = lidPt(-372, z, a, 0.004), p2 = lidPt(372, z, a, 0.004);
         g += `<path d="M${f1(p1[0])} ${f1(p1[1])} L${f1(p2[0])} ${f1(p2[1])}" stroke="${LID_D}" stroke-width="10" opacity="0.8"/><path d="M${f1(p1[0])} ${f1(p1[1] + 6)} L${f1(p2[0])} ${f1(p2[1] + 6)}" stroke="${LID_L}" stroke-width="4" opacity="0.6"/>`; }
       const rr = R(10321);
@@ -213,7 +213,7 @@
     return beamCone(-520, -760, x1, y1, 150, op) + wash(x1, e[1] + 6, 180, 30, '#ffe6b8', f1(0.25 * op));
   }
   const heroProp = (u, w, open, tau, id) => ({ depth: 1.03, accent: true, svg: tt => { const th = angle(u(tt), w(tt)), ta = tau(tt);
-    return `<g transform="translate(${HERO.x} ${HERO.y})">${hatch(th, open(tt), ta, { id })}${torchBeam(th, ta, 1 - 0.6 * w(tt))}${heroHands(th, ta, w(tt))}</g>`; } });
+    return `<g transform="translate(${HERO.x} ${HERO.y})">${hatch(th, open(tt), ta, { uid: id })}${torchBeam(th, ta, 1 - 0.6 * w(tt))}${heroHands(th, ta, w(tt))}</g>`; } });
   const heroRain = tau => ({ depth: 1.06, svg: tt => rainT(tau(tt), [-300, -400, W + 600, H + 600], 120, 10331, 0.42) });
 
   // ---------- a generic helicopter, nose to the LEFT (local frame, body centre at 0, 0); no marking, number or livery.
@@ -379,7 +379,7 @@
           { depth: 0.96, svg: tt => { const p = hp(tt); return `<g transform="translate(${f1(p.x)} ${f1(p.y)}) scale(0.8) rotate(-4)">${heli(tt, { light: true, door: true })}</g>`; } },
           { depth: 0.97, svg: tt => { const p = hp(tt); return beamCone(p.x - 142, p.y + 94, HX + 10, HY - 20, 230, 0.9); } },
           // the hatch on the foredeck (the same hatch as frame 0, wider)
-          { depth: 0.99, accent: true, svg: tt => `<g transform="translate(${HX} ${HY}) scale(${HSC})">${hatch(angle(U2, w(tt)), open(tt), tt, { id: 'g' })}</g>` + wash(HX, HY - 40, 300, 160, '#ffe6b8', f1(0.25 * open(tt))) },
+          { depth: 0.99, accent: true, svg: tt => `<g transform="translate(${HX} ${HY}) scale(${HSC})">${hatch(angle(U2, w(tt)), open(tt), tt, { uid: 'g' })}</g>` + wash(HX, HY - 40, 300, 160, '#ffe6b8', f1(0.25 * open(tt))) },
           // the two ropes from the door to the deck (behind the Rangers)
           { depth: 0.995, svg: tt => { const p = hp(tt); return [RX1, RX2].map((x, i) => `<path d="M${f1(p.x - 30 + i * 60)} ${f1(p.y + 36)} Q${f1(x + 6 * Math.sin(tt * 2 + i))} 1000 ${x} 1420" stroke="#0e1012" stroke-width="7" fill="none"/>`).join(''); } },
           // spray off the bow
