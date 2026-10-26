@@ -75,3 +75,25 @@ Starter, about US$5/month for 30,000 credits with a commercial licence → rough
 Reel**; Creator, about $22/month for 100,000 credits → about $0.22 per Reel at six a week. The free tier has no
 commercial rights and is unusable for the channel. Enabling it is one environment variable and one voice id
 (docs/TTS_PROVIDERS.md); the key is never printed, logged or committed. Flagged, not enabled: monthly cost $5–22.
+
+## The owner's blind verdict (26 October 2026)
+
+Answers pasted from the review page, decoded with `out/voice_test/KEY.json` (clip files checked against the
+originals by hash):
+
+| clip | narrator | obviously synthetic in 5 s? | sounds like a person (1–5) |
+|---|---|---|---|
+| A | `bm_george` directed | no | 4 |
+| B | `am_adam` directed | **yes** | – |
+| C | `am_michael` directed | **yes** | – |
+| D | Piper libritts #666 directed | no | 4 |
+| E | `am_onyx` directed | no | 4 |
+| F | **`am_fenrir` directed** | no | 4 |
+| G | **`am_adam`, the current engine** | **yes** | – |
+
+**The narrator the channel has used since engine v4 was clocked as synthetic within five seconds.** Directing it
+did not save it (B), so the problem is the voice, not the delivery. Four voices passed, all rated 4 of 5, so the ear
+does not separate them; the measurements break the tie in favour of `am_fenrir` (widest pitch range, 12.0 semitones),
+which is the voice already on Case Files 101–103. **Decision confirmed: `am_fenrir`, directed, is the narrator from
+Case File 101 on.** `bm_george` is the fallback if a British read suits a case (it also passed, 10.7 semitones).
+No paid voice is needed to pass the owner's five-second test; the test with strangers is the 48-hour skip rate.
