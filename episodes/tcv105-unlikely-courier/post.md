@@ -1,4 +1,4 @@
-CAPTION: The customs officer's knife wouldn't go into the cake. Under the top layer: a foil-wrapped cocaine cake brick.
+CAPTION: The customs officer's knife wouldn't go into the cake. Under the top layer: a foil-wrapped brick of cocaine.
 Gildo Ricci, 69, flew into Dulles from Bogota in April 2024 with a suitcase of sweets; officers found 2.07 kg of cocaine in his cakes and soup mix, and $7,750 in counterfeit cash in a backpack. A federal jury in Alexandria convicted him in January 2025 (US Attorney's Office, Eastern District of Virginia).
 Which was worse: the cocaine cake or the fake cash?
 HASHTAGS: #cocainecake #dulles #customs #smuggling #airportfails

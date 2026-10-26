@@ -574,3 +574,7 @@
 - 2026-10-26 14:33:41 tcv106-cabin-crew: rendering (final, seed 1)
 - 2026-10-26 14:46:55 tcv106-cabin-crew: rendered in 794s
 - 2026-10-26 14:47:25 tcv106-cabin-crew: VERIFIED -> series/true-crime-cinematic/output/true_crime_106_cabin_crew.mp4 (31.6s, 12.9 MB, sha256 e7056b041bba)
+- 2026-10-26 14:50:04 produce 105 --force: regenerating episode data
+- 2026-10-26 14:50:04 tcv105-unlikely-courier: rendering (final, seed 1)
+- 2026-10-26 15:02:54 tcv105-unlikely-courier: rendered in 769s
+- 2026-10-26 15:03:28 tcv105-unlikely-courier: VERIFIED -> series/true-crime-cinematic/output/true_crime_105_unlikely_courier.mp4 (33.2s, 13.9 MB, sha256 3b75599e086d)
