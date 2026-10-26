@@ -86,8 +86,8 @@ https://timesofsandiego.com/crime/2025/11/08/ex-san-diego-cbp-officer-sentenced-
 | K_person | He is Junaed Dar (Junaed Ghani Dar), a Heathrow security manager from Slough; convicted by a jury and named by the NCA and the press. Narration: "He was Junaed Dar, a security manager at Heathrow." | nca, charge, nub, hounslow | two-source (2019 + 2025) |
 | K_shift | He arrived about three hours before his shift was due to start. Narration: "He came in three hours before his shift." | nca, nub, romford | **NCA only** (relayed by several papers); part of the conduct the jury convicted on |
 | K_vehicle | In his security uniform he took an official airport vehicle to Terminal 2B to meet the couriers. Label only: "IN UNIFORM · AIRPORT VEHICLE · TERMINAL 2B". | nub, romford | **NCA only**; label, attributed "per the NCA" |
-| K_toilets | He met the couriers and escorted them to the toilets, where he took their bags (PA: they were seen entering the toilets with two bags and leaving without them). Narration: "He took their bags in the toilets." | pa, nca/hounslow, nub | two-source |
-| K_arrest | He was arrested by waiting NCA officers as he was about to drive away with the bags. Narration: "Officers were waiting. He never drove off." | nca/hounslow, nub, charge (arrested at Terminal 2 by the NCA) | two-source (arrest by NCA at T2: 2019 + 2025; "about to drive away": NCA) |
+| K_toilets | He met the couriers and escorted them to the toilets, where he took their bags (PA: they were seen entering the toilets with two bags and leaving without them). Narration: "Then he took the couriers' bags." (label: THE TOILETS · TERMINAL 2B) | pa, nca/hounslow, nub | two-source |
+| K_arrest | He was arrested by waiting NCA officers as he was about to drive away with the bags. Narration: "NCA officers were waiting." / "He never drove off." | nca/hounslow, nub, charge (arrested at Terminal 2 by the NCA) | two-source (arrest by NCA at T2: 2019 + 2025; "about to drive away": NCA) |
 | K_verdict | A jury found him guilty of attempting to import Class A drugs. Narration: "A jury convicted him." | nca, hounslow, nub | NCA account only (court outcome; no independent court report surfaced) |
 | K_years | Sentenced to 16 and a half years at Kingston Crown Court on 4 Aug 2025. STATISTIC counter. Narration: "Sixteen and a half years." | nca, hounslow, nub, romford | NCA account (four outlets) |
 | K_couriers | The two couriers pleaded guilty and were each jailed for six years and eight months in 2022. Fun-fact card. | pa, nca | two-source |
@@ -162,11 +162,11 @@ tried first and dropped: the recogniser lost the leading "A" or heard "He throws
 - No weapon, no force shown at the arrest (officers' hands on the bag, a raised palm at most).
 - No method detail beyond what was reported as found.
 
-## Build notes (as built, 74 spoken words, 29.6 s)
+## Build notes (as built, 71 spoken words, about 29.5 s)
 
 Hook (0 s, the zip half open, inside dark): "Security boss at Heathrow loaded the smugglers' bags." / "22 kilos of cocaine.
 Or so he thought." Gotcha (6.1 s, the bag opens on wood): "But Colombian police had swapped it for wood." Person (9.3 s):
 "He was Junaed Dar, a security manager at Heathrow." / "He came in three hours before his shift." Evidence close-up: our
-own typed duty log. "He met the couriers and took their bags." Consequence: "NCA officers were waiting." / "He was
-arrested before he could drive away." / "A jury convicted him." / "Sixteen and a half years." Callback on the bag:
+own typed duty log. "Then he took the couriers' bags." Consequence: "NCA officers were waiting." / "He never drove
+off." / "A jury convicted him." / "Sixteen and a half years." Callback on the bag:
 "Every block in those bags was wood."

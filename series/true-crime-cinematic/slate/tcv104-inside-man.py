@@ -51,17 +51,17 @@ def build(h):
           emph=["junaed", "dar,", "heathrow", "security", "three", "hours", "shift."], min_d=6.0, pad=0.1, tr="dissolve"),
         # PERSON, the evidence close-up: our own typed duty log on a desk, an investigator close at the right; on "met" the
         #   pen ticks the meeting, on "bags" a ring closes round THE TOILETS, TERMINAL 2B
-        S("s04_log", "im104_log", [N("He met the couriers and took their bags.", tone="reveal", pause_before=0.3)],
+        S("s04_log", "im104_log", [N("Then he took the couriers' bags.", tone="reveal", pause_before=0.3)],
           "tension-rise", ["K_vehicle", "K_toilets"],
-          sfx=[fw(0, 0, "pen", 0.22, -0.1), fw(0, 4, "paper", 0.2, 0.0), fw(0, 7, "stamp", 0.24, 0.0)],
-          emph=["met", "couriers", "took", "bags."], min_d=3.0, pad=0.1, tr="cut"),
+          sfx=[fw(0, 0, "pen", 0.22, -0.1), fw(0, 2, "paper", 0.2, 0.0), fw(0, 5, "stamp", 0.24, 0.0)],
+          emph=["then", "took", "couriers'", "bags."], min_d=3.0, pad=0.1, tr="cut"),
         # CONSEQUENCE (the second re-hook): the service road; the airport vehicle, its amber beacon turning; his silhouette at
         #   the driver's door; two officers walk in from the right, one raises a palm; he freezes
         S("s05_arrest", "im104_arrest", [N("NCA officers were waiting.", tone="reveal", pause_before=0.3),
-                                         N("He was arrested before he could drive away.", tone="confident")],
+                                         N("He never drove off.", tone="confident")],
           "tension", ["K_arrest", "K_betrayal"],
-          sfx=[fw(0, 0, "step", 0.2, -0.1), fw(0, 1, "thump", 0.22, 0.0), fw(0, 3, "sting", 0.2, 0.0), fw(1, 2, "cuffs", 0.18, 0.0), fw(1, 7, "thud", 0.2, 0.0)],
-          emph=["nca", "officers", "waiting.", "arrested", "drive", "away."], min_d=4.8, pad=0.1, tr="cut"),
+          sfx=[fw(0, 0, "step", 0.2, -0.1), fw(0, 1, "thump", 0.22, 0.0), fw(0, 3, "sting", 0.2, 0.0), fw(1, 1, "cuffs", 0.18, 0.0), fw(1, 3, "thud", 0.2, 0.0)],
+          emph=["nca", "officers", "waiting.", "never", "drove", "off."], min_d=4.8, pad=0.1, tr="cut"),
         # CONSEQUENCE: a crown court; his silhouette in the dock; on "convicted" he lowers his head; on "Sixteen" the
         #   counter; the couriers' fun fact (the end-card question's two sides)
         S("s06_court", "im104_court", [N("A jury convicted him.", tone="confident"),
@@ -116,9 +116,9 @@ def build(h):
           ["nca", "nub", "romford"]),
         C("K_vehicle", "In his security uniform he took an official airport vehicle to Terminal 2B to meet the couriers (NCA statement). Evidence close-up: our own typed duty-log graphic (no real document imitated): 'ON SITE: 3 HRS BEFORE SHIFT', 'IN UNIFORM · AIRPORT VEHICLE', 'MET: 2 COURIERS FROM BOGOTA', 'HANDOVER: THE TOILETS, TERMINAL 2B'.",
           ["nub", "romford", "nca"]),
-        C("K_toilets", "He met the couriers, escorted them to the toilets and took possession of their bags; PA: they were seen entering the toilets with two bags and leaving without them. Narration: 'He met the couriers and took their bags.'",
+        C("K_toilets", "He met the couriers, escorted them to the toilets and took possession of their bags; PA: they were seen entering the toilets with two bags and leaving without them. Narration: 'Then he took the couriers' bags.'",
           ["pa", "hounslow", "nub"]),
-        C("K_arrest", "NCA officers were waiting; he was arrested as he was about to drive away with the bags (NCA); the 2019 charge reports: the NCA, supported by Border Force, arrested him at Terminal 2 with the two passengers. Narration: 'NCA officers were waiting.' / 'He was arrested before he could drive away.'",
+        C("K_arrest", "NCA officers were waiting; he was arrested as he was about to drive away with the bags (NCA); the 2019 charge reports: the NCA, supported by Border Force, arrested him at Terminal 2 with the two passengers. Narration: 'NCA officers were waiting.' / 'He never drove off.'",
           ["hounslow", "nub", "charge"]),
         C("K_betrayal", "NCA operations manager Mark Abbott called his conduct a 'gross betrayal of trust' (NCA statement). Label 'THE NCA: \"A GROSS BETRAYAL OF TRUST\"'.",
           ["nub", "hounslow"]),
@@ -169,7 +169,7 @@ def build(h):
     # the end card from ~0.2 s into the end scene (`from` counts back from the end of the video)
     ep["end_title"] = {"lines": [{"text": "WHO DESERVES MORE TIME?"}, {"text": "THE INSIDE MAN OR THE MULES? \U0001F447", "colour": "#e8a33a", "fs": 50},
                                  {"text": "SEND TO THE MATE WHO WORKS AT THE AIRPORT", "fs": 32},
-                                 {"text": "NEXT FILE: THE BIBLE RUN", "fs": 36, "colour": "#e8a33a"},
+                                 {"text": "NEXT FILE: THE COCAINE CAKE", "fs": 36, "colour": "#e8a33a"},
                                  {"text": "THE HIDDEN WORLD · CASE FILE 104", "fs": 32}],
                        "from": round(total - end_start - 0.2, 2) if (total and end_start) else 2.4, "y": 300, "fs": 60}
     ep["narrator_profile"] = {"provider": "kokoro", "kokoro_voice": "am_fenrir", "energy": 0.6, "directed": True,

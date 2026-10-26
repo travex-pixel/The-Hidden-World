@@ -341,10 +341,10 @@
       });
     },
 
-    // 4 - PERSON, the evidence close-up: an investigator close at the right; our typed duty log on the desk; on "met" the
+    // 4 - PERSON, the evidence close-up: an investigator close at the right; our typed duty log on the desk; on "took" the
     //     meeting is ticked, on "bags" a ring closes round THE TOILETS · TERMINAL 2B
     im104_log(ctx) {
-      const t = ctx.t, l1 = LS(ctx, 0, 0.4), mt = WT(ctx, 0, 1, 0.7), bg = WT(ctx, 0, 7, 1.6);
+      const t = ctx.t, l1 = LS(ctx, 0, 0.4), mt = WT(ctx, 0, 2, 0.7), bg = WT(ctx, 0, 5, 1.6);
       return E.cine.shot(ctx, {
         set: 'im104_desk', grade: 'cold', haze: 0.15, dof: true,
         cam: { from: { x: -10, y: 20, z: 1.08 }, to: { x: 10, y: 30, z: 1.13 } },
@@ -363,10 +363,10 @@
     },
 
     // 5 - CONSEQUENCE (the second re-hook): the service road; the plain van, its beacon turning; his silhouette at the
-    //     driver's door (the door opening); on line 1 two officers walk in from the right; on "arrested" one raises a palm,
+    //     driver's door (the door opening); on line 1 two officers walk in from the right; on "never" one raises a palm,
     //     he freezes and turns; the NCA label
     im104_arrest(ctx) {
-      const t = ctx.t, l1 = LS(ctx, 0, 0.3), wt = WT(ctx, 0, 3, 1.2), l2 = LS(ctx, 1, 2.2), ar = WT(ctx, 1, 2, 2.6), dr = WT(ctx, 1, 6, 3.4);
+      const t = ctx.t, l1 = LS(ctx, 0, 0.3), wt = WT(ctx, 0, 3, 1.2), l2 = LS(ctx, 1, 2.2), ar = WT(ctx, 1, 1, 2.6), dr = WT(ctx, 1, 3, 3.2);
       return E.cine.shot(ctx, {
         set: 'im104_road', grade: 'cold', haze: 0.22,
         cam: { from: { x: 30, y: 10, z: 1.02 }, to: { x: 0, y: 20, z: 1.06 } },
