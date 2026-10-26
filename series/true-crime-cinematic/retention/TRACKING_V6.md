@@ -99,3 +99,13 @@ Skip rate not captured in this reading. Shares, saves and follows still 0 at 1 h
 | 103 | 48 h | | | | | | | | | | | |
 
 Targets (docs/CHANNEL_BRIEF_2026-10-26.md): skip ≤ 23 %, ≥ 65 % at 10 s, average watch > 50 % of length, and the first non-zero shares since 92.
+
+**Batch 8: engine v10 run 2 (104 Heathrow inside man, 105 cocaine cake [33-s length test], 106 the flight attendant who ran), to post one a day at 4 pm AEDT Wed 28 to Fri 30 Oct.**
+
+| # | age | views | viewers | avg watch | skip % | kept @10 s | end % | shares | saves | follows | comments | like % |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 104 | 48 h | | | | | | | | | | | |
+| 105 | 48 h | | | | | | | | | | | |
+| 106 | 48 h | | | | | | | | | | | |
+
+Compare 105 (33.2 s, three more seconds on the person) against 104 (29.6 s) and 106 (31.6 s) on end % and average watch.

@@ -105,6 +105,9 @@
 | 101 | `true_crime_101_soap_grandad.mp4` (also in releases/) | One Smuggler 1 (engine v10, 30 fps): Ronald Lord, 71, 8 kg of cocaine behind his mobility scooter's seat panel at Gatwick (Border Force, Feb 2025; pleaded guilty, six years, Croydon Crown Court, Sept 2025) | see `production_manifest.json` |
 | 102 | `true_crime_102_young_mule.mp4` (also in releases/) | One Smuggler 2 (engine v10): Bella Culley, 18, reported missing in Thailand, 12 kg of marijuana and 2 kg of hashish in her bag at Tbilisi airport (May 2025); pleaded guilty, time served plus a fine (Nov 2025) | see `production_manifest.json` |
 | 103 | `true_crime_103_ship_captain.mp4` (also in releases/) | One Smuggler 3 (engine v10): the MV Matthew captain, airlifted off a day before Army Rangers boarded (Sept 2023, 2,253 kg); pleaded guilty, 17½ years (July 2025) | see `production_manifest.json` |
+| 104 | `true_crime_104_inside_man.mp4` (also in releases/) | One Smuggler (engine v10): Junaed Dar, Heathrow security manager, collected two couriers' bags that Colombian police had filled with wood (NCA, Dec 2019); convicted by a jury, 16½ years (Aug 2025) | see `production_manifest.json` |
+| 105 | `true_crime_105_unlikely_courier.mp4` (also in releases/) | One Smuggler (engine v10, 33-s length test): Gildo Ricci, 69, cocaine in cakes and soup mix at Dulles plus $7,750 counterfeit (Apr 2024); convicted by a federal jury (Jan 2025) | see `production_manifest.json` |
+| 106 | `true_crime_106_cabin_crew.mp4` (also in releases/) | One Smuggler (engine v10): Marsha Gay Reynolds, JetBlue flight attendant, ran barefoot from a random crew search at LAX leaving ~60 lb of cocaine (Mar 2016); pleaded guilty, time served (Apr 2018) | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.

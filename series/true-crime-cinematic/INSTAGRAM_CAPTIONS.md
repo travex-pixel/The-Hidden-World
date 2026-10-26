@@ -1108,3 +1108,36 @@ SEED COMMENT: Fled, not faked. If his barrister's right that he was captain in n
 PINNED: Send this to the mate who'd call in sick 🤒 Vote: 1 = faked it, 2 = fled it, 3 = captain in name only 👇 NEXT FILE: The Scooter Run, back to Case File 101.
 POST WHEN: The third of the run (101 → 102 → 103), 4 pm Sydney (AEDT) on its day, the day after Case File 102; or as soon as it arrives.
 NOTE: Switch on Instagram's AI label before posting.
+
+## 104 (`true_crime_104_inside_man.mp4`)
+CAPTION: Heathrow's own security manager came in three hours early to collect two bags of wood.
+Colombian police had swapped the couriers' 22 kg of cocaine for blocks of wood in Bogota, and NCA officers arrested Junaed Dar at Heathrow in December 2019 as he was about to drive off with the bags. A jury convicted him and he was jailed for 16½ years in August 2025; the two couriers, who pleaded guilty, got 6 years 8 months each.
+Who deserves more time: the inside man or the mules?
+HASHTAGS: #heathrow #insidejob #drugsmuggling #nca #truecrimeuk
+ALT TEXT: Illustrated reel about a Heathrow security manager and a cocaine plot: grey-gloved hands unzip a bright orange holdall on the floor of a van's load bay at night and it springs open on plain blocks of wood; a silhouette (not a likeness) in a terminal corridor beside a clock, a typed duty log reading 3 hours before his shift and the toilets at Terminal 2B, two officers stopping him at a plain white van with an amber beacon, a courtroom dock and a 16½-year sentence; the bag is zipped back to where it began.
+SEED COMMENT: The mules, for me. They carried it all the way from Bogota; he only walked two bags across a terminal. Sixteen and a half years against six years eight months feels backwards.
+PINNED: Send this to the mate who works at the airport ✈️ Vote: 1 = the inside man, 2 = the mules, 3 = same time for all of them 👇 Next file: The Cocaine Cake.
+POST WHEN: Wednesday 28 Oct 2026, 4 pm Sydney (AEDT).
+Switch on Instagram's AI label before posting.
+
+## 105 (`true_crime_105_unlikely_courier.mp4`)
+CAPTION: The customs officer's knife wouldn't go into the cake. Under the top layer: a foil-wrapped brick of cocaine.
+Gildo Ricci, 69, flew into Dulles from Bogota in April 2024 with a suitcase of sweets; officers found 2.07 kg of cocaine in his cakes and soup mix, and $7,750 in counterfeit cash in a backpack. A federal jury in Alexandria convicted him in January 2025 (US Attorney's Office, Eastern District of Virginia).
+Which was worse: the cocaine cake or the fake cash?
+HASHTAGS: #cocainecake #dulles #customs #smuggling #airportfails
+ALT TEXT: Illustrated reel about a cocaine cake: a blue-gloved hand presses a knife into a pink frosted layer cake on a steel inspection table and the blade will not sink; the top layer lifts off on a silver foil-wrapped brick; a silhouette at an inspection counter with an open suitcase of chocolates, cakes and soup mix, a backpack being unzipped, an inventory tag stamped counterfeit, a silhouette in a court dock, and the cake again at the end.
+SEED COMMENT: The fake cash is worse, not the cake. The cake was always going to get cut open at customs; walking into Dulles with $7,750 in counterfeit notes as well is the part that turns one bad idea into two.
+PINNED: Send this to the mate who'd fly home with cake 🎂 Vote: 1 = the cocaine cake, 2 = the fake cash, 3 = both equally 👇 Next file: The Cabin Crew.
+POST WHEN: Thursday 29 Oct 2026, 4 pm Sydney (AEDT), after Case File 104.
+Switch on Instagram's AI label before posting.
+
+## 106 (`true_crime_106_cabin_crew.mp4`)
+CAPTION: The flight attendant kicked off her heels and ran from her own suitcase.
+In March 2016 JetBlue flight attendant Marsha Gay Reynolds was picked for a random search at the LAX crew checkpoint and ran, leaving nearly 60 lb of cocaine in her bags (US Attorney's Office, Central District of California). She pleaded guilty, testified against her supplier (165 months, nearly 14 years) and was sentenced to time served in April 2018.
+Time served for testifying: fair deal or too soft?
+HASHTAGS: #flightattendant #cabincrew #laxairport #airportsecurity #smuggling
+ALT TEXT: Illustrated reel about a flight attendant's suitcase: blue-gloved hands unzip a crimson roller bag at an airport crew checkpoint, with a pair of black heels left on the floor; a silhouette runs down an up escalator and the bag falls open on eleven wrapped packages; a silhouette walks through a night-time departure gate, a typed crew-lane record card, a courtroom with a 165 MONTHS counter, and the empty escalator circled at the end.
+SEED COMMENT: Fair deal, honestly. Time served for her and nearly fourteen years for the man paying her is the trade working as designed. The courier talks, the supplier goes away.
+PINNED: Send this to the mate who's cabin crew ✈️ Vote: 1 = fair deal, 2 = too soft, 3 = she should never have run 👇 Next file: The Inside Man (back to Case File 104).
+POST WHEN: Friday 30 Oct 2026, 4 pm Sydney (AEDT), the last of the 104–106 run.
+Switch on Instagram's AI label before posting.

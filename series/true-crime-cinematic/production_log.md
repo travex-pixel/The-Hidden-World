@@ -578,3 +578,7 @@
 - 2026-10-26 14:50:04 tcv105-unlikely-courier: rendering (final, seed 1)
 - 2026-10-26 15:02:54 tcv105-unlikely-courier: rendered in 769s
 - 2026-10-26 15:03:28 tcv105-unlikely-courier: VERIFIED -> series/true-crime-cinematic/output/true_crime_105_unlikely_courier.mp4 (33.2s, 13.9 MB, sha256 3b75599e086d)
+- 2026-10-26 15:06:13 produce 104 --force: regenerating episode data
+- 2026-10-26 15:06:13 tcv104-inside-man: rendering (final, seed 1)
+- 2026-10-26 15:18:55 tcv104-inside-man: rendered in 762s
+- 2026-10-26 15:19:26 tcv104-inside-man: VERIFIED -> series/true-crime-cinematic/output/true_crime_104_inside_man.mp4 (29.6s, 12.1 MB, sha256 d0377ae7a530)
