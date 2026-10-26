@@ -425,7 +425,7 @@
         figures: [{ ...OFFICER, keys: [{ at: Math.max(0.05, bl - 0.1), pose: 'point', expr: 'realise', headTurn: 0.4, dur: 0.35 }, { at: Math.max(0.8, back - 0.5), pose: 'examine', expr: 'focused', headTurn: 0, dur: 0.4 }] }],
         props: [heroProp(st, 'e')],
         overlays: [
-          { type: 'callout', at: bl, until: back - 0.45, target: [HERO.x - 40, HERO.y - 150], label: [1040, 520], anchor: 'end', w: 560, fs: 32, text: 'WOOD, NOT COCAINE', sub: 'Every block, per the NCA', r: 60, depth: 1.03 }
+          { type: 'callout', at: bl, until: back - 0.45, target: [HERO.x - 40, HERO.y - 150], label: [1040, 760], anchor: 'end', w: 560, fs: 32, text: 'WOOD, NOT COCAINE', sub: 'Every block, per the NCA', r: 60, depth: 1.03 }
         ],
         tag: TAG
       });
