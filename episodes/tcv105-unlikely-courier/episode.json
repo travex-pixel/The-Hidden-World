@@ -1,0 +1,896 @@
+{
+ "id": "tcv105-unlikely-courier",
+ "number": 105,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Maryland Man Carried Cocaine in Cakes",
+ "central_question": "Gildo Ricci, 69, flew into Dulles from Bogota in April 2024 with a suitcase of sweets; a customs officer's knife would not go into one cake, and under the top layer was a foil-wrapped brick: 2.07 kg of cocaine in his cakes and soup mix. A backpack in the suitcase held $7,750, all counterfeit. A federal jury convicted him in January 2025. Which was worse: the cocaine cake or the fake cash?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_fenrir",
+  "energy": 0.6,
+  "directed": true,
+  "pronounce": {
+   "Ricci": "Reechee",
+   "$7,750": "seven thousand, seven hundred and fifty dollars"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  28,
+  34
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "105",
+  "label": "THE HIDDEN WORLD · CASE FILE 105"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s07_end",
+   "word": [
+    0,
+    1
+   ],
+   "at": 0.5
+  }
+ },
+ "figures": [
+  "uc105_officer",
+  "uc105_ricci",
+  "uc105_judge"
+ ],
+ "content_notes": "Tone: dry and ironic; the joke is on the scheme (a cake a knife could not cut, a backpack of fake cash), never on his age or nationality. Gildo Ricci was convicted by a federal jury (Alexandria, January 2025) and is named by the US Attorney's Office and the press, so he is named; he is drawn ONLY as a dark rim-lit silhouette (NOT A LIKENESS), standing across an inspection table and in a dock, with no flag, costume or national marker. The cake is a generic pink-frosted layer cake (its look is not reported); the brick is a plain foil block. The customs officer and the judge are generic figures with no badge, patch, seal, flag, agency name or insignia; no weapon; the knife points only into the cake. The inspection room and court are illustrations, not reported places; no airline, airport sign or logo is copied. The inventory tag is our own typed graphic, not a CBP form. The affidavit wording on the fun-fact card is carried by FOX 5 DC, The Washington Times and the release. No dialogue is invented. Not used: the single-source 18-month sentence and appeal, the 20-year maximum, the word 'child's'. Facts verified 2026-10-26.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "uc105_hook",
+   "min_duration": 4.8,
+   "pad_after": 0.08,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thud",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      8
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_weight"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A traveler carried cocaine inside his cakes.",
+     "tone": "hook",
+     "speed": 1.09
+    },
+    {
+     "who": "narrator",
+     "text": "2 kilos of it. Even in the soup mix.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "traveler",
+    "carried",
+    "cocaine",
+    "cakes.",
+    "2",
+    "kilos",
+    "even",
+    "soup",
+    "mix."
+   ],
+   "section": "A",
+   "case": "cake",
+   "beat": "hook",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_knife",
+   "scene": "uc105_knife",
+   "min_duration": 3.3,
+   "pad_after": 0.12,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.45,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.25,
+     "word": [
+      0,
+      7
+     ],
+     "name": "paper",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_knife",
+    "K_dulles"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then a customs officer's knife wouldn't go in.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "customs",
+    "knife",
+    "wouldn't",
+    "in."
+   ],
+   "section": "A",
+   "case": "cake",
+   "beat": "gotcha"
+  },
+  {
+   "id": "s03_person",
+   "scene": "uc105_person",
+   "min_duration": 7.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "tick",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.2
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "tick",
+     "gain": 0.18
+    },
+    {
+     "at": -0.15,
+     "word": [
+      2,
+      0
+     ],
+     "name": "thump",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_person",
+    "K_trip",
+    "K_sweets"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His name was Gildo Ricci. He was 69.",
+     "tone": "curious"
+    },
+    {
+     "who": "narrator",
+     "text": "Into Dulles from Bogota, about a quarter to seven.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "His bags held chocolates, cakes and soup mix.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "gildo",
+    "ricci.",
+    "69.",
+    "dulles",
+    "bogota,",
+    "quarter",
+    "seven.",
+    "chocolates,",
+    "cakes",
+    "soup",
+    "mix."
+   ],
+   "section": "B",
+   "case": "cake",
+   "beat": "person"
+  },
+  {
+   "id": "s04_bag",
+   "scene": "uc105_bag",
+   "min_duration": 2.4,
+   "pad_after": 0.08,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_backpack"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But there was a backpack too.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "backpack",
+    "too."
+   ],
+   "section": "B",
+   "case": "cake",
+   "beat": "person"
+  },
+  {
+   "id": "s05_cash",
+   "scene": "uc105_cash",
+   "min_duration": 4.2,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "cash",
+     "gain": 0.22
+    },
+    {
+     "at": 0.6,
+     "word": [
+      0,
+      1
+     ],
+     "name": "tick",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "sting",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_cash",
+    "K_fake"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside, $7,750.",
+     "tone": "curious"
+    },
+    {
+     "who": "narrator",
+     "text": "All of it fake.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "$7,750.",
+    "fake."
+   ],
+   "section": "B",
+   "case": "cake",
+   "beat": "person"
+  },
+  {
+   "id": "s06_court",
+   "scene": "uc105_court",
+   "min_duration": 4.2,
+   "pad_after": 0.08,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "door",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_trial",
+    "K_verdict",
+    "K_total",
+    "K_affidavit"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he took it to a jury.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "A federal jury convicted him.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "jury.",
+    "federal",
+    "convicted",
+    "him."
+   ],
+   "section": "C",
+   "case": "cake",
+   "beat": "consequence",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "uc105_end",
+   "min_duration": 2.3,
+   "pad_after": 0.12,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_every"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Every cake in his suitcase held cocaine.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "every",
+    "cake",
+    "cocaine."
+   ],
+   "section": "D",
+   "case": "cake",
+   "beat": "callback",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Gildo Ricci, 69, carried cakes and soup mixes holding cocaine into Washington Dulles from Bogota on 25 April 2024; a federal jury convicted him of possession with intent to distribute. Narration: 'A traveler carried cocaine inside his cakes.' (FFXnow's word: 'Dulles Airport traveler'). Headline 'A COCAINE CAKE / THE KNIFE COULDN'T CUT'. The conviction is to possession: the reel says 'carried', never 'baked' or 'hid'.",
+   "sources": [
+    "edva",
+    "wtimes",
+    "fox5",
+    "patch"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC: 2.07 kg (about 4.5 lb) of cocaine in all, in his cakes and soup-mix packets. Narration: '2 kilos of it. Even in the soup mix.' Counter '2.07 KG' in the court scene.",
+   "sources": [
+    "edva",
+    "ffx",
+    "patch",
+    "dcnn"
+   ]
+  },
+  {
+   "id": "K_knife",
+   "type": "established",
+   "nature": "fact",
+   "text": "Customs officers sent him to secondary inspection; one cake was unusually heavy; the officer probed it with a knife, which failed to penetrate the cake; under the top layer was a foil-wrapped brick. Narration (gotcha): 'Then a customs officer's knife wouldn't go in.' Callout 'A FOIL-WRAPPED BRICK', sub 'Under the top layer'. The cake's look and the brick's size are not reported: drawn generic.",
+   "sources": [
+    "edva",
+    "fox5",
+    "wtimes",
+    "patch"
+   ]
+  },
+  {
+   "id": "K_dulles",
+   "type": "established",
+   "nature": "fact",
+   "text": "He arrived at Washington Dulles International Airport on 25 April 2024 (about 6:45 am, per the FBI affidavit) on a flight from Bogota, Colombia. Label 'DULLES AIRPORT · 25 APR 2024', sub 'Flight from Bogota · secondary inspection'.",
+   "sources": [
+    "edva",
+    "fox5",
+    "ffx",
+    "wtimes"
+   ]
+  },
+  {
+   "id": "K_person",
+   "type": "established",
+   "nature": "fact",
+   "text": "He is Gildo Ricci, 69, a Peruvian citizen and lawful permanent resident of the US, living in Rockville, Maryland; convicted by a federal jury and named by the US Attorney's Office and the press. Narration: 'His name was Gildo Ricci. He was 69.' Label 'GILDO RICCI · 69 · ROCKVILLE, MD', sub 'Convicted · silhouette, not a likeness'. Drawn only as a silhouette.",
+   "sources": [
+    "edva",
+    "edva_x",
+    "ffx",
+    "wtimes"
+   ]
+  },
+  {
+   "id": "K_trip",
+   "type": "established",
+   "nature": "fact",
+   "text": "He flew into Washington Dulles from Bogota, Colombia, landing at about 6:45 am (FBI affidavit, quoted by FOX 5 DC and FFXnow). Narration: 'Into Dulles from Bogota, about a quarter to seven.' Label 'BOGOTA → DULLES · ABOUT 6:45 AM'.",
+   "sources": [
+    "edva",
+    "fox5",
+    "ffx",
+    "wtimes"
+   ]
+  },
+  {
+   "id": "K_sweets",
+   "type": "established",
+   "nature": "fact",
+   "text": "Officers found several dessert and food items in his luggage, such as chocolate candies, cakes and soup mixes. Narration: 'His bags held chocolates, cakes and soup mix.' Label 'CHOCOLATES · CAKES · SOUP MIX'.",
+   "sources": [
+    "edva",
+    "fox5",
+    "wtimes"
+   ]
+  },
+  {
+   "id": "K_backpack",
+   "type": "established",
+   "nature": "fact",
+   "text": "Inside one of his suitcases was a backpack holding $7,750. Narration: 'But there was a backpack too.' (The release says a child's backpack; the reel does not use the word.)",
+   "sources": [
+    "edva",
+    "ffx",
+    "moco"
+   ]
+  },
+  {
+   "id": "K_cash",
+   "type": "established",
+   "nature": "fact",
+   "text": "The backpack held $7,750 in cash. Narration: 'Inside, $7,750.' (spoken: seven thousand, seven hundred and fifty dollars) Evidence close-up: our own typed inventory tag 'ITEM: BACKPACK · CASH: $7,750' (no real form imitated).",
+   "sources": [
+    "edva",
+    "ffx",
+    "moco"
+   ]
+  },
+  {
+   "id": "K_fake",
+   "type": "established",
+   "nature": "fact",
+   "text": "The $7,750 was later determined to be counterfeit. Narration: 'All of it fake.' Stamp 'COUNTERFEIT' on the tag.",
+   "sources": [
+    "edva",
+    "ffx",
+    "moco"
+   ]
+  },
+  {
+   "id": "K_trial",
+   "type": "established",
+   "nature": "fact",
+   "text": "He went to trial before a federal jury in Alexandria, Virginia (he did not plead guilty). Narration (second re-hook): 'Then he took it to a jury.'",
+   "sources": [
+    "edva",
+    "wtimes",
+    "ffx"
+   ]
+  },
+  {
+   "id": "K_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "In January 2025 a federal jury in Alexandria convicted him of possession with intent to distribute cocaine. Narration: 'A federal jury convicted him.' Label 'FEDERAL COURT · ALEXANDRIA, VA', sub 'Convicted · January 2025'. The sentence (18 months, Virginia Lawyers Weekly only) is not used.",
+   "sources": [
+    "edva",
+    "edva_x",
+    "wtimes",
+    "fox5",
+    "dcnn"
+   ]
+  },
+  {
+   "id": "K_total",
+   "type": "established",
+   "nature": "fact",
+   "text": "The counter: 2.07 KG, cocaine in the cakes and soup mix (as K_weight).",
+   "sources": [
+    "edva",
+    "ffx",
+    "patch"
+   ]
+  },
+  {
+   "id": "K_affidavit",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT (wording as reported, from the FBI affidavit quoted by FOX 5 DC and The Washington Times, and in the release): the knife 'failed to penetrate the cake'. Card 'THE AFFIDAVIT: THE KNIFE / \"FAILED TO PENETRATE THE CAKE\"'.",
+   "sources": [
+    "fox5",
+    "wtimes",
+    "edva"
+   ]
+  },
+  {
+   "id": "K_every",
+   "type": "established",
+   "nature": "fact",
+   "text": "Each of the cakes contained cocaine (as did the soup-mix packets). Narration (callback): 'Every cake in his suitcase held cocaine.' Callout 'EVERY CAKE', sub 'And the soup mix'.",
+   "sources": [
+    "edva",
+    "wtimes",
+    "patch"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "edva",
+   "publisher": "US Attorney's Office, Eastern District of Virginia (press release)",
+   "title": "Federal jury convicts man who flew from Bogota to Dulles with over two kilograms of cocaine",
+   "url": "https://www.justice.gov/usao-edva/pr/federal-jury-convicts-man-who-flew-bogota-dulles-over-two-kilograms-cocaine",
+   "date": "2025-01-15",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "edva_x",
+   "publisher": "US Attorney EDVA on X",
+   "title": "A federal jury convicted Gildo Ricci, 69 ...",
+   "url": "https://x.com/EDVAnews/status/1879658593328508975",
+   "date": "2025-01-15",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "ffx",
+   "publisher": "FFXnow",
+   "title": "Dulles Airport traveler convicted of carrying cocaine-infused desserts",
+   "url": "https://www.ffxnow.com/2025/01/16/dulles-airport-traveler-convicted-of-carrying-cocaine-infused-desserts/",
+   "date": "2025-01-16",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "wtimes",
+   "publisher": "The Washington Times",
+   "title": "Rockville man convicted of smuggling cocaine into Dulles via cakes",
+   "url": "https://www.washingtontimes.com/news/2025/jan/18/marylander-convicted-of-smuggling-cocaine-into-dul/",
+   "date": "2025-01-18",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "fox5",
+   "publisher": "FOX 5 DC",
+   "title": "Maryland man convicted after being in possession of cocaine hidden in desserts at IAD",
+   "url": "https://www.fox5dc.com/news/maryland-man-arrested-after-being-possession-cocaine-hidden-desserts-iad-police",
+   "date": "2025-01",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "patch",
+   "publisher": "Patch (Rockville)",
+   "title": "Cocaine Inside Cake Found In Rockville Man's Suitcase At Dulles",
+   "url": "https://patch.com/maryland/rockville/cocaine-inside-cake-found-rockville-mans-suitcase-dulles",
+   "date": "2025-01",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "moco",
+   "publisher": "MoCo Show",
+   "title": "Rockville Man Convicted After Cocaine Found Hidden in Cake at Airport",
+   "url": "https://mocoshow.com/2025/01/18/rockville-man-convicted-after-cocaine-found-hidden-in-cake-at-airport/",
+   "date": "2025-01-18",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "dcnn",
+   "publisher": "DC News Now",
+   "title": "Rockville man convicted after cocaine found in cake, soup at Dulles Airport",
+   "url": "https://www.dcnewsnow.com/news/local-news/virginia/loudoun-county/rockville-man-guilty-cocaine-charges/",
+   "date": "2025-01",
+   "accessed": "search-result extract only, 2026-10-26"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "quality": "final",
+ "engagement_rules": true,
+ "engagement_version": 10,
+ "lane": "smuggling",
+ "search_terms": [
+  "cocaine cake",
+  "cocaine cakes",
+  "cake cocaine"
+ ],
+ "palette": {
+  "shadow": "#141c26",
+  "mid": "#b6b0a4",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A COCAINE CAKE"
+   },
+   {
+    "text": "THE KNIFE COULDN'T CUT",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 240
+ },
+ "progress": {
+  "label": "FILE 105 ·",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "THE CAKE"
+   },
+   {
+    "t": 8.99,
+    "v": "THE MAN"
+   },
+   {
+    "t": 28.63,
+    "v": "THE VERDICT"
+   }
+  ],
+  "y": 350,
+  "fs": 44,
+  "until": 30.01
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHICH WAS WORSE?"
+   },
+   {
+    "text": "THE CAKE OR THE FAKE CASH? 👇",
+    "colour": "#e8a33a",
+    "fs": 50
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D FLY HOME WITH CAKE",
+    "fs": 32
+   },
+   {
+    "text": "NEXT FILE: THE CABIN CREW",
+    "fs": 36,
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "THE HIDDEN WORLD · CASE FILE 105",
+    "fs": 32
+   }
+  ],
+  "from": 2.66,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-26"
+}

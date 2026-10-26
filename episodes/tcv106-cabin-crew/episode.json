@@ -1,0 +1,935 @@
+{
+ "id": "tcv106-cabin-crew",
+ "number": 106,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Flight Attendant Who Ran From Her Own Suitcase",
+ "central_question": "Marsha Gay Reynolds, a JetBlue flight attendant, took nearly 60 lb of cocaine to the crew checkpoint at LAX in March 2016; picked for a random search, she kicked off her heels and ran. She flew home the next day, pleaded guilty, testified against her supplier (14 years) and got time served. Fair deal or too soft?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_fenrir",
+  "energy": 0.6,
+  "directed": true,
+  "pronounce": {}
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  28,
+  34
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "106",
+  "label": "THE HIDDEN WORLD · CASE FILE 106"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s07_end",
+   "word": [
+    0,
+    0
+   ],
+   "at": 0.5
+  }
+ },
+ "figures": [
+  "cc106_officer",
+  "cc106_reynolds",
+  "cc106_judge"
+ ],
+ "content_notes": "Tone: dry and ironic; the joke is on the scheme (a crew lane built on trust, a barefoot sprint down an up escalator, a bag and a pair of heels left behind), never on her as a woman or on her looks; the beauty-queen reports are not used. Marsha Gay Reynolds pleaded guilty (Dec 2016) and was sentenced to time served (Apr 2018) and is named by the US Attorney's Office and the press, so she is named; she is drawn ONLY as a dark rim-lit silhouette (NOT A LIKENESS) in a plain dark jacket, no uniform, no airline insignia (her duty status is not established). Her supplier, convicted and sentenced, is not named. The roller bag is a generic crimson case (colour and model not reported); the heels are plain black, no brand; the packages are plain blocks with a green tint. The officers and the judge are generic figures with no badge, patch, seal, flag, agency name or insignia; no weapon; no force. The checkpoint, gate and courtroom are illustrations, not reported places; 'JetBlue' appears only as plain words; no livery, logo or real document is copied. The record card is our own typed graphic. No dialogue is invented. Facts verified 2026-10-26.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "cc106_hook",
+   "min_duration": 4.8,
+   "pad_after": 0.08,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thump",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_weight",
+    "K_lane"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A flight attendant carried cocaine in her suitcase.",
+     "tone": "hook",
+     "speed": 1.15
+    },
+    {
+     "who": "narrator",
+     "text": "Nearly 60 pounds inside, through the crew lane.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "flight",
+    "attendant",
+    "carried",
+    "cocaine",
+    "suitcase.",
+    "60",
+    "pounds",
+    "crew",
+    "lane."
+   ],
+   "section": "A",
+   "case": "crew-bag",
+   "beat": "hook",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_ran",
+   "scene": "cc106_ran",
+   "min_duration": 4.0,
+   "pad_after": 0.12,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.45,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "tick",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      9
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_search",
+    "K_ran",
+    "K_packages"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Picked for a search, she ditched her heels and ran.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "search,",
+    "ditched",
+    "heels",
+    "ran."
+   ],
+   "section": "A",
+   "case": "crew-bag",
+   "beat": "gotcha"
+  },
+  {
+   "id": "s03_person",
+   "scene": "cc106_person",
+   "min_duration": 5.8,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "thump",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_person",
+    "K_home"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Marsha Gay Reynolds. Cabin crew.",
+     "tone": "curious"
+    },
+    {
+     "who": "narrator",
+     "text": "The next day, she still flew home.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "marsha",
+    "gay",
+    "reynolds.",
+    "cabin",
+    "crew.",
+    "next",
+    "day,",
+    "still",
+    "flew",
+    "home."
+   ],
+   "section": "B",
+   "case": "crew-bag",
+   "beat": "person"
+  },
+  {
+   "id": "s04_paid",
+   "scene": "cc106_paid",
+   "min_duration": 5.4,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.2
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "typing",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "stamp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "sting",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_surrender",
+    "K_paid",
+    "K_lane"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Five days later, she turned herself in.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "She'd been paid to carry cocaine and cash.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "five",
+    "days",
+    "turned",
+    "herself",
+    "in.",
+    "paid",
+    "carry",
+    "cocaine",
+    "cash."
+   ],
+   "section": "B",
+   "case": "crew-bag",
+   "beat": "person"
+  },
+  {
+   "id": "s05_plea",
+   "scene": "cc106_plea",
+   "min_duration": 3.8,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_plea",
+    "K_testify",
+    "K_crewfact"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She pleaded guilty, then testified against her supplier.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pleaded",
+    "guilty,",
+    "testified",
+    "supplier."
+   ],
+   "section": "C",
+   "case": "crew-bag",
+   "beat": "consequence"
+  },
+  {
+   "id": "s06_court",
+   "scene": "cc106_court",
+   "min_duration": 3.0,
+   "pad_after": 0.08,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sub",
+     "gain": 0.24
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "cuffs",
+     "gain": 0.16
+    }
+   ],
+   "claims": [
+    "K_years",
+    "K_served"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Her supplier got 14 years. And her? Time served.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "supplier",
+    "14",
+    "years.",
+    "time",
+    "served."
+   ],
+   "section": "C",
+   "case": "crew-bag",
+   "beat": "consequence",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "cc106_end",
+   "min_duration": 2.2,
+   "pad_after": 0.12,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "click",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_escalator"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Barefoot. Down the up escalator.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "barefoot.",
+    "down",
+    "up",
+    "escalator."
+   ],
+   "section": "D",
+   "case": "crew-bag",
+   "beat": "callback",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "A JetBlue flight attendant, Marsha Gay Reynolds, tried to take cocaine in her luggage (a suitcase) through the crew checkpoint at LAX on 18 March 2016; she pleaded guilty. Narration: 'A flight attendant carried cocaine in her suitcase.' Headline 'A FLIGHT ATTENDANT'S BAG / NEARLY 60 LB INSIDE'. The plea was to conspiracy to possess with intent to distribute; 'carried' is the verb the record supports.",
+   "sources": [
+    "usao_p",
+    "usao_b",
+    "ap",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "The concluded record (plea and supplier releases) puts the cocaine at nearly 60 lb (59.5 lb; just under 27 kg); the first complaint said 68.49 lb. Narration: 'Nearly 60 pounds inside.' The early $3 million value is not narrated.",
+   "sources": [
+    "usao_p",
+    "usao_b",
+    "cbs",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_lane",
+   "type": "established",
+   "nature": "fact",
+   "text": "She used the 'Known Crewmember' checkpoint at LAX Terminal 4 with her crew badge; crew there get much lighter screening than passengers. Narration: 'through the crew lane.' Label 'LAX · CREW CHECKPOINT · 18 MAR 2016'. The checkpoint, bag and set are illustrations; no real sign or logo is copied.",
+   "sources": [
+    "usao_c",
+    "usao_b",
+    "ap",
+    "buzzfeed"
+   ]
+  },
+  {
+   "id": "K_search",
+   "type": "established",
+   "nature": "fact",
+   "text": "She was randomly selected for additional screening at the crew checkpoint. Narration: 'Picked for a search...'",
+   "sources": [
+    "usao_c",
+    "ap",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_ran",
+   "type": "established",
+   "nature": "fact",
+   "text": "She left her bags, took off her shoes (heels) and ran down an up escalator, away from TSA officers. Narration: '...she ditched her heels and ran.' (AP's headline wording: 'ditched heels'.) The heels' brand (reported by NBC and AP) is not narrated or drawn.",
+   "sources": [
+    "usao_c",
+    "ap",
+    "nbc",
+    "buzzfeed"
+   ]
+  },
+  {
+   "id": "K_packages",
+   "type": "established",
+   "nature": "fact",
+   "text": "Her abandoned luggage held 11 packages of cocaine. Callout 'NEARLY 60 LB · 11 PACKAGES'. The bag's colour and the wrapping are not sourced beyond AP's 'green cellophane': drawn generic, with a green tint, never narrated.",
+   "sources": [
+    "usao_c",
+    "ap",
+    "buzzfeed"
+   ]
+  },
+  {
+   "id": "K_person",
+   "type": "established",
+   "nature": "fact",
+   "text": "She is Marsha Gay Reynolds, a JetBlue flight attendant from New York; she pleaded guilty and is named by the US Attorney's Office and widely in the press. Narration: 'Marsha Gay Reynolds. Cabin crew.' Label 'MARSHA GAY REYNOLDS · JETBLUE', sub 'Pleaded guilty · silhouette, not a likeness'. Drawn only as a silhouette; no uniform or airline insignia.",
+   "sources": [
+    "usao_p",
+    "ap",
+    "nbc",
+    "cbs"
+   ]
+  },
+  {
+   "id": "K_home",
+   "type": "established",
+   "nature": "fact",
+   "text": "The day after LAX she boarded (AP: reported to work on) a JetBlue flight to New York; she surrendered to the DEA at JFK on 23 March 2016. Narration (re-hook): 'The next day, she still flew home.' Label 'NEXT DAY: A FLIGHT HOME TO NEW YORK', sub 'Per AP and NBC'.",
+   "sources": [
+    "ap",
+    "nbc",
+    "usao_c"
+   ]
+  },
+  {
+   "id": "K_surrender",
+   "type": "established",
+   "nature": "fact",
+   "text": "She surrendered to DEA agents at JFK on 23 March 2016, five days after she ran from the LAX checkpoint. Narration: 'Five days later, she turned herself in.' Label 'TURNED HERSELF IN AT JFK · 23 MAR 2016', sub 'To the DEA'.",
+   "sources": [
+    "usao_c",
+    "ap",
+    "cbs"
+   ]
+  },
+  {
+   "id": "K_paid",
+   "type": "established",
+   "nature": "fact",
+   "text": "Her supplier paid her to carry cocaine and drug cash through crew checkpoints at LAX and JFK (AP, at her plea: she acknowledged earning thousands of dollars to help smuggle drugs and money through security). Narration: 'She'd been paid to carry cocaine and cash.' Evidence close-up: our own typed record card ('ROUTE: LAX <-> JFK', 'CARRIED: COCAINE + CASH', 'SCREENING: CREW LANE'), not a real badge or document. The count of runs (six per DOJ/ABC7, nine per AP) is not narrated.",
+   "sources": [
+    "usao_b",
+    "abc7",
+    "ap"
+   ]
+  },
+  {
+   "id": "K_crewfact",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: crew in the 'Known Crewmember' programme skip normal passenger screening but can be picked at random for extra screening. Card 'CREW LANES SKIP NORMAL SCREENING / BUT ANYONE CAN BE PICKED AT RANDOM'.",
+   "sources": [
+    "usao_b",
+    "ap",
+    "usao_c"
+   ]
+  },
+  {
+   "id": "K_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "In December 2016 she pleaded guilty in federal court in Los Angeles to one count of conspiracy to possess with intent to distribute cocaine; she faced a 10-year mandatory minimum. Narration: 'She pleaded guilty...' Label 'PLEADED GUILTY · DEC 2016', sub '10-year minimum on the charge'.",
+   "sources": [
+    "usao_p",
+    "ap",
+    "cbs",
+    "nbc"
+   ]
+  },
+  {
+   "id": "K_testify",
+   "type": "established",
+   "nature": "fact",
+   "text": "She testified against her supplier at his trial; he was convicted on all counts after a four-day trial in February 2018. Narration: '...then testified against her supplier.' Label 'SHE TESTIFIED · FEB 2018'. The supplier is not named.",
+   "sources": [
+    "nbc",
+    "abc7",
+    "usao_b"
+   ]
+  },
+  {
+   "id": "K_years",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 14 YEARS): the supplier was sentenced to 165 months (nearly 14 years) in federal prison in July 2022. Narration: 'Her supplier got fourteen years.'",
+   "sources": [
+    "usao_b",
+    "cbs",
+    "abc7",
+    "foxla"
+   ]
+  },
+  {
+   "id": "K_served",
+   "type": "established",
+   "nature": "fact",
+   "text": "In April 2018 she was sentenced to time served (about two years in custody) plus three years' supervised release; the judge cited her cooperation and testimony. Narration: 'And her? Time served.' Label 'HER: TIME SERVED · APR 2018'.",
+   "sources": [
+    "nbc",
+    "foxla",
+    "gleaner"
+   ]
+  },
+  {
+   "id": "K_escalator",
+   "type": "established",
+   "nature": "fact",
+   "text": "When she ran from the checkpoint she went barefoot down an escalator that was moving up. Narration (callback): 'Barefoot. Down the up escalator.' Callout on the set's escalator 'SHE RAN DOWN THE UP ESCALATOR', sub 'Barefoot, per prosecutors and AP'.",
+   "sources": [
+    "usao_c",
+    "ap",
+    "nbc"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "usao_c",
+   "publisher": "US Attorney's Office, C.D. California (press release)",
+   "title": "Flight attendant who allegedly tried to bring nearly 70 pounds of cocaine through security at LAX arrested",
+   "url": "https://www.justice.gov/usao-cdca/pr/flight-attendant-who-allegedly-tried-bring-nearly-70-pounds-cocaine-through-security",
+   "date": "2016-03-23",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "usao_p",
+   "publisher": "US Attorney's Office, C.D. California (press release)",
+   "title": "Flight attendant who tried to bring nearly 60 pounds of cocaine through security at LAX pleads guilty",
+   "url": "https://www.justice.gov/usao-cdca/pr/flight-attendant-who-tried-bring-nearly-60-pounds-cocaine-through-security-lax-pleads",
+   "date": "2016-12",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "usao_b",
+   "publisher": "US Attorney's Office, C.D. California (press release)",
+   "title": "Jamaican man who supplied flight attendant with 60 pounds of cocaine to smuggle through LAX sentenced",
+   "url": "https://www.justice.gov/usao-cdca/pr/jamaican-man-who-supplied-flight-attendant-60-pounds-cocaine-smuggle-lax-sentenced",
+   "date": "2022-07",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "ap",
+   "publisher": "Associated Press (via Yahoo News, Fox News, Fox32)",
+   "title": "Flight worker who fled checkpoint guilty of drug smuggling; Flight attendant who ditched heels, fled airport security nabbed",
+   "url": "https://news.yahoo.com/flight-attendant-ditched-cocaine-lax-plead-guilty-050824717.html",
+   "date": "2016-03 / 2016-12",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "nbc",
+   "publisher": "NBC Los Angeles / NBC New York",
+   "title": "Ex-flight attendant who ditched cocaine-filled luggage at LAX sentenced; Flight attendant who ditched heels, cocaine-filled luggage nabbed in NYC",
+   "url": "https://www.nbclosangeles.com/news/jetblue-airways-plane-flight-attendant-sentence-lax-drug-cocaine-smuggle-luggage/42485/",
+   "date": "2016-03 / 2018-04",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "cbs",
+   "publisher": "CBS Los Angeles",
+   "title": "Former JetBlue flight attendant pleads guilty in cocaine case; Jamaican national sentenced to nearly 14 years in LAX cocaine smuggling",
+   "url": "https://www.cbsnews.com/losangeles/news/jetblue-flight-attendant-cocaine-guilty/",
+   "date": "2016-12 / 2022-07",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "abc7",
+   "publisher": "ABC7 Los Angeles",
+   "title": "LAX cocaine smuggling case: convicted drug dealer sentenced to more than 13 years in federal prison",
+   "url": "https://abc7.com/post/cocaine-lax-airport-los-angeles-international/12032428/",
+   "date": "2022-07",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "foxla",
+   "publisher": "Fox LA",
+   "title": "Jamaican man sentenced to 14 years in prison for supplying flight attendant with cocaine, money",
+   "url": "https://foxla.com/news/jamaican-man-sentenced-to-14-years-in-prison-for-supplying-flight-attendant-with-cocaine-money",
+   "date": "2022-07",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "gleaner",
+   "publisher": "Jamaica Gleaner",
+   "title": "Marsha Gay Reynolds freed of cocaine charge in the US (sentenced to time served)",
+   "url": "https://past.jamaica-gleaner.com/article/news/20180410/former-jamaican-beauty-queen-marsha-gay-reynolds-freed-cocaine-charge-us",
+   "date": "2018-04-10",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "buzzfeed",
+   "publisher": "BuzzFeed News",
+   "title": "Flight attendant arrested for allegedly trying to smuggle 68 pounds of cocaine",
+   "url": "https://www.buzzfeednews.com/article/claudiakoerner/flight-attendant-arrested-cocaine",
+   "date": "2016-03",
+   "accessed": "search-result extract only, 2026-10-26"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "quality": "final",
+ "engagement_rules": true,
+ "engagement_version": 10,
+ "lane": "customs",
+ "search_terms": [
+  "flight attendant",
+  "cocaine suitcase",
+  "lax cocaine"
+ ],
+ "palette": {
+  "shadow": "#141b24",
+  "mid": "#b2b0aa",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A FLIGHT ATTENDANT'S BAG"
+   },
+   {
+    "text": "NEARLY 60 LB INSIDE",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 240
+ },
+ "progress": {
+  "label": "FILE 106 ·",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "THE BAG"
+   },
+   {
+    "t": 10.23,
+    "v": "THE CREW MEMBER"
+   },
+   {
+    "t": 21.79,
+    "v": "THE DEAL"
+   }
+  ],
+  "y": 350,
+  "fs": 44,
+  "until": 28.22
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "TIME SERVED FOR TESTIFYING?"
+   },
+   {
+    "text": "FAIR DEAL OR TOO SOFT? 👇",
+    "colour": "#e8a33a",
+    "fs": 50
+   },
+   {
+    "text": "SEND TO THE MATE WHO'S CABIN CREW",
+    "fs": 32
+   },
+   {
+    "text": "NEXT FILE: THE INSIDE MAN",
+    "fs": 36,
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "THE HIDDEN WORLD · CASE FILE 106",
+    "fs": 32
+   }
+  ],
+  "from": 2.3,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-26"
+}
