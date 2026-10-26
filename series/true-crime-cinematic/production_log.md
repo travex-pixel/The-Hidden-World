@@ -570,3 +570,5 @@
 - 2026-10-25 14:16:21 tcv103-jungle-pilot: rendering (final, seed 1)
 - 2026-10-25 14:32:13 tcv103-jungle-pilot: rendered in 952s
 - 2026-10-25 14:32:41 tcv103-jungle-pilot: VERIFIED -> series/true-crime-cinematic/output/true_crime_103_ship_captain.mp4 (29.3s, 14.5 MB, sha256 a69e37a98581)
+- 2026-10-26 14:33:41 produce 106 --force: regenerating episode data
+- 2026-10-26 14:33:41 tcv106-cabin-crew: rendering (final, seed 1)
