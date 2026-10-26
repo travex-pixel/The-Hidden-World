@@ -136,3 +136,11 @@ accusing word carries "convicted" in the same line.
   kitchen/inspection knife pointed at the cake only, never at a person.
 - No airline, airport sign or logo copied; "Dulles" appears only as plain text in a label.
 - The customs tag is our own typed graphic, not a CBP form.
+
+## Hook choice (openings.md)
+
+openings.md's top score was "A Maryland man smuggled cocaine in cakes." (92). It was not used: the conviction is to
+possession, so the fair verb is "carried", and the narrator (am_fenrir, directed) said "Maryland" in a way the recogniser
+kept hearing as "Marilyn". The spec was re-run with agent "A traveler" (FFXnow's word) and the reel uses
+**"A traveler carried cocaine inside his cakes."** (7 words, making verb, no number; heard correctly in the mix,
+WER 0.14, done by 2.41 s).
