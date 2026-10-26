@@ -102,7 +102,7 @@ def build(h):
     ]
     C = h.claim
     claims = [
-        C("K_hook", "A Heathrow security manager met two couriers off a Bogota flight on 14 Dec 2019 and took possession of their bags in the toilets (PA: they went into the toilets with two bags and came out without them); the bags went into his vehicle. The couriers pleaded guilty to attempting to import Class A drugs. Narration: 'A Heathrow security boss loaded the smugglers' bags.' Headline 'THE SMUGGLERS' BAGS / MET BY HEATHROW SECURITY'.",
+        C("K_hook", "A Heathrow security manager met two couriers off a Bogota flight on 14 Dec 2019 and took possession of their bags in the toilets (PA: they went into the toilets with two bags and came out without them); the bags went into his vehicle. The couriers pleaded guilty to attempting to import Class A drugs. Narration: 'Security boss at Heathrow loaded the smugglers' bags.' Headline 'THE SMUGGLERS' BAGS / MET BY HEATHROW SECURITY'.",
           ["nca", "nub", "pa", "romford"]),
         C("K_weight", "The bags had held about 22 kg of cocaine before Colombian police swapped it. Narration: '22 kilos of cocaine. Or so he thought.' The value (£2m NCA, £1.75m PA) is not narrated.",
           ["nca", "pa", "charge"]),
@@ -110,7 +110,7 @@ def build(h):
           ["pa", "charge", "nca"]),
         C("K_wood", "Colombian police (PA: Colombian authorities), working with the NCA, intercepted the bags in Bogota before the flight, removed the cocaine and replaced it with blocks of wood. Narration (gotcha): 'But Colombian police had swapped it for wood.' Callback: 'Every block in those bags was wood.' Callout 'BLOCKS OF WOOD'. The wood's shape or wrapping is not reported: drawn as plain timber blocks.",
           ["pa", "hounslow", "romford", "nub"]),
-        C("K_person", "He is Junaed Dar (Junaed Ghani Dar), a Heathrow security manager from Slough, convicted by a jury and named by the NCA and the press since his 2019 charge. Narration: 'Junaed Dar. A Heathrow security manager.' Label 'JUNAED DAR · HEATHROW SECURITY MANAGER', sub 'Convicted by a jury · silhouette, not a likeness'.",
+        C("K_person", "He is Junaed Dar (Junaed Ghani Dar), a Heathrow security manager from Slough, convicted by a jury and named by the NCA and the press since his 2019 charge. Narration: 'He was Junaed Dar, a security manager at Heathrow.' Label 'JUNAED DAR · HEATHROW SECURITY MANAGER', sub 'Convicted by a jury · silhouette, not a likeness'.",
           ["nca", "charge", "nub", "hounslow"]),
         C("K_shift", "On 14 Dec 2019 he arrived at Heathrow about three hours before his shift was due to start (NCA statement, relayed by the Slough Observer, Nub News and the Romford Recorder). Narration (re-hook): 'He came in three hours before his shift.'",
           ["nca", "nub", "romford"]),

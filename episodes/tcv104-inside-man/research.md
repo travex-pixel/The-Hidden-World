@@ -79,11 +79,11 @@ https://timesofsandiego.com/crime/2025/11/08/ex-san-diego-cbp-officer-sentenced-
 
 | id | Claim as it could be narrated | Sources | Status |
 |---|---|---|---|
-| K_hook | A Heathrow security manager took the couriers' bags (he "took possession of their bags" in the toilets; the bags went into his vehicle). Narration: "Heathrow's security boss loaded the smugglers' bags." ("boss" = manager; "smugglers" = the couriers, who pleaded guilty to attempting to import Class A drugs.) | nca/nub, romford, pa (toilets, bags left behind), charge | two-source |
+| K_hook | A Heathrow security manager took the couriers' bags (he "took possession of their bags" in the toilets; the bags went into his vehicle). Narration: "Security boss at Heathrow loaded the smugglers' bags." ("boss" = manager; "smugglers" = the couriers, who pleaded guilty to attempting to import Class A drugs.) | nca/nub, romford, pa (toilets, bags left behind), charge | two-source |
 | K_weight | The bags had held about 22 kg of cocaine. Narration: "Twenty-two kilos of cocaine. Or so he thought." | nca, pa, charge | two-source |
 | K_wood | Colombian police (PA: "Colombian authorities"), working with the NCA, intercepted the bags at Bogotá before the flight and replaced the cocaine with blocks of wood. Narration (gotcha): "Colombian police had swapped it for wood." | pa, hounslow/nca, romford | two-source |
 | K_flight | The couriers flew in from Bogotá and landed at Heathrow on 14 December 2019 (Terminal 2). Label "HEATHROW · 14 DEC 2019". | pa, charge, nca | two-source |
-| K_person | He is Junaed Dar (Junaed Ghani Dar), a Heathrow security manager from Slough; convicted by a jury and named by the NCA and the press. Narration: "Junaed Dar. A Heathrow security manager." | nca, charge, nub, hounslow | two-source (2019 + 2025) |
+| K_person | He is Junaed Dar (Junaed Ghani Dar), a Heathrow security manager from Slough; convicted by a jury and named by the NCA and the press. Narration: "He was Junaed Dar, a security manager at Heathrow." | nca, charge, nub, hounslow | two-source (2019 + 2025) |
 | K_shift | He arrived about three hours before his shift was due to start. Narration: "He came in three hours before his shift." | nca, nub, romford | **NCA only** (relayed by several papers); part of the conduct the jury convicted on |
 | K_vehicle | In his security uniform he took an official airport vehicle to Terminal 2B to meet the couriers. Label only: "IN UNIFORM · AIRPORT VEHICLE · TERMINAL 2B". | nub, romford | **NCA only**; label, attributed "per the NCA" |
 | K_toilets | He met the couriers and escorted them to the toilets, where he took their bags (PA: they were seen entering the toilets with two bags and leaving without them). Narration: "He took their bags in the toilets." | pa, nca/hounslow, nub | two-source |
@@ -149,6 +149,12 @@ and Colombian police are generic, unnamed, with no insignia.
 - The word "smuggled" as a completed act: the conviction is for an ATTEMPT (the cocaine never left Bogotá). The hook says
   he "loaded the smugglers' bags", which is what he did.
 
+## Opening chosen (openings.md)
+
+Hook #1, "Security boss at Heathrow loaded the smugglers' bags." (gate ok, recogniser WER 0.00). Not #3 ("smuggled"):
+the conviction is for an attempt and the bags held wood. "A Heathrow security boss…" and "Heathrow's security boss…" were
+tried first and dropped: the recogniser lost the leading "A" or heard "He throws" in the directed am_fenrir read.
+
 ## Sensitive-handling notes
 
 - No victims. The joke is on the scheme (an inside man risking his career for a bag of wood), never on him personally.
@@ -156,10 +162,11 @@ and Colombian police are generic, unnamed, with no insignia.
 - No weapon, no force shown at the arrest (officers' hands on the bag, a raised palm at most).
 - No method detail beyond what was reported as found.
 
-## Build notes (proposed script, about 72 words, 30–32 s)
+## Build notes (as built, 74 spoken words, 29.6 s)
 
-Hook (0 s, the zip half open, inside dark): "Heathrow's security boss loaded the smugglers' bags." / "Twenty-two kilos of cocaine.
-Or so he thought." Gotcha (by 8 s, the bag opens on wood): "Colombian police had swapped it for wood." Person (by 12 s):
-"Junaed Dar. A Heathrow security manager." / "He came in three hours before his shift." Evidence close-up: our own typed duty
-sheet "SHIFT 14 DEC 2019 · ARRIVED 3 HRS EARLY". Consequence: "He took their bags in the toilets. Officers were waiting." /
-"A jury convicted him. Sixteen and a half years." Callback on the open bag: "Every block in those bags was wood."
+Hook (0 s, the zip half open, inside dark): "Security boss at Heathrow loaded the smugglers' bags." / "22 kilos of cocaine.
+Or so he thought." Gotcha (6.1 s, the bag opens on wood): "But Colombian police had swapped it for wood." Person (9.3 s):
+"He was Junaed Dar, a security manager at Heathrow." / "He came in three hours before his shift." Evidence close-up: our
+own typed duty log. "He met the couriers and took their bags." Consequence: "NCA officers were waiting." / "He was
+arrested before he could drive away." / "A jury convicted him." / "Sixteen and a half years." Callback on the bag:
+"Every block in those bags was wood."
