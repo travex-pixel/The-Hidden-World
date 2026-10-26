@@ -53,7 +53,7 @@ def cover(base: Image.Image, words: str, series_tag: str) -> Image.Image:
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(); ap.add_argument("episode"); ap.add_argument("--words", nargs="*"); ap.add_argument("--t", type=float, default=0.3); ap.add_argument("--tag", default="THE HIDDEN WORLD · CASE FILES")
+    ap = argparse.ArgumentParser(); ap.add_argument("episode"); ap.add_argument("--words", nargs="*"); ap.add_argument("--t", type=float, default=0.1)   # before the first caption word appears (0.3 caught "A" on 106); ap.add_argument("--tag", default="THE HIDDEN WORLD · CASE FILES")
     a = ap.parse_args(argv)
     words = a.words
     if not words:
