@@ -68,10 +68,10 @@ def build(h):
           sfx=[fw(0, 0, "whoosh", 0.18, -0.1), fw(0, 2, "thud", 0.2, 0.0), fw(0, 4, "paper", 0.2, 0.0), fw(0, 7, "thump", 0.2, 0.0)],
           emph=["pleaded", "guilty,", "testified", "supplier."], min_d=3.8, pad=0.1, tr="cut"),
         # CONSEQUENCE: the bench, wider; the counter for his sentence, then her time served
-        S("s06_court", "cc106_court", [N("Her supplier got 14 years. And her? Time served.", tone="confident")],
+        S("s06_court", "cc106_court", [N("Her supplier got nearly 14 years. And her? Time served.", tone="confident")],
           "aftermath", ["K_years", "K_served"],
-          sfx=[fw(0, 3, "thud", 0.22, 0.0), fw(0, 7, "sub", 0.24, 0.0), fw(0, 8, "cuffs", 0.16, 0.1)],
-          emph=["supplier", "14", "years.", "time", "served."], min_d=3.0, pad=0.08, tr="dissolve"),
+          sfx=[fw(0, 4, "thud", 0.22, 0.0), fw(0, 8, "sub", 0.24, 0.0), fw(0, 9, "cuffs", 0.16, 0.1)],
+          emph=["supplier", "nearly", "14", "years.", "time", "served."], min_d=3.0, pad=0.08, tr="dissolve"),
         # CALLBACK (the loop): frame 1's checkpoint; the panel goes back up over the packages; on "escalator" the empty up
         #   escalator is ringed; the hands, the zip and the camera return to frame 1's start; no fade
         S("s07_end", "cc106_end", [N("Barefoot. Down the up escalator.", tone="reveal", pause_before=0.05)],
@@ -135,7 +135,7 @@ def build(h):
           ["usao_p", "ap", "cbs", "nbc"]),
         C("K_testify", "She testified against her supplier at his trial; he was convicted on all counts after a four-day trial in February 2018. Narration: '...then testified against her supplier.' Label 'SHE TESTIFIED · FEB 2018'. The supplier is not named.",
           ["nbc", "abc7", "usao_b"]),
-        C("K_years", "STATISTIC (counter 14 YEARS): the supplier was sentenced to 165 months (nearly 14 years) in federal prison in July 2022. Narration: 'Her supplier got fourteen years.'",
+        C("K_years", "STATISTIC (counter 165 MONTHS): the supplier was sentenced to 165 months (13 years 9 months, nearly 14 years) in federal prison in July 2022. Narration: 'Her supplier got nearly 14 years.'",
           ["usao_b", "cbs", "abc7", "foxla"]),
         C("K_served", "In April 2018 she was sentenced to time served (about two years in custody) plus three years' supervised release; the judge cited her cooperation and testimony. Narration: 'And her? Time served.' Label 'HER: TIME SERVED · APR 2018'.",
           ["nbc", "foxla", "gleaner"]),
@@ -145,7 +145,7 @@ def build(h):
 
     figures = ["cc106_officer", "cc106_reynolds", "cc106_judge"]
     ep = h.base(EP, 106, "The Flight Attendant Who Ran From Her Own Suitcase",
-                "Marsha Gay Reynolds, a JetBlue flight attendant, took nearly 60 lb of cocaine to the crew checkpoint at LAX in March 2016; picked for a random search, she kicked off her heels and ran. She flew home the next day, pleaded guilty, testified against her supplier (14 years) and got time served. Fair deal or too soft?",
+                "Marsha Gay Reynolds, a JetBlue flight attendant, took nearly 60 lb of cocaine to the crew checkpoint at LAX in March 2016; picked for a random search, she kicked off her heels and ran. She flew home the next day, pleaded guilty, testified against her supplier (165 months, nearly 14 years) and got time served. Fair deal or too soft?",
                 figures, scenes, claims, sources, "THE HIDDEN WORLD · CASE FILE 106", bpm=84)
     ep["format"] = "short40"
     ep["look"] = "premium"

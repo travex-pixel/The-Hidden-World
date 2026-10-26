@@ -4,7 +4,7 @@
    THE CASE: LAX Terminal 4, 18 March 2016: JetBlue flight attendant Marsha Gay Reynolds came to the crew ("Known
    Crewmember") checkpoint, was picked at random for extra screening, left her bags, kicked off her heels and ran barefoot
    down an up escalator. Her bags held 11 packages, nearly 60 lb of cocaine. She flew home to New York the next day and
-   surrendered at JFK; she pleaded guilty (Dec 2016), testified against her supplier (14 years, 2022) and got time served
+   surrendered at JFK; she pleaded guilty (Dec 2016), testified against her supplier (165 months, 2022) and got time served
    (Apr 2018). Ledger: episodes/tcv106-cabin-crew/research.md.
    Structure: frame 0 = THE HALF-REVEAL: a crimson roller bag standing upright on the floor of a secondary-screening area
    under a hanging lamp, telescoping handle up; two blue gloved hands reach in from the upper sides: the right draws the
@@ -15,7 +15,7 @@
    down the escalator behind and the front panel falls open onto the floor on eleven wrapped packages (the single impact).
    PERSON: a departure gate at night (her silhouette walks right to left with a small roller case, NOT A LIKENESS; the name
    label; the flight home); the evidence close-up (our own typed crew-lane record card on a desk, an investigator close).
-   CONSEQUENCE: a courtroom (her silhouette at the stand; the crew-lane fun fact), then the bench (the 14 YEARS counter,
+   CONSEQUENCE: a courtroom (her silhouette at the stand; the crew-lane fun fact), then the bench (the 165 MONTHS counter,
    then TIME SERVED). CALLBACK on frame 1's set: the panel comes back up over the packages, the empty up escalator is ringed
    ("SHE RAN DOWN THE UP ESCALATOR"), and the hands, the zip and the camera return to frame 1's start.
    Smoothness: cuts and dissolves, one zoom (the end), no push, no shake; one slow camera move per shot. Screen direction:
@@ -404,10 +404,10 @@
       });
     },
 
-    // 6 - CONSEQUENCE: the bench, wider; her silhouette in the dock; on "fourteen" the counter (his sentence), on "time
+    // 6 - CONSEQUENCE: the bench, wider; her silhouette in the dock; on "14" the 165 MONTHS counter (his sentence), on "time
     //     served" she lowers her head and her label
     cc106_court(ctx) {
-      const t = ctx.t, l1 = LS(ctx, 0, 0.3), ft = WT(ctx, 0, 3, 0.8), ts = WT(ctx, 0, 7, 1.9);
+      const t = ctx.t, l1 = LS(ctx, 0, 0.3), ft = WT(ctx, 0, 4, 1.0), ts = WT(ctx, 0, 8, 2.1);
       const ME = { id: 'cc106_reynolds', x: 680, y: 1760, scale: 0.88, dir: -1, turn: 0.4, pose: 'stand', silhouette: 'warm', depth: 1.0 };
       return E.cine.shot(ctx, {
         set: 'courtroom', setOpts: { modern: true, dock: { x: 680, y: 1760, s: 0.88 }, table: false }, grade: 'warm', haze: 0.25,
@@ -418,7 +418,7 @@
           { ...ME, keys: [{ at: l1, pose: 'stand', headTurn: 0.2, dur: 0.3 }, { at: ft, pose: 'hands_together', headTurn: 0.1, dur: 0.4 }, { at: ts, pose: 'bowed', dur: 0.5 }] }
         ],
         overlays: [
-          { type: 'counter', at: ft - 0.05, dur: 0.7, from: 0, to: 14, prefix: '', suffix: ' YEARS', label: 'HER SUPPLIER · SENTENCED 2022', y: 520, fs: 110 },
+          { type: 'counter', at: ft - 0.05, dur: 0.8, from: 0, to: 165, prefix: '', suffix: ' MONTHS', label: 'HER SUPPLIER · NEARLY 14 YEARS · 2022', y: 520, fs: 100 },
           { type: 'label', at: ts, x: 60, y: 1240, text: 'HER: TIME SERVED · APR 2018', fs: 34, typeDur: 0.5, sub: 'About two years in custody' }
         ],
         tag: TAG_SIL

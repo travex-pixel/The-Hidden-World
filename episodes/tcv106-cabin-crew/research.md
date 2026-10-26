@@ -11,7 +11,7 @@ held about 60 lb (just under 27 kg per the plea release) of cocaine in 11 packag
 and on 23 March she surrendered to the DEA at JFK. In December 2016 she **pleaded guilty** (federal court, Los Angeles)
 to conspiracy to possess with intent to distribute cocaine. She then **testified against her supplier**, Gaston Brown,
 who was convicted at trial in February 2018. In April 2018 she was **sentenced to time served** (about two years in
-custody) plus three years' supervised release, and the judge cited her cooperation. Brown got 165 months (about 14 years)
+custody) plus three years' supervised release, and the judge cited her cooperation. Brown got 165 months (13¾ years, nearly 14)
 in July 2022.
 
 One person, a plea and a sentence, more than two independent sources for every narrated claim, and a sourced "how she
@@ -102,7 +102,7 @@ URLs (all accessed 2026-10-26, search-result extracts):
    packages, nearly 60 lb of cocaine (R6, R7).
 5. **The flight home.** The next day she flew to New York (R8). Five days after LAX she turned herself in at JFK (R9).
 6. **The outcome.** She pleaded guilty in December 2016 (R11) and testified against her supplier, who was convicted in
-   February 2018 (R12). She got time served in April 2018 (R13). He got about 14 years in July 2022 (R14).
+   February 2018 (R12). She got time served in April 2018 (R13). He got 165 months, nearly 14 years, in July 2022 (R14).
 
 ## The object (frame 0, the half-reveal)
 
@@ -121,7 +121,7 @@ programme logo and no airline logo.
 ## The question (end card, two-sided, grounded)
 
 **"TIME SERVED FOR TESTIFYING? / FAIR DEAL OR TOO SOFT? 👇"**. It rests on the record: a 10-year mandatory minimum (R11),
-time served after her testimony (R12–R13), and 14 years for her supplier (R14). The question asks viewers to argue about a
+time served after her testimony (R12–R13), and 165 months (nearly 14 years) for her supplier (R14). The question asks viewers to argue about a
 sentencing deal, not about a cleared person's guilt. Send line (from the brief): "SEND TO THE MATE WHO'S CABIN CREW".
 
 ## Naming decision
