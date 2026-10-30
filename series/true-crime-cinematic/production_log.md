@@ -582,3 +582,5 @@
 - 2026-10-26 15:06:13 tcv104-inside-man: rendering (final, seed 1)
 - 2026-10-26 15:18:55 tcv104-inside-man: rendered in 762s
 - 2026-10-26 15:19:26 tcv104-inside-man: VERIFIED -> series/true-crime-cinematic/output/true_crime_104_inside_man.mp4 (29.6s, 12.1 MB, sha256 d0377ae7a530)
+- 2026-10-30 10:56:45 produce 108 --force: regenerating episode data
+- 2026-10-30 10:56:45 tcv108-the-dash: rendering (final, seed 1)

@@ -1,0 +1,1627 @@
+{
+ "episode": "tcv108-the-dash",
+ "title": "The Border Dash",
+ "duration": 29.826,
+ "slideshow_risk": {
+  "shots": 7,
+  "composed_shots": 7,
+  "shots_with_characters": 7,
+  "character_shot_share": 1.0,
+  "distinct_sets": 5,
+  "max_set_share": 0.43,
+  "shot_sizes": {
+   "wide": 3,
+   "close-up": 1,
+   "medium-wide": 2,
+   "medium": 1
+  },
+  "max_shot_size_share": 0.43,
+  "ok": true
+ },
+ "production_status": {},
+ "shots": [
+  {
+   "id": "s01_hook",
+   "scene_type": "bd108_hook",
+   "start": 0.0,
+   "duration": 5.581,
+   "narration": [
+    "A driver smuggled cocaine inside his car.",
+    "Then he hit 125 miles an hour."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.254,
+     "end": 2.308,
+     "words": [
+      {
+       "w": "A",
+       "start": 0.294,
+       "end": 0.404
+      },
+      {
+       "w": "driver",
+       "start": 0.394,
+       "end": 0.724
+      },
+      {
+       "w": "smuggled",
+       "start": 0.714,
+       "end": 1.124
+      },
+      {
+       "w": "cocaine",
+       "start": 1.114,
+       "end": 1.484
+      },
+      {
+       "w": "inside",
+       "start": 1.474,
+       "end": 1.794
+      },
+      {
+       "w": "his",
+       "start": 1.784,
+       "end": 1.984
+      },
+      {
+       "w": "car.",
+       "start": 1.974,
+       "end": 2.184
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 2.592,
+     "end": 5.395,
+     "words": [
+      {
+       "w": "Then",
+       "start": 2.622,
+       "end": 3.102
+      },
+      {
+       "w": "he",
+       "start": 3.092,
+       "end": 3.372
+      },
+      {
+       "w": "hit",
+       "start": 3.362,
+       "end": 3.712
+      },
+      {
+       "w": "125",
+       "start": 3.702,
+       "end": 4.062
+      },
+      {
+       "w": "miles",
+       "start": 4.052,
+       "end": 4.552
+      },
+      {
+       "w": "an",
+       "start": 4.542,
+       "end": 4.822
+      },
+      {
+       "w": "hour.",
+       "start": 4.812,
+       "end": 5.242
+      }
+     ]
+    }
+   ],
+   "visual_description": "bd108 shoulder (cold grade); bd108_agent2: torch -> torch -> torch_low; camera push/pull; overlays: label 'SOUTH TEXAS · JULY 2024'.",
+   "shot_size": "wide",
+   "set": "bd108_shoulder",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 0,
+     "z": 1
+    },
+    "to": {
+     "x": 0,
+     "y": -24,
+     "z": 1.08
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "bd108_agent2"
+   ],
+   "character_actions": [
+    {
+     "id": "bd108_agent2",
+     "outfit": "default",
+     "depth": 0.98,
+     "scale": 0.52,
+     "start_pose": "torch",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.2,
+       "turn_head": true
+      },
+      {
+       "at": 2.64,
+       "pose": "torch",
+       "expr": "realise",
+       "turn_head": true
+      },
+      {
+       "at": 4.05,
+       "pose": "torch_low",
+       "expr": "focused",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 3.05,
+     "text": "SOUTH TEXAS · JULY 2024"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES · GENERIC CAR",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_hook",
+     "type": "established",
+     "claim_text": "Christopher Seabrook drove a silver Chrysler sedan to a Border Patrol checkpoint in South Texas on 25 July 2024 with cocaine hidden in the car's rear panels; he pleaded guilty to possession with intent to distribute. Narration: 'A driver smuggled cocaine inside his car.' Headline 'A CAR'S REAR PANELS / WITH COCAINE INSIDE'. 'Smuggled' is the prosecutors' own word ('Fleeing cocaine smuggler', 'attempting to smuggle cocaine through the Border Patrol checkpoint'); the reel never says who hid it or built anything.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/"
+     ]
+    },
+    {
+     "claim": "K_speed",
+     "type": "established",
+     "claim_text": "STATISTIC (counter 125 MPH): the chase reached speeds up to 125 miles per hour. Narration: 'Then he hit 125 miles an hour.' Counter '125 MPH', label 'TOP SPEED, PER PROSECUTORS'.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://www.kristv.com/news/local-news/philadelphia-man-sentenced-to-120-months-in-prison-for-smuggling-cocaine-through-texas-border-checkpoint"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": -4,
+    "sfx": [
+     {
+      "name": "sub",
+      "at": 0.0,
+      "gain": 0.4
+     },
+     {
+      "name": "rasp",
+      "at": 0.0,
+      "gain": 0.2
+     },
+     {
+      "name": "click",
+      "at": 1.114,
+      "gain": 0.2,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "rasp",
+      "at": 0.254,
+      "gain": 0.2,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "whoosh",
+      "at": 2.572,
+      "gain": 0.22,
+      "word": [
+       1,
+       0
+      ]
+     },
+     {
+      "name": "rumble",
+      "at": 3.702,
+      "gain": 0.22,
+      "word": [
+       1,
+       3
+      ]
+     },
+     {
+      "name": "tick",
+      "at": 4.812,
+      "gain": 0.2,
+      "word": [
+       1,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv108-the-dash.js#bd108_hook",
+    "set_code": "renderer/sets.js#bd108_shoulder",
+    "characters": [
+     "characters/figures/bd108_agent2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_dash",
+   "scene_type": "bd108_dash",
+   "start": 5.581,
+   "duration": 4.012,
+   "narration": [
+    "At a Border Patrol checkpoint, mid-inspection, he floored it."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 6.131,
+     "end": 9.359,
+     "words": [
+      {
+       "w": "At",
+       "start": 6.151,
+       "end": 6.311
+      },
+      {
+       "w": "a",
+       "start": 6.301,
+       "end": 6.431
+      },
+      {
+       "w": "Border",
+       "start": 6.421,
+       "end": 6.771
+      },
+      {
+       "w": "Patrol",
+       "start": 6.761,
+       "end": 7.111
+      },
+      {
+       "w": "checkpoint,",
+       "start": 7.101,
+       "end": 7.821
+      },
+      {
+       "w": "mid-inspection,",
+       "start": 7.811,
+       "end": 8.481
+      },
+      {
+       "w": "he",
+       "start": 8.471,
+       "end": 8.641
+      },
+      {
+       "w": "floored",
+       "start": 8.631,
+       "end": 9.031
+      },
+      {
+       "w": "it.",
+       "start": 9.021,
+       "end": 9.191
+      }
+     ]
+    }
+   ],
+   "visual_description": "bd108 canopy (cold grade); bd108_agent: stand -> point; bd108_agent2: present -> read -> stand_tense -> point; camera push/pull; overlays: impact, label 'BORDER PATROL CHECKPOINT'.",
+   "shot_size": "wide",
+   "set": "bd108_canopy",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": -10,
+     "y": 10,
+     "z": 1
+    },
+    "to": {
+     "x": 14,
+     "y": 4,
+     "z": 1.05
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "bd108_agent",
+    "bd108_agent2"
+   ],
+   "character_actions": [
+    {
+     "id": "bd108_agent",
+     "outfit": "default",
+     "depth": 0.97,
+     "scale": 0.42,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.55,
+       "turn_head": true
+      },
+      {
+       "at": 3.1,
+       "pose": "point",
+       "expr": "shocked",
+       "turn_head": true
+      }
+     ]
+    },
+    {
+     "id": "bd108_agent2",
+     "outfit": "default",
+     "depth": 1.01,
+     "scale": 0.5,
+     "start_pose": "present",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.65,
+       "turn_head": true
+      },
+      {
+       "at": 2.23,
+       "pose": "read",
+       "expr": "focused"
+      },
+      {
+       "at": 3.05,
+       "pose": "stand_tense",
+       "expr": "shocked",
+       "turn_head": true
+      },
+      {
+       "at": 3.75,
+       "pose": "point",
+       "expr": "stern",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "impact",
+     "at": 3.05
+    },
+    {
+     "type": "label",
+     "at": 1.22,
+     "text": "BORDER PATROL CHECKPOINT"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES · GENERIC CAR",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_checkpoint",
+     "type": "established",
+     "claim_text": "The checkpoint was the Border Patrol checkpoint on US 77 near Sarita, Texas (south of Kingsville). Label 'BORDER PATROL CHECKPOINT · US 77, TEXAS', sub '25 July 2024'. The canopy, booth and lanes are an illustration, not the real checkpoint; its name is not shown.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/",
+      "https://www.cbp.gov/newsroom/local-media-release/significant-methamphetamine-seizure-javier-vega-jr-checkpoint"
+     ]
+    },
+    {
+     "claim": "K_dash",
+     "type": "established",
+     "claim_text": "Upon (during) the initial inspection, he fled. Narration (gotcha): 'At a Border Patrol checkpoint, mid-inspection, he floored it.' The flight at speed is reported as a chase reaching 125 mph.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "riser",
+      "at": 5.701,
+      "gain": 0.2,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "step",
+      "at": 7.101,
+      "gain": 0.18,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "brake",
+      "at": 8.471,
+      "gain": 0.22,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 8.631,
+      "gain": 0.42,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "whoosh",
+      "at": 8.681,
+      "gain": 0.24,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "rumble",
+      "at": 9.021,
+      "gain": 0.24,
+      "word": [
+       0,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv108-the-dash.js#bd108_dash",
+    "set_code": "renderer/sets.js#bd108_canopy",
+    "characters": [
+     "characters/figures/bd108_agent.json",
+     "characters/figures/bd108_agent2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_chase",
+   "scene_type": "bd108_chase",
+   "start": 9.593,
+   "duration": 3.837,
+   "narration": [
+    "He tore up the highway, agents right behind him."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 9.926,
+     "end": 12.538,
+     "words": [
+      {
+       "w": "He",
+       "start": 9.946,
+       "end": 10.106
+      },
+      {
+       "w": "tore",
+       "start": 10.096,
+       "end": 10.406
+      },
+      {
+       "w": "up",
+       "start": 10.396,
+       "end": 10.556
+      },
+      {
+       "w": "the",
+       "start": 10.546,
+       "end": 10.756
+      },
+      {
+       "w": "highway,",
+       "start": 10.746,
+       "end": 11.216
+      },
+      {
+       "w": "agents",
+       "start": 11.206,
+       "end": 11.546
+      },
+      {
+       "w": "right",
+       "start": 11.536,
+       "end": 11.906
+      },
+      {
+       "w": "behind",
+       "start": 11.896,
+       "end": 12.226
+      },
+      {
+       "w": "him.",
+       "start": 12.216,
+       "end": 12.426
+      }
+     ]
+    }
+   ],
+   "visual_description": "bd108 cabin (night grade); bd108_seabrook (silhouette): sit_type -> sit_type -> sit_type_b -> sit_type; camera push/pull; overlays: counter, label 'CHRISTOPHER SEABROOK, 50 · PHILADELPHIA'.",
+   "shot_size": "close-up",
+   "set": "bd108_cabin",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": -10,
+     "y": 10,
+     "z": 1.17
+    },
+    "to": {
+     "x": 6,
+     "y": 0,
+     "z": 1.22
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "bd108_seabrook"
+   ],
+   "character_actions": [
+    {
+     "id": "bd108_seabrook",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.15,
+     "start_pose": "sit_type",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.33,
+       "pose": "sit_type",
+       "turn_head": true
+      },
+      {
+       "at": 1.15,
+       "pose": "sit_type_b",
+       "turn_head": true
+      },
+      {
+       "at": 1.61,
+       "turn_head": true
+      },
+      {
+       "at": 2.6,
+       "pose": "sit_type",
+       "turn_head": true
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "counter",
+     "at": 0.75
+    },
+    {
+     "type": "label",
+     "at": 0.38,
+     "text": "CHRISTOPHER SEABROOK, 50 · PHILADELPHIA"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_person",
+     "type": "established",
+     "claim_text": "He is Christopher Seabrook, 50 at sentencing (the 2026 relays say 51), of Philadelphia; he pleaded guilty and was sentenced to ten years, and is named by the US Attorney's Office, the DEA and the local press. Label only (never narrated): 'CHRISTOPHER SEABROOK, 50 · PHILADELPHIA', sub 'Pleaded guilty · silhouette, not a likeness'. Drawn only as a silhouette.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://www.moorenews.com/news/state/philadelphia-man-sentenced-to-10-years-for-cocaine-smuggling-attempt/article_e86aaf2a-5868-599a-9f5d-fc5e44edc767.html"
+     ]
+    },
+    {
+     "claim": "K_chase",
+     "type": "established",
+     "claim_text": "He led law enforcement (the Monitor: Border Patrol agents) on a high-speed chase from the checkpoint. Narration: 'He tore up the highway, agents right behind him.' The agents' vehicles carry plain light bars, no livery.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://www.kristv.com/news/local-news/philadelphia-man-sentenced-to-120-months-in-prison-for-smuggling-cocaine-through-texas-border-checkpoint"
+     ]
+    },
+    {
+     "claim": "K_speed",
+     "type": "established",
+     "claim_text": "STATISTIC (counter 125 MPH): the chase reached speeds up to 125 miles per hour. Narration: 'Then he hit 125 miles an hour.' Counter '125 MPH', label 'TOP SPEED, PER PROSECUTORS'.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://www.kristv.com/news/local-news/philadelphia-man-sentenced-to-120-months-in-prison-for-smuggling-cocaine-through-texas-border-checkpoint"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 9.846,
+      "gain": 0.22,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "rumble",
+      "at": 10.396,
+      "gain": 0.22,
+      "word": [
+       0,
+       2
+      ]
+     },
+     {
+      "name": "siren",
+      "at": 11.206,
+      "gain": 0.14,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "tick",
+      "at": 12.216,
+      "gain": 0.2,
+      "word": [
+       0,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv108-the-dash.js#bd108_chase",
+    "set_code": "renderer/sets.js#bd108_cabin",
+    "characters": [
+     "characters/figures/bd108_seabrook.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_spikes",
+   "scene_type": "bd108_spikes",
+   "start": 13.43,
+   "duration": 5.058,
+   "narration": [
+    "Until they punctured his tires.",
+    "His passenger ran. He didn't get far."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 13.98,
+     "end": 15.54,
+     "words": [
+      {
+       "w": "Until",
+       "start": 14.0,
+       "end": 14.28
+      },
+      {
+       "w": "they",
+       "start": 14.27,
+       "end": 14.52
+      },
+      {
+       "w": "punctured",
+       "start": 14.51,
+       "end": 14.97
+      },
+      {
+       "w": "his",
+       "start": 14.96,
+       "end": 15.16
+      },
+      {
+       "w": "tires.",
+       "start": 15.15,
+       "end": 15.44
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 16.057,
+     "end": 18.301,
+     "words": [
+      {
+       "w": "His",
+       "start": 16.087,
+       "end": 16.367
+      },
+      {
+       "w": "passenger",
+       "start": 16.357,
+       "end": 16.877
+      },
+      {
+       "w": "ran.",
+       "start": 16.867,
+       "end": 17.097
+      },
+      {
+       "w": "He",
+       "start": 17.087,
+       "end": 17.437
+      },
+      {
+       "w": "didn't",
+       "start": 17.427,
+       "end": 17.757
+      },
+      {
+       "w": "get",
+       "start": 17.747,
+       "end": 17.977
+      },
+      {
+       "w": "far.",
+       "start": 17.967,
+       "end": 18.197
+      }
+     ]
+    }
+   ],
+   "visual_description": "bd108 road (night grade); bd108_passenger (silhouette): stand_tense -> walk -> stand_tense -> hands_behind (walks); bd108_agent: torch -> walk -> point (walks); camera push/pull; overlays: label 'TIRES PUNCTURED', label 'HIS PASSENGER RAN · CAUGHT'.",
+   "shot_size": "medium-wide",
+   "set": "bd108_road",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": -10,
+     "y": 20,
+     "z": 1.03
+    },
+    "to": {
+     "x": 14,
+     "y": 14,
+     "z": 1.08
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "bd108_agent",
+    "bd108_passenger"
+   ],
+   "character_actions": [
+    {
+     "id": "bd108_passenger",
+     "outfit": "default",
+     "depth": 0.97,
+     "scale": 0.5,
+     "start_pose": "stand_tense",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.53,
+       "pose": "walk"
+      },
+      {
+       "at": 4.49,
+       "pose": "stand_tense"
+      },
+      {
+       "at": 4.69,
+       "pose": "hands_behind",
+       "turn_head": true
+      }
+     ],
+     "walk": {
+      "from": 720,
+      "to": 950,
+      "at": 2.53,
+      "dur": 1.81
+     },
+     "silhouette": "cool",
+     "visible": [
+      2.48
+     ]
+    },
+    {
+     "id": "bd108_agent",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.6,
+     "start_pose": "torch",
+     "start_expr": "determined",
+     "actions": [
+      {
+       "at": 3.34,
+       "pose": "walk",
+       "expr": "determined"
+      },
+      {
+       "at": 4.64,
+       "pose": "point",
+       "expr": "stern"
+      }
+     ],
+     "walk": {
+      "from": 200,
+      "to": 840,
+      "at": 3.34,
+      "dur": 1.3
+     },
+     "visible": [
+      1.48
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.88,
+     "text": "TIRES PUNCTURED"
+    },
+    {
+     "type": "label",
+     "at": 2.73,
+     "text": "HIS PASSENGER RAN · CAUGHT"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "dissolve",
+   "sources": [
+    {
+     "claim": "K_tires",
+     "type": "established",
+     "claim_text": "Authorities stopped the car by puncturing its tyres. Narration: 'Until they punctured his tires.' The device is not named in the record; the picture shows a generic strip across the road. No one is shown hurt (no injury is reported).",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://www.kristv.com/news/local-news/philadelphia-man-sentenced-to-120-months-in-prison-for-smuggling-cocaine-through-texas-border-checkpoint"
+     ]
+    },
+    {
+     "claim": "K_passenger",
+     "type": "established",
+     "claim_text": "His passenger tried to flee on foot and was apprehended; two men were taken into custody. Narration: 'His passenger ran. He didn't get far.' The passenger is a silhouette and is not named.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://www.kristv.com/news/local-news/philadelphia-man-sentenced-to-120-months-in-prison-for-smuggling-cocaine-through-texas-border-checkpoint",
+      "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "brake",
+      "at": 13.9,
+      "gain": 0.2,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 14.96,
+      "gain": 0.24,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "puff",
+      "at": 15.15,
+      "gain": 0.2,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "step",
+      "at": 16.087,
+      "gain": 0.2,
+      "word": [
+       1,
+       0
+      ]
+     },
+     {
+      "name": "whoosh",
+      "at": 16.867,
+      "gain": 0.18,
+      "word": [
+       1,
+       2
+      ]
+     },
+     {
+      "name": "cuffs",
+      "at": 17.967,
+      "gain": 0.18,
+      "word": [
+       1,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv108-the-dash.js#bd108_spikes",
+    "set_code": "renderer/sets.js#bd108_road",
+    "characters": [
+     "characters/figures/bd108_agent.json",
+     "characters/figures/bd108_passenger.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_panels",
+   "scene_type": "bd108_panels",
+   "start": 18.488,
+   "duration": 3.314,
+   "narration": [
+    "Behind the rear panels: cocaine."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 19.038,
+     "end": 20.754,
+     "words": [
+      {
+       "w": "Behind",
+       "start": 19.058,
+       "end": 19.408
+      },
+      {
+       "w": "the",
+       "start": 19.398,
+       "end": 19.618
+      },
+      {
+       "w": "rear",
+       "start": 19.608,
+       "end": 19.878
+      },
+      {
+       "w": "panels:",
+       "start": 19.868,
+       "end": 20.228
+      },
+      {
+       "w": "cocaine.",
+       "start": 20.218,
+       "end": 20.628
+      }
+     ]
+    }
+   ],
+   "visual_description": "bd108 shoulder (cold grade); bd108_agent2: torch -> point; camera push/pull; overlays: callout '9.8 KG OF COCAINE'.",
+   "shot_size": "medium",
+   "set": "bd108_shoulder",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 10,
+     "y": -60,
+     "z": 1.14
+    },
+    "to": {
+     "x": 20,
+     "y": -74,
+     "z": 1.2
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "bd108_agent2"
+   ],
+   "character_actions": [
+    {
+     "id": "bd108_agent2",
+     "outfit": "default",
+     "depth": 1.05,
+     "scale": 0.82,
+     "start_pose": "torch",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.55,
+       "turn_head": true
+      },
+      {
+       "at": 1.73,
+       "pose": "point",
+       "expr": "realise",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "callout",
+     "at": 1.98,
+     "text": "9.8 KG OF COCAINE"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES · GENERIC CAR",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_panels",
+     "type": "established",
+     "claim_text": "A search of the car found cocaine hidden in the rear panels: 10 bundles, 9.8 kg in the concluded record (the 2024 complaint report said 20 bundles, over 25 lb). Narration: 'Behind the rear panels: cocaine.' Callout '9.8 KG OF COCAINE', sub 'In the rear panels · per prosecutors'. Ten plain wrapped bundles are drawn; the panel's look is not reported (drawn generic).",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rasp",
+      "at": 18.958,
+      "gain": 0.22,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 20.218,
+      "gain": 0.26,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "sting",
+      "at": 20.268,
+      "gain": 0.22,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "paper",
+      "at": 20.418,
+      "gain": 0.18,
+      "word": [
+       0,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv108-the-dash.js#bd108_panels",
+    "set_code": "renderer/sets.js#bd108_shoulder",
+    "characters": [
+     "characters/figures/bd108_agent2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_court",
+   "scene_type": "bd108_court",
+   "start": 21.802,
+   "duration": 5.058,
+   "narration": [
+    "He pleaded guilty. Ten years.",
+    "His passenger got ten years too."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 22.077,
+     "end": 24.034,
+     "words": [
+      {
+       "w": "He",
+       "start": 22.107,
+       "end": 22.297
+      },
+      {
+       "w": "pleaded",
+       "start": 22.287,
+       "end": 22.757
+      },
+      {
+       "w": "guilty.",
+       "start": 22.747,
+       "end": 23.337
+      },
+      {
+       "w": "Ten",
+       "start": 23.327,
+       "end": 23.577
+      },
+      {
+       "w": "years.",
+       "start": 23.567,
+       "end": 23.937
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 24.383,
+     "end": 26.247,
+     "words": [
+      {
+       "w": "His",
+       "start": 24.413,
+       "end": 24.633
+      },
+      {
+       "w": "passenger",
+       "start": 24.623,
+       "end": 25.143
+      },
+      {
+       "w": "got",
+       "start": 25.133,
+       "end": 25.363
+      },
+      {
+       "w": "ten",
+       "start": 25.353,
+       "end": 25.583
+      },
+      {
+       "w": "years",
+       "start": 25.573,
+       "end": 25.903
+      },
+      {
+       "w": "too.",
+       "start": 25.893,
+       "end": 26.123
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (warm grade); bd108_judge: sit -> sit -> sit_read -> sit; bd108_seabrook (silhouette): stand -> stand -> hands_together -> bowed; camera push/pull; overlays: label 'FEDERAL COURT · CORPUS CHRISTI', counter, label 'HIS PASSENGER: 10 YEARS TOO', funfact 'BORDER PATROL CHECKPOINTS SIT / 25 TO 75 MILES INSIDE THE US / Typical distance from the border'.",
+   "shot_size": "medium-wide",
+   "set": "courtroom",
+   "grade": "warm",
+   "camera": {
+    "from": {
+     "x": 20,
+     "y": 20,
+     "z": 1.02
+    },
+    "to": {
+     "x": 0,
+     "y": 30,
+     "z": 1.07
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "bd108_judge",
+    "bd108_seabrook"
+   ],
+   "character_actions": [
+    {
+     "id": "bd108_judge",
+     "outfit": "default",
+     "depth": 0.34,
+     "scale": 0.5,
+     "start_pose": "sit",
+     "start_expr": "stern",
+     "actions": [
+      {
+       "at": 0.28,
+       "pose": "sit",
+       "turn_head": true
+      },
+      {
+       "at": 0.95,
+       "pose": "sit_read"
+      },
+      {
+       "at": 2.58,
+       "pose": "sit",
+       "turn_head": true
+      }
+     ]
+    },
+    {
+     "id": "bd108_seabrook",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.88,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.28,
+       "pose": "stand",
+       "turn_head": true
+      },
+      {
+       "at": 0.95,
+       "pose": "hands_together",
+       "turn_head": true
+      },
+      {
+       "at": 1.53,
+       "pose": "bowed"
+      },
+      {
+       "at": 2.78,
+       "turn_head": true
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.33,
+     "text": "FEDERAL COURT · CORPUS CHRISTI"
+    },
+    {
+     "type": "counter",
+     "at": 1.48
+    },
+    {
+     "type": "label",
+     "at": 2.63,
+     "text": "HIS PASSENGER: 10 YEARS TOO"
+    },
+    {
+     "type": "funfact",
+     "at": 2.88,
+     "text": "BORDER PATROL CHECKPOINTS SIT / 25 TO 75 MILES INSIDE THE US / Typical distance from the border"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · SILHOUETTE · NOT A LIKENESS",
+   "transition_in": "dissolve",
+   "sources": [
+    {
+     "claim": "K_plea",
+     "type": "established",
+     "claim_text": "He pleaded guilty on 22 November 2024 to possession with intent to distribute cocaine. Narration: 'He pleaded guilty.' Label 'FEDERAL COURT · CORPUS CHRISTI', sub 'Pleaded guilty · sentenced Mar 2025'.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a"
+     ]
+    },
+    {
+     "claim": "K_years",
+     "type": "established",
+     "claim_text": "He was sentenced to 120 months (ten years) in federal prison, followed by five years of supervised release. Narration: 'Ten years.' Counter '10 YEARS'.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://www.kristv.com/news/local-news/philadelphia-man-sentenced-to-120-months-in-prison-for-smuggling-cocaine-through-texas-border-checkpoint"
+     ]
+    },
+    {
+     "claim": "K_passyears",
+     "type": "established",
+     "claim_text": "The passenger pleaded guilty (22 Jan 2026) and was also sentenced to 120 months. Narration: 'His passenger got ten years too.' Label 'HIS PASSENGER: 10 YEARS TOO', sub 'Pleaded guilty · Apr 2026'.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+      "https://www.kristv.com/news/local-news/philadelphia-man-sentenced-to-120-months-in-prison-for-smuggling-cocaine-through-texas-border-checkpoint",
+      "https://www.moorenews.com/news/state/philadelphia-man-sentenced-to-10-years-for-cocaine-smuggling-attempt/article_e86aaf2a-5868-599a-9f5d-fc5e44edc767.html"
+     ]
+    },
+    {
+     "claim": "K_fact",
+     "type": "established",
+     "claim_text": "FUN FACT: Border Patrol's interior checkpoints sit inside the US, typically 25 to 75 miles from the border. Card 'BORDER PATROL CHECKPOINTS SIT / 25 TO 75 MILES INSIDE THE US'.",
+     "urls": [
+      "https://forumtogether.org/article/explainer-u-s-border-patrol-authorities-and-the-100-mile-border-zone/",
+      "https://en.wikipedia.org/wiki/United_States_Border_Patrol_interior_checkpoints"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "thud",
+      "at": 22.287,
+      "gain": 0.22,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "sub",
+      "at": 23.327,
+      "gain": 0.24,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "gavel",
+      "at": 23.667,
+      "gain": 0.18,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "paper",
+      "at": 24.413,
+      "gain": 0.18,
+      "word": [
+       1,
+       0
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 25.573,
+      "gain": 0.2,
+      "word": [
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv108-the-dash.js#bd108_court",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/bd108_judge.json",
+     "characters/figures/bd108_seabrook.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_end",
+   "scene_type": "bd108_end",
+   "start": 26.86,
+   "duration": 2.966,
+   "narration": [
+    "Nobody had opened those panels until he ran."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 27.16,
+     "end": 29.552,
+     "words": [
+      {
+       "w": "Nobody",
+       "start": 27.19,
+       "end": 27.54
+      },
+      {
+       "w": "had",
+       "start": 27.53,
+       "end": 27.75
+      },
+      {
+       "w": "opened",
+       "start": 27.74,
+       "end": 28.1
+      },
+      {
+       "w": "those",
+       "start": 28.09,
+       "end": 28.4
+      },
+      {
+       "w": "panels",
+       "start": 28.39,
+       "end": 28.74
+      },
+      {
+       "w": "until",
+       "start": 28.73,
+       "end": 29.05
+      },
+      {
+       "w": "he",
+       "start": 29.04,
+       "end": 29.21
+      },
+      {
+       "w": "ran.",
+       "start": 29.2,
+       "end": 29.42
+      }
+     ]
+    }
+   ],
+   "visual_description": "bd108 shoulder (cold grade); bd108_agent2: torch -> torch_low -> torch; keyed camera moves; overlays: callout 'THE REAR PANELS'.",
+   "shot_size": "wide",
+   "set": "bd108_shoulder",
+   "grade": "cold",
+   "camera": {
+    "keys": 2,
+    "handheld": 0
+   },
+   "characters": [
+    "bd108_agent2"
+   ],
+   "character_actions": [
+    {
+     "id": "bd108_agent2",
+     "outfit": "default",
+     "depth": 0.98,
+     "scale": 0.52,
+     "start_pose": "torch",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.78,
+       "pose": "torch_low",
+       "expr": "realise",
+       "turn_head": true
+      },
+      {
+       "at": 2.07,
+       "pose": "torch",
+       "expr": "focused",
+       "turn_head": true
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "callout",
+     "at": 1.53,
+     "text": "THE REAR PANELS"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC FIGURES · GENERIC CAR",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "K_callback",
+     "type": "established",
+     "claim_text": "He fled during the initial inspection; the cocaine was found by a subsequent search of the car after it was stopped. Narration (callback): 'Nobody had opened those panels until he ran.' Callout 'THE REAR PANELS', sub 'Searched only after the chase'.",
+     "urls": [
+      "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+      "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+      "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "click",
+      "at": 27.19,
+      "gain": 0.22,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "sub",
+      "at": 28.44,
+      "gain": 0.3,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "tick",
+      "at": 29.2,
+      "gain": 0.2,
+      "word": [
+       0,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv108-the-dash.js#bd108_end",
+    "set_code": "renderer/sets.js#bd108_shoulder",
+    "characters": [
+     "characters/figures/bd108_agent2.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}
