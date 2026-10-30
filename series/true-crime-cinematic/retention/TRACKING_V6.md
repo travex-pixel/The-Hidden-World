@@ -111,3 +111,13 @@ Targets (docs/CHANNEL_BRIEF_2026-10-26.md): skip ≤ 23 %, ≥ 65 % at 10 s, ave
 Compare 105 (33.2 s, three more seconds on the person) against 104 (29.6 s) and 106 (31.6 s) on end % and average watch.
 
 Reading (30 Oct 21:08): the openings held (60–65 % at 10 s) and the middles leaked: every reel lost 25–35 points between 8 and 18 s, on the lines that described the person (name, age, hometown, claim), and ended at 22–27 % against 35–45 % for v8/v9. Likes landed on actions (106's run at 3 s, 105's backpack reveal at 12–15 s), never on description. Shares 1 of 3: the one-person idea alone did not unlock sends. 105's 33 s cost nothing on average watch (57 %). Engine v11: the middle as a chain of turns (a reveal/tense/curious line within every 7 s), name and age on a label, the gotcha a physical act by the person, a three-line end card.
+
+**Batch 9: engine v11 "told as turns" (107 the runner [Bagby airfield, swam to Gibraltar], 108 the border dash [Sarita checkpoint, 125 mph], 109 the sea chase [Benacre, ran aground and jumped]), to post one a day at 4 pm AEDT Sat 31 Oct to Mon 2 Nov. Read at 48 h with the five-screenshot recipe.**
+
+| # | age | views | viewers | avg watch | skip % | kept @10 s | kept @16 s | end % | shares | saves | follows | comments | like % |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 107 | 48 h | | | | | | | | | | | | |
+| 108 | 48 h | | | | | | | | | | | | |
+| 109 | 48 h | | | | | | | | | | | | |
+
+What v11 should move, against batch 8: kept @16 s within 15 points of kept @10 s (the middle no longer leaking on biography), end % back above 35, and a reveal every 7 s read as likes landing on the turns. Lengths 29.5 / 29.8 / 30.3 s. If end % stays near 25 with the middle fixed, the ending is next; if sends stay at zero with the middle fixed, the send line needs to be spoken.
