@@ -588,3 +588,5 @@
 - 2026-10-30 11:07:25 tcv108-the-dash: VERIFIED -> series/true-crime-cinematic/output/true_crime_108_the_dash.mp4 (29.8s, 11.7 MB, sha256 46b13d85c0a0)
 - 2026-10-30 11:09:32 produce 107 --force: regenerating episode data
 - 2026-10-30 11:09:32 tcv107-the-runner: rendering (final, seed 1)
+- 2026-10-30 11:19:57 tcv107-the-runner: rendered in 625s
+- 2026-10-30 11:20:22 tcv107-the-runner: VERIFIED -> series/true-crime-cinematic/output/true_crime_107_the_runner.mp4 (29.5s, 12.3 MB, sha256 769d2d0f0c12)
