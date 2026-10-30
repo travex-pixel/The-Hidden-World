@@ -590,3 +590,7 @@
 - 2026-10-30 11:09:32 tcv107-the-runner: rendering (final, seed 1)
 - 2026-10-30 11:19:57 tcv107-the-runner: rendered in 625s
 - 2026-10-30 11:20:22 tcv107-the-runner: VERIFIED -> series/true-crime-cinematic/output/true_crime_107_the_runner.mp4 (29.5s, 12.3 MB, sha256 769d2d0f0c12)
+- 2026-10-30 11:22:14 produce 109 --force: regenerating episode data
+- 2026-10-30 11:22:14 tcv109-the-chase: rendering (final, seed 1)
+- 2026-10-30 11:31:59 tcv109-the-chase: rendered in 585s
+- 2026-10-30 11:32:24 tcv109-the-chase: VERIFIED -> series/true-crime-cinematic/output/true_crime_109_the_chase.mp4 (30.3s, 12.9 MB, sha256 d45c26376a5c)

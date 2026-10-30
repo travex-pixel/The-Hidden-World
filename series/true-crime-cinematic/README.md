@@ -110,6 +110,7 @@
 | 106 | `true_crime_106_cabin_crew.mp4` (also in releases/) | One Smuggler (engine v10): Marsha Gay Reynolds, JetBlue flight attendant, ran barefoot from a random crew search at LAX leaving ~60 lb of cocaine (Mar 2016); pleaded guilty, time served (Apr 2018) | see `production_manifest.json` |
 | 107 | `true_crime_107_the_runner.mp4` (also in releases/) | One Smuggler (engine v11, told as turns): Jason Waterman ran from Border Force at Bagby airfield leaving 7 kg of cocaine in a hedge (Oct 2015), hid in Spain, swam to Gibraltar the day his Crimewatch appeal aired (June 2017); pleaded guilty, 7 years 2 months (Dec 2017) | see `production_manifest.json` |
 | 108 | `true_crime_108_the_dash.mp4` (also in releases/) | One Smuggler (engine v11, told as turns): Christopher Seabrook, 50, fled mid-inspection at the US 77 Border Patrol checkpoint near Sarita, Texas, 125 mph until his tyres were punctured, 9.8 kg of cocaine in the rear panels (July 2024); pleaded guilty, ten years (Mar 2025) | see `production_manifest.json` |
+| 109 | `true_crime_109_the_chase.mp4` (also in releases/) | One Smuggler (engine v11, told as turns): Bruce Knowles, 55, fled a Border Force cutter off Benacre, Suffolk, ran his inflatable aground and jumped into the sea; 350 kg of cocaine under a tarpaulin (June 2024); pleaded guilty, 17 years 3 months (May 2025) | see `production_manifest.json` |
 
 Episodes 04–09 are a "retention" batch. Each has the following:
 - A hook as its first line, with a new reveal every few seconds.
