@@ -1,0 +1,852 @@
+{
+ "id": "tcv104-inside-man",
+ "number": 104,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Heathrow Security Boss Took the Smugglers' Bags",
+ "central_question": "Junaed Dar, a Heathrow security manager, came in three hours before his shift in December 2019 to take two couriers' bags off a Bogota flight; Colombian police had already swapped the 22 kg of cocaine for blocks of wood, and NCA officers were waiting. A jury convicted him: 16 and a half years. The couriers, who pleaded guilty, got six years eight months each. Who deserves more time: the inside man or the mules?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_fenrir",
+  "energy": 0.6,
+  "directed": true,
+  "pronounce": {
+   "Junaed": "Joo-nayd",
+   "NCA": "N C A"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  28,
+  34
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "104",
+  "label": "THE HIDDEN WORLD · CASE FILE 104"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s07_end",
+   "word": [
+    0,
+    2
+   ],
+   "at": 0.5
+  }
+ },
+ "figures": [
+  "im104_officer",
+  "im104_dar",
+  "im104_judge"
+ ],
+ "content_notes": "Tone: dry and ironic; the joke is on the scheme (an airport security manager who came in early to collect two bags that Colombian police had already filled with wood), never on him personally. Junaed Dar was convicted by a jury and sentenced (Kingston Crown Court, Aug 2025) and is named by the NCA and the press since 2019, so he is named; he is drawn ONLY as a dark rim-lit silhouette (NOT A LIKENESS), standing in a terminal corridor, at a vehicle door and in a dock. The couriers and organisers are not named or drawn. The NCA officers and the judge are generic figures with no badge, patch, crest, flag, agency name or insignia; no weapon; no force at the arrest (a raised palm). The holdall is generic (colour, brand and number not reported; drawn vermilion, no logo); the wood is plain timber blocks (shape and wrapping not reported). The load bay, corridor, service road and court are illustrations, not reported places; the airport vehicle is a plain white van with an amber beacon and no livery; 'Heathrow' appears only as plain text. The duty log is our own typed graphic, not any real document. The NCA wording ('gross betrayal of trust') is attributed on a label. No dialogue is invented. Facts verified 2026-10-26.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "im104_hook",
+   "min_duration": 4.8,
+   "pad_after": 0.08,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "swell",
+     "gain": 0.18
+    },
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "tick",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "click",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_weight",
+    "K_flight"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Security boss at Heathrow loaded the smugglers' bags.",
+     "tone": "hook",
+     "speed": 1.28
+    },
+    {
+     "who": "narrator",
+     "text": "22 kilos of cocaine. Or so he thought.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "heathrow",
+    "security",
+    "loaded",
+    "smugglers'",
+    "bags.",
+    "22",
+    "kilos",
+    "cocaine.",
+    "thought."
+   ],
+   "section": "A",
+   "case": "inside-man",
+   "beat": "hook",
+   "music_gain_db": -8
+  },
+  {
+   "id": "s02_wood",
+   "scene": "im104_wood",
+   "min_duration": 3.3,
+   "pad_after": 0.12,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.45,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.08,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "paper",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_wood",
+    "K_flight"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But Colombian police had swapped it for wood.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "colombian",
+    "police",
+    "swapped",
+    "wood."
+   ],
+   "section": "A",
+   "case": "inside-man",
+   "beat": "gotcha"
+  },
+  {
+   "id": "s03_person",
+   "scene": "im104_person",
+   "min_duration": 6.0,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "tick",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.2
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_person",
+    "K_shift"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was Junaed Dar, a security manager at Heathrow.",
+     "tone": "curious"
+    },
+    {
+     "who": "narrator",
+     "text": "He came in three hours before his shift.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "junaed",
+    "dar,",
+    "heathrow",
+    "security",
+    "three",
+    "hours",
+    "shift."
+   ],
+   "section": "B",
+   "case": "inside-man",
+   "beat": "person"
+  },
+  {
+   "id": "s04_log",
+   "scene": "im104_log",
+   "min_duration": 3.0,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "pen",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "stamp",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_vehicle",
+    "K_toilets"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he took the couriers' bags.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "then",
+    "took",
+    "couriers'",
+    "bags."
+   ],
+   "section": "B",
+   "case": "inside-man",
+   "beat": "person"
+  },
+  {
+   "id": "s05_arrest",
+   "scene": "im104_arrest",
+   "min_duration": 4.8,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sting",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "cuffs",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_arrest",
+    "K_betrayal"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "NCA officers were waiting.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "He never drove off.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "nca",
+    "officers",
+    "waiting.",
+    "never",
+    "drove",
+    "off."
+   ],
+   "section": "C",
+   "case": "inside-man",
+   "beat": "consequence"
+  },
+  {
+   "id": "s06_court",
+   "scene": "im104_court",
+   "min_duration": 4.2,
+   "pad_after": 0.08,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sub",
+     "gain": 0.24
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      4
+     ],
+     "name": "cuffs",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_verdict",
+    "K_years",
+    "K_couriers"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A jury convicted him.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "Sixteen and a half years.",
+     "tone": "reveal",
+     "pause_before": 0.15
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "jury",
+    "convicted",
+    "sixteen",
+    "half",
+    "years."
+   ],
+   "section": "C",
+   "case": "inside-man",
+   "beat": "consequence",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "im104_end",
+   "min_duration": 2.2,
+   "pad_after": 0.12,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_wood"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Every block in those bags was wood.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "every",
+    "block",
+    "bags",
+    "wood."
+   ],
+   "section": "D",
+   "case": "inside-man",
+   "beat": "callback",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "A Heathrow security manager met two couriers off a Bogota flight on 14 Dec 2019 and took possession of their bags in the toilets (PA: they went into the toilets with two bags and came out without them); the bags went into his vehicle. The couriers pleaded guilty to attempting to import Class A drugs. Narration: 'Security boss at Heathrow loaded the smugglers' bags.' Headline 'THE SMUGGLERS' BAGS / MET BY HEATHROW SECURITY'.",
+   "sources": [
+    "nca",
+    "nub",
+    "pa",
+    "romford"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "The bags had held about 22 kg of cocaine before Colombian police swapped it. Narration: '22 kilos of cocaine. Or so he thought.' The value (£2m NCA, £1.75m PA) is not narrated.",
+   "sources": [
+    "nca",
+    "pa",
+    "charge"
+   ]
+  },
+  {
+   "id": "K_flight",
+   "type": "established",
+   "nature": "fact",
+   "text": "The couriers flew into Heathrow from Bogota on Saturday 14 December 2019 (Terminal 2). Label 'HEATHROW · 14 DEC 2019', sub 'Off a flight from Bogota'.",
+   "sources": [
+    "pa",
+    "charge",
+    "nca"
+   ]
+  },
+  {
+   "id": "K_wood",
+   "type": "established",
+   "nature": "fact",
+   "text": "Colombian police (PA: Colombian authorities), working with the NCA, intercepted the bags in Bogota before the flight, removed the cocaine and replaced it with blocks of wood. Narration (gotcha): 'But Colombian police had swapped it for wood.' Callback: 'Every block in those bags was wood.' Callout 'BLOCKS OF WOOD'. The wood's shape or wrapping is not reported: drawn as plain timber blocks.",
+   "sources": [
+    "pa",
+    "hounslow",
+    "romford",
+    "nub"
+   ]
+  },
+  {
+   "id": "K_person",
+   "type": "established",
+   "nature": "fact",
+   "text": "He is Junaed Dar (Junaed Ghani Dar), a Heathrow security manager from Slough, convicted by a jury and named by the NCA and the press since his 2019 charge. Narration: 'He was Junaed Dar, a security manager at Heathrow.' Label 'JUNAED DAR · HEATHROW SECURITY MANAGER', sub 'Convicted by a jury · silhouette, not a likeness'.",
+   "sources": [
+    "nca",
+    "charge",
+    "nub",
+    "hounslow"
+   ]
+  },
+  {
+   "id": "K_shift",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 14 Dec 2019 he arrived at Heathrow about three hours before his shift was due to start (NCA statement, relayed by the Slough Observer, Nub News and the Romford Recorder). Narration (re-hook): 'He came in three hours before his shift.'",
+   "sources": [
+    "nca",
+    "nub",
+    "romford"
+   ]
+  },
+  {
+   "id": "K_vehicle",
+   "type": "established",
+   "nature": "fact",
+   "text": "In his security uniform he took an official airport vehicle to Terminal 2B to meet the couriers (NCA statement). Evidence close-up: our own typed duty-log graphic (no real document imitated): 'ON SITE: 3 HRS BEFORE SHIFT', 'IN UNIFORM · AIRPORT VEHICLE', 'MET: 2 COURIERS FROM BOGOTA', 'HANDOVER: THE TOILETS, TERMINAL 2B'.",
+   "sources": [
+    "nub",
+    "romford",
+    "nca"
+   ]
+  },
+  {
+   "id": "K_toilets",
+   "type": "established",
+   "nature": "fact",
+   "text": "He met the couriers, escorted them to the toilets and took possession of their bags; PA: they were seen entering the toilets with two bags and leaving without them. Narration: 'Then he took the couriers' bags.'",
+   "sources": [
+    "pa",
+    "hounslow",
+    "nub"
+   ]
+  },
+  {
+   "id": "K_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "NCA officers were waiting; he was arrested as he was about to drive away with the bags (NCA); the 2019 charge reports: the NCA, supported by Border Force, arrested him at Terminal 2 with the two passengers. Narration: 'NCA officers were waiting.' / 'He never drove off.'",
+   "sources": [
+    "hounslow",
+    "nub",
+    "charge"
+   ]
+  },
+  {
+   "id": "K_betrayal",
+   "type": "established",
+   "nature": "fact",
+   "text": "NCA operations manager Mark Abbott called his conduct a 'gross betrayal of trust' (NCA statement). Label 'THE NCA: \"A GROSS BETRAYAL OF TRUST\"'.",
+   "sources": [
+    "nub",
+    "hounslow"
+   ]
+  },
+  {
+   "id": "K_verdict",
+   "type": "established",
+   "nature": "fact",
+   "text": "A jury found him guilty of attempting to import (smuggle) Class A drugs. Narration: 'A jury convicted him.' Label 'KINGSTON CROWN COURT', sub 'Convicted by a jury · Aug 2025'.",
+   "sources": [
+    "nca",
+    "hounslow",
+    "nub"
+   ]
+  },
+  {
+   "id": "K_years",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 16½ YEARS): he was sentenced to 16 and a half years at Kingston Crown Court on Monday 4 August 2025. Narration: 'Sixteen and a half years.'",
+   "sources": [
+    "nca",
+    "hounslow",
+    "nub",
+    "romford"
+   ]
+  },
+  {
+   "id": "K_couriers",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the two couriers pleaded guilty and were each jailed for six years and eight months (Isleworth Crown Court, October 2022). Card 'THE TWO COURIERS PLEADED GUILTY / 6 YEARS 8 MONTHS EACH'.",
+   "sources": [
+    "pa",
+    "nca"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "nca",
+   "publisher": "Slough Observer (National Crime Agency statement)",
+   "title": "Heathrow security manager jailed for cocaine smuggling",
+   "url": "https://www.sloughobserver.co.uk/news/25378678.heathrow-security-manager-jailed-cocaine-smuggling",
+   "date": "2025-08",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "hounslow",
+   "publisher": "Hounslow Herald (National Crime Agency statement)",
+   "title": "Heathrow security manager jailed for £2m cocaine plot",
+   "url": "https://hounslowherald.com/heathrow-security-manager-jailed-for-m-cocaine-plot-p28780-95.htm",
+   "date": "2025-08",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "nub",
+   "publisher": "Nub News Kingston (National Crime Agency statement)",
+   "title": "Ex-Heathrow security manager jailed for 16 years over £2m Colombian cocaine plot",
+   "url": "https://kingston.nub.news/news/local-news/ex-heathrow-security-manager-jailed-for-16-years-over-ps2m-colombian-cocaine-plot-267831",
+   "date": "2025-08",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "romford",
+   "publisher": "Romford Recorder / Yahoo News UK",
+   "title": "Crooked boss at Heathrow airport plotted to smuggle £2m Colombian cocaine",
+   "url": "https://www.romfordrecorder.co.uk/news/25371867.heathrow-airport-cocaine-plot-security-manager-jailed/",
+   "date": "2025-08",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "pa",
+   "publisher": "PA Media (Express & Star; AOL)",
+   "title": "Pair jailed for trying to smuggle £1.75m of cocaine into Heathrow",
+   "url": "https://www.expressandstar.com/news/uk-news/2022/10/10/pair-jailed-for-trying-to-smuggle-175-million-of-cocaine-into-heathrow/",
+   "date": "2022-10-10",
+   "accessed": "search-result extract only, 2026-10-26"
+  },
+  {
+   "id": "charge",
+   "publisher": "HSToday (NCA arrest release, also FS Matters, Surrey Live)",
+   "title": "Heathrow Airport Security Worker Charged with Attempting to Smuggle Cocaine Worth £2 Million",
+   "url": "https://www.hstoday.us/subject-matter-areas/customs-immigration/heathrow-airport-security-worker-charged-with-attempting-to-smuggle-cocaine-worth-2-million/",
+   "date": "2019-12",
+   "accessed": "search-result extract only, 2026-10-26"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "quality": "final",
+ "engagement_rules": true,
+ "engagement_version": 10,
+ "lane": "customs",
+ "search_terms": [
+  "heathrow security",
+  "heathrow cocaine"
+ ],
+ "palette": {
+  "shadow": "#141a22",
+  "mid": "#a9adb0",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "THE SMUGGLERS' BAGS"
+   },
+   {
+    "text": "MET BY HEATHROW SECURITY",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 240
+ },
+ "progress": {
+  "label": "FILE 104 ·",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "THE BAGS"
+   },
+   {
+    "t": 9.35,
+    "v": "THE INSIDE MAN"
+   },
+   {
+    "t": 23.35,
+    "v": "THE SENTENCE"
+   }
+  ],
+  "y": 350,
+  "fs": 44,
+  "until": 26.97
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHO DESERVES MORE TIME?"
+   },
+   {
+    "text": "THE INSIDE MAN OR THE MULES? 👇",
+    "colour": "#e8a33a",
+    "fs": 50
+   },
+   {
+    "text": "SEND TO THE MATE WHO WORKS AT THE AIRPORT",
+    "fs": 32
+   },
+   {
+    "text": "NEXT FILE: THE COCAINE CAKE",
+    "fs": 36,
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "THE HIDDEN WORLD · CASE FILE 104",
+    "fs": 32
+   }
+  ],
+  "from": 2.12,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-26"
+}

@@ -1,0 +1,952 @@
+{
+ "id": "tcv109-the-chase",
+ "number": 109,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Sea Chase",
+ "central_question": "Off Suffolk in June 2024 a Border Force cutter closed on an inflatable carrying about 350 kg of cocaine under a tarp. His crewmate jumped and swam; Bruce Knowles restarted the engines and ran, grounded the boat on a beach and jumped into the sea. He pleaded guilty and got 17 years and 3 months; the swimmer, caught that day, got 15. Throttle or swim for it?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_fenrir",
+  "energy": 0.6,
+  "directed": true,
+  "pronounce": {}
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  28,
+  33
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "109",
+  "label": "THE HIDDEN WORLD · CASE FILE 109"
+ },
+ "music": {
+  "bpm": 88,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 88,
+  "cliff": {
+   "scene": "s03_throttle",
+   "word": [
+    0,
+    6
+   ],
+   "at": 0.0
+  }
+ },
+ "figures": [
+  "sc109_officer",
+  "sc109_officer2",
+  "sc109_knowles",
+  "sc109_crewmate",
+  "sc109_police",
+  "sc109_judge"
+ ],
+ "content_notes": "Tone: dry and quick; the joke is on the scheme (an inflatable trying to outrun a cutter and ending on a beach), never on a person; no one was hurt (none reported), and the jumps are drawn as acts, not falls. Bruce Knowles pleaded guilty and was sentenced (Ipswich Crown Court, Aug 2024 and May 2025) and is named by the NCA and the press, so he is named, but only on a label (never in the narration); he is drawn ONLY as a dark rim-lit silhouette (NOT A LIKENESS). His crewmate is never named and is drawn only as a silhouette. Border Force officers, the police officer and the judge are generic figures with no badge, patch, crest, flag, agency name or insignia; no weapon; no force shown. The RHIB and the cutter are generic (no name, number, livery or flag); the tarp's colour is not reported (drawn orange); the bales are plain dark wrapped blocks; no drugs are shown. The time of day is not reported: the quay is drawn under a floodlight and the chase in a grey low light; no line or caption states a time. Nothing copies the NCA footage. Every card is our own typed graphic; no court document is imitated; no dialogue is invented. Facts verified 2026-10-30.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "sc109_hook",
+   "min_duration": 4.3,
+   "pad_after": 0.06,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.36
+    },
+    {
+     "at": 0.0,
+     "name": "water",
+     "gain": 0.1
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "flutter",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_weight"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A smuggler carried cocaine beneath a boat's tarp.",
+     "tone": "hook",
+     "speed": 1.06,
+     "pause_before": 0.0
+    },
+    {
+     "who": "narrator",
+     "text": "350 kilos of it.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smuggler",
+    "carried",
+    "cocaine",
+    "tarp.",
+    "350",
+    "kilos"
+   ],
+   "section": "A",
+   "case": "seachase",
+   "beat": "hook",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_cutter",
+   "scene": "sc109_cutter",
+   "min_duration": 3.2,
+   "pad_after": 0.08,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "rumble",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "water",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_cutter",
+    "K_swim"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A Border Force cutter closed in. His crewmate jumped.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "border",
+    "force",
+    "cutter",
+    "crewmate",
+    "jumped."
+   ],
+   "section": "A",
+   "case": "seachase",
+   "beat": "gotcha"
+  },
+  {
+   "id": "s03_throttle",
+   "scene": "sc109_throttle",
+   "min_duration": 2.6,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "whoosh",
+     "gain": 0.26
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "water",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_flee"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he restarted the engines. And fled.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "then",
+    "restarted",
+    "engines.",
+    "fled."
+   ],
+   "section": "A",
+   "case": "seachase",
+   "beat": "gotcha"
+  },
+  {
+   "id": "s04_beach",
+   "scene": "sc109_beach",
+   "min_duration": 5.5,
+   "pad_after": 0.08,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "rumble",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.26
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "step",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "water",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_aground",
+    "K_jump",
+    "K_person"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He ran the boat up onto a beach.",
+     "tone": "reveal"
+    },
+    {
+     "who": "narrator",
+     "text": "Then he jumped into the sea.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ran",
+    "onto",
+    "beach.",
+    "jumped",
+    "sea."
+   ],
+   "section": "B",
+   "case": "seachase",
+   "beat": "person"
+  },
+  {
+   "id": "s05_tarp",
+   "scene": "sc109_tarp",
+   "min_duration": 3.7,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "door",
+     "gain": 0.16
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "flutter",
+     "gain": 0.28
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sting",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_tarp",
+    "K_weight",
+    "K_lowestoft"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At the harbour, officers pulled back the tarp.",
+     "tone": "curious"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "harbour,",
+    "pulled",
+    "back",
+    "tarp."
+   ],
+   "section": "B",
+   "case": "seachase",
+   "beat": "person"
+  },
+  {
+   "id": "s06_court",
+   "scene": "sc109_court",
+   "min_duration": 4.3,
+   "pad_after": 0.08,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sub",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "cuffs",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_plea",
+    "K_years"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He pleaded guilty.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "17 years and 3 months.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pleaded",
+    "guilty.",
+    "17",
+    "years",
+    "3",
+    "months."
+   ],
+   "section": "C",
+   "case": "seachase",
+   "beat": "consequence",
+   "music_drop": true
+  },
+  {
+   "id": "s07_swimmer",
+   "scene": "sc109_swimmer",
+   "min_duration": 3.0,
+   "pad_after": 0.08,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "radio",
+     "gain": 0.18
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "cuffs",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "tick",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_caught",
+    "K_france"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police caught the swimmer that same day.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "caught",
+    "swimmer",
+    "same",
+    "day."
+   ],
+   "section": "C",
+   "case": "seachase",
+   "beat": "consequence"
+  },
+  {
+   "id": "s08_end",
+   "scene": "sc109_end",
+   "min_duration": 2.3,
+   "pad_after": 0.1,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "flutter",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_fifteen"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The swimmer got fifteen years.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "swimmer",
+    "fifteen",
+    "years."
+   ],
+   "section": "D",
+   "case": "seachase",
+   "beat": "callback",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "About 350 kg of cocaine was hidden under a tarpaulin in the hull of a rigid-hulled inflatable boat (RHIB) intercepted off Suffolk; the man at its helm pleaded guilty to being concerned in importing it. Narration: 'A smuggler carried cocaine beneath a boat's tarp.' Headline 'THE TARP / 350 KG UNDER IT'. 'Carried' (not 'packed' or 'hid') because the plea establishes knowing importation, not who covered the load.",
+   "sources": [
+    "nca_sent",
+    "itv",
+    "pa",
+    "eadt"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "About 350 kg (350 kilos) of cocaine. Narration: '350 kilos of it.' Callout '350 KG OF COCAINE'. The value (£39m NCA, £37m PA) is not narrated or shown.",
+   "sources": [
+    "nca_charge",
+    "nca_sent",
+    "pa",
+    "occrp"
+   ]
+  },
+  {
+   "id": "K_cutter",
+   "type": "established",
+   "nature": "fact",
+   "text": "24 June 2024, near East Benacre Broads off the Suffolk coast: a Border Force cutter approached the RHIB and it failed to stop. Narration: 'A Border Force cutter closed in.' Label 'OFF BENACRE, SUFFOLK · 24 JUNE 2024'. The cutter is drawn generic (its name is not reported).",
+   "sources": [
+    "nca_charge",
+    "nca_sent",
+    "occrp",
+    "ypost"
+   ]
+  },
+  {
+   "id": "K_swim",
+   "type": "established",
+   "nature": "fact",
+   "text": "His crewmate jumped overboard and swam towards the shore. Narration: 'His crewmate jumped.' Not named.",
+   "sources": [
+    "nca_sent",
+    "itv",
+    "pa",
+    "lbc",
+    "dutch"
+   ]
+  },
+  {
+   "id": "K_flee",
+   "type": "established",
+   "nature": "fact",
+   "text": "Knowles restarted the engines and attempted to flee. Narration (the gotcha): 'Then he restarted the engines. And fled.'",
+   "sources": [
+    "nca_sent",
+    "pa",
+    "occrp",
+    "eadt"
+   ]
+  },
+  {
+   "id": "K_aground",
+   "type": "established",
+   "nature": "fact",
+   "text": "After a pursuit, the boat ran aground / was grounded on the beach. Narration: 'He ran the boat up onto a beach.'",
+   "sources": [
+    "nca_sent",
+    "itv",
+    "pa",
+    "dereham"
+   ]
+  },
+  {
+   "id": "K_jump",
+   "type": "established",
+   "nature": "fact",
+   "text": "As officers moved in to arrest him, Knowles jumped overboard (went into the water) and was caught. Narration: 'Then he jumped into the sea.'",
+   "sources": [
+    "nca_sent",
+    "itv",
+    "occrp",
+    "dereham"
+   ]
+  },
+  {
+   "id": "K_person",
+   "type": "established",
+   "nature": "fact",
+   "text": "He is Bruce Knowles, 55 at the time (56 at sentencing), of Dereham, Norfolk; he pleaded guilty and is named by the NCA and widely in the press. Named ON A LABEL ONLY: 'BRUCE KNOWLES, 55 · DEREHAM', sub 'Pleaded guilty · silhouette, not a likeness'. Drawn only as a silhouette.",
+   "sources": [
+    "eadt",
+    "dereham",
+    "occrp",
+    "pa",
+    "itv"
+   ]
+  },
+  {
+   "id": "K_tarp",
+   "type": "established",
+   "nature": "fact",
+   "text": "The boat was towed to Lowestoft, where the cocaine was found hidden under a tarpaulin in the hull. Narration: 'At the harbour, officers pulled back the tarp.' (the tarpaulin's colour is not reported: drawn a generic orange).",
+   "sources": [
+    "nca_sent",
+    "itv",
+    "suffolknews"
+   ]
+  },
+  {
+   "id": "K_lowestoft",
+   "type": "established",
+   "nature": "fact",
+   "text": "Lowestoft harbour (where the RHIB was towed). Label 'LOWESTOFT · JUNE 2024'.",
+   "sources": [
+    "nca_sent",
+    "itv",
+    "suffolknews"
+   ]
+  },
+  {
+   "id": "K_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "He pleaded guilty at Ipswich Crown Court (August 2024) to being concerned in the fraudulent evasion of a prohibition on importing Class A drugs. Narration: 'He pleaded guilty.' Label 'IPSWICH CROWN COURT', sub 'Pleaded guilty · Aug 2024'.",
+   "sources": [
+    "dereham",
+    "nca_sent",
+    "occrp",
+    "gym"
+   ]
+  },
+  {
+   "id": "K_years",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 17 YEARS, label 'AND 3 MONTHS'): he was jailed for 17 years and 3 months at Ipswich Crown Court in May 2025. Narration: '17 years and 3 months.'",
+   "sources": [
+    "nca_sent",
+    "itv",
+    "pa",
+    "dereham"
+   ]
+  },
+  {
+   "id": "K_caught",
+   "type": "established",
+   "nature": "fact",
+   "text": "The crewmate who swam was arrested later that same day by Norfolk and Suffolk police (one report: about eight hours later). Narration: 'Police caught the swimmer that same day.' The town (Wrentham or Beccles: reports differ) is not used.",
+   "sources": [
+    "nca_sent",
+    "dereham",
+    "dutch"
+   ]
+  },
+  {
+   "id": "K_france",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT (attributed): investigators believe the pair went towards French waters to collect the drugs from a larger ship before heading back to the UK. Card 'INVESTIGATORS BELIEVE / THEY MET A BIGGER SHIP / OFF FRANCE'.",
+   "sources": [
+    "nca_sent",
+    "occrp",
+    "eadt"
+   ]
+  },
+  {
+   "id": "K_fifteen",
+   "type": "established",
+   "nature": "fact",
+   "text": "The crewmate was jailed for 15 years (Ipswich Crown Court, May 2025). Narration (callback): 'The swimmer got fifteen years.'",
+   "sources": [
+    "nca_sent",
+    "itv",
+    "pa",
+    "dereham"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "nca_sent",
+   "publisher": "National Crime Agency (release, carried by Wired-Gov)",
+   "title": "Men who swam away from boat containing £39 million of cocaine sentenced",
+   "url": "https://www.wired-gov.net/wg/news.nsf/articles/Men+who+swam+away+from+boat+containing+39+million+of+cocaine+sentenced+19052025161500",
+   "date": "2025-05-19",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "nca_charge",
+   "publisher": "National Crime Agency (release, carried by Wired-Gov)",
+   "title": "Two charged after boat interdiction uncovers 350 kilos of cocaine",
+   "url": "https://wired-gov.net/wg/news.nsf/articles/Two+charged+after+boat+interdiction+uncovers+350+kilos+of+cocaine+27062024111000",
+   "date": "2024-06-27",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "itv",
+   "publisher": "ITV News Anglia",
+   "title": "Cocaine smugglers who leapt overboard are jailed after £39m drugs bust off Suffolk coast",
+   "url": "https://www.itv.com/news/anglia/2025-05-19/cocaine-smugglers-who-leapt-overboard-in-drugs-bust-are-jailed",
+   "date": "2025-05-19",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "pa",
+   "publisher": "PA Media (via AOL / The Independent)",
+   "title": "Drug smugglers caught with £37m of cocaine in inflatable boat are jailed",
+   "url": "https://www.aol.com/drug-smugglers-caught-37m-cocaine-160250856.html",
+   "date": "2025-05",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "eadt",
+   "publisher": "East Anglian Daily Times",
+   "title": "Men sentenced after smuggling £39m drugs off Suffolk coast",
+   "url": "https://www.eadt.co.uk/news/25169974.men-sentenced-smuggling-39m-drugs-off-suffolk-coast/",
+   "date": "2025-05",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "dereham",
+   "publisher": "Dereham Times (same group as the EADT)",
+   "title": "Dereham man jailed after cocaine chase on North Sea",
+   "url": "https://www.derehamtimes.co.uk/news/25169930.dereham-man-jailed-cocaine-chase-north-sea/",
+   "date": "2025-05",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "gym",
+   "publisher": "Great Yarmouth Mercury (same group as the EADT)",
+   "title": "Drug smugglers plead guilty, Lowestoft, Suffolk",
+   "url": "https://www.greatyarmouthmercury.co.uk/news/crime/drug-smugglers-plead-guilty-lowestoft-suffolk-6395820",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "occrp",
+   "publisher": "OCCRP",
+   "title": "Men Behind $51M Cocaine Haul Convicted After Failed Escape",
+   "url": "https://www.occrp.org/en/news/men-behind-51m-cocaine-haul-convicted-after-failed-escape",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "suffolknews",
+   "publisher": "Suffolk News",
+   "title": "Bruce Knowles and Ferhat Gumrukguoglu convicted of drug smuggling after £39m in cocaine seized near Lowestoft",
+   "url": "https://www.suffolknews.co.uk/lowestoft/drug-smuggling-duo-who-tried-to-swim-away-from-boat-containi-9379765/",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "ypost",
+   "publisher": "Yorkshire Post (NationalWorld video)",
+   "title": "Moment drug smugglers leap from boat into sea as they're caught with £39m of cocaine",
+   "url": "https://www.yorkshirepost.co.uk/watch-this/drug-smugglers-leap-boat-cocaine-haul-video-4750885",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "lbc",
+   "publisher": "LBC",
+   "title": "Moment drug runners trying to smuggle 350 kilos of cocaine into UK jump into sea to escape police",
+   "url": "https://www.lbc.co.uk/article/drug-smugglers-jump-into-sea-5Hjcpqg_2/",
+   "date": "2024-08",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "dutch",
+   "publisher": "DutchNews.nl",
+   "title": "Dutch drugs smuggler tries to evade police by swimming to shore",
+   "url": "https://dutchnews.nl/2024/06/dutch-drugs-smuggler-tries-to-evade-police-by-swimming-to-shore",
+   "date": "2024-06",
+   "accessed": "search-result extract only, 2026-10-30"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "quality": "final",
+ "engagement_rules": true,
+ "engagement_version": 11,
+ "lane": "smuggling",
+ "search_terms": [
+  "tarp",
+  "cocaine boat",
+  "border force chase"
+ ],
+ "palette": {
+  "shadow": "#0f1820",
+  "mid": "#a9b0b2",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "THE TARP"
+   },
+   {
+    "text": "350 KG UNDER IT",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 240
+ },
+ "progress": {
+  "label": "FILE 109 ·",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "THE BOAT"
+   },
+   {
+    "t": 5.54,
+    "v": "THE CHASE"
+   },
+   {
+    "t": 20.92,
+    "v": "THE SENTENCE"
+   }
+  ],
+  "y": 350,
+  "fs": 44,
+  "until": 27.6
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "THROTTLE OR SWIM FOR IT? 👇",
+    "colour": "#e8a33a",
+    "fs": 56
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D HIT THE THROTTLE",
+    "fs": 32
+   },
+   {
+    "text": "NEXT FILE: THE RUNNER",
+    "fs": 38,
+    "colour": "#e8a33a"
+   }
+  ],
+  "from": 2.19,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-30"
+}

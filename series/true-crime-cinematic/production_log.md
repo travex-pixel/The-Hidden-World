@@ -1,0 +1,596 @@
+# Production log (appended by produce.py)
+
+- 2026-10-11 07:18:46 produce 2: regenerating episode data
+- 2026-10-11 07:18:47 tcv02-unabomber: render cached (inputs unchanged), skipping to QA
+- 2026-10-11 07:19:40 tcv02-unabomber: QA FAILED ['shot_variety_and_character_action']; frames and details in series/true-crime-cinematic/qa/true_crime_02
+- 2026-10-11 07:19:40 produce 1: regenerating episode data
+- 2026-10-11 07:19:40 tcv01-chamberlain: rendering (final, seed 1)
+- 2026-10-11 07:31:45 tcv01-chamberlain: rendered in 725s
+- 2026-10-11 07:32:37 tcv01-chamberlain: VERIFIED -> series/true-crime-cinematic/output/true_crime_01.mp4 (84.3s, 31.0 MB, sha256 b823523e617e)
+- 2026-10-11 07:32:43 produce 2: regenerating episode data
+- 2026-10-11 07:32:43 tcv02-unabomber: rendering (final, seed 1)
+- 2026-10-11 07:45:12 tcv02-unabomber: rendered in 749s
+- 2026-10-11 07:46:04 tcv02-unabomber: VERIFIED -> series/true-crime-cinematic/output/true_crime_02.mp4 (87.6s, 31.0 MB, sha256 ef93242c461a)
+- 2026-10-11 08:49:25 produce 3: regenerating episode data
+- 2026-10-11 08:49:26 tcv03-d4vd-case: rendering (final, seed 1)
+- 2026-10-11 09:08:29 tcv03-d4vd-case: rendered in 1143s
+- 2026-10-11 09:09:25 tcv03-d4vd-case: VERIFIED -> series/true-crime-cinematic/output/true_crime_d4vd_case.mp4 (79.1s, 33.8 MB, sha256 a2a132d36244)
+- 2026-10-11 09:12:23 produce 3: regenerating episode data
+- 2026-10-11 09:12:23 tcv03-d4vd-case: rendering (final, seed 1)
+- 2026-10-11 09:31:28 tcv03-d4vd-case: rendered in 1144s
+- 2026-10-11 09:32:24 tcv03-d4vd-case: VERIFIED -> series/true-crime-cinematic/output/true_crime_d4vd_case.mp4 (79.1s, 34.0 MB, sha256 65eec5eee0fe)
+- 2026-10-11 11:07:31 produce 8: regenerating episode data
+- 2026-10-11 11:07:32 tcv08-lizzie-borden: rendering (final, seed 1)
+- 2026-10-11 11:08:57 produce 7: regenerating episode data
+- 2026-10-11 11:08:57 tcv07-gilgo-beach: rendering (final, seed 1)
+- 2026-10-11 11:25:50 tcv08-lizzie-borden: rendered in 1099s
+- 2026-10-11 11:27:05 tcv08-lizzie-borden: VERIFIED -> series/true-crime-cinematic/output/true_crime_08_lizzie_borden.mp4 (79.7s, 35.0 MB, sha256 0ef027a14049)
+- 2026-10-11 11:27:12 produce 6: regenerating episode data
+- 2026-10-11 11:27:12 tcv06-whitey-bulger: rendering (final, seed 1)
+- 2026-10-11 11:29:20 tcv07-gilgo-beach: rendered in 1223s
+- 2026-10-11 11:30:58 tcv07-gilgo-beach: VERIFIED -> series/true-crime-cinematic/output/true_crime_07_gilgo_beach.mp4 (77.7s, 32.8 MB, sha256 a16f4723252c)
+- 2026-10-11 11:31:02 produce 9: regenerating episode data
+- 2026-10-11 11:31:02 tcv09-agatha-christie: rendering (final, seed 1)
+- 2026-10-11 11:44:30 tcv06-whitey-bulger: rendered in 1038s
+- 2026-10-11 11:45:44 tcv06-whitey-bulger: VERIFIED -> series/true-crime-cinematic/output/true_crime_06_whitey_bulger.mp4 (77.9s, 29.4 MB, sha256 1fc55be1b0be)
+- 2026-10-11 11:45:51 produce 5: regenerating episode data
+- 2026-10-11 11:45:51 tcv05-db-cooper: rendering (final, seed 1)
+- 2026-10-11 11:48:16 tcv09-agatha-christie: rendered in 1033s
+- 2026-10-11 11:49:26 tcv09-agatha-christie: VERIFIED -> series/true-crime-cinematic/output/true_crime_09_agatha_christie.mp4 (78.2s, 30.9 MB, sha256 265141f63629)
+- 2026-10-11 11:49:31 produce 4: regenerating episode data
+- 2026-10-11 11:49:31 tcv04-louvre-heist: rendering (final, seed 1)
+- 2026-10-11 12:01:07 tcv05-db-cooper: rendered in 916s
+- 2026-10-11 12:02:18 tcv05-db-cooper: VERIFIED -> series/true-crime-cinematic/output/true_crime_05_db_cooper.mp4 (79.9s, 35.2 MB, sha256 62b67b956372)
+- 2026-10-11 12:03:40 produce 5: regenerating episode data
+- 2026-10-11 12:03:40 tcv05-db-cooper: rendering (final, seed 1)
+- 2026-10-11 12:04:00 tcv04-louvre-heist: RENDER FAILED, see out/tcv04-louvre-heist/ and fix; re-run produce.py 4
+- 2026-10-11 12:05:35 produce 4: regenerating episode data
+- 2026-10-11 12:05:35 tcv04-louvre-heist: rendering (final, seed 1)
+- 2026-10-11 12:18:36 tcv05-db-cooper: rendered in 896s
+- 2026-10-11 12:19:48 tcv05-db-cooper: VERIFIED -> series/true-crime-cinematic/output/true_crime_05_db_cooper.mp4 (79.1s, 34.7 MB, sha256 52aab85d5a38)
+- 2026-10-11 12:28:03 tcv04-louvre-heist: rendered in 1348s
+- 2026-10-11 12:28:57 tcv04-louvre-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_04_louvre_heist.mp4 (79.5s, 34.9 MB, sha256 c2b6d900c8b5)
+- 2026-10-11 12:29:56 produce 4: regenerating episode data
+- 2026-10-11 12:29:56 tcv04-louvre-heist: rendering (final, seed 1)
+- 2026-10-11 12:51:28 tcv04-louvre-heist: rendered in 1292s
+- 2026-10-11 12:52:23 tcv04-louvre-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_04_louvre_heist.mp4 (79.5s, 34.9 MB, sha256 9713b40e173f)
+- 2026-10-11 15:06:09 produce 14: regenerating episode data
+- 2026-10-11 15:06:09 tcv14-litvinenko: rendering (final, seed 1)
+- 2026-10-11 15:12:25 produce 13: regenerating episode data
+- 2026-10-11 15:12:25 tcv13-hatton-garden: rendering (final, seed 1)
+- 2026-10-11 15:29:13 tcv13-hatton-garden: rendered in 1008s
+- 2026-10-11 15:30:23 tcv13-hatton-garden: QA FAILED ['audio_no_clipping']; frames and details in series/true-crime-cinematic/qa/true_crime_13
+- 2026-10-11 15:30:36 produce 10: regenerating episode data
+- 2026-10-11 15:30:37 tcv10-golden-state-killer: rendering (final, seed 1)
+- 2026-10-11 15:32:42 produce 13: regenerating episode data
+- 2026-10-11 15:32:42 tcv13-hatton-garden: render cached (inputs unchanged), skipping to QA
+- 2026-10-11 15:33:26 tcv14-litvinenko: rendered in 1637s
+- 2026-10-11 15:34:25 tcv13-hatton-garden: VERIFIED -> series/true-crime-cinematic/output/true_crime_13_hatton_garden.mp4 (76.9s, 33.9 MB, sha256 ce4675444e92)
+- 2026-10-11 15:35:01 tcv14-litvinenko: VERIFIED -> series/true-crime-cinematic/output/true_crime_14_litvinenko.mp4 (78.6s, 31.6 MB, sha256 8031dc9adcb8)
+- 2026-10-11 15:35:10 produce 12: regenerating episode data
+- 2026-10-11 15:35:10 tcv12-son-of-sam: rendering (final, seed 1)
+- 2026-10-11 15:48:09 tcv10-golden-state-killer: rendered in 1053s
+- 2026-10-11 15:49:17 tcv10-golden-state-killer: VERIFIED -> series/true-crime-cinematic/output/true_crime_10_golden_state_killer.mp4 (76.6s, 29.8 MB, sha256 94520e382efa)
+- 2026-10-11 15:49:28 produce 14: regenerating episode data
+- 2026-10-11 15:49:28 tcv14-litvinenko: rendering (final, seed 1)
+- 2026-10-11 15:52:12 tcv12-son-of-sam: rendered in 1022s
+- 2026-10-11 15:53:19 tcv12-son-of-sam: VERIFIED -> series/true-crime-cinematic/output/true_crime_12_son_of_sam.mp4 (75.8s, 31.5 MB, sha256 ef1ca847cc5c)
+- 2026-10-11 15:53:37 produce 11: regenerating episode data
+- 2026-10-11 15:53:37 tcv11-great-train-robbery: rendering (final, seed 1)
+- 2026-10-11 16:09:44 tcv11-great-train-robbery: rendered in 967s
+- 2026-10-11 16:10:54 tcv11-great-train-robbery: QA FAILED ['audio_music_never_masks']; frames and details in series/true-crime-cinematic/qa/true_crime_11
+- 2026-10-11 16:13:29 produce 11: regenerating episode data
+- 2026-10-11 16:13:29 tcv11-great-train-robbery: render cached (inputs unchanged), skipping to QA
+- 2026-10-11 16:14:39 tcv11-great-train-robbery: VERIFIED -> series/true-crime-cinematic/output/true_crime_11_great_train_robbery.mp4 (74.6s, 31.0 MB, sha256 d840392743e3)
+- 2026-10-11 16:15:45 tcv14-litvinenko: rendered in 1577s
+- 2026-10-11 16:16:40 tcv14-litvinenko: VERIFIED -> series/true-crime-cinematic/output/true_crime_14_litvinenko.mp4 (78.6s, 31.6 MB, sha256 1f4243418239)
+- 2026-10-12 01:40:20 produce 16: regenerating episode data
+- 2026-10-12 01:40:20 tcv16-boston-strangler: rendering (final, seed 1)
+- 2026-10-12 01:45:26 produce 15: regenerating episode data
+- 2026-10-12 01:45:26 tcv15-grim-sleeper: rendering (final, seed 1)
+- 2026-10-12 01:56:48 tcv16-boston-strangler: rendered in 988s
+- 2026-10-12 01:58:02 tcv16-boston-strangler: VERIFIED -> series/true-crime-cinematic/output/true_crime_16_boston_strangler.mp4 (79.7s, 33.1 MB, sha256 f26f6a42120d)
+- 2026-10-12 01:58:13 produce 17: regenerating episode data
+- 2026-10-12 01:58:13 tcv17-kohberger: rendering (final, seed 1)
+- 2026-10-12 02:04:28 tcv15-grim-sleeper: rendered in 1143s
+- 2026-10-12 02:05:37 tcv15-grim-sleeper: QA FAILED ['audio_av_duration_match']; frames and details in series/true-crime-cinematic/qa/true_crime_15
+- 2026-10-12 02:07:05 produce 15: regenerating episode data
+- 2026-10-12 02:07:05 tcv15-grim-sleeper: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 02:08:16 tcv15-grim-sleeper: VERIFIED -> series/true-crime-cinematic/output/true_crime_15_grim_sleeper.mp4 (78.5s, 33.9 MB, sha256 3391dda51769)
+- 2026-10-12 02:16:57 tcv17-kohberger: rendered in 1124s
+- 2026-10-12 02:17:49 tcv17-kohberger: VERIFIED -> series/true-crime-cinematic/output/true_crime_17_kohberger.mp4 (80.2s, 30.3 MB, sha256 edeccc9da786)
+- 2026-10-12 03:02:42 produce 20: regenerating episode data
+- 2026-10-12 03:02:42 tcv20-boston-strangler-40: rendering (final, seed 1)
+- 2026-10-12 03:03:44 produce 21: regenerating episode data
+- 2026-10-12 03:03:44 tcv21-kohberger-40: rendering (final, seed 1)
+- 2026-10-12 03:14:06 tcv20-boston-strangler-40: rendered in 684s
+- 2026-10-12 03:14:48 tcv20-boston-strangler-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_20_boston_strangler_40s.mp4 (43.4s, 18.8 MB, sha256 c3d085585758)
+- 2026-10-12 03:14:48 produce 19: regenerating episode data
+- 2026-10-12 03:14:48 tcv19-grim-sleeper-40: rendering (final, seed 1)
+- 2026-10-12 03:15:09 tcv21-kohberger-40: rendered in 684s
+- 2026-10-12 03:15:48 tcv21-kohberger-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_21_kohberger_40s.mp4 (43.9s, 16.8 MB, sha256 db9890c006e4)
+- 2026-10-12 03:15:57 produce 18: regenerating episode data
+- 2026-10-12 03:15:57 tcv18-gilgo-40: rendering (final, seed 1)
+- 2026-10-12 03:26:08 tcv19-grim-sleeper-40: rendered in 680s
+- 2026-10-12 03:26:44 tcv19-grim-sleeper-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_19_grim_sleeper_40s.mp4 (43.1s, 19.7 MB, sha256 e3c223e64626)
+- 2026-10-12 03:26:46 produce 22: regenerating episode data
+- 2026-10-12 03:26:46 tcv22-mcveigh-40: rendering (final, seed 1)
+- 2026-10-12 03:29:01 tcv18-gilgo-40: rendered in 784s
+- 2026-10-12 03:29:37 tcv18-gilgo-40: QA FAILED ['narration_intelligible_asr']; frames and details in series/true-crime-cinematic/qa/true_crime_18
+- 2026-10-12 03:30:28 produce 18: regenerating episode data
+- 2026-10-12 03:30:28 tcv18-gilgo-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 03:31:07 tcv18-gilgo-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_18_gilgo_40s.mp4 (43.5s, 18.6 MB, sha256 f68fa1b7d943)
+- 2026-10-12 03:34:25 tcv22-mcveigh-40: rendered in 459s
+- 2026-10-12 03:34:56 tcv22-mcveigh-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_22_mcveigh_40s.mp4 (44.6s, 21.4 MB, sha256 1b116a009205)
+- 2026-10-12 05:39:07 produce 23: regenerating episode data
+- 2026-10-12 05:39:07 tcv23-hushpuppi-40: rendering (final, seed 1)
+- 2026-10-12 05:48:39 tcv23-hushpuppi-40: rendered in 572s
+- 2026-10-12 05:49:14 tcv23-hushpuppi-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_23_hushpuppi_40s.mp4 (42.4s, 17.0 MB, sha256 64dbcb37fa02)
+- 2026-10-12 06:40:01 produce 24: regenerating episode data
+- 2026-10-12 06:40:01 tcv24-jho-low-40: rendering (final, seed 1)
+- 2026-10-12 06:49:24 tcv24-jho-low-40: rendered in 563s
+- 2026-10-12 06:49:59 tcv24-jho-low-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_24_jho_low_40s.mp4 (45.0s, 18.4 MB, sha256 b4882c99b53a)
+- 2026-10-12 07:54:02 produce 25: regenerating episode data
+- 2026-10-12 07:54:02 tcv25-capone-40: rendering (final, seed 1)
+- 2026-10-12 08:04:30 tcv25-capone-40: rendered in 628s
+- 2026-10-12 08:05:05 tcv25-capone-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_25_capone_40s.mp4 (44.6s, 20.7 MB, sha256 e4307ff85493)
+- 2026-10-12 08:06:47 produce 25: regenerating episode data
+- 2026-10-12 08:06:47 tcv25-capone-40: rendering (final, seed 1)
+- 2026-10-12 08:17:18 tcv25-capone-40: rendered in 631s
+- 2026-10-12 08:17:56 tcv25-capone-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_25_capone_40s.mp4 (45.8s, 21.4 MB, sha256 83a230b79f14)
+- 2026-10-12 08:49:02 produce 27: regenerating episode data
+- 2026-10-12 08:49:02 tcv27-madoff-40: rendering (final, seed 1)
+- 2026-10-12 08:58:30 tcv27-madoff-40: rendered in 568s
+- 2026-10-12 08:59:04 tcv27-madoff-40: QA FAILED ['audio_opening_no_holes']; frames and details in series/true-crime-cinematic/qa/true_crime_27
+- 2026-10-12 08:59:04 produce 26: regenerating episode data
+- 2026-10-12 08:59:04 tcv26-el-chapo-40: rendering (final, seed 1)
+- 2026-10-12 09:00:16 produce 27: regenerating episode data
+- 2026-10-12 09:00:16 tcv27-madoff-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 09:00:58 tcv27-madoff-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_27_madoff_40s.mp4 (43.5s, 18.7 MB, sha256 a433704f4049)
+- 2026-10-12 09:09:43 tcv26-el-chapo-40: rendered in 639s
+- 2026-10-12 09:10:13 tcv26-el-chapo-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_26_el_chapo_40s.mp4 (40.5s, 16.8 MB, sha256 0e427331857b)
+- 2026-10-12 09:10:13 produce 28: regenerating episode data
+- 2026-10-12 09:10:13 tcv28-bundy-40: rendering (final, seed 1)
+- 2026-10-12 09:19:13 tcv28-bundy-40: rendered in 540s
+- 2026-10-12 09:19:50 tcv28-bundy-40: QA FAILED ['audio_opening_no_holes']; frames and details in series/true-crime-cinematic/qa/true_crime_28
+- 2026-10-12 09:20:38 produce 28: regenerating episode data
+- 2026-10-12 09:20:38 tcv28-bundy-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 09:21:14 tcv28-bundy-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_28_bundy_40s.mp4 (43.8s, 20.9 MB, sha256 b97cc8ac9d13)
+- 2026-10-12 11:20:23 produce 29: regenerating episode data
+- 2026-10-12 11:20:23 tcv29-rudolph-40: rendering (final, seed 1)
+- 2026-10-12 11:29:43 tcv29-rudolph-40: rendered in 560s
+- 2026-10-12 11:30:16 tcv29-rudolph-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_29_rudolph_40s.mp4 (44.3s, 20.2 MB, sha256 38b79345ba1d)
+- 2026-10-12 21:11:01 produce 30: regenerating episode data
+- 2026-10-12 21:11:01 tcv30-boat-40: rendering (final, seed 1)
+- 2026-10-12 21:18:13 tcv30-boat-40: rendered in 432s
+- 2026-10-12 21:18:46 tcv30-boat-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_30_boat_40s.mp4 (45.4s, 19.6 MB, sha256 9e4075a4a335)
+- 2026-10-12 21:19:57 produce 30: regenerating episode data
+- 2026-10-12 21:19:57 tcv30-boat-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-12 21:20:29 tcv30-boat-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_30_boat_40s.mp4 (45.4s, 19.6 MB, sha256 888236d3c08b)
+- 2026-10-12 21:20:54 produce 30 --force: regenerating episode data
+- 2026-10-12 21:20:54 tcv30-boat-40: rendering (final, seed 1)
+- 2026-10-12 21:27:47 tcv30-boat-40: rendered in 414s
+- 2026-10-12 21:28:17 tcv30-boat-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_30_boat_40s.mp4 (45.8s, 19.6 MB, sha256 5e40956b1874)
+- 2026-10-13 01:46:46 produce 35: regenerating episode data
+- 2026-10-13 01:46:46 tcv35-escobar-40: rendering (final, seed 1)
+- 2026-10-13 01:56:44 tcv35-escobar-40: rendered in 598s
+- 2026-10-13 01:57:17 tcv35-escobar-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_35_escobar_40s.mp4 (45.0s, 20.0 MB, sha256 8d5a5856896c)
+- 2026-10-13 01:57:18 produce 32: regenerating episode data
+- 2026-10-13 01:57:18 tcv32-silkroad-40: rendering (final, seed 1)
+- 2026-10-13 02:08:21 tcv32-silkroad-40: rendered in 663s
+- 2026-10-13 02:08:57 tcv32-silkroad-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_32_silkroad_40s.mp4 (44.6s, 18.3 MB, sha256 7e90e0c77806)
+- 2026-10-13 02:08:57 produce 34: regenerating episode data
+- 2026-10-13 02:08:57 tcv34-durst-40: rendering (final, seed 1)
+- 2026-10-13 02:18:51 tcv34-durst-40: rendered in 594s
+- 2026-10-13 02:19:24 tcv34-durst-40: QA FAILED ['audio_music_never_masks']; frames and details in series/true-crime-cinematic/qa/true_crime_34
+- 2026-10-13 02:19:24 produce 31: regenerating episode data
+- 2026-10-13 02:19:24 tcv31-sniper-40: rendering (final, seed 1)
+- 2026-10-13 02:20:22 produce 34: regenerating episode data
+- 2026-10-13 02:20:22 tcv34-durst-40: render cached (inputs unchanged), skipping to QA
+- 2026-10-13 02:21:07 tcv34-durst-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_34_durst_40s.mp4 (45.8s, 17.3 MB, sha256 a954788932e9)
+- 2026-10-13 02:27:58 tcv31-sniper-40: rendered in 514s
+- 2026-10-13 02:28:32 tcv31-sniper-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_31_sniper_40s.mp4 (44.3s, 17.9 MB, sha256 652c594ed38c)
+- 2026-10-13 02:28:32 produce 33: regenerating episode data
+- 2026-10-13 02:28:32 tcv33-timessquare-40: rendering (final, seed 1)
+- 2026-10-13 02:37:44 tcv33-timessquare-40: rendered in 552s
+- 2026-10-13 02:38:18 tcv33-timessquare-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_33_timessquare_40s.mp4 (45.0s, 20.0 MB, sha256 c8c77f756409)
+- 2026-10-13 02:38:18 produce 35 --force: regenerating episode data
+- 2026-10-13 02:38:18 tcv35-escobar-40: rendering (final, seed 1)
+- 2026-10-13 02:48:18 tcv35-escobar-40: rendered in 600s
+- 2026-10-13 02:48:58 tcv35-escobar-40: VERIFIED -> series/true-crime-cinematic/output/true_crime_35_escobar_40s.mp4 (45.4s, 20.0 MB, sha256 70e21fa78584)
+- 2026-10-13 21:15:02 produce 36: regenerating episode data
+- 2026-10-13 21:15:02 tcv36-yen-heist: rendering (final60, seed 1)
+- 2026-10-13 21:54:47 tcv36-yen-heist: rendered in 2386s
+- 2026-10-13 21:55:52 tcv36-yen-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_36_yen_heist.mp4 (52.0s, 45.1 MB, sha256 470a7da1dc47)
+- 2026-10-13 21:56:03 produce 38: regenerating episode data
+- 2026-10-13 21:56:03 tcv38-scam-city: rendering (final60, seed 1)
+- 2026-10-13 22:26:10 tcv38-scam-city: rendered in 1807s
+- 2026-10-13 22:27:14 tcv38-scam-city: VERIFIED -> series/true-crime-cinematic/output/true_crime_38_scam_city.mp4 (51.8s, 43.7 MB, sha256 80a3fac76b6b)
+- 2026-10-13 22:27:14 produce 36 --force: regenerating episode data
+- 2026-10-13 22:27:14 tcv36-yen-heist: rendering (final60, seed 1)
+- 2026-10-14 01:03:29 produce 41: regenerating episode data
+- 2026-10-14 01:03:29 tcv41-red-mansion: rendering (final60, seed 1)
+- 2026-10-14 01:39:06 tcv41-red-mansion: rendered in 2136s
+- 2026-10-14 01:40:13 tcv41-red-mansion: VERIFIED -> series/true-crime-cinematic/output/true_crime_41_red_mansion.mp4 (51.8s, 40.1 MB, sha256 c0bc0db78862)
+- 2026-10-14 01:40:13 produce 40: regenerating episode data
+- 2026-10-14 01:40:13 tcv40-aum-hideout: rendering (final60, seed 1)
+- 2026-10-14 02:14:30 tcv40-aum-hideout: rendered in 2056s
+- 2026-10-14 02:15:34 tcv40-aum-hideout: VERIFIED -> series/true-crime-cinematic/output/true_crime_40_aum_hideout.mp4 (51.5s, 39.7 MB, sha256 28f53eb3e64a)
+- 2026-10-14 02:15:34 produce 37: regenerating episode data
+- 2026-10-14 02:15:34 tcv37-png-plane: rendering (final60, seed 1)
+- 2026-10-14 02:48:55 tcv37-png-plane: rendered in 2002s
+- 2026-10-14 02:49:56 tcv37-png-plane: VERIFIED -> series/true-crime-cinematic/output/true_crime_37_png_plane.mp4 (49.5s, 40.1 MB, sha256 6081b03f8dcd)
+- 2026-10-14 02:49:56 produce 39: regenerating episode data
+- 2026-10-14 02:49:56 tcv39-baiyin: rendering (final60, seed 1)
+- 2026-10-14 03:25:33 tcv39-baiyin: rendered in 2137s
+- 2026-10-14 03:26:39 tcv39-baiyin: VERIFIED -> series/true-crime-cinematic/output/true_crime_39_baiyin.mp4 (52.1s, 42.9 MB, sha256 69e8037ecb24)
+- 2026-10-14 03:26:39 produce 36 --force: regenerating episode data
+- 2026-10-14 03:26:39 tcv36-yen-heist: rendering (final60, seed 1)
+- 2026-10-14 04:04:30 tcv36-yen-heist: rendered in 2271s
+- 2026-10-14 04:05:37 tcv36-yen-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_36_yen_heist.mp4 (52.0s, 45.1 MB, sha256 409f7a024e5c)
+- 2026-10-14 04:05:37 produce 38 --force: regenerating episode data
+- 2026-10-14 04:05:37 tcv38-scam-city: rendering (final60, seed 1)
+- 2026-10-14 04:36:30 tcv38-scam-city: rendered in 1853s
+- 2026-10-14 04:37:37 tcv38-scam-city: VERIFIED -> series/true-crime-cinematic/output/true_crime_38_scam_city.mp4 (52.1s, 43.9 MB, sha256 e585439fd625)
+- 2026-10-14 04:37:51 produce 39 --force: regenerating episode data
+- 2026-10-14 04:37:52 tcv39-baiyin: rendering (final60, seed 1)
+- 2026-10-14 05:13:55 tcv39-baiyin: rendered in 2163s
+- 2026-10-14 05:15:05 tcv39-baiyin: VERIFIED -> series/true-crime-cinematic/output/true_crime_39_baiyin.mp4 (51.8s, 42.7 MB, sha256 f72bfe575dba)
+- 2026-10-14 14:10:10 produce 42 --force: regenerating episode data
+- 2026-10-14 14:10:10 tcv42-bali-van: rendering (final60, seed 1)
+- 2026-10-14 14:54:44 tcv42-bali-van: rendered in 2674s
+- 2026-10-14 14:55:47 tcv42-bali-van: VERIFIED -> series/true-crime-cinematic/output/true_crime_42_bali_van.mp4 (49.0s, 30.0 MB, sha256 d877e0c48f6f)
+- 2026-10-14 21:17:52 produce 43 --force: regenerating episode data
+- 2026-10-14 21:17:52 tcv43-dannemora-meat: rendering (final60, seed 1)
+- 2026-10-14 22:06:52 tcv43-dannemora-meat: rendered in 2940s
+- 2026-10-14 22:07:42 tcv43-dannemora-meat: VERIFIED -> series/true-crime-cinematic/output/true_crime_43_dannemora_meat.mp4 (39.2s, 24.4 MB, sha256 ca1b10a46c93)
+- 2026-10-15 02:44:54 produce 44 --force: regenerating episode data
+- 2026-10-15 02:44:54 tcv44-oldest-robber: rendering (final60, seed 1)
+- 2026-10-15 03:14:52 tcv44-oldest-robber: rendered in 1798s
+- 2026-10-15 03:15:36 tcv44-oldest-robber: VERIFIED -> series/true-crime-cinematic/output/true_crime_44_oldest_robber.mp4 (40.8s, 21.8 MB, sha256 dea2cfe002ef)
+- 2026-10-15 05:22:36 produce 46 --force: regenerating episode data
+- 2026-10-15 05:22:36 tcv46-gentleman-robber: rendering (final60, seed 1)
+- 2026-10-15 05:57:49 tcv46-gentleman-robber: rendered in 2112s
+- 2026-10-15 05:58:42 tcv46-gentleman-robber: VERIFIED -> series/true-crime-cinematic/output/true_crime_46_gentleman_robber.mp4 (41.5s, 22.0 MB, sha256 e8a766d8b4e6)
+- 2026-10-15 05:58:42 produce 45 --force: regenerating episode data
+- 2026-10-15 05:58:42 tcv45-cartel-grandad: rendering (final60, seed 1)
+- 2026-10-15 06:40:12 tcv45-cartel-grandad: rendered in 2490s
+- 2026-10-15 06:41:00 tcv45-cartel-grandad: VERIFIED -> series/true-crime-cinematic/output/true_crime_45_cartel_grandad.mp4 (39.9s, 21.8 MB, sha256 a97f430e8f2a)
+- 2026-10-15 06:41:00 produce 47 --force: regenerating episode data
+- 2026-10-15 06:41:00 tcv47-barefoot-bandit: rendering (final60, seed 1)
+- 2026-10-15 07:21:55 tcv47-barefoot-bandit: rendered in 2454s
+- 2026-10-15 07:22:49 tcv47-barefoot-bandit: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_47
+- 2026-10-15 07:23:54 produce 47 --force: regenerating episode data
+- 2026-10-15 07:23:54 tcv47-barefoot-bandit: rendering (final60, seed 1)
+- 2026-10-15 08:05:40 tcv47-barefoot-bandit: rendered in 2506s
+- 2026-10-15 08:06:32 tcv47-barefoot-bandit: VERIFIED -> series/true-crime-cinematic/output/true_crime_47_barefoot_bandit.mp4 (41.6s, 22.1 MB, sha256 5159bba7e795)
+- 2026-10-15 09:34:09 produce 50 --force: regenerating episode data
+- 2026-10-15 09:34:09 tcv50-lottery-coder: rendering (final60, seed 1)
+- 2026-10-15 10:16:57 tcv50-lottery-coder: rendered in 2568s
+- 2026-10-15 10:17:45 tcv50-lottery-coder: VERIFIED -> series/true-crime-cinematic/output/true_crime_50_lottery_coder.mp4 (39.6s, 19.7 MB, sha256 016325a03ef9)
+- 2026-10-15 10:17:45 produce 48 --force: regenerating episode data
+- 2026-10-15 10:17:45 tcv48-monopoly-cop: rendering (final60, seed 1)
+- 2026-10-15 11:04:32 tcv48-monopoly-cop: rendered in 2807s
+- 2026-10-15 11:05:22 tcv48-monopoly-cop: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_48
+- 2026-10-15 11:05:22 produce 52 --force: regenerating episode data
+- 2026-10-15 11:05:22 tcv52-fake-invoices: rendering (final60, seed 1)
+- 2026-10-15 11:46:48 tcv52-fake-invoices: rendered in 2486s
+- 2026-10-15 11:47:32 tcv52-fake-invoices: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_52
+- 2026-10-15 11:47:32 produce 51 --force: regenerating episode data
+- 2026-10-15 11:47:32 tcv51-syrup-heist: rendering (final60, seed 1)
+- 2026-10-15 12:42:12 tcv51-syrup-heist: rendered in 3280s
+- 2026-10-15 12:43:05 tcv51-syrup-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_51_syrup_heist.mp4 (39.2s, 21.4 MB, sha256 6a6555a4a1cf)
+- 2026-10-15 12:43:05 produce 49 --force: regenerating episode data
+- 2026-10-15 12:43:05 tcv49-twitter-teen: rendering (final60, seed 1)
+- 2026-10-15 13:02:42 produce 48 --force: regenerating episode data
+- 2026-10-15 13:02:42 tcv48-monopoly-cop: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 14:00:25 tcv48-monopoly-cop: rendered in 3463s
+- 2026-10-15 14:01:20 tcv48-monopoly-cop: QA FAILED ['no_frozen_or_static_picture', 'engage_open_loop_every_10s', 'engage_ends_within_1s_of_last_word']; frames and details in series/true-crime-cinematic/qa/true_crime_48
+- 2026-10-15 14:01:20 produce 51 --force: regenerating episode data
+- 2026-10-15 14:01:20 tcv51-syrup-heist: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 20:47:14 produce 51 --force: regenerating episode data
+- 2026-10-15 20:47:15 tcv51-syrup-heist: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 21:43:08 tcv51-syrup-heist: rendered in 3354s
+- 2026-10-15 21:43:53 tcv51-syrup-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_51_syrup_heist.mp4 (46.5s, 24.3 MB, sha256 b74d1df72942)
+- 2026-10-15 21:43:53 produce 52 --force: regenerating episode data
+- 2026-10-15 21:43:53 tcv52-fake-invoices: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 21:43:53 tcv52-fake-invoices: RENDER FAILED, see out/tcv52-fake-invoices/ and fix; re-run produce.py 52
+- 2026-10-15 21:43:53 produce 49 --force: regenerating episode data
+- 2026-10-15 21:43:54 tcv49-twitter-teen: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 21:50:17 produce 49 --force: regenerating episode data
+- 2026-10-15 21:50:17 tcv49-twitter-teen: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 22:35:04 tcv49-twitter-teen: rendered in 2686s
+- 2026-10-15 22:36:12 tcv49-twitter-teen: QA FAILED ['audio_opening_speech_steady', 'engage_open_loop_every_10s', 'engage_ends_within_1s_of_last_word']; frames and details in series/true-crime-cinematic/qa/true_crime_49
+- 2026-10-15 22:36:12 produce 53 --force: regenerating episode data
+- 2026-10-15 22:36:12 tcv53-cocaine-plane-2: rendering (final60, seed 1, tts recorded)
+- 2026-10-15 22:40:03 produce 49: regenerating episode data
+- 2026-10-15 22:40:03 tcv49-twitter-teen: render cached (inputs unchanged), skipping to QA
+- 2026-10-15 22:41:11 tcv49-twitter-teen: VERIFIED -> series/true-crime-cinematic/output/true_crime_49_twitter_teen.mp4 (47.6s, 21.6 MB, sha256 f6699ae7a5a0)
+- 2026-10-16 07:08:58 produce 53 --force: regenerating episode data
+- 2026-10-16 07:08:59 tcv53-cocaine-plane-2: rendering (final60, seed 1)
+- 2026-10-16 07:49:42 tcv53-cocaine-plane-2: rendered in 2442s
+- 2026-10-16 07:50:31 tcv53-cocaine-plane-2: VERIFIED -> series/true-crime-cinematic/output/true_crime_53_cocaine_plane_2.mp4 (41.2s, 23.9 MB, sha256 30cf8867bc5e)
+- 2026-10-16 07:50:31 produce 48 --force: regenerating episode data
+- 2026-10-16 07:50:31 tcv48-monopoly-cop: rendering (final60, seed 1)
+- 2026-10-16 07:52:08 produce 53 --force: regenerating episode data
+- 2026-10-16 07:52:08 tcv53-cocaine-plane-2: rendering (final60, seed 1)
+- 2026-10-16 08:31:24 tcv53-cocaine-plane-2: rendered in 2355s
+- 2026-10-16 08:32:13 tcv53-cocaine-plane-2: VERIFIED -> series/true-crime-cinematic/output/true_crime_53_cocaine_plane_2.mp4 (41.2s, 23.9 MB, sha256 77914a53d4d4)
+- 2026-10-16 08:32:23 produce 48 --force: regenerating episode data
+- 2026-10-16 08:32:23 tcv48-monopoly-cop: rendering (final60, seed 1)
+- 2026-10-16 10:31:52 produce 48 --force: regenerating episode data
+- 2026-10-16 10:31:53 tcv48-monopoly-cop: rendering (final60, seed 1)
+- 2026-10-16 11:22:04 tcv48-monopoly-cop: rendered in 3011s
+- 2026-10-16 11:23:04 tcv48-monopoly-cop: VERIFIED -> series/true-crime-cinematic/output/true_crime_48_monopoly_cop.mp4 (40.0s, 21.1 MB, sha256 8d5cbbdd7dcb)
+- 2026-10-16 11:23:17 produce 52 --force: regenerating episode data
+- 2026-10-16 11:23:17 tcv52-fake-invoices: rendering (final60, seed 1)
+- 2026-10-16 12:08:44 tcv52-fake-invoices: rendered in 2727s
+- 2026-10-16 12:09:29 tcv52-fake-invoices: VERIFIED -> series/true-crime-cinematic/output/true_crime_52_fake_invoices.mp4 (37.1s, 19.2 MB, sha256 5e4dcb2851cc)
+- 2026-10-16 12:09:44 produce 49 --force: regenerating episode data
+- 2026-10-16 12:09:44 tcv49-twitter-teen: rendering (final60, seed 1)
+- 2026-10-16 12:52:27 tcv49-twitter-teen: rendered in 2563s
+- 2026-10-16 12:53:19 tcv49-twitter-teen: VERIFIED -> series/true-crime-cinematic/output/true_crime_49_twitter_teen.mp4 (39.9s, 18.9 MB, sha256 789089ccb6d6)
+- 2026-10-16 12:53:36 produce 51 --force: regenerating episode data
+- 2026-10-16 12:53:36 tcv51-syrup-heist: rendering (final60, seed 1)
+- 2026-10-16 13:53:12 tcv51-syrup-heist: rendered in 3576s
+- 2026-10-16 13:54:02 tcv51-syrup-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_51_syrup_heist.mp4 (39.2s, 21.4 MB, sha256 6a6555a4a1cf)
+- 2026-10-16 13:54:17 produce 54 --force: regenerating episode data
+- 2026-10-16 13:54:17 tcv54-stilton-dealer: rendering (final60, seed 1)
+- 2026-10-16 14:35:38 tcv54-stilton-dealer: rendered in 2482s
+- 2026-10-16 14:36:27 tcv54-stilton-dealer: VERIFIED -> series/true-crime-cinematic/output/true_crime_54_stilton_dealer.mp4 (37.3s, 20.6 MB, sha256 4d690ac1d3e3)
+- 2026-10-16 21:48:00 produce 58 --force: regenerating episode data
+- 2026-10-16 21:48:00 tcv58-headphone-cocaine: rendering (final60, seed 1)
+- 2026-10-16 22:27:27 tcv58-headphone-cocaine: rendered in 2367s
+- 2026-10-16 22:28:12 tcv58-headphone-cocaine: VERIFIED -> series/true-crime-cinematic/output/true_crime_58_headphone_cocaine.mp4 (37.3s, 18.6 MB, sha256 41bec2feddfe)
+- 2026-10-16 22:28:20 produce 56 --force: regenerating episode data
+- 2026-10-16 22:28:20 tcv56-dog-bounty: rendering (final60, seed 1)
+- 2026-10-16 23:04:26 tcv56-dog-bounty: rendered in 2165s
+- 2026-10-16 23:05:10 tcv56-dog-bounty: VERIFIED -> series/true-crime-cinematic/output/true_crime_56_dog_bounty.mp4 (37.5s, 22.4 MB, sha256 9821b7130f92)
+- 2026-10-16 23:05:20 produce 57 --force: regenerating episode data
+- 2026-10-16 23:05:20 tcv57-narco-sub: rendering (final60, seed 1)
+- 2026-10-16 23:46:59 tcv57-narco-sub: rendered in 2499s
+- 2026-10-16 23:47:43 tcv57-narco-sub: VERIFIED -> series/true-crime-cinematic/output/true_crime_57_narco_sub.mp4 (37.9s, 21.9 MB, sha256 1e9c5bba1654)
+- 2026-10-16 23:47:54 produce 55 --force: regenerating episode data
+- 2026-10-16 23:47:54 tcv55-cocaine-bear: rendering (final60, seed 1)
+- 2026-10-17 00:13:59 tcv55-cocaine-bear: rendered in 1565s
+- 2026-10-17 00:14:42 tcv55-cocaine-bear: VERIFIED -> series/true-crime-cinematic/output/true_crime_55_cocaine_bear.mp4 (37.7s, 17.7 MB, sha256 23238d1c1e06)
+- 2026-10-17 00:14:50 produce 59 --force: regenerating episode data
+- 2026-10-17 00:14:50 tcv59-drug-catapult: rendering (final60, seed 1)
+- 2026-10-17 00:44:20 tcv59-drug-catapult: rendered in 1770s
+- 2026-10-17 00:45:01 tcv59-drug-catapult: VERIFIED -> series/true-crime-cinematic/output/true_crime_59_drug_catapult.mp4 (37.5s, 18.8 MB, sha256 0b4731006c12)
+- 2026-10-17 05:57:31 produce 60 --force: regenerating episode data
+- 2026-10-17 05:57:31 tcv60-snow-white-sentence: rendering (final60, seed 1)
+- 2026-10-17 06:30:33 tcv60-snow-white-sentence: rendered in 1982s
+- 2026-10-17 06:31:13 tcv60-snow-white-sentence: VERIFIED -> series/true-crime-cinematic/output/true_crime_60_snow_white_sentence.mp4 (37.7s, 17.5 MB, sha256 84f096e2d4f1)
+- 2026-10-17 06:31:23 produce 62 --force: regenerating episode data
+- 2026-10-17 06:31:23 tcv62-abagnale-con: rendering (final60, seed 1)
+- 2026-10-17 06:57:39 tcv62-abagnale-con: rendered in 1576s
+- 2026-10-17 06:58:20 tcv62-abagnale-con: VERIFIED -> series/true-crime-cinematic/output/true_crime_62_abagnale_con.mp4 (37.7s, 20.2 MB, sha256 073d0740e5bf)
+- 2026-10-17 06:58:30 produce 61 --force: regenerating episode data
+- 2026-10-17 06:58:30 tcv61-affluenza: rendering (final60, seed 1)
+- 2026-10-17 07:31:20 tcv61-affluenza: rendered in 1970s
+- 2026-10-17 07:32:03 tcv61-affluenza: VERIFIED -> series/true-crime-cinematic/output/true_crime_61_affluenza.mp4 (37.9s, 18.2 MB, sha256 e26e34b6570a)
+- 2026-10-17 07:33:56 produce 61 --force: regenerating episode data
+- 2026-10-17 07:33:56 tcv61-affluenza: rendering (final60, seed 1)
+- 2026-10-17 08:07:17 tcv61-affluenza: rendered in 2001s
+- 2026-10-17 08:08:00 tcv61-affluenza: VERIFIED -> series/true-crime-cinematic/output/true_crime_61_affluenza.mp4 (37.9s, 18.1 MB, sha256 f07ad4e6add9)
+- 2026-10-17 09:37:50 produce 65 --force: regenerating episode data
+- 2026-10-17 09:37:50 tcv65-prison-rat: rendering (final60, seed 1)
+- 2026-10-17 10:03:27 tcv65-prison-rat: rendered in 1536s
+- 2026-10-17 10:04:08 tcv65-prison-rat: VERIFIED -> series/true-crime-cinematic/output/true_crime_65_prison_rat.mp4 (36.8s, 22.1 MB, sha256 2d53f87dd92e)
+- 2026-10-17 10:04:17 produce 64 --force: regenerating episode data
+- 2026-10-17 10:04:17 tcv64-pigeon-backpack: rendering (final60, seed 1)
+- 2026-10-17 10:22:37 tcv64-pigeon-backpack: rendered in 1099s
+- 2026-10-17 10:23:18 tcv64-pigeon-backpack: VERIFIED -> series/true-crime-cinematic/output/true_crime_64_pigeon_backpack.mp4 (37.0s, 20.1 MB, sha256 f0f2d01582cb)
+- 2026-10-17 10:23:29 produce 63 --force: regenerating episode data
+- 2026-10-17 10:23:29 tcv63-fence-jeep: rendering (final60, seed 1)
+- 2026-10-17 10:46:40 tcv63-fence-jeep: rendered in 1391s
+- 2026-10-17 10:47:24 tcv63-fence-jeep: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_63
+- 2026-10-17 10:48:42 produce 63 --force: regenerating episode data
+- 2026-10-17 10:48:42 tcv63-fence-jeep: rendering (final60, seed 1)
+- 2026-10-17 11:12:46 tcv63-fence-jeep: rendered in 1444s
+- 2026-10-17 11:13:32 tcv63-fence-jeep: VERIFIED -> series/true-crime-cinematic/output/true_crime_63_fence_jeep.mp4 (37.3s, 20.6 MB, sha256 ceabf2065273)
+- 2026-10-17 11:41:39 produce 67 --force: regenerating episode data
+- 2026-10-17 11:41:39 tcv67-underwear-birds: rendering (final60, seed 1)
+- 2026-10-17 12:11:11 tcv67-underwear-birds: rendered in 1772s
+- 2026-10-17 12:12:00 tcv67-underwear-birds: VERIFIED -> series/true-crime-cinematic/output/true_crime_67_underwear_birds.mp4 (37.7s, 20.6 MB, sha256 8797da7142a2)
+- 2026-10-17 12:12:09 produce 68 --force: regenerating episode data
+- 2026-10-17 12:12:09 tcv68-chicken-heist: rendering (final60, seed 1)
+- 2026-10-17 12:39:11 tcv68-chicken-heist: rendered in 1622s
+- 2026-10-17 12:39:54 tcv68-chicken-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_68_chicken_heist.mp4 (37.5s, 18.3 MB, sha256 48ac45be8316)
+- 2026-10-17 12:40:06 produce 66 --force: regenerating episode data
+- 2026-10-17 12:40:06 tcv66-louvre-one-year: rendering (final60, seed 1)
+- 2026-10-17 13:09:48 tcv66-louvre-one-year: rendered in 1782s
+- 2026-10-17 13:10:45 tcv66-louvre-one-year: VERIFIED -> series/true-crime-cinematic/output/true_crime_66_louvre_one_year.mp4 (37.9s, 22.8 MB, sha256 66e221711a75)
+- 2026-10-17 13:16:35 produce 70 --force: regenerating episode data
+- 2026-10-17 13:16:35 tcv70-wendys-finger: rendering (final60, seed 1)
+- 2026-10-17 13:51:26 tcv70-wendys-finger: rendered in 2091s
+- 2026-10-17 13:52:08 tcv70-wendys-finger: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_70
+- 2026-10-17 13:52:20 produce 69 --force: regenerating episode data
+- 2026-10-17 13:52:20 tcv69-kfc-cases: rendering (final60, seed 1)
+- 2026-10-17 14:12:03 tcv69-kfc-cases: rendered in 1183s
+- 2026-10-17 14:12:50 tcv69-kfc-cases: VERIFIED -> series/true-crime-cinematic/output/true_crime_69_kfc_cases.mp4 (37.9s, 15.7 MB, sha256 9911fbaeb541)
+- 2026-10-17 14:13:00 produce 70 --force: regenerating episode data
+- 2026-10-17 14:13:00 tcv70-wendys-finger: rendering (final60, seed 1)
+- 2026-10-17 14:48:20 tcv70-wendys-finger: rendered in 2120s
+- 2026-10-17 14:49:12 tcv70-wendys-finger: VERIFIED -> series/true-crime-cinematic/output/true_crime_70_wendys_finger.mp4 (37.5s, 15.6 MB, sha256 ad37cf80baf6)
+- 2026-10-17 15:38:21 produce 71 --force: regenerating episode data
+- 2026-10-17 15:38:21 tcv71-social-reckoning: rendering (final60, seed 1)
+- 2026-10-17 16:12:39 tcv71-social-reckoning: rendered in 2058s
+- 2026-10-17 16:13:24 tcv71-social-reckoning: VERIFIED -> series/true-crime-cinematic/output/true_crime_71_social_reckoning.mp4 (37.5s, 16.5 MB, sha256 8c0179abd3cb)
+- 2026-10-17 16:14:56 produce 72 --force: regenerating episode data
+- 2026-10-17 16:14:56 tcv72-border-fails-3: rendering (final60, seed 1)
+- 2026-10-17 16:32:59 tcv72-border-fails-3: rendered in 1082s
+- 2026-10-17 16:33:37 tcv72-border-fails-3: VERIFIED -> series/true-crime-cinematic/output/true_crime_72_border_fails_3.mp4 (34.9s, 16.7 MB, sha256 fe27620ae3e6)
+- 2026-10-18 01:03:20 produce 75 --force: regenerating episode data
+- 2026-10-18 01:03:20 tcv75-cocaine-bunkers: rendering (final60, seed 1)
+- 2026-10-18 01:20:16 tcv75-cocaine-bunkers: rendered in 1016s
+- 2026-10-18 01:20:59 tcv75-cocaine-bunkers: QA FAILED ['no_frozen_or_static_picture']; frames and details in series/true-crime-cinematic/qa/true_crime_75
+- 2026-10-18 01:23:29 produce 74 --force: regenerating episode data
+- 2026-10-18 01:23:29 tcv74-wine-heist: rendering (final60, seed 1)
+- 2026-10-18 01:53:46 tcv74-wine-heist: rendered in 1817s
+- 2026-10-18 01:54:30 tcv74-wine-heist: VERIFIED -> series/true-crime-cinematic/output/true_crime_74_wine_heist.mp4 (37.0s, 17.6 MB, sha256 bba0341193bd)
+- 2026-10-18 01:56:01 produce 73 --force: regenerating episode data
+- 2026-10-18 01:56:01 tcv73-border-fails-4: rendering (final60, seed 1)
+- 2026-10-18 02:15:42 tcv73-border-fails-4: rendered in 1181s
+- 2026-10-18 02:16:23 tcv73-border-fails-4: VERIFIED -> series/true-crime-cinematic/output/true_crime_73_border_fails_4.mp4 (33.8s, 15.7 MB, sha256 728e964e075f)
+- 2026-10-18 02:16:43 produce 75 --force: regenerating episode data
+- 2026-10-18 02:16:43 tcv75-cocaine-bunkers: rendering (final60, seed 1)
+- 2026-10-18 02:33:06 tcv75-cocaine-bunkers: rendered in 983s
+- 2026-10-18 02:33:50 tcv75-cocaine-bunkers: VERIFIED -> series/true-crime-cinematic/output/true_crime_75_cocaine_bunkers.mp4 (37.9s, 19.1 MB, sha256 e39f99da14fc)
+- 2026-10-18 15:49:25 produce 76 --force: regenerating episode data
+- 2026-10-18 15:49:25 tcv76-border-fails-5: rendering (final60, seed 1)
+- 2026-10-18 16:08:35 tcv76-border-fails-5: rendered in 1150s
+- 2026-10-18 16:09:30 tcv76-border-fails-5: VERIFIED -> series/true-crime-cinematic/output/true_crime_76_border_fails_5.mp4 (38.0s, 18.6 MB, sha256 abb25b449ce7)
+- 2026-10-18 16:12:12 produce 79 --force: regenerating episode data
+- 2026-10-18 16:12:12 tcv79-airport-fails-1: rendering (final60, seed 1)
+- 2026-10-18 16:38:33 tcv79-airport-fails-1: rendered in 1581s
+- 2026-10-18 16:39:22 tcv79-airport-fails-1: VERIFIED -> series/true-crime-cinematic/output/true_crime_79_airport_fails_1.mp4 (34.8s, 18.7 MB, sha256 c5ced4870e36)
+- 2026-10-18 16:41:44 produce 78 --force: regenerating episode data
+- 2026-10-18 16:41:44 tcv78-where-they-hid-it-2: rendering (final60, seed 1)
+- 2026-10-18 17:02:42 tcv78-where-they-hid-it-2: rendered in 1258s
+- 2026-10-18 17:03:34 tcv78-where-they-hid-it-2: VERIFIED -> series/true-crime-cinematic/output/true_crime_78_where_they_hid_it_2.mp4 (37.3s, 19.0 MB, sha256 1e5db48c947a)
+- 2026-10-18 17:06:29 produce 77 --force: regenerating episode data
+- 2026-10-18 17:06:29 tcv77-wine-heists-2: rendering (final60, seed 1)
+- 2026-10-18 17:41:19 tcv77-wine-heists-2: rendered in 2090s
+- 2026-10-18 17:42:04 tcv77-wine-heists-2: QA FAILED ['loudness_near_target']; frames and details in series/true-crime-cinematic/qa/true_crime_77
+- 2026-10-19 11:29:20 produce 81 --force: regenerating episode data
+- 2026-10-19 11:29:20 tcv81-where-they-hid-it-3: rendering (final60, seed 1)
+- 2026-10-19 11:46:19 tcv81-where-they-hid-it-3: rendered in 1019s
+- 2026-10-19 11:47:07 tcv81-where-they-hid-it-3: VERIFIED -> series/true-crime-cinematic/output/true_crime_81_where_they_hid_it_3.mp4 (37.5s, 16.8 MB, sha256 8980054988d7)
+- 2026-10-19 11:50:04 produce 82 --force: regenerating episode data
+- 2026-10-19 11:50:04 tcv82-lego-thief: rendering (final60, seed 1)
+- 2026-10-19 12:18:19 tcv82-lego-thief: rendered in 1695s
+- 2026-10-19 12:19:17 tcv82-lego-thief: VERIFIED -> series/true-crime-cinematic/output/true_crime_82_lego_thief.mp4 (37.9s, 22.0 MB, sha256 2c342ec17bc3)
+- 2026-10-19 12:21:57 produce 80 --force: regenerating episode data
+- 2026-10-19 12:21:57 tcv80-peoples-court-arrest: rendering (final60, seed 1)
+- 2026-10-19 12:57:42 tcv80-peoples-court-arrest: rendered in 2145s
+- 2026-10-19 12:58:34 tcv80-peoples-court-arrest: VERIFIED -> series/true-crime-cinematic/output/true_crime_80_peoples_court_arrest.mp4 (37.7s, 15.4 MB, sha256 13fa8d1b25c8)
+- 2026-10-19 14:35:01 produce 83 --force: regenerating episode data
+- 2026-10-19 14:35:01 tcv83-fake-ambulance: rendering (final60, seed 1)
+- 2026-10-19 15:05:13 tcv83-fake-ambulance: rendered in 1811s
+- 2026-10-19 15:05:56 tcv83-fake-ambulance: QA FAILED ['shot_variety_and_character_action']; frames and details in series/true-crime-cinematic/qa/true_crime_83
+- 2026-10-19 15:08:14 produce 85 --force: regenerating episode data
+- 2026-10-19 15:08:14 tcv85-asleep-burglar: rendering (final60, seed 1)
+- 2026-10-19 15:27:25 tcv85-asleep-burglar: rendered in 1151s
+- 2026-10-19 15:28:10 tcv85-asleep-burglar: QA FAILED ['shot_variety_and_character_action']; frames and details in series/true-crime-cinematic/qa/true_crime_85
+- 2026-10-19 15:30:54 produce 84 --force: regenerating episode data
+- 2026-10-19 15:30:54 tcv84-instagram-burglar: rendering (final60, seed 1)
+- 2026-10-19 15:43:58 tcv84-instagram-burglar: RENDER FAILED, see out/tcv84-instagram-burglar/ and fix; re-run produce.py 84
+- 2026-10-19 15:48:10 produce 85 --force: regenerating episode data
+- 2026-10-19 15:48:10 tcv85-asleep-burglar: rendering (final60, seed 1)
+- 2026-10-19 15:58:31 tcv85-asleep-burglar: RENDER FAILED, see out/tcv85-asleep-burglar/ and fix; re-run produce.py 85
+- 2026-10-19 16:01:22 produce 84 --force: regenerating episode data
+- 2026-10-19 16:01:22 tcv84-instagram-burglar: rendering (final60, seed 1)
+- 2026-10-19 16:29:38 tcv84-instagram-burglar: rendered in 1696s
+- 2026-10-19 16:30:22 tcv84-instagram-burglar: VERIFIED -> series/true-crime-cinematic/output/true_crime_84_instagram_burglar.mp4 (31.4s, 14.3 MB, sha256 4f2237c7d14b)
+- 2026-10-19 16:32:25 produce 83 --force: regenerating episode data
+- 2026-10-19 16:32:25 tcv83-fake-ambulance: rendering (final60, seed 1)
+- 2026-10-19 17:00:57 tcv83-fake-ambulance: rendered in 1712s
+- 2026-10-19 17:01:41 tcv83-fake-ambulance: VERIFIED -> series/true-crime-cinematic/output/true_crime_83_fake_ambulance.mp4 (31.2s, 16.6 MB, sha256 182b3c2393ce)
+- 2026-10-19 17:04:01 produce 85 --force: regenerating episode data
+- 2026-10-19 17:04:01 tcv85-asleep-burglar: rendering (final60, seed 1)
+- 2026-10-19 17:23:18 tcv85-asleep-burglar: rendered in 1158s
+- 2026-10-19 17:24:02 tcv85-asleep-burglar: VERIFIED -> series/true-crime-cinematic/output/true_crime_85_asleep_burglar.mp4 (31.4s, 14.3 MB, sha256 da29ef9a6b8c)
+- 2026-10-19 21:36:55 produce 87 --force: regenerating episode data
+- 2026-10-19 21:36:55 tcv87-dumbest-getaways-2: rendering (final60, seed 1)
+- 2026-10-19 22:10:16 tcv87-dumbest-getaways-2: rendered in 2001s
+- 2026-10-19 22:10:54 tcv87-dumbest-getaways-2: VERIFIED -> series/true-crime-cinematic/output/true_crime_87_dumbest_getaways_2.mp4 (31.1s, 15.3 MB, sha256 856cf4280379)
+- 2026-10-19 22:12:47 produce 88 --force: regenerating episode data
+- 2026-10-19 22:12:47 tcv88-butt-dial-burglar: rendering (final60, seed 1)
+- 2026-10-19 22:23:30 produce 88 --force: regenerating episode data
+- 2026-10-19 22:23:30 tcv88-butt-dial-burglar: rendering (final60, seed 1)
+- 2026-10-19 22:41:50 tcv88-butt-dial-burglar: rendered in 1100s
+- 2026-10-19 22:42:25 tcv88-butt-dial-burglar: VERIFIED -> series/true-crime-cinematic/output/true_crime_88_butt_dial_burglar.mp4 (28.2s, 14.0 MB, sha256 48626be25599)
+- 2026-10-19 22:44:09 produce 86 --force: regenerating episode data
+- 2026-10-19 22:44:09 tcv86-watermelon-robbers: rendering (final60, seed 1)
+- 2026-10-19 22:59:15 tcv86-watermelon-robbers: rendered in 906s
+- 2026-10-19 22:59:51 tcv86-watermelon-robbers: QA FAILED ['audio_sfx_heard_on_phone']; frames and details in series/true-crime-cinematic/qa/true_crime_86
+- 2026-10-20 12:38:27 produce 91 --force: regenerating episode data
+- 2026-10-20 12:38:27 tcv91-scooter-getaway: rendering (final60, seed 1)
+- 2026-10-20 13:01:29 tcv91-scooter-getaway: rendered in 1382s
+- 2026-10-20 13:02:09 tcv91-scooter-getaway: VERIFIED -> series/true-crime-cinematic/output/true_crime_91_scooter_getaway.mp4 (28.0s, 15.1 MB, sha256 52b4b70a8144)
+- 2026-10-20 13:04:27 produce 90 --force: regenerating episode data
+- 2026-10-20 13:04:27 tcv90-stolen-bridge: rendering (final60, seed 1)
+- 2026-10-20 13:31:17 tcv90-stolen-bridge: rendered in 1609s
+- 2026-10-20 13:31:55 tcv90-stolen-bridge: VERIFIED -> series/true-crime-cinematic/output/true_crime_90_stolen_bridge.mp4 (28.4s, 15.0 MB, sha256 d9abcc3c2bcd)
+- 2026-10-20 13:33:41 produce 89 --force: regenerating episode data
+- 2026-10-20 13:33:41 tcv89-cocaine-cast: rendering (final60, seed 1)
+- 2026-10-20 13:54:59 tcv89-cocaine-cast: rendered in 1278s
+- 2026-10-20 13:55:40 tcv89-cocaine-cast: VERIFIED -> series/true-crime-cinematic/output/true_crime_89_cocaine_cast.mp4 (27.7s, 15.3 MB, sha256 c52ac6eb22fb)
+- 2026-10-21 22:02:41 produce 93 --force: regenerating episode data
+- 2026-10-21 22:02:41 tcv93-billion-dollar-ship: rendering (final60, seed 1)
+- 2026-10-21 22:23:42 tcv93-billion-dollar-ship: rendered in 1261s
+- 2026-10-21 22:24:17 tcv93-billion-dollar-ship: VERIFIED -> series/true-crime-cinematic/output/true_crime_93_billion_dollar_ship.mp4 (28.2s, 16.5 MB, sha256 e8ebd2bbac46)
+- 2026-10-21 22:26:13 produce 92 --force: regenerating episode data
+- 2026-10-21 22:26:13 tcv92-drug-cannon: rendering (final60, seed 1)
+- 2026-10-21 22:48:01 tcv92-drug-cannon: rendered in 1307s
+- 2026-10-21 22:48:32 tcv92-drug-cannon: VERIFIED -> series/true-crime-cinematic/output/true_crime_92_drug_cannon.mp4 (27.7s, 15.1 MB, sha256 4d11d2759c34)
+- 2026-10-21 22:50:02 produce 94 --force: regenerating episode data
+- 2026-10-21 22:50:02 tcv94-watermelon-meth: rendering (final60, seed 1)
+- 2026-10-21 23:01:48 tcv94-watermelon-meth: rendered in 706s
+- 2026-10-21 23:02:22 tcv94-watermelon-meth: VERIFIED -> series/true-crime-cinematic/output/true_crime_94_watermelon_meth.mp4 (28.2s, 16.1 MB, sha256 66db4fd32991)
+- 2026-10-23 13:53:40 produce 97 --force: regenerating episode data
+- 2026-10-23 13:53:40 tcv97-cocaine-jacket: rendering (final60, seed 1)
+- 2026-10-23 14:13:57 tcv97-cocaine-jacket: rendered in 1216s
+- 2026-10-23 14:14:34 tcv97-cocaine-jacket: VERIFIED -> series/true-crime-cinematic/output/true_crime_97_cocaine_jacket.mp4 (27.5s, 15.4 MB, sha256 2c64e099cf1a)
+- 2026-10-23 14:16:40 produce 95 --force: regenerating episode data
+- 2026-10-23 14:16:40 tcv95-haaland-cocaine: rendering (final60, seed 1)
+- 2026-10-23 14:35:14 tcv95-haaland-cocaine: rendered in 1114s
+- 2026-10-23 14:35:54 tcv95-haaland-cocaine: QA FAILED ['audio_ending_intentional']; frames and details in series/true-crime-cinematic/qa/true_crime_95
+- 2026-10-23 14:38:54 produce 96 --force: regenerating episode data
+- 2026-10-23 14:38:54 tcv96-starlink-narco-sub: rendering (final60, seed 1)
+- 2026-10-23 15:09:34 tcv96-starlink-narco-sub: rendered in 1840s
+- 2026-10-23 15:10:17 tcv96-starlink-narco-sub: VERIFIED -> series/true-crime-cinematic/output/true_crime_96_starlink_narco_sub.mp4 (28.2s, 14.8 MB, sha256 b96a15ffe304)
+- 2026-10-25 00:26:42 produce 99 --force: regenerating episode data
+- 2026-10-25 00:26:42 tcv99-where-they-hid-it-7: rendering (final60, seed 1)
+- 2026-10-25 00:44:16 tcv99-where-they-hid-it-7: rendered in 1054s
+- 2026-10-25 00:44:46 tcv99-where-they-hid-it-7: VERIFIED -> series/true-crime-cinematic/output/true_crime_99_where_they_hid_it_7.mp4 (27.5s, 15.2 MB, sha256 b715eeb99316)
+- 2026-10-25 00:46:25 produce 98 --force: regenerating episode data
+- 2026-10-25 00:46:25 tcv98-cocaine-wig: rendering (final60, seed 1)
+- 2026-10-25 01:02:55 tcv98-cocaine-wig: rendered in 990s
+- 2026-10-25 01:03:28 tcv98-cocaine-wig: VERIFIED -> series/true-crime-cinematic/output/true_crime_98_cocaine_wig.mp4 (28.4s, 14.8 MB, sha256 a29b766bdc55)
+- 2026-10-25 01:05:23 produce 100 --force: regenerating episode data
+- 2026-10-25 01:05:23 tcv100-border-fails-7: rendering (final60, seed 1)
+- 2026-10-25 01:25:00 tcv100-border-fails-7: rendered in 1177s
+- 2026-10-25 01:25:32 tcv100-border-fails-7: VERIFIED -> series/true-crime-cinematic/output/true_crime_100_border_fails_7.mp4 (27.3s, 15.4 MB, sha256 53fe05754bd1)
+- 2026-10-25 13:29:51 produce 101 --force: regenerating episode data
+- 2026-10-25 13:29:51 tcv101-soap-grandad: rendering (final, seed 1)
+- 2026-10-25 13:43:39 tcv101-soap-grandad: rendered in 828s
+- 2026-10-25 13:44:05 tcv101-soap-grandad: VERIFIED -> series/true-crime-cinematic/output/true_crime_101_soap_grandad.mp4 (29.1s, 12.5 MB, sha256 44d7cec75b9a)
+- 2026-10-25 13:46:01 produce 102 --force: regenerating episode data
+- 2026-10-25 13:46:01 tcv102-young-mule: rendering (final, seed 1)
+- 2026-10-25 13:57:41 tcv102-young-mule: rendered in 701s
+- 2026-10-25 13:58:08 tcv102-young-mule: VERIFIED -> series/true-crime-cinematic/output/true_crime_102_young_mule.mp4 (29.1s, 11.9 MB, sha256 59148c0acec7)
+- 2026-10-25 14:00:04 produce 101 --force: regenerating episode data
+- 2026-10-25 14:00:04 tcv101-soap-grandad: rendering (final, seed 1)
+- 2026-10-25 14:13:07 tcv101-soap-grandad: rendered in 783s
+- 2026-10-25 14:13:35 tcv101-soap-grandad: VERIFIED -> series/true-crime-cinematic/output/true_crime_101_soap_grandad.mp4 (29.1s, 12.4 MB, sha256 7865a2d3a963)
+- 2026-10-25 14:16:21 produce 103 --force: regenerating episode data
+- 2026-10-25 14:16:21 tcv103-jungle-pilot: rendering (final, seed 1)
+- 2026-10-25 14:32:13 tcv103-jungle-pilot: rendered in 952s
+- 2026-10-25 14:32:41 tcv103-jungle-pilot: VERIFIED -> series/true-crime-cinematic/output/true_crime_103_ship_captain.mp4 (29.3s, 14.5 MB, sha256 a69e37a98581)
+- 2026-10-26 14:33:41 produce 106 --force: regenerating episode data
+- 2026-10-26 14:33:41 tcv106-cabin-crew: rendering (final, seed 1)
+- 2026-10-26 14:46:55 tcv106-cabin-crew: rendered in 794s
+- 2026-10-26 14:47:25 tcv106-cabin-crew: VERIFIED -> series/true-crime-cinematic/output/true_crime_106_cabin_crew.mp4 (31.6s, 12.9 MB, sha256 e7056b041bba)
+- 2026-10-26 14:50:04 produce 105 --force: regenerating episode data
+- 2026-10-26 14:50:04 tcv105-unlikely-courier: rendering (final, seed 1)
+- 2026-10-26 15:02:54 tcv105-unlikely-courier: rendered in 769s
+- 2026-10-26 15:03:28 tcv105-unlikely-courier: VERIFIED -> series/true-crime-cinematic/output/true_crime_105_unlikely_courier.mp4 (33.2s, 13.9 MB, sha256 3b75599e086d)
+- 2026-10-26 15:06:13 produce 104 --force: regenerating episode data
+- 2026-10-26 15:06:13 tcv104-inside-man: rendering (final, seed 1)
+- 2026-10-26 15:18:55 tcv104-inside-man: rendered in 762s
+- 2026-10-26 15:19:26 tcv104-inside-man: VERIFIED -> series/true-crime-cinematic/output/true_crime_104_inside_man.mp4 (29.6s, 12.1 MB, sha256 d0377ae7a530)
+- 2026-10-30 10:56:45 produce 108 --force: regenerating episode data
+- 2026-10-30 10:56:45 tcv108-the-dash: rendering (final, seed 1)
+- 2026-10-30 11:07:00 tcv108-the-dash: rendered in 615s
+- 2026-10-30 11:07:25 tcv108-the-dash: VERIFIED -> series/true-crime-cinematic/output/true_crime_108_the_dash.mp4 (29.8s, 11.7 MB, sha256 46b13d85c0a0)
+- 2026-10-30 11:09:32 produce 107 --force: regenerating episode data
+- 2026-10-30 11:09:32 tcv107-the-runner: rendering (final, seed 1)
+- 2026-10-30 11:19:57 tcv107-the-runner: rendered in 625s
+- 2026-10-30 11:20:22 tcv107-the-runner: VERIFIED -> series/true-crime-cinematic/output/true_crime_107_the_runner.mp4 (29.5s, 12.3 MB, sha256 769d2d0f0c12)
+- 2026-10-30 11:22:14 produce 109 --force: regenerating episode data
+- 2026-10-30 11:22:14 tcv109-the-chase: rendering (final, seed 1)
+- 2026-10-30 11:31:59 tcv109-the-chase: rendered in 585s
+- 2026-10-30 11:32:24 tcv109-the-chase: VERIFIED -> series/true-crime-cinematic/output/true_crime_109_the_chase.mp4 (30.3s, 12.9 MB, sha256 d45c26376a5c)

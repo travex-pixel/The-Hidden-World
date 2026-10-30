@@ -1,0 +1,946 @@
+{
+ "id": "tcv28-bundy-40",
+ "number": 28,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Ted Bundy Escaped Custody Twice. Both Times, a Traffic Stop Caught Him",
+ "central_question": "How did ordinary traffic stops keep catching Ted Bundy?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "FBI": "F B I",
+   "Ted": "Tedde"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "28",
+  "label": "TED BUNDY · UTAH, COLORADO, FLORIDA · 1975-1978"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s07_verdict",
+   "word": [
+    0,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "tb28_bundy",
+  "tb28_trooper",
+  "tb28_officer",
+  "tb28_deputy",
+  "analyst",
+  "agent_b",
+  "judge"
+ ],
+ "content_notes": "Closed case: Bundy was convicted in Florida (1979, 1980) and executed on 24 Jan 1989. He appears ONLY as an anonymous rim-lit silhouette (tb28_bundy) or a dark head shape through a car's rear window, tagged 'ILLUSTRATION · NOT A LIKENESS': no face, no photo reference, never posed heroically or 'charming', none of his words quoted. The episode is about the police work, not his crimes: no victim is named or depicted, no violence, weapon or crime scene is shown; the items found in 1975 and the 1978 struggle are typed lines only. Officers are generic figures and are not named on screen. The cars are generic Beetle-shaped drawings with no badge and blank plates; courthouse, jail, gas station and streets are generic. No dramatisation, film or series is referenced. Every card is our own typed graphic. No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "tb28_hook",
+   "min_duration": 4.8,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.1,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      3
+     ],
+     "name": "brake",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.5
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "B_escapes",
+    "B_stops",
+    "B_hero"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Ted Bundy escaped custody twice."
+    },
+    {
+     "who": "narrator",
+     "text": "Both times, a traffic stop caught him.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "bundy",
+    "escaped",
+    "twice.",
+    "traffic",
+    "stop"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_stakes",
+   "scene": "tb28_stakes",
+   "min_duration": 2.6,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_confessed"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He later confessed to 30 murders."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "confessed",
+    "30",
+    "murders."
+   ],
+   "section": "A",
+   "music_gain_db": -3
+  },
+  {
+   "id": "s03_utah",
+   "scene": "tb28_utah",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "whoosh",
+     "gain": 0.4
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      8
+     ],
+     "name": "brake",
+     "gain": 0.45
+    },
+    {
+     "at": -0.2,
+     "word": [
+      1,
+      0
+     ],
+     "name": "door",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_1975",
+    "B_items"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In Utah, a trooper chased his Volkswagen. No headlights."
+    },
+    {
+     "who": "narrator",
+     "text": "Inside were a crowbar, a ski mask and handcuffs.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "utah,",
+    "chased",
+    "no",
+    "headlights.",
+    "crowbar,",
+    "ski",
+    "handcuffs."
+   ],
+   "section": "B",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s04_aspen",
+   "scene": "tb28_aspen",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "whoosh",
+     "gain": 0.45
+    },
+    {
+     "at": 0.3,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      3
+     ],
+     "name": "brake",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "B_escapes",
+    "B_stops"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In Colorado, he jumped from a courthouse window."
+    },
+    {
+     "who": "narrator",
+     "text": "Six days later, police stopped him in a stolen car.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "colorado,",
+    "jumped",
+    "window.",
+    "six",
+    "stolen"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_ceiling",
+   "scene": "tb28_ceiling",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": 0.3,
+     "word": [
+      0,
+      6
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_escapes",
+    "B_tenmost"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he escaped through a jail ceiling."
+    },
+    {
+     "who": "narrator",
+     "text": "The FBI added him to its Ten Most Wanted list.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "ceiling.",
+    "fbi",
+    "ten",
+    "most",
+    "wanted"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_plate",
+   "scene": "tb28_plate",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      6
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.55
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_pensacola",
+    "B_tenmost"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In Pensacola, an officer checked the plate of a Volkswagen."
+    },
+    {
+     "who": "narrator",
+     "text": "It was stolen. The driver was Bundy.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pensacola,",
+    "plate",
+    "volkswagen.",
+    "stolen.",
+    "bundy."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s07_verdict",
+   "scene": "tb28_verdict",
+   "min_duration": 3.2,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "B_convicted"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was convicted in Florida and executed in 1989.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "convicted",
+    "executed",
+    "1989."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s08_end",
+   "scene": "tb28_end",
+   "min_duration": 4.0,
+   "pad_after": 1.5,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "B_stops",
+    "B_memorial",
+    "B_hero"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Two escapes. Two traffic stops."
+    },
+    {
+     "who": "narrator",
+     "text": "We remember his victims.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "two",
+    "escapes.",
+    "traffic",
+    "stops.",
+    "remember"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "B_escapes",
+   "type": "established",
+   "nature": "fact",
+   "text": "Bundy escaped custody twice in Colorado in 1977: on 7 June 1977 he jumped from a second-floor law-library window of the Pitkin County Courthouse in Aspen during a hearing; on 30 December 1977 he escaped from the Garfield County Jail in Glenwood Springs through an opening in his cell ceiling (where a light fixture had been) into a crawl space.",
+   "sources": [
+    "fbi_record",
+    "bio_timeline",
+    "crimeinv",
+    "denver_gazette",
+    "durango",
+    "history_dec77"
+   ]
+  },
+  {
+   "id": "B_stops",
+   "type": "established",
+   "nature": "fact",
+   "text": "Both escapes ended at a traffic stop in a stolen car: about six days after the Aspen escape, officers pulled over the stolen car he was driving (June 1977); after the jail escape, a Pensacola police officer stopped the stolen Volkswagen he was driving (15 February 1978). With the August 1975 Utah stop, traffic stops figured in three of his arrests.",
+   "sources": [
+    "crimeinv",
+    "denver_gazette",
+    "ninenews",
+    "aspentimes",
+    "fbi_record",
+    "oxygen_caught",
+    "kutv_2018"
+   ]
+  },
+  {
+   "id": "B_confessed",
+   "type": "established",
+   "nature": "fact",
+   "text": "Before his 1989 execution Bundy confessed to 30 murders (Britannica; other sources give 28 or 36); the true total is unknown. Spoken as 'He later confessed to 30 murders'; no victim is named or shown.",
+   "sources": [
+    "britannica_count",
+    "bio_main",
+    "bio_victims"
+   ]
+  },
+  {
+   "id": "B_1975",
+   "type": "established",
+   "nature": "fact",
+   "text": "In the early hours of 16 August 1975, Utah Highway Patrol Sgt Bob Hayward saw a Volkswagen Beetle driving with its lights off in the Granger area of Salt Lake County; it fled and he pursued it until it pulled into a gas station. The trooper is not named on screen.",
+   "sources": [
+    "deseret_2000",
+    "kita_1975",
+    "yahoo_vw",
+    "ldsliving"
+   ]
+  },
+  {
+   "id": "B_items",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Beetle's passenger seat had been removed; officers found items including a crowbar, a ski mask and handcuffs (also an ice pick, a pantyhose mask and garbage bags). Bundy was arrested - his first arrest - and was charged with possession of burglary tools days later. The items are named on a typed card only and never drawn.",
+   "sources": [
+    "deseret_2000",
+    "crimelib_8",
+    "kita_1975",
+    "yahoo_vw"
+   ]
+  },
+  {
+   "id": "B_tenmost",
+   "type": "established",
+   "nature": "fact",
+   "text": "The FBI added Bundy to its Ten Most Wanted Fugitives list on 10 February 1978 (fugitive no. 360); he was caught five days later.",
+   "sources": [
+    "fbi_360",
+    "npr_2011",
+    "fbi_record"
+   ]
+  },
+  {
+   "id": "B_pensacola",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 15 February 1978, Pensacola police officer David Lee ran the licence plate of an orange Volkswagen Beetle; it came back stolen. He stopped the car and arrested the driver, Bundy, after a struggle. The officer is not named on screen; the struggle is a typed line, never shown.",
+   "sources": [
+    "oxygen_caught",
+    "kutv_2018",
+    "crimelib_13",
+    "fbi_record",
+    "nbc15_2019"
+   ]
+  },
+  {
+   "id": "B_convicted",
+   "type": "established",
+   "nature": "fact",
+   "text": "Bundy was convicted in Florida in July 1979 (Miami trial) and February 1980 (Orlando trial) and sentenced to death; he was executed at Florida State Prison on 24 January 1989.",
+   "sources": [
+    "encyc_trials",
+    "deseret_1989",
+    "local10",
+    "komo",
+    "live5"
+   ]
+  },
+  {
+   "id": "B_memorial",
+   "type": "established",
+   "nature": "fact",
+   "text": "Memorial line: 'We remember his victims.' No victim is named or depicted; no number is given beyond the sourced confession figure.",
+   "sources": [
+    "britannica_count",
+    "bio_victims"
+   ]
+  },
+  {
+   "id": "B_hero",
+   "type": "established",
+   "nature": "fact",
+   "text": "The car of the 1975 stop was Bundy's tan 1968 Volkswagen Beetle (now displayed at the Alcatraz East Crime Museum); the 1978 car was a stolen orange Beetle. Our hero object is a generic Beetle-shaped car with no badge and a blank plate.",
+   "sources": [
+    "alcatraz_east",
+    "yahoo_vw",
+    "seattle_times_1997",
+    "crimelib_13"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "deseret_2000",
+   "publisher": "Deseret News",
+   "title": "Officer recalls Bundy's '75 capture",
+   "url": "https://www.deseret.com/2000/8/20/19524726/officer-recalls-bundy-s-75-capture",
+   "date": "2000-08-20",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ldsliving",
+   "publisher": "LDS Living (citing The Salt Lake Tribune)",
+   "title": "Ted Bundy and 2 other notorious criminals taken down by Latter-day Saints",
+   "url": "https://www.ldsliving.com/ted-bundy-and-2-other-notorious-criminals-taken-down-by-latter-day-saints/s/87484",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yahoo_vw",
+   "publisher": "Yahoo News (syndicated)",
+   "title": "Ted Bundy's is the world's most notorious Volkswagen Bug",
+   "url": "https://news.yahoo.com/ted-bundy-apos-world-apos-100000543.html",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kita_1975",
+   "publisher": "Killer in the Archives (archival research blog quoting police reports)",
+   "title": "The first arrest, 1975",
+   "url": "https://killerinthearchives.blog/the-first-arrest-1975/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "crimelib_8",
+   "publisher": "Crime Library (Court TV / truTV archive)",
+   "title": "Ted Bundy, chapter 8",
+   "url": "https://crimelibrary.org/serial_killers/notorious/bundy/8.html",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "crimelib_13",
+   "publisher": "Crime Library (Court TV / truTV archive)",
+   "title": "Ted Bundy, chapter 13",
+   "url": "https://mail.crimelibrary.org/serial_killers/notorious/bundy/13.html",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "oxygen_caught",
+   "publisher": "Oxygen True Crime",
+   "title": "Where did Ted Bundy finally get caught? Well, it's complicated",
+   "url": "https://www.oxygen.com/martinis-murder/where-did-ted-bundy-get-caught-how-was-he-captured",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kutv_2018",
+   "publisher": "KUTV (Salt Lake City)",
+   "title": "Bundy's last stop: recounting a serial killer's arrest 40 years later",
+   "url": "https://kutv.com/news/nation-world/bundys-last-stop-recounting-a-serial-killers-arrest-40-years-later-02-14-2018",
+   "date": "2018-02-14",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc15_2019",
+   "publisher": "WPMI NBC 15 (Mobile/Pensacola)",
+   "title": "Ted Bundy arrested in Pensacola 41 years ago",
+   "url": "https://int.mynbc15.com/news/local/ted-bundy-arrested-in-pensacola-41-years-ago",
+   "date": "2019-02",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_360",
+   "publisher": "FBI (Ten Most Wanted Fugitives history)",
+   "title": "360. Theodore Robert Bundy",
+   "url": "https://www.fbi.gov/wanted/topten/topten-history/hires_images/FBI-360-TheodoreRobertBundy.jpg/view",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fbi_record",
+   "publisher": "FBI records (catalog record via Umbra / U.S. GPO purl)",
+   "title": "United States. Federal Bureau of Investigation: Theodore Robert Bundy",
+   "url": "https://umbrasearch.org/catalog/387fb662e67ee346f9b254c87a3e31e8bd2c812f",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "npr_2011",
+   "publisher": "NPR",
+   "title": "The FBI's Ten Most Wanted: two down, eight to go",
+   "url": "https://www.npr.org/2011/06/25/137406673/the-fbis-ten-most-wanted-two-down-eight-to-go",
+   "date": "2011-06-25",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "history_dec77",
+   "publisher": "History.com (This Day in History)",
+   "title": "Ted Bundy botches an abduction attempt (November 8)",
+   "url": "https://www.history.com/this-day-in-history/november-8/ted-bundy-botches-an-abduction-attempt",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "crimeinv",
+   "publisher": "Crime+Investigation (UK)",
+   "title": "Ted Bundy: rapist, serial killer, escape artist",
+   "url": "https://www.crimeandinvestigation.co.uk/article/ted-bundy-rapist-serial-killer-escape-artist",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_timeline",
+   "publisher": "Biography.com",
+   "title": "Ted Bundy timeline",
+   "url": "https://www.biography.com/crime/a81984931/ted-bundy-timeline-murders",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_main",
+   "publisher": "Biography.com",
+   "title": "Ted Bundy",
+   "url": "https://www.biography.com/crime/ted-bundy",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio_victims",
+   "publisher": "Biography.com",
+   "title": "DNA has linked Ted Bundy to a teenager's murder. He may have dozens more victims than we know.",
+   "url": "https://www.biography.com/crime/a70928641/ted-bundy-total-victims",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "britannica_count",
+   "publisher": "Encyclopaedia Britannica",
+   "title": "How many people did Ted Bundy kill?",
+   "url": "https://www.britannica.com/topic/How-Many-People-Did-Ted-Bundy-Kill",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "denver_gazette",
+   "publisher": "The Denver Gazette (Out There Colorado)",
+   "title": "Looking back: infamous serial killer escapes custody twice in Colorado mountains",
+   "url": "https://www.denvergazette.com/2022/05/04/looking-back-infamous-serial-killer-escapes-custody-twice-in-colorado-mountains/",
+   "date": "2022-05-04",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ninenews",
+   "publisher": "9NEWS (Denver)",
+   "title": "Ted Bundy: a look at the Colorado connection to the notorious serial killer",
+   "url": "https://9news.com/article/news/ted-bundy-a-look-at-the-colorado-connection-to-the-notorious-serial-killer/73-c2c3b551-9a55-4d24-af5e-4471d1d1d65b",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "durango",
+   "publisher": "The Durango Herald",
+   "title": "Ted Bundy's Colorado escapes (Durango Herald feature)",
+   "url": "https://www.durangoherald.com/?p=41076",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "aspentimes",
+   "publisher": "The Aspen Times",
+   "title": "Author releases new book about Ted Bundy's 'Six Days in Aspen'",
+   "url": "https://aspentimes.com/news/author-releases-new-book-about-ted-bundys-six-days-in-aspen",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "postindependent",
+   "publisher": "Glenwood Springs Post Independent",
+   "title": "Evidence represents Ted Bundy's time in the Roaring Fork Valley",
+   "url": "https://www.postindependent.com/news/evidence-represents-ted-bundys-time-in-the-roaring-fork-valley/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "encyc_trials",
+   "publisher": "Encyclopedia.com (Great American Trials)",
+   "title": "Theodore Robert Bundy Trials: 1976 & 1979",
+   "url": "https://encyclopedia.com/law/law-magazines/theodore-robert-bundy-trials-1976-1979",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "deseret_1989",
+   "publisher": "Deseret News",
+   "title": "The trials of Ted Bundy (timeline)",
+   "url": "https://www.deseret.com/1989/1/24/18792831/the-trials-of-ted-bundy/",
+   "date": "1989-01-24",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "local10",
+   "publisher": "WPLG Local 10 (Miami)",
+   "title": "Ted Bundy convicted of FSU murders in Miami trial 40 years ago",
+   "url": "https://local10.com/news/local/miami/ted-bundy-convicted-of-fsu-murders-in-miami-trial-40-years-ago",
+   "date": "2019-07",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "komo",
+   "publisher": "KOMO News (Seattle)",
+   "title": "30 years later: serial killer, Tacoma native Ted Bundy executed on Jan. 24, 1989",
+   "url": "https://komonews.com/news/local/serial-killer-ted-bundy-dies-in-the-electric-chair-in-florida-on-jan-24-1989",
+   "date": "2019-01",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "live5",
+   "publisher": "Live 5 News (AP 'Today in History')",
+   "title": "This day in history: Jan. 24, 1989: serial killer Ted Bundy executed in Florida",
+   "url": "https://www.live5news.com/2026/01/24/this-day-history-jan-24-1989-serial-killer-ted-bundy-executed-florida/",
+   "date": "2026-01-24",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "alcatraz_east",
+   "publisher": "Alcatraz East Crime Museum",
+   "title": "Volkswagen owned by Ted Bundy (artifact)",
+   "url": "https://alcatrazeast.com/inside-alcatraz-east/artifacts/ted-bundy-volkswagen/",
+   "date": "date not in extract",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "seattle_times_1997",
+   "publisher": "The Seattle Times",
+   "title": "Ex-deputy tries to cash in Bundy's car",
+   "url": "https://archive.seattletimes.com/archive/19970716/2549799/ex-deputy-tries-to-cash-in-bundys-car----victims-parents-upset-by-attempt-to-sell-serial-killers-volkswagen",
+   "date": "1997-07-16",
+   "accessed": "2026-10-11 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "TED BUNDY ESCAPED CUSTODY TWICE"
+   },
+   {
+    "text": "BOTH TIMES, A TRAFFIC STOP CAUGHT HIM",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WHAT CAUGHT TED BUNDY?"
+   },
+   {
+    "text": "GOOD POLICING OR HIS OWN MISTAKES? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

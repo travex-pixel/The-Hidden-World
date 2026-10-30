@@ -1,0 +1,824 @@
+{
+ "id": "tcv75-cocaine-bunkers",
+ "number": 75,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Australia's Biggest Cocaine Bust Was Under Shipping Containers",
+ "central_question": "Where They Hid It, Part 1: cocaine among bananas, in a bus's fuel tank, and 2.7 tonnes in bunkers under shipping containers in Sydney. Genius or insane?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "1,700": "seventeen hundred",
+   "262": "two hundred and sixty-two",
+   "2.7": "two point seven"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "75",
+  "label": "WHERE THEY HID IT · PART 1"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_floor",
+   "word": [
+    0,
+    6
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "cb75_fed1",
+  "cb75_fed2",
+  "cb75_port",
+  "cb75_lane"
+ ],
+ "content_notes": "Tone: absurd and ironic. No weapon is drawn or pointed and no violence is shown; investigators and officers hold only torches. The two men charged over the Sydney seizure are accused only: never named and not drawn; the bus driver (accused only) is not named or drawn. Investigators, customs and border officers are generic figures with no badge, patch, flag or agency name. Drugs appear only as plain taped bricks and plain lidded tubs. Containers, the bus and police cars are generic, with no logos, company names or plate numbers. Every card is our own typed graphic. No dialogue or quotation. Facts verified 2026-10-18.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "cb75_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.28
+    },
+    {
+     "at": 0.12,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_hook"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Australia's record cocaine bust? Buried.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Under 3 shipping containers.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "australia's",
+    "record",
+    "cocaine",
+    "bust?",
+    "buried.",
+    "3",
+    "shipping",
+    "containers."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_bananas",
+   "scene": "cb75_bananas",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.12,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.12,
+     "word": [
+      1,
+      2
+     ],
+     "name": "paper",
+     "gain": 0.3
+    },
+    {
+     "at": 0.15,
+     "word": [
+      1,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_bananas"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But first, Italy. Bananas from Ecuador.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "Among the bananas? 1,700 pounds of cocaine.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "italy.",
+    "bananas",
+    "ecuador.",
+    "bananas?",
+    "1,700",
+    "pounds",
+    "cocaine."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_bus",
+   "scene": "cb75_bus",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "brake",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_bus"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the sneakiest one.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "A bus pulled up to the American border.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "sneakiest",
+    "bus",
+    "american",
+    "border."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_tank",
+   "scene": "cb75_tank",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.15,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": 0.12,
+     "word": [
+      1,
+      3
+     ],
+     "name": "puff",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_tank"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside its fuel tank? 262 pounds of cocaine.",
+     "tone": "playful"
+    },
+    {
+     "who": "narrator",
+     "text": "Wrong kind of fuel.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fuel",
+    "tank?",
+    "262",
+    "pounds",
+    "cocaine.",
+    "wrong",
+    "fuel."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_raid",
+   "scene": "cb75_raid",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "siren",
+     "gain": 0.12
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "door",
+     "gain": 0.26
+    },
+    {
+     "at": 0.15,
+     "word": [
+      0,
+      7
+     ],
+     "name": "radio",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_raid"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then Sydney. Police raided a property out west.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sydney.",
+    "police",
+    "raided",
+    "property",
+    "west."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_floor",
+   "scene": "cb75_floor",
+   "min_duration": 3.8,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      3
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.34
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_floor"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The floors were fake. Below them? Bunkers.",
+     "tone": "reveal"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "floors",
+    "fake.",
+    "below",
+    "bunkers."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_bunker",
+   "scene": "cb75_bunker",
+   "min_duration": 3.8,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.15,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_tonnes",
+    "K_deals"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "2.7 tonnes of cocaine, in plastic tubs.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "Three million street deals, police said.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "2.7",
+    "tonnes",
+    "cocaine,",
+    "plastic",
+    "tubs.",
+    "three",
+    "million",
+    "street",
+    "deals,"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "cb75_end",
+   "min_duration": 3.4,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      3
+     ],
+     "name": "cuffs",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_punch",
+    "K_part2"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Two men were arrested. The containers were just the lid.",
+     "tone": "reveal",
+     "pause_before": 0.0
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "two",
+    "men",
+    "arrested.",
+    "containers",
+    "lid."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "About 2.7 tonnes of cocaine, Australia's largest cocaine seizure on record, was found on 19 June 2026 in plastic tubs buried in underground bunkers concealed by false floors in three shipping containers on a semi-rural property in Londonderry, western Sydney. Narration: 'Australia's record cocaine bust was buried.' / 'Under 3 shipping containers.' Headline 'AUSTRALIA'S COCAINE BUST / UNDER THE CONTAINERS'.",
+   "sources": [
+    "abf",
+    "ap",
+    "npr",
+    "dailyaus"
+   ]
+  },
+  {
+   "id": "K_bananas",
+   "type": "established",
+   "nature": "fact",
+   "text": "July 2026, port of Vado Ligure, Italy: police (Guardia di Finanza) found about 1,700 lb (770 kg) of cocaine in 650 packages hidden among pallets of bananas in a refrigerated container from Ecuador; estimated value about EUR 250 million (CBS: about $285-286 million). Narration: 'But first, Italy. Bananas from Ecuador.' / 'Among the bananas? 1,700 pounds of cocaine.'",
+   "sources": [
+    "cbsnews",
+    "fox5ny",
+    "ground"
+   ]
+  },
+  {
+   "id": "K_bus",
+   "type": "established",
+   "nature": "fact",
+   "text": "22 September 2026 (announced 7 October 2026), San Ysidro port of entry: a commercial passenger bus driven by a Mexican national was referred after an imaging system detected anomalies in its gas tank and a canine team alerted. Narration: 'But that was not the sneakiest one.' (editorial rehook) / 'A bus pulled up to the American border.'",
+   "sources": [
+    "cbp",
+    "hoodline",
+    "patch"
+   ]
+  },
+  {
+   "id": "K_tank",
+   "type": "established",
+   "nature": "fact",
+   "text": "CBP officers found a non-factory compartment in the bus's gas tank holding 110 packages, 262.21 lb of cocaine (about $5 million); the driver faces state prosecution (accused only, not named). Narration: 'Inside its fuel tank? 262 pounds of cocaine.' / 'Wrong kind of fuel.' (editorial joke).",
+   "sources": [
+    "cbp",
+    "hoodline",
+    "patch",
+    "ggnorth"
+   ]
+  },
+  {
+   "id": "K_raid",
+   "type": "established",
+   "nature": "fact",
+   "text": "AFP investigators executed a search warrant at a semi-rural property in Londonderry, about 60 km north-west of Sydney's centre (western Sydney), on Friday 19 June 2026. Narration: 'Then Sydney. Police raided a property out west.'",
+   "sources": [
+    "abf",
+    "ap",
+    "dailyaus"
+   ]
+  },
+  {
+   "id": "K_floor",
+   "type": "established",
+   "nature": "fact",
+   "text": "In three shipping containers near the rear of the property, police found the cocaine in underground bunkers concealed by false container floors. Narration: 'The floors were fake. Below them? Bunkers.'",
+   "sources": [
+    "abf",
+    "ap",
+    "npr",
+    "indaily"
+   ]
+  },
+  {
+   "id": "K_tonnes",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC: about 2.7 tonnes of cocaine in plastic tubs, the largest cocaine seizure in Australia's history (previous record 2.34 tonnes, 2024); street value about A$816 million. Narration: '2.7 tonnes of cocaine, in plastic tubs.' Counter '2.7 TONNES'.",
+   "sources": [
+    "abf",
+    "ap",
+    "npr",
+    "dailyaus"
+   ]
+  },
+  {
+   "id": "K_deals",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the AFP said the haul was equivalent to about three million street-level deals. Narration: 'Three million street deals, police said.'",
+   "sources": [
+    "dailyaus",
+    "indaily",
+    "ap"
+   ]
+  },
+  {
+   "id": "K_punch",
+   "type": "established",
+   "nature": "fact",
+   "text": "Two men, aged 21 and 25, allegedly tried to flee on foot and were arrested; each is charged with possessing a commercial quantity of an unlawfully imported border-controlled drug (maximum life). Accused only; one was later granted bail; no plea or verdict found as of 18 Oct 2026. Narration: 'Two men were arrested. The containers were just the lid.' (the second sentence is wordplay on the false floors over the bunkers).",
+   "sources": [
+    "abf",
+    "ap",
+    "aap",
+    "npr"
+   ]
+  },
+  {
+   "id": "K_part2",
+   "type": "established",
+   "nature": "fact",
+   "text": "PART 2 TEASE (end card): Australia's previous record cocaine seizure was 2.34 tonnes, found in 2024 on a fishing boat near K'gari (Fraser Island), Queensland. End card 'PART 2: 2.3 TONNES ON A FISHING BOAT'.",
+   "sources": [
+    "ap",
+    "npr"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "abf",
+   "publisher": "Australian Border Force / AFP / QLD JOCTF joint media release",
+   "title": "Australia's biggest ever cocaine bust as police seize another 2.7 tonnes under Operation Minjiang",
+   "url": "https://www.abf.gov.au/newsroom-subsite/Pages/Australia%E2%80%99s-biggest-ever-cocaine-bust-as-police-seize-another-2-7-tonnes-under-Operation-Minjiang.aspx",
+   "date": "2026-06-22",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ap",
+   "publisher": "Associated Press (via Nordot)",
+   "title": "Police seize 2.7 tons of cocaine in Australia's biggest-ever haul",
+   "url": "https://nordot.app/1441599401871000015",
+   "date": "2026-06-22",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "npr",
+   "publisher": "NPR (via New Hampshire Public Radio)",
+   "title": "Australian police uncover 3 tons of cocaine",
+   "url": "https://www.nhpr.org/2026-06-22/australian-police-uncover-3-tons-of-cocaine",
+   "date": "2026-06-22",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "aap",
+   "publisher": "Australian Associated Press (via Newcastle Herald)",
+   "title": "No evidence arrested man knew of major cocaine haul",
+   "url": "https://www.newcastleherald.com.au/story/9320672/no-evidence-arrested-man-knew-of-major-cocaine-haul/",
+   "date": "2026-06",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "dailyaus",
+   "publisher": "The Daily Aus",
+   "title": "AFP's largest cocaine bust seizes 2.7 tonnes of the drug",
+   "url": "https://www.thedailyaus.com.au/news/afp-largest-cocaine-bust-seizes-2-7-tonnes-22-06-2026",
+   "date": "2026-06-22",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "indaily",
+   "publisher": "InDaily Queensland (AAP)",
+   "title": "Australia's biggest cocaine bust linked to Qld find",
+   "url": "https://www.indailyqld.com.au/news/just-in/2026/06/22/australias-biggest-cocaine-bust-linked-to-qld-find",
+   "date": "2026-06-22",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "cbsnews",
+   "publisher": "CBS News",
+   "title": "Cocaine hidden in banana shipment in Italy",
+   "url": "https://www.cbsnews.com/news/cocaine-hidden-banana-shipment-italy/",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "fox5ny",
+   "publisher": "FOX 5 New York (Fox Television Stations)",
+   "title": "$290M cocaine haul found 'skillfully concealed' in massive banana shipment",
+   "url": "https://www.fox5ny.com/news/cocaine-haul-massive-banana-shipment",
+   "date": "2026-07-22",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ground",
+   "publisher": "Ground News (roundup)",
+   "title": "770 kg of cocaine hidden in banana pallets, new seizure at 250 million euros in Italy",
+   "url": "https://ground.news/article/770-kg-of-cocaine-hidden-in-banana-pallets-new-seizure-at-250-million-euros-in-italy",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "cbp",
+   "publisher": "U.S. Customs and Border Protection",
+   "title": "CBP officers seize over 262 pounds of cocaine at San Ysidro port of entry",
+   "url": "https://www.cbp.gov/newsroom/local-media-release/cbp-officers-seize-over-262-pounds-cocaine-san-ysidro-port-entry",
+   "date": "2026-10-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "hoodline",
+   "publisher": "Hoodline",
+   "title": "San Ysidro border agents pull more than 262 pounds of cocaine from bus fuel tank",
+   "url": "https://hoodline.com/2026/10/san-ysidro-border-agents-pull-more-than-262-pounds-of-cocaine-from-bus-fuel-tank/",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "patch",
+   "publisher": "Patch San Diego",
+   "title": "$5M in cocaine found hidden in bus gas tank at San Ysidro border",
+   "url": "https://patch.com/california/san-diego/5m-cocaine-found-hidden-bus-gas-tank-san-ysidro-border",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ggnorth",
+   "publisher": "Gringo Gazette North",
+   "title": "262 pounds of cocaine found at San Ysidro crossing",
+   "url": "https://ggnorth.com/2026/10/262-pounds-of-cocaine-found-at-san-ysidro-crossing/",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 5,
+ "search_terms": [
+  "cocaine bust",
+  "australia cocaine",
+  "biggest cocaine seizure"
+ ],
+ "palette": {
+  "shadow": "#14202a",
+  "mid": "#c6b79c",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "AUSTRALIA'S COCAINE BUST"
+   },
+   {
+    "text": "UNDER THE CONTAINERS",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "THE CONTAINER BUNKERS:"
+   },
+   {
+    "text": "GENIUS OR INSANE? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "WHERE THEY HID IT · PART 1",
+    "fs": 38
+   },
+   {
+    "text": "PART 2: 2.3 TONNES ON A FISHING BOAT",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR PART 2",
+    "fs": 46,
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "TAG THE MATE WHO'D BUILD ONE",
+    "fs": 34
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "HIDING SPOT",
+  "keys": [
+   {
+    "t": 5.85,
+    "v": "1 · BANANAS"
+   },
+   {
+    "t": 13.05,
+    "v": "2 · BUS FUEL TANK"
+   },
+   {
+    "t": 21.12,
+    "v": "3 · THE BUNKERS"
+   }
+  ],
+  "y": 330,
+  "until": 33.58
+ },
+ "legal_status_verified": "2026-10-18"
+}

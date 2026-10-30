@@ -1,0 +1,921 @@
+{
+ "id": "tcv58-headphone-cocaine",
+ "number": 58,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Cocaine in 18 Headphone Boxes",
+ "central_question": "How did an Adelaide personal trainer end up at Bogota airport with 5.8 kg of cocaine in headphone boxes?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "18": "eighteen",
+   "22,": "twenty-two,",
+   "2017,": "twenty seventeen,",
+   "5.8": "five point eight",
+   "X-ray": "x ray"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "58",
+  "label": "THE HEADPHONE COCAINE · BOGOTA 2017"
+ },
+ "music": {
+  "bpm": 78,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 78,
+  "cliff": {
+   "scene": "s04_bricks",
+   "word": [
+    0,
+    6
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "hc58_cassie",
+  "hc58_officer",
+  "hc58_officer2",
+  "hc58_client",
+  "hc58_judge",
+  "hc58_viewer"
+ ],
+ "content_notes": "Tone: remarkable and ironic, never mocking. Cassie Sainsbury (convicted after a guilty plea, Bogota, November 2017; paroled April 2020) appears only as a faceless silhouette tagged NOT A LIKENESS; her account that her family was threatened is reported as her claim. The officers, the judge, the gym client and the young man in the lesson are generic figures, never named; no badge, crest or insignia of any real force or court. Headphones and their boxes are generic (no brand, no logo); the 'drugs' are plain white bundles, no drug use is shown, no weapon, no violence. The DEA tip-off is attributed to Colombian police. The statistic card names its source. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-16.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "hc58_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "beep",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "H_hook",
+    "H_xray"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "An Australian trainer packed 18 headphone boxes.",
+     "pause_after": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "The airport X-ray saw what was inside.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "australian",
+    "trainer",
+    "18",
+    "headphone",
+    "boxes.",
+    "x-ray",
+    "inside."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_trainer",
+   "scene": "hc58_trainer",
+   "min_duration": 3.5,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "click",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "H_who"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Cassie Sainsbury, 22, was a personal trainer from Adelaide."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "22,",
+    "personal",
+    "trainer",
+    "adelaide."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_flagged",
+   "scene": "hc58_flagged",
+   "min_duration": 3.6,
+   "pad_after": 0.5,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.15
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": -0.02,
+     "word": [
+      1,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "beep",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "H_bogota",
+    "H_dea"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In April 2017, she tried to fly out of Bogota.",
+     "pause_after": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "But American agents had already flagged her.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "april",
+    "2017,",
+    "bogota.",
+    "american",
+    "agents",
+    "flagged"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_bricks",
+   "scene": "hc58_bricks",
+   "min_duration": 3.8,
+   "pad_after": 0.5,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.3
+    },
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      3
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "H_bricks"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Inside the boxes: 5.8 kilos of cocaine."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "inside",
+    "boxes:",
+    "5.8",
+    "kilos",
+    "cocaine."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s05_gifts",
+   "scene": "hc58_gifts",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    },
+    {
+     "at": -0.02,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "H_gifts",
+    "H_claim"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She told police they were gifts for her wedding.",
+     "pause_after": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "Then she claimed her family had been threatened.",
+     "pause_before": 0.4
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "gifts",
+    "wedding.",
+    "claimed",
+    "family",
+    "threatened."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_lesson",
+   "scene": "hc58_lesson",
+   "min_duration": 3.5,
+   "pad_after": 0.25,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "H_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Someone asks you to carry a package abroad? Save this."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "someone",
+    "carry",
+    "package",
+    "abroad?",
+    "save"
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s07_plea",
+   "scene": "hc58_plea",
+   "min_duration": 3.5,
+   "pad_after": 0.3,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "H_plea"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "She pleaded guilty and took a plea deal."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pleaded",
+    "guilty",
+    "plea",
+    "deal."
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s08_end",
+   "scene": "hc58_end",
+   "min_duration": 3.5,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "H_sentence",
+    "H_after"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Her wedding gifts ended up costing her six years.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "wedding",
+    "gifts",
+    "costing",
+    "six",
+    "years."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "H_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Cassie Sainsbury, an Australian (Adelaide) personal trainer, had about 5.8 kg of cocaine hidden in 18 headphone boxes / packages in her suitcase (Colombian police; her family said 15 pairs of headphones). Narration: 'An Australian trainer packed 18 headphone boxes.' (she pleaded guilty to trafficking).",
+   "sources": [
+    "ind_mule",
+    "bordermail",
+    "pedestrian",
+    "buzzfeed",
+    "ct_hk",
+    "inq_ap"
+   ]
+  },
+  {
+   "id": "H_xray",
+   "type": "established",
+   "nature": "fact",
+   "text": "An X-ray machine at Bogota's El Dorado airport detected the cocaine in her luggage as she was about to board. Narration: 'The airport X-ray saw what was inside.'",
+   "sources": [
+    "bordermail",
+    "buzzfeed",
+    "inq_ap",
+    "ind_mule"
+   ]
+  },
+  {
+   "id": "H_who",
+   "type": "established",
+   "nature": "fact",
+   "text": "She was 22 and from Adelaide, described as a (former) personal trainer. Narration: 'Cassie Sainsbury, 22, was a personal trainer from Adelaide.'",
+   "sources": [
+    "pedestrian",
+    "buzzfeed",
+    "illawarra",
+    "inq_ap",
+    "ind_mule"
+   ]
+  },
+  {
+   "id": "H_bogota",
+   "type": "established",
+   "nature": "fact",
+   "text": "She was detained at El Dorado airport, Bogota, in April 2017 (11 or 12 April; reports differ) while about to board a flight to London (AP). Narration: 'In April 2017, she tried to fly out of Bogota.'",
+   "sources": [
+    "inq_ap",
+    "ind_mule",
+    "tnd_apr",
+    "bordermail"
+   ]
+  },
+  {
+   "id": "H_dea",
+   "type": "established",
+   "nature": "reported",
+   "text": "REPORTED (Colombian police): the U.S. Drug Enforcement Administration alerted Colombian police; her photo and passport details were reportedly forwarded as early as 5 April; her ticket had been bought in Hong Kong. Narration: 'But American agents had already flagged her.'",
+   "sources": [
+    "ind_tip",
+    "tnd_tip",
+    "ct_hk",
+    "ind_mule"
+   ]
+  },
+  {
+   "id": "H_bricks",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): police said 5.8 kg (5,800 g) of cocaine in 18 packages in headphone boxes (AP: 'about 6 kilograms'). Narration: 'Inside the boxes: 5.8 kilos of cocaine.'",
+   "sources": [
+    "ind_mule",
+    "bordermail",
+    "pedestrian",
+    "buzzfeed",
+    "ct_hk",
+    "sbs_sent"
+   ]
+  },
+  {
+   "id": "H_gifts",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: she told police she had bought the headphones to bring back to Australia for her wedding (AP); her family said they were gifts for her bridal party. Narration: 'She told police they were gifts for her wedding.'",
+   "sources": [
+    "inq_ap",
+    "ind_mule",
+    "newshub",
+    "bordermail"
+   ]
+  },
+  {
+   "id": "H_claim",
+   "type": "established",
+   "nature": "reported",
+   "text": "HER CLAIM (attributed): she told the court she agreed to carry the drugs only after her family was threatened; the first plea deal was thrown out in mid-2017 over it; the judge later weighed the claim. Narration: 'Then she claimed her family had been threatened.'",
+   "sources": [
+    "tnd_doubt",
+    "bmg_plea",
+    "ind_sent",
+    "inq_ap"
+   ]
+  },
+  {
+   "id": "H_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): Smartraveller: do not transport anything on behalf of another person, know what is in your bags, do not use bags that are not yours; UK FCDO: always pack your own luggage, do not carry anything through customs for someone else; recruiters promise free travel, easy money or 'low-risk opportunities'. Rows: 'CARRY NOTHING FOR OTHERS', 'PACK YOUR OWN BAG', 'FREE TRIP + EASY CASH = NO'.",
+   "sources": [
+    "smart_drugs",
+    "smart_laws",
+    "fcdo_news",
+    "fcdo_kit"
+   ]
+  },
+  {
+   "id": "H_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "She pleaded guilty to drug trafficking under a plea deal accepted by a Bogota judge on 2 November 2017. Narration: 'She pleaded guilty and took a plea deal.'",
+   "sources": [
+    "inq_ap",
+    "sbs_sent",
+    "ind_sent",
+    "tnd_sent",
+    "armidale",
+    "bmg_plea"
+   ]
+  },
+  {
+   "id": "H_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "Sentence: six years in prison plus a US$90,000 fine (AP: nearly $100,000), 2 November 2017. Narration: 'Her wedding gifts ended up costing her six years.' (her 'wedding' account, ironic; the six years is the sentence).",
+   "sources": [
+    "inq_ap",
+    "sbs_sent",
+    "ind_sent",
+    "tnd_sent",
+    "armidale"
+   ]
+  },
+  {
+   "id": "H_after",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD: she was freed on parole from El Buen Pastor women's prison in April 2020 under Colombia's COVID-19 humanitarian release, after about three years; she had to remain in Colombia for a further 27 months (Nine News, via AAP).",
+   "sources": [
+    "abc_free",
+    "ind_free",
+    "tnd_free",
+    "illawarra"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "inq_ap",
+   "publisher": "Philippine Daily Inquirer (Associated Press)",
+   "title": "Australian sentenced 6 years for drug smuggling in Colombia",
+   "url": "https://newsinfo.inquirer.net/942379/colombia-australia-crime-drug-trade-smuggling-narcotics",
+   "date": "2017-11-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "sbs_sent",
+   "publisher": "SBS News",
+   "title": "Cassie Sainsbury sentenced to six years jail after plea deal accepted",
+   "url": "https://www.sbs.com.au/news/article/cassie-sainsbury-sentenced-to-six-years-jail-after-plea-deal-accepted/2m96y907m",
+   "date": "2017-11-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ind_sent",
+   "publisher": "InDaily (AAP)",
+   "title": "Cassie Sainsbury sentenced to six years in jail",
+   "url": "https://www.indailysa.com.au/news/archive/2017/11/02/cassie-sainsbury-sentenced-six-years-jail",
+   "date": "2017-11-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "tnd_sent",
+   "publisher": "The New Daily (AAP)",
+   "title": "Cassie Sainsbury sentenced",
+   "url": "https://thenewdaily.com.au/news/world/2017/11/02/cassie-sainsbury-sentenced",
+   "date": "2017-11-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "armidale",
+   "publisher": "Armidale Express (AAP)",
+   "title": "Accused drug courier Cassandra Sainsbury sentenced to six years in jail",
+   "url": "https://www.armidaleexpress.com.au/story/5029291/accused-drug-courier-cassandra-sainsbury-sentenced-to-six-years-in-jail/?cs=5",
+   "date": "2017-11",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ind_mule",
+   "publisher": "InDaily (AAP)",
+   "title": "Adelaide woman 'could possibly be drug mule': Colombian police",
+   "url": "https://www.indailysa.com.au/news/archive/2017/05/02/adelaide-woman-drug-mule-colombian-police",
+   "date": "2017-05-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ind_tip",
+   "publisher": "InDaily (AAP)",
+   "title": "US tip-off may have led to Adelaide woman's drug arrest",
+   "url": "https://www.indailysa.com.au/news/archive/2017/05/03/us-tip-off-may-led-adelaide-womans-arrest",
+   "date": "2017-05-03",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "tnd_tip",
+   "publisher": "The New Daily (AAP)",
+   "title": "Colombian police tipped off over Cassie Sainsbury drug bust",
+   "url": "https://www.thenewdaily.com.au/news/national/2017/05/02/cassandra-stainsbury-drug-mule-colombia-police",
+   "date": "2017-05-02",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ct_hk",
+   "publisher": "Canberra Times (AAP)",
+   "title": "Plane ticket bought in Hong Kong led to US tip-off",
+   "url": "https://www.canberratimes.com.au/story/4636155/plane-ticket-bought-in-hong-kong-led-to-us-tip-off/",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "bordermail",
+   "publisher": "The Border Mail (AAP)",
+   "title": "Arrested Aussie pictured with drugs",
+   "url": "https://www.bordermail.com.au/story/4634028/arrested-aussie-pictured-with-drugs/",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "pedestrian",
+   "publisher": "PEDESTRIAN.TV",
+   "title": "22 y/o Adelaide woman arrested in Colombia for 5.8kg of coke in luggage",
+   "url": "https://www.pedestrian.tv/style/22-y-o-adelaide-woman-arrested-in-colombia-for-5-8kg-of-coke-in-luggage",
+   "date": "2017-04",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "buzzfeed",
+   "publisher": "BuzzFeed News",
+   "title": "Here's everything we know about the Australian personal trainer arrested in Colombia",
+   "url": "https://www.buzzfeed.com/ginarushton/heres-everything-we-know-about-the-australian-personal",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "tnd_apr",
+   "publisher": "The New Daily",
+   "title": "Adelaide woman detained in Colombia over drug offences",
+   "url": "https://www.thenewdaily.com.au/news/world/2017/04/30/adelaide-woman-detained-colombia-drug-offences",
+   "date": "2017-04-30",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "newshub",
+   "publisher": "Newshub",
+   "title": "Aussie tricked into smuggling cocaine, says family",
+   "url": "https://www.newshub.co.nz/home/world/2017/05/aussie-tricked-into-smuggling-cocaine-says-family.amp.html",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "bmg_plea",
+   "publisher": "Blue Mountains Gazette (AAP)",
+   "title": "Cassandra Sainsbury reaches plea deal in Colombia over cocaine charges",
+   "url": "https://www.bluemountainsgazette.com.au/story/5003069/cassandra-sainsbury-reaches-plea-deal-in-colombia-over-cocaine-charges/",
+   "date": "2017-10",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "tnd_doubt",
+   "publisher": "The New Daily (AAP)",
+   "title": "Cassie Sainsbury's plea deal in doubt after threat claims",
+   "url": "https://thenewdaily.com.au/news/world/2017/07/27/cassie-sainsbury-plea-deal-in-doubt",
+   "date": "2017-07-27",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "abc_free",
+   "publisher": "ABC News",
+   "title": "Cocaine trafficker Cassie Sainsbury released from Colombian prison",
+   "url": "https://ab.co/3bgaGUx",
+   "date": "2020-04-17",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ind_free",
+   "publisher": "InDaily",
+   "title": "Adelaide's 'Cocaine Cassie' released from Colombian jail",
+   "url": "https://www.indailysa.com.au/news/archive/2020/04/17/adelaides-cocaine-cassie-released-from-colombian-jail",
+   "date": "2020-04-17",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "tnd_free",
+   "publisher": "The New Daily (AAP)",
+   "title": "'Cocaine Cassie' walks free from jail",
+   "url": "https://www.thenewdaily.com.au/news/world/2020/04/17/cocaine-cassie-free-jail",
+   "date": "2020-04-17",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "illawarra",
+   "publisher": "Illawarra Mercury (AAP)",
+   "title": "'Cocaine Cassie' walks free from jail",
+   "url": "https://www.illawarramercury.com.au/story/6725998/cocaine-cassie-walks-free-from-jail/",
+   "date": "2020-04",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "ct_later",
+   "publisher": "Canberra Times",
+   "title": "'Cocaine Cassie' reveals horrific prison experience",
+   "url": "https://www.canberratimes.com.au/story/8380946/cocaine-cassie-reveals-horrific-prison-experience/",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "smart_drugs",
+   "publisher": "Smartraveller (Australian Government, DFAT)",
+   "title": "Carrying or using drugs",
+   "url": "https://www.smartraveller.gov.au/travel-essentials/following-law/carrying-or-using-drugs",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "smart_laws",
+   "publisher": "Smartraveller (Australian Government, DFAT)",
+   "title": "Drugs (before you go: laws)",
+   "url": "https://www.smartraveller.gov.au/before-you-go/laws/drugs",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "fcdo_news",
+   "publisher": "GOV.UK (FCDO)",
+   "title": "Young Brits recruited as drug mules as overseas drug smuggling arrests quadruple in three years",
+   "url": "https://www.gov.uk/government/news/young-brits-recruited-as-drug-mules-as-overseas-drug-smuggling-arrests-quadruple-in-three-years",
+   "date": "2025",
+   "accessed": "search-result extract only, 2026-10-16"
+  },
+  {
+   "id": "fcdo_kit",
+   "publisher": "FCDO / NCA Travel Aware toolkit (PDF, hosted by ABTOT)",
+   "title": "Drug smuggling asset toolkit: Travel Aware",
+   "url": "https://www.abtot.com/wp-content/uploads/2025/08/FCDO-Drug-Smuggling-Asset-Toolkit-Travel-Aware.pdf",
+   "date": "2025-08",
+   "accessed": "search-result extract only, 2026-10-16"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#14202a",
+  "mid": "#cdbfa6",
+  "accent": "#e8a33c"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "AN AUSTRALIAN TRAINER'S"
+   },
+   {
+    "text": "18 BOXES OF 'HEADPHONES'",
+    "colour": "#e8a33c"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "6 YEARS FOR 5.8 KG."
+   },
+   {
+    "text": "FAIR OR TOO SOFT? 👇",
+    "colour": "#e8a33c"
+   },
+   {
+    "text": "SEND TO THE MATE WHO OVERPACKS",
+    "fs": 44
+   }
+  ],
+  "from": 3.4,
+  "y": 420
+ },
+ "progress": {
+  "label": "TRIP",
+  "keys": [
+   {
+    "t": 12.02,
+    "v": "BOARDING"
+   },
+   {
+    "t": 15.37,
+    "v": "FLAGGED"
+   },
+   {
+    "t": 19.69,
+    "v": "BUSTED"
+   }
+  ],
+  "y": 330,
+  "until": 25.47
+ },
+ "legal_status_verified": "2026-10-16"
+}

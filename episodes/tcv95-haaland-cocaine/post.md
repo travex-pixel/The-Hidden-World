@@ -1,0 +1,6 @@
+CAPTION: Haaland cocaine: Ecuador's police found over 1,000 lb of cocaine wearing Erling Haaland stickers in a truck's false bottom near Colombia (Aug 2026). Haaland has no link to it: gangs use famous faces to mark their batches. Then bricks stamped The Godfather, and bricks marked YouTube, dropped by plane. Cartel Brands, 1. Which brand was dumbest?
+HASHTAGS: #haaland #cocaine #cartelbrands #smuggling #truecrime
+ALT TEXT: Illustrated reel about the Haaland cocaine seizure: a police officer's gloved hand lifts a truck's false floor on green cocaine bricks with plain footballer-silhouette stickers, then bricks stamped The Godfather caught at a road stop in Spain, and bricks marked YouTube dropped by plane in Uruguay and found in a firewood truck.
+SEED COMMENT: YouTube is the dumbest by miles. A footballer's face at least says "winners", and The Godfather is just honest advertising.
+PINNED: Send this to the mate who'd brand everything ⚽ Vote: 1 = the Haaland stickers, 2 = The Godfather, 3 = YouTube 👇 Cartel Brands, 1.
+POST WHEN: Friday 23 Oct 2026, 7–9 pm US Eastern (tonight; one v8 reel a day in the slot that pushed 92 and 94).

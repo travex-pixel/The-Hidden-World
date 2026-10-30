@@ -176,7 +176,7 @@ class AudioSynthesis(unittest.TestCase):
 class RenderedOutput(unittest.TestCase):
     """Runs only when an actual MP4 exists (local build or CI artifact)."""
     def test_mp4_if_present(self):
-        candidates = list((ROOT / "out").glob(f"{EP}/*.mp4")) + list((ROOT / "releases").glob("*.mp4"))
+        candidates = list((ROOT / "out").glob(f"{EP}/*.mp4")) + list((ROOT / "releases").glob("ep*.mp4"))   # the explainer series only; Case Files are ~30 s and gated by their own QA
         candidates = [c for c in candidates if "silent" not in c.name]
         if not candidates:
             self.skipTest("no rendered MP4 present")
@@ -202,7 +202,7 @@ class AllEpisodes(unittest.TestCase):
         self.assertGreaterEqual(len(self.episodes()), 2)
         for eid in self.episodes():
             ep = load_episode(eid)
-            js = (ROOT / "renderer" / "scenes" / f"{eid}.js").read_text() + (ROOT / "renderer" / "cast.js").read_text()
+            js = (ROOT / "renderer" / "scenes" / f"{eid}.js").read_text() + (ROOT / "renderer" / "cast.js").read_text() + (ROOT / "renderer" / "doc.js").read_text()
             for s in ep["scenes"]:
                 self.assertIn(s["scene"] + "(", js, f"{eid}: no renderer for {s['scene']}")
             self.assertTrue((ROOT / "episodes" / eid / "research.md").exists())

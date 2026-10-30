@@ -1,0 +1,55 @@
+"""Catch a frozen picture or a narration beat with no visual change BEFORE the long final render.
+
+usage: python series/true-crime/tools/motion_precheck.py <episode-id> [--seed 1]
+
+Renders the episode at the "preview" quality (540x960, 15 fps, a few minutes) into a scratch folder,
+out/<id>/precheck/, and runs pipeline.motion_qa on it with that render's own timeline: the same analysis the QA
+gate runs on the final MP4 (it samples at 10 fps, 108x192, so the preview resolution does not change the result).
+Case Files 63 and 70 each failed the gate only after a 40-minute render, on one line that started with nothing
+moving; this check finds that in minutes. Exit 1 if the preview fails, printing the lines to fix.
+"""
+from __future__ import annotations
+import argparse, json, subprocess, sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT))
+from pipeline import motion_qa  # noqa: E402
+
+BEAT_MARGIN = 1.5
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(); ap.add_argument("episode"); ap.add_argument("--seed", default="1")
+    a = ap.parse_args(argv)
+    out = ROOT / "out" / a.episode / "precheck"
+    r = subprocess.run([sys.executable, "-m", "pipeline.build", a.episode, "--quality", "preview", "--seed", a.seed, "--out", str(out)],
+                       cwd=ROOT, capture_output=True, text=True)
+    mp4 = out / f"{a.episode}.mp4"
+    if not mp4.exists():
+        print(f"{a.episode}: preview render failed\n{r.stderr[-2000:]}"); return 2
+    # a safety margin over the gate's threshold: the preview (540x960, 15 fps) measures a borderline beat slightly
+    # differently from the final render (Case File 75 passed the preview at 7.5 s and failed the final gate there)
+    motion_qa.BEAT_CHANGE = BEAT_MARGIN * motion_qa.BEAT_CHANGE
+    res = motion_qa.analyse(mp4, json.loads((out / "timeline.json").read_text()))
+    v6 = (json.loads((out / "plan.json").read_text())["episode"].get("engagement_version") or 1) >= 6
+    loop = motion_qa.loop_match(mp4) if v6 else None
+    extra = []
+    if v6 and not res["opening_motion_ok"]:
+        extra.append(f"  nothing moves in the first 0.5 s (change {res['opening_motion']}, needs {motion_qa.BEAT_CHANGE})")
+    if v6 and loop > motion_qa.LOOP_MAX:
+        extra.append(f"  the last frame does not return to frame 1 (difference {loop}, max {motion_qa.LOOP_MAX}): same set, poses and camera")
+    if res["ok"] and not extra:
+        print(f"{a.episode}: motion OK (longest still {res['longest_still_s']} s" + (f", opening {res['opening_motion']}, loop {loop})" if v6 else ")")); return 0
+    print(f"{a.episode}: MOTION FAIL")
+    for e in extra:
+        print(e)
+    for b in res["beats_without_visual_change"]:
+        print(f"  {b['at']:5.1f}s [{b['scene']}] no visual change around: \"{b['text']}\"")
+    for s in res["still_spans_over_limit"]:
+        print(f"  still picture {s['from']}-{s['to']} s")
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

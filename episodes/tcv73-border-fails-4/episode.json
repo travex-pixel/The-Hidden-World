@@ -1,0 +1,843 @@
+{
+ "id": "tcv73-border-fails-4",
+ "number": 73,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Smugglers Made a Fake Border Patrol Truck",
+ "central_question": "Border Fails, Part 4: fake FedEx vans, a cloned K-9 truck with a copied plate, and a fake Border Patrol truck the real Border Patrol watched. Brilliant or brainless?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "K-9": "K nine"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "73",
+  "label": "BORDER FAILS · PART 4"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_watch",
+   "word": [
+    0,
+    6
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "bf72_agent1",
+  "bf72_agent2",
+  "bf72_cop",
+  "bf73_police",
+  "fj63_smug1"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the smugglers' disguises, never on the people being smuggled, who are never drawn as a joke and stay out of frame (the narration says only that they were found; the card says detained, as reported). No weapon is drawn or pointed and no violence is shown; agents and officers hold only flashlights. The fence-cutter is an anonymous dark silhouette; the charged K-9 case defendants and the El Paso suspects are never named or drawn. Agents and officers are generic figures with no badge, patch, flag or agency seal. The fake trucks carry only plain lettering ('BORDER PATROL', 'K-9') and a plain green stripe, as the reported fakes did: no real seal, crest or plate number (the copied plate is drawn as blank dots). FedEx is plain text only: the vans are plain white with no logo, colours or artwork; nothing implies the company had any part. Every card is our own typed graphic. No dialogue or quotation. Facts verified 2026-10-18.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "bf73_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.16
+    },
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.2
+    },
+    {
+     "at": 0.32,
+     "word": [
+      0,
+      6
+     ],
+     "name": "whoosh",
+     "gain": 0.34
+    },
+    {
+     "at": 0.3,
+     "word": [
+      1,
+      6
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_list"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers made a fake Border Patrol truck.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "It is number 3 on this list.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "made",
+    "fake",
+    "border",
+    "patrol",
+    "truck.",
+    "number",
+    "3"
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_fedex",
+   "scene": "bf73_fedex",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.22,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": 0.28,
+     "word": [
+      1,
+      3
+     ],
+     "name": "brake",
+     "gain": 0.34
+    },
+    {
+     "at": 0.45,
+     "word": [
+      1,
+      5
+     ],
+     "name": "cuffs",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_fedex"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "First: two vans dressed as FedEx.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "Agents still stopped them. Four arrests.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "two",
+    "vans",
+    "fedex.",
+    "still",
+    "stopped",
+    "four",
+    "arrests."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_k9",
+   "scene": "bf73_k9",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.24,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": 0.4,
+     "word": [
+      1,
+      5
+     ],
+     "name": "radio",
+     "gain": 0.34
+    }
+   ],
+   "claims": [
+    "K_k9"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But the next fake was bolder.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "A cloned Border Patrol K-9 truck.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "next",
+    "fake",
+    "bolder.",
+    "cloned",
+    "k-9",
+    "truck."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_plate",
+   "scene": "bf73_plate",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.38,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sparkle",
+     "gain": 0.36
+    },
+    {
+     "at": -0.2,
+     "word": [
+      1,
+      0
+     ],
+     "name": "step",
+     "gain": 0.34
+    },
+    {
+     "at": 0.4,
+     "word": [
+      1,
+      4
+     ],
+     "name": "door",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_plate",
+    "K_home"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It even copied a real unit's plate number.",
+     "tone": "playful"
+    },
+    {
+     "who": "narrator",
+     "text": "Agents simply followed it home.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "copied",
+    "real",
+    "plate",
+    "number.",
+    "simply",
+    "followed",
+    "home."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_cut",
+   "scene": "bf73_cut",
+   "min_duration": 3.8,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.26,
+     "word": [
+      0,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.16
+    },
+    {
+     "at": 0.42,
+     "word": [
+      0,
+      7
+     ],
+     "name": "gate",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "K_cut"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then, near Calexico, someone cut the border fence.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "calexico,",
+    "someone",
+    "cut",
+    "border",
+    "fence."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_watch",
+   "scene": "bf73_watch",
+   "min_duration": 3.8,
+   "pad_after": 0.25,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.62,
+     "word": [
+      0,
+      6
+     ],
+     "name": "radio",
+     "gain": 0.34
+    }
+   ],
+   "claims": [
+    "K_watch"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But the real Border Patrol was watching.",
+     "tone": "reveal"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "real",
+    "border",
+    "patrol",
+    "watching."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_found",
+   "scene": "bf73_found",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "siren",
+     "gain": 0.06
+    },
+    {
+     "at": 0.32,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.38
+    },
+    {
+     "at": 0.45,
+     "word": [
+      0,
+      7
+     ],
+     "name": "tick",
+     "gain": 0.36
+    }
+   ],
+   "claims": [
+    "K_found"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Mexican police found the fake truck, and 17 people.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "mexican",
+    "police",
+    "found",
+    "fake",
+    "truck,",
+    "17",
+    "people."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "bf73_end",
+   "min_duration": 3.4,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.3
+    },
+    {
+     "at": 0.42,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sting",
+     "gain": 0.36
+    }
+   ],
+   "claims": [
+    "K_punch",
+    "K_part5"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That fake truck never even made it across.",
+     "tone": "reveal"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fake",
+    "truck",
+    "never",
+    "across."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "22 July 2023, near Calexico, California: Mexican authorities found a white pickup made to look like a U.S. Border Patrol vehicle ('cloned'; insignia/decals replicating CBP trucks), in a suspected smuggling attempt. Narration: 'Smugglers made a fake Border Patrol truck.' Headline 'A FAKE BORDER PATROL TRUCK / MADE BY SMUGGLERS'.",
+   "sources": [
+    "wt23",
+    "kold",
+    "fox23",
+    "nn23"
+   ]
+  },
+  {
+   "id": "K_list",
+   "type": "established",
+   "nature": "editorial",
+   "text": "Editorial framing: the Calexico truck is the third of three verified disguised-vehicle cases told in this episode. Narration: 'It is number 3 on this list.'",
+   "sources": [
+    "wt23",
+    "kvia",
+    "brk9"
+   ]
+  },
+  {
+   "id": "K_fedex",
+   "type": "established",
+   "nature": "fact",
+   "text": "Friday 9 June 2023, west El Paso, Texas: Border Patrol agents (Santa Teresa Station Anti-Smuggling Unit) with Texas DPS stopped three vehicles, two of them made to look identical to white FedEx vans; 26 migrants were found and four suspected smugglers were arrested. Narration: 'First: two vans dressed as FedEx.' / 'Agents still stopped them. Four arrests.'",
+   "sources": [
+    "kvia",
+    "ept",
+    "brfedex",
+    "vice"
+   ]
+  },
+  {
+   "id": "K_k9",
+   "type": "established",
+   "nature": "fact",
+   "text": "8 January 2025: a white Ford F-150 customized to match a local Border Patrol K-9 unit picked up migrants at a breach in the border wall near Andrade, California (24 per Border Report and Just the News). Three men were indicted on 4 February 2025 (charged only; not named here). Narration: 'But the next fake was bolder.' (editorial rehook) / 'A cloned Border Patrol K-9 truck.'",
+   "sources": [
+    "brk9",
+    "jtn",
+    "yuma"
+   ]
+  },
+  {
+   "id": "K_plate",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the truck matched the local federal K-9 unit 'down to the license plate number' (as reported from the case). Narration: 'It even copied a real unit's plate number.'",
+   "sources": [
+    "brk9",
+    "jtn"
+   ]
+  },
+  {
+   "id": "K_home",
+   "type": "established",
+   "nature": "fact",
+   "text": "Agents watching from a casino parking lot in Winterhaven saw the truck leave the wall and followed it to a garage at a home on West 16th Place in Yuma, Arizona. Narration: 'Agents simply followed it home.'",
+   "sources": [
+    "brk9",
+    "jtn",
+    "yuma"
+   ]
+  },
+  {
+   "id": "K_cut",
+   "type": "established",
+   "nature": "fact",
+   "text": "22 July 2023: El Centro Sector agents saw an individual cutting the steel border fence nearly five miles from the Calexico port of entry. Narration: 'Then, near Calexico, someone cut the border fence.'",
+   "sources": [
+    "wt23",
+    "kold",
+    "fox23",
+    "nn23"
+   ]
+  },
+  {
+   "id": "K_watch",
+   "type": "established",
+   "nature": "fact",
+   "text": "The agents who saw the fence being cut alerted Mexican authorities (El Centro Sector Foreign Operations Branch to Mexicali's municipal police). Narration: 'But the real Border Patrol was watching.'",
+   "sources": [
+    "wt23",
+    "kold",
+    "fox23"
+   ]
+  },
+  {
+   "id": "K_found",
+   "type": "established",
+   "nature": "fact",
+   "text": "Mexican authorities (Mexicali police) found the cloned truck and 17 people, who were detained; the truck was seized by Mexico's Attorney General's office. (The Washington Times adds they were later released by a judge.) Narration: 'Mexican police found the fake truck, and 17 people.' Counter '17'.",
+   "sources": [
+    "wt23",
+    "kold",
+    "fox23",
+    "nn23",
+    "ttw23"
+   ]
+  },
+  {
+   "id": "K_punch",
+   "type": "established",
+   "nature": "fact",
+   "text": "The truck and the 17 people were stopped on the Mexican side, before crossing into U.S. territory. Narration (the closing line): 'That fake truck never even made it across.'",
+   "sources": [
+    "nn23",
+    "fox23",
+    "wt23",
+    "hood23"
+   ]
+  },
+  {
+   "id": "K_part5",
+   "type": "established",
+   "nature": "fact",
+   "text": "PART 5 TEASE (end card): announced 29-30 January 2020, the longest smuggling tunnel found on the Southwest border (about 4,309 feet, Tijuana toward Otay Mesa, San Diego), with a rail cart system, ventilation, electricity and an entrance elevator. End card 'PART 5: A TUNNEL WITH AN ELEVATOR'.",
+   "sources": [
+    "ap20",
+    "fox20"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "wt23",
+   "publisher": "Washington Times",
+   "title": "Mexican authorities discover truck cloned to look like U.S. Border Patrol vehicle",
+   "url": "https://www.washingtontimes.com/news/2023/jul/29/mexican-authorities-discover-truck-cloned-look-us-/",
+   "date": "2023-07-29",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "kold",
+   "publisher": "KOLD (Gray)",
+   "title": "Cloned Border Patrol truck recovered near Mexico-California border",
+   "url": "https://www.kold.com/2023/08/01/cloned-border-patrol-truck-recovered-near-mexico-california-border/",
+   "date": "2023-08-01",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "fox23",
+   "publisher": "Fox News",
+   "title": "Mexican authorities capture cloned US Border Patrol vehicle in suspected smuggling attempt, 17 detained",
+   "url": "https://www.foxnews.com/us/mexican-authorities-capture-cloned-us-border-patrol-vehiclsuspected-smuggling-attempt-17-detained",
+   "date": "2023-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "nn23",
+   "publisher": "NewsNation / Border Report (Nexstar)",
+   "title": "'Cloned' Border Patrol truck seized, 17 migrants detained",
+   "url": "https://digital-release.newsnationnow.com/?p=2359334",
+   "date": "2023-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ttw23",
+   "publisher": "Tickle the Wire",
+   "title": "17 Migrants Found inside Fake Border Patrol Truck Near U.S. Border",
+   "url": "https://ticklethewire.com/?p=149772",
+   "date": "2023-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "hood23",
+   "publisher": "Hoodline",
+   "title": "Brazen smugglers clone US Border Patrol truck, caught by Calexico border east of San Diego",
+   "url": "https://hoodline.com/2023/07/brazen-smugglers-clone-us-border-patrol-truck-caught-by-calexico-border-east-of-san-diego/",
+   "date": "2023-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "kvia",
+   "publisher": "KVIA ABC-7 El Paso",
+   "title": "Smugglers cloning FedEx vans to bring migrants into El Paso, officials say",
+   "url": "https://kvia.com/?p=1137245",
+   "date": "2023-06",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ept",
+   "publisher": "El Paso Times (via Yahoo)",
+   "title": "Border Patrol, Texas DPS stop cloned FedEx vans smuggling migrants in El Paso",
+   "url": "https://money.yahoo.com/border-patrol-texas-dps-stop-171536482.html",
+   "date": "2023-06",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "brfedex",
+   "publisher": "Border Report (via KXAN)",
+   "title": "'Cloned' FedEx vans used to smuggle migrants, CBP says",
+   "url": "https://digital-release.kxan.com/?p=1792942",
+   "date": "2023-06",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "vice",
+   "publisher": "VICE",
+   "title": "Smugglers are cloning FedEx vans to move migrants (mexico-fedex-cloning-migrants-border)",
+   "url": "https://www.vice.com/en/article/mexico-fedex-cloning-migrants-border",
+   "date": "2023-06",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "brk9",
+   "publisher": "Border Report (via Yahoo)",
+   "title": "'Cloned' Border Patrol K-9 truck used to smuggle migrants",
+   "url": "https://www.yahoo.com/news/cloned-border-patrol-k-9-184217363.html",
+   "date": "2025-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "jtn",
+   "publisher": "Just the News",
+   "title": "Smugglers use fake U.S. Border Patrol K9 truck to move 24 migrants across border",
+   "url": "https://justthenews.com/government/local/smugglers-use-fake-us-border-patrol-k9-truck-move-24-migrants-across-border",
+   "date": "2025-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "yuma",
+   "publisher": "Yuma Sun",
+   "title": "Agents stop human smuggling ring",
+   "url": "https://www.yumasun.com/news/agents-stop-human-smuggling-ring/article_59b04f28-e89f-11ef-bfc4-637cf548ea56.html",
+   "date": "2025-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ap20",
+   "publisher": "Associated Press (via ABC News 4)",
+   "title": "Authorities find longest Southwest border smuggling tunnel",
+   "url": "https://abcnews4.com/news/nation-world/authorities-find-longest-southwest-border-smuggling-tunnel-01-30-2020-033303567",
+   "date": "2020-01-30",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "fox20",
+   "publisher": "Fox News",
+   "title": "Longest-ever border smuggling tunnel found stretching between Tijuana, San Diego",
+   "url": "https://www.foxnews.com/us/longest-ever-border-smuggling-tunnel-found-stretching-between-tijuana-san-diego",
+   "date": "2020-01",
+   "accessed": "search-result extract only, 2026-10-18"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 5,
+ "search_terms": [
+  "fake border patrol truck",
+  "border smugglers",
+  "border fails"
+ ],
+ "palette": {
+  "shadow": "#151c28",
+  "mid": "#cab79c",
+  "accent": "#e6a23a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A FAKE BORDER PATROL TRUCK"
+   },
+   {
+    "text": "MADE BY SMUGGLERS",
+    "colour": "#e6a23a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "THE FAKE TRUCK:"
+   },
+   {
+    "text": "BRILLIANT OR BRAINLESS? 👇",
+    "colour": "#e6a23a"
+   },
+   {
+    "text": "BORDER FAILS · PART 4",
+    "fs": 38
+   },
+   {
+    "text": "PART 5: A TUNNEL WITH AN ELEVATOR",
+    "fs": 38
+   },
+   {
+    "text": "FOLLOW FOR PART 5",
+    "fs": 46,
+    "colour": "#e6a23a"
+   },
+   {
+    "text": "TAG THE MATE WHO'D GET SPOTTED",
+    "fs": 34
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "FAKE",
+  "keys": [
+   {
+    "t": 5.33,
+    "v": "1 · FEDEX VANS"
+   },
+   {
+    "t": 11.48,
+    "v": "2 · K-9 TRUCK"
+   },
+   {
+    "t": 19.21,
+    "v": "3 · BORDER PATROL"
+   }
+  ],
+  "y": 350,
+  "until": 29.83
+ },
+ "legal_status_verified": "2026-10-18"
+}

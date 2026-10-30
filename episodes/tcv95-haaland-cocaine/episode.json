@@ -1,0 +1,988 @@
+{
+ "id": "tcv95-haaland-cocaine",
+ "number": 95,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Cocaine Bricks With Haaland's Face",
+ "central_question": "Cartel Brands: Ecuador's police found over 1,000 lb of cocaine wearing Haaland stickers in a truck's false bottom (he has no link to it); Spanish and Portuguese police seized bricks stamped with The Godfather; Uruguay's police stopped a firewood truck carrying bricks marked with the YouTube logo, dropped by plane. Which brand was dumbest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "1,000": "one thousand"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  25,
+  29
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "95",
+  "label": "CARTEL BRANDS · 1"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_truck",
+   "word": [
+    0,
+    6
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "hc95_officer",
+  "hc95_pj",
+  "hc95_guard",
+  "hc95_rural",
+  "hc95_pickup"
+ ],
+ "content_notes": "Tone: absurd and ironic; the joke is on the traffickers' branding, never on a victim (none appears). Every case is a seizure by a named police force (a settled fact); the hook states the seizure. Erling Haaland is named because the stickers carried his face, and the reel says plainly that he has no part in it (no report links him to the shipment); he is never drawn: the sticker is a plain green rectangle with a generic footballer silhouette and a '9', with no likeness, club badge, crest or kit. Lionel Messi appears only as typed words on the fun-fact card. Marlon Brando is not drawn. Brand and film names (The Godfather, YouTube) appear only as plain typed words on the bricks, never as logo artwork. Nobody accused is named: the Ecuador arrest is a typed label; the Spain/Portugal and Uruguay arrests are typed counts; the man by the pickup in Uruguay is an anonymous silhouette, an illustrated reconstruction. Officers are generic figures in plain work clothes with no badge, patch, flag, agency name or insignia, holding only torches; no weapon shown or mentioned; no force shown. Trucks, the car, the pickup and the plane carry no logo, livery, plate or registration. The highway, warehouse, road stop, field and roadside are illustrations, not replicas of the real places. Every card is our own typed graphic; no police video, photograph or document is imitated. Facts verified 2026-10-23.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "hc95_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "click",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "stamp",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      8
+     ],
+     "name": "rumble",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_weight",
+    "K_nolink"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers branded their cocaine with Haaland.",
+     "tone": "hook",
+     "speed": 1.06
+    },
+    {
+     "who": "narrator",
+     "text": "Over 1,000 pounds, hidden in a truck near Colombia.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "branded",
+    "cocaine",
+    "haaland.",
+    "1,000",
+    "pounds,",
+    "hidden",
+    "truck",
+    "colombia."
+   ],
+   "section": "A",
+   "case": "haaland",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_bottom",
+   "scene": "hc95_bottom",
+   "min_duration": 4.0,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.25,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "radio",
+     "gain": 0.22
+    },
+    {
+     "at": 0.36,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.5,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.26
+    }
+   ],
+   "claims": [
+    "K_tip",
+    "K_stat",
+    "K_arrest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A tip led police to the false bottom.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tip",
+    "police",
+    "false",
+    "bottom."
+   ],
+   "section": "A",
+   "case": "haaland"
+  },
+  {
+   "id": "s03_godfather",
+   "scene": "hc95_godfather",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sparkle",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "stamp",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_godfather",
+    "K_messi"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And that was not the strangest brand.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Another gang used The Godfather.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "strangest",
+    "brand.",
+    "another",
+    "gang",
+    "godfather."
+   ],
+   "section": "B",
+   "case": "godfather"
+  },
+  {
+   "id": "s04_stop",
+   "scene": "hc95_stop",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "brake",
+     "gain": 0.26
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.34
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "cuffs",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_roadstop",
+    "K_ten"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A road stop caught them. Ten arrested.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "road",
+    "stop",
+    "caught",
+    "ten",
+    "arrested."
+   ],
+   "section": "B",
+   "case": "godfather"
+  },
+  {
+   "id": "s05_plane",
+   "scene": "hc95_plane",
+   "min_duration": 3.4,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "buzz",
+     "gain": 0.18
+    },
+    {
+     "at": 0.34,
+     "word": [
+      0,
+      6
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.7,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_youtube"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The strangest? YouTube's logo, dropped by plane.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "strangest?",
+    "youtube's",
+    "logo,",
+    "dropped",
+    "plane."
+   ],
+   "section": "C",
+   "case": "youtube"
+  },
+  {
+   "id": "s06_truck",
+   "scene": "hc95_truck",
+   "min_duration": 3.4,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "brake",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "knock",
+     "gain": 0.26
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.38
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "cuffs",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "K_firewood",
+    "K_three"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police stopped the firewood truck. Three arrested.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "stopped",
+    "firewood",
+    "truck.",
+    "three",
+    "arrested."
+   ],
+   "section": "D",
+   "case": "youtube",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "hc95_end",
+   "min_duration": 2.2,
+   "pad_after": 0.1,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "tick",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "stamp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sub",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_nolink",
+    "K_why"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Haaland had no part. It's a gang's label.",
+     "tone": "reveal",
+     "pause_before": 0.05,
+     "speed": 1.06
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "haaland",
+    "no",
+    "part.",
+    "gang's",
+    "label."
+   ],
+   "section": "E",
+   "case": "haaland",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "August 2026, near Tulcan (the Guagua Negro area), Ecuador, by the Colombian border: Ecuador's police seized a cocaine shipment from a truck; the green rectangular packages carried stickers of Manchester City and Norway striker Erling Haaland's face. Narration: 'Smugglers branded their cocaine with Haaland.' (the traffickers' marking; 'branded' = marked with his image) Headline 'COCAINE BRICKS / WITH HAALAND'S FACE'. Label 'NEAR TULCAN, ECUADOR · AUG 2026'.",
+   "sources": [
+    "apabc",
+    "aplanacion",
+    "outkick",
+    "lbc",
+    "ibt",
+    "sabah",
+    "onenews"
+   ]
+  },
+  {
+   "id": "K_weight",
+   "type": "established",
+   "nature": "fact",
+   "text": "The shipment weighed 469 kg, 1,034 lb (AP; OutKick 'just over 1,000 pounds'; Earlygame 1,034 lb; zamin.uz 469 kg). LBC and MyJoyOnline give 369 kg; the reel says only 'over 1,000 pounds' and shows the AP figure. Seized from a truck near the Colombian border. Narration: 'Over 1,000 pounds, hidden in a truck near Colombia.'",
+   "sources": [
+    "apabc",
+    "aplanacion",
+    "outkick",
+    "earlygame",
+    "zamin"
+   ]
+  },
+  {
+   "id": "K_tip",
+   "type": "established",
+   "nature": "fact",
+   "text": "Anti-narcotics agents acting on an anonymous tip on the Pan-American Highway noticed a suspicious truck; on searching it they found the packages hidden in a false bottom; police video shows the packages spilling out of the truck's false bottom with the Haaland stickers visible. Narration (gotcha): 'A tip led police to the false bottom.' Labels 'ANONYMOUS TIP · PAN-AMERICAN HIGHWAY', callout 'FALSE BOTTOM'.",
+   "sources": [
+    "apabc",
+    "aplanacion",
+    "apsmt",
+    "outkick",
+    "gray"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 469 KG): the weight AP gives for the seizure (1,034 lb), matched by OutKick's 'just over 1,000 pounds' and Earlygame's 1,034 lb. Counter '469 KG' with the label 'COCAINE · ABOUT 1,034 LB (AP)'.",
+   "sources": [
+    "apabc",
+    "outkick",
+    "earlygame",
+    "zamin"
+   ]
+  },
+  {
+   "id": "K_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "One person was arrested (AP: the driver; LBC: a Colombian woman). The reel names nobody and draws nobody as a suspect; label sub '1 arrested · not named'.",
+   "sources": [
+    "apabc",
+    "aplanacion",
+    "lbc",
+    "outkick"
+   ]
+  },
+  {
+   "id": "K_nolink",
+   "type": "established",
+   "nature": "fact",
+   "text": "Haaland has no connection to the shipment: no report links him to it (IBTimes: 'reportedly no connection to the cocaine shipment or the trafficking operation'; other outlets: nothing indicates any connection between the footballer and the drugs); police gave no explanation for the stickers. He is named, never drawn. Narration (callback): 'Haaland had no part.' Label sub 'Haaland has no link to it'.",
+   "sources": [
+    "ibt",
+    "blueprint",
+    "zamin",
+    "apabc"
+   ]
+  },
+  {
+   "id": "K_why",
+   "type": "established",
+   "nature": "fact",
+   "text": "Traffickers commonly mark their shipments with the images or names of well-known sports figures and celebrities to signal which criminal network produced the batch and for which client (AP); in the 2026 Costa del Sol case, Spanish police said the watch logo stamped on the bricks was a branding trick to mark which shipment a batch belonged to (Euro Weekly News). Narration (callback): 'It's a gang's label.'",
+   "sources": [
+    "apabc",
+    "aplanacion",
+    "ewn",
+    "gray"
+   ]
+  },
+  {
+   "id": "K_messi",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the image of Lionel Messi has also appeared on another seized cocaine package (AP; Ynet). Card 'HAALAND'S NOT THE FIRST STAR: / MESSI'S FACE TURNED UP / ON SEIZED COCAINE TOO'.",
+   "sources": [
+    "aplanacion",
+    "apabc",
+    "ynet"
+   ]
+  },
+  {
+   "id": "K_godfather",
+   "type": "established",
+   "nature": "fact",
+   "text": "March 2018: Spanish and Portuguese police seized about 2.5 tonnes of cocaine in roughly one-kilo bricks stamped with the logo of the 1972 film 'The Godfather' (with an image of Marlon Brando), some also with Rolls-Royce and Mini logos; about 2 tonnes were in a warehouse in Lisbon. Narration: 'And that was not the strangest brand.' (editorial rehook) / 'Another gang used The Godfather.' Label 'LISBON + BADAJOZ · MARCH 2018'; the brick's typed stamp 'THE GODFATHER' (plain type, not the film's artwork).",
+   "sources": [
+    "thelocal",
+    "irishlegal",
+    "scotlegal",
+    "apfox18"
+   ]
+  },
+  {
+   "id": "K_roadstop",
+   "type": "established",
+   "nature": "fact",
+   "text": "About half a tonne was found in a car just across the border in Spain's Badajoz province; Spain's narcotics chief said the suspects were caught at a police road stop, with the cocaine hidden in vehicles. Narration (gotcha): 'A road stop caught them.' Label 'ROAD STOP · BADAJOZ, SPAIN'.",
+   "sources": [
+    "thelocal",
+    "apfox18",
+    "infonews"
+   ]
+  },
+  {
+   "id": "K_ten",
+   "type": "established",
+   "nature": "fact",
+   "text": "Ten people were arrested (mainly Colombian and Spanish nationals); the Madrid-based ring was described as broken up. Not named. Narration: 'Ten arrested.' Label '10 ARRESTED · NOT NAMED'. (A May 2018 Portuguese report citing Colombian prosecutors gives 2.3 t and 11 detained; not used.)",
+   "sources": [
+    "thelocal",
+    "apfox18",
+    "infonews"
+   ]
+  },
+  {
+   "id": "K_youtube",
+   "type": "established",
+   "nature": "fact",
+   "text": "November 2022, Tacuarembo department, Uruguay: police seized 444 kg of cocaine, some of the bricks marked with the YouTube logo (and Arabic words), part of 'Operation Albania'; the packages had been thrown from a small plane and collected on the ground. Narration: 'The strangest? YouTube's logo, dropped by plane.' (editorial rehook) Label 'TACUAREMBO, URUGUAY · NOV 2022'; the brick's typed word 'YOUTUBE' (plain type, never the logo artwork).",
+   "sources": [
+    "vice",
+    "lapatilla",
+    "adn40",
+    "montevideo"
+   ]
+  },
+  {
+   "id": "K_firewood",
+   "type": "established",
+   "nature": "fact",
+   "text": "The packages were collected by a pickup and moved to a firewood truck, which police stopped on Route 59 with the rural police (Seguridad Rural). Narration (gotcha): 'Police stopped the firewood truck.' Label 'FIREWOOD TRUCK · ROUTE 59'.",
+   "sources": [
+    "lapatilla",
+    "vice",
+    "montevideo"
+   ]
+  },
+  {
+   "id": "K_three",
+   "type": "established",
+   "nature": "fact",
+   "text": "Three people were arrested: the two drivers (24 and 36) and a 20-year-old who allegedly guided them to the drop site. Not named. Narration: 'Three arrested.' Label '3 ARRESTED · NOT NAMED'.",
+   "sources": [
+    "vice",
+    "lapatilla",
+    "montevideo"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "apabc",
+   "publisher": "ABC News (Associated Press)",
+   "title": "Ecuador's police seize a cocaine shipment with stickers of Norway's soccer star Erling Haaland",
+   "url": "https://abcnews.com/International/wireStory/ecuadors-police-seize-cocaine-shipment-stickers-norways-soccer-135596418",
+   "date": "2026-08-12",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "aplanacion",
+   "publisher": "La Nacion (Associated Press, English)",
+   "title": "Ecuador's police seize a cocaine shipment with stickers of Norway's soccer star Erling Haaland",
+   "url": "https://www.lanacion.com.ar/usa/ecuadors-police-seize-a-cocaine-shipment-with-stickers-of-norways-soccer-star-erling-haaland-nid12082026/",
+   "date": "2026-08-12",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "apsmt",
+   "publisher": "Santa Maria Times (Associated Press)",
+   "title": "Ecuador's police seize a cocaine shipment with stickers of Norway's soccer star Erling Haaland",
+   "url": "https://santamariatimes.com/ap/sports/ecuadors-police-seize-a-cocaine-shipment-with-stickers-of-norways-soccer-star-erling-haaland/article_d9752c42-2324-501b-8b4a-9eeec5650d2e.html",
+   "date": "2026-08-12",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "gray",
+   "publisher": "Hawaii News Now (Gray / CNN Newsource)",
+   "title": "Police seize cocaine shipment featuring soccer star's face on the packaging",
+   "url": "https://www.hawaiinewsnow.com/2026/08/13/police-seize-cocaine-shipment-featuring-soccer-stars-face-packaging/",
+   "date": "2026-08-13",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "outkick",
+   "publisher": "Fox News (OutKick)",
+   "title": "Ecuadorian police find drugs with Norwegian soccer star Erling Haaland all over them",
+   "url": "https://www.foxnews.com/outkick-sports/police-seize-cocaine-bricks-stickers-norwegian-soccer-star-erling-haaland",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "lbc",
+   "publisher": "LBC",
+   "title": "Erling Haaland cocaine Ecuador drugs",
+   "url": "https://www.lbc.co.uk/world-news/erling-haaland-cocaine-ecuador-drugs/",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "ibt",
+   "publisher": "International Business Times UK",
+   "title": "Erling Haaland Image Found on Cocaine Bricks in Ecuador: Why Was the Footballer's Face Used?",
+   "url": "https://www.ibtimes.co.uk/ecuador-cocaine-seizure-haaland-image-1814004",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "sabah",
+   "publisher": "Daily Sabah",
+   "title": "Haaland's image takes bizarre turn on Ecuador cocaine haul",
+   "url": "https://www.dailysabah.com/sports/football/haalands-image-takes-bizarre-turn-on-ecuador-cocaine-haul/amp",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "onenews",
+   "publisher": "1News (New Zealand)",
+   "title": "Erling Haaland stickers found on cocaine haul seized by Ecuador police",
+   "url": "https://www.1news.co.nz/2026/08/13/erling-haaland-stickers-found-on-cocaine-haul-seized-by-ecuador-police/",
+   "date": "2026-08-13",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "earlygame",
+   "publisher": "Earlygame",
+   "title": "Police Seize Over 1,000 Pounds of Cocaine Branded with Erling Haaland's Face",
+   "url": "https://earlygame.com/news/entertainment/goalscorer-as-drug-decor-police-find-1034lbs-of-cocaine-featuring-haalands-likeness",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "myjoy",
+   "publisher": "MyJoyOnline",
+   "title": "Ecuador police seize $11 million cocaine packaged with image of soccer star Erling Haaland",
+   "url": "https://www.myjoyonline.com/ecuador-police-seize-11-million-cocaine-packaged-with-image-of-soccer-star-erling-haaland/",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "zamin",
+   "publisher": "Zamin.uz",
+   "title": "In Ecuador, 469 kg of cocaine found in packages bearing Haaland's photo",
+   "url": "https://zamin.uz/en/world/223547-ekvadorda-469-kg-kokain-holand-surati-tushirilgan-paketlarda-topildi.html",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "blueprint",
+   "publisher": "Blueprint (Nigeria)",
+   "title": "Haaland's face appears on seized cocaine packs",
+   "url": "https://blueprint.ng/?p=835963",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "ynet",
+   "publisher": "Ynet News",
+   "title": "Haaland's bizarre cameo: Face of an $11M cocaine haul",
+   "url": "https://www.ynetnews.com/sport/article/r100aftiugl",
+   "date": "2026-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "ewn",
+   "publisher": "Euro Weekly News",
+   "title": "Cocaine bricks stamped with luxury watch logo expose EUR50m Costa del Sol empire",
+   "url": "https://euroweeklynews.com/2026/09/18/cocaine-bricks-stamped-with-luxury-watch-logo-expose-e50m-costa-del-sol-empire/",
+   "date": "2026-09-18",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "thelocal",
+   "publisher": "The Local Spain (AFP)",
+   "title": "Spanish police seize 2.5 tonnes of coke",
+   "url": "https://www.thelocal.es/20180316/spanish-police-seize-25-tonnes-of-coke",
+   "date": "2018-03-16",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "apfox18",
+   "publisher": "Fox News (Associated Press)",
+   "title": "Portugal, Spain nab more than 2 tons of cocaine, arrest 10",
+   "url": "https://www.foxnews.com/world/portugal-spain-nab-more-than-2-tons-of-cocaine-arrest-10.amp",
+   "date": "2018-03",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "infonews",
+   "publisher": "infonews.ca (Associated Press)",
+   "title": "Portugal, Spain nab more than 2 tons of cocaine, arrest 10",
+   "url": "https://infonews.ca/?p=1077713",
+   "date": "2018-03",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "irishlegal",
+   "publisher": "Irish Legal News",
+   "title": "And finally... Coka Nostra",
+   "url": "https://www.irishlegal.com/articles/finally-coka-nostra",
+   "date": "2018-03",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "scotlegal",
+   "publisher": "Scottish Legal News",
+   "title": "And finally... Coka Nostra",
+   "url": "https://www.scottishlegal.com/articles/finally-coka-nostra",
+   "date": "2018-03",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "vice",
+   "publisher": "VICE",
+   "title": "Cocaine Bricks in a Huge $7M Bust Were Stamped With the YouTube Logo",
+   "url": "https://vice.com/en/article/cocaine-bricks-in-a-huge-dollar7m-bust-were-stamped-with-the-youtube-logo",
+   "date": "2022-11",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "lapatilla",
+   "publisher": "La Patilla (citing Infobae and El Pais, Uruguay)",
+   "title": "Lanzaron desde una avioneta 444 kilos de cocaina marcados con el logo de YouTube en Uruguay",
+   "url": "https://www.lapatilla.com/2022/11/08/avioneta-cocaina-logo-youtube-uruguay/",
+   "date": "2022-11-08",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "adn40",
+   "publisher": "ADN40 (Mexico)",
+   "title": "Decomisan cocaina marcada con el logo de YouTube",
+   "url": "https://www.adn40.mx/seguridad/decomisan-cocaina-marcados-logo-youtube-lhp/",
+   "date": "2022-11",
+   "accessed": "search-result extract only, 2026-10-23"
+  },
+  {
+   "id": "montevideo",
+   "publisher": "Montevideo Portal",
+   "title": "Cocaina incautada en Tacuarembo tiene un valor de 15 millones de dolares en Europa",
+   "url": "https://www.montevideo.com.uy/Noticias/Cocaina-incautada-en-Tacuarembo-tiene-un-valor-de-15-millones-de-dolares-en-Europa-uc837551",
+   "date": "2022-11",
+   "accessed": "search-result extract only, 2026-10-23"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 8,
+ "lane": "bust",
+ "search_terms": [
+  "haaland cocaine",
+  "cocaine haaland face",
+  "cartel brands"
+ ],
+ "palette": {
+  "shadow": "#0f1c26",
+  "mid": "#b8b4a6",
+  "accent": "#e2a13b"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "COCAINE BRICKS"
+   },
+   {
+    "text": "WITH HAALAND'S FACE",
+    "colour": "#e2a13b"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · HAALAND"
+   },
+   {
+    "t": 12.16,
+    "v": "2 · THE GODFATHER"
+   },
+   {
+    "t": 18.95,
+    "v": "3 · YOUTUBE"
+   }
+  ],
+  "y": 350,
+  "until": 24.65
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DUMBEST CARTEL BRAND?"
+   },
+   {
+    "text": "HAALAND, GODFATHER OR YOUTUBE? 👇",
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D BRAND EVERYTHING",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR CARTEL BRANDS",
+    "fs": 36,
+    "colour": "#e2a13b"
+   },
+   {
+    "text": "CARTEL BRANDS · 1",
+    "fs": 34
+   }
+  ],
+  "from": 2.66,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-23"
+}

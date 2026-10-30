@@ -1,0 +1,1023 @@
+{
+ "id": "tcv93-billion-dollar-ship",
+ "number": 93,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Billion-Dollar Cocaine Ship",
+ "central_question": "Record Busts, 1: smugglers craned a billion dollars of cocaine onto a cargo ship; Hamburg found 16 tonnes in tins of wall filler; Ecuador found nearly 22 tonnes under a pigsty. Which was the worst hiding spot?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "16": "sixteen",
+   "22": "twenty-two",
+   "wall-filler": "wall filler"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  25,
+  29
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "93",
+  "label": "RECORD BUSTS · 1"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s06_stash",
+   "word": [
+    0,
+    8
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "bs93_crew",
+  "bs93_mate",
+  "bs93_guard",
+  "bs93_zoll",
+  "bs93_agent_nl",
+  "bs93_recipient",
+  "bs93_soldier",
+  "bs93_soldier2"
+ ],
+ "content_notes": "Tone: deadpan about the schemes (a ship's own crane, tins of wall filler, a pigsty); the joke is on the smugglers, never on anyone harmed, and no victim, user or animal suffering is shown (the pigs are calm and unhurt). The eight Gayane crew members pleaded guilty (prison sentences followed): the plea is stated, they are never named and appear ONLY as dark rim-lit silhouettes tagged NOT A LIKENESS. The shipping line was not accused of any wrongdoing: it is not named on screen, and the ship, containers and crane carry no logo, livery, name or number. The Hamburg recipient (arrested Feb 2021) and the Vinces caretaker (arrested Jan 2024) are ACCUSED only: never named, 'arrested' with 'prosecutors say' / 'accused' on screen, AS OF OCT 2026; the Dutch man is a silhouette, the caretaker is not drawn. Coast Guard, customs, police and soldiers are generic figures with no badge, flag, patch or insignia; no weapon is drawn, nobody is struck, the only contact is hands behind the back. The freight papers, tins and sacks carry only our own typed words (no real document, label or brand imitated). The deck, the mess room, the Hamburg shed, the Dutch street and the Ecuadorian farm are illustrations, not the reported places. Every card is our own typed graphic. No dialogue or quotation card. Facts verified 2026-10-21.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "bs93_hook",
+   "min_duration": 4.6,
+   "pad_after": 0.02,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "water",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_crane"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Smugglers loaded a ship with a billion in cocaine.",
+     "tone": "hook",
+     "speed": 1.1
+    },
+    {
+     "who": "narrator",
+     "text": "Its own crew craned it up from speedboats.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "smugglers",
+    "ship",
+    "billion",
+    "cocaine.",
+    "own",
+    "crew",
+    "craned",
+    "speedboats."
+   ],
+   "section": "A",
+   "case": "philadelphia",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_swab",
+   "scene": "bs93_swab",
+   "min_duration": 4.6,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.02,
+     "word": [
+      0,
+      3
+     ],
+     "name": "glitch",
+     "gain": 0.18
+    },
+    {
+     "at": 0.5,
+     "word": [
+      0,
+      9
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_swab",
+    "K_pleas",
+    "K_stat"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then a swab found cocaine on the second mate's hands.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "swab",
+    "found",
+    "cocaine",
+    "second",
+    "mate's",
+    "hands."
+   ],
+   "section": "B",
+   "case": "philadelphia"
+  },
+  {
+   "id": "s03_tins",
+   "scene": "bs93_tins",
+   "min_duration": 4.0,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "step",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      7
+     ],
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.12,
+     "word": [
+      1,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_tins"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But not the strangest.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Hamburg customs found 16 tonnes in wall-filler tins.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "strangest.",
+    "hamburg",
+    "customs",
+    "16",
+    "tonnes",
+    "wall-filler",
+    "tins."
+   ],
+   "section": "B",
+   "case": "hamburg"
+  },
+  {
+   "id": "s04_door",
+   "scene": "bs93_door",
+   "min_duration": 3.7,
+   "pad_after": 0.15,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "cuffs",
+     "gain": 0.32
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      4
+     ],
+     "name": "hit",
+     "gain": 0.36
+    },
+    {
+     "at": 0.5,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sparkle",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_paper",
+    "K_fact"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The name on the paperwork? Arrested.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "name",
+    "paperwork?",
+    "arrested."
+   ],
+   "section": "C",
+   "case": "hamburg"
+  },
+  {
+   "id": "s05_farm",
+   "scene": "bs93_farm",
+   "min_duration": 3.6,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "step",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "radio",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_farm"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "And the biggest?",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "Ecuador's army raided a pig farm.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "biggest?",
+    "ecuador's",
+    "army",
+    "raided",
+    "pig",
+    "farm."
+   ],
+   "section": "C",
+   "case": "ecuador"
+  },
+  {
+   "id": "s06_stash",
+   "scene": "bs93_stash",
+   "min_duration": 3.4,
+   "pad_after": 0.15,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "door",
+     "gain": 0.26
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sub",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_stash",
+    "K_arrest"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Under the pig pens, they found nearly 22 tonnes.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "under",
+    "pig",
+    "pens,",
+    "found",
+    "nearly",
+    "22",
+    "tonnes."
+   ],
+   "section": "D",
+   "case": "ecuador",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "bs93_end",
+   "min_duration": 2.2,
+   "pad_after": 0.2,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "stamp",
+     "gain": 0.28
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_ship"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then customs seized the ship itself.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "customs",
+    "seized",
+    "ship",
+    "itself."
+   ],
+   "section": "E",
+   "case": "philadelphia",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 17 June 2019 at the Packer Marine Terminal, Port of Philadelphia, U.S. Customs and Border Protection with federal, state and local partners found cocaine worth more than $1 billion (CBP's estimate: about $1.3 billion street value) in seven shipping containers aboard the container ship MSC Gayane. Narration: 'Smugglers loaded a ship with a billion in cocaine.' Headline 'A BILLION-DOLLAR / COCAINE SHIP'. The shipping line was not accused of wrongdoing and is not named on screen.",
+   "sources": [
+    "cbp_ship",
+    "mex_record",
+    "doj_penda",
+    "fox29_ship",
+    "npr_ship",
+    "cbs_ship"
+   ]
+  },
+  {
+   "id": "K_crane",
+   "type": "established",
+   "nature": "fact",
+   "text": "Prosecutors say crew members loaded bulk packages of cocaine onto the ship at sea from speedboats that approached in the middle of the night, hoisted the cargo nets aboard with the ship's crane, hid the drugs among legitimate cargo in containers and resealed them with fake seals. Narration: 'Its own crew craned it up from speedboats.' Callout 'THE SHIP'S OWN CRANE'.",
+   "sources": [
+    "doj_penda",
+    "baird",
+    "fox29_penda",
+    "fw_closed"
+   ]
+  },
+  {
+   "id": "K_swab",
+   "type": "established",
+   "nature": "fact",
+   "text": "Coast Guard officials swabbed crew members for cocaine residue and found it on the hands and arms of the ship's second mate, according to his arrest affidavit; he told investigators he had been paid about $50,000 for his part. Narration: 'Then a swab found cocaine on the second mate's hands.' Label 'PHILADELPHIA · 17 JUNE 2019' with the sub 'Coast Guard swab test (arrest affidavit)'. The second mate later pleaded guilty and was sentenced; never named, silhouette.",
+   "sources": [
+    "inq_june",
+    "fw_16",
+    "cbs_arrests"
+   ]
+  },
+  {
+   "id": "K_pleas",
+   "type": "established",
+   "nature": "fact",
+   "text": "Eight crew members of the MSC Gayane, including the chief mate and the second mate, pleaded guilty to conspiracy charges in federal court in Philadelphia; prison sentences followed (the fourth engineer, for example, 5 years 10 months in April 2021). Label '8 CREW PLEADED GUILTY' with the sub 'Federal court, Philadelphia (DOJ)'.",
+   "sources": [
+    "doj_penda",
+    "fw_pleas",
+    "baird",
+    "mex_two",
+    "mex_first"
+   ]
+  },
+  {
+   "id": "K_stat",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): CBP's final figure was 39,525 lb of cocaine (nearly 20 US tons, about 17.9 metric tonnes) from seven containers, the largest cocaine seizure in CBP's 230-year history (first reported as about 16.5 tons / 33,000 lb). Counter '39,525 LB' with the label 'CBP'S BIGGEST COCAINE BUST EVER'.",
+   "sources": [
+    "cbp_ship",
+    "mex_record",
+    "trib",
+    "fw_16"
+   ]
+  },
+  {
+   "id": "K_tins",
+   "type": "established",
+   "nature": "fact",
+   "text": "Hamburg, February 2021: acting on a Dutch risk analysis, German customs checked containers shipped from Paraguay on 12 February and found 16,174 kg (about 16 tonnes) of cocaine hidden in 1,728 tins of construction putty / wall filler; German customs called it the largest amount of cocaine ever seized in Europe. Narration: 'Hamburg customs found 16 tonnes in wall-filler tins.' Label 'GERMAN CUSTOMS · HAMBURG · FEB 2021'.",
+   "sources": [
+    "ap_hh",
+    "reuters_hh",
+    "afp_hh",
+    "cnn_hh",
+    "mex_hh"
+   ]
+  },
+  {
+   "id": "K_paper",
+   "type": "established",
+   "nature": "fact",
+   "text": "The freight document for the Hamburg containers was addressed to a 28-year-old man in Vlaardingen, the Netherlands, registered as the recipient, who was arrested on 24 February 2021, Dutch prosecutors said. Accused only, never named, no outcome found AS OF OCT 2026. Narration: 'The name on the paperwork? Arrested.' Label 'ARRESTED, PROSECUTORS SAY' with the sub 'Accused only (AP, Reuters)'.",
+   "sources": [
+    "ap_hh",
+    "reuters_hh",
+    "afp_hh"
+   ]
+  },
+  {
+   "id": "K_fact",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: tracing the same recipient, Belgian customs found 7.2 more tonnes of cocaine in Antwerp, hidden in a container of wooden blocks from Panama; with Hamburg, more than 23 tonnes, reported as Europe's biggest cocaine haul. Card 'SAME CASE, ANTWERP: / 7.2 MORE TONNES / IN WOODEN BLOCKS'.",
+   "sources": [
+    "ap_hh",
+    "reuters_hh",
+    "afp_hh",
+    "cnn_hh"
+   ]
+  },
+  {
+   "id": "K_farm",
+   "type": "established",
+   "nature": "fact",
+   "text": "Vinces, Los Ríos province, Ecuador, Sunday 21 January 2024: more than 150 soldiers raided a farm during the state of emergency's military offensive, after military intelligence work. Narration: 'And the biggest?' (editorial rehook) / 'Ecuador's army raided a pig farm.' Label 'VINCES, ECUADOR · 21 JAN 2024'.",
+   "sources": [
+    "primicias_ec",
+    "vistazo_ec",
+    "reuters_ec",
+    "eldiario_ec"
+   ]
+  },
+  {
+   "id": "K_stash",
+   "type": "established",
+   "nature": "fact",
+   "text": "The cocaine was stored in underground stashes built beneath a pig shed on the farm: close to 22 tonnes by the army's count (21.5 tonnes at the destruction days later), the largest drug seizure in Ecuador's history. Narration: 'Under the pig pens, they found nearly 22 tonnes.' Label 'ECUADOR'S BIGGEST DRUG BUST'.",
+   "sources": [
+    "reuters_ec",
+    "primicias_ec",
+    "vistazo_ec",
+    "mercurio_ec",
+    "heraldo_ec"
+   ]
+  },
+  {
+   "id": "K_arrest",
+   "type": "established",
+   "nature": "fact",
+   "text": "One man, the farm's caretaker, was arrested at the scene and ordered held in pretrial detention; accused only, never named or drawn. Label sub 'One arrest: the caretaker, accused'.",
+   "sources": [
+    "reuters_ec",
+    "vistazo_ec2",
+    "primicias_ec"
+   ]
+  },
+  {
+   "id": "K_ship",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 4 July 2019 CBP executed a seizure warrant and seized the MSC Gayane itself, which CBP called the largest vessel seized in its 230-year history (the ship was later released on bond; the shipping line was not accused). Narration: 'Then customs seized the ship itself.'",
+   "sources": [
+    "cbp_ship",
+    "npr_ship",
+    "cbs_ship",
+    "whyy",
+    "fox29_ship",
+    "gcaptain"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "cbp_ship",
+   "publisher": "U.S. Customs and Border Protection",
+   "title": "U.S. Customs and Border Protection Seizes MSC Gayane Following Record Drug Bust",
+   "url": "https://cbp.gov/newsroom/local-media-release/us-customs-and-border-protection-seizes-msc-gayane-following-record",
+   "date": "2019-07",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "mex_record",
+   "publisher": "The Maritime Executive",
+   "title": "Philadelphia Cocaine Bust Was Largest in CBP's History",
+   "url": "https://maritime-executive.com/article/philadelphia-cocaine-bust-was-largest-in-cbp-s-history",
+   "date": "2019-06",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "trib",
+   "publisher": "TribLive (AP)",
+   "title": "U.S. Customs records largest cocaine seizure in its history",
+   "url": "https://triblive.com/news/world/u-s-customs-records-largest-cocaine-seizure-in-its-history",
+   "date": "2019-06",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "inq_june",
+   "publisher": "The Philadelphia Inquirer",
+   "title": "Cocaine seized at Philly port: drug bust on cargo ship",
+   "url": "https://inquirer.com/news/cocaine-seized-philly-port-drug-bust-cargo-ship-customs-and-border-protection-20190618.html",
+   "date": "2019-06-18",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "fw_16",
+   "publisher": "FreightWaves",
+   "title": "More than 16 tons of cocaine seized at Philadelphia port",
+   "url": "https://www.freightwaves.com/news/more-than-16-tons-of-cocaine-seized-at-philadelphia-port",
+   "date": "2019-06",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "cbs_arrests",
+   "publisher": "CBS Philadelphia (KYW)",
+   "title": "Authorities Confirm 6 Arrests In Historic Cocaine Bust At Philadelphia Port",
+   "url": "https://www.cbsnews.com/philadelphia/news/historic-cocaine-bust-at-philadelphia-port/",
+   "date": "2019-06",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "doj_penda",
+   "publisher": "U.S. Attorney's Office, Eastern District of Pennsylvania",
+   "title": "MSC Gayane Crew Member Sentenced to 5 Years for Conspiracy to Smuggle $1 Billion Worth of Cocaine",
+   "url": "https://www.justice.gov/usao-edpa/pr/msc-gayane-crew-member-sentenced-5-years-conspiracy-smuggle-1-billion-worth-cocaine",
+   "date": "2021-04",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "fox29_penda",
+   "publisher": "FOX 29 Philadelphia",
+   "title": "Crew member gets over 5 years in $1B cocaine bust at Philly port",
+   "url": "https://fox29.com/news/montenegrin-crew-member-gets-over-5-years-in-cocaine-bust",
+   "date": "2021-04",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "baird",
+   "publisher": "Baird Maritime",
+   "title": "Containership crewman sentenced for conspiracy to smuggle US$1 billion worth of cocaine into US",
+   "url": "https://www.bairdmaritime.com/shipping/boxships/containership-crewman-sentenced-for-conspiracy-to-smuggle-us1-billion-worth-of-cocaine-into-us",
+   "date": "2021-04",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "fw_pleas",
+   "publisher": "FreightWaves",
+   "title": "Shipping's billion-dollar coke bust: 8 plead guilty, sentencing begins",
+   "url": "https://www.freightwaves.com/news/shippings-billion-dollar-coke-bust-8-plead-guilty-sentencing-begins",
+   "date": "2020",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "mex_first",
+   "publisher": "The Maritime Executive",
+   "title": "Jail Sentence for First of MSC Gayane Crew in Cocaine Smuggling Case",
+   "url": "https://www.maritime-executive.com/article/jail-sentence-for-first-of-msc-gayane-crew-in-cocaine-smuggling-case",
+   "date": "2020",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "mex_two",
+   "publisher": "The Maritime Executive",
+   "title": "Two More MSC Gayane Crewmembers Sentenced for Cocaine Smuggling",
+   "url": "https://maritime-executive.com/article/two-more-msc-gayane-crewmembers-sentenced-for-cocaine-smuggling",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "fw_closed",
+   "publisher": "FreightWaves",
+   "title": "Case closed: How drug ring hid $1B worth of coke on a single ship",
+   "url": "https://www.freightwaves.com/news/case-closed-how-drug-ring-hid-1b-worth-of-coke-on-a-single-ship",
+   "date": "2021",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "bloomberg",
+   "publisher": "Bloomberg Businessweek (via Bloomberg Tax)",
+   "title": "Cocaine Smugglers Infiltrated the World's Biggest Shipping Line",
+   "url": "https://news.bloombergtax.com/international-trade/cocaine-smugglers-infiltrated-the-worlds-biggest-shipping-line",
+   "date": "2022-12-16",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "npr_ship",
+   "publisher": "NPR",
+   "title": "Federal Agents Seize Cargo Ship Linked To Massive Cocaine Bust In Philadelphia",
+   "url": "https://www.npr.org/2019/07/09/739761916/federal-agents-seize-cargo-ship-linked-to-massive-cocaine-bust-in-philadelphia",
+   "date": "2019-07-09",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "cbs_ship",
+   "publisher": "CBS Philadelphia (KYW)",
+   "title": "Federal Authorities Seize Cargo Ship Involved In $1 Billion Cocaine Bust At Philadelphia Port",
+   "url": "https://cbsnews.com/philadelphia/news/msc-gayane-seized-cocaine-bust-philadelphia",
+   "date": "2019-07",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "whyy",
+   "publisher": "WHYY (AP)",
+   "title": "U.S. Customs seizes ship where huge cocaine load was found",
+   "url": "https://whyy.org/articles/u-s-customs-seizes-ship-where-huge-cocaine-load-was-found",
+   "date": "2019-07",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "fox29_ship",
+   "publisher": "FOX 29 Philadelphia",
+   "title": "Ship seized after $1.3 billion cocaine bust at Philadelphia port",
+   "url": "https://fox29.com/news/ship-seized-after-1-3-billion-cocaine-bust-at-philadelphia-port",
+   "date": "2019-07",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "gcaptain",
+   "publisher": "gCaptain",
+   "title": "MSC Gayane Released on $50 Million Bail",
+   "url": "https://gcaptain.com/msc-gayane-released-on-50-million-bail/",
+   "date": "2019",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "ap_hh",
+   "publisher": "Associated Press (via Spectrum News 13)",
+   "title": "Germany finds huge cocaine shipment, Dutch discover 2nd one",
+   "url": "https://mynews13.com/fl/orlando/ap-top-news/2021/02/24/germany-finds-huge-cocaine-shipment-dutch-discover-2nd-one",
+   "date": "2021-02-24",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "reuters_hh",
+   "publisher": "Reuters (via Daily Maverick)",
+   "title": "Dutch officials report record catch of more than 23 tonnes of cocaine",
+   "url": "https://www.dailymaverick.co.za/article/2021-02-25-dutch-officials-report-record-catch-of-more-than-23-tonnes-of-cocaine/",
+   "date": "2021-02-25",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "afp_hh",
+   "publisher": "AFP (via Gulf News)",
+   "title": "Dutch report record catch of more than 23 tonnes of cocaine",
+   "url": "https://gulfnews.com/world/europe/dutch-report-record-catch-of-more-than-23-tonnes-of-cocaine-1.1614179850990",
+   "date": "2021-02-24",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "cnn_hh",
+   "publisher": "CNN (via KTVZ)",
+   "title": "Police in Germany and Belgium make Europe's biggest ever cocaine bust, worth billions of euros",
+   "url": "https://ktvz.com/news/national-world/2021/02/24/police-in-germany-and-belgium-make-europes-biggest-ever-cocaine-bust-worth-billions-of-euros/",
+   "date": "2021-02-24",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "mex_hh",
+   "publisher": "The Maritime Executive",
+   "title": "Europe's Largest Drug Bust: 25 Tons Seized in Hamburg and Antwerp",
+   "url": "https://maritime-executive.com/article/europe-s-largest-drug-bust-25-tons-seized-in-hamburg-and-antwerp",
+   "date": "2021-02",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "reuters_ec",
+   "publisher": "Reuters (via Yahoo News)",
+   "title": "Ecuador police destroy over 20 metric tons of cocaine",
+   "url": "https://au.news.yahoo.com/ecuador-police-destroy-over-20-194138843.html",
+   "date": "2024-01-25",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "primicias_ec",
+   "publisher": "Primicias",
+   "title": "Más de 20 toneladas de drogas y armas estaban camufladas bajo una chanchera",
+   "url": "https://primicias.ec/noticias/seguridad/toneladas-drogas-armas-chanchera-vinces",
+   "date": "2024-01-21",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "vistazo_ec",
+   "publisher": "Vistazo",
+   "title": "Cerca de 22 toneladas de droga halladas debajo de una chanchera en Vinces, provincia de Los Ríos",
+   "url": "https://www.vistazo.com/actualidad/nacional/cerca-de-22-toneladas-de-droga-halladas-debajo-de-una-chanchera-en-vinces-provincia-de-los-rios-GB6663118",
+   "date": "2024-01-22",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "vistazo_ec2",
+   "publisher": "Vistazo",
+   "title": "Dictan prisión contra un hombre tras el hallazgo de cerca de 22 toneladas de cocaína, en una finca de Vinces",
+   "url": "https://www.vistazo.com/actualidad/nacional/dictan-prision-contra-un-hombre-tras-el-hallazgo-de-cerca-de-22-toneladas-de-cocaina-en-una-finca-de-vinces-CF6667352",
+   "date": "2024-01",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "mercurio_ec",
+   "publisher": "El Mercurio (Cuenca)",
+   "title": "Hallan unas 22 toneladas de droga y armas escondidos en Vinces",
+   "url": "https://elmercurio.com.ec/?p=1066885",
+   "date": "2024-01-22",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "heraldo_ec",
+   "publisher": "El Heraldo (Barranquilla)",
+   "title": "Ecuador destruye el mayor decomiso de droga en la historia del país: 21,5 toneladas de cocaína",
+   "url": "https://www.elheraldo.co/mundo/2024/01/25/ecuador-destruye-el-mayor-decomiso-de-droga-en-la-historia-del-pais-21-5-toneladas-de-cocaina-1065565/",
+   "date": "2024-01-25",
+   "accessed": "search-result extract only, 2026-10-21"
+  },
+  {
+   "id": "eldiario_ec",
+   "publisher": "El Diario (Manabí)",
+   "title": "Militares decomisan 22 toneladas de droga",
+   "url": "https://www.eldiario.ec/sin-categoria/militares-decomisan-de-22-toneladas-de-droga-22012024/",
+   "date": "2024-01-22",
+   "accessed": "search-result extract only, 2026-10-21"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 8,
+ "lane": "bust",
+ "search_terms": [
+  "cocaine ship",
+  "record cocaine bust",
+  "philadelphia cocaine"
+ ],
+ "palette": {
+  "shadow": "#0f1a26",
+  "mid": "#bdb5a6",
+  "accent": "#e8a93a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A BILLION-DOLLAR"
+   },
+   {
+    "text": "COCAINE SHIP",
+    "colour": "#e8a93a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "CASE",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · PHILADELPHIA"
+   },
+   {
+    "t": 11.42,
+    "v": "2 · HAMBURG"
+   },
+   {
+    "t": 19.83,
+    "v": "3 · ECUADOR"
+   }
+  ],
+  "y": 350,
+  "until": 25.36
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WORST HIDING SPOT?"
+   },
+   {
+    "text": "SHIP, TINS OR PIGSTY? 👇",
+    "colour": "#e8a93a"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D TRUST THIS CREW",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR RECORD BUSTS",
+    "fs": 36,
+    "colour": "#e8a93a"
+   },
+   {
+    "text": "RECORD BUSTS · 1",
+    "fs": 34
+   }
+  ],
+  "from": 2.3,
+  "y": 330,
+  "fs": 64
+ },
+ "legal_status_verified": "2026-10-21"
+}

@@ -1,0 +1,232 @@
+{
+  "series": "THE HIDDEN WORLD: Case Files (true crime)",
+  "videos": {
+    "01": {
+      "id": "tc01-chamberlain-jacket",
+      "title": "She Got Life for Murder. The 'Blood' Was Sound-Deadener. #Shorts",
+      "file": "true_crime_01.mp4",
+      "media": {
+        "duration": 81.426,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 26460506,
+        "mean_volume_db": -17.2,
+        "max_volume_db": -1.1
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 2441,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -17.8,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "true_peak_dbtp": -1.1
+      },
+      "asr_word_error_rate": 0.1,
+      "frames_sampled": 14,
+      "qa_dir": "series/true-crime/qa/true_crime_01",
+      "status": "verified",
+      "sha256": "de8310e1efaad37cf01003beb91c4de111d7d0cdbda9d8567c3125d05f31ad0f",
+      "output": "series/true-crime/output/true_crime_01.mp4",
+      "verified": "2026-10-11T04:06:53",
+      "next_task": "none; ready for upload (see README 'Upload from an Android phone')",
+      "editorial_review": {
+        "status": "passed",
+        "reviewed": "2026-10-11",
+        "A_investigative_editor": "Every narrated line maps to an established claim with 2+ sources (research_case_01.md table). Corrected in review: 'thirty-two years' -> 'almost thirty-two years' (31y10m). Avoided: 'declared innocent', the 'dingo ate my baby' misquote, 'faked' lab claims, naming the fallen climber.",
+        "B_retention": "Opens on the paradox (life sentence / 'blood' that was never blood) with a NOT BLOOD stamp by ~4.5 s; every scene adds a new fact; silence and a reveal on the jacket; payoff in the 2012 finding; memorial close. Hook first line shortened (date moved on screen).",
+        "C_director": "Warm desert/amber grade; one camera move per shot; ILLUSTRATION tags on reconstructions; no child, violence or red 'blood' depicted; music ducked under narration, hush on the turning point.",
+        "D_first_time_viewer": "Who/where/when established in the first 15 s (mother, Uluru, 1980); legal steps named plainly; ending answers how Azaria died and how the mother was cleared.",
+        "E_software_qa": "All media checks pass; 2,441 frames decoded, no black frames; captions inside scenes; -14.2 LUFS, TP -1.1 dBTP; ASR WER 0.10 (residual errors are proper names: Azaria, matinee). Frames inspected at 6 s intervals plus key moments (hook stamp, jacket reveal).",
+        "fixes_made": [
+          "half-buried jacket redrawn",
+          "release scene redrawn",
+          "ILLUSTRATION tags moved off captions",
+          "caption emphasis punctuation bug",
+          "years spoken naturally (was 'nineteen hundred eighty two')",
+          "'almost thirty-two years'"
+        ]
+      }
+    },
+    "02": {
+      "id": "tc02-unabomber-words",
+      "title": "How the Unabomber's Own Words Gave Him Away #Shorts",
+      "file": "true_crime_02.mp4",
+      "status": "verified",
+      "next_task": "none; ready for upload (see README 'Upload from an Android phone')",
+      "media": {
+        "duration": 84.122,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 27311694,
+        "mean_volume_db": -16.9,
+        "max_volume_db": -1.0
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 2522,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -18.9,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.1,
+        "true_peak_dbtp": -1.0
+      },
+      "asr_word_error_rate": 0.086,
+      "frames_sampled": 14,
+      "qa_dir": "series/true-crime/qa/true_crime_02",
+      "sha256": "ac9e367a0965fa5a2216345f4faa0ceea8af5183259c9f5995015f642a4f221d",
+      "output": "series/true-crime/output/true_crime_02.mp4",
+      "verified": "2026-10-11T04:22:50",
+      "editorial_review": {
+        "status": "passed",
+        "reviewed": "2026-10-11",
+        "A_investigative_editor": "Every narrated line maps to an established claim (research_case_02.md table). Corrected in review: 'a bomber it had never seen' -> 'couldn't name' (1987 eyewitness sketch exists); removed invented inner thought 'He feared it was him'; removed unverified location for Linda Patrik; 'more than twenty injured' (sources say 23 or 24); no typewriter match, no 'original manifesto', no cause of death.",
+        "B_retention": "Premise in 4 s (17 years, no name) and a two-part answer as the curiosity gap; escalation offer -> gamble -> reader -> brother -> FBI -> cabin; the idiom swap is the visual turning point; ends on the reward and a closing line that ties back to the hook.",
+        "C_director": "Cold blue newsprint grade distinct from Case 01 within the same system; no explosions, injuries or bomb construction; no real masthead/letters/FBI documents imitated (illegible placeholder text).",
+        "D_first_time_viewer": "UNABOM name, toll and locations given on a map; each family member introduced by role before acting; ending states arrest, plea and sentence.",
+        "E_software_qa": "All media checks pass; no black frames; -14.1 LUFS, TP -1.0 dBTP; ASR WER 0.086. Fixed after frame review: 'IN BOTH TEXTS' label appeared over the usual saying before the swap (factually misleading) -> now only after the swap; reward count-up through arbitrary amounts -> static $1,000,000; caption-area overlaps in press and reader scenes.",
+        "fixes_made": [
+          "phrase-swap layout and label timing",
+          "reward counter",
+          "map scale and labels",
+          "cabin occlusion",
+          "press/reader caption clearance",
+          "'Between 1978 and 1995' (TTS read '1978 to' ambiguously)"
+        ]
+      }
+    },
+    "03": {
+      "id": "tc03-btk-floppy",
+      "title": "He Asked Police One Question. Their Answer Was a Trap. #Shorts",
+      "file": "true_crime_03.mp4",
+      "status": "verified",
+      "next_task": "none; ready for upload",
+      "media": {
+        "duration": 77.4,
+        "width": 1080,
+        "height": 1920,
+        "fps": 60.0,
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "size_bytes": 42102108,
+        "mean_volume_db": -17.3,
+        "max_volume_db": -0.9
+      },
+      "media_checks": {
+        "has_video_stream": true,
+        "has_audio_stream": true,
+        "codec_h264": true,
+        "codec_aac": true,
+        "dimensions": true,
+        "fps": true,
+        "audio_video_duration_match": true,
+        "duration_matches_timeline": true,
+        "decodes_without_errors": true,
+        "audio_not_silent": true,
+        "no_long_silence_gaps": true,
+        "no_clipping": true
+      },
+      "series_qa": {
+        "media_checks_pass": true,
+        "duration_in_window": true,
+        "dimensions_1080x1920": true,
+        "frames_checked": 4644,
+        "no_black_frames": true,
+        "captions_timed_within_scenes": true,
+        "speech_db_min": -17.7,
+        "dialogue_clear_of_music": true,
+        "all_passed": true,
+        "loudness_near_target": true,
+        "true_peak_ok": true,
+        "narration_intelligible_asr": true
+      },
+      "loudness": {
+        "integrated_lufs": -14.2,
+        "true_peak_dbtp": -0.9
+      },
+      "asr_word_error_rate": 0.097,
+      "frames_sampled": 13,
+      "qa_dir": "series/true-crime/qa/true_crime_03",
+      "sha256": "c13b6c9c821e15de848b11ebe0ca91b7da141e1a30f0a9399fbfc1ad6405190c",
+      "output": "series/true-crime/output/true_crime_03.mp4",
+      "verified": "2026-10-11T06:29:14",
+      "editorial_review": {
+        "status": "passed",
+        "reviewed": "2026-10-11",
+        "A_investigative_editor": "Every line maps to an established claim (research_case_03.md). Fixed in review: identical DNA profiles (implied a direct match) -> partial shared bands labelled FAMILIAL / CLOSE-RELATIVE MATCH; note wording marked 'as reported'; no victim details, no likeness of Rader, daughter not named.",
+        "B_retention": "Twist complete by 9 s (question, answer, 'They lied' + TRAP); 16 shots averaging 4.8 s; beat-synced cuts; word-synced punch captions.",
+        "C_director": "Sodium/police/CRT palette; motion-blur push, flash and zoom transitions; strategic hush on the reveal; candles as a memorial (not a tally).",
+        "D_first_time_viewer": "Who (BTK, Wichita), what (10 murders, 31 years), how (question, ad, disk, metadata, DNA), outcome (plea, 10 life terms).",
+        "E_software_qa": "60 fps 1080x1920, all media checks pass, no black frames, -14.2 LUFS, ASR WER 0.097 (tiny) / 0.062 (base, pre-final mix); caption layout measured with SVG text so words never collide; frames inspected every 3 s and at key moments.",
+        "fixes_made": [
+          "hook line unmasked (sfx moved)",
+          "'TV'->'television', 'undone'->'ended', 'Thirty-one'->'31'",
+          "caption spacing",
+          "TRAP stamp clear of ad",
+          "DNA partial match",
+          "CRT glow"
+        ]
+      }
+    }
+  },
+  "updated": "2026-10-11T06:29:14",
+  "project": "Two partner-level true-crime YouTube Shorts rendered with the existing THE HIDDEN WORLD engine",
+  "research_limitations": "Live web search worked; direct page fetching (WebFetch/curl) was blocked by the environment's network policy, so claims rest on search-result extracts cross-checked across independent outlets. Key primary URLs to open before publishing are listed at the top of research_case_0N.md.",
+  "next_task": "none; both videos verified. Optional before publishing: open the primary URLs listed in research_case_0N.md to confirm wording.",
+  "failed_commands": [
+    "pip install vosk (wheel build failure) and alphacephei.com model download (403): replaced by sherpa-onnx Whisper from GitHub releases",
+    "WebFetch/curl to news, government and court sites: blocked by network policy (DNS ENOTFOUND / proxy 403)"
+  ]
+}

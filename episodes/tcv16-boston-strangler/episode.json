@@ -1,0 +1,1329 @@
+{
+ "id": "tcv16-boston-strangler",
+ "number": 16,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Water Bottle Tied the Boston Strangler Confession to One Murder",
+ "central_question": "How did a discarded water bottle finally link Albert DeSalvo to a Boston Strangler murder, and what does it not prove?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "Its": "It's"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  45,
+  90
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "16",
+  "label": "BOSTON STRANGLER · 1962-2013"
+ },
+ "music": {
+  "bpm": 76,
+  "beat_snap": 1
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 76,
+  "hits": [],
+  "cliff": {
+   "scene": "s10_exhume",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.32
+  }
+ },
+ "figures": [
+  "bs16_desalvo",
+  "bs16_detective",
+  "bs16_patrol",
+  "bs16_passerby",
+  "agent_a",
+  "agent_b",
+  "scientist",
+  "examiner",
+  "official",
+  "press_operator",
+  "judge",
+  "analyst"
+ ],
+ "content_notes": "Closed historical case. DeSalvo confessed but was never tried for the stranglings; the 2013 DNA evidence links him to Mary Sullivan's murder ONLY, and the narration says that whether he killed all thirteen women is still debated. DeSalvo appears only as an anonymous silhouette with no likeness. The relative whose discarded water bottle was collected is never named or shown (a small generic silhouette stands in on a generic street); the DeSalvo family's objection is on screen. Victims are never depicted and no method is described; Mary Sullivan is named respectfully because the DNA result concerns her case and her family welcomed it. The cemetery is a generic wide dawn shot with no coffin or remains. No real photograph, police, court or DA material, logo, newspaper or document is imitated; the bottle is a plain generic bottle. No dialogue is invented. Status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "bs16_hook",
+   "min_duration": 4.4,
+   "pad_after": 0.25,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      2,
+      2
+     ],
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": 0.1,
+     "word": [
+      2,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "B_confess",
+    "B_doubt",
+    "B_follow"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A man confessed to being the Boston Strangler."
+    },
+    {
+     "who": "narrator",
+     "text": "For decades, many doubted him.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "Then someone threw a water bottle away.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "confessed",
+    "strangler.",
+    "doubted",
+    "water",
+    "bottle."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_city",
+   "scene": "bs16_city",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "step",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "B_killed"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "From 1962 to 1964, thirteen women were killed around Boston."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "thirteen",
+    "women"
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_confess",
+   "scene": "bs16_confess",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_confess"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "In 1965, Albert DeSalvo confessed to the killings."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "desalvo",
+    "confessed"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_never",
+   "scene": "bs16_never",
+   "min_duration": 5.2,
+   "pad_after": 0.45,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "B_never",
+    "B_films"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But he was never tried for the stranglings."
+    },
+    {
+     "who": "narrator",
+     "text": "Hollywood still made it a movie, twice.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "never",
+    "tried",
+    "twice."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_life",
+   "scene": "bs16_life",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.9
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      10
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "B_life",
+    "B_died"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He got life in prison for other crimes, and took back his confession."
+    },
+    {
+     "who": "narrator",
+     "text": "In 1973, he was killed in prison.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "life",
+    "took",
+    "back",
+    "killed"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_mary",
+   "scene": "bs16_mary",
+   "min_duration": 5.0,
+   "pad_after": 0.45,
+   "music_cue": "unease",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "sparkle",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "B_mary",
+    "B_book"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The last victim was Mary Sullivan, just nineteen."
+    },
+    {
+     "who": "narrator",
+     "text": "Even her family doubted him.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "mary",
+    "sullivan,",
+    "nineteen.",
+    "family"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_evidence",
+   "scene": "bs16_evidence",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thump",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "B_evidence"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police still had evidence from her case, but none of his DNA."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "evidence",
+    "none",
+    "dna."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_follow",
+   "scene": "bs16_follow",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": 0.45,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.45
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      2,
+      2
+     ],
+     "name": "click",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "B_follow",
+    "B_family_dispute"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "So detectives secretly followed his relatives."
+    },
+    {
+     "who": "narrator",
+     "text": "One threw away a water bottle.",
+     "pause_before": 0.2
+    },
+    {
+     "who": "narrator",
+     "text": "A detective picked it up.",
+     "pause_before": 0.2
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "secretly",
+    "followed",
+    "water",
+    "bottle.",
+    "picked"
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_match",
+   "scene": "bs16_match",
+   "min_duration": 4.4,
+   "pad_after": 0.4,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "click",
+     "gain": 0.4
+    },
+    {
+     "at": -0.3,
+     "word": [
+      0,
+      4
+     ],
+     "name": "swell",
+     "gain": 0.5
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "B_familial"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Its DNA was a familial match to evidence from Mary Sullivan's case.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "familial",
+    "match"
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s10_exhume",
+   "scene": "bs16_exhume",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.45
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "B_exhume"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "To be sure, they exhumed DeSalvo's remains."
+    },
+    {
+     "who": "narrator",
+     "text": "Officials said it left no doubt he killed Mary Sullivan.",
+     "pause_before": 0.5
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "exhumed",
+    "no",
+    "doubt"
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s11_only",
+   "scene": "bs16_only",
+   "min_duration": 2.0,
+   "pad_after": 0.35,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "stamp",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "B_only",
+    "B_family_dispute"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But it links him to her murder only."
+    },
+    {
+     "who": "narrator",
+     "text": "Whether he killed all thirteen is still debated.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "only.",
+    "all",
+    "thirteen",
+    "debated."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s12_memory",
+   "scene": "bs16_memory",
+   "min_duration": 4.6,
+   "pad_after": 0.55,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.4
+    },
+    {
+     "at": 3.6,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "chime",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "B_justice",
+    "B_killed"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Her nephew called the result full justice for his aunt."
+    },
+    {
+     "who": "narrator",
+     "text": "Remember the thirteen women.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "justice",
+    "thirteen",
+    "women."
+   ],
+   "section": "E"
+  },
+  {
+   "id": "s13_end",
+   "scene": "bs16_end",
+   "min_duration": 4.0,
+   "pad_after": 1.9,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "hit",
+     "gain": 0.45
+    },
+    {
+     "at": -0.2,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      9
+     ],
+     "name": "ping",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "B_mary",
+    "B_follow",
+    "B_next"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "For Mary Sullivan, decades of doubt ended with one water bottle.",
+     "pause_before": 0.1
+    },
+    {
+     "who": "narrator",
+     "text": "Next: the trash that led police to the Idaho killer.",
+     "pause_before": 0.45
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "one",
+    "water",
+    "bottle.",
+    "trash",
+    "idaho"
+   ],
+   "section": "E",
+   "fade_out": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "B_killed",
+   "type": "established",
+   "nature": "fact",
+   "text": "Thirteen women were killed in and around Boston between 1962 and 1964 in the killings attributed to the 'Boston Strangler'. (Some reports count 11 or 14; 13 is the most common count.) No victim other than Mary Sullivan is named; no method is described.",
+   "sources": [
+    "bio",
+    "yahoo_died",
+    "bostonia",
+    "bd_podcast"
+   ]
+  },
+  {
+   "id": "B_confess",
+   "type": "established",
+   "nature": "fact",
+   "text": "In 1965, while already in custody on other charges, Albert DeSalvo confessed to the Strangler killings (to a psychiatrist and, through his lawyer F. Lee Bailey, in tape-recorded sessions with investigators).",
+   "sources": [
+    "bio",
+    "ebsco",
+    "wiki_bs",
+    "kpbs_npr"
+   ]
+  },
+  {
+   "id": "B_doubt",
+   "type": "established",
+   "nature": "fact",
+   "text": "For decades many doubted the confession: no physical evidence tied him to the killings, critics argued he could have learned the details elsewhere, he later recanted, and Mary Sullivan's nephew wrote a book arguing he was not her killer.",
+   "sources": [
+    "bio",
+    "ebsco",
+    "kpbs_npr",
+    "yahoo_died"
+   ]
+  },
+  {
+   "id": "B_never",
+   "type": "established",
+   "nature": "fact",
+   "text": "DeSalvo was never tried (never charged) for any of the Strangler killings, for lack of physical evidence.",
+   "sources": [
+    "bio",
+    "yahoo_why",
+    "ebsco",
+    "nbc_link"
+   ]
+  },
+  {
+   "id": "B_films",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: Tony Curtis played DeSalvo in the 1968 film The Boston Strangler (dir. Richard Fleischer, 20th Century-Fox); in 2023 Keira Knightley played reporter Loretta McLaughlin in Boston Strangler (Hulu).",
+   "sources": [
+    "wiki_1968",
+    "criterion_1968",
+    "tcm_1968",
+    "wiki_2023",
+    "playlist_2023",
+    "lp_2023"
+   ]
+  },
+  {
+   "id": "B_life",
+   "type": "established",
+   "nature": "fact",
+   "text": "In January 1967 DeSalvo was convicted of unrelated armed robberies and sexual assaults (the 'Green Man' case) and sentenced to life in prison; he later recanted his Strangler confession.",
+   "sources": [
+    "bio",
+    "ebsco",
+    "nbc_link",
+    "yahoo_died"
+   ]
+  },
+  {
+   "id": "B_died",
+   "type": "established",
+   "nature": "fact",
+   "text": "DeSalvo was killed in Walpole State Prison in November 1973 (no method is narrated or shown).",
+   "sources": [
+    "bio",
+    "yahoo_died",
+    "nbc_link",
+    "bangor_ap"
+   ]
+  },
+  {
+   "id": "B_mary",
+   "type": "established",
+   "nature": "fact",
+   "text": "Mary Sullivan, 19, killed in Boston in January 1964, is considered the last (final) victim. She is named only, never depicted.",
+   "sources": [
+    "fox17_ap",
+    "nbc_link",
+    "bangor_ap",
+    "bostonia"
+   ]
+  },
+  {
+   "id": "B_book",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: Mary Sullivan's nephew, author Casey Sherman, wrote A Rose for Mary (2003), arguing that DeSalvo was not her killer; DA Dan Conley said in 2013 that questions Mary's family had asked for almost 50 years had been answered.",
+   "sources": [
+    "wiki_rose",
+    "kirkus_rose",
+    "kpbs_npr",
+    "ajc_ap"
+   ]
+  },
+  {
+   "id": "B_evidence",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police preserved evidence from the Sullivan case for almost 50 years; earlier attempts to get a usable DNA profile failed until a lab salvaged one in 2012; investigators had no usable DNA sample from DeSalvo.",
+   "sources": [
+    "csm",
+    "fox17_ap",
+    "nbc_link",
+    "suffolk_da"
+   ]
+  },
+  {
+   "id": "B_follow",
+   "type": "established",
+   "nature": "fact",
+   "text": "Detectives (a Boston Police fugitive-squad detective) secretly followed DeSalvo's male relatives until one, a nephew who was not named, drank from and threw away a water bottle, which the detective retrieved. The relative is never named or shown in this episode.",
+   "sources": [
+    "fox17_ap",
+    "nbc_link",
+    "kpbs_npr",
+    "foxnews_bottle"
+   ]
+  },
+  {
+   "id": "B_familial",
+   "type": "established",
+   "nature": "fact",
+   "text": "DNA from the bottle was a 'familial' (Y-chromosome) match to evidence from the Sullivan case, announced on 11 July 2013; the DA called it strong but not enough on its own to close the case with absolute certainty, and sought DeSalvo's exhumation.",
+   "sources": [
+    "fox17_ap",
+    "nbc_link",
+    "csm",
+    "suffolk_da"
+   ]
+  },
+  {
+   "id": "B_exhume",
+   "type": "established",
+   "nature": "fact",
+   "text": "DeSalvo's remains were exhumed (court-ordered, July 2013) and his DNA tested; on 19 July 2013 officials announced a match (odds of another white male put at one in 220 billion), and Attorney General Martha Coakley said it 'leaves no doubt' that he was responsible for Mary Sullivan's murder.",
+   "sources": [
+    "bangor_ap",
+    "nbc_nodoubt",
+    "cbs_boston",
+    "inquirer_ap",
+    "wbur"
+   ]
+  },
+  {
+   "id": "B_only",
+   "type": "established",
+   "nature": "fact",
+   "text": "The DNA links DeSalvo to Mary Sullivan's murder only; authorities said no DNA survives from the other cases, and whether one man (DeSalvo) committed all the killings is still debated.",
+   "sources": [
+    "nbc_link",
+    "yahoo_died",
+    "csm"
+   ]
+  },
+  {
+   "id": "B_justice",
+   "type": "established",
+   "nature": "fact",
+   "text": "Casey Sherman, Mary Sullivan's nephew, who had long argued DeSalvo was innocent, accepted the 2013 result and called it 'full justice for my aunt'.",
+   "sources": [
+    "nbc_nodoubt",
+    "ajc_ap",
+    "cbs_boston"
+   ]
+  },
+  {
+   "id": "B_family_dispute",
+   "type": "established",
+   "nature": "defence",
+   "text": "DeSalvo's family, through lawyer Elaine Sharp, disputed the conclusion and objected to the covert collection of a relative's DNA; DA Conley called the method fair, legal and ethical.",
+   "sources": [
+    "nbc_link",
+    "ajc_ap",
+    "kpbs_npr"
+   ]
+  },
+  {
+   "id": "B_next",
+   "type": "established",
+   "nature": "fact",
+   "text": "Next case tease: in December 2022 FBI agents collected trash the Kohberger family set out at their Pennsylvania home; DNA from it indicated the father of the person whose DNA was on a knife sheath at the Idaho crime scene. Bryan Kohberger pleaded guilty in July 2025 and was sentenced to four consecutive life terms.",
+   "sources": [
+    "wfmz_trash",
+    "nbc_kohberger",
+    "upi_kohberger",
+    "san_sentence",
+    "fox13_sentence"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "fox17_ap",
+   "publisher": "Fox17 (AP)",
+   "title": "DNA may crack Boston Strangler case, authorities say",
+   "url": "https://fox17online.com/2013/07/11/dna-may-crack-boston-strangler-case-authorities-say/",
+   "date": "2013-07-11",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_link",
+   "publisher": "NBC News",
+   "title": "DNA links confessed Boston Strangler to final victim, authorities say",
+   "url": "https://www.nbcnews.com/news/us-news/dna-links-confessed-boston-strangler-final-victim-authorities-say-flna6c10604676",
+   "date": "2013-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_nodoubt",
+   "publisher": "NBC News",
+   "title": "Authorities: DNA match leaves 'no doubt' about Boston Strangler, final victim",
+   "url": "https://www.nbcnews.com/news/us-news/authorities-dna-match-leaves-no-doubt-about-boston-strangler-final-flna6c10686968",
+   "date": "2013-07-19",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "csm",
+   "publisher": "The Christian Science Monitor",
+   "title": "'Boston Strangler' case: Will new DNA evidence finally bring resolution?",
+   "url": "https://www.csmonitor.com/USA/USA-Update/2013/0711/Boston-Strangler-case-Will-new-DNA-evidence-finally-bring-resolution",
+   "date": "2013-07-11",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "foxnews_bottle",
+   "publisher": "Fox News",
+   "title": "50 years later, DNA found on discarded bottle may link self-confessed Boston Strangler to last victim",
+   "url": "https://www.foxnews.com/us/50-years-later-dna-found-on-discarded-bottle-may-link-self-confessed-boston-strangler-to-last-victim.amp",
+   "date": "2013-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "suffolk_da",
+   "publisher": "Suffolk County District Attorney's Office (archive)",
+   "title": "DeSalvo DNA a Match to Mary Sullivan Crime Scene Evidence, Authorities Announce",
+   "url": "https://archive.suffolkdistrictattorney.com/desalvo-dna-a-match-to-mary-sullivan-crime-scene-evidence-authorities-announce/",
+   "date": "2013-07-19",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bangor_ap",
+   "publisher": "Bangor Daily News (AP)",
+   "title": "DNA leaves no doubt on one Boston Strangler murder",
+   "url": "https://www.bangordailynews.com/2013/07/19/news/dna-leaves-no-doubt-on-one-boston-strangler-murder/",
+   "date": "2013-07-19",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "cbs_boston",
+   "publisher": "CBS Boston",
+   "title": "Sullivan family: DNA evidence definitively links DeSalvo in Boston Strangler case",
+   "url": "https://cbsnews.com/boston/news/sullivan-family-dna-evidence-definitively-links-desalvo-in-boston-strangler-case",
+   "date": "2013-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "inquirer_ap",
+   "publisher": "The Philadelphia Inquirer (AP)",
+   "title": "DNA confirms link in Boston Strangler case",
+   "url": "https://www.inquirer.com/philly/news/nation_world/20130721_DNA_confirms_link_in_Boston_Strangler_case.html",
+   "date": "2013-07-21",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wbur",
+   "publisher": "WBUR",
+   "title": "DeSalvo DNA connection",
+   "url": "https://www.wbur.org/news/2013/07/19/desalvo-dna-connection",
+   "date": "2013-07-19",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ajc_ap",
+   "publisher": "The Atlanta Journal-Constitution (AP)",
+   "title": "DNA links Boston Strangler suspect to last victim",
+   "url": "https://www.ajc.com/news/national/dna-links-boston-strangler-suspect-last-victim/hgzNYAFwxp45zmlD3nkyLN/",
+   "date": "2013-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kpbs_npr",
+   "publisher": "KPBS (NPR)",
+   "title": "DNA ends years of doubt on Boston Strangler victim, police say",
+   "url": "https://www.kpbs.org/news/2013/07/11/dna-ends-years-of-doubt-on-boston-strangler",
+   "date": "2013-07-11",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bio",
+   "publisher": "Biography.com",
+   "title": "Albert DeSalvo",
+   "url": "https://www.biography.com/crime/albert-de-salvo",
+   "date": "date not in extract",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yahoo_died",
+   "publisher": "Yahoo (TV Insider)",
+   "title": "How Albert DeSalvo from Hulu's 'Boston Strangler' died",
+   "url": "https://news.yahoo.com/albert-desalvo-hulu-boston-strangler-220000067.html",
+   "date": "2023",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "yahoo_why",
+   "publisher": "Yahoo (TV Insider)",
+   "title": "Why wasn't Albert DeSalvo from Boston Strangler prosecuted for the murders?",
+   "url": "https://news.yahoo.com/why-wasn-t-albert-desalvo-150000132.html",
+   "date": "2023",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "ebsco",
+   "publisher": "EBSCO Research Starters",
+   "title": "Boston Strangler",
+   "url": "https://www.ebsco.com/research-starters/history/boston-strangler",
+   "date": "date not in extract",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_bs",
+   "publisher": "Wikipedia",
+   "title": "Boston Strangler",
+   "url": "https://en.wikipedia.org/wiki/Boston_Strangler",
+   "date": "accessed 2026-10-12",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bostonia",
+   "publisher": "Boston University, Bostonia",
+   "title": "Tales of heroes in print and film",
+   "url": "https://www.bu.edu/bostonia/winter-spring17/tales-of-heroes-in-print-and-film",
+   "date": "2017",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "bd_podcast",
+   "publisher": "Bloody Disgusting",
+   "title": "The Boston Strangler adaptations (Murder Made Fiction podcast)",
+   "url": "https://bloody-disgusting.com/podcast-news/3961434/the-boston-strangler-adaptations-murder-made-fiction-podcast/",
+   "date": "date not in extract",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_rose",
+   "publisher": "Wikipedia",
+   "title": "A Rose for Mary",
+   "url": "https://en.wikipedia.org/wiki/A_Rose_for_Mary",
+   "date": "accessed 2026-10-12",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "kirkus_rose",
+   "publisher": "Kirkus Reviews",
+   "title": "A Rose for Mary, by Casey Sherman",
+   "url": "https://www.kirkusreviews.com/book-reviews/casey-sherman/a-rose-for-mary/",
+   "date": "2003",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_1968",
+   "publisher": "Wikipedia",
+   "title": "The Boston Strangler (film)",
+   "url": "https://en.wikipedia.org/wiki/The_Boston_Strangler_(film)",
+   "date": "accessed 2026-10-12",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "criterion_1968",
+   "publisher": "The Criterion Channel",
+   "title": "The Boston Strangler",
+   "url": "https://criterionchannel.com/the-boston-strangler",
+   "date": "date not in extract",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "tcm_1968",
+   "publisher": "TCM",
+   "title": "The Boston Strangler",
+   "url": "https://www.tcm.com/watchtcm/titles/69462",
+   "date": "date not in extract",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wiki_2023",
+   "publisher": "Wikipedia",
+   "title": "Boston Strangler (film)",
+   "url": "https://en.wikipedia.org/wiki/Boston_Strangler_(film)",
+   "date": "accessed 2026-10-12",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "playlist_2023",
+   "publisher": "The Playlist",
+   "title": "First look: 'Boston Strangler' with Keira Knightley premieres March 17 on Hulu",
+   "url": "https://theplaylist.net/first-look-boston-strangler-with-keira-knightley-premieres-march-17-on-hulu-20230103/",
+   "date": "2023-01-03",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "lp_2023",
+   "publisher": "Laughing Place",
+   "title": "20th Century Studios reveals first look at 'Boston Strangler', coming to Hulu on March 17th",
+   "url": "https://laughingplace.com/w/?p=2025913",
+   "date": "2023-01",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "wfmz_trash",
+   "publisher": "WFMZ-TV",
+   "title": "Key evidence in Kohberger quadruple homicide case was found in PA",
+   "url": "https://www.wfmz.com/news/area/poconos-coal/key-evidence-in-kohberger-quadruple-homicide-case-was-found-in-pa/article_f17267f3-f7a7-4567-803b-3b37e3610566.html",
+   "date": "2023",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "nbc_kohberger",
+   "publisher": "NBC News",
+   "title": "Genetic genealogy was used to link Bryan Kohberger, suspect in Idaho slayings, to crime scene, prosecutors say",
+   "url": "https://www.nbcnews.com/news/crime-courts/genetic-genealogy-used-link-bryan-kohberger-suspect-idaho-slayings-cri-rcna90344",
+   "date": "2023-06",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "upi_kohberger",
+   "publisher": "UPI",
+   "title": "Bryan Kohberger: murder suspect's DNA and the knife sheath",
+   "url": "https://www.upi.com/Top_News/US/2023/06/21/bryan-kohberger-murder-suspect-dna-knife/5611687379205/",
+   "date": "2023-06-21",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "san_sentence",
+   "publisher": "Straight Arrow News",
+   "title": "Kohberger sentenced to four consecutive life sentences in Idaho killings",
+   "url": "https://san.com/cc/kohberger-sentenced-to-four-consecutive-life-sentences-in-idaho-killings/",
+   "date": "2025-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  },
+  {
+   "id": "fox13_sentence",
+   "publisher": "FOX 13 Seattle",
+   "title": "Bryan Kohberger ordered to serve 4 life sentences for Idaho student murders",
+   "url": "https://www.fox13seattle.com/news/bryan-kohberger-sentenced-life-prison",
+   "date": "2025-07",
+   "accessed": "2026-10-12 (search-result extract; full page not reachable from the build environment)"
+  }
+ ],
+ "legal_status_verified": "2026-10-12"
+}

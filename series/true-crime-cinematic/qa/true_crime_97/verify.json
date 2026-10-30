@@ -1,0 +1,260 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv97-cocaine-jacket/tcv97-cocaine-jacket.mp4",
+    "size_bytes": 15420866,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 27.5,
+    "audio_duration": 27.5,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -2.6,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv97-cocaine-jacket/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 1650,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -19.0,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "moving_at_frame_0": true,
+    "loops_to_frame_1": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "audio_music_heard_on_phone": true,
+    "audio_sfx_heard_on_phone": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "engage_hook_line_done_by_2_6s": true,
+    "engage_no_save_card_scene": true,
+    "engage_single_punchline_ending": true,
+    "engage_search_term_in_headline_and_first_4s": true,
+    "engage_post_file_ready": true,
+    "engage_headline_case_first_9s": true,
+    "engage_headline_gotcha_by_9s": true,
+    "engage_gotcha_per_case": true,
+    "engage_callback_ending": true,
+    "engage_under_32s": true,
+    "engage_no_part_on_frame_1": true,
+    "engage_headline_leads_with_object": true,
+    "engage_under_29_5s": true,
+    "engage_hook_agent_first": true,
+    "engage_hook_in_lane": true,
+    "engage_lane_locked": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -2.6
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.075,
+    "transcript": "Drug smugglers turned cocaine into a jacket. Over four kilos, shaped in the blankets and aprons. But drug police searched her bags, two women arrested. And that was not the biggest, in Manila, towels and doves soaked in meth. The X-ray flagged the boxes. The biggest, shipping pallets made of cocaine. On a tip lab test found the wood was cocaine. Even the neck pillow was cocaine."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 33,
+      "extent": {
+        "left": 126.0,
+        "right": 954.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 1.0,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.32,
+      "frames": 275,
+      "opening_motion": 4.75,
+      "opening_motion_ok": true
+    },
+    "loop_match": 0.46,
+    "audio": {
+      "opening_speech_median_db": -20.0,
+      "opening_min_speech_window_db": -31.8,
+      "first_word_db": -18.7,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -30.3,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.278,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 12.0,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -25.0,
+      "music_audible": true,
+      "music_heard_on_phone": true,
+      "sfx_phone_db": -26.1,
+      "sfx_heard_on_phone": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.7402,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -2.6,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -49.6,
+      "end_before_db": -14.7,
+      "end_last_50ms_db": -78.8,
+      "silent_tail_s": 0.1,
+      "ending_intentional": true,
+      "durations": {
+        "video": 27.5,
+        "audio": 27.5
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true,
+        "music_heard_on_phone": true,
+        "sfx_heard_on_phone": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true,
+        "hook_line_done_by_2_6s": true,
+        "no_save_card_scene": true,
+        "single_punchline_ending": true,
+        "search_term_in_headline_and_first_4s": true,
+        "post_file_ready": true,
+        "headline_case_first_9s": true,
+        "headline_gotcha_by_9s": true,
+        "gotcha_per_case": true,
+        "callback_ending": true,
+        "under_32s": true,
+        "no_part_on_frame_1": true,
+        "headline_leads_with_object": true,
+        "under_29_5s": true,
+        "hook_agent_first": true,
+        "hook_in_lane": true,
+        "lane_locked": true
+      },
+      "notes": {
+        "hook": "Drug smugglers turned cocaine into a jacket. Over 4 kilos, shaped into blankets",
+        "loop_gaps": [],
+        "tail": "made of cocaine. On a tip, lab tests found the wood was cocaine. Even the neck pillow was cocaine.",
+        "end_title": "WHICH FAKE WAS BEST? JACKET OR TOWELS OR PALLETS? \ud83d\udc47 SEND TO THE MATE WHO'D WEAR THE JACKET FOLLOW FOR WHERE THEY HID IT WHERE THEY HID IT \u00b7 6",
+        "tail_s": 0.73,
+        "wpm": 144.0,
+        "hook_end_s": 2.52,
+        "lesson_scene": null,
+        "end_scene_s": 2.32,
+        "search_terms_hit": [
+          "cocaine jacket"
+        ],
+        "cases": [
+          "jacket",
+          "pallets",
+          "towels"
+        ],
+        "gotchas": {
+          "jacket": [
+            6.26,
+            25.48
+          ],
+          "towels": [
+            15.01
+          ],
+          "pallets": [
+            21.98
+          ]
+        },
+        "total_s": 27.5,
+        "hook_first_line": "Drug smugglers turned cocaine into a jacket."
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 7,
+      "composed_shots": 7,
+      "shots_with_characters": 7,
+      "character_shot_share": 1.0,
+      "distinct_sets": 6,
+      "max_set_share": 0.29,
+      "shot_sizes": {
+        "wide": 3,
+        "close-up": 2,
+        "medium-wide": 1,
+        "medium": 1
+      },
+      "max_shot_size_share": 0.43,
+      "ok": true
+    }
+  }
+}

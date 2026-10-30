@@ -1,0 +1,914 @@
+{
+ "id": "tcv64-pigeon-backpack",
+ "number": 64,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "A Pigeon Was Caught Wearing a Backpack Full of Drugs",
+ "central_question": "In 2017, customs in Kuwait caught a pigeon wearing a tiny backpack of pills. Which animal smuggler did best?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "2017.": "twenty seventeen.",
+   "178": "a hundred and seventy-eight"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "64",
+  "label": "THE PIGEON WITH A BACKPACK · KUWAIT 2017"
+ },
+ "music": {
+  "bpm": 82,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 82,
+  "cliff": {
+   "scene": "s05_heavy",
+   "word": [
+    0,
+    5
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "pb64_officer",
+  "pb64_police",
+  "pb64_guard",
+  "pb64_viewer"
+ ],
+ "content_notes": "Tone: absurd and ironic. No animal is shown hurt or handled roughly: the pigeon lands on a barrier arm and rests in a ventilated carrier; the Colombian pigeon flutters down to the pavement; the cat sits in a torch beam. No weapon, no violence. The customs officer, the police officer, the prison guard and the young man in the lesson are generic figures, never named; no badge, flag, patch, crest or insignia of any real force; no agency logo. Prison and agency names are plain text only. Drugs are shown only as plain pills, a taped bundle and a small packet. The drug in the Kuwaiti backpack is disputed (ketamine per al-Rai via the BBC; ecstasy per other outlets): narration says 'pills', the screen says 'reportedly a form of ketamine'. 'It did not ask for a lawyer' is a deadpan joke, not a claim. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "pb64_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.35,
+     "word": [
+      0,
+      7
+     ],
+     "name": "flutter",
+     "gain": 0.3
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_year"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This pigeon wore a backpack full of drugs."
+    },
+    {
+     "who": "narrator",
+     "text": "In 2017. It did not ask for a lawyer.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pigeon",
+    "backpack",
+    "drugs.",
+    "2017.",
+    "lawyer."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_catch",
+   "scene": "pb64_catch",
+   "min_duration": 3.6,
+   "pad_after": 0.4,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "flutter",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "step",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thump",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "K_catch"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Kuwaiti customs caught it near the Iraqi border."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "kuwaiti",
+    "customs",
+    "caught",
+    "iraqi",
+    "border."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s03_pills",
+   "scene": "pb64_pills",
+   "min_duration": 3.8,
+   "pad_after": 0.45,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "click",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "K_pills"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "What was in the backpack? 178 pills."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "what",
+    "backpack?",
+    "178",
+    "pills."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_colombia",
+   "scene": "pb64_colombia",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "wind",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "flutter",
+     "gain": 0.3
+    },
+    {
+     "at": 0.6,
+     "word": [
+      1,
+      2
+     ],
+     "name": "sparkle",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_clumsy",
+    "K_colombia",
+    "K_sim"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the clumsiest one."
+    },
+    {
+     "who": "narrator",
+     "text": "In Colombia, one tried flying drugs into a prison.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "clumsiest",
+    "colombia,",
+    "drugs",
+    "prison."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_heavy",
+   "scene": "pb64_heavy",
+   "min_duration": 3.8,
+   "pad_after": 0.6,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.3,
+     "word": [
+      0,
+      9
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_heavy"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Police said it was too heavy to clear the wall."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "police",
+    "too",
+    "heavy",
+    "clear",
+    "wall."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s06_lesson",
+   "scene": "pb64_lesson",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "chime",
+     "gain": 0.25
+    }
+   ],
+   "claims": [
+    "K_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Carrying a stranger's parcel? Save this."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "stranger's",
+    "parcel?",
+    "save"
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s07_cat",
+   "scene": "pb64_cat",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "step",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_cat",
+    "K_share"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Sri Lanka caught a cat smuggling heroin into prison."
+    },
+    {
+     "who": "narrator",
+     "text": "Send this to the mate who feeds pigeons.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "sri",
+    "lanka",
+    "cat",
+    "heroin",
+    "prison.",
+    "send",
+    "mate",
+    "pigeons."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "pb64_end",
+   "min_duration": 3.6,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "cuffs",
+     "gain": 0.25
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_caught",
+    "K_escape"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "All three got caught."
+    },
+    {
+     "who": "narrator",
+     "text": "Only the cat broke out of jail.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "all",
+    "three",
+    "caught.",
+    "only",
+    "cat",
+    "broke",
+    "jail."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "In May 2017 customs officers in Kuwait caught a pigeon carrying drugs (pills) in a small fabric pouch / 'miniature backpack' strapped to its back. Narration: 'This pigeon wore a backpack full of drugs.' Headline 'A PIGEON WITH A BACKPACK / FULL OF DRUGS'.",
+   "sources": [
+    "citi",
+    "fox",
+    "ifls",
+    "vice",
+    "fox13",
+    "newarab"
+   ]
+  },
+  {
+   "id": "K_year",
+   "type": "established",
+   "nature": "fact",
+   "text": "The pigeon was caught in 2017 (reported 24-26 May 2017). Narration: 'In 2017. It did not ask for a lawyer.' (the second sentence is a deadpan joke, not a factual claim; no lawyer or charge is reported).",
+   "sources": [
+    "citi",
+    "fox13",
+    "fox",
+    "newarab"
+   ]
+  },
+  {
+   "id": "K_catch",
+   "type": "established",
+   "nature": "fact",
+   "text": "The pigeon was caught by customs officers near the customs building in Abdali, close to the border with Iraq. Narration: 'Kuwaiti customs caught it near the Iraqi border.' Label 'ABDALI, KUWAIT · MAY 2017'.",
+   "sources": [
+    "citi",
+    "fox",
+    "ifls",
+    "fox13"
+   ]
+  },
+  {
+   "id": "K_pills",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): the backpack held 178 pills (al-Rai, relayed by the BBC); an al-Rai journalist said they were a form of ketamine (some outlets reported ecstasy). Narration: 'What was in the backpack? 178 pills.' Label 'AL-RAI VIA BBC / Reportedly a form of ketamine'.",
+   "sources": [
+    "citi",
+    "fox",
+    "ifls",
+    "vice"
+   ]
+  },
+  {
+   "id": "K_clumsy",
+   "type": "established",
+   "nature": "fact",
+   "text": "Editorial bridge to item 2 (another pigeon whose drug run failed because of its load). Narration: 'But that was not the clumsiest one.'",
+   "sources": [
+    "colrep",
+    "time",
+    "register",
+    "wildcat"
+   ]
+  },
+  {
+   "id": "K_colombia",
+   "type": "established",
+   "nature": "fact",
+   "text": "In January 2011 police in Bucaramanga, Colombia, found a pigeon carrying drugs (about 45 g: 40 g of marijuana and 5 g of cocaine paste, 'bazuco') about a block from a prison it was trying to reach. Narration: 'In Colombia, one tried flying drugs into a prison.'",
+   "sources": [
+    "colrep",
+    "time",
+    "register",
+    "wildcat",
+    "insight"
+   ]
+  },
+  {
+   "id": "K_sim",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: police said pigeons had previously been used to smuggle SIM cards into the same jail. Card 'PIGEONS HAD ALREADY FLOWN SIM CARDS INTO THAT JAIL'.",
+   "sources": [
+    "time",
+    "colrep",
+    "register"
+   ]
+  },
+  {
+   "id": "K_heavy",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police said the package was too heavy for the bird to clear the prison walls (the local commander attributed the failure to the excess weight). Narration: 'Police said it was too heavy to clear the wall.' Label 'BUCARAMANGA, COLOMBIA · JAN 2011 / About 45 g of marijuana and cocaine paste'.",
+   "sources": [
+    "colrep",
+    "time",
+    "register",
+    "wildcat"
+   ]
+  },
+  {
+   "id": "K_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer): criminal groups recruit people to carry drugs, sometimes offering money or a free trip to carry luggage or a parcel (UK Travel Aware, FCDO); do not carry items for someone else and be aware of the contents of your bags (Smartraveller). Rows: 'CARRY ONLY YOUR OWN BAGS', 'KNOW WHAT IS INSIDE THEM', 'PAID TO CARRY? RED FLAG'.",
+   "sources": [
+    "aware",
+    "smart",
+    "smart_d"
+   ]
+  },
+  {
+   "id": "K_cat",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 1 August 2020 jail intelligence officers at Welikada Prison, Sri Lanka, caught a cat with a small plastic bag tied around its neck holding nearly two grams of heroin, two SIM cards and a memory chip. Narration: 'Sri Lanka caught a cat smuggling heroin into prison.' Label 'WELIKADA PRISON, SRI LANKA · AUG 2020'.",
+   "sources": [
+    "inquirer",
+    "gulf",
+    "newdaily",
+    "ftlk",
+    "observer",
+    "vice_cat"
+   ]
+  },
+  {
+   "id": "K_share",
+   "type": "established",
+   "nature": "fact",
+   "text": "Share prompt (no factual claim). Narration: 'Send this to the mate who feeds pigeons.'",
+   "sources": [
+    "citi",
+    "colrep"
+   ]
+  },
+  {
+   "id": "K_caught",
+   "type": "established",
+   "nature": "fact",
+   "text": "All three animals were caught: the Kuwaiti pigeon by customs, the Colombian pigeon by police, the Sri Lankan cat by jail officials. Narration: 'All three got caught.'",
+   "sources": [
+    "citi",
+    "fox",
+    "colrep",
+    "time",
+    "inquirer",
+    "observer"
+   ]
+  },
+  {
+   "id": "K_escape",
+   "type": "established",
+   "nature": "fact",
+   "text": "The cat escaped the next day (2 August 2020) from the room in the prison where it was held. Narration (LAST line): 'Only the cat broke out of jail.' Label 'THE CAT ESCAPED THE NEXT DAY / Sri Lanka, Aug 2020 · via AFP'.",
+   "sources": [
+    "inquirer",
+    "gulf",
+    "newdaily",
+    "ftlk",
+    "observer",
+    "vice_cat"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "citi",
+   "publisher": "Citi FM Online (BBC report)",
+   "title": "Pigeon caught with backpack of drugs",
+   "url": "https://citifmonline.com/2017/05/pigeon-caught-with-backpack-of-drugs/",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox",
+   "publisher": "Fox News",
+   "title": "Drug-smuggling pigeon carrying 178 party pills caught by Kuwaiti officials",
+   "url": "https://www.foxnews.com/world/drug-smuggling-pigeon-carrying-178-party-pills-caught-by-kuwaiti-officials",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ifls",
+   "publisher": "IFLScience",
+   "title": "Pigeon caught with 178 ketamine pills in backpack",
+   "url": "https://www.iflscience.com/plants-and-animals/pigeon-caught-with-178-ketamine-pills-in-backpack/",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "vice",
+   "publisher": "VICE",
+   "title": "Police catch pigeon with a backpack full of ecstasy (photo via Al-Rai)",
+   "url": "https://vice.com/en/article/pigeon-backpack-ecstasy-kuwait-drugs",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wxyz",
+   "publisher": "WXYZ Detroit (Scripps)",
+   "title": "Police catch pigeon smuggling almost 200 ecstasy pills into Kuwait",
+   "url": "https://www.wxyz.com/news/national/police-catch-pigeon-smuggling-almost-200-ecstasy-pills-into-kuwait",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox13",
+   "publisher": "Fox 13 Salt Lake City",
+   "title": "Pill-packing pigeon netted for smuggling drugs",
+   "url": "https://www.fox13now.com/2017/05/25/pill-packing-pigeon-netted-for-smuggling-drugs",
+   "date": "2017-05-25",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "newarab",
+   "publisher": "The New Arab",
+   "title": "Flying high: Kuwait busts feather-brained pigeon drug-smuggling plot",
+   "url": "https://newarab.com/opinion/flying-high-kuwait-busts-feather-brained-pigeon-drug-smuggling-plot",
+   "date": "2017-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "colrep",
+   "publisher": "Colombia Reports",
+   "title": "Drug pigeon attempts to enter prison",
+   "url": "https://colombiareports.com/drug-pigeon-attempts-to-enter-prison/",
+   "date": "2011-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "time",
+   "publisher": "TIME NewsFeed",
+   "title": "Possession With Intent to Soar: Colombian Carrier Pigeon Caught Smuggling Drugs",
+   "url": "https://newsfeed.time.com/?p=44638",
+   "date": "2011-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "register",
+   "publisher": "The Register",
+   "title": "Colombian police nab drug-smuggling pigeon",
+   "url": "https://www.theregister.co.uk/2011/01/19/catch_the_pigeon/",
+   "date": "2011-01-19",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "wildcat",
+   "publisher": "Arizona Daily Wildcat (wire report, Bogota dateline)",
+   "title": "Pigeon found trying to take drugs into Colombian jail",
+   "url": "https://wildcat.arizona.edu/140048/news/pigeon-found-trying-to-take-drugs-into-colombian-jail/",
+   "date": "2011-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "insight",
+   "publisher": "InSight Crime",
+   "title": "Colombian pigeon caught smuggling drugs into prison",
+   "url": "https://insightcrime.org/?p=59751",
+   "date": "2011-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "inquirer",
+   "publisher": "Philippine Daily Inquirer (AFP)",
+   "title": "Detained 'drug smuggler' cat escapes Sri Lanka prison",
+   "url": "https://newsinfo.inquirer.net/1316075/detained-drug-smuggler-cat-escapes-sri-lanka-prison",
+   "date": "2020-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "gulf",
+   "publisher": "Gulf News (AFP)",
+   "title": "Sri Lanka: 'Drug smuggler' cat escapes prison",
+   "url": "https://gulfnews.com/world/offbeat/sri-lanka-drug-smuggler-cat-escapes-prison-1.1596472090204",
+   "date": "2020-08-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "newdaily",
+   "publisher": "The New Daily",
+   "title": "Catch me if you can: Drug-smuggling feline escapes from high-security prison",
+   "url": "https://www.thenewdaily.com.au/news/world/2020/08/05/drug-smuggling-cat-escapes",
+   "date": "2020-08-05",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ftlk",
+   "publisher": "Daily FT (Sri Lanka)",
+   "title": "Detained 'drug smuggler' cat escapes prison",
+   "url": "https://www.ft.lk/News/Detained-drug-smuggler-cat-escapes-prison/56-704061",
+   "date": "2020-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "observer",
+   "publisher": "Sunday Observer (Sri Lanka)",
+   "title": "'Purrfect' escape",
+   "url": "https://archives1.sundayobserver.lk/2020/08/04/news/%E2%80%98purrfect%E2%80%99-escape",
+   "date": "2020-08-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "vice_cat",
+   "publisher": "VICE",
+   "title": "Drug-smuggling cat escapes prison in Sri Lanka",
+   "url": "https://www.vice.com/en/article/drug-smuggling-cat-escapes-prison-sri-lanka/",
+   "date": "2020-08",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "aware",
+   "publisher": "UK Government (FCDO) Travel Aware",
+   "title": "Drug smuggling abroad",
+   "url": "https://travelaware.campaign.gov.uk/drug-smuggling-abroad/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "smart",
+   "publisher": "Smartraveller (Australian Government)",
+   "title": "Carrying or using drugs (luggage advice)",
+   "url": "https://www.smartraveller.gov.au/travel-essentials/following-law/carrying-or-using-drugs",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "smart_d",
+   "publisher": "Smartraveller (Australian Government)",
+   "title": "Drugs: before you go",
+   "url": "https://www.smartraveller.gov.au/before-you-go/laws/drugs",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 2,
+ "palette": {
+  "shadow": "#16202c",
+  "mid": "#c9b89c",
+  "accent": "#e8873a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A PIGEON WITH A BACKPACK"
+   },
+   {
+    "text": "FULL OF DRUGS",
+    "colour": "#e8873a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "A PIGEON DRUG MULE."
+   },
+   {
+    "text": "GENIUS OR BIRD-BRAINED? 👇",
+    "colour": "#e8873a"
+   },
+   {
+    "text": "TAG THE MATE WHO FEEDS PIGEONS",
+    "fs": 44
+   }
+  ],
+  "from": 3.6,
+  "y": 380
+ },
+ "progress": {
+  "label": "SMUGGLER",
+  "keys": [
+   {
+    "t": 6.14,
+    "v": "1 · KUWAIT PIGEON"
+   },
+   {
+    "t": 16.13,
+    "v": "2 · COLOMBIA PIGEON"
+   },
+   {
+    "t": 28.26,
+    "v": "3 · SRI LANKA CAT"
+   }
+  ],
+  "y": 330,
+  "until": 33.05
+ },
+ "legal_status_verified": "2026-10-17"
+}

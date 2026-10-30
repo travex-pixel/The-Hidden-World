@@ -29,6 +29,16 @@
   <linearGradient id="goldG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1c85a"/><stop offset="1" stop-color="${PAL.goldDark}"/></linearGradient>
 </defs>`;
   }
+  // dark watercolour texture for the cinematic true-crime look: mottled washes, paper fibre, grain, soft edge darkening.
+  // Lives in the persistent #paper layer (drawn once), so it costs nothing per frame.
+  function washOverlay(seed) {
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%"><defs>
+  <filter id="wmott" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.0035 0.0045" numOctaves="4" seed="${seed % 40}"/><feColorMatrix type="matrix" values="0 0 0 0 0.55  0 0 0 0 0.42  0 0 0 0 0.30  0 0 0 0.9 -0.32"/></filter>
+  <filter id="wfib"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.06" numOctaves="3" seed="${(seed + 5) % 40}"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.10"/></feComponentTransfer></filter>
+  <filter id="wgrain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="${(seed + 9) % 40}" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.13"/></feComponentTransfer></filter>
+  <radialGradient id="wvig" cx="50%" cy="44%" r="78%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#05040a" stop-opacity="0.38"/></radialGradient>
+</defs><rect width="${W}" height="${H}" filter="url(#wmott)" style="mix-blend-mode:soft-light"/><rect width="${W}" height="${H}" filter="url(#wfib)" style="mix-blend-mode:multiply"/><rect width="${W}" height="${H}" filter="url(#wgrain)" style="mix-blend-mode:overlay"/><rect width="${W}" height="${H}" fill="url(#wvig)"/></svg>`;
+  }
   function paperOverlay(seed) {
     // static grain + vignette, rendered in a separate persistent SVG (see index.html)
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%"><defs>
@@ -286,7 +296,8 @@
   }
 
   // ---------- thriller captions: speaker name in their colour, words revealed in time with speech
-  function thrillerCaption(text, name, colour, t, progress, y) {
+  const capKey = w => w.toLowerCase().replace(/[^a-z0-9'-]/g, '').replace(/^'+|'+$/g, '');   // caption emphasis matching ignores punctuation
+  function thrillerCaption(text, name, colour, t, progress, y, emph) {
     const words = text.split(' '); const shown = Math.max(1, Math.ceil(words.length * clamp(progress, 0, 1)));
     const lines = wrap(text, 26); const fs = 54, lh = 66; let wi = 0; const op = ease.out(seg(t, 0, 0.18));
     let s = `<g opacity="${f1(op)}">`;
@@ -294,7 +305,7 @@
     lines.forEach((l, i) => {
       const ws = l.split(' '); const yy = f1(y - (lines.length - 1) * lh / 2 + i * lh + 18);
       s += `<text x="${W / 2}" y="${yy}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" stroke="#05040a" stroke-width="12" stroke-linejoin="round" paint-order="stroke">` +
-        ws.map(w => { const vis = wi++ < shown; return `<tspan fill="${vis ? '#ffffff' : '#ffffff'}" fill-opacity="${vis ? 1 : 0.28}" stroke-opacity="${vis ? 1 : 0.2}">${esc(w)} </tspan>`; }).join('') + `</text>`;
+        ws.map(w => { const vis = wi++ < shown; const hot = emph && emph.has(capKey(w)); return `<tspan fill="${hot ? '#f2b84b' : '#ffffff'}" fill-opacity="${vis ? 1 : 0.28}" stroke-opacity="${vis ? 1 : 0.2}">${esc(w)} </tspan>`; }).join('') + `</text>`;
     });
     return s + '</g>';
   }
@@ -303,7 +314,58 @@
     if (!ln) return '';
     const sp = cast[ln.who] || {}; const narr = ln.who === 'narrator';
     const progress = (t - ln.start) / Math.max(0.3, ln.end - ln.start) * 1.15;
-    return thrillerCaption(ln.text, narr ? null : sp.name.split(' ')[0], narr ? '#cfd6e6' : (sp.signature || {}).colour || '#fff', t - ln.start + 0.12, progress, ctx.scene.caption_y || 1640);
+    const emph = ctx.scene.emphasis ? new Set(ctx.scene.emphasis.map(capKey)) : null;  // optional key words in amber
+    return thrillerCaption(ln.text, narr ? null : sp.name.split(' ')[0], narr ? '#cfd6e6' : (sp.signature || {}).colour || '#fff', t - ln.start + 0.12, progress, ctx.scene.caption_y || 1640, emph);
+  }
+
+  // ---------- "punch" captions: 1-3 word chunks shown word by word on real spoken-word timings (Piper alignments)
+  // measure with a real (hidden) SVG text node so widths match exactly what the frame renders
+  const _mw = {}; let _msvg = null;
+  function measure(txt, fs) {
+    const k = fs + '|' + txt; if (_mw[k] !== undefined) return _mw[k];
+    if (!_msvg) { _msvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); _msvg.setAttribute('style', 'position:absolute;left:-9999px;top:0;width:10px;height:10px'); document.body.appendChild(_msvg); }
+    const el = document.createElementNS('http://www.w3.org/2000/svg', 'text'); el.setAttribute('font-family', 'Nunito'); el.setAttribute('font-weight', '800'); el.setAttribute('font-size', fs); el.textContent = txt;
+    _msvg.appendChild(el); const w = el.getComputedTextLength(); _msvg.removeChild(el); return (_mw[k] = w);
+  }
+  function punchChunks(lines) {
+    const words = []; lines.forEach(l => (l.words || []).forEach(w => words.push({ w: w.w, s: l.start + w.start, e: l.start + w.end })));
+    const chunks = []; let cur = [];
+    words.forEach((w, i) => {
+      const prev = cur[cur.length - 1];
+      const brk = prev && (cur.length >= 3 || (cur.map(x => x.w).join(' ') + ' ' + w.w).length > 15 || /[.,:;?!"]$/.test(prev.w) || w.s - prev.e > 0.35);
+      if (brk) { chunks.push(cur); cur = []; }
+      cur.push(w);
+    });
+    if (cur.length) chunks.push(cur);
+    return chunks;
+  }
+  function punchCaption(ctx) {
+    const t = ctx.t; const sc = ctx.scene; const y0 = sc.caption_y || 1380;
+    if (!ctx._chunks) ctx._chunks = punchChunks(ctx.lines);
+    const ch = ctx._chunks; let k = -1;
+    for (let i = 0; i < ch.length; i++) { const st = ch[i][0].s - 0.06, nx = i + 1 < ch.length ? ch[i + 1][0].s - 0.06 : ch[i][ch[i].length - 1].e + 0.6; if (t >= st && t < nx) { k = i; break; } }
+    if (k < 0) return '';
+    const c = ch[k]; const emph = sc.emphasis ? new Set(sc.emphasis.map(capKey)) : null;
+    const fs = 92, gap = 56, maxW = ctx.ep.caption_max_w || 920; const ws = c.map(w => ({ ...w, txt: w.w.toUpperCase(), wd: measure(w.w.toUpperCase(), fs) }));
+    // one or two rows, centred; a row wider than the safe width (e.g. one long word) is scaled down to fit
+    const total = ws.reduce((a, w) => a + w.wd, 0) + gap * (ws.length - 1);
+    const rows = total > maxW && ws.length > 1 ? [ws.slice(0, Math.ceil(ws.length / 2)), ws.slice(Math.ceil(ws.length / 2))] : [ws];
+    const enter = ease.back(seg(t, c[0].s - 0.06, c[0].s + 0.1)); let out = `<g transform="translate(${W / 2} ${y0}) scale(${f1((0.86 + 0.14 * enter) * 100) / 100}) translate(${-W / 2} ${-y0})">`;
+    rows.forEach((row, ri) => {
+      const rw0 = row.reduce((a, w) => a + w.wd, 0) + gap * (row.length - 1); const k = Math.min(1, maxW / rw0), rfs = fs * k, rgap = gap * k;
+      const rw = rw0 * k; let x = W / 2 - rw / 2; const y = y0 + (ri - (rows.length - 1) / 2) * fs * 1.08 + fs * 0.34;
+      row.forEach(w0 => {
+        const w = { ...w0, wd: w0.wd * k }; const shown = t >= w.s - 0.04; if (!shown) { x += w.wd + rgap; return; }
+        const active = t < w.e + 0.05; const hot = emph && emph.has(capKey(w.w));
+        const prem = ctx.ep && ctx.ep.look === 'premium', acc = prem ? ((ctx.ep.palette || {}).accent || '#e2a13b') : null;
+        // premium: the current word reads in the accent, emphasis words stay in the accent and sit 8 % larger (kinetic stress)
+        const pop = (active ? 1 + 0.07 * (1 - ease.out(seg(t, w.s - 0.04, w.s + 0.12))) : 1) * (prem && hot ? 1.08 : 1);
+        const fill = prem ? (active || hot ? acc : '#f2ede4') : (hot ? '#ff5b45' : active ? '#ffd84a' : '#ffffff'); const cx = x + w.wd / 2;
+        out += `<text x="${f1(cx)}" y="${f1(y)}" text-anchor="middle" transform="translate(${f1(cx)} ${f1(y - fs * 0.34)}) scale(${f1(pop * 100) / 100}) translate(${f1(-cx)} ${f1(-(y - fs * 0.34))})" font-family="Nunito" font-weight="800" font-size="${f1(rfs)}" fill="${fill}" stroke="#05050a" stroke-width="14" stroke-linejoin="round" paint-order="stroke">${esc(w.txt)}</text>`;
+        x += w.wd + rgap;
+      });
+    });
+    return out + '</g>';
   }
 
   const HW = {
@@ -313,7 +375,7 @@
     registerScenes(map) { Object.assign(this.scenes, map); },
     async setup(ep, timeline, seed, visual, art, cast) {
       this.state = { ep, timeline, seed, total: timeline[timeline.length - 1].end, visual: visual || 'svg', art: art || { panels: {} }, cast: cast || {} };
-      document.getElementById('paper').innerHTML = paperOverlay(seed);
+      document.getElementById('paper').innerHTML = ep.overlay === 'wash' ? washOverlay(seed) : paperOverlay(seed);
       // preload artwork so frames never capture a half-loaded image
       this._imgs = await Promise.all(Object.values(this.state.art.panels).map(p => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('cannot load ' + p.src)); im.src = '../' + p.src; })));
     },
@@ -342,23 +404,78 @@
       if (!useArt && !fn) throw new Error('No scene renderer for "' + ctx.scene.scene + '"');
       const body = useArt ? artScene(ctx, this.state.art) : fn(ctx, this);
       const capY = useArt ? (ctx.scene.art.caption_y || 1650) : (ctx.scene.caption_y || 1560);
+      if (this.state.ep.caption_style === 'punch') return body + (ctx.scene.caption_mode === 'none' ? '' : punchCaption(ctx));
       if (ctx.lines.length && this.state.ep.caption_style === 'thriller') return body + dialogueCaption(ctx, this.state.cast);
       if (this.state.ep.caption_style === 'thriller') return body + (ctx.scene.caption_mode === 'card' ? '' : thrillerCaption(ctx.scene.caption, null, null, ctx.t, 1, ctx.scene.caption_y || 1640));
       const cap = (useArt ? (ctx.scene.art.caption === false || (ctx.scene.caption_mode === 'card' && ctx.scene.art.caption !== true)) : ctx.scene.caption_mode === 'card') ? '' : captionBox(ctx.scene.caption, ctx.scene.subcaption, ctx.t, { y: capY });
       return body + cap;
     },
+    // big burned-in hook headline for the first seconds (episode.hook_title = {lines:[{text, colour, fs}], until, y, fs});
+    // most viewers scroll with the sound off, so the first frame has to say what the video is
+    hookTitle(t) {
+      const h = this.state.ep.hook_title; if (!h || !h.lines) return '';
+      const until = h.until ?? 2.8; if (t > until + 0.4) return '';
+      const eng = this.state.ep.engagement_rules, k0 = eng ? 1 : seg(t, 0, 0.32);   // engagement episodes: the headline is fully on screen in frame 1
+      const out = this.burnTitle(h, k0, 1 - seg(t, until, until + 0.4)); if (!eng) return out;
+      const y0 = h.y ?? 470, z = 1.07 - 0.07 * ease.out(seg(t, 0, 0.7));   // ... and settles from 107 % in the first 0.7 s, so it is moving too
+      return `<g transform="translate(${W / 2} ${y0}) scale(${f1(z * 1000) / 1000}) translate(${-W / 2} ${-y0})">${out}</g>`;
+    },
+    // burned-in end question for the last seconds (episode.end_title = {lines, from, y, fs}); `from` is seconds before
+    // the end. Case File 16's data: likes spike on the final payoff, but a question asked only in the caption drew no
+    // comments, so the question goes on the picture, where the viewer already is
+    endTitle(t) {
+      const h = this.state.ep.end_title; if (!h || !h.lines) return '';
+      const t0 = this.state.total - (h.from ?? 3.2); if (t < t0) return '';
+      return this.burnTitle(h, seg(t, t0, t0 + 0.32), 1);
+    },
+    // a running progress chip (episode.progress = {label, suffix, y, fs, until, keys:[{t, v}]}): "DAY 3" ... "DAY 23",
+    // so the viewer feels the story moving (a progression marker); it pops on every change
+    progressChip(t) {
+      const p = this.state.ep.progress; if (!p || !p.keys || !p.keys.length) return '';
+      const k = p.keys; if (t < k[0].t - 0.3) return '';
+      let v = k[0].v, last = k[0].t; for (const q of k) if (t >= q.t) { v = q.v; last = q.t; }
+      const intro = ease.back(seg(t, k[0].t - 0.3, k[0].t)) * (p.until !== undefined ? 1 - seg(t, p.until, p.until + 0.3) : 1); if (intro <= 0) return '';
+      const pop = 1 + 0.12 * (1 - ease.out(seg(t, last, last + 0.3)));
+      const ep = this.state.ep, acc = ep.look === 'premium' ? ((ep.palette || {}).accent || '#e2a13b') : '#ffd84a';
+      const txt = `${p.label ? p.label + ' ' : ''}${typeof v === 'number' ? v.toLocaleString('en-US') : v}${p.suffix || ''}`;
+      const fs = p.fs || 52, w = measure(txt, fs) + 64, cx = p.x ?? W / 2, y = p.y ?? 300, x = cx - w / 2;   // default high: the bottom ~400 px sit under Instagram's buttons
+      return `<g opacity="${f1(Math.min(1, intro))}" transform="translate(${f1(cx)} ${y}) scale(${f1(Math.max(0.001, intro) * pop * 1000) / 1000}) translate(${f1(-cx)} ${-y})"><rect x="${f1(x)}" y="${f1(y - fs * 0.92)}" width="${f1(w)}" height="${f1(fs * 1.32)}" rx="14" fill="#05070a" opacity="0.66" stroke="${acc}" stroke-opacity="0.55" stroke-width="2"/><text x="${f1(cx)}" y="${f1(y + fs * 0.08)}" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="${fs}" fill="${acc}" letter-spacing="2">${esc(txt)}</text></g>`;
+    },
+    burnTitle(h, k, out) {
+      const fs0 = h.fs || 96, y0 = h.y ?? 470, lh = fs0 * 1.14; k = ease.back(k);
+      let s = `<rect x="0" y="${f1(y0 - fs0 - 34)}" width="${W}" height="${f1(h.lines.length * lh + 64)}" fill="#000" opacity="0.5"/>`;
+      const ep = this.state.ep, prem = ep.look === 'premium', acc = prem ? ((ep.palette || {}).accent || '#e2a13b') : null;
+      h.lines.forEach((ln, i) => { const f0 = ln.fs || fs0, fsz = f1(Math.min(f0, f0 * 900 / Math.max(1, measure(ln.text, f0))));
+        const col = prem ? (ln.colour ? acc : '#f4efe6') : (ln.colour || '#ffffff'), fam = prem && i === 0 ? 'Fraunces' : 'Nunito';
+        s += `<text x="${W / 2}" y="${f1(y0 + i * lh)}" text-anchor="middle" font-family="${fam}" font-weight="800" font-size="${fsz}" fill="${col}"${prem ? ' letter-spacing="1.5"' : ''} stroke="#0b0b0d" stroke-width="${prem ? 10 : 14}" stroke-linejoin="round" paint-order="stroke">${esc(ln.text)}</text>`; });
+      return `<g opacity="${f1(out)}" transform="translate(${W / 2} ${y0}) scale(${f1(Math.max(0.001, k) * 1000) / 1000}) translate(${-W / 2} ${-y0})">${s}</g>`;
+    },
     frame(t) {
       const st = this.state; const tl = st.timeline;
       let i = tl.findIndex(s => t < s.end); if (i < 0) i = tl.length - 1;
       const sc = st.ep.scenes[i]; const s = tl[i]; const local = t - s.start;
-      const TR = 0.5; let inner = '';
-      if (i > 0 && sc.transition !== 'cut' && sc.transition !== 'fade' && local < TR) {
+      const TR = 0.5; let inner = ''; const prem = st.ep.look === 'premium';
+      // premium: every motion transition is longer and gentler (a glide, a soft bloom, a slow push-in), and 'dissolve' cross-fades
+      const TX = (prem ? { push: 0.6, zoom: 0.6, flash: 0.5, dissolve: 0.55 } : { push: 0.34, zoom: 0.4, flash: 0.28, dissolve: 0.5 })[sc.transition];
+      if (i > 0 && TX && local < TX && (prem || sc.transition === 'dissolve')) {
+        const p = local / TX, e = ease.inOut(p), prevT = tl[i - 1].end - 0.001; const A = this.renderScene(i - 1, prevT), B = this.renderScene(i, t);
+        if (sc.transition === 'dissolve') inner = `<g>${A}</g><g opacity="${f1(e)}">${B}</g>`;
+        else if (sc.transition === 'flash') inner = `<g>${A}</g><g opacity="${f1(e)}">${B}</g><rect width="${W}" height="${H}" fill="#fff6e8" opacity="${f1(0.32 * Math.sin(Math.PI * p))}" style="mix-blend-mode:screen"/>`;
+        else if (sc.transition === 'zoom') inner = `<g transform="translate(${W / 2} ${H / 2}) scale(${f1((1 + 0.1 * e) * 1000) / 1000}) translate(${-W / 2} ${-H / 2})">${A}</g><g opacity="${f1(e)}" transform="translate(${W / 2} ${H / 2}) scale(${f1((0.96 + 0.04 * e) * 1000) / 1000}) translate(${-W / 2} ${-H / 2})">${B}</g>`;
+        else { const b = f1(7 * Math.sin(Math.PI * p)); inner = `<filter id="mblur" x="-10%" y="0" width="120%" height="100%"><feGaussianBlur stdDeviation="${b} 0"/></filter><g filter="url(#mblur)"><g transform="translate(${f1(-W * 0.14 * e)} 0)">${A}</g><g opacity="${f1(e)}" transform="translate(${f1(W * 0.14 * (1 - e))} 0)">${B}</g></g>`; }
+      } else if (i > 0 && TX && local < TX) {
+        // motion transitions: push (whip with horizontal motion blur), zoom (scale-through), flash (white pop)
+        const p = local / TX, e = ease.inOut(p); const prevT = tl[i - 1].end - 0.001;
+        if (sc.transition === 'flash') inner = this.renderScene(i, t) + `<rect width="${W}" height="${H}" fill="#fff" opacity="${f1(Math.pow(1 - p, 2) * 0.9)}"/>`;
+        else if (sc.transition === 'zoom') inner = `<g opacity="${f1(1 - e)}" transform="translate(${W / 2} ${H / 2}) scale(${f1((1 + 0.35 * e) * 100) / 100}) translate(${-W / 2} ${-H / 2})">${this.renderScene(i - 1, prevT)}</g><g opacity="${f1(e)}" transform="translate(${W / 2} ${H / 2}) scale(${f1((0.9 + 0.1 * e) * 1000) / 1000}) translate(${-W / 2} ${-H / 2})">${this.renderScene(i, t)}</g>`;
+        else { const b = f1(55 * Math.sin(Math.PI * p)); inner = `<filter id="mblur" x="-10%" y="0" width="120%" height="100%"><feGaussianBlur stdDeviation="${b} 0"/></filter><g filter="url(#mblur)"><g transform="translate(${f1(-W * e)} 0)">${this.renderScene(i - 1, prevT)}</g><g transform="translate(${f1(W * (1 - e))} 0)">${this.renderScene(i, t)}</g></g>`; }
+      } else if (i > 0 && sc.transition !== 'cut' && sc.transition !== 'fade' && sc.transition !== 'dissolve' && !TX && local < TR) {
         const p = local / TR; const prev = this.renderScene(i - 1, tl[i - 1].end - 0.001);
         inner = `<g>${prev}</g>${transitionMask(sc.transition, p)}<g clip-path="url(#tr)">${this.renderScene(i, t)}</g>`;
       } else inner = this.renderScene(i, t);
       let fade = '';
-      if (sc.transition === 'fade' && i === tl.length - 1) { const k = seg(t, st.total - 1.0, st.total - 0.05); if (k > 0) fade = `<rect width="${W}" height="${H}" fill="${PAL.ink}" opacity="${f1(k)}"/>`; }
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}<rect width="${W}" height="${H}" fill="url(#vig)"/>${fade}</svg>`;
+      if ((sc.transition === 'fade' || sc.fade_out) && i === tl.length - 1) { const k = seg(t, st.total - 1.0, st.total - 0.05); if (k > 0) fade = `<rect width="${W}" height="${H}" fill="${PAL.ink}" opacity="${f1(k)}"/>`; }
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" height="100%">${defs(st.seed)}<rect width="${W}" height="${H}" fill="${PAL.paper}"/>${inner}<rect width="${W}" height="${H}" fill="url(#vig)"/>${this.hookTitle(t)}${this.endTitle(t)}${this.progressChip(t)}${fade}</svg>`;
       const stage = document.getElementById('stage'); stage.innerHTML = svg;
       // place moving coins along pipes (exact per-frame positions via getPointAtLength)
       stage.querySelectorAll('g[data-coins]').forEach(g => {

@@ -1,0 +1,946 @@
+{
+ "id": "tcv77-wine-heists-2",
+ "number": 77,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "Thieves Tunnelled Into a Paris Wine Cellar",
+ "central_question": "Wine Heists, Part 2: through a wine shop into a Michelin cellar, a rod through a hole in Paris, and a tunnel from the catacombs. Which was smartest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "300": "three hundred"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "77",
+  "label": "WINE HEISTS · PART 2"
+ },
+ "music": {
+  "bpm": 82,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 82,
+  "cliff": {
+   "scene": "s07_drill",
+   "word": [
+    0,
+    1
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "wv77_thief",
+  "wv77_burglar",
+  "wv77_fisher"
+ ],
+ "content_notes": "Tone: absurd and ironic; nobody is mocked. No weapon and no violence are shown; the only tools are a torch, a drill-sized hole and a plain rod. Every thief (Copenhagen, Taillevent, the catacombs: all unidentified, no arrests reported) is drawn ONLY as a dark rim-lit silhouette tagged NOT A LIKENESS and never named. Formel B and Les Caves de Taillevent are named only as plain text: every bottle is a generic dark bottle with a blank cream label; no logo, sign, label artwork or real building is imitated. The catacomb skulls are small stylised shapes in wall niches (the ossuary), never remains of a victim, no gore. The cellar owner is not named, described or drawn. Every card is our own typed graphic. No dialogue or quotation (the police line is a paraphrase). Facts verified 2026-10-18.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "wv77_hook",
+   "min_duration": 4.0,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_300"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Thieves tunnelled into a Paris wine cellar.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "And stole about 300 bottles.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "thieves",
+    "tunnelled",
+    "paris",
+    "wine",
+    "cellar.",
+    "stole",
+    "300",
+    "bottles."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_shop",
+   "scene": "wv77_shop",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.28
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "step",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "tick",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_shop",
+    "K_nothing"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But first, Copenhagen. Burglars broke into a wine shop.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "And stole nothing from it.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "copenhagen.",
+    "burglars",
+    "wine",
+    "shop.",
+    "nothing"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_wall",
+   "scene": "wv77_wall",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.34
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "chime",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_formelb"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "It was just the way into the Michelin restaurant next door.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "just",
+    "way",
+    "michelin",
+    "restaurant",
+    "next",
+    "door."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_hole",
+   "scene": "wv77_hole",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "rasp",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      5
+     ],
+     "name": "thud",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_tail"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Wine thieves love walls.",
+     "tone": "playful"
+    },
+    {
+     "who": "narrator",
+     "text": "In Paris, thieves cut a hole from next door.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "love",
+    "walls.",
+    "paris,",
+    "hole",
+    "next",
+    "door."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_rod",
+   "scene": "wv77_rod",
+   "min_duration": 3.8,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.2
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "click",
+     "gain": 0.28
+    },
+    {
+     "at": 0.12,
+     "word": [
+      0,
+      7
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_rod",
+    "K_alarm"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then fished the bottles out. With a rod.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fished",
+    "bottles",
+    "rod."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_tunnel",
+   "scene": "wv77_tunnel",
+   "min_duration": 3.6,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "rumble",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_catacombs"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That tunnel? It came from the catacombs.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tunnel.",
+    "catacombs."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_drill",
+   "scene": "wv77_drill",
+   "min_duration": 4.0,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      1
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.02,
+     "word": [
+      0,
+      1
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      6
+     ],
+     "name": "tick",
+     "gain": 0.24
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "radio",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_drill",
+    "K_300",
+    "K_scouted"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They drilled straight into a private cellar.",
+     "tone": "reveal"
+    },
+    {
+     "who": "narrator",
+     "text": "Police said that wall was no accident.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "drilled",
+    "straight",
+    "private",
+    "cellar.",
+    "no",
+    "accident."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s08_end",
+   "scene": "wv77_end",
+   "min_duration": 3.0,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "sub",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "K_missing",
+    "K_part3"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "No arrests. The bottles? Still missing.",
+     "tone": "resolve"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "no",
+    "arrests.",
+    "bottles?",
+    "still",
+    "missing."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "In 2017 thieves came through the Paris catacombs (the old underground quarries) and drilled through the wall of a private apartment-building cellar in the 6th arrondissement, near the Luxembourg Gardens. Narration: 'Thieves tunnelled into a Paris wine cellar.' Headline 'A TUNNEL INTO / A PARIS WINE CELLAR'.",
+   "sources": [
+    "local_paris",
+    "fox_ap",
+    "decanter_paris",
+    "db_paris",
+    "atlas"
+   ]
+  },
+  {
+   "id": "K_shop",
+   "type": "established",
+   "nature": "fact",
+   "text": "Night of Sunday 23 February 2020, Copenhagen: burglars got into the Michelin-starred restaurant Formel B's cellar through a neighbouring wine shop which they broke into first. Narration: 'But first, Copenhagen. Burglars broke into a wine shop.'",
+   "sources": [
+    "local_dk",
+    "local_dk2",
+    "decanter_cph",
+    "vinepair_cph"
+   ]
+  },
+  {
+   "id": "K_nothing",
+   "type": "established",
+   "nature": "fact",
+   "text": "They took nothing from the wine shop. Narration: 'And stole nothing from it.' Label 'THE SHOP: NOTHING TAKEN'.",
+   "sources": [
+    "local_dk",
+    "local_dk2",
+    "vinepair_cph"
+   ]
+  },
+  {
+   "id": "K_formelb",
+   "type": "established",
+   "nature": "fact",
+   "text": "From the shop they broke a hole through the (brick) wall into Formel B's wine cellar and took 50-60 rare bottles (incl. Domaine de la Romanee-Conti and Domaine Leroy), about DKK 1.5 million; about a third later surfaced with a German dealer. Narration: 'It was just the way into the Michelin restaurant next door.' Label 'FORMEL B · 50-60 RARE BOTTLES'.",
+   "sources": [
+    "decanter_cph",
+    "local_dk",
+    "vinepair_cph",
+    "weinplus_cph"
+   ]
+  },
+  {
+   "id": "K_tail",
+   "type": "established",
+   "nature": "fact",
+   "text": "October 2020, Paris: thieves got into the building next to the fine-wine shop Les Caves de Taillevent and cut a hole of about 50 cm in the wall between the two. Narration: 'In Paris, thieves cut a hole from next door.' (rehook 'Wine thieves love walls.' is editorial).",
+   "sources": [
+    "db_tail",
+    "wlc_tail",
+    "dm_tail"
+   ]
+  },
+  {
+   "id": "K_rod",
+   "type": "established",
+   "nature": "fact",
+   "text": "They used a rod to 'fish' about 20 bottles of grand cru wine (about EUR 50,000) out through the hole. Narration: 'Then fished the bottles out. With a rod.' Label 'ABOUT 20 BOTTLES · EUR 50,000'.",
+   "sources": [
+    "db_tail",
+    "wlc_tail",
+    "dm_tail"
+   ]
+  },
+  {
+   "id": "K_alarm",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: by fishing through the hole they avoided setting off the alarm and the cameras and never entered the shop. Card 'THE ALARM NEVER WENT OFF / THEY NEVER SET FOOT INSIDE'.",
+   "sources": [
+    "db_tail",
+    "wlc_tail"
+   ]
+  },
+  {
+   "id": "K_catacombs",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Paris thieves came through the catacombs, the tunnel network under the city (cellar near the Luxembourg Gardens, 6th arrondissement). Narration: 'That tunnel? It came from the catacombs.' Label 'PARIS 6TH · 2017'.",
+   "sources": [
+    "local_paris",
+    "fox_ap",
+    "chn_ap",
+    "decanter_paris",
+    "atlas"
+   ]
+  },
+  {
+   "id": "K_drill",
+   "type": "established",
+   "nature": "fact",
+   "text": "They drilled through the (limestone) wall into a private apartment cellar. Narration: 'They drilled straight into a private cellar.'",
+   "sources": [
+    "local_paris",
+    "fox_paris",
+    "decanter_paris",
+    "atlas"
+   ]
+  },
+  {
+   "id": "K_300",
+   "type": "established",
+   "nature": "fact",
+   "text": "About 300 bottles were taken (reports say 'about 300' / 'more than 300'; The Local's headline says 250), worth about EUR 250,000 (France Info via The Local; other outlets convert to $300,000-375,000). Narration (hook): 'And stole about 300 bottles.' Counter '300 BOTTLES', sub 'about EUR 250,000'.",
+   "sources": [
+    "local_paris",
+    "fox_ap",
+    "decanter_paris",
+    "db_paris",
+    "vinepair_paris"
+   ]
+  },
+  {
+   "id": "K_scouted",
+   "type": "established",
+   "nature": "fact",
+   "text": "Police said the thieves must have scouted the site: they did not drill that particular wall by accident. Narration (paraphrase, no quotation): 'Police said that wall was no accident.'",
+   "sources": [
+    "local_paris",
+    "fox_ap",
+    "chn_ap",
+    "atlas"
+   ]
+  },
+  {
+   "id": "K_missing",
+   "type": "established",
+   "nature": "fact",
+   "text": "No arrests and no recovered bottles were reported (contemporary reports: the thieves were still at large; nothing later found on 18 October 2026). Narration: 'No arrests. The bottles? Still missing.' On screen 'AS OF OCT 2026: NO ARRESTS REPORTED'.",
+   "sources": [
+    "local_paris",
+    "fox_ap",
+    "atlas",
+    "db_paris"
+   ]
+  },
+  {
+   "id": "K_part3",
+   "type": "established",
+   "nature": "fact",
+   "text": "PART 3 TEASE (end card): Rudy Kurniawan blended fake 'rare' wines in his California home kitchen; FBI agents raided the house in Arcadia in March 2012 and found thousands of counterfeit labels; convicted of fraud in December 2013 and sentenced to 10 years in August 2014. End card 'PART 3: FAKE WINE MADE IN A KITCHEN'.",
+   "sources": [
+    "cbs_rk",
+    "decanter_rk",
+    "npr_rk",
+    "nbc_rk"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "local_paris",
+   "publisher": "The Local France (AFP)",
+   "title": "Thieves steal 250 bottles of wine... using the Paris catacombs",
+   "url": "https://www.thelocal.fr/20170830/thieves-steal-300-bottles-of-wine-using-the-paris-catacombs",
+   "date": "2017-08-30",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "fox_ap",
+   "publisher": "Fox News (Associated Press)",
+   "title": "'Sour grapes': Robbers empty Paris cellar of vintage wines",
+   "url": "https://www.foxnews.com/world/sour-grapes-robbers-empty-paris-cellar-of-vintage-wines",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "chn_ap",
+   "publisher": "Courthouse News (Associated Press)",
+   "title": "Robbers empty Paris cellar of vintage wines",
+   "url": "https://www.courthousenews.com/robbers-empty-paris-cellar-vintage-wines/",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "fox_paris",
+   "publisher": "Fox News",
+   "title": "Thieves drill through Paris catacombs, steal wine",
+   "url": "https://www.foxnews.com/world/thieves-drill-through-paris-catacombs-steal-330g-of-wine",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "decanter_paris",
+   "publisher": "Decanter",
+   "title": "Paris catacombs wine theft",
+   "url": "https://www.decanter.com/wine-news/paris-catacombs-wine-theft-375377/",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "db_paris",
+   "publisher": "The Drinks Business",
+   "title": "Thieves use Paris catacombs to steal wine",
+   "url": "https://www.thedrinksbusiness.com/2017/08/thieves-use-paris-catacombs-to-steal-wine/",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "atlas",
+   "publisher": "Atlas Obscura",
+   "title": "Thieves Infiltrated the Paris Catacombs to Steal $300,000 of Wine",
+   "url": "https://www.atlasobscura.com/articles/paris-theft-wine-catacombs-crime",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "vinepair_paris",
+   "publisher": "VinePair",
+   "title": "Thieves steal $300,000 worth of wine",
+   "url": "https://vinepair.com/booze-news/thieves-steal-300000-worth-of-wine",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "decanter_cph",
+   "publisher": "Decanter",
+   "title": "Top Burgundy stolen in GBP 170k wine heist at Michelin restaurant",
+   "url": "https://www.decanter.com/wine-news/stolen-wine-michelin-restaurant-copenhagen-433009",
+   "date": "2020-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "local_dk",
+   "publisher": "The Local Denmark",
+   "title": "Burglars loot wine cellar of Michelin-starred Danish restaurant",
+   "url": "https://www.thelocal.dk/20200225/burglars-loot-wine-cellar-of-michelin-starred-danish-restaurant/",
+   "date": "2020-02-25",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "local_dk2",
+   "publisher": "The Local Denmark",
+   "title": "Is Copenhagen being targeted by specialist wine thieves?",
+   "url": "https://www.thelocal.dk/20200226/is-copenhagen-being-targeted-by-specialist-wine-thieves",
+   "date": "2020-02-26",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "vinepair_cph",
+   "publisher": "VinePair",
+   "title": "Thieves steal rare wines from Danish restaurant",
+   "url": "https://vinepair.com/booze-news/thieves-steal-rare-wines-danish-restaurant",
+   "date": "2020-02",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "weinplus_cph",
+   "publisher": "wein.plus",
+   "title": "Stolen top wines from Copenhagen's Formel B restaurant appear: German wine dealer offered them for sale",
+   "url": "https://magazine.wein.plus/news/stolen-top-wines-from-copenhagen-s-formel-b-restaurant-appear-german-wine-dealer-offered-them-for-sale-on-behalf-of-a-private-person",
+   "date": "2020",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "db_tail",
+   "publisher": "The Drinks Business (citing Le Point)",
+   "title": "Caves de Taillevent hit by audacious heist",
+   "url": "https://www.thedrinksbusiness.com/2020/10/caves-de-taillevent-hit-by-audacious-heist/",
+   "date": "2020-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "wlc_tail",
+   "publisher": "Wine List Confidential (citing Le Point)",
+   "title": "Les Caves de Taillevent hit by audacious heist",
+   "url": "https://www.winelistconfidential.com/2020/10/les-caves-de-taillevent-hit-by-audacious-heist/",
+   "date": "2020-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "dm_tail",
+   "publisher": "Daily Mail (PressReader)",
+   "title": "Daily Mail, 4 November 2020 (Taillevent heist item)",
+   "url": "https://www.pressreader.com/uk/daily-mail/20201104/281977495134206",
+   "date": "2020-11-04",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "cbs_rk",
+   "publisher": "CBS News (Associated Press)",
+   "title": "Wine fraud earns collector 10-year prison term",
+   "url": "https://www.cbsnews.com/news/wine-fraud-earns-collector-10-year-prison-term",
+   "date": "2014-08-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "decanter_rk",
+   "publisher": "Decanter",
+   "title": "Wine fraudster Rudy Kurniawan sentenced to 10 years in prison",
+   "url": "https://www.decanter.com/wine-news/wine-fraudster-rudy-kurniawan-sentenced-to-10-years-in-prison-7895/",
+   "date": "2014-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "npr_rk",
+   "publisher": "NPR",
+   "title": "Sip on this: that $10,000 (or $30) bottle of wine might be fake",
+   "url": "https://www.npr.org/transcripts/448182588",
+   "date": "2015-10-12",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "nbc_rk",
+   "publisher": "NBC Los Angeles (Associated Press)",
+   "title": "'Sour Grapes' wine fraud con man deported to Indonesia",
+   "url": "https://www.nbclosangeles.com/news/local/sour-grapes-wine-fraud-con-man-deported-to-indonesia/2572984/",
+   "date": "2021-04",
+   "accessed": "search-result extract only, 2026-10-18"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 5,
+ "search_terms": [
+  "wine heist",
+  "paris catacombs",
+  "wine cellar"
+ ],
+ "palette": {
+  "shadow": "#14110f",
+  "mid": "#c9b8a2",
+  "accent": "#b8324a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A TUNNEL INTO"
+   },
+   {
+    "text": "A PARIS WINE CELLAR",
+    "colour": "#b8324a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "SMARTEST WAY IN?"
+   },
+   {
+    "text": "THE ROD OR THE TUNNEL? 👇",
+    "colour": "#b8324a"
+   },
+   {
+    "text": "WINE HEISTS · PART 2",
+    "fs": 38
+   },
+   {
+    "text": "PART 3: FAKE WINE MADE IN A KITCHEN",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR PART 3",
+    "fs": 46,
+    "colour": "#b8324a"
+   },
+   {
+    "text": "TAG THE MATE WHO'D DIG FOR IT",
+    "fs": 34
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "WAY IN",
+  "keys": [
+   {
+    "t": 5.55,
+    "v": "1 · NEXT DOOR"
+   },
+   {
+    "t": 15.62,
+    "v": "2 · A ROD"
+   },
+   {
+    "t": 22.41,
+    "v": "3 · THE CATACOMBS"
+   }
+  ],
+  "y": 330,
+  "until": 30.38
+ },
+ "legal_status_verified": "2026-10-18"
+}

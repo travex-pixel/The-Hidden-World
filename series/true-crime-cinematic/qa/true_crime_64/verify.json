@@ -1,0 +1,199 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv64-pigeon-backpack/tcv64-pigeon-backpack.mp4",
+    "size_bytes": 20132737,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60.0,
+    "duration": 36.95,
+    "audio_duration": 36.95,
+    "decode_stderr": "",
+    "mean_volume_db": -16.5,
+    "max_volume_db": -1.7,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv64-pigeon-backpack/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2217,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.3,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "engage_hook_stakes_by_4s": true,
+    "engage_open_loop_every_10s": true,
+    "engage_outcome_in_last_8s": true,
+    "engage_end_question_on_picture": true,
+    "engage_fun_fact_and_lesson": true,
+    "engage_progression_marker": true,
+    "engage_cold_open_sfx": true,
+    "engage_ends_within_1s_of_last_word": true,
+    "engage_pace_under_150_wpm": true,
+    "engage_hook_line_done_by_2_6s": true,
+    "engage_save_card_before_last_beat": true,
+    "engage_single_punchline_ending": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.2,
+    "true_peak_dbtp": -1.7
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.065,
+    "transcript": "This pigeon wore a backpack full of drugs. In 2017, it did not ask for a lawyer. Kuwaiti Customs caught it near the Iraqi border. What was in the backpack? 178 pills. That was not the clemisiest one. In Colombia, one tried flying drugs into a prison. Police said it was too heavy to clear the wall. Carrying a stranger's parcel, save this. Three-lank a cot a cat smuggling heroin into prison. Send this to the mate who feeds pigeons. All three got caught. Only the cat broke out of jail."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 42,
+      "extent": {
+        "left": 116.0,
+        "right": 964.0,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 1.5,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 2.09,
+      "frames": 370
+    },
+    "audio": {
+      "opening_speech_median_db": -19.9,
+      "opening_min_speech_window_db": -30.5,
+      "first_word_db": -20.7,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -38.9,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.294,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.8,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -31.7,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8259,
+      "loudness_lufs": -14.2,
+      "true_peak_dbtp": -1.7,
+      "mono_lufs": -14.2,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -65.0,
+      "end_before_db": -14.0,
+      "end_last_50ms_db": -98.0,
+      "silent_tail_s": 0.2,
+      "ending_intentional": true,
+      "durations": {
+        "video": 36.95,
+        "audio": 36.95
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "engagement": {
+      "enforced": true,
+      "checks": {
+        "hook_stakes_by_4s": true,
+        "open_loop_every_10s": true,
+        "outcome_in_last_8s": true,
+        "end_question_on_picture": true,
+        "fun_fact_and_lesson": true,
+        "progression_marker": true,
+        "cold_open_sfx": true,
+        "ends_within_1s_of_last_word": true,
+        "pace_under_150_wpm": true,
+        "hook_line_done_by_2_6s": true,
+        "save_card_before_last_beat": true,
+        "single_punchline_ending": true
+      },
+      "notes": {
+        "hook": "This pigeon wore a backpack full of drugs. In 2017. It did not ask",
+        "loop_gaps": [],
+        "tail": "heroin into prison. Send this to the mate who feeds pigeons. All three got caught. Only the cat broke out of jail.",
+        "end_title": "A PIGEON DRUG MULE. GENIUS OR BIRD-BRAINED? \ud83d\udc47 TAG THE MATE WHO FEEDS PIGEONS",
+        "tail_s": 1.11,
+        "wpm": 149.4,
+        "hook_end_s": 2.49,
+        "lesson_scene": "s06_lesson",
+        "end_scene_s": 4.02
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 8,
+      "composed_shots": 8,
+      "shots_with_characters": 8,
+      "character_shot_share": 1.0,
+      "distinct_sets": 5,
+      "max_set_share": 0.38,
+      "shot_sizes": {
+        "medium-wide": 4,
+        "medium": 3,
+        "wide": 1
+      },
+      "max_shot_size_share": 0.5,
+      "ok": true
+    }
+  }
+}

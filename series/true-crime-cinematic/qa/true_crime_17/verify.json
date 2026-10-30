@@ -1,0 +1,159 @@
+{
+  "media": {
+    "file": "/home/user/The-Hidden-World/out/tcv17-kohberger/tcv17-kohberger.mp4",
+    "size_bytes": 30324870,
+    "checks": {
+      "has_video_stream": true,
+      "has_audio_stream": true,
+      "codec_h264": true,
+      "codec_aac": true,
+      "dimensions": true,
+      "fps": true,
+      "audio_video_duration_match": true,
+      "duration_matches_timeline": true,
+      "decodes_without_errors": true,
+      "audio_not_silent": true,
+      "no_long_silence_gaps": true,
+      "no_clipping": true
+    },
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "duration": 80.25,
+    "audio_duration": 80.25,
+    "decode_stderr": "",
+    "mean_volume_db": -16.7,
+    "max_volume_db": -1.6,
+    "long_silences": [],
+    "contact_sheet": "/home/user/The-Hidden-World/out/tcv17-kohberger/contact_sheet.png",
+    "all_passed": true
+  },
+  "series_qa": {
+    "media_checks_pass": true,
+    "duration_in_window": true,
+    "dimensions_1080x1920": true,
+    "frames_checked": 2406,
+    "no_black_frames": true,
+    "captions_timed_within_scenes": true,
+    "speech_db_min": -17.9,
+    "dialogue_clear_of_music": true,
+    "all_passed": true,
+    "loudness_near_target": true,
+    "true_peak_ok": true,
+    "narration_intelligible_asr": true,
+    "captions_in_safe_area": true,
+    "no_frozen_or_static_picture": true,
+    "audio_opening_speech_steady": true,
+    "audio_opening_no_holes": true,
+    "audio_narration_on_time": true,
+    "audio_music_never_masks": true,
+    "audio_music_audible": true,
+    "audio_no_clipping": true,
+    "audio_no_long_silence": true,
+    "audio_ending_intentional": true,
+    "audio_mono_compatible": true,
+    "audio_av_duration_match": true,
+    "shot_variety_and_character_action": true,
+    "every_shot_sourced_and_tagged": true
+  },
+  "loudness": {
+    "integrated_lufs": -14.3,
+    "true_peak_dbtp": -1.6
+  },
+  "asr": {
+    "engine": "sherpa-onnx whisper tiny.en",
+    "word_error_rate": 0.044,
+    "transcript": "Investigators had the Idaho killers DNA, but no name. Then they went through his family's trash. In November 2022, four university of Idaho students were killed. Prosecutors said the killer left a knife sheak behind. On its nap was one man's DNA. Cameras caught a white car near the house that night, prosecutors said. Port filings said genetic genealogy led the FBI to one family. and to Brian Koberger, a criminology PhD student nearby. He drove a white Hyundai elantra. Prosecutors said his phone had pinged near the house at least 12 times. So investigators took trash from his parents home in Pennsylvania. The lab compared it to the sheath. Prosecutors said the trash DNA came from the father of whoever left the sheath. On December 30th, police arrested him there. Weeks before trial, he pleaded guilty to all four murders. Prosecutors dropped the death penalty, some victims' families opposed the deal. He got four consecutive life sentences plus ten years. In 2026, he reportedly asked to withdraw his plea. He gave no motive, their families may never know why. DNA but no name. His families trash helped name him. which case should we crack next? Tell us in the comments."
+  },
+  "studio": {
+    "captions": {
+      "ok": true,
+      "chunks": 99,
+      "extent": {
+        "left": 113.3,
+        "right": 966.7,
+        "top": 1280.8,
+        "bottom": 1482.7
+      },
+      "safe_area": {
+        "left": 100,
+        "right": 980,
+        "top": 260,
+        "bottom": 1510
+      },
+      "rows_scaled_to_fit": []
+    },
+    "motion": {
+      "ok": true,
+      "longest_still_s": 0.3,
+      "still_spans_over_limit": [],
+      "beats_without_visual_change": [],
+      "median_motion": 1.66,
+      "frames": 802
+    },
+    "audio": {
+      "opening_speech_median_db": -20.9,
+      "opening_min_speech_window_db": -26.8,
+      "first_word_db": -18.4,
+      "opening_speech_steady": true,
+      "opening_gap_min_db": -37.7,
+      "opening_no_holes": true,
+      "narration_onset_s": 0.305,
+      "narration_intended_s": 0.25,
+      "narration_on_time": true,
+      "speech_to_music_db_p5": 13.4,
+      "music_never_masks": true,
+      "music_in_gaps_median_db": -36.4,
+      "music_audible": true,
+      "longest_silence_s": 0.0,
+      "no_long_silence": true,
+      "sample_peak": 0.8345,
+      "loudness_lufs": -14.3,
+      "true_peak_dbtp": -1.6,
+      "mono_lufs": -14.3,
+      "no_clipping": true,
+      "mono_compatible": true,
+      "end_last_db": -91.0,
+      "end_before_db": -12.6,
+      "end_last_50ms_db": -180.0,
+      "silent_tail_s": 0.4,
+      "ending_intentional": true,
+      "durations": {
+        "video": 80.2,
+        "audio": 80.25
+      },
+      "av_duration_match": true,
+      "checks": {
+        "opening_speech_steady": true,
+        "opening_no_holes": true,
+        "narration_on_time": true,
+        "music_never_masks": true,
+        "music_audible": true,
+        "no_clipping": true,
+        "no_long_silence": true,
+        "ending_intentional": true,
+        "mono_compatible": true,
+        "av_duration_match": true
+      },
+      "ok": true
+    },
+    "slideshow_risk": {
+      "shots": 15,
+      "composed_shots": 15,
+      "shots_with_characters": 13,
+      "character_shot_share": 0.87,
+      "distinct_sets": 8,
+      "max_set_share": 0.27,
+      "shot_sizes": {
+        "medium-wide": 5,
+        "medium": 7,
+        "wide": 1,
+        "insert/graphic": 2
+      },
+      "max_shot_size_share": 0.47,
+      "ok": true
+    }
+  }
+}

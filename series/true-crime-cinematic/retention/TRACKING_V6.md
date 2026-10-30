@@ -1,0 +1,123 @@
+# Tracking the engine-v6 reels (83, 84, 85) against the v5 baseline
+
+Read Insights at the same ages for every reel: **1 h, 6 h, 24 h, 72 h** (set phone reminders when you post). Log each
+reading with the retention tool so the curve is pinned to the lines playing at each second:
+
+    python series/true-crime/tools/retention.py <episode-id> 0:100 4:<pct> 10:<pct> 20:<pct> 30:<pct> --views <n> --save
+
+Record in the table below (per 1,000 views = count ÷ views × 1000). Judge nothing before 6 h; compare only readings
+of the same age. Instagram distribution is noisy: one reel proves nothing, three in the same direction is a signal.
+
+| # | age | views | skip % | kept @4 s | kept @10 s | end % | avg watch s | shares/1k | saves/1k | follows/1k | likes/1k | comments |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 83 | 1 h | | | | | | | | | | | |
+| 83 | 6 h | | | | | | | | | | | |
+| 83 | 24 h | | | | | | | | | | | |
+| 83 | 72 h | | | | | | | | | | | |
+| 84 | 1 h | | | | | | | | | | | |
+| 84 | 6 h | | | | | | | | | | | |
+| 84 | 24 h | | | | | | | | | | | |
+| 84 | 72 h | | | | | | | | | | | |
+| 85 | 1 h | | | | | | | | | | | |
+| 85 | 6 h | | | | | | | | | | | |
+| 85 | 24 h | | | | | | | | | | | |
+| 85 | 72 h | | | | | | | | | | | |
+
+**v5 baseline (72–79, mixed ages 2.5 h–2 d):** skip 20.5–33.9 % (median 27.7), kept @4 s 65–80 %, kept @10 s 42–52 %,
+end 5–40 %, shares 0 on all seven, saves 0–4, likes 0.4–1.6 %.
+
+**What v6 is supposed to move:** kept @10 s (the "but first" leak is gone, so ≥ 60 % would confirm it), end % (31 s
+cuts: ≥ 40 %), and shares (the explainable revelation + the persona send line: anything above 0 is new). Skip rate is
+the frame-0 test: 85 (bed + torch) should skip lowest, 84 (phone on a sofa) highest, if the frame-0 hypothesis holds.
+
+**Replays and the loop:** Instagram does not show replays directly. If average watch time ÷ reel length is above 1.0,
+people are watching past the end into the loop; log it as the loop's only real measure.
+
+**Batch 2 (posted together ~15:45 local on 20 Oct, read at 7 h):**
+
+| # | age | views | skip % | kept @4 s | kept @10 s | end % | avg watch s | shares/1k | saves/1k | follows/1k | likes/1k | comments |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 86 (frame-0 A) | 7 h | 1,950 | 21.3 | 65 | 48 | 30 | – | 0 | 0 | – | 8.0 | 2 |
+| 87 (frame-0 B) | 7 h | 157 | 39.5 | 55 | 35 | 15 | – | 0 | 0 | 0 | 0 | 3 |
+| 88 (28 s) | 7 h | 2,214 | 24.3 | 70 | 55 | 38 | 16 (57 % of length) | 0 | 0 | 0 | 10.0 | 3 |
+
+Reading (20 Oct, 22:48): every reel seeds to 150–250 viewers in hour 1; the ones under ~30 % skip were pushed on
+(86 continuously, 88 at 4 h, 83 at 12 h), the ones above ~35 % never left the seed (84, 85, 87 flat from hour 1).
+The three that passed all have something visibly wrong in frame 0 without reading (watermelon on a head, cocaine in an
+ambulance, 911 calling from a pocket); the three that failed show an ordinary picture whose wrongness is only in the
+text (man on a phone, sleeper in a bed, taxi outside a bank). The 86/87 frame-0 pair is confounded by this.
+v6 did lift the middle: kept @10 s 45–55 % on the pushed reels (v5: 42–52 %), with like spikes on the gotchas.
+Shares 0 on all six, follows 0.
+
+**Batch 4: engine v8 (lane-locked, agent-first spoken hook), posted 22 Oct, read 23 Oct 00:07:**
+
+| # | views | skip % | kept @4 s | kept @10 s | end % | shares | reposts | likes % | comments | hook |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 92 drug cannon | 2,980 | 23.1 | ~80 | ~55 | ~40 | **1** | 1 | 0.9 | 4 | Smugglers built a drug cannon into a van. |
+| 93 cocaine ship | 1,534 (still climbing) | 32.7 | ~85 | ~55 | ~35 | 0 | 1 | 1.0 | 2 | Smugglers loaded a ship with a billion in cocaine. |
+| 94 meth watermelons | 2,462 | 23.1 | ~80 | ~55 | ~35 | 0 | 0 | 0.7 | 2 | Smugglers dressed meth up as watermelons. |
+
+v8 confirmed 3 of 3 pushed (after 2 of 12 in the previous three batches); 92 is the first reel with a share. The weakest
+of the three (93, 32.7 %) is the only quantity hook ("a billion in cocaine", a pile of bricks); the two at 23 % are a
+DEVICE (a cannon built into a van) and a DISGUISE (meth dressed as watermelons). Same split as before: 75 bunkers 27.7,
+74 30,000 bottles 33.9 vs 63 Jeep on the fence 16.0, 59 catapult 20.4, 73 fake Border Patrol truck 22.6.
+
+
+**Batch 5: engine v8 + the making-verb hook, posted together 23 Oct, read 24 Oct 10:44 (~18 h):**
+
+| # | views | skip % | kept @10 s | end % | shares | saves | likes % | comments | curve | hook |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 95 Haaland bricks | 1,103 (climbing) | 28.6 | ~50 | ~45 | 0 | 0 | 1.2 (higher) | 4 | steady, above typical from 4 h | Smugglers branded their cocaine with Haaland. |
+| 96 Starlink sub | 2,777 (climbing) | 30.4 | ~50 | ~45 | 0 | 0 | 1.2 (higher) | 2 | steady push all day | Smugglers built a drone sub run by Starlink. |
+| 97 cocaine jacket | 2,630 (flat since 4 h) | **17.0** | **~75** | ~45 | 0 | 0 | 0.9 (lower) | 2 | burst to 2.3k by 4 h, then flat | Drug smugglers turned cocaine into a jacket. |
+
+Pushed 3 of 3 (6 of 6 on v8). 97 is the second-lowest skip the account has had (63 Jeep: 16.0) and the only reel ever to
+hold 75 % at 10 s (everything else 42–55 %). What 97 did that 95 and 96 did not: frame 0 is a CLOSE shot of hands cutting the
+object open with the inside still hidden, and the cut finishes on the gotcha line. 95 opened on bricks already spilling
+(nothing left to reveal: 50 % by 8 s), 96 on a sub sitting in the water, wide (50 % by 7 s). Same split as batch 4
+(94 melon being peeled 23.1 vs 93 pile of bricks 32.7). The famous name (95) was not a shortcut: slowest ramp, most comments.
+
+The ceiling is not skip: 97 (17 %) went flat at 2.3k while 96 (30 %) kept climbing; 97 had the lowest like rate and
+shares/saves are 0 on all three (1 share in the last 9 reels). Likes land at the hook, the first gotcha, and the END CARD
+(25 % of 97's likes in its last second): the vote line earns likes, the "send to the mate" line earns no sends.
+
+**Batch 6: engine v9 (half-reveal opening), 98 posted 25 Oct ~16:00 AEDT, read at 1 h (17:06):**
+
+| # | age | views | viewers | avg watch | kept @10 s | end % | shares | saves | follows | comments | curve |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 98 cocaine wig | 1 h | 1,723 | 1,091 | 16 s (57 % of 28.4 s) | ~62 | ~45 | 0 | 0 | 0 | 2 (0.2 %, "higher") | near-vertical from 40 min: 1,723 at 1 h vs ~300 typical |
+
+The fastest hour 1 on the account (97 took 4 h to reach 2.3k). 1.58 views per viewer: the first clear replay signal (the loop).
+Skip rate not captured in this reading. Shares, saves and follows still 0 at 1 h.
+
+**Batch 7: engine v10 "ONE SMUGGLER" (101 scooter pensioner, 102 missing teenager's suitcase, 103 the captain who left), to post one a day at 4 pm AEDT from Mon 26 Oct. Read at 48 h and 7 d with the five-screenshot recipe (analytics/README.md), then `python3 analytics/compile_reels.py` and `python3 analytics/postmortem.py <n>`.**
+
+| # | age | views | viewers | avg watch | skip % | kept @10 s | end % | shares | saves | follows | comments | like % |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 101 | 48 h | | | | | | | | | | | |
+| 102 | 48 h | | | | | | | | | | | |
+| 103 | 48 h | | | | | | | | | | | |
+
+Targets (docs/CHANNEL_BRIEF_2026-10-26.md): skip ≤ 23 %, ≥ 65 % at 10 s, average watch > 50 % of length, and the first non-zero shares since 92.
+
+**Batch 8: engine v10 run 2 (104 Heathrow inside man, 105 cocaine cake [33-s length test], 106 the flight attendant who ran), to post one a day at 4 pm AEDT Wed 28 to Fri 30 Oct.**
+
+| # | age | views | viewers | avg watch | skip % | kept @10 s | end % | shares | saves | follows | comments | like % |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 104 | ~3 d | 2,786 | 1,912 | 13 s (44 %) | – | ~60 | ~27 | 1 | 3 | 0 | 2 | – |
+| 105 | ~2 d | 2,710 | 1,970 | 19 s (57 %) | – | ~65 | ~25 | 0 | 2 | 0 | 2 | – |
+| 106 | ~1.5 d | 1,091 | – | – | 30.6 | ~60 | ~22 | 0 | 0 | 0 | 2 | 0.9 |
+
+Compare 105 (33.2 s, three more seconds on the person) against 104 (29.6 s) and 106 (31.6 s) on end % and average watch.
+
+Reading (30 Oct 21:08): the openings held (60–65 % at 10 s) and the middles leaked: every reel lost 25–35 points between 8 and 18 s, on the lines that described the person (name, age, hometown, claim), and ended at 22–27 % against 35–45 % for v8/v9. Likes landed on actions (106's run at 3 s, 105's backpack reveal at 12–15 s), never on description. Shares 1 of 3: the one-person idea alone did not unlock sends. 105's 33 s cost nothing on average watch (57 %). Engine v11: the middle as a chain of turns (a reveal/tense/curious line within every 7 s), name and age on a label, the gotcha a physical act by the person, a three-line end card.
+
+**Batch 9: engine v11 "told as turns" (107 the runner [Bagby airfield, swam to Gibraltar], 108 the border dash [Sarita checkpoint, 125 mph], 109 the sea chase [Benacre, ran aground and jumped]), to post one a day at 4 pm AEDT Sat 31 Oct to Mon 2 Nov. Read at 48 h with the five-screenshot recipe.**
+
+| # | age | views | viewers | avg watch | skip % | kept @10 s | kept @16 s | end % | shares | saves | follows | comments | like % |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 107 | 48 h | | | | | | | | | | | | |
+| 108 | 48 h | | | | | | | | | | | | |
+| 109 | 48 h | | | | | | | | | | | | |
+
+What v11 should move, against batch 8: kept @16 s within 15 points of kept @10 s (the middle no longer leaking on biography), end % back above 35, and a reveal every 7 s read as likes landing on the turns. Lengths 29.5 / 29.8 / 30.3 s. If end % stays near 25 with the middle fixed, the ending is next; if sends stay at zero with the middle fixed, the send line needs to be spoken.

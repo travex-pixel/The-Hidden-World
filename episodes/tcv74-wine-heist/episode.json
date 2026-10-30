@@ -1,0 +1,1032 @@
+{
+ "id": "tcv74-wine-heist",
+ "number": 74,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The 30,000-Bottle Wine Heist",
+ "central_question": "Wine Heists, Part 1: 30,000 bottles taken with the winery's own forklifts, a room-service distraction in Spain, and fake bottles left in a Virginia cellar. Which was smartest?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_adam",
+  "energy": 1.0,
+  "pronounce": {
+   "1806": "eighteen oh six",
+   "Antinori's": "Anteenoree's",
+   "$42,000": "forty-two thousand dollars"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "74",
+  "label": "WINE HEISTS · PART 1"
+ },
+ "music": {
+  "bpm": 82,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 82,
+  "cliff": {
+   "scene": "s06_swap",
+   "word": [
+    0,
+    2
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "wh74_guard",
+  "wh74_crew",
+  "wh74_guest_m",
+  "wh74_guest_f",
+  "wh74_clerk",
+  "wh74_planner_f",
+  "wh74_planner_m",
+  "wh74_somm"
+ ],
+ "content_notes": "Tone: absurd and ironic; nobody is mocked. No weapon and no violence are shown. Real people are drawn ONLY as dark rim-lit silhouettes tagged NOT A LIKENESS and are never named on screen: the Antinori gang (unidentified, no arrests), the Atrio couple (convicted 2023), and the Virginia pair (the woman pleaded guilty; the man is accused and a fugitive). The guard, the hotel clerk and the sommelier are generic figures. Antinori, Solaia, Atrio and L'Auberge Provencale are named only as plain text: every bottle is a generic dark bottle with a blank cream label, every case a plain wooden case; no logo, crest, label artwork or real building is imitated. The staff member 'stopping' the suspect only stands in her way; no force is shown. Every card is our own typed graphic. No dialogue or quotation. Facts verified 2026-10-18.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "wh74_hook",
+   "min_duration": 4.4,
+   "pad_after": 0.12,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.32
+    },
+    {
+     "at": 0.1,
+     "word": [
+      1,
+      5
+     ],
+     "name": "click",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_forklifts"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This wine heist took 30,000 bottles.",
+     "tone": "hook"
+    },
+    {
+     "who": "narrator",
+     "text": "Loaded with the winery's own forklifts.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "wine",
+    "heist",
+    "30,000",
+    "bottles.",
+    "own",
+    "forklifts."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_trucks",
+   "scene": "wh74_trucks",
+   "min_duration": 4.0,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "beep",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "cash",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_alarms",
+    "K_value",
+    "K_solaia"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They switched off the alarms and cameras.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "Then two trucks left with five million euros of wine.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "switched",
+    "off",
+    "alarms",
+    "cameras.",
+    "two",
+    "trucks",
+    "five",
+    "million",
+    "euros"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s03_hotel",
+   "scene": "wh74_hotel",
+   "min_duration": 3.8,
+   "pad_after": 0.12,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "chime",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      8
+     ],
+     "name": "keys",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_atrio"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But that was not the smoothest one.",
+     "tone": "tense"
+    },
+    {
+     "who": "narrator",
+     "text": "In Spain, a couple checked into a top hotel.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "not",
+    "smoothest",
+    "spain,",
+    "couple",
+    "hotel."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_room",
+   "scene": "wh74_room",
+   "min_duration": 3.8,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "beep",
+     "gain": 0.16
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      5
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      1
+     ],
+     "name": "keys",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "K_room",
+    "K_45",
+    "K_1806",
+    "K_jailed"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Late that night, she ordered room service.",
+     "tone": "playful"
+    },
+    {
+     "who": "narrator",
+     "text": "He took 45 bottles. One from 1806.",
+     "tone": "reveal"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "late",
+    "night,",
+    "room",
+    "service.",
+    "45",
+    "bottles.",
+    "1806."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s05_tour",
+   "scene": "wh74_tour",
+   "min_duration": 3.8,
+   "pad_after": 0.15,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      9
+     ],
+     "name": "door",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_planners"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then Virginia. Fake event planners asked for a cellar tour.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "virginia.",
+    "fake",
+    "event",
+    "planners",
+    "cellar",
+    "tour."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_swap",
+   "scene": "wh74_swap",
+   "min_duration": 4.0,
+   "pad_after": 0.2,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.6,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      2
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.05,
+     "word": [
+      1,
+      2
+     ],
+     "name": "cash",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "K_swap",
+    "K_42k"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "They left fake bottles in the rack.",
+     "tone": "reveal"
+    },
+    {
+     "who": "narrator",
+     "text": "Worth about $42,000.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fake",
+    "bottles",
+    "rack.",
+    "$42,000."
+   ],
+   "section": "D",
+   "music_drop": true
+  },
+  {
+   "id": "s07_caught",
+   "scene": "wh74_caught",
+   "min_duration": 3.6,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      1
+     ],
+     "name": "door",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "step",
+     "gain": 0.24
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    }
+   ],
+   "claims": [
+    "K_caught"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Staff caught one. The other got away.",
+     "tone": "playful"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "caught",
+    "one.",
+    "got",
+    "away."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s08_end",
+   "scene": "wh74_end",
+   "min_duration": 3.0,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thump",
+     "gain": 0.26
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.32
+    }
+   ],
+   "claims": [
+    "K_missing",
+    "K_part2"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Antinori's bottles? Still missing.",
+     "tone": "resolve"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "antinori's",
+    "bottles?",
+    "still",
+    "missing."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "About 30,000 bottles were stolen from Marchesi Antinori's facility near Cortona, Tuscany; the company calls it the largest wine theft on record in Italy. Discovered Monday 5 October 2026, made public Friday 9 October. Narration: 'This wine heist took 30,000 bottles.' Headline 'THE 30,000-BOTTLE / WINE HEIST'.",
+   "sources": [
+    "ap_abc",
+    "ap_spec",
+    "reuters_ctv",
+    "unione",
+    "ynet"
+   ]
+  },
+  {
+   "id": "K_forklifts",
+   "type": "established",
+   "nature": "fact",
+   "text": "The thieves used the company's own forklifts to load the bottles onto their trucks (CEO Renzo Cotarella). Narration: 'Loaded with the winery's own forklifts.'",
+   "sources": [
+    "ap_abc",
+    "ynet",
+    "ap_spec"
+   ]
+  },
+  {
+   "id": "K_alarms",
+   "type": "established",
+   "nature": "fact",
+   "text": "The thieves disabled the alarm system and surveillance cameras, then entered with two large trucks. Narration: 'They switched off the alarms and cameras.' / 'Then two trucks left ...'",
+   "sources": [
+    "ap_abc",
+    "ynet",
+    "reuters_ctv"
+   ]
+  },
+  {
+   "id": "K_value",
+   "type": "established",
+   "nature": "fact",
+   "text": "The stolen wine was valued at about EUR 5 million (about US$5.8-6 million). Narration: 'five million euros of wine'. Counter 'EUR 5,000,000'.",
+   "sources": [
+    "ap_abc",
+    "reuters_ctv",
+    "reuters_int",
+    "unione",
+    "ewn"
+   ]
+  },
+  {
+   "id": "K_solaia",
+   "type": "established",
+   "nature": "fact",
+   "text": "The haul included about 8,000-10,000 bottles of Solaia (2023 vintage), a wine made at only about 60,000-70,000 bottles a year, plus Tignanello and Guado al Tasso. Label 'INCL. 8,000-10,000 SOLAIA'.",
+   "sources": [
+    "ap_abc",
+    "ap_spec",
+    "reuters_ctv",
+    "global"
+   ]
+  },
+  {
+   "id": "K_atrio",
+   "type": "established",
+   "nature": "fact",
+   "text": "October 2021, the Atrio hotel and two-Michelin-star restaurant in Caceres, Spain: a couple stayed as guests (the woman checked in with a fake Swiss passport), dined and toured the cellar. Narration: 'In Spain, a couple checked into a top hotel.' (rehook 'But that was not the smoothest one.' is editorial).",
+   "sources": [
+    "cnn_arrest",
+    "guardian",
+    "ati",
+    "decanter_atrio"
+   ]
+  },
+  {
+   "id": "K_room",
+   "type": "established",
+   "nature": "fact",
+   "text": "In the night the woman ordered room service; the lone clerk left the desk and the man took the key to the cellar. Narration: 'Late that night, she ordered room service.'",
+   "sources": [
+    "ati",
+    "cnn_arrest",
+    "cbs_atrio"
+   ]
+  },
+  {
+   "id": "K_45",
+   "type": "established",
+   "nature": "fact",
+   "text": "45 bottles were stolen (first valued at about EUR 1.6 million; a court expert later put it at about EUR 750,000). Narration: 'He took 45 bottles.'",
+   "sources": [
+    "cnn_atrio",
+    "guardian",
+    "cbs_atrio",
+    "decanter_atrio"
+   ]
+  },
+  {
+   "id": "K_1806",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: the bottles included an 1806 Chateau d'Yquem. Narration: 'One from 1806.'",
+   "sources": [
+    "weinplus",
+    "cnn_arrest",
+    "decanter_atrio"
+   ]
+  },
+  {
+   "id": "K_jailed",
+   "type": "established",
+   "nature": "fact",
+   "text": "The pair were arrested in July 2022 at the Montenegro-Croatia border and sentenced in March 2023 to 4.5 and 4 years; the wine has not been recovered. Label only.",
+   "sources": [
+    "cnn_atrio",
+    "guardian",
+    "cbs_atrio",
+    "decanter_atrio"
+   ]
+  },
+  {
+   "id": "K_planners",
+   "type": "established",
+   "nature": "fact",
+   "text": "19 November 2025, L'Auberge Provencale, White Post, Virginia: two people posing as event planners (for a supposed client) asked for a tour of the wine cellar. Narration: 'Then Virginia. Fake event planners asked for a cellar tour.'",
+   "sources": [
+    "nvm_va",
+    "db_va",
+    "wt_va",
+    "ind_va"
+   ]
+  },
+  {
+   "id": "K_swap",
+   "type": "established",
+   "nature": "fact",
+   "text": "They replaced the real bottles with decoy/counterfeit bottles to cover the theft. Narration: 'They left fake bottles in the rack.'",
+   "sources": [
+    "db_va",
+    "wt_va",
+    "nvm_va"
+   ]
+  },
+  {
+   "id": "K_42k",
+   "type": "established",
+   "nature": "fact",
+   "text": "Six bottles (Domaine de la Romanee-Conti wines) worth about $42,000 were taken. Narration: 'Worth about $42,000.' Label 'SIX BOTTLES · ABOUT $42,000'",
+   "sources": [
+    "ws_va",
+    "wt_va",
+    "db_va"
+   ]
+  },
+  {
+   "id": "K_caught",
+   "type": "established",
+   "nature": "fact",
+   "text": "Staff stopped one suspect, Natali Ray, who later pleaded guilty (12 months in jail); the alleged accomplice remains a fugitive. Narration: 'Staff caught one. The other got away.' Label 'SHE PLEADED GUILTY · 12 MONTHS'.",
+   "sources": [
+    "ws_va",
+    "ind_va",
+    "nvd_va",
+    "db_va2"
+   ]
+  },
+  {
+   "id": "K_missing",
+   "type": "established",
+   "nature": "fact",
+   "text": "As of 18 October 2026 no arrests or recovered bottles were reported in the Antinori theft; police and Carabinieri are investigating. Narration: 'Antinori's bottles? Still missing.'",
+   "sources": [
+    "reuters_ctv",
+    "ap_abc",
+    "unione"
+   ]
+  },
+  {
+   "id": "K_part2",
+   "type": "established",
+   "nature": "fact",
+   "text": "PART 2 TEASE (end card): August 2017, thieves came through the Paris catacombs into a private cellar near the Luxembourg Gardens and stole about 300 bottles (about EUR 250,000). End card 'PART 2: A TUNNEL INTO A PARIS CELLAR'.",
+   "sources": [
+    "local_paris",
+    "decanter_paris",
+    "fox_paris"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "ap_abc",
+   "publisher": "ABC News (Associated Press)",
+   "title": "Thieves pull off Italy's biggest-ever wine heist, stealing 30,000 bottles worth 5 million euros",
+   "url": "https://abcnews.com/International/wireStory/thieves-pull-off-italys-biggest-wine-heist-stealing-137137884",
+   "date": "2026-10-09",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ap_spec",
+   "publisher": "Spectrum News (Associated Press)",
+   "title": "Thieves pull off Italy's biggest-ever wine heist, stealing 30,000 bottles worth 5 million euros",
+   "url": "https://spectrumlocalnews.com/nc/triad/international/2026/10/09/thieves-pull-off-italy-s-biggest-ever-wine-heist--stealing-30-000-bottles-worth-5-million-euros",
+   "date": "2026-10-09",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "reuters_ctv",
+   "publisher": "CTV News (Reuters)",
+   "title": "Tuscan winemaker Antinori sees red after US$6 million theft",
+   "url": "https://www.ctvnews.ca/world/article/tuscan-winemaker-antinori-sees-red-after-us6-million-theft/",
+   "date": "2026-10-09",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "reuters_int",
+   "publisher": "Internazionale (Reuters)",
+   "title": "Tuscan winemaker Antinori sees red after $6 million theft",
+   "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/10/09/tuscan-winemaker-antinori-sees-red-after-6-million-theft",
+   "date": "2026-10-09",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ynet",
+   "publisher": "Ynet News",
+   "title": "Thieves steal 30,000 bottles worth 5 million euros in Italy's biggest wine heist ever",
+   "url": "https://www.ynetnews.com/business/article/b1oeq000sze",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "unione",
+   "publisher": "L'Unione Sarda",
+   "title": "Record-breaking theft at Marchesi Antinori winery: 30,000 bottles worth EUR 5 million stolen",
+   "url": "https://www.unionesarda.it/en/italy/record-breaking-theft-at-marchesi-antinori-winery-30-000-bottles-worth-5-million-stolen-psb4a3f1",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "global",
+   "publisher": "Global News",
+   "title": "Wine heist, Italy",
+   "url": "https://globalnews.ca/news/12097413/wine-heist-italy-red/",
+   "date": "2026-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ewn",
+   "publisher": "EWN",
+   "title": "30,000 bottles of wine worth R92m stolen in audacious heist",
+   "url": "https://www.ewn.co.za/2026/10/12/30-000-bottles-of-wine-worth-r92m-stolen-in-audacious-heist",
+   "date": "2026-10-12",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "cnn_atrio",
+   "publisher": "CNN (via KSL TV)",
+   "title": "Couple jailed for stealing $1.7 million of wine from Michelin-starred restaurant",
+   "url": "https://ksltv.com/?p=530657",
+   "date": "2023-03-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "cnn_arrest",
+   "publisher": "CNN (via ABC17)",
+   "title": "Two suspects arrested over $1.6M wine heist at Spanish hotel",
+   "url": "https://abc17news.com/news/national-world/cnn-europe-mideast-africa/2022/07/21/two-suspects-arrested-over-1-6m-wine-heist-at-spanish-hotel/",
+   "date": "2022-07-21",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "guardian",
+   "publisher": "The Guardian (PressReader)",
+   "title": "Pair jailed after EUR 1.6m wine heist at high-end restaurant in Spain",
+   "url": "https://www.pressreader.com/usa/the-guardian-usa/20230307/281694028993401",
+   "date": "2023-03-07",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "cbs_atrio",
+   "publisher": "CBS News",
+   "title": "Couple sentenced in Spain after 1.6 million euro wine heist at Michelin-starred restaurant",
+   "url": "https://www.cbsnews.com/amp/news/couple-wine-heist-spain-atrio-michelin-star-caceres",
+   "date": "2023-03",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "decanter_atrio",
+   "publisher": "Decanter",
+   "title": "Couple jailed for fine wine heist at Spain's Atrio restaurant",
+   "url": "https://www.decanter.com/wine-news/couple-jailed-for-fine-wine-heist-at-spains-atrio-restaurant-498991/",
+   "date": "2023-03",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "weinplus",
+   "publisher": "wein.plus",
+   "title": "Chateau d'Yquem 1806 stolen from Spanish star restaurant",
+   "url": "https://magazine.wein.plus/news/chateau-d-yquem-1806-stolen-from-spanish-star-restaurant-a-total-of-45-bottles-of-priceless-value-were-robbed",
+   "date": "2021-10",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ati",
+   "publisher": "All That's Interesting",
+   "title": "Mysterious couple steals wine during Spain hotel heist",
+   "url": "https://allthatsinteresting.com/atrio-wine-heist",
+   "date": "2023",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ws_va",
+   "publisher": "Wine Spectator",
+   "title": "Thieves Steal $42,000 of Domaine de La Romanee-Conti from Virginia Restaurant",
+   "url": "https://cdn.winespectator.com/articles/domaine-de-la-romanee-conti-wine-robbery-auberge-provencal-viriginia",
+   "date": "2025-11",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "nvm_va",
+   "publisher": "Northern Virginia Magazine",
+   "title": "Virginia restaurant falls victim to brazen wine heist",
+   "url": "https://northernvirginiamag.com/news/2025/11/26/virginia-restaurant-falls-victim-to-brazen-wine-heist/",
+   "date": "2025-11-26",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "wt_va",
+   "publisher": "Washington Times",
+   "title": "Natali Ray (topic page)",
+   "url": "https://m.washingtontimes.com/topics/natali-ray/",
+   "date": "2025-11-28",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "db_va",
+   "publisher": "The Drinks Business",
+   "title": "British tourist faces 50 years over brazen fine wine heist",
+   "url": "https://www.thedrinksbusiness.com/2025/12/british-tourist-faces-50-years-over-brazen-fine-wine-heist/",
+   "date": "2025-12",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "db_va2",
+   "publisher": "The Drinks Business",
+   "title": "$24,000 Burgundy returned after bizarre wine theft case",
+   "url": "https://www.thedrinksbusiness.com/2026/05/24000-burgundy-returned-after-bizarre-wine-theft-case/",
+   "date": "2026-05",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "nvd_va",
+   "publisher": "Northern Virginia Daily",
+   "title": "Wine heist suspect pleads guilty, will serve one-year sentence",
+   "url": "https://www.nvdaily.com/nvdaily/wine-heist-suspect-pleads-guilty-will-serve-one-year-sentence/article_bac1f720-bc35-5ab0-8a82-ac131a8689f7.html",
+   "date": "2026-05",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "ind_va",
+   "publisher": "Independent on Saturday",
+   "title": "Couple caught in dramatic wine cellar heist at top restaurant",
+   "url": "https://independentonsaturday.co.za/news/2025-11-27-couple-caught-in-dramatic-wine-cellar-heist-at-top-restaurant/",
+   "date": "2025-11-27",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "local_paris",
+   "publisher": "The Local France",
+   "title": "Thieves steal 300 bottles of wine using the Paris catacombs",
+   "url": "https://www.thelocal.fr/20170830/thieves-steal-300-bottles-of-wine-using-the-paris-catacombs",
+   "date": "2017-08-30",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "decanter_paris",
+   "publisher": "Decanter",
+   "title": "Paris catacombs wine theft",
+   "url": "https://www.decanter.com/wine-news/paris-catacombs-wine-theft-375377/",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  },
+  {
+   "id": "fox_paris",
+   "publisher": "Fox News",
+   "title": "Thieves drill through Paris catacombs, steal wine",
+   "url": "https://www.foxnews.com/world/thieves-drill-through-paris-catacombs-steal-330g-of-wine",
+   "date": "2017-08",
+   "accessed": "search-result extract only, 2026-10-18"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 5,
+ "search_terms": [
+  "wine heist",
+  "antinori",
+  "solaia"
+ ],
+ "palette": {
+  "shadow": "#16121a",
+  "mid": "#c9b8a2",
+  "accent": "#b8324a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "THE 30,000-BOTTLE"
+   },
+   {
+    "text": "WINE HEIST",
+    "colour": "#b8324a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "SMARTEST WINE HEIST?"
+   },
+   {
+    "text": "FORKLIFTS OR FAKES? 👇",
+    "colour": "#b8324a"
+   },
+   {
+    "text": "WINE HEISTS · PART 1",
+    "fs": 38
+   },
+   {
+    "text": "PART 2: A TUNNEL INTO A PARIS CELLAR",
+    "fs": 36
+   },
+   {
+    "text": "FOLLOW FOR PART 2",
+    "fs": 46,
+    "colour": "#b8324a"
+   },
+   {
+    "text": "TAG THE MATE WHO'D DRINK IT",
+    "fs": 34
+   }
+  ],
+  "from": 3.4,
+  "y": 330,
+  "fs": 64
+ },
+ "progress": {
+  "label": "HEIST",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1 · ITALY"
+   },
+   {
+    "t": 12.78,
+    "v": "2 · SPAIN"
+   },
+   {
+    "t": 21.6,
+    "v": "3 · VIRGINIA"
+   }
+  ],
+  "y": 330,
+  "until": 33.13
+ },
+ "legal_status_verified": "2026-10-18"
+}

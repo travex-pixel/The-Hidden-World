@@ -1,0 +1,892 @@
+{
+ "id": "tcv29-rudolph-40",
+ "number": 29,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Olympic Park Bomber Hid for Five Years. A Dumpster Ended It",
+ "central_question": "How did a rookie on a routine patrol end a five-year manhunt for the Olympic Park bomber?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "FBI": "F B I",
+   "FBI's": "F B eyes",
+   "21-year-old": "twenty one year old"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  50
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "29",
+  "label": "OLYMPIC PARK BOMBER · 1996-2003"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.5
+ },
+ "score": {
+  "root_hz": 146.83,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s08_verdict",
+   "word": [
+    1,
+    0
+   ],
+   "at": -0.35
+  }
+ },
+ "figures": [
+  "er29_officer",
+  "er29_rudolph",
+  "searcher",
+  "searcher_b",
+  "agent_a",
+  "agent_b",
+  "analyst",
+  "official",
+  "judge"
+ ],
+ "content_notes": "Closed case: Rudolph pleaded guilty in April 2005 and is serving life without parole. The bombings, the park, the victims, injuries and any explosion are never depicted, and no bomb or backpack is drawn; the toll is a typed card in a quiet room. Victims are not named in narration; the memorial is the last spoken line. Rudolph appears only as an anonymous rim-lit silhouette (not a likeness, never his booking photo), never posed heroically, and none of his words or beliefs are quoted. The arresting officer is a generic, unnamed figure (not a likeness). The store, its dumpster, the jail and the mountains are generic drawings with no name, logo or sign; the wanted notice on the jail wall is our own blank design with no seal or face. Every card is our own typed graphic; no real police, court or FBI material is imitated. The security guard who was wrongly suspected in 1996 (and cleared) is left out for pace. No dialogue is invented. Legal status verified 2026-10-12.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "er29_hook",
+   "min_duration": 5.4,
+   "pad_after": 0.2,
+   "music_cue": "cold",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.45
+    },
+    {
+     "at": 0.15,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thud",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.5
+    }
+   ],
+   "claims": [
+    "R_hid",
+    "R_dumpster"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The Olympic Park bomber hid from the FBI for five years."
+    },
+    {
+     "who": "narrator",
+     "text": "It ended at a grocery store dumpster.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "olympic",
+    "bomber",
+    "five",
+    "years.",
+    "grocery",
+    "dumpster."
+   ],
+   "section": "A"
+  },
+  {
+   "id": "s02_toll",
+   "scene": "er29_toll",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "hush",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "R_toll"
+   ],
+   "transition": "fade",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "His bomb at the 1996 Olympics killed a woman and injured over 100.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "1996",
+    "olympics",
+    "killed",
+    "100."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s03_list",
+   "scene": "er29_list",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "stamp",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "R_more",
+    "R_list"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "After three more bombings, he made the FBI's Ten Most Wanted list."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "three",
+    "bombings,",
+    "ten",
+    "most",
+    "wanted"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_hunt",
+   "scene": "er29_hunt",
+   "min_duration": 3.4,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.35
+    },
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      2
+     ],
+     "name": "rumble",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "whoosh",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "R_hunt"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "More than 200 agents searched the North Carolina mountains."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "200",
+    "agents",
+    "mountains."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s05_patrol",
+   "scene": "er29_patrol",
+   "min_duration": 2.0,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "whoosh",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      10
+     ],
+     "name": "brake",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "R_rookie"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then a 21-year-old rookie on patrol drove behind a grocery store."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "21-year-old",
+    "rookie",
+    "patrol",
+    "grocery"
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s06_dumpster",
+   "scene": "er29_dumpster",
+   "min_duration": 3.2,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      3
+     ],
+     "name": "paper",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thud",
+     "gain": 0.35
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      8
+     ],
+     "name": "hit",
+     "gain": 0.45
+    }
+   ],
+   "claims": [
+    "R_dumpster",
+    "R_rookie"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A man was digging through the dumpster for food.",
+     "pause_before": 0.1
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "man",
+    "digging",
+    "dumpster",
+    "food."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s07_reveal",
+   "scene": "er29_reveal",
+   "min_duration": 2.0,
+   "pad_after": 0.25,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "pen",
+     "gain": 0.35
+    },
+    {
+     "at": -0.3,
+     "word": [
+      1,
+      4
+     ],
+     "name": "swell",
+     "gain": 0.45
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.55
+    }
+   ],
+   "claims": [
+    "R_name"
+   ],
+   "transition": "flash",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The man gave a fake name."
+    },
+    {
+     "who": "narrator",
+     "text": "At the jail, he was recognised: Eric Rudolph.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fake",
+    "name.",
+    "jail,",
+    "recognised:",
+    "rudolph."
+   ],
+   "section": "C",
+   "music_drop": true
+  },
+  {
+   "id": "s08_verdict",
+   "scene": "er29_verdict",
+   "min_duration": 2.0,
+   "pad_after": 0.3,
+   "music_cue": "tension-peak",
+   "sfx": [
+    {
+     "at": -0.08,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.8
+    }
+   ],
+   "claims": [
+    "R_plea"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He pleaded guilty to avoid the death penalty."
+    },
+    {
+     "who": "narrator",
+     "text": "Life without parole.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "guilty",
+    "death",
+    "life",
+    "parole."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s09_end",
+   "scene": "er29_end",
+   "min_duration": 4.0,
+   "pad_after": 1.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "click",
+     "gain": 0.35
+    }
+   ],
+   "claims": [
+    "R_hunt",
+    "R_rookie",
+    "R_toll"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Five years, hundreds of agents. Then one rookie."
+    },
+    {
+     "who": "narrator",
+     "text": "We remember his victims.",
+     "pause_before": 0.35
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "five",
+    "hundreds",
+    "one",
+    "rookie.",
+    "remember"
+   ],
+   "section": "E"
+  }
+ ],
+ "claims": [
+  {
+   "id": "R_hid",
+   "type": "established",
+   "nature": "fact",
+   "text": "Eric Rudolph, the Centennial Olympic Park bomber, was a fugitive from 1998 (charged; FBI Ten Most Wanted from 5 May 1998) until his arrest on 31 May 2003, about five years, hiding in the mountains of western North Carolina.",
+   "sources": [
+    "cbs_2003",
+    "doj_2003",
+    "ap_suffolk",
+    "wiki_rudolph"
+   ]
+  },
+  {
+   "id": "R_dumpster",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was arrested early on 31 May 2003 behind a grocery store (a Save-A-Lot) in Murphy, North Carolina, after an officer saw him going through the store's dumpster / trash bin for food (AP: 'scavenging for food behind a grocery store'; WSB-TV: 'rummaging for food in a dumpster behind a grocery store'; ABA Journal: 'foraging in the dumpster'). The drawn dumpster is generic, with no store name or logo.",
+   "sources": [
+    "ap_suffolk",
+    "wsb",
+    "aba",
+    "yahoo_fbi",
+    "abc_2003"
+   ]
+  },
+  {
+   "id": "R_toll",
+   "type": "established",
+   "nature": "fact",
+   "text": "The pipe bomb that exploded in Centennial Olympic Park, Atlanta, early on 27 July 1996 during the Summer Olympics killed one woman and injured more than 100 people (111 per History.com and other accounts); a second man died of a heart attack. Victims are not named in narration and are never shown.",
+   "sources": [
+    "history_park",
+    "anf_2026",
+    "wiki_park"
+   ]
+  },
+  {
+   "id": "R_more",
+   "type": "established",
+   "nature": "fact",
+   "text": "Rudolph also bombed an abortion clinic in Sandy Springs, Georgia (January 1997), a lesbian nightclub in Atlanta (February 1997) and an abortion clinic in Birmingham, Alabama (January 1998), where an off-duty police officer was killed. Card only beyond 'three more bombings'.",
+   "sources": [
+    "wsb",
+    "doj_1998",
+    "history_plea",
+    "doj_2005"
+   ]
+  },
+  {
+   "id": "R_list",
+   "type": "established",
+   "nature": "fact",
+   "text": "The FBI added Rudolph to its Ten Most Wanted Fugitives list on 5 May 1998 and offered a reward of up to $1 million.",
+   "sources": [
+    "doj_2003",
+    "cbs_2003",
+    "doj_1998",
+    "wiki_rudolph"
+   ]
+  },
+  {
+   "id": "R_hunt",
+   "type": "established",
+   "nature": "fact",
+   "text": "More than 200 federal and state agents searched the Nantahala mountains of western North Carolina in 1998 (CNN; AccessWDUN: more than 200 searchers at one time); the search used helicopters with infrared scopes and logs rigged with motion detectors (AP). The FBI later scaled the search back (CBS).",
+   "sources": [
+    "cnn_2002",
+    "accesswdun_2002",
+    "ap_suffolk",
+    "cbs_scaleback"
+   ]
+  },
+  {
+   "id": "R_rookie",
+   "type": "established",
+   "nature": "fact",
+   "text": "The arresting officer was Jeff Postell, a 21-year-old Murphy police rookie (on the force less than a year) on routine patrol; he drove behind the store at about 3:30-4 a.m. (accounts differ) and thought he had a burglar or prowler. He is not named on screen and is drawn as a generic officer.",
+   "sources": [
+    "ap_suffolk",
+    "cbs_2003",
+    "cpp_2013",
+    "aba",
+    "wiki_rudolph"
+   ]
+  },
+  {
+   "id": "R_name",
+   "type": "established",
+   "nature": "fact",
+   "text": "The man first gave a false name (reported as 'Jerry Wilson'); officers at the jail recognised him and he admitted he was Eric Robert Rudolph; the FBI confirmed his identity by fingerprints.",
+   "sources": [
+    "ap_suffolk",
+    "yahoo_fbi",
+    "cnn_0531",
+    "doj_2003"
+   ]
+  },
+  {
+   "id": "R_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "In April 2005 Rudolph pleaded guilty to the Atlanta and Birmingham bombings under a deal that spared him the death penalty; he was sentenced in July and August 2005 to life in prison without parole (multiple consecutive life terms) and is held at ADX Florence, Colorado.",
+   "sources": [
+    "history_plea",
+    "nbc_plea",
+    "aljazeera",
+    "doj_2005",
+    "nbc_sentence",
+    "jurist"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "ap_suffolk",
+   "publisher": "Associated Press (via Suffolk News-Herald)",
+   "title": "Olympic bomb suspect Rudolph arrested behind N.C. grocery store",
+   "url": "https://www.suffolknewsherald.com/?p=15350",
+   "date": "2003-05-31",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "ap_selma",
+   "publisher": "Associated Press (via The Selma Times-Journal)",
+   "title": "Eric Robert Rudolph captured",
+   "url": "https://selmatimesjournal.com/?p=13824",
+   "date": "2003-05",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cbs_2003",
+   "publisher": "CBS News",
+   "title": "'96 Olympic Bomb Suspect Nabbed",
+   "url": "https://www.cbsnews.com/news/96-olympic-bomb-suspect-nabbed/",
+   "date": "2003-05-31",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "abc_2003",
+   "publisher": "ABC News (World News Tonight)",
+   "title": "Olympic Bomb Suspect Rudolph Caught",
+   "url": "https://abcnews.go.com/WNT/story?id=129666",
+   "date": "2003-05",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cnn_0531",
+   "publisher": "CNN (transcript)",
+   "title": "CNN Saturday, 31 May 2003 (special event)",
+   "url": "https://www.cnn.com/TRANSCRIPTS/0305/31/se.02.html",
+   "date": "2003-05-31",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cnn_0531b",
+   "publisher": "CNN (transcript)",
+   "title": "CNN Breaking News, 31 May 2003",
+   "url": "https://www.cnn.com/TRANSCRIPTS/0305/31/bn.04.html",
+   "date": "2003-05-31",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "doj_2003",
+   "publisher": "U.S. Department of Justice",
+   "title": "Statement of the Attorney General on the arrest of Eric Rudolph",
+   "url": "https://www.justice.gov/archive/opa/pr/2003/May/03_ag_325.htm",
+   "date": "2003-05-31",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "yahoo_fbi",
+   "publisher": "Yahoo News (syndicated; FBI 20th-anniversary account)",
+   "title": "Olympic park bombing suspect eluded cops - until he dug in trash 20 years ago, FBI says",
+   "url": "https://news.yahoo.com/olympic-park-bombing-suspect-eluded-140014379.html",
+   "date": "2023-05",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cpp_2013",
+   "publisher": "Carolina Public Press",
+   "title": "Ten years later: recalling the arrest of Eric Rudolph, WNC's homegrown terrorist",
+   "url": "https://www.carolinapublicpress.org/15508/ten-years-later-recalling-the-arrest-of-eric-rudolph-wncs-homegrown-terrorist",
+   "date": "2013-05",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "aba",
+   "publisher": "ABA Journal",
+   "title": "April 13, 2005: Olympic Park bomber pleads guilty",
+   "url": "https://www.abajournal.com/magazine/article/april-13-2005-olympic-park-bomber-pleads-guilty",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "wsb",
+   "publisher": "WSB-TV (Cox Media Group)",
+   "title": "Serial bomber Eric Rudolph targeted Olympics, gay club, abortion clinics",
+   "url": "https://www.wsbtv.com/news/trending-now/serial-bomber-eric-rudolph-targeted-olympics-gay-club-abortion-clinics/718447766/",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "history_plea",
+   "publisher": "History.com",
+   "title": "Olympic Park bomber Eric Rudolph agrees to plead guilty (This Day in History, 8 April)",
+   "url": "https://www.history.com/this-day-in-history/april-8/olympic-park-bomber-eric-rudolph-agrees-to-plead-guilty",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "history_park",
+   "publisher": "History.com",
+   "title": "Bombing at Centennial Olympic Park (This Day in History, 27 July)",
+   "url": "https://www.history.com/this-day-in-history/july-27/bombing-at-centennial-olympic-park",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "anf_2026",
+   "publisher": "Atlanta News First",
+   "title": "30 years since Centennial Olympic Park bombing, victims remembered, FBI reflects on lessons learned",
+   "url": "https://www.atlantanewsfirst.com/2026/07/27/30-years-since-centennial-olympic-park-bombing-victims-remembered-fbi-reflects-lessons-learned/",
+   "date": "2026-07-27",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "nbc_plea",
+   "publisher": "NBC News (AP)",
+   "title": "Rudolph pleads guilty in series of bombings",
+   "url": "https://www.nbcnews.com/id/wbna7486021",
+   "date": "2005-04-13",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "aljazeera",
+   "publisher": "Al Jazeera",
+   "title": "Atlanta Olympics bomber pleads guilty",
+   "url": "https://www.aljazeera.com/news/2005/4/14/atlanta-olympics-bomber-pleads-guilty",
+   "date": "2005-04-14",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "doj_2005",
+   "publisher": "U.S. Department of Justice",
+   "title": "Eric Rudolph agrees to plead guilty (press release 05_crm_176)",
+   "url": "https://www.justice.gov/opa/pr/2005/April/05_crm_176.htm",
+   "date": "2005-04",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "nbc_sentence",
+   "publisher": "NBC News (AP)",
+   "title": "'I apologize,' Rudolph says as he gets life term",
+   "url": "https://www.nbcnews.com/id/wbna9038110",
+   "date": "2005-08-22",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "jurist",
+   "publisher": "JURIST",
+   "title": "Atlanta Olympics bomber sentenced to life in prison",
+   "url": "https://www.jurist.org/news/2005/08/atlanta-olympics-bomber-sentenced-to/",
+   "date": "2005-08",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "atf",
+   "publisher": "ATF (Our History)",
+   "title": "Eric Rudolph",
+   "url": "https://www.atf.gov/our-history/eric-rudolph",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "doj_1998",
+   "publisher": "U.S. Department of Justice",
+   "title": "Eric Robert Rudolph charged in Centennial Olympic Park bombing (press release 477crm)",
+   "url": "https://www.justice.gov/opa/pr/1998/October/477crm.htm",
+   "date": "1998-10-14",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cnn_2002",
+   "publisher": "CNN (transcript)",
+   "title": "Hunt for Eric Rudolph (21 March 2002)",
+   "url": "https://transcripts.cnn.com/show/lad/date/2002-03-21/segment/06",
+   "date": "2002-03-21",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "accesswdun_2002",
+   "publisher": "AccessWDUN (Gainesville, Ga.)",
+   "title": "Rudolph search report (January 2002)",
+   "url": "https://accesswdun.com/print/2002/1/199582",
+   "date": "2002-01",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "cbs_scaleback",
+   "publisher": "CBS News",
+   "title": "FBI scales back Rudolph search",
+   "url": "https://www.cbsnews.com/news/fbi-scales-back-rudolph-search",
+   "date": "date not in extract",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "wiki_rudolph",
+   "publisher": "Wikipedia (secondary, cross-check only)",
+   "title": "Eric Rudolph",
+   "url": "https://en.wikipedia.org/wiki/Eric_Rudolph",
+   "date": "accessed 2026-10-12",
+   "accessed": "search-result extract only, 2026-10-12"
+  },
+  {
+   "id": "wiki_park",
+   "publisher": "Wikipedia (secondary, cross-check only)",
+   "title": "Centennial Olympic Park bombing",
+   "url": "https://en.wikipedia.org/wiki/Centennial_Olympic_Park_bombing",
+   "date": "accessed 2026-10-12",
+   "accessed": "search-result extract only, 2026-10-12"
+  }
+ ],
+ "format": "short40",
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A GROCERY STORE DUMPSTER"
+   },
+   {
+    "text": "HELPED CATCH THE OLYMPIC BOMBER",
+    "colour": "#ffd23f"
+   }
+  ],
+  "until": 2.8,
+  "y": 520
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "WAS IT JUST LUCK?"
+   },
+   {
+    "text": "YES OR NO? 👇",
+    "colour": "#ffd23f"
+   }
+  ],
+  "from": 3.2,
+  "y": 520
+ },
+ "legal_status_verified": "2026-10-12"
+}

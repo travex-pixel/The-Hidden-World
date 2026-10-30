@@ -1,0 +1,1147 @@
+{
+ "id": "tcv61-affluenza",
+ "number": 61,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "He Killed Four Driving Drunk. He Got No Prison.",
+ "central_question": "How did a Texas teen who killed four people driving drunk avoid prison, and what happened when he ran?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "model": "en_US-libritts_r-medium",
+  "speaker": 666,
+  "length_scale": 1.0,
+  "year_words": true,
+  "word_timing": true,
+  "pronounce": {
+   "16,": "sixteen,",
+   "20": "twenty",
+   "720": "seven hundred and twenty",
+   "180": "a hundred and eighty",
+   "affluenza.": "af-flu-enza."
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  30,
+  45
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "61",
+  "label": "THE AFFLUENZA CASE · TEXAS 2013"
+ },
+ "music": {
+  "bpm": 80,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 80,
+  "cliff": {
+   "scene": "s06_mexico",
+   "word": [
+    0,
+    4
+   ],
+   "at": 0.45
+  }
+ },
+ "figures": [
+  "af61_couch",
+  "af61_mother",
+  "af61_judge",
+  "af61_expert",
+  "af61_reporter",
+  "af61_rider",
+  "af61_viewer"
+ ],
+ "content_notes": "Tone: outrage at the sentence and the system, never mockery of anyone. The crash is never shown or re-enacted (no vehicle in motion, no damage, no injury); the four people who died are never depicted and are named once, on a memorial card. Ethan Couch, his mother, the juvenile judge and the defense psychologist (real people) appear only as faceless silhouettes tagged NOT A LIKENESS; the victims' families are not depicted (the father's view is a typed, attributed paraphrase). The delivery rider and the young man in the lesson are generic figures. The pizza box is plain (no logo; 'Domino's' appears only as typed text attributed to the Jalisco prosecutors' report). No court, police or jail insignia. Every card is our own typed graphic. No dialogue is invented. Status verified 2026-10-17.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "af61_hook",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "gavel",
+     "gain": 0.3
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "A_hook",
+    "A_affluenza"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He killed four people. He got no prison."
+    },
+    {
+     "who": "narrator",
+     "text": "His defense? He grew up too rich.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "killed",
+    "four",
+    "no",
+    "prison.",
+    "defense?",
+    "too",
+    "rich."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_memorial",
+   "scene": "af61_memorial",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": 0.25
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      7
+     ],
+     "name": "chime",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "A_crash",
+    "A_bac",
+    "A_victims"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He was 16, three times the legal limit."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "16,",
+    "three",
+    "times",
+    "limit."
+   ],
+   "section": "A",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s03_expert",
+   "scene": "af61_expert",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "door",
+     "gain": 0.2
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "stamp",
+     "gain": 0.3
+    },
+    {
+     "at": 0.4,
+     "word": [
+      0,
+      5
+     ],
+     "name": "paper",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "A_expert",
+    "A_notdiag"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A defense expert called it affluenza."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "defense",
+    "expert",
+    "affluenza."
+   ],
+   "section": "B"
+  },
+  {
+   "id": "s04_verdict",
+   "scene": "af61_verdict",
+   "min_duration": 3.6,
+   "pad_after": 0.4,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "tick",
+     "gain": 0.25
+    },
+    {
+     "at": -0.5,
+     "word": [
+      1,
+      1
+     ],
+     "name": "riser",
+     "gain": 0.22
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.45
+    },
+    {
+     "at": -0.03,
+     "word": [
+      1,
+      6
+     ],
+     "name": "hit",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_ask",
+    "A_sentence"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Prosecutors had asked for 20 years."
+    },
+    {
+     "who": "narrator",
+     "text": "But he got ten years' probation. No jail.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "prosecutors",
+    "20",
+    "years.",
+    "ten",
+    "probation.",
+    "no",
+    "jail."
+   ],
+   "section": "D"
+  },
+  {
+   "id": "s05_sides",
+   "scene": "af61_sides",
+   "min_duration": 3.6,
+   "pad_after": 0.3,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "shutter",
+     "gain": 0.25
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "cash",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "A_judge",
+    "A_father"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The judge sent him to rehab, not prison."
+    },
+    {
+     "who": "narrator",
+     "text": "A victim's father blamed the money.",
+     "pause_before": 0.25
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "judge",
+    "sent",
+    "rehab,",
+    "prison.",
+    "father",
+    "blamed",
+    "money."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s06_mexico",
+   "scene": "af61_mexico",
+   "min_duration": 3.6,
+   "pad_after": 0.35,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "step",
+     "gain": 0.25
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      1
+     ],
+     "name": "sparkle",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "A_video",
+    "A_fled",
+    "A_pizza"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then he fled to Mexico."
+    },
+    {
+     "who": "narrator",
+     "text": "A pizza order helped give them away.",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "fled",
+    "mexico.",
+    "pizza",
+    "order",
+    "away."
+   ],
+   "section": "B",
+   "music_drop": true
+  },
+  {
+   "id": "s07_lesson",
+   "scene": "af61_lesson",
+   "min_duration": 3.6,
+   "pad_after": 0.2,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.9,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 1.25,
+     "name": "click",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "keys",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "A_lesson"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Out drinking tonight? Save this first."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "drinking",
+    "tonight?",
+    "save"
+   ],
+   "section": "B",
+   "caption_mode": "none"
+  },
+  {
+   "id": "s08_stat",
+   "scene": "af61_stat",
+   "min_duration": 3.5,
+   "pad_after": 0.25,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "gate",
+     "gain": 0.25
+    },
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      5
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": -0.03,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.4
+    }
+   ],
+   "claims": [
+    "A_720",
+    "A_release"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Back in Texas, he got 720 days."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "texas,",
+    "720",
+    "days."
+   ],
+   "section": "C"
+  },
+  {
+   "id": "s09_end",
+   "scene": "af61_end",
+   "min_duration": 3.5,
+   "pad_after": 0.6,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      2
+     ],
+     "name": "gavel",
+     "gain": 0.4
+    },
+    {
+     "at": -0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.35
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "thump",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "A_180"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "That is 180 days for each life taken."
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "180",
+    "days",
+    "each",
+    "life",
+    "taken."
+   ],
+   "section": "E",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "A_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Ethan Couch, 16, driving drunk, killed four people in a crash in Burleson, Texas, on 15 June 2013; in December 2013 he was sentenced (juvenile court) to ten years' probation with no jail or prison time. Narration: 'He killed four people. He got no prison.' Headline: '4 DEAD. NO PRISON.'",
+   "sources": [
+    "ap_sent",
+    "fox13",
+    "cbs_fam",
+    "slate",
+    "wiki",
+    "ap_rehab"
+   ]
+  },
+  {
+   "id": "A_affluenza",
+   "type": "established",
+   "nature": "fact",
+   "text": "The defense presented a psychologist who said Couch was a product of 'affluenza' (a privileged, permissive upbringing). Narration: 'His defense? He grew up too rich.' (the hot-take framing of 'affluenza'; the next scene states the testimony). The judge did not say affluenza was the basis of her decision (recorded, see A_judge).",
+   "sources": [
+    "wiki",
+    "slate",
+    "inquirer",
+    "chn_miller",
+    "ap_sent"
+   ]
+  },
+  {
+   "id": "A_crash",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD: the crash was on 15 June 2013 on Burleson-Retta Road, Burleson, Texas; he was driving his father's pickup (reported as a 2012 Ford F-350) with passengers, at about 70 mph in a 40 mph zone (Wikipedia). The crash itself is not shown.",
+   "sources": [
+    "wiki",
+    "kvue_lives",
+    "ap_sent"
+   ]
+  },
+  {
+   "id": "A_bac",
+   "type": "established",
+   "nature": "fact",
+   "text": "Prosecutors: a test about three hours after the crash showed a blood alcohol content of 0.24, three times the legal limit; he was 16. Narration: 'He was 16, three times the legal limit.'",
+   "sources": [
+    "ap_sent",
+    "fox13",
+    "wiki"
+   ]
+  },
+  {
+   "id": "A_victims",
+   "type": "established",
+   "nature": "fact",
+   "text": "MEMORIAL CARD: the four killed were Breanna Mitchell, 24, whose SUV had stalled, and three people who had stopped to help her: Hollie Boyles, 52, her daughter Shelby Boyles, 21, and youth pastor Brian Jennings, 41. Several others were injured (reported as nine).",
+   "sources": [
+    "wiki",
+    "kvue_lives",
+    "fox4_vict",
+    "fox5_vict"
+   ]
+  },
+  {
+   "id": "A_expert",
+   "type": "established",
+   "nature": "fact",
+   "text": "Defense psychologist G. Dick Miller testified that Couch was a product of 'affluenza': affluent parents who gave him freedoms no young person should have and never set boundaries or consequences. Narration: 'A defense expert called it affluenza.'; label sub 'Rich parents, no boundaries, he said'.",
+   "sources": [
+    "wiki",
+    "inquirer",
+    "chn_miller",
+    "slate"
+   ]
+  },
+  {
+   "id": "A_notdiag",
+   "type": "established",
+   "nature": "fact",
+   "text": "LABEL: 'affluenza' is not a recognised medical diagnosis (American Psychiatric Association); Miller later said he regretted using the term.",
+   "sources": [
+    "globe",
+    "wiki",
+    "chn_miller"
+   ]
+  },
+  {
+   "id": "A_ask",
+   "type": "established",
+   "nature": "fact",
+   "text": "Prosecutors had asked for the maximum, 20 years. Narration: 'Prosecutors had asked for 20 years.'",
+   "sources": [
+    "fox13",
+    "ap_sent",
+    "wiki"
+   ]
+  },
+  {
+   "id": "A_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "In December 2013 (reported 10-11 December) Judge Jean Boyd sentenced him to ten years' probation and ordered residential treatment; no jail time. Narration: 'But he got ten years' probation. No jail.'",
+   "sources": [
+    "ap_sent",
+    "fox13",
+    "cbs_fam",
+    "slate",
+    "wiki",
+    "ap_rehab"
+   ]
+  },
+  {
+   "id": "A_judge",
+   "type": "established",
+   "nature": "fact",
+   "text": "BOTH SIDES (judge): the judge chose probation with residential treatment (rehab) over the prison term prosecutors sought; she said 'affluenza' was not the basis of her decision; a juvenile-justice advocate said that, if the aim is rehabilitation, it was the right decision. Narration: 'The judge sent him to rehab, not prison.'",
+   "sources": [
+    "ap_rehab",
+    "fox13",
+    "wiki",
+    "cbs_fam"
+   ]
+  },
+  {
+   "id": "A_father",
+   "type": "established",
+   "nature": "fact",
+   "text": "BOTH SIDES (families): Eric Boyles, who lost his wife Hollie and daughter Shelby, said the result would have been different had Couch not had money for the defense, the experts and the treatment, and that money and privilege cannot buy justice. Narration: 'A victim's father blamed the money.' (paraphrase; no quote is put on screen)",
+   "sources": [
+    "cbs_fam",
+    "fox13",
+    "ap_sent"
+   ]
+  },
+  {
+   "id": "A_video",
+   "type": "established",
+   "nature": "fact",
+   "text": "LABEL: in December 2015 a short video circulating on Twitter appeared to show him at a party where people played beer pong (alcohol was banned under his probation); he then missed a probation appointment (10 December 2015).",
+   "sources": [
+    "cbs_video",
+    "fox4_video",
+    "root_video",
+    "fox_mx"
+   ]
+  },
+  {
+   "id": "A_fled",
+   "type": "established",
+   "nature": "fact",
+   "text": "He and his mother, Tonya Couch, fled to Mexico; they were detained in Puerto Vallarta on 28 December 2015. Narration: 'Then he fled to Mexico.'; label sub 'He fled with his mother'.",
+   "sources": [
+    "fox_mx",
+    "fortune",
+    "globe",
+    "star"
+   ]
+  },
+  {
+   "id": "A_pizza",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT CARD: according to the Jalisco state prosecutors' report, a U.S. Marshals Service agent tipped Mexican authorities to the location of a phone that had been used to order Domino's pizza in Puerto Vallarta; that led to the pair. Narration: 'A pizza order helped give them away.'",
+   "sources": [
+    "globe",
+    "star",
+    "kvue_pizza",
+    "newsone"
+   ]
+  },
+  {
+   "id": "A_lesson",
+   "type": "established",
+   "nature": "fact",
+   "text": "LESSON CARD (practical, for the viewer; NHTSA): before you have even one drink, designate a sober driver; your options to get home safely are a sober driver, a taxi or a rideshare; if a friend is about to drive drunk, take their keys and find them a safe way home. Rows: 'PICK A SOBER DRIVER FIRST', 'OR A TAXI OR RIDESHARE', \"TAKE A DRUNK MATE'S KEYS\".",
+   "sources": [
+    "nhtsa_buzz",
+    "nhtsa_hol",
+    "nhtsa_july4",
+    "nhtsa_tips",
+    "nhtsa_ctw",
+    "vadmv"
+   ]
+  },
+  {
+   "id": "A_720",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter): after his return, with the case in adult court, Judge Wayne Salvant ordered four consecutive 180-day jail terms, one for each person killed: 720 days, as a condition of probation (April 2016). Narration: 'Back in Texas, he got 720 days.'",
+   "sources": [
+    "nbc_720",
+    "ktla_720",
+    "root_720",
+    "npr_rel"
+   ]
+  },
+  {
+   "id": "A_release",
+   "type": "established",
+   "nature": "fact",
+   "text": "CARD: he was released from the Tarrant County jail on 2 April 2018 after serving the 720 days, to finish his probation under GPS and alcohol monitoring and a curfew.",
+   "sources": [
+    "npr_rel",
+    "kera_rel",
+    "cbs_rel",
+    "ky3_rel"
+   ]
+  },
+  {
+   "id": "A_180",
+   "type": "established",
+   "nature": "fact",
+   "text": "The 720 days were four consecutive 180-day terms, one for each of the four people killed. Narration (last line): 'That is 180 days for each life taken.'",
+   "sources": [
+    "nbc_720",
+    "root_720",
+    "ktla_720"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "wiki",
+   "publisher": "Wikipedia",
+   "title": "Ethan Couch",
+   "url": "https://en.wikipedia.org/wiki/Ethan_Couch",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ap_sent",
+   "publisher": "OKC Fox (Associated Press)",
+   "title": "Texas teen gets 10 years' probation for driving drunk, killing 4",
+   "url": "https://okcfox.com/archive/texas-teen-gets-10-years-probation-for-driving-drunk-killing-4",
+   "date": "2013-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ap_rehab",
+   "publisher": "OKC Fox (Associated Press)",
+   "title": "Judge orders Texas affluenza teen to rehab for driving drunk, killing 4",
+   "url": "https://okcfox.com/archive/judge-orders-texas-affluenza-teen-to-rehab-for-driving-drunk-killing-4",
+   "date": "2014-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox13",
+   "publisher": "FOX 13 (CNN)",
+   "title": "Texas teen Ethan Couch gets 10 years probation for driving drunk, killing 4",
+   "url": "https://fox13now.com/2013/12/11/texas-teen-ethan-couch-gets-10-years-probation-for-driving-drunk-killing-4/",
+   "date": "2013-12-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbs_fam",
+   "publisher": "CBS News Texas",
+   "title": "Deadly drunk driving probation sentence leaves families stunned",
+   "url": "https://www.cbsnews.com/texas/news/deadly-drunk-driving-probation-sentence-leaves-families-stunned",
+   "date": "2013-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "slate",
+   "publisher": "Slate (The Slatest)",
+   "title": "Ethan Couch, 'affluenza' Texas teen, spared prison time in deadly drunk driving",
+   "url": "https://www.slate.com/blogs/the_slatest/2013/12/12/ethan_couch_affluenza_texas_teen_spared_prison_time_in_deadly_drunk_driving.html",
+   "date": "2013-12-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "inquirer",
+   "publisher": "Philadelphia Inquirer",
+   "title": "Rich kid spared jail after killing four in drunken crash because his parents didn't teach him properly",
+   "url": "https://inquirer.com/philly/blogs/trending/Rich-kid-spared-jail-after-killing-four-in-drunken-crash-because-his-parents-didnt-teach-him-properly.html",
+   "date": "2013-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "chn_miller",
+   "publisher": "Courthouse News Service",
+   "title": "Coverage of the 'affluenza' sentencing testimony",
+   "url": "https://www.courthousenews.com/?p=261205",
+   "date": "2013-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "kvue_lives",
+   "publisher": "KVUE (TEGNA)",
+   "title": "Profile: the lives Ethan Couch took that June night",
+   "url": "https://kvue.com/article/news/profile-the-lives-ethan-couch-took-that-june-night/287-534150344",
+   "date": "2018-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox4_vict",
+   "publisher": "FOX 4 Dallas-Fort Worth",
+   "title": "Ethan Couch's victims remembered following his release",
+   "url": "https://www.fox4news.com/news/ethan-couchs-victims-remembered-following-his-release",
+   "date": "2018-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox5_vict",
+   "publisher": "FOX 5 New York",
+   "title": "Ethan Couch's victims remembered following his release",
+   "url": "https://www.fox5ny.com/news/ethan-couchs-victims-remembered-following-his-release",
+   "date": "2018-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbs_video",
+   "publisher": "CBS News Texas",
+   "title": "DA investigating video allegedly showing 'affluenza' teen partying",
+   "url": "https://www.cbsnews.com/amp/texas/news/da-investigating-video-allegedly-showing-affluenza-teen-partying",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox4_video",
+   "publisher": "FOX 4 Dallas-Fort Worth",
+   "title": "DA investigating video that appears to show 'affluenza teen' Ethan Couch partying",
+   "url": "https://www.fox4news.com/news/da-investigating-video-that-appears-to-show-affluenza-teen-ethan-couch-partying",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "root_video",
+   "publisher": "The Root",
+   "title": "'Affluenza' teen Ethan Couch allegedly videotaped at party with beer pong",
+   "url": "https://theroot.com/affluenza-teen-ethan-couch-allegedly-videotaped-at-pa-1790861957",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox_mx",
+   "publisher": "Fox News (Associated Press)",
+   "title": "Officials: missing 'affluenza' teen, mother detained in Mexico",
+   "url": "https://www.foxnews.com/us/officials-missing-affluenza-teen-mother-detained-in-mexico",
+   "date": "2015-12-29",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fortune",
+   "publisher": "Fortune",
+   "title": "'Affluenza' teen arrested in Mexico",
+   "url": "https://fortune.com/2015/12/29/affluenza-arrested-mexico",
+   "date": "2015-12-29",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "globe",
+   "publisher": "The Globe and Mail (AP)",
+   "title": "Missing 'affluenza' teen and mother detained in Mexico",
+   "url": "https://www.theglobeandmail.com/news/world/missing-affluenza-teen-and-mother-detained-in-mexico/article27949699/",
+   "date": "2015-12-29",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "star",
+   "publisher": "Toronto Star (via PressReader)",
+   "title": "Fugitive teen, mom found in Mexico",
+   "url": "https://www.pressreader.com/canada/toronto-star/20151230/281539404929441",
+   "date": "2015-12-30",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "kvue_pizza",
+   "publisher": "KVUE (TEGNA)",
+   "title": "Couch captured after ordering pizza in Puerto Vallarta",
+   "url": "https://kvue.com/article/news/crime/couch-captured-after-ordering-pizza-in-puerto-vallarta/287-22337286",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "newsone",
+   "publisher": "NewsOne",
+   "title": "Pizza order helped track down 'affluenza' teen, mom",
+   "url": "https://newsone.com/3311413/pizza-order-helped-track-down-affluenza-teen-mom/",
+   "date": "2015-12",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nbc_720",
+   "publisher": "NBC News",
+   "title": "Judge imposes 720 days of jail on 'affluenza' teen Ethan Couch",
+   "url": "https://www.nbcnews.com/news/amp/ncna555366",
+   "date": "2016-04-13",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ktla_720",
+   "publisher": "KTLA",
+   "title": "'Affluenza' teen Ethan Couch sentenced to 2 years in fatal drunken driving crash",
+   "url": "https://ktla.com/news/nationworld/affluenza-teen-ethan-couch-sentenced-to-2-years-in-fatal-drunken-driving-crash/amp",
+   "date": "2016-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "root_720",
+   "publisher": "The Root",
+   "title": "Texas judge orders 'affluenza' teen Ethan Couch to serve 720 days in jail",
+   "url": "https://theroot.com/texas-judge-orders-affluenza-teen-ethan-couch-to-serv-1790854982",
+   "date": "2016-04",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "npr_rel",
+   "publisher": "NPR (The Two-Way)",
+   "title": "'Affluenza' driver out on probation after nearly 2 years in jail",
+   "url": "https://www.npr.org/sections/thetwo-way/2018/04/02/598836307/affluenza-driver-out-on-probation-after-nearly-2-years-in-jail",
+   "date": "2018-04-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "kera_rel",
+   "publisher": "KERA News (NPR for North Texas)",
+   "title": "'Affluenza' driver out on probation after nearly 2 years in jail",
+   "url": "https://www.keranews.org/2018-04-02/affluenza-driver-out-on-probation-after-nearly-2-years-in-jail",
+   "date": "2018-04-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "cbs_rel",
+   "publisher": "CBS News Texas",
+   "title": "'Affluenza teen' Ethan Couch has been released from jail",
+   "url": "https://www.cbsnews.com/dfw/news/affluenza-teen-release-prison/",
+   "date": "2018-04-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "ky3_rel",
+   "publisher": "KY3 (AP)",
+   "title": "Ethan Couch of 'affluenza' case released from jail",
+   "url": "https://www.ky3.com/content/news/Ethan-Couch-of-affluenza-case-released-from-jail-478540063.html",
+   "date": "2018-04-02",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "fox4_2020",
+   "publisher": "FOX 4 Dallas-Fort Worth",
+   "title": "'Affluenza teen' Ethan Couch arrested after testing positive for THC",
+   "url": "https://www.fox4news.com/news/affluenza-teen-ethan-couch-arrested-for-violating-his-probation",
+   "date": "2020-01",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "boston_2020",
+   "publisher": "Boston.com (AP)",
+   "title": "'Affluenza' teen whose lawyers argued he was too spoiled to go to jail is locked up again",
+   "url": "https://www.boston.com/news/national-news/2020/01/03/affluenza-teen-whose-lawyers-argued-he-was-too-spoiled-to-go-to-jail-is-locked-up-again",
+   "date": "2020-01-03",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nhtsa_hol",
+   "publisher": "NHTSA (TrafficSafetyMarketing.gov)",
+   "title": "Holiday Drive Sober or Get Pulled Over fact sheet",
+   "url": "https://www.trafficsafetymarketing.gov/sites/tsm.gov/files/2022-09/15641a-Holiday%20DSOGPO%20Fact%20Sheet_091322v2-tag.docx",
+   "date": "2022-09",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nhtsa_buzz",
+   "publisher": "NHTSA (TrafficSafetyMarketing.gov)",
+   "title": "Buzzed Driving Is Drunk Driving: talking points",
+   "url": "https://www.trafficsafetymarketing.gov/sites/tsm.gov/files/2024-11/drunk-social-norm-talking-points-en-2025-v2-tag.docx",
+   "date": "2024-11",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nhtsa_ctw",
+   "publisher": "NHTSA (Countermeasures That Work)",
+   "title": "Alcohol-impaired driving: alternative transportation",
+   "url": "https://www.nhtsa.gov/book/countermeasures-that-work/alcohol-impaired-driving/countermeasures/other-strategies-behavior-change/alternative",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nhtsa_july4",
+   "publisher": "NHTSA (press release)",
+   "title": "Consumer Advisory: NHTSA encourages motorists to drive safe and sober this Fourth of July holiday",
+   "url": "https://www.nhtsa.gov/press-releases/consumer-advisory-nhtsa-encourages-motorists-drive-safe-and-sober-fourth-july",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "nhtsa_tips",
+   "publisher": "NHTSA",
+   "title": "Holiday safety tips (impaired driving)",
+   "url": "https://nhtsa.gov/node/98011",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  },
+  {
+   "id": "vadmv",
+   "publisher": "Virginia DMV",
+   "title": "DMV urges Virginians to plan ahead on St. Patrick's Day (citing NHTSA)",
+   "url": "https://dmv.virginia.gov/news/dmv-urges-virginians-plan-ahead-st-patricks-day",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-17"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "palette": {
+  "shadow": "#161c24",
+  "mid": "#c9bba2",
+  "accent": "#e0a03a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "4 DEAD. NO PRISON."
+   },
+   {
+    "text": "HIS DEFENSE: 'AFFLUENZA'",
+    "colour": "#e0a03a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "180 DAYS PER LIFE."
+   },
+   {
+    "text": "JUSTICE OR A JOKE? 👇",
+    "colour": "#e0a03a"
+   },
+   {
+    "text": "TAG THE MATE WHO ALWAYS DRIVES",
+    "fs": 44
+   }
+  ],
+  "from": 3.5,
+  "y": 420
+ },
+ "progress": {
+  "label": "DATE",
+  "keys": [
+   {
+    "t": 5.62,
+    "v": "JUNE 2013"
+   },
+   {
+    "t": 16.07,
+    "v": "DEC 2013"
+   },
+   {
+    "t": 23.24,
+    "v": "DEC 2015"
+   }
+  ],
+  "y": 330,
+  "until": 26.7
+ },
+ "legal_status_verified": "2026-10-17"
+}

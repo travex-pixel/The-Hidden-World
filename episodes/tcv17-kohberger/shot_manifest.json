@@ -1,0 +1,3363 @@
+{
+ "episode": "tcv17-kohberger",
+ "title": "The Trash Bag That Led to the Idaho Killer",
+ "duration": 80.25,
+ "slideshow_risk": {
+  "shots": 15,
+  "composed_shots": 15,
+  "shots_with_characters": 13,
+  "character_shot_share": 0.87,
+  "distinct_sets": 8,
+  "max_set_share": 0.27,
+  "shot_sizes": {
+   "medium-wide": 5,
+   "medium": 7,
+   "wide": 1,
+   "insert/graphic": 2
+  },
+  "max_shot_size_share": 0.47,
+  "ok": true
+ },
+ "production_status": {
+  "series_manifest": "series/true-crime-cinematic/production_manifest.json",
+  "video": "true_crime_17_kohberger.mp4"
+ },
+ "shots": [
+  {
+   "id": "s01_hook",
+   "scene_type": "kb17_hook",
+   "start": 0.0,
+   "duration": 6.375,
+   "narration": [
+    "Investigators had the Idaho killer's DNA, but no name.",
+    "Then they went through his family's trash."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.25,
+     "end": 3.536,
+     "words": [
+      {
+       "w": "Investigators",
+       "start": 0.308,
+       "end": 1.121
+      },
+      {
+       "w": "had",
+       "start": 1.167,
+       "end": 1.26
+      },
+      {
+       "w": "the",
+       "start": 1.295,
+       "end": 1.376
+      },
+      {
+       "w": "Idaho",
+       "start": 1.411,
+       "end": 1.759
+      },
+      {
+       "w": "killer's",
+       "start": 1.852,
+       "end": 2.177
+      },
+      {
+       "w": "DNA,",
+       "start": 2.212,
+       "end": 2.607
+      },
+      {
+       "w": "but",
+       "start": 2.804,
+       "end": 3.013
+      },
+      {
+       "w": "no",
+       "start": 3.048,
+       "end": 3.164
+      },
+      {
+       "w": "name.",
+       "start": 3.211,
+       "end": 3.466
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 4.136,
+     "end": 5.866,
+     "words": [
+      {
+       "w": "Then",
+       "start": 4.159,
+       "end": 4.287
+      },
+      {
+       "w": "they",
+       "start": 4.31,
+       "end": 4.38
+      },
+      {
+       "w": "went",
+       "start": 4.403,
+       "end": 4.542
+      },
+      {
+       "w": "through",
+       "start": 4.577,
+       "end": 4.693
+      },
+      {
+       "w": "his",
+       "start": 4.728,
+       "end": 4.821
+      },
+      {
+       "w": "family's",
+       "start": 4.856,
+       "end": 5.297
+      },
+      {
+       "w": "trash.",
+       "start": 5.332,
+       "end": 5.761
+      }
+     ]
+    }
+   ],
+   "visual_description": "kb17 curbside (night grade); agent_a (silhouette): torch -> torch_low (walks); camera push/pull, handheld; overlays: svg, callout 'HIS FAMILY'S TRASH'.",
+   "shot_size": "medium-wide",
+   "set": "kb17_curbside",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 40,
+     "z": 1.04
+    },
+    "to": {
+     "x": 0,
+     "y": 70,
+     "z": 1.1
+    },
+    "handheld": 1.6
+   },
+   "characters": [
+    "agent_a"
+   ],
+   "character_actions": [
+    {
+     "id": "agent_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.72,
+     "start_pose": "torch",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 5.23,
+       "pose": "torch_low"
+      }
+     ],
+     "walk": {
+      "from": -300,
+      "to": 160,
+      "at": 3.7,
+      "dur": 1.1289999999999993
+     },
+     "silhouette": "cool",
+     "visible": [
+      3.6
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0
+    },
+    {
+     "type": "callout",
+     "at": 5.38,
+     "text": "HIS FAMILY'S TRASH"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT THE REAL STREET",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "K_snap",
+     "type": "established",
+     "claim_text": "Per the affidavit, the Idaho State Lab found a single source of male DNA (the 'suspect profile') on the sheath's button snap. Allegation from the affidavit.",
+     "urls": [
+      "https://www.today.com/today/amp/rcna64469",
+      "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406",
+      "https://www.wfla.com/news/national/dna-cell-records-car-link-kohberger-to-idaho-killings-affidavit/amp"
+     ]
+    },
+    {
+     "claim": "K_trash",
+     "type": "established",
+     "claim_text": "Per the affidavit and later filings, on 27 December 2022 investigators in Pennsylvania took trash from the curb outside his parents' home in the Poconos and sent it to the Idaho State Lab. His parents are not named or shown; they were never accused of anything.",
+     "urls": [
+      "https://www.nbcnews.com/news/crime-courts/genetic-genealogy-used-link-bryan-kohberger-suspect-idaho-slayings-cri-rcna90344",
+      "https://www.today.com/today/amp/rcna64469",
+      "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406",
+      "https://www.inquirer.com/news/pennsylvania/bryan-kohberger-idaho-affidavit-court-20230105.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "cold",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "sub",
+      "at": 0.0,
+      "gain": 0.5
+     },
+     {
+      "name": "wind",
+      "at": 0.1,
+      "gain": 0.45
+     },
+     {
+      "name": "thud",
+      "at": 3.261,
+      "gain": 0.5,
+      "word": [
+       0,
+       8
+      ]
+     },
+     {
+      "name": "step",
+      "at": 4.277,
+      "gain": 0.35,
+      "word": [
+       1,
+       3
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 5.282,
+      "gain": 0.55,
+      "word": [
+       1,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_hook",
+    "set_code": "renderer/sets.js#kb17_curbside",
+    "characters": [
+     "characters/figures/agent_a.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_case",
+   "scene_type": "kb17_case",
+   "start": 6.375,
+   "duration": 4.875,
+   "narration": [
+    "In November 2022, four University of Idaho students were killed."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 6.625,
+     "end": 10.654,
+     "words": [
+      {
+       "w": "In",
+       "start": 6.695,
+       "end": 6.753
+      },
+      {
+       "w": "November",
+       "start": 6.788,
+       "end": 7.182
+      },
+      {
+       "w": "2022,",
+       "start": 7.252,
+       "end": 8.065
+      },
+      {
+       "w": "four",
+       "start": 8.401,
+       "end": 8.599
+      },
+      {
+       "w": "University",
+       "start": 8.622,
+       "end": 9.214
+      },
+      {
+       "w": "of",
+       "start": 9.237,
+       "end": 9.319
+      },
+      {
+       "w": "Idaho",
+       "start": 9.342,
+       "end": 9.655
+      },
+      {
+       "w": "students",
+       "start": 9.725,
+       "end": 10.062
+      },
+      {
+       "w": "were",
+       "start": 10.085,
+       "end": 10.201
+      },
+      {
+       "w": "killed.",
+       "start": 10.236,
+       "end": 10.607
+      }
+     ]
+    }
+   ],
+   "visual_description": "kb17 campus town (night grade); detective (silhouette): stand -> arms_crossed -> bowed; camera push/pull, handheld; overlays: label 'MOSCOW, IDAHO · 13 NOV 2022'.",
+   "shot_size": "medium-wide",
+   "set": "kb17_campus_town",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 30,
+     "y": 40,
+     "z": 1.12
+    },
+    "to": {
+     "x": -20,
+     "y": 10,
+     "z": 1
+    },
+    "handheld": 1
+   },
+   "characters": [
+    "detective"
+   ],
+   "character_actions": [
+    {
+     "id": "detective",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.78,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.41,
+       "pose": "arms_crossed"
+      },
+      {
+       "at": 3.96,
+       "pose": "bowed"
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.15,
+     "text": "MOSCOW, IDAHO · 13 NOV 2022"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC TOWN",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "K_killings",
+     "type": "established",
+     "claim_text": "On 13 November 2022 four University of Idaho students were killed in an off-campus rental house in Moscow, Idaho. (Summary only: no method, place in the house or other detail is narrated or shown.)",
+     "urls": [
+      "https://www.heraldnet.com/2022/12/31/man-arrested-in-pennsylvania-in-connection-with-university-of-idaho-homicides/",
+      "https://kuow.org/stories/suspect-arrested-in-case-of-university-of-idaho-murders",
+      "https://katv.com/news/nation-world/kohberger-expected-to-plead-guilty-to-quadruple-murders-at-plea-hearing",
+      "https://www.idahopress.com/boiseweekly/kohberger-pleads-guilty-to-moscow-murders/article_d1c5fc10-c545-40cd-9ad4-f617941e28fa.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "unease",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 6.375,
+      "gain": 0.5
+     },
+     {
+      "name": "step",
+      "at": 9.725,
+      "gain": 0.3,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "sub",
+      "at": 10.186,
+      "gain": 0.4,
+      "word": [
+       0,
+       9
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_case",
+    "set_code": "renderer/sets.js#kb17_campus_town",
+    "characters": [
+     "characters/figures/detective.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_sheath",
+   "scene_type": "kb17_sheath",
+   "start": 11.25,
+   "duration": 5.625,
+   "narration": [
+    "Prosecutors said the killer left a knife sheath behind.",
+    "On its snap was one man's DNA."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 11.5,
+     "end": 14.205,
+     "words": [
+      {
+       "w": "Prosecutors",
+       "start": 11.535,
+       "end": 12.22
+      },
+      {
+       "w": "said",
+       "start": 12.243,
+       "end": 12.417
+      },
+      {
+       "w": "the",
+       "start": 12.452,
+       "end": 12.51
+      },
+      {
+       "w": "killer",
+       "start": 12.557,
+       "end": 12.789
+      },
+      {
+       "w": "left",
+       "start": 12.847,
+       "end": 13.079
+      },
+      {
+       "w": "a",
+       "start": 13.102,
+       "end": 13.125
+      },
+      {
+       "w": "knife",
+       "start": 13.183,
+       "end": 13.381
+      },
+      {
+       "w": "sheath",
+       "start": 13.45,
+       "end": 13.625
+      },
+      {
+       "w": "behind.",
+       "start": 13.671,
+       "end": 14.159
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 14.705,
+     "end": 16.574,
+     "words": [
+      {
+       "w": "On",
+       "start": 14.751,
+       "end": 14.891
+      },
+      {
+       "w": "its",
+       "start": 14.926,
+       "end": 15.007
+      },
+      {
+       "w": "snap",
+       "start": 15.042,
+       "end": 15.32
+      },
+      {
+       "w": "was",
+       "start": 15.344,
+       "end": 15.471
+      },
+      {
+       "w": "one",
+       "start": 15.506,
+       "end": 15.669
+      },
+      {
+       "w": "man's",
+       "start": 15.727,
+       "end": 16.029
+      },
+      {
+       "w": "DNA.",
+       "start": 16.063,
+       "end": 16.446
+      }
+     ]
+    }
+   ],
+   "visual_description": "lab (cold grade); scientist: examine -> hands_together -> examine -> point; camera push/pull, handheld; overlays: svg, card 'PER THE PROBABLE-CAUSE AFFIDAVIT / A KNIFE SHEATH, LEFT BEHIND / ON ITS SNAP: ONE MAN'S DNA'.",
+   "shot_size": "medium",
+   "set": "lab",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -40,
+     "z": 1.04
+    },
+    "to": {
+     "x": 40,
+     "y": -70,
+     "z": 1.16
+    },
+    "handheld": 0.8
+   },
+   "characters": [
+    "scientist"
+   ],
+   "character_actions": [
+    {
+     "id": "scientist",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.04,
+     "start_pose": "examine",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 2,
+       "pose": "hands_together"
+      },
+      {
+       "at": 3.49,
+       "pose": "examine",
+       "expr": "focused"
+      },
+      {
+       "at": 4.71,
+       "pose": "point",
+       "expr": "realise"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0
+    },
+    {
+     "type": "card",
+     "at": 2,
+     "text": "PER THE PROBABLE-CAUSE AFFIDAVIT / A KNIFE SHEATH, LEFT BEHIND / ON ITS SNAP: ONE MAN'S DNA"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_sheath",
+     "type": "established",
+     "claim_text": "According to the probable-cause affidavit released on 5 January 2023, investigators found a tan leather knife sheath at the scene. The narration says only that prosecutors said the killer left it behind; the knife is never shown and the sheath is described in words only. Allegation from the affidavit; never tested at trial (he later pleaded guilty).",
+     "urls": [
+      "https://www.today.com/today/amp/rcna64469",
+      "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406",
+      "https://www.wfla.com/news/national/dna-cell-records-car-link-kohberger-to-idaho-killings-affidavit/amp",
+      "https://www.inquirer.com/news/pennsylvania/bryan-kohberger-idaho-affidavit-court-20230105.html"
+     ]
+    },
+    {
+     "claim": "K_snap",
+     "type": "established",
+     "claim_text": "Per the affidavit, the Idaho State Lab found a single source of male DNA (the 'suspect profile') on the sheath's button snap. Allegation from the affidavit.",
+     "urls": [
+      "https://www.today.com/today/amp/rcna64469",
+      "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406",
+      "https://www.wfla.com/news/national/dna-cell-records-car-link-kohberger-to-idaho-killings-affidavit/amp"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "click",
+      "at": 11.35,
+      "gain": 0.4
+     },
+     {
+      "name": "paper",
+      "at": 13.35,
+      "gain": 0.5,
+      "word": [
+       0,
+       7
+      ]
+     },
+     {
+      "name": "ping",
+      "at": 16.063,
+      "gain": 0.45,
+      "word": [
+       1,
+       6
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_sheath",
+    "set_code": "renderer/sets.js#lab",
+    "characters": [
+     "characters/figures/scientist.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_car",
+   "scene_type": "kb17_car",
+   "start": 16.875,
+   "duration": 3.75,
+   "narration": [
+    "Cameras caught a white car near the house that night, prosecutors said."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 17.125,
+     "end": 20.318,
+     "words": [
+      {
+       "w": "Cameras",
+       "start": 17.171,
+       "end": 17.473
+      },
+      {
+       "w": "caught",
+       "start": 17.508,
+       "end": 17.752
+      },
+      {
+       "w": "a",
+       "start": 17.81,
+       "end": 17.868
+      },
+      {
+       "w": "white",
+       "start": 17.914,
+       "end": 18.1
+      },
+      {
+       "w": "car",
+       "start": 18.147,
+       "end": 18.321
+      },
+      {
+       "w": "near",
+       "start": 18.367,
+       "end": 18.483
+      },
+      {
+       "w": "the",
+       "start": 18.507,
+       "end": 18.588
+      },
+      {
+       "w": "house",
+       "start": 18.634,
+       "end": 18.89
+      },
+      {
+       "w": "that",
+       "start": 18.913,
+       "end": 19.029
+      },
+      {
+       "w": "night,",
+       "start": 19.075,
+       "end": 19.284
+      },
+      {
+       "w": "prosecutors",
+       "start": 19.366,
+       "end": 19.935
+      },
+      {
+       "w": "said.",
+       "start": 19.981,
+       "end": 20.248
+      }
+     ]
+    }
+   ],
+   "visual_description": "task force (cold grade); analyst: sit_type -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit; agent_b: stand -> point -> arms_crossed (walks); keyed camera moves, handheld; overlays: label 'NEIGHBORHOOD VIDEO · 13 NOV', label 'A WHITE SEDAN'.",
+   "shot_size": "medium",
+   "set": "task_force",
+   "grade": "cold",
+   "camera": {
+    "keys": 2,
+    "handheld": 1.4
+   },
+   "characters": [
+    "agent_b",
+    "analyst"
+   ],
+   "character_actions": [
+    {
+     "id": "analyst",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.92,
+     "start_pose": "sit_type",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.1,
+       "pose": "sit_type"
+      },
+      {
+       "at": 0.34,
+       "pose": "sit_type_b"
+      },
+      {
+       "at": 0.58,
+       "pose": "sit_type"
+      },
+      {
+       "at": 0.82,
+       "pose": "sit_type_b"
+      },
+      {
+       "at": 0.94,
+       "pose": "sit",
+       "expr": "realise"
+      }
+     ]
+    },
+    {
+     "id": "agent_b",
+     "outfit": "default",
+     "depth": 0.98,
+     "scale": 0.98,
+     "start_pose": "stand",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 1.12,
+       "pose": "point",
+       "expr": "determined"
+      },
+      {
+       "at": 2.5,
+       "pose": "arms_crossed"
+      }
+     ],
+     "walk": {
+      "from": -300,
+      "to": 400,
+      "at": 0.1,
+      "dur": 1.2
+     }
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.15,
+     "text": "NEIGHBORHOOD VIDEO · 13 NOV"
+    },
+    {
+     "type": "label",
+     "at": 1.22,
+     "text": "A WHITE SEDAN"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_car_video",
+     "type": "established",
+     "claim_text": "Per the affidavit, neighbourhood video showed a white sedan near the house, making several passes, between about 3:29 a.m. and 4:20 a.m. on 13 November 2022; the FBI identified it as a white Hyundai Elantra. Allegation from the affidavit.",
+     "urls": [
+      "https://dnews.com/stories/court-document-details-kohbergers-alleged-ties-to-murder146da478",
+      "https://ktvz.com/?p=1045706",
+      "https://www.foxnews.com/us/surveillance-video-shows-bryan-kohberger-car-roaring-away-after-idaho-student-murders",
+      "https://6abc.com/post/bryan-kohberger-update-idaho-murders-affidavit-court-documents-killer/12661256/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 16.875,
+      "gain": 0.4
+     },
+     {
+      "name": "beep",
+      "at": 17.071,
+      "gain": 0.3,
+      "word": [
+       0,
+       0
+      ]
+     },
+     {
+      "name": "whoosh",
+      "at": 17.814,
+      "gain": 0.45,
+      "word": [
+       0,
+       3
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_car",
+    "set_code": "renderer/sets.js#task_force",
+    "characters": [
+     "characters/figures/agent_b.json",
+     "characters/figures/analyst.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_tree",
+   "scene_type": "kb17_tree",
+   "start": 20.625,
+   "duration": 4.5,
+   "narration": [
+    "Court filings said genetic genealogy led the FBI to one family."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 20.875,
+     "end": 24.753,
+     "words": [
+      {
+       "w": "Court",
+       "start": 20.921,
+       "end": 21.119
+      },
+      {
+       "w": "filings",
+       "start": 21.154,
+       "end": 21.572
+      },
+      {
+       "w": "said",
+       "start": 21.606,
+       "end": 21.757
+      },
+      {
+       "w": "genetic",
+       "start": 21.781,
+       "end": 22.14
+      },
+      {
+       "w": "genealogy",
+       "start": 22.164,
+       "end": 22.767
+      },
+      {
+       "w": "led",
+       "start": 22.802,
+       "end": 22.976
+      },
+      {
+       "w": "the",
+       "start": 23.011,
+       "end": 23.093
+      },
+      {
+       "w": "FBI",
+       "start": 23.116,
+       "end": 23.87
+      },
+      {
+       "w": "to",
+       "start": 23.928,
+       "end": 24.01
+      },
+      {
+       "w": "one",
+       "start": 24.033,
+       "end": 24.207
+      },
+      {
+       "w": "family.",
+       "start": 24.265,
+       "end": 24.66
+      }
+     ]
+    }
+   ],
+   "visual_description": "office day (cold grade); analyst: sit_type -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit_type -> sit_type_b -> sit -> realise; examiner: read -> stand -> point_up; camera push/pull, handheld; overlays: svg, label 'GENETIC GENEALOGY'.",
+   "shot_size": "medium",
+   "set": "office_day",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": -30,
+     "y": -40,
+     "z": 1.02
+    },
+    "to": {
+     "x": 20,
+     "y": -60,
+     "z": 1.1
+    },
+    "handheld": 0.8
+   },
+   "characters": [
+    "analyst",
+    "examiner"
+   ],
+   "character_actions": [
+    {
+     "id": "analyst",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1,
+     "start_pose": "sit_type",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.1,
+       "pose": "sit_type"
+      },
+      {
+       "at": 0.34,
+       "pose": "sit_type_b"
+      },
+      {
+       "at": 0.58,
+       "pose": "sit_type"
+      },
+      {
+       "at": 0.82,
+       "pose": "sit_type_b"
+      },
+      {
+       "at": 1.06,
+       "pose": "sit_type"
+      },
+      {
+       "at": 1.3,
+       "pose": "sit_type_b"
+      },
+      {
+       "at": 1.54,
+       "pose": "sit_type"
+      },
+      {
+       "at": 1.78,
+       "pose": "sit_type_b"
+      },
+      {
+       "at": 2.02,
+       "pose": "sit_type"
+      },
+      {
+       "at": 2.26,
+       "pose": "sit_type_b"
+      },
+      {
+       "at": 2.49,
+       "pose": "sit",
+       "expr": "focused"
+      },
+      {
+       "at": 3.54,
+       "expr": "realise"
+      }
+     ]
+    },
+    {
+     "id": "examiner",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1,
+     "start_pose": "read",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 2.08,
+       "pose": "stand"
+      },
+      {
+       "at": 3.26,
+       "pose": "point_up",
+       "expr": "determined"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0
+    },
+    {
+     "type": "label",
+     "at": 0.1,
+     "text": "GENETIC GENEALOGY"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_igg",
+     "type": "established",
+     "claim_text": "Prosecutors' June 2023 court filings said the FBI used investigative genetic genealogy, building a family tree from the sheath DNA, and then sent local investigators a tip to look at Bryan Kohberger. Police did not rely on the genealogy for any warrant, the filings said. Attributed to court filings.",
+     "urls": [
+      "https://www.nbcnews.com/news/crime-courts/genetic-genealogy-used-link-bryan-kohberger-suspect-idaho-slayings-cri-rcna90344",
+      "https://www.fox5ny.com/news/idaho-murders-bryan-kohberger-trial-genetic-genealogy-dna-evidence",
+      "https://digital-release.newsnationnow.com/crime/idaho-college-killings/dna-kohberger-arrest/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "typing",
+      "at": 20.725,
+      "gain": 0.45
+     },
+     {
+      "name": "click",
+      "at": 21.781,
+      "gain": 0.4,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 24.265,
+      "gain": 0.5,
+      "word": [
+       0,
+       10
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_tree",
+    "set_code": "renderer/sets.js#office_day",
+    "characters": [
+     "characters/figures/analyst.json",
+     "characters/figures/examiner.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_name",
+   "scene_type": "kb17_name",
+   "start": 25.125,
+   "duration": 7.125,
+   "narration": [
+    "And to Bryan Kohberger, a criminology PhD student nearby.",
+    "He drove a white Hyundai Elantra."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 25.375,
+     "end": 29.415,
+     "words": [
+      {
+       "w": "And",
+       "start": 25.41,
+       "end": 25.526
+      },
+      {
+       "w": "to",
+       "start": 25.561,
+       "end": 25.619
+      },
+      {
+       "w": "Bryan",
+       "start": 25.665,
+       "end": 25.955
+      },
+      {
+       "w": "Kohberger,",
+       "start": 26.014,
+       "end": 26.594
+      },
+      {
+       "w": "a",
+       "start": 26.989,
+       "end": 27.035
+      },
+      {
+       "w": "criminology",
+       "start": 27.116,
+       "end": 27.755
+      },
+      {
+       "w": "PhD",
+       "start": 27.813,
+       "end": 28.498
+      },
+      {
+       "w": "student",
+       "start": 28.545,
+       "end": 28.835
+      },
+      {
+       "w": "nearby.",
+       "start": 28.858,
+       "end": 29.299
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 29.965,
+     "end": 31.591,
+     "words": [
+      {
+       "w": "He",
+       "start": 29.988,
+       "end": 30.104
+      },
+      {
+       "w": "drove",
+       "start": 30.151,
+       "end": 30.348
+      },
+      {
+       "w": "a",
+       "start": 30.406,
+       "end": 30.441
+      },
+      {
+       "w": "white",
+       "start": 30.476,
+       "end": 30.662
+      },
+      {
+       "w": "Hyundai",
+       "start": 30.708,
+       "end": 30.975
+      },
+      {
+       "w": "Elantra.",
+       "start": 30.998,
+       "end": 31.463
+      }
+     ]
+    }
+   ],
+   "visual_description": "kb17 highway (night grade); kb17_man (silhouette): stand -> stand -> hands_together (walks); keyed camera moves, handheld; overlays: label 'BRYAN KOHBERGER', funfact 'He was a PhD student / in criminology, just across / the state line from Moscow.', callout 'WHITE HYUNDAI ELANTRA'.",
+   "shot_size": "medium-wide",
+   "set": "kb17_highway",
+   "grade": "night",
+   "camera": {
+    "keys": 2,
+    "handheld": 1.6
+   },
+   "characters": [
+    "kb17_man"
+   ],
+   "character_actions": [
+    {
+     "id": "kb17_man",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.74,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.49,
+       "pose": "stand"
+      },
+      {
+       "at": 5.67,
+       "pose": "hands_together"
+      }
+     ],
+     "walk": {
+      "from": 1300,
+      "to": 960,
+      "at": 0.49,
+      "dur": 1.7
+     },
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.79,
+     "text": "BRYAN KOHBERGER"
+    },
+    {
+     "type": "funfact",
+     "at": 2.59,
+     "text": "He was a PhD student / in criminology, just across / the state line from Moscow."
+    },
+    {
+     "type": "callout",
+     "at": 5.82,
+     "text": "WHITE HYUNDAI ELANTRA"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A LIKENESS",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "K_name",
+     "type": "established",
+     "claim_text": "Bryan Kohberger, 28 when arrested, was a PhD student in criminology and a teaching assistant at Washington State University in Pullman, near Moscow; he had just finished his first semester there.",
+     "urls": [
+      "https://www.fox5ny.com/news/bryan-christopher-kohberger-moscow-idaho-murders-suspect-arrest",
+      "https://www.heraldnet.com/2022/12/31/man-arrested-in-pennsylvania-in-connection-with-university-of-idaho-homicides/",
+      "https://www.cbsnews.com/news/bryan-kohberger-arrested-suspect-idaho-murders/",
+      "https://kuow.org/stories/suspect-arrested-in-case-of-university-of-idaho-murders"
+     ]
+    },
+    {
+     "claim": "K_phd",
+     "type": "established",
+     "claim_text": "FUN FACT: he was studying for a PhD in criminology at Washington State University in Pullman, just across the state line from Moscow (about eight miles; about a 15-minute drive).",
+     "urls": [
+      "https://www.fox5ny.com/news/bryan-christopher-kohberger-moscow-idaho-murders-suspect-arrest",
+      "https://kuow.org/stories/suspect-arrested-in-case-of-university-of-idaho-murders",
+      "https://www.heraldnet.com/2022/12/31/man-arrested-in-pennsylvania-in-connection-with-university-of-idaho-homicides/"
+     ]
+    },
+    {
+     "claim": "K_elantra",
+     "type": "established",
+     "claim_text": "Per the affidavit, on 29 November 2022 a WSU police officer found a white 2015 Hyundai Elantra registered to Kohberger at his Pullman apartment.",
+     "urls": [
+      "https://6abc.com/post/bryan-kohberger-update-idaho-murders-affidavit-court-documents-killer/12661256/",
+      "https://www.cbsnews.com/amp/philadelphia/news/university-of-idaho-students-stabbings-bryan-kohberger-white-hyundai-elantra-car-vehicle-search",
+      "https://dnews.com/stories/court-document-details-kohbergers-alleged-ties-to-murder146da478",
+      "https://www.wfla.com/news/national/dna-cell-records-car-link-kohberger-to-idaho-killings-affidavit/amp"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-rise",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 25.125,
+      "gain": 0.4
+     },
+     {
+      "name": "hit",
+      "at": 25.964,
+      "gain": 0.5,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "sparkle",
+      "at": 27.713,
+      "gain": 0.8,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "thump",
+      "at": 30.998,
+      "gain": 0.45,
+      "word": [
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_name",
+    "set_code": "renderer/sets.js#kb17_highway",
+    "characters": [
+     "characters/figures/kb17_man.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_phone",
+   "scene_type": "kb17_phone",
+   "start": 32.25,
+   "duration": 4.125,
+   "narration": [
+    "Prosecutors said his phone had pinged near the house at least 12 times."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 32.5,
+     "end": 36.041,
+     "words": [
+      {
+       "w": "Prosecutors",
+       "start": 32.546,
+       "end": 33.185
+      },
+      {
+       "w": "said",
+       "start": 33.208,
+       "end": 33.382
+      },
+      {
+       "w": "his",
+       "start": 33.417,
+       "end": 33.522
+      },
+      {
+       "w": "phone",
+       "start": 33.557,
+       "end": 33.812
+      },
+      {
+       "w": "had",
+       "start": 33.87,
+       "end": 33.986
+      },
+      {
+       "w": "pinged",
+       "start": 34.009,
+       "end": 34.207
+      },
+      {
+       "w": "near",
+       "start": 34.23,
+       "end": 34.358
+      },
+      {
+       "w": "the",
+       "start": 34.381,
+       "end": 34.45
+      },
+      {
+       "w": "house",
+       "start": 34.485,
+       "end": 34.799
+      },
+      {
+       "w": "at",
+       "start": 34.857,
+       "end": 34.938
+      },
+      {
+       "w": "least",
+       "start": 34.961,
+       "end": 35.17
+      },
+      {
+       "w": "12",
+       "start": 35.205,
+       "end": 35.449
+      },
+      {
+       "w": "times.",
+       "start": 35.495,
+       "end": 35.948
+      }
+     ]
+    }
+   ],
+   "visual_description": "task force (cold grade); agent_b: read -> stand -> point_up; detective: arms_crossed -> read -> realise; camera push/pull, handheld; overlays: svg, label 'PHONE RECORDS'.",
+   "shot_size": "medium",
+   "set": "task_force",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 20,
+     "y": -20,
+     "z": 1.04
+    },
+    "to": {
+     "x": -30,
+     "y": -50,
+     "z": 1.12
+    },
+    "handheld": 1.2
+   },
+   "characters": [
+    "agent_b",
+    "detective"
+   ],
+   "character_actions": [
+    {
+     "id": "agent_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.94,
+     "start_pose": "read",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 1.66,
+       "pose": "stand",
+       "expr": "focused"
+      },
+      {
+       "at": 2.81,
+       "pose": "point_up",
+       "expr": "determined"
+      }
+     ]
+    },
+    {
+     "id": "detective",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.94,
+     "start_pose": "arms_crossed",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 2.14,
+       "pose": "read"
+      },
+      {
+       "at": 3.35,
+       "expr": "realise"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0
+    },
+    {
+     "type": "label",
+     "at": 0.1,
+     "text": "PHONE RECORDS"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_phone",
+     "type": "established",
+     "claim_text": "Per the affidavit, records showed his phone using cell coverage for the area of the house at least 12 times before 13 November 2022 (and again on the morning of the killings, hours later; not narrated). Allegation from the affidavit.",
+     "urls": [
+      "https://6abc.com/post/bryan-kohberger-update-idaho-murders-affidavit-court-documents-killer/12661256/",
+      "https://cbsnews.com/live-updates/idaho-murders-bryan-kohberger-affidavit",
+      "https://www.wfla.com/news/national/dna-cell-records-car-link-kohberger-to-idaho-killings-affidavit/amp"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "beep",
+      "at": 33.557,
+      "gain": 0.35,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "ping",
+      "at": 34.009,
+      "gain": 0.45,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "ping",
+      "at": 35.205,
+      "gain": 0.45,
+      "word": [
+       0,
+       11
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_phone",
+    "set_code": "renderer/sets.js#task_force",
+    "characters": [
+     "characters/figures/agent_b.json",
+     "characters/figures/detective.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s08_trash",
+   "scene_type": "kb17_trash",
+   "start": 36.375,
+   "duration": 4.125,
+   "narration": [
+    "So investigators took trash from his parents' home in Pennsylvania."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 36.625,
+     "end": 39.945,
+     "words": [
+      {
+       "w": "So",
+       "start": 36.66,
+       "end": 36.811
+      },
+      {
+       "w": "investigators",
+       "start": 36.834,
+       "end": 37.542
+      },
+      {
+       "w": "took",
+       "start": 37.577,
+       "end": 37.716
+      },
+      {
+       "w": "trash",
+       "start": 37.763,
+       "end": 38.076
+      },
+      {
+       "w": "from",
+       "start": 38.099,
+       "end": 38.227
+      },
+      {
+       "w": "his",
+       "start": 38.262,
+       "end": 38.343
+      },
+      {
+       "w": "parents'",
+       "start": 38.39,
+       "end": 38.761
+      },
+      {
+       "w": "home",
+       "start": 38.808,
+       "end": 39.028
+      },
+      {
+       "w": "in",
+       "start": 39.086,
+       "end": 39.144
+      },
+      {
+       "w": "Pennsylvania.",
+       "start": 39.179,
+       "end": 39.853
+      }
+     ]
+    }
+   ],
+   "visual_description": "kb17 curbside (night grade); agent_a (silhouette): stand -> present -> stand (walks); agent_a (silhouette): stand -> present (walks); agent_b (silhouette): torch -> torch_low; camera push/pull, handheld; overlays: label 'PENNSYLVANIA · DEC 2022'.",
+   "shot_size": "medium-wide",
+   "set": "kb17_curbside",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 30,
+     "z": 1.04
+    },
+    "to": {
+     "x": 30,
+     "y": 20,
+     "z": 1.1
+    },
+    "handheld": 2.2
+   },
+   "characters": [
+    "agent_a",
+    "agent_b"
+   ],
+   "character_actions": [
+    {
+     "id": "agent_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.68,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.05,
+       "pose": "present"
+      },
+      {
+       "at": 1.45,
+       "pose": "stand"
+      }
+     ],
+     "walk": {
+      "from": -200,
+      "to": 420,
+      "at": 0,
+      "dur": 1.052
+     },
+     "silhouette": "cool",
+     "visible": [
+      -1,
+      1.42
+     ]
+    },
+    {
+     "id": "agent_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.68,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.5,
+       "pose": "present"
+      }
+     ],
+     "walk": {
+      "from": 420,
+      "to": 620,
+      "at": 1.4,
+      "dur": 1.2
+     },
+     "silhouette": "cool",
+     "visible": [
+      1.4
+     ]
+    },
+    {
+     "id": "agent_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.68,
+     "start_pose": "torch",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.39,
+       "pose": "torch_low"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.15,
+     "text": "PENNSYLVANIA · DEC 2022"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT THE REAL STREET",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_trash",
+     "type": "established",
+     "claim_text": "Per the affidavit and later filings, on 27 December 2022 investigators in Pennsylvania took trash from the curb outside his parents' home in the Poconos and sent it to the Idaho State Lab. His parents are not named or shown; they were never accused of anything.",
+     "urls": [
+      "https://www.nbcnews.com/news/crime-courts/genetic-genealogy-used-link-bryan-kohberger-suspect-idaho-slayings-cri-rcna90344",
+      "https://www.today.com/today/amp/rcna64469",
+      "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406",
+      "https://www.inquirer.com/news/pennsylvania/bryan-kohberger-idaho-affidavit-court-20230105.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 36.375,
+      "gain": 0.45
+     },
+     {
+      "name": "step",
+      "at": 36.534,
+      "gain": 0.35,
+      "word": [
+       0,
+       1
+      ]
+     },
+     {
+      "name": "thud",
+      "at": 37.813,
+      "gain": 0.4,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "door",
+      "at": 39.179,
+      "gain": 0.4,
+      "word": [
+       0,
+       9
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_trash",
+    "set_code": "renderer/sets.js#kb17_curbside",
+    "characters": [
+     "characters/figures/agent_a.json",
+     "characters/figures/agent_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s09_lab",
+   "scene_type": "kb17_lab",
+   "start": 40.5,
+   "duration": 6.75,
+   "narration": [
+    "The lab compared it to the sheath.",
+    "Prosecutors said the trash DNA came from the father of whoever left the sheath."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 40.75,
+     "end": 42.236,
+     "words": [
+      {
+       "w": "The",
+       "start": 40.785,
+       "end": 40.854
+      },
+      {
+       "w": "lab",
+       "start": 40.913,
+       "end": 41.156
+      },
+      {
+       "w": "compared",
+       "start": 41.214,
+       "end": 41.528
+      },
+      {
+       "w": "it",
+       "start": 41.551,
+       "end": 41.609
+      },
+      {
+       "w": "to",
+       "start": 41.656,
+       "end": 41.737
+      },
+      {
+       "w": "the",
+       "start": 41.76,
+       "end": 41.83
+      },
+      {
+       "w": "sheath.",
+       "start": 41.899,
+       "end": 42.19
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 42.986,
+     "end": 46.62,
+     "words": [
+      {
+       "w": "Prosecutors",
+       "start": 43.009,
+       "end": 43.601
+      },
+      {
+       "w": "said",
+       "start": 43.601,
+       "end": 43.817
+      },
+      {
+       "w": "the",
+       "start": 43.817,
+       "end": 43.978
+      },
+      {
+       "w": "trash",
+       "start": 43.978,
+       "end": 44.247
+      },
+      {
+       "w": "DNA",
+       "start": 44.247,
+       "end": 44.409
+      },
+      {
+       "w": "came",
+       "start": 44.409,
+       "end": 44.624
+      },
+      {
+       "w": "from",
+       "start": 44.624,
+       "end": 44.839
+      },
+      {
+       "w": "the",
+       "start": 44.839,
+       "end": 45.001
+      },
+      {
+       "w": "father",
+       "start": 45.001,
+       "end": 45.324
+      },
+      {
+       "w": "of",
+       "start": 45.324,
+       "end": 45.432
+      },
+      {
+       "w": "whoever",
+       "start": 45.432,
+       "end": 45.808
+      },
+      {
+       "w": "left",
+       "start": 45.808,
+       "end": 46.024
+      },
+      {
+       "w": "the",
+       "start": 46.024,
+       "end": 46.185
+      },
+      {
+       "w": "sheath.",
+       "start": 46.185,
+       "end": 46.562
+      }
+     ]
+    }
+   ],
+   "visual_description": "lab (cold grade); scientist: examine -> read -> examine -> stand; examiner: read -> hand_to_face -> arms_crossed; camera push/pull, handheld; overlays: svg, card 'PER THE AFFIDAVIT, THE TRASH DNA / CAME FROM THE FATHER / OF WHOEVER LEFT / THE SHEATH DNA / AT LEAST 99.9998% OF MEN EXCLUDED'.",
+   "shot_size": "medium",
+   "set": "lab",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -30,
+     "z": 1.02
+    },
+    "to": {
+     "x": 0,
+     "y": -60,
+     "z": 1.12
+    },
+    "handheld": 0.8
+   },
+   "characters": [
+    "examiner",
+    "scientist"
+   ],
+   "character_actions": [
+    {
+     "id": "scientist",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.06,
+     "start_pose": "examine",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 0.51,
+       "pose": "read"
+      },
+      {
+       "at": 3.28,
+       "pose": "examine"
+      },
+      {
+       "at": 4.4,
+       "pose": "stand",
+       "expr": "realise"
+      }
+     ]
+    },
+    {
+     "id": "examiner",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1,
+     "start_pose": "read",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 4.6,
+       "pose": "hand_to_face",
+       "expr": "shocked"
+      },
+      {
+       "at": 6.08,
+       "pose": "arms_crossed",
+       "expr": "determined"
+      }
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0.51
+    },
+    {
+     "type": "card",
+     "at": 4.25,
+     "text": "PER THE AFFIDAVIT, THE TRASH DNA / CAME FROM THE FATHER / OF WHOEVER LEFT / THE SHEATH DNA / AT LEAST 99.9998% OF MEN EXCLUDED"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "flash",
+   "sources": [
+    {
+     "claim": "K_paternity",
+     "type": "established",
+     "claim_text": "Per the affidavit, the lab found that DNA from the trash came from the biological father of the person whose DNA was on the sheath snap: 'at least 99.9998% of the male population would be expected to be excluded' as that person's father. Allegation from the affidavit.",
+     "urls": [
+      "https://www.today.com/today/amp/rcna64469",
+      "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406",
+      "https://digital-release.newsnationnow.com/crime/idaho-college-killings/dna-kohberger-arrest/",
+      "https://www.nbcnews.com/news/crime-courts/genetic-genealogy-used-link-bryan-kohberger-suspect-idaho-slayings-cri-rcna90344"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "revelation",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "click",
+      "at": 40.6,
+      "gain": 0.4
+     },
+     {
+      "name": "swell",
+      "at": 42.709,
+      "gain": 0.5,
+      "word": [
+       1,
+       0
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 44.951,
+      "gain": 0.6,
+      "word": [
+       1,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_lab",
+    "set_code": "renderer/sets.js#lab",
+    "characters": [
+     "characters/figures/examiner.json",
+     "characters/figures/scientist.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s10_arrest",
+   "scene_type": "kb17_arrest",
+   "start": 47.25,
+   "duration": 3.0,
+   "narration": [
+    "On December 30th, police arrested him there."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 47.5,
+     "end": 49.81,
+     "words": [
+      {
+       "w": "On",
+       "start": 47.558,
+       "end": 47.674
+      },
+      {
+       "w": "December",
+       "start": 47.697,
+       "end": 48.057
+      },
+      {
+       "w": "30th,",
+       "start": 48.115,
+       "end": 48.533
+      },
+      {
+       "w": "police",
+       "start": 48.626,
+       "end": 48.94
+      },
+      {
+       "w": "arrested",
+       "start": 48.974,
+       "end": 49.323
+      },
+      {
+       "w": "him",
+       "start": 49.358,
+       "end": 49.462
+      },
+      {
+       "w": "there.",
+       "start": 49.497,
+       "end": 49.694
+      }
+     ]
+    }
+   ],
+   "visual_description": "kb17 curbside (night grade); kb17_man (silhouette): stand -> stand_tense -> hands_behind; agent_a (silhouette): stand -> present (walks); agent_b (silhouette): stand -> stand_tense (walks); camera push/pull, handheld; overlays: label '30 DEC 2022 · ARRESTED'.",
+   "shot_size": "medium-wide",
+   "set": "kb17_curbside",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": -30,
+     "y": 20,
+     "z": 1
+    },
+    "to": {
+     "x": 30,
+     "y": 10,
+     "z": 1.1
+    },
+    "handheld": 3.5
+   },
+   "characters": [
+    "agent_a",
+    "agent_b",
+    "kb17_man"
+   ],
+   "character_actions": [
+    {
+     "id": "kb17_man",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.8,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.38,
+       "pose": "stand_tense"
+      },
+      {
+       "at": 1.92,
+       "pose": "hands_behind"
+      }
+     ],
+     "silhouette": "warm"
+    },
+    {
+     "id": "agent_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.84,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.82,
+       "pose": "present"
+      }
+     ],
+     "walk": {
+      "from": -260,
+      "to": 330,
+      "at": 0.05,
+      "dur": 1.4769999999999999
+     },
+     "silhouette": "cool"
+    },
+    {
+     "id": "agent_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.86,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.92,
+       "pose": "stand_tense"
+      }
+     ],
+     "walk": {
+      "from": 1340,
+      "to": 800,
+      "at": 0.25,
+      "dur": 1.377
+     },
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.15,
+     "text": "30 DEC 2022 · ARRESTED"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A LIKENESS",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_arrest",
+     "type": "established",
+     "claim_text": "He was arrested early on 30 December 2022 at his parents' home in Albrightsville (Chestnuthill Township, Monroe County), Pennsylvania, with the FBI and Pennsylvania State Police.",
+     "urls": [
+      "https://www.fox5ny.com/news/bryan-christopher-kohberger-moscow-idaho-murders-suspect-arrest",
+      "https://www.heraldnet.com/2022/12/31/man-arrested-in-pennsylvania-in-connection-with-university-of-idaho-homicides/",
+      "https://www.cbsnews.com/philadelphia/news/bryan-kohberger-idaho-stabbings-suspect-arrested-poconos-pennsylvania/",
+      "https://kuow.org/stories/suspect-arrested-in-case-of-university-of-idaho-murders"
+     ]
+    },
+    {
+     "claim": "K_distance",
+     "type": "established",
+     "claim_text": "Albrightsville is about 2,500 miles from Moscow, Idaho (KXLY); his public defender called the drive home a 2,500-mile road trip (FOX). Shown on screen as 'about 2,500 miles from Moscow'.",
+     "urls": [
+      "https://www.kxly.com/what-we-know-about-idaho-murder-suspect-bryan-kohberger/",
+      "https://www.fox13seattle.com/news/idaho-murders-suspect-pulled-over-twice-on-cross-country-race-home-with-dad-lawyer-claims"
+     ]
+    },
+    {
+     "claim": "K_swab",
+     "type": "established",
+     "claim_text": "Prosecutors said in June 2023 that a cheek swab taken from Kohberger after his arrest directly matched the DNA on the sheath. Allegation; shown on screen only, attributed.",
+     "urls": [
+      "https://www.oxygen.com/crime-news/cheek-swab-links-bryan-kohberger-to-university-of-idaho-murders?amp",
+      "https://www.upi.com/Top_News/US/2023/06/21/bryan-kohberger-murder-suspect-dna-knife/5611687379205/",
+      "https://news.yahoo.com/prosecutors-reveal-bombshell-dna-match-161930757.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 47.25,
+      "gain": 0.4
+     },
+     {
+      "name": "step",
+      "at": 48.326,
+      "gain": 0.45,
+      "word": [
+       0,
+       3
+      ]
+     },
+     {
+      "name": "hit",
+      "at": 48.924,
+      "gain": 0.5,
+      "word": [
+       0,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_arrest",
+    "set_code": "renderer/sets.js#kb17_curbside",
+    "characters": [
+     "characters/figures/agent_a.json",
+     "characters/figures/agent_b.json",
+     "characters/figures/kb17_man.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s11_plea",
+   "scene_type": "kb17_plea",
+   "start": 50.25,
+   "duration": 3.75,
+   "narration": [
+    "Weeks before trial, he pleaded guilty to all four murders."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 50.5,
+     "end": 53.507,
+     "words": [
+      {
+       "w": "Weeks",
+       "start": 50.546,
+       "end": 50.779
+      },
+      {
+       "w": "before",
+       "start": 50.802,
+       "end": 51.069
+      },
+      {
+       "w": "trial,",
+       "start": 51.092,
+       "end": 51.417
+      },
+      {
+       "w": "he",
+       "start": 51.603,
+       "end": 51.765
+      },
+      {
+       "w": "pleaded",
+       "start": 51.812,
+       "end": 52.079
+      },
+      {
+       "w": "guilty",
+       "start": 52.102,
+       "end": 52.404
+      },
+      {
+       "w": "to",
+       "start": 52.474,
+       "end": 52.543
+      },
+      {
+       "w": "all",
+       "start": 52.567,
+       "end": 52.718
+      },
+      {
+       "w": "four",
+       "start": 52.752,
+       "end": 52.938
+      },
+      {
+       "w": "murders.",
+       "start": 52.973,
+       "end": 53.402
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (cold grade); judge (silhouette): sit -> sit_read -> sit; kb17_man (silhouette): sit -> stand -> hands_together; camera push/pull; overlays: card 'FEB 2025 · JUDGE REFUSED TO / THROW OUT THE DNA EVIDENCE / 2 JULY 2025: GUILTY / 4 MURDERS + BURGLARY'.",
+   "shot_size": "medium",
+   "set": "courtroom",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 30,
+     "z": 1
+    },
+    "to": {
+     "x": 40,
+     "y": 10,
+     "z": 1.1
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "judge",
+    "kb17_man"
+   ],
+   "character_actions": [
+    {
+     "id": "judge",
+     "outfit": "default",
+     "depth": 0.33,
+     "scale": 0.42,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.3,
+       "pose": "sit_read"
+      },
+      {
+       "at": 2.8,
+       "pose": "sit"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "kb17_man",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.95,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.96,
+       "pose": "stand"
+      },
+      {
+       "at": 1.85,
+       "pose": "hands_together"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 0.15,
+     "text": "FEB 2025 · JUDGE REFUSED TO / THROW OUT THE DNA EVIDENCE / 2 JULY 2025: GUILTY / 4 MURDERS + BURGLARY"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A LIKENESS",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_ruling",
+     "type": "established",
+     "claim_text": "On 19 February 2025 Judge Steven Hippler denied the defence motions to suppress, ruling that the genetic-genealogy-derived DNA evidence and the trash DNA could be used. A ruling on evidence, not a verdict.",
+     "urls": [
+      "https://www.kmvt.com/2025/02/20/judge-denies-motions-suppress-evidence-kohberger-case",
+      "https://abc7news.com/post/bryan-kohberger-update-judge-denies-defense-motion-suppress-dna-evidence-idaho-college-murders-case/15934657/",
+      "https://lmtribune.com/local-news/judge-denies-kohberger-motions-to-quash-evidence-18823869"
+     ]
+    },
+    {
+     "claim": "K_plea",
+     "type": "established",
+     "claim_text": "On 2 July 2025, weeks before his August trial, Kohberger pleaded guilty to four counts of first-degree murder and one count of burglary.",
+     "urls": [
+      "https://katv.com/news/nation-world/kohberger-expected-to-plead-guilty-to-quadruple-murders-at-plea-hearing",
+      "https://www.idahopress.com/boiseweekly/kohberger-pleads-guilty-to-moscow-murders/article_d1c5fc10-c545-40cd-9ad4-f617941e28fa.html",
+      "https://kvia.com/news/2025/06/30/bryan-kohberger-agrees-to-plea-deal-to-avoid-death-penalty-in-idaho-student-killings/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 50.35,
+      "gain": 0.4
+     },
+     {
+      "name": "hit",
+      "at": 52.052,
+      "gain": 0.5,
+      "word": [
+       0,
+       5
+      ]
+     },
+     {
+      "name": "stamp",
+      "at": 53.173,
+      "gain": 0.45,
+      "word": [
+       0,
+       9
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_plea",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/judge.json",
+     "characters/figures/kb17_man.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s12_deal",
+   "scene_type": "kb17_deal",
+   "start": 54.0,
+   "duration": 4.875,
+   "narration": [
+    "Prosecutors dropped the death penalty. Some victims' families opposed the deal."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 54.25,
+     "end": 58.209,
+     "words": [
+      {
+       "w": "Prosecutors",
+       "start": 54.285,
+       "end": 54.9
+      },
+      {
+       "w": "dropped",
+       "start": 54.947,
+       "end": 55.156
+      },
+      {
+       "w": "the",
+       "start": 55.19,
+       "end": 55.248
+      },
+      {
+       "w": "death",
+       "start": 55.283,
+       "end": 55.457
+      },
+      {
+       "w": "penalty.",
+       "start": 55.504,
+       "end": 55.968
+      },
+      {
+       "w": "Some",
+       "start": 56.131,
+       "end": 56.328
+      },
+      {
+       "w": "victims'",
+       "start": 56.351,
+       "end": 56.735
+      },
+      {
+       "w": "families",
+       "start": 56.781,
+       "end": 57.257
+      },
+      {
+       "w": "opposed",
+       "start": 57.408,
+       "end": 57.733
+      },
+      {
+       "w": "the",
+       "start": 57.756,
+       "end": 57.826
+      },
+      {
+       "w": "deal.",
+       "start": 57.861,
+       "end": 58.139
+      }
+     ]
+    }
+   ],
+   "visual_description": "press room (cold grade); official (silhouette): read -> present -> stand; press_operator (silhouette): read_newspaper -> examine; examiner (silhouette): read -> hand_to_face; camera push/pull, handheld; overlays: stamp 'NO DEATH PENALTY', funfact 'Not every family agreed: / some victims' families publicly / opposed the plea deal.'.",
+   "shot_size": "medium",
+   "set": "press_room",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -40,
+     "z": 1
+    },
+    "to": {
+     "x": -30,
+     "y": -60,
+     "z": 1.08
+    },
+    "handheld": 1.2
+   },
+   "characters": [
+    "examiner",
+    "official",
+    "press_operator"
+   ],
+   "character_actions": [
+    {
+     "id": "official",
+     "outfit": "default",
+     "depth": 0.98,
+     "scale": 0.62,
+     "start_pose": "read",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.85,
+       "pose": "present"
+      },
+      {
+       "at": 2,
+       "pose": "stand"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "press_operator",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.1,
+     "start_pose": "read_newspaper",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.03,
+       "pose": "examine"
+      }
+     ],
+     "silhouette": "warm"
+    },
+    {
+     "id": "examiner",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1.08,
+     "start_pose": "read",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 3.31,
+       "pose": "hand_to_face"
+      }
+     ],
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stamp",
+     "at": 1.45,
+     "text": "NO DEATH PENALTY"
+    },
+    {
+     "type": "funfact",
+     "at": 2.03,
+     "text": "Not every family agreed: / some victims' families publicly / opposed the plea deal."
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "K_deathpenalty",
+     "type": "established",
+     "claim_text": "In exchange for the plea, prosecutors agreed not to seek the death penalty, and he waived his right to appeal.",
+     "urls": [
+      "https://kvia.com/news/2025/06/30/bryan-kohberger-agrees-to-plea-deal-to-avoid-death-penalty-in-idaho-student-killings/",
+      "https://www.ksl.com/article/51338138/a-plea-deal-is-set-to-keep-bryan-kohberger-locked-up-for-life-a-victims-family-is-furious",
+      "https://san.com/cc/kohberger-sentenced-to-four-consecutive-life-sentences-in-idaho-killings/",
+      "https://katv.com/news/nation-world/kohberger-expected-to-plead-guilty-to-quadruple-murders-at-plea-hearing"
+     ]
+    },
+    {
+     "claim": "K_families",
+     "type": "established",
+     "claim_text": "FUN FACT: some victims' families publicly opposed the plea deal; the Goncalves family said they learned of it by email and Kaylee's father called it 'anything but justice'. (On screen the families are not named or shown.)",
+     "urls": [
+      "https://www.ksl.com/article/51338138/a-plea-deal-is-set-to-keep-bryan-kohberger-locked-up-for-life-a-victims-family-is-furious",
+      "https://www.fox13seattle.com/news/kohberger-plea-deal-victim-families"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "stamp",
+      "at": 55.604,
+      "gain": 0.45,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "sparkle",
+      "at": 56.031,
+      "gain": 0.8,
+      "word": [
+       0,
+       5
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_deal",
+    "set_code": "renderer/sets.js#press_room",
+    "characters": [
+     "characters/figures/examiner.json",
+     "characters/figures/official.json",
+     "characters/figures/press_operator.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s13_sentence",
+   "scene_type": "kb17_sentence",
+   "start": 58.875,
+   "duration": 8.25,
+   "narration": [
+    "He got four consecutive life sentences, plus ten years.",
+    "In 2026, he reportedly asked to withdraw his plea."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 59.125,
+     "end": 62.26,
+     "words": [
+      {
+       "w": "He",
+       "start": 59.171,
+       "end": 59.264
+      },
+      {
+       "w": "got",
+       "start": 59.299,
+       "end": 59.485
+      },
+      {
+       "w": "four",
+       "start": 59.52,
+       "end": 59.729
+      },
+      {
+       "w": "consecutive",
+       "start": 59.787,
+       "end": 60.344
+      },
+      {
+       "w": "life",
+       "start": 60.379,
+       "end": 60.576
+      },
+      {
+       "w": "sentences,",
+       "start": 60.623,
+       "end": 61.168
+      },
+      {
+       "w": "plus",
+       "start": 61.296,
+       "end": 61.551
+      },
+      {
+       "w": "ten",
+       "start": 61.598,
+       "end": 61.784
+      },
+      {
+       "w": "years.",
+       "start": 61.819,
+       "end": 62.155
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 63.06,
+     "end": 66.403,
+     "words": [
+      {
+       "w": "In",
+       "start": 63.13,
+       "end": 63.188
+      },
+      {
+       "w": "2026,",
+       "start": 63.211,
+       "end": 64.117
+      },
+      {
+       "w": "he",
+       "start": 64.349,
+       "end": 64.511
+      },
+      {
+       "w": "reportedly",
+       "start": 64.546,
+       "end": 65.08
+      },
+      {
+       "w": "asked",
+       "start": 65.161,
+       "end": 65.382
+      },
+      {
+       "w": "to",
+       "start": 65.405,
+       "end": 65.475
+      },
+      {
+       "w": "withdraw",
+       "start": 65.498,
+       "end": 65.835
+      },
+      {
+       "w": "his",
+       "start": 65.893,
+       "end": 65.997
+      },
+      {
+       "w": "plea.",
+       "start": 66.044,
+       "end": 66.311
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (cold grade); judge (silhouette): sit -> gavel -> sit -> sit_read; camera push/pull; overlays: card 'SENTENCED · 23 JULY 2025 / 4 CONSECUTIVE LIFE TERMS / NO PAROLE · + 10 YEARS', stamp 'APPEAL WAIVED', card 'JULY 2026 · AS REPORTED / HE ASKED TO WITHDRAW / HIS PLEA, CLAIMING INNOCENCE / NO RULING FOUND AS OF 12 OCT 2026'.",
+   "shot_size": "wide",
+   "set": "courtroom",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 60,
+     "y": -630,
+     "z": 1.2
+    },
+    "to": {
+     "x": 90,
+     "y": -660,
+     "z": 1.28
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "judge"
+   ],
+   "character_actions": [
+    {
+     "id": "judge",
+     "outfit": "default",
+     "depth": 0.74,
+     "scale": 0.5,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 1.1,
+       "pose": "gavel"
+      },
+      {
+       "at": 1.55,
+       "pose": "sit"
+      },
+      {
+       "at": 4.19,
+       "pose": "sit_read"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 0.15,
+     "text": "SENTENCED · 23 JULY 2025 / 4 CONSECUTIVE LIFE TERMS / NO PAROLE · + 10 YEARS"
+    },
+    {
+     "type": "stamp",
+     "at": 3.29,
+     "text": "APPEAL WAIVED"
+    },
+    {
+     "type": "card",
+     "at": 4.14,
+     "text": "JULY 2026 · AS REPORTED / HE ASKED TO WITHDRAW / HIS PLEA, CLAIMING INNOCENCE / NO RULING FOUND AS OF 12 OCT 2026"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "K_sentence",
+     "type": "established",
+     "claim_text": "On 23 July 2025 Judge Steven Hippler sentenced him to four consecutive life sentences without the possibility of parole, plus 10 years for burglary.",
+     "urls": [
+      "https://san.com/cc/kohberger-sentenced-to-four-consecutive-life-sentences-in-idaho-killings/",
+      "https://www.nbcnews.com/news/us-news/live-blog/bryan-kohberger-idaho-murders-life-sentence-live-updates-rcna219540",
+      "https://cdapress.com/news/2025/jul/23/judge-sentences-bryan-kohberger-to-life-in-prison-for-murdering-four-university-of-idaho-students/",
+      "https://www.cbsnews.com/amp/news/bryan-kohberger-sentence-idaho-murders"
+     ]
+    },
+    {
+     "claim": "K_appeal",
+     "type": "established",
+     "claim_text": "He waived his right to appeal as part of the plea agreement.",
+     "urls": [
+      "https://san.com/cc/kohberger-sentenced-to-four-consecutive-life-sentences-in-idaho-killings/",
+      "https://kvia.com/news/2025/06/30/bryan-kohberger-agrees-to-plea-deal-to-avoid-death-penalty-in-idaho-student-killings/"
+     ]
+    },
+    {
+     "claim": "K_petition",
+     "type": "established",
+     "claim_text": "On 27 July 2026, as reported (citing a New York Times interview), Kohberger filed a post-conviction relief petition seeking to withdraw his guilty plea, claiming innocence. No ruling on it was found as of 12 October 2026 (search extracts only); his convictions and sentence stand unless a court rules otherwise. Narrated as 'reportedly asked to withdraw his plea'; 'claiming innocence' is on the card.",
+     "urls": [
+      "https://www.kctv5.com/2026/07/27/bryan-kohberger-reportedly-files-take-back-his-guilty-plea-idaho-murders/",
+      "https://cdapress.com/news/2026/jul/27/actual-innocence-is-my-truth-bryan-kohberger-now-wants-a-trial-per-nyt-report/",
+      "https://gazette.com/?p=2036376"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "gavel",
+      "at": 60.299,
+      "gain": 0.9,
+      "word": [
+       0,
+       4
+      ]
+     },
+     {
+      "name": "stamp",
+      "at": 62.169,
+      "gain": 0.45,
+      "word": [
+       0,
+       8
+      ]
+     },
+     {
+      "name": "paper",
+      "at": 65.061,
+      "gain": 0.4,
+      "word": [
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_sentence",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/judge.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s14_memory",
+   "scene_type": "kb17_memory",
+   "start": 67.125,
+   "duration": 4.5,
+   "narration": [
+    "He gave no motive. Their families may never know why."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 67.575,
+     "end": 70.21,
+     "words": [
+      {
+       "w": "He",
+       "start": 67.621,
+       "end": 67.761
+      },
+      {
+       "w": "gave",
+       "start": 67.807,
+       "end": 67.947
+      },
+      {
+       "w": "no",
+       "start": 67.981,
+       "end": 68.121
+      },
+      {
+       "w": "motive.",
+       "start": 68.167,
+       "end": 68.55
+      },
+      {
+       "w": "Their",
+       "start": 68.655,
+       "end": 68.771
+      },
+      {
+       "w": "families",
+       "start": 68.829,
+       "end": 69.282
+      },
+      {
+       "w": "may",
+       "start": 69.316,
+       "end": 69.421
+      },
+      {
+       "w": "never",
+       "start": 69.456,
+       "end": 69.63
+      },
+      {
+       "w": "know",
+       "start": 69.676,
+       "end": 69.827
+      },
+      {
+       "w": "why.",
+       "start": 69.851,
+       "end": 70.106
+      }
+     ]
+    }
+   ],
+   "visual_description": "kb17 campus town (dawn grade); camera push/pull; overlays: svg.",
+   "shot_size": "insert/graphic",
+   "set": "kb17_campus_town",
+   "grade": "dawn",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 80,
+     "z": 1.1
+    },
+    "to": {
+     "x": 0,
+     "y": -20,
+     "z": 1
+    },
+    "handheld": 0
+   },
+   "characters": [],
+   "character_actions": [],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC TOWN",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "K_nomotive",
+     "type": "established",
+     "claim_text": "He declined to speak at sentencing ('I respectfully decline') and gave no motive; Judge Hippler said, 'What we don't know, and what we never may know, is why.'",
+     "urls": [
+      "https://abc17news.com/news/2025/07/29/with-no-motive-idaho-killings-leave-everyone-wondering-why/",
+      "https://courthousenews.com/four-life-sentences-in-murders-of-idaho-college-students/",
+      "https://www.idahopress.com/news/local/sociopath-psychopath-murderer-families-address-bryan-kohberger-at-sentencing/article_98c4c5d3-ed09-4426-8124-17d95cd2098c.html",
+      "https://san.com/cc/kohberger-sentenced-to-four-consecutive-life-sentences-in-idaho-killings/"
+     ]
+    },
+    {
+     "claim": "K_names",
+     "type": "established",
+     "claim_text": "The four students: Ethan Chapin, Kaylee Goncalves, Xana Kernodle and Madison Mogen. Named on screen only, on the memorial card.",
+     "urls": [
+      "https://san.com/cc/kohberger-sentenced-to-four-consecutive-life-sentences-in-idaho-killings/",
+      "https://katv.com/news/nation-world/kohberger-expected-to-plead-guilty-to-quadruple-murders-at-plea-hearing",
+      "https://www.idahopress.com/boiseweekly/kohberger-pleads-guilty-to-moscow-murders/article_d1c5fc10-c545-40cd-9ad4-f617941e28fa.html"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 67.125,
+      "gain": 0.45
+     },
+     {
+      "name": "wind",
+      "at": 70.125,
+      "gain": 0.35
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_memory",
+    "set_code": "renderer/sets.js#kb17_campus_town",
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s15_end",
+   "scene_type": "kb17_end",
+   "start": 71.625,
+   "duration": 8.625,
+   "narration": [
+    "DNA, but no name. His family's trash helped name him.",
+    "Which case should we crack next? Tell us in the comments."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 71.875,
+     "end": 74.754,
+     "words": [
+      {
+       "w": "DNA,",
+       "start": 71.91,
+       "end": 72.305
+      },
+      {
+       "w": "but",
+       "start": 72.363,
+       "end": 72.502
+      },
+      {
+       "w": "no",
+       "start": 72.56,
+       "end": 72.664
+      },
+      {
+       "w": "name.",
+       "start": 72.711,
+       "end": 72.99
+      },
+      {
+       "w": "His",
+       "start": 73.106,
+       "end": 73.268
+      },
+      {
+       "w": "family's",
+       "start": 73.291,
+       "end": 73.721
+      },
+      {
+       "w": "trash",
+       "start": 73.756,
+       "end": 74.046
+      },
+      {
+       "w": "helped",
+       "start": 74.069,
+       "end": 74.29
+      },
+      {
+       "w": "name",
+       "start": 74.325,
+       "end": 74.51
+      },
+      {
+       "w": "him.",
+       "start": 74.545,
+       "end": 74.696
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 75.454,
+     "end": 78.113,
+     "words": [
+      {
+       "w": "Which",
+       "start": 75.477,
+       "end": 75.745
+      },
+      {
+       "w": "case",
+       "start": 75.745,
+       "end": 75.96
+      },
+      {
+       "w": "should",
+       "start": 75.96,
+       "end": 76.281
+      },
+      {
+       "w": "we",
+       "start": 76.281,
+       "end": 76.388
+      },
+      {
+       "w": "crack",
+       "start": 76.388,
+       "end": 76.657
+      },
+      {
+       "w": "next?",
+       "start": 76.657,
+       "end": 76.925
+      },
+      {
+       "w": "Tell",
+       "start": 76.925,
+       "end": 77.139
+      },
+      {
+       "w": "us",
+       "start": 77.139,
+       "end": 77.246
+      },
+      {
+       "w": "in",
+       "start": 77.246,
+       "end": 77.354
+      },
+      {
+       "w": "the",
+       "start": 77.354,
+       "end": 77.514
+      },
+      {
+       "w": "comments.",
+       "start": 77.514,
+       "end": 77.997
+      }
+     ]
+    }
+   ],
+   "visual_description": "kb17 curbside (dawn grade); camera push/pull, handheld; overlays: svg, nextcase 'WHAT CLUE SHOULD WE COVER NEXT? / Comment below'.",
+   "shot_size": "insert/graphic",
+   "set": "kb17_curbside",
+   "grade": "dawn",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 60,
+     "z": 1.07
+    },
+    "to": {
+     "x": 0,
+     "y": 40,
+     "z": 1
+    },
+    "handheld": 0.8
+   },
+   "characters": [],
+   "character_actions": [],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0
+    },
+    {
+     "type": "nextcase",
+     "at": 3.73,
+     "text": "WHAT CLUE SHOULD WE COVER NEXT? / Comment below"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT THE REAL STREET",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "K_trash",
+     "type": "established",
+     "claim_text": "Per the affidavit and later filings, on 27 December 2022 investigators in Pennsylvania took trash from the curb outside his parents' home in the Poconos and sent it to the Idaho State Lab. His parents are not named or shown; they were never accused of anything.",
+     "urls": [
+      "https://www.nbcnews.com/news/crime-courts/genetic-genealogy-used-link-bryan-kohberger-suspect-idaho-slayings-cri-rcna90344",
+      "https://www.today.com/today/amp/rcna64469",
+      "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406",
+      "https://www.inquirer.com/news/pennsylvania/bryan-kohberger-idaho-affidavit-court-20230105.html"
+     ]
+    },
+    {
+     "claim": "K_paternity",
+     "type": "established",
+     "claim_text": "Per the affidavit, the lab found that DNA from the trash came from the biological father of the person whose DNA was on the sheath snap: 'at least 99.9998% of the male population would be expected to be excluded' as that person's father. Allegation from the affidavit.",
+     "urls": [
+      "https://www.today.com/today/amp/rcna64469",
+      "https://www.nbcnews.com/news/us-news/dna-left-knife-sheath-used-link-bryan-kohberger-idaho-slayings-court-d-rcna64406",
+      "https://digital-release.newsnationnow.com/crime/idaho-college-killings/dna-kohberger-arrest/",
+      "https://www.nbcnews.com/news/crime-courts/genetic-genealogy-used-link-bryan-kohberger-suspect-idaho-slayings-cri-rcna90344"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "wind",
+      "at": 71.625,
+      "gain": 0.4
+     },
+     {
+      "name": "thud",
+      "at": 73.806,
+      "gain": 0.4,
+      "word": [
+       0,
+       6
+      ]
+     },
+     {
+      "name": "whoosh",
+      "at": 75.277,
+      "gain": 0.45,
+      "word": [
+       1,
+       0
+      ]
+     },
+     {
+      "name": "ping",
+      "at": 76.657,
+      "gain": 0.45,
+      "word": [
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv17-kohberger.js#kb17_end",
+    "set_code": "renderer/sets.js#kb17_curbside",
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}

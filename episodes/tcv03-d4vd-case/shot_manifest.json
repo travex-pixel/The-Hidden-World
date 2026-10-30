@@ -1,0 +1,2444 @@
+{
+ "episode": "tcv03-d4vd-case",
+ "title": "The D4vd Case: The Evidence, the Allegations and What Happens Next",
+ "duration": 79.091,
+ "slideshow_risk": {
+  "shots": 12,
+  "composed_shots": 11,
+  "shots_with_characters": 10,
+  "character_shot_share": 0.91,
+  "distinct_sets": 6,
+  "max_set_share": 0.27,
+  "shot_sizes": {
+   "medium-wide": 2,
+   "medium": 6,
+   "map/graphic": 1,
+   "insert/graphic": 1,
+   "wide": 2
+  },
+  "max_shot_size_share": 0.5,
+  "ok": true
+ },
+ "production_status": {
+  "series_manifest": "series/true-crime-cinematic/production_manifest.json",
+  "video": "true_crime_d4vd_case.mp4"
+ },
+ "shots": [
+  {
+   "id": "s01_yard",
+   "scene_type": "tcv3_yard",
+   "start": 0.0,
+   "duration": 4.545,
+   "narration": [
+    "A Hollywood tow yard reported a smell coming from an impounded Tesla."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 0.25,
+     "end": 3.896,
+     "words": [
+      {
+       "w": "A",
+       "start": 0.308,
+       "end": 0.366
+      },
+      {
+       "w": "Hollywood",
+       "start": 0.401,
+       "end": 0.865
+      },
+      {
+       "w": "tow",
+       "start": 0.912,
+       "end": 1.063
+      },
+      {
+       "w": "yard",
+       "start": 1.109,
+       "end": 1.341
+      },
+      {
+       "w": "reported",
+       "start": 1.376,
+       "end": 1.817
+      },
+      {
+       "w": "a",
+       "start": 1.945,
+       "end": 1.991
+      },
+      {
+       "w": "smell",
+       "start": 2.038,
+       "end": 2.293
+      },
+      {
+       "w": "coming",
+       "start": 2.363,
+       "end": 2.595
+      },
+      {
+       "w": "from",
+       "start": 2.63,
+       "end": 2.793
+      },
+      {
+       "w": "an",
+       "start": 2.816,
+       "end": 2.874
+      },
+      {
+       "w": "impounded",
+       "start": 2.897,
+       "end": 3.315
+      },
+      {
+       "w": "Tesla.",
+       "start": 3.361,
+       "end": 3.791
+      }
+     ]
+    }
+   ],
+   "visual_description": "tow yard night (night grade); searcher_b (silhouette): stand -> hand_to_face -> point (walks); camera push/pull, handheld; overlays: label 'HOLLYWOOD · SEPTEMBER 2025'.",
+   "shot_size": "medium-wide",
+   "set": "tow_yard_night",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": -60,
+     "y": -20,
+     "z": 1.14
+    },
+    "to": {
+     "x": 30,
+     "y": 0,
+     "z": 1.02
+    },
+    "handheld": 4
+   },
+   "characters": [
+    "searcher_b"
+   ],
+   "character_actions": [
+    {
+     "id": "searcher_b",
+     "outfit": "default",
+     "depth": 1.06,
+     "scale": 0.62,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.04,
+       "pose": "hand_to_face"
+      },
+      {
+       "at": 3.24,
+       "pose": "point"
+      }
+     ],
+     "walk": {
+      "from": 80,
+      "to": 470,
+      "at": 0.1,
+      "dur": 1.8380000000000003
+     },
+     "silhouette": "warm"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.25,
+     "text": "HOLLYWOOD · SEPTEMBER 2025"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "cut",
+   "sources": [
+    {
+     "claim": "D_found",
+     "type": "established",
+     "claim_text": "On 8 Sept 2025, after tow-yard workers reported an odour, police found human remains in the front trunk of an impounded Tesla at a Hollywood tow yard; the car was registered to David Anthony Burke, the singer known as D4vd.",
+     "urls": [
+      "https://abc7news.com/post/human-remains-found-inside-impounded-tesla-hollywood-tow-yard-los-angeles-lapd-says/17775603/",
+      "https://www.foxla.com/news/body-found-tesla-singer-d4vd-identified"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "cold",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rain",
+      "at": 0.0,
+      "gain": 0.4
+     },
+     {
+      "name": "rain",
+      "at": 3.5,
+      "gain": 0.4
+     },
+     {
+      "name": "rain",
+      "at": 7.0,
+      "gain": 0.4
+     },
+     {
+      "name": "rain",
+      "at": 10.5,
+      "gain": 0.4
+     },
+     {
+      "name": "sub",
+      "at": 0.0,
+      "gain": 0.6
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_yard",
+    "set_code": "renderer/sets.js#tow_yard_night",
+    "characters": [
+     "characters/figures/searcher_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s02_trunk",
+   "scene_type": "tcv3_trunk",
+   "start": 4.545,
+   "duration": 5.455,
+   "narration": [
+    "Inside its front trunk were human remains.",
+    "The car was registered to the singer D4vd."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 4.795,
+     "end": 6.85,
+     "words": [
+      {
+       "w": "Inside",
+       "start": 4.853,
+       "end": 5.19
+      },
+      {
+       "w": "its",
+       "start": 5.213,
+       "end": 5.317
+      },
+      {
+       "w": "front",
+       "start": 5.352,
+       "end": 5.526
+      },
+      {
+       "w": "trunk",
+       "start": 5.561,
+       "end": 5.782
+      },
+      {
+       "w": "were",
+       "start": 5.805,
+       "end": 5.875
+      },
+      {
+       "w": "human",
+       "start": 5.898,
+       "end": 6.142
+      },
+      {
+       "w": "remains.",
+       "start": 6.188,
+       "end": 6.734
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 7.6,
+     "end": 9.632,
+     "words": [
+      {
+       "w": "The",
+       "start": 7.635,
+       "end": 7.693
+      },
+      {
+       "w": "car",
+       "start": 7.786,
+       "end": 7.972
+      },
+      {
+       "w": "was",
+       "start": 7.995,
+       "end": 8.122
+      },
+      {
+       "w": "registered",
+       "start": 8.146,
+       "end": 8.622
+      },
+      {
+       "w": "to",
+       "start": 8.668,
+       "end": 8.726
+      },
+      {
+       "w": "the",
+       "start": 8.749,
+       "end": 8.819
+      },
+      {
+       "w": "singer",
+       "start": 8.889,
+       "end": 9.133
+      },
+      {
+       "w": "D4vd.",
+       "start": 9.179,
+       "end": 9.574
+      }
+     ]
+    }
+   ],
+   "visual_description": "tow yard night (night grade); detective (silhouette): examine -> stand; agent_b (silhouette): arms_crossed -> read; camera push/pull; overlays: card 'VEHICLE REGISTERED TO: / DAVID ANTHONY BURKE / THE SINGER D4VD'.",
+   "shot_size": "medium",
+   "set": "tow_yard_night",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 40,
+     "y": 20,
+     "z": 1.05
+    },
+    "to": {
+     "x": 80,
+     "y": 40,
+     "z": 1.18
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "agent_b",
+    "detective"
+   ],
+   "character_actions": [
+    {
+     "id": "detective",
+     "outfit": "default",
+     "depth": 1.06,
+     "scale": 0.85,
+     "start_pose": "examine",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 3.05,
+       "pose": "stand"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "agent_b",
+     "outfit": "default",
+     "depth": 1.06,
+     "scale": 0.82,
+     "start_pose": "arms_crossed",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 3.6,
+       "pose": "read"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 3.5,
+     "text": "VEHICLE REGISTERED TO: / DAVID ANTHONY BURKE / THE SINGER D4VD"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "D_found",
+     "type": "established",
+     "claim_text": "On 8 Sept 2025, after tow-yard workers reported an odour, police found human remains in the front trunk of an impounded Tesla at a Hollywood tow yard; the car was registered to David Anthony Burke, the singer known as D4vd.",
+     "urls": [
+      "https://abc7news.com/post/human-remains-found-inside-impounded-tesla-hollywood-tow-yard-los-angeles-lapd-says/17775603/",
+      "https://www.foxla.com/news/body-found-tesla-singer-d4vd-identified"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "cold",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rain",
+      "at": 4.545,
+      "gain": 0.3
+     },
+     {
+      "name": "rain",
+      "at": 8.045,
+      "gain": 0.3
+     },
+     {
+      "name": "rain",
+      "at": 11.545,
+      "gain": 0.3
+     },
+     {
+      "name": "rain",
+      "at": 15.045,
+      "gain": 0.3
+     },
+     {
+      "name": "hit",
+      "at": 9.129,
+      "gain": 0.6,
+      "word": [
+       1,
+       7
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_trunk",
+    "set_code": "renderer/sets.js#tow_yard_night",
+    "characters": [
+     "characters/figures/agent_b.json",
+     "characters/figures/detective.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s03_map",
+   "scene_type": "case_map",
+   "start": 10.0,
+   "duration": 5.455,
+   "narration": [
+    "The remains were identified as Celeste Rivas Hernandez, of Lake Elsinore, California."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 10.25,
+     "end": 14.929,
+     "words": [
+      {
+       "w": "The",
+       "start": 10.273,
+       "end": 10.331
+      },
+      {
+       "w": "remains",
+       "start": 10.354,
+       "end": 10.668
+      },
+      {
+       "w": "were",
+       "start": 10.691,
+       "end": 10.784
+      },
+      {
+       "w": "identified",
+       "start": 10.807,
+       "end": 11.399
+      },
+      {
+       "w": "as",
+       "start": 11.492,
+       "end": 11.562
+      },
+      {
+       "w": "Celeste",
+       "start": 11.608,
+       "end": 11.968
+      },
+      {
+       "w": "Rivas",
+       "start": 12.003,
+       "end": 12.293
+      },
+      {
+       "w": "Hernandez,",
+       "start": 12.34,
+       "end": 12.955
+      },
+      {
+       "w": "of",
+       "start": 13.292,
+       "end": 13.396
+      },
+      {
+       "w": "Lake",
+       "start": 13.42,
+       "end": 13.582
+      },
+      {
+       "w": "Elsinore,",
+       "start": 13.617,
+       "end": 14.07
+      },
+      {
+       "w": "California.",
+       "start": 14.197,
+       "end": 14.848
+      }
+     ]
+    }
+   ],
+   "visual_description": "Animated map / graphic (Case Files kit).",
+   "shot_size": "map/graphic",
+   "set": null,
+   "grade": null,
+   "camera": null,
+   "characters": [],
+   "character_actions": [],
+   "overlays": [],
+   "reconstruction_tag": null,
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "D_identified",
+     "type": "established",
+     "claim_text": "The LA County Medical Examiner identified the remains (about 16-17 Sept 2025) as Celeste Rivas Hernandez of Lake Elsinore, California. No charges followed until April 2026.",
+     "urls": [
+      "https://www.foxla.com/news/body-found-tesla-singer-d4vd-identified",
+      "https://abc7news.com/post/human-remains-found-inside-impounded-tesla-hollywood-tow-yard-los-angeles-lapd-says/17775603/",
+      "https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "unease",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "whoosh",
+      "at": 10.0,
+      "gain": 0.6
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/doc.js#case_map",
+    "set_code": null,
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s04_board",
+   "scene_type": "tcv3_board",
+   "start": 15.455,
+   "duration": 8.181,
+   "narration": [
+    "Months passed with no charges.",
+    "Then, in April 2026, police arrested the singer, David Anthony Burke."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 15.705,
+     "end": 17.377,
+     "words": [
+      {
+       "w": "Months",
+       "start": 15.775,
+       "end": 15.96
+      },
+      {
+       "w": "passed",
+       "start": 16.007,
+       "end": 16.402
+      },
+      {
+       "w": "with",
+       "start": 16.425,
+       "end": 16.494
+      },
+      {
+       "w": "no",
+       "start": 16.529,
+       "end": 16.669
+      },
+      {
+       "w": "charges.",
+       "start": 16.703,
+       "end": 17.249
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 17.877,
+     "end": 22.474,
+     "words": [
+      {
+       "w": "Then,",
+       "start": 17.9,
+       "end": 18.121
+      },
+      {
+       "w": "in",
+       "start": 18.26,
+       "end": 18.365
+      },
+      {
+       "w": "April",
+       "start": 18.399,
+       "end": 18.69
+      },
+      {
+       "w": "2026,",
+       "start": 18.748,
+       "end": 19.7
+      },
+      {
+       "w": "police",
+       "start": 19.781,
+       "end": 20.106
+      },
+      {
+       "w": "arrested",
+       "start": 20.141,
+       "end": 20.524
+      },
+      {
+       "w": "the",
+       "start": 20.547,
+       "end": 20.617
+      },
+      {
+       "w": "singer,",
+       "start": 20.675,
+       "end": 20.954
+      },
+      {
+       "w": "David",
+       "start": 21.418,
+       "end": 21.685
+      },
+      {
+       "w": "Anthony",
+       "start": 21.743,
+       "end": 22.068
+      },
+      {
+       "w": "Burke.",
+       "start": 22.149,
+       "end": 22.428
+      }
+     ]
+    }
+   ],
+   "visual_description": "task force (cold grade); detective (silhouette): arms_crossed -> point_up -> stand; camera push/pull, handheld.",
+   "shot_size": "medium",
+   "set": "task_force",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -40,
+     "z": 1
+    },
+    "to": {
+     "x": 20,
+     "y": -60,
+     "z": 1.07
+    },
+    "handheld": 2
+   },
+   "characters": [
+    "detective"
+   ],
+   "character_actions": [
+    {
+     "id": "detective",
+     "outfit": "default",
+     "depth": 1.1,
+     "scale": 1.02,
+     "start_pose": "arms_crossed",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 2.74,
+       "pose": "point_up"
+      },
+      {
+       "at": 5.49,
+       "pose": "stand"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "D_identified",
+     "type": "established",
+     "claim_text": "The LA County Medical Examiner identified the remains (about 16-17 Sept 2025) as Celeste Rivas Hernandez of Lake Elsinore, California. No charges followed until April 2026.",
+     "urls": [
+      "https://www.foxla.com/news/body-found-tesla-singer-d4vd-identified",
+      "https://abc7news.com/post/human-remains-found-inside-impounded-tesla-hollywood-tow-yard-los-angeles-lapd-says/17775603/",
+      "https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl"
+     ]
+    },
+    {
+     "claim": "D_arrest",
+     "type": "established",
+     "claim_text": "LAPD arrested Burke on 16 April 2026 and held him without bail on suspicion of murder.",
+     "urls": [
+      "https://www.kvcr.org/news/npr-top-stories/2026-04-16/d4vd-singer-david-arrested-tesla",
+      "https://www.bostonglobe.com/2026/04/16/arts/david-burke-arrested-los-angeles/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "unease",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 15.655,
+      "gain": 0.6
+     },
+     {
+      "name": "paper",
+      "at": 19.681,
+      "gain": 0.6,
+      "word": [
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_board",
+    "set_code": "renderer/sets.js#task_force",
+    "characters": [
+     "characters/figures/detective.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s05_charges",
+   "scene_type": "tcv3_charges",
+   "start": 23.636,
+   "duration": 10.0,
+   "narration": [
+    "He is charged with murder, with special circumstances,",
+    "continuous sexual abuse of a child under fourteen,",
+    "and unlawful mutilation of human remains."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 23.886,
+     "end": 26.638,
+     "words": [
+      {
+       "w": "He",
+       "start": 23.909,
+       "end": 24.072
+      },
+      {
+       "w": "is",
+       "start": 24.095,
+       "end": 24.165
+      },
+      {
+       "w": "charged",
+       "start": 24.188,
+       "end": 24.536
+      },
+      {
+       "w": "with",
+       "start": 24.559,
+       "end": 24.652
+      },
+      {
+       "w": "murder,",
+       "start": 24.699,
+       "end": 25.001
+      },
+      {
+       "w": "with",
+       "start": 25.117,
+       "end": 25.21
+      },
+      {
+       "w": "special",
+       "start": 25.256,
+       "end": 25.604
+      },
+      {
+       "w": "circumstances,",
+       "start": 25.651,
+       "end": 26.533
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 27.038,
+     "end": 29.986,
+     "words": [
+      {
+       "w": "continuous",
+       "start": 27.084,
+       "end": 27.743
+      },
+      {
+       "w": "sexual",
+       "start": 27.743,
+       "end": 28.138
+      },
+      {
+       "w": "abuse",
+       "start": 28.138,
+       "end": 28.468
+      },
+      {
+       "w": "of",
+       "start": 28.468,
+       "end": 28.599
+      },
+      {
+       "w": "a",
+       "start": 28.599,
+       "end": 28.665
+      },
+      {
+       "w": "child",
+       "start": 28.665,
+       "end": 28.995
+      },
+      {
+       "w": "under",
+       "start": 28.995,
+       "end": 29.324
+      },
+      {
+       "w": "fourteen,",
+       "start": 29.324,
+       "end": 29.917
+      }
+     ]
+    },
+    {
+     "line": 2,
+     "start": 30.386,
+     "end": 32.778,
+     "words": [
+      {
+       "w": "and",
+       "start": 30.409,
+       "end": 30.56
+      },
+      {
+       "w": "unlawful",
+       "start": 30.676,
+       "end": 31.106
+      },
+      {
+       "w": "mutilation",
+       "start": 31.129,
+       "end": 31.686
+      },
+      {
+       "w": "of",
+       "start": 31.721,
+       "end": 31.768
+      },
+      {
+       "w": "human",
+       "start": 31.802,
+       "end": 32.069
+      },
+      {
+       "w": "remains.",
+       "start": 32.093,
+       "end": 32.685
+      }
+     ]
+    }
+   ],
+   "visual_description": "press room (cold grade); agent_a (silhouette): stand -> present -> hands_together -> present; keyed camera moves, handheld; overlays: card 'CHARGED · 20 APRIL 2026 / MURDER + SPECIAL CIRCUMSTANCES / CONTINUOUS SEXUAL ABUSE OF A CHILD UNDER 14 / UNLAWFUL MUTILATION OF HUMAN REMAINS / ALLEGATIONS · HE HAS PLEADED NOT GUILTY'.",
+   "shot_size": "medium",
+   "set": "press_room",
+   "grade": "cold",
+   "camera": {
+    "keys": 3,
+    "handheld": 2
+   },
+   "characters": [
+    "agent_a"
+   ],
+   "character_actions": [
+    {
+     "id": "agent_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.3,
+       "pose": "present"
+      },
+      {
+       "at": 3.4,
+       "pose": "hands_together"
+      },
+      {
+       "at": 6.75,
+       "pose": "present"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "card",
+     "at": 0.2,
+     "text": "CHARGED · 20 APRIL 2026 / MURDER + SPECIAL CIRCUMSTANCES / CONTINUOUS SEXUAL ABUSE OF A CHILD UNDER 14 / UNLAWFUL MUTILATION OF HUMAN REMAINS / ALLEGATIONS · HE HAS PLEADED NOT GUILTY"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "D_charges",
+     "type": "established",
+     "claim_text": "On 20 April 2026 the DA charged Burke with murder with special-circumstance allegations (lying in wait, financial gain, killing a witness), continuous sexual abuse of a child under 14, and unlawful mutilation of human remains. These are allegations.",
+     "urls": [
+      "https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl",
+      "https://abcnews.com/US/charges-expected-filed-monday-d4vd-alleged-murder-teen/story?id=132205678",
+      "https://deadline.com/2026/04/d4vd-plea-murder-charges-1236866545/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "click",
+      "at": 23.736,
+      "gain": 0.5
+     },
+     {
+      "name": "click",
+      "at": 25.236,
+      "gain": 0.4
+     },
+     {
+      "name": "click",
+      "at": 27.036,
+      "gain": 0.4
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_charges",
+    "set_code": "renderer/sets.js#press_room",
+    "characters": [
+     "characters/figures/agent_a.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s06_alleged",
+   "scene_type": "tcv3_alleged",
+   "start": 33.636,
+   "duration": 9.091,
+   "narration": [
+    "Prosecutors allege Celeste went to his home on April 23rd, 2025, aged fourteen,",
+    "and was never seen alive again."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 33.886,
+     "end": 39.795,
+     "words": [
+      {
+       "w": "Prosecutors",
+       "start": 33.921,
+       "end": 34.571
+      },
+      {
+       "w": "allege",
+       "start": 34.617,
+       "end": 34.931
+      },
+      {
+       "w": "Celeste",
+       "start": 34.954,
+       "end": 35.326
+      },
+      {
+       "w": "went",
+       "start": 35.349,
+       "end": 35.488
+      },
+      {
+       "w": "to",
+       "start": 35.535,
+       "end": 35.604
+      },
+      {
+       "w": "his",
+       "start": 35.627,
+       "end": 35.709
+      },
+      {
+       "w": "home",
+       "start": 35.744,
+       "end": 36.057
+      },
+      {
+       "w": "on",
+       "start": 36.185,
+       "end": 36.289
+      },
+      {
+       "w": "April",
+       "start": 36.336,
+       "end": 36.58
+      },
+      {
+       "w": "23rd,",
+       "start": 36.638,
+       "end": 37.311
+      },
+      {
+       "w": "2025,",
+       "start": 37.787,
+       "end": 38.774
+      },
+      {
+       "w": "aged",
+       "start": 38.925,
+       "end": 39.169
+      },
+      {
+       "w": "fourteen,",
+       "start": 39.192,
+       "end": 39.714
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 40.245,
+     "end": 41.732,
+     "words": [
+      {
+       "w": "and",
+       "start": 40.291,
+       "end": 40.373
+      },
+      {
+       "w": "was",
+       "start": 40.408,
+       "end": 40.512
+      },
+      {
+       "w": "never",
+       "start": 40.547,
+       "end": 40.756
+      },
+      {
+       "w": "seen",
+       "start": 40.814,
+       "end": 41.0
+      },
+      {
+       "w": "alive",
+       "start": 41.023,
+       "end": 41.313
+      },
+      {
+       "w": "again.",
+       "start": 41.36,
+       "end": 41.673
+      }
+     ]
+    }
+   ],
+   "visual_description": "hills rain (night grade); camera push/pull, handheld; overlays: svg.",
+   "shot_size": "insert/graphic",
+   "set": "hills_rain",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": -260,
+     "y": 120,
+     "z": 0.96
+    },
+    "to": {
+     "x": 150,
+     "y": -40,
+     "z": 1.5
+    },
+    "handheld": 2
+   },
+   "characters": [],
+   "character_actions": [],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0.2
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC HOUSE, NOT THE REAL HOME",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "D_alleged",
+     "type": "established",
+     "claim_text": "Prosecutors allege Celeste went to Burke's Hollywood Hills home on 23 April 2025 at his invitation, aged 14, and was not seen alive after that date. This is the prosecution's allegation, not a finding.",
+     "urls": [
+      "https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl",
+      "https://abcnews.com/US/charges-expected-filed-monday-d4vd-alleged-murder-teen/story?id=132205678",
+      "https://www.newsnationnow.com/jesse-weber-live/d4vd-murder-celeste-nathan-hochman/amp/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rain",
+      "at": 33.636,
+      "gain": 0.35
+     },
+     {
+      "name": "rain",
+      "at": 37.136,
+      "gain": 0.35
+     },
+     {
+      "name": "rain",
+      "at": 40.636,
+      "gain": 0.35
+     },
+     {
+      "name": "sub",
+      "at": 41.023,
+      "gain": 0.5,
+      "word": [
+       1,
+       4
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_alleged",
+    "set_code": "renderer/sets.js#hills_rain",
+    "characters": []
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s07_defence",
+   "scene_type": "tcv3_defence",
+   "start": 42.727,
+   "duration": 5.455,
+   "narration": [
+    "He has pleaded not guilty.",
+    "His lawyers said the evidence would show he did not murder her."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 42.977,
+     "end": 44.266,
+     "words": [
+      {
+       "w": "He",
+       "start": 43.012,
+       "end": 43.105
+      },
+      {
+       "w": "has",
+       "start": 43.14,
+       "end": 43.244
+      },
+      {
+       "w": "pleaded",
+       "start": 43.29,
+       "end": 43.546
+      },
+      {
+       "w": "not",
+       "start": 43.569,
+       "end": 43.755
+      },
+      {
+       "w": "guilty.",
+       "start": 43.778,
+       "end": 44.173
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 44.766,
+     "end": 47.459,
+     "words": [
+      {
+       "w": "His",
+       "start": 44.812,
+       "end": 44.961
+      },
+      {
+       "w": "lawyers",
+       "start": 44.961,
+       "end": 45.308
+      },
+      {
+       "w": "said",
+       "start": 45.308,
+       "end": 45.506
+      },
+      {
+       "w": "the",
+       "start": 45.506,
+       "end": 45.655
+      },
+      {
+       "w": "evidence",
+       "start": 45.655,
+       "end": 46.051
+      },
+      {
+       "w": "would",
+       "start": 46.051,
+       "end": 46.299
+      },
+      {
+       "w": "show",
+       "start": 46.299,
+       "end": 46.498
+      },
+      {
+       "w": "he",
+       "start": 46.498,
+       "end": 46.597
+      },
+      {
+       "w": "did",
+       "start": 46.597,
+       "end": 46.746
+      },
+      {
+       "w": "not",
+       "start": 46.746,
+       "end": 46.894
+      },
+      {
+       "w": "murder",
+       "start": 46.894,
+       "end": 47.192
+      },
+      {
+       "w": "her.",
+       "start": 47.192,
+       "end": 47.39
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (cold grade); press_operator (silhouette): hands_together; agent_a (silhouette): stand -> present; official (silhouette): hands_together; camera push/pull; overlays: label 'PLEA: NOT GUILTY', card 'DEFENCE (FORMER COUNSEL) · APRIL 2026 / THE EVIDENCE WILL SHOW HE / 'DID NOT MURDER CELESTE / RIVAS HERNANDEZ''.",
+   "shot_size": "medium",
+   "set": "courtroom",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": -20,
+     "y": 20,
+     "z": 1.04
+    },
+    "to": {
+     "x": 20,
+     "y": 40,
+     "z": 1.12
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "agent_a",
+    "official",
+    "press_operator"
+   ],
+   "character_actions": [
+    {
+     "id": "press_operator",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1,
+     "start_pose": "hands_together",
+     "start_expr": "neutral",
+     "actions": [],
+     "silhouette": "cool"
+    },
+    {
+     "id": "agent_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.98,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 2.04,
+       "pose": "present"
+      }
+     ],
+     "silhouette": "cool"
+    },
+    {
+     "id": "official",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.95,
+     "start_pose": "hands_together",
+     "start_expr": "neutral",
+     "actions": [],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.64,
+     "text": "PLEA: NOT GUILTY"
+    },
+    {
+     "type": "card",
+     "at": 2.19,
+     "text": "DEFENCE (FORMER COUNSEL) · APRIL 2026 / THE EVIDENCE WILL SHOW HE / 'DID NOT MURDER CELESTE / RIVAS HERNANDEZ'"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "D_plea",
+     "type": "established",
+     "claim_text": "Burke pleaded not guilty at his arraignment on 20 April 2026, and again on 31 August 2026.",
+     "urls": [
+      "https://deadline.com/2026/04/d4vd-plea-murder-charges-1236866545/",
+      "https://www.pbs.org/newshour/arts/singer-d4vd-loses-prominent-lawyers-defending-him-in-killing-of-14-year-old",
+      "https://www.nbclosangeles.com/news/local/d4vd-celeste-rivas-murder-arraignment/3935639/"
+     ]
+    },
+    {
+     "claim": "D_defence",
+     "type": "established",
+     "claim_text": "His then lawyers said the evidence would show he did not murder Celeste Rivas Hernandez and vowed to defend his innocence.",
+     "urls": [
+      "https://media.interaksyon.com/trends-spotlights/2026/04/23/312431/musician-d4vd-alleged-teen-victim-died-multiple-penetrating-injuries/",
+      "https://q107.com/news/11811958/family-celeste-rivas-hernandez-d4vd-murder-charge/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "step",
+      "at": 42.927,
+      "gain": 0.4
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_defence",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/agent_a.json",
+     "characters/figures/official.json",
+     "characters/figures/press_operator.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s08_hearing",
+   "scene_type": "tcv3_hearing",
+   "start": 48.182,
+   "duration": 6.363,
+   "narration": [
+    "In July, a judge ruled there was enough evidence for a trial, on every charge.",
+    "That is not a verdict."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 48.432,
+     "end": 52.426,
+     "words": [
+      {
+       "w": "In",
+       "start": 48.502,
+       "end": 48.623
+      },
+      {
+       "w": "July,",
+       "start": 48.623,
+       "end": 48.926
+      },
+      {
+       "w": "a",
+       "start": 48.926,
+       "end": 48.987
+      },
+      {
+       "w": "judge",
+       "start": 48.987,
+       "end": 49.29
+      },
+      {
+       "w": "ruled",
+       "start": 49.29,
+       "end": 49.592
+      },
+      {
+       "w": "there",
+       "start": 49.592,
+       "end": 49.895
+      },
+      {
+       "w": "was",
+       "start": 49.895,
+       "end": 50.077
+      },
+      {
+       "w": "enough",
+       "start": 50.077,
+       "end": 50.441
+      },
+      {
+       "w": "evidence",
+       "start": 50.441,
+       "end": 50.925
+      },
+      {
+       "w": "for",
+       "start": 50.925,
+       "end": 51.107
+      },
+      {
+       "w": "a",
+       "start": 51.107,
+       "end": 51.167
+      },
+      {
+       "w": "trial,",
+       "start": 51.167,
+       "end": 51.531
+      },
+      {
+       "w": "on",
+       "start": 51.531,
+       "end": 51.652
+      },
+      {
+       "w": "every",
+       "start": 51.652,
+       "end": 51.955
+      },
+      {
+       "w": "charge.",
+       "start": 51.955,
+       "end": 52.379
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 53.076,
+     "end": 54.156,
+     "words": [
+      {
+       "w": "That",
+       "start": 53.122,
+       "end": 53.336
+      },
+      {
+       "w": "is",
+       "start": 53.336,
+       "end": 53.443
+      },
+      {
+       "w": "not",
+       "start": 53.443,
+       "end": 53.604
+      },
+      {
+       "w": "a",
+       "start": 53.604,
+       "end": 53.658
+      },
+      {
+       "w": "verdict.",
+       "start": 53.658,
+       "end": 54.086
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (cold grade); official (silhouette): sit -> gavel -> sit; camera push/pull; overlays: label 'PRELIMINARY HEARING', stamp 'HELD TO ANSWER', card 'A RULING TO GO TO TRIAL / IS NOT A VERDICT'.",
+   "shot_size": "wide",
+   "set": "courtroom",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 60,
+     "y": -260,
+     "z": 1.36
+    },
+    "to": {
+     "x": 80,
+     "y": -300,
+     "z": 1.46
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "official"
+   ],
+   "character_actions": [
+    {
+     "id": "official",
+     "outfit": "default",
+     "depth": 0.74,
+     "scale": 0.5,
+     "start_pose": "sit",
+     "start_expr": "neutral",
+     "actions": [
+      {
+       "at": 0.71,
+       "pose": "gavel"
+      },
+      {
+       "at": 1.16,
+       "pose": "sit"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.2,
+     "text": "PRELIMINARY HEARING"
+    },
+    {
+     "type": "stamp",
+     "at": 2.98,
+     "text": "HELD TO ANSWER"
+    },
+    {
+     "type": "card",
+     "at": 4.79,
+     "text": "A RULING TO GO TO TRIAL / IS NOT A VERDICT"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURE",
+   "transition_in": "zoom",
+   "sources": [
+    {
+     "claim": "D_prelim",
+     "type": "established",
+     "claim_text": "On 27 July 2026, after a five-day preliminary hearing, Judge Charlaine Olmedo held Burke to answer on all counts and all three special-circumstance allegations. A holding order is not a verdict.",
+     "urls": [
+      "https://da.lacounty.gov/media/news/d4vd-ordered-stand-trial-murdering-dismembering-14-year-old-girl",
+      "https://www.cnn.com/2026/07/27/us/d4vd-celeste-rivas-hernandez-hearing",
+      "https://www.adn.com/nation-world/2026/07/27/judge-rules-singer-d4vd-must-stand-trial-in-killing-of-14-year-old-celeste-rivas-hernandez/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "gavel",
+      "at": 49.642,
+      "gain": 0.8,
+      "word": [
+       0,
+       5
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_hearing",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/official.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s09_switch",
+   "scene_type": "tcv3_switch",
+   "start": 54.545,
+   "duration": 4.546,
+   "narration": [
+    "Then his high-profile lawyers withdrew. A public defender took over."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 54.795,
+     "end": 58.197,
+     "words": [
+      {
+       "w": "Then",
+       "start": 54.818,
+       "end": 54.992
+      },
+      {
+       "w": "his",
+       "start": 55.027,
+       "end": 55.12
+      },
+      {
+       "w": "high-profile",
+       "start": 55.167,
+       "end": 55.782
+      },
+      {
+       "w": "lawyers",
+       "start": 55.828,
+       "end": 56.142
+      },
+      {
+       "w": "withdrew.",
+       "start": 56.177,
+       "end": 56.548
+      },
+      {
+       "w": "A",
+       "start": 56.722,
+       "end": 56.78
+      },
+      {
+       "w": "public",
+       "start": 56.827,
+       "end": 57.117
+      },
+      {
+       "w": "defender",
+       "start": 57.175,
+       "end": 57.547
+      },
+      {
+       "w": "took",
+       "start": 57.605,
+       "end": 57.79
+      },
+      {
+       "w": "over.",
+       "start": 57.848,
+       "end": 58.092
+      }
+     ]
+    }
+   ],
+   "visual_description": "courtroom (cold grade); press_operator (silhouette): hands_together; agent_a (silhouette): stand (walks); official (silhouette): stand (walks); analyst (silhouette): stand (walks); camera push/pull; overlays: label '31 AUGUST 2026', label 'PLEA AGAIN: NOT GUILTY'.",
+   "shot_size": "medium",
+   "set": "courtroom",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": 30,
+     "z": 1.06
+    },
+    "to": {
+     "x": -30,
+     "y": 30,
+     "z": 1
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "agent_a",
+    "analyst",
+    "official",
+    "press_operator"
+   ],
+   "character_actions": [
+    {
+     "id": "press_operator",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 1,
+     "start_pose": "hands_together",
+     "start_expr": "neutral",
+     "actions": [],
+     "silhouette": "cool"
+    },
+    {
+     "id": "agent_a",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.98,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [],
+     "walk": {
+      "from": 230,
+      "to": -260,
+      "at": 1.13,
+      "dur": 1.8
+     },
+     "silhouette": "cool"
+    },
+    {
+     "id": "official",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.95,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [],
+     "walk": {
+      "from": 860,
+      "to": -200,
+      "at": 1.33,
+      "dur": 2.4
+     },
+     "silhouette": "cool"
+    },
+    {
+     "id": "analyst",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.98,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [],
+     "walk": {
+      "from": 1360,
+      "to": 860,
+      "at": 1.78,
+      "dur": 1.4
+     },
+     "silhouette": "cool",
+     "visible": [
+      1.68
+     ]
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 0.2,
+     "text": "31 AUGUST 2026"
+    },
+    {
+     "type": "label",
+     "at": 2.88,
+     "text": "PLEA AGAIN: NOT GUILTY"
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · ANONYMOUS FIGURES",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "D_pd",
+     "type": "established",
+     "claim_text": "On 31 August 2026 his private lawyers were allowed to withdraw and the LA County Public Defender's Office was appointed; he pleaded not guilty again.",
+     "urls": [
+      "https://www.pbs.org/newshour/arts/singer-d4vd-loses-prominent-lawyers-defending-him-in-killing-of-14-year-old",
+      "https://abc7.com/story/d4vd-case-singer-set-return-court-ordered-stand-trial-killing-14-year-old-celeste-rivas-hernandez/19769402/",
+      "https://www.nbclosangeles.com/news/local/d4vd-celeste-rivas-murder-arraignment/3935639/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "step",
+      "at": 54.845,
+      "gain": 0.4
+     },
+     {
+      "name": "step",
+      "at": 55.345,
+      "gain": 0.35
+     },
+     {
+      "name": "door",
+      "at": 57.605,
+      "gain": 0.5,
+      "word": [
+       0,
+       8
+      ]
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_switch",
+    "set_code": "renderer/sets.js#courtroom",
+    "characters": [
+     "characters/figures/agent_a.json",
+     "characters/figures/analyst.json",
+     "characters/figures/official.json",
+     "characters/figures/press_operator.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s10_open",
+   "scene_type": "tcv3_open",
+   "start": 59.091,
+   "duration": 5.454,
+   "narration": [
+    "There is still no trial date, and prosecutors have not decided on the death penalty."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 59.341,
+     "end": 63.625,
+     "words": [
+      {
+       "w": "There",
+       "start": 59.376,
+       "end": 59.674
+      },
+      {
+       "w": "is",
+       "start": 59.674,
+       "end": 59.793
+      },
+      {
+       "w": "still",
+       "start": 59.793,
+       "end": 60.091
+      },
+      {
+       "w": "no",
+       "start": 60.091,
+       "end": 60.21
+      },
+      {
+       "w": "trial",
+       "start": 60.21,
+       "end": 60.507
+      },
+      {
+       "w": "date,",
+       "start": 60.507,
+       "end": 60.805
+      },
+      {
+       "w": "and",
+       "start": 60.805,
+       "end": 60.984
+      },
+      {
+       "w": "prosecutors",
+       "start": 60.984,
+       "end": 61.639
+      },
+      {
+       "w": "have",
+       "start": 61.639,
+       "end": 61.877
+      },
+      {
+       "w": "not",
+       "start": 61.877,
+       "end": 62.055
+      },
+      {
+       "w": "decided",
+       "start": 62.055,
+       "end": 62.472
+      },
+      {
+       "w": "on",
+       "start": 62.472,
+       "end": 62.591
+      },
+      {
+       "w": "the",
+       "start": 62.591,
+       "end": 62.77
+      },
+      {
+       "w": "death",
+       "start": 62.77,
+       "end": 63.068
+      },
+      {
+       "w": "penalty.",
+       "start": 63.068,
+       "end": 63.544
+      }
+     ]
+    }
+   ],
+   "visual_description": "task force (cold grade); detective (silhouette): arms_crossed -> hand_to_face; camera push/pull.",
+   "shot_size": "medium",
+   "set": "task_force",
+   "grade": "cold",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -60,
+     "z": 1.04
+    },
+    "to": {
+     "x": 0,
+     "y": -80,
+     "z": 1.14
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "detective"
+   ],
+   "character_actions": [
+    {
+     "id": "detective",
+     "outfit": "default",
+     "depth": 1.1,
+     "scale": 1.02,
+     "start_pose": "arms_crossed",
+     "start_expr": "focused",
+     "actions": [
+      {
+       "at": 3.68,
+       "pose": "hand_to_face"
+      }
+     ],
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [],
+   "reconstruction_tag": "ILLUSTRATION · NOT A PHOTOGRAPH",
+   "transition_in": "push",
+   "sources": [
+    {
+     "claim": "D_open",
+     "type": "established",
+     "claim_text": "As of the latest reports (Sept 2026) no trial date has been set and the DA has not decided whether to seek the death penalty.",
+     "urls": [
+      "https://www.pbs.org/newshour/arts/singer-d4vd-loses-prominent-lawyers-defending-him-in-killing-of-14-year-old",
+      "https://abc45.com/news/nation-world/judge-ruling-sends-singer-d4vd-to-trial-prosecutors-weighing-death-penalty-celeste-rivas-hernandez-david-burke-nathan-hochman-child-abuse-stabbing-mutilation-murder",
+      "https://abc7.com/story/d4vd-case-singer-set-return-court-ordered-stand-trial-killing-14-year-old-celeste-rivas-hernandez/19769402/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "paper",
+      "at": 59.291,
+      "gain": 0.5
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_open",
+    "set_code": "renderer/sets.js#task_force",
+    "characters": [
+     "characters/figures/detective.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s11_next",
+   "scene_type": "tcv3_next",
+   "start": 64.545,
+   "duration": 7.273,
+   "narration": [
+    "His next hearing is set for October 19th.",
+    "That is when both sides are expected to say whether they are ready for trial."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 64.795,
+     "end": 67.082,
+     "words": [
+      {
+       "w": "His",
+       "start": 64.841,
+       "end": 64.992
+      },
+      {
+       "w": "next",
+       "start": 65.039,
+       "end": 65.294
+      },
+      {
+       "w": "hearing",
+       "start": 65.317,
+       "end": 65.619
+      },
+      {
+       "w": "is",
+       "start": 65.666,
+       "end": 65.735
+      },
+      {
+       "w": "set",
+       "start": 65.77,
+       "end": 65.933
+      },
+      {
+       "w": "for",
+       "start": 65.956,
+       "end": 66.06
+      },
+      {
+       "w": "October",
+       "start": 66.084,
+       "end": 66.467
+      },
+      {
+       "w": "19th.",
+       "start": 66.525,
+       "end": 67.024
+      }
+     ]
+    },
+    {
+     "line": 1,
+     "start": 67.632,
+     "end": 70.929,
+     "words": [
+      {
+       "w": "That",
+       "start": 67.678,
+       "end": 67.853
+      },
+      {
+       "w": "is",
+       "start": 67.876,
+       "end": 67.957
+      },
+      {
+       "w": "when",
+       "start": 67.98,
+       "end": 68.085
+      },
+      {
+       "w": "both",
+       "start": 68.12,
+       "end": 68.282
+      },
+      {
+       "w": "sides",
+       "start": 68.329,
+       "end": 68.63
+      },
+      {
+       "w": "are",
+       "start": 68.665,
+       "end": 68.747
+      },
+      {
+       "w": "expected",
+       "start": 68.77,
+       "end": 69.246
+      },
+      {
+       "w": "to",
+       "start": 69.292,
+       "end": 69.339
+      },
+      {
+       "w": "say",
+       "start": 69.373,
+       "end": 69.536
+      },
+      {
+       "w": "whether",
+       "start": 69.582,
+       "end": 69.815
+      },
+      {
+       "w": "they",
+       "start": 69.873,
+       "end": 69.954
+      },
+      {
+       "w": "are",
+       "start": 69.977,
+       "end": 70.07
+      },
+      {
+       "w": "ready",
+       "start": 70.093,
+       "end": 70.267
+      },
+      {
+       "w": "for",
+       "start": 70.291,
+       "end": 70.418
+      },
+      {
+       "w": "trial.",
+       "start": 70.453,
+       "end": 70.825
+      }
+     ]
+    }
+   ],
+   "visual_description": "courthouse night (night grade); agent_b (silhouette): stand (walks); keyed camera moves; overlays: svg.",
+   "shot_size": "medium-wide",
+   "set": "courthouse_night",
+   "grade": "night",
+   "camera": {
+    "keys": 2,
+    "handheld": 0
+   },
+   "characters": [
+    "agent_b"
+   ],
+   "character_actions": [
+    {
+     "id": "agent_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.6,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [],
+     "walk": {
+      "from": -120,
+      "to": 1250,
+      "at": 0.2,
+      "dur": 6.8
+     },
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 1.44
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION · GENERIC BUILDING",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "D_next",
+     "type": "established",
+     "claim_text": "The next hearing was set for 19 October 2026, when the attorneys are to confirm whether they are ready for trial (reported 31 Aug 2026; no later change found on 2026-10-11).",
+     "urls": [
+      "https://abc7.com/story/d4vd-case-singer-set-return-court-ordered-stand-trial-killing-14-year-old-celeste-rivas-hernandez/19769402/",
+      "https://www.nbclosangeles.com/news/local/d4vd-celeste-rivas-murder-arraignment/3935639/",
+      "https://beverlypress.com/2026/09/singer-d4vd-pleads-not-guilty-to-murder-charges/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "tension-peak",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rain",
+      "at": 64.545,
+      "gain": 0.35
+     },
+     {
+      "name": "rain",
+      "at": 68.045,
+      "gain": 0.35
+     },
+     {
+      "name": "rain",
+      "at": 71.545,
+      "gain": 0.35
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_next",
+    "set_code": "renderer/sets.js#courthouse_night",
+    "characters": [
+     "characters/figures/agent_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  },
+  {
+   "id": "s12_end",
+   "scene_type": "tcv3_end",
+   "start": 71.818,
+   "duration": 7.273,
+   "narration": [
+    "Until a jury decides, he is presumed innocent. Celeste's family is still waiting."
+   ],
+   "caption_timings": [
+    {
+     "line": 0,
+     "start": 72.368,
+     "end": 76.571,
+     "words": [
+      {
+       "w": "Until",
+       "start": 72.449,
+       "end": 72.74
+      },
+      {
+       "w": "a",
+       "start": 72.774,
+       "end": 72.809
+      },
+      {
+       "w": "jury",
+       "start": 72.844,
+       "end": 73.076
+      },
+      {
+       "w": "decides,",
+       "start": 73.111,
+       "end": 73.599
+      },
+      {
+       "w": "he",
+       "start": 73.657,
+       "end": 73.796
+      },
+      {
+       "w": "is",
+       "start": 73.831,
+       "end": 73.912
+      },
+      {
+       "w": "presumed",
+       "start": 73.947,
+       "end": 74.272
+      },
+      {
+       "w": "innocent.",
+       "start": 74.295,
+       "end": 74.771
+      },
+      {
+       "w": "Celeste's",
+       "start": 74.887,
+       "end": 75.27
+      },
+      {
+       "w": "family",
+       "start": 75.294,
+       "end": 75.747
+      },
+      {
+       "w": "is",
+       "start": 75.839,
+       "end": 75.909
+      },
+      {
+       "w": "still",
+       "start": 75.944,
+       "end": 76.141
+      },
+      {
+       "w": "waiting.",
+       "start": 76.176,
+       "end": 76.501
+      }
+     ]
+    }
+   ],
+   "visual_description": "courthouse night (night grade); searcher_b (silhouette): stand (walks); camera push/pull; overlays: svg.",
+   "shot_size": "wide",
+   "set": "courthouse_night",
+   "grade": "night",
+   "camera": {
+    "from": {
+     "x": 0,
+     "y": -60,
+     "z": 1.2
+    },
+    "to": {
+     "x": 0,
+     "y": 30,
+     "z": 1
+    },
+    "handheld": 0
+   },
+   "characters": [
+    "searcher_b"
+   ],
+   "character_actions": [
+    {
+     "id": "searcher_b",
+     "outfit": "default",
+     "depth": 1,
+     "scale": 0.55,
+     "start_pose": "stand",
+     "start_expr": "neutral",
+     "actions": [],
+     "walk": {
+      "from": 300,
+      "to": -200,
+      "at": 2.67,
+      "dur": 3.2
+     },
+     "silhouette": "cool"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "svg",
+     "at": 0
+    }
+   ],
+   "reconstruction_tag": "ILLUSTRATION",
+   "transition_in": "fade",
+   "sources": [
+    {
+     "claim": "D_presumed",
+     "type": "established",
+     "claim_text": "Burke has pleaded not guilty and is presumed innocent unless and until proven guilty at trial.",
+     "urls": [
+      "https://www.pbs.org/newshour/arts/singer-d4vd-loses-prominent-lawyers-defending-him-in-killing-of-14-year-old",
+      "https://deadline.com/2026/04/d4vd-plea-murder-charges-1236866545/"
+     ]
+    },
+    {
+     "claim": "D_family",
+     "type": "established",
+     "claim_text": "Celeste's family has said, through their attorney, that they want justice for her, and in September 2026 called for the death penalty if he is convicted.",
+     "urls": [
+      "https://ktla.com/news/local-news/celeste-rivas-hernandez-parents-release-statement-d4vd-charged-teens-murder/amp/",
+      "https://www.nbclosangeles.com/news/local/d4vd-celeste-rivas-hernandez-murder-death-penalty/3938514/"
+     ]
+    }
+   ],
+   "audio": {
+    "music_cue": "aftermath",
+    "music_gain_db": 0,
+    "sfx": [
+     {
+      "name": "rain",
+      "at": 71.818,
+      "gain": 0.3
+     },
+     {
+      "name": "rain",
+      "at": 75.318,
+      "gain": 0.3
+     },
+     {
+      "name": "rain",
+      "at": 78.818,
+      "gain": 0.3
+     }
+    ]
+   },
+   "assets": {
+    "shot_code": "renderer/scenes/tcv03-d4vd-case.js#tcv3_end",
+    "set_code": "renderer/sets.js#courthouse_night",
+    "characters": [
+     "characters/figures/searcher_b.json"
+    ]
+   },
+   "validation": {
+    "claims_sourced": true,
+    "tagged_as_illustration": true,
+    "characters_act": true
+   }
+  }
+ ]
+}

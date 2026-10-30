@@ -27,6 +27,9 @@ CUES = {
     "cold":         {"chords": [[0, 3, 6], [0, 3, 6, 9], [-1, 2, 6], [0, 3, 6]], "density": 0.08, "bright": 0.2, "tense": 0.7, "inst": "bell", "pulse": True},
     "hush":         {"chords": [[0, 7], [0, 7], [-1, 6], [0, 7]], "density": 0.0, "bright": 0.2, "tense": 0.15, "inst": "none"},
     "power":        {"chords": [[0, 4, 7, 11], [5, 9, 12, 16], [7, 11, 14, 17], [9, 12, 16, 19]], "density": 0.32, "bright": 0.8, "tense": 0.0, "inst": "bell", "pulse": True},
+    # driving thriller cues (Case Files 03+): i-VI-VII-v in minor, saw ostinato on 8ths, ticking hats on 16ths
+    "drive":        {"chords": [[0, 3, 7], [-4, 0, 3], [-2, 2, 5], [-5, -2, 2]], "density": 0.06, "bright": 0.3, "tense": 0.25, "inst": "bell", "ostinato": 0.7, "hats": 0.5},
+    "drive-peak":   {"chords": [[0, 3, 7], [-4, 0, 3], [1, 5, 8], [-1, 2, 7]], "density": 0.1, "bright": 0.25, "tense": 0.55, "inst": "bell", "ostinato": 1.0, "hats": 1.0, "kick": 1.0},
     "aftermath":    {"chords": [[0, 3, 7, 10], [5, 8, 12], [3, 7, 10], [-2, 2, 5, 9]], "density": 0.18, "bright": 0.4, "tense": 0.1, "inst": "bell"},
 }
 PENTA = [0, 2, 4, 7, 9]
@@ -58,6 +61,10 @@ def tone(freq: float, dur: float, kind: str = "pluck", amp: float = 0.3, sr: int
     elif kind == "bass":
         x = np.sin(2 * np.pi * freq * t) + 0.2 * np.sin(2 * np.pi * freq * 2 * t)
         x *= env(n, 0.02, 0.3, 0.6, min(0.5, dur * 0.4))
+    elif kind == "saw":   # dark filtered saw for driving ostinatos
+        ph = (freq * t) % 1.0
+        x = (2 * ph - 1) + 0.5 * (2 * ((freq * 1.004 * t) % 1.0) - 1)
+        x = x * env(n, 0.004, min(0.12, dur * 0.5), 0.35, min(0.05, dur * 0.3))
     elif kind == "bell":
         x = sum(a * np.sin(2 * np.pi * freq * r * t) * np.exp(-t * dcy) for a, r, dcy in [(1, 1, 2.5), (0.6, 2.76, 4), (0.4, 5.4, 6), (0.25, 8.9, 9)])
         x *= (1 - np.exp(-t * 600))
@@ -115,6 +122,19 @@ def compose(timeline: list[dict], total: float, seed: int, bpm: int = 96, key_se
         if cue.get("pulse"):   # heartbeat-like low pulse: lub-dub on beat 1
             for off, a in ((0.0, 0.22), (0.28, 0.14)):
                 add(bass, tone(55, 0.35, "bass", a), t + off)
+        if cue.get("ostinato"):   # eighth-note saw pulse on the chord root, octave bounce on the off-beats
+            for k in range(8):
+                semi = chord[0] - 24 + (12 if k % 4 == 3 else 0)
+                add(bass, lowpass_fast(tone(note(semi, root), beat * 0.42, "saw", 0.11 * cue["ostinato"] * (1.0 if k % 2 == 0 else 0.7)), 700), t + k * beat / 2)
+        if cue.get("kick"):       # soft kick on beats 1 and 3
+            for k in (0, 2):
+                m = int(0.3 * SR); tk = np.arange(m) / SR
+                add(bass, (np.sin(2 * np.pi * np.cumsum(45 + 90 * np.exp(-tk * 30)) / SR) * np.exp(-tk * 9) * 0.32 * cue["kick"]).astype(np.float32), t + k * beat)
+        if cue.get("hats"):       # sixteenth ticks, accented on the beat
+            for k in range(16):
+                m = int(0.045 * SR); x = rng.standard_normal(m).astype(np.float32)
+                x = (x - lowpass_fast(x, 6000)) * np.exp(-np.arange(m) / SR * 90)
+                add(tex, (x * 0.05 * cue["hats"] * (1.0 if k % 4 == 0 else 0.45)).astype(np.float32), t + k * beat / 4)
         inst = cue.get("inst", "pluck")
         # melody: seeded steps on the pentatonic scale, 8th-note grid, density-controlled
         for step in range(8 if inst != "none" else 0):
@@ -274,9 +294,92 @@ def _sfx(name: str, seed: int = 0) -> np.ndarray:
         x = noise(1.4) * (0.5 + 0.5 * (rng.random(len(t)) > 0.97))
         x = lowpass_fast(x, 5000) - lowpass_fast(x, 600)
         return (x * env(len(t), 0.05, 0.2, 0.7, 0.6) * 0.32).astype(np.float32)
+    if name == "rasp":    # a file on metal: four strokes of bright, gritty noise with a faint ring
+        out = np.zeros(int(1.0 * SR), np.float32)
+        for i in range(4):
+            n = int(0.2 * SR); x = noise(0.2); x = lowpass_fast(x - lowpass_fast(x, 1500), 6500) * np.sin(np.pi * np.arange(n) / n) ** 0.7
+            add(out, (x * 0.4).astype(np.float32), i * 0.24); add(out, tone(2400 + 300 * i, 0.25, "bell", 0.04), i * 0.24 + 0.02)
+        return out
+    if name == "siren":   # a distant two-tone wail, 2.6 s, low-passed so it sits behind the narration
+        t = tt(2.6); f = 700 + 180 * np.sign(np.sin(2 * np.pi * 0.7 * t))
+        x = np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.18 + np.sin(2 * np.pi * np.cumsum(f * 2) / SR) * 0.05
+        return (lowpass_fast(x.astype(np.float32), 1800) * env(len(t), 0.5, 0.2, 0.9, 0.8)).astype(np.float32)
+    if name == "shutter":  # a camera: two clicks and a short motor whirr
+        out = np.zeros(int(0.35 * SR), np.float32); t = tt(0.08)
+        for at_ in (0.0, 0.07): add(out, (lowpass_fast(noise(0.08), 5000) * np.exp(-t * 160) * 0.7).astype(np.float32), at_)
+        add(out, (lowpass_fast(noise(0.2), 900) * env(int(0.2 * SR), 0.02, 0.05, 0.6, 0.1) * 0.12).astype(np.float32), 0.12)
+        return out
+    if name == "cuffs":   # handcuffs: a quick ratchet of nine clicks, the last one heavier
+        out = np.zeros(int(0.6 * SR), np.float32); t = tt(0.04)
+        for i in range(9):
+            x = noise(0.04); x = (x - lowpass_fast(x, 2000)) * np.exp(-t * 260) * (0.5 + 0.06 * i)
+            add(out, x.astype(np.float32), i * 0.045)
+        add(out, (np.sin(2 * np.pi * 900 * tt(0.1)) * np.exp(-tt(0.1) * 70) * 0.3).astype(np.float32), 0.42)
+        return out
+    if name == "knock":   # three knocks on a wooden door
+        out = np.zeros(int(0.95 * SR), np.float32); t = tt(0.3)
+        for i in range(3): add(out, (np.sin(2 * np.pi * 115 * t) * np.exp(-t * 32) * 0.7 + lowpass_fast(noise(0.3), 1300) * np.exp(-t * 85) * 0.35).astype(np.float32), i * 0.23)
+        return out
+    if name == "radio":   # a police radio: squelch burst then a short tone
+        x = noise(0.45); x = lowpass_fast(x - lowpass_fast(x, 500), 3200) * env(int(0.45 * SR), 0.01, 0.08, 0.5, 0.2) * 0.3
+        out = np.zeros(int(0.65 * SR), np.float32); add(out, x.astype(np.float32), 0.0); add(out, tone(1000, 0.08, "pluck", 0.15), 0.5)
+        return out
+    if name == "cash":    # counting banknotes: a run of twelve paper flicks
+        out = np.zeros(int(0.8 * SR), np.float32); t = tt(0.06)
+        for i in range(12): add(out, (lowpass_fast(noise(0.06), 3500) * np.exp(-t * 120) * 0.35).astype(np.float32), i * 0.055)
+        return out
+    if name == "keys":    # a bunch of keys: a few short metallic rings over a click
+        out = np.zeros(int(0.6 * SR), np.float32)
+        for i in range(5): add(out, tone(float(rng.uniform(2800, 5200)), 0.2, "bell", 0.08), i * 0.05)
+        add(out, (lowpass_fast(noise(0.05), 4000) * np.exp(-tt(0.05) * 200) * 0.4).astype(np.float32), 0.0)
+        return out
     if name == "whoosh":
         t = tt(0.5)
         return (lowpass_fast(noise(0.5), 1500) * env(len(t), 0.15, 0.1, 0.5, 0.2) * 0.3).astype(np.float32)
+    if name == "riser":   # 2.4 s build: rising filtered noise + rising tone, cut dead at the end
+        t = tt(2.4); f = 120 * 2 ** (t / 2.4 * 3)
+        x = np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.25 + (noise(2.4) - lowpass_fast(noise(2.4), 300)) * 0.35
+        x = lowpass_fast(x.astype(np.float32), 5000) * (t / 2.4) ** 2.5
+        x[-int(0.02 * SR):] *= np.linspace(1, 0, int(0.02 * SR))
+        return (x * 0.8).astype(np.float32)
+    if name == "sub":     # sub-drop boom
+        t = tt(1.8)
+        return (np.sin(2 * np.pi * np.cumsum(30 + 50 * np.exp(-t * 3)) / SR) * np.exp(-t * 1.6) * 0.95).astype(np.float32)
+    if name == "click":   # mechanical click-clack (disk drive / latch)
+        out = np.zeros(int(0.35 * SR), np.float32)
+        for k, a in ((0.0, 0.8), (0.09, 0.55)):
+            t = tt(0.04); add(out, ((noise(0.04) - lowpass_fast(noise(0.04), 1500)) * np.exp(-t * 220) * a + np.sin(2 * np.pi * 900 * t) * np.exp(-t * 300) * a * 0.5).astype(np.float32), k)
+        return out
+    if name == "glitch":  # short digital stutter
+        out = np.zeros(int(0.5 * SR), np.float32)
+        for k in range(7):
+            d = 0.02 + 0.03 * rng.random(); t = tt(d)
+            x = np.sign(np.sin(2 * np.pi * (300 + 2500 * rng.random()) * t)) * 0.25
+            add(out, x.astype(np.float32), k * 0.06)
+        return lowpass_fast(out, 6000)
+    if name == "typing":  # typewriter: a burst of irregular key strikes with a carriage bell-less clack
+        out = np.zeros(int(1.2 * SR), np.float32); at = 0.0
+        while at < 1.05:
+            t = tt(0.05); k = 0.5 + 0.5 * rng.random()
+            x = (lowpass_fast(noise(0.05), 5000) * np.exp(-t * 180) * 0.7 + np.sin(2 * np.pi * (180 + 60 * rng.random()) * t) * np.exp(-t * 90) * 0.4) * k
+            add(out, x.astype(np.float32), at); at += 0.06 + 0.07 * rng.random()
+        return out
+    if name == "wind":   # 4 s of low desert wind, slow gusts
+        t = tt(4.0)
+        x = lowpass_fast(noise(4.0), 500) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.35 * t + rng.random() * 6)) + lowpass_fast(noise(4.0), 1800) * 0.08
+        f = int(0.8 * SR); x[:f] *= np.linspace(0, 1, f); x[-f:] *= np.linspace(1, 0, f)
+        return (x * 0.55).astype(np.float32)
+    if name == "gavel":  # two wooden knocks
+        out = np.zeros(int(0.7 * SR), np.float32)
+        for k, a in ((0.0, 0.9), (0.22, 0.7)):
+            t = tt(0.18)
+            x = np.sin(2 * np.pi * 420 * t) * np.exp(-t * 45) * 0.5 + np.sin(2 * np.pi * 160 * t) * np.exp(-t * 30) * 0.6 + lowpass_fast(noise(0.18), 4000) * np.exp(-t * 160) * 0.4
+            add(out, (x * a).astype(np.float32), k)
+        return out
+    if name == "hit":    # low cinematic impact for a verified reveal
+        t = tt(2.2)
+        x = np.sin(2 * np.pi * (38 + 40 * np.exp(-t * 6)) * t) * np.exp(-t * 1.8) * 0.9 + lowpass_fast(noise(2.2), 900) * np.exp(-t * 5) * 0.35
+        return x.astype(np.float32)
     raise KeyError(name)
 
 
@@ -288,6 +391,20 @@ def write_wav(path: Path, x: np.ndarray, sr: int = SR) -> None:
     with wave.open(str(path), "wb") as w:
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr)
         w.writeframes((x * 32767).astype(np.int16).tobytes())
+
+
+def loudnorm(path: Path, target_lufs: float = -14.0, true_peak: float = -1.5) -> dict:
+    """Two-pass EBU R128 loudness normalisation of a WAV in place (ffmpeg loudnorm, linear mode). Returns measured stats."""
+    import json as _json, subprocess as _sp
+    m = _sp.run(["ffmpeg", "-hide_banner", "-i", str(path), "-af", f"loudnorm=I={target_lufs}:TP={true_peak}:LRA=11:print_format=json", "-f", "null", "-"],
+                capture_output=True, text=True).stderr
+    st = _json.loads(m[m.rindex("{"):m.rindex("}") + 1])
+    tmp = path.with_suffix(".norm.wav")
+    af = (f"loudnorm=I={target_lufs}:TP={true_peak}:LRA=11:measured_I={st['input_i']}:measured_TP={st['input_tp']}:measured_LRA={st['input_lra']}:"
+          f"measured_thresh={st['input_thresh']}:offset={st['target_offset']}:linear=true")
+    _sp.run(["ffmpeg", "-v", "error", "-y", "-i", str(path), "-af", af, "-ar", str(SR), "-c:a", "pcm_s16le", str(tmp)], check=True)
+    tmp.replace(path)
+    return st
 
 
 def resample(x: np.ndarray, sr_in: int, sr_out: int = SR) -> np.ndarray:

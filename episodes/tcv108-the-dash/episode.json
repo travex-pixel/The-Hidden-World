@@ -1,0 +1,935 @@
+{
+ "id": "tcv108-the-dash",
+ "number": 108,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Border Dash",
+ "central_question": "Christopher Seabrook, 50, of Philadelphia, drove into a Border Patrol checkpoint in South Texas in July 2024 and floored it mid-inspection; the chase hit 125 mph until his tyres were punctured, his passenger ran and was caught, and the rear panels held 9.8 kg of cocaine. He pleaded guilty and got ten years; so did the passenger. Dumber move: carrying it, or flooring it?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_fenrir",
+  "energy": 0.6,
+  "directed": true,
+  "pronounce": {}
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  29,
+  32
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "108",
+  "label": "THE HIDDEN WORLD · CASE FILE 108"
+ },
+ "music": {
+  "bpm": 86,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 138.59,
+  "bpm": 86,
+  "cliff": {
+   "scene": "s07_end",
+   "word": [
+    0,
+    4
+   ],
+   "at": 0.5
+  }
+ },
+ "figures": [
+  "bd108_agent",
+  "bd108_agent2",
+  "bd108_seabrook",
+  "bd108_passenger",
+  "bd108_judge"
+ ],
+ "content_notes": "Tone: dry; the joke is on the scheme (a dash that turned a lane inspection into a search of the panels), never on the passenger or the agents. Christopher Seabrook pleaded guilty and was sentenced (S.D. Texas, Nov 2024 and Mar 2025) and is named by the US Attorney's Office and the press, so his name, age and town are on a label (never spoken); he is drawn ONLY as a dark rim-lit silhouette (NOT A LIKENESS), at the wheel and in court. The passenger is a silhouette, never named. The agents and the judge are generic figures with no badge, patch, crest, flag, agency name or insignia; no weapon is drawn; nobody is shown hurt. The car is a generic silver sedan with no badge or plate; the trim panel's colour and the wrapping are not reported (drawn generic). The checkpoint, highway and shoulder are illustrations, not replicas; the checkpoint's name is not shown; agency vehicles carry plain light bars, no livery. No dialogue is invented. The complaint's single-sourced debt quote is not used. Facts verified 2026-10-30.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "bd108_hook",
+   "min_duration": 4.9,
+   "pad_after": 0.08,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "click",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": -0.05,
+     "word": [
+      1,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      3
+     ],
+     "name": "rumble",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_hook",
+    "K_speed"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A driver smuggled cocaine inside his car.",
+     "tone": "hook",
+     "speed": 1.15
+    },
+    {
+     "who": "narrator",
+     "text": "Then he hit 125 miles an hour.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "driver",
+    "smuggled",
+    "cocaine",
+    "inside",
+    "car.",
+    "125",
+    "miles",
+    "hour."
+   ],
+   "section": "A",
+   "case": "the-dash",
+   "beat": "hook",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_dash",
+   "scene": "bd108_dash",
+   "min_duration": 3.7,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.45,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "step",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      6
+     ],
+     "name": "brake",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "hit",
+     "gain": 0.42
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      7
+     ],
+     "name": "whoosh",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "rumble",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "K_checkpoint",
+    "K_dash"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "At a Border Patrol checkpoint, mid-inspection, he floored it.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "border",
+    "patrol",
+    "checkpoint,",
+    "mid-inspection,",
+    "floored",
+    "it."
+   ],
+   "section": "A",
+   "case": "the-dash",
+   "beat": "gotcha"
+  },
+  {
+   "id": "s03_chase",
+   "scene": "bd108_chase",
+   "min_duration": 3.8,
+   "pad_after": 0.1,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "rumble",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "siren",
+     "gain": 0.14
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_person",
+    "K_chase",
+    "K_speed"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He tore up the highway, agents right behind him.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "tore",
+    "highway,",
+    "agents",
+    "behind"
+   ],
+   "section": "B",
+   "case": "the-dash",
+   "beat": "person"
+  },
+  {
+   "id": "s04_spikes",
+   "scene": "bd108_spikes",
+   "min_duration": 5.0,
+   "pad_after": 0.1,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "brake",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "thud",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "puff",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "step",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      2
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      6
+     ],
+     "name": "cuffs",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_tires",
+    "K_passenger"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Until they punctured his tires.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    },
+    {
+     "who": "narrator",
+     "text": "His passenger ran. He didn't get far.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "until",
+    "punctured",
+    "tires.",
+    "passenger",
+    "ran.",
+    "far."
+   ],
+   "section": "B",
+   "case": "the-dash",
+   "beat": "person"
+  },
+  {
+   "id": "s05_panels",
+   "scene": "bd108_panels",
+   "min_duration": 3.3,
+   "pad_after": 0.1,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "rasp",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thud",
+     "gain": 0.26
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sting",
+     "gain": 0.22
+    },
+    {
+     "at": 0.2,
+     "word": [
+      0,
+      4
+     ],
+     "name": "paper",
+     "gain": 0.18
+    }
+   ],
+   "claims": [
+    "K_panels"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Behind the rear panels: cocaine.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "behind",
+    "rear",
+    "panels:",
+    "cocaine."
+   ],
+   "section": "C",
+   "case": "the-dash",
+   "beat": "consequence"
+  },
+  {
+   "id": "s06_court",
+   "scene": "bd108_court",
+   "min_duration": 5.0,
+   "pad_after": 0.08,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "thud",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "sub",
+     "gain": 0.24
+    },
+    {
+     "at": 0.1,
+     "word": [
+      0,
+      4
+     ],
+     "name": "gavel",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_plea",
+    "K_years",
+    "K_passyears",
+    "K_fact"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "He pleaded guilty. Ten years.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "His passenger got ten years too.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "pleaded",
+    "guilty.",
+    "ten",
+    "years.",
+    "passenger",
+    "too."
+   ],
+   "section": "C",
+   "case": "the-dash",
+   "beat": "consequence",
+   "music_drop": true
+  },
+  {
+   "id": "s07_end",
+   "scene": "bd108_end",
+   "min_duration": 2.6,
+   "pad_after": 0.12,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "click",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sub",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "tick",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "K_callback"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Nobody had opened those panels until he ran.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "nobody",
+    "opened",
+    "panels",
+    "ran."
+   ],
+   "section": "D",
+   "case": "the-dash",
+   "beat": "callback",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "K_hook",
+   "type": "established",
+   "nature": "fact",
+   "text": "Christopher Seabrook drove a silver Chrysler sedan to a Border Patrol checkpoint in South Texas on 25 July 2024 with cocaine hidden in the car's rear panels; he pleaded guilty to possession with intent to distribute. Narration: 'A driver smuggled cocaine inside his car.' Headline 'A CAR'S REAR PANELS / WITH COCAINE INSIDE'. 'Smuggled' is the prosecutors' own word ('Fleeing cocaine smuggler', 'attempting to smuggle cocaine through the Border Patrol checkpoint'); the reel never says who hid it or built anything.",
+   "sources": [
+    "usao25",
+    "usao26",
+    "kiii",
+    "monitor"
+   ]
+  },
+  {
+   "id": "K_speed",
+   "type": "established",
+   "nature": "fact",
+   "text": "STATISTIC (counter 125 MPH): the chase reached speeds up to 125 miles per hour. Narration: 'Then he hit 125 miles an hour.' Counter '125 MPH', label 'TOP SPEED, PER PROSECUTORS'.",
+   "sources": [
+    "usao25",
+    "monitor",
+    "kiii",
+    "kris"
+   ]
+  },
+  {
+   "id": "K_checkpoint",
+   "type": "established",
+   "nature": "fact",
+   "text": "The checkpoint was the Border Patrol checkpoint on US 77 near Sarita, Texas (south of Kingsville). Label 'BORDER PATROL CHECKPOINT · US 77, TEXAS', sub '25 July 2024'. The canopy, booth and lanes are an illustration, not the real checkpoint; its name is not shown.",
+   "sources": [
+    "usao25",
+    "usao26",
+    "monitor",
+    "cbp"
+   ]
+  },
+  {
+   "id": "K_dash",
+   "type": "established",
+   "nature": "fact",
+   "text": "Upon (during) the initial inspection, he fled. Narration (gotcha): 'At a Border Patrol checkpoint, mid-inspection, he floored it.' The flight at speed is reported as a chase reaching 125 mph.",
+   "sources": [
+    "usao25",
+    "usao26",
+    "monitor",
+    "kiii"
+   ]
+  },
+  {
+   "id": "K_person",
+   "type": "established",
+   "nature": "fact",
+   "text": "He is Christopher Seabrook, 50 at sentencing (the 2026 relays say 51), of Philadelphia; he pleaded guilty and was sentenced to ten years, and is named by the US Attorney's Office, the DEA and the local press. Label only (never narrated): 'CHRISTOPHER SEABROOK, 50 · PHILADELPHIA', sub 'Pleaded guilty · silhouette, not a likeness'. Drawn only as a silhouette.",
+   "sources": [
+    "usao25",
+    "usao26",
+    "kiii",
+    "moore"
+   ]
+  },
+  {
+   "id": "K_chase",
+   "type": "established",
+   "nature": "fact",
+   "text": "He led law enforcement (the Monitor: Border Patrol agents) on a high-speed chase from the checkpoint. Narration: 'He tore up the highway, agents right behind him.' The agents' vehicles carry plain light bars, no livery.",
+   "sources": [
+    "usao25",
+    "monitor",
+    "kiii",
+    "kris"
+   ]
+  },
+  {
+   "id": "K_tires",
+   "type": "established",
+   "nature": "fact",
+   "text": "Authorities stopped the car by puncturing its tyres. Narration: 'Until they punctured his tires.' The device is not named in the record; the picture shows a generic strip across the road. No one is shown hurt (no injury is reported).",
+   "sources": [
+    "usao25",
+    "usao26",
+    "kiii",
+    "kris"
+   ]
+  },
+  {
+   "id": "K_passenger",
+   "type": "established",
+   "nature": "fact",
+   "text": "His passenger tried to flee on foot and was apprehended; two men were taken into custody. Narration: 'His passenger ran. He didn't get far.' The passenger is a silhouette and is not named.",
+   "sources": [
+    "usao26",
+    "kiii",
+    "kris",
+    "monitor"
+   ]
+  },
+  {
+   "id": "K_panels",
+   "type": "established",
+   "nature": "fact",
+   "text": "A search of the car found cocaine hidden in the rear panels: 10 bundles, 9.8 kg in the concluded record (the 2024 complaint report said 20 bundles, over 25 lb). Narration: 'Behind the rear panels: cocaine.' Callout '9.8 KG OF COCAINE', sub 'In the rear panels · per prosecutors'. Ten plain wrapped bundles are drawn; the panel's look is not reported (drawn generic).",
+   "sources": [
+    "usao25",
+    "usao26",
+    "kiii",
+    "monitor"
+   ]
+  },
+  {
+   "id": "K_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "He pleaded guilty on 22 November 2024 to possession with intent to distribute cocaine. Narration: 'He pleaded guilty.' Label 'FEDERAL COURT · CORPUS CHRISTI', sub 'Pleaded guilty · sentenced Mar 2025'.",
+   "sources": [
+    "usao25",
+    "usao26",
+    "kiii"
+   ]
+  },
+  {
+   "id": "K_years",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was sentenced to 120 months (ten years) in federal prison, followed by five years of supervised release. Narration: 'Ten years.' Counter '10 YEARS'.",
+   "sources": [
+    "usao25",
+    "usao26",
+    "kiii",
+    "kris"
+   ]
+  },
+  {
+   "id": "K_passyears",
+   "type": "established",
+   "nature": "fact",
+   "text": "The passenger pleaded guilty (22 Jan 2026) and was also sentenced to 120 months. Narration: 'His passenger got ten years too.' Label 'HIS PASSENGER: 10 YEARS TOO', sub 'Pleaded guilty · Apr 2026'.",
+   "sources": [
+    "usao26",
+    "kiii",
+    "kris",
+    "moore"
+   ]
+  },
+  {
+   "id": "K_fact",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: Border Patrol's interior checkpoints sit inside the US, typically 25 to 75 miles from the border. Card 'BORDER PATROL CHECKPOINTS SIT / 25 TO 75 MILES INSIDE THE US'.",
+   "sources": [
+    "forum",
+    "wiki"
+   ]
+  },
+  {
+   "id": "K_callback",
+   "type": "established",
+   "nature": "fact",
+   "text": "He fled during the initial inspection; the cocaine was found by a subsequent search of the car after it was stopped. Narration (callback): 'Nobody had opened those panels until he ran.' Callout 'THE REAR PANELS', sub 'Searched only after the chase'.",
+   "sources": [
+    "usao25",
+    "usao26",
+    "kiii"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "usao25",
+   "publisher": "US Attorney's Office, S.D. Texas / DEA (press release)",
+   "title": "Cocaine smuggler who led law enforcement on high-speed chase sentenced to decade in federal prison (USAO: Fleeing cocaine smuggler sent to federal prison)",
+   "url": "https://www.dea.gov/press-releases/2025/03/19/cocaine-smuggler-who-led-law-enforcement-high-speed-chase-sentenced",
+   "date": "2025-03-19",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "usao26",
+   "publisher": "US Attorney's Office, S.D. Texas / DEA (press release)",
+   "title": "Fleeing drug smuggler sent to federal prison",
+   "url": "https://www.dea.gov/press-releases/2026/04/15/fleeing-drug-smuggler-sent-federal-prison",
+   "date": "2026-04-15",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "monitor",
+   "publisher": "The Monitor (myrgv.com)",
+   "title": "Drug smuggler leads Sarita Border Patrol agents on chase that reached 125 mph",
+   "url": "https://myrgv.com/local-news/2024/07/29/drug-smuggler-leads-sarita-border-patrol-agents-on-chase-that-reached-125-mph/",
+   "date": "2024-07-29",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "kiii",
+   "publisher": "KIII-TV (also myfoxzone.com, Yahoo News)",
+   "title": "Man sentenced to 10 years in prison for cocaine smuggling at Kingsville checkpoint",
+   "url": "https://www.kiiitv.com/article/news/local/philadelphia-man-sentenced-cocaine-kingsville-checkpoint/503-5ebb4812-40ab-42f0-892c-0f979a9c305a",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "kris",
+   "publisher": "KRIS-TV / KZTV",
+   "title": "Philadelphia man sentenced to 120 months in prison for smuggling cocaine through Texas border checkpoint",
+   "url": "https://www.kristv.com/news/local-news/philadelphia-man-sentenced-to-120-months-in-prison-for-smuggling-cocaine-through-texas-border-checkpoint",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "moore",
+   "publisher": "moorenews.com (state wire)",
+   "title": "Philadelphia man sentenced to 10 years for cocaine smuggling attempt",
+   "url": "https://www.moorenews.com/news/state/philadelphia-man-sentenced-to-10-years-for-cocaine-smuggling-attempt/article_e86aaf2a-5868-599a-9f5d-fc5e44edc767.html",
+   "date": "2026-04",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "cbp",
+   "publisher": "US Customs and Border Protection (local media release)",
+   "title": "Significant methamphetamine seizure at Javier Vega Jr. checkpoint (the checkpoint on US Highway 77)",
+   "url": "https://www.cbp.gov/newsroom/local-media-release/significant-methamphetamine-seizure-javier-vega-jr-checkpoint",
+   "date": "2025-04",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "forum",
+   "publisher": "Forum Together (explainer)",
+   "title": "Explainer: U.S. Border Patrol authorities and the 100-mile border zone",
+   "url": "https://forumtogether.org/article/explainer-u-s-border-patrol-authorities-and-the-100-mile-border-zone/",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-30"
+  },
+  {
+   "id": "wiki",
+   "publisher": "Wikipedia",
+   "title": "United States Border Patrol interior checkpoints",
+   "url": "https://en.wikipedia.org/wiki/United_States_Border_Patrol_interior_checkpoints",
+   "date": "2026",
+   "accessed": "search-result extract only, 2026-10-30"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "quality": "final",
+ "engagement_rules": true,
+ "engagement_version": 11,
+ "lane": "border",
+ "search_terms": [
+  "cocaine car",
+  "car panels",
+  "border patrol checkpoint"
+ ],
+ "palette": {
+  "shadow": "#111823",
+  "mid": "#b4b2ac",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "A CAR'S REAR PANELS"
+   },
+   {
+    "text": "WITH COCAINE INSIDE",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 240
+ },
+ "progress": {
+  "label": "FILE 108 ·",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "THE CAR"
+   },
+   {
+    "t": 6.15,
+    "v": "THE DASH"
+   },
+   {
+    "t": 9.95,
+    "v": "THE DRIVER"
+   },
+   {
+    "t": 22.29,
+    "v": "THE SENTENCE"
+   }
+  ],
+  "y": 350,
+  "fs": 44,
+  "until": 26.51
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "DUMBER MOVE: CARRY IT OR FLOOR IT? 👇",
+    "colour": "#e8a33a",
+    "fs": 48
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D FLOOR IT",
+    "fs": 36
+   },
+   {
+    "text": "NEXT FILE: THE SEA CHASE",
+    "fs": 40,
+    "colour": "#e8a33a"
+   }
+  ],
+  "from": 2.77,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-30"
+}

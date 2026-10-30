@@ -1,0 +1,984 @@
+{
+ "id": "tcv103-jungle-pilot",
+ "number": 103,
+ "series": "THE HIDDEN WORLD: Case Files (cinematic)",
+ "title": "The Captain Who Left Before the Rangers Came",
+ "central_question": "Ireland's largest drug seizure: Army Rangers dropped onto the MV Matthew in heavy seas in September 2023 and found over two tonnes of cocaine, but its captain had been airlifted off the day before in what the court accepted was a fake emergency. He pleaded guilty; his lawyer called him captain in name only. Faked it or fled it?",
+ "template": "true-crime",
+ "narrator_voice": "en_US-libritts_r-medium",
+ "narrator_profile": {
+  "provider": "kokoro",
+  "kokoro_voice": "am_fenrir",
+  "energy": 0.6,
+  "directed": true,
+  "pronounce": {
+   "Soheil": "So-hail",
+   "Jelveh": "Jel-veh",
+   "A": "Uh"
+  }
+ },
+ "loudness_lufs": -14,
+ "target_duration_seconds": [
+  28,
+  34
+ ],
+ "visual_mode": "svg",
+ "caption_style": "punch",
+ "caption_max_w": 800,
+ "overlay": "wash",
+ "case_file": {
+  "number": "103",
+  "label": "THE HIDDEN WORLD · CASE FILE 103"
+ },
+ "music": {
+  "bpm": 84,
+  "beat_snap": 0.25
+ },
+ "score": {
+  "root_hz": 130.81,
+  "bpm": 84,
+  "cliff": {
+   "scene": "s07_sentence",
+   "word": [
+    0,
+    0
+   ],
+   "at": 0.5
+  }
+ },
+ "figures": [
+  "sc103_ranger",
+  "sc103_ranger2",
+  "sc103_captain",
+  "sc103_garda",
+  "sc103_barrister",
+  "sc103_crew",
+  "sc103_crew2"
+ ],
+ "content_notes": "Tone: hard and dry; the irony is the captain who left before the boarding, never a joke about anyone harmed (no one was hurt). The headline case is settled: a seizure by the Irish Defence Forces and gardai and a guilty plea and sentence at the Special Criminal Court. The captain, Soheil Jelveh, pleaded guilty and was sentenced, and is widely named in the Irish press: he is named once, in the line that says he pleaded guilty, and drawn only as a dark rim-lit silhouette (NOT A LIKENESS). His fear for his family and 'captain in name only' are his defence's words, attributed as such; his family is never drawn or named. Not used: the cash amount (reports differ), Storm Agnes (one source), where aboard the cocaine was (the deck hatch is an illustrative device; no caption says 'in the hold'), the Hizbullah suspicion (an allegation), the other men's names. Rangers, crew, the detective and the barrister are generic figures with no badge, patch, flag, crest or insignia; the Rangers carry torches only; no weapon is drawn and no warning shot is shown. The ship and both helicopters are generic, with no name, number, flag or livery. The bales are dark wrapped blocks; no drugs are shown. Every card is our own typed graphic; no court document is imitated; no dialogue is invented. Facts verified 2026-10-25.",
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "scene": "sc103_hook",
+   "min_duration": 5.6,
+   "pad_after": 0.06,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sub",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": 0.16
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      3
+     ],
+     "name": "rasp",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      7
+     ],
+     "name": "thump",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      8
+     ],
+     "name": "cash",
+     "gain": 0.15
+    }
+   ],
+   "claims": [
+    "M1_ship",
+    "M2_load",
+    "M3_value"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "A ship's captain carried a fortune in cocaine.",
+     "tone": "hook",
+     "speed": 1.1,
+     "pause_before": 0.0
+    },
+    {
+     "who": "narrator",
+     "text": "Over 2 tonnes, worth a hundred and fifty-seven million euros.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "captain",
+    "carried",
+    "fortune",
+    "cocaine.",
+    "2",
+    "tonnes,",
+    "million"
+   ],
+   "section": "A",
+   "case": "matthew",
+   "beat": "hook",
+   "music_gain_db": -4
+  },
+  {
+   "id": "s02_rangers",
+   "scene": "sc103_rangers",
+   "min_duration": 3.0,
+   "pad_after": 0.36,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.2,
+     "word": [
+      0,
+      0
+     ],
+     "name": "rumble",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "wind",
+     "gain": 0.22
+    },
+    {
+     "at": -0.45,
+     "word": [
+      0,
+      4
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "hit",
+     "gain": 0.4
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      8
+     ],
+     "name": "thud",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "M10_boarding",
+    "M4_record"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Then, in heavy seas, Rangers dropped from a helicopter.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "heavy",
+    "seas,",
+    "rangers",
+    "dropped",
+    "helicopter."
+   ],
+   "section": "A",
+   "case": "matthew",
+   "beat": "gotcha"
+  },
+  {
+   "id": "s03_gone",
+   "scene": "sc103_gone",
+   "min_duration": 2.1,
+   "pad_after": 0.04,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "door",
+     "gain": 0.22
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "click",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "sting",
+     "gain": 0.24
+    }
+   ],
+   "claims": [
+    "M13_name",
+    "M6_medevac"
+   ],
+   "transition": "dissolve",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "But the captain was gone.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "captain",
+    "gone."
+   ],
+   "section": "B",
+   "case": "matthew",
+   "beat": "person"
+  },
+  {
+   "id": "s04_airlift",
+   "scene": "sc103_airlift",
+   "min_duration": 2.9,
+   "pad_after": 0.04,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      1
+     ],
+     "name": "rumble",
+     "gain": 0.26
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      5
+     ],
+     "name": "thump",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "M6_medevac",
+    "M7_fake"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "The day before, he'd faked an emergency.",
+     "tone": "tense"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "day",
+    "before,",
+    "faked",
+    "emergency."
+   ],
+   "section": "B",
+   "case": "matthew",
+   "beat": "person"
+  },
+  {
+   "id": "s05_search",
+   "scene": "sc103_search",
+   "min_duration": 2.6,
+   "pad_after": 0.04,
+   "music_cue": "tension",
+   "sfx": [
+    {
+     "at": -0.4,
+     "word": [
+      0,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "cash",
+     "gain": 0.22
+    },
+    {
+     "at": 0.25,
+     "word": [
+      0,
+      5
+     ],
+     "name": "beep",
+     "gain": 0.16
+    }
+   ],
+   "claims": [
+    "M6_medevac",
+    "M8_cash"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Airlifted off, with cash and phones.",
+     "tone": "confident"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "airlifted",
+    "off,",
+    "cash",
+    "phones."
+   ],
+   "section": "B",
+   "case": "matthew",
+   "beat": "person"
+  },
+  {
+   "id": "s06_court",
+   "scene": "sc103_court",
+   "min_duration": 5.2,
+   "pad_after": 0.04,
+   "music_cue": "tension-rise",
+   "sfx": [
+    {
+     "at": -0.1,
+     "word": [
+      0,
+      0
+     ],
+     "name": "whoosh",
+     "gain": 0.18
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      2
+     ],
+     "name": "thud",
+     "gain": 0.24
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      0
+     ],
+     "name": "paper",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      1,
+      5
+     ],
+     "name": "pen",
+     "gain": 0.2
+    }
+   ],
+   "claims": [
+    "M13_name",
+    "M14_plea",
+    "M15_namecap"
+   ],
+   "transition": "push",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Soheil Jelveh pleaded guilty.",
+     "tone": "confident"
+    },
+    {
+     "who": "narrator",
+     "text": "His barrister called him captain in name only.",
+     "tone": "curious"
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "soheil",
+    "jelveh",
+    "pleaded",
+    "guilty.",
+    "captain",
+    "name",
+    "only."
+   ],
+   "section": "C",
+   "case": "matthew",
+   "beat": "consequence"
+  },
+  {
+   "id": "s07_sentence",
+   "scene": "sc103_sentence",
+   "min_duration": 2.6,
+   "pad_after": 0.04,
+   "music_cue": "revelation",
+   "sfx": [
+    {
+     "at": -0.5,
+     "word": [
+      0,
+      0
+     ],
+     "name": "riser",
+     "gain": 0.2
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      0
+     ],
+     "name": "stamp",
+     "gain": 0.3
+    },
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "thump",
+     "gain": 0.28
+    }
+   ],
+   "claims": [
+    "M16_sentence",
+    "M17_others"
+   ],
+   "transition": "cut",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Seventeen and a half years.",
+     "tone": "reveal",
+     "pause_before": 0.3
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "seventeen",
+    "half",
+    "years."
+   ],
+   "section": "C",
+   "case": "matthew",
+   "beat": "consequence",
+   "music_drop": true
+  },
+  {
+   "id": "s08_end",
+   "scene": "sc103_end",
+   "min_duration": 2.4,
+   "pad_after": 0.1,
+   "music_cue": "aftermath",
+   "sfx": [
+    {
+     "at": 0.0,
+     "word": [
+      0,
+      4
+     ],
+     "name": "swell",
+     "gain": 0.22
+    },
+    {
+     "at": 0.05,
+     "word": [
+      0,
+      6
+     ],
+     "name": "sub",
+     "gain": 0.3
+    }
+   ],
+   "claims": [
+    "M18_depart",
+    "M16_sentence"
+   ],
+   "transition": "zoom",
+   "caption_y": 1380,
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "This July, the ship left. He didn't.",
+     "tone": "reveal",
+     "pause_before": 0.05
+    }
+   ],
+   "shot": {},
+   "emphasis": [
+    "july,",
+    "ship",
+    "left.",
+    "didn't."
+   ],
+   "section": "D",
+   "case": "matthew",
+   "beat": "callback",
+   "music_drop": true
+  }
+ ],
+ "claims": [
+  {
+   "id": "M1_ship",
+   "type": "established",
+   "nature": "fact",
+   "text": "The MV Matthew was a Panamanian-flagged bulk carrier. Drawn as a generic bulker: no name, flag or livery. The hook's 'A ship's captain carried a fortune in cocaine' states the case: its captain pleaded guilty to possession of the cocaine aboard for sale or supply.",
+   "sources": [
+    "cbs",
+    "mex_medevac",
+    "it_depart",
+    "bn_fear"
+   ]
+  },
+  {
+   "id": "M2_load",
+   "type": "established",
+   "nature": "fact",
+   "text": "2,253 kg of cocaine (reported as 2.2 / 2.25 tonnes). Narration: 'Over 2 tonnes' (the digit on the caption, spoken 'two'). Headline 'TWO TONNES OF COCAINE / AND NO CAPTAIN'.",
+   "sources": [
+    "it_sent",
+    "tj_sent",
+    "cbs"
+   ]
+  },
+  {
+   "id": "M3_value",
+   "type": "established",
+   "nature": "fact",
+   "text": "Worth about EUR 157 million (the gardai's estimate, as reported). Narration: 'worth a hundred and fifty-seven million euros'. Label sub 'Worth about EUR 157m, as reported'.",
+   "sources": [
+    "it_sent",
+    "ie_sent",
+    "lbc",
+    "cbs",
+    "itv"
+   ]
+  },
+  {
+   "id": "M4_record",
+   "type": "established",
+   "nature": "fact",
+   "text": "Ireland's largest-ever drug seizure. Label 'IRELAND'S BIGGEST DRUG SEIZURE'.",
+   "sources": [
+    "it_sent",
+    "rte_sent",
+    "bn_sent",
+    "itv"
+   ]
+  },
+  {
+   "id": "M10_boarding",
+   "type": "established",
+   "nature": "fact",
+   "text": "26 September 2023, off the south coast: Army Ranger Wing soldiers boarded the ship from an Air Corps helicopter in heavy seas / treacherous weather. Narration (gotcha): 'In heavy seas, Rangers dropped from a helicopter.' Label 'OFF IRELAND'S SOUTH COAST · 26 SEPT 2023', sub 'Army Rangers board from a helicopter'. Rangers drawn as generic figures with torches, no weapons, no insignia.",
+   "sources": [
+    "it_df",
+    "tj_inside",
+    "bn_rangers",
+    "mex_board",
+    "itv"
+   ]
+  },
+  {
+   "id": "M13_name",
+   "type": "established",
+   "nature": "fact",
+   "text": "The captain, Soheil Jelveh, was not on board when the ship was intercepted. Narration: 'But the captain was gone.' Label 'THE CAPTAIN · NOT ON BOARD'.",
+   "sources": [
+    "it_sent",
+    "tj_sent",
+    "rte_sent",
+    "bn_sent",
+    "lbc"
+   ]
+  },
+  {
+   "id": "M6_medevac",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 25 September 2023, the day before the boarding, the captain was airlifted off the ship (reported as a medical evacuation), taken to hospital in Waterford and searched by gardai, who found phones and cash. Narration: 'Airlifted off, with cash and phones.' Callout 'CASH AND PHONES', sub 'Found when police searched him'. Label '25 SEPT 2023 · WATERFORD'.",
+   "sources": [
+    "tj_sent",
+    "tj_two",
+    "mex_medevac",
+    "bn_fear",
+    "ie_sent"
+   ]
+  },
+  {
+   "id": "M7_fake",
+   "type": "established",
+   "nature": "fact",
+   "text": "The Special Criminal Court accepted that he fled the ship in a fake medical emergency (and found he knew what was going on). Narration: 'The day before, he'd faked an emergency.' Label sub 'The court accepted it was fake'.",
+   "sources": [
+    "tj_sent",
+    "it_sent",
+    "bn_fear"
+   ]
+  },
+  {
+   "id": "M8_cash",
+   "type": "established",
+   "nature": "fact",
+   "text": "He was found with cash and phones; the amount differs between reports, so no amount is narrated or shown (the bundle on the tray carries no figure).",
+   "sources": [
+    "bn_fear",
+    "tj_sent",
+    "mex_medevac"
+   ]
+  },
+  {
+   "id": "M14_plea",
+   "type": "established",
+   "nature": "fact",
+   "text": "He pleaded guilty at the Special Criminal Court to possession of cocaine for sale or supply aboard the ship (24-26 Sept 2023). Narration: 'Soheil Jelveh pleaded guilty.' Card 'SPECIAL CRIMINAL COURT', 'THE CAPTAIN · PLEADED GUILTY'.",
+   "sources": [
+    "bn_fear",
+    "it_sent",
+    "tj_sent"
+   ]
+  },
+  {
+   "id": "M15_namecap",
+   "type": "established",
+   "nature": "fact",
+   "text": "His barrister told the court he was captain in name only, following orders like everyone else (the defence's words, as reported). Narration: 'His barrister called him captain in name only.' Label 'CAPTAIN IN NAME ONLY', sub 'His barrister, as reported'.",
+   "sources": [
+    "bn_fear",
+    "rte_sent",
+    "tj_sent"
+   ]
+  },
+  {
+   "id": "M16_sentence",
+   "type": "established",
+   "nature": "fact",
+   "text": "4 July 2025, Special Criminal Court: sentenced to 17 and a half years. Narration: 'Seventeen and a half years.' Counter '17½ YEARS'. The callback 'He didn't' (sail) rests on this sentence and on the ship's departure in July 2026.",
+   "sources": [
+    "it_sent",
+    "rte_sent",
+    "tj_sent",
+    "bn_sent",
+    "lbc"
+   ]
+  },
+  {
+   "id": "M17_others",
+   "type": "established",
+   "nature": "fact",
+   "text": "FUN FACT: eight men were sentenced over the seizure, 129 years in total (headline terms reduced for guilty pleas). Card 'EIGHT MEN JAILED / 129 YEARS BETWEEN THEM'.",
+   "sources": [
+    "it_sent",
+    "tj_sent",
+    "ie_sent",
+    "lbc"
+   ]
+  },
+  {
+   "id": "M18_depart",
+   "type": "established",
+   "nature": "fact",
+   "text": "On 17 July 2026 the MV Matthew left Cork Harbour under tow (a dead-ship tow, bound for Varna), after costing the State about EUR 16-17m to keep; Revenue had sold it for a nominal one dollar. He was sentenced to 17½ years in July 2025; no report of an appeal or release was found (searched 25 Oct 2026). Narration (callback): 'This July, the ship left. He didn't.' (The brief's 'sailed' is corrected to 'left': it was towed.) Stamp 'SHIP: GONE · CAPTAIN: 17½ YEARS'.",
+   "sources": [
+    "it_depart",
+    "revenue",
+    "mex_gone",
+    "it_dollar"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "it_sent",
+   "publisher": "The Irish Times",
+   "title": "Eight men sentenced to jail over Ireland's biggest ever drug seizure",
+   "url": "https://www.irishtimes.com/crime-law/courts/2025/07/04/eight-men-sentenced-to-jail-over-irelands-biggest-ever-drug-seizure/",
+   "date": "2025-07-04",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "it_df",
+   "publisher": "The Irish Times",
+   "title": "How, with minimal resources, the Defence Forces carried out its most daring operation in decades",
+   "url": "https://www.irishtimes.com/crime-law/courts/2025/07/06/how-with-minimal-resources-the-defence-forces-carried-its-most-daring-operation-in-decades/",
+   "date": "2025-07-06",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "it_depart",
+   "publisher": "The Irish Times",
+   "title": "MV Matthew departs Cork having cost State EUR 16m in berthing, crew and maintenance fees",
+   "url": "https://www.irishtimes.com/crime-law/2026/07/17/mv-matthew-to-depart-cork-having-cost-state-16m-in-berthing-crew-and-maintenance-fees/",
+   "date": "2026-07-17",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "rte_sent",
+   "publisher": "RTE News",
+   "title": "MV Matthew: eight men sentenced",
+   "url": "https://www.rte.ie/news/courts/2025/0704/1521808-mv-matthew-court/",
+   "date": "2025-07-04",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "tj_sent",
+   "publisher": "TheJournal.ie",
+   "title": "MV Matthew sentencing at the Special Criminal Court",
+   "url": "https://www.thejournal.ie/mv-matthew-sentencing-special-criminal-court-operation-piano-6752742-Jul2025/",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "tj_inside",
+   "publisher": "TheJournal.ie",
+   "title": "The inside story of the raid on the MV Matthew",
+   "url": "https://www.thejournal.ie/the-inside-story-of-the-raid-on-the-mv-matthew-6747937-Jul2025/",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "tj_two",
+   "publisher": "TheJournal.ie",
+   "title": "MV Matthew: two men an essential part of drug trafficking, State says",
+   "url": "https://www.thejournal.ie/mv-matthew-two-men-essential-part-drug-trafficking-state-6620214-Feb2025/",
+   "date": "2025-02",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "ie_sent",
+   "publisher": "Irish Examiner",
+   "title": "MV Matthew sentencing",
+   "url": "https://www.irishexaminer.com/news/courtandcrime/arid-+41663603.html",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "bn_fear",
+   "publisher": "BreakingNews.ie wire (Western People / Donegal Live)",
+   "title": "Captain of MV Matthew carrying 2.2 tonnes of cocaine feared for his life, court hears",
+   "url": "https://www.westernpeople.ie/captain-of-mv-matthew-carrying-2-2-tonnes-of-cocaine-feared-for-his-life-court-hears_arid-60082.html",
+   "date": "2025-06",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "bn_rangers",
+   "publisher": "BreakingNews.ie wire (Letterkenny Live)",
+   "title": "Irish Army Rangers risked their lives to board cargo vessel transporting cocaine haul",
+   "url": "https://www.letterkennylive.ie/national/irish-army-rangers-risked-their-lives-to-board-cargo-vessel-transporting-cocaine-haul-6824871",
+   "date": "2025-06",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "bn_sent",
+   "publisher": "BreakingNews.ie",
+   "title": "Eight men jailed over Ireland's largest ever cocaine seizure",
+   "url": "https://www.breakingnews.ie/ireland/eight-men-jailed-over-irelands-largest-ever-cocaine-seizure-1780233.html",
+   "date": "2025-07-04",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "lbc",
+   "publisher": "LBC",
+   "title": "Eight men jailed in Ireland over record drugs haul",
+   "url": "https://www.lbc.co.uk/crime/eight-men-jailed-ireland-drugs/",
+   "date": "2025-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "itv",
+   "publisher": "ITV News / UTV",
+   "title": "Elite Irish army unit storms cargo ship suspected of drug trafficking",
+   "url": "https://www.itv.com/news/utv/2023-09-27/elite-irish-army-unit-storms-cargo-ship-suspected-of-drug-trafficking",
+   "date": "2023-09-27",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "cbs",
+   "publisher": "CBS News",
+   "title": "Ireland seizes over 2 tons of cocaine in international cartel drug raid",
+   "url": "https://www.cbsnews.com/amp/news/ireland-seizes-2-tons-cocaine-international-cartel-drug-raid",
+   "date": "2023-09",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "mex_medevac",
+   "publisher": "The Maritime Executive",
+   "title": "After medevac, captain of cocaine-laden bulker held without bail",
+   "url": "https://maritime-executive.com/article/after-medevac-captain-of-cocaine-laden-bulker-held-without-bail",
+   "date": "2023-10-03",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "mex_board",
+   "publisher": "The Maritime Executive",
+   "title": "Video: Irish Army boards drug-smuggling bulker in rough seas",
+   "url": "https://maritime-executive.com/article/video-irish-army-boards-drug-smuggling-bulker-in-rough-seas",
+   "date": "2023-09",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "mex_gone",
+   "publisher": "The Maritime Executive",
+   "title": "Ireland finally gets rid of seized bulker after three years and 16m cost",
+   "url": "https://maritime-executive.com/article/ireland-finally-gets-rid-of-seized-bulker-after-three-years-and-16m-cost",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "it_dollar",
+   "publisher": "The Irish Times",
+   "title": "Seized drug-smuggling ship MV Matthew sold for one dollar",
+   "url": "https://www.irishtimes.com/crime-law/2026/07/18/seized-drug-smuggling-ship-mv-matthew-sold-for-one-dollar/",
+   "date": "2026-07-18",
+   "accessed": "search-result extract only, 2026-10-25"
+  },
+  {
+   "id": "revenue",
+   "publisher": "Revenue (Irish Tax and Customs)",
+   "title": "MV Matthew press release",
+   "url": "https://www.revenue.ie/en/corporate/press-office/press-releases/2026/pr-071826-mv-matthew.aspx",
+   "date": "2026-07",
+   "accessed": "search-result extract only, 2026-10-25"
+  }
+ ],
+ "format": "short40",
+ "look": "premium",
+ "engagement_rules": true,
+ "engagement_version": 10,
+ "lane": "bust",
+ "search_terms": [
+  "captain cocaine",
+  "cocaine ship",
+  "mv matthew"
+ ],
+ "palette": {
+  "shadow": "#101a22",
+  "mid": "#aeb2ae",
+  "accent": "#e8a33a"
+ },
+ "hook_title": {
+  "lines": [
+   {
+    "text": "TWO TONNES OF COCAINE"
+   },
+   {
+    "text": "AND NO CAPTAIN",
+    "colour": "#e8a33a"
+   }
+  ],
+  "until": 2.6,
+  "y": 400
+ },
+ "progress": {
+  "label": "",
+  "keys": [
+   {
+    "t": 3.2,
+    "v": "1/3 · THE SHIP"
+   },
+   {
+    "t": 11.36,
+    "v": "2/3 · THE CAPTAIN"
+   },
+   {
+    "t": 19.62,
+    "v": "3/3 · THE COURT"
+   }
+  ],
+  "y": 350,
+  "until": 26.26
+ },
+ "end_title": {
+  "lines": [
+   {
+    "text": "CAPTAIN IN NAME ONLY?"
+   },
+   {
+    "text": "FAKED IT OR FLED IT? 👇",
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "SEND TO THE MATE WHO'D CALL IN SICK",
+    "fs": 34
+   },
+   {
+    "text": "NEXT FILE: THE SCOOTER RUN",
+    "fs": 36,
+    "colour": "#e8a33a"
+   },
+   {
+    "text": "THE HIDDEN WORLD · CASE FILE 103",
+    "fs": 30
+   }
+  ],
+  "from": 2.48,
+  "y": 300,
+  "fs": 60
+ },
+ "legal_status_verified": "2026-10-25"
+}
