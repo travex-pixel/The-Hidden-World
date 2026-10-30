@@ -29,7 +29,7 @@ TARGET_VIEWS = 3600
 def load():
     rows = [r for r in csv.DictReader(open(A / "reels_summary.csv")) if r["reel"].isdigit()]
     for r in rows:
-        for k in ("views", "skip_rate_pct", "kept_10s_pct", "kept_end_pct", "avg_watch_pct_of_length", "like_rate_pct", "comments", "shares", "saves", "length_s", "average_watch_time_s"):
+        for k in ("views", "skip_rate_pct", "kept_10s_pct", "kept_16s_pct", "kept_end_pct", "avg_watch_pct_of_length", "like_rate_pct", "comments", "shares", "saves", "length_s", "average_watch_time_s"):
             r[k] = float(r[k]) if r.get(k) not in (None, "", "None") else None
         r["reel"] = int(r["reel"])
     return sorted(rows, key=lambda r: r["reel"])
@@ -47,7 +47,7 @@ def postmortem(n: int) -> str:
     lines = [f"# Post-mortem: Case File {n}", "", f"Hook: {me.get('hook_first_line') or '?'}", f"Engine: {me.get('engine')}; length {me.get('length_s')} s; read {me.get('read_date_utc_file')} {me.get('read_clock_local') or ''}", "",
              "| metric | this reel | median of previous ten | verdict |", "|---|---|---|---|"]
     verdicts = {}
-    for k, label, better in (("views", "views", "high"), ("skip_rate_pct", "skip %", "low"), ("kept_10s_pct", "kept @10 s %", "high"), ("kept_end_pct", "end %", "high"),
+    for k, label, better in (("views", "views", "high"), ("skip_rate_pct", "skip %", "low"), ("kept_10s_pct", "kept @10 s %", "high"), ("kept_16s_pct", "kept @16 s %", "high"), ("kept_end_pct", "end %", "high"),
                              ("avg_watch_pct_of_length", "avg watch % of length", "high"), ("like_rate_pct", "like rate %", "high"), ("comments", "comments", "high"), ("shares", "shares", "high"), ("saves", "saves", "high")):
         m = med(prev, k); v = me.get(k)
         if v is None or m is None: verdicts[k] = None; lines.append(f"| {label} | {v if v is not None else '–'} | {m if m is not None else '–'} | – |"); continue
@@ -59,6 +59,8 @@ def postmortem(n: int) -> str:
         one = "THE OPENING: skip rate is 5+ points worse than the previous ten. Frame 0 did not show the object half-revealed by hands, or the first spoken words were not a deed. Redo the first three seconds before anything else."
     elif me["kept_10s_pct"] is not None and m_10 is not None and me["kept_10s_pct"] < m_10 - 5:
         one = "SECONDS 3–10: people stopped but left before the gotcha. Move the catch earlier (start the reveal line before 7 s) and cut any line between the hook and the catch."
+    elif me.get("kept_10s_pct") is not None and me.get("kept_16s_pct") is not None and me["kept_10s_pct"] - me["kept_16s_pct"] >= 15:
+        one = "THE MIDDLE: people who survived the hook left between 10 and 16 s (a drop of %d points). That window is biography: the name, the age, the hometown, the claim. Tell it as a chain of turns instead (something happens every ≤ 7 s, name and age on a label), and keep the one physical moment for the gotcha." % (me["kept_10s_pct"] - me["kept_16s_pct"])
     elif me["kept_end_pct"] is not None and m_end is not None and me["kept_end_pct"] < m_end - 5:
         one = "THE ENDING: the last ten seconds lost more than usual. Shorten (≤ 30 s), end on a hard fact, no tail after the last word, end card up by 0.2 s into the last scene."
     elif (me.get("shares") or 0) + (me.get("saves") or 0) == 0 and me["views"] is not None and m_views is not None and me["views"] >= m_views:

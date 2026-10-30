@@ -104,8 +104,10 @@ Targets (docs/CHANNEL_BRIEF_2026-10-26.md): skip ≤ 23 %, ≥ 65 % at 10 s, ave
 
 | # | age | views | viewers | avg watch | skip % | kept @10 s | end % | shares | saves | follows | comments | like % |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 104 | 48 h | | | | | | | | | | | |
-| 105 | 48 h | | | | | | | | | | | |
-| 106 | 48 h | | | | | | | | | | | |
+| 104 | ~3 d | 2,786 | 1,912 | 13 s (44 %) | – | ~60 | ~27 | 1 | 3 | 0 | 2 | – |
+| 105 | ~2 d | 2,710 | 1,970 | 19 s (57 %) | – | ~65 | ~25 | 0 | 2 | 0 | 2 | – |
+| 106 | ~1.5 d | 1,091 | – | – | 30.6 | ~60 | ~22 | 0 | 0 | 0 | 2 | 0.9 |
 
 Compare 105 (33.2 s, three more seconds on the person) against 104 (29.6 s) and 106 (31.6 s) on end % and average watch.
+
+Reading (30 Oct 21:08): the openings held (60–65 % at 10 s) and the middles leaked: every reel lost 25–35 points between 8 and 18 s, on the lines that described the person (name, age, hometown, claim), and ended at 22–27 % against 35–45 % for v8/v9. Likes landed on actions (106's run at 3 s, 105's backpack reveal at 12–15 s), never on description. Shares 1 of 3: the one-person idea alone did not unlock sends. 105's 33 s cost nothing on average watch (57 %). Engine v11: the middle as a chain of turns (a reveal/tense/curious line within every 7 s), name and age on a label, the gotcha a physical act by the person, a three-line end card.

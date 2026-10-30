@@ -9,7 +9,9 @@ Baseline median views at 26 Oct 2026: 1805. Target for the next ten Reels: media
 | 63 | 2920 | 16 | 60 | 15 |  | 0.9 | 4 | 0 | 1 | v3/list | Smugglers drove their Jeep up the border fence. |
 | 45 | 2846 |  | 45 | 30 | 49 | 1.7 | 4 | 13 | 6 | v2 | At 87, he ran cartel cocaine. |
 | 72 | 2823 | 27.9 | 55 | 35 |  | 1.6 | 3 | 0 | 3 | v5 | Smugglers hid a drug tunnel in a KFC. |
+| 104 | 2786 |  | 60 | 27 | 45 |  | 2 | 1 | 3 | v10 | Security boss at Heathrow loaded the smugglers' bags. |
 | 96 | 2777 | 30.4 | 45 | 35 |  | 1.2 | 2 | 0 | 0 | v8 | Smugglers built a drone sub run by Starlink. |
+| 105 | 2710 |  | 65 | 25 | 58 |  | 2 | 0 | 2 | v10 | A traveler carried cocaine inside his cakes. |
 | 97 | 2630 | 17 | 65 | 40 |  | 0.9 | 2 | 0 | 0 | v8 | Drug smugglers turned cocaine into a jacket. |
 | 75 | 2607 | 27.7 | 45 | 25 |  | 0.4 | 2 | 0 | 0 | v5 | Australia's record cocaine bust? Buried. |
 | 94 | 2462 | 23.1 | 55 | 30 |  | 0.7 | 2 | 0 | 0 | v8 | Smugglers dressed meth up as watermelons. |
@@ -31,10 +33,11 @@ Baseline median views at 26 Oct 2026: 1805. Target for the next ten Reels: media
 | 47 | 1445 | 28.9 | 50 | 10 |  | 0.8 | 3 | 0 | 0 | v2 | At 17, he started stealing planes. |
 | 83 | 1220 | 28.6 | 35 | 20 |  | 1.2 | 2 | 0 | 0 | v6 | A fake ambulance. Full of cocaine. |
 | 95 | 1103 | 28.6 | 50 | 35 |  | 1.2 | 4 | 0 | 0 | v8 | Smugglers branded their cocaine with Haaland. |
+| 106 | 1091 | 30.6 | 60 | 22 |  | 0.9 | 2 | 0 | 0 | v10 | A flight attendant carried cocaine in her suitcase. |
 | 79 | 1074 | 20.5 | 40 | 20 |  | 0.4 |  |  |  | v5 | Customs checked his socks. 200 lizards. |
 | 44 | 640 | 29.8 | 45 | 20 |  | 0.6 | 2 | 0 | 0 | v2 | At 91, he robbed a bank. |
 | 85 | 195 | 36.6 | 25 | 10 |  | 0 | 2 | 0 | 0 | v6 | Police say a burglar fell asleep in bed. |
 | 84 | 184 | 48.6 | 25 | 10 |  | 0.7 | 2 | 0 | 1 | v6 | Police say he robbed his Instagram friends. |
 | 87 | 157 | 39.5 | 35 | 15 |  | 0 | 3 | 0 | 0 | v6 | Police say he robbed a bank. By Uber. |
 
-Reels since 92 (engines v8–v9): 7 read; median views 2462; median skip 25.85 %; shares total 1; saves total 0.
+Reels since 92 (engines v8–v9): 10 read; median views 2546; median skip 28.6 %; shares total 2; saves total 5.

@@ -253,3 +253,38 @@ class VersionTen(VersionNine):
         ep = self.ep(); ep["hook_title"]["lines"][0]["text"] = "POLICE SAY HE ROBBED"
         c = engage_qa.analyse({"episode": ep}, self.tl(), None)["checks"]   # 31.2 s is fine on v10
         self.assertFalse(c["headline_leads_with_object"]); self.assertTrue(c["under_29_5s"]); self.assertTrue(c["under_35_5s"])
+
+
+
+class VersionEleven(VersionTen):
+    """v11: a turn (reveal/tense/curious line) every 7 s, and a three-line end card."""
+    def ep(self):
+        e = super().ep(); e["engagement_version"] = 11
+        e["end_title"] = {"lines": [{"text": "DUPED OR GUILTY?"}, {"text": "SEND TO THE MATE WHO'D RUN"}, {"text": "NEXT FILE: THE JUNGLE PILOT"}]}
+        return e
+
+    def tl11(self, hook, turn_starts):
+        tl = self.tl8(hook)
+        for sc in tl:
+            for ln in sc["lines"]:
+                ln["tone"] = "confident"
+        # place turn lines at the requested seconds inside whichever scene holds them
+        for t in turn_starts:
+            sc = next(s for s in tl if s["start"] <= t < s["end"])
+            sc["lines"].append({"text": "Then it turned.", "start": t, "end": t + 1.0, "tone": "reveal"})
+        return tl
+
+    def test_turn_every_7s_passes_and_biography_gap_fails(self):
+        ok = engage_qa.analyse({"episode": self.ep()}, self.tl11("A smuggler taped cocaine under his wig.", [6.0, 12.0, 18.0, 24.0]), None)["checks"]
+        self.assertTrue(ok["reveal_every_7s"]); self.assertTrue(ok["end_card_3_lines"])
+        bad = engage_qa.analyse({"episode": self.ep()}, self.tl11("A smuggler taped cocaine under his wig.", [6.0, 24.0]), None)["checks"]
+        self.assertFalse(bad["reveal_every_7s"])
+
+    def test_four_line_end_card_fails(self):
+        ep = self.ep(); ep["end_title"]["lines"].append({"text": "THE HIDDEN WORLD · CASE FILE 1"})
+        self.assertFalse(engage_qa.analyse({"episode": ep}, self.tl11("A smuggler taped cocaine under his wig.", [6.0, 12.0, 18.0, 24.0]), None)["checks"]["end_card_3_lines"])
+
+    def test_v10_fails_without_person_beat_or_signoff(self):
+        ep = self.ep(); ep["scenes"][2].pop("beat"); ep["end_title"]["lines"][2]["text"] = "FOLLOW FOR MORE"
+        c = engage_qa.analyse({"episode": ep}, self.tl8("A smuggler taped cocaine under his wig."), None)["checks"]
+        self.assertFalse(c["person_turn_by_12s"]); self.assertFalse(c["next_file_signoff"])

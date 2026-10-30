@@ -171,4 +171,14 @@ def analyse(plan: dict, tl: list, scene_js: Path | None) -> dict:
                 et = " ".join((l.get("text") or "") for l in ((ep.get("end_title") or {}).get("lines") or []))
                 checks["next_file_signoff"] = bool(re.search(r"NEXT FILE:\s*\S", et, re.I))
                 checks["under_35_5s"] = total <= 35.5
+            if (ep.get("engagement_version") or 1) >= 11:
+                # v11 (batch 8, 104–106): openings held 60–65 % at 10 s but the reels lost 25–35 points between 8 and
+                # 18 s and ended at 22–27 %, on the lines that described the person (name, age, hometown). People stay
+                # for turns and leave for biography: so a reveal/tense/curious line must start within every 7 s from
+                # the hook to the end, and the end card is at most three lines so the quarter who reach it can read it.
+                turns = sorted(ln["start"] for sc in tl for ln in sc.get("lines", []) if (ln.get("tone") or "") in ("reveal", "tense", "curious"))
+                marks = [0.0] + turns + [total]
+                gaps = [b - a for a, b in zip(marks, marks[1:])]
+                checks["reveal_every_7s"] = bool(turns) and max(gaps) <= 7.0; notes["max_gap_between_turns_s"] = round(max(gaps), 2) if gaps else None
+                checks["end_card_3_lines"] = len((ep.get("end_title") or {}).get("lines") or []) <= 3
     return {"enforced": bool(ep.get("engagement_rules")), "checks": checks, "notes": notes, "ok": all(checks.values())}
