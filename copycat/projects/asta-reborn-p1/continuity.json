@@ -1,0 +1,195 @@
+{
+ "premise": "Asta's story ends somewhere in the final war and he wakes as a newborn on the Hage church doorstep with every memory intact.",
+ "T0": {
+  "moment": "October 4, age 0, Hage church doorstep",
+  "stateVector": {
+   "retained_memories": "complete, through the final war",
+   "physical_body_constraints": "newborn; no mana (unchanged — congenital)",
+   "available_abilities_at_T0": [],
+   "external_world_state": "identical to canon; Liebe sealed in the five-leaf grimoire inside the Hage grimoire tower; nobody else remembers"
+  }
+ },
+ "rules": [
+  {
+   "id": "R1",
+   "rule": "Anti-Magic requires access to the five-leaf grimoire and Liebe; it is not innate.",
+   "canonTag": "CANON_ESTABLISHED",
+   "claims": [
+    "c04",
+    "c05"
+   ]
+  },
+  {
+   "id": "R2",
+   "rule": "Memories do not transfer physique: sword work and any devil form are gated by the body's age and conditioning.",
+   "canonTag": "CANON_INFERRED",
+   "claims": [
+    "c16",
+    "c23"
+   ]
+  },
+  {
+   "id": "R3",
+   "rule": "A five-leaf grimoire marks a devil host; exposure invites the Magic Parliament.",
+   "canonTag": "CANON_ESTABLISHED",
+   "claims": [
+    "c17"
+   ]
+  },
+  {
+   "id": "R4",
+   "rule": "Ki is perception, not strength, so it can be trained before the body matures.",
+   "canonTag": "CANON_INFERRED",
+   "claims": [
+    "c08"
+   ]
+  },
+  {
+   "id": "R5",
+   "rule": "Characters act only on what they know in THIS timeline: only Asta has foreknowledge.",
+   "canonTag": "WHAT_IF_DIVERGENT",
+   "claims": []
+  }
+ ],
+ "ledger": [
+  {
+   "age": 0,
+   "event": "Rebirth. Stays silent.",
+   "unlocks": [
+    "foreknowledge"
+   ],
+   "asta": {
+    "location": "Hage church",
+    "power_tier": "none",
+    "known_secrets": [
+     "everything through the final war"
+    ],
+    "inventory": []
+   }
+  },
+  {
+   "age": 3,
+   "event": "Begins Ki sensing practice.",
+   "unlocks": [
+    "ki_sensing_basic"
+   ]
+  },
+  {
+   "age": 5,
+   "event": "Targeted body conditioning; pendant incident — still loses the fight, still gets up. Yuno notices.",
+   "unlocks": [
+    "conditioning"
+   ],
+   "ripples": [
+    {
+     "target": "yuno",
+     "type": "accelerated",
+     "detail": "Starts training years early; suspects Asta."
+    }
+   ]
+  },
+  {
+   "age": 7,
+   "event": "Enters the grimoire tower, speaks Licita's name, is overpowered by Liebe, wins him with the truth. Contract as equals. Cannot lift the sword; union unusable. Grimoire hidden under the church floor.",
+   "unlocks": [
+    "grimoire_access",
+    "liebe_alliance"
+   ],
+   "ripples": [
+    {
+     "target": "liebe",
+     "type": "accelerated",
+     "detail": "Brotherhood ~10 years before the canon ritual."
+    }
+   ]
+  },
+  {
+   "age": 15,
+   "event": "Ceremony: no grimoire arrives (he already has it). Senses Revchi by Ki; ends the ambush in one swing. Yuno asks how long he has had the sword.",
+   "unlocks": [
+    "demon_slayer_wieldable",
+    "ki_sensing_advanced"
+   ],
+   "ripples": [
+    {
+     "target": "revchi",
+     "type": "mutated",
+     "detail": "Ambush fails instantly."
+    },
+    {
+     "target": "yuno",
+     "type": "mutated",
+     "detail": "Rivalry now built on a suspected secret."
+    }
+   ]
+  },
+  {
+   "age": 15.5,
+   "event": "Entrance exam: hides his level; only Yami takes him — and reads his Ki as a veteran's. Joins the Black Bulls by design.",
+   "unlocks": [
+    "black_bulls"
+   ],
+   "ripples": [
+    {
+     "target": "yami",
+     "type": "mutated",
+     "detail": "Knows Asta is hiding something; does not care."
+    }
+   ]
+  },
+  {
+   "age": 15.6,
+   "event": "Considers telling Julius; stops because of Lucius. The door opens anyway.",
+   "unlocks": [],
+   "ripples": [
+    {
+     "target": "julius_lucius",
+     "type": "unknown",
+     "detail": "Part 2."
+    }
+   ]
+  }
+ ],
+ "beatAges": {
+  "b0": 15,
+  "b1": 0,
+  "b2": 5,
+  "b3": 7,
+  "b4": 15,
+  "b5": 15.5,
+  "b6": 15.6
+ },
+ "requirements": {
+  "b408": [
+   "demon_slayer_wieldable",
+   "grimoire_access"
+  ],
+  "b409": [
+   "demon_slayer_wieldable"
+  ],
+  "b407": [
+   "ki_sensing_advanced"
+  ],
+  "b322": [
+   "grimoire_access"
+  ],
+  "b205": [
+   "foreknowledge"
+  ],
+  "b512": [
+   "ki_sensing_advanced"
+  ],
+  "b323": [
+   "liebe_alliance"
+  ]
+ },
+ "requirementAges": {
+  "b205": 1,
+  "b322": 7,
+  "b323": 7,
+  "b407": 15,
+  "b408": 15,
+  "b409": 15,
+  "b512": 15.5
+ }
+}

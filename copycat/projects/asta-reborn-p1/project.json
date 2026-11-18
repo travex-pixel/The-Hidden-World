@@ -1,0 +1,260 @@
+{
+  "id": "asta-reborn-p1",
+  "title": "What If Asta Was Reborn With All His Memories and Anti-Magic? | Part 1",
+  "domain": "fictional_what_if",
+  "depthTier": "standard_youtube",
+  "universe": "black-clover",
+  "disclaimer": "Unofficial fan-made what-if. Black Clover is created by Yuki Tabata. Original code-drawn artwork; no footage or artwork from the manga or anime is used. Full manga spoilers.",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "voice": {
+    "provider": "kokoro",
+    "narrator": {
+      "blend": {
+        "am_michael": 0.62,
+        "am_fenrir": 0.38
+      },
+      "speed": 1.03
+    },
+    "cast": {
+      "julius": {
+        "blend": {
+          "bm_george": 0.8,
+          "bm_lewis": 0.2
+        },
+        "speed": 0.94,
+        "label": "JULIUS",
+        "color": "#ffe2a0"
+      },
+      "liebe": {
+        "blend": {
+          "am_puck": 0.75,
+          "am_echo": 0.25
+        },
+        "speed": 1.08,
+        "label": "LIEBE",
+        "color": "#ff3b4f"
+      },
+      "asta": {
+        "blend": {
+          "am_adam": 0.7,
+          "am_liam": 0.3
+        },
+        "speed": 1.04,
+        "label": "ASTA",
+        "color": "#5ef0d0"
+      },
+      "yuno": {
+        "blend": {
+          "am_eric": 0.8,
+          "am_michael": 0.2
+        },
+        "speed": 0.98,
+        "label": "YUNO",
+        "color": "#ffd35c"
+      },
+      "yami": {
+        "blend": {
+          "am_onyx": 0.75,
+          "am_fenrir": 0.25
+        },
+        "speed": 0.94,
+        "label": "YAMI",
+        "color": "#ff7a2f"
+      }
+    }
+  },
+  "reference": {
+    "url": "https://www.youtube.com/watch?v=zMcDsi-dC7A",
+    "title": "What If Naruto Was Reborn with All His Memories and Powers? | Part 1",
+    "layersAnalysed": [
+      "user-supplied timestamped transcript (full, ~1h40m)"
+    ],
+    "layersNotAnalysed": [
+      "video frames",
+      "audio/music",
+      "channel metadata"
+    ],
+    "blueprint": "copycat/projects/asta-reborn-p1/reference_blueprint.json"
+  },
+  "chapters": [
+    {
+      "id": "cold",
+      "index": 0,
+      "title": "",
+      "hideHud": true,
+      "music": "mystic"
+    },
+    {
+      "id": "ch1",
+      "index": 1,
+      "title": "Three Problems",
+      "music": "dread"
+    },
+    {
+      "id": "ch2",
+      "index": 2,
+      "title": "The Longest Training Arc",
+      "music": "drive"
+    },
+    {
+      "id": "ch3",
+      "index": 3,
+      "title": "The Brother in the Book",
+      "music": "emotional"
+    },
+    {
+      "id": "ch4",
+      "index": 4,
+      "title": "The Ceremony",
+      "music": "battle"
+    },
+    {
+      "id": "ch5",
+      "index": 5,
+      "title": "Nine Captains",
+      "music": "tension"
+    },
+    {
+      "id": "ch6",
+      "index": 6,
+      "title": "The Door",
+      "music": "cliff"
+    }
+  ],
+  "beats": [
+    {"id": "b001", "ch": "cold", "canon": "canon", "claims": ["c06"], "say": "Hage Village. The Grimoire Acceptance Ceremony.", "shot": {"type": "tower_ceremony", "stage": "wide", "stamp": "HAGE VILLAGE", "sub": "THE GRIMOIRE ACCEPTANCE CEREMONY", "in": "black", "inFrames": 20}, "lead": 0.9, "sfx": [{"at": 0.0, "name": "swell"}]},
+    {"id": "b002", "ch": "cold", "canon": "canon", "claims": ["c06"], "say": "Hundreds of books lift off the shelves, and drift down to their new owners.", "shot": {"type": "tower_ceremony", "stage": "books"}, "sfx": [{"at": 0.2, "name": "sparkle"}]},
+    {"id": "b003", "ch": "cold", "canon": "canon", "claims": ["c06"], "say": "One boy gets a {four}*four-leaf* clover. The grimoire of legends.", "shot": {"type": "fourleaf_yuno"}, "sfx": [{"at": "four", "name": "shimmer"}]},
+    {"id": "b004", "ch": "cold", "canon": "canon", "claims": ["c06"], "say": "And one boy gets {none}*nothing*.", "shot": {"type": "asta_nothing"}, "pad": 0.45, "sfx": [{"at": "none", "name": "boom"}], "music": "silence"},
+    {"id": "b005", "ch": "cold", "canon": "canon", "claims": ["c06"], "say": "The crowd laughs. {again}Just like last time.", "shot": {"type": "crowd_laugh"}, "sfx": [{"at": "again", "name": "glitch"}]},
+    {"id": "b006", "ch": "cold", "canon": "divergent", "say": "But this time... {smile}Asta is *smiling*.", "shot": {"type": "bust_reveal", "who": "asta", "grin": 1, "eyes": "#5ef0d0", "rim": "#ff3b4f", "in": "black"}, "pad": 0.5, "sfx": [{"at": "smile", "name": "impact"}]},
+    {"id": "b007", "ch": "cold", "canon": "divergent", "say": "Because his grimoire isn't on these shelves.", "shot": {"type": "tower_ceremony", "stage": "shelves"}, "sfx": [{"at": 0, "name": "whoosh"}]},
+    {"id": "b008", "ch": "cold", "canon": "divergent", "say": "It's been hidden under a church floorboard... for {eight}*eight years*.", "shot": {"type": "floorboard", "stage": "reveal", "big": "8 YEARS"}, "pad": 0.5, "sfx": [{"at": 0.3, "name": "creak"}, {"at": "eight", "name": "impact"}]},
+    {"id": "b009", "ch": "cold", "canon": "divergent", "say": "This is not the Asta you know. This one already lived the {whole}whole story.", "shot": {"type": "timeline_rewind"}, "sfx": [{"at": "whole", "name": "reverse"}], "music": "dread"},
+    {"id": "b010", "ch": "cold", "canon": "divergent", "say": "Every {w1}war. Every {w2}funeral. Every {w3}traitor's name.", "shot": {"type": "memory_flashes", "words": ["WAR", "FUNERAL", "TRAITOR"]}, "sfx": [{"at": "w1", "name": "hit"}, {"at": "w2", "name": "hit"}, {"at": "w3", "name": "hit"}]},
+    {"id": "b011", "ch": "cold", "canon": "divergent", "say": "Then he woke up on a church doorstep — as a newborn — with all of it still in his head.", "shot": {"type": "doorstep", "stage": "reveal"}, "sfx": [{"at": 0, "name": "wind"}]},
+    {"id": "b012", "ch": "cold", "canon": "divergent", "say": "He knows {k1}who destroys the kingdom. He knows {k2}which captain is lying. He knows {k3}the name of the devil behind everything.", "shot": {"type": "knows_list", "items": ["WHO DESTROYS THE KINGDOM", "WHICH CAPTAIN IS LYING", "THE DEVIL BEHIND EVERYTHING"]}, "sfx": [{"at": "k1", "name": "tick"}, {"at": "k2", "name": "tick"}, {"at": "k3", "name": "tick"}]},
+    {"id": "b013", "ch": "cold", "canon": "divergent", "say": "And he can't tell a {single}*single soul*.", "shot": {"type": "text_slam", "lines": ["HE CAN'T TELL", "A SINGLE SOUL."], "accent": 1, "bg": "hush"}, "sfx": [{"at": "single", "name": "impact"}]},
+    {"id": "b014", "ch": "cold", "canon": "rule", "claims": ["c17"], "say": "Because in the Clover Kingdom, a boy who knows too much isn't called a hero. He's called a {devil}*devil*. And devils get {exec}*executed*.", "shot": {"type": "trial", "stage": "intro"}, "pad": 0.3, "sfx": [{"at": "devil", "name": "stamp"}, {"at": "exec", "name": "slash"}]},
+    {"id": "b015", "ch": "cold", "canon": "none", "say": "", "duration": 5.2, "shot": {"type": "title_card", "kicker": "WHAT IF", "lines": ["ASTA WAS REBORN", "WITH ALL HIS MEMORIES"], "accent": "AND ANTI-MAGIC?", "part": "PART 1", "note": "FAN-MADE WHAT-IF  ·  FULL MANGA SPOILERS", "captions": false, "hud": false, "in": "flash"}, "sfx": [{"at": 0.0, "name": "boom"}, {"at": 1.5, "name": "impact"}, {"at": 2.7, "name": "riser"}], "music": "title"},
+    {"id": "b101", "ch": "ch1", "canon": "none", "say": "", "duration": 2.6, "shot": {"type": "chapter_card", "n": 1, "title": "THREE PROBLEMS", "captions": false, "hud": false}, "sfx": [{"at": 0, "name": "whoosh"}, {"at": 0.25, "name": "hit"}]},
+    {"id": "b102", "ch": "ch1", "canon": "divergent", "say": "Start at the end. Somewhere in the final war, Asta's story... {stop}stops.", "shot": {"type": "final_fall", "out": "white", "outFrames": 10}, "pad": 0.25, "sfx": [{"at": "stop", "name": "riser_short", "align": "peak"}]},
+    {"id": "b103", "ch": "ch1", "canon": "divergent", "say": "And then — {cry}crying. His own.", "shot": {"type": "eyes_open", "in": "none"}, "pad": 0.4, "music": "silence"},
+    {"id": "b104", "ch": "ch1", "canon": "canon", "claims": ["c01", "c02"], "say": "October fourth. Hage Village. The edge of the kingdom, in the shadow of a demon's skull.", "shot": {"type": "hage_wide", "stamp": "OCTOBER 4", "sub": "HAGE VILLAGE  ·  THE FORSAKEN REALM"}, "sfx": [{"at": 0, "name": "wind"}], "music": "wonder"},
+    {"id": "b105", "ch": "ch1", "canon": "divergent", "claims": ["c01", "u05"], "say": "Two babies on a church doorstep. One of them is {yuno}Yuno. The other is a {war}grown warrior, in a body that can't hold its own head up.", "shot": {"type": "doorstep", "stage": "close"}, "sfx": [{"at": "war", "name": "swell"}]},
+    {"id": "b106", "ch": "ch1", "canon": "divergent", "claims": ["c03"], "say": "So let's be precise about what came back with him. Memories: {m}all of them. Body: {b}six pounds. Mana: {z}zero — same as before. He was born without it, and no memory changes that.", "shot": {"type": "state_card", "stage": 0}, "sfx": [{"at": "m", "name": "tick"}, {"at": "b", "name": "tick"}, {"at": "z", "name": "tick"}]},
+    {"id": "b107", "ch": "ch1", "canon": "divergent", "say": "And Anti-Magic? {p}That's problem number one.", "shot": {"type": "state_card", "stage": 1, "in": "none"}, "sfx": [{"at": "p", "name": "error"}]},
+    {"id": "b108", "ch": "ch1", "canon": "rule", "claims": ["c04"], "say": "Problem one: Anti-Magic was never *his*.", "shot": {"type": "problem_card", "n": 1, "title": "ANTI-MAGIC WAS NEVER HIS", "in": "red"}, "sfx": [{"at": 0, "name": "impact"}]},
+    {"id": "b109", "ch": "ch1", "canon": "rule", "claims": ["c04"], "say": "It doesn't live in Asta's body. It lives in a devil named {liebe}Liebe —", "shot": {"type": "anti_source", "stage": 0}, "pad": 0.05, "sfx": [{"at": "liebe", "name": "growl"}]},
+    {"id": "b110", "ch": "ch1", "canon": "rule", "claims": ["c04", "c05", "c06"], "say": "and Liebe is sealed inside a ragged {book}five-leaf grimoire, gathering dust in the wall of the {tower}Grimoire Tower.", "shot": {"type": "anti_source", "stage": 1, "in": "none"}, "sfx": [{"at": "book", "name": "whoosh"}, {"at": "tower", "name": "whoosh"}]},
+    {"id": "b111", "ch": "ch1", "canon": "rule", "say": "{a}No book, no devil. {b}No devil, no Anti-Magic.", "shot": {"type": "equation", "items": ["BOOK", "DEVIL", "ANTI-MAGIC"]}, "sfx": [{"at": "a", "name": "hit"}, {"at": "b", "name": "hit"}]},
+    {"id": "b112", "ch": "ch1", "canon": "divergent", "say": "The power in the title? He has to go and earn it. {again}Again.", "shot": {"type": "title_callback"}, "sfx": [{"at": "again", "name": "stamp"}]},
+    {"id": "b113", "ch": "ch1", "canon": "rule", "say": "Problem two: memories aren't *muscles*.", "shot": {"type": "problem_card", "n": 2, "title": "MEMORIES AREN'T MUSCLES", "in": "red"}, "sfx": [{"at": 0, "name": "impact"}]},
+    {"id": "b114", "ch": "ch1", "canon": "canon", "claims": ["c08"], "say": "He remembers how to read Ki — the sixth sense Captain Yami drilled into him.", "shot": {"type": "skill_memory", "skill": "KI", "from": "CAPTAIN YAMI", "who": "yami"}},
+    {"id": "b115", "ch": "ch1", "canon": "canon", "claims": ["c09", "c05"], "say": "He remembers Zetten, from the Land of the Sun. He remembers {swords}every sword form he ever bled for.", "shot": {"type": "skill_memory", "skill": "ZETTEN", "from": "THE LAND OF THE SUN", "who": "sun"}, "sfx": [{"at": "swords", "name": "shing"}]},
+    {"id": "b116", "ch": "ch1", "canon": "divergent", "claims": ["c16"], "say": "But knowing how to swing a slab of iron taller than you are... doesn't help when you can't {walk}walk.", "shot": {"type": "sword_scale"}, "pad": 0.35, "sfx": [{"at": "walk", "name": "thud"}]},
+    {"id": "b117", "ch": "ch1", "canon": "rule", "say": "Problem three is the one that gets him *killed*.", "shot": {"type": "problem_card", "n": 3, "title": "THE BOOK IS A DEATH SENTENCE", "in": "red"}, "sfx": [{"at": 0, "name": "impact"}]},
+    {"id": "b118", "ch": "ch1", "canon": "canon", "claims": ["c17"], "say": "A five-leaf grimoire means a devil. The first time around, the Magic Parliament put him on trial just for carrying one — and that was *after* he'd helped save the kingdom.", "shot": {"type": "trial", "stage": "canon"}},
+    {"id": "b119", "ch": "ch1", "canon": "divergent", "say": "A child with a devil's book and a head full of state secrets? That's not a trial. That's an {x}*execution*.", "shot": {"type": "trial", "stage": "child"}, "pad": 0.4, "sfx": [{"at": "x", "name": "slash"}]},
+    {"id": "b120", "ch": "ch1", "canon": "divergent", "say": "So: {a}no power. {b}No body. {c}No allies. {d}Fifteen years on the clock. {go}@asta: This time... nobody dies on schedule.", "shot": {"type": "checklist_countdown", "items": ["NO POWER", "NO BODY", "NO ALLIES"], "big": "15 YEARS", "final": "NOBODY DIES ON SCHEDULE."}, "sfx": [{"at": "a", "name": "hit"}, {"at": "b", "name": "hit"}, {"at": "c", "name": "hit"}, {"at": "d", "name": "boom"}, {"at": "go", "name": "riser_short", "align": "peak"}]},
+    {"id": "b201", "ch": "ch2", "canon": "none", "say": "", "duration": 2.6, "shot": {"type": "chapter_card", "n": 2, "title": "THE LONGEST TRAINING ARC", "captions": false, "hud": false}, "sfx": [{"at": 0, "name": "whoosh"}, {"at": 0.25, "name": "hit"}]},
+    {"id": "b202", "ch": "ch2", "canon": "divergent", "say": "First, he does the hardest thing a shonen protagonist has ever done. He {shh}shuts up.", "shot": {"type": "shut_up"}, "pad": 0.35, "sfx": [{"at": "shh", "name": "zip"}], "music": "playful"},
+    {"id": "b203", "ch": "ch2", "canon": "divergent", "say": "For three years, the loudest kid in the Clover Kingdom plays a perfectly normal baby.", "shot": {"type": "church_days"}, "music": "playful"},
+    {"id": "b204", "ch": "ch2", "canon": "rule", "claims": ["c08"], "say": "But Ki doesn't need muscles. Ki is {b}breath. {p}Presence. The life-force of everything around you.", "shot": {"type": "ki_vision", "stage": "intro"}, "sfx": [{"at": 0.1, "name": "swell"}], "music": "wonder"},
+    {"id": "b205", "ch": "ch2", "canon": "divergent", "say": "So before he can even walk, he's lying in the dark, reading the whole church by its breathing.", "shot": {"type": "ki_vision", "stage": "church"}, "music": "wonder"},
+    {"id": "b206", "ch": "ch2", "canon": "divergent", "say": "Father Orsi, {o}snoring. Sister Lily, {l}awake again. And in the next crib — a quiet, steady presence he'd know {y}anywhere.", "shot": {"type": "ki_vision", "stage": "labels", "in": "none"}, "sfx": [{"at": "o", "name": "tick"}, {"at": "l", "name": "tick"}, {"at": "y", "name": "shimmer"}], "music": "wonder"},
+    {"id": "b207", "ch": "ch2", "canon": "canon", "claims": ["c23"], "say": "By five, he trains. In the original timeline he did this too — every single day, with no idea what any of it was *for*.", "shot": {"type": "training", "mode": "canon"}},
+    {"id": "b208", "ch": "ch2", "canon": "divergent", "say": "Now, every rep has a target. He knows exactly what the Demon-Slayer Sword demands. He knows exactly what his body has to {become}become.", "shot": {"type": "training", "mode": "target"}, "sfx": [{"at": "become", "name": "shimmer"}]},
+    {"id": "b209", "ch": "ch2", "canon": "divergent", "say": "So he carves a plank to the same length... and he {grow}grows into it.", "shot": {"type": "grow_montage"}, "pad": 0.6, "sfx": [{"at": "grow", "name": "riser"}]},
+    {"id": "b210", "ch": "ch2", "canon": "none", "say": "And this is where the timeline first pushes {back}*back*.", "shot": {"type": "timeline_pushback"}, "sfx": [{"at": "back", "name": "impact"}], "music": "tension"},
+    {"id": "b211", "ch": "ch2", "canon": "canon", "claims": ["c07", "c20"], "say": "A night you may remember. A drunk grabs little Yuno's pendant.", "shot": {"type": "alley", "stage": "grab"}, "music": "tension"},
+    {"id": "b212", "ch": "ch2", "canon": "canon", "claims": ["c07", "u03"], "say": "In canon, Asta charges in, gets beaten half to death, and refuses to stay down — and that's the night crybaby Yuno decides to become the Wizard King.", "shot": {"type": "alley", "stage": "canon"}, "music": "tension"},
+    {"id": "b213", "ch": "ch2", "canon": "divergent", "say": "This Asta has fought devils. He reads the man's Ki before the fist even moves. He knows *precisely* how to win.", "shot": {"type": "alley", "stage": "ki"}, "sfx": [{"at": 0.1, "name": "swell"}], "music": "tension"},
+    {"id": "b214", "ch": "ch2", "canon": "divergent", "say": "And he still {lose}loses. Because he weighs {w}*forty pounds*.", "shot": {"type": "alley", "stage": "lose"}, "pad": 0.4, "sfx": [{"at": "lose", "name": "punch"}, {"at": "w", "name": "impact"}], "music": "tension"},
+    {"id": "b215", "ch": "ch2", "canon": "divergent", "say": "So he does the only thing he can. He gets back up. {a}Again. {b}And again.", "shot": {"type": "get_up"}, "pad": 0.3, "sfx": [{"at": "a", "name": "hit"}, {"at": "b", "name": "hit"}], "music": "drive"},
+    {"id": "b216", "ch": "ch2", "canon": "divergent", "say": "The vow still happens. But Yuno is a genius, and geniuses notice things.", "shot": {"type": "yuno_notice"}},
+    {"id": "b217", "ch": "ch2", "canon": "divergent", "say": "Asta moved before every punch. Like he already {knew}*knew*.", "shot": {"type": "replay"}, "pad": 0.3, "sfx": [{"at": 0, "name": "reverse"}, {"at": "knew", "name": "tick"}]},
+    {"id": "b218", "ch": "ch2", "canon": "divergent", "say": "From that night, Yuno doesn't just have a rival. He has a *mystery*. And he starts training years ahead of schedule to solve it.", "shot": {"type": "ripple_card", "n": 1, "title": "YUNO", "status": "ACCELERATED", "detail": "Starts training years ahead of canon — to solve Asta.", "who": "yuno_child", "color": "#5ef0d0"}, "sfx": [{"at": 0, "name": "ripple"}]},
+    {"id": "b301", "ch": "ch3", "canon": "none", "say": "", "duration": 2.6, "shot": {"type": "chapter_card", "n": 3, "title": "THE BROTHER IN THE BOOK", "captions": false, "hud": false}, "sfx": [{"at": 0, "name": "whoosh"}, {"at": 0.25, "name": "hit"}]},
+    {"id": "b302", "ch": "ch3", "canon": "divergent", "say": "Age seven. Asta can't wait any longer — and here's why.", "shot": {"type": "age_stamp", "age": 7}},
+    {"id": "b303", "ch": "ch3", "canon": "inferred", "claims": ["c04"], "say": "Every year that book sits in the tower, Liebe sits inside it. {w1}Alone. {w2}In the dark. {w3}Hating.", "shot": {"type": "inside_book", "words": ["ALONE.", "IN THE DARK.", "HATING."]}, "pad": 0.3, "sfx": [{"at": "w3", "name": "growl"}]},
+    {"id": "b304", "ch": "ch3", "canon": "canon", "claims": ["c04", "u01"], "say": "Because Asta knows the devil's whole story now. Liebe was born at the very bottom of the underworld, with no magic at all — so weak, he {slip}slipped through the gate into our world.", "shot": {"type": "underworld"}, "sfx": [{"at": "slip", "name": "whoosh"}]},
+    {"id": "b305", "ch": "ch3", "canon": "canon", "claims": ["c04", "u01"], "say": "Humans hunted him. {one}One woman took him in. Called him her son. Her name was {l}Licita.", "shot": {"type": "licita_home"}, "sfx": [{"at": "l", "name": "shimmer"}], "music": "emotional"},
+    {"id": "b306", "ch": "ch3", "canon": "canon", "claims": ["c04", "c22", "u02"], "say": "When the devil king Lucifero tried to claw his way into our world through Liebe's body, Licita fought back with her bare hands. {kill}It killed her.", "shot": {"type": "lucifero"}, "pad": 0.35, "sfx": [{"at": 0, "name": "rumble"}, {"at": "kill", "name": "boom"}], "music": "dread"},
+    {"id": "b307", "ch": "ch3", "canon": "canon", "claims": ["c04"], "say": "With her last breath, she sealed Liebe inside a five-leaf grimoire — to keep him {safe}safe.", "shot": {"type": "seal"}, "sfx": [{"at": "safe", "name": "seal"}]},
+    {"id": "b308", "ch": "ch3", "canon": "canon", "claims": ["c03"], "say": "That woman had another son. One she had to leave on a church doorstep — because her own body drained the life out of anyone she held.", "shot": {"type": "licita_doorstep"}},
+    {"id": "b309", "ch": "ch3", "canon": "divergent", "claims": ["c15"], "say": "The first time, it took years — and a fight to the death — to learn that. This time, he walks into the tower {know}already knowing.", "shot": {"type": "canon_vs_now", "left": {"label": "CANON", "big": "YEARS", "sub": "Learned through the Devil-Binding Ritual"}, "right": {"label": "THIS TIMELINE", "big": "DAY ONE", "sub": "He already knows who is in the book"}}, "sfx": [{"at": "know", "name": "hit"}]},
+    {"id": "b310", "ch": "ch3", "canon": "divergent", "say": "Midnight. A seven-year-old breaks into the Grimoire Tower.", "shot": {"type": "tower_night", "stage": "enter", "in": "black"}, "music": "heist"},
+    {"id": "b311", "ch": "ch3", "canon": "divergent", "claims": ["c06"], "say": "The books don't react. They never did, for him. He climbs past ten thousand glowing spines to the one that doesn't glow — the one wedged into the wall itself.", "shot": {"type": "tower_night", "stage": "climb", "in": "none"}, "music": "heist"},
+    {"id": "b312", "ch": "ch3", "canon": "divergent", "say": "He doesn't try to take it. He sits down in front of it. And he says one word.", "shot": {"type": "book_face", "stage": "sit"}, "pad": 0.7, "music": "silence"},
+    {"id": "b313", "ch": "ch3", "canon": "divergent", "say": "{say}*Licita.*", "shot": {"type": "book_face", "stage": "word", "in": "none"}, "pad": 1.1, "music": "silence"},
+    {"id": "b314", "ch": "ch3", "canon": "divergent", "say": "The book tears itself {open}*open*.", "shot": {"type": "book_burst", "in": "red"}, "sfx": [{"at": 0, "name": "boom"}, {"at": 0.05, "name": "roar"}], "music": "battle"},
+    {"id": "b315", "ch": "ch3", "canon": "canon", "claims": ["c15", "u07"], "say": "Liebe comes out swinging — because this is all he ever wanted. A body with no magic. An empty house to move into. And this one is seven years old.", "shot": {"type": "liebe_attack"}, "music": "battle"},
+    {"id": "b316", "ch": "ch3", "canon": "divergent", "say": "Asta can't win this fight. He doesn't try. Pinned to the floor, claws at his throat, he just keeps {talk}talking.", "shot": {"type": "pinned", "stage": "pin"}, "sfx": [{"at": 0, "name": "thud"}], "music": "emotional"},
+    {"id": "b317", "ch": "ch3", "canon": "divergent", "claims": ["c04"], "say": "About the woman who gave a devil a name. About the day she died. Things only her son could know.", "shot": {"type": "pinned", "stage": "memories", "in": "none"}, "music": "emotional"},
+    {"id": "b318", "ch": "ch3", "canon": "divergent", "say": "Liebe's voice cracks. {q1}@liebe: How do you know her? {q2}@asta: Because she was my mother too.", "shot": {"type": "quote_duel", "a": {"who": "LIEBE", "text": "How do you know her?"}, "b": {"who": "ASTA", "text": "Because she was my mother too."}}, "pad": 0.8, "sfx": [{"at": "q2", "name": "swell"}], "music": "emotional"},
+    {"id": "b319", "ch": "ch3", "canon": "divergent", "claims": ["c15"], "say": "The first time, Asta beat Liebe — and then offered his hand. This time he loses, and offers it {any}anyway.", "shot": {"type": "hand_offer"}, "pad": 0.3, "music": "emotional"},
+    {"id": "b320", "ch": "ch3", "canon": "divergent", "say": "No master. No servant. Brothers — ten years ahead of schedule.", "shot": {"type": "ripple_card", "n": 2, "title": "LIEBE", "status": "BROTHER — 10 YEARS EARLY", "detail": "A contract between equals, at age seven.", "who": "liebe", "color": "#ff3b4f"}, "sfx": [{"at": 0, "name": "ripple"}], "music": "emotional"},
+    {"id": "b321", "ch": "ch3", "canon": "rule", "claims": ["c06"], "say": "But the timeline has rules. Asta finally draws the Demon-Slayer Sword...", "shot": {"type": "sword_draw"}, "pad": 0.05, "sfx": [{"at": 1.2, "name": "shing"}]},
+    {"id": "b322", "ch": "ch3", "canon": "divergent", "claims": ["c16"], "say": "...and it slams into the {thud}floor. He can't lift it. {jk}@liebe: Pathetic. Eat more.", "shot": {"type": "sword_drop", "in": "none"}, "pad": 0.45, "sfx": [{"at": "thud", "name": "thud"}], "music": "playful"},
+    {"id": "b323", "ch": "ch3", "canon": "rule", "claims": ["c15"], "say": "And Devil Union? In a child's body, it lasts about a {beat}heartbeat before it starts tearing him apart.", "shot": {"type": "union_meter"}, "sfx": [{"at": "beat", "name": "heartbeat"}]},
+    {"id": "b324", "ch": "ch3", "canon": "divergent", "say": "So the grimoire goes under a floorboard in the church.", "shot": {"type": "floorboard", "stage": "hide"}, "sfx": [{"at": 0.5, "name": "creak"}]},
+    {"id": "b325", "ch": "ch3", "canon": "divergent", "say": "And for eight more years, two brothers train in secret — one in the yard, one in the book. {lb}@liebe: Again, short-stuff. Again.", "shot": {"type": "secret_training"}, "pad": 0.5, "sfx": [{"at": 0, "name": "riser"}], "music": "drive"},
+    {"id": "b401", "ch": "ch4", "canon": "none", "say": "", "duration": 2.6, "shot": {"type": "chapter_card", "n": 4, "title": "THE CEREMONY", "captions": false, "hud": false}, "sfx": [{"at": 0, "name": "whoosh"}, {"at": 0.25, "name": "hit"}]},
+    {"id": "b402", "ch": "ch4", "canon": "divergent", "say": "Which brings us back to where we started. Age fifteen. The tower.", "shot": {"type": "tower_ceremony", "stage": "wide", "stamp": "AGE 15", "sub": "THE GRIMOIRE ACCEPTANCE CEREMONY — AGAIN"}, "music": "mystic"},
+    {"id": "b403", "ch": "ch4", "canon": "canon", "claims": ["c06"], "say": "Yuno gets his four-leaf — some things, destiny doesn't negotiate.", "shot": {"type": "fourleaf_yuno", "variant": 2}, "sfx": [{"at": 0.2, "name": "shimmer"}], "music": "mystic"},
+    {"id": "b404", "ch": "ch4", "canon": "divergent", "say": "Asta gets nothing. And {smile}smiles.", "shot": {"type": "bust_reveal", "who": "asta", "grin": 1, "eyes": "#5ef0d0", "rim": "#ff3b4f", "quick": 1}, "pad": 0.3, "sfx": [{"at": "smile", "name": "hit"}]},
+    {"id": "b405", "ch": "ch4", "canon": "canon", "claims": ["c06"], "say": "Outside, someone is waiting. {name}Revchi. A disgraced ex–Magic Knight with chain magic, here to steal a four-leaf grimoire and sell it.", "shot": {"type": "revchi_intro", "name": "REVCHI", "role": "EX–MAGIC KNIGHT  ·  CHAIN MAGIC"}, "sfx": [{"at": "name", "name": "chain"}], "music": "tension"},
+    {"id": "b406", "ch": "ch4", "canon": "canon", "claims": ["c06"], "say": "In canon, this is Asta's worst moment. Beaten. Told he has no magic and never will. Seconds from giving up — and {come}that's when the grimoire comes.", "shot": {"type": "canon_worst"}, "sfx": [{"at": "come", "name": "swell"}], "music": "tension"},
+    {"id": "b407", "ch": "ch4", "canon": "divergent", "say": "This time, Asta felt Revchi's Ki from the other side of the village. {lb}@liebe: Chain guy. Tower. Go.", "shot": {"type": "ki_radar"}, "sfx": [{"at": 0.2, "name": "ping"}, {"at": 1.4, "name": "ping"}]},
+    {"id": "b408", "ch": "ch4", "canon": "divergent", "claims": ["c04"], "say": "Chains wrap the Demon-Slayer Sword — and stop {x}*existing*.", "shot": {"type": "chains_vanish"}, "sfx": [{"at": 0.1, "name": "chain"}, {"at": "x", "name": "shatter"}], "music": "battle"},
+    {"id": "b409", "ch": "ch4", "canon": "divergent", "say": "{swing}One swing. It's over before Yuno can open his book.", "shot": {"type": "one_swing", "in": "flash"}, "pad": 0.35, "sfx": [{"at": "swing", "name": "slash"}, {"at": 0.5, "name": "boom"}], "music": "battle"},
+    {"id": "b410", "ch": "ch4", "canon": "divergent", "say": "{p}Problem: that is not how a boy who got his grimoire ten seconds ago fights.", "shot": {"type": "problem_stamp", "notes": ["PERFECT FORM", "ZERO HESITATION", "10 SECONDS OF EXPERIENCE?"]}, "sfx": [{"at": "p", "name": "error"}]},
+    {"id": "b411", "ch": "ch4", "canon": "divergent", "say": "Yuno looks at the sword. Then at Asta. And he asks the one question Asta has been dreading for fifteen years.", "shot": {"type": "yuno_stare"}, "pad": 0.5, "music": "silence"},
+    {"id": "b412", "ch": "ch4", "canon": "divergent", "say": "{q}@yuno: How long have you had that?", "shot": {"captions": false, "type": "quote_card", "who": "YUNO", "text": "How long have you had that?", "bust": "yuno", "color": "#ffd35c"}, "pad": 0.9, "music": "silence"},
+    {"id": "b413", "ch": "ch4", "canon": "divergent", "say": "Asta doesn't answer. Yuno doesn't push. {q}@yuno: Fine. Keep your secret. I'll become the Wizard King anyway.", "shot": {"type": "yuno_walk", "quote": "Keep your secret. I'll become the Wizard King anyway."}, "music": "emotional"},
+    {"id": "b414", "ch": "ch4", "canon": "divergent", "say": "The rivalry survives. But this Yuno isn't chasing a loudmouth with a dream. He's chasing someone who is hiding the truth about the world.", "shot": {"type": "ripple_card", "n": 3, "title": "THE RIVALRY", "status": "MUTATED", "detail": "Yuno knows Asta is hiding something — and trains to surpass it.", "who": "yuno", "color": "#ffd35c"}, "sfx": [{"at": 0, "name": "ripple"}], "music": "emotional"},
+    {"id": "b501", "ch": "ch5", "canon": "none", "say": "", "duration": 2.6, "shot": {"type": "chapter_card", "n": 5, "title": "NINE CAPTAINS", "captions": false, "hud": false}, "sfx": [{"at": 0, "name": "whoosh"}, {"at": 0.25, "name": "hit"}]},
+    {"id": "b502", "ch": "ch5", "canon": "canon", "claims": ["c10"], "say": "Six months later. The Magic Knights Entrance Exam. Nine captains, looking down from the balcony.", "shot": {"type": "exam_arena", "stage": "wide", "stamp": "SIX MONTHS LATER", "sub": "THE MAGIC KNIGHTS ENTRANCE EXAM"}},
+    {"id": "b503", "ch": "ch5", "canon": "divergent", "say": "And Asta looks back up — and sees what no one else in that arena can.", "shot": {"type": "exam_arena", "stage": "xray", "in": "none"}, "sfx": [{"at": 1.0, "name": "scan"}]},
+    {"id": "b504", "ch": "ch5", "canon": "canon", "claims": ["c12"], "say": "William Vangeance. Captain of the Golden Dawn. The most trusted man in the kingdom after the Wizard King —", "shot": {"type": "captain_file", "who": "vangeance", "name": "WILLIAM VANGEANCE", "role": "CAPTAIN  ·  THE GOLDEN DAWN", "color": "#ffd35c"}, "pad": 0.05, "sfx": [{"at": 0, "name": "whoosh"}]},
+    {"id": "b505", "ch": "ch5", "canon": "canon", "claims": ["c12"], "say": "— sharing his body with {p}Patolli, the elf who leads the Eye of the Midnight Sun.", "shot": {"type": "captain_file", "who": "vangeance", "split": "patolli", "name": "PATOLLI", "role": "LEADER  ·  EYE OF THE MIDNIGHT SUN", "color": "#ffd35c", "stamp": "TWO SOULS", "in": "none"}, "sfx": [{"at": "p", "name": "glitch"}]},
+    {"id": "b506", "ch": "ch5", "canon": "canon", "claims": ["c13"], "say": "Gueldre. Captain of the Purple Orcas. {sell}Selling the kingdom's secrets.", "shot": {"type": "captain_file", "who": "gueldre", "name": "GUELDRE POIZOT", "role": "CAPTAIN  ·  THE PURPLE ORCAS", "color": "#8d6bff", "stamp": "TRAITOR"}, "sfx": [{"at": 0, "name": "whoosh"}, {"at": "sell", "name": "stamp"}]},
+    {"id": "b507", "ch": "ch5", "canon": "canon", "claims": ["c14"], "say": "And behind both of them — five hundred years deep — a devil named {z}Zagred, who has been writing this tragedy since before the first Wizard King.", "shot": {"type": "puppet_master"}, "sfx": [{"at": "z", "name": "growl"}], "music": "dread"},
+    {"id": "b508", "ch": "ch5", "canon": "divergent", "say": "He knows all of it. He can prove {none}*none* of it.", "shot": {"type": "evidence_board"}, "pad": 0.35, "sfx": [{"at": "none", "name": "error"}]},
+    {"id": "b509", "ch": "ch5", "canon": "divergent", "claims": ["c10", "u08"], "say": "So when his turn comes, he hides almost everything. No mana. No noble name. And just like before — not one captain {want}wants him.", "shot": {"type": "exam_arena", "stage": "alone"}, "music": "silence"},
+    {"id": "b510", "ch": "ch5", "canon": "canon", "claims": ["c10"], "say": "Except {one}one.", "shot": {"type": "exam_arena", "stage": "yami", "in": "none"}, "pad": 0.5, "sfx": [{"at": "one", "name": "impact"}]},
+    {"id": "b511", "ch": "ch5", "canon": "canon", "claims": ["c08", "c10"], "say": "Yami Sukehiro. The man who taught him Ki.", "shot": {"type": "captain_file", "who": "yami", "name": "YAMI SUKEHIRO", "role": "CAPTAIN  ·  THE BLACK BULLS", "color": "#ff7a2f"}, "sfx": [{"at": 0, "name": "whoosh"}], "music": "drive"},
+    {"id": "b512", "ch": "ch5", "canon": "divergent", "say": "And Ki is the problem. Because Yami reads people the same way Asta does. And what he reads off this fifteen-year-old... isn't a kid. It's a {vet}*veteran*. {lb}@liebe: He's onto you.", "shot": {"type": "ki_read"}, "sfx": [{"at": "vet", "name": "boom"}]},
+    {"id": "b513", "ch": "ch5", "canon": "divergent", "say": "Yami just grins. {q}@yami: I don't care what you're hiding, kid. Join the Black Bulls.", "shot": {"type": "quote_card", "who": "YAMI", "text": "I don't care what you're hiding, kid. Join the Black Bulls.", "bust": "yami", "color": "#ff7a2f", "grin": 1}},
+    {"id": "b514", "ch": "ch5", "canon": "divergent", "say": "And Asta says yes. Not out of nostalgia. Out of {s}*strategy*.", "shot": {"type": "text_slam", "lines": ["NOT NOSTALGIA.", "STRATEGY."], "accent": 1, "bg": "grid", "cues": ["", "s"]}, "sfx": [{"at": "s", "name": "impact"}]},
+    {"id": "b515", "ch": "ch5", "canon": "canon", "say": "Because he knows what the Black Bulls really are.", "shot": {"type": "squad_board"}},
+    {"id": "b516", "ch": "ch5", "canon": "canon", "claims": ["c19", "u04"], "say": "Finral — a door to anywhere in the kingdom.", "shot": {"type": "squad_card", "who": "finral", "name": "FINRAL", "tag": "SPATIAL MAGIC", "line": "A door to anywhere.", "fx": "portal", "color": "#7cc8ff", "in": "whipL"}, "sfx": [{"at": 0, "name": "whoosh"}]},
+    {"id": "b517", "ch": "ch5", "canon": "canon", "claims": ["c19", "u04"], "say": "Noelle — a royal with an ocean of mana, and no control... yet.", "shot": {"type": "squad_card", "who": "noelle", "name": "NOELLE", "tag": "WATER MAGIC  ·  ROYALTY", "line": "An ocean of mana. No control — yet.", "fx": "water", "color": "#5ef0d0", "in": "whipL"}, "sfx": [{"at": 0, "name": "whoosh"}]},
+    {"id": "b518", "ch": "ch5", "canon": "canon", "claims": ["c19", "u04"], "say": "Vanessa — magic that can rewrite fate itself.", "shot": {"type": "squad_card", "who": "vanessa", "name": "VANESSA", "tag": "THREAD MAGIC", "line": "Rewrites fate itself.", "fx": "thread", "color": "#ff3b4f", "in": "whipL"}, "sfx": [{"at": 0, "name": "whoosh"}]},
+    {"id": "b519", "ch": "ch5", "canon": "canon", "claims": ["c19", "u04"], "say": "A hideout that's secretly {alive}alive. A vice-captain watching from the {shadow}shadows.", "shot": {"type": "squad_card", "who": "nacht", "name": "THE BASE  +  THE SHADOW", "tag": "HENRY  ·  NACHT", "line": "A living hideout. A vice-captain nobody sees.", "fx": "shadow", "color": "#8d6bff", "in": "whipL"}, "sfx": [{"at": 0, "name": "whoosh"}]},
+    {"id": "b520", "ch": "ch5", "canon": "canon", "claims": ["c11", "u06"], "say": "And a little black bird, about to land on his head — who has been keeping the kingdom's oldest secret for {yrs}five hundred years.", "shot": {"type": "bird_lands"}, "sfx": [{"at": 1.2, "name": "flutter"}, {"at": "yrs", "name": "shimmer"}]},
+    {"id": "b521", "ch": "ch5", "canon": "divergent", "say": "It's not the worst squad in the kingdom. It's the only one that can win the war he {rem}remembers.", "shot": {"type": "text_slam", "lines": ["NOT THE WORST SQUAD.", "THE ONLY ONE THAT CAN WIN."], "accent": 1, "bg": "squad", "cues": ["", "rem"]}, "pad": 0.4, "sfx": [{"at": 2.4, "name": "impact"}]},
+    {"id": "b601", "ch": "ch6", "canon": "none", "say": "", "duration": 2.6, "shot": {"type": "chapter_card", "n": 6, "title": "THE DOOR", "captions": false, "hud": false}, "sfx": [{"at": 0, "name": "whoosh"}, {"at": 0.25, "name": "hit"}]},
+    {"id": "b602", "ch": "ch6", "canon": "divergent", "say": "So now he's in. He has the {a}sword, the {b}brother, the {c}squad. And a {clock}clock.", "shot": {"type": "inventory", "items": ["THE SWORD", "THE BROTHER", "THE SQUAD"]}, "sfx": [{"at": "a", "name": "tick"}, {"at": "b", "name": "tick"}, {"at": "c", "name": "tick"}, {"at": "clock", "name": "clock"}]},
+    {"id": "b603", "ch": "ch6", "canon": "canon", "claims": ["c13", "c12"], "say": "Because the Eye of the Midnight Sun is about to {e1}hit the capital. A captain is about to {e2}lose his arm. And the plan to resurrect the elves is {e3}already in motion.", "shot": {"type": "threat_timeline", "events": ["THE CAPITAL RAID", "FUEGOLEON'S ARM", "THE ELF RESURRECTION"]}, "sfx": [{"at": "e1", "name": "hit"}, {"at": "e2", "name": "hit"}, {"at": "e3", "name": "hit"}]},
+    {"id": "b604", "ch": "ch6", "canon": "divergent", "claims": ["c17"], "say": "Move too {loud}loud — accuse a captain with no proof — and he's the devil-boy on trial.", "shot": {"type": "dilemma", "side": "loud"}},
+    {"id": "b605", "ch": "ch6", "canon": "divergent", "say": "Move too {slow}slow, and everyone he came back to save dies on schedule.", "shot": {"type": "dilemma", "side": "slow", "in": "none"}, "pad": 0.35},
+    {"id": "b606", "ch": "ch6", "canon": "canon", "say": "There's one obvious answer. One man who loves strange magic. Who listened to him last time. Who could end all of this with a word.", "shot": {"type": "julius_reveal"}, "music": "wonder"},
+    {"id": "b607", "ch": "ch6", "canon": "canon", "claims": ["c12"], "say": "Julius Novachrono. The Wizard King.", "shot": {"type": "captain_file", "who": "julius", "name": "JULIUS NOVACHRONO", "role": "THE WIZARD KING", "color": "#ffd35c", "grand": 1}, "pad": 0.3, "sfx": [{"at": 0, "name": "swell"}], "music": "wonder"},
+    {"id": "b608", "ch": "ch6", "canon": "divergent", "say": "Asta gets as far as the door.", "shot": {"type": "corridor", "stage": "walk"}, "pad": 0.3, "music": "cliff"},
+    {"id": "b609", "ch": "ch6", "canon": "divergent", "say": "And he {stop}stops. Because of the last thing he remembers. The final secret — from the very end of the story.", "shot": {"type": "corridor", "stage": "stop", "in": "none"}, "sfx": [{"at": "stop", "name": "heartbeat"}], "music": "cliff"},
+    {"id": "b610", "ch": "ch6", "canon": "canon", "claims": ["c18"], "say": "Inside Julius, there is a second soul. {name}Lucius Zogratis. The final enemy.", "shot": {"type": "two_souls", "stage": "reveal"}, "pad": 0.3, "sfx": [{"at": "name", "name": "boom"}], "music": "dread"},
+    {"id": "b611", "ch": "ch6", "canon": "canon", "claims": ["c18"], "say": "A man who can see the future — and Asta is the one thing he could never {see}foresee.", "shot": {"type": "foresight"}, "sfx": [{"at": "see", "name": "glitch"}], "music": "dread"},
+    {"id": "b612", "ch": "ch6", "canon": "divergent", "say": "If Lucius learns that someone in this timeline already knows how it ends...", "shot": {"type": "two_souls", "stage": "threat"}, "pad": 0.6, "sfx": [{"at": 0.2, "name": "heartbeat"}, {"at": 1.6, "name": "heartbeat"}, {"at": 3.0, "name": "heartbeat"}], "music": "cliff"},
+    {"id": "b613", "ch": "ch6", "canon": "divergent", "say": "Asta turns to leave.", "shot": {"type": "corridor", "stage": "turn"}, "pad": 0.55, "music": "silence"},
+    {"id": "b614", "ch": "ch6", "canon": "divergent", "say": "The door {open}opens.", "shot": {"type": "corridor", "stage": "open", "in": "none"}, "pad": 0.7, "sfx": [{"at": "open", "name": "door"}], "music": "silence"},
+    {"id": "b615", "ch": "ch6", "canon": "divergent", "say": "{q}@julius: Asta, right? The boy with no magic. I've been hoping to meet you.", "shot": {"captions": false, "type": "quote_card", "who": "JULIUS", "text": "Asta, right? The boy with no magic. I've been hoping to meet you.", "bust": "julius", "color": "#ffd35c", "doorway": 1, "in": "none"}, "pad": 0.6, "music": "cliff"},
+    {"id": "b616", "ch": "ch6", "canon": "divergent", "say": "{lb}@liebe: Asta. Why does he have {hb}two heartbeats? @n: Julius is smiling. The question is... {which}which one?", "shot": {"type": "which_one"}, "pad": 1.3, "sfx": [{"at": "hb", "name": "heartbeat"}, {"at": "which", "name": "boom"}], "music": "cliff"},
+    {"id": "b617", "ch": "ch6", "canon": "none", "say": "Part two: the capital burns early. If you want it... you know what to do.", "shot": {"type": "end_card", "kicker": "TO BE CONTINUED", "title": "PART 2", "sub": "THE CAPITAL BURNS EARLY", "hud": false, "in": "flash"}, "lead": 1.4, "pad": 3.2, "sfx": [{"at": 0, "name": "boom"}, {"at": 0.1, "name": "swell"}], "music": "title"}
+  ]
+}

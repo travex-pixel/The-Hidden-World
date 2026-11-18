@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>COPYCAT renderer</title>
+<style>
+  @font-face{font-family:'Anton';font-weight:400;src:url('../../assets/fonts/copycat/anton-latin-400-normal.woff2')}
+  @font-face{font-family:'Bebas Neue';font-weight:400;src:url('../../assets/fonts/copycat/bebas-neue-latin-400-normal.woff2')}
+  @font-face{font-family:'Barlow Condensed';font-weight:500;src:url('../../assets/fonts/copycat/barlow-condensed-latin-500-normal.woff2')}
+  @font-face{font-family:'Barlow Condensed';font-weight:600;src:url('../../assets/fonts/copycat/barlow-condensed-latin-600-normal.woff2')}
+  @font-face{font-family:'Barlow Condensed';font-weight:700;src:url('../../assets/fonts/copycat/barlow-condensed-latin-700-normal.woff2')}
+  @font-face{font-family:'Barlow Condensed';font-weight:800;src:url('../../assets/fonts/copycat/barlow-condensed-latin-800-normal.woff2')}
+  @font-face{font-family:'Barlow Condensed';font-weight:700;font-style:italic;src:url('../../assets/fonts/copycat/barlow-condensed-latin-700-italic.woff2')}
+  @font-face{font-family:'Barlow Condensed';font-weight:800;font-style:italic;src:url('../../assets/fonts/copycat/barlow-condensed-latin-800-italic.woff2')}
+  @font-face{font-family:'Inter';font-weight:400;src:url('../../assets/fonts/copycat/inter-latin-400-normal.woff2')}
+  @font-face{font-family:'Inter';font-weight:600;src:url('../../assets/fonts/copycat/inter-latin-600-normal.woff2')}
+  @font-face{font-family:'Inter';font-weight:800;src:url('../../assets/fonts/copycat/inter-latin-800-normal.woff2')}
+  @font-face{font-family:'Cinzel';font-weight:700;src:url('../../assets/fonts/copycat/cinzel-latin-700-normal.woff2')}
+  @font-face{font-family:'Cinzel';font-weight:900;src:url('../../assets/fonts/copycat/cinzel-latin-900-normal.woff2')}
+  @font-face{font-family:'Cinzel Decorative';font-weight:700;src:url('../../assets/fonts/copycat/cinzel-decorative-latin-700-normal.woff2')}
+  @font-face{font-family:'Cinzel Decorative';font-weight:900;src:url('../../assets/fonts/copycat/cinzel-decorative-latin-900-normal.woff2')}
+  @font-face{font-family:'IM Fell English SC';font-weight:400;src:url('../../assets/fonts/copycat/im-fell-english-sc-latin-400-normal.woff2')}
+  html,body{margin:0;padding:0;background:#000;overflow:hidden}
+  canvas{display:block;width:100vw;height:100vh}
+</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script src="engine.js"></script>
+<script src="art.js"></script>
+<script src="shots_core.js"></script>
+<script src="shots_core2.js"></script>
+<script src="shots_a.js"></script>
+<script src="shots_b.js"></script>
+<script src="shots_b2.js"></script>
+<script src="shots_c.js"></script>
+<script src="shots_c2.js"></script>
+<script>
+  window.CC.loadFonts = async () => { const specs = ['400 40px "Anton"','400 40px "Bebas Neue"','500 40px "Barlow Condensed"','600 40px "Barlow Condensed"','700 40px "Barlow Condensed"','800 40px "Barlow Condensed"','italic 700 40px "Barlow Condensed"','italic 800 40px "Barlow Condensed"','400 40px "Inter"','600 40px "Inter"','800 40px "Inter"','700 40px "Cinzel"','900 40px "Cinzel"','700 40px "Cinzel Decorative"','900 40px "Cinzel Decorative"','400 40px "IM Fell English SC"']; await Promise.all(specs.map(s => document.fonts.load(s))); await document.fonts.ready; return specs.length; };
+</script>
+</body></html>

@@ -1,0 +1,304 @@
+{
+ "executiveSummary": "Canon baseline for a Black Clover rebirth what-if. Asta is born without mana and is left at the Hage church; Anti-Magic is not innate but belongs to the devil Liebe, sealed by Licita inside a five-leaf grimoire that surfaces from the Hage grimoire tower when Asta is fifteen. Ki is learned from Yami, Zetten in the Land of the Sun. The captains Vangeance (sharing a body with Patolli) and Gueldre, the devil Zagred, and the Julius/Lucius shared body are the hidden-information levers a reborn Asta would hold.",
+ "claims": {
+  "c01": {
+   "n": 1
+  },
+  "c02": {
+   "n": 2
+  },
+  "c03": {
+   "n": 3
+  },
+  "c04": {
+   "n": 4
+  },
+  "c05": {
+   "n": 5
+  },
+  "c06": {
+   "n": 6
+  },
+  "c07": {
+   "n": 7
+  },
+  "c08": {
+   "n": 8
+  },
+  "c09": {
+   "n": 9
+  },
+  "c10": {
+   "n": 10
+  },
+  "c11": {
+   "n": 11
+  },
+  "c12": {
+   "n": 12
+  },
+  "c13": {
+   "n": 13
+  },
+  "c14": {
+   "n": 14
+  },
+  "c15": {
+   "n": 15
+  },
+  "c16": {
+   "n": 16
+  },
+  "c17": {
+   "n": 17
+  },
+  "c18": {
+   "n": 18
+  },
+  "c19": {
+   "n": 19
+  },
+  "c20": {
+   "n": 20
+  },
+  "c21": {
+   "n": 21
+  },
+  "c22": {
+   "n": 22
+  },
+  "c23": {
+   "n": 23
+  },
+  "u01": {
+   "statement": "Liebe was a lowest-rank devil with no magic, which let him pass into the human world, where humans persecuted him.",
+   "use": "b304, b305"
+  },
+  "u02": {
+   "statement": "Lucifero tried to manifest through Liebe's body; Licita resisted him and was fatally wounded.",
+   "use": "b306"
+  },
+  "u03": {
+   "statement": "As a small child Yuno was timid and cried easily.",
+   "use": "b212 ('crybaby')"
+  },
+  "u04": {
+   "statement": "Black Bulls: Finral uses Spatial Magic with no direct attack; Noelle initially cannot control her large mana; Vanessa's thread magic manipulates fate; the hideout is animated by Henry; Nacht is the unseen vice-captain.",
+   "use": "b516–b519"
+  },
+  "u05": {
+   "statement": "Asta and Yuno were left at the church on the same day.",
+   "use": "b105 ('two babies on a church doorstep')"
+  },
+  "u06": {
+   "statement": "Nero/Secre has existed since the first Wizard King's era (~500 years) and attaches herself to Asta at the entrance exam.",
+   "use": "b520"
+  },
+  "u07": {
+   "statement": "Liebe originally intended to take over the body of a magic-less host.",
+   "use": "b315"
+  },
+  "u08": {
+   "statement": "At the exam each captain signals interest in a candidate; none but Yami chose Asta.",
+   "use": "b509 (phrased as 'not one captain wants him')"
+  }
+ },
+ "entities": [
+  {
+   "entityId": "asta",
+   "name": "Asta",
+   "type": "character",
+   "description": "Mana-less orphan of Hage; wielder of Anti-Magic through the devil Liebe.",
+   "attributes": {
+    "mana": 0,
+    "birthday": "October 4"
+   },
+   "relationships": [
+    {
+     "targetEntityId": "liebe",
+     "relationType": "contracted devil / foster brother",
+     "details": "Both are sons of Licita (by birth / by adoption)."
+    },
+    {
+     "targetEntityId": "yuno",
+     "relationType": "rival",
+     "details": "Raised together at the Hage church."
+    }
+   ],
+   "visualSignifiers": [
+    "spiky hair",
+    "headband",
+    "oversized black sword"
+   ],
+   "sourceIds": []
+  },
+  {
+   "entityId": "liebe",
+   "name": "Liebe",
+   "type": "character",
+   "description": "Devil sealed in the five-leaf grimoire; source of Anti-Magic.",
+   "attributes": {},
+   "relationships": [
+    {
+     "targetEntityId": "licita",
+     "relationType": "adopted son",
+     "details": "Sealed by her to protect him from Lucifero."
+    }
+   ],
+   "visualSignifiers": [
+    "small horned devil",
+    "red eyes"
+   ],
+   "sourceIds": []
+  },
+  {
+   "entityId": "licita",
+   "name": "Licita",
+   "type": "character",
+   "description": "Asta's mother; her body drained mana and life force from those near her.",
+   "attributes": {},
+   "relationships": [],
+   "visualSignifiers": [
+    "long hair",
+    "warm light"
+   ],
+   "sourceIds": []
+  },
+  {
+   "entityId": "yuno",
+   "name": "Yuno",
+   "type": "character",
+   "description": "Asta's rival; receives the four-leaf grimoire.",
+   "attributes": {},
+   "relationships": [],
+   "visualSignifiers": [
+    "four-leaf grimoire",
+    "wind",
+    "pendant"
+   ],
+   "sourceIds": []
+  },
+  {
+   "entityId": "yami",
+   "name": "Yami Sukehiro",
+   "type": "character",
+   "description": "Captain of the Black Bulls; teaches Asta Ki.",
+   "attributes": {},
+   "relationships": [],
+   "visualSignifiers": [
+    "broad build",
+    "katana",
+    "cigarette"
+   ],
+   "sourceIds": []
+  },
+  {
+   "entityId": "julius",
+   "name": "Julius Novachrono",
+   "type": "character",
+   "description": "Wizard King; shares a body with Lucius Zogratis.",
+   "attributes": {},
+   "relationships": [
+    {
+     "targetEntityId": "lucius",
+     "relationType": "shared body",
+     "details": "Per ch. 333."
+    }
+   ],
+   "visualSignifiers": [
+    "fur-collared cloak",
+    "time motifs"
+   ],
+   "sourceIds": []
+  },
+  {
+   "entityId": "anti_magic",
+   "name": "Anti-Magic",
+   "type": "ability",
+   "description": "Nullifies magic; channelled through the five-leaf grimoire's swords.",
+   "attributes": {
+    "prerequisites": [
+     "access to the five-leaf grimoire",
+     "a body able to wield the swords"
+    ]
+   },
+   "relationships": [],
+   "visualSignifiers": [
+    "black and crimson aura"
+   ],
+   "sourceIds": []
+  }
+ ],
+ "timeline": [
+  {
+   "eventId": "t_doorstep",
+   "timestampOrEra": "Age 0 — October 4",
+   "title": "Left at the Hage church",
+   "description": "Asta and Yuno are left at the church.",
+   "causalPredecessors": [],
+   "sourceIds": []
+  },
+  {
+   "eventId": "t_pendant",
+   "timestampOrEra": "Childhood",
+   "title": "The pendant incident",
+   "description": "A drunk tries to take Yuno's pendant; Asta refuses to stay down; Yuno's vow.",
+   "causalPredecessors": [
+    "t_doorstep"
+   ],
+   "sourceIds": []
+  },
+  {
+   "eventId": "t_ceremony",
+   "timestampOrEra": "Age 15",
+   "title": "Grimoire Acceptance Ceremony",
+   "description": "Yuno: four-leaf. Asta: nothing, then the five-leaf grimoire after the Revchi ambush.",
+   "causalPredecessors": [
+    "t_pendant"
+   ],
+   "sourceIds": []
+  },
+  {
+   "eventId": "t_exam",
+   "timestampOrEra": "Age 15 + 6 months",
+   "title": "Magic Knights Entrance Exam",
+   "description": "Only Yami accepts Asta; Yuno joins the Golden Dawn.",
+   "causalPredecessors": [
+    "t_ceremony"
+   ],
+   "sourceIds": []
+  }
+ ],
+ "contradictions": [
+  {
+   "issue": "Chapter anchors for Licita's condition differ between retrieved sources (268 / 270 / 328).",
+   "perspectives": [
+    "268",
+    "270",
+    "328"
+   ],
+   "resolutionStrategy": "No chapter number is shown on screen or spoken."
+  },
+  {
+   "issue": "How Julius returns after facing Patolli (dies and revives vs. survives via stored time).",
+   "perspectives": [
+    "dies and is reborn",
+    "returns in a 13-year-old body via Time Magic"
+   ],
+   "resolutionStrategy": "The script never states that Julius dies."
+  },
+  {
+   "issue": "Cause of Fuegoleon's lost arm differs between sources.",
+   "perspectives": [
+    "trap",
+    "Valtos",
+    "Patolli"
+   ],
+   "resolutionStrategy": "Script only says 'a captain is about to lose his arm'."
+  }
+ ],
+ "unanswered": [
+  "Exact month and wording of the ceremony scene in the official translation.",
+  "Whether 'only Asta can wield it' applies to the Demon-Slayer or only the Demon-Dweller — script claims only that it is too heavy for a child."
+ ]
+}
