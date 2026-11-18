@@ -16,6 +16,10 @@ Five verified episodes, 27–32 s each. Story bible, scripts, QA and render inst
 ### Dark Psychology series (animated thrillers)
 **Episode 004 — *The Compliment With a Deadline*** → render it with the workflow (artifact `ep004-compliment-deadline-seed1-final`). Recurring cast in [`characters/`](characters/), rig in [`renderer/cast.js`](renderer/cast.js), design system in [docs/THRILLER_STYLE.md](docs/THRILLER_STYLE.md).
 
+### COPYCAT — long-form research-to-video engine
+A second pipeline for 16:9 long-form videos on any subject: research dossier and knowledge vault, multi-voice narration, procedural score, deterministic code-drawn animation rendered in resumable segments, and 4-stage QA on the finished MP4. See [copycat/README.md](copycat/README.md).
+Pilot: **What If Asta Was Reborn With All His Memories and Anti-Magic? | Part 1** (unofficial fan what-if, ~11 min) — `python -m copycat.produce asta-reborn-p1`.
+
 ## How it works
 
 ```

@@ -14,6 +14,7 @@ from pipeline.verify import verify as legacy_verify
 from copycat import contracts
 
 ROOT = Path(__file__).resolve().parent.parent
+DARK_OK = {"eyes_open"}  # shots that are designed to be (almost) black for long stretches
 
 
 def _run(cmd): return subprocess.run(cmd, capture_output=True, text=True)
@@ -102,7 +103,20 @@ def stage4(plan, mp4: Path, out: Path) -> dict:
     r = _run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(mp4), "-an", "-vf", "blackdetect=d=0.7:pix_th=0.08,freezedetect=n=0.0008:d=1.5", "-f", "null", "-"]).stderr
     black = [(float(a), float(b)) for a, b in re.findall(r"black_start:([\d.]+) black_end:([\d.]+)", r)]
     freeze = [(float(a), float(b)) for a, b in zip(re.findall(r"freeze_start: ([\d.]+)", r), re.findall(r"freeze_end: ([\d.]+)", r))]
-    if black: err.append(f"black segments >0.7s: {black}")
+    # darkness the edit asked for (fade-ins/outs to black, shots designed to sit in the dark) is reported, not failed
+    win = []
+    for b in plan["beats"]:
+        sh = b["shot"]
+        if sh.get("in") == "black": win.append((b["start"] - 0.1, b["start"] + sh.get("inFrames", 14) / fps + 0.35))
+        if sh.get("out") == "black": win.append((b["end"] - sh.get("outFrames", 12) / fps - 0.35, b["end"] + 0.1))
+        if sh["type"] in DARK_OK: win.append((b["start"] - 0.1, b["end"] + 0.1))
+    def covered(a, z):
+        x = a
+        for lo, hi in sorted(win):
+            if lo <= x + 0.05 and hi > x: x = max(x, hi)
+        return x >= z - 0.05
+    intentional = [seg for seg in black if covered(*seg)]; black_bad = [seg for seg in black if not covered(*seg)]
+    if black_bad: err.append(f"unplanned black segments >0.7s: {black_bad}")
     if freeze: err.append(f"frozen video >1.5s: {freeze}")
     # one frame per beat (midpoint) + caption probes, pulled from the real MP4 in a single decode pass
     caps = [c for c in plan["captions"] if c["end"] - c["start"] > 0.35]; step = max(1, len(caps) // 60); cap_s = caps[::step]
@@ -133,7 +147,7 @@ def stage4(plan, mp4: Path, out: Path) -> dict:
         cols = 5; rows = (len(ids) + cols - 1) // cols; sheet = Image.new("RGB", (cols * 384, rows * 216), "black")
         for i, bid in enumerate(ids): sheet.paste(Image.open(per_beat[bid]).resize((384, 216)), ((i % cols) * 384, (i // cols) * 216))
         p = qdir / f"contact_{ch['id']}.jpg"; sheet.save(p, quality=88); sheets.append(str(p.relative_to(out)))
-    return {"passed": not err, "errors": err, "warnings": warn, "black_segments": black, "freeze_segments": freeze, "beat_frames_sampled": len(per_beat), "caption_probes": cap_n, "caption_detect_rate": round(rate, 3), "contact_sheets": sheets,
+    return {"passed": not err, "errors": err, "warnings": warn, "black_segments": black_bad, "intentional_dark_segments": intentional, "freeze_segments": freeze, "beat_frames_sampled": len(per_beat), "caption_probes": cap_n, "caption_detect_rate": round(rate, 3), "contact_sheets": sheets,
             "vision_review": "contact sheets are produced for model/human vision review against scene-plan.json; see qa/vision_review.md if a reviewer has signed off"}
 
 

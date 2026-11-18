@@ -34,7 +34,7 @@
           "am_puck": 0.75,
           "am_echo": 0.25
         },
-        "speed": 1.08,
+        "speed": 1.0,
         "label": "LIEBE",
         "color": "#ff3b4f"
       },
@@ -52,7 +52,7 @@
           "am_eric": 0.8,
           "am_michael": 0.2
         },
-        "speed": 0.98,
+        "speed": 0.9,
         "label": "YUNO",
         "color": "#ffd35c"
       },
@@ -64,6 +64,24 @@
         "speed": 0.94,
         "label": "YAMI",
         "color": "#ff7a2f"
+      },
+      "liebe_hurt": {
+        "blend": {
+          "am_puck": 0.75,
+          "am_echo": 0.25
+        },
+        "speed": 0.84,
+        "label": "LIEBE",
+        "color": "#ff3b4f"
+      },
+      "asta_soft": {
+        "blend": {
+          "am_adam": 0.7,
+          "am_liam": 0.3
+        },
+        "speed": 0.84,
+        "label": "ASTA",
+        "color": "#5ef0d0"
       }
     }
   },
@@ -160,7 +178,7 @@
     {"id": "b117", "ch": "ch1", "canon": "rule", "say": "Problem three is the one that gets him *killed*.", "shot": {"type": "problem_card", "n": 3, "title": "THE BOOK IS A DEATH SENTENCE", "in": "red"}, "sfx": [{"at": 0, "name": "impact"}]},
     {"id": "b118", "ch": "ch1", "canon": "canon", "claims": ["c17"], "say": "A five-leaf grimoire means a devil. The first time around, the Magic Parliament put him on trial just for carrying one — and that was *after* he'd helped save the kingdom.", "shot": {"type": "trial", "stage": "canon"}},
     {"id": "b119", "ch": "ch1", "canon": "divergent", "say": "A child with a devil's book and a head full of state secrets? That's not a trial. That's an {x}*execution*.", "shot": {"type": "trial", "stage": "child"}, "pad": 0.4, "sfx": [{"at": "x", "name": "slash"}]},
-    {"id": "b120", "ch": "ch1", "canon": "divergent", "say": "So: {a}no power. {b}No body. {c}No allies. {d}Fifteen years on the clock. {go}@asta: This time... nobody dies on schedule.", "shot": {"type": "checklist_countdown", "items": ["NO POWER", "NO BODY", "NO ALLIES"], "big": "15 YEARS", "final": "NOBODY DIES ON SCHEDULE."}, "sfx": [{"at": "a", "name": "hit"}, {"at": "b", "name": "hit"}, {"at": "c", "name": "hit"}, {"at": "d", "name": "boom"}, {"at": "go", "name": "riser_short", "align": "peak"}]},
+    {"id": "b120", "ch": "ch1", "canon": "divergent", "say": "So: {a}no power. {b}No body. {c}No allies. {d}Fifteen years on the clock. {go}@asta_soft: This time... nobody dies on schedule.", "shot": {"type": "checklist_countdown", "items": ["NO POWER", "NO BODY", "NO ALLIES"], "big": "15 YEARS", "final": "NOBODY DIES ON SCHEDULE."}, "sfx": [{"at": "a", "name": "hit"}, {"at": "b", "name": "hit"}, {"at": "c", "name": "hit"}, {"at": "d", "name": "boom"}, {"at": "go", "name": "riser_short", "align": "peak"}]},
     {"id": "b201", "ch": "ch2", "canon": "none", "say": "", "duration": 2.6, "shot": {"type": "chapter_card", "n": 2, "title": "THE LONGEST TRAINING ARC", "captions": false, "hud": false}, "sfx": [{"at": 0, "name": "whoosh"}, {"at": 0.25, "name": "hit"}]},
     {"id": "b202", "ch": "ch2", "canon": "divergent", "say": "First, he does the hardest thing a shonen protagonist has ever done. He {shh}shuts up.", "shot": {"type": "shut_up"}, "pad": 0.35, "sfx": [{"at": "shh", "name": "zip"}], "music": "playful"},
     {"id": "b203", "ch": "ch2", "canon": "divergent", "say": "For three years, the loudest kid in the Clover Kingdom plays a perfectly normal baby.", "shot": {"type": "church_days"}, "music": "playful"},
@@ -196,7 +214,7 @@
     {"id": "b315", "ch": "ch3", "canon": "canon", "claims": ["c15", "u07"], "say": "Liebe comes out swinging — because this is all he ever wanted. A body with no magic. An empty house to move into. And this one is seven years old.", "shot": {"type": "liebe_attack"}, "music": "battle"},
     {"id": "b316", "ch": "ch3", "canon": "divergent", "say": "Asta can't win this fight. He doesn't try. Pinned to the floor, claws at his throat, he just keeps {talk}talking.", "shot": {"type": "pinned", "stage": "pin"}, "sfx": [{"at": 0, "name": "thud"}], "music": "emotional"},
     {"id": "b317", "ch": "ch3", "canon": "divergent", "claims": ["c04"], "say": "About the woman who gave a devil a name. About the day she died. Things only her son could know.", "shot": {"type": "pinned", "stage": "memories", "in": "none"}, "music": "emotional"},
-    {"id": "b318", "ch": "ch3", "canon": "divergent", "say": "Liebe's voice cracks. {q1}@liebe: How do you know her? {q2}@asta: Because she was my mother too.", "shot": {"type": "quote_duel", "a": {"who": "LIEBE", "text": "How do you know her?"}, "b": {"who": "ASTA", "text": "Because she was my mother too."}}, "pad": 0.8, "sfx": [{"at": "q2", "name": "swell"}], "music": "emotional"},
+    {"id": "b318", "ch": "ch3", "canon": "divergent", "say": "Liebe's voice cracks. {q1}@liebe_hurt: How do you know her? {q2}@asta_soft: Because she was my mother too.", "shot": {"type": "quote_duel", "a": {"who": "LIEBE", "text": "How do you know her?"}, "b": {"who": "ASTA", "text": "Because she was my mother too."}}, "pad": 1.0, "sfx": [{"at": "q2", "name": "swell"}], "music": "emotional"},
     {"id": "b319", "ch": "ch3", "canon": "divergent", "claims": ["c15"], "say": "The first time, Asta beat Liebe — and then offered his hand. This time he loses, and offers it {any}anyway.", "shot": {"type": "hand_offer"}, "pad": 0.3, "music": "emotional"},
     {"id": "b320", "ch": "ch3", "canon": "divergent", "say": "No master. No servant. Brothers — ten years ahead of schedule.", "shot": {"type": "ripple_card", "n": 2, "title": "LIEBE", "status": "BROTHER — 10 YEARS EARLY", "detail": "A contract between equals, at age seven.", "who": "liebe", "color": "#ff3b4f"}, "sfx": [{"at": 0, "name": "ripple"}], "music": "emotional"},
     {"id": "b321", "ch": "ch3", "canon": "rule", "claims": ["c06"], "say": "But the timeline has rules. Asta finally draws the Demon-Slayer Sword...", "shot": {"type": "sword_draw"}, "pad": 0.05, "sfx": [{"at": 1.2, "name": "shing"}]},
