@@ -44,7 +44,9 @@ DEFAULT_TAG = (206, 206, 212)
 # --------------------------------------------------------------------------- camera maths
 def ease_io(p: float) -> float:
     p = min(max(p, 0.0), 1.0)
-    return 4 * p ** 3 if p < 0.5 else 1 - (-2 * p + 2) ** 3 / 2
+    c = 4 * p ** 3 if p < 0.5 else 1 - (-2 * p + 2) ** 3 / 2
+    # blend with linear so a move never starts or ends at zero velocity (no near-frozen frames)
+    return 0.55 * p + 0.45 * c
 
 
 CAMERAS = ("slow_push_in", "slow_pull_out", "pan_lr", "pan_rl", "drift_up", "impact_punch_zoom")
@@ -133,7 +135,15 @@ def shot_frames(shots, fps):
 
 # --------------------------------------------------------------------------- captions
 def wrap_caption(text, width=42):
-    return textwrap.wrap(" ".join(text.split()), width=width, break_long_words=True) or [""]
+    t = " ".join(text.split())
+    lines = textwrap.wrap(t, width=width, break_long_words=True) or [""]
+    n = len(lines)
+    if n > 1:  # balance the lines: narrowest width that keeps the same line count (no orphan words)
+        for w in range(max(len(t) // n, 8), width + 1):
+            alt = textwrap.wrap(t, width=w, break_long_words=True)
+            if len(alt) == n:
+                return alt
+    return lines
 
 
 def caption_pages(text, width=42, max_lines=2):
@@ -170,8 +180,8 @@ class CaptionPainter:
         if key in self._cache:
             return self._cache[key]
         W, H, r = self.W, self.H, self.r
-        f = font("nunito-extrabold", 44 * r)
-        ft = font("nunito-extrabold", 30 * r)
+        f = font("nunito-extrabold", 48 * r)
+        ft = font("nunito-extrabold", 36 * r)
         lh = 58 * r
         stroke = max(1, round(3 * r))
         lines = cap["lines"]
