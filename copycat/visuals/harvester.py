@@ -67,21 +67,22 @@ def get(url, params=None, tries=5, min_gap=0.26, **kw):
     raise RuntimeError("unreachable")
 
 
-def api(params, refresh=False):
+def api(params, refresh=False, base=API):
     p = {"format": "json", "formatversion": "2", **params}
+    if base != API: p["_base"] = base
     f = RAW / ("api_" + hashlib.sha1(json.dumps(p, sort_keys=True).encode()).hexdigest()[:20] + ".json")
     if f.exists() and not refresh:
         return json.loads(f.read_text())
-    d = get(API, p).json()
+    d = get(base, {k: v for k, v in p.items() if k != "_base"}).json()
     f.write_text(json.dumps(d))
     return d
 
 
-def api_all(params, refresh=False):
+def api_all(params, refresh=False, base=API):
     """Follow `continue`, merging pages by pageid. Returns list of page dicts (generator queries) or raw lists."""
     pages, extra, cont = {}, [], {}
     while True:
-        d = api({**params, **cont}, refresh)
+        d = api({**params, **cont}, refresh, base)
         q = d.get("query", {})
         for p in q.get("pages", []):
             m = pages.setdefault(p["pageid"] if "pageid" in p else p["title"], {})
@@ -233,7 +234,7 @@ def build_vault(local_entries=()):
                        "source_url": e["url"], "page": e["page"], "file_title": e["title"], "caption": e["caption"], "width": e["width"], "height": e["height"],
                        "dhash": e["dhash"], "tags": t, "focus": [0.5, 0.4], "quality": e["quality"], **({"lowres": True} if e.get("lowres") else {})})
     assets += list(local_entries)
-    assets.sort(key=lambda a: -(a["width"] * a["height"]))
+    assets.sort(key=lambda a: a["id"])  # older ids win ties so existing ids stay stable
     kept, dups = [], 0
     for a in assets:
         if any(imgutil.hamming(a["dhash"], k["dhash"]) <= 6 for k in kept): dups += 1; continue
@@ -260,6 +261,30 @@ def build_vault(local_entries=()):
     return final, reasons
 
 
+ES = "https://blackclover.fandom.com/es/api.php"
+
+
+def lang_files(base, prefixes, refresh=False):
+    """List files (url/size) whose names start with each prefix on a language wiki."""
+    out = {}
+    for pre in prefixes:
+        for p in api_all({"action": "query", "generator": "allimages", "gaiprefix": pre, "gailimit": "50", "prop": "imageinfo", "iiprop": "url|size|mime"}, refresh, base):
+            rec = page_record(p, pre)
+            if rec: out[rec["title"]] = rec
+    return out
+
+
+def harvest_lang(base, prefixes, tag, refresh=False, minw=640):
+    reg = load_registry(); n = 0
+    for k, rec in sorted(lang_files(base, prefixes, refresh).items()):
+        key = f"{tag}:{k}"
+        if key in reg or rec["mime"] == "image/gif" or rec["w"] < minw or imgutil.NAME_REJECT.search(k): continue
+        rec = {**rec, "title": key, "cats": [], "lowres_ok": rec["w"] < 800}
+        e = fetch_and_register(rec, "anime_still", reg); n += 1
+        if n % 10 == 0: save_registry(reg)
+    save_registry(reg); log(f"{tag}: {n} new files")
+
+
 def stats():
     v = json.loads(VAULT.read_text())["assets"]
     print(f"assets: {len(v)}")
@@ -274,10 +299,15 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--max", type=int, default=220)
     ap.add_argument("--refresh", action="store_true", help="re-fetch API JSON (images on disk are never re-downloaded)")
+    ap.add_argument("--lang", help="lang wiki code (es, pt-br, ...) with --prefix")
+    ap.add_argument("--prefix", action="append", default=[], help="file-name prefix on the language wiki")
     ap.add_argument("--stats", action="store_true")
     ap.add_argument("--rebuild", action="store_true", help="rebuild vault.json from registry without network")
     a = ap.parse_args(argv)
     if a.stats: stats(); return 0
+    if a.lang:
+        harvest_lang(f"https://blackclover.fandom.com/{a.lang}/api.php", a.prefix, a.lang, a.refresh)
+        local = index_local_media(); final, reasons = build_vault(local); log(f"vault: {len(final)} assets"); return 0
     RAW.mkdir(parents=True, exist_ok=True); IMAGES.mkdir(parents=True, exist_ok=True)
     reg = load_registry()
     if not a.rebuild:

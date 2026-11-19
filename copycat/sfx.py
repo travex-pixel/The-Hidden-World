@@ -331,7 +331,7 @@ EFFECTS = {
 BEDS = {"wind", "crowd_murmur", "anti_magic_hum", "heartbeat"}
 # peak level relative to the loudest speech peak, dB
 REL_DB = {"whoosh": -12, "page_flutter": -14, "sword_ring": -12, "bass_drop": -10, "chain_rattle": -14, "bell": -13,
-          "riser": -15, "card_boom": -6, "wind": -24, "crowd_murmur": -22, "anti_magic_hum": -22, "heartbeat": -17}
+          "riser": -15, "card_boom": -7, "wind": -16, "crowd_murmur": -16, "anti_magic_hum": -17, "heartbeat": -16}
 RISER_DUR = 2.6
 WHOOSH_LEAD = 0.35  # seconds of whoosh before the beat start so its peak lands on the beat
 

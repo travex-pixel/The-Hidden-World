@@ -91,7 +91,7 @@ def select_segments(beats, endcard=ENDCARD, lo=MIN_TOTAL, hi=MAX_TOTAL, chapter_
         i0 += 1
     while a_len + span(i0, i1) + endcard < lo and i1 < len(ch) - 1:   # extend forward
         i1 += 1
-    b_start = max(ch[i0]["start"] - PRE, (cold[-1]["end"] if False else a_end) + 0.0)
+    b_start = max(ch[i0]["start"] - PRE, a_end)
     b_end = ch[i1]["end"] + POST
     if i1 + 1 < len(ch):
         b_end = min(b_end, ch[i1 + 1]["start"] - 0.02)
@@ -357,7 +357,6 @@ def render_segment(master, start, end, events, tmp, tag, flash_in=False, flash_o
 def render_endcard(tmp, dur=ENDCARD):
     n = int(round(dur * FPS))
     vid = tmp / "end_v.mp4"
-    lines = ["WHAT IF ASTA", "REMEMBERED EVERYTHING?", "PART 1"]
     lines = ["WHAT IF ASTA REMEMBERED", "EVERYTHING?"]
     p = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
                           "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
@@ -385,7 +384,7 @@ def build_short(master, timing, out, tmp=None, flash=True):
     sel = select_segments(beats)
     print(f"selection: segments={[(round(a, 2), round(b, 2)) for a, b in sel['segments']]} "
           f"exchange={sel['exchange']} total={sel['total']:.2f}s")
-    tmp = Path(tmp or tempfile.mkdtemp(prefix="short_"))
+    tmp = Path(tmp or tempfile.mkdtemp(prefix="short_")).resolve()
     tmp.mkdir(parents=True, exist_ok=True)
     vids, auds = [], []
     for k, (a, b) in enumerate(sel["segments"]):

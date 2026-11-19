@@ -245,25 +245,23 @@ def render_score(sections: list[dict], total: float, seed: int = 0, xfade: float
         a = 0.0 if i == 0 else s["start"] - h
         b = total if i == len(merged) - 1 else s["end"] + h
         dur = b - a
-        bed = render_cue(s["cue"], dur, seed + i)
+        pre = 0.0 if i == 0 else 3.5       # pre-roll so drones/pads are fully established when the crossfade starts
+        post = 0.0 if i == len(merged) - 1 else 3.0
+        full = render_cue(s["cue"], pre + dur + post, seed + i)
+        bed = full[int(round(pre * SR)): int(round(pre * SR)) + int(round(dur * SR))]
         # normalise each cue to the same loudness so cues sit consistently
-        rms = math.sqrt(float((bed[: int(dur * SR)] ** 2).mean())) + 1e-9
-        bed *= D.db(target_rms_db) / rms
+        rms = math.sqrt(float((bed ** 2).mean())) + 1e-9
+        bed = bed * (D.db(target_rms_db) / rms)
         env = np.ones(len(bed), np.float32)
-        nin = int(xfade * SR) if i > 0 else int(1.2 * SR)
-        env[:nin] = np.sin(np.linspace(0, np.pi / 2, nin)) ** 1 if i > 0 else np.sin(np.linspace(0, np.pi / 2, nin)) ** 2
+        nin = min(int(xfade * SR), len(bed)) if i > 0 else int(1.2 * SR)
+        ramp = np.linspace(0, np.pi / 2, nin)
+        env[:nin] = np.sin(ramp) if i > 0 else np.sin(ramp) ** 2      # equal power: sin^2 + cos^2 = 1
         if i < len(merged) - 1:
-            nout = int(xfade * SR); keep = int(dur * SR)
-            env[keep - nout:keep] = np.cos(np.linspace(0, np.pi / 2, nout))
-            env[keep:] = 0
-            # let the reverb tail of the previous cue ring a little under the crossfade
-            tailn = len(bed) - keep
-            if tailn > 0:
-                env[keep:] = np.cos(np.linspace(np.pi / 2, np.pi / 2, tailn)) * 0
+            nout = min(int(xfade * SR), len(bed))
+            env[len(bed) - nout:] = np.cos(np.linspace(0, np.pi / 2, nout))
         else:
             end_n = int(min(2.4, dur) * SR)
-            env[int(dur * SR) - end_n:int(dur * SR)] *= np.cos(np.linspace(0, np.pi / 2, end_n)) ** 2
-            env[int(dur * SR):] = 0
+            env[len(bed) - end_n:] *= np.cos(np.linspace(0, np.pi / 2, end_n)) ** 2
         s0 = int(round(a * SR))
         seg = bed * env[:, None]
         e0 = min(len(out), s0 + len(seg))
