@@ -41,11 +41,11 @@ def test_clone_runs_overlap_and_card_gap_and_music_changes_and_stamps():
     b = {x["id"]: x for x in tl["beats"]}
     assert b["b1"]["pause_ms"] == -70 and b["b2"]["start"] == pytest.approx(b["b1"]["end"] - 0.07)   # clone vs clone overlap
     assert b["b2"]["pause_ms"] >= 100                       # CLONE -> NARRATOR is a normal banter pause
-    assert tl["cards"][0]["end"] - tl["cards"][0]["start"] == pytest.approx(0.9)
+    assert tl["cards"][0]["end"] - tl["cards"][0]["start"] == pytest.approx(NP["card_gap_s"])
     assert [(s["cue"]) for s in tl["sections"]] == ["iruka_warm", "archive_hushed"]
     assert tl["sections"][1]["start"] == pytest.approx(b["b3"]["start"])
     assert b["b3"]["stamp"]["label"] == "CANON" and "stamp" not in b["b1"]
-    assert tl["beats"][0]["start"] == pytest.approx(NP["lead_in_s"] + 0.9)
+    assert tl["beats"][0]["start"] == pytest.approx(NP["lead_in_s"] + NP["card_gap_s"])
     gaps = AD.dialogue_gaps(tl)
     assert max(gaps) <= AD.MAX_DIALOGUE_GAP_S
 

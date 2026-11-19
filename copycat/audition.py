@@ -141,7 +141,7 @@ SCENE = [
     ("HIRUZEN", "[stern, calm] Stealing the Scroll of Seals is a crime, Naruto. [dryly] The sentence is one month of filing duty."),
     ("NARUTO", "[shouting] Filing?! I'm a ninja now! [indignant] You can't make a ninja do paperwork, old man!"),
     ("HIRUZEN", "[dry, amused] Then file like one."),
-    ("NARRATOR", "One month later: training ground seven, three genin, one late teacher, and two bells."),
+    ("NARRATOR", "Training ground seven. Three genin, one late teacher, two bells."),
     ("KAKASHI", "[lazily, bored] Hm. My first impression of you three? [flatly] ...I don't like you."),
     ("NARUTO", "[whispering, excited] Listen. It's a teamwork test. Two bells, three of us. He wants us to cooperate!"),
     ("SASUKE", "[cold, flat] You expect me to believe the dead last?"),
@@ -453,7 +453,7 @@ def join_fx(*parts: str) -> str:
     return ",".join(p for p in parts if p)
 
 
-def tune_candidate(M: Measurer, rname: str, role: dict, c: dict, pop: Pop, log) -> dict:
+def tune_candidate(M: Measurer, rname: str, role: dict, c: dict, pop: Pop, log, fish_variants: bool = True) -> dict:
     """Try Fish parameter variants, then post-FX nudges; keep whichever measures closest to the profile."""
     lines = c["lines"]
     base_m = c["measured"]
@@ -473,7 +473,7 @@ def tune_candidate(M: Measurer, rname: str, role: dict, c: dict, pop: Pop, log) 
     if not role.get("light"):
         alt = [re.sub(r"\[[^\]]*\]", "", ln).strip() if i == 0 else ln for i, ln in enumerate(lines)]       # variant: first line without cues
         variants.append(("pace+nocue1", sp, c["temperature"], alt))
-    for name, speed, temp, ls in variants:
+    for name, speed, temp, ls in (variants if fish_variants else []):
         if (speed, temp, ls) == (c["speed"], c["temperature"], lines):
             continue
         try:
@@ -655,18 +655,31 @@ def lufs(path: Path) -> float:
     return float(m[-1]) if m else -70.0
 
 
-def normalize_to(x: np.ndarray, sr: int, target: float = -16.0, tmp: Path | None = None) -> np.ndarray:
+def lufs_arr(x: np.ndarray, sr: int) -> float:
     import soundfile as sf
-    tmp = tmp or (BUILD / "_tmp_norm.wav")
-    sf.write(tmp, x, sr, subtype="FLOAT")
-    cur = lufs(tmp)
-    y = x * 10 ** ((target - cur) / 20)
-    pk = float(np.abs(y).max())
-    if pk > 0.97:                       # keep true peaks safe; the LUFS stays within ~0.5 dB for speech
-        y = np.tanh(y / pk * 1.1) / np.tanh(1.1) * 0.97
-        sf.write(tmp, y, sr, subtype="FLOAT")
-        y = y * 10 ** ((target - lufs(tmp)) / 20)
-    return np.clip(y, -0.99, 0.99).astype(np.float32)
+    t = BUILD / "_tmp_lufs.wav"
+    sf.write(t, x, sr, subtype="FLOAT")
+    v = lufs(t)
+    t.unlink()
+    return v
+
+
+def normalize_to(x: np.ndarray, sr: int, target: float = -15.75, tmp: Path | None = None) -> np.ndarray:
+    """Gain to `target` LUFS with ffmpeg's look-ahead peak limiter (ceiling 0.95), re-measured and corrected twice."""
+    import soundfile as sf
+    src, dst = BUILD / "_n_src.wav", BUILD / "_n_dst.wav"
+    sf.write(src, x, sr, subtype="FLOAT")
+    gain = target - lufs(src)
+    y = x
+    for _ in range(3):
+        ffmpeg(["-i", str(src), "-af", f"volume={gain:.3f}dB,alimiter=limit=0.95:attack=5:release=60:level=0", "-c:a", "pcm_f32le", str(dst)])
+        y, _sr = sf.read(dst, dtype="float32")
+        err = target - lufs(dst)
+        if abs(err) < 0.1:
+            break
+        gain += err
+    src.unlink(); dst.unlink()
+    return y.astype(np.float32)
 
 
 def write_mp3(x: np.ndarray, sr: int, path: Path):
@@ -685,6 +698,12 @@ def clip_audio(path: str, fx: str, sr: int = 44100) -> np.ndarray:
     return x[max(idx[0] - int(0.03 * sr), 0): idx[-1] + int(0.05 * sr)] if len(idx) else x
 
 
+def level_rms(x: np.ndarray, db: float = -21.0) -> np.ndarray:
+    act = x[np.abs(x) > 0.01]
+    rms = float(np.sqrt((act ** 2).mean())) if len(act) else 0.1
+    return (x * (10 ** (db / 20) / max(rms, 1e-4))).astype(np.float32)
+
+
 def build_reel(cast_opts: dict[str, list[dict]], log) -> dict[str, Path]:
     REEL_DIR.mkdir(parents=True, exist_ok=True)
     sr = 44100
@@ -694,10 +713,12 @@ def build_reel(cast_opts: dict[str, list[dict]], log) -> dict[str, Path]:
         for i, c in enumerate([c for c in cast_opts[rname][:3] if c.get("paths")]):
             if i:
                 segs.append(np.zeros(int(0.8 * sr), np.float32))
+            cs = []
             for j, p in enumerate(c["paths"]):
                 if j:
-                    segs.append(np.zeros(int(0.35 * sr), np.float32))
-                segs.append(clip_audio(p, c.get("post_fx", ""), sr))
+                    cs.append(np.zeros(int(0.35 * sr), np.float32))
+                cs.append(clip_audio(p, c.get("post_fx", ""), sr))
+            segs.append(level_rms(np.concatenate(cs)))          # every candidate at the same speech level: no loudness bias
         # each candidate is leveled on its own so a quiet voice is not unfairly disadvantaged
         x = normalize_to(np.concatenate(segs), sr)
         f = REEL_DIR / f"{rname.lower()}.mp3"
@@ -722,8 +743,6 @@ def build_scene(cast: dict, client: FA.FishClient, log) -> Path:
         act = x[np.abs(x) > 0.01]
         rms = float(np.sqrt((act ** 2).mean())) if len(act) else 0.1
         x = x * (10 ** (-21 / 20) / max(rms, 1e-4))
-        if spk == "KURAMA":
-            x = x * 1.0
         clips.append((spk, x.astype(np.float32)))
     gaps = {"NARRATOR": 0.55}
     total = sum(len(x) for _, x in clips) + int(sr * 0.4 * len(clips)) + sr
@@ -732,7 +751,7 @@ def build_scene(cast: dict, client: FA.FishClient, log) -> Path:
     for i, (spk, x) in enumerate(clips):
         st = pan(x, SCENE_PAN.get(spk, 0.0))
         mix[t: t + len(x)] += st
-        gap = 0.55 if spk == "NARRATOR" or (i + 1 < len(clips) and clips[i + 1][0] == "NARRATOR") else (0.18 if spk == "NARUTO" else 0.32)
+        gap = 0.45 if spk == "NARRATOR" or (i + 1 < len(clips) and clips[i + 1][0] == "NARRATOR") else (0.12 if spk == "NARUTO" else 0.22)
         t += len(x) + int(gap * sr)
     mix = mix[: t + int(0.4 * sr)]
     pk = float(np.abs(mix).max())
@@ -741,8 +760,7 @@ def build_scene(cast: dict, client: FA.FishClient, log) -> Path:
     import soundfile as sf
     tmp = REEL_DIR / "_scene.wav"
     sf.write(tmp, mix, sr, subtype="FLOAT")
-    cur = lufs(tmp)
-    y = np.clip(mix * 10 ** ((-16 - cur) / 20), -0.99, 0.99)
+    y = normalize_to(mix, sr)
     f = REEL_DIR / "cast_scene.mp3"
     tmp2 = REEL_DIR / "_scene2.wav"
     sf.write(tmp2, y, sr, subtype="PCM_16")
@@ -800,7 +818,7 @@ def run(franchise: str, cast_path: Path, top: int = 10, refresh: bool = False) -
         log(f"audition {rname}: {len(aud[rname])} candidates measured ({time.time() - t0:.0f}s) {FA.STATS.as_dict()['api_calls']} calls")
     light_aud = {}
     for rname in LIGHT_ROLES:
-        cands = shortlist(ok, rname, LIGHT[rname], n=6, explore=2)
+        cands = shortlist(ok, rname, LIGHT[rname], n=12, explore=3)
         light_aud[rname] = audition_role(M, rname, LIGHT[rname], cands, log)
     pop = Pop([c["measured"] for r in aud.values() for c in r] + [c["measured"] for r in light_aud.values() for c in r])
     # ---- stage 2: rank + tune the top 3 per role
@@ -828,6 +846,7 @@ def run(franchise: str, cast_path: Path, top: int = 10, refresh: bool = False) -
             c["dist"], c["terms"] = distance(role, c["measured"], pop, c["gender_meta"])
             c["variant"] = "base"
         rk = sorted(light_aud[rname], key=lambda c: c["dist"])
+        rk = sorted([tune_candidate(M, rname, role, c, pop, log, fish_variants=False) for c in rk[:3]] + rk[3:], key=lambda c: c["dist"])
         free = [c for c in rk if c["_id"] not in used] or rk
         light_opts[rname] = free[:2]
         if free:
@@ -838,7 +857,12 @@ def run(franchise: str, cast_path: Path, top: int = 10, refresh: bool = False) -
         a = pick[rname]
         rest = [c for c in options[rname] if c["_id"] != a["_id"] and c["_id"] not in {p["_id"] for r, p in pick.items() if r != rname}]
         rest += [c for c in options[rname] if c["_id"] != a["_id"] and c not in rest]
-        cast[rname] = role_entry(rname, ROLES[rname], [a] + rest[:2], pop, existing.get(rname))
+        opts3 = [a] + rest[:2]
+        if rname == "NARRATOR" and all(o["_id"] != BC_NARRATOR_ID for o in opts3):
+            bc = next((c for c in options[rname] if c["_id"] == BC_NARRATOR_ID), None)
+            if bc:
+                opts3[2] = bc                      # channel continuity: the Black Clover narrator always gets a hearing
+        cast[rname] = role_entry(rname, ROLES[rname], opts3, pop, existing.get(rname))
         if rname == "NARUTO":
             cast["CLONE"] = clone_entry(cast["NARUTO"])
     for rname in LIGHT_ROLES:

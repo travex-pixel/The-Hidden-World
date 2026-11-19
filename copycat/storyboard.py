@@ -53,6 +53,48 @@ def frame(img: Image.Image, layout: str, focus, w=CW, h=CH) -> Image.Image:
     return bg
 
 
+def insert_cell(s, w=CW, h=CH):
+    """Thumbnail of a designed insert at the end of its shot (all ink revealed), rendered with the real insert engine."""
+    try:
+        import hashlib
+        import numpy as np
+        from . import inserts
+        from .compositor import make_vignette
+        bg = ROOT / s["bg_path"]
+        code = "".join(str((ROOT / "copycat" / f).stat().st_mtime_ns) for f in ("inserts.py", "visuals/paper.py"))
+        key = hashlib.sha1((json.dumps([s["insert"], s["start"], s["end"], s["bg_path"], w, h], sort_keys=True) + code).encode()).hexdigest()[:16]
+        cache = ROOT / "build/copycat/_insert_thumbs"
+        cache.mkdir(parents=True, exist_ok=True)
+        if (cache / f"{key}.png").exists():
+            return Image.open(cache / f"{key}.png").convert("RGB")
+        spec = dict(s["insert"])
+        spec["shot_start"], spec["shot_end"] = s["start"], s["end"]
+        shot = dict(id=s["id"], start=s["start"], end=s["end"], insert=spec, vfx=[], _abs_path=str(bg))
+        sc = inserts.InsertScene(shot, w, h, 30, make_vignette(w, h))
+        sc.t0 = s["end"] - 0.05
+        im = Image.fromarray(_frame_at(sc, 0.92))
+        im.save(cache / f"{key}.png")
+        return im
+    except Exception as e:                              # pragma: no cover
+        im = Image.new("RGB", (w, h), (40, 40, 60))
+        ImageDraw.Draw(im).text((10, 10), f"insert render failed: {e}"[:60], fill=(255, 120, 120))
+        return im
+
+
+def _frame_at(sc, p):
+    """Frame of an InsertScene at shot progress p (ink state taken at that time)."""
+    import numpy as np
+    from PIL import Image as PI
+    from . import inserts
+    t = sc.spec["shot_start"] + p * (sc.spec["shot_end"] - sc.spec["shot_start"])
+    fr = sc.canvas_at(t)
+    cx, cy, z = inserts.view_window(sc.D, sc.view, p, sc.W, sc.H)
+    ww, wh = inserts.W0 / z, inserts.H0 / z
+    K = inserts.K
+    box = ((cx - ww / 2) * K, (cy - wh / 2) * K, (cx + ww / 2) * K, (cy + wh / 2) * K)
+    return np.array(PI.fromarray(fr).resize((sc.W, sc.H), PI.BICUBIC, box=box))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("project")
@@ -94,6 +136,10 @@ def main(argv=None):
             if s["type"] == "card":
                 cell = Image.new("RGB", (CW, CH), (30, 10, 14))
                 ImageDraw.Draw(cell).text((20, 110), f"CARD {s['card']['numeral']}  {s['card']['title']}", fill=(240, 220, 200), font=f1)
+            elif s["type"] == "insert":
+                cell = insert_cell(s)
+                ImageDraw.Draw(cell).rectangle([0, 0, 150, 16], fill=(20, 20, 20))
+                ImageDraw.Draw(cell).text((4, 2), "INSERT " + s["insert"]["type"], fill=(120, 255, 160), font=f2)
             elif s["asset_path"]:
                 try:
                     cell = frame(Image.open(ROOT / s["asset_path"]), s["layout"], s["focus"])

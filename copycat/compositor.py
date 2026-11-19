@@ -31,11 +31,12 @@ from .cards import CardScene
 from . import franchise as franchise_mod
 from .fonts import font
 from .stamp import StampPainter
+from .inserts import InsertScene
 from .vfx import ACCENTS, Atmosphere, dissolve, flash, seed_of, smoothstep, whip, DISSOLVE_FRAMES
 
 cv2.setNumThreads(1)
 ROOT = Path(__file__).resolve().parent.parent
-CODE_FILES = ["compositor.py", "vfx.py", "cards.py", "fonts.py", "stamp.py"]
+CODE_FILES = ["compositor.py", "vfx.py", "cards.py", "fonts.py", "stamp.py", "inserts.py", "visuals/paper.py"]
 
 SPEAKER_COLORS = {
     "ASTA": (46, 204, 113), "LIEBE": (222, 36, 52), "YUNO": (104, 190, 255),
@@ -544,6 +545,8 @@ FADE_IN_F, FADE_OUT_F = 12, 30
 
 
 def asset_abs(shot, vault_index):
+    if shot.get("type") == "insert":                 # designed insert: the real frame behind the prop
+        shot = dict(shot, asset_path=shot.get("bg_path"), asset_id=shot.get("bg_asset_id"))
     p = shot.get("asset_path")
     if p and Path(p).is_absolute() and Path(p).exists():
         return str(p)
@@ -560,6 +563,8 @@ def asset_abs(shot, vault_index):
 def make_scene(shot, W, H, fps, vig):
     if shot.get("type") == "card":
         return CardScene(shot, W, H, fps)
+    if shot.get("type") == "insert":
+        return InsertScene(shot, W, H, fps, vig)
     return StillScene(shot, W, H, fps, vig)
 
 
@@ -612,11 +617,17 @@ def _globals(W, H):
     return _G
 
 
+def stamp_delay(shot, fps):
+    """Frames before the CANON slam begins: its impact lands on the thunk time the audio engine exported (timing.json stamps)."""
+    st = shot.get("stamp")
+    if st and st.get("time") is not None:
+        return StampPainter.delay_frames(float(st["time"]), float(shot["start"]), fps)
+    return 0
+
+
 def compose_frame(scene, i, n, shot, g, caps, gfr, fps, prev_last, is_card):
     fr = scene.frame(i, n)
     if not is_card:
-        if shot.get("stamp"):                        # CANON stamp: upper-right, never reaches the caption zone
-            g["stamp"].draw(fr, shot["stamp"], i, n, fps)
         for c in caps:
             g["cap"].draw(fr, c, gfr, fps)
     tr = shot.get("transition_in") or "cut"
@@ -629,6 +640,8 @@ def compose_frame(scene, i, n, shot, g, caps, gfr, fps, prev_last, is_card):
             fr = whip(fr, i)
         elif tr == "dissolve" and prev_last is not None and i < DISSOLVE_FRAMES:
             fr = dissolve(prev_last, fr, i)
+        if shot.get("stamp"):                        # CANON stamp: drawn AFTER the transition so a dissolve/flash never dims the slam;
+            g["stamp"].draw(fr, shot["stamp"], i, n, fps, stamp_delay(shot, fps))   # upper-right, never reaches the caption zone
     return fr
 
 
@@ -650,6 +663,8 @@ def render_segment(job):
         if prev.get("type") != "card":
             for c in job["pcaps"]:
                 g["cap"].draw(prev_last, c, f0 - 1, fps)
+            if prev.get("stamp"):                    # a stamp still on screen when the shot ends is carried through the dissolve
+                g["stamp"].draw(prev_last, prev["stamp"], pn - 1, pn, fps, stamp_delay(prev, fps))
     out = Path(job["out"])
     tmp = out.with_suffix(".tmp.mp4")
     proc = ffmpeg_writer(tmp, W, H, fps, job.get("threads", 2))

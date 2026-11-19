@@ -153,8 +153,7 @@ def edge_alpha(w, h, rng, rough=2.2, corner=0.0):
     d = d + rough * K * noise(rng, h, w, 6.0) * 0.6 + rough * K * 0.35 * noise(rng, h, w, 1.5)
     if corner:                                                            # one dog-eared / rounded corner
         cx, cy = w - 1 - xx, h - 1 - yy
-        cut = (cx + cy) / 1.414 - corner * K
-        d = np.minimum(d, -cut)
+        d = np.minimum(d, (cx + cy) / 1.414 - corner * K)
     return np.clip(d / 1.6 + 0.5, 0, 1).astype(np.float32)
 
 
@@ -266,21 +265,31 @@ class Stroke:
             dx, dy = np.gradient(xs), np.gradient(ys)
             ln = np.hypot(dx, dy) + 1e-6
             nx, ny = -dy / ln, dx / ln
-            tracks = None
+            k = 1
+            keep = None
             if sp:
                 s0, k, spread, drop = sp
-                tracks = [((j - (k - 1) / 2) / max(1, (k - 1) / 2)) for j in range(k)]
-                keep = [np.cumsum(rng.random(nd) < 0.004) % 2 == 0 for _ in range(k)]   # dry-brush gaps
+                keep = []
+                for _ in range(k):                                    # dry-brush gaps: each bristle track skips now and then
+                    g = np.zeros(nd, bool)
+                    pos = 0
+                    pos = int(nd * rng.uniform(0.55, 0.75))
+                    while pos < nd:
+                        pos += int(rng.integers(int(nd * 0.10) + 3, int(nd * 0.30) + 6))
+                        ln_ = int(rng.integers(int(nd * 0.015) + 2, int(nd * 0.06) + 3))
+                        g[pos:pos + ln_] = True
+                    g[int(nd * rng.uniform(0.80, 1.0)):] = True              # each bristle track ends at its own length
+                    keep.append(~g)
             for j in range(nd):
                 r = wd[j] * ss / 2
                 if sp and ud[j] > sp[0]:
                     f = (ud[j] - sp[0]) / (1 - sp[0])
-                    for q, off in enumerate(tracks):
-                        if not keep[q][j] and f > 0.15:
+                    for q in range(k):
+                        if not keep[q][j]:
                             continue
-                        cx = xs[j] * ss + nx[j] * off * sp[2] * f * wd[j] * ss
-                        cy = ys[j] * ss + ny[j] * off * sp[2] * f * wd[j] * ss
-                        rr = max(0.6, r * (1.0 / sp[1]) * 1.5 * (1 - 0.55 * f))
+                        off = (q - (k - 1) / 2) * (wd[j] / k) * (1 + spread * f * 1.6) * ss
+                        cx, cy = xs[j] * ss + nx[j] * off, ys[j] * ss + ny[j] * off
+                        rr = max(0.8, wd[j] * ss / (2 * k) * 1.18 * (1 - 0.45 * f))
                         cv2.circle(m, (int(cx), int(cy)), int(rr + 0.5), 1.0, -1)
                         cv2.circle(tp, (int(cx), int(cy)), int(rr + 0.5), float(tg[j]), -1)
                 else:

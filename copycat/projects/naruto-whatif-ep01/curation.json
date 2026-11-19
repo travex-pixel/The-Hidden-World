@@ -3,7 +3,19 @@
   "avg_shot_s": 4.5,
   "era": "part1",
   "lock_seconds": 90,
-  "avoid_assets_from": []
+  "avoid_assets_from": [],
+  "merge_short_s": 2.3,
+  "crowd_penalty": 3.0,
+  "time_by_chapter": {
+   "ch1": "night",
+   "ch5": "day",
+   "ch6": "night"
+  },
+  "time_by_beat": {
+   "b046": "day",
+   "b047": "day",
+   "b215": "night"
+  }
  },
  "_note": "Manual corrections from contact-sheet review (python -m copycat.visuals.sheets --franchise naruto). Keys: asset id -> reject / era / subjects / add_subjects / remove_subjects / time / text_free / shotType / mood.",
  "nr_0049": {
@@ -177,7 +189,14 @@
    "library"
   ],
   "era": "none",
-  "keep": true
+  "keep": true,
+  "subjects": [
+   "library",
+   "archive"
+  ],
+  "location": "library",
+  "time": "day",
+  "text_free": true
  },
  "nr_1840": {
   "add_subjects": [
@@ -185,6 +204,1046 @@
    "library"
   ],
   "era": "none",
-  "keep": true
+  "keep": true,
+  "subjects": [
+   "library",
+   "archive"
+  ],
+  "location": "library",
+  "time": "day",
+  "text_free": true
+ },
+ "nr_0003": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0019": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0022": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0284": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0463": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0606": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0607": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0608": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0615": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0715": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0790": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0856": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0696": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ]
+ },
+ "nr_0702": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ],
+  "era": "part1",
+  "shotType": "closeup"
+ },
+ "nr_0094": {
+  "remove_subjects": [
+   "forbidden_scroll",
+   "paperwork"
+  ]
+ },
+ "nr_0194": {
+  "remove_subjects": [
+   "library",
+   "archive",
+   "paperwork",
+   "forbidden_scroll",
+   "hokage_office",
+   "crystal_ball",
+   "training_ground",
+   "forest_night",
+   "book",
+   "letter",
+   "document"
+  ],
+  "era": "shippuden"
+ },
+ "nr_0046": {
+  "era": "shippuden"
+ },
+ "nr_0575": {
+  "subjects": [
+   "library",
+   "archive"
+  ],
+  "location": "library",
+  "era": "none",
+  "time": "day",
+  "text_free": true
+ },
+ "nr_0072": {
+  "add_subjects": [
+   "hokage_office",
+   "mission_desk"
+  ],
+  "location": "hokage_office",
+  "era": "part1",
+  "remove_subjects": [
+   "iruka"
+  ]
+ },
+ "nr_0792": {
+  "add_subjects": [
+   "training_ground"
+  ],
+  "location": "training_ground",
+  "era": "none",
+  "time": "day"
+ },
+ "nr_2235": {
+  "era": "part1",
+  "subjects": [
+   "kakashi",
+   "book"
+  ],
+  "time": "day"
+ },
+ "nr_2236": {
+  "era": "none",
+  "subjects": [
+   "kurama",
+   "seal_cage"
+  ],
+  "location": "seal_cage",
+  "text_free": true,
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "wide"
+ },
+ "nr_2237": {
+  "reject": true
+ },
+ "nr_2238": {
+  "era": "none",
+  "subjects": [
+   "hokage_office",
+   "konoha_village"
+  ],
+  "location": "hokage_office",
+  "time": "night",
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "establishing"
+ },
+ "nr_2239": {
+  "era": "part1",
+  "subjects": [
+   "team7",
+   "naruto",
+   "sasuke",
+   "sakura"
+  ],
+  "time": "day",
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "nr_2240": {
+  "era": "part1",
+  "subjects": [
+   "kakashi"
+  ],
+  "time": "day",
+  "mood": [
+   "triumphant"
+  ],
+  "shotType": "medium"
+ },
+ "nr_2241": {
+  "era": "part1",
+  "subjects": [
+   "team7",
+   "kakashi",
+   "naruto",
+   "sasuke",
+   "sakura"
+  ],
+  "time": "day",
+  "mood": [
+   "triumphant"
+  ],
+  "shotType": "medium"
+ },
+ "nr_2243": {
+  "era": "part1",
+  "subjects": [
+   "kakashi",
+   "bells"
+  ],
+  "time": "day",
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "closeup"
+ },
+ "nr_0001": {
+  "remove_subjects": [
+   "hiruzen",
+   "iruka"
+  ]
+ },
+ "nr_0002": {
+  "remove_subjects": [
+   "hiruzen",
+   "iruka"
+  ]
+ },
+ "nr_0008": {
+  "remove_subjects": [
+   "iruka"
+  ]
+ },
+ "nr_0017": {
+  "remove_subjects": [
+   "iruka"
+  ]
+ },
+ "nr_0029": {
+  "remove_subjects": [
+   "iruka"
+  ],
+  "add_subjects": [
+   "forest_night",
+   "naruto_clones"
+  ],
+  "time": "night",
+  "era": "part1"
+ },
+ "nr_0034": {
+  "remove_subjects": [
+   "iruka"
+  ]
+ },
+ "nr_0466": {
+  "remove_subjects": [
+   "iruka"
+  ]
+ },
+ "nr_0717": {
+  "remove_subjects": [
+   "iruka"
+  ]
+ },
+ "nr_0779": {
+  "era": "shippuden"
+ },
+ "nr_0688": {
+  "era": "shippuden"
+ },
+ "nr_0164": {
+  "era": "shippuden"
+ },
+ "nr_0623": {
+  "era": "part1",
+  "subjects": [
+   "iruka",
+   "naruto",
+   "shuriken",
+   "mizuki"
+  ],
+  "time": "night",
+  "mood": [
+   "emotional"
+  ],
+  "shotType": "action",
+  "add_subjects": [
+   "forest_night"
+  ],
+  "location": "forest_night"
+ },
+ "nr_0869": {
+  "era": "part1",
+  "subjects": [
+   "mizuki",
+   "iruka",
+   "shuriken"
+  ],
+  "time": "night",
+  "mood": [
+   "action"
+  ],
+  "add_subjects": [
+   "forest_night"
+  ],
+  "location": "forest_night"
+ },
+ "nr_0870": {
+  "era": "part1",
+  "subjects": [
+   "mizuki",
+   "forest_night"
+  ],
+  "location": "forest_night",
+  "time": "night",
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "wide"
+ },
+ "nr_0846": {
+  "era": "part1",
+  "subjects": [
+   "iruka"
+  ],
+  "mood": [
+   "emotional"
+  ],
+  "shotType": "closeup"
+ },
+ "nr_0303": {
+  "era": "part1",
+  "subjects": [
+   "iruka",
+   "naruto",
+   "headband",
+   "forest_night"
+  ],
+  "location": "forest_night",
+  "time": "night",
+  "mood": [
+   "emotional"
+  ]
+ },
+ "nr_0624": {
+  "era": "part1",
+  "subjects": [
+   "iruka",
+   "naruto"
+  ],
+  "mood": [
+   "emotional"
+  ]
+ },
+ "nr_0106": {
+  "era": "part1",
+  "subjects": [
+   "iruka",
+   "classroom"
+  ],
+  "mood": [
+   "quiet"
+  ]
+ },
+ "nr_0386": {
+  "era": "shippuden"
+ },
+ "nr_0387": {
+  "era": "shippuden"
+ },
+ "nr_0434": {
+  "era": "shippuden"
+ },
+ "nr_0538": {
+  "era": "shippuden"
+ },
+ "nr_0564": {
+  "era": "shippuden"
+ },
+ "nr_0565": {
+  "era": "shippuden"
+ },
+ "nr_0566": {
+  "era": "shippuden"
+ },
+ "nr_0504": {
+  "era": "part1",
+  "subjects": [
+   "mizuki"
+  ],
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "closeup"
+ },
+ "nr_0448": {
+  "era": "kid"
+ },
+ "nr_0959": {
+  "era": "part1",
+  "subjects": [
+   "kurama",
+   "seal_cage",
+   "naruto"
+  ],
+  "location": "seal_cage",
+  "mood": [
+   "ominous"
+  ],
+  "text_free": true
+ },
+ "nr_0991": {
+  "era": "part1",
+  "subjects": [
+   "kurama",
+   "seal_cage"
+  ],
+  "location": "seal_cage",
+  "mood": [
+   "ominous"
+  ]
+ },
+ "nr_0598": {
+  "era": "part1",
+  "subjects": [
+   "kurama",
+   "seal_cage"
+  ],
+  "location": "seal_cage",
+  "mood": [
+   "ominous"
+  ]
+ },
+ "nr_0307": {
+  "era": "shippuden"
+ },
+ "nr_0573": {
+  "era": "shippuden"
+ },
+ "nr_0588": {
+  "era": "shippuden"
+ },
+ "nr_0662": {
+  "era": "shippuden",
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0990": {
+  "era": "shippuden"
+ },
+ "nr_0980": {
+  "era": "shippuden"
+ },
+ "nr_1285": {
+  "era": "shippuden"
+ },
+ "nr_1324": {
+  "era": "shippuden"
+ },
+ "nr_1323": {
+  "era": "shippuden"
+ },
+ "nr_1394": {
+  "reject": true
+ },
+ "nr_1473": {
+  "reject": true
+ },
+ "nr_1342": {
+  "reject": true
+ },
+ "nr_0028": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0053": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0059": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0062": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0080": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0090": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0125": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0147": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0161": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0187": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0192": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0199": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0200": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0264": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0344": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0400": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0457": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0552": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0578": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0582": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0585": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0587": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0592": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0594": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0595": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0596": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0604": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0605": {
+  "remove_subjects": [
+   "hokage_office"
+  ]
+ },
+ "nr_0621": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0629": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0643": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0664": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0670": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0676": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0690": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0694": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0736": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0760": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0781": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0791": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0795": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0804": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0855": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0863": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0897": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0914": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0952": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0971": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1041": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1054": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1055": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1069": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1075": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1112": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1150": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1384": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1545": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1674": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1739": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1812": {
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_1876": {
+  "remove_subjects": [
+   "hokage_office"
+  ]
+ },
+ "nr_0610": {
+  "era": "part1",
+  "subjects": [
+   "hiruzen",
+   "hokage_office"
+  ],
+  "location": "hokage_office",
+  "shotType": "wide",
+  "time": "day"
+ },
+ "nr_0626": {
+  "era": "part1"
+ },
+ "nr_0620": {
+  "era": "part1",
+  "remove_subjects": [
+   "hiruzen"
+  ]
+ },
+ "nr_0650": {
+  "era": "part1"
+ },
+ "nr_0382": {
+  "era": "part1"
+ },
+ "nr_1061": {
+  "add_subjects": [
+   "forest_night",
+   "naruto_clones"
+  ],
+  "time": "night",
+  "era": "part1"
+ },
+ "nr_1109": {
+  "add_subjects": [
+   "forest_night",
+   "naruto_clones"
+  ],
+  "time": "night",
+  "era": "part1"
+ },
+ "nr_1899": {
+  "add_subjects": [
+   "night_sky"
+  ],
+  "time": "night",
+  "era": "none",
+  "mood": [
+   "quiet"
+  ]
+ },
+ "nr_1955": {
+  "add_subjects": [
+   "night_sky",
+   "konoha_village"
+  ],
+  "time": "night",
+  "era": "none",
+  "mood": [
+   "quiet"
+  ]
+ },
+ "nr_1898": {
+  "add_subjects": [
+   "night_sky"
+  ],
+  "time": "night",
+  "era": "none"
+ },
+ "nr_1829": {
+  "add_subjects": [
+   "night_sky"
+  ],
+  "time": "night",
+  "era": "none"
+ },
+ "nr_1916": {
+  "add_subjects": [
+   "night_sky"
+  ],
+  "time": "night",
+  "era": "none",
+  "mood": [
+   "quiet"
+  ]
+ },
+ "nr_0476": {
+  "mood": [
+   "quiet",
+   "emotional"
+  ]
+ },
+ "nr_0389": {
+  "mood": [
+   "quiet",
+   "triumphant"
+  ]
+ },
+ "nr_0073": {
+  "mood": [
+   "determined"
+  ]
+ },
+ "nr_0214": {
+  "add_subjects": [
+   "document",
+   "paperwork"
+  ]
+ },
+ "nr_0460": {
+  "mood": [
+   "ominous"
+  ],
+  "add_subjects": [
+   "kurama"
+  ]
  }
 }

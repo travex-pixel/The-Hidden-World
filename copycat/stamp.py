@@ -27,6 +27,7 @@ JITTER = ((0, 0), (0, 0), (0, 0), (5, -4), (-2, 2))
 FADE_FRAMES = 8
 MAX_SECONDS = 2.6
 ROT = -7.0
+IMPACT = 3                                          # frame index of the impact (overshoot + white flash)
 
 
 def wrap(text, f, max_w):
@@ -133,34 +134,31 @@ class Sprite:
         note_w = int(max([nfont.getlength(l) for l in note_lines] + [0]) + 66 * r)
         ox = max(0, note_w - sw)                          # canvas widens (to the left) when the note is wider than the stamp
         self.anchor = (ox + sw / 2.0, sh / 2.0)           # scale about the middle of the inked stamp
-        # note strip (clean, unrotated, right aligned to stamp)
+        # note strip (clean, unrotated, right aligned to stamp) lives on its OWN layer: the slam scales the stamp, never the note
         nlay_h = int(44 * r) * len(note_lines)
         Wc, Hc = ox + sw, sh + nlay_h
-        rgba = np.zeros((Hc, Wc, 4), np.float32)
         # soft shadow
         sh_a = np.asarray(shadow_src, np.float32) / 255.0
         sh_a = cv2.GaussianBlur(sh_a, (0, 0), 7 * r)
         M = np.float32([[1, 0, 5 * r], [0, 1, 8 * r]])
         sh_a = cv2.warpAffine(sh_a, M, (sw, sh))
-        base = np.zeros((Hc, Wc, 4), np.float32)
-        base[:sh, ox:, 3] = 0.62 * sh_a
         # dark plate then ink (premultiplied "over")
         pl = np.asarray(plate_img, np.float32)[..., None] / 255.0
         ink_rgba = np.asarray(rot, np.float32) / 255.0
         a_i = ink_rgba[..., 3:4]
         stamp_rgb_p = np.zeros((sh, sw, 3), np.float32)
         stamp_a = np.zeros((sh, sw, 1), np.float32)
-        # plate (near-black)
         stamp_rgb_p += np.array([0.05, 0.03, 0.04], np.float32) * pl
         stamp_a += pl
-        # ink over plate
         stamp_rgb_p = ink_rgba[..., :3] * a_i + stamp_rgb_p * (1 - a_i)
         stamp_a = a_i + stamp_a * (1 - a_i)
         comp_rgb = np.zeros((Hc, Wc, 3), np.float32)
-        comp_a = base[..., 3:4].copy()
+        comp_a = np.zeros((Hc, Wc, 1), np.float32)
+        comp_a[:sh, ox:, 0] = 0.62 * sh_a                                 # shadow under the stamp (black)
         comp_rgb[:sh, ox:] = stamp_rgb_p + comp_rgb[:sh, ox:] * (1 - stamp_a)
         comp_a[:sh, ox:] = stamp_a + comp_a[:sh, ox:] * (1 - stamp_a)
-        # note strip
+        n_rgb = np.zeros((Hc, Wc, 3), np.float32)
+        n_a = np.zeros((Hc, Wc), np.float32)
         if note_lines:
             tmp = Image.new("RGBA", (Wc, Hc), (0, 0, 0, 0))
             dn = ImageDraw.Draw(tmp)
@@ -174,10 +172,11 @@ class Sprite:
                 dn.text((x0 + 20 * r, y + 4 * r), ln, font=nfont, fill=(250, 243, 228, 255))
                 y += int(44 * r)
             na = np.asarray(tmp, np.float32) / 255.0
-            comp_rgb = na[..., :3] * na[..., 3:4] + comp_rgb * (1 - na[..., 3:4])
-            comp_a = na[..., 3:4] + comp_a * (1 - na[..., 3:4])
-        self.rgb = comp_rgb          # premultiplied
+            n_rgb = na[..., :3] * na[..., 3:4]
+            n_a = na[..., 3]
+        self.rgb = comp_rgb          # premultiplied, stamp + its shadow only
         self.a = comp_a[..., 0]
+        self.nrgb, self.na = n_rgb, n_a
         bm = np.zeros((Hc, Wc), np.float32)
         bm[:sh, ox:] = np.asarray(bord_img, np.float32) / 255.0
         self.border = cv2.GaussianBlur(bm, (0, 0), 1.0)
@@ -210,9 +209,14 @@ class StampPainter:
             a = max(0.0, (total - 1 - i) / float(fade))
         return a, 1.0, 0.0, (0, 0)
 
-    def draw(self, fr, stamp, i, n, fps):
-        p = self.params(i, n, fps)
-        if not p or not stamp:
+    def draw(self, fr, stamp, i, n, fps, delay=0):
+        """Stamp the frame. ``delay`` = frames from the shot start to the START of the slam (the impact frame is
+        ``IMPACT`` frames later, so a mapper that knows the audio thunk time can land the impact exactly on it)."""
+        i = i - delay
+        if i < 0 or not stamp:
+            return
+        p = self.params(i, max(n - delay, 1), fps)
+        if not p:
             return
         alpha, scale, flash, (dx, dy) = p
         sp = self.sprite(stamp)
@@ -226,14 +230,20 @@ class StampPainter:
             w = (bm * flash)[..., None]
             rgb = rgb * (1 - w) + (np.maximum(a, 0.9)[..., None] * 1.0) * w
             a = np.maximum(a, bm * flash)
-        if abs(scale - 1.0) > 1e-3:
+        if abs(scale - 1.0) > 1e-3:                       # the slam scales the STAMP only (about its centre) ...
             ns = (max(1, int(Wc * scale)), max(1, int(Hc * scale)))
             rgb = cv2.resize(rgb, ns, interpolation=cv2.INTER_LINEAR)
             a = cv2.resize(a, ns, interpolation=cv2.INTER_LINEAR)
-        h2, w2 = a.shape
         ax, ay = sp.anchor[0] * scale, sp.anchor[1] * scale
-        x0 = int(round(cx_final + dx * r - ax))
-        y0 = int(round(cy_final + dy * r - ay))
+        self._blit(fr, rgb, a, cx_final + dx * r - ax, cy_final + dy * r - ay, alpha)
+        if sp.na.any():                                   # ... the note strip never scales: it lands with the impact
+            k = min(1.0, max(0.0, (i - IMPACT + 1) / 3.0))
+            if k > 0:
+                self._blit(fr, sp.nrgb, sp.na, cx_final - sp.anchor[0], cy_final - sp.anchor[1], alpha * k if alpha < 1 else k)
+
+    def _blit(self, fr, rgb, a, fx, fy, alpha):
+        h2, w2 = a.shape
+        x0, y0 = int(round(fx)), int(round(fy))
         xa, ya = max(0, x0), max(0, y0)
         xb, yb = min(self.W, x0 + w2), min(self.H, y0 + h2)
         if xb <= xa or yb <= ya:
@@ -243,3 +253,8 @@ class StampPainter:
         roi = fr[ya:yb, xa:xb].astype(np.float32)
         out = sr * 255.0 + roi * (1 - sa)
         fr[ya:yb, xa:xb] = np.clip(out, 0, 255).astype(np.uint8)
+
+    @staticmethod
+    def delay_frames(stamp_time, shot_start, fps):
+        """Frames after the shot start at which the slam must BEGIN so that its impact lands on ``stamp_time`` (seconds)."""
+        return max(0, int(round((stamp_time - shot_start) * fps)) - IMPACT)

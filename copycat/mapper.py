@@ -62,7 +62,8 @@ SHOT_NEAR = {("closeup", "extreme_closeup"), ("wide", "establishing"), ("action"
 # Everything franchise-specific the scorer needs. Black Clover = the constants above, untouched.
 P = dict(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
          ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
-         avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={})
+         avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
+         time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0)
 
 NARUTO_ALIASES = {
     "forbidden_scroll": ("document", "paperwork"), "paperwork": ("document", "letter", "book"), "document": ("paperwork", "letter", "book", "forbidden_scroll"),
@@ -103,7 +104,8 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
     """Set the module profile P for this run (also resets it to Black Clover for bc projects)."""
     P.update(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
              ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
-             avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={})
+             avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
+             time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0)
     if fr_id == "naruto":
         P.update(scarce={"kushina", "minato", "tobirama", "kurama", "danzo", "enma", "rin", "obito", "young_kakashi", "orochimaru", "jiraiya", "ibiki", "anko"},
                  young={"young_kakashi": "kakashi"}, atmos=set(), atmos2=set(), nonchar=NARUTO_NONCHAR, speaker_subjects=NARUTO_SPEAKERS,
@@ -111,6 +113,11 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
                  era=script.get("era", cfg.get("era", "part1")), aliases=NARUTO_ALIASES,
                  era_agnostic={"minato", "kushina", "tobirama", "obito", "rin", "young_kakashi", "haku", "zabuza", "gato", "tazuna", "inari", "demon_brothers",
                                "mizuki", "iruka", "hiruzen", "anbu", "danzo", "root", "kurama", "villagers", "genin_crowd", "teuchi", "ibiki", "anko", "enma"})
+    if fr_id == "naruto":
+        P["time_by_chapter"] = cfg.get("time_by_chapter", {})
+        P["time_by_beat"] = cfg.get("time_by_beat", {})
+        P["merge_short_s"] = float(cfg.get("merge_short_s", 0.0))
+        P["crowd_penalty"] = float(cfg.get("crowd_penalty", 3.0))
     if cfg.get("lock_seconds"): P["lock_seconds"] = float(cfg["lock_seconds"])
     if cfg.get("avg_shot_s"): P["avg_shot_s"] = float(cfg["avg_shot_s"])
     avoid = {}
@@ -191,6 +198,30 @@ def build_skeleton(script: dict, timing: dict):
             s = slots[-1]["end"]
         D = e - s
         vis = b["visuals"]
+        ins_tail = None
+        if b.get("insert"):                              # designed document insert: one shot per view, no real frame
+            ins = b["insert"]
+            at = float(ins.get("at", 0.0))
+            tbt = tb[b["id"]]
+
+            def insert_slots(s0, e0, first_flag):
+                views = ins.get("views") or [{}]
+                out = []
+                for vi, vw in enumerate(views):
+                    cs, ce = s0 + (e0 - s0) * vi / len(views), s0 + (e0 - s0) * (vi + 1) / len(views)
+                    spec = {k: v for k, v in ins.items() if k not in ("views", "at")}
+                    spec.update(view=vw, beat_text=b["text"], beat_start=round(tbt["start"], 3), beat_end=round(tbt["end"], 3))
+                    out.append(dict(type="insert", start=cs, end=ce, chapter=ch["id"], beat=b, beat_id=b["id"], cut_index=len(vis) + vi if at > 0 else vi,
+                                    sub=0, spec=dict(vis[0], subjects=[], mood=vis[0].get("mood")), first=(first_flag and vi == 0), last_of_ch=False,
+                                    prev_beat=flat[i - 1][1] if i else None, insert=spec,
+                                    stamp=(b.get("stamp") if (first_flag and vi == 0) else None), after_card=False))
+                return out
+            if at <= 0:
+                slots.extend(insert_slots(s, e, True))
+                continue
+            ins_tail = insert_slots(s + D * at, e, False)
+            e = s + D * at                                # the first part of the beat keeps its normal real-frame cut(s)
+            D = e - s
         n = len(vis)
         cold = ch["id"] == "cold_open"
         lic = any("licita" in (v.get("subjects") or []) for v in vis)   # keep the Licita cut when her name is spoken
@@ -201,7 +232,13 @@ def build_skeleton(script: dict, timing: dict):
             bm = {m for v in vis for m in (v.get("mood") if isinstance(v.get("mood"), list) else [v.get("mood")])}
             ea = avg * 0.6 if bm & {"action", "combat", "comedy", "comedic"} else avg
             n = max(1, min(len(vis), int(round(D / ea))))
-        if D < MIN_BEAT and slots and slots[-1]["type"] == "cut":
+        merge = False
+        if P["merge_short_s"] and slots and slots[-1]["type"] == "cut" and not b.get("insert") and not b.get("stamp") and ch["id"] != "cold_open":
+            pb = slots[-1]["beat"]
+            same = pb["speaker"] == b["speaker"] or (P["speaker_subjects"].get(pb["speaker"], {0}) & P["speaker_subjects"].get(b["speaker"], {1}))
+            lim = P["merge_short_s"] if same else min(P["merge_short_s"], 1.3)
+            merge = D < lim and slots[-1]["end"] - slots[-1]["start"] + D <= 8.0 and not slots[-1].get("stamp")
+        if (D < MIN_BEAT or merge) and slots and slots[-1]["type"] == "cut":
             if b.get("stamp") and not slots[-1].get("stamp"): slots[-1]["stamp"] = b["stamp"]
             slots[-1]["end"] = e                       # absorb a too-short beat into the previous shot
             notes.append(f"{b['id']} picture {D:.2f}s absorbed into previous shot")
@@ -227,6 +264,8 @@ def build_skeleton(script: dict, timing: dict):
                               last_of_ch=False, prev_beat=flat[i - 1][1] if i else None,
                               stamp=(b.get("stamp") if (ci == 0 and si == 0) else None),
                               after_card=(si == 0 and ci == 0 and slots and slots[-1]["type"] == "card")))
+        if ins_tail:
+            slots.extend(ins_tail)
     # snap boundaries exactly (float safety)
     for a, b2 in zip(slots, slots[1:]):
         b2["start"] = a["end"]
@@ -308,9 +347,10 @@ class Scorer:
             if ae != want:
                 unk = 0.5 if (asub - NONCHAR) <= P["era_agnostic"] else 3.0   # unknown era: fine for people who look the same in every era
                 s -= {"shippuden": 12.0, "boruto": 14.0, "kid": 6.0, "part1": 6.0, "unknown": unk}.get(ae, 1.0)
-        if sp.get("time") and tg.get("time") and sp["time"] != tg["time"]:
-            s -= 2.0
-        elif sp.get("time") and tg.get("time") == sp["time"]:
+        want_t = sp.get("time") or P["time_by_beat"].get(slot["beat_id"]) or P["time_by_chapter"].get(slot["chapter"])
+        if want_t and tg.get("time") and want_t != tg["time"]:
+            s -= 3.0 if "night" in (want_t, tg["time"]) else 1.5
+        elif want_t and tg.get("time") == want_t:
             s += 0.8
         if tg.get("text_free") is False:
             s -= 4.0
@@ -318,6 +358,10 @@ class Scorer:
             s -= 1.0
         if a["id"] in P["avoid"]:
             s -= P["avoid_penalty"]
+        # a speaker lost in a crowd is not "on screen": many characters in frame = weak match for a dialogue cut
+        if P["crowd_penalty"] and slot["first"] and slot["beat"]["speaker"] in P["speaker_subjects"] and slot["beat"]["speaker"] not in ("NARRATOR",):
+            if len([x for x in asub if x not in NONCHAR]) >= 4 or "genin_crowd" in asub:
+                s -= P["crowd_penalty"]
         # speaker rule
         if speaker_rule and slot["first"]:
             allowed = P["speaker_subjects"].get(slot["beat"]["speaker"])
@@ -476,14 +520,83 @@ def pick_camera(slot, prev_cam, asset_shot):
     return cam
 
 
+STAMP_TIMES = {}
+
+
 def _stamp(sl):
-    """CANON stamp carried from the beat onto the shot that starts it (edit.json: shot['stamp'])."""
+    """CANON stamp carried from the beat onto the shot that starts it (edit.json: shot['stamp']); `time` = the instant the
+    audio engine plans the thunk (timing.json stamps), so the compositor lands the slam's impact exactly there."""
     st = sl.get("stamp")
-    return {"stamp": {"label": st.get("label", "CANON"), "note": st.get("note", "")}} if st else {}
+    if not st:
+        return {}
+    out = {"label": st.get("label", "CANON"), "note": st.get("note", "")}
+    t = STAMP_TIMES.get(sl.get("beat_id"))
+    if t is not None:
+        out["time"] = round(t, 3)
+    return {"stamp": out}
 
 
-def build_shots(slots, assign, by_id, overrides):
+def pick_backgrounds(slots, assign, assets, overrides):
+    """Real-frame backdrop (blurred + darkened by the compositor) for every designed insert. -> {slot index: asset id}."""
+    from . import inserts
+    used = {}
+    for aid in assign.values():
+        if aid:
+            used[aid] = used.get(aid, 0) + 1
+    out, recent = {}, []
+    real_at = {}
+    for i, aid in assign.items():
+        if aid:
+            real_at.setdefault(aid, []).append(i)
+    for i, sl in enumerate(slots):
+        if sl["type"] != "insert":
+            continue
+        key = f"{sl['beat_id']}#{sl['cut_index']}"
+        pin = overrides.get(key, {}).get("bg")
+        subs, tone = inserts.BG_SUBJECTS[sl["insert"]["type"]]
+        best, bs = None, -1e9
+        for a in assets:
+            tg = a["tags"]
+            asub = set(tg.get("subjects") or [])
+            if pin:
+                if a["id"] != pin:
+                    continue
+                best = a
+                break
+            rank = next((r for r, sub in enumerate(subs) if sub in asub or tg.get("location") == sub), None)
+            if rank is None:
+                continue
+            sc = -0.8 * rank + a.get("quality", 0.5)
+            ptime = tg.get("time")
+            if ptime and ptime == tone:
+                sc += 1.0
+            elif ptime and ptime != tone:
+                sc -= 0.8
+            chars = asub - P["nonchar"]
+            sc -= 1.0 * len(chars)
+            if chars and P["era"] and tg.get("era") in ("shippuden", "boruto"):
+                sc -= 6.0
+            if tg.get("text_free") is False:
+                sc -= 3.0
+            sc -= 1.6 * used.get(a["id"], 0)
+            if a["id"] in recent[-3:]:
+                sc -= 4.0
+            if any(abs(j - i) < 6 for j in real_at.get(a["id"], ())):
+                sc -= 2.5
+            if sc > bs:
+                best, bs = a, sc
+        if best is None:                                   # nothing tagged for this place: any frame will do behind the blur
+            best = max(assets, key=lambda a: -1.6 * used.get(a["id"], 0) + a.get("quality", 0.5) + (0.6 if a["tags"].get("time") == tone else 0)
+                       - 2 * len(set(a["tags"].get("subjects") or []) - P["nonchar"]))
+        out[i] = best["id"]
+        used[best["id"]] = used.get(best["id"], 0) + 1
+        recent.append(best["id"])
+    return out
+
+
+def build_shots(slots, assign, by_id, overrides, bgs=None):
     shots, prev_cam = [], None
+    bgs = bgs or {}
     for n, sl in enumerate(slots):
         sid = f"s{n + 1:03d}"
         if sl["type"] == "card":
@@ -493,10 +606,23 @@ def build_shots(slots, assign, by_id, overrides):
                               chapter=sl["chapter"], card=sl["card"]))
             prev_cam = "slow_push_in"
             continue
-        a = by_id.get(assign.get(n))
         beat = sl["beat"]
         key = f"{sl['beat_id']}#{sl['cut_index']}" + (f".{sl['sub']}" if sl["sub"] else "")
         ov = overrides.get(key, {})
+        if sl["type"] == "insert":
+            bg = by_id[bgs[n]]
+            ins = dict(sl["insert"])
+            if ov.get("view"):
+                ins["view"] = dict(ins.get("view") or {}, **ov["view"])
+            shots.append(dict(id=sid, start=round(sl["start"], 3), end=round(sl["end"], 3), type="insert", asset_id=None, asset_path=None,
+                              bg_asset_id=bg["id"], bg_path=bg["path"], layout="fill", focus=[0.5, 0.4], camera="slow_push_in",
+                              vfx=ov["vfx"] if "vfx" in ov else [v for v in beat.get("vfx", []) if v == "dust"],
+                              transition_in=ov.get("transition_in", "cut"), treatment="anime", accent=None, beat_id=sl["beat_id"],
+                              speaker=beat["speaker"], chapter=sl["chapter"], card=None, insert=ins, provenance="designed_insert",
+                              **_stamp(sl), _key=key, _slot=n))
+            prev_cam = "slow_push_in"
+            continue
+        a = by_id.get(assign.get(n))
         if a is None:
             shots.append(dict(id=sid, start=round(sl["start"], 3), end=round(sl["end"], 3), type="still", asset_id=None,
                               asset_path=None, layout="fill", focus=[0.5, 0.4], camera=pick_camera(sl, prev_cam, None),
@@ -541,6 +667,10 @@ def finish_shots(shots, slots, overrides):
     cands = []
     prev = None
     for k, s in enumerate(shots):
+        if s["type"] == "insert":
+            ov = overrides.get(s["_key"], {})
+            if "transition_in" not in ov and prev is not None and prev["type"] != "insert":
+                s["transition_in"] = "dissolve"
         if s["type"] == "still" and "_slot" in s:
             sl = slots[s["_slot"]]
             ov = overrides.get(s["_key"], {})
@@ -648,18 +778,25 @@ def run(pid, estimate=False, write=True):
     assets, missing, vault_n = load_assets(gate, curation, ov_all.get("_retag"), vault_p)
     by_id = {a["id"]: a for a in assets}
     timing = load_timing(pid, estimate, script)
+    STAMP_TIMES.clear()
+    for st in timing.get("stamps") or []:
+        STAMP_TIMES[st["beat"]] = float(st["time"])
     slots, notes = build_skeleton(script, timing)
     key_slot = {}
     for i, s in enumerate(slots):
         if s["type"] == "cut":
             key_slot[f"{s['beat_id']}#{s['cut_index']}" + (f".{s['sub']}" if s["sub"] else "")] = i
+        elif s["type"] == "insert":
+            key_slot[f"{s['beat_id']}#{s['cut_index']}"] = i
     warnings, pinned = [], {}
     for k, ov in overrides.items():
         if k not in key_slot:
             warnings.append(f"override {k}: no such cut")
             continue
         aid = ov.get("asset_id")
-        if aid:
+        if aid and slots[key_slot[k]]["type"] == "insert":
+            warnings.append(f"override {k}: insert shots take 'bg', not 'asset_id'")
+        elif aid:
             if aid not in by_id:
                 warnings.append(f"override {k}: asset {aid} not in gate-approved vault")
             else:
@@ -678,7 +815,8 @@ def run(pid, estimate=False, write=True):
             warnings.append(f"override {slots[i]['beat_id']}#{slots[i]['cut_index']}: {aid} breaks the repetition lock/cap; ignored")
     A.run()
     assign = A.assign
-    shots = build_shots(slots, assign, by_id, overrides)
+    bgs = pick_backgrounds(slots, assign, assets, overrides)
+    shots = build_shots(slots, assign, by_id, overrides, bgs)
     shots = finish_shots(shots, slots, overrides)
     edit = dict(id=pid, width=1920, height=1080, fps=30, duration=timing["duration"], shots=shots,
                 captions=build_captions(script, timing))
@@ -699,11 +837,19 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
             uses[s["asset_id"]] = uses.get(s["asset_id"], 0) + 1
     tot = sum(s["end"] - s["start"] for s in shots)
     stills = [s for s in shots if s["type"] == "still"]
+    inserts = [s for s in shots if s["type"] == "insert"]
+    bg_uses = {}
+    for s in inserts:
+        bg_uses[s["bg_asset_id"]] = bg_uses.get(s["bg_asset_id"], 0) + 1
+    ins_t = sum(s["end"] - s["start"] for s in inserts)
+    ins_types = {}
+    for s in inserts:
+        ins_types[s["insert"]["type"]] = round(ins_types.get(s["insert"]["type"], 0) + s["end"] - s["start"], 1)
     real = sum(s["end"] - s["start"] for s in stills if s["asset_id"] and by_id[s["asset_id"]].get("source") != "generated")
     cardt = sum(s["end"] - s["start"] for s in shots if s["type"] == "card")
     ln = lambda L: round(sum(s["end"] - s["start"] for s in L) / len(L), 2) if L else None
     chap = {}
-    for s in stills:
+    for s in stills + inserts:
         chap.setdefault(s["chapter"], []).append(s)
     weak, unmatched, spk = [], [], []
     for n, sl in enumerate(slots):
@@ -723,11 +869,13 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
         if sl["first"] and allowed and not (allowed & (set(by_id[aid]["tags"]["subjects"]) | {by_id[aid]["tags"].get("location")})):
             spk.append(f"{sh['id']} {sl['beat_id']} speaker {sl['beat']['speaker']} not shown")
     viol = violations(shots)
-    return dict(shots=len(shots), cards=len(shots) - len(stills), vault_assets=vault_n, usable_assets=usable,
+    extra = dict(inserts=len(inserts), pct_runtime_designed_insert=round(100 * ins_t / tot, 1), insert_seconds_by_type=ins_types,
+                 insert_bg_max_reuse=max(bg_uses.values())) if inserts else {}
+    return dict(shots=len(shots), cards=sum(1 for s in shots if s["type"] == "card"), **extra, vault_assets=vault_n, usable_assets=usable,
                 unique_assets=len(uses), max_uses_of_one_asset=max(uses.values()) if uses else 0,
                 assets_used_3x=sum(1 for v in uses.values() if v >= 3),
                 repetition_violations=len(viol), repetition_detail=viol[:10],
-                avg_cut_s=ln(stills), avg_cut_first30s=ln([s for s in stills if s["start"] < 30]),
+                avg_cut_s=ln(stills + inserts), avg_cut_first30s=ln([s for s in stills + inserts if s["start"] < 30]),
                 avg_cut_per_chapter={k: ln(v) for k, v in chap.items()},
                 pct_runtime_real_stills=round(100 * real / tot, 1), pct_runtime_cards=round(100 * cardt / tot, 1),
                 weak_matches=weak, unmatched_cuts=unmatched, speaker_unmet=spk, warnings=warnings + notes,

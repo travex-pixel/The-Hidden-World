@@ -118,7 +118,11 @@
      ],
      "camera": "pan_lr",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "mission_report",
+      "variant": "ambush"
+     }
     },
     {
      "id": "b003",
@@ -549,7 +553,21 @@
      "vfx": [],
      "sfx": [
       "page_flutter"
-     ]
+     ],
+     "insert": {
+      "type": "scroll_note",
+      "mode": "glimpse",
+      "views": [
+       {
+        "frm": "seals",
+        "to": "note",
+        "z": [
+         1.0,
+         1.3
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b015",
@@ -626,7 +644,26 @@
      "vfx": [],
      "sfx": [
       "bass_drop"
-     ]
+     ],
+     "insert": {
+      "type": "scroll_note",
+      "mode": "read",
+      "animate": [
+       "note",
+       "ul"
+      ],
+      "present": [],
+      "views": [
+       {
+        "frm": "note",
+        "to": "note",
+        "z": [
+         1.3,
+         1.5
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b017",
@@ -1528,7 +1565,29 @@
      "vfx": [],
      "sfx": [
       "page_flutter"
-     ]
+     ],
+     "insert": {
+      "type": "notebook_rules",
+      "animate": [
+       "title",
+       "r1"
+      ],
+      "say": {
+       "title": "Rule one",
+       "r1a": "The knowing comes back",
+       "r1b": "The muscles don't"
+      },
+      "views": [
+       {
+        "frm": "t",
+        "to": "r1",
+        "z": [
+         1.0,
+         1.18
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b049",
@@ -1662,7 +1721,32 @@
      ],
      "sfx": [
       "whoosh"
-     ]
+     ],
+     "insert": {
+      "type": "notebook_rules",
+      "at": 0.58,
+      "present": [
+       "title",
+       "r1"
+      ],
+      "animate": [
+       "r3"
+      ],
+      "say": {
+       "r3a": "Rule three, confirmed",
+       "r3b": "He keeps the hit"
+      },
+      "views": [
+       {
+        "frm": "r1",
+        "to": "r3",
+        "z": [
+         1.1,
+         1.2
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b054",
@@ -1784,7 +1868,33 @@
      "vfx": [],
      "sfx": [
       "heartbeat"
-     ]
+     ],
+     "insert": {
+      "type": "notebook_rules",
+      "present": [
+       "title",
+       "r1",
+       "r3"
+      ],
+      "animate": [
+       "r4",
+       "r4u"
+      ],
+      "say": {
+       "r4": "Rule four",
+       "r4u": "underlines twice"
+      },
+      "views": [
+       {
+        "frm": "r3",
+        "to": "r4",
+        "z": [
+         1.1,
+         1.28
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b059",
@@ -1814,6 +1924,34 @@
      "stamp": {
       "label": "CANON",
       "note": "Kakashi's warning, wind training."
+     },
+     "insert": {
+      "type": "notebook_rules",
+      "present": [
+       "title",
+       "r1",
+       "r3",
+       "r4",
+       "r4u"
+      ],
+      "animate": [
+       "r2"
+      ],
+      "say": {
+       "r2a": "tiredness comes back too",
+       "r2b": "all at once"
+      },
+      "views": [
+       {
+        "frm": "r4",
+        "to": "r2",
+        "z": [
+         1.28,
+         1.2
+        ],
+        "ty": 0.5
+       }
+      ]
      }
     },
     {
@@ -2032,7 +2170,34 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "notebook_rules",
+      "present": [
+       "title",
+       "r1",
+       "r2",
+       "r3",
+       "r4",
+       "r4u"
+      ],
+      "animate": [
+       "batch"
+      ],
+      "say": {
+       "batch": "Batches of ten"
+      },
+      "views": [
+       {
+        "frm": "batch",
+        "to": "batch",
+        "z": [
+         1.0,
+         1.1
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b067",
@@ -2317,7 +2482,21 @@
      "vfx": [],
      "sfx": [
       "bass_drop"
-     ]
+     ],
+     "insert": {
+      "type": "maths_card",
+      "views": [
+       {
+        "frm": "top",
+        "to": "eq",
+        "z": [
+         1.0,
+         1.14
+        ],
+        "ty": 0.44
+       }
+      ]
+     }
     },
     {
      "id": "b076",
@@ -2980,7 +3159,30 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "staff_form",
+      "animate": [
+       "tk_name",
+       "tk_office",
+       "tk_position"
+      ],
+      "say": {
+       "tk_name": "Name",
+       "tk_office": "office",
+       "tk_position": "position"
+      },
+      "views": [
+       {
+        "frm": "top",
+        "to": "fields",
+        "z": [
+         1.0,
+         1.15
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b100",
@@ -3074,7 +3276,31 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "staff_form",
+      "present": [
+       "name",
+       "office",
+       "position"
+      ],
+      "animate": [
+       "sig1",
+       "sig2",
+       "cs",
+       "hanko"
+      ],
+      "views": [
+       {
+        "frm": "sigs",
+        "to": "cs",
+        "z": [
+         1.0,
+         1.12
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b103",
@@ -3685,7 +3911,23 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "kazekage_letter",
+      "animate": [
+       "sig"
+      ],
+      "views": [
+       {
+        "frm": "body",
+        "to": "sig_view",
+        "z": [
+         1.0,
+         1.45
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b125",
@@ -3721,7 +3963,26 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "kazekage_letter",
+      "present": [
+       "sig"
+      ],
+      "animate": [
+       "circ"
+      ],
+      "views": [
+       {
+        "frm": "sig_view",
+        "to": "sig_view",
+        "z": [
+         1.45,
+         1.55
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b126",
@@ -4017,7 +4278,11 @@
      "vfx": [],
      "sfx": [
       "page_flutter"
-     ]
+     ],
+     "insert": {
+      "type": "mission_report",
+      "variant": "formation"
+     }
     },
     {
      "id": "b132",
@@ -4042,7 +4307,21 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "mission_report",
+      "variant": "cat",
+      "views": [
+       {
+        "frm": "s1",
+        "to": "s3",
+        "z": [
+         1.0,
+         1.05
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b133",
@@ -4549,7 +4828,29 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "mission_report",
+      "variant": "puddle",
+      "present": [
+       "l1",
+       "l2",
+       "l3"
+      ],
+      "animate": [
+       "l4"
+      ],
+      "views": [
+       {
+        "frm": "body",
+        "to": "last",
+        "z": [
+         1.0,
+         1.25
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b150",
@@ -4574,7 +4875,30 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "mission_report",
+      "variant": "puddle",
+      "present": [
+       "l1",
+       "l2",
+       "l3",
+       "l4"
+      ],
+      "animate": [
+       "circ"
+      ],
+      "views": [
+       {
+        "frm": "last",
+        "to": "last",
+        "z": [
+         1.25,
+         1.35
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b151",
@@ -4815,7 +5139,20 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "evaluation_folder",
+      "views": [
+       {
+        "frm": "top",
+        "to": "rows",
+        "z": [
+         1.0,
+         1.08
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b160",
@@ -4871,7 +5208,27 @@
      ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "evaluation_folder",
+      "present": [
+       "teams"
+      ],
+      "animate": [
+       "failed",
+       "reasons"
+      ],
+      "views": [
+       {
+        "frm": "rows",
+        "to": "rows",
+        "z": [
+         1.0,
+         1.1
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b162",
@@ -4896,7 +5253,29 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "evaluation_folder",
+      "present": [
+       "teams",
+       "failed",
+       "reasons"
+      ],
+      "animate": [
+       "late"
+      ],
+      "say": {},
+      "views": [
+       {
+        "frm": "rows",
+        "to": "late",
+        "z": [
+         1.1,
+         1.22
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b163",
@@ -4945,7 +5324,29 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "evaluation_folder",
+      "present": [
+       "teams",
+       "failed",
+       "reasons",
+       "late"
+      ],
+      "animate": [
+       "circ_a"
+      ],
+      "views": [
+       {
+        "frm": "late",
+        "to": "late",
+        "z": [
+         1.22,
+         1.26
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b165",
@@ -4970,7 +5371,30 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "evaluation_folder",
+      "present": [
+       "teams",
+       "failed",
+       "reasons",
+       "late",
+       "circ_a"
+      ],
+      "animate": [
+       "circ_b"
+      ],
+      "views": [
+       {
+        "frm": "late",
+        "to": "bottom",
+        "z": [
+         1.26,
+         1.3
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b166",
@@ -6844,7 +7268,28 @@
      "vfx": [],
      "sfx": [
       "page_flutter"
-     ]
+     ],
+     "insert": {
+      "type": "roster",
+      "views": [
+       {
+        "frm": "title",
+        "to": "rows_top",
+        "z": [
+         1.0,
+         1.12
+        ]
+       },
+       {
+        "frm": "rows_top",
+        "to": "gap_mid",
+        "z": [
+         1.12,
+         1.2
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b232",
@@ -6870,7 +7315,24 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "roster",
+      "animate": [
+       "mk_uzuki",
+       "mk_yakushi"
+      ],
+      "views": [
+       {
+        "frm": "gap_mid",
+        "to": "gap_mid",
+        "z": [
+         1.2,
+         1.26
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b233",
@@ -6896,7 +7358,24 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "roster",
+      "present": [
+       "mk_uzuki",
+       "mk_yakushi"
+      ],
+      "views": [
+       {
+        "frm": "gap_mid",
+        "to": "gap_mid",
+        "z": [
+         1.26,
+         1.34
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b234",
@@ -6933,7 +7412,27 @@
      ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "roster",
+      "present": [
+       "mk_uzuki",
+       "mk_yakushi"
+      ],
+      "animate": [
+       "brk"
+      ],
+      "views": [
+       {
+        "frm": "gap_mid",
+        "to": "gap_mid",
+        "z": [
+         1.34,
+         1.38
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b235",
@@ -6986,7 +7485,28 @@
      ],
      "camera": "pan_lr",
      "vfx": [],
-     "sfx": []
+     "sfx": [],
+     "insert": {
+      "type": "roster",
+      "present": [
+       "mk_uzuki",
+       "mk_yakushi",
+       "brk"
+      ],
+      "animate": [
+       "hl_oct10"
+      ],
+      "views": [
+       {
+        "frm": "gap_mid",
+        "to": "gap_mid",
+        "z": [
+         1.3,
+         1.4
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b237",
@@ -7016,7 +7536,29 @@
      ],
      "sfx": [
       "bass_drop"
-     ]
+     ],
+     "insert": {
+      "type": "roster",
+      "present": [
+       "mk_uzuki",
+       "mk_yakushi",
+       "brk",
+       "hl_oct10"
+      ],
+      "animate": [
+       "hl_auth"
+      ],
+      "views": [
+       {
+        "frm": "gap_mid",
+        "to": "gap_mid",
+        "z": [
+         1.4,
+         1.45
+        ]
+       }
+      ]
+     }
     },
     {
      "id": "b238",
