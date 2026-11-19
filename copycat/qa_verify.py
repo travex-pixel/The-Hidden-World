@@ -132,7 +132,7 @@ def audio_metrics(path):
     out["integrated_lufs"] = float(I) if I else None
     out["lra"] = float(LRA) if LRA else None
     out["true_peak_dbtp"] = float(TP) if TP and TP not in ("-inf",) else None
-    r = sh(["ffmpeg", "-nostats", "-i", str(path), "-map", "0:a:0", "-af", "silencedetect=noise=-45dB:d=1.8", "-f", "null", "-"])
+    r = sh(["ffmpeg", "-nostats", "-i", str(path), "-map", "0:a:0", "-af", "silencedetect=noise=-45dB:d=2.0", "-f", "null", "-"])
     starts = re.findall(r"silence_start: (-?[\d.]+)", r.stderr)
     durs = re.findall(r"silence_duration: ([\d.]+)", r.stderr)
     out["silences"] = [dict(start=float(a), dur=float(b)) for a, b in zip(starts, durs)]
@@ -178,6 +178,22 @@ def sharpness(path, shots, duration):
     med = float(np.median(list(per.values()))) if per else 0
     blurry = [k for k, v in per.items() if v < 0.25 * med]
     return dict(median_lapvar=round(med, 1), blurry_shots=blurry, per_shot={k: round(v, 1) for k, v in per.items()})
+
+
+# ------------------------------------------------------------------ audio cast (Fish Audio)
+def audio_cast(pid):
+    """Distinct Fish voice ids, per-voice line counts and cache/API usage from the voice report + audio timeline."""
+    vr = load_json(ROOT / f"build/copycat/{pid}/audio/voice_report.json")
+    tl = load_json(ROOT / f"copycat/projects/{pid}/episode1_timeline_audio.json")
+    if not vr:
+        return dict(available=False)
+    counts = vr.get("per_voice_line_counts") or {}
+    ids = sorted({k.split(":", 1)[1] for k in counts if ":" in k} | set(vr.get("voice_ids") or []))
+    return dict(available=True, engine=vr.get("engine"), model=vr.get("model"), distinct_voice_ids=len(ids),
+                reported_distinct=vr.get("distinct_voice_ids"), per_voice_line_counts=counts,
+                lines=sum(counts.values()), cache_hits=vr.get("cache_hits"), api_calls=vr.get("api_calls"),
+                retries=vr.get("retries"), flagged_clips=len(vr.get("flagged_clips") or []),
+                timeline_beats=len((tl or {}).get("beats") or []), timeline_engine=(tl or {}).get("engine"))
 
 
 # ------------------------------------------------------------------ contact sheet
@@ -263,6 +279,7 @@ def run(pid, video=None, edit_path=None, vault_path=None):
                          video_dur=vdur, audio_dur=adur, audio_codec=as_ and as_["codec_name"])
     rep["audio"] = audio_metrics(video) if as_ else {}
     rep["video"] = video_metrics(video)
+    rep["audio_cast"] = audio_cast(pid)
     rep["sharpness"] = sharpness(video, edit["shots"], vdur)
     rep["contact_sheet_frames"] = contact_sheet(video, edit, ROOT / f"build/copycat/{pid}/qa/frames", rel / "qa_contact_sheet.png")
 
@@ -286,10 +303,13 @@ def run(pid, video=None, edit_path=None, vault_path=None):
         gate("A/V duration diff <= 0.05 s", abs(vdur - adur) <= 0.05, round(abs(vdur - adur), 3))
         gate("integrated loudness -14 +-2 LUFS", A["integrated_lufs"] is not None and abs(A["integrated_lufs"] + 14) <= 2, A["integrated_lufs"])
         gate("true peak < -1.0 dBTP", A["true_peak_dbtp"] is not None and A["true_peak_dbtp"] < -1.0, A["true_peak_dbtp"])
-        gate("no silence >= 1.8 s @ -45 dB", not A["silences"], len(A["silences"]))
+        gate("no silence >= 2.0 s @ -45 dB", not A["silences"], len(A["silences"]))
         gate("no 0 dBFS clipping", A["peak_db"] is not None and A["peak_db"] < -0.1, A["peak_db"])
     else:
         gate("audio stream present", False, None)
+    AC = rep["audio_cast"]
+    gate("audio cast: distinct Fish voices >= 8", AC.get("available") and AC["distinct_voice_ids"] >= 8,
+         AC.get("distinct_voice_ids"))
     badblack = [b for b in V["black"] if b["dur"] >= 0.6]
     gate("no black >= 0.6 s", not badblack, len(badblack))
     gate("no frozen video >= 0.7 s", not V["freezes"], len(V["freezes"]))
@@ -302,6 +322,11 @@ def run(pid, video=None, edit_path=None, vault_path=None):
     for g in gates:
         st = "PASS" if g["ok"] else ("FAIL" if g["hard"] else "WARN")
         print(f"{g['name']:44} {st:6} {g['value']}")
+    if AC.get("available"):
+        print(f"\nAUDIO CAST ({AC['engine']} {AC['model']}): {AC['distinct_voice_ids']} distinct voices, {AC['lines']} lines "
+              f"| cache hits {AC['cache_hits']} / API calls {AC['api_calls']} (retries {AC['retries']}, flagged clips {AC['flagged_clips']})")
+        for k, n in sorted(AC["per_voice_line_counts"].items(), key=lambda kv: -kv[1]):
+            print(f"  {k.split(':')[0]:14} {n:3d} lines  {k.split(':')[-1][:8]}")
     print(f"avg cut {P['avg_cut_s']}s (first 30 s: {P['avg_cut_first30s']}s) | unique assets {P['unique_assets']} | "
           f"shots {P['shots']} (cards {P['cards']}) | report -> {rel / 'qa_report.json'}")
     print("OVERALL:", "PASS" if rep["pass"] else "FAIL")

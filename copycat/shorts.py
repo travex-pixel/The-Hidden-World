@@ -33,29 +33,32 @@ MIN_TOTAL, MAX_TOTAL = 45.0, 60.0
 SAFETY = 0.2                     # keep total this far below the 60 s ceiling
 PRE, POST = 0.12, 0.20           # breathing room around a cut beat
 
-TITLE_L1, TITLE_L2 = "WHAT IF ASTA", "REMEMBERED EVERYTHING?"
-EP_TITLE = "WHAT IF ASTA REMEMBERED EVERYTHING? PART 1"
+TITLE_L1, TITLE_L2 = "WHAT IF ASTA", "WAS REBORN?"
+EP_TITLE = "WHAT IF ASTA WAS REBORN? PART 1"
+END_L1, END_L2 = "WHAT IF ASTA WAS REBORN?", "WITH ALL HIS MEMORIES"
 CRIMSON = (232, 30, 48)
 SPEAKER_COLORS = {
     "ASTA": (60, 235, 130), "LIEBE": (240, 50, 64), "YUNO": (104, 190, 255),
     "YAMI": (190, 180, 230), "JULIUS": (240, 200, 80),
 }
-START_PREFIX = "Why are you not afraid"
+# the dialogue text was re-voiced/revised, so the exchange is selected by beat id (text prefixes are only a fallback)
+START_ID, END_ID, WITH_ID = "b051", "b067", None      # "Why aren't you scared, boy?" ... "Last time, I was fifteen years late."
+START_PREFIX = "Why aren't you scared"
 END_PREFIX = "Last time, I was fifteen years late"
 
 
 # ---------------------------------------------------------------- selection maths
 TARGET_TOTAL = 57.0              # cold open + exchange + end card
-WITH_PREFIX = "To sit here for a minute"
+WITH_PREFIX = None
 
 
 def select_segments(beats, endcard=ENDCARD, lo=MIN_TOTAL, hi=MAX_TOTAL, chapter_a="cold_open",
                     chapter_b="ch2", start_prefix=START_PREFIX, end_prefix=END_PREFIX,
-                    with_prefix=WITH_PREFIX, target=TARGET_TOTAL):
+                    with_prefix=WITH_PREFIX, target=TARGET_TOTAL, start_id=START_ID, end_id=END_ID, with_id=WITH_ID):
     """Adaptive selection from the live timing.  Segment A = whole cold open (+POST).  Segment B starts
-    at the 'Why are you not afraid' beat and runs forward on beat boundaries: it ends on 'With my
-    brother.' if A+B+endcard <= target, else on 'Last time, I was fifteen years late.' if that fits,
-    else on the furthest beat that fits.  If still < lo it is extended forward.  Never exceeds hi."""
+    at beat `start_id` ("Why aren't you scared, boy?") and runs forward on beat boundaries toward `end_id`
+    ("Last time, I was fifteen years late."): it ends on end_id if A+B+endcard <= target, else on the
+    furthest beat that fits.  If still < lo it is extended forward.  Never exceeds hi."""
     beats = sorted(beats, key=lambda b: b["start"])
     cold = [b for b in beats if b["chapter"] == chapter_a]
     if not cold:
@@ -73,10 +76,13 @@ def select_segments(beats, endcard=ENDCARD, lo=MIN_TOTAL, hi=MAX_TOTAL, chapter_
     def span(i, j):
         return (ch[j]["end"] + POST) - (ch[i]["start"] - PRE)
 
-    def find(prefix):
-        return next((k for k, b in enumerate(ch) if b["text"].startswith(prefix)), None)
+    def find(bid, prefix):
+        k = next((k for k, b in enumerate(ch) if bid and b["id"] == bid), None)
+        if k is None and prefix:
+            k = next((k for k, b in enumerate(ch) if b["text"].startswith(prefix)), None)
+        return k
 
-    i0, i_last, i_with = find(start_prefix), find(end_prefix), find(with_prefix)
+    i0, i_last, i_with = find(start_id, start_prefix), find(end_id, end_prefix), find(with_id, with_prefix)
     if i0 is None:  # fallback: densest ASTA/LIEBE alternation that fits
         best = None
         for i in range(len(ch)):
@@ -373,7 +379,7 @@ def render_segment(master, start, end, events, tmp, tag, flash_in=False, flash_o
 def render_endcard(tmp, dur=ENDCARD):
     n = int(round(dur * FPS))
     vid = tmp / "end_v.mp4"
-    lines = ["WHAT IF ASTA REMEMBERED", "EVERYTHING?"]
+    lines = [END_L1, END_L2]
     p = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
                           "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
                           "-pix_fmt", "yuv420p", str(vid)], stdin=subprocess.PIPE)

@@ -678,12 +678,12 @@ def probe_duration(path):
     return float(r.stdout.strip())
 
 
-def build_jobs(edit, W, H, outdir, vault, only=None, rng=None):
+def build_jobs(edit, W, H, outdir, vault, only=None, rng=None, captions=True):
     fps = edit.get("fps", 30)
     shots = edit["shots"]
     fr = shot_frames(shots, fps)
     total = fr[-1][1]
-    caps_all = expand_captions(edit.get("captions"))
+    caps_all = expand_captions(edit.get("captions")) if captions else []
     jobs = []
     for k, s in enumerate(shots):
         s = dict(s)
@@ -709,15 +709,15 @@ def build_jobs(edit, W, H, outdir, vault, only=None, rng=None):
     return jobs, total
 
 
-def render_project(pid, edit_path=None, preview=False, shots=None, rng=None, workers=4):
+def render_project(pid, edit_path=None, preview=False, shots=None, rng=None, workers=4, captions=True):
     edit = json.load(open(find_edit(pid, edit_path)))
     fps = edit.get("fps", 30)
     W, H = (960, 540) if preview else (edit.get("width", 1920), edit.get("height", 1080))
     base = ROOT / f"build/copycat/{pid}/video"
-    segdir = base / ("segments_preview" if preview else "segments")
+    segdir = base / (("segments_preview" if preview else "segments") + ("" if captions else "_nocap"))
     segdir.mkdir(parents=True, exist_ok=True)
     vault = load_vault_index()
-    jobs, total = build_jobs(edit, W, H, segdir, vault, set(shots) if shots else None, rng)
+    jobs, total = build_jobs(edit, W, H, segdir, vault, set(shots) if shots else None, rng, captions)
     todo = []
     for j in jobs:
         hsh = shot_hash(j)
@@ -749,7 +749,7 @@ def render_project(pid, edit_path=None, preview=False, shots=None, rng=None, wor
         print(f"[compositor] rendered {frames_todo / fps:.1f}s of video in {el:.1f}s = {speed:.2f}x realtime", flush=True)
     # concat
     partial = bool(shots or rng)
-    name = "picture" + ("_partial" if partial else "") + ("_preview" if preview else "") + ".mp4"
+    name = "picture" + ("_partial" if partial else "") + ("_preview" if preview else "") + ("" if captions else "_nocap") + ".mp4"
     picture = base / name
     lst = base / (name + ".txt")
     with open(lst, "w") as fh:
@@ -769,11 +769,11 @@ def count_frames(path):
     return int(r.stdout.strip().split(",")[0])
 
 
-def mux(pid, picture, fps=30):
+def mux(pid, picture, fps=30, captions=True):
     audio = ROOT / f"build/copycat/{pid}/audio/master.wav"
     if not audio.exists():
         raise FileNotFoundError(audio)
-    out = ROOT / f"releases/copycat/{pid}/master.mp4"
+    out = ROOT / f"releases/copycat/{pid}/{'master' if captions else 'master_nocaptions'}.mp4"
     out.parent.mkdir(parents=True, exist_ok=True)
     ad, vd = probe_duration(audio), probe_duration(picture)
     frame = 1.0 / fps
@@ -786,9 +786,30 @@ def mux(pid, picture, fps=30):
                 "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709"]
     else:
         cmd += ["-c:v", "copy"]
-    cmd += ["-map", "0:v:0", "-map", "1:a:0", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)]
+    cmd += ["-map", "0:v:0", "-map", "1:a:0", "-af", "volume=-0.5dB", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)]
     subprocess.run(cmd, check=True)
     print(f"[compositor] muxed {out}  video={vd:.3f}s audio={ad:.3f}s", flush=True)
+    return out
+
+
+def srt_time(t):
+    ms = int(round(float(t) * 1000))
+    return f"{ms // 3600000:02d}:{ms // 60000 % 60:02d}:{ms // 1000 % 60:02d},{ms % 1000:03d}"
+
+
+def write_srt(pid, edit):
+    """releases/.../captions.srt from edit.json captions (canon text; [SPEAKER] prefix for character lines)."""
+    out = ROOT / f"releases/copycat/{pid}/captions.srt"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for c in edit.get("captions") or []:
+        sp = (c.get("speaker") or "NARRATOR").upper()
+        txt = " ".join(str(c["text"]).split())
+        rows.append((float(c["start"]), float(c["end"]), txt if sp == "NARRATOR" else f"[{sp.replace('_', ' ')}] {txt}"))
+    with open(out, "w", encoding="utf-8") as fh:
+        for i, (a, b, t) in enumerate(rows, 1):
+            fh.write(f"{i}\n{srt_time(a)} --> {srt_time(b)}\n{t}\n\n")
+    print(f"[compositor] wrote {out} ({len(rows)} cues)", flush=True)
     return out
 
 
@@ -927,17 +948,20 @@ def main(argv=None):
     ap.add_argument("--preview", action="store_true")
     ap.add_argument("--mux", action="store_true")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--no-captions", action="store_true", help="render without burned-in captions (cached separately)")
     ap.add_argument("--make-fixture", action="store_true")
     a = ap.parse_args(argv)
     if a.make_fixture:
         make_fixture()
     picture, speed, edit, ok = render_project(a.project_id, a.edit, a.preview,
-                                              a.shots.split(",") if a.shots else None, a.range, a.workers)
+                                              a.shots.split(",") if a.shots else None, a.range, a.workers, not a.no_captions)
+    if not (a.preview or a.shots or a.range):
+        write_srt(a.project_id, edit)
     if a.mux:
         if a.preview or a.shots or a.range:
             print("[compositor] --mux needs a full-quality, full-length render; skipping", file=sys.stderr)
         else:
-            mux(a.project_id, picture, edit.get("fps", 30))
+            mux(a.project_id, picture, edit.get("fps", 30), not a.no_captions)
     return 0 if ok else 2
 
 

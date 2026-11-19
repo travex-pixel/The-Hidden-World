@@ -16,7 +16,7 @@ def _beats(cold=6, cold_len=6.5):
     for i in range(cold):
         add("cold_open", "NARRATOR", "one two three four five six", cold_len)
     add("ch1", "NARRATOR", "filler words here", 20)
-    add("ch2", "LIEBE", "Why are you not afraid, boy?", 2.5)
+    add("ch2", "LIEBE", "Why aren't you scared, boy?", 2.5)
     add("ch2", "ASTA", "Your name is Liebe.", 1.2)
     for i in range(6):
         add("ch2", "LIEBE" if i % 2 else "ASTA", f"line {i} words here", 3)
@@ -29,7 +29,7 @@ def _beats(cold=6, cold_len=6.5):
 
 def test_titles_length_and_count():
     assert len(packaging.TITLES) == 3
-    assert all(len(t) < 65 for t in packaging.TITLES)
+    assert all(len(t) <= packaging.MAX_TITLE for t in packaging.TITLES)
     assert 12 <= len(packaging.TAGS) <= 18 and len(packaging.HASHTAGS) == 3
 
 
@@ -45,13 +45,16 @@ def test_selection_window_any_cold_length():
 def test_selection_starts_at_why_and_ends_on_preferred_beat():
     beats = _beats(cold_len=3.0)   # short cold open: everything fits
     sel = shorts.select_segments(beats)
-    first = next(b for b in beats if b["text"].startswith("Why are you"))
-    assert sel["exchange"][0] == first["id"]
-    brother = next(b for b in beats if b["text"].startswith("To sit here"))
-    assert sel["exchange"][1] == brother["id"]
-    sel = shorts.select_segments(_beats(cold_len=6.5))   # tighter: falls back to 'Last time'
+    first = next(b for b in beats if b["text"].startswith("Why aren't you"))
+    assert sel["exchange"][0] == first["id"]          # fallback by text only because the synthetic ids differ
     last = next(b for b in beats if b["text"].startswith("Last time, I was"))
-    assert sel["exchange"][1] in (last["id"],) or sel["total"] <= 57.0
+    assert sel["exchange"][1] == last["id"]
+    # selection by beat id (the live script's ids), independent of the text
+    for b in beats:
+        if b["id"] == first["id"]:
+            b["text"] = "totally different words"
+    sel = shorts.select_segments(beats, start_id=first["id"], end_id=last["id"])
+    assert sel["exchange"] == (first["id"], last["id"])
 
 
 def test_selection_never_ends_beyond_budget():
