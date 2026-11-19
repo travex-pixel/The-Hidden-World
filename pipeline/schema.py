@@ -106,6 +106,10 @@ def validate(ep: dict, folder: Path | None = None) -> None:
         for k in ("title", "publisher", "accessed"):
             if not s.get(k):
                 errs.append(f"source {s.get('id')}: missing '{k}'")
+    if ep.get("domain") is not None:
+        from copycat.domain_gate import ALLOWED
+        if ep["domain"] not in ALLOWED:
+            errs.append(f"domain must be one of {sorted(ALLOWED)}")
     if ep.get("visual_mode") not in (None, "svg", "art", "auto"):
         errs.append("visual_mode must be svg, art or auto")
     art_active = ep.get("visual_mode") == "art" or (ep.get("visual_mode") == "auto" and ep.get("art_manifest") and (ROOT / ep["art_manifest"]).exists())

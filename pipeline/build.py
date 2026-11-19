@@ -78,6 +78,20 @@ def build_timeline(ep: dict, narr: list[dict], target: float | None) -> list[dic
     return tl
 
 
+def check_anime_domain(ep: dict, visual: str, art: dict | None = None) -> None:
+    """Domain gate hook: no-op unless the episode declares an anime_* domain."""
+    domain = ep.get("domain")
+    if not (isinstance(domain, str) and domain.startswith("anime_")):
+        return
+    from copycat.domain_gate import AssetDomainGate, DomainViolation
+    if visual == "svg":
+        raise DomainViolation(f"no generic cartoon fallback for anime productions (domain {domain!r}); supply a tagged art_manifest")
+    if art is not None:
+        bad = AssetDomainGate(domain).audit([{"id": k, **v} for k, v in art["panels"].items()])
+        if bad["rejected"]:
+            raise DomainViolation(f"art panels missing/mismatching domain {domain!r}: {bad['rejected_ids']}")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("episode")
@@ -166,12 +180,14 @@ def main(argv=None) -> int:
     visual = args.visual or ep.get("visual_mode", "svg")
     if visual == "auto":
         visual = "art" if ep.get("art_manifest") and (ROOT / ep["art_manifest"]).exists() else "svg"
+    check_anime_domain(ep, visual)
     art = {"panels": {}}
     if visual == "art":
         man = ROOT / ep.get("art_manifest", "")
         if not ep.get("art_manifest") or not man.exists():
             log(f"ERROR: visual mode 'art' needs {ep.get('art_manifest')}. Run: python -m pipeline.import_panels <ep>"); return 4
         art = json.loads(man.read_text())
+        check_anime_domain(ep, visual, art)
         missing = [p["src"] for p in art["panels"].values() if not (ROOT / p["src"]).exists()]
         if missing:
             log(f"ERROR: missing art files {missing}"); return 4
