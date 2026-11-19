@@ -1,10 +1,10 @@
 {
  "_config": {
-  "avg_shot_s": 4.5,
+  "avg_shot_s": 5.4,
   "era": "part1",
   "lock_seconds": 90,
   "avoid_assets_from": [],
-  "merge_short_s": 2.3,
+  "merge_short_s": 3.1,
   "crowd_penalty": 3.0,
   "time_by_chapter": {
    "ch1": "night",
@@ -15,7 +15,8 @@
    "b046": "day",
    "b047": "day",
    "b215": "night"
-  }
+  },
+  "trust_mode": true
  },
  "_note": "Manual corrections from contact-sheet review (python -m copycat.visuals.sheets --franchise naruto). Keys: asset id -> reject / era / subjects / add_subjects / remove_subjects / time / text_free / shotType / mood.",
  "nr_0049": {
@@ -196,7 +197,12 @@
   ],
   "location": "library",
   "time": "day",
-  "text_free": true
+  "text_free": true,
+  "trust": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
  },
  "nr_1840": {
   "add_subjects": [
@@ -211,7 +217,12 @@
   ],
   "location": "library",
   "time": "day",
-  "text_free": true
+  "text_free": true,
+  "trust": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
  },
  "nr_0003": {
   "remove_subjects": [
@@ -301,7 +312,20 @@
    "book",
    "letter",
    "document"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "academy"
+  ],
+  "mood": [
+   "quiet",
+   "establishing"
+  ],
+  "shotType": "establishing",
+  "era": "none",
+  "text_free": true,
+  "time": "day",
+  "location": "academy"
  },
  "nr_0607": {
   "remove_subjects": [
@@ -316,7 +340,20 @@
    "book",
    "letter",
    "document"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "memorial_stone"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "shotType": "wide",
+  "era": "none",
+  "text_free": true,
+  "time": "day",
+  "location": "memorial_stone"
  },
  "nr_0608": {
   "remove_subjects": [
@@ -423,7 +460,17 @@
    "document"
   ],
   "era": "part1",
-  "shotType": "closeup"
+  "shotType": "closeup",
+  "trust": true,
+  "subjects": [
+   "hiruzen"
+  ],
+  "mood": [
+   "quiet",
+   "ominous"
+  ],
+  "text_free": true,
+  "time": "day"
  },
  "nr_0094": {
   "remove_subjects": [
@@ -458,7 +505,12 @@
   "location": "library",
   "era": "none",
   "time": "day",
-  "text_free": true
+  "text_free": true,
+  "trust": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
  },
  "nr_0072": {
   "add_subjects": [
@@ -466,10 +518,21 @@
    "mission_desk"
   ],
   "location": "hokage_office",
-  "era": "part1",
+  "era": "none",
   "remove_subjects": [
    "iruka"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "hokage_office",
+   "mission_desk"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide",
+  "text_free": true,
+  "time": "day"
  },
  "nr_0792": {
   "add_subjects": [
@@ -477,7 +540,16 @@
   ],
   "location": "training_ground",
   "era": "none",
-  "time": "day"
+  "time": "day",
+  "trust": true,
+  "subjects": [
+   "training_ground"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide",
+  "text_free": true
  },
  "nr_2235": {
   "era": "part1",
@@ -485,7 +557,14 @@
    "kakashi",
    "book"
   ],
-  "time": "day"
+  "time": "day",
+  "trust": true,
+  "mood": [
+   "comedy",
+   "quiet"
+  ],
+  "shotType": "medium",
+  "text_free": true
  },
  "nr_2236": {
   "era": "none",
@@ -498,7 +577,9 @@
   "mood": [
    "ominous"
   ],
-  "shotType": "wide"
+  "shotType": "wide",
+  "trust": true,
+  "time": "night"
  },
  "nr_2237": {
   "reject": true
@@ -514,7 +595,9 @@
   "mood": [
    "ominous"
   ],
-  "shotType": "establishing"
+  "shotType": "establishing",
+  "trust": true,
+  "text_free": true
  },
  "nr_2239": {
   "era": "part1",
@@ -528,7 +611,9 @@
   "mood": [
    "quiet"
   ],
-  "shotType": "wide"
+  "shotType": "wide",
+  "trust": true,
+  "text_free": true
  },
  "nr_2240": {
   "era": "part1",
@@ -537,9 +622,12 @@
   ],
   "time": "day",
   "mood": [
-   "triumphant"
+   "triumphant",
+   "quiet"
   ],
-  "shotType": "medium"
+  "shotType": "medium",
+  "trust": true,
+  "text_free": true
  },
  "nr_2241": {
   "era": "part1",
@@ -554,7 +642,9 @@
   "mood": [
    "triumphant"
   ],
-  "shotType": "medium"
+  "shotType": "medium",
+  "trust": true,
+  "text_free": true
  },
  "nr_2243": {
   "era": "part1",
@@ -564,9 +654,12 @@
   ],
   "time": "day",
   "mood": [
-   "quiet"
+   "quiet",
+   "ominous"
   ],
-  "shotType": "closeup"
+  "shotType": "closeup",
+  "trust": true,
+  "text_free": true
  },
  "nr_0001": {
   "remove_subjects": [
@@ -599,12 +692,38 @@
    "naruto_clones"
   ],
   "time": "night",
-  "era": "part1"
+  "era": "part1",
+  "trust": true,
+  "subjects": [
+   "naruto_clones",
+   "forest_night"
+  ],
+  "mood": [
+   "action",
+   "epic"
+  ],
+  "shotType": "wide",
+  "text_free": true,
+  "location": "forest_night"
  },
  "nr_0034": {
   "remove_subjects": [
    "iruka"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "ichiraku",
+   "ramen"
+  ],
+  "mood": [
+   "comedy",
+   "quiet"
+  ],
+  "shotType": "establishing",
+  "era": "none",
+  "text_free": true,
+  "time": "dusk",
+  "location": "ichiraku"
  },
  "nr_0466": {
   "remove_subjects": [
@@ -631,7 +750,7 @@
    "iruka",
    "naruto",
    "shuriken",
-   "mizuki"
+   "forest_night"
   ],
   "time": "night",
   "mood": [
@@ -641,23 +760,30 @@
   "add_subjects": [
    "forest_night"
   ],
-  "location": "forest_night"
+  "location": "forest_night",
+  "trust": true,
+  "text_free": true
  },
  "nr_0869": {
   "era": "part1",
   "subjects": [
    "mizuki",
    "iruka",
-   "shuriken"
+   "shuriken",
+   "forest_night"
   ],
   "time": "night",
   "mood": [
+   "ominous",
    "action"
   ],
   "add_subjects": [
    "forest_night"
   ],
-  "location": "forest_night"
+  "location": "forest_night",
+  "trust": true,
+  "shotType": "action",
+  "text_free": true
  },
  "nr_0870": {
   "era": "part1",
@@ -670,7 +796,9 @@
   "mood": [
    "ominous"
   ],
-  "shotType": "wide"
+  "shotType": "wide",
+  "trust": true,
+  "text_free": true
  },
  "nr_0846": {
   "era": "part1",
@@ -678,9 +806,13 @@
    "iruka"
   ],
   "mood": [
-   "emotional"
+   "emotional",
+   "quiet"
   ],
-  "shotType": "closeup"
+  "shotType": "closeup",
+  "trust": true,
+  "text_free": true,
+  "time": "day"
  },
  "nr_0303": {
   "era": "part1",
@@ -694,7 +826,10 @@
   "time": "night",
   "mood": [
    "emotional"
-  ]
+  ],
+  "trust": true,
+  "shotType": "medium",
+  "text_free": true
  },
  "nr_0624": {
   "era": "part1",
@@ -704,7 +839,11 @@
   ],
   "mood": [
    "emotional"
-  ]
+  ],
+  "trust": true,
+  "shotType": "wide",
+  "text_free": true,
+  "time": "day"
  },
  "nr_0106": {
   "era": "part1",
@@ -714,7 +853,12 @@
   ],
   "mood": [
    "quiet"
-  ]
+  ],
+  "trust": true,
+  "shotType": "medium",
+  "text_free": true,
+  "time": "day",
+  "location": "classroom"
  },
  "nr_0386": {
   "era": "shippuden"
@@ -745,7 +889,9 @@
   "mood": [
    "ominous"
   ],
-  "shotType": "closeup"
+  "shotType": "closeup",
+  "trust": true,
+  "text_free": true
  },
  "nr_0448": {
   "era": "kid"
@@ -761,7 +907,10 @@
   "mood": [
    "ominous"
   ],
-  "text_free": true
+  "text_free": true,
+  "trust": true,
+  "shotType": "wide",
+  "time": "night"
  },
  "nr_0991": {
   "era": "part1",
@@ -772,7 +921,11 @@
   "location": "seal_cage",
   "mood": [
    "ominous"
-  ]
+  ],
+  "trust": true,
+  "shotType": "wide",
+  "text_free": true,
+  "time": "night"
  },
  "nr_0598": {
   "era": "part1",
@@ -783,7 +936,11 @@
   "location": "seal_cage",
   "mood": [
    "ominous"
-  ]
+  ],
+  "trust": true,
+  "shotType": "closeup",
+  "text_free": true,
+  "time": "night"
  },
  "nr_0307": {
   "era": "shippuden"
@@ -836,12 +993,14 @@
  },
  "nr_0059": {
   "remove_subjects": [
-   "hiruzen"
+   "hiruzen",
+   "naruto_clones"
   ]
  },
  "nr_0062": {
   "remove_subjects": [
-   "hiruzen"
+   "hiruzen",
+   "naruto_clones"
   ]
  },
  "nr_0080": {
@@ -852,7 +1011,20 @@
  "nr_0090": {
   "remove_subjects": [
    "hiruzen"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "hokage_office",
+   "genin_crowd"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide",
+  "era": "none",
+  "text_free": true,
+  "time": "day",
+  "location": "hokage_office"
  },
  "nr_0125": {
   "remove_subjects": [
@@ -866,7 +1038,8 @@
  },
  "nr_0161": {
   "remove_subjects": [
-   "hiruzen"
+   "hiruzen",
+   "naruto_clones"
   ]
  },
  "nr_0187": {
@@ -1057,7 +1230,23 @@
  "nr_0952": {
   "remove_subjects": [
    "hiruzen"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "naruto",
+   "hiruzen",
+   "forest_night",
+   "night_sky"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "night",
+  "location": "forest_night"
  },
  "nr_0971": {
   "remove_subjects": [
@@ -1072,12 +1261,40 @@
  "nr_1054": {
   "remove_subjects": [
    "hiruzen"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "hiruzen",
+   "paperwork",
+   "document",
+   "ink_brush"
+  ],
+  "mood": [
+   "quiet",
+   "ominous"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
  },
  "nr_1055": {
   "remove_subjects": [
    "hiruzen"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "hiruzen",
+   "naruto"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
  },
  "nr_1069": {
   "remove_subjects": [
@@ -1137,7 +1354,13 @@
   ],
   "location": "hokage_office",
   "shotType": "wide",
-  "time": "day"
+  "time": "day",
+  "trust": true,
+  "mood": [
+   "quiet",
+   "ominous"
+  ],
+  "text_free": true
  },
  "nr_0626": {
   "era": "part1"
@@ -1149,10 +1372,30 @@
   ]
  },
  "nr_0650": {
-  "era": "part1"
+  "era": "part1",
+  "trust": true,
+  "subjects": [
+   "hiruzen"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "medium",
+  "text_free": true,
+  "time": "day"
  },
  "nr_0382": {
-  "era": "part1"
+  "era": "part1",
+  "trust": true,
+  "subjects": [
+   "hiruzen"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide",
+  "text_free": true,
+  "time": "day"
  },
  "nr_1061": {
   "add_subjects": [
@@ -1160,7 +1403,19 @@
    "naruto_clones"
   ],
   "time": "night",
-  "era": "part1"
+  "era": "part1",
+  "trust": true,
+  "subjects": [
+   "naruto_clones",
+   "forest_night"
+  ],
+  "mood": [
+   "action",
+   "epic"
+  ],
+  "shotType": "wide",
+  "text_free": true,
+  "location": "forest_night"
  },
  "nr_1109": {
   "add_subjects": [
@@ -1168,7 +1423,19 @@
    "naruto_clones"
   ],
   "time": "night",
-  "era": "part1"
+  "era": "part1",
+  "trust": true,
+  "subjects": [
+   "naruto_clones",
+   "forest_night"
+  ],
+  "mood": [
+   "action",
+   "epic"
+  ],
+  "shotType": "wide",
+  "text_free": true,
+  "location": "forest_night"
  },
  "nr_1899": {
   "add_subjects": [
@@ -1178,7 +1445,13 @@
   "era": "none",
   "mood": [
    "quiet"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "night_sky"
+  ],
+  "shotType": "wide",
+  "text_free": true
  },
  "nr_1955": {
   "add_subjects": [
@@ -1189,21 +1462,46 @@
   "era": "none",
   "mood": [
    "quiet"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "night_sky",
+   "konoha_village"
+  ],
+  "shotType": "establishing",
+  "text_free": true
  },
  "nr_1898": {
   "add_subjects": [
    "night_sky"
   ],
   "time": "night",
-  "era": "none"
+  "era": "none",
+  "trust": true,
+  "subjects": [
+   "night_sky"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide",
+  "text_free": true
  },
  "nr_1829": {
   "add_subjects": [
    "night_sky"
   ],
   "time": "night",
-  "era": "none"
+  "era": "none",
+  "trust": true,
+  "subjects": [
+   "night_sky"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide",
+  "text_free": true
  },
  "nr_1916": {
   "add_subjects": [
@@ -1213,30 +1511,74 @@
   "era": "none",
   "mood": [
    "quiet"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "night_sky"
+  ],
+  "shotType": "closeup",
+  "text_free": true
  },
  "nr_0476": {
   "mood": [
    "quiet",
    "emotional"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
  },
  "nr_0389": {
   "mood": [
    "quiet",
    "triumphant"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
  },
  "nr_0073": {
   "mood": [
-   "determined"
-  ]
+   "determined",
+   "ominous"
+  ],
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
  },
  "nr_0214": {
   "add_subjects": [
    "document",
    "paperwork"
-  ]
+  ],
+  "trust": true,
+  "subjects": [
+   "naruto",
+   "document",
+   "paperwork"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
  },
  "nr_0460": {
   "mood": [
@@ -1244,6 +1586,1065 @@
   ],
   "add_subjects": [
    "kurama"
+  ],
+  "trust": true,
+  "subjects": [
+   "naruto",
+   "kurama"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "night"
+ },
+ "nr_0447": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "quiet",
+   "comedy"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1380": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "comedy",
+   "triumphant"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0464": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "comedy",
+   "triumphant"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0455": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "comedy"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0438": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "comedy"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0402": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "action"
+  ],
+  "shotType": "action",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0135": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "comedy",
+   "shock"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0892": {
+  "trust": true,
+  "subjects": [
+   "naruto",
+   "academy"
+  ],
+  "mood": [
+   "emotional",
+   "quiet"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day",
+  "location": "academy"
+ },
+ "nr_0534": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "comedy",
+   "action"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0010": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "action",
+   "epic"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0065": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "action",
+   "comedy"
+  ],
+  "shotType": "action",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0084": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "action",
+   "comedy"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0105": {
+  "trust": true,
+  "subjects": [
+   "iruka",
+   "kakashi"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0411": {
+  "trust": true,
+  "subjects": [
+   "hiruzen"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0484": {
+  "trust": true,
+  "subjects": [
+   "hiruzen"
+  ],
+  "mood": [
+   "ominous",
+   "emotional"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0225": {
+  "trust": true,
+  "subjects": [
+   "crystal_ball",
+   "hiruzen"
+  ],
+  "mood": [
+   "ominous",
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "none",
+  "text_free": true,
+  "time": "day",
+  "location": "hokage_office"
+ },
+ "nr_0376": {
+  "trust": true,
+  "subjects": [
+   "kakashi"
+  ],
+  "mood": [
+   "quiet",
+   "comedy"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0699": {
+  "trust": true,
+  "subjects": [
+   "kakashi"
+  ],
+  "mood": [
+   "quiet",
+   "comedy"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1338": {
+  "trust": true,
+  "subjects": [
+   "kakashi"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1243": {
+  "trust": true,
+  "subjects": [
+   "kakashi"
+  ],
+  "mood": [
+   "comedy"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1759": {
+  "trust": true,
+  "subjects": [
+   "kakashi"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0168": {
+  "trust": true,
+  "subjects": [
+   "kakashi"
+  ],
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true
+ },
+ "nr_1066": {
+  "trust": true,
+  "subjects": [
+   "kakashi",
+   "bells",
+   "training_ground"
+  ],
+  "mood": [
+   "quiet",
+   "triumphant"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day",
+  "location": "training_ground"
+ },
+ "nr_1381": {
+  "trust": true,
+  "subjects": [
+   "team7",
+   "kakashi",
+   "naruto",
+   "sasuke",
+   "sakura",
+   "training_ground"
+  ],
+  "mood": [
+   "quiet",
+   "comedy"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day",
+  "location": "training_ground"
+ },
+ "nr_0850": {
+  "trust": true,
+  "subjects": [
+   "team7",
+   "kakashi",
+   "naruto",
+   "sasuke",
+   "sakura",
+   "training_ground"
+  ],
+  "mood": [
+   "comedy"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day",
+  "location": "training_ground"
+ },
+ "nr_0070": {
+  "trust": true,
+  "subjects": [
+   "kakashi",
+   "sasuke",
+   "training_ground"
+  ],
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day",
+  "location": "training_ground"
+ },
+ "nr_0631": {
+  "trust": true,
+  "subjects": [
+   "kakashi",
+   "sasuke"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "unknown",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1194": {
+  "trust": true,
+  "subjects": [
+   "sasuke"
+  ],
+  "mood": [
+   "quiet",
+   "ominous"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1193": {
+  "trust": true,
+  "subjects": [
+   "sasuke"
+  ],
+  "mood": [
+   "ominous",
+   "determined"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0172": {
+  "trust": true,
+  "subjects": [
+   "sasuke"
+  ],
+  "mood": [
+   "action",
+   "determined"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0041": {
+  "trust": true,
+  "subjects": [
+   "sasuke"
+  ],
+  "mood": [
+   "action"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0146": {
+  "trust": true,
+  "subjects": [
+   "sasuke"
+  ],
+  "mood": [
+   "action"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0144": {
+  "trust": true,
+  "subjects": [
+   "sasuke"
+  ],
+  "mood": [
+   "action"
+  ],
+  "shotType": "action",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0404": {
+  "trust": true,
+  "subjects": [
+   "sasuke"
+  ],
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1366": {
+  "trust": true,
+  "subjects": [
+   "sakura"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0409": {
+  "trust": true,
+  "subjects": [
+   "sakura"
+  ],
+  "mood": [
+   "quiet",
+   "comedy"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1379": {
+  "trust": true,
+  "subjects": [
+   "sakura"
+  ],
+  "mood": [
+   "comedy",
+   "triumphant"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1382": {
+  "trust": true,
+  "subjects": [
+   "sakura"
+  ],
+  "mood": [
+   "comedy",
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0707": {
+  "trust": true,
+  "subjects": [
+   "sakura"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0483": {
+  "trust": true,
+  "subjects": [
+   "sakura"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0543": {
+  "trust": true,
+  "subjects": [
+   "sakura"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1870": {
+  "trust": true,
+  "subjects": [
+   "sunrise"
+  ],
+  "mood": [
+   "quiet",
+   "triumphant"
+  ],
+  "shotType": "establishing",
+  "era": "none",
+  "text_free": true,
+  "time": "dusk"
+ },
+ "nr_1874": {
+  "trust": true,
+  "subjects": [
+   "headband"
+  ],
+  "mood": [
+   "emotional",
+   "quiet"
+  ],
+  "shotType": "closeup",
+  "era": "none",
+  "text_free": true
+ },
+ "nr_0352": {
+  "trust": true,
+  "subjects": [
+   "headband"
+  ],
+  "mood": [
+   "emotional"
+  ],
+  "shotType": "closeup",
+  "era": "none",
+  "text_free": true
+ },
+ "nr_1877": {
+  "trust": true,
+  "subjects": [
+   "hokage_monument",
+   "konoha_village"
+  ],
+  "mood": [
+   "establishing"
+  ],
+  "shotType": "establishing",
+  "era": "none",
+  "text_free": true,
+  "time": "day",
+  "location": "hokage_monument"
+ },
+ "nr_1615": {
+  "trust": true,
+  "subjects": [
+   "hokage_monument"
+  ],
+  "mood": [
+   "establishing"
+  ],
+  "shotType": "establishing",
+  "era": "none",
+  "text_free": true,
+  "time": "day",
+  "location": "hokage_monument"
+ },
+ "nr_0718": {
+  "trust": true,
+  "subjects": [
+   "ichiraku",
+   "ramen"
+  ],
+  "mood": [
+   "comedy",
+   "quiet"
+  ],
+  "shotType": "establishing",
+  "era": "none",
+  "text_free": true,
+  "time": "day",
+  "location": "ichiraku"
+ },
+ "nr_1888": {
+  "trust": true,
+  "subjects": [
+   "memorial_stone"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "shotType": "wide",
+  "era": "none",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0089": {
+  "trust": true,
+  "subjects": [
+   "academy",
+   "classroom"
+  ],
+  "mood": [
+   "comedy"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day",
+  "location": "classroom"
+ },
+ "nr_0031": {
+  "remove_subjects": [
+   "naruto_clones"
   ]
+ },
+ "nr_0066": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0078": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0085": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0088": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0139": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0140": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0228": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0250": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0251": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0254": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0600": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0639": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0648": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0673": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0898": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1142": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1333": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1506": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1596": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1602": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1605": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1607": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1851": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_1853": {
+  "remove_subjects": [
+   "naruto_clones"
+  ]
+ },
+ "nr_0907": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "comedy",
+   "action"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0911": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "comedy",
+   "action"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0238": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "action",
+   "comedy"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0243": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "comedy"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0100": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "action"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0060": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "comedy",
+   "action"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_0249": {
+  "trust": true,
+  "subjects": [
+   "naruto_clones"
+  ],
+  "mood": [
+   "ominous",
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1187": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "quiet",
+   "determined"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1186": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "comedy"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1480": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "ominous",
+   "determined"
+  ],
+  "shotType": "closeup",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1482": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "comedy",
+   "quiet"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1478": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1467": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1524": {
+  "trust": true,
+  "subjects": [
+   "naruto"
+  ],
+  "mood": [
+   "comedy"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1815": {
+  "trust": true,
+  "subjects": [
+   "team7",
+   "naruto",
+   "sasuke",
+   "sakura"
+  ],
+  "mood": [
+   "quiet",
+   "triumphant"
+  ],
+  "shotType": "wide",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1378": {
+  "trust": true,
+  "subjects": [
+   "naruto",
+   "kakashi"
+  ],
+  "mood": [
+   "comedy",
+   "quiet"
+  ],
+  "shotType": "medium",
+  "era": "part1",
+  "text_free": true,
+  "time": "day"
+ },
+ "nr_1749": {
+  "era": "shippuden"
+ },
+ "nr_1751": {
+  "era": "shippuden"
+ },
+ "nr_1810": {
+  "era": "shippuden"
  }
 }

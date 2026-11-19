@@ -51,3 +51,12 @@ class AssetDomainGate:
     def audit(self, assets, kind: str = "visual") -> dict:
         rej = [a.get("id", "?") for a in assets if not self.allows(a, kind)]
         return {"allowed": len(assets) - len(rej), "rejected": len(rej), "rejected_ids": rej}
+
+
+DESIGNED_INSERT = "designed_insert"
+
+
+def is_designed_insert(shot: dict) -> bool:
+    """A shot rendered from our own graphics (copycat/inserts.py): not an imported asset, so the asset gate does not apply
+    to the prop itself. Its blurred backdrop is still a vault asset and goes through AssetDomainGate like any other."""
+    return shot.get("type") == "insert" and shot.get("provenance", DESIGNED_INSERT) == DESIGNED_INSERT

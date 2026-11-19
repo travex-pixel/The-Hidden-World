@@ -30,7 +30,7 @@ from .visuals.paper import wobbly_ellipse, K, PEN, BRUSH, TYPE, RED, PENCIL, HIL
 ROOT = Path(__file__).resolve().parent.parent
 W0, H0 = 1920, 1080
 CAPTION_TOP = 786            # caption block starts ~ here (bottom 7% margin, up to 2 lines + speaker tag)
-STAMP_RECT = (1090, 50, 1830, 420)   # CANON stamp + note strip live here
+STAMP_RECT = (1060, 50, 1830, 545)   # CANON stamp + note strip live here
 
 TYPES = ("scroll_note", "notebook_rules", "maths_card", "staff_form", "kazekage_letter", "mission_report",
          "evaluation_folder", "roster")
@@ -363,6 +363,10 @@ def doodle_crow(D, cx, cy, s=1.0, when=None, name="crow"):
     legs = [_pts(cx, cy, s, [(-4, 40), (-6, 66), (-20, 72)]), _pts(cx, cy, s, [(14, 38), (16, 66), (30, 72)])]
     st = [dict(pts=p, **pen) for p in (body, head, beak, wing, tail)] + [dict(pts=p, w=[2.4, 2.8]) for p in legs]
     st.append(dict(pts=_pts(cx, cy, s, [(60, -30), (62, -29), (63, -27)]), w=[7.0, 7.0]))     # eye
+    for k in range(9):                                                                         # scribbled-in black feathers
+        a = -52 + 12 * k
+        st.append(dict(pts=_pts(cx, cy, s, [(a, 20 - 0.4 * abs(a + 10)), (a + 30, -18 + 0.3 * abs(a))]), w=[3.2, 3.4]))
+    st.append(dict(pts=_pts(cx, cy, s, [(72, -30), (110, -22), (72, -12), (72, -30)]), w=[3.4, 3.6]))
     D.strokes(name, st, PEN, when, a=0.88, bleed=0.8, dens=0.10)
 
 
@@ -443,10 +447,9 @@ def build_notebook(spec):
     D.strokes("batch_box", [dict(pts=[(X - 28, 920), (X + 700, 914), (X + 718, 1042), (X - 20, 1050), (X - 30, 925)], w=[5.0, 6.0, 5.0])], RED, W_("batch", "Batches of ten", "omit", tail=0.2), a=0.9, soft=0.05)
     # doodles (always on the page)
     doodle_ramen(D, 790, 560, 1.0)
-    doodle_crow(D, 700, 1220, 1.15)
+    doodle_crow(D, 690, 1215, 1.45)
     star(D, 860, 380, 18, PEN, "ds1")
     star(D, 90, 1100, 14, PENCIL, "ds2")
-    D.hline(X, X + 120, 1120, PENCIL, 2.4, 0.6, "scr1", wob=2)
     for k, (nm, x_, y_) in enumerate((("t", 480, 130), ("r1", 480, 300), ("r2", 480, 470), ("r3", 480, 640), ("r4", 480, 800), ("batch", 480, 1000), ("crow", 700, 1220))):
         D.anchor(nm, x_, y_)
     return D
@@ -467,7 +470,6 @@ def build_maths(spec):
     D.text("m5", X, 790, "(most genin: not even in a whole YEAR)", "kid", 56, PENCIL, W_("m5", "Most genin don't train that much in a year", "anim"), jitter=0.5, rot=-0.4, a=0.95)
     D.strokes("m5u", [dict(pts=[(X + 560, 806), (X + 700, 810), (X + 830, 805)], w=[3.6, 4.4, 3.2])], RED, W_("m5", "in a year", "anim", lead=-0.1, tail=0.4), a=0.9)
     doodle_ramen(D, 960, 150, 0.55)
-    star(D, 990, 380, 16, RED, "ms1")
     D.anchor("eq", 560, 470)
     D.anchor("top", 560, 300)
     D.anchor("m5", 560, 700)
@@ -528,11 +530,13 @@ def build_roster(spec):
             D.text("gap_auth", 1338, y + j, "4TH HOKAGE", "type", 33, TYPE, None, jitter=0.3, dens=0.2, rot=0.15, imp=True)
             # the inked-out name: ghost of type under heavy black bars (rank + name)
             D.text("gap_ghost", 78, y + j, "XXXXXXXXXXXXXX", "type", 33, TYPE, None, jitter=0.3, a=0.0)
-            D.fill_rect(70, y - 38, 774, y + 9, (14, 12, 14), 0.98, "bar1", None)
-            D.fill_rect(88, y - 30, 760, y - 6, (6, 6, 8), 0.8, "bar2", None)
+            D.fill_rect(70, y - 33, 774, y + 14, (14, 12, 14), 0.98, "bar1", None)
+            D.fill_rect(88, y - 25, 760, y + 2, (6, 6, 8), 0.8, "bar2", None)
             D.anchor("gap", 700, y - 14)
             D.anchor("gap_end", 1190, y - 14)
             D.anchor("gap_mid", 792, y - 14)
+            D.anchor("gap_l", 620, y - 14)
+            D.anchor("gap_r", 1090, y - 14)
             continue
         sn, ini, rank, fr, dys, auth = r
         end = fr + dys
@@ -677,15 +681,14 @@ def build_staff_form(spec):
     D.rect(104, 950, w - 104, 1150, (120, 100, 90), 1.2, 0.4, "sb")
     D.text("sig1", 150, 1040, "Naruto Uzumaki", "kid", 88, PEN, W_("sig1", "carried his name", "omit"), jitter=0.55, rot=-3.5, imp=True)
     D.text("sig2", 232, 1118, "Naruto Uzumaki", "kid", 88, PEN, W_("sig2", "twice by accident", "omit"), jitter=0.6, rot=-2.0, imp=True)
-    D.strokes("oops", [dict(pts=[(760, 1040), (800, 1020), (830, 1070), (880, 1030), (900, 1090)], w=[3.6, 4.4, 3.0])], PEN, W_("sig2", "by accident", "omit", tail=0.3), a=0.9)
     D.text("lab", 110, 1200, "COUNTERSIGNED", "serif", 28, ink, None, tracking=5, a=0.9)
     D.hline(110, 560, 1330, ink, 2.0, 0.8, "cs")
     D.text("cs_name", 140, 1310, "Sarutobi", "brush", 80, BRUSH, W_("cs", "twice by accident", "omit", frac=(0.88, 1.0), lead=-0.2), bleed=1.0, rot=-3, bristle=0.12, imp=True)
     D.text("lab", 110, 1366, "THE THIRD HOKAGE", "serif", 26, ink, None, tracking=4, a=0.85)
     # red seal
-    D.strokes("hanko", [dict(pts=[(840 + 70 * math.cos(a), 1290 + 70 * math.sin(a)) for a in np.linspace(0, 2 * math.pi * 1.02, 14)], w=[5.0, 6.0, 5.0]),
-                       dict(pts=[(805, 1260), (875, 1262)], w=5.0), dict(pts=[(840, 1250), (840, 1330)], w=5.0), dict(pts=[(806, 1310), (876, 1308)], w=5.0)],
-              (170, 36, 32), W_("hanko", "twice by accident", "omit", frac=(0.92, 1.0), lead=-0.3), a=0.8, bleed=1.0, dens=0.25)
+    hk = [dict(pts=[(840 + 70 * math.cos(a), 1290 + 70 * math.sin(a)) for a in np.linspace(0, 2 * math.pi * 1.02, 14)], w=[5.0, 6.0, 5.0]),
+          dict(pts=[(840 + 44 * math.cos(a) * (1 - a / 14), 1290 + 44 * math.sin(a) * (1 - a / 14)) for a in np.linspace(0, 4 * math.pi, 22)], w=[4.0, 4.6, 3.6])]
+    D.strokes("hanko", hk, (170, 36, 32), W_("hanko", "twice by accident", "omit", frac=(0.92, 1.0), lead=-0.3), a=0.8, bleed=1.0, dens=0.25)
     D.text("ft", w / 2, 1440, "Staff of this office answer to the Hokage alone.", "serif", 24, (84, 70, 62), None, anchor="m", a=0.85)
     D.anchor("top", w / 2, 300)
     D.anchor("name", w / 2, 540)
@@ -732,23 +735,24 @@ def build_letter(spec):
                       dict(pts=[(cx - 28, cy + 24), (cx, cy - 30), (cx + 28, cy + 24)], w=5.0), dict(pts=[(cx - 28, cy - 24), (cx, cy + 30), (cx + 28, cy - 24)], w=5.0)],
               (150, 34, 30), None, a=0.78, bleed=1.2, dens=0.3)
     # the signature: stabbing downstrokes, brush splitting on the tails
-    sp = (0.52, 5, 0.55, 0.1)
-    sig = [dict(pts=[(520, 1004), (516, 1090), (508, 1190), (500, 1272)], w=[16, 32, 38, 36, 34], t=(0.00, 0.20), split=sp, n=30),
-           dict(pts=[(530, 1050), (614, 1020), (664, 1086), (594, 1136), (664, 1170)], w=[8, 10, 8, 6, 5], t=(0.20, 0.34)),
-           dict(pts=[(704, 1030), (702, 1120), (694, 1220), (686, 1286)], w=[16, 34, 42, 40, 36], t=(0.34, 0.54), split=sp, n=30),
-           dict(pts=[(712, 1190), (784, 1156), (844, 1182), (904, 1154)], w=[7, 8, 7, 5], t=(0.54, 0.66)),
-           dict(pts=[(884, 1000), (880, 1100), (870, 1208), (860, 1290)], w=[16, 36, 44, 42, 38], t=(0.66, 0.84), split=sp, n=30),
-           dict(pts=[(480, 1318), (700, 1308), (950, 1292)], w=[6, 14, 5], t=(0.84, 1.0))]
+    sp = (0.46, 6, 0.50, 0.1)
+    sig = [dict(pts=[(470, 1186), (492, 1100), (514, 1026), (526, 1008)], w=[3, 6, 8, 9], t=(0.00, 0.06), n=20),
+           dict(pts=[(526, 1008), (524, 1090), (516, 1180), (508, 1262)], w=[9, 22, 28, 26], t=(0.06, 0.20), split=sp, n=30),
+           dict(pts=[(512, 1236), (560, 1120), (616, 1060), (664, 1092), (640, 1150), (700, 1130)], w=[4, 5, 5, 5, 4, 4], t=(0.20, 0.34)),
+           dict(pts=[(720, 1020), (718, 1110), (710, 1200), (702, 1282)], w=[7, 24, 30, 28], t=(0.34, 0.50), split=sp, n=30),
+           dict(pts=[(706, 1240), (764, 1170), (820, 1150), (858, 1176), (904, 1140)], w=[4, 5, 5, 4, 4], t=(0.50, 0.62)),
+           dict(pts=[(900, 1000), (896, 1100), (886, 1200), (878, 1296)], w=[7, 26, 34, 32], t=(0.62, 0.80), split=sp, n=30),
+           dict(pts=[(450, 1316), (700, 1304), (960, 1290)], w=[4, 9, 3], t=(0.80, 1.0))]
     D.strokes("sig", sig, BRUSH, W_("sig", "stabbing the page", "anim", lead=0.5, tail=1.2), a=0.97, bleed=1.1, bristle=0.12, imp=True, soft=0.03, anchor="sig")
     D.text("rank", 520, 1360, "The Fourth Kazekage", "serif", 30, ink, None, a=0.9)
     # Naruto's red-pen circles round the splits
-    for i, (cx_, cy_) in enumerate(((502, 1252), (688, 1260), (862, 1262))):
-        D.strokes(f"sp{i}", [wobbly_ellipse(cx_, cy_, 52, 58, np.random.default_rng(i + 3), turns=1.15, w=(4, 5.5, 3))], RED, W_("circ", "downstroke", "omit", lead=-0.1 + 0.5 * i, tail=0.2 + 0.4 * i, group="circ"), a=0.9)
+    for i, (cx_, cy_) in enumerate(((510, 1262), (704, 1274), (882, 1286))):
+        D.strokes(f"sp{i}", [wobbly_ellipse(cx_, cy_, 44, 52, np.random.default_rng(i + 3), turns=1.15, w=(4, 5.5, 3))], RED, W_("circ", "downstroke", "omit", lead=-0.1 + 0.5 * i, tail=0.2 + 0.4 * i, group="circ"), a=0.9)
     # S tab
     D.text("tab", wl + 37, 346, "S", "anton", 96, (40, 28, 24), None, anchor="m", a=0.9, rot=-2)
     D.anchor("top", wl / 2, 400)
     D.anchor("body", wl / 2, 640)
-    D.anchor("sig_view", 700, 1180)
+    D.anchor("sig_view", 690, 1170)
     D.anchor("tab", wl, 330)
     return D
 
@@ -833,22 +837,22 @@ def build_cat(spec):
              ("REPORT 2", "Target recovered. Major scratches.", "type", 36, ink, 0.0),
              ("REPORT 3", "Never again.", "brush", 112, (30, 24, 22), 0.0)]
     for i, (lab, txt, fnt, sz, col, _) in enumerate(slips):
-        y0 = 240 + i * 360
+        y0 = 240 + i * 300
         rot_ = (-0.6, 0.5, -0.9)[i]
-        D.rect(80, y0, w - 80, y0 + 316, (110, 96, 84), 2.0, 0.55, f"slip{i}")
-        D.text("lab", 112, y0 + 62, lab, "serif", 32, (110, 84, 60), None, tracking=6, a=0.9)
-        D.hline(112, w - 112, y0 + 86, (110, 96, 84), 1.4, 0.5, "sl")
+        D.rect(80, y0, w - 80, y0 + 280, (110, 96, 84), 2.0, 0.55, f"slip{i}")
+        D.text("lab", 112, y0 + 56, lab, "serif", 32, (110, 84, 60), None, tracking=6, a=0.9)
+        D.hline(112, w - 112, y0 + 78, (110, 96, 84), 1.4, 0.5, "sl")
         nm = f"rep{i + 1}"
         if i < 2:
-            D.text(nm, 112, y0 + 170, txt, fnt, sz, col, W_(nm, ("Three separate reports", "one cat")[i], "anim", frac=(0.04 + 0.2 * i, 0.20 + 0.2 * i), group=nm), jitter=0.3, dens=0.2, rot=rot_, imp=True)
-            D.text("who", 112, y0 + 270, "- retrieval team " + "ab"[i].upper(), "brush", 34, BRUSH, None, a=0.65, bristle=0.3)
+            D.text(nm, 112, y0 + 146, txt, fnt, sz, col, W_(nm, ("Three separate reports", "one cat")[i], "anim", frac=(0.04 + 0.2 * i, 0.20 + 0.2 * i), group=nm), jitter=0.3, dens=0.2, rot=rot_, imp=True)
+            D.text("who", 112, y0 + 240, "- retrieval team " + "ab"[i].upper(), "brush", 34, BRUSH, None, a=0.65, bristle=0.3)
         else:
-            D.text(nm, 120, y0 + 214, txt, fnt, sz, col, W_(nm, "never again", "anim", group=nm, lead=0.2), bleed=1.0, rot=rot_, bristle=0.3, imp=True)
-            D.strokes("nu", [dict(pts=[(114, y0 + 256), (300, y0 + 262), (560, y0 + 250)], w=[5, 7, 4], t=(0, .5)), dict(pts=[(120, y0 + 274), (320, y0 + 280), (570, y0 + 268)], w=[5, 7, 4], t=(.5, 1))],
+            D.text(nm, 120, y0 + 190, txt, fnt, sz, col, W_(nm, "never again", "anim", group=nm, lead=0.2), bleed=1.0, rot=rot_, bristle=0.3, imp=True)
+            D.strokes("nu", [dict(pts=[(114, y0 + 222), (300, y0 + 228), (560, y0 + 216)], w=[5, 7, 4], t=(0, .5)), dict(pts=[(120, y0 + 240), (320, y0 + 246), (570, y0 + 234)], w=[5, 7, 4], t=(.5, 1))],
                       RED, W_("nu", "never again", "anim", tail=0.8, lead=-0.1), a=0.92)
-        D.anchor(f"s{i + 1}", w / 2, y0 + 170)
+        D.anchor(f"s{i + 1}", w / 2, y0 + 150)
     D.anchor("top", w / 2, 330)
-    D.anchor("last", w / 2, 240 + 2 * 360 + 170)
+    D.anchor("last", w / 2, 240 + 2 * 300 + 150)
     return D
 
 
@@ -898,7 +902,7 @@ def build_folder(spec):
         if date in ("MAR 14", "AUG 21") and dt:
             wc = W_(f"c{i + 1}", "Look at the dates" if date == "MAR 14" else "Same dates", "omit", group="circ_a" if date == "MAR 14" else "circ_b",
                     lead=-0.35 * (i // 2) if date == "MAR 14" else -0.3 * (i // 2), tail=0.25)
-            D.strokes(f"c{i + 1}", [wobbly_ellipse(dt[0] + dt[2] / 2, dt[1] - 12, dt[2] / 2 + 20, 30, np.random.default_rng(20 + i), turns=1.15, w=(3.8, 5.4, 3.0), tilt=-3)], RED, wc, a=0.92, soft=0.05)
+            D.strokes(f"c{i + 1}", [wobbly_ellipse(dt[0] + dt[2] / 2, dt[1] - 10, dt[2] / 2 + 18, 27, np.random.default_rng(20 + i), turns=1.15, w=(3.8, 5.4, 3.0), tilt=-3)], RED, wc, a=0.92, soft=0.05)
     D.anchor("top", w / 2, 300)
     D.anchor("rows", w / 2, 640)
     D.anchor("late", 1160, 700)
@@ -911,10 +915,10 @@ BUILDERS = {"scroll_note": build_scroll, "notebook_rules": build_notebook, "math
 DEFAULT_VIEWS = {
     "scroll_note": dict(frm="seals", to="note", z=(1.0, 1.3)),
     "notebook_rules": dict(frm="r1", to="r1", z=(1.05, 1.22)),
-    "maths_card": dict(frm="top", to="eq", z=(1.0, 1.14), ty=0.44),
+    "maths_card": dict(frm="eq", to="eq", z=(1.0, 1.1), ty=0.36),
     "staff_form": dict(frm="top", to="fields", z=(1.0, 1.18)),
-    "kazekage_letter": dict(frm="body", to="sig_view", z=(1.0, 1.5)),
-    "mission_report": dict(frm="top", to="last", z=(1.0, 1.3)),
+    "kazekage_letter": dict(frm="body", to="sig_view", z=(1.0, 1.35)),
+    "mission_report": dict(frm="body", to="last", z=(1.0, 1.2), ty=0.36),
     "evaluation_folder": dict(frm="top", to="rows", z=(1.0, 1.2)),
     "roster": dict(frm="title", to="gap_mid", z=(1.0, 1.25)),
 }
@@ -1098,3 +1102,34 @@ def render_still(spec, bg_path, t, out_path, p=1.0, W=W0, H=H0, vfx=None):
     cv2.multiply(out, make_vignette(W, H), dst=out, scale=1 / 255.0)
     Image.fromarray(out).save(out_path)
     return sc
+
+
+def stills(pid, every_beat=False):
+    """One 1920x1080 still per insert type (the beat where it is most complete), plus every insert beat with --all."""
+    import argparse
+    edit = json.loads((ROOT / "copycat/projects" / pid / "edit.json").read_text())
+    out = ROOT / "build/copycat" / pid / "inserts"
+    out.mkdir(parents=True, exist_ok=True)
+    best = {}
+    for s in edit["shots"]:
+        if s.get("type") != "insert":
+            continue
+        key = s["insert"]["type"] + (("_" + s["insert"].get("variant")) if s["insert"].get("variant") else "")
+        k = (key, s["beat_id"]) if every_beat else key
+        cnt = len(s["insert"].get("present") or []) + len(s["insert"].get("animate") or [])
+        if k not in best or cnt >= best[k][0]:
+            best[k] = (cnt, s)
+    for k, (_, s) in sorted(best.items(), key=lambda kv: str(kv[0])):
+        name = "_".join(k) if isinstance(k, tuple) else k
+        spec = dict(s["insert"])
+        t = s["end"] - 0.08
+        render_still(spec, ROOT / s["bg_path"], t, out / f"{name}.png", p=0.92)
+        print(name, "<-", s["beat_id"], "lint:", lint({k2: v for k2, v in spec.items()}, ROOT / s["bg_path"], stamp=bool(s.get("stamp"))))
+    print(len(best), "stills ->", out)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) >= 2 and sys.argv[1] == "stills":
+        stills(sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].startswith("-") else "naruto-whatif-ep01", every_beat="--all" in sys.argv)
+    else:
+        print(__doc__)

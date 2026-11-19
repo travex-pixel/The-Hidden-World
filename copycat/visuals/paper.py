@@ -91,8 +91,9 @@ def paper_base(kind, w, h, rng):
     base = np.array(P["base"], np.float32)
     stain = np.array(P["stain"], np.float32)
     n_lo = fbm(rng, h, w, 180.0, 4)
-    mott = np.clip(0.5 + 0.30 * n_lo, 0, 1)[..., None]
-    img = base[None, None, :] * (1.0 - 0.11 * mott) + stain[None, None, :] * 0.11 * mott
+    amp = 0.20 if kind == "parchment" else 0.11
+    mott = np.clip(0.5 + 0.34 * n_lo, 0, 1)[..., None]
+    img = base[None, None, :] * (1.0 - amp * mott) + stain[None, None, :] * amp * mott
     # blotchy stains concentrated near the edges
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
     d = np.minimum(np.minimum(xx, w - 1 - xx), np.minimum(yy, h - 1 - yy))

@@ -63,7 +63,7 @@ SHOT_NEAR = {("closeup", "extreme_closeup"), ("wide", "establishing"), ("action"
 P = dict(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
          ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
          avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
-         time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0)
+         time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False)
 
 NARUTO_ALIASES = {
     "forbidden_scroll": ("document", "paperwork"), "paperwork": ("document", "letter", "book"), "document": ("paperwork", "letter", "book", "forbidden_scroll"),
@@ -105,7 +105,7 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
     P.update(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
              ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
              avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
-             time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0)
+             time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False)
     if fr_id == "naruto":
         P.update(scarce={"kushina", "minato", "tobirama", "kurama", "danzo", "enma", "rin", "obito", "young_kakashi", "orochimaru", "jiraiya", "ibiki", "anko"},
                  young={"young_kakashi": "kakashi"}, atmos=set(), atmos2=set(), nonchar=NARUTO_NONCHAR, speaker_subjects=NARUTO_SPEAKERS,
@@ -118,6 +118,7 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
         P["time_by_beat"] = cfg.get("time_by_beat", {})
         P["merge_short_s"] = float(cfg.get("merge_short_s", 0.0))
         P["crowd_penalty"] = float(cfg.get("crowd_penalty", 3.0))
+        P["trust_mode"] = bool(cfg.get("trust_mode", False))
     if cfg.get("lock_seconds"): P["lock_seconds"] = float(cfg["lock_seconds"])
     if cfg.get("avg_shot_s"): P["avg_shot_s"] = float(cfg["avg_shot_s"])
     avoid = {}
@@ -352,6 +353,11 @@ class Scorer:
             s -= 3.0 if "night" in (want_t, tg["time"]) else 1.5
         elif want_t and tg.get("time") == want_t:
             s += 0.8
+        if P["trust_mode"]:                         # curated ("trust": true in curation.json) frames win over unreviewed ones
+            if a.get("trust"):
+                s += 2.5 * float(a["trust"])          # 1 = fully vetted frame, 0.5 = checked on a contact sheet, nothing wrong with it
+            elif asub - NONCHAR:
+                s -= 1.5
         if tg.get("text_free") is False:
             s -= 4.0
         if tg.get("conf") == "low":
@@ -466,6 +472,28 @@ class Assigner:
                     changed += 1
             if not changed:
                 break
+        if P["accent"] == "naruto":                      # last resort: a speaker-appropriate frame beats an empty slot (it will show up as WEAK)
+            for i in self.cuts:
+                if self.assign[i] or i in self.pinned:
+                    continue
+                sl = self.slots[i]
+                allowed = P["speaker_subjects"].get(sl["beat"]["speaker"]) or set()
+                subs0 = sl["spec"].get("subjects") or []
+                want = set(subs0) | (set(P["aliases"].get(subs0[0], ())) if subs0 else set())
+                rows = []
+                for a in self.assets:
+                    asub = set(a["tags"]["subjects"])
+                    if not (allowed & (asub | {a["tags"].get("location")})) and not (want & asub):
+                        continue
+                    sc, _ = self.sc.score(sl, a)
+                    if sc > -6:
+                        rows.append((sc, a["id"]))
+                rows.sort(reverse=True)
+                for sc, aid in rows:
+                    if self.feasible(i, aid):
+                        self.base[i][aid] = sc
+                        self._set(i, aid)
+                        break
 
 
 # --------------------------------------------------------------------------- directives
@@ -700,6 +728,8 @@ def finish_shots(shots, slots, overrides):
     for k in chosen:
         shots[k]["transition_in"] = "whip"
     for s in shots:
+        if P["accent"] == "naruto" and s.get("_key"):
+            s["key"] = s["_key"]                       # override key (beat#cut[.sub]) so a reviewer can pin this exact shot
         for k in ("_key", "_slot", "_auto_ember"):
             s.pop(k, None)
     return shots
@@ -745,6 +775,9 @@ def load_assets(gate, curation, retag=None, vault=None):
         if not (ROOT / a["path"]).exists():
             missing.append(a["id"])
             continue
+        tr = curation.get(a["id"], {}).get("trust")
+        if tr:
+            a = dict(a, trust=1.0 if tr is True else float(tr))
         out.append(a)
     return out, missing, len(v["assets"])
 
@@ -813,6 +846,19 @@ def run(pid, estimate=False, write=True):
             A._set(i, aid)
         else:
             warnings.append(f"override {slots[i]['beat_id']}#{slots[i]['cut_index']}: {aid} breaks the repetition lock/cap; ignored")
+    A.soft = set()
+    for k, ov in overrides.items():                      # editorial preferences: first feasible frame of the list wins; never breaks the lock/cap
+        i = key_slot.get(k)
+        if i is None or slots[i]["type"] != "cut":
+            continue
+        for rank, aid in enumerate(ov.get("prefer") or []):
+            if aid not in by_id:
+                warnings.append(f"override {k}: preferred {aid} not in gate-approved vault")
+                continue
+            A.base[i][aid] = scorer.score(slots[i], by_id[aid])[0] + 12.0 - 1.5 * rank
+            if aid not in A.cand[i]:
+                A.cand[i].append(aid)
+            A.soft.add(i)
     A.run()
     assign = A.assign
     bgs = pick_backgrounds(slots, assign, assets, overrides)
@@ -862,7 +908,7 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
                                   want=sl["spec"].get("subjects"), query=sl["spec"].get("query")))
             continue
         sc, sem = A.sc.score(sl, by_id[aid])
-        if sc < WEAK_SCORE and n not in A.pinned:      # editorial pins are not 'weak'
+        if sc < WEAK_SCORE and n not in A.pinned and n not in getattr(A, "soft", ()):      # editorial pins / preferences are not 'weak'
             weak.append(dict(shot=sh["id"], beat=f"{sl['beat_id']}#{sl['cut_index']}", asset=aid, score=round(sc, 1),
                              want=sl["spec"].get("subjects")))
         allowed = P["speaker_subjects"].get(sl["beat"]["speaker"])

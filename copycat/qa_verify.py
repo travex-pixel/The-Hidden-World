@@ -79,7 +79,8 @@ def provenance(edit, vault, franchise=None):
     shots = edit["shots"]
     gate = domain_gate(edit.get("domain") or (vault or {}).get("domain") or "anime_black_clover", franchise)
     off, noasset, missing = 0, 0, []
-    rt = {"real": 0.0, "generated": 0.0, "cards": 0.0, "unknown": 0.0}
+    rt = {"real": 0.0, "generated": 0.0, "cards": 0.0, "unknown": 0.0, "designed_insert": 0.0}
+    inserts = {}
     used = set()
     viol = []
     last = {}
@@ -90,6 +91,15 @@ def provenance(edit, vault, franchise=None):
             rt["cards"] += d
             continue
         content.append(s)
+        if s.get("type") == "insert":                 # our own designed prop (never a "generic fallback"): exempt from the domain gate,
+            rt["designed_insert"] += d                # but the real frame blurred behind it must still be a gate-approved vault asset
+            inserts[s["insert"]["type"]] = round(inserts.get(s["insert"]["type"], 0.0) + d, 1)
+            bg = vidx.get(s.get("bg_asset_id"))
+            if bg is None:
+                missing.append(s["id"])
+            elif not ((gate(bg) if gate else True) and bg.get("domain") in OK_DOMAINS):
+                off += 1
+            continue
         aid = s.get("asset_id")
         if not aid and not s.get("asset_path"):
             noasset += 1
@@ -119,7 +129,9 @@ def provenance(edit, vault, franchise=None):
         unique_assets=len(used), anti_repetition_violations=len(viol), anti_repetition_detail=viol[:20],
         max_shot_s=round(max(lens), 3), avg_cut_s=round(sum(lens) / len(lens), 3),
         avg_cut_first30s=round(sum(first) / len(first), 3) if first else None,
-        shots=len(shots), cards=sum(1 for s in shots if s.get("type") == "card"), gate_module=bool(gate))
+        shots=len(shots), cards=sum(1 for s in shots if s.get("type") == "card"), gate_module=bool(gate),
+        designed_inserts=dict(shots=sum(1 for s in shots if s.get("type") == "insert"), share=round(rt["designed_insert"] / tot, 4), seconds_by_type=inserts,
+                              provenance="designed_insert"))
 
 
 # ------------------------------------------------------------------ audio / video analysis
