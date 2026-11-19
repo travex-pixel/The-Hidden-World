@@ -74,12 +74,13 @@ def domain_gate(domain, franchise=None):
     return check
 
 
-def provenance(edit, vault, franchise=None):
+def provenance(edit, vault, franchise=None, wl=None, lock_shots=8, cap=None, min_gap=45.0):
     vidx = {a["id"]: a for a in (vault or {}).get("assets", [])}
     shots = edit["shots"]
     gate = domain_gate(edit.get("domain") or (vault or {}).get("domain") or "anime_black_clover", franchise)
     off, noasset, missing = 0, 0, []
-    rt = {"real": 0.0, "generated": 0.0, "cards": 0.0, "unknown": 0.0, "designed_insert": 0.0}
+    rt = {"real": 0.0, "generated": 0.0, "cards": 0.0, "unknown": 0.0, "designed_insert": 0.0, "clone_grid": 0.0}
+    uses, crops, grid_panels, grid_bad, nonwl = {}, {}, 0, [], []
     inserts = {}
     used = set()
     viol = []
@@ -91,6 +92,17 @@ def provenance(edit, vault, franchise=None):
             rt["cards"] += d
             continue
         content.append(s)
+        if s.get("type") == "clone_grid":              # our own comic page of real, whitelisted face crops
+            rt["clone_grid"] += d
+            for pn in s["panels"]:
+                grid_panels += 1
+                a = vidx.get(pn["asset_id"])
+                if a is None or not ((gate(a) if gate else True) and a.get("domain") in OK_DOMAINS):
+                    off += 1
+                    grid_bad.append(pn["asset_id"])
+                if wl is not None and pn["asset_id"] not in wl:
+                    nonwl.append(f"{s['id']}:{pn['asset_id']}")
+            continue
         if s.get("type") == "insert":                 # our own designed prop (never a "generic fallback"): exempt from the domain gate,
             rt["designed_insert"] += d                # but the real frame blurred behind it must still be a gate-approved vault asset
             inserts[s["insert"]["type"]] = round(inserts.get(s["insert"]["type"], 0.0) + d, 1)
@@ -99,6 +111,8 @@ def provenance(edit, vault, franchise=None):
                 missing.append(s["id"])
             elif not ((gate(bg) if gate else True) and bg.get("domain") in OK_DOMAINS):
                 off += 1
+            if wl is not None and s.get("bg_asset_id") not in wl:
+                nonwl.append(f"{s['id']}:{s.get('bg_asset_id')}")
             continue
         aid = s.get("asset_id")
         if not aid and not s.get("asset_path"):
@@ -107,6 +121,12 @@ def provenance(edit, vault, franchise=None):
         a = vidx.get(aid)
         if aid:
             used.add(aid)
+            uses[aid] = uses.get(aid, 0) + 1
+            c = s.get("crop") or {}
+            ck = (aid, c.get("x"), c.get("y"), c.get("zoom"))
+            crops[ck] = crops.get(ck, 0) + 1
+            if wl is not None and aid not in wl:
+                nonwl.append(f"{s['id']}:{aid}")
         if a is None:
             missing.append(s["id"])
             rt["unknown"] += d
@@ -117,7 +137,7 @@ def provenance(edit, vault, franchise=None):
             rt["real" if a.get("source") in REAL_SOURCES else "generated"] += d
         if aid in last:
             pk, pt = last[aid]
-            if k - pk < 8 or s["start"] - pt < 45:
+            if (k - pk < lock_shots or s["start"] - pt < min_gap) and not (s.get("lock_exempt") and shots[pk].get("lock_exempt")):
                 viol.append(dict(asset=aid, shot=s["id"], prev_shot_idx=pk, gap_shots=k - pk, gap_s=round(s["start"] - pt, 1)))
         last[aid] = (k, s["start"])
     tot = sum(s["end"] - s["start"] for s in shots) or 1
@@ -130,6 +150,10 @@ def provenance(edit, vault, franchise=None):
         max_shot_s=round(max(lens), 3), avg_cut_s=round(sum(lens) / len(lens), 3),
         avg_cut_first30s=round(sum(first) / len(first), 3) if first else None,
         shots=len(shots), cards=sum(1 for s in shots if s.get("type") == "card"), gate_module=bool(gate),
+        max_uses_of_one_asset=max(uses.values()) if uses else 0, assets_over_cap=sorted(k for k, v in uses.items() if v > (cap or 99)),
+        repeated_crops=sum(1 for v in crops.values() if v > 1), non_whitelisted=nonwl, whitelist_checked=wl is not None,
+        clone_grids=dict(shots=sum(1 for s in shots if s.get("type") == "clone_grid"), panels=grid_panels, share=round(rt["clone_grid"] / tot, 4),
+                         off_domain_panels=grid_bad),
         designed_inserts=dict(shots=sum(1 for s in shots if s.get("type") == "insert"), share=round(rt["designed_insert"] / tot, 4), seconds_by_type=inserts,
                               provenance="designed_insert"))
 
@@ -210,60 +234,73 @@ def audio_cast(pid):
 
 
 # ------------------------------------------------------------------ contact sheet
-def pick_frames(edit, n=16):
+def pick_frames(edit, n=32):
+    """n (time, shot) picks: hero moments first (first frame, every chapter card, every CANON stamp at its impact, two clone
+    grids mid-pop, two paper inserts, the last shot), then evenly spread shots to fill the sheet."""
     shots = edit["shots"]
     fps = edit.get("fps", 30)
     cards = [s for s in shots if s.get("type") == "card"]
     content = [s for s in shots if s.get("type") != "card"]
     picks = []                                           # (time, shot)
+
+    def add(t, s):
+        if len(picks) < n and all(abs(t - u) > 0.4 for u, _ in picks):
+            picks.append((t, s))
     if content:
-        picks.append((1.0, next((s for s in shots if s["start"] <= 1.0 < s["end"]), shots[0])))
-    for c in cards[: n - 2]:
-        picks.append((c["start"] + 0.62 * (c["end"] - c["start"]), c))
+        add(1.0, next((s for s in shots if s["start"] <= 1.0 < s["end"]), shots[0]))
+    for c in cards:
+        add(c["start"] + 0.62 * (c["end"] - c["start"]), c)
+    for s in shots:                                      # stamps: a moment after the thunk
+        st = s.get("stamp")
+        if st:
+            t = float(st.get("time") or s["start"]) + 0.35
+            add(min(t, s["end"] - 0.05), s)
+    for kind, count in (("clone_grid", 2), ("insert", 2)):
+        pool = [s for s in content if s.get("type") == kind and s["end"] - s["start"] > 2.0]
+        for j in range(count):
+            if pool:
+                s = pool[int((j + 0.5) * len(pool) / count)]
+                add(s["start"] + (0.45 if kind == "clone_grid" else 0.8) * (s["end"] - s["start"]), s)
     last = content[-1] if content else None
-    pool = [s for s in content if s is not last]
-    rest = min(n - len(picks) - (1 if last else 0), len(pool))
-    if pool and rest > 0:
-        idx = np.linspace(0, len(pool) - 1, rest).round().astype(int) if rest > 1 else [len(pool) // 2]
-        seen = set()
-        for i in idx:
-            i = int(i)
-            while i in seen and i + 1 < len(pool):
-                i += 1
-            seen.add(i)
-            s = pool[i]
-            picks.append(((s["start"] + s["end"]) / 2, s))
     if last:
-        picks.append(((last["start"] + last["end"]) / 2, last))
+        add((last["start"] + last["end"]) / 2, last)
+    rest = n - len(picks)
+    pool = [s for s in content if s is not last]
+    if pool and rest > 0:
+        idx = np.linspace(0, len(pool) - 1, rest + 6).round().astype(int)
+        for i in idx:
+            s = pool[int(i)]
+            add((s["start"] + s["end"]) / 2, s)
     if len(picks) < n:                                   # short programme: extra looks at the longest shots
         for s in sorted(content, key=lambda s: s["start"] - s["end"]):
-            if len(picks) >= n:
-                break
-            picks.append((s["start"] + 0.2 * (s["end"] - s["start"]), s))
+            add(s["start"] + 0.2 * (s["end"] - s["start"]), s)
     picks.sort(key=lambda x: x[0])
     return picks[:n]
 
 
-def contact_sheet(video, edit, outdir, sheet_path):
+def contact_sheet(video, edit, outdir, sheet_path, n=32, cols=8):
     outdir.mkdir(parents=True, exist_ok=True)
-    picks = pick_frames(edit)
+    picks = pick_frames(edit, n)
     tiles = []
     for k, (t, s) in enumerate(picks):
         fp = outdir / f"{k:02d}_{s['id']}_{t:07.2f}.png"
         sh(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{t:.3f}", "-i", str(video), "-frames:v", "1", str(fp)])
         tiles.append((fp, t, s))
-    sheet = Image.new("RGB", (640 * 4, 360 * 4), (10, 10, 12))
-    f = font("nunito-bold", 20)
+    tw, th = 480, 270
+    rows = (len(tiles) + cols - 1) // cols
+    sheet = Image.new("RGB", (tw * cols, th * rows), (10, 10, 12))
+    f = font("nunito-bold", 17)
     for k, (fp, t, s) in enumerate(tiles):
         try:
-            im = Image.open(fp).convert("RGB").resize((640, 360), Image.LANCZOS)
+            im = Image.open(fp).convert("RGB").resize((tw, th), Image.LANCZOS)
         except Exception:
             continue
         d = ImageDraw.Draw(im)
-        label = f"{int(t // 60):02d}:{t % 60:05.2f}  {s['id']}" + ("  CARD" if s.get("type") == "card" else "")
-        d.rectangle([0, 0, 8 + d.textlength(label, font=f) + 8, 30], fill=(0, 0, 0))
-        d.text((8, 3), label, font=f, fill=(255, 255, 255))
-        sheet.paste(im, ((k % 4) * 640, (k // 4) * 360))
+        tag = {"card": "CARD", "insert": "INSERT", "clone_grid": "GRID"}.get(s.get("type"), "") + ("  STAMP" if s.get("stamp") else "")
+        label = f"{int(t // 60):02d}:{t % 60:05.2f}  {s['id']}  {tag}".rstrip()
+        d.rectangle([0, 0, 8 + d.textlength(label, font=f) + 8, 26], fill=(0, 0, 0))
+        d.text((8, 2), label, font=f, fill=(255, 255, 255))
+        sheet.paste(im, ((k % cols) * tw, (k // cols) * th))
     sheet.save(sheet_path)
     return [dict(shot=s["id"], t=round(t, 2), file=str(fp.relative_to(ROOT))) for fp, t, s in tiles]
 
@@ -287,7 +324,13 @@ def run(pid, video=None, edit_path=None, vault_path=None):
     fps = float(num) / float(den or 1)
     vdur = float(vs.get("duration") or info["format"]["duration"])
     adur = float(as_.get("duration") or info["format"]["duration"]) if as_ else None
-    rep = dict(project=pid, video=str(video), provenance=provenance(edit, vault, fr_id),
+    wl_p = ROOT / f"copycat/projects/{pid}/whitelist.json"
+    wl = {k for k in (load_json(wl_p) or {}) if not k.startswith("_")} if wl_p.exists() else None
+    ovr = load_json(ROOT / f"copycat/projects/{pid}/shot_overrides.json") or {}
+    cfgq = ovr.get("_config", {}) if wl is not None else {}
+    cap = int((cfgq.get("wl") or {}).get("reuse_cap", 4)) if wl is not None else None
+    rep = dict(project=pid, video=str(video),
+               provenance=provenance(edit, vault, fr_id, wl, int(cfgq.get("lock_shots") or 8), cap, float(cfgq.get("lock_seconds", 45)) if wl is not None else 45.0),
                vault_found=bool(vault))
     rep["format"] = dict(width=vs["width"], height=vs["height"], fps=fps, codec=vs["codec_name"], pix_fmt=vs["pix_fmt"],
                          video_dur=vdur, audio_dur=adur, audio_codec=as_ and as_["codec_name"])
@@ -308,14 +351,20 @@ def run(pid, video=None, edit_path=None, vault_path=None):
     gate("non-card shots without asset == 0", P["shots_without_asset"] == 0, P["shots_without_asset"])
     gate("all shot assets resolve in vault", not P["shots_with_asset_missing_from_vault"],
          P["shots_with_asset_missing_from_vault"][:8])
-    gate("anti-repetition (8 shots / 45 s)", P["anti_repetition_violations"] == 0, P["anti_repetition_violations"])
-    gate("real-imagery share (info)", True, P["runtime_share"], hard=False)
+    gate("anti-repetition (45 s between uses of one asset)", P["anti_repetition_violations"] == 0, P["anti_repetition_violations"])
+    if P["whitelist_checked"]:
+        gate("0 non-whitelisted stills / panels / insert backdrops", not P["non_whitelisted"], P["non_whitelisted"][:8])
+        gate("no real asset used more than 4x as a single frame", not P["assets_over_cap"], f"max {P['max_uses_of_one_asset']}")
+        gate("never the same crop twice", P["repeated_crops"] == 0, P["repeated_crops"])
+    gate("0 off-franchise assets", P["off_domain_assets"] == 0, P["off_domain_assets"])
+    gate("provenance split (info): real stills / inserts / grids / cards", True,
+         {k: v for k, v in P["runtime_share"].items() if v}, hard=False)
     gate("format 1920x1080 30fps h264 yuv420p",
          (F["width"], F["height"], round(F["fps"]), F["codec"], F["pix_fmt"]) == (1920, 1080, 30, "h264", "yuv420p"),
          f"{F['width']}x{F['height']} {F['fps']:.2f} {F['codec']} {F['pix_fmt']}")
     if adur is not None:
         gate("A/V duration diff <= 0.05 s", abs(vdur - adur) <= 0.05, round(abs(vdur - adur), 3))
-        gate("integrated loudness -14 +-2 LUFS", A["integrated_lufs"] is not None and abs(A["integrated_lufs"] + 14) <= 2, A["integrated_lufs"])
+        gate("integrated loudness -14 +-1 LUFS", A["integrated_lufs"] is not None and abs(A["integrated_lufs"] + 14) <= 1, A["integrated_lufs"])
         gate("true peak < -1.0 dBTP", A["true_peak_dbtp"] is not None and A["true_peak_dbtp"] < -1.0, A["true_peak_dbtp"])
         gate("no silence >= 2.0 s @ -45 dB", not A["silences"], len(A["silences"]))
         gate("no 0 dBFS clipping", A["peak_db"] is not None and A["peak_db"] < -0.1, A["peak_db"])

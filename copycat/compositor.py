@@ -36,7 +36,7 @@ from .vfx import ACCENTS, Atmosphere, dissolve, flash, seed_of, smoothstep, whip
 
 cv2.setNumThreads(1)
 ROOT = Path(__file__).resolve().parent.parent
-CODE_FILES = ["compositor.py", "vfx.py", "cards.py", "fonts.py", "stamp.py", "inserts.py", "visuals/paper.py"]
+CODE_FILES = ["compositor.py", "vfx.py", "cards.py", "fonts.py", "stamp.py", "inserts.py", "clone_grid.py", "visuals/paper.py"]
 
 SPEAKER_COLORS = {
     "ASTA": (46, 204, 113), "LIEBE": (222, 36, 52), "YUNO": (104, 190, 255),
@@ -140,6 +140,8 @@ def resolve_layout(layout, w, h):
     """depth_frame stays; fill auto-switches to depth_frame for narrow (<1.45:1) or small (<1100px) sources."""
     if layout == "depth_frame":
         return "depth_frame"
+    if layout == "fill_force":                 # editorial override: a tight recrop of a small / narrow frame is the point of the shot
+        return "fill"
     if w / h < 1.45 or w < 1100:
         return "depth_frame"
     return "fill"
@@ -552,9 +554,23 @@ class Grain:
 
 # --------------------------------------------------------------------------- segment rendering
 FADE_IN_F, FADE_OUT_F = 12, 30
+CRF = [17]                      # segment encode quality (--crf); part of every segment's cache key
+
+
+def resolve_grid(shot, vault_index):
+    """clone_grid shot: absolute path of every panel's source frame (panels are copied, the edit stays untouched)."""
+    out = []
+    for p in shot["panels"]:
+        q = ROOT / p["path"] if p.get("path") else ROOT / vault_index[p["asset_id"]]["path"]
+        if not q.exists():
+            raise FileNotFoundError(f"shot {shot.get('id')}: grid panel asset not found ({q})")
+        out.append(dict(p, _abs_path=str(q)))
+    return out
 
 
 def asset_abs(shot, vault_index):
+    if shot.get("type") == "clone_grid":
+        return resolve_grid(shot, vault_index)[0]["_abs_path"]
     if shot.get("type") == "insert":                 # designed insert: the real frame behind the prop
         shot = dict(shot, asset_path=shot.get("bg_path"), asset_id=shot.get("bg_asset_id"))
     p = shot.get("asset_path")
@@ -575,6 +591,9 @@ def make_scene(shot, W, H, fps, vig):
         return CardScene(shot, W, H, fps)
     if shot.get("type") == "insert":
         return InsertScene(shot, W, H, fps, vig)
+    if shot.get("type") == "clone_grid":
+        from .clone_grid import CloneGridScene, NARUTO_RGB
+        return CloneGridScene(shot, W, H, fps, vig, SPEAKER_COLORS.get("NARUTO", NARUTO_RGB))
     return StillScene(shot, W, H, fps, vig)
 
 
@@ -603,6 +622,7 @@ def shot_hash(job):
                          job["prev"] if shot.get("transition_in") == "dissolve" else None],
                         sort_keys=True, default=str).encode())
     h.update(code_stamp().encode())
+    h.update(f"crf{CRF[0]}".encode())
     h.update(json.dumps(sorted(SPEAKER_COLORS.items())).encode())
     return h.hexdigest()[:16]
 
@@ -611,7 +631,7 @@ def ffmpeg_writer(out, W, H, fps, threads):
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(fps), "-i", "-",
            "-vf", "scale=in_range=full:out_range=tv:out_color_matrix=bt709:flags=bicubic+accurate_rnd+full_chroma_int,format=yuv420p",
-           "-c:v", "libx264", "-crf", "17", "-preset", os.environ.get("COPYCAT_PRESET", "faster"),
+           "-c:v", "libx264", "-crf", str(CRF[0]), "-preset", os.environ.get("COPYCAT_PRESET", "faster"),
            "-threads", str(threads), "-pix_fmt", "yuv420p", "-colorspace", "bt709", "-color_primaries", "bt709",
            "-color_trc", "bt709", "-color_range", "tv", "-r", str(fps), "-movflags", "+faststart", str(out)]
     return subprocess.Popen(cmd, stdin=subprocess.PIPE)
@@ -733,6 +753,8 @@ def build_jobs(edit, W, H, outdir, vault, only=None, rng=None, captions=True):
         s = dict(s)
         if s.get("type") != "card":
             s["_abs_path"] = asset_abs(s, vault)
+        if s.get("type") == "clone_grid":
+            s["panels"] = resolve_grid(s, vault)
         if only and s["id"] not in only:
             continue
         if rng and not (s["end"] > rng[0] and s["start"] < rng[1]):
@@ -743,6 +765,8 @@ def build_jobs(edit, W, H, outdir, vault, only=None, rng=None, captions=True):
             prev = dict(shots[k - 1])
             if prev.get("type") != "card":
                 prev["_abs_path"] = asset_abs(prev, vault)
+            if prev.get("type") == "clone_grid":
+                prev["panels"] = resolve_grid(prev, vault)
         t0, t1 = f0 / fps, f1 / fps
         caps = [c for c in caps_all if c["end"] > t0 and c["start"] < t1]
         pt = (f0 - 1) / fps
@@ -993,9 +1017,11 @@ def main(argv=None):
     ap.add_argument("--preview", action="store_true")
     ap.add_argument("--mux", action="store_true")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--crf", type=int, default=17, help="x264 CRF of the picture segments (default 17)")
     ap.add_argument("--no-captions", action="store_true", help="render without burned-in captions (cached separately)")
     ap.add_argument("--make-fixture", action="store_true")
     a = ap.parse_args(argv)
+    CRF[0] = int(a.crf)
     if a.make_fixture:
         make_fixture()
     picture, speed, edit, ok = render_project(a.project_id, a.edit, a.preview,

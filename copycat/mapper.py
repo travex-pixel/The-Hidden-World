@@ -65,7 +65,8 @@ P = dict(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR
          ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
          avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
          time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False,
-         wl=None, wl_cfg=None, extra_inserts={}, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD)
+         wl=None, wl_cfg=None, extra_inserts={}, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD,
+         grid_plan=[], gap_exempt=[], strict_reuse=False, lock_shots=None)
 
 NARUTO_ALIASES = {
     "forbidden_scroll": ("document", "paperwork"), "paperwork": ("document", "letter", "book"), "document": ("paperwork", "letter", "book", "forbidden_scroll"),
@@ -108,7 +109,8 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
              ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
              avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
              time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False,
-             wl=None, wl_cfg=None, extra_inserts={}, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD)
+             wl=None, wl_cfg=None, extra_inserts={}, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD,
+             grid_plan=[], gap_exempt=[], strict_reuse=False, lock_shots=None)
     if fr_id == "naruto":
         P.update(scarce={"kushina", "minato", "tobirama", "kurama", "danzo", "enma", "rin", "obito", "young_kakashi", "orochimaru", "jiraiya", "ibiki", "anko"},
                  young={"young_kakashi": "kakashi"}, atmos=set(), atmos2=set(), nonchar=NARUTO_NONCHAR, speaker_subjects=NARUTO_SPEAKERS,
@@ -131,6 +133,10 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
         P["split_bias"] = float(cfg.get("split_bias", 1.0))
         P["cold_max_shot"] = float(cfg.get("cold_max_shot", MAX_SHOT_COLD))
         P["cold_avg"] = float(cfg.get("cold_avg", 0.0))
+        P["grid_plan"] = cfg.get("grid_plan") or []
+        P["gap_exempt"] = cfg.get("gap_exempt") or []
+        P["strict_reuse"] = bool(cfg.get("strict_reuse", False))
+        P["lock_shots"] = int(cfg.get("lock_shots", 0)) or None
     if cfg.get("lock_seconds"): P["lock_seconds"] = float(cfg["lock_seconds"])
     if cfg.get("avg_shot_s"): P["avg_shot_s"] = float(cfg["avg_shot_s"])
     avoid = {}
@@ -295,6 +301,122 @@ def build_skeleton(script: dict, timing: dict):
     return slots, notes
 
 
+# --------------------------------------------------------------------------- clone grids
+def _beat_spans(script, timing):
+    """beat id -> (picture start, picture end), the same spans build_skeleton uses."""
+    tb = {b["id"]: b for b in timing["beats"]}
+    cards = {c["chapter"]: c for c in timing.get("cards", [])}
+    flat = [(ch, b) for ch in script["chapters"] for b in ch["beats"]]
+    out = {}
+    for i, (ch, b) in enumerate(flat):
+        first = i == 0 or flat[i - 1][0]["id"] != ch["id"]
+        s = 0.0 if i == 0 else (cards[ch["id"]]["end"] if first and ch["id"] in cards else tb[b["id"]]["start"])
+        if i + 1 < len(flat):
+            nch, nb = flat[i + 1]
+            e = cards[nch["id"]]["start"] if nch["id"] != ch["id"] and nch["id"] in cards else tb[nb["id"]]["start"]
+        else:
+            e = timing["duration"]
+        out[b["id"]] = (s, e)
+    return out
+
+
+def _expand(rng_s, order):
+    a, _, b = rng_s.partition("..")
+    i0 = order.index(a)
+    i1 = order.index(b) if b else i0
+    return order[min(i0, i1):max(i0, i1) + 1]
+
+
+GRID_KINDS = {"g2": (2, "split"), "g3": (3, "grid"), "g4": (4, "grid"), "g6": (6, "grid"), "g9": (9, "grid"), "g16z": (16, "mosaic")}
+
+
+def apply_grid_plan(slots, script, timing, plan_cfg):
+    """Re-cut the listed beat runs into clone-grid shots and real-frame shots.
+
+    ``grid_plan``: [{"cuts": [{"k": "g9" | "g2" | "g3" | "g4" | "g6" | "g16z" | "real", "b": "b105" | "b105..b107",
+    "f": [0.0, 0.5]  (optional fraction of the beat range)}, ...]}, ...]  The cuts of one run must tile the run; designed
+    inserts inside the run stay where they are.  Cut slots inside a run are replaced (a slot that straddles the run's edge is an error)."""
+    if not plan_cfg:
+        return slots
+    order = [b["id"] for ch in script["chapters"] for b in ch["beats"]]
+    beats = {b["id"]: (ch, b) for ch in script["chapters"] for b in ch["beats"]}
+    tb = {b["id"]: b for b in timing["beats"]}
+    spans = _beat_spans(script, timing)
+    for run in plan_cfg:
+        ents = []
+        for e in run["cuts"]:
+            ids = _expand(e["b"], order)
+            a, z = spans[ids[0]][0], spans[ids[-1]][1]
+            f0, f1 = e.get("f", [0.0, 1.0])
+            ents.append(dict(e, ids=ids, a=a + f0 * (z - a), z=a + f1 * (z - a)))
+        T0, T1 = min(e["a"] for e in ents), max(e["z"] for e in ents)
+        for sl in slots:                                   # a slot that overhangs the run by a hair (merged short beats) is absorbed
+            if sl["type"] in ("cut", "grid"):
+                if sl["start"] < T0 - 1e-6 and sl["end"] > T0 + 1e-6 and T0 - sl["start"] <= 0.6:
+                    ents[0]["a"] = T0 = sl["start"]
+                if sl["start"] < T1 - 1e-6 and sl["end"] > T1 + 1e-6 and sl["end"] - T1 <= 0.6:
+                    ents[-1]["z"] = T1 = sl["end"]
+        for x, y in zip(ents, ents[1:]):
+            if 1e-6 < abs(x["z"] - y["a"]) <= 0.15:
+                y["a"] = x["z"]
+            if abs(x["z"] - y["a"]) > 1e-6:
+                raise ValueError(f"grid_plan: cuts {x['b']} and {y['b']} do not tile the run ({x['z']:.2f} vs {y['a']:.2f})")
+        keep, old, ins = [], [], []
+        for sl in slots:
+            if sl["type"] == "insert" and sl["start"] >= T0 - 1e-6 and sl["end"] <= T1 + 1e-6:
+                ins.append(sl)
+            elif sl["type"] in ("cut", "grid") and sl["start"] >= T0 - 1e-6 and sl["end"] <= T1 + 1e-6:
+                old.append(sl)
+            elif sl["start"] < T1 - 1e-6 and sl["end"] > T0 + 1e-6 and sl["type"] != "card":
+                if not (sl["type"] == "insert"):
+                    raise ValueError(f"grid_plan: slot {sl.get('beat_id')} {sl['start']:.2f}-{sl['end']:.2f} straddles the run {T0:.2f}-{T1:.2f}")
+                keep.append(sl)
+            else:
+                keep.append(sl)
+        count, new = {}, []
+        for e in ents:
+            pieces = [(e["a"], e["z"])]
+            for sl in ins:
+                out = []
+                for a, z in pieces:
+                    if sl["end"] <= a + 1e-6 or sl["start"] >= z - 1e-6:
+                        out.append((a, z))
+                        continue
+                    if sl["start"] > a + 1e-6:
+                        out.append((a, sl["start"]))
+                    if sl["end"] < z - 1e-6:
+                        out.append((sl["end"], z))
+                pieces = out
+            for a, z in pieces:
+                if z - a < 0.2:
+                    continue
+                ov = [(i, min(z, spans[i][1]) - max(a, spans[i][0])) for i in order if min(z, spans[i][1]) > max(a, spans[i][0]) + 1e-6]
+                bid = max(ov, key=lambda q: q[1])[0] if e["k"] == "real" or True else None
+                ch, b = beats[bid]
+                ci = count.get(bid, 0)
+                count[bid] = ci + 1
+                also = [dict(speaker=beats[i][1]["speaker"], text=beats[i][1]["text"], id=i) for i, _ in ov if i != bid]
+                at_start = abs(a - spans[bid][0]) < 1e-6
+                sl = dict(type="cut", start=a, end=z, chapter=ch["id"], beat=b, beat_id=bid, cut_index=ci, sub=0,
+                          spec=b["visuals"][0], first=at_start, last_of_ch=False,
+                          prev_beat=beats[order[order.index(bid) - 1]][1] if order.index(bid) else None,
+                          stamp=b.get("stamp") if at_start else None, after_card=False)
+                if also:
+                    sl["also"] = also
+                if e["k"] != "real":
+                    if sl["stamp"]:
+                        raise ValueError(f"grid_plan: {bid} carries a CANON stamp; keep its shot a real frame")
+                    n, mode = GRID_KINDS[e["k"]]
+                    sl.update(type="grid", grid=dict(n=n, mode=mode),
+                              beats=[dict(id=i, speaker=beats[i][1]["speaker"], start=max(a, tb[i]["start"]), end=min(z, tb[i]["end"])) for i, _ in ov])
+                new.append(sl)
+        cover = sum(sl["end"] - sl["start"] for sl in new) + sum(sl["end"] - sl["start"] for sl in ins)
+        if abs(cover - (T1 - T0)) > 1e-3:
+            raise ValueError(f"grid_plan: run {T0:.2f}-{T1:.2f} not fully covered ({cover:.2f}s)")
+        slots = sorted(keep + ins + new, key=lambda q: q["start"])
+    return slots
+
+
 # --------------------------------------------------------------------------- scoring
 class Scorer:
     def __init__(self, assets):
@@ -408,7 +530,7 @@ def acceptable(sem, score):
 class Assigner:
     def __init__(self, slots, assets, scorer, pinned):
         self.slots, self.assets, self.sc = slots, assets, scorer
-        self.lock_shots = LOCK_SHOTS
+        self.lock_shots = int(P.get("lock_shots") or LOCK_SHOTS)
         self.cuts = [i for i, s in enumerate(slots) if s["type"] == "cut"]
         self.by_id = {a["id"]: a for a in assets}
         self.cand = {}
@@ -446,14 +568,15 @@ class Assigner:
             self.uses.setdefault(aid, set()).add(i)
 
     def feasible(self, i, aid):
+        ex = getattr(self, "exempt", ())
         for j in self.uses.get(aid, ()):
-            if j == i:
+            if j == i or (i in ex and j in ex):
                 continue
             if abs(j - i) < self.lock_shots or abs(self.slots[j]["start"] - self.slots[i]["start"]) < P["lock_seconds"]:
                 return False
         for b in self.near.get(aid, ()):
             for j in self.uses.get(b, ()):
-                if j != i and abs(j - i) < NEAR_GAP:
+                if j != i and abs(j - i) < NEAR_GAP and not (i in ex and j in ex):
                     return False
         others = len(self.uses.get(aid, ())) - (1 if i in self.uses.get(aid, ()) else 0)
         return others < self.cap.get(aid, REUSE_CAP)
@@ -527,7 +650,7 @@ class Assigner:
 
 def _relax_fill(self):
     """Whitelist mode: a slot nothing fits well still gets the least-bad approved frame (shown as WEAK in the report)."""
-    for level in (1, 2, 3, 4, 5):
+    for level in ((1, 2, 3) if P.get("strict_reuse") else (1, 2, 3, 4, 5)):
         P["wl"].relax = min(level, 3)
         if level == 5:
             P["lock_seconds"] = 6.0
@@ -719,12 +842,67 @@ def pick_backgrounds(slots, assign, assets, overrides):
     return out
 
 
-def build_shots(slots, assign, by_id, overrides, bgs=None, wlmap=None):
+def build_grid_shot(sid, sl, ov, by_id, rng_seed, used):
+    """One clone_grid shot: panels chosen from the whitelist for this scene's time of day, speaker highlights from the beats."""
+    import random
+    from . import clone_grid as cg
+    wl = P["wl"]
+    if wl is None:
+        raise ValueError("clone grids need whitelist mode")
+    ctx = wl.ctx(sl["chapter"], sl["beat_id"])
+    t = ctx.get("time")
+    tctx = "night" if t == "night" else ("lamp" if t == "lamp" else "day")
+    bids = [b["id"] for b in sl.get("beats", [])] or [sl["beat_id"]]
+    ok = lambda L: all(wl.only_ok(L, b) for b in bids)
+    rng = random.Random(f"{rng_seed}:{sid}:{sl['beat_id']}:{sl['cut_index']}")
+    D = sl["end"] - sl["start"]
+    n, mode = sl["grid"]["n"], sl["grid"]["mode"]
+    if mode == "mosaic":
+        pl = cg.plan_mosaic(tctx, wl.labels, ok, rng, used, D)
+    else:
+        pl = cg.plan(n, mode, tctx, wl.labels, ok, rng, used)
+        cg.schedule_pops(pl["panels"], pl["naruto"], D, rng)
+    panels = pl["panels"]
+    for p_ in panels:
+        p_["path"] = by_id[p_["asset_id"]]["path"]
+    ni = pl["naruto"]
+    clones = [i for i in range(min(len(panels), n if mode != "mosaic" else 16)) if i != ni]
+    hl, ci = [], rng.randrange(len(clones)) if clones else 0
+    for b in sl.get("beats", []):
+        if b["speaker"] == "NARUTO":
+            hl.append(dict(t0=round(b["start"] - sl["start"], 3), t1=round(b["end"] - sl["start"], 3), panel=ni))
+        elif b["speaker"] == "CLONE" and clones:
+            hl.append(dict(t0=round(b["start"] - sl["start"], 3), t1=round(b["end"] - sl["start"], 3), panel=clones[ci % len(clones)]))
+            ci += 1
+    grid = dict(mode=mode, n=n, tilt=rng.choice([-1.6, 1.3, -1.1, 1.7]), hl=hl, naruto_panel=ni)
+    g = None
+    for p_ in panels:
+        g = p_.get("grade") or g
+    if g:
+        grid["grade"] = g
+    if mode == "mosaic":
+        grid.update(zoom_to=0.52, drift=[0, 80])
+    if ov.get("grid"):
+        grid.update(ov["grid"])
+    return grid, panels
+
+
+def build_shots(slots, assign, by_id, overrides, bgs=None, wlmap=None, seed="grid"):
     shots, prev_cam = [], None
     bgs = bgs or {}
     wlmap = wlmap or {}
+    gused = {}
     for n, sl in enumerate(slots):
         sid = f"s{n + 1:03d}"
+        if sl["type"] == "grid":
+            key = f"{sl['beat_id']}#{sl['cut_index']}"
+            grid, panels = build_grid_shot(sid, sl, overrides.get(key, {}), by_id, seed, gused)
+            shots.append(dict(id=sid, start=round(sl["start"], 3), end=round(sl["end"], 3), type="clone_grid", asset_id=None, asset_path=None,
+                              layout="clone_grid", focus=[0.5, 0.4], camera="slow_push_in", vfx=[], transition_in=overrides.get(key, {}).get("transition_in", "cut"),
+                              treatment="anime", accent=None, beat_id=sl["beat_id"], speaker=sl["beat"]["speaker"], chapter=sl["chapter"],
+                              card=None, grid=grid, panels=panels, provenance="clone_grid", **_stamp(sl), _key=key, _slot=n))
+            prev_cam = "slow_push_in"
+            continue
         if sl["type"] == "card":
             shots.append(dict(id=sid, start=round(sl["start"], 3), end=round(sl["end"], 3), type="card", asset_id=None,
                               asset_path=None, layout="fill", focus=[0.5, 0.4], camera="slow_push_in", vfx=[],
@@ -912,7 +1090,7 @@ def violations(shots):
             continue
         if aid in last:
             pk, pt = last[aid]
-            if k - pk < LOCK_SHOTS or s["start"] - pt < LOCK_SECONDS:
+            if (k - pk < int(P.get("lock_shots") or LOCK_SHOTS) or s["start"] - pt < LOCK_SECONDS) and not (s.get("lock_exempt") and shots[pk].get("lock_exempt")):
                 bad.append(dict(asset=aid, shot=s["id"], gap_shots=k - pk, gap_s=round(s["start"] - pt, 1)))
         last[aid] = (k, s["start"])
     return bad
@@ -944,11 +1122,12 @@ def run(pid, estimate=False, write=True):
     for st in timing.get("stamps") or []:
         STAMP_TIMES[st["beat"]] = float(st["time"])
     slots, notes = build_skeleton(script, timing)
+    slots = apply_grid_plan(slots, script, timing, P.get("grid_plan") or [])
     key_slot = {}
     for i, s in enumerate(slots):
         if s["type"] == "cut":
             key_slot[f"{s['beat_id']}#{s['cut_index']}" + (f".{s['sub']}" if s["sub"] else "")] = i
-        elif s["type"] == "insert":
+        elif s["type"] in ("insert", "grid"):
             key_slot[f"{s['beat_id']}#{s['cut_index']}"] = i
     warnings, pinned = [], {}
     for k, ov in overrides.items():
@@ -956,8 +1135,8 @@ def run(pid, estimate=False, write=True):
             warnings.append(f"override {k}: no such cut")
             continue
         aid = ov.get("asset_id")
-        if aid and slots[key_slot[k]]["type"] == "insert":
-            warnings.append(f"override {k}: insert shots take 'bg', not 'asset_id'")
+        if aid and slots[key_slot[k]]["type"] in ("insert", "grid"):
+            warnings.append(f"override {k}: insert / grid shots take 'bg' / 'grid', not 'asset_id'")
         elif aid:
             if aid not in by_id:
                 warnings.append(f"override {k}: asset {aid} not in gate-approved vault")
@@ -965,6 +1144,9 @@ def run(pid, estimate=False, write=True):
                 pinned[key_slot[k]] = aid
     scorer = Scorer(assets)
     A = Assigner(slots, assets, scorer, {})
+    order_ids = [b["id"] for ch in script["chapters"] for b in ch["beats"]]
+    ex_beats = {i for r_ in P.get("gap_exempt") or [] for i in _expand(r_, order_ids)}
+    A.exempt = {i for i, sl in enumerate(slots) if sl["type"] == "cut" and sl["beat_id"] in ex_beats}
     # pins validated against the lock in slot order
     for i in sorted(pinned):
         aid = pinned[i]
@@ -992,7 +1174,10 @@ def run(pid, estimate=False, write=True):
     assign = A.assign
     bgs = pick_backgrounds(slots, assign, assets, overrides)
     wlmap = wl.assign_crops(slots, assign, by_id) if wl else {}
-    shots = build_shots(slots, assign, by_id, overrides, bgs, wlmap)
+    shots = build_shots(slots, assign, by_id, overrides, bgs, wlmap, pid)
+    for i_ in A.exempt:
+        if shots[i_].get("asset_id"):
+            shots[i_]["lock_exempt"] = True
     shots = finish_shots(shots, slots, overrides)
     edit = dict(id=pid, width=1920, height=1080, fps=30, duration=timing["duration"], shots=shots,
                 captions=build_captions(script, timing))
@@ -1024,8 +1209,9 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
     real = sum(s["end"] - s["start"] for s in stills if s["asset_id"] and by_id[s["asset_id"]].get("source") != "generated")
     cardt = sum(s["end"] - s["start"] for s in shots if s["type"] == "card")
     ln = lambda L: round(sum(s["end"] - s["start"] for s in L) / len(L), 2) if L else None
+    grids = [s for s in shots if s["type"] == "clone_grid"]
     chap = {}
-    for s in stills + inserts:
+    for s in stills + inserts + grids:
         chap.setdefault(s["chapter"], []).append(s)
     weak, unmatched, spk = [], [], []
     for n, sl in enumerate(slots):
@@ -1063,13 +1249,21 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
                         night_graded=sum(1 for s_ in stills if s_.get("grade") == "night"),
                         lamp_graded=sum(1 for s_ in stills if s_.get("grade") == "interior_lamp"),
                         tight_crops=sum(1 for s_ in stills if (s_.get("crop") or {}).get("zoom", 1) > 1.3))
+    if grids:
+        by_n = {}
+        for s in grids:
+            k_ = "mosaic16" if s["grid"]["mode"] == "mosaic" else f"{s['grid']['n']}{'split' if s['grid']['mode'] == 'split' else ''}"
+            by_n[k_] = round(by_n.get(k_, 0) + s["end"] - s["start"], 1)
+        wl_extra.update(clone_grids=len(grids), pct_runtime_clone_grid=round(100 * sum(s["end"] - s["start"] for s in grids) / tot, 1),
+                        clone_grid_seconds_by_size=by_n, clone_grid_panels=sum(len(s["panels"]) for s in grids),
+                        non_whitelisted_grid_panels=sorted({p_["asset_id"] for s in grids for p_ in s["panels"]} - set(P["wl"].labels)) if P["wl"] else [])
     extra = dict(inserts=len(inserts), pct_runtime_designed_insert=round(100 * ins_t / tot, 1), insert_seconds_by_type=ins_types,
                  insert_bg_max_reuse=max(bg_uses.values())) if inserts else {}
     return dict(shots=len(shots), cards=sum(1 for s in shots if s["type"] == "card"), **extra, vault_assets=vault_n, usable_assets=usable,
                 unique_assets=len(uses), max_uses_of_one_asset=max(uses.values()) if uses else 0,
                 assets_used_3x=sum(1 for v in uses.values() if v >= 3),
                 repetition_violations=len(viol), repetition_detail=viol[:10],
-                avg_cut_s=ln(stills + inserts), avg_cut_first30s=ln([s for s in stills + inserts if s["start"] < 30]),
+                avg_cut_s=ln(stills + inserts + grids), avg_cut_first30s=ln([s for s in stills + inserts + grids if s["start"] < 30]),
                 avg_cut_per_chapter={k: ln(v) for k, v in chap.items()},
                 pct_runtime_real_stills=round(100 * real / tot, 1), pct_runtime_cards=round(100 * cardt / tot, 1),
                 weak_matches=weak, unmatched_cuts=unmatched, speaker_unmet=spk, warnings=warnings + notes,

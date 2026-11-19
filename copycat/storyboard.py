@@ -40,6 +40,8 @@ def _frame(img, layout, focus, w, h, zoom, grade):
     img = img.convert("RGB")
     iw, ih = img.size
     fx, fy = focus
+    from .compositor import resolve_layout       # show what the compositor will really render (small / narrow frames fall back to depth_frame)
+    layout = resolve_layout(layout, iw, ih)
     if layout == "fill":
         tr = w / h
         if iw / ih > tr:
@@ -90,6 +92,23 @@ def insert_cell(s, w=CW, h=CH):
     except Exception as e:                              # pragma: no cover
         im = Image.new("RGB", (w, h), (40, 40, 60))
         ImageDraw.Draw(im).text((10, 10), f"insert render failed: {e}"[:60], fill=(255, 120, 120))
+        return im
+
+
+def grid_cell(s, w=CW, h=CH):
+    """Thumbnail of a clone_grid shot with every panel popped in (rendered by the real scene), speaker highlight of the first line on."""
+    try:
+        from .clone_grid import CloneGridScene
+        from .compositor import make_vignette, resolve_grid
+        sh = dict(s, panels=resolve_grid(s, {}))
+        sh["_abs_path"] = sh["panels"][0]["_abs_path"]
+        sc = CloneGridScene(sh, w, h, 30, make_vignette(w, h))
+        n = max(2, int(round((s["end"] - s["start"]) * 30)))
+        i = max(0, n - 6)
+        return Image.fromarray(sc.frame(i, n))
+    except Exception as e:                              # pragma: no cover
+        im = Image.new("RGB", (w, h), (40, 40, 60))
+        ImageDraw.Draw(im).text((10, 10), f"grid render failed: {e}"[:60], fill=(255, 120, 120))
         return im
 
 
@@ -148,6 +167,10 @@ def main(argv=None):
             if s["type"] == "card":
                 cell = Image.new("RGB", (CW, CH), (30, 10, 14))
                 ImageDraw.Draw(cell).text((20, 110), f"CARD {s['card']['numeral']}  {s['card']['title']}", fill=(240, 220, 200), font=f1)
+            elif s["type"] == "clone_grid":
+                cell = grid_cell(s)
+                ImageDraw.Draw(cell).rectangle([0, 0, 118, 16], fill=(20, 20, 20))
+                ImageDraw.Draw(cell).text((4, 2), f"GRID {s['grid']['n']} {s['grid']['mode']}", fill=(255, 200, 80), font=f2)
             elif s["type"] == "insert":
                 cell = insert_cell(s)
                 ImageDraw.Draw(cell).rectangle([0, 0, 150, 16], fill=(20, 20, 20))
