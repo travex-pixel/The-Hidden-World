@@ -59,11 +59,17 @@ Narration voices: Kokoro-82M (Apache-2.0). Fonts: Anton, Bebas Neue, Barlow Cond
             "audio": {"narration": {"engine": "Kokoro-82M v1.0 ONNX (Apache-2.0)", "voices": proj["voice"]}, "music": "procedural score (copycat/score.py), composed for this video", "sfx": "procedural (copycat/score.py)", "mix": {k: audio[k] for k in ("sections",) if k in audio} and f"{len(audio.get('sections', []))} music sections, {len(audio.get('sfx', []))} sfx events"},
             "fonts": "SIL OFL 1.1 (assets/fonts/copycat)", "reference": proj.get("reference"), "qaPassed": qa and qa["passed"]}
     (pk / "provenance.json").write_text(json.dumps(prov, indent=1, ensure_ascii=False))
-    master = out / f"{pid}.mp4"; share = pk / f"{pid}_720p.mp4"
-    if master.exists() and (not share.exists() or share.stat().st_mtime < master.stat().st_mtime):
+    master = out / f"{pid}.mp4"
+    if master.exists():
         import subprocess
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(master), "-vf", "scale=1280:720:flags=lanczos", "-c:v", "libx264", "-preset", "medium", "-crf", "23",
-                        "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", str(share)], check=True)
+        dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(master)], capture_output=True, text=True).stdout)
+        # deliverables must fit a 500 MiB attachment limit: cap the 1080p video bitrate to ~94% of that budget
+        cap = max(2.0, min(10.0, 470 * 8 * 1.048576 / dur - 0.2))
+        for name, extra in ((f"{pid}_1080p.mp4", ["-crf", "20", "-maxrate", f"{cap:.2f}M", "-bufsize", f"{2 * cap:.2f}M", "-c:a", "copy"]),
+                            (f"{pid}_720p.mp4", ["-vf", "scale=1280:720:flags=lanczos", "-crf", "23", "-c:a", "aac", "-b:a", "160k"])):
+            dst = pk / name
+            if not dst.exists() or dst.stat().st_mtime < master.stat().st_mtime:
+                subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(master), "-c:v", "libx264", "-preset", "medium", "-pix_fmt", "yuv420p", *extra, "-movflags", "+faststart", str(dst)], check=True)
     print(f"[package] wrote {pk}"); return pk
 
 
