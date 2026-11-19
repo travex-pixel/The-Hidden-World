@@ -45,13 +45,17 @@ END_PREFIX = "Last time, I was fifteen years late"
 
 
 # ---------------------------------------------------------------- selection maths
-def select_segments(beats, endcard=ENDCARD, lo=MIN_TOTAL, hi=MAX_TOTAL, chapter_a="cold_open",
-                    chapter_b="ch2", start_prefix=START_PREFIX, end_prefix=END_PREFIX):
-    """Return dict(segments=[(start,end),(start,end)], total, endcard, exchange=(first_id,last_id)).
+TARGET_TOTAL = 57.0              # cold open + exchange + end card
+WITH_PREFIX = "To sit here for a minute"
 
-    Segment A = 0 .. end of the last cold-open beat (+ POST).  Segment B = the exchange beats, cut on
-    beat boundaries; if A+B+endcard exceeds hi-SAFETY the exchange is trimmed from its start (whole
-    beats), if below lo it is extended forward."""
+
+def select_segments(beats, endcard=ENDCARD, lo=MIN_TOTAL, hi=MAX_TOTAL, chapter_a="cold_open",
+                    chapter_b="ch2", start_prefix=START_PREFIX, end_prefix=END_PREFIX,
+                    with_prefix=WITH_PREFIX, target=TARGET_TOTAL):
+    """Adaptive selection from the live timing.  Segment A = whole cold open (+POST).  Segment B starts
+    at the 'Why are you not afraid' beat and runs forward on beat boundaries: it ends on 'With my
+    brother.' if A+B+endcard <= target, else on 'Last time, I was fifteen years late.' if that fits,
+    else on the furthest beat that fits.  If still < lo it is extended forward.  Never exceeds hi."""
     beats = sorted(beats, key=lambda b: b["start"])
     cold = [b for b in beats if b["chapter"] == chapter_a]
     if not cold:
@@ -60,42 +64,48 @@ def select_segments(beats, endcard=ENDCARD, lo=MIN_TOTAL, hi=MAX_TOTAL, chapter_
     nxt = [b for b in beats if b["start"] > cold[-1]["end"]]
     if nxt:
         a_end = min(a_end, nxt[0]["start"] - 0.02)
-    a_len = a_end
     ch = [b for b in beats if b["chapter"] == chapter_b]
     if not ch:
         raise ValueError(f"no beats in {chapter_b}")
-    budget = hi - SAFETY - endcard - a_len
+    cap = min(target, hi - SAFETY)
+    budget = cap - endcard - a_end
 
     def span(i, j):
         return (ch[j]["end"] + POST) - (ch[i]["start"] - PRE)
 
-    i0 = next((k for k, b in enumerate(ch) if b["text"].startswith(start_prefix)), None)
-    i1 = next((k for k, b in enumerate(ch) if b["text"].startswith(end_prefix)), None)
-    if i0 is None or i1 is None or i1 < i0:
-        # fallback: densest ASTA/LIEBE alternation that fits the budget
+    def find(prefix):
+        return next((k for k, b in enumerate(ch) if b["text"].startswith(prefix)), None)
+
+    i0, i_last, i_with = find(start_prefix), find(end_prefix), find(with_prefix)
+    if i0 is None:  # fallback: densest ASTA/LIEBE alternation that fits
         best = None
         for i in range(len(ch)):
             for j in range(i, len(ch)):
                 if span(i, j) > budget:
                     break
                 sp = [b["speaker"] for b in ch[i:j + 1]]
-                sw = sum(1 for a, b in zip(sp, sp[1:]) if {a, b} == {"ASTA", "LIEBE"})
-                key = (sw, span(i, j))
-                if best is None or key > best[0]:
-                    best = (key, i, j)
-        if best is None:
-            i0 = i1 = 0
-        else:
-            _, i0, i1 = best
-    while span(i0, i1) > budget and i0 < i1:          # trim from the start
-        i0 += 1
-    while a_len + span(i0, i1) + endcard < lo and i1 < len(ch) - 1:   # extend forward
+                sw = sum(1 for x, y in zip(sp, sp[1:]) if {x, y} == {"ASTA", "LIEBE"})
+                if best is None or (sw, span(i, j)) > best[0]:
+                    best = ((sw, span(i, j)), i, j)
+        i0, i1 = (0, 0) if best is None else (best[1], best[2])
+    else:
+        i1 = None
+        for c in (i_with, i_last):
+            if c is not None and c >= i0 and span(i0, c) <= budget:
+                i1 = c
+                break
+        if i1 is None:
+            i1 = i0
+            while i1 + 1 < len(ch) and span(i0, i1 + 1) <= budget:
+                i1 += 1
+    hard = hi - SAFETY - endcard - a_end
+    while a_end + span(i0, i1) + endcard < lo and i1 < len(ch) - 1 and span(i0, i1 + 1) <= hard:
         i1 += 1
     b_start = max(ch[i0]["start"] - PRE, a_end)
     b_end = ch[i1]["end"] + POST
     if i1 + 1 < len(ch):
         b_end = min(b_end, ch[i1 + 1]["start"] - 0.02)
-    total = a_len + (b_end - b_start) + endcard
+    total = a_end + (b_end - b_start) + endcard
     return dict(segments=[(0.0, a_end), (b_start, b_end)], total=total, endcard=endcard,
                 exchange=(ch[i0]["id"], ch[i1]["id"]))
 
@@ -118,27 +128,33 @@ def chunk_words(words, max_words=4):
     return out
 
 
+def beat_chunks(text):
+    """Sentence-first chunking: split on . ? ! then 2-4 word chunks inside each sentence."""
+    out = []
+    for sent in re.split(r"(?<=[.?!])\s+", text.strip()):
+        out += [" ".join(c) for c in chunk_words(sent.split())]
+    return out
+
+
 def caption_events(beats, seg_start, seg_end):
-    """Word-chunk events (local time, speaker, text) for one segment; each beat's words are spread
-    evenly over its duration, chunks get time in proportion to their word count."""
+    """Word-chunk events (local time, speaker, text) for one segment; a beat's duration is shared
+    between its chunks in proportion to character count; chunks never straddle a sentence."""
     ev = []
     for b in beats:
         if b["end"] <= seg_start or b["start"] >= seg_end:
             continue
-        words = b["text"].split()
-        if not words:
+        chunks = beat_chunks(b["text"])
+        if not chunks:
             continue
+        tot = sum(len(c) for c in chunks)
         dur = b["end"] - b["start"]
-        per = dur / len(words)
-        p = 0
-        for ch in chunk_words(words):
-            s = b["start"] + p * per
-            e = b["start"] + (p + len(ch)) * per
-            p += len(ch)
-            s, e = max(s, seg_start), min(e, seg_end)
-            if e - s > 0.02:
-                ev.append(dict(start=s - seg_start, end=e - seg_start, speaker=b["speaker"],
-                               text=" ".join(ch)))
+        t = b["start"]
+        for c in chunks:
+            e = t + dur * len(c) / tot
+            s0, e0 = max(t, seg_start), min(e, seg_end)
+            if e0 - s0 > 0.02:
+                ev.append(dict(start=s0 - seg_start, end=e0 - seg_start, speaker=b["speaker"], text=c))
+            t = e
     return ev
 
 
