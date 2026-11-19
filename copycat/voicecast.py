@@ -326,6 +326,30 @@ def _shimmer(x: np.ndarray, echo: np.ndarray, gain_db: float, sr: int) -> np.nda
 
 # ----------------------------------------------------------------------------- one line
 
+WPM_RETRY_LOW, WPM_RETRY_HIGH, WPM_AIM_LOW, WPM_AIM_HIGH = 120.0, 220.0, 135.0, 200.0
+
+
+def _raw48(text: str, entry: dict) -> np.ndarray:
+    """TTS -> 48 kHz, silences compressed, edges trimmed. Re-synthesises with an adjusted length_scale when the line's
+    speed is an outlier (Piper's duration sampling can make a short line unnaturally fast or slow)."""
+    words = len(clean_text(text).split())
+    best, best_err = None, 1e9
+    e = dict(entry)
+    for attempt in range(4):
+        x, sr = _tts_raw(text, e)
+        x = sg.resample_poly(x, SR // np.gcd(SR, sr), sr // np.gcd(SR, sr)).astype(np.float32) if sr != SR else x
+        x = trim_edges(compress_silences(x))
+        wpm = words / (len(x) / SR) * 60 if len(x) else 999
+        err = 0.0 if WPM_RETRY_LOW <= wpm <= WPM_RETRY_HIGH else abs(np.log(wpm / 165))
+        if best is None or err < best_err:
+            best, best_err = x, err
+        if err == 0.0 or words < 3:
+            break
+        aim = WPM_AIM_LOW if wpm < WPM_RETRY_LOW else WPM_AIM_HIGH
+        e["length_scale"] = float(np.clip(e["length_scale"] * wpm / aim, 0.7, 2.2))
+    return best
+
+
 def _key(text: str, entry: dict, final: bool) -> str:
     blob = json.dumps({"t": clean_text(text), "e": {k: v for k, v in entry.items() if k != "pan"}, "f": final, "v": CODE_VERSION}, sort_keys=True)
     return hashlib.sha1(blob.encode()).hexdigest()[:20]
@@ -338,10 +362,7 @@ def synth_line(text: str, entry: dict, final: bool = False, use_cache: bool = Tr
     if use_cache and f.exists():
         z = np.load(f)
         return z["x"], int(z["dry"])
-    x, sr = _tts_raw(text, entry)
-    x = sg.resample_poly(x, SR // np.gcd(SR, sr), sr // np.gcd(SR, sr)).astype(np.float32) if sr != SR else x
-    x = compress_silences(x)
-    x = trim_edges(x)
+    x = _raw48(text, entry)
     x = pitch_shift(x, entry.get("pitch_semitones", 0.0), SR, entry.get("formant", "preserved"))
     dry_fx = [f_ for f_ in entry.get("fx", []) if f_["type"] not in ("octave_down", "slapback", "reverb", "shimmer")]
     tail_fx = [f_ for f_ in entry.get("fx", []) if f_["type"] in ("octave_down", "slapback", "reverb", "shimmer")]

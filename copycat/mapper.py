@@ -582,7 +582,7 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
                                   want=sl["spec"].get("subjects"), query=sl["spec"].get("query")))
             continue
         sc, sem = A.sc.score(sl, by_id[aid])
-        if sc < WEAK_SCORE:
+        if sc < WEAK_SCORE and n not in A.pinned:      # editorial pins are not 'weak'
             weak.append(dict(shot=sh["id"], beat=f"{sl['beat_id']}#{sl['cut_index']}", asset=aid, score=round(sc, 1),
                              want=sl["spec"].get("subjects")))
         allowed = SPEAKER_SUBJECTS.get(sl["beat"]["speaker"])
