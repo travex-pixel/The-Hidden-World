@@ -861,7 +861,6 @@ def build_grid_shot(sid, sl, ov, by_id, rng_seed, used):
         pl = cg.plan_mosaic(tctx, wl.labels, ok, rng, used, D)
     else:
         pl = cg.plan(n, mode, tctx, wl.labels, ok, rng, used)
-        cg.schedule_pops(pl["panels"], pl["naruto"], D, rng)
     panels = pl["panels"]
     for p_ in panels:
         p_["path"] = by_id[p_["asset_id"]]["path"]
@@ -874,6 +873,8 @@ def build_grid_shot(sid, sl, ov, by_id, rng_seed, used):
         elif b["speaker"] == "CLONE" and clones:
             hl.append(dict(t0=round(b["start"] - sl["start"], 3), t1=round(b["end"] - sl["start"], 3), panel=clones[ci % len(clones)]))
             ci += 1
+    if mode != "mosaic":                                  # the panel of the first speaker pops first, so the line is never voiced by a panel not yet on the page
+        cg.schedule_pops(panels, hl[0]["panel"] if hl else ni, D, rng)
     grid = dict(mode=mode, n=n, tilt=rng.choice([-1.6, 1.3, -1.1, 1.7]), hl=hl, naruto_panel=ni)
     g = None
     for p_ in panels:

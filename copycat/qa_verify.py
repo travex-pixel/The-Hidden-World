@@ -270,7 +270,8 @@ def pick_frames(edit, n=32):
         idx = np.linspace(0, len(pool) - 1, rest + 6).round().astype(int)
         for i in idx:
             s = pool[int(i)]
-            add((s["start"] + s["end"]) / 2, s)
+            if all(s is not q for _, q in picks):                 # one look per shot while there are still shots to show
+                add((s["start"] + s["end"]) / 2, s)
     if len(picks) < n:                                   # short programme: extra looks at the longest shots
         for s in sorted(content, key=lambda s: s["start"] - s["end"]):
             add(s["start"] + 0.2 * (s["end"] - s["start"]), s)
