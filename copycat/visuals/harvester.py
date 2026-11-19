@@ -88,7 +88,8 @@ def get(url, params=None, tries=5, min_gap=0.26, **kw):
     raise RuntimeError("unreachable")
 
 
-def api(params, refresh=False, base=API):
+def api(params, refresh=False, base=None):
+    base = base or API
     p = {"format": "json", "formatversion": "2", **params}
     if base != API: p["_base"] = base
     f = RAW / ("api_" + hashlib.sha1(json.dumps(p, sort_keys=True).encode()).hexdigest()[:20] + ".json")
@@ -99,7 +100,7 @@ def api(params, refresh=False, base=API):
     return d
 
 
-def api_all(params, refresh=False, base=API):
+def api_all(params, refresh=False, base=None):
     """Follow `continue`, merging pages by pageid. Returns list of page dicts (generator queries) or raw lists."""
     pages, extra, cont = {}, [], {}
     while True:
@@ -143,7 +144,7 @@ def discover(refresh):
         if rec and rec["title"] not in cand: cand[rec["title"]] = rec
         elif rec and rec["page"] and not cand[rec["title"]]["page"]: cand[rec["title"]]["page"] = rec["page"]
     def cat(title):
-        for p in api_all({"action": "query", "generator": "categorymembers", "gcmtitle": title, "gcmtype": "file", "gcmlimit": "50",
+        for p in api_all({"action": "query", "generator": "categorymembers", "gcmtitle": title, "gcmnamespace": "6", "gcmlimit": "50",
                           "prop": "categories|imageinfo", "cllimit": "max", "iiprop": "url|size|mime"}, refresh):
             add(page_record(p, title.replace("Category:Images of ", "")))
     subcats = lambda t: [m["title"] for m in api_all({"action": "query", "list": "categorymembers", "cmtitle": t, "cmtype": "subcat", "cmlimit": "500"}, refresh)]
@@ -315,7 +316,7 @@ def naruto_discover(refresh):
     from . import narutopedia as npd
     cand = {}
     for c in npd.SCREENSHOT_CATS:
-        for p in api_all({"action": "query", "generator": "categorymembers", "gcmtitle": c, "gcmtype": "file", "gcmlimit": "50",
+        for p in api_all({"action": "query", "generator": "categorymembers", "gcmtitle": c, "gcmnamespace": "6", "gcmlimit": "50",
                           "prop": "imageinfo", "iiprop": "url|size|mime"}, refresh):
             rec = page_record(p, "")
             if rec and rec["title"] not in cand: cand[rec["title"]] = rec
@@ -356,7 +357,7 @@ def run_naruto(a):
     reg = load_registry()
     if not a.rebuild:
         cand = naruto_discover(a.refresh)
-        p1eps = npd.part1_episode_pages(lambda params: api_all(params, a.refresh))
+        p1eps = npd.part1_episode_pages(lambda params: api(params, a.refresh))
         (RAW / "p1eps.json").write_text(json.dumps(sorted(p1eps)))
         log(f"{len(p1eps)} part-I episode/page titles")
         ranked = naruto_rank(cand, p1eps)

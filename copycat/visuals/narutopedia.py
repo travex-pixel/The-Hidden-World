@@ -18,11 +18,11 @@ NAME_REJECT = re.compile(
     re.I)
 
 SHIPPUDEN = re.compile(
-    r"shipp[uū]den|part ii|\bakatsuki|\bpain\b|\bnagato\b|\bobito\b|\bmadara\b|\bkaguya\b|\bsage mode|kurama mode|\bwar\b|"
+    r"shipp[uū]den|part ii|\bpain\b|\bnagato\b|\bobito\b|\bmadara\b|\bkaguya\b|\bsage mode|kurama mode|\bwar\b|"
     r"\balliance|\bedo\b|\btailed beast (bomb|ball)|\brasenshuriken|\brinnegan|\bmangekyo|\beternal|"
-    r"\b(fifth|sixth|seventh) hokage|\bhokage naruto|\badult|\bkazekage|\bsai\b|\byamato\b|"
+    r"\b(fifth|sixth|seventh) hokage|\bhokage naruto|\badult|\bsai\b|\byamato\b|"
     r"\bsusanoo|\bjuubi|\bten.?tails|\bbiju|\bbijuu|\btsuchikage|\braikage|\bmizukage|\bkillerbee|\bkiller b\b|"
-    r"\bhagoromo|\bhamura|\bindra|\basura\b|\bgedo|\bzetsu\b|\bkonan\b|\bsix paths|\bmenma|\bnangi\b|\bkabuto.*(edo|sage)|\bhidan|\bkakuzu|\bdeidara|\bsasori|\bitachi",
+    r"\bhagoromo|\bhamura|\bindra|\basura\b|\bgedo|\bzetsu\b|\bkonan\b|\bsix paths|\bmenma|\bnangi\b|\bkabuto.*(edo|sage)|\bhidan|\bkakuzu|\bdeidara|\bsasori",
     re.I)
 BORUTO = re.compile(r"\bboruto|\bhimawari|\bsarada|\bmitsuki|\bkawaki|\bshikadai|\bchocho|\bmetal lee|\bseventh hokage|\bboro\b|\bishiki|\bmomoshiki|\bdaemon|\bnext generation", re.I)
 KID = re.compile(r"\b(child|children|young|kid|baby|infant|toddler|orphan|born|birth|first day|childhood|younger|as a boy|little)\b", re.I)
@@ -42,6 +42,33 @@ CHAR_RE = {
     "danzo": r"\bdanz[oō]\b",
     "anbu": r"\banbu\b|\bblack ops\b",
     "teuchi": r"\bteuchi\b|\bayame\b",
+    "konohamaru": r"konohamaru",
+    "tora_cat": r"\btora\b|daimyo'?s? wife'?s? cat|lost cat|\bcat\b",
+    "zabuza": r"zabuza|demon of the hidden mist|executioner'?s? blade|kubikiribocho",
+    "haku": r"\bhaku\b",
+    "tazuna": r"tazuna",
+    "inari": r"\binari\b",
+    "gato": r"\bgat[oō]\b",
+    "demon_brothers": r"demon brothers|\bg[oō]zu\b|\bmeizu\b",
+    "ibiki": r"ibiki",
+    "anko": r"\banko\b",
+    "orochimaru": r"orochimaru",
+    "kabuto": r"kabuto",
+    "gaara": r"\bgaara\b",
+    "temari": r"temari",
+    "kankuro": r"kankur[oō]",
+    "kazekage": r"kazekage",
+    "jiraiya": r"jiraiya",
+    "shikamaru": r"shikamaru",
+    "neji": r"\bneji\b",
+    "rock_lee": r"rock lee|\blee\b",
+    "obito": r"\bobito\b|masked man|tobi\b",
+    "rin": r"\brin\b|\bnohara\b",
+    "young_kakashi": r"young kakashi|kakashi.*(child|young|academy|team minato)",
+    "itachi": r"\bitachi\b",
+    "root": r"\broot\b|foundation",
+    "enma": r"\benma\b|monkey king",
+    "genin_crowd": r"genin|rookies|examinees|exam participants|candidates|participants",
     "villagers": r"villagers?|townspeople|citizens|crowd|people of the (leaf|village)|passersby|civilians?",
 }
 OBJ_RE = {
@@ -55,6 +82,18 @@ OBJ_RE = {
     "shuriken": r"shuriken|windmill|demon wind|fuma",
     "fireball": r"fireball|great fireball|katon",
     "ramen": r"ramen|ichiraku",
+    "letter": r"\bletters?\b|\bmail\b|\bmessage\b|\bnote\b",
+    "ink_brush": r"\bbrush\b|\bink\b|calligraph|signature|signs?\b|\bseal stamp",
+    "ledger": r"ledger|account book|\bbooks?\b.*(gato|shipping)|payroll|\bpay\b",
+    "ice_mirrors": r"ice mirrors?|demonic ice|crystal ice mirrors|mirror",
+    "kunai": r"\bkunai\b",
+    "bingo_book": r"bingo book",
+    "coffins": r"coffins?",
+    "exam_paper": r"exam(ination)? (paper|sheet|test|questions?)|written (exam|test)|answer sheet|cheating|\btest paper",
+    "info_cards": r"info(rmation)? cards?|ninja info|\bcards?\b",
+    "water_prison": r"water prison",
+    "lightning_blade": r"lightning blade|chidori|raikiri",
+    "book": r"\bbook\b|icha icha|\bread(s|ing)?\b",
 }
 PLACE_RE = {
     "ichiraku": r"ichiraku|ramen (stand|shop|bar)",
@@ -68,12 +107,36 @@ PLACE_RE = {
     "seal_cage": r"\bcage\b|sewer|mindscape|seal(ed)? gate|\bbars\b|inner (world|self|mind)|kurama's cage|seal room",
     "night_sky": r"night sky|\bmoon(light)?\b|\bstars?\b|full moon",
     "sunrise": r"sunrise|dawn|\bsunset\b|\bdusk\b|\bsun\b|early morning|morning sun",
-    "konoha_village": r"konoha|hidden leaf|leaf village|konohagakure|\bvillage\b|\bstreets?\b|rooftop|\broof\b",
+    "konoha_village": r"konoha|hidden leaf|leaf village|konohagakure|\bvillage\b|\bstreets?\b",
+    "memorial_stone": r"memorial stone|cenotaph|memorial|\bgrave\b",
+    "bridge": r"\bbridge\b",
+    "mist": r"\bmist\b|\bfog\b",
+    "land_of_waves": r"land of waves|wave country|\bwaves?\b",
+    "tazuna_house": r"tazuna'?s? (house|home)|\binari'?s? (house|home)|dining",
+    "gato_office": r"gato'?s? (office|building|company|mansion|base)|gato shipping",
+    "exam_hall": r"exam(ination)? (hall|room|venue)|room 301|written exam|first exam|first test",
+    "forest_of_death": r"forest of death|training ground 44|\btower\b",
+    "arena": r"\barena\b|stadium|preliminar|\bfinals?\b|spectator",
+    "barrier": r"barrier|four violet flames|purple flames|\bflames?\b",
+    "uchiha_district": r"uchiha (district|clan|compound|massacre)|\bmassacre\b",
+    "hospital": r"hospital|\bward\b|\bpatient\b|infirmary",
+    "mission_desk": r"mission (desk|assignment|counter|office|room|request)|assignment desk|d.?rank",
+    "rooftop": r"rooftops?|\broof\b",
     "forest": r"\bforest\b|\bwoods\b|\btrees?\b|\bjungle\b",
 }
 
 SUBJECT_KEYS = list(CHAR_RE) + list(OBJ_RE) + list(PLACE_RE)
 ALL_RE = {**CHAR_RE, **OBJ_RE, **PLACE_RE}
+NAME_SUBJECT = {  # "Characters in image" names -> subject
+    "naruto uzumaki": "naruto", "iruka umino": "iruka", "mizuki": "mizuki", "hiruzen sarutobi": "hiruzen", "kakashi hatake": "kakashi",
+    "sasuke uchiha": "sasuke", "sakura haruno": "sakura", "kurama": "kurama", "nine-tails": "kurama", "minato namikaze": "minato",
+    "kushina uzumaki": "kushina", "tobirama senju": "tobirama", "danzō shimura": "danzo", "danzo shimura": "danzo", "teuchi": "teuchi",
+    "ayame": "teuchi", "konohamaru sarutobi": "konohamaru", "tora": "tora_cat", "zabuza momochi": "zabuza", "haku": "haku", "tazuna": "tazuna",
+    "inari": "inari", "gatō": "gato", "gato": "gato", "gōzu": "demon_brothers", "meizu": "demon_brothers", "ibiki morino": "ibiki",
+    "anko mitarashi": "anko", "orochimaru": "orochimaru", "kabuto yakushi": "kabuto", "gaara": "gaara", "temari": "temari", "kankurō": "kankuro",
+    "kankuro": "kankuro", "fourth kazekage": "kazekage", "jiraiya": "jiraiya", "shikamaru nara": "shikamaru", "neji hyūga": "neji", "neji hyuga": "neji",
+    "rock lee": "rock_lee", "obito uchiha": "obito", "rin nohara": "rin", "itachi uchiha": "itachi", "enma": "enma", "tsunade": None,
+}
 PAGE_SUBJECT = {  # wiki page (fileusage) -> subject when the file title is silent
     "iruka umino": "iruka", "mizuki": "mizuki", "hiruzen sarutobi": "hiruzen", "kakashi hatake": "kakashi",
     "sasuke uchiha": "sasuke", "sakura haruno": "sakura", "kurama": "kurama", "minato namikaze": "minato",
@@ -104,15 +167,11 @@ CLOSE_RE = r"close.?up|face|portrait|eyes?\b|stare|glare|smile|grin|tears|crying
 WIDE_RE = r"village|panorama|overlook|monument|forest|view|aerial|army|crowd|streets|rooftops|landscape|skyline|gathering|assembl|group|\bteam\b|everyone"
 
 
-def part1_episode_pages(api_all):
-    """Titles of the original-series episode pages (links of 'List of Naruto Episodes')."""
-    titles = set()
-    try:
-        for p in api_all({"action": "query", "titles": EPISODE_LIST, "prop": "links", "pllimit": "max", "plnamespace": "0", "redirects": "1"}):
-            titles |= {l["title"] for l in p.get("links", [])}
-    except Exception:
-        pass
-    return titles
+def part1_episode_pages(api):
+    """Titles of the original-series (Part I) episode pages: section 2 of 'List of Animated Media'.
+    `api` is harvester.api (cached). Returned in list order so index+1 = episode number."""
+    d = api({"action": "parse", "page": "List of Animated Media", "section": "2", "prop": "links"})
+    return [l["title"] for l in d.get("parse", {}).get("links", []) if l.get("ns") == 0 and l.get("exists", True)]
 
 
 def _text(title, caption=""):
