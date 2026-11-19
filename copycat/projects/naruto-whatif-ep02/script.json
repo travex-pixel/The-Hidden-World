@@ -283,33 +283,9 @@
     },
     {
      "id": "b009",
-     "speaker": "CLONE",
-     "text": "I'm on your windowsill, old man. It's very warm. Just so you know.",
-     "direction": "[bright]",
-     "emotion": "bright",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto_clones"
-       ],
-       "location": "hokage_office",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "a Naruto clone grinning and whispering",
-       "non_canon": false
-      }
-     ],
-     "camera": "drift_up",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b010",
      "speaker": "HIRUZEN",
      "text": "Who told you that name?",
-     "direction": "",
+     "direction": "[tired]",
      "emotion": "tired",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -325,12 +301,12 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "drift_up",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b011",
+     "id": "b010",
      "speaker": "NARUTO",
      "text": "Nobody. That's the problem. Everybody I asked changed the subject. The shelf, the roster, my birthday. Even the dust is lying.",
      "direction": "",
@@ -349,12 +325,12 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "slow_push_in",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b012",
+     "id": "b011",
      "speaker": "NARRATOR",
      "text": "Twelve years ago, the Third Hokage made a law. Nobody in Konoha may speak of the Nine-Tails inside Naruto. Not to him, and not to their kids.",
      "direction": "[even, factual]",
@@ -374,7 +350,7 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": [
       "bass_drop"
@@ -385,10 +361,10 @@
      }
     },
     {
-     "id": "b013",
+     "id": "b012",
      "speaker": "NARRATOR",
      "text": "Everybody obeyed it. It's the loneliest law the village ever wrote, and the man who wrote it is sitting very, very still.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -405,12 +381,14 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "pan_lr",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b014",
+     "id": "b013",
      "speaker": "HIRUZEN",
      "text": "I made that law. I can break it. I'm only asking myself whether I should.",
      "direction": "",
@@ -429,15 +407,15 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "pan_rl",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b015",
+     "id": "b014",
      "speaker": "CLONE",
      "text": "There's a thousand of us, old man. Sixty in here. The rest are in the corridor, the garden and on the roof. Every one of us is listening.",
-     "direction": "[bright, fast]",
+     "direction": "",
      "emotion": "bright, fast",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -453,15 +431,15 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "drift_up",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b016",
+     "id": "b015",
      "speaker": "NARRATOR",
-     "text": "It's true. There are ears pressed to every window of the Hokage Tower. A thousand Narutos, all holding their breath at the same time.",
-     "direction": "",
+     "text": "Ears are pressed to every window of the Hokage Tower. A thousand Narutos, holding their breath at the same time.",
+     "direction": "[dry]",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -478,14 +456,14 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "slow_push_in",
      "vfx": [],
      "sfx": [
       "crowd_murmur"
      ]
     },
     {
-     "id": "b017",
+     "id": "b016",
      "speaker": "NARRATOR",
      "text": "The old man has been lying for twelve years, for reasons he believed were good. Now he's counting his audience. And a lie only works on one listener at a time.",
      "direction": "",
@@ -504,15 +482,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b018",
+     "id": "b017",
      "speaker": "HIRUZEN",
      "text": "Your mother was Kushina Uzumaki. Red hair, down to her waist. And a temper the whole village learned to respect.",
-     "direction": "[resigned]",
+     "direction": "",
      "emotion": "resigned",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -528,17 +506,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "pan_lr",
      "vfx": [],
-     "sfx": [
-      "page_flutter"
-     ]
+     "sfx": []
     },
     {
-     "id": "b019",
+     "id": "b018",
      "speaker": "NARUTO",
      "text": "She had red hair?",
-     "direction": "",
+     "direction": "[small]",
      "emotion": "small",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -554,12 +530,14 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "pan_rl",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "page_flutter"
+     ]
     },
     {
-     "id": "b020",
+     "id": "b019",
      "speaker": "HIRUZEN",
      "text": "Very red. You got her stubbornness. Not her hair.",
      "direction": "",
@@ -578,12 +556,12 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "drift_up",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b021",
+     "id": "b020",
      "speaker": "NARRATOR",
      "text": "Before Naruto, the Nine-Tails lived inside Kushina Uzumaki. That part isn't a what-if. It's the first thing the old man admits.",
      "direction": "[even]",
@@ -602,7 +580,7 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "slow_push_in",
      "vfx": [],
      "sfx": [
       "bass_drop"
@@ -613,10 +591,10 @@
      }
     },
     {
-     "id": "b022",
+     "id": "b021",
      "speaker": "HIRUZEN",
      "text": "And your father was Minato Namikaze. The Fourth Hokage.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -632,12 +610,12 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b023",
+     "id": "b022",
      "speaker": "NARRATOR",
      "text": "The Fourth Hokage. The face on the mountain, right outside the window. Naruto once painted that face orange. He did it with a bucket and a lot of confidence.",
      "direction": "",
@@ -657,15 +635,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "pan_lr",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b024",
+     "id": "b023",
      "speaker": "NARUTO",
      "text": "I painted my dad.",
-     "direction": "[stunned]",
+     "direction": "",
      "emotion": "stunned",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -681,17 +659,15 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "pan_rl",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b025",
+     "id": "b024",
      "speaker": "HIRUZEN",
      "text": "You painted him with great enthusiasm. He would have laughed.",
-     "direction": "",
+     "direction": "[gentle]",
      "emotion": "gentle",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -707,12 +683,14 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "wind"
+     ]
     },
     {
-     "id": "b026",
+     "id": "b025",
      "speaker": "NARRATOR",
      "text": "Then the old man tells the rest. October tenth. A masked man tore the fox out of Kushina and sent it at the village. The Fourth fought it, and sealed it inside his own newborn son.",
      "direction": "",
@@ -732,17 +710,17 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "slow_push_in",
      "vfx": [],
      "sfx": [
       "bass_drop"
      ]
     },
     {
-     "id": "b027",
+     "id": "b026",
      "speaker": "NARRATOR",
-     "text": "Neither parent lived to see morning. The Third Hokage says it plainly, with no softening. If he's going to tell the truth, he'll tell all of it.",
-     "direction": "[quiet]",
+     "text": "Neither parent lived to see morning. The old man says it plainly. If he's telling the truth, he'll tell all of it.",
+     "direction": "",
      "emotion": "quiet",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -758,15 +736,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b028",
+     "id": "b027",
      "speaker": "NARUTO",
      "text": "The man in the mask. Who was he?",
-     "direction": "",
+     "direction": "[low]",
      "emotion": "low",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -782,12 +760,12 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "pan_lr",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b029",
+     "id": "b028",
      "speaker": "HIRUZEN",
      "text": "I don't know. I never learned. I've looked for twelve years.",
      "direction": "",
@@ -806,15 +784,15 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "pan_rl",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b030",
+     "id": "b029",
      "speaker": "NARRATOR",
      "text": "The old man braces for shouting. It doesn't come. Naruto has spent a month reading what happens to people who panic. He doesn't.",
-     "direction": "[quiet]",
+     "direction": "",
      "emotion": "quiet",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -830,17 +808,17 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "drift_up",
      "vfx": [],
      "sfx": [
       "heartbeat"
      ]
     },
     {
-     "id": "b031",
+     "id": "b030",
      "speaker": "NARUTO",
      "text": "Why didn't you tell me?",
-     "direction": "",
+     "direction": "[steady]",
      "emotion": "steady",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -856,12 +834,14 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b032",
+     "id": "b031",
      "speaker": "HIRUZEN",
      "text": "Because the village was afraid of the fox, and children repeat what their parents say. I thought silence would keep you safe. I was wrong about what it would cost.",
      "direction": "",
@@ -880,15 +860,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b033",
+     "id": "b032",
      "speaker": "NARRATOR",
-     "text": "Nobody in the room moves. Sixty Narutos have stopped fidgeting for the first time in their lives. One of them is holding the old man's hat, and he holds it very carefully.",
-     "direction": "[soft]",
+     "text": "Nobody moves. Sixty Narutos have stopped fidgeting for the first time in their lives. One of them is holding the old man's hat, very carefully.",
+     "direction": "",
      "emotion": "soft",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -905,15 +885,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "pan_lr",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b034",
+     "id": "b033",
      "speaker": "CLONE",
      "text": "We're here, Boss.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -929,14 +909,38 @@
        "non_canon": false
       }
      ],
+     "camera": "pan_rl",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b034",
+     "speaker": "NARUTO",
+     "text": "I'm not gonna yell, old man. I want two things. First, don't lie to me again.",
+     "direction": "",
+     "emotion": "even",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto"
+       ],
+       "location": "hokage_office",
+       "mood": "emotional",
+       "shot": "closeup",
+       "query": "Naruto looking up with a serious, quiet face",
+       "non_canon": false
+      }
+     ],
      "camera": "drift_up",
      "vfx": [],
      "sfx": []
     },
     {
      "id": "b035",
-     "speaker": "CLONE",
-     "text": "All of us. Even the ones on the roof.",
+     "speaker": "HIRUZEN",
+     "text": "Never again. And the second?",
      "direction": "",
      "emotion": "quiet",
      "pause_class": "banter",
@@ -944,12 +948,12 @@
      "visuals": [
       {
        "subjects": [
-        "naruto_clones"
+        "hiruzen"
        ],
        "location": "hokage_office",
-       "mood": "comedy",
+       "mood": "emotional",
        "shot": "closeup",
-       "query": "a Naruto clone grinning and whispering",
+       "query": "the Third Hokage's weathered face, pipe smoke curling",
        "non_canon": false
       }
      ],
@@ -960,9 +964,9 @@
     {
      "id": "b036",
      "speaker": "NARUTO",
-     "text": "I'm not gonna yell, old man. I want two things. First, don't lie to me again.",
-     "direction": "[even]",
-     "emotion": "even",
+     "text": "Mom and Dad's mission reports. Everything they ever filed.",
+     "direction": "[firm]",
+     "emotion": "firm",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -986,9 +990,9 @@
     {
      "id": "b037",
      "speaker": "HIRUZEN",
-     "text": "Never again. And the second?",
+     "text": "Those are classified.",
      "direction": "",
-     "emotion": "quiet",
+     "emotion": "dry",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1010,9 +1014,9 @@
     {
      "id": "b038",
      "speaker": "NARUTO",
-     "text": "Mom and Dad's mission reports. Everything they ever filed.",
+     "text": "I'm on staff. There's a form.",
      "direction": "",
-     "emotion": "firm",
+     "emotion": "bright",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1033,57 +1037,9 @@
     },
     {
      "id": "b039",
-     "speaker": "HIRUZEN",
-     "text": "Those are classified.",
-     "direction": "[dry]",
-     "emotion": "dry",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "hiruzen"
-       ],
-       "location": "hokage_office",
-       "mood": "emotional",
-       "shot": "closeup",
-       "query": "the Third Hokage's weathered face, pipe smoke curling",
-       "non_canon": false
-      }
-     ],
-     "camera": "drift_up",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b040",
-     "speaker": "NARUTO",
-     "text": "I'm on staff. There's a form.",
-     "direction": "",
-     "emotion": "bright",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto"
-       ],
-       "location": "hokage_office",
-       "mood": "emotional",
-       "shot": "closeup",
-       "query": "Naruto looking up with a serious, quiet face",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_push_in",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b041",
      "speaker": "CLONE",
      "text": "Section whatever! He signed it twice!",
-     "direction": "",
+     "direction": "[quick]",
      "emotion": "quick",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -1099,15 +1055,15 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "drift_up",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b042",
+     "id": "b040",
      "speaker": "HIRUZEN",
      "text": "I did write that form myself, didn't I.",
-     "direction": "[wry]",
+     "direction": "",
      "emotion": "wry",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -1123,14 +1079,12 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "slow_push_in",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b043",
+     "id": "b041",
      "speaker": "NARRATOR",
      "text": "No shouting. No revenge. No apology. Naruto Uzumaki has just learned who his parents were, and the first thing he asks for is to read their paperwork.",
      "direction": "[soft]",
@@ -1149,7 +1103,7 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": []
     }
@@ -1163,10 +1117,10 @@
    "music": "iruka_warm",
    "beats": [
     {
-     "id": "b044",
+     "id": "b042",
      "speaker": "NARRATOR",
-     "text": "Midnight, in the archive. A thousand clones would be too loud, so it's twenty. Two boxes sit on the back table. One says Namikaze. One says Uzumaki, K.",
-     "direction": "",
+     "text": "Midnight, in the archive. A thousand clones would be too loud, so it's twenty. Two boxes on the back table. Namikaze. Uzumaki, K.",
+     "direction": "[hushed]",
      "emotion": "hushed",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -1183,18 +1137,66 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "pan_lr",
      "vfx": [],
      "sfx": [
       "page_flutter"
      ]
     },
     {
-     "id": "b045",
+     "id": "b043",
      "speaker": "NARUTO",
      "text": "You open it.",
-     "direction": "[nervous]",
+     "direction": "",
      "emotion": "nervous",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto"
+       ],
+       "location": "hokage_office",
+       "mood": "emotional",
+       "shot": "closeup",
+       "query": "Naruto looking up with a serious, quiet face",
+       "non_canon": false
+      }
+     ],
+     "camera": "pan_rl",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b044",
+     "speaker": "CLONE",
+     "text": "I'm you. I'm also not ready.",
+     "direction": "",
+     "emotion": "bright",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto_clones"
+       ],
+       "location": "hokage_office",
+       "mood": "comedy",
+       "shot": "closeup",
+       "query": "a Naruto clone grinning and whispering",
+       "non_canon": false
+      }
+     ],
+     "camera": "drift_up",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b045",
+     "speaker": "NARUTO",
+     "text": "Then we'll open it together.",
+     "direction": "[small]",
+     "emotion": "small",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1216,7 +1218,7 @@
     {
      "id": "b046",
      "speaker": "CLONE",
-     "text": "I'm you. I'm also not ready.",
+     "text": "Okay. On three.",
      "direction": "",
      "emotion": "bright",
      "pause_class": "banter",
@@ -1240,9 +1242,9 @@
     {
      "id": "b047",
      "speaker": "NARUTO",
-     "text": "Then we'll open it together.",
+     "text": "On three, or after three?",
      "direction": "",
-     "emotion": "small",
+     "emotion": "nervous",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1264,7 +1266,7 @@
     {
      "id": "b048",
      "speaker": "CLONE",
-     "text": "Okay. On three.",
+     "text": "Why is that hard?! Just open it!",
      "direction": "[bright]",
      "emotion": "bright",
      "pause_class": "banter",
@@ -1289,21 +1291,23 @@
     },
     {
      "id": "b049",
-     "speaker": "NARUTO",
-     "text": "On three, or after three?",
+     "speaker": "NARRATOR",
+     "text": "The Fourth Hokage's reports are dry, exact and short. Departure time. Route. Enemy strength. Result. He never uses an adjective when a number will do.",
      "direction": "",
-     "emotion": "nervous",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
+     "emotion": "dry",
+     "pause_class": "turn",
+     "pause_after_ms": 300,
      "visuals": [
       {
        "subjects": [
-        "naruto"
+        "minato",
+        "document",
+        "paperwork"
        ],
-       "location": "hokage_office",
-       "mood": "emotional",
+       "location": "archive",
+       "mood": "establishing",
        "shot": "closeup",
-       "query": "Naruto looking up with a serious, quiet face",
+       "query": "a neat mission report in the Fourth Hokage's handwriting",
        "non_canon": false
       }
      ],
@@ -1314,9 +1318,9 @@
     {
      "id": "b050",
      "speaker": "CLONE",
-     "text": "Why is that hard?! Just open it!",
+     "text": "Listen to this one. Mission complete. Zero casualties. Zero damage to client property. Client unhappy about the weather.",
      "direction": "",
-     "emotion": "bright",
+     "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1337,35 +1341,9 @@
     },
     {
      "id": "b051",
-     "speaker": "NARRATOR",
-     "text": "The Fourth Hokage's reports are dry, exact and short. Departure time. Route. Enemy strength. Result. He never uses an adjective when a number will do.",
-     "direction": "[dry]",
-     "emotion": "dry",
-     "pause_class": "turn",
-     "pause_after_ms": 300,
-     "visuals": [
-      {
-       "subjects": [
-        "minato",
-        "document",
-        "paperwork"
-       ],
-       "location": "archive",
-       "mood": "establishing",
-       "shot": "closeup",
-       "query": "a neat mission report in the Fourth Hokage's handwriting",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_pull_out",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b052",
      "speaker": "CLONE",
-     "text": "Listen to this one. Mission complete. Zero casualties. Zero damage to client property. Client unhappy about the weather.",
-     "direction": "",
+     "text": "Here's another. Mission complete. Cause of delay, council meeting. Cause of council meeting, unknown.",
+     "direction": "[reading]",
      "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -1381,6 +1359,30 @@
        "non_canon": false
       }
      ],
+     "camera": "slow_pull_out",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b052",
+     "speaker": "NARUTO",
+     "text": "He's so boring. I love him already.",
+     "direction": "",
+     "emotion": "delighted",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto"
+       ],
+       "location": "hokage_office",
+       "mood": "emotional",
+       "shot": "closeup",
+       "query": "Naruto looking up with a serious, quiet face",
+       "non_canon": false
+      }
+     ],
      "camera": "pan_lr",
      "vfx": [],
      "sfx": []
@@ -1388,7 +1390,7 @@
     {
      "id": "b053",
      "speaker": "CLONE",
-     "text": "Here's another. Mission complete. Cause of delay, council meeting. Cause of council meeting, unknown.",
+     "text": "Boss. Report on a border patrol. He wrote, nothing happened, and then underlined nothing.",
      "direction": "",
      "emotion": "reading",
      "pause_class": "banter",
@@ -1412,9 +1414,9 @@
     {
      "id": "b054",
      "speaker": "NARUTO",
-     "text": "He's so boring. I love him already.",
-     "direction": "[delighted]",
-     "emotion": "delighted",
+     "text": "He was proud of nothing. That's the best sentence I've ever heard.",
+     "direction": "[laughing]",
+     "emotion": "laughing",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1437,57 +1439,9 @@
     },
     {
      "id": "b055",
-     "speaker": "CLONE",
-     "text": "Boss. Report on a border patrol. He wrote, nothing happened, and then underlined nothing.",
-     "direction": "",
-     "emotion": "reading",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto_clones"
-       ],
-       "location": "hokage_office",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "a Naruto clone grinning and whispering",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_push_in",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b056",
-     "speaker": "NARUTO",
-     "text": "He was proud of nothing. That's the best sentence I've ever heard.",
-     "direction": "",
-     "emotion": "laughing",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto"
-       ],
-       "location": "hokage_office",
-       "mood": "emotional",
-       "shot": "closeup",
-       "query": "Naruto looking up with a serious, quiet face",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_pull_out",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b057",
      "speaker": "NARRATOR",
-     "text": "Then, in the margin of a patrol report, Naruto finds the only thing in the whole box that isn't a number. A doodle. A small steaming bowl, with chopsticks. Ramen.",
-     "direction": "[warm]",
+     "text": "Then, in the margin of a patrol report, the only thing in the box that isn't a number. A doodle. A small steaming bowl, with chopsticks. Ramen.",
+     "direction": "",
      "emotion": "warm",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -1504,18 +1458,66 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "slow_push_in",
      "vfx": [],
      "sfx": [
       "bell"
      ]
     },
     {
-     "id": "b058",
+     "id": "b056",
      "speaker": "CLONE",
      "text": "Boss. He drew ramen. On a patrol report.",
      "direction": "",
      "emotion": "hushed",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto_clones"
+       ],
+       "location": "hokage_office",
+       "mood": "comedy",
+       "shot": "closeup",
+       "query": "a Naruto clone grinning and whispering",
+       "non_canon": false
+      }
+     ],
+     "camera": "slow_pull_out",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b057",
+     "speaker": "NARUTO",
+     "text": "Of course he did.",
+     "direction": "[thick]",
+     "emotion": "thick",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto"
+       ],
+       "location": "hokage_office",
+       "mood": "emotional",
+       "shot": "closeup",
+       "query": "Naruto looking up with a serious, quiet face",
+       "non_canon": false
+      }
+     ],
+     "camera": "pan_lr",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b058",
+     "speaker": "CLONE",
+     "text": "Boss, are you crying?",
+     "direction": "",
+     "emotion": "worried",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1537,9 +1539,9 @@
     {
      "id": "b059",
      "speaker": "NARUTO",
-     "text": "Of course he did.",
+     "text": "It's dust. This whole archive is dust.",
      "direction": "",
-     "emotion": "thick",
+     "emotion": "rough",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1560,59 +1562,9 @@
     },
     {
      "id": "b060",
-     "speaker": "CLONE",
-     "text": "Boss, are you crying?",
-     "direction": "[worried]",
-     "emotion": "worried",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto_clones"
-       ],
-       "location": "hokage_office",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "a Naruto clone grinning and whispering",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_push_in",
-     "vfx": [],
-     "sfx": [
-      "wind"
-     ]
-    },
-    {
-     "id": "b061",
-     "speaker": "NARUTO",
-     "text": "It's dust. This whole archive is dust.",
-     "direction": "",
-     "emotion": "rough",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto"
-       ],
-       "location": "hokage_office",
-       "mood": "emotional",
-       "shot": "closeup",
-       "query": "Naruto looking up with a serious, quiet face",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_pull_out",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b062",
      "speaker": "NARRATOR",
      "text": "His father's capital letters lean forward, like he's late for something. Naruto's do too. He's never noticed. He's never had anything to compare them to.",
-     "direction": "",
+     "direction": "[gentle]",
      "emotion": "gentle",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -1629,15 +1581,17 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "wind"
+     ]
     },
     {
-     "id": "b063",
+     "id": "b061",
      "speaker": "NARRATOR",
      "text": "Kushina's box is thicker. It isn't mission reports. It's an incident file. Every wall, fence and window she ever broke, in order, with invoices.",
-     "direction": "[wry]",
+     "direction": "",
      "emotion": "wry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -1654,12 +1608,12 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b064",
+     "id": "b062",
      "speaker": "CLONE",
      "text": "Broken fence, market district. Broken door, Academy. Broken wall, the same wall, twice.",
      "direction": "",
@@ -1678,15 +1632,15 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "pan_lr",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b065",
+     "id": "b063",
      "speaker": "CLONE",
      "text": "Cause of damage, temper. Cause of damage, temper. Cause of damage, temper, but the other man started it.",
-     "direction": "",
+     "direction": "[reading]",
      "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -1702,15 +1656,15 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "pan_rl",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b066",
+     "id": "b064",
      "speaker": "NARUTO",
      "text": "Cause of damage, temper. That's my mom.",
-     "direction": "[quiet]",
+     "direction": "",
      "emotion": "quiet",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -1726,6 +1680,54 @@
        "non_canon": false
       }
      ],
+     "camera": "drift_up",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b065",
+     "speaker": "NARRATOR",
+     "text": "It's the first time he's ever spoken the word. It comes out as a joke, so it won't have to be anything else.",
+     "direction": "",
+     "emotion": "soft",
+     "pause_class": "turn",
+     "pause_after_ms": 300,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto"
+       ],
+       "location": "hokage_office",
+       "mood": "emotional",
+       "shot": "closeup",
+       "query": "Naruto looking up with a serious, quiet face",
+       "non_canon": false
+      }
+     ],
+     "camera": "slow_push_in",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b066",
+     "speaker": "CLONE",
+     "text": "Boss, there's a fountain. She broke a fountain.",
+     "direction": "[reading]",
+     "emotion": "reading",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto_clones"
+       ],
+       "location": "hokage_office",
+       "mood": "comedy",
+       "shot": "closeup",
+       "query": "a Naruto clone grinning and whispering",
+       "non_canon": false
+      }
+     ],
      "camera": "slow_pull_out",
      "vfx": [],
      "sfx": [
@@ -1734,12 +1736,12 @@
     },
     {
      "id": "b067",
-     "speaker": "NARRATOR",
-     "text": "It's the first time he's ever spoken the word. It comes out as a joke, so it won't have to be anything else.",
+     "speaker": "NARUTO",
+     "text": "How did she do that?",
      "direction": "",
-     "emotion": "soft",
-     "pause_class": "turn",
-     "pause_after_ms": 300,
+     "emotion": "curious",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
      "visuals": [
       {
        "subjects": [
@@ -1759,7 +1761,7 @@
     {
      "id": "b068",
      "speaker": "CLONE",
-     "text": "Boss, there's a fountain. She broke a fountain.",
+     "text": "It says she was practising something. The fountain was in the way.",
      "direction": "",
      "emotion": "reading",
      "pause_class": "banter",
@@ -1783,9 +1785,9 @@
     {
      "id": "b069",
      "speaker": "NARUTO",
-     "text": "How?",
-     "direction": "[curious]",
-     "emotion": "curious",
+     "text": "The fountain was in the way. That's so true.",
+     "direction": "[warm]",
+     "emotion": "warm",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1807,7 +1809,7 @@
     {
      "id": "b070",
      "speaker": "CLONE",
-     "text": "It says she was practising something. The fountain was in the way.",
+     "text": "Last page. A man said something rude about her friend. Damages paid in full. Apology, none.",
      "direction": "",
      "emotion": "reading",
      "pause_class": "banter",
@@ -1831,9 +1833,9 @@
     {
      "id": "b071",
      "speaker": "NARUTO",
-     "text": "The fountain was in the way. That's so true.",
+     "text": "Good. Nobody should apologise for that.",
      "direction": "",
-     "emotion": "warm",
+     "emotion": "fierce",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1855,9 +1857,9 @@
     {
      "id": "b072",
      "speaker": "CLONE",
-     "text": "Last page. A man said something rude about her friend. Damages paid in full. Apology, none.",
-     "direction": "[reading]",
-     "emotion": "reading",
+     "text": "Is it weird that I want to frame the invoices?",
+     "direction": "[hopeful]",
+     "emotion": "hopeful",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1881,9 +1883,9 @@
     {
      "id": "b073",
      "speaker": "NARUTO",
-     "text": "Good. Nobody should apologise for that.",
+     "text": "No. We're framing the invoices.",
      "direction": "",
-     "emotion": "fierce",
+     "emotion": "firm",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -1904,105 +1906,9 @@
     },
     {
      "id": "b074",
-     "speaker": "CLONE",
-     "text": "Is it weird that I want to frame the invoices?",
-     "direction": "",
-     "emotion": "hopeful",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto_clones"
-       ],
-       "location": "hokage_office",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "a Naruto clone grinning and whispering",
-       "non_canon": false
-      }
-     ],
-     "camera": "drift_up",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b075",
-     "speaker": "NARUTO",
-     "text": "No. We're framing the invoices.",
-     "direction": "[firm]",
-     "emotion": "firm",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto"
-       ],
-       "location": "hokage_office",
-       "mood": "emotional",
-       "shot": "closeup",
-       "query": "Naruto looking up with a serious, quiet face",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_push_in",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b076",
-     "speaker": "CLONE",
-     "text": "Boss, you've got Mom's temper and Dad's handwriting. You're basically a form.",
-     "direction": "",
-     "emotion": "bright",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto_clones"
-       ],
-       "location": "hokage_office",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "a Naruto clone grinning and whispering",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_pull_out",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b077",
-     "speaker": "NARUTO",
-     "text": "I'm a clerk. It's a promotion.",
-     "direction": "",
-     "emotion": "laughing",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto"
-       ],
-       "location": "hokage_office",
-       "mood": "emotional",
-       "shot": "closeup",
-       "query": "Naruto looking up with a serious, quiet face",
-       "non_canon": false
-      }
-     ],
-     "camera": "pan_lr",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b078",
      "speaker": "NARRATOR",
      "text": "Clerks have a saying. A person's file is who they were on their worst day. Kushina's worst days, Naruto notices, were nearly always for somebody else.",
-     "direction": "[dry]",
+     "direction": "",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -2019,17 +1925,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "drift_up",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b079",
+     "id": "b075",
      "speaker": "NARRATOR",
      "text": "By morning he has met both of his parents. One was careful, one was loud, and neither of them got to file a report about him. He'll have to write that one himself.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -2046,7 +1950,7 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "slow_push_in",
      "vfx": [],
      "sfx": [
       "page_flutter"
@@ -2062,9 +1966,9 @@
    "music": "pastoral_melancholy",
    "beats": [
     {
-     "id": "b080",
+     "id": "b076",
      "speaker": "NARRATOR",
-     "text": "Deeper in the Fourth Hokage's box there's another set of reports. They're about a team. Three genin and one jonin instructor, written up every week in the same dry hand.",
+     "text": "Deeper in the box there's another set of reports. About a team. Three genin and one jonin, written up every week in the same dry hand.",
      "direction": "",
      "emotion": "even",
      "pause_class": "turn",
@@ -2083,6 +1987,107 @@
        "non_canon": false
       }
      ],
+     "camera": "slow_pull_out",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b077",
+     "speaker": "CLONE",
+     "text": "Boss. His students. One of them is called Kakashi Hatake.",
+     "direction": "",
+     "emotion": "surprised",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto_clones"
+       ],
+       "location": "hokage_office",
+       "mood": "comedy",
+       "shot": "closeup",
+       "query": "a Naruto clone grinning and whispering",
+       "non_canon": false
+      }
+     ],
+     "camera": "pan_lr",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b078",
+     "speaker": "NARUTO",
+     "text": "Our Kakashi?",
+     "direction": "[blank]",
+     "emotion": "blank",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto"
+       ],
+       "location": "hokage_office",
+       "mood": "emotional",
+       "shot": "closeup",
+       "query": "Naruto looking up with a serious, quiet face",
+       "non_canon": false
+      }
+     ],
+     "camera": "pan_rl",
+     "vfx": [],
+     "sfx": [
+      "wind"
+     ]
+    },
+    {
+     "id": "b079",
+     "speaker": "CLONE",
+     "text": "Skilled. Follows every rule. Will need to learn which ones matter.",
+     "direction": "",
+     "emotion": "reading",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "naruto_clones"
+       ],
+       "location": "hokage_office",
+       "mood": "comedy",
+       "shot": "closeup",
+       "query": "a Naruto clone grinning and whispering",
+       "non_canon": false
+      }
+     ],
+     "camera": "drift_up",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b080",
+     "speaker": "NARRATOR",
+     "text": "Team Minato. Kakashi, a boy named Obito Uchiha, and a girl named Rin Nohara. Their teacher writes about them like they're the most interesting things he's ever filed.",
+     "direction": "",
+     "emotion": "even",
+     "pause_class": "turn",
+     "pause_after_ms": 300,
+     "visuals": [
+      {
+       "subjects": [
+        "obito",
+        "rin",
+        "young_kakashi",
+        "minato"
+       ],
+       "location": "konoha_village",
+       "mood": "emotional",
+       "shot": "group",
+       "query": "Team Minato, Obito, Rin and young Kakashi, with Minato",
+       "non_canon": false
+      }
+     ],
      "camera": "slow_push_in",
      "vfx": [],
      "sfx": []
@@ -2090,9 +2095,9 @@
     {
      "id": "b081",
      "speaker": "CLONE",
-     "text": "Boss. His students. One of them is called Kakashi Hatake.",
-     "direction": "[surprised]",
-     "emotion": "surprised",
+     "text": "Obito Uchiha. Late every single day. Reason given, helped an old woman across the road. Every report. A different old woman.",
+     "direction": "[reading]",
+     "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -2114,9 +2119,9 @@
     {
      "id": "b082",
      "speaker": "NARUTO",
-     "text": "Our Kakashi?",
+     "text": "A different old woman. Huh.",
      "direction": "",
-     "emotion": "blank",
+     "emotion": "slow",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -2137,110 +2142,9 @@
     },
     {
      "id": "b083",
-     "speaker": "CLONE",
-     "text": "Skilled. Follows every rule. Will need to learn which ones matter.",
-     "direction": "",
-     "emotion": "reading",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto_clones"
-       ],
-       "location": "hokage_office",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "a Naruto clone grinning and whispering",
-       "non_canon": false
-      }
-     ],
-     "camera": "pan_rl",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b084",
-     "speaker": "NARRATOR",
-     "text": "Team Minato. Kakashi, a boy named Obito Uchiha, and a girl named Rin Nohara. Three kids and a teacher who writes about all of them like they're the most interesting thing he's ever filed.",
-     "direction": "[even]",
-     "emotion": "even",
-     "pause_class": "turn",
-     "pause_after_ms": 300,
-     "visuals": [
-      {
-       "subjects": [
-        "obito",
-        "rin",
-        "young_kakashi",
-        "minato"
-       ],
-       "location": "konoha_village",
-       "mood": "emotional",
-       "shot": "group",
-       "query": "Team Minato, Obito, Rin and young Kakashi, with Minato",
-       "non_canon": false
-      }
-     ],
-     "camera": "drift_up",
-     "vfx": [],
-     "sfx": [
-      "whoosh"
-     ]
-    },
-    {
-     "id": "b085",
-     "speaker": "CLONE",
-     "text": "Obito Uchiha. Late every single day. Reason given, helped an old woman across the road. Every report. A different old woman.",
-     "direction": "",
-     "emotion": "reading",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto_clones"
-       ],
-       "location": "hokage_office",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "a Naruto clone grinning and whispering",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_push_in",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b086",
-     "speaker": "NARUTO",
-     "text": "A different old woman. Huh.",
-     "direction": "",
-     "emotion": "slow",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "naruto"
-       ],
-       "location": "hokage_office",
-       "mood": "emotional",
-       "shot": "closeup",
-       "query": "Naruto looking up with a serious, quiet face",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_pull_out",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b087",
      "speaker": "NARRATOR",
      "text": "Naruto has heard excuses like that. This week. From a man with a book, who got lost on the road of life.",
-     "direction": "[dry]",
+     "direction": "",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -2256,15 +2160,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "pan_rl",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b088",
+     "id": "b084",
      "speaker": "NARUTO",
      "text": "He learned it from Obito.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2280,14 +2184,16 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b089",
+     "id": "b085",
      "speaker": "NARRATOR",
-     "text": "He opens his notebook. The eleven dates in the margin. Then he finds the last pages of the team's file. Two names. Two dates. Two short reports, written as dry and exact as all the rest.",
+     "text": "He opens his notebook to the eleven dates. Then he finds the last pages of the team's file. Two names. Two dates. Two short reports, as dry and exact as the rest.",
      "direction": "",
      "emotion": "quiet",
      "pause_class": "turn",
@@ -2305,17 +2211,17 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "slow_push_in",
      "vfx": [],
      "sfx": [
       "page_flutter"
      ]
     },
     {
-     "id": "b090",
+     "id": "b086",
      "speaker": "CLONE",
      "text": "Boss. The dates match.",
-     "direction": "[soft]",
+     "direction": "",
      "emotion": "soft",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2331,17 +2237,15 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": [
-      "page_flutter"
-     ]
+     "sfx": []
     },
     {
-     "id": "b091",
+     "id": "b087",
      "speaker": "NARUTO",
      "text": "I know. I counted twice.",
-     "direction": "",
+     "direction": "[low]",
      "emotion": "low",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2357,12 +2261,12 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "pan_lr",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b092",
+     "id": "b088",
      "speaker": "CLONE",
      "text": "Boss. Do we tell the others?",
      "direction": "",
@@ -2381,15 +2285,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "pan_rl",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b093",
+     "id": "b089",
      "speaker": "NARUTO",
      "text": "Tell them what? It's not our name to tell.",
-     "direction": "[quiet]",
+     "direction": "",
      "emotion": "quiet",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2405,15 +2309,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "drift_up",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b094",
+     "id": "b090",
      "speaker": "NARRATOR",
      "text": "Eleven reports noted that Kakashi was late. Eleven clerks wrote it down. Nobody wrote down why, because nobody ever asked.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -2429,12 +2333,14 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "page_flutter"
+     ]
     },
     {
-     "id": "b095",
+     "id": "b091",
      "speaker": "NARRATOR",
      "text": "The next dawn. Team Seven waits at the training ground. Sasuke glares at the trees. Sakura reads the clouds. Kakashi Hatake is late, as always. Every single time.",
      "direction": "[wry]",
@@ -2454,7 +2360,7 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": [],
      "stamp": {
@@ -2463,10 +2369,10 @@
      }
     },
     {
-     "id": "b096",
+     "id": "b092",
      "speaker": "SAKURA",
      "text": "He said dawn. It's noon.",
-     "direction": "[annoyed]",
+     "direction": "",
      "emotion": "annoyed",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2482,17 +2388,15 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "pan_lr",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b097",
+     "id": "b093",
      "speaker": "SASUKE",
      "text": "He's asleep in a tree somewhere. Ignore him and train.",
-     "direction": "",
+     "direction": "[cold]",
      "emotion": "cold",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2508,12 +2412,12 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "pan_rl",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b098",
+     "id": "b094",
      "speaker": "NARUTO",
      "text": "Give me an hour. Do the wall drill. Don't touch my wires.",
      "direction": "",
@@ -2532,15 +2436,15 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_rl",
+     "camera": "drift_up",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b099",
+     "id": "b095",
      "speaker": "SAKURA",
      "text": "Where are you going?",
-     "direction": "[suspicious]",
+     "direction": "",
      "emotion": "suspicious",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2556,15 +2460,15 @@
        "non_canon": false
       }
      ],
-     "camera": "drift_up",
+     "camera": "slow_push_in",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b100",
+     "id": "b096",
      "speaker": "NARUTO",
      "text": "To read something.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2580,14 +2484,16 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "wind"
+     ]
     },
     {
-     "id": "b101",
+     "id": "b097",
      "speaker": "NARRATOR",
-     "text": "Past the training grounds there's a black stone covered in names. Every ninja on it died for the village. One man stands in front of it today, hands in his pockets, reading a name he knows by heart.",
+     "text": "Past the training grounds stands a black stone covered in names. Every ninja on it died for the village. One man stands before it, hands in his pockets, reading a name he knows by heart.",
      "direction": "",
      "emotion": "hushed",
      "pause_class": "turn",
@@ -2605,12 +2511,12 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "pan_lr",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b102",
+     "id": "b098",
      "speaker": "NARRATOR",
      "text": "In canon, this is why Kakashi is late. Not laziness. A name. It's the one place in Konoha where he can talk to someone who isn't there.",
      "direction": "[even, factual]",
@@ -2629,7 +2535,7 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
+     "camera": "pan_rl",
      "vfx": [],
      "sfx": [
       "bell"
@@ -2640,11 +2546,113 @@
      }
     },
     {
-     "id": "b103",
+     "id": "b099",
      "speaker": "KAKASHI",
      "text": "Eleven reports. You counted, didn't you.",
-     "direction": "",
+     "direction": "[flat]",
      "emotion": "flat",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "kakashi"
+       ],
+       "location": "training_ground",
+       "mood": "comedy",
+       "shot": "closeup",
+       "query": "Kakashi with his one visible eye, deadpan, reading his book",
+       "non_canon": false
+      }
+     ],
+     "camera": "drift_up",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b100",
+     "speaker": "NARRATOR",
+     "text": "Naruto doesn't answer. He walks up and stands next to him. He's read a great many names this month. He has never stood this close to one.",
+     "direction": "",
+     "emotion": "quiet",
+     "pause_class": "turn",
+     "pause_after_ms": 300,
+     "visuals": [
+      {
+       "subjects": [
+        "memorial_stone",
+        "kakashi",
+        "naruto"
+       ],
+       "location": "memorial_stone",
+       "mood": "emotional",
+       "shot": "wide",
+       "query": "Naruto and Kakashi standing side by side at the memorial stone",
+       "non_canon": false
+      }
+     ],
+     "camera": "slow_push_in",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b101",
+     "speaker": "KAKASHI",
+     "text": "Don't say anything. Please.",
+     "direction": "",
+     "emotion": "low",
+     "pause_class": "banter",
+     "pause_after_ms": 190,
+     "visuals": [
+      {
+       "subjects": [
+        "kakashi"
+       ],
+       "location": "training_ground",
+       "mood": "comedy",
+       "shot": "closeup",
+       "query": "Kakashi with his one visible eye, deadpan, reading his book",
+       "non_canon": false
+      }
+     ],
+     "camera": "slow_pull_out",
+     "vfx": [],
+     "sfx": []
+    },
+    {
+     "id": "b102",
+     "speaker": "NARRATOR",
+     "text": "So Naruto says nothing. A month ago he'd have read the names out loud. Today he knows better. Some names you just stand beside.",
+     "direction": "[soft]",
+     "emotion": "soft",
+     "pause_class": "turn",
+     "pause_after_ms": 300,
+     "visuals": [
+      {
+       "subjects": [
+        "memorial_stone",
+        "kakashi",
+        "naruto"
+       ],
+       "location": "memorial_stone",
+       "mood": "emotional",
+       "shot": "wide",
+       "query": "Naruto and Kakashi standing side by side at the memorial stone",
+       "non_canon": false
+      }
+     ],
+     "camera": "pan_lr",
+     "vfx": [],
+     "sfx": [
+      "wind"
+     ]
+    },
+    {
+     "id": "b103",
+     "speaker": "KAKASHI",
+     "text": "Thanks. Go on. I'll be right behind you.",
+     "direction": "",
+     "emotion": "quiet",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -2666,22 +2674,21 @@
     {
      "id": "b104",
      "speaker": "NARRATOR",
-     "text": "Naruto doesn't answer. He walks up and stands next to him. He's read a great many names this month. He has never stood this close to one.",
+     "text": "He is. It takes him an hour. Then he strolls up to the training ground like nothing has happened.",
      "direction": "",
-     "emotion": "quiet",
+     "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
      "visuals": [
       {
        "subjects": [
-        "memorial_stone",
-        "kakashi",
-        "naruto"
+        "team7",
+        "training_ground"
        ],
-       "location": "memorial_stone",
-       "mood": "emotional",
-       "shot": "wide",
-       "query": "Naruto and Kakashi standing side by side at the memorial stone",
+       "location": "training_ground",
+       "mood": "comedy",
+       "shot": "group",
+       "query": "Team Seven waiting at the training ground, bored and annoyed",
        "non_canon": false
       }
      ],
@@ -2692,9 +2699,9 @@
     {
      "id": "b105",
      "speaker": "KAKASHI",
-     "text": "Don't say anything. Please.",
-     "direction": "[low]",
-     "emotion": "low",
+     "text": "Sorry I'm late. A black cat crossed my path, so I took the long way.",
+     "direction": "[lazy]",
+     "emotion": "lazy",
      "pause_class": "banter",
      "pause_after_ms": 190,
      "visuals": [
@@ -2715,109 +2722,6 @@
     },
     {
      "id": "b106",
-     "speaker": "NARRATOR",
-     "text": "So Naruto says nothing. A month ago he'd have read the names out loud. Today he knows better. Some names you just stand beside.",
-     "direction": "",
-     "emotion": "soft",
-     "pause_class": "turn",
-     "pause_after_ms": 300,
-     "visuals": [
-      {
-       "subjects": [
-        "memorial_stone",
-        "kakashi",
-        "naruto"
-       ],
-       "location": "memorial_stone",
-       "mood": "emotional",
-       "shot": "wide",
-       "query": "Naruto and Kakashi standing side by side at the memorial stone",
-       "non_canon": false
-      }
-     ],
-     "camera": "slow_pull_out",
-     "vfx": [],
-     "sfx": [
-      "wind"
-     ]
-    },
-    {
-     "id": "b107",
-     "speaker": "KAKASHI",
-     "text": "Thanks. Go on. I'll be right behind you.",
-     "direction": "",
-     "emotion": "quiet",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "kakashi"
-       ],
-       "location": "training_ground",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "Kakashi with his one visible eye, deadpan, reading his book",
-       "non_canon": false
-      }
-     ],
-     "camera": "pan_lr",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b108",
-     "speaker": "NARRATOR",
-     "text": "He is. It takes him an hour. Then he strolls up to the training ground like nothing has happened.",
-     "direction": "[dry]",
-     "emotion": "dry",
-     "pause_class": "turn",
-     "pause_after_ms": 300,
-     "visuals": [
-      {
-       "subjects": [
-        "team7",
-        "training_ground"
-       ],
-       "location": "training_ground",
-       "mood": "comedy",
-       "shot": "group",
-       "query": "Team Seven waiting at the training ground, bored and annoyed",
-       "non_canon": false
-      }
-     ],
-     "camera": "pan_rl",
-     "vfx": [],
-     "sfx": [
-      "page_flutter"
-     ]
-    },
-    {
-     "id": "b109",
-     "speaker": "KAKASHI",
-     "text": "Sorry I'm late. A black cat crossed my path, so I took the long way.",
-     "direction": "",
-     "emotion": "lazy",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "kakashi"
-       ],
-       "location": "training_ground",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "Kakashi with his one visible eye, deadpan, reading his book",
-       "non_canon": false
-      }
-     ],
-     "camera": "drift_up",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b110",
      "speaker": "SAKURA",
      "text": "Liar! There are no black cats!",
      "direction": "",
@@ -2836,15 +2740,15 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_push_in",
+     "camera": "slow_pull_out",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b111",
+     "id": "b107",
      "speaker": "SASUKE",
      "text": "Liar. Obviously.",
-     "direction": "[flat]",
+     "direction": "",
      "emotion": "flat",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2860,15 +2764,15 @@
        "non_canon": false
       }
      ],
-     "camera": "slow_pull_out",
+     "camera": "pan_lr",
      "vfx": [],
      "sfx": []
     },
     {
-     "id": "b112",
+     "id": "b108",
      "speaker": "NARUTO",
      "text": "Leave him alone. Go do the wall drill.",
-     "direction": "",
+     "direction": "[even]",
      "emotion": "even",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -2884,36 +2788,14 @@
        "non_canon": false
       }
      ],
-     "camera": "pan_lr",
-     "vfx": [],
-     "sfx": []
-    },
-    {
-     "id": "b113",
-     "speaker": "SAKURA",
-     "text": "Since when do you tell us what to do?",
-     "direction": "",
-     "emotion": "puzzled",
-     "pause_class": "banter",
-     "pause_after_ms": 190,
-     "visuals": [
-      {
-       "subjects": [
-        "sakura"
-       ],
-       "location": "training_ground",
-       "mood": "comedy",
-       "shot": "closeup",
-       "query": "Sakura annoyed with her hands on her hips",
-       "non_canon": false
-      }
-     ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "page_flutter"
+     ]
     },
     {
-     "id": "b114",
+     "id": "b109",
      "speaker": "NARRATOR",
      "text": "Nobody on Team Seven asks why, and Naruto never tells them. Some things don't go in a file. He keeps this one next to Iruka's face.",
      "direction": "[dry]",
@@ -2935,9 +2817,7 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     }
    ]
   },
@@ -2949,9 +2829,9 @@
    "music": "kurama_cavernous",
    "beats": [
     {
-     "id": "b115",
+     "id": "b110",
      "speaker": "NARRATOR",
-     "text": "That night, Naruto goes looking for the thing that has lived in him since the day he was born. A flooded corridor. Dark water. A gate taller than a house, held shut by one small strip of paper.",
+     "text": "That night, Naruto goes looking for what has lived in him since birth. A flooded corridor. Dark water. A gate taller than a house, held shut by one small strip of paper.",
      "direction": "",
      "emotion": "ominous",
      "pause_class": "turn",
@@ -2976,10 +2856,10 @@
      ]
     },
     {
-     "id": "b116",
+     "id": "b111",
      "speaker": "NARRATOR",
      "text": "He brings one clone and one book. A beginner's chakra control primer. It's the only book he's never been thrown out of a library for.",
-     "direction": "",
+     "direction": "[dry]",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -3001,10 +2881,10 @@
      "sfx": []
     },
     {
-     "id": "b117",
+     "id": "b112",
      "speaker": "KURAMA",
      "text": "Twelve years I listened to you snore. I never expected you to knock.",
-     "direction": "[slow, contemptuous]",
+     "direction": "",
      "emotion": "slow, contemptuous",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3028,7 +2908,7 @@
      ]
     },
     {
-     "id": "b118",
+     "id": "b113",
      "speaker": "NARUTO",
      "text": "You said her name. Kushina. You lived in her.",
      "direction": "",
@@ -3052,10 +2932,10 @@
      "sfx": []
     },
     {
-     "id": "b119",
+     "id": "b114",
      "speaker": "KURAMA",
      "text": "It was cramped. She talked in her sleep. I wouldn't call it a friendship.",
-     "direction": "",
+     "direction": "[bored]",
      "emotion": "bored",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3074,13 +2954,15 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "wind"
+     ]
     },
     {
-     "id": "b120",
+     "id": "b115",
      "speaker": "NARRATOR",
      "text": "Twelve years in the dark. Fed on nothing, spoken to by no one. And in all that time, nobody has ever asked if the fox was bored.",
-     "direction": "[dry]",
+     "direction": "",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -3098,12 +2980,10 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": [
-      "whoosh"
-     ]
+     "sfx": []
     },
     {
-     "id": "b121",
+     "id": "b116",
      "speaker": "KURAMA",
      "text": "Say what you want, brat. Nobody comes down here unless they want something.",
      "direction": "",
@@ -3128,10 +3008,10 @@
      "sfx": []
     },
     {
-     "id": "b122",
+     "id": "b117",
      "speaker": "NARUTO",
      "text": "October tenth. You were there. I want what you remember.",
-     "direction": "",
+     "direction": "[even]",
      "emotion": "even",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3152,10 +3032,10 @@
      "sfx": []
     },
     {
-     "id": "b123",
+     "id": "b118",
      "speaker": "KURAMA",
      "text": "A memory. And what do I get for it? Your face?",
-     "direction": "[cruel]",
+     "direction": "",
      "emotion": "cruel",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3177,7 +3057,7 @@
      "sfx": []
     },
     {
-     "id": "b124",
+     "id": "b119",
      "speaker": "NARUTO",
      "text": "A book. Just a book.",
      "direction": "",
@@ -3201,10 +3081,10 @@
      "sfx": []
     },
     {
-     "id": "b125",
+     "id": "b120",
      "speaker": "KURAMA",
      "text": "I don't read.",
-     "direction": "",
+     "direction": "[flat]",
      "emotion": "flat",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3223,13 +3103,15 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b126",
+     "id": "b121",
      "speaker": "NARUTO",
      "text": "You were reading the whole time. You said so. Did you think I wasn't reading too?",
-     "direction": "[firm]",
+     "direction": "",
      "emotion": "firm",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3247,12 +3129,10 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": [
-      "page_flutter"
-     ]
+     "sfx": []
     },
     {
-     "id": "b127",
+     "id": "b122",
      "speaker": "NARRATOR",
      "text": "The fox doesn't answer. For a creature who has spent centuries flattening mountains, he looks, for one moment, exactly like a customer caught browsing.",
      "direction": "",
@@ -3277,10 +3157,10 @@
      "sfx": []
     },
     {
-     "id": "b128",
+     "id": "b123",
      "speaker": "KURAMA",
      "text": "One chapter. If it's bad, you leave.",
-     "direction": "",
+     "direction": "[grudging]",
      "emotion": "grudging",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3302,10 +3182,10 @@
      "sfx": []
     },
     {
-     "id": "b129",
+     "id": "b124",
      "speaker": "NARRATOR",
-     "text": "A clone sits down in the dark water, in front of the largest cage in the world. Nobody asks how a clone gets in here. It's his own head. Mostly he's stopped asking.",
-     "direction": "[wry]",
+     "text": "A clone sits down in the dark water before the largest cage in the world. Nobody asks how a clone gets in here. It's his own head. Mostly he's stopped asking.",
+     "direction": "",
      "emotion": "wry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -3327,7 +3207,7 @@
      "sfx": []
     },
     {
-     "id": "b130",
+     "id": "b125",
      "speaker": "CLONE",
      "text": "Chapter one. Chakra is the union of physical energy and spiritual energy.",
      "direction": "",
@@ -3351,10 +3231,10 @@
      "sfx": []
     },
     {
-     "id": "b131",
+     "id": "b126",
      "speaker": "KURAMA",
      "text": "Wrong. Obviously wrong.",
-     "direction": "",
+     "direction": "[flat]",
      "emotion": "flat",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3373,13 +3253,15 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "page_flutter"
+     ]
     },
     {
-     "id": "b132",
+     "id": "b127",
      "speaker": "CLONE",
      "text": "It's the first sentence!",
-     "direction": "[defensive]",
+     "direction": "",
      "emotion": "defensive",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3397,12 +3279,10 @@
      ],
      "camera": "pan_lr",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b133",
+     "id": "b128",
      "speaker": "KURAMA",
      "text": "Then the author has never met any. Continue.",
      "direction": "",
@@ -3427,10 +3307,10 @@
      "sfx": []
     },
     {
-     "id": "b134",
+     "id": "b129",
      "speaker": "NARRATOR",
      "text": "He gets through three pages. The fox corrects four errors. Somewhere in the village, a very tired boy is writing them down in the margin of his own copy.",
-     "direction": "",
+     "direction": "[wry]",
      "emotion": "wry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -3452,10 +3332,10 @@
      "sfx": []
     },
     {
-     "id": "b135",
+     "id": "b130",
      "speaker": "CLONE",
      "text": "Page nine says a beginner should aim for balance.",
-     "direction": "[muffled]",
+     "direction": "",
      "emotion": "muffled",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3476,7 +3356,7 @@
      "sfx": []
     },
     {
-     "id": "b136",
+     "id": "b131",
      "speaker": "KURAMA",
      "text": "Page nine was written by someone who has never held anything. Read it again. Slower.",
      "direction": "",
@@ -3501,10 +3381,10 @@
      "sfx": []
     },
     {
-     "id": "b137",
+     "id": "b132",
      "speaker": "NARRATOR",
-     "text": "By the third night, the fox has stopped saying wrong and started saying again. A creature of pure hatred, listening to a beginner's primer. If anyone asked, he'd sooner eat the book.",
-     "direction": "",
+     "text": "By the third night the fox has stopped saying wrong and started saying again. A creature of pure hatred, listening to a beginner's primer. He'd sooner eat the book.",
+     "direction": "[dry]",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -3527,10 +3407,10 @@
      ]
     },
     {
-     "id": "b138",
+     "id": "b133",
      "speaker": "CLONE",
      "text": "Chapter two. Chakra control is the foundation of all ninja arts.",
-     "direction": "[reading]",
+     "direction": "",
      "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3548,12 +3428,10 @@
      ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": [
-      "whoosh"
-     ]
+     "sfx": []
     },
     {
-     "id": "b139",
+     "id": "b134",
      "speaker": "KURAMA",
      "text": "Chakra control is the foundation of not dying. Write that down.",
      "direction": "",
@@ -3578,10 +3456,10 @@
      "sfx": []
     },
     {
-     "id": "b140",
+     "id": "b135",
      "speaker": "CLONE",
      "text": "Boss, he wants us to write that down.",
-     "direction": "",
+     "direction": "[muffled]",
      "emotion": "muffled",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3602,10 +3480,10 @@
      "sfx": []
     },
     {
-     "id": "b141",
+     "id": "b136",
      "speaker": "NARUTO",
      "text": "Then write it down.",
-     "direction": "[dry]",
+     "direction": "",
      "emotion": "dry",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3626,7 +3504,7 @@
      "sfx": []
     },
     {
-     "id": "b142",
+     "id": "b137",
      "speaker": "KURAMA",
      "text": "Is there a villain in this book?",
      "direction": "",
@@ -3651,10 +3529,10 @@
      "sfx": []
     },
     {
-     "id": "b143",
+     "id": "b138",
      "speaker": "CLONE",
      "text": "It's a chakra primer. The villain is poor posture.",
-     "direction": "",
+     "direction": "[careful]",
      "emotion": "careful",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3672,13 +3550,15 @@
      ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b144",
+     "id": "b139",
      "speaker": "KURAMA",
-     "text": "Hm.",
-     "direction": "[flat]",
+     "text": "Hm. Poor posture. Continue.",
+     "direction": "",
      "emotion": "flat",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3697,12 +3577,10 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": [
-      "page_flutter"
-     ]
+     "sfx": []
     },
     {
-     "id": "b145",
+     "id": "b140",
      "speaker": "KURAMA",
      "text": "You still want it. The night of the red sky.",
      "direction": "",
@@ -3727,10 +3605,10 @@
      "sfx": []
     },
     {
-     "id": "b146",
+     "id": "b141",
      "speaker": "NARUTO",
      "text": "Yes. All of it.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3751,10 +3629,10 @@
      "sfx": []
     },
     {
-     "id": "b147",
+     "id": "b142",
      "speaker": "KURAMA",
      "text": "I remember being angry. I've been angry for a very long time. But that night, the anger wasn't mine.",
-     "direction": "[bitter]",
+     "direction": "",
      "emotion": "bitter",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3776,7 +3654,7 @@
      "sfx": []
     },
     {
-     "id": "b148",
+     "id": "b143",
      "speaker": "NARUTO",
      "text": "What does that mean?",
      "direction": "",
@@ -3800,7 +3678,7 @@
      "sfx": []
     },
     {
-     "id": "b149",
+     "id": "b144",
      "speaker": "KURAMA",
      "text": "A man in a mask. One red eye in the hole of it. And my own will, going out like a candle.",
      "direction": "[slow]",
@@ -3827,10 +3705,10 @@
      ]
     },
     {
-     "id": "b150",
+     "id": "b145",
      "speaker": "NARUTO",
      "text": "That's it?",
-     "direction": "[quiet]",
+     "direction": "",
      "emotion": "quiet",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3848,12 +3726,10 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b151",
+     "id": "b146",
      "speaker": "NARUTO",
      "text": "I'm not doing this because I like you.",
      "direction": "",
@@ -3877,10 +3753,10 @@
      "sfx": []
     },
     {
-     "id": "b152",
+     "id": "b147",
      "speaker": "KURAMA",
      "text": "Good. I'd be insulted.",
-     "direction": "",
+     "direction": "[flat]",
      "emotion": "flat",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3902,10 +3778,10 @@
      "sfx": []
     },
     {
-     "id": "b153",
+     "id": "b148",
      "speaker": "KURAMA",
      "text": "That's all I'll give you. One true memory. You want another, bring a better book.",
-     "direction": "[flat]",
+     "direction": "",
      "emotion": "flat",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3927,9 +3803,9 @@
      "sfx": []
     },
     {
-     "id": "b154",
+     "id": "b149",
      "speaker": "NARRATOR",
-     "text": "The clone pops. Across the village, Naruto sits up in the dark with a memory that isn't his. A mask. A fox who didn't choose. It's the first real fact about October tenth in twelve years, and he paid for it with a chakra primer.",
+     "text": "The clone pops. Across the village, Naruto sits up in the dark holding a memory that isn't his. A mask. A fox who didn't choose. The first real fact about October tenth in twelve years, paid for with a chakra primer.",
      "direction": "",
      "emotion": "quiet",
      "pause_class": "turn",
@@ -3954,10 +3830,10 @@
      ]
     },
     {
-     "id": "b155",
+     "id": "b150",
      "speaker": "KURAMA",
      "text": "Tomorrow, brat. And bring a book with a villain who wins.",
-     "direction": "",
+     "direction": "[cavernous]",
      "emotion": "cavernous",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -3976,7 +3852,9 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "wind"
+     ]
     }
    ]
   },
@@ -3988,10 +3866,10 @@
    "music": "archive_hushed",
    "beats": [
     {
-     "id": "b156",
+     "id": "b151",
      "speaker": "NARRATOR",
-     "text": "Somebody else has noticed. Danzo, the Third Hokage's oldest rival, hears about a boy with the Nine-Tails, a jutsu that copies his mind, and the keys to the archive.",
-     "direction": "[ominous]",
+     "text": "Somebody else has noticed. Danzo, the Third's oldest rival, hears of a boy with the Nine-Tails, a jutsu that copies his mind, and the keys to the archive.",
+     "direction": "",
      "emotion": "ominous",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -4009,12 +3887,10 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": [
-      "whoosh"
-     ]
+     "sfx": []
     },
     {
-     "id": "b157",
+     "id": "b152",
      "speaker": "NARRATOR",
      "text": "To the Third, it's a lonely child with a filing job. To Danzo, it's a weapon left unattended in a library.",
      "direction": "",
@@ -4040,10 +3916,10 @@
      ]
     },
     {
-     "id": "b158",
+     "id": "b153",
      "speaker": "NARRATOR",
      "text": "Two in the morning. A man in a plain white mask walks into the archive. No village crest. No footsteps. He heads straight for the Namikaze box.",
-     "direction": "",
+     "direction": "[ominous]",
      "emotion": "ominous",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -4067,10 +3943,10 @@
      ]
     },
     {
-     "id": "b159",
+     "id": "b154",
      "speaker": "NARRATOR",
-     "text": "By the shelf there's a filing box. It's been there since yesterday. Nobody has asked why a filing box has been there since yesterday. It's a clone, and it's having the worst shift of its life.",
-     "direction": "[dry]",
+     "text": "By the shelf stands a filing box. It's been there since yesterday. Nobody asked why. It's a clone, and it's having the worst shift of its life.",
+     "direction": "",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -4092,7 +3968,7 @@
      "sfx": []
     },
     {
-     "id": "b160",
+     "id": "b155",
      "speaker": "CLONE",
      "text": "Do not move. You're a box. Boxes don't have opinions.",
      "direction": "",
@@ -4116,10 +3992,10 @@
      "sfx": []
     },
     {
-     "id": "b161",
+     "id": "b156",
      "speaker": "CLONE",
      "text": "He's reading the Uzumaki file. Why is he reading the Uzumaki file?",
-     "direction": "",
+     "direction": "[whispering]",
      "emotion": "whispering",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4137,13 +4013,15 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b162",
+     "id": "b157",
      "speaker": "CLONE",
      "text": "He's writing in a little book. Boss is gonna want that little book.",
-     "direction": "[whispering]",
+     "direction": "",
      "emotion": "whispering",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4161,12 +4039,10 @@
      ],
      "camera": "pan_lr",
      "vfx": [],
-     "sfx": [
-      "page_flutter"
-     ]
+     "sfx": []
     },
     {
-     "id": "b163",
+     "id": "b158",
      "speaker": "CLONE",
      "text": "He's counting the boxes. There are forty. I'm number forty one. I don't match.",
      "direction": "",
@@ -4190,10 +4066,10 @@
      "sfx": []
     },
     {
-     "id": "b164",
+     "id": "b159",
      "speaker": "NARRATOR",
-     "text": "The Root agent reads for an hour. Then, tired of standing, he does the one thing nobody in the history of the Leaf has done to a filing box. He sits on it.",
-     "direction": "",
+     "text": "The Root agent reads for an hour. Then, tired of standing, he does what nobody in the Leaf has ever done to a filing box. He sits on it.",
+     "direction": "[dry]",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -4215,10 +4091,10 @@
      "sfx": []
     },
     {
-     "id": "b165",
+     "id": "b160",
      "speaker": "CLONE",
      "text": "Boss. A man is using me as a stool.",
-     "direction": "[strained]",
+     "direction": "",
      "emotion": "strained",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4241,9 +4117,9 @@
      ]
     },
     {
-     "id": "b166",
+     "id": "b161",
      "speaker": "NARRATOR",
-     "text": "Boxes make no noise. This one remembers his hands, his boots and every page he opened. When the agent leaves, the clone pops. The only witness in the room was furniture.",
+     "text": "Boxes make no noise. This one remembers his hands, his boots and every page he opened. When he leaves, the clone pops. The only witness was furniture.",
      "direction": "",
      "emotion": "wry",
      "pause_class": "turn",
@@ -4266,10 +4142,10 @@
      "sfx": []
     },
     {
-     "id": "b167",
+     "id": "b162",
      "speaker": "NARRATOR",
      "text": "Morning. The Hokage's office. Danzo doesn't knock, because Danzo never has. The Third Hokage doesn't look up from his pipe. Naruto, filing in the corner, does.",
-     "direction": "",
+     "direction": "[even]",
      "emotion": "even",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -4288,13 +4164,15 @@
      ],
      "camera": "pan_lr",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "page_flutter"
+     ]
     },
     {
-     "id": "b168",
+     "id": "b163",
      "speaker": "DANZO",
      "text": "Hiruzen. The Uzumaki boy should be trained properly. Root has the facilities.",
-     "direction": "[cold]",
+     "direction": "",
      "emotion": "cold",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4313,12 +4191,10 @@
      ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b169",
+     "id": "b164",
      "speaker": "HIRUZEN",
      "text": "No. Absolutely not.",
      "direction": "",
@@ -4342,10 +4218,10 @@
      "sfx": []
     },
     {
-     "id": "b170",
+     "id": "b165",
      "speaker": "DANZO",
      "text": "You've given the Nine-Tails a library card. A child with that much access isn't a clerk. He's a risk.",
-     "direction": "",
+     "direction": "[flat]",
      "emotion": "flat",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4367,10 +4243,10 @@
      "sfx": []
     },
     {
-     "id": "b171",
+     "id": "b166",
      "speaker": "HIRUZEN",
      "text": "He has a staff form, actually.",
-     "direction": "[dry]",
+     "direction": "",
      "emotion": "dry",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4391,7 +4267,7 @@
      "sfx": []
     },
     {
-     "id": "b172",
+     "id": "b167",
      "speaker": "DANZO",
      "text": "A form is paper. I'll requisition him through the council. Today.",
      "direction": "[cold]",
@@ -4416,10 +4292,10 @@
      "sfx": []
     },
     {
-     "id": "b173",
+     "id": "b168",
      "speaker": "HIRUZEN",
      "text": "Section three of the Hokage's office staff regulations. Office staff answer to the Hokage and to no one else. Not the council. Not Root. Not you.",
-     "direction": "",
+     "direction": "[calm]",
      "emotion": "calm",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4437,13 +4313,15 @@
      ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "wind"
+     ]
     },
     {
-     "id": "b174",
+     "id": "b169",
      "speaker": "NARUTO",
      "text": "I signed it twice by accident! Does that make it twice as binding?",
-     "direction": "[bright]",
+     "direction": "",
      "emotion": "bright",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4461,12 +4339,10 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": [
-      "whoosh"
-     ]
+     "sfx": []
     },
     {
-     "id": "b175",
+     "id": "b170",
      "speaker": "HIRUZEN",
      "text": "I believe it does.",
      "direction": "",
@@ -4490,10 +4366,10 @@
      "sfx": []
     },
     {
-     "id": "b176",
+     "id": "b171",
      "speaker": "NARUTO",
      "text": "Also, one of your guys sat on a filing box last night. It was me. I'd like an apology.",
-     "direction": "",
+     "direction": "[innocent]",
      "emotion": "innocent",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4514,10 +4390,10 @@
      "sfx": []
     },
     {
-     "id": "b177",
+     "id": "b172",
      "speaker": "DANZO",
      "text": "I don't know what you mean.",
-     "direction": "[cold]",
+     "direction": "",
      "emotion": "cold",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4539,7 +4415,7 @@
      "sfx": []
     },
     {
-     "id": "b178",
+     "id": "b173",
      "speaker": "NARUTO",
      "text": "Plain mask. Boots like a wet sandwich. Sat on me for an hour.",
      "direction": "",
@@ -4563,10 +4439,10 @@
      "sfx": []
     },
     {
-     "id": "b179",
+     "id": "b174",
      "speaker": "DANZO",
      "text": "He's a boy, Hiruzen.",
-     "direction": "",
+     "direction": "[cold]",
      "emotion": "cold",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4585,13 +4461,15 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b180",
+     "id": "b175",
      "speaker": "HIRUZEN",
      "text": "He's my clerk.",
-     "direction": "[firm]",
+     "direction": "",
      "emotion": "firm",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4609,12 +4487,10 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": [
-      "page_flutter"
-     ]
+     "sfx": []
     },
     {
-     "id": "b181",
+     "id": "b176",
      "speaker": "NARRATOR",
      "text": "Danzo has a hundred ways around a rule. He hasn't one around a form. Weeks ago, the Third Hokage filed the one document in Konoha that Root can't requisition. The old man didn't punish him. He hired him.",
      "direction": "[dry]",
@@ -4642,10 +4518,10 @@
      ]
     },
     {
-     "id": "b182",
+     "id": "b177",
      "speaker": "HIRUZEN",
      "text": "He'll try again, Naruto.",
-     "direction": "",
+     "direction": "[tired]",
      "emotion": "tired",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4666,10 +4542,10 @@
      "sfx": []
     },
     {
-     "id": "b183",
+     "id": "b178",
      "speaker": "NARUTO",
      "text": "I know. He'll have to fill out a form.",
-     "direction": "[dry]",
+     "direction": "",
      "emotion": "dry",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4690,7 +4566,7 @@
      "sfx": []
     },
     {
-     "id": "b184",
+     "id": "b179",
      "speaker": "HIRUZEN",
      "text": "I'm very proud of that form.",
      "direction": "",
@@ -4714,10 +4590,10 @@
      "sfx": []
     },
     {
-     "id": "b185",
+     "id": "b180",
      "speaker": "NARRATOR",
      "text": "Danzo leaves without raising his voice. He doesn't look angry. He looks like a man who has simply moved the appointment.",
-     "direction": "",
+     "direction": "[ominous]",
      "emotion": "ominous",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -4735,7 +4611,9 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "page_flutter"
+     ]
     }
    ]
   },
@@ -4747,10 +4625,10 @@
    "music": "clone_comedy",
    "beats": [
     {
-     "id": "b186",
+     "id": "b181",
      "speaker": "NARRATOR",
-     "text": "The Third Hokage has an idea. Keep Team Seven busy, visible and, above all, inside the village. So he gives them D-ranks. Weeding. Painting. Babysitting. And the occasional lost cat.",
-     "direction": "[dry]",
+     "text": "The Third Hokage has an idea. Keep Team Seven busy and inside the village. So he hands them D-ranks. Weeding. Painting. Babysitting. And the occasional lost cat.",
+     "direction": "",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -4769,12 +4647,10 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b187",
+     "id": "b182",
      "speaker": "NARRATOR",
      "text": "Naruto sends two hundred clones. By noon, twelve missions are done. By three, twenty-nine. Every garden in Konoha has been weeded by someone with the same face.",
      "direction": "",
@@ -4799,7 +4675,7 @@
      "sfx": []
     },
     {
-     "id": "b188",
+     "id": "b183",
      "speaker": "NARRATOR",
      "text": "He hasn't gotten one ounce stronger. He has simply brought more of himself. Years from now he'll run the whole Hokage's office this way. Today it's the mission board.",
      "direction": "[dry]",
@@ -4827,7 +4703,7 @@
      }
     },
     {
-     "id": "b189",
+     "id": "b184",
      "speaker": "NARRATOR",
      "text": "Eleven of the forty missions are the same cat. Tora, the Daimyo's wife's cat, escapes every week, and every week a team loses an afternoon and a good deal of skin.",
      "direction": "[dry]",
@@ -4855,7 +4731,7 @@
      }
     },
     {
-     "id": "b190",
+     "id": "b185",
      "speaker": "CLONE",
      "text": "Boss, found the cat. Again.",
      "direction": "",
@@ -4879,10 +4755,10 @@
      "sfx": []
     },
     {
-     "id": "b191",
+     "id": "b186",
      "speaker": "NARUTO",
      "text": "Again? What number is this?",
-     "direction": "",
+     "direction": "[tired]",
      "emotion": "tired",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4900,13 +4776,15 @@
      ],
      "camera": "slow_pull_out",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "wind"
+     ]
     },
     {
-     "id": "b192",
+     "id": "b187",
      "speaker": "CLONE",
      "text": "Eleven. We know his hiding places better than he does.",
-     "direction": "[bright]",
+     "direction": "",
      "emotion": "bright",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4924,14 +4802,12 @@
      ],
      "camera": "pan_lr",
      "vfx": [],
-     "sfx": [
-      "whoosh"
-     ]
+     "sfx": []
     },
     {
-     "id": "b193",
+     "id": "b188",
      "speaker": "NARRATOR",
-     "text": "By the eleventh capture the cat has given up. Tora looks at Naruto. Naruto looks at Tora. The Daimyo's wife squeezes the cat until its eyes go dead, and for once the whole room agrees with the cat.",
+     "text": "By the eleventh capture, the cat has given up. The Daimyo's wife squeezes it until its eyes go dead, and for once the whole room agrees with the cat.",
      "direction": "",
      "emotion": "deadpan",
      "pause_class": "turn",
@@ -4953,10 +4829,10 @@
      "sfx": []
     },
     {
-     "id": "b194",
+     "id": "b189",
      "speaker": "IRUKA",
      "text": "Weeding, done. Painting, done. Grocery run for the Akimichi clan, done.",
-     "direction": "",
+     "direction": "[hoarse]",
      "emotion": "hoarse",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -4977,10 +4853,10 @@
      "sfx": []
     },
     {
-     "id": "b195",
+     "id": "b190",
      "speaker": "CLONE",
      "text": "That one was hard. They noticed we ate the potato chips.",
-     "direction": "[sheepish]",
+     "direction": "",
      "emotion": "sheepish",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5001,7 +4877,7 @@
      "sfx": []
     },
     {
-     "id": "b196",
+     "id": "b191",
      "speaker": "KAKASHI",
      "text": "Naruto. I notice the missions are finished before I find out what they are.",
      "direction": "",
@@ -5025,10 +4901,10 @@
      "sfx": []
     },
     {
-     "id": "b197",
+     "id": "b192",
      "speaker": "NARUTO",
      "text": "Efficiency, sensei!",
-     "direction": "",
+     "direction": "[bright]",
      "emotion": "bright",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5046,13 +4922,15 @@
      ],
      "camera": "pan_lr",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b198",
+     "id": "b193",
      "speaker": "KAKASHI",
      "text": "I've read four chapters. Don't stop on my account.",
-     "direction": "[lazy]",
+     "direction": "",
      "emotion": "lazy",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5070,12 +4948,10 @@
      ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": [
-      "page_flutter"
-     ]
+     "sfx": []
     },
     {
-     "id": "b199",
+     "id": "b194",
      "speaker": "IRUKA",
      "text": "Team Seven. Forty D-ranks. In one day. That's the entire board.",
      "direction": "",
@@ -5099,10 +4975,10 @@
      "sfx": []
     },
     {
-     "id": "b200",
+     "id": "b195",
      "speaker": "SAKURA",
      "text": "I can't feel my arms.",
-     "direction": "",
+     "direction": "[dazed]",
      "emotion": "dazed",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5123,10 +4999,10 @@
      "sfx": []
     },
     {
-     "id": "b201",
+     "id": "b196",
      "speaker": "SASUKE",
      "text": "Tch. Is that all there is?",
-     "direction": "[cold]",
+     "direction": "",
      "emotion": "cold",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5147,7 +5023,7 @@
      "sfx": []
     },
     {
-     "id": "b202",
+     "id": "b197",
      "speaker": "KAKASHI",
      "text": "I read two chapters. Excellent day.",
      "direction": "",
@@ -5171,10 +5047,10 @@
      "sfx": []
     },
     {
-     "id": "b203",
+     "id": "b198",
      "speaker": "IRUKA",
      "text": "There are no more D-ranks. I'm out. I looked under the desk.",
-     "direction": "",
+     "direction": "[pleading]",
      "emotion": "pleading",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5192,13 +5068,15 @@
      ],
      "camera": "pan_rl",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "page_flutter"
+     ]
     },
     {
-     "id": "b204",
+     "id": "b199",
      "speaker": "HIRUZEN",
      "text": "Then I suppose it's time for something harder. A C-rank. An escort.",
-     "direction": "[wry]",
+     "direction": "",
      "emotion": "wry",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5216,12 +5094,10 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": [
-      "wind"
-     ]
+     "sfx": []
     },
     {
-     "id": "b205",
+     "id": "b200",
      "speaker": "NARUTO",
      "text": "Who's the client, old man?",
      "direction": "",
@@ -5245,10 +5121,10 @@
      "sfx": []
     },
     {
-     "id": "b206",
+     "id": "b201",
      "speaker": "HIRUZEN",
      "text": "A bridge builder from the Land of Waves. He's paying the going rate for a C-rank.",
-     "direction": "",
+     "direction": "[even]",
      "emotion": "even",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5269,10 +5145,10 @@
      "sfx": []
     },
     {
-     "id": "b207",
+     "id": "b202",
      "speaker": "SASUKE",
      "text": "Finally.",
-     "direction": "[cold]",
+     "direction": "",
      "emotion": "cold",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5293,9 +5169,9 @@
      "sfx": []
     },
     {
-     "id": "b208",
+     "id": "b203",
      "speaker": "NARRATOR",
-     "text": "That night in the archive, Naruto reads the part of the bingo book nobody reads. The appendix. The Hidden Mist's procedure for hunting down their own missing ninja. It's written like a recipe.",
+     "text": "That night in the archive, Naruto reads the part of the bingo book nobody reads. The appendix. The Hidden Mist's procedure for hunting their own missing ninja. It's written like a recipe.",
      "direction": "",
      "emotion": "hushed",
      "pause_class": "turn",
@@ -5320,10 +5196,10 @@
      ]
     },
     {
-     "id": "b209",
+     "id": "b204",
      "speaker": "CLONE",
      "text": "Step one, find the missing-nin. Step two, finish the missing-nin. Step three, destroy the body where it falls.",
-     "direction": "",
+     "direction": "[reading]",
      "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5341,13 +5217,15 @@
      ],
      "camera": "drift_up",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "wind"
+     ]
     },
     {
-     "id": "b210",
+     "id": "b205",
      "speaker": "CLONE",
      "text": "There's a diagram. A body, a flame, and an arrow that says, here.",
-     "direction": "[reading]",
+     "direction": "",
      "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5365,12 +5243,10 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": [
-      "whoosh"
-     ]
+     "sfx": []
     },
     {
-     "id": "b211",
+     "id": "b206",
      "speaker": "NARUTO",
      "text": "Why where it falls?",
      "direction": "",
@@ -5394,10 +5270,10 @@
      "sfx": []
     },
     {
-     "id": "b212",
+     "id": "b207",
      "speaker": "CLONE",
      "text": "Secrets. A hunter never carries the body home. It says so four times. Underlined twice.",
-     "direction": "",
+     "direction": "[reading]",
      "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5418,10 +5294,10 @@
      "sfx": []
     },
     {
-     "id": "b213",
+     "id": "b208",
      "speaker": "CLONE",
      "text": "And somebody wrote in the margin, I mean it.",
-     "direction": "[reading]",
+     "direction": "",
      "emotion": "reading",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5442,7 +5318,7 @@
      "sfx": []
     },
     {
-     "id": "b214",
+     "id": "b209",
      "speaker": "NARUTO",
      "text": "So they burn it right there. Nobody drags a body forty miles. I respect that.",
      "direction": "",
@@ -5466,10 +5342,10 @@
      "sfx": []
     },
     {
-     "id": "b215",
+     "id": "b210",
      "speaker": "NARRATOR",
      "text": "It's the most boring paragraph in the book. Naruto folds the corner of the page anyway. He's learned that the boring paragraphs are where the useful things hide.",
-     "direction": "",
+     "direction": "[dry]",
      "emotion": "dry",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -5488,13 +5364,15 @@
      ],
      "camera": "slow_push_in",
      "vfx": [],
-     "sfx": []
+     "sfx": [
+      "whoosh"
+     ]
     },
     {
-     "id": "b216",
+     "id": "b211",
      "speaker": "NARRATOR",
      "text": "The next morning, at the village gate. Team Seven, one jonin, and a bridge builder from the Land of Waves, with a hat, a bottle and a very calm face.",
-     "direction": "[quiet]",
+     "direction": "",
      "emotion": "quiet",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -5519,7 +5397,7 @@
      ]
     },
     {
-     "id": "b217",
+     "id": "b212",
      "speaker": "TAZUNA",
      "text": "I'm just a simple bridge builder. Nothing exciting is going to happen on this trip. I promise.",
      "direction": "",
@@ -5543,10 +5421,10 @@
      "sfx": []
     },
     {
-     "id": "b218",
+     "id": "b213",
      "speaker": "SAKURA",
      "text": "That's what a C-rank is, right? Nothing exciting?",
-     "direction": "",
+     "direction": "[bright]",
      "emotion": "bright",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5567,10 +5445,10 @@
      "sfx": []
     },
     {
-     "id": "b219",
+     "id": "b214",
      "speaker": "KAKASHI",
      "text": "Stay close. It's an escort. Nothing dangerous. Probably.",
-     "direction": "[lazy]",
+     "direction": "",
      "emotion": "lazy",
      "pause_class": "banter",
      "pause_after_ms": 190,
@@ -5591,9 +5469,9 @@
      "sfx": []
     },
     {
-     "id": "b220",
+     "id": "b215",
      "speaker": "NARRATOR",
-     "text": "They walk out under the gate. For the first hour Naruto is quiet, which makes Kakashi more nervous than any noise could. Behind them, a hundred clones hold the archive. Ahead, a long dry road.",
+     "text": "They walk out under the gate. For the first hour Naruto is quiet, which worries Kakashi more than any noise could. Behind them, a hundred clones hold the archive. Ahead, a long dry road.",
      "direction": "",
      "emotion": "even",
      "pause_class": "turn",
@@ -5616,10 +5494,10 @@
      "sfx": []
     },
     {
-     "id": "b221",
+     "id": "b216",
      "speaker": "NARRATOR",
      "text": "Dust. Cracked mud. Not a cloud since last week. And in the middle of the road, sitting there as if somebody left it behind, is a puddle.",
-     "direction": "",
+     "direction": "[quiet]",
      "emotion": "quiet",
      "pause_class": "turn",
      "pause_after_ms": 300,
@@ -5643,7 +5521,7 @@
      ]
     },
     {
-     "id": "b222",
+     "id": "b217",
      "speaker": "NARUTO",
      "text": "Sensei. It hasn't rained in a week.",
      "direction": "[quiet]",
