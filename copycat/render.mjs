@@ -23,7 +23,8 @@ const workers = parseInt(opt.workers || '4', 10), crf = String(opt.crf || 18), p
 const rdir = resolve(here, 'renderer'); const src = {}; for (const f of readdirSync(rdir).filter(f => f.endsWith('.js'))) src[f] = readFileSync(join(rdir, f), 'utf8');
 const sha = s => createHash('sha1').update(s).digest('hex');
 const baseHash = sha(['engine.js', 'art.js', 'shots_core.js'].map(f => src[f] || '').join('\n') + readFileSync(join(rdir, 'index.html'), 'utf8'));
-const packOf = {}; for (const [f, s] of Object.entries(src)) for (const m of s.matchAll(/CC\.def\(\s*['"]([\w-]+)['"]/g)) packOf[m[1]] = f;
+const loadOrder = [...readFileSync(join(rdir, 'index.html'), 'utf8').matchAll(/<script src="([\w.-]+\.js)"/g)].map(m => m[1]);
+const packOf = {}; for (const f of loadOrder) for (const m of (src[f] || '').matchAll(/CC\.def\(\s*['"]([\w-]+)['"]/g)) packOf[m[1]] = f; // last loaded definition wins
 const missing = [...new Set(plan.beats.map(b => b.shot && b.shot.type).filter(t => t && !packOf[t]))];
 if (missing.length) console.error('[render] WARNING: shot types with no implementation: ' + missing.join(', '));
 const frameRange = b => [Math.round(b.start * fps), Math.round(b.end * fps)];

@@ -440,3 +440,14 @@
     CC.flash(c, env.hit('which', 0.4, cu) * 0.7, LUC);
   });
 })();
+
+// Chapter cards: keep the frame alive for the whole hold (slow push-in, drifting embers, breathing glow).
+(() => {
+  const CC = window.CC, { W, H, PAL, glow, clamp } = CC; const base = CC.shots.chapter_card;
+  CC.def('chapter_card', (c, env) => {
+    const t = env.t, z = 1 + 0.05 * t / env.dur;
+    c.save(); c.translate(W * 0.42, H / 2); c.scale(z, z); c.rotate(-0.006 * t); c.translate(-W * 0.42, -H / 2); base(c, env); c.restore();
+    glow(c, W * 0.3 + Math.sin(t * 1.3) * 60, H * 0.5, 620, PAL.blood, 0.07 + 0.05 * Math.sin(t * 3.1));
+    CC.particles(c, t, { n: 55, seed: 40 + (env.params.n || 0), kind: 'ember', color: PAL.ember, speed: 1.3, size: 1.2, a: 0.9 * clamp(t / 0.4) });
+  });
+})();

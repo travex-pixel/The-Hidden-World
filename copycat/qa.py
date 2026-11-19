@@ -119,7 +119,8 @@ def stage4(plan, mp4: Path, out: Path) -> dict:
     if black_bad: err.append(f"unplanned black segments >0.7s: {black_bad}")
     if freeze: err.append(f"frozen video >1.5s: {freeze}")
     # one frame per beat (midpoint) + caption probes, pulled from the real MP4 in a single decode pass
-    caps = [c for c in plan["captions"] if c["end"] - c["start"] > 0.35]; step = max(1, len(caps) // 60); cap_s = caps[::step]
+    nocap = [(b["start"], b["end"]) for b in plan["beats"] if b["shot"].get("captions") is False]
+    caps = [c for c in plan["captions"] if c["end"] - c["start"] > 0.35 and not any(a <= c["start"] < z for a, z in nocap)]; step = max(1, len(caps) // 60); cap_s = caps[::step]
     want = [("beat", b["id"], round((b["start"] + b["end"]) / 2 * fps)) for b in plan["beats"]] + [("cap", str(i), round((c["start"] + min(c["end"], c["start"] + 0.5)) / 2 * fps + 2)) for i, c in enumerate(cap_s)]
     want.sort(key=lambda x: x[2]); uniq = sorted({w[2] for w in want})
     sel = "+".join(f"eq(n\\,{n})" for n in uniq)
@@ -135,7 +136,9 @@ def stage4(plan, mp4: Path, out: Path) -> dict:
             st = ImageStat.Stat(im); per_beat[key] = f
             if st.mean[0] < 5 or st.stddev[0] < 3.5: blank.append(f"{key} (mean {st.mean[0]:.1f}, sd {st.stddev[0]:.1f})")
         else:
-            cap_n += 1; band = im.crop((180, 440, 780, 520)); h = band.histogram(); bright = sum(h[205:]) / (band.width * band.height); cap_ok += bright > 0.012
+            cap_n += 1; band = Image.open(f).convert("RGB").crop((180, 440, 780, 520)); r_, g_, b_ = band.split()
+            mx = Image.merge("RGB", (r_, g_, b_)).point(lambda v: 255 if v > 205 else 0).convert("L").point(lambda v: 255 if v > 0 else 0)  # any channel bright: white, gold, red, teal captions
+            cap_ok += (mx.histogram()[255] / (band.width * band.height)) > 0.003
     if blank: err.append("near-blank frames at beat midpoints: " + ", ".join(blank))
     rate = cap_ok / max(1, cap_n)
     if rate < 0.93: err.append(f"captions detected in only {cap_ok}/{cap_n} probes")

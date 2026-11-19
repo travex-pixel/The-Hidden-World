@@ -37,7 +37,7 @@ def overlay_png(out: Path, title: str, kick: str, cta1: str, cta2: str) -> Path:
 def main(argv=None):
     ap = argparse.ArgumentParser(); ap.add_argument("project"); ap.add_argument("--from", dest="a", default="b001"); ap.add_argument("--to", dest="z", default="b015")
     ap.add_argument("--title", default="ASTA WAS REBORN|WITH ALL HIS|MEMORIES?"); ap.add_argument("--kick", default="WHAT IF"); ap.add_argument("--cta1", default="BLACK CLOVER WHAT IF")
-    ap.add_argument("--cta2", default="FULL VIDEO ON THE CHANNEL"); ap.add_argument("--crop", type=int, default=1500)
+    ap.add_argument("--cta2", default="FULL VIDEO ON THE CHANNEL"); ap.add_argument("--crop", type=int, default=1920)  # full 16:9 width: side-anchored text (stamps, name cards) must never be cut
     a = ap.parse_args(argv)
     out = ROOT / "out" / "copycat" / a.project; pk = out / "package"; pk.mkdir(exist_ok=True)
     plan = json.loads((out / "plan.json").read_text()); ids = [b["id"] for b in plan["beats"]]
