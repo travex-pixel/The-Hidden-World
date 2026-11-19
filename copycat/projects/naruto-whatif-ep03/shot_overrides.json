@@ -1,30 +1,594 @@
 {
  "_config": {
-  "avg_shot_s": 5.6,
+  "avg_shot_s": 5.2,
   "split_bias": 1.35,
   "max_shot": 11.0,
   "merge_short_s": 5.0,
   "merge_cross_s": 3.8,
   "merge_max_s": 9.0,
-  "cold_avg": 4.8,
-  "lock_seconds": 45,
+  "cold_avg": 4.6,
+  "lock_seconds": 60,
   "era": "part1",
   "crowd_penalty": 0.0,
   "strict_reuse": true,
   "lock_shots": 4,
   "extra_inserts": {},
-  "grid_plan": [],
-  "gap_exempt": [],
+  "grid_plan": [
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b006",
+      "f": [
+       0.0,
+       0.499493311715
+      ]
+     },
+     {
+      "k": "g2",
+      "b": "b006..b007",
+      "f": [
+       0.390323091543,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b016",
+      "f": [
+       0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b017",
+      "f": [
+       0.0,
+       0.33317535545
+      ]
+     },
+     {
+      "k": "g2",
+      "b": "b017",
+      "f": [
+       0.33317535545,
+       0.666666666667
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b023",
+      "f": [
+       0.0,
+       1.002118644068
+      ]
+     },
+     {
+      "k": "g2",
+      "b": "b024",
+      "f": [
+       0.004621848739,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b038",
+      "f": [
+       0.0,
+       1.00107372942
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b039",
+      "f": [
+       0.000872093023,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g16z",
+      "b": "b087",
+      "f": [
+       0.0,
+       0.994724501758
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b088",
+      "f": [
+       -0.019247219846,
+       1.007271171942
+      ]
+     },
+     {
+      "k": "g2",
+      "b": "b089",
+      "f": [
+       0.014604810997,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g4",
+      "b": "b090..b091",
+      "f": [
+       0.0,
+       0.990997942387
+      ]
+     },
+     {
+      "k": "g6",
+      "b": "b092..b093",
+      "f": [
+       -0.008016491067,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g3",
+      "b": "b094..b095",
+      "f": [
+       0.0,
+       0.998184568835
+      ]
+     },
+     {
+      "k": "g9",
+      "b": "b096..b097",
+      "f": [
+       -0.001823708207,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b098",
+      "f": [
+       0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b104",
+      "f": [
+       0.0,
+       0.250198255353
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b104",
+      "f": [
+       0.250198255353,
+       0.5
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b104",
+      "f": [
+       0.5,
+       0.749801744647
+      ]
+     },
+     {
+      "k": "g6",
+      "b": "b104..b105",
+      "f": [
+       0.639024060557,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b238",
+      "f": [
+       0.0,
+       0.991653418124
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b239",
+      "f": [
+       -0.006724303554,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b099",
+      "f": [
+       0.0,
+       0.500226244344
+      ]
+     },
+     {
+      "k": "g4",
+      "b": "b099",
+      "f": [
+       0.500226244344,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g4",
+      "b": "b111",
+      "f": [
+       0.0,
+       1.006768189509
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b112",
+      "f": [
+       0.014407924358,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b149",
+      "f": [
+       0.0,
+       0.249678249678
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b149",
+      "f": [
+       0.249678249678,
+       0.500264970853
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b149",
+      "f": [
+       0.500264970853,
+       0.750094632448
+      ]
+     },
+     {
+      "k": "g6",
+      "b": "b149..b151",
+      "f": [
+       0.601323056382,
+       1.00006069066
+      ]
+     },
+     {
+      "k": "g9",
+      "b": "b152..b153",
+      "f": [
+       0.000208594076,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b155..b156",
+      "f": [
+       0.0,
+       0.990573606097
+      ]
+     },
+     {
+      "k": "g2",
+      "b": "b157",
+      "f": [
+       -0.027136258661,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g9",
+      "b": "b162",
+      "f": [
+       0.0,
+       0.5
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b172",
+      "f": [
+       0.0,
+       0.50007513148
+      ]
+     },
+     {
+      "k": "g6",
+      "b": "b172",
+      "f": [
+       0.50007513148,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g4",
+      "b": "b190",
+      "f": [
+       0.0,
+       0.500289128759
+      ]
+     },
+     {
+      "k": "g6",
+      "b": "b190",
+      "f": [
+       0.500289128759,
+       0.999518118736
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b191",
+      "f": [
+       -0.000834445928,
+       1.003838451268
+      ]
+     },
+     {
+      "k": "g2",
+      "b": "b192",
+      "f": [
+       0.010787992495,
+       1.000469043152
+      ]
+     },
+     {
+      "k": "g6",
+      "b": "b193",
+      "f": [
+       0.000436871996,
+       1.000873743993
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b194",
+      "f": [
+       0.000150455127,
+       0.249905965546
+      ]
+     },
+     {
+      "k": "g16z",
+      "b": "b194",
+      "f": [
+       0.249905965546,
+       1.0
+      ]
+     }
+    ]
+   }
+  ],
+  "gap_exempt": [
+   "b022",
+   "b026..b032",
+   "b040..b041",
+   "b042..b078",
+   "b116..b124",
+   "b127..b148",
+   "b154..b159",
+   "b179..b214",
+   "b216..b221"
+  ],
   "grid_faces": "auto",
   "avg_by_chapter": {
-   "cold_open": 5.0,
-   "ch6": 5.2
+   "cold_open": 4.6,
+   "ch1": 5.2,
+   "ch2": 4.6,
+   "ch3": 4.4,
+   "ch4": 6.4,
+   "ch5": 5.2,
+   "ch6": 4.6
   },
   "wl": {
-   "reuse_cap": 4,
-   "min_gap_s": 45,
-   "windows": {},
-   "beats": {},
+   "reuse_cap": 5,
+   "min_gap_s": 60,
+   "windows": {
+    "zabuza": [
+     "b042..b082",
+     "b172..b225"
+    ],
+    "haku": [
+     "b068..b082",
+     "b127..b148",
+     "b172..b225"
+    ],
+    "gato": [
+     "b154..b159",
+     "b216..b220"
+    ],
+    "inari": [
+     "b116..b124",
+     "b239"
+    ],
+    "kurama": [
+     "b191..b192"
+    ],
+    "demon_brothers": [
+     "b012..b025"
+    ]
+   },
+   "beats": {
+    "b027..b028": {
+     "scenes": [
+      "tazuna_house",
+      "road_day"
+     ]
+    },
+    "b083..b086": {
+     "scenes": [
+      "establishing",
+      "boat_mist",
+      "neutral_portrait",
+      "tazuna_house"
+     ]
+    },
+    "b116..b124": {
+     "scenes": [
+      "tazuna_house",
+      "aftermath",
+      "neutral_portrait",
+      "establishing",
+      "boat_mist"
+     ]
+    },
+    "b125..b126": {
+     "scenes": [
+      "establishing",
+      "boat_mist",
+      "neutral_portrait"
+     ]
+    },
+    "b163..b171": {
+     "scenes": [
+      "tazuna_house",
+      "neutral_portrait",
+      "road_day"
+     ]
+    },
+    "b191..b192": {
+     "scenes": [
+      "seal_mindscape",
+      "ice_mirrors"
+     ],
+     "time": "day"
+    },
+    "b203..b210": {
+     "scenes": [
+      "bridge_battle_mist",
+      "neutral_portrait",
+      "tazuna_house"
+     ]
+    },
+    "b226..b239": {
+     "scenes": [
+      "tazuna_house",
+      "neutral_portrait",
+      "road_day",
+      "establishing",
+      "aftermath"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "team7",
+      "kakashi",
+      "sasuke",
+      "sakura",
+      "tazuna",
+      "inari"
+     ]
+    },
+    "b216..b220": {
+     "scenes": [
+      "bridge_battle_mist",
+      "gato_office",
+      "neutral_portrait"
+     ]
+    },
+    "b172..b173": {
+     "scenes": [
+      "bridge_battle_mist",
+      "boat_mist",
+      "ice_mirrors"
+     ]
+    },
+    "b240..b243": {
+     "scenes": [
+      "establishing",
+      "archive_library",
+      "object",
+      "neutral_portrait"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "kakashi"
+     ]
+    }
+   },
    "relax_scenes": [
     "road_day",
     "woods_morning",
@@ -46,37 +610,21 @@
     "team7"
    ],
    "mist_native_scenes": [
-    "boat_mist",
     "bridge_battle_mist"
    ],
    "speaker_fallback": {
-    "INARI": {
-     "who": [
-      "tazuna"
-     ],
+    "HAKU": {
+     "who": [],
      "scenes": [
-      "tazuna_house",
-      "object"
+      "ice_mirrors"
      ],
-     "min_frames": 4,
-     "allow_empty": true
-    },
-    "GATO": {
-     "who": [
-      "villagers"
-     ],
-     "scenes": [
-      "gato_office",
-      "object"
-     ],
-     "min_frames": 5,
+     "min_frames": 99,
      "allow_empty": true
     }
    },
    "chapters": {
     "cold_open": {
      "scenes": [
-      "archive_library",
       "road_day",
       "establishing",
       "neutral_portrait"
@@ -87,7 +635,9 @@
       "naruto_clones",
       "kakashi",
       "team7",
-      "tazuna"
+      "tazuna",
+      "sasuke",
+      "sakura"
      ],
      "graded_scenes": [
       "neutral_portrait",
@@ -100,8 +650,8 @@
      "scenes": [
       "road_day",
       "woods_morning",
-      "establishing",
-      "neutral_portrait"
+      "neutral_portrait",
+      "tazuna_house"
      ],
      "time": "day",
      "who": [
@@ -113,15 +663,16 @@
       "sakura",
       "tazuna",
       "demon_brothers"
-     ]
+     ],
+     "graded_scenes": []
     },
     "ch2": {
      "scenes": [
       "shore_fight",
       "boat_mist",
       "bridge_battle_mist",
-      "woods_morning",
-      "neutral_portrait"
+      "neutral_portrait",
+      "ice_mirrors"
      ],
      "time": "mist",
      "who": [
@@ -133,7 +684,19 @@
       "sakura",
       "tazuna",
       "zabuza",
-      "haku"
+      "haku",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers",
+      "villagers"
      ],
      "graded_scenes": [
       "neutral_portrait",
@@ -143,12 +706,13 @@
     },
     "ch3": {
      "scenes": [
-      "tazuna_house",
+      "establishing",
       "road_day",
-      "woods_morning",
-      "bridge_battle_mist",
       "neutral_portrait",
-      "establishing"
+      "woods_morning",
+      "tazuna_house",
+      "boat_mist",
+      "aftermath"
      ],
      "time": "day",
      "who": [
@@ -161,16 +725,12 @@
       "tazuna",
       "inari"
      ],
-     "graded_scenes": [
-      "neutral_portrait",
-      "object"
-     ]
+     "graded_scenes": []
     },
     "ch4": {
      "scenes": [
       "woods_morning",
-      "neutral_portrait",
-      "road_day"
+      "neutral_portrait"
      ],
      "time": "day",
      "who": [
@@ -178,18 +738,15 @@
       "naruto_clones",
       "haku"
      ],
-     "graded_scenes": [
-      "neutral_portrait",
-      "object"
-     ]
+     "graded_scenes": []
     },
     "ch5": {
      "scenes": [
       "gato_office",
+      "tazuna_house",
       "archive_library",
-      "neutral_portrait",
       "object",
-      "establishing"
+      "neutral_portrait"
      ],
      "time": "day",
      "who": [
@@ -202,19 +759,14 @@
       "zabuza",
       "villagers"
      ],
-     "graded_scenes": [
-      "neutral_portrait",
-      "object"
-     ]
+     "graded_scenes": []
     },
     "ch6": {
      "scenes": [
       "bridge_battle_mist",
       "ice_mirrors",
-      "boat_mist",
       "shore_fight",
-      "aftermath",
-      "establishing"
+      "neutral_portrait"
      ],
      "time": "mist",
      "who": [
@@ -240,5 +792,646 @@
     }
    }
   }
+ },
+ "b001#0": {
+  "asset_id": "nr_2188"
+ },
+ "b002#0": {
+  "asset_id": "nr_1839"
+ },
+ "b002#1": {
+  "asset_id": "nr_1535"
+ },
+ "b004#0": {
+  "asset_id": "nr_0719"
+ },
+ "b005#0": {
+  "asset_id": "nr_1381"
+ },
+ "b005#1": {
+  "asset_id": "nr_1187"
+ },
+ "b005#2": {
+  "asset_id": "nr_0699"
+ },
+ "b006#0": {
+  "asset_id": "nr_1066"
+ },
+ "b008#0": {
+  "asset_id": "nr_2239"
+ },
+ "b011#0": {
+  "asset_id": "nr_1803"
+ },
+ "b012#0": {
+  "asset_id": "nr_0800"
+ },
+ "b012#0.1": {
+  "asset_id": "nr_0556"
+ },
+ "b013#0": {
+  "asset_id": "nr_1044"
+ },
+ "b013#1": {
+  "asset_id": "nr_0007"
+ },
+ "b017#0": {
+  "asset_id": "nr_1064"
+ },
+ "b017#2": {
+  "asset_id": "nr_1194"
+ },
+ "b020#0": {
+  "asset_id": "nr_1376"
+ },
+ "b020#1": {
+  "asset_id": "nr_1366"
+ },
+ "b020#2": {
+  "asset_id": "nr_1045"
+ },
+ "b022#0": {
+  "asset_id": "nr_0972"
+ },
+ "b023#0": {
+  "asset_id": "nr_0719"
+ },
+ "b025#0": {
+  "asset_id": "nr_0891"
+ },
+ "b026#0": {
+  "asset_id": "nr_2243"
+ },
+ "b027#0": {
+  "asset_id": "nr_0972"
+ },
+ "b028#0": {
+  "asset_id": "nr_1099"
+ },
+ "b029#0": {
+  "asset_id": "nr_0972",
+  "crop": {
+   "x": 0.8,
+   "y": 0.55,
+   "zoom": 1.9
+  }
+ },
+ "b030#0": {
+  "asset_id": "nr_1187"
+ },
+ "b031#0": {
+  "asset_id": "nr_1409"
+ },
+ "b032#0": {
+  "asset_id": "nr_1099"
+ },
+ "b035#0": {
+  "asset_id": "nr_1338"
+ },
+ "b036#0": {
+  "asset_id": "nr_1480"
+ },
+ "b037#0": {
+  "asset_id": "nr_0472"
+ },
+ "b039#0": {
+  "asset_id": "nr_0389"
+ },
+ "b040#0": {
+  "asset_id": "nr_1099"
+ },
+ "b042#0": {
+  "asset_id": "nr_0887"
+ },
+ "b042#0.1": {
+  "asset_id": "nr_0449"
+ },
+ "b042#0.2": {
+  "asset_id": "nr_0086"
+ },
+ "b043#0": {
+  "asset_id": "nr_1759"
+ },
+ "b044#0": {
+  "asset_id": "nr_0450",
+  "grade": "mist"
+ },
+ "b046#0": {
+  "asset_id": "nr_0168"
+ },
+ "b046#1": {
+  "asset_id": "nr_0159"
+ },
+ "b047#0": {
+  "asset_id": "nr_0085"
+ },
+ "b047#0.1": {
+  "asset_id": "nr_0068"
+ },
+ "b047#1": {
+  "asset_id": "nr_1036"
+ },
+ "b047#1.1": {
+  "asset_id": "nr_0159"
+ },
+ "b048#0": {
+  "asset_id": "nr_0086"
+ },
+ "b048#1": {
+  "asset_id": "nr_0087"
+ },
+ "b051#0": {
+  "asset_id": "nr_1194"
+ },
+ "b052#0": {
+  "asset_id": "nr_1187"
+ },
+ "b053#0": {
+  "asset_id": "nr_0018"
+ },
+ "b055#0": {
+  "asset_id": "nr_1409"
+ },
+ "b055#1": {
+  "asset_id": "nr_1380"
+ },
+ "b056#0": {
+  "asset_id": "nr_0450",
+  "grade": "mist"
+ },
+ "b057#0": {
+  "asset_id": "nr_0172"
+ },
+ "b057#1": {
+  "asset_id": "nr_0449"
+ },
+ "b058#0": {
+  "asset_id": "nr_0175"
+ },
+ "b058#1": {
+  "asset_id": "nr_0086"
+ },
+ "b060#0": {
+  "asset_id": "nr_1366"
+ },
+ "b062#0": {
+  "asset_id": "nr_0449"
+ },
+ "b062#1": {
+  "asset_id": "nr_0087"
+ },
+ "b063#0": {
+  "asset_id": "nr_1036"
+ },
+ "b064#0": {
+  "asset_id": "nr_0159"
+ },
+ "b066#0": {
+  "asset_id": "nr_1066"
+ },
+ "b067#0": {
+  "asset_id": "nr_0175"
+ },
+ "b067#1": {
+  "asset_id": "nr_0172"
+ },
+ "b068#0": {
+  "asset_id": "nr_0168"
+ },
+ "b068#0.1": {
+  "asset_id": "nr_1128"
+ },
+ "b068#1": {
+  "asset_id": "nr_0449"
+ },
+ "b068#1.1": {
+  "asset_id": "nr_0085"
+ },
+ "b069#0": {
+  "asset_id": "nr_0086"
+ },
+ "b069#0.1": {
+  "asset_id": "nr_0472"
+ },
+ "b070#0": {
+  "asset_id": "nr_0038"
+ },
+ "b072#0": {
+  "asset_id": "nr_0067"
+ },
+ "b072#0.1": {
+  "asset_id": "nr_0067"
+ },
+ "b072#1": {
+  "asset_id": "nr_1338"
+ },
+ "b075#0": {
+  "asset_id": "nr_0085"
+ },
+ "b075#0.1": {
+  "asset_id": "nr_0339"
+ },
+ "b076#0": {
+  "asset_id": "nr_1803"
+ },
+ "b077#0": {
+  "asset_id": "nr_0699"
+ },
+ "b078#0": {
+  "asset_id": "nr_0168"
+ },
+ "b078#1": {
+  "asset_id": "nr_1044"
+ },
+ "b081#0": {
+  "asset_id": "nr_0707"
+ },
+ "b082#0": {
+  "asset_id": "nr_1535"
+ },
+ "b083#0": {
+  "asset_id": "nr_2243"
+ },
+ "b083#1": {
+  "asset_id": "nr_0619"
+ },
+ "b085#0": {
+  "asset_id": "nr_0972",
+  "crop": {
+   "x": 0.77,
+   "y": 0.5,
+   "zoom": 1.8
+  }
+ },
+ "b088#0": {
+  "asset_id": "nr_1099"
+ },
+ "b099#0": {
+  "asset_id": "nr_0534"
+ },
+ "b102#0": {
+  "asset_id": "nr_1366"
+ },
+ "b104#0": {
+  "asset_id": "nr_0719"
+ },
+ "b104#1": {
+  "asset_id": "nr_0007"
+ },
+ "b104#2": {
+  "asset_id": "nr_2188"
+ },
+ "b106#0": {
+  "asset_id": "nr_2239"
+ },
+ "b109#0": {
+  "asset_id": "nr_0890"
+ },
+ "b110#0": {
+  "asset_id": "nr_1803"
+ },
+ "b112#0": {
+  "asset_id": "nr_0891"
+ },
+ "b113#0": {
+  "asset_id": "nr_1376"
+ },
+ "b113#1": {
+  "asset_id": "nr_0483"
+ },
+ "b116#0": {
+  "asset_id": "nr_0517"
+ },
+ "b116#0.1": {
+  "asset_id": "nr_0516"
+ },
+ "b117#0": {
+  "asset_id": "nr_0516"
+ },
+ "b119#0": {
+  "asset_id": "nr_0517"
+ },
+ "b120#0": {
+  "asset_id": "nr_1187"
+ },
+ "b121#0": {
+  "asset_id": "nr_0389"
+ },
+ "b122#0": {
+  "asset_id": "nr_0517"
+ },
+ "b122#0.1": {
+  "asset_id": "nr_0516"
+ },
+ "b124#0": {
+  "asset_id": "nr_1535"
+ },
+ "b125#0": {
+  "asset_id": "nr_0171"
+ },
+ "b125#1": {
+  "asset_id": "nr_1380"
+ },
+ "b126#0": {
+  "asset_id": "nr_2224"
+ },
+ "b127#0": {
+  "asset_id": "nr_0540"
+ },
+ "b128#0": {
+  "asset_id": "nr_0867",
+  "crop": {
+   "x": 0.93,
+   "y": 0.3,
+   "zoom": 2.0
+  }
+ },
+ "b128#1": {
+  "asset_id": "nr_1409"
+ },
+ "b130#0": {
+  "asset_id": "nr_0158"
+ },
+ "b131#0": {
+  "asset_id": "nr_0867"
+ },
+ "b132#0": {
+  "asset_id": "nr_1204"
+ },
+ "b135#0": {
+  "asset_id": "nr_0389"
+ },
+ "b136#0": {
+  "asset_id": "nr_1558"
+ },
+ "b138#0": {
+  "asset_id": "nr_0246"
+ },
+ "b139#0": {
+  "asset_id": "nr_0389"
+ },
+ "b140#0": {
+  "asset_id": "nr_0899"
+ },
+ "b141#0": {
+  "asset_id": "nr_1380"
+ },
+ "b142#0": {
+  "asset_id": "nr_0867"
+ },
+ "b144#0": {
+  "asset_id": "nr_0158"
+ },
+ "b145#0": {
+  "asset_id": "nr_0899"
+ },
+ "b147#0": {
+  "asset_id": "nr_1409"
+ },
+ "b148#0": {
+  "asset_id": "nr_0246"
+ },
+ "b148#0.1": {
+  "asset_id": "nr_0867"
+ },
+ "b149#0": {
+  "asset_id": "nr_0472"
+ },
+ "b149#1": {
+  "asset_id": "nr_1600"
+ },
+ "b149#2": {
+  "asset_id": "nr_1839"
+ },
+ "b154#0": {
+  "asset_id": "nr_1206"
+ },
+ "b156#0": {
+  "asset_id": "nr_0360"
+ },
+ "b158#0": {
+  "asset_id": "nr_1556"
+ },
+ "b159#0": {
+  "asset_id": "nr_1206"
+ },
+ "b163#0": {
+  "asset_id": "nr_2188"
+ },
+ "b166#0": {
+  "asset_id": "nr_1045"
+ },
+ "b166#1": {
+  "asset_id": "nr_0707"
+ },
+ "b170#0": {
+  "asset_id": "nr_1338"
+ },
+ "b171#0": {
+  "asset_id": "nr_1480"
+ },
+ "b172#0": {
+  "asset_id": "nr_0619"
+ },
+ "b173#0": {
+  "asset_id": "nr_0449"
+ },
+ "b174#0": {
+  "asset_id": "nr_0450",
+  "grade": "mist"
+ },
+ "b176#0": {
+  "asset_id": "nr_0038"
+ },
+ "b178#0": {
+  "asset_id": "nr_0085"
+ },
+ "b178#1": {
+  "asset_id": "nr_0068"
+ },
+ "b179#0": {
+  "asset_id": "nr_0339"
+ },
+ "b179#1": {
+  "asset_id": "nr_0019"
+ },
+ "b181#0": {
+  "asset_id": "nr_0339"
+ },
+ "b182#0": {
+  "asset_id": "nr_1155"
+ },
+ "b182#0.1": {
+  "asset_id": "nr_0023"
+ },
+ "b182#1": {
+  "asset_id": "nr_1079"
+ },
+ "b182#1.1": {
+  "asset_id": "nr_0023"
+ },
+ "b186#0": {
+  "asset_id": "nr_1376"
+ },
+ "b187#0": {
+  "asset_id": "nr_1155"
+ },
+ "b189#0": {
+  "asset_id": "nr_1187"
+ },
+ "b191#0": {
+  "asset_id": "nr_0959"
+ },
+ "b194#0": {
+  "asset_id": "nr_0065"
+ },
+ "b195#0": {
+  "asset_id": "nr_0339"
+ },
+ "b195#0.1": {
+  "asset_id": "nr_1155"
+ },
+ "b195#1": {
+  "asset_id": "nr_0019"
+ },
+ "b195#1.1": {
+  "asset_id": "nr_0023"
+ },
+ "b196#0": {
+  "asset_id": "nr_1480"
+ },
+ "b196#1": {
+  "asset_id": "nr_0023"
+ },
+ "b197#0": {
+  "asset_id": "nr_1380"
+ },
+ "b198#0": {
+  "asset_id": "nr_1376"
+ },
+ "b199#0": {
+  "asset_id": "nr_1194"
+ },
+ "b199#0.1": {
+  "asset_id": "nr_0019"
+ },
+ "b199#0.2": {
+  "asset_id": "nr_1079"
+ },
+ "b200#0": {
+  "asset_id": "nr_1079"
+ },
+ "b200#1": {
+  "asset_id": "nr_0339"
+ },
+ "b201#0": {
+  "asset_id": "nr_0038"
+ },
+ "b203#0": {
+  "asset_id": "nr_1366"
+ },
+ "b203#1": {
+  "asset_id": "nr_0544"
+ },
+ "b205#0": {
+  "asset_id": "nr_1044"
+ },
+ "b206#0": {
+  "asset_id": "nr_0707"
+ },
+ "b209#0": {
+  "asset_id": "nr_0450",
+  "grade": "mist"
+ },
+ "b210#0": {
+  "asset_id": "nr_0887"
+ },
+ "b211#0": {
+  "asset_id": "nr_0544"
+ },
+ "b211#1": {
+  "asset_id": "nr_0038"
+ },
+ "b214#0": {
+  "asset_id": "nr_0544"
+ },
+ "b214#0.1": {
+  "asset_id": "nr_0887"
+ },
+ "b216#0": {
+  "asset_id": "nr_1206"
+ },
+ "b216#0.1": {
+  "asset_id": "nr_0619"
+ },
+ "b217#0": {
+  "asset_id": "nr_1110"
+ },
+ "b218#0": {
+  "asset_id": "nr_1556"
+ },
+ "b219#0": {
+  "asset_id": "nr_0086"
+ },
+ "b220#0": {
+  "asset_id": "nr_0450",
+  "grade": "mist"
+ },
+ "b220#0.1": {
+  "asset_id": "nr_0619"
+ },
+ "b220#1": {
+  "asset_id": "nr_1110"
+ },
+ "b220#1.1": {
+  "asset_id": "nr_0360"
+ },
+ "b221#0": {
+  "asset_id": "nr_0038"
+ },
+ "b223#0": {
+  "asset_id": "nr_1558"
+ },
+ "b225#0": {
+  "asset_id": "nr_0085"
+ },
+ "b225#0.1": {
+  "asset_id": "nr_0472"
+ },
+ "b226#0": {
+  "asset_id": "nr_1870"
+ },
+ "b226#1": {
+  "asset_id": "nr_1480"
+ },
+ "b227#0": {
+  "asset_id": "nr_0389"
+ },
+ "b227#1": {
+  "asset_id": "nr_1194"
+ },
+ "b229#0": {
+  "asset_id": "nr_1382"
+ },
+ "b232#0": {
+  "asset_id": "nr_2243"
+ },
+ "b233#0": {
+  "asset_id": "nr_1803"
+ },
+ "b234#0": {
+  "asset_id": "nr_1535"
+ },
+ "b237#0": {
+  "asset_id": "nr_1099"
+ },
+ "b238#0": {
+  "asset_id": "nr_1409"
+ },
+ "b239#0": {
+  "asset_id": "nr_0516"
+ },
+ "b240#0": {
+  "asset_id": "nr_1839"
  }
 }

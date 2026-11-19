@@ -1,0 +1,291 @@
+{
+ "_note": "Episode 4 thumbnails: one sharp face + a second read (signatures / leave slip).",
+ "thumbnail.png": {
+  "layers": [
+   {
+    "kind": "frame",
+    "id": "nr_1187",
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "height": 1.12,
+    "dst": [
+     0.7,
+     0.5
+    ],
+    "blur": 0.0,
+    "dim": 1.0
+   },
+   {
+    "kind": "glow",
+    "color": [
+     255,
+     120,
+     20
+    ],
+    "center": [
+     0.7,
+     0.42
+    ],
+    "radius": 0.4,
+    "gain": 0.5
+   },
+   {
+    "kind": "shade",
+    "side": "left",
+    "extent": 0.62,
+    "strength": 0.7
+   },
+   {
+    "kind": "prop",
+    "type": "signature_compare",
+    "dst": [
+     0.26,
+     0.78
+    ],
+    "width": 0.46,
+    "rot": -5
+   },
+   {
+    "kind": "vignette",
+    "strength": 0.5
+   },
+   {
+    "kind": "text",
+    "pos": [
+     330,
+     185
+    ],
+    "angle": 0,
+    "gap": -70,
+    "lines": [
+     [
+      "WRONG",
+      [
+       255,
+       255,
+       255
+      ],
+      170,
+      520,
+      [
+       255,
+       120,
+       20
+      ],
+      "center"
+     ],
+     [
+      "SIGNATURE.",
+      [
+       255,
+       214,
+       40
+      ],
+      95,
+      560,
+      [
+       255,
+       90,
+       10
+      ],
+      "center"
+     ]
+    ]
+   }
+  ]
+ },
+ "thumbnail_b.png": {
+  "layers": [
+   {
+    "kind": "frame",
+    "id": "nr_0897",
+    "focus": [
+     0.78,
+     0.45
+    ],
+    "height": 1.05,
+    "dst": [
+     0.7,
+     0.5
+    ],
+    "blur": 0.0,
+    "dim": 1.0
+   },
+   {
+    "kind": "glow",
+    "color": [
+     220,
+     30,
+     30
+    ],
+    "center": [
+     0.7,
+     0.42
+    ],
+    "radius": 0.4,
+    "gain": 0.5
+   },
+   {
+    "kind": "shade",
+    "side": "left",
+    "extent": 0.62,
+    "strength": 0.7
+   },
+   {
+    "kind": "prop",
+    "type": "signature_compare",
+    "dst": [
+     0.26,
+     0.78
+    ],
+    "width": 0.46,
+    "rot": 4
+   },
+   {
+    "kind": "vignette",
+    "strength": 0.5
+   },
+   {
+    "kind": "text",
+    "pos": [
+     330,
+     185
+    ],
+    "angle": 0,
+    "gap": -70,
+    "lines": [
+     [
+      "HE'S ALREADY",
+      [
+       255,
+       255,
+       255
+      ],
+      82,
+      560,
+      [
+       200,
+       20,
+       20
+      ],
+      "center"
+     ],
+     [
+      "DEAD.",
+      [
+       235,
+       40,
+       40
+      ],
+      190,
+      500,
+      [
+       255,
+       40,
+       40
+      ],
+      "center"
+     ]
+    ]
+   }
+  ]
+ },
+ "thumbnail_c.png": {
+  "layers": [
+   {
+    "kind": "frame",
+    "id": "nr_1376",
+    "focus": [
+     0.5,
+     0.42
+    ],
+    "height": 1.15,
+    "dst": [
+     0.7,
+     0.5
+    ],
+    "blur": 0.0,
+    "dim": 1.0
+   },
+   {
+    "kind": "glow",
+    "color": [
+     60,
+     110,
+     255
+    ],
+    "center": [
+     0.7,
+     0.42
+    ],
+    "radius": 0.4,
+    "gain": 0.5
+   },
+   {
+    "kind": "shade",
+    "side": "left",
+    "extent": 0.62,
+    "strength": 0.7
+   },
+   {
+    "kind": "prop",
+    "type": "leave_slip",
+    "dst": [
+     0.26,
+     0.78
+    ],
+    "width": 0.46,
+    "rot": -4
+   },
+   {
+    "kind": "vignette",
+    "strength": 0.5
+   },
+   {
+    "kind": "text",
+    "pos": [
+     330,
+     185
+    ],
+    "angle": 0,
+    "gap": -70,
+    "lines": [
+     [
+      "LONG",
+      [
+       255,
+       255,
+       255
+      ],
+      190,
+      440,
+      [
+       60,
+       120,
+       255
+      ],
+      "center"
+     ],
+     [
+      "ENOUGH.",
+      [
+       120,
+       180,
+       255
+      ],
+      150,
+      500,
+      [
+       40,
+       90,
+       255
+      ],
+      "center"
+     ]
+    ]
+   }
+  ]
+ }
+}

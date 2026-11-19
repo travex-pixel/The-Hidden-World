@@ -174,7 +174,50 @@
           ],
           "camera": "drift_up",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "registration_form",
+            "hold": "reg",
+            "reveal": [
+              "f1",
+              "f2",
+              "f3",
+              "f4"
+            ],
+            "fields": [
+              {
+                "label": "APPLICANT",
+                "value": "Kabuto Yakushi",
+                "say": "This guy"
+              },
+              {
+                "label": "VILLAGE",
+                "value": "Hidden Leaf"
+              },
+              {
+                "label": "TEAM",
+                "value": "none, re-enrolled"
+              },
+              {
+                "label": "ATTEMPTS",
+                "value": "7",
+                "say": "seven times"
+              }
+            ],
+            "circle": [
+              "ATTEMPTS"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "circ",
+                "z": [
+                  1.0,
+                  1.2
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b004",
@@ -241,6 +284,52 @@
           "stamp": {
             "label": "CANON",
             "note": "Seven attempts. On purpose."
+          },
+          "insert": {
+            "type": "registration_form",
+            "hold": "reg",
+            "reveal": [
+              "circ",
+              "stamp"
+            ],
+            "fields": [
+              {
+                "label": "APPLICANT",
+                "value": "Kabuto Yakushi",
+                "say": "This guy"
+              },
+              {
+                "label": "VILLAGE",
+                "value": "Hidden Leaf"
+              },
+              {
+                "label": "TEAM",
+                "value": "none, re-enrolled"
+              },
+              {
+                "label": "ATTEMPTS",
+                "value": "7",
+                "say": "seven times"
+              }
+            ],
+            "circle": [
+              "ATTEMPTS"
+            ],
+            "say": {
+              "circ": "Seven failed exams",
+              "stamp": "on purpose"
+            },
+            "views": [
+              {
+                "frm": "circ",
+                "to": "circ",
+                "z": [
+                  1.15,
+                  1.38
+                ],
+                "ty": 0.45
+              }
+            ]
           }
         }
       ]
@@ -285,7 +374,46 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "registration_form",
+            "hold": "reg",
+            "reveal": [],
+            "fields": [
+              {
+                "label": "APPLICANT",
+                "value": "Kabuto Yakushi",
+                "say": "This guy"
+              },
+              {
+                "label": "VILLAGE",
+                "value": "Hidden Leaf"
+              },
+              {
+                "label": "TEAM",
+                "value": "none, re-enrolled"
+              },
+              {
+                "label": "ATTEMPTS",
+                "value": "7",
+                "say": "seven times"
+              }
+            ],
+            "circle": [
+              "ATTEMPTS"
+            ],
+            "views": [
+              {
+                "frm": "circ",
+                "to": "top",
+                "z": [
+                  1.25,
+                  1.05
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b007",
@@ -519,7 +647,25 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "info_card",
+            "variant": "sasuke",
+            "say": {
+              "n1": "Sharingan",
+              "n2": "clean record"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "notes",
+                "z": [
+                  1.0,
+                  1.25
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b016",
@@ -558,7 +704,30 @@
           ],
           "sfx": [
             "heartbeat"
-          ]
+          ],
+          "insert": {
+            "type": "info_card",
+            "variant": "naruto",
+            "notes": [
+              "Shadow clones, never more than ten at a time.",
+              "Has slept nineteen hours straight. Twice."
+            ],
+            "say": {
+              "n1": "never more than ten at a time",
+              "n2": "Has slept nineteen hours straight",
+              "circ": "never more than ten"
+            },
+            "views": [
+              {
+                "frm": "card",
+                "to": "notes",
+                "z": [
+                  1.0,
+                  1.3
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b017",
@@ -584,7 +753,38 @@
           "vfx": [],
           "sfx": [
             "bass_drop"
-          ]
+          ],
+          "insert": {
+            "type": "info_card",
+            "variant": "naruto",
+            "notes": [
+              "Shadow clones, never more than ten at a time.",
+              "Has slept nineteen hours straight. Twice."
+            ],
+            "present": [
+              "portrait",
+              "stats",
+              "n1",
+              "n2"
+            ],
+            "animate": [
+              "circ"
+            ],
+            "say": {
+              "circ": "isn't in any file"
+            },
+            "views": [
+              {
+                "frm": "notes",
+                "to": "notes",
+                "z": [
+                  1.3,
+                  1.42
+                ],
+                "ty": 0.4
+              }
+            ]
+          }
         },
         {
           "id": "b018",
@@ -1332,7 +1532,24 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "cheater_report",
+            "hold": "chk",
+            "reveal": [
+              "rows"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "rows",
+                "z": [
+                  1.0,
+                  1.18
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b045",
@@ -1368,7 +1585,25 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "cheater_report",
+            "hold": "chk",
+            "reveal": [
+              "circ",
+              "note"
+            ],
+            "views": [
+              {
+                "frm": "rows",
+                "to": "circ",
+                "z": [
+                  1.18,
+                  1.3
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b046",
@@ -1476,7 +1711,22 @@
           "vfx": [],
           "sfx": [
             "heartbeat"
-          ]
+          ],
+          "insert": {
+            "type": "cheater_report",
+            "hold": "chk",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "circ",
+                "to": "rows",
+                "z": [
+                  1.25,
+                  1.1
+                ]
+              }
+            ]
+          }
         }
       ]
     },
@@ -1853,7 +2103,28 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "scout_map",
+            "hold": "map",
+            "reveal": [],
+            "views": [
+              {
+                "frm": [
+                  1100,
+                  520
+                ],
+                "to": [
+                  800,
+                  800
+                ],
+                "z": [
+                  1.15,
+                  1.35
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b064",
@@ -2021,7 +2292,25 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "scout_map",
+            "hold": "map",
+            "reveal": [],
+            "views": [
+              {
+                "frm": [
+                  800,
+                  800
+                ],
+                "to": "top",
+                "z": [
+                  1.35,
+                  1.0
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b071",
@@ -2095,7 +2384,27 @@
           "vfx": [],
           "sfx": [
             "heartbeat"
-          ]
+          ],
+          "insert": {
+            "type": "scout_map",
+            "hold": "map",
+            "reveal": [
+              "ring"
+            ],
+            "say": {
+              "ring": "sector eleven"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "s11",
+                "z": [
+                  1.0,
+                  1.35
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b074",
@@ -2316,7 +2625,27 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "scout_map",
+            "hold": "map",
+            "reveal": [
+              "note"
+            ],
+            "say": {
+              "note": "Grass team"
+            },
+            "views": [
+              {
+                "frm": "s11",
+                "to": "note",
+                "z": [
+                  1.3,
+                  1.1
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b082",
@@ -2376,7 +2705,22 @@
           "vfx": [],
           "sfx": [
             "wind"
-          ]
+          ],
+          "insert": {
+            "type": "scout_map",
+            "hold": "map",
+            "reveal": "rest",
+            "views": [
+              {
+                "frm": "s11",
+                "to": "top",
+                "z": [
+                  1.3,
+                  1.0
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b084",
@@ -2412,7 +2756,22 @@
           "vfx": [],
           "sfx": [
             "bass_drop"
-          ]
+          ],
+          "insert": {
+            "type": "scout_map",
+            "hold": "map",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "top",
+                "to": "s11",
+                "z": [
+                  1.0,
+                  1.25
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b085",
@@ -2767,7 +3126,49 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "mission_report",
+            "variant": "signed_doodle",
+            "rank": "A",
+            "team": "Sharingan",
+            "date": "all vols",
+            "client": "Uchiha clan — every report on file",
+            "lines": [
+              {
+                "text": "Every report on the Sharingan.",
+                "say": "every report ever filed on the Sharingan"
+              },
+              {
+                "text": "Who beat it.",
+                "say": "Who beat it"
+              },
+              {
+                "text": "Who lost to it.",
+                "say": "Who lost to it"
+              },
+              {
+                "text": "How.",
+                "say": "How"
+              }
+            ],
+            "signature": "Uzumaki Naruto",
+            "say": {
+              "doodle": "How",
+              "sig": "How"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "body",
+                "z": [
+                  1.0,
+                  1.1
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b098",
@@ -2801,7 +3202,37 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "mission_report",
+            "variant": "signed_doodle",
+            "rank": "A",
+            "team": "7",
+            "date": "week 1",
+            "client": "Uchiha, S. — sparring log",
+            "lines": [
+              {
+                "text": "Forty partners, ten at a time.",
+                "say": "Forty Narutos"
+              },
+              {
+                "text": "Show the Sharingan nothing twice.",
+                "say": "nothing twice"
+              }
+            ],
+            "signature": "Uzumaki Naruto",
+            "views": [
+              {
+                "frm": "top",
+                "to": "body",
+                "z": [
+                  1.0,
+                  1.1
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b099",
@@ -3117,7 +3548,45 @@
           "vfx": [],
           "sfx": [
             "whoosh"
-          ]
+          ],
+          "insert": {
+            "type": "mission_report",
+            "variant": "signed_doodle",
+            "rank": "A",
+            "team": "7",
+            "date": "week 3",
+            "client": "Sasuke Uchiha — sparring log",
+            "lines": [
+              {
+                "text": "Week 1. Lost. Copied the first move.",
+                "say": "The Sharingan reads motion"
+              },
+              {
+                "text": "Week 2. Lost. Learned the second.",
+                "say": "The reports read habit"
+              },
+              {
+                "text": "Week 3. Lost twelve ways. Took notes.",
+                "say": "twelve different ways"
+              }
+            ],
+            "signature": "Uzumaki Naruto",
+            "say": {
+              "doodle": "learned something",
+              "sig": "learned something from every one"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "body",
+                "z": [
+                  1.0,
+                  1.1
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b111",
@@ -3394,7 +3863,54 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "hospital_report",
+            "hold": "hosp",
+            "reveal": [
+              "f1",
+              "f2",
+              "f3",
+              "f4",
+              "circ"
+            ],
+            "fields": [
+              [
+                "PATIENT",
+                "Rock Lee",
+                "Rock Lee"
+              ],
+              [
+                "CAUSE OF INJURY",
+                "sand",
+                "Cause of injury"
+              ],
+              [
+                "WITNESSES",
+                "11",
+                "Eleven witnesses"
+              ],
+              [
+                "WARD",
+                "3  ·  surgical",
+                null
+              ]
+            ],
+            "say": {
+              "chart": "chart",
+              "note": "ever seen him sleep"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  1.0,
+                  1.15
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b121",
@@ -3419,7 +3935,51 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "hospital_report",
+            "hold": "hosp",
+            "reveal": [
+              "chart",
+              "note"
+            ],
+            "fields": [
+              [
+                "PATIENT",
+                "Rock Lee",
+                "Rock Lee"
+              ],
+              [
+                "CAUSE OF INJURY",
+                "sand",
+                "Cause of injury"
+              ],
+              [
+                "WITNESSES",
+                "11",
+                "Eleven witnesses"
+              ],
+              [
+                "WARD",
+                "3  ·  surgical",
+                null
+              ]
+            ],
+            "say": {
+              "chart": "chart",
+              "note": "ever seen him sleep"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "note",
+                "z": [
+                  1.1,
+                  1.3
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b122",
@@ -3443,7 +4003,48 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "hospital_report",
+            "hold": "hosp",
+            "reveal": [],
+            "fields": [
+              [
+                "PATIENT",
+                "Rock Lee",
+                "Rock Lee"
+              ],
+              [
+                "CAUSE OF INJURY",
+                "sand",
+                "Cause of injury"
+              ],
+              [
+                "WITNESSES",
+                "11",
+                "Eleven witnesses"
+              ],
+              [
+                "WARD",
+                "3  ·  surgical",
+                null
+              ]
+            ],
+            "say": {
+              "chart": "chart",
+              "note": "ever seen him sleep"
+            },
+            "views": [
+              {
+                "frm": "note",
+                "to": "note",
+                "z": [
+                  1.3,
+                  1.4
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b123",
@@ -4317,7 +4918,28 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [
+              "new"
+            ],
+            "say": {
+              "new": "Soft"
+            },
+            "views": [
+              {
+                "frm": "new",
+                "to": "new",
+                "z": [
+                  1.3,
+                  1.5
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b156",
@@ -4354,7 +4976,28 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [
+              "old"
+            ],
+            "say": {
+              "old": "lays the two side by side"
+            },
+            "views": [
+              {
+                "frm": "new",
+                "to": "both",
+                "z": [
+                  1.4,
+                  1.05
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b157",
@@ -4379,7 +5022,23 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "both",
+                "to": "old",
+                "z": [
+                  1.05,
+                  1.3
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b158",
@@ -4403,7 +5062,37 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [
+              "circ"
+            ],
+            "say": {
+              "circ": "the brush split"
+            },
+            "views": [
+              {
+                "frm": "old",
+                "to": "old",
+                "z": [
+                  1.3,
+                  1.45
+                ],
+                "ty": 0.45
+              },
+              {
+                "frm": "old",
+                "to": "new",
+                "z": [
+                  1.45,
+                  1.55
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b159",
@@ -4440,7 +5129,32 @@
           "vfx": [],
           "sfx": [
             "bass_drop"
-          ]
+          ],
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "both",
+                "to": "old",
+                "z": [
+                  1.0,
+                  1.25
+                ],
+                "ty": 0.45
+              },
+              {
+                "frm": "old",
+                "to": "new",
+                "z": [
+                  1.25,
+                  1.5
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b160",
@@ -4464,7 +5178,23 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "new",
+                "to": "new",
+                "z": [
+                  1.5,
+                  1.62
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b161",
@@ -4506,6 +5236,22 @@
           "stamp": {
             "label": "CANON",
             "note": "The Kazekage was already dead."
+          },
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "new",
+                "to": "both",
+                "z": [
+                  1.55,
+                  1.1
+                ],
+                "ty": 0.5
+              }
+            ]
           }
         },
         {
@@ -4639,7 +5385,23 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "old",
+                "to": "new",
+                "z": [
+                  1.15,
+                  1.3
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b167",
@@ -4928,7 +5690,23 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "signature_compare",
+            "hold": "sig",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "both",
+                "to": "new",
+                "z": [
+                  1.0,
+                  1.35
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b178",
@@ -5263,7 +6041,27 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "postponement_form",
+            "hold": "pp",
+            "reveal": [
+              "f1",
+              "f2",
+              "f3",
+              "f4"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "stamp",
+                "z": [
+                  1.0,
+                  1.15
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b190",
@@ -5287,7 +6085,22 @@
           ],
           "camera": "drift_up",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "postponement_form",
+            "hold": "pp",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "stamp",
+                "to": "top",
+                "z": [
+                  1.2,
+                  1.05
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b191",
@@ -5345,7 +6158,26 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "postponement_form",
+            "hold": "pp",
+            "reveal": "rest",
+            "say": {
+              "signature": "Naruto filed the form",
+              "stamp": "officially delayed"
+            },
+            "views": [
+              {
+                "frm": "stamp",
+                "to": "stamp",
+                "z": [
+                  1.1,
+                  1.3
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b193",
@@ -7153,7 +7985,31 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "leave_slip",
+            "hold": "ls",
+            "reveal": [
+              "date"
+            ],
+            "say": {
+              "date": "signed out for the night"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "date",
+                "z": [
+                  1.0,
+                  1.2
+                ]
+              }
+            ],
+            "date": "Night of the Uchiha incident",
+            "rank": "Captain",
+            "countersigned": "Danzo Shimura",
+            "destination": ""
+          }
         },
         {
           "id": "b256",
@@ -7189,7 +8045,33 @@
           "vfx": [],
           "sfx": [
             "bass_drop"
-          ]
+          ],
+          "insert": {
+            "type": "leave_slip",
+            "hold": "ls",
+            "reveal": [
+              "counter",
+              "seal"
+            ],
+            "say": {
+              "counter": "one countersignature",
+              "seal": "one countersignature"
+            },
+            "views": [
+              {
+                "frm": "date",
+                "to": "counter",
+                "z": [
+                  1.15,
+                  1.5
+                ]
+              }
+            ],
+            "date": "Night of the Uchiha incident",
+            "rank": "Captain",
+            "countersigned": "Danzo Shimura",
+            "destination": ""
+          }
         },
         {
           "id": "b257",
@@ -7214,7 +8096,26 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "leave_slip",
+            "hold": "ls",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "counter",
+                "to": "counter",
+                "z": [
+                  1.5,
+                  1.62
+                ]
+              }
+            ],
+            "date": "Night of the Uchiha incident",
+            "rank": "Captain",
+            "countersigned": "Danzo Shimura",
+            "destination": ""
+          }
         },
         {
           "id": "b258",

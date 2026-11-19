@@ -988,6 +988,25 @@
           "stamp": {
             "label": "CANON",
             "note": "Paid for a C-rank. It was not."
+          },
+          "insert": {
+            "type": "price_sheet",
+            "hold": "price",
+            "reveal": [
+              "r1",
+              "r2"
+            ],
+            "at": 0.42,
+            "views": [
+              {
+                "frm": "top",
+                "to": "rows",
+                "z": [
+                  1.0,
+                  1.12
+                ]
+              }
+            ]
           }
         },
         {
@@ -1012,7 +1031,23 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "price_sheet",
+            "hold": "price",
+            "reveal": [],
+            "at": 0.5,
+            "views": [
+              {
+                "frm": "rows",
+                "to": "rows",
+                "z": [
+                  1.12,
+                  1.2
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b031",
@@ -1036,7 +1071,23 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "price_sheet",
+            "hold": "price",
+            "reveal": "rest",
+            "at": 0.18,
+            "views": [
+              {
+                "frm": "rows",
+                "to": "circ",
+                "z": [
+                  1.1,
+                  1.25
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b032",
@@ -2311,7 +2362,49 @@
           "vfx": [],
           "sfx": [
             "heartbeat"
-          ]
+          ],
+          "insert": {
+            "type": "bingo_appendix",
+            "hold": "bing",
+            "reveal": [
+              "st1",
+              "st2",
+              "st3",
+              "diagram"
+            ],
+            "steps": [
+              [
+                "Step one: find the missing-nin.",
+                null
+              ],
+              [
+                "Step two: finish the missing-nin.",
+                null
+              ],
+              [
+                "Step three: burn the body where it falls.",
+                "burn the body"
+              ]
+            ],
+            "rule": "A hunter-nin never leaves the body.",
+            "margin": "he's alive!",
+            "say": {
+              "diagram": "burn the body"
+            },
+            "views": [
+              {
+                "frm": [
+                  560,
+                  180
+                ],
+                "to": "diagram",
+                "z": [
+                  1.0,
+                  1.15
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b075",
@@ -2362,7 +2455,44 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "bingo_appendix",
+            "hold": "bing",
+            "reveal": "rest",
+            "at": 0.3,
+            "steps": [
+              [
+                "Step one: find the missing-nin.",
+                null
+              ],
+              [
+                "Step two: finish the missing-nin.",
+                null
+              ],
+              [
+                "Step three: burn the body where it falls.",
+                "burn the body"
+              ]
+            ],
+            "rule": "A hunter-nin never leaves the body.",
+            "margin": "he's alive!",
+            "say": {
+              "rule": "destroy the body at once",
+              "ul": "at once",
+              "margin": "Zabuza is alive"
+            },
+            "views": [
+              {
+                "frm": "diagram",
+                "to": "margin",
+                "z": [
+                  1.15,
+                  1.3
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b077",
@@ -3047,7 +3177,48 @@
           "vfx": [],
           "sfx": [
             "riser"
-          ]
+          ],
+          "insert": {
+            "type": "work_schedule",
+            "hold": "work",
+            "reveal": [
+              "e1",
+              "e2",
+              "e3",
+              "e4",
+              "total"
+            ],
+            "title": "BRIDGE CREW",
+            "equation": [
+              [
+                "300 clones",
+                "Three hundred clones"
+              ],
+              [
+                "× 10 hours",
+                "ten hours a day"
+              ],
+              [
+                "× 6 days",
+                "six days"
+              ],
+              [
+                "= 18,000 hours",
+                "Eighteen thousand hours"
+              ]
+            ],
+            "batches": 6,
+            "views": [
+              {
+                "frm": "top",
+                "to": "eq",
+                "z": [
+                  1.0,
+                  1.2
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b101",
@@ -3082,7 +3253,46 @@
           ],
           "camera": "drift_up",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "work_schedule",
+            "hold": "work",
+            "reveal": "rest",
+            "title": "BRIDGE CREW",
+            "equation": [
+              [
+                "300 clones",
+                "Three hundred clones"
+              ],
+              [
+                "× 10 hours",
+                "ten hours a day"
+              ],
+              [
+                "× 6 days",
+                "six days"
+              ],
+              [
+                "= 18,000 hours",
+                "Eighteen thousand hours"
+              ]
+            ],
+            "batches": 6,
+            "say": {
+              "gh": "ten clones pop",
+              "pop": "top of every hour"
+            },
+            "views": [
+              {
+                "frm": "eq",
+                "to": "gantt",
+                "z": [
+                  1.1,
+                  1.2
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b102",
@@ -4713,7 +4923,95 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "ledger",
+            "at": 0.62,
+            "hold": "led1",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11"
+            ],
+            "animate": [],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "writes it in ink"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "views": [
+              {
+                "frm": "top",
+                "to": "rows",
+                "z": [
+                  1.0,
+                  1.12
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b160",
@@ -4740,7 +5038,101 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "ledger",
+            "at": 0.0,
+            "hold": "led1",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11"
+            ],
+            "animate": [
+              "r6",
+              "hl"
+            ],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "writes it in ink"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "say": {
+              "hl": "directly on the page"
+            },
+            "views": [
+              {
+                "frm": "rows",
+                "to": "hl",
+                "z": [
+                  1.05,
+                  1.3
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b161",
@@ -4778,6 +5170,101 @@
           "stamp": {
             "label": "CANON",
             "note": "Gato never meant to pay."
+          },
+          "insert": {
+            "type": "ledger",
+            "at": 0.0,
+            "hold": "led1",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r6",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11",
+              "hl"
+            ],
+            "animate": [
+              "circ"
+            ],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "writes it in ink"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "say": {
+              "circ": "in writing"
+            },
+            "views": [
+              {
+                "frm": "hl",
+                "to": "hl",
+                "z": [
+                  1.2,
+                  1.35
+                ]
+              }
+            ]
           }
         },
         {
@@ -4815,7 +5302,98 @@
           "vfx": [],
           "sfx": [
             "riser"
-          ]
+          ],
+          "insert": {
+            "type": "ledger",
+            "at": 0.5,
+            "hold": "led1",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r6",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11",
+              "hl",
+              "circ"
+            ],
+            "animate": [],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "x"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "views": [
+              {
+                "frm": "top",
+                "to": "hl",
+                "z": [
+                  1.0,
+                  1.25
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b163",
@@ -4995,7 +5573,34 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "mission_report",
+            "variant": "signed_doodle",
+            "lines": [
+              "Escorted the bridge builder.",
+              "Bridge finished in six days.",
+              "Nobody died. (Told you.)"
+            ],
+            "rank": "C",
+            "team": "7",
+            "date": "11 OCT",
+            "client": "Land of Waves - bridge builder",
+            "say": {
+              "sig": "At the bottom he signs",
+              "doodle": "small crooked bowl of ramen"
+            },
+            "views": [
+              {
+                "frm": "body",
+                "to": "doodle",
+                "z": [
+                  1.0,
+                  1.22
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b169",
@@ -5030,7 +5635,39 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "mission_report",
+            "variant": "signed_doodle",
+            "at": 0.0,
+            "lines": [
+              "Escorted the bridge builder.",
+              "Bridge finished in six days.",
+              "Nobody died. (Told you.)"
+            ],
+            "rank": "C",
+            "team": "7",
+            "date": "11 OCT",
+            "client": "Land of Waves - bridge builder",
+            "present": [
+              "l1",
+              "l2",
+              "l3",
+              "doodle",
+              "sig"
+            ],
+            "animate": [],
+            "views": [
+              {
+                "frm": "body",
+                "to": "sig",
+                "z": [
+                  1.05,
+                  1.3
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b170",
@@ -6181,7 +6818,101 @@
           "vfx": [],
           "sfx": [
             "whoosh"
-          ]
+          ],
+          "insert": {
+            "type": "ledger",
+            "at": 0.5,
+            "bg_scenes": [
+              "bridge_battle_mist",
+              "ice_mirrors"
+            ],
+            "bg_tone": "day",
+            "hold": "led2",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r6",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11"
+            ],
+            "animate": [],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "x"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "views": [
+              {
+                "frm": "top",
+                "to": "rows",
+                "z": [
+                  1.0,
+                  1.12
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b207",
@@ -6207,7 +6938,107 @@
           ],
           "camera": "impact_punch_zoom",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "ledger",
+            "bg_scenes": [
+              "bridge_battle_mist",
+              "ice_mirrors"
+            ],
+            "bg_tone": "day",
+            "hold": "led2",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r6",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11"
+            ],
+            "animate": [
+              "hl",
+              "circ"
+            ],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "x"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "say": {
+              "hl": "Disposal! No payment",
+              "circ": "Zabuza Momochi"
+            },
+            "views": [
+              {
+                "frm": "rows",
+                "to": "hl",
+                "z": [
+                  1.1,
+                  1.3
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b208",
@@ -6233,7 +7064,103 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "ledger",
+            "at": 0.0,
+            "bg_scenes": [
+              "bridge_battle_mist",
+              "ice_mirrors"
+            ],
+            "bg_tone": "day",
+            "hold": "led2",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r6",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11",
+              "hl",
+              "circ"
+            ],
+            "animate": [],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "x"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "views": [
+              {
+                "frm": "hl",
+                "to": "hl",
+                "z": [
+                  1.25,
+                  1.4
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b209",
@@ -6293,7 +7220,103 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "ledger",
+            "at": 0.25,
+            "bg_scenes": [
+              "bridge_battle_mist",
+              "ice_mirrors"
+            ],
+            "bg_tone": "day",
+            "hold": "led2",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r6",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11",
+              "hl",
+              "circ"
+            ],
+            "animate": [],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "x"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "views": [
+              {
+                "frm": "hl",
+                "to": "top",
+                "z": [
+                  1.3,
+                  1.0
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b211",
@@ -6530,7 +7553,103 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "ledger",
+            "at": 0.5,
+            "bg_scenes": [
+              "bridge_battle_mist",
+              "ice_mirrors"
+            ],
+            "bg_tone": "day",
+            "hold": "led2",
+            "present": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5",
+              "r6",
+              "r7",
+              "r8",
+              "r9",
+              "r10",
+              "r11",
+              "hl",
+              "circ"
+            ],
+            "animate": [],
+            "rows": [
+              {
+                "date": "03 OCT",
+                "item": "Harbour dues, quarter",
+                "amount": "48,000"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Timber for the bridge works",
+                "amount": "126,500"
+              },
+              {
+                "date": "04 OCT",
+                "item": "Hired guards, retainer",
+                "amount": "92,000"
+              },
+              {
+                "date": "07 OCT",
+                "item": "Rope, nails, pitch",
+                "amount": "17,300"
+              },
+              {
+                "date": "09 OCT",
+                "item": "Dock labour, week 3",
+                "amount": "33,800"
+              },
+              {
+                "date": "10 OCT",
+                "item": "Zabuza Momochi — disposal — no payment",
+                "amount": "—",
+                "paid": false,
+                "say": "x"
+              },
+              {
+                "date": "11 OCT",
+                "item": "Lamp oil, warehouse",
+                "amount": "2,150"
+              },
+              {
+                "date": "12 OCT",
+                "item": "Cartage, east road",
+                "amount": "12,400"
+              },
+              {
+                "date": "14 OCT",
+                "item": "Insurance, cargo",
+                "amount": "64,000"
+              },
+              {
+                "date": "15 OCT",
+                "item": "Clerks' wages",
+                "amount": "29,500"
+              },
+              {
+                "date": "17 OCT",
+                "item": "Harbour dues, penalty",
+                "amount": "6,000"
+              }
+            ],
+            "highlight": 5,
+            "views": [
+              {
+                "frm": "hl",
+                "to": "hl",
+                "z": [
+                  1.3,
+                  1.45
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b220",
@@ -7114,7 +8233,50 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "registration_form",
+            "hold": "reg",
+            "reveal": [
+              "f1",
+              "f2",
+              "f3"
+            ],
+            "at": 0.4,
+            "fields": [
+              {
+                "label": "APPLICANT",
+                "value": "Kabuto Yakushi",
+                "say": "stack of Chunin"
+              },
+              {
+                "label": "VILLAGE",
+                "value": "Hidden Leaf"
+              },
+              {
+                "label": "TEAM",
+                "value": "none, re-enrolled"
+              },
+              {
+                "label": "ATTEMPTS",
+                "value": "7",
+                "say": "failed the exam seven times"
+              }
+            ],
+            "circle": [
+              "ATTEMPTS"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  1.0,
+                  1.12
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b241",
@@ -7151,7 +8313,35 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "mission_report",
+            "variant": "signed_doodle",
+            "at": 0.0,
+            "lines": [
+              "Cat report: Tora found. Again.",
+              "Registration forms: 41.",
+              "Nobody mentions it."
+            ],
+            "rank": "D",
+            "team": "7",
+            "date": "28 OCT",
+            "client": "Konoha mission desk",
+            "say": {
+              "sig": "signs the first one",
+              "doodle": "small ramen bowl"
+            },
+            "views": [
+              {
+                "frm": "body",
+                "to": "doodle",
+                "z": [
+                  1.0,
+                  1.25
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b242",
@@ -7176,7 +8366,48 @@
           ],
           "camera": "drift_up",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "registration_form",
+            "hold": "reg",
+            "reveal": [
+              "f4"
+            ],
+            "at": 0.0,
+            "fields": [
+              {
+                "label": "APPLICANT",
+                "value": "Kabuto Yakushi",
+                "say": "stack of Chunin"
+              },
+              {
+                "label": "VILLAGE",
+                "value": "Hidden Leaf"
+              },
+              {
+                "label": "TEAM",
+                "value": "none, re-enrolled"
+              },
+              {
+                "label": "ATTEMPTS",
+                "value": "7",
+                "say": "failed the exam seven times"
+              }
+            ],
+            "circle": [
+              "ATTEMPTS"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "circ",
+                "z": [
+                  1.05,
+                  1.25
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "b243",
@@ -7203,7 +8434,51 @@
           "vfx": [],
           "sfx": [
             "heartbeat"
-          ]
+          ],
+          "insert": {
+            "type": "registration_form",
+            "hold": "reg",
+            "reveal": [
+              "circ"
+            ],
+            "at": 0.0,
+            "fields": [
+              {
+                "label": "APPLICANT",
+                "value": "Kabuto Yakushi",
+                "say": "stack of Chunin"
+              },
+              {
+                "label": "VILLAGE",
+                "value": "Hidden Leaf"
+              },
+              {
+                "label": "TEAM",
+                "value": "none, re-enrolled"
+              },
+              {
+                "label": "ATTEMPTS",
+                "value": "7",
+                "say": "failed the exam seven times"
+              }
+            ],
+            "circle": [
+              "ATTEMPTS"
+            ],
+            "say": {
+              "circ": "Seven"
+            },
+            "views": [
+              {
+                "frm": "circ",
+                "to": "circ",
+                "z": [
+                  1.2,
+                  1.35
+                ]
+              }
+            ]
+          }
         }
       ],
       "music_changes": [

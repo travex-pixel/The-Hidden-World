@@ -1033,7 +1033,23 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "regulation",
+            "hold": "rega",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  0.9,
+                  1.0
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b039",
@@ -1057,7 +1073,30 @@
           ],
           "camera": "drift_up",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "regulation",
+            "hold": "rega",
+            "reveal": [
+              "hl",
+              "ul"
+            ],
+            "say": {
+              "hl": "Section whatever",
+              "ul": "signed it twice"
+            },
+            "views": [
+              {
+                "frm": "sec",
+                "to": "sec",
+                "z": [
+                  1.12,
+                  1.25
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b040",
@@ -1141,7 +1180,25 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "box_label",
+            "names": [
+              "NAMIKAZE, M.",
+              "UZUMAKI, K."
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  0.78,
+                  0.9
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b043",
@@ -1337,7 +1394,44 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "patrol_report",
+            "hold": "pat",
+            "lines": [
+              {
+                "text": "Mission complete. Zero casualties. Zero damage to client property. Client unhappy about the weather.",
+                "say": "Zero casualties"
+              },
+              {
+                "text": "Mission complete. Cause of delay: council meeting. Cause of council meeting: unknown.",
+                "say": "council meeting"
+              },
+              {
+                "text": "Border patrol report: nothing happened.",
+                "say": "nothing happened",
+                "ul": true,
+                "ul_say": "Underlined"
+              }
+            ],
+            "say": {
+              "doodle": "Ramen"
+            },
+            "reveal": [
+              "l1"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "body",
+                "z": [
+                  0.72,
+                  0.8
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b051",
@@ -1361,7 +1455,44 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "patrol_report",
+            "hold": "pat",
+            "lines": [
+              {
+                "text": "Mission complete. Zero casualties. Zero damage to client property. Client unhappy about the weather.",
+                "say": "Zero casualties"
+              },
+              {
+                "text": "Mission complete. Cause of delay: council meeting. Cause of council meeting: unknown.",
+                "say": "council meeting"
+              },
+              {
+                "text": "Border patrol report: nothing happened.",
+                "say": "nothing happened",
+                "ul": true,
+                "ul_say": "Underlined"
+              }
+            ],
+            "say": {
+              "doodle": "Ramen"
+            },
+            "reveal": [
+              "l2"
+            ],
+            "views": [
+              {
+                "frm": "body",
+                "to": "last",
+                "z": [
+                  0.76,
+                  0.84
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b052",
@@ -1409,7 +1540,45 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "patrol_report",
+            "hold": "pat",
+            "lines": [
+              {
+                "text": "Mission complete. Zero casualties. Zero damage to client property. Client unhappy about the weather.",
+                "say": "Zero casualties"
+              },
+              {
+                "text": "Mission complete. Cause of delay: council meeting. Cause of council meeting: unknown.",
+                "say": "council meeting"
+              },
+              {
+                "text": "Border patrol report: nothing happened.",
+                "say": "nothing happened",
+                "ul": true,
+                "ul_say": "Underlined"
+              }
+            ],
+            "say": {
+              "doodle": "Ramen"
+            },
+            "reveal": [
+              "l3",
+              "ul"
+            ],
+            "views": [
+              {
+                "frm": "last",
+                "to": "last",
+                "z": [
+                  0.84,
+                  0.92
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b054",
@@ -1462,7 +1631,44 @@
           "vfx": [],
           "sfx": [
             "bell"
-          ]
+          ],
+          "insert": {
+            "type": "patrol_report",
+            "hold": "pat",
+            "lines": [
+              {
+                "text": "Mission complete. Zero casualties. Zero damage to client property. Client unhappy about the weather.",
+                "say": "Zero casualties"
+              },
+              {
+                "text": "Mission complete. Cause of delay: council meeting. Cause of council meeting: unknown.",
+                "say": "council meeting"
+              },
+              {
+                "text": "Border patrol report: nothing happened.",
+                "say": "nothing happened",
+                "ul": true,
+                "ul_say": "Underlined"
+              }
+            ],
+            "say": {
+              "doodle": "Ramen"
+            },
+            "reveal": [
+              "doodle"
+            ],
+            "views": [
+              {
+                "frm": "last",
+                "to": "doodle",
+                "z": [
+                  0.9,
+                  1.15
+                ],
+                "ty": 0.55
+              }
+            ]
+          }
         },
         {
           "id": "b056",
@@ -1486,7 +1692,42 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "patrol_report",
+            "hold": "pat",
+            "lines": [
+              {
+                "text": "Mission complete. Zero casualties. Zero damage to client property. Client unhappy about the weather.",
+                "say": "Zero casualties"
+              },
+              {
+                "text": "Mission complete. Cause of delay: council meeting. Cause of council meeting: unknown.",
+                "say": "council meeting"
+              },
+              {
+                "text": "Border patrol report: nothing happened.",
+                "say": "nothing happened",
+                "ul": true,
+                "ul_say": "Underlined"
+              }
+            ],
+            "say": {
+              "doodle": "Ramen"
+            },
+            "reveal": "rest",
+            "views": [
+              {
+                "frm": "doodle",
+                "to": "sig",
+                "z": [
+                  1.05,
+                  0.95
+                ],
+                "ty": 0.55
+              }
+            ]
+          }
         },
         {
           "id": "b057",
@@ -1610,7 +1851,53 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "incident_file",
+            "hold": "inc",
+            "rows": [
+              {
+                "item": "Broken fence — market district",
+                "cause": "temper",
+                "cost": "1,800",
+                "say": "Broken fence"
+              },
+              {
+                "item": "Broken door — Academy",
+                "cause": "temper",
+                "cost": "950",
+                "say": "Broken door"
+              },
+              {
+                "item": "Broken wall — same wall, twice",
+                "cause": "temper (other man started it)",
+                "cost": "4,600",
+                "say": "the same wall, twice"
+              },
+              {
+                "item": "Fountain — in the way",
+                "cause": "practising something",
+                "cost": "2,300",
+                "say": "fountain"
+              }
+            ],
+            "final": "Damages paid in full. Apology: none.",
+            "say": {
+              "final": "Damages paid in full"
+            },
+            "reveal": [],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  1.0,
+                  1.08
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b062",
@@ -1634,7 +1921,57 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "incident_file",
+            "hold": "inc",
+            "rows": [
+              {
+                "item": "Broken fence — market district",
+                "cause": "temper",
+                "cost": "1,800",
+                "say": "Broken fence"
+              },
+              {
+                "item": "Broken door — Academy",
+                "cause": "temper",
+                "cost": "950",
+                "say": "Broken door"
+              },
+              {
+                "item": "Broken wall — same wall, twice",
+                "cause": "temper (other man started it)",
+                "cost": "4,600",
+                "say": "the same wall, twice"
+              },
+              {
+                "item": "Fountain — in the way",
+                "cause": "practising something",
+                "cost": "2,300",
+                "say": "fountain"
+              }
+            ],
+            "final": "Damages paid in full. Apology: none.",
+            "say": {
+              "final": "Damages paid in full"
+            },
+            "reveal": [
+              "r1",
+              "r2",
+              "r3"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "rows",
+                "z": [
+                  0.95,
+                  1.05
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b063",
@@ -1658,7 +1995,53 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "incident_file",
+            "hold": "inc",
+            "rows": [
+              {
+                "item": "Broken fence — market district",
+                "cause": "temper",
+                "cost": "1,800",
+                "say": "Broken fence"
+              },
+              {
+                "item": "Broken door — Academy",
+                "cause": "temper",
+                "cost": "950",
+                "say": "Broken door"
+              },
+              {
+                "item": "Broken wall — same wall, twice",
+                "cause": "temper (other man started it)",
+                "cost": "4,600",
+                "say": "the same wall, twice"
+              },
+              {
+                "item": "Fountain — in the way",
+                "cause": "practising something",
+                "cost": "2,300",
+                "say": "fountain"
+              }
+            ],
+            "final": "Damages paid in full. Apology: none.",
+            "say": {
+              "final": "Damages paid in full"
+            },
+            "reveal": [],
+            "views": [
+              {
+                "frm": "rows",
+                "to": "rows",
+                "z": [
+                  1.0,
+                  1.08
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b064",
@@ -1732,7 +2115,55 @@
           "vfx": [],
           "sfx": [
             "whoosh"
-          ]
+          ],
+          "insert": {
+            "type": "incident_file",
+            "hold": "inc",
+            "rows": [
+              {
+                "item": "Broken fence — market district",
+                "cause": "temper",
+                "cost": "1,800",
+                "say": "Broken fence"
+              },
+              {
+                "item": "Broken door — Academy",
+                "cause": "temper",
+                "cost": "950",
+                "say": "Broken door"
+              },
+              {
+                "item": "Broken wall — same wall, twice",
+                "cause": "temper (other man started it)",
+                "cost": "4,600",
+                "say": "the same wall, twice"
+              },
+              {
+                "item": "Fountain — in the way",
+                "cause": "practising something",
+                "cost": "2,300",
+                "say": "fountain"
+              }
+            ],
+            "final": "Damages paid in full. Apology: none.",
+            "say": {
+              "final": "Damages paid in full"
+            },
+            "reveal": [
+              "r4"
+            ],
+            "views": [
+              {
+                "frm": "rows",
+                "to": "rows",
+                "z": [
+                  1.12,
+                  1.22
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b067",
@@ -1828,7 +2259,55 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "incident_file",
+            "hold": "inc",
+            "rows": [
+              {
+                "item": "Broken fence — market district",
+                "cause": "temper",
+                "cost": "1,800",
+                "say": "Broken fence"
+              },
+              {
+                "item": "Broken door — Academy",
+                "cause": "temper",
+                "cost": "950",
+                "say": "Broken door"
+              },
+              {
+                "item": "Broken wall — same wall, twice",
+                "cause": "temper (other man started it)",
+                "cost": "4,600",
+                "say": "the same wall, twice"
+              },
+              {
+                "item": "Fountain — in the way",
+                "cause": "practising something",
+                "cost": "2,300",
+                "say": "fountain"
+              }
+            ],
+            "final": "Damages paid in full. Apology: none.",
+            "say": {
+              "final": "Damages paid in full"
+            },
+            "reveal": [
+              "final"
+            ],
+            "views": [
+              {
+                "frm": "rows",
+                "to": "final",
+                "z": [
+                  1.0,
+                  1.12
+                ],
+                "ty": 0.35
+              }
+            ]
+          }
         },
         {
           "id": "b071",
@@ -1878,7 +2357,55 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "incident_file",
+            "hold": "inc",
+            "rows": [
+              {
+                "item": "Broken fence — market district",
+                "cause": "temper",
+                "cost": "1,800",
+                "say": "Broken fence"
+              },
+              {
+                "item": "Broken door — Academy",
+                "cause": "temper",
+                "cost": "950",
+                "say": "Broken door"
+              },
+              {
+                "item": "Broken wall — same wall, twice",
+                "cause": "temper (other man started it)",
+                "cost": "4,600",
+                "say": "the same wall, twice"
+              },
+              {
+                "item": "Fountain — in the way",
+                "cause": "practising something",
+                "cost": "2,300",
+                "say": "fountain"
+              }
+            ],
+            "final": "Damages paid in full. Apology: none.",
+            "say": {
+              "final": "Damages paid in full"
+            },
+            "reveal": [
+              "st_invoice"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  1.1,
+                  1.2
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b073",
@@ -1902,7 +2429,55 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "incident_file",
+            "hold": "inc",
+            "rows": [
+              {
+                "item": "Broken fence — market district",
+                "cause": "temper",
+                "cost": "1,800",
+                "say": "Broken fence"
+              },
+              {
+                "item": "Broken door — Academy",
+                "cause": "temper",
+                "cost": "950",
+                "say": "Broken door"
+              },
+              {
+                "item": "Broken wall — same wall, twice",
+                "cause": "temper (other man started it)",
+                "cost": "4,600",
+                "say": "the same wall, twice"
+              },
+              {
+                "item": "Fountain — in the way",
+                "cause": "practising something",
+                "cost": "2,300",
+                "say": "fountain"
+              }
+            ],
+            "final": "Damages paid in full. Apology: none.",
+            "say": {
+              "final": "Damages paid in full"
+            },
+            "reveal": [
+              "st_paid"
+            ],
+            "views": [
+              {
+                "frm": "final",
+                "to": "final",
+                "z": [
+                  1.15,
+                  1.28
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b074",
@@ -2013,7 +2588,23 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "team_report",
+            "hold": "tr",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  1.0,
+                  1.1
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b078",
@@ -2039,7 +2630,23 @@
           "vfx": [],
           "sfx": [
             "wind"
-          ]
+          ],
+          "insert": {
+            "type": "team_report",
+            "hold": "tr",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "top",
+                "to": "e1",
+                "z": [
+                  1.05,
+                  1.15
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b079",
@@ -2063,7 +2670,28 @@
           ],
           "camera": "drift_up",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "team_report",
+            "hold": "tr",
+            "reveal": [
+              "e1"
+            ],
+            "say": {
+              "e1": "Follows every rule"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "e1",
+                "z": [
+                  1.05,
+                  1.2
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b080",
@@ -2090,7 +2718,29 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "team_report",
+            "hold": "tr",
+            "at": 0.55,
+            "reveal": [
+              "e3"
+            ],
+            "say": {
+              "e3": "Rin"
+            },
+            "views": [
+              {
+                "frm": "e1",
+                "to": "rin",
+                "z": [
+                  1.1,
+                  1.2
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b081",
@@ -2114,7 +2764,28 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "team_report",
+            "hold": "tr",
+            "reveal": [
+              "e2"
+            ],
+            "say": {
+              "e2": "Late every single day"
+            },
+            "views": [
+              {
+                "frm": "obito",
+                "to": "obito",
+                "z": [
+                  1.15,
+                  1.28
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b082",
@@ -2138,7 +2809,23 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "team_report",
+            "hold": "tr",
+            "reveal": [],
+            "views": [
+              {
+                "frm": "obito",
+                "to": "obito",
+                "z": [
+                  1.25,
+                  1.32
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b083",
@@ -2215,7 +2902,38 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "notebook_dates",
+            "hold": "nd",
+            "say": {
+              "note": "counted twice"
+            },
+            "reveal": [
+              "dates",
+              "file"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "col",
+                "z": [
+                  1.0,
+                  1.12
+                ],
+                "ty": 0.42
+              },
+              {
+                "frm": "col",
+                "to": "file",
+                "z": [
+                  1.12,
+                  1.2
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b086",
@@ -2239,7 +2957,31 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "notebook_dates",
+            "hold": "nd",
+            "say": {
+              "note": "counted twice"
+            },
+            "reveal": [
+              "c1",
+              "c2",
+              "a1",
+              "a2"
+            ],
+            "views": [
+              {
+                "frm": "col",
+                "to": "file",
+                "z": [
+                  1.15,
+                  1.22
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b087",
@@ -2263,7 +3005,28 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "notebook_dates",
+            "hold": "nd",
+            "say": {
+              "note": "counted twice"
+            },
+            "reveal": [
+              "note"
+            ],
+            "views": [
+              {
+                "frm": "note",
+                "to": "note",
+                "z": [
+                  0.95,
+                  1.02
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b088",
@@ -3965,7 +4728,25 @@
           ],
           "camera": "drift_up",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "box_label",
+            "names": [
+              "NAMIKAZE, M.",
+              "UZUMAKI, K."
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  0.78,
+                  0.9
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b155",
@@ -4063,7 +4844,32 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "box_label",
+            "names": [
+              "BOX 40",
+              "BOX 41"
+            ],
+            "sub": [
+              "ARCHIVE STOCK",
+              "(NO LABEL)"
+            ],
+            "say": {
+              "l2": "forty one"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  0.8,
+                  0.92
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b159",
@@ -4264,7 +5070,32 @@
           ],
           "camera": "slow_pull_out",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "regulation",
+            "hold": "regb",
+            "overlay": "requisition",
+            "requester": "D. Shimura",
+            "item": "Uzumaki, N. - custody",
+            "say": {
+              "slip": "requisition him",
+              "hl": "answer to the Hokage",
+              "ul": "and no one else",
+              "denied": "can't requisition"
+            },
+            "reveal": [],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  1.0,
+                  1.08
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b167",
@@ -4289,7 +5120,34 @@
           ],
           "camera": "impact_punch_zoom",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "regulation",
+            "hold": "regb",
+            "overlay": "requisition",
+            "requester": "D. Shimura",
+            "item": "Uzumaki, N. - custody",
+            "say": {
+              "slip": "requisition him",
+              "hl": "answer to the Hokage",
+              "ul": "and no one else",
+              "denied": "can't requisition"
+            },
+            "reveal": [
+              "slip"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "slip",
+                "z": [
+                  1.05,
+                  1.2
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b168",
@@ -4315,7 +5173,35 @@
           "vfx": [],
           "sfx": [
             "wind"
-          ]
+          ],
+          "insert": {
+            "type": "regulation",
+            "hold": "regb",
+            "overlay": "requisition",
+            "requester": "D. Shimura",
+            "item": "Uzumaki, N. - custody",
+            "say": {
+              "slip": "requisition him",
+              "hl": "answer to the Hokage",
+              "ul": "and no one else",
+              "denied": "can't requisition"
+            },
+            "reveal": [
+              "hl",
+              "ul"
+            ],
+            "views": [
+              {
+                "frm": "slip",
+                "to": "sec",
+                "z": [
+                  1.1,
+                  1.25
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b169",
@@ -4515,7 +5401,44 @@
           "vfx": [],
           "sfx": [
             "bass_drop"
-          ]
+          ],
+          "insert": {
+            "type": "regulation",
+            "hold": "regb",
+            "overlay": "requisition",
+            "requester": "D. Shimura",
+            "item": "Uzumaki, N. - custody",
+            "say": {
+              "slip": "requisition him",
+              "hl": "answer to the Hokage",
+              "ul": "and no one else",
+              "denied": "can't requisition"
+            },
+            "at": 0.22,
+            "reveal": [
+              "denied"
+            ],
+            "views": [
+              {
+                "frm": "sec",
+                "to": "slip",
+                "z": [
+                  1.1,
+                  1.2
+                ],
+                "ty": 0.42
+              },
+              {
+                "frm": "slip",
+                "to": "slip",
+                "z": [
+                  0.95,
+                  1.05
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b177",
@@ -4672,7 +5595,33 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "mission_board",
+            "hold": "board",
+            "total": 40,
+            "tora": 11,
+            "at": 0.3,
+            "ticked": 12,
+            "prev_ticked": 0,
+            "reveal": [
+              "tick"
+            ],
+            "say": {
+              "tick": "twelve missions are done"
+            },
+            "views": [
+              {
+                "frm": "top",
+                "to": "ticks",
+                "z": [
+                  1.0,
+                  1.12
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b183",
@@ -4700,6 +5649,28 @@
           "stamp": {
             "label": "CANON",
             "note": "Seventh Hokage. Same trick."
+          },
+          "insert": {
+            "type": "mission_board",
+            "hold": "board",
+            "total": 40,
+            "tora": 11,
+            "ticked": 29,
+            "prev_ticked": 12,
+            "reveal": [
+              "tick"
+            ],
+            "views": [
+              {
+                "frm": "ticks",
+                "to": "tick_end",
+                "z": [
+                  1.1,
+                  1.2
+                ],
+                "ty": 0.42
+              }
+            ]
           }
         },
         {
@@ -4728,6 +5699,32 @@
           "stamp": {
             "label": "CANON",
             "note": "The Daimyo's wife's cat. Again."
+          },
+          "insert": {
+            "type": "mission_board",
+            "hold": "board",
+            "total": 40,
+            "tora": 11,
+            "at": 0.5,
+            "ticked": 29,
+            "prev_ticked": 29,
+            "reveal": [
+              "tora"
+            ],
+            "say": {
+              "tora": "same cat"
+            },
+            "views": [
+              {
+                "frm": "tora",
+                "to": "tora",
+                "z": [
+                  1.15,
+                  1.3
+                ],
+                "ty": 0.42
+              }
+            ]
           }
         },
         {
@@ -4752,7 +5749,27 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "mission_board",
+            "hold": "board",
+            "total": 40,
+            "tora": 11,
+            "ticked": 29,
+            "prev_ticked": 29,
+            "reveal": [],
+            "views": [
+              {
+                "frm": "tora",
+                "to": "tora",
+                "z": [
+                  1.3,
+                  1.4
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b186",
@@ -4802,7 +5819,27 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "mission_board",
+            "hold": "board",
+            "total": 40,
+            "tora": 11,
+            "ticked": 29,
+            "prev_ticked": 29,
+            "reveal": [],
+            "views": [
+              {
+                "frm": "tora",
+                "to": "tora",
+                "z": [
+                  1.35,
+                  1.45
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b188",
@@ -4972,7 +6009,33 @@
           ],
           "camera": "drift_up",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "mission_board",
+            "hold": "board",
+            "total": 40,
+            "tora": 11,
+            "at": 0.3,
+            "ticked": 40,
+            "prev_ticked": 29,
+            "reveal": [
+              "tick"
+            ],
+            "say": {
+              "tick": "Forty D-ranks"
+            },
+            "views": [
+              {
+                "frm": "tick_end",
+                "to": "top",
+                "z": [
+                  1.2,
+                  1.1
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b195",
@@ -5070,7 +6133,23 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "mission_board",
+            "variant": "empty",
+            "total": 40,
+            "views": [
+              {
+                "frm": "sign",
+                "to": "sign",
+                "z": [
+                  1.0,
+                  1.12
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b199",
@@ -5193,7 +6272,46 @@
           "vfx": [],
           "sfx": [
             "page_flutter"
-          ]
+          ],
+          "insert": {
+            "type": "bingo_appendix",
+            "hold": "bingo",
+            "steps": [
+              [
+                "Step one: find the missing-nin.",
+                "Step one"
+              ],
+              [
+                "Step two: finish the missing-nin.",
+                "Step two"
+              ],
+              [
+                "Step three: destroy the body where it falls.",
+                "Step three"
+              ]
+            ],
+            "rule": "A hunter never carries the body home.",
+            "margin": "I mean it.",
+            "say": {
+              "diagram": "a diagram",
+              "rule": "A hunter never carries the body home",
+              "ul": "Underlined twice",
+              "margin": "I mean it"
+            },
+            "at": 0.35,
+            "reveal": [],
+            "views": [
+              {
+                "frm": "top",
+                "to": "top",
+                "z": [
+                  0.9,
+                  1.0
+                ],
+                "ty": 0.5
+              }
+            ]
+          }
         },
         {
           "id": "b204",
@@ -5219,7 +6337,49 @@
           "vfx": [],
           "sfx": [
             "wind"
-          ]
+          ],
+          "insert": {
+            "type": "bingo_appendix",
+            "hold": "bingo",
+            "steps": [
+              [
+                "Step one: find the missing-nin.",
+                "Step one"
+              ],
+              [
+                "Step two: finish the missing-nin.",
+                "Step two"
+              ],
+              [
+                "Step three: destroy the body where it falls.",
+                "Step three"
+              ]
+            ],
+            "rule": "A hunter never carries the body home.",
+            "margin": "I mean it.",
+            "say": {
+              "diagram": "a diagram",
+              "rule": "A hunter never carries the body home",
+              "ul": "Underlined twice",
+              "margin": "I mean it"
+            },
+            "reveal": [
+              "st1",
+              "st2",
+              "st3"
+            ],
+            "views": [
+              {
+                "frm": "top",
+                "to": "steps",
+                "z": [
+                  1.05,
+                  1.18
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b205",
@@ -5243,7 +6403,47 @@
           ],
           "camera": "slow_push_in",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "bingo_appendix",
+            "hold": "bingo",
+            "steps": [
+              [
+                "Step one: find the missing-nin.",
+                "Step one"
+              ],
+              [
+                "Step two: finish the missing-nin.",
+                "Step two"
+              ],
+              [
+                "Step three: destroy the body where it falls.",
+                "Step three"
+              ]
+            ],
+            "rule": "A hunter never carries the body home.",
+            "margin": "I mean it.",
+            "say": {
+              "diagram": "a diagram",
+              "rule": "A hunter never carries the body home",
+              "ul": "Underlined twice",
+              "margin": "I mean it"
+            },
+            "reveal": [
+              "diagram"
+            ],
+            "views": [
+              {
+                "frm": "steps",
+                "to": "diagram",
+                "z": [
+                  1.1,
+                  1.2
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b206",
@@ -5291,7 +6491,48 @@
           ],
           "camera": "pan_lr",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "bingo_appendix",
+            "hold": "bingo",
+            "steps": [
+              [
+                "Step one: find the missing-nin.",
+                "Step one"
+              ],
+              [
+                "Step two: finish the missing-nin.",
+                "Step two"
+              ],
+              [
+                "Step three: destroy the body where it falls.",
+                "Step three"
+              ]
+            ],
+            "rule": "A hunter never carries the body home.",
+            "margin": "I mean it.",
+            "say": {
+              "diagram": "a diagram",
+              "rule": "A hunter never carries the body home",
+              "ul": "Underlined twice",
+              "margin": "I mean it"
+            },
+            "reveal": [
+              "rule",
+              "ul"
+            ],
+            "views": [
+              {
+                "frm": "diagram",
+                "to": "rule",
+                "z": [
+                  1.1,
+                  1.22
+                ],
+                "ty": 0.42
+              }
+            ]
+          }
         },
         {
           "id": "b208",
@@ -5315,7 +6556,47 @@
           ],
           "camera": "pan_rl",
           "vfx": [],
-          "sfx": []
+          "sfx": [],
+          "insert": {
+            "type": "bingo_appendix",
+            "hold": "bingo",
+            "steps": [
+              [
+                "Step one: find the missing-nin.",
+                "Step one"
+              ],
+              [
+                "Step two: finish the missing-nin.",
+                "Step two"
+              ],
+              [
+                "Step three: destroy the body where it falls.",
+                "Step three"
+              ]
+            ],
+            "rule": "A hunter never carries the body home.",
+            "margin": "I mean it.",
+            "say": {
+              "diagram": "a diagram",
+              "rule": "A hunter never carries the body home",
+              "ul": "Underlined twice",
+              "margin": "I mean it"
+            },
+            "reveal": [
+              "margin"
+            ],
+            "views": [
+              {
+                "frm": "margin",
+                "to": "margin",
+                "z": [
+                  1.05,
+                  1.12
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b209",
@@ -5366,7 +6647,48 @@
           "vfx": [],
           "sfx": [
             "whoosh"
-          ]
+          ],
+          "insert": {
+            "type": "bingo_appendix",
+            "hold": "bingo",
+            "steps": [
+              [
+                "Step one: find the missing-nin.",
+                "Step one"
+              ],
+              [
+                "Step two: finish the missing-nin.",
+                "Step two"
+              ],
+              [
+                "Step three: destroy the body where it falls.",
+                "Step three"
+              ]
+            ],
+            "rule": "A hunter never carries the body home.",
+            "margin": "I mean it.",
+            "say": {
+              "diagram": "a diagram",
+              "rule": "A hunter never carries the body home",
+              "ul": "Underlined twice",
+              "margin": "I mean it"
+            },
+            "reveal": "rest",
+            "views": [
+              {
+                "frm": "margin",
+                "to": [
+                  880,
+                  1300
+                ],
+                "z": [
+                  1.0,
+                  1.1
+                ],
+                "ty": 0.45
+              }
+            ]
+          }
         },
         {
           "id": "b211",

@@ -10,7 +10,7 @@
   "expression": "neutral",
   "scale": "wide",
   "ok_as_night": false,
-  "note": "mission desk hall",
+  "note": "mission desk hall - officials at the long table (council / mail desk); Kakashi+Sakura+Naruto bottom-left: ALWAYS recrop to the table",
   "w": 1440,
   "h": 1080,
   "focus": [
@@ -304,19 +304,26 @@
   "scene": "forest_of_death",
   "time": "day",
   "who": [
-   "anko",
-   "naruto"
+   "orochimaru"
   ],
   "expression": "shock",
   "scale": "medium",
   "ok_as_night": false,
-  "note": "Anko with Grass ninja licking kunai, Naruto shocked",
+  "note": "Grass ninja (Orochimaru disguise) licking kunai - recrop on the hatted figure only, b076-b078",
   "w": 1122,
   "h": 847,
   "focus": [
    0.5,
    0.4
-  ]
+  ],
+  "only": [
+   "b076..b078"
+  ],
+  "crop_only": {
+   "x": 0.8,
+   "y": 0.22,
+   "zoom": 2.3
+  }
  },
  "nr_0486": {
   "scene": "object",
@@ -1274,22 +1281,6 @@
    0.4
   ]
  },
- "nr_1855": {
-  "scene": "forest_of_death",
-  "time": "day",
-  "who": [],
-  "expression": "shock",
-  "scale": "wide",
-  "ok_as_night": false,
-  "fight": true,
-  "note": "giant bear in forest",
-  "w": 1920,
-  "h": 1080,
-  "focus": [
-   0.5,
-   0.4
-  ]
- },
  "nr_2093": {
   "scene": "uchiha_flashback",
   "time": "night",
@@ -1382,23 +1373,6 @@
   "focus": [
    0.5,
    0.38
-  ]
- },
- "nr_0460": {
-  "scene": "seal_mindscape",
-  "time": "interior",
-  "who": [
-   "naruto"
-  ],
-  "expression": "angry",
-  "scale": "closeup",
-  "ok_as_night": true,
-  "note": "fox eyes [ep1]",
-  "w": 1429,
-  "h": 1080,
-  "focus": [
-   0.5,
-   0.5
   ]
  },
  "nr_0575": {
@@ -1958,7 +1932,10 @@
    "x": 0.5,
    "y": 0.45,
    "zoom": 1.15
-  }
+  },
+  "only": [
+   "b260"
+  ]
  },
  "nr_1600": {
   "scene": "archive_library",

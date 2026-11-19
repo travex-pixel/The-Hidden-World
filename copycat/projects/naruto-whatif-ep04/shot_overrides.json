@@ -4,7 +4,7 @@
   "split_bias": 1.35,
   "max_shot": 11.0,
   "merge_short_s": 5.0,
-  "merge_cross_s": 3.8,
+  "merge_cross_s": 1.5,
   "merge_max_s": 9.0,
   "cold_avg": 4.8,
   "lock_seconds": 45,
@@ -13,18 +13,616 @@
   "strict_reuse": true,
   "lock_shots": 4,
   "extra_inserts": {},
-  "grid_plan": [],
-  "gap_exempt": [],
+  "grid_plan": [
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b007"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b038"
+     },
+     {
+      "k": "g2",
+      "b": "b039..b040"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b059",
+      "f": [
+       0,
+       0.4
+      ]
+     },
+     {
+      "k": "g16z",
+      "b": "b059",
+      "f": [
+       0.4,
+       1
+      ]
+     },
+     {
+      "k": "g4",
+      "b": "b060"
+     },
+     {
+      "k": "real",
+      "b": "b061..b062"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g6",
+      "b": "b064..b066"
+     },
+     {
+      "k": "real",
+      "b": "b067"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b074..b075"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b076",
+      "f": [
+       0,
+       0.5
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b076",
+      "f": [
+       0.5,
+       1
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b077"
+     },
+     {
+      "k": "real",
+      "b": "b078"
+     },
+     {
+      "k": "real",
+      "b": "b079"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b196",
+      "f": [
+       0,
+       0.5
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b196",
+      "f": [
+       0.5,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b205",
+      "f": [
+       0,
+       0.5
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b205",
+      "f": [
+       0.5,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b211",
+      "f": [
+       0,
+       0.5
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b211",
+      "f": [
+       0.5,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b244",
+      "f": [
+       0,
+       0.5
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b244",
+      "f": [
+       0.5,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g9",
+      "b": "b080"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g9",
+      "b": "b102",
+      "f": [
+       0,
+       0.5
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b102",
+      "f": [
+       0.5,
+       1
+      ]
+     },
+     {
+      "k": "g6",
+      "b": "b103"
+     },
+     {
+      "k": "real",
+      "b": "b104..b106"
+     },
+     {
+      "k": "real",
+      "b": "b107"
+     },
+     {
+      "k": "g4",
+      "b": "b108..b109"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b152"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b172"
+     },
+     {
+      "k": "real",
+      "b": "b173..b174"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g4",
+      "b": "b162..b165"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b181"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b183"
+     },
+     {
+      "k": "real",
+      "b": "b184..b185"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b132"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b137..b141"
+     },
+     {
+      "k": "real",
+      "b": "b142..b143"
+     },
+     {
+      "k": "real",
+      "b": "b144"
+     },
+     {
+      "k": "real",
+      "b": "b145"
+     },
+     {
+      "k": "real",
+      "b": "b146..b148"
+     },
+     {
+      "k": "real",
+      "b": "b149"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b245"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b247"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b188"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b200"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b212"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g4",
+      "b": "b213"
+     },
+     {
+      "k": "g9",
+      "b": "b214"
+     },
+     {
+      "k": "g2",
+      "b": "b215"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g9",
+      "b": "b222",
+      "f": [
+       0,
+       0.5
+      ]
+     },
+     {
+      "k": "g16z",
+      "b": "b222",
+      "f": [
+       0.5,
+       1
+      ]
+     },
+     {
+      "k": "g6",
+      "b": "b223"
+     },
+     {
+      "k": "real",
+      "b": "b224"
+     },
+     {
+      "k": "real",
+      "b": "b225"
+     },
+     {
+      "k": "real",
+      "b": "b226"
+     },
+     {
+      "k": "real",
+      "b": "b227"
+     },
+     {
+      "k": "g2",
+      "b": "b228"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g16z",
+      "b": "b250..b251",
+      "f": [
+       0,
+       0.5
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b250..b251",
+      "f": [
+       0.5,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b252",
+      "f": [
+       0,
+       0.34
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b252",
+      "f": [
+       0.34,
+       0.67
+      ]
+     },
+     {
+      "k": "real",
+      "b": "b252",
+      "f": [
+       0.67,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b253"
+     },
+     {
+      "k": "g2",
+      "b": "b254"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "g2",
+      "b": "b258"
+     }
+    ]
+   },
+   {
+    "cuts": [
+     {
+      "k": "real",
+      "b": "b259"
+     },
+     {
+      "k": "real",
+      "b": "b260"
+     },
+     {
+      "k": "real",
+      "b": "b261"
+     }
+    ]
+   }
+  ],
+  "gap_exempt": [
+   "b172..b173",
+   "b075..b079"
+  ],
   "grid_faces": "auto",
   "avg_by_chapter": {
    "cold_open": 5.0,
-   "ch6": 5.0
+   "ch1": 5.4,
+   "ch2": 5.2,
+   "ch3": 5.2,
+   "ch4": 8.5,
+   "ch5": 5.4,
+   "ch6": 7.0,
+   "ch7": 5.4
   },
   "wl": {
    "reuse_cap": 4,
    "min_gap_s": 45,
-   "windows": {},
-   "beats": {},
+   "windows": {
+    "kabuto": [
+     "b005..b262"
+    ],
+    "ibiki": [
+     "b029..b048"
+    ],
+    "anko": [
+     "b050..b058",
+     "b082"
+    ],
+    "orochimaru": [
+     "b075..b079",
+     "b200..b243"
+    ],
+    "gaara": [
+     "b135..b150",
+     "b234..b238"
+    ],
+    "jiraiya": [
+     "b206..b243"
+    ],
+    "kurama": [
+     "b123..b134"
+    ],
+    "iruka": [
+     "b224..b226"
+    ],
+    "itachi": [
+     "b252..b259"
+    ],
+    "kakashi": [
+     "b111..b119",
+     "b166..b171",
+     "b193..b195",
+     "b230..b233"
+    ],
+    "sasuke": [
+     "b014..b022",
+     "b067..b119",
+     "b193..b199",
+     "b230..b233",
+     "b259..b261"
+    ],
+    "danzo": [
+     "b172..b173"
+    ]
+   },
+   "beats": {
+    "b198": {
+     "scenes": [
+      "exam_hall",
+      "stands_asleep",
+      "arena",
+      "neutral_portrait"
+     ]
+    },
+    "b219": {
+     "scenes": [
+      "exam_hall",
+      "stands_asleep",
+      "arena",
+      "neutral_portrait"
+     ]
+    },
+    "b220": {
+     "scenes": [
+      "exam_hall",
+      "stands_asleep",
+      "arena",
+      "neutral_portrait"
+     ]
+    },
+    "b221": {
+     "scenes": [
+      "exam_hall",
+      "stands_asleep",
+      "arena",
+      "neutral_portrait"
+     ]
+    },
+    "b229": {
+     "scenes": [
+      "exam_hall",
+      "stands_asleep",
+      "arena",
+      "neutral_portrait"
+     ]
+    },
+    "b243": {
+     "scenes": [
+      "village_under_attack",
+      "arena",
+      "village_day",
+      "neutral_portrait"
+     ]
+    }
+   },
    "speaker_fallback": {
     "DANZO": {
      "who": [
@@ -75,7 +673,9 @@
       "naruto",
       "naruto_clones",
       "kabuto",
-      "hiruzen"
+      "hiruzen",
+      "sasuke",
+      "sakura"
      ],
      "graded_scenes": [
       "neutral_portrait",
@@ -88,9 +688,9 @@
      "scenes": [
       "exam_hall",
       "hokage_office",
-      "village_day",
       "neutral_portrait",
-      "object"
+      "object",
+      "archive_library"
      ],
      "time": "day",
      "who": [
@@ -101,26 +701,25 @@
       "hiruzen",
       "sasuke",
       "sakura",
-      "kakashi",
-      "villagers"
+      "kakashi"
      ]
     },
     "ch2": {
      "scenes": [
       "forest_of_death",
       "neutral_portrait",
-      "training_ground"
+      "training_ground",
+      "object"
      ],
      "time": "day",
      "who": [
       "naruto",
       "naruto_clones",
-      "team7",
       "sasuke",
       "sakura",
       "anko",
       "orochimaru",
-      "kakashi"
+      "anbu"
      ]
     },
     "ch3": {
@@ -239,5 +838,427 @@
     }
    }
   }
+ },
+ "b001#0": {
+  "asset_id": "nr_0075"
+ },
+ "b001#1": {
+  "asset_id": "nr_0014"
+ },
+ "b002#0": {
+  "asset_id": "nr_1839"
+ },
+ "b002#1": {
+  "asset_id": "nr_1600"
+ },
+ "b004#0": {
+  "prefer": [
+   "nr_1187"
+  ]
+ },
+ "b011#0": {
+  "prefer": [
+   "nr_0075",
+   "nr_0014"
+  ]
+ },
+ "b023#0": {
+  "asset_id": "nr_1594"
+ },
+ "b023#1": {
+  "asset_id": "nr_0090"
+ },
+ "b024#0": {
+  "prefer": [
+   "nr_1187",
+   "nr_1535"
+  ]
+ },
+ "b026#0": {
+  "prefer": [
+   "nr_0389",
+   "nr_1535"
+  ]
+ },
+ "b028#0": {
+  "asset_id": "nr_1054"
+ },
+ "b031#0": {
+  "asset_id": "nr_0075"
+ },
+ "b031#1": {
+  "asset_id": "nr_0014"
+ },
+ "b033#0": {
+  "prefer": [
+   "nr_1380"
+  ]
+ },
+ "b034#0": {
+  "asset_id": "nr_0162"
+ },
+ "b036#0": {
+  "prefer": [
+   "nr_0178",
+   "nr_0092"
+  ]
+ },
+ "b037#0": {
+  "prefer": [
+   "nr_0174"
+  ]
+ },
+ "b050#0": {
+  "asset_id": "nr_0463"
+ },
+ "b051#0": {
+  "asset_id": "nr_1740"
+ },
+ "b051#1": {
+  "asset_id": "nr_0834"
+ },
+ "b052#0": {
+  "asset_id": "nr_0003"
+ },
+ "b053#0": {
+  "asset_id": "nr_1198"
+ },
+ "b054#0": {
+  "asset_id": "nr_0829"
+ },
+ "b055#0": {
+  "prefer": [
+   "nr_1187",
+   "nr_0389"
+  ]
+ },
+ "b056#0": {
+  "asset_id": "nr_1743"
+ },
+ "b057#0": {
+  "prefer": [
+   "nr_0389",
+   "nr_1535"
+  ]
+ },
+ "b058#0": {
+  "asset_id": "nr_0539"
+ },
+ "b067#0": {
+  "prefer": [
+   "nr_1194"
+  ]
+ },
+ "b068#0": {
+  "asset_id": "nr_0094"
+ },
+ "b071#0": {
+  "prefer": [
+   "nr_1376"
+  ]
+ },
+ "b076#0": {
+  "asset_id": "nr_0098"
+ },
+ "b076#1": {
+  "asset_id": "nr_1512",
+  "crop": {
+   "x": 0.5,
+   "y": 0.42,
+   "zoom": 1.0
+  },
+  "layout": "fill_force"
+ },
+ "b077#0": {
+  "asset_id": "nr_1512",
+  "crop": {
+   "x": 0.5,
+   "y": 0.36,
+   "zoom": 2.0
+  },
+  "layout": "fill_force"
+ },
+ "b078#0": {
+  "prefer": [
+   "nr_1187",
+   "nr_0389"
+  ]
+ },
+ "b079#0": {
+  "prefer": [
+   "nr_0389",
+   "nr_1535"
+  ]
+ },
+ "b085#0": {
+  "asset_id": "nr_0094"
+ },
+ "b085#1": {
+  "asset_id": "nr_2188"
+ },
+ "b086#0": {
+  "prefer": [
+   "nr_1366",
+   "nr_0483"
+  ]
+ },
+ "b088#0": {
+  "asset_id": "nr_2239"
+ },
+ "b089#0": {
+  "prefer": [
+   "nr_1194",
+   "nr_1376"
+  ]
+ },
+ "b098#0": {
+  "prefer": [
+   "nr_2188",
+   "nr_0792"
+  ]
+ },
+ "b105#0": {
+  "asset_id": "nr_2239",
+  "crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1.0
+  },
+  "layout": "fill_force"
+ },
+ "b107#0": {
+  "prefer": [
+   "nr_1376",
+   "nr_0172"
+  ]
+ },
+ "b152#0": {
+  "asset_id": "nr_0072",
+  "crop": {
+   "x": 0.62,
+   "y": 0.3,
+   "zoom": 1.7
+  },
+  "layout": "fill_force",
+  "grade": "interior_lamp"
+ },
+ "b167#0": {
+  "prefer": [
+   "nr_1803"
+  ]
+ },
+ "b169#0": {
+  "prefer": [
+   "nr_0699"
+  ]
+ },
+ "b171#0": {
+  "prefer": [
+   "nr_1338"
+  ]
+ },
+ "b172#0": {
+  "asset_id": "nr_0072",
+  "crop": {
+   "x": 0.3,
+   "y": 0.22,
+   "zoom": 2.0
+  },
+  "layout": "fill_force",
+  "grade": "interior_lamp"
+ },
+ "b173#0": {
+  "asset_id": "nr_0072",
+  "crop": {
+   "x": 0.72,
+   "y": 0.28,
+   "zoom": 2.4
+  },
+  "layout": "fill_force",
+  "grade": "interior_lamp"
+ },
+ "b178#0": {
+  "asset_id": "nr_1054"
+ },
+ "b180#0": {
+  "asset_id": "nr_0090"
+ },
+ "b182#0": {
+  "asset_id": "nr_0702"
+ },
+ "b184#0": {
+  "asset_id": "nr_0855",
+  "crop": {
+   "x": 0.4,
+   "y": 0.72,
+   "zoom": 1.8
+  },
+  "layout": "fill_force"
+ },
+ "b186#0": {
+  "asset_id": "nr_0457"
+ },
+ "b187#0": {
+  "prefer": [
+   "nr_1610"
+  ]
+ },
+ "b196#0": {
+  "asset_id": "nr_0702"
+ },
+ "b196#1": {
+  "asset_id": "nr_0344",
+  "crop": {
+   "x": 0.2,
+   "y": 0.28,
+   "zoom": 2.3
+  },
+  "layout": "fill_force"
+ },
+ "b197#0": {
+  "asset_id": "nr_0428",
+  "crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1.0
+  },
+  "layout": "fill_force"
+ },
+ "b198#0": {
+  "prefer": [
+   "nr_1785",
+   "nr_0092"
+  ]
+ },
+ "b200#0": {
+  "asset_id": "nr_0633",
+  "crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1.0
+  },
+  "layout": "fill_force"
+ },
+ "b201#0": {
+  "asset_id": "nr_0897",
+  "crop": {
+   "x": 0.72,
+   "y": 0.4,
+   "zoom": 1.9
+  },
+  "layout": "fill_force"
+ },
+ "b205#0": {
+  "asset_id": "nr_0161"
+ },
+ "b205#1": {
+  "asset_id": "nr_0160"
+ },
+ "b206#0": {
+  "asset_id": "nr_0518"
+ },
+ "b206#1": {
+  "asset_id": "nr_1485"
+ },
+ "b262#0": {
+  "asset_id": "nr_1392"
+ },
+ "b262#1": {
+  "asset_id": "nr_0391"
+ },
+ "b211#0": {
+  "asset_id": "nr_0428",
+  "crop": {
+   "x": 0.28,
+   "y": 0.4,
+   "zoom": 1.4
+  },
+  "layout": "fill_force"
+ },
+ "b211#1": {
+  "prefer": [
+   "nr_1187"
+  ]
+ },
+ "b219#0": {
+  "prefer": [
+   "nr_0092",
+   "nr_0178"
+  ]
+ },
+ "b221#0": {
+  "prefer": [
+   "nr_1785",
+   "nr_0178"
+  ]
+ },
+ "b229#0": {
+  "prefer": [
+   "nr_0092",
+   "nr_1785"
+  ]
+ },
+ "b234#0": {
+  "asset_id": "nr_0149",
+  "crop": {
+   "x": 0.24,
+   "y": 0.34,
+   "zoom": 1.9
+  },
+  "layout": "fill_force"
+ },
+ "b235#0": {
+  "prefer": [
+   "nr_1352",
+   "nr_1429"
+  ]
+ },
+ "b237#0": {
+  "prefer": [
+   "nr_0357",
+   "nr_1351"
+  ]
+ },
+ "b238#0": {
+  "prefer": [
+   "nr_1429",
+   "nr_0155"
+  ]
+ },
+ "b244#0": {
+  "asset_id": "nr_0222",
+  "grade": "interior_lamp"
+ },
+ "b244#1": {
+  "asset_id": "nr_0702"
+ },
+ "b252#0": {
+  "asset_id": "nr_1600"
+ },
+ "b252#1": {
+  "asset_id": "nr_2093"
+ },
+ "b252#2": {
+  "asset_id": "nr_0922"
+ },
+ "b259#0": {
+  "prefer": [
+   "nr_0389",
+   "nr_1187"
+  ]
+ },
+ "b260#0": {
+  "asset_id": "nr_1480",
+  "grade": "interior_lamp"
+ },
+ "b261#0": {
+  "asset_id": "nr_1376",
+  "crop": {
+   "x": 0.5,
+   "y": 0.44,
+   "zoom": 1.12
+  },
+  "layout": "fill_force",
+  "grade": "interior_lamp"
  }
 }
