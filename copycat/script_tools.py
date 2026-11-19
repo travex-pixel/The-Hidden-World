@@ -55,16 +55,18 @@ def profile(s):
     """Franchise-specific vocabularies and thresholds. No franchise key means Black Clover, unchanged."""
     fid = s.get("franchise")
     if not fid or fid == _fr.DEFAULT:
-        return dict(id=_fr.DEFAULT, subjects=SUBJECTS, locations=LOCATIONS, moods=MOODS,
+        return dict(id=_fr.DEFAULT, subjects=SUBJECTS, speakers=None, min_chars=MIN_CHARS, words=(1450, 1650), beats=None,
+                    sfx=(28, 40), punch=12, reveals=12, stamps=None, locations=LOCATIONS, moods=MOODS,
                     speaker_subjects=SPEAKER_SUBJECTS, narr_min=NARR_MIN, narr_share=(0.58, 0.65),
                     dirs=(0.28, 0.42), required_cast={"NOELLE"})
     f = _fr.load(fid)
     v = f["subjects"]
     subj = set(v["characters"]) | set(v["places"]) | set(v["objects"])
     speakers = set(f.get("speakers") or f.get("speaker_colours", {}))
-    return dict(id=fid, subjects=subj, locations=set(v["places"]), moods=set(v["moods"]),
-                speaker_subjects=NARUTO_SPEAKER_SUBJECTS if fid == "naruto" else {}, narr_min=60,
-                narr_share=(0.45, 0.55), dirs=(0.28, 0.45), required_cast=speakers)
+    return dict(id=fid, subjects=subj, locations=set(v["places"]), moods=set(v["moods"]), speakers=speakers,
+                speaker_subjects=NARUTO_SPEAKER_SUBJECTS if fid == "naruto" else {}, narr_min=60, min_chars=8,
+                narr_share=(0.50, 0.55), dirs=(0.28, 0.45), required_cast=set(), words=(3050, 3350),
+                beats=(230, 270), sfx=(45, 85), punch=24, reveals=24, stamps=(6, 9))
 
 
 def validate(s):
@@ -85,6 +87,8 @@ def validate(s):
             if not re.fullmatch(r"b\d+", bid) or bid in seen:
                 errs.append(f"{bid}: id not unique")
             seen.add(bid)
+            if P["speakers"] is not None and b["speaker"] not in P["speakers"]:
+                errs.append(f"{bid}: speaker {b['speaker']} not in franchise speakers")
             if b["speaker"] not in cast:
                 errs.append(f"{bid}: speaker {b['speaker']} not in cast")
             if not b["text"].strip():
@@ -98,7 +102,7 @@ def validate(s):
                 errs.append(f"{bid}: {n} chars > {MAX_CHARS}")
             if b["speaker"] == "NARRATOR" and n < P["narr_min"]:
                 errs.append(f"{bid}: narrator beat {n} chars < {P['narr_min']}")
-            elif n < MIN_CHARS and txt not in LOCKED_SHORT:
+            elif n < P["min_chars"] and txt not in LOCKED_SHORT:
                 errs.append(f"{bid}: {n} chars < {MIN_CHARS}")
             st = b.get("stamp")
             if st is not None:
@@ -149,8 +153,8 @@ def validate(s):
                 errs.append(f"{bid}: bad sfx")
             if not isinstance(b["pause_after_ms"], int) or not 0 <= b["pause_after_ms"] <= 700:
                 errs.append(f"{bid}: pause out of range")
-    if P["id"] != _fr.DEFAULT and not 5 <= stamps <= 7:
-        errs.append(f"CANON stamps {stamps} outside 5-7")
+    if P["stamps"] and not P["stamps"][0] <= stamps <= P["stamps"][1]:
+        errs.append(f"CANON stamps {stamps} outside {P['stamps'][0]}-{P['stamps'][1]}")
     return errs
 
 
@@ -211,23 +215,23 @@ def main(argv):
     s = json.loads(path.read_text())
     errs = validate(s)
     st = report(s)
-    if st["punch"] > 12:
-        errs.append("punch zooms > 12")
-    if not 28 <= st["sfx"] <= 40:
-        errs.append("sfx cues outside 28-40")
-    if not 1450 <= st["tot"] <= 1650:
-        errs.append(f"total words {st['tot']} outside 1450-1650")
     P = profile(s)
+    if st["punch"] > P["punch"]:
+        errs.append(f"punch zooms > {P['punch']}")
+    if not P["sfx"][0] <= st["sfx"] <= P["sfx"][1]:
+        errs.append(f"sfx cues outside {P['sfx'][0]}-{P['sfx'][1]}")
+    if not P["words"][0] <= st["tot"] <= P["words"][1]:
+        errs.append(f"total words {st['tot']} outside {P['words'][0]}-{P['words'][1]}")
     lo, hi = P["narr_share"]
     if not lo <= st["narr"] <= hi:
         errs.append(f"narrator share {st['narr']:.0%} outside {lo:.0%}-{hi:.0%}")
-    if st["reveals"] > 12:
-        errs.append("reveal pauses > 12")
+    if st["reveals"] > P["reveals"]:
+        errs.append(f"reveal pauses > {P['reveals']}")
     dlo, dhi = P["dirs"]
     if not dlo <= st["dirs"] / st["beats"] <= dhi:
         errs.append(f"direction coverage {st['dirs'] / st['beats']:.0%} outside {dlo:.0%}-{dhi:.0%}")
-    if P["id"] != _fr.DEFAULT and not 110 <= st["beats"] <= 130:
-        errs.append(f"beats {st['beats']} outside 110-130")
+    if P["beats"] and not P["beats"][0] <= st["beats"] <= P["beats"][1]:
+        errs.append(f"beats {st['beats']} outside {P['beats'][0]}-{P['beats'][1]}")
     if s.get("revision") != 2:
         errs.append("revision marker missing")
     if st["nonc"] / st["cuts"] > 0.2:

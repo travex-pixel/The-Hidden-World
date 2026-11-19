@@ -167,6 +167,67 @@ CLOSE_RE = r"close.?up|face|portrait|eyes?\b|stare|glare|smile|grin|tears|crying
 WIDE_RE = r"village|panorama|overlook|monument|forest|view|aerial|army|crowd|streets|rooftops|landscape|skyline|gathering|assembl|group|\bteam\b|everyone"
 
 
+# subject -> Narutopedia pages whose image lists give char-free place/object/jutsu footage (page images -> subject)
+SUBJECT_PAGES = {
+    "konoha_village": ["Konohagakure", "Konoha Gates", "Hidden Leaf Village"],
+    "hokage_monument": ["Hokage Monument", "Hokage Rock"],
+    "hokage_office": ["Hokage Residence", "Hokage's Office", "Hokage", "Hokage Building", "Hokage Mansion", "Kage Summit Room"],
+    "academy": ["Ninja Academy", "Academy Graduation Exam", "Academy Student"],
+    "classroom": ["Ninja Academy"],
+    "ichiraku": ["Ichiraku Ramen", "Teuchi", "Ayame"],
+    "ramen": ["Ichiraku Ramen", "Ramen"],
+    "training_ground": ["Training Ground", "Third Training Ground", "Training Grounds"],
+    "memorial_stone": ["Memorial Stone", "Memorial Stone (Konoha)", "Cenotaph"],
+    "land_of_waves": ["Land of Waves", "Prologue — Land of Waves", "Wave Country", "Land of Waves arc"],
+    "bridge": ["Great Naruto Bridge", "Tazuna's Bridge", "Land of Waves"],
+    "mist": ["Hidden Mist Technique", "Hidden Mist Technique (technique)", "Kirigakure"],
+    "forest_of_death": ["Forest of Death", "Training Ground 44", "Second Exam"],
+    "exam_hall": ["Chūnin Exams", "First Exam", "Chunin Exams", "Ibiki Morino"],
+    "arena": ["Konoha Stadium", "Chūnin Exams Finals", "Preliminaries", "Konoha Arena"],
+    "barrier": ["Four Violet Flames Formation", "Four Violet Flames", "Konoha Crush", "Invasion of Konoha"],
+    "uchiha_district": ["Uchiha District", "Uchiha Clan", "Uchiha Clan Massacre"],
+    "hospital": ["Konoha Hospital", "Hospital"],
+    "mission_desk": ["Mission Assignment Desk", "Mission Request", "Mission Ranking", "Tora"],
+    "forbidden_scroll": ["Scroll of Seals", "Forbidden Scroll"],
+    "crystal_ball": ["Telescope Technique", "Crystal Ball", "Crystal Ball (tool)"],
+    "naruto_clones": ["Shadow Clone Technique", "Multiple Shadow Clone Technique", "Shadow Clone Technique (technique)", "Mass Shadow Clone Technique"],
+    "seal_mark": ["Eight Trigrams Sealing Style", "Evil Sealing Method", "Eight Trigrams Seal", "Fūinjutsu", "Five Elements Seal", "Seal"],
+    "seal_cage": ["Kurama", "Seal Room", "Eight Trigrams Seal", "Mindscape", "Nine-Tails"],
+    "fireball": ["Great Fireball Technique", "Fire Release: Great Fireball Technique", "Fire Release"],
+    "shuriken": ["Windmill Shuriken", "Demon Wind Shuriken", "Shuriken", "Shuriken Shadow Clone Technique", "Shuriken"],
+    "kunai": ["Kunai"],
+    "bells": ["Survival Exercise", "Bell Test", "Team 7", "Survival Test"],
+    "headband": ["Forehead Protector", "Hitai-ate", "Forehead protector"],
+    "bingo_book": ["Bingo Book"],
+    "ice_mirrors": ["Demonic Ice Mirrors", "Demonic Mirroring Ice Crystals", "Haku"],
+    "water_prison": ["Water Release: Water Prison Technique", "Water Prison Technique"],
+    "lightning_blade": ["Lightning Blade", "Chidori"],
+    "coffins": ["Coffin", "Sealed Coffins"],
+    "info_cards": ["Ninja Information Card", "Ninja Info Card", "Kabuto Yakushi"],
+    "exam_paper": ["Written Exam", "First Exam", "Chūnin Exams"],
+    "tora_cat": ["Tora"],
+    "anbu": ["Anbu", "ANBU Black Ops"],
+    "root": ["Root", "Danzō Shimura"],
+    "kazekage": ["Fourth Kazekage"],
+    "enma": ["Enma"],
+    "book": ["Icha Icha", "Icha Icha Paradise"],
+    "letter": ["Letter", "Kazekage Letter", "Mail"],
+    "ink_brush": ["Calligraphy", "Brush"],
+    "ledger": ["Ledger", "Gatō Company", "Gato Company"],
+    "paperwork": ["Paperwork", "Mission Request", "Mission Report"],
+    "document": ["Mission Report", "Mission Scroll", "Scroll"],
+    "library": ["Konoha Library", "Library", "Archive", "Konoha Archives", "Hokage Library"],
+    "villagers": ["Villager", "Villagers"],
+    "naruto_apartment": ["Naruto's Apartment", "Naruto Uzumaki's apartment"],
+    "tazuna_house": ["Tazuna's House"],
+    "gato_office": ["Gatō Company", "Gato's Building"],
+    "rooftop": ["Konohagakure"],
+    "forest_night": ["Forest of Death"],
+    "night_sky": ["Moon", "Full Moon"],
+    "sunrise": ["Sunrise"],
+}
+
+
 def part1_episode_pages(api):
     """Titles of the original-series (Part I) episode pages: section 2 of 'List of Animated Media'.
     `api` is harvester.api (cached). Returned in list order so index+1 = episode number."""
@@ -180,49 +241,102 @@ def _text(title, caption=""):
     return f"{name} | {caption}".lower().replace("_", " ")
 
 
-def derive(page="", title="", caption="", categories=(), kind="anime_still", width=0, height=0, usage=(), p1eps=frozenset()):
-    """Naruto tags. Subject evidence: file title/caption first, then (only if silent) usage pages."""
-    text = _text(title, caption)
-    subs = [k for k in SUBJECT_KEYS if re.search(ALL_RE[k], text)]
-    upages = [u.lower() for u in usage]
-    if not [s for s in subs if s in CHAR_RE or s in ("forbidden_scroll", "crystal_ball")]:
-        for u in upages:
-            if u in PAGE_SUBJECT and PAGE_SUBJECT[u] not in subs: subs.append(PAGE_SUBJECT[u])
+def parse_meta(wikitext):
+    """File-page wikitext -> {desc, series, episode, chars[], jutsu[]} (Narutopedia fair-use template)."""
+    def field(*names):
+        for n in names:
+            m = re.search(r"\|\s*" + n + r"\s*=\s*(.*)", wikitext, re.I)
+            if m: return m.group(1).strip()
+        return ""
+    src = field("Source")
+    m = re.search(r"\{\{Characters in image\|([^}]*)\}\}", wikitext, re.I)
+    chars = (m.group(1) if m else field("Characters in image", "Characters"))
+    low = src.lower()
+    series = "shippuden" if re.search(r"shipp[uū]den", low) else "boruto" if "boruto" in low else \
+        "movie" if re.search(r"movie|film|the last|road to ninja|ova", low) else "original" if re.search(r"naruto", low) else ""
+    em = re.search(r"episode\s*#?\s*(\d+)", low)
+    clean = lambda x: re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]|'{2,3}|\{\{[^}]*\}\}", r"\1", x).strip()
+    return {"desc": clean(field("Description")), "series": series, "episode": int(em.group(1)) if em else None,
+            "chars": [clean(c).lower() for c in re.split(r",|;|&", clean(chars)) if clean(c)],
+            "jutsu": [clean(c).lower() for c in re.split(r",|;", clean(field("Jutsu in image"))) if clean(c)]}
+
+
+FLASH = re.compile(r"flashback|years? ago|\bacademy\b|\bfirst\b|young|child|\bkid\b|genin|team 7|graduat|origin|\bpast\b|memory|memories|remember", re.I)
+NONLOC = ("villagers", "genin_crowd")
+# characters who, in Shippuden-sourced screenshots, mostly appear in Part I flashbacks (era left "unknown" -> verified on sheets)
+FLASHCHARS = {"mizuki", "zabuza", "haku", "kushina", "minato", "tobirama", "gato", "demon_brothers", "tazuna", "inari", "obito", "rin", "young_kakashi", "iruka", "hiruzen"}
+
+
+def derive(page="", title="", caption="", categories=(), kind="anime_still", width=0, height=0, usage=(), meta=None):
+    """Naruto tags. Characters come from the file page's 'Characters in image' when known, else from the title."""
+    meta = meta or {}
+    desc = meta.get("desc") or caption or ""
+    text = _text(title, desc + " " + " ".join(meta.get("jutsu", [])))
+    known = [NAME_SUBJECT.get(c) for c in meta.get("chars", [])]
+    has_meta = any(known)
+    subs = [k for k in SUBJECT_KEYS if re.search(ALL_RE[k], text) and not (k in CHAR_RE and has_meta and k not in ("villagers", "anbu", "root", "genin_crowd"))]
+    for sj in known:
+        if sj and sj not in subs: subs.append(sj)
+    for sj in meta.get("pages", []):        # subject lists derived from Narutopedia page image lists
+        if sj not in CHAR_RE or not has_meta:
+            if sj not in subs: subs.append(sj)
     if re.search(r"clones?\b|bunshin|thousand|narutos", text) and "naruto_clones" not in subs: subs.append("naruto_clones")
     if re.search(r"\bteam 7\b|\bteam seven\b|squad 7", text) or {"naruto", "sasuke", "sakura"} <= set(subs): subs.append("team7")
-    if "kurama" in subs and re.search(r"\bfox\b", text) and not re.search(r"nine|kurama|kyuubi|demon fox", text): subs.remove("kurama")
-    if "villagers" in subs and re.search(r"crowd", text) and not re.search(r"villag|konoha|leaf", text + " ".join(upages)): subs.remove("villagers")
-    # era
+    if "tora_cat" in subs and "tora_cat" not in known and not re.search(r"\btora\b", text): subs.remove("tora_cat")
+    if "kurama" in subs and "kurama" not in known and re.search(r"\bfox\b", text) and not re.search(r"nine|kurama|kyuubi|demon fox", text): subs.remove("kurama")
+    if "book" in subs and not re.search(r"\bbook\b|icha", text): subs.remove("book")
+    if "villagers" in subs and re.search(r"crowd", text) and not re.search(r"villag|konoha|leaf", text): subs.remove("villagers")
+    series, ep = meta.get("series", ""), meta.get("episode")
     era = "unknown"
-    ep_hits = [u for u in usage if u in p1eps]
-    if BORUTO.search(text): era = "boruto"
+    char_free = not meta.get("chars") and not [x for x in subs if x in CHAR_RE and x not in NONLOC]
+    if series == "boruto" or BORUTO.search(text): era = "boruto"
+    elif char_free and series in ("shippuden", "original", "movie", "") and not SHIPPUDEN.search(text): era = "none"   # places/objects: era-agnostic
+    elif series == "original" or (series == "movie" and not SHIPPUDEN.search(text)): era = "part1"
+    elif series == "shippuden":
+        if SHIPPUDEN.search(text): era = "shippuden"
+        elif FLASH.search(desc): era = "part1"
+        else: era = "unknown" if FLASHCHARS & set(subs) else "shippuden"
     elif SHIPPUDEN.search(text): era = "shippuden"
-    elif KID.search(text) and not re.search(r"academy|graduat", text): era = "kid"
-    elif ep_hits: era = "part1"
-    elif re.search(r"\bpart i\b|\bacademy\b|land of waves|chunin exams?|zabuza|\bhaku\b|forest of death|mizuki|iruka|konohamaru|ebisu|\bgato\b|survival exercise|bell test", text): era = "part1"
+    elif re.search(r"land of waves|chunin exams?|zabuza|\bhaku\b|forest of death|mizuki|iruka|konohamaru|survival exercise|bell test|\bacademy\b", text): era = "part1"
+    if era == "part1" and re.search(r"\b(baby|infant|toddler|newborn|orphan|childhood|as a (small )?child|four years old|born|birth)\b", text) and not re.search(r"academy|graduat|genin|team 7", text): era = "kid"
+    young_k = "kakashi" in subs and (re.search(r"young kakashi|kakashi.*(child|young|academy)|as a child", text) or ({"obito", "rin"} & set(subs) and re.search(r"team minato|flashback|young|child|academy", text)))
+    if young_k:
+        subs = [x for x in subs if x != "kakashi"] + ["young_kakashi"]
+        era = "kid" if era == "part1" else era
     time = None
     if re.search(r"\bnight\b|moon|stars?\b|midnight|evening", text): time = "night"
     elif re.search(r"dusk|sunset|twilight|sunrise|dawn", text): time = "dusk"
     elif re.search(r"\bday\b|morning|noon|afternoon|sunny", text): time = "day"
+    if "forest" in subs and time == "night": subs.append("forest_night")
     moods = [m for m, p in MOODS if re.search(p, text)][:3]
     moods += [m for m, p in MOOD_EXTRA if re.search(p, text) and m not in moods][:2]
     if not moods: moods = ["establishing"] if (set(subs) & {"konoha_village", "hokage_monument"}) else ["quiet"]
     if "comedy" in moods and "comedic" not in moods: moods.append("comedic")
     if "action" in moods and "combat" not in moods: moods.append("combat")
-    chars = [s for s in subs if s in CHAR_RE and s != "villagers"]
-    loc = next((s for s in ("hokage_office", "archive", "ichiraku", "hokage_monument", "training_ground", "academy", "classroom", "naruto_apartment", "seal_cage",
-                            "konoha_village") if s in subs), None)
+    chars = [x for x in subs if x in CHAR_RE and x not in NONLOC]
+    loc = next((x for x in ("hokage_office", "archive", "ichiraku", "hokage_monument", "training_ground", "academy", "classroom", "naruto_apartment", "seal_cage",
+                            "memorial_stone", "bridge", "mist", "tazuna_house", "gato_office", "exam_hall", "forest_of_death", "arena", "hospital", "mission_desk",
+                            "uchiha_district", "land_of_waves", "konoha_village") if x in subs), None)
     shot = "medium"
-    if re.search(CLOSE_RE, text): shot = "closeup"
-    elif re.search(WIDE_RE, text) or (loc and not chars) or "villagers" in subs: shot = "wide"
+    if re.search(CLOSE_RE, text) and len(chars) <= 2: shot = "closeup"
+    elif re.search(WIDE_RE, text) or (loc and not chars) or "villagers" in subs or len(chars) >= 4: shot = "wide"
     elif "action" in moods: shot = "action"
     r = width / max(height, 1)
-    return {"subjects": list(dict.fromkeys(subs)), "location": loc, "mood": list(dict.fromkeys(moods)), "shotType": shot,
-            "aspectRatio": ("16:9" if 1.65 <= r < 2.0 else "4:3" if r < 1.65 else "21:9") if width and height else "16:9",
-            "era": era, "time": time, "text_free": True}
+    out = {"subjects": list(dict.fromkeys(subs)), "location": loc, "mood": list(dict.fromkeys(moods)), "shotType": shot,
+           "aspectRatio": ("16:9" if 1.65 <= r < 2.0 else "4:3" if r < 1.65 else "21:9") if width and height else "16:9",
+           "era": era, "time": time, "text_free": True, "series": series or "unknown"}
+    if ep: out["src_episode"] = ep
+    return out
 
 
-def wanted(title, usage):
-    """Is this file plausibly useful? (subject evidence in title or usage pages)."""
-    if re.search("|".join(ALL_RE.values()), _text(title)): return True
-    return any(u.lower() in PAGE_SUBJECT for u in usage)
+def wanted(title, meta):
+    """Plausibly useful? Needs a known subject, and not a later-era source."""
+    if meta.get("series") == "boruto": return False
+    t = _text(title, meta.get("desc", ""))
+    if meta.get("series") == "shippuden" and not FLASH.search(meta.get("desc", "")):
+        names = {NAME_SUBJECT.get(c) for c in meta.get("chars", [])}
+        place_obj = not meta.get("chars") and (meta.get("pages") or re.search("|".join(list(PLACE_RE.values()) + list(OBJ_RE.values())), t))
+        if not (FLASHCHARS & names or place_obj) or SHIPPUDEN.search(t): return False
+    if meta.get("pages"): return True
+    if any(NAME_SUBJECT.get(c) for c in meta.get("chars", [])): return True
+    return bool(re.search("|".join(ALL_RE.values()), t))

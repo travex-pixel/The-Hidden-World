@@ -312,7 +312,7 @@ def harvest_lang(base, prefixes, tag, refresh=False, minw=640):
 
 # --------------------------------------------------------------------------- Naruto (Narutopedia)
 def naruto_discover(refresh):
-    """All tv-screenshot files (+ which pages use them) -> {title: rec}; API responses cached under raw/."""
+    """All tv-screenshot files + their file-page metadata -> {title: rec}; API responses cached under raw/."""
     from . import narutopedia as npd
     cand = {}
     for c in npd.SCREENSHOT_CATS:
@@ -325,9 +325,24 @@ def naruto_discover(refresh):
     log(f"{len(keep)} after size/name filter")
     titles = sorted(keep)
     for i in range(0, len(titles), 50):
-        for p in api_all({"action": "query", "titles": "|".join(titles[i:i + 50]), "prop": "fileusage", "fulimit": "max", "funamespace": "0"}, refresh):
-            if p["title"] in keep: keep[p["title"]]["usage"] = [u["title"] for u in p.get("fileusage", [])]
-        if i % 500 == 0: log(f"fileusage {i}/{len(titles)}")
+        d = api({"action": "query", "titles": "|".join(titles[i:i + 50]), "prop": "revisions", "rvprop": "content", "rvslots": "main"}, refresh)
+        for p in d.get("query", {}).get("pages", []):
+            if p["title"] in keep and p.get("revisions"):
+                keep[p["title"]]["meta"] = npd.parse_meta(p["revisions"][0]["slots"]["main"]["content"])
+        if i % 1000 == 0: log(f"file pages {i}/{len(titles)}")
+    # subject pages -> their image lists (page membership is strong subject evidence for char-free footage)
+    for subj, pages in npd.SUBJECT_PAGES.items():
+        for pg in dict.fromkeys(pages):
+            try:
+                d = api({"action": "query", "titles": pg, "prop": "images", "imlimit": "500", "redirects": "1"}, refresh)
+            except requests.RequestException:
+                continue
+            for p in d.get("query", {}).get("pages", []):
+                for im in p.get("images", []):
+                    r = keep.get(im["title"])
+                    if r is not None:
+                        r.setdefault("meta", {}).setdefault("pages", [])
+                        if subj not in r["meta"]["pages"]: r["meta"]["pages"].append(subj)
     return keep
 
 
@@ -336,39 +351,40 @@ NARUTO_NEED = {"naruto", "naruto_clones", "forbidden_scroll", "iruka", "mizuki",
                "forest", "training_ground", "ichiraku", "naruto_apartment", "night_sky", "sunrise", "archive", "anbu", "danzo", "villagers", "shuriken", "ramen", "headband", "seal_cage", "teuchi"}
 
 
-def naruto_rank(cand, p1eps):
+def naruto_rank(cand):
     from . import narutopedia as npd
     out = []
     for rec in cand.values():
-        use = rec.get("usage", [])
-        if not npd.wanted(rec["title"], use): continue
-        t = npd.derive("", rec["title"], "", [], "anime_still", rec["w"], rec["h"], use, p1eps)
+        meta = rec.get("meta") or {}
+        if not npd.wanted(rec["title"], meta): continue
+        t = npd.derive("", rec["title"], "", [], "anime_still", rec["w"], rec["h"], (), meta)
         if t["era"] in ("shippuden", "boruto"): continue
-        sc = (3 if t["era"] == "part1" else 0) + 2 * len([x for x in t["subjects"] if x in NARUTO_NEED]) + min(rec["w"], 1920) / 1920
-        if not t["subjects"]: sc -= 5
-        out.append((sc, rec))
+        sc = (3 if t["era"] == "part1" else 0) + len(t["subjects"]) + min(rec["w"], 1920) / 1920 - (3 if not t["subjects"] else 0)
+        out.append((sc, rec, t))
     out.sort(key=lambda x: -x[0])
     return out
 
 
 def run_naruto(a):
-    from . import narutopedia as npd
     RAW.mkdir(parents=True, exist_ok=True); IMAGES.mkdir(parents=True, exist_ok=True)
     reg = load_registry()
     if not a.rebuild:
         cand = naruto_discover(a.refresh)
-        p1eps = npd.part1_episode_pages(lambda params: api(params, a.refresh))
-        (RAW / "p1eps.json").write_text(json.dumps(sorted(p1eps)))
-        log(f"{len(p1eps)} part-I episode/page titles")
-        ranked = naruto_rank(cand, p1eps)
-        log(f"{len(ranked)} ranked candidates")
+        ranked = naruto_rank(cand)
+        log(f"{len(ranked)} ranked candidates (of {len(cand)})")
+        if a.discover_only:
+            from collections import Counter as C
+            print(C(s for _, _, t in ranked for s in t["subjects"]).most_common(80)); return 0
         n = 0
-        for sc, rec in ranked:
+        for sc, rec, t in ranked:
             if rec["title"] in reg: continue
             if n >= a.max: break
-            rec = {**rec, "page": (rec.get("usage") or [""])[0], "min_w": npd.MIN_W}
+            m = rec.get("meta") or {}
+            rec = {**rec, "page": f"Episode {m['episode']} ({m['series']})" if m.get("episode") else m.get("series", ""), "caption": m.get("desc", ""),
+                   "min_w": 960}
             e = fetch_and_register(rec, "anime_still", reg); n += 1
-            if n % 20 == 0:
+            e["meta"] = m
+            if n % 25 == 0:
                 save_registry(reg); log(f"{n} fetched, last {e['status']} {e.get('id', e.get('reason'))}")
         save_registry(reg)
     final, reasons = build_vault_naruto()
@@ -379,13 +395,12 @@ def run_naruto(a):
 def build_vault_naruto():
     from . import narutopedia as npd
     reg = load_registry()
-    p1eps = set(json.loads((RAW / "p1eps.json").read_text())) if (RAW / "p1eps.json").exists() else set()
     assets = []
     for e in (v for v in reg.values() if v.get("status") == "ok"):
-        t = npd.derive(e["page"], e["title"], e["caption"], e["cats"], e["kind"], e["width"], e["height"], e.get("usage", []), p1eps)
+        t = npd.derive(e["page"], e["title"], e["caption"], e["cats"], e["kind"], e["width"], e["height"], (), e.get("meta"))
         t["dominantPalette"] = e["palette"]
         assets.append({"id": e["id"], "path": f"{CACHE.relative_to(ROOT).as_posix()}/images/{e['id']}.jpg", "domain": DOMAIN, "franchise": FRANCHISE, "kind": e["kind"],
-                       "source": e["source"], "source_url": e["url"], "page": e["page"], "usage": e.get("usage", [])[:8], "file_title": e["title"], "caption": e["caption"],
+                       "source": e["source"], "source_url": e["url"], "page": e["page"], "file_title": e["title"], "caption": e["caption"],
                        "width": e["width"], "height": e["height"], "dhash": e["dhash"], "tags": t, "focus": [0.5, 0.4], "quality": e["quality"]})
     assets.sort(key=lambda a: a["id"])
     kept, dups = [], 0
@@ -395,11 +410,11 @@ def build_vault_naruto():
     cur = tagger.load_curation(CURATION)
     final, rej = [], 0
     for a in kept:
-        if tagger.apply_curation(a, cur): final.append(a)
+        if tagger.apply_curation(a, cur) and a["tags"].get("era") not in ("shippuden", "boruto"): final.append(a)
         else: rej += 1
     VAULT.write_text(json.dumps({"domain": DOMAIN, "franchise": FRANCHISE, "assets": final}, indent=1))
     reasons = Counter(e["reason"].split(":")[0] for e in reg.values() if e.get("status") == "rejected")
-    reasons["duplicate"] += dups; reasons["curation"] += rej
+    reasons["duplicate"] += dups; reasons["curation_or_era"] += rej
     return final, reasons
 
 
@@ -421,6 +436,7 @@ def main(argv=None):
     ap.add_argument("--lang", help="lang wiki code (es, pt-br, ...) with --prefix")
     ap.add_argument("--prefix", action="append", default=[], help="file-name prefix on the language wiki")
     ap.add_argument("--stats", action="store_true")
+    ap.add_argument("--discover-only", action="store_true", help="naruto: list + analyse candidates, download nothing")
     ap.add_argument("--rebuild", action="store_true", help="rebuild vault.json from registry without network")
     a = ap.parse_args(argv)
     if a.franchise != "black-clover":

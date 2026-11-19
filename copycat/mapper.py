@@ -11,10 +11,11 @@ import re
 import sys
 from pathlib import Path
 
+from . import franchise as franchise_mod
 from .domain_gate import AssetDomainGate
 
 ROOT = Path(__file__).resolve().parent.parent
-VAULT = ROOT / "assets/cache/black-clover/vault.json"
+VAULT = ROOT / "assets/cache/black-clover/vault.json"    # legacy default; run() resolves the vault per franchise
 
 MIN_SHOT, MAX_SHOT = 1.2, 7.5
 MIN_BEAT = 1.0                 # a beat shorter than this is absorbed into the previous shot
@@ -55,6 +56,59 @@ COMP_CAM = {"slow_push_in": "slow_pull_out", "slow_pull_out": "slow_push_in", "p
 CAM_CYCLE = ["slow_push_in", "pan_lr", "slow_pull_out", "pan_rl", "drift_up"]
 SHOT_NEAR = {("closeup", "extreme_closeup"), ("wide", "establishing"), ("action", "medium"),
              ("medium", "closeup"), ("group", "wide"), ("panel", "closeup"), ("panel", "medium")}
+
+
+# --------------------------------------------------------------------------- franchise profile
+# Everything franchise-specific the scorer needs. Black Clover = the constants above, untouched.
+P = dict(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
+         ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
+         avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True)
+
+NARUTO_NONCHAR = {"forest_night", "konoha_village", "hokage_monument", "hokage_office", "academy", "classroom", "archive", "library", "ichiraku",
+                  "naruto_apartment", "training_ground", "seal_cage", "night_sky", "sunrise", "memorial_stone", "bridge", "mist", "land_of_waves",
+                  "tazuna_house", "gato_office", "exam_hall", "forest_of_death", "arena", "barrier", "uchiha_district", "hospital", "mission_desk",
+                  "rooftop", "forest", "forbidden_scroll", "paperwork", "crystal_ball", "headband", "bells", "seal_mark", "shuriken", "fireball", "ramen",
+                  "document", "letter", "ink_brush", "ledger", "ice_mirrors", "kunai", "bingo_book", "coffins", "exam_paper", "info_cards", "water_prison",
+                  "lightning_blade", "book", "villagers", "genin_crowd"}
+NARUTO_SPEAKERS = {
+    "NARUTO": {"naruto", "naruto_clones"}, "CLONE": {"naruto_clones", "naruto"}, "IRUKA": {"iruka"}, "MIZUKI": {"mizuki"}, "HIRUZEN": {"hiruzen", "hokage_office", "crystal_ball"},
+    "KAKASHI": {"kakashi", "young_kakashi"}, "SASUKE": {"sasuke"}, "SAKURA": {"sakura"}, "KURAMA": {"kurama", "seal_cage"}, "DANZO": {"danzo", "root"},
+    "TAZUNA": {"tazuna"}, "ZABUZA": {"zabuza"}, "HAKU": {"haku"}, "INARI": {"inari"}, "GATO": {"gato"}, "KABUTO": {"kabuto"}, "IBIKI": {"ibiki"}, "ANKO": {"anko"},
+    "OROCHIMARU": {"orochimaru"}, "GAARA": {"gaara"}, "JIRAIYA": {"jiraiya"}, "MINATO": {"minato"}, "KUSHINA": {"kushina"},
+}
+
+
+def project_config(proj: Path, curation: dict, ov_all: dict) -> dict:
+    """Optional per-project mapper knobs: curation.json['_config'] / shot_overrides.json['_config'] / mapper_config.json."""
+    cfg = {}
+    f = proj / "mapper_config.json"
+    if f.exists():
+        cfg.update(json.loads(f.read_text()))
+    cfg.update(curation.get("_config", {}))
+    cfg.update(ov_all.get("_config", {}))
+    return cfg
+
+
+def configure(fr_id: str, script: dict, cfg: dict, pid: str):
+    """Set the module profile P for this run (also resets it to Black Clover for bc projects)."""
+    P.update(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
+             ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
+             avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True)
+    if fr_id == "naruto":
+        P.update(scarce={"kushina", "minato", "tobirama", "kurama", "danzo", "enma", "rin", "obito", "young_kakashi", "orochimaru", "jiraiya", "ibiki", "anko"},
+                 young={"young_kakashi": "kakashi"}, atmos=set(), atmos2=set(), nonchar=NARUTO_NONCHAR, speaker_subjects=NARUTO_SPEAKERS,
+                 ember_subjects={"kurama", "seal_cage"}, accent="naruto", lock_seconds=90.0, young_fallback=False,
+                 era=script.get("era", cfg.get("era", "part1")))
+    if cfg.get("lock_seconds"): P["lock_seconds"] = float(cfg["lock_seconds"])
+    if cfg.get("avg_shot_s"): P["avg_shot_s"] = float(cfg["avg_shot_s"])
+    avoid = {}
+    for other in cfg.get("avoid_assets_from", []):
+        ep = ROOT / "copycat/projects" / other / "edit.json"
+        if other != pid and ep.exists():
+            for sh in json.loads(ep.read_text()).get("shots", []):
+                if sh.get("asset_id"): avoid[sh["asset_id"]] = avoid.get(sh["asset_id"], 0) + 1
+    P["avoid"] = avoid
+    if "avoid_penalty" in cfg: P["avoid_penalty"] = float(cfg["avoid_penalty"])
 
 
 def toks(s: str) -> set:
@@ -130,7 +184,13 @@ def build_skeleton(script: dict, timing: dict):
         lic = any("licita" in (v.get("subjects") or []) for v in vis)   # keep the Licita cut when her name is spoken
         while n > 1 and D / n < (2.0 if cold else (1.7 if lic else MIN_CUT_MAIN)):
             n -= 1
+        avg = P["avg_shot_s"]
+        if avg and not cold:                           # long-form: target average shot length, shorter in action/comedy
+            bm = {m for v in vis for m in (v.get("mood") if isinstance(v.get("mood"), list) else [v.get("mood")])}
+            ea = avg * 0.6 if bm & {"action", "combat", "comedy", "comedic"} else avg
+            n = max(1, min(len(vis), int(round(D / ea))))
         if D < MIN_BEAT and slots and slots[-1]["type"] == "cut":
+            if b.get("stamp") and not slots[-1].get("stamp"): slots[-1]["stamp"] = b["stamp"]
             slots[-1]["end"] = e                       # absorb a too-short beat into the previous shot
             notes.append(f"{b['id']} picture {D:.2f}s absorbed into previous shot")
             continue
@@ -144,6 +204,8 @@ def build_skeleton(script: dict, timing: dict):
                     k -= 1
             else:
                 k = max(1, math.ceil(d_ / MAX_SHOT - 1e-9))
+                if avg:
+                    k = max(k, int(round(d_ / (avg * 0.6 if bm & {"action", "combat", "comedy", "comedic"} else avg))))
             for si in range(k):
                 parts.append((ci, si, cs + (ce - cs) * si / k, cs + (ce - cs) * (si + 1) / k))
         for ci, si, ps, pe in parts:
@@ -151,6 +213,7 @@ def build_skeleton(script: dict, timing: dict):
             slots.append(dict(type="cut", start=ps, end=pe, chapter=ch["id"], beat=b, beat_id=b["id"],
                               cut_index=ci, sub=si, spec=v, first=(ci == 0 and si == 0),
                               last_of_ch=False, prev_beat=flat[i - 1][1] if i else None,
+                              stamp=(b.get("stamp") if (ci == 0 and si == 0) else None),
                               after_card=(si == 0 and ci == 0 and slots and slots[-1]["type"] == "card")))
     # snap boundaries exactly (float safety)
     for a, b2 in zip(slots, slots[1:]):
@@ -192,11 +255,12 @@ class Scorer:
                 s += 1.0
             elif (st, at) in SHOT_NEAR or (at, st) in SHOT_NEAR:
                 s += 0.5
-        if subs and (subs[0] in YOUNG or subs[0] in ("father_orsi", "sister_lily")) and asub and asub <= NONCHAR \
+        YOUNG, NONCHAR, ATMOS, ATMOS2, SCARCE = P["young"], P["nonchar"], P["atmos"], P["atmos2"], P["scarce"]
+        if P["young_fallback"] and subs and (subs[0] in YOUNG or subs[0] in ("father_orsi", "sister_lily")) and asub and asub <= NONCHAR \
                 and asub & ATMOS:
             s += 2.0                                  # fallback: atmosphere/location when the young face does not exist
             core += 2.0
-        elif subs and (subs[0] in YOUNG or subs[0] in ("father_orsi", "sister_lily")) and asub and asub <= ATMOS2:
+        elif P["young_fallback"] and subs and (subs[0] in YOUNG or subs[0] in ("father_orsi", "sister_lily")) and asub and asub <= ATMOS2:
             s += 1.3                                  # second-tier fallback: character-free object / place imagery
             core += 1.3
         q = toks(sp.get("query", "")) & self.tok[a["id"]]
@@ -223,9 +287,23 @@ class Scorer:
         for sc in SCARCE:
             if sc in asub and sc not in subs:
                 s -= 3.0
+        # era / time / text discipline (only for vaults whose assets carry these tags, i.e. Naruto)
+        if P["era"] and a.get("franchise") and asub - NONCHAR:
+            want = sp.get("era") or P["era"]
+            ae = tg.get("era", "unknown")
+            if ae != want:
+                s -= {"shippuden": 12.0, "boruto": 14.0, "kid": 6.0, "part1": 6.0, "unknown": 1.0}.get(ae, 1.0)
+        if sp.get("time") and tg.get("time") and sp["time"] != tg["time"]:
+            s -= 2.0
+        elif sp.get("time") and tg.get("time") == sp["time"]:
+            s += 0.8
+        if tg.get("text_free") is False:
+            s -= 4.0
+        if a["id"] in P["avoid"]:
+            s -= P["avoid_penalty"]
         # speaker rule
         if speaker_rule and slot["first"]:
-            allowed = SPEAKER_SUBJECTS.get(slot["beat"]["speaker"])
+            allowed = P["speaker_subjects"].get(slot["beat"]["speaker"])
             if allowed and not (allowed & (asub | {tg.get("location")})):
                 s -= 1.0 if (subs and subs[0] in YOUNG) else 6.0
         return s, sem
@@ -277,7 +355,7 @@ class Assigner:
         for j in self.uses.get(aid, ()):
             if j == i:
                 continue
-            if abs(j - i) < LOCK_SHOTS or abs(self.slots[j]["start"] - self.slots[i]["start"]) < LOCK_SECONDS:
+            if abs(j - i) < LOCK_SHOTS or abs(self.slots[j]["start"] - self.slots[i]["start"]) < P["lock_seconds"]:
                 return False
         for b in self.near.get(aid, ()):
             for j in self.uses.get(b, ()):
@@ -296,7 +374,7 @@ class Assigner:
         if js:
             gap = min(abs(self.slots[j]["start"] - sl["start"]) for j in js)
             asub = set(self.by_id[aid]["tags"]["subjects"])
-            coef = 1.5 if (asub & SCARCE) else 0.5
+            coef = 1.5 if (asub & P["scarce"]) else 0.5
             v -= coef * max(0.0, 1.0 - gap / 120.0)
         return v
 
@@ -342,6 +420,14 @@ def accent_for(slot, a):
     sp = set(slot["spec"].get("subjects") or []) | set(a["tags"]["subjects"])
     mood = slot["spec"].get("mood")
     moods = set(mood if isinstance(mood, list) else [mood])
+    if P["accent"] == "naruto":
+        if sp & {"kurama", "seal_cage", "orochimaru", "barrier", "zabuza", "itachi"} or moods & {"action", "combat", "ominous"}:
+            return "crimson"
+        if sp & {"hiruzen", "hokage_office", "crystal_ball", "paperwork", "archive", "minato", "kushina", "tobirama"}:
+            return "gold"
+        if sp & {"naruto", "naruto_clones", "iruka"} and moods & {"emotional", "quiet", "determined", "triumphant"}:
+            return "emerald"
+        return None
     if sp & {"liebe", "anti_magic", "lucifero", "demon_skull", "asta_black_form"} or "combat" in moods:
         return "crimson"
     if sp & {"julius", "lucius", "william_vangeance", "royal_capital", "magic_knights", "golden_dawn"}:
@@ -373,6 +459,12 @@ def pick_camera(slot, prev_cam, asset_shot):
     return cam
 
 
+def _stamp(sl):
+    """CANON stamp carried from the beat onto the shot that starts it (edit.json: shot['stamp'])."""
+    st = sl.get("stamp")
+    return {"stamp": {"label": st.get("label", "CANON"), "note": st.get("note", "")}} if st else {}
+
+
 def build_shots(slots, assign, by_id, overrides):
     shots, prev_cam = [], None
     for n, sl in enumerate(slots):
@@ -392,14 +484,14 @@ def build_shots(slots, assign, by_id, overrides):
             shots.append(dict(id=sid, start=round(sl["start"], 3), end=round(sl["end"], 3), type="still", asset_id=None,
                               asset_path=None, layout="fill", focus=[0.5, 0.4], camera=pick_camera(sl, prev_cam, None),
                               vfx=[], transition_in="cut", treatment="anime", accent=None, beat_id=sl["beat_id"],
-                              speaker=beat["speaker"], chapter=sl["chapter"], card=None, _key=key, _slot=n))
+                              speaker=beat["speaker"], chapter=sl["chapter"], card=None, **_stamp(sl), _key=key, _slot=n))
             continue
         cam = ov.get("camera") or pick_camera(sl, prev_cam, a["tags"].get("shotType"))
         prev_cam = cam
         vfx = [v for v in beat.get("vfx", []) if sl["first"] or v not in ("impact_flash", "speed_lines")]
         sp = set(sl["spec"].get("subjects") or []) | set(a["tags"]["subjects"])
         auto = False
-        if "embers" not in vfx and sp & {"liebe", "anti_magic", "mindscape"}:
+        if "embers" not in vfx and sp & P["ember_subjects"]:
             vfx.append("embers")
             auto = True
         treat = ov.get("treatment") or ("manga_motion" if a.get("kind") == "manga_panel" else "anime")
@@ -411,7 +503,7 @@ def build_shots(slots, assign, by_id, overrides):
             asset_path=a["path"], layout=ov.get("layout") or kind_layout(a), focus=ov.get("focus") or a.get("focus") or [0.5, 0.4],
             camera=cam, vfx=ov["vfx"] if "vfx" in ov else vfx, transition_in=ov.get("transition_in", "cut"),
             treatment=treat, accent=acc, beat_id=sl["beat_id"], speaker=beat["speaker"], chapter=sl["chapter"],
-            card=None, _key=key, _slot=n, _auto_ember=auto))
+            card=None, **_stamp(sl), _key=key, _slot=n, _auto_ember=auto))
     return shots
 
 
@@ -422,7 +514,7 @@ def finish_shots(shots, slots, overrides):
     if len(ember) > lim:
         def keep_rank(s):                              # lower = remove first
             sl = slots[s["_slot"]]
-            core = bool(set(sl["spec"].get("subjects") or []) & {"liebe", "mindscape", "anti_magic"})
+            core = bool(set(sl["spec"].get("subjects") or []) & P["ember_subjects"])
             return (core, not s.get("_auto_ember"))
         ember.sort(key=keep_rank)
         for s in ember[: len(ember) - lim]:
@@ -491,8 +583,8 @@ def build_captions(script, timing):
 
 
 # --------------------------------------------------------------------------- main
-def load_assets(gate, curation, retag=None):
-    v = json.loads(VAULT.read_text())
+def load_assets(gate, curation, retag=None, vault=None):
+    v = json.loads((vault or VAULT).read_text())
     assets = gate.filter(v["assets"])
     out, missing = [], []
     for a in assets:
@@ -527,13 +619,16 @@ def violations(shots):
 def run(pid, estimate=False, write=True):
     proj = ROOT / "copycat/projects" / pid
     script = json.loads((proj / "script.json").read_text())
-    gate = AssetDomainGate(script["domain"])
+    fr = franchise_mod.for_project(pid)
+    gate = AssetDomainGate(script["domain"], fr["id"])
+    vault_p = ROOT / fr["vault_dir"] / "vault.json"
     cur_p = proj / "curation.json"
     curation = json.loads(cur_p.read_text()) if cur_p.exists() else {}
     ov_p = proj / "shot_overrides.json"
     ov_all = json.loads(ov_p.read_text()) if ov_p.exists() else {}
     overrides = {k: v for k, v in ov_all.items() if not k.startswith("_")}
-    assets, missing, vault_n = load_assets(gate, curation, ov_all.get("_retag"))
+    configure(fr["id"], script, project_config(proj, curation, ov_all), pid)
+    assets, missing, vault_n = load_assets(gate, curation, ov_all.get("_retag"), vault_p)
     by_id = {a["id"]: a for a in assets}
     timing = load_timing(pid, estimate, script)
     slots, notes = build_skeleton(script, timing)
@@ -607,7 +702,7 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
         if sc < WEAK_SCORE and n not in A.pinned:      # editorial pins are not 'weak'
             weak.append(dict(shot=sh["id"], beat=f"{sl['beat_id']}#{sl['cut_index']}", asset=aid, score=round(sc, 1),
                              want=sl["spec"].get("subjects")))
-        allowed = SPEAKER_SUBJECTS.get(sl["beat"]["speaker"])
+        allowed = P["speaker_subjects"].get(sl["beat"]["speaker"])
         if sl["first"] and allowed and not (allowed & (set(by_id[aid]["tags"]["subjects"]) | {by_id[aid]["tags"].get("location")})):
             spk.append(f"{sh['id']} {sl['beat_id']} speaker {sl['beat']['speaker']} not shown")
     viol = violations(shots)
@@ -628,8 +723,9 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("project")
     ap.add_argument("--estimate-timing", action="store_true")
+    ap.add_argument("--dry-run", action="store_true", help="do not write edit.json / mapper_report.json")
     a = ap.parse_args(argv)
-    edit, rep = run(a.project, a.estimate_timing)
+    edit, rep = run(a.project, a.estimate_timing, write=not a.dry_run)
     brief = {k: v for k, v in rep.items() if k not in ("weak_matches", "unmatched_cuts", "repetition_detail")}
     print(json.dumps(brief, indent=1))
     print(f"weak: {len(rep['weak_matches'])}  unmatched: {len(rep['unmatched_cuts'])}")
