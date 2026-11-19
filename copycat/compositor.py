@@ -785,7 +785,7 @@ def mux(pid, picture, fps=30):
 # --------------------------------------------------------------------------- fixture
 def make_fixture():
     """Synthetic 45 s programme exercising every layout / camera / vfx / transition / treatment."""
-    fx = ROOT / "build/copycat/_fixture"
+    fx = ROOT / "build/copycat/_cfx"
     (fx / "assets").mkdir(parents=True, exist_ok=True)
     (fx / "audio").mkdir(parents=True, exist_ok=True)
 
@@ -880,7 +880,7 @@ def make_fixture():
         dict(start=0.5, end=3.0, text="THIS CAPTION IS OVER A CARD AND MUST NOT SHOW", speaker="NARRATOR"),
         dict(start=38.2, end=44.0, text="And so the first chapter of a very long story came, quietly, to its end.", speaker="NARRATOR"),
     ]
-    edit = dict(id="_fixture", width=1920, height=1080, fps=30, duration=45.0, shots=shots, captions=caps)
+    edit = dict(id="_cfx", width=1920, height=1080, fps=30, duration=45.0, shots=shots, captions=caps)
     (fx / "edit.json").write_text(json.dumps(edit, indent=1))
     (fx / "vault.json").write_text(json.dumps(vault, indent=1))
     # stand-in audio: tone bursts + noise bed, loudness-normalised

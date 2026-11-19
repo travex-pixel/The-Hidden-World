@@ -25,7 +25,7 @@ IMAGES, RAW, VAULT, REGISTRY = CACHE / "images", CACHE / "raw", CACHE / "vault.j
 API = "https://blackclover.fandom.com/api.php"
 UA = "HiddenWorldVisualHarvester/1.0 (non-commercial research tool; polite, cached, <=4 req/s)"
 DOMAIN = "anime_black_clover"
-MANGA_SUBJECTS = {"liebe", "licita", "five_leaf_grimoire", "lucius", "asta_black_form"}
+MANGA_SUBJECTS = {"liebe", "licita", "five_leaf_grimoire", "lucius", "asta_black_form", "lucifero", "anti_magic", "father_orsi", "sister_lily", "hage_village", "hage_church", "grimoire_tower", "revchi", "demon_skull", "asta_young", "yuno_young", "mindscape", "julius"}
 MANDATORY = ["asta_young", "yuno_young", "liebe", "licita", "five_leaf_grimoire", "grimoire_tower", "hage_village", "hage_church",
              "demon_skull", "revchi", "yami", "julius", "william_vangeance", "exam_arena", "asta_black_form", "yuno", "asta"]
 SCARCE = {"sister_lily", "father_orsi", "grimoire_tower", "hage_church", "crowd", "night_sky", "mindscape", "liebe", "asta_young", "yuno_young", "hage_church", "licita", "demon_skull", "hage_village", "revchi", "five_leaf_grimoire"}  # lowres (>=480px) tolerated, flagged
@@ -288,7 +288,7 @@ def main(argv=None):
             if not kind or rec["mime"] == "image/gif" or imgutil.NAME_REJECT.search(rec["title"]): continue
             t = tagger.derive(rec["page"], rec["title"], rec["caption"], rec["cats"], kind, rec["w"], rec["h"])
             if kind == "manga_panel":
-                if not set(t["subjects"]) & MANGA_SUBJECTS or min(rec["w"], rec["h"]) < 600: continue
+                if not (set(t["subjects"]) & MANGA_SUBJECTS or re.match(r"File:Chapter [1-5]\.", rec["title"])) or min(rec["w"], rec["h"]) < 600: continue
             elif rec["w"] < 800 and not (rec["w"] >= 640 and (early(rec) or set(t["subjects"]) & SCARCE)): continue
             ranked.append((score(rec, t), kind, rec))
         ranked.sort(key=lambda x: -x[0])
@@ -297,8 +297,8 @@ def main(argv=None):
         for sc, kind, rec in ranked:
             if rec["title"] in reg: continue
             if kind != "manga_panel" and have("anime_still") + have("key_art") >= a.max: continue
-            if kind == "manga_panel" and have("manga_panel") >= 20: continue
-            if sc < 0 and not early(rec): continue
+            if kind == "manga_panel" and have("manga_panel") >= 45: continue
+            if sc < 0 and not early(rec) and kind != "manga_panel": continue
             rec["lowres_ok"] = rec["w"] < 800
             e = fetch_and_register(rec, kind, reg)
             log(f"{e['status']:8s} {e.get('id', e.get('reason')):12s} {rec['title']}")
