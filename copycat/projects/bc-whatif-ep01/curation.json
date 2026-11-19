@@ -14,9 +14,6 @@
  "bc_0131": {
   "reject": true
  },
- "bc_0229": {
-  "reject": true
- },
  "bc_0230": {
   "reject": true
  },
@@ -80,7 +77,8 @@
  },
  "bc_0027": {
   "add_subjects": [
-   "five_leaf_grimoire"
+   "five_leaf_grimoire",
+   "mindscape"
   ],
   "mood": [
    "determined",
@@ -102,7 +100,9 @@
  "bc_0053": {
   "subjects": [
    "asta_black_form",
-   "liebe"
+   "liebe",
+   "mindscape",
+   "five_leaf_grimoire"
   ],
   "mood": [
    "combat",
@@ -117,7 +117,8 @@
  "bc_0060": {
   "subjects": [
    "asta_black_form",
-   "liebe"
+   "liebe",
+   "mindscape"
   ],
   "mood": [
    "combat",
@@ -127,15 +128,21 @@
  },
  "bc_0064": {
   "add_subjects": [
-   "asta_black_form"
+   "asta_black_form",
+   "mindscape",
+   "liebe"
   ],
   "mood": [
    "comedic"
-  ]
+  ],
+  "keep": true
  },
  "bc_0102": {
   "subjects": [
-   "asta_black_form"
+   "asta_black_form",
+   "mindscape",
+   "liebe",
+   "five_leaf_grimoire"
   ],
   "mood": [
    "ominous",
@@ -151,7 +158,9 @@
  "bc_0114": {
   "subjects": [
    "asta_black_form",
-   "liebe"
+   "liebe",
+   "mindscape",
+   "five_leaf_grimoire"
   ],
   "mood": [
    "combat",
@@ -162,25 +171,32 @@
  "bc_0132": {
   "subjects": [
    "asta_black_form",
-   "demon_slayer_sword"
+   "demon_slayer_sword",
+   "mindscape",
+   "liebe"
   ],
   "mood": [
    "combat",
    "ominous"
-  ]
+  ],
+  "keep": true
  },
  "bc_0134": {
   "subjects": [
-   "asta_black_form"
+   "asta_black_form",
+   "liebe",
+   "five_leaf_grimoire"
   ],
   "mood": [
    "combat",
    "epic"
-  ]
+  ],
+  "keep": true
  },
  "bc_0158": {
   "subjects": [
-   "asta_black_form"
+   "asta_black_form",
+   "liebe"
   ],
   "mood": [
    "ominous",
@@ -197,7 +213,8 @@
   "subjects": [
    "asta_black_form",
    "liebe",
-   "demon_slayer_sword"
+   "demon_slayer_sword",
+   "mindscape"
   ],
   "mood": [
    "combat",
@@ -306,7 +323,8 @@
   "focus": [
    0.5,
    0.3
-  ]
+  ],
+  "keep": true
  },
  "bc_0523": {
   "focus": [
@@ -319,7 +337,8 @@
   "mood": [
    "ominous",
    "quiet"
-  ]
+  ],
+  "keep": true
  },
  "bc_0004": {
   "focus": [
@@ -361,7 +380,11 @@
   "focus": [
    0.5,
    0.4
-  ]
+  ],
+  "add_subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true
  },
  "bc_0020": {
   "focus": [
@@ -399,7 +422,17 @@
   "focus": [
    0.5,
    0.45
-  ]
+  ],
+  "subjects": [
+   "asta_young",
+   "yuno_young",
+   "hage_church"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "keep": true
  },
  "File:Yuno exam result.png": {
   "add_subjects": [
@@ -440,5 +473,354 @@
  },
  "bc_0294": {
   "reject": true
+ },
+ "bc_0524": {
+  "reject": true
+ },
+ "bc_0525": {
+  "reject": true
+ },
+ "bc_0526": {
+  "reject": true
+ },
+ "bc_0527": {
+  "reject": true
+ },
+ "bc_0528": {
+  "reject": true
+ },
+ "bc_0529": {
+  "reject": true
+ },
+ "bc_0530": {
+  "reject": true
+ },
+ "bc_0531": {
+  "reject": true
+ },
+ "bc_0532": {
+  "reject": true
+ },
+ "bc_0533": {
+  "reject": true
+ },
+ "bc_0534": {
+  "reject": true
+ },
+ "bc_0535": {
+  "reject": true
+ },
+ "bc_0536": {
+  "reject": true
+ },
+ "bc_0537": {
+  "reject": true
+ },
+ "bc_0538": {
+  "reject": true
+ },
+ "bc_0539": {
+  "reject": true
+ },
+ "bc_0540": {
+  "reject": true
+ },
+ "bc_0541": {
+  "reject": true
+ },
+ "bc_0542": {
+  "reject": true
+ },
+ "bc_0543": {
+  "reject": true
+ },
+ "bc_0547": {
+  "reject": true
+ },
+ "bc_0553": {
+  "reject": true
+ },
+ "bc_0554": {
+  "reject": true
+ },
+ "bc_0555": {
+  "reject": true
+ },
+ "bc_0556": {
+  "reject": true
+ },
+ "bc_0557": {
+  "reject": true
+ },
+ "bc_0559": {
+  "reject": true
+ },
+ "bc_0560": {
+  "reject": true
+ },
+ "bc_0562": {
+  "reject": true
+ },
+ "bc_0563": {
+  "reject": true
+ },
+ "bc_0566": {
+  "reject": true
+ },
+ "bc_0567": {
+  "reject": true
+ },
+ "bc_0229": {
+  "subjects": [
+   "licita",
+   "liebe",
+   "mindscape"
+  ],
+  "mood": [
+   "emotional"
+  ],
+  "keep": true
+ },
+ "bc_0026": {
+  "subjects": [
+   "asta_young",
+   "yuno_young",
+   "sister_lily",
+   "hage_church",
+   "grimoire_tower"
+  ],
+  "mood": [
+   "quiet",
+   "emotional"
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "keep": true
+ },
+ "bc_0037": {
+  "subjects": [
+   "asta_young",
+   "sister_lily",
+   "hage_church"
+  ],
+  "mood": [
+   "quiet",
+   "comedic"
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "keep": true
+ },
+ "bc_0245": {
+  "subjects": [
+   "asta_young"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "closeup",
+  "keep": true
+ },
+ "bc_0246": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "closeup",
+  "keep": true
+ },
+ "bc_0243": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "mood": [
+   "quiet"
+  ],
+  "keep": true
+ },
+ "bc_0187": {
+  "add_subjects": [
+   "hage_village"
+  ],
+  "keep": true
+ },
+ "bc_0011": {
+  "add_subjects": [
+   "grimoire_tower",
+   "crowd"
+  ],
+  "keep": true
+ },
+ "bc_0001": {
+  "subjects": [
+   "yuno",
+   "four_leaf_grimoire",
+   "grimoire_tower"
+  ],
+  "mood": [
+   "epic",
+   "emotional"
+  ],
+  "keep": true
+ },
+ "bc_0550": {
+  "subjects": [
+   "asta",
+   "sister_lily",
+   "hage_church"
+  ],
+  "mood": [
+   "emotional",
+   "quiet"
+  ],
+  "shotType": "panel",
+  "keep": true
+ },
+ "bc_0552": {
+  "subjects": [
+   "sister_lily",
+   "asta"
+  ],
+  "keep": true
+ },
+ "bc_0544": {
+  "subjects": [
+   "revchi",
+   "asta"
+  ],
+  "keep": true
+ },
+ "bc_0545": {
+  "subjects": [
+   "asta_black_form",
+   "liebe",
+   "anti_magic"
+  ],
+  "keep": true
+ },
+ "bc_0546": {
+  "subjects": [
+   "asta_black_form",
+   "liebe",
+   "lucifero"
+  ],
+  "keep": true
+ },
+ "bc_0548": {
+  "subjects": [
+   "lucifero",
+   "yami"
+  ],
+  "keep": true
+ },
+ "bc_0551": {
+  "subjects": [
+   "asta_black_form",
+   "liebe"
+  ],
+  "keep": true
+ },
+ "bc_0549": {
+  "subjects": [
+   "asta_black_form",
+   "liebe"
+  ],
+  "keep": true
+ },
+ "bc_0558": {
+  "subjects": [
+   "asta_black_form",
+   "liebe"
+  ],
+  "keep": true
+ },
+ "bc_0561": {
+  "subjects": [
+   "julius",
+   "lucius"
+  ],
+  "keep": true
+ },
+ "bc_0564": {
+  "subjects": [
+   "lucifero"
+  ],
+  "keep": true
+ },
+ "bc_0565": {
+  "subjects": [
+   "mindscape",
+   "liebe"
+  ],
+  "mood": [
+   "ominous",
+   "mysterious"
+  ],
+  "keep": true
+ },
+ "bc_0147": {
+  "add_subjects": [
+   "mindscape",
+   "liebe"
+  ],
+  "keep": true
+ },
+ "bc_0055": {
+  "add_subjects": [
+   "mindscape",
+   "liebe"
+  ],
+  "keep": true
+ },
+ "bc_0275": {
+  "add_subjects": [
+   "mindscape",
+   "liebe"
+  ],
+  "keep": true
+ },
+ "bc_0296": {
+  "add_subjects": [
+   "mindscape",
+   "liebe"
+  ],
+  "keep": true
+ },
+ "bc_0299": {
+  "add_subjects": [
+   "mindscape",
+   "liebe",
+   "five_leaf_grimoire"
+  ],
+  "keep": true
+ },
+ "bc_0228": {
+  "add_subjects": [
+   "mindscape"
+  ],
+  "keep": true
+ },
+ "bc_0238": {
+  "add_subjects": [
+   "mindscape"
+  ],
+  "keep": true
+ },
+ "bc_0247": {
+  "add_subjects": [],
+  "keep": true
+ },
+ "bc_0284": {
+  "add_subjects": [
+   "five_leaf_grimoire"
+  ],
+  "keep": true
  }
 }

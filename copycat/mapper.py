@@ -159,6 +159,8 @@ class Scorer:
         subs = sp.get("subjects") or []
         asub = set(tg.get("subjects") or [])
         s = 0.0
+        if not asub and not tg.get("location"):
+            return -99.0, 0.0                          # untagged (title cards etc.): never usable
         if subs and subs[0] in asub:
             s += 4.0
         for o in subs[1:3]:
@@ -167,6 +169,7 @@ class Scorer:
         loc = sp.get("location")
         if loc and (tg.get("location") == loc or loc in asub):
             s += 2.0
+        core = s
         m = sp.get("mood")
         if set(m if isinstance(m, list) else [m]) & set(tg.get("mood") or []):
             s += 1.0
@@ -179,9 +182,11 @@ class Scorer:
         if subs and (subs[0] in YOUNG or subs[0] in ("father_orsi", "sister_lily")) and asub and asub <= NONCHAR \
                 and asub & ATMOS:
             s += 2.0                                  # fallback: atmosphere/location when the young face does not exist
+            core += 2.0
         q = toks(sp.get("query", "")) & self.tok[a["id"]]
         s += min(2.0, 0.5 * len(q))
-        sem = s
+        core += min(2.0, 0.5 * len(q))
+        sem = core
         s += a.get("quality", 0.5) * 1.0
         if a.get("lowres"):
             s -= 1.5
@@ -461,13 +466,18 @@ def build_captions(script, timing):
 
 
 # --------------------------------------------------------------------------- main
-def load_assets(gate, curation):
+def load_assets(gate, curation, retag=None):
     v = json.loads(VAULT.read_text())
     assets = gate.filter(v["assets"])
     out, missing = [], []
     for a in assets:
         if curation.get(a["id"], {}).get("reject"):
             continue
+        rt = (retag or {}).get(a["id"])
+        if rt:                                          # editorial corrections of vault tags (overrides "_retag")
+            if rt.get("reject"):
+                continue
+            a = dict(a, tags=dict(a["tags"], **{k: v2 for k, v2 in rt.items() if k in ("subjects", "location", "mood", "shotType")}))
         if not (ROOT / a["path"]).exists():
             missing.append(a["id"])
             continue
@@ -495,12 +505,13 @@ def run(pid, estimate=False, write=True):
     gate = AssetDomainGate(script["domain"])
     cur_p = proj / "curation.json"
     curation = json.loads(cur_p.read_text()) if cur_p.exists() else {}
-    assets, missing, vault_n = load_assets(gate, curation)
+    ov_p = proj / "shot_overrides.json"
+    ov_all = json.loads(ov_p.read_text()) if ov_p.exists() else {}
+    overrides = {k: v for k, v in ov_all.items() if not k.startswith("_")}
+    assets, missing, vault_n = load_assets(gate, curation, ov_all.get("_retag"))
     by_id = {a["id"]: a for a in assets}
     timing = load_timing(pid, estimate, script)
     slots, notes = build_skeleton(script, timing)
-    ov_p = proj / "shot_overrides.json"
-    overrides = {k: v for k, v in json.loads(ov_p.read_text()).items() if not k.startswith("_")} if ov_p.exists() else {}
     key_slot = {}
     for i, s in enumerate(slots):
         if s["type"] == "cut":

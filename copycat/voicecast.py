@@ -159,7 +159,7 @@ def _tts_raw(text: str, entry: dict) -> tuple[np.ndarray, int]:
             chunks.append(cur); cur = []
     if cur: chunks.append(cur)
     chunks = [[p for p in c] for c in chunks if any(p.strip() for p in c)]
-    gap = np.zeros(int(0.12 * sr), np.float32)
+    gap = np.zeros(int(0.03 * sr), np.float32)
     for i, c in enumerate(chunks):
         c = [x for x in c]
         while c and c[0] == " ": c = c[1:]
@@ -178,6 +178,33 @@ def _frame_rms(x: np.ndarray, win: int) -> np.ndarray:
     n = len(x) // win
     if n == 0: return np.array([0.0])
     return np.sqrt((x[: n * win].reshape(n, win).astype(np.float64) ** 2).mean(axis=1))
+
+
+def compress_silences(x: np.ndarray, sr: int = SR, long_ms: float = 260.0, to_ms: float = 230.0, xf_ms: float = 8.0) -> np.ndarray:
+    """Shorten every internal silence longer than long_ms to to_ms (short crossfades), keeping staccato lines punchy."""
+    win = int(0.005 * sr)
+    n = len(x) // win
+    if n < 4: return x
+    r = np.sqrt((x[: n * win].reshape(n, win).astype(np.float64) ** 2).mean(axis=1))
+    sil = r < max(r.max() * 0.015, 1e-4)
+    half = int(to_ms / 2000 * sr)
+    cuts, i = [], 0
+    while i < n:
+        if not sil[i]:
+            i += 1; continue
+        j = i
+        while j < n and sil[j]: j += 1
+        if i > 0 and j < n and (j - i) * win > long_ms / 1000 * sr:
+            cuts.append((i * win + half, j * win - half))
+        i = j
+    if not cuts: return x
+    segs, pos = [], 0
+    for a, b in cuts:
+        segs.append(x[pos:a]); pos = b
+    segs.append(x[pos:])
+    f = xf_ms / 1000
+    segs = [D.fade(sg_, f if k else 0, f if k < len(segs) - 1 else 0, sr, "lin") for k, sg_ in enumerate(segs)]
+    return np.concatenate(segs).astype(np.float32)
 
 
 def trim_edges(x: np.ndarray, sr: int = SR, keep: float = EDGE_KEEP_S, fade_s: float = EDGE_FADE_S) -> np.ndarray:
@@ -313,6 +340,7 @@ def synth_line(text: str, entry: dict, final: bool = False, use_cache: bool = Tr
         return z["x"], int(z["dry"])
     x, sr = _tts_raw(text, entry)
     x = sg.resample_poly(x, SR // np.gcd(SR, sr), sr // np.gcd(SR, sr)).astype(np.float32) if sr != SR else x
+    x = compress_silences(x)
     x = trim_edges(x)
     x = pitch_shift(x, entry.get("pitch_semitones", 0.0), SR, entry.get("formant", "preserved"))
     dry_fx = [f_ for f_ in entry.get("fx", []) if f_["type"] not in ("octave_down", "slapback", "reverb", "shimmer")]
