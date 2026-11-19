@@ -86,3 +86,16 @@ Silent picture: `build/copycat/<id>/video/picture.mp4`; final mux: `releases/cop
 - An asset may not repeat within 8 consecutive shots or 45 s.
 - No frame may be static: every shot has camera motion.
 - Do not commit; do not touch files outside your assignment; pipe noisy output through `tail -n 30`.
+
+## Run order (project `bc-whatif-ep01`)
+```
+python -m copycat.visuals.harvester            # fetch + cache real Black Clover stills -> assets/cache/black-clover/
+python -m copycat.script_tools  bc-whatif-ep01 # validate script.json
+python -m copycat.audio_drama   bc-whatif-ep01 # full-cast mix -> build/.../audio/master.wav + timing.json
+python -m copycat.mapper        bc-whatif-ep01 # beats -> edit.json (applies shot_overrides.json, domain gate)
+python -m copycat.storyboard    bc-whatif-ep01 # review sheets -> build/.../storyboard/
+python -m copycat.compositor    bc-whatif-ep01 --mux   # 1080p render -> releases/.../master.mp4
+python -m copycat.qa_verify     bc-whatif-ep01 # gates on the real MP4 + qa_contact_sheet.png
+python -m copycat.packaging     bc-whatif-ep01 && python -m copycat.thumbnail bc-whatif-ep01 && python -m copycat.shorts bc-whatif-ep01
+```
+`master.mp4` exceeds GitHub's 100 MB limit and is git-ignored; `master_web_1080p.mp4` is the committed copy.
