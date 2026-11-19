@@ -26,6 +26,8 @@ MAX_WHIPS = 6
 
 SCARCE = {"asta_young", "liebe", "yuno_young", "sister_lily", "father_orsi"}
 YOUNG = {"asta_young": "asta", "yuno_young": "yuno"}
+ATMOS = {"hage_village", "hage_church", "demon_skull", "night_sky", "grimoire_tower", "five_leaf_grimoire",
+         "demon_slayer_sword"}
 FACE_SHOTS = {"closeup", "extreme_closeup", "medium", "action", "panel"}
 NONCHAR = {"five_leaf_grimoire", "four_leaf_grimoire", "demon_slayer_sword", "anti_magic", "hage_village",
            "hage_church", "demon_skull", "grimoire_tower", "royal_capital", "exam_arena", "black_bulls_hideout",
@@ -174,6 +176,9 @@ class Scorer:
                 s += 1.0
             elif (st, at) in SHOT_NEAR or (at, st) in SHOT_NEAR:
                 s += 0.5
+        if subs and (subs[0] in YOUNG or subs[0] in ("father_orsi", "sister_lily")) and asub and asub <= NONCHAR \
+                and asub & ATMOS:
+            s += 2.0                                  # fallback: atmosphere/location when the young face does not exist
         q = toks(sp.get("query", "")) & self.tok[a["id"]]
         s += min(2.0, 0.5 * len(q))
         sem = s
@@ -201,7 +206,7 @@ class Scorer:
         if speaker_rule and slot["first"]:
             allowed = SPEAKER_SUBJECTS.get(slot["beat"]["speaker"])
             if allowed and not (allowed & (asub | {tg.get("location")})):
-                s -= 6.0
+                s -= 2.5 if (subs and subs[0] in YOUNG) else 6.0
         return s, sem
 
 
