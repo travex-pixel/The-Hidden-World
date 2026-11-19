@@ -17,8 +17,13 @@ ROOT = Path(__file__).resolve().parent.parent
 VAULT = ROOT / "assets/cache/black-clover/vault.json"
 
 MIN_SHOT, MAX_SHOT = 1.2, 7.5
+MIN_BEAT = 1.0                 # a beat shorter than this is absorbed into the previous shot
+MAX_SHOT_COLD = 3.0            # cold open cuts every 2-3 s
+MIN_CUT_MAIN = 3.4             # main story: drop extra cuts of a beat rather than cut faster than this
+NEAR_DUP = 10                  # dhash hamming distance counted as the same scene angle
+NEAR_GAP = 10                  # shots required between near-duplicate frames
 LOCK_SHOTS, LOCK_SECONDS = 8, 45.0
-REUSE_PREFER, REUSE_CAP = 2, 3
+REUSE_PREFER, REUSE_CAP = 1, 2
 WEAK_SCORE = 6.0          # base score below this = weak match
 MIN_SCORE = 3.0           # below this (or no semantic overlap) = no acceptable asset
 EMBER_CAP = 0.45
@@ -121,16 +126,24 @@ def build_skeleton(script: dict, timing: dict):
         D = e - s
         vis = b["visuals"]
         n = len(vis)
-        while n > 1 and D / n < MIN_SHOT:
+        cold = ch["id"] == "cold_open"
+        lic = any("licita" in (v.get("subjects") or []) for v in vis)   # keep the Licita cut when her name is spoken
+        while n > 1 and D / n < (2.0 if cold else (1.7 if lic else MIN_CUT_MAIN)):
             n -= 1
-        if D < MIN_SHOT and slots and slots[-1]["type"] == "cut":
+        if D < MIN_BEAT and slots and slots[-1]["type"] == "cut":
             slots[-1]["end"] = e                       # absorb a too-short beat into the previous shot
             notes.append(f"{b['id']} picture {D:.2f}s absorbed into previous shot")
             continue
         parts = []
         for ci in range(n):
             cs, ce = s + D * ci / n, s + D * (ci + 1) / n
-            k = max(1, math.ceil((ce - cs) / MAX_SHOT - 1e-9))
+            d_ = ce - cs
+            if cold:
+                k = max(math.ceil(d_ / MAX_SHOT_COLD - 1e-9), int(round(d_ / 2.5)), 1)
+                while k > 1 and d_ / k < 2.0:
+                    k -= 1
+            else:
+                k = max(1, math.ceil(d_ / MAX_SHOT - 1e-9))
             for si in range(k):
                 parts.append((ci, si, cs + (ce - cs) * si / k, cs + (ce - cs) * (si + 1) / k))
         for ci, si, ps, pe in parts:
@@ -240,6 +253,11 @@ class Assigner:
             rows.sort(reverse=True)
             self.cand[i] = [r[1] for r in rows[:40]]
             self.base[i] = {aid: s for s, aid in rows}
+        self.cap = {a["id"]: (REUSE_CAP + 1 if ("liebe" in a["tags"]["subjects"] and a["tags"].get("shotType") in
+                    ("closeup", "extreme_closeup")) else REUSE_CAP) for a in assets}
+        hs = {a["id"]: int(a["dhash"], 16) for a in assets if a.get("dhash")}
+        self.near = {aid: [b for b, hb in hs.items() if b != aid and bin(h ^ hb).count("1") <= NEAR_DUP]
+                     for aid, h in hs.items()}
         self.assign = {i: None for i in self.cuts}
         self.pinned = pinned
         self.uses = {}                      # asset -> set of slot idx
@@ -261,8 +279,12 @@ class Assigner:
                 continue
             if abs(j - i) < LOCK_SHOTS or abs(self.slots[j]["start"] - self.slots[i]["start"]) < LOCK_SECONDS:
                 return False
+        for b in self.near.get(aid, ()):
+            for j in self.uses.get(b, ()):
+                if j != i and abs(j - i) < NEAR_GAP:
+                    return False
         others = len(self.uses.get(aid, ())) - (1 if i in self.uses.get(aid, ()) else 0)
-        return others < REUSE_CAP
+        return others < self.cap.get(aid, REUSE_CAP)
 
     def value(self, i, aid):
         if not self.feasible(i, aid):
