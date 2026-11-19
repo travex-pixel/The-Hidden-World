@@ -1,0 +1,244 @@
+{
+ "_config": {
+  "avg_shot_s": 5.6,
+  "split_bias": 1.35,
+  "max_shot": 11.0,
+  "merge_short_s": 5.0,
+  "merge_cross_s": 3.8,
+  "merge_max_s": 9.0,
+  "cold_avg": 4.8,
+  "lock_seconds": 45,
+  "era": "part1",
+  "crowd_penalty": 0.0,
+  "strict_reuse": true,
+  "lock_shots": 4,
+  "extra_inserts": {},
+  "grid_plan": [],
+  "gap_exempt": [],
+  "grid_faces": "auto",
+  "avg_by_chapter": {
+   "cold_open": 5.0,
+   "ch6": 5.2
+  },
+  "wl": {
+   "reuse_cap": 4,
+   "min_gap_s": 45,
+   "windows": {},
+   "beats": {},
+   "relax_scenes": [
+    "road_day",
+    "woods_morning",
+    "establishing",
+    "neutral_portrait",
+    "object",
+    "archive_library"
+   ],
+   "relax_night_scenes": [
+    "neutral_portrait",
+    "object",
+    "establishing"
+   ],
+   "relax_who": [
+    "tazuna",
+    "sasuke",
+    "sakura",
+    "kakashi",
+    "team7"
+   ],
+   "mist_native_scenes": [
+    "boat_mist",
+    "bridge_battle_mist"
+   ],
+   "speaker_fallback": {
+    "INARI": {
+     "who": [
+      "tazuna"
+     ],
+     "scenes": [
+      "tazuna_house",
+      "object"
+     ],
+     "min_frames": 4,
+     "allow_empty": true
+    },
+    "GATO": {
+     "who": [
+      "villagers"
+     ],
+     "scenes": [
+      "gato_office",
+      "object"
+     ],
+     "min_frames": 5,
+     "allow_empty": true
+    }
+   },
+   "chapters": {
+    "cold_open": {
+     "scenes": [
+      "archive_library",
+      "road_day",
+      "establishing",
+      "neutral_portrait"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "kakashi",
+      "team7",
+      "tazuna"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object",
+      "seal_mindscape",
+      "village_day"
+     ]
+    },
+    "ch1": {
+     "scenes": [
+      "road_day",
+      "woods_morning",
+      "establishing",
+      "neutral_portrait"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "team7",
+      "kakashi",
+      "sasuke",
+      "sakura",
+      "tazuna",
+      "demon_brothers"
+     ]
+    },
+    "ch2": {
+     "scenes": [
+      "shore_fight",
+      "boat_mist",
+      "bridge_battle_mist",
+      "woods_morning",
+      "neutral_portrait"
+     ],
+     "time": "mist",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "team7",
+      "kakashi",
+      "sasuke",
+      "sakura",
+      "tazuna",
+      "zabuza",
+      "haku"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object",
+      "establishing"
+     ]
+    },
+    "ch3": {
+     "scenes": [
+      "tazuna_house",
+      "road_day",
+      "woods_morning",
+      "bridge_battle_mist",
+      "neutral_portrait",
+      "establishing"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "team7",
+      "kakashi",
+      "sasuke",
+      "sakura",
+      "tazuna",
+      "inari"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object"
+     ]
+    },
+    "ch4": {
+     "scenes": [
+      "woods_morning",
+      "neutral_portrait",
+      "road_day"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "haku"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object"
+     ]
+    },
+    "ch5": {
+     "scenes": [
+      "gato_office",
+      "archive_library",
+      "neutral_portrait",
+      "object",
+      "establishing"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "gato",
+      "sakura",
+      "sasuke",
+      "kakashi",
+      "zabuza",
+      "villagers"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object"
+     ]
+    },
+    "ch6": {
+     "scenes": [
+      "bridge_battle_mist",
+      "ice_mirrors",
+      "boat_mist",
+      "shore_fight",
+      "aftermath",
+      "establishing"
+     ],
+     "time": "mist",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "team7",
+      "kakashi",
+      "sasuke",
+      "sakura",
+      "tazuna",
+      "inari",
+      "zabuza",
+      "haku",
+      "gato",
+      "villagers",
+      "kurama"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object",
+      "establishing"
+     ]
+    }
+   }
+  }
+ }
+}

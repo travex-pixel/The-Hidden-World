@@ -33,7 +33,7 @@ CAPTION_TOP = 786            # caption block starts ~ here (bottom 7% margin, up
 STAMP_RECT = (1060, 50, 1830, 545)   # CANON stamp + note strip live here
 
 TYPES = ("scroll_note", "notebook_rules", "maths_card", "staff_form", "kazekage_letter", "mission_report",
-         "evaluation_folder", "roster")
+         "evaluation_folder", "roster")          # Episode 1 set; the season-1 props live in inserts_s1.py (see all_types())
 # real-frame backdrops (subjects tried in order) + grade tint, per type
 BG_SUBJECTS = {
     "scroll_note": (["forest_night", "forest", "night_sky"], "night"),
@@ -102,12 +102,19 @@ class Doc:
     # ---- state / timing -----------------------------------------------------------------
     def when(self, name, phrase=None, default="anim", frac=None, lead=0.12, tail=0.0, group=None):
         """None -> bake (already on the page); ('t', t0, t1) -> animate in absolute seconds; False -> not written yet."""
-        keys = {name} | ({group} if group else set())
-        phrase = (self.spec.get("say") or {}).get(group or name, phrase)
+        gs = [] if not group else ([group] if isinstance(group, str) else list(group))
+        keys = {name} | set(gs)
+        say = self.spec.get("say") or {}
+        if isinstance(group, (list, tuple)):               # several groups (e.g. one row AND "rows"): the item's own phrase first
+            phrase = say.get(name) or next((say[g] for g in gs if g in say), None) or phrase
+        else:
+            phrase = say.get(group or name, phrase)
         if keys & self.present:
             st = "present"
         elif keys & self.animate:
             st = "anim"
+        elif self.spec.get("hold") and not self.spec.get("hold_rest") and default != "present":
+            st = "omit"                                    # held document: not revealed yet
         else:
             st = default
         if st == "omit":
@@ -852,6 +859,8 @@ def build_report(spec):
     var = spec.get("variant", "ambush")
     if var == "cat":
         return build_cat(spec)
+    if var == "signed_doodle":
+        return _pack().build_signed_doodle(spec)
     if var == "names":
         return build_names(spec)
     if var == "tabs":
@@ -989,6 +998,57 @@ DEFAULT_VIEWS = {
 }
 
 
+# =============================================================================== type tables (Episode 1 + season-1 pack)
+def _pack():
+    from . import inserts_s1                                # lazy: the pack imports this module
+    return inserts_s1
+
+
+def builder_for(typ):
+    return BUILDERS[typ] if typ in BUILDERS else _pack().BUILDERS[typ]
+
+
+def default_view(typ):
+    return DEFAULT_VIEWS[typ] if typ in DEFAULT_VIEWS else _pack().DEFAULT_VIEWS[typ]
+
+
+def bg_subjects_for(typ):
+    """(vault subjects tried in order, tone) of the real-frame backdrop of a type (non-whitelist projects)."""
+    return BG_SUBJECTS[typ] if typ in BG_SUBJECTS else _pack().BG_SUBJECTS[typ]
+
+
+def all_types():
+    return tuple(TYPES) + tuple(_pack().BUILDERS)
+
+
+def resolve_holds(script, extra=None):
+    """Held documents.  A beat's insert may carry ``"hold": "<id>"`` and ``"reveal": [groups] | "rest"``: every beat with the
+    same hold id shows the same document (same backdrop, same paper) and the groups revealed on earlier beats stay on the
+    page (``present``) while this beat's ``reveal`` groups write themselves in (``animate``).  Groups not revealed yet are not
+    drawn; ``"reveal": "rest"`` writes everything that is left.  Explicit ``present`` / ``animate`` win.
+    -> {beat_id: insert spec} for beats whose spec was changed."""
+    shown, out = {}, {}
+    extra = extra or {}
+    for ch in script["chapters"]:
+        for b in ch["beats"]:
+            ins = b.get("insert") or extra.get(b["id"])
+            if not ins or not ins.get("hold"):
+                continue
+            spec = dict(ins)
+            hid = spec["hold"]
+            sh = shown.setdefault(hid, [])
+            rev = spec.get("reveal")
+            if rev == "rest":
+                spec["hold_rest"] = True
+                rev = []
+            rev = [rev] if isinstance(rev, str) else list(rev or [])
+            spec.setdefault("present", list(sh))
+            spec.setdefault("animate", list(rev))
+            sh.extend(g for g in rev if g not in sh)
+            out[b["id"]] = spec
+    return out
+
+
 # =============================================================================== scene
 _DOC_CACHE = {}
 
@@ -1003,9 +1063,9 @@ def build_doc(spec, bg_path):
     if key in _DOC_CACHE:
         return _DOC_CACHE[key]
     typ = spec["type"]
-    D = BUILDERS[typ](spec)
-    tone = BG_SUBJECTS[typ][1]
-    D.finalize(bg_path, tone)
+    D = builder_for(typ)(spec)
+    tone = bg_subjects_for(typ)[1]
+    D.finalize(bg_path, tone, margin=getattr(D, "margin", (820, 520)))
     if len(_DOC_CACHE) > 6:
         _DOC_CACHE.clear()
     _DOC_CACHE[key] = D
@@ -1049,7 +1109,7 @@ class InsertScene:
         self.t0 = float(shot["start"])
         bg = shot.get("_abs_path") or ""
         self.D = build_doc({k: v for k, v in spec.items() if k not in ("shot_start", "shot_end")}, bg)
-        view = dict(DEFAULT_VIEWS[spec["type"]])
+        view = dict(default_view(spec["type"]))
         view.update(spec.get("view") or {})
         self.view = view
         self.cur = None
@@ -1133,7 +1193,7 @@ class InsertScene:
 def lint(spec, bg_path, dur=6.0, stamp=False):
     """Check that legibility-critical ink never enters the caption zone (or the stamp rect when the shot has a stamp)."""
     D = build_doc(spec, bg_path)
-    view = dict(DEFAULT_VIEWS[spec["type"]])
+    view = dict(default_view(spec["type"]))
     view.update(spec.get("view") or {})
     bad = []
     for name, (x0, y0, x1, y1) in D.imp_boxes_canvas():
@@ -1194,7 +1254,9 @@ def stills(pid, every_beat=False):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 2 and sys.argv[1] == "stills":
+    if len(sys.argv) >= 2 and sys.argv[1] == "stills-s1":
+        _pack().stills_s1(sys.argv[2:])
+    elif len(sys.argv) >= 2 and sys.argv[1] == "stills":
         stills(sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].startswith("-") else "naruto-whatif-ep01", every_beat="--all" in sys.argv)
     else:
         print(__doc__)

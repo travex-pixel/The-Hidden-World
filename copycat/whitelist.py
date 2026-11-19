@@ -25,6 +25,12 @@ from pathlib import Path
 
 CHAR_KEYS = {"naruto", "naruto_clones", "iruka", "mizuki", "hiruzen", "kakashi", "sasuke", "sakura", "team7", "kurama",
              "kushina", "minato", "tobirama", "villagers"}
+# who-keys that exist in the Naruto franchise beyond Episode 1.  They only become "character keys" of a project (see WL.char_keys)
+# when the project's whitelist.json uses them or `_config.wl.extra_who` names them, so Episode 1 scoring is untouched.
+EXTRA_CHAR_KEYS = {"obito", "rin", "masked_man", "danzo", "root", "anbu", "tazuna", "inari", "zabuza", "haku", "gato", "demon_brothers",
+                   "konohamaru", "tora_cat", "ayame", "hinata", "ibiki", "anko", "orochimaru", "kabuto", "gaara", "temari", "kankuro",
+                   "jiraiya", "shikamaru", "ino", "choji", "asuma", "neji", "rock_lee", "tenten", "kiba", "shino", "dosu", "zaku", "kin",
+                   "hayate", "aoba", "itachi", "teuchi"}
 TEAM7 = {"naruto", "sasuke", "sakura", "kakashi"}
 MENTION = {
     "sasuke": r"\bsasuke\b", "sakura": r"\bsakura\b", "kakashi": r"\bkakashi\b", "iruka": r"\biruka\b", "mizuki": r"\bmizuki\b",
@@ -32,9 +38,24 @@ MENTION = {
     "kushina": r"\bkushina\b", "minato": r"\b(minato|fourth hokage|fourth)\b", "tobirama": r"\b(tobirama|second hokage|lord second)\b",
     "team7": r"\b(team seven|team 7)\b", "naruto": r"\bnaruto\b", "naruto_clones": r"\b(clones?|copies)\b",
 }
+# further mention patterns: active only for keys the project's whitelist can actually show (see WL.mention)
+MENTION_EXTRA = {
+    "danzo": r"\bdanzo\b", "obito": r"\bobito\b", "rin": r"\brin\b", "tazuna": r"\btazuna\b", "inari": r"\binari\b",
+    "zabuza": r"\bzabuza\b", "haku": r"\bhaku\b", "gato": r"\bgato\b", "ibiki": r"\bibiki\b", "anko": r"\banko\b",
+    "orochimaru": r"\borochimaru\b", "kabuto": r"\bkabuto\b", "gaara": r"\bgaara\b", "jiraiya": r"\bjiraiya\b",
+    "konohamaru": r"\bkonohamaru\b", "shikamaru": r"\bshikamaru\b", "temari": r"\btemari\b", "kankuro": r"\bkankuro\b",
+    "rock_lee": r"\b(rock lee|lee)\b", "itachi": r"\bitachi\b", "hinata": r"\bhinata\b", "neji": r"\bneji\b", "ino": r"\bino\b",
+    "choji": r"\bchoji\b", "asuma": r"\basuma\b", "tenten": r"\btenten\b", "tora_cat": r"\btora\b", "ayame": r"\bayame\b",
+    "demon_brothers": r"\bdemon brothers\b", "anbu": r"\banbu\b", "root": r"\broot\b",
+}
 SPEAKER_WHO = {
     "NARUTO": ["naruto", "naruto_clones"], "CLONE": ["naruto_clones", "naruto"], "IRUKA": ["iruka"], "MIZUKI": ["mizuki"],
     "HIRUZEN": ["hiruzen"], "KAKASHI": ["kakashi"], "SASUKE": ["sasuke"], "SAKURA": ["sakura"], "KURAMA": ["kurama"],
+    "DANZO": ["danzo"], "TAZUNA": ["tazuna"], "ZABUZA": ["zabuza"], "HAKU": ["haku"], "INARI": ["inari"], "GATO": ["gato"],
+    "KABUTO": ["kabuto"], "IBIKI": ["ibiki"], "ANKO": ["anko"], "OROCHIMARU": ["orochimaru"], "GAARA": ["gaara"],
+    "JIRAIYA": ["jiraiya"], "KUSHINA": ["kushina"], "MINATO": ["minato"], "OBITO": ["obito"], "RIN": ["rin"],
+    "KONOHAMARU": ["konohamaru"], "TEMARI": ["temari"], "KANKURO": ["kankuro"], "SHIKAMARU": ["shikamaru"], "ITACHI": ["itachi"],
+    "TOBIRAMA": ["tobirama"], "ROCK LEE": ["rock_lee"], "LEE": ["rock_lee"], "NEJI": ["neji"], "HINATA": ["hinata"],
 }
 EXPR_KEYS = [  # first match wins; order matters
     ("sad_cry", r"tear|cry|wet|raw|choked|small, honest|sob"),
@@ -54,7 +75,15 @@ NEAR = [{"grin", "shout", "smug", "gentle"}, {"angry", "shout", "determined"}, {
 STRONG = {"grin", "shout", "shock", "sad_cry", "angry", "tired_sick"}
 GRADEABLE_DEFAULT = ["neutral_portrait", "object", "seal_mindscape"]
 SCALE_NEAR = {("closeup", "medium"), ("medium", "closeup"), ("medium", "wide"), ("wide", "medium")}
-NO_GRADE_SCENES = {"seal_mindscape", "parents_flashback"}
+NO_GRADE_SCENES = {"seal_mindscape", "parents_flashback", "uchiha_flashback"}
+# scenes a relaxed search never wanders into unless the beat asked for them (their picture means something specific)
+NO_RELAX_SCENES = ("forest_night_ep1", "seal_mindscape", "parents_flashback", "apartment_bed", "uchiha_flashback", "stands_asleep",
+                   "village_under_attack")
+RELAX_DAY = ["village_day", "classroom_academy", "neutral_portrait", "object", "archive_library", "hokage_office"]
+RELAX_NIGHT = ["neutral_portrait", "object", "village_night"]
+RELAX_WHO = {"iruka", "hiruzen", "sakura", "sasuke", "team7"}
+LAMP_SCENES = ("archive_library", "hokage_office", "gato_office", "tazuna_house", "mission_desk", "mail_desk")
+MIST_NATIVE = ("boat_mist", "bridge_battle_mist")      # frames already misty: the `mist` grade leaves them alone
 
 
 def infer_expression(emotion: str) -> str:
@@ -89,6 +118,26 @@ class WL:
         self.reuse_cap = int(cfg.get("reuse_cap", 4))
         self.min_gap = float(cfg.get("min_gap_s", 45.0))
         self.relax = 0
+        # per-project vocabulary (everything below is optional in `_config.wl`; the defaults reproduce Episode 1)
+        used = {k for L in self.labels.values() for k in L.get("who", [])}
+        self.char_keys = set(CHAR_KEYS) | (used & EXTRA_CHAR_KEYS) | set(cfg.get("extra_who") or [])
+        self.speaker_who = dict(SPEAKER_WHO)
+        for sp, ks in (cfg.get("speaker_who") or {}).items():
+            self.speaker_who[sp] = list(ks)
+        self.mention = dict(MENTION)
+        for k, rx in MENTION_EXTRA.items():
+            if k in used or k in (cfg.get("extra_who") or []):
+                self.mention.setdefault(k, rx)
+        self.mention.update(cfg.get("mention") or {})
+        self.fallback = {sp: dict(v) for sp, v in (cfg.get("speaker_fallback") or {}).items()}
+        self.relax_day = list(cfg.get("relax_scenes", RELAX_DAY))
+        self.relax_night = list(cfg.get("relax_night_scenes", RELAX_NIGHT))
+        self.no_relax = set(cfg.get("no_relax_scenes", NO_RELAX_SCENES))
+        self.relax_who = set(cfg.get("relax_who", RELAX_WHO))
+        self.no_grade = set(cfg.get("no_grade_scenes", NO_GRADE_SCENES))
+        self.lamp_scenes = set(cfg.get("lamp_scenes", LAMP_SCENES))
+        self.mist_native = set(cfg.get("mist_native_scenes", MIST_NATIVE))
+        self._own = {}
         self.windows = {}
         for who, rngs in (cfg.get("windows") or {}).items():
             ids = set()
@@ -122,6 +171,22 @@ class WL:
         c.setdefault("time", None)
         self._ctx[key] = c
         return c
+
+    # ---- speaker stand-ins ------------------------------------------------------------------
+    def own_frames(self, speaker: str) -> int:
+        """How many approved frames show this speaker (their own face)."""
+        if speaker not in self._own:
+            ks = set(self.speaker_who.get(speaker, []))
+            self._own[speaker] = sum(1 for L in self.labels.values() if ks & set(L.get("who", [])))
+        return self._own[speaker]
+
+    def fallback_for(self, speaker: str):
+        """`_config.wl.speaker_fallback[SPEAKER]` = {who: [...], scenes: [...], min_frames: 3, allow_empty: bool}; active only
+        while the speaker has fewer than `min_frames` own approved frames."""
+        fb = self.fallback.get(speaker)
+        if not fb or self.own_frames(speaker) >= int(fb.get("min_frames", 3)):
+            return None
+        return fb
 
     # ---- helpers on assets ----------------------------------------------------------------
     def zmax(self, a) -> float:
@@ -203,18 +268,22 @@ class WL:
         speakers = [(spk, 1.0)] + [(x["speaker"], 0.45) for x in slot.get("also", [])]
         who = []
         for sp, wt in speakers:
-            for k in SPEAKER_WHO.get(sp, []):
+            for k in self.speaker_who.get(sp, []):
                 who.append((k, wt))
-        subs = [s for s in (slot["spec"].get("subjects") or []) if s in CHAR_KEYS]
-        mention = {k for k, rx in MENTION.items() if re.search(rx, text)}
+        fbd = self.fallback_for(spk) if dialogue else None
+        fb = set(fbd.get("who", [])) if fbd else set()
+        for k in sorted(fb):                               # stand-ins for a speaker with too few frames of their own
+            who.append((k, 0.85))
+        subs = [s for s in (slot["spec"].get("subjects") or []) if s in self.char_keys]
+        mention = {k for k, rx in self.mention.items() if re.search(rx, text)}
         for x in slot.get("also", []):
-            mention |= {k for k, rx in MENTION.items() if re.search(rx, x["text"].lower())}
+            mention |= {k for k, rx in self.mention.items() if re.search(rx, x["text"].lower())}
         if not dialogue:
             for i, s in enumerate(subs):
                 who.append((s, 1.0 if i == 0 else 0.5))
             for m in sorted(mention):
                 who.append((m, 0.8))
-        w = dict(dialogue=dialogue, who=who, mention=mention | set(subs) | {k for k, _ in who},
+        w = dict(dialogue=dialogue, who=who, fb=fb, fbd=fbd, mention=mention | set(subs) | {k for k, _ in who},
                  expr=infer_expression(b.get("emotion", "")), shot=slot["spec"].get("shot"),
                  mood=slot["spec"].get("mood"), first=slot["first"])
         slot["_wl"] = w
@@ -249,22 +318,26 @@ class WL:
         lw = set(L["who"])
         if lw:
             expanded = set(lw) | (TEAM7 if "team7" in lw else set())
-            allowed = set(ctx["who"]) | {"villagers"}
+            allowed = set(ctx["who"]) | {"villagers"} | w["fb"]
             if self.relax >= 3 and (L["scale"] == "wide" or lw <= {"hiruzen"}):   # placeholders: wide frames where a bystander is tiny
-                allowed |= {"iruka", "hiruzen", "sakura", "sasuke", "team7"}
+                allowed |= self.relax_who
             if ctx["who"] and not (expanded - {"villagers"}) <= allowed:
                 return -99.0, 0.0
         # --- scene / time ---------------------------------------------------------------------
         scenes = ctx["scenes"]
         t = ctx.get("time")
+        if t == "mist":                                    # misty scenes are daytime frames under the `mist` grade
+            t = "day"
+        if w["fbd"]:                                       # stand-in scenes for a speaker with too few frames of their own
+            scenes = scenes + [x for x in w["fbd"].get("scenes", []) if x not in scenes]
         grade = None
         if self.relax >= 2:                                # last resort: neighbouring scene types that keep the cast and the time of day
-            if L["scene"] in ("forest_night_ep1", "seal_mindscape", "parents_flashback", "apartment_bed") and L["scene"] not in scenes:
+            if L["scene"] in self.no_relax and L["scene"] not in scenes:
                 return -99.0, 0.0
             if t == "night":
-                scenes = scenes + ["neutral_portrait", "object", "village_night"]     # never a daytime interior in the night forest
+                scenes = scenes + self.relax_night         # never a daytime interior in the night forest
             else:
-                scenes = scenes + ["village_day", "classroom_academy", "neutral_portrait", "object", "archive_library", "hokage_office"]
+                scenes = scenes + self.relax_day
             if self.relax >= 3 and L["scene"] == "parents_flashback":
                 scenes = scenes + ["parents_flashback"]
         if t in ("night", "lamp") and self.relax >= 2:
@@ -293,14 +366,16 @@ class WL:
                     s += 0.8
                 else:
                     return -99.0, 0.0
-            if t == "day" and L["time"] == "night" and L["scene"] not in NO_GRADE_SCENES:
+            if t == "day" and L["time"] == "night" and L["scene"] not in self.no_grade:
                 return -99.0, 0.0
         # --- who on screen -------------------------------------------------------------------
         sem = 2.0
         wanted = w["who"]
         if not lw:
-            if w["dialogue"]:
+            if w["dialogue"] and not (w["fbd"] and w["fbd"].get("allow_empty") and L["scene"] in w["fbd"].get("scenes", [])):
                 return -99.0, 0.0                          # dialogue always shows the speaker (or a clone / Naruto for CLONE)
+            elif w["dialogue"]:
+                s += 0.5                                   # stand-in picture (object / place) for a speaker who has no face on file
             else:
                 s += 2.4 if (not wanted or w["shot"] in ("wide", "establishing") or w["mood"] == "establishing") else 1.0
         else:
@@ -308,7 +383,7 @@ class WL:
             hit = 0.0
             prim = 0.0
             for k, wt in wanted:
-                if wt >= 1.0 and (k in expanded or {k, "naruto"} <= {k} | expanded and k in ("naruto_clones", "naruto") and expanded & {"naruto", "naruto_clones"}):
+                if (wt >= 1.0 or k in w["fb"]) and (k in expanded or {k, "naruto"} <= {k} | expanded and k in ("naruto_clones", "naruto") and expanded & {"naruto", "naruto_clones"}):
                     prim = 1.0
             if w["dialogue"] and not prim:
                 return -99.0, 0.0
@@ -328,7 +403,7 @@ class WL:
                     s += 4.0 * hit if hit else -1.5
                 else:
                     s += 0.5
-            ok = w["mention"] | ({"naruto_clones"} if "naruto" in w["mention"] else set()) | ({"naruto"} if "naruto_clones" in w["mention"] else set())
+            ok = w["mention"] | w["fb"] | ({"naruto_clones"} if "naruto" in w["mention"] else set()) | ({"naruto"} if "naruto_clones" in w["mention"] else set())
             extra = [k for k in expanded if k not in ok and k != "villagers" and not (k == "team7")]
             if "team7" in lw:
                 extra = [k for k in extra if k not in TEAM7 or k not in ok]
@@ -357,12 +432,16 @@ class WL:
         ctx = self.ctx(slot["chapter"], slot["beat_id"])
         t = ctx.get("time")
         L = a["wl"]
-        if L["scene"] in NO_GRADE_SCENES and L["time"] != "day":
+        if L["scene"] in self.no_grade and L["time"] != "day":
             return None
         if t == "night":
+            if L.get("flashback"):                         # flashback frames keep their own light
+                return None
             return None if L["time"] == "night" else "night"
         if t == "lamp":
-            return "interior_lamp" if L["time"] != "night" or L["scene"] in ("archive_library", "hokage_office") else "night"
+            return "interior_lamp" if L["time"] != "night" or L["scene"] in self.lamp_scenes else "night"
+        if t == "mist":
+            return None if L["scene"] in self.mist_native else "mist"
         return ctx.get("grade") or None
 
     def assign_crops(self, slots, assign, by_id):
@@ -415,11 +494,23 @@ class WL:
                               grade=self.grade_for(sl, a))
         return out
 
+    def grid_variants(self):
+        """Face crops for the clone_grid: `_config.wl.grid_faces` = "library" (default: the Episode 1 hand-made crops),
+        "auto" (library crops that exist in this whitelist + crops derived from its labels) or "derived" (labels only)."""
+        from . import clone_grid as cg
+        cg.MIST_NATIVE = tuple(self.mist_native)
+        mode = self.cfg.get("grid_faces", "library")
+        if mode == "library":
+            return None
+        der = cg.derive_variants(self.labels)
+        lib = [v for v in cg.VARIANTS if v["asset"] in self.labels] if mode == "auto" else []
+        return lib + [v for v in der if v["asset"] not in {x["asset"] for x in lib}]
+
     def background_pool(self, assets):
         return [a for a in assets if a.get("wl")]
 
 
-BG_SCENES = {   # designed-insert backdrops -> preferred whitelisted scenes, in order
+BG_SCENES = {   # designed-insert backdrops -> preferred whitelisted scenes, in order, + tone of the paper's light
     "scroll_note": (["forest_night_ep1", "village_night"], "night"),
     "notebook_rules": (["village_day", "classroom_academy"], "day"),
     "maths_card": (["training_ground", "village_day"], "day"),
@@ -428,4 +519,34 @@ BG_SCENES = {   # designed-insert backdrops -> preferred whitelisted scenes, in 
     "mission_report": (["archive_library", "classroom_academy", "hokage_office"], "day"),
     "evaluation_folder": (["archive_library", "hokage_office"], "day"),
     "roster": (["archive_library", "hokage_office"], "night"),
+    # --- season-1 prop pack (copycat/inserts_s1.py) ---
+    "patrol_report": (["archive_library", "hokage_office", "mission_desk"], "night"),
+    "incident_file": (["archive_library", "hokage_office", "mission_desk"], "night"),
+    "team_report": (["archive_library", "hokage_office"], "night"),
+    "notebook_dates": (["archive_library", "village_night", "classroom_academy", "village_day"], "night"),
+    "regulation": (["hokage_office", "mission_desk", "archive_library"], "day"),
+    "bingo_appendix": (["archive_library", "hokage_office"], "night"),
+    "mission_board": (["mission_desk", "hokage_office", "classroom_academy", "village_day"], "day"),
+    "box_label": (["archive_library", "hokage_office"], "night"),
+    "price_sheet": (["road_day", "woods_morning", "tazuna_house", "establishing"], "day"),
+    "work_schedule": (["bridge_battle_mist", "road_day", "tazuna_house", "woods_morning"], "day"),
+    "ledger": (["gato_office", "archive_library", "hokage_office"], "day"),
+    "registration_form": (["mission_desk", "hokage_office", "exam_hall", "archive_library"], "day"),
+    "info_card": (["exam_hall", "hokage_office", "village_day"], "day"),
+    "cheater_report": (["exam_hall", "archive_library", "hokage_office"], "day"),
+    "scout_map": (["forest_of_death", "training_ground", "woods_morning"], "day"),
+    "hospital_report": (["hospital", "hokage_office", "archive_library"], "day"),
+    "signature_compare": (["mail_desk", "hokage_office", "archive_library"], "day"),
+    "postponement_form": (["arena", "exam_hall", "hokage_office", "mail_desk"], "day"),
+    "leave_slip": (["archive_library", "hokage_office", "mail_desk", "uchiha_flashback"], "night"),
 }
+BG_TAIL = ["archive_library", "hokage_office", "object", "neutral_portrait", "establishing", "village_day"]   # last-resort backdrops
+
+
+def bg_scenes(typ, spec=None, cfg=None):
+    """(preferred scenes, tone) for an insert's real-frame backdrop.  Order of precedence: the insert's own `bg_scenes`,
+    `_config.wl.insert_bg[type]`, then the BG_SCENES table; the mapper tries BG_TAIL only when none of them exists in the project."""
+    scs, tone = BG_SCENES.get(typ, (BG_TAIL[:3], "day"))
+    scs = list((spec or {}).get("bg_scenes") or ((cfg or {}).get("insert_bg") or {}).get(typ) or scs)
+    tone = (spec or {}).get("bg_tone") or ((cfg or {}).get("insert_tone") or {}).get(typ) or tone
+    return scs, tone

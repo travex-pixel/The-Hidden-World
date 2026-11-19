@@ -55,6 +55,44 @@ VARIANTS = [dict(id=f"{a}.{i}", asset=a, x=x, y=y, hf=hf, expr=e, kind=k) for i,
             enumerate(_V)]
 
 
+NARUTO_KEYS = {"naruto", "naruto_clones"}
+
+
+def derive_variants(labels, only=None):
+    """Face / body / clone crops built from ANY project's whitelist labels (the hand-made VARIANTS above are Episode 1's frames).
+    Every frame whose approved `who` is Naruto and / or his clones yields: a close face crop (at `faces.naruto`, else `focus`), a
+    tighter one, a body crop for medium frames, and one crowd crop per `clone_points` entry (or at the focus of a clone frame).
+    -> list like VARIANTS.  `only`: restrict to these asset ids."""
+    out = []
+    for aid in sorted(labels):
+        L = labels[aid]
+        who = set(L.get("who") or [])
+        if not who or not who <= NARUTO_KEYS or (only is not None and aid not in only):
+            continue
+        fx, fy = (L.get("faces") or {}).get("naruto") or L.get("focus") or [0.5, 0.4]
+        expr = {"neutral": "calm"}.get(L.get("expression", "neutral"), L.get("expression", "calm"))
+        clones = "naruto_clones" in who
+        scale = L.get("scale", "medium")
+        tall = L.get("h", 1080) / max(L.get("w", 1920), 1) > 1.0
+        k = 0
+        add = lambda x, y, hf, e, kind: out.append(dict(id=f"{aid}.d{len(out)}", asset=aid, x=round(float(x), 3), y=round(float(y), 3),
+                                                      hf=hf, expr=e, kind=kind))
+        pts = L.get("clone_points") or []
+        for (x, y) in pts:
+            add(x, y, 0.42, "crowd", "crowd")
+        if "naruto" in who and scale in ("closeup", "medium"):
+            add(fx, fy, 0.62 if scale == "closeup" else 0.5, expr, "face")
+            add(fx, fy, 0.46 if scale == "closeup" else 0.38, expr, "face")
+            if scale == "medium" or tall:
+                add(fx, min(fy + 0.1, 0.8), 0.9, expr, "body")
+        elif "naruto" in who and (L.get("faces") or {}).get("naruto"):
+            add(fx, fy, 0.34, expr, "face")
+        elif clones and not pts:
+            add(fx, fy, 0.5, "crowd", "crowd")
+            add(min(max(fx - 0.2, 0.15), 0.85), fy, 0.4, "crowd", "crowd")
+    return out
+
+
 def admissible(L, t):
     """May a whitelisted frame (labels L) appear in a scene whose time of day is `t` (day|dusk|night|lamp|None)?"""
     if t == "night":
@@ -64,11 +102,16 @@ def admissible(L, t):
     return L["time"] != "night"
 
 
-def panel_grade(L, t):
+MIST_NATIVE = ("boat_mist", "bridge_battle_mist")      # set per project by WL.grid_variants()
+
+
+def panel_grade(L, t, native=None):
     if t == "night":
         return None if L["time"] == "night" else "night"
     if t == "lamp":
         return "interior_lamp"
+    if t == "mist":
+        return None if L.get("scene") in (native or MIST_NATIVE) else "mist"
     return None
 
 
@@ -129,12 +172,13 @@ def mosaic_layout():
 
 
 # ------------------------------------------------------------------------------------------------ planning (mapper side)
-def plan(n, mode, tctx, labels, beat_ids_ok, rng, used, zoom_out=False):
+def plan(n, mode, tctx, labels, beat_ids_ok, rng, used, zoom_out=False, variants=None):
     """Choose the panels of one grid shot.  -> dict(panels=[...], naruto=index_of_the_Naruto_panel)
 
     tctx: time of the scene (day|night|lamp); labels: whitelist labels; beat_ids_ok(L): window check for a frame;
     used: {variant id: count} across the episode (updated)."""
-    pool = [v for v in VARIANTS if v["asset"] in labels and admissible(labels[v["asset"]], tctx) and beat_ids_ok(labels[v["asset"]])]
+    variants = VARIANTS if variants is None else variants
+    pool = [v for v in variants if v["asset"] in labels and admissible(labels[v["asset"]], tctx) and beat_ids_ok(labels[v["asset"]])]
     if not pool:
         raise RuntimeError(f"no clone-grid panels admissible for time {tctx}")
     centre = n if mode != "mosaic" else 16
@@ -166,12 +210,12 @@ def plan(n, mode, tctx, labels, beat_ids_ok, rng, used, zoom_out=False):
     return dict(panels=panels, naruto=ni)
 
 
-def plan_mosaic(tctx, labels, ok, rng, used, D):
+def plan_mosaic(tctx, labels, ok, rng, used, D, variants=None):
     """16 centre tiles (planned like a grid) + a ring of further tiles that pops in while the camera pulls back."""
-    pl = plan(16, "mosaic", tctx, labels, ok, rng, used)
+    pl = plan(16, "mosaic", tctx, labels, ok, rng, used, variants=variants)
     centre = pl["panels"]
     schedule_pops(centre, pl["naruto"], D, rng, frac=0.42)
-    pool = [v for v in VARIANTS if v["asset"] in labels and admissible(labels[v["asset"]], tctx) and ok(labels[v["asset"]])]
+    pool = [v for v in (VARIANTS if variants is None else variants) if v["asset"] in labels and admissible(labels[v["asset"]], tctx) and ok(labels[v["asset"]])]
     ring_rects, dist = mosaic_layout()[1:]
     ring = []
     prev = None

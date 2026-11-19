@@ -1,0 +1,243 @@
+{
+ "_config": {
+  "avg_shot_s": 5.6,
+  "split_bias": 1.35,
+  "max_shot": 11.0,
+  "merge_short_s": 5.0,
+  "merge_cross_s": 3.8,
+  "merge_max_s": 9.0,
+  "cold_avg": 4.8,
+  "lock_seconds": 45,
+  "era": "part1",
+  "crowd_penalty": 0.0,
+  "strict_reuse": true,
+  "lock_shots": 4,
+  "extra_inserts": {},
+  "grid_plan": [],
+  "gap_exempt": [],
+  "grid_faces": "auto",
+  "avg_by_chapter": {
+   "cold_open": 5.0,
+   "ch6": 5.0
+  },
+  "wl": {
+   "reuse_cap": 4,
+   "min_gap_s": 45,
+   "windows": {},
+   "beats": {},
+   "speaker_fallback": {
+    "DANZO": {
+     "who": [
+      "anbu",
+      "hiruzen"
+     ],
+     "scenes": [
+      "hokage_office",
+      "archive_library",
+      "object"
+     ],
+     "min_frames": 2,
+     "allow_empty": true
+    },
+    "KABUTO": {
+     "who": [
+      "kabuto"
+     ],
+     "scenes": [
+      "exam_hall",
+      "object"
+     ],
+     "min_frames": 4,
+     "allow_empty": true
+    },
+    "JIRAIYA": {
+     "who": [
+      "hiruzen"
+     ],
+     "scenes": [
+      "hokage_office",
+      "object"
+     ],
+     "min_frames": 3,
+     "allow_empty": true
+    }
+   },
+   "chapters": {
+    "cold_open": {
+     "scenes": [
+      "exam_hall",
+      "archive_library",
+      "object",
+      "neutral_portrait"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "kabuto",
+      "hiruzen"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object",
+      "seal_mindscape",
+      "village_day"
+     ]
+    },
+    "ch1": {
+     "scenes": [
+      "exam_hall",
+      "hokage_office",
+      "village_day",
+      "neutral_portrait",
+      "object"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "kabuto",
+      "ibiki",
+      "hiruzen",
+      "sasuke",
+      "sakura",
+      "kakashi",
+      "villagers"
+     ]
+    },
+    "ch2": {
+     "scenes": [
+      "forest_of_death",
+      "neutral_portrait",
+      "training_ground"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "team7",
+      "sasuke",
+      "sakura",
+      "anko",
+      "orochimaru",
+      "kakashi"
+     ]
+    },
+    "ch3": {
+     "scenes": [
+      "training_ground",
+      "village_day",
+      "neutral_portrait",
+      "object"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "sasuke",
+      "sakura",
+      "kakashi",
+      "team7"
+     ]
+    },
+    "ch4": {
+     "scenes": [
+      "seal_mindscape",
+      "rooftop_night",
+      "neutral_portrait",
+      "object"
+     ],
+     "time": "night",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "kurama",
+      "gaara"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object",
+      "seal_mindscape"
+     ]
+    },
+    "ch5": {
+     "scenes": [
+      "mail_desk",
+      "hokage_office",
+      "archive_library",
+      "object",
+      "neutral_portrait"
+     ],
+     "time": "lamp",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "kakashi",
+      "hiruzen",
+      "danzo",
+      "anbu"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object",
+      "seal_mindscape",
+      "village_day"
+     ]
+    },
+    "ch6": {
+     "scenes": [
+      "arena",
+      "stands_asleep",
+      "barrier_roof",
+      "village_under_attack",
+      "hokage_office",
+      "neutral_portrait"
+     ],
+     "time": "day",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "team7",
+      "kakashi",
+      "sasuke",
+      "sakura",
+      "gaara",
+      "temari",
+      "kankuro",
+      "kabuto",
+      "orochimaru",
+      "hiruzen",
+      "jiraiya",
+      "iruka",
+      "anbu",
+      "villagers"
+     ]
+    },
+    "ch7": {
+     "scenes": [
+      "hospital",
+      "hokage_office",
+      "archive_library",
+      "neutral_portrait",
+      "object"
+     ],
+     "time": "lamp",
+     "who": [
+      "naruto",
+      "naruto_clones",
+      "hiruzen",
+      "sasuke",
+      "anbu",
+      "kakashi"
+     ],
+     "graded_scenes": [
+      "neutral_portrait",
+      "object",
+      "seal_mindscape",
+      "village_day"
+     ]
+    }
+   }
+  }
+ }
+}

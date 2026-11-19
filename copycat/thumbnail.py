@@ -275,7 +275,7 @@ def sticker(canvas, col, al, rim=(255, 255, 255), rim_w=5, glow=None, glow_r=26,
 def prop_layer(ptype, project, crop=None):
     """RGBA of a designed paper prop (final ink state of its richest shot in edit.json), tight to the sheet."""
     from . import inserts as I
-    edit = json.load(open(ROOT / "copycat/projects" / project / "edit.json"))
+    edit = _edit_of(project)
     best = None
     for s in edit["shots"]:
         if s.get("type") == "insert" and s["insert"]["type"] == ptype:
@@ -294,6 +294,15 @@ def prop_layer(ptype, project, crop=None):
         bw, bh = x1 - x0, y1 - y0
         x0, x1, y0, y1 = x0 + int(crop[0] * bw), x0 + int(crop[2] * bw), y0 + int(crop[1] * bh), y0 + int(crop[3] * bh)
     return cur[y0:y1, x0:x1], np.clip(al[y0:y1, x0:x1], 0, 1)
+
+
+def _edit_of(project):
+    """The project's edit.json, or (before the mapper has been run for real) an in-memory dry run of it."""
+    p = ROOT / "copycat/projects" / project / "edit.json"
+    if p.exists():
+        return json.load(open(p))
+    from . import mapper
+    return mapper.run(project, False, write=False)[0]
 
 
 def drop_shadow(canvas, al, amount=0.7, off=(10, 14), r=14):
@@ -435,22 +444,74 @@ VARIANTS = {
 }
 
 
+NUM_WORDS = {1: "ONE", 2: "TWO", 3: "THREE", 4: "FOUR", 5: "FIVE", 6: "SIX"}
+
+
+def auto_variants(pid):
+    """Starter thumbnails for a project with no thumbnails.json: the best Naruto close-up of the project's own whitelist on the teal
+    ground with orange glow / rays, and the episode subtitle (script title after 'Part N:') as type.  Two variants; replace them with
+    hand-made cutout / prop layers (see the layer kinds above) once the episode is rendered."""
+    import re
+    proj = ROOT / "copycat/projects" / pid
+    script = json.load(open(proj / "script.json"))
+    labels = {k: v for k, v in json.load(open(proj / "whitelist.json")).items() if not k.startswith("_")}
+    pref = {"shout": 4, "determined": 3, "grin": 3, "shock": 2.5, "angry": 2, "smug": 1.5}
+    cands = [(pref.get(L["expression"], 0) + (2 if L["scale"] == "closeup" else 0) + L.get("w", 0) / 1500, aid, L) for aid, L in labels.items()
+             if set(L["who"]) == {"naruto"} and L["scale"] in ("closeup", "medium") and not L.get("flashback") and L.get("w", 0) >= 1100]
+    if not cands:
+        raise SystemExit(f"{pid}: no whitelisted Naruto close-up for an automatic thumbnail; write thumbnails.json")
+    cands.sort(reverse=True)
+    m = re.search(r"Part\s*(\d+)\s*[:\u2014-]\s*(.+)$", script["title"])
+    num, sub = (int(m.group(1)), m.group(2).strip()) if m else (int(script.get("part", 1)), script["title"])
+    words = sub.upper().rstrip("?.!").split()
+    half = (len(words) + 1) // 2
+    l1, l2 = " ".join(words[:half]), (" ".join(words[half:]) + ".") if words[half:] else None
+    lines_a = [[l1 if l2 else l1 + ".", [255, 255, 255], 190, 560, [255, 120, 20]]] + ([[l2, [255, 176, 24], 160, 600, [255, 90, 10]]] if l2 else [])
+    gm = [[3, 14, 22], [12, 78, 92], [40, 170, 178], [190, 250, 244]]
+    out = {}
+    for name, (sc, aid, L), lines, pos, side in (("thumbnail.png", cands[0], lines_a, [330, 300], "left"),
+                                                 ("thumbnail_b.png", cands[min(1, len(cands) - 1)],
+                                                  [["PART", [255, 255, 255], 170, 520, [255, 120, 20]], [NUM_WORDS.get(num, str(num)), [255, 214, 40], 300, 700, [255, 120, 20]]], [330, 300], "left")):
+        fx, fy = (L.get("faces") or {}).get("naruto") or L.get("focus") or [0.5, 0.4]
+        out[name] = dict(layers=[
+            dict(kind="frame", id=aid, focus=[fx, fy], height=1.25, dst=[0.72, 0.5], blur=1.5, gmap=gm, dim=0.85, keep=0, keep_orange=1.0),
+            dict(kind="glow", color=[255, 110, 10], center=[0.72, 0.42], radius=0.36, gain=0.75),
+            dict(kind="rays", color=[255, 150, 30], center=[0.72, 0.4], gain=0.28, n=48, seed=3 + len(out)),
+            dict(kind="shade", side=side, extent=0.7, strength=0.55),
+            dict(kind="vignette", strength=0.5),
+            dict(kind="text", pos=pos, angle=-3, gap=-95, lines=lines)])
+    return out
+
+
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     global FRANCHISE
+    plan = "--plan" in argv
+    outdir = None
+    if "--out" in argv:
+        i = argv.index("--out")
+        outdir = Path(argv[i + 1])
+        argv = argv[:i] + argv[i + 2:]
+    argv = [a for a in argv if a != "--plan"]
     pid = argv[0] if argv else "bc-whatif-ep01"
     FRANCHISE = franchise_mod.id_for_project(pid)
     variants = VARIANTS
     if FRANCHISE != "black-clover":   # other franchises: copycat/projects/<id>/thumbnails.json = {name: variant spec}
         f = ROOT / "copycat/projects" / pid / "thumbnails.json"
         if not f.exists():
-            raise SystemExit(f"no thumbnail variants for {pid}: write {f} (same shape as VARIANTS)")
-        variants = {k: v for k, v in json.load(open(f)).items() if not k.startswith("_")}
+            variants = auto_variants(pid)
+            print(f"[thumbnail] no thumbnails.json for {pid}: automatic starter variants from the whitelist", file=sys.stderr)
+        else:
+            variants = {k: v for k, v in json.load(open(f)).items() if not k.startswith("_")}
         if not all("layers" in v for v in variants.values()):    # legacy two-still format
             variants = {k: {**v, **{kk: tuple(vv) for kk, vv in v.items() if isinstance(vv, list) and kk not in ("lines",)}} for k, v in variants.items()}
             for v in variants.values():
                 v["lines"] = [tuple(x) for x in v["lines"]]
-    outdir = ROOT / "releases/copycat" / pid
+    if plan:
+        for name, v in variants.items():
+            print(name, json.dumps(v)[:300])
+        return
+    outdir = outdir or ROOT / "releases/copycat" / pid
     outdir.mkdir(parents=True, exist_ok=True)
     only = argv[1:]
     for name, v in variants.items():

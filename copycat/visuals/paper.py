@@ -21,6 +21,8 @@ FONT_FILES = {
     "serif": "IMFeENrm28P.ttf",                    # SIL OFL - old-style serif for formal documents
     "anton": "Anton-Regular.ttf",
     "bebas": "BebasNeue-Regular.ttf",
+    "cinzel": "Cinzel-Bold.ttf",                   # SIL OFL - formal capitals (a neat, trained hand when slanted)
+    "cinzel_r": "Cinzel-Regular.ttf",
 }
 _FC = {}
 

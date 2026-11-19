@@ -66,7 +66,7 @@ P = dict(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR
          avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
          time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False,
          wl=None, wl_cfg=None, extra_inserts={}, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD,
-         grid_plan=[], gap_exempt=[], strict_reuse=False, lock_shots=None)
+         grid_plan=[], gap_exempt=[], strict_reuse=False, lock_shots=None, holds={})
 
 NARUTO_ALIASES = {
     "forbidden_scroll": ("document", "paperwork"), "paperwork": ("document", "letter", "book"), "document": ("paperwork", "letter", "book", "forbidden_scroll"),
@@ -110,7 +110,7 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
              avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
              time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False,
              wl=None, wl_cfg=None, extra_inserts={}, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD,
-             grid_plan=[], gap_exempt=[], strict_reuse=False, lock_shots=None)
+             grid_plan=[], gap_exempt=[], strict_reuse=False, lock_shots=None, holds={})
     if fr_id == "naruto":
         P.update(scarce={"kushina", "minato", "tobirama", "kurama", "danzo", "enma", "rin", "obito", "young_kakashi", "orochimaru", "jiraiya", "ibiki", "anko"},
                  young={"young_kakashi": "kakashi"}, atmos=set(), atmos2=set(), nonchar=NARUTO_NONCHAR, speaker_subjects=NARUTO_SPEAKERS,
@@ -154,7 +154,7 @@ def toks(s: str) -> set:
 
 
 def _ins(b):
-    return b.get("insert") or (P.get("extra_inserts") or {}).get(b["id"])
+    return (P.get("holds") or {}).get(b["id"]) or b.get("insert") or (P.get("extra_inserts") or {}).get(b["id"])
 
 
 # --------------------------------------------------------------------------- timeline
@@ -759,7 +759,7 @@ def pick_backgrounds(slots, assign, assets, overrides):
     for aid in assign.values():
         if aid:
             used[aid] = used.get(aid, 0) + 1
-    out, recent = {}, []
+    out, recent, held_bg = {}, [], {}
     real_at = {}
     for i, aid in assign.items():
         if aid:
@@ -770,38 +770,48 @@ def pick_backgrounds(slots, assign, assets, overrides):
         key = f"{sl['beat_id']}#{sl['cut_index']}"
         pin = overrides.get(key, {}).get("bg")
         if P["wl"] is not None:                              # whitelist mode: the backdrop is a hand-approved frame too
-            scs, tone = wl_mod.BG_SCENES[sl["insert"]["type"]]
+            scs, tone = wl_mod.bg_scenes(sl["insert"]["type"], sl["insert"], P.get("wl_cfg"))
+            hold = sl["insert"].get("hold")
+            if hold and hold in held_bg:                     # one held document keeps one backdrop across its beats
+                out[i] = held_bg[hold]
+                used[out[i]] = used.get(out[i], 0) + 1
+                continue
             best, bs = None, -1e9
-            for a in assets:
-                L = a["wl"]
-                if pin and a["id"] != pin:
-                    continue
-                if L["scene"] not in scs:
-                    continue
-                sc = -0.8 * scs.index(L["scene"]) + a.get("quality", 0.5)
-                if L["time"] == tone or (tone == "day" and L["time"] in ("interior", "dusk")) or L["time"] == "interior":
-                    sc += 1.0
-                elif tone == "night" and L["ok_as_night"]:
-                    sc += 0.3
-                else:
-                    sc -= 3.0
-                sc -= 1.0 * len(L["who"])
-                if not L["who"]:
-                    sc += 0.8
-                sc -= 1.3 * used.get(a["id"], 0)
-                if a["id"] in recent[-3:]:
-                    sc -= 4.0
-                if any(abs(j - i) < 6 for j in real_at.get(a["id"], ())):
-                    sc -= 2.5
-                if sc > bs:
-                    best, bs = a, sc
+            for pool in (scs, scs + [x for x in wl_mod.BG_TAIL if x not in scs]):
+                for a in assets:
+                    L = a["wl"]
+                    if pin and a["id"] != pin:
+                        continue
+                    if L["scene"] not in pool:
+                        continue
+                    sc = -0.8 * pool.index(L["scene"]) + a.get("quality", 0.5)
+                    if L["time"] == tone or (tone == "day" and L["time"] in ("interior", "dusk")) or L["time"] == "interior":
+                        sc += 1.0
+                    elif tone == "night" and L["ok_as_night"]:
+                        sc += 0.3
+                    else:
+                        sc -= 3.0
+                    sc -= 1.0 * len(L["who"])
+                    if not L["who"]:
+                        sc += 0.8
+                    sc -= 1.3 * used.get(a["id"], 0)
+                    if a["id"] in recent[-3:]:
+                        sc -= 4.0
+                    if any(abs(j - i) < 6 for j in real_at.get(a["id"], ())):
+                        sc -= 2.5
+                    if sc > bs:
+                        best, bs = a, sc
+                if best is not None:
+                    break
             if best is None:
                 best = max(assets, key=lambda a: -1.3 * used.get(a["id"], 0) + (1.0 if not a["wl"]["who"] else 0))
+            if hold:
+                held_bg[hold] = best["id"]
             out[i] = best["id"]
             used[best["id"]] = used.get(best["id"], 0) + 1
             recent.append(best["id"])
             continue
-        subs, tone = inserts.BG_SUBJECTS[sl["insert"]["type"]]
+        subs, tone = inserts.bg_subjects_for(sl["insert"]["type"])
         best, bs = None, -1e9
         for a in assets:
             tg = a["tags"]
@@ -851,16 +861,16 @@ def build_grid_shot(sid, sl, ov, by_id, rng_seed, used):
         raise ValueError("clone grids need whitelist mode")
     ctx = wl.ctx(sl["chapter"], sl["beat_id"])
     t = ctx.get("time")
-    tctx = "night" if t == "night" else ("lamp" if t == "lamp" else "day")
+    tctx = t if t in ("night", "lamp", "mist") else "day"
     bids = [b["id"] for b in sl.get("beats", [])] or [sl["beat_id"]]
     ok = lambda L: all(wl.only_ok(L, b) for b in bids)
     rng = random.Random(f"{rng_seed}:{sid}:{sl['beat_id']}:{sl['cut_index']}")
     D = sl["end"] - sl["start"]
     n, mode = sl["grid"]["n"], sl["grid"]["mode"]
     if mode == "mosaic":
-        pl = cg.plan_mosaic(tctx, wl.labels, ok, rng, used, D)
+        pl = cg.plan_mosaic(tctx, wl.labels, ok, rng, used, D, variants=wl.grid_variants())
     else:
-        pl = cg.plan(n, mode, tctx, wl.labels, ok, rng, used)
+        pl = cg.plan(n, mode, tctx, wl.labels, ok, rng, used, variants=wl.grid_variants())
     panels = pl["panels"]
     for p_ in panels:
         p_["path"] = by_id[p_["asset_id"]]["path"]
@@ -1110,6 +1120,8 @@ def run(pid, estimate=False, write=True):
     overrides = {k: v for k, v in ov_all.items() if not k.startswith("_")}
     cfg = project_config(proj, curation, ov_all)
     configure(fr["id"], script, cfg, pid)
+    from . import inserts as inserts_mod
+    P["holds"] = inserts_mod.resolve_holds(script, P.get("extra_inserts"))
     wl = None
     P["wl"] = None
     if P.get("wl_cfg") and (proj / "whitelist.json").exists():
@@ -1228,6 +1240,14 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
         if sc < WEAK_SCORE and n not in A.pinned and n not in getattr(A, "soft", ()):      # editorial pins / preferences are not 'weak'
             weak.append(dict(shot=sh["id"], beat=f"{sl['beat_id']}#{sl['cut_index']}", asset=aid, score=round(sc, 1),
                              want=sl["spec"].get("subjects")))
+        if P["wl"] is not None:                          # whitelist mode: judge by the approved labels, honouring stand-ins
+            sp_ = sl["beat"]["speaker"]
+            ks = set(P["wl"].speaker_who.get(sp_, []))
+            fb_ = P["wl"].fallback_for(sp_)
+            if sl["first"] and ks and sp_ != "NARRATOR" and not ((ks | set((fb_ or {}).get("who", []))) & set(by_id[aid]["wl"]["who"])) \
+                    and not (fb_ and fb_.get("allow_empty") and not by_id[aid]["wl"]["who"]):
+                spk.append(f"{sh['id']} {sl['beat_id']} speaker {sp_} not shown")
+            continue
         allowed = P["speaker_subjects"].get(sl["beat"]["speaker"])
         if sl["first"] and allowed and not (allowed & (set(by_id[aid]["tags"]["subjects"]) | {by_id[aid]["tags"].get("location")})):
             spk.append(f"{sh['id']} {sl['beat_id']} speaker {sl['beat']['speaker']} not shown")

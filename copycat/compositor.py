@@ -36,7 +36,7 @@ from .vfx import ACCENTS, Atmosphere, dissolve, flash, seed_of, smoothstep, whip
 
 cv2.setNumThreads(1)
 ROOT = Path(__file__).resolve().parent.parent
-CODE_FILES = ["compositor.py", "vfx.py", "cards.py", "fonts.py", "stamp.py", "inserts.py", "clone_grid.py", "visuals/paper.py"]
+CODE_FILES = ["compositor.py", "vfx.py", "cards.py", "fonts.py", "stamp.py", "inserts.py", "inserts_s1.py", "clone_grid.py", "visuals/paper.py"]
 
 SPEAKER_COLORS = {
     "ASTA": (46, 204, 113), "LIEBE": (222, 36, 52), "YUNO": (104, 190, 255),
@@ -1008,6 +1008,56 @@ def make_fixture():
     return fx
 
 
+def plan_project(pid, edit_path=None, crf=17, mux_out=False):
+    """`--plan`: validate everything a render needs (edit coverage, every asset / backdrop file, insert types, grid panels, the audio
+    master) and estimate the render time, without rendering or writing anything.  Uses an in-memory mapper dry run when the project
+    has no edit.json yet.  -> number of problems."""
+    from . import inserts as I
+    try:
+        p = find_edit(pid, edit_path)
+        edit, src = json.load(open(p)), str(p)
+    except FileNotFoundError:
+        from . import mapper
+        edit, src = mapper.run(pid, False, write=False)[0], "mapper dry run (in memory)"
+    apply_franchise(pid)
+    vault = load_vault_index(pid)
+    shots, fps = edit["shots"], edit.get("fps", 30)
+    problems, kinds, ins_types = [], {}, {}
+    t = 0.0
+    for s in shots:
+        if abs(s["start"] - t) > 1e-3:
+            problems.append(f"{s['id']}: gap/overlap at {t:.3f}s (starts {s['start']:.3f})")
+        t = s["end"]
+        kinds[s.get("type")] = kinds.get(s.get("type"), 0) + 1
+        try:
+            if s.get("type") != "card":
+                asset_abs(s, vault)
+            if s.get("type") == "clone_grid":
+                resolve_grid(s, vault)
+            if s.get("type") == "insert":
+                I.builder_for(s["insert"]["type"])
+                ins_types[s["insert"]["type"]] = ins_types.get(s["insert"]["type"], 0) + 1
+        except Exception as e:                                           # noqa: BLE001
+            problems.append(f"{s['id']}: {e}")
+    if abs(t - edit["duration"]) > 0.05:
+        problems.append(f"shots end at {t:.2f}s but the edit duration is {edit['duration']:.2f}s")
+    audio = ROOT / f"build/copycat/{pid}/audio/master.wav"
+    if not audio.exists():
+        problems.append(f"audio master missing: {audio}")
+    else:
+        ad = probe_duration(audio)
+        if abs(ad - edit["duration"]) > 0.5:
+            problems.append(f"audio {ad:.1f}s vs edit {edit['duration']:.1f}s")
+    frames = int(round(edit["duration"] * fps))
+    print(f"[compositor --plan] {pid}: edit from {src}")
+    print(f"  {len(shots)} shots {kinds}  inserts {ins_types}  {edit['duration']:.1f}s = {frames} frames @ {fps} fps")
+    print(f"  render: x264 crf {CRF[0]}, 4 workers ~ {frames / 30 / 0.55 / 60:.0f}-{frames / 30 / 0.3 / 60:.0f} min (0.3-0.55x realtime) | mux -> releases/copycat/{pid}/master.mp4")
+    print(f"  {len(problems)} problem(s)" + ("" if not problems else ":"))
+    for q in problems[:20]:
+        print("   -", q)
+    return len(problems)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="copycat.compositor")
     ap.add_argument("project_id")
@@ -1020,8 +1070,11 @@ def main(argv=None):
     ap.add_argument("--crf", type=int, default=17, help="x264 CRF of the picture segments (default 17)")
     ap.add_argument("--no-captions", action="store_true", help="render without burned-in captions (cached separately)")
     ap.add_argument("--make-fixture", action="store_true")
+    ap.add_argument("--plan", action="store_true", help="validate the edit + files and estimate the render; render nothing, write nothing")
     a = ap.parse_args(argv)
     CRF[0] = int(a.crf)
+    if a.plan:
+        return 1 if plan_project(a.project_id, a.edit, a.crf, a.mux) else 0
     if a.make_fixture:
         make_fixture()
     picture, speed, edit, ok = render_project(a.project_id, a.edit, a.preview,

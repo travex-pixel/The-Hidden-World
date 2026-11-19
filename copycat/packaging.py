@@ -77,6 +77,57 @@ def disclaimer_for(pid: str) -> str:
             "and the voices are AI-generated. Please support the official release.")
 
 
+NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six"}
+
+
+def split_title(title: str) -> tuple[str, int | None, str]:
+    """'What If X? — Part 2: The Question' -> ('What If X?', 2, 'The Question')."""
+    import re
+    m = re.match(r"^(.*?)\s*[\u2014-]+\s*Part\s*(\d+)\s*(?::\s*(.+))?$", title.strip())
+    if not m:
+        return title.strip(), None, ""
+    return m.group(1).strip(), int(m.group(2)), (m.group(3) or "").strip()
+
+
+def derive_spec(pid: str, script: dict) -> dict:
+    """Packaging copy for a project with no packaging_copy.json: everything comes from script.json (title, part, chapter titles)
+    and the franchise config.  Titles, chapter list (from timing.json) and the description skeleton are real; the hook / pinned
+    comment are neutral and meant to be hand-edited into copycat/projects/<id>/packaging_copy.json before upload."""
+    from . import franchise as fr
+    f = fr.for_project(pid)
+    series, part, sub = split_title(script["title"])
+    part = part or int(script.get("part", 1))
+    fname = f["title"]
+    cs = [c for c in script["chapters"] if c.get("title")]
+    ch_titles = ", ".join(c["title"].title() for c in cs)
+    t1 = script["title"] if len(script["title"]) <= MAX_TITLE else f"{series} — Part {part}"[:MAX_TITLE]
+    alts = [f"{series} | Part {part}: {sub}" if sub else f"{series} | Part {part}",
+            f"{sub or series} | {fname} What If, Part {part}"]
+    titles = [t1] + [a[:MAX_TITLE] for a in alts]
+    base_tags = [series.lower().rstrip("?"), f"{fname.lower()} what if", f"{fname.lower()} audio drama", f"{fname.lower()} alternate timeline",
+                 f"{fname.lower()} fan story", f"{fname.lower()} part {part}", "anime what if", "full cast audio drama"]
+    if sub:
+        base_tags.append(f"{fname.lower()} {sub.lower()}")
+    tags = list(dict.fromkeys(base_tags))
+    return dict(
+        titles=titles,
+        hook=f"{series} Part {part}" + (f": {sub}." if sub else "."),
+        covers=f"A full-cast {fname} What-If audio drama (AI voices). Part {part} of 4" + (f" covers: {ch_titles}." if ch_titles else "."),
+        part_line=f"This is Part {part} of 4. Subscribe and turn on notifications so you do not miss the rest.",
+        spoiler_note="SPOILER NOTE: this retelling spoils canon events of the series; if you have not finished the original anime, expect spoilers.",
+        tags=tags, hashtags=[f"#{fname}", "#WhatIf", "#AudioDrama"],
+        pinned_comment=f"What would YOU change in Part {part}? Best answers get read in the next episode.",
+        category="Film & Animation",
+        upload_checklist=[f"Title: use title #1 exactly; titles 2-3 are alternates for A/B tests.",
+                          "Description: paste from youtube_metadata.json; the chapter list starts at 0:00.",
+                          "Thumbnail: upload thumbnail.png and set up Test & Compare with thumbnail_b.png.",
+                          "Altered or synthetic content: tick YES (AI-generated voices).",
+                          "Audience: select 'No, it's not made for kids'. Category: Film & Animation.",
+                          "Captions: upload captions.srt (language: English).",
+                          "Pinned comment: post and pin it after publishing.",
+                          "Edit copycat/projects/<id>/packaging_copy.json (hook, covers, tags, pinned comment) before the final run."])
+
+
 def build_from_spec(pid: str, spec: dict, script: dict, timing: dict | None) -> dict:
     chapters, have_ts = chapter_lines(timing)
     desc = [spec["hook"], "", spec["covers"], "", "CHAPTERS", *chapters, "", spec["part_line"], "",
@@ -95,6 +146,10 @@ def build(pid: str) -> dict:
     tpath = ROOT / "build/copycat" / pid / "audio/timing.json"
     timing = json.load(open(tpath)) if tpath.exists() else None
     spec = _copy_spec(pid)
+    if spec is None:
+        from . import franchise as fr
+        if fr.id_for_project(pid) != fr.DEFAULT:          # any non-Black-Clover project: derive the copy from its script
+            spec = derive_spec(pid, script)
     if spec:
         return build_from_spec(pid, spec, script, timing)
     chapters, have_ts = chapter_lines(timing)
@@ -142,9 +197,19 @@ def render_md(p: dict) -> str:
 
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
+    dry = "--dry-run" in argv
+    outdir = None
+    if "--out" in argv:
+        i = argv.index("--out")
+        outdir = Path(argv[i + 1])
+        argv = argv[:i] + argv[i + 2:]
+    argv = [a for a in argv if a != "--dry-run"]
     pid = argv[0] if argv else "bc-whatif-ep01"
     p = build(pid)
-    out = ROOT / "releases/copycat" / pid
+    if dry:                                                 # print only: nothing is written (use before the release folder exists)
+        print(render_md(p))
+        return
+    out = outdir or ROOT / "releases/copycat" / pid
     out.mkdir(parents=True, exist_ok=True)
     (out / "packaging.json").write_text(json.dumps(p, indent=2, ensure_ascii=False))
     (out / "packaging.md").write_text(render_md(p))

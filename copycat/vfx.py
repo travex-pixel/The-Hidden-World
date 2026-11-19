@@ -372,7 +372,24 @@ def lamp_grade(rgb: np.ndarray) -> np.ndarray:
     return np.clip(x * 255.0, 0, 255).astype(np.uint8)
 
 
-GRADES = {"night": night_grade, "interior_lamp": lamp_grade}
+def mist_grade(rgb: np.ndarray) -> np.ndarray:
+    """Morning mist over water (Episode 3 boat / bridge scenes): heavily desaturated, cool grey-green haze that lifts the blacks
+    and flattens contrast, with a soft bloom so highlights glow into the fog instead of clipping."""
+    x = rgb.astype(np.float32) / 255.0
+    L = _lum(x)
+    x = L + (x - L) * 0.42                                         # desaturate
+    x = x * np.array([0.90, 1.02, 0.98], np.float32)               # grey-green cast
+    x = 0.12 + x * 0.80                                            # haze: blacks lifted, contrast flattened
+    x = x + np.array([0.020, 0.040, 0.034], np.float32) * (1.0 - x) ** 1.5      # cool green-grey blacks
+    hi = np.clip(_lum(x)[..., 0] - 0.45, 0, 1)
+    sig = max(2.0, rgb.shape[1] * 0.018)
+    bloom = cv2.GaussianBlur(hi, (0, 0), sig)[..., None]
+    x = x + bloom * np.array([0.30, 0.38, 0.36], np.float32)       # soft cool bloom
+    x = x * 0.94 + 0.04 * cv2.GaussianBlur(x, (0, 0), sig * 0.7)   # a touch of diffusion
+    return np.clip(x * 255.0, 0, 255).astype(np.uint8)
+
+
+GRADES = {"night": night_grade, "interior_lamp": lamp_grade, "mist": mist_grade}
 _GV = {}
 
 
@@ -382,10 +399,10 @@ def grade_vignette(W, H, name):
     if key in _GV:
         return _GV[key]
     yy, xx = np.mgrid[0:H // 4, 0:W // 4].astype(np.float32)
-    cx, cy = (0.5, 0.45) if name == "night" else (0.5, 0.40)
+    cx, cy = (0.5, 0.45) if name in ("night", "mist") else (0.5, 0.40)
     nx, ny = (xx / (W / 4) - cx) * 2, (yy / (H / 4) - cy) * 2
     d = np.clip(np.sqrt(nx ** 2 + (ny * 1.1) ** 2) / math.sqrt(2), 0, 1)
-    k = 0.46 if name == "night" else 0.40
+    k = {"night": 0.46, "mist": 0.30}.get(name, 0.40)
     m = 1 - k * d ** 1.9
     m = cv2.resize(m, (W, H), interpolation=cv2.INTER_CUBIC)
     m8 = np.clip(m * 255, 0, 255).astype(np.uint8)

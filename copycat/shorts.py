@@ -473,7 +473,64 @@ DEFAULT_COLORS = {"NARRATOR": (255, 255, 255)}
 
 def load_spec(pid, path=None):
     f = Path(path) if path else ROOT / "copycat/projects" / pid / "shorts.json"
-    return json.load(open(f)) if f.exists() else None
+    if f.exists():
+        return json.load(open(f))
+    return auto_spec(pid) if not path else None
+
+
+def auto_spec(pid):
+    """Starter shorts for a project with no shorts.json (non-Black-Clover only): up to three non-overlapping windows of whole beats from
+    the live audio timing, 42-54 s of picture each, chosen by dialogue density (speaker changes, distinct voices, insert beats) in
+    different chapters; the cold open comes first when it is long enough.  Titles come from the chapter titles.  Hand-pick the real
+    shorts into copycat/projects/<id>/shorts.json once the episode is cut."""
+    from . import franchise as fr
+    if fr.id_for_project(pid) == fr.DEFAULT:
+        return None
+    tp = ROOT / "build/copycat" / pid / "audio/timing.json"
+    sp = ROOT / "copycat/projects" / pid / "script.json"
+    if not (tp.exists() and sp.exists()):
+        return None
+    timing, script = json.load(open(tp)), json.load(open(sp))
+    f = fr.for_project(pid)
+    beats = sorted(timing["beats"], key=lambda b: b["start"])
+    ins = {b["id"] for ch in script["chapters"] for b in ch["beats"] if b.get("insert")}
+    chap_title = {ch["id"]: (ch.get("title") or "COLD OPEN") for ch in script["chapters"]}
+    part = int(script.get("part", 1))
+
+    def span(i, j):
+        return beats[j]["end"] - beats[i]["start"]
+    cands = []
+    for i in range(len(beats)):
+        for j in range(i, len(beats)):
+            d = span(i, j) + PRE + POST + ENDCARD
+            if d > 54.0:
+                break
+            if d < 42.0:
+                continue
+            seg = beats[i:j + 1]
+            sc = (sum(1 for x, y in zip(seg, seg[1:]) if x["speaker"] != y["speaker"]) + 1.5 * len({b["speaker"] for b in seg} - {"NARRATOR"})
+                  + 2.0 * sum(1 for b in seg if b["id"] in ins) - 0.6 * sum(1 for b in seg if b["speaker"] == "NARRATOR"))
+            cands.append((sc, i, j))
+    chosen, used = [], []
+    first = next((c for c in cands if c[1] == 0), None)
+    if first:
+        chosen.append(first)
+        used.append((first[1], first[2]))
+    for sc, i, j in sorted(cands, reverse=True):
+        if len(chosen) >= 3:
+            break
+        if any(not (j < a - 1 or i > b + 1) for a, b in used) or any(beats[i]["chapter"] == beats[a]["chapter"] for a, _ in used):
+            continue
+        chosen.append((sc, i, j))
+        used.append((i, j))
+    chosen.sort(key=lambda c: c[1])
+    shorts = []
+    for sc, i, j in chosen:
+        ct = chap_title.get(beats[i]["chapter"]) or "COLD OPEN"
+        shorts.append(dict(name=f"{beats[i]['chapter']}_{beats[i]['id']}", title=[ct.upper()[:22], f"PART {part}"], ranges=[[beats[i]["id"], beats[j]["id"]]]))
+    cols = {k.upper(): tuple(int(v.lstrip("#")[n:n + 2], 16) for n in (0, 2, 4)) for k, v in (f.get("speaker_colours") or {}).items()}
+    return dict(accent=[255, 138, 20], speaker_colors=cols, end_card=dict(big=["FULL EPISODE", "ON THE CHANNEL", f"PART {part}"], lines=script.get("shorts_end_line") or [f"WHAT IF {f['title'].upper()}?"]),
+                shorts=shorts, auto=True)
 
 
 def plan_short(beats, spec, endcard=ENDCARD):

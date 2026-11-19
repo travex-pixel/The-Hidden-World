@@ -75,7 +75,7 @@ def insert_cell(s, w=CW, h=CH):
         from . import inserts
         from .compositor import make_vignette
         bg = ROOT / s["bg_path"]
-        code = "".join(str((ROOT / "copycat" / f).stat().st_mtime_ns) for f in ("inserts.py", "visuals/paper.py"))
+        code = "".join(str((ROOT / "copycat" / f).stat().st_mtime_ns) for f in ("inserts.py", "inserts_s1.py", "visuals/paper.py"))
         key = hashlib.sha1((json.dumps([s["insert"], s["start"], s["end"], s["bg_path"], w, h], sort_keys=True) + code).encode()).hexdigest()[:16]
         cache = ROOT / "build/copycat/_insert_thumbs"
         cache.mkdir(parents=True, exist_ok=True)
@@ -132,10 +132,15 @@ def main(argv=None):
     ap.add_argument("--per", type=int, default=12)
     a = ap.parse_args(argv)
     proj = ROOT / "copycat/projects" / a.project
-    edit = json.loads((proj / "edit.json").read_text())
     script = json.loads((proj / "script.json").read_text())
     rep_p = ROOT / "build/copycat" / a.project / "mapper_report.json"
     rep = json.loads(rep_p.read_text()) if rep_p.exists() else {}
+    if (proj / "edit.json").exists():
+        edit = json.loads((proj / "edit.json").read_text())
+    else:                                              # before the first real mapper run: review the in-memory dry run
+        from . import mapper
+        edit, rep = mapper.run(a.project, False, write=False)
+        print(f"[storyboard] no edit.json for {a.project}: using the mapper dry run (nothing written under copycat/)", file=sys.stderr)
     weak = {w["shot"] for w in rep.get("weak_matches", [])}
     unm = {u["shot"] for u in rep.get("unmatched_cuts", [])}
     texts = {b["id"]: b["text"] for c in script["chapters"] for b in c["beats"]}

@@ -397,13 +397,70 @@ def run(pid, video=None, edit_path=None, vault_path=None):
     return rep
 
 
+def plan(pid, edit_path=None, vault_path=None):
+    """`--plan`: the picture-plan gates of the QA (provenance, whitelist, repetition, crops, insert types, timing) on the edit alone -
+    no video needed, nothing written under releases/.  Uses an in-memory mapper dry run when the project has no edit.json yet."""
+    from . import inserts as I
+    try:
+        edit_p = Path(edit_path) if edit_path else next(p for p in (ROOT / f"copycat/projects/{pid}/edit.json", ROOT / f"build/copycat/{pid}/edit.json") if p.exists())
+        edit, src = json.load(open(edit_p)), str(edit_p)
+    except StopIteration:
+        from . import mapper
+        edit, src = mapper.run(pid, False, write=False)[0], "mapper dry run (in memory)"
+    fr_id = franchise_mod.id_for_project(pid)
+    vault_p = Path(vault_path) if vault_path else next(
+        (p for p in (ROOT / franchise_mod.load(fr_id)["vault_dir"] / "vault.json", ROOT / f"build/copycat/{pid}/vault.json") if p.exists()), None)
+    vault = load_json(vault_p) if vault_p else None
+    wl_p = ROOT / f"copycat/projects/{pid}/whitelist.json"
+    wl = {k for k in (load_json(wl_p) or {}) if not k.startswith("_")} if wl_p.exists() else None
+    ovr = load_json(ROOT / f"copycat/projects/{pid}/shot_overrides.json") or {}
+    cfgq = ovr.get("_config", {}) if wl is not None else {}
+    cap = int((cfgq.get("wl") or {}).get("reuse_cap", 4)) if wl is not None else None
+    P = provenance(edit, vault, fr_id, wl, int(cfgq.get("lock_shots") or 8), cap, float(cfgq.get("lock_seconds", 45)) if wl is not None else 45.0)
+    gates = []
+
+    def gate(name, ok, val, hard=True):
+        gates.append(dict(name=name, ok=bool(ok), value=val, hard=hard))
+    gate("off-domain assets == 0", P["off_domain_assets"] == 0, P["off_domain_assets"])
+    gate("non-card shots without asset == 0", P["shots_without_asset"] == 0, P["shots_without_asset"])
+    gate("all shot assets resolve in vault", not P["shots_with_asset_missing_from_vault"], P["shots_with_asset_missing_from_vault"][:8])
+    gate("anti-repetition", P["anti_repetition_violations"] == 0, P["anti_repetition_violations"])
+    if P["whitelist_checked"]:
+        gate("0 non-whitelisted stills / panels / insert backdrops", not P["non_whitelisted"], P["non_whitelisted"][:8])
+        gate("no real asset used more than the reuse cap", not P["assets_over_cap"], f"max {P['max_uses_of_one_asset']}")
+        gate("never the same crop twice", P["repeated_crops"] == 0, P["repeated_crops"])
+    bad = []
+    for s_ in edit["shots"]:
+        if s_.get("type") == "insert":
+            try:
+                I.builder_for(s_["insert"]["type"])
+            except Exception:                                  # noqa: BLE001
+                bad.append(f"{s_['id']}:{s_['insert']['type']}")
+    gate("all insert types known", not bad, bad[:8])
+    tp = ROOT / f"build/copycat/{pid}/audio/timing.json"
+    if tp.exists():
+        td = json.load(open(tp))["duration"]
+        gate("edit duration == audio timing duration (+-0.05 s)", abs(td - edit["duration"]) <= 0.05, round(edit["duration"] - td, 3))
+    gate("max shot length <= 12 s (info)", P["max_shot_s"] <= 12, P["max_shot_s"], hard=False)
+    gate("provenance split (info)", True, {k: v for k, v in P["runtime_share"].items() if v}, hard=False)
+    print(f"[qa_verify --plan] {pid}: edit from {src}")
+    for g in gates:
+        print(f"{g['name']:56} {'PASS' if g['ok'] else ('FAIL' if g['hard'] else 'WARN'):6} {g['value']}")
+    ok = all(g["ok"] for g in gates if g["hard"])
+    print("PLAN OVERALL:", "PASS" if ok else "FAIL", f"| avg cut {P['avg_cut_s']}s | shots {P['shots']} (cards {P['cards']})")
+    return ok
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="copycat.qa_verify")
     ap.add_argument("project_id")
     ap.add_argument("--video")
     ap.add_argument("--edit")
     ap.add_argument("--vault")
+    ap.add_argument("--plan", action="store_true", help="picture-plan gates on the edit only (no video, nothing written)")
     a = ap.parse_args(argv)
+    if a.plan:
+        return 0 if plan(a.project_id, a.edit, a.vault) else 1
     rep = run(a.project_id, a.video, a.edit, a.vault)
     return 0 if rep["pass"] else 1
 
