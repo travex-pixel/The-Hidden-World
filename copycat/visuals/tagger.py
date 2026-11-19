@@ -43,7 +43,7 @@ ALIASES = {
     "exam_arena": [r"\bexam", r"arena", r"selection", r"venue", r"stadium", r"colosseum", r"battle royale"],
     "black_bulls_hideout": [r"hideout", r"headquarters", r"black bull hq", r"\bbase\b", r"\bhq\b"],
     "dungeon": [r"dungeon"],
-    "mindscape": [r"mindscape", r"\bmind\b", r"\bdream\b"],
+    "mindscape": [r"mindscape", r"\bmind\b", r"\bdream\b", r"inner world", r"contract", r"limbo", r"bargains", r"devil.?binding", r"summoned from", r"unbottle"],
     "night_sky": [r"night sky", r"\bstars\b", r"\bmoon\b"],
 }
 BLACK = [r"united with", r"black divider", r"black meteorite", r"black hurricane", r"infinite slash", r"black.*(form|slash|asta)", r"black asta", r"black form", r"devil union", r"demon form", r"true unite", r"\bunite\b", r"devil.?union", r"demon.?union"]

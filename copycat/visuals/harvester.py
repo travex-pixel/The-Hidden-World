@@ -28,9 +28,9 @@ DOMAIN = "anime_black_clover"
 MANGA_SUBJECTS = {"liebe", "licita", "five_leaf_grimoire", "lucius", "asta_black_form"}
 MANDATORY = ["asta_young", "yuno_young", "liebe", "licita", "five_leaf_grimoire", "grimoire_tower", "hage_village", "hage_church",
              "demon_skull", "revchi", "yami", "julius", "william_vangeance", "exam_arena", "asta_black_form", "yuno", "asta"]
-SCARCE = {"liebe", "asta_young", "yuno_young", "hage_church", "licita", "demon_skull", "hage_village", "revchi", "five_leaf_grimoire"}  # lowres (>=480px) tolerated, flagged
-MAX_VAULT = 165
-CAPS = {"asta": 36, "yuno": 18, "default": 10}
+SCARCE = {"sister_lily", "father_orsi", "grimoire_tower", "hage_church", "crowd", "night_sky", "mindscape", "liebe", "asta_young", "yuno_young", "hage_church", "licita", "demon_skull", "hage_village", "revchi", "five_leaf_grimoire"}  # lowres (>=480px) tolerated, flagged
+MAX_VAULT = 300
+CAPS = {"asta": 60, "yuno": 28, "default": 24}
 EXTRA_CATS = ["Licita", "Lucifero", "Lucius Zogratis", "Dante Zogratis", "Zenon Zogratis", "Orsi Orfai", "Lily Aquaria", "Patolli", "Licht"]
 ENTITY_PAGES = ["Asta", "Yuno", "Liebe", "Licita", "Black Asta", "Five-leaf Clover Grimoire", "Four-leaf Clover Grimoire", "Demon-Slayer Sword", "Anti Magic",
                 "Hage Village", "Orsi Orfai", "Lily Aquaria", "Revchi Salik", "Yami Sukehiro", "Noelle Silva", "Magna Swing", "Luck Voltia",
@@ -160,8 +160,13 @@ def classify(rec):
     return None
 
 
+def early(rec):
+    m = re.search(r"Images of Episode (\d+)", " ".join(rec["cats"]))
+    return bool(m and int(m.group(1)) <= 3) or bool(re.search(r"flashback|child|baby|infant|church|orphan|hage|pendant|promise|nash|recca|potato|lily|orsi|young|contract|liebe|richita|licita", rec["title"], re.I) and re.search(r"Images of Episode (\d+)", " ".join(rec["cats"])))
+
+
 def score(rec, tags):
-    s = 0
+    s = 10 if early(rec) else 0
     m = re.search(r"Images of Episode (\d+)", " ".join(rec["cats"]))
     if m and int(m.group(1)) <= 13: s += 3
     s += 2 * len([x for x in tags["subjects"] if x in MANDATORY]) + (1 if tags["subjects"] else 0)
@@ -188,7 +193,7 @@ def fetch_and_register(rec, kind, reg, source="fandom"):
         img = imgutil.open_image(download(rec["url"]))
     except Exception as ex:
         e.update(status="rejected", reason=f"download:{type(ex).__name__}"); reg[key] = e; return e
-    reason = imgutil.check(img, manga=kind == "manga_panel", min_w=480 if rec.get("lowres_ok") else 800)
+    reason = imgutil.check(img, manga=kind == "manga_panel", min_w=640 if rec.get("lowres_ok") else 800)
     if reason:
         e.update(status="rejected", reason=reason); reg[key] = e; return e
     nid = "bc_%04d" % (1 + max([int(v["id"][3:]) for v in reg.values() if v.get("id")] or [0]))
@@ -284,7 +289,7 @@ def main(argv=None):
             t = tagger.derive(rec["page"], rec["title"], rec["caption"], rec["cats"], kind, rec["w"], rec["h"])
             if kind == "manga_panel":
                 if not set(t["subjects"]) & MANGA_SUBJECTS or min(rec["w"], rec["h"]) < 600: continue
-            elif rec["w"] < 800 and not (rec["w"] >= 480 and set(t["subjects"]) & SCARCE and t["subjects"]): continue
+            elif rec["w"] < 800 and not (rec["w"] >= 640 and (early(rec) or set(t["subjects"]) & SCARCE)): continue
             ranked.append((score(rec, t), kind, rec))
         ranked.sort(key=lambda x: -x[0])
         have = lambda k: sum(1 for e in reg.values() if e.get("status") == "ok" and e["kind"] == k)
@@ -293,7 +298,7 @@ def main(argv=None):
             if rec["title"] in reg: continue
             if kind != "manga_panel" and have("anime_still") + have("key_art") >= a.max: continue
             if kind == "manga_panel" and have("manga_panel") >= 20: continue
-            if sc < 0: continue
+            if sc < 0 and not early(rec): continue
             rec["lowres_ok"] = rec["w"] < 800
             e = fetch_and_register(rec, kind, reg)
             log(f"{e['status']:8s} {e.get('id', e.get('reason')):12s} {rec['title']}")
