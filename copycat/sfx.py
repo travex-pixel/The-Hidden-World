@@ -323,15 +323,29 @@ def card_boom(dur: float = 3.6, seed: int = 12) -> np.ndarray:
     return fade(add_reverb(y, 3.0, -9, 0, 10, 2500, 12, tail=False, dark=1.0), 0, 1.2)
 
 
+def stamp_thunk(dur: float = 0.32, seed: int = 21) -> np.ndarray:
+    """Rubber-stamp CANON thunk (<= 350 ms): low thud + paper slap + tiny ink squelch. Dry, no reverb tail."""
+    t = tt(dur)
+    f = 46 + 70 * np.exp(-t / 0.035)
+    thud = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.09)
+    slap = bp(mono_noise(dur, seed), 1400, 5200) * np.exp(-np.maximum(t - 0.008, 0) / 0.022) * (t >= 0.008)
+    sq = bp(mono_noise(dur, seed + 1), 350, 1100)
+    env = np.exp(-np.maximum(t - 0.045, 0) / 0.05) * (t >= 0.045) * (0.5 + 0.5 * np.sin(2 * np.pi * 38 * (t - 0.045)).clip(-1, 1) ** 2)
+    y = (thud * 1.0 + slap * 0.55 + sq * env * 0.22).astype(np.float32)
+    y[:48] *= np.linspace(0, 1, 48)
+    y = fade(y, 0, 0.04)
+    return haas(y, 3)
+
+
 EFFECTS = {
     "whoosh": whoosh, "page_flutter": page_flutter, "anti_magic_hum": anti_magic_hum, "sword_ring": sword_ring,
     "bass_drop": bass_drop, "chain_rattle": chain_rattle, "wind": wind, "heartbeat": heartbeat, "bell": bell,
-    "crowd_murmur": crowd_murmur, "riser": riser, "card_boom": card_boom,
+    "crowd_murmur": crowd_murmur, "riser": riser, "card_boom": card_boom, "stamp_thunk": stamp_thunk,
 }
 BEDS = {"wind", "crowd_murmur", "anti_magic_hum", "heartbeat"}
 # peak level relative to the loudest speech peak, dB
 REL_DB = {"whoosh": -12, "page_flutter": -14, "sword_ring": -12, "bass_drop": -10, "chain_rattle": -14, "bell": -13,
-          "riser": -15, "card_boom": -7, "wind": -16, "crowd_murmur": -16, "anti_magic_hum": -17, "heartbeat": -16}
+          "riser": -15, "card_boom": -7, "stamp_thunk": -6, "wind": -16, "crowd_murmur": -16, "anti_magic_hum": -17, "heartbeat": -16}
 RISER_DUR = 2.6
 WHOOSH_LEAD = 0.35  # seconds of whoosh before the beat start so its peak lands on the beat
 
@@ -347,7 +361,7 @@ def render(name: str, dur: float | None = None, seed: int = 0) -> np.ndarray:
     return normalise_peak(fn(**kw))
 
 
-def plan_events(beats: list[dict], card_starts: list[float]) -> list[dict]:
+def plan_events(beats: list[dict], card_starts: list[float], stamp_offset: float = 0.25) -> list[dict]:
     """Turn beat sfx cues into placed events [{name,start,dur,rel_db,kind}] (start may be < 0 -> clamp later).
 
     beats: [{start,end,sfx:[...]}] (seconds). Beds in consecutive beats are merged into one bed.
@@ -375,6 +389,9 @@ def plan_events(beats: list[dict], card_starts: list[float]) -> list[dict]:
                 ev.append({"name": nm, "start": b["start"] - WHOOSH_LEAD, "dur": None})
             else:
                 ev.append({"name": nm, "start": b["start"], "dur": None})
+    for b in beats:                       # CANON stamp: rubber-stamp thunk a beat after the line starts
+        if b.get("stamp"):
+            ev.append({"name": "stamp_thunk", "start": b["start"] + stamp_offset, "dur": None})
     for c in card_starts:
         ev.append({"name": "card_boom", "start": c, "dur": None})
     for e in ev:

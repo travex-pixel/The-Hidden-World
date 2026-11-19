@@ -3,7 +3,8 @@
     render_score(sections, total_s, seed) -> (n, 2) float32 stereo @ 48 kHz, RMS-normalised to ~ -26 dBFS
 
 sections = [{"cue": "tension_pulse", "start": 0.0, "end": 41.2}, ...]  (contiguous; times in seconds).
-Cues: tension_pulse, pastoral_melancholy, dark_mystery, rising_heroic, ominous_grand.
+Cues: tension_pulse, pastoral_melancholy, dark_mystery, rising_heroic, ominous_grand; Naruto palette: clone_comedy,
+iruka_warm, archive_hushed, bell_test_taut, kurama_cavernous.
 Layers: low saw/triangle drones, slow detuned pads (low-passed, slow attack), felt-piano/koto plucks on chord
 tones, taiko/sub hits on bar lines, formant "choir" pad for the grand cue, long dark reverb.
 Neighbouring cues are crossfaded (equal power, XFADE_S) around each section boundary.
@@ -26,6 +27,7 @@ def hz(m: float) -> float:
 CHORDS = {  # root-position triads/extended, as semitone offsets from root midi
     "Dm": ("D", [0, 7, 12, 15, 19]), "Bb": ("Bb", [0, 7, 12, 14, 19]), "Gm": ("G", [0, 7, 12, 15, 19]),
     "A": ("A", [0, 7, 12, 16, 19]), "F": ("F", [0, 7, 12, 16, 19]), "C": ("C", [0, 7, 12, 16, 19]),
+    "G": ("G", [0, 7, 12, 16, 19]),
     "Am": ("A", [0, 7, 12, 15, 19]), "Dm9": ("D", [0, 7, 12, 14, 17]), "Eb": ("Eb", [0, 7, 12, 16, 19]),
 }
 
@@ -36,6 +38,14 @@ CUES = {
     "rising_heroic":       {"bpm": 96, "prog": [("Bb", 2), ("F", 2), ("Gm", 2), ("Dm", 2)], "oct": 2, "drone": 0.5, "pad": 0.9, "pluck": 0.55, "pluck_pat": "arp8", "hit": ("taiko", [0, 2], 0.8), "choir": 0.35, "bright": 2600, "ramp": 0.55},
     "ominous_grand":       {"bpm": 54, "prog": [("Dm", 2), ("Bb", 2), ("Gm", 2), ("A", 2)], "oct": 1, "drone": 1.0, "pad": 0.8, "pluck": 0.2, "pluck_pat": "sparse", "hit": ("taiko", [0], 1.0), "choir": 1.0, "bright": 1800, "ramp": 0.25},
 }
+# Naruto series palette (playful clone comedy, warm Iruka, hushed archive, taut bell test, cavernous Kurama).
+CUES.update({
+    "clone_comedy":      {"bpm": 112, "prog": [("C", 2), ("Am", 2), ("F", 2), ("G", 2)], "oct": 2, "drone": 0.1, "pad": 0.35, "pluck": 1.0, "pluck_pat": "swing", "hit": None, "choir": 0.0, "bright": 3200, "ramp": 0.0},
+    "iruka_warm":        {"bpm": 70, "prog": [("F", 2), ("C", 2), ("Dm", 2), ("Bb", 2)], "oct": 2, "drone": 0.2, "pad": 0.95, "pluck": 0.65, "pluck_pat": "arp", "hit": None, "choir": 0.0, "bright": 2400, "ramp": 0.0},
+    "archive_hushed":    {"bpm": 50, "prog": [("Dm", 2), ("Gm", 2), ("Dm", 2), ("A", 2)], "oct": 1, "drone": 0.6, "pad": 0.3, "pluck": 0.3, "pluck_pat": "sparse", "hit": ("sub", [0], 0.3), "choir": 0.0, "bright": 800, "ramp": 0.0},
+    "bell_test_taut":    {"bpm": 120, "prog": [("Dm", 1), ("Dm", 1), ("Bb", 1), ("A", 1)], "oct": 2, "drone": 0.8, "pad": 0.4, "pluck": 0.5, "pluck_pat": "arp8", "hit": ("taiko", [0, 2], 0.7), "choir": 0.0, "bright": 1800, "ramp": 0.5},
+    "kurama_cavernous":  {"bpm": 44, "prog": [("Dm", 4), ("Eb", 2), ("Dm", 4)], "oct": 1, "drone": 1.3, "pad": 0.7, "pluck": 0.0, "pluck_pat": "sparse", "hit": ("sub", [0], 1.2), "choir": 0.8, "bright": 700, "ramp": 0.0, "rev": 7.5},
+})
 ALIASES = {"tense": "tension_pulse", "mystery": "dark_mystery", "heroic": "rising_heroic", "grand": "ominous_grand", "pastoral": "pastoral_melancholy"}
 
 
@@ -185,13 +195,14 @@ def render_cue(cue: str, dur: float, seed: int = 0) -> np.ndarray:
         tones = [rm + 24 + o for o in (offs[0], offs[2], offs[3], offs[1], offs[4])]  # chord tones, upper register
         if c["pluck"] > 0:
             koto = pat == "koto"
-            if pat in ("arp", "arp8"):
-                step = spb * (0.5 if pat == "arp8" else 1.0)
+            if pat in ("arp", "arp8", "swing"):
+                step = spb * (0.5 if pat in ("arp8", "swing") else 1.0)
                 k, tt = 0, t0 + step
                 order = [0, 2, 1, 3, 2, 4, 3, 1]
                 while tt < t0 + cdur - 0.1:
                     v = 0.18 * c["pluck"] * (0.7 + 0.3 * rng.random())
-                    _place(send, _pluck(tones[order[k % len(order)]], v, rng, koto), tt)
+                    at = tt + (0.16 * spb if pat == "swing" and k % 2 else 0.0)     # shuffle: off-beats pushed late
+                    _place(send, _pluck(tones[order[k % len(order)]], v, rng, koto), at)
                     k += 1; tt += step
             else:
                 # sparse: 2-3 plucked tones per chord at irregular beats, rests between
@@ -213,7 +224,7 @@ def render_cue(cue: str, dur: float, seed: int = 0) -> np.ndarray:
                 if kind == "sub":   # tension: ghost pulse on beat 3
                     at = t0 + b * bar + 2.5 * spb
                     if at < dur + 0.5: _place(dry, _hit("sub", 0.14 * vel, rng), at)
-    wet = D.add_reverb(send, decay_s=4.0, wet_db=-5, dry_db=-2, predelay_ms=25, damp_hz=4200, seed=seed + 3, send_hp=120, dark=1.0)
+    wet = D.add_reverb(send, decay_s=c.get("rev", 4.0), wet_db=-5, dry_db=-2, predelay_ms=25, damp_hz=4200, seed=seed + 3, send_hp=120, dark=1.0)
     bed = wet[: n + tail].copy()
     bed[: len(dry)] += dry
     bed = bed[: n + tail]

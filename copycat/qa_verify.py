@@ -17,10 +17,11 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 
+from . import franchise as franchise_mod
 from .fonts import font
 
 ROOT = Path(__file__).resolve().parent.parent
-OK_DOMAINS = {"anime_black_clover", "anime_fantasy"}
+OK_DOMAINS = {"anime_black_clover", "anime_naruto", "anime_fantasy"}
 REAL_SOURCES = {"fandom", "jikan", "local"}
 
 
@@ -41,14 +42,14 @@ def load_json(p):
         return None
 
 
-def domain_gate(domain):
+def domain_gate(domain, franchise=None):
     """Best-effort wrapper over copycat.domain_gate.AssetDomainGate (API unknown -> probe methods)."""
     try:
         from copycat.domain_gate import AssetDomainGate  # type: ignore
     except Exception:
         return None
     try:
-        gate = AssetDomainGate(domain)
+        gate = AssetDomainGate(domain, franchise)
     except Exception:
         try:
             gate = AssetDomainGate()
@@ -73,10 +74,10 @@ def domain_gate(domain):
     return check
 
 
-def provenance(edit, vault):
+def provenance(edit, vault, franchise=None):
     vidx = {a["id"]: a for a in (vault or {}).get("assets", [])}
     shots = edit["shots"]
-    gate = domain_gate(edit.get("domain") or (vault or {}).get("domain") or "anime_black_clover")
+    gate = domain_gate(edit.get("domain") or (vault or {}).get("domain") or "anime_black_clover", franchise)
     off, noasset, missing = 0, 0, []
     rt = {"real": 0.0, "generated": 0.0, "cards": 0.0, "unknown": 0.0}
     used = set()
@@ -260,8 +261,9 @@ def run(pid, video=None, edit_path=None, vault_path=None):
     edit_p = Path(edit_path) if edit_path else next(
         (p for p in (ROOT / f"copycat/projects/{pid}/edit.json", ROOT / f"build/copycat/{pid}/edit.json") if p.exists()))
     edit = json.load(open(edit_p))
+    fr_id = franchise_mod.id_for_project(pid)
     vault_p = Path(vault_path) if vault_path else next(
-        (p for p in (ROOT / "assets/cache/black-clover/vault.json", ROOT / f"build/copycat/{pid}/vault.json") if p.exists()), None)
+        (p for p in (ROOT / franchise_mod.load(fr_id)["vault_dir"] / "vault.json", ROOT / f"build/copycat/{pid}/vault.json") if p.exists()), None)
     vault = load_json(vault_p) if vault_p else None
     video = Path(video) if video else ROOT / f"releases/copycat/{pid}/master.mp4"
     rel = ROOT / f"releases/copycat/{pid}"
@@ -273,7 +275,7 @@ def run(pid, video=None, edit_path=None, vault_path=None):
     fps = float(num) / float(den or 1)
     vdur = float(vs.get("duration") or info["format"]["duration"])
     adur = float(as_.get("duration") or info["format"]["duration"]) if as_ else None
-    rep = dict(project=pid, video=str(video), provenance=provenance(edit, vault),
+    rep = dict(project=pid, video=str(video), provenance=provenance(edit, vault, fr_id),
                vault_found=bool(vault))
     rep["format"] = dict(width=vs["width"], height=vs["height"], fps=fps, codec=vs["codec_name"], pix_fmt=vs["pix_fmt"],
                          video_dur=vdur, audio_dur=adur, audio_codec=as_ and as_["codec_name"])

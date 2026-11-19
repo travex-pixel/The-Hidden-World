@@ -141,7 +141,7 @@ def apply_curation(asset, cur):
     for s in c.get("add_subjects", []):
         if s not in t["subjects"]: t["subjects"].append(s)
     t["subjects"] = [s for s in t["subjects"] if s not in c.get("remove_subjects", [])]
-    for k in ("mood", "location", "shotType"):
+    for k in ("mood", "location", "shotType", "era", "time", "text_free"):   # era/time/text_free: Naruto vault
         if k in c: t[k] = c[k]
     if "focus" in c: asset["focus"] = c["focus"]
     if "kind" in c: asset["kind"] = c["kind"]

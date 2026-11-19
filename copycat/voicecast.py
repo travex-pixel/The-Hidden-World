@@ -128,19 +128,33 @@ def load_fish_cast(path: Path | str | None = None) -> dict:
     return {k: v for k, v in d.get("cast", d).items() if isinstance(v, dict) and v.get("_id")}
 
 
-def resolve_role(cast: dict, speaker: str, chapter: str | None = None) -> str:
+def fish_cast_path(franchise_id: str | None = None) -> Path:
+    """config/<franchise>-cast.json from the franchise registry (cast_config); Black Clover when None."""
+    from copycat import franchise as F
+    return ROOT / F.load(franchise_id or F.DEFAULT)["cast_config"]
+
+
+def resolve_role(cast: dict, speaker: str, chapter: str | None = None, fallback: dict | None = None) -> str:
     """'SPEAKER@chapter' -> 'SPEAKER_CHILD' when the chapter is listed on that child role, else 'SPEAKER', else DEFAULT."""
     if "@" in speaker:
         speaker, chapter = speaker.split("@", 1)
     child = cast.get(f"{speaker}_CHILD")
     if child and chapter and chapter in (child.get("chapters") or []):
         return f"{speaker}_CHILD"
-    return speaker if speaker in cast else "DEFAULT"
+    if speaker in cast:
+        return speaker
+    alt = (fallback or {}).get(speaker)          # e.g. Naruto series: CLONE falls back to NARUTO's voice
+    return alt if alt in cast else "DEFAULT"
 
 
-def fish_entry(cast: dict, speaker: str, chapter: str | None = None) -> tuple[str, dict]:
-    role = resolve_role(cast, speaker, chapter)
+def fish_entry(cast: dict, speaker: str, chapter: str | None = None, fallback: dict | None = None) -> tuple[str, dict]:
+    role = resolve_role(cast, speaker, chapter, fallback)
     return role, cast[role]
+
+
+def missing_roles(cast: dict, speakers, fallback: dict | None = None) -> list[str]:
+    """Speakers that would resolve to nothing (no role, no fallback role, no DEFAULT)."""
+    return sorted(s for s in speakers if resolve_role(cast, s, None, fallback) not in cast)
 
 
 # ----------------------------------------------------------------------------- Piper

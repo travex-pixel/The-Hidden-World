@@ -25,6 +25,8 @@ smash bros mortal kombat announcer goku naruto gojo satoru sukuna yuji subaru is
 baldi bluey loud house sponge spongebob rick morty griffin peter mickey scooby shaggy starfire gohan videl venti raiden
 shogun jarvis lawliet yagami light mitsuri kanroji pigsy kinito walten bon invincible grayson tokai teio paddington
 trump donald musk elon markiplier mrbeast beast kendrick lamar michael jackson taylor swift ronaldo drury kirk charlie
+ksi a2ksi sakura iruka mizuki hiruzen kurama danzo tazuna zabuza haku inari gato kabuto ibiki anko orochimaru gaara jiraiya itachi shikamaru
+tsunade minato kushina boruto sarada konoha konohamaru akatsuki sharingan hokage uzumaki uchiha hatake nine tails kyuubi kyubi
 ksi a2ksi ksia2 potus wnba slax guyzo atomic polo ezzy ezzy verity miside mita dexter morgan alhaitham valentino marcus
 heisty wigman matu twinko brainrot ultrakill sans mario link samus pikachu luffy zoro tanjiro asta yuno noelle liebe yami
 julius vegeta deku bakugo eren levi mikasa hinata sasuke itachi kakashi saitama genos anya loid yor megumi nobara
@@ -288,12 +290,104 @@ def is_user_edited(ex: dict, pool_by_id: dict) -> bool:
     return bool(ex.get("pinned"))
 
 
+# ----------------------------------------------------------------------------- wide harvest (naruto and later franchises)
+
+HARVEST_TAGS = """male female young old child kid teen deep raspy gravelly gruff soft gentle warm calm energetic cheerful dark cold smooth clear
+bright low high slow fast narration documentary anime character-voice cartoon villain hero monster demon whisper sarcastic confident serious
+dramatic mysterious cool relaxed sleepy tired bored stoic quiet loud aggressive sinister creepy playful friendly authoritative middle-aged
+elderly baby boy girl shy nasal husky""".split()
+HARVEST_TITLES = """narrator storyteller boy kid child teen girl old_man grandpa woman mother villain demon monster hero young_man teacher
+ninja warrior samurai raspy gruff deep gravelly baritone tenor bass soft gentle calm cold bored lazy sleepy tired relaxed cool stoic energetic
+loud shouting cocky arrogant sneering smooth silky snake creepy sinister whisper nasal greedy boss drunk grumpy wise elder old_woman
+teenage_boy teenage_girl young_boy small_boy little_boy anime_boy anime_girl anime_teen detective interrogator brash tomboy sassy
+tsundere shy quiet flat deadpan monotone growl cavernous giant big boisterous jolly professor sensei captain commander general king emperor
+thug bandit gangster rogue assassin""".split()
+
+
+def harvest_queries() -> list[dict]:
+    qs = [{"sort_by": s} for s in ("task_count", "score", "created_at")]
+    for t in HARVEST_TAGS:
+        qs += [{"sort_by": s, "tag": t} for s in ("task_count", "score")]
+    for t in HARVEST_TITLES:
+        t = t.replace("_", " ")
+        qs += [{"sort_by": s, "title": t} for s in ("task_count", "score")]
+    return qs
+
+
+def _api_get(q: dict, pn: int, api_dir: Path) -> dict:
+    """One /model page (100 items; the API exposes a 1000-item window per query), cached under api_dir."""
+    import hashlib, time, requests
+    key = hashlib.sha1(json.dumps([q, pn], sort_keys=True).encode()).hexdigest()[:16]
+    f = api_dir / f"model_{key}.json"
+    if f.exists():
+        return json.loads(f.read_text())
+    for i in range(4):
+        r = requests.get(f"{FA.API}/model", params={"page_size": 100, "page_number": pn, "language": "en", **q},
+                         headers={"Authorization": f"Bearer {FA.api_key()}"}, timeout=60)
+        if r.status_code == 200:
+            d = r.json()
+            out = {"q": q, "pn": pn, "items": d.get("items", []), "has_more": d.get("has_more")}
+            f.write_text(json.dumps(out))
+            return out
+        time.sleep(2 * (i + 1))
+    return {"items": [], "has_more": False}
+
+
+def harvest_pool(api_dir: Path, workers: int = 4, queries: list[dict] | None = None) -> list[dict]:
+    """Page widely through the model list (sort_by x tag x title queries, 10 pages each); returns unique items."""
+    from concurrent.futures import ThreadPoolExecutor
+    api_dir.mkdir(parents=True, exist_ok=True)
+
+    def run(q):
+        for pn in range(1, 11):
+            d = _api_get(q, pn, api_dir)
+            if not d["has_more"] or not d["items"]:
+                break
+    with ThreadPoolExecutor(workers) as ex:
+        list(ex.map(run, queries or harvest_queries()))
+    seen: dict[str, dict] = {}
+    for f in api_dir.glob("model_*.json"):
+        for it in json.loads(f.read_text())["items"]:
+            seen[it["_id"]] = it
+    return list(seen.values())
+
+
+def eligible(pool: list[dict]) -> list[dict]:
+    return [it for it in pool if is_original_voice(it)[0]]
+
+
+def pick_voices(cast_path: Path, picks: list[str]) -> list[str]:
+    """`ROLE=B` (reel letter) or `ROLE=<voice id>`: set that voice and pin the role. Returns log lines."""
+    from copycat import audition as AU
+    return AU.apply_picks(cast_path, picks)
+
+
+def main_franchise(a) -> int:
+    from copycat import franchise as FR
+    cast_path = ROOT / FR.load(a.franchise)["cast_config"]
+    if a.pick:
+        for ln in pick_voices(cast_path, a.pick):
+            print(ln)
+        return 0
+    if not FA.available():
+        return 0
+    from copycat import audition as AU
+    return AU.run(a.franchise, cast_path, top=a.top or 10, refresh=a.refresh)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--franchise", default="black-clover", help="franchise id (config/franchises/<id>.json); default black-clover")
+    ap.add_argument("--pick", nargs="+", metavar="ROLE=X", help="pin a voice: X is a reel letter (A/B/C) or a voice id, e.g. NARUTO=B KAKASHI=A")
     ap.add_argument("--refresh", action="store_true", help="re-query the voice catalogue and re-audition")
-    ap.add_argument("--top", type=int, default=6, help="candidates auditioned per role")
+    ap.add_argument("--top", type=int, default=None, help="candidates auditioned per role")
     ap.add_argument("--refresh-pool", action="store_true", help="re-query the voice catalogue (default: reuse the cached pool)")
     a = ap.parse_args(argv)
+    if a.franchise != "black-clover" or a.pick:
+        if a.franchise == "black-clover" and a.pick:
+            from copycat import franchise as FR
+            if not FR.load(a.franchise).get("cast_config"): return 1
+        return main_franchise(a)
     if not FA.available():
         return 0
     existing = load_cast_config()
@@ -303,7 +397,7 @@ def main(argv=None):
     pool = fetch_pool(a.refresh_pool)
     ok = [it for it in pool if is_original_voice(it)[0]]
     print(f"pool {len(pool)} voices, {len(ok)} pass the original-voice filter")
-    aud = audition(pool, a.top)
+    aud = audition(pool, a.top or 6)
     chosen, warn = assign(aud)
     # preserve user overrides: pinned, or an _id that differs from the file's last auto-written `_auto_id`
     cfg = build_config(chosen, {k: v for k, v in existing.get("cast", existing).items() if isinstance(v, dict)})

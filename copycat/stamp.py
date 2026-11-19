@@ -108,10 +108,8 @@ class Sprite:
         for k, (a, b) in enumerate(zip(INK, (246, 118, 40))):
             col[..., k] = a * (1 - warm) + b * warm
         # ---- note line under the stamp -------------------------------------------------------
-        nf = font("nunito-extrabold", 30 * S)
-        note_lines = wrap(note, nf, bw - 20 * S) if note else []
-        nh = int(44 * S)
-        note_h = nh * len(note_lines) + (int(18 * S) if note_lines else 0)
+        nfont = font("nunito-extrabold", 30 * r)
+        note_lines = wrap(note, nfont, 600 * r) if note else []
         # ---- assemble canvas: [stamp rotated] + [note straight] -------------------------------
         rot = Image.fromarray(np.dstack([np.clip(col, 0, 255).astype(np.uint8), (a_ink * 255).astype(np.uint8)]), "RGBA")
         plate_img = Image.fromarray((plate * 255 * 0.42).astype(np.uint8), "L")
@@ -132,11 +130,12 @@ class Sprite:
         crop = (max(0, bbox[0] - m), max(0, bbox[1] - m), min(sz[0], bbox[2] + m), min(sz[1], bbox[3] + m))
         rot, plate_img, bord_img, shadow_src = [im.crop(crop) for im in (rot, plate_img, bord_img, shadow_src)]
         sw, sh = rot.size
-        self.anchor = (sw / 2.0, sh / 2.0)                # scale about the middle of the inked stamp
+        note_w = int(max([nfont.getlength(l) for l in note_lines] + [0]) + 66 * r)
+        ox = max(0, note_w - sw)                          # canvas widens (to the left) when the note is wider than the stamp
+        self.anchor = (ox + sw / 2.0, sh / 2.0)           # scale about the middle of the inked stamp
         # note strip (clean, unrotated, right aligned to stamp)
-        nlay_h = int(sum([int(44 * r)] * len(note_lines)) + (int(16 * r) if note_lines else 0))
-        nfont = font("nunito-extrabold", 30 * r)
-        Wc, Hc = sw, sh + nlay_h
+        nlay_h = int(44 * r) * len(note_lines)
+        Wc, Hc = ox + sw, sh + nlay_h
         rgba = np.zeros((Hc, Wc, 4), np.float32)
         # soft shadow
         sh_a = np.asarray(shadow_src, np.float32) / 255.0
@@ -144,7 +143,7 @@ class Sprite:
         M = np.float32([[1, 0, 5 * r], [0, 1, 8 * r]])
         sh_a = cv2.warpAffine(sh_a, M, (sw, sh))
         base = np.zeros((Hc, Wc, 4), np.float32)
-        base[:sh, :, 3] = 0.62 * sh_a
+        base[:sh, ox:, 3] = 0.62 * sh_a
         # dark plate then ink (premultiplied "over")
         pl = np.asarray(plate_img, np.float32)[..., None] / 255.0
         ink_rgba = np.asarray(rot, np.float32) / 255.0
@@ -159,17 +158,16 @@ class Sprite:
         stamp_a = a_i + stamp_a * (1 - a_i)
         comp_rgb = np.zeros((Hc, Wc, 3), np.float32)
         comp_a = base[..., 3:4].copy()
-        comp_rgb[:sh] = 0.0
-        comp_rgb[:sh] = stamp_rgb_p + comp_rgb[:sh] * (1 - stamp_a)
-        comp_a[:sh] = stamp_a + comp_a[:sh] * (1 - stamp_a)
+        comp_rgb[:sh, ox:] = stamp_rgb_p + comp_rgb[:sh, ox:] * (1 - stamp_a)
+        comp_a[:sh, ox:] = stamp_a + comp_a[:sh, ox:] * (1 - stamp_a)
         # note strip
         if note_lines:
             tmp = Image.new("RGBA", (Wc, Hc), (0, 0, 0, 0))
             dn = ImageDraw.Draw(tmp)
-            y = sh - int(2 * r)
+            y = sh - int(16 * r)
             for ln in note_lines:
                 tw2 = nfont.getlength(ln)
-                x1 = Wc - int(30 * r)
+                x1 = Wc - int(34 * r)
                 x0 = x1 - tw2 - 36 * r
                 dn.rounded_rectangle([x0, y, x1, y + 40 * r], radius=int(8 * r), fill=(10, 8, 10, 205))
                 dn.rectangle([x0, y + 6 * r, x0 + 5 * r, y + 34 * r], fill=INK + (255,))
@@ -181,7 +179,7 @@ class Sprite:
         self.rgb = comp_rgb          # premultiplied
         self.a = comp_a[..., 0]
         bm = np.zeros((Hc, Wc), np.float32)
-        bm[:sh] = np.asarray(bord_img, np.float32) / 255.0
+        bm[:sh, ox:] = np.asarray(bord_img, np.float32) / 255.0
         self.border = cv2.GaussianBlur(bm, (0, 0), 1.0)
         self.size = (Wc, Hc)
         self.stamp_h = sh

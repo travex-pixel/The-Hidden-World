@@ -17,6 +17,8 @@ from PIL import Image, ImageDraw, ImageFilter
 
 from .fonts import font
 
+from . import franchise as franchise_mod
+
 ROOT = Path(__file__).resolve().parent.parent
 W, H = 1280, 720
 CRIMSON = (232, 30, 48)
@@ -25,14 +27,17 @@ WHITE = (255, 255, 255)
 PALEYELLOW = (255, 244, 170)
 
 
+FRANCHISE = "black-clover"      # set by main(pid); the franchise decides the vault and the allowed asset domain
+
+
 def vault():
-    d = json.load(open(ROOT / "assets/cache/black-clover/vault.json"))
+    d = json.load(open(ROOT / franchise_mod.load(FRANCHISE)["vault_dir"] / "vault.json"))
     return {a["id"]: a for a in d["assets"]}
 
 
 def load(vid):
     a = vault()[vid]
-    assert a["domain"] == "anime_black_clover"
+    assert a.get("franchise", "black-clover") == FRANCHISE, f"{vid} belongs to {a.get('franchise')}, not {FRANCHISE}"
     return cv2.cvtColor(cv2.imread(str(ROOT / a["path"])), cv2.COLOR_BGR2RGB)
 
 
@@ -206,10 +211,20 @@ VARIANTS = {
 
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
+    global FRANCHISE
     pid = argv[0] if argv else "bc-whatif-ep01"
+    FRANCHISE = franchise_mod.id_for_project(pid)
+    variants = VARIANTS
+    if FRANCHISE != "black-clover":   # other franchises: copycat/projects/<id>/thumbnails.json = {name: variant spec}
+        f = ROOT / "copycat/projects" / pid / "thumbnails.json"
+        if not f.exists():
+            raise SystemExit(f"no thumbnail variants for {pid}: write {f} (same shape as VARIANTS)")
+        variants = {k: {**v, **{kk: tuple(vv) for kk, vv in v.items() if isinstance(vv, list) and kk not in ("lines",)}} for k, v in json.load(open(f)).items()}
+        for v in variants.values():
+            v["lines"] = [tuple(x) for x in v["lines"]]
     outdir = ROOT / "releases/copycat" / pid
     outdir.mkdir(parents=True, exist_ok=True)
-    for name, v in VARIANTS.items():
+    for name, v in variants.items():
         im = compose(v)
         im.save(outdir / name, optimize=True)
         print("wrote", outdir / name, im.size)

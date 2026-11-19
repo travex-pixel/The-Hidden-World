@@ -8,7 +8,7 @@ domain gate hook). Everything runs as `python -m copycat.<module> <project_id>`.
 | What | Path | Git |
 |---|---|---|
 | Project source (script, edit plan, curation) | `copycat/projects/<id>/` | tracked |
-| Asset vault (downloaded images + index) | `assets/cache/black-clover/` (`images/`, `vault.json`) | images ignored, `vault.json` tracked |
+| Asset vault (downloaded images + index) | `assets/cache/<franchise>/` (`images/`, `raw/`, `vault.json`, `pinned_ids.json`); franchise from `script.json["franchise"]` via `copycat.franchise` (default `black-clover`) | `images/` + `raw/` ignored, `vault.json` + `pinned_ids.json` tracked |
 | Intermediate build files | `build/copycat/<id>/` | ignored |
 | Final deliverables | `releases/copycat/<id>/` | tracked |
 | Downloaded fonts | `assets/fonts/copycat/` | tracked |
@@ -99,3 +99,30 @@ python -m copycat.qa_verify     bc-whatif-ep01 # gates on the real MP4 + qa_cont
 python -m copycat.packaging     bc-whatif-ep01 && python -m copycat.thumbnail bc-whatif-ep01 && python -m copycat.shorts bc-whatif-ep01
 ```
 `master.mp4` exceeds GitHub's 100 MB limit and is git-ignored; `master_web_1080p.mp4` is the committed copy.
+
+
+## 5. Franchises (added with the Naruto series)
+`copycat.franchise.for_project(pid)` / `.load(id)` resolve the vault dir, wiki API, subject vocabulary and
+`speaker_colours` (caption speaker tags) from `config/franchises/<id>.json`. `subjects: null` = the legacy built-in
+Black Clover vocabulary. Black Clover stays the default and behaves exactly as before.
+* Vault assets carry `"franchise": "<id>"` (absent = `black-clover`); `AssetDomainGate(domain, franchise)` and the mapper refuse
+  an asset of another franchise (a Black Clover frame never appears in a Naruto episode and vice versa). Naruto assets use
+  domain `anime_naruto` (`anime_fantasy` also admits it); kinds stay `anime_still` / `manga_panel`.
+* Harvest: `python -m copycat.visuals.harvester --franchise naruto [--lang-wikis es,pt-br,pl] [--max N] [--rebuild]`
+  (ids `nr_0001...`). Contact sheets: `python -m copycat.visuals.sheets --franchise naruto [--era part1] <subject>`.
+* Naruto asset tags add: `era` = `part1|kid|none|unknown` (`shippuden`/`boruto` are never kept in the vault; `none` = place/object
+  frames with no character), `time` = `night|day|dusk|null`, `text_free` (bool), `series`, `src_episode`; shot scale in `shotType`
+  (`closeup|medium|wide|action`); moods use both the franchise words (`comedy`, `action`) and the legacy ones (`comedic`, `combat`).
+  Manual corrections: `copycat/projects/<id>/curation.json` (`reject`, `subjects`, `add_subjects`, `remove_subjects`, `era`, `time`,
+  `text_free`, `shotType`, `mood`, `location`, `focus`, `keep`); `"_config"` there (or in `shot_overrides.json`, or `mapper_config.json`)
+  holds mapper knobs: `avg_shot_s` (target average shot length, 0.6x in action/comedy beats), `lock_seconds` (default 90 for Naruto),
+  `era` (default `part1`), `avoid_assets_from: [project ids]` (+ `avoid_penalty`, default 3.0: soft penalty for hero frames those
+  projects' edit.json already used).
+* Repetition (Naruto): no asset more than twice, never within 8 shots or 90 s. Character frames whose era differs from the project era
+  (script `era`, default `part1`) are penalised (shippuden/boruto -12/-14, kid -6, unknown -1); visuals may set `"era"` / `"time"`.
+
+## 6. CANON stamp
+A beat may carry `"stamp": {"label": "CANON", "note": "<= 60 chars"}`. The mapper copies it to the shot that starts the beat
+(`edit.json` `shots[].stamp`, same shape); `copycat/stamp.py` renders it in the compositor: upper-right safe area, rubber-stamp
+(Anton, double-ruled box rotated -7 degrees, distressed ink), note on a clean strip beneath. Slam 1.6 -> 1.0 over 5 frames with a small
+overshoot and a 2-frame white border flash, hold, fade over 8 frames; on screen min(2.6 s, shot length). It never reaches the caption zone.

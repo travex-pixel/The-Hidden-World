@@ -37,6 +37,7 @@ NARUTO_SPEAKER_SUBJECTS = {
     "MIZUKI": {"mizuki"}, "HIRUZEN": {"hiruzen"}, "KAKASHI": {"kakashi", "team7"},
     "SASUKE": {"sasuke", "team7"}, "SAKURA": {"sakura", "team7"}, "KURAMA": {"kurama", "seal_cage"},
 }
+NARUTO_MUSIC = {"clone_comedy", "iruka_warm", "archive_hushed", "bell_test_taut", "kurama_cavernous"}
 STAMP_MAX_NOTE = 60
 PAUSE_CLASSES = {"banter": 190, "turn": 300, "reveal": 650}
 DIRECTION = re.compile(r"\[[^\[\]()]+\](\s?\[[^\[\]()]+\])?")
@@ -63,10 +64,21 @@ def profile(s):
     v = f["subjects"]
     subj = set(v["characters"]) | set(v["places"]) | set(v["objects"])
     speakers = set(f.get("speakers") or f.get("speaker_colours", {}))
-    return dict(id=fid, subjects=subj, locations=set(v["places"]), moods=set(v["moods"]), speakers=speakers,
-                speaker_subjects=NARUTO_SPEAKER_SUBJECTS if fid == "naruto" else {}, narr_min=60, min_chars=8,
+    ss = dict(NARUTO_SPEAKER_SUBJECTS) if fid == "naruto" else {}
+    for sp in speakers:
+        if sp not in ss and sp.lower() in subj:
+            ss[sp] = {sp.lower()}
+    prof = dict(id=fid, subjects=subj, locations=set(v["places"]), moods=set(v["moods"]), speakers=speakers,
+                speaker_subjects=ss, narr_min=60, min_chars=8,
                 narr_share=(0.50, 0.55), dirs=(0.28, 0.45), required_cast=set(), words=(3050, 3350),
                 beats=(230, 270), sfx=(45, 85), punch=24, reveals=24, stamps=(6, 9))
+    # per-project override: "targets": {"words": [min, max], "beats": [..], "stamps": [..], "sfx": [..],
+    #                                   "narr_share": [..], "dirs": [..], "punch": n, "reveals": n}
+    for k, val in (s.get("targets") or {}).items():
+        if k not in prof:
+            raise ValueError(f"unknown target {k}")
+        prof[k] = tuple(val) if isinstance(val, list) else val
+    return prof
 
 
 def validate(s):
@@ -79,9 +91,14 @@ def validate(s):
         if r not in cast:
             errs.append(f"{r} missing from cast")
     stamps = 0
+    music = MUSIC | (NARUTO_MUSIC if P["id"] != _fr.DEFAULT else set())
     for c in s["chapters"]:
-        if c["music"] not in MUSIC:
+        if c["music"] not in music:
             errs.append(f"{c['id']}: bad music {c['music']}")
+        ids_in = [b["id"] for b in c["beats"]]
+        for m in c.get("music_changes", []):
+            if m.get("cue") not in music or m.get("beat") not in ids_in:
+                errs.append(f"{c['id']}: bad music_change {m}")
         for b in c["beats"]:
             bid = b["id"]
             if not re.fullmatch(r"b\d+", bid) or bid in seen:

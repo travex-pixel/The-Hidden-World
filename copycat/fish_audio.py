@@ -217,7 +217,7 @@ class FishClient:
 
     # -- cached synthesis
     def synth(self, beat_id: str, spoken_text: str, reference_id: str, speed: float = 1.0, temperature: float = 0.7,
-              voice_label: str | None = None, use_cache: bool = True) -> Path:
+              voice_label: str | None = None, use_cache: bool = True, validate: bool = True) -> Path:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         key = cache_key(self.model, reference_id, spoken_text, speed, temperature)
         path = self.cache_dir / f"{beat_id}_{key[:12]}.mp3"
@@ -234,6 +234,8 @@ class FishClient:
         temp = temperature
         for attempt in (0, 1):
             path.write_bytes(self.tts_bytes(self.body(spoken_text, reference_id, speed, temp)))
+            if not validate:                        # auditions: the caller measures the clip itself, no silent re-roll
+                return path
             probs = validate_clip(path, spoken_text)
             if not probs:
                 return path
@@ -254,6 +256,16 @@ def decode_pcm(path: Path, sr: int = 48000, filt: str | None = None):
     if p.returncode != 0:
         raise RuntimeError("ffmpeg decode failed: " + p.stderr.decode(errors="replace")[-300:])
     return np.frombuffer(p.stdout, np.float32).copy()
+
+
+def credit_balance() -> float | None:
+    """Remaining account credit (GET /wallet/self/api-credit) or None when the API does not say. Never logs the key."""
+    try:
+        import requests
+        r = requests.get(f"{API}/wallet/self/api-credit", headers={"Authorization": f"Bearer {api_key()}"}, timeout=30)
+        return float(r.json()["credit"]) if r.status_code == 200 else None
+    except Exception:
+        return None
 
 
 # ----------------------------------------------------------------------------- CLI probe

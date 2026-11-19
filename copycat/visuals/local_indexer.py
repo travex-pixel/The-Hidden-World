@@ -10,6 +10,18 @@ from . import imgutil, tagger
 
 ROOT = Path(__file__).resolve().parents[2]
 IMAGES = ROOT / "assets/cache/black-clover/images"
+FRANCHISE, VAULT_REL, DOMAIN, MEDIA = "black-clover", "assets/cache/black-clover", "anime_black_clover", "black-clover"
+
+
+def configure(franchise_id):
+    """Point the indexer at another franchise's vault (default state = black-clover)."""
+    global IMAGES, FRANCHISE, VAULT_REL, DOMAIN, MEDIA
+    from .. import franchise as fm
+    fr = fm.load(franchise_id)
+    FRANCHISE, VAULT_REL, MEDIA = fr["id"], fr["vault_dir"], fr["id"]
+    DOMAIN = fr.get("domain") or ("anime_black_clover" if FRANCHISE == "black-clover" else "anime_" + FRANCHISE.replace("-", "_"))
+    IMAGES = ROOT / VAULT_REL / "images"
+
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
 VID_EXT = {".mp4", ".mkv", ".webm", ".mov", ".avi"}
 
@@ -17,7 +29,7 @@ VID_EXT = {".mp4", ".mkv", ".webm", ".mov", ".avi"}
 def _dirs(d):
     if d: return [Path(d)]
     out = [Path(os.environ["ANIME_MEDIA_DIR"])] if os.environ.get("ANIME_MEDIA_DIR") else []
-    return out + [ROOT / "assets/black-clover", ROOT / "media/black-clover"]
+    return out + [ROOT / "assets" / MEDIA, ROOT / "media" / MEDIA]
 
 
 def parse_subs(path):
@@ -52,9 +64,11 @@ def _entry(img, nid, path, page, title, caption, ts_url):
     imgutil.save_jpeg(img, IMAGES / f"{nid}.jpg")
     t = tagger.derive(page, title, caption, (), "anime_still", w, h)
     t["dominantPalette"] = imgutil.palette(img)
-    return {"id": nid, "path": f"assets/cache/black-clover/images/{nid}.jpg", "domain": "anime_black_clover", "kind": "anime_still", "source": "local",
-            "source_url": ts_url, "page": page, "file_title": title, "caption": caption, "width": w, "height": h, "dhash": imgutil.dhash(img),
-            "tags": t, "focus": [0.5, 0.4], "quality": imgutil.quality(img)}
+    e = {"id": nid, "path": f"{VAULT_REL}/images/{nid}.jpg", "domain": DOMAIN, "kind": "anime_still", "source": "local",
+         "source_url": ts_url, "page": page, "file_title": title, "caption": caption, "width": w, "height": h, "dhash": imgutil.dhash(img),
+         "tags": t, "focus": [0.5, 0.4], "quality": imgutil.quality(img)}
+    if FRANCHISE != "black-clover": e["franchise"] = FRANCHISE
+    return e
 
 
 def index_local_media(directory=None, log=print):

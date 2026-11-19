@@ -6,7 +6,7 @@ Category:Fair use tv-screenshot / Category:1080p HD Images, and `prop=fileusage`
 """
 import re
 
-SCREENSHOT_CATS = ["Category:Fair use tv-screenshot", "Category:1080p HD Images"]
+SCREENSHOT_CATS = ["Category:Fair use tv-screenshot", "Category:1080p HD Images", "Category:Ultra HD Images", "Category:720p HD Images", "Category:Fair use film-screenshot"]
 EPISODE_LIST = "List of Naruto Episodes"       # original series (Part I); Shippuden / Boruto have their own lists
 MIN_W = 960
 
@@ -14,28 +14,28 @@ MIN_W = 960
 NAME_REJECT = re.compile(
     r"chapter \d|\bcover\b|\bvol(ume)?\b|box ?art|\bgame\b|\bnsun|\bstorm\b|ninja council|clash of|\bpsp\b|\bps[34]\b|\bwii\b|"
     r"\bcard\b|\bbanner\b|\bposter\b|\bwallpaper\b|\bartwork\b|illustration|\bfan\b|\bhandbook\b|"
-    r"\bsilhouette\b|\bsymbol\b|\bsvg\b|\bsprite\b|\bchibi\b|\bthumbnail\b|\bfont\b|\bjump\b|\bkizuna\b|\bstats?\b|\bgraph",
+    r"\bsilhouette\b|\bsymbol\b|\bsvg\b|\bsprite\b|\bchibi\b|\bthumbnail\b|\bfont\b|\bjump\b|\bkizuna\b|\bstats?\b|\bgraph|title card|\bopening\b|\bending\b|\bpreview\b|next episode|grand sports|festival|special report|\bshinden\b|\bhiden\b|\bgaiden\b|\bepisode \d+\b$|\bnaruto manga\b|\bblu-?ray\b|\bdvd\b|\bcd\b",
     re.I)
 
 SHIPPUDEN = re.compile(
-    r"shipp[uū]den|part ii|\bpain\b|\bnagato\b|\bobito\b|\bmadara\b|\bkaguya\b|\bsage mode|kurama mode|\bwar\b|"
+    r"shipp[uūû]+den|part ii|\bpain\b|\bnagato\b|\bobito\b|\bmadara\b|\bkaguya\b|\bsage mode|kurama mode|\bwar\b|"
     r"\balliance|\bedo\b|\btailed beast (bomb|ball)|\brasenshuriken|\brinnegan|\bmangekyo|\beternal|"
     r"\b(fifth|sixth|seventh) hokage|\bhokage naruto|\badult|\bsai\b|\byamato\b|"
     r"\bsusanoo|\bjuubi|\bten.?tails|\bbiju|\bbijuu|\btsuchikage|\braikage|\bmizukage|\bkillerbee|\bkiller b\b|"
-    r"\bhagoromo|\bhamura|\bindra|\basura\b|\bgedo|\bzetsu\b|\bkonan\b|\bsix paths|\bmenma|\bnangi\b|\bkabuto.*(edo|sage)|\bhidan|\bkakuzu|\bdeidara|\bsasori",
+    r"\bhagoromo|\bhamura|\bindra|\basura\b|\bgedo|\bzetsu\b|\bkonan\b|\bsix paths|\bmenma|\bnangi\b|\bkabuto.*(edo|sage)|\bhidan|\bkakuzu|\bdeidara|\bsasori|wedding|married|marriage|\bthe last\b|nakama|shinden|hiden\b|gaiden|\bdaughter\b|\bson\b|\bkurama (helps|writing)|parte ii\b|segunda parte|\bparte 2|periodo de cambios|per[ií]odo de transi|oscuro|negro\b|\bnegr[oa]\b|sombr[ií]o|dark naruto|modo (kurama|sabio|er[mn]it)|modo (bij|biju)|rasenshuriken|rasenshuriken|sennin m[oô]do|\bsage\b|jinch[uū]riki del|tailed beast|\bkcm\b|\bsm\b|kyuubi mode|nine.?tails mode|\bversion [12]\b|forma de (kurama|chakra)|jednoogoniasta",
     re.I)
-BORUTO = re.compile(r"\bboruto|\bhimawari|\bsarada|\bmitsuki|\bkawaki|\bshikadai|\bchocho|\bmetal lee|\bseventh hokage|\bboro\b|\bishiki|\bmomoshiki|\bdaemon|\bnext generation", re.I)
+BORUTO = re.compile(r"\bboruto|\bhimawari|\bsarada|\bmitsuki|\bkawaki|\bshikadai|\bchocho|\bmetal lee|\bseventh hokage|\bboro\b|\bishiki|\bmomoshiki|\bdaemon|\bnext generation|parte iii|tercera parte|terceira parte|per[ií]odo de cambios|periodo de cambios|\bboruto\b", re.I)
 KID = re.compile(r"\b(child|children|young|kid|baby|infant|toddler|orphan|born|birth|first day|childhood|younger|as a boy|little)\b", re.I)
 
 CHAR_RE = {
     "naruto": r"\bnaruto\b|\bnarutos\b",
     "iruka": r"\biruka\b|\bumino\b",
     "mizuki": r"\bmizuki\b",
-    "hiruzen": r"hiruzen|third hokage|3rd hokage|sandaime|\bsarutobi\b|\blord third\b",
+    "hiruzen": r"hiruzen|third hokage|3rd hokage|tercer hokage|terceiro hokage|trzeci hokage|sandaime|\blord third\b|\bthe third\b(?! (exam|training|tailed|shinobi|great))",
     "kakashi": r"\bkakashi\b|\bhatake\b|copy ninja|copy-ninja",
     "sasuke": r"\bsasuke\b",
     "sakura": r"\bsakura\b",
-    "kurama": r"\bkurama\b|nine.?tails?|kyuubi|kyūbi|nine-tailed|demon fox|\bfox\b",
+    "kurama": r"(?<!yakumo )(?<!unkai )(?<!murakumo )\bkurama\b(?! clan)|nine.?tails?|kyuubi|kyūbi|nine-tailed|demon fox|\bfox\b",
     "minato": r"\bminato\b|fourth hokage|4th hokage|yondaime|namikaze|yellow flash",
     "kushina": r"\bkushina\b",
     "tobirama": r"\btobirama\b|second hokage|2nd hokage|nidaime",
@@ -62,7 +62,7 @@ CHAR_RE = {
     "shikamaru": r"shikamaru",
     "neji": r"\bneji\b",
     "rock_lee": r"rock lee|\blee\b",
-    "obito": r"\bobito\b|masked man|tobi\b",
+    "obito": r"\bobito\b|masked man|\btobi\b|hombre enmascarado|homem mascarado",
     "rin": r"\brin\b|\bnohara\b",
     "young_kakashi": r"young kakashi|kakashi.*(child|young|academy|team minato)",
     "itachi": r"\bitachi\b",
@@ -236,7 +236,7 @@ def part1_episode_pages(api):
 
 
 def _text(title, caption=""):
-    name = re.sub(r"^File:", "", title)
+    name = re.sub(r"^(?:(?:es|pt-br|pl|fr|de|it):)?(?:File|Archivo|Arquivo|Plik|Fichier|Datei):", "", title)
     name = re.sub(r"\.(png|jpe?g|webp|gif)$", "", name, flags=re.I)
     return f"{name} | {caption}".lower().replace("_", " ")
 
@@ -252,16 +252,17 @@ def parse_meta(wikitext):
     m = re.search(r"\{\{Characters in image\|([^}]*)\}\}", wikitext, re.I)
     chars = (m.group(1) if m else field("Characters in image", "Characters"))
     low = src.lower()
-    series = "shippuden" if re.search(r"shipp[uū]den", low) else "boruto" if "boruto" in low else \
-        "movie" if re.search(r"movie|film|the last|road to ninja|ova", low) else "original" if re.search(r"naruto", low) else ""
-    em = re.search(r"episode\s*#?\s*(\d+)", low)
+    series = "shippuden" if re.search(r"shipp[uūû]+den", low) else "boruto" if "boruto" in low else \
+        "movie" if re.search(r"movie|film|the last|road to ninja|ova|special|gaiden|hiden|shinden", low) else "original" if re.search(r"naruto", low) else ""
+    em = re.search(r"episode\s*(?:\[\[[^\]|]*\|)?\s*#?\s*(\d+)", low) or re.search(r"\bep\.?\s*(\d+)", low)
+    if series == "original" and not em: series = ""      # no episode number = no proof it is the original series
     clean = lambda x: re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]|'{2,3}|\{\{[^}]*\}\}", r"\1", x).strip()
-    return {"desc": clean(field("Description")), "series": series, "episode": int(em.group(1)) if em else None,
+    return {"desc": clean(field("Description")), "src": src[:80], "series": series, "episode": int(em.group(1)) if em else None,
             "chars": [clean(c).lower() for c in re.split(r",|;|&", clean(chars)) if clean(c)],
             "jutsu": [clean(c).lower() for c in re.split(r",|;", clean(field("Jutsu in image"))) if clean(c)]}
 
 
-FLASH = re.compile(r"flashback|years? ago|\bacademy\b|\bfirst\b|young|child|\bkid\b|genin|team 7|graduat|origin|\bpast\b|memory|memories|remember", re.I)
+FLASH = re.compile(r"flashback|years? ago|\bacademy\b|\bgenin\b|team 7|graduat|memory|memories|remembers?\b|as a (child|kid)|younger", re.I)
 NONLOC = ("villagers", "genin_crowd")
 # characters who, in Shippuden-sourced screenshots, mostly appear in Part I flashbacks (era left "unknown" -> verified on sheets)
 FLASHCHARS = {"mizuki", "zabuza", "haku", "kushina", "minato", "tobirama", "gato", "demon_brothers", "tazuna", "inari", "obito", "rin", "young_kakashi", "iruka", "hiruzen"}
@@ -282,6 +283,8 @@ def derive(page="", title="", caption="", categories=(), kind="anime_still", wid
             if sj not in subs: subs.append(sj)
     if re.search(r"clones?\b|bunshin|thousand|narutos", text) and "naruto_clones" not in subs: subs.append("naruto_clones")
     if re.search(r"\bteam 7\b|\bteam seven\b|squad 7", text) or {"naruto", "sasuke", "sakura"} <= set(subs): subs.append("team7")
+    if re.search(r"scroll|pergamin|rollo\b|rolo\b", text) and {"naruto", "mizuki", "iruka"} & set(subs) and "forbidden_scroll" not in subs:
+        subs.append("forbidden_scroll")             # stand-in: Narutopedia has no clean Scroll of Seals footage; any Part I scroll scene
     if "tora_cat" in subs and "tora_cat" not in known and not re.search(r"\btora\b", text): subs.remove("tora_cat")
     if "kurama" in subs and "kurama" not in known and re.search(r"\bfox\b", text) and not re.search(r"nine|kurama|kyuubi|demon fox", text): subs.remove("kurama")
     if "book" in subs and not re.search(r"\bbook\b|icha", text): subs.remove("book")
@@ -289,9 +292,16 @@ def derive(page="", title="", caption="", categories=(), kind="anime_still", wid
     series, ep = meta.get("series", ""), meta.get("episode")
     era = "unknown"
     char_free = not meta.get("chars") and not [x for x in subs if x in CHAR_RE and x not in NONLOC]
+    if series in ("lang", "lang_unsure"): char_free = not [x for x in subs if x in CHAR_RE and x not in NONLOC]
     if series == "boruto" or BORUTO.search(text): era = "boruto"
     elif char_free and series in ("shippuden", "original", "movie", "") and not SHIPPUDEN.search(text): era = "none"   # places/objects: era-agnostic
-    elif series == "original" or (series == "movie" and not SHIPPUDEN.search(text)): era = "part1"
+    elif series == "search": era = "none"                                      # char-free place/object frame from keyword search
+    elif series == "lang": era = "none" if char_free else "part1"      # language-wiki history sections before the Part II heading
+    elif series == "lang_unsure": era = "none" if char_free else "unknown"   # page without a recognisable Part II heading
+    elif series == "original" and (ep or 0) <= 220: era = "part1"
+    elif series == "original": era = "shippuden"
+    elif series == "movie":      # only the three Part I era movies keep a Part I look
+        era = "part1" if re.search(r"snow|gelel|crescent|ninja clash|stone of|guardians", (meta.get("src") or "").lower()) and not SHIPPUDEN.search(text) else "shippuden"
     elif series == "shippuden":
         if SHIPPUDEN.search(text): era = "shippuden"
         elif FLASH.search(desc): era = "part1"
@@ -317,9 +327,11 @@ def derive(page="", title="", caption="", categories=(), kind="anime_still", wid
     loc = next((x for x in ("hokage_office", "archive", "ichiraku", "hokage_monument", "training_ground", "academy", "classroom", "naruto_apartment", "seal_cage",
                             "memorial_stone", "bridge", "mist", "tazuna_house", "gato_office", "exam_hall", "forest_of_death", "arena", "hospital", "mission_desk",
                             "uchiha_district", "land_of_waves", "konoha_village") if x in subs), None)
+    nch = len(meta.get("chars") or []) or len(chars)
     shot = "medium"
-    if re.search(CLOSE_RE, text) and len(chars) <= 2: shot = "closeup"
-    elif re.search(WIDE_RE, text) or (loc and not chars) or "villagers" in subs or len(chars) >= 4: shot = "wide"
+    if re.search(CLOSE_RE, text) and nch <= 2: shot = "closeup"
+    elif nch == 1 and not loc and "action" not in moods: shot = "closeup" if re.search(r"face|eyes|portrait|expression|smile|cry|tears|stare|glare|shock", text) else "medium"
+    elif re.search(WIDE_RE, text) or (loc and not chars) or "villagers" in subs or nch >= 4 or "team7" in subs and nch >= 4: shot = "wide"
     elif "action" in moods: shot = "action"
     r = width / max(height, 1)
     out = {"subjects": list(dict.fromkeys(subs)), "location": loc, "mood": list(dict.fromkeys(moods)), "shotType": shot,
@@ -340,3 +352,109 @@ def wanted(title, meta):
     if meta.get("pages"): return True
     if any(NAME_SUBJECT.get(c) for c in meta.get("chars", [])): return True
     return bool(re.search("|".join(ALL_RE.values()), t))
+
+
+# --------------------------------------------------------------------------- language wikis (es / pt-br / pl)
+# Character "Historia" pages are chronological; every file placed before the first Part II heading is Part I footage
+# with a caption. File names and captions are Spanish/Portuguese/Polish, so a few extra keywords are folded in.
+LANG_WIKIS = {
+    "es": {"file_ns": "Archivo", "subpages": ["{n}/Historia", "{n}"]},
+    "pt-br": {"file_ns": "Arquivo", "subpages": ["{n}"]},
+    "pl": {"file_ns": "Plik", "subpages": ["{n}/Historia", "{n}"]},
+    "fr": {"file_ns": "Fichier", "subpages": ["{n}"]},
+    "de": {"file_ns": "Datei", "subpages": ["{n}"]},
+    "it": {"file_ns": "File", "subpages": ["{n}"]},
+}
+PART2_HEAD = re.compile(r"partie ii\b|deuxi[eè]me partie|teil ii\b|zweiter teil|seconda parte|parte seconda|shipp[uû]den|segunda parte|parte ii\b|parte 2|segunda temporada|shipp[uūû]+den|druga część|=\s*''?naruto:? shipp|interl[uú]dio|per[ií]odo de cambios|pierwsza część.*shipp|"
+                        r"cuarta guerra|quarta guerra|czwarta światowa|akatsuki|ataque de pain|atak paina|misi[oó]n del rescate del kazekage|miss[aã]o de resgate do kazekage", re.I)
+PART1_HEAD = re.compile(r"premi[eè]re partie|erster teil|prima parte|pr[oô]logue|prolog\b|pays des vagues|land der wellen|paese delle onde|primera parte|primeira parte|pierwsza część|prólogo|prolog|pa[ií]s de las olas|pa[ií]s das ondas|kraj fal|ex[aá]menes ch|exames ch|egzamin", re.I)
+LANG_CHARS = ["Naruto Uzumaki", "Iruka Umino", "Mizuki", "Hiruzen Sarutobi", "Kakashi Hatake", "Sasuke Uchiha", "Sakura Haruno", "Kurama", "Minato Namikaze",
+              "Kushina Uzumaki", "Tobirama Senju", "Danzō Shimura", "Konohamaru Sarutobi", "Zabuza Momochi", "Haku", "Tazuna", "Inari", "Gatō", "Ibiki Morino",
+              "Anko Mitarashi", "Orochimaru", "Kabuto Yakushi", "Gaara", "Temari", "Kankurō", "Jiraiya", "Shikamaru Nara", "Neji Hyūga", "Rock Lee", "Obito Uchiha",
+              "Rin Nohara", "Itachi Uchiha", "Teuchi", "Ayame", "Enma", "Tsunade", "Hinata Hyūga", "Choji Akimichi", "Ino Yamanaka", "Kiba Inuzuka", "Shino Aburame",
+              "Tenten", "Might Guy", "Asuma Sarutobi", "Kurenai Yūhi", "Ebisu", "Shizune", "Gozu", "Meizu", "Yamato"]
+LANG_PLACES = ["Konohagakure", "Aldea Oculta de la Hoja", "Vila Oculta da Folha", "País de las Olas", "País das Ondas", "Kraj Fal", "Academia Ninja", "Academia Ninja de Konoha",
+               "Ichiraku Ramen", "Monumento a los Hokage", "Monumento Hokage", "Monumento aos Hokage", "Edificio del Hokage", "Torre do Hokage", "Bosque de la Muerte", "Floresta da Morte",
+               "Exámenes Chūnin", "Exames Chuunin", "Egzamin na chūnina", "Puente Tenchi", "Gran Puente Naruto", "Grande Ponte Naruto", "Rollo de los Sellos", "Pergaminho dos Selos",
+               "Técnica de Clones de Sombra", "Técnica de Clones das Sombras", "Técnica de Multiclones de Sombra", "Jutsu de Clones das Sombras Múltiplos", "Gran Bola de Fuego",
+               "Sellado de los Ocho Trigramas", "Selamento dos Oito Trigramas", "Distrito Uchiha", "Clan Uchiha", "Entrenamiento de Cascabeles", "Prueba de los Cascabeles",
+               "Prueba de Supervivencia", "Teste de Sobrevivência", "Ninja Anbu", "Anbu", "Raíz", "Raiz", "Bola de Cristal", "Jutsu de Telescopio", "Técnica do Telescópio"]
+LANG_RE_EXTRA = {
+    "forbidden_scroll": r"rollo prohibido|pergamino prohibido|rollo de los sellos|pergaminho (dos selos|proibido)|pergamino de los sellos|rollo secreto|pergaminho secreto",
+    "paperwork": r"informes?\b|expedientes?\b|relat[oó]rios?|papeleo|papelada|documentos?\b",
+    "document": r"documentos?\b|papeles|pergaminhos?\b|pergaminos?\b|rollos?\b|archivos?\b|arquivos?\b",
+    "crystal_ball": r"bola de cristal|esfera de cristal|telescopio|telesc[oó]pio",
+    "bells": r"cascabeles|campanillas|cascav[eé]is|\bsinos\b|campanas",
+    "fireball": r"bola de fuego|bola de fogo|katon",
+    "headband": r"protector (de )?(frente|frontal)|bandana|protetor (de )?testa|banda frontal",
+    "hokage_office": r"oficina del hokage|despacho|escrit[oó]rio do hokage|edificio del hokage|torre (do|del) hokage|residencia del hokage",
+    "hokage_monument": r"monumento (a los |aos |del )?hokage|rostros? (de los |dos )?hokage",
+    "archive": r"biblioteca|archivo|arquivo|archivos",
+    "classroom": r"\baula\b|sala de aula|sal[oó]n de clases|\bclase\b",
+    "academy": r"academia",
+    "night_sky": r"noche|noite|\bluna\b|\blua\b|estrellas|estrelas",
+    "sunrise": r"amanecer|atardecer|amanhecer|puesta de sol|p[oô]r do sol|anochecer",
+    "konoha_village": r"aldea|aldeia|\bwioska\b",
+    "bridge": r"puente|\bponte\b",
+    "mist": r"niebla|n[eé]voa|neblina|\bmg[łl]a\b",
+    "forest": r"bosque|floresta",
+    "ramen": r"\bramen\b",
+    "memorial_stone": r"piedra conmemorativa|monumento conmemorativo|l[aá]pide|monumento aos mortos",
+    "naruto_clones": r"clones?\b|multiclones|clon(es)? de sombra|clones? das sombras|klon",
+    "forest_of_death": r"bosque de la muerte|floresta da morte",
+    "ichiraku": r"ichiraku",
+    "villagers": r"aldeanos|aldeões|mieszka[nń]cy|habitantes|multitud|multid[aã]o",
+}
+for _k, _v in LANG_RE_EXTRA.items():
+    ALL_RE[_k] = (ALL_RE[_k] + "|" if _k in ALL_RE else "") + _v
+    if _k in CHAR_RE: CHAR_RE[_k] = ALL_RE[_k]
+    elif _k in PLACE_RE: PLACE_RE[_k] = ALL_RE[_k]
+    else: OBJ_RE[_k] = ALL_RE[_k]
+PLACE_RE.setdefault("library", r"biblioteca|library")
+ALL_RE.setdefault("library", PLACE_RE["library"])
+SUBJECT_KEYS = list(CHAR_RE) + list(OBJ_RE) + list(PLACE_RE)
+
+
+def history_images(wikitext):
+    """[(file title, caption, section)] for files placed in Part I sections (before the first Part II heading)."""
+    return history_images_ex(wikitext)[0]
+
+
+def history_images_ex(wikitext):
+    """(items, stopped): stopped = a Part II heading was found, i.e. the cut is trustworthy."""
+    out, sect, stop = [], "", False
+    parts = re.split(r"\n(={2,5}[^=\n]+={2,5})", "\n" + wikitext)
+    for i, chunk in enumerate(parts):
+        if i % 2 == 1:
+            head = re.sub(r"[=\[\]']", "", chunk).strip()
+            if PART2_HEAD.search(head) and not PART1_HEAD.search(head): stop = True
+            sect = head
+            continue
+        if stop: break
+        for m in re.finditer(r"\[\[(?:Archivo|File|Arquivo|Plik|Imagen|Image|Fichier|Datei):([^|\]\n]+)((?:\|(?:[^\[\]]|\[\[[^\]]*\]\])*)?)\]\]", chunk, re.I):
+            cap = re.split(r"\|", m.group(2))[-1] if m.group(2) else ""
+            cap = re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]|'{2,3}|<[^>]+>", r"\1", cap).strip()
+            out.append((m.group(1).strip(), "" if re.fullmatch(r"(thumb|miniatura|miniaturadaimagem|left|right|center|\d+px)", cap, re.I) else cap, sect))
+        for blk in re.findall(r"<gallery[^>]*>(.*?)</gallery>", chunk, re.S | re.I):
+            for line in blk.splitlines():
+                g = re.match(r"\s*(?:Archivo|File|Arquivo|Plik|Imagen|Image|Fichier|Datei):([^|\n]+)\|?(.*)", line.strip(), re.I)
+                if g: out.append((g.group(1).strip(), re.sub(r"\[\[|\]\]|'{2,3}", "", g.group(2)).strip(), sect))
+    return out, stop
+
+
+# --------------------------------------------------------------------------- keyword search for char-free place/object footage
+# Place/object frames (archive, desks, scrolls, night sky ...) have no era, so every wiki and every series may contribute.
+SEARCH_TERMS = {
+    "": ["library", "archive", "records", "documents", "files", "paperwork", "desk", "scroll", "scrolls", "ink", "brush", "letter", "mission office", "Hokage office",
+         "ramen", "Ichiraku", "apartment", "bedroom", "training ground", "stumps", "memorial", "night", "moon", "sunrise", "sunset", "dawn", "rooftop", "bridge", "mist",
+         "shelves", "bookshelf", "crystal ball", "classroom", "academy", "Hokage monument", "village", "street", "forest", "kunai", "headband", "bells", "ledger", "cat"],
+    "es": ["biblioteca", "documentos", "informe", "pergamino", "escritorio", "oficina", "carta", "tinta", "pincel", "apartamento", "habitación", "campo de entrenamiento",
+           "tocones", "piedra conmemorativa", "noche", "luna", "amanecer", "atardecer", "puente", "niebla", "estantería", "aula", "academia", "monumento", "aldea", "calle", "bosque", "gato"],
+    "pt-br": ["biblioteca", "arquivo", "documentos", "relatório", "pergaminho", "escrivaninha", "escritório", "carta", "tinta", "pincel", "apartamento", "quarto",
+              "campo de treinamento", "pedra memorial", "noite", "lua", "amanhecer", "ponte", "névoa", "estante", "sala de aula", "academia", "monumento", "vila", "rua", "floresta", "gato"],
+    "pl": ["biblioteka", "dokumenty", "zwój", "biuro", "list", "pole treningowe", "noc", "księżyc", "most", "mgła", "akademia", "wioska", "las", "kot"],
+    "fr": ["bibliothèque", "documents", "parchemin", "bureau", "lettre", "terrain d'entraînement", "nuit", "lune", "pont", "brume", "académie", "village", "forêt", "chat"],
+    "de": ["Bibliothek", "Dokumente", "Schriftrolle", "Büro", "Brief", "Trainingsplatz", "Nacht", "Mond", "Brücke", "Nebel", "Akademie", "Dorf", "Wald", "Katze"],
+    "it": ["biblioteca", "documenti", "pergamena", "ufficio", "lettera", "campo di addestramento", "notte", "luna", "ponte", "nebbia", "accademia", "villaggio", "foresta", "gatto"],
+}
+SEARCH_FILE_NS = {"": "File", "es": "Archivo", "pt-br": "Arquivo", "pl": "Plik", "fr": "Fichier", "de": "Datei", "it": "File"}

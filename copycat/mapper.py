@@ -62,7 +62,17 @@ SHOT_NEAR = {("closeup", "extreme_closeup"), ("wide", "establishing"), ("action"
 # Everything franchise-specific the scorer needs. Black Clover = the constants above, untouched.
 P = dict(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
          ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
-         avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True)
+         avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={})
+
+NARUTO_ALIASES = {
+    "forbidden_scroll": ("document", "paperwork"), "paperwork": ("document", "letter", "book"), "document": ("paperwork", "letter", "book", "forbidden_scroll"),
+    "archive": ("library", "hokage_office", "document", "paperwork", "classroom"), "library": ("archive", "classroom", "academy", "book"),
+    "ink_brush": ("document", "letter", "paperwork"), "letter": ("document", "paperwork"), "ledger": ("document", "paperwork", "book"),
+    "hokage_office": ("hokage_monument", "konoha_village"), "naruto_apartment": ("rooftop", "konoha_village"), "ramen": ("ichiraku",),
+    "mission_desk": ("hokage_office", "document"), "training_ground": ("forest", "land_of_waves"), "forest_night": ("forest", "night_sky"),
+    "naruto_clones": ("naruto",), "crystal_ball": ("hiruzen",), "seal_mark": ("seal_cage", "kurama"), "seal_cage": ("kurama", "seal_mark"),
+    "memorial_stone": ("training_ground", "uchiha_district"), "headband": ("naruto", "iruka"), "bells": ("kakashi", "team7"),
+}
 
 NARUTO_NONCHAR = {"forest_night", "konoha_village", "hokage_monument", "hokage_office", "academy", "classroom", "archive", "library", "ichiraku",
                   "naruto_apartment", "training_ground", "seal_cage", "night_sky", "sunrise", "memorial_stone", "bridge", "mist", "land_of_waves",
@@ -93,12 +103,14 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
     """Set the module profile P for this run (also resets it to Black Clover for bc projects)."""
     P.update(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
              ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
-             avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True)
+             avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={})
     if fr_id == "naruto":
         P.update(scarce={"kushina", "minato", "tobirama", "kurama", "danzo", "enma", "rin", "obito", "young_kakashi", "orochimaru", "jiraiya", "ibiki", "anko"},
                  young={"young_kakashi": "kakashi"}, atmos=set(), atmos2=set(), nonchar=NARUTO_NONCHAR, speaker_subjects=NARUTO_SPEAKERS,
                  ember_subjects={"kurama", "seal_cage"}, accent="naruto", lock_seconds=90.0, young_fallback=False,
-                 era=script.get("era", cfg.get("era", "part1")))
+                 era=script.get("era", cfg.get("era", "part1")), aliases=NARUTO_ALIASES,
+                 era_agnostic={"minato", "kushina", "tobirama", "obito", "rin", "young_kakashi", "haku", "zabuza", "gato", "tazuna", "inari", "demon_brothers",
+                               "mizuki", "iruka", "hiruzen", "anbu", "danzo", "root", "kurama", "villagers", "genin_crowd", "teuchi", "ibiki", "anko", "enma"})
     if cfg.get("lock_seconds"): P["lock_seconds"] = float(cfg["lock_seconds"])
     if cfg.get("avg_shot_s"): P["avg_shot_s"] = float(cfg["avg_shot_s"])
     avoid = {}
@@ -239,6 +251,8 @@ class Scorer:
             return -99.0, 0.0                          # untagged (title cards etc.): never usable
         if subs and subs[0] in asub:
             s += 4.0
+        elif subs and any(al in asub for al in P["aliases"].get(subs[0], ())):
+            s += 2.5                                  # stand-in subject (e.g. any scroll scene for the forbidden scroll)
         for o in subs[1:3]:
             if o in asub:
                 s += 1.5
@@ -292,7 +306,8 @@ class Scorer:
             want = sp.get("era") or P["era"]
             ae = tg.get("era", "unknown")
             if ae != want:
-                s -= {"shippuden": 12.0, "boruto": 14.0, "kid": 6.0, "part1": 6.0, "unknown": 1.0}.get(ae, 1.0)
+                unk = 0.5 if (asub - NONCHAR) <= P["era_agnostic"] else 3.0   # unknown era: fine for people who look the same in every era
+                s -= {"shippuden": 12.0, "boruto": 14.0, "kid": 6.0, "part1": 6.0, "unknown": unk}.get(ae, 1.0)
         if sp.get("time") and tg.get("time") and sp["time"] != tg["time"]:
             s -= 2.0
         elif sp.get("time") and tg.get("time") == sp["time"]:

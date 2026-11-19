@@ -28,18 +28,34 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 from .cards import CardScene
+from . import franchise as franchise_mod
 from .fonts import font
+from .stamp import StampPainter
 from .vfx import ACCENTS, Atmosphere, dissolve, flash, seed_of, smoothstep, whip, DISSOLVE_FRAMES
 
 cv2.setNumThreads(1)
 ROOT = Path(__file__).resolve().parent.parent
-CODE_FILES = ["compositor.py", "vfx.py", "cards.py", "fonts.py"]
+CODE_FILES = ["compositor.py", "vfx.py", "cards.py", "fonts.py", "stamp.py"]
 
 SPEAKER_COLORS = {
     "ASTA": (46, 204, 113), "LIEBE": (222, 36, 52), "YUNO": (104, 190, 255),
     "YAMI": (158, 150, 190), "JULIUS": (222, 180, 70),
 }
 DEFAULT_TAG = (206, 206, 212)
+_BC_SPEAKER_COLORS = dict(SPEAKER_COLORS)
+
+
+def hex_rgb(h):
+    h = h.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def apply_franchise(pid):
+    """Caption speaker-tag colours: the franchise JSON's `speaker_colours` when present, else the legacy table."""
+    cols = franchise_mod.for_project(pid).get("speaker_colours")
+    SPEAKER_COLORS.clear()
+    SPEAKER_COLORS.update({k.upper(): hex_rgb(v) for k, v in cols.items()} if cols else _BC_SPEAKER_COLORS)
+    return franchise_mod.id_for_project(pid)
 
 # --------------------------------------------------------------------------- camera maths
 def ease_io(p: float) -> float:
@@ -572,6 +588,7 @@ def shot_hash(job):
                          job["prev"] if shot.get("transition_in") == "dissolve" else None],
                         sort_keys=True, default=str).encode())
     h.update(code_stamp().encode())
+    h.update(json.dumps(sorted(SPEAKER_COLORS.items())).encode())
     return h.hexdigest()[:16]
 
 
@@ -591,13 +608,15 @@ _G = {}
 def _globals(W, H):
     if _G.get("key") != (W, H):
         _G.clear()
-        _G.update(key=(W, H), vig=make_vignette(W, H), grain=Grain(W, H), cap=CaptionPainter(W, H))
+        _G.update(key=(W, H), vig=make_vignette(W, H), grain=Grain(W, H), cap=CaptionPainter(W, H), stamp=StampPainter(W, H))
     return _G
 
 
 def compose_frame(scene, i, n, shot, g, caps, gfr, fps, prev_last, is_card):
     fr = scene.frame(i, n)
     if not is_card:
+        if shot.get("stamp"):                        # CANON stamp: upper-right, never reaches the caption zone
+            g["stamp"].draw(fr, shot["stamp"], i, n, fps)
         for c in caps:
             g["cap"].draw(fr, c, gfr, fps)
     tr = shot.get("transition_in") or "cut"
@@ -656,8 +675,8 @@ def render_segment(job):
 
 
 # --------------------------------------------------------------------------- driver
-def load_vault_index():
-    p = ROOT / "assets/cache/black-clover/vault.json"
+def load_vault_index(pid=None):
+    p = (franchise_mod.vault_dir(pid) if pid else ROOT / "assets/cache/black-clover") / "vault.json"
     try:
         return {a["id"]: a for a in json.load(open(p)).get("assets", [])}
     except Exception:
@@ -716,7 +735,8 @@ def render_project(pid, edit_path=None, preview=False, shots=None, rng=None, wor
     base = ROOT / f"build/copycat/{pid}/video"
     segdir = base / (("segments_preview" if preview else "segments") + ("" if captions else "_nocap"))
     segdir.mkdir(parents=True, exist_ok=True)
-    vault = load_vault_index()
+    apply_franchise(pid)
+    vault = load_vault_index(pid)
     jobs, total = build_jobs(edit, W, H, segdir, vault, set(shots) if shots else None, rng, captions)
     todo = []
     for j in jobs:

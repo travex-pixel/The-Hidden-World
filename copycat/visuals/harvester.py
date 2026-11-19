@@ -365,11 +365,87 @@ def naruto_rank(cand):
     return out
 
 
+def naruto_lang_discover(langs, refresh):
+    """Part I footage from es / pt-br / pl history pages (files before the Part II heading) -> {key: rec}."""
+    from . import narutopedia as npd
+    out = {}
+    for lang in langs:
+        cfg = npd.LANG_WIKIS[lang]
+        base = f"https://naruto.fandom.com/{lang}/api.php"
+        files = {}
+        for name in npd.LANG_CHARS + npd.LANG_PLACES:
+            subj = npd.NAME_SUBJECT.get(name.lower())
+            for pat in cfg["subpages"]:
+                try:
+                    d = api({"action": "query", "titles": pat.format(n=name), "prop": "revisions", "rvprop": "content", "rvslots": "main", "redirects": "1"}, refresh, base)
+                except requests.RequestException:
+                    continue
+                for p in d.get("query", {}).get("pages", []):
+                    if not p.get("revisions"): continue
+                    items, stopped = npd.history_images_ex(p["revisions"][0]["slots"]["main"]["content"])
+                    for fn, cap, sect in items:
+                        t = cfg["file_ns"] + ":" + fn.replace("_", " ")
+                        e = files.setdefault(t, {"caption": cap, "section": sect, "pages": [], "sure": False})
+                        e["sure"] = e["sure"] or stopped
+                        if cap and not e["caption"]: e["caption"] = cap
+                        if subj and subj not in e["pages"]: e["pages"].append(subj)
+        log(f"{lang}: {len(files)} Part I files referenced")
+        titles = sorted(files)
+        for i in range(0, len(titles), 50):
+            for p in api_all({"action": "query", "titles": "|".join(titles[i:i + 50]), "prop": "imageinfo", "iiprop": "url|size|mime"}, refresh, base):
+                rec = page_record(p, "")
+                if not rec or rec["mime"] not in ("image/png", "image/jpeg") or rec["w"] < 800: continue
+                if imgutil.NAME_REJECT.search(rec["title"]) or npd.NAME_REJECT.search(rec["title"]): continue
+                f = files.get(p["title"], {})
+                rec["meta"] = {"desc": f.get("caption", ""), "series": "lang" if f.get("sure") else "lang_unsure", "lang": lang, "section": f.get("section", ""), "chars": [], "pages": f.get("pages", [])}
+                key = f"{lang}:{rec['title']}"
+                rec["title"] = key
+                out[key] = rec
+    return out
+
+
+def naruto_search_discover(refresh):
+    """Character-free place/object frames found by keyword search in every wiki's File namespace (era is irrelevant for those)."""
+    from . import narutopedia as npd
+    out = {}
+    for lang, terms in npd.SEARCH_TERMS.items():
+        base = f"https://naruto.fandom.com/{lang}/api.php" if lang else API
+        for term in terms:
+            try:
+                d = api({"action": "query", "list": "search", "srsearch": term, "srnamespace": "6", "srlimit": "50"}, refresh, base)
+            except requests.RequestException:
+                continue
+            titles = [x["title"] for x in d.get("query", {}).get("search", [])]
+            for i in range(0, len(titles), 50):
+                for p in api_all({"action": "query", "titles": "|".join(titles[i:i + 50]), "prop": "imageinfo", "iiprop": "url|size|mime"}, refresh, base):
+                    rec = page_record(p, "")
+                    if not rec or rec["mime"] not in ("image/png", "image/jpeg") or rec["w"] < npd.MIN_W: continue
+                    if imgutil.NAME_REJECT.search(rec["title"]) or npd.NAME_REJECT.search(rec["title"]): continue
+                    t = npd.derive("", rec["title"], "", [], "anime_still", rec["w"], rec["h"], (), {"series": "search", "chars": []})
+                    if any(x in npd.CHAR_RE for x in t["subjects"]) or not t["subjects"]: continue      # people frames come from the sources above
+                    if npd.BORUTO.search(rec["title"]) or npd.SHIPPUDEN.search(rec["title"]): continue
+                    key = (f"{lang}:" if lang else "") + rec["title"]
+                    rec["title"] = key
+                    rec["meta"] = {"desc": "", "series": "search", "chars": [], "pages": [], "lang": lang or "en", "term": term}
+                    out.setdefault(key, rec)
+        log(f"search {lang or 'en'}: {len(out)} char-free candidates so far")
+    return out
+
+
 def run_naruto(a):
+    global npd_MIN_W
+    from . import narutopedia as _n
+    npd_MIN_W = _n.MIN_W
     RAW.mkdir(parents=True, exist_ok=True); IMAGES.mkdir(parents=True, exist_ok=True)
     reg = load_registry()
     if not a.rebuild:
         cand = naruto_discover(a.refresh)
+        if a.lang_wikis:
+            cand.update(naruto_lang_discover([x for x in a.lang_wikis.split(",") if x], a.refresh))
+        for k, r in cand.items():                         # keep registry metadata in step with the parser
+            if k in reg and r.get("meta"): reg[k]["meta"] = r["meta"]
+        if a.search_places:
+            cand.update(naruto_search_discover(a.refresh))
         ranked = naruto_rank(cand)
         log(f"{len(ranked)} ranked candidates (of {len(cand)})")
         if a.discover_only:
@@ -380,8 +456,9 @@ def run_naruto(a):
             if rec["title"] in reg: continue
             if n >= a.max: break
             m = rec.get("meta") or {}
-            rec = {**rec, "page": f"Episode {m['episode']} ({m['series']})" if m.get("episode") else m.get("series", ""), "caption": m.get("desc", ""),
-                   "min_w": 960}
+            lang = m.get("series") in ("lang", "lang_unsure")
+            rec = {**rec, "page": (f"{m['lang']}: {m.get('section', '')}" if lang else f"Episode {m['episode']} ({m['series']})" if m.get("episode") else m.get("series", "")),
+                   "caption": m.get("desc", ""), "min_w": 800 if lang else npd_MIN_W}
             e = fetch_and_register(rec, "anime_still", reg); n += 1
             e["meta"] = m
             if n % 25 == 0:
@@ -436,6 +513,8 @@ def main(argv=None):
     ap.add_argument("--lang", help="lang wiki code (es, pt-br, ...) with --prefix")
     ap.add_argument("--prefix", action="append", default=[], help="file-name prefix on the language wiki")
     ap.add_argument("--stats", action="store_true")
+    ap.add_argument("--lang-wikis", default="", help="naruto: comma list of language wikis to mine for Part I history images (es,pt-br,pl)")
+    ap.add_argument("--search-places", action="store_true", help="naruto: keyword-search all wikis for character-free place/object frames")
     ap.add_argument("--discover-only", action="store_true", help="naruto: list + analyse candidates, download nothing")
     ap.add_argument("--rebuild", action="store_true", help="rebuild vault.json from registry without network")
     a = ap.parse_args(argv)
