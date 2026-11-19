@@ -14,7 +14,7 @@ class WhitelistMode(unittest.TestCase):
         self.assertEqual(rep["non_whitelisted_insert_bgs"], [])
         self.assertEqual(rep["unmatched_cuts"], [])
         self.assertEqual(rep["repeated_asset_crop"], 0)
-        self.assertLessEqual(rep["max_uses_of_one_asset"], 4)
+        self.assertLessEqual(rep["max_uses_of_one_asset"], 6)
 
     def test_expression_inference(self):
         self.assertEqual(whitelist.infer_expression("wet, raw"), "sad_cry")

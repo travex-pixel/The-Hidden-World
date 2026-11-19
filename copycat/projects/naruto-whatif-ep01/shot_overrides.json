@@ -2,7 +2,7 @@
  "_config": {
   "avg_shot_s": 5.6,
   "split_bias": 1.35,
-  "max_shot": 9.0,
+  "max_shot": 11.0,
   "merge_short_s": 5.0,
   "merge_cross_s": 3.8,
   "merge_max_s": 9.0,
@@ -99,17 +99,17 @@
     },
     "ch4": {
      "scenes": [
+      "neutral_portrait",
       "archive_library",
-      "hokage_office",
       "object",
-      "neutral_portrait"
+      "village_night",
+      "hokage_office"
      ],
      "time": "lamp",
      "who": [
       "naruto",
       "naruto_clones",
       "iruka",
-      "kakashi",
       "hiruzen"
      ],
      "graded_scenes": [
@@ -337,8 +337,7 @@
     },
     "b238..b256": {
      "scenes": [
-      "neutral_portrait",
-      "village_night"
+      "neutral_portrait"
      ],
      "time": "night",
      "who": [
@@ -428,7 +427,145 @@
       "hiruzen",
       "iruka"
      ]
+    },
+    "b058": {
+     "scenes": [
+      "seal_mindscape"
+     ],
+     "time": null,
+     "who": [
+      "naruto",
+      "kurama"
+     ]
+    },
+    "b035..b037": {
+     "scenes": [
+      "neutral_portrait",
+      "forest_night_ep1"
+     ],
+     "time": "night",
+     "who": [
+      "iruka",
+      "naruto"
+     ]
     }
+   },
+   "windows": {
+    "kakashi": [
+     "b159..b167",
+     "b168..b225"
+    ],
+    "sasuke": [
+     "b168..b214",
+     "b254..b255"
+    ],
+    "sakura": [
+     "b168..b214",
+     "b254..b255"
+    ],
+    "team7": [
+     "b168..b214",
+     "b254..b255"
+    ],
+    "mizuki": [
+     "b007..b046"
+    ],
+    "kurama": [
+     "b058",
+     "b240..b245"
+    ],
+    "tobirama": [
+     "b015"
+    ],
+    "kushina": [
+     "b238..b245"
+    ],
+    "minato": [
+     "b238..b245"
+    ],
+    "iruka": [
+     "b025..b046",
+     "b076..b083",
+     "b154..b158"
+    ]
+   }
+  },
+  "extra_inserts": {
+   "b144": {
+    "type": "mission_report",
+    "variant": "names",
+    "animate": [
+     "g1"
+    ],
+    "views": [
+     {
+      "frm": "top",
+      "to": "n3",
+      "z": [
+       1.05,
+       1.28
+      ],
+      "ty": 0.42
+     }
+    ]
+   },
+   "b145": {
+    "type": "mission_report",
+    "variant": "names",
+    "present": [
+     "g1"
+    ],
+    "animate": [
+     "g2"
+    ],
+    "views": [
+     {
+      "frm": "n3",
+      "to": "n6",
+      "z": [
+       1.25,
+       1.3
+      ],
+      "ty": 0.42
+     }
+    ]
+   },
+   "b146": {
+    "type": "mission_report",
+    "variant": "names",
+    "present": [
+     "g1",
+     "g2"
+    ],
+    "animate": [
+     "g3"
+    ],
+    "views": [
+     {
+      "frm": "n6",
+      "to": "n9",
+      "z": [
+       1.25,
+       1.32
+      ],
+      "ty": 0.42
+     }
+    ]
+   },
+   "b151": {
+    "type": "mission_report",
+    "variant": "tabs",
+    "views": [
+     {
+      "frm": "top",
+      "to": "last",
+      "z": [
+       1.0,
+       1.18
+      ],
+      "ty": 0.42
+     }
+    ]
    }
   }
  }

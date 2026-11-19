@@ -89,6 +89,15 @@ class WL:
         self.reuse_cap = int(cfg.get("reuse_cap", 4))
         self.min_gap = float(cfg.get("min_gap_s", 45.0))
         self.relax = 0
+        self.windows = {}
+        for who, rngs in (cfg.get("windows") or {}).items():
+            ids = set()
+            for k in rngs:
+                x, _, y = k.partition("..")
+                i0 = self.order.index(x)
+                i1 = self.order.index(y) if y else i0
+                ids |= set(self.order[min(i0, i1):max(i0, i1) + 1])
+            self.windows[who] = ids
         self._ctx = {}
         self._beat_ctx = []
         for k, v in (cfg.get("beats") or {}).items():
@@ -171,6 +180,9 @@ class WL:
             add(fx + 0.22, fy, 1.55, "right")
         add(fx, fy + 0.08, 1.75, "tight2")
         add(fx - 0.1, fy - 0.05, 1.25, "soft")
+        add(fx + 0.08, fy + 0.04, 1.1, "soft2")
+        add(fx - 0.14, fy + 0.1, 1.95, "tight3")
+        add(fx + 0.14, fy - 0.06, 1.65, "tight4")
         L["_variants"] = v
         return v
 
@@ -228,6 +240,11 @@ class WL:
         ctx = self.ctx(slot["chapter"], slot["beat_id"])
         w = self.want(slot)
         s = 8.0
+        # --- introduction windows: nobody on screen before (or outside) the beats where the story has met them ------------------
+        for k in set(L["who"]) | (TEAM7 if "team7" in L["who"] else set()):
+            win = self.windows.get(k)
+            if win is not None and slot["beat_id"] not in win:
+                return -99.0, 0.0
         # --- cast of the chapter ----------------------------------------------------------
         lw = set(L["who"])
         if lw:
@@ -283,12 +300,18 @@ class WL:
         wanted = w["who"]
         if not lw:
             if w["dialogue"]:
-                s -= 4.5 if w["first"] else 1.5
+                return -99.0, 0.0                          # dialogue always shows the speaker (or a clone / Naruto for CLONE)
             else:
                 s += 2.4 if (not wanted or w["shot"] in ("wide", "establishing") or w["mood"] == "establishing") else 1.0
         else:
             expanded = set(lw) | (TEAM7 if "team7" in lw else set())
             hit = 0.0
+            prim = 0.0
+            for k, wt in wanted:
+                if wt >= 1.0 and (k in expanded or {k, "naruto"} <= {k} | expanded and k in ("naruto_clones", "naruto") and expanded & {"naruto", "naruto_clones"}):
+                    prim = 1.0
+            if w["dialogue"] and not prim:
+                return -99.0, 0.0
             for k, wt in wanted:
                 if k in expanded:
                     hit = max(hit, wt)
@@ -297,9 +320,9 @@ class WL:
                 elif k == "naruto_clones" and "naruto" in expanded:
                     hit = max(hit, wt * 0.8)
             if w["dialogue"]:
-                s += 6.0 * hit if hit else (-6.0 if w["first"] else -2.0)
                 if not hit:
-                    sem = 0.0
+                    return -99.0, 0.0
+                s += 6.0 * hit
             else:
                 if wanted:
                     s += 4.0 * hit if hit else -1.5

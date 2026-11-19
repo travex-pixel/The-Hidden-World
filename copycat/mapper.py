@@ -65,7 +65,7 @@ P = dict(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR
          ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
          avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
          time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False,
-         wl=None, wl_cfg=None, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD)
+         wl=None, wl_cfg=None, extra_inserts={}, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD)
 
 NARUTO_ALIASES = {
     "forbidden_scroll": ("document", "paperwork"), "paperwork": ("document", "letter", "book"), "document": ("paperwork", "letter", "book", "forbidden_scroll"),
@@ -108,7 +108,7 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
              ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
              avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
              time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False,
-             wl=None, wl_cfg=None, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD)
+             wl=None, wl_cfg=None, extra_inserts={}, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD)
     if fr_id == "naruto":
         P.update(scarce={"kushina", "minato", "tobirama", "kurama", "danzo", "enma", "rin", "obito", "young_kakashi", "orochimaru", "jiraiya", "ibiki", "anko"},
                  young={"young_kakashi": "kakashi"}, atmos=set(), atmos2=set(), nonchar=NARUTO_NONCHAR, speaker_subjects=NARUTO_SPEAKERS,
@@ -126,6 +126,7 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
         P["merge_max_s"] = float(cfg.get("merge_max_s", 8.0))
         P["avg_by_chapter"] = cfg.get("avg_by_chapter", {})
         P["wl_cfg"] = cfg.get("wl")
+        P["extra_inserts"] = cfg.get("extra_inserts") or {}
         P["max_shot"] = float(cfg.get("max_shot", MAX_SHOT))
         P["split_bias"] = float(cfg.get("split_bias", 1.0))
         P["cold_max_shot"] = float(cfg.get("cold_max_shot", MAX_SHOT_COLD))
@@ -144,6 +145,10 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
 
 def toks(s: str) -> set:
     return {w for w in re.findall(r"[a-z']+", (s or "").lower()) if w not in STOP and len(w) > 2}
+
+
+def _ins(b):
+    return b.get("insert") or (P.get("extra_inserts") or {}).get(b["id"])
 
 
 # --------------------------------------------------------------------------- timeline
@@ -211,8 +216,8 @@ def build_skeleton(script: dict, timing: dict):
         D = e - s
         vis = b["visuals"]
         ins_tail = None
-        if b.get("insert"):                              # designed document insert: one shot per view, no real frame
-            ins = b["insert"]
+        if _ins(b):                              # designed document insert: one shot per view, no real frame
+            ins = _ins(b)
             at = float(ins.get("at", 0.0))
             tbt = tb[b["id"]]
 
@@ -247,7 +252,7 @@ def build_skeleton(script: dict, timing: dict):
             ea = avg * 0.6 if bm & {"action", "combat", "comedy", "comedic"} else avg
             n = max(1, min(len(vis), int(round(D / (ea * P["split_bias"])))))
         merge = False
-        if P["merge_short_s"] and slots and slots[-1]["type"] == "cut" and not b.get("insert") and not b.get("stamp") and (ch["id"] != "cold_open" or P["cold_avg"]):
+        if P["merge_short_s"] and slots and slots[-1]["type"] == "cut" and not _ins(b) and not b.get("stamp") and (ch["id"] != "cold_open" or P["cold_avg"]):
             pb = slots[-1]["beat"]
             same = pb["speaker"] == b["speaker"] or (P["speaker_subjects"].get(pb["speaker"], {0}) & P["speaker_subjects"].get(b["speaker"], {1}))
             lim = P["merge_short_s"] if same else min(P["merge_short_s"], P["merge_cross_s"] or 1.3)
@@ -403,6 +408,7 @@ def acceptable(sem, score):
 class Assigner:
     def __init__(self, slots, assets, scorer, pinned):
         self.slots, self.assets, self.sc = slots, assets, scorer
+        self.lock_shots = LOCK_SHOTS
         self.cuts = [i for i, s in enumerate(slots) if s["type"] == "cut"]
         self.by_id = {a["id"]: a for a in assets}
         self.cand = {}
@@ -443,7 +449,7 @@ class Assigner:
         for j in self.uses.get(aid, ()):
             if j == i:
                 continue
-            if abs(j - i) < LOCK_SHOTS or abs(self.slots[j]["start"] - self.slots[i]["start"]) < P["lock_seconds"]:
+            if abs(j - i) < self.lock_shots or abs(self.slots[j]["start"] - self.slots[i]["start"]) < P["lock_seconds"]:
                 return False
         for b in self.near.get(aid, ()):
             for j in self.uses.get(b, ()):
@@ -521,10 +527,18 @@ class Assigner:
 
 def _relax_fill(self):
     """Whitelist mode: a slot nothing fits well still gets the least-bad approved frame (shown as WEAK in the report)."""
-    for level in (1, 2, 3, 4):
+    for level in (1, 2, 3, 4, 5):
         P["wl"].relax = min(level, 3)
-        if level == 4:
-            P["lock_seconds"] = 36.0                   # last resort only: 36 s instead of 45 s between uses of one asset
+        if level == 5:
+            P["lock_seconds"] = 6.0
+            self.lock_shots = 2
+            for a in self.assets:
+                self.cap[a["id"]] = min(P["wl"].reuse_cap + 3, len(P["wl"].variants(a)))
+        elif level == 4:
+            self.lock_shots = 3
+            P["lock_seconds"] = 18.0                   # last resort only: 30 s instead of 45 s between uses of one asset, one extra recrop
+            for a in self.assets:
+                self.cap[a["id"]] = min(P["wl"].reuse_cap + 2, len(P["wl"].variants(a)))
         for i in self.cuts:
             if self.assign[i] or i in self.pinned:
                 continue

@@ -1,5 +1,12 @@
-"""Vertical teaser short: python -m copycat.shorts <project_id> [--master PATH] [--timing PATH] [--out PATH]
+"""Vertical shorts: python -m copycat.shorts <project_id> [--master PATH] [--timing PATH] [--out PATH] [--only NAME] [--outdir DIR] [--plan]
 
+Projects with copycat/projects/<id>/shorts.json render every named short in it (see build_spec_short):
+  {"accent": [r,g,b], "speaker_colors": {...}, "end_card": {...}, "shorts": [{"name", "title": [line1, line2],
+   "ranges": [["b001", "b006"], ...], "end_card": {...}}]}
+Ranges are inclusive beat-id pairs in timeline order; each short is whole beats, 40-58 s including the end card.
+`--plan` prints the computed durations without needing the master.  Output: releases/copycat/<id>/short_<name>_9x16.mp4.
+
+Legacy (Black Clover, no shorts.json): 
 Cuts a 45-60 s 9:16 teaser from releases/copycat/<id>/master.mp4:
   segment 1 = the whole cold open, segment 2 = the hype Liebe/Asta exchange in ch2 (trimmed from its
   start to fit), then a 2.5 s end card.  Layout: blurred cover background, 1080x608 framed picture with
@@ -211,24 +218,9 @@ def under_png(path):
     out.save(path)
 
 
-def over_png(path):
-    """Thin crimson border + title strip."""
-    out = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    # top gradient for the title strip
-    g = np.zeros((H, W, 4), np.uint8)
-    ramp = np.clip(1 - np.arange(H) / 560.0, 0, 1) ** 1.4 * 190
-    g[..., 3] = ramp[:, None].astype(np.uint8)
-    out = Image.fromarray(g, "RGBA")
-    d = ImageDraw.Draw(out)
-    d.rectangle([0, PIC_Y - 4, W, PIC_Y - 1], fill=CRIMSON + (255,))
-    d.rectangle([0, PIC_Y + PIC_H, W, PIC_Y + PIC_H + 3], fill=CRIMSON + (255,))
-    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    gd = ImageDraw.Draw(glow)
-    gd.rectangle([0, PIC_Y - 6, W, PIC_Y + 2], fill=CRIMSON + (200,))
-    gd.rectangle([0, PIC_Y + PIC_H - 2, W, PIC_Y + PIC_H + 6], fill=CRIMSON + (200,))
-    out = Image.alpha_composite(glow.filter(ImageFilter.GaussianBlur(10)), out)
-    # title
-    for text, y, color, maxw in ((TITLE_L1, 150, (255, 255, 255), 900), (TITLE_L2, 285, CRIMSON, 1000)):
+def _draw_title(out, lines, accent):
+    for k, text in enumerate(lines[:2]):
+        y, color, maxw = ((150, (255, 255, 255), 900), (285, accent, 1000))[k]
         size = 120
         f = font("anton", size)
         while f.getlength(text) > maxw and size > 40:
@@ -242,10 +234,39 @@ def over_png(path):
         shl.putalpha(sh)
         out = Image.alpha_composite(out, shl)
         _stroked(ImageDraw.Draw(out), (x, y), text, f, color, 9)
+    return out
+
+
+def title_png(path, lines, accent=CRIMSON):
+    """Hook title only (burned on for the first seconds of a spec short)."""
+    _draw_title(Image.new("RGBA", (W, H), (0, 0, 0, 0)), lines, accent).save(path)
+
+
+def over_png(path, title="default", accent=CRIMSON):
+    """Thin accent border + title strip (title=None: strip and border only)."""
+    CRIMSON_ = accent
+    out = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    # top gradient for the title strip
+    g = np.zeros((H, W, 4), np.uint8)
+    ramp = np.clip(1 - np.arange(H) / 560.0, 0, 1) ** 1.4 * 190
+    g[..., 3] = ramp[:, None].astype(np.uint8)
+    out = Image.fromarray(g, "RGBA")
+    d = ImageDraw.Draw(out)
+    d.rectangle([0, PIC_Y - 4, W, PIC_Y - 1], fill=tuple(CRIMSON_) + (255,))
+    d.rectangle([0, PIC_Y + PIC_H, W, PIC_Y + PIC_H + 3], fill=tuple(CRIMSON_) + (255,))
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    gd.rectangle([0, PIC_Y - 6, W, PIC_Y + 2], fill=tuple(CRIMSON_) + (200,))
+    gd.rectangle([0, PIC_Y + PIC_H - 2, W, PIC_Y + PIC_H + 6], fill=tuple(CRIMSON_) + (200,))
+    out = Image.alpha_composite(glow.filter(ImageFilter.GaussianBlur(10)), out)
+    if title == "default":
+        title = (TITLE_L1, TITLE_L2)
+    if title:
+        out = _draw_title(out, title, CRIMSON_)
     return out.save(path)
 
 
-def endcard_frames(n, title_lines):
+def endcard_frames(n, title_lines, big=("WATCH", "PART 1"), accent=CRIMSON):
     """Yield n RGB frames (H,W,3 uint8): black, crimson divider, embers."""
     rng = np.random.default_rng(7)
     base = Image.new("RGB", (W, H), (4, 2, 4))
@@ -259,15 +280,19 @@ def endcard_frames(n, title_lines):
     # text layer
     txt = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(txt)
-    f1 = font("anton", 170)
-    lines = ["WATCH", "PART 1"]
-    y = 600
-    for l in lines:
+    accent = tuple(accent)
+    y = 600 - 105 * (len(big) - 2)
+    for k, l in enumerate(big):
+        size = 170
+        f1 = font("anton", size)
+        while f1.getlength(l) > W - 140 and size > 60:
+            size -= 4
+            f1 = font("anton", size)
         x = (W - f1.getlength(l)) / 2
-        _stroked(d, (x, y), l, f1, (255, 255, 255) if l == "WATCH" else CRIMSON, 10)
-        y += 210
+        _stroked(d, (x, y + (170 - size) // 2), l, f1, (255, 255, 255) if k % 2 == 0 else accent, 10)
+        y += 210 if size == 170 else size + 40
     dy = y + 30
-    d.rectangle([140, dy, W - 140, dy + 6], fill=CRIMSON + (255,))
+    d.rectangle([140, dy, W - 140, dy + 6], fill=accent + (255,))
     f2 = font("anton", 58)
     yy2 = dy + 50
     for l in title_lines:
@@ -340,7 +365,7 @@ def make_caption_list(events, seg_len, tmp, tag):
     return lst
 
 
-def render_segment(master, start, end, events, tmp, tag, flash_in=False, flash_out=False):
+def render_segment(master, start, end, events, tmp, tag, flash_in=False, flash_out=False, title_secs=None):
     dur = end - start
     under, over = tmp / "under.png", tmp / "over.png"
     if not under.exists():
@@ -358,7 +383,8 @@ def render_segment(master, start, end, events, tmp, tag, flash_in=False, flash_o
         f"eq=brightness=-0.36:saturation=0.8[bg];"
         f"[b]scale=w='trunc({PIC_W}*(1+0.04*n/{max(dur * FPS, 1):.1f})/2)*2':h=-2:eval=frame,"
         f"crop={PIC_W}:{PIC_H}[fg];"
-        f"[bg][1:v]overlay=0:0[bg2];[bg2][fg]overlay=0:{PIC_Y}[v1];[v1][2:v]overlay=0:0[v2];"
+        f"[bg][1:v]overlay=0:0[bg2];[bg2][fg]overlay=0:{PIC_Y}[v1];[v1][2:v]overlay=0:0[v2a];"
+        + (f"[v2a][4:v]overlay=0:0:enable='lt(t,{title_secs})'[v2];" if title_secs else "[v2a]null[v2];") +
         f"[3:v]fps={FPS},format=rgba[c];[v2][c]overlay=0:{CAP_Y}:eof_action=pass:format=auto"
         f"{fades},format=yuv420p[out]"
     )
@@ -367,6 +393,7 @@ def render_segment(master, start, end, events, tmp, tag, flash_in=False, flash_o
          "-loop", "1", "-framerate", str(FPS), "-i", str(under),
          "-loop", "1", "-framerate", str(FPS), "-i", str(over),
          "-f", "concat", "-safe", "0", "-i", str(caps),
+         *(["-loop", "1", "-framerate", str(FPS), "-i", str(tmp / "title.png")] if title_secs else []),
          "-filter_complex", fc, "-map", "[out]", "-t", f"{dur:.3f}", "-r", str(FPS),
          "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-an", str(vid)])
     aud = tmp / f"{tag}_a.wav"
@@ -376,14 +403,14 @@ def render_segment(master, start, end, events, tmp, tag, flash_in=False, flash_o
     return vid, aud
 
 
-def render_endcard(tmp, dur=ENDCARD):
+def render_endcard(tmp, dur=ENDCARD, lines=None, big=("WATCH", "PART 1"), accent=CRIMSON):
     n = int(round(dur * FPS))
     vid = tmp / "end_v.mp4"
-    lines = [END_L1, END_L2]
+    lines = lines or [END_L1, END_L2]
     p = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
                           "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
                           "-pix_fmt", "yuv420p", str(vid)], stdin=subprocess.PIPE)
-    for fr in endcard_frames(n, lines):
+    for fr in endcard_frames(n, lines, big, accent):
         p.stdin.write(fr.tobytes())
     p.stdin.close()
     if p.wait() != 0:
@@ -438,22 +465,143 @@ def build_short(master, timing, out, tmp=None, flash=True):
     return sel
 
 
+# ---------------------------------------------------------------- spec-driven shorts (any project)
+SPEC_MIN, SPEC_MAX = 40.0, 58.0
+TITLE_SECS = 2.5
+DEFAULT_COLORS = {"NARRATOR": (255, 255, 255)}
+
+
+def load_spec(pid, path=None):
+    f = Path(path) if path else ROOT / "copycat/projects" / pid / "shorts.json"
+    return json.load(open(f)) if f.exists() else None
+
+
+def plan_short(beats, spec, endcard=ENDCARD):
+    """Resolve a short's beat-id ranges to cut segments on the live timing.  Ranges are inclusive id pairs in
+    TIMELINE order; whole beats only; adjacent ranges merge into one segment.  Returns segments, total, beat ids."""
+    order = sorted(beats, key=lambda b: b["start"])
+    idx = {b["id"]: i for i, b in enumerate(order)}
+    runs = []
+    for r in spec["ranges"]:
+        a, b = (r[0], r[-1])
+        for k in (a, b):
+            if k not in idx:
+                raise ValueError(f"short {spec['name']}: beat {k} not in timing")
+        if idx[a] > idx[b]:
+            raise ValueError(f"short {spec['name']}: range {a}..{b} runs backwards")
+        if runs and idx[a] <= runs[-1][1] + 1:
+            runs[-1][1] = max(runs[-1][1], idx[b])
+        else:
+            runs.append([idx[a], idx[b]])
+    segs, ids = [], []
+    for i, j in runs:
+        st = order[i]["start"] - PRE
+        if i > 0:
+            st = max(st, order[i - 1]["end"] + 0.02)
+        st = min(st, order[i]["start"] - 0.02)          # beats can overlap slightly: never clip a beat's first word
+        en = order[j]["end"] + POST
+        if j + 1 < len(order):
+            en = min(en, order[j + 1]["start"] - 0.02)
+        en = max(en, order[j]["end"] + 0.02)
+        segs.append((max(st, 0.0), en))
+        ids.append((order[i]["id"], order[j]["id"]))
+    total = sum(b - a for a, b in segs) + endcard
+    lo, hi = spec.get("min", SPEC_MIN), spec.get("max", SPEC_MAX)
+    if not lo <= total <= hi:
+        raise ValueError(f"short {spec['name']}: {total:.1f}s is outside {lo:.0f}-{hi:.0f}s")
+    return dict(segments=segs, total=total, ids=ids, endcard=endcard)
+
+
+def build_spec_short(master, timing, spec, defaults, out, tmp):
+    beats = timing["beats"]
+    plan = plan_short(beats, spec)
+    accent = tuple(spec.get("accent") or defaults.get("accent") or CRIMSON)
+    colors = {**DEFAULT_COLORS, **{k: tuple(v) for k, v in (defaults.get("speaker_colors") or {}).items()}}
+    global SPEAKER_COLORS
+    old_colors, SPEAKER_COLORS = SPEAKER_COLORS, colors          # caption_png reads the module palette
+    try:
+        end = {**(defaults.get("end_card") or {}), **(spec.get("end_card") or {})}
+        tmp = Path(tmp).resolve()
+        tmp.mkdir(parents=True, exist_ok=True)
+        under_png(tmp / "under.png")
+        over_png(tmp / "over.png", None, accent)
+        title_png(tmp / "title.png", spec["title"], accent)
+        vids, auds = [], []
+        n = len(plan["segments"])
+        for k, (a, b) in enumerate(plan["segments"]):
+            ev = caption_events(beats, a, b)
+            v, au = render_segment(master, a, b, ev, tmp, f"s{k}", flash_in=k > 0, flash_out=k < n - 1,
+                                   title_secs=TITLE_SECS if k == 0 else None)
+            vids.append(v)
+            auds.append(au)
+        ev_, ea = render_endcard(tmp, plan["endcard"], end.get("lines"), tuple(end.get("big") or ("WATCH", "PART 1")), accent)
+        vids.append(ev_)
+        auds.append(ea)
+        finish(vids, auds, tmp, out)
+    finally:
+        SPEAKER_COLORS = old_colors
+    return plan
+
+
+def finish(vids, auds, tmp, out):
+    """Concat segment audio, two-pass loudnorm to -14 LUFS, mux with the concatenated video."""
+    cat = tmp / "cat_a.wav"
+    run(["ffmpeg", "-y", "-v", "error", *sum([["-i", str(a)] for a in auds], []),
+         "-filter_complex", f"concat=n={len(auds)}:v=0:a=1[a]", "-map", "[a]", str(cat)])
+    m = measure_loudness(cat)
+    ln = "loudnorm=I=-14:TP=-1.5:LRA=11"
+    if m and m["input_i"] not in ("-inf", "inf"):
+        ln += (f":measured_I={m['input_i']}:measured_LRA={m['input_lra']}:measured_TP={m['input_tp']}"
+               f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    norm = tmp / "norm_a.wav"
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(cat), "-af", ln + ",aresample=48000", "-ar", "48000", str(norm)])
+    vl = tmp / "vids.txt"
+    vl.write_text("".join(f"file '{v}'\n" for v in vids))
+    out = Path(out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(vl), "-i", str(norm),
+         "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart",
+         "-shortest", str(out)])
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("project_id", nargs="?", default="bc-whatif-ep01")
     ap.add_argument("--master")
     ap.add_argument("--timing")
-    ap.add_argument("--out")
+    ap.add_argument("--out", help="legacy single teaser output path")
+    ap.add_argument("--outdir", help="spec shorts: output directory (default releases/copycat/<id>)")
+    ap.add_argument("--only", action="append", help="spec shorts: render only this short name (repeatable)")
+    ap.add_argument("--plan", action="store_true", help="spec shorts: print computed segments/durations and exit")
+    ap.add_argument("--spec", help="shorts spec file (default copycat/projects/<id>/shorts.json)")
     ap.add_argument("--tmp")
     a = ap.parse_args(argv)
     pid = a.project_id
     master = Path(a.master or ROOT / "releases/copycat" / pid / "master.mp4")
     timing_p = Path(a.timing or ROOT / "build/copycat" / pid / "audio/timing.json")
-    out = Path(a.out or ROOT / "releases/copycat" / pid / "short_teaser_9x16.mp4")
+    spec = load_spec(pid, a.spec)
+    if timing_p.exists() and spec and a.plan:
+        timing = json.load(open(timing_p))
+        for sh in spec["shorts"]:
+            pl = plan_short(timing["beats"], sh)
+            print(f"{sh['name']}: {pl['total']:.1f}s  ids={pl['ids']}  segments={[(round(x, 2), round(y, 2)) for x, y in pl['segments']]}")
+        return
     for p in (master, timing_p):
         if not p.exists():
-            sys.exit(f"missing input: {p}  (the short is cut from the finished master + audio timing)")
+            sys.exit(f"missing input: {p}  (shorts are cut from the finished master + audio timing)")
     timing = json.load(open(timing_p))
+    if spec:
+        outdir = Path(a.outdir or ROOT / "releases/copycat" / pid)
+        todo = [sh for sh in spec["shorts"] if not a.only or sh["name"] in a.only]
+        if not todo:
+            sys.exit(f"no short named {a.only}; have {[s['name'] for s in spec['shorts']]}")
+        for sh in todo:
+            out = outdir / f"short_{sh['name']}_9x16.mp4"
+            tmp = Path(a.tmp or ROOT / "build/copycat" / pid / "shorts") / sh["name"]
+            pl = build_spec_short(master, timing, sh, spec, out, tmp)
+            print(f"wrote {out}  {pl['total']:.1f}s  ids={pl['ids']}")
+        return
+    out = Path(a.out or ROOT / "releases/copycat" / pid / "short_teaser_9x16.mp4")
     build_short(master, timing, out, tmp=a.tmp or ROOT / "build/copycat" / pid / "short")
     print("wrote", out)
 

@@ -787,10 +787,75 @@ REPORTS = {
 }
 
 
+NAMES = ["Kuroda, S.", "Matsuo, H.", "Fujita, N.", "Ishii, T.", "Omura, K.", "Sakai, Y.", "Ueda, M.", "Nomura, A.", "Kawai, D."]
+
+
+def build_names(spec):
+    """Signature block of a report: a short column of plain Leaf names, written in three groups so the camera can drift down them."""
+    w, h = 1060, 1560
+    D = Doc(spec, "report", w, h, 1.4, seed_of("names"), creases=[(0, h * 0.5, w, h * 0.5 + 6, 0.26)], curl=("right", 40 * K), corner=34)
+    W_ = D.when
+    _report_head(D, "B", "11", "03 OCT", "Escort - mountain pass", w)
+    ink = (38, 34, 32)
+    D.text("l1", 90, 530, "0715  Pass reached. Rear guard sent back.", "type", 31, ink, None, jitter=0.25, dens=0.22)
+    D.text("l2", 90, 592, "1300  No word from the rear guard.", "type", 31, ink, None, jitter=0.25, dens=0.22)
+    D.text("l3", 90, 654, "Squad roll, as signed:", "type", 31, ink, None, jitter=0.25, dens=0.22)
+    D.hline(80, w - 80, 690, ink, 2.0, 0.7, "roll")
+    y0, lh = 790, 78
+    for i, nm in enumerate(NAMES):
+        g = f"g{i // 3 + 1}"
+        k = i % 3
+        y = y0 + i * lh
+        wh = W_(f"nm{i}", None, "omit", frac=(0.06 + 0.27 * k, 0.28 + 0.27 * k), group=g, lead=0.0)
+        D.text(f"nm{i}", 130, y, nm, "brush", 46, (34, 36, 66) if i % 2 else (44, 34, 30), wh, a=0.92, rot=-1.2 + 0.5 * (i % 3), bristle=0.25, bleed=0.95)
+        D.hline(120, w - 120, y + 20, (150, 140, 120), 1.2, 0.5, f"nl{i}")
+        D.text(f"mk{i}", 760, y - 4, "not returned" if i % 4 == 0 else "-", "type", 26, (110, 70, 60), wh, a=0.8)
+    D.anchor("top", w / 2, 520)
+    D.anchor("n3", w / 2, y0 + 1 * lh)
+    D.anchor("n6", w / 2, y0 + 4 * lh)
+    D.anchor("n9", w / 2, y0 + 8 * lh)
+    return D
+
+
+def build_tabs(spec):
+    """One October week of file tabs, three different clerks' hands, one tab stamped RESTRICTED."""
+    w, h = 1500, 1160
+    D = Doc(spec, "report", w, h, -1.6, seed_of("tabs"), creases=[(w * 0.5, 0, w * 0.5 + 4, h, 0.14)], curl=("left", 40 * K), corner=34)
+    W_ = D.when
+    ink = (40, 36, 34)
+    D.text("t1", 90, 120, "INDEX  -  OCTOBER, WEEK ONE", "type", 46, ink, None, jitter=0.2, tracking=3, dens=0.22)
+    D.hline(80, w - 80, 150, ink, 2.4, 0.8, "r")
+    days = ["OCT 03", "OCT 04", "OCT 05", "OCT 06", "OCT 07", "OCT 08", "OCT 09"]
+    notes = ["intake - ward 2", "transfers, east wing", "supplies - none", "leave granted, see roster", "night duty roster", "closed", "sealed per order"]
+    hands = [("type", 32, ink, 0.0), ("brush", 40, (34, 36, 74), -1.4), ("brush", 52, (52, 30, 24), 1.6)]
+    for i, (d, n) in enumerate(zip(days, notes)):
+        y = 270 + i * 120
+        hf, hs, hc, hr = hands[(0, 1, 0, 2, 1, 2, 0)[i]]
+        D.rect(90, y - 56, w - 90, y + 40, (130, 114, 96), 2.0, 0.6, f"tab{i}")
+        D.rect(90, y - 56, 330, y + 40, (130, 114, 96), 2.0, 0.6, f"tabl{i}")
+        wh = W_(f"row{i}", None, "anim", frac=(0.04 + 0.12 * i, 0.16 + 0.12 * i), group="rows", lead=0.0)
+        D.text(f"d{i}", 120, y, d, hf, hs, hc, wh, a=0.92, rot=hr, jitter=0.25, bristle=0.25) if hf != "brush" else D.text(f"d{i}", 120, y, d, hf, hs, hc, wh, a=0.92, rot=hr, bristle=0.25)
+        if hf == "brush":
+            D.text(f"n{i}", 380, y, n, hf, hs, hc, wh, a=0.92, rot=hr, bristle=0.25)
+        else:
+            D.text(f"n{i}", 380, y, n, hf, hs, hc, wh, a=0.92, rot=hr, jitter=0.25, dens=0.22)
+        if i == 6:
+            D.text("rs", 900, y + 10, "RESTRICTED", "anton", 64, STAMP_RED, W_("rs", None, "anim", frac=(0.82, 0.92), group="rs", lead=-0.1), rot=-6.0, tracking=3, wob=0.14, dens=0.30, a=0.92, imp=True, slam=True)
+    D.anchor("top", w / 2, 300)
+    D.anchor("mid", w / 2, 640)
+    D.anchor("last", w / 2, 900)
+    D.anchor("bottom", w / 2, 960)
+    return D
+
+
 def build_report(spec):
     var = spec.get("variant", "ambush")
     if var == "cat":
         return build_cat(spec)
+    if var == "names":
+        return build_names(spec)
+    if var == "tabs":
+        return build_tabs(spec)
     R = REPORTS[var]
     w, h = 1060, 1400
     D = Doc(spec, "report", w, h, {"ambush": -2.2, "formation": 1.8, "puddle": -1.6}[var], seed_of("report", var), creases=[(0, h * 0.5, w, h * 0.5 + 8, 0.30), (0, h * 0.25, w, h * 0.25 - 4, 0.20)], curl=("right", 44 * K), corner=36)

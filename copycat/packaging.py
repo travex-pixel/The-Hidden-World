@@ -60,10 +60,43 @@ def chapter_lines(timing: dict | None) -> tuple[list[str], bool]:
     return [f"{i['time']} {i['title']}" for i in chapter_items(timing)], True
 
 
+def _copy_spec(pid: str) -> dict | None:
+    """Per-project copy (titles, hook, tags ...) in copycat/projects/<id>/packaging_copy.json; None = the legacy Black Clover copy."""
+    f = ROOT / "copycat/projects" / pid / "packaging_copy.json"
+    return json.load(open(f)) if f.exists() else None
+
+
+def disclaimer_for(pid: str) -> str:
+    """Rights-holder disclaimer from the project's franchise config (Black Clover keeps its original wording)."""
+    from . import franchise as fr
+    f = fr.for_project(pid)
+    if f["id"] == fr.DEFAULT:
+        return DISCLAIMER
+    return (f"This is an unofficial fan work. {f['title']} and all related characters, artwork and imagery are the "
+            f"property of {f['rights']}. No copyright infringement is intended; images are used for fan storytelling "
+            "and the voices are AI-generated. Please support the official release.")
+
+
+def build_from_spec(pid: str, spec: dict, script: dict, timing: dict | None) -> dict:
+    chapters, have_ts = chapter_lines(timing)
+    desc = [spec["hook"], "", spec["covers"], "", "CHAPTERS", *chapters, "", spec["part_line"], "",
+            spec["spoiler_note"], "", "DISCLAIMER: " + disclaimer_for(pid), "", " ".join(spec["hashtags"])]
+    p = {
+        "id": pid, "episode_title": script["title"], "titles": spec["titles"],
+        "description": "\n".join(desc), "chapters": chapter_items(timing),
+        "tags": spec["tags"], "hashtags": spec["hashtags"], "pinned_comment": spec["pinned_comment"],
+        "timestamps_filled": have_ts, "category": spec.get("category"), "upload_checklist": spec.get("upload_checklist", []),
+    }
+    return p
+
+
 def build(pid: str) -> dict:
     script = json.load(open(ROOT / "copycat/projects" / pid / "script.json"))
     tpath = ROOT / "build/copycat" / pid / "audio/timing.json"
     timing = json.load(open(tpath)) if tpath.exists() else None
+    spec = _copy_spec(pid)
+    if spec:
+        return build_from_spec(pid, spec, script, timing)
     chapters, have_ts = chapter_lines(timing)
     desc = [
         "What if Asta was reborn in the church at Hage with every memory of his first life, the Spade raid, "
@@ -98,6 +131,10 @@ def render_md(p: dict) -> str:
     out += [f"{i}. {t}  ({len(t)} chars)" for i, t in enumerate(p["titles"], 1)]
     out += ["", "## Description", "", "```", p["description"], "```", "", "## Tags", "", ", ".join(p["tags"]),
             "", "## Hashtags", "", " ".join(p["hashtags"]), "", "## Pinned comment", "", p["pinned_comment"], ""]
+    if p.get("category"):
+        out += ["## Category", "", p["category"], ""]
+    if p.get("upload_checklist"):
+        out += ["## Upload checklist", ""] + [f"- [ ] {x}" for x in p["upload_checklist"]] + [""]
     if not p["timestamps_filled"]:
         out.append("> NOTE: chapter timestamps are a placeholder; re-run after the audio timing exists.")
     return "\n".join(out)
@@ -113,6 +150,8 @@ def main(argv=None):
     (out / "packaging.md").write_text(render_md(p))
     yt = {"titles": p["titles"], "description": p["description"], "chapters": p["chapters"], "tags": p["tags"],
           "hashtags": p["hashtags"], "pinned_comment": p["pinned_comment"]}
+    if p.get("upload_checklist"):
+        yt.update(category=p["category"], upload_checklist=p["upload_checklist"])
     (out / "youtube_metadata.json").write_text(json.dumps(yt, indent=2, ensure_ascii=False))
     print("wrote", out / "packaging.md", "timestamps_filled=", p["timestamps_filled"])
 
