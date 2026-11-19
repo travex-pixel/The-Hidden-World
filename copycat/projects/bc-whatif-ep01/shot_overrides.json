@@ -227,29 +227,44 @@
   "asset_id": "bc_1060"
  },
  "b127#0": {
-  "asset_id": "bc_0090"
+  "asset_id": "bc_0111",
+  "accent": "gold",
+  "camera": "slow_push_in"
  },
  "b130#0": {
   "asset_id": "bc_0586"
  },
  "b131#0": {
-  "asset_id": "bc_0232",
-  "treatment": "manga_motion",
-  "transition_in": "flash",
+  "asset_id": "bc_0056",
+  "accent": "gold",
+  "camera": "slow_pull_out",
+  "transition_in": "cut",
   "vfx": [
-   "impact_flash"
+   "dust"
   ]
  },
  "b131#1": {
   "asset_id": "bc_0561",
   "treatment": "manga_motion",
-  "layout": "depth_frame"
+  "layout": "depth_frame",
+  "accent": "gold",
+  "transition_in": "flash",
+  "camera": "impact_punch_zoom",
+  "vfx": [
+   "impact_flash",
+   "embers"
+  ]
  },
  "b132#0": {
-  "asset_id": "bc_0238",
+  "asset_id": "bc_0068",
   "treatment": "manga_motion",
-  "accent": "gold",
-  "layout": "depth_frame"
+  "layout": "depth_frame",
+  "accent": "crimson",
+  "vfx": [
+   "embers",
+   "red_glow"
+  ],
+  "camera": "slow_push_in"
  },
  "b133#0": {
   "asset_id": "bc_1202"
@@ -260,7 +275,8 @@
   "focus": [
    0.5,
    0.5
-  ]
+  ],
+  "transition_in": "dissolve"
  },
  "b041#0": {
   "asset_id": "bc_0621"
@@ -376,5 +392,14 @@
  },
  "b106#0": {
   "asset_id": "bc_0661"
+ },
+ "b128#0": {
+  "asset_id": "bc_0112",
+  "accent": "gold"
+ },
+ "b129#0": {
+  "asset_id": "bc_0262",
+  "accent": "gold",
+  "camera": "slow_push_in"
  }
 }

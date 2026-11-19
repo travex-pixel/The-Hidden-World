@@ -15,10 +15,10 @@ A full-cast Black Clover What-If audio drama. Part 1 follows the boy who reads t
 
 CHAPTERS
 0:00 Cold open
-0:45 I. The Boy Who Read The Wind
-3:12 II. The Devil In The Wall
-5:51 III. The Contract Without Chains
-8:27 IV. The Exam That Already Happened
+0:30 I. The Boy Who Read The Wind
+2:33 II. The Devil In The Wall
+4:48 III. The Contract Without Chains
+6:58 IV. The Exam That Already Happened
 
 SPOILER NOTE: this story draws on late-manga Black Clover content (Asta's origins and Liebe's history with Licita). If you are only caught up on the anime, expect spoilers.
 

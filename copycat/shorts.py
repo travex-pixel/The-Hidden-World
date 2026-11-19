@@ -348,8 +348,8 @@ def render_segment(master, start, end, events, tmp, tag, flash_in=False, flash_o
         fades += f",fade=t=out:st={dur - 0.12:.3f}:d=0.12:color=white"
     fc = (
         f"[0:v]setpts=PTS-STARTPTS,fps={FPS},split[a][b];"
-        f"[a]scale=-2:240,crop=135:240,gblur=sigma=2,scale={W}:{H}:flags=bicubic,"
-        f"eq=brightness=-0.25:saturation=0.85[bg];"
+        f"[a]crop=iw:ih*0.70:0:0,scale=-2:240,crop=135:240,gblur=sigma=4,scale={W}:{H}:flags=bicubic,"
+        f"eq=brightness=-0.36:saturation=0.8[bg];"
         f"[b]scale=w='trunc({PIC_W}*(1+0.04*n/{max(dur * FPS, 1):.1f})/2)*2':h=-2:eval=frame,"
         f"crop={PIC_W}:{PIC_H}[fg];"
         f"[bg][1:v]overlay=0:0[bg2];[bg2][fg]overlay=0:{PIC_Y}[v1];[v1][2:v]overlay=0:0[v2];"
