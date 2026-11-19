@@ -63,8 +63,8 @@ Narration voices: Kokoro-82M (Apache-2.0). Fonts: Anton, Bebas Neue, Barlow Cond
     if master.exists():
         import subprocess
         dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(master)], capture_output=True, text=True).stdout)
-        # deliverables must fit a 500 MiB attachment limit: cap the 1080p video bitrate to ~94% of that budget
-        cap = max(2.0, min(10.0, 470 * 8 * 1.048576 / dur - 0.2))
+        # deliverables must fit the chat attachment limit (seen as low as 400 MiB): budget 370 MiB
+        cap = max(2.0, min(10.0, 370 * 8 * 1.048576 / dur - 0.25))
         for name, extra in ((f"{pid}_1080p.mp4", ["-crf", "20", "-maxrate", f"{cap:.2f}M", "-bufsize", f"{2 * cap:.2f}M", "-c:a", "copy"]),
                             (f"{pid}_720p.mp4", ["-vf", "scale=1280:720:flags=lanczos", "-crf", "23", "-c:a", "aac", "-b:a", "160k"])):
             dst = pk / name
