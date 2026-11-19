@@ -20,7 +20,7 @@ from copycat.sfx import SR
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_PROJECT = "bc-whatif-ep01"
 CACHE = ROOT / ".cache" / "copycat_voice"
-CODE_VERSION = "v3"
+CODE_VERSION = "v5"
 TARGET_RMS_DB = -20.0     # speech-frame RMS of every line before per-character gain_db
 EDGE_KEEP_S = 0.030       # silence left at each end after trimming (<= 40 ms)
 EDGE_FADE_S = 0.005
@@ -242,6 +242,18 @@ def pitch_shift(x: np.ndarray, st: float, sr: int = SR, formant: str = "preserve
     return sg.resample_poly(y, len(x), len(y)).astype(np.float32)
 
 
+def time_stretch(x: np.ndarray, tempo: float, sr: int = SR) -> np.ndarray:
+    """Duration x/tempo at unchanged pitch (rubberband); tempo < 1 slows down."""
+    cmd = ["ffmpeg", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-", "-af",
+           f"rubberband=tempo={tempo:.4f}:pitchq=quality", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-"]
+    try:
+        p = subprocess.run(cmd, input=x.astype(np.float32).tobytes(), capture_output=True, check=True)
+        y = np.frombuffer(p.stdout, np.float32).copy()
+        return y if len(y) else x
+    except Exception:
+        return x
+
+
 def compress(x: np.ndarray, thr_db=-22.0, ratio=2.5, attack_ms=8.0, release_ms=120.0, makeup_db=0.0, sr: int = SR) -> np.ndarray:
     blk = int(0.002 * sr)
     n = len(x) // blk
@@ -347,6 +359,10 @@ def _raw48(text: str, entry: dict) -> np.ndarray:
             break
         aim = WPM_AIM_LOW if wpm < WPM_RETRY_LOW else WPM_AIM_HIGH
         e["length_scale"] = float(np.clip(e["length_scale"] * wpm / aim, 0.7, 2.2))
+    if best_err > 0.0 and words >= 3:       # VITS stretch saturates: finish with a pitch-neutral time stretch
+        wpm = words / (len(best) / SR) * 60
+        aim = WPM_AIM_LOW if wpm < WPM_RETRY_LOW else WPM_AIM_HIGH
+        best = time_stretch(best, float(np.clip(aim / wpm, 0.75, 1.3)))
     return best
 
 

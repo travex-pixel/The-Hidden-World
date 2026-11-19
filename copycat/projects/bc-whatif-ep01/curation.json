@@ -100,7 +100,6 @@
  "bc_0053": {
   "subjects": [
    "asta_black_form",
-   "liebe",
    "mindscape",
    "five_leaf_grimoire"
   ],
@@ -109,7 +108,11 @@
    "epic"
   ],
   "shotType": "wide",
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
  },
  "bc_0054": {
   "reject": true
@@ -117,14 +120,17 @@
  "bc_0060": {
   "subjects": [
    "asta_black_form",
-   "liebe",
    "mindscape"
   ],
   "mood": [
    "combat",
    "epic"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
  },
  "bc_0064": {
   "add_subjects": [
@@ -153,12 +159,14 @@
    0.5,
    0.35
   ],
-  "keep": true
+  "keep": true,
+  "add_subjects": [
+   "liebe"
+  ]
  },
  "bc_0114": {
   "subjects": [
    "asta_black_form",
-   "liebe",
    "mindscape",
    "five_leaf_grimoire"
   ],
@@ -166,37 +174,46 @@
    "combat",
    "epic"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
  },
  "bc_0132": {
   "subjects": [
    "asta_black_form",
    "demon_slayer_sword",
-   "mindscape",
-   "liebe"
+   "mindscape"
   ],
   "mood": [
    "combat",
    "ominous"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
  },
  "bc_0134": {
   "subjects": [
    "asta_black_form",
-   "liebe",
    "five_leaf_grimoire"
   ],
   "mood": [
    "combat",
    "epic"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
  },
  "bc_0158": {
   "subjects": [
-   "asta_black_form",
-   "liebe"
+   "asta_black_form"
   ],
   "mood": [
    "ominous",
@@ -207,7 +224,11 @@
    0.5,
    0.35
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
  },
  "bc_0170": {
   "subjects": [
@@ -220,7 +241,10 @@
    "combat",
    "ominous"
   ],
-  "keep": true
+  "keep": true,
+  "add_subjects": [
+   "liebe"
+  ]
  },
  "bc_0116": {
   "add_subjects": [
@@ -568,7 +592,10 @@
   "reject": true
  },
  "bc_0567": {
-  "reject": true
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true
  },
  "bc_0229": {
   "subjects": [
@@ -700,18 +727,24 @@
  "bc_0545": {
   "subjects": [
    "asta_black_form",
-   "liebe",
    "anti_magic"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
  },
  "bc_0546": {
   "subjects": [
    "asta_black_form",
-   "liebe",
    "lucifero"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
  },
  "bc_0548": {
   "subjects": [
@@ -722,24 +755,33 @@
  },
  "bc_0551": {
   "subjects": [
-   "asta_black_form",
+   "asta_black_form"
+  ],
+  "keep": true,
+  "remove_subjects": [
    "liebe"
   ],
-  "keep": true
+  "add_subjects": []
  },
  "bc_0549": {
   "subjects": [
-   "asta_black_form",
+   "asta_black_form"
+  ],
+  "keep": true,
+  "remove_subjects": [
    "liebe"
   ],
-  "keep": true
+  "add_subjects": []
  },
  "bc_0558": {
   "subjects": [
-   "asta_black_form",
+   "asta_black_form"
+  ],
+  "keep": true,
+  "remove_subjects": [
    "liebe"
   ],
-  "keep": true
+  "add_subjects": []
  },
  "bc_0561": {
   "subjects": [
@@ -756,21 +798,26 @@
  },
  "bc_0565": {
   "subjects": [
-   "mindscape",
-   "liebe"
+   "mindscape"
   ],
   "mood": [
    "ominous",
    "mysterious"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ]
  },
  "bc_0147": {
   "add_subjects": [
    "mindscape",
-   "liebe"
+   "asta_black_form"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ]
  },
  "bc_0055": {
   "add_subjects": [
@@ -784,22 +831,27 @@
    "mindscape",
    "liebe"
   ],
-  "keep": true
+  "keep": true,
+  "shotType": "closeup"
  },
  "bc_0296": {
   "add_subjects": [
-   "mindscape",
-   "liebe"
+   "mindscape"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ]
  },
  "bc_0299": {
   "add_subjects": [
    "mindscape",
-   "liebe",
    "five_leaf_grimoire"
   ],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ]
  },
  "bc_0228": {
   "add_subjects": [
@@ -815,12 +867,3124 @@
  },
  "bc_0247": {
   "add_subjects": [],
-  "keep": true
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ]
  },
  "bc_0284": {
   "add_subjects": [
    "five_leaf_grimoire"
   ],
   "keep": true
+ },
+ "bc_0675": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0677": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0680": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0681": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0682": {
+  "subjects": [
+   "asta_young",
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0683": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0686": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0687": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0688": {
+  "subjects": [
+   "asta_young",
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "extreme_closeup"
+ },
+ "bc_0696": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0697": {
+  "subjects": [
+   "asta_young",
+   "yuno_young",
+   "sister_lily",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0710": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0711": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0712": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0716": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0717": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0719": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0720": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0722": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0724": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0725": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0727": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0728": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0730": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0733": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0736": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0772": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0773": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0775": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0777": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0781": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0782": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0796": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0797": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0800": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0801": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0802": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0803": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0804": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0805": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0806": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0807": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0818": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0824": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0961": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0962": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0965": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0967": {
+  "subjects": [
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0970": {
+  "subjects": [
+   "asta_young",
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "extreme_closeup"
+ },
+ "bc_0903": {
+  "subjects": [
+   "asta_young",
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0678": {
+  "subjects": [
+   "asta_young",
+   "yuno_young",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0758": {
+  "subjects": [
+   "asta_young",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0673": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0676": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0679": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0684": {
+  "subjects": [
+   "yuno_young",
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0700": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0706": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0709": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0718": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0726": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0737": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0738": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0739": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0747": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0748": {
+  "subjects": [
+   "yuno_young",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0762": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0767": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0769": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0776": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0778": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0798": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0799": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0808": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0809": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0810": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0811": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0823": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0715": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0761": {
+  "subjects": [
+   "yuno_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_1083": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ],
+  "shotType": "extreme_closeup"
+ },
+ "bc_0689": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0691": {
+  "subjects": [
+   "sister_lily",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0702": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0713": {
+  "subjects": [
+   "sister_lily",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0714": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0723": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0731": {
+  "subjects": [
+   "sister_lily",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0734": {
+  "subjects": [
+   "sister_lily",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0741": {
+  "subjects": [
+   "sister_lily",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0742": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0743": {
+  "subjects": [
+   "sister_lily",
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0757": {
+  "subjects": [
+   "sister_lily",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0872": {
+  "subjects": [
+   "sister_lily",
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0874": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0884": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0885": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0887": {
+  "subjects": [
+   "sister_lily",
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0943": {
+  "subjects": [
+   "sister_lily",
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0946": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0960": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0963": {
+  "subjects": [
+   "sister_lily",
+   "asta_young"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "action"
+ },
+ "bc_0964": {
+  "subjects": [
+   "sister_lily",
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0966": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_1034": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_1035": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_1036": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0580": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0591": {
+  "subjects": [
+   "sister_lily"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0732": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0735": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0877": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0878": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0883": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0938": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0941": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0942": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0945": {
+  "subjects": [
+   "father_orsi"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0569": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0596": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0597": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0599": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0699": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0708": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0729": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0740": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0902": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0935": {
+  "subjects": [
+   "hage_church",
+   "hage_village",
+   "night_sky"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_1013": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_1031": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0936": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_1033": {
+  "subjects": [
+   "hage_church",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ]
+ },
+ "bc_0568": {
+  "subjects": [
+   "hage_village",
+   "demon_skull"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0574": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0701": {
+  "subjects": [
+   "hage_village",
+   "demon_skull"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0674": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0618": {
+  "subjects": [
+   "hage_village",
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0746": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0749": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0751": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0752": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0754": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0755": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0759": {
+  "subjects": [
+   "hage_village",
+   "night_sky"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0906": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0959": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0958": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_1032": {
+  "subjects": [
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0822": {
+  "subjects": [
+   "night_sky"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet",
+   "mysterious"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0592": {
+  "subjects": [
+   "demon_skull",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0600": {
+  "subjects": [
+   "demon_skull",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0627": {
+  "subjects": [
+   "demon_skull",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0672": {
+  "subjects": [
+   "demon_skull",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0846": {
+  "subjects": [
+   "demon_skull",
+   "hage_village"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0603": {
+  "subjects": [
+   "grimoire_tower",
+   "crowd"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_0604": {
+  "subjects": [
+   "grimoire_tower",
+   "crowd"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_0606": {
+  "subjects": [
+   "grimoire_tower",
+   "crowd"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_0607": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0608": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0609": {
+  "subjects": [
+   "grimoire_tower",
+   "crowd"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_0612": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0613": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0614": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0615": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0616": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0619": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0620": {
+  "subjects": [
+   "grimoire_tower",
+   "crowd"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_0621": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0625": {
+  "subjects": [
+   "grimoire_tower",
+   "crowd"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_0617": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0605": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_0610": {
+  "subjects": [
+   "grimoire_tower"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_1045": {
+  "subjects": [
+   "crowd"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1050": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1052": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1053": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1054": {
+  "subjects": [
+   "crowd"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1065": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1066": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1067": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1070": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1072": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1084": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1092": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1190": {
+  "subjects": [
+   "crowd",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "wide"
+ },
+ "bc_0666": {
+  "subjects": [
+   "five_leaf_grimoire",
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined",
+   "ominous"
+  ]
+ },
+ "bc_0667": {
+  "subjects": [
+   "five_leaf_grimoire",
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined",
+   "ominous"
+  ]
+ },
+ "bc_0669": {
+  "subjects": [
+   "five_leaf_grimoire",
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined",
+   "ominous"
+  ]
+ },
+ "bc_0670": {
+  "subjects": [
+   "five_leaf_grimoire",
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined",
+   "ominous"
+  ]
+ },
+ "bc_0632": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0635": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0636": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0637": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0640": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0641": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0642": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0643": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0644": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0645": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0647": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0652": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0653": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0654": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0655": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0657": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0659": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0665": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0638": {
+  "subjects": [
+   "revchi",
+   "yuno"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0639": {
+  "subjects": [
+   "revchi",
+   "yuno"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0649": {
+  "subjects": [
+   "revchi",
+   "yuno"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0658": {
+  "subjects": [
+   "revchi",
+   "yuno"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0651": {
+  "subjects": [
+   "revchi"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous",
+   "combat"
+  ]
+ },
+ "bc_0661": {
+  "subjects": [
+   "yuno"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous"
+  ]
+ },
+ "bc_0662": {
+  "subjects": [
+   "yuno"
+  ],
+  "keep": true,
+  "mood": [
+   "ominous"
+  ]
+ },
+ "bc_0646": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ]
+ },
+ "bc_0648": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ]
+ },
+ "bc_0579": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ]
+ },
+ "bc_0581": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ]
+ },
+ "bc_0585": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ]
+ },
+ "bc_0586": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ]
+ },
+ "bc_0587": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ]
+ },
+ "bc_0590": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ]
+ },
+ "bc_1044": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1049": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1074": {
+  "subjects": [
+   "exam_arena",
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1082": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1094": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1099": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1100": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1127": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1132": {
+  "subjects": [
+   "exam_arena",
+   "magic_knights"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1137": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1149": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1150": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1156": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1157": {
+  "subjects": [
+   "exam_arena",
+   "magic_knights"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1158": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1163": {
+  "subjects": [
+   "exam_arena",
+   "magic_knights"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1176": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1177": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1184": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1185": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1186": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1187": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1193": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1194": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1007": {
+  "subjects": [
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "wide"
+ },
+ "bc_1112": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1113": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1117": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1120": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1121": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1128": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena",
+   "yami"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1133": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1171": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1172": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1173": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1181": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1189": {
+  "subjects": [
+   "magic_knights",
+   "exam_arena",
+   "william_vangeance"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ],
+  "shotType": "group"
+ },
+ "bc_1125": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1126": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1129": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1130": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1131": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1138": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1139": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1140": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1142": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1154": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1155": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1160": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1162": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1152": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1153": {
+  "subjects": [
+   "william_vangeance",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "mysterious"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1080": {
+  "subjects": [
+   "yami"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1085": {
+  "subjects": [
+   "yami"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1081": {
+  "subjects": [
+   "yami"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1111": {
+  "subjects": [
+   "yami"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1188": {
+  "subjects": [
+   "yami"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1217": {
+  "subjects": [
+   "yami"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1014": {
+  "subjects": [
+   "royal_capital"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_1024": {
+  "subjects": [
+   "royal_capital"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_1037": {
+  "subjects": [
+   "royal_capital"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_1039": {
+  "subjects": [
+   "royal_capital"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_1041": {
+  "subjects": [
+   "royal_capital"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_0848": {
+  "subjects": [
+   "royal_capital"
+  ],
+  "keep": true,
+  "mood": [
+   "quiet"
+  ],
+  "shotType": "establishing"
+ },
+ "bc_1060": {
+  "subjects": [
+   "asta",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "comedic"
+  ]
+ },
+ "bc_1076": {
+  "subjects": [
+   "asta",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "comedic"
+  ]
+ },
+ "bc_1078": {
+  "subjects": [
+   "asta",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "comedic"
+  ]
+ },
+ "bc_1097": {
+  "subjects": [
+   "asta",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "comedic"
+  ]
+ },
+ "bc_1103": {
+  "subjects": [
+   "asta",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "comedic"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_1198": {
+  "subjects": [
+   "asta",
+   "exam_arena"
+  ],
+  "keep": true,
+  "mood": [
+   "comedic"
+  ]
+ },
+ "bc_0633": {
+  "subjects": [
+   "yuno"
+  ],
+  "keep": true,
+  "mood": [
+   "epic"
+  ]
+ },
+ "bc_1202": {
+  "subjects": [
+   "asta"
+  ],
+  "keep": true,
+  "mood": [
+   "determined"
+  ],
+  "shotType": "closeup"
+ },
+ "bc_0281": {
+  "subjects": [
+   "julius"
+  ],
+  "keep": true
+ },
+ "bc_0282": {
+  "subjects": [
+   "julius"
+  ],
+  "keep": true
+ },
+ "bc_0283": {
+  "subjects": [
+   "licht"
+  ],
+  "keep": true
+ },
+ "bc_0286": {
+  "subjects": [
+   "licht"
+  ],
+  "keep": true
+ },
+ "bc_1230": {
+  "reject": true
+ },
+ "bc_1522": {
+  "subjects": [
+   "liebe",
+   "mindscape"
+  ],
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "closeup",
+  "keep": true
+ },
+ "bc_1523": {
+  "subjects": [
+   "liebe",
+   "mindscape"
+  ],
+  "mood": [
+   "ominous",
+   "epic"
+  ],
+  "keep": true
+ },
+ "bc_1524": {
+  "subjects": [
+   "liebe"
+  ],
+  "kind": "manga_panel",
+  "shotType": "panel",
+  "mood": [
+   "ominous"
+  ],
+  "keep": true
+ },
+ "bc_1525": {
+  "reject": true
+ },
+ "bc_1526": {
+  "subjects": [
+   "liebe",
+   "asta",
+   "mindscape"
+  ],
+  "mood": [
+   "ominous",
+   "mysterious"
+  ],
+  "keep": true
+ },
+ "bc_1527": {
+  "subjects": [
+   "liebe",
+   "asta",
+   "mindscape"
+  ],
+  "mood": [
+   "mysterious"
+  ],
+  "keep": true
+ },
+ "bc_1528": {
+  "subjects": [
+   "liebe",
+   "mindscape"
+  ],
+  "mood": [
+   "ominous"
+  ],
+  "shotType": "extreme_closeup",
+  "keep": true
+ },
+ "bc_1529": {
+  "subjects": [
+   "liebe",
+   "mindscape"
+  ],
+  "mood": [
+   "ominous",
+   "epic"
+  ],
+  "keep": true
+ },
+ "bc_1530": {
+  "subjects": [
+   "liebe",
+   "mindscape"
+  ],
+  "mood": [
+   "ominous"
+  ],
+  "keep": true
+ },
+ "bc_1532": {
+  "subjects": [
+   "licita"
+  ],
+  "mood": [
+   "emotional"
+  ],
+  "keep": true
+ },
+ "bc_1533": {
+  "subjects": [
+   "licita"
+  ],
+  "mood": [
+   "emotional"
+  ],
+  "keep": true
+ },
+ "bc_1534": {
+  "subjects": [
+   "asta_black_form"
+  ],
+  "keep": true
+ },
+ "bc_1536": {
+  "subjects": [
+   "asta_black_form"
+  ],
+  "keep": true,
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": []
+ },
+ "bc_1229": {
+  "subjects": [
+   "asta_black_form"
+  ],
+  "keep": true
+ },
+ "bc_0046": {
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": [
+   "asta_black_form"
+  ],
+  "keep": true
+ },
+ "bc_0067": {
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": [
+   "asta_black_form"
+  ],
+  "keep": true
+ },
+ "bc_0068": {
+  "remove_subjects": [
+   "liebe"
+  ],
+  "add_subjects": [
+   "asta_black_form"
+  ],
+  "keep": true
+ },
+ "bc_0047": {
+  "add_subjects": [
+   "liebe"
+  ]
  }
 }
