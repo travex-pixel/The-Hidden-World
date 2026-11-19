@@ -28,6 +28,9 @@ DOMAIN = "anime_black_clover"
 MANGA_SUBJECTS = {"liebe", "licita", "five_leaf_grimoire", "lucius", "asta_black_form"}
 MANDATORY = ["asta_young", "yuno_young", "liebe", "licita", "five_leaf_grimoire", "grimoire_tower", "hage_village", "hage_church",
              "demon_skull", "revchi", "yami", "julius", "william_vangeance", "exam_arena", "asta_black_form", "yuno", "asta"]
+SCARCE = {"liebe", "asta_young", "yuno_young", "hage_church", "licita", "demon_skull", "hage_village", "revchi", "five_leaf_grimoire"}  # lowres (>=480px) tolerated, flagged
+MAX_VAULT = 165
+CAPS = {"asta": 36, "yuno": 18, "default": 10}
 EXTRA_CATS = ["Licita", "Lucifero", "Lucius Zogratis", "Dante Zogratis", "Zenon Zogratis", "Orsi Orfai", "Lily Aquaria", "Patolli", "Licht"]
 ENTITY_PAGES = ["Asta", "Yuno", "Liebe", "Licita", "Black Asta", "Five-leaf Clover Grimoire", "Four-leaf Clover Grimoire", "Demon-Slayer Sword", "Anti Magic",
                 "Hage Village", "Orsi Orfai", "Lily Aquaria", "Revchi Salik", "Yami Sukehiro", "Noelle Silva", "Magna Swing", "Luck Voltia",
@@ -127,7 +130,7 @@ def discover(refresh):
     for c in episodes: cat(c)
     chars = {c.lower() for c in subcats("Category:Images_by_Character")}
     wanted = [f"Category:Images of {n}" for n in list(tagger.CAT_SUBJECT) + [e.lower() for e in EXTRA_CATS]]
-    for c in sorted({w for w in wanted if w.lower() in chars}): cat(c)
+    for c in sorted({w for w in wanted if w.lower() in chars}) + ["Category:Images of Grimoires"]: cat(c)
     # articles: prop=images + gallery wikitext captions
     for t in ENTITY_PAGES + EPISODE_PAGES:
         try:
@@ -185,13 +188,13 @@ def fetch_and_register(rec, kind, reg, source="fandom"):
         img = imgutil.open_image(download(rec["url"]))
     except Exception as ex:
         e.update(status="rejected", reason=f"download:{type(ex).__name__}"); reg[key] = e; return e
-    reason = imgutil.check(img, manga=kind == "manga_panel")
+    reason = imgutil.check(img, manga=kind == "manga_panel", min_w=480 if rec.get("lowres_ok") else 800)
     if reason:
         e.update(status="rejected", reason=reason); reg[key] = e; return e
     nid = "bc_%04d" % (1 + max([int(v["id"][3:]) for v in reg.values() if v.get("id")] or [0]))
     IMAGES.mkdir(parents=True, exist_ok=True)
     imgutil.save_jpeg(img, IMAGES / f"{nid}.jpg")
-    e.update(status="ok", id=nid, width=img.width, height=img.height, dhash=imgutil.dhash(img), palette=imgutil.palette(img), quality=imgutil.quality(img))
+    e.update(status="ok", id=nid, lowres=img.width < 800, width=img.width, height=img.height, dhash=imgutil.dhash(img), palette=imgutil.palette(img), quality=imgutil.quality(img))
     reg[key] = e
     return e
 
@@ -199,7 +202,7 @@ def fetch_and_register(rec, kind, reg, source="fandom"):
 def jikan(reg, refresh):
     for ep in ("pictures", "characters"):
         try:
-            d = get(f"https://api.jikan.moe/v4/anime/34572/{ep}", min_gap=1.1).json()["data"]
+            d = get(f"https://api.jikan.moe/v4/anime/34572/{ep}", tries=2, min_gap=1.1).json()["data"]
         except Exception as ex:
             log(f"jikan {ep}: {ex}"); continue
         urls = []
@@ -223,20 +226,32 @@ def build_vault(local_entries=()):
         t["dominantPalette"] = e["palette"]
         assets.append({"id": e["id"], "path": f"assets/cache/black-clover/images/{e['id']}.jpg", "domain": DOMAIN, "kind": e["kind"], "source": e["source"],
                        "source_url": e["url"], "page": e["page"], "file_title": e["title"], "caption": e["caption"], "width": e["width"], "height": e["height"],
-                       "dhash": e["dhash"], "tags": t, "focus": [0.5, 0.4], "quality": e["quality"]})
+                       "dhash": e["dhash"], "tags": t, "focus": [0.5, 0.4], "quality": e["quality"], **({"lowres": True} if e.get("lowres") else {})})
     assets += list(local_entries)
     assets.sort(key=lambda a: -(a["width"] * a["height"]))
     kept, dups = [], 0
     for a in assets:
         if any(imgutil.hamming(a["dhash"], k["dhash"]) <= 6 for k in kept): dups += 1; continue
         kept.append(a)
-    cur, final, rejected_cur = tagger.load_curation(), [], 0
+    cur, final, rejected_cur, capped = tagger.load_curation(), [], 0, 0
+    cnt, pruned = Counter(), []
+    for a in sorted(kept, key=lambda a: -a["quality"]):
+        if a["kind"] == "manga_panel" or a.get("lowres") or a["source"] == "local" or tagger.curation_for(a, cur).get("keep"): pruned.append(a); continue
+        subs = a["tags"]["subjects"] or ["_none"]
+        if all(cnt[x] >= CAPS.get(x, CAPS["default"]) for x in subs):
+            capped += 1; continue
+        cnt.update(subs); pruned.append(a)
+    core = set(MANDATORY) - {"asta", "yuno"}
+    must = [a for a in pruned if a["kind"] == "manga_panel" or a.get("lowres") or core & set(a["tags"]["subjects"]) or tagger.curation_for(a, cur).get("keep")]
+    rest = sorted((a for a in pruned if a not in must), key=lambda a: -a["quality"])
+    room = max(0, MAX_VAULT - len(must)); capped += max(0, len(rest) - room)
+    kept = must + rest[:room]
     for a in sorted(kept, key=lambda a: a["id"]):
         if tagger.apply_curation(a, cur): final.append(a)
         else: rejected_cur += 1
     VAULT.write_text(json.dumps({"domain": DOMAIN, "assets": final}, indent=1))
     reasons = Counter(e["reason"].split(":")[0] for e in reg.values() if e.get("status") == "rejected")
-    reasons["duplicate"] += dups; reasons["curation"] += rejected_cur
+    reasons["duplicate"] += dups; reasons["curation"] += rejected_cur; reasons["subject_cap"] += capped
     return final, reasons
 
 
@@ -269,7 +284,7 @@ def main(argv=None):
             t = tagger.derive(rec["page"], rec["title"], rec["caption"], rec["cats"], kind, rec["w"], rec["h"])
             if kind == "manga_panel":
                 if not set(t["subjects"]) & MANGA_SUBJECTS or min(rec["w"], rec["h"]) < 600: continue
-            elif rec["w"] < 800: continue
+            elif rec["w"] < 800 and not (rec["w"] >= 480 and set(t["subjects"]) & SCARCE and t["subjects"]): continue
             ranked.append((score(rec, t), kind, rec))
         ranked.sort(key=lambda x: -x[0])
         have = lambda k: sum(1 for e in reg.values() if e.get("status") == "ok" and e["kind"] == k)
@@ -279,6 +294,7 @@ def main(argv=None):
             if kind != "manga_panel" and have("anime_still") + have("key_art") >= a.max: continue
             if kind == "manga_panel" and have("manga_panel") >= 20: continue
             if sc < 0: continue
+            rec["lowres_ok"] = rec["w"] < 800
             e = fetch_and_register(rec, kind, reg)
             log(f"{e['status']:8s} {e.get('id', e.get('reason')):12s} {rec['title']}")
             if len(reg) % 10 == 0: save_registry(reg)

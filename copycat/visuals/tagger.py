@@ -9,10 +9,10 @@ CURATION = ROOT / "copycat/projects/bc-whatif-ep01/curation.json"
 # subject -> regexes (matched on lowercased "title | caption | page")
 ALIASES = {
     "liebe": [r"\bliebe\b", r"devil form"],
-    "licita": [r"\blicita\b"],
+    "licita": [r"\blicita\b", r"\brichita\b"],
     "five_leaf_grimoire": [r"five.?leaf", r"asta'?s? grimoire", r"asta grimoire", r"grimoire of asta"],
     "four_leaf_grimoire": [r"four.?leaf", r"yuno'?s? grimoire", r"yuno grimoire", r"yuno receives his grimoire"],
-    "demon_slayer_sword": [r"demon.?slayer", r"asta'?s? sword", r"anti.?magic sword"],
+    "demon_slayer_sword": [r"demon.?slayer", r"demon.?dweller", r"asta'?s? sword", r"anti.?magic sword"],
     "anti_magic": [r"anti.?magic"],
     "father_orsi": [r"\borsi\b", r"father orsi"],
     "sister_lily": [r"lily aquaria", r"sister lily", r"\blily\b", r"punished by the sister"],
@@ -37,19 +37,19 @@ ALIASES = {
     "crowd": [r"crowd", r"villagers", r"spectators", r"citizens", r"15-year-olds"],
     "hage_village": [r"\bhage\b"],
     "hage_church": [r"church", r"orphanage"],
-    "demon_skull": [r"skull", r"first wizard king", r"statue"],
-    "grimoire_tower": [r"grimoire tower", r"acceptance ceremony", r"receives? (his|their|her)? ?grimoire", r"receive their grimoire"],
+    "demon_skull": [r"skull", r"first wizard king", r"statue", r"lemiel"],
+    "grimoire_tower": [r"grimoire tower", r"acceptance ceremony", r"receiv(e|es|ed) (his|their|her)? ?grimoire", r"receive their grimoire"],
     "royal_capital": [r"royal capital", r"\bcapital\b", r"clover kingdom"],
-    "exam_arena": [r"\bexam", r"arena", r"selection"],
+    "exam_arena": [r"\bexam", r"arena", r"selection", r"venue", r"stadium", r"colosseum", r"battle royale"],
     "black_bulls_hideout": [r"hideout", r"headquarters", r"black bull hq", r"\bbase\b", r"\bhq\b"],
     "dungeon": [r"dungeon"],
     "mindscape": [r"mindscape", r"\bmind\b", r"\bdream\b"],
     "night_sky": [r"night sky", r"\bstars\b", r"\bmoon\b"],
 }
-BLACK = [r"black asta", r"black form", r"devil union", r"demon form", r"true unite", r"\bunite\b", r"devil.?union", r"demon.?union"]
-YOUNG = r"\b(infants?|child|children|young|kid|kids|baby|orphan|little|infancy)\b|as a child"
+BLACK = [r"united with", r"black divider", r"black meteorite", r"black hurricane", r"infinite slash", r"black.*(form|slash|asta)", r"black asta", r"black form", r"devil union", r"demon form", r"true unite", r"\bunite\b", r"devil.?union", r"demon.?union"]
+YOUNG = r"\bat [4-9]\b|\b(infants?|child|children|young|kid|kids|baby|orphan|little|infancy)\b|as a child"
 CAT_SUBJECT = {  # "Images of X" category -> subject (only used when the title yields nothing)
-    "asta": "asta", "yuno": "yuno", "liebe": "liebe", "licita": "licita", "orsi orfai": "father_orsi",
+    "asta": "asta", "yuno": "yuno", "yuno grinberryall": "yuno", "richita": "licita", "sylph": "sylph", "liebe": "liebe", "licita": "licita", "orsi orfai": "father_orsi",
     "lily aquaria": "sister_lily", "revchi salik": "revchi", "yami sukehiro": "yami", "noelle silva": "noelle",
     "magna swing": "magna", "luck voltia": "luck", "vanessa enoteca": "vanessa", "finral roulacase": "finral",
     "julius novachrono": "julius", "william vangeance": "william_vangeance", "patolli": "patolli", "licht": "licht",
@@ -125,11 +125,16 @@ def load_curation(path=CURATION):
         return {}
 
 
+def curation_for(asset, cur):
+    c = {}
+    for key in (asset.get("id", ""), asset.get("file_title", ""), re.sub(r"^File:", "", asset.get("file_title", ""))):
+        c.update(cur.get(key, {}))
+    return c
+
+
 def apply_curation(asset, cur):
     """Merge curation into an asset dict in place; returns False when the asset is rejected."""
-    c = {}
-    for key in (asset["id"], asset.get("file_title", ""), re.sub(r"^File:", "", asset.get("file_title", ""))):
-        c.update(cur.get(key, {}))
+    c = curation_for(asset, cur)
     if c.get("reject"): return False
     t = asset["tags"]
     if "subjects" in c: t["subjects"] = list(c["subjects"])

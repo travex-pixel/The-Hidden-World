@@ -1,0 +1,316 @@
+{
+ "_comment": "Piper cast; all models public-domain/CC0/CC-BY. Edit then run: python -m copycat.voicecast audition",
+ "cast": {
+  "NARRATOR": {
+   "model": "en_US-john-medium",
+   "speaker": null,
+   "length_scale": 1.28,
+   "noise_scale": 0.667,
+   "noise_w": 0.8,
+   "pitch_semitones": 0,
+   "formant": "preserved",
+   "fx": [
+    {
+     "type": "lowshelf",
+     "hz": 180,
+     "db": 2.5
+    },
+    {
+     "type": "peak",
+     "hz": 3200,
+     "db": -1.5,
+     "q": 1.0
+    },
+    {
+     "type": "compress",
+     "threshold_db": -24,
+     "ratio": 2.2,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": 0
+  },
+  "ASTA": {
+   "model": "en_US-libritts_r-medium",
+   "speaker": 204,
+   "length_scale": 1.499,
+   "noise_scale": 0.7,
+   "noise_w": 0.85,
+   "pitch_semitones": 2.2,
+   "formant": "preserved",
+   "fx": [
+    {
+     "type": "highshelf",
+     "hz": 3500,
+     "db": 1.5
+    },
+    {
+     "type": "compress",
+     "threshold_db": -22,
+     "ratio": 2.5,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": -0.18
+  },
+  "LIEBE": {
+   "model": "en_US-libritts_r-medium",
+   "speaker": 132,
+   "length_scale": 1.6,
+   "noise_scale": 0.75,
+   "noise_w": 0.9,
+   "pitch_semitones": -1.5,
+   "formant": "shifted",
+   "fx": [
+    {
+     "type": "lowshelf",
+     "hz": 200,
+     "db": 3
+    },
+    {
+     "type": "saturate",
+     "drive": 2.2,
+     "mix": 0.28
+    },
+    {
+     "type": "peak",
+     "hz": 2200,
+     "db": 2,
+     "q": 1.2
+    },
+    {
+     "type": "compress",
+     "threshold_db": -24,
+     "ratio": 2.5,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    },
+    {
+     "type": "octave_down",
+     "gain_db": -19
+    },
+    {
+     "type": "slapback",
+     "delay_ms": 85,
+     "gain_db": -15,
+     "lp_hz": 2400
+    },
+    {
+     "type": "reverb",
+     "decay_s": 1.3,
+     "wet_db": -13,
+     "damp_hz": 2200,
+     "predelay_ms": 18
+    }
+   ],
+   "gain_db": -1.0,
+   "pan": 0.0
+  },
+  "YUNO": {
+   "model": "en_US-libritts_r-medium",
+   "speaker": 156,
+   "length_scale": 1.6,
+   "noise_scale": 0.55,
+   "noise_w": 0.6,
+   "pitch_semitones": 0,
+   "formant": "preserved",
+   "fx": [
+    {
+     "type": "peak",
+     "hz": 250,
+     "db": 1.5,
+     "q": 0.8
+    },
+    {
+     "type": "highshelf",
+     "hz": 6000,
+     "db": -2
+    },
+    {
+     "type": "compress",
+     "threshold_db": -24,
+     "ratio": 2.0,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": 0.18
+  },
+  "YAMI": {
+   "model": "en_US-norman-medium",
+   "speaker": null,
+   "length_scale": 1.6,
+   "noise_scale": 0.6,
+   "noise_w": 0.7,
+   "pitch_semitones": -3.0,
+   "formant": "shifted",
+   "fx": [
+    {
+     "type": "lowshelf",
+     "hz": 150,
+     "db": 3
+    },
+    {
+     "type": "compress",
+     "threshold_db": -24,
+     "ratio": 2.8,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": 0.1
+  },
+  "REVCHI": {
+   "model": "en_US-libritts_r-medium",
+   "speaker": 360,
+   "length_scale": 1.711,
+   "noise_scale": 0.75,
+   "noise_w": 0.9,
+   "pitch_semitones": 0,
+   "formant": "preserved",
+   "fx": [
+    {
+     "type": "peak",
+     "hz": 1300,
+     "db": 3.5,
+     "q": 1.1
+    },
+    {
+     "type": "highshelf",
+     "hz": 4500,
+     "db": 1
+    },
+    {
+     "type": "compress",
+     "threshold_db": -22,
+     "ratio": 2.5,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": 0.22
+  },
+  "JULIUS": {
+   "model": "en_US-libritts_r-medium",
+   "speaker": 72,
+   "length_scale": 1.469,
+   "noise_scale": 0.7,
+   "noise_w": 0.85,
+   "pitch_semitones": 0,
+   "formant": "preserved",
+   "fx": [
+    {
+     "type": "highshelf",
+     "hz": 4000,
+     "db": 2.5
+    },
+    {
+     "type": "shimmer",
+     "gain_db": -17,
+     "only_final": true
+    },
+    {
+     "type": "compress",
+     "threshold_db": -24,
+     "ratio": 2.0,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": -0.22
+  },
+  "FATHER_ORSI": {
+   "model": "en_US-libritts_r-medium",
+   "speaker": 564,
+   "length_scale": 1.768,
+   "noise_scale": 0.8,
+   "noise_w": 1.0,
+   "pitch_semitones": 0,
+   "formant": "preserved",
+   "fx": [
+    {
+     "type": "highshelf",
+     "hz": 3000,
+     "db": -2
+    },
+    {
+     "type": "tremolo",
+     "rate_hz": 5.0,
+     "depth": 0.04
+    },
+    {
+     "type": "compress",
+     "threshold_db": -24,
+     "ratio": 2.0,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": -0.1
+  },
+  "SISTER_LILY": {
+   "model": "en_GB-cori-high",
+   "speaker": null,
+   "length_scale": 1.494,
+   "noise_scale": 0.6,
+   "noise_w": 0.7,
+   "pitch_semitones": 0,
+   "formant": "preserved",
+   "fx": [
+    {
+     "type": "highshelf",
+     "hz": 5000,
+     "db": -1.5
+    },
+    {
+     "type": "compress",
+     "threshold_db": -24,
+     "ratio": 2.0,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": 0.12
+  },
+  "DEFAULT": {
+   "model": "en_US-libritts_r-medium",
+   "speaker": 288,
+   "length_scale": 1.82,
+   "noise_scale": 0.667,
+   "noise_w": 0.8,
+   "pitch_semitones": 0,
+   "formant": "preserved",
+   "fx": [
+    {
+     "type": "compress",
+     "threshold_db": -24,
+     "ratio": 2.2,
+     "attack_ms": 10,
+     "release_ms": 140,
+     "makeup_db": 0
+    }
+   ],
+   "gain_db": 0.0,
+   "pan": 0
+  }
+ }
+}

@@ -17,6 +17,9 @@ APPROVED = {
     "en_US-ljspeech-high": "Dataset public domain (LJ Speech); Piper MIT",
     "en_GB-aru-medium": "Dataset CC BY 4.0 (Liverpool ARU); Piper MIT",
     "en_US-libritts_r-medium": "Dataset CC BY 4.0 (LibriTTS-R); Piper MIT",
+    "en_US-john-medium": "Dataset public domain (MODEL_CARD); Piper MIT",
+    "en_US-norman-medium": "Dataset public domain (MODEL_CARD); Piper MIT",
+    "en_GB-cori-high": "Dataset public domain (MODEL_CARD); Piper MIT",
 }
 
 

@@ -45,12 +45,12 @@ def quality(img):
     return round(0.5 * res + 0.5 * sharp, 3)
 
 
-def check(img, manga=False):
+def check(img, manga=False, min_w=800):
     """Return a rejection reason or None."""
     w, h = img.size
     if manga:
         if min(w, h) < 600: return "too_small"
-    elif w < 800: return "too_small"
+    elif w < min_w: return "too_small"
     if not 0.5 <= w / h <= 2.6: return "aspect"
     if img.mode in ("RGBA", "LA") or "transparency" in img.info:
         a = np.asarray(img.convert("RGBA"))[:, :, 3]

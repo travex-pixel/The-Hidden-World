@@ -151,7 +151,7 @@ class Embers:
             if ai < 0.04:
                 continue
             kind = int(self.kind[i])
-            s = int(round(sz[i] * (1.9 if kind == 1 else 1.0)))
+            s = int(round(sz[i] * 1.3 * (1.9 if kind == 1 else 1.0)))
             s = max(1, min(s, 16))
             add, mul = ember_sprite(s, int(self.col[i]), kind)
             if mul is not None:
@@ -197,7 +197,7 @@ class WindStreaks:
         k = (L, th)
         if k not in self._prof:
             x = np.linspace(0, 1, L, dtype=np.float32)
-            along = np.sin(np.pi * x) ** 1.6 * (0.35 + 0.65 * x)
+            along = np.clip(np.sin(np.pi * x), 0, 1) ** 1.6 * (0.35 + 0.65 * x)
             yy = np.abs(np.linspace(-1, 1, th * 2 + 1, dtype=np.float32))
             across = np.exp(-(yy / 0.7) ** 2) if th > 1 else np.exp(-(yy * 1.2) ** 2)
             p = across[:, None] * along[None, :]
@@ -232,13 +232,13 @@ class SpeedLines:
         th = np.arctan2(yy - fy, xx - fx)
         rad = np.hypot(xx - fx, yy - fy) / hh
         bins = ((th + np.pi) / (2 * np.pi) * 4096).astype(np.int32) % 4096
-        radial = smoothstep(0.28, 0.92, rad)
+        radial = smoothstep(0.36, 0.95, rad)
         for v in range(3):
             rng = np.random.default_rng(seed + 131 * v)
             ray = np.zeros(4096, np.float32)
-            for _ in range(130):
+            for _ in range(105):
                 c = rng.integers(0, 4096)
-                w = rng.uniform(2, 11)
+                w = rng.uniform(1.6, 6.5)
                 a = rng.uniform(0.5, 1.0)
                 idx = (np.arange(-14, 15) + c) % 4096
                 ray[idx] = np.maximum(ray[idx], a * np.clip(1 - np.abs(np.arange(-14, 15)) / w, 0, 1))
@@ -253,7 +253,7 @@ class SpeedLines:
         if k <= 0.02:
             return
         layer = self.variants[(i // 2) % 3]
-        cv2.add(frame, cv2.convertScaleAbs(layer, alpha=0.8 * k), dst=frame)
+        cv2.add(frame, cv2.convertScaleAbs(layer, alpha=0.62 * k), dst=frame)
 
 
 class RedGlow:
@@ -265,7 +265,7 @@ class RedGlow:
         m = smoothstep(0.55, 1.05, d) ** 1.6
         m = cv2.resize(m, (W, H), interpolation=cv2.INTER_LINEAR)
         col = np.array([205, 14, 26], np.float32)
-        self.layer = np.clip(m[..., None] * col * 0.9, 0, 255).astype(np.uint8)
+        self.layer = np.clip(m[..., None] * col * 0.45, 0, 255).astype(np.uint8)
 
     def draw(self, frame, t):
         k = 0.62 + 0.38 * math.sin(2 * math.pi * 0.55 * t)

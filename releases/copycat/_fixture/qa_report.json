@@ -1,0 +1,243 @@
+{
+ "project": "_fixture",
+ "video": {
+  "black": [],
+  "freezes": []
+ },
+ "provenance": {
+  "off_domain_assets": 0,
+  "shots_without_asset": 0,
+  "shots_with_asset_missing_from_vault": [],
+  "runtime_share": {
+   "real": 0.9222,
+   "generated": 0.0,
+   "cards": 0.0778,
+   "unknown": 0.0
+  },
+  "unique_assets": 12,
+  "anti_repetition_violations": 0,
+  "anti_repetition_detail": [],
+  "max_shot_s": 7.0,
+  "avg_cut_s": 3.462,
+  "avg_cut_first30s": 3.1,
+  "shots": 13,
+  "cards": 1,
+  "gate_module": true
+ },
+ "vault_found": true,
+ "format": {
+  "width": 1920,
+  "height": 1080,
+  "fps": 30.0,
+  "codec": "h264",
+  "pix_fmt": "yuv420p",
+  "video_dur": 45.0,
+  "audio_dur": 45.0,
+  "audio_codec": "aac"
+ },
+ "audio": {
+  "integrated_lufs": -14.1,
+  "lra": 3.1,
+  "true_peak_dbtp": -6.1,
+  "silences": [],
+  "peak_db": -6.149638
+ },
+ "sharpness": {
+  "median_lapvar": 285.7,
+  "blurry_shots": [],
+  "per_shot": {
+   "s002": 499.7,
+   "s003": 289.6,
+   "s004": 276.7,
+   "s005": 203.6,
+   "s006": 696.6,
+   "s007": 453.1,
+   "s008": 281.9,
+   "s009": 574.0,
+   "s010": 212.7,
+   "s011": 81.5,
+   "s012": 208.3,
+   "s013": 495.7
+  }
+ },
+ "contact_sheet_frames": [
+  {
+   "shot": "s001",
+   "t": 1.0,
+   "file": "build/copycat/_fixture/qa/frames/00_s001_0001.00.png"
+  },
+  {
+   "shot": "s001",
+   "t": 2.17,
+   "file": "build/copycat/_fixture/qa/frames/01_s001_0002.17.png"
+  },
+  {
+   "shot": "s002",
+   "t": 5.25,
+   "file": "build/copycat/_fixture/qa/frames/02_s002_0005.25.png"
+  },
+  {
+   "shot": "s003",
+   "t": 8.5,
+   "file": "build/copycat/_fixture/qa/frames/03_s003_0008.50.png"
+  },
+  {
+   "shot": "s004",
+   "t": 11.25,
+   "file": "build/copycat/_fixture/qa/frames/04_s004_0011.25.png"
+  },
+  {
+   "shot": "s005",
+   "t": 14.0,
+   "file": "build/copycat/_fixture/qa/frames/05_s005_0014.00.png"
+  },
+  {
+   "shot": "s006",
+   "t": 17.25,
+   "file": "build/copycat/_fixture/qa/frames/06_s006_0017.25.png"
+  },
+  {
+   "shot": "s007",
+   "t": 20.5,
+   "file": "build/copycat/_fixture/qa/frames/07_s007_0020.50.png"
+  },
+  {
+   "shot": "s008",
+   "t": 23.5,
+   "file": "build/copycat/_fixture/qa/frames/08_s008_0023.50.png"
+  },
+  {
+   "shot": "s009",
+   "t": 26.25,
+   "file": "build/copycat/_fixture/qa/frames/09_s009_0026.25.png"
+  },
+  {
+   "shot": "s010",
+   "t": 29.25,
+   "file": "build/copycat/_fixture/qa/frames/10_s010_0029.25.png"
+  },
+  {
+   "shot": "s011",
+   "t": 32.5,
+   "file": "build/copycat/_fixture/qa/frames/11_s011_0032.50.png"
+  },
+  {
+   "shot": "s012",
+   "t": 34.8,
+   "file": "build/copycat/_fixture/qa/frames/12_s012_0034.80.png"
+  },
+  {
+   "shot": "s012",
+   "t": 36.0,
+   "file": "build/copycat/_fixture/qa/frames/13_s012_0036.00.png"
+  },
+  {
+   "shot": "s013",
+   "t": 39.4,
+   "file": "build/copycat/_fixture/qa/frames/14_s013_0039.40.png"
+  },
+  {
+   "shot": "s013",
+   "t": 41.5,
+   "file": "build/copycat/_fixture/qa/frames/15_s013_0041.50.png"
+  }
+ ],
+ "gates": [
+  {
+   "name": "off-domain assets == 0",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "non-card shots without asset == 0",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "all shot assets resolve in vault",
+   "ok": true,
+   "value": [],
+   "hard": true
+  },
+  {
+   "name": "anti-repetition (8 shots / 45 s)",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "real-imagery share (info)",
+   "ok": true,
+   "value": {
+    "real": 0.9222,
+    "generated": 0.0,
+    "cards": 0.0778,
+    "unknown": 0.0
+   },
+   "hard": false
+  },
+  {
+   "name": "format 1920x1080 30fps h264 yuv420p",
+   "ok": true,
+   "value": "1920x1080 30.00 h264 yuv420p",
+   "hard": true
+  },
+  {
+   "name": "A/V duration diff <= 0.05 s",
+   "ok": true,
+   "value": 0.0,
+   "hard": true
+  },
+  {
+   "name": "integrated loudness -14 +-2 LUFS",
+   "ok": true,
+   "value": -14.1,
+   "hard": true
+  },
+  {
+   "name": "true peak < -1.0 dBTP",
+   "ok": true,
+   "value": -6.1,
+   "hard": true
+  },
+  {
+   "name": "no silence >= 1.8 s @ -45 dB",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "no 0 dBFS clipping",
+   "ok": true,
+   "value": -6.149638,
+   "hard": true
+  },
+  {
+   "name": "no black >= 0.6 s",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "no frozen video >= 0.7 s",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "blurry shots (info)",
+   "ok": true,
+   "value": [],
+   "hard": false
+  },
+  {
+   "name": "max shot length <= 12 s (info)",
+   "ok": true,
+   "value": 7.0,
+   "hard": false
+  }
+ ],
+ "pass": true
+}
