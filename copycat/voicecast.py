@@ -114,6 +114,35 @@ def entry_for(cast: dict, speaker: str) -> dict:
     return cast.get(speaker) or cast["DEFAULT"]
 
 
+# ----------------------------------------------------------------------------- Fish Audio cast (config/black-clover-cast.json)
+
+FISH_CAST = ROOT / "config" / "black-clover-cast.json"
+
+
+def load_fish_cast(path: Path | str | None = None) -> dict:
+    """role -> {_id, title, tags, speed, temperature, post_fx, pinned, chapters?}; {} when the file is absent."""
+    p = Path(path) if path else FISH_CAST
+    if not p.exists():
+        return {}
+    d = json.loads(p.read_text())
+    return {k: v for k, v in d.get("cast", d).items() if isinstance(v, dict) and v.get("_id")}
+
+
+def resolve_role(cast: dict, speaker: str, chapter: str | None = None) -> str:
+    """'SPEAKER@chapter' -> 'SPEAKER_CHILD' when the chapter is listed on that child role, else 'SPEAKER', else DEFAULT."""
+    if "@" in speaker:
+        speaker, chapter = speaker.split("@", 1)
+    child = cast.get(f"{speaker}_CHILD")
+    if child and chapter and chapter in (child.get("chapters") or []):
+        return f"{speaker}_CHILD"
+    return speaker if speaker in cast else "DEFAULT"
+
+
+def fish_entry(cast: dict, speaker: str, chapter: str | None = None) -> tuple[str, dict]:
+    role = resolve_role(cast, speaker, chapter)
+    return role, cast[role]
+
+
 # ----------------------------------------------------------------------------- Piper
 
 _VOICES: dict = {}

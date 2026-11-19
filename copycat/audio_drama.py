@@ -7,12 +7,13 @@ Reads copycat/projects/<id>/script.json (CONTRACT §1) and writes, under build/c
   dialogue.wav music.wav sfx.wav (stems, pre-master, same length)   loudness.json (measurements)
 """
 from __future__ import annotations
-import argparse, json, re, subprocess, sys, time
+import argparse, hashlib, json, re, subprocess, sys, time
 from pathlib import Path
 import numpy as np
 from scipy import ndimage
 
-from copycat import sfx as SFX, music as MUSIC, voicecast as VC
+from copycat import sfx as SFX, music as MUSIC, voicecast as VC, fish_audio as FA
+from copycat.pronunciation import build_spoken
 from copycat.sfx import SR
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -26,7 +27,12 @@ CARD_RISE_DB = 9.0
 CARD_SWELL_DB = 3.0
 DUCK_ATTACK_S, DUCK_RELEASE_S = 0.08, 0.45
 MAX_DIALOGUE_GAP_S = 1.7
-LOUD_I, LOUD_TP, LOUD_LRA = -14.0, -1.5, 11.0
+LOUD_I, LOUD_TP, LOUD_LRA = -14.0, -1.0, 9.0
+PAUSE_CLASSES = {"banter": (160, 220), "turn": (260, 340), "reveal": (550, 750)}
+DYNAMICS_MAX_DB = 2.5
+TP_MARGIN_DB = 0.25     # loudnorm aims at -1.25 dBTP so the verified peak lands strictly below -1.0
+FISH_CODE_VERSION = "f2"
+
 
 
 # ----------------------------------------------------------------------------- pure timeline logic
@@ -37,6 +43,35 @@ def clamp_pause_ms(v) -> int:
     except (TypeError, ValueError):
         return PAUSE_DEFAULT_MS
     return max(PAUSE_MIN_MS, min(PAUSE_MAX_MS, v))
+
+
+def pause_for(beat: dict) -> int:
+    """pause_class (banter/turn/reveal) -> deterministic ms inside its range from a hash of the beat id; else pause_after_ms."""
+    rng = PAUSE_CLASSES.get(str(beat.get("pause_class") or "").lower())
+    if rng:
+        h = int(hashlib.sha256(str(beat["id"]).encode()).hexdigest()[:8], 16)
+        return rng[0] + h % (rng[1] - rng[0] + 1)
+    return clamp_pause_ms(beat.get("pause_after_ms"))
+
+
+_LOUD_WORDS = re.compile(r"shout|yell|scream|roar|bellow|intense|furious|angry|rage|fierce|battle|defiant|triumph|desperate", re.I)
+_SOFT_WORDS = re.compile(r"whisper|quiet|soft|hush|murmur|tender|gentle|calm|tired|sleepy|sad", re.I)
+_FAST_WORDS = re.compile(r"shout|excit|eager|rapid|fierce|furious|urgent|desperate|panic|playful", re.I)
+_SLOW_WORDS = re.compile(r"whisper|quiet|slow|sad|tired|solemn|grave|ominous|hushed|reverent", re.I)
+
+
+def emotion_dynamics_db(beat: dict) -> float:
+    """Per-line loudness offset within +/-2.5 dB from direction/emotion (shout/intense louder, whisper/quiet softer)."""
+    txt = f"{beat.get('direction') or ''} {beat.get('emotion') or ''}"
+    v = (1.0 if _LOUD_WORDS.search(txt) else 0.0) * 2.0 - (1.0 if _SOFT_WORDS.search(txt) else 0.0) * 2.0
+    if str(beat.get("text", "")).rstrip().endswith("!") and v == 0:
+        v = 0.8
+    return max(-DYNAMICS_MAX_DB, min(DYNAMICS_MAX_DB, v))
+
+
+def emotion_speed_offset(beat: dict) -> float:
+    txt = f"{beat.get('direction') or ''} {beat.get('emotion') or ''}"
+    return (0.03 if _FAST_WORDS.search(txt) else 0.0) - (0.03 if _SLOW_WORDS.search(txt) else 0.0)
 
 
 def build_timeline(chapters: list[dict], dur_samples: dict[str, int], lead_in: float = LEAD_IN_S, tail: float = TAIL_S,
@@ -58,7 +93,7 @@ def build_timeline(chapters: list[dict], dur_samples: dict[str, int], lead_in: f
             t += n
         for b in ch["beats"]:
             n = int(dur_samples[b["id"]])
-            pause = clamp_pause_ms(b.get("pause_after_ms"))
+            pause = pause_for(b)
             beats.append({"id": b["id"], "speaker": b["speaker"], "chapter": ch["id"], "start": round(t / sr, 3),
                           "end": round((t + n) / sr, 3), "text": b["text"], "sfx": list(b.get("sfx") or []), "pause_ms": pause})
             t += n + int(round(pause * sr / 1000))
@@ -172,7 +207,7 @@ def _ff(args: list[str]) -> str:
 
 
 def loudnorm_two_pass(src: Path, dst: Path, offset_db: float = 0.0) -> dict:
-    flt = f"loudnorm=I={LOUD_I + offset_db}:TP={LOUD_TP}:LRA={LOUD_LRA}"
+    flt = f"loudnorm=I={LOUD_I + offset_db}:TP={LOUD_TP - TP_MARGIN_DB}:LRA={LOUD_LRA}"
     err = _ff(["-i", str(src), "-af", flt + ":print_format=json", "-f", "null", "-"])
     m = json.loads(err[err.rindex("{"):err.rindex("}") + 1])
     pass2 = (f"{flt}:measured_I={m['input_i']}:measured_LRA={m['input_lra']}:measured_TP={m['input_tp']}:"
@@ -186,8 +221,8 @@ def verify(path: Path) -> dict:
     tail = err[err.rindex("Summary:"):]
     g = lambda pat: float(re.search(pat, tail).group(1))
     res = {"integrated_lufs": g(r"I:\s+(-?[\d.]+) LUFS"), "lra": g(r"LRA:\s+(-?[\d.]+) LU"), "true_peak_dbtp": g(r"Peak:\s+(-?[\d.]+) dBFS")}
-    err = _ff(["-i", str(path), "-af", "silencedetect=noise=-45dB:d=1.8", "-f", "null", "-"])
-    res["silences_gt_1_8s_at_-45dB"] = len(re.findall(r"silence_start", err))
+    err = _ff(["-i", str(path), "-af", "silencedetect=noise=-45dB:d=2.0", "-f", "null", "-"])
+    res["silences_gt_2s_at_-45dB"] = len(re.findall(r"silence_start", err))
     return res
 
 
@@ -198,8 +233,101 @@ def stem_rms_db(x: np.ndarray, mask: np.ndarray | None = None) -> float:
     return float(20 * np.log10(np.sqrt((m.astype(np.float64) ** 2).mean()) + 1e-12))
 
 
+
+# ----------------------------------------------------------------------------- Fish Audio voice layer
+
+def _fx_pipe(x: np.ndarray, filt: str) -> np.ndarray:
+    cmd = ["ffmpeg", "-v", "error", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", "-", "-af", filt, "-f", "f32le", "-ar", str(SR), "-ac", "1", "-"]
+    p = subprocess.run(cmd, input=x.astype(np.float32).tobytes(), capture_output=True)
+    if p.returncode != 0 or not p.stdout:
+        raise RuntimeError("post_fx failed: " + p.stderr.decode(errors="replace")[-300:])
+    return np.frombuffer(p.stdout, np.float32).copy()
+
+
+def fish_line_48k(mp3: Path, post_fx: str, level_db: float, gain_db: float = 0.0) -> tuple[np.ndarray, int]:
+    """Fish MP3 -> mono 48 kHz, edges trimmed, post-FX applied, level-matched (TARGET_RMS_DB + level_db). Cached once as .npz."""
+    h = hashlib.sha1(f"{FISH_CODE_VERSION}|{post_fx}|{level_db:.2f}|{gain_db:.2f}".encode()).hexdigest()[:8]
+    f = mp3.with_name(f"{mp3.stem}_48k_{h}.npz")
+    if f.exists():
+        z = np.load(f)
+        return z["x"], int(z["dry"])
+    x = FA.decode_pcm(mp3, SR)
+    x = VC.trim_edges(VC.compress_silences(x, SR, long_ms=650.0, to_ms=480.0))
+    dry = len(x)
+    x = x * VC.D.db(VC.TARGET_RMS_DB - VC.speech_rms_db(x) + level_db + gain_db)
+    if post_fx:
+        y = _fx_pipe(np.concatenate([x, np.zeros(int(0.9 * SR), np.float32)]), post_fx)
+        win = int(0.01 * SR)
+        r = VC._frame_rms(y[dry:], win)
+        keep = np.where(r > 10 ** (-55 / 20))[0]
+        end = dry + ((keep[-1] + 1) * win if len(keep) else 0)
+        x = VC.D.fade(y[: max(end, dry)], 0, 0.03 if end > dry else 0, SR, curve="lin")
+    pk = float(np.max(np.abs(x))) if len(x) else 0.0
+    if pk > 0.9:
+        x = (np.tanh(x / pk * 1.2) / np.tanh(1.2) * 0.9).astype(np.float32)
+    x = x.astype(np.float32)
+    np.savez(f, x=x, dry=dry)
+    return x, dry
+
+
+def synth_fish(chapters: list[dict], fcast: dict, client: "FA.FishClient", use_cache: bool, log) -> tuple[dict, dict]:
+    """-> (lines {beat id: (audio, dry_samples)}, meta {beat id: {...export fields}})."""
+    lines, meta = {}, {}
+    nb = sum(len(c["beats"]) for c in chapters)
+    k = 0
+    for c in chapters:
+        for b in c["beats"]:
+            k += 1
+            role, ent = VC.fish_entry(fcast, b["speaker"], c["id"])
+            spoken = build_spoken(b) if str(b.get("text", "")).strip() else ""
+            if not spoken:
+                lines[b["id"]] = (np.zeros(int(0.3 * SR), np.float32), int(0.3 * SR))
+                meta[b["id"]] = {"role": role, "voice_id": ent["_id"], "spokenText": "", "cache_file": None}
+                continue
+            speed = round(max(0.7, min(1.3, float(ent.get("speed", 1.0)) + emotion_speed_offset(b))), 3)
+            mp3 = client.synth(b["id"], spoken, ent["_id"], speed, float(ent.get("temperature", 0.7)), voice_label=f"{role}:{ent.get('title', ent['_id'])}", use_cache=use_cache)
+            lines[b["id"]] = fish_line_48k(mp3, ent.get("post_fx", ""), emotion_dynamics_db(b))
+            meta[b["id"]] = {"role": role, "voice_id": ent["_id"], "spokenText": spoken, "cache_file": str(mp3.relative_to(ROOT)) if mp3.is_relative_to(ROOT) else str(mp3),
+                             "speed": speed, "temperature": float(ent.get("temperature", 0.7))}
+            if k % 20 == 0:
+                log(f"  synthesised {k}/{nb}")
+    return lines, meta
+
+
+def write_exports(project: str, tl: dict, meta: dict, script: dict, out_dir: Path, engine: str, stats: dict, model: str | None):
+    chap_of = {b["id"]: c["id"] for c in script["chapters"] for b in c["beats"]}
+    src = {b["id"]: b for c in script["chapters"] for b in c["beats"]}
+    rows = []
+    for b in tl["beats"]:
+        m = meta.get(b["id"], {})
+        mp = ROOT / m["cache_file"] if m.get("cache_file") else None
+        dur = round((FA.ffprobe_duration(mp) if mp and mp.exists() else b["end"] - b["start"]) * 1000)
+        rows.append({"id": b["id"], "chapter": chap_of[b["id"]], "speaker": b["speaker"], "role": m.get("role"), "voice_id": m.get("voice_id"),
+                     "captionText": b["text"], "spokenText": m.get("spokenText", ""), "direction": src[b["id"]].get("direction"),
+                     "pause_ms": b["pause_ms"], "cache_file": m.get("cache_file"), "duration_ms": dur,
+                     "start": b["start"], "end": b["end"]})
+    proj = ROOT / "copycat" / "projects" / project
+    (proj / "episode1_beats.json").write_text(json.dumps({"project": project, "engine": engine, "model": model, "beats": rows}, indent=1, ensure_ascii=False))
+    tj = json.loads((out_dir / "timing.json").read_text())
+    by = {r["id"]: r for r in rows}
+    tj["beats"] = [{**b, "voice_id": by[b["id"]]["voice_id"], "role": by[b["id"]]["role"], "duration_ms": round((b["end"] - b["start"]) * 1000),
+                    "pause_ms": by[b["id"]]["pause_ms"], "start_ms": round(b["start"] * 1000), "end_ms": round(b["end"] * 1000)} for b in tj["beats"]]
+    tj["engine"], tj["model"] = engine, model
+    (proj / "episode1_timeline_audio.json").write_text(json.dumps(tj, indent=1, ensure_ascii=False))
+    voices = sorted({r["voice_id"] for r in rows if r["voice_id"]})
+    per_voice: dict[str, int] = {}
+    for r in rows:
+        per_voice[f"{r['role']}:{r['voice_id']}"] = per_voice.get(f"{r['role']}:{r['voice_id']}", 0) + 1
+    rep = {"engine": engine, "model": model, "per_voice_line_counts": per_voice, "distinct_voice_ids": len(voices), "voice_ids": voices,
+           "api_calls": stats.get("api_calls", 0), "cache_hits": stats.get("cache_hits", 0), "retries": stats.get("retries", 0),
+           "http_429": stats.get("http_429", 0), "utf8_bytes_sent": stats.get("utf8_bytes_sent", 0), "flagged_clips": stats.get("flagged", []),
+           "fallbacks": stats.get("fallbacks", []), "script_revision": script.get("revision")}
+    (out_dir / "voice_report.json").write_text(json.dumps(rep, indent=1))
+    return rep
+
+
 def run(project: str, script_path: Path | None = None, only_chapter: str | None = None, use_cache: bool = True,
-        out_dir: Path | None = None, cast_file: Path | None = None, verbose: bool = True) -> dict:
+        out_dir: Path | None = None, cast_file: Path | None = None, verbose: bool = True, engine: str | None = None) -> dict:
     t_all = time.time()
     script_path = Path(script_path) if script_path else ROOT / "copycat" / "projects" / project / "script.json"
     out_dir = Path(out_dir) if out_dir else ROOT / "build" / "copycat" / project / "audio"
@@ -217,12 +345,25 @@ def run(project: str, script_path: Path | None = None, only_chapter: str | None 
     jul = [b["id"] for c in script["chapters"] for b in c["beats"] if b["speaker"] == "JULIUS"]
     final_ids = set(jul[-2:])
 
-    # 1. synthesise
+    # 1. synthesise: Fish Audio when FISH_API_KEY is set (cast from config/black-clover-cast.json), else local Piper
+    fcast = VC.load_fish_cast()
+    engine = engine or ("fish" if FA.available() and fcast else "piper")
+    if engine == "fish" and not fcast:
+        log("config/black-clover-cast.json missing: run `python -m copycat.cast_director`; falling back to Piper"); engine = "piper"
     t0 = time.time()
     lines: dict[str, tuple[np.ndarray, int]] = {}
+    meta: dict[str, dict] = {}
+    client = None
     nb = sum(len(c["beats"]) for c in chapters)
     k = 0
-    for c in chapters:
+    if engine == "fish":
+        FA.STATS.reset()
+        client = FA.FishClient()
+        lines, meta = synth_fish(chapters, fcast, client, use_cache, log)
+        chapters_iter = []
+    else:
+        chapters_iter = chapters
+    for c in chapters_iter:
         for b in c["beats"]:
             k += 1
             if not str(b.get("text", "")).strip():
@@ -290,12 +431,16 @@ def run(project: str, script_path: Path | None = None, only_chapter: str | None 
               "beats": [{k: b[k] for k in ("id", "speaker", "chapter", "start", "end", "text")} for b in tl["beats"]],
               "cards": tl["cards"]}
     (out_dir / "timing.json").write_text(json.dumps(timing, indent=1, ensure_ascii=False))
+    stats = FA.STATS.as_dict() if engine == "fish" else {}
+    if engine == "fish" and not only_chapter:
+        rep = write_exports(project, tl, meta, script, out_dir, engine, stats, client.model)
+        log(f"voice report: {rep['distinct_voice_ids']} distinct voices, {rep['api_calls']} API calls, {rep['cache_hits']} cache hits, flagged {len(rep['flagged_clips'])}")
     pauses = [b["pause_ms"] / 1000 for b in tl["beats"]]
     sp_db = stem_rms_db(dlg, speech_mask)
     mu_db = stem_rms_db(mus, speech_mask)
     loud = {**ver, "target_lufs": LOUD_I, "target_tp": LOUD_TP,
             "pass_integrated": abs(ver["integrated_lufs"] - LOUD_I) <= 0.5, "pass_true_peak": ver["true_peak_dbtp"] < -1.0,
-            "pass_lra": ver["lra"] <= LOUD_LRA, "pass_silence": ver["silences_gt_1_8s_at_-45dB"] == 0,
+            "pass_lra": ver["lra"] <= LOUD_LRA, "pass_silence": ver["silences_gt_2s_at_-45dB"] == 0, "engine": engine,
             "duration_s": total, "beats": len(tl["beats"]), "cards": len(tl["cards"]),
             "longest_dialogue_gap_s": max(gaps) if gaps else 0.0, "average_pause_s": round(float(np.mean(pauses)), 3) if pauses else 0.0,
             "music_below_speech_db_during_speech": round(float(mu_db - sp_db), 1),
@@ -313,9 +458,10 @@ def main(argv=None):
     ap.add_argument("--no-cache", action="store_true")
     ap.add_argument("--script", help="script.json path (default copycat/projects/<id>/script.json)")
     ap.add_argument("--out", help="output directory (default build/copycat/<id>/audio)")
-    ap.add_argument("--cast", help="voicecast.json path")
+    ap.add_argument("--cast", help="voicecast.json path (Piper engine)")
+    ap.add_argument("--engine", choices=["fish", "piper"], help="default: fish when FISH_API_KEY is set, else piper")
     a = ap.parse_args(argv)
-    res = run(a.project, a.script, a.only_chapter, not a.no_cache, a.out, a.cast)
+    res = run(a.project, a.script, a.only_chapter, not a.no_cache, a.out, a.cast, engine=a.engine)
     print(json.dumps({k: v for k, v in res.items() if k != "loudnorm"}, indent=1))
     ok = all(res[k] for k in ("pass_integrated", "pass_true_peak", "pass_lra", "pass_silence"))
     sys.exit(0 if ok else 2)

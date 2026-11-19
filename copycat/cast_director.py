@@ -130,7 +130,7 @@ ROLES: dict[str, dict] = {
                  line="I do not have magic. So I will swing this sword until the whole world has to admit I am here.", post_fx="", gender="m"),
     "ASTA_CHILD": dict(want={"young": 3, "child": 3, "kid": 3, "bright": 2, "boy": 2, "neutral": 1, "female": 1, "high": 1, "conversational": 1, "cheerful": 1}, kw=["boy", "kid", "child", "little"], f0=(190, 290), speed=1.05, temp=0.72,
                        line="One day I am going to be the Wizard King! Just watch me, Yuno! I will not lose!", post_fx="", gender="c"),
-    "LIEBE": dict(want={"raspy": 4, "deep": 2, "dark": 3, "low": 2, "male": 1, "mysterious": 2, "character-voice": 1, "dramatic": 1, "old": 1, "creepy": 2, "horror": 2}, kw=["demon", "devil", "villain", "creepy", "horror", "dark"], f0=(80, 130), speed=0.98, temp=0.78,
+    "LIEBE": dict(want={"raspy": 9, "deep": 2, "dark": 4, "low": 2, "male": 1, "mysterious": 2, "character-voice": 1, "dramatic": 1, "old": 1, "creepy": 2, "horror": 2}, kw=["demon", "devil", "villain", "creepy", "horror", "dark"], f0=(80, 130), speed=0.98, temp=0.78,
                   line="Heh. You humans are so loud. Hold the book properly, boy, and let me show you what hell tastes like.",
                   post_fx="aecho=0.8:0.75:18|32:0.18|0.12,equalizer=f=110:t=q:w=1.0:g=3.0", gender="m"),
     "YUNO": dict(want={"male": 3, "young": 3, "calm": 2, "cool": 1, "smooth": 2, "serious": 2, "confident": 1, "clear": 1, "measured": 1, "conversational": 1, "medium": 1}, kw=["young", "cool", "calm", "teen"], f0=(105, 155), speed=0.98, temp=0.60,
@@ -159,6 +159,8 @@ def tag_score(item: dict, role: dict) -> float:
     tags, title = set(tags_of(item)), _tokens(item.get("title"))
     s = sum(w for t, w in role["want"].items() if t in tags)
     s += 2.5 * sum(1 for k in role["kw"] if any(k in " ".join(title) for _ in [0]))
+    if len(tags) > 20:           # tag-stuffed listings (every tag at once) say nothing about the real timbre
+        s *= 0.35
     g = role["gender"]
     if g == "m" and "female" in tags: s -= 5
     if g == "f" and "male" in tags: s -= 5
@@ -188,7 +190,8 @@ def fit_score(role: dict, m: dict, words: int) -> float:
     d = 0.0 if lo <= f0 <= hi else abs(math.log(f0 / (lo if f0 < lo else hi)))
     wpm = words / max(m["dur_s"] * (1 - m["silence_ratio"]), 0.1) * 60
     wpm_pen = 0.0 if 120 <= wpm <= 210 else 0.5
-    return -6.0 * d - wpm_pen - (3 if m["peak"] >= 0.99 else 0) - (2 if m["silence_ratio"] > 0.45 else 0)
+    center = -12.0 * abs(math.log(f0 / math.sqrt(lo * hi)))          # closeness to the archetype's pitch centre
+    return -6.0 * d + center - wpm_pen - (3 if m["peak"] >= 0.99 else 0) - (2 if m["silence_ratio"] > 0.45 else 0)
 
 
 def differs(a: dict, b: dict, frac: float = 0.15) -> bool:
@@ -288,7 +291,8 @@ def is_user_edited(ex: dict, pool_by_id: dict) -> bool:
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--refresh", action="store_true", help="re-query the voice catalogue and re-audition")
-    ap.add_argument("--top", type=int, default=4)
+    ap.add_argument("--top", type=int, default=6, help="candidates auditioned per role")
+    ap.add_argument("--refresh-pool", action="store_true", help="re-query the voice catalogue (default: reuse the cached pool)")
     a = ap.parse_args(argv)
     if not FA.available():
         return 0
@@ -296,7 +300,7 @@ def main(argv=None):
     if existing and not a.refresh:
         print(f"{CAST_FILE} exists; use --refresh to re-audition (pinned entries are always kept)")
         return 0
-    pool = fetch_pool(a.refresh)
+    pool = fetch_pool(a.refresh_pool)
     ok = [it for it in pool if is_original_voice(it)[0]]
     print(f"pool {len(pool)} voices, {len(ok)} pass the original-voice filter")
     aud = audition(pool, a.top)

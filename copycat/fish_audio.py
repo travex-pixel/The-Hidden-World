@@ -224,8 +224,12 @@ class FishClient:
         label = voice_label or reference_id
         with self.stats.lock:
             self.stats.voice_lines[label] = self.stats.voice_lines.get(label, 0) + 1
+        flag = path.with_suffix(".flag.json")
         if use_cache and path.exists() and ffprobe_duration(path) > MIN_CLIP_S:
             self.stats.add(cache_hits=1)
+            if flag.exists():                       # a clip flagged on its first synthesis stays flagged
+                with self.stats.lock:
+                    self.stats.flagged.append(json.loads(flag.read_text()))
             return path
         temp = temperature
         for attempt in (0, 1):
@@ -235,8 +239,10 @@ class FishClient:
                 return path
             if attempt == 0:
                 temp = round(max(0.1, temp - 0.1), 2)
+        rec = {"beat": beat_id, "voice": label, "problems": probs, "file": path.name}
+        flag.write_text(json.dumps(rec))
         with self.stats.lock:
-            self.stats.flagged.append({"beat": beat_id, "voice": label, "problems": probs, "file": path.name})
+            self.stats.flagged.append(rec)
         return path
 
 
