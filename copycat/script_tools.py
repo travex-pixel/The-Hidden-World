@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parent
 SUBJECTS = set("""asta asta_young asta_black_form yuno yuno_young liebe licita five_leaf_grimoire four_leaf_grimoire
 demon_slayer_sword anti_magic father_orsi sister_lily revchi yami noelle magna luck vanessa finral julius
 william_vangeance patolli licht sylph dark_triad lucifero magic_knights black_bulls golden_dawn crowd hage_village
-hage_church demon_skull grimoire_tower royal_capital exam_arena black_bulls_hideout dungeon mindscape night_sky""".split())
+hage_church demon_skull grimoire_tower royal_capital exam_arena black_bulls_hideout dungeon mindscape night_sky
+eye_of_the_midnight_sun""".split())
 LOCATIONS = set("""hage_village hage_church demon_skull grimoire_tower royal_capital exam_arena black_bulls_hideout
 dungeon mindscape night_sky""".split())
 MOODS = set("quiet ominous determined shock combat emotional triumphant comedic mysterious epic".split())
@@ -25,10 +26,15 @@ MUSIC = {"tension_pulse", "pastoral_melancholy", "dark_mystery", "rising_heroic"
 SPEAKER_SUBJECTS = {
     "ASTA": {"asta", "asta_young", "asta_black_form"}, "YUNO": {"yuno", "yuno_young"},
     "LIEBE": {"liebe", "five_leaf_grimoire", "mindscape"}, "YAMI": {"yami"}, "REVCHI": {"revchi"},
-    "JULIUS": {"julius"}, "FATHER_ORSI": {"father_orsi"}, "SISTER_LILY": {"sister_lily"},
+    "JULIUS": {"julius"}, "FATHER_ORSI": {"father_orsi"}, "SISTER_LILY": {"sister_lily"}, "NOELLE": {"noelle"},
 }
+PAUSE_CLASSES = {"banter": 190, "turn": 300, "reveal": 650}
+DIRECTION = re.compile(r"\[[^\[\]()]+\](\s?\[[^\[\]()]+\])?")
+LOCKED_SHORT = {"Skip it."}  # picture-locked line, exempt from the 12 character floor
+CUT_OFF = re.compile(r"[^\u2014]\u2014$")  # em dash only as the final character of an interrupted line
+MIN_CHARS, MAX_CHARS, NARR_MIN = 12, 260, 80
 BAD_ATTRIB = re.compile(r"\b(said|replied|whispered|shouted|exclaimed)\b", re.I)
-BAD_PUNCT = re.compile(r"[()\[\]—–;:]|\.\.\.|…")
+BAD_PUNCT = re.compile(r"[()\[\]\u2013;:\u2014]|\.\.\.|\u2026")
 
 
 def words(t):
@@ -39,25 +45,40 @@ def validate(s):
     errs = []
     cast = s.get("cast", {})
     seen = set()
-    last_n = 0
     prev_cam = "<start>"
+    if "NOELLE" not in cast:
+        errs.append("NOELLE missing from cast")
     for c in s["chapters"]:
         if c["music"] not in MUSIC:
             errs.append(f"{c['id']}: bad music {c['music']}")
         for b in c["beats"]:
             bid = b["id"]
-            m = re.fullmatch(r"b(\d+)", bid)
-            if not m or bid in seen or int(m.group(1)) <= last_n:
-                errs.append(f"{bid}: id not unique/ordered")
-            else:
-                last_n = int(m.group(1))
+            if not re.fullmatch(r"b\d+", bid) or bid in seen:
+                errs.append(f"{bid}: id not unique")
             seen.add(bid)
             if b["speaker"] not in cast:
                 errs.append(f"{bid}: speaker {b['speaker']} not in cast")
             if not b["text"].strip():
                 errs.append(f"{bid}: empty text")
-            if BAD_PUNCT.search(b["text"]):
+            txt = b["text"]
+            if BAD_PUNCT.search(txt) and not (b["speaker"] != "NARRATOR" and txt.count("\u2014") == 1
+                                               and CUT_OFF.search(txt) and not BAD_PUNCT.search(txt[:-1])):
                 errs.append(f"{bid}: TTS-unfriendly punctuation")
+            n = len(txt)
+            if n > MAX_CHARS:
+                errs.append(f"{bid}: {n} chars > {MAX_CHARS}")
+            if b["speaker"] == "NARRATOR" and n < NARR_MIN:
+                errs.append(f"{bid}: narrator beat {n} chars < {NARR_MIN}")
+            elif n < MIN_CHARS and txt not in LOCKED_SHORT:
+                errs.append(f"{bid}: {n} chars < {MIN_CHARS}")
+            d = b.get("direction")
+            if d is None or (d != "" and not DIRECTION.fullmatch(d)):
+                errs.append(f"{bid}: bad direction {d!r}")
+            pc = b.get("pause_class")
+            if pc not in PAUSE_CLASSES:
+                errs.append(f"{bid}: bad pause_class {pc!r}")
+            elif b["pause_after_ms"] != PAUSE_CLASSES[pc]:
+                errs.append(f"{bid}: pause_after_ms {b['pause_after_ms']} != {PAUSE_CLASSES[pc]} for {pc}")
             if re.search(r"\d", b["text"]):
                 errs.append(f"{bid}: digits in text")
             if b["speaker"] == "NARRATOR" and BAD_ATTRIB.search(b["text"]):
@@ -99,6 +120,7 @@ def report(s):
     per_ch, per_sp = {}, Counter()
     beats = cuts = 0
     punch = sfx = nonc = longholds = 0
+    lens, nlens, clens, dirs, reveals = [], [], [], 0, 0
     cold_cuts, cold_sec = 0, 0.0
     sec_all = 0.0
     cards = 0.0
@@ -121,6 +143,11 @@ def report(s):
             sfx += len(b["sfx"])
             nonc += sum(v["non_canon"] for v in b["visuals"])
             longholds += b["pause_after_ms"] >= 400
+            L_ = len(b["text"])
+            lens.append(L_)
+            (nlens if b["speaker"] == "NARRATOR" else clens).append(L_)
+            dirs += bool(b.get("direction"))
+            reveals += b.get("pause_class") == "reveal"
         per_ch[c["id"]] = cw
         tot += cw
     print(f"Total words: {tot}")
@@ -130,7 +157,10 @@ def report(s):
     print(f"Est. runtime at {wpm} wpm (words only): {tot / wpm:.2f} min; with pauses+cards: {(sec_all + cards) / 60:.2f} min")
     print(f"Beats: {beats}   Visual cuts: {cuts}   Avg s/cut overall: {sec_all / cuts:.2f}   cold open: {cold_sec / cold_cuts:.2f} ({cold_cuts} cuts)")
     print(f"non_canon visuals: {nonc}/{cuts} ({1 - nonc / cuts:.0%} canon)   sfx cues: {sfx}   punch zooms: {punch}   long holds (>=400ms): {longholds}")
-    return dict(punch=punch, sfx=sfx, longholds=longholds, nonc=nonc, cuts=cuts, tot=tot)
+    pc_ = lambda L: f"min {min(L)} / avg {sum(L) / len(L):.0f} / max {max(L)}"
+    print(f"Chars per beat: all {pc_(lens)}; narrator ({len(nlens)}) {pc_(nlens)}; characters ({len(clens)}) {pc_(clens)}")
+    print(f"Directions: {dirs}/{beats} ({dirs / beats:.0%})   reveal pauses: {reveals}")
+    return dict(dirs=dirs, beats=beats, reveals=reveals, narr=per_sp['NARRATOR'] / tot, punch=punch, sfx=sfx, longholds=longholds, nonc=nonc, cuts=cuts, tot=tot)
 
 
 def main(argv):
@@ -143,10 +173,18 @@ def main(argv):
     st = report(s)
     if st["punch"] > 12:
         errs.append("punch zooms > 12")
-    if not 25 <= st["sfx"] <= 35:
-        errs.append("sfx cues outside 25-35")
-    if st["longholds"] > 10:
-        errs.append("long holds > 10")
+    if not 28 <= st["sfx"] <= 40:
+        errs.append("sfx cues outside 28-40")
+    if not 1450 <= st["tot"] <= 1650:
+        errs.append(f"total words {st['tot']} outside 1450-1650")
+    if not 0.58 <= st["narr"] <= 0.65:
+        errs.append(f"narrator share {st['narr']:.0%} outside 58-65%")
+    if st["reveals"] > 12:
+        errs.append("reveal pauses > 12")
+    if not 0.28 <= st["dirs"] / st["beats"] <= 0.42:
+        errs.append(f"direction coverage {st['dirs'] / st['beats']:.0%} outside 28-42%")
+    if s.get("revision") != 2:
+        errs.append("revision marker missing")
     if st["nonc"] / st["cuts"] > 0.2:
         errs.append("non_canon > 20%")
     for e in errs:
