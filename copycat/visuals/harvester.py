@@ -240,15 +240,17 @@ def build_vault(local_entries=()):
         if any(imgutil.hamming(a["dhash"], k["dhash"]) <= 6 for k in kept): dups += 1; continue
         kept.append(a)
     cur, final, rejected_cur, capped = tagger.load_curation(), [], 0, 0
+    try: pinned = set(json.loads((CACHE / "pinned_ids.json").read_text()))  # assets already handed to downstream tools: never drop
+    except (OSError, ValueError): pinned = set()
     cnt, pruned = Counter(), []
     for a in sorted(kept, key=lambda a: -a["quality"]):
-        if a["kind"] == "manga_panel" or a.get("lowres") or a["source"] == "local" or tagger.curation_for(a, cur).get("keep"): pruned.append(a); continue
+        if a["kind"] == "manga_panel" or a.get("lowres") or a["source"] == "local" or a["id"] in pinned or tagger.curation_for(a, cur).get("keep"): pruned.append(a); continue
         subs = a["tags"]["subjects"] or ["_none"]
         if all(cnt[x] >= CAPS.get(x, CAPS["default"]) for x in subs):
             capped += 1; continue
         cnt.update(subs); pruned.append(a)
     core = set(MANDATORY) - {"asta", "yuno"}
-    must = [a for a in pruned if a["kind"] == "manga_panel" or a.get("lowres") or core & set(a["tags"]["subjects"]) or tagger.curation_for(a, cur).get("keep")]
+    must = [a for a in pruned if a["kind"] == "manga_panel" or a.get("lowres") or core & set(a["tags"]["subjects"]) or a["id"] in pinned or tagger.curation_for(a, cur).get("keep")]
     rest = sorted((a for a in pruned if a not in must), key=lambda a: -a["quality"])
     room = max(0, MAX_VAULT - len(must)); capped += max(0, len(rest) - room)
     kept = must + rest[:room]
