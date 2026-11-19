@@ -81,6 +81,8 @@ def is_original_voice(item: dict) -> tuple[bool, str]:
     if hit: return False, f"names a person/character/brand: {sorted(hit)[:2]}"
     if BLOCK_PATTERNS.search(title) or BLOCK_PATTERNS.search(desc): return False, "impersonation/real-person wording"
     for t in tags_of(item):
+        tag_hit = BLOCK_WORDS.intersection(_tokens(t))
+        if tag_hit: return False, f"tag names a person/character/brand: {sorted(tag_hit)[:2]}"
         if FRANCHISE_TAGS.search(t): return False, f"franchise tag {t!r}"
         if t not in {*GENERIC_WORDS, "character-voice", "social-media", "entertainment", "advertisement", "egirl", "neutral", "middle-aged", "gaming", "character", "anime", "cartoon"} and not re.fullmatch(r"[a-z\-]{3,14}", t):
             return False, f"unusual tag {t!r}"

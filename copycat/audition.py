@@ -377,7 +377,7 @@ def shortlist_score(item: dict, role: dict) -> float:
     return s + 0.6 * math.log10(max(int(item.get("task_count") or 1), 1))
 
 
-def shortlist(pool: list[dict], rname: str, role: dict, n: int = 10, explore: int = 2, seed: int = 7) -> list[dict]:
+def shortlist(pool: list[dict], rname: str, role: dict, n: int = 10, explore: int | None = None, seed: int = 7) -> list[dict]:
     """Top (n-explore) by text score + `explore` seeded picks from the next 80 (metadata lies, so some blind picks)."""
     seen_txt, uniq = set(), []
     for it in sorted(pool, key=lambda i: -shortlist_score(i, role)):
@@ -386,8 +386,9 @@ def shortlist(pool: list[dict], rname: str, role: dict, n: int = 10, explore: in
             continue
         seen_txt.add(key)
         uniq.append(it)
+    explore = max(2, n // 4) if explore is None else explore
     top = uniq[: n - explore]
-    rest = uniq[n - explore: n - explore + 80]
+    rest = uniq[n - explore: n - explore + 150]
     rng = random.Random(f"{seed}{rname}")
     pick = rng.sample(rest, min(explore, len(rest)))
     out = top + pick
@@ -799,7 +800,7 @@ def run(franchise: str, cast_path: Path, top: int = 10, refresh: bool = False) -
         log(f"audition {rname}: {len(aud[rname])} candidates measured ({time.time() - t0:.0f}s) {FA.STATS.as_dict()['api_calls']} calls")
     light_aud = {}
     for rname in LIGHT_ROLES:
-        cands = shortlist(ok, rname, LIGHT[rname], n=4, explore=1)
+        cands = shortlist(ok, rname, LIGHT[rname], n=6, explore=2)
         light_aud[rname] = audition_role(M, rname, LIGHT[rname], cands, log)
     pop = Pop([c["measured"] for r in aud.values() for c in r] + [c["measured"] for r in light_aud.values() for c in r])
     # ---- stage 2: rank + tune the top 3 per role
