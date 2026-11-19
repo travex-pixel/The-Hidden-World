@@ -28,6 +28,16 @@ SPEAKER_SUBJECTS = {
     "LIEBE": {"liebe", "five_leaf_grimoire", "mindscape"}, "YAMI": {"yami"}, "REVCHI": {"revchi"},
     "JULIUS": {"julius"}, "FATHER_ORSI": {"father_orsi"}, "SISTER_LILY": {"sister_lily"}, "NOELLE": {"noelle"},
 }
+try:
+    from . import franchise as _fr
+except ImportError:  # run as a plain script
+    import franchise as _fr
+NARUTO_SPEAKER_SUBJECTS = {
+    "NARUTO": {"naruto", "naruto_clones"}, "CLONE": {"naruto_clones", "naruto"}, "IRUKA": {"iruka"},
+    "MIZUKI": {"mizuki"}, "HIRUZEN": {"hiruzen"}, "KAKASHI": {"kakashi", "team7"},
+    "SASUKE": {"sasuke", "team7"}, "SAKURA": {"sakura", "team7"}, "KURAMA": {"kurama", "seal_cage"},
+}
+STAMP_MAX_NOTE = 60
 PAUSE_CLASSES = {"banter": 190, "turn": 300, "reveal": 650}
 DIRECTION = re.compile(r"\[[^\[\]()]+\](\s?\[[^\[\]()]+\])?")
 LOCKED_SHORT = {"Skip it."}  # picture-locked line, exempt from the 12 character floor
@@ -41,13 +51,32 @@ def words(t):
     return len(t.split())
 
 
+def profile(s):
+    """Franchise-specific vocabularies and thresholds. No franchise key means Black Clover, unchanged."""
+    fid = s.get("franchise")
+    if not fid or fid == _fr.DEFAULT:
+        return dict(id=_fr.DEFAULT, subjects=SUBJECTS, locations=LOCATIONS, moods=MOODS,
+                    speaker_subjects=SPEAKER_SUBJECTS, narr_min=NARR_MIN, narr_share=(0.58, 0.65),
+                    dirs=(0.28, 0.42), required_cast={"NOELLE"})
+    f = _fr.load(fid)
+    v = f["subjects"]
+    subj = set(v["characters"]) | set(v["places"]) | set(v["objects"])
+    speakers = set(f.get("speakers") or f.get("speaker_colours", {}))
+    return dict(id=fid, subjects=subj, locations=set(v["places"]), moods=set(v["moods"]),
+                speaker_subjects=NARUTO_SPEAKER_SUBJECTS if fid == "naruto" else {}, narr_min=60,
+                narr_share=(0.45, 0.55), dirs=(0.28, 0.45), required_cast=speakers)
+
+
 def validate(s):
     errs = []
+    P = profile(s)
     cast = s.get("cast", {})
     seen = set()
     prev_cam = "<start>"
-    if "NOELLE" not in cast:
-        errs.append("NOELLE missing from cast")
+    for r in sorted(P["required_cast"]):
+        if r not in cast:
+            errs.append(f"{r} missing from cast")
+    stamps = 0
     for c in s["chapters"]:
         if c["music"] not in MUSIC:
             errs.append(f"{c['id']}: bad music {c['music']}")
@@ -67,10 +96,18 @@ def validate(s):
             n = len(txt)
             if n > MAX_CHARS:
                 errs.append(f"{bid}: {n} chars > {MAX_CHARS}")
-            if b["speaker"] == "NARRATOR" and n < NARR_MIN:
-                errs.append(f"{bid}: narrator beat {n} chars < {NARR_MIN}")
+            if b["speaker"] == "NARRATOR" and n < P["narr_min"]:
+                errs.append(f"{bid}: narrator beat {n} chars < {P['narr_min']}")
             elif n < MIN_CHARS and txt not in LOCKED_SHORT:
                 errs.append(f"{bid}: {n} chars < {MIN_CHARS}")
+            st = b.get("stamp")
+            if st is not None:
+                stamps += 1
+                if not isinstance(st, dict) or st.get("label") != "CANON" or not isinstance(st.get("note"), str) \
+                        or not 1 <= len(st["note"]) <= STAMP_MAX_NOTE or set(st) - {"label", "note"}:
+                    errs.append(f"{bid}: bad stamp {st!r}")
+                if any(v.get("non_canon") for v in b["visuals"]):
+                    errs.append(f"{bid}: CANON stamp on a non_canon beat")
             d = b.get("direction")
             if d is None or (d != "" and not DIRECTION.fullmatch(d)):
                 errs.append(f"{bid}: bad direction {d!r}")
@@ -86,19 +123,20 @@ def validate(s):
             if not 1 <= len(b["visuals"]) <= 3:
                 errs.append(f"{bid}: visuals count")
             for v in b["visuals"]:
-                bad = [x for x in v["subjects"] if x not in SUBJECTS]
+                bad = [x for x in v["subjects"] if x not in P["subjects"]]
                 if bad or not v["subjects"]:
                     errs.append(f"{bid}: bad subjects {bad}")
-                if v["location"] is not None and v["location"] not in LOCATIONS:
+                if v["location"] is not None and v["location"] not in P["locations"]:
                     errs.append(f"{bid}: bad location {v['location']}")
-                if v["mood"] not in MOODS:
+                if v["mood"] not in P["moods"]:
                     errs.append(f"{bid}: bad mood {v['mood']}")
                 if v["shot"] is not None and v["shot"] not in SHOTS:
                     errs.append(f"{bid}: bad shot {v['shot']}")
                 if not v["query"] or not isinstance(v["non_canon"], bool):
                     errs.append(f"{bid}: query/non_canon")
             sp = b["speaker"]
-            if sp in SPEAKER_SUBJECTS and not (set(b["visuals"][0]["subjects"]) & SPEAKER_SUBJECTS[sp]):
+            SS = P["speaker_subjects"]
+            if sp in SS and not (set(b["visuals"][0]["subjects"]) & SS[sp]):
                 errs.append(f"{bid}: first visual lacks speaker {sp}")
             if b["camera"] not in CAMERAS:
                 errs.append(f"{bid}: bad camera")
@@ -111,6 +149,8 @@ def validate(s):
                 errs.append(f"{bid}: bad sfx")
             if not isinstance(b["pause_after_ms"], int) or not 0 <= b["pause_after_ms"] <= 700:
                 errs.append(f"{bid}: pause out of range")
+    if P["id"] != _fr.DEFAULT and not 5 <= stamps <= 7:
+        errs.append(f"CANON stamps {stamps} outside 5-7")
     return errs
 
 
@@ -177,12 +217,17 @@ def main(argv):
         errs.append("sfx cues outside 28-40")
     if not 1450 <= st["tot"] <= 1650:
         errs.append(f"total words {st['tot']} outside 1450-1650")
-    if not 0.58 <= st["narr"] <= 0.65:
-        errs.append(f"narrator share {st['narr']:.0%} outside 58-65%")
+    P = profile(s)
+    lo, hi = P["narr_share"]
+    if not lo <= st["narr"] <= hi:
+        errs.append(f"narrator share {st['narr']:.0%} outside {lo:.0%}-{hi:.0%}")
     if st["reveals"] > 12:
         errs.append("reveal pauses > 12")
-    if not 0.28 <= st["dirs"] / st["beats"] <= 0.42:
-        errs.append(f"direction coverage {st['dirs'] / st['beats']:.0%} outside 28-42%")
+    dlo, dhi = P["dirs"]
+    if not dlo <= st["dirs"] / st["beats"] <= dhi:
+        errs.append(f"direction coverage {st['dirs'] / st['beats']:.0%} outside {dlo:.0%}-{dhi:.0%}")
+    if P["id"] != _fr.DEFAULT and not 110 <= st["beats"] <= 130:
+        errs.append(f"beats {st['beats']} outside 110-130")
     if s.get("revision") != 2:
         errs.append("revision marker missing")
     if st["nonc"] / st["cuts"] > 0.2:

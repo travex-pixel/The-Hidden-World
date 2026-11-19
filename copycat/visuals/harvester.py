@@ -1,6 +1,8 @@
-"""BlackCloverVisualHarvester: build assets/cache/black-clover/vault.json from the Black Clover Fandom wiki.
+"""Franchise visual harvester: build assets/cache/<franchise>/vault.json from the franchise's Fandom wiki.
 
-    python -m copycat.visuals.harvester [--max 220] [--refresh] [--stats] [--rebuild]
+    python -m copycat.visuals.harvester [--franchise black-clover|naruto] [--max 220] [--refresh] [--stats] [--rebuild]
+
+Black Clover is the default (legacy behaviour untouched). Naruto uses copycat/visuals/narutopedia.py for discovery.
 """
 import argparse
 import hashlib
@@ -16,13 +18,17 @@ from urllib.parse import quote
 
 import requests
 
+from .. import franchise as franchise_mod
 from . import imgutil, tagger
 from .local_indexer import index_local_media
 
 ROOT = Path(__file__).resolve().parents[2]
+CURATION = ROOT / "copycat/projects/bc-whatif-ep01/curation.json"
 CACHE = ROOT / "assets/cache/black-clover"
 IMAGES, RAW, VAULT, REGISTRY = CACHE / "images", CACHE / "raw", CACHE / "vault.json", CACHE / "raw/registry.json"
 API = "https://blackclover.fandom.com/api.php"
+FRANCHISE = "black-clover"
+ID_PREFIX = "bc_"
 UA = "HiddenWorldVisualHarvester/1.0 (non-commercial research tool; polite, cached, <=4 req/s)"
 DOMAIN = "anime_black_clover"
 MANGA_SUBJECTS = {"liebe", "licita", "five_leaf_grimoire", "lucius", "asta_black_form", "lucifero", "anti_magic", "father_orsi", "sister_lily", "hage_village", "hage_church", "grimoire_tower", "revchi", "demon_skull", "asta_young", "yuno_young", "mindscape", "julius"}
@@ -37,6 +43,21 @@ ENTITY_PAGES = ["Asta", "Yuno", "Liebe", "Licita", "Black Asta", "Five-leaf Clov
                 "Vanessa Enoteca", "Finral Roulacase", "Julius Novachrono", "William Vangeance", "Patolli", "Licht", "Magic Knights Entrance Exam",
                 "Royal Capital", "Black Bulls", "Dark Triad", "Dante Zogratis", "Zenon Zogratis", "Lucifero", "Lucius Zogratis"]
 EPISODE_PAGES = [f"Episode {n}" for n in list(range(1, 14)) + [64, 66, 68, 102, 103, 105, 145, 146]]
+
+def configure(franchise_id):
+    """Point the module-level paths/API at another franchise (default state = black-clover)."""
+    global CACHE, IMAGES, RAW, VAULT, REGISTRY, API, DOMAIN, FRANCHISE, ID_PREFIX
+    fr = franchise_mod.load(franchise_id)
+    FRANCHISE = fr["id"]
+    CACHE = ROOT / fr["vault_dir"]
+    IMAGES, RAW, VAULT, REGISTRY = CACHE / "images", CACHE / "raw", CACHE / "vault.json", CACHE / "raw/registry.json"
+    API = fr["wiki_apis"][0]
+    global CURATION
+    if FRANCHISE != "black-clover": CURATION = ROOT / f"copycat/projects/{FRANCHISE}-whatif-ep01/curation.json"
+    DOMAIN = fr.get("domain") or ("anime_black_clover" if FRANCHISE == "black-clover" else f"anime_{FRANCHISE.replace('-', '_')}")
+    ID_PREFIX = fr.get("id_prefix") or ("bc_" if FRANCHISE == "black-clover" else {"naruto": "nr_"}.get(FRANCHISE, FRANCHISE[:2] + "_"))
+    return fr
+
 
 _last = [0.0]
 _session = requests.Session()
@@ -190,14 +211,15 @@ def download(url, params=None):
 def fetch_and_register(rec, kind, reg, source="fandom"):
     key = rec["title"]
     e = {"title": key, "kind": kind, "source": source, "url": rec["url"], "page": rec["page"], "caption": rec["caption"], "cats": rec["cats"]}
+    if rec.get("usage"): e["usage"] = rec["usage"]
     try:
         img = imgutil.open_image(download(rec["url"]))
     except Exception as ex:
         e.update(status="rejected", reason=f"download:{type(ex).__name__}"); reg[key] = e; return e
-    reason = imgutil.check(img, manga=kind == "manga_panel", min_w=640 if rec.get("lowres_ok") else 800)
+    reason = imgutil.check(img, manga=kind == "manga_panel", min_w=rec.get("min_w") or (640 if rec.get("lowres_ok") else 800))
     if reason:
         e.update(status="rejected", reason=reason); reg[key] = e; return e
-    nid = "bc_%04d" % (1 + max([int(v["id"][3:]) for v in reg.values() if v.get("id")] or [0]))
+    nid = ID_PREFIX + "%04d" % (1 + max([int(v["id"][len(ID_PREFIX):]) for v in reg.values() if v.get("id")] or [0]))
     IMAGES.mkdir(parents=True, exist_ok=True)
     imgutil.save_jpeg(img, IMAGES / f"{nid}.jpg")
     e.update(status="ok", id=nid, lowres=img.width < 800, width=img.width, height=img.height, dhash=imgutil.dhash(img), palette=imgutil.palette(img), quality=imgutil.quality(img))
@@ -287,6 +309,99 @@ def harvest_lang(base, prefixes, tag, refresh=False, minw=640):
     save_registry(reg); log(f"{tag}: {n} new files")
 
 
+# --------------------------------------------------------------------------- Naruto (Narutopedia)
+def naruto_discover(refresh):
+    """All tv-screenshot files (+ which pages use them) -> {title: rec}; API responses cached under raw/."""
+    from . import narutopedia as npd
+    cand = {}
+    for c in npd.SCREENSHOT_CATS:
+        for p in api_all({"action": "query", "generator": "categorymembers", "gcmtitle": c, "gcmtype": "file", "gcmlimit": "50",
+                          "prop": "imageinfo", "iiprop": "url|size|mime"}, refresh):
+            rec = page_record(p, "")
+            if rec and rec["title"] not in cand: cand[rec["title"]] = rec
+    log(f"{len(cand)} screenshot files in categories")
+    keep = {t: r for t, r in cand.items() if r["w"] >= npd.MIN_W and r["mime"] in ("image/png", "image/jpeg") and not imgutil.NAME_REJECT.search(t) and not npd.NAME_REJECT.search(t)}
+    log(f"{len(keep)} after size/name filter")
+    titles = sorted(keep)
+    for i in range(0, len(titles), 50):
+        for p in api_all({"action": "query", "titles": "|".join(titles[i:i + 50]), "prop": "fileusage", "fulimit": "max", "funamespace": "0"}, refresh):
+            if p["title"] in keep: keep[p["title"]]["usage"] = [u["title"] for u in p.get("fileusage", [])]
+        if i % 500 == 0: log(f"fileusage {i}/{len(titles)}")
+    return keep
+
+
+NARUTO_NEED = {"naruto", "naruto_clones", "forbidden_scroll", "iruka", "mizuki", "hiruzen", "crystal_ball", "hokage_office", "paperwork", "document", "kakashi", "bells",
+               "sasuke", "fireball", "sakura", "team7", "kurama", "seal_mark", "minato", "kushina", "tobirama", "konoha_village", "hokage_monument", "academy", "classroom",
+               "forest", "training_ground", "ichiraku", "naruto_apartment", "night_sky", "sunrise", "archive", "anbu", "danzo", "villagers", "shuriken", "ramen", "headband", "seal_cage", "teuchi"}
+
+
+def naruto_rank(cand, p1eps):
+    from . import narutopedia as npd
+    out = []
+    for rec in cand.values():
+        use = rec.get("usage", [])
+        if not npd.wanted(rec["title"], use): continue
+        t = npd.derive("", rec["title"], "", [], "anime_still", rec["w"], rec["h"], use, p1eps)
+        if t["era"] in ("shippuden", "boruto"): continue
+        sc = (3 if t["era"] == "part1" else 0) + 2 * len([x for x in t["subjects"] if x in NARUTO_NEED]) + min(rec["w"], 1920) / 1920
+        if not t["subjects"]: sc -= 5
+        out.append((sc, rec))
+    out.sort(key=lambda x: -x[0])
+    return out
+
+
+def run_naruto(a):
+    from . import narutopedia as npd
+    RAW.mkdir(parents=True, exist_ok=True); IMAGES.mkdir(parents=True, exist_ok=True)
+    reg = load_registry()
+    if not a.rebuild:
+        cand = naruto_discover(a.refresh)
+        p1eps = npd.part1_episode_pages(lambda params: api_all(params, a.refresh))
+        (RAW / "p1eps.json").write_text(json.dumps(sorted(p1eps)))
+        log(f"{len(p1eps)} part-I episode/page titles")
+        ranked = naruto_rank(cand, p1eps)
+        log(f"{len(ranked)} ranked candidates")
+        n = 0
+        for sc, rec in ranked:
+            if rec["title"] in reg: continue
+            if n >= a.max: break
+            rec = {**rec, "page": (rec.get("usage") or [""])[0], "min_w": npd.MIN_W}
+            e = fetch_and_register(rec, "anime_still", reg); n += 1
+            if n % 20 == 0:
+                save_registry(reg); log(f"{n} fetched, last {e['status']} {e.get('id', e.get('reason'))}")
+        save_registry(reg)
+    final, reasons = build_vault_naruto()
+    log(f"vault: {len(final)} assets; rejected: {dict(reasons)}")
+    return 0
+
+
+def build_vault_naruto():
+    from . import narutopedia as npd
+    reg = load_registry()
+    p1eps = set(json.loads((RAW / "p1eps.json").read_text())) if (RAW / "p1eps.json").exists() else set()
+    assets = []
+    for e in (v for v in reg.values() if v.get("status") == "ok"):
+        t = npd.derive(e["page"], e["title"], e["caption"], e["cats"], e["kind"], e["width"], e["height"], e.get("usage", []), p1eps)
+        t["dominantPalette"] = e["palette"]
+        assets.append({"id": e["id"], "path": f"{CACHE.relative_to(ROOT).as_posix()}/images/{e['id']}.jpg", "domain": DOMAIN, "franchise": FRANCHISE, "kind": e["kind"],
+                       "source": e["source"], "source_url": e["url"], "page": e["page"], "usage": e.get("usage", [])[:8], "file_title": e["title"], "caption": e["caption"],
+                       "width": e["width"], "height": e["height"], "dhash": e["dhash"], "tags": t, "focus": [0.5, 0.4], "quality": e["quality"]})
+    assets.sort(key=lambda a: a["id"])
+    kept, dups = [], 0
+    for a in assets:
+        if any(imgutil.hamming(a["dhash"], k["dhash"]) <= 6 for k in kept): dups += 1; continue
+        kept.append(a)
+    cur = tagger.load_curation(CURATION)
+    final, rej = [], 0
+    for a in kept:
+        if tagger.apply_curation(a, cur): final.append(a)
+        else: rej += 1
+    VAULT.write_text(json.dumps({"domain": DOMAIN, "franchise": FRANCHISE, "assets": final}, indent=1))
+    reasons = Counter(e["reason"].split(":")[0] for e in reg.values() if e.get("status") == "rejected")
+    reasons["duplicate"] += dups; reasons["curation"] += rej
+    return final, reasons
+
+
 def stats():
     v = json.loads(VAULT.read_text())["assets"]
     print(f"assets: {len(v)}")
@@ -299,6 +414,7 @@ def stats():
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
+    ap.add_argument("--franchise", default="black-clover", help="franchise id from config/franchises (default black-clover)")
     ap.add_argument("--max", type=int, default=220)
     ap.add_argument("--refresh", action="store_true", help="re-fetch API JSON (images on disk are never re-downloaded)")
     ap.add_argument("--lang", help="lang wiki code (es, pt-br, ...) with --prefix")
@@ -306,6 +422,11 @@ def main(argv=None):
     ap.add_argument("--stats", action="store_true")
     ap.add_argument("--rebuild", action="store_true", help="rebuild vault.json from registry without network")
     a = ap.parse_args(argv)
+    if a.franchise != "black-clover":
+        configure(a.franchise)
+        if a.franchise != "naruto": raise SystemExit(f"no harvester for franchise {a.franchise!r}")
+        if a.stats: stats(); return 0
+        return run_naruto(a)
     if a.stats: stats(); return 0
     if a.lang:
         harvest_lang(f"https://blackclover.fandom.com/{a.lang}/api.php", a.prefix, a.lang, a.refresh)
