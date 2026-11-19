@@ -91,3 +91,75 @@ def test_real_timing_if_present():
     if p.exists():
         sel = shorts.select_segments(json.load(open(p))["beats"])
         assert 45 <= sel["total"] <= 60
+
+
+# ---------------------------------------------------------------- project-aware packaging / spec shorts
+def test_black_clover_packaging_unchanged():
+    p = packaging.build("bc-whatif-ep01")
+    assert p["titles"] == packaging.TITLES and p["tags"] == packaging.TAGS
+    assert "Yūki Tabata" in p["description"] and "upload_checklist" not in p
+
+
+def test_naruto_packaging_contract():
+    p = packaging.build("naruto-whatif-ep01")
+    t = p["titles"]
+    assert t[0] == "What If Naruto Read ONE More Line Of The Forbidden Scroll? — Part 1" and len(t[0]) <= 100
+    assert len(t) == 3 and all(len(x) <= 70 for x in t[1:])
+    assert 15 <= len(p["tags"]) <= 20 and len(p["hashtags"]) == 3
+    d = p["description"]
+    assert "canon" in d[:150].lower() and "Masashi Kishimoto" in d and "Part 1 of 4" in d
+    assert "mother" in d and "AI-generated" in d
+    assert p["upload_checklist"] and any("synthetic" in x.lower() for x in p["upload_checklist"])
+    assert p["chapters"][0]["time"] == "0:00"
+    secs = [int(m) * 60 + int(s) for m, s in (c["time"].split(":") for c in p["chapters"])]
+    assert secs == sorted(secs) and all(b - a >= 10 for a, b in zip(secs, secs[1:]))
+
+
+def _spec_beats():
+    return [dict(id=f"b{i:03d}", chapter="c", speaker="NARRATOR", text="words here now", start=i * 5.0, end=i * 5.0 + 4.6)
+            for i in range(30)]
+
+
+def test_plan_short_ranges_merge_and_bounds():
+    pl = shorts.plan_short(_spec_beats(), dict(name="x", ranges=[["b001", "b004"], ["b005", "b008"], ["b012", "b014"]]))
+    assert len(pl["segments"]) == 2                      # b004/b005 are adjacent -> merged
+    assert 40 <= pl["total"] <= 58
+    (a0, a1), (b0, b1) = pl["segments"]
+    assert a1 <= b0 and a0 >= 5.0 - shorts.PRE - 1e-6
+
+
+def test_plan_short_rejects_out_of_range_duration():
+    for rng in ([["b001", "b002"]], [["b004", "b001"]]):
+        try:
+            shorts.plan_short(_spec_beats(), dict(name="x", ranges=rng))
+        except ValueError:
+            continue
+        raise AssertionError(f"{rng} should be rejected")
+
+
+def test_naruto_shorts_spec_fits_real_timing():
+    p = ROOT / "build/copycat/naruto-whatif-ep01/audio/timing.json"
+    spec = shorts.load_spec("naruto-whatif-ep01")
+    assert [s["name"] for s in spec["shorts"]] and len(spec["shorts"]) == 3
+    if p.exists():
+        beats = json.load(open(p))["beats"]
+        for s in spec["shorts"]:
+            assert 40 <= shorts.plan_short(beats, s)["total"] <= 58, s["name"]
+
+
+def test_naruto_thumbnails_if_rendered():
+    from PIL import Image
+    d = ROOT / "releases/copycat/naruto-whatif-ep01"
+    for n in ("thumbnail.png", "thumbnail_b.png", "thumbnail_c.png"):
+        if (d / n).exists():
+            assert Image.open(d / n).size == (1280, 720) and (d / n).stat().st_size < 2_000_000
+
+
+import unittest  # noqa: E402  (the repo runs `unittest discover`; expose the module-level checks to it)
+
+
+class PackagingChecks(unittest.TestCase):
+    def test_all(self):
+        for name, fn in sorted(globals().items()):
+            if name.startswith("test_") and callable(fn):
+                fn()
