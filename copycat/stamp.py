@@ -120,7 +120,7 @@ class Sprite:
         layers = [rot, plate_img, bord_img, shadow_src]
         out = []
         for im in layers:
-            out.append(im.rotate(-ROT * -1 if False else ROT, resample=Image.BICUBIC, expand=True))
+            out.append(im.rotate(-ROT, resample=Image.BICUBIC, expand=True))   # CSS-style: -7 deg = counter-clockwise
         rot, plate_img, bord_img, shadow_src = out
         # shrink back to final resolution
         k = 1.0 / ss
