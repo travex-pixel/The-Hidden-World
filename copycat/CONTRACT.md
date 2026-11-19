@@ -108,7 +108,8 @@ Black Clover vocabulary. Black Clover stays the default and behaves exactly as b
 * Vault assets carry `"franchise": "<id>"` (absent = `black-clover`); `AssetDomainGate(domain, franchise)` and the mapper refuse
   an asset of another franchise (a Black Clover frame never appears in a Naruto episode and vice versa). Naruto assets use
   domain `anime_naruto` (`anime_fantasy` also admits it); kinds stay `anime_still` / `manga_panel`.
-* Harvest: `python -m copycat.visuals.harvester --franchise naruto [--lang-wikis es,pt-br,pl] [--max N] [--rebuild]`
+* Harvest: `python -m copycat.visuals.harvester --franchise naruto [--lang-wikis es,pt-br,pl,fr] [--search-places] [--max N] [--rebuild]`
+  (Narutopedia screenshot categories + file-page metadata; Part I sections of es/pt-br/pl/fr character pages; keyword search for character-free place/object frames, tagged `conf: low`)
   (ids `nr_0001...`). Contact sheets: `python -m copycat.visuals.sheets --franchise naruto [--era part1] <subject>`.
 * Naruto asset tags add: `era` = `part1|kid|none|unknown` (`shippuden`/`boruto` are never kept in the vault; `none` = place/object
   frames with no character), `time` = `night|day|dusk|null`, `text_free` (bool), `series`, `src_episode`; shot scale in `shotType`

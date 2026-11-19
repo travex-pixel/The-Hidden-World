@@ -314,6 +314,8 @@ class Scorer:
             s += 0.8
         if tg.get("text_free") is False:
             s -= 4.0
+        if tg.get("conf") == "low":
+            s -= 1.0
         if a["id"] in P["avoid"]:
             s -= P["avoid_penalty"]
         # speaker rule

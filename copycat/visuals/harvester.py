@@ -476,6 +476,7 @@ def build_vault_naruto():
     for e in (v for v in reg.values() if v.get("status") == "ok"):
         t = npd.derive(e["page"], e["title"], e["caption"], e["cats"], e["kind"], e["width"], e["height"], (), e.get("meta"))
         t["dominantPalette"] = e["palette"]
+        if (e.get("meta") or {}).get("series") == "search": t["conf"] = "low"        # keyword-search find: char-free by title only
         assets.append({"id": e["id"], "path": f"{CACHE.relative_to(ROOT).as_posix()}/images/{e['id']}.jpg", "domain": DOMAIN, "franchise": FRANCHISE, "kind": e["kind"],
                        "source": e["source"], "source_url": e["url"], "page": e["page"], "file_title": e["title"], "caption": e["caption"],
                        "width": e["width"], "height": e["height"], "dhash": e["dhash"], "tags": t, "focus": [0.5, 0.4], "quality": e["quality"]})
