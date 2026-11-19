@@ -569,8 +569,8 @@ def build_roster(spec):
               W_("brk", "Exactly one name fits", "omit"), a=0.9)
     # highlights
     D.fill_rect(1136, yg - 40, 1312, yg + 12, HILITE, 0.95, "hl_oct10", W_("hl_oct10", "October tenth", "omit", lead=0.1), mode="multiply", ragged=True, imp=False)
-    D.fill_rect(1326, yg - 40, 1510, yg + 12, HILITE, 0.95, "hl_auth", W_("hl_auth", "Authorized by the Fourth Hokage", "omit", lead=0.1), mode="multiply", ragged=True)
-    D.rect(1328, yg - 42, 1514, yg + 14, RED, 3.0, 0.9, "box_auth", W_("hl_auth", "Fourth Hokage", "omit", lead=0.0))
+    D.fill_rect(1326, yg - 40, 1532, yg + 12, HILITE, 0.95, "hl_auth", W_("hl_auth", "Authorized by the Fourth Hokage", "omit", lead=0.1), mode="multiply", ragged=True)
+    D.rect(1330, yg - 42, 1536, yg + 14, RED, 3.0, 0.9, "box_auth", W_("hl_auth", "Fourth Hokage", "omit", lead=0.0))
     D.anchor("title", w / 2, 150)
     D.anchor("auth", 1420, yg - 14)
     return D
@@ -735,24 +735,24 @@ def build_letter(spec):
                       dict(pts=[(cx - 28, cy + 24), (cx, cy - 30), (cx + 28, cy + 24)], w=5.0), dict(pts=[(cx - 28, cy - 24), (cx, cy + 30), (cx + 28, cy - 24)], w=5.0)],
               (150, 34, 30), None, a=0.78, bleed=1.2, dens=0.3)
     # the signature: stabbing downstrokes, brush splitting on the tails
-    sp = (0.46, 6, 0.50, 0.1)
-    sig = [dict(pts=[(470, 1186), (492, 1100), (514, 1026), (526, 1008)], w=[3, 6, 8, 9], t=(0.00, 0.06), n=20),
-           dict(pts=[(526, 1008), (524, 1090), (516, 1180), (508, 1262)], w=[9, 22, 28, 26], t=(0.06, 0.20), split=sp, n=30),
-           dict(pts=[(512, 1236), (560, 1120), (616, 1060), (664, 1092), (640, 1150), (700, 1130)], w=[4, 5, 5, 5, 4, 4], t=(0.20, 0.34)),
-           dict(pts=[(720, 1020), (718, 1110), (710, 1200), (702, 1282)], w=[7, 24, 30, 28], t=(0.34, 0.50), split=sp, n=30),
-           dict(pts=[(706, 1240), (764, 1170), (820, 1150), (858, 1176), (904, 1140)], w=[4, 5, 5, 4, 4], t=(0.50, 0.62)),
-           dict(pts=[(900, 1000), (896, 1100), (886, 1200), (878, 1296)], w=[7, 26, 34, 32], t=(0.62, 0.80), split=sp, n=30),
-           dict(pts=[(450, 1316), (700, 1304), (960, 1290)], w=[4, 9, 3], t=(0.80, 1.0))]
+    sp = (0.40, 6, 0.55, 0.1)
+    sig = [dict(pts=[(450, 1150), (470, 1070), (520, 1010), (566, 1008), (584, 1030)], w=[2, 5, 8, 10, 14], t=(0.00, 0.07), n=22),
+           dict(pts=[(584, 1030), (566, 1100), (540, 1190), (512, 1276)], w=[20, 25, 25, 22], t=(0.07, 0.22), split=sp, n=30),
+           dict(pts=[(526, 1236), (560, 1150), (620, 1060), (700, 1040), (730, 1080), (676, 1110), (690, 1146), (760, 1100)], w=[3, 4, 5, 5, 4, 3, 3, 3], t=(0.22, 0.38), n=26),
+           dict(pts=[(776, 1052), (780, 1114), (760, 1190), (730, 1236)], w=[16, 22, 22, 20], t=(0.38, 0.50), split=(0.5, 5, 0.5, 0.1), n=30),
+           dict(pts=[(740, 1216), (800, 1160), (880, 1130), (930, 1176), (900, 1210), (960, 1190)], w=[3, 4, 4, 4, 3, 3], t=(0.50, 0.63), n=26),
+           dict(pts=[(1010, 984), (1000, 1070), (966, 1190), (924, 1308)], w=[22, 28, 28, 25], t=(0.63, 0.82), split=sp, n=30),
+           dict(pts=[(440, 1330), (700, 1316), (1010, 1300)], w=[3, 7, 2], t=(0.82, 1.0))]
     D.strokes("sig", sig, BRUSH, W_("sig", "stabbing the page", "anim", lead=0.5, tail=1.2), a=0.97, bleed=1.1, bristle=0.12, imp=True, soft=0.03, anchor="sig")
     D.text("rank", 520, 1360, "The Fourth Kazekage", "serif", 30, ink, None, a=0.9)
     # Naruto's red-pen circles round the splits
-    for i, (cx_, cy_) in enumerate(((510, 1262), (704, 1274), (882, 1286))):
+    for i, (cx_, cy_) in enumerate(((516, 1270), (734, 1226), (930, 1296))):
         D.strokes(f"sp{i}", [wobbly_ellipse(cx_, cy_, 44, 52, np.random.default_rng(i + 3), turns=1.15, w=(4, 5.5, 3))], RED, W_("circ", "downstroke", "omit", lead=-0.1 + 0.5 * i, tail=0.2 + 0.4 * i, group="circ"), a=0.9)
     # S tab
     D.text("tab", wl + 37, 346, "S", "anton", 96, (40, 28, 24), None, anchor="m", a=0.9, rot=-2)
     D.anchor("top", wl / 2, 400)
     D.anchor("body", wl / 2, 640)
-    D.anchor("sig_view", 690, 1170)
+    D.anchor("sig_view", 730, 1170)
     D.anchor("tab", wl, 330)
     return D
 

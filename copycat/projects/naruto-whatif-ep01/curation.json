@@ -675,7 +675,9 @@
  },
  "nr_0008": {
   "remove_subjects": [
-   "iruka"
+   "archive",
+   "iruka",
+   "naruto_clones"
   ]
  },
  "nr_0017": {
@@ -1180,7 +1182,8 @@
  "nr_0736": {
   "remove_subjects": [
    "hiruzen"
-  ]
+  ],
+  "reject": true
  },
  "nr_0760": {
   "remove_subjects": [
@@ -1334,7 +1337,8 @@
  "nr_1739": {
   "remove_subjects": [
    "hiruzen"
-  ]
+  ],
+  "reject": true
  },
  "nr_1812": {
   "remove_subjects": [
@@ -1803,7 +1807,8 @@
   "shotType": "closeup",
   "era": "part1",
   "text_free": true,
-  "time": "day"
+  "time": "day",
+  "reject": true
  },
  "nr_0225": {
   "trust": true,
@@ -2646,5 +2651,89 @@
  },
  "nr_1810": {
   "era": "shippuden"
+ },
+ "nr_2342": {
+  "reject": true
+ },
+ "nr_2341": {
+  "era": "none",
+  "subjects": [
+   "kurama",
+   "seal_cage"
+  ],
+  "mood": [
+   "ominous"
+  ],
+  "time": "night",
+  "text_free": true,
+  "shotType": "wide",
+  "trust": 0.5
+ },
+ "nr_1405": {
+  "remove_subjects": [
+   "naruto"
+  ]
+ },
+ "nr_1229": {
+  "remove_subjects": [
+   "naruto"
+  ]
+ },
+ "nr_1416": {
+  "remove_subjects": [
+   "naruto"
+  ]
+ },
+ "nr_2269": {
+  "reject": true
+ },
+ "nr_1287": {
+  "reject": true
+ },
+ "nr_2265": {
+  "reject": true
+ },
+ "nr_2257": {
+  "reject": true
+ },
+ "nr_0904": {
+  "remove_subjects": [
+   "archive",
+   "naruto",
+   "naruto_clones"
+  ]
+ },
+ "nr_0298": {
+  "reject": true
+ },
+ "nr_1272": {
+  "reject": true
+ },
+ "nr_0276": {
+  "reject": true
+ },
+ "nr_1320": {
+  "reject": true
+ },
+ "nr_0440": {
+  "era": "shippuden"
+ },
+ "nr_1479": {
+  "reject": true
+ },
+ "_review_log": {
+  "method": "contact sheets (python -m copycat.visuals.sheets --franchise naruto <subject>) viewed for: naruto, naruto_clones, iruka, mizuki, hiruzen, kakashi, sasuke, sakura, team7, kurama, seal_cage/seal_mark, hokage_office, crystal_ball, bells, training_ground, forest/forest_night, classroom/academy, ichiraku/ramen, konoha_village, hokage_monument, night_sky, document/forbidden_scroll/library/archive, minato, kushina; then storyboard sheets.",
+  "reject": "fan art / manga colour / Shippuden-era faces (Tsunade kiss, Kakashi with Yamato, Sakumo flashback, Hiruzen death scenes), wrong subject, heavy text, junk",
+  "era": "anything that is not Part I Naruto/Sasuke/Sakura/Kakashi was re-tagged shippuden/kid so the mapper never uses it",
+  "trust": "'trust': true (or 0.5) = frame checked on a contact sheet and tagged by hand; the mapper (trust_mode) prefers these over unreviewed frames",
+  "added": "targeted Narutopedia pass (naruto.fandom.com only): Hokage Residence, Kurama's initial cage, Squad Seven, Kakashi passes Team 7, Team Kakashi, Kakashi's Bells, Kakashi Icha Icha, Sealing Room; plus de/it language-wiki Part I history images",
+  "counts": {
+   "curated_assets": 315,
+   "rejected": 73,
+   "trusted": 113
+  }
+ },
+ "nr_0525": {
+  "reject": true
  }
 }
