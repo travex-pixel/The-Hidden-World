@@ -32,7 +32,7 @@ from . import franchise as franchise_mod
 from .fonts import font
 from .stamp import StampPainter
 from .inserts import InsertScene
-from .vfx import ACCENTS, Atmosphere, dissolve, flash, seed_of, smoothstep, whip, DISSOLVE_FRAMES
+from .vfx import ACCENTS, Atmosphere, dissolve, flash, seed_of, smoothstep, whip, DISSOLVE_FRAMES, GRADES, grade_vignette
 
 cv2.setNumThreads(1)
 ROOT = Path(__file__).resolve().parent.parent
@@ -69,7 +69,7 @@ def ease_io(p: float) -> float:
 CAMERAS = ("slow_push_in", "slow_pull_out", "pan_lr", "pan_rl", "drift_up", "impact_punch_zoom")
 
 
-def camera_path(name, i, n, fps, seed=0):
+def camera_path(name, i, n, fps, seed=0, amp=1.0):
     """Return dict(z, px, py, sx, sy): zoom, pan progress offsets in [-.5,.5] (x: right+, y: down+),
     and shake in 1080p pixels. Frame i of n; p runs exactly 0..1 across the shot."""
     if name not in CAMERAS:
@@ -78,15 +78,15 @@ def camera_path(name, i, n, fps, seed=0):
     e = ease_io(p)
     z, px, py, sx, sy = 1.0, 0.0, 0.0, 0.0, 0.0
     if name == "slow_push_in":
-        z = 1.0 + 0.10 * e
+        z = 1.0 + 0.10 * amp * e
     elif name == "slow_pull_out":
-        z = 1.10 - 0.10 * e
+        z = 1.0 + 0.10 * amp * (1 - e)
     elif name == "pan_lr":
-        z, px = 1.08, e - 0.5
+        z, px = 1.0 + 0.08 * amp, e - 0.5
     elif name == "pan_rl":
-        z, px = 1.08, 0.5 - e
+        z, px = 1.0 + 0.08 * amp, 0.5 - e
     elif name == "drift_up":
-        z, py = 1.06, 0.5 - e
+        z, py = 1.0 + 0.06 * amp, 0.5 - e
     else:  # impact_punch_zoom
         t = i / fps
         D = n / fps
@@ -98,7 +98,7 @@ def camera_path(name, i, n, fps, seed=0):
             amp = 9.0 * (1 - t / 0.35) ** 1.5
             rg = np.random.default_rng(seed + i * 7919)
             sx, sy = (rg.uniform(-1, 1, 2) * amp)
-    return dict(z=z, px=px, py=py, sx=float(sx), sy=float(sy))
+    return dict(z=z, px=px, py=py, sx=float(sx), sy=float(sy), amp=amp)
 
 
 def cover_window(src_aspect, out_aspect):
@@ -108,10 +108,10 @@ def cover_window(src_aspect, out_aspect):
     return 1.0, src_aspect / out_aspect
 
 
-def fill_window(src_aspect, out_aspect, focus, cam, camname, shake_norm=(0.0, 0.0)):
+def fill_window(src_aspect, out_aspect, focus, cam, camname, shake_norm=(0.0, 0.0), base_zoom=1.0):
     """Normalised crop window (left, top, ww, wh) inside the image, zoom around `focus`, clamped."""
     ww0, wh0 = cover_window(src_aspect, out_aspect)
-    z = cam["z"]
+    z = cam["z"] * base_zoom
     ww, wh = ww0 / z, wh0 / z
     fx, fy = focus
     l0 = min(max(fx - ww0 / 2, 0), 1 - ww0)
@@ -121,12 +121,12 @@ def fill_window(src_aspect, out_aspect, focus, cam, camname, shake_norm=(0.0, 0.
     left, top = fx - p0x * ww, fy - p0y * wh
     if camname in ("pan_lr", "pan_rl"):
         avail = 1 - ww
-        travel = min(avail, 0.20 * ww)
+        travel = min(avail, 0.20 * ww * cam.get("amp", 1.0))
         mid = min(max(left, travel / 2), avail - travel / 2) if avail > travel else avail / 2
         left = mid + cam["px"] * travel
     elif camname == "drift_up":
         avail = 1 - wh
-        travel = min(avail, 0.14 * wh)
+        travel = min(avail, 0.14 * wh * cam.get("amp", 1.0))
         mid = min(max(top, travel / 2), avail - travel / 2) if avail > travel else avail / 2
         top = mid + cam["py"] * travel
     left += shake_norm[0] * ww
@@ -356,6 +356,10 @@ class StillScene:
         self.treat = shot.get("treatment") or "anime"
         self.accent = ACCENTS.get(shot.get("accent") or "crimson", ACCENTS["crimson"])
         self.focus = tuple(shot.get("focus") or (0.5, 0.4))
+        self.base_zoom = float((shot.get("crop") or {}).get("zoom", 1.0))
+        self.cam_amp = float(shot.get("cam_amp", 1.0))
+        self.grade_name = shot.get("grade") if shot.get("grade") in GRADES else None
+        self.gvig = grade_vignette(W, H, self.grade_name) if self.grade_name else None
         src = load_rgb(shot["_abs_path"])
         w0, h0 = src.size
         self.layout = resolve_layout(shot.get("layout") or "fill", w0, h0)
@@ -370,6 +374,8 @@ class StillScene:
     def _grade(self, im: Image.Image) -> Image.Image:
         a = np.asarray(im)
         a = manga_grade(a, self.accent) if self.treat == "manga_motion" else anime_grade(a)
+        if self.grade_name:                                # continuity grade: night / interior_lamp
+            a = GRADES[self.grade_name](a)
         return Image.fromarray(a)
 
     # fill ---------------------------------------------------------------
@@ -377,14 +383,14 @@ class StillScene:
         W, H = self.W, self.H
         w0, h0 = src.size
         s0 = max(W / w0, H / h0)                      # cover scale at zoom 1
-        ps = min(1.0, s0 * 1.12)                       # never keep more pixels than the biggest zoom needs
+        ps = min(1.0, s0 * 1.12 * max(1.0, self.base_zoom) * (1.0 + 0.1 * (self.cam_amp - 1.0)))   # never keep more pixels than the biggest zoom needs
         self.img = self._grade(resize_to(src, w0 * ps, h0 * ps))
 
     def _frame_fill(self, i, n):
         W, H, r = self.W, self.H, self.r
-        cam = camera_path(self.cam, i, n, self.fps, self.seed)
+        cam = camera_path(self.cam, i, n, self.fps, self.seed, self.cam_amp)
         sh = (cam["sx"] * r / W, cam["sy"] * r / H)
-        l, t, ww, wh = fill_window(self.src_aspect, W / H, self.focus, cam, self.cam, sh)
+        l, t, ww, wh = fill_window(self.src_aspect, W / H, self.focus, cam, self.cam, sh, self.base_zoom)
         iw, ih = self.img.size
         box = (l * iw, t * ih, (l + ww) * iw, (t + wh) * ih)
         box = (max(box[0], 0.0), max(box[1], 0.0), min(box[2], float(iw)), min(box[3], float(ih)))
@@ -424,6 +430,8 @@ class StillScene:
             l = min(max(fx - cwin[0] / 2, 0), 1 - cwin[0])
             t = min(max(fy - cwin[1] / 2, 0), 1 - cwin[1])
             crop = src.crop((int(l * w0), int(t * h0), int((l + cwin[0]) * w0), int((t + cwin[1]) * h0)))
+            if self.grade_name:
+                crop = Image.fromarray(GRADES[self.grade_name](np.asarray(crop)))
             q = 4
             small = np.asarray(resize_to(crop, bw / q, bh / q))
             small = cv2.GaussianBlur(small, (0, 0), 28 * r / q)
@@ -437,7 +445,7 @@ class StillScene:
 
     def _frame_depth(self, i, n):
         W, H, r = self.W, self.H, self.r
-        cam = camera_path(self.cam, i, n, self.fps, self.seed)
+        cam = camera_path(self.cam, i, n, self.fps, self.seed, self.cam_amp)
         e = ease_io(i / max(n - 1, 1))
         z = cam["z"]
         if self.cam in ("pan_lr", "pan_rl"):
@@ -516,6 +524,8 @@ class StillScene:
         fr = self._frame_fill(i, n) if self.layout == "fill" else self._frame_depth(i, n)
         fr = np.ascontiguousarray(fr)
         cv2.multiply(fr, self.vig, dst=fr, scale=1 / 255.0)
+        if self.gvig is not None:
+            cv2.multiply(fr, self.gvig, dst=fr, scale=1 / 255.0)
         self.atm.apply(fr, i, n)
         return fr
 

@@ -12,6 +12,7 @@ import sys
 from pathlib import Path
 
 from . import franchise as franchise_mod
+from . import whitelist as wl_mod
 from .domain_gate import AssetDomainGate
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -63,7 +64,8 @@ SHOT_NEAR = {("closeup", "extreme_closeup"), ("wide", "establishing"), ("action"
 P = dict(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
          ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
          avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
-         time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False)
+         time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False,
+         wl=None, wl_cfg=None, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD)
 
 NARUTO_ALIASES = {
     "forbidden_scroll": ("document", "paperwork"), "paperwork": ("document", "letter", "book"), "document": ("paperwork", "letter", "book", "forbidden_scroll"),
@@ -105,7 +107,8 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
     P.update(scarce=SCARCE, young=YOUNG, atmos=ATMOS, atmos2=ATMOS2, nonchar=NONCHAR, speaker_subjects=SPEAKER_SUBJECTS,
              ember_subjects={"liebe", "anti_magic", "mindscape"}, accent="bc", lock_seconds=LOCK_SECONDS, era=None,
              avg_shot_s=None, avoid={}, avoid_penalty=3.0, young_fallback=True, era_agnostic=set(), aliases={},
-             time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False)
+             time_by_chapter={}, time_by_beat={}, merge_short_s=0.0, crowd_penalty=0.0, trust_mode=False,
+             wl=None, wl_cfg=None, cold_avg=0.0, merge_cross_s=0.0, merge_max_s=8.0, avg_by_chapter={}, max_shot=MAX_SHOT, split_bias=1.0, cold_max_shot=MAX_SHOT_COLD)
     if fr_id == "naruto":
         P.update(scarce={"kushina", "minato", "tobirama", "kurama", "danzo", "enma", "rin", "obito", "young_kakashi", "orochimaru", "jiraiya", "ibiki", "anko"},
                  young={"young_kakashi": "kakashi"}, atmos=set(), atmos2=set(), nonchar=NARUTO_NONCHAR, speaker_subjects=NARUTO_SPEAKERS,
@@ -119,6 +122,14 @@ def configure(fr_id: str, script: dict, cfg: dict, pid: str):
         P["merge_short_s"] = float(cfg.get("merge_short_s", 0.0))
         P["crowd_penalty"] = float(cfg.get("crowd_penalty", 3.0))
         P["trust_mode"] = bool(cfg.get("trust_mode", False))
+        P["merge_cross_s"] = float(cfg.get("merge_cross_s", 0.0))
+        P["merge_max_s"] = float(cfg.get("merge_max_s", 8.0))
+        P["avg_by_chapter"] = cfg.get("avg_by_chapter", {})
+        P["wl_cfg"] = cfg.get("wl")
+        P["max_shot"] = float(cfg.get("max_shot", MAX_SHOT))
+        P["split_bias"] = float(cfg.get("split_bias", 1.0))
+        P["cold_max_shot"] = float(cfg.get("cold_max_shot", MAX_SHOT_COLD))
+        P["cold_avg"] = float(cfg.get("cold_avg", 0.0))
     if cfg.get("lock_seconds"): P["lock_seconds"] = float(cfg["lock_seconds"])
     if cfg.get("avg_shot_s"): P["avg_shot_s"] = float(cfg["avg_shot_s"])
     avoid = {}
@@ -228,34 +239,38 @@ def build_skeleton(script: dict, timing: dict):
         lic = any("licita" in (v.get("subjects") or []) for v in vis)   # keep the Licita cut when her name is spoken
         while n > 1 and D / n < (2.0 if cold else (1.7 if lic else MIN_CUT_MAIN)):
             n -= 1
-        avg = P["avg_shot_s"]
-        if avg and not cold:                           # long-form: target average shot length, shorter in action/comedy
+        avg = P["avg_by_chapter"].get(ch["id"], P["avg_shot_s"])
+        if cold and P["cold_avg"]:
+            avg = P["cold_avg"]
+        if avg and (not cold or P["cold_avg"]):                           # long-form: target average shot length, shorter in action/comedy
             bm = {m for v in vis for m in (v.get("mood") if isinstance(v.get("mood"), list) else [v.get("mood")])}
             ea = avg * 0.6 if bm & {"action", "combat", "comedy", "comedic"} else avg
-            n = max(1, min(len(vis), int(round(D / ea))))
+            n = max(1, min(len(vis), int(round(D / (ea * P["split_bias"])))))
         merge = False
-        if P["merge_short_s"] and slots and slots[-1]["type"] == "cut" and not b.get("insert") and not b.get("stamp") and ch["id"] != "cold_open":
+        if P["merge_short_s"] and slots and slots[-1]["type"] == "cut" and not b.get("insert") and not b.get("stamp") and (ch["id"] != "cold_open" or P["cold_avg"]):
             pb = slots[-1]["beat"]
             same = pb["speaker"] == b["speaker"] or (P["speaker_subjects"].get(pb["speaker"], {0}) & P["speaker_subjects"].get(b["speaker"], {1}))
-            lim = P["merge_short_s"] if same else min(P["merge_short_s"], 1.3)
-            merge = D < lim and slots[-1]["end"] - slots[-1]["start"] + D <= 8.0 and not slots[-1].get("stamp")
+            lim = P["merge_short_s"] if same else min(P["merge_short_s"], P["merge_cross_s"] or 1.3)
+            merge = D < lim and slots[-1]["end"] - slots[-1]["start"] + D <= P["merge_max_s"] and not slots[-1].get("stamp") \
+                and slots[-1]["chapter"] == ch["id"]
         if (D < MIN_BEAT or merge) and slots and slots[-1]["type"] == "cut":
             if b.get("stamp") and not slots[-1].get("stamp"): slots[-1]["stamp"] = b["stamp"]
             slots[-1]["end"] = e                       # absorb a too-short beat into the previous shot
+            slots[-1].setdefault("also", []).append(dict(speaker=b["speaker"], text=b["text"], id=b["id"]))
             notes.append(f"{b['id']} picture {D:.2f}s absorbed into previous shot")
             continue
         parts = []
         for ci in range(n):
             cs, ce = s + D * ci / n, s + D * (ci + 1) / n
             d_ = ce - cs
-            if cold:
-                k = max(math.ceil(d_ / MAX_SHOT_COLD - 1e-9), int(round(d_ / 2.5)), 1)
+            if cold and not P["cold_avg"]:
+                k = max(math.ceil(d_ / P["cold_max_shot"] - 1e-9), int(round(d_ / (2.5 if P["cold_max_shot"] <= MAX_SHOT_COLD else P["cold_max_shot"] * 0.85))), 1)
                 while k > 1 and d_ / k < 2.0:
                     k -= 1
             else:
-                k = max(1, math.ceil(d_ / MAX_SHOT - 1e-9))
+                k = max(1, math.ceil(d_ / P["max_shot"] - 1e-9))
                 if avg:
-                    k = max(k, int(round(d_ / (avg * 0.6 if bm & {"action", "combat", "comedy", "comedic"} else avg))))
+                    k = max(k, int(round(d_ / ((avg * 0.6 if bm & {"action", "combat", "comedy", "comedic"} else avg) * P["split_bias"]))))
             for si in range(k):
                 parts.append((ci, si, cs + (ce - cs) * si / k, cs + (ce - cs) * (si + 1) / k))
         for ci, si, ps, pe in parts:
@@ -283,6 +298,8 @@ class Scorer:
                     for a in assets}
 
     def score(self, slot, a, speaker_rule=True):
+        if P["wl"] is not None:
+            return P["wl"].score(slot, a)
         sp, tg = slot["spec"], a["tags"]
         subs = sp.get("subjects") or []
         asub = set(tg.get("subjects") or [])
@@ -377,6 +394,8 @@ class Scorer:
 
 
 def acceptable(sem, score):
+    if P["wl"] is not None:
+        return score >= 4.0 and sem >= 1.0
     return score >= MIN_SCORE and sem >= 1.2
 
 
@@ -400,6 +419,8 @@ class Assigner:
             self.base[i] = {aid: s for s, aid in rows}
         self.cap = {a["id"]: (REUSE_CAP + 1 if ("liebe" in a["tags"]["subjects"] and a["tags"].get("shotType") in
                     ("closeup", "extreme_closeup")) else REUSE_CAP) for a in assets}
+        if P["wl"] is not None:
+            self.cap = {a["id"]: P["wl"].cap(a) for a in assets}
         hs = {a["id"]: int(a["dhash"], 16) for a in assets if a.get("dhash")}
         self.near = {aid: [b for b, hb in hs.items() if b != aid and bin(h ^ hb).count("1") <= NEAR_DUP]
                      for aid, h in hs.items()}
@@ -472,7 +493,9 @@ class Assigner:
                     changed += 1
             if not changed:
                 break
-        if P["accent"] == "naruto":                      # last resort: a speaker-appropriate frame beats an empty slot (it will show up as WEAK)
+        if P["wl"] is not None:
+            self.relax_fill()
+        elif P["accent"] == "naruto":                      # last resort: a speaker-appropriate frame beats an empty slot (it will show up as WEAK)
             for i in self.cuts:
                 if self.assign[i] or i in self.pinned:
                     continue
@@ -494,6 +517,34 @@ class Assigner:
                         self.base[i][aid] = sc
                         self._set(i, aid)
                         break
+
+
+def _relax_fill(self):
+    """Whitelist mode: a slot nothing fits well still gets the least-bad approved frame (shown as WEAK in the report)."""
+    for level in (1, 2, 3, 4):
+        P["wl"].relax = min(level, 3)
+        if level == 4:
+            P["lock_seconds"] = 36.0                   # last resort only: 36 s instead of 45 s between uses of one asset
+        for i in self.cuts:
+            if self.assign[i] or i in self.pinned:
+                continue
+            sl = self.slots[i]
+            rows = []
+            for a in self.assets:
+                sc, _ = self.sc.score(sl, a)
+                if sc > -20:
+                    rows.append((sc, a["id"]))
+            rows.sort(reverse=True)
+            for sc, aid in rows:
+                if self.feasible(i, aid):
+                    self.base[i][aid] = sc
+                    self._set(i, aid)
+                    break
+    P["wl"].relax = 0
+    P["lock_seconds"] = P["wl"].min_gap
+
+
+Assigner.relax_fill = _relax_fill
 
 
 # --------------------------------------------------------------------------- directives
@@ -581,6 +632,38 @@ def pick_backgrounds(slots, assign, assets, overrides):
             continue
         key = f"{sl['beat_id']}#{sl['cut_index']}"
         pin = overrides.get(key, {}).get("bg")
+        if P["wl"] is not None:                              # whitelist mode: the backdrop is a hand-approved frame too
+            scs, tone = wl_mod.BG_SCENES[sl["insert"]["type"]]
+            best, bs = None, -1e9
+            for a in assets:
+                L = a["wl"]
+                if pin and a["id"] != pin:
+                    continue
+                if L["scene"] not in scs:
+                    continue
+                sc = -0.8 * scs.index(L["scene"]) + a.get("quality", 0.5)
+                if L["time"] == tone or (tone == "day" and L["time"] in ("interior", "dusk")) or L["time"] == "interior":
+                    sc += 1.0
+                elif tone == "night" and L["ok_as_night"]:
+                    sc += 0.3
+                else:
+                    sc -= 3.0
+                sc -= 1.0 * len(L["who"])
+                if not L["who"]:
+                    sc += 0.8
+                sc -= 1.3 * used.get(a["id"], 0)
+                if a["id"] in recent[-3:]:
+                    sc -= 4.0
+                if any(abs(j - i) < 6 for j in real_at.get(a["id"], ())):
+                    sc -= 2.5
+                if sc > bs:
+                    best, bs = a, sc
+            if best is None:
+                best = max(assets, key=lambda a: -1.3 * used.get(a["id"], 0) + (1.0 if not a["wl"]["who"] else 0))
+            out[i] = best["id"]
+            used[best["id"]] = used.get(best["id"], 0) + 1
+            recent.append(best["id"])
+            continue
         subs, tone = inserts.BG_SUBJECTS[sl["insert"]["type"]]
         best, bs = None, -1e9
         for a in assets:
@@ -622,9 +705,10 @@ def pick_backgrounds(slots, assign, assets, overrides):
     return out
 
 
-def build_shots(slots, assign, by_id, overrides, bgs=None):
+def build_shots(slots, assign, by_id, overrides, bgs=None, wlmap=None):
     shots, prev_cam = [], None
     bgs = bgs or {}
+    wlmap = wlmap or {}
     for n, sl in enumerate(slots):
         sid = f"s{n + 1:03d}"
         if sl["type"] == "card":
@@ -669,12 +753,32 @@ def build_shots(slots, assign, by_id, overrides, bgs=None):
         acc = ov.get("accent") or accent_for(sl, a)
         if treat == "manga_motion" and not acc:
             acc = "crimson"
+        extra = {}
+        layout = ov.get("layout") or kind_layout(a)
+        focus = ov.get("focus") or a.get("focus") or [0.5, 0.4]
+        if n in wlmap:                                    # whitelist mode: re-crop + grade chosen for this use
+            m = wlmap[n]
+            layout = ov.get("layout") or m["layout"]
+            if ov.get("crop"):
+                m = dict(m, crop=ov["crop"], kind="manual")
+            if m["crop"]["zoom"] > 1.0 or m["kind"] != "natural":
+                focus = [m["crop"]["x"], m["crop"]["y"]]
+            else:
+                focus = ov.get("focus") or a["wl"].get("focus") or focus
+            extra = dict(crop=m["crop"], crop_kind=m["kind"])
+            g = ov["grade"] if "grade" in ov else m["grade"]
+            if g:
+                extra["grade"] = g
+            D = sl["end"] - sl["start"]
+            extra["cam_amp"] = round(min(1.6, max(1.0, D / 4.6)), 2)
+        elif ov.get("grade"):
+            extra["grade"] = ov["grade"]
         shots.append(dict(
             id=sid, start=round(sl["start"], 3), end=round(sl["end"], 3), type="still", asset_id=a["id"],
-            asset_path=a["path"], layout=ov.get("layout") or kind_layout(a), focus=ov.get("focus") or a.get("focus") or [0.5, 0.4],
+            asset_path=a["path"], layout=layout, focus=focus,
             camera=cam, vfx=ov["vfx"] if "vfx" in ov else vfx, transition_in=ov.get("transition_in", "cut"),
             treatment=treat, accent=acc, beat_id=sl["beat_id"], speaker=beat["speaker"], chapter=sl["chapter"],
-            card=None, **_stamp(sl), _key=key, _slot=n, _auto_ember=auto))
+            card=None, **extra, **_stamp(sl), _key=key, _slot=n, _auto_ember=auto))
     return shots
 
 
@@ -760,13 +864,17 @@ def build_captions(script, timing):
 
 
 # --------------------------------------------------------------------------- main
-def load_assets(gate, curation, retag=None, vault=None):
+def load_assets(gate, curation, retag=None, vault=None, wl=None):
     v = json.loads((vault or VAULT).read_text())
     assets = gate.filter(v["assets"])
     out, missing = [], []
     for a in assets:
         if curation.get(a["id"], {}).get("reject"):
             continue
+        if wl is not None:                              # whitelist mode: only hand-approved frames exist for this project
+            if a["id"] not in wl.labels:
+                continue
+            a = dict(a, wl=wl.labels[a["id"]])
         rt = (retag or {}).get(a["id"])
         if rt:                                          # editorial corrections of vault tags (overrides "_retag")
             if rt.get("reject"):
@@ -807,8 +915,15 @@ def run(pid, estimate=False, write=True):
     ov_p = proj / "shot_overrides.json"
     ov_all = json.loads(ov_p.read_text()) if ov_p.exists() else {}
     overrides = {k: v for k, v in ov_all.items() if not k.startswith("_")}
-    configure(fr["id"], script, project_config(proj, curation, ov_all), pid)
-    assets, missing, vault_n = load_assets(gate, curation, ov_all.get("_retag"), vault_p)
+    cfg = project_config(proj, curation, ov_all)
+    configure(fr["id"], script, cfg, pid)
+    wl = None
+    P["wl"] = None
+    if P.get("wl_cfg") and (proj / "whitelist.json").exists():
+        wl = wl_mod.WL(proj, P["wl_cfg"], script)
+        P["wl"] = wl
+        P["lock_seconds"] = wl.min_gap
+    assets, missing, vault_n = load_assets(gate, curation, ov_all.get("_retag"), vault_p, wl)
     by_id = {a["id"]: a for a in assets}
     timing = load_timing(pid, estimate, script)
     STAMP_TIMES.clear()
@@ -862,7 +977,8 @@ def run(pid, estimate=False, write=True):
     A.run()
     assign = A.assign
     bgs = pick_backgrounds(slots, assign, assets, overrides)
-    shots = build_shots(slots, assign, by_id, overrides, bgs)
+    wlmap = wl.assign_crops(slots, assign, by_id) if wl else {}
+    shots = build_shots(slots, assign, by_id, overrides, bgs, wlmap)
     shots = finish_shots(shots, slots, overrides)
     edit = dict(id=pid, width=1920, height=1080, fps=30, duration=timing["duration"], shots=shots,
                 captions=build_captions(script, timing))
@@ -915,6 +1031,24 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
         if sl["first"] and allowed and not (allowed & (set(by_id[aid]["tags"]["subjects"]) | {by_id[aid]["tags"].get("location")})):
             spk.append(f"{sh['id']} {sl['beat_id']} speaker {sl['beat']['speaker']} not shown")
     viol = violations(shots)
+    wl_extra = {}
+    if P["wl"] is not None:
+        lab = P["wl"].labels
+        seen, dup = {}, 0
+        for s_ in stills:
+            if s_.get("asset_id") and s_.get("crop"):
+                k_ = (s_["asset_id"], s_["crop"]["x"], s_["crop"]["y"], s_["crop"]["zoom"])
+                dup += 1 if k_ in seen else 0
+                seen[k_] = 1
+        wl_extra = dict(whitelist_size=len(lab),
+                        non_whitelisted_stills=[s_["id"] for s_ in stills if s_["asset_id"] and s_["asset_id"] not in lab],
+                        non_whitelisted_insert_bgs=[s_["id"] for s_ in inserts if s_["bg_asset_id"] not in lab],
+                        recrop_uses=sum(1 for v in uses.values() if v > 1 for _ in range(v - 1)),
+                        assets_with_recrops=sum(1 for v in uses.values() if v > 1),
+                        repeated_asset_crop=dup,
+                        night_graded=sum(1 for s_ in stills if s_.get("grade") == "night"),
+                        lamp_graded=sum(1 for s_ in stills if s_.get("grade") == "interior_lamp"),
+                        tight_crops=sum(1 for s_ in stills if (s_.get("crop") or {}).get("zoom", 1) > 1.3))
     extra = dict(inserts=len(inserts), pct_runtime_designed_insert=round(100 * ins_t / tot, 1), insert_seconds_by_type=ins_types,
                  insert_bg_max_reuse=max(bg_uses.values())) if inserts else {}
     return dict(shots=len(shots), cards=sum(1 for s in shots if s["type"] == "card"), **extra, vault_assets=vault_n, usable_assets=usable,
@@ -925,7 +1059,7 @@ def report(slots, shots, assign, by_id, A, script, vault_n, usable, missing, war
                 avg_cut_per_chapter={k: ln(v) for k, v in chap.items()},
                 pct_runtime_real_stills=round(100 * real / tot, 1), pct_runtime_cards=round(100 * cardt / tot, 1),
                 weak_matches=weak, unmatched_cuts=unmatched, speaker_unmet=spk, warnings=warnings + notes,
-                missing_files=missing, timing="estimated" if timing.get("estimated") else "audio",
+                missing_files=missing, timing="estimated" if timing.get("estimated") else "audio", **wl_extra,
                 duration=timing["duration"], embers_pct=round(100 * sum(1 for s in shots if "embers" in s["vfx"]) / len(shots), 1),
                 whips=sum(1 for s in shots if s["transition_in"] == "whip"))
 

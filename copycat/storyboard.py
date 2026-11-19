@@ -25,7 +25,18 @@ def _font(sz):
     return ImageFont.load_default()
 
 
-def frame(img: Image.Image, layout: str, focus, w=CW, h=CH) -> Image.Image:
+def frame(img: Image.Image, layout: str, focus, w=CW, h=CH, zoom=1.0, grade=None) -> Image.Image:
+    out = _frame(img, layout, focus, w, h, zoom, grade)
+    if grade:
+        import numpy as np
+        from .vfx import GRADES, grade_vignette
+        a = GRADES[grade](np.asarray(out))
+        a = (a.astype("float32") * grade_vignette(w, h, grade).astype("float32") / 255.0).astype("uint8")
+        out = Image.fromarray(a)
+    return out
+
+
+def _frame(img, layout, focus, w, h, zoom, grade):
     img = img.convert("RGB")
     iw, ih = img.size
     fx, fy = focus
@@ -35,6 +46,7 @@ def frame(img: Image.Image, layout: str, focus, w=CW, h=CH) -> Image.Image:
             cw, chh = ih * tr, ih
         else:
             cw, chh = iw, iw / tr
+        cw, chh = cw / zoom, chh / zoom
         x0 = min(max(fx * iw - cw / 2, 0), iw - cw)
         y0 = min(max(fy * ih - chh / 2, 0), ih - chh)
         return img.crop((int(x0), int(y0), int(x0 + cw), int(y0 + chh))).resize((w, h), Image.LANCZOS)
@@ -142,7 +154,8 @@ def main(argv=None):
                 ImageDraw.Draw(cell).text((4, 2), "INSERT " + s["insert"]["type"], fill=(120, 255, 160), font=f2)
             elif s["asset_path"]:
                 try:
-                    cell = frame(Image.open(ROOT / s["asset_path"]), s["layout"], s["focus"])
+                    cell = frame(Image.open(ROOT / s["asset_path"]), s["layout"], s["focus"],
+                                 zoom=(s.get("crop") or {}).get("zoom", 1.0), grade=s.get("grade"))
                 except Exception as e:                  # pragma: no cover
                     cell = Image.new("RGB", (CW, CH), (60, 0, 0))
             else:
@@ -152,7 +165,7 @@ def main(argv=None):
             if s["id"] in weak or s["id"] in unm:
                 d.rectangle([x, y, x + CW - 1, y + CH + LAB - 1], outline=(255, 40, 40), width=3)
             d.text((x + 4, y + CH + 2), f"{s['id']} {s['start']:.1f}-{s['end']:.1f}s {ci} {s['asset_id'] or '-'} "
-                   f"{s['speaker'] or ''} {s['layout'][:5]}/{s['camera'][:9]}", fill=(255, 215, 120), font=f2)
+                   f"{s['speaker'] or ''} {s['layout'][:5]}/{s['camera'][:9]}" + (f" z{s['crop']['zoom']}" if s.get("crop") and s["crop"]["zoom"] > 1 else "") + (f" [{s['grade']}]" if s.get("grade") else ""), fill=(255, 215, 120), font=f2)
             t = textwrap.wrap(texts.get(bid, ""), 62)[:1]
             d.text((x + 4, y + CH + 16), (t[0] if t else "")[:60], fill=(215, 215, 215), font=f1)
             if s["id"] in weak:

@@ -44,11 +44,23 @@ def main(argv):
     ap.add_argument("--cols", type=int, default=4)
     ap.add_argument("--tw", type=int, default=380, help="thumbnail width (height = 9/16)")
     ap.add_argument("--ids", help="comma list of asset ids instead of subjects (one sheet, any subject)")
+    ap.add_argument("--idfile", help="JSON list of asset ids -> numbered sheets (--per per sheet) named <prefix>_NN.jpg")
+    ap.add_argument("--prefix", default="pool")
+    ap.add_argument("--outdir", help="output directory (default build/copycat/vault_sheets/<franchise>)")
     a = ap.parse_args(argv)
     fr = franchise_mod.load(a.franchise)
     out = ROOT / "build/copycat/vault_sheets" / ("" if a.franchise == "black-clover" else a.franchise)
     out.mkdir(parents=True, exist_ok=True)
+    if a.outdir:
+        out = Path(a.outdir); out.mkdir(parents=True, exist_ok=True)
     assets = json.loads((ROOT / fr["vault_dir"] / "vault.json").read_text())["assets"]
+    if a.idfile:
+        want = json.loads(Path(a.idfile).read_text())
+        byid = {x["id"]: x for x in assets}
+        sel = [byid[i] for i in want if i in byid]
+        for n, i in enumerate(range(0, len(sel), a.per)):
+            sheet("pool", sel[i:i + a.per], cols=a.cols, tw=a.tw).save(out / f"{a.prefix}_{n + 1:02d}.jpg", quality=86)
+        print(a.prefix, len(sel), "frames", (len(sel) + a.per - 1) // a.per, "sheets ->", out); return
     if a.era: assets = [x for x in assets if x["tags"].get("era") == a.era]
     if a.ids:
         want = set(a.ids.split(","))

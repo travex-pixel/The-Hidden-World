@@ -334,3 +334,60 @@ def dissolve(prev, cur, i, n=DISSOLVE_FRAMES):
         return cur
     a = (i + 1) / (n + 1)
     return cv2.addWeighted(prev, 1 - a, cur, a, 0)
+
+
+# --------------------------------------------------------------------------- shot grades (continuity treatments)
+def _lum(x):
+    return (0.299 * x[..., 0] + 0.587 * x[..., 1] + 0.114 * x[..., 2])[..., None]
+
+
+def night_grade(rgb: np.ndarray) -> np.ndarray:
+    """A daytime frame passing as night: cool blue-teal curve, lowered exposure and saturation, blacks lifted slightly blue,
+    highlights rolled off, a faint cold moonlight rim on the brightest edges.  (The soft vignette is `grade_vignette`.)"""
+    x = rgb.astype(np.float32) / 255.0
+    L = _lum(x)
+    x = L + (x - L) * 0.50                                         # desaturate
+    x = x * np.array([0.68, 0.90, 1.12], np.float32)               # blue-teal bias
+    x = np.power(np.clip(x, 0, 1), 1.25) * 0.68                    # lower exposure, deeper mids
+    x = np.where(x > 0.55, 0.55 + (x - 0.55) * 0.55, x)             # no daylight highlights
+    x = x + np.array([0.010, 0.026, 0.060], np.float32) * (1.0 - x) ** 2   # lifted blue blacks
+    # moonlight rim: blurred bright areas, pale cyan
+    hi = np.clip(_lum(x)[..., 0] - 0.30, 0, 1)
+    sig = max(2.0, rgb.shape[1] * 0.012)
+    glow = cv2.GaussianBlur(hi, (0, 0), sig)
+    rim = np.clip(glow - 0.85 * cv2.GaussianBlur(hi, (0, 0), sig * 4.0), 0, 1)[..., None]
+    x = x + rim * np.array([0.10, 0.22, 0.40], np.float32)
+    return np.clip(x * 255.0, 0, 255).astype(np.uint8)
+
+
+def lamp_grade(rgb: np.ndarray) -> np.ndarray:
+    """Interior lamplight: warm, low-key, slightly desaturated, warm-lifted blacks, tungsten highlights."""
+    x = rgb.astype(np.float32) / 255.0
+    L = _lum(x)
+    x = L + (x - L) * 0.86
+    x = x * np.array([1.12, 0.97, 0.74], np.float32)
+    x = np.power(np.clip(x, 0, 1), 1.14) * 0.88
+    x = x + 0.10 * (x * x * (3 - 2 * x) - x)                        # a touch of contrast
+    x = x + np.array([0.034, 0.018, 0.006], np.float32) * (1.0 - x) ** 2
+    return np.clip(x * 255.0, 0, 255).astype(np.uint8)
+
+
+GRADES = {"night": night_grade, "interior_lamp": lamp_grade}
+_GV = {}
+
+
+def grade_vignette(W, H, name):
+    """Soft vignette that goes with a grade (uint8 3-channel multiplier). Lamp = off-centre pool of light."""
+    key = (W, H, name)
+    if key in _GV:
+        return _GV[key]
+    yy, xx = np.mgrid[0:H // 4, 0:W // 4].astype(np.float32)
+    cx, cy = (0.5, 0.45) if name == "night" else (0.5, 0.40)
+    nx, ny = (xx / (W / 4) - cx) * 2, (yy / (H / 4) - cy) * 2
+    d = np.clip(np.sqrt(nx ** 2 + (ny * 1.1) ** 2) / math.sqrt(2), 0, 1)
+    k = 0.46 if name == "night" else 0.40
+    m = 1 - k * d ** 1.9
+    m = cv2.resize(m, (W, H), interpolation=cv2.INTER_CUBIC)
+    m8 = np.clip(m * 255, 0, 255).astype(np.uint8)
+    _GV[key] = cv2.merge([m8, m8, m8])
+    return _GV[key]
