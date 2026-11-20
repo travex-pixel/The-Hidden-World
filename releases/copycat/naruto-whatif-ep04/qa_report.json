@@ -1,0 +1,661 @@
+{
+ "project": "naruto-whatif-ep04",
+ "video": {
+  "black": [],
+  "freezes": []
+ },
+ "provenance": {
+  "off_domain_assets": 0,
+  "shots_without_asset": 0,
+  "shots_with_asset_missing_from_vault": [],
+  "runtime_share": {
+   "real": 0.7081,
+   "generated": 0.0,
+   "cards": 0.0125,
+   "unknown": 0.0,
+   "designed_insert": 0.1772,
+   "clone_grid": 0.1022
+  },
+  "unique_assets": 104,
+  "anti_repetition_violations": 0,
+  "anti_repetition_detail": [],
+  "max_shot_s": 11.692,
+  "avg_cut_s": 5.135,
+  "avg_cut_first30s": 5.055,
+  "shots": 262,
+  "cards": 7,
+  "gate_module": true,
+  "max_uses_of_one_asset": 4,
+  "assets_over_cap": [],
+  "repeated_crops": 0,
+  "non_whitelisted": [],
+  "whitelist_checked": true,
+  "clone_grids": {
+   "shots": 29,
+   "panels": 646,
+   "share": 0.1022,
+   "off_domain_panels": []
+  },
+  "designed_inserts": {
+   "shots": 38,
+   "share": 0.1772,
+   "seconds_by_type": {
+    "registration_form": 21.3,
+    "info_card": 26.4,
+    "cheater_report": 18.2,
+    "scout_map": 36.3,
+    "mission_report": 25.1,
+    "hospital_report": 19.5,
+    "signature_compare": 57.6,
+    "postponement_form": 16.7,
+    "leave_slip": 17.1
+   },
+   "provenance": "designed_insert"
+  }
+ },
+ "vault_found": true,
+ "format": {
+  "width": 1920,
+  "height": 1080,
+  "fps": 30.0,
+  "codec": "h264",
+  "pix_fmt": "yuv420p",
+  "video_dur": 1345.333333,
+  "audio_dur": 1345.338,
+  "audio_codec": "aac"
+ },
+ "audio": {
+  "integrated_lufs": -14.5,
+  "lra": 2.9,
+  "true_peak_dbtp": -2.0,
+  "silences": [],
+  "peak_db": -1.96174
+ },
+ "audio_cast": {
+  "available": true,
+  "engine": "fish",
+  "model": "s2.1-pro-free",
+  "distinct_voice_ids": 15,
+  "reported_distinct": 15,
+  "per_voice_line_counts": {
+   "NARRATOR:3df6f0a0b0f349dbb0f9425e50c36a5b": 79,
+   "CLONE:75a19f86330049a48b011c8a1e428777": 30,
+   "NARUTO:75a19f86330049a48b011c8a1e428777": 69,
+   "KABUTO:722523118ee94709b661502c76b016b7": 6,
+   "SASUKE:35b507ef6d694b439a1122a59933943c": 17,
+   "HIRUZEN:4b5f0c6f0a4b49988f449d0a04039a95": 16,
+   "IBIKI:ef9c79b62ef34530bf452c0e50e3c260": 4,
+   "SAKURA:0c120ebc66e549e7bf654233f6b30b40": 6,
+   "ANKO:933563129e564b19a115bedd57b7406a": 4,
+   "OROCHIMARU:1d52151a55eb4878a997bd06e816b5f6": 5,
+   "KAKASHI:ed850acf3bc24291b1fcb3ce76517e30": 8,
+   "KURAMA:f8dfe9c83081432386f143e2fe9767ef": 6,
+   "GAARA:d9ce1833c191476db346efb50aa20722": 8,
+   "DANZO:e422370a73e4439b8ccc10d58b78819b": 1,
+   "JIRAIYA:e686ae649ee44f219a108aacba206c1a": 1,
+   "IRUKA:9259a7392c454a1eb6436141abb5a558": 2
+  },
+  "lines": 262,
+  "cache_hits": 0,
+  "api_calls": 263,
+  "retries": 0,
+  "flagged_clips": 1,
+  "timeline_beats": 262,
+  "timeline_engine": "fish"
+ },
+ "sharpness": {
+  "median_lapvar": 607.7,
+  "blurry_shots": [
+   "s262"
+  ],
+  "per_shot": {
+   "s001": 875.4,
+   "s002": 752.3,
+   "s003": 550.7,
+   "s004": 193.4,
+   "s005": 1069.9,
+   "s006": 862.6,
+   "s007": 874.3,
+   "s009": 1117.9,
+   "s010": 669.5,
+   "s011": 985.6,
+   "s012": 578.8,
+   "s013": 1622.5,
+   "s014": 665.5,
+   "s015": 1046.0,
+   "s016": 941.7,
+   "s017": 952.4,
+   "s018": 373.2,
+   "s019": 276.7,
+   "s020": 695.0,
+   "s021": 838.1,
+   "s022": 792.7,
+   "s023": 983.1,
+   "s024": 683.5,
+   "s025": 663.5,
+   "s026": 991.2,
+   "s027": 498.0,
+   "s028": 515.9,
+   "s029": 501.4,
+   "s030": 772.6,
+   "s031": 827.8,
+   "s032": 665.4,
+   "s033": 1917.1,
+   "s034": 360.7,
+   "s035": 1183.0,
+   "s036": 851.5,
+   "s037": 1670.9,
+   "s038": 395.8,
+   "s039": 631.0,
+   "s040": 494.4,
+   "s041": 423.7,
+   "s042": 896.6,
+   "s043": 1060.4,
+   "s044": 878.1,
+   "s045": 419.5,
+   "s046": 1061.3,
+   "s047": 1430.2,
+   "s048": 358.0,
+   "s049": 1453.1,
+   "s051": 436.6,
+   "s052": 572.6,
+   "s053": 616.9,
+   "s054": 601.0,
+   "s055": 656.8,
+   "s056": 449.1,
+   "s057": 760.6,
+   "s058": 426.9,
+   "s059": 519.5,
+   "s060": 620.5,
+   "s061": 643.9,
+   "s062": 728.4,
+   "s063": 603.5,
+   "s064": 1940.1,
+   "s065": 946.9,
+   "s066": 1602.5,
+   "s067": 1052.7,
+   "s068": 770.3,
+   "s069": 182.6,
+   "s070": 564.9,
+   "s071": 1303.2,
+   "s072": 302.5,
+   "s073": 607.7,
+   "s074": 1274.8,
+   "s075": 616.2,
+   "s076": 913.7,
+   "s077": 541.0,
+   "s078": 564.1,
+   "s079": 623.8,
+   "s080": 255.1,
+   "s081": 978.6,
+   "s082": 1307.9,
+   "s083": 591.1,
+   "s084": 1232.6,
+   "s085": 1353.9,
+   "s086": 741.2,
+   "s087": 699.6,
+   "s088": 619.9,
+   "s089": 248.7,
+   "s091": 900.8,
+   "s092": 339.9,
+   "s093": 283.5,
+   "s094": 620.7,
+   "s095": 787.9,
+   "s096": 807.3,
+   "s097": 1409.8,
+   "s098": 896.2,
+   "s099": 894.8,
+   "s100": 257.4,
+   "s101": 653.1,
+   "s102": 299.7,
+   "s103": 813.5,
+   "s104": 906.4,
+   "s105": 720.9,
+   "s106": 739.6,
+   "s107": 515.7,
+   "s108": 396.8,
+   "s109": 985.4,
+   "s110": 647.8,
+   "s111": 537.4,
+   "s112": 318.4,
+   "s113": 560.9,
+   "s114": 281.9,
+   "s115": 351.4,
+   "s116": 838.4,
+   "s117": 467.6,
+   "s119": 963.9,
+   "s120": 883.6,
+   "s121": 420.2,
+   "s122": 608.4,
+   "s123": 203.5,
+   "s124": 272.2,
+   "s125": 362.8,
+   "s126": 508.9,
+   "s127": 495.1,
+   "s128": 389.0,
+   "s129": 256.5,
+   "s130": 504.9,
+   "s131": 374.3,
+   "s132": 602.7,
+   "s133": 526.5,
+   "s134": 548.1,
+   "s135": 585.0,
+   "s136": 546.6,
+   "s137": 587.1,
+   "s138": 335.0,
+   "s139": 412.2,
+   "s140": 315.6,
+   "s141": 397.6,
+   "s142": 332.9,
+   "s144": 418.9,
+   "s145": 567.0,
+   "s146": 1045.1,
+   "s147": 1022.7,
+   "s148": 1334.5,
+   "s149": 982.0,
+   "s150": 1137.4,
+   "s151": 1324.2,
+   "s152": 1051.5,
+   "s153": 1049.4,
+   "s154": 1389.6,
+   "s155": 485.2,
+   "s156": 730.4,
+   "s157": 421.7,
+   "s158": 469.0,
+   "s159": 518.9,
+   "s160": 465.9,
+   "s161": 528.6,
+   "s162": 531.0,
+   "s163": 469.7,
+   "s164": 341.5,
+   "s165": 1010.9,
+   "s166": 557.6,
+   "s167": 302.5,
+   "s168": 458.7,
+   "s169": 456.9,
+   "s170": 820.7,
+   "s171": 373.6,
+   "s172": 404.0,
+   "s174": 569.5,
+   "s175": 784.6,
+   "s176": 713.3,
+   "s177": 1016.6,
+   "s178": 1102.8,
+   "s179": 216.1,
+   "s180": 604.8,
+   "s181": 511.5,
+   "s182": 502.2,
+   "s183": 556.9,
+   "s184": 1053.3,
+   "s185": 461.6,
+   "s186": 713.6,
+   "s187": 659.2,
+   "s188": 706.5,
+   "s189": 482.6,
+   "s190": 455.3,
+   "s191": 558.9,
+   "s192": 683.7,
+   "s193": 846.6,
+   "s194": 205.1,
+   "s195": 1005.3,
+   "s196": 910.3,
+   "s197": 919.7,
+   "s198": 1054.1,
+   "s199": 456.3,
+   "s200": 1092.2,
+   "s201": 508.6,
+   "s202": 882.1,
+   "s203": 966.2,
+   "s204": 336.0,
+   "s205": 676.6,
+   "s206": 386.0,
+   "s207": 422.8,
+   "s208": 804.5,
+   "s209": 1061.4,
+   "s210": 511.5,
+   "s211": 704.1,
+   "s212": 500.7,
+   "s213": 882.2,
+   "s214": 497.4,
+   "s215": 749.0,
+   "s216": 490.4,
+   "s217": 1000.0,
+   "s218": 1895.4,
+   "s219": 753.5,
+   "s220": 435.3,
+   "s221": 711.3,
+   "s222": 421.8,
+   "s223": 428.6,
+   "s224": 466.9,
+   "s225": 526.3,
+   "s226": 387.5,
+   "s227": 380.6,
+   "s228": 564.1,
+   "s229": 588.0,
+   "s230": 450.4,
+   "s231": 537.4,
+   "s232": 925.4,
+   "s233": 625.1,
+   "s234": 937.1,
+   "s235": 716.2,
+   "s236": 794.5,
+   "s237": 1104.9,
+   "s238": 673.6,
+   "s239": 767.4,
+   "s240": 807.3,
+   "s242": 534.0,
+   "s243": 525.2,
+   "s244": 223.1,
+   "s245": 460.6,
+   "s246": 294.3,
+   "s247": 384.1,
+   "s248": 506.6,
+   "s249": 1302.6,
+   "s250": 384.1,
+   "s251": 393.6,
+   "s252": 618.7,
+   "s253": 324.3,
+   "s254": 395.0,
+   "s255": 538.6,
+   "s256": 1360.8,
+   "s257": 922.6,
+   "s258": 605.1,
+   "s259": 308.6,
+   "s260": 512.4,
+   "s261": 285.3,
+   "s262": 60.0
+  }
+ },
+ "contact_sheet_frames": [
+  {
+   "shot": "s001",
+   "t": 1.0,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/00_s001_0001.00.png"
+  },
+  {
+   "shot": "s007",
+   "t": 26.75,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/01_s007_0026.75.png"
+  },
+  {
+   "shot": "s008",
+   "t": 36.87,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/02_s008_0036.87.png"
+  },
+  {
+   "shot": "s017",
+   "t": 109.09,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/03_s017_0109.09.png"
+  },
+  {
+   "shot": "s032",
+   "t": 192.57,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/04_s032_0192.57.png"
+  },
+  {
+   "shot": "s037",
+   "t": 213.31,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/05_s037_0213.31.png"
+  },
+  {
+   "shot": "s047",
+   "t": 267.25,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/06_s047_0267.25.png"
+  },
+  {
+   "shot": "s049",
+   "t": 283.32,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/07_s049_0283.32.png"
+  },
+  {
+   "shot": "s050",
+   "t": 286.36,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/08_s050_0286.36.png"
+  },
+  {
+   "shot": "s063",
+   "t": 339.98,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/09_s063_0339.98.png"
+  },
+  {
+   "shot": "s075",
+   "t": 396.01,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/10_s075_0396.01.png"
+  },
+  {
+   "shot": "s077",
+   "t": 406.96,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/11_s077_0406.96.png"
+  },
+  {
+   "shot": "s090",
+   "t": 476.53,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/12_s090_0476.53.png"
+  },
+  {
+   "shot": "s093",
+   "t": 487.04,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/13_s093_0487.04.png"
+  },
+  {
+   "shot": "s108",
+   "t": 556.48,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/14_s108_0556.48.png"
+  },
+  {
+   "shot": "s110",
+   "t": 569.25,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/15_s110_0569.25.png"
+  },
+  {
+   "shot": "s118",
+   "t": 599.57,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/16_s118_0599.57.png"
+  },
+  {
+   "shot": "s124",
+   "t": 634.98,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/17_s124_0634.98.png"
+  },
+  {
+   "shot": "s139",
+   "t": 729.99,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/18_s139_0729.99.png"
+  },
+  {
+   "shot": "s143",
+   "t": 758.86,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/19_s143_0758.86.png"
+  },
+  {
+   "shot": "s152",
+   "t": 805.56,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/20_s152_0805.56.png"
+  },
+  {
+   "shot": "s154",
+   "t": 811.2,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/21_s154_0811.20.png"
+  },
+  {
+   "shot": "s155",
+   "t": 823.65,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/22_s155_0823.65.png"
+  },
+  {
+   "shot": "s170",
+   "t": 903.42,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/23_s170_0903.42.png"
+  },
+  {
+   "shot": "s173",
+   "t": 921.36,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/24_s173_0921.36.png"
+  },
+  {
+   "shot": "s175",
+   "t": 932.16,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/25_s175_0932.16.png"
+  },
+  {
+   "shot": "s186",
+   "t": 987.19,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/26_s186_0987.19.png"
+  },
+  {
+   "shot": "s195",
+   "t": 1038.03,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/27_s195_1038.03.png"
+  },
+  {
+   "shot": "s200",
+   "t": 1062.81,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/28_s200_1062.81.png"
+  },
+  {
+   "shot": "s218",
+   "t": 1146.1,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/29_s218_1146.10.png"
+  },
+  {
+   "shot": "s241",
+   "t": 1257.53,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/30_s241_1257.53.png"
+  },
+  {
+   "shot": "s262",
+   "t": 1343.66,
+   "file": "build/copycat/naruto-whatif-ep04/qa/frames/31_s262_1343.66.png"
+  }
+ ],
+ "gates": [
+  {
+   "name": "off-domain assets == 0",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "non-card shots without asset == 0",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "all shot assets resolve in vault",
+   "ok": true,
+   "value": [],
+   "hard": true
+  },
+  {
+   "name": "anti-repetition (45 s between uses of one asset)",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "0 non-whitelisted stills / panels / insert backdrops",
+   "ok": true,
+   "value": [],
+   "hard": true
+  },
+  {
+   "name": "no real asset used more than 4x as a single frame",
+   "ok": true,
+   "value": "max 4",
+   "hard": true
+  },
+  {
+   "name": "never the same crop twice",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "0 off-franchise assets",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "provenance split (info): real stills / inserts / grids / cards",
+   "ok": true,
+   "value": {
+    "real": 0.7081,
+    "cards": 0.0125,
+    "designed_insert": 0.1772,
+    "clone_grid": 0.1022
+   },
+   "hard": false
+  },
+  {
+   "name": "format 1920x1080 30fps h264 yuv420p",
+   "ok": true,
+   "value": "1920x1080 30.00 h264 yuv420p",
+   "hard": true
+  },
+  {
+   "name": "A/V duration diff <= 0.05 s",
+   "ok": true,
+   "value": 0.005,
+   "hard": true
+  },
+  {
+   "name": "integrated loudness -14 +-1 LUFS",
+   "ok": true,
+   "value": -14.5,
+   "hard": true
+  },
+  {
+   "name": "true peak < -1.0 dBTP",
+   "ok": true,
+   "value": -2.0,
+   "hard": true
+  },
+  {
+   "name": "no silence >= 2.0 s @ -45 dB",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "no 0 dBFS clipping",
+   "ok": true,
+   "value": -1.96174,
+   "hard": true
+  },
+  {
+   "name": "audio cast: distinct Fish voices >= 8",
+   "ok": true,
+   "value": 15,
+   "hard": true
+  },
+  {
+   "name": "no black >= 0.6 s",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "no frozen video >= 0.7 s",
+   "ok": true,
+   "value": 0,
+   "hard": true
+  },
+  {
+   "name": "blurry shots (info)",
+   "ok": false,
+   "value": [
+    "s262"
+   ],
+   "hard": false
+  },
+  {
+   "name": "max shot length <= 12 s (info)",
+   "ok": true,
+   "value": 11.692,
+   "hard": false
+  }
+ ],
+ "pass": true
+}
